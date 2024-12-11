@@ -3,11 +3,12 @@ title: "Troubleshoot the Global Secure Access client: diagnostics"
 description: Troubleshoot the Global Secure Access client using the health check tab in the advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 08/16/2024
+ms.date: 11/12/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
 ms.reviewer: lirazbarak
+
 
 
 # Customer intent: I want to troubleshoot the Global Secure Access client using the Advanced diagnostics utility.
@@ -50,7 +51,7 @@ The **Forwarding profile** tab shows the list of current, active rules that are 
 
 The rules section shows the list of rules grouped by each workload (**M365 rules**, **Private access rules**, **Internet access rules**). This list only includes rules for the workloads activated in your tenant.
 > [!TIP]
-> If a rule contains several destinations (fully qualified domain name (FQDN) or IP range), the rule will span several rows, with one row for each destination.
+> If a rule contains several destinations, such as a fully qualified domain name (FQDN) or an IP range, the rule will span several rows, with one row for each destination.
 
 For each rule, the available columns include:
 - **Priority**: The priority of the rule. Rules with higher priority (smaller numerical value) take precedence over rules with lower priority.

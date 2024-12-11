@@ -144,11 +144,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure ExcelityGlobal SSO
 
-To configure single sign-on on **ExcelityGlobal** side, you need to send the **Thumbprint value** and appropriate copied URLs from the application configuration to [ExcelityGlobal support team](https://www.excelityglobal.com/contact-us). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **ExcelityGlobal** side, you need to send the **Thumbprint value** and appropriate copied URLs from the application configuration to [ExcelityGlobal support team](https://www.dayforce.com/contact). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create ExcelityGlobal test user
 
-In this section, you create a user called Britta Simon in ExcelityGlobal. Work with [ExcelityGlobal support team](https://www.excelityglobal.com/contact-us) to add the users in the ExcelityGlobal platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in ExcelityGlobal. Work with [ExcelityGlobal support team](https://www.dayforce.com/contact) to add the users in the ExcelityGlobal platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 

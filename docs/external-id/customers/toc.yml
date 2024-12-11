@@ -12,6 +12,8 @@ items:
       href: visual-studio-code-extension.md
     - name: Use Azure App Service built-in authentication
       href: /azure/app-service/scenario-secure-app-authentication-app-service?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-configuration
+    - name: Use Power Pages and External ID
+      href: /power-pages/security/authentication/entra-external-id?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-configuration
 - name: Samples
   expanded: false
   items:
@@ -346,6 +348,14 @@ items:
             href: how-to-google-federation-customers.md
           - name: Facebook federation
             href: how-to-facebook-federation-customers.md
+          - name: Apple federation
+            href: how-to-apple-federation-customers.md
+          - name: OIDC federation
+            items:
+              - name: Custom OIDC federation
+                href: how-to-custom-oidc-federation-customers.md
+              - name: B2C federation
+                href: how-to-b2c-federation-customers.md
         displayName: rbac, roles claim, groups claim
       - name: Integrate apps 
         items:
@@ -419,6 +429,8 @@ items:
       items:
       - name: Multifactor authentication
         href: how-to-multifactor-authentication-customers.md
+      - name: Regions requiring opt-in for SMS verification
+        href: how-to-region-code-opt-in.md
       - name: ID Protection
         href: how-to-identity-protection-customers.md
       - name: Use application roles to manage access
@@ -433,8 +445,6 @@ items:
           href: how-to-manage-admin-accounts.md
         - name: Manage customer accounts
           href: how-to-manage-customer-accounts.md
-        - name: User activity insights
-          href: how-to-user-insights.md
     - name: Monitor and troubleshoot
       items:
         - name: User activity insights
@@ -461,6 +471,8 @@ items:
       href: ~/fundamentals/data-residency.md
     - name: Company branding CSS template reference guide
       href: ~/fundamentals/reference-company-branding-css-template.md
+    - name: OIDC claims mapping
+      href: reference-oidc-claims-mapping-customers.md
     - name: Native authentication
       items:
         - name: API reference

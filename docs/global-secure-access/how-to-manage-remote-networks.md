@@ -18,7 +18,6 @@ This article explains how to manage your existing remote networks for Global Sec
 
 - A **Global Secure Access Administrator** role in Microsoft Entra ID.
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-- To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 
 ### Known limitations
 

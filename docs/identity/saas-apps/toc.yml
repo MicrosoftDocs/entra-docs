@@ -278,8 +278,6 @@
         href: autodesk-sso-tutorial.md
       - name: Autotask Endpoint Backup
         href: autotaskendpointbackup-tutorial.md
-      - name: Autotask Workplace
-        href: autotaskworkplace-tutorial.md
       - name: Aventri
         href: etouches-tutorial.md
       - name: Avionte Bold SAML Federated SSO
@@ -370,8 +368,6 @@
         href: blue-access-for-members-tutorial.md
       - name: BlueConic
         href: blueconic-tutorial.md
-      - name: BlueJeans
-        href: bluejeans-tutorial.md
       - name: Blue Ocean Brain
         href: blue-ocean-brain-tutorial.md  
       - name: BeyondTrust Remote Support
@@ -574,7 +570,7 @@
         href: clickup-productivity-platform-tutorial.md
       - name: Clockwork Recruiting
         href: clockwork-recruiting-tutorial.md  
-      - name: Cloud Academy
+      - name: Cloud Academy(renamed QA)
         href: cloud-academy-sso-tutorial.md
       - name: Cloud Management Portal for Microsoft Azure
         href: newsignature-tutorial.md
@@ -3380,8 +3376,6 @@
         href: blinq-provisioning-tutorial.md
       - name: BlogIn
         href: blogin-provisioning-tutorial.md
-      - name: BlueJeans
-        href: bluejeans-provisioning-tutorial.md
       - name: Bonusly
         href: bonusly-provisioning-tutorial.md
       - name: Box
@@ -3428,7 +3422,7 @@
         href: clearview-trade-provisioning-tutorial.md
       - name: Clebex
         href: clebex-provisioning-tutorial.md
-      - name: Cloud Academy - SSO
+      - name: Cloud Academy(renamed QA)
         href: cloud-academy-sso-provisioning-tutorial.md
       - name: Coda
         href: coda-provisioning-tutorial.md

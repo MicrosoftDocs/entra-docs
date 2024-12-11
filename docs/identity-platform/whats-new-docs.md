@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: has-adal-ref
-ms.date: 10/01/2024
+ms.date: 12/03/2024
 ms.service: identity-platform
 
 ms.topic: whats-new
@@ -15,6 +15,22 @@ ms.topic: whats-new
 # Microsoft identity platform docs: What's new
 
 Welcome to what's new in the Microsoft identity platform documentation. This article lists new articles that were added or had significant updates in the last three months.
+
+## November 2024
+
+### New articles
+
+- [Configure a custom email provider for one time passcode send events (preview)](custom-extension-email-otp-get-started.md)
+- [Tutorial: Call an API from an Angular single-page app](tutorial-single-page-apps-angular-call-api.md)
+- [Tutorial: Create an Angular application and prepare it for authentication](tutorial-single-page-apps-angular-prepare-app.md)
+- [Tutorial: Register an Angular application in a Microsoft Entra ID tenant](tutorial-single-page-apps-angular-register-app.md)
+- [Tutorial: Add sign in and sign out in your Angular single-page application](tutorial-single-page-apps-angular-sign-in-users-app.md)
+
+### Updated articles
+
+- [How to use Continuous Access Evaluation enabled APIs in your applications](app-resilience-continuous-access-evaluation.md) - CAE page update with code snippets for MSAL libraries
+- [Single sign-on SAML protocol](single-sign-on-saml-protocol.md) - Added clarity to the content
+- [Signing key rollover in the Microsoft identity platform](signing-key-rollover.md) - Added clarity to the content
 
 ## October 2024
 
@@ -37,10 +53,3 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 - [Overview of shared device mode](msal-shared-devices.md) - Added clarity to the content
 - [Shared device mode for Android devices](msal-android-shared-devices.md) - Added clarity to the content
 - [Tutorial: Add shared-device mode support to your Android application](tutorial-v2-shared-device-mode.md) - Added clarity to the content
-
-## August 2024
-
-### Updated articles
-
-- [OpenID Connect on the Microsoft identity platform](v2-protocols-oidc.md) - SSO Public Client flow updates
-- [Tutorial: Sign in users and call the Microsoft Graph API from an Angular single-page application (SPA) using auth code flow](tutorial-v2-angular-auth-code.md) - Added clarity to the content

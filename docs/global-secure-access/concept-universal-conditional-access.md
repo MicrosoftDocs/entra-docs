@@ -23,7 +23,6 @@ This functionality allows administrators to consistently enforce Conditional Acc
    * The [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access features.
    * The [Conditional Access Administrator](/azure/active-directory/roles/permissions-reference#conditional-access-administrator) to create and interact with Conditional Access policies.
 * The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-* To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 
 ### Known tunnel authorization limitations
 
@@ -46,7 +45,7 @@ With Conditional Access, you can enable access controls and security policies fo
 - Apply Conditional Access policies to your [Private Access apps](how-to-target-resource-private-access-apps.md), such as Quick Access.
 - Enable [Global Secure Access signaling in Conditional Access](how-to-source-ip-restoration.md) so the source IP address is visible in the appropriate logs and reports.
 
-## Internet Access – Universal Conditional Access
+## Internet Access flow diagram
 
 The following example demonstrates how Microsoft Entra Internet Access works when you apply Universal Conditional Access policies to network traffic.
 
@@ -69,7 +68,7 @@ The following flow diagram illustrates Universal Conditional Access targeting in
 |8|Traffic starts being acquired and tunneled to the destination via the Microsoft and Internet Access tunnels.|
 
 > [!NOTE]
-> Target Microsoft apps with Global Secure Access to protect the connection between Microsoft Security Service Edge and the Global Secure Access client. To ensure that users can't bypass the Microsoft Security Service Edge service, create a Conditional Access policy that requires compliant network for your Microsoft 365 Enterprise applications.
+> Target Microsoft apps with Global Secure Access to protect the connection between the Microsoft Security Service Edge and the Global Secure Access client. To ensure that users can't bypass the Microsoft Security Service Edge service, create a Conditional Access policy that requires compliant network for your Microsoft 365 Enterprise applications.
 
 ## User experience
 

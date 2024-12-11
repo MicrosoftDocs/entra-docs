@@ -1,6 +1,6 @@
 ---
 title: Identity Providers
-description: Learn about sign-in and MFA options for customer identity and access management (CIAM) in external tenants, including email, one-time passcodes, Google and Facebook. 
+description: Learn about sign-in and MFA options for customer identity and access management (CIAM) in external tenants, including email, one-time passcodes, Google, Facebook, Apple and custom OIDC.  
  
 author: msmimart
 manager: celestedg
@@ -20,7 +20,7 @@ ms.custom: it-pro, seo-july-2024
 > [!TIP]
 > This article applies to External ID in external tenants. For information about workforce tenants, see [Identity providers for External ID in workforce tenants](../identity-providers.md).
 
-With Microsoft Entra External ID, you can create secure, customized sign-in experiences for your consumer- and business customer-facing apps. In an external tenant, there are several ways for users to sign up for your app. They can create an account using their email and either a password or a one-time passcode. Or, if you enable sign-in with Facebook and Google, they can sign in with their own social account.
+With Microsoft Entra External ID, you can create secure, customized sign-in experiences for your consumer- and business customer-facing apps. In an external tenant, there are several ways for users to sign up for your app. They can create an account using their email and either a password or a one-time passcode. Or, if you enable sign-in with Facebook, Google, Apple or a custom OIDC identity provider, they can sign in with their own account.
 
 This article describes the identity providers that are available for primary authentication when signing up and signing in to apps in external tenants. You can also enhance security by enforcing a multifactor authentication (MFA) policy that requires a second form of verification each time a user signs in ([learn more](concept-multifactor-authentication-customers.md)).
 
@@ -52,9 +52,9 @@ You can also configure options for showing, hiding, or customizing the self-serv
 
 When you [create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md#create-and-customize-a-user-flow), **Email one-time passcode** is one of the local account options.
 
-## Social identity providers: Facebook and Google
+## Social identity providers: Facebook, Google and Apple
 
-For an optimal sign-in experience, federate with social identity providers whenever possible so you can give your customers a seamless sign-up and sign-in experience. In an external tenant, you can allow a customer to sign up and sign in using their own Facebook or Google account. When a customer signs up for your app using their social account, the social identity provider creates, maintains, and manages identity information while providing authentication services to applications.
+For an optimal sign-in experience, federate with social identity providers whenever possible so you can give your customers a seamless sign-up and sign-in experience. In an external tenant, you can allow a customer to sign up and sign in using their own Facebook, Google, or Apple account. When a customer signs up for your app using their social account, the social identity provider creates, maintains, and manages identity information while providing authentication services to applications.
 
 When you enable social identity providers, customers can select from the social identity providers options you make available on the sign-up page. To set up social identity providers in your external tenant, you create an application at the identity provider and configure credentials. You obtain a client or app ID and a client or app secret, which you can then add to your external tenant.
 
@@ -78,6 +78,21 @@ The following screenshots show the sign-in with Facebook experience. In the sign
 
 Learn how to [add Facebook as an identity provider](how-to-facebook-federation-customers.md).
 
+### Apple sign-in (preview)
+
+By setting up federation with Apple, you can allow invited users to sign in to your applications with their own Apple accounts. After you add Apple as one of your application's sign-in options, on the sign-in page, users can sign-in to Microsoft Entra External ID with an Apple account.
+
+The following screenshots show the sign-in with Apple experience. In the sign-in page, users select **Sign-in with Apple**. Then the user is redirected to the Apple identity provider to complete the sign-in.
+Learn how to [add Apple as an identity provider](how-to-apple-federation-customers.md).
+
+## Custom OIDC identity provider (preview)
+
+You can set up a custom OpenID Connect (OIDC) identity provider to enable customers to sign up and sign in to your applications with their own accounts. When a customer signs up for your app using their custom OIDC identity provider, the identity provider creates, maintains, and manages identity information while providing authentication services to applications.
+
+You can also federate your sign-in and sign-up flows with an Azure AD B2C tenant using the OIDC protocol.
+
+Learn how to [set up a custom OIDC identity provider](how-to-custom-oidc-federation-customers.md).
+
 ## Updating sign-in methods
 
 At any time, you can update the sign-in options for an app. For example, you can add social identity providers or change the local account sign-in method.
@@ -92,8 +107,8 @@ The following Microsoft Graph API operations are supported for managing identity
 - To identify the identity providers and authentication methods that are already configured and enabled in the tenant, you call the [List identityProviders](/graph/api/identitycontainer-list-identityproviders) API.
 - To enable a supported identity provider or authentication method, you call the [Create identityProvider](/graph/api/identitycontainer-post-identityproviders) API.
 
-## Next steps
+## Related content
 
-- [Enable multifactor authentication (MFA)](how-to-multifactor-authentication-customers.md)
 - [Add Facebook as an identity provider](how-to-facebook-federation-customers.md)
 - [Add Google as an identity provider](how-to-google-federation-customers.md)
+- [Add Apple as an identity provider](how-to-apple-federation-customers.md)

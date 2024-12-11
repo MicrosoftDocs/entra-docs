@@ -5,7 +5,7 @@ description: Microsoft Entra joined devices can help you to manage devices acces
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: conceptual
-ms.date: 02/26/2024
+ms.date: 11/25/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo

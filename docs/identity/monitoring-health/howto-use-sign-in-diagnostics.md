@@ -185,7 +185,7 @@ This scenario involves a sign-in event that was blocked or interrupted because t
 
 Preventing legacy authentication sign-in is recommended as the best practice for security. Legacy authentication protocols like POP, SMTP, IMAP, and MAPI can't enforce MFA, which makes them preferred entry points for adversaries to attack your organization.
 
-For more information, see [How to block legacy authentication to Microsoft Entra ID with Conditional Access](../conditional-access/block-legacy-authentication.md).
+For more information, see [How to block legacy authentication to Microsoft Entra ID with Conditional Access](../conditional-access/policy-block-legacy-authentication.md).
 
 ### B2B blocked sign-in due to Conditional Access
 

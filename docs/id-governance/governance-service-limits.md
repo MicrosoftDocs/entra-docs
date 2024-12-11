@@ -6,7 +6,7 @@ ms.author: owinfrey
 manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 10/30/2023
+ms.date: 12/10/2024
 
 #CustomerIntent: As a customer, I want to become informed on service limits for offerings within Microsoft Entra ID Governance so that restraints are understood and can be accounted for.
 ---
@@ -20,18 +20,16 @@ This article contains the default usage constraints for the Microsoft Entra ID G
 
 ## Entitlement Management
 
-### Per Tenant
-
 |Feature  |Limit  |
 |---------|---------|
-|Access Packages   |  20,000       |
-|Access Package Assignments     | 300,000        |
-|Access Package Assignments from a given automatic assignment policy      | 15,000        |
-|Catalogs     |   7,500      |
-|Connected Organizations     |  2,500       |
-|Custom extensions     |  500       |
-|Policies     |  25,000       |
-|Requests (Within 3 months)     |  200,000       |
+|Access Packages   |  20,000 per tenant      |
+|Access Package Assignments     | 300,000 per tenant        |
+|Access Package Assignments from a given automatic assignment policy      | 15,000 per automatic assignment policy       |
+|Catalogs     |   7,500 per tenant      |
+|Connected Organizations     |  2,500 per tenant       |
+|Custom extensions     |  500 per tenant       |
+|Policies     |  25,000 per tenant       |
+|Requests (Within 3 months)     |  200,000 per tenant       |
 
 ## Lifecycle Workflows
 
