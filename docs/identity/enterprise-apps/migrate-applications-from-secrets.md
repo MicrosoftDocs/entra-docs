@@ -43,7 +43,7 @@ Managed identities are a secure way to authenticate applications to cloud servic
 
 For applications that cannot be migrated in the short term, rotate the secret and ensure they use secure practices such as using Azure Key Vault. Azure Key Vault helps you safeguard cryptographic keys and secrets used by cloud applications and services. Keys, secrets, and certificates are protected without you're having to write the code yourself, and you can easily use them from your applications. To learn more see, [Azure Key Vault](/azure/key-vault/general/developers-guide).  
     
-### Deploy conditional access policies for workload identities
+### Deploy Conditional Access policies for workload identities
 
 Conditional Access for workload identities enables blocking service principals from outside of known public IP ranges, based on risk detected by Microsoft Entra ID Protection or in combination with authentication contexts. To learn more see, [Conditional Access for workload identities](../conditional-access/workload-identity.md). 
 
