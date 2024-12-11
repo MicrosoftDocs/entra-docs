@@ -148,11 +148,18 @@ Administrators might choose to make further changes to these policies by duplica
 
 ### What if I use a different solution for multifactor authentication?
 
-Multifactor authentication completed via federation or the recently announced external authentication methods satisfies the requirements of the managed policy.
+Multifactor authentication completed via the recently announced [external authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage) satisfies the MFA requirements of the Microsoft-managed policies.
+
+Multifactor authentication completed via federated IdP may satisfy Microsoft Entra ID MFA requirements depending on your tenant’s configuration of the IdP. For more information, see [Satisfy Microsoft Entra ID multifactor authentication (MFA) controls with MFA claims from a federated IdP](/entra/identity/authentication/how-to-mfa-expected-inbound-assertions).
 
 ### What if I use Certificate-Based Authentication?
 
-Depending on your tenant’s configuration of Certificate-Based Authentication (CBA), it can function as either single-factor or multifactor. If your organization has CBA configured as single-factor, other configuration and registration of other authentication methods might be required for users to complete MFA. For more information, see [MFA with single factor certificate-based authentication](/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#mfa-with-single-factor-certificate-based-authentication).
+Depending on your tenant’s configuration of Certificate-Based Authentication (CBA), it can function as either single-factor or multifactor.
+* If your organization has CBA configured as single-factor, users will need to use a second authentication method to satisfy MFA. For more information on the allowed combinations of authentication methods to MFA with single-factor CBA, see [MFA with single factor certificate-based authentication](/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#mfa-with-single-factor-certificate-based-authentication).
+* If your organization has CBA configured as multifactor, users will be able to complete MFA with their CBA authentication method.
+
+> [!NOTE]
+> CBA is considered an MFA-capable method in Microsoft Entra ID so users in scope of CBA authentication method will be required to use MFA to register new authentication methods. To register MFA for single-factor CBA users without other registered authentication methods, please see [Options to get MFA capability with Single factor certificates](/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#options-to-get-mfa-capability-with-single-factor-certificates).
 
 ### What if I use custom controls?
 
