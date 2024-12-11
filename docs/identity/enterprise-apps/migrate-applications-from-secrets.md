@@ -16,7 +16,7 @@ ms.subservice: enterprise-apps
 
 # Migrate applications away from secret-based authentication
 
-Applications that use client secrets might store them in configuration files, hardcode them in scripts, or risk their exposure in other ways. Secret management complexities make secrets susceptible to leaks and attractive to attackers. Client secrets, when exposed, provide attackers with legitimate credentials to blend their activities with legitimate operations, making it easier to bypass security controls. If an attacker compromises an application’s client secret, they can escalate their privileges within the system, leading to broader access and control, depending on the permissions of the application. Replacing a compromised certificate can be incredibly time-consuming and disruptive. 
+Applications that use client secrets might store them in configuration files, hardcode them in scripts, or risk their exposure in other ways. Secret management complexities make secrets susceptible to leaks and attractive to attackers. Client secrets, when exposed, provide attackers with legitimate credentials to blend their activities with legitimate operations, making it easier to bypass security controls. If an attacker compromises an application’s client secret, they can escalate their privileges within the system, leading to broader access and control, depending on the permissions of the application. Replacing a compromised certificate can be incredibly time-consuming and disruptive. For these reasons Microsoft recommend that all of our customers move away password or certificate-based authentication to token-based authentication. 
 
 In this article, we will highlight resources and best practices to help you migrate your applications away from secret-based authentication to more secure and user-friendly authentication methods.
 
@@ -45,7 +45,11 @@ For applications that cannot be migrated in the short term, rotate the secret an
     
 ### Deploy conditional access policies for workload identities
 
-Conditional Access for workload identities enables blocking service principals from outside of known public IP ranges, based on risk detected by Microsoft Entra ID Protection or in combination with authentication contexts. To learn more see, [Conditional Access for workload identities](../conditional-access/workload-identity.md).  
+Conditional Access for workload identities enables blocking service principals from outside of known public IP ranges, based on risk detected by Microsoft Entra ID Protection or in combination with authentication contexts. To learn more see, [Conditional Access for workload identities](../conditional-access/workload-identity.md). 
+
+> [!IMPORTANT]
+> Workload Identities Premium licenses are required to create or modify Conditional Access policies scoped to service principals.
+> In directories without appropriate licenses, existing Conditional Access policies for workload identities will continue to function, but can't be modified. For more information, see [Microsoft Entra Workload ID](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-identities#office-StandaloneSKU-k3hubfz).   
 
 ### Implement secret scanning
 
@@ -54,6 +58,9 @@ Secret scanning for your repository checks for any secrets that may already exis
 ### Deploy application authentication policies to enforce secure authentication practices.
 
 Application management policies allow IT admins to enforce best practices for how apps in their organizations should be configured. For example, an admin might configure a policy to block the use or limit the lifetime of password secrets. To learn more see, [Microsoft Entra application management policies API overview](/graph/api/resources/applicationauthenticationmethodpolicy).  
+
+> [!IMPORTANT]
+> Premium licenses are required to implement application authentication policy management, for more information see [Microsoft Entra licensing](../../fundamentals/licensing.md).   
 
 ### Use federated identity for service accounts
 
@@ -69,7 +76,7 @@ This process should include regular security assessments, vulnerability scanning
 
 ## Related content
 
-- [Develop using Zero Trust principles](https://learn.microsoft.com/security/zero-trust/develop/overview).
-- [Zero Trust identity and access management development best practices](https://learn.microsoft.com/security/zero-trust/develop/identity-iam-development-best-practices)
+- [Develop using Zero Trust principles](/security/zero-trust/develop/overview).
+- [Zero Trust identity and access management development best practices](/security/zero-trust/develop/identity-iam-development-best-practices)
 
 
