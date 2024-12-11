@@ -72,6 +72,12 @@ In the My Apps portal, to search for an application, enter an application name i
 
 Applications can be hidden. For more information, see [Hide an Enterprise application](hide-application-from-user-portal.md).
 
+## Switch organization
+
+If it is a guest\invitation scenario, where a user logins to login.microsoftonline.com endpoint first, and then tries Switch Organization to manage a B2C or CIAM tenant, please ensure the user has at least a basic directory role assigned in the B2C or CIAM tenant. If the user has no any role assigned then it may receive the following error:
+
+AADSTS500208: The domain is not a valid login domain for the account type.
+
 ## Assign company branding
 
 In the Microsoft Entra admin center, define the logo and name for the application to represent company branding in the My Apps portal. The banner logo appears at the top of the page, such as the following Contoso demo logo.
