@@ -208,8 +208,8 @@ As mentioned, custom extensions created with the request workflow type, which in
 
 The following is an example to resume the processing of an access package assignment request by denying the request that's waiting for a callback. A request can't be denied at the **assignmentRequestCreated** stage of the callout.
 
-    > [!TIP]
-    > If you resume the access package assignment request via Azure Logic Apps disable the [asynchronous pattern](/azure/connectors/connectors-native-http?tabs=standard#asynchronous-request-response-behavior)
+> [!TIP]
+> If you resume the access package assignment request via Azure Logic Apps disable the [asynchronous pattern](/azure/connectors/connectors-native-http?tabs=standard#asynchronous-request-response-behavior)
 
 ``` http
 POST https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/accessPackageAssignmentRequests/9e60f18c-b2a0-4887-9da8-da2e30a39d99/resume
