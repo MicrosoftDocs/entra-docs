@@ -159,7 +159,7 @@ Depending on your tenant’s configuration of Certificate-Based Authentication (
 * If your organization has CBA configured as multifactor, users will be able to complete MFA with their CBA authentication method.
 
 > [!NOTE]
-> CBA is considered an MFA-capable method in Microsoft Entra ID so users in scope of CBA authentication method will be required to use MFA to register new authentication methods. To register MFA for single-factor CBA users without other registered authentication methods, please see [Options to get MFA capability with Single factor certificates](/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#options-to-get-mfa-capability-with-single-factor-certificates).
+> CBA is considered an MFA-capable method in Microsoft Entra ID so users in scope of CBA authentication method will be required to use MFA to register new authentication methods. To register MFA for single-factor CBA users without other registered authentication methods, please see [Options to get MFA capability with single factor certificates](/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#options-to-get-mfa-capability-with-single-factor-certificates).
 
 ### What if I use custom controls?
 
