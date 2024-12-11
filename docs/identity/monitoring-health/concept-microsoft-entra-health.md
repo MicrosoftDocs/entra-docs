@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 10/14/2024
+ms.date: 12/10/2024
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -14,11 +14,28 @@ ms.reviewer: sarbar
 
 # What is Microsoft Entra Health?
 
-Microsoft Entra Health (preview) provides you with observability of your Microsoft Entra tenant through continuous low-latency health monitoring and look-back reporting. The low-latency health monitoring solution includes a set of health metric data streams (signals) with built-in alerts designed to help IT operations teams maintain high levels of uptime and service on common Microsoft Entra scenarios. The monthly look-back solution shows the core authentication availability of Microsoft Entra ID each month.
+Microsoft Entra Health provides you with observability of your Microsoft Entra tenant through continuous low-latency health monitoring and look-back reporting on Service Level Agreements (SLA). The low-latency health monitoring solution includes a set of health metric data streams, known as signals, with built-in alerts designed to help IT operations teams maintain high levels of uptime and service on common Microsoft Entra scenarios. The SLA Attainment is a monthly look-back solution that shows the core authentication availability of Microsoft Entra ID each month.
 
-## How Microsoft Entra health monitoring (preview) works
+The Scenario monitoring and SLA Attainment features are currently in preview. For more information about preview features, see [Microsoft Entra ID preview features](~/fundamentals/whats-new.md).
+
+## Access Microsoft Entra Health
+
+Scenario monitoring and SLA Attainment are available in the Microsoft Entra Health area of the Microsoft Entra admin center.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
+1. Browse to **Identity** > **Monitoring & health** > **Health**.
+
+The page opens to the SLA Attainment page.
+
+![Screenshot of the Microsoft Entra Health landing page.](media/concept-microsoft-entra-health/identity-health-landing-page-attainment.png)
+
+## How Microsoft Entra Scenario monitoring (preview) works
+
+Scenario Monitoring in Microsoft Entra Health is built on two key components: signals and alerts. Here's a high-level look at how they both work together:
 
 1. Metrics and data are gathered, processed, and converted into meaningful signals displayed in Microsoft Entra Health monitoring.
+
+    ![Screenshot of the MFA scenario monitoring data.](media/concept-microsoft-entra-health/scenario-monitoring-MFA.png)
 
 1. These signals are fed into our anomaly detection service.
 
@@ -57,12 +74,6 @@ The service provides alerts for the following scenarios:
 
 At this time, alerts are only available through the Microsoft Graph API. With the Microsoft Graph health monitoring alerts APIs, you can view the alerts, configure email notifications, and update the state of the alert. You can run the API calls on a recurring cadence (for example, daily or hourly) or configure email notifications. For more information, see [How to use Microsoft Entra scenario health alerts](howto-use-health-scenario-alerts.md) and the [Microsoft Graph health monitoring alerts API documentation](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true).
 
-## SLA attainment
+## Next steps
 
-In addition to publicly reporting global SLA performance, Microsoft Entra ID provides tenant-level SLA performance for organizations with at least 5000 monthly active users. The Service Level Agreement (SLA) attainment is the user authentication availability for Microsoft Entra ID. For the current availability target and details on how SLA is calculated, see [SLA for Microsoft Entra ID](https://azure.microsoft.com/support/legal/sla/active-directory/v1_1/).
 
-Hover your mouse over the bar for a month to view the percentage for that month. A table with the same details appears below the graph.
-
-You can also view SLA attainment using [Microsoft Graph APIs](/graph/api/resources/azureadauthentication?view=graph-rest-beta&preserve-view=true).
-
-![Screenshot of the SLA attainment report.](media/concept-microsoft-entra-health/sla-attainment.png)
