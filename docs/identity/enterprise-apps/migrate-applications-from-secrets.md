@@ -76,7 +76,7 @@ This process should include regular security assessments, vulnerability scanning
 
 ## Related content
 
-- [Develop using Zero Trust principles](https://learn.microsoft.com/security/zero-trust/develop/overview).
-- [Zero Trust identity and access management development best practices](https://learn.microsoft.com/security/zero-trust/develop/identity-iam-development-best-practices)
+- [Develop using Zero Trust principles](/security/zero-trust/develop/overview).
+- [Zero Trust identity and access management development best practices](/security/zero-trust/develop/identity-iam-development-best-practices)
 
 
