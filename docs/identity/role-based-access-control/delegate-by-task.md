@@ -195,6 +195,14 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Revoke license | [License Administrator](permissions-reference.md#license-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
 > | Try or buy subscription | [Billing Administrator](permissions-reference.md#billing-administrator) |  |
 
+## Lifecycle Workflows
+
+> [!div class="mx-tableFixed"]
+> | Task | Least privileged role | Additional roles |
+> | ---- | --------------------- | ---------------- |
+> | Create a workflow | [Lifecycle workflows Administrator](permissions-reference.md#lifecycle-workflows-administrator) |  |
+> | Add a custom extension to a workflow | [Lifecycle workflows Administrator](permissions-reference.md#lifecycle-workflows-administrator). You must also have either the [Logic App contributor](azure/role-based-access-control/built-in-roles/integration#logic-app-contributor) or [Owner](azure/role-based-access-control/built-in-roles/integration#logic-app-operator) Azure Resource Manager role.  |  |
+
 ## Microsoft Entra Health
 
 > [!div class="mx-tableFixed"]
