@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/14/2024
+ms.date: 12/11/2024
 
 ms.author: justinha
 author: justinha
@@ -174,7 +174,7 @@ This example shows how to delete a token with token ID 3dee0e53-f50f-43ef-85c0-b
 DELETE https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices/3dee0e53-f50f-43ef-85c0-b44689f2d66d
 ```
 
-## Scenario: Admin creates and assigns a token that a user activates
+## Scenario: Admin creates and assigns a hardare OATH token that a user activates
 
 In this scenario, an Authentication Policy Administrator creates and assigns a token, and then a user can activate it on their Security info page, or by using Microsoft Graph Explorer. When you assign a token, you can share steps for the user to sign in to [Security info](https://aka.ms/mysecurityinfo) to activate their token. They can choose **Add sign-in method** > **Hardware token**. They need to provide the hardware token serial number, which is typically on the back of the device. 
 
@@ -258,7 +258,7 @@ Here are steps users can follow to self-activate their hardware OATH token by us
    }
    ```
 
-## Scenario: Admin creates token that users self-assign and activate
+## Scenario: Admin creates multiple hardware OATH tokens in bulk that users self-assign and activate
 
 In this scenario, an Authentication Administrator creates tokens without assignment, and users self-assign and activate the tokens. You can upload new tokens to the tenant in bulk. Users can sign in to [Security info](https://aka.ms/mysecurityinfo) to activate their token. They can choose **Add sign-in method** > **Hardware token**. They need to provide the hardware token serial number, which is typically on the back of the device. 
 
@@ -294,9 +294,11 @@ PATCH https://graph.microsoft.com/beta/directory/authenticationMethodDevices/har
 
 
 
-## Troubleshooting
+## Troubleshooting hardware OATH token issues
 
-### User has two tokens with the same SerialNumber
+This section covers common 
+
+### User has two tokens with the same serial number
 
 A user might have two instances of the same hardware OATH token registered as authentication methods. This happens if the legacy token isn't removed from **OATH tokens (Preview)** in the Microsoft Entra admin center after it's uploaded by using Microsoft Graph.
 
