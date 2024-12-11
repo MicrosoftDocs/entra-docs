@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/14/2024
+ms.date: 12/11/2024
 
 ms.author: justinha
 author: justinha
@@ -258,7 +258,7 @@ Here are steps users can follow to self-activate their hardware OATH token by us
    }
    ```
 
-## Scenario: Admin creates token that users self-assign and activate
+## Scenario: Admin creates tokens in bulk that users self-assign and activate
 
 In this scenario, an Authentication Administrator creates tokens without assignment, and users self-assign and activate the tokens. You can upload new tokens to the tenant in bulk. Users can sign in to [Security info](https://aka.ms/mysecurityinfo) to activate their token. They can choose **Add sign-in method** > **Hardware token**. They need to provide the hardware token serial number, which is typically on the back of the device. 
 
