@@ -85,6 +85,8 @@ items:
     href: copilot-entra-risky-user-summarization.md  
   - name: Investigate incidents using Microsoft Security Copilot
     href: copilot-security-entra-investigate-incident.md 
+  - name: Investigate app risk using Microsoft Copilot for Security
+    href: copilot-security-entra-investigate-risky-apps.md
   - name: Responsible AI FAQ for Security Copilot in Microsoft Entra
     href: copilot-security-entra-responsible-ai-faq.md
 - name: Quick security wins
