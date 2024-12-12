@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: overview
-ms.date: 09/19/2024
+ms.date: 12/12/2024
 ms.service: global-secure-access
 ms.custom: references_regions
 ---
@@ -61,11 +61,11 @@ Remote users connect to private apps across hybrid and multicloud environments, 
 - Provide a seamless end-user experience by acquiring network traffic from the desktop client and deploying side-by-side with your existing non-Microsoft SSE solutions.
 
 ## Licensing overview
-Microsoft Entra Internet Access, Microsoft Entra Internet Access for Microsoft Services, and Microsoft Entra Private Access are now generally available.
+Microsoft Entra Internet Access, Microsoft Entra Internet Access for Microsoft services, and Microsoft Entra Private Access are now generally available. 
 
-- Microsoft Entra Internet Access for Microsoft Services is included in Microsoft Entra ID P1 or Microsoft Entra ID P2 license.  
-- Microsoft Entra Internet Access is available standalone or as part of the Microsoft Entra Suite.
-- Microsoft Entra Private Access is available standalone or as part of the Microsoft Entra Suite.
+- Microsoft Entra Internet Access capabilities are included in the Microsoft Entra Suite license and standalone. Microsoft Entra Internet Access helps you secure access to all internet and SaaS applications. 
+- Microsoft Entra Private Access capabilities are included in the Microsoft Entra Suite license and standalone. Microsoft Entra Private Access elevates network security with a Zero Trust network (ZTNA) solution. 
+- Microsoft Entra Internet Access for Microsoft services capabilities are included in Microsoft Entra ID P1 or Microsoft Entra ID P2 license. Microsoft Entra Internet Access for Microsoft services enhances Microsoft Entra ID capabilities with direct connectivity to supported Microsoft services, improving security, performance, and resilience.. 
 
 Prerequisite to use Microsoft Entra Private Access and Microsoft Entra Internet Access is Microsoft Entra ID P1 or Microsoft Entra ID P2.
 
