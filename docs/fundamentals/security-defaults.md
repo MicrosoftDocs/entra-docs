@@ -48,11 +48,11 @@ To help protect organizations, we're always working to improve the security of M
 
 After this setting is enabled, all users in the organization will need to register for multifactor authentication. To avoid confusion, refer to the email you received and alternatively you can [disable security defaults](#disabling-security-defaults) after it's enabled.
 
-To configure security defaults in your directory, you must be assigned at least the [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) role. By default the first account in any directory is assigned a higher privileged role known as [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator). 
+To configure security defaults in your directory, you must be assigned at least the [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role. By default the first account in any directory is assigned a higher privileged role known as [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator). 
 
 To enable security defaults:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Identity** > **Overview** > **Properties**.
 1. Select **Manage security defaults**.
 1. Set **Security defaults** to **Enabled**.
@@ -176,7 +176,7 @@ Organizations that choose to implement Conditional Access policies that replace 
 
 To disable security defaults in your directory:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](/entra/identity/role-based-access-control/permissions-reference#conditional-access-administrator).
 1. Browse to **Identity** > **Overview** > **Properties**.
 1. Select **Manage security defaults**.
 1. Set **Security defaults** to **Disabled (not recommended)**.
