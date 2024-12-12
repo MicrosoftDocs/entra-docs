@@ -17,7 +17,7 @@ ms.reviewer: nigu
 This article shows an example of how to migrate a classic policy that requires **Multifactor authentication** for a cloud app.
 
 > [!TIP]
-> As of the August 2023 Intune service release (2308), classic Conditional Access policies are no longer created for the Microsoft Defender for Endpoint connector. If your tenant has a classic Conditional Access policy that was previously created for integration with Microsoft Defender for Endpoint, it can be deleted. 
+> As of the August 2023 Intune service release (2308), classic Conditional Access policies are no longer created for the [Microsoft Defender for Endpoint connector](/mem/intune/protect/advanced-threat-protection-configure#connect-microsoft-defender-for-endpoint-to-intune). If your tenant has a classic Conditional Access policy that was previously created for integration with Microsoft Defender for Endpoint, it can be deleted. 
 
 ![Classic policy details requiring MFA for Salesforce app](./media/policy-migration/33.png)
 
