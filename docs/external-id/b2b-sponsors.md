@@ -76,7 +76,7 @@ When you invite a guest user, you became their sponsor by default. If you need t
 
    :::image type="content" source="media/b2b-sponsors/multiple-sponsors.png" alt-text="Screenshot of multiple sponsors option.":::
 
-1. To add or remove sponsors, select **Edit**, select, or remove the users or groups and select **Save** on the **Job Information** tab.
+1. To add or remove sponsors, select **Edit**, select or remove the users or groups, and select **Save** on the **Job Information** tab.
 1. If the guest user doesn't have a sponsor, select **Add sponsors**.
 
    :::image type="content" source="media/b2b-sponsors/add-sponsors-existing-user.png" alt-text="Screenshot of adding a sponsor to an existing user.":::
