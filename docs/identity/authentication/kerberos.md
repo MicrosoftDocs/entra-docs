@@ -13,9 +13,9 @@ ms.reviewer:
 
 # Microsoft Entra Kerberos overview
 
-Kerberos is a network authentication protocol designed to provide strong authentication for client-server applications by using secret-key cryptography. Developed by MIT, Kerberos works by assigning a unique key, known as a Ticket Granting Ticket (TGT), to each user. This TGT is used to request access to various services within a network without repeatedly transmitting the user's password. The protocol ensures secure communication by encrypting the tickets and authenticating both the user and the service, thereby preventing eavesdropping and replay attacks.
+Kerberos is a network authentication protocol designed to provide strong authentication for client-server applications by using secret-key cryptography. Developed by MIT, Kerberos works by assigning a unique key, known as a Ticket Granting Ticket (TGT), to each user. This TGT is used to request access to various services within a network without repeatedly transmitting the user's password. The protocol ensures secure communication by encrypting the tickets and authenticating both the user and the service, preventing eavesdropping and replay attacks.
 
-**Microsoft Entra Kerberos** enhances traditional Kerberos authentication by enabling Microsoft Entra ID to act as the Key Distribution Center (KDC) in the cloud. This allows hybrid identities—users synchronized from on-premises Active Directory Domain Services (AD DS)—to seamlessly authenticate to Azure services without the need for on-premises domain controllers. By using Microsoft Entra ID as the KDC, organizations can provide secure access to Azure resources while benefiting from modern authentication methods like multifactor authentication (MFA), passwordless authentication, and conditional access policies.
+**Microsoft Entra Kerberos** enhances traditional Kerberos authentication by enabling Microsoft Entra ID to act as the Key Distribution Center (KDC) in the cloud. This allows hybrid identities—users synchronized from on-premises Active Directory Domain Services (AD DS) to authenticate to Azure services without the need for on-premises domain controllers. By using Microsoft Entra ID as the KDC, organizations can provide secure access to Azure resources while benefiting from modern authentication methods like multifactor authentication (MFA), passwordless authentication, and conditional access policies.
 
 > [!NOTE]
 > For information on Kerberos in Windows, review [Kerberos authentication overview](/windows-server/security/kerberos/kerberos-authentication-overview)
@@ -168,7 +168,7 @@ This process relies on the client’s ability to communicate with the on-premise
     - Ensure Windows clients are up to date and configured to authenticate using Microsoft Entra Kerberos.
 
     > [!NOTE]
-    > Clients will need to be [configured to use a KDC proxy](https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/winauth-azuread-setup-incoming-trust-based-flow?view=azuresql#configure-the-group-policy-object-gpo)
+    > Clients will need to be [configured to use a KDC proxy](https://learn.microsoft.com/azure/azure-sql/managed-instance/winauth-azuread-setup-incoming-trust-based-flow?view=azuresql#configure-the-group-policy-object-gpo)
 
 4. **Manage Service Principals**:
     - Monitor and rotate service principal passwords as required.
