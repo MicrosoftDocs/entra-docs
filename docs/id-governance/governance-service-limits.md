@@ -21,7 +21,7 @@ This article contains the default usage constraints for the Microsoft Entra ID G
 ## Entitlement Management
 
 > [!Tip]
-> We recommend that access packages contain more than one resource role and are modeled on the basis of departments, job functions, projects or a combination of these.
+> We recommend that access packages contain more than one resource role and are modeled on the basis of departments, job functions, locations, projects or a combination of these.
 
 |Feature  |Limit  |
 |---------|---------|
