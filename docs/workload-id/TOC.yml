@@ -27,6 +27,8 @@
         href: /graph/api/resources/federatedidentitycredentials-overview.md?toc=/entra/identity/workload-id/TOC.json&bc=/entra/identity/workload-id/breadcrumb/toc.json
       - name: Flexible federated identity credentials
         href: workload-identities-flexible-federated-identity-credentials.md
+      - name: Set up a Flexible Federated identity credential
+        href: workload-identities-set-up-flexible-federated-identity-credential.md
 - name: How-to guides
   items:
   - name: Connect workloads without managing secrets
