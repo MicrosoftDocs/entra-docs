@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 12/15/2024
+ms.date: 12/12/2024
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -15,7 +15,7 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 # Microsoft Entra cmdlets for configuring group settings
 
-This article contains instructions for using PowerShell cmdlets to create and update groups in Microsoft Entra ID, part of Microsoft Entra. This content applies only to Microsoft 365 groups (sometimes called unified groups).
+This article contains instructions for using PowerShell cmdlets to create and update groups in Microsoft Entra ID, part of Microsoft Entra. This content applies only to Microsoft 365 groups.
 
 > [!IMPORTANT]
 > Some settings require a Microsoft Entra ID P1 license. For more information, see the [Template settings](#template-settings) table.
@@ -26,10 +26,8 @@ Microsoft 365 groups settings are configured using a Settings object and a Setti
 
 The cmdlets are part of the [Microsoft Graph PowerShell](/powershell/microsoftgraph/) module. For instructions how to download and install the module on your computer, see [Install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation).
 
-[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
-
 >[!Note]
->With the settings in place to restrict the addition of guests to Microsoft 365 Groups, administrators will still add guest users to Microsoft 365 Groups. The setting will restrict non-admin users from adding guest users to Microsoft 365 groups.
+>Even with the restrictions enabled to prevent the addition of guests to Microsoft 365 groups, administrators can still add guest users. The restriction only applies to non-admin users.
 
 ## Install PowerShell cmdlets
 
