@@ -16,7 +16,7 @@ ms.reviewer: sarbar
 
 # How to configure email notifications for Microsoft Entra Health monitoring alerts (preview)
 
-Microsoft Entra Health provides tenant-level monitoring of several key scenarios. To ensure timely response to changes in your tenant's health, you can configure email notifications for alerts.
+Microsoft Entra Health provides tenant-level metrics and signals for several key identity scenarios. This data can be reviewed regularly to gain a better understanding of your tenant's health. Because these signals are also fed into an anomaly detection service, you can also configure email notifications for when an alert is triggered.
 
 This article describes how to configure email notifications for Microsoft Entra Health monitoring alerts.
 

@@ -15,7 +15,9 @@ ms.reviewer: sarbar
 
 # How to investigate Microsoft Entra Health monitoring alerts (preview)
 
-Microsoft Entra Health monitoring provides the ability to monitor the health of your Microsoft Entra tenant through a set of health metrics and intelligent alerts. Health metrics are fed into our anomaly detection service, which uses machine learning to understand the patterns for your tenant. When the anomaly detection service identifies a significant change in one of the tenant-level patterns, it triggers an alert. You can receive email notifications when a potential issue or failure condition is detected within the health scenarios. For more information on Microsoft Entra Health, see [What is Microsoft Entra Health](concept-microsoft-entra-health.md).
+Microsoft Entra Health monitoring provides the ability to monitor the health of your Microsoft Entra tenant through a set of health metrics and intelligent alerts. Health metrics are fed into our anomaly detection service, which uses machine learning to understand the patterns for your tenant. When the anomaly detection service identifies a significant change in one of the tenant-level patterns, it triggers an alert.
+
+The signals and alerts provided by Microsoft Entra Health provide you with the starting point for investigating potential issues in your tenant. Because there's a wide range of scenarios and even more data points to consider, it's important to understand how to investigate these alerts effectively.
 
 This article provides guidance on how to configure email notifications for alerts.
 
@@ -42,7 +44,7 @@ There are different roles, permissions, and license requirements to view health 
 
 ## Access Microsoft Entra Health
 
-You can view the Microsoft Entra Health service level agreement (SLA) attainment report and the health monitoring signals from the Microsoft Entra admin center. You can also view these data streams, and the public preview of health monitoring alerts, using [Microsoft Graph APIs](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true).
+You can view the Microsoft Entra Health monitoring signals from the Microsoft Entra admin center. You can also view these data streams, and the public preview of health monitoring alerts, using [Microsoft Graph APIs](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true).
 
 1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 
@@ -55,12 +57,13 @@ You can view the Microsoft Entra Health service level agreement (SLA) attainment
 1. Select **View details** for the scenario you wish to investigate.
     - The default view is the last seven days, but you can adjust the date range to 24 hours, seven days, or one month.
     - The data is updated every 15 minutes.
+    - We recommend reviewing these signals on a regular schedule so that you can recognize your tenant's trends and patterns.
 
     ![Screenshot of the sign-ins requiring MFA scenario.](media/howto-use-health-scenario-alerts/scenario-monitoring-MFA.png)
 
 ## Investigate the alert and signals
 
-With the email notifications configured, you and your team can more effectively monitor the health of these scenarios. When you receive an alert, you typically need to investigate the following data sets:
+With the email notifications configured, you and your team can more effectively monitor the health of these scenarios. When you receive an alert, or if you see a change to a pattern you suspect might need investigation, you typically need to investigate the following data sets:
 
 - **Alert impact**: The portion of the response after `impacts` quantifies the scope and summarizes impacted resources. These details include the `impactCount` so you can determine how widespread the issue is.  
 - **Alert signals**: The data stream, or health signal, that caused the alert. A query is provided in the response for further investigation.
@@ -109,7 +112,8 @@ After gathering all the data related to the scenario, you need to consider possi
 
 We recommend looking at the alerts and health monitoring data regularly to identify trends and potential issues before they become widespread problems. 
 
-## Next steps
+## Related content
 
-- [Troubleshoot sign-in problems with Conditional Access](../conditional-access/troubleshoot-conditional-access.md)
-- [Use audit logs to troubleshoot Conditional Access policy changes](../conditional-access/troubleshoot-policy-changes-audit-log.md)
+- [Sign-ins requiring a compliant or managed device](scenario-health-sign-ins-compliant-managed-device.md)
+- [Sign-ins requiring multifactor authentication (MFA)](scenario-health-sign-ins-mfa.md)
+- [Microsoft Graph Health monitoring alerts API documentation](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true)
