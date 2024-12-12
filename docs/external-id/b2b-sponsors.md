@@ -4,7 +4,7 @@ description: Shows how an admin can add sponsors to guest users in Microsoft Ent
 
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 12/06/2024
+ms.date: 12/12/2024
 
 ms.author: cmulligan
 author: csmulligan
@@ -86,15 +86,6 @@ When you invite a guest user, you became their sponsor by default. If you need t
 ## Edit the Sponsors field with PowerShell
 
 You can manage the **Sponsors** field for all existing users using the [Update-MsIdInvitedUserSponsorsFromInvitedBy](https://azuread.github.io/MSIdentityTools/commands/Update-MsIdInvitedUserSponsorsFromInvitedBy) PowerShell script in the [Microsoft Identity Tools module](https://azuread.github.io/MSIdentityTools). The script updates the sponsors attribute to include the user who initially invited them to the tenant using the `InvitedBy` property.
-
-## Manage access reviews with sponsors
-
-You can initiate an [access review](/entra/id-governance/access-reviews-overview), specifying sponsors as the reviewers. These sponsors can then perform the [review](/entra/id-governance/perform-access-review) using the My Access portal, where they evaluate user access to resources.
-Sponsors can approve, deny, or take no action based on the recommendations during the review. They can see sign-in activity recommendations, accepting them or manually making decisions.
-
-After the review, sponsors submit their decisions. If uncertain about a user's access, they can select [Don’t know](/entra/id-governance/perform-access-review#manually-review-access-for-one-or-more-users)  allowing the user to retain access while recording this uncertainty.
-
-Finally, you can audit and apply decisions by reviewing results and downloading [audit logs](/entra/identity/monitoring-health/concept-audit-logs). This helps you understand reviewer decisions and either apply them or keep records of the review.
 
 ## Related content
 
