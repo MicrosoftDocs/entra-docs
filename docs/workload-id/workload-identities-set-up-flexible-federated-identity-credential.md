@@ -1,5 +1,5 @@
 ---
-title: Set up Flexible Federated identity credential (preview)
+title: Set up a Flexible Federated identity credential (preview)
 description: Learn how to set up a Flexible Federated identity credential in the Azure portal or Microsoft Graph Explorer.
 author: cilwerner
 manager: CelesteDG
@@ -12,19 +12,16 @@ ms.reviewer: ludwignick
 #Customer intent: I want to know how to set up a Flexible Federated identity credential in the Azure portal or Microsoft Graph Explorer.
 ---
 
-# How to set up a Flexible Federated identity credentials
+# Set up a Flexible Federated identity credential (preview)
 
-> [!NOTE]
->
-> This article is a work in progress and may be removed
+This article provides a guide on how to set up a Flexible Federated identity credential in the Azure portal or Microsoft Graph Explorer. Flexible federated identity credentials are an advanced feature of Microsoft Entra Workload ID that enhance the existing federated identity credential model.
 
-This article provides a guide on how to set up a Flexible Federated identity credential in the Azure portal or Microsoft Graph Explorer.
+## Prerequisites
 
-## Preqrequisites
+- An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- [Create an app registration](~/identity-platform/quickstart-register-app.md) or [managed identity](/entra/identity/managed-identities-azure-resources/overview) in Microsoft Entra ID.  Grant your app access to the Azure resources targeted by your external software workload.
 
-- An Azure subscription
-- An application registration in Microsoft Entra ID
-
+## Setting up federated identity credentials through Microsoft Graph
 
 To accommodate the flexible federated identity credential functionality, the `federatedIdentityCredentials` resource is being extended with a new `claimsMatchingExpression` property. In addition to this, the `subject` property is now nullable. The `claimsMatchingExpression` and `subject` properties have been made mutually exclusive, so you cannot define both within a federated identity credential.
 
@@ -34,7 +31,6 @@ To accommodate the flexible federated identity credential functionality, the `fe
 - name : A unique string to identify the credential. This property is an alternate key and the value can be used to reference the federated identity credential via the [GET](/graph/api/federatedidentitycredential-get) and [UPSERT](/graph/api/federatedidentitycredential-upsert) operations. 
 - claimsMatchingExpression : a new complex type containing two properties, `value` and `languageVersion`. Value is used to define the expression, and `languageVersion` is used to define the version of the flexible federated identity credential expression language (FFL) being used. `languageVersion` should always be set to 1. If `claimsMatchingExpression` is defined, `subject` must be set to null. 
 
-
 ## Set up a Flexible Federated identity credential
 
 ### [Azure portal](#tab/azure-portal)
@@ -43,12 +39,17 @@ To accommodate the flexible federated identity credential functionality, the `fe
 1. In the left-hand navigation pane, select **Certificates & secrets**.
 1. Under the **Federated credentials** tab, select **+ Add credential**.
 1. In the **Add a credential** window that appears, from the dropdown menu next to **Federated credential scenario**, select **Other issuer**.
-1. In **Value** enter the claim matching expression you want to use.
+1. Under **Connect your account** enter the ***Issuer** URL of the external identity provider. For example;
+    - GitHub: `https://token.actions.githubusercontent.com`
+    - GitLab: `https://gitlab.example.com`
+    - Terraform Cloud: `https://app.terraform.io`
+1. In **Value** enter the claim matching expression you want to use, for example `claims['sub'] matches 'repo:contoso/contoso-repo:ref:refs/heads/*'`
+1. Select **Add** to save the credential.
 
 ### [Microsoft Graph Explorer](#tab/graph-explorer)
 
 1. Open the [Microsoft Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer).
-1. In the **Request** section, enter the following URL: `https://graph.microsoft.com/beta/applications/{applicationId}/federatedIdentityCredentials`.
+1. In the **Request** section, enter the following URL that corresponds to the application you want : `https://graph.microsoft.com/beta/applications/{objectId}/federatedIdentityCredentials`.
 1. Add the following request body:
 
 ```json
@@ -64,8 +65,65 @@ To accommodate the flexible federated identity credential functionality, the `fe
   }
 }
 ```
+
+1. Select **Run query** to create the federated identity credential.
+---
+
+## Additional examples of Flexible Federated identity credentials
+
+Flexible federated identity credentials can be used by different issuers, such as GitHub, GitLab, and Terraform Cloud. Use the following tabs to set up a Flexible Federated identity credential for each 
+
+### [GitHub](#tab/github)
+
+This example shows how to set up a Flexible Federated identity credential for GitHub with an expression for the `job_workflow_ref` claim. Use 
+
+```json
+{
+  "audiences": [
+    "api://AzureADTokenExchange"
+  ],
+  "name": "MyGitHubFlexibleFIC",
+  "issuer": "https://token.actions.githubusercontent.com",
+  "claimsMatchingExpression": {
+    "value": "claims['sub'] matches 'repo:contoso/contoso-repo:ref:refs/heads/*' and claims['job_workflow_ref'] matches 'contoso/contoso-prod/.github/workflows/*.yml@refs/heads/main'",
+    "languageVersion": 1
+  }
+}
+```
+
+### [GitLab](#tab/gitlab)
+
+```json
+{
+  "audiences": [
+    "api://AzureADTokenExchange"
+  ],
+  "name": "MyGitLabFlexibleFIC",
+  "issuer": "https://gitlab.example.com",
+  "claimsMatchingExpression": {
+    "value": "claims['sub'] matches 'project_path:contoso/contoso-project:ref_type:branch:ref:main'",
+    "languageVersion": 1
+  }
+}
+```
+
+### [Terraform Cloud](#tab/terraform-cloud)
+
+```json
+{
+  "audiences": [
+    "api://AzureADTokenExchange"
+  ],
+  "name": "MyTfcFlexibleFIC",
+  "issuer": "https://app.terraform.io",
+  "claimsMatchingExpression": {
+    "value": "claims['sub'] matches 'organization:contoso:project:contoso-proj:workspace:wrk-1:run_phase:*'",
+    "languageVersion": 1
+  }
+}
+```
 ---
 
 ## See also
 
-[Flexible federated identity credentials](./workload-identities-flexible-federated-identity-credentials.md)
+- [Flexible federated identity credentials](./workload-identities-flexible-federated-identity-credentials.md)

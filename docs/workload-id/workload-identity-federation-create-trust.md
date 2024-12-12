@@ -36,8 +36,8 @@ To learn more about supported regions, time to propagate federated credential up
 
 ## Prerequisites
 
-- [Create an app registration](~/identity-platform/quickstart-register-app.md) in Microsoft Entra ID.  Grant your app access to the Azure resources targeted by your external software workload.
-- Find the object ID of the app (not the application (client) ID), which you need in the following steps.  You can find the object ID of the app in the [Microsoft Entra admin center](https://entra.microsoft.com).  Go to the list of app registrations and select your app registration.  In **Overview**->**Essentials**, find the **Object ID**.
+- [Create an app registration](~/identity-platform/quickstart-register-app.md) or [managed identity](/entra/identity/managed-identities-azure-resources/overview) in Microsoft Entra ID.  Grant your app access to the Azure resources targeted by your external software workload.
+- Find the object ID of the app (not the application (client) ID), which you need in the following steps.  You can find the object ID of the app in the [Microsoft Entra admin center](https://entra.microsoft.com).  Go to the list of app registrations and select your app registration.  In **Overview**, you can find the **Object ID**.
 - Get the *subject* and *issuer* information for your external IdP and software workload, which you need in the following steps.
 
 ## Configure a federated identity credential on an app

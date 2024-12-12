@@ -34,7 +34,7 @@ Explore the flexible federated identity credential support to see how it can ben
 
 ## Current limitations 
 
-Flexible federated identity credential support is currently provided for matching against GitHub, GitLab, and Terraform Cloud issued tokens. This support exists only for federated identity credentials configured on application objects at present. Finally, explicit support for flexible federated identity credentials does not yet exist within Azure CLI, Azure PowerShell, or Terraform providers – so,unless you use Azure CLI or Azure PowerShell's methods for making rest API requests, you will initially only be able to create and manage flexible federated identity credentials via Microsoft Graph or Azure Portal UI.
+Flexible federated identity credential (FIC) support is currently provided for matching against GitHub, GitLab, and Terraform Cloud issued tokens. This support exists only for federated identity credentials configured on application objects at present. Finally, explicit support for flexible federated identity credentials does not yet exist within Azure CLI, Azure PowerShell, or Terraform providers – so,unless you use Azure CLI or Azure PowerShell's methods for making rest API requests, you will initially only be able to create and manage flexible federated identity credentials via Microsoft Graph or Azure Portal UI.
 
 ## Flexible federated identity credential language structure 
 
@@ -46,6 +46,11 @@ A Flexible FIC expression is made up of 3 parts;
 | Operator | The operator portion must be just the operator name, separated from the claim lookup and comparand by a single space | `matches` |
 | Comparand | The comparand contains what you intend to compare the claim specified in the lookup against – it must be contained within single quotes | `'repo:contoso/contoso-repo:ref:refs/heads/*'` |
 
+Put together, an example Flexible FIC expression would look like the following JSON object:
+
+```json
+"claims['sub'] matches 'repo:contoso/contoso-repo:ref:refs/heads/*'."
+```
 
 ## Set up federated identity credentials through Microsoft Graph
 
