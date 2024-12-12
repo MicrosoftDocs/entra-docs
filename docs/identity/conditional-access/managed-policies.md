@@ -140,7 +140,7 @@ These policies can be thought of as logical if then statements.
 
 ### What if I want to make more changes?
 
-Administrators might choose to make further changes to these policies by duplicating them using the **Duplicate** button in the policy list view. This new policy can be configured in the same way as any other Conditional Access policy with starting from a Microsoft recommended position.
+Administrators might choose to make further changes to these policies by duplicating them using the **Duplicate** button in the policy list view. This new policy can be configured in the same way as any other Conditional Access policy with starting from a Microsoft recommended position. Be careful that you don't inadvertently lower your security posture with those changes.
 
 ### What administrator roles are covered by these policies?
 
