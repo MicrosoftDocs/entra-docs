@@ -20,16 +20,19 @@ This article contains the default usage constraints for the Microsoft Entra ID G
 
 ## Entitlement Management
 
+> [!Tip]
+> We recommend that access packages contain more than one resource role and are modeled on the basis of departments, job functions, projects or a combination of these.
+
 |Feature  |Limit  |
 |---------|---------|
 |Access Packages   |  20,000 per tenant      |
-|Access Package Assignments     | 300,000 per tenant        |
+|Access Package Assignments - An access package assignment is an assignment of an access package to a particular user   | 300,000 per tenant        |
 |Access Package Assignments from a given automatic assignment policy      | 15,000 per automatic assignment policy       |
 |Catalogs     |   7,500 per tenant      |
 |Connected Organizations     |  2,500 per tenant       |
 |Custom extensions     |  500 per tenant       |
-|Policies     |  25,000 per tenant       |
-|Requests (Within 3 months)     |  200,000 per tenant       |
+|Policies - An access package assignment policy specifies the policy by which users can request or be assigned an access package    |  25,000 per tenant       |
+|Requests (within 3 months)  - An access package assignment request is created by or on behalf of a user who wants to obtain, update or remove an access package assignment. This includes requests which are created by the system for automatic assignment policies   |  200,000 per tenant       |
 
 ## Lifecycle Workflows
 
