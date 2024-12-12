@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: troubleshooting
-ms.date: 11/21/2024
+ms.date: 12/12/2024
 ms.service: global-secure-access
 ms.subservice: entra-private-access 
 ms.reviewer: nbeesetti
