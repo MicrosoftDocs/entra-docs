@@ -17,20 +17,20 @@ ms.collection: M365-identity-device-management
 
 [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
-The sponsor feature helps you manage B2B users in your directory. It lets to track who is responsible for each guest user. While [entitlement management](/entra/id-governance/entitlement-management-overview) can track guests in certain domains, it does not include guests outside these areas. By using the sponsor feature, you can assign a person or group to each guest user. This helps track who invited them and supports accountability.  
+The sponsor feature helps you manage B2B users in your directory. It allows tracking of who is responsible for each guest user. While [entitlement management](/entra/id-governance/entitlement-management-overview) can track guests in certain domains, it doesn't include guests outside these areas. By using the sponsor feature, you can assign a person or group to each guest user. This helps track who invited them and supports accountability.  
 
 This article provides an overview of the sponsor feature and explains how to use it in B2B scenarios.
 
 ## Sponsors field on the user object
 
 The **Sponsors** field on the user object refers to the person or group who manages and monitors the lifecycle of the user, ensuring they have access to the right resources.
-Being a sponsor doesn't grant administrative powers for the sponsor user or the group, but it can be used for approval processes in entitlement management. You can also use it for custom solutions, but it does not offer any other built-in directory powers.
+Being a sponsor doesn't grant administrative powers for the sponsor user or the group, but it can be used for approval processes in entitlement management. You can also use it for custom solutions, but it doesn't offer any other built-in directory powers.
 
 :::image type="content" source="media/b2b-sponsors/single-sponsor.png" alt-text="Screenshot of the sponsors' name.":::
 
 ## Who can be a sponsor?
 
-If you invite a guest user, you automatically become their sponsor unless you specify someone else during the invitation process. Your name will be added to the **Sponsors** field on the user object automatically. You can also specify a different sponsor, a person or a group when inviting a guest user.
+If you invite a guest user, you automatically become their sponsor unless you specify someone else during the invitation process. Your name will be added to the **Sponsors** field on the user object automatically. You can also specify a different sponsor, a person, or a group when inviting a guest user.
 If a sponsor leaves the organization, the tenant administrator can change the **Sponsors** field to a different person or group during offboarding. This transition ensures the guest user's account remains properly tracked.  
 
 ## Other scenarios using the B2B sponsors feature
@@ -76,7 +76,7 @@ When you invite a guest user, you became their sponsor by default. If you need t
 
    :::image type="content" source="media/b2b-sponsors/multiple-sponsors.png" alt-text="Screenshot of multiple sponsors option.":::
 
-1. To add or remove sponsors, select **Edit**, select or remove the users or groups and select **Save** on the **Job Information** tab.
+1. To add or remove sponsors, select **Edit**, select, or remove the users or groups and select **Save** on the **Job Information** tab.
 1. If the guest user doesn't have a sponsor, select **Add sponsors**.
 
    :::image type="content" source="media/b2b-sponsors/add-sponsors-existing-user.png" alt-text="Screenshot of adding a sponsor to an existing user.":::
