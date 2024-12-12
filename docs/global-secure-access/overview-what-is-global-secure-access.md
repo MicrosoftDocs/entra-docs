@@ -42,9 +42,9 @@ Microsoft Entra Internet Access for Microsoft services enhances Microsoft Entra 
 ### Key Features 
 
 - Connect to Microsoft services directly using the prepopulated Microsoft traffic forwarding profile, either from the desktop client or from a remote network, such as a branch location.
-- Simplify Conditional Access policy configurations by requiring Compliant Network check for any Entra ID integrated application with Entra ID Conditional Access. 
+- Simplify Conditional Access policy configurations by requiring Compliant Network check for any Microsoft Entra ID integrated application with Microsoft Entra ID Conditional Access. 
 - Apply Universal Tenant Restrictions to reduce the risk of data exfiltration to unauthorized foreign tenants or personal accounts.
-- Increase the accuracy of threat detections with source IP restoration for the Entra ID sign in logs.
+- Increase the accuracy of threat detections with source IP restoration for the Microsoft Entra ID sign in logs.
 - Detailed network traffic logs for Microsoft traffic (including enforced policy details). Dashboards such as relationship maps between users, devices and endpoints, cross tenant access, and top network destination in use.
 
 ## Microsoft Entra Private Access
