@@ -3853,5 +3853,6 @@
   "Microsoft Azure API Connections" : "fe053c5f-3692-4f14-aef2-ee34fc081cae",
   "1P Microsoft Entra application" : "4e1f8dc5-5a42-45ce-a096-700fa485ba20",
   "View ID for import data in model-driven apps" : "a2927069-e4dc-4e8f-8fb1-d2f6c40c427e",
-  "Azure Storage" : "e406a681-f3d4-42a8-90b6-c2b029497af1"
+  "Azure Storage" : "e406a681-f3d4-42a8-90b6-c2b029497af1",
+  "Power Platform API" : "8578e004-a5c6-46e7-913e-12f58912df43"
 }
