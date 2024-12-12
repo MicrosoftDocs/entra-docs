@@ -1,6 +1,6 @@
 ---
-title: QR code authentication in Microsoft Entra ID
-description: Learn about using QR code authentication method in Microsoft Entra ID to help improve and secure sign-in events for frontline workers
+title: QR code authentication in Microsoft Entra ID (preview)
+description: Learn about using QR code authentication method in Microsoft Entra ID to help improve and secure sign-in events for frontline workers.
 
 ms.service: entra-id
 ms.subservice: authentication
@@ -15,7 +15,7 @@ manager: amycolannino
 # Customer intent: As an identity administrator, I want to understand how to use QR code authentication in Microsoft Entra ID to improve and secure user sign-in events for frontline workers
 ---
 
-# Authentication methods in Microsoft Entra ID - QR code
+# Authentication methods in Microsoft Entra ID - QR code (Preview)
 
 Frontline Worker (FLW) 	Frontline workers are in every industry, such as Retail, Manufacturing, and healthcare. Generally, they are temporary workers, have multiple jobs, and are less tech savvy. For example, retail/grocery store workers, students doing multiple job at stores during summer, etc.
 Frontline Managers (FLM) 	Frontline managers are store managers and can act as delegated auth admins 

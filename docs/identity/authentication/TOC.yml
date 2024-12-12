@@ -125,6 +125,8 @@
     href: how-to-authentication-methods-manage.md      
   - name: Temporary Access Pass
     href: howto-authentication-temporary-access-pass.md
+  - name: Enable QR code auth method
+    href: how-to-authentication-qr-code.md
   - name: Passwordless
     items: 
       - name: Plan phishing-resistant passwordless authentication
