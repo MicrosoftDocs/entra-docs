@@ -1,5 +1,5 @@
 ---
-title: Learn how to solve an issue where Global Secure Access fails with a distributed file system.
+title: Learn how to solve an issue where Global Secure Access fails with a Distributed File System.
 description: A troubleshooting article that includes a workaround for a case where a Distributed File System (DFS) doesn't operate correctly with Global Secure Access.
 author: kenwith
 ms.author: kenwith
@@ -13,7 +13,7 @@ ai-usage: ai-assisted
 #customer intent: As a administrator, I want to understand how to work around an issue with Global Secure Access and a Distributed File System.
 ---
 
-# Overview
+# Troubleshoot Distributed File System issue with Global Secure Access
 This document presents a case where a Distributed File System (DFS) doesn't operate correctly with Global Secure Access and offers a temporary workaround. 
 
 The scenario involves accessing a file-share location. For instance, consider a DFS path: `\\foo.internal\share\bar`. The `bar` folder is set up as shown in the table: 
@@ -63,7 +63,6 @@ The workaround is to make changes in the network-architecture in the environment
 4. Each of these applications map to the connector (via connector group specified in the app) in the corresponding location. 
 
 After these changes, the employees accessing the common path: `\\shares\bar` from *Location1* are directed to the website: `\\foo-loc1.contoso.com\bar`, and likewise for other locations.
-
 
 
 ## Related content
