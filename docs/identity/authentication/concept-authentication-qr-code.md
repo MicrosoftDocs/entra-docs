@@ -9,6 +9,7 @@ ms.date: 12/11/2024
 
 ms.author: justinha
 author: justinha
+ms.reviewer: anjusingh
 manager: amycolannino
 
 # Customer intent: As an identity administrator, I want to understand how to use QR code authentication in Microsoft Entra ID to improve and secure user sign-in events for frontline workers
@@ -47,14 +48,16 @@ Inexpensive | Printing a QR code costs less than a hardware keys, which can be c
 
 ## Known issues and mitigation for QR code authentication method 
 
-It is a known issue that a QR code can be stolen or lost as it is in print form. To address the issue, we have included the following measures in the solutions:
+Admins should replace a QR code thet gets lost or stolen. A QR code can't be used alone without a PIN. 
+
+The PIN can’t be used with any other identifier, such as a UPN, or email account. A QR code also has a secret that is replay resistant to online threats for a primary credential.
+
+
+Admins can also take following precautions to mitigate the risk of a lost or stolen QR code:
 
 - Don't use QR code authentication method for resources that require MFA.
-- A QR code can’t be used alone without the PIN.
-3.	PIN lockout experience like Password.
-4.	PIN can’t be used with any other identifier such as UPN, email etc.
-5.	QR code can be replaced by admins when lost or theft is reported.
-6.	QR code will have secret that will add replay resistant to online threats for primary credential. 
-7.	Conditional Access policies to restrict the auth method to specified apps, store devices, and secure network.
+- Configure a PIN lockout experience, similar to passwords.
+- Replace QR codes that get lost or stolen.
+- Create Conditional Access policies to restrict the authentication method to specified apps, store devices, and secure networks.
 
 
