@@ -5,7 +5,7 @@ description: Learn about the different authentication methods and features avail
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/11/2024
+ms.date: 12/11/2024
 
 ms.author: justinha
 author: justinha
@@ -43,6 +43,7 @@ The following table outlines when an authentication method can be used during a 
 | Temporary Access Pass (TAP)    | Yes                    | MFA                       |
 | Text                           | Yes                    | MFA and SSPR              |
 | Voice call                     | No                     | MFA and SSPR              |
+| QR code                        | Yes                    | No                        |
 | Password                       | Yes                    | No                        |
 
 > \* Windows Hello for Business, by itself, does not serve as a step-up MFA credential. For example, an MFA Challenge from Sign-in Frequency or SAML Request containing forceAuthn=true. Windows Hello for Business can serve as a step-up MFA credential by being used in FIDO2 authentication. This requires users to be registered for FIDO2 authentication to work successfully.
@@ -64,6 +65,7 @@ To learn more about how each authentication method works, see the following sepa
 * [Temporary Access Pass (TAP)](howto-authentication-temporary-access-pass.md)
 * [SMS sign-in](howto-authentication-sms-signin.md) and [verification](concept-authentication-phone-options.md#mobile-phone-verification)
 * [Voice call verification](concept-authentication-phone-options.md)
+* [QR code](concept-authentication-qr-code.md)
 * Password
 
 > [!NOTE]

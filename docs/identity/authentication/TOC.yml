@@ -45,6 +45,8 @@
       href: concept-authentication-oath-tokens.md
     - name: Phone options
       href: concept-authentication-phone-options.md
+    - name: QR code
+      href: concept-authentication-qr-code.md
     - name: Text
       href: howto-authentication-sms-signin.md
     - name: Email
