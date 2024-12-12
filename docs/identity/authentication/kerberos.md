@@ -3,30 +3,33 @@ title: Overview of Microsoft Entra Kerberos
 description: Overview of Microsoft Entra Kerberos
 author: barclayn
 manager: amycolannino
-
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 12/11/2024
+ms.date: 12/12/2024
 ms.author: barclayn
 ms.reviewer:
-
 ---
 
-# Overview of Microsoft Entra Kerberos
+# Microsoft Entra Kerberos overview
 
-In today's cloud-centric environment, **Microsoft Entra Kerberos** enhances traditional Kerberos authentication by enabling Microsoft Entra ID to act as the Key Distribution Center (KDC) in the cloud. This allows hybrid identities—users synchronized from on-premises Active Directory Domain Services (AD DS)—to seamlessly authenticate to Azure services without the need for on-premises domain controllers. By leveraging Microsoft Entra ID as the KDC, organizations can provide secure access to Azure resources while benefiting from modern authentication methods like multifactor authentication (MFA), passwordless authentication, and conditional access policies.
+Kerberos is a network authentication protocol designed to provide strong authentication for client-server applications by using secret-key cryptography. Developed by MIT, Kerberos works by assigning a unique key, known as a Ticket Granting Ticket (TGT), to each user. This TGT is used to request access to various services within a network without repeatedly transmitting the user's password. The protocol ensures secure communication by encrypting the tickets and authenticating both the user and the service, thereby preventing eavesdropping and replay attacks.
+
+**Microsoft Entra Kerberos** enhances traditional Kerberos authentication by enabling Microsoft Entra ID to act as the Key Distribution Center (KDC) in the cloud. This allows hybrid identities—users synchronized from on-premises Active Directory Domain Services (AD DS)—to seamlessly authenticate to Azure services without the need for on-premises domain controllers. By using Microsoft Entra ID as the KDC, organizations can provide secure access to Azure resources while benefiting from modern authentication methods like multifactor authentication (MFA), passwordless authentication, and conditional access policies.
+
+> [!NOTE]
+> For information on Kerberos in Windows, review [Kerberos authentication overview](/windows-server/security/kerberos/kerberos-authentication-overview)
 
 ## Features of Microsoft Entra Kerberos
 
 Microsoft Entra Kerberos provides several key functionalities that enhance traditional authentication methods:
 
-- **Cloud-Based KDC**: By utilizing Microsoft Entra ID as the Key Distribution Center, it eliminates the need for on-premises domain controllers for authentication in cloud environments.
-- **Hybrid Identity Support**: Enables seamless authentication for users synchronized from on-premises Active Directory, facilitating a smooth transition to cloud services.
+- **Cloud-Based KDC**: By using Microsoft Entra ID as the Key Distribution Center, Microsoft Entra Kerberos eliminates the need for domain controllers to handle authentication requests in Azure.
+- **Hybrid Identity Support**: Enables authentication for users synchronized from on-premises Active Directory, facilitating a smooth transition to cloud services.
 - **Modern Authentication Methods**: Supports multifactor authentication (MFA), passwordless options, and conditional access policies to improve security.
 - **Reduced Infrastructure Complexity**: Minimizes the reliance on on-premises infrastructure, simplifying management and deployment in cloud settings.
 - **Compatibility with Azure Services**: Integrates with various Azure services, allowing secure access without extensive configuration changes.
-- **Scalability and Reliability**: Leverages Azure's infrastructure to provide scalable and reliable authentication services for organizations of all sizes.
+- **Scalability and Reliability**: Uses Azure's infrastructure to provide scalable and reliable authentication services for organizations of all sizes.
 
 ## Traditional Kerberos Authentication
 
@@ -121,10 +124,10 @@ This process relies on the client’s ability to communicate with the on-premise
 
 ## Benefits to Administrators
 
-- **Enhanced Security**: Leverages Microsoft Entra ID's security features, including conditional access and MFA.
+- **Enhanced Security**: Uses Microsoft Entra ID's security features, including conditional access and MFA.
 - **Reduced Infrastructure**: Eliminates the need for maintaining on-premises domain controllers for cloud resource authentication.
-- **Simplified User Experience**: Users have seamless access to resources without additional prompts or VPN requirements.
-- **Modern Authentication Support**: Facilitates the adoption of passwordless and multi-factor authentication methods.
+- **Simplified User Experience**: Users have seamless access to resources without other prompts or VPN requirements.
+- **Modern Authentication Support**: Facilitates the adoption of passwordless and multifactor authentication methods.
 
 ## Example Use Cases
 
@@ -132,7 +135,7 @@ This process relies on the client’s ability to communicate with the on-premise
 
 - **Scenario**: Hosting user profiles for virtual desktops.
 - **Solution**: Store profiles in Azure Files accessed via Microsoft Entra Kerberos.
-- **Benefit**: Reduces dependency on on-premises infrastructure and improves login times.
+- **Benefit**: Reduces dependency on on-premises infrastructure and improves sign in times.
 
 ### Application Migration to Azure
 
@@ -164,7 +167,7 @@ This process relies on the client’s ability to communicate with the on-premise
 3. **Client Configuration**:
     - Ensure Windows clients are up to date and configured to authenticate using Microsoft Entra Kerberos.
 
-    >[!NOTE]
+    > [!NOTE]
     > Clients will need to be [configured to use a KDC proxy](https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/winauth-azuread-setup-incoming-trust-based-flow?view=azuresql#configure-the-group-policy-object-gpo)
 
 4. **Manage Service Principals**:
@@ -178,4 +181,7 @@ This process relies on the client’s ability to communicate with the on-premise
 Microsoft Entra Kerberos bridges the gap between traditional on-premises authentication and modern cloud-based services. By allowing Microsoft Entra ID to act as a KDC, it simplifies authentication for hybrid users accessing Azure services, enhances security with modern authentication methods, and reduces the need for on-premises infrastructure.
 
 Administrators benefit from streamlined management, enhanced security features, and the ability to provide users with seamless access to cloud resources. As organizations continue to adopt cloud services, Microsoft Entra Kerberos plays a crucial role in maintaining secure and efficient authentication processes.
+
+## Learn more
+
 
