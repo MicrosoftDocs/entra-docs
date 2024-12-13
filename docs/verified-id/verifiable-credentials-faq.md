@@ -136,7 +136,11 @@ The Request Service API makes use of callbacks to a [URL](presentation-request-a
 ### Scanning the QR code
 
 In the documentation, the instruction `scan the QR code` refers to scanning it with the Microsoft Authenticator mobile app, unless otherwise stated.
-It is possible to scan the QR code with the mobile's camera app, which then launches the Microsoft Authenticator. For this to work, the protocol handler for `openid-vc://` must be registered for Microsoft Authenticator. If another mobile app have been registered for it, the Authenticator will not open. On some older Android mobile versions, scanning the QR code with the camera app doesn't work, and there is no other workaround than using the Microsoft Authenticator app to scan it.
+It is possible to scan the QR code with the mobile's camera app, which then launches the Microsoft Authenticator. For this to work, the protocol handler for `openid-vc://` must be registered for Microsoft Authenticator. If another mobile app have been registered for it, the Authenticator will not open. 
+
+On Android mobile phones, known problems of scanning the QR code are:
+- On Android 9 and older versions, scanning the QR code with the camera app doesn't work, and there is no other workaround than using the Microsoft Authenticator app to scan it.
+- On Android phones with both work and personal profiles, each profile has its own instance of the Microsoft Authenticator app. If you have a credential in the work profile's Authenticator app and try to scan a QR code using the camera app from the personal profile, the personal Authenticator app will open. This causes an error because the credential is in the work profile, not the personal one. The error message will say, "You'll have to add this Verified ID and try again."
 
 ## Next steps
 

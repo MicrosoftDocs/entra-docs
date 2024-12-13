@@ -184,6 +184,8 @@ items:
         href: troubleshoot-global-secure-access-client-advanced-diagnostics.md
       - name: "Troubleshoot the Global Secure Access client: Health check tab"
         href: troubleshoot-global-secure-access-client-diagnostics-health-check.md
+      - name: "Troubleshoot Distributed File System (DFS) issues"
+        href: troubleshoot-distributed-file-system.md
   - name: Partner ecosystem
     expanded: true
     items:
