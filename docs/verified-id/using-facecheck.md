@@ -55,6 +55,9 @@ You can easily get started using Face Check by using [MyAccount](https://myaccou
 
 When the Microsoft Authenticator gets a presentation request including a Face Check, there's an extra item after the credential type the user is asked to share. When the user selects on that item, the actual Face Check is performed and the user can then share the requested credential and the confidence score of the check with the public test app (relying party). You could review the results on the Test app.
 
+>[!NOTE]
+> MyAccount uses the Entra ID user profile photo when issuing the VerifiedEmployee credential. You can retrieve your photo via Microsoft Graph API `https://graph.microsoft.com/v1.0/me/photos/240x240/$value`
+
 ## Get started with Face Check using Request Service API
 
 Apps can use [Request Service API](get-started-request-api.md?tabs=http%2Cissuancerequest%2Cfacecheck#presentation-request-example) to create request for users to perform a Face Check against a `VerifiedEmployee` credential, State Issued Government ID or a custom digital credential with a trusted photo. For example, a help desk service can request a Face Check against a `VerifiedEmployee` credential to verify the identity quickly and securely to enable a wide variety of self-service scenarios including activating a Passkey or resetting a password. To reduce compliance risk, apps receive a confidence score for match against the photo from the desired credential, without gaining access to liveness data. 
@@ -83,6 +86,9 @@ When setting the actual claim value of the photo, it should be in format `UrlEnc
   "indexed": false 
 } 
 ```
+
+>[!NOTE]
+> When issuing a custom credential with a photo, it is the apps responsibility to provide the JPEG to be used and encode it. 
 
 ### Presentation request including Face Check
 
@@ -231,7 +237,7 @@ The Verified ID service executes the verification process in the cloud, not on t
 
 ### What are the requirements for the photo in the Verified ID?
 
-The photo should be clear and sharp in quality and no smaller than 200 pixels x 200 pixels. The face should be centered within the image and unobstructed from view. The maximum size of the photo in the credential is  1MB.
+The photo should be clear and sharp in quality and no smaller than 200 pixels x 200 pixels. The face should be centered within the image and unobstructed from view. The maximum size of the photo in the credential is 1MB. Please note that having a larger image does not guarantee a better result. A good smaller photo is better than a large bad one.
 
 More information on how to improve the photo processing accuracy can be found [here](/legal/cognitive-services/face/characteristics-and-limitations?#best-practices-for-improving-accuracy)
 
