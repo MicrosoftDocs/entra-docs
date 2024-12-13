@@ -416,22 +416,27 @@ items:
         - name: Custom authentication extensions
           items:
             - name: Custom claims provider
-            - name: Add logic to attribute collection
               items:
+                - name: Create REST API for token issuance event
+                  href: custom-extension-tokenissuancestart-setup.md
+                - name: Configure a custom claims provider token issuance event
+                  href: custom-extension-tokenissuancestart-configuration.md
+                - name: Configure a SAML app to call a custom claims provider
+                  href: custom-extension-configure-saml-app.md
+                - name: Custom claims provider reference
+                  href: custom-claims-provider-reference.md
+            - name: Attribute collection
+              items: 
                 - name: Create attribute collection start and submit events
                   href: ~/identity-platform/custom-extension-attribute-collection.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: OnAttributeCollectionStart event reference
                   href: ~/identity-platform/custom-extension-OnAttributeCollectionStart-reference.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: OnAttributeCollectionSubmit event reference
                   href: ~/identity-platform/custom-extension-OnAttributeCollectionSubmit-reference.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-            - name: Add claims from external systems
-              items:
-                - name: About custom authentication extensions
-                  href: ~/identity-platform/custom-extension-overview.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-                - name: Token issuance start event
-                  href: ~/identity-platform/custom-extension-tokenissuancestart-configuration.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-                - name: Troubleshoot your custom claims provider API
-                  href: ~/identity-platform/custom-extension-troubleshoot.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+            - name: Configure a custom email provider for one time code send events
+              href: custom-extension-email-otp-get-started.md
+            - name: Troubleshoot your custom authentication extension
+              href: ~/identity-platform/custom-extension-troubleshoot.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Secure
       items:
       - name: Multifactor authentication
