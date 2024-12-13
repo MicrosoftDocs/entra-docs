@@ -18,6 +18,8 @@ Microsoft Entra Health provides you with observability of your Microsoft Entra t
 
 Paired together, these metrics and signals provide a comprehensive view of the health of your Microsoft Entra tenant. Regularly monitoring the information provided in Microsoft Entra Health can help you identify trends, potential issues, and areas for improvement in your tenant's health.
 
+In addition to the signals for these tenant health scenarios, email notifications can also be configured to alert you when the service identifies an anomaly in the pattern for your tenant. Regular monitoring of these signals can help you more effectively investigate an issue when an alert is received because you'll have a comprehensive view of the health of your tenant.
+
 > [!IMPORTANT]
 > Microsoft Entra Health features are currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
@@ -33,13 +35,11 @@ The page opens to the SLA Attainment page.
 
 ![Screenshot of the Microsoft Entra Health landing page.](media/concept-microsoft-entra-health/identity-health-landing-page-attainment.png)
 
-## How Microsoft Entra Scenario monitoring (preview) works
+## How Microsoft Entra health monitoring (preview) works
 
 Scenario Monitoring in Microsoft Entra Health is built on two key components: signals and alerts. Here's a high-level look at how they both work together:
 
 1. Metrics and data are gathered, processed, and converted into meaningful signals displayed in Microsoft Entra Health monitoring.
-
-    ![Screenshot of the MFA scenario monitoring data.](media/concept-microsoft-entra-health/scenario-monitoring-MFA.png)
 
 1. These signals are fed into our anomaly detection service.
 
@@ -62,9 +62,11 @@ The following key scenarios can be monitored in Microsoft Entra Health:
 
 The data associated with each of these scenarios is aggregated into a view that's specific to that scenario. If you're only interested in sign-ins from compliant devices, you can dive into that scenario without noise from other sign-in activities. 
 
+![Screenshot of the MFA scenario monitoring data.](media/concept-microsoft-entra-health/scenario-monitoring-MFA.png)
+
 Each scenario detail page provides trends and totals for that scenario for the last 30 days. This data is aggregated every 15 minutes, for low latency insights into your tenant's health.
 
-## Alerts
+### Alerts
 
 The anomaly detection service looks at the data and develops dynamic alerting thresholds based on the pattern specific to your tenant. When the service identifies a significant change to that pattern at the tenant level, it triggers an alert. By regularly monitoring these scenarios and reviewing the alerts when they come in, you can more effectively monitor and improve the health of your tenant.
 
@@ -76,9 +78,10 @@ The service provides alerts for the following scenarios:
 - [Sign-ins requiring a Conditional Access managed device](scenario-health-sign-ins-compliant-managed-device.md)
 - [Sign-ins requiring multifactor authentication (MFA)](scenario-health-sign-ins-mfa.md)
 
-At this time, alerts are only available through the Microsoft Graph API. With the Microsoft Graph health monitoring alerts APIs, you can view the alerts, configure email notifications, and update the state of the alert.
+At this time, alerts are only available through the Microsoft Graph API. With the Microsoft Graph health monitoring alerts APIs, you can view the alerts, configure email notifications, and update the state of the alert. For more information, see [Microsoft Graph Health monitoring alerts API documentation](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true).
 
-## Next steps
+## Related content
 
-- [Configure Health monitoring alerts](howto-use-health-scenario-alerts.md)
-- [Microsoft Graph Health monitoring alerts API documentation](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true)
+- [Configure Health monitoring alerts](howto-configure-health-alert-emails.md)
+- [Investigate Health monitoring alerts](howto-use-health-scenario-alerts.md)
+- [Service Level Agreement attainment for Microsoft Entra ID](reference-sla-performance.md)

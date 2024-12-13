@@ -16,7 +16,7 @@ ms.reviewer: sarbar
 
 # How to configure email notifications for Microsoft Entra Health monitoring alerts (preview)
 
-Microsoft Entra Health provides tenant-level metrics and signals for several key identity scenarios. This data can be reviewed regularly to gain a better understanding of your tenant's health. Because these signals are also fed into an anomaly detection service, you can also configure email notifications for when an alert is triggered.
+Microsoft Entra Health provides tenant-level metrics and health signals for several key identity scenarios. This data can be reviewed regularly to gain a better understanding of your tenant's health. These signals are fed into an anomaly detection service, which triggers alerts when significant changes are detected. You can configure email notifications for when an alert is triggered.
 
 This article describes how to configure email notifications for Microsoft Entra Health monitoring alerts.
 
@@ -36,7 +36,10 @@ There are different roles, permissions, and license requirements to view health 
 - The `HealthMonitoringAlert.ReadWrite.All` permission is required to *view and modify the alerts using the Microsoft Graph API*.
 - For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs).
 
-## Configure the email notifications
+## Determine email notification recipients
+
+
+
 
 With the Microsoft Graph health monitoring alerts API, you can configure email notifications. You can run the API calls on a regular cadence (for example, daily or hourly) or you can configure email notifications for when an alert is triggered. We recommend daily monitoring of the scenario monitoring signals and alerts.
 
@@ -48,6 +51,8 @@ Email notifications are sent to the [Microsoft Entra group](../../fundamentals
 - [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator)
 
 To configure alert notifications, you need the ID of the Microsoft Entra group you want to receive the alerts AND the scenario alert ID. You can configure different groups to receive alerts for different alert scenarios. 
+
+## Configure the email notifications
 
 ### Locate the group's Object ID
 
@@ -92,4 +97,4 @@ Content-Type: application/json
 
 ## Next steps
 
-- [How to investigate Microsoft Entra Health alerts](howto-use-scenario-alerts.md)
+- [How to investigate Microsoft Entra Health alerts](howto-use-health-scenario-alerts.md)
