@@ -60,7 +60,7 @@ Using Access Reviews for **Service Principals** requires a Microsoft Entra Workl
 
    :::image type="content" source="./media/pim-create-azure-ad-roles-and-resource-roles-review/start-end-dates.png" alt-text="Start date, frequency, duration, end, number of times, and end date screenshot.":::
 
-8. To make the access review recurring, change the **Frequency** setting from **One time** to **Weekly**, **Monthly**, **Quarterly**, **Annually**, or **Semi-annually**. Use the **Duration** slider or text box to define how many days each review of the recurring series will be open for input from reviewers. For example, the maximum duration that you can set for a monthly review is 27 days, to avoid overlapping reviews.
+8. To make the access review recurring, change the **Frequency** setting from **One time** to **Weekly**, **Monthly**, **Quarterly**, **Annually**, or **Semi-annually**. Use the **Duration** slider or text box to specify review duration. For example, the maximum duration that you can set for a monthly review is 27 days, to avoid overlapping reviews.
 
 9. Use the **End** setting to specify how to end the recurring access review series. The series can end in three ways: it runs continuously to start reviews indefinitely, until a specific date, or after a defined number of occurrences completes. You, or another administrator who can manage reviews, can stop the series after creation by changing the date in **Settings**, so that it ends on that date.
 
@@ -69,7 +69,7 @@ Using Access Reviews for **Service Principals** requires a Microsoft Entra Workl
 
     :::image type="content" source="./media/pim-create-azure-ad-roles-and-resource-roles-review/users.png" alt-text="Users scope to review role membership of screenshot.":::
 
-11. Or, you can create access reviews only for inactive users. In the *Users scope* section, set the **Inactive users (on tenant level) only** to **true**. If the toggle is set to *true*, the scope of the review focuses on inactive users only. Then, specify **Days inactive**  with a number of days inactive up to 730 days (two years). Users inactive for the specified number of days are the only users in the review.
+11. Or, you can create access reviews only for inactive users. In the *Users scope* section, set the **Inactive users (on tenant level) only** to **true**. If the toggle is set to *true*, the scope of the review focuses on inactive users only. Then, specify **Days inactive**. You can specify up to 730 days (two years). Users inactive for the specified number of days are the only users in the review.
  
 12. Under **Review role membership**, select the privileged Azure resource or Microsoft Entra roles to review.
 
@@ -105,11 +105,11 @@ Using Access Reviews for **Service Principals** requires a Microsoft Entra Workl
     - **Approve access** - Approve user's access
     - **Take recommendations** - Take the system's recommendation on denying or approving the user's continued access
     
-4. Use the **Action to apply on denied guest users** list to specify what happens for guest users that are denied. This setting isn't editable for Microsoft Entra ID and Azure resource role reviews at this time; guest users, like all users, will always lose access to the resource if denied.
+4. Use the **Action to apply on denied guest users** list to specify what happens for guest users that are denied. This setting isn't editable for Microsoft Entra ID and Azure resource role reviews at this time; guest users, like all users, always lose access to the resource if denied.
 
     :::image type="content" source="./media/pim-create-azure-ad-roles-and-resource-roles-review/action-to-apply-on-denied-guest-users.png" alt-text="Upon completion settings - Action to apply on denied guest users screenshot.":::
 
-5. You can send notifications to other users or groups to receive review completion updates. This feature allows for stakeholders other than the review creator to be updated on the progress of the review. To use this feature, select **Select User(s) or Group(s)** and add an additional user or group upon you want to receive the status of completion.
+5. You can send notifications to other users or groups to receive review completion updates. This feature allows for stakeholders other than the review creator to be updated on the progress of the review. To use this feature, select **Select User(s) or Group(s)** and add any users or groups you want receive completion status notifications.
 
     :::image type="content" source="./media/pim-create-azure-ad-roles-and-resource-roles-review/upon-completion-settings-additional-receivers.png" alt-text="Upon completion settings - Add additional users to receive notifications screenshot.":::
 
@@ -126,7 +126,7 @@ Using Access Reviews for **Service Principals** requires a Microsoft Entra Workl
 1. Set **Mail notifications** to **Enable** to have Microsoft Entra ID send email notifications to reviewers when an access review starts, and to administrators when a review completes.
 
 1. Set **Reminders** to **Enable** to have Microsoft Entra ID send reminders of access reviews in progress to reviewers who haven't completed their review.
-1. The content of the email sent to reviewers is autogenerated based on the review details, such as review name, resource name, due date, and so on. If you need a way to communicate additional information such as additional instructions or contact information, you can specify these details in the **Additional content for reviewer email** which will be included in the invitation and reminder emails sent to assigned reviewers. The highlighted section below is where this information is displayed.
+1. The content of the email sent to reviewers is autogenerated based on the review details, such as review name, resource name, due date, and so on. If you need a way to communicate additional information such as more instructions or contact information, you can specify these details in the **Additional content for reviewer email** are included in the invitation and reminder emails sent to assigned reviewers. The highlighted section below is where this information is displayed.
 
     :::image type="content" source="./media/pim-create-azure-ad-roles-and-resource-roles-review/email-info.png" alt-text="Content of the email sent to reviewers with highlights"::: 
 
@@ -163,7 +163,7 @@ After one or more access reviews have been started, you may want to modify or up
     > [!Note]
     > Fallback reviewers can only be added when reviewer type is manager. Primary reviewers can be added when reviewer type is selected user.
 
-- **Reminding the reviewers** - When updating access reviews, you may choose to enable the reminder option under Advanced Settings. Once enabled, users receive an email notification at the midpoint of the review period, regardless of whether they have completed the review or not. 
+- **Reminding the reviewers** - When updating access reviews, you may choose to enable the reminder option under Advanced Settings. Once enabled, users receive an email notification at the midpoint of the review period. Reviewers receive notifications regardless of whether they have completed the review or not. 
 
     :::image type="content" source="./media/pim-create-azure-ad-roles-and-resource-roles-review/reminder-setting.png" alt-text="Screenshot of the reminder option under access reviews settings.":::
 
