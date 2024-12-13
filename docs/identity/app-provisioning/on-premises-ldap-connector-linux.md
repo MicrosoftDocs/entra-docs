@@ -16,7 +16,7 @@ ms.reviewer: arvinh
 
 # Configuring Microsoft Entra ID to provision users into an LDAP directory for Linux authentication
 
-The following documentation is a tutorial demonstrating how to govern access to a Linux system. Microsoft Entra provisions users into an on-premises LDAP directory trusted by that Linux system. This allows users to log into a Linux system that relies upon that LDAP directory for user authentication. When a user is removed from Microsoft Entra ID, they are subsequently no longer able to log into a Linux system.
+The following documentation is a tutorial demonstrating how to govern access to a Linux system. Microsoft Entra provisions users into an on-premises LDAP directory trusted by that Linux system. This allows users to log into a Linux system that relies upon that LDAP directory for user authentication. When a user is removed from Microsoft Entra ID, they're no longer able to log into a Linux system.
 
 >[!NOTE]
 > The scenario described in this article is only applicable for existing Linux systems that already rely upon a Name Services Switch (NSS) or Pluggable Authentication Modules (PAM) LDAP module for user identification and authentication. Linux VMs in Azure or that are Azure Arc-enabled should be instead integrated with Microsoft Entra authentication. You can now use Microsoft Entra ID as a core authentication platform and a certificate authority to SSH into a Linux VM by using Microsoft Entra ID and OpenSSH certificate-based authentication, as described in [Log in to a Linux virtual machine in Azure by using Microsoft Entra ID and OpenSSH](/entra/identity/devices/howto-vm-sign-in-azure-ad-linux).  
@@ -33,8 +33,8 @@ This article assumes that the LDAP server is already present in the on-premises 
 
  - A Linux or other POSIX Server that replies upon a directory server using a PAM or NSS module.
  - An LDAP directory server that supports the POSIX schema, such as OpenLDAP, in which users can be created, updated, and deleted. For more information on supported directory servers, see the [Generic LDAP Connector reference](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-connector-genericldap).
- - A computer with at least 3 GB of RAM, to host a provisioning agent. The computer should have Windows Server 2016 or a later version of Windows Server. It should also have connectivity to the target directory server and outbound connectivity to login.microsoftonline.com, other Microsoft Online Services, and Azure domains, [other Microsoft Online Services](/microsoft-365/enterprise/urls-and-ip-address-ranges) and [Azure](/azure/azure-portal/azure-portal-safelist-urls?tabs=public-cloud) domains. An example is a Windows Server 2016 virtual machine hosted in Azure IaaS or behind a proxy. The .NET Framework 4.7.2 needs to be installed on that server.
- - Optional:  Although it's not required, it's recommended to download [Microsoft Edge for Windows Server](https://www.microsoft.com/en-us/edge?r=1) and use it in-place of Internet Explorer.
+ - A computer with at least 3 GB of RAM, to host a provisioning agent. The computer should have Windows Server 2016 or a later version of Windows Server. It should also have connectivity to the target directory server and outbound connectivity to login.microsoftonline.com, [other Microsoft Online Services](/microsoft-365/enterprise/urls-and-ip-address-ranges) and [Azure](/azure/azure-portal/azure-portal-safelist-urls?tabs=public-cloud) domains. An example is a Windows Server 2016 virtual machine hosted in Azure IaaS or behind a proxy. The .NET Framework 4.7.2 needs to be installed on that server.
+ - Optional:  Although not required, it's recommended to download [Microsoft Edge for Windows Server](https://www.microsoft.com/en-us/edge?r=1) and use it in-place of Internet Explorer.
 
 ### Cloud requirements
 
@@ -56,7 +56,15 @@ The following bullet points are more recommendations and limitations.
 
 ## Determine how the Microsoft Entra LDAP Connector will interact with the directory server
 
-Before deploying the connector to an existing directory server, you'll need to discuss with the directory server operator in your organization how to integrate with their directory server. The information to gather includes the network information of how to connect to the directory server, how the connector should authenticate itself to the directory server, what schema the directory server has selected to model users, the naming context's base distinguished name and directory hierarchy rules, how to associate users in the directory server with users in Microsoft Entra ID, and what should happen when a user goes out of scope in Microsoft Entra ID. Deploying this connector may require changes to the configuration of the directory server as well as configuration changes to Microsoft Entra ID. For deployments involving integrating Microsoft Entra ID with a third-party directory server in a production environment, we recommend customers work with their directory server vendor, or a deployment partner for help, guidance, and support for this integration. This article uses the following sample values for OpenLDAP.
+Before deploying the connector to an existing directory server, you need to discuss with the directory server operator in your organization how to integrate with their directory server. The information to gather includes:
+- The network information of how to connect to the directory server. 
+- How the connector should authenticate itself to the directory server.
+- What schema the directory server has selected to model users.
+- The naming context's base distinguished name and directory hierarchy rules.
+- How to associate users in the directory server with users in Microsoft Entra ID. 
+- What should happen when a user goes out of scope in Microsoft Entra ID. 
+
+Deploying this connector may require changes to the configuration of the directory server as well as configuration changes to Microsoft Entra ID. For deployments involving integrating Microsoft Entra ID with a third-party directory server in a production environment, we recommend customers work with their directory server vendor, or a deployment partner for help, guidance, and support for this integration. This article uses the following sample values for OpenLDAP.
 
  |Configuration setting|Where the value is set| Example value|
  |-----|-----|-----|
@@ -73,9 +81,11 @@ Before deploying the connector to an existing directory server, you'll need to d
 
 The network address of a directory server is a hostname and a TCP port number, typically port 389 or 636. Except where the directory server is co-located with the connector on the same Windows Server, or you're using network level security, the network connections from the connector to a directory server need to be protected using SSL or TLS. The connector supports connecting to a directory server on port 389, and using Start TLS to enable TLS within the session. The connector also supports connecting to a directory server on port 636 for LDAPS - LDAP over TLS.
 
-You'll need to have an identified account for the connector to authenticate to the directory server already configured in the directory server. This account is typically identified with a distinguished name and has an associated password or client certificate. To perform import and export operations on the objects in the connected directory, the connector account must have sufficient permissions within the directory's access control model. The connector needs to have **write** permissions to be able to export, and **read** permissions to be able to import. Permission configuration is performed within the management experiences of the target directory itself.
+You need to have an identified account for the connector to authenticate to the directory server already configured in the directory server. This account is typically identified with a distinguished name and has an associated password or client certificate. To perform import and export operations on the objects in the connected directory, the connector account must have sufficient permissions within the directory's access control model. The connector needs to have **write** permissions to be able to export, and **read** permissions to be able to import. Permission configuration is performed within the management experiences of the target directory itself.
 
-A directory schema specifies the object classes and attributes that represent a real-world entity in the directory. The connector supports a user being represented with a structural object class, such as `inetOrgPerson`, and optionally additional auxiliary object classes. In order for the connector to be able to provision users into the directory server, during configuration in the Azure portal you define mappings from the Microsoft Entra schema to all of the mandatory attributes. This includes the mandatory attributes of the structural object class, any superclasses of that structural object class, and the mandatory attributes of any auxiliary object classes. In addition, you'll likely also configure mappings to some of the optional attributes of these classes. An OpenLDAP directory server with the POSIX schema to support Linux authentication might require an object for a new user to have attributes like the following example.
+A directory schema specifies the object classes and attributes that represent a real-world entity in the directory. The connector supports a user being represented with a structural object class, such as `inetOrgPerson`, and optionally additional auxiliary object classes. For the connector to be able to provision users into the directory server, during configuration in the Azure portal you define mappings from the Microsoft Entra schema to all of the mandatory attributes. This includes the mandatory attributes of the structural object class, any superclasses of that structural object class, and the mandatory attributes of any auxiliary object classes. 
+
+You'll likely also configure mappings to some of the optional attributes of these classes. An OpenLDAP directory server with the POSIX schema to support Linux authentication might require an object for a new user to have attributes like the following example.
 
 ```
 dn: cn=bsimon,dc=Contoso,dc=lab
@@ -92,13 +102,17 @@ mail: bsimon@contoso.com
 userPassword: initial-password
 ```
 
-The directory hierarchy rules implemented by a directory server describe how the objects for each user relate to each other and to existing objects in the directory. In most deployments, the organization chose to have a flat hierarchy in their directory server, in which each object for a user is located immediately below a common base object. For example, if the base distinguished name for the naming context in a directory server is `dc=contoso,dc=com` then a new user would have a distinguished name like `cn=alice,dc=contoso,dc=com`. However, some organizations may have a more complex directory hierarchy, in which case you'll need to implement the rules when specifying the distinguished name mapping for the connector. For example, a directory server may expect users to be in organizational units by department, so a new user would have a distinguished name like `cn=alice,ou=London,dc=contoso,dc=com`. Since the connector doesn't create intermediate objects for organizational units, any intermediate objects the directory server rule hierarchy expects must already exist in the directory server.
+The directory hierarchy rules implemented by a directory server describe how the objects for each user relate to each other and to existing objects in the directory. In most deployments, the organization chose to have a flat hierarchy in their directory server, in which each object for a user is located immediately below a common base object. For example, if the base distinguished name for the naming context in a directory server is `dc=contoso,dc=com` then a new user would have a distinguished name like `cn=alice,dc=contoso,dc=com`. 
 
-Next, you'll need to define the rules for how the connector should determine if there is already a user in the directory server corresponding to a Microsoft Entra user. Every LDAP directory has a distinguished name that is unique for each object in the directory server, however that distinguished name is often not present for users in Microsoft Entra ID. Instead, an organization may have a different attribute, such as `mail` or `employeeId`, in their directory server schema that is also present on their users in Microsoft Entra ID. Then, when the connector is provisioning a new user into a directory server, the connector can search whether there is already a user in that directory that has a specific value of that  attribute, and only create a new user in the directory server if one isn't present.
+However, some organizations may have a more complex directory hierarchy, in which case you'll need to implement the rules when specifying the distinguished name mapping for the connector. For example, a directory server may expect users to be in organizational units by department, so a new user would have a distinguished name like `cn=alice,ou=London,dc=contoso,dc=com`. Since the connector doesn't create intermediate objects for organizational units, any intermediate objects the directory server rule hierarchy expects must already exist in the directory server.
+
+Next, you'll need to define the rules for how the connector should determine if there's already a user in the directory server corresponding to a Microsoft Entra user. Every LDAP directory has a distinguished name that is unique for each object in the directory server, however that distinguished name is often not present for users in Microsoft Entra ID. Instead, an organization may have a different attribute, such as `mail` or `employeeId`, in their directory server schema that is also present on their users in Microsoft Entra ID. Then, when the connector is provisioning a new user into a directory server, the connector can search whether there's already a user in that directory that has a specific value of that attribute, and only create a new user in the directory server if one isn't present.
 
 If your scenario involves creating new users in the LDAP directory, not just updating or deleting existing users, then you'll need to also determine how the Linux systems using that directory server handles authentication. Some systems can query a user's SSH public key or certificate from the directory, which may be appropriate of the users already hold credentials of those forms. However, if your application that relies upon the directory server doesn't support modern authentication protocols or stronger credentials, then you need to set an application-specific password when creating a new user in the directory, as Microsoft Entra ID doesn't support provisioning a user's Microsoft Entra password.
 
-Finally, you'll need to agree on the deprovisioning behavior.  When the connector is configured, and Microsoft Entra ID has established a link between a user in Microsoft Entra ID and a user in the directory, either for a user already in the directory or a new user, then Microsoft Entra ID can provision attribute changes from the Microsoft Entra user into the directory. If a user that is assigned to the application is deleted in Microsoft Entra ID, then Microsoft Entra ID sends a delete operation to the directory server. You may also wish to have Microsoft Entra ID update the object in the directory server when a user goes out of scope of being able to use the application. This behavior depends upon the application that'll be using the directory server, as many directories, such as OpenLDAP, may not have a default way of indicating a user's account is inactivated.
+Finally, you'll need to agree on the deprovisioning behavior.  When the connector is configured, and Microsoft Entra ID has linked between a user in Microsoft Entra ID and a user in the directory, either for a user already in the directory or a new user, then Microsoft Entra ID can provision attribute changes from the Microsoft Entra user into the directory. 
+
+If a user that is assigned to the application is deleted in Microsoft Entra ID, then Microsoft Entra ID sends a delete operation to the directory server. You may also wish to have Microsoft Entra ID update the object in the directory server when a user goes out of scope of being able to use the application. This behavior depends upon the application that'll be using the directory server, as many directories, such as OpenLDAP, may not have a default way of indicating a user's account is inactivated.
 
 
 ## Install and configure the Microsoft Entra Connect Provisioning Agent
@@ -133,12 +147,12 @@ Finally, you'll need to agree on the deprovisioning behavior.  When the connecto
 
 ## Configure the Microsoft Entra ECMA Connector Host certificate
  1. On the Windows Server where the provisioning agent is installed, right select the Microsoft ECMA2Host Configuration Wizard from the start menu, and run as administrator.  Running as a Windows administrator is necessary for the wizard to create the necessary Windows event logs.
- 2. After the ECMA Connector Host Configuration starts, if this is the first time you have run the wizard, it asks you to create a certificate. Leave the default port **8585** and select **Generate certificate** to generate a certificate. The autogenerated certificate is self-signed as part of the trusted root. The SAN matches the host name.
+ 2. After the ECMA Connector Host Configuration starts, if this is the first time you've run the wizard, it asks you to create a certificate. Leave the default port **8585** and select **Generate certificate** to generate a certificate. The autogenerated certificate is self-signed as part of the trusted root. The SAN matches the host name.
      [![Screenshot that shows configuring your settings.](~/includes/media/app-provisioning-sql/configure-1.png)](~/includes/media/app-provisioning-sql/configure-1.png#lightbox)
  3. Select **Save**.
 
 >[!NOTE]
- >If you have chosen to generate a new certificate, please record the certificate expiration date, to ensure that you schedule to return to the configuration wizard and re-generate the certificate before it expires.
+ >If you've chosen to generate a new certificate, please record the certificate expiration date, to ensure that you schedule to return to the configuration wizard and re-generate the certificate before it expires.
 
 
 ## Configure the generic LDAP connector
@@ -187,7 +201,7 @@ Depending on the options you select, some of the wizard screens might not be ava
      |Property|Description|
      |-----|-----|
      |Supported SASL Mechanisms|The top section shows information provided by the server itself, including the list of SASL mechanisms. |
-     |Server Certificate Details|If `SSL` or `TLS` was specified, the wizard displays the certificate returned by the directory server. Confirm that the issuer, subject and thumbprint are for the correct directory server.|
+     |Server Certificate Details|If `SSL` or `TLS` was specified, the wizard displays the certificate returned by the directory server. Confirm that the issuer, subject, and thumbprint are for the correct directory server.|
      |Mandatory Features Found|The connector also verifies that the mandatory controls are present in the Root DSE. If these controls aren't listed, a warning is presented. Some LDAP directories don't list all features in the Root DSE and it's possible that the connector works without issues even if a warning is present.|
      |Supported Controls|The **supported controls** checkboxes control the behavior for certain operations|
      |Delta Import|The change log DN is the naming context used by the delta change log, for example **cn=changelog**. This value must be specified to be able to do delta import. If you don't need to implement delta import, then this field can be blank.|
@@ -202,7 +216,7 @@ Depending on the options you select, some of the wizard screens might not be ava
      |-----|-----|
      |Export|Run profile that exports data to the LDAP directory server. This run profile is required.|
      |Full import|Run profile that imports all data from LDAP sources specified earlier. This run profile is required.|
-     |Delta import|Run profile that imports only changes from LDAP since the last full or delta import.  Only enable this run profile if you have confirmed that the directory server meets the necessary requirements.  For more information, see the [Generic LDAP Connector reference](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-connector-genericldap). |
+     |Delta import|Run profile that imports only changes from LDAP since the last full or delta import. Only enable this run profile if you've confirmed that the directory server meets the necessary requirements.  For more information, see the [Generic LDAP Connector reference](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-connector-genericldap). |
  12. On the **Export** page, leave the defaults unchanged and select **Next**. 
  13. On the **Full Import** page,  leave the defaults unchanged and select **Next**. 
  1. On the **DeltaImport** page, if present, leave the defaults unchanged and select **Next**.
@@ -252,24 +266,24 @@ Depending on the options you select, some of the wizard screens might not be ava
 
 ## Ensure ECMA2Host service is running and can read from the directory server
 
-Follow these steps to confirm that the connector host has started and has identified any existing users from the directory server.
+Follow these steps to confirm that the connector host is started and has identified any existing users from the directory server.
 
  1. On the server running the Microsoft Entra ECMA Connector Host, select **Start**.
  2. Select **run** if needed, then enter **services.msc** in the box.
  3. In the **Services** list, ensure that **Microsoft ECMA2Host** is present and running. If it's not running, select **Start**.
      [![Screenshot that shows the service is running.](~/includes/media/app-provisioning-sql/configure-2.png)](~/includes/media/app-provisioning-sql/configure-2.png#lightbox)
- 1. If you have recently started the service, and have many user objects in the directory server, then wait several minutes for the connector to establish a connection with the directory server.
+ 1. If you've recently started the service, and have many user objects in the directory server, then wait several minutes for the connector to establish a connection with the directory server.
  1. On the server running the Microsoft Entra ECMA Connector Host, launch PowerShell.
  1. Change to the folder where the ECMA host was installed, such as `C:\Program Files\Microsoft ECMA2Host`.
  1. Change to the subdirectory `Troubleshooting`.
- 1. Run the script `TestECMA2HostConnection.ps1` in that directory as shown below, and provide as arguments the connector name and the `ObjectTypePath` value `cache`. If your connector host isn't listening on TCP port 8585, then you may also need to provide the `-Port` argument as well. When prompted, type the secret token configured for that connector.
+ 1. Run the script `TestECMA2HostConnection.ps1` in that directory as shown, and provide as arguments the connector name and the `ObjectTypePath` value `cache`. If your connector host isn't listening on TCP port 8585, then you may also need to provide the `-Port` argument as well. When prompted, type the secret token configured for that connector.
     ```
     PS C:\Program Files\Microsoft ECMA2Host\Troubleshooting> $cout = .\TestECMA2HostConnection.ps1 -ConnectorName LDAP -ObjectTypePath cache; $cout.length -gt 9
     Supply values for the following parameters:
     SecretToken: ************
     ```
  1. If the script displays an error or warning message, then check that the service is running, and the connector name and secret token match those values you configured in the configuration wizard.
- 1. If the script displays the output `False`, then the connector has not seen any entries in the source directory server for existing users.  If this is a new directory server installation, then this behavior is to be expected, and you can continue at the next section.
+ 1. If the script displays the output `False`, then the connector hasn't seen any entries in the source directory server for existing users.  If this is a new directory server installation, then this behavior is to be expected, and you can continue at the next section.
  1. However, if the directory server already contains one or more users but the script displayed `False`, then this status indicates the connector could not read from the directory server.  If you attempt to provision, then Microsoft Entra ID may not correctly match users in that source directory with users in Microsoft Entra ID.  Wait several minutes for the connector host to finish reading objects from the existing directory server, and then rerun the script. If the output continues to be `False`, then check the configuration of your connector and the permissions in the directory server are allowing the connector to read existing users.
 
 
@@ -299,11 +313,11 @@ Follow these steps to confirm that the connector host has started and has identi
 
 If your directory server requires additional attributes that aren't part of the default Microsoft Entra schema for users, then when provisioning you can configure to supply values of those attributes from a constant, from an expression transformed from other Microsoft Entra attributes, or by extending the Microsoft Entra schema.
 
-If the directory server requires users to have an attribute, such as `uidNumber` for the OpenLDAP POSIX schema, and that attribute isn't already part of your Microsoft Entra schema for a user, and must be unique for each user, then you'll need to either generate that attribute from other attributes of the user via an [expression](~/identity/app-provisioning/functions-for-customizing-application-data.md), or use the [directory extension feature](~/identity/app-provisioning/user-provisioning-sync-attributes-for-mapping.md) to add that attribute as an extension.
+If the directory server requires users to have an attribute, such as `uidNumber` for the OpenLDAP POSIX schema, and that attribute isn't already part of your Microsoft Entra schema for a user, and must be unique for each user, then you need to either generate that attribute from other attributes of the user via an [expression](~/identity/app-provisioning/functions-for-customizing-application-data.md), or use the [directory extension feature](~/identity/app-provisioning/user-provisioning-sync-attributes-for-mapping.md) to add that attribute as an extension.
 
-If your users originate in Active Directory Domain Services, and has the attribute in that directory, then you can use Microsoft Entra Connect or Microsoft Entra Connect cloud sync to configure that the attribute should be synched from Active Directory Domain Services to Microsoft Entra ID, so that it's available for provisioning to other systems.
+If your users originate in Active Directory Domain Services and have the attribute in that directory, you can use Microsoft Entra Connect or Microsoft Entra Connect cloud sync. This will configure the attribute to be synched from Active Directory Domain Services to Microsoft Entra ID, making it available for provisioning to other systems.
 
-If your users originate in Microsoft Entra ID, then for each new attribute you'll need to store on a user, you'll need to [define a directory extension](/graph/extensibility-overview?tabs=http#define-the-directory-extension). Then, [update the Microsoft Entra users](/graph/extensibility-overview?tabs=http#update-or-delete-directory-extensions) that are planned to be provisioned, to give each user a value of those attributes.
+If your users originate in Microsoft Entra ID, you need to [define a directory extension](/graph/extensibility-overview?tabs=http#define-the-directory-extension) for each new attribute to store on a user. Then, [update the Microsoft Entra users](/graph/extensibility-overview?tabs=http#update-or-delete-directory-extensions) that are planned to be provisioned, to give each user a value of those attributes.
 
 ## Configure attribute mapping
 
@@ -313,17 +327,17 @@ In this section, you'll configure the mapping between the Microsoft Entra user's
  2. Select **Edit provisioning**.
  3. Expand **Mappings** and select **Provision Microsoft Entra users**. If this is the first time you've configured the attribute mappings for this application, there's only one mapping present as a placeholder.
  1. To confirm that the schema of the directory server is available in Microsoft Entra ID, select the **Show advanced options** checkbox and select **Edit attribute list for ScimOnPremises**. Ensure that all the attributes selected in the configuration wizard are listed.  If not, then wait several minutes for the schema to refresh, then select **Attribute Mapping** in the navigation line, and then select **Edit attribute list for ScimOnPremises** again to reload the page.  Once you see the attributes listed, then cancel from this page to return to the mappings list.
- 1. Every user in a directory must have a unique distinguished name.  You can specify how the connector should construct a distinguished name by using an attribute mapping. Select **Add New Mapping**. Use the values below to create the mapping, changing the distinguished names in the expression to match that of the organizational unit or other container in your target directory.
+ 1. Every user in a directory must have a unique distinguished name.  You can specify how the connector should construct a distinguished name by using an attribute mapping. Select **Add New Mapping**. Use the following values to create the mapping, changing the distinguished names in the expression to match that of the organizational unit or other container in your target directory.
     - Mapping type: expression
     - Expression: `Join("", "CN=", Word([userPrincipalName], 1, "@"), ",DC=Contoso,DC=lab")`
     - Target attribute: `urn:ietf:params:scim:schemas:extension:ECMA2Host:2.0:User:-dn-`
     - Apply this mapping: only during object creation
- 1. If the directory server requires multiple structural object class values, or auxiliary object class values, to be supplied in the `objectClass` attribute, then add a mapping to that attribute.  To add a mapping for `objectClass`, select **Add New Mapping**. Use the values below to create the mapping, changing the object class names in the expression to match that of the target directory schema.
+ 1. If the directory server requires multiple structural object class values, or auxiliary object class values, to be supplied in the `objectClass` attribute, then add a mapping to that attribute.  To add a mapping for `objectClass`, select **Add New Mapping**. Use the following values to create the mapping, changing the object class names in the expression to match that of the target directory schema.
     - Mapping type: expression
     - Expression, if provisioning the POSIX schema: `Split("inetOrgPerson,posixAccount,shadowAccount",",")`
     - Target attribute: `urn:ietf:params:scim:schemas:extension:ECMA2Host:2.0:User:objectClass`
     - Apply this mapping: only during object creation
- 1. For each of the mappings in the following table for your directory server, Select **Add New Mapping**, and specify the source and target attributes.  If you're provisioning into an existing directory with existing users, you'll need to edit the mapping for the attribute that is in common  to set the **Match objects using this attribute** for that attribute. Learn more about attribute mapping [here](~/identity/app-provisioning/customize-application-attributes.md#understanding-attribute-mapping-properties).
+ 1. For each of the mappings in the following table for your directory server, Select **Add New Mapping**, and specify the source and target attributes. If you're provisioning into an existing directory with existing users, you need to edit the mapping for the attribute that is in common  to set the **Match objects using this attribute** for that attribute. Learn more about attribute mapping [here](~/identity/app-provisioning/customize-application-attributes.md#understanding-attribute-mapping-properties).
 
 
      For OpenLDAP with the POSIX schema, you'll also need to supply the `gidNumber`, `homeDirectory`, `uid` and `uidNumber` attributes.   Each user requires a unique `uid` and a unique `uidNumber`. Typically the `homeDirectory` is set by an expression derived from the user's userID. For example, if the `uid` of a user is generated by an expression derived from their user principal name, then the value for that user's home directory could be generated by a similar expression also derived from their user principal name.  And depending on your use case you may wish to have all the users be in the same group, so would assign the `gidNumber` from a constant.
@@ -344,18 +358,18 @@ In this section, you'll configure the mapping between the Microsoft Entra user's
 
 ## Ensure users to be provisioned to the directory have required attributes
 
-If there are people who have existing user accounts in the LDAP directory, then you'll need to ensure that the Microsoft Entra user representation has the attributes required for matching.
+If there are people who have existing user accounts in the LDAP directory, then you need to ensure that the Microsoft Entra user representation has the attributes required for matching.
 
-If you're planning on creating new users in the LDAP directory, then you'll need to ensure that the Microsoft Entra representations of those users have the source attributes required by the user schema of the target directory.  Each user requires a unique `uid` and a unique `uidNumber`.
+If you're planning on creating new users in the LDAP directory, then you need to ensure that the Microsoft Entra representations of those users have the source attributes required by the user schema of the target directory.  Each user requires a unique `uid` and a unique `uidNumber`.
 
 
 If your users originate in Active Directory Domain Services, and has the attribute in that directory, then you can use Microsoft Entra Connect or Microsoft Entra Connect cloud sync to configure that the attribute should be synched from Active Directory Domain Services to Microsoft Entra ID, so that it's available for provisioning to other systems.
 
-If your users originate in Microsoft Entra ID, then for each new attribute you'll need to store on a user, you'll need to [define a directory extension](/graph/extensibility-overview?tabs=http#define-the-directory-extension). Then, [update the Microsoft Entra users](/graph/extensibility-overview?tabs=http#update-or-delete-directory-extensions) that are planned to be provisioned, to give each user a value of those attributes.
+If your users originate in Microsoft Entra ID, then for each new attribute you need to store on a user, you'll [define a directory extension](/graph/extensibility-overview?tabs=http#define-the-directory-extension). Then, [update the Microsoft Entra users](/graph/extensibility-overview?tabs=http#update-or-delete-directory-extensions) that are planned to be provisioned, to give each user a value of those attributes.
 
 ### Confirming users via PowerShell
 
-Once you have the users updated in Microsoft Entra ID, you can use the [Microsoft Graph PowerShell cmdlets](https://www.powershellgallery.com/packages/Microsoft.Graph) to automate checking users have all the required attributes.
+Once you've the users updated in Microsoft Entra ID, you can use the [Microsoft Graph PowerShell cmdlets](https://www.powershellgallery.com/packages/Microsoft.Graph) to automate checking users have all the required attributes.
 
 For example, suppose your provisioning required users to have three attributes `DisplayName`,`surname` and `extension_656b1c479a814b1789844e76b2f459c3_MyNewProperty`. This third attribute is used to contain the `uidNumber`. You could use the `Get-MgUser` cmdlet to retrieve each user and check if the required attributes are present. Note that the Graph v1.0 `Get-MgUser` cmdlet, by default, doesn't return any of a user's directory extension attributes, unless the attributes are specified in the request as one of the properties to return.
 
@@ -420,12 +434,12 @@ The first time your organization uses these cmdlets for this scenario, you need 
 
 1. If needed, transfer the CSV file that contains the list of users to a system with the [Microsoft Graph PowerShell cmdlets](https://www.powershellgallery.com/packages/Microsoft.Graph) installed.
 
-1. Now that you have a list of all the users obtained from the directory, you'll match those users from the directory with users in Microsoft Entra ID. Before you proceed, review the information about [matching users in the source and target systems](~/identity/app-provisioning/customize-application-attributes.md#matching-users-in-the-source-and-target--systems).
+1. Now that you've a list of all the users obtained from the directory, you'll match those users from the directory with users in Microsoft Entra ID. Before you proceed, review the information about [matching users in the source and target systems](~/identity/app-provisioning/customize-application-attributes.md#matching-users-in-the-source-and-target--systems).
 
 [!INCLUDE [active-directory-identity-governance-applications-retrieve-users.md](~/includes/entra-identity-governance-applications-retrieve-users.md)]
 
 ## Assign users to the application in Microsoft Entra ID
-Now that you have the Microsoft Entra ECMA Connector Host talking with Microsoft Entra ID, and the attribute mapping configured, you can move on to configuring who's in scope for provisioning. 
+Now that you've the Microsoft Entra ECMA Connector Host talking with Microsoft Entra ID, and the attribute mapping configured, you can move on to configuring who's in scope for provisioning. 
 
 >[!IMPORTANT]
 >If you were signed in using a Hybrid Identity Administrator role, you need to sign-out and sign-in with an account that has at least the Application Administrator role for this section. The Hybrid Identity Administrator role doesn't have permissions to assign users to applications.
