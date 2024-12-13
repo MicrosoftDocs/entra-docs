@@ -47,14 +47,14 @@ The following diagram illustrates the Verified ID architecture and the component
 
 [Azure Key Vault](/azure/key-vault/general/basic-concepts) is a cloud service that enables the secure storage and access management of secrets and keys. The Verified ID service stores public and private keys in Azure Key Vault. These keys are used to sign and verify credentials.
 
-If you don't have an Azure Key Vault instance available, follow [these steps](/azure/key-vault/general/quick-create-portal) to create a key vault using the Azure portal, The Azure Key Vault that you use to set up the Verified ID service must have [Key Vault Access Policy](/azure/key-vault/general/assign-access-policy) for its Permission model instead of Azure role-based access control that is currently the default when creating an Azure Key Vault. 
+If you don't have an Azure Key Vault instance available, follow [these steps](/azure/key-vault/general/quick-create-portal) to create a key vault using the Azure portal. The Azure Key Vault that you use to set up the Verified ID service must have [Key Vault Access Policy](/azure/key-vault/general/assign-access-policy) for its Permission model instead of Azure role-based access control.
 
 >[!NOTE]
 >By default, the vault's creator account is the only one with access. The Verified ID service needs access to the key vault. You must [authenticate your key vault](/azure/key-vault/general/basic-concepts), allowing the account used during configuration to create and delete keys. The account used during configuration also requires permissions to sign so that it can create the domain binding for Verified ID. If you use the same account while testing, modify the default policy to grant the account sign permission, in addition to the default permissions granted to vault creators.
 
 ### Manage access to the key vault
 
-Before you can set up Verified ID, you need to provide Key Vault [access](/azure/key-vault/general/rbac-guide). This defines whether a specified admin can perform operations on Key Vault secrets and keys. Provide access permissions to your key vault for both the Verified ID administrator account, and for the Request Service API principal that you created.
+Before you can set up Verified ID, you need Key Vault [access](/azure/key-vault/general/rbac-guide). Provide access permissions to your key vault for both the Verified ID administrator account, and for the Request Service API principal that you created.
 
 After you create your key vault, Verifiable Credentials generates a set of keys used to provide message security. These keys are stored in Key Vault. You use a key set for signing verifiable credentials.
 

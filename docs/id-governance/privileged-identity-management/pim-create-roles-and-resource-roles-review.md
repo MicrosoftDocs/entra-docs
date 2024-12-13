@@ -87,7 +87,7 @@ Using Access Reviews for **Service Principals** requires a Microsoft Entra Workl
     :::image type="content" source="./media/pim-create-azure-ad-roles-and-resource-roles-review/reviewers.png" alt-text="Reviewers list of selected users or members (self)":::
 
     - **Selected users** - Use this option to designate a specific user to complete the review. This option is available regardless of the scope of the review, and the selected reviewers can review users, groups, and service principals.
-    - **Members (self)** - Use this option to have the users review their own role assignments. This option is only available if the review is scoped to **Users and Groups** or **Users**. For **Microsoft Entra roles**, role-assignable groups won't be a part of the review when this option is selected. 
+    - **Members (self)** - Use this option to have the users review their own role assignments. This option is only available if the review is scoped to **Users and Groups** or **Users**. For **Microsoft Entra roles**, role-assignable groups aren't part of the review when this option is selected. 
     - **Manager** – Use this option to have the user’s manager review their role assignment. This option is only available if the review is scoped to **Users and Groups** or **Users**. Upon selecting Manager, you also can specify a fallback reviewer. Fallback reviewers are asked to review a user when the user has no manager specified in the directory. For **Microsoft Entra roles**, role-assignable groups are reviewed by the fallback reviewer if one is selected. 
 
 ### Upon completion settings
@@ -135,9 +135,9 @@ Using Access Reviews for **Service Principals** requires a Microsoft Entra Workl
 You can track the progress as the reviewers complete their reviews on the **Overview** page of the access review. No access rights are changed in the directory until the review is completed.
 :::image type="content" source="./media/pim-create-azure-ad-roles-and-resource-roles-review/access-review-overview.png" alt-text="Access reviews overview page showing the details of the access review for Microsoft Entra roles screenshot." lightbox="./media/pim-create-azure-ad-roles-and-resource-roles-review/access-review-overview.png":::
 
-If this is a one-time review, then after the access review, follow the steps in [Complete an access review of Azure resource and Microsoft Entra roles](./pim-complete-roles-and-resource-roles-review.md) to see and apply the results.  
+ After the access review, follow the steps in [Complete an access review of Azure resource and Microsoft Entra roles](./pim-complete-roles-and-resource-roles-review.md) to see and apply the results.  
 
-To manage a series of access reviews, navigate to the access review, and you find upcoming occurrences in Scheduled reviews, and edit the end date or add/remove reviewers accordingly.
+If you are managing a series of access reviews, navigate to the access review, and you find upcoming occurrences in Scheduled reviews, and edit the end date or add/remove reviewers accordingly.
 
 Based on your selections in **Upon completion settings**, auto-apply will be executed after the review's end date or when you manually stop the review. The status of the review changes from **Completed** through intermediate states such as **Applying** and finally to state **Applied**. You should expect to see denied users, if any, being removed from roles in a few minutes.
 
@@ -147,7 +147,7 @@ Based on your selections in **Upon completion settings**, auto-apply will be exe
 
 •	For **Microsoft Entra roles**, role-assignable groups can be assigned to the role using [role-assignable groups](~/identity/role-based-access-control/groups-concept.md). When a review is created on a Microsoft Entra role with role-assignable groups assigned, the group name shows up in the review without expanding the group membership. The reviewer can approve or deny access of the entire group to the role. Denied groups lose their assignment to the role when review results are applied.
 
-•	For **Azure resource roles**, any security group can be assigned to the role. When a review is created on an Azure resource role with a security group assigned, role reviewers can see a fully expanded view of the group's membership. When a reviewer denies a user that was assigned to the role via the security group, the user won't be removed from the group. This is because a group might have been shared with other Azure or non-Azure resources. Therefore the changes resulting from the denied access must be done by the administrator.
+•	For **Azure resource roles**, any security group can be assigned to the role. When a review is created on an Azure resource role with a security group assigned, role reviewers can see a fully expanded view of the group's membership. When a reviewer denies a user that was assigned to the role via the security group, the user won't be removed from the group. This is because a group may be shared with other Azure or non-Azure resources. Administrators must implement the changes resulting from an access denial.
 
 > [!NOTE]
 > It is possible for a security group to have other groups assigned to it. In this case, only the users assigned directly to the security group assigned to the role will appear in the review of the role.

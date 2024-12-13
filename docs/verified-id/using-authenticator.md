@@ -70,7 +70,7 @@ When the Microsoft Authenticator app is installed and ready, you use the public 
 
     :::image type="content" source="media/using-authenticator/scan-qr-code-screen.png" alt-text="Screenshot of scan QR code screen.":::
 
-5. If this is the first time you scan a QR code, the mobile device notifies you that the Authenticator is trying to access the camera. Select **OK** to continue scanning the QR code.
+5. The first time you scan a QR code, the mobile device notifies you that the Authenticator is trying to access the camera. Select **OK** to continue scanning the QR code.
 
     :::image type="content" source="media/using-authenticator/access-camera-screen.png" alt-text="Screenshot of access camera screen.":::
 
@@ -87,23 +87,23 @@ When the Microsoft Authenticator app is installed and ready, you use the public 
 - After you scan the QR code, the Authenticator displays who the issuing party is for the verifiable credential. In the above screenshots, you can see that it's **True Identity** and that the issuance request comes from a verified domain **did.woodgrovedemo.com**. As a user, it is your choice if you trust this issuing party.
 - Not all issuance requests involve a pin code. It's up to the issuing party to decide to include the use of a pin code.
 - The purpose of using a pin code is to add an extra level of security of the issuance process so only you, the intended recipient, can issue the verifiable credential.
-- The demo displays the pin code in the browser page next to the QR code. In a real world scenario, the pin code wouldn't be displayed there, but instead be given to you in some alternate way, like in an email or an SMS text message.
+- The demo displays the pin code in the browser page next to the QR code. In a real world scenario, the pin code wouldn't be displayed there, but instead be given to you in some alternate way, like in an email or a text message.
 
 ## Present a verifiable credential
 
-In learning how to present a verifiable credential, you continue where you left off. Here, you present the True Identity verifiable credential to the demo webapp. Make sure you have a **True Identity** verifiable credential in the Authenticator before continuing.
+In learning how to present a verifiable credential, you continue where you left off. Here, you present the **True Identity** verifiable credential to the demo webapp. Make sure you have a **True Identity** verifiable credential in the Authenticator before continuing.
 
-1. If you're continuing where you left off, select **Access personalized portal** in the end to end demo webapp. If you have the True Identity verifiable credential in Authenticator but closed the browser, then first select **I've been verified** in the [end to end](https://woodgroveemployee.azurewebsites.net/verification) demo webapp and then select **Access personalized portal**. Selecting  **Access personalized portal** presents a QR code in the webpage.
+1. If you're continuing where you left off, select **Access personalized portal** in the end to end demo webapp. If you have the **True Identity** verifiable credential in Authenticator but closed the browser, then first select **I've been verified** in the [end to end](https://woodgroveemployee.azurewebsites.net/verification) demo webapp and then select **Access personalized portal**. Selecting  **Access personalized portal** presents a QR code in the webpage.
 2. Open your Microsoft Authenticator app
 3. Select **Verified IDs** in the lower right corner on the start screen
 4. Press the **QR code symbol** in the top right corner to turn on the camera and scan the QR code.
 5. Select **Share** in the Authenticator to present the verifiable credential to the end to end demo webapp.
 
-    :::image type="content" source="media/using-authenticator/share-card-screen.png" alt-text="Screenshot of sharing a VC card screen.":::
+    :::image type="content" source="media/using-authenticator/share-card-screen.png" alt-text="Screenshot of sharing a Verifiable credential card screen.":::
 
 6. In the browser, select the  **Continue onboarding** button
 
-- After you've scanned the QR code, Authenticator displays who the verifying party is for the verifiable credential. In the above screenshots, you can see that it's **True Identity** and that the issuance request comes from a verified domain **did.woodgrovedemo.com**. As a user, it is your choice if you trust this party and want to share your credential with them.
+- After you scan the QR code, Authenticator displays who the verifying party is for the verifiable credential. In the above screenshots, you can see that it's **True Identity** and that the issuance request comes from a verified domain **did.woodgrovedemo.com**. As a user, it is your choice if you trust this party and want to share your credential with them.
 - If the presentation request doesn't match any of the verifiable credentials you have in the Authenticator, you get a message that you haven't the credentials requested.
 - If you have an expired verifiable credential that matches the presentation request, you get a message that it's expired. You can't share the credentials requested.
 
@@ -130,7 +130,7 @@ The end to end demo continues with onboarding you as a new employee to the Woodg
 ## View activity details of when and where you have presented your verifiable credentials
 
 The Microsoft Authenticator keeps records of the activity for your verifiable credentials.
-If you select a credential card and then switch to view **Activity**, you see the activity list for your credential sorted in most recently used order. For your True Identity card, you see two entries, where the first is when it was issued and the second that the credential was shared with Woodgrove.
+If you select a credential card and then switch to view **Activity**, you see the activity list for your credential sorted in most recently used order. For your **True Identity card**, you see two entries, where the first is when it was issued and the second that the credential was shared with Woodgrove.
 
 :::image type="content" source="media/using-authenticator/card-activity-screen.png" alt-text="Screenshot of VC activity screen.":::
 
