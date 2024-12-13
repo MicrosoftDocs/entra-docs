@@ -302,6 +302,12 @@ items:
       href: concept-authentication-methods-customers.md
     - name: Multifactor authentication (MFA)
       href: concept-multifactor-authentication-customers.md
+    - name: Custom authentication extensions
+      items:
+        - name: Overview
+          href: ~/identity-platform/custom-extension-overview.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+        - name: Custom claims provider
+          href: ~/identity-platform/custom-claims-provider-overview.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Native authentication
       items:
         - name: Native authentication
@@ -407,8 +413,9 @@ items:
           href: how-to-custom-url-domain.md
         - name: Configure optional claims
           href: /entra/identity-platform/optional-claims?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json 
-        - name: Advanced extensions
+        - name: Custom authentication extensions
           items:
+            - name: Custom claims provider
             - name: Add logic to attribute collection
               items:
                 - name: Create attribute collection start and submit events
