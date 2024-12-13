@@ -28,6 +28,7 @@ This article explains how to use self-service sign-up to populate an organizatio
 * An **unmanaged Microsoft Entra tenant** is the tenant where that identity is created. An unmanaged tenant is a tenant that has no Global Administrator.
 * An **email-verified user** is a type of user account in Microsoft Entra ID. A user who has an identity created automatically after signing up for a self-service offer is known as an email-verified user. An email-verified user is a regular member of a tenant tagged with creationmethod=EmailVerified.
 
+
 ## How do I control self-service settings?
 
 Admins have two self-service controls today. They can control whether:
@@ -73,9 +74,10 @@ Update-MgPolicyAuthorizationPolicy -BodyParameter $param
 
 The following flowchart explains the different combinations for these parameters and the resulting conditions for the tenant and self-service sign-up.
 
+
 :::image type="content" source="./media/directory-self-service-signup/SelfServiceSignUpControls.png" alt-text="flowchart of self-service sign up controls.":::
 
-This setting's details may be retrieved using the PowerShell cmdlet Get-MgPolicyAuthorizationPolicy. For more information on this, see [Get-MgPolicyAuthorizationPolicy](/powershell/module/microsoft.graph.identity.signins/get-mgpolicyauthorizationpolicy).
+You can retrieve this setting's details using the PowerShell cmdlet Get-MgPolicyAuthorizationPolicy. For more information, see [Get-MgPolicyAuthorizationPolicy](/powershell/module/microsoft.graph.identity.signins/get-mgpolicyauthorizationpolicy).
 
 ```powershell
 Get-MgPolicyAuthorizationPolicy | Select-Object AllowedToSignUpEmailBasedSubscriptions, AllowEmailVerifiedUsersToJoinOrganization
