@@ -86,7 +86,7 @@ When the Microsoft Authenticator app is installed and ready, you use the public 
 
 - After you scan the QR code, the Authenticator displays who the issuing party is for the verifiable credential. In the above screenshots, you can see that it's **True Identity** and that the issuance request comes from a verified domain **did.woodgrovedemo.com**. As a user, it is your choice if you trust this issuing party.
 - Not all issuance requests involve a pin code. It's up to the issuing party to decide to include the use of a pin code.
-- The purpose of using a pin code is to add an extra level of security of the issuance process so only you, the intended recipient, can issue the verifiable credential.
+- The purpose of using a pin code is to add an extra level of security of the issuance process. When enabled, only the intended recipient can issue the verifiable credential.
 - The demo displays the pin code in the browser page next to the QR code. In a real world scenario, the pin code wouldn't be displayed there, but instead be given to you in some alternate way, like in an email or a text message.
 
 ## Present a verifiable credential
