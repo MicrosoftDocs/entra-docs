@@ -1,17 +1,14 @@
 ---
 title: Self-service sign up for email-verified users
 description: Use self-service sign-up in a Microsoft Entra organization
-
 author: barclayn
 manager: amycolannino
-
 ms.service: entra-id
 ms.subservice: users
 ms.topic: overview
 ms.date: 12/13/2024
 ms.author: barclayn
 ms.reviewer: elkuzmen
-ms.custom: it-pro, has-azure-ad-ps-ref
 
 ---
 # What is self-service sign-up for Microsoft Entra ID?
@@ -28,8 +25,9 @@ This article explains how to use self-service sign-up to populate an organizatio
 ## Terms and definitions
 
 * **Self-service sign-up** is the method by which a user signs up for a cloud service and has an identity automatically created for them in Microsoft Entra ID based on their email domain.
-* **Unmanaged Microsoft Entra tenant** is the tenant where that identity is created. An unmanaged tenant is a tenant that has no Global Administrator.
-* **Email-verified user** is a type of user account in Microsoft Entra ID. A user who has an identity created automatically after signing up for a self-service offer is known as an email-verified user. An email-verified user is a regular member of a tenant tagged with creationmethod=EmailVerified.
+* An **unmanaged Microsoft Entra tenant** is the tenant where that identity is created. An unmanaged tenant is a tenant that has no Global Administrator.
+* An **email-verified user** is a type of user account in Microsoft Entra ID. A user who has an identity created automatically after signing up for a self-service offer is known as an email-verified user. An email-verified user is a regular member of a tenant tagged with creationmethod=EmailVerified.
+
 
 ## How do I control self-service settings?
 
@@ -76,7 +74,8 @@ Update-MgPolicyAuthorizationPolicy -BodyParameter $param
 
 The following flowchart explains the different combinations for these parameters and the resulting conditions for the tenant and self-service sign-up.
 
-:::image type="content" source="./media/directory-self-service-signup/SelfServiceSignUpControls.png" alt-text="Flowchart of self-service sign up controls.":::
+
+:::image type="content" source="./media/directory-self-service-signup/SelfServiceSignUpControls.png" alt-text="flowchart of self-service sign up controls.":::
 
 You can retrieve this setting's details using the PowerShell cmdlet Get-MgPolicyAuthorizationPolicy. For more information, see [Get-MgPolicyAuthorizationPolicy](/powershell/module/microsoft.graph.identity.signins/get-mgpolicyauthorizationpolicy).
 
