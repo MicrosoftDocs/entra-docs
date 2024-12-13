@@ -76,7 +76,7 @@ To set up Verified ID, follow these steps:
 
     1. **Organization name**: Enter a name to reference your business within Verified IDs. Your customers don't see this name.
 
-    1. **Trusted domain**: Enter a domain that's added to a service endpoint in your decentralized identity (DID) document. The domain is what binds your DID to something tangible that the user might know about your business. Microsoft Authenticator and other digital wallets use this information to validate that your DID is linked to your domain. If the wallet can verify the DID, it displays a verified symbol. If the wallet can't verify the DID, it informs the user that the credential was issued by an organization it couldn't validate.
+    1. **Trusted domain**: Enter a domain name. The name you specify is added to a service endpoint in your decentralized identity (DID) document. The domain is what binds your DID to something tangible that the user might know about your business. Microsoft Authenticator and other digital wallets use this information to validate that your DID is linked to your domain. If the wallet can verify the DID, it displays a verified symbol. If the wallet can't verify the DID, it informs the user that the credential issuer is an organization it couldn't validate.
 
         >[!IMPORTANT]
         > The domain can't be a redirect. Otherwise, the DID and domain can't be linked. Make sure to use HTTPS for the domain. For example: `https://did.woodgrove.com`.

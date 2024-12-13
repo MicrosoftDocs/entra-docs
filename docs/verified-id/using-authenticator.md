@@ -22,8 +22,8 @@ In this article, you learn how to:
 >
 > - Install Microsoft Authenticator on your mobile device
 > - Use the Microsoft Authenticator for the first time
-> - Issue a verifiable credential from the public end to end demo webapp to the Authenticator
-> - Present a verifiable credential from the Authenticator to the public end to end demo webapp
+> - Issue a verifiable credential from the public demo webapp to the Authenticator
+> - Present a verifiable credential from the Authenticator to the public demo webapp
 > - View activity details of when and where you've presented your verifiable credentials
 > - Delete a verifiable credential from your Authenticator
 
@@ -113,7 +113,7 @@ The end to end demo continues with onboarding you as a new employee to the Woodg
 
 ### Issue yourself a Woodgrove employee verifiable credential
 
-1. Select **Retrieve my Verified ID** in the browser. This displays a QR code in the webpage.
+1. Select **Retrieve my Verified ID** in the browser to display a QR code in the webpage.
 1. Press the **QR code symbol** in the top right corner of the Authenticator to turn on the camera
 1. Scan the QR code and enter the pin code in the Authenticator and select **Next**. The pin code is shown in the browser page. 
 1. Select **Add** to add the verifiable credential card to the Authenticator wallet.
@@ -127,7 +127,7 @@ The end to end demo continues with onboarding you as a new employee to the Woodg
 1. Select **Share** in the Authenticator to present the verifiable credential to the **Proseware** webapp.
 1. Notice that a Woodgrove employee discounts are applied to the prices when Proseware have verified your credentials.
 
-## View activity details of when and where you have presented your verifiable credentials
+## View verifiable credential activity details
 
 The Microsoft Authenticator keeps records of the activity for your verifiable credentials.
 If you select a credential card and then switch to view **Activity**, you see the activity list for your credential sorted in most recently used order. For your **True Identity card**, you see two entries, where the first is when it was issued and the second that the credential was shared with Woodgrove.
