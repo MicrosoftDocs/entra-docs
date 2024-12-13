@@ -6,7 +6,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.topic: overview
-ms.date: 02/13/2024
+ms.date: 12/13/2024
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management

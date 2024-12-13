@@ -9,7 +9,7 @@ ms.subservice: app-provisioning
 ms.custom:
   - linux-related-content
 ms.topic: how-to
-ms.date: 02/13/2024
+ms.date: 12/13/2024
 ms.author: billmath
 ms.reviewer: arvinh
 ---
