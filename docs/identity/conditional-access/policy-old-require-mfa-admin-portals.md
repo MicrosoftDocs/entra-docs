@@ -38,7 +38,7 @@ Microsoft recommends you require phishing-resistant multifactor authentication o
       > Conditional Access policies support built-in roles. Conditional Access policies are not enforced for other role types including [administrative unit-scoped](~/identity/role-based-access-control/admin-units-assign-roles.md) or [custom roles](~/identity/role-based-access-control/custom-create.yml).
 
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts.
-1. Under **Target resources** > **Cloud apps** > **Include**, **Select apps**, select **Microsoft Admin Portals**.
+1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include**, **Select resources**, select **Microsoft Admin Portals**.
 1. Under **Access controls** > **Grant**, select **Grant access**, **Require authentication strength**, select **Multifactor authentication**, then select **Select**.
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.

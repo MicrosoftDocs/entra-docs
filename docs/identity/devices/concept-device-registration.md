@@ -20,9 +20,9 @@ The goal of Microsoft Entra registered - also known as Workplace joined - device
 | Microsoft Entra registered | Description |
 | --- | --- |
 | **Definition** | Registered to Microsoft Entra ID without requiring organizational account to sign in to the device |
-| **Primary audience** | Applicable to all users with the following criteria: <ul><li>Bring your own device</li><li>Mobile devices</li></ul>
+| **Primary audience** | Applicable to all users with the following criteria: <ul><li>Bring your own device</li><li>Mobile devices</li></ul>|
 | **Device ownership** | User or Organization |
-| **Operating Systems** | <li>Windows 10 or newer</li><li>macOS 10.15</li><li>iOS 15<li>Android</li><li>Linux: <ul><li>Ubuntu 20.04/22.04 LTS</li><li>Red Hat Enterprise Linux 8/9 LTS</li></ul></li> |
+| **Operating Systems** | <li>Windows 10 or newer</li><li>macOS 10.15 or newer</li><li>iOS 15 or newer<li>Android</li><li>Linux editions:<ul><li>Ubuntu 20.04/22.04/24.04 LTS</li><li>Red Hat Enterprise Linux 8/9 LTS</li></ul></li> |
 | **Provisioning** | <li>Windows 10 or newer – Settings</li><li>iOS/Android – Company Portal or Microsoft Authenticator app</li><li>macOS – Company Portal</li><li>Linux - Intune Agent</li> |
 | **Device sign in options** | <li>End-user local credentials</li><li>Password</li><li>Windows Hello</li><li>PIN</li><li>Biometrics or pattern for other devices</li> |
 | **Device management** | <li>Mobile Device Management (example: Microsoft Intune)</li><li>Mobile Application Management</li> |

@@ -7,7 +7,7 @@ manager: CelesteDG
 
 ms.author: godonnell
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.topic: tutorial
 ms.date: 06/09/2023
 

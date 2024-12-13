@@ -155,9 +155,6 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
     
     1. Click **Save**.
 
-> [!Note]
-> Please refer [Productplan SSO Document](https://support.productplan.com/articles/2978940-configuring-single-sign-on-sso-with-productplan) for more details.
-
 ### Create ProductPlan test user
 
 In this section, a user called Britta Simon is created in ProductPlan. ProductPlan supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in ProductPlan, a new one is created after authentication.

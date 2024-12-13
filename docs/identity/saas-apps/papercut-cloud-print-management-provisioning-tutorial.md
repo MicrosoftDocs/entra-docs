@@ -104,7 +104,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 7. Select **Save**.
 
 8. Under the **Mappings** section, select **Provision Microsoft Entra users**.
-   ![Microsoft Entra ID Mapping](media/papercut-cloud-print-management-provisioning-tutorial/mapping.png)
 
 9. Review the user attributes that are synchronized from Microsoft Entra ID to PaperCut Cloud Print Management in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in PaperCut Cloud Print Management for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the PaperCut Cloud Print Management API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 

@@ -50,8 +50,8 @@ The numbers in the table are a global total of Microsoft Entra authentications a
 | July      | 99.999% | 99.999% | 99.999% | 99.999% |
 | August    | 99.999% | 99.999% | 99.999% | 99.999% |
 | September | 99.999% | 99.998% | 99.999% | 99.999% |
-| October   | 99.999% | 99.999% | 99.999% ||
-| November  | 99.998% | 99.999% | 99.999% ||
+| October   | 99.999% | 99.999% | 99.999% | 99.998%|
+| November  | 99.998% | 99.999% | 99.999% | 99.998%|
 | December  | 99.978% | 99.999% | 99.999% ||
 
 <a name='how-is-azure-ad-sla-measured-'></a>

@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/21/2024
+ms.date: 12/03/2024
 ms.author: justinha
 author: najshahid
 manager: amycolannino
@@ -31,6 +31,7 @@ The scope of enforcement includes which applications plan to enforce MFA, when e
 | [Azure portal](/azure/azure-portal/)     | c44b4083-3bb0-49c1-b47d-974e53cbdf3c  | Second half of 2024 |
 | [Microsoft Entra admin center](https://aka.ms/MSEntraPortal) | c44b4083-3bb0-49c1-b47d-974e53cbdf3c | Second half of 2024 |
 | [Microsoft Intune admin center](https://aka.ms/IntunePortal) | c44b4083-3bb0-49c1-b47d-974e53cbdf3c | Second half of 2024 |
+| [Microsoft 365 admin center](https://admin.microsoft.com) | 00000006-0000-0ff1-ce00-000000000000 | Early 2025 |
 | [Azure command-line interface (Azure CLI)](/cli/azure/) | 04b07795-8ddb-461a-bbee-02f9e1bf7b46 | Early 2025 |
 | [Azure PowerShell](/powershell/azure/) | 1950a258-227b-4e31-a9cf-717495945fc2 | Early 2025 |
 | [Azure mobile app](/azure/azure-portal/mobile-app/overview)  | 0c1307d4-29d6-4389-a11c-5cbe7f65d7fa | Early 2025 |
@@ -85,7 +86,7 @@ Microsoft will notify all Microsoft Entra Global Administrators through the foll
 
 - Portal notification: A notification appears in the Azure portal, Microsoft Entra admin center, and Microsoft Intune admin center when they sign in. The portal notification links to this topic for more information about the mandatory MFA enforcement. 
 
-- Microsoft 365 message center: A message appears in the Microsoft 365 message center with the same information as the email and service health notification. 
+- Microsoft 365 message center: A message appears in the Microsoft 365 message center with message ID: **MC862873**. This message has the same information as the email and service health notification. 
 
 After enforcement, a banner appears in Microsoft Entra multifactor authentication:
 
@@ -95,7 +96,7 @@ After enforcement, a banner appears in Microsoft Entra multifactor authenticatio
 
 Support for external MFA solutions is in preview with [external authentication methods](https://aka.ms/EAMAdminDocs), and can be used to meet the MFA requirement. The legacy Conditional Access custom controls preview doesn't satisfy the MFA requirement. You should migrate to the external authentication methods preview to use an external solution with Microsoft Entra ID.  
 
-If you're using a federated Identity Provider (IdP), such as Active Directory Federation Services, and your MFA provider is integrated directly with this federated IdP, the federated IdP must be configured to send an MFA claim. 
+If you're using a federated Identity Provider (IdP), such as Active Directory Federation Services, and your MFA provider is integrated directly with this federated IdP, the federated IdP must be configured to send an MFA claim. For more information, see [Expected inbound assertions for Microsoft Entra MFA](how-to-mfa-expected-inbound-assertions.md).
 
 ## Request more time to prepare for enforcement 
 
@@ -113,12 +114,16 @@ By postponing the start date of enforcement, you take extra risk because account
 
 **Answer**: Yes, every Azure tenant will require MFA, there are no exceptions. 
 
+**Question**: How does this requirement impact the Microsoft 365 admin center?
+
+**Answer**: Mandatory MFA will roll out to the Microsoft 365 admin center starting early in 2025. Learn more about the mandatory MFA requirement for the Microsoft 365 admin center on the blog post [Announcing mandatory multifactor authentication for the Microsoft 365 admin center](https://techcommunity.microsoft.com/t5/microsoft-365-blog/microsoft-will-require-mfa-to-access-the-microsoft-365-admin/ba-p/4232568). 
+
 **Question**: Is MFA mandatory for all users or only administrators? 
 
 
-**Answer**: All users who sign in to any of the [applications](#applications) listed previously are required to complete MFA, regardless of any adminstrator roles that are activated or eligible for them, or any [user exclusions](~/identity/conditional-access/policy-all-users-mfa-strength.md#user-exclusions) that are enabled for them.
+**Answer**: All users who sign in to any of the [applications](#applications) listed previously are required to complete MFA, regardless of any administrator roles that are activated or eligible for them, or any [user exclusions](~/identity/conditional-access/policy-all-users-mfa-strength.md#user-exclusions) that are enabled for them.
 
-**Question**: Will I need to complete MFA if I choose the option to Stay signed in?
+**Question**: Will I need to complete MFA if I choose the option to **Stay signed in**?
 
 **Answer**: Yes, even if you choose **Stay signed in**, you're required to complete MFA before you can sign in to these [applications](#applications).
 
@@ -138,8 +143,7 @@ By postponing the start date of enforcement, you take extra risk because account
 
 There's no way to opt out. This security motion is critical to all safety and security of the Azure platform and is being repeated across cloud vendors. For example, see [Secure by Design: AWS to enhance MFA requirements in 2024](https://aws.amazon.com/blogs/security/security-by-design-aws-to-enhance-mfa-requirements-in-2024/). 
  
-An option to postpone the enforcement start date is available for customers. Between August 15, 2024 and October 15, 2024, Global Administrators can go to the [Azure portal](https://aka.ms/managemfaforazure) to postpone the start date of enforcement for their tenant to March 15, 2025. Global Administrators must have [elevated access](https://aka.ms/enableelevatedaccess) before postponing the start date of MFA enforcement on this page and they must perform this action for every tenant for which they would like to postpone the start date of enforcement.
-
+An option to postpone the enforcement start date is available for customers. Between August 15, 2024 and October 15, 2024, Global Administrators can go to the [Azure portal](https://aka.ms/managemfaforazure) to postpone the start date of enforcement for their tenant to March 15, 2025. Global Administrators must have [elevated access](https://aka.ms/enableelevatedaccess) before they postpone the start date of MFA enforcement on this page. They must perform this action for each tenant that needs postponement.
  
 **Question**: Can I test MFA before Azure enforces the policy to ensure nothing breaks? 
 

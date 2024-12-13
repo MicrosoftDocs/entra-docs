@@ -119,9 +119,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
         ![Screenshot shows User Attributes & Claims with the icon for Groups returned in claim selected.](./media/amazon-business-tutorial/claim.png)
 
-        ![Screenshot shows Group Claims with values as described in this procedure.](./media/amazon-business-tutorial/group-claim.png)
-
-    1. Select **All Groups** from the radio list.
+    1. In the **Group Claims** dialog, select **All Groups** from the radio list.
 
     1. Select **Group ID** as **Source attribute**.
 
@@ -161,8 +159,6 @@ In this section, you create a test user called B.Simon.
 ### Create a Microsoft Entra Security Group in the Azure portal
 
 1. Browse to **Identity** > **Groups** > **All Groups**.
-
-    ![Screenshot shows the Azure portal menu with Microsoft Entra ID selected and All groups selected in the Groups pane.](./media/amazon-business-tutorial/all-groups-tab.png)
 
 1. Select **New group**:
 
@@ -221,8 +217,6 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
 
 1. On the **Set up SSO** wizard, select the provider according to your Organizational requirements and select **Next**.
 
-    ![Screenshot shows Set up S S O, with Microsoft Entra ID and Next selected.](media/amazon-business-tutorial/default-group.png)
-
     > [!NOTE]
     > Although Microsoft ADFS is a listed option, it won't work with Microsoft Entra SSO.
 
@@ -232,14 +226,10 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
 
 1. On the **Upload your metadata file** wizard, choose **Paste XML Link** option to paste the **App Federation Metadata URL** value, and select **Validate**.
 
-    ![Screenshot shows Upload your metadata file, which allows you to browse to an x m l file and upload it.](media/amazon-business-tutorial/connection-data.png)
-
     >[!NOTE]
     > Alternatively, you can also upload the **Federation Metadata XML** file by clicking on the **Upload XML File** option.
 
 1. After uploading the downloaded metadata file, the fields in the **Connection data** section will populate automatically. After that select **Next**.
-
-    ![Screenshot shows Connection data, where you can specify a Microsoft Entra Identifier, Login U R L, and SAML Signing Certificate.](media/amazon-business-tutorial/connection.png)
 
 1. On the **Upload your Attribute statement** wizard, select **Skip**.
 
@@ -255,8 +245,6 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
 
 1. Check the **Status** of the steps that have been configured and select **Start testing**.
 
-    ![Screenshot shows S S O Connection Details with the option to Start testing.](media/amazon-business-tutorial/status.png)
-
 1. On the **Test SSO Connection** wizard, select **Test**.
 
     ![Screenshot shows Test S S O Connection with the Test button.](media/amazon-business-tutorial/test.png)
@@ -269,9 +257,7 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
 
     ![Screenshot shows the Are you ready to switch to active S S O confirmation where you can select Switch to active.](media/amazon-business-tutorial/switch-active.png)
 
-1. Finally in the **SSO Connection details** section the **Status** is shown as **Active**.
-
-    ![Screenshot shows S S O Connection Details with a status of Active.](media/amazon-business-tutorial/details.png)
+1. Finally in the **SSO Connection Details** section the **Status** is shown as **Active**.
 
     > [!NOTE]
     > If you want to configure the application in **SP** initiated mode, complete the following step, paste the sign-on URL from the screenshot above in the **Sign-on URL** text box of the **Set additional URLs** section. Use the following format:

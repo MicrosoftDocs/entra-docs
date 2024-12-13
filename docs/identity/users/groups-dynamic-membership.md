@@ -17,12 +17,13 @@ ms.custom: it-pro
 
 You can create user or device attribute-based rules to enable membership for dynamic membership groups in Microsoft Entra ID, part of Microsoft Entra. You can add and remove dynamic membership groups automatically using membership rules based on member attributes. In Microsoft Entra, a single tenant can have a maximum of 15,000 dynamic membership groups.
 
-This article details the properties and syntax to create rules for dynamic membership groups based on users or devices. 
+This article details the properties and syntax to create rules for dynamic membership groups based on users or devices.
 
 > [!NOTE]
 > Security groups can be used for either devices or users, but Microsoft 365 groups can include only users. 
 
 When the attributes of a user or a device change, the system evaluates all rules for dynamic membership groups in a directory to see if the change would trigger any group adds or removes. If a user or device satisfies a rule on a group, they're added as a member of that group. If they no longer satisfy the rule, they're removed. You can't manually add or remove a member of a dynamic membership group.
+
 - You can create a dynamic membership groups for users or devices, but you can't create a rule that contains both users and devices.
 - You can't create a device membership group based on the user attributes of the device owner. Device membership rules can reference only device attributes.
 
@@ -33,6 +34,9 @@ When the attributes of a user or a device change, the system evaluates all rules
 ## Rule builder in the Azure portal
 
 Microsoft Entra ID provides a rule builder to create and update your important rules more quickly. The rule builder supports the construction of up to five expressions. The rule builder makes it easier to form a rule with a few simple expressions, however, it can't be used to reproduce every rule. If the rule builder doesn't support the rule you want to create, you can use the text box.
+
+>[!IMPORTANT]
+> The rule builder is available only for user-based dynamic membership groups. Device-based dynamic membership groups can be created only using the text box.
 
 Here are some examples of advanced rules or syntax that require the use of the text box:
 
@@ -82,6 +86,7 @@ There are three types of properties that can be used to construct a membership r
 
 
 The following are the user properties that you can use to create a single expression.
+
 
 ### Properties of type boolean
 
@@ -141,6 +146,10 @@ For the properties used for device rules, see [Rules for devices](#rules-for-dev
 ## Supported expression operators
 
 The following table lists all the supported operators and their syntax for a single expression. Operators can be used with or without the hyphen (-) prefix. The **Contains** operator does partial string matches but not item in a collection matches.
+
+
+>[!CAUTION]
+> For best results, minimize the use of MATCH or CONTAINS as much as possible. [Create simpler, more efficient rules for dynamic membership groups](groups-dynamic-rule-more-efficient.md) provides guidance on how to create rules that result in better dynamic group processing times. The ['''memberOf'''](groups-dynamic-rule-member-of.md) operator is in preview and should be used with caution, as it has some limitations.
 
 | Operator | Syntax |
 | --- | --- |
