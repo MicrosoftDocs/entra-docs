@@ -111,7 +111,7 @@ Starting January 2025, the following country codes will be deactivated by defaul
 | 234 | Nigeria |
 | 968 | Oman |
 | 92 | Pakistan |
-| 970 | Palestine |
+| 970 | Palestinian Authority |
 | 675 | Papua New Guinea |
 | 63 | Philippines |
 | 974 | Qatar |
