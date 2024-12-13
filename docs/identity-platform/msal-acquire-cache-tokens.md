@@ -34,7 +34,7 @@ When your application needs to request an access token with specific permissions
 Some example scope values for different resources:
 
 - Microsoft Graph API: `https://graph.microsoft.com/User.Read`
-- Custom web API: `api://11111111-1111-1111-1111-111111111111/api.read`
+- Custom web API: `api://00001111-aaaa-2222-bbbb-3333cccc4444/api.read`
 
 The format of the scope value varies depending on the resource (the API) receiving the access token and the `aud` claim values it accepts.
 
@@ -45,7 +45,7 @@ Certain web APIs such as the Azure Resource Manager API (`https://management.cor
 Other APIs might require that *no scheme or host* is included in the scope value, and expect only the app ID (a GUID) and the scope name, for example:
 
 ```json
-11111111-1111-1111-1111-111111111111/api.read
+00001111-aaaa-2222-bbbb-3333cccc4444/api.read
 ```
 
 > [!TIP]

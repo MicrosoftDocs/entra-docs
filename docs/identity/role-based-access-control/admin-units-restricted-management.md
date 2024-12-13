@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: role-based-access-control
-ms.date: 01/02/2024
+ms.date: 06/13/2024
 ms.author: rolyon
 ms.custom: oldportal;it-pro;
 ---
@@ -16,7 +16,7 @@ ms.custom: oldportal;it-pro;
 
 > [!IMPORTANT]
 > Restricted management administrative units are currently in PREVIEW.
-> See the [Product Terms](https://aka.ms/EntraPreviewsTermsOfUse) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+> See the [Product Terms](https://aka.ms/EntraPreviewsTermsOfUse) for legal terms that apply to features that are in beta, preview, or otherwise not yet released into general availability.
 
 Restricted management administrative units allow you to protect specific objects in your tenant from modification by anyone other than a specific set of administrators that you designate. This allows you to meet security or compliance requirements without having to remove tenant-level role assignments from your administrators.
 
@@ -86,7 +86,7 @@ Here are some of the limits and constraints for restricted management administra
 
 ## Programmability
 
-Applications can't modify objects in restricted management administrative units by default. To grant an application access to manage objects in a restricted management administrative unit, you must assign the *Directory.Write.Restricted* [permission in Microsoft Graph](/graph/permissions-reference?branch=main#directory-permissions).
+Applications can't modify objects in restricted management administrative units by default. To grant an application access to manage objects in a restricted management administrative unit, you must assign a Microsoft Entra role to the application at the scope of the restricted management administrative unit. If you assign [Microsoft Graph application permissions](/graph/permissions-reference) to the application, those permissions won't apply because it's restricted.
 
 ## License requirements
 

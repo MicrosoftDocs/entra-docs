@@ -2,17 +2,15 @@
 title: How SSO to on-premises resources works on Microsoft Entra joined devices
 description: Extend the SSO experience by configuring Microsoft Entra hybrid joined devices.
 
-
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: conceptual
-ms.date: 02/27/2023
+ms.date: 05/29/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
-ms.reviewer: ravenn
-
+ms.reviewer: 
 ---
 # How SSO to on-premises resources works on Microsoft Entra joined devices
 
@@ -28,7 +26,7 @@ This article explains how this works.
 
 ## How it works 
 
-With a Microsoft Entra joined device, your users already have an SSO experience to the cloud apps in your environment. If your environment has Microsoft Entra ID and on-premises AD DS, you may want to expand the scope of your SSO experience to your on-premises Line Of Business (LOB) apps, file shares, and printers.
+With a Microsoft Entra joined device, your users already have an SSO experience to the cloud apps in your environment. If your environment has Microsoft Entra ID and on-premises AD DS, you might want to expand the scope of your SSO experience to your on-premises Line Of Business (LOB) apps, file shares, and printers.
 
 Microsoft Entra joined devices have no knowledge about your on-premises AD DS environment because they aren't joined to it. However, you can provide additional information about your on-premises AD to these devices with Microsoft Entra Connect.
 
@@ -51,7 +49,7 @@ Microsoft Entra Connect or Microsoft Entra Connect cloud sync synchronize your o
 During an access attempt to an on-premises resource requesting Kerberos or NTLM, the device:
 
 1. Sends the on-premises domain information and user credentials to the located DC to get the user authenticated.
-1. Receives a Kerberos [Ticket-Granting Ticket (TGT)](/windows/win32/secauthn/ticket-granting-tickets) or NTLM token based on the protocol the on-premises resource or application supports. If the attempt to get the Kerberos TGT or NTLM token for the domain fails, Credential Manager entries are tried, or the user may receive an authentication pop-up requesting credentials for the target resource. This failure can be related to a delay caused by a DCLocator timeout.
+1. Receives a Kerberos [Ticket-Granting Ticket (TGT)](/windows/win32/secauthn/ticket-granting-tickets) or NTLM token based on the protocol the on-premises resource or application supports. If the attempt to get the Kerberos TGT or NTLM token for the domain fails, Credential Manager entries are tried, or the user might receive an authentication pop-up requesting credentials for the target resource. This failure can be related to a delay caused by a DCLocator timeout.
 
 All apps that are configured for **Windows-Integrated authentication** seamlessly get SSO when a user tries to access them.
 
@@ -67,15 +65,15 @@ If you want to manage your on-premises AD from a Windows device, install the [Re
 You can use:
 
 - The Active Directory Users and Computers (ADUC) snap-in to administer all AD objects. However, you have to  specify the domain that you want to connect to manually.
-- The DHCP snap-in to administer an AD-joined DHCP server. However, you may need to specify the DHCP server name or address.
+- The DHCP snap-in to administer an AD-joined DHCP server. However, you might need to specify the DHCP server name or address.
  
 ## What you should know
 
-- You may have to adjust your [domain-based filtering](~/identity/hybrid/connect/how-to-connect-sync-configure-filtering.md#domain-based-filtering) in Microsoft Entra Connect to ensure that the data about the required domains is synchronized if you have multiple domains.
+- You might have to adjust your [domain-based filtering](~/identity/hybrid/connect/how-to-connect-sync-configure-filtering.md#domain-based-filtering) in Microsoft Entra Connect to ensure that the data about the required domains is synchronized if you have multiple domains.
 - Apps and resources that depend on Active Directory machine authentication don't work because Microsoft Entra joined devices don't have a computer object in AD DS. 
 - You can't share files with other users on a Microsoft Entra joined device.
-- Applications running on your Microsoft Entra joined device may authenticate users. They must use the implicit UPN or the NT4 type syntax with the domain FQDN name as the domain part, for example: user@contoso.corp.com or contoso.corp.com\user.
-   - If applications use the NETBIOS or legacy name like contoso\user, the errors the application gets would be either, NT error STATUS_BAD_VALIDATION_CLASS - 0xc00000a7, or Windows error ERROR_BAD_VALIDATION_CLASS - 1348 “The validation information class requested was invalid.” This error happens even if you can resolve the legacy domain name.
+- Applications running on your Microsoft Entra joined device might authenticate users. They must use the implicit UPN or the NT4 type syntax with the domain FQDN name as the domain part, for example: user@contoso.corp.com or contoso.corp.com\user.
+   - If applications use the NETBIOS or legacy name like contoso\user, the errors the application gets would be either, NT error STATUS_BAD_VALIDATION_CLASS - 0xc00000a7, or Windows error ERROR_BAD_VALIDATION_CLASS - 1348 "The validation information class requested was invalid." This error happens even if you can resolve the legacy domain name.
 
 ## Next steps
 

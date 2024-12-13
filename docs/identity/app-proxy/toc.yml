@@ -102,8 +102,6 @@ items:
       href: application-proxy-configure-for-claims-aware-applications.md
     - name: Configure mobile and desktop client apps
       href: application-proxy-configure-native-client-application.md
-    - name: Register connector - silent install
-      href: application-proxy-register-connector-powershell.md
     - name: Remove personal data
       href: application-proxy-remove-personal-data.md
     - name: Publishing walkthroughs

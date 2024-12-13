@@ -27,7 +27,7 @@ We recommend that you use a nonproduction environment to test the steps in this 
 To view applications registered in your Microsoft Entra tenant, you need:
 
 - A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Cloud Application Administrator, or owner of the service principal.
+- One of the following roles: Cloud Application Administrator, or owner of the service principal.
 - Completion of the steps in [Quickstart: Add an enterprise application](add-application-portal.md).
 
 ## View a list of applications

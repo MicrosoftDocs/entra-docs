@@ -121,8 +121,8 @@ Use Microsoft Entra security groups to assign:
 
 Learn more:
 
-- [Manage Microsoft Entra groups and group membership](~/fundamentals/how-to-manage-groups.md)
-- [Microsoft Entra version 2 cmdlets for group management](~/identity/users/groups-settings-v2-cmdlets.md).
+* [Manage Microsoft Entra groups and group membership](~/fundamentals/how-to-manage-groups.yml)
+* [Microsoft Entra version 2 cmdlets for group management](~/identity/users/groups-settings-v2-cmdlets.md). 
 
 > [!NOTE]
 > Use security groups to assign up to 1,500 applications.
@@ -173,8 +173,6 @@ Learn more:
 ### Microsoft 365 Group settings
 
 Select email alias, privacy, and whether to enable the group for teams.
-
-   ![Screenshot of options and entries under Edit settings.](media/secure-external-access/4-edit-group-settings.png)
 
 After setup, add members, and configure settings for email usage, and so on.
 

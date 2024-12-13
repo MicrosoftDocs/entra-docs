@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and HappyFox so that I can control who has access to HappyFox, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -137,9 +137,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	![Screenshot that shows the "S A M L Integration" setting with the "configure" action selected.](./media/happyfox-tutorial/configure.png)
 
-4. Inside SAML configuration section, paste the **Login URL** value, which you have into **SSO Target URL** textbox.
-
-	![Screenshot that shows the "S A M L Configuration" section with the "S S O Target U R L" textbox highlighted.](./media/happyfox-tutorial/target.png)
+4. In the **SAML Configuration** section, in the **SSO Target URL** textbox, paste the **Login URL** value from the **Set up HappyFox** section.
 
 5. Open the certificate downloaded from Azure portal in notepad and paste its content in **IdP Signature** section.
 

@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 ---
 
@@ -92,7 +92,7 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 
 ### Key Authentication Scenarios
 
-Apart from Microsoft Entra native integration support for modern authentication protocols like OpenID Connect, SAML and WS-Fed, F5 extends secure access for legacy-based authentication apps for both internal and external access with Microsoft Entra ID, enabling modern scenarios (e.g. password-less access) to these applications. This include:
+Apart from Microsoft Entra native integration support for modern authentication protocols like OpenID Connect, SAML and WS-Fed, F5 extends secure access for legacy-based authentication apps for both internal and external access with Microsoft Entra ID, enabling modern scenarios (such as password-less access) to these applications. This include:
 
 * Header-based authentication apps
 
@@ -204,7 +204,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 1. In the **Add Assignment** dialog, click the **Assign** button.
 1. Click on **Conditional Access** .
 1. Click on **New Policy**.
-1. You can now see your F5 App as a resource for Conditional Access policy and apply any Conditional Access including Multifactor Auth, Device based access control or Identity Protection Policy.
+1. You can now see your F5 App as a resource for Conditional Access policy and apply any Conditional Access including multifactor authentication, device based access, or Microsoft Entra ID Protection risk.
 
 ## Configure F5 SSO
 
@@ -258,7 +258,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. On the Single Sign-On Settings screen, select **Enable Single Sign-On**. Under **Selected Single Sign-On Type** choose **Kerberos**. Replace **session.saml.last.Identity**  with **session.saml.last.attr.name.Identity** under **Username Source** (this variable it set using claims mapping in the Microsoft Entra ID). Select **Show Advanced Setting**. Under **Kerberos Realm** type the Domain Name. Under **Account Name/ Account Password** Specify the APM Delegation Account and Password. Specify the Domain Controller IP in the **KDC** Field. Click **Save & Next**.
 
-    ![Screenshot that shows the "Single Sign-On Settings" with text boxes highlighted and the "Save & Next" button selected.](./media/kerbf5-tutorial/configure09.png)   
+    ![Screenshot that shows the "Single Sign-On Settings" with text boxes highlighted and the "Save & Next" button selected.](./media/kerbf5-tutorial/configure-09.png)   
 
 1. For purposes of this guidance, we will skip endpoint checks.  Refer to F5 documentation for details.  On  screen select **Save & Next**.
 
@@ -327,7 +327,7 @@ You configure an Active Directory AAA server in Access Policy Manager (APM) to s
 15. Click **Finished**. The new server displays on the list. 
 This adds the new Active Directory server to the Active Directory Servers list.
 
-    ![Screenshot that shows the "General Properties" and "Configuration" sections.](./media/kerbf5-tutorial/configure17.png)
+    ![Screenshot that shows the "General Properties" and "Configuration" sections.](./media/kerbf5-tutorial/configure-17.png)
 
 ### SAML Configuration
 
@@ -474,7 +474,9 @@ This adds the new Active Directory server to the Active Directory Servers list.
     * setspn –A **host/big-ipuser.superdemo.live** big-ipuser
 
 * **Step 3:** SPN Delegation (for the App Service Account)
-    Setup the appropriate Delegation for the F5 Delegation Account.
+
+    Set up the appropriate Delegation for the F5 Delegation Account.
+
     In the example below, APM Delegation account is being configured for KCD for FRP-App1.superdemo. live app.
 
     ![F5 (Kerberos) configuration](./media/kerbf5-tutorial/configure43.png)

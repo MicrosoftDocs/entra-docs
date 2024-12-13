@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 
@@ -120,8 +120,6 @@ Follow these steps to enable Microsoft Entra SSO.
 	![Screenshot shows to copy Configuration appropriate U R L.](common/copy-configuration-urls.png "Configuration")
 	
 1. OpenLearning application expects to enable token encryption in order to make SSO work. To activate token encryption, Browse to **Identity** > **Applications** > **Enterprise applications** > select your application > **Token encryption**. For more information see the article [Configure Microsoft Entra SAML token encryption](~/identity/enterprise-apps/howto-saml-token-encryption.md).
-
-    ![Screenshot shows the activation of Token Encryption.](./media/openlearning-tutorial/token.png "Token Encryption")
 
 <a name='create-an-azure-ad-test-user'></a>
 

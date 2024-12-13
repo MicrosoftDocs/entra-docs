@@ -1,14 +1,12 @@
 ---
 title: "Tutorial: Add sign-in and sign-out to a React SPA for an external tenant"
 description: Learn how to configure a React single-page app (SPA) to sign in and sign out users with your external tenant.
- 
 author: godonnell
 manager: celestedg
-
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.topic: tutorial
-ms.date: 05/23/2023
+ms.date: 07/03/2024
 ms.author: godonnell
 
 #Customer intent: As a developer I want to add sign-in and sign-out functionality to my React single-page app
@@ -133,4 +131,6 @@ All the required code snippets have been added, so the application can now be te
 
 ## See also
 
-> [Enable self-service password reset](./how-to-enable-password-reset-customers.md)
+> - [Enable self-service password reset](./how-to-enable-password-reset-customers.md)
+> - [Customize the default branding](/entra/external-id/customers/how-to-customize-branding-customers)
+> - [Configure sign-in with Google](/entra/external-id/customers/how-to-google-federation-customers)

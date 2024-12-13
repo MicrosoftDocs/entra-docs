@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: conceptual
-ms.date: 06/22/2023
+ms.date: 08/12/2024
 ms.author: owinfrey
 ---
 # Understanding lifecycle workflows 
@@ -14,6 +14,9 @@ ms.author: owinfrey
 The following document provides an overview of a workflow created using Lifecycle Workflows. Workflows automate tasks based on the joiner-mover-leaver(JML) cycle of lifecycle management, and split tasks for users into categories of where they fall in the lifecycle of an organization. These categories extend into templates, where they can be quickly customized to suit the needs of users in your organization. For more information, see: [What are Lifecycle Workflows?](what-are-lifecycle-workflows.md).
 
   [![Diagram of a lifecycle workflow.](media/understanding-lifecycle-workflows/workflow-2.png)](media/understanding-lifecycle-workflows/workflow-2.png#lightbox)
+
+> [!NOTE]
+> Lifecycle workflows enhances Microsoft Entra ID Governance's [HR-driven provisioning](../identity/app-provisioning/what-is-hr-driven-provisioning.md) by automating routine processes. While HR provisioning manages the creation and attribute updates of user accounts, lifecycle workflows provide additional automation of tasks.
 
 ## License requirements 
 
@@ -24,11 +27,8 @@ The following document provides an overview of a workflow created using Lifecycl
 
 For a full list of supported delegated and application permissions required to use Lifecycle Workflows, see: [Lifecycle workflows permissions](/graph/permissions-reference#lifecycle-workflows-permissions).
 
-For delegated scenarios, the admin needs one of the following [Microsoft Entra roles](../identity/role-based-access-control/permissions-reference.md):
+For delegated scenarios, the admin needs should have at least the Lifecycle Workflows Administrator [Microsoft Entra role](../identity/role-based-access-control/permissions-reference.md):
 
-- Global administrator
-- Global reader
-- Lifecycle workflows administrator
 
 ## Limits
 
@@ -124,8 +124,8 @@ On the Workflow basics screen you also get to set the first detail, the trigger,
 The trigger of a workflow defines when a scheduled workflow runs for users in scope for the workflow. The trigger of a workflow depends on the type of workflow you want to run. 
 
 The supported scheduled triggers are:
-- Attribute Changes (preview)
-- Group Membership change (preview)
+- Attribute Changes
+- Group Membership change
 - Time based
 
 Depending on which type of workflow you choose will determine which trigger you use for it.

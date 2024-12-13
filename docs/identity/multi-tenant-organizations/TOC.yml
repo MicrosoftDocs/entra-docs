@@ -3,7 +3,7 @@
 - name: Overview
   expanded: true
   items:
-  - name: Multitenant organization scenario
+  - name: Multitenant organization capabilities
     href: overview.md
   - name: What is a multitenant organization?
     href: multi-tenant-organization-overview.md
@@ -12,26 +12,36 @@
 - name: Concepts
   expanded: true
   items:
-  - name: Multitenant organizations and Microsoft 365
-    href: multi-tenant-organization-microsoft-365.md
-  - name: Multitenant organization templates
-    href: multi-tenant-organization-templates.md
-  - name: Topologies for cross-tenant synchronization
-    href: cross-tenant-synchronization-topology.md
-  - name: Governance and cross-tenant synchronization
-    href: cross-tenant-synchronization-governance.md
+  - name: Multitenant organizations
+    expanded: true
+    items:
+    - name: Identity provisioning for Microsoft 365
+      href: multi-tenant-organization-microsoft-365.md
+    - name: Optional policy templates
+      href: multi-tenant-organization-templates.md
+    - name: Limitations
+      href: multi-tenant-organization-known-issues.md
+  - name: Cross-tenant synchronization
+    expanded: true
+    items:
+    - name: Topologies for cross-tenant synchronization
+      href: cross-tenant-synchronization-topology.md
+    - name: Governance and cross-tenant synchronization
+      href: cross-tenant-synchronization-governance.md
+    - name: Secure and govern security operations center access in a multitenant organization
+      href: defender-xdr-microsoft-entra-mto.md
+    - name: Known issues
+      href: ../app-provisioning/known-issues.md?toc=/entra/identity/multi-tenant-organizations/toc.json&bc=/entra/identity/multi-tenant-organizations/breadcrumb/toc.json?pivots=cross-tenant-synchronization
 - name: How-to guides
   expanded: true
   items:
-  - name: Multitenant organizations
+  - name: Multitenant organization
     expanded: true
     items:
     - name: Configure a multitenant organization
       href: multi-tenant-organization-configure-graph.md
-    - name: Configure templates
+    - name: Configure policy templates
       href: multi-tenant-organization-configure-templates.md
-    - name: Known issues
-      href: multi-tenant-organization-known-issues.md
   - name: Cross-tenant synchronization
     expanded: true
     items:
@@ -51,8 +61,6 @@
       href: ../monitoring-health/concept-provisioning-logs.md?toc=/entra/identity/multi-tenant-organizations/toc.json&bc=/entra/identity/multi-tenant-organizations/breadcrumb/toc.json?pivots=cross-tenant-synchronization
     - name: Map directory extensions
       href: cross-tenant-synchronization-directory-extensions.md
-    - name: Known issues
-      href: ../app-provisioning/known-issues.md?toc=/entra/identity/multi-tenant-organizations/toc.json&bc=/entra/identity/multi-tenant-organizations/breadcrumb/toc.json?pivots=cross-tenant-synchronization
 - name: Reference
   expanded: true
   items:

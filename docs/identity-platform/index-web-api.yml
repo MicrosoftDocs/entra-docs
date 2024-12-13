@@ -40,6 +40,8 @@ landingContent:
         links:
           - text: Call a Web API with cURL
             url: howto-call-a-web-api-with-curl.md
+          - text: Call a Web API with Insomnia
+            url: howto-call-a-web-api-with-rest-client.md
           # - text: Protected web API
           #   url: scenario-protected-web-api-overview.md
           # - text: Web API that calls other web APIs

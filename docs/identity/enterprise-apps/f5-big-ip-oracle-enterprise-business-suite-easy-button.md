@@ -72,7 +72,7 @@ You need the following components:
 
 * An Azure subscription
   * If you don't have one, get an [Azure free account](https://azure.microsoft.com/free/)
-* Global Administrator, Cloud Application Administrator, or Application Administrator.
+* A Cloud Application Administrator, or Application Administrator role.
 * A BIG-IP or deploy a BIG-IP Virtual Edition (VE) in Azure
   * See, [Deploy F5 BIG-IP Virtual Edition VM in Azure](./f5-bigip-deployment-guide.md)
 * Any of the following F5 BIG-IP license SKUs:
@@ -152,8 +152,6 @@ To reduce time and effort, reuse global settings to publish other applications.
 4. Confirm the BIG-IP connects to your tenant.
 5. Select **Next**.
 
-   ![Screenshot of input on the Configuration Properties dialog.](./media/f5-big-ip-oracle/configuration-general-and-service-account-properties.png)
-
 ### Service Provider
 
 Use Service Provider settings for the properties of the SAML SP instance of the protected application.
@@ -215,7 +213,7 @@ When a user authenticates, Microsoft Entra ID issues a SAML token with default c
 
 #### Additional User Attributes
 
-The **Additional User Attributes** tab supports distributed systems that require attributes stored in directories for session augmentation. Attributes fetched from an LDAP source are injected as more SSO headers to control access based on roles, partner ID, etc.
+The **Additional User Attributes** tab supports distributed systems that require attributes stored in directories for session augmentation. Attributes fetched from an LDAP source are injected as more SSO headers to control access based on roles, partner ID, and so on.
 
 1. Enable the **Advanced Settings** option.
 2. Check the **LDAP Attributes** check box.

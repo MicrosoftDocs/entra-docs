@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 07/06/2023
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ArcGIS Online so that I can control who has access to ArcGIS Online, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -97,8 +97,6 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. To automate the configuration within **ArcGIS Online**, you need to install **My Apps Secure Sign-in browser extension** by clicking **Install the extension**.
 
-    ![image](./media/arcgis-tutorial/install-extension.png)
-
 1. After adding extension to the browser, click on **setup ArcGIS Online** will direct you to the ArcGIS Online application. From there, provide the admin credentials to sign into ArcGIS Online. The browser extension will automatically configure the application for you and automate steps in section **Configure ArcGIS Online Single Sign-On**.
 
 <a name='create-an-azure-ad-test-user'></a>
@@ -137,8 +135,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 2. Go to the **Organization** -> **Settings**. 
 
-    ![Screenshot shows Edit Settings.](./media/arcgis-tutorial/settings.png "Edit Settings")
-
 3. In the left menu, click **Security** and select **New SAML login** in the Logins tab.
 
     ![Screenshot shows Security.](./media/arcgis-tutorial/security.png)
@@ -169,8 +165,6 @@ In the case of ArcGIS Online, provisioning is a manual task.
 1. Log in to your **ArcGIS** tenant.
 
 2. Go to the **Organization** -> **Members** and click **Invite members**.
-
-    ![Screenshot shows Invite Members.](./media/arcgis-tutorial/invite.png "Invite Members")
 
 3. Select **Add members without sending invitations** method, and then click **Next**.
 

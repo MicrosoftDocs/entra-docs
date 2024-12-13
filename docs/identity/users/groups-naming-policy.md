@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 08/23/2024
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -101,7 +101,7 @@ Some administrator roles are exempted from these policies, across all group work
 
 Install the Microsoft Graph cmdlets as described in [Install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation).
 
-[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 1. Open the Windows PowerShell app as an administrator.
 1. Install the Microsoft Graph cmdlets.
@@ -290,7 +290,7 @@ For more information on Microsoft Entra groups, see:
 
 - [Existing groups](~/fundamentals/groups-view-azure-portal.md)
 - [Expiration policy for Microsoft 365 groups](groups-lifecycle.md)
-- [Manage settings of a group](~/fundamentals/how-to-manage-groups.md)
-- [Manage members of a group](~/fundamentals/how-to-manage-groups.md)
-- [Manage memberships of a group](~/fundamentals/how-to-manage-groups.md)
-- [Manage dynamic rules for users in a group](groups-dynamic-membership.md)
+- [Manage settings of a group](~/fundamentals/how-to-manage-groups.yml)
+- [Manage members of a group](~/fundamentals/how-to-manage-groups.yml)
+- [Manage memberships of a group](~/fundamentals/how-to-manage-groups.yml)
+- [Manage rules for dynamic membership groups](groups-dynamic-membership.md)

@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and AcquireIO so that I can control who has access to AcquireIO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -135,13 +135,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     ![Screenshot that highlights App Store.](./media/acquireio-tutorial/menu.png)
 
-1. Scroll down up to **Active Directory** and click on **Install**.
-
-    ![Screenshot that highlights the Active Directory section and the Install button.](./media/acquireio-tutorial/install-button.png)
+1. Scroll to **Active Directory** and click on **Install**.
 
 1. On the Active Directory pop-up, perform the following steps:
 
-    ![Screnshot that shows the Active Directory screen.](./media/acquireio-tutorial/configuration.png)
+    ![Screenshot that shows the Active Directory screen.](./media/acquireio-tutorial/configuration.png)
 
     a. Click **Copy** to copy the Reply URL for your instance and paste it in **Reply URL** textbox in **Basic SAML Configuration** section.
 

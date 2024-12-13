@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Snowflake so that I can control who has access to Snowflake, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -235,6 +235,10 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 * Click on **Test this application**, and you should be automatically signed in to the Snowflake for which you set up the SSO. 
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the Snowflake tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Snowflake for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+
+## Prevent application access through local accounts
+
+Once you've validated that SSO works and rolled it out in your organization, we recommend disabling application access using local credentials. This ensures that your conditional access policies, MFA, etc. will be in place to protect sign-ins to Snowflake. Review the Snowflake documentation for [configuring SSO](https://docs.snowflake.com/en/user-guide/admin-security-fed-auth-use), and use the ALTER USER commandlet to remove user passwords.  
 
 ## Next steps
 

@@ -7,7 +7,7 @@ manager: mwongerapk
 
 ms.author: shermanouko
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.custom: devx-track-dotnet
 ms.topic: tutorial
 ms.date: 07/26/2023
@@ -17,21 +17,22 @@ ms.date: 07/26/2023
 
 This tutorial series demonstrates how to build a .NET Windows Presentation Form (WPF) desktop application and prepare it for authentication using the Microsoft Entra admin center. You'll register the app in the Microsoft Entra admin center, create a .NET WPF desktop app, add sign-in and sign-out components and run the application.
 
-In this tutorial, you'll;
+In this tutorial;
 
 > [!div class="checklist"]
->
 > - Register a WPF desktop application in the Microsoft Entra admin center
-> - Create a sign-in and sign-out user flow in customers tenant.
-> - Associate your WPF desktop app with the user flow.
+> - Create a sign-in and sign-out user flow in customers tenant
+> - Associate your WPF desktop app with the user flow
 
 ## Prerequisites
 
-- An external tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
+- An external tenant. To create one, choose from the following methods:
+  - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/tutorials/marketplace) to set up an external tenant directly in Visual Studio Code.
+  - [Create a new external tenant](how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 - This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-    - Application Administrator
-    - Application Developer
-    - Cloud Application Administrator
+  - Application Administrator
+  - Application Developer
+  - Cloud Application Administrator.
 
 ## Register the desktop app
 
@@ -41,9 +42,7 @@ In this tutorial, you'll;
 
 [!INCLUDE [active-directory-b2c-wpf-app-platform](./includes/register-app/add-platform-redirect-url-wpf.md)]
 
-## Grant API permissions
-
-Since this app signs-in users, add delegated permissions:
+## Grant admin consent
 
 [!INCLUDE [active-directory-b2c-grant-delegated-permissions](./includes/register-app/grant-api-permission-sign-in.md)]
 

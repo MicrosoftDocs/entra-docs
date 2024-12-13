@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and StatusPage so that I can control who has access to StatusPage, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -158,8 +158,6 @@ In this section, you enable Britta Simon to use Azure single sign-on by granting
 
 1. Click the **Single Sign-on** tab.
 
-    ![Screenshot shows the Single Sign-on tab.](./media/statuspage-tutorial/tab.png)
-
 1. On the SSO Setup page, perform the following steps:
 
     ![Screenshot shows the S S O Setup page where you can enter the values described.](./media/statuspage-tutorial/setup.png)
@@ -187,16 +185,12 @@ StatusPage supports just-in-time provisioning. You have already enabled it in [C
 	![Screenshot shows Manage Account selected from the StatusPage company site.](./media/statuspage-tutorial/account.png)
 
 1. Click the **Team Members** tab.
-  
-    ![Screenshot shows the Team Members tab.](./media/statuspage-tutorial/sandbox.png) 
 
 1. Click **ADD TEAM MEMBER**.
   
     ![Screenshot shows the Add Team Member button.](./media/statuspage-tutorial/team.png) 
 
-1. Type the **Email Address**, **First Name**, and **Surname** of a valid user you want to provision into the related textboxes. 
-
-    ![Screenshot shows the Add a User dialog box where you can enter the values described.](./media/statuspage-tutorial/user.png) 
+1. Type the **Email Address**, **First Name**, and **Surname** of a valid user you want to provision into the related textboxes.
 
 1. As **Role**, choose **Client Administrator**.
 

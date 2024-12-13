@@ -60,6 +60,8 @@ items:
         href: plan-sso-deployment.md
     - name: Application security
       items:
+      - name: Migrate away from secret-based authentication
+        href: migrate-applications-from-secrets.md
       - name: App access options
         href: what-is-access-management.md
       - name: Certificate signing options
@@ -123,7 +125,7 @@ items:
       href: add-application-portal-configure.md
     - name: Add enterprise app for multi-tenant app
       href: create-service-principal-cross-tenant.md
-    - name: Single sign-on
+    - name: Configure Single sign-on
       items:
       - name: Enable Single sign-on with SAML
         href: add-application-portal-setup-sso.md
@@ -133,14 +135,14 @@ items:
         href: add-application-portal-setup-oidc-sso.md
       - name: Enable Password based single sign-on
         href: configure-password-single-sign-on-non-gallery-applications.md
+      - name: Perform One-click SSO
+        href: one-click-sso-tutorial.md
     - name: Manage access
       items:
       - name: Manage consent and permissions
         items:
         - name: Configure user consent
           href: configure-user-consent.md
-        - name: Configure group owner consent
-          href: configure-user-consent-groups.md
         - name: Configure risk-based step-up consent
           href: configure-risk-based-step-up-consent.md
         - name: Configure permission classifications
@@ -161,6 +163,8 @@ items:
           href: manage-application-permissions.md
         - name: Restore revoked permissions
           href: restore-permissions.md
+        - name: Review permission audit logs
+          href: app-perms-audit-logs.md
       - name: Manage user assignment
         href: assign-user-or-group-access-portal.md
       - name: Assign custom security attributes
@@ -182,11 +186,7 @@ items:
     - name: Migrate applications
       items:
       - name: Migrate applications from AD FS to Microsoft Entra ID 
-        items:
-        - name: Use the AD FS application migration wizard
-          href: migrate-ad-fs-application-howto.md
-        - name: Use the ADFS application activity report
-          href: migrate-adfs-application-activity.md
+        href: migrate-ad-fs-application-howto.md
       - name: Migrate applications from Okta to Microsoft Entra ID
         items:
         - name: Migrate applications from Okta to Microsoft Entra ID
@@ -309,8 +309,6 @@ items:
       href: methods-for-removing-user-access.md
   - name: Resources
     items:
-        - name: Video learning
-          href: app-management-videos.md
         - name: Migration resources
           href: migration-resources.md
         - name: Support and help options for developers

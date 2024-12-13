@@ -38,7 +38,7 @@ In order to optimize the traffic flow and reduce latency to a connector group, a
 > [!IMPORTANT]
 > Connectors must be using at least version 1.5.1975.0 to use this capability.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Select your username in the upper-right corner. Verify you're signed in to a directory that uses application proxy. If you need to change directories, select **Switch directory** and choose a directory that uses application proxy.
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application proxy**.
 1. Select **New Connector Group** and provide a **Name** for the connector group.
@@ -73,7 +73,7 @@ When setting up the application proxy service, ask the following questions:
 - Where is the application proxy instance located?
 - Do you already have a dedicated network connection to Microsoft data centers set up, like Azure ExpressRoute or a similar VPN?
 
-The connector must communicate with both Microsoft Entra and your applications. Steps 2 and 3 represent the communication in the traffic flow diagram. The placement of the connector affects the latency of those two connections. When evaluating the placement of the connector, keep in mind these points.
+The connector must communicate with both Microsoft Entra ID and your applications. Steps 2 and 3 represent the communication in the traffic flow diagram. The placement of the connector affects the latency of those two connections. When evaluating the placement of the connector, keep in mind these points.
 
 - Confirm "line of site" between the connector and the data center for Kerberos Constrained Delegation (KCD). Additionally, the connector server needs to be domain joined.
 - Install the connector as close to the application as possible.

@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ArcGIS Enterprise so that I can control who has access to ArcGIS Enterprise, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -146,9 +146,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. On the **Set Identity Provider** section, perform the following steps:
 
-    ![Screenshot shows Set Identity Provider where you perform the steps described here.](./media/arcgisenterprise-tutorial/configure-4.png)
-
-    a. Please provide a name like **Microsoft Entra ID Test** in the **Name** textbox.
+    a. Kindly provide a name like **Microsoft Entra ID Test** in the **Name** textbox.
 
     b. In the **URL** textbox, paste the **App Federation Metadata Url** value which you copied previously.
 

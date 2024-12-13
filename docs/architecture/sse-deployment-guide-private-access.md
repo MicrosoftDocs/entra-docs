@@ -11,7 +11,7 @@ ms.author: jricketts
 
 # Microsoft's Security Service Edge Solution Deployment Guide for Microsoft Entra Private Access Proof of Concept
 
-[Microsoft's identity-centric Security Service Edge solution](../global-secure-access/overview-what-is-global-secure-access.md) converges network, identity, and endpoint access controls so that you can secure access to any app or resource, from any location, device, or identity. It enables and orchestrates access policy management for employees, business partners, and digital workloads. You can continuously monitor and adjust user access in real time if permissions or risk level changes to your private apps, SaaS apps, and Microsoft 365 endpoints.
+[Microsoft's identity-centric Security Service Edge solution](../global-secure-access/overview-what-is-global-secure-access.md) converges network, identity, and endpoint access controls so that you can secure access to any app or resource, from any location, device, or identity. It enables and orchestrates access policy management for employees, business partners, and digital workloads. You can continuously monitor and adjust user access in real time if permissions or risk level changes to your private apps, SaaS apps, and Microsoft endpoints.
 
 This guidance helps you deploy [Microsoft Entra Private Access](../global-secure-access/concept-private-access.md) as a Proof of Concept in your production or test environment, including Conditional Access policies and application assignments. You can scope your configuration to specific test users and groups. See [Microsoft's Security Service Edge Solution Deployment Guide Introduction](sse-deployment-guide-intro.md) for prerequisites.
 
@@ -23,7 +23,7 @@ Complete the [Configure initial product](sse-deployment-guide-intro.md#configure
 
 The connector server communicates with Microsoft's Security Service Edge Solution as the gateway to your corporate network. It uses outbound connections through 80 and 443 and doesn't require inbound ports. Learn [How to configure connectors for Microsoft Entra Private Access](../global-secure-access/how-to-configure-connectors.md#open-ports). 
 
-1. On the connector server, open the [Microsoft Entra admin center](https://entra.microsoft.com). Go to **Global Secure Access (Preview)** > **Connect** > **Connectors**  and then click **Enable Private Network connectors**. Click **Download connector service**.
+1. On the connector server, open the [Microsoft Entra admin center](https://entra.microsoft.com). Go to **Global Secure Access** > **Connect** > **Connectors**  and then click **Enable Private Network connectors**. Click **Download connector service**.
    
      :::image type="content" source="media/sse-deployment-guide-private-access/enable-private-network-connectors.png" alt-text="Screenshot of Global Secure Access, Connect, Connectors, Private Network Connector, Private Network Connector Download window." lightbox="media/sse-deployment-guide-private-access/enable-private-network-connectors-extended.png"::: 
 1. Create a new connector group for your Private Network Connector.
@@ -36,17 +36,15 @@ In this guide, we use a new connector group with one connector server. In a prod
 
 Microsoft Entra Private Access supports transmission control protocol (TCP) applications using any ports. To connect to the application server using RDP (TCP port 3389) over the internet, complete the following steps:
 1. From the connector server, verify that you can remote desktop into the application server.
-1. Open the [Microsoft Entra admin center](https://entra.microsoft.com) and then go to **Global Secure Access (preview)** > **Applications** > **Enterprise applications** > **+ New Application**.
+1. Open the [Microsoft Entra admin center](https://entra.microsoft.com) and then go to **Global Secure Access** > **Applications** > **Enterprise applications** > **+ New Application**.
                                            
      :::image type="content" source="media/sse-deployment-guide-private-access/enterprise-applications-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications window." lightbox="media/sse-deployment-guide-private-access/enterprise-applications-extended.png":::
 1. Enter a **Name** (such as Server1) and select the new connector group. Click **+Add application segment**. Enter the **IP address** of the application server and port 3389.
 
-     :::image type="content" source="media/sse-deployment-guide-private-access/create-application-segment-inline.png" alt-text="Screenshot of Create Global Secure Access Application, Create application segment window." lightbox="media/sse-deployment-guide-private-access/create-application-segment-extended.png":::
 1. Click **Apply** > **Save**. Verify that the application is added to the Enterprise applications list.
 
 1. Go to **Identity** > **Applications** > **Enterprise applications** and click the newly created application.
 
-     :::image type="content" source="media/sse-deployment-guide-private-access/all-applications-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications, All applications window." lightbox="media/sse-deployment-guide-private-access/all-applications-extended.png":::
 1. Click **Users and groups**. Add your test user that that will access this application from the internet.
 
      :::image type="content" source="media/sse-deployment-guide-private-access/application-users-groups-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications, Manage, Users and groups window." lightbox="media/sse-deployment-guide-private-access/application-users-groups-extended.png":::
@@ -58,8 +56,6 @@ You can apply Conditional Access policies to applications published with Microso
 
 1. Open the [Microsoft Entra admin center](https://entra.microsoft.com). Go to **Identity** > **Protection** > **Conditional Access** > **Authentication strengths**. Select **+New authentication strength**.
 1. Create **New authentication strength** to require **Microsoft Authenticator (Phone Sign-in)**.
-
-     :::image type="content" source="media/sse-deployment-guide-private-access/new-authentication-strength-inline.png" alt-text="Screenshot of Identity, Protection, Conditional Access, Authentication strengths, New authentication strength window." lightbox="media/sse-deployment-guide-private-access/new-authentication-strength-extended.png":::
 1. Go to **Policies**.
 1. Create a new Conditional Access Policy as follows:
    1. **Users**: select a specific user
@@ -77,11 +73,7 @@ In the earlier section, we applied Conditional Access to one application for a s
 In this scenario, a Marketing department user needs to use RDP to open a remote desktop session to Server1. Additionally, a user in the Developer department needs to access a file share on Server using SMB protocol. Permissions to each application are configured so that users in the Marketing department can remote desktop into Server1 but can't access the file share on Server1. For additional access control, we enforce MFA to users in the Marketing department and require users in the Developer department to agree on the Terms of Use to access their resources.
 
 1. Open the [Microsoft Entra admin center](https://entra.microsoft.com) and create two test users, such as *FirstUser* and *SecondUser*.
-
-     :::image type="content" source="media/sse-deployment-guide-private-access/new-user-inline.png" alt-text="Screenshot of Identity, Users, All users, New user window." lightbox="media/sse-deployment-guide-private-access/new-user-extended.png":::
 1. Create a group each for Marketing and Developers. Add *FirstUser* to the Marketing group and add *SecondUser* to the Developers group.
-
-     :::image type="content" source="media/sse-deployment-guide-private-access/all-groups-inline.png" alt-text="Screenshot of Identity, Groups, All groups window." lightbox="media/sse-deployment-guide-private-access/all-groups-extended.png":::
 1. Go to **Global Secure Access** > **Applications** > **Enterprise applications**. Select your test application from the [Publish application](#publish-application) section. Remove your earlier test user from **Users and groups** and replace it with the Marketing group.
 
      :::image type="content" source="media/sse-deployment-guide-private-access/users-and-groups-inline.png" alt-text="Screenshot of Global Secure Access, Applications, Enterprise applications, Users and groups window." lightbox="media/sse-deployment-guide-private-access/users-and-groups-extended.png":::
@@ -123,9 +115,7 @@ You can monitor applications accessed via Microsoft Entra Private Access via the
  > [!NOTE]
  > The IP Address listed in the **sourceIp** section is the public IP address of the client and not the IP Address of the Microsoft's Security Service Edge Solution Network.
 
-[!INCLUDE [Public preview important note](~/global-secure-access/includes/public-preview-important-note.md)]
-
 ## Next steps
 
-[Deploy and verify Microsoft Entra Internet Access for Microsoft 365](sse-deployment-guide-m365.md)
+[Deploy and verify Microsoft Entra Internet Access for Microsoft Traffic](sse-deployment-guide-microsoft-traffic.md)
 [Deploy and verify Microsoft Entra Internet Access](sse-deployment-guide-internet-access.md)

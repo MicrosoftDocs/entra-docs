@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 
@@ -171,8 +171,6 @@ In this section, you'll configure single sign-on in **Resource Central System Ad
 1. Select **Save**.
 
 1. Return to the **Azure portal**. In **SAML Signing Certificate**, upload your certificate and enter your password.
-
-   ![Screenshot of the Import Certificate pane.](./media/resource-central/cert2.png).
 
 1. Select **Add**.
 

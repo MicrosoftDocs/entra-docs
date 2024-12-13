@@ -1,18 +1,20 @@
 ---
-title: Register an app in Microsoft Entra External ID
-description: Learn about how to register an app in the external tenant. 
+title: Register an App
+description: Learn how to register your application with External ID for customer identity and access management (CIAM). Choose your app type and get detailed steps. 
 author: csmulligan
 ms.author: cmulligan
 manager: CelesteDG
 ms.service: entra-external-id 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
-ms.date: 02/29/2024
-ms.custom: it-pro
+ms.date: 10/07/2024
+ms.custom: it-pro, seo-july-2024
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about how to register an app on the Microsoft Entra admin center.
 ---
-# Register your app in the external tenant
+# Register an app in your external tenant
+
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 Microsoft Entra External ID enables your organization to manage customers’ identities, and securely control access to your public facing applications and APIs. Applications where your customers can buy your products, subscribe to your services, or access their account and data.  Your customers only need to sign in on a device or a web browser once and have access to all your applications you granted them permissions.
 
@@ -59,8 +61,7 @@ The following steps show you how to register your SPA in the Microsoft Entra adm
 
 [!INCLUDE [add about redirect URI](../customers/includes/register-app/about-redirect-url.md)]  
 
-### Grant delegated permissions
-This app signs in users. You can add delegated permissions to it, by following the steps below:
+### Grant admin consent
 
 [!INCLUDE [grant permission for signing in users](../customers/includes/register-app/grant-api-permission-sign-in.md)] 
 
@@ -71,6 +72,10 @@ If your SPA needs to call an API, you must grant your SPA API permissions so it 
 [!INCLUDE [grant permissions for calling an API](../customers/includes/register-app/grant-api-permission-call-api.md)] 
 
 If you'd like to learn how to expose the permissions by adding a link, go to the [Web API](how-to-register-ciam-app.md?tabs=webapi) section.
+
+### Test the user flow (optional)
+
+[!INCLUDE [test user flow](../customers/includes/register-app/test-user-flow.md)]
 
 # [Web app](#tab/webapp)
 ## Register your Web app
@@ -101,12 +106,12 @@ The following steps show you how to register your web app in the Microsoft Entra
 
 [!INCLUDE [add about redirect URI](../customers/includes/register-app/about-redirect-url.md)] 
 
-### Add delegated permissions
-This app signs in users. You can add delegated permissions to it, by following the steps below:
+### Grant admin consent
 
 [!INCLUDE [grant permission for signing in users](../customers/includes/register-app/grant-api-permission-sign-in.md)] 
 
-### Create a client secret 
+### Create a client secret
+ 
 [!INCLUDE [add a client secret](../customers/includes/register-app/add-app-client-secret.md)]
 
 ### Grant API permissions (optional)
@@ -114,6 +119,10 @@ This app signs in users. You can add delegated permissions to it, by following t
 If your web app needs to call an API, you must grant your web app API permissions so it can call the API. You must also [register the web API](how-to-register-ciam-app.md?tabs=webapi) that you need to call.
 
 [!INCLUDE [grant permissions for calling an API](../customers/includes/register-app/grant-api-permission-call-api.md)] 
+
+### Test the user flow (optional)
+
+[!INCLUDE [test user flow](../customers/includes/register-app/test-user-flow.md)]
 
 # [Web API](#tab/webapi)
 ## Register your Web API
@@ -154,13 +163,18 @@ The following steps show you how to register your app in the Microsoft Entra adm
 
 1. The application's **Overview pane** is displayed when registration is complete. Record the **Directory (tenant) ID** and the **Application (client) ID** to be used in your application source code.
 
-### Add delegated permissions
+### Grant admin consent
+
 [!INCLUDE [grant permission for signing in users](../customers/includes/register-app/grant-api-permission-sign-in.md)]
 
 ### Grant API permissions (optional)
 
 If your mobile app needs to call an API, you must grant your mobile app API permissions so it can call the API. You must also [register the web API](how-to-register-ciam-app.md?tabs=webapi) that you need to call.
-[!INCLUDE [grant permissions for calling an API](../customers/includes/register-app/grant-api-permission-call-api.md)] 
+[!INCLUDE [grant permissions for calling an API](../customers/includes/register-app/grant-api-permission-call-api.md)]
+
+### Test the user flow (optional)
+
+[!INCLUDE [test user flow](../customers/includes/register-app/test-user-flow.md)]
 
 # [Daemon app](#tab/daemonapp)
 ## Register your Daemon app
@@ -173,6 +187,10 @@ A daemon app signs in as itself using the [OAuth 2.0 client credentials flow](~/
 
 [!INCLUDE [register daemon app](../customers/includes/register-app/grant-api-permissions-app-permissions.md)]
 
+### Test the user flow (optional)
+
+[!INCLUDE [test user flow](../customers/includes/register-app/test-user-flow.md)]
+
 # [Microsoft Graph API](#tab/graphapi)
 ## Register a Microsoft Graph API application
 [!INCLUDE [register client app](../customers/includes/register-app/register-client-app-common.md)]
@@ -183,12 +201,15 @@ A daemon app signs in as itself using the [OAuth 2.0 client credentials flow](~/
 ### Create a client secret 
 [!INCLUDE [add app client secret](../customers/includes/register-app/add-app-client-secret.md)]
 
+### Test the user flow (optional)
+
+[!INCLUDE [test user flow](../customers/includes/register-app/test-user-flow.md)]
+
 # [Native authentication](#tab/nativeauthentication)
 ## Register a native authentication application
 [!INCLUDE [register client app](../customers/includes/register-app/register-client-app-common.md)]
 
-### Add delegated permissions
-This app signs in users. You can add delegated permissions to it, by following the steps below:
+### Grant admin consent
 
 [!INCLUDE [grant permission for signing in users](../customers/includes/register-app/grant-api-permission-sign-in.md)]
 
@@ -202,5 +223,3 @@ This app signs in users. You can add delegated permissions to it, by following t
 ## Next steps
  
 - [Create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md)
-
-

@@ -7,7 +7,7 @@ editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 04/09/2024
+ms.date: 07/15/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
 ---
@@ -22,7 +22,7 @@ You can review access to groups and applications via My Access. My Access is a u
 ### Use email to go to My Access
 
 >[!IMPORTANT]
-> There could be delays in receiving email. In some cases, it could take up to 24 hours. Add azure-noreply@microsoft.com to your safe recipients list to make sure that you're receiving all emails.
+> There could be delays in receiving email. In some cases, it could take up to 24 hours. Add MSSecurity-noreply@microsoft.com to your safe recipients list to make sure that you're receiving all emails.
 
 1. Look for an email from Microsoft asking you to review access. Here's an example email message:
 
@@ -108,7 +108,7 @@ If the administrator has enabled multi-stage access reviews, there will be two o
 
 You'll either review access manually or accept the recommendations based on sign-in activity for the stage you're assigned as the reviewer.
 
-If you're the second-stage or third-stage reviewer, you'll also see the decisions made by the reviewers in the prior stages, if the administrator enabled this setting when creating the access review. The decision made by a second-stage or third-stage reviewer will overwrite the previous stage. So, the decision that the second-stage reviewer makes will overwrite the first stage. And the third-stage reviewer's decision will overwrite the second stage.
+If you're the second-stage or third-stage reviewer, you'll also see the decisions made by the reviewers in the prior stages, if the administrator enabled this setting when creating the access review. The decision made by a second-stage or third-stage reviewer overwrites the previous stage. So, the decision that the second-stage reviewer makes overwrites the first stage. And the third-stage reviewer's decision overwrites the second stage.
 
  ![Screenshot showing selection of a user to show the multi-stage access review results.](./media/perform-access-review/multi-stage-access-review.png)
 
@@ -126,12 +126,13 @@ To review access of B2B direct connect users, use the following instructions:
 1. Follow the instructions in [Review access for one or more users](#review-access-for-one-or-more-users) to make decisions to approve or deny the users access to the teams.
 
 > [!NOTE]
-> Unlike internal users and B2B collaboration users, B2B direct connect users and teams _don't_ have recommendations based on last sign-in activity to make decisions when you perform the review.
+> Unlike internal users and B2B collaboration users, B2B direct connect users and teams *don't* have recommendations based on last sign-in activity to make decisions when you perform the review.
 
-If a team you review has shared channels, all B2B direct connect users and teams that access those shared channels are part of the review. This includes B2B collaboration users and internal users. When a B2B direct connect user or team is denied access in an access review, the user loses access to every shared channel in the team. To learn more about B2B direct connect users, read [B2B direct connect](../external-id/b2b-direct-connect-overview.md).
+If a team you review shares channels, all B2B direct connect users and teams that access those shared channels are part of the review. This includes B2B collaboration users and internal users. When a B2B direct connect user or team is denied access in an access review, the user loses access to every shared channel in the team. To learn more about B2B direct connect users, read [B2B direct connect](../external-id/b2b-direct-connect-overview.md).
 
 ## Set up what will happen if no action is taken on access review
-When the access review is set up, the administrator has the option to use advanced settings to determine what will happen if a reviewer doesn't respond to an access review request.
+
+When the access review is set up, the administrator can use advanced settings to determine what happens if a reviewer doesn't respond to an access review request.
 
 The administrator can set up the review so that if reviewers don't respond at the end of the review period, all unreviewed users can have an automatic decision made on their access. This includes the loss of access to the group or application under review.
 

@@ -18,6 +18,26 @@ ms.author: barclayn
 
 This article lists the latest features, improvements, and changes in the Microsoft Entra Verified ID service.
 
+## October 2024
+
+- FAQ section now contains information for [network hardening](verifiable-credentials-faq.md#network-hardening-for-callback-events) for Request Service API callbacks.
+
+## September 2024
+
+- Support for [did:web:path](did-web-path.md) can be enabled for your Microsoft Entra tenant upon request.
+
+## August 2024
+
+- [FaceCheck](using-facecheck.md) is generally available starting August 12.
+
+## June 2024
+
+- [FaceCheck](using-facecheck.md) introducing the Face Check Addon as an incremental update to the Face Check public preview. Face Check is a premium feature within Microsoft Entra Verified ID free to use during the public preview period ending on Aug 12.
+
+## April 2024
+
+- [Quick setup](verifiable-credentials-configure-tenant-quick.md) Generally available, it enables an admin to onboard Microsoft Entra Verified ID in an Microsoft Entra tenant with just one click of a button.
+
 ## March 2024
 
 - Starting February 2024, Verified ID [supports NIST compliant P-256 curve](verifiable-credentials-standards.md#supported-algorithms).
@@ -25,7 +45,7 @@ This article lists the latest features, improvements, and changes in the Microso
 
 ## February 2024
 
-- New concept article on [Verified helpdesk](helpdesk-with-verified-id.md) on how to identity of callers seeking help using Entra Verified ID.
+- New concept article on [Verified helpdesk](helpdesk-with-verified-id.md) on how to identity of callers seeking help using Microsoft Entra Verified ID.
 - Override of [expirationDate](issuance-request-api.md#issuance-request-payload) on issuance for idTokenHint attestation flow requires that the contract needs to have the flag [allowOverrideValidityOnIssuance](admin-api.md#contract-type) set to true.
 
 ## January 2024
@@ -82,7 +102,7 @@ Tutorial for getting started with the Wallet Library demo on Android and iOS ava
 
 ## May 2023
 
-- Wallet Library was announced at Build 2023 in session [Reduce fraud and improve engagement using Digital Wallets](https://build.microsoft.com/en-US/sessions/4ca41843-1b3f-4ee6-955e-9e2326733be8). The Wallet Library enables customers to add verifiable credentials technology to their own mobile apps. The libraries are available for [Android](https://github.com/microsoft/entra-verifiedid-wallet-library-android/tree/dev) and [iOS](https://github.com/microsoft/entra-verifiedid-wallet-library-ios/tree/dev).
+- Wallet Library was announced at Build 2023 in session [Reduce fraud and improve engagement using Digital Wallets](https://www.youtube.com/watch?v=wtEzFqtsq8U). The Wallet Library enables customers to add verifiable credentials technology to their own mobile apps. The libraries are available for [Android](https://github.com/microsoft/entra-verifiedid-wallet-library-android/tree/dev) and [iOS](https://github.com/microsoft/entra-verifiedid-wallet-library-ios/tree/dev).
 
 ## April 2023
 
@@ -129,7 +149,7 @@ Microsoft Entra Verified ID is now generally available (GA) as the new member of
 - The Request Service APIs have **new endpoints** and **updated JSON payloads**. For issuance, see [Issuance API specification](issuance-request-api.md#issuance-request-payload) and for presentation, see [Presentation API specification](presentation-request-api.md#presentation-request-payload). The old endpoints and JSON payloads continue to work, but you should change your applications to use the new endpoints and payloads.
 - Request Service API **[Error codes](error-codes.md)** have been **updated** 
 - The **[Admin API](admin-api.md)** is made **public** and is documented. The Azure portal is using the Admin API and with this REST API you can automate the onboarding or your tenant and creation of credential contracts.
-- Find issuers and credentials to verify via the [The Microsoft Entra Verified ID Network](how-use-vcnetwork.md).
+- Find issuers and credentials to verify via the [Microsoft Entra Verified ID Network](how-use-vcnetwork.md).
 - For migrating your Azure Storage based credentials to become Managed Credentials there's a PowerShell script in the [GitHub samples repo](https://github.com/Azure-Samples/active-directory-verifiable-credentials/tree/contractmigration/scripts/contractmigration) for the task.
 
 - We also made the following updates to our Plan and design docs:
@@ -223,8 +243,7 @@ We're making protocol updates in Microsoft Authenticator to support Single Long 
 
 ## November 2021
 
-- We made updates to the Request Service REST API for [issuance](issuance-request-api.md?#callback-type) and [presentation](presentation-request-api.md?#callback-type)
-Callback types enforcing rules so that URL endpoints for callbacks are reachable.
+- We made updates to the Request Service REST API for [issuance](issuance-request-api.md?#callback-type) and [presentation](presentation-request-api.md?#callback-type). Callback types enforcing rules so that URL endpoints for callbacks are reachable.
 - UX updates to the Microsoft Authenticator verifiable credentials experience: Animations on card selection from the wallet.
 
 ## October 2021

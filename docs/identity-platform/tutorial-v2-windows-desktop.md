@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom:
-ms.date: 02/21/2023
+ms.date: 06/27/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
@@ -15,7 +15,7 @@ ms.topic: tutorial
 
 # Tutorial: Sign in users and call Microsoft Graph in Windows Presentation Foundation (WPF) desktop app
 
-In this tutorial, you'll build a native Windows Desktop .NET (XAML) app that signs in users and gets an access token to call the Microsoft Graph API.
+In this tutorial, you build a native Windows Desktop .NET (XAML) app that signs in users and gets an access token to call the Microsoft Graph API.
 
 When you've completed the guide, your application will able to call a protected API that uses personal accounts (including outlook.com, live.com, and others). The application will also use work and school accounts from any company or organization that uses Microsoft Entra ID.
 
@@ -23,7 +23,7 @@ In this tutorial:
 
 > [!div class="checklist"]
 >
-> - Create a _Windows Presentation Foundation (WPF)_ project in Visual Studio
+> - Create a *Windows Presentation Foundation (WPF)* project in Visual Studio
 > - Install the Microsoft Authentication Library (MSAL) for .NET
 > - Register the application
 > - Add code to support user sign-in and sign-out
@@ -59,9 +59,9 @@ This guide uses the following NuGet packages:
 
 ## Set up your project
 
-In this section you'll create a new project to demonstrate how to integrate a Windows Desktop .NET application (XAML) with _Sign-In with Microsoft_ so that the application can query web APIs that require a token.
+In this section, you create a new project to demonstrate how to integrate a Windows Desktop .NET application (XAML) with *Sign-In with Microsoft* so that the application can query web APIs that require a token.
 
-The application that you'll create displays a button that'll call the Microsoft Graph API, an area to display the results, and a sign-out button.
+The application that you create displays a button that will call the Microsoft Graph API, an area to display the results, and a sign-out button.
 
 > [!NOTE]
 > Prefer to download this sample's Visual Studio project instead? [Download a project](https://github.com/Azure-Samples/active-directory-dotnet-desktop-msgraph-v2/archive/msal3x.zip), and skip to the [Configuration step](#register-your-application) to configure the code sample before you execute it.
@@ -72,7 +72,7 @@ Create the application using the following steps:
 1. On the start window, select **Create a new project**.
 1. In the **All language** dropdown, select **C#**.
 1. Search for and choose the **WPF App (.NET Framework)** template, and then select Next.
-1. In the **Project name** box, enter a name like _Win-App-calling-MsGraph_.
+1. In the **Project name** box, enter a name like *Win-App-calling-MsGraph*.
 1. Choose a **Location** for the project or accept the default option.
 1. In the **Framework**, select **.NET Framework 4.8**.
 1. Select **Create**.
@@ -108,7 +108,7 @@ To register and configure your application, follow these steps:
 
 In this step, you create a class to handle interaction with MSAL, such as handling of tokens.
 
-1. Open the _App.xaml.cs_ file, and then add the reference for MSAL to the class:
+1. Open the *App.xaml.cs* file, and then add the reference for MSAL to the class:
 
    ```csharp
    using Microsoft.Identity.Client;
@@ -151,7 +151,7 @@ In this step, you create a class to handle interaction with MSAL, such as handli
 
 This section shows how an application can query a protected back-end server such as Microsoft Graph.
 
-A _MainWindow.xaml_ file is automatically be created as a part of your project template. Open this file, and then replace your application's _\<Grid>_ node with the following code:
+A *MainWindow.xaml* file is automatically be created as a part of your project template. Open this file, and then replace your application's *\<Grid>* node with the following code:
 
 ```xml
 <Grid>
@@ -172,7 +172,7 @@ A _MainWindow.xaml_ file is automatically be created as a part of your project t
 
 In this section, you use MSAL to get a token for the Microsoft Graph API.
 
-1. In the _MainWindow.xaml.cs_ file, add the reference for MSAL to the class:
+1. In the *MainWindow.xaml.cs* file, add the reference for MSAL to the class:
 
    ```csharp
    using Microsoft.Identity.Client;
@@ -300,7 +300,7 @@ public async Task<string> GetHttpContentWithToken(string url, string token)
 
 ### More information about making a REST call against a protected API
 
-In this sample application, you use the `GetHttpContentWithToken` method to make an HTTP `GET` request against a protected resource that requires a token and then return the content to the caller. This method adds the acquired token in the HTTP Authorization header. For this sample, the resource is the Microsoft Graph API _me_ endpoint, which displays the user's profile information.
+In this sample application, you use the `GetHttpContentWithToken` method to make an HTTP `GET` request against a protected resource that requires a token and then return the content to the caller. This method adds the acquired token in the HTTP Authorization header. For this sample, the resource is the Microsoft Graph API *me* endpoint, which displays the user's profile information.
 
 ## Add a method to sign out a user
 
@@ -339,7 +339,7 @@ Although the application in this sample supports single users, MSAL supports sce
 
 ## Display basic token information
 
-To display basic information about the token, add the following method to your _MainWindow.xaml.cs_ file:
+To display basic information about the token, add the following method to your *MainWindow.xaml.cs* file:
 
 ```csharp
 /// <summary>
@@ -358,13 +358,13 @@ private void DisplayBasicTokenInfo(AuthenticationResult authResult)
 
 ### More information
 
-In addition to the access token that's used to call the Microsoft Graph API, after the user signs in, MSAL also obtains an ID token. This token contains a small subset of information that's pertinent to users. The `DisplayBasicTokenInfo` method displays the basic information that's contained in the token. For example, it displays the user's display name and ID, as well as the token expiration date and the string representing the access token itself. You can select the _Call Microsoft Graph API_ button multiple times and see that the same token was reused for subsequent requests. You can also see the expiration date being extended when MSAL decides it's time to renew the token.
+In addition to the access token that's used to call the Microsoft Graph API, after the user signs in, MSAL also obtains an ID token. This token contains a small subset of information that's pertinent to users. The `DisplayBasicTokenInfo` method displays the basic information that's contained in the token. For example, it displays the user's display name and ID, as well as the token expiration date and the string representing the access token itself. You can select the *Call Microsoft Graph API* button multiple times and see that the same token was reused for subsequent requests. You can also see the expiration date being extended when MSAL decides it's time to renew the token.
 
 [!INCLUDE [5. Test and Validate](./includes/guidedsetup-windesktop-test.md)]
 
-## Next steps
+## Next step
 
 Learn more about building desktop apps that call protected web APIs in our multi-part scenario series:
 
 > [!div class="nextstepaction"]
-> [Scenario: Desktop app that calls web APIs](scenario-desktop-overview.md)
+> [Scenario: Desktop app that calls web APIs](scenario-desktop-app-registration.md)

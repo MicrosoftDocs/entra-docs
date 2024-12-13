@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and OpsGenie so that I can control who has access to OpsGenie, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -142,8 +142,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
     ![Screenshot that shows the "Enabled" checkbox selected.](./media/opsgenie-tutorial/tutorial-opsgenie-07.png) 
 
 4. In the **Provider** section, click the **Microsoft Entra ID** tab.
-   
-    ![Screenshot that shows the "Provider" section with the "Microsoft Entra ID" tab selected.](./media/opsgenie-tutorial/tutorial-opsgenie-08.png) 
 
 5. On the Microsoft Entra dialog page, perform the following steps:
    

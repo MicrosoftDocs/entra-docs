@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 01/16/2023
+ms.date: 03/25/2024
 ms.author: jeedes
 
 
@@ -34,7 +34,7 @@ You'll configure and test Microsoft Entra single sign-on for Descartes in a test
 To integrate Microsoft Entra ID with Descartes, you need:
 
 * A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * Descartes single sign-on (SSO) enabled subscription.
 
@@ -94,9 +94,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 	![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
-1. Compose a list of the Microsoft Entra groups you want the Descartes Application use for the Role-based configuration. A list of User Roles Descartes application modules can be found at https://www.gln.com/docs/Descartes_Application_User_Roles.pdf. You can find the Azure Active Direction Group GUIDs please download the Groups from your Azure portal Groups.
-
-    ![Screenshot shows the Microsoft Entra admin center Groups.](media/descartes-tutorial/copy-groups.png "Groups")
+1. Compose a list of the Microsoft Entra groups you want the Descartes Application use for the Role-based configuration. A list of User Roles Descartes application modules can be found at https://www.gln.com/docs/Descartes_Application_User_Roles.pdf. You can find the Azure group GUIDs. Select **Download groups** from **Groups** in the Microsoft Entra admin center.
 
 You can load this CSV file in Excel. Please select the groups that you want map to the Descartes application roles by list the ID in the first column and associating it with the Descartes Application User Role.
 

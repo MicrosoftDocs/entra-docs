@@ -1,19 +1,20 @@
 ---
 title: Manage custom security attributes for an application
-description: Assign, update, list, or remove custom security attributes for an application that has been registered with your Microsoft Entra tenant.
+description: Assign, update, list, or remove custom security attributes for an application that is registered with your Microsoft Entra tenant.
 
 author: omondiatieno
+manager: CelesteDG
 ms.service: entra-id
 ms.subservice: enterprise-apps
-ms.topic: how-to
 
-ms.date: 11/15/2023
+ms.topic: how-to
+ms.date: 12/06/2024
 ms.author: jomondi
 ms.reviewer: rolyon
 zone_pivot_groups: enterprise-apps-all
 ms.custom: not-enterprise-apps
 
-#customer intent: As an administrator managing custom security attributes for applications in Microsoft Entra ID, I want to assign, update, list, or remove custom security attributes, so that I can define and manage access to enterprise applications based on business-specific attributes.
+#customer intent: As an IT admin troubleshooting issues with user access to Microsoft applications, I want to understand and troubleshoot errors that occur during the process of consenting to an application, so that I can successfully grant the necessary permissions and access the application.
 ---
 
 # Manage custom security attributes for an application
@@ -27,8 +28,7 @@ To assign or remove custom security attributes for an application in your Micros
 - [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator)
 - Make sure you have existing custom security attributes. To learn how to create a security attribute, see [Add or deactivate custom security attributes in Microsoft Entra ID](~/fundamentals/custom-security-attributes-add.md).
 
-> [!IMPORTANT]
-> By default, [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) and other administrator roles don't have permissions to read, define, or assign custom security attributes.
+[!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
 
 ## Assign, update, list, or remove  custom attributes for an application
 
@@ -78,7 +78,7 @@ Undertake the following steps to assign custom security attributes through the M
 
 1. Find the custom security attribute assignment value you want to update.
 
-    Once you've assigned a custom security attribute to an application, you can only change the value of the custom security attribute. You can't change other properties of the custom security attribute, such as attribute set or custom security attribute name.
+    Once you assigned a custom security attribute to an application, you can only change the value of the custom security attribute. You can't change other properties of the custom security attribute, such as attribute set or custom security attribute name.
 
 1. Depending on the properties of the selected custom security attribute, you can update a single value, select a value from a predefined list, or update multiple values.
 
@@ -103,8 +103,6 @@ You can filter the list of custom security attributes assigned to applications o
 1. For **Operator**, you can select equals (**==**), not equals (**!=**), or **starts with**.
 
 1. For **Value**, enter or select a value.
-
-    :::image type="content" source="./media/custom-security-attributes-apps/apps-attributes-filter.png" alt-text="Screenshot showing a custom security attribute filter for applications." lightbox="./media/custom-security-attributes-apps/apps-attributes-filter.png":::
 
 1. To apply the filter, select **Apply**.
 
@@ -147,7 +145,7 @@ $attributes = @{
         Project = @("Baker","Cascade")
     }
 }
-Set-AzureADMSServicePrincipal -Id 7d194b0c-bf17-40ff-9f7f-4b671de8dc20 -CustomSecurityAttributes $attributes
+Set-AzureADMSServicePrincipal -Id aaaaaaaa-bbbb-cccc-1111-222222222222 -CustomSecurityAttributes $attributes
 ```
 
 ### Update a custom security attribute with a multi-string value for an application (service principal) using Azure AD PowerShell
@@ -167,7 +165,7 @@ $attributesUpdate = @{
         Project = @("Alpine","Baker")
     }
 }
-Set-AzureADMSServicePrincipal -Id 7d194b0c-bf17-40ff-9f7f-4b671de8dc20 -CustomSecurityAttributes $attributesUpdate 
+Set-AzureADMSServicePrincipal -Id aaaaaaaa-bbbb-cccc-1111-222222222222 -CustomSecurityAttributes $attributesUpdate 
 ```
 
 ### Get the custom security attribute assignments for an application (service principal) using Azure AD PowerShell
@@ -176,7 +174,7 @@ Use the [Get-AzureADMSServicePrincipal](/powershell/module/azuread/get-azureadms
 
 ```powershell
 Get-AzureADMSServicePrincipal -Select CustomSecurityAttributes
-Get-AzureADMSServicePrincipal -Id 7d194b0c-bf17-40ff-9f7f-4b671de8dc20  -Select "CustomSecurityAttributes, Id"
+Get-AzureADMSServicePrincipal -Id aaaaaaaa-bbbb-cccc-1111-222222222222  -Select "CustomSecurityAttributes, Id"
 ```
 
 :::zone-end
@@ -248,7 +246,7 @@ $appAttributes.CustomSecurityAttributes.AdditionalProperties | Format-List
 ```
 
 ```Output
-Id                       : 7d194b0c-bf17-40ff-9f7f-4b671de8dc20
+Id                       : aaaaaaaa-bbbb-cccc-1111-222222222222
 DisplayName              : TestApp
 CustomSecurityAttributes : Microsoft.Graph.PowerShell.Models.MicrosoftGraphCustomSecurityAttributeValue
 

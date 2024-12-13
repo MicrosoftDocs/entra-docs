@@ -5,7 +5,7 @@ description: Delete users in bulk in Microsoft Entra ID
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
-ms.date: 11/21/2023
+ms.date: 07/01/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
@@ -21,7 +21,7 @@ Using the admin center in Microsoft Entra ID, part of Microsoft Entra, you can r
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Select Microsoft Entra ID.
 1. Select **Users** > **All users** > **Bulk operations** > **Bulk delete**.
 
@@ -34,9 +34,7 @@ Using the admin center in Microsoft Entra ID, part of Microsoft Entra, you can r
 1. When your file passes validation, select **Submit** to start the bulk operation that deletes the users.
 1. When the deletion operation completes, you'll see a notification that the bulk operation succeeded.
 
-If there are errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error.
-
-[!INCLUDE [Bulk update warning](~/includes/bulk-export.md)]
+If you experience errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error. The file submission must match the provided template and include the exact column names. For more information about bulk operations limitations, see [Bulk delete service limits](#bulk-delete-service-limits).
 
 ## CSV template structure
 
@@ -78,6 +76,10 @@ Get-MgUser -Filter "UserType eq 'Member'"
 ```
 
 Verify that the users that you deleted are no longer listed.
+
+## Bulk delete service limits
+
+[!INCLUDE [Bulk operations limitations](~/includes/bulk-operations-limitations.md)]
 
 ## Next steps
 

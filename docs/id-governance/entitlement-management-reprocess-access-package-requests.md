@@ -6,13 +6,13 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 08/24/2023
+ms.date: 07/15/2024
 ms.author: owinfrey
-#Customer intent: As a global administrator or access package manager, I want detailed information about how I can repreocess a request for an access package if a request failed so that requestors have the resources in the access package they need to perform their job.
+#Customer intent: As an administrator or access package manager, I want detailed information about how I can repreocess a request for an access package if a request failed so that requestors have the resources in the access package they need to perform their job.
 ---
 # Reprocess requests for an access package in entitlement management
 
-As an access package manager, you can automatically retry a user’s request for access to an access package at any time by using the reprocess functionality. Reprocessing eliminates the need for users to repeat the access package request process if their access to resources is not successfully provisioned.
+As an access package manager, you can automatically retry a user’s request for access to an access package at any time by using the reprocess functionality. Reprocessing eliminates the need for users to repeat the access package request process if their access to resources isn't successfully provisioned.
 
 > [!NOTE]
 > You can reprocess a request for up to 14 days from the time that the original request is completed. For requests that were completed more than 14 days ago, users will need to cancel and make new requests in MyAccess.
@@ -30,15 +30,14 @@ To use entitlement management and assign users to access packages, you must have
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-**Prerequisite role**: Global Administrator, Identity Governance Administrator, Catalog owner, Access package manager or Access package assignment manager
-
 If you have a set of users whose requests are in the "Partially Delivered" or "Failed" state, you might need to reprocess some of those requests. Follow these steps to reprocess requests for an existing access package:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
-
+    > [!TIP]
+    > Other least privilege roles that can complete this task include the Catalog owner, Access package manager, and Access package assignment manager.
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 
-1. On the **Access packages** open the access package.
+1. On the Access packages,** open the access package.
 
 1. Underneath **Manage** on the left side, select **Requests**.
 

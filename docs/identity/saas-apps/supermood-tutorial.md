@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Supermood so that I can control who has access to Supermood, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -147,8 +147,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 1. Go to your Supermood.co admin panel as Security Administrator.
 
 1. Click on **My account** (bottom left) and **Single Sign On (SSO)**.
-
-	![The Certificate single](./media/supermood-tutorial/tutorial_supermood_single.png)
 
 1. On **Your SAML 2.0 configurations**, Click **Add an SAML 2.0 configuration for an email domain**.
 

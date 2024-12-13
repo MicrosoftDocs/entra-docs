@@ -6,7 +6,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 04/26/2024
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 
@@ -23,7 +23,7 @@ To access the expression builder:
  4. Under **Manage attributes**, select **Click to edit mappings**.
  5. On the **Edit attribute mappings** pane, select **Add attribute mapping**.
  6. Under **Mapping type**, select **Expression**.
- 7. Select **Try the expression builder (Preview)**.
+ 7. Select **Try the expression builder **.
  
     ![Screenshot that shows using expression builder.](media/how-to-expression-builder/expression-1.png)
 

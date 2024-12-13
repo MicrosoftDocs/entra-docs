@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 07/10/2023
+ms.date: 03/25/2024
 ms.author: jeedes
 
 
@@ -153,8 +153,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 	![Screenshot shows Account page.](./media/citrix-cloud-saml-sso-tutorial/menu.png "Account") 
 
 1. Under **Authentication**, locate **SAML 2.0** and select **Connect** from the ellipsis menu.
-
-	![Screenshot shows SAML 2.0.](./media/citrix-cloud-saml-sso-tutorial/access.png "SAML 2.0")
 
 1. In the **Configure SAML** page, perform the following steps.
 

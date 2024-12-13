@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Birst Agile Business Analytics so that I can control who has access to Birst Agile Business Analytics, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -135,7 +135,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 To configure single sign-on on **Birst Agile Business Analytics** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to [Birst Agile Business Analytics support team](mailto:info@birst.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
 > [!NOTE]
-> Mention to Birst team that this integration needs SHA256 Algorithm (SHA1 will not be supported) so that they can set the SSO on the appropriate server like **app2101** etc.
+> Mention to Birst team that this integration needs SHA256 Algorithm (SHA1 will not be supported) so that they can set the SSO on the appropriate server like **app2101** , and so on.
 
 ### Create Birst Agile Business Analytics test user
 

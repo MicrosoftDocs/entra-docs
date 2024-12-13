@@ -37,8 +37,8 @@ The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/mic
 #
 # Before you begin:
 #    
-#    Required Microsoft Entra role: Global Administrator or Application Administrator or Application Developer 
-#    or appropriate custom permissions as documented https://learn.microsoft.com/en-us/azure/active-directory/roles/custom-enterprise-app-permissions
+#    Required Microsoft Entra role at least Application Administrator or Application Developer 
+#    or appropriate custom permissions as documented https://learn.microsoft.com/azure/active-directory/roles/custom-enterprise-app-permissions
 #
 # 
 
@@ -88,41 +88,40 @@ Write-Host ("")
 
 foreach ($item in $allApps) {
 
- $aadapApp, $aadapAppConf, $aadapAppConf1 = $null, $null, $null
- 
- $aadapAppId =  Get-MgBetaApplication | where-object {$_.AppId -eq $item.AppId}
- $aadapAppConf = Get-MgBetaApplication -ApplicationId $aadapAppId.Id -ErrorAction SilentlyContinue -select OnPremisesPublishing | select OnPremisesPublishing -expand OnPremisesPublishing 
- $aadapAppConf1 = Get-MgBetaApplication -ApplicationId $aadapAppId.Id -ErrorAction SilentlyContinue -select OnPremisesPublishing | select OnPremisesPublishing -expand OnPremisesPublishing `
-  | select verifiedCustomDomainCertificatesMetadata -expand verifiedCustomDomainCertificatesMetadata 
+  $aadapApp, $aadapAppConf, $aadapAppConf1 = $null, $null, $null
+
+  $aadapAppId =  Get-MgBetaApplication | where-object {$_.AppId -eq $item.AppId}
+  $aadapAppConf = Get-MgBetaApplication -ApplicationId $aadapAppId.Id -ErrorAction SilentlyContinue -select OnPremisesPublishing | select OnPremisesPublishing -expand OnPremisesPublishing 
+  $aadapAppConf1 = Get-MgBetaApplication -ApplicationId $aadapAppId.Id -ErrorAction SilentlyContinue -select OnPremisesPublishing | select OnPremisesPublishing -expand OnPremisesPublishing `
+    | select verifiedCustomDomainCertificatesMetadata -expand verifiedCustomDomainCertificatesMetadata 
 
   if ($aadapAppConf -ne $null) {
-   
-   if ($aadapAppConf1.VerifiedCustomDomainCertificatesMetadata.Thumbprint -match $certThumbprint) {
-  
-     Write-Host $item.DisplayName"(AppId: " $item.AppId ", ObjId:" $item.Id")" -BackgroundColor "Black" -ForegroundColor "White"
-     Write-Host
-     Write-Host "External Url: " $aadapAppConf.ExternalUrl
-     Write-Host "Internal Url: " $aadapAppConf.InternalUrl
-     Write-Host "Pre-authentication: " $aadapAppConf.ExternalAuthenticationType
-     Write-Host
 
-     $params = @{
-         onPremisesPublishing = @{
-            verifiedCustomDomainKeyCredential = @{
-                  type="X509CertAndPassword";
-                  value = [convert]::ToBase64String((Get-Content $certPfxFilePath -Encoding byte));
-                 };
-                  verifiedCustomDomainPasswordCredential = @{ value = $securePassword };
-         }
-     }
+    if ($aadapAppConf1.VerifiedCustomDomainCertificatesMetadata.Thumbprint -match $certThumbprint) {
 
-     Update-MgBetaApplication -ApplicationId $aadapAppId.Id -BodyParameter $params
+      Write-Host $item.DisplayName"(AppId: " $item.AppId ", ObjId:" $item.Id")" -BackgroundColor "Black" -ForegroundColor "White"
+      Write-Host
+      Write-Host "External Url: " $aadapAppConf.ExternalUrl
+      Write-Host "Internal Url: " $aadapAppConf.InternalUrl
+      Write-Host "Pre-authentication: " $aadapAppConf.ExternalAuthenticationType
+      Write-Host
+
+      $params = @{
+         onPremisesPublishing = @{
+            verifiedCustomDomainKeyCredential = @{
+                type="X509CertAndPassword";
+                value = [convert]::ToBase64String((Get-Content $certPfxFilePath -Encoding byte));
+            };
+            verifiedCustomDomainPasswordCredential = @{
+                value = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto([System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($securePassword)) };
+         }
+      }
+
+      Update-MgBetaApplication -ApplicationId $aadapAppId.Id -BodyParameter $params
   
-     $numberofAadapApps = $numberofAadapApps + 1              
+      $numberofAadapApps = $numberofAadapApps + 1
     }
-  
-   }
-  
+  }
 }
 
 Write-Host

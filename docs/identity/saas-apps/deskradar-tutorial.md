@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Deskradar so that I can control who has access to Deskradar, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -155,7 +155,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. On the **SAML 2.0** tab, perform the following steps:
 
-	![Screenshot that shows the "S A M L 2.0" tab with arrows pointing to the "S A M L S S D U R L" and "Identifier Provider Issuer" fields.](./media/deskradar-tutorial/14-paste-urls.jpg)
+    ![Screenshot that shows the "S A M L 2.0" tab with arrows pointing to the "S A M L S S D U R L" and "Identifier Provider Issuer" fields.](./media/deskradar-tutorial/14-paste-urls.jpg)
 
 	a. Enable **SAML** authentication method.
 

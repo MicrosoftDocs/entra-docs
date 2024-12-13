@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and WhosOffice so that I can control who has access to WhosOffice, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -144,8 +144,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
     ![Screenshot shows Company selected from Settings.](./media/whosoffice-tutorial/configuration1.png)
 
 1. Click on **Apps/Integrations**.
-
-    ![Screenshot shows Apps / Integrations selected from Company settings.](./media/whosoffice-tutorial/configuration2.png)
 
 1. Select **Microsoft Azure** from the provider dropdown and click on **Activate Login Provider**.
 

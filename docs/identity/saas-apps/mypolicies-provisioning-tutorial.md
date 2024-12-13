@@ -2,15 +2,14 @@
 title: 'Tutorial: Configure myPolicies for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to myPolicies.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to myPolicies so that I can streamline the user management process and ensure that users have the appropriate access to myPolicies.
 ---
@@ -44,7 +43,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 * When assigning a user to myPolicies, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
-## Setup myPolicies for provisioning
+## Set up myPolicies for provisioning
 
 Before configuring myPolicies for automatic user provisioning with Microsoft Entra ID, you will need to enable SCIM provisioning on myPolicies.
 
@@ -69,7 +68,7 @@ To configure myPolicies for automatic user provisioning with Microsoft Entra ID,
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in myPolicies based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for myPolicies, following the instructions provided in the [myPolicies Single sign-on tutorial](mypolicies-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features compliment each other.
+> You may also choose to enable SAML-based single sign-on for myPolicies, following the instructions provided in the [myPolicies Single sign-on tutorial](mypolicies-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
 
 <a name='to-configure-automatic-user-provisioning-for-mypolicies-in-azure-ad'></a>
 
@@ -106,8 +105,6 @@ Example: `<demo0-qa>`.mypolicies.com.
 8. Click **Save**.
 
 9. Under the **Mappings** section, select **Synchronize Microsoft Entra users to myPolicies**.
-
-	:::image type="content" source="media/mypolicies-provisioning-tutorial/usermapping.png" alt-text="Screenshot of the Mappings section. Under Name, Synchronize Microsoft Entra users to customappsso is visible." border="false":::
 
 10. Review the user attributes that are synchronized from Microsoft Entra ID to myPolicies in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in myPolicies for update operations. Select the **Save** button to commit any changes.
 

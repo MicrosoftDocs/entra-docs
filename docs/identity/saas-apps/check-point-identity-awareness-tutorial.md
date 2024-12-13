@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 
@@ -134,8 +134,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 1. Sign in to the Check Point Identity Awareness company site as an administrator.
 
 1. In SmartConsole > **Gateways & Servers** view, click **New > More > User/Identity > Identity Provider**.
-
-    ![screenshot for new Identity Provider.](./media/check-point-identity-awareness-tutorial/identity-provider.png)
 
 1. Perform the following steps in **New Identity Provider** window.
 

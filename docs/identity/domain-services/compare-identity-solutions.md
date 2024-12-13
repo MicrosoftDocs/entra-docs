@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: overview
-ms.date: 09/13/2023
+ms.date: 10/11/2024
 ms.author: justinha
 #Customer intent: As an IT administrator or decision maker, I want to understand the differences between Active Directory Domain Services (AD DS), Microsoft Entra ID, and Domain Services so I can choose the most appropriate identity solution for my organization.
 ---
@@ -70,7 +70,7 @@ The following table outlines some of the features you may need for your organiza
 | **Custom OU structure**                           | **&#x2713;** | **&#x2713;** |
 | **Group Policy**                                  | **&#x2713;** | **&#x2713;** |
 | **Schema extensions**                             | **&#x2715;** | **&#x2713;** |
-| **AD domain / forest trusts**                     | **&#x2713;** (one-way outbound forest trusts only) | **&#x2713;** |
+| **AD domain / forest trusts**                     | **&#x2713;** (Preview requires Enterprise SKU) | **&#x2713;** |
 | **Secure LDAP (LDAPS)**                           | **&#x2713;** | **&#x2713;** |
 | **LDAP read**                                     | **&#x2713;** | **&#x2713;** |
 | **LDAP write**                                    | **&#x2713;** (within the managed domain) | **&#x2713;** |
@@ -127,7 +127,7 @@ You can also learn more about
 [manage-dns]: manage-dns.md
 [deploy-kcd]: deploy-kcd.md
 [custom-ou]: create-ou.md
-[manage-gpos]: manage-group-policy.md
+[manage-gpos]: manage-group-policy.yml
 [tutorial-ldaps]: tutorial-configure-ldaps.md
 [tutorial-create]: tutorial-create-instance.md
 [whatis-azuread]: /azure/active-directory/fundamentals/whatis

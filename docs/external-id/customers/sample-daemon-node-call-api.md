@@ -1,38 +1,36 @@
 ---
 title: Call an API in a sample Node.js daemon application
-description: Learn how to configure a sample Node.js daemon application that calls an API protected Microsoft Entra External ID
- 
+description: Learn how to configure a sample Node.js daemon application that calls an API protected by an external tenant.
+
 author: kengaderdus
 manager: mwongerapk
 
 ms.author: kengaderdus
 ms.service: entra-external-id
  
-ms.subservice: customers
-ms.topic: sample
-ms.date: 06/23/2023
+ms.subservice: external
+ms.topic: quickstart
+ms.date: 07/29/2024
 ms.custom: developer, devx-track-js
-#Customer intent: As a dev, devops, I want to configure a sample Node.js daemon application that calls an API protected by an external tenant
+#Customer intent: As a dev, devops, I want to configure a sample Node.js daemon application that calls an API protected using my external tenant details.
 ---
 
 # Call an API in a sample Node.js daemon application 
 
-This article uses a sample Node.js daemon application to show you how a daemon app acquires a token to call a web API. Microsoft Entra External ID protects the Web API. 
+This guide uses a sample Node.js daemon application to show you how a daemon app acquires an access token to call a web API.
 
-A daemon application acquires a token on behalf of itself (not on behalf of a user). Users can't interact with a daemon application because it requires its own identity. This type of application requests an access token by using its application identity and presenting its application ID, credential (password or certificate), and application ID URI to External ID. 
+A daemon application acquires a token on behalf of itself (not on behalf of a user). Users can't interact with a daemon application because it requires its own identity. This type of application requests an access token by using its application identity and presenting its application ID, credential (password or certificate), and application ID URI to External ID.
 
 A daemon app uses the standard [OAuth 2.0 client credentials grant](~/identity-platform/v2-oauth2-client-creds-grant-flow.md). To simplify the process of acquiring the token, the sample we use in this article uses [Microsoft Authentication Library for Node (MSAL Node)](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node).
 
-
 ## Prerequisites
 
-- [Node.js](https://nodejs.org).
-
-- [.NET 7.0](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install) or later. 
-
-- [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-
-- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
+* [Node.js](https://nodejs.org).
+* [.NET 7.0](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install) or later. 
+- An external tenant. To create one, choose from the following methods:
+  - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
+  - [Create a new external tenant](how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 
 ## Register a daemon application and a web API
 
@@ -62,28 +60,29 @@ In this step, you create the daemon and the web API application registrations, a
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/grant-api-permissions-app-permissions.md)]
 
-##  Clone or download sample daemon application and web API
+## Clone or download sample daemon application and web API
 
-To get the web app sample code, you can do either of the following tasks:
+To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
 
-- [Download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip) or clone the sample web application from GitHub by running the following command:
+- To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
     ```console
-        git clone https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial.git
+    git clone https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial.git
     ```
-If you choose to download the *.zip* file, extract the sample app file to a folder where the total length of the path is 260 or fewer characters.
+
+- Alternatively, [download the samples .zip file](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip), then extract it to a file path where the length of the name is fewer than 260 characters.
 
 ##  Install project dependencies
 
 1. Open a console window, and change to the directory that contains the Node.js sample app:
 
     ```console
-        cd 2-Authorization\3-call-api-node-daemon\App
+    cd 2-Authorization\3-call-api-node-daemon\App
     ```
 1. Run the following commands to install app dependencies:
 
     ```console
-        npm install && npm update
+    npm install && npm update
     ```
 
 ## Configure the sample daemon app and API
@@ -125,33 +124,33 @@ To use your app registration in the web API sample:
 1. Run the web app client by using the following commands:
 
     ```console
-        2-Authorization\3-call-api-node-daemon\App
-         node . --op getToDos
+    2-Authorization\3-call-api-node-daemon\App
+    node . --op getToDos
     ```
 
-If your daemon app and web API successfully run, you should see something similar to the following JSON array in your console window
+ - If your daemon app and web API successfully run, you should see something similar to the following JSON array in your console window
 
-```json
-{
-    id: 1,
-    owner: '3e8....-db63-43a2-a767-5d7db...',
-    description: 'Pick up grocery'
-},
-{
-    id: 2,
-    owner: 'c3cc....-c4ec-4531-a197-cb919ed.....',
-    description: 'Finish invoice report'
-},
-{
-    id: 3,
-    owner: 'a35e....-3b8a-4632-8c4f-ffb840d.....',
-    description: 'Water plants'
-}
-```
+    ```json
+    {
+        "id": 1,
+        "owner": "3e8....-db63-43a2-a767-5d7db...",
+        "description": "Pick up grocery"
+    },
+    {
+        "id": 2,
+        "owner": "c3cc....-c4ec-4531-a197-cb919ed.....",
+        "description": "Finish invoice report"
+    },
+    {
+        "id": 3,
+        "owner": "a35e....-3b8a-4632-8c4f-ffb840d.....",
+        "description": "Water plants"
+    }
+    ```
 
 ### How it works
 
-The Node.js app uses [OAuth 2.0 client credentials grant](~/identity-platform/v2-oauth2-client-creds-grant-flow.md) to acquire an access token for itself and not for the user. The access token that the app requests contains the permissions represented as roles. The client credential flow uses this set of permissions in place of user scopes for application tokens.You [exposed these application permissions](#configure-app-roles) in the web API earlier, then [granted them to the daemon app](#grant-api-permissions-to-the-daemon-app).
+The Node.js app uses [OAuth 2.0 client credentials grant](~/identity-platform/v2-oauth2-client-creds-grant-flow.md) to acquire an access token for itself and not for the user. The access token that the app requests contains the permissions represented as roles. The client credential flow uses this set of permissions in place of user scopes for application tokens. You [exposed these application permissions](#configure-app-roles) in the web API earlier, then [granted them to the daemon app](#grant-api-permissions-to-the-daemon-app).
 
 On the API side, the web API must verify that the access token has the required permissions (application permissions). The web API can't accept an access token that doesn't have the required permissions. 
 
@@ -159,10 +158,7 @@ On the API side, the web API must verify that the access token has the required 
 
 A Web API endpoint should be prepared to accept calls from both users and applications. Therefore, it should have a way to respond to each request accordingly. For example, a call from a user via delegated permissions/scopes receives the user's data to-do list. On the other hand, a call from an application via application permissions/roles may receive the entire to-do list. However, in this article, we're only making an application call, so we didn't need to configure delegated permissions/scopes.
 
-## Next steps
+## Related content
 
-- Learn how to [Acquire an access token, then call a web API in your own Node.js daemon app](tutorial-daemon-node-call-api-prepare-tenant.md).
-
-- Learn how to [Use client certificate instead of a secret for authentication in your Node.js confidential app](how-to-web-app-node-use-certificate.md).
-
-- Learn about [permissions and consent](~/identity-platform/permissions-consent-overview.md).
+- [Acquire an access token, then call a web API in your own Node.js daemon app](tutorial-daemon-node-call-api-prepare-tenant.md).
+- [Use a client certificate instead of a secret for authentication in your Node.js confidential app](how-to-web-app-node-use-certificate.md).

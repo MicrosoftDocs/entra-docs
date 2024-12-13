@@ -20,8 +20,7 @@ This tutorial is the third part of a tutorial series that demonstrates building 
 > - Import the required modules and configuration
 > - Create an instance of a Flask web app
 > - Configure ProxyFix middleware for local development
-> - Add code to sign in users
-> - Sign out users
+> - Add code to sign in and sign out users
 > - Define an entry point for the web app
 
 

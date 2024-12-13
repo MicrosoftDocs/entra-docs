@@ -7,7 +7,7 @@ manager: travisgr
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 03/08/2023
+ms.date: 08/25/2024
 ms.subservice: hybrid-connect
 ms.author: martinco
 
@@ -108,7 +108,7 @@ To provide high availability in the event your primary Microsoft Entra Connect s
 
 Organizations with on-premises Active Directory should extend their directory to Microsoft Entra ID using Microsoft Entra Connect and configure the appropriate authentication method. [Choosing the correct authentication method](./choose-ad-authn.md) for your organization is the first step in your journey of moving apps to the cloud. It's a critical component since it controls access to all cloud data and resources.
 
-The simplest and recommended method to enable cloud authentication for on-premises directory objects in Microsoft Entra ID is [Password Hash Synchronization](./how-to-connect-password-hash-synchronization.md) (PHS). Alternatively, some organizations may consider enabling [Pass-through Authentication](./how-to-connect-pta-quick-start.md) (PTA).
+The simplest and recommended method to enable cloud authentication for on-premises directory objects in Microsoft Entra ID is [Password Hash Synchronization (PHS)](./how-to-connect-password-hash-synchronization.md). Alternatively, some organizations may consider enabling [Pass-through Authentication (PTA)](./how-to-connect-pta-quick-start.md).
 
 Whether you choose PHS or PTA, don't forget to consider [SSO](./how-to-connect-sso.md) to allow users to access apps without constantly entering their username and password. SSO can be achieved by using [Microsoft Entra hybrid joined](~/identity/devices/concept-hybrid-join.md) or [Microsoft Entra joined](~/identity/devices/concept-directory-join.md) devices while keeping access to on-premises resources. For devices that can’t be Microsoft Entra joined,  [Seamless single sign-on (Seamless SSO)](how-to-connect-sso-quick-start.md) helps provide those capabilities. Without single sign-on, users must remember application-specific passwords and sign into each application. Likewise, IT staff needs to create and update user accounts for each application such as Microsoft 365, Box, and Salesforce. Users need to remember their passwords, plus spend the time to sign into each application. Providing a standardized single sign-on mechanism to the entire enterprise is crucial for best user experience, reduction of risk, ability to report, and governance.
 
@@ -128,7 +128,7 @@ This section lists recommendations for removing friction from your organization 
 
 ### Enable Self-Service Password Reset for all users
 
-Azure's [self-service password reset](~/identity/authentication/tutorial-enable-sspr.md) (SSPR) offers a simple means for IT administrators to allow users to reset and unlock their passwords or accounts without administrator intervention. The system includes detailed reporting that tracks when users access the system, along with notifications to alert you to misuse or abuse.
+Azure's [self-service password reset (SSPR)](~/identity/authentication/tutorial-enable-sspr.md) offers a simple means for IT administrators to allow users to reset and unlock their passwords or accounts without administrator intervention. The system includes detailed reporting that tracks when users access the system, along with notifications to alert you to misuse or abuse.
 
 By default, Microsoft Entra ID unlocks accounts when it performs a password reset. However, when you enable Microsoft Entra Connect [integration on-premises](~/identity/authentication/concept-sspr-howitworks.md#on-premises-integration), you can also separate those two operations, which enable users to unlock their account without having to reset the password.
 
@@ -148,10 +148,10 @@ Before your users can self-discover applications from their access panel, you ne
 
 Assigning users to applications is best mapped when using groups, because they allow great flexibility and ability to manage at scale:
 
-* Attribute-based using dynamic group membership
+* Dynamic membership groups
 * Delegation to app owners
 
-Microsoft Entra ID provides the ability to manage access to resources using security groups and Microsoft 365 groups. These groups are managed by a group owner who can approve or deny membership requests and delegate control of group membership. The [self-service group management](~/identity/users/groups-self-service-management.md) feature, saves time by allowing group owners who aren't assigned an administrative role to create and manage groups without having to rely on administrators to handle their requests.
+Microsoft Entra ID provides the ability to manage access to resources using security groups and Microsoft 365 groups. These groups are managed by a group owner who can approve or deny membership requests and delegate control of attribute-based dynamic membership groups. The [self-service group management](~/identity/users/groups-self-service-management.md) feature, saves time by allowing group owners who aren't assigned an administrative role to create and manage groups without having to rely on administrators to handle their requests.
 
 ## Step 4 - Operationalize your insights
 

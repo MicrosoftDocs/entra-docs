@@ -6,7 +6,7 @@ author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
 ms.date: 04/10/2024
 ms.author: cmulligan
@@ -15,7 +15,9 @@ ms.custom: it-pro
 #Customer intent: As an it admin, I want to learn about the options for customizing the look and feel of the customer sign-in and sign-up experience.
 ---
 
-# Customize the neutral branding in your external tenant (preview)
+# Customize the neutral branding in your external tenant 
+
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 After creating a new external tenant, you can customize the end-user experience. Create a custom look and feel for users signing in to your apps by configuring **Company branding** settings for your tenant. With these settings, you can add your own background images, colors, company logos, and text to customize the sign-in experiences across your apps.  
 You can also create user flows programmatically using the Company Branding Graph API.
@@ -32,7 +34,7 @@ You can also create user flows programmatically using the Company Branding Graph
 - [Create a user flow](how-to-user-flow-sign-up-sign-in-customers.md)
 - Review the file size requirements for each image you want to add. You may need to use a photo editor to create the right-sized images. The preferred image type for all images is PNG, but JPG is accepted.
 
-[!INCLUDE [preview-alert](../customers/includes/preview-alert/preview-alert-ciam.md)]
+
 
 <a name='comparing-the-default-sign-in-experiences-between-the-external-tenant-and-the-azure-ad-tenant'></a>
 
@@ -193,7 +195,7 @@ You can customize your tenant name in the Microsoft Entra admin center to replac
 
 You can use the Microsoft Graph API to customize a few items programmatically. For example, you can use the API to upload a custom background image, change the color of the sign-in page, and add a custom logo. For more information, see the [update default branding](/graph/api/organizationalbranding-update) article. 
 
-## Next steps
+## Related content
 
 In this article we learned how to customize the look and feel of the customer sign-in and sign-up experience. To learn more about customizing the language of the tenant, see the [Language customization](how-to-customize-languages-customers.md) article.
 For an understanding of the differences in workforce tenant branding, see the article [How to customize branding for your workforce](~/fundamentals/how-to-customize-branding.md).

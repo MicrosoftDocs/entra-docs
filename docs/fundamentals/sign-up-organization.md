@@ -1,17 +1,16 @@
 ---
 title: Sign up your organization
-description: Instructions about how to sign up your organization to use Azure and Microsoft Entra ID.
+description: Learn about the options to sign up your organization to use Azure and Microsoft Entra ID.
 author: barclayn
 manager: amycolannino
 
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 09/14/2018
+ms.date: 05/31/2024
 ms.author: barclayn
 ms.reviewer: jeffsta
-ms.custom: it-pro
-ms.collection: M365-identity-device-management
+
 ---
 
 # Sign up your organization to use Microsoft Entra ID

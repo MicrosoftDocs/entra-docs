@@ -8,7 +8,7 @@ manager: amycolannino
 ms.assetid: 6d42fb79-d9cf-48da-8445-f482c4c536af
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 12/04/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -112,7 +112,7 @@ On the **Microsoft Entra sign-in configuration** page, review the user principal
 
 ![Screenshot showing unverified domains on the "Microsoft Entra sign-in configuration" page.](./media/how-to-connect-install-custom/aadsigninconfig2.png)  
 
-Review every domain that's marked as **Not Added** or **Not Verified**. Make sure that the domains you use have been verified in Microsoft Entra ID. After you verify your domains, select the circular refresh icon. For more information, see [Add and verify the domain](~/fundamentals/add-custom-domain.md).
+Review every domain that's marked as **Not Added** or **Not Verified**. Make sure that the domains you use have been verified in Microsoft Entra ID. After you verify your domains, select the circular refresh icon. For more information, see [Add and verify the domain](~/fundamentals/add-custom-domain.yml).
 
 Users use the *userPrincipalName* attribute when they sign in to Microsoft Entra ID and Microsoft 365. Microsoft Entra ID should verify the domains, also known as the UPN-suffix, before users are synchronized. Microsoft recommends that you keep the default attribute userPrincipalName. 
 
@@ -347,7 +347,7 @@ On this page, you can configure only a single domain in the initial installation
 <a name='verify-the-azure-ad-domain-selected-for-federation'></a>
 
 ### Verify the Microsoft Entra domain selected for federation
-When you select the domain that you want to federate, Microsoft Entra Connect provides information that you can use to verify an unverified domain. For more information, see [Add and verify the domain](~/fundamentals/add-custom-domain.md).
+When you select the domain that you want to federate, Microsoft Entra Connect provides information that you can use to verify an unverified domain. For more information, see [Add and verify the domain](~/fundamentals/add-custom-domain.yml).
 
 ![Screenshot showing the "Microsoft Entra Domain" page, including information you can use to verify the domain.](./media/how-to-connect-install-custom/verifyfeddomain.png)
 
@@ -358,7 +358,7 @@ When you select the domain that you want to federate, Microsoft Entra Connect pr
 
 ## Configuring federation with PingFederate
 You can configure PingFederate with Microsoft Entra Connect in just a few clicks. The following prerequisites are required:
-- PingFederate 8.4 or later. For more information, see [PingFederate integration with Microsoft Entra ID and Microsoft 365](https://docs.pingidentity.com/access/sources/dita/topic?category=integrationdoc&resourceid=pingfederate_azuread_office365_integration) in the Ping Identity documentation.
+- PingFederate 8.4 or later. For more information, see [PingFederate integration with Microsoft Entra ID and Microsoft 365](https://docs.pingidentity.com/integrations/azure/azure_ad_and_office_365_integration_guide/pf_azuread_office365_integration_enabling_federated_authentication.html) in the Ping Identity documentation.
 - A TLS/SSL certificate for the federation service name that you intend to use (for example, sts.contoso.com).
 
 ### Verify the domain

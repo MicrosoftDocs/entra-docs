@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Evernote so that I can control who has access to Evernote, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -95,8 +95,6 @@ Follow these steps to enable Microsoft Entra SSO.
 7. To modify the **Signing** options, click the **Edit** button to open the **SAML Signing Certificate** dialog.
 
 	![Screenshot that shows the "S A M L Signing Certificate" dialog with the "Edit" button selected.](common/edit-certificate.png) 
-
-	![image](./media/evernote-tutorial/assertion.png)
 
 	a. Select the **Sign SAML response and assertion** option for **Signing Option**.
 

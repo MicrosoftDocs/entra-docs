@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 09/21/2023
+ms.date: 12/03/2024
 ms.author: justinha
 ---
 # Review security audit events in Microsoft Entra Domain Services using Azure Monitor Workbooks

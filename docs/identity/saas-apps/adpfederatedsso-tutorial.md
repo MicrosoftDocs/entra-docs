@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 03/07/2023
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ADP so that I can control who has access to ADP, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -186,9 +186,7 @@ Upon receipt of confirmation from your ADP representative, configure your ADP se
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **ADP** application integration page, find the **Manage** section and select **Single sign-on**.
 
-1. On the **Select a Single sign-on method** dialog, select **Mode** as **Linked**. to link your application to **ADP**.
-
-    ![Single sign-on linked](./media/adpfederatedsso-tutorial/linked.png)
+1. On the **Select a Single sign-on method** dialog, select **Mode** as **Linked** to link your application to **ADP**.
 
 1. Navigate to the **Configure Sign-on URL** section, perform the following steps:
 
@@ -234,8 +232,6 @@ Upon receipt of confirmation from your ADP representative, configure your ADP se
 
     > [!NOTE]
     > Please note that this can be any random value which you feel relevant for your instance.
-
-    ![Screenshot shows how to configure another test instance value.](./media/adpfederatedsso-tutorial/append.png "Test")
 
 1. To support multiple instances in the same tenant, please follow the below steps:
 

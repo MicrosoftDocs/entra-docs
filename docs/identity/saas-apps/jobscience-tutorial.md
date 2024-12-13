@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Jobscience so that I can control who has access to Jobscience, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -87,15 +87,9 @@ In this section, you enable Microsoft Entra single sign-on in the Azure portal a
 
     ![Screenshot shows Single sign-on selected under Manage.][4]
 
-1. On the **Single sign-on** dialog, select **Mode** as    **SAML-based Sign-on** to enable single sign-on.
+1. On the **Single sign-on** dialog, select **Mode** as **SAML-based Sign-on** to enable single sign-on.
  
-    ![Screenshot shows SAML-based Sign-on Mode selected.](./media/jobscience-tutorial/tutorial_jobscience_samlbase.png)
-
-1. On the **Jobscience Domain and URLs** section, perform the following steps:
-
-    ![Screenshot shows the sign-on U R L.](./media/jobscience-tutorial/tutorial_jobscience_url.png)
-
-    In the **Sign-on URL** textbox, type a URL using the following pattern:
+1. In the **Sign-on URL** textbox, type a URL using the following pattern:
     `http://<company name>.my.salesforce.com`
     
     > [!NOTE] 
@@ -103,15 +97,9 @@ In this section, you enable Microsoft Entra single sign-on in the Azure portal a
  
 1. On the **SAML Signing Certificate** section, click **Certificate (Base64)** and then save the certificate file on your computer.
 
-    ![Screenshot shows the SAML Signing Certificate pane where you can download a certificate.](./media/jobscience-tutorial/tutorial_jobscience_certificate.png) 
-
-1. Click **Save** button.
-
-    ![Screenshot shows the save button.](./media/jobscience-tutorial/tutorial_general_400.png)
+1. Select the **Save** button.
 
 1. On the **Jobscience Configuration** section, click **Configure Jobscience** to open **Configure sign-on** window. Copy the **Sign-Out URL, SAML Entity ID, and SAML Single Sign-On Service URL** from the **Quick Reference section.**
-
-    ![Screenshot shows the Jobscience configuration window.](./media/jobscience-tutorial/tutorial_jobscience_configure.png) 
 
 1. Log in to your Jobscience company site as an administrator.
 

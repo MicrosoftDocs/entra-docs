@@ -5,7 +5,7 @@ description: Learn how to configure Microsoft Entra hybrid join.
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 02/26/2024
+ms.date: 11/25/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -14,7 +14,7 @@ ms.reviewer: sandeo
 ---
 # Configure Microsoft Entra hybrid join
 
-Bringing your devices to Microsoft Entra ID maximizes user productivity through single sign-on (SSO) across your cloud and on-premises resources. You can secure access to your resources with [Conditional Access](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md) at the same time.
+Bringing your devices to Microsoft Entra ID maximizes user productivity through single sign-on (SSO) across your cloud and on-premises resources. You can secure access to your resources with [Conditional Access](~/identity/conditional-access/policy-alt-all-users-compliant-hybrid-or-mfa.md) at the same time.
 
 > [!VIDEO https://www.youtube-nocookie.com/embed/hSCVR1oJhFI]
 
@@ -23,7 +23,7 @@ Bringing your devices to Microsoft Entra ID maximizes user productivity through 
 - [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594) version 1.1.819.0 or later.
    - Don't exclude the default device attributes from your Microsoft Entra Connect Sync configuration. To learn more about default device attributes synced to Microsoft Entra ID, see [Attributes synchronized by Microsoft Entra Connect](../hybrid/connect/reference-connect-sync-attributes-synchronized.md#windows-10).
    - If the computer objects of the devices you want to be Microsoft Entra hybrid joined belong to specific organizational units (OUs), configure the correct OUs to sync in Microsoft Entra Connect. To learn more about how to sync computer objects by using Microsoft Entra Connect, see [Organizational unit–based filtering](../hybrid/connect/how-to-connect-sync-configure-filtering.md#organizational-unitbased-filtering).
-- [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator) credentials for your Microsoft Entra tenant.
+- [Hybrid Identity Administrator](../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) credentials for your Microsoft Entra tenant.
 - Enterprise administrator credentials for each of the on-premises Active Directory Domain Services forests.
 - (**For federated domains**) At least Windows Server 2012 R2 with Active Directory Federation Services installed.
 - Users can register their devices with Microsoft Entra ID. More information about this setting can be found under the heading **Configure device settings**, in the article, [Configure device settings](manage-device-identities.md#configure-device-settings).
@@ -61,7 +61,7 @@ Configure Microsoft Entra hybrid join by using Microsoft Entra Connect for a man
 1. Open Microsoft Entra Connect, and then select **Configure**.
 1. In **Additional tasks**, select **Configure device options**, and then select **Next**.
 1. In **Overview**, select **Next**.
-1. In **Connect to Microsoft Entra ID**, enter the credentials of a [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator) of your Microsoft Entra tenant.
+1. In **Connect to Microsoft Entra ID**, enter the credentials of a [Hybrid Identity Administrator](../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) for your Microsoft Entra tenant.
 1. In **Device options**, select **Configure Microsoft Entra hybrid join**, and then select **Next**.
 1. In **Device operating systems**, select the operating systems that devices in your Active Directory environment use, and then select **Next**.
 1. In **SCP configuration**, for each forest where you want Microsoft Entra Connect to configure a service connection point (SCP), complete the following steps, and then select **Next**.
@@ -78,8 +78,7 @@ Configure Microsoft Entra hybrid join by using Microsoft Entra Connect for a man
 
 A federated environment should have an identity provider that supports the following requirements. If you have a federated environment using Active Directory Federation Services (AD FS), then the below requirements are already supported.
 
-- **WIAORMULTIAUTHN claim:** This claim is required to do Microsoft Entra hybrid join for Windows down-level devices.
-- **WS-Trust protocol:** This protocol is required to authenticate Windows current Microsoft Entra hybrid joined devices with Microsoft Entra ID. When you're using AD FS, you need to enable the following WS-Trust endpoints:
+- **WS-Trust protocol:** This protocol is required to authenticate the Microsoft Entra hybrid joined devices with Microsoft Entra ID. When you're using AD FS, you need to enable the following WS-Trust endpoints:
    - `/adfs/services/trust/2005/windowstransport`
    - `/adfs/services/trust/13/windowstransport`
    - `/adfs/services/trust/2005/usernamemixed`
@@ -95,7 +94,7 @@ Configure Microsoft Entra hybrid join by using Microsoft Entra Connect for a fed
 1. Open Microsoft Entra Connect, and then select **Configure**.
 1. On the **Additional tasks** page, select **Configure device options**, and then select **Next**.
 1. On the **Overview** page, select **Next**.
-1. On the **Connect to Microsoft Entra ID** page, enter the credentials of a [Global Administrator](../role-based-access-control/permissions-reference.md#global-administrator) of your Microsoft Entra tenant, and then select **Next**.
+1. On the **Connect to Microsoft Entra ID** page, enter the credentials of a [Hybrid Identity Administrator](../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) for your Microsoft Entra tenant, and then select **Next**.
 1. On the **Device options** page, select **Configure Microsoft Entra hybrid join**, and then select **Next**.
 1. On the **SCP** page, complete the following steps, and then select **Next**:
    1. Select the forest.
@@ -141,6 +140,6 @@ If you experience issues with completing Microsoft Entra hybrid join for domain-
 
 ## Related content
 
-- [Microsoft Entra hybrid join verification](how-to-hybrid-join-verify.md)
-- [Use Conditional Access to require compliant or Microsoft Entra hybrid joined device](../conditional-access/howto-conditional-access-policy-compliant-device.md)
+- [Microsoft Entra hybrid join verification](how-to-hybrid-join-verify.yml)
+- [Use Conditional Access to require compliant or Microsoft Entra hybrid joined device](../conditional-access/policy-alt-all-users-compliant-hybrid-or-mfa.md)
 - [Planning a Windows Hello for Business Deployment](/windows/security/identity-protection/hello-for-business/hello-planning-guide)

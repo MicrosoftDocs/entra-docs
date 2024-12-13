@@ -25,7 +25,7 @@ To publish Qlik Sense, publish two applications in Azure.
 
 Publish your application in Microsoft Entra. For a more detailed walkthrough of steps 1-8, see [Publish applications using Microsoft Entra application proxy](~/identity/app-proxy/application-proxy-add-on-premises-application.md). 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 3. Select **New application** at the top of the page. 
 4. Select **On-premises application**. 

@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Dynatrace so that I can control who has access to Dynatrace, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -97,8 +97,6 @@ Follow these steps to enable Microsoft Entra SSO.
 	a. The **Signing Option** setting is pre-populated. Please review the settings as per your organization.
 
 	b. Click **Save**.
-
-	![Communifire Signing option](./media/dynatrace-tutorial/tutorial-dynatrace-signing-option.png)
 
 1. In the **Set up Dynatrace** section, copy the appropriate URL(s) based on your requirement.
 

@@ -17,7 +17,7 @@ ms.custom: it-pro, has-azure-ad-ps-ref
 
 # Create a role-assignable group in Microsoft Entra ID
 
-With Microsoft Entra ID P1 or P2, you can create [role-assignable groups](groups-concept.md) and assign Microsoft Entra roles to these groups. You create a new role-assignable group by setting **Microsoft Entra roles can be assigned to the group** to **Yes** or by setting the `isAssignableToRole` property set to `true`. A role-assignable group can't be of dynamic membership type and you can create a maximum of 500 groups in a single tenant.
+With Microsoft Entra ID P1 or P2, you can create [role-assignable groups](groups-concept.md) and assign Microsoft Entra roles to these groups. You create a new role-assignable group by setting **Microsoft Entra roles can be assigned to the group** to **Yes** or by setting the `isAssignableToRole` property set to `true`. A role-assignable group can't be a part of a [dynamic membership group](~/identity/users/groups-dynamic-membership.md) type. In Microsoft Entra, a single tenant can have a maximum of 500 role-assignable groups.
 
 This article describes how to create a role-assignable group using the Microsoft Entra admin center, PowerShell, or Microsoft Graph API.
 
@@ -45,7 +45,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 1. Set **Microsoft Entra roles can be assigned to the group** to **Yes**.
 
-    This option is visible to only Privileged Role Administrators and Global Administrators because these are only two roles that can set this option.
+    This option is visible to Privileged Role Administrators because this role can set this option.
 
     :::image type="content" source="media/groups-create-eligible/eligible-switch.png" alt-text="Screenshot of option to make group a role-assignable group." lightbox="media/groups-create-eligible/eligible-switch.png":::
     
@@ -101,7 +101,7 @@ Install-Module -Name AzureAD
 Import-Module -Name AzureAD
 Get-Module -Name AzureAD
 
-#Connect to Azure AD. Sign in as Privileged Role Administrator or Global Administrator. Only these two roles can create a role-assignable group.
+#Connect to Azure AD. Sign in as Privileged Role Administrator. This role can create a role-assignable group.
 Connect-AzureAD
 
 #Input variabled: Existing group

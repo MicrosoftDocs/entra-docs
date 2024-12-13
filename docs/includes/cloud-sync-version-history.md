@@ -14,6 +14,17 @@ Go to the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Micro
 
 Get notified about when to revisit this page for updates by copying and pasting this URL: `https://aka.ms/cloudsyncrss` into your ![RSS feed reader icon](media/cloud-sync-version-history/feed-icon-16-x-16.png) feed reader.
 
+## 1.1.1586.0
+
+Release date: May 13th, 2024
+
+### Fixed issues
+ 
+ - Miscellaneous supportability improvements.
+ - Improved handling of Active Directory Provider initialization issues.
+ - Fixed a bug with removing attributes.
+ - Improved group writeback error handling.
+
 ## 1.1.1373.0
 
 Release date: January 19th, 2024

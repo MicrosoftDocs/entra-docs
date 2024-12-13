@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-permissions-management
 
 ms.topic: quickstart
-ms.date: 12/20/2023
+ms.date: 05/13/2024
 ms.author: jfields
 ---
 
@@ -25,7 +25,7 @@ Before you begin, you need access to these tools for the onboarding process:
 
 - Access to a local BASH shell with the Azure CLI or Azure Cloud Shell using BASH environment (Azure CLI is included). 
 - Access to AWS, Azure, and GCP consoles.
-- A user must have the *Global Administrator* role assignment to create a new app registration in Microsoft Entra tenant is required for AWS and GCP onboarding. 
+- A user must have the [Permissions Management Administrator](../identity/role-based-access-control/delegate-by-task.md#permissions-management) role assignment to create a new app registration in Microsoft Entra tenant is required for AWS and GCP onboarding. 
 
 
 ## Step 1: Set-up Permissions Management
@@ -38,7 +38,7 @@ If the above points are met, continue with:
 
 [Enable Microsoft Entra Permissions Management in your organization](onboard-enable-tenant.md)
 
-Ensure you're a Global Administrator. Learn more about [Permissions Management roles and permissions](product-roles-permissions.md). 
+Ensure you're a [Permissions Management Administrator](../identity/role-based-access-control/delegate-by-task.md#permissions-management). Learn more about [Permissions Management roles and permissions](product-roles-permissions.md). 
 
 :::image type="content" source="media/permissions-management-quickstart-guide/entra-id-roles-sync-azure-environment.png" alt-text="A diagram showing where Microsoft Entra intersect with Azure roles in the Microsoft Entra tenant." lightbox="media/permissions-management-quickstart-guide/entra-id-roles-sync-azure-environment.png":::
  
@@ -104,7 +104,7 @@ To connect AWS to Permissions Management, you must create a Microsoft Entra appl
 
 ### Prerequisites 
 
-A user must have *Global Administrator* or *Permissions Management Administrator* role assignments to create a new app registration in Microsoft Entra ID. 
+A user must have the [Permissions Management Administrator](../identity/role-based-access-control/delegate-by-task.md#permissions-management) role assignment to create a new app registration in Microsoft Entra ID. 
 
 Account IDs and roles for: 
 - AWS OIDC account: An AWS member account designated by you to create and host the OIDC connection through an OIDC IdP

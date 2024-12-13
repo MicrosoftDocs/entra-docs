@@ -8,8 +8,8 @@ manager: mwongerapk
 ms.author: henrymbugua
 ms.service: entra-external-id
 
-ms.subservice: customers
-ms.topic: sample
+ms.subservice: external
+ms.topic: quickstart
 ms.date: 04/04/2024
 ms.custom: developer
 #Customer intent: As a developer, I want to authenticate users from a sample iOS mobile app so that I can experience how Microsoft Entra External ID works.
@@ -44,20 +44,17 @@ In this article, you do the following tasks:
 
 [!INCLUDE [Enable public client](../customers/includes/register-app/enable-public-client-flow.md)]
 
-## Delegated permission to Microsoft Graph
+## Grant admin consent
 
-Configure delegated permission to Microsoft Graph to enable your client application to perform operations on behalf of the logged-in user, for example reading their email or modifying their profile. By default, users of your client app are asked when they sign in to consent to the delegated permissions.
-
-[!INCLUDE [Grant API permissions](../customers/includes/register-app/grant-native-authentication-api-permission.md)]
+[!INCLUDE [Grant API permissions](../customers/includes/register-app/grant-api-permission-sign-in.md)]
 
 ## Clone sample iOS mobile application
 
-To obtain the sample application, clone the sample by following these steps:
+To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
 
-1. Open Terminal and navigate to a directory where you want to keep the code.  
-1. Clone the application from GitHub by running the following command:  
+- To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
-   ```bash 
+   ```console 
    git clone https://github.com/Azure-Samples/ms-identity-ciam-browser-delegated-ios-sample.git
    ```
 
@@ -71,8 +68,7 @@ To enable authentication and access to Microsoft Graph resources, configure the 
 
     - `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the app you registered earlier.
     - `Enter_the_Redirect_URI_Here` and replace it with the value of *kRedirectUri* in the Microsoft Authentication Library (MSAL) configuration file you downloaded earlier when you added the platform redirect URL.
-    - `Enter_the_Protected_API_Scopes_Here` and replace it with the scopes recorded in [Delegated permission to Microsoft Graph](#delegated-permission-to-microsoft-graph). 
-If you haven't recorded any scopes, you can leave this scope list empty.
+    - `Enter_the_Protected_API_Scopes_Here` and replace it with the scopes recorded in [Grant admin concent](#grant-admin-consent). If you haven't recorded any scopes, you can leave this scope list empty.
     - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't know your tenant subdomain, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 
@@ -84,8 +80,10 @@ To build and run your app, follow these steps:
  
 1. To build and run your code, select **Run** from the **Product** menu in Xcode. After a successful build, Xcode will launch the sample app in the Simulator.
 1. Select **Acquire Token Interactively** to request an access token.
-1. If you select **API - Perform GET** to call a protected ASP.NET Core web API, you will get an error. For more information about calling a protected web API, see [Next Step](#next-step) 
+1. If you select **API - Perform GET** to call a protected ASP.NET Core web API, you will get an error. 
 
-## Next Step
+For more information about calling a protected web API, see our [Next steps](#next-steps) 
+
+## Next steps
 
 - [Sign in users and call a protected web API in sample iOS (Swift) app](sample-mobile-app-ios-swift-sign-in-call-api.md).

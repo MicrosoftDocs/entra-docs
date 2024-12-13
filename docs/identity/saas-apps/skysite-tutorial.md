@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SKYSITE so that I can control who has access to SKYSITE, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -95,11 +95,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![Screenshot shows User claims with the option to Add new claim.](./media/skysite-tutorial/claims.png)
 
-	![Screenshot shows the Manage user claims dialog box where you can enter the values described.](./media/skysite-tutorial/groups.png)
+	b. Select **All groups** from the radio list.
 
-	b. Select **All Groups** from the radio list.
-
-	c. Select **Source Attribute** of **Group ID**.
+	c. Select **Source attribute** of **Group ID**.
 
 	d. Click **Save**.
 

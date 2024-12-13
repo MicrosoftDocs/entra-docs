@@ -4,13 +4,15 @@ description: Learn how developers can stop applications from requesting unnecess
 author: omondiatieno
 manager: celesteDG
 ms.author: jomondi
-ms.date: 12/05/2023
+ms.date: 10/01/2024
 ms.reviewer: yuhko, ergreenl
 ms.service: identity-platform
 
 ms.topic: how-to
 services: active-directory
 zone_pivot_groups: enterprise-apps-with-ms-graph
+
+#customer-intent: As a developer, I want to update an app's requested permissions in Microsoft Entra ID so that I can enhance security, improve user experience, and ensure compliance with privacy standards.
 ---
 # Update an app's requested permissions in Microsoft Entra ID
 
@@ -30,7 +32,7 @@ Updating permissions for your app isn't only a security best practice, but also 
 To update an app's requested permissions, you need:
 
 - A Microsoft Entra user account. If you don't already have one, [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Application Administrator, Cloud Application Administrator. An application owner who isn't an administrator is able to update an app's requested permissions.
+- One of the following roles: Application Administrator, Cloud Application Administrator. An application owner who isn't an administrator is able to update an app's requested permissions.
 
 ## Scenarios for updating permissions
 
@@ -84,7 +86,7 @@ You can add permissions to static consent in two different ways in the Microsoft
 
 To complete the following steps of adding permissions, you need the following resources and privileges:
 
-- Run the HTTP requests in a tool of your choice, for example, in your app, through Graph Explorer, or Postman.
+- Run the HTTP requests in a tool of your choice, for example, in your app, or through Graph Explorer.
 - Run the APIs as a user with at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator), or as an owner of the target app registration.
 - The app used to make these changes must be granted the `Application.ReadWrite.All` permission.
 
@@ -93,7 +95,7 @@ To complete the following steps of adding permissions, you need the following re
    The following example calls the [Update application](/graph/api/application-update) API to add the required Microsoft Graph permissions to an app registration identified by object ID `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb`. This example uses `Analytics.Read` and `Application.Read.All` delegated permission and application permission. Microsoft Graph is identified as a ServicePrincipal object with `00000003-0000-0000-c000-000000000000` as its globally unique `AppId`.
 
    ```http
-   PATCH https://graph.microsoft.com/v1.0/applications/581088ba-83c5-4975-b8af-11d2d7a76e98
+   PATCH https://graph.microsoft.com/v1.0/applications/aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb
    Content-Type: application/json
     {
         "requiredResourceAccess": [
@@ -153,7 +155,7 @@ After permissions are added to your application, users or admins need to grant c
 
 When the added permissions require admin consent, the required actions vary based on app type:
 
-- **Single tenant app and multitenant app in home tenant**: The user must sign in as a Global Administrator and [grant tenant-wide consent](~/identity/enterprise-apps/grant-admin-consent.md).
+- **Single tenant app and multitenant app in home tenant**: The user must sign in as at least a [Privileged Role Administrator role](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) and [grant tenant-wide consent](~/identity/enterprise-apps/grant-admin-consent.md).
 - **Multi-tenant apps in customer's tenants**: User sees new consent prompts on their next sign-in attempt. If the permissions only require user consent, the user can grant consent. If the permissions require admin consent, the user must contact their administrator to grant consent.
 
 ### Stop requesting unused permissions
@@ -167,7 +169,7 @@ Removing permissions can reduce the risk of exposing sensitive data or compromis
 
 :::zone pivot="portal"
 
-To stop requesting permissions that require static consent, you need to remove the permission from the **App registrations** pane. An admin of the tenant also needs to revoke the permission on the **Enterprise applications** pane. For more information on how to revoke permissions granted to an enterprise application, see [Revoke permissions for an enterprise application](~/identity/enterprise-apps/manage-application-permissions.md#review-and-revoke-permissions).
+To stop requesting permissions that require static consent, you need to remove the permission from the **App registrations** pane. An admin of the tenant also needs to revoke the permission on the **Enterprise applications** pane. For more information on how to revoke permissions granted to an enterprise application, see [Revoke permissions for an enterprise application](~/identity/enterprise-apps/manage-application-permissions.md#review-and-revoke-permissions-in-the-microsoft-entra-admin-center).
 
 In this section, you learn how to stop requesting permissions for static consent.
 
@@ -197,7 +199,7 @@ You can remove permissions from static consent in two different ways in the Micr
 
 To complete the following steps of removing permissions, you need the following resources and privileges:
 
-- Run the HTTP requests in a tool of your choice, for example, in your app, through Graph Explorer, or Postman.
+- Run the HTTP requests in a tool of your choice, for example, in your app, or through Graph Explorer.
 - Call the APIs as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator), or as an owner of the target app registration.
 - The app used to make these changes must be granted the `Application.ReadWrite.All` permission.
 
@@ -226,11 +228,13 @@ To complete the following steps of removing permissions, you need the following 
 
 ### Stop requesting permissions with dynamic consent
 
-When you need to remove delegated permissions from dynamic consent request, specify the scope parameter while leaving out the permissions that you want to remove. Removing the permissions ensures the app doesn't call the corresponding API.
+When you need to remove delegated permissions from dynamic consent request, specify the scope parameter while leaving out the permissions that you want to remove. Removing the permissions ensures the app doesn't call the corresponding API. 
+
+This method only works for delegated permissions. Application permissions are requested and granted by an admin through static consent and aren't included in the scope parameter during the OAuth 2.0 authorization request.
 
 To stop requesting permissions with dynamic consent:
 
-- **Using Microsoft Graph**: Remove the unwanted Microsoft Graph delegated permissions from the \`scopes\` parameter. In this example, your application is requesting three permissions - `Analytics.Read`, `User.Read` and `Application.Read.All`. The delegated permission, `Analytics.Read` and application permission, `Application.Read.All` are no longer required for this app. It only requires `User.Read`.
+- **Using Microsoft Graph**: Remove the unwanted Microsoft Graph delegated permissions from the \`scopes\` parameter. In this example, your application is requesting three delegated permissions - `Analytics.Read`, `User.Read` and `Application.Read`. The delegated permissions, `Analytics.Read` and `Application.Read` are no longer required for this app. It only requires `User.Read`.
 
 The request should be similar to the following example:
 

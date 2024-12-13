@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Palo Alto Networks - Admin UI so that I can control who has access to Palo Alto Networks - Admin UI, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -111,7 +111,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	| | |
 
     > [!NOTE]
-    > The **Name** value, shown above as _adminrole_, should be the same value as the _Admin role attribute_, which is configured in step 12 of the **[Configure Palo Alto Networks - Admin UI SSO](#configure-palo-alto-networks---admin-ui-sso)** section. The **Source Attribute** value, shown above as _customadmin_, should be the same value as the _Admin Role Profile Name_, which is configured in step 9 of the **[Configure Palo Alto Networks - Admin UI SSO](#configure-palo-alto-networks---admin-ui-sso)** section.  
+    > The **Name** value, shown above as *adminrole*, should be the same value as the *Admin role attribute*, which is configured in step 12 of the **[Configure Palo Alto Networks - Admin UI SSO](#configure-palo-alto-networks---admin-ui-sso)** section. The **Source Attribute** value, shown above as *customadmin*, should be the same value as the *Admin Role Profile Name*, which is configured in step 9 of the **[Configure Palo Alto Networks - Admin UI SSO](#configure-palo-alto-networks---admin-ui-sso)** section.  
 
 	> [!NOTE]
     > For more information about the attributes, see the following articles:

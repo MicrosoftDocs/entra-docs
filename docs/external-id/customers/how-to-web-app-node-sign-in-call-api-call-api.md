@@ -6,7 +6,7 @@ author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
 ms.service: entra-external-id 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
 ms.date: 01/27/2024
 ms.custom: developer, devx-track-js
@@ -14,6 +14,8 @@ ms.custom: developer, devx-track-js
 ---
 
 # Call a web API in a Node.js web application
+
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 In this article, you learn how to call a web API from your Node.js client web app using the access token you acquire in [Acquire access token](how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md#acquire-access-token). The web API is protected by Microsoft Entra External ID. This article is the fourth and last part of a four-part guide series.
 

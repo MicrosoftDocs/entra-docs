@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 05/24/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Small Improvements so that I can control who has access to Small Improvements, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -141,15 +141,17 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     a. Check **Enable SAML for SSO**.
 
-    b. In the **HTTP Endpoint** textbox, paste the value of **Login URL**.
+    b. In the **Application Issuer URL** text box, enter the Small Improvements subdomain in the following format:  `https://<yourcompany>.small-improvements.com`
 
-    c. Open your downloaded certificate in Notepad, copy the content, and then paste it into the **x509 Certificate** textbox. 
+    c. In the **HTTP Endpoint** textbox, paste the value of **Login URL**.
 
-    d. If you wish to have SSO and Login form authentication option available for users, then check the **Enable access via login/password too** option.  
+    d. Open your downloaded certificate in Notepad, copy the content, and then paste it into the **x509 Certificate** textbox. 
 
-    e. Enter the appropriate value to Name the SSO Login button in the **SAML Prompt** textbox.  
+    e. If you wish to have SSO and Login form authentication option available for users, then check the **Enable access via login/password too** option.  
 
-    f. Click **Save**.
+    f. Enter the appropriate value to Name the SSO Login button in the **SAML Prompt** textbox.  
+
+    g. Click **Save**.
 
 ### Create Small Improvements test user
 

@@ -9,7 +9,7 @@ ms.date: 07/14/2020
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a web app that signs in users by using the Microsoft identity platform.
 ---
 
@@ -69,7 +69,7 @@ else
 
 # [Java](#tab/java)
 
-In the Java quickstart, the sign-in button is located in the [main/resources/templates/index.html](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/master/msal-java-webapp-sample/src/main/resources/templates/index.html) file.
+In the Java quickstart, the sign-in button is located in the [main/resources/templates/index.html](https://github.com/Azure-Samples/ms-identity-docs-code-java/blob/main/webapp/src/main/resources/templates/index.html) file.
 
 ```html
 <!DOCTYPE html>

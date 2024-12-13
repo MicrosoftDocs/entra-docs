@@ -81,7 +81,7 @@
           href: app-objects-and-service-principals.md
         - name: How and why apps are added
           href: how-applications-are-added.md
-        - name: Single-tenant and multi-tenant apps
+        - name: Single-tenant and multitenant apps
           href: single-and-multi-tenant-apps.md
     - name: Custom Authentication Extensions
       displayName: Custom Authentication Extensions
@@ -146,9 +146,15 @@
           - name: Get user data from web API
             href: tutorial-single-page-app-react-call-api.md
         - name: Angular
-          href: tutorial-v2-angular-auth-code.md
-        - name: JavaScript
-          href: tutorial-v2-javascript-auth-code.md
+          items:
+          - name: Register your app
+            href: tutorial-single-page-apps-angular-register-app.md
+          - name: Prepare your app
+            href: tutorial-single-page-apps-angular-prepare-app.md
+          - name: Sign in users
+            href: tutorial-single-page-apps-angular-sign-in-users-app.md
+          - name: Get user data from web API
+            href: tutorial-single-page-apps-angular-call-api.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#single-page-applications
@@ -171,19 +177,15 @@
     - name: Web app authentication
       href: index-web-app.yml
     - name: Quickstart
-      items: 
-        - name: ASP.NET 
-          href: quickstart-web-app-aspnet-sign-in.md
+      items:
         - name: ASP.NET Core
           href: quickstart-web-app-dotnet-core-sign-in.md
-        - name: Node.js - MSAL
-          href: quickstart-web-app-nodejs-msal-sign-in.md
+        - name: Node.js
+          href: quickstart-web-app-nodejs-sign-in.md
         - name: Java
           href: quickstart-web-app-java-sign-in.md
-        - name: Python
-          items:
-            - name: Flask
-              href: quickstart-web-app-python-flask.md
+        - name: Python Flask
+          href: quickstart-web-app-python-flask.md
     - name: Tutorials
       items:
         - name: ASP.NET Core
@@ -208,7 +210,7 @@
             href: tutorial-web-app-python-call-api.md
         - name: Node.js
           href: tutorial-v2-nodejs-webapp-msal.md
-        - name: Spring
+        - name: Java Spring
           href: /azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-active-directory?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
         - name: Secure web app accesses storage and Microsoft Graph
           items:
@@ -249,7 +251,7 @@
               href: scenario-web-app-call-api-acquire-token.md
             - name: Call a web API
               href: scenario-web-app-call-api-call-api.md
-        - name: Deploy and setup App Service auth in a pipeline
+        - name: Deploy and set up App Service auth in a pipeline
           href: deploy-web-app-authentication-pipeline.md
 - name: Web API
   items:
@@ -278,6 +280,8 @@
       items:
         - name: Call a Web API with cURL
           href: howto-call-a-web-api-with-curl.md
+        - name: Call a web API with Insomnia
+          href: howto-call-a-web-api-with-rest-client.md
         - name: Protected web API
           items:
             - name: App registration
@@ -304,19 +308,14 @@
       items:
         - name: Node.js Electron
           href: quickstart-desktop-app-nodejs-electron-sign-in.md
-        - name: Universal Windows Platform
-          href: quickstart-desktop-app-uwp-sign-in.md
-        - name: Windows Presentation Foundation
+        - name: Windows Presentation Foundation (WPF)
           href: quickstart-desktop-app-wpf-sign-in.md
     - name: Tutorials
       items:
-        - name: Universal Windows Platform (UWP)
-          href: tutorial-v2-windows-uwp.md
+        - name: Node.js Electron
+          href: tutorial-v2-nodejs-desktop.md
         - name: Windows Presentation Foundation (WPF)
           href: tutorial-v2-windows-desktop.md
-        - name: Electron
-          displayName: Node.js
-          href: tutorial-v2-nodejs-desktop.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#desktop
@@ -324,16 +323,12 @@
       items:
         - name: Desktop app that calls an API
           items:
-            - name: Overview
-              href: scenario-desktop-overview.md
             - name: App registration
               href: scenario-desktop-app-registration.md
             - name: Code configuration
               href: scenario-desktop-app-configuration.md
             - name: Acquire token
               items:
-                - name: Overview
-                  href: scenario-desktop-acquire-token.md
                 - name: Interactively
                   href: scenario-desktop-acquire-token-interactive.md
                 - name: Interactive with WAM
@@ -346,8 +341,6 @@
                   href: scenario-desktop-acquire-token-device-code-flow.md
             - name: Call a web API
               href: scenario-desktop-call-api.md
-            - name: Move to production
-              href: scenario-desktop-production.md
 - name: Mobile
   items:
     - name: Mobile app authentication
@@ -361,9 +354,13 @@
     - name: Tutorials
       items:
         - name: Android
-          href: tutorial-v2-android.md
-        - name: Android - Shared-device mode
-          href: tutorial-v2-shared-device-mode.md
+          items:
+            - name: Sign in users and call a web API
+              href: tutorial-v2-android.md
+            - name: Enable Shared Device Mode in your app using MSAL
+              href: tutorial-v2-shared-device-mode.md
+            - name: Set up an Android device in Shared Device Mode
+              href: tutorial-mobile-android-device-shared-mode.md
         - name: iOS and macOS
           href: tutorial-v2-ios.md
     - name: Samples
@@ -373,8 +370,6 @@
       items:
         - name: Mobile app that calls an API
           items:
-            - name: Overview
-              href: scenario-mobile-overview.md
             - name: App registration
               href: scenario-mobile-app-registration.md
             - name: Code configuration
@@ -385,16 +380,12 @@
                   items:
                     - name: System browser on Android
                       href: msal-net-system-browser-android-considerations.md
-                    - name: Xamarin Android
-                      href: msal-net-xamarin-android-considerations.md
                     - name: Shared device mode for Android devices
                       href: msal-android-shared-devices.md
                 - name: iOS
                   items:
                     - name: Microsoft Enterprise SSO plug-in for Apple devices
                       href: apple-sso-plugin.md
-                    - name: Xamarin iOS
-                      href: msal-net-xamarin-ios-considerations.md
                     - name: Shared device mode for iOS devices
                       href: msal-ios-shared-devices.md
             - name: Acquire token
@@ -404,12 +395,6 @@
               href: msal-net-use-brokers-with-xamarin-apps.md
             - name: Calling a web API
               href: scenario-mobile-call-api.md
-            - name: Move to production
-              href: scenario-mobile-production.md
-        - name: Migrate broker-enabled Xamarin Android app MSAL.NET
-          href: msal-net-migration-android-broker.md
-        - name: Migrate broker-enabled Xamarin iOS app MSAL.NET
-          href: msal-net-migration-ios-broker.md
 - name: Service, daemon, script
   items:
     - name: Service/daemon authentication
@@ -436,8 +421,6 @@
       items:
         - name: Non-interactive app that calls a web API
           items:
-            - name: Overview
-              href: scenario-daemon-overview.md
             - name: App registration
               href: scenario-daemon-app-registration.md
             - name: Code configuration
@@ -446,8 +429,6 @@
               href: scenario-daemon-acquire-token.md
             - name: Call a web API
               href: scenario-daemon-call-api.md
-            - name: Move to production
-              href: scenario-daemon-production.md
 - name: Scenarios
   items:
     - name: Build
@@ -498,32 +479,30 @@
               href: jwt-claims-customization.md
             - name: Customize SAML claims using admin center
               href: saml-claims-customization.md
-            - name: Customize claims using PowerShell
+            - name: Customize claims using Claims Mapping Policy
               href: claims-customization-powershell.md
+            - name: Customize claims using Custom Claims Policy
+              href: claims-customization-custom-claims-policy.md
             - name: Set an access token lifetime policy
-              href: configure-token-lifetimes.md    
+              href: configure-token-lifetimes.yml    
             - name: Configure app multi-instancing
               href: configure-app-multi-instancing.md
-        - name: Custom claims provider
+        - name: Custom authentication extensions
           items:
             - name: Token issuance start event
               items:
-                - name: Create a token issuance start event in a REST API
+                - name: Create REST API for token issuance event
                   href: custom-extension-tokenissuancestart-setup.md
                 - name: Configure a custom claims provider token issuance event
                   href: custom-extension-tokenissuancestart-configuration.md
                 - name: Configure a SAML app to call a custom claims provider
                   href: custom-extension-configure-saml-app.md
-                - name: Troubleshoot your custom claims provider API
-                  href: custom-extension-troubleshoot.md
-        - name: Attribute collection custom extensions
-          items:
             - name: Create attribute collection start and submit events
               href: custom-extension-attribute-collection.md
-            - name: OnAttributeCollectionStart event reference
-              href: custom-extension-OnAttributeCollectionStart-reference.md
-            - name: OnAttributeCollectionSubmit event reference
-              href: custom-extension-OnAttributeCollectionSubmit-reference.md
+            - name: Configure a custom email provider for one time code send events
+              href: custom-extension-email-otp-get-started.md
+            - name: Troubleshoot your custom authentication extension
+              href: custom-extension-troubleshoot.md
         - name: Handle browser cookie restrictions
           items:
             - name: How to handle third-party cookie blocking in browsers
@@ -576,9 +555,9 @@
           href: howto-authenticate-service-principal-powershell.md
     - name: Publish
       items:
-        - name: Prepare app for multi-tenant access
+        - name: Prepare app for multitenant access
           items:
-            - name: Enable multi-tenant log-ins
+            - name: Enable multitenant log-ins
               href: howto-convert-app-to-be-multi-tenant.md
             - name: Modify accounts supported by an app
               href: ./howto-modify-supported-accounts.md
@@ -617,6 +596,8 @@
           href: howto-get-list-of-all-auth-library-apps.md
         - name: Migrate off email-based authorization
           href: migrate-off-email-claim-authorization.md
+        - name: Azure Active Directory Graph app manifest deprecation
+          href: azure-active-directory-graph-app-manifest-deprecation.md
     - name: Deprecate
       items:
         - name: Remove an app registration
@@ -630,7 +611,7 @@
         - name: Access token
           href: access-token-claims-reference.md
         - name: Claims mapping policy type
-          href: reference-claims-mapping-policy-type.md
+          href: reference-claims-customization.md
         - name: ID token
           href: id-token-claims-reference.md 
         - name: Optional claims
@@ -676,41 +657,7 @@
             - name: Migrate from ADAL to MSAL Android
               href: migrate-android-adal-msal.md
         - name: MSAL iOS and macOS
-          items:
-            - name: Library initialization
-              items:
-                - name: MSAL for iOS and macOS differences
-                  href: msal-differences-ios-macos.md
-                - name: Redirect URI configuration
-                  href: redirect-uris-ios.md
-                - name: Customize browsers and WebViews
-                  href: customize-webviews.md
-                - name: Shared device mode for iOS devices
-                  displayName: firstline worker, frontline worker, flw
-                  href: msal-ios-shared-devices.md
-                - name: Integrate with Azure AD B2C
-                  href: config-authority.md#b2c
-            - name: Authentication and single sign-on (SSO)
-              items:
-                - name: Configure keychain
-                  href: howto-v2-keychain-objc.md
-                - name: SSO between MSAL apps
-                  href: single-sign-on-macos-ios.md
-                - name: SSO between ADAL and MSAL apps
-                  href: sso-between-adal-msal-apps-macos-ios.md
-                - name: Request custom claims
-                  href: request-custom-claims.md
-            - name: Logging and error handling
-              items:
-                - name: Logging in MSAL for iOS/macOS
-                  href: msal-logging-ios.md
-                - name: Handle errors and exceptions in MSAL for iOS/macOS
-                  displayName: handling, catch
-                  href: msal-error-handling-ios.md
-                - name: Troubleshoot SSL issues (MSAL iOS/macOS)
-                  href: ssl-issues.md
-            - name: Migrate to MSAL.iOS / macOS
-              href: migrate-objc-adal-msal.md
+          href: /entra/msal/objc/
         - name: MSAL Java
           href: /entra/msal/java/
         - name: MSAL.js
@@ -720,7 +667,7 @@
               items:
                 - name: Init MSAL.js 2.x and 1.x clients
                   href: msal-js-initializing-client-applications.md
-                - name: Running and debugging in IE
+                - name: Running and debugging in Internet Explorer
                   href: msal-js-use-ie-browser.md
                 - name: Integrate with Azure AD B2C
                   href: msal-b2c-overview.md
@@ -768,6 +715,9 @@
           href: /entra/msal/python/
     - name: Protocol reference (OAuth, OIDC, SAML)
       items:
+        - name: OAuth 2.0 application types
+          displayName: App types, OAuth
+          href: v2-app-types.md
         - name: OAuth 2.0 and OpenID Connect (OIDC)
           items:
             - name: Token grant flows
@@ -788,9 +738,6 @@
                   href: v2-oauth-ropc.md
                 - name: OpenID Connect
                   href: v2-protocols-oidc.md
-            - name: OAuth 2.0 application types
-              displayName: App types, OAuth
-              href: v2-app-types.md
             - name: Certificate credentials
               href: certificate-credentials.md
             - name: Signing key rollover
@@ -814,39 +761,48 @@
             href: federation-metadata.md
     - name: App registration reference
       items:
-        - name: Application manifest
+        - name: App manifest (Azure AD Graph format)
           displayName: app manifest
           href: reference-app-manifest.md
-        - name: Redirect URI/reply URL restrictions and limitations
+        - name: App manifest (Microsoft Graph format)
+          displayName: Microsoft Graph app manifest
+          href: reference-microsoft-graph-app-manifest.md
+        - name: Redirect URI (reply URL) best practices and limitations
           href: reply-url.md
         - name: Validation differences by supported account types
           href: supported-accounts-validation.md
-    - name: Spring Cloud Azure
-      href: /azure/developer/java/spring-framework/developer-guide-overview?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json   
-    - name: Configured permissions limits troubleshooting
-      href: troubleshoot-required-resource-access-limits.md
+    - name: Custom authentication extensions reference
+      items:
+        - name: Custom claims provider reference
+          href: custom-claims-provider-reference.md
+        - name: Attribute collection start custom extension reference
+          href: custom-extension-OnAttributeCollectionStart-reference.md
+        - name: Attribute collection submit custom extension reference
+          href: custom-extension-OnAttributeCollectionSubmit-reference.md
+    - name: Endpoint reference
+      items: 
+        - name: Admin consent URI
+          href: v2-admin-consent.md
+        - name: National and public cloud URIs
+          displayName: china, germany, gov, 21vianet
+          href: authentication-national-cloud.md
+    - name: API reference
+      items:
+        - name: Microsoft Graph API reference (identity operations)
+          href: /graph/api/resources/azure-ad-overview
+        - name: MSA Server side API reference 
+          href: reference-msa-server-side-api.md
+        - name: Microsoft Entra ID WAM API reference
+          href: reference-entra-id-wam-api.md
     - name: Microsoft auth libraries by app type
       displayName: MSAL, auth client library, SDK, token validation
       href: reference-v2-libraries.md
     - name: AADSTS error code reference
       href: reference-error-codes.md
-    - name: "Endpoint reference: Admin consent URI"
-      href: v2-admin-consent.md
-    - name: "Endpoint reference: National and public cloud URIs"
-      displayName: china, germany, gov, 21vianet
-      href: authentication-national-cloud.md
-    - name: Microsoft Graph API reference (identity operations)
-      href: /graph/api/resources/azure-ad-overview
-    - name: Custom claims provider reference
-      href: custom-claims-provider-reference.md
-    - name: MSA Server side API reference 
-      href: reference-msa-server-side-api.md
-    - name: Microsoft Entra ID WAM API reference
-      href: reference-entra-id-wam-api.md
-    - name: Attribute collection start custom extension reference
-      href: custom-extension-OnAttributeCollectionStart-reference.md
-    - name: Attribute collection submit custom extension reference
-      href: custom-extension-OnAttributeCollectionSubmit-reference.md
+    - name: Spring Cloud Azure
+      href: /azure/developer/java/spring-framework/developer-guide-overview?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json   
+    - name: Configured permissions limits troubleshooting
+      href: troubleshoot-required-resource-access-limits.md
 - name: Resources
   items:
     - name: Help and support options

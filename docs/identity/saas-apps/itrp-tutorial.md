@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ITRP so that I can control who has access to ITRP, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -144,8 +144,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 1. In the **Single Sign-On** configuration section, take the following steps.
 
     ![Screenshot shows the Single Sign-On section with Enabled selected.](./media/itrp-tutorial/configuration.png "Single Sign-On section")
-
-    ![Screenshot shows the Single Sign-On section where you can add the information described in this step.](./media/itrp-tutorial/certificate.png "Single Sign-On section")
 
 	1. Select **Enabled**.
 

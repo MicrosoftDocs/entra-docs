@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: arvinh
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Cerner Central so that I can streamline the user management process and ensure that users have the appropriate access to Cerner Central.
@@ -90,7 +90,7 @@ In order to provision user accounts to Cerner Central, you’ll need to request 
 
 1. Set the **Provisioning Mode** to **Automatic**.
 
-   ![Cerner Central Provisioning](./media/cernercentral-provisioning-tutorial/Cerner.PNG)
+	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
 1. Fill in the following fields under **Admin Credentials**:
 

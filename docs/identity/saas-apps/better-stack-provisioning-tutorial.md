@@ -2,16 +2,14 @@
 title: 'Tutorial: Configure Better Stack for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Better Stack.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: beatrizd
-ms.assetid: ceb66a35-ca28-4a43-b9be-c8074cd406ff
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 04/10/2023
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Better Stack so that I can streamline the user management process and ensure that users have the appropriate access to Better Stack.
 ---
@@ -34,7 +32,7 @@ This tutorial describes the steps you need to perform in both Better Stack and M
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator).
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A user account in Better Stack with Admin permissions.
 
 ## Step 1: Plan your provisioning deployment

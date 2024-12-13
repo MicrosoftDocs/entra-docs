@@ -7,7 +7,7 @@ editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: conceptual
-ms.date: 04/09/2024
+ms.date: 12/13/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
 ---
@@ -21,17 +21,18 @@ With access reviews, you can easily ensure that users or guests have appropriate
  
 ## Prerequisites
  
-- Microsoft Entra ID P2 or Microsoft Entra ID Governance
- 
-For more information, see [License requirements](access-reviews-overview.md#license-requirements).
+[!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
  
 ## Create and perform an access review for users
 First, you must be assigned one of the following roles:
-- Global administrator
-- User administrator
+- Global Administrator
+- User Administrator
 - Identity Governance Administrator 
 - Privileged Role Administrator (for reviews of role-assignable groups only)
 - (Preview) Microsoft 365 or Microsoft Entra Security Group owner of the group to be reviewed 
+
+> [!NOTE]
+> Following least privilege access, we recommend using Identity Governance Administrator or User Administrator for these tasks.
 
 Then, go to the [Identity Governance page](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/) to ensure that access reviews is ready for your organization.
 
@@ -55,7 +56,7 @@ You can have one or more users as reviewers in an access review.
 
 ## Manage guest access with Microsoft Entra access reviews
  
-With Microsoft Entra ID, you can easily enable collaboration across organizational boundaries by using the [Microsoft Entra B2B feature](../external-id/what-is-b2b.md). Guest users from other tenants can be [invited by administrators](../external-id/add-users-administrator.md) or by [other users](../external-id/what-is-b2b.md). This capability also applies to social identities such as Microsoft accounts.
+With Microsoft Entra ID, you can easily enable collaboration across organizational boundaries by using the [Microsoft Entra B2B feature](../external-id/what-is-b2b.md). Guest users from other tenants can be [invited by administrators](../external-id/add-users-administrator.yml) or by [other users](../external-id/what-is-b2b.md). This capability also applies to social identities such as Microsoft accounts.
  
  
  

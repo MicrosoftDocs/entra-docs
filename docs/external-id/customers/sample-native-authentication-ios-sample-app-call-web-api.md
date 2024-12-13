@@ -8,9 +8,9 @@ manager: mwongerapk
 ms.author: henrymbugua
 ms.service: entra-external-id
 
-ms.subservice: customers
-ms.topic: sample
-ms.date: 03/06/2024
+ms.subservice: external
+ms.topic: quickstart
+ms.date: 08/21/2024
 ms.custom: developer
 #Customer intent: As a developer, I aim to learn registering a web API, configuring API scopes, roles, optional claims, and calling a web API in an iOS sample app.
 ---
@@ -47,13 +47,15 @@ Once you've registered both your client app and web API and you've exposed the A
 
 ## Clone or download sample web API
 
-To get the web API sample code, [download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial/archive/refs/heads/main.zip) or clone the sample web application from GitHub by running the following command:
+To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
 
-```bash
-git clone https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial.git
-```
+- To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
-If you choose to download the .zip file, extract the sample app file to a folder where the total length of the path is 260 or fewer characters.
+    ```console
+    git clone https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial.git
+    ```
+
+- [Download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
 
 ## Configure and run sample web API
 
@@ -68,17 +70,19 @@ You need to host your web API for the iOS sample app to call it. Follow [Quickst
 
 ## Configure sample iOS mobile app to call web API
 
-1. In your Xcode, open `/NativeAuthSampleApp/ProtectedAPIViewController.swift` file.
-1. Find `Enter_the_Protected_API_Full_URL_Here` and replace this value with your web API URL.
+The sample allows you to configure multiple Web API URL endpoints and sets of scopes. In this case, you configure only one Web API URL endpoint and its associated scopes.
+
+1. In your Xcode, open `/NativeAuthSampleApp/ProtectedAPIViewController.swift` file. If you're using macOS, here's a sample [ProtectedAPIViewController.swift](https://github.com/Azure-Samples/ms-identity-ciam-native-auth-ios-sample/blob/main/NativeAuthSampleApp/ProtectedAPIViewController.swift) code file.
+1. Find `protectedAPIUrl1` and enter your web API URL as its value.
 
     ```swift
-    let protectedAPIUrl = "Enter_the_Protected_API_Full_URL_Here" // Developers should set the respective URL of their web API here
+    let protectedAPIUrl1: String? = nil // Developers should set the respective URL of their web API here. For example let protectedAPIUrl1: String? = "https://api.example.com/v1/resource"
     ```
     
-1. Find `Enter_the_Protected_API_Scopes_Here` and set the scopes recorded in [Grant API permissions to the iOS sample app](#grant-api-permissions-to-the-ios-sample-app).
+1. Find `protectedAPIScopes1` and set the scopes recorded in [Grant API permissions to the iOS sample app](#grant-api-permissions-to-the-ios-sample-app).
 
     ```swift
-    let protectedAPIScopes = ["Enter_the_Protected_API_Scopes_Here"] // Developers should set the respective scopes of their web API here.For example, let protectedAPIScopes = ["api://{clientId}/{ToDoList.Read}","api://{clientId}/{ToDoList.ReadWrite}"]
+    let protectedAPIScopes1: [String] = [] // Developers should set the respective scopes of their web API here.For example, let protectedAPIScopes = ["api://{clientId}/{ToDoList.Read}","api://{clientId}/{ToDoList.ReadWrite}"]
     ```
     
 ## Run iOS sample app and call web API 

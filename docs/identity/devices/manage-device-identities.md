@@ -5,7 +5,7 @@ description: This article describes how to use the Microsoft Entra admin center 
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 09/27/2023
+ms.date: 04/22/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -30,7 +30,7 @@ Device counts on the overview page don't update in real time. Changes should be 
 From there, you can go to **All devices** to:
 
 - Identify devices, including:
-   - Devices that have been joined or registered in Microsoft Entra ID.
+   - Devices joined or registered in Microsoft Entra ID.
    - Devices deployed via [Windows Autopilot](/autopilot/windows-autopilot).
    - Printers that use [Universal Print](/universal-print/fundamentals/universal-print-getting-started).
 - Complete device identity management tasks like enable, disable, delete, and manage.
@@ -80,7 +80,7 @@ There are two ways to delete a device:
 > - Deleting a device:
 >    - Prevents it from accessing your Microsoft Entra resources.
 >    - Removes all details attached to the device. For example, BitLocker keys for Windows devices.  
->    - Is a nonrecoverable activity. We don't recommended it unless it's required.
+>    - Is a nonrecoverable activity. We don't recommend it unless it's required.
 
 If a device is managed in another management authority, like Microsoft Intune, be sure it's wiped or retired before you delete it. See [How to manage stale devices](manage-stale-devices.md) before you delete a device.
 
@@ -105,7 +105,7 @@ To view or copy BitLocker keys, you need to be the owner of the device or have o
 - [Security Reader](../role-based-access-control/permissions-reference.md#security-reader)
   
 > [!NOTE]
-> When devices that utilize [Windows Autopilot](/mem/autopilot/windows-autopilot) are reused, **and there is a new device owner**, that new device owner must contact an administrator to acquire the BitLocker recovery key for that device. Administrative unit scoped administrators will lose access to BitLocker recovery keys after device ownership changes. These scoped administrators will need to contact a non-scoped administrator for the recovery keys.
+> When devices that utilize [Windows Autopilot](/mem/autopilot/windows-autopilot) are reused, **and there is a new device owner**, that new device owner must contact an administrator to acquire the BitLocker recovery key for that device. Custom role or administrative unit scoped administrators will lose access to BitLocker recovery keys for those devices that have undergone device ownership changes. These scoped administrators will need to contact a non-scoped administrator for the recovery keys. For more information, see the article [Find the primary user of an Intune device](/mem/intune/remote-actions/find-primary-user#change-a-devices-primary-user).
 
 ## View and filter your devices
 
@@ -146,11 +146,11 @@ The following filters can be applied for the export task:
 
 If you want to manage device identities by using the Microsoft Entra admin center, the devices need to be either [registered or joined](overview.md) to Microsoft Entra ID. As an administrator, you can control the process of registering and joining devices by configuring the following device settings.
 
-You must be assigned one of the following roles to manage device settings:
+You must be assigned one of the following roles to read or modify device settings:
 
-- [Cloud Device Administrator](../role-based-access-control/permissions-reference.md#cloud-device-administrator)
-- [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator)
-- [Windows 365 Administrator](../role-based-access-control/permissions-reference.md#windows-365-administrator)
+- [Cloud Device Administrator](../role-based-access-control/permissions-reference.md#cloud-device-administrator) (read and modify)
+- [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator) (read only)
+- [Windows 365 Administrator](../role-based-access-control/permissions-reference.md#windows-365-administrator) (read only)
 
 ![Screenshot that shows device settings related to Microsoft Entra ID.](./media/manage-device-identities/device-settings-azure-portal.png)
 
@@ -161,8 +161,8 @@ You must be assigned one of the following roles to manage device settings:
 
 - **Users may register their devices with Microsoft Entra ID**: You need to configure this setting to allow users to register Windows 10 or newer personal, iOS, Android, and macOS devices with Microsoft Entra ID. If you select **None**, devices aren't allowed to register with Microsoft Entra ID. Enrollment with Microsoft Intune or mobile device management for Microsoft 365 requires registration. If you've configured either of these services, **ALL** is selected, and **NONE** is unavailable.
 - **Require multifactor authentication to register or join devices with Microsoft Entra ID**: 
-   - We recommend organizations use the [Register or join devices user](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#user-actions) action in Conditional Access to enforce multifactor authentication. You must configure this toggle to **No** if you use a Conditional Access policy to require multifactor authentication. 
-   - This setting allows you to specify whether users are required to provide another authentication factor to join or register their devices to Microsoft Entra ID. The default is **No**. We recommend that you require multifactor authentication when a device is registered or joined. Before you enable multifactor authentication for this service, you must ensure that multifactor authentication is configured for users that register their devices. For more information on Microsoft Entra multifactor authentication services, see [getting started with Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md). This setting may not work with third-party identity providers.
+   - We recommend organizations use the [Register or join devices user action](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#user-actions) in Conditional Access to enforce multifactor authentication. You must configure this toggle to **No** if you use a [Conditional Access policy to require multifactor authentication](../conditional-access/policy-all-users-device-registration.md). 
+   - This setting allows you to specify whether users are required to provide another authentication factor to join or register their devices to Microsoft Entra ID. The default is **No**. We recommend that you require multifactor authentication when a device is registered or joined. Before you enable multifactor authentication for this service, you must ensure that multifactor authentication is configured for users that register their devices. For more information on Microsoft Entra multifactor authentication services, see [getting started with Microsoft Entra multifactor authentication](~/identity/authentication/concept-mfa-howitworks.md). This setting might not work with third-party identity providers.
 
    > [!NOTE]
    > The **Require multifactor authentication to register or join devices with Microsoft Entra ID** setting applies to devices that are either Microsoft Entra joined (with some exceptions) or Microsoft Entra registered. This setting doesn't apply to Microsoft Entra hybrid joined devices, [Microsoft Entra joined VMs in Azure](./howto-vm-sign-in-azure-ad-windows.md#enable-azure-ad-login-for-a-windows-vm-in-azure), or Microsoft Entra joined devices that use [Windows Autopilot self-deployment mode](/autopilot/self-deploying).
@@ -186,6 +186,9 @@ Device activities are visible in the activity logs. These logs include activitie
 - Device creation and adding owners/users on the device
 - Changes to device settings
 - Device operations like deleting or updating a device
+- Bulk operations like downloading all devices 
+
+[!INCLUDE [Bulk operations limitations](~/includes/bulk-operations-limitations.md)]
 
 The entry point to the auditing data is **Audit logs** in the **Activity** section of the **Devices** page.
 

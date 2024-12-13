@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-verified-id
 ms.topic: how-to
 
-ms.date: 06/16/2022
+ms.date: 11/13/2024
 ms.author: barclayn
 
 #Customer intent: As an administrator, I am looking for information to help me disable 
@@ -26,7 +26,7 @@ Rules and Display definitions are used to define a credential. You can read more
 | `validityInterval` | number | represents the lifespan of the credential in seconds |
 | `vc`| [vcType](#vctype-type) | verifiable credential types for this contract |
 
-The attestation type example in JSON. Notice that `selfIssued` is a single instance while the others are collections. For examples of how to use the attestation type, please the [Sample JSON rules definitions](how-to-use-quickstart-multiple.md#sample-json-rules-definitions) in the How-to guides.
+The attestation type example in JSON. Notice that `selfIssued` is a single instance while the others are collections. For examples of how to use the attestation type, see [Sample JSON rules definitions](how-to-use-quickstart-multiple.md#sample-json-rules-definitions) in the How-to guides.
  
 ```json
 "attestations": {
@@ -36,6 +36,7 @@ The attestation type example in JSON. Notice that `selfIssued` is a single insta
   "selfIssued": {}
 }
 ```
+
 ### idTokenAttestation type
 
 When you sign in the user from within Authenticator, you can use the returned ID token from the OpenID Connect compatible provider as input.
@@ -62,14 +63,14 @@ This flow uses the ID Token Hint, which is provided as payload through the Reque
 
 ### verifiablePresentationAttestation type
 
-When you want the user to present another verifiable credential as input for a new issued verifiable credential. The wallet will allow the user to select the verifiable credential during issuance.
+When you want the user to present another verifiable credential as input for a new issued verifiable credential. The wallet allows the user to select the verifiable credential during issuance.
 
 | Property | Type | Description |
 | -------- | -------- | -------- |
 | `mapping` | [claimMapping](#claimmapping-type) (optional) | rules to map input claims into output claims in the verifiable credential |
 | `credentialType` | string (optional) | required credential type of the input |
 | `required` | boolean (default false) | indicating whether this attestation is required or not |
-| `trustedIssuers` | string (array) | a list of DIDs allowed to issue the verifiable credential for this contract. The service will default to your issuer under the covers so no need to provide this value yourself. |
+| `trustedIssuers` | string (array) | a list of DIDs allowed to issue the verifiable credential for this contract. The service defaults to your issuer under the covers so no need to provide this value yourself. |
 
 ### selfIssuedAttestation type
 
@@ -156,6 +157,9 @@ When you want the user to enter information themselves. This type is also called
 |`uri`| string (url) | url of the logo. |
 |`description` | string | the description of the logo |
 
+> [!NOTE]
+> Microsoft recommends that you use widely supported image formats, such as .PNG, .JPG, or .BMP, to reduce file format errors.
+
 ### displayConsent type
 
 | Property | Type | Description |
@@ -185,7 +189,7 @@ When you want the user to enter information themselves. This type is also called
     "title": "Verifiable Credential Expert",
     "logo": {
       "description": "Default VC logo",
-      "uri": "https://didcustomerplayground.blob.core.windows.net/public/VerifiedCredentialExpert_icon.png"
+      "uri": "https://didcustomerplayground.z13.web.core.windows.net/VerifiedCredentialExpert_icon.png"
     }
   },
   "consent": {

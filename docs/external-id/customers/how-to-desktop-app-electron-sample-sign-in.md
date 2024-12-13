@@ -8,15 +8,17 @@ manager: mwongerapk
 ms.author: kengaderdus
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
-ms.date: 05/22/2023
+ms.date: 09/09/2024
 ms.custom: developer
 
 #Customer intent: As a dev, devops, I want to learn about how to configure a sample Electron desktop app to sign in and sign out users with my external tenant.
 ---
 
 # Sign in users in a sample Electron desktop application
+
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 This how-to guide uses a sample Electron desktop application to show how to add authentication to a desktop application. The sample application enables users to sign in and sign out. The sample web application uses [Microsoft Authentication Library (MSAL)](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) for Node to handle authentication.
 
@@ -38,7 +40,9 @@ In this article, you do the following tasks:
 
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
-- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+- An external tenant. To create one, choose from the following methods:
+  - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
+  - [Create a new external tenant](how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 <!--Awaiting this link http://developer.microsoft.com/identity/customers to go live on Developer hub-->
 
 ## Register desktop app
@@ -46,14 +50,10 @@ In this article, you do the following tasks:
 [!INCLUDE [active-directory-b2c-register-app](./includes/register-app/register-client-app-common.md)]
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/add-platform-redirect-url-electron.md)] 
 
-## Grant API permissions
+## Grant admin consent
 
 [!INCLUDE [active-directory-b2c-grant-delegated-permissions](./includes/register-app/grant-api-permission-sign-in.md)] 
 
-## Configure optional claims
-
-[!INCLUDE [active-directory-configure-optional-claims](./includes/register-app/add-optional-claims-id.md)] 
- 
 ## Create a user flow
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/configure-user-flow/create-sign-in-sign-out-user-flow.md)] 
@@ -78,7 +78,8 @@ If you choose to download the `.zip` file, extract the sample app file to a fold
 
     ```powershell
     cd 1-Authentication\3-sign-in-electron\App
-    ```)
+    ```
+ 
 1. Run the following commands to install app dependencies:
 
     ```powershell
@@ -115,12 +116,9 @@ You can now test the sample Electron desktop app. After you run the app, the des
 
     :::image type="content" source="media/how-to-desktop-app-electron-sample-sign-in/desktop-app-electron-view-claims.png" alt-text="Screenshot of view token claims in an electron desktop app.":::
 
-## Next steps
+## See also
 
 - [Enable password reset](how-to-enable-password-reset-customers.md).
-
 - [Customize the default branding](how-to-customize-branding-customers.md).
-
 - [Configure sign-in with Google](how-to-google-federation-customers.md).
-
 - [Explore the Electron desktop app sample code](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/tree/main/1-Authentication/3-sign-in-electron#about-the-code).

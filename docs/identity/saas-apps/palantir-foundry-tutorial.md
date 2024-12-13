@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 
@@ -134,8 +134,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 1. Give a valid SAML provider name and click **Create**.
 
 1. Click **Manage** in the **SAML** section.
-
-    ![Screenshot for S A M L Configuration.](./media/palantir-foundry-tutorial/authentication.png)
 
 1. Perform the following steps in the **SAML** section:
 

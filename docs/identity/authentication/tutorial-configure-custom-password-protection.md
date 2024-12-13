@@ -5,7 +5,7 @@ description: In this tutorial, you learn how to configure custom banned password
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
-ms.date: 09/14/2023
+ms.date: 12/02/2024
 
 ms.author: justinha
 author: justinha
@@ -15,7 +15,7 @@ ms.reviewer: rogoya
 ---
 # Tutorial: Configure custom banned passwords for Microsoft Entra password protection
 
-Users often create passwords that use common local words such as a school, sports team, or famous person. These passwords are easy to guess, and weak against dictionary-based attacks. To enforce strong passwords in your organization, the Microsoft Entra custom banned password list let you add specific strings to evaluate and block. A password change request fails if there's a match in the custom banned password list.
+Users often create passwords that use common local words such as a school, sports team, or famous person. These passwords are easy to guess, and weak against dictionary-based attacks. To enforce strong passwords in your organization, the Microsoft Entra custom banned password list lets you add specific strings to evaluate and block. A password change request fails if there's a match in the custom banned password list.
 
 In this tutorial you learn how to:
 
@@ -30,7 +30,7 @@ To complete this tutorial, you need the following resources and privileges:
 
 * A working Microsoft Entra tenant with at least a Microsoft Entra ID P1 or trial license enabled.
     * If needed, [create one for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* An account with *global administrator* privileges.
+* An account with at least the [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) role.
 * A non-administrator user with a password you know, such as *testuser*. You test a password change event using this account in this tutorial.
     * If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/add-users.md).
     * To test the password change operation using a banned password, the Microsoft Entra tenant must be [configured for self-service password reset](tutorial-enable-sspr.md).
@@ -82,7 +82,7 @@ To enable the custom banned password list and add entries to it, complete the fo
 
 It may take several hours for updates to the custom banned password list to be applied.
 
-For a hybrid environment, you can also [deploy Microsoft Entra password protection to an on-premises environment](howto-password-ban-bad-on-premises-deploy.md). The same global and custom banned password lists are used for both cloud and on-prem password change requests.
+For a hybrid environment, you can also [deploy Microsoft Entra password protection to an on-premises environment](howto-password-ban-bad-on-premises-deploy.md). The same global and custom banned password lists are used for both cloud and on-premises password change requests.
 
 ## Test custom banned password list
 

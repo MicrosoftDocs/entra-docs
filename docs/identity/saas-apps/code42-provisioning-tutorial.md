@@ -2,19 +2,17 @@
 title: 'Tutorial: Configure Code42 for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Code42.
 
-documentationcenter: ''
-author: twimmers
-writer: twimmers
+
+author: thomasakelo
 manager: jeedes
 
-ms.assetid: ddcb950b-3f9a-4ebb-bf78-4ec42d16d52d
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.tgt_pltfrm: na
+
 ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Code42 so that I can streamline the user management process and ensure that users have the appropriate access to Code42.
 ---
@@ -37,7 +35,7 @@ This tutorial describes the steps you need to perform in both Code42 and Microso
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md)
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator).
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A Code42 tenant with Identity Management enabled.
 * A Code42 user account with [Customer Cloud Admin](https://support.code42.com/hc/en-us/articles/14827655905943-Roles-reference#Customer_Cloud_Admin) permission.
 

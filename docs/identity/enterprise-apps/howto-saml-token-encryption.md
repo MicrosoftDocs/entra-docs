@@ -1,5 +1,5 @@
 ---
-title: SAML token encryption
+title: Configure Microsoft Entra SAML token encryption
 description: Learn how to configure Microsoft Entra SAML token encryption.
 
 author: omondiatieno
@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: concept-article
-ms.date: 06/15/2023
+ms.date: 08/19/2024
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.collection: M365-identity-device-management
@@ -22,13 +22,15 @@ ms.custom: enterprise-apps, has-azure-ad-ps-ref
 > [!NOTE]
 > Token encryption is a Microsoft Entra ID P1 or P2 feature. To learn more about Microsoft Entra editions, features, and pricing, see [Microsoft Entra pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 
-SAML token encryption enables the use of encrypted SAML assertions with an application that supports it. When configured for an application, Microsoft Entra ID will encrypt the SAML assertions it emits for that application using the public key obtained from a certificate stored in Microsoft Entra ID. The application must use the matching private key to decrypt the token before it can be used as evidence of authentication for the signed in user.
+SAML token encryption enables the use of encrypted SAML assertions with an application that supports it. When configured for an application, Microsoft Entra ID encrypts the SAML assertions it emits for that application. It encrypts the SAML assertions using the public key obtained from a certificate stored in Microsoft Entra ID. The application must use the matching private key to decrypt the token before it can be used as evidence of authentication for the signed in user.
 
-Encrypting the SAML assertions between Microsoft Entra ID and the application provides additional assurance that the content of the token can't be intercepted, and personal or corporate data compromised.
+Encrypting the SAML assertions between Microsoft Entra ID and the application provides more assurance that the content of the token can't be intercepted, and personal or corporate data compromised.
 
 Even without token encryption, Microsoft Entra SAML tokens are never passed on the network in the clear. Microsoft Entra ID requires token request/response exchanges to take place over encrypted HTTPS/TLS channels so that communications between the IDP, browser, and application take place over encrypted links. Consider the value of token encryption for your situation compared with the overhead of managing more certificates.
 
-To configure token encryption, you need to upload an X.509 certificate file that contains the public key to the Microsoft Entra application object that represents the application. To obtain the X.509 certificate, you can download it from the application itself, or get it from the application vendor in cases where the application vendor provides encryption keys or in cases where the application expects you to provide a private key, it can be created using cryptography tools, the private key portion uploaded to the application’s key store and the matching public key certificate uploaded to Microsoft Entra ID.
+To configure token encryption, you need to upload an X.509 certificate file that contains the public key to the Microsoft Entra application object that represents the application. 
+
+To obtain the X.509 certificate, you can download it from the application itself. You can also get it from the application vendor in cases where the application vendor provides encryption keys. If the application expects you to provide a private key, you can create it using cryptography tools. The private key portion is uploaded to the application’s key store and the matching public key certificate uploaded to Microsoft Entra ID.
 
 Microsoft Entra ID uses AES-256 to encrypt the SAML assertion data.
 
@@ -37,23 +39,23 @@ Microsoft Entra ID uses AES-256 to encrypt the SAML assertion data.
 To configure SAML token encryption, you need:
 
 - A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+- One of the following roles: Cloud Application Administrator, Application Administrator, or owner of the service principal.
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ## Configure enterprise application SAML token encryption
 
-This section describes how to configure enterprise application's SAML token encryption. Applications that have been set up from the **Enterprise applications** blade in the Microsoft Entra admin center, either from the Application Gallery or a Non-Gallery app. For applications registered through the **App registrations** experience, follow the [Configure registered application SAML token encryption](#configure-registered-application-saml-token-encryption) guidance.
+This section describes how to configure an enterprise application's SAML token encryption. These applications are set up from the **Enterprise applications** pane in the Microsoft Entra admin center, either from the application gallery or a non-gallery app. For applications registered through the **App registrations** experience, follow the [Configure registered application SAML token encryption](#configure-registered-application-saml-token-encryption) guidance.
 
 To configure enterprise application's SAML token encryption, follow these steps:
 
-1. Obtain a public key certificate that matches a private key that's configured in the application.
+1. Obtain a public key certificate that matches a private key configured in the application.
 
     Create an asymmetric key pair to use for encryption. Or, if the application supplies a public key to use for encryption, follow the application's instructions to download the X.509 certificate.
 
     The public key should be stored in an X.509 certificate file in .cer format. You can copy the contents of the certificate file to a text editor and save it as a .cer file. The certificate file should contain only the public key and not the private key.
     
-    If the application uses a key that you create for your instance, follow the instructions provided by your application for installing the private key that the application will use to decrypt tokens from your Microsoft Entra tenant.
+    If the application uses a key that you created for your instance, follow the instructions provided by your application for installing the private key that the application is to use to decrypt tokens from your Microsoft Entra tenant.
 
 1. Add the certificate to the application configuration in Microsoft Entra ID.
 
@@ -66,10 +68,8 @@ You can add the public cert to your application configuration within the Microso
 1. Enter the name of the existing application in the search box, and then select the application from the search results.
 1. On the application's page, select **Token encryption**.
 
-    ![Screenshot shows how to select the Token encryption option in the Microsoft Entra admin center.](./media/howto-saml-token-encryption/token-encryption-option-small.png)
-
     > [!NOTE]
-    > The **Token encryption** option is only available for SAML applications that have been set up from the **Enterprise applications** blade in the Microsoft Entra admin center, either from the Application Gallery or a Non-Gallery app. For other applications, this menu option is disabled. 
+    > The **Token encryption** option is only available for SAML applications that have been set up from the **Enterprise applications** pane in the Microsoft Entra admin center, either from the application gallery or a non-gallery app. For other applications, this option is disabled. 
 
 1. On the **Token encryption** page, select **Import Certificate** to import the .cer file that contains your public X.509 certificate.
 
@@ -83,7 +83,7 @@ You can add the public cert to your application configuration within the Microso
 
 ### To deactivate token encryption in the Microsoft Entra admin center
 
-1. In the Microsoft Entra admin center, go to **Identity** > **Applications** > **Enterprise applications** > **All applications**, and then select the application that has SAML token encryption enabled.
+1. In the Microsoft Entra admin center, browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**, and then select the application that has SAML token encryption enabled.
 
 1. On the application's page, select **Token encryption**, find the certificate, and then select the **...** option to show the dropdown menu.
 
@@ -91,11 +91,11 @@ You can add the public cert to your application configuration within the Microso
 
 ## Configure registered application SAML token encryption
 
-This section describes how to configure registered application's SAML token encryption. Applications that have been set up from the **App registrations** blade in the Microsoft Entra admin center. For enterprise application, follow the [Configure enterprise application SAML token encryption](#configure-enterprise-application-saml-token-encryption) guidance.
+This section describes how to configure a registered application's SAML token encryption. These applications are set up from the **App registrations** pane in the Microsoft Entra admin center. For enterprise application, follow the [Configure enterprise application SAML token encryption](#configure-enterprise-application-saml-token-encryption) guidance.
 
 Encryption certificates are stored on the application object in Microsoft Entra ID with an `encrypt` usage tag. You can configure multiple encryption certificates and the one that's active for encrypting tokens is identified by the `tokenEncryptionKeyID` attribute.
 
-You'll need the application's object ID to configure token encryption using Microsoft Graph API or PowerShell. You can find this value programmatically, or by going to the application's **Properties** page in the Microsoft Entra admin center and noting the **Object ID** value.
+You need the application's object ID to configure token encryption using Microsoft Graph API or PowerShell. You can find this value programmatically, or by going to the application's **Properties** page in the Microsoft Entra admin center and noting the **Object ID** value.
 
 When you configure a keyCredential using Graph, PowerShell, or in the application manifest, you should generate a GUID to use for the keyId.
 
@@ -112,10 +112,10 @@ To configure token encryption for an application registration, follow these step
 
     ```json
     { 
-      "id": "3cca40e2-367e-45a5-8440-ed94edd6cc35",
+      "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
       "accessTokenAcceptedVersion": null,
       "allowPublicClient": false,
-      "appId": "cb2df8fb-63c4-4c35-bba5-3d659dd81bf1",
+      "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",
       "appRoles": [],
       "oauth2AllowUrlPathMatching": false,
       "createdDateTime": "2017-12-15T02:10:56Z",
@@ -133,7 +133,7 @@ To configure token encryption for an application registration, follow these step
         { 
           "customKeyIdentifier": "Tog/O1Hv1LtdsbPU5nPphbMduD=", 
           "endDate": "2039-12-31T23:59:59Z", 
-          "keyId": "8be4cb65-59d9-404a-a6f5-3d3fb4030351", 
+          "keyId": "aaaaaaaa-0b0b-1c1c-2d2d-333333333333", 
           "startDate": "2018-10-25T21:42:18Z", 
           "type": "AsymmetricX509Cert", 
           "usage": "Encrypt", 
@@ -141,9 +141,9 @@ To configure token encryption for an application registration, follow these step
           "displayName": "CN=SAMLEncryptTest" 
         }, 
         {
-          "customKeyIdentifier": "U5nPphbMduDmr3c9Q3p0msqp6eEI=",
+          "customKeyIdentifier": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u=",
           "endDate": "2039-12-31T23:59:59Z", 
-          "keyId": "6b9c6e80-d251-43f3-9910-9f1f0be2e851",
+          "keyId": "bbbbbbbb-1c1c-2d2d-3e3e-444444444444",
           "startDate": "2018-10-25T21:42:18Z", 
           "type": "AsymmetricX509Cert", 
           "usage": "Encrypt", 
@@ -173,7 +173,7 @@ To configure token encryption for an application registration, follow these step
       "signInUrl": "https://127.0.0.1:444/applications/default.aspx?metadata=customappsso|ISV9.1|primary|z" 
       "signInAudience": "AzureADMyOrg",
       "tags": [], 
-      "tokenEncryptionKeyId": "6b9c6e80-d251-43f3-9910-9f1f0be2e851" 
+      "tokenEncryptionKeyId": "bbbbbbbb-1c1c-2d2d-3e3e-444444444444" 
     }  
     ```
 
@@ -229,7 +229,7 @@ To configure token encryption for an application registration, follow these step
        "keyCredentials":[ 
           { 
              "type":"AsymmetricX509Cert","usage":"Encrypt",
-             "keyId":"fdf8c5d8-f727-43fd-beaf-0f1521cf3d35",    (Use a GUID generator to obtain a value for the keyId)
+             "keyId":"aaaaaaaa-0b0b-1c1c-2d2d-333333333333",    (Use a GUID generator to obtain a value for the keyId)
              "key": "MIICADCCAW2gAwIBAgIQ5j9/b+n2Q4pDvQUCcy3…"  (Base64Encoded .cer file)
           }
         ]
@@ -242,7 +242,7 @@ To configure token encryption for an application registration, follow these step
     PATCH https://graph.microsoft.com/beta/applications/<application objectid> 
 
     { 
-       "tokenEncryptionKeyId":"fdf8c5d8-f727-43fd-beaf-0f1521cf3d35" (The keyId of the keyCredentials entry to use)
+       "tokenEncryptionKeyId":"aaaaaaaa-0b0b-1c1c-2d2d-333333333333" (The keyId of the keyCredentials entry to use)
     }
     ```
 
@@ -250,5 +250,5 @@ To configure token encryption for an application registration, follow these step
 
 ## Next steps
 
-* Find out [How Microsoft Entra ID uses the SAML protocol](~/identity-platform/saml-protocol-reference.md)
-* Learn the format, security characteristics, and contents of [SAML tokens in Microsoft Entra ID](~/identity-platform/reference-saml-tokens.md)
+- Find out [How Microsoft Entra ID uses the SAML protocol](~/identity-platform/saml-protocol-reference.md)
+- Learn the format, security characteristics, and contents of [SAML tokens in Microsoft Entra ID](~/identity-platform/reference-saml-tokens.md)

@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 08/07/2024
 ms.author: jfields
 ---
 
@@ -39,7 +39,7 @@ To proceed with these steps, make sure these permissions are available and confi
 
 ### Prerequisites
 
-- Access to Microsoft Entra Permissions Management with Permissions Management admin role or Global Administrator role
+- Access to Microsoft Entra Permissions Management as a Permissions Management Administrator
 - Microsoft Entra admin who can create Applications
 - ServiceNow admin
 
@@ -47,7 +47,7 @@ To integration the ServiceNow app with Microsoft Entra Permissions Management:
 
 1.	Register the ServiceNow Application on Microsoft Entra ID for authentication of API calls. 
 2.	Assign the permissions Viewer and Approver for all in Microsoft Entra Permissions Management to the service principal, under **User Management**. 
-3.	Get the [ServiceNow app for Microsoft Entra Permissions Management](https://store.servicenow.com/sn_appstore_store.do#!/store/application/24073ae31bfca9100e564082b24bcb56/1.0.1?referer=%2Fstore%2Fsearch%3Flistingtype%3Dancillary_app%25253Bcertified_apps%25253Bcontent%25253Bindustry_solution%25253Boem%25253Btemplate%25253Bgenerative_ai%25253Bsnow_solution%26q%3Dmicrosoft%26searchDetail%26pagetype%3Dapps_and_solution&sl=sh) from the ServiceNow store.
+3.	Get the [ServiceNow app for Microsoft Entra Permissions Management](https://store.servicenow.com/sn_appstore_store.do#!/store/application/24073ae31bfca9100e564082b24bcb56/1.1.0) from the ServiceNow store.
 4.	Select the app, then click **Install**. 
 The installation process begins and the application is installed in your instance.
 5. Configure the app by following the instructions.

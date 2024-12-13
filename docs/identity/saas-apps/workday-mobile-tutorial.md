@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 ---
 
@@ -85,7 +85,7 @@ To set up Workday as a managed device, perform the following steps:
 
     1. Switch **Select what this policy applies to** to **Cloud apps**.
 
-    1. In **Include**, choose **Select apps**.
+    1. In **Include**, choose **Select resources**.
 
     1. From the **Select** list, choose **Workday**.
 
@@ -96,8 +96,6 @@ To set up Workday as a managed device, perform the following steps:
 1. Select **Save**.
 
 For **Grant** access, perform the following steps:
-
-![Screenshot of Managed Devices Only and Grant.](./media/workday-tutorial/managed-devices-only-2.png)
 
 1. Select **Home** > **Microsoft Intune** > **Conditional Access-Policies**. Then select **Managed Devices Only**. 
 

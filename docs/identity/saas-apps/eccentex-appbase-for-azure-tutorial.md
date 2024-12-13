@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 
@@ -144,8 +144,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
     ![Screenshot shows settings of SAML account.](./media/eccentex-appbase-for-azure-tutorial/settings.png "Account")
 
 1. Navigate to **User Management** > **Auth Configurations** and click **Add SAML** button.
-
-    ![Screenshot shows SAML settings.](./media/eccentex-appbase-for-azure-tutorial/users.png "SAML settings")
 
 1. In the **New SAML Configuration** page, perform the following steps.
 

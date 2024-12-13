@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Helper Helper so that I can control who has access to Helper Helper, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -86,7 +86,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	c. After the metadata file is successfully uploaded, the **Identifier** and **Reply URL** values get auto populated in Basic SAML Configuration section.
 
 	> [!Note]
-	> If the **Identifier** and **Reply URL** values do not get auto poplulated, then fill in the values manually according to your requirement.
+	> If the **Identifier** and **Reply URL** values do not get auto populated, then fill in the values manually according to your requirement.
 
 1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 

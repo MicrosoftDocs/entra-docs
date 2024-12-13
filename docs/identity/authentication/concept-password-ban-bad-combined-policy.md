@@ -6,7 +6,7 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: conceptual
-ms.date: 10/16/2023
+ms.date: 11/27/2024
 
 ms.author: justinha
 author: justinha
@@ -39,7 +39,7 @@ The following Microsoft Entra password policy requirements apply for all passwor
 
 ## Password expiration policies
 
-Password expiration policies are unchanged but they're included in this topic for completeness. A *Global Administrator* or *User Administrator* can use the [Microsoft Graph PowerShell cmdlets](/powershell/microsoftgraph/) to set user passwords not to expire.
+Password expiration policies are unchanged but they're included in this topic for completeness. Those assigned at least the [User Administrator](../role-based-access-control/permissions-reference.md#user-administrator) role can use the [Microsoft Graph PowerShell cmdlets](/powershell/microsoftgraph/) to set user passwords not to expire.
 
 > [!NOTE]
 > By default, only passwords for user accounts that aren't synchronized through Microsoft Entra Connect can be configured to not expire. For more information about directory synchronization, see [Connect AD with Microsoft Entra ID](~/identity/hybrid/connect/how-to-connect-password-hash-synchronization.md#password-expiration-policy).

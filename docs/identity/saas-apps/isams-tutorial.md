@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and iSAMS so that I can control who has access to iSAMS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -158,10 +158,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 1. Log in to iSAMS as an Administrator.
 
 2.  Go to the **Control Panel Home** -> **Security & Permissions** -> **User Accounts** -> **User Options & Tasks** -> **Modify User Properties**.
-
-    ![Screenshot shows the User Accounts page with Modify User Properties selected.](./media/isams-tutorial/modify-user-properties.png)
-
-
 3. In the resulting pop-up window, select the **Account Details** tab, and change the **Authorization** to that of your newly created Identity Provider.
 
     ![Screenshot shows Account Details with a value for Authorization.](./media/isams-tutorial/account-details.png)

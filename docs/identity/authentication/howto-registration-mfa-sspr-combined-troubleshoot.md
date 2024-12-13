@@ -6,7 +6,7 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref
 ms.topic: troubleshooting
-ms.date: 01/29/2023
+ms.date: 12/02/2024
 
 ms.author: justinha
 author: justinha
@@ -58,7 +58,7 @@ The steps that follow will help you roll back a user or group of users.
 
 #### Prerequisites
 
-[!INCLUDE [Azure AD PowerShell migration](~/includes/aad-powershell-migration-include.md)]
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 1. Install the appropriate Azure AD PowerShell modules. In a PowerShell window, run these commands to install the modules:
 
@@ -131,7 +131,7 @@ The steps that follow will help you roll back a user or group of users.
 
 #### Rollback
 
-In a PowerShell window, run the following command, providing the script and user file locations. Enter global administrator credentials when prompted. The script will output the outcome of each user update operation.
+In a PowerShell window, run the following command, providing the script and user file locations. Provide at least [Privileged Authentication Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-authentication-administrator) credentials when prompted. The script will output the outcome of each user update operation.
 
 `<script location> -path <user file location>`
 

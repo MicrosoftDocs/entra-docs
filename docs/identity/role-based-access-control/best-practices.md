@@ -20,7 +20,7 @@ This article describes some of the best practices for using Microsoft Entra role
 
 ## 1. Apply principle of least privilege
 
-When planning your access control strategy, it's a best practice to manage to least privilege. Least privilege means you grant your administrators exactly the permission they need to do their job. There are three aspects to consider when you assign a role to your administrators: a specific set of permissions, over a specific scope, for a specific period of time. Avoid assigning broader roles at broader scopes even if it initially seems more convenient to do so. By limiting roles and scopes, you limit what resources are at risk if the security principal is ever compromised. Microsoft Entra RBAC supports over 65 [built-in roles](permissions-reference.md). There are Microsoft Entra roles to manage directory objects like users, groups, and applications, and also to manage Microsoft 365 services like Exchange, SharePoint, and Intune. To better understand Microsoft Entra built-in roles, see [Understand roles in Microsoft Entra ID](concept-understand-roles.md). If there isn't a built-in role that meets your need, you can create your own [custom roles](custom-create.md).  
+When planning your access control strategy, it's a best practice to manage to least privilege. Least privilege means you grant your administrators exactly the permission they need to do their job. There are three aspects to consider when you assign a role to your administrators: a specific set of permissions, over a specific scope, for a specific period of time. Avoid assigning broader roles at broader scopes even if it initially seems more convenient to do so. By limiting roles and scopes, you limit what resources are at risk if the security principal is ever compromised. Microsoft Entra RBAC supports over 65 [built-in roles](permissions-reference.md). There are Microsoft Entra roles to manage directory objects like users, groups, and applications, and also to manage Microsoft 365 services like Exchange, SharePoint, and Intune. To better understand Microsoft Entra built-in roles, see [Understand roles in Microsoft Entra ID](concept-understand-roles.md). If there isn't a built-in role that meets your need, you can create your own [custom roles](custom-create.yml).  
  
 ### Finding the right roles
 
@@ -48,7 +48,7 @@ One of the principles of least privilege is that access should be granted only w
  
 You can enable MFA on Microsoft Entra roles using two methods:
 - [Role settings](~/id-governance/privileged-identity-management/pim-how-to-change-default-settings.md) in Privileged Identity Management
-- [Conditional Access](~/identity/conditional-access/howto-conditional-access-policy-admin-mfa.md)
+- [Conditional Access](~/identity/conditional-access/policy-old-require-mfa-admin.md)
 
 ## 4. Configure recurring access reviews to revoke unneeded permissions over time
 
@@ -70,7 +70,7 @@ If you have 5 or more privileged Global Administrator role assignments, a **Glob
 
 By default, when a user signs up for a Microsoft cloud service, a Microsoft Entra tenant is created and the user is assigned the Global Administrators role. Users who are assigned the Global Administrator role can read and modify almost every administrative setting in your Microsoft Entra organization. With a few exceptions, Global Administrators can also read and modify all configuration settings in your Microsoft 365 organization. Global Administrators also have the ability to elevate their access to read data.
 
-Microsoft recommends that you keep two break glass accounts that are permanently assigned to the Global Administrator role. Make sure that these accounts don't require the same multi-factor authentication mechanism as your normal administrative accounts to sign in, as described in [Manage emergency access accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md). 
+[!INCLUDE [emergency-access-accounts](../../includes/definitions/emergency-access-accounts.md)]
 
 ## 6. Limit the number of privileged role assignments to less than 10
 
@@ -86,7 +86,7 @@ Some roles include privileged permissions, such as the ability to update credent
 
 If you have an external governance system that takes advantage of groups, then you should consider assigning roles to Microsoft Entra groups, instead of individual users. You can also manage role-assignable groups in PIM to ensure that there are no standing owners or members in these privileged groups. For more information, see [Privileged Identity Management (PIM) for Groups](~/id-governance/privileged-identity-management/concept-pim-for-groups.md).
 
-You can assign an owner to role-assignable groups. That owner decides who is added to or removed from the group, so indirectly, decides who gets the role assignment. In this way, a Global Administrator or Privileged Role Administrator can delegate role management on a per-role basis by using groups. For more information, see [Use Microsoft Entra groups to manage role assignments](groups-concept.md).
+You can assign an owner to role-assignable groups. That owner decides who is added to or removed from the group, so indirectly, decides who gets the role assignment. In this way, a Privileged Role Administrator can delegate role management on a per-role basis by using groups. For more information, see [Use Microsoft Entra groups to manage role assignments](groups-concept.md).
 
 ## 8. Activate multiple roles at once using PIM for Groups
 

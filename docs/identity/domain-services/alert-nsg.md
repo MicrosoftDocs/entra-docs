@@ -8,7 +8,7 @@ ms.assetid: 95f970a7-5867-4108-a87e-471fa0910b8c
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: troubleshooting
-ms.date: 09/15/2023
+ms.date: 12/02/2024
 ms.author: justinha
 ---
 # Known issues: Network configuration alerts in Microsoft Entra Domain Services
@@ -34,13 +34,13 @@ The following default inbound and outbound security rules are applied to the net
 | Priority | Name | Port | Protocol | Source | Destination | Action |
 |----------|------|------|----------|--------|-------------|--------|
 | 301      | AllowPSRemoting | 5986| TCP | AzureActiveDirectoryDomainServices | Any | Allow |
-| 201      | AllowRD | 3389 | TCP | CorpNetSaw | Any | Deny<sup>1</sup> |
+| 201      | AllowRD | 3389 | TCP | CorpNetSaw | Any | Allow<sup>1</sup> |
 | 65000    | AllVnetInBound | Any | Any | VirtualNetwork | VirtualNetwork | Allow |
 | 65001    | AllowAzureLoadBalancerInBound | Any | Any | AzureLoadBalancer | Any | Allow |
 | 65500    | DenyAllInBound | Any | Any | Any | Any | Deny |
 
 
-<sup>1</sup>Optional for debugging. Allow when required for advanced troubleshooting.
+<sup>1</sup>Optional for debugging but change the default to deny when not needed. Allow the rule when required for advanced troubleshooting.
 
 > [!NOTE]
 > You may also have an additional rule that allows inbound traffic if you [configure secure LDAP][configure-ldaps]. This additional rule is required for the correct LDAPS communication.
@@ -75,7 +75,7 @@ To add a missing security rule, complete the following steps:
 1. In the [Microsoft Entra admin center](https://entra.microsoft.com), search for and select **Network security groups**.
 1. Choose the network security group associated with your managed domain, such as *AADDS-contoso.com-NSG*.
 1. Under **Settings** in the left-hand panel, click *Inbound security rules* or *Outbound security rules* depending on which rule you need to add.
-1. Select **Add**, then create the required rule based on the port, protocol, direction, etc. When ready, select **OK**.
+1. Select **Add**, then create the required rule based on the port, protocol, direction, and so on. When ready, select **OK**.
 
 It takes a few moments for the security rule to be added and show in the list.
 

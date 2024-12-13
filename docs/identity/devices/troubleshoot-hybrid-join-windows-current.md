@@ -5,7 +5,7 @@ description: This article helps you troubleshoot Microsoft Entra hybrid joined W
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: troubleshooting
-ms.date: 02/26/2024
+ms.date: 11/25/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -19,8 +19,6 @@ ms.custom: has-adal-ref
 This article provides troubleshooting guidance to help you resolve potential issues with devices that are running Windows 10 or newer and Windows Server 2016 or newer.
 
 Microsoft Entra hybrid join supports the Windows 10 November 2015 update and later.
-
-To troubleshoot other Windows clients, see [Troubleshoot Microsoft Entra hybrid joined down-level devices](troubleshoot-hybrid-join-windows-legacy.md).
 
 This article assumes that you have [Microsoft Entra hybrid joined devices](hybrid-join-plan.md) to support the following scenarios:
 
@@ -46,20 +44,20 @@ This article assumes that you have [Microsoft Entra hybrid joined devices](hybri
     AzureAdJoined: YES
  EnterpriseJoined: NO
          DeviceId: 5820fbe9-60c8-43b0-bb11-44aee233e4e7
-       Thumbprint: B753A6679CE720451921302CA873794D94C6204A
+       Thumbprint: AA11BB22CC33DD44EE55FF66AA77BB88CC99DD00
    KeyContainerId: bae6a60b-1d2f-4d2a-a298-33385f6d05e9
       KeyProvider: Microsoft Platform Crypto Provider
      TpmProtected: YES
      KeySignTest: : MUST Run elevated to test.
               Idp: login.windows.net
-         TenantId: 72b988bf-xxxx-xxxx-xxxx-2d7cd011xxxx
+         TenantId: aaaabbbb-0000-cccc-1111-dddd2222eeee
        TenantName: Contoso
       AuthCodeUrl: https://login.microsoftonline.com/msitsupp.microsoft.com/oauth2/authorize
    AccessTokenUrl: https://login.microsoftonline.com/msitsupp.microsoft.com/oauth2/token
            MdmUrl: https://enrollment.manage-beta.microsoft.com/EnrollmentServer/Discovery.svc
         MdmTouUrl: https://portal.manage-beta.microsoft.com/TermsOfUse.aspx
   dmComplianceUrl: https://portal.manage-beta.microsoft.com/?portalAction=Compliance
-      SettingsUrl: eyJVcmlzIjpbImh0dHBzOi8va2FpbGFuaS5vbmUubWljcm9zb2Z0LmNvbS8iLCJodHRwczovL2thaWxhbmkxLm9uZS5taWNyb3NvZnQuY29tLyJdfQ==
+      SettingsUrl: eyJVc{lots of characters}JdfQ==
    JoinSrvVersion: 1.0
        JoinSrvUrl: https://enterpriseregistration.windows.net/EnrollmentServer/device/
         JoinSrvId: urn:ms-drs:enterpriseregistration.windows.net
@@ -74,7 +72,7 @@ This article assumes that you have [Microsoft Entra hybrid joined devices](hybri
 +----------------------------------------------------------------------+
 
              NgcSet: YES
-           NgcKeyId: {C7A9AEDC-780E-4FDA-B200-1AE15561A46B}
+           NgcKeyId: {aaaaaaaa-0b0b-1c1c-2d2d-333333333333}
     WorkplaceJoined: NO
       WamDefaultSet: YES
 WamDefaultAuthority: organizations
@@ -278,7 +276,7 @@ The "Registration Type" field denotes the type of join.
                Error Phase : join
           Client ErrorCode : 0x801c03f2
           Server ErrorCode : DirectoryError
-            Server Message : The device object by the given id (e92325d0-7ac4-4714-88a1-94ae875d5245) is not found.
+            Server Message : The device object by the given id (aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb) is not found.
               Https Status : 400
                 Request Id : 6bff0bd9-820b-484b-ab20-2a4f7b76c58e
 +----------------------------------------------------------------------+
@@ -305,7 +303,7 @@ Use Event Viewer logs to locate the phase and error code for the join failures.
 
 | Error code | Reason | Resolution |
 | --- | --- | --- |
-| **NTE_BAD_KEYSET** (0x80090016/-2146893802) | The Trusted Platform Module (TPM) operation failed or was invalid. | The failure likely results from a bad sysprep image. Ensure that the machine from which the sysprep image was created isn't Microsoft Entra joined, Microsoft Entra hybrid joined, or Microsoft Entra registered. |
+| **NTE_BAD_KEYSET** (0x80090016/-2146893802) | The Trusted Platform Module (TPM) operation failed or was invalid. | This error indicates that the keyset doesn't exist. This error happens when the TPM is cleared on the systems, or when there's a bad sysprep image. <br><br> Avoid clearing the TPM in BIOS or Windows settings. If the TPM is cleared, users might need to recover by removing and readding accounts to fix the problem, especially when they have multiple WAM accounts. Ensure that the machine from which the sysprep image was created isn't Microsoft Entra joined, Microsoft Entra hybrid joined, or Microsoft Entra registered. |
 | **TPM_E_PCP_INTERNAL_ERROR** (0x80290407/-2144795641) | Generic TPM error. | Disable TPM on devices with this error. Windows 10 versions 1809 and later automatically detect TPM failures and complete Microsoft Entra hybrid join without using the TPM. |
 | **TPM_E_NOTFIPS** (0x80280036/-2144862154) | TPM in FIPS mode isn't currently supported. | Disable TPM on devices with this error. Windows 10 version 1809 automatically detects TPM failures and completes the Microsoft Entra hybrid join without using the TPM. |
 | **NTE_AUTHENTICATION_IGNORED** (0x80090031/-2146893775) | TPM is locked out. | Transient error. Wait for the cool-down period. The join attempt should succeed after a while. For more information, see [TPM fundamentals](/windows/security/hardware-security/tpm/tpm-fundamentals#anti-hammering). |
@@ -374,7 +372,7 @@ Use Event Viewer logs to locate the phase and error code for the join failures.
                 AzureAdPrt : YES
       AzureAdPrtUpdateTime : 2020-07-12 22:57:53.000 UTC
       AzureAdPrtExpiryTime : 2019-07-26 22:58:35.000 UTC
-       AzureAdPrtAuthority : https://login.microsoftonline.com/96fa76d0-xxxx-xxxx-xxxx-eb60cc22xxxx
+       AzureAdPrtAuthority : https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee
              EnterprisePrt : YES
    EnterprisePrtUpdateTime : 2020-07-12 22:57:54.000 UTC
    EnterprisePrtExpiryTime : 2020-07-26 22:57:54.000 UTC
@@ -398,14 +396,14 @@ The "Attempt Status" field under the "AzureAdPrt" field provides the status of t
 +----------------------------------------------------------------------+
 
                 AzureAdPrt : NO
-       AzureAdPrtAuthority : https://login.microsoftonline.com/96fa76d0-xxxx-xxxx-xxxx-eb60cc22xxxx
+       AzureAdPrtAuthority : https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee
      AcquirePrtDiagnostics : PRESENT
       Previous Prt Attempt : 2020-07-18 20:10:33.789 UTC
             Attempt Status : 0xc000006d
              User Identity : john@contoso.com
            Credential Type : Password
-            Correlation ID : 63648321-fc5c-46eb-996e-ed1f3ba7740f
-              Endpoint URI : https://login.microsoftonline.com/96fa76d0-xxxx-xxxx-xxxx-eb60cc22xxxx/oauth2/token/
+            Correlation ID : aaaa0000-bb11-2222-33cc-444444dddddd
+              Endpoint URI : https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/oauth2/token/
                HTTP Method : POST
                 HTTP Error : 0x0
                HTTP status : 400
@@ -417,7 +415,9 @@ The "Attempt Status" field under the "AzureAdPrt" field provides the status of t
 
 Use Event Viewer to look for the log entries logged by the Microsoft Entra CloudAP plug-in during PRT acquisition. 
 
-1. In Event Viewer, open the Microsoft Entra Operational event logs. They're stored under **Applications and Services Log** > **Microsoft** > **Windows** > **Microsoft Entra ID**. 
+<!-- docutune:disable -->
+1. In Event Viewer, open the Microsoft Entra Operational event logs. They're stored under **Applications and Services Log** > **Microsoft** > **Windows** > **AAD**. 
+<!-- docutune:enable -->
 
    > [!NOTE]
    > The CloudAP plug-in logs error events in the operational logs, and it logs the info events in the analytics logs. The analytics and operational log events are both required to troubleshoot issues. 
@@ -447,7 +447,7 @@ Use Event Viewer to look for the log entries logged by the Microsoft Entra Cloud
 
 | Error code | Reason | Resolution |
 | --- | --- | --- |
-| **AADSTS50155: Device authentication failed** | <li>Microsoft Entra ID is unable to authenticate the device to issue a PRT.<li>Confirm that the device isn't deleted or disabled. For more information about this issue, see [Microsoft Entra device management FAQ](faq.yml#why-do-my-users-see-an-error-message-saying--your-organization-has-deleted-the-device--or--your-organization-has-disabled-the-device--on-their-windows-10-11-devices). | Follow the instructions for this issue in [Microsoft Entra device management FAQ](faq.yml#i-disabled-or-deleted-my-device--but-the-local-state-on-the-device-says-it-s-still-registered--what-should-i-do) to re-register the device based on the device join type. |
+| **AADSTS50155: Device authentication failed** | <li>Microsoft Entra ID is unable to authenticate the device to issue a PRT.<li>Confirm that the device isn't deleted or disabled. For more information about this issue, see [Microsoft Entra device management FAQ](faq.yml#why-do-my-users-see-an-error-message-saying--your-organization-has-deleted-the-device--or--your-organization-has-disabled-the-device--on-their-windows-10-11-devices). | Follow the instructions for this issue in [Microsoft Entra device management FAQ](faq.yml#i-disabled-or-deleted-my-device--but-the-local-state-on-the-device-says-it-s-registered--what-should-i-do) to re-register the device based on the device join type. |
 | **AADSTS50034: The user account `Account` does not exist in the `tenant id` directory** | Microsoft Entra ID is unable to find the user account in the tenant. | <li>Ensure that the user is typing the correct UPN.<li>Ensure that the on-premises user account is being synced with Microsoft Entra ID.<li>Event 1144 (Microsoft Entra analytics logs) contains the UPN provided. |
 | **AADSTS50126: Error validating credentials due to invalid username or password.** | <li>The username and password entered by the user in the Windows LoginUI are incorrect.<li>If the tenant has password hash sync enabled, the device is hybrid-joined, and the user just changed the password, it's likely that the new password hasn't synced with Microsoft Entra ID. | To acquire a fresh PRT with the new credentials, wait for the Microsoft Entra password sync to finish. |
 

@@ -7,15 +7,13 @@ manager: amycolannino
 ms.service: entra-verified-id
 ms.topic: how-to
 
-ms.date: 07/06/2022
+ms.date: 11/11/2024
 ms.author: barclayn
 
 #Customer intent: As an administrator, I am looking for information to help me create verifiable credentials for ID tokens. 
 ---
 
 # Create verifiable credentials for ID tokens
-
-  
 
 A [rules definition](rules-and-display-definitions-model.md#rulesmodel-type) that uses the [idTokens attestation](rules-and-display-definitions-model.md#idtokenattestation-type) produces an issuance flow where you're required to do an interactive sign-in to an OpenID Connect (OIDC) identity provider in Microsoft Authenticator. Claims in the ID token that the identity provider returns can be used to populate the issued verifiable credential. The claims mapping section in the rules definition specifies which claims are used. 
 
@@ -42,7 +40,7 @@ The JSON display definition is nearly the same, regardless of attestation type. 
       "backgroundColor": "#000000",
       "textColor": "#ffffff",
       "logo": {
-        "uri": "https://didcustomerplayground.blob.core.windows.net/public/VerifiedCredentialExpert_icon.png",
+        "uri": "https://didcustomerplayground.z13.web.core.windows.net/VerifiedCredentialExpert_icon.png",
         "description": "Verified Credential Expert Logo"
       },
       "description": "Use your verified credential to prove to anyone that you know all about verifiable credentials."
@@ -88,7 +86,7 @@ The claims mapping in the following example requires that you configure the toke
   "attestations": {
     "idTokens": [
       {
-        "clientId": "8d5b446e-22b2-4e01-bb2e-9070f6b20c90",
+        "clientId": "00001111-aaaa-2222-bbbb-3333cccc4444",
         "configuration": "https://didplayground.b2clogin.com/didplayground.onmicrosoft.com/B2C_1_sisu/v2.0/.well-known/openid-configuration",
         "redirectUri": "vcclient://openid/",
         "scope": "openid profile email",
@@ -134,7 +132,8 @@ The claims mapping in the following example requires that you configure the toke
 
 ## Application registration
 
-The clientId attribute is the application ID of a registered application in the OIDC identity provider. For Microsoft Entra ID, you create the application by doing the following:
+The clientId attribute is the application ID of a registered application in the OIDC identity provider. For Microsoft Entra ID, you create the application by following these steps:
+
 
 1. In the Azure portal, go to [Microsoft Entra ID](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/RegisteredApps).
 
@@ -144,7 +143,7 @@ The clientId attribute is the application ID of a registered application in the 
 
 1. In **Redirect URI (optional)**, select **Public client/native (mobile & desktop)**, and then enter **vcclient://openid/**.
  
-If you want to be able to test what claims are in the Microsoft Entra token, do the following:
+If you want to check the claims included in the Microsoft Entra ID token, take the following steps:
 
 1. On the left pane, select **Authentication**> **Add platform** > **Web**.
 
@@ -172,7 +171,7 @@ If the claims don't exist, there's no value in the issued verifiable credential.
 
 **For Microsoft Entra ID**: To configure the claims to include in your token, see [Provide optional claims to your app](~/identity-platform/optional-claims.md). The configuration is per application, so this configuration should be for the app that has the application ID specified in the client ID in the rules definition.
 
-To match the display and rules definitions, you should make your application's optionalClaims JSON look like the following:
+To match the display and rules definitions, you should make your application's optionalClaims JSON look like the following example:
 
 ```json
 "optionalClaims": {

@@ -51,9 +51,9 @@ If you can't use connected organizations in entitlement management, create a Mic
 
 Learn more:
 
-- [What is entitlement management?](~/id-governance/entitlement-management-overview.md)
-- [Manage Microsoft Entra groups and group membership](~/fundamentals/how-to-manage-groups.md)
-- [Overview of Microsoft 365 Groups for administrators](/microsoft-365/admin/create-groups/office-365-groups?view=o365-worldwide&preserve-view=true)
+* [What is entitlement management?](~/id-governance/entitlement-management-overview.md)
+* [Manage Microsoft Entra groups and group membership](~/fundamentals/how-to-manage-groups.yml)
+* [Overview of Microsoft 365 Groups for administrators](/microsoft-365/admin/create-groups/office-365-groups?view=o365-worldwide&preserve-view=true)
 
 ### Conditional Access policy creation
 
@@ -81,8 +81,8 @@ Before you begin, we recommend you create a security group, which contains exter
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All guests and external users**.
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts and the external users security group.
-1. Under **Target resources** > **Cloud apps**, select the following options:
-   1. Under **Include**, select **All cloud apps**
+1. Under **Target resources** > **Resources (formerly cloud apps)**, select the following options:
+   1. Under **Include**, select **All resources (formerly 'All cloud apps')**
    1. Under **Exclude**, select applications you want to exclude.
 1. Under **Access controls** > **Grant**, select **Block access**, then select **Select**.
 1. Select **Create** to create to enable your policy.

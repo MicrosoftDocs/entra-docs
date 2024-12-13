@@ -7,7 +7,7 @@ manager: mwongerapk
 
 ms.author: shermanouko
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.custom: devx-track-dotnet
 ms.topic: tutorial
 ms.date: 07/27/2023
@@ -208,7 +208,8 @@ Posting a to-do...
 Retrieving to-do's from server...
 To-do data:
 ID: 1
-User ID: f4e54f8b-acec-4ef4-90e9-5bb358c8770b
+User ID: 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
+
 Message: Bake bread
 ```
 

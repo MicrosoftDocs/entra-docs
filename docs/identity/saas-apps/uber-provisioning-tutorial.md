@@ -2,19 +2,13 @@
 title: 'Tutorial: Configure Uber for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Uber.
 
-documentationcenter: ''
-author: twimmers
-writer: Thwimmer
+author: thomasakelo
 manager: jeedes
-
-ms.assetid: f16047ee-8ed6-4f8f-86e4-d9bc2cbd9016
 ms.service: entra-id
 ms.subservice: saas-apps
-
-
 ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: Thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Uber so that I can streamline the user management process and ensure that users have the appropriate access to Uber.
 ---
@@ -35,7 +29,7 @@ This tutorial describes the steps you need to perform in both Uber and Microsoft
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md). 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator). 
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
 * You must be onboarded to a [Uber for Business](https://business.uber.com/) organization and have Admin access to it.
 
 

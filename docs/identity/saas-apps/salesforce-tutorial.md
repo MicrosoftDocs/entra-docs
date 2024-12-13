@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Salesforce so that I can control who has access to Salesforce, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -198,8 +198,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. In the **Authentication Configuration** section, Check the **Login Page** and  **AzureSSO** as **Authentication Service** of your SAML SSO configuration, and then click **Save**.
 
-    ![Configure Single Sign-On Authentication Service](./media/salesforce-tutorial/authentication.png)
-
     > [!NOTE]
     > If more than one authentication service is selected, users are prompted to select which authentication service they like to sign in with while initiating single sign-on to your Salesforce environment. If you don’t want it to happen, then you should **leave all other authentication services unchecked**.
 
@@ -240,6 +238,13 @@ In this section, you test your Microsoft Entra single sign-on configuration with
     ![Salesforce mobile app homepage](media/salesforce-tutorial/mobile-app5.png)
     ![Salesforce mobile app](media/salesforce-tutorial/mobile-app6.png)
 
+
+## Prevent application access through local accounts
+Once you've validated that SSO works and rolled it out in your organization, disable application access using [local credentials](https://help.salesforce.com/s/articleView?id=sf.sso_enforce_sso_login.htm&type=5). This ensures that your conditional access policies, MFA, etc. will be in place to protect sign-ins to Salesforce. 
+
+
 ## Next steps
 
-After you configure Salesforce, you can enforce Session Control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session Control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
+If you have Enterprise Mobility + Security E5 or another license for Microsoft Defender for Cloud Apps, then you can collect an audit trail of application activities in that product, which can be used when investigating alerts.  In Defender for Cloud Apps, alerts can be triggered when user, admin, or sign-in activities don't comply with your policies.  By [connecting Microsoft Defender for Cloud Apps to Salesforce](/defender-cloud-apps/protect-salesforce#how-to-connect-defender-for-cloud-apps-to-salesforce) , Salesforce sign-in events are collected by Defender for Cloud Apps.
+
+In addition, you can enforce Session Control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session Control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

@@ -10,7 +10,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ExcelityGlobal so that I can control who has access to ExcelityGlobal, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -82,8 +82,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Basic SAML Configuration** page, perform the following steps:
 
-    a. In the **Identifier** text box, type one of the
-     following URLs:
+    a. In the **Identifier** text box, type one of the following URLs:
 
     | **Identifier** |
     |------|
@@ -145,11 +144,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure ExcelityGlobal SSO
 
-To configure single sign-on on **ExcelityGlobal** side, you need to send the **Thumbprint value** and appropriate copied URLs from the application configuration to [ExcelityGlobal support team](https://www.excelityglobal.com/contact-us). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **ExcelityGlobal** side, you need to send the **Thumbprint value** and appropriate copied URLs from the application configuration to [ExcelityGlobal support team](https://www.dayforce.com/contact). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create ExcelityGlobal test user
 
-In this section, you create a user called Britta Simon in ExcelityGlobal. Work with [ExcelityGlobal support team](https://www.excelityglobal.com/contact-us) to add the users in the ExcelityGlobal platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in ExcelityGlobal. Work with [ExcelityGlobal support team](https://www.dayforce.com/contact) to add the users in the ExcelityGlobal platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 

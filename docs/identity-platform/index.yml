@@ -105,7 +105,7 @@ conceptualContent:
           url: quickstart-single-page-app-react-sign-in.md
           itemType: quickstart
         - text: Web app
-          url: quickstart-web-app-aspnet-sign-in.md
+          url: quickstart-web-app-dotnet-core-sign-in.md
           itemType: quickstart
         - text: Desktop app
           url: quickstart-desktop-app-nodejs-electron-sign-in.md
@@ -216,7 +216,7 @@ additionalContent:
       - title: Manage and market your apps
         summary: >
           Make existing SaaS apps like Dropbox, Salesforce, and ServiceNow available to your organization's users, configure SSO, and manage security.
-          Or, become an independent software vendor (ISV) by publishing your own SaaS app for use by _other_ organizations that use Microsoft Entra ID.
+          Or, become an independent software vendor (ISV) by publishing your own SaaS app for use by *other* organizations that use Microsoft Entra ID.
         links:
         - url: ~/identity/enterprise-apps/what-is-application-management.md
           text: App management documentation

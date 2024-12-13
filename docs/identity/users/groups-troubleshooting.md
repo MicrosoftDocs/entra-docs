@@ -1,25 +1,26 @@
 ---
-title: Fix problems with dynamic group memberships
-description: Troubleshooting tips for dynamic group membership in Microsoft Entra ID
+title: Fix problems with dynamic membership groups
+description: Troubleshooting tips for dynamic membership groups in Microsoft Entra ID
 
 author: barclayn
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: troubleshooting
-ms.date: 06/24/2022
+ms.date: 08/25/2024
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
 ---
 
 # Troubleshoot and resolve groups issues
+
 This article contains troubleshooting information for groups in Microsoft Entra ID, part of Microsoft Entra.
 
-## Troubleshooting group creation issues
+## Troubleshoot group creation issues
 
 **I disabled security group creation in the Azure portal but groups can still be created via PowerShell**  
-The **User can create security groups in Azure portals** setting in the Azure portal controls whether or not nonadmin users can create security groups in the Access panel or the Azure portal. It does not control security group creation via PowerShell.
+The **User can create security groups in Azure portals** setting in the Azure portal controls whether or not non-admin users can create security groups in the Access panel or the Azure portal. It does not control security group creation via PowerShell.
 
 To disable group creation for nonadmin users in PowerShell:
 1. Verify that nonadmin users are allowed to create groups:
@@ -48,11 +49,11 @@ To disable group creation for nonadmin users in PowerShell:
    ```
 
 **I received a max groups allowed error when trying to create a Dynamic Group in PowerShell**  
-If you receive a message in PowerShell indicating _Dynamic group policies max allowed groups count reached_, this means you have reached the max limit for Dynamic groups in your organization. The max number of Dynamic groups per organization is 5,000.
+If you receive a message in PowerShell indicating *Dynamic group policies max allowed groups count reached*, this means you have reached the max limit for Dynamic groups in your organization. The max number of Dynamic groups per organization is 5,000.
 
 To create any new Dynamic groups, you'll first need to delete some existing Dynamic groups. There's no way to increase the limit.
 
-## Troubleshooting dynamic memberships for groups
+## Troubleshoot dynamic membership groups
 
 **I configured a rule on a group but no memberships get updated in the group**  
 1. Verify the values for user or device attributes in the rule. Ensure there are users that satisfy the rule.
@@ -62,16 +63,17 @@ For devices, check the device properties to ensure any synced attributes contain
 If everything looks good, please allow some time for the group to populate. Depending on the size of your Microsoft Entra organization, the group may take up to 24 hours for populating for the first time or after a rule change.
 
 **I configured a rule, but now the existing members of the rule are removed**  
-This is expected behavior. Existing members of the group are removed when a rule is enabled or changed. The users returned from evaluation of the rule are added as members to the group.
+This is expected behavior. Existing members of the group are removed when a rule is enabled or changed. Not all existing members are deleted, only those who no longer meet the new rule. The users returned from evaluation of the new rule are added as members to the group. 
+Users who meet both existing rules and new rules will remain in the dynamic group, so their licence assignments will not normally be temporarily deleted nor will their role assignments be removed.
 
 **I don't see membership changes instantly when I add or change a rule, why not?**  
-Dedicated membership evaluation is done periodically in an asynchronous background process. How long the process takes is determined by the number of users in your directory and the size of the group created as a result of the rule. Typically, directories with small numbers of users will see the group membership changes in less than a few minutes. Directories with a large number of users can take 30 minutes or longer to populate.
+Dedicated membership evaluation is done periodically in an asynchronous background process. How long the process takes is determined by the number of users in your directory and the size of the group created as a result of the rule. Typically, directories with small numbers of users will see the dynamic membership group changes in less than a few minutes. Directories with a large number of users can take 30 minutes or longer to populate.
 
 **How can I force the group to be processed now?**  
 Currently, there's no way to automatically trigger the group to be processed on demand. However, you can manually trigger the reprocessing by updating the membership rule to add a whitespace at the end.
 
 **I encountered a rule processing error**  
-The following table lists common dynamic membership rule errors and how to correct them.
+The following table lists common rule errors for dynamic membership groups and how to correct them.
 
 | Rule parser error | Error usage | Corrected usage |
 | --- | --- | --- |

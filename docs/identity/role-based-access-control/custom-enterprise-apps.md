@@ -21,7 +21,7 @@ This article explains how to create a custom role with permissions to manage ent
 ## Prerequisites
 
 - Microsoft Entra ID P1 or P2 license
-- Privileged Role Administrator or Global Administrator
+- Privileged Role Administrator
 - Microsoft Graph PowerShell SDK installed when using PowerShell
 - Admin consent when using Graph explorer for Microsoft Graph API
 
@@ -47,6 +47,8 @@ Granting the update permission is done in two steps:
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
+In the Microsoft Entra Admin Center, you can create and manage custom roles to control access and permissions for enterprise apps.
+
 >[!NOTE]
 > Custom roles are created and managed at an organization-wide level and are available only from the organization's Overview page.
 
@@ -58,11 +60,11 @@ Granting the update permission is done in two steps:
 
     ![Add a new custom role from the roles list in Microsoft Entra ID](./media/custom-enterprise-apps/new-custom-role.png)
 
-1. On the **Basics** tab, provide "Manage user and group assignments" for the name of the role and "Grant permissions to manage user and group assignments" for the role description, and then select **Next**.
+1. On the **Basics** tab, provide "Manage user and group assignments" for the name of the role and "Grant permissions to manage user and group assignments" for the role description, then select **Next**.
 
     ![Provide a name and description for the custom role](./media/custom-enterprise-apps/role-name-and-description.png)
 
-1. On the **Permissions** tab, enter "microsoft.directory/servicePrincipals/appRoleAssignedTo/update" in the search box, and then select the checkboxes next to the desired permissions, and then select **Next**.
+1. On the **Permissions** tab, enter "microsoft.directory/servicePrincipals/appRoleAssignedTo/update" in the search box, select the checkboxes next to the desired permissions, then select **Next**.
 
     ![Add the permissions to the custom role](./media/custom-enterprise-apps/role-custom-permissions.png)
 
@@ -94,7 +96,7 @@ Granting the update permission is done in two steps:
 
 ## PowerShell
 
-For more detail, see [Create and assign a custom role in Microsoft Entra ID](custom-create.md) and [Assign custom roles with resource scope using PowerShell](custom-assign-powershell.md).
+For more detail, see [Create and assign a custom role in Microsoft Entra ID](custom-create.yml) and [Assign custom roles with resource scope using PowerShell](custom-assign-powershell.md).
 
 ### Create a custom role
 
@@ -136,7 +138,7 @@ $roleAssignment = New-MgRoleManagementDirectoryRoleAssignment -DirectoryScopeId 
 
 ## Microsoft Graph API
 
-Use the [Create unifiedRoleDefinition](/graph/api/rbacapplication-post-roledefinitions) API to create a custom role. For more information, see [Create and assign a custom role in Microsoft Entra ID](custom-create.md) and [Assign custom admin roles using the Microsoft Graph API](custom-assign-graph.md).
+Use the [Create unifiedRoleDefinition](/graph/api/rbacapplication-post-roledefinitions) API to create a custom role. For more information, see [Create and assign a custom role in Microsoft Entra ID](custom-create.yml) and [Assign custom admin roles using the Microsoft Graph API](custom-assign-graph.md).
 
 ```http
 POST https://graph.microsoft.com/v1.0/roleManagement/directory/roleDefinitions

@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 
@@ -136,8 +136,7 @@ To configure single sign-on on the X-point Cloud side, you can use the downloade
 
 In this section, you can use the **email addresses** of users registered with Microsoft Entra ID in X-point Cloud.
 Create a user who has removed @ and beyond.
-For example "username@companydomain.extension", add "username" to X-point Cloud,
-Before you can use single sign-on, you must create and enable users.
+For example "username@companydomain.extension", add "username" to X-point Cloud, Before you can use single sign-on, you must create and enable users.
 
 
 ## Test SSO 

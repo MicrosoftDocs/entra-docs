@@ -39,7 +39,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Mobile application that calls a web API
-            url: scenario-mobile-overview.md
+            url: scenario-mobile-app-registration.md
 ## ROW 2 ################################################### ROW 2 ##
   # - title: $CARD_TITLE
   #   linkLists:

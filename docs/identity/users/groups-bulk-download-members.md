@@ -5,7 +5,7 @@ description: Add users in bulk in the Azure admin center.
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
-ms.date: 09/06/2023
+ms.date: 07/01/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
@@ -19,7 +19,7 @@ You can bulk download the members of a group in your organization to a comma-sep
 
 ## Bulk download group membership
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Select **Microsoft Entra ID**.
 1. Select **Groups** > **All groups**.
 1. Open the group whose membership you want to download, and then select **Members**.
@@ -27,7 +27,7 @@ You can bulk download the members of a group in your organization to a comma-sep
 
    :::image type="content" source="./media/groups-bulk-download-members/download-panel.png" alt-text="Screenshot that shows the Download Members command is on the profile page for the group.":::
 
-[!INCLUDE [Bulk update warning](~/includes/bulk-export.md)]
+If you experience errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error. The file submission must match the provided template and include the exact column names. For more information about bulk operations limitations, see [Bulk download service limits](#bulk-download-service-limits).
 
 ## Check download status
 
@@ -37,7 +37,7 @@ You can see the status of all of your pending bulk requests on the **Bulk operat
 
 ## Bulk download service limits
 
-Each bulk activity to download a list of group members can run for up to one hour. This time frame enables you to download a list of at least 500,000 members.
+[!INCLUDE [Bulk operations limitations](~/includes/bulk-operations-limitations.md)]
 
 ## Next steps
 

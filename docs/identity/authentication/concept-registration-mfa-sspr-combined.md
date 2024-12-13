@@ -5,7 +5,7 @@ description: Learn about the combined registration experience for Microsoft Entr
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 03/25/2024
+ms.date: 12/01/2024
 
 ms.author: justinha
 author: justinha
@@ -21,7 +21,7 @@ Before combined registration, users registered authentication methods for Micros
 
 Before enabling the new experience, review this administrator-focused documentation and the user-focused documentation to ensure you understand the functionality and effect of this feature. Base your training on the [user documentation](https://support.microsoft.com/account-billing/set-up-your-security-info-from-a-sign-in-prompt-28180870-c256-4ebf-8bd7-5335571bf9a8) to prepare your users for the new experience and help to ensure a successful rollout.
 
-Microsoft Entra ID combined security information registration is available for Azure US Government but not Microsoft Azure operated by 21Vianet.
+Combined registration has rolled out to all customers in Azure and Azure for US Government. The portal control that allows you to switch from legacy to combined registration experience is removed after your tenant migrates to the combined registratione.
 
 *My Account* pages are localized based on the language settings of the computer accessing the page. Microsoft stores the most recent language used in the browser cache, so subsequent attempts to access the pages continue to render in the last language used. If you clear the cache, the pages re-render.
 
@@ -38,25 +38,25 @@ Combined registration supports the authentication methods and actions in the fol
 | Microsoft Authenticator | Yes (maximum of 5) | No | Yes |
 | Other authenticator app | Yes (maximum of 5) | No | Yes |
 | Hardware token | No | No | Yes |
-| Phone | Yes | Yes | Yes |
+| Phone | Yes (maximum of 2) | Yes | Yes |
 | Alternate phone | Yes | Yes | Yes |
 | Office phone* | Yes | Yes | Yes |
 | Email | Yes | Yes | Yes |
 | Security questions | Yes | No | Yes |
 | Passwords | No | Yes | No |
 | App passwords* | Yes | No | Yes |
-| Passkey (FIDO2)*| Yes | No | Yes |
+| Passkey (FIDO2)*| Yes (maximum of 10)  | No | Yes |
 
 > [!NOTE]
 > If you enable Microsoft Authenticator for passwordless authentication mode in the Authentication methods policy, users need to also enable passwordless sign-in in the Authenticator app.
 >
-> Alternate phone can only be registered in *Manage mode* on [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo) and requires Voice calls to be enabled in the Authentication methods policy.
+> Alternate phone can only be registered in *manage mode* on [Security info](https://aka.ms/mysecurityinfo) and requires Voice calls to be enabled in the Authentication methods policy.
 >
-> Office phone can only be registered in *Interrupt mode* if the users *Business phone* property has been set. Office phone can be added by users in *Managed mode* from [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo) without this requirement.
+> Office phone can only be registered in *Interrupt mode* if the users *Business phone* property has been set. Office phone can be added by users in *Manage mode* from [Security info](https://aka.ms/mysecurityinfo) without this requirement.
 >
 > App passwords are available only to users who have been enforced for per-user MFA. App passwords aren't available to users who are enabled for Microsoft Entra multifactor authentication by a Conditional Access policy.
 >
-> Passkey (FIDO2), can only be added in *Manage mode* on [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo).
+> Passkeys (FIDO2) can also be provisioned by using a custom client or partner integration with Microsoft Graph. For more information, see our [APIs](https://aka.ms/passkeyprovision).
 
 Users can set one of the following options as the default multifactor authentication method. 
 
@@ -72,7 +72,7 @@ Third party authenticator apps don't provide push notification. As we continue t
 
 ## Combined registration modes
 
-There are two modes of combined registration: interrupt and manage.
+There are two modes of combined registration: 
 
 - **Interrupt mode** is a wizard-like experience, presented to users when they register or refresh their security info at sign-in.
 - **Manage mode** is part of the user profile and allows users to manage their security info.
@@ -87,13 +87,13 @@ Combined registration adheres to both multifactor authentication and SSPR polici
 
 The following are sample scenarios where users might be prompted to register or refresh their security info:
 
-- *multifactor authentication registration enforced through Identity Protection:* Users are asked to register during sign-in. They register multifactor authentication methods and SSPR methods (if the user is enabled for SSPR).
+- *multifactor authentication registration enforced through Microsoft Entra ID Protection:* Users are asked to register during sign-in. They register multifactor authentication methods and SSPR methods (if the user is enabled for SSPR).
 - *multifactor authentication registration enforced through per-user multifactor authentication:* Users are asked to register during sign-in. They register multifactor authentication methods and SSPR methods (if the user is enabled for SSPR).
 - *multifactor authentication registration enforced through Conditional Access or other policies:* Users are asked to register when they use a resource that requires multifactor authentication. They register multifactor authentication methods and SSPR methods (if the user is enabled for SSPR).
 - *SSPR registration enforced:* Users are asked to register during sign-in. They register only SSPR methods.
 - *SSPR refresh enforced:* Users are required to review their security info at an interval set by the admin. Users are shown their info and can confirm the current info or make changes if needed.
 
-When registration is enforced, users are shown the minimum number of methods needed to be compliant with both multifactor authentication and SSPR policies, from most to least secure. Users going through combined registration where both MFA and SSPR registration are enforced and the SSPR policy requires two methods will first be required to register an MFA method as the first method and can select another MFA or SSPR specific method as the second registered method (e.g. email, security questions etc.)
+When registration is enforced, users are shown the minimum number of methods needed to be compliant with both multifactor authentication and SSPR policies, from most to least secure. Users going through combined registration where both MFA and SSPR registration are enforced and the SSPR policy requires two methods will first be required to register an MFA method as the first method and can select another MFA or SSPR specific method as the second registered method (such as email, security questions, and so on)
 
 Consider the following example scenario:
 
@@ -116,15 +116,24 @@ If the SSPR policy requires users to review their security info at regular inter
 
 ### Manage mode
 
-Users can access manage mode by going to [Security info](https://aka.ms/mysecurityinfo) or by selecting **Security info** from My Account. From there, users can add methods, delete or change existing methods, change the default method, and more.
+Users can go to [Security info](https://aka.ms/mysecurityinfo), or they can select **Security info** from My Account. From there, users can add methods, delete or change existing methods, change the default method, and more.
+
+
+### Session controls for Combined Registration
+By default Combined registration enforces all MFA capable users to strongly authenticate prior to registering or managing their security info. If a user is currently signed in and has previously completed MFA as part of  a valid session, no additional MFA will be required by default, unless a user is attempting to add or modify a passkey (FIDO2) method. Adding or modifying a passkey (FIDO2) method requires users to have strongly authenticated within the past 5 minutes. If MFA hasn't been completed in the past 5 minutes, the user will be asked to sign-in and complete fresh MFA. Organizations can modify the authentication requirements by defining [Conditional Access policies for securing security info registration.](~/identity/conditional-access/policy-all-users-security-info-registration.md).
+
+Combined registration sessions are only valid for 15 minutes. If a users registration or management actions take longer than this time period, the session will expire and the user will be asked to sign back in to continue. 
 
 ## Key usage scenarios
 
 ### Change a password in MySignIns
 A user navigates to [Security info](https://aka.ms/mysecurityinfo). After signing in, the user can change their password. If the user authenticates with a password and a multifactor authentication method, they will be able to use the enhanced user experience to change their password without entering their existing password. When finished, the user has the new password updated on the Security info page. Authentication methods such as Temporary Access Pass (TAP) aren't supported for password change unless the user knows their existing password.
 
+>[!NOTE]
+>If you have any links that point to the legacy change password experience, update them to the following forward link to direct users to the new **My Sign Ins Change Password** experience: [https://go.microsoft.com/fwlink/?linkid=2224198](https://go.microsoft.com/fwlink/?linkid=2224198). 
+
 ### Protect Security info registration with Conditional Access
-To secure when and how users register for Microsoft Entra multifactor authentication and self-service password reset, you can use user actions in Conditional Access policy. This functionality may be enabled in organizations that want users to register for Microsoft Entra multifactor authentication and SSPR from a central location, such as a trusted network location during HR onboarding. Learn more on how to configure [common Conditional Access policies for securing security info registration.](~/identity/conditional-access/howto-conditional-access-policy-registration.md)
+To secure when and how users register for Microsoft Entra multifactor authentication and self-service password reset, you can use user actions in Conditional Access policy. This functionality may be enabled in organizations that want users to register for Microsoft Entra multifactor authentication and SSPR from a central location, such as a trusted network location during HR onboarding. Learn more on how to configure [common Conditional Access policies for securing security info registration.](~/identity/conditional-access/policy-all-users-security-info-registration.md)
 
 
 ### Set up security info during sign-in
@@ -147,11 +156,11 @@ If a user has partially satisfied MFA or SSPR registration due to existing authe
 
 ### Delete security info from My Account
 
-A user who has previously set up at least one method navigates to [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo). The user chooses to delete one of the previously registered methods. When finished, the user no longer sees that method on the Security info page.
+A user who has previously set up at least one method navigates to [Security info](https://aka.ms/mysecurityinfo). The user chooses to delete one of the previously registered methods. When finished, the user no longer sees that method on the Security info page.
 
 ### Change the default method from My Account
 
-A user who has previously set up at least one method that can be used for multifactor authentication navigates to [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo). The user changes the current default method to a different default method. When finished, the user sees the new default method on the Security info page.
+A user who has previously set up at least one method that can be used for multifactor authentication navigates to [Security info](https://aka.ms/mysecurityinfo). The user changes the current default method to a different default method. When finished, the user sees the new default method on the Security info page.
 
 ### Switch directory
 
@@ -177,12 +186,12 @@ Or, you can specify a tenant by URL to access security information.
 > 
 > IE11 is not officially supported for creating a webview or browser in applications as it will not work as expected in all scenarios.
 > 
-> Applications that have not been updated and are still using Azure AD Authentication Library (ADAL) that rely on legacy webviews can fallback to older versions of IE. In these scenarios, users will experience a blank page when directed to the My Sign-ins page. To resolve this issue, switch to a modern browser.
+> Applications that have not been updated and are still using Azure AD Authentication Library (ADAL) that rely on legacy webviews can fallback to older versions of Internet Explorer. In these scenarios, users will experience a blank page when directed to the My Sign-ins page. To resolve this issue, switch to a modern browser.
 
 ## Next steps
 
 To get started, see the tutorials to [enable self-service password reset](tutorial-enable-sspr.md) and [enable Microsoft Entra multifactor authentication](tutorial-enable-azure-mfa.md).
 
-Learn how to [enable combined registration in your tenant](howto-registration-mfa-sspr-combined.md) or [force users to re-register authentication methods](howto-mfa-userdevicesettings.md#manage-user-authentication-options).
+Learn how to [enable combined registration in your tenant](howto-registration-mfa-sspr-combined.md) or [force users to re-register authentication methods](howto-mfa-userdevicesettings.yml).
 
 You can also review the [available methods for Microsoft Entra multifactor authentication and SSPR](concept-authentication-methods.md).

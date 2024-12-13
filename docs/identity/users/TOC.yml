@@ -11,7 +11,7 @@
   - name: Add users to Microsoft Entra ID
     href: ~/fundamentals/add-users.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
   - name: Assign licenses to users    
-    href: ~/fundamentals/license-users-groups.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
+    href: ~/fundamentals/license-users-groups.yml?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
   - name: Set groups expiration    
     href: groups-quickstart-expiration.md
   - name: Set groups naming policy    
@@ -41,7 +41,7 @@
     - name: Convert external users to internal
       href: convert-external-users-internal.md        
     - name: Manage user profiles
-      href: ~/fundamentals/how-to-manage-user-profile-info.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
+      href: ~/fundamentals/how-to-manage-user-profile-info.yml?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Add custom data using extensions - Microsoft Graph
       href: /graph/extensibility-overview?context=/entra/identity/users/context/ugr-context.json
     - name: Assign custom security attributes
@@ -51,13 +51,13 @@
     - name: Share user accounts
       href: users-sharing-accounts.md
     - name: Assign users to admin roles    
-      href: ../role-based-access-control/manage-roles-portal.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
+      href: ../role-based-access-control/manage-roles-portal.yml?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: User management enhancements
       href: users-search-enhanced.md
     - name: Delete users in bulk
       href: users-bulk-delete.md
     - name: Restore a deleted user    
-      href: ~/fundamentals/users-restore.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
+      href: ~/fundamentals/users-restore.yml?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Restore users in bulk
       href: users-bulk-restore.md
     - name: Revoke a user's access
@@ -97,7 +97,7 @@
     - name: Learn about groups and access rights  
       href: ~/fundamentals/concept-learn-about-groups.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Manage access with groups
-      href: ~/fundamentals/how-to-manage-groups.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json  
+      href: ~/fundamentals/how-to-manage-groups.yml?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json  
     - name: Manage groups PowerShell for Graph (v2)   
       href: groups-settings-v2-cmdlets.md
     - name: Configure group settings with PowerShell
@@ -143,7 +143,7 @@
   - name: Licenses
     items:
     - name: Assign licenses to users    
-      href: ~/fundamentals/license-users-groups.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
+      href: ~/fundamentals/license-users-groups.yml?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: Use Admin center to assign licenses to groups
       href: licensing-admin-center.md
     - name: Assign licenses to a group
@@ -190,7 +190,5 @@
     href: /graph/api/resources/azure-ad-overview
   - name: Microsoft Entra CLI    
     href: /cli/azure/ad
-  - name:  Azure AD PowerShell for Graph
-    href: /powershell/azure/active-directory/install-adv2
   - name: Microsoft Entra service limits
     href: directory-service-limits-restrictions.md

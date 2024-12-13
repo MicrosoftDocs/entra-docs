@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 12/08/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 
@@ -31,7 +31,7 @@ You'll configure and test Microsoft Entra single sign-on for PKSHA Chatbot in a 
 To integrate Microsoft Entra ID with PKSHA Chatbot, you need:
 
 * A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * PKSHA Chatbot single sign-on (SSO) enabled subscription.
 
@@ -78,7 +78,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://admin.workplace.bedore.jp?organization=<ORGANIZATION_CODE>`
 
     > [!Note]
-    > These values are not the real. Update these values with the actual Identifer, Reply URL and Sign on URL. Contact [PKSHA Chatbot Client support team](mailto:bedore-support@pkshatech.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values are not the real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [PKSHA Chatbot Client support team](mailto:bedore-support@pkshatech.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 

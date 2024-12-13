@@ -2,15 +2,14 @@
 title: 'Tutorial: Configure Dropbox for Business for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Dropbox for Business.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Dropbox Business so that I can streamline the user management process and ensure that users have the appropriate access to Dropbox Business.
 ---
@@ -64,7 +63,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Dropbox for Business based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Dropbox for Business, following the instructions provided in the [Dropbox for Business single sign-on tutorial](dropboxforbusiness-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features compliment each other.
+> You may also choose to enable SAML-based single sign-on for Dropbox for Business, following the instructions provided in the [Dropbox for Business single sign-on tutorial](dropboxforbusiness-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
 
 <a name='to-configure-automatic-user-provisioning-for-dropbox-for-business-in-azure-ad'></a>
 
@@ -107,15 +106,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Dropbox**.
 
-	![Dropbox User Mappings](media/dropboxforbusiness-provisioning-tutorial/dropbox-user-mapping.png)
-
 11. Review the user attributes that are synchronized from Microsoft Entra ID to Dropbox in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Dropbox for update operations. Select the **Save** button to commit any changes.
 
 	![Dropbox User Attributes](media/dropboxforbusiness-provisioning-tutorial/dropbox-user-attributes.png)
 
 12. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Dropbox**.
-
-	![Dropbox Group Mappings](media/dropboxforbusiness-provisioning-tutorial/dropbox-group-mapping.png)
 
 13. Review the group attributes that are synchronized from Microsoft Entra ID to Dropbox in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Dropbox for update operations. Select the **Save** button to commit any changes.
 

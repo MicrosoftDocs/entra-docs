@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SAML SSO for Jira by resolution GmbH so that I can control who has access to SAML SSO for Jira by resolution GmbH, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -151,8 +151,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 6. Then, click **Manage**.
 
-	![Screenshot that shows the "S A M L Single Sign On (S S O) Jira, S A M L/S S O" app with the "Manage" button selected.](./media/samlssojira-tutorial/store-4.png)
-    
 7. Afterwards, click **Configure** to configure the just installed plugin.
 
 	![Screenshot that shows the "Manage apps" page, with the "Configure" button selected for the "S A M L SingleSignOn for Jira" app.](./media/samlssojira-tutorial/store-5.png)
@@ -167,15 +165,13 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
  
 	a. Set **Microsoft Entra ID** as the IdP type.
 	
-	b. Add the **Name** of the Identity Provider (e.g Microsoft Entra ID).
+	b. Add the **Name** of the Identity Provider (such as Microsoft Entra ID).
 	
-	c. Add an (optional) **Description** of the Identity Provider (e.g Microsoft Entra ID).
+	c. Add an (optional) **Description** of the Identity Provider (such as Microsoft Entra ID).
 	
 	d. Click **Next**.
 	
 10. On the **Identity provider configuration** page, click **Next**.
- 
-	![Screenshot that shows the "Identity provider configuration" page.](./media/samlssojira-tutorial/configuration.png)
 
 11. On **Import SAML IdP Metadata** page, perform the following steps:
 
@@ -265,9 +261,6 @@ To activate SSO redirect, do the following in **your Jira instance**:
 
 1. Access the configuration page of the SAML SSO plugin in Jira.
 1. Click on **Redirection** in the left panel.
-
-   ![Partial screenshot of the Jira SAML SingleSignOn Plugin Configuration page highlighting the Redirection link in the left navigation.](./media/samlssojira-tutorial/configure-1.png)
-
 1. Tick **Enable SSO Redirect**.
 
    ![Partial screenshot of the Jira SAML SingleSignOn Plugin Configuration page highlighting the selected "Enable SSO Redirect" check box.](./media/samlssojira-tutorial/configure-2.png) 

@@ -5,7 +5,7 @@ description: Learn how to configure and enable users to register passwordless au
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 04/16/2024
+ms.date: 12/09/2024
 
 ms.author: justinha
 author: tilarso 
@@ -14,16 +14,12 @@ ms.reviewer: tilarso
 ---
 # Configure Temporary Access Pass to register passwordless authentication methods
 
-Passwordless authentication methods, such as FIDO2 and passwordless phone sign-in through the Microsoft Authenticator app, enable users to sign in securely without a password. 
-
-Users can bootstrap passwordless methods in one of two ways:
+Passwordless authentication methods like a passkey (FIDO2) let users sign in securely without a password. Users can bootstrap passwordless methods in one of two ways:
 
 - Use existing Microsoft Entra multifactor authentication methods 
 - Use a Temporary Access Pass 
 
-A Temporary Access Pass (TAP) is a time-limited passcode that can be configured for single use or multiple. Users can sign in with a TAP to onboard other passwordless authentication methods, such as Microsoft Authenticator, FIDO2 and Windows Hello for Business.
-
-A TAP also makes recovery easier when a user has lost or forgotten their strong authentication factor like a FIDO2 security key or Microsoft Authenticator app, but needs to sign in to register new strong authentication methods.
+A Temporary Access Pass (TAP) is a time-limited passcode that can be configured for single use or multiple sign-ins. Users can sign in with a TAP to onboard other passwordless authentication methods. A TAP also makes recovery easier when a user loses or forgets a strong authentication method.
 
 This article shows you how to enable and use a TAP using the [Microsoft Entra admin center](https://entra.microsoft.com). You can also perform these actions using REST APIs. 
 
@@ -31,21 +27,21 @@ This article shows you how to enable and use a TAP using the [Microsoft Entra ad
 
 A TAP policy defines settings, such as the lifetime of passes created in the tenant, or the users and groups who can use a TAP to sign-in. 
 
-Before users can sign-in with a TAP, you need to enable this method in the authentication method policy and choose which users and groups can sign in by using a TAP.
+Before users can sign-in with a TAP, you need to enable this method in the Authentication methods policy and choose which users and groups can sign in by using a TAP.
 
-Although you can create a TAP for any user, only users included in the policy can sign-in with it. Only Global Admin and Authentication Policy Admin roles can update the TAP authentication method policy.
+Although you can create a TAP for any user, only users included in the policy can sign-in with it. You need the [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) role to update the TAP Authentication methods policy.
 
-To configure the TAP authentication method policy:
+To configure TAP in the Authentication methods policy:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** >  **Policies**.
 1. From the list of available authentication methods, select **Temporary Access Pass**.
 
-   :::image type="content" border="true" source="./media/how-to-authentication-temporary-access-pass/select-temporary-access-pass-policy.png" alt-text="Screenshot of how to manage Temporary Access Pass within the authentication method policy experience.":::
+   :::image type="content" border="true" source="./media/how-to-authentication-temporary-access-pass/select-temporary-access-pass-policy.png" alt-text="Screenshot of how to manage Temporary Access Pass within the Authentication methods policy experience.":::
 
 1. Click **Enable** and then select users to include or exclude from the policy. 
    
-   :::image type="content" border="true" source="./media/how-to-authentication-temporary-access-pass/enable-temporary-access-pass.png" alt-text="Screenshot of how to enable the Temporary Access Pass authentication method policy.":::
+   :::image type="content" border="true" source="./media/how-to-authentication-temporary-access-pass/enable-temporary-access-pass.png" alt-text="Screenshot of how to enable Temporary Access Pass in the Authentication methods policy.":::
 
 1. (Optional) Select **Configure** to modify the default Temporary Access Pass settings, such as setting maximum lifetime, or length, and click **Update**. 
 
@@ -65,14 +61,14 @@ To configure the TAP authentication method policy:
 
 ## Create a Temporary Access Pass
 
-After you enable a TAP policy, you can create TAPs for users in Microsoft Entra ID.  These following roles can perform various actions related to a TAP.
+After you enable a TAP policy, you can create a TAP policy for users in Microsoft Entra ID. The following roles can perform various actions related to a TAP.
 
-- Global Administrators can create, delete, and view a TAP for any user (except themselves).
-- Privileged Authentication Administrators can create, delete, and view a TAP for admins and members (except themselves).
-- Authentication Administrators can create, delete, and view a TAP for members (except themselves).
-- Global Readers can view TAP details for the user (without reading the code itself).
+- [Privileged Authentication Administrators](~/identity/role-based-access-control/permissions-reference.md#privileged-authentication-administrator) can create, delete, and view a TAP for admins and members (except themselves).
+- [Authentication Administrators](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator) can create, delete, and view a TAP for members (except themselves).
+- [Authentication Policy Administrators](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) can enable TAP, include or exclude groups, and edit the Authentication methods policy.
+- [Global Readers](~/identity/role-based-access-control/permissions-reference.md#global-reader) can view TAP details for the user (without reading the code itself).
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. Browse to **Identity** > **Users**.
 1. Select the user you would like to create a TAP for. 
 1. Select **Authentication methods** and click **Add authentication method**. 
@@ -85,8 +81,9 @@ After you enable a TAP policy, you can create TAPs for users in Microsoft Entra 
    :::image type="content" border="true" source="./media/how-to-authentication-temporary-access-pass/add-method.png" alt-text="Screenshot of adding a method - Temporary Access Pass.":::
 
 1. Once added, the details of the TAP are shown. 
+
    > [!IMPORTANT]
-   >  Make a note of the actual TAP value, as you will provide this value to the user. You can't view this value after you select **Ok**.
+   > Make a note of the actual TAP value, as you will provide this value to the user. You can't view this value after you select **Ok**.
 
    :::image type="content" border="true" source="./media/how-to-authentication-temporary-access-pass/details.png" alt-text="Screenshot of Temporary Access Pass details.":::
 
@@ -105,14 +102,14 @@ New-MgUserAuthenticationTemporaryAccessPassMethod -UserId user2@contoso.com -Bod
 
 Id                                   CreatedDateTime       IsUsable IsUsableOnce LifetimeInMinutes MethodUsabilityReason StartDateTime         TemporaryAccessPass
 --                                   ---------------       -------- ------------ ----------------- --------------------- -------------         -------------------
-c5dbd20a-8b8f-4791-a23f-488fcbde3b38 5/22/2022 11:19:17 PM False    True         60                NotYetValid           23/05/2022 6:00:00 AM TAPRocks!
+00aa00aa-bb11-cc22-dd33-44ee44ee44ee 5/22/2022 11:19:17 PM False    True         60                NotYetValid           23/05/2022 6:00:00 AM TAPRocks!
 
 # Get a user's Temporary Access Pass
 Get-MgUserAuthenticationTemporaryAccessPassMethod -UserId user3@contoso.com
 
 Id                                   CreatedDateTime       IsUsable IsUsableOnce LifetimeInMinutes MethodUsabilityReason StartDateTime         TemporaryAccessPass
 --                                   ---------------       -------- ------------ ----------------- --------------------- -------------         -------------------
-c5dbd20a-8b8f-4791-a23f-488fcbde3b38 5/22/2022 11:19:17 PM False    True         60                NotYetValid           23/05/2022 6:00:00 AM
+00aa00aa-bb11-cc22-dd33-44ee44ee44ee 5/22/2022 11:19:17 PM False    True         60                NotYetValid           23/05/2022 6:00:00 AM
 
 ```
 
@@ -133,9 +130,7 @@ The most common use for a TAP is for a user to register authentication details d
 > For federated domains, a TAP is preferred over federation. A user with a TAP completes the authentication in Microsoft Entra ID and isn't redirected to the federated Identity Provider (IdP).
 
 The user is now signed in and can update or register a method such as FIDO2 security key. 
-
-Users who update their authentication methods due to losing their credentials or device should make sure they remove the old authentication methods.
-
+Users who update their authentication methods due to losing their credentials or device should make sure they remove the old authentication methods. 
 Users can also continue to sign-in by using their password; a TAP doesn’t replace a user’s password.
 
 ### User management of Temporary Access Pass
@@ -157,9 +152,9 @@ For hybrid-joined devices, users must first authenticate with another method suc
 
 :::image type="content" border="true" source="./media/how-to-authentication-temporary-access-pass/windows-10-tap.png" alt-text="Screenshot of how to enter Temporary Access Pass when setting up Windows.":::
 
-### Passwordless phone sign-in
+### Using TAP with Microsoft Authenticator 
 
-Users can also use their TAP to register for passwordless phone sign-in directly from the Authenticator app. 
+Users can also use their TAP to register Microsoft Authenticator with their account. By adding a work or school account and signing in with a TAP users can register both passkeys and passwordless phone sign-in directly from the Authenticator app. 
 
 For more information, see [Add your work or school account to the Microsoft Authenticator app](https://support.microsoft.com/account-billing/add-your-work-or-school-account-to-the-microsoft-authenticator-app-43a73ab5-b4e8-446d-9e54-2a4cb8e4e93c).
 
@@ -167,9 +162,11 @@ For more information, see [Add your work or school account to the Microsoft Auth
 
 ### Guest access
 
-Guest users can sign-in to a resource tenant with a TAP that was issued by their home tenant if the TAP meets the home tenant authentication requirement.
+You can add a TAP as a sign-in method to an internal guest, but not other types of guests. An internal guest has user object **UserType** set to **Guest**. They have authentication methods registered in Microsoft Entra ID. For more information about internal guests and other guest accounts, see [B2B guest user properties](/entra/external-id/user-properties).
 
-If multifactor authentication (MFA) is required for the resource tenant, the guest user needs to perform MFA in order to gain access to the resource.
+If you try to add a TAP to an external guest account in the Microsoft Entra admin center or in Microsoft Graph, you will receive an error stating **Temporary Access Pass cannot be added to an external guest user.**
+
+External guest users can sign-in to a resource tenant with a TAP that was issued by their home tenant if the TAP meets the home tenant authentication requirements and Cross Tenant Access policies have been configured to trust MFA from the users home tenant, see [Manage cross-tenant access settings for B2B collaboration](/entra/external-id/cross-tenant-access-settings-b2b-collaboration). 
 
 ### Expiration
 
@@ -183,7 +180,7 @@ The token lifetime (session token, refresh token, access token, and so on) obtai
 
 Under the **Authentication methods** for a user, the **Detail** column shows when the TAP expired. You can delete an expired TAP using the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. Browse to **Identity** > **Users**, select a user, such as *Tap User*, then choose **Authentication methods**.
 1. On the right-hand side of the **Temporary Access Pass** authentication method shown in the list, select **Delete**.
 
@@ -191,7 +188,7 @@ You can also use PowerShell:
 
 ```powershell
 # Remove a user's Temporary Access Pass
-Remove-MgUserAuthenticationTemporaryAccessPassMethod -UserId user3@contoso.com -TemporaryAccessPassAuthenticationMethodId c5dbd20a-8b8f-4791-a23f-488fcbde3b38
+Remove-MgUserAuthenticationTemporaryAccessPassMethod -UserId user3@contoso.com -TemporaryAccessPassAuthenticationMethodId 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
 ```
 
 For more information, see [Remove-MgUserAuthenticationTemporaryAccessPassMethod](/powershell/module/microsoft.graph.identity.signins/remove-mguserauthenticationtemporaryaccesspassmethod?view=graph-powershell-1.0&preserve-view=true&viewFallbackFrom=graph-powershell-beta).
@@ -210,8 +207,7 @@ For more information about NIST standards for onboarding and recovery, see [NIST
 Keep these limitations in mind:
 
 - When using a one-time TAP to register a passwordless method such as a FIDO2 security key or phone sign-in, the user must complete the registration within 10 minutes of sign-in with the one-time TAP. This limitation doesn't apply to a TAP that can be used more than once.
-- A one-time TAP can't be used with [guided passkey (FIDO2) registration](/entra/identity/authentication/how-to-register-passkey#guided-registration).
-- Users in scope for self service password reset (SSPR) registration policy *or* [Identity Protection multifactor authentication registration policy](~/id-protection/howto-identity-protection-configure-mfa-policy.md) are required to register authentication methods after they've signed in with a TAP using a browser. 
+- Users in scope for self service password reset (SSPR) registration policy *or* [Microsoft Entra ID Protection multifactor authentication registration policy](~/id-protection/howto-identity-protection-configure-mfa-policy.md) are required to register authentication methods after they've signed in with a TAP using a browser. 
 Users in scope for these policies are redirected to the [Interrupt mode of the combined registration](concept-registration-mfa-sspr-combined.md#combined-registration-modes). This experience doesn't currently support FIDO2 and phone sign-in registration. 
 - A TAP can't be used with the Network Policy Server (NPS) extension and Active Directory Federation Services (AD FS) adapter.
 - It can take a few minutes for changes to replicate. Because of this, after a TAP is added to an account, it can take a while for the prompt to appear. For the same reason, after a TAP expires, users may still see a prompt for TAP. 
@@ -219,12 +215,13 @@ Users in scope for these policies are redirected to the [Interrupt mode of the c
 ## Troubleshooting    
 
 - If a TAP isn't offered to a user during sign-in:
-  - Make sure the user is in scope for the TAP authentication method policy.
+  - Make sure the user is in scope for TAP use in the Authentication methods policy.
   - Make sure the user has a valid TAP, and if it's one-time use, it wasn’t used yet.
 - If **Temporary Access Pass sign in was blocked due to User Credential Policy** appears during sign-in with a TAP:
-  - Make sure the user doesn't have a multi-use TAP while the authentication method policy requires a one-time TAP.
+  - Check that the user is in scope for the TAP policy
+  - Make sure the user doesn't have a TAP for multiple use while the Authentication methods policy requires a one-time TAP.
   - Check if a one-time TAP was already used.
-- If TAP sign-in was blocked due to User Credential Policy, check that the user is in scope for the TAP policy.
+- If **Temporary Access Pass cannot be added to an external guest user** appears when you try to add a TAP to an account as an authentication method, the account is an external guest. Both internal and external guest accounts have an option to add a TAP for sign-in in the Microsoft Entra admin center and Microsoft Graph APIs, but only internal guest accounts can be issued a TAP. 
 
 ## Next steps
 

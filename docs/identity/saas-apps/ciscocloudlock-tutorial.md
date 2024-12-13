@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and The Cloud Security Fabric so that I can control who has access to The Cloud Security Fabric, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -99,8 +99,6 @@ Follow these steps to enable Microsoft Entra SSO.
 	![The Certificate download link](common/metadataxml.png)
 
 5. To Modify the **Signing** options as per your requirement, click **Edit** button to open **SAML Signing Certificate** dialog.
-
-	![Saml Response](./media/ciscocloudlock-tutorial/saml.png)
 
 	a. Select the **Sign SAML response and assertion** option for **Signing Option**.
 

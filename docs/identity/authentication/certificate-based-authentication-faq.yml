@@ -6,7 +6,7 @@ metadata:
   ms.subservice: authentication
   ms.custom: has-azure-ad-ps-ref
   ms.topic: faq
-  ms.date: 09/23/2023
+  ms.date: 11/26/2024
   ms.author: justinha
   author: justinha
   manager: amycolannino
@@ -28,7 +28,7 @@ sections:
       - question: |
           Where can I get more diagnostic information after a user sign-in failed? 
         answer: |
-          On the error page, click **More Details** for more information to help your tenant admin. The tenant admin can check the **Sign-ins report** to investigate further. For example, if a user certificate is revoked and is part of a Certificate Revocation List, then authentication fails correctly.
+          On the error page, select **More Details** for more information to help your tenant admin. The tenant admin can check the **Sign-ins report** to investigate further. For example, if a user certificate is revoked and is part of a Certificate Revocation List, then authentication fails correctly.
           To get more diagnostic information, check the **Sign-ins report**.
 
       - question: |
@@ -64,7 +64,7 @@ sections:
       - question: |
           How do I find the CRL for a Certificate Authority or how do I troubleshoot the error AADSTS2205015: The Certificate Revocation List (CRL) failed signature validation?
         answer: |
-          Please download the CRL and compare the CA certificate and the CRL information to validate the crlDistributionPoint value is valid for the CA you want to add. You can configure the CRL to the corresponding CA by matching CA's Issuer SKI to the AKI of the CRL (CA Issuer SKI == CRL AKI)
+          Download the CRL and compare the CA certificate and the CRL information to validate the crlDistributionPoint value is valid for the CA you want to add. You can configure the CRL to the corresponding CA by matching CA's Issuer SKI to the AKI of the CRL (CA Issuer SKI == CRL AKI).
           The following table and graphic show how to map information from the CA certificate to the attributes of the downloaded CRL.
 
           | CA Certificate Info |= |Downloaded CRL Info|
@@ -77,10 +77,10 @@ sections:
       - question: |
           How do I validate the Certificate Authority configuration?
         answer: |
-          It's important to ensure that the Certificate Authority configuration in the trust store result is Microsoft Entra ID ability to both validate the certificate authority trust chain and successfully acquire the certificate 
+          It's important to ensure that the Certificate Authority configuration in the trust store results in Microsoft Entra's ability to both validate the certificate authority trust chain. Additionally, it should successfully acquire the certificate 
           revocation list (CRL) from the configured certificate authority CRL distribution point (CDP). To assist with this task, it's recommended to install the 
           [MSIdentity Tools](https://aka.ms/msid) PowerShell module and run [Test-MsIdCBATrustStoreConfiguration](https://github.com/AzureAD/MSIdentityTools/wiki/Test-MsIdCBATrustStoreConfiguration). 
-          This PowerShell cmdlet will review the Entra tenant certificate authority configuration and surface errors/warnings for common mis-configuration issues. 
+          This PowerShell cmdlet will review the Microsoft Entra tenant certificate authority configuration and surface errors/warnings for common mis-configuration issues. 
           
       - question: |
           How do I turn certificate revocation checking on or off for a particular CA?
@@ -176,7 +176,7 @@ sections:
       - question: |
            Can Microsoft Entra CBA be used on SurfaceHub?
         answer: |
-           Yes. This works out of the box for most smart card / smart card reader combinations. If the smart card / smart card reader combination requires additional drivers these must be installed prior to using the smart card / smart card reader combination on the surface hub.
+           Yes. This works out of the box for most smart card / smart card reader combinations. If the smart card / smart card reader combination requires additional drivers these must be installed before using the smart card / smart card reader combination on the surface hub.
       
 additionalContent: |
   ## Next steps

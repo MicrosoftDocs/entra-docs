@@ -40,7 +40,7 @@ Using this feature, you can:
 To enable self-service application access, you need:
 
 - A Microsoft Entra user account. If you don't already have one, [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Cloud Application Administrator, or Application Administrator.
+- One of the following roles: Cloud Application Administrator, or Application Administrator.
 - A Microsoft Entra ID P1 or P2 license is required for users to request to join a self-service app and for owners to approve or deny requests. Without a Microsoft Entra ID P1 or P2 license, users can't add self-service apps.
 
 ## Enable self-service application access to allow users to find their own applications

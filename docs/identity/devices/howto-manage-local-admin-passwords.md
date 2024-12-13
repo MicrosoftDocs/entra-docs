@@ -68,9 +68,9 @@ LAPS is available to all customers with Microsoft Entra ID Free or higher licens
 
 ### Required roles or permission
 
-Other than the built-in Microsoft Entra roles of [Cloud Device Administrator](../role-based-access-control/permissions-reference.md#cloud-device-administrator) and [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator) that are granted *device.LocalCredentials.Read.All*, you can use [Microsoft Entra custom roles](../role-based-access-control/custom-create.md) or administrative units to authorize local administrator password recovery. For example:
+Other than the built-in Microsoft Entra roles like [Cloud Device Administrator](../role-based-access-control/permissions-reference.md#cloud-device-administrator) and [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator) that are granted *device.LocalCredentials.Read.All*, you can use [Microsoft Entra custom roles](../role-based-access-control/custom-create.yml) or administrative units to authorize local administrator password recovery. For example:
 
-- Custom roles must be assigned the *microsoft.directory/deviceLocalCredentials/password/read* permission to authorize local administrator password recovery. You can create a custom role and grant permissions using the [Microsoft Entra admin center](https://entra.microsoft.com), [Microsoft Graph API](../role-based-access-control/custom-create.md#create-a-role-with-the-microsoft-graph-api) or [PowerShell](../role-based-access-control/custom-create.md#create-a-role-using-powershell). Once you create a custom role, you can assign it to users.
+- Custom roles must be assigned the *microsoft.directory/deviceLocalCredentials/password/read* permission to authorize local administrator password recovery. You can create a custom role and grant permissions using the [Microsoft Entra admin center](https://entra.microsoft.com), [Microsoft Graph API](../role-based-access-control/custom-create.yml#create-a-role-with-the-microsoft-graph-api) or [PowerShell](../role-based-access-control/custom-create.yml#create-a-role-using-powershell). Once you create a custom role, you can assign it to users.
 
 - You can also create a Microsoft Entra ID [administrative unit](../role-based-access-control/administrative-units.md), add devices, and assign the Cloud Device Administrator role scoped to the administrative unit to authorize local administrator password recovery.
 
@@ -118,7 +118,7 @@ To view audit events, you can browse to **Identity** > **Devices** > **Overview*
 
 ## Conditional Access policies for local administrator password recovery
 
-Conditional Access policies can be scoped to the built-in roles to protect access to recover local administrator passwords. You can find an example of a policy that requires multifactor authentication in the article, [Common Conditional Access policy: Require MFA for administrators](../conditional-access/howto-conditional-access-policy-admin-mfa.md).
+Conditional Access policies can be scoped to the built-in roles to protect access to recover local administrator passwords. You can find an example of a policy that requires multifactor authentication in the article, [Common Conditional Access policy: Require MFA for administrators](../conditional-access/policy-old-require-mfa-admin.md).
 
 > [!NOTE]
 > Other role types including administrative unit-scoped roles and custom roles aren't supported

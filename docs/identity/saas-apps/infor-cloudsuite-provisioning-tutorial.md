@@ -2,15 +2,14 @@
 title: 'Tutorial: Configure Infor CloudSuite for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Infor CloudSuite.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Infor CloudSuite so that I can streamline the user management process and ensure that users have the appropriate access to Infor CloudSuite.
 ---
@@ -63,8 +62,6 @@ Before configuring and enabling automatic user provisioning, you should decide w
 	![Infor CloudSuite Admin user](media/infor-cloudsuite-provisioning-tutorial/newuser.png)
 	
 	![Infor CloudSuite password](media/infor-cloudsuite-provisioning-tutorial/password.png)
-
-	:::image type="content" source="media/infor-cloudsuite-provisioning-tutorial/identifier.png" alt-text="Screenshot of the Infor CloudSuite admin console showing a highlighted table row. That row contains a user identifier, passwords, and a time stamp." border="false":::
 
 5. To generate the bearer token, copy the **User Identifier** and **SCIM Password**. Paste them in notepad++ separated by a colon. Encode the string value by navigating to **Plugins > MIME Tools > Basic64 Encode**. 
 
@@ -131,9 +128,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 7. Click **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Infor CloudSuite**.
-
-	![Infor CloudSuite User Mappings](media/infor-cloudsuite-provisioning-tutorial/usermappings.png)
-
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Infor CloudSuite in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Infor CloudSuite for update operations. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|Required by Infor CloudSuite|
@@ -157,8 +151,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Infor CloudSuite**.
-
-	![Infor CloudSuite Group Mappings](media/infor-cloudsuite-provisioning-tutorial/groupmappings.png)
 
 11. Review the group attributes that are synchronized from Microsoft Entra ID to Infor CloudSuite in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Infor CloudSuite for update operations. Select the **Save** button to commit any changes.
 

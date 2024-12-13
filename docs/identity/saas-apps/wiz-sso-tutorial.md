@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 
@@ -114,7 +114,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
    d. Under **Advanced options**, select the **Customize the name of the group claim** check box.
 
-   e. For **Name**, enter **group**.
+   e. For **Name**, enter **groups**.
    
    f. Select **Save**.   
 

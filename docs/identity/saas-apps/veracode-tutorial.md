@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 05/23/2023
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Veracode so that I can control who has access to Veracode, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -70,7 +70,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Again under the **Manage** tab, click on **Single sign-on**, then select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
-   ![Edit Basic SAML Configuration](common/edit-urls.png)
+   ![Screenshot shows to edit Basic SAML Configuration.](common/edit-urls.png)
 
 1. The Relay state field should be autopopulated with `https://web.analysiscenter.veracode.com/login/#/saml`. The rest of these fields will populate after setting up SAML within the Veracode Platform.
 
@@ -145,13 +145,11 @@ Notes:
 
     a.  For **Issuer**, paste the value of the **Microsoft Entra Identifier** that you've copied.
     
-    b. For **IdP Server URL**, paste the value of the **Logout URL** that you've copied.
+    b. For **Assertion Signing Certificate**, select **Choose File** to upload your downloaded certificate.
 
-    c. For **Assertion Signing Certificate**, select **Choose File** to upload your downloaded certificate.
+    c. Note the values of the three URLs (**SAML Assertion URL**, **SAML Audience URL**, **Relay state URL**).
 
-    d. Note the values of the three URLs (**SAML Assertion URL**, **SAML Audience URL**, **Relay state URL**).
-
-    e. Click **Save**. 
+    d. Click **Save**. 
     
 1. Take the values of the **SAML Assertion URL**, **SAML Audience URL** and **Relay state URL** and update them in the Microsoft Entra settings for the Veracode integration (follow the table below for proper conversions) NOTE: **Relay State** is NOT optional.
 

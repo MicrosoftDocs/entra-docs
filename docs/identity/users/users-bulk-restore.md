@@ -5,7 +5,7 @@ description: Restore deleted users in bulk in the Azure portal in Microsoft Entr
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
-ms.date: 11/21/2022
+ms.date: 07/01/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
@@ -58,9 +58,7 @@ The rows in a downloaded CSV template are as follows:
 1. When your file passes validation, select **Submit** to start the bulk operation that restores the users.
 1. When the restore operation completes, you'll see a notification that the bulk operation succeeded.
 
-If there are errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error.
-
-[!INCLUDE [Bulk update warning](~/includes/bulk-export.md)]
+If you experience errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error. The file submission must match the provided template and include the exact column names. For more information about bulk operations limitations, see [Bulk restore service limits](#bulk-restore-service-limits).
 
 ## Check status
 
@@ -87,7 +85,11 @@ Get-MgUser -Filter "UserType eq 'Member'"
 
 You should see that the users that you restored are listed.
 
-[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
+
+## Bulk restore service limits
+
+[!INCLUDE [Bulk operations limitations](~/includes/bulk-operations-limitations.md)]
 
 ## Next steps
 

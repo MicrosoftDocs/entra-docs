@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 08/20/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Sage Intacct so that I can control who has access to Sage Intacct, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -85,13 +85,14 @@ Follow these steps to enable Microsoft Entra SSO.
 	b. In the **Reply URL** text box, add the following URLs:  
 
 	| Reply URL |
-	| ------------- |
+	| --------------- |
 	| `https://www.intacct.com/ia/acct/sso_response.phtml` (Select as the default.) |
-	| `https://www-p02.intacct.com/ia/acct/sso_response.phtml` |  
+	| `https://www-p01.intacct.com/ia/acct/sso_response.phtml` | 
+	| `https://www-p02.intacct.com/ia/acct/sso_response.phtml` | 
 	| `https://www-p03.intacct.com/ia/acct/sso_response.phtml` | 
 	| `https://www-p04.intacct.com/ia/acct/sso_response.phtml` |  
 	| `https://www-p05.intacct.com/ia/acct/sso_response.phtml` |
-	
+	| `https://www-p06.intacct.com/ia/acct/sso_response.phtml` |
 
 1. The Sage Intacct application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes. Click **Edit** icon to open User Attributes dialog.
 

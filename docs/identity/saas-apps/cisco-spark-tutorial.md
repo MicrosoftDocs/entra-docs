@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Cisco Webex so that I can control who has access to Cisco Webex, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -186,8 +186,6 @@ If you need to create a user manually, perform the following steps:
     ![Screenshot shows the Users page where you can Manage Users.](./media/cisco-spark-tutorial/user-1.png) 
 
 3. In the **Manage Users** window, select **Manually Add or Modify Users**.
-
-	![Screenshot shows the Users page where you can Manage Users and select Manually Add or Modify Users.](./media/cisco-spark-tutorial/user-2.png)
 
 4. Select **Names and Email address**. Then, fill out the textbox as follows:
 

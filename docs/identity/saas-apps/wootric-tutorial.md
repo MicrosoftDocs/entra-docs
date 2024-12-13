@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Wootric so that I can control who has access to Wootric, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -140,8 +140,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 	![Screenshot shows the Settings Icon selected from the Wootric site.](./media/wootric-tutorial/configure-1.PNG)
 
 1. In the **INTEGRATIONS**, select **Authentication** from the Left side menu and click on **Enable Single Sign On with Microsoft Entra ID**.
-
-	![Screenshot shows Enable Single Sign On with Microsoft Entra connected in the Authentication item.](./media/wootric-tutorial/configure-2.PNG)
 
 1. Perform the following steps in the following page:
 

@@ -185,8 +185,8 @@ $Logs | Export-Csv $Path -NoTypeInformation -Encoding UTF8
 ## Script explanation
 
 This script is working non-interactively. The admin using it will need to change the values in the "#PARAMETERS TO CHANGE" section with their own App ID, Application Secret, Tenant Name, the period for the apps credentials expiration and the Path where the CSV will be exported.
-This script uses the [Client_Credential Oauth Flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md)
-The function "RefreshToken" will build the access token based on the values of the parameters modified by the admin.
+
+This script uses the [Client_Credential Oauth Flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md) The function "RefreshToken" will build the access token based on the values of the parameters modified by the admin.
 
 The "Add-Member" command is responsible for creating the columns in the CSV file.
 

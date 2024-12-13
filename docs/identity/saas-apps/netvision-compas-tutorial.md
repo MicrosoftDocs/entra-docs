@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Netvision Compas so that I can control who has access to Netvision Compas, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -188,8 +188,6 @@ When you click the Netvision Compas tile in the Access Panel, you should be auto
     ![Login user](media/netvision-compas-tutorial/login-user.png)
 
 1. **(optional)** If the user is assigned multiple IDPs within **Netvision Compas**, a list of available IDPs is presented. Select the Microsoft Entra IDP configured previously in **Netvision Compas**.
-
-    ![Login choose](media/netvision-compas-tutorial/login-choose.png)
 
 1. You are redirected to Microsoft Entra ID to perform the authentication. Once you are successfully authenticated, you should be automatically signed in to **Netvision Compas** for which you set up SSO.
 

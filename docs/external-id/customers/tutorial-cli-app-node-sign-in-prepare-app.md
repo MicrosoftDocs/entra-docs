@@ -8,9 +8,9 @@ manager: mwongerapk
 ms.author: dmwendia
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: tutorial
-ms.date: 08/04/2023
+ms.date: 06/24/2024
 ms.custom: developer, devx-track-js
 
 #Customer intent: As a dev, devops, I want to learn how to build a Node.js CLI application that signs in users in an external tenant.
@@ -121,6 +121,8 @@ module.exports = {
     loginRequest: loginRequest,
 };
 ```
+
+[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url.md)]
 
 ## Next step
 

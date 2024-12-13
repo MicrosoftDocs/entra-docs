@@ -4,7 +4,7 @@ description: Learn how password change or reset events in Microsoft Entra ID can
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/14/2023
+ms.date: 11/27/2024
 ms.author: justinha
 author: justinha
 manager: amycolannino

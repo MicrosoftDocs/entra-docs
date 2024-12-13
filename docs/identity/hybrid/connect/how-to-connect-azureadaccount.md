@@ -8,7 +8,7 @@ ms.assetid: 6077043a-27f1-4304-a44b-81dc46620f24
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 12/05/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -16,7 +16,7 @@ ms.author: billmath
 ms.custom: has-adal-ref
 ---
 # Change the Microsoft Entra Connector account password
-The Microsoft Entra Connector account is supposed to be service free. If you need to reset its credentials, then this topic is for you. For example, if a Global Administrator has by mistake reset the password on the account using PowerShell.
+The Microsoft Entra Connector account is supposed to be service free. If you need to reset its credentials, then this topic is for you. 
 
 ## Reset the credentials
 If the Microsoft Entra Connector account cannot contact Microsoft Entra ID due to authentication problems, the password can be reset.
@@ -33,16 +33,15 @@ The cmdlet resets the password for the service account and updates it both in Mi
 This section is a list of errors reported by customers that were fixed by a credentials reset on the Microsoft Entra Connector account.
 
 ---
-Event 6900
-The server encountered an unexpected error while processing a password change notification:
+Event 6900 The server encountered an unexpected error while processing a password change notification:  
 AADSTS70002: Error validating credentials. AADSTS50054: Old password is used for authentication.
 
 ---
-Event 659
-Error while retrieving password policy sync configuration. Microsoft.IdentityModel.Clients.ActiveDirectory.AdalServiceException:
-AADSTS70002: Error validating credentials. AADSTS50054: Old password is used for authentication.
+Event 659 Error while retrieving password policy sync configuration. Microsoft.IdentityModel.Clients.ActiveDirectory.AdalServiceException:
+AADSTS70002: Error validating credentials. AADSTS50054: Old password is used for authentication.  
 
 ## Next steps
+
 **Overview topics**
 
 * [Microsoft Entra Connect Sync: Understand and customize synchronization](how-to-connect-sync-whatis.md)

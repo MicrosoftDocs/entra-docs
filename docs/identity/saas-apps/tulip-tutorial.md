@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 12/15/2023
+ms.date: 03/25/2024
 ms.author: jeedes
 
 
@@ -123,7 +123,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	c. Upload the Federation Metadata XML file from Azure to Tulip. This will populate the SSO Login, SSO Logout URL and the Certificates.
 
-	d. Verify that the Name, Email and Badge attributes are not null, i.e. enter any unique strings in all three inputs and do a test authentication using the ```Authenticate``` button on the right.
+	d. Verify that the Name, Email and Badge attributes are not null, that is, enter any unique strings in all three inputs and do a test authentication using the ```Authenticate``` button on the right.
 	
 	e. Upon successful authentication, copy/paste the entire claim URL into the appropriate mapping for the name, email and badgeID attributes.
 	

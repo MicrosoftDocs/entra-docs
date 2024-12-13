@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: conceptual
 ms.subservice: privileged-identity-management
-ms.date: 09/13/2023
+ms.date: 07/10/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
 ms.custom: pim
@@ -25,8 +25,11 @@ Privileged Identity Management (PIM) lets you know when important events occur i
 
 Emails sent from Privileged Identity Management for both Microsoft Entra ID and Azure resource roles have the following sender email address:
 
-- Email address:  **azure-noreply\@microsoft.com**
-- Display name: Microsoft Azure
+- Email address:  **MSSecurity-noreply@microsoft.com**
+- Display name: **Microsoft Security**
+
+>[!IMPORTANT]
+> The azure-noreply@microsoft.com has been deprecated and should no longer be sending PIM email notifications
 
 These emails include a **PIM** prefix in the subject line. Here's an example:
 
@@ -92,7 +95,10 @@ The **Overview of your top roles** section lists the top five roles in your orga
 
 ## Notifications for Azure resource roles
 
-Privileged Identity Management sends emails to Owners and User Access Administrators when the following events occur for Azure resource roles:
+> [!NOTE]
+> In PIM, an *eligible* Owner is someone who has been granted just-in-time (JIT) privileged access to perform certain tasks for managing groups, which can be activated when needed. This is different from a *permanent* Owner, who has ongoing access to manage groups. For more information about JIT ownership of a group, see [Assign eligibility for a group in Privileged Identity Management](groups-assign-member-owner.md).
+
+For maintaining groups, the owner has the ability to manage the group, including adding or removing members, renewing groups that are about to expire, and approving requests to join the group. PIM sends emails to *permanent* Owners, *eligible* Owners, and User Access Administrators when the following events occur for Azure resource roles:
 
 - When a role assignment is pending approval
 - When a role is assigned
@@ -114,7 +120,7 @@ The following shows an example email that is sent when a user is assigned an Azu
 
 ## Notifications for PIM for Groups
 
-Privileged Identity Management sends emails to Owners only when the following events occur for PIM for Groups assignments:
+Privileged Identity Management sends emails to *permanent* Owners only when the following events occur for PIM for Groups assignments:
 
 - When an Owner or Member role assignment is pending approval
 - When an Owner or Member role is assigned

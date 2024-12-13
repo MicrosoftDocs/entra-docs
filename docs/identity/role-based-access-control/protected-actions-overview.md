@@ -121,7 +121,7 @@ Here are some best practices for using protected actions.
 
 - **Use named network locations**
 
-    Named network location permissions aren't used when managing multi-factor authentication trusted IPs. We recommend using [named network locations](~/identity/conditional-access/location-condition.md#named-locations).
+    Named network location permissions aren't used when managing multi-factor authentication trusted IPs. We recommend using [named network locations](../conditional-access/concept-assignment-network.md).
 
 - **Don't use protected actions to block access based on identity or group membership**
 

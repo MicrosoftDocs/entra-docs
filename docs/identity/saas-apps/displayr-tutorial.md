@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Displayr so that I can control who has access to Displayr, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -97,15 +97,13 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In addition to above, Displayr application expects few more attributes to be passed back in SAML response. In the **User Attributes & Claims** section on the **Group Claims (Preview)** dialog, perform the following steps:
 
-   a. Click **Add a group claim**.
+   1. Click **Add a group claim**.
 
-      ![Screenshot that shows the "Group Claims (Preview) window with settings selected.](./media/displayr-tutorial/claims.png)
+   1. Select **All Groups** from the radio list.
 
-   b. Select **All Groups** from the radio list.
+   1. Select **Source Attribute** of **Group ID**.
 
-   c. Select **Source Attribute** of **Group ID**.
-
-   f. Click **Save**.
+   1. Click **Save**.
 
 1. On the **Set-up Displayr** section, copy the appropriate URL(s) based on your requirement.
 

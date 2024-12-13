@@ -4,7 +4,7 @@ description: Learn how to troubleshoot manager update issues with HR provisionin
 author: jenniferf-skc
 manager: amycolannino
 ms.service: entra-id
-ms.date: 02/27/2024
+ms.date: 05/23/2024
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
 ms.author: jfields
@@ -15,9 +15,9 @@ ms.reviewer: chmutali
 
 **Applies to:**
 * Workday to on-premises Active Directory user provisioning
-* Workday to Microsoft Entra ID user provisioning
+* Workday to Microsoft Entra user provisioning
 * SAP SuccessFactors to on-premises Active Directory user provisioning
-* SAP SuccessFactors to Microsoft Entra ID user provisioning
+* SAP SuccessFactors to Microsoft Entra user provisioning
 
 ## Understanding how manager reference resolution works
 The Microsoft Entra provisioning service automatically updates manager information so that the user-manager relationship in Microsoft Entra ID is always in sync with your HR data. It uses a process called *manager reference resolution* to accurately update the *manager* attribute. Before going into the process details, it's important to understand how manager information is stored in Microsoft Entra ID and on-premises Active Directory. 
@@ -46,6 +46,10 @@ In order for *manager reference resolution* to work successfully, the following 
    * SuccessFactors manager default JSONPath API expression: `$.employmentNav.results[0].userNav.manager.empInfo.personIdExternal`
 * The manager record must also be in scope of the provisioning job. 
 * The provisioning app should process the manager record prior to processing the user record. 
+
+> [!NOTE]
+> The *manager* attribute mapping must be a direct mapping and can't include more than one source attribute. Using expression mappings to perform conditional assignment of manager attribute is not supported. For example, implementing logic such as “if user is active then assign manager1, else assign manager2” isn't supported. 
+
 
 ## Provision-on-demand doesn't update manager attribute
 | Troubleshooting | Details |

@@ -6,9 +6,9 @@ author: csmulligan
 manager: CelesteDG
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
-ms.date: 02/29/2024
+ms.date: 12/05/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -16,6 +16,8 @@ ms.custom: it-pro
 ---
 
 # Enable self-service password reset
+
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 Self-service password reset (SSPR) in Microsoft Entra External ID gives customers the ability to change or reset their password, with no administrator or help desk involvement. If a customer's account is locked or they forget their password, they can follow prompts to unblock themselves and get back to work.
 
@@ -56,7 +58,7 @@ To enable self-service password reset, you need to enable the email one-time pas
    
    1. Browse to **Identity** > **Protection** > **Authentication methods**. 
 
-   1. Under **Policies** > **Method** select **Email OTP (preview)**.
+   1. Under **Policies** > **Method** select **Email OTP**.
    
       :::image type="content" source="media/how-to-enable-password-reset-customers/authentication-methods.png" alt-text="Screenshot that shows authentication methods.":::
    
@@ -102,6 +104,6 @@ To go through the self-service password reset flow:
 
    :::image type="content" source="media/how-to-enable-password-reset-customers/update-password.png" alt-text="Screenshot that shows the update password screen.":::
 
-## Next steps
+## Related content
 
-- Add [Google](how-to-google-federation-customers.md) or [Facebook](how-to-facebook-federation-customers.md) federation.
+- Add [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md), [Apple](how-to-apple-federation-customers.md) or a custom [OIDC federation](how-to-custom-oidc-federation-customers.md) federation.

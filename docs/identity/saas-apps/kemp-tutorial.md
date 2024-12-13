@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Kemp LoadMaster Microsoft Entra integration so that I can control who has access to Kemp LoadMaster Microsoft Entra integration, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -307,9 +307,6 @@ You should see your tenanted login page instead of unauthenticated access previo
 ### Create a Kerberos Delegation Account for Kemp LoadMaster Microsoft Entra integration 
 
 1. Create a user Account (in this example AppDelegation).
-    
-    ![Screenshot that shows the "kcd user Properties" window with the "Account" tab selected.](./media/kemp-tutorial/kemp-10.png)
-
 
     a. Select the Attribute Editor tab.
 
@@ -340,7 +337,7 @@ You should see your tenanted login page instead of unauthenticated access previo
     f. Click on OK.
 
 > [!NOTE]
-> Set the SPN on the Application / Website as applicable. To access application when the application pool identity has been set. To access the IIS application by using the FQDN name, go to Real Server command prompt and type SetSpn with required parameters. For e.g. Setspn –S HTTP/sescoindc.sunehes.co.in suneshes\kdcuser 
+> Set the SPN on the Application / Website as applicable. To access application when the application pool identity has been set. To access the IIS application by using the FQDN name, go to Real Server command prompt and type SetSpn with required parameters. For example, `Setspn –S HTTP/sescoindc.sunehes.co.in suneshes\kdcuser`. 
 
 <a name='kemp-loadmaster-azure-ad-integration-kcd-kerberos-delegation-accounts'></a>
 

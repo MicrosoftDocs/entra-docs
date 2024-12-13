@@ -7,7 +7,7 @@ manager: mwongerapk
 
 ms.author: henrymbugua
 ms.service: entra-external-id 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
 ms.date: 02/29/2024
 ms.custom: developer
@@ -40,9 +40,9 @@ In this article, you learn how to:
 
 [!INCLUDE [Enable public client and native authentication](../customers/includes/native-auth/enable-native-authentication.md)]
  
-## Grant API permissions
+## Grant admin consent
  
-[!INCLUDE [Grant API permissions](../customers/includes/register-app/grant-native-authentication-api-permission.md)]
+[!INCLUDE [Grant API permissions](../customers/includes/register-app/grant-api-permission-sign-in.md)]
 
 ## Create a user flow
  

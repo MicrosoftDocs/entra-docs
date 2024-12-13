@@ -8,7 +8,7 @@ tags: azuread
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.topic: conceptual
-ms.date: 11/06/2023
+ms.date: 08/25/2024
 ms.reviewer: martincoetzer
 ms.author: billmath
 
@@ -158,11 +158,11 @@ Microsoft Entra ID uses throttling to protect the cloud service from denial-of-s
 
 
 - Microsoft Entra Connect export to Microsoft Entra ID.
-- PowerShell scripts or applications updating the Microsoft Entra ID directly even in the background, such as Dynamic group memberships.
+- PowerShell scripts or applications updating the Microsoft Entra ID directly even in the background, such as dynamic membership groups.
 - Users updating their own identity records such as registering for MFA or SSPR (self-service password reset).
 - Operations within the graphical user interface.
 
-Plan for deployment and maintenance tasks, to make sure your Microsoft Entra Connect Sync cycle is not impacted by throttling limits. For example, if you have a large hiring wave where you create thousands of user identities, it can cause updates to dynamic group memberships, licensing assignments, and self-service password reset registrations. It's better to spread these writes over several hours or a few days.
+Plan for deployment and maintenance tasks, to make sure your Microsoft Entra Connect Sync cycle is not impacted by throttling limits. For example, if you have a large hiring wave where you create thousands of user identities, it can cause updates to dynamic membership groups, licensing assignments, and self-service password reset registrations. It's better to spread these writes over several hours or a few days.
 
 ### SQL database factors
 
@@ -184,6 +184,7 @@ To optimize the performance of your Microsoft Entra Connect implementation, cons
 - Use the [recommended hardware configuration](how-to-connect-install-prerequisites.md) based on your implementation size for the Microsoft Entra Connect server.
 - When upgrading Microsoft Entra Connect in large-scale deployments, consider using [swing migration method](./how-to-upgrade-previous-version.md#swing-migration), to make sure you have the least downtime and best reliability. 
 - Use SSD for the SQL database for best writing performance.
+- Back-up of ADSync Database using Azure Backup is not recommended.
 - Filter the Active Directory scope to only include objects that need to be provisioned in Microsoft Entra ID, using domain, OU, or attribute filtering.
 - If you require to change the default attribute flow rules, first copy the rule, then change the copy and disable the original rule. Remember to rerun a full sync.
 - Plan adequate time for the initial full sync run profile.

@@ -100,7 +100,7 @@ $restrictedAU = New-MgBetaDirectoryAdministrativeUnit -BodyParameter $params
 
 # [Azure AD PowerShell](#tab/aad-powershell)
 
-[!INCLUDE [Azure AD PowerShell migration](~/includes/aad-powershell-migration-include.md)]
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 Use the [New-AzureADMSAdministrativeUnit](/powershell/module/azuread/new-azureadmsadministrativeunit?branch=main) command to create a new administrative unit.
 
@@ -192,7 +192,7 @@ Remove-MgDirectoryAdministrativeUnit -AdministrativeUnitId $adminUnitObj.Id
 
 # [Azure AD PowerShell](#tab/aad-powershell)
 
-[!INCLUDE [Azure AD PowerShell migration](~/includes/aad-powershell-migration-include.md)]
+[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 Use the [Remove-AzureADMSAdministrativeUnit](/powershell/module/azuread/remove-azureadmsadministrativeunit?branch=main) command to delete an administrative unit.
 

@@ -2,15 +2,14 @@
 title: 'Tutorial: Configure SmartFile for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to SmartFile.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Smartfile so that I can streamline the user management process and ensure that users have the appropriate access to Smartfile.
 ---
@@ -44,13 +43,13 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Important tips for assigning users to SmartFile
 
-* It is recommended that a single Microsoft Entra user is assigned to SmartFile to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to SmartFile to test the automatic user provisioning configuration. More users and/or groups may be assigned later.
 
 * When assigning a user to SmartFile, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
-## Setup SmartFile for provisioning
+## Set up SmartFile for provisioning
 
-Before configuring SmartFile for automatic user provisioning with Microsoft Entra ID, you will need to enable SCIM provisioning on SmartFile and collect additional details needed.
+Before configuring SmartFile for automatic user provisioning with Microsoft Entra ID, you'll need to enable SCIM provisioning on SmartFile and collect more details needed.
 
 1. Sign into your SmartFile Admin Console. Navigate to the top-right hand corner of the SmartFile Admin Console. Select **Product Key**.
 
@@ -79,7 +78,7 @@ To configure SmartFile for automatic user provisioning with Microsoft Entra ID, 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in SmartFile based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for SmartFile, following the instructions provided in the [SmartFile Single sign-on tutorial](SmartFile-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features compliment each other
+> You may also choose to enable SAML-based single sign-on for SmartFile, following the instructions provided in the [SmartFile Single sign-on tutorial](SmartFile-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other
 
 <a name='to-configure-automatic-user-provisioning-for-smartfile-in-azure-ad'></a>
 
@@ -114,15 +113,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to SmartFile**.
 
-	![SmartFile User Mappings](media/smartfile-provisioning-tutorial/usermapping.png)
-
 9. Review the user attributes that are synchronized from Microsoft Entra ID to SmartFile in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in SmartFile for update operations. Select the **Save** button to commit any changes.
 
 	![SmartFile User Attributes](media/smartfile-provisioning-tutorial/userattribute.png)
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to SmartFile**.
-
-	![SmartFile Group Mappings](media/smartfile-provisioning-tutorial/groupmapping.png)
 
 11. Review the group attributes that are synchronized from Microsoft Entra ID to SmartFile in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in SmartFile for update operations. Select the **Save** button to commit any changes.
 
@@ -138,7 +133,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, click **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
@@ -150,7 +145,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 * SmartFile only supports hard deletes. 
 
-## Additional resources
+## More resources
 
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)

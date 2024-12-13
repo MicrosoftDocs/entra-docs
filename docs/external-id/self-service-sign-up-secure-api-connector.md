@@ -17,6 +17,8 @@ ms.collection: M365-identity-device-management
 
 # Secure your API used an API connector in Microsoft Entra External ID self-service sign-up user flows
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 When integrating a REST API within a Microsoft Entra External ID self-service sign-up user flow, you must protect your REST API endpoint with authentication. The REST API authentication ensures that only services that have proper credentials, such as Microsoft Entra ID, can make calls to your endpoint. This article explores how to secure REST API. 
 
 ## Prerequisites

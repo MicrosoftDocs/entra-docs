@@ -8,9 +8,9 @@ ms.assetid: 804438c4-51a1-497d-8ccc-5be775980203
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 09/23/2023
+ms.date: 12/02/2024
 ms.author: justinha
-ms.custom: fasttrack-edit, devx-track-linux
+ms.custom: fasttrack-edit, devx-track-linux, linux-related-content
 ---
 # Join an Ubuntu Linux virtual machine to a Microsoft Entra Domain Services managed domain
 
@@ -187,6 +187,10 @@ With the VM joined to the managed domain and configured for authentication, ther
 ### Allow password authentication for SSH
 
 By default, users can only sign in to a VM using SSH public key-based authentication. Password-based authentication fails. When you join the VM to a managed domain, those domain accounts need to use password-based authentication. Update the SSH configuration to allow password-based authentication as follows.
+
+> [!NOTE]
+> Ubuntu marketplace images usually will have a few configuration options set under /etc/ssh/sshd_config.d, including *PasswordAuthentication* in the 50-cloud-init.conf file, so make sure you also update that file to avoid it overwriting the one set with the steps below.
+> 
 
 1. Open the *sshd_conf* file with an editor:
 

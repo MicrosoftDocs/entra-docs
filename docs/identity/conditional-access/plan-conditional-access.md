@@ -5,7 +5,7 @@ description: Learn how to design Conditional Access policies and effectively dep
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 02/27/2024
+ms.date: 09/18/2024
 
 ms.author: gasinh
 author: gargi-sinha
@@ -34,7 +34,7 @@ Microsoft provides [security defaults](~/fundamentals/security-defaults.md) that
    - Create or modify Conditional Access policies 
       - [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator)
 - A test user (not an administrator) that allows you to verify policies work as expected before deploying to real users. If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/add-users.md).
-- A group that the test user is a member of. If you need to create a group, see [Create a group and add members in Microsoft Entra ID](~/fundamentals/how-to-manage-groups.md).
+- A group that the test user is a member of. If you need to create a group, see [Create a group and add members in Microsoft Entra ID](~/fundamentals/how-to-manage-groups.yml).
 
 ### Communicating change
 
@@ -89,12 +89,6 @@ Will this policy apply to any application, user action, or authentication contex
 - What client app types are included in or excluded from the policy?
 - Do you need to target specific device attributes? 
 - If using [Microsoft Entra ID Protection](~/id-protection/concept-identity-protection-risks.md), do you want to incorporate sign-in or user risk?
-
-##### User and sign-in risk
-
-For organizations with Microsoft Entra ID P2 licenses, they can include user and sign-in risk in their Conditional Access policies. These additions can help reduce the friction of security measures by requiring multifactor authentication or secure password change only when a user or sign-in is considered risky.
-
-For more information about risk and its use in policy, see the article [What is risk](~/id-protection/concept-identity-protection-risks.md).
 
 #### Block or grant controls
 
@@ -151,7 +145,7 @@ Taking into account our learnings in the use of Conditional Access and supportin
 
 ### Apply Conditional Access policies to every app
 
-**Ensure that every app has at least one Conditional Access policy applied**. From a security perspective it's better to create a policy that encompasses **All cloud apps**, and then exclude applications that you don't want the policy to apply to. This practice ensures you don't need to update Conditional Access policies every time you onboard a new application.
+**Ensure that every app has at least one Conditional Access policy applied**. From a security perspective it's better to create a policy that encompasses **All resources (formerly 'All cloud apps')**, and then exclude applications that you don't want the policy to apply to. This practice ensures you don't need to update Conditional Access policies every time you onboard a new application.
 
 > [!TIP]
 > Be very careful in using block and all apps in a single policy. This could lock admins out, and exclusions cannot be configured for important endpoints such as Microsoft Graph.
@@ -173,11 +167,15 @@ By default, each policy created from template is created in report-only mode. We
 
 [Enable policies in report-only mode](howto-conditional-access-insights-reporting.md). Once you save a policy in report-only mode, you can see the effect on real-time sign-ins in the sign-in logs. From the sign-in logs, select an event and navigate to the **Report-only** tab to see the result of each report-only policy.
 
-You can view the aggregate affects of your Conditional Access policies in the **Insights and Reporting workbook**. To access the workbook, you need an Azure Monitor subscription and you need to [stream your sign-in logs to a log analytics workspace](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md).
+You can view the aggregate affects of your Conditional Access policies in the **Insights and Reporting workbook**. To access the workbook, you need an Azure Monitor subscription and you need to [stream your sign-in logs to a log analytics workspace](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml).
 
 ### Plan for disruption
 
 To reduce the risk of lockout during unforeseen disruptions, [plan resilience strategies](~/identity/authentication/concept-resilient-controls.md) for your organization.
+
+### Enable protected actions
+
+Enabling [protected actions](/entra/identity/role-based-access-control/protected-actions-add) puts another layer of security on attempts to create, modify, or delete Conditional Access policy. Organizations can require a fresh multifactor authentication or other grant control before modifying policy.
 
 ### Set naming standards for your policies
 
@@ -211,7 +209,7 @@ In addition to your active policies, implement disabled policies that act as sec
 
 ### Block countries/regions from which you never expect a sign-in
 
-Microsoft Entra ID allows you to create [named locations](location-condition.md). Create the list of countries/regions that are allowed, and then create a network block policy with these "allowed countries/regions" as an exclusion. This option creates less overhead for customers who are based in smaller geographic locations. **Be sure to exempt your emergency access accounts from this policy**.
+Microsoft Entra ID allows you to create [named locations](concept-assignment-network.md). Create the list of countries/regions that are allowed, and then create a network block policy with these "allowed countries/regions" as an exclusion. This option creates less overhead for customers who are based in smaller geographic locations. **Be sure to exempt your emergency access accounts from this policy**.
 
 ## Deploy Conditional Access policies
 
@@ -270,8 +268,6 @@ If a user has an issue with a Conditional Access policy, collect the following i
 - Correlation ID (this ID is unique to the sign-in)
 
 If the user received a message with a More details link, they can collect most of this information for you.
-
-![Screenshots of an example error message and more details.](media/plan-conditional-access/cant-get-to-app.png)
 
 Once you collect the information, see the following resources:
 

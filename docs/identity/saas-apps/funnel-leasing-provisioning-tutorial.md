@@ -2,16 +2,14 @@
 title: 'Tutorial: Configure Funnel Leasing for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Funnel Leasing.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: jeedes
-ms.assetid: 320d5135-3833-4a65-9fc5-7e50709dd6ff
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 06/02/2023
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Funnel Leasing so that I can streamline the user management process and ensure that users have the appropriate access to Funnel Leasing.
 ---
@@ -33,7 +31,7 @@ This tutorial describes the steps you need to perform in both Funnel Leasing and
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator).
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A live community in Funnel or at least a confirmation that all the required configuration is done on the Funnel side in preparation for a go-live date.
 
 ## Step 1: Plan your provisioning deployment

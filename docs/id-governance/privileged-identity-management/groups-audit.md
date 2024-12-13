@@ -25,7 +25,7 @@ Follow these steps to view the audit history for groups in Privileged Identity M
 
 **Resource audit** gives you a view of all activity associated with groups in PIM.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged role administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
 1. Browse to **Identity governance** > **Privileged Identity Management** > **Groups**.
 

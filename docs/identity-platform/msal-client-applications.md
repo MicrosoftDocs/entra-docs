@@ -5,7 +5,7 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom: has-adal-ref
-ms.date: 03/20/2024
+ms.date: 07/24/2024
 ms.reviewer: iambmelt
 ms.service: identity-platform
 
@@ -27,9 +27,20 @@ The Microsoft Authentication Library (MSAL) defines two types of clients; public
 
 When examining the public or confidential nature of a given client, we're evaluating the ability of that client to prove its identity to the authorization server. This is important because the authorization server must be able to trust the identity of the client in order to issue access tokens.
 
-- **Public client applications** run on devices, such as desktop, browserless APIs, mobile or client-side browser apps. They can't be trusted to safely keep application secrets, as they can only access web APIs on behalf of the user. Anytime the source or compiled bytecode of a given app is transmitted anywhere it can be read, disassembled, or otherwise inspected by untrusted parties, it's a public client. As they also only support public client flows and can't hold configuration-time secrets, they can't have client secrets.
+- **Public client applications** run on devices, such as desktop, browserless APIs, mobile or client-side browser apps. They can't be trusted to safely keep application secrets, so they can only access web APIs on behalf of the user. Anytime the source or compiled bytecode of a given app is transmitted anywhere it can be read, disassembled, or otherwise inspected by untrusted parties, it's a public client. As they also only support public client flows and can't hold configuration-time secrets, they can't have client secrets.
 
 - **Confidential client applications** run on servers, such as web apps, web API apps, or service/daemon apps. They're considered difficult to access by users or attackers, and therefore can adequately hold configuration-time secrets to assert proof of its identity. The client ID is exposed through the web browser, but the secret is passed only in the back channel and never directly exposed.
+
+## When should you enable allow a public client flow in your app registration?
+
+After determining the type of client application you're building, you can decide whether to enable the public client flow in your app registration. By default, allow public client flow in your app registration should be disabled unless you or your developer are building a public client application and using the following OAuth authorization protocol or features:
+
+| OAuth Authorization protocol/Feature | Type of public client application | Examples/notes |
+| --- | --- | --- |
+| [Native Authentication](../external-id/customers/concept-native-authentication.md) | Microsoft Entra External ID application that requires full customization of the user interface, including design elements, logo placement, and layout, ensuring a consistent and branded look. | **Note:**  Native Authentication is only available for app registrations in Microsoft Entra External ID tenants. [Learn more here](../external-id/customers/concept-native-authentication.md) |
+| [Device code flow](v2-oauth2-device-code.md) | Applications that run on input-constrained devices such as a smart TV, IoT device, or a printer |  |
+| [Resource owner password credential flow](v2-oauth-ropc.md) | Applications that handles passwords users enter directly, instead of redirecting users to Entra hosted login website and letting Entra handle user password in a secure manner. | **Microsoft recommends you do not use the ROPC flow**. In most scenarios, more secure alternatives, such as the Authorization code flow, are available and recommended. |
+| [Windows Integrated Auth Flow](/entra/msal/dotnet/acquiring-tokens/desktop-mobile/integrated-windows-authentication) | Desktop or mobile applications running on Windows or on a machine connected to a Windows domain (Microsoft Entra ID or Microsoft Entra joined) using Windows Integrated Auth Flow instead of Web account manager | A desktop or mobile application that should be automatically signed in after the user has signed into the windows PC system with a Microsoft Entra credential |
 
 ### Secrets and their importance in proving identity
 
@@ -44,9 +55,9 @@ The following are some examples of how a client can prove its identity to the au
 
 Proving client identity matters when there's a need to verify both the authenticity and authorization of a client application before granting access to sensitive data or resources. Some examples include:
 
-- **Controlling API access** – If you have an API that is metered (e.g. for billing), or exposes sensitive data or resources, you'll verify the identity of the client before granting access. For example, this is important when ensuring that only authorized applications have access to the API, and that the correct customer is billed for their metered API usage.
-- **Protecting users from app impersonation** – If you have a service-deployed, user-facing application (e.g. a backend-driven web app) that accesses sensitive data or services, using client secrets to protect the resources used by that application may prevent bad actors from impersonating a legitimate client to phish users and exfiltrate data or abuse access.
-- **S2S communication** – If you have multiple backend services (e.g. downstream APIs) that need to communicate with each other, you can verify the identity of each service to ensure they're authorized to access only necessary resources to perform their function.
+- **Controlling API access** – If you have an API that is metered (such as for billing), or exposes sensitive data or resources, you'll verify the identity of the client before granting access. For example, this is important when ensuring that only authorized applications have access to the API, and that the correct customer is billed for their metered API usage.
+- **Protecting users from app impersonation** – If you have a service-deployed, user-facing application (such as a backend-driven web app) that accesses sensitive data or services, using client secrets to protect the resources used by that application may prevent bad actors from impersonating a legitimate client to phish users and exfiltrate data or abuse access.
+- **S2S communication** – If you have multiple backend services (such as downstream APIs) that need to communicate with each other, you can verify the identity of each service to ensure they're authorized to access only necessary resources to perform their function.
 
 In general, proving client identity matters when there's a need to authenticate and authorize a client independent of or in addition to a user.
 

@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 05/25/2023
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ServiceNow so that I can control who has access to ServiceNow, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -219,8 +219,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 	![Screenshot of SAML Signing Certificate section, with Download highlighted](common/certificatebase64.png)
 
 6. You can have Microsoft Entra ID automatically configure ServiceNow for SAML-based authentication. To enable this service, go to the **Set up ServiceNow** section, and select **View step-by-step instructions** to open the **Configure sign-on** window.
-
-	![Screenshot of Set up ServiceNow section, with View step-by-step instructions highlighted](./media/servicenow-tutorial/tutorial-servicenow-configure.png)
 
 7. In the **Configure sign-on** form, enter your ServiceNow instance name, admin username, and admin password. Select **Configure Now**. The admin username provided must have the **security_admin** role assigned in ServiceNow for this to work. Otherwise, to manually configure ServiceNow to use Microsoft Entra ID as a SAML Identity Provider, select **Manually configure single sign-on**. Copy the **Logout URL, Microsoft Entra Identifier, and Login URL** from the Quick Reference section.
 

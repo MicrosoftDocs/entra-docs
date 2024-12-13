@@ -5,7 +5,7 @@ services: active-directory
 author: garrodonnell
 manager: celestedg
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.topic: tutorial
 ms.date: 10/27/2023
 ms.author: godonnell
@@ -28,11 +28,13 @@ In this tutorial:
 
 ## Prerequisites
 
-- An external tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
+- An external tenant. To create one, choose from the following methods:
+  - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/tutorials/marketplace) to set up an external tenant directly in Visual Studio Code.
+  - [Create a new external tenant](how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 - This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-    - Application Administrator
-    - Application Developer
-    - Cloud Application Administrator
+  - Application Administrator
+  - Application Developer
+  - Cloud Application Administrator
 
 ## Register the SPA and record identifiers
 
@@ -42,7 +44,7 @@ In this tutorial:
 
 [!INCLUDE [add-platform-redirect-url-react](./includes/register-app/add-platform-redirect-url-angular.md)]
 
-## Grant API permissions
+## Grant admin consent
 
 [!INCLUDE [grant-api-permission-sign-in](./includes/register-app/grant-api-permission-sign-in.md)]
 
@@ -66,7 +68,7 @@ In this tutorial:
       - **Email one-time-passcode:** Allows new users to sign up and sign in using an email address as the sign-in name and email one-time passcode as their first factor credential.
 
          > [!NOTE]
-         > Email one-time passcode must be enabled at the tenant level (**All Identity Providers** > **Email One-time-passcode**) for this option to be available at the user flow level.
+         > Email one-time passcode must be enabled at the tenant level (**All Identity Providers** > **Email one-time-passcode**) for this option to be available at the user flow level.
 
 1. Select **Create**. The new user flow appears in the **User flows** list. If necessary, refresh the page.
 

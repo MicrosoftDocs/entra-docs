@@ -28,7 +28,7 @@ In this tutorial, learn to integrate Microsoft Entra ID with Cloudflare Zero Tru
   * See, [Quickstart: Create a new tenant in Microsoft Entra ID](~/fundamentals/create-new-tenant.md)
 * A Cloudflare Zero Trust account
   * If you don't have one, go to [Get started with Cloudflare's Zero Trust platform](https://dash.cloudflare.com/sign-up/teams)
-* One of the following roles: Global Administrator, Cloud Application Administrator, or Application Administrator.
+* One of the following roles: Cloud Application Administrator, or Application Administrator.
 
 
 ## Integrate organization identity providers with Cloudflare Access
@@ -95,8 +95,6 @@ See the [team domain](https://developers.cloudflare.com/cloudflare-one/glossary#
 5. Under **Expires**, select an expiration.
 6. Select **Add**.
 7. Under **Client secrets**, from the **Value** field, copy the value. Consider the value an application password. The example value appears, Azure values appear in the Cloudflare Access configuration.
-
-   :::image type="content" source="./media/cloudflare-integration/cloudflare-access-configuration.png" alt-text="Screenshot of Client secrets input.":::
 
 ### Permissions
 

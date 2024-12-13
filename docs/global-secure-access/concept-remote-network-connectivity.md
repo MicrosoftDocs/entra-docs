@@ -1,6 +1,6 @@
 ---
-title: Global Secure Access (preview) remote network connectivity
-description: Learn how remote network connectivity in Global Secure Access (preview) allows users to connect to your corporate network from a remote location, such as a branch office.
+title: Global Secure Access remote network connectivity
+description: Learn how remote network connectivity in Global Secure Access allows users to connect to your corporate network from a remote location, such as a branch office.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
@@ -11,7 +11,7 @@ ms.service: global-secure-access
 
 # Understand remote network connectivity
 
-Global Secure Access (preview) supports two connectivity options: installing a client on end-user device and configuring a remote network, for example a branch location with a physical router. Remote network connectivity streamlines how your end-users and guests connect from a remote network without needing to install the Global Secure Access Client.
+Global Secure Access supports two connectivity options: installing a client on end-user device and configuring a remote network, for example a branch location with a physical router. Remote network connectivity streamlines how your end-users and guests connect from a remote network without needing to install the Global Secure Access Client.
 
 This article describes the key concepts of remote network connectivity along with common scenarios where it's useful.
 
@@ -33,8 +33,7 @@ Remote networks, such as a branch location, are typically connected to the corpo
 
 To connect a remote network to Global Secure Access, you set up an Internet Protocol Security (IPSec) tunnel between your on-premises equipment and the Global Secure Access endpoint. Traffic that you specify is routed through the IPSec tunnel to the nearest Global Secure Access endpoint. You can apply security policies in the Microsoft Entra admin center.
 
-Global Secure Access remote network connectivity provides a secure solution between a remote network and the
-Global Secure Access service. It doesn't provide a secure connection between one remote network and another.
+Global Secure Access remote network connectivity provides a secure solution between a remote network and the Global Secure Access service. It doesn't provide a secure connection between one remote network and another.
 To learn more about secure remote network-to-remote network connectivity, see the [Azure Virtual WAN documentation](/azure/virtual-wan/).
  
 ## Why remote network connectivity is important for you? 
@@ -51,7 +50,7 @@ Sometimes, clients can't be installed on all devices. Global Secure Access curre
 ### I have guests on my network who don't have the client installed.  
 Guest devices on your network might not have the client installed. To ensure that those devices adhere to your network security policies, you need their traffic routed through the Global Secure Access endpoint. Remote network connectivity solves this problem. No clients need to be installed on guest devices. All outgoing traffic from the remote network is going through security evaluation by default.  
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 - [List all remote networks](how-to-list-remote-networks.md)

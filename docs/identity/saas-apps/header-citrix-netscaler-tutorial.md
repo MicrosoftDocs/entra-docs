@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 ---
 
@@ -348,7 +348,7 @@ To configure Citrix ADC for header-based authentication, complete the following 
 
     1. For **Type**, enter **INSERT_HTTP_HEADER**.
 
-    1. For **Header Name**, enter a header name (in this example, we use _SecretID_).
+    1. For **Header Name**, enter a header name (in this example, we use *SecretID*).
 
     1. For **Expression**, enter **aaa.USER.ATTRIBUTE("mySecretID")**, where **mySecretID** is the Microsoft Entra SAML claim that was sent to Citrix ADC.
 
@@ -383,9 +383,6 @@ To bind a rewrite policy to a virtual server by using the GUI:
 1. In the list of virtual servers, select the virtual server to which you want to bind the rewrite policy, and then select **Open**.
 
 1. On the **Load Balancing Virtual Server** pane, under **Advanced Settings**, select **Policies**. All policies that are configured for your NetScaler instance appear in the list.
- 
-    ![Screenshot that shows the "Configuration" tab with the "Name", "Action", and "Expression" fields highlighted and "Create" button selected.](./media/header-citrix-netscaler-tutorial/header05.png)
-
     ![Citrix ADC configuration - Load Balancing Virtual Server pane](./media/header-citrix-netscaler-tutorial/header06.png)
 
 1.	Select the check box next to the name of the policy you want to bind to this virtual server.

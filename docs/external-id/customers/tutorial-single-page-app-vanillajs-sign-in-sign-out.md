@@ -6,7 +6,7 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.custom: devx-track-js
 ms.topic: tutorial
 ms.date: 08/02/2023
@@ -17,7 +17,7 @@ ms.date: 08/02/2023
 
 This tutorial is the final part of a series that demonstrates building a Vanilla JS single-page application (SPA) and preparing it for authentication using the Microsoft Entra admin center. In [part 3 of this series](tutorial-single-page-app-vanillajs-configure-authentication.md), you created a Vanilla JS in Visual Studio Code and configured it for authentication. This final step shows you how to add sign-in and sign-out functionality to the app.
 
-In this tutorial;
+In this tutorial, you'll;
 
 > [!div class="checklist"]
 > * Add code to the *index.html* file to create the user interface

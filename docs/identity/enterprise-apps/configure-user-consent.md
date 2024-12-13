@@ -8,9 +8,9 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: how-to
-ms.date: 10/31/2023
+ms.date: 09/16/2024
 ms.author: jomondi
-ms.reviewer: phsignor, yuhko
+ms.reviewer: phsignor, ergreenl
 ms.custom: enterprise-apps
 zone_pivot_groups: enterprise-apps-minus-former-powershell
 
@@ -26,12 +26,15 @@ Before an application can access your organization's data, a user must grant the
 
 To reduce the risk of malicious applications attempting to trick users into granting them access to your organization's data, we recommend that you allow user consent only for applications that have been published by a [verified publisher](~/identity-platform/publisher-verification-overview.md).
 
+> [!NOTE]
+> Applications that requires users to be assigned to the application must have their permissions consented by an administrator, even if the user consent policies for your directory would otherwise allow a user to consent on behalf of themselves.
+
 ## Prerequisites
 
 To configure user consent, you need:
 
 - A user account. If you don't already have one, you can [create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- A Global Administrator role.
+- A [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) role.
 
 ## Configure user consent settings
 
@@ -41,7 +44,7 @@ To configure user consent, you need:
 
 To configure user consent settings through the Microsoft Entra admin center:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Consent and permissions** > **User consent settings**.
 
@@ -59,7 +62,7 @@ To choose which app consent policy governs user consent for applications, you ca
 
 ### Connect to Microsoft Graph PowerShell
 
-Connect to Microsoft Graph PowerShell using the least-privilege permission needed. For reading the current user consent settings, use *Policy.Read.All*. For reading and changing the user consent settings, use *Policy.ReadWrite.Authorization*. You need to sign in as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+Connect to Microsoft Graph PowerShell using the least-privilege permission needed. For reading the current user consent settings, use *Policy.Read.All*. For reading and changing the user consent settings, use *Policy.ReadWrite.Authorization*. You need to sign in as a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
 ```powershell
 Connect-MgGraph -Scopes "Policy.ReadWrite.Authorization"
@@ -76,7 +79,7 @@ $body = @{
         "managePermissionGrantsForOwnedResource.{other-current-policies}" 
     )
 }
-Update-MgPolicyAuthorizationPolicy -AuthorizationPolicyId authorizationPolicy -BodyParameter $body
+Update-MgPolicyAuthorizationPolicy -BodyParameter $body
 
 ```
 
@@ -91,7 +94,7 @@ $body = @{
         "managePermissionGrantsForOwnedResource.{other-current-policies}"
     )
 }
-Update-MgPolicyAuthorizationPolicy -AuthorizationPolicyId authorizationPolicy -BodyParameter $body
+Update-MgPolicyAuthorizationPolicy -BodyParameter $body
 ```
 
 Replace `{consent-policy-id}` with the ID of the policy you want to apply. You can choose a [custom app consent policy](manage-app-consent-policies.md#create-a-custom-app-consent-policy-using-powershell) that you've created, or you can choose from the following built-in policies:
@@ -116,7 +119,7 @@ $body = @{
 
 :::zone pivot="ms-graph"
 
-Use the [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) to choose which app consent policy governs user consent for applications. You need to sign in as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+Use the [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) to choose which app consent policy governs user consent for applications. You need to sign in as a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
 To disable user consent, ensure that the consent policies (`PermissionGrantPoliciesAssigned`) include other current `ManagePermissionGrantsForOwnedResource.*` policies if any while updating the collection. This way, you can maintain your current configuration for user consent settings and other resource consent settings.
 

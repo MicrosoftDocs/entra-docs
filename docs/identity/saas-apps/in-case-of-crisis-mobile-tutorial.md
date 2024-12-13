@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 04/15/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and In Case of Crisis - Mobile so that I can control who has access to In Case of Crisis - Mobile, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -34,7 +34,7 @@ To get started, you need the following items:
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
-* In Case of Crisis - Mobile supports **IDP** initiated SSO.
+* In Case of Crisis - Mobile supports only **IDP** initiated SSO.
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
@@ -80,13 +80,13 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Basic SAML Configuration** section the application is pre-configured in **IDP** initiated mode and the necessary URLs are already pre-populated with Azure. The user needs to save the configuration by clicking the **Save** button.
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Raw)** and select **Download** to download the certificate and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
-	![Screenshot for The Certificate download link.](common/certificateraw.png)
+	![Screenshot shows the Certificate download link.](common/certificatebase64.png "Certificate")
 
-1. Navigate to the **Manage** section on left side of page, click on **Properties tab** then copy the **User access URL** and save it on your computer.
+6. On the **Set up In Case of Crisis - Mobile.** section, copy the appropriate URL(s) as per your requirement.
 
-	![Screenshot for Single sign-on properties.](./media/in-case-of-crisis-mobile-tutorial/properties.png)
+	![Screenshot shows to copy configuration appropriate URL.](common/copy-configuration-urls.png "Attributes")
 
 <a name='create-an-azure-ad-test-user'></a>
 
@@ -120,11 +120,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure In Case of Crisis - Mobile SSO
 
-To configure single sign-on on **In Case of Crisis - Mobile** side, you need to send the downloaded **Certificate (Raw)** and copied **User access URL** from Azure portal to [In Case of Crisis - Mobile support team](https://www.rockdovesolutions.com/features/enterprise-ready). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **In Case of Crisis - Mobile** side, you need to send the downloaded **Certificate (Raw)** and copied **User access URL** from Azure portal to [In Case of Crisis - Mobile support team](https://www.rockdovesolutions.com/in-case-of-crisis-microsoft-teams-integration). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create In Case of Crisis - Mobile test user
 
-In this section, you create a user called Britta Simon in In Case of Crisis - Mobile. Work with [In Case of Crisis - Mobile support team](https://www.rockdovesolutions.com/features/enterprise-ready) to add the users in the In Case of Crisis - Mobile platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in In Case of Crisis - Mobile. Work with [In Case of Crisis - Mobile support team](https://www.rockdovesolutions.com/in-case-of-crisis-microsoft-teams-integration) to add the users in the In Case of Crisis - Mobile platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 

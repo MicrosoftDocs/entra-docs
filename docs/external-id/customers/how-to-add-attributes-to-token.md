@@ -6,7 +6,7 @@ author: msmimart
 manager: celestedg
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
 ms.date: 01/19/2024
 ms.author: mimart
@@ -15,6 +15,8 @@ ms.custom: it-pro
 ---
 
 # Add user attributes to token claims  
+
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 User attributes are values collected from the user during self-service sign-up. In addition to built-in user attributes, you can create custom attributes when you need to collect additional information. Because your application might rely on certain user attributes to function as designed, you can add any of these attributes to the token that is sent from Microsoft Entra ID to your application.
 

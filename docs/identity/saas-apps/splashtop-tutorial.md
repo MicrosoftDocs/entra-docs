@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Splashtop so that I can control who has access to Splashtop, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -133,15 +133,12 @@ In this section, you will need to apply for a new SSO method from [Splashtop web
 
 	![Screenshot shows the Single Sign On page where you can select Apply for new S S O method.](media/splashtop-tutorial/new-method.png)
 
-1. On the applying window, give an **SSO name**. For example, New Azure, then select **Azure** as the IDP type, and insert **Login URL** and **Microsoft Entra Identifier** copied from Splashtop application on Azure portal.
-
-	![Screenshot shows the Apply for S S O method page where you can enter a name and other information.](media/splashtop-tutorial/new-azure.png)
-
+1. In the **Apply for SSO Method** window, give an **SSO name**, for example, *New Azure*.
+1. Select **Azure** as the IDP type, and insert **Login URL** and **Microsoft Entra Identifier** copied from Splashtop application on Azure portal.
 1. For certificate info, right-click on the cert file downloaded from Splashtop application on Azure portal, edit it with Notepad, then copy the contents, paste it in **Download Certificate (Base64)** field.
 
 	![Screenshot show selecting a certificate file and opening it with Notepad.](media/splashtop-tutorial/certificate.png)
 	![Screenshot shows the contents of the certificate file.](media/splashtop-tutorial/file.png)
-	![Screenshot shows the Download Certificate text box.](media/splashtop-tutorial/azure.png)
 
 1. That's it! Click **Save** and Splashtop SSO validation team will contact you for the verification info, then activate the SSO method.
 

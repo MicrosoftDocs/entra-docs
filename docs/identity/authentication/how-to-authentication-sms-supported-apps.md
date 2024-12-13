@@ -5,7 +5,7 @@ description: Learn which apps are supported for users to sign in to Microsoft En
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 03/16/2023
+ms.date: 11/27/2024
 ms.author: justinha
 author: aanjusingh
 manager: amycolannino
@@ -42,8 +42,8 @@ For the same reason, Microsoft Office mobile apps (except Microsoft Teams, Compa
 
 | Unsupported Microsoft apps| Examples |
 | --- | --- |
-| Native desktop Microsoft apps | Microsoft Teams, O365 apps, Word, Excel, etc.|
-| Native mobile Microsoft apps (except Microsoft Teams, Company portal, and Microsoft Azure) | Outlook, Edge, Power BI, Stream, SharePoint, Power Apps, Word, etc.|
+| Native desktop Microsoft apps | Microsoft Teams, O365 apps, Word, Excel, and so on.|
+| Native mobile Microsoft apps (except Microsoft Teams, Company portal, and Microsoft Azure) | Outlook, Edge, Power BI, Stream, SharePoint, Power Apps, Word, and so on.|
 | Microsoft 365 web apps (accessed directly on web) | [Outlook](https://outlook.live.com/owa/), [Word](https://office.live.com/start/Word.aspx), [Excel](https://office.live.com/start/Excel.aspx), [PowerPoint](https://office.live.com/start/PowerPoint.aspx)|  
 
 ## Support for Non-Microsoft apps 

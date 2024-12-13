@@ -6,7 +6,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 12/03/2024
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 
@@ -100,3 +100,8 @@ For Example:
 $credential = Get-Credential 
 Set-AADCloudSyncRestrictedPermissions -Credential $credential  
 ```
+
+## Next Steps
+
+- [Understand group Managed Service Accounts](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview)
+- [Understand gMSA accounts with cloud sync](gmsa-cloud-sync.md)

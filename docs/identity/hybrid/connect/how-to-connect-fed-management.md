@@ -10,7 +10,7 @@ ms.assetid: 2593b6c6-dc3f-46ef-8e02-a8e2dc4e9fb9
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 12/05/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -172,7 +172,7 @@ It's easy to add a domain to be federated with Microsoft Entra ID by using Micro
 
    ![Screenshot of the "Additional tasks" pane for selecting "Add an additional Microsoft Entra domain".](./media/how-to-connect-fed-management/AdditionalDomain1.PNG)
 
-1. On the next page of the wizard, provide the global administrator credentials for Microsoft Entra ID.
+1. On the next page of the wizard, provide the Hybrid Administrator credentials for Microsoft Entra ID.
 
    ![Screenshot that shows the "Additional tasks" pane for selecting "Add an additional Microsoft Entra domain".](./media/how-to-connect-fed-management/AdditionalDomain2.PNG)
 
@@ -184,7 +184,7 @@ It's easy to add a domain to be federated with Microsoft Entra ID by using Micro
 
    ![Screenshot of the "Additional tasks" pane, showing how to add an additional Microsoft Entra domain.](./media/how-to-connect-fed-management/AdditionalDomain4.PNG)
 
-    After you choose the domain, the wizard informs you about further actions that it will take and the impact of the configuration. In some cases, if you select a domain that isn't yet verified in Microsoft Entra ID, the wizard helps you verify the domain. For more information, see [Add your custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.md).
+    After you choose the domain, the wizard informs you about further actions that it will take and the impact of the configuration. In some cases, if you select a domain that isn't yet verified in Microsoft Entra ID, the wizard helps you verify the domain. For more information, see [Add your custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.yml).
 
 1. Select **Next**. 
 

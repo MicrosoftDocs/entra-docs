@@ -11,8 +11,8 @@
         "minAdditionsToFile": 10,
         "maxFilesChanged": 50,
         "labels": [
-            "label:active-directory/svc",
-            "label:app-mgmt/subsvc"
+            "label:entra-id/svc",
+            "label:enterprise-apps/subsvc"
         ]
     },
     "areas": [

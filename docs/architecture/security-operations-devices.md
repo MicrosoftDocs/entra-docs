@@ -62,7 +62,7 @@ From the Azure portal, you can view the Microsoft Entra audit logs and download 
 
 * **[Microsoft Defender for Cloud Apps](/defender-cloud-apps/what-is-defender-for-cloud-apps)** – enables you to discover and manage apps, govern across apps and resources, and check your cloud apps’ compliance.
 
-* **[Securing workload identities with Identity Protection Preview](~/id-protection/concept-workload-identity-risk.md)** - Used to detect risk on workload identities across sign-in behavior and offline indicators of compromise.
+* **[Securing workload identities with Microsoft Entra ID Protection](~/id-protection/concept-workload-identity-risk.md)** - Used to detect risk on workload identities across sign-in behavior and offline indicators of compromise.
 
 Much of what you'll monitor and alert on are the effects of your Conditional Access policies. You can use the [Conditional Access insights and reporting workbook](~/identity/conditional-access/howto-conditional-access-insights-reporting.md) to examine the effects of one or more Conditional Access policies on your sign-ins, and the results of policies including device state. This workbook enables you to view a summary, and identify the effects over a specific time period. You can also use the workbook to investigate the sign-ins of a specific user.
 
@@ -92,7 +92,7 @@ You can also use [Microsoft Intune to set and monitor device compliance policies
 
 It might not be possible to block access to all cloud and software-as-a-service applications with Conditional Access policies requiring compliant devices.
 
-[Mobile device management](/windows/client-management/mdm/) (MDM) helps you keep Windows 10 devices compliant. With Windows version 1809, we released a [security baseline](/windows/client-management/mdm/) of policies. Microsoft Entra ID can [integrate with MDM](/windows/client-management/azure-active-directory-integration-with-mdm) to enforce device compliance with corporate policies, and can report a device’s compliance status.
+[Mobile device management (MDM)](/windows/client-management/mdm/) helps you keep Windows 10 devices compliant. With Windows version 1809, we released a [security baseline](/windows/client-management/mdm/) of policies. Microsoft Entra ID can [integrate with MDM](/windows/client-management/azure-active-directory-integration-with-mdm) to enforce device compliance with corporate policies, and can report a device’s compliance status.
 
 | What to monitor| Risk Level| Where| Filter/sub-filter| Notes |
 | - |- |- |- |- |
@@ -145,7 +145,7 @@ AuditLogs
 
 ## Device administrator roles
 
-Global administrators and cloud Device Administrators automatically get local administrator rights on all Microsoft Entra joined devices. It’s important to monitor who has these rights to keep your environment safe.
+The [Microsoft Entra Joined Device Local Administrator](../identity/role-based-access-control/permissions-reference.md#microsoft-entra-joined-device-local-administrator) and the [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) roles automatically get local administrator rights on all Microsoft Entra joined devices. It’s important to monitor who has these rights to keep your environment safe.
 
 | What to monitor| Risk Level| Where| Filter/sub-filter| Notes |
 | - |- |- |- |- |

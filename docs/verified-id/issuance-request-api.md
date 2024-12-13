@@ -48,7 +48,6 @@ Content-Type: application/json
 Authorization: Bearer <token>
 
 {
-    "includeQRCode": true,
     "callback": {
         "url": "https://contoso.com/api/issuer/issuanceCallback",
         "state": "Aaaabbbb11112222",
@@ -72,7 +71,7 @@ The issuance request payload contains information about your verifiable credenti
 
 ```json
 {
-  "includeQRCode": false,
+  "authority": "did:web:verifiedid.contoso.com",
   "callback": {
     "url": "https://contoso.com/api/issuer/issuanceCallback",
     "state": "de19cb6b-36c1-45fe-9409-909a51292a9c",
@@ -80,12 +79,11 @@ The issuance request payload contains information about your verifiable credenti
       "api-key": "OPTIONAL API-KEY for CALLBACK EVENTS"
     }
   },
-  "authority": "did:web:verifiedid.contoso.com",
   "registration": {
     "clientName": "Verifiable Credential Expert Sample"
   },
   "type": "VerifiedCredentialExpert",
-  "manifest": "https://verifiedid.did.msidentity.com/v1.0/tenants/12345678-0000-0000-0000-000000000000/verifiableCredentials/contracts/MTIzNDU2NzgtMDAwMC0wMDAwLTAwMDAtMDAwMDAwMDAwMDAwdmVyaWZpZWRjcmVkZW50aWFsZXhwZXJ0/manifest",
+  "manifest": "https://verifiedid.did.msidentity.com/v1.0/tenants/aaaabbbb-0000-cccc-1111-dddd2222eeee/verifiableCredentials/contracts/MTIzNDU2NzgtMDAwMC0wMDAwLTAwMDAtMDAwMDAwMDAwMDAwdmVyaWZpZWRjcmVkZW50aWFsZXhwZXJ0/manifest",
   "pin": {
     "value": "3539",
     "length": 4
@@ -102,7 +100,7 @@ The payload contains the following properties:
 
 |Parameter |Type  | Description |
 |---------|---------|---------|
-| `includeQRCode` |  Boolean |   Determines whether a QR code is included in the response of this request. Present the QR code and ask the user to scan it. Scanning the QR code launches the authenticator app with this issuance request. Possible values are `true` (default) or `false`. When you set the value to `false`, use the return `url` property to render a deep link.  |
+| `includeQRCode` |  Boolean | Optional. Determines whether a QR code is included in the response of this request. Present the QR code and ask the user to scan it. Scanning the QR code launches the authenticator app with this issuance request. Possible values are `true` or `false` (default). When you set the value to `false`, use the return `url` property to render a deep link.  |
 |`callback`|  [Callback](#callback-type)| Mandatory. Allows the developer to asynchronously get information on the flow during the verifiable credential issuance process. For example, the developer might want a call when the user has scanned the QR code or if the issuance request succeeds or fails.|
 | `authority` | string|  The issuer's decentralized identifier (DID). For more information, see [Gather credentials and environment details to set up your sample application](verifiable-credentials-configure-issuer.md).|
 | `registration` | [RequestRegistration](#requestregistration-type)|  Provides information about the issuer that can be displayed in the authenticator app. |
@@ -140,7 +138,7 @@ The Request Service REST API generates several events to the callback endpoint. 
 
 |Property |Type |Description |
 |---------|---------|---------|
-| `url` | string| URI to the callback endpoint of your application. The URI must point to a reachable endpoint on the internet otherwise the service will throw callback URL unreadable error. Accepted formats IPv4, IPv6 or DNS resolvable hostname |
+| `url` | string| URI to the callback endpoint of your application. The URI must point to a reachable endpoint on the internet otherwise the service will throw callback URL unreadable error. Accepted formats IPv4, IPv6 or DNS resolvable hostname. To harden your network, see [FAQ](verifiable-credentials-faq.md#network-hardening-for-callback-events). |
 | `state` | string| Correlates the callback event with the state passed in the original payload. |
 | `headers` | string| Optional. You can include a collection of HTTP headers required by the receiving end of the POST message. The current supported header values are the `api-key` or the `Authorization` headers. Any other header will throw an invalid callback header error|
 
@@ -164,7 +162,7 @@ If successful, this method returns a response code (*HTTP 201 Created*), and a c
 ```json
 {  
     "requestId": "799f23ea-5241-45af-99ad-cf8e5018814e",  
-    "url": "openid://vc?request_uri=https://verifiedid.did.msidentity.com/v1.0/12345678-0000-0000-0000-000000000000/verifiableCredentials/request/178319f7-20be-4945-80fb-7d52d47ae82e",  
+    "url": "openid://vc?request_uri=https://verifiedid.did.msidentity.com/v1.0/00001111-aaaa-2222-bbbb-3333cccc4444/verifiableCredentials/request/178319f7-20be-4945-80fb-7d52d47ae82e",  
     "expiry": 1622227690,  
     "qrCode": "data:image/png;base64,iVBORw0KggoA<SNIP>"  
 } 

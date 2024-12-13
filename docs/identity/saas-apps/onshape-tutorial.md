@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 
@@ -91,7 +91,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	| companyName | <COMPANY_NAME> |
 
     > [!NOTE]
-    > You _must_ change the value of the **companyName** attribute to the *domain prefix* of your Onshape enterprise. For example, if you access the Onshape application by using a URL like `https://acme.onshape.com`, your domain prefix is *acme*. The attribute value must be only the prefix, not the entire DNS name.
+    > You *must* change the value of the **companyName** attribute to the *domain prefix* of your Onshape enterprise. For example, if you access the Onshape application by using a URL like `https://acme.onshape.com`, your domain prefix is *acme*. The attribute value must be only the prefix, not the entire DNS name.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 

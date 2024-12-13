@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 
@@ -94,8 +94,6 @@ Follow these steps to enable Microsoft Entra SSO.
    ![image](common/default-attributes.png)
 
 7. Recurly application expects to enable token encryption in order to make SSO work. To activate token encryption, Browse to **Identity** > **Applications** > **Enterprise applications** > select your application > **Token encryption**. For more information see the article [Configure Microsoft Entra SAML token encryption](~/identity/enterprise-apps/howto-saml-token-encryption.md).
-
-   ![Screenshot shows the activation of Token Encryption.](./media/recurly-tutorial/token.png "Token Encryption")
 
    1. Please contact [Recurly Support](mailto:support@recurly.com) to get a copy of the certificate to import.
    1. After importing the certificate, select the `...` next to the thumbprint status, click `Activate token encryption certificate`.

@@ -2,13 +2,13 @@
 title: Azure services that support Microsoft Entra authentication
 description: List of services that support Microsoft Entra authentication
 
-author: barclayn
-ms.author: barclayn
-ms.date: 08/01/2023
+author: rwike77
+ms.author: ryanwi
+ms.date: 06/14/2024
 ms.topic: conceptual
 ms.service: entra-id
 ms.subservice: managed-identities
-manager: amycolannino
+manager: CelesteDG
 ---
 
 # Azure services that support Microsoft Entra authentication
@@ -21,6 +21,7 @@ The following services support Microsoft Entra authentication. New services are 
 | Azure App Configuration         | [Authorize access to Azure App Configuration using Microsoft Entra ID](/azure/azure-app-configuration/concept-enable-rbac)                                                                                                           |
 | Azure App Services              | [Configure your App Service or Azure Functions app to use Microsoft Entra login](/azure/app-service/configure-authentication-provider-aad)    |
 | Azure Batch                     | [Authenticate Batch service solutions with Active Directory](/azure/batch/batch-aad-auth)         |
+| Azure Cache for Redis           | [Use Microsoft Entra ID for cache authentication](/azure/azure-cache-for-redis/cache-azure-active-directory-for-authentication) |
 | Azure Container Registry        | [Authenticate with an Azure container registry](/azure/container-registry/container-registry-authentication)                                                                       |
 | Azure AI services        | [Authenticate requests to Azure AI services](/azure/ai-services/authentication?tabs=powershell#authenticate-with-azure-active-directory)                                                                          |
 | Azure Communication Services    | [Authenticate to Azure Communication Services](/azure/communication-services/concepts/authentication)   |
@@ -36,7 +37,6 @@ The following services support Microsoft Entra authentication. New services are 
 | Azure Kubernetes Service (AKS)  | [Control access to cluster resources using Kubernetes role-based access control and Microsoft Entra identities in Azure Kubernetes Service](/azure/aks/azure-ad-rbac)                                                                                                                           |
 | Azure Machine Learning Services | [Set up authentication for Azure Machine Learning resources and workflows](/azure/machine-learning/how-to-setup-authentication)                                                                                         |
 | Azure Maps                      | [Manage authentication in Azure Maps](/azure/azure-maps/how-to-manage-authentication) |
-| Azure Media services            | [Access the Azure Media Services API with Microsoft Entra authentication](/previous-versions/media-services/previous/media-services-use-aad-auth-to-access-ams-api) |
 | Azure Monitor                   | [Microsoft Entra authentication for Application Insights (Preview)](/azure/azure-monitor/app/azure-ad-authentication?tabs=net)                                                                                              |
 | Azure Resource Manager          | [Azure security baseline for Azure Resource Manager](/security/benchmark/azure/baselines/azure-resource-manager-security-baseline?toc=/azure/azure-resource-manager/management/toc.json)
 | Azure Service Fabric            | [Set up Microsoft Entra ID for client authentication](/azure/service-fabric/service-fabric-cluster-creation-setup-aad)                                                                                                        |

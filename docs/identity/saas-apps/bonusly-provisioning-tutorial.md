@@ -2,15 +2,14 @@
 title: 'Tutorial: Configure Bonusly for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Bonusly.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Bonusly so that I can streamline the user management process and ensure that users have the appropriate access to Bonusly.
 ---
@@ -64,7 +63,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Bonusly based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Bonusly, following the instructions provided in the [Bonusly single sign-on tutorial](bonus-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features compliment each other.
+> You may also choose to enable SAML-based single sign-on for Bonusly, following the instructions provided in the [Bonusly single sign-on tutorial](bonus-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
 
 <a name='to-configure-automatic-user-provisioning-for-bonusly-in-azure-ad'></a>
 
@@ -117,8 +116,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 11. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Bonusly**.
 
-	:::image type="content" source="./media/bonusly-provisioning-tutorial/UserMappings.png" alt-text="Screenshot of the Mappings section. Under Name, Synchronize Microsoft Entra users to Bonusly is highlighted." border="false":::
-
 12. Review the user attributes that are synchronized from Microsoft Entra ID to Bonusly in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Bonusly for update operations. Select the **Save** button to commit any changes.
 
 	:::image type="content" source="./media/bonusly-provisioning-tutorial/UserAttributeMapping.png" alt-text="Screenshot of the Attribute Mappings page. A table lists Microsoft Entra attributes, corresponding Bonusly attributes, and the matching status." border="false":::
@@ -135,7 +132,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 16. When you are ready to provision, click **Save**.
 
-	:::image type="content" source="./media/bonusly-provisioning-tutorial/SaveProvisioning.png" alt-text="Screenshot of the Bonusly - Provisioning page, with the Save button highlighted." border="false":::
+	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
 This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on Bonusly.
 

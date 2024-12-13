@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Communifire so that I can control who has access to Communifire, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -105,9 +105,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     a. Select **Sign SAML response and assertion** from the **Signing Option**.
 
-    b. Click **Save**
-
-    ![Communifire Signing option](./media/communifire-tutorial/tutorial-communifire-signing-option.png)
+    b. Click **Save**.
 
 8. On the **Set up Communifire** section, copy the appropriate URL(s) as per your requirement.
 

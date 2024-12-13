@@ -2,15 +2,14 @@
 title: 'Tutorial: Configure Foodee for automatic user provisioning by using Microsoft Entra ID'
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Foodee.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Foodee so that I can streamline the user management process and ensure that users have the appropriate access to Foodee.
 ---
@@ -52,7 +51,7 @@ Before you configure Foodee for automatic user provisioning by using Microsoft E
 
 1. Sign in to [Foodee](https://www.food.ee/login/), and then select your tenant ID.
 
-	:::image type="content" source="media/Foodee-provisioning-tutorial/tenant.png" alt-text="Screenshot of the main menu of the Foodee enterprise portal. A tenant id placeholder is visible in the menu." border="false":::
+	:::image type="content" source="media/Foodee-provisioning-tutorial/tenant.png" alt-text="Screenshot of the main menu of the Foodee enterprise portal. A Tenant ID placeholder is visible in the menu." border="false":::
 
 1. Under **Enterprise portal**, select **Single Sign On**.
 
@@ -125,16 +124,12 @@ Configure automatic user provisioning for Foodee in Microsoft Entra ID by doing 
 
 1. Under **Mappings**, select **Synchronize Microsoft Entra users to Foodee**.
 
-	:::image type="content" source="media/Foodee-provisioning-tutorial/usermapping.png" alt-text="Screenshot of the Mappings section. Under Name, Synchronize Microsoft Entra users to Foodee is highlighted." border="false":::
-
 1. Under **Attribute Mappings**, review the user attributes that are synchronized from Microsoft Entra ID to Foodee. The attributes that are selected as **Matching** properties are used to match the *user accounts* in Foodee for update operations. 
 
 	:::image type="content" source="media/Foodee-provisioning-tutorial/userattribute.png" alt-text="Screenshot of the Attribute Mappings page. A table lists Microsoft Entra ID and Foodee attributes and the matching precedence." border="false":::
 
 1. To commit your changes, select **Save**.
 1. Under **Mappings**, select **Synchronize Microsoft Entra groups to Foodee**.
-
-	:::image type="content" source="media/Foodee-provisioning-tutorial/groupmapping.png" alt-text="Screenshot of the Mappings section. Under Name, Synchronize Microsoft Entra groups to Foodee is highlighted." border="false":::
 
 1. Under **Attribute Mappings**, review the user attributes that are synchronized from Microsoft Entra ID to Foodee. The attributes that are selected as **Matching** properties are used to match the *group accounts* in Foodee for update operations.
 

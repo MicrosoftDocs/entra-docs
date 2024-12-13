@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Microsoft Entra SAML Toolkit so that I can control who has access to Microsoft Entra SAML Toolkit, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -136,9 +136,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	![Microsoft Entra SAML Toolkit Register](./media/saml-toolkit-tutorial/register.png)
 
-1. Click on the **SAML Configuration**.
-
-	![Microsoft Entra SAML Toolkit SAML Configuration](./media/saml-toolkit-tutorial/saml-configure.png)
+1. In the **SAML Toolkit** window, select **SAML Configuration**.
 
 1. Click **Create**.
 

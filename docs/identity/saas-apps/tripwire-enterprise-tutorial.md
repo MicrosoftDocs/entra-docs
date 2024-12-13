@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 01/02/2023
+ms.date: 03/25/2024
 ms.author: jeedes
 
 
@@ -31,7 +31,7 @@ You'll configure and test Microsoft Entra single sign-on for Tripwire Enterprise
 To integrate Microsoft Entra ID with Tripwire Enterprise, you need:
 
 * A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * Tripwire Enterprise single sign-on (SSO) enabled subscription.
 
@@ -88,7 +88,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 ## Configure Tripwire Enterprise SSO
 
-To configure single sign-on in Tripwire Enterprise, please see **Using Tripwire Enterprise with SAML Authentication** section in the Tripwire Enterprise Hardeing Guide, available for download on the [Tripwire Customer Center](https://tripwireinc.force.com/customers/home). If you require assistance, contact [Tripwire Enterprise support team](mailto:support@tripwire.com).
+To configure single sign-on in Tripwire Enterprise, please see **Using Tripwire Enterprise with SAML Authentication** section in the Tripwire Enterprise Hardening Guide, available for download on the [Tripwire Customer Center](https://tripwireinc.force.com/customers/home). If you require assistance, contact [Tripwire Enterprise support team](mailto:support@tripwire.com).
 
 ### Create Tripwire Enterprise test user
 

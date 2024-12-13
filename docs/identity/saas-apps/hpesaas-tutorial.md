@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and HPE SaaS so that I can control who has access to HPE SaaS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -129,7 +129,7 @@ To configure single sign-on on **HPE SaaS** side, you need to send the downloade
 
 ### Create HPE SaaS test user
 
-In this section, you create a user called Britta Simon in HPE SaaS. Work with [HPE SaaS support team](https://www.sas.com/en_us/contact.html) to add the users in the HPE SaaS platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in HPE SaaS. Work with [HPE SaaS support team](https://support.hpe.com/connect/s/product?language=en_US) to add the users in the HPE SaaS platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 

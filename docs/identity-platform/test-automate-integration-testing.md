@@ -17,10 +17,10 @@ ms.topic: how-to
 
 As a developer, you want to run automated integration tests on the apps you develop. Calling your API protected by Microsoft identity platform (or other protected APIs such as [Microsoft Graph](/graph/)) in automated integration tests is a challenge.  Microsoft Entra ID often requires an interactive user sign-in prompt, which is difficult to automate. This article describes how you can use a non-interactive flow, called [Resource Owner Password Credential Grant (ROPC)](v2-oauth-ropc.md), to automatically sign in users for testing.
 
-To prepare for your automated integration tests, create some test users, create and configure an app registration, and potentially make some configuration changes to your tenant.  Some of these steps require admin privileges.  Also, Microsoft recommends that you _do not_ use the ROPC flow in a production environment.  [Create a separate test tenant](test-setup-environment.md) that you are an administrator of so you can safely and effectively run your automated integration tests.
+To prepare for your automated integration tests, create some test users, create and configure an app registration, and potentially make some configuration changes to your tenant.  Some of these steps require admin privileges.  Also, Microsoft recommends that you *do not* use the ROPC flow in a production environment.  [Create a separate test tenant](test-setup-environment.md) that you are an administrator of so you can safely and effectively run your automated integration tests.
 
 > [!WARNING]
-> Microsoft recommends you do _not_ use the ROPC flow in a production environment. In most production scenarios, more secure alternatives are available and recommended. The ROPC flow requires a very high degree of trust in the application, and carries risks which are not present in other authentication flows. You should only use this flow for testing purposes in a [separate test tenant](test-setup-environment.md), and only with test users.
+> Microsoft recommends you do *not* use the ROPC flow in a production environment. In most production scenarios, more secure alternatives are available and recommended. The ROPC flow requires a very high degree of trust in the application, and carries risks which are not present in other authentication flows. You should only use this flow for testing purposes in a [separate test tenant](test-setup-environment.md), and only with test users.
 
 > [!IMPORTANT]
 >
@@ -103,7 +103,7 @@ Replace *{tenant}* with your tenant ID, *{your_client_ID}* with the client ID of
 
 ## Exclude test apps and users from your MFA policy
 
-Your tenant likely has a Conditional Access policy that [requires multifactor authentication (MFA) for all users](~/identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md), as recommended by Microsoft.  MFA won't work with ROPC, so you'll need to exempt your test applications and test users from this requirement.
+Your tenant likely has a Conditional Access policy that [requires multifactor authentication (MFA) for all users](~/identity/conditional-access/policy-all-users-mfa-strength.md), as recommended by Microsoft.  MFA won't work with ROPC, so you'll need to exempt your test applications and test users from this requirement.
 
 To exclude user accounts:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).   

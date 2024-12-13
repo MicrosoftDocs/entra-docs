@@ -38,7 +38,7 @@ An account in the Microsoft identity platform consists of:
   - To record that an account from one system of record (Microsoft Entra tenant A) has access to a resource in another system of record (Microsoft Entra tenant B), the account must be represented in the tenant where the resource is defined. This is done by creating a local record of the account from system A in system B.
   - This local record, that is the representation of the account, is bound to the original account.
   - MSAL exposes this local record as a `Tenant Profile`.
-  - Tenant Profile can have different attributes that are appropriate to the local context, such as Job Title, Office Location, Contact Information, etc.
+  - Tenant Profile can have different attributes that are appropriate to the local context, such as Job Title, Office Location, Contact Information, and so on.
 - Because an account may be present in one or more tenants, an account may have more than one profile.
 
 > [!NOTE]
@@ -63,7 +63,7 @@ In the above diagram:
   - A tenant profile for `tom@live.com` exists in each of these tenants.
 - Information about Tom and Bob in other tenants may differ from that in the system of record. They may differ by attributes such as Job title, Office Location, and so on. They may be members of groups and/or roles within each organization (Microsoft Entra tenant). We refer to this information as bob@contoso.com tenant profile.
 
-In the diagram, bob@contoso.com and tom@live.com have access to resources in different Microsoft Entra tenants. For more information, see [Add Microsoft Entra B2B collaboration users in the Azure portal](~/external-id/add-users-administrator.md).
+In the diagram, bob@contoso.com and tom@live.com have access to resources in different Microsoft Entra tenants. For more information, see [Add Microsoft Entra B2B collaboration users in the Azure portal](~/external-id/add-users-administrator.yml).
 
 ## Accounts and single sign-on (SSO)
 

@@ -28,6 +28,58 @@ Check this article regularly to learn about:
 > [!TIP]
 > To be notified of updates to this page, add this URL to your RSS feed reader:<br/>`https://learn.microsoft.com/api/search/rss?search=%22Azure+Active+Directory+breaking+changes+reference%22&locale=en-us`
 
+## August 2024
+
+### Federated Identity Credentials now use case-sensitive matching
+
+**Effective date:** September 2024
+
+**Protocol impacted:** Workload identity federation
+
+**Change**
+
+Previously, when matching the Federated Identity Credential (FIC) `issuer`, `subject`, and `audience` values against the corresponding `issuer`, `subject`, and `audience` values contained in the token sent to Microsoft Entra ID by an external IdP, case-insensitive matching was used. To provide more fine-grained control to customers, we're switching to enforcing case-sensitive matching. 
+
+Invalid example: 
+- Token subject: `repo:contoso/contoso-org:ref:refs/heads/main`
+- FIC subject: `repo:Contoso/Contoso-Org:ref:refs/heads/main`
+
+These two subject values don't case-sensitively match, so validation fails. The same mechanism is applied to `issuer` and `audience` validation. 
+
+This change will be applied initially to applications or managed identities created after `August 14th, 2024`.  Inactive applications or managed identities, determined by there being zero Workload Identity Federation requests made by said application or managed identity between the period `August 1st, 2024` to `August 31st, 2024`, are required to use case-sensitive matching starting `September 27th, 2024`. For active applications, case-insensitive matching comes at a later date to be communicated.  
+
+To better highlight failures due to case-insensitivity, we're revamping the error message for `AADSTS700213`. It will now state;
+
+```
+`AADSTS700213: No matching federated identity record found for presented assertion subject '{subject}'. Please note that matching is done using a case-sensitive comparison. Check your federated identity credential Subject, Audience, and Issuer against the presented assertion.` 
+```
+
+The placeholder `'{subject}'` provides the value of the subject claim contained in the token being sent from the external IdP to Microsoft Entra ID. This error template is also used for case-insensitive failures surrounding `issuer` and `audience` validation. If you encounter this error, you should find the Federated Identity Credential that corresponds to the `issuer`, `subject`, or `audience` listed in the error and confirm that the corresponding values are equivalent from a case-sensitive perspective. If there's a mismatch, you need to replace the current `issuer`, `subject`, or `audience` value in the FIC with the `issuer`, `subject`, or `audience` value that was contained in the error message.
+
+>[!NOTE]
+> For **Azure App Service** customers using GitHub Actions and running into this error, an option for addressing to this is to go to your workflow file under `/.github/workflows` in your GitHub repository and update the environment `name` property from `"Production"` to `"production"`. This guidance is applicable only for Azure App Service scenarios. If you are encountering this error in a different scenario, please refer to the guidance above. 
+
+## June 2024
+
+### Applications must be registered in a directory
+
+**Effective date**: June 2024
+
+**Endpoints impacted**: v2.0 and v1.0
+
+**Protocol impacted**: All flows
+
+**Change**
+
+Previously, when registering an application using the [Microsoft Entra app registrations experience](https://aka.ms/ra/prod), if the user was signed in with their personal Microsoft account (MSA), they could choose to only associate the application with their personal account.  That means the application wouldn't be associated with or contained in any directory (also referred to as 'tenant' or 'organization').  However, starting June 2024, all applications must be registered in a directory.   This could be an existing directory, or a new one that the personal Microsoft account user creates to house their Microsoft Entra applications and other Microsoft resources.  Users can easily create a new directory to use for this purpose by [joining the Microsoft 365 Developer Program](https://aka.ms/joinM365DeveloperProgram) or [signing up for Azure](https://aka.ms/signUpForAzure).
+
+Registering an application in a directory, instead of only associating it with a personal account, has various benefits.  These include:
+- Applications registered in a directory have more features available to them, such as the ability to add more than one owner to the app, and the ability to [publisher verify](publisher-verification-overview.md) the app.
+- The application is located in the same place as other Microsoft resources the developer uses, such as Azure resources.
+- The application receives improved resiliency benefits.
+
+This won't affect any existing applications, including existing applications that are only associated with a personal account.  Only the ability to register new applications will be affected.
+
 ## October 2023
 
 ### Updated RemoteConnect UX Prompt
@@ -38,7 +90,7 @@ Check this article regularly to learn about:
 
 **Protocol impacted**: RemoteConnect
 
-RemoteConnect is a cross-device flow that is used for Microsoft Authentication Broker and Microsoft Intune related scenarios involving [Primary Refresh Tokens](~/identity/devices/concept-primary-refresh-token.md). To help prevent phishing attacks, the RemoteConnect flow will be receiving updated UX language to call out that the remote device (the device which initiated the flow) will be able to access any applications used by your organization upon successful completion of the flow.
+RemoteConnect is a cross-device flow that is used for Microsoft Authentication Broker and Microsoft Intune related scenarios involving [Primary Refresh Tokens](~/identity/devices/concept-primary-refresh-token.md). To help prevent phishing attacks, the RemoteConnect flow is receiving updated UX language to call out that the remote device (the device which initiated the flow) will be able to access any applications used by your organization upon successful completion of the flow.
 
 The prompt that appears will look something like this: 
 
@@ -63,7 +115,7 @@ An email is considered to be domain-owner verified if:
 1. The email is from a Google account.
 1. The email was used for authentication using the one-time passcode (OTP) flow.
 
-It should also be noted that Facebook and SAML/WS-Fed accounts do not have verified domains.
+It should also be noted that Facebook and SAML/WS-Fed accounts don't have verified domains.
 
 ## May 2023
 
@@ -77,11 +129,11 @@ It should also be noted that Facebook and SAML/WS-Fed accounts do not have verif
 
 **Change**
 
-The Power BI Administrator role will be renamed to Fabric Administrator.  
+The Power BI Administrator role is renamed to Fabric Administrator.  
  
 On May 23, 2023, Microsoft unveiled Microsoft Fabric, which provides a Data Factory-powered data integration experience, Synapse-powered data engineering, data warehouse, data science, and real-time analytics experiences and business intelligence (BI) with Power BI — all hosted on a lake-centric SaaS solution. The tenant and capacity administration for these experiences are centralized in the Fabric Admin portal (previously known as the Power BI admin portal).  
 
-Starting June 2023, the Power BI Administrator role will be renamed to Fabric Administrator to align with the changing scope and responsibility of this role. All applications including Microsoft Entra ID, Microsoft Graph APIs, Microsoft 365, and GDAP will start to reflect the new role name over the course of several weeks. 
+Starting June 2023, the Power BI Administrator role is renamed to Fabric Administrator to align with the changing scope and responsibility of this role. All applications including Microsoft Entra ID, Microsoft Graph APIs, Microsoft 365, and GDAP will start to reflect the new role name over the course of several weeks. 
  
 As a reminder, your application code and scripts shouldn't make decisions based on role name or display name.
 
@@ -137,8 +189,8 @@ You can review the current text of the 50105 error and more on the error lookup 
 
 **Change**
 
-For single tenant applications, adding or updating the AppId URI validates that the domain in the HTTPS scheme URI is listed in the verified domain list in the external tenant or that the value uses the default scheme (`api://{appId}`) provided by Microsoft Entra ID. This could prevent applications from adding an AppId URI if the domain isn't in the verified domain list or the value doesn't use the default scheme.
-To find more information on verified domains, refer to the [custom domains documentation](~/fundamentals/add-custom-domain.md).
+For single tenant applications, adding or updating the AppId URI validates that the domain in the HTTPS scheme URI is listed in the verified domain list in the customer tenant or that the value uses the default scheme (`api://{appId}`) provided by Microsoft Entra ID. This could prevent applications from adding an AppId URI if the domain isn't in the verified domain list or the value doesn't use the default scheme.
+To find more information on verified domains, refer to the [custom domains documentation](~/fundamentals/add-custom-domain.yml).
 
 The change doesn't affect existing applications using unverified domains in their AppID URI. It validates only new applications or when an existing application updates an identifier URI or adds a new one to the identifierUri collection. The new restrictions apply only to URIs added to an app's identifierUris collection after October 15, 2021. AppId URIs already in an application's identifierUris collection when the restriction takes effect on October 15, 2021 will continue to function even if you add new URIs to that collection.
 
@@ -161,7 +213,7 @@ If a request fails the validation check, the application API for create/update w
 
 Applications using dynamic consent today are given all the permissions they have consent for, even if they weren't requested by name in the `scope` parameter. An app requesting only `user.read` but with consent to `files.read` can be forced to pass the Conditional Access requirement assigned for `files.read`, for example.
 
-To reduce the number of unnecessary Conditional Access prompts, Microsoft Entra ID is changing the way scopes are provided to applications so only explicitly requested scopes trigger Conditional Access. Applications relying on Microsoft Entra ID's previous behavior of including _all_ scopes in the token--whether requested or not--may break due to missing scopes.
+To reduce the number of unnecessary Conditional Access prompts, Microsoft Entra ID is changing the way scopes are provided to applications so only explicitly requested scopes trigger Conditional Access. Applications relying on Microsoft Entra ID's previous behavior of including *all* scopes in the token--whether requested or not--may break due to missing scopes.
 
 Apps will now receive access tokens with a mix of permissions: requested tokens and those they have consent for that don't require Conditional Access prompts. The scope of access for the token is reflected in the token response's `scope` parameter.
 
@@ -236,7 +288,7 @@ For more details, please see the [Azure Government blog post on this migration](
 
 Users with passwords longer than 256 characters who sign in directly to Microsoft Entra ID (not a federated IDP, like AD FS) will be asked to change their passwords before they can sign in. Admins may receive requests to help reset the user's password.
 
-The error in the sign-in logs will be similar to _AADSTS 50052: InvalidPasswordExceedsMaxLength_.
+The error in the sign-in logs will be similar to *AADSTS 50052: InvalidPasswordExceedsMaxLength*.
 
 Message: `The password entered exceeds the maximum length of 256. Please reach out to your admin to reset the password.`
 
@@ -254,7 +306,7 @@ The user is unable to log in because their password exceeds the permitted maximu
 
 **Protocol impacted**: OAuth and OIDC flows that use `response_type=query` - this covers the [authorization code flow](v2-oauth2-auth-code-flow.md) in some cases, and the [implicit flow](v2-oauth2-implicit-grant-flow.md).
 
-When an authentication response is sent from _login.microsoftonline.com_ to an application via HTTP redirect, the service will append an empty fragment to the reply URL. This prevents a class of redirect attacks by ensuring that the browser wipes out any existing fragment in the authentication request. No apps should have a dependency on this behavior.
+When an authentication response is sent from *login.microsoftonline.com* to an application via HTTP redirect, the service will append an empty fragment to the reply URL. This prevents a class of redirect attacks by ensuring that the browser wipes out any existing fragment in the authentication request. No apps should have a dependency on this behavior.
 
 
 ## August 2019

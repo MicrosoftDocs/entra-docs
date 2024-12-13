@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: tutorial
-ms.date: 09/08/2023
+ms.date: 08/06/2024
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
@@ -17,7 +17,7 @@ ms.collection: M365-identity-device-management
 
 # Add or remove group members automatically
 
-In Microsoft Entra ID, part of Microsoft Entra, you can automatically add or remove users to security groups or Microsoft 365 groups, so you don't always have to do it manually. Whenever any properties of a user or device change, Microsoft Entra ID evaluates all dynamic group rules in your Microsoft Entra organization to see if the change should add or remove members.
+In Microsoft Entra ID, part of Microsoft Entra, you can automatically add or remove users to security groups or Microsoft 365 groups, so you don't always have to do it manually. Whenever any properties of a user or device change, Microsoft Entra ID evaluates all rules for dynamic membership groups in your Microsoft Entra organization to see if the change should add or remove members.
 
 In this tutorial, you learn how to:
 > [!div class="checklist"]
@@ -29,9 +29,9 @@ If you don't have an Azure subscription, [create a free account](https://azure.m
 
 ## Prerequisites
 
-This feature requires one Microsoft Entra ID P1 or P2 license for you as the global administrator of the organization. If you don't have one, in Microsoft Entra ID, select **Licenses** > **Products** > **Try/Buy**.
+This feature requires one Microsoft Entra ID P1 or P2 license for the administrator of the organization. If you don't have one, in Microsoft Entra ID, select **Licenses** > **Products** > **Try/Buy**.
 
-You're not required to assign licenses to the users for them to be members in dynamic groups. You only need the minimum number of available Microsoft Entra ID P1 licenses in the organization to cover all such users. 
+You're not required to assign licenses to the users for them to be members in dynamic membership groups. You only need the minimum number of available Microsoft Entra ID P1 licenses in the organization to cover all such users. 
 
 ## To create a group of guest users
 
@@ -39,7 +39,7 @@ You're not required to assign licenses to the users for them to be members in dy
 
 First, you'll create a group for your guest users who all are from a single partner company. They need special licensing, so it's often more efficient to create a group for this purpose.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Select Microsoft Entra ID.
 2. Select **Groups** > **All groups** > **New group**.
 
@@ -50,7 +50,7 @@ First, you'll create a group for your guest users who all are from a single part
    * Enter a *Guest users name*, *email address* and *description* for the group.
    * Change **Membership type** to **Dynamic User**.
    
-   :::image type="content" source="./media/groups-dynamic-tutorial/new-dynamic-group.png" alt-text="Screenshot of Group page where user enters the dynamic group details.":::
+   :::image type="content" source="./media/groups-dynamic-tutorial/new-dynamic-group.png" alt-text="Screenshot of Group page where user enters the dynamic membership group details.":::
 
 4. Select **No owners selected** and on the **Add Owners** pane, scroll to locate the desired owners. Click on the name(s) to add owners to the group.
 5. Click **Select** to save the owners and close the **Add Owners** pane.  
@@ -65,7 +65,7 @@ First, you'll create a group for your guest users who all are from a single part
    * In the **Property** field, select **companyName**.
    * Verify that the **Operator** field has **Equals** selected.
    * In the **Value** field, enter **Contoso**.
-   * Click **Get custom extention properties** to enter an application ID to retrieve all available custom extension properties for creating a rule. 
+   * Click **Get custom extension properties** to enter an application ID to retrieve all available custom extension properties for creating a rule. 
    * When you're done, click **Save** to close **Dynamic membership rules**.
    
 8. To finish and create the group, select **Create** on the **Group** pane.

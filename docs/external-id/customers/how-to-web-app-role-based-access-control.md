@@ -8,7 +8,7 @@ manager: mwongerapk
 ms.author: kengaderdus
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
 ms.date: 01/27/2024
 ms.custom: developer, devx-track-js
@@ -16,6 +16,8 @@ ms.custom: developer, devx-track-js
 ---
 
 # Use role-based access control in your Node.js web application
+
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 Role-based access control (RBAC) is a mechanism to enforce authorization in applications. Microsoft Entra External ID allows you to define application roles for your application and assign those roles to users and groups. The roles you assign to a user or group define their level of access to the resources and operations in your application. When External ID issues a security token for an authenticated user, it includes the names of the roles you've assigned the user or group in the security token's roles claim.
 

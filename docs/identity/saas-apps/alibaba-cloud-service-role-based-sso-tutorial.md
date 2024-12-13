@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Alibaba Cloud Service (Role-based SSO) so that I can control who has access to Alibaba Cloud Service (Role-based SSO), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -150,8 +150,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 3. On the **Role-based SSO** tab, click **Create IdP**.
 
-4. On the displayed page, enter `AAD` in the IdP Name field, enter a description in 
-the **Note** field, click **Upload** to upload the federation metadata file you downloaded before, and click **OK**.
+4. On the displayed page, enter `AAD` in the IdP Name field, enter a description in the **Note** field, click **Upload** to upload the federation metadata file you downloaded before, and click **OK**.
 
 5. After the IdP is successfully created, click **Create RAM Role**.
 

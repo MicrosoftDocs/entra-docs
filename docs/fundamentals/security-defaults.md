@@ -34,7 +34,7 @@ These basic controls include:
 ### Who should use Conditional Access?
 
 - If you're an organization with Microsoft Entra ID P1 or P2 licenses, security defaults are probably not right for you.
-- If your organization has complex security requirements, you should consider [Conditional Access](/entra/identity/role-based-access-control/permissions-reference#template-categories).
+- If your organization has complex security requirements, you should consider [Conditional Access](/entra/identity/conditional-access/overview).
 
 ## Enabling security defaults
 
@@ -48,11 +48,11 @@ To help protect organizations, we're always working to improve the security of M
 
 After this setting is enabled, all users in the organization will need to register for multifactor authentication. To avoid confusion, refer to the email you received and alternatively you can [disable security defaults](#disabling-security-defaults) after it's enabled.
 
-To configure security defaults in your directory, you must be assigned at least the [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator) role. By default the first account in any directory is assigned a higher privileged role known as [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator). 
+To configure security defaults in your directory, you must be assigned at least the [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role. By default the first account in any directory is assigned a higher privileged role known as [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator). 
 
 To enable security defaults:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Identity** > **Overview** > **Properties**.
 1. Select **Manage security defaults**.
 1. Set **Security defaults** to **Enabled**.
@@ -69,6 +69,9 @@ As part of enabling security defaults, administrators should revoke all existing
 <a name='require-all-users-to-register-for-azure-ad-multifactor-authentication'></a>
 
 ### Require all users to register for Microsoft Entra multifactor authentication
+
+> [!NOTE]
+> Starting July 29, 2024, new tenants may not have the 14-day grace period for users to register for MFA. We are making this change to help reduce the risk of account compromise during the 14-day window, as MFA can block over 99.2% of identity-based attacks. 
 
 All users have 14 days to register using the [Microsoft Authenticator app](~/identity/authentication/concept-authentication-authenticator-app.md) or any app supporting [OATH TOTP](~/identity/authentication/concept-authentication-oath-tokens.md). After the 14 days pass, the user can't sign in until registration is completed. A user's 14-day period begins after their first successful interactive sign-in after enabling security defaults.
 
@@ -87,22 +90,9 @@ Administrators have increased access to your environment. Because of the power t
 
 After registration is finished, the following administrator roles will be required to do multifactor authentication every time they sign in:
 
-- Global Administrator
-- Application Administrator
-- Authentication Administrator
+[!INCLUDE [conditional-access-admin-roles](../includes/conditional-access-admin-roles.md)]
 - Authentication Policy Administrator
-- Billing Administrator
-- Cloud Application Administrator
-- Conditional Access Administrator
-- Exchange Administrator
-- Helpdesk Administrator
 - Identity Governance Administrator
-- Password Administrator
-- Privileged Authentication Administrator
-- Privileged Role Administrator
-- Security Administrator
-- SharePoint Administrator
-- User Administrator
 
 ### Require users to do multifactor authentication when necessary
 
@@ -127,7 +117,7 @@ Today, most compromising sign-in attempts come from legacy authentication. Legac
 After security defaults are enabled in your tenant, all authentication requests made by an older protocol will be blocked. Security defaults blocks Exchange Active Sync basic authentication.
 
 > [!WARNING]
-> Before you enable security defaults, make sure your administrators aren't using older authentication protocols. For more information, see [How to move away from legacy authentication](~/identity/conditional-access/block-legacy-authentication.md).
+> Before you enable security defaults, make sure your administrators aren't using older authentication protocols. For more information, see [How to move away from legacy authentication](~/identity/conditional-access/policy-block-legacy-authentication.md).
 
 - [How to set up a multifunction device or application to send email using Microsoft 365](/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365)
 
@@ -151,7 +141,7 @@ After you enable security defaults in your tenant, any user accessing the follow
 - Azure PowerShell 
 - Azure CLI 
 
-This policy applies to all users who are accessing Azure Resource Manager services, whether they're an administrator or a user. This policy applies to Azure Resource Manager APIs such as accessing your subscription, VMs, storage accounts etc. This policy doesn't include Microsoft Entra ID or Microsoft Graph.
+This policy applies to all users who are accessing Azure Resource Manager services, whether they're an administrator or a user. This policy applies to Azure Resource Manager APIs such as accessing your subscription, VMs, storage accounts, and so on. This policy doesn't include Microsoft Entra ID or Microsoft Graph.
 
 > [!NOTE]
 > Pre-2017 Exchange Online tenants have modern authentication disabled by default. In order to avoid the possibility of a login loop while authenticating through these tenants, you must [enable modern authentication](/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online).
@@ -186,7 +176,7 @@ Organizations that choose to implement Conditional Access policies that replace 
 
 To disable security defaults in your directory:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](/entra/identity/role-based-access-control/permissions-reference#conditional-access-administrator).
 1. Browse to **Identity** > **Overview** > **Properties**.
 1. Select **Manage security defaults**.
 1. Set **Security defaults** to **Disabled (not recommended)**.
@@ -209,7 +199,7 @@ Organizations who would like to test out the features of Conditional Access can 
 
 After administrators disable security defaults, organizations should immediately enable Conditional Access policies to protect their organization. These policies should include at least those policies in the [secure foundations category of Conditional Access templates](~/identity/conditional-access/concept-conditional-access-policy-common.md?tabs=secure-foundation#template-categories). Organizations with Microsoft Entra ID P2 licenses that include Microsoft Entra ID Protection can expand on this list to include [user and sign in risk-based policies](~/id-protection/howto-identity-protection-configure-risk-policies.md) to further strengthen their posture. 
 
-We recommend that you exclude at least one account from your Conditional Access policies. These excluded **emergency access** or **break-glass** accounts help prevent tenant-wide account lockout. In the unlikely scenario all administrators are locked out of your tenant, your emergency-access administrative account can be used to log into the tenant to take steps to recover access. For more information, see the article [Manage emergency access accounts](~/identity/role-based-access-control/security-emergency-access.md).
+[!INCLUDE [emergency-access-accounts](../includes/definitions/emergency-access-accounts.md)]
 
 ## Next steps
 

@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and F5 BIG-IP Easy Button for SSO to Oracle JD Edwards using Microsoft Entra ID so that I can control who has access to F5 BIG-IP Easy Button for SSO to Oracle JD Edwards using Microsoft Entra ID, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -80,7 +80,7 @@ Prior BIG-IP experience isn’t necessary, but you need:
 
 * User identities [synchronized](~/identity/hybrid/connect/how-to-connect-sync-whatis.md) from an on-premises directory to Microsoft Entra ID or created directly within Microsoft Entra ID and flowed back to your on-premises directory
 
-* An account with Microsoft Entra application admin [permissions](/azure/active-directory/users-groups-roles/directory-assign-admin-roles#application-administrator)
+* An account with Microsoft Entra Application Administrator [permissions](/azure/active-directory/users-groups-roles/directory-assign-admin-roles#application-administrator)
 
 * An [SSL Web certificate](~/identity/enterprise-apps/f5-bigip-deployment-guide.md#ssl-profile) for publishing services over HTTPS, or use default BIG-IP certs while testing
 
@@ -136,15 +136,10 @@ Initiate the APM's **Guided Configuration** to launch the **Easy Button** Templa
 
 1. Navigate to **Access > Guided Configuration > Microsoft Integration** and select **Microsoft Entra Application**.
 
-   ![Screenshot for Configure Easy Button- Install the template](./media/f5-big-ip-easy-button-oracle-jde/easy-button-template.png)
+2. Under **Configuring the solution using the below steps will create the required objects**, review the list of configuration steps and select **Next**.
 
-2. Review the list of configuration steps and select **Next**
+3. Under **Guided Configuration**, follow the sequence of steps required to publish your application.
 
-   ![Screenshot for Configure Easy Button - List configuration steps](./media/f5-big-ip-easy-button-oracle-jde/config-steps.png)
-
-3. Follow the sequence of steps required to publish your application.
-
-   ![Configuration steps flow](./media/f5-big-ip-easy-button-oracle-jde/config-steps-flow.png#lightbox)
 
 ### Configuration Properties
 
@@ -196,9 +191,9 @@ The Service Provider settings define the properties for the SAML SP instance of 
 
 ### Microsoft Entra ID
 
-This section defines all properties that you would normally use to manually configure a new BIG-IP SAML application within your Microsoft Entra tenant. Easy Button provides a set of pre-defined application templates for Oracle PeopleSoft, Oracle E-business Suite, Oracle JD Edwards, SAP ERP as well as generic SHA template for any other apps. For this scenario select **JD Edwards Protected by F5 BIG-IP > Add**.
+This section defines all properties that you would normally use to manually configure a new BIG-IP SAML application within your Microsoft Entra tenant. Easy Button provides a set of pre-defined application templates for Oracle PeopleSoft, Oracle E-business Suite, Oracle JD Edwards, SAP ERP as well as generic SHA template for any other apps. 
 
-![Screenshot for Azure configuration add BIG-IP application](./media/f5-big-ip-easy-button-oracle-jde/azure-configuration-add-big-ip-application.png)
+For this scenario, in the **Azure Configuration** page, select **JD Edwards Protected by F5 BIG-IP** > **Add**.
 
 #### Azure Configuration
 
@@ -230,7 +225,7 @@ You can include additional Microsoft Entra attributes if necessary, but the Orac
 
 #### Additional User Attributes
 
-The **Additional User Attributes** tab can support a variety of distributed systems requiring attributes stored in other directories for session augmentation. Attributes fetched from an LDAP source can then be injected as additional SSO headers to further control access based on roles, Partner IDs, etc. 
+The **Additional User Attributes** tab can support a variety of distributed systems requiring attributes stored in other directories for session augmentation. Attributes fetched from an LDAP source can then be injected as additional SSO headers to further control access based on roles, Partner IDs, and so on. 
 
    ![Screenshot for additional user attributes](./media/f5-big-ip-easy-button-oracle-jde/additional-user-attributes.png)
 
@@ -243,7 +238,7 @@ Conditional Access policies are enforced post Microsoft Entra pre-authentication
 
 The **Available Policies** view, by default, will list all Conditional Access policies that do not include user-based actions.
 
-The **Selected Policies** view, by default, displays all policies targeting All cloud apps. These policies cannot be deselected or moved to the Available Policies list as they are enforced at a tenant level.
+The **Selected Policies** view, by default, displays all policies targeting All resources. These policies cannot be deselected or moved to the Available Policies list as they are enforced at a tenant level.
 
 To select a policy to be applied to the application being published:
 

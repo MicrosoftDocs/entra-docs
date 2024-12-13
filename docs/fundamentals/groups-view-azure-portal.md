@@ -27,7 +27,7 @@ Before you begin, you'll need to:
 
 ## Create a new group
 
-Create a new group, named *MDM policy - West*. For more information about creating a group, see [How to create a basic group and add members](./how-to-manage-groups.md).
+Create a new group, named *MDM policy - West*. For more information about creating a group, see [How to create a basic group and add members](./how-to-manage-groups.yml).
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
@@ -63,7 +63,7 @@ A user must exist before being added as a group member, so you'll need to create
 
 ## Add a group member
 
-Now that you have a group and a user, you can add *Alain Charon* as a member to the *MDM policy - West* group. For more information about adding group members, see the [Manage groups](how-to-manage-groups.md) article.
+Now that you have a group and a user, you can add *Alain Charon* as a member to the *MDM policy - West* group. For more information about adding group members, see the [Manage groups](how-to-manage-groups.yml) article.
 
 1. Browse to **Identity** > **Groups** > **All groups**.
 1. Select the **MDM policy - West** group created earlier.
@@ -131,4 +131,4 @@ The group you just created is used in other articles in this documentation. If y
 Advance to the next article to learn how to associate a subscription to your directory.
 
 > [!div class="nextstepaction"]
-> [Associate an Azure subscription](./how-subscriptions-associated-directory.md)
+> [Associate an Azure subscription](./how-subscriptions-associated-directory.yml)

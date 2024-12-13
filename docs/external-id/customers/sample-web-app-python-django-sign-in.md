@@ -6,24 +6,23 @@ manager: mwongerapk
 
 ms.author: shermanouko
 ms.service: entra-external-id
-ms.subservice: customers
-ms.topic: sample
+ms.subservice: external
+ms.topic: quickstart
 ms.date: 03/18/2024
-
-#Customer intent: As a dev, devops, I want to learn about how to configure a sample Python Django web app to sign in and sign out users with my external tenant
+#Customer intent: As a dev, devops, I want to learn about how to configure a sample Python Django web app to sign in and sign out users with my external tenant.
 ---
 
 # Sign in users in a sample Python Django web application
 
-In this article, you explore a Python Django web app that is secured by Microsoft Entra External ID. This sample takes you through the sign-in experience for customers authenticating to a Python Django web app. The sample web app uses the [Microsoft Authentication Library for Python (MSAL Python)](https://github.com/AzureAD/microsoft-authentication-library-for-python) to handle user authentication.
+In this guide, you explore a Python Django web app that is secured by Microsoft Entra External ID. This sample takes you through the sign-in experience for customers authenticating to a Python Django web app. The sample web app uses the [Microsoft Authentication Library for Python (MSAL Python)](https://github.com/AzureAD/microsoft-authentication-library-for-python) to handle user authentication.
 
 ## Prerequisites
 
-- [Python 3+](https://www.python.org/).
-
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-
-- An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+- [Python 3+](https://www.python.org/).
+- An external tenant. To create one, choose from the following methods:
+  - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
+  - [Create a new external tenant](how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 
 ## Register the web app
 
@@ -34,9 +33,7 @@ In this article, you explore a Python Django web app that is secured by Microsof
 
 [!INCLUDE [add-client-secret](./includes/register-app/add-app-client-secret.md)]
 
-## Grant API permissions
-
-Since this app signs in users, add delegated permissions:
+## Grant admin consent
 
 [!INCLUDE [grant-delegated-permissions](./includes/register-app/grant-api-permission-sign-in.md)]
 
@@ -50,13 +47,14 @@ Since this app signs in users, add delegated permissions:
 
 ## Clone or download sample web application
 
-To get the web app sample code, [download the .zip file](https://github.com/Azure-Samples/ms-identity-docs-code-python/archive/refs/heads/main.zip) or clone the sample web application from GitHub by running the following command:
+To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
 
-```console
-git clone https://github.com/Azure-Samples/ms-identity-docs-code-python.git
-```
+- To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
-If you choose to download the *.zip* file, extract the sample app file to a folder where the total length of the path is 260 or fewer characters.
+    ```console
+    git clone https://github.com/Azure-Samples/ms-identity-docs-code-python.git
+    ```
+- [Download the .zip file](https://github.com/Azure-Samples/ms-identity-docs-code-python/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
 
 ## Install project dependencies
 
@@ -70,14 +68,14 @@ If you choose to download the *.zip* file, extract the sample app file to a fold
 
     ### [Windows](#tab/windows)
     
-    ```bash
+    ```console
     py -m venv .venv
     .venv\scripts\activate
     ```
     
     ### [macOS/Linux](#tab/mac-linux)
     
-    ```Bash
+    ```console
     python3 -m venv .venv
     source .venv/bin/activate
     ```
@@ -92,18 +90,15 @@ If you choose to download the *.zip* file, extract the sample app file to a fold
 
 ## Configure the sample web app
 
-1. Open your project files on Visual Studio Code or the editor you are using.
+1. Open your project files on Visual Studio Code or the editor you're using.
 
 1. Create an *.env* file in the root folder of the project using *.env.sample* file as a guide.
 
 1. In your *.env* file, provide the following environment variables:
 
     1. `CLIENT_ID` which is the Application (client) ID of the app you registered earlier.
-
     1. `CLIENT_SECRET` which is the app secret value you copied earlier.
-
     1. `AUTHORITY` which is the URL that identifies a token authority. It should be of the format *https://{subdomain}.ciamlogin.com/{subdomain}.onmicrosoft.com*. Replace *subdomain* with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant subdomain, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
-
     1. `REDIRECT_URI` which should be similar to the redirect URI you registered earlier should match your configuration.
 
 ## Run and test sample web app
@@ -128,7 +123,7 @@ Run the app to see the sign-in experience at play.
 
 1. On the sign-in page, type your **Email address**, select **Next**, type your **Password**, then select **Sign in**. If you don't have an account, select **No account? Create one** link, which starts the sign-up flow.
 
-1. If you choose the sign-up option, you'll go through the sign-uo flow. Fill in your email, one-time passcode, new password and more account details to complete the whole sign-up flow.
+1. If you choose the sign-up option, you'll go through the sign-uo flow. Fill in your email, one-time passcode, new password, and more account details to complete the whole sign-up flow.
 
 1. After you sign in or sign up, you're redirected back to the web app. You'll see a page that looks similar to the following screenshot:
 
@@ -142,14 +137,9 @@ When users select the **Sign in** link, the app initiates an authentication requ
 
 When the users select the **Logout** link, the app clears its session, the redirect the user to Microsoft Entra External ID sign-out endpoint to notify it that the user has signed out. The user is then redirected back to the web app.
 
-## Next steps
-
-You may want to:
+## Related content
 
 - [Sign in users using a sample Flask web application](./sample-web-app-python-flask-sign-in.md)
-
 - [Enable password reset](how-to-enable-password-reset-customers.md)
-
 - [Customize the default branding](how-to-customize-branding-customers.md)
-
 - [Configure sign-in with Google](how-to-google-federation-customers.md)

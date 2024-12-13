@@ -5,7 +5,7 @@ description: How does self-service password reset work
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 03/13/2024
+ms.date: 05/10/2024
 
 ms.author: justinha
 author: justinha
@@ -23,7 +23,7 @@ Microsoft Entra self-service password reset (SSPR) gives users the ability to ch
 
 ## How does the password reset process work?
 
-A user can reset or change their password using the [SSPR portal](https://aka.ms/sspr). They must first have registered their desired authentication methods. When a user accesses the SSPR portal, the Microsoft Entra ID platform considers the following factors:
+A user can reset or change their password using the [SSPR portal](https://aka.ms/sspr). They must first register their desired authentication methods. When a user accesses the SSPR portal, the Microsoft Entra platform considers the following factors:
 
 * How should the page be localized?
 * Is the user account valid?
@@ -75,7 +75,7 @@ You can enable the option to require a user to complete the SSPR registration if
 
 When you don't require registration, users aren't prompted during sign-in, but they can manually register. Users can either visit [https://aka.ms/ssprsetup](https://aka.ms/ssprsetup) or select the **Register for password reset** link under the **Profile** tab in the Access Panel.
 
-![Registration options for SSPR in the Microsoft Entra admin center][Registration]
+:::image type="content" border="true" source="media/concept-sspr-howitworks/registration.png" alt-text="Screenshot of password reset registration for Microsoft Entra ID.":::
 
 > [!NOTE]
 > Users can dismiss the SSPR registration portal by selecting **cancel** or by closing the window. However, they're prompted to register each time they sign in until they complete their registration.
@@ -101,24 +101,24 @@ The following authentication methods are available for SSPR:
 * Office phone (available only for tenants with paid subscriptions)
 * Security questions
 
-Users can only reset their password if they have registered an authentication method that the administrator has enabled.
+Users can only reset their password if they register an authentication method that the administrator has enabled.
 
 > [!WARNING]
 > Accounts assigned Azure *administrator* roles are required to use methods as defined in the section [Administrator reset policy differences](concept-sspr-policy.md#administrator-reset-policy-differences).
 
-![Authentication methods selection in the Microsoft Entra admin center][Authentication]
+:::image type="content" border="true" source="media/concept-sspr-howitworks/authentication-methods.png" alt-text="Screenshot of the Authentication methods policy for Microsoft Entra ID.":::
 
 ### Number of authentication methods required
 
 You can configure the number of the available authentication methods a user must provide to reset or unlock their password. This value can be set to either *one* or *two*.
 
-Users can, and should, register multiple authentication methods. Again, it's highly recommended that users register two or more authentication methods so they have more flexibility in case they're unable to access one method when they need it.
+Users should register multiple authentication methods so they can sign-in another way if they're unable to access one method.
 
-If a user doesn't have the minimum number of required methods registered when they try to use SSPR, they see an error page that directs them to request that an administrator reset their password. Take care if you increase the number of methods required from one to two if you have existing users registered for SSPR and they're then unable to use the feature. For more information, see the following section to [Change authentication methods](#change-authentication-methods).
+If a user doesn't register the minimum number of required methods, they see an error page when they try to use SSPR. They need to request that an administrator reset their password. For more information, see [Change authentication methods](#change-authentication-methods).
 
 #### Mobile app and SSPR
 
-When using a mobile app as a method for password reset, like the Microsoft Authenticator app, the following considerations apply if an organization has not [migrated to the centralized Authentication methods policy](how-to-authentication-methods-manage.md):
+When using a mobile app as a method for password reset, like Microsoft Authenticator, the following considerations apply if an organization hasn't [migrated to the centralized Authentication methods policy](how-to-authentication-methods-manage.md):
 
 * When administrators require one method be used to reset a password, verification code is the only option available.
 * When administrators require two methods be used to reset a password, users are able to use notification **OR** verification code in addition to any other enabled methods.
@@ -130,7 +130,7 @@ When using a mobile app as a method for password reset, like the Microsoft Authe
 Users can register their mobile app at [https://aka.ms/mfasetup](https://aka.ms/mfasetup), or in the combined security info registration at [https://aka.ms/setupsecurityinfo](https://aka.ms/setupsecurityinfo).
 
 > [!IMPORTANT]
-> If The Authenticator app can't be selected as the only authentication method when only one method is required. Similarly, the Authenticator app and only one additional method cannot be selected when requiring two methods.
+> Authenticator can't be selected as the only authentication method when only one method is required. Similarly, Authenticator and only one additional method can't be selected if you require two methods.
 >
 > When configuring SSPR policies that include the Authenticator app as a method, at least one additional method should be selected when one method is required, and at least two additional methods should be selected when configuring two methods are required.
 
@@ -144,7 +144,7 @@ If you start with a policy that has only one required authentication method for 
 | 1 | 2 | **Unable** to reset or unlock |
 | 2 or more | 2 | **Able** to reset or unlock |
 
-Changing the available authentication methods may also cause problems for users. If you change the types of authentication methods that a user can use, you might inadvertently stop users from being able to use SSPR if they don't have the minimum amount of data available.
+Changing the available authentication methods may also cause problems for users. If you change which authentication methods are available, users without the minimum amount of data available can't use SSPR.
 
 Consider the following example scenario:
 
@@ -167,7 +167,7 @@ If this option is set to **Yes**, then Global Administrators receive an email to
 > [!NOTE]
 > Email notifications from the SSPR service will be sent from the following addresses based on the Azure cloud you are working with: 
 > - Public: msonlineservicesteam@microsoft.com, msonlineservicesteam@microsoftonline.com
-> - Azure China 21Vianet: msonlineservicesteam@oe.21vianet.com, 21Vianetonlineservicesteam@21vianet.com
+> - Microsoft Azure operated by 21Vianet (Azure in China): msonlineservicesteam@oe.21vianet.com, 21Vianetonlineservicesteam@21vianet.com
 > - Azure for US Government: msonlineservicesteam@azureadnotifications.us, msonlineservicesteam@microsoftonline.us
 >
 > If you observe issues in receiving notifications, please check your spam settings. 
@@ -176,18 +176,11 @@ If you want custom administrators to receive the notification emails, use SSPR c
 
 ## On-premises integration
 
-If you have a hybrid environment, you can configure Microsoft Entra Connect to write password change events back from Microsoft Entra ID to an on-premises directory.
+In a hybrid environment, you can configure Microsoft Entra Connect cloud sync to write password change events back from Microsoft Entra ID to an on-premises directory.
 
-![Validating password writeback is enabled for Microsoft Entra ID to an On-premises integration][Writeback]
+:::image type="content" border="true" source="media/concept-sspr-howitworks/password-writeback-enabled.png" alt-text="Screenshot of password writeback enabled for Microsoft Entra ID to an on-premises integration.":::
 
-Microsoft Entra ID checks your current hybrid connectivity and provides one of the following messages in the Microsoft Entra admin center:
-
-* Your on-premises writeback client is up and running.
-* Microsoft Entra ID is online and is connected to your on-premises writeback client. However, it looks like the installed version of Microsoft Entra Connect is out-of-date. Consider [Upgrading Microsoft Entra Connect](~/identity/hybrid/connect/how-to-upgrade-previous-version.md) to ensure that you have the latest connectivity features and important bug fixes.
-* Unfortunately, we can't check your on-premises writeback client status because the installed version of Microsoft Entra Connect is out-of-date. [Upgrade Microsoft Entra Connect](~/identity/hybrid/connect/how-to-upgrade-previous-version.md) to be able to check your connection status.
-* Unfortunately, it looks like we can't connect to your on-premises writeback client right now. [Troubleshoot Microsoft Entra Connect](./troubleshoot-sspr-writeback.md) to restore the connection.
-* Unfortunately, we can't connect to your on-premises writeback client because password writeback has not been properly configured. [Configure password writeback](./tutorial-enable-sspr-writeback.md) to restore the connection.
-* Unfortunately, it looks like we can't connect to your on-premises writeback client right now. This may be due to temporary issues on our end. If the problem persists, [Troubleshoot Microsoft Entra Connect](./troubleshoot-sspr-writeback.md) to restore the connection.
+Microsoft Entra ID checks your current hybrid connectivity and provides messages in the Microsoft Entra admin center. For help with resolving possible errors, see [Troubleshoot Microsoft Entra Connect](./troubleshoot-sspr-writeback.md).
 
 To get started with SSPR writeback, complete the following tutorial:
 
@@ -216,14 +209,14 @@ SSPR performs the equivalent of an admin-initiated password reset in Active Dire
 
 Password reset and change are fully supported on all business-to-business (B2B) configurations. B2B user password reset is supported in the following three cases:
 
-* **Users from a partner organization with an existing Microsoft Entra tenant**: If the organization you partner with has an existing Microsoft Entra tenant, we respect whatever password reset policies are enabled on that tenant. For password reset to work, the partner organization just needs to make sure that Microsoft Entra SSPR is enabled. There is no additional charge for Microsoft 365 customers.
-* **Users who sign up through** self-service sign-up: If the organization you partner with used the [self-service sign-up](~/identity/users/directory-self-service-signup.md) feature to get into a tenant, we let them reset the password with the email they registered.
+* **Users from a partner organization with an existing Microsoft Entra tenant**: If your partner has a Microsoft Entra tenant, we respect whatever password reset policies are enabled on that tenant. For password reset to work, the partner organization just needs to make sure that Microsoft Entra SSPR is enabled. There's no other charge for Microsoft 365 customers.
+* **Users who sign up through self-service sign-up**: If your partner used the [self-service sign-up](~/identity/users/directory-self-service-signup.md) feature to get into a tenant, we let them reset the password with the email they registered.
 * **B2B users**: Any new B2B users created by using the new [Microsoft Entra B2B capabilities](~/external-id/what-is-b2b.md) can also reset their passwords with the email they registered during the invite process.
 
-To test this scenario, go to https://passwordreset.microsoftonline.com with one of these partner users. If they have an alternate email or authentication email defined, password reset works as expected.
+To test this scenario, go to `https://passwordreset.microsoftonline.com` with one of these partner users. If the user defined an alternate email or authentication email, password reset works as expected.
 
 > [!NOTE]
-> Microsoft accounts that have been granted guest access to your Microsoft Entra tenant, such as those from Hotmail.com, Outlook.com, or other personal email addresses, aren't able to use Microsoft Entra SSPR. They need to reset their password by using the information found in the [When you can't sign in to your Microsoft account](https://support.microsoft.com/help/12429/microsoft-account-sign-in-cant) article.
+> Microsoft accounts that are granted guest access to your Microsoft Entra tenant, such as those from Hotmail.com, Outlook.com, or other personal email addresses, can't use Microsoft Entra SSPR. For more information, see [When you can't sign in to your Microsoft account](https://support.microsoft.com/help/12429/microsoft-account-sign-in-cant).
 
 ## Next steps
 

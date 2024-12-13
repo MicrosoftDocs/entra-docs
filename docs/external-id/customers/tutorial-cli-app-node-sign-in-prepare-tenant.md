@@ -8,7 +8,7 @@ manager: mwongerapk
 ms.author: dmwendia
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: tutorial
 ms.date: 08/04/2023
 ms.custom: developer, devx-track-js
@@ -32,11 +32,13 @@ In this tutorial;
 
 ## Prerequisites
 
-* A Microsoft Entra ID for external tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
-* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-    * Application Administrator
-    * Application Developer
-    * Cloud Application Administrator
+- An external tenant. To create one, choose from the following methods:
+  - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/tutorials/marketplace) to set up an external tenant directly in Visual Studio Code.
+  - [Create a new external tenant](how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+- This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
+  - Application Administrator
+  - Application Developer
+  - Cloud Application Administrator
 
 ## Register the Node.js CLI app
 
@@ -49,9 +51,7 @@ In this tutorial;
 
 [!INCLUDE [active-directory-b2c-enable-public-client-flow](./includes/register-app/enable-public-client-flow.md)]  
 
-## Grant API permissions
-
-Since this app signs in users, add delegated permissions. These permissions allow the app to act on behalf of a signed-in user and access resources that the user has permissions to access. 
+## Grant admin consent 
 
 [!INCLUDE [active-directory-b2c-grant-delegated-permissions](./includes/register-app/grant-api-permission-sign-in.md)] 
 

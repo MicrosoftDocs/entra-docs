@@ -5,13 +5,13 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: overview
-ms.date: 01/05/2023
+ms.date: 10/23/2024
 ms.author: billmath
 ---
 
 # What is provisioning?
 
-Provisioning and deprovisioning are the processes that ensure consistency of digital identities across multiple systems.  These processes are typically used as part of [identity lifecycle management](what-is-identity-lifecycle-management.md).
+Provisioning and deprovisioning are the processes that ensure consistency of digital identities across multiple systems.  These processes are typically used as part of [identity lifecycle management](scenarios/govern-the-employee-lifecycle.md).
 
 **Provisioning** is the processes of creating an identity in a target system based on certain conditions.  **De-provisioning** is the process of removing the identity from the target system, when conditions are no longer met. **Synchronization** is the process of keeping the provisioned object, up to date, so that the source object and target object are similar.
 
@@ -71,7 +71,8 @@ For more information, see [What is inter-directory provisioning?](~/identity/hyb
  
 ## Next steps
 
-- [What is identity lifecycle management?](what-is-identity-lifecycle-management.md)
+- [What is identity lifecycle management?](scenarios/govern-the-employee-lifecycle.md)
 - [What is HR driven provisioning?](~/identity/app-provisioning/what-is-hr-driven-provisioning.md)
 - [What is app provisioning?](~/identity/app-provisioning/user-provisioning.md)
 - [What is inter-directory provisioning?](~/identity/hybrid/what-is-inter-directory-provisioning.md)
+- [Govern the lifecycle of users video](https://youtu.be/NxSu3JEsxmY?si=PELWAnpdI4iAMfki)

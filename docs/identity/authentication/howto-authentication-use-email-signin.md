@@ -6,7 +6,7 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 09/13/2023
+ms.date: 10/04/2024
 
 ms.author: justinha
 author: calui
@@ -42,8 +42,8 @@ Here's what you need to know about email as an alternate login ID:
     * If the non-UPN email in use becomes stale (no longer belongs to the user), these claims will return the UPN instead.
 * The feature supports managed authentication with Password Hash Sync (PHS) or Pass-Through Authentication (PTA).
 * There are two options for configuring the feature:
-    * [Home Realm Discovery (HRD) policy](#enable-user-sign-in-with-an-email-address) - Use this option to enable the feature for the entire tenant. Global Administrator, Application Administrator, or Cloud Application Administrator role is required.
-    * [Staged rollout policy](#enable-staged-rollout-to-test-user-sign-in-with-an-email-address) - Use this option to test the feature with specific Microsoft Entra groups. Global Administrator privileges required. When you first add a security group for staged rollout, you're limited to 200 users to avoid a UX time-out. After you've added the group, you can add more users directly to it, as required.
+    * [Home Realm Discovery (HRD) policy](#enable-user-sign-in-with-an-email-address) - Use this option to enable the feature for the entire tenant. At least the [Application Administrator](../role-based-access-control/permissions-reference.md#application-administrator) role is required.
+    * [Staged rollout policy](#enable-staged-rollout-to-test-user-sign-in-with-an-email-address) - Use this option to test the feature with specific Microsoft Entra groups. When you first add a security group for staged rollout, you're limited to 200 users to avoid a UX time-out. After you've added the group, you can add more users directly to it, as required.
 
 ## Preview limitations
 
@@ -55,7 +55,7 @@ In the current preview state, the following limitations apply to email as an alt
     * On some Microsoft sites and apps, such as Microsoft Office, the *Account Manager* control typically displayed in the upper right may display the user's UPN instead of the non-UPN email used to sign in.
 
 * **Unsupported flows** - Some flows are currently not compatible with non-UPN emails, such as the following:
-    * Identity Protection doesn't match non-UPN emails with *Leaked Credentials* risk detection. This risk detection uses the UPN to match credentials that have been leaked. For more information, see [How To: Investigate risk](~/id-protection/howto-identity-protection-investigate-risk.md).
+    * Microsoft Entra ID Protection doesn't match non-UPN emails with *Leaked Credentials* risk detection. This risk detection uses the UPN to match credentials that have been leaked. For more information, see [How To: Investigate risk](~/id-protection/howto-identity-protection-investigate-risk.md).
     * When a user is signed-in with a non-UPN email, they cannot change their password. Microsoft Entra self-service password reset (SSPR) should work as expected. During SSPR, the user may see their UPN if they verify their identity using a non-UPN email.
 
 * **Unsupported scenarios** - The following scenarios are not supported. Sign-in with non-UPN email for:
@@ -75,7 +75,7 @@ In the current preview state, the following limitations apply to email as an alt
     * The feature does not work as expected for users that are included in other staged rollout policies.
     * Staged rollout policy supports a maximum of 10 groups per feature.
     * Staged rollout policy does not support nested groups.
-    * Staged rollout policy does not support dynamic groups.
+    * Staged rollout policy does not support dynamic membership groups.
     * Contact objects inside the group will block the group from being added to a staged rollout policy.
 
 * **Duplicate values** - Within a tenant, a cloud-only user's UPN can be the same value as another user's proxy address synced from the on-premises directory. In this scenario, with the feature enabled, the cloud-only user will not be able to sign in with their UPN. More on this issue in the [Troubleshoot](#troubleshoot) section.
@@ -139,14 +139,15 @@ Email as an alternate login ID applies to [Microsoft Entra B2B collaboration](~/
 
 Once users with the *ProxyAddresses* attribute applied are synchronized to Microsoft Entra ID using Microsoft Entra Connect, you need to enable the feature for users to sign in with email as an alternate login ID for your tenant. This feature tells the Microsoft Entra login servers to not only check the sign-in identifier against UPN values, but also against *ProxyAddresses* values for the email address.
 
-During preview, you currently need *Global Administrator* permissions to enable sign-in with email as an alternate login ID. You can use either Microsoft Entra admin center or Graph PowerShell to set up the feature.
+You can use either Microsoft Entra admin center or Graph PowerShell to set up the feature.
 
 ### Microsoft Entra admin center
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. From the navigation menu on the left-hand side of the Microsoft Entra window, select **Microsoft Entra Connect > Email as alternate login ID**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](../role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
+1. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Connect Sync**
+1. Select Email as alternate login ID**.
 
     ![Screenshot of email as alternate login ID option in the Microsoft Entra admin center.](media/howto-authentication-use-email-signin/azure-ad-connect-screen.png)
 
@@ -164,7 +165,7 @@ With the policy applied, it can take up to one hour to propagate and for users t
 
 Once users with the *ProxyAddresses* attribute applied are synchronized to Microsoft Entra ID using Microsoft Entra Connect, you need to enable the feature for users to sign-in with email as an alternate login ID for your tenant. This feature tells the Microsoft Entra login servers to not only check the sign-in identifier against UPN values, but also against *ProxyAddresses* values for the email address.
 
-You need *Global Administrator* privileges to complete the following steps:
+[!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)]
 
 1. Open a PowerShell session as an administrator, then install the *Microsoft.Graph* module using the `Install-Module` cmdlet:
 
@@ -281,8 +282,7 @@ Remove-MgPolicyHomeRealmDiscoveryPolicy -HomeRealmDiscoveryPolicyId "HRD_POLICY_
 
 Staged rollout policy allows tenant administrators to enable features for specific Microsoft Entra groups. It is recommended that tenant administrators use staged rollout to test user sign-in with an email address. When administrators are ready to deploy this feature to their entire tenant, they should use [HRD policy](#enable-user-sign-in-with-an-email-address).  
 
-
-You need *Global Administrator* permissions to complete the following steps:
+[!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)]
 
 1. Open a PowerShell session as an administrator, then install the *Microsoft.Graph.Beta* module using the [Install-Module][Install-Module] cmdlet:
 
@@ -320,7 +320,7 @@ You need *Global Administrator* permissions to complete the following steps:
 1. Find the directoryObject ID for the group to be added to the staged rollout policy. Note the value returned for the *Id* parameter, because it will be used in the next step.
 
    ```powershell
-   Get-MgGroup -Filter "DisplayName eq 'Name of group to be added to the staged rollout policy'"
+   Get-MgBetaGroup -Filter "DisplayName eq 'Name of group to be added to the staged rollout policy'"
    ```
 
 1. Add the group to the staged rollout policy as shown in the following example. Replace the value in the *-FeatureRolloutPolicyId* parameter with the value returned for the policy ID in step 4 and replace the value in the *-OdataId* parameter with the *Id* noted in step 5. It may take up to 1 hour before users in the group can sign in to Microsoft Entra ID with email as an alternate login ID.
@@ -391,7 +391,9 @@ Within a tenant, a cloud-only user's UPN may take on the same value as another u
 
     If prompted, select **Y** to install NuGet or to install from an untrusted repository.
 
-1. Sign in to your Microsoft Entra tenant as a *Global Administrator* using the [Connect-AzureAD][Connect-AzureAD] cmdlet:
+1. [!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)]
+
+   Sign in to your Microsoft Entra tenant using the [Connect-AzureAD][Connect-AzureAD] cmdlet:
 
     ```powershell
     Connect-MgGraph -Scopes "User.Read.All"
@@ -453,7 +455,7 @@ To learn more about hybrid identity, such as Microsoft Entra application proxy o
 For more information on hybrid identity operations, see [how password hash sync][phs-overview] or [pass-through authentication][pta-overview] synchronization work.
 
 <!-- INTERNAL LINKS -->
-[verify-domain]: ~/fundamentals/add-custom-domain.md
+[verify-domain]: ~/fundamentals/add-custom-domain.yml
 [hybrid-auth-methods]: ~/identity/hybrid/connect/choose-ad-authn.md
 [azure-ad-connect]: ~/identity/hybrid/connect/whatis-azure-ad-connect.md
 [hybrid-overview]: ~/identity/hybrid/connect/cloud-governed-management-for-on-premises.md

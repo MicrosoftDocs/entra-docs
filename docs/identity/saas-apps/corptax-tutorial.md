@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and CorpTax so that I can control who has access to CorpTax, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -80,8 +80,6 @@ To configure Microsoft Entra single sign-on with Corptax, perform the following 
     ![Configure single sign-on link](common/select_sso.png)
 
 1. On the **Select a Single sign-on method** dialog, select **SAML/WS-Fed** mode to enable single sign-on.
-
-    ![Single sign-on select mode](common/select_saml_option.png)
 
 1. On the **Set up Single Sign-On with SAML** page, click **Edit** icon to open **Basic SAML Configuration** dialog.
 

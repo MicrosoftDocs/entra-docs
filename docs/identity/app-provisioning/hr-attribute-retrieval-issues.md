@@ -19,7 +19,7 @@ ms.reviewer: chmutali
 
 | **Applies to** |
 |--|
-| * Workday to on-premises Active Directory user provisioning <br> * Workday to Microsoft Entra ID user provisioning |
+| * Workday to on-premises Active Directory user provisioning <br> * Workday to Microsoft Entra user provisioning |
 | **Issue Description** | 
 | You configured the Workday inbound provisioning app and successfully connected to the Workday tenant URL. You ran a test sync and you observed that the provisioning app isn't retrieving certain attributes from Workday. Only some attributes are read and provisioned to the target. |
 | **Probable Cause** | 
@@ -31,7 +31,7 @@ ms.reviewer: chmutali
 
 | **Applies to** |
 |--|
-| * Workday to on-premises Active Directory user provisioning <br> * Workday to Microsoft Entra ID user provisioning |
+| * Workday to on-premises Active Directory user provisioning <br> * Workday to Microsoft Entra user provisioning |
 | **Issue Description** | 
 | You configured the Workday inbound provisioning app and successfully connected to the Workday tenant URL. You have an integration system configured in Workday and you have configured XPATHs that point to attributes in the Workday Integration System. However, the Microsoft Entra provisioning app isn't fetching values associated with these integration system attributes or calculated fields. |
 | **Cause** | 

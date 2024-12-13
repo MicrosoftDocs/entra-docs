@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 
@@ -371,7 +371,7 @@ The automated process consists of a flat-file in CSV format which allows the use
 
     * **jobAssignment.jobAssignmentDetails.payRuleName**: Specific Pay Rule Name from WFD. 
 
-    * **jobAssignment.jobAssignmentDetails.timeZoneName**: Timezone format must match WFD instance (i.e. (GMT -08:00) Pacific Time) 
+    * **jobAssignment.jobAssignmentDetails.timeZoneName**: Timezone format must match WFD instance (that is, `(GMT -08:00) Pacific Time`).
 
     * **jobAssignment.primaryLaborAccounts.organizationPath**: Organization Path of a specific Business structure in the WFD instance. 
 

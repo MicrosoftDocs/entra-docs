@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
 
-ms.date: 12/13/2022
+ms.date: 11/07/2024
 ms.author: gasinh
 ms.collection: M365-identity-device-management 
 ms.reviewer: miccohen
@@ -67,7 +67,7 @@ You can deploy a BIG-IP in different topologies. This guide focuses on a network
 
 To deploy BIG-IP VE from the [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps).
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with an account with permissions to create VMs, such as a Global Administrator.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) with an account with permissions to create VMs, such as an Application Administrator.
 2. In the top ribbon search box, type **marketplace**
 3. Select **Enter**.
 4. Type **F5** into the Marketplace filter.
@@ -215,7 +215,7 @@ To resolve your published SHA services to your BIG-IP-VM public IP(s), configure
 
     * **Subscription**: Same subscription as the BIG-IP-VM
     * **DNS zone**: DNS zone authoritative for the verified domain suffix your published websites use, for example, www.contoso.com
-    * **Name**: The hostname you specify resolves to the public IP associated with the selected secondary IP. Define DNS-to IP-mappings. For example, intranet.contoso.com to 13.77.148.215
+    * **Name**: The hostname you specify resolves to the public IP associated with the selected secondary IP. Define DNS-to IP-mappings. For example, intranet.contoso.com to 11.22.333.444
     * **TTL**: 1
     * **TTL units**: Hours
 

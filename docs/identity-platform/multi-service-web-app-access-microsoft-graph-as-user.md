@@ -8,7 +8,7 @@ ms.custom: azureday1
 ms.date: 09/15/2023
 ms.devlang: csharp
 ms.reviewer: stsoneff
-ms.service: app-service
+ms.service: azure-app-service
 ms.subservice: web-apps
 ms.topic: tutorial
 services: microsoft-graph, app-service-web
@@ -217,8 +217,8 @@ public class Startup
   "AzureAd": {
     "Instance": "https://login.microsoftonline.com/",
     "Domain": "[Enter the domain of your tenant, e.g. contoso.onmicrosoft.com]",
-    "TenantId": "[Enter 'common', or 'organizations' or the Tenant Id (Obtained from the Entra admin center. Select 'Endpoints' from the 'App registrations' blade and use the GUID in any of the URLs), e.g. da41245a5-11b3-996c-00a8-4d99re19f292]",
-    "ClientId": "[Enter the Client Id (Application ID obtained from the Microsoft Entra admin center), e.g. ba74781c2-53c2-442a-97c2-3d60re42f403]",
+    "TenantId": "[Enter 'common', or 'organizations' or the Tenant Id (Obtained from the Entra admin center. Select 'Endpoints' from the 'App registrations' blade and use the GUID in any of the URLs), e.g. aaaabbbb-0000-cccc-1111-dddd2222eeee]",
+    "ClientId": "[Enter the Client Id (Application ID obtained from the Microsoft Entra admin center), e.g. 00001111-aaaa-2222-bbbb-3333cccc4444]",
     "ClientSecret": "[Copy the client secret added to the app from the Microsoft Entra admin center]",
     "ClientCertificates": [
     ],
@@ -306,8 +306,6 @@ public class IndexModel : PageModel
 
 Using a custom **AuthProvider** class that encapsulates authentication logic, the web app gets the user's access token from the incoming requests header. The **AuthProvider** instance detects that the web app is hosted on App Service and gets the access token from the App Service authentication/authorization module. The access token is then passed down to the Microsoft Graph SDK client to make an authenticated request to the `/me` endpoint.
 
-To see this code as part of a sample application, see *graphController.js* in the [sample on GitHub](https://github.com/Azure-Samples/ms-identity-easyauth-nodejs-storage-graphapi/tree/main/2-WebApp-graphapi-on-behalf).
-
 > [!NOTE]
 > The App Service authentication/authorization is designed for more basic authentication scenarios. Later, when your web app needs to handle more complex scenarios, you can disable the App Service authentication/authorization module and the **AuthProvider** instance in the sample will fallback to use [MSAL Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node), which is the recommended library for adding authentication/authorization to Node.js applications.
 
@@ -332,7 +330,7 @@ exports.getProfilePage = async(req, res, next) => {
 }
 ```
 
-To query Microsoft Graph, use the [Microsoft Graph JavaScript SDK](https://github.com/microsoftgraph/msgraph-sdk-javascript). The code for this is located in [utils/graphHelper.js](https://github.com/Azure-Samples/ms-identity-easyauth-nodejs-storage-graphapi/blob/main/2-WebApp-graphapi-on-behalf/utils/graphHelper.js):
+To query Microsoft Graph, use the [Microsoft Graph JavaScript SDK](https://github.com/microsoftgraph/msgraph-sdk-javascript). 
 
 ```nodejs
 const graph = require('@microsoft/microsoft-graph-client');

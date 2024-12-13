@@ -4,7 +4,7 @@ description: In this tutorial, you learn how to register a Python web app with t
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.date:  04/03/2024
+ms.date: 04/18/2024
 ms.service: identity-platform
 
 ms.topic: tutorial
@@ -33,22 +33,22 @@ In this tutorial, you:
 
 ## Register the Python web app and record identifiers
 
-To integrate identity and access management capabilities into your application, you start by registering your app with the  Microsoft identity platform. Follow these steps to register your application in the Microsoft Entra Admin Center: 
+To integrate identity and access management capabilities into your application, you start by registering your app with the  Microsoft identity platform. Follow these steps to register your application in the Microsoft Entra admin center: 
 
-1. Sign in to the [Microsoft Entra Admin Center](https://entra.microsoft.com/signin/index/).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/signin/index/).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **Applications** > **App registrations** and select **New registration**.
 1. Enter a **Name** for your application, for example *python-flask-webapp*. Users of your application might see the display name when they use the app, for example during sign-in. You can change the display name at any time.
-1. Under **Supported account types**, select **Accounts in any organizational directory and personal Microsoft accounts.**
+1. Under **Supported account types**, select **Accounts in this organizational directory only**.
 1. Select **Register** to complete the initial app registration.
 
-When registration finishes, the Microsoft Entra Admin Center displays the app registration's **Overview** pane. From the **Overview** pane, record the Directory (tenant) ID and the Application (client) ID to be used in a later step.
+When registration finishes, the Microsoft Entra admin center displays the app registration's **Overview** pane. From the **Overview** pane, record the Directory (tenant) ID and the Application (client) ID to be used in a later step.
 
 ## Add a redirect URI
 
 To add a redirect URI for your Python Flask web app, follow these steps:
 
-1. In the Microsoft Entra Admin Center, in **App registrations**, select your application.
+1. In the Microsoft Entra admin center, in **App registrations**, select your application.
 1. Under **Manage**, select **Authentication**.
 1. Under **Platform configurations**, select **Add a platform**, then select **Web**.
 1. Upon selecting web as your app's platform, you're prompted to enter a redirect URI. Add `http://localhost:5000/getAToken` as the redirect URI for your web app.  
@@ -58,7 +58,7 @@ To add a redirect URI for your Python Flask web app, follow these steps:
 
 For this tutorial, you'll use a client secret, also known as an application password to identify the app as a confidential client. Follow these steps to add a client secret to your app registration:
 
-1. In the Microsoft Entra Admin Center, in **App registrations**, select your application.
+1. In the Microsoft Entra admin center, in **App registrations**, select your application.
 1. Under **Manage**, select **Certificates & secrets**.
 1. In the **Client secrets** section, select **New client secret**.
 1. In the **Add a client secret** pane, provide a description for your client secret.

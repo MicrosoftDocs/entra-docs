@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 
@@ -142,8 +142,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 	![screenshot for identity provider.](./media/check-point-harmony-connect-tutorial/identity-provider.png)
 
 1. Select **Microsoft Entra ID** as your identity provider and click **NEXT**.
-
-	![screenshot to select identity provider.](./media/check-point-harmony-connect-tutorial/select-identity-provider.png)
 
 1. On the **Verify Domain** page, enter your organization domain and enter this generated DNS record to your DNS server as TXT record, click **NEXT**.
 

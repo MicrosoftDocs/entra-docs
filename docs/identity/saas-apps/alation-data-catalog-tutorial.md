@@ -10,7 +10,7 @@ ms.subservice: saas-apps
 
 ms.workload: identity
 ms.topic: how-to
-ms.date: 02/15/2024
+ms.date: 06/21/2024
 ms.author: jeedes
 
 
@@ -98,7 +98,8 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	![Screenshot shows the image of attributes configuration.](common/default-attributes.png "Image")
 
     > [!NOTE]
-    > In the **Attributes &  Claims** section, click **Edit** button in  the right corner of Step 2  and click on Unique User Identifier (Name ID) claim and choose **Name identifier format** as **Persistent** from the drop-down menu under **Manage claim** section and click **Save**.
+    > For **Unique User Identifier (Name ID)** claim, choose **Name identifier format** as **Persistent** from the drop-down under **Manage claim** section and click **Save**.
+    ![Screenshot shows the images of Unique User Identifier.](media/alation-data-catalog-tutorial/name.png "Claim")
  
 1. In addition to above, Alation Data Catalog application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
 	
@@ -109,6 +110,10 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	| urn:oid:0.9.2342.19200300.100.1.3 | user.mail |
 	| urn:oid:0.9.2342.19200300.100.1.1 | user.userprincipalname |
     | urn:oid:2.5.4.12 | user.jobtitle |
+
+    > [!NOTE]
+    > For all the above Required Claims, choose **Name identifier format** as **URI** from the drop-down under **Manage claim** section and click **Save**.
+    ![Screenshot shows the images of Required Claims.](media/alation-data-catalog-tutorial/source.png "Default Claims")
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 

@@ -2,15 +2,14 @@
 title: 'Tutorial: Configure Zscaler Three for automatic user provisioning with Microsoft Entra ID'
 description: In this tutorial, you'll learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Zscaler Three.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zscaler Three so that I can streamline the user management process and ensure that users have the appropriate access to Zscaler Three.
 ---
@@ -53,7 +52,7 @@ Before you configure and enable automatic user provisioning, you should decide w
 
 * We recommended that you first assign a single Microsoft Entra user to Zscaler Three to test the automatic user provisioning configuration. You can assign more users and groups later.
 
-* When you assign a user to Zscaler Three, you need to select any valid application-specific role (if available) in the assignment dialog box. Users with the **Default Access** role are excluded from provisioning.
+* When you assign a user to Zscaler Three, you need to select any valid application-specific role (if available) in the assignment dialog box. Users with the **Default Access** role are excluded from provisioning. 
 
 ## Set up automatic user provisioning
 
@@ -80,7 +79,7 @@ This section guides you through the steps for configuring the Microsoft Entra pr
 
 1. Set the **Provisioning Mode** to **Automatic**:
 
-	![Set the Provisioning Mode](./media/zscaler-three-provisioning-tutorial/provisioning-credentials.png)
+	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
 1. In the **Admin Credentials** section, enter the **Tenant URL** and **Secret Token** of your Zscaler Three account, as described in the next step.
 
@@ -88,15 +87,15 @@ This section guides you through the steps for configuring the Microsoft Entra pr
 
 	![Zscaler Three Authentication Settings](./media/zscaler-three-provisioning-tutorial/secret-token-1.png)
 
-	Select **Configure SAML** to open the **Configure SAML** window:
+1. Select **Configure SAML** to open the **Configure SAML** window:
 
-	![Configure SAML window](./media/zscaler-three-provisioning-tutorial/secret-token-2.png)
+	![Screenshot of Configure SAML window](./media/zscaler-three-provisioning-tutorial/secret-token-2.png)
 
-	Select **Enable SCIM-Based Provisioning** and copy the **Base URL** and **Bearer Token**, and then save the settings. In the Azure portal, paste the **Base URL** into the **Tenant URL** box and the **Bearer Token** into the **Secret Token** box.
+1. Select **Enable SCIM-Based Provisioning** and copy the **Base URL** and **Bearer Token**, and then save the settings. In the Azure portal, paste the **Base URL** into the **Tenant URL** box and the **Bearer Token** into the **Secret Token** box.
 
 1. After you enter the values in the **Tenant URL** and **Secret Token** boxes, select **Test Connection** to make sure Microsoft Entra ID can connect to Zscaler Three. If the connection fails, make sure your Zscaler Three account has admin permissions and try again.
 
-	![Test the connection](./media/zscaler-three-provisioning-tutorial/test-connection.png)
+ 	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
 1. In the **Notification Email** box, enter the email address of a person or group that should receive the provisioning error notifications. Select **Send an email notification when a failure occurs**:
 
@@ -104,21 +103,29 @@ This section guides you through the steps for configuring the Microsoft Entra pr
 
 1. Select **Save**.
 
-1. In the **Mappings** section, select **Synchronize Microsoft Entra users to ZscalerThree**:
-
-	![Synchronize Microsoft Entra users](./media/zscaler-three-provisioning-tutorial/user-mappings.png)
+1. In the **Mappings** section, select **Synchronize Microsoft Entra users to Zscaler Three**.
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Zscaler Three in the **Attribute Mappings** section. The attributes selected as **Matching** properties are used to match the user accounts in Zscaler Three for update operations. Select **Save** to commit any changes.
 
-	![Screenshot of the Attribute Mappings section with seven mappings displayed.](./media/zscaler-three-provisioning-tutorial/user-attribute-mappings.png)
+   |Attribute|Type|Supported for filtering|Required by Zscaler Three|
+   |---|---|---|---|
+   |userName|String|&check;|&check;
+   |externalId|String||&check;
+   |active|Boolean||&check;
+   |name.givenName|String||
+   |name.familyName|String||
+   |displayName|String||&check;
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||&check;
 
-1. In the **Mappings** section, select **Synchronize Microsoft Entra groups to ZscalerThree**:
-
-	![Synchronize Microsoft Entra groups](./media/zscaler-three-provisioning-tutorial/group-mappings.png)
+1. In the **Mappings** section, select **Synchronize Microsoft Entra groups to Zscaler Three**.
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Zscaler Three in the **Attribute Mappings** section. The attributes selected as **Matching** properties are used to match the groups in Zscaler Three for update operations. Select **Save** to commit any changes.
 
-	![Screenshot of the Attribute Mappings section with three mappings displayed.](./media/zscaler-three-provisioning-tutorial/group-attribute-mappings.png)
+   |Attribute|Type|Supported for filtering|Required by Zscaler Three|
+   |---|---|---|---|
+   |displayName|String|&check;|&check;
+   |members|Reference||
+   |externalId|String||&check;
 
 1. To configure scoping filters, refer to the instructions in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
@@ -132,7 +139,7 @@ This section guides you through the steps for configuring the Microsoft Entra pr
 
 1. When you're ready to provision, select **Save**:
 
-	![Select Save](./media/zscaler-three-provisioning-tutorial/save-provisioning.png)
+	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
 This operation starts the initial synchronization of all users and groups defined under **Scope** in the **Settings** section. The initial sync takes longer than subsequent syncs, which occur about every 40 minutes, as long as the Microsoft Entra provisioning service is running. You can monitor progress in the **Synchronization Details** section. You can also follow links to a provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on Zscaler Three.
 

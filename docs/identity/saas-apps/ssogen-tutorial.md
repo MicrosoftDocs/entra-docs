@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SSOGEN Microsoft Entra SSO Gateway for Oracle E Business Suite EBS, PeopleSoft, and JDE so that I can control who has access to SSOGEN Microsoft Entra SSO Gateway for Oracle E Business Suite EBS, PeopleSoft, and JDE, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -93,7 +93,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	> [!NOTE]
 	> These values are not real. Update these values with the actual Reply URL and Sign-On URL. Contact [SSOGEN - Microsoft Entra SSO Gateway for Oracle E-Business Suite - EBS, PeopleSoft, and JDE Client support team](mailto:support@ssogen.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. Your SSOGEN - Microsoft Entra SSO Gateway for Oracle E-Business Suite - EBS, PeopleSoft, and JDE application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, where as **nameidentifier** is mapped with **user.userprincipalname**. SSOGEN - Microsoft Entra SSO Gateway for Oracle E-Business Suite - EBS, PeopleSoft, and JDE application expects **nameidentifier** to be mapped with **user.onpremisessamaccountname**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
+1. Your SSOGEN - Microsoft Entra SSO Gateway for Oracle E-Business Suite - EBS, PeopleSoft, and JDE application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**. SSOGEN - Microsoft Entra SSO Gateway for Oracle E-Business Suite - EBS, PeopleSoft, and JDE application expects **nameidentifier** to be mapped with **user.onpremisessamaccountname**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
 
 	![image](common/edit-attribute.png)
 

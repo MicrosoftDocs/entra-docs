@@ -5,7 +5,7 @@ description: Learn how to customize user display and experience options for Micr
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 10/04/2024
 
 ms.author: justinha
 author: justinha
@@ -18,7 +18,7 @@ Self-service password reset (SSPR) gives users in Microsoft Entra ID the ability
 
 To improve the SSPR experience for users, you can customize the look and feel of the password reset page, email notifications, or sign-in pages. These customization options let you make it clear to the user they're in the right place, and give them confidence they're accessing company resources.
     
-This article shows you how to customize the SSPR e-mail link for users, company branding, and AD FS sign-in page link.
+This article shows you how to customize the SSPR e-mail link for users, company branding, and AD FS sign-in page link. Most of these options can be customized by anyone assigned the [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) role.
 
 ## Customize the "Contact your administrator" link
 
@@ -38,9 +38,9 @@ To help users reach out for assistance with self-service password reset, a "Cont
 
 The default contact email is sent to recipients in the following order:
 
-1. If the *helpdesk administrator* role or *password administrator* role is assigned, administrators with these roles are notified.
-1. If no helpdesk administrator or password administrator is assigned, then administrators with the *user administrator* role are notified.
-1. If none of the previous roles are assigned, then the *global administrators* are notified.
+1. If the Helpdesk Administrator role or Password Administrator role is assigned, administrators with these roles are notified.
+1. If no Helpdesk Administrator or Password Administrator is assigned, then administrators with the User Administrator role are notified.
+1. If none of the previous roles are assigned, then the Global Administrators are notified.
 
 In all cases, a maximum of 100 recipients are notified.
 
@@ -66,7 +66,11 @@ The graphics you choose are shown in the following circumstances:
 
 ### Directory name
 
-To make things look more user-friendly, you can change organization name in the portal and in the automated communications. To change the directory name attribute in the Microsoft Entra admin center, sign in as a Global Administrator and browse to **Identity** > **Overview** > **Properties**. This friendly organization name option is the most visible in automated emails, as in the following examples:
+To make things look more user-friendly, you can change organization name in the portal and in the automated communications. 
+
+[!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)]
+
+To change the directory name attribute in the Microsoft Entra admin center, browse to **Identity** > **Overview** > **Properties**. This friendly organization name option is the most visible in automated emails, as in the following examples:
 
 * The friendly name in the email, for example "*Microsoft on behalf of CONTOSO demo*"
 * The subject line in the email, for example "*CONTOSO demo account email verification code*"

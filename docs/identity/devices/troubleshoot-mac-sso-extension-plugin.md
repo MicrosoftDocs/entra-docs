@@ -537,7 +537,7 @@ The user clicks on the **Call Microsoft Graph API** button to invoke the sign-in
 Handling SSO request, requested operation: get_accounts_operation
 (Default accessor) Get accounts.
 (MSIDAccountCredentialCache) retrieving cached credentials using credential query
-(Default accessor) Looking for token with aliases (null), tenant (null), clientId 08dc26ab-e050-465e-beb4-d3f2d66647a5, scopes (null)
+(Default accessor) Looking for token with aliases (null), tenant (null), clientId 00001111-aaaa-2222-bbbb-3333cccc4444, scopes (null)
 (Default accessor) No accounts found in default accessor.
 (Default accessor) No accounts found in other accessors.
 Completed get accounts SSO request with a personal device mode.
@@ -557,9 +557,9 @@ Starting SSO broker request with payload: {
     authority = "https://login.microsoftonline.com/common";
     "client_app_name" = MSALMacOS;
     "client_app_version" = "1.0";
-    "client_id" = "08dc26ab-e050-465e-beb4-d3f2d66647a5";
+    "client_id" = "00001111-aaaa-2222-bbbb-3333cccc4444";
     "client_version" = "1.1.7";
-    "correlation_id" = "3506307A-E90F-4916-9ED5-25CF81AE97FC";
+    "correlation_id" = "aaaa0000-bb11-2222-33cc-444444dddddd";
     "extra_oidc_scopes" = "openid profile offline_access";
     "instance_aware" = 0;
     "msg_protocol_ver" = 4;
@@ -573,7 +573,7 @@ Starting SSO broker request with payload: {
 //Request PRT from Microsoft Authentication Broker Service//
 ////////////////////////////////////////////////////////////
 Using request handler <ADInteractiveDevicelessPRTBrokerRequestHandler: 0x117ea50b0>
-(Default accessor) Looking for token with aliases (null), tenant (null), clientId 29d9ed98-a469-4536-ade2-f981bc1d605e, scopes (null)
+(Default accessor) Looking for token with aliases (null), tenant (null), clientId 11112222-bbbb-3333-cccc-4444dddd5555, scopes (null)
 Attempting to get Deviceless Primary Refresh Token interactively.
 Caching AAD Environements
 networkHost: login.microsoftonline.com, cacheHost: login.windows.net, aliases: login.microsoftonline.com, login.windows.net, login.microsoft.com, sts.windows.net
@@ -666,12 +666,12 @@ Handle silent PRT response Masked(not-null), error Masked(null)
 //Provide Access Token received from Azure AD back to Client Application// 
 //and complete authorization request                                    //
 //////////////////////////////////////////////////////////////////////////
-[MSAL] (Default cache) Removing credentials with type AccessToken, environment login.windows.net, realm TenantID, clientID 08dc26ab-e050-465e-beb4-d3f2d66647a5, unique user ID dbb22b2f, target User.Read profile openid email
+[MSAL] (Default cache) Removing credentials with type AccessToken, environment login.windows.net, realm TenantID, clientID 00001111-aaaa-2222-bbbb-3333cccc4444, unique user ID dbb22b2f, target User.Read profile openid email
 ADBrokerAcquireTokenWithPRTAction succeeded.
 Composing broker response.
 Sending broker response.
 Returning to app (msauth.com.microsoft.idnaace.MSALMacOS://auth) - protocol version: 3
-hash: 4A07DFC2796FD75A27005238287F2505A86BA7BB9E6A00E16A8F077D47D6D879
+hash: AA11BB22CC33DD44EE55FF66AA77BB88CC99DD00
 payload: Masked(not-null)
 Completed interactive SSO request.
 Completed interactive SSO request.
@@ -730,9 +730,9 @@ Starting SSO broker request with payload: {
     authority = "https://login.microsoftonline.com/<TenantID>";
     "client_app_name" = MSALMacOS;
     "client_app_version" = "1.0";
-    "client_id" = "08dc26ab-e050-465e-beb4-d3f2d66647a5";
+    "client_id" = "00001111-aaaa-2222-bbbb-3333cccc4444";
     "client_version" = "1.1.7";
-    "correlation_id" = "45418AF5-0901-4D2F-8C7D-E7C5838A977E";
+    "correlation_id" = "aaaa0000-bb11-2222-33cc-444444dddddd";
     "extra_oidc_scopes" = "openid profile offline_access";
     "home_account_id" = "<UserObjectId>.<TenantID>";
     "instance_aware" = 0;
@@ -750,14 +750,14 @@ Executing new request
 Beginning ADBrokerAcquireTokenSilentAction
 Beginning silent flow.
 [MSAL] Resolving authority: Masked(not-null), upn: auth.placeholder-61945244__domainname.com
-[MSAL] (Default cache) Removing credentials with type AccessToken, environment login.windows.net, realm <TenantID>, clientID 08dc26ab-e050-465e-beb4-d3f2d66647a5, unique user ID dbb22b2f, target User.Read profile openid email
+[MSAL] (Default cache) Removing credentials with type AccessToken, environment login.windows.net, realm <TenantID>, clientID 00001111-aaaa-2222-bbbb-3333cccc4444, unique user ID dbb22b2f, target User.Read profile openid email
 [MSAL] (MSIDAccountCredentialCache) retrieving cached credentials using credential query
 [MSAL] Silent controller with PRT finished with error Masked(null)
 ADBrokerAcquireTokenWithPRTAction succeeded.
 Composing broker response.
 Sending broker response.
 Returning to app (msauth.com.microsoft.idnaace.MSALMacOS://auth) - protocol version: 3
-hash: 292FBF0D32D7EEDEB520098E44C0236BA94DDD481FAF847F7FF6D5CD141B943C
+hash: AA11BB22CC33DD44EE55FF66AA77BB88CC99DD00
 payload: Masked(not-null)
 Completed silent SSO request.
 Request complete
@@ -804,7 +804,7 @@ Init MSIDKeychainTokenCache with keychainGroup: Masked(not-null)
 [MSAL] (Default accessor) Found 1 tokens
 [Browser SSO] Checking PRTs for deviceId 73796663
 [MSAL] [Browser SSO] Executing without UI for authority https://login.microsoftonline.com/common, number of PRTs 1, device registered 1
-[MSAL] [Browser SSO] Processing request with PRTs and correlation ID in headers (null), query 67b6a62f-6c5d-40f1-8440-a8edac7a1f87
+[MSAL] [Browser SSO] Processing request with PRTs and correlation ID in headers (null), query aaaa0000-bb11-2222-33cc-444444dddddd
 [MSAL] Resolving authority: Masked(not-null), upn: Masked(null)
 [MSAL] No cached preferred_network for authority
 [MSAL] Caching AAD Environements

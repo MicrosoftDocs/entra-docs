@@ -2,15 +2,14 @@
 title: 'Tutorial: Configure Promapp for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Promapp.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Promapp so that I can streamline the user management process and ensure that users have the appropriate access to Promapp.
 ---
@@ -44,7 +43,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 * When assigning a user to Promapp, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
-## Setup Promapp for provisioning
+## Set up Promapp for provisioning
 
 1. Sign in to your [Promapp Admin Console](https://freetrial.promapp.com/axelerate/Login.aspx). Under the user name navigate to **My Profile**.
 
@@ -54,7 +53,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 	![Promapp Add SCIM](media/promapp-provisioning-tutorial/addtoken.png)
 
-3.	Provide any name in the **Description** field and select **Scim** from the **Scope** dropdown menu. Click on the save icon.
+3.	Provide any name in the **Description** field and select **SCIM** from the **Scope** dropdown menu. Click on the save icon.
 
 	![Promapp Add Name](media/promapp-provisioning-tutorial/addname.png)
 
@@ -113,8 +112,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 7. Click **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Promapp**.
-
-	![Promapp User Mappings](media/promapp-provisioning-tutorial/usermappings.png)
 
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Promapp in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Promapp for update operations. Select the **Save** button to commit any changes.
 

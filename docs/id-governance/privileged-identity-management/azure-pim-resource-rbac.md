@@ -8,21 +8,21 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: privileged-identity-management
 ms.topic: how-to
-ms.date: 09/12/2023
+ms.date: 12/13/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
 
 ---
 # View activity and audit history for Azure resource roles in Privileged Identity Management
 
-Privileged Identity Management (PIM) in Microsoft Entra ID, enables you to view activity, activations, and audit history for Azure resources roles within your organization. This includes subscriptions, resource groups, and even virtual machines. Any resource within the Microsoft Entra admin center that leverages the Azure role-based access control functionality can take advantage of the security and lifecycle management capabilities in Privileged Identity Management. If you want to retain audit data for longer than the default retention period, you can use Azure Monitor to route it to an Azure storage account. For more information, see [Archive Microsoft Entra logs to an Azure storage account](~/identity/monitoring-health/howto-archive-logs-to-storage-account.md).
+Privileged Identity Management (PIM) in Microsoft Entra ID, enables you to view activity, activations, and audit history for Azure resources roles within your organization. This includes subscriptions, resource groups, and even virtual machines. Any resource within the Microsoft Entra admin center that uses the Azure role-based access control functionality can take advantage of the security and lifecycle management capabilities in Privileged Identity Management. If you want to keep audit data for longer than the default retention period, you can use Azure Monitor to route it to an Azure storage account. For more information, see [Archive Microsoft Entra logs to an Azure storage account](~/identity/monitoring-health/howto-archive-logs-to-storage-account.md).
 
 > [!NOTE]
 > If your organization has outsourced management functions to a service provider who uses [Azure Lighthouse](/azure/lighthouse/overview), role assignments authorized by that service provider won't be shown here.
 
 ## View activity and activations
 
-To see what actions a specific user took in various resources, you can view the Azure resource activity that's associated with a given activation period.
+To see the actions a specific user took in various resources, view the Azure resource activity associated with their activation period.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
@@ -103,7 +103,7 @@ My audit enables you to view your personal role activity.
     :::image type="content" source="media/azure-pim-resource-rbac/my-audit-time.png" alt-text="Screenshot showing an audit list for the current user.":::
 
 > [!NOTE]
-> Access to audit history requires either a Global Administrator or Privileged Role Administrator role.
+> Access to audit history requires at least the Privileged Role Administrator role.
 
 ## Get reason, approver, and ticket number for approval events
 
@@ -132,7 +132,7 @@ My audit enables you to view your personal role activity.
 
     :::image type="content" source="media/azure-pim-resource-rbac/audit-event-target-type.png" alt-text="Screenshot showing how to check the target type.":::
 
-Typically, the log event immediately above the approval event is an event for "Add member to role completed" where the **Initiated by (actor)** is the requester. In most cases, you won't need to find the requester in the approval request from an auditing perspective.
+Typically, the log event immediately above the approval event is an event for **Add member to role completed** where the **Initiated by (actor)** is the requester. In most cases, you won't need to find the requester in the approval request from an auditing perspective.
 
 ## Next steps
 

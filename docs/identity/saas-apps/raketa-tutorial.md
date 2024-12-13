@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Raketa so that I can control who has access to Raketa, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -46,13 +46,9 @@ To configure the integration of Raketa into Microsoft Entra ID, you need to add 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
 
-    ![rkt_2](./media/raketa-tutorial/new-app.png)
+1. In the **Browse Microsoft Entra Gallery** page, in the search box, type *Raketa* in the search box.
 
-1. In the **Add from the gallery** [5] section, type **Raketa** in the search box [6].
-
-1. Select **Raketa** from results panel [7] and then click on **Add** button [8]. 
-
-    ![rkt_3](./media/raketa-tutorial/results.png)
+1. Select **Raketa**. In the **Raketa** pane, provide a name and select **Create**.
 
 <a name='configure-and-test-azure-ad-sso-for-raketa'></a>
 
@@ -76,38 +72,34 @@ To configure and test Microsoft Entra SSO with Raketa, perform the following ste
 Follow these steps to enable Microsoft Entra SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Raketa** application integration page, find the **Manage** section and select **single sign-on** [9].
+1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Raketa** application integration page, find the **Manage** section and select **Single sign-on**.
 
-    ![rkt_4](./media/raketa-tutorial/integration.png)
-
-1. On the **Select a single sign-on method** page [9], select **SAML** [10].
+1. On the **Select a single sign-on method** page, select **SAML**.
 
     ![rkt_5](./media/raketa-tutorial/method.png)
 
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** [11] to edit the settings.
+1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
-    1. In the **Identifier (Entity ID)** [12] and **Sign on URL** [14] text boxes, type the URL: `https://raketa.travel/`.
+    1. In the **Identifier (Entity ID)** and **Sign on URL** text boxes, type the URL: `https://raketa.travel/`.
 
-    1. In the **Reply URL** text box [13], type a URL using the following pattern: `https://raketa.travel/sso/acs?clientId=<CLIENT_ID>`.  
+    1. In the **Reply URL** text box, type a URL using the following pattern: `https://raketa.travel/sso/acs?clientId=<CLIENT_ID>`.  
 
     ![rkt_6](./media/raketa-tutorial/values.png)
 
 	> [!NOTE]
 	> The Reply URL value is not real. Update the value with the actual Reply URL. Contact [Raketa Client support team](mailto:help@raketa.travel) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** [15] to download the certificate and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
 1. On the **Set up Raketa** section, copy the appropriate URL(s) based on your requirement.
 
-    1. Login URL [16] – The authorization web-page URL, which is used to redirect the users to the authentication system.
+    1. **Login URL** – The authorization web-page URL, which is used to redirect the users to the authentication system.
 
-    1. Microsoft Entra Identifier [17] – Microsoft Entra Identifier.
+    1. **Microsoft Entra Identifier** – Microsoft Entra Identifier.
 
-    1. Logout URL [18] – The web-page URL, which is used to redirect the users after logout.
-
-    ![rkt_7](./media/raketa-tutorial/authentication.png)
+    1. **Logout URL** – The web-page URL, which is used to redirect the users after logout.
 
 <a name='create-an-azure-ad-test-user'></a>
 
@@ -132,23 +124,19 @@ In this section, you'll create a test user called B.Simon.
 In this section, you'll enable B.Simon to use single sign-on by granting access to Raketa.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Raketa** [27].  
+1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Raketa**.  
 
-    ![rkt_10](./media/raketa-tutorial/add-raketa.png)
+1. In the app's overview page, find the **Manage** section and select **Users and groups**.
 
-1. In the app's overview page, find the **Manage** section and select **Users and groups** [28]. 
-
-    ![rkt_11](./media/raketa-tutorial/users-groups.png)
-
-1. Select **Add user** [29], then select **Users and groups** [30] in the **Add Assignment** dialog.
+1. Select **Add user**, then select **Users and groups** in the **Add Assignment** dialog.
 
     ![rkt_12](./media/raketa-tutorial/add-user-raketa.png)
 
-1. In the **Users and groups** dialog, select **B.Simon** [31] from the Users list, then click the **Select** [32] button at the bottom of the screen.
+1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
 
 1. If you're expecting any role value in the SAML assertion, in the **Select Role** dialog, select the appropriate role for the user from the list and then click the **Select** button at the bottom of the screen.
 
-1. In the **Add Assignment** dialog, click the **Assign** button [33]. 
+1. In the **Add Assignment** dialog, click the **Assign** button.
 
     ![rkt_13](./media/raketa-tutorial/assign-user.png)
 

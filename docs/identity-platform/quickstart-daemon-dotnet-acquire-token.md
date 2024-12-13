@@ -52,11 +52,11 @@ To obtain the sample application, you can either clone it from GitHub or downloa
    ```csharp
     // Full directory URL, in the form of https://login.microsoftonline.com/<tenant_id>
     Authority = " https://login.microsoftonline.com/Enter_the_tenant_ID_obtained_from_the_Microsoft_Entra_admin_center",
-    // 'Enter the client ID obtained from the Microsoft Entra Admin Center
+    // 'Enter the client ID obtained from the Microsoft Entra admin center
     ClientId = "Enter the client ID obtained from the Microsoft Entra admin center",
-    // Client secret 'Value' (not its ID) from 'Client secrets' in the Microsoft Entra Admin Center
+    // Client secret 'Value' (not its ID) from 'Client secrets' in the Microsoft Entra admin center
     ClientSecret = "Enter the client secret value obtained from the Microsoft Entra admin center",
-    // Client 'Object ID' of app registration in Microsoft Entra Admin Center - this value is a GUID
+    // Client 'Object ID' of app registration in Microsoft Entra admin center - this value is a GUID
     ClientObjectId = "Enter the client Object ID obtained from the Microsoft Entra admin center"
    ```
 

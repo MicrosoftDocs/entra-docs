@@ -1,17 +1,13 @@
 ---
 title: 'Tutorial: Configure PaperCut Cloud Print Management for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to PaperCut Cloud Print Management.
-
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: jeedes
-ms.assetid: 7e65d727-2951-4aec-a7a3-7bde49ed09e2
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to PaperCut Cloud Print Management so that I can streamline the user management process and ensure that users have the appropriate access to PaperCut Cloud Print Management.
 ---
@@ -32,7 +28,7 @@ This tutorial describes the steps you need to perform in both PaperCut Cloud Pri
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md). 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator). 
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
 * A PaperCut Cloud Print Management administrator account.
 
 
@@ -108,7 +104,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 7. Select **Save**.
 
 8. Under the **Mappings** section, select **Provision Microsoft Entra users**.
-   ![Microsoft Entra ID Mapping](media/papercut-cloud-print-management-provisioning-tutorial/mapping.png)
 
 9. Review the user attributes that are synchronized from Microsoft Entra ID to PaperCut Cloud Print Management in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in PaperCut Cloud Print Management for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the PaperCut Cloud Print Management API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 

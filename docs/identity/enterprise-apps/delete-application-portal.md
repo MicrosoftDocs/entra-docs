@@ -28,7 +28,7 @@ When you delete and enterprise application, it remains in a suspended state in t
 To delete an enterprise application, you need:
 
 - A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+- One of the following roles: Cloud Application Administrator, Application Administrator, or owner of the service principal.
 - An [enterprise application added to your tenant](add-application-portal.md)
 
 :::zone pivot="portal"
@@ -43,7 +43,7 @@ To delete an enterprise application, you need:
 1. In the **Manage** section of the left menu, select **Properties**.
 1. At the top of the **Properties** pane, select **Delete**, and then select **Yes** to confirm you want to delete the application from your Microsoft Entra tenant.
 
-    :::image type="content" source="media/delete-application-portal/delete-application.png" alt-text="Delete an enterprise application." lightbox="media/delete-application-portal/delete-application.png":::
+    :::image type="content" source="media/delete-application-portal/delete-application.png" alt-text="screenshot of how to delete an enterprise application." lightbox="media/delete-application-portal/delete-application.png":::
 
 :::zone-end
 
@@ -76,7 +76,7 @@ Make sure you're using the Azure AD PowerShell module. This is important if you'
 1. Delete the enterprise application.
 
    ```powershell
-   Remove-AzureADServicePrincipal -ObjectId 'd4142c52-179b-4d31-b5b9-08940873507b'
+   Remove-AzureADServicePrincipal -ObjectId 'aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb'
    ```
 
 :::zone-end
@@ -102,7 +102,7 @@ Make sure you're using the Azure AD PowerShell module. This is important if you'
 1. Delete the enterprise application.
 
    ```powershell
-   Remove-MgServicePrincipal -ServicePrincipalId 'd4142c52-179b-4d31-b5b9-08940873507b'
+   Remove-MgServicePrincipal -ServicePrincipalId 'aaaaaaaa-bbbb-cccc-1111-222222222222'
    ```
 
 :::zone-end

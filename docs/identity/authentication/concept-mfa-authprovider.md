@@ -6,21 +6,21 @@ description: When should you use an authentication provider with Microsoft Entra
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/14/2023
+ms.date: 10/03/2024
 
 ms.author: justinha
 author: justinha
 manager: amycolannino
-ms.reviewer: michmcla
+ms.reviewer: jpettere
 ---
 # When to use a Microsoft Entra multifactor authentication provider
 
 > [!IMPORTANT]
 > Effective September 1st, 2018 new auth providers may no longer be created. Existing auth providers may continue to be used and updated, but migration is no longer possible. Multifactor authentication will continue to be available as a feature in Microsoft Entra ID P1 or P2 licenses.
 
-Two-step verification is available by default for Global Administrators who have Microsoft Entra ID, and Microsoft 365 users. However, if you wish to take advantage of [advanced features](howto-mfa-mfasettings.md) then you should purchase the full version of Microsoft Entra multifactor authentication.
+Two-step verification is available by default for administrators in Microsoft Entra ID, and Microsoft 365 users. However, if you wish to take advantage of [advanced features](howto-mfa-mfasettings.md) then you should enable Microsoft Entra multifactor authentication by using Conditional Access. For more information, see [Common Conditional Access policy: Require MFA for all users](~/identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md).
 
-A Microsoft Entra multifactor authentication provider is used to take advantage of features provided by Microsoft Entra multifactor authentication for users who **do not have licenses**.
+A Microsoft Entra multifactor authentication provider is used to take advantage of features provided by Microsoft Entra multifactor authentication for users who **don't have licenses**.
 
 ## Caveats related to the Azure MFA SDK
 
@@ -70,3 +70,5 @@ After you confirm that all settings are migrated, browse to **Providers** and se
 ## Next steps
 
 [Configure multifactor authentication settings](howto-mfa-mfasettings.md)
+
+[Common Conditional Access policy: Require MFA for all users](~/identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md)

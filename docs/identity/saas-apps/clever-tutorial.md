@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Clever so that I can control who has access to Clever, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -138,11 +138,9 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     b. Select **Active Directory Authentication**. 
 
-    ![Settings](./media/clever-tutorial/account.png "Settings") 
-    
-    c. Open the downloaded **App Federation Metadata Url** into Notepad and paste the content into the **Metadata URL** textbox.
+    c. Open the downloaded **App Federation Metadata Url** into Notepad and paste the content into the **Metadata URL** textbox in the **Configure Active Directory Authentication** dialog.
 
-    ![Upload Certificate](./media/clever-tutorial/metadata.png "Upload Certificate") 
+    ![Upload Certificate](./media/clever-tutorial/metadata.png "Upload Certificate")
 
     d.Click **Save**.
 

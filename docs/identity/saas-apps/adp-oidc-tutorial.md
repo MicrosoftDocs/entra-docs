@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 03/07/2024
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ADP (OIDC) so that I can control who has access to ADP (OIDC), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -69,6 +69,8 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     1. In the **Redirect URIs** textbox, paste the **Relying Party Redirect URI** value, which you have copied from ADP (OIDC) side.
 
         [![Screenshot of showing the redirect values.](common/redirect.png)](common/redirect.png#lightbox)
+
+    1. Click **Configure** button.
 
 1. Navigate to **Certificates & secrets** on the left menu and perform the following steps:
 

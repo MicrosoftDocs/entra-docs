@@ -46,7 +46,7 @@ Microsoft Entra Permissions Management has a group-based access system that uses
 
 We recommend you use [PIM for Groups](~/id-governance/privileged-identity-management/concept-pim-for-groups.md). This provides JIT access to Permissions Management to users and aligns with Zero Trust JIT and just-enough-access principles.
 
-To create Microsoft Entra security groups, see [manage groups and group membership](~/fundamentals/how-to-manage-groups.md).
+To create Microsoft Entra security groups, see [manage groups and group membership](../fundamentals/how-to-manage-groups.yml).
 
 ### Assign permissions in Microsoft Entra Permissions Management
 

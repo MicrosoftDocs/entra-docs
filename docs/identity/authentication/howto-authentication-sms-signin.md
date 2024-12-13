@@ -5,7 +5,7 @@ description: Learn how to configure and enable users to sign-in to Microsoft Ent
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/15/2023
+ms.date: 11/27/2024
 ms.author: justinha
 author: justinha
 manager: amycolannino
@@ -26,7 +26,7 @@ To complete this article, you need the following resources and privileges:
     * If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * A Microsoft Entra tenant associated with your subscription.
     * If needed, [create a Microsoft Entra tenant][create-azure-ad-tenant] or [associate an Azure subscription with your account][associate-azure-ad-tenant].
-* You need *global administrator* privileges in your Microsoft Entra tenant to enable SMS-based authentication.
+* You need at least the [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) role in your Microsoft Entra tenant to enable SMS-based authentication.
 * Each user that's enabled in the SMS authentication method policy must be licensed, even if they don't use it. Each enabled user must have one of the following Microsoft Entra ID, EMS, Microsoft 365 licenses:
     * [Microsoft 365 F1 or F3][m365-firstline-workers-licensing]
     * [Microsoft Entra ID P1 or P2][azure-ad-pricing]
@@ -62,7 +62,7 @@ First, let's enable SMS-based authentication for your Microsoft Entra tenant.
     ![Screenshot that shows how to select the SMS authentication method.](./media/howto-authentication-sms-signin/authentication-methods-policy.png)
 
 
-1. Click **Enable** and select **Target users**. You can choose to enable SMS-based authentication for *All users* or *Select users* and groups. 
+1. Select **Enable** and select **Target users**. You can choose to enable SMS-based authentication for *All users* or *Select users* and groups. 
    > [!NOTE]
    > To configure SMS-based authentication for first-factor (that is, to allow users to sign in with this method), check the **Use for sign-in** checkbox. Leaving this unchecked makes SMS-based authentication available for multifactor authentication and Self-Service Password Reset only.
 
@@ -80,7 +80,7 @@ Each user that's enabled in SMS authentication method policy must be licensed, e
 
 ## Set a phone number for user accounts
 
-Users are now enabled for SMS-based authentication, but their phone number must be associated with the user profile in Microsoft Entra ID before they can sign-in. The user can [set this phone number themselves](https://support.microsoft.com/account-billing/set-up-sms-sign-in-as-a-phone-verification-method-0aa5b3b3-a716-4ff2-b0d6-31d2bcfbac42) in *My Account*, or you can assign the phone number using the Microsoft Entra admin center. Phone numbers can be set by *global admins*, *authentication admins*, or *privileged authentication admins*.
+Users are now enabled for SMS-based authentication, but their phone number must be associated with the user profile in Microsoft Entra ID before they can sign-in. The user can [set this phone number themselves](https://support.microsoft.com/account-billing/set-up-sms-sign-in-as-a-phone-verification-method-0aa5b3b3-a716-4ff2-b0d6-31d2bcfbac42) in *My Account*, or you can assign the phone number using the Microsoft Entra admin center. Phone numbers can be set by those with at least the [Authentication Administrator](../role-based-access-control/permissions-reference.md#authentication-administrator) role.
 
 When a phone number is set for SMS-based sign-in, it's also then available for use with [Microsoft Entra multifactor authentication][tutorial-azure-mfa] and [self-service password reset][tutorial-sspr].
 
@@ -151,7 +151,7 @@ If you receive an error when you try to set a phone number for a user account in
 
 <!-- INTERNAL LINKS -->
 [create-azure-ad-tenant]: ~/fundamentals/sign-up-organization.md
-[associate-azure-ad-tenant]: ~/fundamentals/how-subscriptions-associated-directory.md
+[associate-azure-ad-tenant]: ~/fundamentals/how-subscriptions-associated-directory.yml
 [concepts-passwordless]: concept-authentication-passwordless.md
 [tutorial-azure-mfa]: tutorial-enable-azure-mfa.md
 [tutorial-sspr]: tutorial-enable-sspr.md

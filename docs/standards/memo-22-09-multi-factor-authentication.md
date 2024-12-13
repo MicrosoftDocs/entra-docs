@@ -8,7 +8,7 @@ author: gargi-sinha
 ms.author: gasinh
 manager: martinco
 ms.reviewer: martinco
-ms.date: 04/28/2023
+ms.date: 04/28/2024
 ms.custom: it-pro
 ---
 
@@ -26,7 +26,7 @@ Some federal agencies have deployed modern credentials such as FIDO2 security ke
 
 Learn more:
 
-* [FIDO2 security keys](~/identity/authentication/concept-authentication-passwordless.md#fido2-security-key-providers)
+* [FIDO2 security keys](~/identity/authentication/concept-authentication-passwordless.md)
 * [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview)
 * [Overview of Microsoft Entra certificate-based authentication](~/identity/authentication/concept-certificate-based-authentication.md)
 
@@ -37,7 +37,7 @@ Some agencies are modernizing their authentication credentials. There are multip
 ### Modern approaches
 
 * **FIDO2 security keys** are, according to the Cybersecurity & Infrastructure Security Agency (CISA) the gold standard of multifactor authentication
-  * See, [Passwordless authentication options for Microsoft Entra ID, FIDO2 security keys](~/identity/authentication/concept-authentication-passwordless.md#fido2-security-key-providers)
+  * See, [Passwordless authentication options for Microsoft Entra ID, FIDO2 security keys](~/identity/authentication/concept-authentication-passwordless.md)
   * Go to cisa.gov for [More than a Password](https://www.cisa.gov/mfa)
 * **Microsoft Entra certificate authentication** without dependency on a federated identity provider. 
   * This solution includes smart card implementations: Common Access Card (CAC), Personal Identity Verification (PIV), and derived PIV credentials for mobile devices or security keys
@@ -59,7 +59,7 @@ Learn more:
 
 * [Plan your Microsoft Entra hybrid join implementation](~/identity/devices/hybrid-join-plan.md), or 
 * [How to: Plan your Microsoft Entra join implementation](~/identity/devices/device-join-plan.md)
-* See also, [Common Conditional Access policy: Require a compliant device, Microsoft Entra hybrid joined device, or multifactor authentication for all users](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md)
+* See also, [Common Conditional Access policy: Require a compliant device, Microsoft Entra hybrid joined device, or multifactor authentication for all users](~/identity/conditional-access/policy-alt-all-users-compliant-hybrid-or-mfa.md)
 
 >[!NOTE]
 > Microsoft Authenticator isn't phishing-resistant. Configure Conditional Access policy to require that managed devices get protection from external phishing threats.

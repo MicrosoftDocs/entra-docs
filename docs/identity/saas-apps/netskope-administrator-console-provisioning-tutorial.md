@@ -2,15 +2,14 @@
 title: 'Tutorial: Configure Netskope User Authentication for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Netskope User Authentication.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Netskope User Authentication so that I can streamline the user management process and ensure that users have the appropriate access to Netskope User Authentication.
 ---
@@ -121,15 +120,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Netskope User Authentication**.
 
-	![Netskope User Authentication User Mappings](media/netskope-administrator-console-provisioning-tutorial/usermappings.png)
-
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Netskope User Authentication in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Netskope User Authentication for update operations. Select the **Save** button to commit any changes.
 
 	![Netskope User Authentication User Attributes](media/netskope-administrator-console-provisioning-tutorial/userattributes.png)
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Netskope User Authentication**.
-
-	![Netskope User Authentication Group Mappings](media/netskope-administrator-console-provisioning-tutorial/groupmappings.png)
 
 11. Review the group attributes that are synchronized from Microsoft Entra ID to Netskope User Authentication in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Netskope User Authentication for update operations. Select the **Save** button to commit any changes.
 

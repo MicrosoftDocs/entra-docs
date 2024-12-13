@@ -6,7 +6,7 @@ description: Download user records in bulk in the Azure admin center in Microsof
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
-ms.date: 09/08/2023
+ms.date: 07/01/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
@@ -26,7 +26,7 @@ Both admin and non-admin users can download user lists.
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Select Microsoft Entra ID.
 1. Select **Users** > **All users** > **Download users**. By default, all user profiles are exported.
 1. On the **Download users** page, select **Start** to receive a CSV file listing user profile properties. If there are errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error.
@@ -70,11 +70,11 @@ You can see the status of your pending bulk requests in the **Bulk operation res
 
 :::image type="content" source="./media/users-bulk-download/bulk-center.png" alt-text="Screenshot of checking the status in the Bulk Operations Results page." lightbox="./media/users-bulk-download/bulk-center.png":::
 
+If you experience errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error. The file submission must match the provided template and include the exact column names. For more information about bulk operations limitations, see [Bulk download service limits](#bulk-download-service-limits).
+
 ## Bulk download service limits
 
-Each bulk activity to export a list of users can run for up to one hour. This pace enables export and download of a list of up to 500,000 users.
-
-[!INCLUDE [Bulk update warning](~/includes/bulk-export.md)]
+[!INCLUDE [Bulk operations limitations](~/includes/bulk-operations-limitations.md)]
 
 ## Next steps
 

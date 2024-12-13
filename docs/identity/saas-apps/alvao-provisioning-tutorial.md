@@ -2,20 +2,17 @@
 title: 'Tutorial: Configure ALVAO for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to ALVAO.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: beatrizd
-ms.assetid: a72aa8af-28e0-4378-9d74-59b128c9cf16
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 04/10/2023
-ms.author: thwimmer
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to ALVAO so that I can streamline the user management process and ensure that users have the appropriate access to ALVAO.
 
-# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to ALVAO so that I can streamline the user management process and ensure that users have the appropriate access to ALVAO.
 ---
 
 # Tutorial: Configure ALVAO for automatic user provisioning
@@ -35,7 +32,7 @@ This tutorial describes the steps you need to perform in both ALVAO and Microsof
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator).
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A user account in ALVAO with Admin permissions.
 
 ## Step 1: Plan your provisioning deployment
@@ -47,7 +44,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Step 2: Configure ALVAO to support provisioning with Microsoft Entra ID
 1. Find your **Tenant SCIM Endpoint URL**, which should have the format `{ALVAO REST API address}/scim` (for example, https://app.contoso.com/alvaorestapi/scim).
-1. Generate a new **Secret Token** in **WebApp - Administration - Settings - [Active Directory and Microsoft Entra ID](https://doc.alvao.com/en/11.1/list-of-windows/alvao-webapp/administration/settings/activedirectory)** and copy its value.
+1. Generate a new **Secret Token** in **WebApp - Administration - Settings - [Active Directory and Microsoft Entra ID](https://doc.alvao.com/en/11.2/ui/administration/settings/activedirectory)** and copy its value.
 
 <a name='step-3-add-alvao-from-the-azure-ad-application-gallery'></a>
 
@@ -129,8 +126,8 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|String||
    > [!NOTE]
    >For advanced settings see:
-   > * [Mapping SCIM attributes to user fields](https://doc.alvao.com/en/11.1/alvao-asset-management/implementation/users/authentication/aad/provisioning/person-attribute-mapping)
-   > * [Mapping SCIM attributes to object properties](https://doc.alvao.com/en/11.1/alvao-asset-management/implementation/users/authentication/aad/provisioning/object-attribute-mapping)
+   > * [Mapping SCIM attributes to user fields](https://doc.alvao.com/en/11.2/admin-guide/users/authentication/aad/provisioning/person-attribute-mapping)
+   > * [Mapping SCIM attributes to object properties](https://doc.alvao.com/en/11.2/admin-guide/users/authentication/aad/provisioning/object-attribute-mapping)
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to ALVAO**.
 

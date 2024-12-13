@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Schoox so that I can control who has access to Schoox, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -130,11 +130,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Schoox SSO
 
-To configure single sign-on on **Schoox** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [Schoox support team](https://www.schoox.com/help/). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Schoox** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [Schoox support team](https://www.schoox.com/contact-us). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Schoox test user
 
-In this section, you create a user called Britta Simon in Schoox. Work with [Schoox support team](https://www.schoox.com/help/) to add the users in the Schoox platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in Schoox. Work with [Schoox support team](https://www.schoox.com/contact-us) to add the users in the Schoox platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 

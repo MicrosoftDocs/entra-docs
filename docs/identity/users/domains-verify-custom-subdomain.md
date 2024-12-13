@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 01/09/2024
+ms.date: 11/25/2024
 ms.author: barclayn
 ms.reviewer: sumitp
 ms.custom: it-pro, has-azure-ad-ps-ref
@@ -18,11 +18,10 @@ ms.custom: it-pro, has-azure-ad-ps-ref
 
 After a root domain is added to Microsoft Entra ID, part of Microsoft Entra, all subsequent subdomains added to that root in your Microsoft Entra organization automatically inherit the authentication setting from the root domain. However, if you want to manage domain authentication settings independently from the root domain settings, you can now with the Microsoft Graph API. For example, if you have a federated root domain such as contoso.com, this article can help you verify a subdomain such as child.contoso.com as managed instead of federated.
 
-In the Azure portal, when the parent domain is federated and the admin tries to verify a managed subdomain on the **Custom domain names** page, you'll get a 'Failed to add domain' error with the reason "One or more properties contains invalid values." If you try to add this subdomain from the Microsoft 365 admin center, you'll receive a similar error. For more information about the error, see [A child domain doesn't inherit parent domain changes in Office 365, Azure, or Intune](/microsoft-365/troubleshoot/administration/child-domain-fails-inherit-parent-domain-changes).
+In the Azure portal, when the parent domain is federated and the admin tries to verify a managed subdomain on the **Custom domain names** page, the page displays a 'Failed to add domain' error with the reason "One or more properties contains invalid values." If you try to add this subdomain from the Microsoft 365 admin center, you receive a similar error. For more information about the error, see [A child domain doesn't inherit parent domain changes in Office 365, Azure, or Intune](/microsoft-365/troubleshoot/administration/child-domain-fails-inherit-parent-domain-changes).
 
 Because subdomains inherit the authentication type of the root domain by default, you must promote the subdomain to a root domain in Microsoft Entra ID using the Microsoft Graph so you can set the authentication type to your desired type.
 
-[!INCLUDE [Azure AD PowerShell migration](../../includes/aad-powershell-migration-include.md)]
 
 > [!WARNING]
 > This code is provided as an example for demonstration purposes. If you intend to use it in your environment, consider testing it first on a small scale, or in a separate test organization. You may have to adjust the code to meet the specific needs of your environment.
@@ -31,14 +30,21 @@ Because subdomains inherit the authentication type of the root domain by default
 
 1. Use PowerShell to add the new subdomain, which has its root domain's default authentication type. The Microsoft Entra ID and Microsoft 365 admin centers don't yet support this operation.
 
-   ```powershell
-   Connect-MgGraph -Scopes "Domain.ReadWrite.All"
-    $param = @{
-      id="test.contoso.com"
-      AuthenticationType="Federated"  
-     }
-   New-MgDomain -Name "child.mydomain.com" -Authentication Federated
-   ```
+```powershell
+
+    # Connect to Microsoft Graph with the required scopes
+    Connect-MgGraph -Scopes "Domain.ReadWrite.All"
+    
+    # Define the parameters for the new domain
+    $domainParams = @{
+        Name = "child6.mydomain.com"
+        AuthenticationType = "Federated"
+    }
+    
+    # Create a new domain with the specified parameters
+    New-MgDomain @domainParams
+
+```
 
 1. Use the following example to GET the domain. Because the domain isn't a root domain, it inherits the root domain authentication type. Your command and results might look as follows, using your own tenant ID:
 
@@ -91,6 +97,7 @@ Invoking API with a federated verified subdomain with user references | POST | 4
 1. Use the following command to change the subdomain authentication type:
 
    ```powershell
+   Connect-MGGraph -Scopes "Domain.ReadWrite.All", "Directory.AccessAsUser.All"
    Update-MgDomain -DomainId "test.contoso.com" -BodyParameter @{AuthenticationType="Managed"}
    ```
 
@@ -124,6 +131,6 @@ Invoking API with a federated verified subdomain with user references | POST | 4
 ## Next steps
 
 - [Upgrade from Azure AD PowerShell to Microsoft Graph PowerShell](/powershell/microsoftgraph/migration-steps)
-- [Add custom domain names](~/fundamentals/add-custom-domain.md?context=azure/active-directory/users-groups-roles/context/ugr-context)
+- [Add custom domain names](~/fundamentals/add-custom-domain.yml?context=azure/active-directory/users-groups-roles/context/ugr-context)
 - [Manage domain names](domains-manage.md)
 - [ForceDelete a custom domain name with Microsoft Graph API](/graph/api/domain-forcedelete)

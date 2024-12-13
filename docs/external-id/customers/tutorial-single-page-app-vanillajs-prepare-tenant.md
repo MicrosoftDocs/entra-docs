@@ -7,7 +7,7 @@ manager: CelesteDG
 
 ms.author: owenrichards
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.custom: devx-track-js
 ms.topic: tutorial
 ms.date: 08/17/2023
@@ -29,11 +29,13 @@ In this tutorial;
 
 ## Prerequisites
 
-- An external tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
+- An external tenant. To create one, choose from the following methods:
+  - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/tutorials/marketplace) to set up an external tenant directly in Visual Studio Code.
+  - [Create a new external tenant](how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 - This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-    - Application Administrator
-    - Application Developer
-    - Cloud Application Administrator.
+  - Application Administrator
+  - Application Developer
+  - Cloud Application Administrator.
 
 ## Register the SPA and record identifiers
 
@@ -43,7 +45,7 @@ In this tutorial;
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](./includes/register-app/add-platform-redirect-url-vanilla-js.md)]
 
-## Grant API permissions
+## Grant admin consent
 
 [!INCLUDE [active-directory-b2c-grant-delegated-permissions](./includes/register-app/grant-api-permission-sign-in.md)]
 

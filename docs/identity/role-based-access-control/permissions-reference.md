@@ -1,32 +1,30 @@
 ---
 title: Microsoft Entra built-in roles
 description: Describes the Microsoft Entra built-in roles and permissions.
-
 author: rolyon
 manager: amycolannino
 search.appverid: MET150
 ms.service: entra-id
-: identity
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 02/06/2024
+ms.date: 11/21/2024
 ms.author: rolyon
 ms.reviewer: abhijeetsinha
-ms.custom: generated, it-pro, fasttrack-edit
-
+ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 
 # Microsoft Entra built-in roles
 
 In Microsoft Entra ID, if another administrator or non-administrator needs to manage Microsoft Entra resources, you assign them a Microsoft Entra role that provides the permissions they need. For example, you can assign roles to allow adding or changing users, resetting user passwords, managing user licenses, or managing domain names.
 
-This article lists the Microsoft Entra built-in roles you can assign to allow management of Microsoft Entra resources. For information about how to assign roles, see [Assign Microsoft Entra roles to users](manage-roles-portal.md). If you are looking for roles to manage Azure resources, see [Azure built-in roles](/azure/role-based-access-control/built-in-roles).
+This article lists the Microsoft Entra built-in roles you can assign to allow management of Microsoft Entra resources. For information about how to assign roles, see [Assign Microsoft Entra roles to users](manage-roles-portal.yml). If you are looking for roles to manage Azure resources, see [Azure built-in roles](/azure/role-based-access-control/built-in-roles).
 
 ## All roles
 
 > [!div class="mx-tableFixed"]
 > | Role | Description | Template ID |
 > | --- | --- | --- |
+> | [AI Administrator](#ai-administrator) | Manage all aspects of Microsoft 365 Copilot and AI-related enterprise services in Microsoft 365. | d2562ede-74db-457e-a7b6-544e236ebb61 |
 > | [Application Administrator](#application-administrator) | Can create and manage all aspects of app registrations and enterprise apps.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 9b895d92-2cd3-44c7-9d02-a6ac2d5ea5c3 |
 > | [Application Developer](#application-developer) | Can create application registrations independent of the 'Users can register applications' setting.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | cf1c38e5-3621-4004-a7cb-879624dced7c |
 > | [Attack Payload Author](#attack-payload-author) | Can create attack payloads that an administrator can initiate later. | 9c6df0f2-1e7c-4dc3-b195-66dfbd24aa8f |
@@ -46,7 +44,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [B2C IEF Policy Administrator](#b2c-ief-policy-administrator) | Can create and manage trust framework policies in the Identity Experience Framework (IEF). | 3edaf663-341e-4475-9f94-5c398ef6c070 |
 > | [Billing Administrator](#billing-administrator) | Can perform common billing related tasks like updating payment information. | b0f54661-2d74-4c50-afa3-1ec803f12efe |
 > | [Cloud App Security Administrator](#cloud-app-security-administrator) | Can manage all aspects of the Defender for Cloud Apps product. | 892c5842-a9a6-463a-8041-72aa08ca3cf6 |
-> | [Cloud Application Administrator](#cloud-application-administrator) | Can create and manage all aspects of app registrations and enterprise apps except application proxy.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 158c047a-c907-4556-b7ef-446551a6b5f7 |
+> | [Cloud Application Administrator](#cloud-application-administrator) | Can create and manage all aspects of app registrations and enterprise apps except App Proxy.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 158c047a-c907-4556-b7ef-446551a6b5f7 |
 > | [Cloud Device Administrator](#cloud-device-administrator) | Limited access to manage devices in Microsoft Entra ID.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 7698a772-787b-4ac8-901f-60d6b08affd2 |
 > | [Compliance Administrator](#compliance-administrator) | Can read and manage compliance configuration and reports in Microsoft Entra ID and Microsoft 365. | 17315797-102d-40b4-93e0-432062caca18 |
 > | [Compliance Data Administrator](#compliance-data-administrator) | Creates and manages compliance content. | e6d1a23a-da11-4be4-9570-befc86d067a7 |
@@ -54,11 +52,11 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Customer LockBox Access Approver](#customer-lockbox-access-approver) | Can approve Microsoft support requests to access customer organizational data. | 5c4f9dcd-47dc-4cf7-8c9a-9e4207cbfc91 |
 > | [Desktop Analytics Administrator](#desktop-analytics-administrator) | Can access and manage Desktop management tools and services. | 38a96431-2bdf-4b4c-8b6e-5d3d8abac1a4 |
 > | [Directory Readers](#directory-readers) | Can read basic directory information. Commonly used to grant directory read access to applications and guests. | 88d8e3e3-8f55-4a1e-953a-9b9898b8876b |
-> | [Directory Synchronization Accounts](#directory-synchronization-accounts) | Only used by Microsoft Entra Connect service.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | d29b2b05-8046-44ba-8758-1e26182fcf32 |
+> | [Directory Synchronization Accounts](#directory-synchronization-accounts) | Only used by Microsoft Entra Connect service. | d29b2b05-8046-44ba-8758-1e26182fcf32 |
 > | [Directory Writers](#directory-writers) | Can read and write basic directory information. For granting access to applications, not intended for users.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 9360feb5-f418-4baa-8175-e2a00bac4301 |
 > | [Domain Name Administrator](#domain-name-administrator) | Can manage domain names in cloud and on-premises.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 8329153b-31d0-4727-b945-745eb3bc5f31 |
 > | [Dynamics 365 Administrator](#dynamics-365-administrator) | Can manage all aspects of the Dynamics 365 product. | 44367163-eba1-44c3-98af-f5787879f96a |
-> | [Dynamics 365 Business Central Administrator](#dynamics-365-business-central-administrator) | Can access Dynamics 365 Business Central environments and perform all administrative tasks on the environments. | 963797fb-eb3b-4cde-8ce3-5878b3f32a3f |
+> | [Dynamics 365 Business Central Administrator](#dynamics-365-business-central-administrator) | Access and perform all administrative tasks on Dynamics 365 Business Central environments. | 963797fb-eb3b-4cde-8ce3-5878b3f32a3f |
 > | [Edge Administrator](#edge-administrator) | Manage all aspects of Microsoft Edge. | 3f1acade-1e04-4fbc-9b69-f0302cd84aef |
 > | [Exchange Administrator](#exchange-administrator) | Can manage all aspects of the Exchange product. | 29232cdf-9323-42fd-ade2-1d097af3e4de |
 > | [Exchange Recipient Administrator](#exchange-recipient-administrator) | Can create or update Exchange Online recipients within the Exchange Online organization. | 31392ffb-586c-42d1-9346-e59415a2cc4e |
@@ -72,7 +70,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Groups Administrator](#groups-administrator) | Members of this role can create/manage groups, create/manage groups settings like naming and expiration policies, and view groups activity and audit reports. | fdd7a751-b60b-444a-984c-02652fe8fa1c |
 > | [Guest Inviter](#guest-inviter) | Can invite guest users independent of the 'members can invite guests' setting. | 95e79109-95c0-4d8e-aee3-d01accf2d47b |
 > | [Helpdesk Administrator](#helpdesk-administrator) | Can reset passwords for non-administrators and Helpdesk Administrators.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 729827e3-9c14-49f7-bb1b-9608f156bbb8 |
-> | [Hybrid Identity Administrator](#hybrid-identity-administrator) | Can manage Active Directory to Microsoft Entra cloud provisioning, Microsoft Entra Connect, Pass-through Authentication (PTA), Password hash synchronization (PHS), Seamless Single sign-on (Seamless SSO), and federation settings. Does not have access to manage Microsoft Entra Connect Health.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 8ac3fc64-6eca-42ea-9e69-59f4c7b60eb2 |
+> | [Hybrid Identity Administrator](#hybrid-identity-administrator) | Manage Active Directory to Microsoft Entra cloud provisioning, Microsoft Entra Connect, pass-through authentication (PTA), password hash synchronization (PHS), seamless single sign-on (seamless SSO), and federation settings. Does not have access to manage Microsoft Entra Connect Health.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 8ac3fc64-6eca-42ea-9e69-59f4c7b60eb2 |
 > | [Identity Governance Administrator](#identity-governance-administrator) | Manage access using Microsoft Entra ID for identity governance scenarios. | 45d8d3c5-c802-45c6-b32a-1d70b5e1e86e |
 > | [Insights Administrator](#insights-administrator) | Has administrative access in the Microsoft 365 Insights app. | eb1f4a8d-243a-41f0-9fbd-c7cdf6c5ef7c |
 > | [Insights Analyst](#insights-analyst) | Access the analytical capabilities in Microsoft Viva Insights and run custom queries. | 25df335f-86eb-4119-b717-0ff02de207e9 |
@@ -82,7 +80,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Knowledge Administrator](#knowledge-administrator) | Can configure knowledge, learning, and other intelligent features. | b5a8dcf3-09d5-43a9-a639-8e29ef291470 |
 > | [Knowledge Manager](#knowledge-manager) | Can organize, create, manage, and promote topics and knowledge. | 744ec460-397e-42ad-a462-8b3f9747a02c |
 > | [License Administrator](#license-administrator) | Can manage product licenses on users and groups. | 4d6ac14f-3453-41d0-bef9-a3e0c569773a |
-> | [Lifecycle Workflows Administrator](#lifecycle-workflows-administrator) | Create and manage all aspects of workflows and tasks associated with Lifecycle Workflows in Microsoft Entra ID. | 59d46f88-662b-457b-bceb-5c3809e5908f |
+> | [Lifecycle Workflows Administrator](#lifecycle-workflows-administrator) | Create and manage all aspects of workflows and tasks associated with Lifecycle Workflows in Microsoft Entra ID.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 59d46f88-662b-457b-bceb-5c3809e5908f |
 > | [Message Center Privacy Reader](#message-center-privacy-reader) | Can read security messages and updates in Office 365 Message Center only. | ac16e43d-7b2d-40e0-ac05-243ff356ab5b |
 > | [Message Center Reader](#message-center-reader) | Can read messages and updates for their organization in Office 365 Message Center only. | 790c1fb9-7f7d-4f88-86a1-ef1f95c05c1b |
 > | [Microsoft 365 Migration Administrator](#microsoft-365-migration-administrator) | Perform all migration functionality to migrate content to Microsoft 365 using Migration Manager. | 8c8b803f-96e1-4129-9349-20738d9f9652 |
@@ -112,21 +110,50 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Security Reader](#security-reader) | Can read security information and reports in Microsoft Entra ID and Office 365.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 5d6b6bb7-de71-4623-b4af-96380a352509 |
 > | [Service Support Administrator](#service-support-administrator) | Can read service health information and manage support tickets. | f023fd81-a637-4b56-95fd-791ac0226033 |
 > | [SharePoint Administrator](#sharepoint-administrator) | Can manage all aspects of the SharePoint service. | f28a1f50-f6e7-4571-818b-6a12f2af6b6c |
+> | [SharePoint Embedded Administrator](#sharepoint-embedded-administrator) | Manage all aspects of SharePoint Embedded containers. | 1a7d78b6-429f-476b-b8eb-35fb715fffd4 |
 > | [Skype for Business Administrator](#skype-for-business-administrator) | Can manage all aspects of the Skype for Business product. | 75941009-915a-4869-abe7-691bff18279e |
 > | [Teams Administrator](#teams-administrator) | Can manage the Microsoft Teams service. | 69091246-20e8-4a56-aa4d-066075b2a7a8 |
 > | [Teams Communications Administrator](#teams-communications-administrator) | Can manage calling and meetings features within the Microsoft Teams service. | baf37b3a-610e-45da-9e62-d9d1e5e8914b |
 > | [Teams Communications Support Engineer](#teams-communications-support-engineer) | Can troubleshoot communications issues within Teams using advanced tools. | f70938a0-fc10-4177-9e90-2178f8765737 |
 > | [Teams Communications Support Specialist](#teams-communications-support-specialist) | Can troubleshoot communications issues within Teams using basic tools. | fcf91098-03e3-41a9-b5ba-6f0ec8188a12 |
 > | [Teams Devices Administrator](#teams-devices-administrator) | Can perform management related tasks on Teams certified devices. | 3d762c5a-1b6c-493f-843e-55a3b42923d4 |
+> | [Teams Telephony Administrator](#teams-telephony-administrator) | Manage voice and telephony features and troubleshoot communication issues within the Microsoft Teams service. | aa38014f-0993-46e9-9b45-30501a20909d |
 > | [Tenant Creator](#tenant-creator) | Create new Microsoft Entra or Azure AD B2C tenants. | 112ca1a2-15ad-4102-995e-45b0bc479a6a |
 > | [Usage Summary Reports Reader](#usage-summary-reports-reader) | Read Usage reports and Adoption Score, but can't access user details. | 75934031-6c7e-415a-99d7-48dbd49e875e |
 > | [User Administrator](#user-administrator) | Can manage all aspects of users and groups, including resetting passwords for limited admins.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | fe930be7-5e62-47db-91af-98c3a49a38b1 |
+> | [User Experience Success Manager](#user-experience-success-manager) | View product feedback, survey results, and reports to find training and communication opportunities. | 27460883-1df1-4691-b032-3b79643e5e63 |
 > | [Virtual Visits Administrator](#virtual-visits-administrator) | Manage and share Virtual Visits information and metrics from admin centers or the Virtual Visits app. | e300d9e7-4a2b-4295-9eff-f1c78b36cc98 |
 > | [Viva Goals Administrator](#viva-goals-administrator) | Manage and configure all aspects of Microsoft Viva Goals. | 92b086b3-e367-4ef2-b869-1de128fb986e |
 > | [Viva Pulse Administrator](#viva-pulse-administrator) | Can manage all settings for Microsoft Viva Pulse app. | 87761b17-1ed2-4af3-9acd-92a150038160 |
 > | [Windows 365 Administrator](#windows-365-administrator) | Can provision and manage all aspects of Cloud PCs. | 11451d60-acb2-45eb-a7d6-43d0f0125c13 |
 > | [Windows Update Deployment Administrator](#windows-update-deployment-administrator) | Can create and manage all aspects of Windows Update deployments through the Windows Update for Business deployment service. | 32696413-001a-46ae-978c-ce0f6b3620d2 |
 > | [Yammer Administrator](#yammer-administrator) | Manage all aspects of the Yammer service. | 810a2642-a034-447f-a5e8-41beaa378541 |
+
+## AI Administrator
+
+Assign the AI Administrator role to users who need to do the following tasks:
+
+- Manage all aspects of Microsoft 365 Copilot
+- Manage AI-related enterprise services, extensibility, and copilot agents from the Integrated apps page in the Microsoft 365 admin center
+- Approve and publish line-of-business copilot agents
+- Allow users to install an app or install an app for users in the organization if the app does not require permission
+- Read and configure Azure and Microsoft 365 service health dashboards
+- View usage reports, adoption insights, and organizational insight
+- Create and manage support tickets in Azure and the Microsoft 365 admin center
+
+> [!div class="mx-tableFixed"]
+> | Actions | Description |
+> | --- | --- |
+> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
+> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
+> | microsoft.office365.copilot/allEntities/allProperties/allTasks | Create and manage all settings for Microsoft 365 Copilot |
+> | microsoft.office365.messageCenter/messages/read | Read messages in Message Center in the Microsoft 365 admin center, excluding security messages |
+> | microsoft.office365.network/performance/allProperties/read | Read all network performance properties in the Microsoft 365 admin center |
+> | microsoft.office365.search/content/manage | Create and delete content, and read and update all properties in Microsoft Search |
+> | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
+> | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
+> | microsoft.office365.usageReports/allEntities/allProperties/read | Read Office 365 usage reports |
+> | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
 
 ## Application Administrator
 
@@ -137,82 +164,82 @@ This is a [privileged role](privileged-roles-permissions.md). Users in this role
 This role also grants the ability to consent for delegated permissions and application permissions, with the exception of application permissions for Azure AD Graph and Microsoft Graph.
 
 > [!IMPORTANT]
-> This exception means that you can still consent to application permissions for _other_ apps (for example, other Microsoft apps, 3rd-party apps, or apps that you have registered). You can still _request_ these permissions as part of the app registration, but _granting_ (that is, consenting to) these permissions requires a more privileged administrator, such as Global Administrator.
+> This exception means that you can still consent to application permissions for _other_ apps (for example, other Microsoft apps, 3rd-party apps, or apps that you have registered). You can still _request_ these permissions as part of the app registration, but _granting_ (that is, consenting to) these permissions requires a more privileged administrator, such as Privileged Role Administrator.
 >
 >This role grants the ability to manage application credentials. Users assigned this role can add credentials to an application, and use those credentials to impersonate the application’s identity. If the application’s identity has been granted access to a resource, such as the ability to create or update User or other objects, then a user assigned to this role could perform those actions while impersonating the application. This ability to impersonate the application’s identity may be an elevation of privilege over what the user can do via their role assignments. It is important to understand that assigning a user to the Application Administrator role gives them the ability to impersonate an application’s identity.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
+> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.directory/adminConsentRequestPolicy/allProperties/allTasks | Manage admin consent request policies in Microsoft Entra ID |
 > | microsoft.directory/appConsent/appConsentRequests/allProperties/read | Read all properties of consent requests for applications registered with Microsoft Entra ID |
-> | microsoft.directory/applications/create | Create all types of applications |
-> | microsoft.directory/applications/delete | Delete all types of applications |
-> | microsoft.directory/applications/applicationProxy/read | Read all application proxy properties |
-> | microsoft.directory/applications/applicationProxy/update | Update all application proxy properties |
+> | microsoft.directory/applicationPolicies/basic/update | Update standard properties of application policies |
+> | microsoft.directory/applicationPolicies/create | Create application policies |
+> | microsoft.directory/applicationPolicies/delete | Delete application policies |
+> | microsoft.directory/applicationPolicies/owners/read | Read owners on application policies |
+> | microsoft.directory/applicationPolicies/owners/update | Update the owner property of application policies |
+> | microsoft.directory/applicationPolicies/policyAppliedTo/read | Read application policies applied to objects list |
+> | microsoft.directory/applicationPolicies/standard/read | Read standard properties of application policies |
 > | microsoft.directory/applications/applicationProxyAuthentication/update | Update authentication on all types of applications |
+> | microsoft.directory/applications/applicationProxy/read | Read all application proxy properties |
 > | microsoft.directory/applications/applicationProxySslCertificate/update | Update SSL certificate settings for application proxy |
+> | microsoft.directory/applications/applicationProxy/update | Update all application proxy properties |
 > | microsoft.directory/applications/applicationProxyUrlSettings/update | Update URL settings for application proxy |
 > | microsoft.directory/applications/appRoles/update | Update the appRoles property on all types of applications |
 > | microsoft.directory/applications/audience/update | Update the audience property for applications |
 > | microsoft.directory/applications/authentication/update | Update authentication on all types of applications |
 > | microsoft.directory/applications/basic/update | Update basic properties for applications |
+> | microsoft.directory/applications/create | Create all types of applications |
 > | microsoft.directory/applications/credentials/update | Update application credentials<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/applications/delete | Delete all types of applications |
 > | microsoft.directory/applications/extensionProperties/update | Update extension properties on applications |
 > | microsoft.directory/applications/notes/update | Update notes of applications |
 > | microsoft.directory/applications/owners/update | Update owners of applications |
 > | microsoft.directory/applications/permissions/update | Update exposed permissions and required permissions on all types of applications |
 > | microsoft.directory/applications/policies/update | Update policies of applications |
+> | microsoft.directory/applications/synchronization/standard/read | Read provisioning settings associated with the application object |
 > | microsoft.directory/applications/tag/update | Update tags of applications |
 > | microsoft.directory/applications/verification/update | Update applicationsverification property |
-> | microsoft.directory/applications/synchronization/standard/read | Read provisioning settings associated with the application object |
 > | microsoft.directory/applicationTemplates/instantiate | Instantiate gallery applications from application templates |
 > | microsoft.directory/auditLogs/allProperties/read | Read all properties on audit logs, excluding custom security attributes audit logs |
-> | microsoft.directory/connectors/create | Create private network connectors |
-> | microsoft.directory/connectors/allProperties/read | Read all properties of private network connectors |
-> | microsoft.directory/connectorGroups/create | Create private network connector groups |
-> | microsoft.directory/connectorGroups/delete | Delete private network connector groups |
 > | microsoft.directory/connectorGroups/allProperties/read | Read all properties of private network connector groups |
 > | microsoft.directory/connectorGroups/allProperties/update | Update all properties of private network connector groups |
+> | microsoft.directory/connectorGroups/create | Create private network connector groups |
+> | microsoft.directory/connectorGroups/delete | Delete private network connector groups |
+> | microsoft.directory/connectors/allProperties/read | Read all properties of private network connectors |
+> | microsoft.directory/connectors/create | Create private network connectors |
 > | microsoft.directory/customAuthenticationExtensions/allProperties/allTasks | Create and manage custom authentication extensions<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/deletedItems.applications/delete | Permanently delete applications, which can no longer be restored |
 > | microsoft.directory/deletedItems.applications/restore | Restore soft deleted applications to original state |
 > | microsoft.directory/oAuth2PermissionGrants/allProperties/allTasks | Create and delete OAuth 2.0 permission grants, and read and update all properties<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/applicationPolicies/create | Create application policies |
-> | microsoft.directory/applicationPolicies/delete | Delete application policies |
-> | microsoft.directory/applicationPolicies/standard/read | Read standard properties of application policies |
-> | microsoft.directory/applicationPolicies/owners/read | Read owners on application policies |
-> | microsoft.directory/applicationPolicies/policyAppliedTo/read | Read application policies applied to objects list |
-> | microsoft.directory/applicationPolicies/basic/update | Update standard properties of application policies |
-> | microsoft.directory/applicationPolicies/owners/update | Update the owner property of application policies |
 > | microsoft.directory/provisioningLogs/allProperties/read | Read all properties of provisioning logs |
-> | microsoft.directory/servicePrincipals/create | Create service principals |
-> | microsoft.directory/servicePrincipals/delete | Delete service principals |
-> | microsoft.directory/servicePrincipals/disable | Disable service principals |
-> | microsoft.directory/servicePrincipals/enable | Enable service principals |
-> | microsoft.directory/servicePrincipals/getPasswordSingleSignOnCredentials | Manage password single sign-on credentials on service principals |
-> | microsoft.directory/servicePrincipals/synchronizationCredentials/manage | Manage application provisioning secrets and credentials |
-> | microsoft.directory/servicePrincipals/synchronizationJobs/manage | Start, restart, and pause application provisioning synchronization jobs |
-> | microsoft.directory/servicePrincipals/synchronizationSchema/manage | Create and manage application provisioning synchronization jobs and schema |
-> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/credentials/manage | Manage application provisioning secrets and credentials. |
-> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/jobs/manage | Start, restart, and pause application provisioning synchronization jobs. |
-> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/schema/manage | Create and manage application provisioning synchronization jobs and schema. |
-> | microsoft.directory/servicePrincipals/managePasswordSingleSignOnCredentials | Read password single sign-on credentials on service principals |
-> | microsoft.directory/servicePrincipals/managePermissionGrantsForAll.microsoft-application-admin | Grant consent for application permissions and delegated permissions on behalf of any user or all users, except for application permissions for Azure AD Graph and Microsoft Graph |
 > | microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Update service principal role assignments |
 > | microsoft.directory/servicePrincipals/audience/update | Update audience properties on service principals |
 > | microsoft.directory/servicePrincipals/authentication/update | Update authentication properties on service principals |
 > | microsoft.directory/servicePrincipals/basic/update | Update basic properties on service principals |
+> | microsoft.directory/servicePrincipals/create | Create service principals |
 > | microsoft.directory/servicePrincipals/credentials/update | Update credentials of service principals<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/servicePrincipals/delete | Delete service principals |
+> | microsoft.directory/servicePrincipals/disable | Disable service principals |
+> | microsoft.directory/servicePrincipals/enable | Enable service principals |
+> | microsoft.directory/servicePrincipals/getPasswordSingleSignOnCredentials | Manage password single sign-on credentials on service principals |
+> | microsoft.directory/servicePrincipals/managePasswordSingleSignOnCredentials | Read password single sign-on credentials on service principals |
+> | microsoft.directory/servicePrincipals/managePermissionGrantsForAll.microsoft-application-admin | Grant consent for application permissions and delegated permissions on behalf of any user or all users, except for application permissions for Microsoft Graph |
 > | microsoft.directory/servicePrincipals/notes/update | Update notes of service principals |
 > | microsoft.directory/servicePrincipals/owners/update | Update owners of service principals |
 > | microsoft.directory/servicePrincipals/permissions/update | Update permissions of service principals |
 > | microsoft.directory/servicePrincipals/policies/update | Update policies of service principals |
-> | microsoft.directory/servicePrincipals/tag/update | Update the tag property for service principals |
+> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/credentials/manage | Manage application provisioning secrets and credentials. |
+> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/jobs/manage | Start, restart, and pause application provisioning synchronization jobs. |
+> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/schema/manage | Create and manage application provisioning synchronization jobs and schema. |
+> | microsoft.directory/servicePrincipals/synchronizationCredentials/manage | Manage application provisioning secrets and credentials |
+> | microsoft.directory/servicePrincipals/synchronizationJobs/manage | Start, restart, and pause application provisioning synchronization jobs |
+> | microsoft.directory/servicePrincipals/synchronizationSchema/manage | Create and manage application provisioning synchronization jobs and schema |
 > | microsoft.directory/servicePrincipals/synchronization/standard/read | Read provisioning settings associated with your service principal |
+> | microsoft.directory/servicePrincipals/tag/update | Update the tag property for service principals |
 > | microsoft.directory/signInReports/allProperties/read | Read all properties on sign-in reports, including privileged properties |
-> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
-> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
@@ -259,16 +286,16 @@ For more information, see [Microsoft Defender for Office 365 permissions in the 
 
 Users with this role can assign and remove custom security attribute keys and values for supported Microsoft Entra objects such as users, service principals, and devices.
 
-By default, [Global Administrator](#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes. To work with custom security attributes, you must be assigned one of the custom security attribute roles.
+[!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
 
 For more information, see [Manage access to custom security attributes in Microsoft Entra ID](~/fundamentals/custom-security-attributes-manage.md).
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.directory/attributeSets/allProperties/read | Read all properties of attribute sets |
 > | microsoft.directory/azureManagedIdentities/customSecurityAttributes/read | Read custom security attribute values for Microsoft Entra managed identities |
 > | microsoft.directory/azureManagedIdentities/customSecurityAttributes/update | Update custom security attribute values for Microsoft Entra managed identities |
-> | microsoft.directory/attributeSets/allProperties/read | Read all properties of attribute sets |
 > | microsoft.directory/customSecurityAttributeDefinitions/allProperties/read | Read all properties of custom security attribute definitions |
 > | microsoft.directory/devices/customSecurityAttributes/read | Read custom security attribute values for devices |
 > | microsoft.directory/devices/customSecurityAttributes/update | Update custom security attribute values for devices |
@@ -281,7 +308,7 @@ For more information, see [Manage access to custom security attributes in Micros
 
 Users with this role can read custom security attribute keys and values for supported Microsoft Entra objects.
 
-By default, [Global Administrator](#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes. To work with custom security attributes, you must be assigned one of the custom security attribute roles.
+[!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
 
 For more information, see [Manage access to custom security attributes in Microsoft Entra ID](~/fundamentals/custom-security-attributes-manage.md).
 
@@ -299,7 +326,7 @@ For more information, see [Manage access to custom security attributes in Micros
 
 Users with this role can define a valid set of custom security attributes that can be assigned to supported Microsoft Entra objects. This role can also activate and deactivate custom security attributes.
 
-By default, [Global Administrator](#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes. To work with custom security attributes, you must be assigned one of the custom security attribute roles.
+[!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
 
 For more information, see [Manage access to custom security attributes in Microsoft Entra ID](~/fundamentals/custom-security-attributes-manage.md).
 
@@ -313,7 +340,7 @@ For more information, see [Manage access to custom security attributes in Micros
 
 Users with this role can read the definition of custom security attributes.
 
-By default, [Global Administrator](#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes. To work with custom security attributes, you must be assigned one of the custom security attribute roles.
+[!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
 
 For more information, see [Manage access to custom security attributes in Microsoft Entra ID](~/fundamentals/custom-security-attributes-manage.md).
 
@@ -333,15 +360,15 @@ Assign the Attribute Log Reader role to users who need to do the following tasks
 
 Users with this role **cannot** read audit logs for other events.
 
-By default, Global Administrator and other administrator roles do not have permissions to read audit logs for custom security attributes. To read audit logs for custom security attributes, you must be assigned this role or the Attribute Log Reader role.
+[!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
 
 For more information, see [Manage access to custom security attributes in Microsoft Entra ID](../../fundamentals/custom-security-attributes-manage.md).
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.directory/customSecurityAttributeAuditLogs/allProperties/read | Read audit logs related to custom security attributes |
 > | microsoft.azure.customSecurityAttributeDiagnosticSettings/allEntities/allProperties/allTasks | Configure all aspects of custom security attributes diagnostic settings |
+> | microsoft.directory/customSecurityAttributeAuditLogs/allProperties/read | Read audit logs related to custom security attributes |
 
 ## Attribute Log Reader
 
@@ -355,7 +382,7 @@ Users with this role **cannot** do the following tasks:
 - Configure diagnostic settings for custom security attributes
 - Read audit logs for other events
 
-By default, Global Administrator and other administrator roles do not have permissions to read audit logs for custom security attributes. To read audit logs for custom security attributes, you must be assigned this role or the Attribute Log Administrator role.
+[!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
 
 For more information, see [Manage access to custom security attributes in Microsoft Entra ID](../../fundamentals/custom-security-attributes-manage.md).
 
@@ -372,13 +399,14 @@ This is a [privileged role](privileged-roles-permissions.md). Assign the Authent
 
 - Set or reset any authentication method (including passwords) for non-administrators and some roles. For a list of the roles that an Authentication Administrator can read or update authentication methods, see [Who can reset passwords](privileged-roles-permissions.md#who-can-reset-passwords).
 - Require users who are non-administrators or assigned to some roles to re-register against existing non-password credentials (for example, MFA or FIDO), and can also revoke **remember MFA on the device**, which prompts for MFA on the next sign-in.
+- Manage MFA settings in the legacy MFA management portal.
 - Perform sensitive actions for some users. For more information, see [Who can perform sensitive actions](privileged-roles-permissions.md#who-can-perform-sensitive-actions).
 - Create and manage support tickets in Azure and the Microsoft 365 admin center.
 
 Users with this role **cannot** do the following:
 
 - Cannot change the credentials or reset MFA for members and owners of a [role-assignable group](groups-concept.md).
-- Cannot manage MFA settings in the legacy MFA management portal or Hardware OATH tokens.
+- Cannot manage Hardware OATH tokens.
 
 [!INCLUDE [authentication-table-include](./includes/authentication-table-include.md)]
 
@@ -394,22 +422,22 @@ Users with this role **cannot** do the following:
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
+> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
+> | microsoft.directory/deletedItems.users/restore | Restore soft deleted users to original state |
+> | microsoft.directory/users/authenticationMethods/basic/update | Update basic properties of authentication methods for users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/authenticationMethods/create | Update authentication methods for users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/authenticationMethods/delete | Delete authentication methods for users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/authenticationMethods/standard/restrictedRead | Read standard properties of authentication methods that do not include personally identifiable information for users |
-> | microsoft.directory/users/authenticationMethods/basic/update | Update basic properties of authentication methods for users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/deletedItems.users/restore | Restore soft deleted users to original state |
+> | microsoft.directory/users/basic/update | Update basic properties on users |
 > | microsoft.directory/users/delete | Delete users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/disable | Disable users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/enable | Enable users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/invalidateAllRefreshTokens | Force sign-out by invalidating user refresh tokens<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/users/restore | Restore deleted users |
-> | microsoft.directory/users/basic/update | Update basic properties on users |
 > | microsoft.directory/users/manager/update | Update manager for users |
 > | microsoft.directory/users/password/update | Reset passwords for all users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/users/restore | Restore deleted users |
 > | microsoft.directory/users/userPrincipalName/update | Update User Principal Name of users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
-> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
@@ -441,6 +469,7 @@ Assign the Authentication Policy Administrator role to users who need to do the 
 
 - Configure the authentication methods policy, tenant-wide MFA settings, and password protection policy that determine which methods each user can register and use.
 - Manage Password Protection settings: smart lockout configurations and updating the custom banned passwords list.
+- Manage MFA settings in the legacy MFA management portal.
 - Create and manage verifiable credentials.
 - Create and manage Azure support tickets.
 
@@ -448,32 +477,32 @@ Users with this role **cannot** do the following:
 
 - Cannot update sensitive properties. For more information, see [Who can perform sensitive actions](privileged-roles-permissions.md#who-can-perform-sensitive-actions).
 - Cannot delete or restore users. For more information, see [Who can perform sensitive actions](privileged-roles-permissions.md#who-can-perform-sensitive-actions).
-- Cannot manage MFA settings in the legacy MFA management portal or Hardware OATH tokens.
+- Cannot manage Hardware OATH tokens.
 
 [!INCLUDE [authentication-table-include](./includes/authentication-table-include.md)]
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.directory/organization/strongAuthentication/allTasks | Manage all aspects of strong authentication properties of an organization |
+> | microsoft.directory/userCredentialPolicies/basic/update | Update basic policies for users |
 > | microsoft.directory/userCredentialPolicies/create | Create credential policies for users |
 > | microsoft.directory/userCredentialPolicies/delete | Delete credential policies for users |
-> | microsoft.directory/userCredentialPolicies/standard/read | Read standard properties of credential policies for users |
 > | microsoft.directory/userCredentialPolicies/owners/read | Read owners of credential policies for users |
-> | microsoft.directory/userCredentialPolicies/policyAppliedTo/read | Read policy.appliesTo navigation link |
-> | microsoft.directory/userCredentialPolicies/basic/update | Update basic policies for users |
 > | microsoft.directory/userCredentialPolicies/owners/update | Update owners of credential policies for users |
+> | microsoft.directory/userCredentialPolicies/policyAppliedTo/read | Read policy.appliesTo navigation link |
+> | microsoft.directory/userCredentialPolicies/standard/read | Read standard properties of credential policies for users |
 > | microsoft.directory/userCredentialPolicies/tenantDefault/update | Update policy.isOrganizationDefault property |
+> | microsoft.directory/verifiableCredentials/configuration/allProperties/read | Read configuration required to create and manage verifiable credentials |
+> | microsoft.directory/verifiableCredentials/configuration/allProperties/update | Update configuration required to create and manage verifiable credentials |
+> | microsoft.directory/verifiableCredentials/configuration/contracts/allProperties/read | Read a verifiable credential contract |
+> | microsoft.directory/verifiableCredentials/configuration/contracts/allProperties/update | Update a verifiable credential contract |
 > | microsoft.directory/verifiableCredentials/configuration/contracts/cards/allProperties/read | Read a verifiable credential card |
 > | microsoft.directory/verifiableCredentials/configuration/contracts/cards/revoke | Revoke a verifiable credential card |
 > | microsoft.directory/verifiableCredentials/configuration/contracts/create | Create a verifiable credential contract |
-> | microsoft.directory/verifiableCredentials/configuration/contracts/allProperties/read | Read a verifiable credential contract |
-> | microsoft.directory/verifiableCredentials/configuration/contracts/allProperties/update | Update a verifiable credential contract |
 > | microsoft.directory/verifiableCredentials/configuration/create | Create configuration required to create and manage verifiable credentials |
 > | microsoft.directory/verifiableCredentials/configuration/delete | Delete configuration required to create and manage verifiable credentials and delete all of its verifiable credentials |
-> | microsoft.directory/verifiableCredentials/configuration/allProperties/read | Read configuration required to create and manage verifiable credentials |
-> | microsoft.directory/verifiableCredentials/configuration/allProperties/update | Update configuration required to create and manage verifiable credentials |
-> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 
 ## Azure DevOps Administrator
 
@@ -486,15 +515,15 @@ Users with this role can manage all enterprise Azure DevOps policies, applicable
 
 ## Azure Information Protection Administrator
 
-Users with this role have all permissions in the Azure Information Protection service. This role allows configuring labels for the Azure Information Protection policy, managing protection templates, and activating protection. This role does not grant any permissions in Identity Protection, Privileged Identity Management, Monitor Microsoft 365 Service Health, Microsoft 365 Defender portal, or Microsoft Purview compliance portal.
+Users with this role have all permissions in the Azure Information Protection service. This role allows configuring labels for the Azure Information Protection policy, managing protection templates, and activating protection. This role does not grant any permissions in Microsoft Entra ID Protection, Privileged Identity Management, Monitor Microsoft 365 Service Health, Microsoft 365 Defender portal, or Microsoft Purview compliance portal.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
 > | microsoft.azure.informationProtection/allEntities/allTasks | Manage all aspects of Azure Information Protection |
 > | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
 > | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
+> | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
@@ -511,7 +540,7 @@ This is a [privileged role](privileged-roles-permissions.md). User can create an
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.directory/b2cTrustFrameworkKeySet/allProperties/allTasks | Read and configure key sets in Azure Active Directory B2C<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/b2cTrustFrameworkKeySet/allProperties/allTasks | Read and configure key sets in Azure Active Directory B2C<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 
 ## B2C IEF Policy Administrator
 
@@ -523,7 +552,7 @@ Users in this role have the ability to create, read, update, and delete all cust
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.directory/b2cTrustFrameworkPolicy/allProperties/allTasks | Read and configure custom policies in Azure Active Directory B2C |
+> | microsoft.directory/b2cTrustFrameworkPolicy/allProperties/allTasks | Read and configure custom policies in Azure Active Directory B2C |
 
 ## Billing Administrator
 
@@ -532,10 +561,10 @@ Makes purchases, manages subscriptions, manages support tickets, and monitors se
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.directory/organization/basic/update | Update basic properties on organization |
 > | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
 > | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.commerce.billing/allEntities/allProperties/allTasks | Manage all aspects of Office 365 billing |
+> | microsoft.directory/organization/basic/update | Update basic properties on organization |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
@@ -559,70 +588,70 @@ This is a [privileged role](privileged-roles-permissions.md). Users in this role
 This role also grants the ability to consent for delegated permissions and application permissions, with the exception of application permissions for Azure AD Graph and Microsoft Graph.
 
 > [!IMPORTANT]
-> This exception means that you can still consent to application permissions for _other_ apps (for example, other Microsoft apps, 3rd-party apps, or apps that you have registered). You can still _request_ these permissions as part of the app registration, but _granting_ (that is, consenting to) these permissions requires a more privileged administrator, such as Global Administrator.
+> This exception means that you can still consent to application permissions for _other_ apps (for example, other Microsoft apps, 3rd-party apps, or apps that you have registered). You can still _request_ these permissions as part of the app registration, but _granting_ (that is, consenting to) these permissions requires a more privileged administrator, such as Privileged Role Administrator.
 >
 >This role grants the ability to manage application credentials. Users assigned this role can add credentials to an application, and use those credentials to impersonate the application’s identity. If the application’s identity has been granted access to a resource, such as the ability to create or update User or other objects, then a user assigned to this role could perform those actions while impersonating the application. This ability to impersonate the application’s identity may be an elevation of privilege over what the user can do via their role assignments. It is important to understand that assigning a user to the Application Administrator role gives them the ability to impersonate an application’s identity.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
+> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.directory/adminConsentRequestPolicy/allProperties/allTasks | Manage admin consent request policies in Microsoft Entra ID |
 > | microsoft.directory/appConsent/appConsentRequests/allProperties/read | Read all properties of consent requests for applications registered with Microsoft Entra ID |
-> | microsoft.directory/applications/create | Create all types of applications |
-> | microsoft.directory/applications/delete | Delete all types of applications |
+> | microsoft.directory/applicationPolicies/basic/update | Update standard properties of application policies |
+> | microsoft.directory/applicationPolicies/create | Create application policies |
+> | microsoft.directory/applicationPolicies/delete | Delete application policies |
+> | microsoft.directory/applicationPolicies/owners/read | Read owners on application policies |
+> | microsoft.directory/applicationPolicies/owners/update | Update the owner property of application policies |
+> | microsoft.directory/applicationPolicies/policyAppliedTo/read | Read application policies applied to objects list |
+> | microsoft.directory/applicationPolicies/standard/read | Read standard properties of application policies |
 > | microsoft.directory/applications/appRoles/update | Update the appRoles property on all types of applications |
 > | microsoft.directory/applications/audience/update | Update the audience property for applications |
 > | microsoft.directory/applications/authentication/update | Update authentication on all types of applications |
 > | microsoft.directory/applications/basic/update | Update basic properties for applications |
+> | microsoft.directory/applications/create | Create all types of applications |
 > | microsoft.directory/applications/credentials/update | Update application credentials<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/applications/delete | Delete all types of applications |
 > | microsoft.directory/applications/extensionProperties/update | Update extension properties on applications |
 > | microsoft.directory/applications/notes/update | Update notes of applications |
 > | microsoft.directory/applications/owners/update | Update owners of applications |
 > | microsoft.directory/applications/permissions/update | Update exposed permissions and required permissions on all types of applications |
 > | microsoft.directory/applications/policies/update | Update policies of applications |
+> | microsoft.directory/applications/synchronization/standard/read | Read provisioning settings associated with the application object |
 > | microsoft.directory/applications/tag/update | Update tags of applications |
 > | microsoft.directory/applications/verification/update | Update applicationsverification property |
-> | microsoft.directory/applications/synchronization/standard/read | Read provisioning settings associated with the application object |
 > | microsoft.directory/applicationTemplates/instantiate | Instantiate gallery applications from application templates |
 > | microsoft.directory/auditLogs/allProperties/read | Read all properties on audit logs, excluding custom security attributes audit logs |
 > | microsoft.directory/deletedItems.applications/delete | Permanently delete applications, which can no longer be restored |
 > | microsoft.directory/deletedItems.applications/restore | Restore soft deleted applications to original state |
 > | microsoft.directory/oAuth2PermissionGrants/allProperties/allTasks | Create and delete OAuth 2.0 permission grants, and read and update all properties<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/applicationPolicies/create | Create application policies |
-> | microsoft.directory/applicationPolicies/delete | Delete application policies |
-> | microsoft.directory/applicationPolicies/standard/read | Read standard properties of application policies |
-> | microsoft.directory/applicationPolicies/owners/read | Read owners on application policies |
-> | microsoft.directory/applicationPolicies/policyAppliedTo/read | Read application policies applied to objects list |
-> | microsoft.directory/applicationPolicies/basic/update | Update standard properties of application policies |
-> | microsoft.directory/applicationPolicies/owners/update | Update the owner property of application policies |
 > | microsoft.directory/provisioningLogs/allProperties/read | Read all properties of provisioning logs |
-> | microsoft.directory/servicePrincipals/create | Create service principals |
-> | microsoft.directory/servicePrincipals/delete | Delete service principals |
-> | microsoft.directory/servicePrincipals/disable | Disable service principals |
-> | microsoft.directory/servicePrincipals/enable | Enable service principals |
-> | microsoft.directory/servicePrincipals/getPasswordSingleSignOnCredentials | Manage password single sign-on credentials on service principals |
-> | microsoft.directory/servicePrincipals/synchronizationCredentials/manage | Manage application provisioning secrets and credentials |
-> | microsoft.directory/servicePrincipals/synchronizationJobs/manage | Start, restart, and pause application provisioning synchronization jobs |
-> | microsoft.directory/servicePrincipals/synchronizationSchema/manage | Create and manage application provisioning synchronization jobs and schema |
-> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/credentials/manage | Manage application provisioning secrets and credentials. |
-> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/jobs/manage | Start, restart, and pause application provisioning synchronization jobs. |
-> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/schema/manage | Create and manage application provisioning synchronization jobs and schema. |
-> | microsoft.directory/servicePrincipals/managePasswordSingleSignOnCredentials | Read password single sign-on credentials on service principals |
-> | microsoft.directory/servicePrincipals/managePermissionGrantsForAll.microsoft-application-admin | Grant consent for application permissions and delegated permissions on behalf of any user or all users, except for application permissions for Azure AD Graph and Microsoft Graph |
 > | microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Update service principal role assignments |
 > | microsoft.directory/servicePrincipals/audience/update | Update audience properties on service principals |
 > | microsoft.directory/servicePrincipals/authentication/update | Update authentication properties on service principals |
 > | microsoft.directory/servicePrincipals/basic/update | Update basic properties on service principals |
+> | microsoft.directory/servicePrincipals/create | Create service principals |
 > | microsoft.directory/servicePrincipals/credentials/update | Update credentials of service principals<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/servicePrincipals/delete | Delete service principals |
+> | microsoft.directory/servicePrincipals/disable | Disable service principals |
+> | microsoft.directory/servicePrincipals/enable | Enable service principals |
+> | microsoft.directory/servicePrincipals/getPasswordSingleSignOnCredentials | Manage password single sign-on credentials on service principals |
+> | microsoft.directory/servicePrincipals/managePasswordSingleSignOnCredentials | Read password single sign-on credentials on service principals |
+> | microsoft.directory/servicePrincipals/managePermissionGrantsForAll.microsoft-application-admin | Grant consent for application permissions and delegated permissions on behalf of any user or all users, except for application permissions for Microsoft Graph |
 > | microsoft.directory/servicePrincipals/notes/update | Update notes of service principals |
 > | microsoft.directory/servicePrincipals/owners/update | Update owners of service principals |
 > | microsoft.directory/servicePrincipals/permissions/update | Update permissions of service principals |
 > | microsoft.directory/servicePrincipals/policies/update | Update policies of service principals |
-> | microsoft.directory/servicePrincipals/tag/update | Update the tag property for service principals |
+> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/credentials/manage | Manage application provisioning secrets and credentials. |
+> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/jobs/manage | Start, restart, and pause application provisioning synchronization jobs. |
+> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/schema/manage | Create and manage application provisioning synchronization jobs and schema. |
+> | microsoft.directory/servicePrincipals/synchronizationCredentials/manage | Manage application provisioning secrets and credentials |
+> | microsoft.directory/servicePrincipals/synchronizationJobs/manage | Start, restart, and pause application provisioning synchronization jobs |
+> | microsoft.directory/servicePrincipals/synchronizationSchema/manage | Create and manage application provisioning synchronization jobs and schema |
 > | microsoft.directory/servicePrincipals/synchronization/standard/read | Read provisioning settings associated with your service principal |
+> | microsoft.directory/servicePrincipals/tag/update | Update the tag property for service principals |
 > | microsoft.directory/signInReports/allProperties/read | Read all properties on sign-in reports, including privileged properties |
-> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
-> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
@@ -636,21 +665,21 @@ This is a [privileged role](privileged-roles-permissions.md). Users in this role
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
 > | microsoft.directory/auditLogs/allProperties/read | Read all properties on audit logs, excluding custom security attributes audit logs |
 > | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
 > | microsoft.directory/bitlockerKeys/key/read | Read bitlocker metadata and key on devices<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/deletedItems.devices/delete | Permanently delete devices, which can no longer be restored |
 > | microsoft.directory/deletedItems.devices/restore | Restore soft deleted devices to original state |
+> | microsoft.directory/deviceLocalCredentials/password/read | Read all properties of the backed up local administrator account credentials for Microsoft Entra joined devices, including the password |
+> | microsoft.directory/deviceManagementPolicies/basic/update | Update basic properties on mobile device management and mobile app management policies<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/deviceManagementPolicies/standard/read | Read standard properties on mobile device management and mobile app management policies |
+> | microsoft.directory/deviceRegistrationPolicy/basic/update | Update basic properties on device registration policies<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/deviceRegistrationPolicy/standard/read | Read standard properties on device registration policies |
 > | microsoft.directory/devices/delete | Delete devices from Microsoft Entra ID |
 > | microsoft.directory/devices/disable | Disable devices in Microsoft Entra ID |
 > | microsoft.directory/devices/enable | Enable devices in Microsoft Entra ID |
-> | microsoft.directory/deviceLocalCredentials/password/read | Read all properties of the backed up local administrator account credentials for Microsoft Entra joined devices, including the password |
-> | microsoft.directory/deviceManagementPolicies/standard/read | Read standard properties on mobile device management and mobile app management policies |
-> | microsoft.directory/deviceManagementPolicies/basic/update | Update basic properties on mobile device management and mobile app management policies<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/deviceRegistrationPolicy/standard/read | Read standard properties on device registration policies |
-> | microsoft.directory/deviceRegistrationPolicy/basic/update | Update basic properties on device registration policies<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/signInReports/allProperties/read | Read all properties on sign-in reports, including privileged properties |
-> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 
 ## Compliance Administrator
@@ -662,7 +691,7 @@ In | Can do
 [Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center) | Protect and manage your organization's data across Microsoft 365 services<br>Manage compliance alerts
 [Microsoft Purview Compliance Manager](/microsoft-365/compliance/compliance-manager) | Track, assign, and verify your organization's regulatory compliance activities
 [Microsoft 365 Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | Manage data governance<br>Perform legal and data investigation<br>Manage Data Subject Request<br><br>This role has the same permissions as the [Compliance Administrator role group](/microsoft-365/security/office-365-security/scc-permissions) in Microsoft 365 Defender portal role-based access control.
-[Intune](/intune/role-based-access-control) | View all Intune audit data
+[Intune](/mem/intune/fundamentals/role-based-access-control) | View all Intune audit data
 [Microsoft Defender for Cloud Apps](/defender-cloud-apps/manage-admins) | Has read-only permissions and can manage alerts<br>Can create and modify file policies and allow file governance actions<br>Can view all the built-in reports under Data Management
 
 > [!div class="mx-tableFixed"]
@@ -685,17 +714,17 @@ In | Can do
 [Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center) | Monitor compliance-related policies across Microsoft 365 services<br>Manage compliance alerts
 [Microsoft Purview Compliance Manager](/microsoft-365/compliance/compliance-manager) | Track, assign, and verify your organization's regulatory compliance activities
 [Microsoft 365 Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | Manage data governance<br>Perform legal and data investigation<br>Manage Data Subject Request<br><br>This role has the same permissions as the [Compliance Data Administrator role group](/microsoft-365/security/office-365-security/scc-permissions) in Microsoft 365 Defender portal role-based access control.
-[Intune](/intune/role-based-access-control) | View all Intune audit data
+[Intune](/mem/intune/fundamentals/role-based-access-control) | View all Intune audit data
 [Microsoft Defender for Cloud Apps](/defender-cloud-apps/manage-admins) | Has read-only permissions and can manage alerts<br>Can create and modify file policies and allow file governance actions<br>Can view all the built-in reports under Data Management
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
-> | microsoft.directory/cloudAppSecurity/allProperties/allTasks | Create and delete all resources, and read and update standard properties in Microsoft Defender for Cloud Apps |
 > | microsoft.azure.informationProtection/allEntities/allTasks | Manage all aspects of Azure Information Protection |
 > | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
 > | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
+> | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
+> | microsoft.directory/cloudAppSecurity/allProperties/allTasks | Create and delete all resources, and read and update standard properties in Microsoft Defender for Cloud Apps |
 > | microsoft.office365.complianceManager/allEntities/allTasks | Manage all aspects of Office 365 Compliance Manager |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
@@ -710,18 +739,18 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.directory/conditionalAccessPolicies/basic/update | Update basic properties for Conditional Access policies |
+> | microsoft.directory/conditionalAccessPolicies/create | Create Conditional Access policies |
+> | microsoft.directory/conditionalAccessPolicies/delete | Delete Conditional Access policies |
+> | microsoft.directory/conditionalAccessPolicies/owners/read | Read the owners of Conditional Access policies |
+> | microsoft.directory/conditionalAccessPolicies/owners/update | Update owners for Conditional Access policies |
+> | microsoft.directory/conditionalAccessPolicies/policyAppliedTo/read | Read the "applied to" property for Conditional Access policies |
+> | microsoft.directory/conditionalAccessPolicies/standard/read | Read Conditional Access for policies |
+> | microsoft.directory/conditionalAccessPolicies/tenantDefault/update | Update the default tenant for Conditional Access policies |
+> | microsoft.directory/namedLocations/basic/update | Update basic properties of custom rules that define network locations |
 > | microsoft.directory/namedLocations/create | Create custom rules that define network locations |
 > | microsoft.directory/namedLocations/delete | Delete custom rules that define network locations |
 > | microsoft.directory/namedLocations/standard/read | Read basic properties of custom rules that define network locations |
-> | microsoft.directory/namedLocations/basic/update | Update basic properties of custom rules that define network locations |
-> | microsoft.directory/conditionalAccessPolicies/create | Create Conditional Access policies |
-> | microsoft.directory/conditionalAccessPolicies/delete | Delete Conditional Access policies |
-> | microsoft.directory/conditionalAccessPolicies/standard/read | Read Conditional Access for policies |
-> | microsoft.directory/conditionalAccessPolicies/owners/read | Read the owners of Conditional Access policies |
-> | microsoft.directory/conditionalAccessPolicies/policyAppliedTo/read | Read the "applied to" property for Conditional Access policies |
-> | microsoft.directory/conditionalAccessPolicies/basic/update | Update basic properties for Conditional Access policies |
-> | microsoft.directory/conditionalAccessPolicies/owners/update | Update owners for Conditional Access policies |
-> | microsoft.directory/conditionalAccessPolicies/tenantDefault/update | Update the default tenant for Conditional Access policies |
 > | microsoft.directory/resourceNamespaces/resourceActions/authenticationContext/update | Update Conditional Access authentication context of Microsoft 365 role-based access control (RBAC) resource actions<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 
 ## Customer LockBox Access Approver
@@ -741,9 +770,9 @@ Users in this role can manage the Desktop Analytics service. This includes the a
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
 > | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
 > | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
+> | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
 > | microsoft.office365.desktopAnalytics/allEntities/allTasks | Manage all aspects of Desktop Analytics |
 
 ## Directory Readers
@@ -751,55 +780,55 @@ Users in this role can manage the Desktop Analytics service. This includes the a
 Users in this role can read basic directory information. This role should be used for:
 
 * Granting a specific set of guest users read access instead of granting it to all guest users.
-* Granting a specific set of non-admin users access to Azure portal when "Restrict access to Azure portal to admins only" is set to "Yes".
+* Granting a specific set of non-admin users access to Microsoft Entra admin center when "Restrict access to Microsoft Entra admin center" is set to "Yes".
 * Granting service principals access to directory where Directory.Read.All is not an option.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.directory/administrativeUnits/standard/read | Read basic properties on administrative units |
 > | microsoft.directory/administrativeUnits/members/read | Read members of administrative units |
-> | microsoft.directory/applications/standard/read | Read standard properties of applications |
+> | microsoft.directory/administrativeUnits/standard/read | Read basic properties on administrative units |
+> | microsoft.directory/applicationPolicies/standard/read | Read standard properties of application policies |
 > | microsoft.directory/applications/owners/read | Read owners of applications |
 > | microsoft.directory/applications/policies/read | Read policies of applications |
-> | microsoft.directory/contacts/standard/read | Read basic properties on contacts in Microsoft Entra ID |
+> | microsoft.directory/applications/standard/read | Read standard properties of applications |
 > | microsoft.directory/contacts/memberOf/read | Read the group membership for all contacts in Microsoft Entra ID |
+> | microsoft.directory/contacts/standard/read | Read basic properties on contacts in Microsoft Entra ID |
 > | microsoft.directory/contracts/standard/read | Read basic properties on partner contracts |
-> | microsoft.directory/devices/standard/read | Read basic properties on devices |
 > | microsoft.directory/devices/memberOf/read | Read device memberships |
 > | microsoft.directory/devices/registeredOwners/read | Read registered owners of devices |
 > | microsoft.directory/devices/registeredUsers/read | Read registered users of devices |
-> | microsoft.directory/directoryRoles/standard/read | Read basic properties of Microsoft Entra roles |
+> | microsoft.directory/devices/standard/read | Read basic properties on devices |
 > | microsoft.directory/directoryRoles/eligibleMembers/read | Read the eligible members of Microsoft Entra roles |
 > | microsoft.directory/directoryRoles/members/read | Read all members of Microsoft Entra roles |
+> | microsoft.directory/directoryRoles/standard/read | Read basic properties of Microsoft Entra roles |
 > | microsoft.directory/domains/standard/read | Read basic properties on domains |
-> | microsoft.directory/groups/standard/read | Read standard properties of Security groups and Microsoft 365 groups, including role-assignable groups |
 > | microsoft.directory/groups/appRoleAssignments/read | Read application role assignments of groups |
+> | microsoft.directory/groupSettings/standard/read | Read basic properties on group settings |
+> | microsoft.directory/groupSettingTemplates/standard/read | Read basic properties on group setting templates |
 > | microsoft.directory/groups/memberOf/read | Read the memberOf property on Security groups and Microsoft 365 groups, including role-assignable groups |
 > | microsoft.directory/groups/members/read | Read members of Security groups and Microsoft 365 groups, including role-assignable groups |
 > | microsoft.directory/groups/owners/read | Read owners of Security groups and Microsoft 365 groups, including role-assignable groups |
 > | microsoft.directory/groups/settings/read | Read settings of groups |
-> | microsoft.directory/groupSettings/standard/read | Read basic properties on group settings |
-> | microsoft.directory/groupSettingTemplates/standard/read | Read basic properties on group setting templates |
+> | microsoft.directory/groups/standard/read | Read standard properties of Security groups and Microsoft 365 groups, including role-assignable groups |
 > | microsoft.directory/oAuth2PermissionGrants/standard/read | Read basic properties on OAuth 2.0 permission grants |
 > | microsoft.directory/organization/standard/read | Read basic properties on an organization |
 > | microsoft.directory/organization/trustedCAsForPasswordlessAuth/read | Read trusted certificate authorities for passwordless authentication |
-> | microsoft.directory/applicationPolicies/standard/read | Read standard properties of application policies |
 > | microsoft.directory/roleAssignments/standard/read | Read basic properties on role assignments |
 > | microsoft.directory/roleDefinitions/standard/read | Read basic properties on role definitions |
 > | microsoft.directory/servicePrincipals/appRoleAssignedTo/read | Read service principal role assignments |
 > | microsoft.directory/servicePrincipals/appRoleAssignments/read | Read role assignments assigned to service principals |
-> | microsoft.directory/servicePrincipals/standard/read | Read basic properties of service principals |
 > | microsoft.directory/servicePrincipals/memberOf/read | Read the group memberships on service principals |
 > | microsoft.directory/servicePrincipals/oAuth2PermissionGrants/read | Read delegated permission grants on service principals |
-> | microsoft.directory/servicePrincipals/owners/read | Read owners of service principals |
 > | microsoft.directory/servicePrincipals/ownedObjects/read | Read owned objects of service principals |
+> | microsoft.directory/servicePrincipals/owners/read | Read owners of service principals |
 > | microsoft.directory/servicePrincipals/policies/read | Read policies of service principals |
+> | microsoft.directory/servicePrincipals/standard/read | Read basic properties of service principals |
 > | microsoft.directory/subscribedSkus/standard/read | Read basic properties on subscriptions |
-> | microsoft.directory/users/standard/read | Read basic properties on users |
 > | microsoft.directory/users/appRoleAssignments/read | Read application role assignments for users |
 > | microsoft.directory/users/deviceForResourceAccount/read | Read deviceForResourceAccount of users |
 > | microsoft.directory/users/directReports/read | Read the direct reports for users |
+> | microsoft.directory/users/invitedBy/read | Read the user that invited an external user to a tenant |
 > | microsoft.directory/users/licenseDetails/read | Read license details of users |
 > | microsoft.directory/users/manager/read | Read manager of users |
 > | microsoft.directory/users/memberOf/read | Read the group memberships of users |
@@ -810,64 +839,16 @@ Users in this role can read basic directory information. This role should be use
 > | microsoft.directory/users/registeredDevices/read | Read registered devices of users |
 > | microsoft.directory/users/scopedRoleMemberOf/read | Read user's membership of a Microsoft Entra role, that is scoped to an administrative unit |
 > | microsoft.directory/users/sponsors/read | Read sponsors of users |
+> | microsoft.directory/users/standard/read | Read basic properties on users |
 
 ## Directory Synchronization Accounts
 
-[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md)
-
-This is a [privileged role](privileged-roles-permissions.md). Do not use. This role is automatically assigned to the Microsoft Entra Connect service, and is not intended or supported for any other use.
+Do not use. This role is automatically assigned to the Microsoft Entra Connect service, and is not intended or supported for any other use.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.directory/applications/create | Create all types of applications |
-> | microsoft.directory/applications/delete | Delete all types of applications |
-> | microsoft.directory/applications/appRoles/update | Update the appRoles property on all types of applications |
-> | microsoft.directory/applications/audience/update | Update the audience property for applications |
-> | microsoft.directory/applications/authentication/update | Update authentication on all types of applications |
-> | microsoft.directory/applications/basic/update | Update basic properties for applications |
-> | microsoft.directory/applications/credentials/update | Update application credentials<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/applications/notes/update | Update notes of applications |
-> | microsoft.directory/applications/owners/update | Update owners of applications |
-> | microsoft.directory/applications/permissions/update | Update exposed permissions and required permissions on all types of applications |
-> | microsoft.directory/applications/policies/update | Update policies of applications |
-> | microsoft.directory/applications/tag/update | Update tags of applications |
-> | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
-> | microsoft.directory/hybridAuthenticationPolicy/allProperties/allTasks | Manage hybrid authentication policy in Microsoft Entra ID<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/organization/dirSync/update | Update the organization directory sync property |
-> | microsoft.directory/passwordHashSync/allProperties/allTasks | Manage all aspects of Password Hash Synchronization (PHS) in Microsoft Entra ID |
-> | microsoft.directory/policies/create | Create policies in Microsoft Entra ID |
-> | microsoft.directory/policies/delete | Delete policies in Microsoft Entra ID |
-> | microsoft.directory/policies/standard/read | Read basic properties on policies |
-> | microsoft.directory/policies/owners/read | Read owners of policies |
-> | microsoft.directory/policies/policyAppliedTo/read | Read policies.policyAppliedTo property |
-> | microsoft.directory/policies/basic/update | Update basic properties on policies<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/policies/owners/update | Update owners of policies |
-> | microsoft.directory/policies/tenantDefault/update | Update default organization policies |
-> | microsoft.directory/servicePrincipals/create | Create service principals |
-> | microsoft.directory/servicePrincipals/delete | Delete service principals |
-> | microsoft.directory/servicePrincipals/enable | Enable service principals |
-> | microsoft.directory/servicePrincipals/disable | Disable service principals |
-> | microsoft.directory/servicePrincipals/getPasswordSingleSignOnCredentials | Manage password single sign-on credentials on service principals |
-> | microsoft.directory/servicePrincipals/managePasswordSingleSignOnCredentials | Read password single sign-on credentials on service principals |
-> | microsoft.directory/servicePrincipals/appRoleAssignedTo/read | Read service principal role assignments |
-> | microsoft.directory/servicePrincipals/appRoleAssignments/read | Read role assignments assigned to service principals |
-> | microsoft.directory/servicePrincipals/standard/read | Read basic properties of service principals |
-> | microsoft.directory/servicePrincipals/memberOf/read | Read the group memberships on service principals |
-> | microsoft.directory/servicePrincipals/oAuth2PermissionGrants/read | Read delegated permission grants on service principals |
-> | microsoft.directory/servicePrincipals/owners/read | Read owners of service principals |
-> | microsoft.directory/servicePrincipals/ownedObjects/read | Read owned objects of service principals |
-> | microsoft.directory/servicePrincipals/policies/read | Read policies of service principals |
-> | microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Update service principal role assignments |
-> | microsoft.directory/servicePrincipals/audience/update | Update audience properties on service principals |
-> | microsoft.directory/servicePrincipals/authentication/update | Update authentication properties on service principals |
-> | microsoft.directory/servicePrincipals/basic/update | Update basic properties on service principals |
-> | microsoft.directory/servicePrincipals/credentials/update | Update credentials of service principals<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/servicePrincipals/notes/update | Update notes of service principals |
-> | microsoft.directory/servicePrincipals/owners/update | Update owners of service principals |
-> | microsoft.directory/servicePrincipals/permissions/update | Update permissions of service principals |
-> | microsoft.directory/servicePrincipals/policies/update | Update policies of service principals |
-> | microsoft.directory/servicePrincipals/tag/update | Update the tag property for service principals |
+> | microsoft.directory/onPremisesSynchronization/standard/read | Read and manage objects to enable on-premises directory synchronization |
 
 ## Directory Writers
 
@@ -881,42 +862,42 @@ This is a [privileged role](privileged-roles-permissions.md). Users in this role
 > | microsoft.directory/applications/extensionProperties/update | Update extension properties on applications |
 > | microsoft.directory/contacts/create | Create contacts |
 > | microsoft.directory/groups/assignLicense | Assign product licenses to groups for group-based licensing |
-> | microsoft.directory/groups/create | Create Security groups and Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groups/reprocessLicenseAssignment | Reprocess license assignments for group-based licensing |
 > | microsoft.directory/groups/basic/update | Update basic properties on Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/classification/update | Update the classification property on Security groups and Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups/create | Create Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/dynamicMembershipRule/update | Update the dynamic membership rule on Security groups and Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groupSettings/basic/update | Update basic properties on group settings |
+> | microsoft.directory/groupSettings/create | Create group settings |
+> | microsoft.directory/groupSettings/delete | Delete group settings |
 > | microsoft.directory/groups/groupType/update | Update properties that would affect the group type of Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/members/update | Update members of Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/onPremWriteBack/update | Update Microsoft Entra groups to be written back to on-premises with Microsoft Entra Connect |
 > | microsoft.directory/groups/owners/update | Update owners of Security groups and Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups/reprocessLicenseAssignment | Reprocess license assignments for group-based licensing |
 > | microsoft.directory/groups/settings/update | Update settings of groups |
 > | microsoft.directory/groups/visibility/update | Update the visibility property of Security groups and Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groupSettings/create | Create group settings |
-> | microsoft.directory/groupSettings/delete | Delete group settings |
-> | microsoft.directory/groupSettings/basic/update | Update basic properties on group settings |
-> | microsoft.directory/oAuth2PermissionGrants/create | Create OAuth 2.0 permission grants<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/oAuth2PermissionGrants/basic/update | Update OAuth 2.0 permission grants<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/servicePrincipals/synchronizationCredentials/manage | Manage application provisioning secrets and credentials |
-> | microsoft.directory/servicePrincipals/synchronizationJobs/manage | Start, restart, and pause application provisioning synchronization jobs |
-> | microsoft.directory/servicePrincipals/synchronizationSchema/manage | Create and manage application provisioning synchronization jobs and schema |
-> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/credentials/manage | Manage application provisioning secrets and credentials. |
-> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/jobs/manage | Start, restart, and pause application provisioning synchronization jobs. |
-> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/schema/manage | Create and manage application provisioning synchronization jobs and schema. |
+> | microsoft.directory/oAuth2PermissionGrants/create | Create OAuth 2.0 permission grants<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Update service principal role assignments |
 > | microsoft.directory/servicePrincipals/synchronization.cloudTenantToCloudTenant/credentials/manage | Manage cloud tenant to cloud tenant application provisioning secrets and credentials. |
 > | microsoft.directory/servicePrincipals/synchronization.cloudTenantToCloudTenant/jobs/manage | Start, restart, and pause cloud tenant to cloud tenant application provisioning synchronization jobs. |
 > | microsoft.directory/servicePrincipals/synchronization.cloudTenantToCloudTenant/schema/manage | Create and manage cloud tenant to cloud tenant application provisioning synchronization jobs and schema. |
-> | microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Update service principal role assignments |
+> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/credentials/manage | Manage application provisioning secrets and credentials. |
+> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/jobs/manage | Start, restart, and pause application provisioning synchronization jobs. |
+> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/schema/manage | Create and manage application provisioning synchronization jobs and schema. |
+> | microsoft.directory/servicePrincipals/synchronizationCredentials/manage | Manage application provisioning secrets and credentials |
+> | microsoft.directory/servicePrincipals/synchronizationJobs/manage | Start, restart, and pause application provisioning synchronization jobs |
+> | microsoft.directory/servicePrincipals/synchronizationSchema/manage | Create and manage application provisioning synchronization jobs and schema |
 > | microsoft.directory/users/assignLicense | Manage user licenses |
+> | microsoft.directory/users/basic/update | Update basic properties on users |
 > | microsoft.directory/users/create | Add users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/disable | Disable users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/enable | Enable users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/invalidateAllRefreshTokens | Force sign-out by invalidating user refresh tokens<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/inviteGuest | Invite guest users |
-> | microsoft.directory/users/reprocessLicenseAssignment | Reprocess license assignments for users |
-> | microsoft.directory/users/basic/update | Update basic properties on users |
 > | microsoft.directory/users/manager/update | Update manager for users |
 > | microsoft.directory/users/photo/update | Update photo of users |
+> | microsoft.directory/users/reprocessLicenseAssignment | Reprocess license assignments for users |
 > | microsoft.directory/users/sponsors/update | Update sponsors of users |
 > | microsoft.directory/users/userPrincipalName/update | Update User Principal Name of users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 
@@ -938,7 +919,7 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 Users with this role have global permissions within Microsoft Dynamics 365 Online, when the service is present, as well as the ability to manage support tickets and monitor service health. For more information, see [Use service admin roles to manage your tenant](/power-platform/admin/use-service-admin-role-manage-tenant).
 
 > [!NOTE]
-> In the Microsoft Graph API and Azure AD PowerShell, this role is named Dynamics 365 Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named Dynamics 365 Administrator.
+> In the Microsoft Graph API and Microsoft Graph PowerShell, this role is named Dynamics 365 Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named Dynamics 365 Administrator.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -968,7 +949,10 @@ This role does not provide any permissions for other Dynamics 365 products.
 > | Actions | Description |
 > | --- | --- |
 > | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
-> | microsoft.directory/subscribedSkus/allProperties/read | Read all properties of product subscriptions |
+> | microsoft.directory/domains/standard/read | Read basic properties on domains |
+> | microsoft.directory/organization/standard/read | Read basic properties on an organization |
+> | microsoft.directory/subscribedSkus/standard/read | Read basic properties on subscriptions |
+> | microsoft.directory/users/standard/read | Read basic properties on users |
 > | microsoft.dynamics365.businessCentral/allEntities/allProperties/allTasks | Manage all aspects of Dynamics 365 Business Central |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
@@ -989,20 +973,25 @@ Users in this role can create and manage the enterprise site list required for I
 Users with this role have global permissions within Microsoft Exchange Online, when the service is present. Also has the ability to create and manage all Microsoft 365 groups, manage support tickets, and monitor service health. For more information, see [About admin roles in the Microsoft 365 admin center](/microsoft-365/admin/add-users/about-admin-roles).
 
 > [!NOTE]
-> In the Microsoft Graph API and Azure AD PowerShell, this role is named Exchange Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named Exchange Administrator. In the [Exchange admin center](/exchange/exchange-admin-center), it is named Exchange Online administrator.
+> In the Microsoft Graph API and Microsoft Graph PowerShell, this role is named Exchange Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named Exchange Administrator. In the [Exchange admin center](/exchange/exchange-admin-center), it is named Exchange Online administrator.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.directory/groups/hiddenMembers/read | Read hidden members of Security groups and Microsoft 365 groups, including role-assignable groups |
-> | microsoft.directory/groups.unified/create | Create Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groups.unified/delete | Delete Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groups.unified/restore | Restore Microsoft 365 groups from soft-deleted container, excluding role-assignable groups |
-> | microsoft.directory/groups.unified/basic/update | Update basic properties on Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groups.unified/members/update | Update members of Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groups.unified/owners/update | Update owners of Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
 > | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
+> | microsoft.backup/exchangeProtectionPolicies/allProperties/allTasks | Create and manage Exchange Online protection policy in Microsoft 365 Backup |
+> | microsoft.backup/exchangeRestoreSessions/allProperties/allTasks | Read and configure restore session for Exchange Online in Microsoft 365 Backup |
+> | microsoft.backup/restorePoints/userMailboxes/allProperties/allTasks | Manage all restore points associated with selected Exchange Online mailboxes in M365 Backup |
+> | microsoft.backup/userMailboxProtectionUnits/allProperties/allTasks | Manage mailboxes added to Exchange Online protection policy in Microsoft 365 Backup |
+> | microsoft.backup/userMailboxRestoreArtifacts/allProperties/allTasks | Manage mailboxes added to restore session for Exchange Online in Microsoft 365 Backup |
+> | microsoft.directory/groups/hiddenMembers/read | Read hidden members of Security groups and Microsoft 365 groups, including role-assignable groups |
+> | microsoft.directory/groups.unified/basic/update | Update basic properties on Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups.unified/create | Create Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups.unified/delete | Delete Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups.unified/members/update | Update members of Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups.unified/owners/update | Update owners of Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups.unified/restore | Restore Microsoft 365 groups from soft-deleted container, excluding role-assignable groups |
 > | microsoft.office365.exchange/allEntities/basic/allTasks | Manage all aspects of Exchange Online |
 > | microsoft.office365.network/performance/allProperties/read | Read all network performance properties in the Microsoft 365 admin center |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
@@ -1017,8 +1006,8 @@ Users with this role have read access to recipients and write access to the attr
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.office365.exchange/recipients/allProperties/allTasks | Create and delete all recipients, and read and update all properties of recipients in Exchange Online |
 > | microsoft.office365.exchange/migration/allProperties/allTasks | Manage all tasks related to migration of recipients in Exchange Online |
+> | microsoft.office365.exchange/recipients/allProperties/allTasks | Create and delete all recipients, and read and update all properties of recipients in Exchange Online |
 
 ## External ID User Flow Administrator
 
@@ -1051,7 +1040,7 @@ This is a [privileged role](privileged-roles-permissions.md). This administrator
 > | Actions | Description |
 > | --- | --- |
 > | microsoft.directory/domains/federation/update | Update federation property of domains<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/identityProviders/allProperties/allTasks | Read and configure identity providers in Azure Active Directory B2C<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/identityProviders/allProperties/allTasks | Read and configure identity providers in Azure Active Directory B2C<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 
 ## Fabric Administrator
 
@@ -1079,6 +1068,14 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.azure.advancedThreatProtection/allEntities/allTasks | Manage all aspects of Azure Advanced Threat Protection |
+> | microsoft.azure.informationProtection/allEntities/allTasks | Manage all aspects of Azure Information Protection |
+> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
+> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
+> | microsoft.backup/allEntities/allProperties/allTasks | Manage all aspects of Microsoft 365 Backup |
+> | microsoft.cloudPC/allEntities/allProperties/allTasks | Manage all aspects of Windows 365 |
+> | microsoft.commerce.billing/allEntities/allProperties/allTasks | Manage all aspects of Office 365 billing |
+> | microsoft.commerce.billing/purchases/standard/read | Read purchase services in M365 Admin Center. |
 > | microsoft.directory/accessReviews/allProperties/allTasks | (Deprecated) Create and delete access reviews, read and update all properties of access reviews, and manage access reviews of groups in Microsoft Entra ID |
 > | microsoft.directory/accessReviews/definitions/allProperties/allTasks | Manage access reviews of all reviewable resources in Microsoft Entra ID |
 > | microsoft.directory/adminConsentRequestPolicy/allProperties/allTasks | Manage admin consent request policies in Microsoft Entra ID |
@@ -1088,79 +1085,33 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 > | microsoft.directory/applications/synchronization/standard/read | Read provisioning settings associated with the application object |
 > | microsoft.directory/applicationTemplates/instantiate | Instantiate gallery applications from application templates |
 > | microsoft.directory/auditLogs/allProperties/read | Read all properties on audit logs, excluding custom security attributes audit logs |
-> | microsoft.directory/users/authenticationMethods/create | Update authentication methods for users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/users/authenticationMethods/delete | Delete authentication methods for users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/users/authenticationMethods/standard/read | Read standard properties of authentication methods for users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/users/authenticationMethods/basic/update | Update basic properties of authentication methods for users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/authorizationPolicy/allProperties/allTasks | Manage all aspects of authorization policy<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/bitlockerKeys/key/read | Read bitlocker metadata and key on devices<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/cloudAppSecurity/allProperties/allTasks | Create and delete all resources, and read and update standard properties in Microsoft Defender for Cloud Apps |
-> | microsoft.directory/connectors/create | Create private network connectors |
-> | microsoft.directory/connectors/allProperties/read | Read all properties of private network connectors |
-> | microsoft.directory/connectorGroups/create | Create private network connector groups |
-> | microsoft.directory/connectorGroups/delete | Delete private network connector groups |
+> | microsoft.directory/conditionalAccessPolicies/allProperties/allTasks | Manage all properties of Conditional Access policies |
 > | microsoft.directory/connectorGroups/allProperties/read | Read all properties of private network connector groups |
 > | microsoft.directory/connectorGroups/allProperties/update | Update all properties of private network connector groups |
+> | microsoft.directory/connectorGroups/create | Create private network connector groups |
+> | microsoft.directory/connectorGroups/delete | Delete private network connector groups |
+> | microsoft.directory/connectors/allProperties/read | Read all properties of private network connectors |
+> | microsoft.directory/connectors/create | Create private network connectors |
 > | microsoft.directory/contacts/allProperties/allTasks | Create and delete contacts, and read and update all properties |
 > | microsoft.directory/contracts/allProperties/allTasks | Create and delete partner contracts, and read and update all properties |
-> | microsoft.directory/customAuthenticationExtensions/allProperties/allTasks | Create and manage custom authentication extensions<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/deletedItems/delete | Permanently delete objects, which can no longer be restored |
-> | microsoft.directory/deletedItems/restore | Restore soft deleted objects to original state |
-> | microsoft.directory/devices/allProperties/allTasks | Create and delete devices, and read and update all properties |
-> | microsoft.directory/groupsAssignableToRoles/assignLicense | Assign a license to role-assignable groups |
-> | microsoft.directory/groupsAssignableToRoles/reprocessLicenseAssignment | Reprocess license assignments to role-assignable groups |
-> | microsoft.directory/multiTenantOrganization/basic/update | Update basic properties of a multi-tenant organization |
-> | microsoft.directory/multiTenantOrganization/create | Create a multi-tenant organization |
-> | microsoft.directory/multiTenantOrganization/joinRequest/organizationDetails/update | Join a multi-tenant organization |
-> | microsoft.directory/multiTenantOrganization/joinRequest/standard/read | Read properties of a multi-tenant organization join request |
-> | microsoft.directory/multiTenantOrganization/standard/read | Read basic properties of a multi-tenant organization |
-> | microsoft.directory/multiTenantOrganization/tenants/organizationDetails/update | Update basic properties of a tenant participating in a multi-tenant organization |
-> | microsoft.directory/multiTenantOrganization/tenants/create | Create a tenant in a multi-tenant organization |
-> | microsoft.directory/multiTenantOrganization/tenants/delete | Delete a tenant participating in a multi-tenant organization |
-> | microsoft.directory/multiTenantOrganization/tenants/organizationDetails/read | Read organization details of a tenant participating in a multi-tenant organization |
-> | microsoft.directory/multiTenantOrganization/tenants/standard/read | Read basic properties of a tenant participating in a multi-tenant organization |
-> | microsoft.directory/namedLocations/create | Create custom rules that define network locations |
-> | microsoft.directory/namedLocations/delete | Delete custom rules that define network locations |
-> | microsoft.directory/namedLocations/standard/read | Read basic properties of custom rules that define network locations |
-> | microsoft.directory/namedLocations/basic/update | Update basic properties of custom rules that define network locations |
-> | microsoft.directory/deviceLocalCredentials/password/read | Read all properties of the backed up local administrator account credentials for Microsoft Entra joined devices, including the password |
-> | microsoft.directory/deviceManagementPolicies/standard/read | Read standard properties on mobile device management and mobile app management policies |
-> | microsoft.directory/deviceManagementPolicies/basic/update | Update basic properties on mobile device management and mobile app management policies<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/deviceRegistrationPolicy/standard/read | Read standard properties on device registration policies |
-> | microsoft.directory/deviceRegistrationPolicy/basic/update | Update basic properties on device registration policies<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/directoryRoles/allProperties/allTasks | Create and delete directory roles, and read and update all properties |
-> | microsoft.directory/directoryRoleTemplates/allProperties/allTasks | Create and delete Microsoft Entra role templates, and read and update all properties |
-> | microsoft.directory/domains/allProperties/allTasks | Create and delete domains, and read and update all properties<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/domains/federationConfiguration/standard/read | Read standard properties of federation configuration for domains |
-> | microsoft.directory/domains/federationConfiguration/basic/update | Update basic federation configuration for domains |
-> | microsoft.directory/domains/federationConfiguration/create | Create federation configuration for domains |
-> | microsoft.directory/domains/federationConfiguration/delete | Delete federation configuration for domains |
-> | microsoft.directory/entitlementManagement/allProperties/allTasks | Create and delete resources, and read and update all properties in Microsoft Entra entitlement management |
-> | microsoft.directory/groups/allProperties/allTasks | Create and delete groups, and read and update all properties |
-> | microsoft.directory/groupsAssignableToRoles/create | Create role-assignable groups |
-> | microsoft.directory/groupsAssignableToRoles/delete | Delete role-assignable groups |
-> | microsoft.directory/groupsAssignableToRoles/restore | Restore role-assignable groups |
-> | microsoft.directory/groupsAssignableToRoles/allProperties/update | Update role-assignable groups |
-> | microsoft.directory/groupSettings/allProperties/allTasks | Create and delete group settings, and read and update all properties |
-> | microsoft.directory/groupSettingTemplates/allProperties/allTasks | Create and delete group setting templates, and read and update all properties |
-> | microsoft.directory/hybridAuthenticationPolicy/allProperties/allTasks | Manage hybrid authentication policy in Microsoft Entra ID<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/identityProtection/allProperties/allTasks | Create and delete all resources, and read and update standard properties in Microsoft Entra ID Protection<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/loginOrganizationBranding/allProperties/allTasks | Create and delete loginTenantBranding, and read and update all properties |
-> | microsoft.directory/oAuth2PermissionGrants/allProperties/allTasks | Create and delete OAuth 2.0 permission grants, and read and update all properties<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/organization/allProperties/allTasks | Read and update all properties for an organization |
-> | microsoft.directory/passwordHashSync/allProperties/allTasks | Manage all aspects of Password Hash Synchronization (PHS) in Microsoft Entra ID |
-> | microsoft.directory/policies/allProperties/allTasks | Create and delete policies, and read and update all properties<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/conditionalAccessPolicies/allProperties/allTasks | Manage all properties of Conditional Access policies |
-> | microsoft.directory/crossTenantAccessPolicy/standard/read | Read basic properties of cross-tenant access policy |
 > | microsoft.directory/crossTenantAccessPolicy/allowedCloudEndpoints/update | Update allowed cloud endpoints of cross-tenant access policy |
 > | microsoft.directory/crossTenantAccessPolicy/basic/update | Update basic settings of cross-tenant access policy |
-> | microsoft.directory/crossTenantAccessPolicy/default/standard/read | Read basic properties of the default cross-tenant access policy |
 > | microsoft.directory/crossTenantAccessPolicy/default/b2bCollaboration/update | Update Microsoft Entra B2B collaboration settings of the default cross-tenant access policy |
 > | microsoft.directory/crossTenantAccessPolicy/default/b2bDirectConnect/update | Update Microsoft Entra B2B direct connect settings of the default cross-tenant access policy |
 > | microsoft.directory/crossTenantAccessPolicy/default/crossCloudMeetings/update | Update cross-cloud Teams meeting settings of the default cross-tenant access policy |
+> | microsoft.directory/crossTenantAccessPolicy/default/standard/read | Read basic properties of the default cross-tenant access policy |
 > | microsoft.directory/crossTenantAccessPolicy/default/tenantRestrictions/update | Update tenant restrictions of the default cross-tenant access policy |
+> | microsoft.directory/crossTenantAccessPolicy/partners/b2bCollaboration/update | Update Microsoft Entra B2B collaboration settings of cross-tenant access policy for partners |
+> | microsoft.directory/crossTenantAccessPolicy/partners/b2bDirectConnect/update | Update Microsoft Entra B2B direct connect settings of cross-tenant access policy for partners |
 > | microsoft.directory/crossTenantAccessPolicy/partners/create | Create cross-tenant access policy for partners |
+> | microsoft.directory/crossTenantAccessPolicy/partners/crossCloudMeetings/update | Update cross-cloud Teams meeting settings of cross-tenant access policy for partners |
 > | microsoft.directory/crossTenantAccessPolicy/partners/delete | Delete cross-tenant access policy for partners |
+> | microsoft.directory/crossTenantAccessPolicy/partners/identitySynchronization/basic/update | Update basic settings of cross-tenant sync policy |
+> | microsoft.directory/crossTenantAccessPolicy/partners/identitySynchronization/create | Create cross-tenant sync policy for partners |
+> | microsoft.directory/crossTenantAccessPolicy/partners/identitySynchronization/standard/read | Read basic properties of cross-tenant sync policy |
 > | microsoft.directory/crossTenantAccessPolicy/partners/standard/read | Read basic properties of cross-tenant access policy for partners |
 > | microsoft.directory/crossTenantAccessPolicy/partners/templates/multiTenantOrganizationIdentitySynchronization/basic/update | Update cross tenant sync policy templates for multi-tenant organization |
 > | microsoft.directory/crossTenantAccessPolicy/partners/templates/multiTenantOrganizationIdentitySynchronization/resetToDefaultSettings | Reset cross tenant sync policy template for multi-tenant organization to default settings |
@@ -1168,13 +1119,69 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 > | microsoft.directory/crossTenantAccessPolicy/partners/templates/multiTenantOrganizationPartnerConfiguration/basic/update | Update cross tenant access policy templates for multi-tenant organization |
 > | microsoft.directory/crossTenantAccessPolicy/partners/templates/multiTenantOrganizationPartnerConfiguration/resetToDefaultSettings | Reset cross tenant access policy template for multi-tenant organization to default settings |
 > | microsoft.directory/crossTenantAccessPolicy/partners/templates/multiTenantOrganizationPartnerConfiguration/standard/read | Read basic properties of cross tenant access policy templates for multi-tenant organization |
-> | microsoft.directory/crossTenantAccessPolicy/partners/b2bCollaboration/update | Update Microsoft Entra B2B collaboration settings of cross-tenant access policy for partners |
-> | microsoft.directory/crossTenantAccessPolicy/partners/b2bDirectConnect/update | Update Microsoft Entra B2B direct connect settings of cross-tenant access policy for partners |
-> | microsoft.directory/crossTenantAccessPolicy/partners/crossCloudMeetings/update | Update cross-cloud Teams meeting settings of cross-tenant access policy for partners |
 > | microsoft.directory/crossTenantAccessPolicy/partners/tenantRestrictions/update | Update tenant restrictions of cross-tenant access policy for partners |
-> | microsoft.directory/crossTenantAccessPolicy/partners/identitySynchronization/create | Create cross-tenant sync policy for partners |
-> | microsoft.directory/crossTenantAccessPolicy/partners/identitySynchronization/basic/update | Update basic settings of cross-tenant sync policy |
-> | microsoft.directory/crossTenantAccessPolicy/partners/identitySynchronization/standard/read | Read basic properties of cross-tenant sync policy |
+> | microsoft.directory/crossTenantAccessPolicy/standard/read | Read basic properties of cross-tenant access policy |
+> | microsoft.directory/customAuthenticationExtensions/allProperties/allTasks | Create and manage custom authentication extensions<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/deletedItems/delete | Permanently delete objects, which can no longer be restored |
+> | microsoft.directory/deletedItems/restore | Restore soft deleted objects to original state |
+> | microsoft.directory/deviceLocalCredentials/password/read | Read all properties of the backed up local administrator account credentials for Microsoft Entra joined devices, including the password |
+> | microsoft.directory/deviceManagementPolicies/basic/update | Update basic properties on mobile device management and mobile app management policies<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/deviceManagementPolicies/standard/read | Read standard properties on mobile device management and mobile app management policies |
+> | microsoft.directory/deviceRegistrationPolicy/basic/update | Update basic properties on device registration policies<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/deviceRegistrationPolicy/standard/read | Read standard properties on device registration policies |
+> | microsoft.directory/devices/allProperties/allTasks | Create and delete devices, and read and update all properties<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/directoryRoles/allProperties/allTasks | Create and delete directory roles, and read and update all properties |
+> | microsoft.directory/directoryRoleTemplates/allProperties/allTasks | Create and delete Microsoft Entra role templates, and read and update all properties |
+> | microsoft.directory/domains/allProperties/allTasks | Create and delete domains, and read and update all properties<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/domains/federationConfiguration/basic/update | Update basic federation configuration for domains |
+> | microsoft.directory/domains/federationConfiguration/create | Create federation configuration for domains |
+> | microsoft.directory/domains/federationConfiguration/delete | Delete federation configuration for domains |
+> | microsoft.directory/domains/federationConfiguration/standard/read | Read standard properties of federation configuration for domains |
+> | microsoft.directory/entitlementManagement/allProperties/allTasks | Create and delete resources, and read and update all properties in Microsoft Entra entitlement management |
+> | microsoft.directory/externalUserProfiles/basic/update | Update basic properties of external user profiles in the extended directory for Teams |
+> | microsoft.directory/externalUserProfiles/delete | Delete external user profiles in the extended directory for Teams |
+> | microsoft.directory/externalUserProfiles/standard/read | Read standard properties of external user profiles in the extended directory for Teams |
+> | microsoft.directory/groups/allProperties/allTasks | Create and delete groups, and read and update all properties<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/groupsAssignableToRoles/allProperties/update | Update role-assignable groups |
+> | microsoft.directory/groupsAssignableToRoles/assignLicense | Assign a license to role-assignable groups |
+> | microsoft.directory/groupsAssignableToRoles/create | Create role-assignable groups |
+> | microsoft.directory/groupsAssignableToRoles/delete | Delete role-assignable groups |
+> | microsoft.directory/groupsAssignableToRoles/reprocessLicenseAssignment | Reprocess license assignments to role-assignable groups |
+> | microsoft.directory/groupsAssignableToRoles/restore | Restore role-assignable groups |
+> | microsoft.directory/groupSettings/allProperties/allTasks | Create and delete group settings, and read and update all properties |
+> | microsoft.directory/groupSettingTemplates/allProperties/allTasks | Create and delete group setting templates, and read and update all properties |
+> | microsoft.directory/hybridAuthenticationPolicy/allProperties/allTasks | Manage hybrid authentication policy in Microsoft Entra ID<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/identityProtection/allProperties/allTasks | Create and delete all resources, and read and update standard properties in Microsoft Entra ID Protection<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/lifecycleWorkflows/workflows/allProperties/allTasks | Manage all aspects of lifecycle workflows and tasks in Microsoft Entra ID |
+> | microsoft.directory/loginOrganizationBranding/allProperties/allTasks | Create and delete loginTenantBranding, and read and update all properties |
+> | microsoft.directory/multiTenantOrganization/basic/update | Update basic properties of a multi-tenant organization |
+> | microsoft.directory/multiTenantOrganization/create | Create a multi-tenant organization |
+> | microsoft.directory/multiTenantOrganization/joinRequest/organizationDetails/update | Join a multi-tenant organization |
+> | microsoft.directory/multiTenantOrganization/joinRequest/standard/read | Read properties of a multi-tenant organization join request |
+> | microsoft.directory/multiTenantOrganization/standard/read | Read basic properties of a multi-tenant organization |
+> | microsoft.directory/multiTenantOrganization/tenants/create | Create a tenant in a multi-tenant organization |
+> | microsoft.directory/multiTenantOrganization/tenants/delete | Delete a tenant participating in a multi-tenant organization |
+> | microsoft.directory/multiTenantOrganization/tenants/organizationDetails/read | Read organization details of a tenant participating in a multi-tenant organization |
+> | microsoft.directory/multiTenantOrganization/tenants/organizationDetails/update | Update basic properties of a tenant participating in a multi-tenant organization |
+> | microsoft.directory/multiTenantOrganization/tenants/standard/read | Read basic properties of a tenant participating in a multi-tenant organization |
+> | microsoft.directory/namedLocations/basic/update | Update basic properties of custom rules that define network locations |
+> | microsoft.directory/namedLocations/create | Create custom rules that define network locations |
+> | microsoft.directory/namedLocations/delete | Delete custom rules that define network locations |
+> | microsoft.directory/namedLocations/standard/read | Read basic properties of custom rules that define network locations |
+> | microsoft.directory/oAuth2PermissionGrants/allProperties/allTasks | Create and delete OAuth 2.0 permission grants, and read and update all properties<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/onPremisesSynchronization/basic/update | Update basic on-premises directory synchronization information |
+> | microsoft.directory/onPremisesSynchronization/standard/read | Read standard on-premises directory synchronization information |
+> | microsoft.directory/organization/allProperties/allTasks | Read and update all properties for an organization |
+> | microsoft.directory/passwordHashSync/allProperties/allTasks | Manage all aspects of Password Hash Synchronization (PHS) in Microsoft Entra ID |
+> | microsoft.directory/pendingExternalUserProfiles/basic/update | Update basic properties of external user profiles in the extended directory for Teams |
+> | microsoft.directory/pendingExternalUserProfiles/create | Create external user profiles in the extended directory for Teams |
+> | microsoft.directory/pendingExternalUserProfiles/delete | Delete external user profiles in the extended directory for Teams |
+> | microsoft.directory/pendingExternalUserProfiles/standard/read | Read standard properties of external user profiles in the extended directory for Teams |
+> | microsoft.directory/permissionGrantPolicies/basic/update | Update basic properties of permission grant policies |
+> | microsoft.directory/permissionGrantPolicies/create | Create permission grant policies |
+> | microsoft.directory/permissionGrantPolicies/delete | Delete permission grant policies |
+> | microsoft.directory/permissionGrantPolicies/standard/read | Read standard properties of permission grant policies |
+> | microsoft.directory/policies/allProperties/allTasks | Create and delete policies, and read and update all properties<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/privilegedIdentityManagement/allProperties/read | Read all resources in Privileged Identity Management |
 > | microsoft.directory/provisioningLogs/allProperties/read | Read all properties of provisioning logs |
 > | microsoft.directory/resourceNamespaces/resourceActions/authenticationContext/update | Update Conditional Access authentication context of Microsoft 365 role-based access control (RBAC) resource actions<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
@@ -1185,61 +1192,47 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 > | microsoft.directory/serviceAction/disableDirectoryFeature | Can perform the "disable directory feature" service action |
 > | microsoft.directory/serviceAction/enableDirectoryFeature | Can perform the "enable directory feature" service action |
 > | microsoft.directory/serviceAction/getAvailableExtentionProperties | Can perform the getAvailableExtentionProperties service action |
-> | microsoft.directory/servicePrincipals/allProperties/allTasks | Create and delete service principals, and read and update all properties<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/servicePrincipals/managePermissionGrantsForAll.microsoft-company-admin | Grant consent for any permission to any application |
-> | microsoft.directory/servicePrincipals/synchronization/standard/read | Read provisioning settings associated with your service principal |
-> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/credentials/manage | Manage application provisioning secrets and credentials. |
-> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/jobs/manage | Start, restart, and pause application provisioning synchronization jobs. |
-> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/schema/manage | Create and manage application provisioning synchronization jobs and schema. |
-> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToCloudTenant/credentials/manage | Manage cloud tenant to cloud tenant application provisioning secrets and credentials. |
-> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToCloudTenant/jobs/manage | Start, restart, and pause cloud tenant to cloud tenant application provisioning synchronization jobs. |
-> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToCloudTenant/schema/manage | Create and manage cloud tenant to cloud tenant application provisioning synchronization jobs and schema. |
-> | microsoft.directory/signInReports/allProperties/read | Read all properties on sign-in reports, including privileged properties |
-> | microsoft.directory/subscribedSkus/allProperties/allTasks | Buy and manage subscriptions and delete subscriptions |
-> | microsoft.directory/users/allProperties/allTasks | Create and delete users, and read and update all properties<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/users/convertExternalToInternalMemberUser | Convert external user to internal user |
-> | microsoft.directory/permissionGrantPolicies/create | Create permission grant policies |
-> | microsoft.directory/permissionGrantPolicies/delete | Delete permission grant policies |
-> | microsoft.directory/permissionGrantPolicies/standard/read | Read standard properties of permission grant policies |
-> | microsoft.directory/permissionGrantPolicies/basic/update | Update basic properties of permission grant policies |
+> | microsoft.directory/servicePrincipalCreationPolicies/basic/update | Update basic properties of service principal creation policies |
 > | microsoft.directory/servicePrincipalCreationPolicies/create | Create service principal creation policies |
 > | microsoft.directory/servicePrincipalCreationPolicies/delete | Delete service principal creation policies |
 > | microsoft.directory/servicePrincipalCreationPolicies/standard/read | Read standard properties of service principal creation policies |
-> | microsoft.directory/servicePrincipalCreationPolicies/basic/update | Update basic properties of service principal creation policies |
+> | microsoft.directory/servicePrincipals/allProperties/allTasks | Create and delete service principals, and read and update all properties<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/servicePrincipals/managePermissionGrantsForAll.microsoft-company-admin | Grant consent for any permission to any application |
+> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToCloudTenant/credentials/manage | Manage cloud tenant to cloud tenant application provisioning secrets and credentials. |
+> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToCloudTenant/jobs/manage | Start, restart, and pause cloud tenant to cloud tenant application provisioning synchronization jobs. |
+> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToCloudTenant/schema/manage | Create and manage cloud tenant to cloud tenant application provisioning synchronization jobs and schema. |
+> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/credentials/manage | Manage application provisioning secrets and credentials. |
+> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/jobs/manage | Start, restart, and pause application provisioning synchronization jobs. |
+> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/schema/manage | Create and manage application provisioning synchronization jobs and schema. |
+> | microsoft.directory/servicePrincipals/synchronization/standard/read | Read provisioning settings associated with your service principal |
+> | microsoft.directory/signInReports/allProperties/read | Read all properties on sign-in reports, including privileged properties |
+> | microsoft.directory/subscribedSkus/allProperties/allTasks | Buy and manage subscriptions and delete subscriptions |
 > | microsoft.directory/tenantManagement/tenants/create | Create new tenants in Microsoft Entra ID |
+> | microsoft.directory/users/allProperties/allTasks | Create and delete users, and read and update all properties<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/users/authenticationMethods/basic/update | Update basic properties of authentication methods for users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/users/authenticationMethods/create | Update authentication methods for users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/users/authenticationMethods/delete | Delete authentication methods for users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/users/authenticationMethods/standard/read | Read standard properties of authentication methods for users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/users/convertExternalToInternalMemberUser | Convert external user to internal user |
+> | microsoft.directory/verifiableCredentials/configuration/allProperties/read | Read configuration required to create and manage verifiable credentials |
+> | microsoft.directory/verifiableCredentials/configuration/allProperties/update | Update configuration required to create and manage verifiable credentials |
+> | microsoft.directory/verifiableCredentials/configuration/contracts/allProperties/read | Read a verifiable credential contract |
+> | microsoft.directory/verifiableCredentials/configuration/contracts/allProperties/update | Update a verifiable credential contract |
 > | microsoft.directory/verifiableCredentials/configuration/contracts/cards/allProperties/read | Read a verifiable credential card |
 > | microsoft.directory/verifiableCredentials/configuration/contracts/cards/revoke | Revoke a verifiable credential card |
 > | microsoft.directory/verifiableCredentials/configuration/contracts/create | Create a verifiable credential contract |
-> | microsoft.directory/verifiableCredentials/configuration/contracts/allProperties/read | Read a verifiable credential contract |
-> | microsoft.directory/verifiableCredentials/configuration/contracts/allProperties/update | Update a verifiable credential contract |
 > | microsoft.directory/verifiableCredentials/configuration/create | Create configuration required to create and manage verifiable credentials |
 > | microsoft.directory/verifiableCredentials/configuration/delete | Delete configuration required to create and manage verifiable credentials and delete all of its verifiable credentials |
-> | microsoft.directory/verifiableCredentials/configuration/allProperties/read | Read configuration required to create and manage verifiable credentials |
-> | microsoft.directory/verifiableCredentials/configuration/allProperties/update | Update configuration required to create and manage verifiable credentials |
-> | microsoft.directory/lifecycleWorkflows/workflows/allProperties/allTasks | Manage all aspects of lifecycle workflows and tasks in Microsoft Entra ID |
-> | microsoft.directory/pendingExternalUserProfiles/create | Create external user profiles in the extended directory for Teams |
-> | microsoft.directory/pendingExternalUserProfiles/standard/read | Read standard properties of external user profiles in the extended directory for Teams |
-> | microsoft.directory/pendingExternalUserProfiles/basic/update | Update basic properties of external user profiles in the extended directory for Teams |
-> | microsoft.directory/pendingExternalUserProfiles/delete | Delete external user profiles in the extended directory for Teams |
-> | microsoft.directory/externalUserProfiles/standard/read | Read standard properties of external user profiles in the extended directory for Teams |
-> | microsoft.directory/externalUserProfiles/basic/update | Update basic properties of external user profiles in the extended directory for Teams |
-> | microsoft.directory/externalUserProfiles/delete | Delete external user profiles in the extended directory for Teams |
-> | microsoft.azure.advancedThreatProtection/allEntities/allTasks | Manage all aspects of Azure Advanced Threat Protection |
-> | microsoft.azure.informationProtection/allEntities/allTasks | Manage all aspects of Azure Information Protection |
-> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
-> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
-> | microsoft.cloudPC/allEntities/allProperties/allTasks | Manage all aspects of Windows 365 |
-> | microsoft.commerce.billing/allEntities/allProperties/allTasks | Manage all aspects of Office 365 billing |
-> | microsoft.commerce.billing/purchases/standard/read | Read purchase services in M365 Admin Center. |
 > | microsoft.dynamics365/allEntities/allTasks | Manage all aspects of Dynamics 365 |
 > | microsoft.edge/allEntities/allProperties/allTasks | Manage all aspects of Microsoft Edge |
-> | microsoft.networkAccess/allEntities/allProperties/allTasks | Manage all aspects of Microsoft Entra Network Access |
 > | microsoft.flow/allEntities/allTasks | Manage all aspects of Microsoft Power Automate |
+> | microsoft.graph.dataConnect/allEntities/allProperties/allTasks | Manage aspects of Microsoft Graph Data Connect |
 > | microsoft.hardware.support/shippingAddress/allProperties/allTasks | Create, read, update, and delete shipping addresses for Microsoft hardware warranty claims, including shipping addresses created by others |
 > | microsoft.hardware.support/shippingStatus/allProperties/read | Read shipping status for open Microsoft hardware warranty claims |
 > | microsoft.hardware.support/warrantyClaims/allProperties/allTasks | Create and manage all aspects of Microsoft hardware warranty claims |
 > | microsoft.insights/allEntities/allProperties/allTasks | Manage all aspects of Insights app |
 > | microsoft.intune/allEntities/allTasks | Manage all aspects of Microsoft Intune |
+> | microsoft.networkAccess/allEntities/allProperties/allTasks | Manage all aspects of Microsoft Entra Network Access |
 > | microsoft.office365.complianceManager/allEntities/allTasks | Manage all aspects of Office 365 Compliance Manager |
 > | microsoft.office365.desktopAnalytics/allEntities/allTasks | Manage all aspects of Desktop Analytics |
 > | microsoft.office365.exchange/allEntities/basic/allTasks | Manage all aspects of Exchange Online |
@@ -1290,12 +1283,11 @@ Users with this role **cannot** do the following:
 > Global Reader role has the following limitations:
 >
 >- OneDrive admin center - OneDrive admin center does not support the Global Reader role
->- [Microsoft 365 admin center](/microsoft-365/admin/admin-overview/admin-center-overview) - Global Reader can't read integrated apps. You won't find the **Integrated apps** tab under **Settings** in the left pane of Microsoft 365 admin center.
->- [Microsoft 365 Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) - Global Reader can't read SCC audit logs, do content search, or see Secure Score.
+>- [Microsoft 365 Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) - Global Reader can't do content search or see Secure Score.
 >- [Teams admin center](/microsoftteams/manage-teams-in-modern-portal) - Global Reader cannot read **Teams lifecycle**, **Analytics & reports**, **IP phone device management**, and **App catalog**. For more information, see [Use Microsoft Teams administrator roles to manage Teams](/microsoftteams/using-admin-roles).
 >- [Privileged Access Management](/microsoft-365/compliance/privileged-access-management) doesn't support the Global Reader role.
 >- [Azure Information Protection](/azure/information-protection/what-is-information-protection) - Global Reader is supported [for central reporting](/azure/information-protection/reports-aip) only, and when your Microsoft Entra organization isn't on the [unified labeling platform](/azure/information-protection/faqs#how-can-i-determine-if-my-tenant-is-on-the-unified-labeling-platform).
-> - [SharePoint](/sharepoint/get-started-new-admin-center) - Global Reader currently can't access SharePoint using PowerShell.
+> - [SharePoint](/sharepoint/get-started-new-admin-center) - Global Reader has read access to SharePoint Online PowerShell cmdlets and Read APIs.
 > - [Power Platform admin center](/power-platform/admin/admin-documentation) - Global Reader is not yet supported in the Power Platform admin center.
 > - Microsoft Purview doesn't support the Global Reader role.
 
@@ -1303,6 +1295,10 @@ Users with this role **cannot** do the following:
 > | Actions | Description |
 > | --- | --- |
 > | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
+> | microsoft.backup/allEntities/allProperties/read | Read all aspects of Microsoft 365 Backup |
+> | microsoft.cloudPC/allEntities/allProperties/read | Read all aspects of Windows 365 |
+> | microsoft.commerce.billing/allEntities/allProperties/read | Read all resources of Office 365 billing |
+> | microsoft.commerce.billing/purchases/standard/read | Read purchase services in M365 Admin Center. |
 > | microsoft.directory/accessReviews/allProperties/read | (Deprecated) Read all properties of access reviews |
 > | microsoft.directory/accessReviews/definitions/allProperties/read | Read all properties of access reviews of all reviewable resources in Microsoft Entra ID |
 > | microsoft.directory/adminConsentRequestPolicy/allProperties/read | Read all properties of admin consent request policies in Microsoft Entra ID |
@@ -1311,15 +1307,23 @@ Users with this role **cannot** do the following:
 > | microsoft.directory/applications/allProperties/read | Read all properties (including privileged properties) on all types of applications |
 > | microsoft.directory/applications/synchronization/standard/read | Read provisioning settings associated with the application object |
 > | microsoft.directory/auditLogs/allProperties/read | Read all properties on audit logs, excluding custom security attributes audit logs |
-> | microsoft.directory/users/authenticationMethods/standard/restrictedRead | Read standard properties of authentication methods that do not include personally identifiable information for users |
 > | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
 > | microsoft.directory/bitlockerKeys/key/read | Read bitlocker metadata and key on devices<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/cloudAppSecurity/allProperties/read | Read all properties for Defender for Cloud Apps |
-> | microsoft.directory/connectors/allProperties/read | Read all properties of private network connectors |
+> | microsoft.directory/conditionalAccessPolicies/allProperties/read | Read all properties of Conditional Access policies |
 > | microsoft.directory/connectorGroups/allProperties/read | Read all properties of private network connector groups |
+> | microsoft.directory/connectors/allProperties/read | Read all properties of private network connectors |
 > | microsoft.directory/contacts/allProperties/read | Read all properties for contacts |
+> | microsoft.directory/crossTenantAccessPolicy/default/standard/read | Read basic properties of the default cross-tenant access policy |
+> | microsoft.directory/crossTenantAccessPolicy/partners/identitySynchronization/standard/read | Read basic properties of cross-tenant sync policy |
+> | microsoft.directory/crossTenantAccessPolicy/partners/standard/read | Read basic properties of cross-tenant access policy for partners |
+> | microsoft.directory/crossTenantAccessPolicy/partners/templates/multiTenantOrganizationIdentitySynchronization/standard/read | Read basic properties of cross tenant sync policy templates for multi-tenant organization |
+> | microsoft.directory/crossTenantAccessPolicy/partners/templates/multiTenantOrganizationPartnerConfiguration/standard/read | Read basic properties of cross tenant access policy templates for multi-tenant organization |
+> | microsoft.directory/crossTenantAccessPolicy/standard/read | Read basic properties of cross-tenant access policy |
 > | microsoft.directory/customAuthenticationExtensions/allProperties/read | Read custom authentication extensions |
 > | microsoft.directory/deviceLocalCredentials/standard/read | Read all properties of the backed up local administrator account credentials for Microsoft Entra joined devices, except the password |
+> | microsoft.directory/deviceManagementPolicies/standard/read | Read standard properties on mobile device management and mobile app management policies |
+> | microsoft.directory/deviceRegistrationPolicy/standard/read | Read standard properties on device registration policies |
 > | microsoft.directory/devices/allProperties/read | Read all properties of devices |
 > | microsoft.directory/directoryRoles/allProperties/read | Read all properties of directory roles |
 > | microsoft.directory/directoryRoleTemplates/allProperties/read | Read all properties of directory role templates |
@@ -1331,51 +1335,41 @@ Users with this role **cannot** do the following:
 > | microsoft.directory/groupSettings/allProperties/read | Read all properties of group settings |
 > | microsoft.directory/groupSettingTemplates/allProperties/read | Read all properties of group setting templates |
 > | microsoft.directory/identityProtection/allProperties/read | Read all resources in Microsoft Entra ID Protection |
+> | microsoft.directory/lifecycleWorkflows/workflows/allProperties/read | Read all properties of lifecycle workflows and tasks in Microsoft Entra ID |
 > | microsoft.directory/loginOrganizationBranding/allProperties/read | Read all properties for your organization's branded sign-in page |
+> | microsoft.directory/multiTenantOrganization/joinRequest/standard/read | Read properties of a multi-tenant organization join request |
+> | microsoft.directory/multiTenantOrganization/standard/read | Read basic properties of a multi-tenant organization |
+> | microsoft.directory/multiTenantOrganization/tenants/organizationDetails/read | Read organization details of a tenant participating in a multi-tenant organization |
+> | microsoft.directory/multiTenantOrganization/tenants/standard/read | Read basic properties of a tenant participating in a multi-tenant organization |
 > | microsoft.directory/namedLocations/standard/read | Read basic properties of custom rules that define network locations |
 > | microsoft.directory/oAuth2PermissionGrants/allProperties/read | Read all properties of OAuth 2.0 permission grants |
 > | microsoft.directory/organization/allProperties/read | Read all properties for an organization |
 > | microsoft.directory/pendingExternalUserProfiles/standard/read | Read standard properties of external user profiles in the extended directory for Teams |
 > | microsoft.directory/permissionGrantPolicies/standard/read | Read standard properties of permission grant policies |
 > | microsoft.directory/policies/allProperties/read | Read all properties of policies |
-> | microsoft.directory/conditionalAccessPolicies/allProperties/read | Read all properties of Conditional Access policies |
-> | microsoft.directory/crossTenantAccessPolicy/standard/read | Read basic properties of cross-tenant access policy |
-> | microsoft.directory/crossTenantAccessPolicy/default/standard/read | Read basic properties of the default cross-tenant access policy |
-> | microsoft.directory/crossTenantAccessPolicy/partners/standard/read | Read basic properties of cross-tenant access policy for partners |
-> | microsoft.directory/crossTenantAccessPolicy/partners/templates/multiTenantOrganizationIdentitySynchronization/standard/read | Read basic properties of cross tenant sync policy templates for multi-tenant organization |
-> | microsoft.directory/crossTenantAccessPolicy/partners/templates/multiTenantOrganizationPartnerConfiguration/standard/read | Read basic properties of cross tenant access policy templates for multi-tenant organization |
-> | microsoft.directory/crossTenantAccessPolicy/partners/identitySynchronization/standard/read | Read basic properties of cross-tenant sync policy |
-> | microsoft.directory/deviceManagementPolicies/standard/read | Read standard properties on mobile device management and mobile app management policies |
-> | microsoft.directory/deviceRegistrationPolicy/standard/read | Read standard properties on device registration policies |
-> | microsoft.directory/multiTenantOrganization/joinRequest/standard/read | Read properties of a multi-tenant organization join request |
-> | microsoft.directory/multiTenantOrganization/standard/read | Read basic properties of a multi-tenant organization |
-> | microsoft.directory/multiTenantOrganization/tenants/organizationDetails/read | Read organization details of a tenant participating in a multi-tenant organization |
-> | microsoft.directory/multiTenantOrganization/tenants/standard/read | Read basic properties of a tenant participating in a multi-tenant organization |
 > | microsoft.directory/privilegedIdentityManagement/allProperties/read | Read all resources in Privileged Identity Management |
 > | microsoft.directory/provisioningLogs/allProperties/read | Read all properties of provisioning logs |
 > | microsoft.directory/roleAssignments/allProperties/read | Read all properties of role assignments |
 > | microsoft.directory/roleDefinitions/allProperties/read | Read all properties of role definitions |
 > | microsoft.directory/scopedRoleMemberships/allProperties/read | View members in administrative units |
 > | microsoft.directory/serviceAction/getAvailableExtentionProperties | Can perform the getAvailableExtentionProperties service action |
-> | microsoft.directory/servicePrincipals/allProperties/read | Read all properties (including privileged properties) on servicePrincipals |
 > | microsoft.directory/servicePrincipalCreationPolicies/standard/read | Read standard properties of service principal creation policies |
+> | microsoft.directory/servicePrincipals/allProperties/read | Read all properties (including privileged properties) on servicePrincipals |
 > | microsoft.directory/servicePrincipals/synchronization/standard/read | Read provisioning settings associated with your service principal |
 > | microsoft.directory/signInReports/allProperties/read | Read all properties on sign-in reports, including privileged properties |
 > | microsoft.directory/subscribedSkus/allProperties/read | Read all properties of product subscriptions |
 > | microsoft.directory/users/allProperties/read | Read all properties of users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/verifiableCredentials/configuration/contracts/cards/allProperties/read | Read a verifiable credential card |
-> | microsoft.directory/verifiableCredentials/configuration/contracts/allProperties/read | Read a verifiable credential contract |
+> | microsoft.directory/users/authenticationMethods/standard/restrictedRead | Read standard properties of authentication methods that do not include personally identifiable information for users |
 > | microsoft.directory/verifiableCredentials/configuration/allProperties/read | Read configuration required to create and manage verifiable credentials |
-> | microsoft.directory/lifecycleWorkflows/workflows/allProperties/read | Read all properties of lifecycle workflows and tasks in Microsoft Entra ID |
-> | microsoft.cloudPC/allEntities/allProperties/read | Read all aspects of Windows 365 |
-> | microsoft.commerce.billing/allEntities/allProperties/read | Read all resources of Office 365 billing |
-> | microsoft.commerce.billing/purchases/standard/read | Read purchase services in M365 Admin Center. |
+> | microsoft.directory/verifiableCredentials/configuration/contracts/allProperties/read | Read a verifiable credential contract |
+> | microsoft.directory/verifiableCredentials/configuration/contracts/cards/allProperties/read | Read a verifiable credential card |
 > | microsoft.edge/allEntities/allProperties/read | Read all aspects of Microsoft Edge |
-> | microsoft.networkAccess/allEntities/allProperties/read | Read all aspects of Microsoft Entra Network Access |
+> | microsoft.graph.dataConnect/allEntities/allProperties/read | Read aspects of Microsoft Graph Data Connect |
 > | microsoft.hardware.support/shippingAddress/allProperties/read | Read shipping addresses for Microsoft hardware warranty claims, including existing shipping addresses created by others |
 > | microsoft.hardware.support/shippingStatus/allProperties/read | Read shipping status for open Microsoft hardware warranty claims |
 > | microsoft.hardware.support/warrantyClaims/allProperties/read | Read Microsoft hardware warranty claims |
 > | microsoft.insights/allEntities/allProperties/read | Read all aspects of Viva Insights |
+> | microsoft.networkAccess/allEntities/allProperties/read | Read all aspects of Microsoft Entra Network Access |
 > | microsoft.office365.fileStorageContainers/allEntities/allProperties/read | Read entities and permissions of SharePoint Embedded containers |
 > | microsoft.office365.messageCenter/messages/read | Read messages in Message Center in the Microsoft 365 admin center, excluding security messages |
 > | microsoft.office365.messageCenter/securityMessages/read | Read security messages in Message Center in the Microsoft 365 admin center |
@@ -1438,25 +1432,25 @@ Users in this role can create/manage groups and its settings like naming and exp
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
+> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.directory/deletedItems.groups/delete | Permanently delete groups, which can no longer be restored |
 > | microsoft.directory/deletedItems.groups/restore | Restore soft deleted groups to original state |
 > | microsoft.directory/groups/assignLicense | Assign product licenses to groups for group-based licensing |
-> | microsoft.directory/groups/create | Create Security groups and Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groups/delete | Delete Security groups and Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groups/hiddenMembers/read | Read hidden members of Security groups and Microsoft 365 groups, including role-assignable groups |
-> | microsoft.directory/groups/reprocessLicenseAssignment | Reprocess license assignments for group-based licensing |
-> | microsoft.directory/groups/restore | Restore groups from soft-deleted container |
 > | microsoft.directory/groups/basic/update | Update basic properties on Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/classification/update | Update the classification property on Security groups and Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups/create | Create Security groups and Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups/delete | Delete Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/dynamicMembershipRule/update | Update the dynamic membership rule on Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/groupType/update | Update properties that would affect the group type of Security groups and Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups/hiddenMembers/read | Read hidden members of Security groups and Microsoft 365 groups, including role-assignable groups |
 > | microsoft.directory/groups/members/update | Update members of Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/onPremWriteBack/update | Update Microsoft Entra groups to be written back to on-premises with Microsoft Entra Connect |
 > | microsoft.directory/groups/owners/update | Update owners of Security groups and Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups/reprocessLicenseAssignment | Reprocess license assignments for group-based licensing |
+> | microsoft.directory/groups/restore | Restore groups from soft-deleted container |
 > | microsoft.directory/groups/settings/update | Update settings of groups |
 > | microsoft.directory/groups/visibility/update | Update the visibility property of Security groups and Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
-> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
@@ -1468,11 +1462,11 @@ Users in this role can manage Microsoft Entra B2B guest user invitations when th
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.directory/users/inviteGuest | Invite guest users |
-> | microsoft.directory/users/standard/read | Read basic properties on users |
 > | microsoft.directory/users/appRoleAssignments/read | Read application role assignments for users |
 > | microsoft.directory/users/deviceForResourceAccount/read | Read deviceForResourceAccount of users |
 > | microsoft.directory/users/directReports/read | Read the direct reports for users |
+> | microsoft.directory/users/invitedBy/read | Read the user that invited an external user to a tenant |
+> | microsoft.directory/users/inviteGuest | Invite guest users |
 > | microsoft.directory/users/licenseDetails/read | Read license details of users |
 > | microsoft.directory/users/manager/read | Read manager of users |
 > | microsoft.directory/users/memberOf/read | Read the group memberships of users |
@@ -1483,6 +1477,7 @@ Users in this role can manage Microsoft Entra B2B guest user invitations when th
 > | microsoft.directory/users/registeredDevices/read | Read registered devices of users |
 > | microsoft.directory/users/scopedRoleMemberOf/read | Read user's membership of a Microsoft Entra role, that is scoped to an administrative unit |
 > | microsoft.directory/users/sponsors/read | Read sponsors of users |
+> | microsoft.directory/users/standard/read | Read basic properties on users |
 
 ## Helpdesk Administrator
 
@@ -1505,17 +1500,17 @@ Users with this role **cannot** do the following:
 
 Delegating administrative permissions over subsets of users and applying policies to a subset of users is possible with [Administrative Units](administrative-units.md).
 
-This role was previously named Password Administrator in the [Azure portal](/azure/azure-portal/azure-portal-overview). It was renamed to Helpdesk Administrator to align with the existing name in the Microsoft Graph API and Azure AD PowerShell.
+This role was previously named Password Administrator in the [Azure portal](/azure/azure-portal/azure-portal-overview). It was renamed to Helpdesk Administrator to align with the existing name in the Microsoft Graph API and Microsoft Graph PowerShell.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
+> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.directory/bitlockerKeys/key/read | Read bitlocker metadata and key on devices<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/deviceLocalCredentials/standard/read | Read all properties of the backed up local administrator account credentials for Microsoft Entra joined devices, except the password |
 > | microsoft.directory/users/invalidateAllRefreshTokens | Force sign-out by invalidating user refresh tokens<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/password/update | Reset passwords for all users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
-> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
@@ -1524,65 +1519,67 @@ This role was previously named Password Administrator in the [Azure portal](/azu
 
 [![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md)
 
-This is a [privileged role](privileged-roles-permissions.md). Users in this role can create, manage and deploy provisioning configuration setup from Active Directory to Microsoft Entra ID using Cloud Provisioning as well as manage Microsoft Entra Connect, Pass-through Authentication (PTA), Password hash synchronization (PHS), Seamless Single Sign-On (Seamless SSO), and federation settings. Does not have access to manage Microsoft Entra Connect Health. Users can also troubleshoot and monitor logs using this role.
+This is a [privileged role](privileged-roles-permissions.md). Users in this role can create, manage and deploy provisioning configuration setup from Active Directory to Microsoft Entra ID using Cloud Provisioning as well as manage Microsoft Entra Connect, pass-through authentication (PTA), password hash synchronization (PHS), seamless single sign-on (seamless SSO), and federation settings. Does not have access to manage Microsoft Entra Connect Health. Users can also troubleshoot and monitor logs using this role.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.directory/applications/create | Create all types of applications |
-> | microsoft.directory/applications/delete | Delete all types of applications |
+> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
+> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.directory/applications/appRoles/update | Update the appRoles property on all types of applications |
 > | microsoft.directory/applications/audience/update | Update the audience property for applications |
 > | microsoft.directory/applications/authentication/update | Update authentication on all types of applications |
 > | microsoft.directory/applications/basic/update | Update basic properties for applications |
+> | microsoft.directory/applications/create | Create all types of applications |
+> | microsoft.directory/applications/delete | Delete all types of applications |
 > | microsoft.directory/applications/notes/update | Update notes of applications |
 > | microsoft.directory/applications/owners/update | Update owners of applications |
 > | microsoft.directory/applications/permissions/update | Update exposed permissions and required permissions on all types of applications |
 > | microsoft.directory/applications/policies/update | Update policies of applications |
-> | microsoft.directory/applications/tag/update | Update tags of applications |
 > | microsoft.directory/applications/synchronization/standard/read | Read provisioning settings associated with the application object |
+> | microsoft.directory/applications/tag/update | Update tags of applications |
 > | microsoft.directory/applicationTemplates/instantiate | Instantiate gallery applications from application templates |
 > | microsoft.directory/auditLogs/allProperties/read | Read all properties on audit logs, excluding custom security attributes audit logs |
 > | microsoft.directory/cloudProvisioning/allProperties/allTasks | Read and configure all properties of Microsoft Entra cloud provisioning service. |
 > | microsoft.directory/deletedItems.applications/delete | Permanently delete applications, which can no longer be restored |
 > | microsoft.directory/deletedItems.applications/restore | Restore soft deleted applications to original state |
 > | microsoft.directory/domains/allProperties/read | Read all properties of domains |
-> | microsoft.directory/domains/federation/update | Update federation property of domains<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/domains/federationConfiguration/standard/read | Read standard properties of federation configuration for domains |
 > | microsoft.directory/domains/federationConfiguration/basic/update | Update basic federation configuration for domains |
 > | microsoft.directory/domains/federationConfiguration/create | Create federation configuration for domains |
 > | microsoft.directory/domains/federationConfiguration/delete | Delete federation configuration for domains |
+> | microsoft.directory/domains/federationConfiguration/standard/read | Read standard properties of federation configuration for domains |
+> | microsoft.directory/domains/federation/update | Update federation property of domains<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/hybridAuthenticationPolicy/allProperties/allTasks | Manage hybrid authentication policy in Microsoft Entra ID<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/onPremisesSynchronization/basic/update | Update basic on-premises directory synchronization information |
+> | microsoft.directory/onPremisesSynchronization/standard/read | Read standard on-premises directory synchronization information |
 > | microsoft.directory/organization/dirSync/update | Update the organization directory sync property |
 > | microsoft.directory/passwordHashSync/allProperties/allTasks | Manage all aspects of Password Hash Synchronization (PHS) in Microsoft Entra ID |
 > | microsoft.directory/provisioningLogs/allProperties/read | Read all properties of provisioning logs |
-> | microsoft.directory/servicePrincipals/create | Create service principals |
-> | microsoft.directory/servicePrincipals/delete | Delete service principals |
-> | microsoft.directory/servicePrincipals/disable | Disable service principals |
-> | microsoft.directory/servicePrincipals/enable | Enable service principals |
-> | microsoft.directory/servicePrincipals/synchronizationCredentials/manage | Manage application provisioning secrets and credentials |
-> | microsoft.directory/servicePrincipals/synchronizationJobs/manage | Start, restart, and pause application provisioning synchronization jobs |
-> | microsoft.directory/servicePrincipals/synchronizationSchema/manage | Create and manage application provisioning synchronization jobs and schema |
-> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/credentials/manage | Manage application provisioning secrets and credentials. |
-> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/jobs/manage | Start, restart, and pause application provisioning synchronization jobs. |
-> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/schema/manage | Create and manage application provisioning synchronization jobs and schema. |
-> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToCloudTenant/credentials/manage | Manage cloud tenant to cloud tenant application provisioning secrets and credentials. |
-> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToCloudTenant/jobs/manage | Start, restart, and pause cloud tenant to cloud tenant application provisioning synchronization jobs. |
-> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToCloudTenant/schema/manage | Create and manage cloud tenant to cloud tenant application provisioning synchronization jobs and schema. |
 > | microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Update service principal role assignments |
 > | microsoft.directory/servicePrincipals/audience/update | Update audience properties on service principals |
 > | microsoft.directory/servicePrincipals/authentication/update | Update authentication properties on service principals |
 > | microsoft.directory/servicePrincipals/basic/update | Update basic properties on service principals |
+> | microsoft.directory/servicePrincipals/create | Create service principals |
+> | microsoft.directory/servicePrincipals/delete | Delete service principals |
+> | microsoft.directory/servicePrincipals/disable | Disable service principals |
+> | microsoft.directory/servicePrincipals/enable | Enable service principals |
 > | microsoft.directory/servicePrincipals/notes/update | Update notes of service principals |
 > | microsoft.directory/servicePrincipals/owners/update | Update owners of service principals |
 > | microsoft.directory/servicePrincipals/permissions/update | Update permissions of service principals |
 > | microsoft.directory/servicePrincipals/policies/update | Update policies of service principals |
-> | microsoft.directory/servicePrincipals/tag/update | Update the tag property for service principals |
+> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToCloudTenant/credentials/manage | Manage cloud tenant to cloud tenant application provisioning secrets and credentials. |
+> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToCloudTenant/jobs/manage | Start, restart, and pause cloud tenant to cloud tenant application provisioning synchronization jobs. |
+> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToCloudTenant/schema/manage | Create and manage cloud tenant to cloud tenant application provisioning synchronization jobs and schema. |
+> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/credentials/manage | Manage application provisioning secrets and credentials. |
+> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/jobs/manage | Start, restart, and pause application provisioning synchronization jobs. |
+> | microsoft.directory/servicePrincipals/synchronization.cloudTenantToExternalSystem/schema/manage | Create and manage application provisioning synchronization jobs and schema. |
+> | microsoft.directory/servicePrincipals/synchronizationCredentials/manage | Manage application provisioning secrets and credentials |
+> | microsoft.directory/servicePrincipals/synchronizationJobs/manage | Start, restart, and pause application provisioning synchronization jobs |
+> | microsoft.directory/servicePrincipals/synchronizationSchema/manage | Create and manage application provisioning synchronization jobs and schema |
 > | microsoft.directory/servicePrincipals/synchronization/standard/read | Read provisioning settings associated with your service principal |
+> | microsoft.directory/servicePrincipals/tag/update | Update the tag property for service principals |
 > | microsoft.directory/signInReports/allProperties/read | Read all properties on sign-in reports, including privileged properties |
 > | microsoft.directory/users/authorizationInfo/update | Update the multivalued Certificate user IDs property of users |
-> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
-> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.office365.messageCenter/messages/read | Read messages in Message Center in the Microsoft 365 admin center, excluding security messages |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
@@ -1595,13 +1592,13 @@ Users with this role can manage Microsoft Entra ID Governance configuration, inc
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.directory/accessReviews/allProperties/allTasks | (Deprecated) Create and delete access reviews, read and update all properties of access reviews, and manage access reviews of groups in Microsoft Entra ID |
 > | microsoft.directory/accessReviews/definitions.applications/allProperties/allTasks | Manage access reviews of application role assignments in Microsoft Entra ID |
 > | microsoft.directory/accessReviews/definitions.entitlementManagement/allProperties/allTasks | Manage access reviews for access package assignments in entitlement management |
 > | microsoft.directory/accessReviews/definitions.groups/allProperties/read | Read all properties of access reviews for membership in Security and Microsoft 365 groups, including role-assignable groups. |
 > | microsoft.directory/accessReviews/definitions.groups/allProperties/update | Update all properties of access reviews for membership in Security and Microsoft 365 groups, excluding role-assignable groups. |
 > | microsoft.directory/accessReviews/definitions.groups/create | Create access reviews for membership in Security and Microsoft 365 groups. |
 > | microsoft.directory/accessReviews/definitions.groups/delete | Delete access reviews for membership in Security and Microsoft 365 groups. |
-> | microsoft.directory/accessReviews/allProperties/allTasks | (Deprecated) Create and delete access reviews, read and update all properties of access reviews, and manage access reviews of groups in Microsoft Entra ID |
 > | microsoft.directory/entitlementManagement/allProperties/allTasks | Create and delete resources, and read and update all properties in Microsoft Entra entitlement management |
 > | microsoft.directory/groups/members/update | Update members of Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Update service principal role assignments |
@@ -1649,47 +1646,49 @@ Users in this role can access a set of dashboards and insights via the Microsoft
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.insights/reports/allProperties/read | View reports and dashboard in Insights app |
 > | microsoft.insights/programs/allProperties/update | Deploy and manage programs in Insights app |
+> | microsoft.insights/reports/allProperties/read | View reports and dashboard in Insights app |
 
 ## Intune Administrator
 
 [![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md)
 
-This is a [privileged role](privileged-roles-permissions.md). Users with this role have global permissions within Microsoft Intune Online, when the service is present. Additionally, this role contains the ability to manage users and devices in order to associate policy, as well as create and manage groups. For more information, see [Role-based administration control (RBAC) with Microsoft Intune](/intune/fundamentals/role-based-access-control).
+This is a [privileged role](privileged-roles-permissions.md). Users with this role have global permissions within Microsoft Intune Online, when the service is present. Additionally, this role contains the ability to manage users and devices in order to associate policy, as well as create and manage groups. For more information, see [Role-based administration control (RBAC) with Microsoft Intune](/mem/intune/fundamentals/role-based-access-control).
 
-This role can create and manage all security groups. However, Intune Administrator does not have admin rights over Office groups. That means the admin cannot update owners or memberships of all Office groups in the organization. However, he/she can manage the Office group that he creates which comes as a part of his/her end-user privileges. So, any Office group (not security group) that he/she creates should be counted against his/her quota of 250.
+This role can create and manage all security groups. However, Intune Administrator does not have admin rights over Microsoft 365 groups. That means the admin cannot update owners or memberships of all Microsoft 365 groups in the organization. However, he/she can manage the Microsoft 365 group that he creates which comes as a part of his/her end-user privileges. So, any Microsoft 365 group (not security group) that he/she creates should be counted against his/her quota of 250.
 
 > [!NOTE]
-> In the Microsoft Graph API and Azure AD PowerShell, this role is named Intune Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named Intune Administrator.
+> In the Microsoft Graph API and Microsoft Graph PowerShell, this role is named Intune Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named Intune Administrator.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
+> | microsoft.cloudPC/allEntities/allProperties/allTasks | Manage all aspects of Windows 365 |
 > | microsoft.directory/bitlockerKeys/key/read | Read bitlocker metadata and key on devices<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/contacts/basic/update | Update basic properties on contacts |
 > | microsoft.directory/contacts/create | Create contacts |
 > | microsoft.directory/contacts/delete | Delete contacts |
-> | microsoft.directory/contacts/basic/update | Update basic properties on contacts |
 > | microsoft.directory/deletedItems.devices/delete | Permanently delete devices, which can no longer be restored |
 > | microsoft.directory/deletedItems.devices/restore | Restore soft deleted devices to original state |
+> | microsoft.directory/deviceLocalCredentials/password/read | Read all properties of the backed up local administrator account credentials for Microsoft Entra joined devices, including the password |
+> | microsoft.directory/deviceManagementPolicies/standard/read | Read standard properties on mobile device management and mobile app management policies |
+> | microsoft.directory/deviceRegistrationPolicy/standard/read | Read standard properties on device registration policies |
+> | microsoft.directory/devices/basic/update | Update basic properties on devices |
 > | microsoft.directory/devices/create | Create devices (enroll in Microsoft Entra ID) |
 > | microsoft.directory/devices/delete | Delete devices from Microsoft Entra ID |
 > | microsoft.directory/devices/disable | Disable devices in Microsoft Entra ID |
 > | microsoft.directory/devices/enable | Enable devices in Microsoft Entra ID |
-> | microsoft.directory/devices/basic/update | Update basic properties on devices |
 > | microsoft.directory/devices/extensionAttributeSet1/update | Update the extensionAttribute1 to extensionAttribute5 properties on devices |
 > | microsoft.directory/devices/extensionAttributeSet2/update | Update the extensionAttribute6 to extensionAttribute10 properties on devices |
 > | microsoft.directory/devices/extensionAttributeSet3/update | Update the extensionAttribute11 to extensionAttribute15 properties on devices |
 > | microsoft.directory/devices/registeredOwners/update | Update registered owners of devices |
 > | microsoft.directory/devices/registeredUsers/update | Update registered users of devices |
-> | microsoft.directory/deviceLocalCredentials/password/read | Read all properties of the backed up local administrator account credentials for Microsoft Entra joined devices, including the password |
-> | microsoft.directory/deviceManagementPolicies/standard/read | Read standard properties on mobile device management and mobile app management policies |
-> | microsoft.directory/deviceRegistrationPolicy/standard/read | Read standard properties on device registration policies |
 > | microsoft.directory/groups/hiddenMembers/read | Read hidden members of Security groups and Microsoft 365 groups, including role-assignable groups |
-> | microsoft.directory/groups.security/create | Create Security groups, excluding role-assignable groups |
-> | microsoft.directory/groups.security/delete | Delete Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/basic/update | Update basic properties on Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/classification/update | Update the classification property on Security groups, excluding role-assignable groups |
+> | microsoft.directory/groups.security/create | Create Security groups, excluding role-assignable groups |
+> | microsoft.directory/groups.security/delete | Delete Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/dynamicMembershipRule/update | Update the dynamic membership rule on Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/members/update | Update members of Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/owners/update | Update owners of Security groups, excluding role-assignable groups |
@@ -1697,8 +1696,6 @@ This role can create and manage all security groups. However, Intune Administrat
 > | microsoft.directory/users/basic/update | Update basic properties on users |
 > | microsoft.directory/users/manager/update | Update manager for users |
 > | microsoft.directory/users/photo/update | Update photo of users |
-> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
-> | microsoft.cloudPC/allEntities/allProperties/allTasks | Manage all aspects of Windows 365 |
 > | microsoft.intune/allEntities/allTasks | Manage all aspects of Microsoft Intune |
 > | microsoft.office365.organizationalMessages/allEntities/allProperties/read | Read all aspects of Microsoft 365 Organizational Messages |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
@@ -1723,10 +1720,10 @@ Users in this role have full access to all knowledge, learning and intelligent f
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.directory/groups.security/basic/update | Update basic properties on Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/create | Create Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/createAsOwner | Create Security groups, excluding role-assignable groups. Creator is added as the first owner. |
 > | microsoft.directory/groups.security/delete | Delete Security groups, excluding role-assignable groups |
-> | microsoft.directory/groups.security/basic/update | Update basic properties on Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/members/update | Update members of Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/owners/update | Update owners of Security groups, excluding role-assignable groups |
 > | microsoft.office365.knowledge/contentUnderstanding/allProperties/allTasks | Read and update all properties of content understanding in Microsoft 365 admin center |
@@ -1744,10 +1741,10 @@ Users in this role can create and manage content, like topics, acronyms and lear
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.directory/groups.security/basic/update | Update basic properties on Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/create | Create Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/createAsOwner | Create Security groups, excluding role-assignable groups. Creator is added as the first owner. |
 > | microsoft.directory/groups.security/delete | Delete Security groups, excluding role-assignable groups |
-> | microsoft.directory/groups.security/basic/update | Update basic properties on Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/members/update | Update members of Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/owners/update | Update owners of Security groups, excluding role-assignable groups |
 > | microsoft.office365.knowledge/contentUnderstanding/analytics/allProperties/read | Read analytics reports of content understanding in Microsoft 365 admin center |
@@ -1763,19 +1760,21 @@ Users in this role can read, add, remove, and update license assignments on user
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
 > | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
 > | microsoft.directory/groups/assignLicense | Assign product licenses to groups for group-based licensing |
 > | microsoft.directory/groups/reprocessLicenseAssignment | Reprocess license assignments for group-based licensing |
 > | microsoft.directory/users/assignLicense | Manage user licenses |
 > | microsoft.directory/users/reprocessLicenseAssignment | Reprocess license assignments for users |
 > | microsoft.directory/users/usageLocation/update | Update usage location of users |
-> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
 
 ## Lifecycle Workflows Administrator
 
-Assign the Lifecycle Workflows Administrator role to users who need to do the following tasks:
+[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md)
+
+This is a [privileged role](privileged-roles-permissions.md). Assign the Lifecycle Workflows Administrator role to users who need to do the following tasks:
 
 - Create and manage all aspects of workflows and tasks associated with Lifecycle Workflows in Microsoft Entra ID
 - Check the execution of scheduled workflows
@@ -1787,6 +1786,7 @@ Assign the Lifecycle Workflows Administrator role to users who need to do the fo
 > | --- | --- |
 > | microsoft.directory/lifecycleWorkflows/workflows/allProperties/allTasks | Manage all aspects of lifecycle workflows and tasks in Microsoft Entra ID |
 > | microsoft.directory/organization/strongAuthentication/read | Read strong authentication properties of an organization |
+> | microsoft.directory/users/lifeCycleInfo/read | Read lifecycle information of users, such as employeeLeaveDateTime<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 
 ## Message Center Privacy Reader
 
@@ -1828,8 +1828,8 @@ Assign the Microsoft 365 Migration Administrator role to users who need to do th
 > | Actions | Description |
 > | --- | --- |
 > | microsoft.office365.migrations/allEntities/allProperties/allTasks | Manage all aspects of Microsoft 365 migrations |
-> | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
+> | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
 
 ## Microsoft Entra Joined Device Local Administrator
 
@@ -1994,6 +1994,8 @@ This is a [privileged role](privileged-roles-permissions.md). Do not use. This r
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
+> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.directory/applications/appRoles/update | Update the appRoles property on all types of applications |
 > | microsoft.directory/applications/audience/update | Update the audience property for applications |
 > | microsoft.directory/applications/authentication/update | Update authentication on all types of applications |
@@ -2004,32 +2006,30 @@ This is a [privileged role](privileged-roles-permissions.md). Do not use. This r
 > | microsoft.directory/applications/permissions/update | Update exposed permissions and required permissions on all types of applications |
 > | microsoft.directory/applications/policies/update | Update policies of applications |
 > | microsoft.directory/applications/tag/update | Update tags of applications |
+> | microsoft.directory/contacts/basic/update | Update basic properties on contacts |
 > | microsoft.directory/contacts/create | Create contacts |
 > | microsoft.directory/contacts/delete | Delete contacts |
-> | microsoft.directory/contacts/basic/update | Update basic properties on contacts |
 > | microsoft.directory/deletedItems.groups/restore | Restore soft deleted groups to original state |
 > | microsoft.directory/deletedItems.users/restore | Restore soft deleted users to original state |
 > | microsoft.directory/groups/create | Create Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/delete | Delete Security groups and Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groups/restore | Restore groups from soft-deleted container |
 > | microsoft.directory/groups/members/update | Update members of Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/owners/update | Update owners of Security groups and Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups/restore | Restore groups from soft-deleted container |
 > | microsoft.directory/oAuth2PermissionGrants/allProperties/allTasks | Create and delete OAuth 2.0 permission grants, and read and update all properties<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Update service principal role assignments |
 > | microsoft.directory/users/assignLicense | Manage user licenses |
+> | microsoft.directory/users/basic/update | Update basic properties on users |
 > | microsoft.directory/users/create | Add users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/delete | Delete users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/disable | Disable users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/enable | Enable users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/invalidateAllRefreshTokens | Force sign-out by invalidating user refresh tokens<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/users/restore | Restore deleted users |
-> | microsoft.directory/users/basic/update | Update basic properties on users |
 > | microsoft.directory/users/manager/update | Update manager for users |
 > | microsoft.directory/users/password/update | Reset passwords for all users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/photo/update | Update photo of users |
+> | microsoft.directory/users/restore | Restore deleted users |
 > | microsoft.directory/users/userPrincipalName/update | Update User Principal Name of users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
-> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
@@ -2046,6 +2046,8 @@ This is a [privileged role](privileged-roles-permissions.md). Do not use. This r
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
+> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.directory/applications/appRoles/update | Update the appRoles property on all types of applications |
 > | microsoft.directory/applications/audience/update | Update the audience property for applications |
 > | microsoft.directory/applications/authentication/update | Update authentication on all types of applications |
@@ -2056,17 +2058,17 @@ This is a [privileged role](privileged-roles-permissions.md). Do not use. This r
 > | microsoft.directory/applications/permissions/update | Update exposed permissions and required permissions on all types of applications |
 > | microsoft.directory/applications/policies/update | Update policies of applications |
 > | microsoft.directory/applications/tag/update | Update tags of applications |
+> | microsoft.directory/contacts/basic/update | Update basic properties on contacts |
 > | microsoft.directory/contacts/create | Create contacts |
 > | microsoft.directory/contacts/delete | Delete contacts |
-> | microsoft.directory/contacts/basic/update | Update basic properties on contacts |
 > | microsoft.directory/deletedItems.groups/restore | Restore soft deleted groups to original state |
 > | microsoft.directory/deletedItems.users/restore | Restore soft deleted users to original state |
 > | microsoft.directory/domains/allProperties/allTasks | Create and delete domains, and read and update all properties<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/groups/create | Create Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/delete | Delete Security groups and Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groups/restore | Restore groups from soft-deleted container |
 > | microsoft.directory/groups/members/update | Update members of Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/owners/update | Update owners of Security groups and Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups/restore | Restore groups from soft-deleted container |
 > | microsoft.directory/oAuth2PermissionGrants/allProperties/allTasks | Create and delete OAuth 2.0 permission grants, and read and update all properties<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/organization/basic/update | Update basic properties on organization |
 > | microsoft.directory/roleAssignments/allProperties/allTasks | Create and delete role assignments, and read and update all role assignment properties |
@@ -2075,19 +2077,17 @@ This is a [privileged role](privileged-roles-permissions.md). Do not use. This r
 > | microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Update service principal role assignments |
 > | microsoft.directory/subscribedSkus/standard/read | Read basic properties on subscriptions |
 > | microsoft.directory/users/assignLicense | Manage user licenses |
+> | microsoft.directory/users/basic/update | Update basic properties on users |
 > | microsoft.directory/users/create | Add users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/delete | Delete users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/disable | Disable users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/enable | Enable users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/invalidateAllRefreshTokens | Force sign-out by invalidating user refresh tokens<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/users/restore | Restore deleted users |
-> | microsoft.directory/users/basic/update | Update basic properties on users |
 > | microsoft.directory/users/manager/update | Update manager for users |
 > | microsoft.directory/users/password/update | Reset passwords for all users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/photo/update | Update photo of users |
+> | microsoft.directory/users/restore | Restore deleted users |
 > | microsoft.directory/users/userPrincipalName/update | Update User Principal Name of users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
-> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
@@ -2155,9 +2155,9 @@ Users with this role can register printers and manage printer status in the Micr
 > | --- | --- |
 > | microsoft.azure.print/connectors/allProperties/read | Read all properties of connectors in Microsoft Print |
 > | microsoft.azure.print/printers/allProperties/read | Read all properties of printers in Microsoft Print |
+> | microsoft.azure.print/printers/basic/update | Update basic properties of printers in Microsoft Print |
 > | microsoft.azure.print/printers/register | Register printers in Microsoft Print |
 > | microsoft.azure.print/printers/unregister | Unregister printers in Microsoft Print |
-> | microsoft.azure.print/printers/basic/update | Update basic properties of printers in Microsoft Print |
 
 ## Privileged Authentication Administrator
 
@@ -2167,9 +2167,10 @@ This is a [privileged role](privileged-roles-permissions.md). Assign the Privile
 
 - Set or reset any authentication method (including passwords) for any user, including Global Administrators.
 - Delete or restore any users, including Global Administrators. For more information, see [Who can perform sensitive actions](privileged-roles-permissions.md#who-can-perform-sensitive-actions).
-- Force users to re-register against existing non-password credential (such as MFA or FIDO) and revoke **remember MFA on the device**, prompting for MFA on the next sign-in of all users.
+- Force users to re-register against existing non-password credential (such as MFA or FIDO2) and revoke **remember MFA on the device**, prompting for MFA on the next sign-in of all users.
 - Update sensitive properties for all users. For more information, see [Who can perform sensitive actions](privileged-roles-permissions.md#who-can-perform-sensitive-actions).
 - Create and manage support tickets in Azure and the Microsoft 365 admin center.
+- Configure certificate authorities with a PKI-based trust store (preview)
 
 Users with this role **cannot** do the following:
 
@@ -2189,23 +2190,23 @@ Users with this role **cannot** do the following:
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
+> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
+> | microsoft.directory/deletedItems.users/restore | Restore soft deleted users to original state |
+> | microsoft.directory/users/authenticationMethods/basic/update | Update basic properties of authentication methods for users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/authenticationMethods/create | Update authentication methods for users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/authenticationMethods/delete | Delete authentication methods for users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/authenticationMethods/standard/read | Read standard properties of authentication methods for users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/users/authenticationMethods/basic/update | Update basic properties of authentication methods for users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/deletedItems.users/restore | Restore soft deleted users to original state |
+> | microsoft.directory/users/authorizationInfo/update | Update the multivalued Certificate user IDs property of users |
+> | microsoft.directory/users/basic/update | Update basic properties on users |
 > | microsoft.directory/users/delete | Delete users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/disable | Disable users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/enable | Enable users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/invalidateAllRefreshTokens | Force sign-out by invalidating user refresh tokens<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/users/restore | Restore deleted users |
-> | microsoft.directory/users/basic/update | Update basic properties on users |
-> | microsoft.directory/users/authorizationInfo/update | Update the multivalued Certificate user IDs property of users |
 > | microsoft.directory/users/manager/update | Update manager for users |
 > | microsoft.directory/users/password/update | Reset passwords for all users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/users/restore | Restore deleted users |
 > | microsoft.directory/users/userPrincipalName/update | Update User Principal Name of users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
-> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
@@ -2224,32 +2225,32 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 > | --- | --- |
 > | microsoft.directory/accessReviews/definitions.applications/allProperties/read | Read all properties of access reviews of application role assignments in Microsoft Entra ID |
 > | microsoft.directory/accessReviews/definitions.directoryRoles/allProperties/allTasks | Manage access reviews for Microsoft Entra role assignments |
+> | microsoft.directory/accessReviews/definitions.groups/allProperties/read | Read all properties of access reviews for membership in Security and Microsoft 365 groups, including role-assignable groups. |
 > | microsoft.directory/accessReviews/definitions.groupsAssignableToRoles/allProperties/update | Update all properties of access reviews for membership in groups that are assignable to Microsoft Entra roles |
 > | microsoft.directory/accessReviews/definitions.groupsAssignableToRoles/create | Create access reviews for membership in groups that are assignable to Microsoft Entra roles |
 > | microsoft.directory/accessReviews/definitions.groupsAssignableToRoles/delete | Delete access reviews for membership in groups that are assignable to Microsoft Entra roles |
-> | microsoft.directory/accessReviews/definitions.groups/allProperties/read | Read all properties of access reviews for membership in Security and Microsoft 365 groups, including role-assignable groups. |
 > | microsoft.directory/administrativeUnits/allProperties/allTasks | Create and manage administrative units (including members) |
 > | microsoft.directory/authorizationPolicy/allProperties/allTasks | Manage all aspects of authorization policy<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/directoryRoles/allProperties/allTasks | Create and delete directory roles, and read and update all properties |
-> | microsoft.directory/groupsAssignableToRoles/create | Create role-assignable groups |
-> | microsoft.directory/groupsAssignableToRoles/delete | Delete role-assignable groups |
-> | microsoft.directory/groupsAssignableToRoles/restore | Restore role-assignable groups |
 > | microsoft.directory/groupsAssignableToRoles/allProperties/update | Update role-assignable groups |
 > | microsoft.directory/groupsAssignableToRoles/assignLicense | Assign a license to role-assignable groups |
+> | microsoft.directory/groupsAssignableToRoles/create | Create role-assignable groups |
+> | microsoft.directory/groupsAssignableToRoles/delete | Delete role-assignable groups |
 > | microsoft.directory/groupsAssignableToRoles/reprocessLicenseAssignment | Reprocess license assignments to role-assignable groups |
+> | microsoft.directory/groupsAssignableToRoles/restore | Restore role-assignable groups |
 > | microsoft.directory/oAuth2PermissionGrants/allProperties/allTasks | Create and delete OAuth 2.0 permission grants, and read and update all properties<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/permissionGrantPolicies/allProperties/read | Read all properties of permission grant policies |
+> | microsoft.directory/permissionGrantPolicies/allProperties/update | Update all properties of permission grant policies |
+> | microsoft.directory/permissionGrantPolicies/create | Create permission grant policies |
+> | microsoft.directory/permissionGrantPolicies/delete | Delete permission grant policies |
 > | microsoft.directory/privilegedIdentityManagement/allProperties/allTasks | Create and delete all resources, and read and update standard properties in Privileged Identity Management |
 > | microsoft.directory/roleAssignments/allProperties/allTasks | Create and delete role assignments, and read and update all role assignment properties |
 > | microsoft.directory/roleDefinitions/allProperties/allTasks | Create and delete role definitions, and read and update all properties |
 > | microsoft.directory/scopedRoleMemberships/allProperties/allTasks | Create and delete scopedRoleMemberships, and read and update all properties |
 > | microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Update service principal role assignments |
-> | microsoft.directory/servicePrincipals/permissions/update | Update permissions of service principals |
 > | microsoft.directory/servicePrincipals/managePermissionGrantsForAll.microsoft-company-admin | Grant consent for any permission to any application |
+> | microsoft.directory/servicePrincipals/permissions/update | Update permissions of service principals |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
-> | microsoft.directory/permissionGrantPolicies/create | Create permission grant policies |
-> | microsoft.directory/permissionGrantPolicies/delete | Delete permission grant policies |
-> | microsoft.directory/permissionGrantPolicies/allProperties/read | Read all properties of permission grant policies |
-> | microsoft.directory/permissionGrantPolicies/allProperties/update | Update all properties of permission grant policies |
 
 ## Reports Reader
 
@@ -2258,10 +2259,10 @@ Users with this role can view usage reporting data and the reports dashboard in 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
 > | microsoft.directory/auditLogs/allProperties/read | Read all properties on audit logs, excluding custom security attributes audit logs |
 > | microsoft.directory/provisioningLogs/allProperties/read | Read all properties of provisioning logs |
 > | microsoft.directory/signInReports/allProperties/read | Read all properties on sign-in reports, including privileged properties |
-> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
 > | microsoft.office365.network/performance/allProperties/read | Read all network performance properties in the Microsoft 365 admin center |
 > | microsoft.office365.usageReports/allEntities/allProperties/read | Read Office 365 usage reports |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
@@ -2299,12 +2300,12 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 In | Can do
 --- | ---
 [Microsoft 365 Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | Monitor security-related policies across Microsoft 365 services<br>Manage security threats and alerts<br>View reports
-[Identity Protection](~/id-protection/overview-identity-protection.md) | All permissions of the Security Reader role<br>Perform all Identity Protection operations except for resetting passwords
+[Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) | All permissions of the Security Reader role<br>Perform all ID Protection operations except for resetting passwords
 [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) | All permissions of the Security Reader role<br>**Cannot** manage Microsoft Entra role assignments or settings
 [Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center) | Manage security policies<br>View, investigate, and respond to security threats<br>View reports
 Azure Advanced Threat Protection | Monitor and respond to suspicious security activity
 [Microsoft Defender for Endpoint](/microsoft-365/security/defender-endpoint/prepare-deployment) | Assign roles<br>Manage machine groups<br>Configure endpoint threat detection and automated remediation<br>View, investigate, and respond to alerts<br/>View machines/device inventory
-[Intune](/intune/role-based-access-control) | Views user, device, enrollment, configuration, and application information<br>Cannot make changes to Intune
+[Intune](/mem/intune/fundamentals/role-based-access-control) | Maps to the [Intune Endpoint Security Manager role](/mem/intune/fundamentals/role-based-access-control-reference#endpoint-security-manager)
 [Microsoft Defender for Cloud Apps](/defender-cloud-apps/manage-admins) | Add admins, add policies and settings, upload logs and perform governance actions
 [Microsoft 365 service health](/microsoft-365/enterprise/view-service-health) | View the health of Microsoft 365 services
 [Smart lockout](~/identity/authentication/howto-password-smart-lockout.md) | Define the threshold and duration for lockouts when failed sign-in events happen.
@@ -2314,20 +2315,35 @@ Azure Advanced Threat Protection | Monitor and respond to suspicious security ac
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
+> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.directory/applications/policies/update | Update policies of applications |
 > | microsoft.directory/auditLogs/allProperties/read | Read all properties on audit logs, excluding custom security attributes audit logs |
 > | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
 > | microsoft.directory/bitlockerKeys/key/read | Read bitlocker metadata and key on devices<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/crossTenantAccessPolicy/standard/read | Read basic properties of cross-tenant access policy |
+> | microsoft.directory/conditionalAccessPolicies/basic/update | Update basic properties for Conditional Access policies |
+> | microsoft.directory/conditionalAccessPolicies/create | Create Conditional Access policies |
+> | microsoft.directory/conditionalAccessPolicies/delete | Delete Conditional Access policies |
+> | microsoft.directory/conditionalAccessPolicies/owners/read | Read the owners of Conditional Access policies |
+> | microsoft.directory/conditionalAccessPolicies/owners/update | Update owners for Conditional Access policies |
+> | microsoft.directory/conditionalAccessPolicies/policyAppliedTo/read | Read the "applied to" property for Conditional Access policies |
+> | microsoft.directory/conditionalAccessPolicies/standard/read | Read Conditional Access for policies |
+> | microsoft.directory/conditionalAccessPolicies/tenantDefault/update | Update the default tenant for Conditional Access policies |
 > | microsoft.directory/crossTenantAccessPolicy/allowedCloudEndpoints/update | Update allowed cloud endpoints of cross-tenant access policy |
 > | microsoft.directory/crossTenantAccessPolicy/basic/update | Update basic settings of cross-tenant access policy |
-> | microsoft.directory/crossTenantAccessPolicy/default/standard/read | Read basic properties of the default cross-tenant access policy |
 > | microsoft.directory/crossTenantAccessPolicy/default/b2bCollaboration/update | Update Microsoft Entra B2B collaboration settings of the default cross-tenant access policy |
 > | microsoft.directory/crossTenantAccessPolicy/default/b2bDirectConnect/update | Update Microsoft Entra B2B direct connect settings of the default cross-tenant access policy |
 > | microsoft.directory/crossTenantAccessPolicy/default/crossCloudMeetings/update | Update cross-cloud Teams meeting settings of the default cross-tenant access policy |
+> | microsoft.directory/crossTenantAccessPolicy/default/standard/read | Read basic properties of the default cross-tenant access policy |
 > | microsoft.directory/crossTenantAccessPolicy/default/tenantRestrictions/update | Update tenant restrictions of the default cross-tenant access policy |
+> | microsoft.directory/crossTenantAccessPolicy/partners/b2bCollaboration/update | Update Microsoft Entra B2B collaboration settings of cross-tenant access policy for partners |
+> | microsoft.directory/crossTenantAccessPolicy/partners/b2bDirectConnect/update | Update Microsoft Entra B2B direct connect settings of cross-tenant access policy for partners |
 > | microsoft.directory/crossTenantAccessPolicy/partners/create | Create cross-tenant access policy for partners |
+> | microsoft.directory/crossTenantAccessPolicy/partners/crossCloudMeetings/update | Update cross-cloud Teams meeting settings of cross-tenant access policy for partners |
 > | microsoft.directory/crossTenantAccessPolicy/partners/delete | Delete cross-tenant access policy for partners |
+> | microsoft.directory/crossTenantAccessPolicy/partners/identitySynchronization/basic/update | Update basic settings of cross-tenant sync policy |
+> | microsoft.directory/crossTenantAccessPolicy/partners/identitySynchronization/create | Create cross-tenant sync policy for partners |
+> | microsoft.directory/crossTenantAccessPolicy/partners/identitySynchronization/standard/read | Read basic properties of cross-tenant sync policy |
 > | microsoft.directory/crossTenantAccessPolicy/partners/standard/read | Read basic properties of cross-tenant access policy for partners |
 > | microsoft.directory/crossTenantAccessPolicy/partners/templates/multiTenantOrganizationIdentitySynchronization/basic/update | Update cross tenant sync policy templates for multi-tenant organization |
 > | microsoft.directory/crossTenantAccessPolicy/partners/templates/multiTenantOrganizationIdentitySynchronization/resetToDefaultSettings | Reset cross tenant sync policy template for multi-tenant organization to default settings |
@@ -2335,19 +2351,14 @@ Azure Advanced Threat Protection | Monitor and respond to suspicious security ac
 > | microsoft.directory/crossTenantAccessPolicy/partners/templates/multiTenantOrganizationPartnerConfiguration/basic/update | Update cross tenant access policy templates for multi-tenant organization |
 > | microsoft.directory/crossTenantAccessPolicy/partners/templates/multiTenantOrganizationPartnerConfiguration/resetToDefaultSettings | Reset cross tenant access policy template for multi-tenant organization to default settings |
 > | microsoft.directory/crossTenantAccessPolicy/partners/templates/multiTenantOrganizationPartnerConfiguration/standard/read | Read basic properties of cross tenant access policy templates for multi-tenant organization |
-> | microsoft.directory/crossTenantAccessPolicy/partners/b2bCollaboration/update | Update Microsoft Entra B2B collaboration settings of cross-tenant access policy for partners |
-> | microsoft.directory/crossTenantAccessPolicy/partners/b2bDirectConnect/update | Update Microsoft Entra B2B direct connect settings of cross-tenant access policy for partners |
-> | microsoft.directory/crossTenantAccessPolicy/partners/crossCloudMeetings/update | Update cross-cloud Teams meeting settings of cross-tenant access policy for partners |
 > | microsoft.directory/crossTenantAccessPolicy/partners/tenantRestrictions/update | Update tenant restrictions of cross-tenant access policy for partners |
-> | microsoft.directory/crossTenantAccessPolicy/partners/identitySynchronization/create | Create cross-tenant sync policy for partners |
-> | microsoft.directory/crossTenantAccessPolicy/partners/identitySynchronization/basic/update | Update basic settings of cross-tenant sync policy |
-> | microsoft.directory/crossTenantAccessPolicy/partners/identitySynchronization/standard/read | Read basic properties of cross-tenant sync policy |
+> | microsoft.directory/crossTenantAccessPolicy/standard/read | Read basic properties of cross-tenant access policy |
 > | microsoft.directory/deviceLocalCredentials/standard/read | Read all properties of the backed up local administrator account credentials for Microsoft Entra joined devices, except the password |
-> | microsoft.directory/domains/federation/update | Update federation property of domains<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/domains/federationConfiguration/standard/read | Read standard properties of federation configuration for domains |
 > | microsoft.directory/domains/federationConfiguration/basic/update | Update basic federation configuration for domains |
 > | microsoft.directory/domains/federationConfiguration/create | Create federation configuration for domains |
 > | microsoft.directory/domains/federationConfiguration/delete | Delete federation configuration for domains |
+> | microsoft.directory/domains/federationConfiguration/standard/read | Read standard properties of federation configuration for domains |
+> | microsoft.directory/domains/federation/update | Update federation property of domains<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/entitlementManagement/allProperties/read | Read all properties in Microsoft Entra entitlement management |
 > | microsoft.directory/identityProtection/allProperties/read | Read all resources in Microsoft Entra ID Protection |
 > | microsoft.directory/identityProtection/allProperties/update | Update all resources in Microsoft Entra ID Protection<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
@@ -2356,38 +2367,28 @@ Azure Advanced Threat Protection | Monitor and respond to suspicious security ac
 > | microsoft.directory/multiTenantOrganization/joinRequest/organizationDetails/update | Join a multi-tenant organization |
 > | microsoft.directory/multiTenantOrganization/joinRequest/standard/read | Read properties of a multi-tenant organization join request |
 > | microsoft.directory/multiTenantOrganization/standard/read | Read basic properties of a multi-tenant organization |
-> | microsoft.directory/multiTenantOrganization/tenants/organizationDetails/update | Update basic properties of a tenant participating in a multi-tenant organization |
 > | microsoft.directory/multiTenantOrganization/tenants/create | Create a tenant in a multi-tenant organization |
 > | microsoft.directory/multiTenantOrganization/tenants/delete | Delete a tenant participating in a multi-tenant organization |
 > | microsoft.directory/multiTenantOrganization/tenants/organizationDetails/read | Read organization details of a tenant participating in a multi-tenant organization |
+> | microsoft.directory/multiTenantOrganization/tenants/organizationDetails/update | Update basic properties of a tenant participating in a multi-tenant organization |
 > | microsoft.directory/multiTenantOrganization/tenants/standard/read | Read basic properties of a tenant participating in a multi-tenant organization |
+> | microsoft.directory/namedLocations/basic/update | Update basic properties of custom rules that define network locations |
 > | microsoft.directory/namedLocations/create | Create custom rules that define network locations |
 > | microsoft.directory/namedLocations/delete | Delete custom rules that define network locations |
 > | microsoft.directory/namedLocations/standard/read | Read basic properties of custom rules that define network locations |
-> | microsoft.directory/namedLocations/basic/update | Update basic properties of custom rules that define network locations |
+> | microsoft.directory/policies/basic/update | Update basic properties on policies<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/policies/create | Create policies in Microsoft Entra ID |
 > | microsoft.directory/policies/delete | Delete policies in Microsoft Entra ID |
-> | microsoft.directory/policies/basic/update | Update basic properties on policies<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/policies/owners/update | Update owners of policies |
 > | microsoft.directory/policies/tenantDefault/update | Update default organization policies |
-> | microsoft.directory/conditionalAccessPolicies/create | Create Conditional Access policies |
-> | microsoft.directory/conditionalAccessPolicies/delete | Delete Conditional Access policies |
-> | microsoft.directory/conditionalAccessPolicies/standard/read | Read Conditional Access for policies |
-> | microsoft.directory/conditionalAccessPolicies/owners/read | Read the owners of Conditional Access policies |
-> | microsoft.directory/conditionalAccessPolicies/policyAppliedTo/read | Read the "applied to" property for Conditional Access policies |
-> | microsoft.directory/conditionalAccessPolicies/basic/update | Update basic properties for Conditional Access policies |
-> | microsoft.directory/conditionalAccessPolicies/owners/update | Update owners for Conditional Access policies |
-> | microsoft.directory/conditionalAccessPolicies/tenantDefault/update | Update the default tenant for Conditional Access policies |
 > | microsoft.directory/privilegedIdentityManagement/allProperties/read | Read all resources in Privileged Identity Management |
 > | microsoft.directory/provisioningLogs/allProperties/read | Read all properties of provisioning logs |
 > | microsoft.directory/resourceNamespaces/resourceActions/authenticationContext/update | Update Conditional Access authentication context of Microsoft 365 role-based access control (RBAC) resource actions<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/servicePrincipals/policies/update | Update policies of service principals |
 > | microsoft.directory/signInReports/allProperties/read | Read all properties on sign-in reports, including privileged properties |
-> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
-> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.networkAccess/allEntities/allProperties/allTasks | Manage all aspects of Microsoft Entra Network Access |
-> | microsoft.office365.protectionCenter/allEntities/standard/read | Read standard properties of all resources in the Security and Compliance centers |
 > | microsoft.office365.protectionCenter/allEntities/basic/update | Update basic properties of all resources in the Security and Compliance centers |
+> | microsoft.office365.protectionCenter/allEntities/standard/read | Read standard properties of all resources in the Security and Compliance centers |
 > | microsoft.office365.protectionCenter/attackSimulator/payload/allProperties/allTasks | Create and manage attack payloads in Attack Simulator |
 > | microsoft.office365.protectionCenter/attackSimulator/reports/allProperties/read | Read reports of attack simulation, responses, and associated training |
 > | microsoft.office365.protectionCenter/attackSimulator/simulation/allProperties/allTasks | Create and manage attack simulation templates in Attack Simulator |
@@ -2404,17 +2405,19 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 | In | Can do |
 | --- | --- |
 | [Microsoft 365 Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | All permissions of the Security Reader role<br/>View, investigate, and respond to security threats alerts<br/>Manage security settings in Microsoft 365 Defender portal |
-| [Identity Protection](~/id-protection/overview-identity-protection.md) | All permissions of the Security Reader role<br>Perform all Identity Protection operations except for configuring or changing risk-based policies, resetting passwords, and configuring alert e-mails. |
+| [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) | All permissions of the Security Reader role<br>Perform all ID Protection operations except for configuring or changing risk-based policies, resetting passwords, and configuring alert e-mails. |
 | [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) | All permissions of the Security Reader role |
 | [Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center) | All permissions of the Security Reader role<br>View, investigate, and respond to security alerts |
 | [Microsoft Defender for Endpoint](/microsoft-365/security/defender-endpoint/prepare-deployment) | All permissions of the Security Reader role<br/>View, investigate, and respond to security alerts<br/>When you turn on role-based access control in Microsoft Defender for Endpoint, users with read-only permissions such as the Security Reader role lose access until they are assigned a Microsoft Defender for Endpoint role. |
-| [Intune](/intune/role-based-access-control) | All permissions of the Security Reader role |
+| [Intune](/mem/intune/fundamentals/role-based-access-control) | All permissions of the Security Reader role |
 | [Microsoft Defender for Cloud Apps](/defender-cloud-apps/manage-admins) | All permissions of the Security Reader role<br>View, investigate, and respond to security alerts |
 | [Microsoft 365 service health](/microsoft-365/enterprise/view-service-health) | View the health of Microsoft 365 services |
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.azure.advancedThreatProtection/allEntities/allTasks | Manage all aspects of Azure Advanced Threat Protection |
+> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.directory/auditLogs/allProperties/read | Read all properties on audit logs, excluding custom security attributes audit logs |
 > | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
 > | microsoft.directory/cloudAppSecurity/allProperties/allTasks | Create and delete all resources, and read and update standard properties in Microsoft Defender for Cloud Apps |
@@ -2422,8 +2425,6 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 > | microsoft.directory/privilegedIdentityManagement/allProperties/read | Read all resources in Privileged Identity Management |
 > | microsoft.directory/provisioningLogs/allProperties/read | Read all properties of provisioning logs |
 > | microsoft.directory/signInReports/allProperties/read | Read all properties on sign-in reports, including privileged properties |
-> | microsoft.azure.advancedThreatProtection/allEntities/allTasks | Manage all aspects of Azure Advanced Threat Protection |
-> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.intune/allEntities/read | Read all resources in Microsoft Intune |
 > | microsoft.office365.securityComplianceCenter/allEntities/allTasks | Create and delete all resources, and read and update standard properties in the Office 365 Security & Compliance Center |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
@@ -2438,42 +2439,42 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 In | Can do
 --- | ---
 [Microsoft 365 Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | View security-related policies across Microsoft 365 services<br>View security threats and alerts<br>View reports
-[Identity Protection](~/id-protection/overview-identity-protection.md) | View all Identity Protection reports and Overview
-[Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) | Has read-only access to all information surfaced in Microsoft Entra Privileged Identity Management: Policies and reports for Microsoft Entra role assignments and security reviews.<br>**Cannot** sign up for Microsoft Entra Privileged Identity Management or make any changes to it. In the Privileged Identity Management portal or via PowerShell, someone in this role can activate additional roles (for example, Global Administrator or Privileged Role Administrator), if the user is eligible for them.
+[Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) | View all ID Protection reports and Overview
+[Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) | Has read-only access to all information surfaced in Microsoft Entra Privileged Identity Management: Policies and reports for Microsoft Entra role assignments and security reviews.<br>**Cannot** sign up for Microsoft Entra Privileged Identity Management or make any changes to it. In the Privileged Identity Management portal or via PowerShell, someone in this role can activate additional roles (for example, Privileged Role Administrator), if the user is eligible for them.
 [Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center) | View security policies<br>View and investigate security threats<br>View reports
 [Microsoft Defender for Endpoint](/microsoft-365/security/defender-endpoint/prepare-deployment) | View and investigate alerts<br/>When you turn on role-based access control in Microsoft Defender for Endpoint, users with read-only permissions such as the Security Reader role lose access until they are assigned a Microsoft Defender for Endpoint role.
-[Intune](/intune/role-based-access-control) | Views user, device, enrollment, configuration, and application information. Cannot make changes to Intune.
+[Intune](/mem/intune/fundamentals/role-based-access-control) | Views user, device, enrollment, configuration, and application information. Cannot make changes to Intune.
 [Microsoft Defender for Cloud Apps](/defender-cloud-apps/manage-admins) | Has read permissions.
 [Microsoft 365 service health](/microsoft-365/enterprise/view-service-health) | View the health of Microsoft 365 services
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
 > | microsoft.directory/accessReviews/definitions/allProperties/read | Read all properties of access reviews of all reviewable resources in Microsoft Entra ID |
 > | microsoft.directory/auditLogs/allProperties/read | Read all properties on audit logs, excluding custom security attributes audit logs |
 > | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
 > | microsoft.directory/bitlockerKeys/key/read | Read bitlocker metadata and key on devices<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/conditionalAccessPolicies/owners/read | Read the owners of Conditional Access policies |
+> | microsoft.directory/conditionalAccessPolicies/policyAppliedTo/read | Read the "applied to" property for Conditional Access policies |
+> | microsoft.directory/conditionalAccessPolicies/standard/read | Read Conditional Access for policies |
+> | microsoft.directory/crossTenantAccessPolicy/partners/templates/multiTenantOrganizationIdentitySynchronization/standard/read | Read basic properties of cross tenant sync policy templates for multi-tenant organization |
+> | microsoft.directory/crossTenantAccessPolicy/partners/templates/multiTenantOrganizationPartnerConfiguration/standard/read | Read basic properties of cross tenant access policy templates for multi-tenant organization |
 > | microsoft.directory/deviceLocalCredentials/standard/read | Read all properties of the backed up local administrator account credentials for Microsoft Entra joined devices, except the password |
 > | microsoft.directory/domains/federationConfiguration/standard/read | Read standard properties of federation configuration for domains |
 > | microsoft.directory/entitlementManagement/allProperties/read | Read all properties in Microsoft Entra entitlement management |
 > | microsoft.directory/identityProtection/allProperties/read | Read all resources in Microsoft Entra ID Protection |
-> | microsoft.directory/namedLocations/standard/read | Read basic properties of custom rules that define network locations |
-> | microsoft.directory/policies/standard/read | Read basic properties on policies |
-> | microsoft.directory/policies/owners/read | Read owners of policies |
-> | microsoft.directory/policies/policyAppliedTo/read | Read policies.policyAppliedTo property |
-> | microsoft.directory/conditionalAccessPolicies/standard/read | Read Conditional Access for policies |
-> | microsoft.directory/conditionalAccessPolicies/owners/read | Read the owners of Conditional Access policies |
-> | microsoft.directory/conditionalAccessPolicies/policyAppliedTo/read | Read the "applied to" property for Conditional Access policies |
-> | microsoft.directory/crossTenantAccessPolicy/partners/templates/multiTenantOrganizationIdentitySynchronization/standard/read | Read basic properties of cross tenant sync policy templates for multi-tenant organization |
-> | microsoft.directory/crossTenantAccessPolicy/partners/templates/multiTenantOrganizationPartnerConfiguration/standard/read | Read basic properties of cross tenant access policy templates for multi-tenant organization |
 > | microsoft.directory/multiTenantOrganization/joinRequest/standard/read | Read properties of a multi-tenant organization join request |
 > | microsoft.directory/multiTenantOrganization/standard/read | Read basic properties of a multi-tenant organization |
 > | microsoft.directory/multiTenantOrganization/tenants/organizationDetails/read | Read organization details of a tenant participating in a multi-tenant organization |
 > | microsoft.directory/multiTenantOrganization/tenants/standard/read | Read basic properties of a tenant participating in a multi-tenant organization |
+> | microsoft.directory/namedLocations/standard/read | Read basic properties of custom rules that define network locations |
+> | microsoft.directory/policies/owners/read | Read owners of policies |
+> | microsoft.directory/policies/policyAppliedTo/read | Read policies.policyAppliedTo property |
+> | microsoft.directory/policies/standard/read | Read basic properties on policies |
 > | microsoft.directory/privilegedIdentityManagement/allProperties/read | Read all resources in Privileged Identity Management |
 > | microsoft.directory/provisioningLogs/allProperties/read | Read all properties of provisioning logs |
 > | microsoft.directory/signInReports/allProperties/read | Read all properties on sign-in reports, including privileged properties |
-> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
 > | microsoft.networkAccess/allEntities/allProperties/read | Read all aspects of Microsoft Entra Network Access |
 > | microsoft.office365.protectionCenter/allEntities/standard/read | Read standard properties of all resources in the Security and Compliance centers |
 > | microsoft.office365.protectionCenter/attackSimulator/payload/allProperties/read | Read all properties of attack payloads in Attack Simulator |
@@ -2487,7 +2488,7 @@ In | Can do
 Users with this role can create and manage support requests with Microsoft for Azure and Microsoft 365 services, and view the service dashboard and message center in the [Azure portal](/azure/azure-portal/azure-portal-overview) and [Microsoft 365 admin center](/microsoft-365/admin/admin-overview/admin-center-overview). For more information, see [About admin roles in the Microsoft 365 admin center](/microsoft-365/admin/add-users/about-admin-roles).
 
 > [!NOTE]
-> This role was previously named Service Administrator in the [Azure portal](/azure/azure-portal/azure-portal-overview) and [Microsoft 365 admin center](/microsoft-365/admin/admin-overview/admin-center-overview). It was renamed to Service Support Administrator to align with the existing name in the Microsoft Graph API and Azure AD PowerShell.
+> This role was previously named Service Administrator in the [Azure portal](/azure/azure-portal/azure-portal-overview) and [Microsoft 365 admin center](/microsoft-365/admin/admin-overview/admin-center-overview). It was renamed to Service Support Administrator to align with the existing name in the Microsoft Graph API and Microsoft Graph PowerShell.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -2504,7 +2505,7 @@ Users with this role can create and manage support requests with Microsoft for A
 Users with this role have global permissions within Microsoft SharePoint Online, when the service is present, as well as the ability to create and manage all Microsoft 365 groups, manage support tickets, and monitor service health. For more information, see [About admin roles in the Microsoft 365 admin center](/microsoft-365/admin/add-users/about-admin-roles).
 
 > [!NOTE]
-> In the Microsoft Graph API and Azure AD PowerShell, this role is named SharePoint Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named SharePoint Administrator.
+> In the Microsoft Graph API and Microsoft Graph PowerShell, this role is named SharePoint Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named SharePoint Administrator.
 
 > [!NOTE]
 > This role also grants scoped permissions to the Microsoft Graph API for Microsoft Intune, allowing the management and configuration of policies related to SharePoint and OneDrive resources.
@@ -2512,19 +2513,53 @@ Users with this role have global permissions within Microsoft SharePoint Online,
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.directory/groups/hiddenMembers/read | Read hidden members of Security groups and Microsoft 365 groups, including role-assignable groups |
-> | microsoft.directory/groups.unified/create | Create Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groups.unified/delete | Delete Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groups.unified/restore | Restore Microsoft 365 groups from soft-deleted container, excluding role-assignable groups |
-> | microsoft.directory/groups.unified/basic/update | Update basic properties on Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groups.unified/members/update | Update members of Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groups.unified/owners/update | Update owners of Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
 > | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
+> | microsoft.backup/oneDriveForBusinessProtectionPolicies/allProperties/allTasks | Create and manage OneDrive protection policy in Microsoft 365 Backup |
+> | microsoft.backup/oneDriveForBusinessRestoreSessions/allProperties/allTasks | Read and configure restore session for OneDrive in Microsoft 365 Backup |
+> | microsoft.backup/restorePoints/sites/allProperties/allTasks | Manage all restore points associated with selected SharePoint sites in M365 Backup |
+> | microsoft.backup/restorePoints/userDrives/allProperties/allTasks | Manage all restore points associated with selected OneDrive accounts in M365 Backup |
+> | microsoft.backup/sharePointProtectionPolicies/allProperties/allTasks | Create and manage SharePoint protection policy in Microsoft 365 Backup |
+> | microsoft.backup/sharePointRestoreSessions/allProperties/allTasks | Read and configure restore session for SharePoint in Microsoft 365 Backup |
+> | microsoft.backup/siteProtectionUnits/allProperties/allTasks | Manage sites added to SharePoint protection policy in Microsoft 365 Backup |
+> | microsoft.backup/siteRestoreArtifacts/allProperties/allTasks | Manage sites added to restore session for SharePoint in Microsoft 365 Backup |
+> | microsoft.backup/userDriveProtectionUnits/allProperties/allTasks | Manage accounts added to OneDrive protection policy in Microsoft 365 Backup |
+> | microsoft.backup/userDriveRestoreArtifacts/allProperties/allTasks | Manage accounts added to restore session for OneDrive in Microsoft 365 Backup |
+> | microsoft.directory/groups/hiddenMembers/read | Read hidden members of Security groups and Microsoft 365 groups, including role-assignable groups |
+> | microsoft.directory/groups.unified/basic/update | Update basic properties on Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups.unified/create | Create Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups.unified/delete | Delete Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups.unified/members/update | Update members of Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups.unified/owners/update | Update owners of Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups.unified/restore | Restore Microsoft 365 groups from soft-deleted container, excluding role-assignable groups |
 > | microsoft.office365.migrations/allEntities/allProperties/allTasks | Manage all aspects of Microsoft 365 migrations |
 > | microsoft.office365.network/performance/allProperties/read | Read all network performance properties in the Microsoft 365 admin center |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.sharePoint/allEntities/allTasks | Create and delete all resources, and read and update standard properties in SharePoint |
+> | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
+> | microsoft.office365.usageReports/allEntities/allProperties/read | Read Office 365 usage reports |
+> | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
+
+## SharePoint Embedded Administrator
+
+Assign the SharePoint Embedded Administrator role to users who need to do the following tasks:
+
+- Perform all tasks using PowerShell, Microsoft Graph API, or SharePoint admin center
+- Manage, configure, and maintain SharePoint Embedded containers
+- Enumerate and manage SharePoint Embedded containers
+- Enumerate and manage permissions for SharePoint Embedded containers
+- Manage storage of SharePoint Embedded containers in a tenant
+- Assign security and compliance policies on SharePoint Embedded containers
+- Apply security and compliance policies on SharePoint Embedded containers in a tenant
+
+[Learn more](/sharepoint/dev/embedded/concepts/admin-exp/cta)
+
+> [!div class="mx-tableFixed"]
+> | Actions | Description |
+> | --- | --- |
+> | microsoft.office365.fileStorageContainers/allEntities/allProperties/allTasks | Manage all aspects of SharePoint Embedded containers |
+> | microsoft.office365.network/performance/allProperties/read | Read all network performance properties in the Microsoft 365 admin center |
+> | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
 > | microsoft.office365.usageReports/allEntities/allProperties/read | Read Office 365 usage reports |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
@@ -2534,7 +2569,7 @@ Users with this role have global permissions within Microsoft SharePoint Online,
 Users with this role have global permissions within Microsoft Skype for Business, when the service is present, as well as manage Skype-specific user attributes in Microsoft Entra ID. Additionally, this role grants the ability to manage support tickets and monitor service health, and to access the Teams and Skype for Business admin center. The account must also be licensed for Teams or it can't run Teams PowerShell cmdlets. For more information, see [Skype for Business Online Admin](/skypeforbusiness/skype-for-business-online) and Teams licensing information at [Skype for Business add-on licensing](/skypeforbusiness/skype-for-business-and-microsoft-teams-add-on-licensing/skype-for-business-and-microsoft-teams-add-on-licensing).
 
 > [!NOTE]
-> In the Microsoft Graph API and Azure AD PowerShell, this role is named Lync Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named Skype for Business Administrator.
+> In the Microsoft Graph API and Microsoft Graph PowerShell, this role is named Lync Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named Skype for Business Administrator.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -2554,16 +2589,31 @@ Users in this role can manage all aspects of the Microsoft Teams workload via th
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
-> | microsoft.directory/groups/hiddenMembers/read | Read hidden members of Security groups and Microsoft 365 groups, including role-assignable groups |
-> | microsoft.directory/groups.unified/create | Create Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groups.unified/delete | Delete Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groups.unified/restore | Restore Microsoft 365 groups from soft-deleted container, excluding role-assignable groups |
-> | microsoft.directory/groups.unified/basic/update | Update basic properties on Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groups.unified/members/update | Update members of Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groups.unified/owners/update | Update owners of Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
 > | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
+> | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
+> | microsoft.directory/crossTenantAccessPolicy/allowedCloudEndpoints/update | Update allowed cloud endpoints of cross-tenant access policy |
+> | microsoft.directory/crossTenantAccessPolicy/default/crossCloudMeetings/update | Update cross-cloud Teams meeting settings of the default cross-tenant access policy |
+> | microsoft.directory/crossTenantAccessPolicy/default/standard/read | Read basic properties of the default cross-tenant access policy |
+> | microsoft.directory/crossTenantAccessPolicy/partners/create | Create cross-tenant access policy for partners |
+> | microsoft.directory/crossTenantAccessPolicy/partners/crossCloudMeetings/update | Update cross-cloud Teams meeting settings of cross-tenant access policy for partners |
+> | microsoft.directory/crossTenantAccessPolicy/partners/standard/read | Read basic properties of cross-tenant access policy for partners |
+> | microsoft.directory/crossTenantAccessPolicy/standard/read | Read basic properties of cross-tenant access policy |
+> | microsoft.directory/externalUserProfiles/basic/update | Update basic properties of external user profiles in the extended directory for Teams |
+> | microsoft.directory/externalUserProfiles/delete | Delete external user profiles in the extended directory for Teams |
+> | microsoft.directory/externalUserProfiles/standard/read | Read standard properties of external user profiles in the extended directory for Teams |
+> | microsoft.directory/groups/hiddenMembers/read | Read hidden members of Security groups and Microsoft 365 groups, including role-assignable groups |
+> | microsoft.directory/groups.unified/basic/update | Update basic properties on Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups.unified/create | Create Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups.unified/delete | Delete Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups.unified/members/update | Update members of Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups.unified/owners/update | Update owners of Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups.unified/restore | Restore Microsoft 365 groups from soft-deleted container, excluding role-assignable groups |
+> | microsoft.directory/pendingExternalUserProfiles/basic/update | Update basic properties of external user profiles in the extended directory for Teams |
+> | microsoft.directory/pendingExternalUserProfiles/create | Create external user profiles in the extended directory for Teams |
+> | microsoft.directory/pendingExternalUserProfiles/delete | Delete external user profiles in the extended directory for Teams |
+> | microsoft.directory/pendingExternalUserProfiles/standard/read | Read standard properties of external user profiles in the extended directory for Teams |
+> | microsoft.directory/permissionGrantPolicies/standard/read | Read standard properties of permission grant policies |
 > | microsoft.office365.network/performance/allProperties/read | Read all network performance properties in the Microsoft 365 admin center |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.skypeForBusiness/allEntities/allTasks | Manage all aspects of Skype for Business Online |
@@ -2571,21 +2621,6 @@ Users in this role can manage all aspects of the Microsoft Teams workload via th
 > | microsoft.office365.usageReports/allEntities/allProperties/read | Read Office 365 usage reports |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
 > | microsoft.teams/allEntities/allProperties/allTasks | Manage all resources in Teams |
-> | microsoft.directory/crossTenantAccessPolicy/standard/read | Read basic properties of cross-tenant access policy |
-> | microsoft.directory/crossTenantAccessPolicy/allowedCloudEndpoints/update | Update allowed cloud endpoints of cross-tenant access policy |
-> | microsoft.directory/crossTenantAccessPolicy/default/standard/read | Read basic properties of the default cross-tenant access policy |
-> | microsoft.directory/crossTenantAccessPolicy/default/crossCloudMeetings/update | Update cross-cloud Teams meeting settings of the default cross-tenant access policy |
-> | microsoft.directory/crossTenantAccessPolicy/partners/create | Create cross-tenant access policy for partners |
-> | microsoft.directory/crossTenantAccessPolicy/partners/standard/read | Read basic properties of cross-tenant access policy for partners |
-> | microsoft.directory/crossTenantAccessPolicy/partners/crossCloudMeetings/update | Update cross-cloud Teams meeting settings of cross-tenant access policy for partners |
-> | microsoft.directory/pendingExternalUserProfiles/create | Create external user profiles in the extended directory for Teams |
-> | microsoft.directory/pendingExternalUserProfiles/standard/read | Read standard properties of external user profiles in the extended directory for Teams |
-> | microsoft.directory/pendingExternalUserProfiles/basic/update | Update basic properties of external user profiles in the extended directory for Teams |
-> | microsoft.directory/pendingExternalUserProfiles/delete | Delete external user profiles in the extended directory for Teams |
-> | microsoft.directory/externalUserProfiles/standard/read | Read standard properties of external user profiles in the extended directory for Teams |
-> | microsoft.directory/externalUserProfiles/basic/update | Update basic properties of external user profiles in the extended directory for Teams |
-> | microsoft.directory/externalUserProfiles/delete | Delete external user profiles in the extended directory for Teams |
-> | microsoft.directory/permissionGrantPolicies/standard/read | Read standard properties of permission grant policies |
 
 ## Teams Communications Administrator
 
@@ -2594,9 +2629,9 @@ Users in this role can manage aspects of the Microsoft Teams workload related to
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
 > | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
 > | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
+> | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.skypeForBusiness/allEntities/allTasks | Manage all aspects of Skype for Business Online |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
@@ -2613,8 +2648,8 @@ Users in this role can troubleshoot communication issues within Microsoft Teams 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
 > | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
+> | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.skypeForBusiness/allEntities/allTasks | Manage all aspects of Skype for Business Online |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
@@ -2627,8 +2662,8 @@ Users in this role can troubleshoot communication issues within Microsoft Teams 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
 > | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
+> | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.skypeForBusiness/allEntities/allTasks | Manage all aspects of Skype for Business Online |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
@@ -2644,12 +2679,37 @@ Users with this role can manage [Teams-certified devices](https://www.microsoft.
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
 > | microsoft.teams/devices/standard/read | Manage all aspects of Teams-certified devices including configuration policies |
 
+## Teams Telephony Administrator
+
+Assign the Teams Telephony Administrator role to users who need to do the following tasks:
+
+- Manage voice and telephony, including calling policies, phone number management and assignment, and voice applications
+- Access to only Public Switched Telephone Network (PSTN) usage reports from Teams admin center
+- View user profile page
+- Create and manage support tickets in Azure and the Microsoft 365 admin center
+
+[Learn more](/microsoftteams/using-admin-roles)
+
+> [!div class="mx-tableFixed"]
+> | Actions | Description |
+> | --- | --- |
+> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
+> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
+> | microsoft.directory/authorizationPolicy/standard/read | Read standard properties of authorization policy |
+> | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
+> | microsoft.office365.skypeForBusiness/allEntities/allTasks | Manage all aspects of Skype for Business Online |
+> | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
+> | microsoft.office365.usageReports/allEntities/allProperties/read | Read Office 365 usage reports |
+> | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
+> | microsoft.teams/callQuality/allProperties/read | Read all data in the Call Quality Dashboard (CQD) |
+> | microsoft.teams/voice/allProperties/allTasks | Manage voice including calling policies and phone number inventory and assignment |
+
 ## Tenant Creator
 
 Assign the Tenant Creator role to users who need to do the following tasks:
 -	Create both Microsoft Entra and Azure Active Directory B2C tenants even if the tenant creation toggle is turned off in the user settings
 > [!NOTE]
->The tenant creators will be assigned the Global administrator role on the new tenants they create.
+>The tenant creators will be assigned the Global Administrator role on the new tenants they create.
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -2703,6 +2763,7 @@ Users with this role **cannot** do the following:
 - Cannot manage MFA.
 - Cannot change the credentials or reset MFA for members and owners of a [role-assignable group](groups-concept.md).
 - Cannot manage shared mailboxes.
+- Cannot modify security questions for password reset operation.
 
 > [!IMPORTANT]
 > Users with this role can change passwords for people who may have access to sensitive or private information or critical configuration inside and outside of Microsoft Entra ID. Changing the password of a user may mean the ability to assume that user's identity and permissions. For example:
@@ -2716,58 +2777,79 @@ Users with this role **cannot** do the following:
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
+> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.directory/accessReviews/definitions.applications/allProperties/allTasks | Manage access reviews of application role assignments in Microsoft Entra ID |
 > | microsoft.directory/accessReviews/definitions.directoryRoles/allProperties/read | Read all properties of access reviews for Microsoft Entra role assignments |
 > | microsoft.directory/accessReviews/definitions.entitlementManagement/allProperties/allTasks | Manage access reviews for access package assignments in entitlement management |
+> | microsoft.directory/accessReviews/definitions.groups/allProperties/read | Read all properties of access reviews for membership in Security and Microsoft 365 groups, including role-assignable groups. |
 > | microsoft.directory/accessReviews/definitions.groups/allProperties/update | Update all properties of access reviews for membership in Security and Microsoft 365 groups, excluding role-assignable groups. |
 > | microsoft.directory/accessReviews/definitions.groups/create | Create access reviews for membership in Security and Microsoft 365 groups. |
 > | microsoft.directory/accessReviews/definitions.groups/delete | Delete access reviews for membership in Security and Microsoft 365 groups. |
-> | microsoft.directory/accessReviews/definitions.groups/allProperties/read | Read all properties of access reviews for membership in Security and Microsoft 365 groups, including role-assignable groups. |
+> | microsoft.directory/contacts/basic/update | Update basic properties on contacts |
 > | microsoft.directory/contacts/create | Create contacts |
 > | microsoft.directory/contacts/delete | Delete contacts |
-> | microsoft.directory/contacts/basic/update | Update basic properties on contacts |
 > | microsoft.directory/deletedItems.groups/restore | Restore soft deleted groups to original state |
 > | microsoft.directory/deletedItems.users/restore | Restore soft deleted users to original state |
 > | microsoft.directory/entitlementManagement/allProperties/allTasks | Create and delete resources, and read and update all properties in Microsoft Entra entitlement management |
 > | microsoft.directory/groups/assignLicense | Assign product licenses to groups for group-based licensing |
-> | microsoft.directory/groups/create | Create Security groups and Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groups/delete | Delete Security groups and Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groups/hiddenMembers/read | Read hidden members of Security groups and Microsoft 365 groups, including role-assignable groups |
-> | microsoft.directory/groups/reprocessLicenseAssignment | Reprocess license assignments for group-based licensing |
-> | microsoft.directory/groups/restore | Restore groups from soft-deleted container |
 > | microsoft.directory/groups/basic/update | Update basic properties on Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/classification/update | Update the classification property on Security groups and Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups/create | Create Security groups and Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups/delete | Delete Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/dynamicMembershipRule/update | Update the dynamic membership rule on Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/groupType/update | Update properties that would affect the group type of Security groups and Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups/hiddenMembers/read | Read hidden members of Security groups and Microsoft 365 groups, including role-assignable groups |
 > | microsoft.directory/groups/members/update | Update members of Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups/onPremWriteBack/update | Update Microsoft Entra groups to be written back to on-premises with Microsoft Entra Connect |
 > | microsoft.directory/groups/owners/update | Update owners of Security groups and Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups/reprocessLicenseAssignment | Reprocess license assignments for group-based licensing |
+> | microsoft.directory/groups/restore | Restore groups from soft-deleted container |
 > | microsoft.directory/groups/settings/update | Update settings of groups |
 > | microsoft.directory/groups/visibility/update | Update the visibility property of Security groups and Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/oAuth2PermissionGrants/allProperties/allTasks | Create and delete OAuth 2.0 permission grants, and read and update all properties<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/policies/standard/read | Read basic properties on policies |
 > | microsoft.directory/servicePrincipals/appRoleAssignedTo/update | Update service principal role assignments |
 > | microsoft.directory/users/assignLicense | Manage user licenses |
-> | microsoft.directory/users/create | Add users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+> | microsoft.directory/users/basic/update | Update basic properties on users |
 > | microsoft.directory/users/convertExternalToInternalMemberUser | Convert external user to internal user |
+> | microsoft.directory/users/create | Add users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/delete | Delete users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/disable | Disable users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/enable | Enable users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/users/inviteGuest | Invite guest users |
 > | microsoft.directory/users/invalidateAllRefreshTokens | Force sign-out by invalidating user refresh tokens<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.directory/users/reprocessLicenseAssignment | Reprocess license assignments for users |
-> | microsoft.directory/users/restore | Restore deleted users |
-> | microsoft.directory/users/basic/update | Update basic properties on users |
+> | microsoft.directory/users/inviteGuest | Invite guest users |
 > | microsoft.directory/users/manager/update | Update manager for users |
 > | microsoft.directory/users/password/update | Reset passwords for all users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.directory/users/photo/update | Update photo of users |
+> | microsoft.directory/users/reprocessLicenseAssignment | Reprocess license assignments for users |
+> | microsoft.directory/users/restore | Restore deleted users |
 > | microsoft.directory/users/sponsors/update | Update sponsors of users |
 > | microsoft.directory/users/usageLocation/update | Update usage location of users |
 > | microsoft.directory/users/userPrincipalName/update | Update User Principal Name of users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
-> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
-> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
+> | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
+
+## User Experience Success Manager
+
+Assign the User Experience Success Manager role to users who need to do the following tasks:
+
+- Read organizational-level usage reports for Microsoft 365 Apps and services, but not user details
+- View your organization's product feedback, Net Promoter Score (NPS) survey results, and help article views to identify communication and training opportunities
+- Read message center posts and service health data
+
+[Learn more](/microsoft-365/admin/add-users/about-admin-roles)
+
+> [!div class="mx-tableFixed"]
+> | Actions | Description |
+> | --- | --- |
+> | microsoft.commerce.billing/purchases/standard/read | Read purchase services in M365 Admin Center. |
+> | microsoft.office365.messageCenter/messages/read | Read messages in Message Center in the Microsoft 365 admin center, excluding security messages |
+> | microsoft.office365.network/performance/allProperties/read | Read all network performance properties in the Microsoft 365 admin center |
+> | microsoft.office365.organizationalMessages/allEntities/allProperties/read | Read all aspects of Microsoft 365 Organizational Messages |
+> | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
+> | microsoft.office365.usageReports/allEntities/standard/read | Read tenant-level aggregated Office 365 usage reports |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
 
 ## Virtual Visits Administrator
@@ -2783,8 +2865,8 @@ Virtual Visits are a simple way to schedule and manage online and video appointm
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.virtualVisits/allEntities/allProperties/allTasks | Manage and share Virtual Visits information and metrics from admin centers or the Virtual Visits app |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
+> | microsoft.virtualVisits/allEntities/allProperties/allTasks | Manage and share Virtual Visits information and metrics from admin centers or the Virtual Visits app |
 
 ## Viva Goals Administrator
 
@@ -2846,30 +2928,30 @@ Assign the Windows 365 Administrator role to users who need to do the following 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
+> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
+> | microsoft.cloudPC/allEntities/allProperties/allTasks | Manage all aspects of Windows 365 |
 > | microsoft.directory/deletedItems.devices/delete | Permanently delete devices, which can no longer be restored |
 > | microsoft.directory/deletedItems.devices/restore | Restore soft deleted devices to original state |
+> | microsoft.directory/deviceManagementPolicies/standard/read | Read standard properties on mobile device management and mobile app management policies |
+> | microsoft.directory/deviceRegistrationPolicy/standard/read | Read standard properties on device registration policies |
+> | microsoft.directory/devices/basic/update | Update basic properties on devices |
 > | microsoft.directory/devices/create | Create devices (enroll in Microsoft Entra ID) |
 > | microsoft.directory/devices/delete | Delete devices from Microsoft Entra ID |
 > | microsoft.directory/devices/disable | Disable devices in Microsoft Entra ID |
 > | microsoft.directory/devices/enable | Enable devices in Microsoft Entra ID |
-> | microsoft.directory/devices/basic/update | Update basic properties on devices |
 > | microsoft.directory/devices/extensionAttributeSet1/update | Update the extensionAttribute1 to extensionAttribute5 properties on devices |
 > | microsoft.directory/devices/extensionAttributeSet2/update | Update the extensionAttribute6 to extensionAttribute10 properties on devices |
 > | microsoft.directory/devices/extensionAttributeSet3/update | Update the extensionAttribute11 to extensionAttribute15 properties on devices |
 > | microsoft.directory/devices/registeredOwners/update | Update registered owners of devices |
 > | microsoft.directory/devices/registeredUsers/update | Update registered users of devices |
-> | microsoft.directory/groups.security/create | Create Security groups, excluding role-assignable groups |
-> | microsoft.directory/groups.security/delete | Delete Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/basic/update | Update basic properties on Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/classification/update | Update the classification property on Security groups, excluding role-assignable groups |
+> | microsoft.directory/groups.security/create | Create Security groups, excluding role-assignable groups |
+> | microsoft.directory/groups.security/delete | Delete Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/dynamicMembershipRule/update | Update the dynamic membership rule on Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/members/update | Update members of Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/owners/update | Update owners of Security groups, excluding role-assignable groups |
 > | microsoft.directory/groups.security/visibility/update | Update the visibility property on Security groups, excluding role-assignable groups |
-> | microsoft.directory/deviceManagementPolicies/standard/read | Read standard properties on mobile device management and mobile app management policies |
-> | microsoft.directory/deviceRegistrationPolicy/standard/read | Read standard properties on device registration policies |
-> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
-> | microsoft.cloudPC/allEntities/allProperties/allTasks | Manage all aspects of Windows 365 |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
 > | microsoft.office365.usageReports/allEntities/allProperties/read | Read Office 365 usage reports |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
@@ -2901,12 +2983,12 @@ Assign the Yammer Administrator role to users who need to do the following tasks
 > | Actions | Description |
 > | --- | --- |
 > | microsoft.directory/groups/hiddenMembers/read | Read hidden members of Security groups and Microsoft 365 groups, including role-assignable groups |
+> | microsoft.directory/groups.unified/basic/update | Update basic properties on Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups.unified/create | Create Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups.unified/delete | Delete Microsoft 365 groups, excluding role-assignable groups |
-> | microsoft.directory/groups.unified/restore | Restore Microsoft 365 groups from soft-deleted container, excluding role-assignable groups |
-> | microsoft.directory/groups.unified/basic/update | Update basic properties on Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups.unified/members/update | Update members of Microsoft 365 groups, excluding role-assignable groups |
 > | microsoft.directory/groups.unified/owners/update | Update owners of Microsoft 365 groups, excluding role-assignable groups |
+> | microsoft.directory/groups.unified/restore | Restore Microsoft 365 groups from soft-deleted container, excluding role-assignable groups |
 > | microsoft.office365.messageCenter/messages/read | Read messages in Message Center in the Microsoft 365 admin center, excluding security messages |
 > | microsoft.office365.network/performance/allProperties/read | Read all network performance properties in the Microsoft 365 admin center |
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |

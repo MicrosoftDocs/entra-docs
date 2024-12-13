@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 11/21/2022
+ms.date: 03/25/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Riskware so that I can control who has access to Riskware, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -145,8 +145,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 	![Screenshot shows the Riskware Configurations maintain.](./media/riskware-tutorial/maintain.png "Maintenance")
 
 1. In the maintenance page, click **Authentication**.
-
-	![Screenshot shows the Riskware Configuration authentication.](./media/riskware-tutorial/profile.png "Authentication")
 
 1. In **Authentication Configuration** page, perform the following steps:
 

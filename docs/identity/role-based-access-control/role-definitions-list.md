@@ -16,7 +16,7 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 # List Microsoft Entra role definitions
 
-A role definition is a collection of permissions that can be performed, such as read, write, and delete. It's typically just called a role. Microsoft Entra ID has over 60 built-in roles or you can create your own custom roles. If you ever wondered "What the do these roles really do?", you can see a detailed list of permissions for each of the roles.
+A role definition is a collection of permissions that can be performed, such as read, write, and delete. It's typically referred to as a role. Microsoft Entra ID has over 60 built-in roles or you can create your own custom roles. If you ever wondered "What do these roles really do?", you can access a detailed list of permissions for each of the roles.
 
 This article describes how to list the Microsoft Entra built-in and custom roles along with their permissions.
 
@@ -41,11 +41,11 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
     The page includes links to relevant documentation to help guide you through managing roles.
 
-    ![Screenshot that shows the "Global Administrator - Description" page.](./media/role-definitions-list/role-description-updated.png)
+    ![Screenshot that shows the "Conditional Access Administrator - Description" page.](./media/role-definitions-list/role-description-updated.png)
 
 ## PowerShell
 
-Follow these steps to list Microsoft Entra roles using PowerShell.
+Follow these steps to list Microsoft Entra roles with PowerShell.
 
 1. Open a PowerShell window. If necessary, use [Install-Module](/powershell/module/powershellget/install-module) to install Microsoft Graph PowerShell. For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
@@ -97,5 +97,5 @@ Follow these instructions to list Microsoft Entra roles using the Microsoft Grap
 ## Next steps
 
 * [List Microsoft Entra role assignments](view-assignments.md).
-* [Assign Microsoft Entra roles to users](manage-roles-portal.md).
+* [Assign Microsoft Entra roles to users](manage-roles-portal.yml).
 * [Microsoft Entra built-in roles](permissions-reference.md).
