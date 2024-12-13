@@ -76,7 +76,7 @@ Update-MgPolicyAuthorizationPolicy -BodyParameter $param
 
 The following flowchart explains the different combinations for these parameters and the resulting conditions for the tenant and self-service sign-up.
 
-:::image type="content" source="./media/directory-self-service-signup/SelfServiceSignUpControls.png" alt-text="flowchart of self-service sign up controls.":::
+:::image type="content" source="./media/directory-self-service-signup/SelfServiceSignUpControls.png" alt-text="Flowchart of self-service sign up controls.":::
 
 You can retrieve this setting's details using the PowerShell cmdlet Get-MgPolicyAuthorizationPolicy. For more information, see [Get-MgPolicyAuthorizationPolicy](/powershell/module/microsoft.graph.identity.signins/get-mgpolicyauthorizationpolicy).
 
