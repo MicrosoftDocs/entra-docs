@@ -33,7 +33,7 @@ Furthermore, site-locations are configured as:
 
 If a user tries to access the common DFS path and appears to be coming from the IP address `10.0.0.3`, then the user should get directed to the path: `\\foo-loc1.contoso.com\bar`. The IPs are usually the addresses of VPN locations, and don't correspond to the clients original IP.
 
-:::image type="content" source="media/troubleshoot-distributed-file-system/dfs1.png" alt-text="Diagram showing the connection between VPN and DFS.":::
+:::image type="content" source="media/troubleshoot-distributed-file-system/dfs-1.png" alt-text="Diagram showing the connection between VPN and DFS.":::
  
 ## Issue
 IP-based network Access Control Lists (ACL) don't work with Global Secure Access as there’s no VPN in the middle. However, the employee computer should still be referred to the appropriate fileshare.
@@ -44,7 +44,7 @@ The proposed workaround for the above-mentioned scenario is as follows.
 As a workaround, we suggest moving this employee-to-fileshare mapping to the employee computer (as a Domain Name System (DNS) search suffix), so the traffic would be: 
 
 
-:::image type="content" source="media/troubleshoot-distributed-file-system/dfs2.png" alt-text="Diagram showing the connector.":::
+:::image type="content" source="media/troubleshoot-distributed-file-system/dfs-2.png" alt-text="Diagram showing the connector.":::
 
 The workaround is to make changes in the network-architecture in the environment: 
 
