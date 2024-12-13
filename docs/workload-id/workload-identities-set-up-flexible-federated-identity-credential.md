@@ -48,23 +48,23 @@ To accommodate the flexible federated identity credential functionality, the `fe
 
 ### [Microsoft Graph Explorer](#tab/graph-explorer)
 
-1. Open the [Microsoft Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer).
+1. Open the [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
 1. In the **Request** section, enter the following URL that corresponds to the application; `https://graph.microsoft.com/beta/applications/{objectId}/federatedIdentityCredentials`.
 1. Add the following request body:
 
-```json
-{
-  "audiences": [
-    "api://AzureADTokenExchange"
-  ],
-  "issuer": "https://token.actions.githubusercontent.com",
-  "name": "MyFlexibleFIC",
-  "claimsMatchingExpression": {
-    "value": "claims['sub'] matches 'repo:contoso/contoso-repo:ref:refs/heads/*'",
-    "languageVersion": 1
-  }
-}
-```
+    ```json
+    {
+      "audiences": [
+        "api://AzureADTokenExchange"
+      ],
+      "issuer": "https://token.actions.githubusercontent.com",
+      "name": "MyFlexibleFIC",
+      "claimsMatchingExpression": {
+        "value": "claims['sub'] matches 'repo:contoso/contoso-repo:ref:refs/heads/*'",
+        "languageVersion": 1
+      }
+    }
+    ```
 
 1. Select **Run query** to create the federated identity credential.
 ---
