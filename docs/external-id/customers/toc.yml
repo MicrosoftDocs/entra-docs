@@ -418,13 +418,13 @@ items:
             - name: Custom claims provider
               items:
                 - name: Create REST API for token issuance event
-                  href: custom-extension-tokenissuancestart-setup.md
+                  href: ~/identity-platform/custom-extension-tokenissuancestart-setup.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Configure a custom claims provider token issuance event
-                  href: custom-extension-tokenissuancestart-configuration.md
+                  href: ~/identity-platform/custom-extension-tokenissuancestart-configuration.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Configure a SAML app to call a custom claims provider
-                  href: custom-extension-configure-saml-app.md
+                  href: ~/identity-platform/custom-extension-configure-saml-app.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Custom claims provider reference
-                  href: custom-claims-provider-reference.md
+                  href: ~/identity-platform/custom-claims-provider-reference.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
             - name: Attribute collection
               items: 
                 - name: Create attribute collection start and submit events
@@ -434,7 +434,7 @@ items:
                 - name: OnAttributeCollectionSubmit event reference
                   href: ~/identity-platform/custom-extension-OnAttributeCollectionSubmit-reference.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
             - name: Configure a custom email provider for one time code send events
-              href: custom-extension-email-otp-get-started.md
+              href: ~/identity-platform/custom-extension-email-otp-get-started.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
             - name: Troubleshoot your custom authentication extension
               href: ~/identity-platform/custom-extension-troubleshoot.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Secure
