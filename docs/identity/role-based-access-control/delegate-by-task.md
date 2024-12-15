@@ -163,8 +163,7 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
-> | Add resources to a catalog | [Identity Governance Administrator](permissions-reference.md#identity-governance-administrator) | With entitlement management, you can delegate this task to the [catalog owner](~/id-governance/entitlement-management-catalog-create.md#add-more-catalog-owners) |
-> | Add SharePoint Online sites to catalog | [SharePoint Administrator](permissions-reference.md#sharepoint-administrator) |  |
+> | Tasks in Entitlement Management | [Identity Governance Administrator](permissions-reference.md#identity-governance-administrator). For roles lesser privlege than this within the Entitlement Management system, see: [Delegation and roles in entitlement management](../../id-governance/entitlement-management-delegate.md). | |
 
 ## Groups
 
