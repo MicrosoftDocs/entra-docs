@@ -124,7 +124,7 @@ For B2B direct connect users, data removal begins as soon as the user selects **
 
 ## Need help?
 
-If you need additional assistance not covered in our content, you have several options. Visit our [help and support](/entra/fundamentals/how-to-get-support) article to discover how to get support from the Microsoft community and how to submit a support request with Microsoft.
+If you need additional assistance not covered in our content, you have several options. [Find help and get support](/entra/fundamentals/how-to-get-support) to discover how to get support from the Microsoft community and how to submit a support request with Microsoft.
 
 ## Related content
 
