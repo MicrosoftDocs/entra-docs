@@ -32,7 +32,7 @@ To get started, you need the following items:
 * Steps to get SonarQube "SAML group attribute" setup correctly to use AzureAD groups for permissions (detailed below).
 
 > [!NOTE]
-> Help on installing SonarQube can be found in the [online documentation](https://docs.sonarsource.com/sonarqube-server/latest/setup-and-upgrade).
+> Help on installing SonarQube can be found in the [online documentation](https://docs.sonarsource.com/sonarqube-server/latest/setup-and-upgrade/overview/).
 
 ## Scenario description
 
