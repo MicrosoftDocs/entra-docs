@@ -3,7 +3,7 @@ title: Application Discovery (Preview) for Global Secure Access
 description: Use Application discovery to detect the applications accessed by users and create separate private applications.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 12/09/2024
+ms.date: 12/16/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -13,6 +13,10 @@ ms.reviewer: lirazbarak
 # Customer intent: As an administrator, I want to use Application discovery to detect the applications accessed by users and create separate private applications.
 ---
 # Application discovery (Preview) for Global Secure Access
+> [!IMPORTANT]
+> Application discovery is currently in PREVIEW.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
 Application discovery enables administrators to gain comprehensive visibility into application usage within their corporate network. By identifying which applications are accessed and by whom, administrators can create private applications with precise segmentation and least privilege access, which minimizes unnecessary access. 
 
 With Quick Access, you can quickly onboard to Private Access by publishing wide IP ranges and wildcard FQDNs, as you would with traditional VPN solutions. You can then transition from Quick Access to per-application publishing for better control and granularity over each application. For example, you can create a conditional access policy and set user assignments per application.  
@@ -94,3 +98,6 @@ Before you decide to create a private application, you might want to review othe
 :::image type="content" source="media/how-to-application-discovery/users-tab.png" alt-text="Screenshot of the Users tab showing the list of users.":::
 > [!IMPORTANT]
 > Use the list of users to inform the decisions you make regarding the users and groups that you plan to assign to the Entra application once you onboard the selected application segment.  
+
+## Related content
+* [How to configure Quick Access for Global Secure Access](how-to-configure-quick-access.md)

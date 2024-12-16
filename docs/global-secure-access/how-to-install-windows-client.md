@@ -3,7 +3,7 @@ title: The Global Secure Access client for Windows
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Windows client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 12/06/2024
+ms.date: 12/16/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -218,3 +218,8 @@ The administrator can show or hide specific buttons in the client system tray ic
 :::image type="content" source="media/how-to-install-windows-client/global-secure-access-registry-key-private-hide-signout.png" alt-text="Screenshot showing the Registry Editor with the HideSignOutButton and HideDisablePrivateAccessButton registry keys highlighted.":::
 
 For more information, see [Guidance for configuring IPv6 in Windows for advanced users](/troubleshoot/windows-server/networking/configure-ipv6-in-windows).
+
+## Related content
+- [Global Secure Access client for macOS](how-to-install-macos-client.md)
+- [Global Secure Access client for Android](how-to-install-android-client.md)
+- [Global Secure Access client for iOS](how-to-install-ios-client.md)
