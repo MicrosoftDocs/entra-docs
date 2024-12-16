@@ -6,7 +6,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
-ms.date: 05/24/2024
+ms.date: 12/16/2024
 ms.subservice: hybrid
 ms.author: billmath
 ---
