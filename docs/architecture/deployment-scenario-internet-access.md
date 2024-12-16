@@ -116,7 +116,7 @@ Microsoft Entra Internet Access for Microsoft 365 and Microsoft Entra Private Ac
 In this scenario, we use two security groups to assign security profiles using Conditional Access (CA) policies. In the Microsoft Entra admin center, create security groups with these names:
 
 - Internet Access -- Allow Social Networking sites
-= Internet Access -- Allow Hacking sites
+- Internet Access -- Allow Hacking sites
 
 Don't add any members to these groups. Later in this article, we configure Identity Governance to add members on request.
 
