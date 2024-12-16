@@ -57,6 +57,8 @@ For example, a [User Administrator](permissions-reference.md#user-administrator)
 
 In order for the [User Administrator](permissions-reference.md#user-administrator) to manage the user properties or user authentication methods of individual members of the group, the group members (users) must be added directly as members of the administrative unit.
 
+In addition, the group management delegation via Administrative Unit enables the delegated user (with the Group Administrator role at the Administrative Unit level) to modify the members attribute of the group, which means the members can be any user that exists in the tenant, and it's not limited to the users that are in the same Administrative Unit.
+
 ## License requirements
 
 Using administrative units requires a Microsoft Entra ID P1 license for each administrative unit administrator who is assigned directory roles over the scope of the administrative unit, and a Microsoft Entra ID Free license for each administrative unit member. Creating administrative units is available with a Microsoft Entra ID Free license. If you are using rules for dynamic membership groups for administrative units, each administrative unit member requires a Microsoft Entra ID P1 license. To find the right license for your requirements, see [Comparing generally available features of the Free and Premium editions](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
