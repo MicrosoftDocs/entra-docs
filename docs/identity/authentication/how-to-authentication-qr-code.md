@@ -26,7 +26,7 @@ This topic covers how to enable the QR code authentication method in the Authent
 - [Optional but highly recommended] Shared device mode enabled on the shared devices. 
 - A printer to print 2" x 2" QR codes. 
 - Teams app installed on the shared device (Android version 1.0.0.2024143204 or later and iOS version 1.0.0.77.2024132501 or later)
-- [Enable and setup MyStaff portal](~/role-based-access-control/my-staff-configure.md#how-to-enable-my-staff) if you plan for frontline managers to use MyStaff to provision, manage, and reset QR code and PINs. 
+- [Enable and setup MyStaff portal](~/identity/role-based-access-control/my-staff-configure#how-to-enable-my-staff) if you plan for frontline managers to use MyStaff to provision, manage, and reset QR code and PINs. 
 
 ## Enable QR code authentication method
 
@@ -137,80 +137,104 @@ You can edit QR code authentication method for a user by using the Microsoft Ent
 
 ### Edit the QR code authentication method for a user in the Microsoft Entra admin center
 
-1. Navigate to the usable authentication methods for a user, and click **Edit** to edit the properties of the QR code authentication method.
+- Navigate to the usable authentication methods for a user, and click **Edit** to edit the properties of the QR code authentication method.
 
-   :::image type="content" border="true" source="media/how-to-authentication-qr-code/qr-code-done.png" alt-text="Screenshot of a QR code authentication method after an administrator adds it.":::
+  :::image type="content" source="media/how-to-authentication-qr-code/edit-usable-authentication-method.png" alt-text="Screenshot of how to edit the usable authentication method for a user.":::
 
-1. Change the expiration time for the standard QR code
-Edit expiration of Standard QR code and click ‘save’ to save the changes
+- Change the expiration time for the standard QR code, and click **Save**.
 
-2.	Delete/ add Standard QR code
-You might want to delete the Standard QR code if it is reported as stolen/expired/compromised. After deleting the standard QR code, you will see the add symbol (+) to add new Standard QR code (note – the deleted QR code won't be valid for login). The newly added QR code needs to be printed and distributed to the end-user. The user will be able to continue using their existing PIN. If you want the user to update the PIN as well, you can delete the QR code auth method for the user and add it back again to generate a new Standard QR code and temporary PIN. User will need to use the new QR code and update the PIN on first login. 
+  :::image type="content" source="media/how-to-authentication-qr-code/change-expiration.png" alt-text="Screenshot of how to change the expiration date.":::
 
-3.	Reset PIN. Generate new PIN to create a new temporary PIN by clicking the pencil icon besides the masked PIN. User will be forced to change the temporary PIN on next sign-in attempt. Copy the temporary PIN and share with frontline worker. 
+- Delete a standard QR code. You might want to delete the standard QR code if it's reported as expired, compromised, or stolen. 
+  
+  :::image type="content" source="media/how-to-authentication-qr-code/delete-qr-code.png" alt-text="Screenshot of how to delete a QR code.":::
 
-4.	Add/delete Temporary QR code
-Temporary QR code is to reduce the admin overhead of printing the QR code on badge if user forgot to bring the badge to work. It also reduces the stress of retaining the QR code after their shift. Temporary QR code has a lifetime of 1-12 hours and can be activated instantly or later. 
-You will have the option to delete the temporary QR code. The QR code will be unusable after its expiry.
+  After you delete the standard QR code, click the add symbol (**+**) to add a new standard QR code for the user. 
+  The deleted QR code is no longer valid for login. 
+  
+  You need to print and distribute the new QR code to the user. 
+  The user can continue to use their existing PIN. 
+  
+  If you want the user to update the PIN, you can delete the QR code authentication method for the user, and add it back again to generate a new Standard QR code and temporary PIN. The user needs to use the new QR code and update the PIN on when they first sign in. 
 
+  :::image type="content" source="media/how-to-authentication-qr-code/replace-qr-code.png" alt-text="Screenshot of how to replace a lost or stolen QR code.":::
+
+- Reset a PIN. Click the pencil icon after the masked PIN. Click **Generate new PIN** to create a new temporary PIN. The user is forced to change the temporary PIN when they next sign in. Copy the temporary PIN and share it with the frontline worker. 
+
+  :::image type="content" source="media/how-to-authentication-qr-code/reset-pin.png" alt-text="Screenshot of how to reset a PIN.":::
+
+- Add or delete a temporary QR code. A temporary QR code reduces admin overhead of printing the QR code on badge if a user forgets their badge. It also reduces the stress of retaining the QR code after their shift. A temporary QR code has a lifetime of 1-12 hours and can be activated instantly or later. 
+You can delete the temporary QR code. The QR code is unusable after its expiry.
+
+  :::image type="content" source="media/how-to-authentication-qr-code/add-temporary-qr-code.png" alt-text="Screenshot of how to add a temporary QR code.":::
+
+  :::image type="content" source="media/how-to-authentication-qr-code/download-temporary-qr-code.png" alt-text="Screenshot of how to download a temporary QR code.":::
 
 ### Edit the QR code authentication method for a user in My Staff
 
-1.	To edit the expiration date for the Standard QR code, select the Edit option as shown below,
+- To edit the expiration date for a standard QR code, click **Edit**. Edit the expiration date and save the changes.
 
-Edit the expiration date and save the changes
+  :::image type="content" border="true" source="media/how-to-authentication-qr-code/edit-qr-code-my-staff.png" alt-text="Screenshot of how to edit a QR code in My Staff.":::
 
-2.	To delete Standard QR code, select the delete option for the QR code
+- To delete Standard QR code, click **Delete**. Confirm the action.
 
-Confirm the action 
+  :::image type="content" border="true" source="media/how-to-authentication-qr-code/delete-qr-code-my-staff.png" alt-text="Screenshot of how to delete a QR code in My Staff.":::
 
-3.	To add a new Standard QR code, select the Add New option next to the Standard QR code.
+- To add a new standard QR code, click **Add new** next to the standard QR code.
 
-Select the activation and expiration date for the QR Code
+  :::image type="content" border="true" source="media/how-to-authentication-qr-code/add-new-qr-code-my-staff.png" alt-text="Screenshot of how to add a new a QR code in My Staff.":::
 
-Hit Add and view the QR Code and PIN that has been generated for this user
+  Select the activation time and expiration date for the QR Code. 
 
-4.	Add a temporary QR code
+  :::image type="content" border="true" source="media/how-to-authentication-qr-code/select-qr-code-expiration-my-staff.png" alt-text="Screenshot of how to select the expiration date of a QR code in My Staff.":::
 
-Specify the Lifetime (in hours) and the Activation Date for this Temporary QR code
+  Click **Add** to view the QR code and PIN for this user.
 
-Click “Add” and download / print this QR code image as needed
+  :::image type="content" border="true" source="media/how-to-authentication-qr-code/view-qr-code-my-staff.png" alt-text="Screenshot of how to view a newly added QR code in My Staff.":::
 
-5.	Reset PIN
+- To add a temporary QR code, click **Add new** next to the temporary QR code. Specify the **Lifetime in hours** and the **Activation date**.
 
-Click “Reset PIN”
+  :::image type="content" border="true" source="media/how-to-authentication-qr-code/set-temporary-qr-code-expiration.png" alt-text="Screenshot of how to set the expiration date for a temporary QR code.":::
 
-Click on “Copy PIN” to copy the PIN to your clipboard
+  Click **Add** to view the QR code and PIN for this user.
 
+  :::image type="content" border="true" source="media/how-to-authentication-qr-code/view-temporary-qr-code-my-staff.png.png" alt-text="Screenshot of how to view a temporary QR code in My Staff.":::
 
+- To reset a PIN, click **Reset PIN**. 
+
+  :::image type="content" border="true" source="media/how-to-authentication-qr-code/reset-pin-my-staff.png" alt-text="Screenshot of how to reset a PIN in My Staff.":::
+
+  Click **Copy PIN** to copy the PIN to your clipboard.
+
+  :::image type="content" border="true" source="media/how-to-authentication-qr-code/copy-pin-my-staff.png" alt-text="Screenshot of how to copy a PIN in My Staff.":::
 
 ### Edit the QR code authentication method for a user in Microsoft Graph API
 
+- This example shows how to delete the standard QR code for a user if they lose their badge, and create a new standard QR code. The user isn't required to change their PIN.
 
-1.	Delete the Standard QR code on existing authentication if badge is lost and create a new one. User will not be required to go through PIN change process.
+- This example shows how to create a temporary QR code for a user. The user can use the existing PIN. 
 
-2.	Create Temporary QR code for existing authentication method. User will be able to use the existing PIN. 
+- This example shows how to delete a temporary QR code for a user.  
 
-3.	Delete Temporary QR code for existing authentication method.  
+- This example shows how to reset the PIN a QR code authentication method.
 
-4.	Reset PIN for existing authentication method
-
-5.	Force change pin for existing authentication method
+- This example shows how to force a user to change their PIN for a QR code authentication method.
 
 ## Delete the QR code authentication method for a user
 
-You can delete QR code authentication method for a user by using the Microsoft Entra admin center, My Staff, or Microsoft Graph API. 
+You can delete the QR code authentication method for a user by using the Microsoft Entra admin center, My Staff, or Microsoft Graph API. 
 
 ### Delete the QR code authentication method for a user in the Microsoft Entra admin center
 
-If QR code authentication method is deleted for a user, they will no longer be able to sign-in using this auth method. 
-1.	Navigate to Users > User > Usable authentication methods
+If a QR code authentication method is deleted for a user, they can no longer sign in by using that authentication method. 
+
+Navigate to **Users** > **User** > **Usable authentication methods**.
 
 ### Delete the QR code authentication method for a user in in My Staff
 
-1.	To delete QR code auth method itself, click **Delete QR code method**.
+1. To delete QR code auth method itself, click **Delete QR code method**.
 
-2.	Confirm the action by clicking on the “Delete” button in the dialog
+1. Confirm the action by clicking on the “Delete” button in the dialog
 
 ### Delete the QR code authentication method for a user in Microsoft Graph API
 
@@ -220,11 +244,10 @@ Microsoft Teams accelerates sign in with a QR code. An Authentication Policy Adm
 
 ### Enable sign-in with QR code in Teams
 
-| Platform | MDM app config key | Value | Configuration location |
-|----------|-------------|-------|------------------------|			
-| iOS | preferred_auth_config | qrpin | Device management profile which configures SSO extension | 
-| Android | preferred_auth_config | qrpin | Microsoft Authenticator app |
-
+| Platform | MDM app config key    | Value | Configuration location |
+|----------|-----------------------|-------|------------------------|			
+| iOS      | preferred_auth_config | qrpin | Device management profile, which configures a single sign-on (SSO) extension | 
+| Android  | preferred_auth_config | qrpin | Microsoft Authenticator |
 
 ### Sign-in with a QR code to Teams 
 
@@ -269,7 +292,7 @@ This section covers how to create policies that restrict QR code authentication 
 
 ### Restrict QR + PIN to shared devices 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-policy-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator). 
 1. Create a custom authentication strength Conditional Access policy and select all authentication combinations except QR + PIN.  
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/configure-authentication-strength.png" alt-text="Screenshot of the Microsoft Entra admin center that shows how to select method combinations for an authentication strength.":::
