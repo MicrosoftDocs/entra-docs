@@ -6,7 +6,7 @@ description: As a B2B collaboration user, learn how to leave an organization if 
 
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 06/27/2024
+ms.date: 12/16/2024
 
 ms.author: cmulligan 
 author: csmulligan 
@@ -38,7 +38,6 @@ If you're a user looking for information about how to manage and leave an organi
 
    - If you're using a work or school account, go to https://myaccount.microsoft.com and sign in.
    - If you're using a personal account or email one-time passcode, you'll need to use a My Account URL that includes your tenant name or tenant ID.
-   
    For example:
 
    `https://myaccount.microsoft.com?tenantId=contoso.onmicrosoft.com`
@@ -122,6 +121,10 @@ If desired, a tenant administrator can permanently delete the account at any tim
 Permanent deletion can be initiated by the admin, or it happens at the end of the soft deletion period. Permanent deletion can take up to an extra 30 days for data removal.
 
 For B2B direct connect users, data removal begins as soon as the user selects **Leave** in the confirmation message and can take up to 30 days to complete.
+
+## Need help?
+
+If you need additional assistance not covered in our content, you have several options. [Learn how to get help and support](/entra/fundamentals/how-to-get-support) from the Microsoft community, or submit a support request directly to Microsoft.
 
 ## Related content
 

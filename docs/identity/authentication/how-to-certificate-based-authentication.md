@@ -70,6 +70,9 @@ A PKI-based trust store has RBAC roles [Privilege Authentication Administrator](
 
 Upload PKI feature of the PKI-based trust store is available only with  Microsoft Entra ID P1 or P2 license. However, with free license as well, admins can upload all the CAs individually instead of the PKI file and configure the PKI-based trust store.
 
+>[!Important]
+> Due to a known issue with new store, it is recommended not to delete all the CAs in the old store and have atleast one CA in the old store. We are working to fix the issue to remove the limitation.
+
 ### Configure certificate authorities by using the Microsoft Entra admin center
 
 #### Create a PKI container object
