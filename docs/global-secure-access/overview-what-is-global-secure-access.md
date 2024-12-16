@@ -5,9 +5,10 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: overview
-ms.date: 12/12/2024
+ms.date: 12/16/2024
 ms.service: global-secure-access
 ms.custom: references_regions
+ai-usage: ai-assisted
 ---
 
 # What is Global Secure Access?
@@ -76,7 +77,7 @@ To learn more about licensing costs and the Microsoft Entra Suite, see [Microsof
 
 **Remote Network licensing**
 
-While we're still determining the licensing model for remote networks, we want to provide you with the most up-to-date guidance and recommendations to ensure optimal performance for your Microsoft traffic deployment. Microsoft recommends a 250-Mbps bandwidth for Microsoft traffic of 1,250 users. In cases of usage exceeding the recommended limits, additional charges may apply. To learn more about remote networks, see [How to create a remote network with Global Secure Access](how-to-create-remote-networks.md).
+The remote network (branch connectivity) feature is included in both the Microsoft Entra ID P1 license for Microsoft traffic, and the Microsoft Entra Internet Access license for Internet Traffic (coming soon). You must have a combined total of at least 50 licenses from Microsoft Entra ID P1 and Microsoft Entra Internet Access to enable remote network connectivity. For details on how much bandwidth is allocated, see [Understand remote network connectivity](concept-remote-network-connectivity.md#how-much-bandwidth-will-be-allocated-per-tenant). To learn more about remote networks, see [How to create a remote network with Global Secure Access](how-to-create-remote-networks.md).
 
 ## Next steps
 
