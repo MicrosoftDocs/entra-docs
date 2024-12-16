@@ -83,8 +83,8 @@ The total bandwidth you are allocated is determined by the number of licenses pu
 | 10,000 +      | 35,000 Mbps +          |
 
 **Table notes**
-- Minimum number of license to use remote network connectivity feature is 50. 
-- The number of license is equal to the total number of licenses purchased (Entra ID P1 + Entra Internet Access /Entra Suite). After 10,000 licenses you get an additional 500 Mbps for every 500 licenses purchased (example 11,000 licenses = 36,000 Mbps). 
+- Minimum number of licenses to use remote network connectivity feature is 50. 
+- The number of licenses is equal to the total number of licenses purchased (Entra ID P1 + Entra Internet Access /Entra Suite). After 10,000 licenses you get an additional 500 Mbps for every 500 licenses purchased (example 11,000 licenses = 36,000 Mbps). 
 - Organizations crossing the 10,000-license mark often operate at an enterprise scale requiring more robust infrastructure. The jump to 35,000 Mbps ensures ample capacity to meet the demands of such deployments, supporting higher traffic volumes and providing the flexibility to expand bandwidth allocations as needed. 
 - If more bandwidth is required, additional bandwidth will be available for purchase. 
 
