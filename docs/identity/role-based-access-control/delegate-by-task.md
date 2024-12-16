@@ -200,7 +200,7 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
 > | Create a workflow | [Lifecycle workflows Administrator](permissions-reference.md#lifecycle-workflows-administrator) |  |
-> | Add a custom extension to a workflow | [Lifecycle workflows Administrator](permissions-reference.md#lifecycle-workflows-administrator). You must also have either the [Logic App contributor](azure/role-based-access-control/built-in-roles/integration#logic-app-contributor) or [Owner](azure/role-based-access-control/built-in-roles/integration#logic-app-operator) Azure Resource Manager role.  |  |
+> | Add a custom extension to a workflow | [Lifecycle workflows Administrator](permissions-reference.md#lifecycle-workflows-administrator). You must also have either the [Logic App contributor](/azure/role-based-access-control/built-in-roles/integration#logic-app-contributor) or [Owner](/azure/role-based-access-control/built-in-roles/integration#logic-app-operator) Azure Resource Manager role.  |  |
 
 ## Microsoft Entra Health
 
