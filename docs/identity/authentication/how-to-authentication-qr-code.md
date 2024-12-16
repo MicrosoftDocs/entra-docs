@@ -26,7 +26,7 @@ This topic covers how to enable the QR code authentication method in the Authent
 - [Optional but highly recommended] Shared device mode enabled on the shared devices. 
 - A printer to print 2" x 2" QR codes. 
 - Teams app installed on the shared device (Android version 1.0.0.2024143204 or later and iOS version 1.0.0.77.2024132501 or later)
-- [Enable and setup MyStaff portal](~/identity/role-based-access-control/my-staff-configure#how-to-enable-my-staff) if you plan for frontline managers to use MyStaff to provision, manage, and reset QR code and PINs. 
+- [Enable and setup MyStaff portal](~/identity/role-based-access-control/my-staff-configure.md#how-to-enable-my-staff) if you plan for frontline managers to use MyStaff to provision, manage, and reset QR code and PINs. 
 
 ## Enable QR code authentication method
 
@@ -198,7 +198,7 @@ You can delete the temporary QR code. The QR code is unusable after its expiry.
 
   Click **Add** to view the QR code and PIN for this user.
 
-  :::image type="content" border="true" source="media/how-to-authentication-qr-code/view-temporary-qr-code-my-staff.png.png" alt-text="Screenshot of how to view a temporary QR code in My Staff.":::
+  :::image type="content" border="true" source="media/how-to-authentication-qr-code/view-temporary-qr-code-my-staff.png" alt-text="Screenshot of how to view a temporary QR code in My Staff.":::
 
 - To reset a PIN, click **Reset PIN**. 
 
@@ -245,8 +245,8 @@ Microsoft Teams accelerates sign in with a QR code. An Authentication Policy Adm
 ### Enable sign-in with QR code in Teams
 
 | Platform | MDM app config key    | Value | Configuration location |
-|----------|-----------------------|-------|------------------------|			
-| iOS      | preferred_auth_config | qrpin | Device management profile, which configures a single sign-on (SSO) extension | 
+|----------|-----------------------|-------|------------------------|
+| iOS      | preferred_auth_config | qrpin | Device management profile, which configures a single sign-on (SSO) extension |
 | Android  | preferred_auth_config | qrpin | Microsoft Authenticator |
 
 ### Sign-in with a QR code to Teams 
