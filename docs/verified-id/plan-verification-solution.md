@@ -209,7 +209,7 @@ Verifiable credentials can be used as an approach to account recovery. For examp
 
 **VC Attribute correlation with Microsoft Entra ID**: When defining the attributes of the VC in collaboration with the issuer, make sure you agree on claims that identify the user. For example, if identity verification provider (IDV) verifies the identity prior to onboarding employees, ensure that the issued VC includes claims that can be matched against internal systems. Such claims might be a phone number, address, or date of birth. The RP can ask for information not found in the VC as part of this process, such as the last four digits of their social security number (SSN).
 
-**Role of VCs with Existing Microsoft Entra Credential Reset Capabilities**: Microsoft Entra ID has a built-in self-service password reset (SSPR) capability. Verifiable Credentials can be used to provide another way to recover in cases where users don't have access to or lost control of the SSPR method. In scenarios where the user have lost both computer and mobile, the user can reobtain a VC from an identity proof issuer and present it to recover their account remotely. 
+**Role of VCs with Existing Microsoft Entra Credential Reset Capabilities**: Microsoft Entra ID has a built-in self-service password reset (SSPR) capability. Verifiable Credentials can be used to provide another way to recover in cases where users don't have access to or lost control of the SSPR method. In scenarios where the user has lost both computer and mobile, the user can reobtain a VC from an identity proof issuer and present it to recover their account remotely. 
 
 Similarly, you can use a VC to generate a temporary access pass that allows users to reset their MFA authentication methods without a password. 
 
