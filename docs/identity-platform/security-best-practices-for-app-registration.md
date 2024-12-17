@@ -69,14 +69,15 @@ Consider the following guidance related to certificates and secrets:
 - Monitor your production pipelines to prevent credentials of any kind from being committed into code repositories.
 - [Credential Scanner](/previous-versions/azure/security/develop/security-code-analysis-overview#credential-scanner) is a static analysis tool that can be used to detect credentials (and other sensitive content) in source code and build output.
 
-## Application ID URI
+## Identifier URI (also known as Application ID URI)
 
-The **Application ID URI** property of the application specifies the globally unique URI used to identify the web API. It's the prefix for scopes and in access tokens, it's also the value of the audience claim and it must use a verified customer owned domain. For multi-tenant applications, the value must also be globally unique. It's also referred to as an identifier URI. Under **Expose an API** for the application in the Azure portal, the **Application ID URI** property can be defined.
+The **Identifier URI** property of the application specifies the globally unique URI used to identify the web API. It's the prefix for scopes and in access tokens, it's also the value of the audience claim and it must use a verified customer owned domain. For multi-tenant applications, the value must also be globally unique. It's also referred to as an Application ID URI. Under **Expose an API** for the application in the Azure portal, the **Application ID URI** property can be defined.
 
 :::image type="content" source="./media/application-registration-best-practices/app-id-uri.png" alt-text="Screenshot that shows where the Application I D U R I is located.":::
 
 Consider the following guidance related to defining the Application ID URI:
 
+- Todo
 - The api or https URI schemes are recommended. Set the property in the supported formats to avoid URI collisions in your organization. Don't use wildcards.
 - Use a verified domain in Line of Business (LoB) applications.
 - Keep an inventory of the URIs in your organization to help maintain security.
