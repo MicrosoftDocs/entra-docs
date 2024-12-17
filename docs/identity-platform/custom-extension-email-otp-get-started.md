@@ -123,7 +123,7 @@ You can access your Communication Services connection strings and service endpoi
 
     | Setting      | Value (Example) | Description |
     | ------------ | ---------------- | ----------- |
-    | **mail_connectionString** | A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u | The Azure Communication Services Primary Key. | 
+    | **mail_connectionString** | `https://ciamotpcommsrvc.unitedstates.communication.azure.com/:accesskey=A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u` | The Azure Communication Services endpoint | 
     | **mail_sender** | <from.email@myemailprovider.com> | The from email address. |
     | **mail_subject** | CIAM Demo | The subject of the email. |
 
