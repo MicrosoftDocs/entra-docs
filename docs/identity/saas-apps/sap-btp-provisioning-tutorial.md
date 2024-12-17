@@ -24,6 +24,8 @@ This tutorial describes the steps you need to perform in SAP Cloud Identity Serv
 > * Remove users in SAP BTP when they do not require access anymore
 > * Keep user attributes synchronized between Microsoft Entra ID and SAP BTP
 
+You can also manage access to SAP BTP applications, using Microsoft Entra ID Governance to populate groups associated to roles in the BTP role collection. For more information, see [Managing access to SAP BTP](https://community.sap.com/t5/technology-blogs-by-members/identity-and-access-management-with-microsoft-entra-part-i-managing-access/ba-p/13873276).
+
 ## Prerequisites
 
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
@@ -72,3 +74,5 @@ For more information on how to configure single sign-on to SAP SaaS and modern a
 ## Next steps
 
 * [Configure SAP Cloud Identity Services for automatic user provisioning with Microsoft Entra ID](sap-cloud-platform-identity-authentication-provisioning-tutorial.md)
+* [Configure Microsoft Entra single sign-on (SSO) integration with SAP Cloud Identity Services](sap-hana-cloud-platform-identity-authentication-tutorial.md)
+* [Managing access to SAP BTP](https://community.sap.com/t5/technology-blogs-by-members/identity-and-access-management-with-microsoft-entra-part-i-managing-access/ba-p/13873276).
