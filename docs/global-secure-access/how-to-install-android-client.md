@@ -3,7 +3,7 @@ title: The Global Secure Access client for Android
 description: Install the Global Secure Access Android client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 09/09/2024
+ms.date: 12/16/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -33,7 +33,7 @@ This article explains the prerequisites and how to deploy the client onto Androi
 - Tunneling IPv6 traffic isn't currently supported.
 - Private Domain Name System (DNS) must be disabled on the device. This setting is often found in the System > Network and Internet options.
 - Running non-Microsoft endpoint protection products alongside Microsoft Defender for Endpoint might cause performance problems and unpredictable system errors.
-- Global Secure Access (GSA) coexistence with Microsoft Tunnel is not currently supported. For more information, see [Prerequisites for the Microsoft Tunnel in Intune](/mem/intune/protect/microsoft-tunnel-prerequisites).
+- Global Secure Access (GSA) coexistence with Microsoft Tunnel isn't currently supported. For more information, see [Prerequisites for the Microsoft Tunnel in Intune](/mem/intune/protect/microsoft-tunnel-prerequisites).
 
 ## Supported scenarios
 
@@ -156,7 +156,9 @@ The Global Secure Access tile doesn't appear after onboarding the tenant to the 
 When attempting to access a Private Access application, the connection might time out after a successful interactive sign-in. Reloading the application through a web browser refresh should resolve the issue.
 
 ## Related content
-
 - [About Microsoft Defender for Endpoint on Android](/microsoft-365/security/defender-endpoint/microsoft-defender-endpoint-android)
 - [Deploy Microsoft Defender for Endpoint on Android with Microsoft Intune](/microsoft-365/security/defender-endpoint/android-intune)
 - [Learn about managed Google Play apps and Android Enterprise devices with Intune](/mem/intune/apps/apps-add-android-for-work)
+- [Global Secure Access client for Microsoft Windows](how-to-install-windows-client.md)
+- [Global Secure Access client for macOS](how-to-install-macos-client.md)
+- [Global Secure Access client for iOS](how-to-install-ios-client.md)
