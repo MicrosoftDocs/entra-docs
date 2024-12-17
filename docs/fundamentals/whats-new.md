@@ -59,16 +59,6 @@ Microsoft Entra ID now supports issuing Temporary Access Passes (TAP) to interna
 
 ---
 
-### Public Preview - Security Copilot in Microsoft Entra: App Risk skills
-
-**Type:** New feature    
-**Service category:** Other    
-**Product capability:** Platform    
-
-Identity admins and security analysts managing Microsoft Entra ID registered apps can identify and understand risks through natural language prompts. Security Copilot has links to the Microsoft Entra Admin Center for admins to take needed remediation actions. For more information, see: [Assess application risks using Microsoft Security Copilot in Microsoft Entra](../fundamentals/copilot-security-entra-investigate-risky-apps.md).
-
----
-
 ### Public Preview - Security Copilot embedded in Microsoft Entra
 
 **Type:** New feature    
@@ -78,6 +68,16 @@ Identity admins and security analysts managing Microsoft Entra ID registered app
 We’ve announced the public preview of Microsoft Security Copilot embedded in the Microsoft Entra Admin Center. This integration brings all identity skills previously made generally available for the Security Copilot standalone experience in April 2024, along with new identity capabilities for admins and security analysts to use directly within the Microsoft Entra admin center. We've also added brand new skills to help improve identity-related risk investigation. In December, we broaden the scope even further to include a set of skills specifically for App Risk Management in both standalone and embedded experiences of Security Copilot and Microsoft Entra. These capabilities allow identity admins and security analysts to better identify, understand, and remediate the risks impacting applications and workload identities registered in Microsoft Entra.
 
 With Security Copilot now embedded in Microsoft Entra, identity admins get AI-driven, natural-language summaries of identity context and insights tailored for handling security incidents, equipping them to better protect against identity compromise. The embedded experience also accelerates troubleshooting tasks like resolving identity-related risks and sign-in issues, without ever leaving the admin center.  
+
+---
+
+### Public Preview - Security Copilot in Microsoft Entra: App Risk skills
+
+**Type:** New feature    
+**Service category:** Other    
+**Product capability:** Identity Security & Protection        
+
+Identity admins and security analysts managing Microsoft Entra ID registered apps can identify and understand risks through natural language prompts. Security Copilot has links to the Microsoft Entra Admin Center for admins to take needed remediation actions. For more information, see: [Assess application risks using Microsoft Security Copilot in Microsoft Entra](../fundamentals/copilot-security-entra-investigate-risky-apps.md).
 
 ---
 
