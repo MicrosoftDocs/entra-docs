@@ -6,7 +6,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 04/26/2024
+ms.date: 12/17/2024
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 
@@ -19,7 +19,7 @@ Microsoft Entra Connect cloud sync allows you to test configuration changes, by 
 
 You can use this test to validate and verify that the changes made to the configuration were applied properly and are being correctly synchronized to Microsoft Entra ID. 
 
-The following document will guide you through on-demand provisioning with Microsoft Entra Cloud Sync for provisioning from Active Directory to Microsoft Entra ID.  If you are looking for information on provisioning from Microsoft Entra ID to AD, see [ On-demand provisioning - Active Directory to Microsoft Entra ID](how-to-on-demand-provision-entra-to-active-directory.md)
+The following document guides you through on-demand provisioning with Microsoft Entra Cloud Sync for provisioning from Active Directory to Microsoft Entra ID.  If you are looking for information on provisioning from Microsoft Entra ID to AD, see [ On-demand provisioning - Active Directory to Microsoft Entra ID](how-to-on-demand-provision-entra-to-active-directory.md)
 
 The following is true with regrad to on-demand provisioning of groups:
 - On-demand provisioning of groups supports updating up to five members at a time.
