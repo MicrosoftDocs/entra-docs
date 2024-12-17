@@ -27,6 +27,115 @@ For a more dynamic experience, you can now find this information in the Microsof
 > [!NOTE] 
 > If you're currently using Azure Active Directory today or are have previously deployed Azure Active Directory in your organizations, you can continue to use the service without interruption. All existing deployments, configurations, and integrations continue to function as they do today without any action from you.
 
+## December 2024
+
+### General Availability - What's new in Microsoft Entra
+
+**Type:** New feature    
+**Service category:** Reporting    
+**Product capability:** Monitoring & Reporting    
+
+What's new in Microsoft Entra offers a comprehensive view of Microsoft Entra product updates including product roadmap (like Public Previews and recent GAs), and change announcements (like deprecations, breaking changes, feature changes and Microsoft-managed policies). It's a one stop shop for Microsoft Entra admins to discover the product updates.
+
+---
+
+### General Availability - Temporary Access Pass (TAP) support for internal guest users
+
+**Type:** New feature    
+**Service category:** MFA    
+**Product capability:** Identity Security & Protection    
+
+Microsoft Entra ID now supports issuing Temporary Access Passes (TAP) to internal guest users. TAPs can be issued to internal guests just like normal members, through the Microsoft Entra ID Admin Center, or natively through Microsoft Graph. With this enhancement, internal guests can now seamlessly onboard, and recover, their accounts with time-bound temporary credentials. For more information, see: [Configure Temporary Access Pass to register passwordless authentication methods](../identity/authentication/howto-authentication-temporary-access-pass.md).
+
+---
+
+### Public Preview - Microsoft Entra ID Governance: access package request suggestions
+
+**Type:** New feature    
+**Service category:** Entitlement Management    
+**Product capability:** Entitlement Management    
+
+**Opt-In** As communicated [earlier](https://techcommunity.microsoft.com/blog/identity/whats-new-in-microsoft-entra---september-2024/4253153), we're excited to introduce a new feature in [My Access](https://myaccess.microsoft.com): a curated list of suggested access packages. This capability allows users to quickly view the most relevant access packages (based off their peers' access packages and previous requests) without scrolling through a long list. In December you can [enable the preview in the Opt-in Preview Features for Identity Governance](https://entra.microsoft.com/?feature.msaljs=true#view/Microsoft_AAD_ERM/DashboardBlade/~/elmSetting). From January, this setting will be enabled by default.
+
+---
+
+### Public Preview - Security Copilot in Microsoft Entra: App Risk skills
+
+**Type:** New feature    
+**Service category:** Other    
+**Product capability:** Platform    
+
+Identity admins and security analysts managing Microsoft Entra ID registered apps can identify and understand risks through natural language prompts. Security Copilot has links to the Microsoft Entra Admin Center for admins to take needed remediation actions. For more information, see: [Assess application risks using Microsoft Security Copilot in Microsoft Entra](../fundamentals/copilot-security-entra-investigate-risky-apps.md).
+
+---
+
+### Public Preview - Security Copilot embedded in Microsoft Entra
+
+**Type:** New feature    
+**Service category:** Other    
+**Product capability:** Identity Security & Protection    
+
+We’ve announced the public preview of Microsoft Security Copilot embedded in the Microsoft Entra Admin Center. This integration brings all identity skills previously made generally available for the Security Copilot standalone experience in April 2024, along with new identity capabilities for admins and security analysts to use directly within the Microsoft Entra admin center. We've also added brand new skills to help improve identity-related risk investigation. In December, we broaden the scope even further to include a set of skills specifically for App Risk Management in both standalone and embedded experiences of Security Copilot and Microsoft Entra. These capabilities allow identity admins and security analysts to better identify, understand, and remediate the risks impacting applications and workload identities registered in Microsoft Entra.
+
+With Security Copilot now embedded in Microsoft Entra, identity admins get AI-driven, natural-language summaries of identity context and insights tailored for handling security incidents, equipping them to better protect against identity compromise. The embedded experience also accelerates troubleshooting tasks like resolving identity-related risks and sign-in issues, without ever leaving the admin center.  
+
+---
+
+### Public Preview - Provision custom security attributes from HR sources
+
+**Type:** New feature    
+**Service category:** Provisioning    
+**Product capability:** Inbound to Entra ID    
+
+With this feature, customers can automatically provision "*custom security attributes*" in Microsoft Entra ID from authoritative HR sources. Supported authoritative sources include: Workday, SAP SuccessFactors, and any HR system integrated using API-driven provisioning.
+
+---
+
+### Public Preview - Sign in with Apple
+
+**Type:** New feature    
+**Service category:** B2C - Consumer Identity Management    
+**Product capability:** Extensibility    
+
+This new feature adds Apple to our list of preconfigured social identity providers. As the first social identity provider implemented on the eSTS platform, it introduces a "*Sign in with Apple*" button to the sign-in options, allowing users to access applications with their Apple accounts. For more information, see: [Add Apple as an identity provider (preview)](../external-id/customers/how-to-apple-federation-customers.md).
+
+---
+
+### General Availability - Microsoft Entra External ID Custom URL Domains
+
+**Type:** New feature    
+**Service category:** Authentications (Logins)    
+**Product capability:** Identity Lifecycle Management    
+
+This feature allows users to customize their Microsoft default sign in authentication endpoint with their own brand names. Custom URL Domains help users to change Ext ID endpoint <tenant-name>.ciamlogin.com to login.contoso.com.
+
+---
+
+### General Availability - Dedicated new 1st party resource application to enable AD to Microsoft Entra ID sync using Microsoft Entra Connect Sync or Cloud Sync
+
+**Type:** Changed feature    
+**Service category:** Provisioning    
+**Product capability:** Directory    
+
+To prepare for an upcoming security hardening, Microsoft will deploy a dedicated first-party application to enable the synchronization between Active Directory and Microsoft Entra ID. This new application will manifest as a first party service principal called the "Microsoft Entra AD Synchronization Service" (Application ID: 6bf85cfa-ac8a-4be5-b5de-425a0d0dc016) and will be visible in the Enterprise Applications experience within the Microsoft Entra admin center. This application is critical for the continued operation of their on-premises to Microsoft Entra ID synchronization functionality (through Microsoft Entra Connect Sync or Microsoft Entra Cloud Sync)
+
+In the upcoming release(s), Microsoft will share more information and guidance on upgrading to a new version of Microsoft Entra Connect that will use this first party application to synchronize between Active Directory and Microsoft Entra ID.
+
+---
+
+### General Availability - Privileged Identity Management integration in Azure Role Based Access Control
+
+**Type:** New feature    
+**Service category:** RBAC    
+**Product capability:** Access Control    
+
+Privileged Identity Management (PIM) capabilities are now integrated into the Azure Role Based Access Control (Azure RBAC) UI. Before this integration, RBAC admins could only manage standing access (active permanent role assignments) from the Azure RBAC UI. With this integration, just-in-time access and timebound access, which are functionalities supported by PIM, are now brought into the Azure RBAC UI.
+
+RBAC admins can create assignments of type eligible and timebound duration from the Azure RBAC add role assignment flow, see the list of different states of role assignment in a single view, as well as convert the type and duration of their role assignments from the Azure RBAC UI. In addition, end users now see all their role assignments of different state straight from the Azure RBAC UI landing page, from where they can also activate their eligible role assignments. For more information, see: [List role assignments at a scope](/azure/role-based-access-control/role-assignments-list-portal#list-role-assignments-at-a-scope).
+
+---
+
+
 ## November 2024
 
 ### General Availability - Microsoft Entra Connect Sync Version 2.4.27.0
