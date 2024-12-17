@@ -276,7 +276,10 @@ Microsoft Teams accelerates sign in with a QR code. An Authentication Policy Adm
 
 ### Sign-in with a QR code to Teams 
 
-Users need to download Teams version 1.0.0.2024143204 or later from Google PlayStore, or Teams version 1.0.0.77.2024132501 or later from Apple AppStore. 
+Users need to download Teams:
+
+- For iOS and iPad, download Teams version 1.0.0.77.2024132501 or later from Apple AppStore
+- For Android, download Teams version 1.0.0.2024143204 or later from Google PlayStore
 
 1. Click **Sign-in with QR code** in Microsoft Teams.
     
