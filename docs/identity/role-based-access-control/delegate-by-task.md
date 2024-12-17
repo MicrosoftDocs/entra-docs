@@ -355,6 +355,8 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Manage terms of use | [Conditional Access Administrator](permissions-reference.md#conditional-access-administrator) | [Security Administrator](permissions-reference.md#security-administrator) |
 > | Read all configuration | [Default user role](../../fundamentals/users-default-permissions.md) |  |
 > | Read named locations | [Default user role](../../fundamentals/users-default-permissions.md) |  |
+> | Read terms of use | [Security Reader](permissions-reference.md#security-reader) |  |
+> | Read which terms of use were accepted by the signed-in user | [Default user role](../../fundamentals/users-default-permissions.md) |  |
 
 ## Security - Identity security score
 
