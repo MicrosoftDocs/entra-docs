@@ -15,7 +15,7 @@ ms.date: 12/18/2024
 ---
 # Tutorial: Configure Microsoft Entra External ID with Azure Web Application Firewall (WAF)
 
-In this tutorial, you learn how to enable the [Azure Web Application Firewall](/azure/web-application-firewall/ag/ag-overview) (WAF) service for a Microsoft Entra External ID tenant with an Azure WAF. Azure WAF protects web applications from common exploits and vulnerabilities such as cross-site scripting, Distributed Denial-of-Service (DDoS) attacks, and malicious bot activity.
+In this tutorial, you learn how to enable the [Azure Web Application Firewall](/azure/web-application-firewall/ag/ag-overview) (WAF) service for a Microsoft Entra External ID tenant. Azure WAF protects web applications from common exploits and vulnerabilities such as cross-site scripting, Distributed Denial-of-Service (DDoS) attacks, and malicious bot activity.
 
 ## Prerequisites
 
