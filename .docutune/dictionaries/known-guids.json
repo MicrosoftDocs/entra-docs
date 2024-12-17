@@ -3652,10 +3652,8 @@
   "Department Reader" : "db609904-a47f-4794-9be8-9bd86fbffd8a",
   "Account Owner" : "c15c22c0-9faf-424c-9b7e-bd91c06a240b",
   "DefaultChannelAuthTenant (botframework.com)" : "d6d49420-f39b-4df7-a1dc-d59a935871db",
-  "Microsoft tenant ID" : "72f988bf-86f1-41af-91ab-2d7cd011db47",
   "PME tenant ID" : "975f013f-7f24-47e8-a7d3-abc4752bf346",
   "Torus tenant ID" : "cdc5aeea-15c5-4db6-b079-fcadd2505dc2",
-  "AME tenant ID" : "33e01921-4d64-4f8c-a055-5bdaffd5e33d",
   "Azure AI Bot Service token store app ID" : "5b404cf4-a79d-4cfe-b866-24bf8e1a4921",
   "Azure Communication Services app ID" : "c880d6fb-5c66-49ef-9cf5-e53e31900be5",
   "Omnichannel for Customer Service" : "a950df6d-e658-48fc-b494-ec69d8d9731b",
@@ -3853,5 +3851,8 @@
   "Microsoft Azure API Connections" : "fe053c5f-3692-4f14-aef2-ee34fc081cae",
   "1P Microsoft Entra application" : "4e1f8dc5-5a42-45ce-a096-700fa485ba20",
   "View ID for import data in model-driven apps" : "a2927069-e4dc-4e8f-8fb1-d2f6c40c427e",
-  "Azure Storage" : "e406a681-f3d4-42a8-90b6-c2b029497af1"
+  "Azure Storage" : "e406a681-f3d4-42a8-90b6-c2b029497af1",
+  "Power Platform API" : "8578e004-a5c6-46e7-913e-12f58912df43",
+  "api.powerplatform.com" : "49676daf-ff23-4aac-adcc-55472d4e2ce0",
+  "Office 365 Groups" : "2f17f077-4175-4d82-b82b-17cd8950b74f"
 }

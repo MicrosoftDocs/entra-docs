@@ -6,7 +6,7 @@ author: barclayn
 manager: amycolannino
 ms.author: barclayn
 ms.reviewer: jordan.dahl
-ms.date: 11/15/2023
+ms.date: 12/13/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
@@ -36,8 +36,8 @@ To understand the behavior of `No writeback` in the portal, you can view the wri
 
 | Portal | Microsoft Graph| Behavior|
 |--------|---------|---------|
-| Writeback | isEnabled = null or true | The group will be written back. |
-| No writeback | isEnabled = false | The group won't be written back.| 
+| Writeback | isEnabled = null or true | The group is written back. |
+| No writeback | isEnabled = false | The group is not written back.| 
 | No writeback | IsEnabled = null & onPremisesGroupType = null | If it's a Microsoft 365 group, it's written back to on-premises Active Directory as a distribution group. </br> If it's a Microsoft Entra security group, it's written back to on-premises Active Directory. |
 
 By default, the **Group writeback state** of groups is set to **No writeback**. This means:

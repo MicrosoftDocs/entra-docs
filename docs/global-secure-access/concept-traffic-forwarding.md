@@ -66,7 +66,7 @@ Internet access traffic can be forwarded to the service by connecting through th
 
 ### Licensing
 
-Private Access profile requires the following licenses:
+Internet access profile requires the following licenses:
 
 - Microsoft Entra ID P1 or P2 (prerequisite).
 - Microsoft Entra Internet Access or Microsoft Entra Suite.
