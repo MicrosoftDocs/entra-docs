@@ -14,7 +14,7 @@ ms.reviewer: tilarso
 
 After deployment, many organizations want to know how or if self-service password reset (SSPR) is really being used. The reporting feature that Microsoft Entra ID provides helps you answer questions by using prebuilt reports. If you're appropriately licensed, you can also create custom queries.
 
-:::image type="content" border="true" source="media/how-to-sspr-reporting/sspr-reporting.png" alt-text="Screenshot of audit log for SSPR reporting.":::
+:::image type="content" border="true" source="media/howto-sspr-reporting/sspr-reporting.png" alt-text="Screenshot of audit log for SSPR reporting.":::
 
 The following questions can be answered by the reports that exist in the [Microsoft Entra admin center](https://entra.microsoft.com):
 
