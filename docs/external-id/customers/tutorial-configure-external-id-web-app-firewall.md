@@ -30,7 +30,7 @@ In this tutorial, you learn how to enable the [Azure Web Application Firewall](/
 
 ## Enable WAF
 
-To enable WAF for protection, configure a WAF policy and associate it with Azure Front Door Premium. Microsoft optimizes Azure Front Door premium for security. Azure manages rule sets to protect against common vulnerabilities including cross-site scripting and Java exploits. The WAF provides rule sets that help protect against malicious bot activity and provide layer 7 DDoS protection for your application.
+To enable WAF for protection, configure a WAF policy and associate it with Azure Front Door Premium. Microsoft optimizes Azure Front Door premium for security and manages the rule sets provided by the WAF to protect against common vulnerabilities including cross-site scripting and Java exploits. Additionally, Azure WAF provides rule sets that help protect against malicious bot activity and provide layer 7 DDoS protection for your application.
 
 ## Create WAF policy
 
