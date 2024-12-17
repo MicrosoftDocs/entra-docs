@@ -212,13 +212,29 @@ You can delete the temporary QR code. The QR code is unusable after its expiry.
 
 - This example shows how to delete the standard QR code for a user if they lose their badge, and create a new standard QR code. The user isn't required to change their PIN.
 
+  :::image type="content" border="true" source="media/how-to-authentication-qr-code/delete-standard-qr-code-graph.png" alt-text="Screenshot of how to delete a standard QR code for a user in Microsoft Graph.":::
+
+  :::image type="content" border="true" source="media/how-to-authentication-qr-code/replace-standard-qr-code-graph.png" alt-text="Screenshot of how to replace a deleted standard QR code for a user in Microsoft Graph.":::
+
+  :::image type="content" border="true" source="media/how-to-authentication-qr-code/get-standard-qr-code-graph.png" alt-text="Screenshot of how to get a deleted standard QR code for a user in Microsoft Graph.":::
+
 - This example shows how to create a temporary QR code for a user. The user can use the existing PIN. 
+
+  :::image type="content" border="true" source="media/how-to-authentication-qr-code/add-temporary-qr-code-graph.png" alt-text="Screenshot of how to add a temporary QR code for a user in Microsoft Graph.":::
+
+  :::image type="content" border="true" source="media/how-to-authentication-qr-code/get-temporary-qr-code-graph.png" alt-text="Screenshot of how to get a temporary QR code for a user in Microsoft Graph.":::
 
 - This example shows how to delete a temporary QR code for a user.  
 
+  :::image type="content" border="true" source="media/how-to-authentication-qr-code/delete-temporary-qr-code-graph.png" alt-text="Screenshot of how to delete a temporary QR code for a user in Microsoft Graph.":::
+
 - This example shows how to reset the PIN a QR code authentication method.
 
+  :::image type="content" border="true" source="media/how-to-authentication-qr-code/reset-pin-qr-code-graph.png" alt-text="Screenshot of how to reset the PIN for the QR code for a user in Microsoft Graph.":::
+
 - This example shows how to force a user to change their PIN for a QR code authentication method.
+
+  :::image type="content" border="true" source="media/how-to-authentication-qr-code/force-pin-change-graph.png" alt-text="Screenshot of how to force a user to change the PIN of their QR code authentication method.":::
 
 ## Delete the QR code authentication method for a user
 
@@ -230,19 +246,28 @@ If a QR code authentication method is deleted for a user, they can no longer sig
 
 Navigate to **Users** > **User** > **Usable authentication methods**.
 
+:::image type="content" border="true" source="media/how-to-authentication-qr-code/delete-qr-code-method-admin-center.png" alt-text="Screenshot of how to delete the QR code authentication method for a user in the Microsoft Entra admin center.":::
+
 ### Delete the QR code authentication method for a user in in My Staff
 
 1. To delete QR code auth method itself, click **Delete QR code method**.
 
-1. Confirm the action by clicking on the “Delete” button in the dialog
+   :::image type="content" border="true" source="media/how-to-authentication-qr-code/delete-qr-code-method-my-staff.png" alt-text="Screenshot of how to delete the QR code authentication method in My Staff.":::
+
+1. Click **Delete** to confirm the action.
+
+   :::image type="content" border="true" source="media/how-to-authentication-qr-code/confirm-delete-qr-code-method-my-staff.png" alt-text="Screenshot of how to confirm deletion of the QR code authentication method in My Staff.":::
+
 
 ### Delete the QR code authentication method for a user in Microsoft Graph API
+
+:::image type="content" border="true" source="media/how-to-authentication-qr-code/delete-qr-code-graph.png" alt-text="Screenshot of how to delete a QR code in Microsoft Graph.":::
 
 ## Sign in to Microsoft Teams with a QR code
 
 Microsoft Teams accelerates sign in with a QR code. An Authentication Policy Administrator neeeds to configure Intune or another MDM solution to enable the QR code authentication method for mobile devices. 
 
-### Enable sign-in with QR code in Teams
+### Enable sign-in with a QR code in Teams
 
 | Platform | MDM app config key    | Value | Configuration location |
 |----------|-----------------------|-------|------------------------|
@@ -274,15 +299,15 @@ Users need to download Teams version 1.0.0.2024143204 or later from Google PlayS
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/sign-in-qr-code.png" alt-text="Screenshot of how to sign in to Microsoft with a QR code and PIN.":::
 
-1. Allow camera when prompted > scan the QR code > enter your PIN > you're successfully signed in.
+1. Allow the camera when prompted > scan the QR code > enter your PIN > you're successfully signed in.
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/enter-pin.png" alt-text="Screenshot of how to enter your PIN.":::
 
-## Restrict QR code authentication method to only frontline workers and shared devices 
+## Restrict the QR code authentication method to only frontline workers and shared devices 
 
 This section covers how to create policies that restrict QR code authentication method to only frontline workers and shared devices.
 
-### Restrict QR + PIN to frontline workers  
+### Restrict a QR + PIN to frontline workers  
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **QR code** > **Enable and target**.
@@ -290,7 +315,7 @@ This section covers how to create policies that restrict QR code authentication 
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/add-groups-and-roles.png" alt-text="Screenshot of the Microsoft Entra admin center that shows how to add groups to the QR code settings.":::
 
-### Restrict QR + PIN to shared devices 
+### Restrict a QR + PIN to shared devices 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator). 
 1. Create a custom authentication strength Conditional Access policy and select all authentication combinations except QR + PIN.  
