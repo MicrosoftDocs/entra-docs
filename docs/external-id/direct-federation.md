@@ -17,99 +17,78 @@ ms.collection: M365-identity-device-management
 
 # Federation with SAML/WS-Fed identity providers
 
-[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+[!INCLUDE [applies-to-workforce-external](./includes/applies-to-workforce-external.md)]
 
-> [!NOTE]
-> *Direct federation* in Microsoft Entra External ID is now referred to as *SAML/WS-Fed identity provider (IdP) federation*.
+Your Microsoft Entra tenant can be directly federated with external organizations that use a SAML or WS-Fed identity provider (IdP). Users from the external organization can then use their IdP-managed account to sign in to your tenant, without having to create a separate Microsoft Entra account. For newly invited users, SAML/WS-Fed IdP federation takes precedence as the primary sign-in method. The user is redirected to their IdP when signing up or signing in to your app, and then returned to Microsoft Entra once they successfully sign in.
 
-This article describes how to set up federation with any organization whose identity provider (IdP) supports the SAML 2.0 or WS-Fed protocol. When you set up federation with a partner's IdP, new guest users from that domain can use their own IdP-managed organizational account to sign in to your Microsoft Entra tenant and start collaborating with you. There's no need for the guest user to create a separate Microsoft Entra account.
+You can associate multiple domains with a single federation configuration. The partner's domain can be either Microsoft Entra verified or non-verified.
 
-> [!IMPORTANT]
->
->- You can now set up SAML/WS-Fed IdP federation with Microsoft Entra ID verified domains. The verified domain must be in a separate tenant from where you are setting up federation. Once configured, you can make sure users sign in with the federated IdP instead of Microsoft Entra ID by [configuring the invitation **Redemption order**](cross-tenant-access-overview.md#configurable-redemption) in your cross-tenant access settings for inbound B2B collaboration.
->- We no longer support an allowlist of IdPs for new SAML/WS-Fed IdP federations. When you're setting up a new external federation, refer to [Step 1: Determine if the partner needs to update their DNS text records](#step-1-determine-if-the-partner-needs-to-update-their-dns-text-records).
->- In the SAML request sent by Microsoft Entra ID for external federations, the Issuer URL is a tenanted endpoint. For any new federations, we recommend that all our partners set the audience of the SAML or WS-Fed based IdP to a tenanted endpoint. Refer to the [SAML 2.0](#required-saml-20-attributes-and-claims) and [WS-Fed](#required-ws-fed-attributes-and-claims) required attributes and claims sections. Any existing federations configured with the global endpoint will continue to work, but new federations will stop working if your external IdP is expecting a global issuer URL in the SAML request.
->- We've removed the single domain limitation. You can now associate multiple domains with an individual federation configuration.
->- We've removed the limitation that required the authentication URL domain to match the target domain or be from an allowed IdP. For details, see [Step 1: Determine if the partner needs to update their DNS text records](#step-1-determine-if-the-partner-needs-to-update-their-dns-text-records).
+Setting up direct federation requires configuration both in your tenant and in the external organization's IdP. In some cases, the partner will need to update their DNS text records. They'll also need to update their IdP with the required claims and relying party trusts.
 
-## When is a guest user authenticated with SAML/WS-Fed IdP federation?
+## When is a user authenticated with SAML/WS-Fed IdP federation?
 
-After you set up federation with an organization's SAML/WS-Fed IdP:
+After setting up federation, the sign-in experience for the external user depends on your sign-in settings and whether the partner's domain is Microsoft Entra verified.
 
-- If the domain you're federating with isn't a Microsoft Entra ID verified domain, any new guest users you invite will be authenticated using that SAML/WS-Fed IdP.
+### Federation with non-verified vs. verified Microsoft Entra domains
 
-- If the domain is Microsoft Entra ID verified, you also need to [configure the **Redemption order** settings (preview)](cross-tenant-access-settings-b2b-collaboration.yml) in your cross-tenant access settings for inbound B2B collaboration to prioritize redemption with the federated IdP. Then any new guest users you invited will be authenticated using that SAML/WS-Fed IdP.
+You can set up SAML/WS-Fed IdP federation with Microsoft Entra ID verified domains in other tenants, including verified domains where the tenant has undergone an [admin takeover](~/identity/users/domains-admin-takeover.md). 
 
-It’s important to note that setting up federation doesn’t change the authentication method for guest users who have already redeemed an invitation from you. Here are some examples:
+- If the parter domain you're federating with is a *verified* Microsoft Entra domain, Microsoft Entra ID is the primary identity provider used during invitation redemption. In the case of B2B collaboration in a workforce tenant, you can [change the redemption order](cross-tenant-access-overview.md#configurable-redemption) to make the federated IdP the primary method. Currently, redemption order settings aren't supported in external tenants or across clouds.
 
-- Guest users have already redeemed invitations from you, and then later you set up federation with the organization's SAML/WS-Fed IdP. These guest users continue to use the same authentication method they used before you set up federation.
-- You set up federation with an organization's SAML/WS-Fed IdP and invite guest users, and then the partner organization later moves to Microsoft Entra ID. The guest users who have already redeemed invitations continue to use the federated SAML/WS-Fed IdP, as long as the federation policy in your tenant exists.
-- You delete federation with an organization's SAML/WS-Fed IdP. Any guest users currently using the SAML/WS-Fed IdP are unable to sign in.
+- If the partner's domain is *not a verified* Microsoft Entra domain, users from the external organization are authenticated using the federated SAML/WS-Fed IdP.
 
-In any of these scenarios, you can update a guest user’s authentication method by [resetting their redemption status](reset-redemption-status.md).
+### Federation with unmanaged (email-verified) tenants
 
-SAML/WS-Fed IdP federation is tied to domain namespaces, such as contoso.com and fabrikam.com. When establishing federation with AD FS or a third-party IdP, organizations associate one or more domain namespaces to these IdPs.
+You can set up SAML/WS-Fed IdP federation with domains that aren't DNS-verified in Microsoft Entra ID, including unmanaged (email-verified or "viral") Microsoft Entra tenants. Such tenants are created when a user redeems a B2B invitation or performs self-service sign-up for Microsoft Entra ID using a domain that doesn’t currently exist.
 
-## End-user experience
+### How federation affects current external users
 
-With SAML/WS-Fed IdP federation, guest users sign into your Microsoft Entra tenant using their own organizational account. When they're accessing shared resources and are prompted for sign-in, users are redirected to their IdP. After successful sign-in, users are returned to Microsoft Entra ID to access resources. If the Microsoft Entra session expires or becomes invalid and the federated IdP has SSO enabled, the user experiences SSO. If the federated user's session is valid, the user isn't prompted to sign in again. Otherwise, the user is redirected to their IdP for sign-in.
+Setting up federation doesn't change the authentication method for users who have already redeemed an invitation. For example:
 
-## Sign-in endpoints
+- Users who redeemed invitations before federation setup will continue using their original authentication method. For example, users who redeemed invitations with one-time passcode authentication before you set up federation will continue using one-time passcodes.
+- If the external organization moves to Microsoft Entra ID after federation setup, users who redeemed invitations will continue using the federated SAML/WS-Fed IdP.
+- If you set up federation with an external organization that subsequently moves to Microsoft Entra ID, users will continue using the federated IdP.
+- Deleting federation will prevent users currently using the SAML/WS-Fed IdP from signing in.
 
-SAML/WS-Fed IdP federation guest users can now sign in to your multitenant or Microsoft first-party apps by using a [common endpoint](redemption-experience.md#redemption-process-and-sign-in-through-a-common-endpoint) (in other words, a general app URL that doesn't include your tenant context). During the sign-in process, the guest user chooses **Sign-in options**, and then selects **Sign in to an organization**. The user then types the name of your organization and continues signing in using their own credentials.
+You don't need to send new invitations to existing users because they'll continue using their current sign-in method. But in the case of B2B collaboration in a workforce tenant, you can [reset a user's redemption status](reset-redemption-status.md) so they repeat the redemption steps and switch to federation the next time they access your app. Currently, redemption order settings aren't supported in external tenants or across clouds.
 
-SAML/WS-Fed IdP federation guest users can also use application endpoints that include your tenant information, for example:
+### Sign-in endpoints in workforce tenants
+
+When federation is set up in your workforce tenant, users from the federated organization can sign in to your multitenant or Microsoft first-party apps by using a [common endpoint](redemption-experience.md#redemption-process-and-sign-in-through-a-common-endpoint) (in other words, a general app URL that doesn't include your tenant context). During the sign-in process, the user chooses **Sign-in options**, and then selects **Sign in to an organization**. They type the name of your organization and continue signing in using their own credentials.
+
+SAML/WS-Fed IdP federation users can also use application endpoints that include your tenant information, for example:
 
 - `https://myapps.microsoft.com/?tenantid=<your tenant ID>`
 - `https://myapps.microsoft.com/<your verified domain>.onmicrosoft.com`
 - `https://portal.azure.com/<your tenant ID>`
 
-You can also give guest users a direct link to an application or resource by including your tenant information, for example `https://myapps.microsoft.com/signin/X/<application ID?tenantId=<your tenant ID>`.
+You can also give users a direct link to an application or resource by including your tenant information, for example `https://myapps.microsoft.com/signin/X/<application ID?tenantId=<your tenant ID>`.
 
-## Frequently asked questions
+## Setting up federation
 
-**Can I set up SAML/WS-Fed IdP federation with Microsoft Entra ID verified domains?**
+### Partner IdP requirements for federation
 
-Yes, you can now set up SAML/WS-Fed IdP federation with other Microsoft Entra ID verified domains. This includes verified domains where the tenant has undergone an [admin takeover](~/identity/users/domains-admin-takeover.md). If the domain you're federating with is Microsoft Entra ID verified, you also need to [configure the **Redemption order** settings (preview)](cross-tenant-access-settings-b2b-collaboration.yml) in your cross-tenant access settings for inbound B2B collaboration to make sure that when invited users sign in, they redeem their invitations using the federated IdP instead of Microsoft Entra ID.
+When setting up SAML/WS-Fed IdP federations previously, the authentication URL domain had to match the target domain or be from an allowed IdP. However, we've removed these requirements and we no longer support an allowlist of IdPs. For new SAML/WS-Fed IdP federations, refer to [Step 1: Determine if the partner needs to update their DNS text records](#step-1-determine-if-the-partner-needs-to-update-their-dns-text-records).
 
+The Issuer URL in the SAML request sent by Microsoft Entra ID for external federations is now a tenanted endpoint, whereas previously it was a global endpoint. Existing federations with the global endpoint will continue to work. But for new federations, set the audience of the external SAML or WS-Fed IdP to a tenanted endpoint. See the [SAML 2.0 section](#required-saml-20-attributes-and-claims) and the [WS-Fed section](#required-ws-fed-attributes-and-claims) for required attributes and claims.
 
-Currently, redemption order settings aren't supported across clouds. If the domain you're federating with is Microsoft Entra ID verified in a different Microsoft cloud, Microsoft Entra redemption always takes precedence.
-
-**Can I set up SAML/WS-Fed IdP federation with a domain for which an unmanaged (email-verified) tenant exists?**
- 
-Yes, you can set up SAML/WS-Fed IdP federation with domains that aren't DNS-verified in Microsoft Entra ID, including unmanaged (email-verified or "viral") Microsoft Entra tenants. Such tenants are created when a user redeems a B2B invitation or performs self-service sign-up for Microsoft Entra ID using a domain that doesn’t currently exist.
-
-**Can I set up federation with multiple domains from the same tenant?**
-
-Yes, we now support SAML/WS-Fed IdP federation with multiple domains from the same tenant.
-
-**Do I need to renew the signing certificate when it expires?**
+### Signing certificate expiration
 
 If you specify the metadata URL in the IdP settings, Microsoft Entra ID automatically renews the signing certificate when it expires. However, if the certificate is rotated for any reason before the expiration time, or if you don't provide a metadata URL, Microsoft Entra ID is unable to renew it. In this case, you need to update the signing certificate manually.
 
-**If SAML/WS-Fed IdP federation and email one-time passcode authentication are both enabled, which method takes precedence?**
+### Session expiration
 
-When SAML/WS-Fed IdP federation is established with a partner organization, it takes precedence over email one-time passcode authentication for new guest users from that organization. If a guest user redeemed an invitation using one-time passcode authentication before you set up SAML/WS-Fed IdP federation, they continue to use one-time passcode authentication.
+If the Microsoft Entra session expires or becomes invalid, and the federated IdP has SSO enabled, the user experiences SSO. If the federated user's session is valid, the user isn't prompted to sign in again. Otherwise, the user is redirected to their IdP for sign-in.
 
-**Does SAML/WS-Fed IdP federation address sign-in issues due to a partially synced tenancy?**
+### Other considerations
 
-No, the [email one-time passcode](one-time-passcode.md) feature should be used in this scenario. A “partially synced tenancy” refers to a partner Microsoft Entra tenant where on-premises user identities aren't fully synced to the cloud. A guest whose identity doesn’t yet exist in the cloud but who tries to redeem your B2B invitation isn't able to sign in. The one-time passcode feature would allow this guest to sign in. The SAML/WS-Fed IdP federation feature addresses scenarios where the guest has their own IdP-managed organizational account, but the organization has no Microsoft Entra presence at all.
+The following are other considerations when federating with a SAML/WS-Fed identity provider.
 
-**Once SAML/WS-Fed IdP federation is configured with an organization, does each guest need to be sent and redeem an individual invitation?**
+- Federation doesn't resolve sign-in issues caused by a partially synced tenancy, where a partner’s on-premises user identities aren't fully synced to Microsoft Entra in the cloud. These users can’t sign in with a B2B invitation, so they need to use the [email one-time passcode](one-time-passcode.md) feature instead. The SAML/WS-Fed IdP federation feature is for partners with their own IdP-managed organizational accounts but no Microsoft Entra presence.
 
-When inviting new guests, you still need to send invitations or provide direct links so the guests can complete the redemption steps. For existing guests, you don't necessarily need to send new invitations. Existing guests will continue using the authentication method they used before federation was set up. If you want these guests to start using federation for authentication, you can [reset their redemption status](reset-redemption-status.md). Then the next time they access your app or use the link in your invitation, they'll repeat the redemption process and start using federation as their authentication method.
+- Federation doesn't replace the need for B2B guest accounts in your directory. With B2B collaboration, a guest account is created for the user in your workforce tenant directory regardless of the authentication or federation method used. This user object allows you to grant access to applications, assign roles, and define membership in security groups.  
 
-**Is there a way to send a signed request to the SAML identity provider?**
-
-Currently, the Microsoft Entra SAML/WS-Fed federation feature doesn't support sending a signed authentication token to the SAML identity provider.
-
-**What permissions are required to configure a SAML/Ws-Fed identity provider?**
-
-You need to be at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator) to configure a SAML/Ws-Fed identity provider.
-
-**Does federation eliminate the need to create a guest account in my directory for the B2B collaboration user?**
-
-No. A guest account is created for a B2B collaboration user in your directory regardless of the authentication or federation method used. This user object allows you to grant access to applications, assign roles, and define membership in security groups.  
+- Currently, the Microsoft Entra SAML/WS-Fed federation feature doesn't support sending a signed authentication token to the SAML identity provider.  
 
 ## Step 1: Determine if the partner needs to update their DNS text records
 

@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: how-to
-ms.date: 01/19/2024
+ms.date: 11/19/2024
 ms.author: mimart
 ms.custom: it-pro
 
@@ -57,15 +57,17 @@ You can also invite a new guest user to manage your tenant. To invite an admin, 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-role-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Invite external user**.
-1. On the **New user** page, under **Select template**, select **Invite user**.
-1. Under **Identity**, enter information for the admin:
+1. Select **New user** > **Invite external user (Preview)**.
+1. On the **Basics** tab, enter information for the user:
 
-   - **Name**. *Required*. The first and last name of the new user. For example, *Mary Parker*.
-   - **Email address**. *Required*. The email address of the user you would like to invite.
-   - **First name**. The first name of the new user. For example, *Mary*.
-   - **Last name**. The last name of the new user. For example, *Parker*.
-   - **Personal message**: You add a personal message that will be included in the invite email.
+   - **Email**. *Required*. The email address of the user you would like to invite.
+   - **Display name**. The first and last name of the new user. For example, *Mary Parker*.
+   - Under **Invitation message**:
+      - Select the **Send invite message** checkbox if you want to send the invitation email to the user. Otherwise, clear the checkbox.
+      - In **Message**, add a personal message that will be included in the invite email.
+      - To send a copy of the invitation email to someone, add their email address in the **Cc recipient** text box.
+      - In **Invite redirect URL**, 
+   - 
    - **Groups**. *Optional*. You can add the user to one or more existing groups. You can also add the user to groups at a later time.
    - **Roles**: To add administrative permissions for the user, add them to a Microsoft Entra role. You can assign the user to one or more of the [administrator roles](/entra/identity/role-based-access-control/permissions-reference) in Microsoft Entra ID.
    - **Settings**: Use the yes or no toggle to set **Block sign in**, and the select the admin's primary location in the **Usage location** list.
