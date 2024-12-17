@@ -107,7 +107,7 @@ This new feature adds Apple to our list of preconfigured social identity provide
 **Service category:** Authentications (Logins)    
 **Product capability:** Identity Lifecycle Management    
 
-This feature allows users to customize their Microsoft default sign in authentication endpoint with their own brand names. Custom URL Domains help users to change Ext ID endpoint <tenant-name>.ciamlogin.com to login.contoso.com.
+This feature allows users to customize their Microsoft default sign in authentication endpoint with their own brand names. Custom URL Domains help users to change Ext ID endpoint < tenant-name >.ciamlogin.com to login.contoso.com.
 
 ---
 
