@@ -92,7 +92,7 @@ AzureDiagnostics
 
 Review the WAF logs to determine if your WAF's rules caused any false positives. Then use exclusions to mitigate those WAF false positives. [Configure web application firewall exclusion lists](/azure/web-application-firewall/afds/waf-front-door-exclusion-configure). Configure [Web Application Firewall with Azure Front Door exclusion lists](/azure/web-application-firewall/afds/waf-front-door-exclusion).
 
-After you set up logging and your WAF receives traffic, assess the effectiveness of your bot manager rules in handling bot traffic. The following query shows the actions that the example bot manager rule set took categorized by bot type. While in **Detection mode**, the WAF only logs bot traffic actions. After you switch to **Prevention mode**, the WAF begins actively blocking unwanted bot traffic.
+After you set up logging and your WAF receives traffic, you can assess the effectiveness of your bot manager rules in handling bot traffic. The following query shows the actions that the example bot manager rule set took categorized by bot type. While in **Detection mode**, the WAF only logs bot traffic actions. After you switch to **Prevention mode**, the WAF begins actively blocking unwanted bot traffic.
 
 ```kusto
 AzureDiagnostics
