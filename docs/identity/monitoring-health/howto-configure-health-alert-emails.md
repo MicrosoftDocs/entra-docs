@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 12/11/2024
+ms.date: 12/17/2024
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -16,7 +16,7 @@ ms.reviewer: sarbar
 
 # How to configure email notifications for Microsoft Entra Health monitoring alerts (preview)
 
-Microsoft Entra Health provides tenant-level metrics and health signals for several key identity scenarios. This data can be reviewed regularly to gain a better understanding of your tenant's health. These signals are fed into an anomaly detection service, which triggers alerts when significant changes are detected. You can configure email notifications for when an alert is triggered.
+Microsoft Entra Health provides tenant-level metrics and health signals for several key identity scenarios. These signals are fed into an anomaly detection service, which triggers alerts when significant changes are detected. You can configure email notifications for when an alert is triggered.
 
 This article describes how to configure email notifications for Microsoft Entra Health monitoring alerts.
 
@@ -36,12 +36,14 @@ There are different roles, permissions, and license requirements to view health 
 - The `HealthMonitoringAlert.ReadWrite.All` permission is required to *view and modify the alerts using the Microsoft Graph API*.
 - For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs).
 
+### Known limitations
+
+- Newly onboarded tenants might not have enough data to generate alerts for about 30 days.
+- Currently, alerts are only available with the Microsoft Graph API.
+
 ## Determine email notification recipients
 
-
-
-
-With the Microsoft Graph health monitoring alerts API, you can configure email notifications. You can run the API calls on a regular cadence (for example, daily or hourly) or you can configure email notifications for when an alert is triggered. We recommend daily monitoring of the scenario monitoring signals and alerts.
+With the Microsoft Graph health monitoring alerts API, you can run the API calls on a regular cadence (for example, daily or hourly) and configure email notifications for when an alert is triggered. We recommend daily monitoring of the scenario monitoring signals and alerts.
 
 Email notifications are sent to the [Microsoft Entra group](../../fundamentals/concept-learn-about-groups.md) of your choice. We recommend sending alerts to users with the appropriate access to investigate and take action on the alerts. Not every role can take the same action, so consider including a group with the following roles: 
 
@@ -50,9 +52,9 @@ Email notifications are sent to the [Microsoft Entra group](../../fundamentals
 - [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator)
 - [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator)
 
-To configure alert notifications, you need the ID of the Microsoft Entra group you want to receive the alerts AND the scenario alert ID. You can configure different groups to receive alerts for different alert scenarios. 
-
 ## Configure the email notifications
+
+To configure alert notifications, you need the ID of the Microsoft Entra group you want to receive the alerts AND the scenario alert ID. You can configure different groups to receive alerts for different alert scenarios. 
 
 ### Locate the group's Object ID
 

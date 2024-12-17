@@ -1,12 +1,12 @@
 ---
-title: How to use Health monitoring alerts (preview)
-description: Learn how to use the Microsoft Entra health monitoring alerts to monitor and improve the health of your tenant.
+title: How to investigate Health monitoring alerts (preview)
+description: Learn how to investigate Microsoft Entra health monitoring alerts to monitor and improve the health of your tenant.
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 12/11/2024
+ms.date: 12/17/2024
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -17,9 +17,7 @@ ms.reviewer: sarbar
 
 Microsoft Entra Health monitoring provides the ability to monitor the health of your Microsoft Entra tenant through a set of health metrics and intelligent alerts. Health metrics are fed into our anomaly detection service, which uses machine learning to understand the patterns for your tenant. When the anomaly detection service identifies a significant change in one of the tenant-level patterns, it triggers an alert.
 
-The signals and alerts provided by Microsoft Entra Health provide you with the starting point for investigating potential issues in your tenant. Because there's a wide range of scenarios and even more data points to consider, it's important to understand how to investigate these alerts effectively.
-
-This article provides guidance on how to configure email notifications for alerts.
+The signals and alerts provided by Microsoft Entra Health provide you with the starting point for investigating potential issues in your tenant. Because there's a wide range of scenarios and even more data points to consider, it's important to understand how to investigate these alerts effectively. This article provides guidance on how to investigate an alert, but isn't specific to any alert.
 
 > [!IMPORTANT]
 > Microsoft Entra Health scenario monitoring and alerts are currently in PREVIEW.
@@ -42,9 +40,11 @@ There are different roles, permissions, and license requirements to view health 
 - Newly onboarded tenants might not have enough data to generate alerts for about 30 days.
 - Currently, alerts are only available with the Microsoft Graph API.
 
-## Access Microsoft Entra Health
+## Access Microsoft Entra Health metrics and signals
 
-You can view the Microsoft Entra Health monitoring signals from the Microsoft Entra admin center. You can also view these data streams, and the public preview of health monitoring alerts, using [Microsoft Graph APIs](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true).
+You can view the Microsoft Entra Health monitoring signals from the Microsoft Entra admin center. You can also view the properties of the signals and the public preview of health monitoring alerts, using [Microsoft Graph APIs](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true).
+
+### [Admin center](#tab/admin-center)
 
 1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 
@@ -60,6 +60,41 @@ You can view the Microsoft Entra Health monitoring signals from the Microsoft En
     - We recommend reviewing these signals on a regular schedule so that you can recognize your tenant's trends and patterns.
 
     ![Screenshot of the sign-ins requiring MFA scenario.](media/howto-use-health-scenario-alerts/scenario-monitoring-MFA.png)
+
+### [Microsoft Graph API](#tab/microsoft-graph-api)
+
+With the Microsoft Graph APIs, you can view the metrics that make up the health signals and alerts and review the impact summary for a health alert. The `serviceActivity` resource gets the metrics that feed into the Microsoft Entra Health monitoring signals, which are visualized in the Microsoft Entra admin center. For more information, see [serviceActivity resource type](/graph/api/resources/serviceactivity?view=graph-rest-beta&preserve-view=true).
+
+Running these queries provides the number of times that service activity occurred during a specific time frame. For example, to see the number of successful multifactor authentication (MFA) sign-ins, you'd run the following query:
+
+```http
+GET https://graph.microsoft.com/beta/reports/serviceActivity/getMetricsForMfaSignInSuccess(inclusiveIntervalStartDateTime=2023-01-01T00:00:00Z,exclusiveIntervalEndDateTime=2023-01-01T00:20:00Z,aggregationIntervalInMinutes=10)
+```
+
+The response shows how many successful sign-ins occurred during the specific time frame, aggregated in ten minute intervals.
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "@odata.context": "https://graph.microsoft.com/beta/networkAccess/reports/$metadata#Collection(serviceActivityValueMetric)",
+  "value": [
+    {
+      "intervalStartDateTime": "2023-01-10T00:00:00Z",
+      "value": 4
+    },
+    {
+      "intervalStartDateTime": "2023-01-10T00:10:00Z",
+      "value": 5
+    },
+    {
+      "intervalStartDateTime": "2023-01-10T00:20:00Z",
+      "value": 4
+    }
+  ]
+}
+```
 
 ## Investigate the alert and signals
 

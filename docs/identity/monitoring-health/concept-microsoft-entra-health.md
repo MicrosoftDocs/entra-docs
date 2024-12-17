@@ -6,19 +6,17 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 12/10/2024
+ms.date: 12/17/2024
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
 ---
 
-# What is Microsoft Entra health monitoring?
+# What is Microsoft Entra Health monitoring?
 
-Microsoft Entra Health provides you with observability of your Microsoft Entra tenant through continuous low-latency health monitoring and look-back reporting on Service Level Agreements (SLA). The low-latency health monitoring solution includes a set of health metric data streams, known as signals, with built-in alerts designed to help IT operations teams maintain high levels of uptime and service on common Microsoft Entra scenarios. The SLA Attainment is a monthly look-back solution that shows the core authentication availability of Microsoft Entra ID each month.
+Microsoft Entra Health provides you with observability of your Microsoft Entra tenant through continuous low-latency health monitoring and look-back reporting on Service Level Agreements (SLA). The low-latency health monitoring solution includes a set of health metric data streams, known as signals, with built-in alerts designed to help IT operations teams maintain high levels of uptime and service for common Microsoft Entra scenarios. The SLA Attainment is a monthly look-back solution that shows the core authentication availability of Microsoft Entra ID each month.
 
-Paired together, these metrics and signals provide a comprehensive view of the health of your Microsoft Entra tenant. Regularly monitoring the information provided in Microsoft Entra Health can help you identify trends, potential issues, and areas for improvement in your tenant's health.
-
-In addition to the signals for these tenant health scenarios, email notifications can also be configured to alert you when the service identifies an anomaly in the pattern for your tenant. Regular monitoring of these signals can help you more effectively investigate an issue when an alert is received because you'll have a comprehensive view of the health of your tenant.
+Paired together, these metrics and signals provide a comprehensive view of the health of your Microsoft Entra tenant. Regularly monitoring the information provided in Microsoft Entra Health can help you identify trends, potential issues, and areas for improvement in your tenant's health. In addition to the signals for these tenant health scenarios, email notifications can also be configured to alert you when the service identifies an anomaly in the pattern for your tenant. This article provide an overview of the Microsoft Entra Health monitoring features.
 
 > [!IMPORTANT]
 > Microsoft Entra Health features are currently in PREVIEW.
@@ -35,7 +33,7 @@ The page opens to the SLA Attainment page.
 
 ![Screenshot of the Microsoft Entra Health landing page.](media/concept-microsoft-entra-health/identity-health-landing-page-attainment.png)
 
-## How Microsoft Entra health monitoring (preview) works
+## How Microsoft Entra Health monitoring (preview) works
 
 Scenario Monitoring in Microsoft Entra Health is built on two key components: signals and alerts. Here's a high-level look at how they both work together:
 
@@ -68,7 +66,7 @@ Each scenario detail page provides trends and totals for that scenario for the l
 
 ### Alerts
 
-The anomaly detection service looks at the data and develops dynamic alerting thresholds based on the pattern specific to your tenant. When the service identifies a significant change to that pattern at the tenant level, it triggers an alert. By regularly monitoring these scenarios and reviewing the alerts when they come in, you can more effectively monitor and improve the health of your tenant.
+The anomaly detection service looks at the data and develops dynamic alerting thresholds based on a pattern specific to your tenant. When the service identifies a significant change to that pattern at the tenant level, it triggers an alert. By regularly monitoring these scenarios and reviewing the alerts when they come in, you can more effectively monitor and improve the health of your tenant.
 
 Alerts are specific to your tenant and to the scenario being monitored. Machine learning requires at least four weeks of data to establish a pattern for your tenant. The more data we collect on the signal, the more accurate the anomaly detection service becomes. The service looks back 25-30 minutes on the timeline and triggers an alert if the signal deviates from the pattern.
 
