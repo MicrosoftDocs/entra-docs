@@ -29,7 +29,7 @@ This article delves into the specific security challenges that Gen AI poses and 
 
 ## Discover overprivileged identities
 
-Ensure that users have the appropriate permissions to comply with the [principal of least privilege](../identity-platform/secure-least-privileged-access.md). Based on our telemetry, over 90% of identities use less than 5% of permissions granted. Over 50% of those permissions are high risk. Compromised accounts can cause catastrophic damage.
+Ensure that users have the appropriate permissions to comply with the [principle of least privilege](../identity-platform/secure-least-privileged-access.md). Based on our telemetry, over 90% of identities use less than 5% of permissions granted. Over 50% of those permissions are high risk. Compromised accounts can cause catastrophic damage.
 
 Multicloud environment management is difficult as Identity and Access Management (IAM) and security teams often need to collaborate cross-functionally. Multicloud environments can limit comprehensive view into identities, permissions, and resources. This limited view increases the attack surface on identities that have overly privileged roles and over permissioned accounts. Risk of compromised unused accounts with high permissions increases as organizations adopt multicloud.
 
