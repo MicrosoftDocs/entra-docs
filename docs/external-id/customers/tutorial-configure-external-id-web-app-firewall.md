@@ -113,6 +113,6 @@ To revert to **Detection mode**, select **Switch to Detection mode** from the **
 
 ## Next steps
 
-- [Best practices for Azure Web Application Firewall in Azure Front Door](/azure//web-application-firewall/afds/waf-front-door-best-practices.md)
+- [Best practices for Azure Web Application Firewall in Azure Front Door](/azure//web-application-firewall/afds/waf-front-door-best-practices)
 - [Manage Web Application Firewall policies](/azure/firewall-manager/manage-web-application-firewall-policies)
 - [Tune Azure Web Application Firewall for Azure Front Door](/azure/web-application-firewall/afds/waf-front-door-tuning)
