@@ -214,7 +214,7 @@ You can delete the temporary QR code. The QR code is unusable after its expiry.
 
   :::image type="content" border="true" source="media/how-to-authentication-qr-code/delete-standard-qr-code-graph.png" alt-text="Screenshot of how to delete a standard QR code for a user in Microsoft Graph.":::
 
-  :::image type="content" border="true" source="media/how-to-authentication-qr-code/replace-standard-qr-code-graph.png" alt-text="Screenshot of how to replace a deleted standard QR code for a user in Microsoft Graph.":::
+  :::image type="content" border="true" source="media/how-to-authentication-qr-code/replace-qr-code-graph.png" alt-text="Screenshot of how to replace a deleted standard QR code for a user in Microsoft Graph.":::
 
   :::image type="content" border="true" source="media/how-to-authentication-qr-code/get-standard-qr-code-graph.png" alt-text="Screenshot of how to get a deleted standard QR code for a user in Microsoft Graph.":::
 
