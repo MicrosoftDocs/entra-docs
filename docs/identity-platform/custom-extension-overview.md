@@ -60,20 +60,28 @@ To ensure the communications between the custom authentication extension and you
     - Workforce: `https://login.microsoftonline.com/{tenantId}/v2.0`.
     - Customer: `https://{domainName}.ciamlogin.com/{tenantId}/v2.0`.
 
-## Custom claims provider
+## Custom authentication event types
 
-A custom claims provider is a type of custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider maps claims from external systems into tokens and can be assigned to one or many applications in your directory.
+Within a sign-up and sign-in user flow, there are built-in authentication events. You can also add custom authentication extensions at specific points within the authentication flow. A custom authentication extension is essentially an event listener that, when activated, makes an HTTP call to a REST API endpoint where you define a workflow action. This section lists the custom authentication events available in Microsoft Entra ID.
+
+### Token issuance start event
+
+The token issuance start event, **OnTokenIssuanceStart** is triggered when a token is about to be issued to an application. It is an event type set up within a custom claims provider. The custom claims provider is a custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider maps claims from external systems into tokens and can be assigned to one or many applications in your directory.
 
 Learn more about [custom claims providers](custom-claims-provider-overview.md).
 
-## Attribute collection start and submit events
+## Attribute collection start 
 
-Attribute collection start and submit events can be used with custom authentication extensions to add logic before and after attributes are collected from a user. For example, you can add a workflow to validate the attributes a user enters during sign-up.  The **OnAttributeCollectionStart** event occurs at the beginning of the attribute collection step, before the attribute collection page renders. It lets you add actions such as prefilling values and displaying a blocking error. The **OnAttributeCollectionSubmit** event triggers after the user enters and submits attributes, allowing you to add actions like validating entries or modifying attributes.
+Attribute collection start events can be used with custom authentication extensions to add logic before attributes are collected from a user. The **OnAttributeCollectionStart** event occurs at the beginning of the attribute collection step, before the attribute collection page renders. It lets you add actions such as prefilling values and displaying a blocking error. 
+
+### Attribute collection submit
+
+Attribute collection submit events can be used with custom authentication extensions to add logic after attributes are collected from a user. The **OnAttributeCollectionSubmit** event triggers after the user enters and submits attributes, allowing you to add actions like validating entries or modifying attributes.
 
 > [!NOTE]
 > Attribute collection start and submit events are currently available only for user flows in Microsoft Entra External ID in external tenants. For details, see [Add your own business logic](~/external-id/customers/concept-custom-extensions.md).
 
-## One time passcode send event
+### One time passcode send event
  
 The **OnOtpSend** event is triggered when a one time passcode email is activated. It allows you to call a REST API to use your own email provider. This event can be used to send customized emails to users who sign up, reset their password, sign-in with email and one-time passcode, or email multifactor authentication (MFA).
  
