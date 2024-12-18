@@ -14,7 +14,7 @@ ms.reviewer: calui
 ---
 # Passkey (FIDO2) authentication matrix with Microsoft Entra ID
 
-Microsoft Entra ID allows passkeys (FIDO2) to be used for multi-factor passwordless authentication. This article covers which native applications, web browsers, and operating systems support sign-in using passkey with Microsoft Entra ID.
+Microsoft Entra ID allows passkeys (FIDO2) to be used for multifactor passwordless authentication. This article covers which native applications, web browsers, and operating systems support sign-in using passkey with Microsoft Entra ID.
 
 For enabling FIDO2 security keys to unlock a Windows device, see [Enable FIDO2 security key sign-in to Windows 10 and 11 devices with Microsoft Entra ID](#/authentication/howto-authentication-passwordless-security-key-windows).
 
@@ -32,15 +32,15 @@ For enabling FIDO2 security keys to unlock a Windows device, see [Enable FIDO2 s
 | **iOS**  | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705;<sup>2</sup> |
 | **Android**  | &#x2705; | &#x2705;<sup>1</sup> | &#10060; | N/A | &#x2705;<sup>2</sup> |
 
-<sup>1</sup>Sign-in with passkey in Microsoft Authenticator is not supported in this scenario yet.
+<sup>1</sup>Sign-in with passkey in Microsoft Authenticator isn't supported in this scenario yet.
 
-<sup>2</sup>Requires an authentication broker to be installed on the user's device. Some Microsoft apps support passkey authentication without an authentication broker. See [Native application support](#native-application-support) for more.
+<sup>2</sup>Requires an authentication broker to be installed on the user's device. Some Microsoft apps support passkey authentication without an authentication broker. For more information, see [Native application support](#native-application-support).
 
 ## Considerations for each platform
 
 ### Windows
 - The best passkey sign-in experience is on Windows 11 version 22H2 or later.
-- Sign-in with security key requires one of the following:
+- Sign-in with security key requires one of the following items:
   - Windows 10 version 1903 or later
   - Chromium-based Microsoft Edge
   - Chrome 76 or later
@@ -49,8 +49,8 @@ For enabling FIDO2 security keys to unlock a Windows device, see [Enable FIDO2 s
   - As a workaround, most vendors can put certificates on the FIDO2 security keys. Certificate-based authentication (CBA) works in all browsers. If you can enable CBA for those admin accounts, you can require CBA instead of FIDO2 in the interim. 
 
 ### macOS
-- Sign-in with passkey requires macOS Catalina 11.1 or later with Safari 14 or later because Microsoft Entra ID requires user verification for multi-factor authentication.
-- NFC and BLE security keys aren't supported on macOS by Apple.
+- Sign-in with passkey requires macOS Catalina 11.1 or later with Safari 14 or later because Microsoft Entra ID requires user verification for multifactor authentication.
+- Near-field communication (NFC) and Bluetooth Low Energy (BLE) security keys aren't supported on macOS by Apple.
 - New security key registration doesn't work on these macOS browsers because they don't prompt to set up biometrics or PIN.
 - See [Sign in when more than three passkeys are registered](#sign-in-when-more-than-three-passkeys-are-registered) for Safari on macOS.
 
@@ -59,19 +59,19 @@ For enabling FIDO2 security keys to unlock a Windows device, see [Enable FIDO2 s
 - Security key registration isn't supported on ChromeOS or Chrome browser.
 
 ### Linux
-- Sign-in with passkey in Microsoft Authenticator is not supported in Firefox on Linux.
+- Sign-in with passkey in Microsoft Authenticator isn't supported in Firefox on Linux.
 
 ### iOS
-- Sign-in with passkey requires iOS 14.3 or later because Microsoft Entra ID requires user verification for multi-factor authentication.
+- Sign-in with passkey requires iOS 14.3 or later because Microsoft Entra ID requires user verification for multifactor authentication.
 - BLE security keys aren't supported on iOS by Apple.
 - New security key registration doesn't work on iOS browsers because they don't prompt to set up biometrics or PIN.
 - See [Sign in when more than three passkeys are registered](#sign-in-when-more-than-three-passkeys-are-registered).
 
 ### Android
-- Sign-in with passkey requires Google Play Services 21 or later because Microsoft Entra ID requires user verification for multi-factor authentication.
+- Sign-in with passkey requires Google Play Services 21 or later because Microsoft Entra ID requires user verification for multifactor authentication.
 - BLE security keys aren't supported on Android by Google.
 - Security key registration with Microsoft Entra ID isn't yet supported on Android.
-- Sign-in with passkey is not supported in Firefox on Android.
+- Sign-in with passkey isn't supported in Firefox on Android.
 
 ## Native application support
 
