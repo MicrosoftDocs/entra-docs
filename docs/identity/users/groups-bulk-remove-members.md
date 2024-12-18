@@ -43,7 +43,7 @@ The rows in a downloaded CSV template are:
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
-1. Select **Microsoft Entra ID**.
+1. Select **Identity**.
 1. Select **Groups** > **All groups**.
 1. Open the group from which you're removing members and then select **Members**.
 1. On the **Members** page, select **Remove members**.

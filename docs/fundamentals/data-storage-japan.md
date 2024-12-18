@@ -8,7 +8,7 @@ ms.author: justinha
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 08/08/2022
+ms.date: 11/25/2024
 ms.custom: it-pro, references_regions
 ms.collection: M365-identity-device-management
 ---

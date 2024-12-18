@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: conceptual
-ms.date: 07/27/2023
+ms.date: 11/27/2024
 ms.service: global-secure-access
 ms.subservice: entra-private-access 
 ms.reviewer: katabish

@@ -8,7 +8,7 @@ manager: amycolannino
 editor: ''
 ms.service: entra-id-governance
 ms.topic: conceptual
-ms.date: 07/28/2023
+ms.date: 12/10/2024
 ms.author: billmath
 ---
 
@@ -62,7 +62,7 @@ This scope ensures that only users explicitly assigned to your sync configuratio
 
 ### PIM for roles 
 
-**Recommendation:** Require approval of PIM requests for Global Admin. 
+**Recommendation:** Require approval of PIM requests for Global Administrator. 
 
 With Privileged Identity Management (PIM) in Microsoft Entra ID you can configure roles to require approval for activation, and choose one or multiple users or groups as delegated approvers.  
 
