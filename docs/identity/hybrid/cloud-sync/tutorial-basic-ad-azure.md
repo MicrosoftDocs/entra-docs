@@ -18,7 +18,7 @@ This tutorial walks you through creating a basic Active Directory environment.
 
 ![Diagram that shows a basic Microsoft Entra environment.](~/includes/governance/media/tutorial-single-forest/diagram-2.png)
 
-You can use the environment you create in the tutorial to test various aspects of hybrid identity scenarios. This is a prerequisite for some of the tutorials. If you already have an existing Active Directory environment you can use that as a substitute. This information is provided for individuals who may be starting from nothing.
+You can use the environment you create in the tutorial to test various aspects of hybrid identity scenarios. This is a prerequisite for some of the tutorials. If you have an existing Active Directory environment, you can use that as a substitute. This information is provided for individuals are starting from nothing.
 
 ## Prerequisites
 The following are prerequisites required for completing this tutorial
@@ -71,7 +71,7 @@ In order to finish building the virtual machine, you need to finish the operatin
 
 1. Hyper-V Manager, double-select on the virtual machine
 2. Select on the Start button.
-3. You'll be prompted to ‘Press any key to boot from CD or DVD’. Go ahead and do so.
+3. You're prompted to ‘Press any key to boot from CD or DVD’. Go ahead and do so.
 4. On the Windows Server start up screen select your language and select **Next**.
 5. Select **Install Now**.
 6. Enter your license key and select **Next**.
@@ -81,7 +81,7 @@ In order to finish building the virtual machine, you need to finish the operatin
 10. Once the installation is complete, restart the virtual machine, sign-in, and run Windows updates to ensure the VM is the most up-to-date. Install the latest updates.
 
 ## Install Active Directory prerequisites
-Now that you have a virtual machine up, you need to do a few things prior to installing Active Directory. That is, you need to rename the virtual machine, set a static IP address and DNS information, and install the Remote Server Administration tools.  Do the following:
+Now that you have a virtual machine up, you need to do a few things prior to installing Active Directory. That is, you need to rename the virtual machine, set a static IP address and DNS information, and install the Remote Server Administration tools. Do the following:
 
 1. Open up the PowerShell ISE as Administrator.
 2. Run the following script.
@@ -117,7 +117,7 @@ Now that you have a virtual machine up, you need to do a few things prior to ins
   ```
 
 ## Create a Windows Server AD environment
-Now that you have the VM created, it's renamed, and has a static IP address, you can install and configure Active Directory Domain Services. Do the following:
+Now that you've created and renamed the VM created, and it has a static IP address, you can install and configure Active Directory Domain Services. Do the following:
 
 1. Open up the PowerShell ISE as Administrator.
 2. Run the following script.
@@ -205,14 +205,14 @@ Now you need to create a Microsoft Entra tenant so that you can synchronize our 
 
 
 ## Create a Hybrid Identity Administrator in Microsoft Entra ID
-Now that you have a Microsoft Entra tenant, you'll create a Hybrid Identity Administrator account. To create the Hybrid Identity Administrator account do the following.
+Now that you have a Microsoft Entra tenant, you create a Hybrid Identity Administrator account. To create the Hybrid Identity Administrator account do the following.
 
 1. Under **Manage**, select **Users**.</br>
 ![Screenshot that shows the "Overview" menu with "Users" selected.](~/includes/governance/media/tutorial-single-forest/administrator-1.png)</br>
 2. Select **All users** and then select **+ New user**.
-3. Provide a name and username for this user. This is your Hybrid Identity Administrator for the tenant. You'll also want to change the **Directory role** to **Hybrid Identity Administrator.** You can also show the temporary password. When you're done, select **Create**.</br>
+3. Provide a name and username for this user. This is your Hybrid Identity Administrator for the tenant. Change the **Directory role** to **Hybrid Identity Administrator.** You can also show the temporary password. When you're done, select **Create**.</br>
 4. Once this has completed, open a new web browser and sign-in to myapps.microsoft.com using the new Hybrid Identity Administrator account and the temporary password.
-5. Change the password for the Hybrid Identity Administrator to something that you'll remember.
+5. Change the password for the Hybrid Identity Administrator to something that you can remember.
 
 ## Optional: Another server and forest
 The following is an optional section that provides steps to creating another server and or forest. This can be used in some of the more advanced tutorials such as [Pilot for Microsoft Entra Connect to cloud sync](tutorial-pilot-aadc-aadccp.md).
@@ -263,17 +263,17 @@ In order to finish building the virtual machine, you need to finish the operatin
 
 1. Hyper-V Manager, double-select on the virtual machine
 2. Select on the Start button.
-3. You'll be prompted to ‘Press any key to boot from CD or DVD’. Go ahead and do so.
+3. You're prompted to ‘Press any key to boot from CD or DVD’. Go ahead and do so.
 4. On the Windows Server start up screen select your language and select **Next**.
 5. Select **Install Now**.
 6. Enter your license key and select **Next**.
 7. Check **I accept the license terms and select **Next**.
 8. Select **Custom: Install Windows Only (Advanced)**
 9. Select **Next**
-10. Once the installation has completed, restart the virtual machine, sign-in, and run Windows updates to ensure the VM is the most up-to-date. Install the latest updates.
+10. Once the installation is complete, restart the virtual machine, sign-in, and run Windows updates to ensure the VM is the most up-to-date. Install the latest updates.
 
 ### Install Active Directory prerequisites
-Now that you have a virtual machine up, you need to do a few things before installing Active Directory. That is, you need to rename the virtual machine, set a static IP address and DNS information, and install the Remote Server Administration tools.  Do the following:
+Now that you have a virtual machine up, you need to do a few things before installing Active Directory. That is, you need to rename the virtual machine, set a static IP address and DNS information, and install the Remote Server Administration tools. Do the following:
 
 1. Open up the PowerShell ISE as Administrator.
 2. Run the following script.
@@ -323,7 +323,7 @@ Now that you have a virtual machine up, you need to do a few things before insta
   Restart-Computer
   ```
 ### Create a Windows Server AD environment
-Now that you have the VM created, it's renamed, and has a static IP address, you're ready to install and configure Active Directory Domain Services. Do the following:
+Now that you've created and renamed the VM, and it has a static IP address, you're ready to install and configure Active Directory Domain Services. Do the following:
 
 1. Open up the PowerShell ISE as Administrator.
 2. Run the following script.
