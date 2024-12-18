@@ -113,13 +113,17 @@ If access wasn't assigned, then Microsoft Entra ID writes an audit record for th
 
 When the user's access package assignment expires, is canceled by the user, or removed by an administrator, then Microsoft Entra ID writes an audit record for the `EntitlementManagement` category with **Activity** of `Remove access package assignment`.
 
-## Download list of connected organizations
+## Download the list of connected organizations
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
 1. Browse to **Identity governance** > **Entitlement management** > **Connected organizations**.
 
 1. On the Connected organizations page, select **Download**.
+
+## Identify users who have or will have incompatible access with separation of duties
+
+With the separation of duties settings on an access package, you can configure that a user who is a member of a security group or who already has an assignment to one access package can't request another access package, by marking those as incompatible. You can then [view access packages that are configured as incompatible](entitlement-management-access-package-incompatible.md#view-other-access-packages-that-are-configured-as-incompatible-with-this-one), and [list users who will have incompatible access to another access package](entitlement-management-access-package-incompatible.md#identifying-users-who-will-have-incompatible-access-to-another-access-package). You can also [list users who already have incompatible access to another access package](entitlement-management-access-package-incompatible.md#identifying-users-who-already-have-incompatible-access-to-another-access-package-preview) in the Microsoft Entra Admin Center, [using Microsoft Graph](entitlement-management-access-package-incompatible.md#identifying-users-who-already-have-incompatible-access-programmatically), or [using PowerShell](entitlement-management-access-package-incompatible.md#identifying-users-who-already-have-incompatible-access-using-powershell).
 
 ## View events for an access package  
 
@@ -145,9 +149,21 @@ To view events for an access package, you must have access to the underlying Azu
 
     Each row includes the time, access package ID, the name of the operation, the object ID, UPN, and the display name of the user who started the operation. More details are included in JSON.
 
-1. If you would like to see if there have been changes to application role assignments for an application that weren't due to access package assignments, such as by a Global Administrator directly assigning a user to an application role, then you can select the workbook named *Application role assignment activity*.
+## View historical application role assignments not made by Entitlement Management
+
+If you have configured to send audit log events to [Azure Monitor](entitlement-management-logs-and-reporting.md), then you can use the built-in workbooks and custom workbooks to view the audit logs retained in Azure Monitor.
+
+The workbook *Application role assignment activity* shows if there have been changes to application role assignments for an application that weren't due to access package assignments, such as by a Global Administrator directly assigning a user to an application role.
+
+1. In the Microsoft Entra admin center, select **Identity** then select **Workbooks** under **Monitoring & health**. If you only have one subscription, move on to step 3.
+
+1. If you have multiple subscriptions, select the subscription that contains the workspace.
+
+1. Select the workbook named *Application role assignment activity*.
 
     [ ![View app role assignments](./media/entitlement-management-access-package-incompatible/workbook-ara-sml.png) ](./media/entitlement-management-access-package-incompatible/workbook-ara-lrg.png#lightbox)
+
+1. If you select to omit entitlement activity, then only changes to application roles that weren't made by entitlement management are shown. For example, you would see a row if a Global Administrator had directly assigned a user to an application role.
 
 ## Next steps
 
