@@ -1,8 +1,8 @@
 ---
 # required metadata
 
-title: Manage lifecycle workflows with Copilot in Microsoft Entra 
-description: Use Copilot in Microsoft Entra to assist with the creation of lifecycle workflows for Joiner, Mover and Leaver scenarios, execute workflows on-demand, and assist with using workflow insights to monitor workflow execution and troubleshoot if needed.
+title: Manage lifecycle workflows with Microsoft Security Copilot 
+description: Use Microsoft Security Copilot in the Microsoft Entra admin center to create lifecycle workflows for Joiner, Mover, and Leaver scenarios. Execute workflows on-demand and use workflow insights to monitor execution and troubleshoot as needed.
 keywords:
 author: rwike77
 ms.author: ryanwi
@@ -15,7 +15,7 @@ ms.custom: microsoft-copilot
 # Customer intent: As a lifecycle workflows Administrators or Global Administrators, I want to learn about risky user summarization in the Identity Protection UX so that I can quickly respond to identity threats.
 ---
 
-# Manage lifecycle workflows
+# Manage employee lifecycle using Microsoft Security Copilot
 
 Microsoft Entra ID Governance applies the capabilities of [Microsoft Security Copilot](/security-copilot/microsoft-security-copilot) to save identity administors time and effort when configuring custom workflows to manage the lifecycle of users across JML scenarios. It also helps you to customize workflows more efficiently using natural language to configure workflow information including custom tasks, execute workflows, and get workflow insights.
 
@@ -28,30 +28,30 @@ Launch Security Copilot from the **Copilot** button in the Microsoft Entra admin
 - Create a lifecycle workflow
 - Run a lifecycle workflow
 - Explore available workflow configurations
-- Analyze active workflow list
+- Analyze the active workflow list
 - Troubleshoot the processing results of workflows
 
 :::image type="content" source="./media/copilot-entra-lifecycle-workflow/security-copilot-button.png" alt-text="Screenshot that shows the Copilot in the Microsoft Entra admin center.":::
 
 ## Create a new lifecycle workflow
 
-Provide a prompt with information so Security Copilot can give you the steps for creating a new lifecycle workflow.  Copilot uses information provided in the prompt to generate a draft Joiner, Leaver, or Mover workflow template.  For example:
+Security Copilot can give you the steps for creating a new lifecycle workflow. Provide a prompt with actions to take when the workflow is triggered and conditions that define which users (scope) this workflow should run against, and when (trigger) the workflow should run.  For example:
 
 *Create a lifecycle workflow for new hires in the Marketing department that sends a welcome email and a TAP and adds them to the "All Users in My Tenant" group.  Also, provide the option to enable the schedule of the workflow.*
 
-Review the results to see what the workflow includes., then click **Create draft**. Click **Add task** to extend the tasks that will be performed. When an email task is part of the workflow, you can click **Customize Email Task** to optionally customize the email subject and content to ensure a personalized email is sent to users in the scope of the workflow.
-
-Click **Create draft** when you're satisfied with the draft, which launches the **Create workflow** wizard. A fully populated draft templae is launched in the **Review + create** tab. Click through the different tabs to see how the various tasks were completed and make any changes needed. Click **Create** when the draft is complete. After the workflow is created, you can perform verification testing before enabling the schedule.
+Review the returned results to see what the workflow includes and then [create a new worflow](/entra/id-governance/create-lifecycle-workflow) in the Microsoft Entra admin center. After the workflow is created, you can perform verification testing before enabling the schedule.
 
 ## Run a lifecycle workflow on demand
 
-Provide a prompt with information on how Copilot can run a specific workflow on-demand. Copilot uses the information provided to configure the on-demand run of the that workflow for the specified users. Review the summary to see what the Workflow includes and click **Create draft**. If needed, click **Add more users** to select more users that will be run ondemand. 
+Security Copilot can also provide steps for running a workflow on demand or on a schedule.  Provide a prompt with information on a specific workflow to run, when it should run, and which user(s) to run it for. For example:
 
-Click **Create draft** when you're satisfied with the draft, which launches the **Run on demand** page for the specific workflow with a fully populated draft. Click through the different tabs to see users and the various tasks to execute or make any changes to the selected users. Click **Run workflow** when your draft is complete. 
-
-run on a schedule or run on demand
+Review the returned steps to see what the workflow includes then run the workflow. 
 
 ## Explore available workflow configurations
+
+Using Microsoft Security Copilot, you can efficiently manage various lifecycle workflows. Here are some common tasks you can accomplish with Security Copilot:
+
+For example:
 
 - *List all lifecycle workflows in my tenant*
 - *List all the supported workflow templates for creating a new workflow*
@@ -68,6 +68,10 @@ run on a schedule or run on demand
 
 ## Analyze active workflow list
 
+With Microsoft Security Copilot, you can easily analyze and manage your active workflow list and retrieve specific workflow information.
+
+For example:
+
 - *List all joiner workflows in my tenant*
 - *List all leaver workflows in my tenant*
 - *List all mover workflows in my tenant*
@@ -79,7 +83,7 @@ run on a schedule or run on demand
 
 ## Troubleshoot a Lifecyle Workflow run
 
-Provide a prompt with information asking Security Copilot to help troubleshoot a workflow run.  Security Copilot uses the information provided to generate and return a rich summary of the workflow history over the given time period for the specified workflow. 
+You can use Security Copilot to help troubleshoot a workflow run.  Security Copilot uses the information provided to generate and return a rich summary of the workflow history over the given time period for the specified workflow. 
 
 Explore workflow processing results of a specific workflow:
 
@@ -107,7 +111,9 @@ Explore workflow processing results across workflows:
 
 ## Compare versions of a lifecycle workflow 
 
-Provide a “prompt" with information asking Security Copilot to compare workflow versions. Security Copilot uses the information provided to generate and return a rich summary of the content of two versions of the specified workflow as well as the core differences between the workflow versions including tasks and execution conditions.
+You can use Security Copilot to compare workflow versions. Security Copilot uses the information provided to generate and return a rich summary of the content of two versions of the specified workflow as well as the core differences between the workflow versions including tasks and execution conditions.
+
+For example:
 
 - *List all workflow versions for <workflow>*
 - *Show me who last modified <workflow> and when*
