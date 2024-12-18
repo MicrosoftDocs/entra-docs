@@ -16,10 +16,10 @@ ms.author: billmath
 # Configure your integration with Active Directory
 
 
-How you configure your synchronization, depends on which synchronization tool you're using and what your business goals are.  Use the tables to determine which features you would
+How you configure your synchronization, depends on which synchronization tool you're using and what your business goals are. Use the tables to determine which features you would
 
 ## Cloud sync
-After installing the Microsoft Entra provisioning agent, you'll need to configure cloud sync.  This configuration is done via the portal.  The following table provides a list of features you can use to meet your business goals.  
+After installing the Microsoft Entra provisioning agent, you'll need to configure cloud sync. This configuration is done via the portal. The following table provides a list of features you can use to meet your business goals.  
 
 |Task|Description|
 |-----|-----|
@@ -33,7 +33,7 @@ After installing the Microsoft Entra provisioning agent, you'll need to configur
 <a name='azure-ad-connect'></a>
 
 ## Microsoft Entra Connect
-Several of the configuration tasks used with Microsoft Entra Connect are set up when you install the tool.  You should review the custom installation section to make sure you have the information you'll need when setting up.  Also, the post installation tasks should be reviewed to provide post-configuration.
+Several of the configuration tasks used with Microsoft Entra Connect are set up when you install the tool. You should review the custom installation section to make sure you have the information needed when setting up. Also, the post installation tasks should be reviewed to provide post-configuration.
   
 |Task|Description|
 |-----|-----|

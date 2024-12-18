@@ -15,7 +15,7 @@ ms.author: billmath
 
 # Migrate to Microsoft Entra Cloud Sync for an existing synced AD forest
 
-This tutorial walks you through how you would migrate to cloud sync for a test Active Directory forest that is already synced using Microsoft Entra Connect Sync.  
+This tutorial walks you through how to migrate to cloud sync for a test Active Directory forest that is already synced using Microsoft Entra Connect Sync.  
 
 > [!NOTE]
 > This article provides information for a basic migration and you should review the [Migrating to cloud sync](migrate-azure-ad-connect-to-cloud-sync.md) documentation before attempting to migrate your production environment.
@@ -33,7 +33,7 @@ Before you try this tutorial, consider the following items:
     - User objects, the objects in Microsoft Entra ID are soft-deleted and can be restored. 
     - Group objects, the objects in Microsoft Entra ID are hard-deleted and can't be restored. 
  
-     A new link type has been introduced in Microsoft Entra Connect Sync, which will prevent the deletion in a piloting scenario.
+     A new link type has been introduced in Microsoft Entra Connect Sync, which prevents the deletion in a piloting scenario.
 
  4. Ensure that the objects in the pilot scope have ms-ds-consistencyGUID populated so cloud sync hard matches the objects.
 
@@ -48,7 +48,7 @@ The following are prerequisites required for completing this tutorial
 
 - A test environment with Microsoft Entra Connect Sync version 1.4.32.0 or later
 - An OU or group that is in scope of sync and can be used the pilot. We recommend starting with a small set of objects.
-- A server running Windows Server 2016 or later that will host the provisioning agent.
+- A server running Windows Server 2016 or later to host the provisioning agent.
 - Source anchor for Microsoft Entra Connect Sync should be either *objectGuid* or *ms-ds-consistencyGUID*
 
 <a name='update-azure-ad-connect'></a>
@@ -60,7 +60,7 @@ As a minimum, you should have [Microsoft Entra Connect](https://www.microsoft.co
 <a name='back-up-your-azure-ad-connect-configuration'></a>
 
 ## Back up your Microsoft Entra Connect configuration
-Before making any changes, you should back up your Microsoft Entra Connect configuration.  This way, you can roll back to your previous configuration.  See [Import and export Microsoft Entra Connect configuration settings](../connect/how-to-connect-import-export-config.md) for more information.
+Before making any changes, you should back up your Microsoft Entra Connect configuration. This way, you can roll back to your previous configuration.  See [Import and export Microsoft Entra Connect configuration settings](../connect/how-to-connect-import-export-config.md) for more information.
 
 ## Stop the scheduler
 
@@ -74,7 +74,7 @@ Microsoft Entra Connect Sync synchronizes changes occurring in your on-premises 
 >If you are running your own custom scheduler for Microsoft Entra Connect Sync, then please disable the scheduler.
 
 ## Create custom user inbound rule
-In the Microsoft Entra Connect Synchronization Rules editor, you need to create an inbound sync rule that filters out users in the OU you identified previously.  The inbound sync rule is a join rule with a target attribute of cloudNoFlow.  This rule tells Microsoft Entra Connect not to synchronize attributes for these users.  For more information, see [Migrating to cloud sync](migrate-azure-ad-connect-to-cloud-sync.md) documentation before attempting to migrate your production environment.
+In the Microsoft Entra Connect Synchronization Rules editor, you need to create an inbound sync rule that filters out users in the OU you identified previously. The inbound sync rule is a join rule with a target attribute of cloudNoFlow.  This rule tells Microsoft Entra Connect not to synchronize attributes for these users. For more information, see [Migrating to cloud sync](migrate-azure-ad-connect-to-cloud-sync.md) documentation before attempting to migrate your production environment.
 
  1. Launch the synchronization editor from the application menu in desktop as shown below:
  
@@ -97,7 +97,7 @@ In the Microsoft Entra Connect Synchronization Rules editor, you need to create 
 
     ![Screenshot that shows the "Create inbound synchronization rule - Description" page with values entered.](media/tutorial-migrate-aadc-aadccp/user-2.png)
 
- 4. On the **Scoping filter** page, enter the OU or security group that you want the pilot based off.  To filter on OU, add the OU portion of the distinguished name. This rule will be applied to all users who are in that OU. So, if DN ends with "OU=CPUsers,DC=contoso,DC=com, you would add this filter.  Then select **Next**.
+ 4. On the **Scoping filter** page, enter the OU or security group that you want the pilot based off. To filter on OU, add the OU portion of the distinguished name. This rule is applied to all users who are in that OU. So, if DN ends with "OU=CPUsers,DC=contoso,DC=com, you would add this filter.  Then select **Next**.
 
     |Rule|Attribute|Operator|Value|
     |-----|----|----|-----|
@@ -111,10 +111,10 @@ In the Microsoft Entra Connect Synchronization Rules editor, you need to create 
 
      ![Screenshot that shows the **Create inbound synchronization rule - Transformations** page with a **Constant transformation** flow added.](media/tutorial-migrate-aadc-aadccp/user-4.png)
 
-Same steps need to be followed for all object types (user, group and contact). Repeat steps per configured AD Connector / per AD forest.
+Same steps need to be followed for all object types (user, group, and contact). Repeat steps per configured AD Connector / per AD forest.
 
 ## Create custom user outbound rule
-You'll also need an outbound sync rule with a link type of JoinNoFlow and the scoping filter that has the cloudNoFlow attribute set to True.  This rule tells Microsoft Entra Connect not to synchronize attributes for these users. For more information, see [Migrating to cloud sync](migrate-azure-ad-connect-to-cloud-sync.md) documentation before attempting to migrate your production environment.
+You'll also need an outbound sync rule with a link type of JoinNoFlow and the scoping filter that has the cloudNoFlow attribute set to True. This rule tells Microsoft Entra Connect not to synchronize attributes for these users. For more information, see [Migrating to cloud sync](migrate-azure-ad-connect-to-cloud-sync.md) documentation before attempting to migrate your production environment.
 
  1. Select **Outbound** from the drop-down list for Direction and select **Add rule**.
 
@@ -140,7 +140,7 @@ You'll also need an outbound sync rule with a link type of JoinNoFlow and the sc
  4. On the **Join** rules page, select **Next**.
  5. On the **Transformations** page, select **Add**.
 
-Same steps need to be followed for all object types (user, group and contact).
+Same steps need to be followed for all object types (user, group, and contact).
 
 <a name='install-the-azure-ad-connect-provisioning-agent'></a>
 
@@ -163,13 +163,13 @@ Use the following steps to configure provisioning:
  [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)] 
  3. Select **New configuration**.
  :::image type="content" source="media/how-to-configure/new-ux-configure-1.png" alt-text="Screenshot of adding a configuration." lightbox="media/how-to-configure/new-ux-configure-1.png":::
- 4. On the configuration screen, select your domain and whether to enable password hash sync.  Click **Create**.  
+ 4. On the configuration screen, select your domain and whether to enable password hash sync.  Select **Create**.  
  
  :::image type="content" source="media/how-to-configure/new-ux-configure-2.png" alt-text="Screenshot of a new configuration." lightbox="media/how-to-configure/new-ux-configure-2.png":::
 
- 5.  The **Get started** screen will open.  
+ 5.  The **Get started** screen opens.  
 
- 6.  On the **Get started** screen, click either **Add scoping filters** next to the **Add scoping filters** icon or on the click **Scoping filters** on the left under **Manage**.
+ 6.  On the **Get started** screen, select either **Add scoping filters** next to the **Add scoping filters** icon or on the select **Scoping filters** on the left under **Manage**.
 
    :::image type="content" source="media/how-to-configure/new-ux-configure-5.png" alt-text="Screenshot of scoping filters." lightbox="media/how-to-configure/new-ux-configure-5.png":::
  
@@ -179,7 +179,7 @@ Use the following steps to configure provisioning:
  
    :::image type="content" source="media/tutorial-migrate-aadc-aadccp/configure-1.png" alt-text="Screenshot of the scoping filter." lightbox="media/tutorial-migrate-aadc-aadccp/configure-1.png":::
  
- 9.  Click **Add**. Click **Save**.
+ 9.  Select **Add**. Select **Save**.
 
 
 
@@ -197,7 +197,7 @@ Microsoft Entra Connect Sync synchronizes changes occurring in your on-premises 
 > [!NOTE]
 > If you are running your own custom scheduler for Microsoft Entra Connect Sync, then please enable the scheduler.
 
-Once the scheduler is enabled, Microsoft Entra Connect will stop exporting any changes on objects with `cloudNoFlow=true` in the metaverse, unless any reference attribute (such as `manager`) is being updated. In case there's any reference attribute update on the object, Microsoft Entra Connect will ignore the `cloudNoFlow` signal and export all updates on the object.
+Once the scheduler is enabled, Microsoft Entra Connect stops exporting any changes on objects with `cloudNoFlow=true` in the metaverse, unless any reference attribute (such as `manager`) is being updated. In case there's any reference attribute update on the object, Microsoft Entra Connect ignores the `cloudNoFlow` signal and export all updates on the object.
 
 ## Something went wrong
 
