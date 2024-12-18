@@ -118,7 +118,7 @@ Next, your partner organization needs to configure their IdP with the required c
 Microsoft Entra B2B can be configured to federate with IdPs that use the SAML protocol with specific requirements listed in this section. For more information about setting up a trust between your SAML IdP and Microsoft Entra ID, see  [Use a SAML 2.0 Identity Provider (IdP) for SSO](~/identity/hybrid/connect/how-to-connect-fed-saml-idp.md).  
 
 > [!NOTE]
-> You can now set up SAML/WS-Fed IdP federation with other Microsoft Entra ID verified domains. See the [Frequently asked questions](#frequently-asked-questions) section for details.
+> You can now set up SAML/WS-Fed IdP federation with other Microsoft Entra ID verified domains. [Learn more](#federation-with-non-verified-vs-verified-microsoft-entra-domains)
 
 #### Required SAML 2.0 attributes and claims
 The following tables show requirements for specific attributes and claims that must be configured at the third-party IdP. To set up federation, the following attributes must be received in the SAML 2.0 response from the IdP. These attributes can be configured by linking to the online security token service XML file or by entering them manually.
