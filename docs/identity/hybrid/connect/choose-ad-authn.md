@@ -4,7 +4,7 @@ description: This guide helps CEOs, CIOs, CISOs, Chief Identity Architects, Ente
 keywords:
 author: billmath
 ms.author: billmath
-ms.date: 12/05/2024
+ms.date: 12/18/2024
 manager: amycolannino
 ms.topic: article
 ms.service: entra-id

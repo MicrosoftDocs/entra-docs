@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 12/05/2024
+ms.date: 12/18/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 ---
