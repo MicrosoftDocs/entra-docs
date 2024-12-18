@@ -40,7 +40,7 @@ Microsoft recommends the following risk policy configurations to protect your or
    - A secure password change using self-service password reset is the only way to self-remediate user risk, regardless of the risk level. 
 - Sign-in risk policy
    - Require Microsoft Entra multifactor authentication when sign-in risk level is **Medium** or **High**, allowing users to prove it's them by using one of their registered authentication methods, remediating the sign-in risk.
-   - A successful multifactor authentication sign-in is the only way to self-remediate the risk, regardless of the risk level.
+   - A successful multifactor authentication is the only way to self-remediate the sign-in risk, regardless of the risk level.
 
 Requiring access control when risk level is low introduces more friction and user interrupts than medium or high. Choosing to block access rather than allowing self-remediation options, like secure password change and multifactor authentication, affect your users and administrators even more. Weigh these choices when configuring your policies.
 
