@@ -33,18 +33,6 @@ They can increase their productivity with a seamless authentication experience.
 :::image type="content" source="media/concept-authentication-qr-code/qr-code-plus-pin.png" alt-text="Image of a QR code plus PIN.":::
 
 
-
-Frontline Worker (FLW) 	Frontline workers are in every industry, such as Retail, Manufacturing, and healthcare. Generally, they are temporary workers, have multiple jobs, and are less tech savvy. For example, retail/grocery store workers, students doing multiple job at stores during summer, etc.
-Frontline Managers (FLM) 	Frontline managers are store managers and can act as delegated auth admins 
-QR code 	QR code has user UPN, tenant ID, and private key. A specific QR code can be generated only once since the private key is unique. Entra ID will not persist QR code image. QR code needs to be distributed to frontline worker (FLW) in printed form. 
-Standard QR code 	QR code assigned at the time of onboarding the user first time. It has default expiry is 365 days 
-Temporary QR code 	QR code assigned only when FLW forgot the standard QR code to bring at work. It has a lifetime of 12 hours. 
-PIN	PIN is an 8-digit memorized secret. This PIN can be used with only QR code.
-QR code auth v1 (MVP	In the document, v1 is referred to 1st   GA release of QR code Auth Method. 
-QR code auth method	QR code auth method term is used for the authentication method which consists of both QR code identifier and PIN credential. Active QR code auth method is required for successful sign-in.
-QR code	 QR code term is used for the identifier equivalent not for the auth method.
-
-
 ## Benefits of QR code authentication method
 
 Benefit | Description
