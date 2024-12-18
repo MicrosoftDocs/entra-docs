@@ -103,8 +103,8 @@ The following tables lists which authentication brokers are supported for differ
 - Sign-in with passkey in native apps with the SSO plug-in requires macOS 14.0 or later.
 
 #### Android
-- Sign-in with FIDO2 security key in native apps requires Android 13 or later.
-- Sign-in with passkey in Microsoft Authenticator in native apps requires Android 14 or later.
+- Sign-in with FIDO2 security key to native apps requires Android 13 or later.
+- Sign-in with passkey in Microsoft Authenticator to native apps requires Android 14 or later.
 
 ### Microsoft application support without authentication broker 
 
