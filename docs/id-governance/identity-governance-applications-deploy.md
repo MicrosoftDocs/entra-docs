@@ -50,12 +50,15 @@ In this section, you configure Microsoft Entra entitlement management so users c
 
 ## View reports on access
 
-Microsoft Entra ID and Microsoft Entra ID Governance with Azure Monitor provides several reports to help you understand who has access to an application and if they're using that access.
+Microsoft Entra ID and Microsoft Entra ID Governance with Azure Monitor provides several reports to help you understand who has access to an application and if they're using that access. These include:
 
 * An administrator, or a catalog owner, can [retrieve the list of users who have access package assignments](entitlement-management-access-package-assignments.md), via the Microsoft Entra admin center, Graph or PowerShell.
-* You can also send the audit logs to Azure Monitor and view a history of [changes to the access package](entitlement-management-logs-and-reporting.md#view-events-for-an-access-package), in the Microsoft Entra admin center, or via PowerShell.
-* You can view the last 30 days of sign-ins to an application in the [sign-ins report](~/identity/monitoring-health/concept-sign-in-log-activity-details.md) in the Microsoft Entra admin center, or via [Graph](/graph/api/signin-list?view=graph-rest-1.0&tabs=http&preserve-view=true).
-* You can also send the [sign in logs to Azure Monitor](~/identity/monitoring-health/concept-log-monitoring-integration-options-considerations.md) to archive sign in activity for up to two years.
+* You can also send the audit logs to Azure Monitor and view a history of [changes to the access package](entitlement-management-logs-and-reporting.md#view-events-for-an-access-package), in the Microsoft Entra admin center, or via PowerShell. 
+* You can view the last 30 days of sign-ins to an application in the [sign-ins report](~/identity/monitoring-health/concept-sign-in-log-activity-details.md) in the Microsoft Entra admin center, or via [Graph](/graph/api/signin-list?view=graph-rest-1.0&tabs=http&preserve-view=true). You can also send the [sign in logs to Azure Monitor](~/identity/monitoring-health/concept-log-monitoring-integration-options-considerations.md) to archive sign in activity for up to two years.
+
+There are additional reports available in Microsoft Entra. For more information on reports in entitlement management, see [View reports and logs in entitlement management](entitlement-management-reports.md).
+
+You can also use Azure Data Explorer to retain and report on current or historical data from Microsoft Entra, Microsoft Entra ID Governance, and other sources. For more information, see [Customized reports in Azure Data Explorer using data from Microsoft Entra ID](custom-entitlement-reports-with-adx-and-entra-id.md).
 
 ## Monitor to adjust entitlement management policies and access as needed
 
