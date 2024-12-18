@@ -121,7 +121,7 @@ This example includes custom security attributes that you could add to your tena
   | urn:ietf:params:scim:schemas:extension:microsoft:entra:csa:PayGrade         | CustomSecurityAttributes.HRConfidentialData_PayGrade |
   | urn:ietf:params:scim:schemas:extension:microsoft:entra:csa:PayScaleType     | CustomSecurityAttributes.HRConfidentialData_PayScaleType |
 
-### Test custom security attributes provisioning
+## Test custom security attributes provisioning
 
 Once you've mapped HR source attributes to the custom security attributes, use the following method to test the flow of custom security attributes data. The method you choose depends upon your provisioning app type.
 
@@ -130,7 +130,7 @@ Once you've mapped HR source attributes to the custom security attributes, use t
 
 ### Test with SuccessFactors provisioning app
 
-In this example, the SAP SuccessFactors attribute mapping is shown as follows: 
+In this example, SAP SuccessFactors attributes are mapped to custom security attributes as show here: 
 
 :::image type="content" source="media/custom-security-attributes/sap-attribute-mapping.png" alt-text="Screenshot of SAP attribute mapping options.":::
 
@@ -332,7 +332,7 @@ This sample SCIM bulk request includes custom fields under the extension `urn:ie
 }
 ```
 
-#### New Microsoft Graph API permissions
+## API permissions for custom security attributes provisioning
 
 This preview feature introduces the following new Graph API permissions. This functionality enables you to access and modify provisioning app schemas that contain custom security attribute mappings, either directly or on behalf of the signed-in user.
 
