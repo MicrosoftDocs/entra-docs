@@ -76,10 +76,10 @@ For example:
 - *List all leaver workflows in my tenant*
 - *List all mover workflows in my tenant*
 - *List all the deleted lifecycle workflows in my tenant*
-- *Show me the details of deleted workflow <workflow name>*
+- *Show me the details of deleted workflow {workflow name}*
 - *List all disabled lifecycle workflows in my tenant*
-- *Show me the details of disabled workflow <workflow>*
-- *Get my lifecycle workflows with the name <workflow name>*
+- *Show me the details of disabled workflow {workflow}*
+- *Get my lifecycle workflows with the name {workflow name}*
 
 ## Troubleshoot a Lifecyle Workflow run
 
@@ -87,13 +87,13 @@ You can use Security Copilot to help troubleshoot a workflow run.  Security Copi
 
 Explore workflow processing results of a specific workflow:
 
-- *Summarize the runs for <workflow> in the last 7 days*
-- *List the run results for <workflow> in the last 30 days*
-- *Show me the task results summary for <workflow> in the last 7 days*
+- *Summarize the runs for {workflow} in the last 7 days*
+- *List the run results for {workflow} in the last 30 days*
+- *Show me the task results summary for {workflow} in the last 7 days*
 - *How many users have failed for this workflow in the last 14 days?*
 - *Which users failed to be processed by this workflow in the last 7 days?*
-- *Show me the user processing results summary for <workflow> in the last 7 days*
-- *Which tasks failed for <workflow> in the last 7 days?*
+- *Show me the user processing results summary for {workflow} in the last 7 days*
+- *Which tasks failed for {workflow} in the last 7 days?*
 - *How many times did the workflow run in the last 24 hours*
 
 Explore workflow processing results across workflows:
@@ -115,12 +115,12 @@ You can use Security Copilot to compare workflow versions. Security Copilot uses
 
 For example:
 
-- *List all workflow versions for <workflow>*
-- *Show me who last modified <workflow> and when*
-- *Show me the details of <version #> for this workflow*
+- *List all workflow versions for {workflow}*
+- *Show me who last modified {workflow} and when*
+- *Show me the details of {version #} for this workflow*
 - *What changed in the last version of this workflow?*
 - *Compare the last two versions of this workflow*
-- *Compare <version #> and <version #> of this workflow*
+- *Compare {version #} and {version #} of this workflow*
 
 ## Next steps
 
