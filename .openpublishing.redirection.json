@@ -1278,6 +1278,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/users/groups-write-back-portal.md",
+      "redirect_url": "/entra/identity/hybrid/group-writeback-cloud-sync",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/saas-apps/autotaskworkplace-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/tutorial-list",
       "redirect_document_id": false

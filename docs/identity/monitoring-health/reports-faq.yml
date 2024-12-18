@@ -8,7 +8,7 @@ metadata:
   ms.service: entra-id
   ms.topic: faq
   ms.subservice: monitoring-health
-  ms.date: 02/21/2024
+  ms.date: 12/09/2024
   ms.author: sarahlipsey
   ms.reviewer: egreenberg14
 title: Frequently asked questions around Microsoft Entra monitoring and health
@@ -27,7 +27,7 @@ sections:
       - question: |
           How soon should I see activity log data after getting a premium license?
         answer: |
-          If you already have activity log data as a free license, then you can see it immediately. If you don't have any data, then it takes up to three days for the data to show up in the reports.
+          If you already have activity log data with a free license, you can see it immediately. If you don't have any data, it can take up to three days for the data to show up in the reports.
 
       - question: |
           Can I see last month's data after getting a Microsoft Entra ID P1 or P2 license?
@@ -40,12 +40,12 @@ sections:
       - question: |
           What role do I need to see the activity logs in the Microsoft Entra admin center?
         answer: |
-          The [least privilege role](../../identity/role-based-access-control/delegate-by-task.md) to view audit and sign-in logs is **Reports Reader**. Other roles include **Security Reader** and **Security Administrator**.
+          The [least privileged role](../../identity/role-based-access-control/delegate-by-task.md) to view audit and sign-in logs is **Reports Reader**. Other roles include **Security Reader** and **Security Administrator**.
 
       - question: |
           What logs can I integrate with Azure Monitor?
         answer: |
-          Sign-in and audit logs are both available for routing through Azure Monitor. B2C-related audit events are currently not included. For more information, see [Microsoft Entra activity log integrations](concept-log-monitoring-integration-options-considerations.md) and the [Graph API activity log overview](/graph/api/resources/azure-ad-auditlog-overview).
+          Sign-in, audit, provisioning, ID Protection, network access, and many other logs can be integrated with Azure Monitor and other monitoring and alerting tools. B2C-related audit events are currently not included. For a complete list of the Microsoft Entra logs that can be integrated with other endpoints, see [Log options for streaming to endpoints](concept-diagnostic-settings-logs-options.md). 
 
       - question: |
           Can I get Microsoft 365 activity log information through the Microsoft Entra admin center or the Azure portal?
@@ -62,14 +62,8 @@ sections:
       - question: |
           How long does Microsoft Entra ID store activity logs? What is the data retention?
         answer: |
-          Depending on your license, Microsoft Entra ID stores activity logs for between 7 and 30 days. For more information, see [Microsoft Entra report retention policies](reference-reports-data-retention.md).  
-
-      - question: |
-          What happens if an administrator changes the retention period of a diagnostic setting?
-        answer: |
-          The Diagnostic settings storage retention feature is being deprecated. For details on this change, see [**Migrate from diagnostic settings storage retention to Azure Storage lifecycle management**](/azure/azure-monitor/essentials/migrate-to-azure-storage-lifecycle-policy).
-
-
+          Depending on your license, Microsoft Entra ID stores activity logs for between 7 and 30 days. For more information, see [Microsoft Entra report retention policies](reference-reports-data-retention.md).
+  
   - name: Audit logs
     questions:
       - question: |
@@ -93,16 +87,12 @@ sections:
           It's also important to note the columns included in the downloaded logs don't change, even if you customized the columns in the Microsoft Entra admin center. 
 
       - question: |
-          I see .XXX in part of the IP address from a user in my sign-in logs. Why is that happening?
+          I see .XXX in part of the IP address or "PII Removed" in the Device Details of a user in my sign-in logs. Why is that happening?
         answer: |
-          Microsoft Entra ID might redact part of an IP address in the sign-in logs to protect user privacy when a user might not belong to the tenant viewing the logs. This action happens in two cases:
-          - During cross tenant sign ins, such as when a CSP technician signs into a tenant that CSP manages.
+          Microsoft Entra ID might redact part of a sign-in log to protect user privacy in the following scenarios:
+          - During cross-tenant sign ins, such as when a CSP technician signs into a tenant that CSP manages.
           - When our service wasn't able to determine the user's identity with sufficient confidence to be sure the user belongs to the tenant viewing the logs.
-
-      - question: |
-          I see "PII Removed" in the Device Details of a user in my sign-in logs. Why is that happening?
-        answer: |
-          Microsoft Entra ID redacts Personally Identifiable Information (PII) generated by devices that don't belong to your tenant to ensure customer data. PII doesn't spread beyond tenant boundaries without user and data owner consent.
+          - Microsoft Entra ID redacts Personally Identifiable Information (PII) generated by devices that don't belong to your tenant to ensure customer data. PII doesn't spread beyond tenant boundaries without user and data owner consent.
 
       - question: |
           I see duplicate sign-in entries / multiple sign-in events per requestID. Why is that happening?
@@ -119,6 +109,8 @@ sections:
           The TimeGenerated field in Log Analytics is the time the entry was received and published by Log Analytics. Remember, in order for your logs to appear in Log Analytics, you have to configure diagnostics settings to *send* the logs to the Log Analytics workspace. That process takes time, so the TimeGenerated field might not match the actual time of the sign-in.
 
           To confirm the date and time match the sign-in, look for the `CreatedDateTime` field a little further down in the Log Analytics results. The `AuthenticationDetails` fields can also be expanded to see the exact time of the sign-in. The time in Log Analytics appear in UTC, but the time in the sign-in logs in the Microsoft Entra admin center appear in local time, so you might need to adjust.
+
+          Risky sign-in events also have a different TimeGenerated time than the actual sign-in time. The TimeGenerated time for risky sign-ins is the time the risk was detected, not the time of the sign-in. Check the risky sign-in event itself for the activity time, which is the actual time of the sign-in.
 
       - question: |
           Why do my non-interactive sign-ins appear to have the same time stamp?

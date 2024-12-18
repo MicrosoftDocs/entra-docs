@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 07/15/2024
+ms.date: 12/13/2024
 ms.author: owinfrey
 #Customer intent: As an administrator, I want to create an access review for my access packages so I can review the active assignments of my users to ensure everyone has the appropriate access.
 ---
@@ -16,14 +16,7 @@ To reduce the risk of stale access, you should enable periodic reviews of users 
 
 ## Prerequisites
 
-To enable reviews of access packages, you must meet the prerequisites for creating an access package:
-- Microsoft Entra ID P2 or Microsoft Entra ID Governance
-- Global Administrator, Identity Governance Administrator, Catalog owner, or Access package manager
-
-> [!NOTE]
-> Following least privilege access, we recommend using the Identity Governance Administrator, catalog owner, or Access package manager role.
-
-For more information, see [License requirements](entitlement-management-overview.md#license-requirements).
+[!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
 
 ## Create an access review of an access package
 

@@ -3,7 +3,7 @@ title: The Global Secure Access client for iOS (Preview)
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the iOS client app.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 11/18/2024
+ms.date: 12/16/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -13,6 +13,9 @@ ms.reviewer: dhruvinrshah
 # Customer intent: As an administrator, I want to set up and deploy the Global Secure Access mobile client for iOS devices.
 ---
 # Global Secure Access client for iOS (Preview)
+> [!IMPORTANT]
+> The Global Secure Access client for iOS is currently in PREVIEW.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 This article explains how to set up and deploy the Global Secure Access client app onto iOS and iPadOS devices. For simplicity, this article refers to both iOS and iPadOS as **iOS**.  
 
@@ -142,3 +145,6 @@ If the client is unable to connect, a toggle appears to disable the service. Use
 ## Related content
 - [Microsoft Defender for Endpoint on iOS](/defender-endpoint/microsoft-defender-endpoint-ios)
 - [Deploy Microsoft Defender for Endpoint on iOS with Microsoft Intune](/defender-endpoint/ios-install)
+- [Global Secure Access client for macOS](how-to-install-macos-client.md)
+- [Global Secure Access client for Microsoft Windows](how-to-install-windows-client.md)
+- [Global Secure Access client for Android](how-to-install-android-client.md)

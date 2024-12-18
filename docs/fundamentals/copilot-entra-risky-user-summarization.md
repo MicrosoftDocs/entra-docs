@@ -1,7 +1,7 @@
 ---
 # required metadata
 
-title: Investigate risky users with Copilot 
+title: Investigate risky users with Copilot
 description: Use Copilot in Microsoft Entra to quickly respond to identity threats by summarizing the risk level for a user and receiving insights relevant to the incident.
 keywords:
 author: rwike77
@@ -10,8 +10,7 @@ manager: celestedg
 ms.date: 11/07/2024
 ms.topic: conceptual
 ms.service: entra
-ms.custom: microsoft-copilot
-
+ms.custom: microsoft-copilot, ignite-2024
 # Customer intent: As a SOC analyst or IT admin, I want to learn about risky user summarization in the Microsoft Entra ID Protection UX so that I can quickly respond to identity threats.
 ---
 
@@ -57,4 +56,3 @@ Suggested help and documentation are:
 ## Next steps
 
 - Learn more about [risky users](/entra/id-protection/howto-identity-protection-investigate-risk#risky-users-report).
-

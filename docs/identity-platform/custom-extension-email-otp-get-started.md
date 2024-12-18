@@ -85,7 +85,7 @@ This how-to guide demonstrates the OTP send event using Azure Communication Serv
 1. From the menu, select **Code + Test**.
 1. Replace the entire code with the following code snippet.
 
-    :::code language="csharp" source="~/../custom-authentication-extension/OnOtpSend/CustomEmailACS.cs":::
+    :::code language="csharp" source="~/../authentication-events-function/Functions/OnOtpSend/CustomEmailACS.cs":::
 
 1. Select **Get Function Url**, and copy the **Function key** URL, which is henceforth used and referred to as `{Function_Url}`. Close the function.
 
@@ -94,7 +94,7 @@ This how-to guide demonstrates the OTP send event using Azure Communication Serv
 1. From the menu, select **Code + Test**.
 1. Replace the entire code with the following code snippet.
 
-    :::code language="csharp" source="~/../custom-authentication-extension/OnOtpSend/CustomEmailSendGrid.cs":::
+    :::code language="csharp" source="~/../authentication-events-function/Functions/OnOtpSend/CustomEmailSendGrid.cs":::
 
 1. Select **Get Function Url**, and copy the **Function key** URL, which is henceforth used and referred to as `{Function_Url}`. Close the function.
 ---
@@ -123,7 +123,7 @@ You can access your Communication Services connection strings and service endpoi
 
     | Setting      | Value (Example) | Description |
     | ------------ | ---------------- | ----------- |
-    | **mail_connectionString** | A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u | The Azure Communication Services Primary Key. | 
+    | **mail_connectionString** | `https://ciamotpcommsrvc.unitedstates.communication.azure.com/:accesskey=A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u` | The Azure Communication Services endpoint | 
     | **mail_sender** | <from.email@myemailprovider.com> | The from email address. |
     | **mail_subject** | CIAM Demo | The subject of the email. |
 

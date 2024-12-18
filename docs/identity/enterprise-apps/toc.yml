@@ -60,6 +60,8 @@ items:
         href: plan-sso-deployment.md
     - name: Application security
       items:
+      - name: Migrate away from secret-based authentication
+        href: migrate-applications-from-secrets.md
       - name: App access options
         href: what-is-access-management.md
       - name: Certificate signing options
