@@ -9,21 +9,21 @@ ms.assetid: 76b19162-8b16-4960-9e22-bd64e6675ecc
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 12/06/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
 
 ---
 # Changing the AD DS connector account password
-The AD DS connector account refers to the user account used by Microsoft Entra Connect to communicate with on-premises Active Directory. If you change the password of the AD DS connector account in AD, you must update Microsoft Entra Connect Synchronization Service with the new password. Otherwise, the Synchronization can no longer synchronize correctly with the on-premises Active Directory and you will encounter the following errors:
+The AD DS connector account refers to the user account used by Microsoft Entra Connect to communicate with on-premises Active Directory. If you change the password of the AD DS connector account in AD, you must update Microsoft Entra Connect Synchronization Service with the new password. Otherwise, the Synchronization can no longer synchronize correctly with the on-premises Active Directory and you'll encounter the following errors:
 
 * In the Synchronization Service Manager, any import or export operation with on-premises AD fails with **no-start-credentials** error.
 
 * Under Windows Event Viewer, the application event log contains an error with **Event ID 6000** and message **'The management agent "contoso.com" failed to run because the credentials were invalid'**.
 
 
-## How to update the Synchronization Service with new password for AD DS connector account
+## How to update the Synchronization Service with new password for AD DS connector account 
 To update the Synchronization Service with the new password:
 
 1. Start the Synchronization Service Manager (START → Synchronization Service).

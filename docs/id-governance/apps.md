@@ -204,8 +204,6 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Claromentis](../identity/saas-apps/claromentis-tutorial.md) |  | ● |
 | [Cleanmail Swiss](../identity/saas-apps/cleanmail-swiss-provisioning-tutorial.md) | ● |  |
 | [Clebex](../identity/saas-apps/clebex-provisioning-tutorial.md) | ● | ● |
-| [Cloud Academy - SSO](../identity/saas-apps/cloud-academy-sso-provisioning-tutorial.md) | ● | ● |
-| [Cloud Academy](../identity/saas-apps/cloud-academy-sso-tutorial.md) |  | ● |
 | [Cloud Service PICCO](../identity/saas-apps/cloud-service-picco-tutorial.md) |  | ● |
 | [CMD+CTRL Base Camp](../identity/saas-apps/cmd-ctrl-base-camp-tutorial.md) |  | ● |
 | [Coda](../identity/saas-apps/coda-provisioning-tutorial.md) | ● | ● |
@@ -625,6 +623,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Proxyclick](../identity/saas-apps/proxyclick-provisioning-tutorial.md) | ● | ● |
 | [PurelyHR](../identity/saas-apps/purelyhr-tutorial.md) |  | ● |
 | [pymetrics](../identity/saas-apps/pymetrics-tutorial.md) |  | ● |
+| [QA](../identity/saas-apps/cloud-academy-sso-provisioning-tutorial.md) | ● | ● |
 | [Qiita Team](../identity/saas-apps/qiita-team-tutorial.md) |  | ● |
 | [Qmarkets Idea & Innovation Management](../identity/saas-apps/qmarkets-idea-innovation-management-tutorial.md) |  | ● |
 | [QReserve](../identity/saas-apps/qreserve-tutorial.md) |  | ● |

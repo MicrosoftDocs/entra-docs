@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: app-provisioning
 ms.custom: has-azure-ad-ps-ref
 ms.topic: troubleshooting
-ms.date: 09/15/2023
+ms.date: 11/27/2024
 ms.author: kenwith
 ms.reviewer: arvinh
 ---
