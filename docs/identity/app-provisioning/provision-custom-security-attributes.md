@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 11/01/2024
+ms.date: 12/18/2024
 ms.author: jfields
 ms.reviewer: chmutali
 ---
@@ -32,9 +32,9 @@ To provision custom security attributes, you must meet the following prerequisit
    - [SAP SuccessFactors to Microsoft Entra ID user provisioning](~/identity/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md)
    - [API-driven provisioning to Microsoft Entra ID](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md)
 - Active custom security attributes in your tenant for discovery during the attribute mapping process. Before using this preview feature, you must [create custom security attribute sets](~/fundamentals/custom-security-attributes-add.md) in your Microsoft Entra ID tenant.
-- Configuration of custom security attributes and provisioning attribute mappings of your inbound provisioning app. You must sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a user who is assigned the following Microsoft Entra roles:
-   - **Application Administrators** can create and update provisioning jobs.
-   - **Attribute Provisioning Administrators** can add or remove custom security attributes in the attribute mapping section of the provisioning app.
+- To configure custom security attributes in the attribute mapping of your inbound provisioning app, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a user who is assigned the Microsoft Entra roles of [Application Administrator](../../identity/role-based-access-control/permissions-reference.md#application-administrator) and [Attribute Provisioning Administrator](../../identity/role-based-access-control/permissions-reference.md#attribute-provisioning-administrator):
+   - **Application Administrators** is required to create and update the provisioning app.
+   - **Attribute Provisioning Administrators** is required to add or remove custom security attributes in the attribute mapping section of the provisioning app.
 
 ## Known limitations
 
