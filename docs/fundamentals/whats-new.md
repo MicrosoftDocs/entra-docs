@@ -39,6 +39,18 @@ What's new in Microsoft Entra offers a comprehensive view of Microsoft Entra pro
 
 ---
 
+### Generally Availability - Update Profile Photo in MyAccount
+
+**Type:** New feature    
+**Service category:** My Profile/Account    
+**Product capability:** End User Experiences    
+
+Users can now update their profile photo directly from their MyAccount portal. This change exposes a new edit button on the profile photo section of the user’s account.
+
+In some environments, it’s necessary to prevent users from making this change. Global Administrators can manage this using a tenant-wide policy with Microsoft Graph API, following the guidance in the [Manage user profile photo settings in Microsoft 365](/graph/profilephoto-configure-settings) document.
+
+---
+
 ### General Availability - Temporary Access Pass (TAP) support for internal guest users
 
 **Type:** New feature    
