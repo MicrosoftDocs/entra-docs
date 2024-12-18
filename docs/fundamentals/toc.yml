@@ -84,7 +84,7 @@ items:
   - name: Respond to identity threats using risky user summarization
     href: copilot-entra-risky-user-summarization.md  
   - name: Manage Lifecycle Workflows
-    href: copilot-entra-lifecycle-workflows.md
+    href: copilot-entra-lifecycle-workflow.md
   - name: Investigate incidents using Microsoft Security Copilot
     href: copilot-security-entra-investigate-incident.md 
   - name: Investigate app risk using Microsoft Copilot for Security
