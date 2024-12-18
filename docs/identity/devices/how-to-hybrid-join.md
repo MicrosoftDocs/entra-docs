@@ -5,7 +5,7 @@ description: Learn how to configure Microsoft Entra hybrid join.
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 02/26/2024
+ms.date: 11/25/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -14,7 +14,7 @@ ms.reviewer: sandeo
 ---
 # Configure Microsoft Entra hybrid join
 
-Bringing your devices to Microsoft Entra ID maximizes user productivity through single sign-on (SSO) across your cloud and on-premises resources. You can secure access to your resources with [Conditional Access](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md) at the same time.
+Bringing your devices to Microsoft Entra ID maximizes user productivity through single sign-on (SSO) across your cloud and on-premises resources. You can secure access to your resources with [Conditional Access](~/identity/conditional-access/policy-alt-all-users-compliant-hybrid-or-mfa.md) at the same time.
 
 > [!VIDEO https://www.youtube-nocookie.com/embed/hSCVR1oJhFI]
 
@@ -78,8 +78,7 @@ Configure Microsoft Entra hybrid join by using Microsoft Entra Connect for a man
 
 A federated environment should have an identity provider that supports the following requirements. If you have a federated environment using Active Directory Federation Services (AD FS), then the below requirements are already supported.
 
-- **WIAORMULTIAUTHN claim:** This claim is required to do Microsoft Entra hybrid join for Windows down-level devices.
-- **WS-Trust protocol:** This protocol is required to authenticate Windows current Microsoft Entra hybrid joined devices with Microsoft Entra ID. When you're using AD FS, you need to enable the following WS-Trust endpoints:
+- **WS-Trust protocol:** This protocol is required to authenticate the Microsoft Entra hybrid joined devices with Microsoft Entra ID. When you're using AD FS, you need to enable the following WS-Trust endpoints:
    - `/adfs/services/trust/2005/windowstransport`
    - `/adfs/services/trust/13/windowstransport`
    - `/adfs/services/trust/2005/usernamemixed`
@@ -142,5 +141,5 @@ If you experience issues with completing Microsoft Entra hybrid join for domain-
 ## Related content
 
 - [Microsoft Entra hybrid join verification](how-to-hybrid-join-verify.yml)
-- [Use Conditional Access to require compliant or Microsoft Entra hybrid joined device](../conditional-access/howto-conditional-access-policy-compliant-device.md)
+- [Use Conditional Access to require compliant or Microsoft Entra hybrid joined device](../conditional-access/policy-alt-all-users-compliant-hybrid-or-mfa.md)
 - [Planning a Windows Hello for Business Deployment](/windows/security/identity-protection/hello-for-business/hello-planning-guide)

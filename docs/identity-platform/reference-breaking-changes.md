@@ -56,6 +56,9 @@ To better highlight failures due to case-insensitivity, we're revamping the erro
 
 The placeholder `'{subject}'` provides the value of the subject claim contained in the token being sent from the external IdP to Microsoft Entra ID. This error template is also used for case-insensitive failures surrounding `issuer` and `audience` validation. If you encounter this error, you should find the Federated Identity Credential that corresponds to the `issuer`, `subject`, or `audience` listed in the error and confirm that the corresponding values are equivalent from a case-sensitive perspective. If there's a mismatch, you need to replace the current `issuer`, `subject`, or `audience` value in the FIC with the `issuer`, `subject`, or `audience` value that was contained in the error message.
 
+>[!NOTE]
+> For **Azure App Service** customers using GitHub Actions and running into this error, an option for addressing to this is to go to your workflow file under `/.github/workflows` in your GitHub repository and update the environment `name` property from `"Production"` to `"production"`. This guidance is applicable only for Azure App Service scenarios. If you are encountering this error in a different scenario, please refer to the guidance above. 
+
 ## June 2024
 
 ### Applications must be registered in a directory

@@ -1,6 +1,6 @@
 ---
-title: Tenant configurations and External ID
-description: Learn about the different ways you can configure a Microsoft Entra tenant based on your External ID scenarios. Compare the workforce and external tenant configurations.
+title: Tenant configurations
+description: Learn about tenant configurations in Microsoft Entra External ID. Understand the differences between workforce and external tenants, and how to configure them for your organization's needs.
  
 author: msmimart
 manager: celestedg
@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: conceptual
-ms.date: 08/26/2024
+ms.date: 10/21/2024
 ms.author: mimart
 ms.custom: it-pro
 

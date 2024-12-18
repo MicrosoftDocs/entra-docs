@@ -109,6 +109,20 @@ Users can reset the local password via Apple ID or an admin recovery key.
 
 ## Known issues
 
+### Unexpected/frequent re-registration prompts on macOS Sequoia
+
+There is a known concurrency issue on macOS 15+ (Sequoia) that can cause the PSSO device configuration to become corrupted. The device configuration can be corrupted by simultaneous updates from the system AppSSOAgent and AppSSODaemon processes. The corrupted configuration causes the operating system to trigger its re-registration remediation flow, resulting in unexpected registration prompts for users.
+
+This issue is currently being investigated by Apple and is expected to be fixed in an upcoming operating system update.
+
+Sysdiagnose logs from affected users contain the following error:
+
+```
+Error Domain=com.apple.PlatformSSO Code=-1001 "Error deserializing device config." UserInfo={NSLocalizedDescription=Error deserializing device config., NSUnderlyingError=0x9480343f0 {Error Domain=NSCocoaErrorDomain Code=3840 "Garbage at end around line 27, column 1." UserInfo={NSDebugDescription=Garbage at end around line 27, column 1., NSJSONSerializationErrorIndex=3052}}}
+```
+
+We encourage users and admins who encounter this error to file an Apple Care issue and engage with Apple to resolve the issue.
+
 ### Passcode policy complexity mismatches
 
 There's a known issue where an applied MDM configuration specifies a local password policy with a higher degree of complexity than the Microsoft Entra account used to sign-in to the machine. In this case, the password synchronization operation between Microsoft Entra ID and the local machine fails.
@@ -171,6 +185,12 @@ We'd love to hear your feedback. You should include the following information:
 
     ```console
     sudo sysdiagnose
+    ```
+
+4. Reset the debug logs to default settings by running the following command in Terminal.
+
+    ```console
+    sudo log config --reset --subsystem "com.apple.AppSSO"
     ```
 
 ## Troubleshooting guide

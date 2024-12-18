@@ -197,11 +197,9 @@ For example:
 
 1. Do the following steps for each Security Gateway that participates in Remote Access VPN.
 
-1. In SmartConsole > **Gateways & Servers** view, click **New > More > User/Identity > Identity Provider**.
+1. In SmartConsole, in the **Gateways & Servers** view, click **New > More > User/Identity > Identity Provider**.
 
-    ![screenshot for new Identity Provider.](./media/check-point-remote-access-vpn-tutorial/identity-provider.png)
-
-1. Perform the following steps in **New Identity Provider** window.
+ 1. Perform the following steps in **New Identity Provider** window.
 
     ![screenshot for Identity Provider section.](./media/check-point-remote-access-vpn-tutorial/new-identity-provider.png)
 

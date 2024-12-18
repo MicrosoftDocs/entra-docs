@@ -47,7 +47,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 * When assigning a user to iPass SmartConnect, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
-## Setup iPass SmartConnect for provisioning
+## Set up iPass SmartConnect for provisioning
 
 Before configuring iPass SmartConnect for automatic user provisioning with Microsoft Entra ID, you will need to retrieve configuration information from the iPass SmartConnect admin console:
 
@@ -105,8 +105,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 7. Click **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to iPass SmartConnect**.
-
-	:::image type="content" source="media/ipass-smartconnect-provisioning-tutorial/usermapping.png" alt-text="Screenshot of the Mappings section. Under Name, Synchronize Microsoft Entra users to iPass SmartConnect is visible." border="false":::
 
 9. Review the user attributes that are synchronized from Microsoft Entra ID to iPass SmartConnect in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in iPass SmartConnect for update operations. Select the **Save** button to commit any changes.
 

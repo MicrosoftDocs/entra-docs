@@ -20,7 +20,7 @@ A role can be assigned to a user directly or transitively via a group. This arti
 ## Prerequisites
 
 - AzureADPreview module when using PowerShell
-- Microsoft.Graph module when using PowerShell
+- Microsoft Graph module when using PowerShell
 - Admin consent when using Graph Explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
@@ -37,11 +37,11 @@ Follow these steps to list Microsoft Entra roles for a user using the Microsoft 
 
 1. Select *user name* > **Assigned roles**.
 
-    You can see the list of roles assigned to the user at different scopes. Additionally, you can see whether the role has been assigned directly or via group.
+    You can see the list of roles assigned to the user at different scopes. Additionally, you can see whether the role has been assigned directly or via a group.
     
     ![list of roles assigned to a user in Azure portal](./media/list-role-assignments-users/list-role-definition.png)
 
-    If you have a Premium P2 license, you will see the PIM experience, which has eligible, active, and expired role assignment details.
+    If you have a Premium P2 license, you'll see the PIM experience, which has eligible, active, and expired role assignment details.
 
     ![list of roles assigned to a user in PIM](./media/list-role-assignments-users/list-role-definition-pim.png)
 
@@ -49,13 +49,13 @@ Follow these steps to list Microsoft Entra roles for a user using the Microsoft 
 
 Follow these steps to list Microsoft Entra roles assigned to a user using PowerShell.
 
-1. Install Microsoft.Graph module using [Install-module](/powershell/azure/active-directory/install-adv2).
+1. Install Microsoft Graph module using [Install-module](/powershell/azure/active-directory/install-adv2).
   
     ```powershell
     Install-module -name Microsoft.Graph
     ```
 
-3. In a PowerShell window, Use [Connect-MgGraph](/powershell/microsoftgraph/get-started) to sign into and use Microsoft Graph PowerShell cmdlets.
+3. In a PowerShell window, use [Connect-MgGraph](/powershell/microsoftgraph/get-started) to sign into and use Microsoft Graph PowerShell cmdlets.
   
       ```powershell
       Connect-MgGraph

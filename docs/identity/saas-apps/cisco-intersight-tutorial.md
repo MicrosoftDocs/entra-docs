@@ -18,7 +18,7 @@ ms.author: jeedes
 
 # Tutorial: Microsoft Entra single sign-on (SSO) integration with Cisco Intersight
 
-In this tutorial, you'll learn how to integrate Cisco Intersight with Microsoft Entra ID. When you integrate Cisco Intersight with Microsoft Entra ID, you can:
+In this tutorial, you learn how to integrate Cisco Intersight with Microsoft Entra ID. When you integrate Cisco Intersight with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Cisco Intersight.
 * Enable your users to be automatically signed-in to Cisco Intersight with their Microsoft Entra accounts.
@@ -49,7 +49,7 @@ To configure the integration of Cisco Intersight into Microsoft Entra ID, you ne
 1. In the **Add from the gallery** section, type **Cisco Intersight** in the search box.
 1. Select **Cisco Intersight** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+  For step-by-step guidance on adding enterprise applications, refer to [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 
 <a name='configure-and-test-azure-ad-sso-for-cisco-intersight'></a>
@@ -64,7 +64,6 @@ To configure and test Microsoft Entra SSO with Cisco Intersight, perform the fol
     1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Cisco Intersight SSO](#configure-cisco-intersight-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Cisco Intersight test user](#create-cisco-intersight-test-user)** - to have a counterpart of B.Simon in Cisco Intersight that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -76,7 +75,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Cisco Intersight** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -104,7 +103,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![The Certificate download link](common/metadataxml.png)
 
-1. On the **Set up Cisco Intersight** section, copy the appropriate URL(s) based on your requirement.
+1. On the **Set up Cisco Intersight** section, copy one or more appropriate URLs based on your requirement.
 
 	![Copy configuration URLs](common/copy-configuration-urls.png)
 
@@ -112,7 +111,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ### Create a Microsoft Entra test user
 
-In this section, you'll create a test user called B.Simon.
+In this section, you create a test user called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
@@ -128,15 +127,15 @@ In this section, you'll create a test user called B.Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting access to Cisco Intersight.
+In this section, you enable B.Simon to use single sign-on by granting access to Cisco Intersight.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Cisco Intersight**.
 1. In the app's overview page, select **Users and groups**.
-1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
-   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-   1. In the **Add Assignment** dialog, click the **Assign** button.
+1. Select **Add user/group**, then select **Users and groups** in the **Added Assignment** dialog.
+   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then select the **Select** button at the bottom of the screen.
+   1. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
+   1. In the **Added Assignment** dialog, select the **Assign** button.
 
 ## Configure Cisco Intersight SSO
 
@@ -144,17 +143,26 @@ To configure single sign-on on **Cisco Intersight** side, you need to send the d
 
 ### Create Cisco Intersight test user
 
-In this section, you create a user called Britta Simon in Cisco Intersight. Work with [Cisco Intersight support team](mailto:intersight-feedback@cisco.com) to add the users in the Cisco Intersight platform. Users must be created and activated before you use single sign-on.
+### Configuring and Testing Microsoft Entra SSO for Cisco Intersight
+
+The SSO configuration for Cisco Intersight is now self-service and managed directly through the Cisco Intersight platform. To complete the setup, visit the Cisco Intersight Help Center and follow their up-to-date guidance: [Cisco Intersight Help Documentation](https://www.intersight.com/help/saas)
+
+#### Steps Overview:
+1. Sign in to Cisco Intersight.
+    1. Navigate to the **Settings** section.
+    1. Access the **SSO Configuration** page.
+1. Follow the self-service setup instructions provided in the Cisco Intersight Help documentation to configure the necessary SAML attributes, metadata, and certificate details.
+1. Test the integration using the built-in testing tools available in both Microsoft Entra ID and Cisco Intersight to ensure seamless SSO.
 
 ## Test SSO 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Cisco Intersight Sign-on URL where you can initiate the login flow. 
+* Select on **Test this application**, this will redirect to Cisco Intersight Sign-on URL where you can initiate the sign in flow. 
 
-* Go to Cisco Intersight Sign-on URL directly and initiate the login flow from there.
+* Go to Cisco Intersight Sign on URL directly and initiate the sign in flow from there.
 
-* You can use Microsoft My Apps. When you click the Cisco Intersight tile in the My Apps, this will redirect to Cisco Intersight Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the Cisco Intersight tile in the My Apps, this will redirect to Cisco Intersight Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 
 ## Next steps

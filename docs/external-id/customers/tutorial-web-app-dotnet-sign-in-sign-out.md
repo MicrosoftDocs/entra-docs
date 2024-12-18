@@ -6,7 +6,7 @@ author: cilwerner
 ms.author: cwerner
 manager: celestedg
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.topic: tutorial
 ms.date: 05/23/2023
 #Customer intent: As a dev, devops, I want to learn about how to enable authentication in my own ASP.NET Core web app with external tenant.

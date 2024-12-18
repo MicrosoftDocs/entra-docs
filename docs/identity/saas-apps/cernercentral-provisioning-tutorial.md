@@ -90,7 +90,7 @@ In order to provision user accounts to Cerner Central, you’ll need to request 
 
 1. Set the **Provisioning Mode** to **Automatic**.
 
-   ![Cerner Central Provisioning](./media/cernercentral-provisioning-tutorial/Cerner.PNG)
+	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
 1. Fill in the following fields under **Admin Credentials**:
 

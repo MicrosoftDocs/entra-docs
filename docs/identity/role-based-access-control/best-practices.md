@@ -48,7 +48,7 @@ One of the principles of least privilege is that access should be granted only w
  
 You can enable MFA on Microsoft Entra roles using two methods:
 - [Role settings](~/id-governance/privileged-identity-management/pim-how-to-change-default-settings.md) in Privileged Identity Management
-- [Conditional Access](~/identity/conditional-access/howto-conditional-access-policy-admin-mfa.md)
+- [Conditional Access](~/identity/conditional-access/policy-old-require-mfa-admin.md)
 
 ## 4. Configure recurring access reviews to revoke unneeded permissions over time
 

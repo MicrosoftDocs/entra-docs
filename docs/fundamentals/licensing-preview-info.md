@@ -6,7 +6,7 @@ author: barclayn
 manager: amycolannino
 ms.author: barclayn
 ms.topic: conceptual
-ms.date: 09/19/2023
+ms.date: 12/16/2024
 # Customer intent: I am trying to find information on the terms and conditions for Microsoft Entra ID preview programs.
 
 ---

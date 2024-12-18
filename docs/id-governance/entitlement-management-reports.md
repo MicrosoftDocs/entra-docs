@@ -17,6 +17,8 @@ ms.reviewer: jocastel
 
 The entitlement management reports and Microsoft Entra audit log provide more details about what resources users have access to. As an administrator, you can view the access packages and resource assignments for a user and view request logs for auditing purposes or  determining the status of a user's request. This article describes how to use the entitlement management reports and Microsoft Entra audit logs.
 
+This article outlines how to view reports on current objects in entitlement management. To retain and report on historical Microsoft Entra objects, such as users or application role assignments, see [Customized reports in Azure Data Explorer (ADX) using data from Microsoft Entra ID](custom-entitlement-report-with-adx-and-entra-id.md).
+
 Watch the following video to learn how to view what resources users have access to in entitlement management:
 
 >[!VIDEO https://www.youtube.com/embed/omtNJ7ySjS0]
@@ -151,5 +153,5 @@ To view events for an access package, you must have access to the underlying Azu
 
 - [Archive reports and Logs](entitlement-management-logs-and-reporting.md)
 - [Troubleshoot entitlement management](entitlement-management-troubleshoot.md)
-- [Common scenarios](entitlement-management-scenarios.md)
 - [Create custom alerts for entitlement management](governance-custom-alerts.md)
+- [Customized reports in Azure Data Explorer (ADX) using data from Microsoft Entra ID](custom-entitlement-report-with-adx-and-entra-id.md)
