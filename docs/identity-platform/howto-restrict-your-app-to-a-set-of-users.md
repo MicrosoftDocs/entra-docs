@@ -16,7 +16,7 @@ ms.topic: how-to
 
 # Restrict a Microsoft Entra app to a set of users
 
-Applications registered in a Microsoft Entra tenant are, by default, available to all users of the tenant who authenticate successfully. To restrict your application to a set of user, you can configure your application to require user assignment. Users and services attempting to access the application or services need to be assigned to the application, or they won't be able to sign-in or obtain an access token.
+Applications registered in a Microsoft Entra tenant are, by default, available to all users of the tenant who authenticate successfully. To restrict your application to a set of users, you can configure your application to require user assignment. Users and services attempting to access the application or services need to be assigned to the application, or they won't be able to sign-in or obtain an access token.
 
 Similarly, in a [multitenant](howto-convert-app-to-be-multi-tenant.md) application, all users in the Microsoft Entra tenant where the application is provisioned can access the application once they successfully authenticate in their respective tenant.
 

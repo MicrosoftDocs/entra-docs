@@ -6,7 +6,7 @@ author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
 ms.service: entra-external-id 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
 ms.date: 01/27/2024
 ms.custom: developer, devx-track-js

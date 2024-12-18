@@ -90,7 +90,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<customername>.insigniailsusa.com/<uniqueid>`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Sign on URL and Identifier. Contact [Insignia SAML SSO Client support team](http://www.insigniasoftware.com/insignia/Techsupport.aspx) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are not real. Update these values with the actual Sign on URL and Identifier. Contact [Insignia SAML SSO Client support team](https://www.insigniasoftware.com/Support) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
@@ -132,11 +132,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Insignia SAML SSO
 
-To configure single sign-on on **Insignia SAML SSO** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to [Insignia SAML SSO support team](http://www.insigniasoftware.com/insignia/Techsupport.aspx). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Insignia SAML SSO** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to [Insignia SAML SSO support team](https://www.insigniasoftware.com/Support). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Insignia SAML SSO test user
 
-In this section, you create a user called Britta Simon in Insignia SAML SSO. Work with [Insignia SAML SSO support team](http://www.insigniasoftware.com/insignia/Techsupport.aspx) to add the users in the Insignia SAML SSO platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in Insignia SAML SSO. Work with [Insignia SAML SSO support team](https://www.insigniasoftware.com/Support) to add the users in the Insignia SAML SSO platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 

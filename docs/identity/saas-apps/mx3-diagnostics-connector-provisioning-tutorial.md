@@ -45,7 +45,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Step 2: Configure MX3 Diagnostics Connector to support provisioning with Microsoft Entra ID
 
-1. If your MX3 account does not have organization feature enabled, apply for organization feature as described in this [documentation](https://www.mx3diagnostics.com/files/files/MX3_PortalGuide_0321.pdf).
+1. If your MX3 account does not have organization feature enabled, apply for organization feature as described in documentation at `https://www.mx3diagnostics.com/files/files/MX3_PortalGuide_0321.pdf`.Make sure to sign in to MX3 account to be able to access this documentation.
 
 1. If your MX3 account does not have single-sign-on feature enabled, setup Microsoft Entra SSO as described in this documentation.
 

@@ -5,7 +5,7 @@ description: Learn how Microsoft Entra smart lockout helps protect your organiza
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 08/09/2023
+ms.date: 12/02/2024
 
 ms.author: justinha
 author: justinha

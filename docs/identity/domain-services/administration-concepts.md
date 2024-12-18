@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: conceptual
-ms.date: 03/23/2023
+ms.date: 08/25/2024
 ms.author: justinha
 ---
 
@@ -99,6 +99,17 @@ If your business or application demands change and you need additional compute p
 The backup frequency determines how often a snapshot of the managed domain is taken. Backups are an automated process managed by the Azure platform. In the event of an issue with your managed domain, Azure support can assist you in restoring from backup. As synchronization only occurs one way *from* Microsoft Entra ID, any issues in a managed domain won't impact Microsoft Entra ID or on-premises AD DS environments and functionality.
 
 As the SKU level increases, the frequency of those backup snapshots increases. Review your business requirements and recovery point objective (RPO) to determine the required backup frequency for your managed domain. If your business or application requirements change and you need more frequent backups, you can switch to a different SKU.
+
+Domain Services provides the following guidance for recovery timespans for different types of issues:
+
+- Recovery point objective (RPO) is the maximum timespan in which there is a potential data or transaction loss from an incident.
+- Recovery time object (RTO) is the targeted timespan that occurs before service levels return to operational after an incident.   
+
+| Issues | RPO | RTO |
+|--------|-----|-----|
+| Issues caused by data loss or corruption to Domain Services domain controllers, dependent services, an exploit that compromised the domain, or other incident that requires restoring a domain controller.  | Five days before the occurrence of the event | Two hours to four days, depending on tenant size |
+| Issues identified by our domain diagnostics. | Zero (0 minutes) | Two hours to four days, depending on tenant size |
+
 
 ## Next steps
 

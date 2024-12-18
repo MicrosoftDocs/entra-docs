@@ -5,7 +5,7 @@ author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom: 
-ms.date: 06/13/2024
+ms.date: 09/27/2024
 ms.reviewer: sureshja
 ms.service: identity-platform
 
@@ -29,7 +29,7 @@ To configure the application manifest:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
 1. Browse to **Identity** > **Applications** > **App registrations**.
 1. Select the app you want to configure.
-1. From the app's **Overview** page, select the **Manifest** section. A web-based manifest editor opens, allowing you to edit the manifest. Optionally, you can select **Download** to edit the manifest locally, and then use **Upload** to reapply it to your application.
+1. From the app's **Manage** section, select **Manifest**. A web-based manifest editor opens, allowing you to edit the manifest. Optionally, you can select **Download** to edit the manifest locally, and then use **Upload** to reapply it to your application.
 
 ## Manifest reference
 
@@ -66,24 +66,24 @@ Example:
     "acceptMappedClaims": true,
 ```
 
-### accessTokenAcceptedVersion attribute
+### requestedAccessTokenVersion attribute
 
 | Key | Value type |
 | :--- | :--- |
-| accessTokenAcceptedVersion | Nullable Int32 |
+| requestedAccessTokenVersion | Nullable Int32 |
 
 Specifies the access token version expected by the resource. This parameter changes the version and format of the JWT produced independent of the endpoint or client used to request the access token.
 
-The endpoint used, v1.0 or v2.0, is chosen by the client and only impacts the version of id_tokens. Resources need to explicitly configure `accesstokenAcceptedVersion` to indicate the supported access token format.
+The endpoint used, v1.0 or v2.0, is chosen by the client and only impacts the version of id_tokens. Resources need to explicitly configure `requestedAccessTokenVersion` to indicate the supported access token format.
 
-Possible values for `accesstokenAcceptedVersion` are 1, 2, or null. If the value is null, this parameter defaults to 1, which corresponds to the v1.0 endpoint.
+Possible values for `requestedAccessTokenVersion` are 1, 2, or null. If the value is null, this parameter defaults to 1, which corresponds to the v1.0 endpoint.
 
 If `signInAudience` is `AzureADandPersonalMicrosoftAccount`, the value must be `2`.
 
 Example:
 
 ```json
-    "accessTokenAcceptedVersion": 2,
+    "requestedAccessTokenVersion": 2,
 ```
 
 ### addIns attribute

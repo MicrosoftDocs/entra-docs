@@ -64,8 +64,6 @@ sections:
 
           * *.entra.microsoft.com
           * *.entra.microsoft.us
-          * *.entra.microsoft.scloud
-          * *.entra.microsoft.eaglex.ic.gov
           * *.entra.microsoftonline.cn
 
           For more information, see [Using Microsoft Entra application proxy to publish on-premises apps for remote users](~/identity/app-proxy/overview-what-is-app-proxy.md). Additional URLs that you should include are listed in the article [Allow the Azure portal URLs on your firewall or proxy server](/azure/azure-portal/azure-portal-safelist-urls).

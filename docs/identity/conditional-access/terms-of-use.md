@@ -84,7 +84,7 @@ Once you complete your terms of use policy document, use the following procedure
    > [!IMPORTANT]
    > Conditional Access policy controls (including terms of use policies) do not support enforcement on service accounts. We recommend excluding all service accounts from the Conditional Access policy.
 
-    Custom Conditional Access policies enable granular terms of use policies, down to a specific cloud application or group of users. For more information, see [Quickstart: Require terms of use to be accepted before accessing cloud apps](require-tou.md).
+    Custom Conditional Access policies enable granular terms of use policies, down to a specific cloud application or group of users. For more information, see [Quickstart: Require terms of use to be accepted before accessing cloud apps](policy-all-users-require-terms-of-use.md).
 
 1. Select **Create**.
 
@@ -166,7 +166,7 @@ The following procedure describes how to add a language to your terms of use.
 
 #### View previous versions of a terms of use
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Reader](../role-based-access-control/permissions-reference.md#security-reader).
 1. Browse to **Protection** > **Conditional Access** > **Terms of use**.
 1. Select the terms of use policy for which you want to view a version history.
 1. Select **Languages and version history**.
@@ -177,7 +177,7 @@ The following procedure describes how to add a language to your terms of use.
 
 The **Terms of use** blade shows a count of the users who accepted and declined. These counts and who accepted/declined are stored for the life of the terms of use policy.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Reader](../role-based-access-control/permissions-reference.md#security-reader).
 1. Browse to **Protection** > **Conditional Access** > **Terms of use**.
 
     ![A screenshot showing the terms of use blade listing the number of user show have accepted and declined.](./media/terms-of-use/view-tou.png)
@@ -325,4 +325,4 @@ A: Terms of use utilize the following endpoints for authentication: https://toke
 
 ## Related content
 
-* [Example policy to require terms of use to be accepted before accessing Microsoft Admin Portals](require-tou.md)
+* [Example policy to require terms of use to be accepted before accessing Microsoft Admin Portals](policy-all-users-require-terms-of-use.md)

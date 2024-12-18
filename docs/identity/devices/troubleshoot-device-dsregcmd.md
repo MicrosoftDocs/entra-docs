@@ -227,7 +227,7 @@ You can ignore this section for Microsoft Entra registered devices.
             Attempt Status : 0xc000006d
              User Identity : john@contoso.com
            Credential Type : Password
-            Correlation ID : 0000aaaa-11bb-cccc-dd22-eeeeee333333
+            Correlation ID : aaaa0000-bb11-2222-33cc-444444dddddd
               Endpoint URI : https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/oauth2/token/
                HTTP Method : POST
                 HTTP Error : 0x0

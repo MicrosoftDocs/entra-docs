@@ -306,8 +306,6 @@ public class IndexModel : PageModel
 
 Using a custom **AuthProvider** class that encapsulates authentication logic, the web app gets the user's access token from the incoming requests header. The **AuthProvider** instance detects that the web app is hosted on App Service and gets the access token from the App Service authentication/authorization module. The access token is then passed down to the Microsoft Graph SDK client to make an authenticated request to the `/me` endpoint.
 
-To see this code as part of a sample application, see *graphController.js* in the [sample on GitHub](https://github.com/Azure-Samples/ms-identity-easyauth-nodejs-storage-graphapi/tree/main/2-WebApp-graphapi-on-behalf).
-
 > [!NOTE]
 > The App Service authentication/authorization is designed for more basic authentication scenarios. Later, when your web app needs to handle more complex scenarios, you can disable the App Service authentication/authorization module and the **AuthProvider** instance in the sample will fallback to use [MSAL Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node), which is the recommended library for adding authentication/authorization to Node.js applications.
 
@@ -332,7 +330,7 @@ exports.getProfilePage = async(req, res, next) => {
 }
 ```
 
-To query Microsoft Graph, use the [Microsoft Graph JavaScript SDK](https://github.com/microsoftgraph/msgraph-sdk-javascript). The code for this is located in [utils/graphHelper.js](https://github.com/Azure-Samples/ms-identity-easyauth-nodejs-storage-graphapi/blob/main/2-WebApp-graphapi-on-behalf/utils/graphHelper.js):
+To query Microsoft Graph, use the [Microsoft Graph JavaScript SDK](https://github.com/microsoftgraph/msgraph-sdk-javascript). 
 
 ```nodejs
 const graph = require('@microsoft/microsoft-graph-client');

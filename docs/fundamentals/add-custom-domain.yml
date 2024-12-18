@@ -17,8 +17,7 @@ metadata:
 title: |
   Add your custom domain name to your tenant
 introduction: |
-  Microsoft Entra tenants come with an initial domain name like, `domainname.onmicrosoft.com`. You can't change or delete the initial domain name, but you can add your organization's name to the initial domain. By adding your custom domain name, you can then add user names that are familiar to your users, such as `alain@contoso.com`.
-
+  Microsoft Entra tenants come with an initial domain name like, `domainname.onmicrosoft.com`. You can't change or delete the initial domain name, but you can add your organization's DNS name as a custom domain and set it as the primary domain. By adding your domain name, you can add user names that are familiar to your users, such as `alain@contoso.com`.
 prerequisites:
   summary: |
     Before you can add a custom domain name, create your domain name with a domain registrar. For an accredited domain registrar, see [ICANN-Accredited Registrars](https://www.icann.org/registrar-reports/accredited-list.html).

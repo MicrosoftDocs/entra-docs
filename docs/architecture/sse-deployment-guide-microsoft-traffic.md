@@ -102,7 +102,7 @@ This section describes how to enforce compliant network access to Microsoft traf
 Network proxies and third-party SSE solutions overwrite the sending device's public IP address, which prevents Microsoft Entra ID from being able to use that IP address for policies or reports. This restriction causes the following issues:
 
 - Microsoft Entra ID can't enforce certain location-based Conditional Access policies (such as blocking untrusted countries).
-- Risk-based detections that leverage a user's baseline familiar locations degrade because the system limits identity protection machine learning algorithms to your proxy's IP address. They can't detect or train on the user's true source IP address.
+- Risk-based detections that leverage a user's baseline familiar locations degrade because the system limits Microsoft Entra ID Protection machine learning algorithms to your proxy's IP address. They can't detect or train on the user's true source IP address.
 - SOC operations/investigations must leverage third-party/proxy logs to determine the original source IP and then correlate it with subsequent activity logs, resulting in inefficiencies.
 
 This section demonstrates how Microsoft Entra Internet Access for Microsoft Traffic overcomes these issues by preserving the user's original source IP address, simplifying security investigations and troubleshooting.

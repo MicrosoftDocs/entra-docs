@@ -32,7 +32,7 @@ View the policies that relate to the Internet Access traffic forwarding profile.
 1. Select the **View** link in the Internet Access policies section.
 
 The default Internet Access policies include:
-- **Custom Bypass** Contains user-defined traffic/endpoints that are *excluded* from the Internet traffic profile. In other words, you define the traffic that the profile shouldn't acquire.
+- **Custom Bypass** Contains user-defined traffic/endpoints that are *excluded* from the Internet traffic profile. In other words, you define the traffic that the profile shouldn't acquire. You might typically exclude traffic such as your VPN endpoints, private IP ranges, and squat IP ranges, and endpoints that leverage a network Access Control List (ACL). 
 - **Default Bypass** Contains predefined traffic that the Internet traffic profile doesn't acquire. For example, private IP ranges. You can't change rules in this policy.
 - **Default Acquire** Defines traffic that gets acquired by the Internet traffic profile. Currently, it’s all internet traffic on ports 80, 443 over Transmission Control Protocol (TCP). The policy takes lowest precedence after all bypass rules are evaluated. You can't change rules in this policy.
 

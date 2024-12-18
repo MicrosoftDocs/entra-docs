@@ -8,7 +8,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 11/14/2023
+ms.date: 08/23/2024
 ms.author: barclayn
 ms.reviewer: jodah
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -131,7 +131,7 @@ If the group you're restoring contains documents, SharePoint sites, or other per
 In addition to using Access Panel to view group details like expiration date and last renewed date, you can retrieve the expiration date of a Microsoft 365 group from Microsoft Graph REST API Beta. The group property `expirationDateTime` is enabled in Microsoft Graph Beta. You can retrieve it with a GET request. For more information, see [this example](/graph/api/group-get?view=graph-rest-beta&preserve-view=true#example).
 
 > [!NOTE]
-> To manage group memberships on Access Panel, **Restrict access to Groups in Access Panel** must be set to **No** in the Microsoft Entra groups **General** setting.
+> To manage group memberships on the Access Panel, **Restrict access to Groups in Access Panel** must be set to **No** in the Microsoft Entra groups **General** setting.
 
 ## Microsoft 365 group expiration with a mailbox on legal hold
 
@@ -213,4 +213,4 @@ For more information on Microsoft Entra groups, see:
 - [Manage settings of a group](~/fundamentals/how-to-manage-groups.yml)
 - [Manage members of a group](~/fundamentals/how-to-manage-groups.yml)
 - [Manage memberships of a group](~/fundamentals/how-to-manage-groups.yml)
-- [Manage dynamic rules for users in a group](groups-dynamic-membership.md)
+- [Manage rules for dynamic membership groups](groups-dynamic-membership.md)

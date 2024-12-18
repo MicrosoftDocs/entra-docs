@@ -22,7 +22,8 @@ In this tutorial, you will learn how to register a Mac device with macOS Platfor
 
 - A recommended minimum version of macOS 14 Sonoma. While macOS 13 Ventura is supported, we strongly recommend using macOS 14 Sonoma for the best experience.
 - Microsoft Intune [Company Portal app](/mem/intune/apps/apps-company-portal-macos) version 5.2404.0 or later
-- A configured the SSO extension MDM payload with PSSO settings in Intune by an administrator
+- A Mac device enrolled in mobile device management (MDM) with [Microsoft Intune](/mem/intune/user-help/enroll-your-device-in-intune-macos-cp).
+- A configured SSO extension MDM payload with PSSO settings in Intune by an administrator
 - [Microsoft Authenticator](https://support.microsoft.com/account-billing/how-to-use-the-microsoft-authenticator-app-9783c865-0308-42fb-a519-8cf666fe0acc) (recommended), the user must be registered for some form of Microsoft Entra ID multifactor authentication (MFA) to complete device registration.
 - For smart card setup, [certificate based authentication](/entra/identity/authentication/how-to-certificate-based-authentication) configured and enabled. A smart card loaded with a certificate for authentication with Microsoft Entra and the smart card paired with local account.
 
@@ -115,7 +116,7 @@ sc_auth list
 
     :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-register-device-prompt.png" alt-text="Screenshot of the registration window prompting sign in with Microsoft.":::
 
-1. When a **Single Sign-On** window appears, enter your local account password and select **OK**. If you're on macOS 14, <!--you'll be prompted to unlock your local account before this.-->
+1. When a **Single Sign-On** window appears, enter your local account password and select **OK**. If you're on macOS 14, you'll be prompted to unlock your local account before this.
 
     :::image type="content" source="media/device-join-macos-platform-single-sign-on-out-of-box/psso-enter-local-password.png" alt-text="Screenshot of a single sign-on window prompting the user to enter their local account password.":::
 

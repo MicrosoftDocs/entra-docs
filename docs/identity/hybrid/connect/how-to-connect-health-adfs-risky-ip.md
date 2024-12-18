@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 12/05/2024
 ms.author: billmath
 ms.custom: H1Hack27Feb2017
 
@@ -130,7 +130,7 @@ You should add the identified malicious IP address to the firewall or block it i
 
 **Why can't I access the report?**
 
-You need to have [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader) permissions. Contact your Global Administrator for access.
+You need to have [Security Reader](~/identity/role-based-access-control/permissions-reference.md#security-reader) permissions. 
 
 ## Next steps
 * [Microsoft Entra Connect Health](./whatis-azure-ad-connect.md)

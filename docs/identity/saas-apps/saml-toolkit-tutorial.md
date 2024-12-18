@@ -136,9 +136,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	![Microsoft Entra SAML Toolkit Register](./media/saml-toolkit-tutorial/register.png)
 
-1. Click on the **SAML Configuration**.
-
-	![Microsoft Entra SAML Toolkit SAML Configuration](./media/saml-toolkit-tutorial/saml-configure.png)
+1. In the **SAML Toolkit** window, select **SAML Configuration**.
 
 1. Click **Create**.
 

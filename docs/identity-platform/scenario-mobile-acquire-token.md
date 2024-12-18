@@ -9,7 +9,7 @@ ms.date: 05/07/2019
 ms.reviewer: brianmel, jmprieur
 ms.service: identity-platform
 
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a mobile app that calls web APIs by using the Microsoft identity platform.
 ---
 
@@ -53,11 +53,15 @@ sampleApp.getAccounts(new PublicClientApplication.AccountsLoadedCallback() {
     @Override
     public void onAccountsLoaded(final List<IAccount> accounts) {
 
-        if (accounts.isEmpty() && accounts.size() == 1) {
-            // TODO: Create a silent callback to catch successful or failed request.
+        if (!accounts.isEmpty() && accounts.size() == 1) {
+            // One account found, attempt silent sign-in.
             sampleApp.acquireTokenSilentAsync(SCOPES, accounts.get(0), getAuthSilentCallback());
+        } else if (accounts.isEmpty()) {
+            // No accounts found. Interactively request a token.
+            sampleApp.acquireToken(getActivity(), SCOPES, getAuthInteractiveCallback());
         } else {
-            /* No accounts or > 1 account. */
+            // Multiple accounts found. Handle according to your app logic.
+            // You may need to prompt the user to select an account.
         }
     }
 });

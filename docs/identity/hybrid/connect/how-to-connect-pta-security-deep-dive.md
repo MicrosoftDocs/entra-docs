@@ -172,7 +172,7 @@ To renew an authentication agent's trust with Microsoft Entra ID:
      - These keys are generated through standard RSA 2,048-bit encryption.
      - The private key never leaves the on-premises server.
  3. The authentication agent then makes a certificate renewal request to Microsoft Entra ID over HTTPS. The following components are included in the request:
-     - The existing certificate that's retrieved from the CERT_SYSTEM_STORE_LOCAL_MACHINE location in the Windows certificate store. No Global Administrator is involved in this procedure, so no access token is required for a Global Administrator.
+     - The existing certificate that's retrieved from the CERT_SYSTEM_STORE_LOCAL_MACHINE location in the Windows certificate store. 
      - The public key generated in step 2.
      - A CSR. This request applies for a new digital identity certificate, with Microsoft Entra ID as its CA.
  4. Microsoft Entra ID validates the existing certificate in the certificate renewal request. Then it verifies that the request came from an authentication agent that's registered on your tenant. 

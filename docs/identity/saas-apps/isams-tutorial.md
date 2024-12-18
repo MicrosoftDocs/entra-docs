@@ -158,10 +158,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 1. Log in to iSAMS as an Administrator.
 
 2.  Go to the **Control Panel Home** -> **Security & Permissions** -> **User Accounts** -> **User Options & Tasks** -> **Modify User Properties**.
-
-    ![Screenshot shows the User Accounts page with Modify User Properties selected.](./media/isams-tutorial/modify-user-properties.png)
-
-
 3. In the resulting pop-up window, select the **Account Details** tab, and change the **Authorization** to that of your newly created Identity Provider.
 
     ![Screenshot shows Account Details with a value for Authorization.](./media/isams-tutorial/account-details.png)

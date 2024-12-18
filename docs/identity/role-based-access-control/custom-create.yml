@@ -104,11 +104,11 @@ procedureSection:
 
       ``` PowerShell
       # Get the user and role definition you want to link
-      $user = Get-MgUser -Filter "userPrincipalName eq 'cburl@f128.info'"
+      $user = Get-MgUser -Filter "userPrincipalName eq 'user@contoso.com'"
       $roleDefinition = Get-MgRoleManagementDirectoryRoleDefinition -Filter "DisplayName eq 'Application Support Administrator'"
 
       # Get app registration and construct resource scope for assignment.
-      $appRegistration = Get-MgApplication -Filter "Displayname eq 'POSTMAN'"
+      $appRegistration = Get-MgApplication -Filter "Displayname eq 'MyApp1'"
       $resourceScope = '/' + $appRegistration.objectId
 
       # Create a scoped role assignment

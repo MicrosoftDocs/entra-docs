@@ -8,8 +8,8 @@ manager: mwongerapk
 ms.author: henrymbugua
 ms.service: entra-external-id
 
-ms.subservice: customers
-ms.topic: sample
+ms.subservice: external
+ms.topic: quickstart
 ms.date: 08/21/2024
 ms.custom: developer
 #Customer intent: As a developer, I aim to learn registering a web API, configuring API scopes, roles, optional claims, and calling a web API in an iOS sample app.
@@ -72,7 +72,7 @@ You need to host your web API for the iOS sample app to call it. Follow [Quickst
 
 The sample allows you to configure multiple Web API URL endpoints and sets of scopes. In this case, you configure only one Web API URL endpoint and its associated scopes.
 
-1. In your Xcode, open `/NativeAuthSampleApp/ProtectedAPIViewController.swift` file.
+1. In your Xcode, open `/NativeAuthSampleApp/ProtectedAPIViewController.swift` file. If you're using macOS, here's a sample [ProtectedAPIViewController.swift](https://github.com/Azure-Samples/ms-identity-ciam-native-auth-ios-sample/blob/main/NativeAuthSampleApp/ProtectedAPIViewController.swift) code file.
 1. Find `protectedAPIUrl1` and enter your web API URL as its value.
 
     ```swift

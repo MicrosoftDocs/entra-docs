@@ -64,7 +64,7 @@ SAML/WS-Fed IdP federation guest users can also use application endpoints that i
 - `https://myapps.microsoft.com/<your verified domain>.onmicrosoft.com`
 - `https://portal.azure.com/<your tenant ID>`
 
-You can also give guest users a direct link to an application or resource by including your tenant information, for example `https://myapps.microsoft.com/signin/Twitter/<application ID?tenantId=<your tenant ID>`.
+You can also give guest users a direct link to an application or resource by including your tenant information, for example `https://myapps.microsoft.com/signin/X/<application ID?tenantId=<your tenant ID>`.
 
 ## Frequently asked questions
 
@@ -78,10 +78,6 @@ Currently, redemption order settings aren't supported across clouds. If the doma
 **Can I set up SAML/WS-Fed IdP federation with a domain for which an unmanaged (email-verified) tenant exists?**
  
 Yes, you can set up SAML/WS-Fed IdP federation with domains that aren't DNS-verified in Microsoft Entra ID, including unmanaged (email-verified or "viral") Microsoft Entra tenants. Such tenants are created when a user redeems a B2B invitation or performs self-service sign-up for Microsoft Entra ID using a domain that doesn’t currently exist.
-
-**How many federation relationships can I create?**
-
-Currently, a maximum of 1,000 federation relationships is supported. This limit includes both [internal federations](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdomainfederationconfiguration) and SAML/WS-Fed IdP federations.
 
 **Can I set up federation with multiple domains from the same tenant?**
 

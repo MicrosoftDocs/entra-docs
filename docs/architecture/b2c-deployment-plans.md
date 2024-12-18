@@ -164,12 +164,12 @@ Use the following checklist to enhance application security.
   - See, [Tutorial: Configure Microsoft Dynamics 365 Fraud Protection with Azure Active Directory B2C](/azure/active-directory-b2c/partner-dynamics-365-fraud-protection)
 - Confirm needed conditional postures as part of sign-in or sign-up
 
-#### Conditional Access and identity protection
+#### Conditional Access and Microsoft Entra ID Protection
 
 - The modern security perimeter now extends beyond an organization's network. The perimeter includes user and device identity.
   - See, [What is Conditional Access?](~/identity/conditional-access/overview.md)
 - Enhance the security of Azure AD B2C with Microsoft Entra ID Protection
-  - See, [Identity Protection and Conditional Access in Azure AD B2C](/azure/active-directory-b2c/conditional-access-identity-protection-overview)
+  - See, [ID Protection and Conditional Access in Azure AD B2C](/azure/active-directory-b2c/conditional-access-identity-protection-overview)
 
 ### Compliance
 

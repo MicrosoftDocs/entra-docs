@@ -1,6 +1,6 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with LifeBalance Program (OIDC)'
-description: Learn how to configure single sign-on between Microsoft Entra and LifeBalance Program (OIDC).
+title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with LifeBalance Program'
+description: Learn how to configure single sign-on between Microsoft Entra and LifeBalance Program.
 services: active-directory
 author: jeevansd
 manager: CelesteDG
@@ -12,15 +12,15 @@ ms.topic: tutorial
 ms.date: 08/02/2024
 ms.author: jeedes
 
-# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and LifeBalance Program (OIDC) so that I can control who has access to LifeBalance Program (OIDC), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
+# Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and LifeBalance Program so that I can control who has access to LifeBalance Program, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with LifeBalance Program (OIDC)
+# Tutorial: Microsoft Entra single sign-on (SSO) integration with LifeBalance Program
 
-In this tutorial, you'll learn how to integrate LifeBalance Program (OIDC) with Microsoft Entra ID. When you integrate LifeBalance Program (OIDC) with Microsoft Entra ID, you can:
+In this tutorial, you'll learn how to integrate LifeBalance Program with Microsoft Entra ID. When you integrate LifeBalance Program with Microsoft Entra ID, you can:
 
-Use Microsoft Entra ID to control who can access LifeBalance Program (OIDC).
-Enable your users to be automatically signed in to LifeBalance Program (OIDC) with their Microsoft Entra accounts.
+Use Microsoft Entra ID to control who can access LifeBalance Program.
+Enable your users to be automatically signed in to LifeBalance Program with their Microsoft Entra accounts.
 Manage your accounts in one central location: the Azure portal.
 
 ## Prerequisites
@@ -28,19 +28,19 @@ Manage your accounts in one central location: the Azure portal.
 To get started, you need the following items:
 
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
-* LifeBalance Program (OIDC) single sign-on (SSO) enabled subscription.
+* LifeBalance Program single sign-on (SSO) enabled subscription.
 
-## Add LifeBalance Program (OIDC) from the gallery
+## Add LifeBalance Program from the gallery
 
-To configure the integration of LifeBalance Program (OIDC) into Microsoft Entra ID, you need to add LifeBalance Program (OIDC) from the gallery to your list of managed SaaS apps.
+To configure the integration of LifeBalance Program into Microsoft Entra ID, you need to add LifeBalance Program from the gallery to your list of managed SaaS apps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
 1. Browse to **Identity > Applications > Enterprise applications > New application**.
 
-1. In the **Add from the gallery** section, enter **LifeBalance Program (OIDC)** in the search box.
+1. In the **Add from the gallery** section, enter **LifeBalance Program** in the search box.
 
-1. Select **LifeBalance Program (OIDC)** in the results panel and then add the app. Wait a few seconds while the app is added to your tenant.
+1. Select **LifeBalance Program** in the results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
 ## Configure Microsoft Entra SSO
 
@@ -48,7 +48,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **LifeBalance Program (OIDC)** > **Single sign-on**.
+1. Browse to **Identity** > **Applications** > **Enterprise applications** > **LifeBalance Program** > **Single sign-on**.
 
 1. Perform the following steps in the below section:
 
@@ -56,7 +56,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
         [![Screenshot of showing the identity configuration.](common/go-to-application.png)](common/go-to-application.png#lightbox)
 
-    1. Copy **Application (client) ID**, **Directory (tenant) ID** and use it later in the LifeBalance Program (OIDC) side configuration.
+    1. Copy **Application (client) ID**, **Directory (tenant) ID** and use it later in the LifeBalance Program side configuration.
 
         ![Screenshot shows Settings for the configuration.](./media/lifebalance-program-oidc-tutorial/directory.png "Settings")
 
@@ -76,7 +76,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
         [![Screenshot of showing the client secrets value.](common/client-secret.png)](common/client-secret.png#lightbox)
 
-    1. Once you add a client secret, **Value** will be generated. Copy the value and use it later in the LifeBalance Program (OIDC) side configuration.
+    1. Once you add a client secret, **Value** will be generated. Copy the value and use it later in the LifeBalance Program side configuration.
 
         [![Screenshot of showing how to add a client secret.](common/client.png)](common/client.png#lightbox)
 
@@ -96,16 +96,16 @@ In this section, you'll create a test user called B.Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting access to LifeBalance Program (OIDC).
+In this section, you'll enable B.Simon to use single sign-on by granting access to LifeBalance Program.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **LifeBalance Program (OIDC)**.
+1. Browse to **Identity** > **Applications** > **Enterprise applications** > **LifeBalance Program**.
 1. In the app's overview page, select **Users and groups**.
 1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
    1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
    1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
    1. In the **Add Assignment** dialog, click the **Assign** button.
 
-## Configure LifeBalance Program (OIDC) SSO
+## Configure LifeBalance Program SSO
 
-To complete the OAuth/OIDC federation setup on **LifeBalance Program (OIDC)** side, you need to send the copied values like  Tenant ID, Application ID, and Client Secret from Entra to [LifeBalance Program (OIDC) support team](mailto:info@lifebalanceprogram.com). They set this setting to have the OIDC connection set properly on both sides.
+To complete the OAuth/OIDC federation setup on **LifeBalance Program** side, you need to send the copied values like  Tenant ID, Application ID, and Client Secret from Entra to [LifeBalance Program support team](mailto:info@lifebalanceprogram.com). They set this setting to have the OIDC connection set properly on both sides.

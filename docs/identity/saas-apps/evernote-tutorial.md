@@ -96,8 +96,6 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![Screenshot that shows the "S A M L Signing Certificate" dialog with the "Edit" button selected.](common/edit-certificate.png) 
 
-	![image](./media/evernote-tutorial/assertion.png)
-
 	a. Select the **Sign SAML response and assertion** option for **Signing Option**.
 
 	b. Click **Save**

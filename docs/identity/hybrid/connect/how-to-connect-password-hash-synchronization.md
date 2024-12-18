@@ -26,7 +26,7 @@ To synchronize your password, Microsoft Entra Connect Sync extracts your passwor
 
 The actual data flow of the password hash synchronization process is similar to the synchronization of user data. However, passwords are synchronized more frequently than the standard directory synchronization window for other attributes. The password hash synchronization process runs every 2 minutes. You can't modify the frequency of this process. When you synchronize a password, it overwrites the existing cloud password.
 
-The first time you enable the password hash synchronization feature, it performs an initial synchronization of the passwords of all in-scope users. [Staged Rollout](how-to-connect-staged-rollout.md) allows you to selectively test groups of users with cloud authentication capabilities like Microsoft Entra multifactor authentication, Conditional Access, Identity Protection for leaked credentials, Identity Governance, and others, before cutting over your domains. You can't explicitly define a subset of user passwords that you want to synchronize. However, if there are multiple connectors, it's possible to disable password hash sync for some connectors but not others using the [Set-ADSyncAADPasswordSyncConfiguration](/entra/identity/domain-services/tutorial-configure-password-hash-sync) cmdlet.
+The first time you enable the password hash synchronization feature, it performs an initial synchronization of the passwords of all in-scope users. [Staged Rollout](how-to-connect-staged-rollout.md) allows you to selectively test groups of users with cloud authentication capabilities like Microsoft Entra multifactor authentication, Conditional Access, Microsoft Entra ID Protection for leaked credentials, Identity Governance, and others, before cutting over your domains. You can't explicitly define a subset of user passwords that you want to synchronize. However, if there are multiple connectors, it's possible to disable password hash sync for some connectors but not others using the [Set-ADSyncAADPasswordSyncConfiguration](/entra/identity/domain-services/tutorial-configure-password-hash-sync) cmdlet.
 
 When you change an on-premises password, the updated password is synchronized, most often in a matter of minutes.
 The password hash synchronization feature automatically retries failed synchronization attempts. If an error occurs during an attempt to synchronize a password, an error is logged in your event viewer.
@@ -170,6 +170,21 @@ Update-MgDirectoryOnPremiseSynchronization `
 #### Account expiration
 
 If your organization uses the accountExpires attribute as part of user account management, this attribute isn't synchronized to Microsoft Entra ID. As a result, an expired Active Directory account in an environment configured for password hash synchronization will still be active in Microsoft Entra ID. We recommend using a scheduled PowerShell script that disables users' AD accounts, once they expire (use the [Set-ADUser](/powershell/module/activedirectory/set-aduser) cmdlet). Conversely, during the process of removing the expiration from an AD account, the account should be re-enabled.
+
+### Password hash synchronization and smart card authentication 
+
+Customers can require that their users log in to Windows domains with a CAC/PIV physical smart card. They do this by configuring the  **Smart Card Required for Interactive Logon** (SCRIL) user property setting in Active Directory. 
+
+When SCRIL is enabled on a user object, the user’s AD password is randomized by the domain controller to a value no one knows, and the user has to enroll and subsequently authenticate to the Windows domain via smart card. 
+
+With password hash synchronization enabled, this AD password hash is synced with Microsoft Entra ID so that it can be used for cloud authentication as well. 
+
+> [!NOTE]
+> With the release of [version 2.4.18.0](reference-connect-version-history.md#24180) of Microsoft Entra Connect Sync, we fixed an issue that occurred when SCRIL is re-enabled on a user object. Re-enabling SCRIL is common in scenarios when a user loses their smart card, necessitating that SCRIL is disabled and the user is provided with a temporary password until they are issued a new smart card
+>
+> Previously, when SCRIL was re-enabled and a new randomized AD password was generated, the user was still able to use their old password to authenticate to Microsoft Entra ID. Now, Connect Sync has been updated so that new randomized AD password is synced to Microsoft Entra ID and the old password cannot be used once smart card login is enabled. 
+>
+> We recommend that admins perform a full sync if you have users with a SCRIL bit in your AD domain. If you do perform a full sync, there’s a chance that end users will be asked to re-login with the updated password if certificate-based authentication is not used. 
 
 ### Overwrite synchronized passwords
 

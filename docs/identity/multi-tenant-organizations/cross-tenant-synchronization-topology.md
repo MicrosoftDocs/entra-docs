@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: conceptual
-ms.date: 11/03/2023
+ms.date: 12/10/2024
 ms.author: rolyon
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
@@ -65,6 +65,26 @@ Consider Contoso and Litware, separate organizations engaged in a multi-year joi
 The following diagram shows how two organizations can just-in-time collaborate by using connected organizations and entitlement management.
 
 :::image type="content" source="./media/cross-tenant-synchronization-topology/connected-organization.png" alt-text="Diagram that shows just-in-time collaboration by using connected organizations and entitlement management.":::
+
+## Supported scenarios
+Cross-tenant synchronization supports importing [internal users](/entra/external-id/user-properties) in the source tenant and provisioning [external users](/entra/external-id/user-properties) in the target tenant. 
+
+| Source tenant credentials | Source tenant userType| Target tenant credentials | Target tenant userType|Scenario supported?|
+|:--- |:---:|:---:|:---:|:---:|
+|Internal|Member|External|Member|Yes|
+|Internal|Member|External|Guest|Yes|
+|Internal|Guest|External|Member|Yes|
+|Internal|Guest|External|Guest|Yes|
+|Internal|Member|Internal|Member|No|
+|Internal|Member|Internal|Guest|No|
+|Internal|Guest|Internal|Member|No|
+|Internal|Guest|Internal|Guest|No|
+|External|Member|External|Member|No|
+|External|Member|External|Guest|No|
+|External|Guest|External|Member|No|
+|External|Guest|External|Guest|No|
+
+
 
 ## Next steps
 

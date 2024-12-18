@@ -46,7 +46,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 * When assigning a user to Leapsome, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
 
-## Setup Leapsome for provisioning
+## Set up Leapsome for provisioning
 
 1. Sign in to your [Leapsome Admin Console](https://www.Leapsome.com/app/#/login). Navigate to **Settings > Admin Settings**.
 
@@ -112,15 +112,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Leapsome**.
 
-	![Leapsome User Mappings](media/Leapsome-provisioning-tutorial/Leapsome-user-mappings.png)
-
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Leapsome in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Leapsome for update operations. Select the **Save** button to commit any changes.
 
 	![Leapsome User Attributes](media/Leapsome-provisioning-tutorial/Leapsome-user-attributes.png)
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Leapsome**.
-
-	![Leapsome Group Mappings](media/Leapsome-provisioning-tutorial/Leapsome-group-mappings.png)
 
 11. Review the group attributes that are synchronized from Microsoft Entra ID to Leapsome in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Leapsome for update operations. Select the **Save** button to commit any changes.
 

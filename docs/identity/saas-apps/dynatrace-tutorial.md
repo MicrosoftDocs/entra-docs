@@ -98,8 +98,6 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	b. Click **Save**.
 
-	![Communifire Signing option](./media/dynatrace-tutorial/tutorial-dynatrace-signing-option.png)
-
 1. In the **Set up Dynatrace** section, copy the appropriate URL(s) based on your requirement.
 
 	![Copy configuration URLs](common/copy-configuration-urls.png)

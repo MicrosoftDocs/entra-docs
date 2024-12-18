@@ -110,12 +110,12 @@ Microsoft Graph APIs are highly customizable based on your organizational needs.
 
 | Resource types| Reference links |
 | - | - | 
-| Users, groups, and other directory objects| [directoryObject API](/graph/api/resources/directoryobject) |
-| Directory roles| [directoryRole API](/graph/api/resources/directoryrole) |
+| Users, groups, and other directory objects| [directoryObject API](/graph/api/resources/directoryobject) <br/>[user API](/graph/api/resources/user) <br/>[group API](/graph/api/resources/group) <br/>[application API](/graph/api/resources/application) <br/>[servicePrincipal API](/graph/api/resources/serviceprincipal)|
+| Directory roles| [directoryRole API](/graph/api/resources/directoryrole) <br/> [roleManagement API](/graph/api/resources/rolemanagement) |
 | Conditional Access policies| [Conditional Access policy API](/graph/api/resources/conditionalaccesspolicy) |
 | Devices| [devices API](/graph/api/resources/device) |
 | Domains| [domains API](/graph/api/domain-list?tabs=http) |
-| Administrative units| [administrative unit API)](/graph/api/resources/administrativeunit) |
+| Administrative units| [administrative unit API](/graph/api/resources/administrativeunit) |
 | Deleted items*| [deletedItems API](/graph/api/resources/directory) |
 
 *Securely store these configuration exports with access provided to a limited number of admins.

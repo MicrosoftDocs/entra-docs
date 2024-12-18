@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 09/21/2023
+ms.date: 08/25/2024
 ms.author: justinha
 ---
 # Secure remote access to virtual machines in Microsoft Entra Domain Services
@@ -37,7 +37,7 @@ To complete this article, you need the following resources:
     * If needed, [create and configure a Microsoft Entra Domain Services managed domain][create-azure-ad-ds-instance].
 * A *workloads* subnet created in your Microsoft Entra Domain Services virtual network.
     * If needed, [Configure virtual networking for a Microsoft Entra Domain Services managed domain][configure-azureadds-vnet].
-* A user account that's a member of the *Microsoft Entra DC administrators* group in your Microsoft Entra tenant.
+* A user account that's a member of the *AAD DC administrators* group in your Microsoft Entra tenant.
 
 ## Deploy and configure the Remote Desktop environment
 
@@ -52,7 +52,7 @@ Make sure that VMs are deployed into a *workloads* subnet of your Domain Service
 
 The RD environment deployment contains a number of steps. The existing RD deployment guide can be used without any specific changes to use in a managed domain:
 
-1. Sign in to VMs created for the RD environment with an account that's part of the *Microsoft Entra DC Administrators* group, such as *contosoadmin*.
+1. Sign in to VMs created for the RD environment with an account that's part of the *AAD DC Administrators* group, such as *contosoadmin*.
 1. To create and configure RDS, use the existing [Remote Desktop environment deployment guide][deploy-remote-desktop]. Distribute the RD server components across your Azure VMs as desired.
     * Specific to Domain Services - when you configure RD licensing, set it to **Per Device** mode, not **Per User** as noted in the deployment guide.
 1. If you want to provide access using a web browser, [set up the Remote Desktop web client for your users][rd-web-client].
@@ -67,13 +67,14 @@ If you want to increase the security of the user sign-in experience, you can opt
 
 To provide this capability, a Network Policy Server (NPS) is installed in your environment along with the Microsoft Entra multifactor authentication NPS extension. This extension integrates with Microsoft Entra ID to request and return the status of multifactor authentication prompts.
 
-Users must be [registered to use Microsoft Entra multifactor authentication][user-mfa-registration], which may require other Microsoft Entra ID licenses.
+Users must be [registered to use Microsoft Entra multifactor authentication][user-mfa-registration], which may require other Microsoft Entra ID licenses. For more information, see [Microsoft Entra Plans & Pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing).
 
 To integrate Microsoft Entra multifactor authentication in to your Remote Desktop environment, create an NPS Server and install the extension:
 
 1. Create another Windows Server 2016 or 2019 VM, such as *NPSVM01*, that's connected to a *workloads* subnet in your Domain Services virtual network. Join the VM to the managed domain.
-1. Sign in to NPS VM as account that's part of the *Microsoft Entra DC Administrators* group, such as *contosoadmin*.
+1. Sign in to NPS VM as account that's part of the *AAD DC Administrators* group, such as *contosoadmin*.
 1. From **Server Manager**, select **Add Roles and Features**, then install the *Network Policy and Access Services* role.
+1. Delegate Full Control permission of the RAS and IAS Servers group to the **AAD DC Administrators** group. This step is needed for NPS or Radius server setup.
 1. Use the existing how-to article to [install and configure the Microsoft Entra multifactor authentication NPS extension][nps-extension].
 
 With the NPS server and Microsoft Entra multifactor authentication NPS extension installed, complete the next section to configure it for use with the RD environment.
@@ -88,7 +89,7 @@ The following configuration options are needed to integrate with a managed domai
 
 1. Don't [register the NPS server in Active Directory][register-nps-ad]. This step fails in a managed domain.
 1. In [step 4 to configure network policy][create-nps-policy], also check the box to **Ignore user account dial-in properties**.
-1. If you use Windows Server 2019 for the NPS server and Microsoft Entra multifactor authentication NPS extension, run the following command to update the secure channel to allow the NPS server to communicate correctly:
+1. If you use Windows Server 2019 or later for the NPS server and Microsoft Entra multifactor authentication NPS extension, run the following command to update the secure channel to allow the NPS server to communicate correctly:
 
     ```powershell
     sc sidtype IAS unrestricted

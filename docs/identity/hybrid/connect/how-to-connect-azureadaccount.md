@@ -8,7 +8,7 @@ ms.assetid: 6077043a-27f1-4304-a44b-81dc46620f24
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 12/05/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -16,7 +16,7 @@ ms.author: billmath
 ms.custom: has-adal-ref
 ---
 # Change the Microsoft Entra Connector account password
-The Microsoft Entra Connector account is supposed to be service free. If you need to reset its credentials, then this topic is for you. For example, if a Global Administrator has by mistake reset the password on the account using PowerShell.
+The Microsoft Entra Connector account is supposed to be service free. If you need to reset its credentials, then this topic is for you. 
 
 ## Reset the credentials
 If the Microsoft Entra Connector account cannot contact Microsoft Entra ID due to authentication problems, the password can be reset.

@@ -6,7 +6,7 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom: devx-track-python, scenarios:getting-started, "languages:Python", mode-api
-ms.date: 08/22/2022
+ms.date: 09/24/2024
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -53,17 +53,7 @@ ms.topic: concept-article
 > > [!div class="sxs-lookup"]
 > > > [!NOTE]
 > > > `Enter_the_Supported_Account_Info_Here`
-> 
-> #### Step 3: Admin consent
-> 
-> If you try to run the application at this point, you'll receive *HTTP 403 - Forbidden* error: `Insufficient privileges to complete the operation`. This error happens because any *app-only permission* requires Admin consent: a Global Administrator of your directory must give consent to your application. Select one of the options below depending on your role:
-> 
-> ##### Global tenant administrator
-> 
-> If you are a Global Administrator, go to **API Permissions** page select **Grant admin consent for Enter_the_Tenant_Name_Here**.
-> > [!div id="apipermissionspage"]
-> > [Go to the API Permissions page]()
-> 
+>
 > ##### Standard user
 > 
 > If you're a standard user of your tenant, ask a Global Administrator to grant admin consent for your application. To do this, give the following URL to your administrator:

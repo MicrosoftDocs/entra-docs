@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.topic: how-to
-ms.date: 07/21/2024
+ms.date: 11/10/2024
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -18,7 +18,6 @@ Provide single sign-on for on-premises resources published through Microsoft Ent
 Before you get started with single sign-on, make sure your environment is ready.
 
 - An Active Directory forest. The guide uses a forest domain name that can be publicly resolved. However, a publicly resolved domain isn't a requirement.
-- Your Microsoft Entra ID tenant is set up with the private Domain Name System (DNS) feature of Microsoft Entra Private Access.
 - You enabled the Microsoft Entra Private Access forwarding profile.
 - The latest version of the Microsoft Entra Private Access connector is installed on a Windows server that has access to your domain controllers.
 - The latest version of the Global Secure Access client. For more information on the client, see [Global Secure Access clients](concept-clients.md).
@@ -58,6 +57,8 @@ The Domain Controller ports are required to enable SSO to on-premises resources.
 |----------|-----------|------------|
 |88        |User Datagram Protocol (UDP) / Transmission Control Protocol (TCP)  |Kerberos    |
 |389       |UDP        |DC locator  |
+|464       |UDP/TCP        |Password Change Request  |
+|123       |UDP        |Time Synchronization  |
 
 > [!NOTE]
 > The guide focuses on enabling SSO to on-premises resources and excludes configuration required for Windows domain-joined clients to perform domain operations (password change, Group Policy, etc.).
@@ -65,7 +66,7 @@ The Domain Controller ports are required to enable SSO to on-premises resources.
 1. Sign in to [Microsoft Entra](https://entra.microsoft.com/) as at least a [Application administrator](reference-role-based-permissions.md#application-administrator).
 1. Browse to **Global Secure Access** > **Applications** > **Enterprise Applications**.
 1. Select **New Application** to create a new application to publish your Domain Controllers.
-1. Select **Add application segment** and then add all of your Domain Controllers’ IPs or Fully Qualified Domain Names (FQDNs) and ports as per the table. Don't add both IPs and FQDNs. Only the Domain Controllers in the Active Directory site where the Private Access connectors are located should be published.
+1. Select **Add application segment** and then add all of your Domain Controllers’ IPs or Fully Qualified Domain Names (FQDNs) and ports as per the table. Only the Domain Controllers in the Active Directory site where the Private Access connectors are located should be published.
 
 > [!NOTE]
 > Make sure you don’t use wildcard FQDNs to publish your domain controllers, instead add their specific IPs or FQDNs.
@@ -73,11 +74,28 @@ The Domain Controller ports are required to enable SSO to on-premises resources.
 Once the enterprise application is created, browse back to the app and select **Users and Groups**. Add all users synchronized from Active Directory.
 
 ## Publish DNS suffixes
-Configure private DNS so the Global Secure Access clients can resolve private DNS names. Private DNS names are required for single sign-on. The clients use them to access published on premises resources.
+Configure private DNS so the Global Secure Access clients can resolve private DNS names. Private DNS names are required for single sign-on. The clients use them to access published on premises resources. To learn more about Private DNS with Quick Access, see [how-to-configure-quick-access.md#add-private-dns-suffixes](how-to-configure-quick-access.md).
 
 1. Browse to **Global Secure Access** > **Applications** > **Quick Access**.
-1. Select **Enable Name Private DNS** and select **Add DNS suffix**. At a minimum, add the top level suffixes of your Active Directory forests hosting users synchronized to Microsoft Entra ID.
+1. Select the **Private DNS** tab and then select **Enable Private DNS**.
+1. Select **Add DNS suffix**. At a minimum, add the top level suffixes of your Active Directory forests hosting users synchronized to Microsoft Entra ID.
 1. Select **Save**.
+
+## How to use Kerberos SSO to access an SMB file share
+
+This diagram demonstrates how Microsoft Entra Private Access works when trying to access an SMB file share from a Windows device that is configured with Windows Hello for Business + Cloud Trust. In this example, the admin has configured Quick Access Private DNS and two enterprise apps - one for the Domain Controllers and one for the SMB file share.
+
+:::image type="content" source="media/how-to-configure-kerberos-sso/private-access-kerberos-sso-to-smb.png" alt-text="Diagram of Microsoft Entra Private Access using Kerberos SSO for SMB file share." lightbox="media/how-to-configure-kerberos-sso/private-access-kerberos-sso-to-smb.png":::
+
+|Step      |Description   |
+|----------|-----------|
+|A         |User attempts to access SMB file share using FQDN. The GSA Client intercepts the traffic and tunnels it to the SSE Edge. Authorization policies in Microsoft Entra ID are evaluated and enforced, such as whether the user is assigned to the application and Conditional Access. Once the user has been authorized, Microsoft Entra ID issues a token for the SMB Enterprise Application. The traffic is released to continue to the Private Access service along with the application’s access token. The Private Access service validates the access token and the connection is brokered to the Private Access backend service. The connection is then brokered to the Private Network Connector.  |
+|B       |The Private Network Connector performs a DNS query to identify the IP address of the target server. The DNS service on the private network sends the response. The Private Network Connector attempts to access the target SMB file share which then requests Kerberos authentication.         |
+|C       |The client generates an SRV DNS query to locate domain controllers. Phase A is repeated, intercepting the DNS query and authorizing the user for the Quick Access application. The Private Network Connector sends the SRV DNS query to the private network. The DNS service sends the DNS response to the client via the Private Network Connector.       |
+|D       |The Windows device requests a partial TGT (also called Cloud TGT) from Microsoft Entra ID (if it doesn’t already have one). Microsoft Entra ID issues a partial TGT.        |
+|E      |Windows initiates a DC locator connection over UDP port 389 with each domain controller listed in the DNS response from phase C. Phase A is repeated, intercepting the DC locator traffic and authorizing the user for the Enterprise application that publishes the on-premises domain controllers. The Private Network Connector sends the DC locator traffic to each domain controller. The responses are relayed back to the client. Windows selects and caches the domain controller with the fastest response. |
+|F |The client exchanges the partial TGT for a full TGT. The full TGT is then used to request and receive a TGS for the SMB file share. |
+|G |The client presents the TGS to the SMB file share. The SMB file share validates the TGS. Access to the file share is granted.  | 
 
 ## Troubleshoot
 Microsoft Entra ID joined devices using password authentication rely on attributes being synchronized by Microsoft Entra ID Connect. Make sure the attributes `onPremisesDomainName`, `onPremisesUserPrincipalName`, and `onPremisesSamAccountName` have the right values. Use Graph Explorer and PowerShell to check the values.
@@ -91,7 +109,7 @@ Verify the attributes have `YES` as values.
  
 `PRT` should be present. To learn more about `PRT`, see [Troubleshoot primary refresh token issues on Windows devices](../identity/devices/troubleshoot-primary-refresh-token.md).
 
-`CloudTGT` is present if you configured cloud Kerberos trust correctly. To learn more about configuring cloud Kerberos trust, see [Passwordless security key sign-in to on-premises resources](../identity/authentication/howto-authentication-passwordless-security-key-on-premises.md#install-the-azureadhybridauthenticationmanagement-module).
+`OnPremTgt` : *YES* indicates Entra Kerberos is correctly configured and the user has been issued a partial TGT for SSO to on premises resources. To learn more about configuring cloud Kerberos trust, see [Passwordless security key sign-in to on-premises resources](../identity/authentication/howto-authentication-passwordless-security-key-on-premises.md#install-the-azureadhybridauthenticationmanagement-module).
 
 Run the `klist` command.
 

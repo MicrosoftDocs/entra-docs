@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 07/17/2024
+ms.date: 12/06/2024
 ms.reviewer: arvinh
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
 ---
@@ -34,7 +34,7 @@ This article discusses known issues to be aware of when you work with app provis
 
 ProxyAddresses is a [read-only property in Microsoft Graph](https://go.microsoft.com/fwlink/?linkid=2272551). It can be included as a source attribute in your mappings, but cannot be set as a target attribute. 
 
-### Provisioning users
+### SMS sign-in enabled users are skipped
 
 An external user from the source (home) tenant can't be provisioned into another tenant. Internal guest users from the source tenant can't be provisioned into another tenant. Only internal member users from the source tenant can be provisioned into the target tenant. For more information, see [Properties of a Microsoft Entra B2B collaboration user](~/external-id/user-properties.md).
 
@@ -52,6 +52,9 @@ Where [GuestUserUPN] is the calculated UserPrincipalName. Example:
 `Set-MailUser guestuser1_contoso.com#EXT#@fabricam.onmicrosoft.com -HiddenFromAddressListsEnabled:$false`
 
 For more information, see [About the Exchange Online PowerShell module](/powershell/exchange/exchange-online-powershell-v2).
+
+### Mail attribute is not updated
+If the user in the target tenant is assigned an exchange license, cross-tenant synchronization will not be able to update the mail attribute. To work around this, remove the exchange license for the user, update the mail attribute, and assign the license to the user again. 
 
 ### Configuring synchronization from target tenant
 
@@ -80,7 +83,7 @@ On configuring provisioning for the first time, you'll notice that the provision
 
 #### Attribute SamAccountName or userType not available as a source attribute
 
-The attributes **SamAccountName** and **userType** aren't available as a source attribute by default. Extend your schema to add the attributes. You can add the attributes to the list of available source attributes by extending your schema. To learn more, see [Missing source attribute](user-provisioning-sync-attributes-for-mapping.md). 
+The attributes **SamAccountName** and **userType** aren't available as source attributes. You can instead use a directory extension attribute as a workaround. To learn more, see [Missing source attribute](user-provisioning-sync-attributes-for-mapping.md). 
 
 #### Source attribute dropdown missing for schema extension
 

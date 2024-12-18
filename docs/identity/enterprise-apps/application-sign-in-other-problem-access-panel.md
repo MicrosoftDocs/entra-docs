@@ -47,7 +47,7 @@ Here are some things to check if an app is appearing or not appearing:
 - Make sure the user’s account is **not locked out.**
 - Make sure the user’s **password is not expired or forgotten.**
 - Make sure **Multi-Factor Authentication** isn't blocking user access.
-- Make sure a **Conditional Access policy** or **Identity Protection** policy isn't blocking user access.
+- Make sure a **Conditional Access policy** or **legacy Identity Protection** policy isn't blocking user access.
 - Make sure that a user’s **authentication contact info** is up to date to allow Multi-Factor Authentication or Conditional Access policies to be enforced.
 - Make sure to also try clearing your browser’s cookies and trying to sign in again.
 
@@ -123,7 +123,7 @@ To check a user’s multi-factor authentication status, follow these steps:
 
 ### Check a user’s authentication contact info
 
-To check a user’s authentication contact info used for Multi-factor authentication, Conditional Access, Identity Protection, and Password Reset, follow these steps:
+To check a user’s authentication contact info used for multifactor authentication, Conditional Access, and Password Reset, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [user administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.

@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 10/27/2023
+ms.date: 12/17/2024
 ms.reviewer: JasSuri
 ms.service: identity-platform
 
@@ -43,7 +43,7 @@ Your REST API must handle:
 - Business logic
 - Incoming and outgoing validation of HTTP request and response schemas.
 - Auditing and logging.
-- Availability, performance and security controls.
+- Availability, performance, and security controls.
 
 For developers running the REST API on Azure Functions, consider using the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library, which helps with token validation implementation using Microsoft Azure's built-in authentication capabilities. It provides a data model for different event types, initiates incoming and outgoing request and response processing, so more focus can be put on the business logic.  
 
@@ -73,6 +73,17 @@ Attribute collection start and submit events can be used with custom authenticat
 > [!NOTE]
 > Attribute collection start and submit events are currently available only for user flows in Microsoft Entra External ID in external tenants. For details, see [Add your own business logic](~/external-id/customers/concept-custom-extensions.md).
 
-## See also
+## One time passcode send event
+ 
+The **OnOtpSend** event is triggered when a one time passcode email is activated. It allows you to call a REST API to use your own email provider. This event can be used to send customized emails to users who sign up, reset their password, sign-in with email and one-time passcode, or email multifactor authentication (MFA).
+ 
+When the **OnOtpSend** event is activated, Microsoft Entra sends a one-time passcode to the specified REST API you own. The REST API then uses your chosen email provider, such as Azure Communication Service or SendGrid, to send the one-time passcode with your custom email template, from address, and email subject, while also supporting localization.
+ 
+> [!NOTE]
+> The one-time passcode send event is currently available only for user flows in Microsoft Entra External ID in external tenants. For details, see [Configure a custom email provider for one time passcode send events](./custom-extension-email-otp-get-started.md)
 
-- Learn how to [create custom authentication extensions for attribute collection start and submit events](custom-extension-attribute-collection.md) with a sample OpenID Connect application.
+## Related content
+
+- Learn more about [custom claims providers](custom-claims-provider-overview.md)
+- [Create custom authentication extensions for attribute collection start and submit events](custom-extension-attribute-collection.md) with a sample OpenID Connect application
+- [Configure a custom email provider for one time passcode send events](custom-extension-email-otp-get-started.md)

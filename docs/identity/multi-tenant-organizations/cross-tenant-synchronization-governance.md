@@ -3,7 +3,7 @@ title: Governance and cross-tenant synchronization
 description: Learn to govern and manage identity and access lifecycles across multitenant organizations.
 ms.service: entra
 ms.topic: conceptual
-ms.date: 03/20/2024
+ms.date: 08/25/2024
 ms.author: gasinh
 author: gargi-sinha
 manager: martinco
@@ -43,7 +43,7 @@ By default, cross-tenant synchronization includes commonly used attributes on th
 
    ![Diagram of synchronization with commonly used attributes.](./media/cross-tenant-synchronization-governance/common-attributes.png)
 
-Organizations use the attributes to help create dynamic membership of groups and access packages in the source and target tenant. Some Microsoft Entra ID features have user attributes to target, such as lifecycle workflow user scoping.
+Organizations use the attributes to help create dynamic membership groups and access packages in the source and target tenant. Some Microsoft Entra ID features have user attributes to target, such as lifecycle workflow user scoping.
 
 To remove, or deprovision, a B2B collaboration user from a tenant automatically stops access to resources in that tenant. This configuration is relevant when employees leave an organization.
 
@@ -76,7 +76,7 @@ With identity governance [access package](~/id-governance/entitlement-management
 
 [Access reviews in Microsoft Entra ID](~/id-governance/access-reviews-overview.md) enable organizations to manage group memberships, access to enterprise applications, and role assignments. Regularly review user access to ensure the right people have access.
 
-When resource access configuration doesn't automatically assign access, such as with dynamic groups or access packages, configure access reviews to apply the results to resources upon completion. The following sections describe how multitenant organizations can configure access reviews for users across tenants in source and target tenants.
+When resource access configuration doesn't automatically assign access, such as with dynamic membership groups or access packages, configure access reviews to apply the results to resources upon completion. The following sections describe how multitenant organizations can configure access reviews for users across tenants in source and target tenants.
 
 ### Review source-tenant user access
 

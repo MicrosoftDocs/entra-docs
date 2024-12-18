@@ -5,7 +5,7 @@ description: Learn how Microsoft Entra certificate-based authentication works
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 06/28/2024
+ms.date: 12/02/2024
 
 
 ms.author: justinha
@@ -73,7 +73,7 @@ Now we'll walk through each step:
 
 ## Understanding issuer hints (Preview)
 
-Issuer hints send back a Trusted CA Indication as part of the TLS handshake. The trusted CA list is set to subject of the Certificate Authorities (CAs) uploaded by the tenant in the Entra trust store. Browsers client or native application client use the hints sent back by server to filter the certificates shown in certificate picker. The client shows only the authentication certificates issued by the CAs in the trust store. 
+Issuer hints send back a Trusted CA Indication as part of the TLS handshake. The trusted CA list is set to subject of the Certificate Authorities (CAs) uploaded by the tenant in the Entra trust store. A browser client or native application client can use the hints sent back by server to filter the certificates shown in the certificate picker. The client shows only the authentication certificates issued by the CAs in the trust store. 
 
 ### Enable issuer hints
 
@@ -98,9 +98,27 @@ Authentication Policy Administrators should sign in with a certificate after the
 
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/propagation-error.png" alt-text="Screenshot of an error users see if updates are in progress.":::
 
-## Certificate-based authentication MFA capability
+## MFA with single-factor certificate-based authentication
 
-Microsoft Entra CBA is capable of multifactor authentication (MFA). Microsoft Entra CBA can be either single-factor (SF) or multifactor (MF) depending on the tenant configuration. Enabling CBA makes a user potentially capable to complete MFA. A user might need more configuration to complete MFA, and proof up to register other authentication methods when the user is in scope for CBA.
+Microsoft Entra CBA is supported as both first factor and selcond factor for authentication. 
+Some of the supported combinations are:
+
+1. CBA (first factor) and [passkeys](../authentication/how-to-enable-authenticator-passkey.md) (second factor)
+1. CBA (first factor) and [passwordless phone sign-in](../authentication/howto-authentication-passwordless-phone.md#enable-passwordless-phone-sign-in-authentication-methods) (second factor)
+1. CBA (first factor) and [FIDO2 security keys](../authentication/howto-authentication-passwordless-security-key-windows.md) (second factor)
+1. Password (first factor) + CBA (second factor) (Preview)
+
+>[!Note]
+>CBA as a second factor on iOS has [known issues](./concept-certificate-based-authentication-mobile-ios.md#known-issues) and is blocked on iOS. We are working on fixing the issues and should be supported on iOS.
+
+Users need to have a way to get MFA and register passwordless sign-in or FIDO2 in advance to signing in with Microsoft Entra CBA.
+
+>[!IMPORTANT]
+>A user is considered MFA capable when they are included in the CBA method settings. This means the user can't use proof up as part of their authentication to register other available methods. Make sure users without a valid certificate aren't included in the CBA method settings. For more information about how authentication works, see [Microsoft Entra multifactor authentication](../authentication/concept-mfa-howitworks.md).
+
+## Options to get MFA capability with Single factor certificates
+
+Microsoft Entra CBA is capable of multifactor authentication (MFA). Microsoft Entra CBA can be either single-factor (SF) or multifactor (MF) depending on the tenant configuration. Enabling CBA makes a user potentially capable to complete MFA. A user with single factor certificate will need another factor to complete MFA. If the user does not have any other auth method registered and are added into scope for CBA auth method, the user cannot proof up to register other authentication methods.
 
 If the CBA-enabled user only has a Single Factor (SF) certificate and needs to complete MFA:
    1. Use a password and SF certificate.
@@ -116,21 +134,7 @@ If the CBA-enabled user can't use an MF cert, such as on mobile device without s
    1. User needs to register another MFA method (when user can use MF cert).
    1. Use password and MF cert (when user can use MF cert).
    1. Authentication Policy Administrator adds a phone number and allows voice/text message authentication for the user account.
-
-## MFA with single-factor certificate-based authentication
-
-Microsoft Entra CBA can be used as a second factor to meet MFA requirements with single-factor certificates. 
-Some of the supported combinations are:
-
-1. CBA (first factor) and [passkeys](../authentication/how-to-enable-authenticator-passkey.md) (second factor)
-1. CBA (first factor) and [passwordless phone sign-in](../authentication/howto-authentication-passwordless-phone.md#enable-passwordless-phone-sign-in-authentication-methods) (second factor)
-1. CBA (first factor) and [FIDO2 security keys](../authentication/howto-authentication-passwordless-security-key-windows.md) (second factor) 
-
-Users need to have another way to get MFA and register passwordless sign-in or FIDO2 in advance to signing in with Microsoft Entra CBA.
-
->[!IMPORTANT]
->A user is considered MFA capable when they are included in the CBA method settings. This means the user can't use proof up as part of their authentication to register other available methods. Make sure users without a valid certificate aren't included in the CBA method settings. For more information about how authentication works, see [Microsoft Entra multifactor authentication](../authentication/concept-mfa-howitworks.md).
-
+      
 **Steps to set up passwordless phone sign in (PSI) with CBA**
 
 For passwordless sign-in to work, users should disable legacy notification through their mobile app.
@@ -182,13 +186,6 @@ Let's look at an example of a user who has single-factor certificate, and is con
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/number.png" alt-text="Screenshot of number match.":::
 
 1. Select **Yes** and user can authenticate and sign in.
-
-## MFA with Certificate-based authentication as second factor (Preview)
-CBA can be used as a second factor like Password (first factor) and CBA (second factor) to get MFA.
-
->[!NOTE]
-On iOS, users with certificate-based authentication will see a "double prompt", where they must click the option to use certificate-based authentication twice.
-On iOS, users with Microsoft Authenticator App will also see hourly login prompt to authenticate with CBA if there's an Authentication Strength policy enforcing CBA, or if they use CBA as the second factor or step-up authentication.
 
 ## Understanding the authentication binding policy
 
@@ -440,6 +437,32 @@ As of now, there's no way to manually force or retrigger the download of the CRL
 
 [!INCLUDE [Configure revocation](../../includes/entra-authentication-configure-revocation.md)]
 
+## Understanding CRL validation (Preview)
+
+A CRL is a record of digital certificates that have been revoked before the end of their validity period by a certificate authority (CA).
+When CAs are uploaded to the Microsoft Entra trust store, a CRL, or more specifically the CrlDistributionPoint attribute, isn't required. A CA can be uploaded without a CRL endpoint, and certificate-based authentication won't fail if an issuing CA doesn't have a CRL specified. 
+
+To strengthen security and avoid misconfigurations, an Authentication Policy Administrator can require CBA authentication to fail if no CRL is configured for a CA that issues an end user certificate.
+
+### Enable CRL validation
+
+To enable CRL validation, click **Require CRL validation (recommended)**. 
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/require-validation.png" alt-text="Screenshot of how to require CRL validation." :::  
+
+Once enabled, any CBA will fail is the end user certificate was issued by a CA with no CRL configured.
+
+An Authentication Policy Administrator can exempt a CA if its CRL has issues that should be fixed. Click **Add Exemption** and select any CAs that should be exempted.
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/exempt-validation.png" alt-text="Screenshot of how to exempt CAs from CRL validation." :::  
+
+The CAs in the exempted list aren't required to have CRL configured and the end-user certificates that they issue don't fail authentication.
+
+>[!NOTE]
+>There's a known issue with the object picker where the selected items aren't displayed correctly. Use the **Certificate Authorities** tab to select or remove CAs.
+
+:::image type="content" border="true" source="./media/concept-certificate-based-authentication-technical-deep-dive/exempted.png" alt-text="Screenshot of CAs that are exempted from CRL validation." :::  
+
 
 ## How CBA works with a Conditional Access authentication strength policy
 
@@ -557,9 +580,9 @@ To reset the MRU method, the user needs to cancel the certificate picker, select
 
 ## External identity support
 
-An external identity can't perform multifactor authentication to the resource tenant with Microsoft Entra CBA. Instead, have the user perform MFA using CBA in the home tenant, and set up cross tenant settings for the resource tenant to trust MFA from the home tenant.
+An external identity B2B guest user can use CBA on the home tenant and if the cross tenant settings for the resource tenant is set up to trust MFA from the home tenant, user's CBA auth on home tenant will be honored. For more information about how to enable **Trust multifactor authentication from Microsoft Entra tenants**, see [Configure B2B collaboration cross-tenant access](../../external-id/cross-tenant-access-settings-b2b-collaboration.yml).
+CBA on resource tenant is not supported yet. 
 
-For more information about how to enable **Trust multifactor authentication from Microsoft Entra tenants**, see [Configure B2B collaboration cross-tenant access](../../external-id/cross-tenant-access-settings-b2b-collaboration.yml).
 
 ## Next steps
 

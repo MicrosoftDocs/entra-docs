@@ -167,14 +167,14 @@ Before you get started:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com). 
 1. Browse to **Identity**.
-3. To learn how to create a policy in Microsoft Entra ID. See, [Common Conditional Access policy: Require MFA for all users](~/identity/conditional-access/howto-conditional-access-policy-all-users-mfa.md).
+3. To learn how to create a policy in Microsoft Entra ID. See, [Common Conditional Access policy: Require MFA for all users](~/identity/conditional-access/policy-all-users-mfa-strength.md).
 4. Create a device trust-based Conditional Access rule.
 
    ![Screenshot of entries for Require Trusted Devices for Access, under Conditional Access.](media/migrate-okta-sign-on-policies-conditional-access/test-user.png)
 
    ![Screenshot of the Keep you account secure dialog with the success message.](media/migrate-okta-sign-on-policies-conditional-access/success-test-user.png)
 
-5. After you configure the location-based policy and device trust policy, [Block legacy authentication with Microsoft Entra ID with Conditional Access](~/identity/conditional-access/block-legacy-authentication.md).
+5. After you configure the location-based policy and device trust policy, [Block legacy authentication with Microsoft Entra ID with Conditional Access](~/identity/conditional-access/policy-block-legacy-authentication.md).
 
 With these three Conditional Access policies, the original Okta sign-on policies experience is replicated in Microsoft Entra ID. 
 
@@ -198,9 +198,6 @@ Learn more: [Enable combined security information registration in Microsoft Entr
    ![Screenshot of policies on the Conditional Access, Policies screen.](media/migrate-okta-sign-on-policies-conditional-access/enable-test-user.png)
 
 2. On the Office 365 **Sign-In** pane, the test user John Smith is prompted to sign in with Okta MFA and Microsoft Entra multifactor authentication.
-
-   ![Screenshot of the Azure Sign-In pane.](media/migrate-okta-sign-on-policies-conditional-access/sign-in-through-okta.png)
-
 3. Complete the MFA verification through Okta.
 
    ![Screenshot of MFA verification through Okta.](media/migrate-okta-sign-on-policies-conditional-access/mfa-verification-through-okta.png)

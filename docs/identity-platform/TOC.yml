@@ -146,7 +146,15 @@
           - name: Get user data from web API
             href: tutorial-single-page-app-react-call-api.md
         - name: Angular
-          href: tutorial-v2-angular-auth-code.md
+          items:
+          - name: Register your app
+            href: tutorial-single-page-apps-angular-register-app.md
+          - name: Prepare your app
+            href: tutorial-single-page-apps-angular-prepare-app.md
+          - name: Sign in users
+            href: tutorial-single-page-apps-angular-sign-in-users-app.md
+          - name: Get user data from web API
+            href: tutorial-single-page-apps-angular-call-api.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#single-page-applications
@@ -169,13 +177,11 @@
     - name: Web app authentication
       href: index-web-app.yml
     - name: Quickstart
-      items: 
-        - name: ASP.NET 
-          href: quickstart-web-app-aspnet-sign-in.md
+      items:
         - name: ASP.NET Core
           href: quickstart-web-app-dotnet-core-sign-in.md
         - name: Node.js
-          href: quickstart-web-app-nodejs-msal-sign-in.md
+          href: quickstart-web-app-nodejs-sign-in.md
         - name: Java
           href: quickstart-web-app-java-sign-in.md
         - name: Python Flask
@@ -302,16 +308,12 @@
       items:
         - name: Node.js Electron
           href: quickstart-desktop-app-nodejs-electron-sign-in.md
-        - name: Universal Windows Platform (UWP)
-          href: quickstart-desktop-app-uwp-sign-in.md
         - name: Windows Presentation Foundation (WPF)
           href: quickstart-desktop-app-wpf-sign-in.md
     - name: Tutorials
       items:
         - name: Node.js Electron
           href: tutorial-v2-nodejs-desktop.md
-        - name: Universal Windows Platform (UWP)
-          href: tutorial-v2-windows-uwp.md
         - name: Windows Presentation Foundation (WPF)
           href: tutorial-v2-windows-desktop.md
     - name: Samples
@@ -352,9 +354,13 @@
     - name: Tutorials
       items:
         - name: Android
-          href: tutorial-v2-android.md
-        - name: Android - Shared-device mode
-          href: tutorial-v2-shared-device-mode.md
+          items:
+            - name: Sign in users and call a web API
+              href: tutorial-v2-android.md
+            - name: Enable Shared Device Mode in your app using MSAL
+              href: tutorial-v2-shared-device-mode.md
+            - name: Set up an Android device in Shared Device Mode
+              href: tutorial-mobile-android-device-shared-mode.md
         - name: iOS and macOS
           href: tutorial-v2-ios.md
     - name: Samples
@@ -481,7 +487,7 @@
               href: configure-token-lifetimes.yml    
             - name: Configure app multi-instancing
               href: configure-app-multi-instancing.md
-        - name: Custom claims provider
+        - name: Custom authentication extensions
           items:
             - name: Token issuance start event
               items:
@@ -491,12 +497,20 @@
                   href: custom-extension-tokenissuancestart-configuration.md
                 - name: Configure a SAML app to call a custom claims provider
                   href: custom-extension-configure-saml-app.md
-                - name: Troubleshoot your custom claims provider API
-                  href: custom-extension-troubleshoot.md
-        - name: Attribute collection custom extensions
-          items:
-            - name: Create attribute collection start and submit events
-              href: custom-extension-attribute-collection.md
+                - name: Custom claims provider reference
+                  href: custom-claims-provider-reference.md
+            - name: Attribute collection
+              items: 
+                - name: Create attribute collection start and submit events
+                  href: custom-extension-attribute-collection.md
+                - name: Attribute collection start custom extension reference
+                  href: custom-extension-OnAttributeCollectionStart-reference.md
+                - name: Attribute collection submit custom extension reference
+                  href: custom-extension-OnAttributeCollectionSubmit-reference.md
+            - name: Configure a custom email provider for one time code send events
+              href: custom-extension-email-otp-get-started.md
+            - name: Troubleshoot your custom authentication extension
+              href: custom-extension-troubleshoot.md
         - name: Handle browser cookie restrictions
           items:
             - name: How to handle third-party cookie blocking in browsers
@@ -709,6 +723,9 @@
           href: /entra/msal/python/
     - name: Protocol reference (OAuth, OIDC, SAML)
       items:
+        - name: OAuth 2.0 application types
+          displayName: App types, OAuth
+          href: v2-app-types.md
         - name: OAuth 2.0 and OpenID Connect (OIDC)
           items:
             - name: Token grant flows
@@ -729,9 +746,6 @@
                   href: v2-oauth-ropc.md
                 - name: OpenID Connect
                   href: v2-protocols-oidc.md
-            - name: OAuth 2.0 application types
-              displayName: App types, OAuth
-              href: v2-app-types.md
             - name: Certificate credentials
               href: certificate-credentials.md
             - name: Signing key rollover
@@ -765,14 +779,6 @@
           href: reply-url.md
         - name: Validation differences by supported account types
           href: supported-accounts-validation.md
-    - name: Custom authentication extensions reference
-      items:
-        - name: Custom claims provider reference
-          href: custom-claims-provider-reference.md
-        - name: Attribute collection start custom extension reference
-          href: custom-extension-OnAttributeCollectionStart-reference.md
-        - name: Attribute collection submit custom extension reference
-          href: custom-extension-OnAttributeCollectionSubmit-reference.md
     - name: Endpoint reference
       items: 
         - name: Admin consent URI

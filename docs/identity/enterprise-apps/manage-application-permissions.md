@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: how-to
-ms.date: 05/04/2024
+ms.date: 10/03/2024
 ms.author: jawoods
 ms.reviewer: phsignor
 zone_pivot_groups: enterprise-apps-all
@@ -20,7 +20,7 @@ ms.custom: enterprise-apps, has-azure-ad-ps-ref
 
 # Review permissions granted to enterprise applications
 
-In this article, you learn how to review permissions granted to applications in your Microsoft Entra tenant. You may need to review permissions when you've detected a malicious application or the application has been granted more permissions than is necessary. You learn how to revoke permissions granted to the application using Microsoft Graph API and existing versions of PowerShell.
+In this article, you learn how to review permissions granted to applications in your Microsoft Entra tenant. You might need to review permissions when you detect a malicious application, or one that has more permissions than is necessary. You learn how to revoke permissions granted to the application using Microsoft Graph API and existing versions of PowerShell.
 
 The steps in this article apply to all applications that were added to your Microsoft Entra tenant via user or admin consent. For more information on consenting to applications, see [User and admin consent](user-admin-consent-overview.md).
 
@@ -32,19 +32,17 @@ To review permissions granted to applications, you need:
 - One of the following roles: Cloud Application Administrator, Application Administrator.
 - A Service principal owner who isn't an administrator is able to invalidate refresh tokens.
 
-## Restoring permissions
-
-Please see [Restore permissions granted to applications](restore-permissions.md) for information on how to restore permissions that have been revoked or deleted.
-
 :::zone pivot="portal"
 
-## Review and revoke permissions
+## Review and revoke permissions in the Microsoft Entra admin center
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 You can access the Microsoft Entra admin center to view the permissions granted to an app. You can revoke permissions granted by admins for your entire organization, and you can get contextual PowerShell scripts to perform other actions.
 
-To review an application's permissions that have been granted for the entire organization or to a specific user or group:
+For information on how to restore revoked or deleted permissions, see [Restore permissions granted to applications](restore-permissions.md).
+
+To review an application's permissions granted for the entire organization or to a specific user or group:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
@@ -52,7 +50,7 @@ To review an application's permissions that have been granted for the entire org
 1. Select **Permissions**. 
 1. To view permissions that apply to your entire organization, select the **Admin consent** tab. To view permissions granted to a specific user or group, select the **User consent** tab.
 1. To view the details of a given permission, select the permission from the list. The **Permission Details** pane opens.
-   After you've reviewed the permissions granted to an application, you can revoke permissions granted by admins for your entire organization. 
+   After reviewing the permissions granted to an application, you can revoke permissions granted by admins for your entire organization. 
    > [!NOTE]
    > You can't revoke permissions in the **User consent** tab using the portal. You can revoke these permissions using Microsoft Graph API calls or PowerShell cmdlets. Go to the PowerShell and Microsoft Graph tabs of this article for more information.
 
@@ -67,7 +65,7 @@ To revoke permissions in the **Admin consent** tab:
 
 :::zone pivot="aad-powershell"
 
-## Review and revoke permissions
+## Review and revoke permissions using Azure AD PowerShell
 
 Use the following Azure AD PowerShell script to revoke all permissions granted to an application. You need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
@@ -94,7 +92,7 @@ $spApplicationPermissions | ForEach-Object {
 }
 ```
 
-## Invalidate the refresh tokens
+## Invalidate the refresh tokens using Azure AD PowerShell
 
 Remove appRoleAssignments for users or groups to the application using the following scripts.
 
@@ -116,7 +114,7 @@ $assignments | ForEach-Object {
 
 :::zone pivot="ms-powershell"
 
-## Review and revoke permissions
+## Review and revoke permissions using Microsoft Graph PowerShell
 
 Use the following Microsoft Graph PowerShell script to revoke all permissions granted to an application. You need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
@@ -145,7 +143,7 @@ Remove-MgServicePrincipalAppRoleAssignedTo -ServicePrincipalId $Sp.Id  -AppRoleA
 }
 ``` 
 
-## Invalidate the refresh tokens
+## Invalidate the refresh tokens using Microsoft Graph PowerShell
 
 Remove appRoleAssignments for users or groups to the application using the following scripts.
 
@@ -170,7 +168,7 @@ $spApplicationPermissions = Get-MgServicePrincipalAppRoleAssignedTo -ServicePrin
 
 :::zone pivot = "ms-graph"
 
-## Review and revoke permissions
+## Review and revoke permissions using Microsoft Graph
 
 To review permissions, Sign in to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
@@ -220,7 +218,7 @@ Run the following queries to review application permissions granted to an applic
     DELETE https://graph.microsoft.com/v1.0/servicePrincipals/{resource-servicePrincipal-id}/appRoleAssignedTo/{appRoleAssignment-id}
     ```
 
-## Invalidate the refresh tokens
+## Invalidate the refresh tokens using Microsoft Graph
 
 Run the following queries to remove appRoleAssignments of users or groups to the application.
 
@@ -247,11 +245,11 @@ Run the following queries to remove appRoleAssignments of users or groups to the
 :::zone-end
 
 > [!NOTE]
-> Revoking the current granted permission won't stop users from re-consenting to the application. If you want to block users from consenting, read [Configure how users consent to applications](configure-user-consent.md).
+> Revoking the current granted permission won't stop users from re-consenting to the application's requested permissions. You need to [stop the application from requesting the permissions through dynamic consent](~/identity-platform/howto-update-permissions.md). If you want to block users from consenting altogether, read [Configure how users consent to applications](configure-user-consent.md).
 
 ## Other authorization to consider
 
-Delegated and application permissions are not the only ways to grant applications and users access to protected resources. Admins should be aware of other authorization systems that may grant access to sensitive information. Examples of various authorization systems at Microsoft include [Entra built-in roles](/entra/identity/role-based-access-control/permissions-reference), [Exchange RBAC](/exchange/permissions-exo/application-rbac), and [Teams resource-specific consent](/microsoftteams/platform/graph-api/rsc/resource-specific-consent).
+Delegated and application permissions aren't the only ways to grant applications and users access to protected resources. Admins should be aware of other authorization systems that might grant access to sensitive information. Examples of various authorization systems at Microsoft include [Microsoft Entra built-in roles](/entra/identity/role-based-access-control/permissions-reference), [Exchange RBAC](/exchange/permissions-exo/application-rbac), and [Teams resource-specific consent](/microsoftteams/platform/graph-api/rsc/resource-specific-consent).
 
 ## Next steps
 

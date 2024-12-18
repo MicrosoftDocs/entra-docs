@@ -120,7 +120,7 @@ Sometimes called a *public key*, a certificate is the recommended credential typ
 
 ### [Add a client secret](#tab/client-secret)
 
-Sometimes called an *application password*, a client secret is a string value your app can use in place of a certificate to identity itself.
+Sometimes called an *application password*, a client secret is a string value your app can use in place of a certificate to identify itself.
 
 Client secrets are considered less secure than certificate credentials. Application developers sometimes use client secrets during local app development because of their ease of use. However, you should use certificate credentials for any of your applications that are running in production.
 
@@ -151,7 +151,7 @@ To add a federated credential, follow these steps:
     - **Customer managed keys** for encrypt data in your tenant using Azure Key Vault in another tenant.
     - **GitHub actions deploying Azure resources** to [configure a GitHub workflow](~/workload-id/workload-identity-federation-create-trust.md#github-actions) to get tokens for your application and deploy assets to Azure.
     - **Kubernetes accessing Azure resources** to configure a [Kubernetes service account](~/workload-id/workload-identity-federation-create-trust.md#kubernetes) to get tokens for your application and access Azure resources.
-    - **Other issuer** to configure an identity managed by an external [OpenID Connect provider](~/workload-id/workload-identity-federation-create-trust.md#other-identity-providers) to get tokens for your application and access Azure resources.
+    - **Other issuer** to configure the application to [trust a managed identity](~/workload-id/workload-identity-federation-config-app-trust-managed-identity.md) or an identity managed by an external [OpenID Connect provider](~/workload-id/workload-identity-federation-create-trust.md#other-identity-providers) to get tokens for your application and access Azure resources.
 
 For more information, how to get an access token with a federated credential, check out the [Microsoft identity platform and the OAuth 2.0 client credentials flow](../../v2-oauth2-client-creds-grant-flow.md#third-case-access-token-request-with-a-federated-credential) article.
 

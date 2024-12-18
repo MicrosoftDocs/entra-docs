@@ -21,7 +21,7 @@ Learn how to enable authentication for your web app running on Azure App Service
 
 App Service provides built-in authentication support, so you can sign in users and access data by writing minimal or no code in your web app. Using the App Service authentication module isn't required, but helps simplify authentication and for your app. This article shows how to secure your web app with the App Service authentication module by using Microsoft Entra ID as the identity provider.
 
-The authentication module is enabled and configured through the Azure portal and app settings. No SDKs, specific languages, or changes to application code are required.​ A variety of identity providers are supported, which includes Microsoft Entra ID, Microsoft Account, Facebook, Google, and Twitter​​. When the authentication module is enabled, every incoming HTTP request passes through it before being handled by app code.​​ To learn more, see [Authentication and authorization in Azure App Service](/azure/app-service/overview-authentication-authorization).
+The authentication module is enabled and configured through the Azure portal and app settings. No SDKs, specific languages, or changes to application code are required.​ A variety of identity providers are supported, which includes Microsoft Entra ID, Microsoft Account, Facebook, Google, and X​​. When the authentication module is enabled, every incoming HTTP request passes through it before being handled by app code.​​ To learn more, see [Authentication and authorization in Azure App Service](/azure/app-service/overview-authentication-authorization).
 
 In this tutorial, you learn how to:
 

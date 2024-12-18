@@ -6,7 +6,7 @@ author: msmimart
 manager: celestedg
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: concept-article
 ms.date: 05/09/2024
 ms.author: mimart
@@ -55,6 +55,8 @@ Customer accounts have a [default set of permissions](reference-user-permissions
 
 - If you don't already have a Microsoft Entra tenant and want to try External ID, we recommend using the [get started experience](https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl) to start a free trial.
 
+- If you use Visual Studio Code, you can also use the [Microsoft Entra External ID extension for Visual Studio Code](https://aka.ms/ciamvscode/quickstarts/marketplace) to create an external tenant directly within Visual Studio Code ([learn more](https://aka.ms/ciamvscode/quickstartguide)).
+
 ## Step 2: Register your application
 
 :::image type="content" source="media/concept-planning-your-solution/overview-setup-step-2.png" alt-text="Diagram showing step 2 in the setup flow.":::
@@ -101,7 +103,7 @@ When planning your sign-up and sign-in experience, determine your requirements:
 
 - **Requirements for token claims**. If your application requires specific user attributes, you can include them in the token sent to your application.
 
-- **Social identity providers**. You can set up social identity providers [Google](how-to-google-federation-customers.md) and [Facebook](how-to-facebook-federation-customers.md) and then add them to your user flow as sign-in options.
+- **Identity providers**. You can set up social identity providers like [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md), [Apple](how-to-apple-federation-customers.md) or a [custom-configured OpenID Connect (OIDC)](how-to-custom-oidc-federation-customers.md) identity provider. Then, you can add them to your user flow as sign-in options
 
 ### How to integrate a user flow with your app
 
@@ -125,7 +127,7 @@ When planning for configuring company branding, language customizations, and cus
 
 - **Native authentication**. Native authentication enables you to host the user interface in the client application instead of delegating authentication to browsers. Learn more about [native authentication](concept-native-authentication.md) in External ID.
 
-- **Security and governance**. Learn about [security and governance](concept-security-customers.md) features available in your external tenant, such as Identity Protection.
+- **Security and governance**. Learn about [security and governance](concept-security-customers.md) features available in your external tenant, such as Microsoft Entra ID Protection.
 
 ### How to customize and secure your sign-in
 
