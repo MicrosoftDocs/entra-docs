@@ -28,7 +28,7 @@ Before you try this tutorial, consider the following items:
 
  1. Ensure that you're familiar with basics of cloud sync.
  2. Ensure that you're running Microsoft Entra Connect Sync version 1.4.32.0 or later and have configured the sync rules as documented.
- 3. When piloting, you'll be removing a test OU or group from Microsoft Entra Connect Sync scope. Moving objects out of scope leads to deletion of those objects in Microsoft Entra ID.  
+ 3. When piloting, you're removing a test OU or group from Microsoft Entra Connect Sync scope. Moving objects out of scope leads to deletion of those objects in Microsoft Entra ID.  
 
     - User objects, the objects in Microsoft Entra ID are soft-deleted and can be restored. 
     - Group objects, the objects in Microsoft Entra ID are hard-deleted and can't be restored. 
@@ -60,11 +60,11 @@ As a minimum, you should have [Microsoft Entra Connect](https://www.microsoft.co
 <a name='back-up-your-azure-ad-connect-configuration'></a>
 
 ## Back up your Microsoft Entra Connect configuration
-Before making any changes, you should back up your Microsoft Entra Connect configuration. This way, you can roll back to your previous configuration.  See [Import and export Microsoft Entra Connect configuration settings](../connect/how-to-connect-import-export-config.md) for more information.
+Before making any changes, you should back up your Microsoft Entra Connect configuration. This way, you can roll back to your previous configuration. See [Import and export Microsoft Entra Connect configuration settings](../connect/how-to-connect-import-export-config.md) for more information.
 
 ## Stop the scheduler
 
-Microsoft Entra Connect Sync synchronizes changes occurring in your on-premises directory using a scheduler. In order to modify and add custom rules, you want to disable the scheduler so that synchronizations won't run while you're working making the changes. To stop the scheduler, use the following steps:
+Microsoft Entra Connect Sync synchronizes changes occurring in your on-premises directory using a scheduler. To modify and add custom rules, you disable the scheduler so that synchronizations don't run while you're working making the changes. To stop the scheduler, use the following steps:
 
 1. On the server that is running Microsoft Entra Connect Sync open PowerShell with Administrative Privileges.
 2. Run `Stop-ADSyncSyncCycle`.  Hit Enter.
@@ -74,9 +74,9 @@ Microsoft Entra Connect Sync synchronizes changes occurring in your on-premises 
 >If you are running your own custom scheduler for Microsoft Entra Connect Sync, then please disable the scheduler.
 
 ## Create custom user inbound rule
-In the Microsoft Entra Connect Synchronization Rules editor, you need to create an inbound sync rule that filters out users in the OU you identified previously. The inbound sync rule is a join rule with a target attribute of cloudNoFlow.  This rule tells Microsoft Entra Connect not to synchronize attributes for these users. For more information, see [Migrating to cloud sync](migrate-azure-ad-connect-to-cloud-sync.md) documentation before attempting to migrate your production environment.
+In the Microsoft Entra Connect Synchronization Rules editor, you need to create an inbound sync rule that filters out users in the OU you identified previously. The inbound sync rule is a join rule with a target attribute of cloudNoFlow. This rule tells Microsoft Entra Connect not to synchronize attributes for these users. For more information, see [Migrating to cloud sync](migrate-azure-ad-connect-to-cloud-sync.md) documentation before attempting to migrate your production environment.
 
- 1. Launch the synchronization editor from the application menu in desktop as shown below:
+ 1. Launch the synchronization editor from the application menu in desktop as shown:
  
      ![Screenshot of the synchronization rule editor menu.](media/tutorial-migrate-aadc-aadccp/user-8.png)
 
@@ -97,7 +97,7 @@ In the Microsoft Entra Connect Synchronization Rules editor, you need to create 
 
     ![Screenshot that shows the "Create inbound synchronization rule - Description" page with values entered.](media/tutorial-migrate-aadc-aadccp/user-2.png)
 
- 4. On the **Scoping filter** page, enter the OU or security group that you want the pilot based off. To filter on OU, add the OU portion of the distinguished name. This rule is applied to all users who are in that OU. So, if DN ends with "OU=CPUsers,DC=contoso,DC=com, you would add this filter.  Then select **Next**.
+ 4. On the **Scoping filter** page, enter the OU or security group that you want the pilot based off. To filter on OU, add the OU portion of the distinguished name. This rule is applied to all users who are in that OU. So, if DN ends with "OU=CPUsers,DC=contoso,DC=com, you would add this filter. Then select **Next**.
 
     |Rule|Attribute|Operator|Value|
     |-----|----|----|-----|
@@ -114,7 +114,7 @@ In the Microsoft Entra Connect Synchronization Rules editor, you need to create 
 Same steps need to be followed for all object types (user, group, and contact). Repeat steps per configured AD Connector / per AD forest.
 
 ## Create custom user outbound rule
-You'll also need an outbound sync rule with a link type of JoinNoFlow and the scoping filter that has the cloudNoFlow attribute set to True. This rule tells Microsoft Entra Connect not to synchronize attributes for these users. For more information, see [Migrating to cloud sync](migrate-azure-ad-connect-to-cloud-sync.md) documentation before attempting to migrate your production environment.
+You'll need an outbound sync rule with a link type of JoinNoFlow and the scoping filter that has the cloudNoFlow attribute set to True. This rule tells Microsoft Entra Connect not to synchronize attributes for these users. For more information, see [Migrating to cloud sync](migrate-azure-ad-connect-to-cloud-sync.md) documentation before attempting to migrate your production environment.
 
  1. Select **Outbound** from the drop-down list for Direction and select **Add rule**.
 
@@ -201,7 +201,7 @@ Once the scheduler is enabled, Microsoft Entra Connect stops exporting any chang
 
 ## Something went wrong
 
-In case the pilot doesn't work as expected, you can go back to the Microsoft Entra Connect Sync setup by following the steps below:
+In case the pilot doesn't work as expected, you can go back to the Microsoft Entra Connect Sync setup by following these steps:
 
 1. Disable provisioning configuration in the portal.
 2. Disable all the custom sync rules created for Cloud Provisioning using the Sync Rule Editor tool. Disabling should cause full sync on all the connectors.
