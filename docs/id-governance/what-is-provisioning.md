@@ -5,7 +5,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: overview
-ms.date: 01/05/2023
+ms.date: 10/23/2024
 ms.author: billmath
 ---
 
@@ -75,3 +75,4 @@ For more information, see [What is inter-directory provisioning?](~/identity/hyb
 - [What is HR driven provisioning?](~/identity/app-provisioning/what-is-hr-driven-provisioning.md)
 - [What is app provisioning?](~/identity/app-provisioning/user-provisioning.md)
 - [What is inter-directory provisioning?](~/identity/hybrid/what-is-inter-directory-provisioning.md)
+- [Govern the lifecycle of users video](https://youtu.be/NxSu3JEsxmY?si=PELWAnpdI4iAMfki)

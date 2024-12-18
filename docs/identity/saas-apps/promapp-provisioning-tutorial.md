@@ -43,7 +43,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 * When assigning a user to Promapp, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
-## Setup Promapp for provisioning
+## Set up Promapp for provisioning
 
 1. Sign in to your [Promapp Admin Console](https://freetrial.promapp.com/axelerate/Login.aspx). Under the user name navigate to **My Profile**.
 
@@ -53,7 +53,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 	![Promapp Add SCIM](media/promapp-provisioning-tutorial/addtoken.png)
 
-3.	Provide any name in the **Description** field and select **Scim** from the **Scope** dropdown menu. Click on the save icon.
+3.	Provide any name in the **Description** field and select **SCIM** from the **Scope** dropdown menu. Click on the save icon.
 
 	![Promapp Add Name](media/promapp-provisioning-tutorial/addname.png)
 
@@ -112,8 +112,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 7. Click **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Promapp**.
-
-	![Promapp User Mappings](media/promapp-provisioning-tutorial/usermappings.png)
 
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Promapp in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Promapp for update operations. Select the **Save** button to commit any changes.
 

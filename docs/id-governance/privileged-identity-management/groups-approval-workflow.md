@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: conceptual
 ms.subservice: privileged-identity-management
-ms.date: 09/12/2023
+ms.date: 12/13/2024
 ms.author: barclayn
 ms.reviewer: ilyal
 ms.custom: pim

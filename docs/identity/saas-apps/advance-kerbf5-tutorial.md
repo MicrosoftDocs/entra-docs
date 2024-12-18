@@ -208,7 +208,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     ![Screenshot that shows the SSO/Auth Domains tab.](./media/advance-kerbf5-tutorial/configure13.png)
 
-    ![Screenshot that shows the Access Policy tab.](./media/advance-kerbf5-tutorial/configure14.png)
+    Select the **Access Policy** tab to view **General Properties** and **AAA Servers**. For **Visual Policy Editor**, select a policy for a profile to edit, in this example, **KerbApp200**.
 
     ![Screenshot that shows the Properties tab on the Access Policy.](./media/advance-kerbf5-tutorial/configure15.png)
 
@@ -218,11 +218,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     * session.ad.lastactualdomain  TEXT superdemo.live
 
-    ![Screenshot that shows the AD Query properties.](./media/advance-kerbf5-tutorial/configure17.png)
+      Edit the query properties to specify the server *superdemo.live* and **SearchFilter** value **(userPrincipalName=%{session.logon.last.usernameUPN})**.
 
     * (userPrincipalName=%{session.logon.last.usernameUPN})
 
-    ![Screenshot that shows the Branch Rules tab and the Check Account rule.](./media/advance-kerbf5-tutorial/configure18.png)
+      Select **Branch Rules** to add a branch rule and **Properties** to view properties.
 
     ![Screenshot that shows the custom variable and custom expression text boxes.](./media/advance-kerbf5-tutorial/configure19.png)
 
@@ -273,7 +273,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 * **Step 3: SPN Delegation ( for the App Service Account)**
 
-    * Setup the appropriate Delegation for the F5 Delegation Account.
+    * Set up the appropriate Delegation for the F5 Delegation Account.
     * In the example below, APM Delegation account is being configured for KCD for FRP-App1.superdemo.live app.
 
         ![Screenshot that shows the APM Delegatio Account Properties > Delegation tab.](./media/advance-kerbf5-tutorial/configure25.png)

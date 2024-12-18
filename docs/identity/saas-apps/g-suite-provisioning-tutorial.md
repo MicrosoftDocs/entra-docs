@@ -128,9 +128,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Select the **Provisioning** tab. Click on **Get started**.
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
-
-      ![Get started blade](./media/g-suite-provisioning-tutorial/get-started.png)
-
+    
 1. Set the **Provisioning Mode** to **Automatic**.
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)

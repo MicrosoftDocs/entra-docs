@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: overview
-ms.date: 09/15/2023
+ms.date: 12/03/2024
 ms.author: justinha
 #Customer intent: As an IT administrator or decision maker, I want to understand what Domain Services is and how it can benefit my organization.
 ---

@@ -134,9 +134,6 @@ Collect three Globally Unique Identifiers (GUIDs). Use the GUIDs to set up your 
 To collect this information:
 
 1. Browse to **Identity** > **Applications** > **App registrations** and select your application.
-
-   ![Registration overview for an application](./media/application-proxy-configure-single-sign-on-with-ping-access/registration-overview-for-an-application.png)
-
 1. Next to the **Application (client) ID** value, select the **Copy to clipboard** icon, then copy and save it. You specify this value later as PingAccess's client ID.
 1. Next the **Directory (tenant) ID** value, also select **Copy to clipboard**, then copy and save it. You specify this value later as PingAccess's issuer.
 1. From the sidebar of the **App registrations** for your application, select **Certificates and secrets** > **New client secret**. The **Add a client secret** page appears.

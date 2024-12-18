@@ -60,6 +60,8 @@ items:
         href: plan-sso-deployment.md
     - name: Application security
       items:
+      - name: Migrate away from secret-based authentication
+        href: migrate-applications-from-secrets.md
       - name: App access options
         href: what-is-access-management.md
       - name: Certificate signing options
@@ -141,8 +143,6 @@ items:
         items:
         - name: Configure user consent
           href: configure-user-consent.md
-        - name: Configure group owner consent
-          href: configure-user-consent-groups.md
         - name: Configure risk-based step-up consent
           href: configure-risk-based-step-up-consent.md
         - name: Configure permission classifications

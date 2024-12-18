@@ -5,7 +5,7 @@ description: Web browser and native app support for FIDO2 passwordless authentic
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/11/2024
+ms.date: 11/15/2024
 
 author: justinha
 ms.author: justinha
@@ -23,9 +23,9 @@ Microsoft Entra ID allows passkeys to be used for passwordless authentication. T
 
 The following sections cover support for Microsoft and third-party applications. Passkey (FIDO2) authentication with a third-party Identity Provider (IDP) isn't supported in third-party applications using authentication broker, or Microsoft applications on macOS, iOS, or Android at this time.
 
-### Native application support with authentication broker (preview)
+### Native application support with authentication broker
 
-Microsoft applications provide native support for FIDO2 authentication in preview for all users who have an authentication broker installed for their operating system. FIDO2 authentication is also supported in preview for third-party applications using the authentication broker.
+Microsoft applications provide native support for FIDO2 authentication for all users who have an authentication broker installed for their operating system. FIDO2 authentication is also supported for third-party applications using the authentication broker.
 
 The following tables lists which authentication brokers are supported for different operating systems.
 
@@ -41,7 +41,7 @@ The following tables lists which authentication brokers are supported for differ
 
 If a user installed an authentication broker, they can choose to sign in with a security key when they access an application such as Outlook. They're redirected to sign in with FIDO2, and redirected back to Outlook as a signed in user after successful authentication.
 
-### Microsoft application support without authentication broker (preview)
+### Microsoft application support without authentication broker 
 
 The following table lists Microsoft application support for passkey (FIDO2) without an authentication broker. 
 
@@ -67,7 +67,7 @@ This table shows browser support for authenticating Microsoft Entra ID and Micro
 | **iOS**  | &#x2705; | &#x2705; | &#x2705; | &#x2705; |
 | **Android**  | &#x2705; | &#x2705;<sup>1</sup> | &#10060; | N/A |
 
-<sup>1</sup>Support for same-device registration in Edge on Android is coming soon.
+<sup>1</sup>Support for passkeys in Authenticator using Edge on Android devices is coming soon. 
 
 ## Web browser support for each platform
 

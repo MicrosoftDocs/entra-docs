@@ -1,21 +1,21 @@
 ---
-title: How to use Microsoft Entra health monitoring alerts (preview)
+title: How to use Microsoft Entra Health monitoring alerts (preview)
 description: Learn how to use the Microsoft Entra health monitoring alerts to monitor and improve the health of your tenant.
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 10/14/2024
+ms.date: 10/23/2024
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
 # Customer intent: As an IT admin, I want to learn how to use Microsoft Entra health monitoring to observe and improve the health of my tenant.
 ---
 
-# How to use Microsoft Entra health monitoring alerts (preview)
+# How to use Microsoft Entra Health monitoring alerts (preview)
 
-Microsoft Entra Health monitoring provides the ability to monitor the health of your Microsoft Entra tenant through a set of health metrics and intelligent alerts. Health metrics are fed into our anomaly detection service, which uses machine learning to understand the patterns for your tenant. When the anomaly detection service identifies a significant change one of the tenant-level patterns, it triggers an alert. You can also receive email notifications when a potential issue or failure condition is detected within the health scenarios. For more information on Microsoft Entra Health, see [What is Microsoft Entra Health](concept-microsoft-entra-health.md).
+Microsoft Entra Health monitoring provides the ability to monitor the health of your Microsoft Entra tenant through a set of health metrics and intelligent alerts. Health metrics are fed into our anomaly detection service, which uses machine learning to understand the patterns for your tenant. When the anomaly detection service identifies a significant change in one of the tenant-level patterns, it triggers an alert. You can receive email notifications when a potential issue or failure condition is detected within the health scenarios. For more information on Microsoft Entra Health, see [What is Microsoft Entra Health](concept-microsoft-entra-health.md).
 
 This article provides guidance on how to:
 
@@ -25,14 +25,22 @@ This article provides guidance on how to:
 
 ## Prerequisites
 
-[!INCLUDE [Microsoft Entra health](../../includes/licensing-health.md)]
+There are different roles, permissions, and license requirements to view health monitoring signals and configure and receive alerts. We recommend using a role with least privilege access to align with the [Zero Trust guidance](/security/zero-trust/zero-trust-overview).
+
+- A tenant with a [Microsoft Entra P1 or P2 license](../../fundamentals/get-started-premium.md) is required to *view* the Microsoft Entra health scenario monitoring signals.
+- A tenant with both a [Microsoft Entra P1 or P2 license](../../fundamentals/get-started-premium.md) *and* at least 100 monthly active users is required to *view alerts* and *receive alert notifications*.
+- The [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader) role is the least privileged role required to *view scenario monitoring signals, alerts, and alert configurations*.
+- The [Helpdesk Administrator](../role-based-access-control/permissions-reference.md#helpdesk-administrator) is the least privileged role required to *update alerts* and *update alert notification configurations*.
+- The `HealthMonitoringAlert.Read.All` permission is required to *view the alerts using the Microsoft Graph API*.
+- The `HealthMonitoringAlert.ReadWrite.All` permission is required to *view and modify the alerts using the Microsoft Graph API*.
+- For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs).
 
 ### Known limitations
 
 - Newly onboarded tenants might not have enough data to generate alerts for about 30 days.
 - Currently, alerts are only available with the Microsoft Graph API.
 
-## How to access Microsoft Entra Health
+## Access Microsoft Entra Health
 
 You can view the Microsoft Entra Health service level agreement (SLA) attainment report and the health monitoring signals from the Microsoft Entra admin center. You can also view these data streams, and the public preview of health monitoring alerts, using [Microsoft Graph APIs](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true). [Enable the Scenario monitoring preview](https://entra.microsoft.com/?feature.tokencaching=true&feature.internalgraphapiversion=true#view/Microsoft_AAD_IAM/FeaturePreviewsListBlade).
 
@@ -128,7 +136,7 @@ With the email notifications configured, you and your team can more effectively 
     ```http
     GET https://graph.microsoft.com/beta/reports/healthMonitoring/alerts/{alertId}
     ```
-For sample requests and responses, see [Health  monitoring List alert objects](/graph/api/healthmonitoring-healthmonitoringroot-list-alerts?view=graph-rest-beta&preserve-view=true).
+For sample requests and responses, see [Health monitoring List alert objects](/graph/api/healthmonitoring-healthmonitoringroot-list-alerts?view=graph-rest-beta&preserve-view=true).
 - The portion of the response after `impacts` make up the impact summary for the alert.
 - The `supportingData` portion includes the full query used to generate the alert.
 - The results of the query include everything identified by the anomaly detection service, but there might be results that aren't directly related to the alert.
@@ -139,7 +147,7 @@ For sample requests and responses, see [Health  monitoring List alert objects](/
     - If you need to modify Conditional Access policies, you need the [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role.
 1. Browse to **Monitoring & health** > **Sign-in logs**.
     - Adjust the time range to match the alert time frame.
-    - Add a **filter** for Conditional Access.
+    - Add a filter for Conditional Access.
     - Select a log entry to view the sign-in logs details and select the Conditional Access tab to see the policies that were applied.
 
 ### View the scenario-specific resources

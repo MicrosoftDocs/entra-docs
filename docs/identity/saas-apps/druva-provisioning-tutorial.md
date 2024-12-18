@@ -39,13 +39,13 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Important tips for assigning users to Druva
 
-* It is recommended that a single Microsoft Entra user is assigned to Druva to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to Druva to test the automatic user provisioning configuration. More users and/or groups may be assigned later.
 
 * When assigning a user to Druva, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
-## Setup Druva for provisioning
+## Set up Druva for provisioning
 
-Before configuring Druva for automatic user provisioning with Microsoft Entra ID, you will need to enable SCIM provisioning on Druva.
+Before configuring Druva for automatic user provisioning with Microsoft Entra ID, you need to enable SCIM provisioning on Druva.
 
 1. Sign in to your [Druva Admin Console](https://console.druva.com). Navigate to **Druva** > **inSync**.
 
@@ -53,13 +53,13 @@ Before configuring Druva for automatic user provisioning with Microsoft Entra ID
 
 2. Navigate to **Manage** > **Deployments** > **Users**.
 
-    :::image type="content" source="media/druva-provisioning-tutorial/manage.png" alt-text="Screenshot of the Druva admin console. Manage is highlighted, and the Manage menu is visible. In that menu, under Deployments, Users is highlighted." border="false":::
+    :::image type="content" source="media/druva-provisioning-tutorial/manage.png" alt-text="Screenshot of the Druva admin console. Manage is highlighted, and the Manage menu is visible. In that menu, under Deployments, Users are highlighted." border="false":::
 
 3. Navigate to **Settings**. Click **Generate Token**.
 
-    :::image type="content" source="media/druva-provisioning-tutorial/settings.png" alt-text="Screenshot of a page in the Druva admin console. Settings is highlighted, and the Settings tab is open. The Generate token button is highlighted." border="false":::
+    :::image type="content" source="media/druva-provisioning-tutorial/settings.png" alt-text="Screenshot of a page in the Druva admin console. Settings are highlighted, and the Settings tab is open. The Generate token button is highlighted." border="false":::
 
-4. Copy the **Auth token** value. This value will be entered in the **Secret Token** field in the Provisioning tab of your Druva application.
+4. Copy the **Auth token** value. This value is entered in the **Secret Token** field in the Provisioning tab of your Druva application.
 
     :::image type="content" source="media/druva-provisioning-tutorial/auth.png" alt-text="Screenshot of the Create token page in the Druva admin console. A link labeled Copy Token is available for copying the Auth token value." border="false":::
 
@@ -115,8 +115,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Druva**.
 
-    ![Druva User Mappings](media/druva-provisioning-tutorial/usermapping.png)
-
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Druva in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Druva for update operations. Select the **Save** button to commit any changes.
 
     ![Druva User Attributes](media/druva-provisioning-tutorial/userattribute.png)
@@ -132,7 +130,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     ![Provisioning Scope](common/provisioning-scope.png)
 
-13. When you are ready to provision, click **Save**.
+13. When you're ready to provision, click **Save**.
 
     ![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
@@ -144,7 +142,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 * Druva requires **email** as a mandatory attribute. 
 
-## Additional resources
+## More resources
 
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md).
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)

@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 04/26/2024
+ms.date: 12/17/2024
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 

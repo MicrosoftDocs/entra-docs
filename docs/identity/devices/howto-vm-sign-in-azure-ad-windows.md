@@ -5,7 +5,7 @@ description: Learn how to sign in to an Azure VM that's running Windows by using
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 01/05/2024
+ms.date: 10/21/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -252,8 +252,8 @@ To use passwordless authentication for your Windows VMs in Azure, you need the W
 - Windows 10, version 20H2 or later with [2022-10 Cumulative Updates for Windows 10 (KB5018410)](https://support.microsoft.com/kb/KB5018410) or later installed.
 - Windows Server 2022 with [2022-10 Cumulative Update for Microsoft server operating system (KB5018421)](https://support.microsoft.com/kb/KB5018421) or later installed.
 
-> [!IMPORTANT]
-> The Windows client machine is required to be either Microsoft Entra registered, or Microsoft Entra joined or Microsoft Entra hybrid joined to the *same* directory as the VM. Additionally, to RDP by using Microsoft Entra credentials, users must belong to one of the two Azure roles, Virtual Machine Administrator Login or Virtual Machine User Login. This requirement doesn't exist for [passwordless sign-in](#log-in-using-passwordless-authentication-with-microsoft-entra-id).
+> [!Note]
+> When using the **web account to sign in to the remote computer** option, there is no requirement for the local device to be joined to a domain or Microsoft Entra ID.
 
 To connect to the remote computer:
 
@@ -261,8 +261,8 @@ To connect to the remote computer:
 - Select **Use a web account to sign in to the remote computer** option in the **Advanced** tab. This option is equivalent to the `enablerdsaadauth` RDP property. For more information, see [Supported RDP properties with Remote Desktop Services](/windows-server/remote/remote-desktop-services/clients/rdp-files).
 - Specify the name of the remote computer and select **Connect**.
 
-> [!NOTE]
-> IP address cannot be used when **Use a web account to sign in to the remote computer** option is used.
+> [!IMPORTANT]
+> IP address cannot be used with **Use a web account to sign in to the remote computer** option.
 > The name must match the hostname of the remote device in Microsoft Entra ID and be network addressable, resolving to the IP address of the remote device.
 
 - When prompted for credentials, specify your user name in `user@domain.com` format.
