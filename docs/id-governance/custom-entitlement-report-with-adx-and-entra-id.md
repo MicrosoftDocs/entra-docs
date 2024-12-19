@@ -253,13 +253,25 @@ In Step 3, we'll import the newly created JSON files for further analysis. If yo
 
 Azure Data Explorer is a powerful data analysis tool that is highly scalable and flexible providing an ideal environment for generating customized user access reports. Azure Data Explorer uses the Kusto Query Language (KQL). 
 
-Once you have setup a database, follow these steps to get your exported data into Azure Data Explorer. 
+Once you have setup a database in your Azure Data Explorer cluster or free cluster, navigate to that database.
 
- 1. Right-click on the database name and choose **Get Data** 
- 2. Choose **New Table** and enter the name of the JSON file you're importing, For example, if you're importing EntraUsers.json, name the table **EntraUsers**. After the first import, the table will already exist, and you can select it as the target table for the import. 
- 3. Select the JSON file. 
- 4. Azure Data Explorer will automatically detect the schema and provide a preview. Click **Finish** to create the table and import the data. 
- 5. Follow steps 1-4 for each of the JSON files that you generated in Step 1. 
+ 1. Sign-in to the [Azure Data Explorer web UI](https://dataexplorer.azure.com/home).
+ 1. From the left menu, select **Query**.
+
+Next, follow these steps for each exported JSON file, to get your exported data into that Azure Data Explorer database.
+
+ 1. Right-click on the database name of the database where you want to ingest the data. Select **Get Data**.
+
+    :::image type="content" source="/azure/data-explorer/media/get-data-file/get-data.png" alt-text="Screenshot of query tab, with right-click on a database and the get options dialog open." lightbox="/azure/data-explorer/get-data-filemedia/get-data-file/get-data.png":::
+
+ 2. Select the data source from the available list. In this tutorial, you're ingesting data from a **Local file**.
+
+    [!INCLUDE [ingestion-size-limit](/azure/data-explorer/includes/cross-repo/ingestion-size-limit.md)]
+
+ 1. Select **+ New table** and enter a table name, based on the name of the JSON file you're importing, For example, if you're importing EntraUsers.json, name the table **EntraUsers**. After the first import, the table will already exist, and you can select it as the target table for a subsequent import.
+ 1. Select **Browse for files**, select the JSON file, and select **Next**.
+ 1. Azure Data Explorer will automatically detect the schema and provide a preview in the **Inspect** tab. Click **Finish** to create the table and import the data from that file.
+ 1. Repeat each of the preceding steps for each of the JSON files that you generated in the first section.
 
 ## Step 4: Use Azure Data Explorer to build custom reports 
 
