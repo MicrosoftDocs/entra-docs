@@ -66,24 +66,24 @@ Example:
     "acceptMappedClaims": true,
 ```
 
-### accessTokenAcceptedVersion attribute
+### requestedAccessTokenVersion attribute
 
 | Key | Value type |
 | :--- | :--- |
-| accessTokenAcceptedVersion | Nullable Int32 |
+| requestedAccessTokenVersion | Nullable Int32 |
 
 Specifies the access token version expected by the resource. This parameter changes the version and format of the JWT produced independent of the endpoint or client used to request the access token.
 
-The endpoint used, v1.0 or v2.0, is chosen by the client and only impacts the version of id_tokens. Resources need to explicitly configure `accesstokenAcceptedVersion` to indicate the supported access token format.
+The endpoint used, v1.0 or v2.0, is chosen by the client and only impacts the version of id_tokens. Resources need to explicitly configure `requestedAccessTokenVersion` to indicate the supported access token format.
 
-Possible values for `accesstokenAcceptedVersion` are 1, 2, or null. If the value is null, this parameter defaults to 1, which corresponds to the v1.0 endpoint.
+Possible values for `requestedAccessTokenVersion` are 1, 2, or null. If the value is null, this parameter defaults to 1, which corresponds to the v1.0 endpoint.
 
 If `signInAudience` is `AzureADandPersonalMicrosoftAccount`, the value must be `2`.
 
 Example:
 
 ```json
-    "accessTokenAcceptedVersion": 2,
+    "requestedAccessTokenVersion": 2,
 ```
 
 ### addIns attribute
