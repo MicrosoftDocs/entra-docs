@@ -93,7 +93,7 @@ procedureSection:
 
       For more information about eligible roles for Azure resources management, see [PIM ARM API tutorial](/rest/api/authorization/privileged-role-assignment-rest-sample?source=docs#activate-an-eligible-role-assignment). 
 
-      Thi is a sample HTTP request to activate an eligible assignment for an Azure role.
+      This is a sample HTTP request to activate an eligible assignment for an Azure role.
 
       ### Request
 
