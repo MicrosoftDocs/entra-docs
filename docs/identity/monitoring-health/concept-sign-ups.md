@@ -6,7 +6,7 @@ manager: celestedg
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 03/01/2024
+ms.date: 12/19/2024
 ms.author: mimart
 ms.reviewer: celested
 
@@ -23,10 +23,6 @@ The sign-up logs provided by Microsoft Entra External ID are a powerful type of 
 - **[Sign-ins](concept-sign-ins.md)** – Information about sign-ins and how your resources are used by your users.
 - **[Audit](concept-audit-logs.md)** – Information about changes applied to your tenant, such as users and group management or updates applied to your tenant’s resources.
 - **[Provisioning](concept-provisioning-logs.md)** – Activities performed by a provisioning service, such as the creation of a group in ServiceNow or a user imported from Workday.
-
-## License and role requirements
-
-[!INCLUDE [Microsoft Entra monitoring and health](../../includes/licensing-monitoring-health.md)]
 
 ## What can you do with sign-up logs?
 
