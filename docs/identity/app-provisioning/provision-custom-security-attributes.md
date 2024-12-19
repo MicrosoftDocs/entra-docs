@@ -19,6 +19,7 @@ Custom security attribute provisioning enables customers to set custom security 
 
 > [!NOTE]
 > We make public previews available to our customers under the terms applicable to previews. These terms are outlined in the overall Microsoft product terms for [online services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all). Normal service level agreements (SLAs) don't apply to public previews, and only limited customer support is available. In addition, this preview doesn't support custom security attributes provisioning to enterprise SaaS apps or on-premises Active Directory functionality.
+
 ## Custom security attributes 
 
 Custom security attributes in Microsoft Entra ID are business-specific attributes (key value pairs) that you can define and assign to Microsoft Entra objects. These attributes can be used to store information, categorize objects, or enforce fine-tuned access control over specific Azure resources. To learn more about custom security attributes, see [What are custom security attributes in Microsoft Entra ID?](~/fundamentals/custom-security-attributes-overview.md).
@@ -136,9 +137,9 @@ In this example, SAP SuccessFactors attributes are mapped to custom security att
 
 1. Open the SuccessFactors provisioning job, then select **Provision on demand**.
 
-1. In the **Select a user** box, enter the *personIdExternal* attribute of the user that you want to test.
+:::image type="content" source="media/provision-custom-security-attributes/provision-on-demand.png" alt-text="Screenshot of the Microsoft Entra ID overview with Provision on demand selection.":::
 
-   :::image type="content" source="media/provision-custom-security-attributes/person-id-attribute.png" alt-text="Screenshot of the Person ID attribute screen.":::
+1. In the **Select a user** box, enter the *personIdExternal* attribute of the user that you want to test.
 
    The provisioning logs display the custom security attributes that you set.
 
@@ -173,9 +174,9 @@ In this example, SAP SuccessFactors attributes are mapped to custom security att
 
    :::image type="content" source="media/provision-custom-security-attributes/entry-export-add.png" alt-text="Screenshot of the custom security attributes entry.":::
 
-> [!NOTE]
-> The source and target values of custom security attributes get redacted in the provisioning logs. 
-To view the actual values set for the user, go the user's Microsoft Entra ID profile. You view the data in the **Custom security attributes** screen. You need at least the Attribute Assignment Administrator or Attribute Assignment Reader role to view this data.
+    > [!NOTE]
+    > The source and target values of custom security attributes get redacted in the provisioning logs. To view the actual values set for the user, go the user's Microsoft Entra ID profile.   
+    You view the data in the **Custom security attributes** screen. You need at least the Attribute Assignment Administrator or Attribute Assignment Reader role to view this data.
 
 :::image type="content" source="media/provision-custom-security-attributes/user-custom-security-attributes.png" alt-text="Screenshot of the Custom security attributes screen for the user." lightbox="media/provision-custom-security-attributes/user-custom-security-attributes-expanded.png":::
 
