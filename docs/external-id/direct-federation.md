@@ -67,11 +67,16 @@ SAML/WS-Fed IdP federation users can also use application endpoints that include
 
 You can also give users a direct link to an application or resource by including your tenant information, for example `https://myapps.microsoft.com/signin/X/<application ID?tenantId=<your tenant ID>`.
 
-## Setting up federation
+## Considerations for setting up federation
 
-### Partner IdP requirements for federation
+Setting up federation involves configuring both your Microsoft Entra tenant and the external organization's IdP. 
 
-When setting up SAML/WS-Fed IdP federations previously, the authentication URL domain had to match the target domain or be from an allowed IdP. However, we've removed these requirements and we no longer support an allowlist of IdPs. For new SAML/WS-Fed IdP federations, refer to [Step 1: Determine if the partner needs to update their DNS text records](#step-1-determine-if-the-partner-needs-to-update-their-dns-text-records).
+### Partner IdP requirements
+
+Depending on the partner's IdP, the partner might need to update their DNS records to enable federation with you. See [Step 1: Determine if the partner needs to update their DNS text records](#step-1-determine-if-the-partner-needs-to-update-their-dns-text-records).
+
+> [!NOTE]
+> We no longer support an allowlist of IdPs for new SAML/WS-Fed IdP federations.
 
 The Issuer URL in the SAML request sent by Microsoft Entra ID for external federations is now a tenanted endpoint, whereas previously it was a global endpoint. Existing federations with the global endpoint will continue to work. But for new federations, set the audience of the external SAML or WS-Fed IdP to a tenanted endpoint. See the [SAML 2.0 section](#required-saml-20-attributes-and-claims) and the [WS-Fed section](#required-ws-fed-attributes-and-claims) for required attributes and claims.
 
@@ -95,10 +100,7 @@ The following are other considerations when federating with a SAML/WS-Fed identi
 
 ## Step 1: Determine if the partner needs to update their DNS text records
 
-Depending on the partner's IdP, the partner might need to update their DNS records to enable federation with you. Use the following steps to determine if DNS updates are needed.
-
-> [!NOTE]
-> We no longer support an allowlist of IdPs for new SAML/WS-Fed IdP federations.
+Use the following steps to determine if the partner needs to update their DNS records to enable federation with you. 
 
 1. Check the partner's IdP passive authentication URL to see if the domain matches the target domain or a host within the target domain. In other words, when setting up federation for `fabrikam.com`:
 
