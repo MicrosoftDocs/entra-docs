@@ -262,12 +262,9 @@ Next, follow these steps for each exported JSON file, to get your exported data 
 
  1. Right-click on the database name of the database where you want to ingest the data. Select **Get Data**.
 
-    :::image type="content" source="/azure/data-explorer/media/get-data-file/get-data.png" alt-text="Screenshot of query tab, with right-click on a database and the get options dialog open." lightbox="/azure/data-explorer/get-data-filemedia/get-data-file/get-data.png":::
+    :::image type="content" source="/azure/data-explorer/media/get-data-file/get-data.png" alt-text="Screenshot of query tab, with right-click on a database and the get options dialog open." lightbox="/azure/data-explorer/media/get-data-file/get-data.png":::
 
  2. Select the data source from the available list. In this tutorial, you're ingesting data from a **Local file**.
-
-    [!INCLUDE [ingestion-size-limit](/azure/data-explorer/includes/cross-repo/ingestion-size-limit.md)]
-
  1. Select **+ New table** and enter a table name, based on the name of the JSON file you're importing, For example, if you're importing EntraUsers.json, name the table **EntraUsers**. After the first import, the table will already exist, and you can select it as the target table for a subsequent import.
  1. Select **Browse for files**, select the JSON file, and select **Next**.
  1. Azure Data Explorer will automatically detect the schema and provide a preview in the **Inspect** tab. Click **Finish** to create the table and import the data from that file.
