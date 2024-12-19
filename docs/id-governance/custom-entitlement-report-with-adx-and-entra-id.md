@@ -18,11 +18,11 @@ This article illustrates how to show configuration, users, and access rights exp
 You'll take the following steps to create these reports: 
 
  1. [Set up Azure Data Explorer](#1-setup-azure-data-explorer) in an Azure subscription, or create a free cluster. 
- 2. [Extract data from Microsoft Entra](#2-connect-to-ms-graph-and-extract-entra-data-with-powershell) and third-party databases or applications using PowerShell scripts and MS Graph. 
+ 2. [Extract data from Microsoft Entra](#2-connect-to-microsoft-graph-and-extract-entra-data-with-powershell) using PowerShell scripts and Microsoft Graph. 
  3. [Import the data into Azure Data Explorer](#3-import-json-file-data-into-azure-data-explorer), a fast and scalable data analytics service. 
  4. [Build a custom query](#4-use-azure-data-explorer-to-build-custom-reports) using Kusto Query Language. 
 
-By the end of this tutorial, you'll have built skills to develop customized views of the access rights and permissions of users across different applications using Microsoft supported tools. 
+By the end of this tutorial, you'll have built skills to develop customized views of the access rights and permissions of users across different applications using Microsoft supported tools. You can also bring in data from third-party databases or applications to report on those as well.
 
 ## Prerequisites
 
@@ -36,21 +36,21 @@ Determine what data you want to include in your reports. The scripts in this art
   - Applications/App Role Assignments: Global Administrator, Privileged Role Administrator, Application Administrator, Cloud Application Administrator 
 - Microsoft Graph PowerShell must be consented to allow for retrieval of Microsoft Entra objects via Microsoft Graph. The examples in this tutorial require the delegated User.Read.All, Group.Read.All, Application.Read.All, and Directory.Read.All permissions. If you're planning on retrieving data using automation without a signed-in user, then consent to the corresponding application permissions instead. See [Microsoft Graph permissions reference](/graph/permissions-reference) for additional information. If you have not already consented Microsoft Graph PowerShell to those permissions, you'll need to be a Global Administrator to perform this consent operation.
 - This tutorial does not illustrate custom security attributes. By default, Global Administrator and other administrator roles don't include permissions to read custom security attributes from Microsoft Entra users. If you're planning on retrieving custom security attributes, then more roles and permissions may be required.
-- On the computer where Microsoft Graph PowerShell is installed, ensure you have write access to the file system directory where you'll install the required MS Graph PowerShell modules and where the exported Entra data will be saved. 
+- On the computer where Microsoft Graph PowerShell is installed, ensure you have write access to the file system directory where you'll install the required Microsoft Graph PowerShell modules and where the exported Entra data will be saved. 
 - Ensure you have permissions to retrieve data from other data sources beyond Microsoft Entra.
 
 ## 1: Setup Azure Data Explorer 
 
 If you haven’t previously used Azure Data Explorer, you'll need to set this up first. You can create a [free cluster without an Azure subscription or credit card](/azure/data-explorer/start-for-free) or a full cluster which requires an Azure subscription. See [Quickstart: Create an Azure Data Explorer cluster and database](/azure/data-explorer/create-cluster-and-database) to get started. 
 
-## 2: Connect to MS Graph and Extract Entra data with PowerShell 
+## 2: Connect to Microsoft Graph and Extract Entra data with PowerShell 
 
-In this section, you'll [install MS Graph PowerShell modules](/powershell/microsoftgraph/installation) and [Connect to MS Graph](/powershell/module/microsoft.graph.authentication/connect-mggraph). 
+In this section, you'll [install Microsoft Graph PowerShell modules](/powershell/microsoftgraph/installation) and [Connect to Microsoft Graph](/powershell/module/microsoft.graph.authentication/connect-mggraph). 
 
 The first time your organization uses these modules for this scenario, you need to be in a Global Administrator role to allow Microsoft Graph PowerShell to be consented to be used in your tenant. Subsequent interactions can use a lower-privileged role.
 
  1. Open PowerShell.
- 1. If you don't have all the [Microsoft Graph PowerShell modules](https://www.powershellgallery.com/packages/Microsoft.Graph) already installed, install the required MS Graph modules. The following modules are required for this tutorial: `Microsoft.Graph.Authentication`, `Microsoft.Graph.Users`, `Microsoft.Graph.Groups`, `Microsoft.Graph.Applications`, `Microsoft.Graph.DirectoryObjects`. 
+ 1. If you don't have all the [Microsoft Graph PowerShell modules](https://www.powershellgallery.com/packages/Microsoft.Graph) already installed, install the required Microsoft Graph modules. The following modules are required for this tutorial: `Microsoft.Graph.Authentication`, `Microsoft.Graph.Users`, `Microsoft.Graph.Groups`, `Microsoft.Graph.Applications`, `Microsoft.Graph.DirectoryObjects`. 
 
 ```powershell
    $modules = @('Microsoft.Graph.Users', 'Microsoft.Graph.Groups', 'Microsoft.Graph.Applications', 'Microsoft.Graph.DirectoryObjects') 
@@ -77,7 +77,7 @@ The first time your organization uses these modules for this scenario, you need 
 
 ### PowerShell Queries to extract data needed to build custom reports in Azure Data Explorer
 
-The following queries extract Entra data from MS Graph using PowerShell and export the data to JSON files which will be imported into Azure Data Explorer in the subsequent section 3. There may be multiple scenarios for generating reports with this type of data: 
+The following queries extract Entra data from Microsoft Graph using PowerShell and export the data to JSON files which will be imported into Azure Data Explorer in the subsequent section 3. There may be multiple scenarios for generating reports with this type of data: 
 
  - An auditor would like to see a report that lists the group members for 10 groups, organized by the members’ department. 
  - An auditor would like to see a report of all users who had access to an application between two dates. 
@@ -97,7 +97,7 @@ For this tutorial, we'll extract Entra data from several areas:
 This data set will enable us to perform a broad set of queries around who was given access to an application, role information, and the associated timeframe. Note that these are sample queries, and your data and specific requirements may vary from what is shown here. 
 
 >[!NOTE]
-> Larger tenants may experience throttling / 429 errors that will be handled by the MS Graph module. Azure Data Explorer may also limit file upload sizes.
+> Larger tenants may experience throttling / 429 errors that will be handled by the Microsoft Graph module. Azure Data Explorer may also limit file upload sizes.
 
 In these PowerShell scripts, we'll export selected properties from the Entra objects to JSON files. The data from these exported properties will then be used to generate custom reports in Azure Data Explorer. The specific properties below, were included in these examples, because we're using this data to illustrate the types of reports you can create in Azure Data Explorer. Since your specific reporting needs will likely vary from what is shown below, you should include the specific properties in these scripts that you're interested in viewing in your reports, however you can follow the same pattern shown below to help build your scripts. 
 
