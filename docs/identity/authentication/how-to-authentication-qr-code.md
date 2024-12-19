@@ -111,12 +111,11 @@ You can add a QR code authentication method for a user by using the Microsoft En
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/add-qr-code-authentication-method.png" alt-text="Screenshot of how to add a QR code authentication method.":::
 
-1. Specify the expiration and activation date, and click **Add**.
+1. Specify the expiration and activation date, and click **Add** to generate a QR code and PIN for the user.
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/activation-date.png" alt-text="Screenshot of how to set the activation date for a QR code authentication method.":::
 
-1. to generate a QR code and PIN for the user.
-1. Save the PIN, and click **Download image** to download the QR code to print. The QR code image download has the smallest optimum print size. If you reduce the size, the QR code is hard to scan. You can't regenerate the same QR code because it has a unique secret. If the QR code can’t work for some reason, delete it. Create a new QR code for the user.
+1. Save the PIN, and click **Download QR image** to download the QR code to print. The QR code image download has the smallest optimum print size. If you reduce the size, the QR code is hard to scan. You can't regenerate the same QR code because it has a unique secret. If the QR code can’t work for some reason, delete it. Create a new QR code for the user.
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/qr-code-done.png" alt-text="Screenshot of a QR code authentication method after an administrator adds it.":::
 
@@ -188,7 +187,7 @@ You can delete the temporary QR code. The QR code is unusable after its expiry.
 
   :::image type="content" border="true" source="media/how-to-authentication-qr-code/select-qr-code-expiration-my-staff.png" alt-text="Screenshot of how to select the expiration date of a QR code in My Staff.":::
 
-  Click **Add** to view the QR code and PIN for this user.
+  Click **Add** to view the QR code for this user.
 
   :::image type="content" border="true" source="media/how-to-authentication-qr-code/view-qr-code-my-staff.png" alt-text="Screenshot of how to view a newly added QR code in My Staff.":::
 
@@ -196,7 +195,7 @@ You can delete the temporary QR code. The QR code is unusable after its expiry.
 
   :::image type="content" border="true" source="media/how-to-authentication-qr-code/set-temporary-qr-code-expiration.png" alt-text="Screenshot of how to set the expiration date for a temporary QR code.":::
 
-  Click **Add** to view the QR code and PIN for this user.
+  Click **Add** to view the QR code for this user.
 
   :::image type="content" border="true" source="media/how-to-authentication-qr-code/view-temporary-qr-code-my-staff.png" alt-text="Screenshot of how to view a temporary QR code in My Staff.":::
 
