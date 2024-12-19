@@ -13,7 +13,7 @@ ms.reviewer: deawari
 # Customer intent: As an IT admin, I want to learn how to use Microsoft Entra recommendations to monitor and improve the health of my tenant.
 ---
 
-## How to opt out of Microsoft Entra recommendation emails
+# How to opt out of Microsoft Entra recommendation emails
 
 Microsoft Entra recommendations are a powerful resource to monitor and maintain the health and security of your tenant. Email notifications are sent to specific tenant administrative roles when a new recommendation is available for your tenant. These emails help administrators stay on top of the latest recommendations so they can take quick action, but you can opt out of these emails for the tenant.
 
