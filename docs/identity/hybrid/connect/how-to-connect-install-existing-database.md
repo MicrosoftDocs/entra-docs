@@ -80,7 +80,7 @@ Important notes to take note of before you proceed:
 1. Once installation completes, the Microsoft Entra Connect server is automatically enabled for Staging Mode. It's recommended that you review the server configuration and pending exports for unexpected changes before disabling Staging Mode. 
 
 ## Post installation tasks
-When restoring a database backup created by a version of Microsoft Entra Connect prior to 1.2.65.0, the staging server automatically select a sign-in method of **Do Not Configure**. While your password hash sync and password writeback preferences are restored, you must subsequently change the sign-in method to match the other policies in effect for your active synchronization server. Failure to complete these steps may prevent users from signing in should this server becomes active.  
+When restoring a database backup created by a version of Microsoft Entra Connect prior to 1.2.65.0, the staging server automatically selects a sign-in method of **Do Not Configure**. While your password hash sync and password writeback preferences are restored, you must subsequently change the sign-in method to match the other policies in effect for your active synchronization server. Failure to complete these steps may prevent users from signing in should this server becomes active.  
 
 Use the following table to verify any additional steps that are required.
 
