@@ -215,6 +215,7 @@ To investigate a Microsoft Entra Threat Intelligence risk detection, follow thes
    1. **Recommended action**: Confirm sign-in safe.
 1. If you're able to confirm that the account isn't compromised and see no brute force or password spray indicators against the account.
    1. **Recommended action**: Allow the user to self-remediate with a risk-based Conditional Access policy or have an admin confirm sign-in as safe.
+1. Ensure you have [Microsoft Entra smart lockout](../identity/authentication/howto-password-smart-lockout.md) configured appropriately to avoid unnecessary account lockouts.
 
 For further investigation of password spray risk detections, see the article [Password spray investigation](/security/operations/incident-response-playbook-password-spray).
 
