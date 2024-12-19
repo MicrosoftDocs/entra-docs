@@ -32,7 +32,7 @@ You can find the download for Microsoft Entra Connect on [Microsoft Download Cen
 | [Upgrade from DirSync](how-to-dirsync-upgrade-get-started.md) |<li>Used when you have an existing DirSync server already running.</li> |
 | [Upgrade from Azure AD Sync or Microsoft Entra Connect](how-to-upgrade-previous-version.md) |<li>There are several different methods depending on your preference.</li> |
 
-[After installation](how-to-connect-post-installation.md), you should verify it is working as expected and assign licenses to the users.
+[After installation](how-to-connect-post-installation.md), you should verify it's working as expected and assign licenses to the users.
 
 <a name='next-steps-to-install-azure-ad-connect'></a>
 
@@ -48,7 +48,7 @@ You can find the download for Microsoft Entra Connect on [Microsoft Download Cen
 <a name='learn-more-about-install-azure-ad-connect'></a>
 
 ### Learn more about Install Microsoft Entra Connect
-You also want to prepare for [operational](./how-to-connect-sync-staging-server.md) concerns. You might want to have a stand-by server so you easily can fail over if there is a [disaster](how-to-connect-sync-staging-server.md#disaster-recovery). If you plan to make frequent configuration changes, you should plan for a [staging mode](how-to-connect-sync-staging-server.md) server.
+You also want to prepare for [operational](./how-to-connect-sync-staging-server.md) concerns. You might want to have a stand-by server so you easily can fail over if there's a [disaster](how-to-connect-sync-staging-server.md#disaster-recovery). If you plan to make frequent configuration changes, you should plan for a [staging mode](how-to-connect-sync-staging-server.md) server.
 
 |Topic |Link|  
 | --- | --- |
@@ -87,13 +87,13 @@ The [prevent accidental deletes](how-to-connect-sync-feature-prevent-accidental-
 <a name='customize-azure-ad-connect-sync'></a>
 
 ## Customize Microsoft Entra Connect Sync
-Microsoft Entra Connect Sync comes with a default configuration that is intended to work for most customers and topologies. But there are always situations where the default configuration does not work and must be adjusted. It is supported to make changes as documented in this section and linked topics.
+Microsoft Entra Connect Sync comes with a default configuration that is intended to work for most customers and topologies. But there are always situations where the default configuration doesn't work and must be adjusted. It's supported to make changes as documented in this section and linked topics.
 
 If you haven't worked with a synchronization topology before you want to start to understand the basics and the terms used as described in the [technical concepts](how-to-connect-sync-technical-concepts.md). Even if some things are similar, a lot has changed as well.
 
 The [default configuration](concept-azure-ad-connect-sync-default-configuration.md) assumes there might be more than one forest in the configuration. In those topologies, a user object might be represented as a contact in another forest. The user might also have a linked mailbox in another resource forest. The behavior of the default configuration is described in [users and contacts](concept-azure-ad-connect-sync-user-and-contacts.md).
 
-The configuration model in sync is called [declarative provisioning](concept-azure-ad-connect-sync-declarative-provisioning-expressions.md). The advanced attribute flows are using [functions](reference-connect-sync-functions-reference.md) to express attribute transformations. You can see and examine the entire configuration using tools which comes with Microsoft Entra Connect. If you need to make configuration changes, make sure you follow the [best practices](how-to-connect-sync-best-practices-changing-default-configuration.md) so it is easier to adopt new releases.
+The configuration model in sync is called [declarative provisioning](concept-azure-ad-connect-sync-declarative-provisioning-expressions.md). The advanced attribute flows are using [functions](reference-connect-sync-functions-reference.md) to express attribute transformations. You can see and examine the entire configuration using tools which comes with Microsoft Entra Connect. If you need to make configuration changes, make sure you follow the [best practices](how-to-connect-sync-best-practices-changing-default-configuration.md) so it's easier to adopt new releases.
 
 <a name='next-steps-to-customize-azure-ad-connect-sync'></a>
 
