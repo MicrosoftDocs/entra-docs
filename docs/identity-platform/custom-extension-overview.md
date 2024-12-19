@@ -83,7 +83,7 @@ Attribute collection submit events can be used with custom authentication extens
 
 > [!NOTE]
 > The attribute collection submit event is available only for user flows in Microsoft Entra External ID in external tenants. For details, see [Add your own business logic](~/external-id/customers/concept-custom-extensions.md).
-s
+
 ### One time passcode send event
  
 The **OnOtpSend** event is triggered when a one time passcode email is activated. It allows you to call a REST API to use your own email provider. This event can be used to send customized emails to users who sign up, reset their password, sign-in with email and one-time passcode, or email multifactor authentication (MFA).
