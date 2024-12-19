@@ -135,7 +135,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     a. In the **Remote Login URL** field, paste the **Login URL** which you copied from the Microsoft Entra admin center.
 
-    b. In the **Logout URL** field, paste the **Logout URL** which you copied from the Microsoft Entra admin center.
+    b. Leave the **Logout URL** field blank
 
     c. Copy **SAML Consumer URL** value, paste this value into the **Sign-on URL** text box in the **Basic SAML Configuration** section in Microsoft Entra admin center.
 
