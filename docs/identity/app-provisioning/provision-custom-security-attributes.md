@@ -139,7 +139,7 @@ In this example, SAP SuccessFactors attributes are mapped to custom security att
 
 :::image type="content" source="media/provision-custom-security-attributes/provision-on-demand.png" alt-text="Screenshot of the Microsoft Entra ID overview with Provision on demand selection.":::
 
-1. In the **Select a user** box, enter the *personIdExternal* attribute of the user that you want to test.
+2. In the **Select a user** box, enter the *personIdExternal* attribute of the user that you want to test.
 
    The provisioning logs display the custom security attributes that you set.
 
@@ -147,7 +147,7 @@ In this example, SAP SuccessFactors attributes are mapped to custom security att
 
    > [!NOTE]
    > The source and target values of custom security attributes are redacted in the provisioning logs. 
-1. In the **Custom security attributes** screen of the user's Microsoft Entra ID profile, you can view the actual values set for that user. You need at least the [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) or [Attribute Assignment Reader](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-reader) role to view this data.
+3. In the **Custom security attributes** screen of the user's Microsoft Entra ID profile, you can view the actual values set for that user. You need at least the [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator) or [Attribute Assignment Reader](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-reader) role to view this data.
 
    :::image type="content" source="media/provision-custom-security-attributes/assigned-values.png" alt-text="Screenshot of the assigned values column in the Custom security attributes screen." lightbox="media/provision-custom-security-attributes/assigned-values-expanded.png":::
 
