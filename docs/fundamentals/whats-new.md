@@ -39,7 +39,7 @@ What's new in Microsoft Entra offers a comprehensive view of Microsoft Entra pro
 
 ---
 
-### Generally Availability - Update Profile Photo in MyAccount
+### General Availability - Update Profile Photo in MyAccount
 
 **Type:** New feature    
 **Service category:** My Profile/Account    
