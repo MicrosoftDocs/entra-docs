@@ -8,7 +8,7 @@ manager: amycolannino
 ms.assetid: 6d42fb79-d9cf-48da-8445-f482c4c536af
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 12/04/2024
+ms.date: 12/19/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 

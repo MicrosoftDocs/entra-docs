@@ -11,7 +11,7 @@ ms.custom:
   - has-azure-ad-ps-ref
   - azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 12/04/2024
+ms.date: 12/19/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
