@@ -178,7 +178,7 @@ In this example, SAP SuccessFactors attributes are mapped to custom security att
     > The source and target values of custom security attributes get redacted in the provisioning logs. To view the actual values set for the user, go the user's Microsoft Entra ID profile.   
     You view the data in the **Custom security attributes** screen. You need at least the Attribute Assignment Administrator or Attribute Assignment Reader role to view this data.
 
-:::image type="content" source="media/provision-custom-security-attributes/user-custom-security-attributes.png" alt-text="Screenshot of the Custom security attributes screen for the user." lightbox="media/provision-custom-security-attributes/user-custom-security-attributes-expanded.png":::
+    :::image type="content" source="media/provision-custom-security-attributes/user-custom-security-attributes.png" alt-text="Screenshot of the Custom security attributes screen for the user." lightbox="media/provision-custom-security-attributes/user-custom-security-attributes-expanded.png":::
 
 #### Sample SCIM payload with custom security attributes
 
@@ -343,7 +343,7 @@ Let’s say Workday is your HR system of record for identities. To set custom se
 
 With this topology, here is how the end-to-end flow works:
 
-:::image type="content" source="media/provision-custom-security-attributes/custom-security-attributes-end-to-end-flow.png" alt-text="Flow diagram of how custom security attribute mapping works for hybrid users."lightbox="media/provision-custom-security-attributes/custom-security-attributes-end-to-end-flow.png":::
+:::image type="content" source="media/provision-custom-security-attributes/custom-security-attributes-end-to-end-flow.png" alt-text="Flow diagram of how custom security attribute mapping works for hybrid users.":::
 
 1. The **Workday-to-AD provisioning** app imports the core user profile from Workday.  
 1. The app creates/updates the user account in on-premises Active Directory using the Employee ID as the matching identifier.  
@@ -351,11 +351,11 @@ With this topology, here is how the end-to-end flow works:
 1. If you’ve configured Workday Writeback, email or phone number information is written back to Workday.  
 1. The **Workday-to-Microsoft Entra ID provisioning** app is configured to only process updates and set confidential attributes as custom security attributes. Use the schema editor under **Show advanced options** to remove default attribute mappings like `accountEnabled` and `isSoftDeleted` that are not relevant in this scenario.  
 
-:::image type="content" source="media/provision-custom-security-attributes/attribute-mapping-hybrid.png" alt-text="Screenshot of attribute mapping for hybrid users.    "lightbox="media/provision-custom-security-attributes/attribute-mapping-hybrid.png":::
+:::image type="content" source="media/provision-custom-security-attributes/attribute-mapping-hybrid.png" alt-text="Screenshot of attribute mapping for hybrid users.":::
 
 This configuration assigns the custom security attributes to hybrid users synchronized to Microsoft Entra ID from on-premises Active Directory.   
 
-> [NOTE] 
+> [!NOTE]
 > The above configuration relies on three different sync cycles to complete in a specific order. If the hybrid user profile is not available in Microsoft Entra ID, when the **Workday-to-Microsoft Entra ID provisioning** job runs, then the update operation fails, and is retried during the next execution. If you’re using the **API-driven provisioning-to-Microsoft Entra ID** app, then you have better control on timing the execution of the custom security attribute update. 
 
 ## API permissions for custom security attributes provisioning
