@@ -32,7 +32,7 @@ Within this blade, you can enable email notifications for alerts and change the 
 ![Microsoft Entra Connect Sync error](./media/how-to-connect-health-adds/aadconnect-health-adds-alerts.png)
 
 ## Domain Controllers Dashboard
-This dashboard provides a topological view of your environment, along with key operational metrics and health status of each of your monitored domain controllers. The presented metrics help to quickly identify, any domain controllers that might require further investigation. By default, only a subset of the columns is displayed. However, you can find the entire set of available columns, by double-clicking the columns command. Selecting the columns that you most care about, turns this dashboard into a single and easy place to view the health of your AD DS environment.
+This dashboard provides a topological view of your environment, along with key operational metrics and health status of each of your monitored domain controllers. The presented metrics help to quickly identify, any domain controllers that might require further investigation. By default, only a subset of the columns is displayed. However, you can find the entire set of available columns, by double-clicking the columns command. Selecting the columns that you most care about turns this dashboard into a single and easy place to view the health of your AD DS environment.
 
 ![Domain Controllers](./media/how-to-connect-health-adds/aadconnect-health-adds-domainsandsites-dashboard.png)
 
