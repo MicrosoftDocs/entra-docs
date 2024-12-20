@@ -73,7 +73,7 @@ sections:
       - question: |
           I want to register non-Windows 10 devices with Microsoft Entra ID, without using AD FS. Can I use Seamless SSO instead?
         answer: |
-          Yes, this scenario needs version 2.1 or later of the [workplace-join client](https://www.microsoft.com/download/details.aspx?id=53554).
+          Yes, this scenario needs version 2.1 or later of the [workplace-join client](https://www.microsoft.com/en-us/download/details.aspx?id=53554).
           
       - question: |
           How can I roll over the Kerberos decryption key of the `AZUREADSSO` computer account?
