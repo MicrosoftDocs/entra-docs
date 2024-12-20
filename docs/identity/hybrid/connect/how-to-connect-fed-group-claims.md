@@ -164,7 +164,7 @@ Group filtering allows for fine control of the list of groups that's included as
 > [!NOTE]
 > Group filtering applies to tokens emitted for apps where group claims and filtering was configured in the **Enterprise apps** blade in the portal.  
 > Group filtering does not apply to Microsoft Entra roles.
-
+> There is a limit of up to 1000 group memberships. If a user belongs to more than 1000 groups, group claims will not be emitted.
 You can configure filters to be applied to the group's display name or `SAMAccountName` attribute. The following filtering operations are supported: 
 
  - **Prefix**: Matches the start of the selected attribute. 
