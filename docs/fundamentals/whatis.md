@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: overview
-ms.date: 08/25/2024
+ms.date: 12/19/2024
 ms.author: barclayn
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
@@ -51,7 +51,7 @@ To enhance your Microsoft Entra implementation, you can also add paid features b
 
 - **Microsoft Entra ID P1.** In addition to the Free features, P1 also lets your hybrid users access both on-premises and cloud resources. It also supports advanced administration, such as dynamic membership groups, self-service group management, Microsoft Identity Manager, and cloud write-back capabilities, which allow self-service password reset for your on-premises users.
 
-- **Microsoft Entra ID P2.** In addition to the Free and P1 features, P2 also offers [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) to help provide risk-based Conditional Access to your apps and critical company data and [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-getting-started.md) to help discover, restrict, and monitor administrators and their access to resources and to provide just-in-time access when needed.
+- **Microsoft Entra ID P2.** includes features in addition to the features included in Free and P1. P2 includes [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) to help provide risk-based Conditional Access to your apps and critical company data and [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-getting-started.md) to help discover, restrict, monitor administrators,  their access to resources and to provide just-in-time access when needed.
 
 In addition to Microsoft Entra ID licenses, you can enable additional identity management capabilities with licenses for other Microsoft Entra products, including:
 
