@@ -33,13 +33,13 @@ The compliant network is different than [IPv4, IPv6, or geographic locations](..
    - The [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access features.
    - [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) to create and interact with Conditional Access policies and named locations.
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-- To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 
 ### Known limitations
 
 - Compliant network check data plane enforcement (preview) with Continuous Access Evaluation is supported for SharePoint Online and Exchange Online.
 - Enabling Global Secure Access Conditional Access signaling enables signaling for both authentication plane (Microsoft Entra ID) and data plane signaling (preview). It is not currently possible to enable these settings separately.
 - Compliant network check is currently not supported for Private Access applications.
+- After a Windows device resumes from sleep or hibernate, the Teams client may display an error banner prompting the user to sign in. This happens because the Teams client is attempting to connect to SharePoint online prior to the GSA client establishing a tunnel for the Microsoft traffic profile, which fails the Compliant Network check. Clicking the 'Sign In' button after the GSA client is reconnected will resume the user session in Teams.
  
 
 ## Enable Global Secure Access signaling for Conditional Access

@@ -100,7 +100,7 @@ To configure Microsoft Entra single sign-on with EmpCenter, perform the followin
     ```
 
 	> [!NOTE]
-	> The value is not real. Update the value with the actual Sign-On URL. Contact [EmpCenter Client support team](https://www.workforcesoftware.com/services/customer-support/) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The value is not real. Update the value with the actual Sign-On URL. Contact [EmpCenter Client support team](https://workforcesoftware.com/support-offerings/) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
@@ -118,7 +118,7 @@ To configure Microsoft Entra single sign-on with EmpCenter, perform the followin
 
 ### Configure EmpCenter Single Sign-On
 
-To configure single sign-on on **EmpCenter** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [EmpCenter support team](https://www.workforcesoftware.com/services/customer-support/). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **EmpCenter** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [EmpCenter support team](https://workforcesoftware.com/support-offerings/). They set this setting to have the SAML SSO connection set properly on both sides.
 
 <a name='create-an-azure-ad-test-user'></a>
 
@@ -159,7 +159,7 @@ In this section, you enable Britta Simon to use Azure single sign-on by granting
 
 ### Create EmpCenter test user
 
-In order to enable Microsoft Entra users to log in to EmpCenter, they must be provisioned into EmpCenter. In the case of EmpCenter, the user accounts need to be created by your [EmpCenter support team](https://www.workforcesoftware.com/services/customer-support/).
+In order to enable Microsoft Entra users to log in to EmpCenter, they must be provisioned into EmpCenter. In the case of EmpCenter, the user accounts need to be created by your [EmpCenter support team](https://workforcesoftware.com/support-offerings/).
 
 > [!NOTE]
 > You can use any other EmpCenter user account creation tools or APIs provided by EmpCenter to provision Microsoft Entra user accounts.

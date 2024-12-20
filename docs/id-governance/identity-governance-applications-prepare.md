@@ -6,7 +6,7 @@ manager: amycolannino
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.topic: conceptual
-ms.date: 6/28/2022
+ms.date: 11/21/2024
 ms.author: owinfrey
 ms.reviewer: markwahl-msft
 ---
@@ -15,7 +15,9 @@ ms.reviewer: markwahl-msft
 
 Microsoft Entra ID Governance allows you to balance your organization's need for security and employee productivity with the right processes and visibility. Its features ensure that the right people have the right access to the right resources in your organization at the right time.
 
-Organizations with compliance requirements or risk management plans have sensitive or business-critical applications. The application sensitivity may be based on its purpose or the data it contains, such as financial information or personal information of the organization's customers. For those applications, only a subset of all the users in the organization will typically be authorized to have access, and access should only be permitted based on documented business requirements. As part of your organization's controls for managing access, you can use Microsoft Entra features to:
+Organizations with compliance requirements or risk management plans have sensitive or business-critical applications. The application sensitivity may be based on its purpose or the data it contains, such as financial information or personal information of the organization's customers. For those applications, only a subset of all the users in the organization will typically be authorized to have access, and access should only be permitted based on documented business requirements. 
+
+As part of your organization's controls for managing access, you can use Microsoft Entra features to:
 
 * set up appropriate access
 * provision users to applications
@@ -29,7 +31,9 @@ In addition to the application access governance scenario, you can also use Micr
 
 ## Getting started with governing access to applications
 
-Microsoft Entra ID Governance can be integrated with many applications, using [standards](~/architecture/auth-sync-overview.md) such as OpenID Connect, SAML, SCIM, SQL, and LDAP. Through these standards, you can use Microsoft Entra ID  with many popular SaaS applications, on-premises applications, and applications that your organization has developed. Once you've prepared your Microsoft Entra environment, as described in the section below, the three step plan covers how to connect an application to Microsoft Entra ID and enable identity governance features to be used for that application.
+Microsoft Entra ID Governance can be integrated with many applications, using [standards](~/architecture/auth-sync-overview.md) such as OpenID Connect, SAML, SCIM, SQL, and LDAP. Through these standards, you can use Microsoft Entra ID  with many popular SaaS applications, on-premises applications, and applications that your organization has developed. 
+
+Once you've prepared your Microsoft Entra environment, as described in the section below, the three step plan covers how to connect an application to Microsoft Entra ID and enable identity governance features to be used for that application.
 
 1. [Define your organization's policies for governing access to the application](identity-governance-applications-define.md)
 1. [Integrate the application with Microsoft Entra ID](identity-governance-applications-integrate.md) to ensure only authorized users can access the application, and review user's existing access to the application to set a baseline of all users having been reviewed. This allows authentication and user provisioning
@@ -51,6 +55,8 @@ Before you begin the process of governing application access from Microsoft Entr
 * **If you will be governing guest's access to the application, link your Microsoft Entra tenant to a subscription for MAU billing**. This step is necessary prior to having a guest request or review their access. For more information, see [billing model for Microsoft Entra External ID](~/external-id/external-identities-pricing.md).
 
 * **Check that Microsoft Entra ID is already sending its audit log, and optionally other logs, to Azure Monitor.** Azure Monitor is optional, but useful for governing access to apps, as Microsoft Entra only stores audit events for up to 30 days in its audit log. You can keep the audit data for longer than the default retention period, outlined in [How long does Microsoft Entra ID store reporting data?](~/identity/monitoring-health/reference-reports-data-retention.md), and use Azure Monitor workbooks and custom queries and reports on historical audit data. You can check the Microsoft Entra configuration to see if it's using Azure Monitor, in **Microsoft Entra ID** in the Microsoft Entra admin center, by clicking on **Workbooks**. If this integration isn't configured, and you have an Azure subscription and are in the `Global Administrator` or `Security Administrator` roles, you can [configure Microsoft Entra ID to use Azure Monitor](~/id-governance/entitlement-management-logs-and-reporting.md).
+
+* **Select an object retention approach.** If your organization requires being able to report on historical Microsoft Entra objects, such as reports that list users who had access to an application in a past year including those users who were subsequently deleted from Microsoft Entra, then you should plan to archive objects from Microsoft Entra to a separate repository for retention and reporting purposes. For more information, see [Customized reports in Azure Data Explorer (ADX) using data from Microsoft Entra ID](custom-entitlement-report-with-adx-and-entra-id.md).
 
 * **Make sure only authorized users are in the highly privileged administrative roles in your Microsoft Entra tenant.** Administrators in the *Global Administrator*, *Identity Governance Administrator*, *User Administrator*, *Application Administrator*, *Cloud Application Administrator*, and *Privileged Role Administrator* can make changes to users and their application role assignments. If the memberships of those roles haven't yet been recently reviewed, you need a user who is in the *Global Administrator* or *Privileged Role Administrator* to ensure that [access review of these directory roles](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md) are started. You should also ensure that users in Azure roles in subscriptions that hold the Azure Monitor, Logic Apps, and other resources needed for the operation of your Microsoft Entra configuration have been reviewed.
 

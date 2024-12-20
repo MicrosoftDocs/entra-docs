@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: domain-services
 ms.custom: devx-track-arm-template
 ms.topic: how-to
-ms.date: 09/23/2023
+ms.date: 12/02/2024
 ms.author: justinha
 ---
 

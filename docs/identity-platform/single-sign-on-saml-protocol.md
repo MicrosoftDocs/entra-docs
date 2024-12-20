@@ -84,7 +84,28 @@ Microsoft Entra ID ignores the `AllowCreate` attribute.
 
 ### RequestedAuthnContext
 
-The `RequestedAuthnContext` element specifies the desired authentication methods. It's optional in `AuthnRequest` elements sent to Microsoft Entra ID. Microsoft Entra ID supports `AuthnContextClassRef` values such as `urn:oasis:names:tc:SAML:2.0:ac:classes:Password`.
+The `RequestedAuthnContext` element specifies the desired authentication methods. It's optional in `AuthnRequest` elements sent to Microsoft Entra ID. 
+
+> [!NOTE] 
+> If the `RequestedAuthnContext` is included in the SAML request, the `Comparison` element must be set to `exact`. 
+
+Microsoft Entra ID supports following `AuthnContextClassRef` values. 
+
+| Authentication method| Authentication context class URI |
+|---|---|
+|Kerberos|urn:oasis:names:tc:SAML:2.0:ac:classes:Kerberos|
+|User name and password|urn:oasis:names:tc:SAML:2.0:ac:classes:Password|
+|PGP Public Key Infrastructure|urn:oasis:names:tc:SAML:2.0:ac:classes:PGP|
+|Secure Remote Password|urn:oasis:names:tc:SAML:2.0:ac:classes:SecureRemotePassword|
+|XML Digital Signature|urn:oasis:names:tc:SAML:2.0:ac:classes:XMLDSig|
+|Simple public-key infrastructure|urn:oasis:names:tc:SAML:2.0:ac:classes:SPKI|
+|Smartcard|urn:oasis:names:tc:SAML:2.0:ac:classes:Smartcard|
+|Smartcard with enclosed private key and a PIN|urn:oasis:names:tc:SAML:2.0:ac:classes:SmartcardPKI|
+|Transport Layer Security (TLS) client|urn:oasis:names:tc:SAML:2.0:ac:classes:TLSClient|
+|Unspecified|urn:oasis:names:tc:SAML:2.0:ac:classes:Unspecified|
+|X.509 certificate|urn:oasis:names:tc:SAML:2.0:ac:classes:X509|
+|Integrated Windows authentication|urn:federation:authentication:windows|
+
 
 ### Scoping
 

@@ -214,7 +214,7 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Configure and enable or disable sign-in risk policy| [Security Administrator](permissions-reference.md#security-administrator) |  |
 > | Configure and enable or disable user risk policy | [Security Administrator](permissions-reference.md#security-administrator) |  |
 > | Configure weekly digests | [Security Administrator](permissions-reference.md#security-administrator) |  |
-> | Dismiss all risk detections | [Security Administrator](permissions-reference.md#security-administrator) |  |
+> | Dismiss all risk detections | [Security Operator](permissions-reference.md#security-operator)|  |
 > | Fix or dismiss vulnerability | [Security Administrator](permissions-reference.md#security-administrator) |  |
 > | Read all configuration | [Security Reader](permissions-reference.md#security-reader) |  |
 > | Read all risk detections | [Security Reader](permissions-reference.md#security-reader) |  |
@@ -355,6 +355,8 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Manage terms of use | [Conditional Access Administrator](permissions-reference.md#conditional-access-administrator) | [Security Administrator](permissions-reference.md#security-administrator) |
 > | Read all configuration | [Default user role](../../fundamentals/users-default-permissions.md) |  |
 > | Read named locations | [Default user role](../../fundamentals/users-default-permissions.md) |  |
+> | Read terms of use | [Security Reader](permissions-reference.md#security-reader) |  [Global Reader](permissions-reference.md#global-reader) |
+> | Read which terms of use were accepted by the signed-in user | [Default user role](../../fundamentals/users-default-permissions.md) |  |
 
 ## Security - Identity security score
 

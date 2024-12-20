@@ -14,7 +14,7 @@ ms.custom:
 
 Microsoft Entra ID Governance makes it easy to alert people in your organization when they need to take action (ex: approve a request for access to a resource) or when a business process isn't functioning properly (ex: new hires aren't getting provisioned).
 
-The following table outlines some of the standard notifications that Microsoft Entra ID Governance provides, the target persona in an organization, where they would expect to be alerted, and how quickly they would be alerted.
+The following table outlines some of the standard notifications that Microsoft Entra ID Governance provides, the target persona in an organization, how they are alerted, and when they are alerted.
 
 **Sample of existing standard notifications**
 
@@ -30,7 +30,7 @@ The following table outlines some of the standard notifications that Microsoft E
 
 In addition to the standard notifications provided by Microsoft Entra ID Governance, organizations can create custom alerts to meet their needs. 
 
-All activity performed by the Microsoft Entra ID Governance services is logged in the Microsoft Entra [Audit Logs](/entra/identity/monitoring-health/concept-audit-logs). By pushing the logs to a [Log Analytics workspace](/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs), organizations can create [custom alerts](/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics#set-up-alerts). 
+All activity performed by the Microsoft Entra ID Governance services is logged in the Microsoft Entra [Audit Logs](/entra/identity/monitoring-health/concept-audit-logs). By pushing the logs to an Azure Monitor [Log Analytics workspace](/entra/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs), organizations can create [custom alerts](/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics#set-up-alerts). 
 
 The following section provides examples of custom alerts that customers can create by integrating Microsoft Entra ID Governance with Azure Monitor. By using Azure Monitor, organizations can customize what alerts are generated, who receives the alerts, and how they receive the alert (email, SMS, [help desk ticket](/azure/azure-monitor/alerts/itsm-connector-secure-webhook-connections-azure-configuration), etc.). 
 
@@ -243,7 +243,7 @@ AuditLogs
 
 **Next steps**
 
-- [Log analytics](/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics)
+- [Analyze Microsoft Entra activity logs with Azure Monitor log analytics](/entra/identity/monitoring-health/howto-analyze-activity-logs-log-analytics)
 - [Get started with queries in Azure Monitor logs](/azure/azure-monitor/logs/get-started-queries)
 - [Create and manage alert groups in the Azure portal](/azure/azure-monitor/alerts/action-groups)
 - [Install and use the log analytics views for Microsoft Entra ID](/azure/azure-monitor/visualize/workbooks-view-designer-conversion-overview)

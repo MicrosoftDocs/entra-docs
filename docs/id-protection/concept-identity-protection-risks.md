@@ -44,7 +44,7 @@ Detections triggered in real-time take 5-10 minutes to surface details in the re
 > Our system might detect that the risk event that contributed to the risk user risk score was either: 
 > 
 > - A false positive
-> - The user risk was [remediated by policy](howto-identity-protection-remediate-unblock.md) by either: 
+> - The user risk was [remediated by policy](howto-identity-protection-remediate-unblock.md) by either: 
 >    - Completing multifactor authentication
 >    - Secure password change
 > 
@@ -62,7 +62,7 @@ These fields are essential for real-time monitoring, threat response, and mainta
 | [Activity from anonymous IP address](#activity-from-anonymous-ip-address) | Offline | Premium | riskyIPAddress |
 | [Additional risk detected (sign-in)](#additional-risk-detected-sign-in) | Real-time or Offline | Nonpremium | generic = Premium detection classification for non-P2 tenants |
 | [Admin confirmed user compromised](#admin-confirmed-user-compromised) | Offline | Nonpremium | adminConfirmedUserCompromised |
-| [Anomalous Token](#anomalous-token) | Real-time or Offline | Premium | anomalousToken | 
+| [Anomalous Token (sign-in)](#anomalous-token-sign-in) | Real-time or Offline | Premium | anomalousToken | 
 | [Anonymous IP address](#anonymous-ip-address) | Real-time | Nonpremium | anonymizedIPAddress |
 | [Atypical travel](#atypical-travel) | Offline | Premium | unlikelyTravel |
 | [Impossible travel](#impossible-travel) | Offline | Premium | mcasImpossibleTravel |
@@ -79,6 +79,7 @@ These fields are essential for real-time monitoring, threat response, and mainta
 | [Verified threat actor IP](#verified-threat-actor-ip) | Real-time | Premium | nationStateIP |
 | **User risk detections** | | | |
 | [Additional risk detected (user)](#additional-risk-detected-user) | Real-time or Offline | Nonpremium | generic = Premium detection classification for non-P2 tenants |
+| [Anomalous Token (user)](#anomalous-token-user) | Real-time or Offline | Premium | anomalousToken | 
 | [Anomalous user activity](#anomalous-user-activity) | Offline | Premium | anomalousUserActivity |
 | [Attacker in the Middle](#attacker-in-the-middle) | Offline | Premium | attackerinTheMiddle |
 | [Leaked credentials](#leaked-credentials) | Offline | Nonpremium | leakedCredentials |
@@ -88,7 +89,7 @@ These fields are essential for real-time monitoring, threat response, and mainta
 | [Suspicious sending patterns](#suspicious-sending-patterns) | Offline | Premium | suspiciousSendingPatterns |
 | [User reported suspicious activity](#user-reported-suspicious-activity) | Offline | Premium | userReportedSuspiciousActivity |
 
-For more information on workload identity risk detections go to [Securing workload identities](https://learn.microsoft.com/entra/id-protection/concept-workload-identity-risk).
+For more information on workload identity risk detections go to [Securing workload identities](/entra/id-protection/concept-workload-identity-risk).
 
 ## Premium detections 
 
@@ -100,7 +101,9 @@ The following premium detections are visible only to Microsoft Entra ID P2 custo
 
 Calculated offline. This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#activity-from-anonymous-ip-addresses). This detection identifies that users were active from an IP address identified as an anonymous proxy IP address. 
 
-#### Anomalous token 
+<a name='anomalous-token'></a>
+
+#### Anomalous token (sign-in)
 
 Calculated in real-time or offline. This detection indicates abnormal characteristics in the token, such as an unusual lifetime or a token played from an unfamiliar location. This detection covers Session Tokens and Refresh Tokens. 
 
@@ -138,7 +141,7 @@ Calculated offline. This detection is discovered using information provided by�
 
 Calculated offline. A password spray attack is where multiple identities are attacked using common passwords in a unified brute force manner. The risk detection is triggered when an account's password is valid and has an attempted sign in. This detection signals that the user's password has correctly been identified through a password spray attack, not that the attacker was able to access any resources.
 
-[Tips for investigating malicious IP address detections.](howto-identity-protection-investigate-risk.md#investigating-password-spray-detections)
+[Tips for investigating password spray detections.](howto-identity-protection-investigate-risk.md#investigating-password-spray-detections)
 
 #### Suspicious browser	 
 
@@ -175,6 +178,14 @@ Selecting an unfamiliar sign-in properties risk allows you to see more info 
 Calculated in real-time. This risk detection type indicates sign-in activity that is consistent with known IP addresses associated with nation state actors or cyber crime groups, based on data from the Microsoft Threat Intelligence Center (MSTIC). 
 
 ### Premium user risk detections 
+
+#### Anomalous token (user)
+
+Calculated in real-time or offline. This detection indicates abnormal characteristics in the token, such as an unusual lifetime or a token played from an unfamiliar location. This detection covers Session Tokens and Refresh Tokens. 
+
+Anomalous token is tuned to incur more noise than other detections at the same risk level. This tradeoff is chosen to increase the likelihood of detecting replayed tokens that might otherwise go unnoticed. There's a higher than normal chance that some of the sessions flagged by this detection are false positives. We recommend investigating the sessions flagged by this detection in the context of other sign-ins from the user. If the location, application, IP address, User Agent, or other characteristics are unexpected for the user, the administrator should consider this risk as an indicator of potential token replay. 
+
+[Tips for investigating anomalous token detections.](howto-identity-protection-investigate-risk.md#investigating-anomalous-token-and-token-issuer-anomaly-detections)
 
 #### Anomalous user activity 
 

@@ -69,7 +69,7 @@ An [Azure Private Domain Name System (DNS) zone][private-dns] is created with an
 
 ## Test the application
 
-After [adding a user for testing](./application-proxy-add-on-premises-application.md#add-a-user-for-testing), you can test the application by accessing https://www.fabrikam.one. The user is prompted to authenticate in Microsoft Entra ID, and upon successful authentication, accesses the application. 
+After [adding a user for testing](./application-proxy-add-on-premises-application.md#add-a-user-for-testing), you can test the application by accessing `https://www.fabrikam.one`. The user is prompted to authenticate in Microsoft Entra ID, and upon successful authentication, accesses the application. 
 
 ![Screenshot of authentication step.](./media/application-proxy-waf/sign-in-2.png)
 ![Screenshot of server response.](./media/application-proxy-waf/application-gateway-response.png)

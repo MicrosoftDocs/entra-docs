@@ -7,7 +7,7 @@ search.appverid: MET150
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 09/28/2024
+ms.date: 11/01/2024
 ms.author: rolyon
 ms.reviewer: abhijeetsinha
 ms.custom: generated, it-pro, fasttrack-edit, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -24,6 +24,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > [!div class="mx-tableFixed"]
 > | Role | Description | Template ID |
 > | --- | --- | --- |
+> | [AI Administrator](#ai-administrator) | Manage all aspects of Microsoft 365 Copilot and AI-related enterprise services in Microsoft 365. | d2562ede-74db-457e-a7b6-544e236ebb61 |
 > | [Application Administrator](#application-administrator) | Can create and manage all aspects of app registrations and enterprise apps.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 9b895d92-2cd3-44c7-9d02-a6ac2d5ea5c3 |
 > | [Application Developer](#application-developer) | Can create application registrations independent of the 'Users can register applications' setting.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | cf1c38e5-3621-4004-a7cb-879624dced7c |
 > | [Attack Payload Author](#attack-payload-author) | Can create attack payloads that an administrator can initiate later. | 9c6df0f2-1e7c-4dc3-b195-66dfbd24aa8f |
@@ -34,6 +35,8 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Attribute Definition Reader](#attribute-definition-reader) | Read the definition of custom security attributes. | 1d336d2c-4ae8-42ef-9711-b3604ce3fc2c |
 > | [Attribute Log Administrator](#attribute-log-administrator) | Read audit logs and configure diagnostic settings for events related to custom security attributes. | 5b784334-f94b-471a-a387-e7219fc49ca2 |
 > | [Attribute Log Reader](#attribute-log-reader) | Read audit logs related to custom security attributes. | 9c99539d-8186-4804-835f-fd51ef9e2dcd |
+> | [Attribute Provisioning Administrator](#attribute-provisioning-administrator) | Add or remove custom security attributes in source to target attribute mapping.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | ecb2c6bf-0ab6-418e-bd87-7986f8d63bbe |
+> | [Attribute Provisioning Reader](#attribute-provisioning-reader)  | Read custom security attributes defined on user objects.   | 422218e4-db15-4ef9-bbe0-8afb41546d79 |
 > | [Authentication Administrator](#authentication-administrator) | Can access to view, set and reset authentication method information for any non-admin user.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | c4e39bd9-1100-46d3-8c65-fb160da0071f |
 > | [Authentication Extensibility Administrator](#authentication-extensibility-administrator) | Customize sign in and sign up experiences for users by creating and managing custom authentication extensions.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 25a516ed-2fa0-40ea-a2d0-12923a21473a |
 > | [Authentication Policy Administrator](#authentication-policy-administrator) | Can create and manage the authentication methods policy, tenant-wide MFA settings, password protection policy, and verifiable credentials. | 0526716b-113d-4c15-b2c8-68e3c22b9f80 |
@@ -127,6 +130,32 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Windows 365 Administrator](#windows-365-administrator) | Can provision and manage all aspects of Cloud PCs. | 11451d60-acb2-45eb-a7d6-43d0f0125c13 |
 > | [Windows Update Deployment Administrator](#windows-update-deployment-administrator) | Can create and manage all aspects of Windows Update deployments through the Windows Update for Business deployment service. | 32696413-001a-46ae-978c-ce0f6b3620d2 |
 > | [Yammer Administrator](#yammer-administrator) | Manage all aspects of the Yammer service. | 810a2642-a034-447f-a5e8-41beaa378541 |
+
+## AI Administrator
+
+Assign the AI Administrator role to users who need to do the following tasks:
+
+- Manage all aspects of Microsoft 365 Copilot
+- Manage AI-related enterprise services, extensibility, and copilot agents from the Integrated apps page in the Microsoft 365 admin center
+- Approve and publish line-of-business copilot agents
+- Allow users to install an app or install an app for users in the organization if the app does not require permission
+- Read and configure Azure and Microsoft 365 service health dashboards
+- View usage reports, adoption insights, and organizational insight
+- Create and manage support tickets in Azure and the Microsoft 365 admin center
+
+> [!div class="mx-tableFixed"]
+> | Actions | Description |
+> | --- | --- |
+> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
+> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
+> | microsoft.office365.copilot/allEntities/allProperties/allTasks | Create and manage all settings for Microsoft 365 Copilot |
+> | microsoft.office365.messageCenter/messages/read | Read messages in Message Center in the Microsoft 365 admin center, excluding security messages |
+> | microsoft.office365.network/performance/allProperties/read | Read all network performance properties in the Microsoft 365 admin center |
+> | microsoft.office365.search/content/manage | Create and delete content, and read and update all properties in Microsoft Search |
+> | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
+> | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
+> | microsoft.office365.usageReports/allEntities/allProperties/read | Read Office 365 usage reports |
+> | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
 
 ## Application Administrator
 
@@ -259,7 +288,7 @@ For more information, see [Microsoft Defender for Office 365 permissions in the 
 
 Users with this role can assign and remove custom security attribute keys and values for supported Microsoft Entra objects such as users, service principals, and devices.
 
-By default, [Global Administrator](#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes. To work with custom security attributes, you must be assigned one of the custom security attribute roles.
+[!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
 
 For more information, see [Manage access to custom security attributes in Microsoft Entra ID](~/fundamentals/custom-security-attributes-manage.md).
 
@@ -281,7 +310,7 @@ For more information, see [Manage access to custom security attributes in Micros
 
 Users with this role can read custom security attribute keys and values for supported Microsoft Entra objects.
 
-By default, [Global Administrator](#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes. To work with custom security attributes, you must be assigned one of the custom security attribute roles.
+[!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
 
 For more information, see [Manage access to custom security attributes in Microsoft Entra ID](~/fundamentals/custom-security-attributes-manage.md).
 
@@ -299,7 +328,7 @@ For more information, see [Manage access to custom security attributes in Micros
 
 Users with this role can define a valid set of custom security attributes that can be assigned to supported Microsoft Entra objects. This role can also activate and deactivate custom security attributes.
 
-By default, [Global Administrator](#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes. To work with custom security attributes, you must be assigned one of the custom security attribute roles.
+[!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
 
 For more information, see [Manage access to custom security attributes in Microsoft Entra ID](~/fundamentals/custom-security-attributes-manage.md).
 
@@ -313,7 +342,7 @@ For more information, see [Manage access to custom security attributes in Micros
 
 Users with this role can read the definition of custom security attributes.
 
-By default, [Global Administrator](#global-administrator) and other administrator roles do not have permissions to read, define, or assign custom security attributes. To work with custom security attributes, you must be assigned one of the custom security attribute roles.
+[!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
 
 For more information, see [Manage access to custom security attributes in Microsoft Entra ID](~/fundamentals/custom-security-attributes-manage.md).
 
@@ -333,7 +362,7 @@ Assign the Attribute Log Reader role to users who need to do the following tasks
 
 Users with this role **cannot** read audit logs for other events.
 
-By default, Global Administrator and other administrator roles do not have permissions to read audit logs for custom security attributes. To read audit logs for custom security attributes, you must be assigned this role or the Attribute Log Reader role.
+[!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
 
 For more information, see [Manage access to custom security attributes in Microsoft Entra ID](../../fundamentals/custom-security-attributes-manage.md).
 
@@ -355,7 +384,7 @@ Users with this role **cannot** do the following tasks:
 - Configure diagnostic settings for custom security attributes
 - Read audit logs for other events
 
-By default, Global Administrator and other administrator roles do not have permissions to read audit logs for custom security attributes. To read audit logs for custom security attributes, you must be assigned this role or the Attribute Log Administrator role.
+[!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
 
 For more information, see [Manage access to custom security attributes in Microsoft Entra ID](../../fundamentals/custom-security-attributes-manage.md).
 
@@ -363,6 +392,38 @@ For more information, see [Manage access to custom security attributes in Micros
 > | Actions | Description |
 > | --- | --- |
 > | microsoft.directory/customSecurityAttributeAuditLogs/allProperties/read | Read audit logs related to custom security attributes |
+
+## Attribute Provisioning Administrator 
+
+Users assigned this role can perform the following operations when configuring user provisioning/synchronization flows in Microsoft Entra:  
+
+- Read and write attribute mappings for custom security attributes when provisioning in an application 
+- Read and write provisioning and auditing logs for custom security attributes when provisioning in an application
+
+> [!IMPORTANT]
+> This role does not have the ability to create custom security attribute sets or to directly assign or update custom security attribute values for the user object. This role can only configure the flow of the custom security attributes in the provisioning app. For more information, see [Provision custom security attributes from HR sources (Preview)](~/identity/app-provisioning/provision-custom-security-attributes.md).  
+
+> [!div class="mx-tableFixed"]
+> | Actions | Description |
+> | --- | --- |
+> | microsoft.directory/customSecurityAttributeDefinitions/allProperties/read | Read all properties of custom security attribute definitions |
+> | microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/read | Read all custom security attributes in the synchronization schema|
+> | microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/update | Update custom security attribute mappings in the synchronization schema [![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
+
+## Attribute Provisioning Reader 
+
+Users assigned this role can perform the following operations when working with user provisioning/synchronization flows in Microsoft Entra:  
+
+- Read the attribute mappings for custom security attributes when provisioning in an application 
+- Read the provisioning and auditing logs for custom security attributes when provisioning in an application
+
+For more information, see [Provision custom security attributes from HR sources (Preview)](~/identity/app-provisioning/provision-custom-security-attributes.md).
+
+> [!div class="mx-tableFixed"]
+> | Actions | Description |
+> | --- | --- |
+> | microsoft.directory/customSecurityAttributeDefinitions/allProperties/read | Read all properties of custom security attribute definitions |
+> | microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/read | Read all custom security attributes in the synchronization schema |
 
 ## Authentication Administrator
 
@@ -1256,7 +1317,7 @@ Users with this role **cannot** do the following:
 > Global Reader role has the following limitations:
 >
 >- OneDrive admin center - OneDrive admin center does not support the Global Reader role
->- [Microsoft 365 Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) - Global Reader can't read SCC audit logs, do content search, or see Secure Score.
+>- [Microsoft 365 Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) - Global Reader can't do content search or see Secure Score.
 >- [Teams admin center](/microsoftteams/manage-teams-in-modern-portal) - Global Reader cannot read **Teams lifecycle**, **Analytics & reports**, **IP phone device management**, and **App catalog**. For more information, see [Use Microsoft Teams administrator roles to manage Teams](/microsoftteams/using-admin-roles).
 >- [Privileged Access Management](/microsoft-365/compliance/privileged-access-management) doesn't support the Global Reader role.
 >- [Azure Information Protection](/azure/information-protection/what-is-information-protection) - Global Reader is supported [for central reporting](/azure/information-protection/reports-aip) only, and when your Microsoft Entra organization isn't on the [unified labeling platform](/azure/information-protection/faqs#how-can-i-determine-if-my-tenant-is-on-the-unified-labeling-platform).
@@ -1628,7 +1689,7 @@ Users in this role can access a set of dashboards and insights via the Microsoft
 
 This is a [privileged role](privileged-roles-permissions.md). Users with this role have global permissions within Microsoft Intune Online, when the service is present. Additionally, this role contains the ability to manage users and devices in order to associate policy, as well as create and manage groups. For more information, see [Role-based administration control (RBAC) with Microsoft Intune](/mem/intune/fundamentals/role-based-access-control).
 
-This role can create and manage all security groups. However, Intune Administrator does not have admin rights over Office groups. That means the admin cannot update owners or memberships of all Office groups in the organization. However, he/she can manage the Office group that he creates which comes as a part of his/her end-user privileges. So, any Office group (not security group) that he/she creates should be counted against his/her quota of 250.
+This role can create and manage all security groups. However, Intune Administrator does not have admin rights over Microsoft 365 groups. That means the admin cannot update owners or memberships of all Microsoft 365 groups in the organization. However, he/she can manage the Microsoft 365 group that he creates which comes as a part of his/her end-user privileges. So, any Microsoft 365 group (not security group) that he/she creates should be counted against his/her quota of 250.
 
 > [!NOTE]
 > In the Microsoft Graph API and Microsoft Graph PowerShell, this role is named Intune Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named Intune Administrator.
@@ -2140,9 +2201,10 @@ This is a [privileged role](privileged-roles-permissions.md). Assign the Privile
 
 - Set or reset any authentication method (including passwords) for any user, including Global Administrators.
 - Delete or restore any users, including Global Administrators. For more information, see [Who can perform sensitive actions](privileged-roles-permissions.md#who-can-perform-sensitive-actions).
-- Force users to re-register against existing non-password credential (such as MFA or FIDO) and revoke **remember MFA on the device**, prompting for MFA on the next sign-in of all users.
+- Force users to re-register against existing non-password credential (such as MFA or FIDO2) and revoke **remember MFA on the device**, prompting for MFA on the next sign-in of all users.
 - Update sensitive properties for all users. For more information, see [Who can perform sensitive actions](privileged-roles-permissions.md#who-can-perform-sensitive-actions).
 - Create and manage support tickets in Azure and the Microsoft 365 admin center.
+- Configure certificate authorities with a PKI-based trust store (preview)
 
 Users with this role **cannot** do the following:
 
@@ -2277,7 +2339,7 @@ In | Can do
 [Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center) | Manage security policies<br>View, investigate, and respond to security threats<br>View reports
 Azure Advanced Threat Protection | Monitor and respond to suspicious security activity
 [Microsoft Defender for Endpoint](/microsoft-365/security/defender-endpoint/prepare-deployment) | Assign roles<br>Manage machine groups<br>Configure endpoint threat detection and automated remediation<br>View, investigate, and respond to alerts<br/>View machines/device inventory
-[Intune](/mem/intune/fundamentals/role-based-access-control) | Maps to the [Intune Endpoint Security Manager role](/mem/intune/fundamentals/role-based-access-control-reference#endpoint-security-manager)
+[Intune](/mem/intune/fundamentals/role-based-access-control) | Maps to the [Intune Endpoint Security Manager role](/mem/intune/fundamentals/role-based-access-control-reference)
 [Microsoft Defender for Cloud Apps](/defender-cloud-apps/manage-admins) | Add admins, add policies and settings, upload logs and perform governance actions
 [Microsoft 365 service health](/microsoft-365/enterprise/view-service-health) | View the health of Microsoft 365 services
 [Smart lockout](~/identity/authentication/howto-password-smart-lockout.md) | Define the threshold and duration for lockouts when failed sign-in events happen.

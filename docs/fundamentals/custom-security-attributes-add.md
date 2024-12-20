@@ -7,7 +7,7 @@ ms.author: rolyon
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 11/27/2024
 ms.collection: M365-identity-device-management
 ---
 
@@ -35,7 +35,7 @@ An attribute set is a collection of related attributes. All custom security attr
 
 1. Browse to **Protection** > **Custom security attributes**.
 
-1. Click **Add attribute set** to add a new attribute set.
+1. Select **Add attribute set** to add a new attribute set.
 
     If Add attribute set is disabled, make sure you are assigned the Attribute Definition Administrator role. For more information, see [Troubleshoot custom security attributes](custom-security-attributes-troubleshoot.md).
 
@@ -45,7 +45,7 @@ An attribute set is a collection of related attributes. All custom security attr
 
     :::image type="content" source="./media/custom-security-attributes-add/attribute-set-add.png" alt-text="Screenshot of New attribute set pane in Microsoft Entra admin center." lightbox="./media/custom-security-attributes-add/attribute-set-add.png":::
 
-1. When finished, click **Add**.
+1. When finished, select **Add**.
 
     The new attribute set appears in the list of attribute sets.
 
@@ -55,13 +55,13 @@ An attribute set is a collection of related attributes. All custom security attr
 
 1. Browse to **Protection** > **Custom security attributes**.
 
-1. On the Custom security attributes page, find an existing attribute set or click **Add attribute set** to add a new attribute set.
+1. On the Custom security attributes page, find an existing attribute set or select **Add attribute set** to add a new attribute set.
 
     All custom security attribute definitions must be part of an attribute set.
 
-1. Click to open the selected attribute set.
+1. Select to open the selected attribute set.
 
-1. Click **Add attribute** to add a new custom security attribute to the attribute set.
+1. Select **Add attribute** to add a new custom security attribute to the attribute set.
 
     :::image type="content" source="./media/custom-security-attributes-add/attribute-new.png" alt-text="Screenshot of New attribute pane in Microsoft Entra admin center." lightbox="./media/custom-security-attributes-add/attribute-new.png":::
 
@@ -89,13 +89,13 @@ An attribute set is a collection of related attributes. All custom security attr
 
     Select **Yes** to require that this custom security attribute be assigned values from a predefined values list. Select **No** to allow this custom security attribute to be assigned user-defined values or potentially predefined values.
 
-1. If **Only allow predefined values to be assigned** is **Yes**, click **Add value** to add predefined values.
+1. If **Only allow predefined values to be assigned** is **Yes**, select **Add value** to add predefined values.
 
     An active value is available for assignment to objects. A value that is not active is defined, but not yet available for assignment.
 
     :::image type="content" source="./media/custom-security-attributes-add/attribute-new-value-add.png" alt-text="Screenshot of New attribute pane with Add predefined value pane in Microsoft Entra admin center." lightbox="./media/custom-security-attributes-add/attribute-new-value-add.png":::
 
-1. When finished, click **Save**.
+1. When finished, select **Save**.
 
     The new custom security attribute appears in the list of custom security attributes.
 
@@ -109,13 +109,13 @@ Once you add a new custom security attribute definition, you can later edit some
 
 1. Browse to **Protection** > **Custom security attributes**.
 
-1. Click the attribute set that includes the custom security attribute you want to edit.
+1. Select the attribute set that includes the custom security attribute you want to edit.
 
-1. In the list of custom security attributes, click the ellipsis for the custom security attribute you want to edit, and then select **Edit attribute**.
+1. In the list of custom security attributes, select the ellipsis for the custom security attribute you want to edit, and then select **Edit attribute**.
 
 1. Edit the properties that are enabled.
 
-1. If **Only allow predefined values to be assigned** is **Yes**, click **Add value** to add predefined values. Click an existing predefined value to change the **Is active?** setting.
+1. If **Only allow predefined values to be assigned** is **Yes**, select **Add value** to add predefined values. Select an existing predefined value to change the **Is active?** setting.
 
     :::image type="content" source="./media/custom-security-attributes-add/attribute-predefined-value-add.png" alt-text="Screenshot of Add predefined value pane in Microsoft Entra admin center." lightbox="./media/custom-security-attributes-add/attribute-predefined-value-add.png":::
 
@@ -127,13 +127,13 @@ Once you add a custom security attribute definition, you can't delete it. Howeve
 
 1. Browse to **Protection** > **Custom security attributes**.
 
-1. Click the attribute set that includes the custom security attribute you want to deactivate.
+1. Select the attribute set that includes the custom security attribute you want to deactivate.
 
 1. In the list of custom security attributes, add a check mark next to the custom security attribute you want to deactivate.
 
-1. Click **Deactivate attribute**.
+1. Select **Deactivate attribute**.
 
-1. In the Deactivate attribute dialog that appears, click **Yes**.
+1. In the Deactivate attribute dialog that appears, select **Yes**.
 
     The custom security attribute is deactivated and moved to the Deactivated attributes list.
 

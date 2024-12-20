@@ -69,7 +69,8 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.3.8.0](#2380)|25 Jul 2025 (12 months after release of 2.3.20.0)|
 |[2.3.20.0](#23200)|7 Oct 2025 (12 months after release of 2.4.18.0)|
 |[2.4.18.0](#24180)|9 Oct 2025 (12 months after release of 2.4.21.0)|
-|[2.4.21.0](#24210)|TBD|
+|[2.4.21.0](#24210)|15 Nov 2025 (12 months after release of 2.4.27.0)|
+|[2.4.27.0](#24270)|TBD|
 
 **All other versions are not supported**
 
@@ -92,6 +93,23 @@ Auto-upgrade is meant to push all important updates and critical fixes to you. I
 If you want all the latest features and updates, check this page and install what you need.
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
+
+
+## 2.4.27.0
+
+### Release status
+
+11/14/2024: Released for download
+
+### Updated Features
+ -  SQL related drivers shipped with Microsoft Entra Connect have been updated to OLE DB [version 18.7.4](/sql/connect/oledb/release-notes-for-oledb-driver-for-sql-server?view=sql-server-ver16#1874)
+
+### Bug fixes
+- Fixed an issues with Privileged Identity Management (PIM), Microsoft Entra roles, and PIM for Groups to verify that PIM is enabled and that the user has the Hybrid Identity Administrator role enabled.
+- Fixed an issue where AD FS commands were failing when Connect Sync is installed on a non-ADFS server.  
+
+
+
 
 ## 2.4.21.0
 
