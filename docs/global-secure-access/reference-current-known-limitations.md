@@ -1,22 +1,25 @@
 ---
-title: Global Secure Access known limitations
+title: Known Limitations for Global Secure Access
 description: This article details the known issues and limitations you might encounter when using Global Secure Access.
 author: HULKsmashGithub
 ms.topic: reference
 ms.author: jayrusso
 manager: amycolannino
-ms.date: 12/18/2024
+ms.date: 12/19/2024
 ms.service: global-secure-access
 
+
+
+# Customer intent: As an administrator, I want to access the known limitations for Global Secure Access in one place. This article gathers all known issues and limitations into a single reference point. Global Secure Access articles with a "known limitations" section point to this article. 
 ---
-# Global Secure Access known limitations
+# Known limitations for Global Secure Access
 
 Global Secure Access is the unifying term used for both Microsoft Entra Internet Access and Microsoft Entra Private Access. 
 
 This article details the known issues and limitations you might encounter when using Global Secure Access.
 
 ## Global Secure Access client limitations
-The Global Secure Access client is available on multiple platforms. Expand each header for details about the known limitations for each platform.    
+The Global Secure Access client is available on multiple platforms. Select each tab for details about the known limitations for each platform.    
 
 ### [Windows client](#tab/windows-client)
 Known limitations for the Global Secure Access client for Windows include:
@@ -34,23 +37,85 @@ DNS uses port 53 UDP for name resolution. Some browsers have their own DNS clien
 Also add browsing `chrome://flags` and disabling `Async DNS resolver`.
 
 #### Name Resolution Policy Table rules in Group Policy not supported
-The Global Secure Access client for Windows does not support Name Resolution Policy Table (NRPT) rules in Group Policy. To support private DNS, the client configures local NRPT rules on the device. These rules redirect relevant DNS queries to the private DNS. If NRPT rules are configured in Group Policy, they override local NRPT rules configured by the client and private DNS doesn't work.   
+The Global Secure Access client for Windows doesn't support Name Resolution Policy Table (NRPT) rules in Group Policy. To support private DNS, the client configures local NRPT rules on the device. These rules redirect relevant DNS queries to the private DNS. If NRPT rules are configured in Group Policy, they override local NRPT rules configured by the client and private DNS doesn't work.   
 
-In addition, NRPT rules that were configured and deleted in old versions of Windows created an empty list of NRPT rules in the `registry.pol` file. If this Group Policy Object (GPO) is applied on the device, the empty list overrides the local NRPT rules and private DNS doesn't work.
+In addition, NRPT rules that were configured and deleted in older versions of Windows created an empty list of NRPT rules in the `registry.pol` file. If this Group Policy Object (GPO) is applied on the device, the empty list overrides the local NRPT rules and private DNS doesn't work.
 
-##### Mitigation steps
-1. If the following registry key exists on the end-user device, a GPO is configured to apply NRPT rules:
-`HKLM\Software\Policies\Microsoft\Windows NT\DNSClient\DnsPolicyConfig`
+As a mitigation:
+1. If the registry key `HKLM\Software\Policies\Microsoft\Windows NT\DNSClient\DnsPolicyConfig` exists on the end-user device, configure a GPO to apply NRPT rules.
 1. To find which GPOs are configured with NRPT rules:
     1. Use `gpresult`.
-    2. Run the following script that detects the paths of all registry.pol files in sysvol that contain NRPT rules. Note: remember to change the sysvolPath variable to meet the configuration of your network.
-1. Edit each of the GPOs found in the previous section:
-    1. If the NRPT section is empty, create a new fictive rule, update the policy, delete the fictive rule and update again. This will remove the DnsPolicyConfig from the registry.pol file (Which was created in one of the legacy version of Windows)
-    2. If the NRPT section is not empty and contains rules, confirm that you still need these rules. If they are not needed, delete them. If they are needed and the GPO is applied on a device with GSA client, the private DNS option will not function.
-:::image type="content" source="media/reference-current-known-limitations/limitations-create-rule.png" alt-text="Screenshot of the Name Resolution Policy Rules dialog with the Create and Apply buttons highlighted." lightbox="media/reference-current-known-limitations/limitations-create-rule-expanded.png":::
+    2. Run the following script that detects the paths of all `registry.pol` files in `sysvol` that contain NRPT rules.
+> [!NOTE]
+> Remember to change the `sysvolPath` variable to meet the configuration of your network.
 
-#### IPv6 not supported
-The client tunnels only IPv4 traffic. IPv6 traffic isn't acquired by the client and is therefore transferred directly to the network. To enable all relevant traffic to be tunneled, set the network adapter properties to [IPv4 preferred](troubleshoot-global-secure-access-client-diagnostics-health-check.md#ipv4-preferred).
+```PowerShell
+# =========================================================================
+# THIS CODE-SAMPLE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER 
+# EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES 
+# OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR PURPOSE.
+#
+# This sample is not supported under any Microsoft standard support program 
+# or service. The code sample is provided AS IS without warranty of any kind. 
+# Microsoft further disclaims all implied warranties including, without 
+# limitation, any implied warranties of merchantability or of fitness for a 
+# particular purpose. The entire risk arising out of the use or performance
+# of the sample and documentation remains with you. In no event shall 
+# Microsoft, its authors, or anyone else involved in the creation, 
+# production, or delivery of the script be liable for any damages whatsoever 
+# (including, without limitation, damages for loss of business profits, 
+# business interruption, loss of business information, or other pecuniary 
+# loss) arising out of  the use of or inability to use the sample or 
+# documentation, even if Microsoft has been advised of the possibility of 
+# such damages.
+#========================================================================= 
+
+# Define the sysvol share path.
+# Change the sysvol path per your organization, for example: 
+# $sysvolPath = "\\dc1.contoso.com\sysvol\contoso.com\Policies"
+$sysvolPath = "\\<DC FQDN>\sysvol\<domain FQDN>\Policies"  ## Edit
+
+# Define the search string.
+$searchString = "dnspolicyconfig"
+
+# Define the name of the file to search.
+$fileName = "registry.pol"
+
+# Get all the registry.pol files under the sysvol share.
+$files = Get-ChildItem -Path $sysvolPath -Recurse -Filter $fileName -File
+
+# Array to store paths of files that contain the search string.
+$matchingFiles = @()
+
+# Loop through each file and check if it contains the search string.
+foreach ($file in $files) {
+    try {
+        # Read the content of the file.
+        $content = Get-Content -Path $file.FullName -Encoding Unicode
+        
+        # Check if the content contains the search string.
+        if ($content -like "*$searchString*") {
+            $matchingFiles += $file.FullName
+        }
+    } catch {
+        Write-Host "Failed to read file $($file.FullName): $_"
+    }
+}
+
+# Output the matching file paths.
+if ($matchingFiles.Count -eq 0) {
+    Write-Host "No files containing '$searchString' were found."
+} else {
+    Write-Host "Files containing '$searchString':"
+    $matchingFiles | ForEach-Object { Write-Host $_ }
+}
+
+```
+
+3. Edit each of the GPOs found in the previous section:
+    1. If the NRPT section is empty, create a new fictive rule, update the policy, delete the fictive rule, and update the policy again. These steps remove the `DnsPolicyConfig` from the `registry.pol` file (which was created in a legacy version of Windows).
+    2. If the NRPT section isn't empty and contains rules, confirm that you still need these rules. If you *don't* need the rules, delete them. If you *do* need the rules and apply the GPO on a device with Global Secure Access client, the private DNS option doesn't work.
+:::image type="content" source="media/reference-current-known-limitations/limitations-create-rule.png" alt-text="Screenshot of the Name Resolution Policy Rules dialog with the Create and Apply buttons highlighted." lightbox="media/reference-current-known-limitations/limitations-create-rule-expanded.png":::
 
 #### Connection fallback
 If there's a connection error to the cloud service, the client falls back to either direct Internet connection or blocking the connection, based on the ***hardening*** value of the matching rule in the forwarding profile.
@@ -63,16 +128,13 @@ For network traffic that is tunneled to the cloud service, the application serve
 #### Virtualization support
 You can't install the Global Secure Access client on a device that hosts virtual machines. However, you can install the Global Secure Access client on a virtual machine, as long as the client isn't installed on the host machine. For the same reason, a Windows Subsystem for Linux (WSL) doesn't acquire traffic from a client installed on the host machine.
 
-#### Virtualization support
 Hyper-V support: 
 1. External virtual switch: The Global Secure Access Windows client doesn't currently support host machines that have a Hyper-V external virtual switch. However, the client can be installed on the virtual machines to tunnel traffic to Global Secure Access.   
 1. Internal virtual switch: The Global Secure Access Windows client can be installed on host and guest machines. The client tunnels only the network traffic of the machine it's installed on. In other words, a client installed on a host machine doesn’t tunnel the network traffic of the guest machines.      
 
-The Global Secure Access Windows client supports Azure Virtual Machines. 
-
-The Global Secure Access Windows client supports Azure Virtual Desktop (AVD).
+The Global Secure Access Windows client supports Azure Virtual Machines and Azure Virtual Desktop (AVD).
 > [!NOTE]
-> AVD multi-session is not supported.
+> The Global Secure Access Windows client doesn't support AVD multi-session.
 
 #### Proxy
 If a proxy is configured at the application level (such as a browser) or at the OS level, configure a proxy auto configuration (PAC) file to exclude all FQDNs and IPs that you expect the client to tunnel.
@@ -97,7 +159,7 @@ To apply the configuration changes, restart the Global Secure Access client Wind
 The client only tunnels traffic sent using sockets. It doesn't tunnel traffic injected to the network stack using a driver (for example, some of the traffic generated by Network Mapper (Nmap)). Injected packets go directly to the network.
 
 #### Multi-session
-The Global Secure Access client doesn't support concurrent sessions on the same machine. This limitation applies to RDP servers and VDI solutions like Azure Virtual Desktop (AVD) that are configured for multi-session.
+The Global Secure Access client doesn't support concurrent sessions on the same machine. This limitation applies to Remote Desktop Protocol (RDP) servers and Virtual Desktop Infrastructure (VDI) solutions like Azure Virtual Desktop (AVD) that are configured for multi-session.
 
 #### Arm64
 The Global Secure Access client doesn't support Arm64 architecture.
@@ -118,10 +180,6 @@ Known limitations for the Global Secure Access client for macOS include:
 #### Secure Domain Name System (DNS)
 If Secure DNS is enabled on the browser or in macOS and the DNS server supports Secure DNS, then the client doesn't tunnel traffic set to be acquired by FQDN. (Network traffic that's acquired by IP isn't affected and is tunneled according to the forwarding profile.) To mitigate the Secure DNS issue, disable Secure DNS, set a DNS server that doesn't support Secure DNS, or create rules based on IP.
 
-#### IPv6 not supported
-The client tunnels only IPv4 traffic. IPv6 traffic isn't acquired by the client and therefore routed directly to the network.
-To make sure that all traffic is routed to Global Secure Access, disable IPv6.
-
 #### Connection fallback
 If there's a connection error to the cloud service, the client falls back to either direct Internet connection or blocking the connection, based on the ***hardening*** value of the matching rule in the forwarding profile.
 
@@ -131,7 +189,7 @@ For network traffic that is tunneled to the cloud service, the application serve
 > For Office 365 and Entra to detect the device's true source IP, consider enabling [Source IP restoration](how-to-source-ip-restoration.md).
 
 #### Virtualization support with UTM
-- When the network is in **bridged** mode and Global Secure Access client is installed on the host machine:
+- If the network is in **bridged** mode and Global Secure Access client is installed on the host machine:
     - If the Global Secure Access client is installed on the virtual machine, network traffic of the virtual machine is subject to its local policy. The host machine's policy doesn't affect the forwarding profile on the virtual machine.
     - If the Global Secure Access client *isn't* installed on the virtual machine, network traffic of the virtual machine is bypassed.
 - The Global Secure Access client doesn't support network **shared** mode because it might block the network traffic of the virtual machine.
@@ -147,43 +205,46 @@ Administrators can disable QUIC protocol on browsers, triggering clients to fall
 Known limitations for the Global Secure Access client for Android include:
 - Mobile devices running *Android (Go edition)* aren't currently supported.
 - Microsoft Defender for Endpoint on Android *on shared devices* isn't currently supported.
-- Tunneling IPv6 traffic isn't currently supported.
 - Private Domain Name System (DNS) must be disabled on the device. This setting is often found in the System > Network and Internet options.
 - Running non-Microsoft endpoint protection products alongside Microsoft Defender for Endpoint might cause performance problems and unpredictable system errors.   
 
 ### [iOS client](#tab/ios-client)
 Known limitations for the Global Secure Access client for Android include:
 - Tunneling Quick User Datagram Protocol (UDP) Internet Connections (QUIC) traffic (except for Exchange Online) isn't supported.
-- Global Secure Access (GSA) coexistence with Microsoft Tunnel isn't currently supported. For more information, see [Prerequisites for the Microsoft Tunnel in Intune](/mem/intune/protect/microsoft-tunnel-prerequisites).
+- Global Secure Access coexistence with Microsoft Tunnel isn't currently supported. For more information, see [Prerequisites for the Microsoft Tunnel in Intune](/mem/intune/protect/microsoft-tunnel-prerequisites).
     
 ---    
 
-## Remote network limitations   
+## Remote networks limitations   
 Known limitations for remote networks include:   
 - The maximum number of remote networks per tenant is 10. The maximum number of device links per remote network is four.
 - Microsoft traffic is accessed through remote network connectivity without the Global Secure Access client. However, the Conditional Access policy isn't enforced. In other words, Conditional Access policies for the Global Secure Access Microsoft traffic are only enforced when a user has the Global Secure Access client.
 - You must use the Global Secure Access client for Microsoft Entra Private Access. Remote network connectivity only supports Microsoft Entra Internet Access.
 - At this time, remote networks can only be assigned to the Microsoft traffic forwarding profile.
 
-## Access control limitations
+## Access controls limitations
 Known limitations for access controls include:   
-- Continuous access evaluation isn't currently supported for Universal Conditional Access for Microsoft traffic.
+- Continuous access evaluation (CAE) isn't currently supported for Universal Conditional Access for Microsoft traffic.
 - Applying Conditional Access policies to Private Access traffic isn't currently supported. To model this behavior, you can apply a Conditional Access policy at the application level for Quick Access and Global Secure Access apps. For more information, see [Apply Conditional Access to Private Access apps](how-to-target-resource-private-access-apps.md).
 - Microsoft traffic can be accessed through remote network connectivity without the Global Secure Access Client; however the Conditional Access policy isn't enforced. In other words, Conditional Access policies for the Global Secure Access Microsoft traffic are only enforced when a user has the Global Secure Access Client.
 - Compliant network check data plane enforcement (preview) with Continuous Access Evaluation is supported for SharePoint Online and Exchange Online.
 - Enabling Global Secure Access Conditional Access signaling enables signaling for both authentication plane (Microsoft Entra ID) and data plane signaling (preview). It isn't currently possible to enable these settings separately.
 - Compliant network check is currently not supported for Private Access applications.
 - When source IP restoration is enabled, you can only see the source IP. The IP address of the Global Secure Access service isn't visible. If you want to see the Global Secure Access service IP address, disable source IP restoration.
-- Source IP restoration is currently supported for only [Microsoft traffic](/microsoft-365/enterprise/urls-and-ip-address-ranges), like SharePoint Online, Exchange Online, Teams, and Microsoft Graph. If you have any IP location-based Conditional Access policies for non-Microsoft resources protected by continuous access evaluation (CAE), these policies aren’t evaluated at the resource as the source IP address isn’t known to the resource.
+- Currently only [Microsoft resources](/microsoft-365/enterprise/urls-and-ip-address-ranges) evaluate IP location-based Conditional Access policies, as the original source IP address isn't known to non-Microsoft resources protected by continuous access evaluation (CAE).
 - If you're using CAE’s [strict location enforcement](../identity/conditional-access/concept-continuous-access-evaluation-strict-enforcement.md), users are blocked despite being in a trusted IP range. To resolve this condition, do one of the following recommendations:
     - If you have IP location-based Conditional Access policies targeting non-Microsoft resources, don't enable strict location enforcement.  
-    - Ensure that the traffic is supported by Source IP Restoration, or don't send the relevant traffic through Global Secure Access.
+    - Ensure that Source IP Restoration supports the traffic. If not, don't send the relevant traffic through Global Secure Access.
 - At this time, connecting through the Global Secure Access client is required to acquire Private Access traffic.
 - Data plane protection capabilities are in preview (authentication plane protection is generally available).
 - If you enabled universal tenant restrictions and you access the Microsoft Entra admin center for a tenant on the allowlist, you might see an "Access denied" error. To correct this error, add the following feature flag to the Microsoft Entra admin center:
     - `?feature.msaljs=true&exp.msaljsexp=true`
     - For example, you work for Contoso. Fabrikam, a partner tenant, is on the allowlist. You might see the error message for the Fabrikam tenant's Microsoft Entra admin center.
         - If you received the "access denied" error message for the URL `https://entra.microsoft.com/`, then add the feature flag as follows:   `https://entra.microsoft.com/?feature.msaljs%253Dtrue%2526exp.msaljsexp%253Dtrue#home`
+- Only the Global Secure Access client for Windows, starting with version 1.8.239.0, is aware of Universal CAE. On other platforms, the Global Secure Access client uses regular access tokens.
+- Microsoft Entra ID issues short-lived tokens for Global Secure Access. The lifetime for a Universal CAE access token is between 60 and 90 minutes, with support for near real-time revocation.
+- It takes approximately two to five minutes for the Microsoft Entra ID signal to reach the Global Secure Access client and prompt the user to reauthenticate.
+- Users have a two-minute grace period after receiving a CAE event to complete reauthentication. After two minutes, existing network flows through Global Secure Access are interrupted until the user successfully signs in to the Global Secure Access client.
 
 ## Traffic forwarding profile limitations
 Known limitations for traffic forwarding profiles include:   
@@ -201,11 +262,11 @@ Known limitations for Private Access include:
 
 ## Internet Access limitations
 Known limitations for Internet Access include:   
+- Currently, an admin can create up to 100 web content filtering policies and up to 1,000 rules based on up to 8,000 total FQDNs. Admins can also create up to 256 security profiles.
 - The platform assumes standard ports for HTTP/S traffic (ports 80 and 443).
-- IPv6 isn't supported on this platform yet.
+- The Global Secure Access client doesn't support IPv6. The client tunnels only IPv4 traffic. IPv6 traffic isn't acquired by the client and is therefore transferred directly to the network. To make sure that all traffic is routed to Global Secure Access, set the network adapter properties to [IPv4 preferred](troubleshoot-global-secure-access-client-diagnostics-health-check.md#ipv4-preferred).   
 - UDP isn't supported on this platform yet.
 - User-friendly end-user notifications are in development.
 - Remote network connectivity for Internet Access is in development.
-- Transport Layer Security (TLS) termination is in development.
+- Transport Layer Security (TLS) inspection is in development.
 - URL path based filtering and URL categorization for HTTP and HTTPS traffic are in development.
-- Currently, an admin can create up to 100 web content filtering policies and up to 1,000 rules based on up to 8,000 total FQDNs. Admins can also create up to 256 security profiles.
