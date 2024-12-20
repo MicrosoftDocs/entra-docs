@@ -33,7 +33,7 @@ To prevent these issues, we recommend that customers clear the following on-prem
 
  
 ## How to update these attributes
-You can update these attributes via Microsoft Graph Beta with [Update User](https://learn.microsoft.com/graph/api/user-update?view=graph-rest-beta&tabs=http) API call. These attributes can only be updated in Entra ID for native Cloud-Only users or for previously synced users that have been converted to Cloud-Only users after turning off synchronization in Entra ID. 
+You can update these attributes via Microsoft Graph Beta with [Update User](/graph/api/user-update?view=graph-rest-beta&tabs=http) API call. These attributes can only be updated in Entra ID for native Cloud-Only users or for previously synced users that have been converted to Cloud-Only users after turning off synchronization in Entra ID. 
 
 
 ### Required roles
