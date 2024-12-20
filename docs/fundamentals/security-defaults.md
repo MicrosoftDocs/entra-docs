@@ -162,6 +162,9 @@ Security defaults users are required to register for and use multifactor authent
 > [!WARNING]
 > Do not disable methods for your organization if you are using security defaults. Disabling methods may lead to locking yourself out of your tenant. Leave all **Methods available to users** enabled in the [MFA service settings portal](~/identity/authentication/howto-mfa-getstarted.md#choose-authentication-methods-for-mfa).
 
+> [!IMPORTANT]
+> Beginning September 30, 2025, authentication methods can't be managed using legacy MFA and SSPR policies. During this migration you need to ultimately disable legacy methods in order to complete the migration. Read more about the migration: [Migrate MFA and SSPR policy settings](~/identity/authentication/how-to-authentication-methods-manage).
+
 ### B2B users
 
 Any [B2B guest](~/external-id/what-is-b2b.md) users or [B2B direct connect](~/external-id/b2b-direct-connect-overview.md) users that access your directory are treated the same as your organization's users.
