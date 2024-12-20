@@ -46,7 +46,7 @@ For more information on how SSO works with Windows 10 using PRT, see: [Primary R
   - No additional components needed on-premises to make this work.
   - Works with any method of cloud authentication - [Password Hash Synchronization](how-to-connect-password-hash-synchronization.md) or [Pass-through Authentication](how-to-connect-pta.md).
   - Can be rolled out to some or all your users using Group Policy.
-  - Register non-Windows 10 devices with Microsoft Entra ID without the need for any AD FS infrastructure. This capability needs you to use version 2.1 or later of the [workplace-join client](https://www.microsoft.com/en-us/download/details.aspx?id=53554).
+  - Register non-Windows 10 devices with Microsoft Entra ID without the need for any AD FS infrastructure. This capability needs you to use version 2.1 or later of the [workplace-join client](https://www.microsoft.com/download/details.aspx?id=53554).
 
 ## Feature highlights
 
