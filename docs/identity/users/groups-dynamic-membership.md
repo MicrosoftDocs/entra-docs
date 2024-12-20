@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: conceptual
-ms.date: 08/23/2024
+ms.date: 12/19/2024
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
@@ -63,7 +63,7 @@ The following example illustrates a properly constructed membership rule with a 
 user.department -eq "Sales"
 ```
 
-Parentheses are optional for a single expression. The total length of the body of your membership rule can't exceed 3072 characters.
+Parentheses are optional for a single expression. The total length of the body of your membership rule can't exceed 3,072 characters.
 
 ## Constructing the body of a membership rule
 
@@ -149,7 +149,7 @@ The following table lists all the supported operators and their syntax for a sin
 
 
 >[!CAUTION]
-> For best results, minimize the use of MATCH or CONTAINS as much as possible. [Create simpler, more efficient rules for dynamic membership groups](groups-dynamic-rule-more-efficient.md) provides guidance on how to create rules that result in better dynamic group processing times. The ['''memberOf'''](groups-dynamic-rule-member-of.md) operator is in preview and should be used with caution, as it has some limitations.
+> For best results, minimize the use of MATCH or CONTAINS as much as possible. [Create simpler, more efficient rules for dynamic membership groups](groups-dynamic-rule-more-efficient.md) provides guidance on how to create rules that result in better dynamic group processing times. The [''memberOf''](groups-dynamic-rule-member-of.md) operator is in preview and should be used with caution, as it has some limitations.
 
 | Operator | Syntax |
 | --- | --- |
@@ -211,7 +211,7 @@ The values used in an expression can consist of several types, including:
 When specifying a value within an expression, it's important to use the correct syntax to avoid errors. Some syntax tips are:
 
 - Double quotes are optional unless the value is a string.
-- Regex and string operations are not case sensitive.
+- Regex and string operations aren't case sensitive.
 - Ensure that property names are correctly formatted as shown, as they're case sensitive.
 - When a string value contains double quotes, both quotes should be escaped using the \` character, for example, user.department -eq \`"Sales\`" is the proper syntax when "Sales" is the value. Single quotes should be escaped by using two single quotes instead of one each time.
 - You can also perform Null checks, using null as a value, for example, `user.department -eq null`.
@@ -377,7 +377,7 @@ device.objectId -ne null
 
 ## Extension properties and custom extension properties
 
-Extension attributes and custom extension properties are supported as string properties in rules for dynamic membership groups. [Extension attributes](/graph/api/resources/onpremisesextensionattributes) can be synced from on-premises Window Server Active Directory or updated using Microsoft Graph and take the format of "ExtensionAttributeX", where X equals 1 - 15. Multi-value extension properties aren't supported in rules for dynamic membership groups. 
+Extension attributes and custom extension properties are supported as string properties in rules for dynamic membership groups. [Extension attributes](/graph/api/resources/onpremisesextensionattributes) can be synced from on-premises Window Server Active Directory or updated using Microsoft Graph and take the format of "ExtensionAttributeX," where X equals 1 - 15. Multi-value extension properties aren't supported in rules for dynamic membership groups. 
 
 Here's an example of a rule that uses an extension attribute as a property:
 
@@ -397,6 +397,7 @@ user.extension_c272a57b722d4eb29bfe327874ae79cb_OfficeNumber -eq "123"
 ```
 
 Custom extension properties are also called directory or Microsoft Entra extension properties.
+
 
 The custom property name can be found in the directory by querying a user's property using Graph Explorer and searching for the property name. Also, you can now select **Get custom extension properties** link in the dynamic membership groups rule builder to enter a unique app ID and receive the full list of custom extension properties to use when creating a rule for dynamic membership groups. This list can also be refreshed to get any new custom extension properties for that app. Extension attributes and custom extension properties must be from applications in your tenant.  
 
