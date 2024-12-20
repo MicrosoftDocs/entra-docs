@@ -121,7 +121,7 @@ To test the user account that's now enabled for SMS-based sign-in, complete the 
 
 ## Troubleshoot SMS-based sign-in
 
-The following scenarios and troubleshooting steps can used if you have problems with enabling and using SMS-based sign-in. 
+You can use the following scenarios and troubleshooting steps if you have problems with enabling and using SMS-based sign-in. 
 For a list of apps that support using SMS-based sign-in, see [App support for SMS-based authentication](how-to-authentication-sms-supported-apps.md).
 
 
