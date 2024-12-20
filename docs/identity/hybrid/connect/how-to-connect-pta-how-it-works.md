@@ -9,7 +9,7 @@ ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 12/06/2024
+ms.date: 12/20/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -28,7 +28,7 @@ This article is an overview of how Microsoft Entra pass-through authentication w
 When a user tries to sign in to an application secured by Microsoft Entra ID, and if Pass-through Authentication is enabled on the tenant, the following steps occur:
 
 1. The user tries to access an application, for example, [Outlook Web App](https://outlook.office365.com/owa/).
-2. If the user is not already signed in, the user is redirected to the Microsoft Entra ID **User Sign-in** page.
+2. If the user isn't already signed in, the user is redirected to the Microsoft Entra ID **User Sign-in** page.
 3. The user enters their username into the Microsoft Entra sign-in page, and then selects the **Next** button.
 4. The user enters their password into the Microsoft Entra sign-in page, and then selects the **Sign in** button.
 5. Microsoft Entra ID, on receiving the request to sign in, places the username and password (encrypted by using the public key of the Authentication Agents) in a queue.
@@ -45,7 +45,7 @@ The following diagram illustrates all the components and the steps involved:
 ![Pass-through Authentication](./media/how-to-connect-pta-how-it-works/pta2.png)
 
 ## Next steps
-- [Current limitations](how-to-connect-pta-current-limitations.md): Learn which scenarios are supported and which ones are not.
+- [Current limitations](how-to-connect-pta-current-limitations.md): Learn which scenarios are supported and which ones aren't.
 - [Quick Start](how-to-connect-pta-quick-start.md): Get up and running on Microsoft Entra pass-through authentication.
 - [Migrate your apps to Microsoft Entra ID](~/identity/enterprise-apps/migration-resources.md): Resources to help you migrate application access and authentication to Microsoft Entra ID.
 - [Smart Lockout](~/identity/authentication/howto-password-smart-lockout.md): Configure the Smart Lockout capability on your tenant to protect user accounts.
