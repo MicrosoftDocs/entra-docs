@@ -186,6 +186,40 @@ Microsoft recommends driving usage based on which user personas are most ready f
 
 Use the following sections to create end user communications for each persona group, scope and rollout the passkeys registration feature, and user reporting and monitoring to track rollout progress.
 
+### Driving Readiness with the Phishing-Resistant Passwordless Workbook (Preview)
+
+Organizations may optionally choose to export their Microsoft Entra ID sign-in logs to [Azure Monitor](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.md) for long-term retention, threat hunting, and other purposes. Microsoft has released a [workbook](~/identity/monitoring-health/overview-workbooks.md) that organizations with logs in Azure Monitor may use to help with various phases of a phishing-resistant passwordless deployment. The Phishing-Resistant Passwordless Workbook can be accessed here: [aka.ms/PasswordlessWorkbook](https://aka.ms/PasswordlessWorkbook)
+
+The workbook has two primary sections:
+
+1. Enrollment Readiness Phase
+1. Enforcement Readiness Phase
+
+Use the Enrollment Readiness Phase tab to analyze sign-in logs in your tenant, determining which users are ready for registration and which users may be blocked from registration. For example, with the Enrollment Readiness Phase tab you can select iOS as the OS platform and then Authenticator App Passkey as the type of credential you would like to asses your readiness for. You can then click on the workbook visualizations to filter down to users who are expected to have registration issues and export the list:
+
+:::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-ios-filter.png" alt-text="Screenshot of the Enrollment phase of the Phishing-Resistant Passwordless workbook.":::
+
+The Enrollment Readiness Phase tab of the workbook can help you evaluate readiness for the following OSes and credentials:
+
+- Windows
+    - Windows Hello for Business
+    - FIDO2 Security Key
+    - Authenticator App Passkey
+    - Certificate-Based Authentication / Smart Card
+- macOS
+    - Platform SSO Secure Enclave Key
+    - FIDO2 Security Key
+    - Authenticator App Passkey
+    - Certificate-Based Authentication / Smart Card
+- iOS
+    - FIDO2 Security Key
+    - Authenticator App Passkey
+    - Certificate-Based Authentication / Smart Card
+- Android
+    - FIDO2 Security Key
+    - Authenticator App Passkey
+    - Certificate-Based Authentication / Smart Card
+
 ### Plan end user communications
 
 Microsoft provides communication templates for end users. The [authentication rollout material](https://www.microsoft.com/download/details.aspx?id=57600) includes customizable posters and email templates to inform users about phishing-resistant passwordless authentication deployment. Use the following templates to communicate to your users so they understand the phishing-resistant passwordless deployment:
@@ -301,8 +335,11 @@ Policy | Group name targeted in the policy | Policy – Device platform conditio
 4	| Android phishing-resistant passwordless ready users | Android | Require authentication strength – Phishing-resistant MFA
 5	| Other phishing-resistant passwordless ready users | Any except Windows, macOS, iOS, or Android | Require authentication strength – Phishing-resistant MFA
 
-
 Add each user to each group as you determine whether their device and operating system is ready, or they don’t have a device of that type. At the end of the rollout, each user should be in one of the groups.
+
+### Driving Enforcement with the Phishing-Resistant Passwordless Workbook (Preview)
+
+
 
 ## Respond to risk for passwordless users
 
