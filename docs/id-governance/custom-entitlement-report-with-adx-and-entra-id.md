@@ -101,7 +101,13 @@ This data set will enable us to perform a broad set of queries around who was gi
 
 In these PowerShell scripts, we'll export selected properties from the Entra objects to JSON files. The data from these exported properties will then be used to generate custom reports in Azure Data Explorer. The specific properties below, were included in these examples, because we're using this data to illustrate the types of reports you can create in Azure Data Explorer. Since your specific reporting needs will likely vary from what is shown below, you should include the specific properties in these scripts that you're interested in viewing in your reports, however you can follow the same pattern shown below to help build your scripts. 
 
+### Select a snapshot date
+
 We have also included a hard-coded **snapshot date** below which identifies the data in the JSON file with a specific date and will allow us to keep track of similar data sets over time in Azure Data Explorer. The snapshot date is also useful for comparing changes in data between two snapshot dates. 
+
+```powershell
+$SnapshotDate = "2024-01-11"
+```
 
 ### Get Entra user data 
 
@@ -139,7 +145,7 @@ This script will export selected properties from the Entra user object to a JSON
         } 
       } 
       # Additional properties or transformations 
-      $userObject["SnapshotDate"] = "2024-01-11" 
+      $userObject["SnapshotDate"] = $SnapshotDate
       [pscustomobject]$userObject 
     } 
     # Convert the user data to JSON and save it to a file 
@@ -175,6 +181,7 @@ Generate a JSON file with group membership which will be used to create custom v
       $results += [PSCustomObject]@{ 
         GroupId = $groupId 
         Members = $members 
+        SnapshotDate = $SnapshotDate
       } 
       # Pause for a short time to avoid rate limits 
       Start-Sleep -Milliseconds 200 
@@ -195,6 +202,7 @@ Generates JSON file with all applications and the corresponding service principa
         Name        = $app.DisplayName 
         ApplicationId   = $app.AppId 
         ServicePrincipalId = $sp.Id 
+        SnapshotDate = $SnapshotDate
       } 
     } | ConvertTo-Json -Depth 10 | Set-Content "Applications.json" 
 ``` 
@@ -220,6 +228,7 @@ Generate a JSON file of all appRoles for enterprise apps in Entra. Once imported
         DisplayName     = $app.DisplayName 
         ServicePrincipalId = $sp.Id 
         AppRoles      = $appRoles 
+        SnapshotDate = $SnapshotDate
       } 
     } 
     # Export the results to a JSON file 
@@ -243,7 +252,7 @@ Generate a JSON file of all app role assignments in the tenant.
           PrincipalId     = $_.PrincipalId 
           ResourceDisplayName = $_.ResourceDisplayName 
           ResourceId      = $_.ResourceId 
-          SnapshotDate     = "2024-03-13" # Hard-coded date 
+          SnapshotDate     = $SnapshotDate
         } 
       } 
     } 
