@@ -5,7 +5,7 @@ author: HULKsmashGithub
 ms.topic: reference
 ms.author: jayrusso
 manager: amycolannino
-ms.date: 12/19/2024
+ms.date: 12/20/2024
 ms.service: global-secure-access
 
 
@@ -206,7 +206,8 @@ Known limitations for the Global Secure Access client for Android include:
 - Mobile devices running *Android (Go edition)* aren't currently supported.
 - Microsoft Defender for Endpoint on Android *on shared devices* isn't currently supported.
 - Private Domain Name System (DNS) must be disabled on the device. This setting is often found in the System > Network and Internet options.
-- Running non-Microsoft endpoint protection products alongside Microsoft Defender for Endpoint might cause performance problems and unpredictable system errors.   
+- Running non-Microsoft endpoint protection products alongside Microsoft Defender for Endpoint might cause performance problems and unpredictable system errors.  
+- Global Secure Access coexistence with Microsoft Tunnel isn't currently supported. For more information, see [Prerequisites for the Microsoft Tunnel in Intune](/mem/intune/protect/microsoft-tunnel-prerequisites). 
 
 ### [iOS client](#tab/ios-client)
 Known limitations for the Global Secure Access client for Android include:
