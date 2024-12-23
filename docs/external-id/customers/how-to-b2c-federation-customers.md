@@ -58,32 +58,22 @@ To create an application:
 1. Under **Supported account types**, select **Accounts in any identity provider or organizational directory (for authenticating users with user flows)**.
 1. Under **Redirect URI**, select **Web**, and then enter the following URL in all lowercase letters, where `your-B2C-tenant-name` is replaced with the name of your Azure AD B2C tenant (for example, Contoso):
   
-  ```http
-  https://<tenant-subdomain>.ciamlogin.com/<tenant-ID>/federation/oauth2
-  ```
-
-  ```http
-  https://<tenant-subdomain>.ciamlogin.com/<tenant-subdomain>.onmicrosoft.com/federation/oauth2
-  ```
-
-  For example:
-  
-  ```http
-  https://contoso.ciamlogin.com/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/federation/oauth2
-  ```
-
-  ```http
-  https://contoso.ciamlogin.com/contoso.onmicrosoft.com/federation/oauth2
-  ```
-
-  If you use a custom domain, enter:
-  
-  ```http
-  https://your-domain-name/your-tenant-name.onmicrosoft.com/oauth2/authresp
-  ```
-
-  Replace `your-domain-name` with your custom domain, and `your-tenant-name` with the name of your tenant.
-
+    `https://<tenant-subdomain>.ciamlogin.com/<tenant-ID>/federation/oauth2`
+    
+    `https://<tenant-subdomain>.ciamlogin.com/<tenant-subdomain>.onmicrosoft.com/federation/oauth2`
+    
+    For example:
+      
+    `https://contoso.ciamlogin.com/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/federation/oauth2`
+    
+    `https://contoso.ciamlogin.com/contoso.onmicrosoft.com/federation/oauth2`
+    
+    If you use a custom domain, enter:
+      
+    `https://<your-domain-name>/<your-tenant-name>.onmicrosoft.com/oauth2/authresp`
+    
+    Replace `your-domain-name` with your custom domain, and `your-tenant-name` with the name of your tenant.
+    
 6. Under **Permissions**, select the **Grant admin consent to openid and offline_access permissions** check box.
 7. Select **Register**.
 8. In the Azure AD B2C - App registrations page, select the application you created and record the **Application (client) ID** shown on the application overview page. You need this ID when you configure the identity provider in the next section.
@@ -100,17 +90,13 @@ Construct your OpenID Connect `well-known` endpoint: replace `<your-B2C-tenant-n
 
 If you're using a custom domain name, replace `<custom-domain-name>` with your custom domain. Replace the `<policy>` with the policy name you configured in your B2C tenant. If you're using the starter pack, it's the `B2C_1A_signup_signin` file.
 
-``http
-https://<your-B2C-tenant-name>.b2clogin.com/<your-B2C-tenant-name>.onmicrosoft.com/<policy>/v2.0/.well-known/openid-configuration
-``
+`https://<your-B2C-tenant-name>.b2clogin.com/<your-B2C-tenant-name>.onmicrosoft.com/<policy>/v2.0/.well-known/openid-configuration`
 
 OR
 
-``http
-https://<custom-domain-name>/<your-B2C-tenant-name>.onmicrosoft.com/<policy>/v2.0/.well-known/openid-configuration
-``
+`https://<custom-domain-name>/<your-B2C-tenant-name>.onmicrosoft.com/<policy>/v2.0/.well-known/openid-configuration`
 
-1. Configure the issuer URI as: `https://your-b2c-tenant-name.b2clogin.com/your-b2c-tenant-id/v2.0/`, or if you're using a custom domain, use your custom domain, domain instead of `your-b2c-tenant-name.b2clogin.com`.
+1. Configure the issuer URI as: `https://<your-b2c-tenant-name>.b2clogin.com/<your-b2c-tenant-id>/v2.0/`, or if you're using a custom domain, use your custom domain, domain instead of `your-b2c-tenant-name.b2clogin.com`.
 1. For **Client ID**, enter the application ID that you previously recorded.
 1. Select **Client authentication** as `client_secret`.
 1. For **Client secret**, enter the client secret that you previously recorded.

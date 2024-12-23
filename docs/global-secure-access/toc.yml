@@ -92,7 +92,7 @@ items:
         items:
           - name: Understand Universal Conditional Access 
             href: concept-universal-conditional-access.md
-          - name: Microsoft traffic
+          - name: Internet traffic
             href: how-to-target-resource-microsoft-profile.md
       - name: Compliant network check
         href: how-to-compliant-network.md
@@ -129,7 +129,9 @@ items:
       - name: Configure per-app access
         href: how-to-configure-per-app-access.md
       - name: Configure Quick Access
-        href: how-to-configure-quick-access.md 
+        href: how-to-configure-quick-access.md
+      - name: Application Discovery
+        href: how-to-application-discovery.md
       - name: Configure Private Access with PIM
         href: how-to-configure-global-access-with-pim.md
       - name: Kerberos single sign-on (SSO)
@@ -160,6 +162,8 @@ items:
         href: reference-event-enrichment-logs.md
       - name: How to use workbooks
         href: how-to-use-workbooks.md 
+      - name: Export private network connector logs
+        href: how-to-export-connector-logs.md
   - name: Deployment guides
     expanded: false
     items:
@@ -180,6 +184,8 @@ items:
         href: troubleshoot-global-secure-access-client-advanced-diagnostics.md
       - name: "Troubleshoot the Global Secure Access client: Health check tab"
         href: troubleshoot-global-secure-access-client-diagnostics-health-check.md
+      - name: "Troubleshoot Distributed File System (DFS) issues"
+        href: troubleshoot-distributed-file-system.md
   - name: Partner ecosystem
     expanded: true
     items:

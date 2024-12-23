@@ -139,6 +139,8 @@ items:
       href: workbook-cross-tenant-access-activity.md
     - name: Multifactor authentication gaps 
       href: workbook-mfa-gaps.md 
+    - name: Provisioning insights
+      href: ..\app-provisioning\application-provisioning-log-analytics.md?toc=/entra/identity/monitoring-health/toc.json&bc=/entra/identity/monitoring-health/breadcrumb/TOC.json
     - name: Risk analysis
       href: workbook-risk-analysis.md
     - name: Sensitive Operations Report 

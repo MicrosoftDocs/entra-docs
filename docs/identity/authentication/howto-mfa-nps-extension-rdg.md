@@ -7,12 +7,12 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 11/27/2024
+ms.date: 11/29/2024
 
 ms.author: justinha
 author: justinha
 manager: amycolannino
-ms.reviewer: michmcla
+ms.reviewer: jpettere
 ---
 # Integrate your Remote Desktop Gateway infrastructure using the Network Policy Server (NPS) extension and Microsoft Entra ID
 
@@ -140,7 +140,7 @@ This section provides instructions for configuring RDS infrastructure to use Mic
 As part of the configuration of the NPS extension, you must supply administrator credentials and the ID of your Microsoft Entra tenant. To get the tenant ID, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
-1. Browse to **Identity** > **Settings**.
+1. Browse to **Identity** > **Overview**.
 
    ![Getting the Tenant ID from the Microsoft Entra admin center](./media/howto-mfa-nps-extension-vpn/tenant-id.png)
 

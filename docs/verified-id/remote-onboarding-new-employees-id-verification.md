@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-verified-id
 
 ms.topic: conceptual
-ms.date: 04/06/2023
+ms.date: 12/02/2024
 ms.author: barclayn
 ---
 

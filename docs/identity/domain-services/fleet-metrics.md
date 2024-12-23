@@ -8,7 +8,7 @@ ms.assetid: 8999eec3-f9da-40b3-997a-7a2587911e96
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 09/23/2023
+ms.date: 12/02/2024
 ms.author: justinha
 ---
 # Check fleet metrics of Microsoft Entra Domain Services

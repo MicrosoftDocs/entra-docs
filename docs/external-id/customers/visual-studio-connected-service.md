@@ -54,11 +54,11 @@ If you’re creating your app from an empty project template in Visual Studio or
 
 To use Microsoft identity platform in your project, you need to install the **dotnet msidentity tool**. This command line tool enables you to create Microsoft Entra app registrations. It also updates your app to use Microsoft identity platform for authentication and authorization by updating the configuration files of your ASP.NET Core applications (MVC, Razor Pages, Blazor WebAssembly (WASM), Blazor WASM Hosted, Blazor Server).
 
-- If you haven’t installed the dotnet msidentity tool, Visual Studio prompts you to install it, as shown in the following screenshot.
+If you haven’t installed the dotnet msidentity tool, Visual Studio prompts you to install it, as shown in the following screenshot.
  
-    :::image type="content" source="media/visual-studio-connected-service/dotnet-msidentity-tool-installation-prompt.png" alt-text="Screenshot showing a Visual Studio prompt to install the dotnet msidentity tool":::
+  :::image type="content" source="media/visual-studio-connected-service/dotnet-msidentity-tool-installation-prompt.png" alt-text="Screenshot showing a Visual Studio prompt to install the dotnet msidentity tool":::
 
-- Alternatively, you can install the dotnet msidentity tool from your command line by running the following:
+You can install the dotnet msidentity tool from your command line by running the following:
 
   ```sh
   dotnet tool install --global Microsoft.dotnet-msidentity --version 2.0.8
@@ -75,7 +75,7 @@ Microsoft Entra ID Visual Studio Connected Service allows you to configure appli
     :::image type="content" source="media/visual-studio-connected-service/configure-application-to-use-microsoft-identity-platform.png" alt-text="Screenshot showing the Visual Studio window where you configure the application to use Microsoft identity platform":::
 
 1. Once you're signed in, you see a list of applications registered in your tenant; with the application’s display name, client ID, and date created.
-1. If you haven’t already created an app registration in the Microsoft Entra admin center, select **Create new**. Choose the tenant where you’d like to create the application and provide a display name, such as sample-web-app and Select **Register**. You can change the application's display name later. 
+1. If you're yet to create an app registration in the Microsoft Entra admin center, select **Create new**. Choose the tenant where you’d like to create the application and provide a display name, such as sample-web-app and Select **Register**. You can change the application's display name later. 
 
     :::image type="content" source="media/visual-studio-connected-service/register-new-application.png" alt-text="Screenshot showing the Visual Studio window where you register a new application":::
 
@@ -102,7 +102,8 @@ If you want to modify it, such as to add support for an API such as Microsoft Gr
 
 ## Run and test the app
 
-To run the test application, follow these steps:
+To run the sample
+ application, follow these steps:
 
 1. Navigate to Visual Studio’s top navigation bar and select **Debug > Start Without Debugging** to start building your application, as shown:
 

@@ -350,6 +350,8 @@ items:
             href: how-to-google-federation-customers.md
           - name: Facebook federation
             href: how-to-facebook-federation-customers.md
+          - name: Apple federation
+            href: how-to-apple-federation-customers.md
           - name: OIDC federation
             items:
               - name: Custom OIDC federation

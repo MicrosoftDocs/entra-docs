@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 12/09/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -58,7 +58,7 @@ AdditionalProperties                             : {}
 ```
 
 > [!NOTE]
-> From August 24, 2016 the feature *Duplicate attribute resiliency* is enabled by default for new Microsoft Entra directories. This feature will also be rolled out and enabled on directories created before this date. You will receive an email notification when your directory is about to get this feature enabled.
+> From August 24, 2016 the feature *Duplicate attribute resiliency* is enabled by default for new Microsoft Entra directories. This feature was rolled out and enabled on directories created before this date. You'll receive an email notification when your directory is about to get this feature enabled.
 > 
 > 
 
@@ -152,7 +152,7 @@ Update-MgDirectoryOnPremiseSynchronization -Features $SyncUpnManagedUsers `
    -OnPremisesDirectorySynchronizationId $DirectorySync.Id
 ```
 
-After enabling this feature, existing userPrincipalName values will remain as-is. On next change of the userPrincipalName attribute on-premises, the normal delta sync on users will update the UPN. Once this feature is enabled, it's not possible to disable it.
+After enabling this feature, existing userPrincipalName values remain as-is. On next change of the userPrincipalName attribute on-premises, the normal delta sync on users updates the UPN. Once this feature is enabled, it's not possible to disable it.
 
 ## See also
 
