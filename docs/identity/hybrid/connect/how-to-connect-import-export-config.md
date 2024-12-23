@@ -6,7 +6,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 12/05/2024
+ms.date: 12/19/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -106,7 +106,7 @@ To migrate the settings:
 
 Comparing the originally imported settings file with the exported settings file of the newly deployed server is an essential step in understanding any differences between the intended versus the resulting deployment. Using your favorite side-by-side text comparison application yields an instant visualization that quickly highlights any desired or accidental changes.
 
-While many formerly manual configuration steps are now eliminated, you should still follow your organization's certification process to ensure no additional configuration is required. This configuration might occur if you use advanced settings, which aren't currently captured in the this release of settings management.
+While many formerly manual configuration steps are now eliminated, you should still follow your organization's certification process to ensure no additional configuration is required. This configuration might occur if you use advanced settings, which aren't currently captured in this release of settings management.
 
 Here are known limitations:
 - **Synchronization rules**: The precedence for a custom rule must be in the reserved range of 0 to 99 to avoid conflicts with Microsoft's standard rules. Placing a custom rule outside the reserved range might result in your custom rule being shifted around as standard rules are added to the configuration. A similar issue will occur if your configuration contains modified standard rules. Modifying a standard rule is  discouraged, and rule placement is likely to be incorrect.

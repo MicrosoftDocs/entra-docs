@@ -13,16 +13,16 @@ ms.author: billmath
 
 In this tutorial, you'll learn how to create customized reports in [Azure Data Explorer (ADX)](/azure/data-explorer/data-explorer-overview) using data from Microsoft Entra ID and Microsoft Entra ID Governance services. This tutorial complements other reporting options such as [Archive & report with Azure Monitor and entitlement management](entitlement-management-logs-and-reporting.md), which focuses on exporting the audit log into Azure Monitor for retention and analysis. By comparison, exporting Microsoft Entra ID data to Azure Data Explorer provides flexibility for creating custom reports on Microsoft Entra objects, including historical and deleted objects. In addition, use of Azure Data Explorer enables data aggregation from additional sources, with massive scalability, flexible schema, and retention policies. Azure Data Explorer is especially helpful when you need to retain access data for years, perform ad-hoc investigations, or need to run custom queries on user access data.
 
-This article illustrates how to show configuration, users, and access rights exported from Microsoft Entra alongside data exported from other sources, such as applications with SQL databases. You can then use the Kusto Query Language (KQL) in Azure Data Explorer to build custom reports based on your organization's requirements. 
+This article illustrates how to show configuration, users, and access rights exported from Microsoft Entra alongside data exported from other sources, such as applications with access rights in their own SQL databases. You can then use the Kusto Query Language (KQL) in Azure Data Explorer to build custom reports based on your organization's requirements. 
 
 You'll take the following steps to create these reports: 
 
- 1. [Set up Azure Data Explorer](#step-1-setup-azure-data-explorer) in an Azure subscription. 
- 2. [Extract data from Microsoft Entra](#step-2-connect-to-ms-graph-and-extract-entra-data-with-powershell) and third-party databases or applications using PowerShell scripts and MS Graph. 
- 3. [Import the data into Azure Data Explorer](#step-3-import-json-file-data-into-azure-data-explorer), a fast and scalable data analytics service. 
- 4. [Build a custom query](#step-4-use-azure-data-explorer-to-build-custom-reports) using Kusto Query Language. 
+ 1. [Set up Azure Data Explorer](#1-setup-azure-data-explorer) in an Azure subscription, or create a free cluster. 
+ 2. [Extract data from Microsoft Entra](#2-connect-to-microsoft-graph-and-extract-entra-data-with-powershell) using PowerShell scripts and Microsoft Graph. 
+ 3. [Import the data into Azure Data Explorer](#3-import-json-file-data-into-azure-data-explorer), a fast and scalable data analytics service. 
+ 4. [Build a custom query](#4-use-azure-data-explorer-to-build-custom-reports) using Kusto Query Language. 
 
-By the end of this tutorial, you'll have built skills to develop customized views of the access rights and permissions of users across different applications using Microsoft supported tools. 
+By the end of this tutorial, you'll have built skills to develop customized views of the access rights and permissions of users across different applications using Microsoft supported tools. You can also bring in data from third-party databases or applications to report on those as well.
 
 ## Prerequisites
 
@@ -34,23 +34,23 @@ Determine what data you want to include in your reports. The scripts in this art
   - User data: Global Administrator, Privileged Role Administrator, User Administrator 
   - Groups data: Global Administrator, Privileged Role Administrator, Group Administrator 
   - Applications/App Role Assignments: Global Administrator, Privileged Role Administrator, Application Administrator, Cloud Application Administrator 
-- Microsoft Graph PowerShell must be consented to allow for retrieval of Microsoft Entra objects via Microsoft Graph. The examples in this tutorial require the delegated User.Read.All, Group.Read.All, Application.Read.All, and Directory.Read.All permissions. If you're planning on retrieving data using automation without a signed-in user, then consent to the corresponding application permissions instead. See [Microsoft Graph permissions reference](/graph/permissions-reference) for additional information.  If you have not already consented Microsoft Graph PowerShell to those permissions, you'll need to be a Global Administrator to perform this consent operation.
+- Microsoft Graph PowerShell must be consented to allow for retrieval of Microsoft Entra objects via Microsoft Graph. The examples in this tutorial require the delegated User.Read.All, Group.Read.All, Application.Read.All, and Directory.Read.All permissions. If you're planning on retrieving data using automation without a signed-in user, then consent to the corresponding application permissions instead. See [Microsoft Graph permissions reference](/graph/permissions-reference) for additional information. If you have not already consented Microsoft Graph PowerShell to those permissions, you'll need to be a Global Administrator to perform this consent operation.
 - This tutorial does not illustrate custom security attributes. By default, Global Administrator and other administrator roles don't include permissions to read custom security attributes from Microsoft Entra users. If you're planning on retrieving custom security attributes, then more roles and permissions may be required.
-- On the computer where Microsoft Graph PowerShell is installed, ensure you have write access to the file system directory where you'll install the required MS Graph PowerShell modules and where the exported Entra data will be saved. 
+- On the computer where Microsoft Graph PowerShell is installed, ensure you have write access to the file system directory where you'll install the required Microsoft Graph PowerShell modules and where the exported Entra data will be saved. 
 - Ensure you have permissions to retrieve data from other data sources beyond Microsoft Entra.
 
-## Step 1: Setup Azure Data Explorer 
+## 1: Setup Azure Data Explorer 
 
 If you haven’t previously used Azure Data Explorer, you'll need to set this up first. You can create a [free cluster without an Azure subscription or credit card](/azure/data-explorer/start-for-free) or a full cluster which requires an Azure subscription. See [Quickstart: Create an Azure Data Explorer cluster and database](/azure/data-explorer/create-cluster-and-database) to get started. 
 
-## Step 2: Connect to MS Graph and Extract Entra data with PowerShell 
+## 2: Connect to Microsoft Graph and Extract Entra data with PowerShell 
 
-In this step, you'll [install MS Graph PowerShell modules](/powershell/microsoftgraph/installation) and [Connect to MS Graph](/powershell/module/microsoft.graph.authentication/connect-mggraph). 
+In this section, you'll [install Microsoft Graph PowerShell modules](/powershell/microsoftgraph/installation) and [Connect to Microsoft Graph](/powershell/module/microsoft.graph.authentication/connect-mggraph). 
 
 The first time your organization uses these modules for this scenario, you need to be in a Global Administrator role to allow Microsoft Graph PowerShell to be consented to be used in your tenant. Subsequent interactions can use a lower-privileged role.
 
  1. Open PowerShell.
- 1. If you don't have all the [Microsoft Graph PowerShell modules](https://www.powershellgallery.com/packages/Microsoft.Graph) already installed, install the required MS Graph modules. The following modules are required for this tutorial: `Microsoft.Graph.Authentication`, `Microsoft.Graph.Users`, `Microsoft.Graph.Groups`, `Microsoft.Graph.Applications`, `Microsoft.Graph.DirectoryObjects`. 
+ 1. If you don't have all the [Microsoft Graph PowerShell modules](https://www.powershellgallery.com/packages/Microsoft.Graph) already installed, install the required Microsoft Graph modules. The following modules are required for this tutorial: `Microsoft.Graph.Authentication`, `Microsoft.Graph.Users`, `Microsoft.Graph.Groups`, `Microsoft.Graph.Applications`, `Microsoft.Graph.DirectoryObjects`. 
 
 ```powershell
    $modules = @('Microsoft.Graph.Users', 'Microsoft.Graph.Groups', 'Microsoft.Graph.Applications', 'Microsoft.Graph.DirectoryObjects') 
@@ -77,11 +77,14 @@ The first time your organization uses these modules for this scenario, you need 
 
 ### PowerShell Queries to extract data needed to build custom reports in Azure Data Explorer
 
-The following queries extract Entra data from MS Graph using PowerShell and export the data to JSON files which will be imported into Azure Data Explorer in Step 3. There may be multiple scenarios for generating reports with this type of data: 
+The following queries extract Entra data from Microsoft Graph using PowerShell and export the data to JSON files which will be imported into Azure Data Explorer in the subsequent section 3. There may be multiple scenarios for generating reports with this type of data: 
 
  - An auditor would like to see a report that lists the group members for 10 groups, organized by the members’ department. 
  - An auditor would like to see a report of all users who had access to an application between two dates. 
- - An admin would like to view all users added to an application from Microsoft Entra ID and SQL databases. 
+ 
+You can also bring in data to Azure Data Explorer from other sources beyond Microsoft Entra. This enables scenarios such as:
+
+- An admin would like to view all users added to an application from Microsoft Entra ID and their access rights in the application's own repository, such as a SQL databases. 
 
 These types of reports aren't built in to Microsoft Entra ID, but you can create these reports yourself by extracting data from Entra and combining them using custom queries in Azure Data Explorer. 
 
@@ -94,15 +97,21 @@ For this tutorial, we'll extract Entra data from several areas:
 This data set will enable us to perform a broad set of queries around who was given access to an application, role information, and the associated timeframe. Note that these are sample queries, and your data and specific requirements may vary from what is shown here. 
 
 >[!NOTE]
-> Larger tenants may experience throttling / 429 errors that will be handled by the MS Graph module. 
+> Larger tenants may experience throttling / 429 errors that will be handled by the Microsoft Graph module. Azure Data Explorer may also limit file upload sizes.
 
 In these PowerShell scripts, we'll export selected properties from the Entra objects to JSON files. The data from these exported properties will then be used to generate custom reports in Azure Data Explorer. The specific properties below, were included in these examples, because we're using this data to illustrate the types of reports you can create in Azure Data Explorer. Since your specific reporting needs will likely vary from what is shown below, you should include the specific properties in these scripts that you're interested in viewing in your reports, however you can follow the same pattern shown below to help build your scripts. 
 
+### Select a snapshot date
+
 We have also included a hard-coded **snapshot date** below which identifies the data in the JSON file with a specific date and will allow us to keep track of similar data sets over time in Azure Data Explorer. The snapshot date is also useful for comparing changes in data between two snapshot dates. 
+
+```powershell
+$SnapshotDate = "2024-01-11"
+```
 
 ### Get Entra user data 
 
-This script will export selected properties from the Entra user object to a JSON file. We'll import this data into Azure Data Explorer in Step 3. 
+This script will export selected properties from the Entra user object to a JSON file. We'll import this data into Azure Data Explorer in a [subsequent section of this tutorial](#3-import-json-file-data-into-azure-data-explorer). 
 
      
 ```powershell
@@ -136,7 +145,7 @@ This script will export selected properties from the Entra user object to a JSON
         } 
       } 
       # Additional properties or transformations 
-      $userObject["SnapshotDate"] = "2024-01-11" 
+      $userObject["SnapshotDate"] = $SnapshotDate
       [pscustomobject]$userObject 
     } 
     # Convert the user data to JSON and save it to a file 
@@ -172,6 +181,7 @@ Generate a JSON file with group membership which will be used to create custom v
       $results += [PSCustomObject]@{ 
         GroupId = $groupId 
         Members = $members 
+        SnapshotDate = $SnapshotDate
       } 
       # Pause for a short time to avoid rate limits 
       Start-Sleep -Milliseconds 200 
@@ -182,7 +192,7 @@ Generate a JSON file with group membership which will be used to create custom v
 
 ### Get Application and Service Principal data 
 
-Generates JSON file with all applications and the corresponding service principals in the tenant. We'll import this data into Azure Data Explorer in Step 3 which will allow us to generate custom reports related to applications based on this data. 
+Generates JSON file with all applications and the corresponding service principals in the tenant. We'll import this data into Azure Data Explorer in [a subsequent section of this tutorial](#3-import-json-file-data-into-azure-data-explorer) which will allow us to generate custom reports related to applications based on this data. 
 ```powershell
     # Fetch applications and their corresponding service principals, then export to JSON 
     Get-MgApplication -All | ForEach-Object { 
@@ -192,6 +202,7 @@ Generates JSON file with all applications and the corresponding service principa
         Name        = $app.DisplayName 
         ApplicationId   = $app.AppId 
         ServicePrincipalId = $sp.Id 
+        SnapshotDate = $SnapshotDate
       } 
     } | ConvertTo-Json -Depth 10 | Set-Content "Applications.json" 
 ``` 
@@ -217,6 +228,7 @@ Generate a JSON file of all appRoles for enterprise apps in Entra. Once imported
         DisplayName     = $app.DisplayName 
         ServicePrincipalId = $sp.Id 
         AppRoles      = $appRoles 
+        SnapshotDate = $SnapshotDate
       } 
     } 
     # Export the results to a JSON file 
@@ -240,30 +252,41 @@ Generate a JSON file of all app role assignments in the tenant.
           PrincipalId     = $_.PrincipalId 
           ResourceDisplayName = $_.ResourceDisplayName 
           ResourceId      = $_.ResourceId 
-          SnapshotDate     = "2024-03-13" # Hard-coded date 
+          SnapshotDate     = $SnapshotDate
         } 
       } 
     } 
     $result | ConvertTo-Json -Depth 10 | Out-File "AppRoleAssignments.json" 
 ``` 
 
-## Step 3: Import JSON file data into Azure Data Explorer 
+## 3: Import JSON file data into Azure Data Explorer 
 
-In Step 3, we'll import the newly created JSON files for further analysis. If you haven’t yet setup Azure Data Explorer, please see Step 1 above. 
+In this section, we'll import the newly created JSON files for further analysis.
 
-Azure Data Explorer is a powerful data analysis tool that is highly scalable and flexible providing an ideal environment for generating customized user access reports. Azure Data Explorer uses the Kusto Query Language (KQL). 
+Once you have setup a database in your Azure Data Explorer cluster or free cluster, as described in the first section of this document, navigate to that database.
 
-Once you have setup a database, follow these steps to get your exported data into Azure Data Explorer. 
+ 1. Sign-in to the [Azure Data Explorer web UI](https://dataexplorer.azure.com/home).
+ 1. From the left menu, select **Query**.
 
- 1. Right-click on the database name and choose **Get Data** 
- 2. Choose **New Table** and enter the name of the JSON file you're importing, For example, if you're importing EntraUsers.json, name the table **EntraUsers**. After the first import, the table will already exist, and you can select it as the target table for the import. 
- 3. Select the JSON file. 
- 4. Azure Data Explorer will automatically detect the schema and provide a preview. Click **Finish** to create the table and import the data. 
- 5. Follow steps 1-4 for each of the JSON files that you generated in Step 1. 
+Next, follow these steps for each exported JSON file, to get your exported data into that Azure Data Explorer database.
 
-## Step 4: Use Azure Data Explorer to build custom reports 
+ 1. Right-click on the database name of the database where you want to ingest the data. Select **Get Data**.
 
-With the data now available in Azure Data Explorer, you're ready to begin creating customized reports based on your business requirements. The following queries provide examples of common reports, but you can customize these reports to suit your needs and create additional reports. 
+    :::image type="content" source="/azure/data-explorer/media/get-data-file/get-data.png" alt-text="Screenshot of query tab, with right-click on a database and the get options dialog open." lightbox="/azure/data-explorer/media/get-data-file/get-data.png":::
+
+ 2. Select the data source from the available list. In this tutorial, you're ingesting data from a **Local file**.
+ 1. Select **+ New table** and enter a table name, based on the name of the JSON file you're importing, For example, if you're importing EntraUsers.json, name the table **EntraUsers**. After the first import, the table will already exist, and you can select it as the target table for a subsequent import.
+ 1. Select **Browse for files**, select the JSON file, and select **Next**.
+ 1. Azure Data Explorer will automatically detect the schema and provide a preview in the **Inspect** tab. Click **Finish** to create the table and import the data from that file.
+ 1. Repeat each of the preceding steps for each of the JSON files that you generated in the first section.
+
+## 4: Use Azure Data Explorer to build custom reports 
+
+With the data now available in Azure Data Explorer, you're ready to begin creating customized reports based on your business requirements. 
+
+Azure Data Explorer is a powerful data analysis tool that is highly scalable and flexible providing an ideal environment for generating customized user access reports. Azure Data Explorer uses the Kusto Query Language (KQL).
+
+The following queries provide examples of common reports, but you can customize these reports to suit your needs and create additional reports. 
 
 ### Example 1: Generate app role assignments for direct and group assignments for a specific snapshot date 
 
@@ -376,10 +399,18 @@ AppRoleAssignments
                   ) on $left.AppRoleId2 == $right.AppRoleId 
 | project UserPrincipalName, DisplayName, RoleDisplayName, CreatedDateTime, PrincipalId, Change = "Added" 
 ``` 
-### Example 4: Combine App Assignments from an Entra and a second source (for example, SQL export) to create a report of all users (Entra assignments and local assignments) who had access to Salesforce between two dates 
- 
+
+## Bring in data from other sources
+
+You can also [create additional tables](/azure/data-explorer/create-table-wizard) in Azure Data Explorer to ingest data from other sources. If the data is in a JSON file, similar to the examples above, or a CSV file, then you can create the table at the time you first [get data from the file](/azure/data-explorer/get-data-file).
+
+For more information on data ingestion, see [Azure Data Explorer data ingestion overview](/azure/data-explorer/ingest-data-overview).
+
+### Example 4: Combine App Assignments from an Entra and a second source to create a report of all users who had access to an application between two dates
 
 This report illustrates how you can combine data from two separate systems to create custom reports in Azure Data Explorer. It aggregates data about users, their roles, and other attributes from two systems into a unified format for analysis or reporting. 
+
+This example assumes there is a table named `salesforceAssignments` that has been populated by bringing in data from another application.
 
 ```kusto
 // Define the date range and service principal ID for the query 
