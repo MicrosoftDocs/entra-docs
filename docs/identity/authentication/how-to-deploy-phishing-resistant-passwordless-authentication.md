@@ -195,6 +195,8 @@ The workbook has two primary sections:
 1. Enrollment Readiness Phase
 1. Enforcement Readiness Phase
 
+#### Enrollment Readiness Phase
+
 Use the Enrollment Readiness Phase tab to analyze sign-in logs in your tenant, determining which users are ready for registration and which users may be blocked from registration. For example, with the Enrollment Readiness Phase tab you can select iOS as the OS platform and then Authenticator App Passkey as the type of credential you would like to asses your readiness for. You can then click on the workbook visualizations to filter down to users who are expected to have registration issues and export the list:
 
 :::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-ios-filter.png" alt-text="Screenshot of the Enrollment phase of the Phishing-Resistant Passwordless workbook.":::
@@ -220,6 +222,41 @@ The Enrollment Readiness Phase tab of the workbook can help you evaluate readine
     - Authenticator App Passkey
     - Certificate-Based Authentication / Smart Card
 
+Use each exported list to triage users who may have registration issues. Responses to registration issues should include assisting users in upgrading device OS versions, replacing aging devices, and choosing alternative credentials where the preferred option is not viable. For example, your organization may choose to provide physical FIDO2 security keys to Android 13 users who cannot use Passkeys in the Microsoft Authenticator app.
+
+Similarly, use the enrollment readiness report to assist you in building out lists of users who are ready to begin enrollment communications and campaigns, in alignment with your overall [rollout strategy](#plan-rollout-strategy).
+
+#### Enforcement Readiness Phase
+
+The first step of the enforcement readiness phase is creating a conditional access policy in Report-Only mode. This policy will populate your sign-in logs with data regarding whether or not access would have been blocked if you were to put users/devices in scope for phishing-resistant enforcement. Create a new conditional access policy in your tenant with these settings:
+
+Setting | Value
+------- | -----
+User/Group Assignment | All users, excluding break glass accounts
+App Assignment | All resources
+Grant Controls | Require Authentication Strength - Phishing-resistant MFA
+Enable policy | Report-only
+
+Create this policy as early as possible in your rollout, preferably before even beginning your enrollment campaigns. This will ensure that you have a good historical dataset of which users and sign-ins would have been blocked by the policy if it was enforced.
+
+Next, use the workbook to analyze where user/device pairs are ready for enforcement. Download lists of users who are ready for enforcement and add them to groups created in alignment with your [enforcement policies](#recommended-enforcement-conditional-access-policies). Begin by selecting the read-only conditional access policy in the policy filter:
+
+:::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-enforcement-policy-selection-1.png" alt-text="Screenshot of the Enforcement phase of the Phishing-Resistant Passwordless workbook with a report-only conditional access policy selected.":::
+
+The report will provide you with a list of users who would have been able to successfully pass the phishing-resistant passwordless requirement on each device platform. Download each list and put the appropriate users in enforcement group that aligns to the device platform.
+
+:::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-enforcement-user-lists-1.png" alt-text="Screenshot of the Enforcement phase of the Phishing-Resistant Passwordless workbook's list of users ready for enforcement.":::
+
+Repeat this process over time, until you reach the point where each enforcement group contains most or all users. Eventually, you should be able to enable the report-only policy to provide enforcement for all users and device platforms in the tenant. Once you have reached this completed state you can remove the individual enforcement policies for each device OS, reducing the number of conditional access policies needed.
+
+##### Investigating Users Not Ready for Enforcement
+
+Use the ***Further Data Analysis*** tab to investigate why certain users are not ready for enforcement on various platforms. Select the ***Policy Not Satisfied*** box to filter the data down to user sign-ins that would have been blocked by the report-only conditional access policy.
+
+:::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-enforcement-further-data-analysis-1.png" alt-text="Screenshot of the Enforcement phase of the Phishing-Resistant Passwordless workbook's further data analysis tab.":::
+
+Use the data provided by this report to determine which users would have been blocked, which device OSes they were on, what type of client apps they were using, and what resources they were trying to access. This data should help you target those users for various remediation or enrollment actions, so that they can be effectively moved into scope for enforcement.
+
 ### Plan end user communications
 
 Microsoft provides communication templates for end users. The [authentication rollout material](https://www.microsoft.com/download/details.aspx?id=57600) includes customizable posters and email templates to inform users about phishing-resistant passwordless authentication deployment. Use the following templates to communicate to your users so they understand the phishing-resistant passwordless deployment:
@@ -244,6 +281,8 @@ Communications should be repeated multiple times to help catch as many users as 
 Microsoft recommends communicating to users through other channels beyond just email. Other options may include Microsoft Teams messages, break room posters, and champion programs where select employees are trained to advocate for the program to their peers.
 
 ### Reporting and monitoring
+
+Use the previously covered [Phishing-Resistant Passwordless Workbook](#driving-readiness-with-the-phishing-resistant-passwordless-workbook-preview) to assist with monitoring and reporting on your rollout. Additionally use the reports discussed below, or rely on them if you cannot use the Phishing-Resistant Passwordless Workbook.
 
 Microsoft Entra ID reports (such as [Authentication Methods Activity](howto-authentication-methods-activity.md) and [Sign-in event details for Microsoft Entra multifactor authentication](howto-mfa-reporting.md)) provide technical and business insights that can help you measure and drive adoption.
 
@@ -299,7 +338,9 @@ The final phase of a phishing-resistant passwordless deployment is enforcing the
 1. FLWs on Windows and macOS
 1. IT Pros on Windows and macOS
 
-Microsoft recommends that you build a report of all your user/device pairs by using sign-in data from your tenant. You can use querying tools like [Azure Monitor and Workbooks](~/identity/monitoring-health/overview-workbooks.md). At minimum, try to identify all user/device pairs that match these categories. 
+Microsoft recommends that you build a report of all your user/device pairs by using sign-in data from your tenant. You can use querying tools like [Azure Monitor and Workbooks](~/identity/monitoring-health/overview-workbooks.md). At minimum, try to identify all user/device pairs that match these categories.
+
+Use the previously covered [Phishing-Resistant Passwordless Workbook](#driving-readiness-with-the-phishing-resistant-passwordless-workbook-preview) to assist with the enforcement phase, if possible.
 
 For each user, create a list of which operating systems they regularly use for work. Map the list to the readiness for phishing-resistant sign-in enforcement for that user/device pair.
 
@@ -323,7 +364,9 @@ The key task is to measure through data which users and personas are ready for e
 
 Then move on to other scenarios where the user/device pairs require readiness efforts. Work your way through the list of user/device pairs until you enforce phishing-resistant authentication across the board. 
 
-Create a set of Microsoft Entra ID groups to roll out enforcement gradually. Reuse the groups from the [previous step](#monitor-help-desk-ticket-volume) if you used the wave-based rollout approach. 
+Create a set of Microsoft Entra ID groups to roll out enforcement gradually. Reuse the groups from the [previous step](#monitor-help-desk-ticket-volume) if you used the wave-based rollout approach.
+
+### Recommended Enforcement Conditional Access Policies
 
 Target each group with a specific Conditional Access policy. This approach helps you roll out your enforcement controls gradually by user/device pair.
 
