@@ -81,7 +81,7 @@ After you open an access request pending approval, you can see details that will
 
     If none of the configured approvers in a stage are able to approve or deny the access request, the request expires after the configured request duration. The user gets notified that their access request has expired, and that they need to resubmit the access request.
 
-## Revoke a request
+## Revoke a request (preview)
 
 To undo your approval for an access request that you previously approved, you can revoke your decision. 
 
@@ -91,9 +91,9 @@ To undo your approval for an access request that you previously approved, you ca
 
 2. Select an approved request that you'd like to revoke the decision for.
 
-3. Select **Remove** to remove the user's access to the access package. Include justification for why you are revoking your decision.
+3. Select **Remove** to remove the user's access to the access package. Include a reason for why you are revoking your decision.
 
-4. Select **Submit** to submit your decision. 
+4. Select **Remove** to submit your decision. 
 
 ## Next steps
 
