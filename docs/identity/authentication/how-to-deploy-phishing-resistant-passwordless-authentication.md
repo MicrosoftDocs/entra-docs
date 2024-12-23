@@ -188,7 +188,9 @@ Use the following sections to create end user communications for each persona gr
 
 ### Driving Readiness with the Phishing-Resistant Passwordless Workbook (Preview)
 
-Organizations may optionally choose to export their Microsoft Entra ID sign-in logs to [Azure Monitor](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml) for long-term retention, threat hunting, and other purposes. Microsoft has released a [workbook](~/identity/monitoring-health/overview-workbooks.md) that organizations with logs in Azure Monitor may use to help with various phases of a phishing-resistant passwordless deployment. The Phishing-Resistant Passwordless Workbook can be accessed here: [aka.ms/PasswordlessWorkbook](https://aka.ms/PasswordlessWorkbook)
+Organizations may optionally choose to export their Microsoft Entra ID sign-in logs to [Azure Monitor](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml) for long-term retention, threat hunting, and other purposes. Microsoft has released a [workbook](~/identity/monitoring-health/overview-workbooks.md) that organizations with logs in Azure Monitor may use to help with various phases of a phishing-resistant passwordless deployment. The Phishing-Resistant Passwordless Workbook can be accessed here: [aka.ms/PasswordlessWorkbook](https://aka.ms/PasswordlessWorkbook). Choose the workbook titled ***Phishing-Resistant Passwordless Deployment (Preview)***:
+
+:::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-gallery.png" alt-text="Screenshot of various workbooks in Entra ID.":::
 
 The workbook has two primary sections:
 
