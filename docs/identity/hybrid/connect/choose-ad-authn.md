@@ -4,7 +4,7 @@ description: This guide helps CEOs, CIOs, CISOs, Chief Identity Architects, Ente
 keywords:
 author: billmath
 ms.author: billmath
-ms.date: 12/05/2024
+ms.date: 12/18/2024
 manager: amycolannino
 ms.topic: article
 ms.service: entra-id
@@ -105,7 +105,7 @@ Refer to [implementing password hash synchronization](how-to-connect-password-ha
 
 * **User experience**. To improve users' sign-in experience, use [Microsoft Entra joined devices](~/identity/devices/concept-directory-join.md) or [Microsoft Entra hybrid joined devices](~/identity/devices/how-to-hybrid-join.md). If you can't join your Windows devices to Microsoft Entra ID, we recommend deploying seamless SSO with password hash synchronization. Seamless SSO eliminates unnecessary prompts when users are signed in.
 
-* **Advanced scenarios**. Pass-through Authentication enforces the on-premises account policy at the time of sign-in. For example, access is denied when an on-premises user's account state is disabled, locked out, or their [password expires](how-to-connect-pta-faq.yml#what-happens-if-my-user-s-password-has-expired-and-they-try-to-sign-in-by-using-pass-through-authentication-) or the logon attempt falls outside the hours when the user is allowed to sign in.
+* **Advanced scenarios**. Pass-through Authentication enforces the on-premises account policy at the time of sign-in. For example, access is denied when an on-premises user's account state is disabled, locked out, or their [password expires](how-to-connect-pta-faq.yml#what-happens-if-my-user-s-password-expired-and-they-try-to-sign-in-by-using-pass-through-authentication-) or the logon attempt falls outside the hours when the user is allowed to sign in.
 
 	Organizations that require multifactor authentication with pass-through authentication must use Microsoft Entra multifactor authentication or [Conditional Access custom controls](~/identity/conditional-access/controls.md#custom-controls-preview). Those organizations can't use a third-party or on-premises multifactor authentication method that relies on federation. Advanced features require that password hash synchronization is deployed whether or not you choose pass-through authentication. An example is the leaked credentials detection of Microsoft Entra ID Protection.
 

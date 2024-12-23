@@ -209,7 +209,7 @@ A claims mapping policy is used to select which attributes returned from the cus
 
 1. In your *My Test application* registration, under **Manage**, select **Manifest**.
 1. In the manifest, locate the `acceptMappedClaims` attribute, and set the value to `true`.
-1. Set the `accessTokenAcceptedVersion` to `2`.
+1. Set the `requestedAccessTokenVersion` to `2`.
 1. Select **Save** to save the changes.
 
 The following JSON snippet demonstrates how to configure these properties.
@@ -218,7 +218,7 @@ The following JSON snippet demonstrates how to configure these properties.
 {
 	"id": "22222222-0000-0000-0000-000000000000",
 	"acceptMappedClaims": true,
-	"accessTokenAcceptedVersion": 2,  
+	"requestedAccessTokenVersion": 2,  
     ...
 }
 ```

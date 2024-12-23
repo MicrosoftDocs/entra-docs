@@ -1,21 +1,21 @@
 ---
-title: Get Started with the Microsoft identity platform Visual Studio Connected Service
-description: Learn how to use Visual Studio Connected services to integrate Microsoft Entra ID into your applications right from your development environment.
+title: Get Started with the Microsoft identity platform Visual Studio's Connected Services
+description: Learn how to use Visual Studio Connected Services to integrate Microsoft Entra ID into your applications right from your development environment.
 author: Dickson-Mwendia
 manager: celestedg
 ms.service: identity-platform
 ms.topic: quickstart
-ms.date: 12/03/2024
+ms.date: 12/23/2024
 ms.author: dmwendia
 
-# Customer intent: As a dev, devops, or it admin, I want to use Visual Studio Connected services to integrate Microsoft Entra ID authentication into my application
+# Customer intent: As a dev, devops, or it admin, I want to use Visual Studio Connected Services to integrate Microsoft Entra ID authentication into my application
 ---
 
-# Quickstart: Get Started with the Microsoft identity platform Visual Studio Connected Service
+# Quickstart: Get Started with the Microsoft identity platform Visual Studio Connected Services
 
 [!INCLUDE [applies to both workforce and external tenants](../includes/applies-to-workforce-external.md)]
 
-Integrating identity management solutions into your organizational and customer-facing applications is essential for securing resources and customer data. Visual Studio Connected services allow you to quickly integrate the Microsoft identity platform into your ASP.NET web apps and configure sign-in experiences all within Visual Studio. This article provides details of using the Visual Studio Connected Service feature for Microsoft Entra ID.
+Integrating identity management solutions into your organizational and customer-facing applications is essential for securing resources and customer data. Visual Studio's Connected Services allow you to quickly integrate the Microsoft identity platform into your ASP.NET web apps and configure sign-in experiences, all within Visual Studio. This article provides details of using Visual Studio's Connected Services feature for Microsoft Entra ID.
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ Integrating identity management solutions into your organizational and customer-
   - Application Developer
   - Cloud Application Administrator
 
-## Create your project and connect it to the Microsoft Identity platform
+## Create your project and connect it to the Microsoft identity platform
 
 1. In Visual Studio, create or open an ASP.NET Model–view–controller (MVC) project, or an ASP.NET Web API project. For this quickstart, you use the ‘ASP.NET Core Web App (Razor Pages) template.
 1. Enter **Project Name**, for example,‘sample-asp-dotnet-webapp’ and the **Location** where you’d like to create the project then select **Next**.
@@ -68,7 +68,7 @@ Once you complete installing the dotnet msidentity tool, select **Next** to proc
 
 ## Configure application to use Microsoft identity platform
 
-Microsoft Entra ID Visual Studio Connected Service allows you to configure applications in either workforce or external tenants. To complete configuration, follow these steps:
+The Microsoft identity platform connected service allows you to configure applications in either workforce or external tenants. To complete configuration, follow these steps:
 
 1. In the top right section, sign in to your Microsoft account. If you have multiple accounts, select the account with the tenant where you’d like to register your application.
 
@@ -94,7 +94,7 @@ Microsoft Entra ID Visual Studio Connected Service allows you to configure appli
 
 ## [Optional]: Configure permissions to access a web API
 
-The Visual Studio Connected Service for Microsoft Identity platform allows you to optionally add permissions to access Microsoft Graph or any other web API. You can add support for your own API or third-party APIs registered with the Microsoft identity platform.
+The Microsoft identity platform connected service allows you to optionally add permissions to access Microsoft Graph or any other web API. You can add support for your own API or third-party APIs registered with the Microsoft identity platform.
 
 If you want to modify it, such as to add support for an API such as Microsoft Graph, select the three dots on the Microsoft identity platform service dependency, and then choose **Edit dependency**. You can repeat the steps and add the APIs that you want to grant access to.
 

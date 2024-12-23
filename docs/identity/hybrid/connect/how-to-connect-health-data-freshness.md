@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 12/05/2024
+ms.date: 12/19/2024
 ms.author: billmath
 
 ---
