@@ -88,6 +88,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	| `https://<tenant_domain_name>.sg.uniflowonline.com` |
 	| `https://<tenant_domain_name>.jp.uniflowonline.com` |
 	| `https://<tenant_domain_name>.au.uniflowonline.com` |
+	| `https://<tenant_domain_name>.ca.uniflowonline.com` |
 	
 
 	b. In the **Sign on URL** text box, type a URL using one of the following patterns:
@@ -100,6 +101,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	| `https://<tenant_domain_name>.sg.uniflowonline.com` |
 	| `https://<tenant_domain_name>.jp.uniflowonline.com` |
 	| `https://<tenant_domain_name>.au.uniflowonline.com` |
+	| `https://<tenant_domain_name>.ca.uniflowonline.com` |
 
 	> [!NOTE]
 	> These values are not real. Update these values with the actual Identifier and Sign on URL. Contact [uniFLOW Online Client support team](mailto:support@nt-ware.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Azure portal or refer to the reply URL displayed in your uniFLOW Online tenant.
