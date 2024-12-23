@@ -52,13 +52,13 @@ If you’re creating your app from an empty project template in Visual Studio or
 
 ## Install required components
 
-To use Microsoft identity platform in your project, you need to install the **dotnet msidentity tool**. This command line tool enables you to create Microsoft Entra app registrations. It also updates your app to use Microsoft identity platform for authentication and authorization by updating the configuration files of your ASP.NET Core applications (MVC, Razor Pages, Blazor WebAssembly (WASM), Blazor WASM Hosted, Blazor Server).
+To use Microsoft identity platform in your project, you need to install the **dotnet msidentity tool**. This command line tool enables you to create Microsoft Entra app registrations. It also updates your app to use Microsoft identity platform by modifying the configuration files of your ASP.NET Core applications (MVC, Razor Pages, Blazor WebAssembly (WASM), Blazor WASM Hosted, Blazor Server).
 
-If you haven’t installed the dotnet msidentity tool, Visual Studio prompts you to install it, as shown in the following screenshot.
+If you don't have the dotnet msidentity tool installed on your device, Visual Studio prompts you to install it, as shown:
  
   :::image type="content" source="media/visual-studio-connected-service/dotnet-msidentity-tool-installation-prompt.png" alt-text="Screenshot showing a Visual Studio prompt to install the dotnet msidentity tool":::
 
-You can install the dotnet msidentity tool from your command line by running the following:
+You can install the dotnet msidentity tool from your command line by running:
 
   ```sh
   dotnet tool install --global Microsoft.dotnet-msidentity --version 2.0.8
