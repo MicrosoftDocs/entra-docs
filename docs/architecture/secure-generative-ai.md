@@ -15,7 +15,7 @@ ms.reviewer: joflore
 
 # Secure Generative AI with Microsoft Entra
 
-As the digital landscape rapidly evolves, businesses across various industries increasingly adopt [Generative Artificial Intelligence](/ai/playbook/technology-guidance/generative-ai/) (Gen AI) to drive innovation and enhance productivity. A recent [research study](https://techcommunity.microsoft.com/t5/security-compliance-and-identity/security-for-ai-how-to-secure-and-govern-ai-usage/ba-p/4082269) indicates that 93% of businesses are implementing or developing an AI strategy. Approximately the same percentage of risk leaders report feeling under-prepared or only somewhat prepared to address the associated risks. As you integrate Gen AI into your operations, you must mitigate significant security and governance risks.
+As the digital landscape rapidly evolves, organizations across various industries increasingly adopt [Generative Artificial Intelligence](/ai/playbook/technology-guidance/generative-ai/) (Gen AI) to drive innovation and enhance productivity. A recent [research study](https://techcommunity.microsoft.com/t5/security-compliance-and-identity/security-for-ai-how-to-secure-and-govern-ai-usage/ba-p/4082269) indicates that 93% of businesses are implementing or developing an AI strategy. Approximately the same percentage of risk leaders report feeling under-prepared or only somewhat prepared to address the associated risks. As you integrate Gen AI into your operations, you must mitigate significant security and governance risks.
 
 Microsoft Entra offers a comprehensive suite of capabilities to securely manage AI applications, appropriately control access, and protect sensitive data:
 
@@ -25,7 +25,7 @@ Microsoft Entra offers a comprehensive suite of capabilities to securely manage 
 - [Microsoft Entra Privileged Identity Management](../id-governance/privileged-identity-management/pim-configure.md) (PIM)
 - [Microsoft Purview Insider Risk](/purview/insider-risk-management-adaptive-protection)
 
-This article delves into the specific security challenges that Gen AI poses and how you can address them with Microsoft Entra.
+This article delves into the specific security challenges that Gen AI poses and how you can address them with the capabilities offered by Microsoft Entra.
 
 ## Discover overprivileged identities
 
