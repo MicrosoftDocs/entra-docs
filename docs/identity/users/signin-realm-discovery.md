@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: conceptual
-ms.date: 11/21/2023
+ms.date: 12/17/2024
 ms.author: barclayn
 ms.reviewer: kexia
 ms.custom: it-pro
@@ -15,17 +15,18 @@ ms.custom: it-pro
 
 # Home realm discovery for Microsoft Entra sign-in pages
 
-We are changing sign-in behavior in Microsoft Entra ID, part of Microsoft Entra, to make room for new authentication methods and improve usability. During sign-in, Microsoft Entra ID determines where a user needs to authenticate. Microsoft Entra ID makes intelligent decisions by reading organization and user settings for the username entered on the sign-in page. This is a step towards a password-free future that enables additional credentials like FIDO 2.0.
+We are changing sign-in behavior in Microsoft Entra ID, part of Microsoft Entra, to make room for new authentication methods and improve usability. During sign-in, Microsoft Entra ID determines where a user needs to authenticate. Microsoft Entra ID makes intelligent decisions by reading organization and user settings for the username entered on the sign-in page. This is a step towards a password-free future that enables other credentials like FIDO 2.0.
 
 ## Home realm discovery behavior
 
-Historically, home realm discovery was governed by the domain that is provided at sign-in or by a Home Realm Discovery policy for some legacy applications. For example, in our discovery behavior a Microsoft Entra user could mistype their username but would still arrive at their organization's credential collection screen. This occurs when the user correctly provides the organization's domain name “contoso.com”. This behavior does not allow the granularity to customize experiences for an individual user.
+Traditionally, home realm discovery depended on either the domain provided at sign-in or a Home Realm Discovery policy for legacy applications. For instance, if a Microsoft Entra user entered their username incorrectly but included their organization's domain name, such as "contoso.com," they would still be directed to their organization's credential collection screen. This method didn't allow for customized experiences on an individual user level.
 
-To support a wider range of credentials and increase usability, Microsoft Entra ID’s username lookup behavior during the sign-in process is now updated. The new behavior makes intelligent decisions by reading organization-level and user-level settings based on the username entered on the sign-in page. To make this possible, Microsoft Entra ID will check to see if the username that is entered on the sign-in page exists in their specified domain or redirects the user to provide their credentials.
+To enhance usability and support a broader range of credentials, Microsoft Entra ID uses a different process. Microsoft Entra ID's username lookup behavior during sign-in intelligently assesses organization-level and user-level settings based on the entered username. If the username is found within the specified domain, the user is directed accordingly; otherwise, the user is redirected to provide their credentials.
 
-An additional benefit of this work is improved error messaging. Here are some examples of the improved error messaging when signing in to an application that supports Microsoft Entra users only.
 
-- The username is mistyped or the username has not yet been synced to Microsoft Entra ID:
+Another benefit of this work is improved error messaging. Here are some examples of the improved error messaging when signing in to an application that supports Microsoft Entra users only.
+
+- The username is mistyped or the username hasn't yet been synced to Microsoft Entra ID:
   
    :::image type="content" source="./media/signin-realm-discovery/typo-username.png" alt-text="Screenshot of the username is mistyped or not found.":::
   

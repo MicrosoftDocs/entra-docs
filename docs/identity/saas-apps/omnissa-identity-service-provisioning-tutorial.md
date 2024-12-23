@@ -1,6 +1,6 @@
 ---
-title: 'Tutorial: Configure VMware Identity Service for automatic user provisioning with Microsoft Entra ID'
-description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to VMware Identity Service.
+title: 'Tutorial: Configure Omnissa Access Identity Service for automatic user provisioning with Microsoft Entra ID'
+description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Omnissa Access Identity Service.
 author: thomasakelo
 manager: jeedes
 ms.service: entra-id
@@ -9,21 +9,21 @@ ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo
 
-# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to VMware Identity Service so that I can streamline the user management process and ensure that users have the appropriate access to VMware Identity Service.
+# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Omnissa Access Identity Service so that I can streamline the user management process and ensure that users have the appropriate access to Omnissa Access Identity Service.
 ---
 
-# Tutorial: Configure VMware Identity Service for automatic user provisioning
+# Tutorial: Configure Omnissa Access Identity Service for automatic user provisioning
 
-This tutorial describes the steps you need to perform in both VMware Identity Service and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [VMware Identity Service](https://www.vmware.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This tutorial describes the steps you need to perform in both Omnissa Access Identity Service and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Omnissa Access Identity Service](https://www.omnissa.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
 ## Supported capabilities
 > [!div class="checklist"]
-> * Create users in VMware Identity Service.
-> * Remove users in VMware Identity Service when they do not require access anymore.
-> * Keep user attributes synchronized between Microsoft Entra ID and VMware Identity Service.
-> * Provision groups and group memberships in VMware Identity Service.
-> * [Single sign-on](vmware-identity-service-tutorial.md) to VMware Identity Service (recommended).
+> * Create users in Omnissa Access Identity Service.
+> * Remove users in Omnissa Access Identity Service when they do not require access anymore.
+> * Keep user attributes synchronized between Microsoft Entra ID and Omnissa Access Identity Service.
+> * Provision groups and group memberships in Omnissa Access Identity Service.
+> * [Single sign-on](vmware-identity-service-tutorial.md) to Omnissa Access Identity Service (recommended).
 
 ## Prerequisites
 
@@ -31,24 +31,24 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md). 
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
-* An VMware Identity Service tenant.
-* A user account in VMware Identity Service with Admin permissions.
+* An Omnissa Access Identity Service tenant.
+* A user account in Omnissa Access Identity Service with Admin permissions.
 
 ## Step 1: Plan your provisioning deployment
 1. Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).
 1. Determine who will be in [scope for provisioning](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-1. Determine what data to [map between Microsoft Entra ID and VMware Identity Service](~/identity/app-provisioning/customize-application-attributes.md).
+1. Determine what data to [map between Microsoft Entra ID and Omnissa Access Identity Service](~/identity/app-provisioning/customize-application-attributes.md).
 
 <a name='step-2-configure-vmware-identity-service-to-support-provisioning-with-azure-ad'></a>
 
-## Step 2: Configure VMware Identity Service to support provisioning with Microsoft Entra ID
-Contact VMware Identity Service support to configure VMware Identity Service to support provisioning with Microsoft Entra ID.
+## Step 2: Configure Omnissa Access Identity Service to support provisioning with Microsoft Entra ID
+Contact Omnissa Access Identity Service support to configure Omnissa Access Identity Service to support provisioning with Microsoft Entra ID.
 
 <a name='step-3-add-vmware-identity-service-from-the-azure-ad-application-gallery'></a>
 
-## Step 3: Add VMware Identity Service from the Microsoft Entra application gallery
+## Step 3: Add Omnissa Access Identity Service from the Microsoft Entra application gallery
 
-Add VMware Identity Service from the Microsoft Entra application gallery to start managing provisioning to VMware Identity Service. If you have previously setup VMware Identity Service for SSO you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
+Add Omnissa Access Identity Service from the Microsoft Entra application gallery to start managing provisioning to Omnissa Access Identity Service. If you have previously setup Omnissa Access Identity Service for SSO you can use the same application. However it's recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 
 
 ## Step 4: Define who will be in scope for provisioning 
 
@@ -59,22 +59,22 @@ The Microsoft Entra provisioning service allows you to scope who will be provisi
 * If you need more roles, you can [update the application manifest](~/identity-platform/howto-add-app-roles-in-apps.md) to add new roles.
 
 
-## Step 5: Configure automatic user provisioning to VMware Identity Service 
+## Step 5: Configure automatic user provisioning to Omnissa Access Identity Service 
 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in TestApp based on user and/or group assignments in Microsoft Entra ID.
 
 <a name='to-configure-automatic-user-provisioning-for-vmware-identity-service-in-azure-ad'></a>
 
-### To configure automatic user provisioning for VMware Identity Service in Microsoft Entra ID:
+### To configure automatic user provisioning for Omnissa Access Identity Service in Microsoft Entra ID:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**
 
 	![Screenshot of Enterprise applications blade.](common/enterprise-applications.png)
 
-1. In the applications list, select **VMware Identity Service**.
+1. In the applications list, select **Omnissa Access Identity Service**.
 
-	![Screenshot of the VMware Identity Service link in the Applications list.](common/all-applications.png)
+	![Screenshot of the Omnissa Access Identity Service link in the Applications list.](common/all-applications.png)
 
 1. Select the **Provisioning** tab.
 
@@ -84,7 +84,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
-1. Under the **Admin Credentials** section, input your VMware Identity Service Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to VMware Identity Service. If the connection fails, ensure your VMware Identity Service account has Admin permissions and try again.
+1. Under the **Admin Credentials** section, input your Omnissa Access Identity Service Tenant URL and Secret Token. Click **Test Connection** to ensure Microsoft Entra ID can connect to Omnissa Access Identity Service. If the connection fails, ensure your Omnissa Access Identity Service account has Admin permissions and try again.
 
  	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -94,11 +94,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Select **Save**.
 
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to VMware Identity Service**.
+1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Omnissa Access Identity Service**.
 
-1. Review the user attributes that are synchronized from Microsoft Entra ID to VMware Identity Service in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in VMware Identity Service for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the VMware Identity Service API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
+1. Review the user attributes that are synchronized from Microsoft Entra ID to Omnissa Access Identity Service in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Omnissa Access Identity Service for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you'll need to ensure that the Omnissa Access Identity Service API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
-   |Attribute|Type|Supported for filtering|Required by VMware Identity Service|
+   |Attribute|Type|Supported for filtering|Required by Omnissa Access Identity Service|
    |---|---|---|---|
    |userName|String|&check;|&check;
    |active|Boolean||&check;
@@ -131,11 +131,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |urn:ietf:params:scim:schemas:extension:ws1b:2.0:User:domain|String||
    |urn:ietf:params:scim:schemas:extension:ws1b:2.0:User:userPrincipalName|String||
    
-1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to VMware Identity Service**.
+1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Omnissa Access Identity Service**.
 
-1. Review the group attributes that are synchronized from Microsoft Entra ID to VMware Identity Service in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in VMware Identity Service for update operations. Select the **Save** button to commit any changes.
+1. Review the group attributes that are synchronized from Microsoft Entra ID to Omnissa Access Identity Service in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Omnissa Access Identity Service for update operations. Select the **Save** button to commit any changes.
 
-   |Attribute|Type|Supported for filtering|Required by VMware Identity Service|
+   |Attribute|Type|Supported for filtering|Required by Omnissa Access Identity Service|
    |---|---|---|---|
    |displayName|String|&check;|&check;
    |members|Reference||
@@ -146,11 +146,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
    
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-1. To enable the Microsoft Entra provisioning service for VMware Identity Service, change the **Provisioning Status** to **On** in the **Settings** section.
+1. To enable the Microsoft Entra provisioning service for Omnissa Access Identity Service, change the **Provisioning Status** to **On** in the **Settings** section.
 
 	![Screenshot of Provisioning Status Toggled On.](common/provisioning-toggle-on.png)
 
-1. Define the users and/or groups that you would like to provision to VMware Identity Service by choosing the desired values in **Scope** in the **Settings** section.
+1. Define the users and/or groups that you would like to provision to Omnissa Access Identity Service by choosing the desired values in **Scope** in the **Settings** section.
 
 	![Screenshot of Provisioning Scope.](common/provisioning-scope.png)
 

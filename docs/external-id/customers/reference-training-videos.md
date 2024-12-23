@@ -8,7 +8,7 @@ ms.service: entra-external-id
 
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 12/05/2024
+ms.date: 12/12/2024
 ms.author: mimart
 ms.custom: it-pro
 
@@ -103,6 +103,13 @@ In this video, we’ll explore the various methods available for accessing and e
 This video examines the benefits of using Microsoft Graph API and Microsoft Graph PowerShell for automating tasks and running batch operations. Streamline deployment with GitHub workflows to reduce integration and deployment issues, speed up release cycles, improve change management, and maintain version control across different environments.
 
 > [!VIDEO https://www.youtube.com/embed/Gnv4ISZhzgA?si=ecX14P_QNKJPpEZM]
+
+### VS Code extension for Microsoft Entra External ID
+
+Microsoft Entra External ID [extension for Visual Studio Code](./visual-studio-code-extension.md) lets you quickly create external tenants, configure sign-in experiences for external users, and set up an External ID sample, all directly within Visual Studio Code. Watch this video to learn how to install and use the extension.
+
+> [!VIDEO https://www.youtube.com/embed/j_syxt3N1pg?si=p3wdSmyGzddGa3R7]
+
 ### How-to videos
 
 These how-to videos guide you through using Microsoft Entra External ID:

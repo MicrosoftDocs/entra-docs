@@ -3698,6 +3698,8 @@
         href: officespace-software-provisioning-tutorial.md
       - name: Olfeo SAAS
         href: olfeo-saas-provisioning-tutorial.md
+      - name: Omnissa Identity Service
+        href: omnissa-identity-service-provisioning-tutorial.md
       - name: Oneflow
         href: oneflow-provisioning-tutorial.md
       - name: OpenForms
@@ -3914,7 +3916,7 @@
         href: uber-provisioning-tutorial.md
       - name: UNIFI
         href: unifi-provisioning-tutorial.md
-      - name: uniFlow Online
+      - name: uniFLOW Online
         href: uniflow-online-provisioning-tutorial.md
       - name: Uni-tel A/S
         href: uni-tel-as-provisioning-tutorial.md
@@ -3932,8 +3934,6 @@
         href: visibly-provisioning-tutorial.md
       - name: Visitly
         href: visitly-provisioning-tutorial.md
-      - name: VMware Identity Service
-        href: vmware-identity-service-provisioning-tutorial.md
       - name: Vonage
         href: vonage-provisioning-tutorial.md
       - name: Web Cargo Air

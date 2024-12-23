@@ -3,7 +3,7 @@ title: The Global Secure Access client for macOS
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the macOS client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 11/26/2024
+ms.date: 12/16/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -13,13 +13,17 @@ ms.reviewer: lirazbarak
 # Customer intent: macOS users, I want to download and install the Global Secure Access client.
 ---
 # Global Secure Access client for macOS (Preview)
+> [!IMPORTANT]
+> The Global Secure Access client for macOS is currently in PREVIEW.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
 The Global Secure Access client, an essential component of Global Secure Access, helps organizations manage and secure network traffic on end-user devices. The client's main role is to route traffic that needs to be secured by Global Secure Access to the cloud service. All other traffic goes directly to the network. The [Forwarding Profiles](concept-traffic-forwarding.md), configured in the portal, determine which traffic the Global Secure Access client routes to the cloud service.
 
 This article describes how to download and install the Global Secure Access client for macOS.
 
 ## Prerequisites
 
-- A Mac device with an Intel, M1, M2, or M3 processor, running macOS version 13 or newer.
+- A Mac device with an Intel, M1, M2, M3, or M4 processor, running macOS version 13 or newer.
 - A device registered to Microsoft Entra tenant using Company Portal.
 - A Microsoft Entra tenant onboarded to Global Secure Access.
 - Deployment of the [Microsoft Enterprise single sign-on (SSO) plug-in for Apple devices](../identity-platform/apple-sso-plugin.md) is recommended for SSO experience based on the user who is signed in to the company portal.   
@@ -244,3 +248,8 @@ Since QUIC isn't yet supported for Internet Access, traffic to ports 80 UDP and 
 > [!TIP]
 > QUIC is currently supported in Private Access and Microsoft 365 workloads.
 Administrators can disable QUIC protocol on browsers, triggering clients to fall back to HTTPS over TCP, which is fully supported in Internet Access. For more information, see [QUIC not supported for Internet Access](troubleshoot-global-secure-access-client-diagnostics-health-check.md#quic-not-supported-for-internet-access).
+
+## Related content
+- [Global Secure Access client for Microsoft Windows](how-to-install-windows-client.md)
+- [Global Secure Access client for iOS](how-to-install-ios-client.md)
+- [Global Secure Access client for Android](how-to-install-android-client.md)
