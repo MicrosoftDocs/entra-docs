@@ -1,9 +1,9 @@
 ---
-title: The Global Secure Access client for iOS (Preview)
+title: The Global Secure Access Client for iOS (Preview)
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the iOS client app.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 12/16/2024
+ms.date: 12/23/2024
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -50,8 +50,8 @@ The Global Secure Access client for iOS supports installation on both modes of e
 The Global Secure Access client for iOS supports the Microsoft traffic forwarding profile and the Private Access traffic forwarding profile. For more information, see [Global Secure Access traffic forwarding profiles](concept-traffic-forwarding.md).
 
 ## Known limitations
-- Tunneling Quick User Datagram Protocol (UDP) Internet Connections (QUIC) traffic (except for Exchange Online) isn't supported.
-- Global Secure Access (GSA) coexistence with Microsoft Tunnel isn't currently supported. For more information, see [Prerequisites for the Microsoft Tunnel in Intune](/mem/intune/protect/microsoft-tunnel-prerequisites).
+
+[!INCLUDE [known-limitations-include](../includes/known-limitations-include.md)]
 
 ## Installation Steps
 ### Deploy on Device Administrator enrolled devices with Microsoft Intune
