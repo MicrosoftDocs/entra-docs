@@ -7,7 +7,7 @@ author: barclayn
 manager: amycolannino
 ms.author: barclayn
 ms.topic: concept-article
-ms.date: 06/19/2024
+ms.date: 12/19/2024
 # Customer intent: As a Microsoft Entra tenant administrator, I want to enable the Face Check add-on in my tenant, so that I can enable the developers in my organization to use Face Check with Entra Verified ID.
 
 ---
@@ -16,7 +16,7 @@ ms.date: 06/19/2024
 
 Face Check with Microsoft Entra Verified ID pricing is based on unique Face Check verifications performed by the verifying authority during the billing cycle. There are two options to enable Face Check add-on on a workforce tenant:
 
-- Enable as an Entra Suite trial or paid subscriber. The Entra Suite license includes eight Face Check verifications per license per month.
+- Enable as a Microsoft Entra Suite trial or paid subscriber. The Microsoft Entra Suite license includes eight Face Check verifications per license per month.
 
 - Or enable in pay-as-you-go where your Azure subscription received charges per each individual Face Check verification performed from your tenant.
 
