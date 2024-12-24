@@ -87,7 +87,7 @@ To undo your approval for an access request that you previously approved, you ca
 
 **Prerequisite role:** Approver
 
-1. In MyAccess, select Approvals > History.
+1. In MyAccess, select **Approvals** > **History**.
 
 2. Select an approved request that you'd like to revoke the decision for.
 
