@@ -5,7 +5,7 @@ author: HULKsmashGithub
 ms.topic: reference
 ms.author: jayrusso
 manager: amycolannino
-ms.date: 12/20/2024
+ms.date: 12/23/2024
 ms.service: global-secure-access
 
 
@@ -44,7 +44,7 @@ In addition, NRPT rules that were configured and deleted in older versions of Wi
 As a mitigation:
 1. If the registry key `HKLM\Software\Policies\Microsoft\Windows NT\DNSClient\DnsPolicyConfig` exists on the end-user device, configure a GPO to apply NRPT rules.
 1. To find which GPOs are configured with NRPT rules:
-    1. Use `gpresult`.
+    1. Run `gpresult /h GPReport.html` on the end-user device and look for an NRPT configuration.
     2. Run the following script that detects the paths of all `registry.pol` files in `sysvol` that contain NRPT rules.
 > [!NOTE]
 > Remember to change the `sysvolPath` variable to meet the configuration of your network.
@@ -186,7 +186,7 @@ If there's a connection error to the cloud service, the client falls back to eit
 #### Geolocation of source IP address
 For network traffic that is tunneled to the cloud service, the application server (website) detects the connection's source IP as the edge's IP address (and not as the user-device's IP address). This scenario might affect services that rely on geolocation.
 > [!TIP]
-> For Office 365 and Entra to detect the device's true source IP, consider enabling [Source IP restoration](how-to-source-ip-restoration.md).
+> For Office 365 and Microsoft Entra to detect the device's true source IP, consider enabling [Source IP restoration](how-to-source-ip-restoration.md).
 
 #### Virtualization support with UTM
 - If the network is in **bridged** mode and Global Secure Access client is installed on the host machine:
@@ -238,7 +238,7 @@ Known limitations for access controls include:
     - Ensure that Source IP Restoration supports the traffic. If not, don't send the relevant traffic through Global Secure Access.
 - At this time, connecting through the Global Secure Access client is required to acquire Private Access traffic.
 - Data plane protection capabilities are in preview (authentication plane protection is generally available).
-- If you enabled universal tenant restrictions and you access the Microsoft Entra admin center for a tenant on the allowlist, you might see an "Access denied" error. To correct this error, add the following feature flag to the Microsoft Entra admin center:
+- If you enabled Universal Tenant Restrictions and you access the Microsoft Entra admin center for a tenant on the allowlist, you might see an "Access denied" error. To correct this error, add the following feature flag to the Microsoft Entra admin center:
     - `?feature.msaljs=true&exp.msaljsexp=true`
     - For example, you work for Contoso. Fabrikam, a partner tenant, is on the allowlist. You might see the error message for the Fabrikam tenant's Microsoft Entra admin center.
         - If you received the "access denied" error message for the URL `https://entra.microsoft.com/`, then add the feature flag as follows:   `https://entra.microsoft.com/?feature.msaljs%253Dtrue%2526exp.msaljsexp%253Dtrue#home`
