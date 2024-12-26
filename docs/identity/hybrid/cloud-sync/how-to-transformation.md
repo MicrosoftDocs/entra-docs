@@ -4,7 +4,7 @@ description: This article describes how to use transformations to alter the defa
 author: billmath
 ms.author: billmath
 manager: amycolannino
-ms.date: 04/26/2024
+ms.date: 12/17/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: hybrid-cloud-sync

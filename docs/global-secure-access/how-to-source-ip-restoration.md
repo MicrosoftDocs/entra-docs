@@ -1,9 +1,9 @@
 ---
-title: Enable source IP restoration with the Global Secure Access
+title: Enable Source IP Restoration with Global Secure Access
 description: Learn how to enable source IP restoration to ensure the source IP matches in downstream resources.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 05/09/2024
+ms.date: 12/23/2024
 ms.author: kenwith
 author: kenwith
 manager: amycolannino
@@ -28,14 +28,7 @@ Source IP restoration in Global Secure Access allows backward compatibility for 
 
 ### Known limitations
 
-When source IP restoration is enabled, you can only see the source IP. The IP address of the Global Secure Access service isn't visible. If you want to see the Global Secure Access service IP address, disable source IP restoration.
-
-Source IP restoration is currently supported for only [Microsoft traffic](/microsoft-365/enterprise/urls-and-ip-address-ranges), like SharePoint Online, Exchange Online, Teams, and Microsoft Graph. If you have any IP location-based Conditional Access policies for non-Microsoft resources protected by continuous access evaluation (CAE), these policies aren’t evaluated at the resource as the source IP address isn’t known to the resource. 
-
-If you're using CAE’s [strict location enforcement](../identity/conditional-access/concept-continuous-access-evaluation-strict-enforcement.md), users are blocked despite being in a trusted IP range. To resolve this condition, do one of the following recommendations:
-
-- If you have IP location-based Conditional Access policies targeting non-Microsoft resources, don't enable strict location enforcement.  
-- Ensure that the traffic is supported by Source IP Restoration, or don't send the relevant traffic through Global Secure Access.
+[!INCLUDE [known-limitations-include](../includes/known-limitations-include.md)]
 
 ## Enable Global Secure Access signaling for Conditional Access
 
