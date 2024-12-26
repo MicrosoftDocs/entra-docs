@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: conceptual
-ms.date: 08/23/2024
+ms.date: 12/19/2024
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
@@ -17,12 +17,13 @@ ms.custom: it-pro
 
 You can create user or device attribute-based rules to enable membership for dynamic membership groups in Microsoft Entra ID, part of Microsoft Entra. You can add and remove dynamic membership groups automatically using membership rules based on member attributes. In Microsoft Entra, a single tenant can have a maximum of 15,000 dynamic membership groups.
 
-This article details the properties and syntax to create rules for dynamic membership groups based on users or devices. 
+This article details the properties and syntax to create rules for dynamic membership groups based on users or devices.
 
 > [!NOTE]
 > Security groups can be used for either devices or users, but Microsoft 365 groups can include only users. 
 
 When the attributes of a user or a device change, the system evaluates all rules for dynamic membership groups in a directory to see if the change would trigger any group adds or removes. If a user or device satisfies a rule on a group, they're added as a member of that group. If they no longer satisfy the rule, they're removed. You can't manually add or remove a member of a dynamic membership group.
+
 - You can create a dynamic membership groups for users or devices, but you can't create a rule that contains both users and devices.
 - You can't create a device membership group based on the user attributes of the device owner. Device membership rules can reference only device attributes.
 
@@ -33,6 +34,9 @@ When the attributes of a user or a device change, the system evaluates all rules
 ## Rule builder in the Azure portal
 
 Microsoft Entra ID provides a rule builder to create and update your important rules more quickly. The rule builder supports the construction of up to five expressions. The rule builder makes it easier to form a rule with a few simple expressions, however, it can't be used to reproduce every rule. If the rule builder doesn't support the rule you want to create, you can use the text box.
+
+>[!IMPORTANT]
+> The rule builder is available only for user-based dynamic membership groups. Device-based dynamic membership groups can be created only using the text box.
 
 Here are some examples of advanced rules or syntax that require the use of the text box:
 
@@ -59,7 +63,7 @@ The following example illustrates a properly constructed membership rule with a 
 user.department -eq "Sales"
 ```
 
-Parentheses are optional for a single expression. The total length of the body of your membership rule can't exceed 3072 characters.
+Parentheses are optional for a single expression. The total length of the body of your membership rule can't exceed 3,072 characters.
 
 ## Constructing the body of a membership rule
 
@@ -82,6 +86,7 @@ There are three types of properties that can be used to construct a membership r
 
 
 The following are the user properties that you can use to create a single expression.
+
 
 ### Properties of type boolean
 
@@ -141,6 +146,10 @@ For the properties used for device rules, see [Rules for devices](#rules-for-dev
 ## Supported expression operators
 
 The following table lists all the supported operators and their syntax for a single expression. Operators can be used with or without the hyphen (-) prefix. The **Contains** operator does partial string matches but not item in a collection matches.
+
+
+>[!CAUTION]
+> For best results, minimize the use of MATCH or CONTAINS as much as possible. [Create simpler, more efficient rules for dynamic membership groups](groups-dynamic-rule-more-efficient.md) provides guidance on how to create rules that result in better dynamic group processing times. The [''memberOf''](groups-dynamic-rule-member-of.md) operator is in preview and should be used with caution, as it has some limitations.
 
 | Operator | Syntax |
 | --- | --- |
@@ -202,7 +211,7 @@ The values used in an expression can consist of several types, including:
 When specifying a value within an expression, it's important to use the correct syntax to avoid errors. Some syntax tips are:
 
 - Double quotes are optional unless the value is a string.
-- Regex and string operations are not case sensitive.
+- Regex and string operations aren't case sensitive.
 - Ensure that property names are correctly formatted as shown, as they're case sensitive.
 - When a string value contains double quotes, both quotes should be escaped using the \` character, for example, user.department -eq \`"Sales\`" is the proper syntax when "Sales" is the value. Single quotes should be escaped by using two single quotes instead of one each time.
 - You can also perform Null checks, using null as a value, for example, `user.department -eq null`.
@@ -368,7 +377,7 @@ device.objectId -ne null
 
 ## Extension properties and custom extension properties
 
-Extension attributes and custom extension properties are supported as string properties in rules for dynamic membership groups. [Extension attributes](/graph/api/resources/onpremisesextensionattributes) can be synced from on-premises Window Server Active Directory or updated using Microsoft Graph and take the format of "ExtensionAttributeX", where X equals 1 - 15. Multi-value extension properties aren't supported in rules for dynamic membership groups. 
+Extension attributes and custom extension properties are supported as string properties in rules for dynamic membership groups. [Extension attributes](/graph/api/resources/onpremisesextensionattributes) can be synced from on-premises Window Server Active Directory or updated using Microsoft Graph and take the format of "ExtensionAttributeX," where X equals 1 - 15. Multi-value extension properties aren't supported in rules for dynamic membership groups. 
 
 Here's an example of a rule that uses an extension attribute as a property:
 
@@ -388,6 +397,7 @@ user.extension_c272a57b722d4eb29bfe327874ae79cb_OfficeNumber -eq "123"
 ```
 
 Custom extension properties are also called directory or Microsoft Entra extension properties.
+
 
 The custom property name can be found in the directory by querying a user's property using Graph Explorer and searching for the property name. Also, you can now select **Get custom extension properties** link in the dynamic membership groups rule builder to enter a unique app ID and receive the full list of custom extension properties to use when creating a rule for dynamic membership groups. This list can also be refreshed to get any new custom extension properties for that app. Extension attributes and custom extension properties must be from applications in your tenant.  
 

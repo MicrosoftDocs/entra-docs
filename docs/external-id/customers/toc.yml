@@ -9,7 +9,9 @@ items:
     - name: Get started guide walkthrough
       href: quickstart-get-started-guide.md
     - name: Use the Visual Studio Code extension
-      href: visual-studio-code-extension.md
+      href: quickstart-get-started-guide.md
+    - name: Use the Visual Studio Connected Service
+      href: visual-studio-connected-service.md
     - name: Use Azure App Service built-in authentication
       href: /azure/app-service/scenario-secure-app-authentication-app-service?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-configuration
     - name: Use Power Pages and External ID
@@ -302,6 +304,12 @@ items:
       href: concept-authentication-methods-customers.md
     - name: Multifactor authentication (MFA)
       href: concept-multifactor-authentication-customers.md
+    - name: Custom authentication extensions
+      items:
+        - name: Overview
+          href: ~/identity-platform/custom-extension-overview.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+        - name: Custom claims provider
+          href: ~/identity-platform/custom-claims-provider-overview.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Native authentication
       items:
         - name: Native authentication
@@ -318,8 +326,6 @@ items:
       href: concept-custom-url-domain.md
     - name: Get started guide features explained
       href: concept-guide-explained.md
-    - name: Adding your own business logic
-      href: concept-custom-extensions.md
     - name: Security and governance
       href: concept-security-customers.md
     - name: Frequently asked questions (FAQ)
@@ -407,24 +413,30 @@ items:
           href: how-to-custom-url-domain.md
         - name: Configure optional claims
           href: /entra/identity-platform/optional-claims?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json 
-        - name: Advanced extensions
+        - name: Custom authentication extensions
           items:
-            - name: Add logic to attribute collection
+            - name: Custom claims provider
               items:
+                - name: Create REST API for token issuance event
+                  href: ~/identity-platform/custom-extension-tokenissuancestart-setup.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Configure a custom claims provider token issuance event
+                  href: ~/identity-platform/custom-extension-tokenissuancestart-configuration.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Configure a SAML app to call a custom claims provider
+                  href: ~/identity-platform/custom-extension-configure-saml-app.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Custom claims provider reference
+                  href: ~/identity-platform/custom-claims-provider-reference.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+            - name: Attribute collection
+              items: 
                 - name: Create attribute collection start and submit events
                   href: ~/identity-platform/custom-extension-attribute-collection.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: OnAttributeCollectionStart event reference
                   href: ~/identity-platform/custom-extension-OnAttributeCollectionStart-reference.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: OnAttributeCollectionSubmit event reference
                   href: ~/identity-platform/custom-extension-OnAttributeCollectionSubmit-reference.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-            - name: Add claims from external systems
-              items:
-                - name: About custom authentication extensions
-                  href: ~/identity-platform/custom-extension-overview.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-                - name: Token issuance start event
-                  href: ~/identity-platform/custom-extension-tokenissuancestart-configuration.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-                - name: Troubleshoot your custom claims provider API
-                  href: ~/identity-platform/custom-extension-troubleshoot.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+            - name: Configure a custom email provider for one time code send events
+              href: ~/identity-platform/custom-extension-email-otp-get-started.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+            - name: Troubleshoot your custom authentication extension
+              href: ~/identity-platform/custom-extension-troubleshoot.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Secure
       items:
       - name: Multifactor authentication

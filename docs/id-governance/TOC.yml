@@ -111,8 +111,6 @@
       items:
       - name: Migrate IAM scenarios to Microsoft Entra ID
         href: /microsoft-identity-manager/migrate-entra-id
-      - name: Migrate from the FIM connector
-        href: /microsoft-identity-manager/migrate-from-the-fim-connector-for-azure-active-directory
     - name: Migrate from SAP IDM
       items:
       - name: Migrate from SAP IDM
@@ -281,7 +279,9 @@
       - name: Hide or delete
         href: entitlement-management-access-package-edit.md
       - name: Assign Microsoft Entra Roles (Preview)
-        href: entitlement-management-roles.md  
+        href: entitlement-management-roles.md
+      - name: Suggested access packages in MyAccess (Preview)
+        href: entitlement-management-suggested-access-packages.md   
     - name: Approvers
       items:
       - name: Approve requests

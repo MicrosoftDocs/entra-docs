@@ -117,7 +117,7 @@ If you're a public client app developer who's using MSAL:
 
 You can override the redirect URI by using the `RedirectUri` property (for example, if you use brokers). Here are some examples of redirect URIs for that scenario:
 
-- `RedirectUriOnAndroid` = "msauth-5a434691-ccb2-4fd1-b97b-b64bcfbc03fc://com.microsoft.identity.client.sample";
+- `RedirectUriOnAndroid` = "msauth-00001111-aaaa-2222-bbbb-3333cccc4444://com.microsoft.identity.client.sample";
 - `RedirectUriOnIos` = $"msauth.{Bundle.ID}://auth";
 
 For more Android details, see [Brokered auth in Android](msal-android-single-sign-on.md).
