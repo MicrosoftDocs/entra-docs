@@ -34,7 +34,7 @@ The **Status** column is the most important information and shows the most sever
 | completed-\*-warnings |The run completed, but some data isn't in the expected state. If you have errors, then this message is only a symptom. Until you address the errors, you shouldn't investigate warnings. |
 | success |No issues. |
 
-When you select a row, the bottom updates to show the details of that run. To the far left of the bottom, you might have a list saying **Step #**. This list only appears if you have multiple domains in your forest where each domain is represented by a step. The domain name can be found under the heading **Partition**. Under **Synchronization Statistics**, you can find more information about the number of changes that were processed. You can select the links to get a list of the changed objects. If you have objects with errors, those errors show up under **Synchronization Errors**.
+When you select a row, the bottom updates to show the details of that run. To the far left of the bottom, you might have a list saying **Step #**. This list only appears if you have multiple domains in your forest where each domain is represented by a step. The domain name can be found under the heading **Partition**. Under **Synchronization Statistics**, you can find more information about the number of changes that were processed. You can select the links to get a list of the changed objects. If you have objects with errors, the errors show up under **Synchronization Errors**.
 
 For more information, see [troubleshoot an object that isn't synchronizing](tshoot-connect-object-not-syncing.md)
 
