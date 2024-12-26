@@ -46,7 +46,7 @@ If this was unexpected, then investigate and take corrective actions. To see whi
 2. Go to **Connectors**.
 3. Select the Connector with type **Microsoft Entra ID**.
 4. Under **Actions** to the right, select **Search Connector Space**.
-5. In the pop-up under **Scope**, select **Disconnected Since** and pick a time in the past. Click **Search**. This page provides a view of all objects about to be deleted. By clicking each item, you can get additional information about the object. You can also click **Column Setting** to add additional attributes to be visible in the grid.
+5. In the pop-up under **Scope**, select **Disconnected Since** and pick a time in the past. Select **Search**. This page provides a view of all objects about to be deleted. By selecting each item, you can get additional information about the object. You can also select **Column Setting** to add additional attributes to be visible in the grid.
 
 ![Search Connector Space](./media/how-to-connect-sync-feature-prevent-accidental-deletes/searchcs.png)
 
