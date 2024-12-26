@@ -8,7 +8,7 @@ ms.assetid: b29c1790-37a3-470f-ab69-3cee824d220d
 ms.service: entra-id
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.date: 12/04/2024
+ms.date: 12/26/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
