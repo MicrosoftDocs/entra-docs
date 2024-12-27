@@ -28,7 +28,7 @@ The **Status** column is the most important information and shows the most sever
 
 | Status | Comment |
 | --- | --- |
-| stopped-\* |The run couldn'tcomplete. For example, if the remote system is down and can't be contacted. |
+| stopped-\* |The run couldn't complete. For example, if the remote system is down and can't be contacted. |
 | stopped-error-limit |There are more than 5,000 errors. The run was automatically stopped due to the large number of errors. |
 | completed-\*-errors |The run completed, but there are errors (fewer than 5,000) that should be investigated. |
 | completed-\*-warnings |The run completed, but some data isn't in the expected state. If you have errors, then this message is only a symptom. Until you address the errors, you shouldn't investigate warnings. |
