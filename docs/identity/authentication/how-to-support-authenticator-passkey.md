@@ -1,6 +1,6 @@
 ---
 title: Support passkeys in Authenticator in your Microsoft Entra ID tenant
-description: Support passkeys in Microsoft Authenticator in your Microsoft Entra ID tenant.
+description: Learn how to support passkeys in Microsoft Authenticator in your Microsoft Entra ID tenant.
 
 ms.service: entra-id 
 ms.subservice: authentication
@@ -26,7 +26,7 @@ Passkeys on Android are used only from the profile where they're stored. If a pa
 
 ## Workarounds
 
-Use the following workarounds 
+Use the following workarounds for Authenticator passkey issues.
 
 ### An authentication strength Conditional Access policy loop
 
@@ -38,9 +38,9 @@ Users can get in a loop when they try to add a passkey in Authenticator if a Con
 
 The policy forces targeted users to use a passkey to sign in to all cloud applications, which includes the Authenticator app. It requires users to use a passkey when they try to add a passkey in Authenticator on either Android or iOS.
 
-There are a couple workarounds:
+Here are some workarounds:
 
-- You can [filter for applications](~/identity/conditional-access/concept-filter-for-applications.md) and transition the policy target from **All resources (formerly 'All cloud apps')** to specific applications. Start with a review of applications that are used in your tenant, and use filters to tag Authenticator and other applications.
+- You can [filter for applications](~/identity/conditional-access/concept-filter-for-applications.md) and transition the policy target from **All resources (formerly 'All cloud apps')** to specific applications. Start with a review of applications that are used in your tenant. Use filters to tag Authenticator and other applications.
 - To further reduce support costs, you can run an internal campaign to help users adopt passkeys before you enforce them. When you're ready to enforce passkey usage, create two Conditional Access policies:
 
   - A policy for mobile operating system (OS) versions
@@ -48,23 +48,23 @@ There are a couple workarounds:
 
   Require a different authentication strength for each policy, and configure other policy settings listed in the following table. You can enable a [Temporary Access Pass (TAP)](howto-authentication-temporary-access-pass.md) for users or enable other authentication methods to help users register the passkey.
   
-  A TAP limits the time when users can register a passkey, and you can accept it only on mobile platforms where you allow passkey registration.
+  A TAP limits the time when users can register a passkey. You can accept it only on mobile platforms where you allow passkey registration.
 
   | Conditional Access policy | Desktop OS     | Mobile OS     |
   |---------------------------|----------------|---------------|
-  | Name              | Require a passkey in Authenticator to access a desktop OS | Require a TAP, a phishing-resistant credential, or any other specified authentication method to access a mobile OS |
-  | Condition         | Specific devices (desktop operating systems) | Specific devices (mobile operating systems) |
-  | Devices           | N/A                                          | Android, iOS            | 
-  | Exclude devices   | Android, iOS                                 | N/A                     |
-  | Targeted resource | All resources                               | All resources          |
-  | Grant control     | Authentication strength                      | Authentication strength<sup>1</sup> |
-  | Methods           | Passkey in Microsoft Authenticator |TAP, passkey in Microsoft Authenticator. |
+  | Name              | Require a passkey in Authenticator to access a desktop OS. | Require a TAP, a phishing-resistant credential, or any other specified authentication method to access a mobile OS. |
+  | Condition         | Specific devices (desktop operating systems). | Specific devices (mobile operating systems). |
+  | Devices           | N/A.                                          | Android, iOS.            | 
+  | Exclude devices   | Android, iOS.                                 | N/A.                     |
+  | Targeted resource | All resources.                               | All resources.          |
+  | Grant control     | Authentication strength.                      | Authentication strength.<sup>1</sup> |
+  | Methods           | Passkey in Microsoft Authenticator. |TAP, passkey in Microsoft Authenticator. |
   | Policy result     | Users who can't sign in with a passkey in Authenticator are directed to the **My Sign-ins** wizard mode. After registration, they're asked to sign in to Authenticator on their mobile device. | Users who sign in to Authenticator with a TAP or another allowed method can register a passkey directly in Authenticator. No loop occurs because the user meets the authentication requirements. |
 
   <sup>1</sup>For users to register new sign-in methods, your grant control for the mobile policy needs to match your Conditional Access policy to register [Security info](https://mysignins.microsoft.com/security-info).
 
->[!NOTE]
->With either workaround, users must also satisfy any Conditional Access policy that targets **Register security info** or they can't register the passkey. Additionally, if you have other conditions set up with the **All resources** policies, those conditions must be met when the passkey is registered.
+> [!NOTE]
+> With either workaround, users must also satisfy any Conditional Access policy that targets **Register security info** or they can't register the passkey. If you have other conditions set up with the **All resources** policies, those conditions must be met when the passkey is registered.
 
 ### Users who can't register passkeys because of Require approved client app or Require app protection policy Conditional Access grant controls
 
@@ -76,9 +76,9 @@ Users can't register passkeys in Authenticator if they're included in the follow
 
 The policy forces users to sign in to all cloud applications by using an app that supports [Microsoft Intune app protection policies](/mem/intune/apps/app-protection-policy). Authenticator doesn't support this policy on either Android or iOS.
 
-There are a couple workarounds:
+Here are some workarounds:
 
-- You can [filter for applications](~/identity/conditional-access/concept-filter-for-applications.md) and transition the policy target from **All resources (formerly 'All cloud apps')** to specific applications. Start with a review of applications that are used in your tenant and use filters to tag appropriate applications.
+- You can [filter for applications](~/identity/conditional-access/concept-filter-for-applications.md) and transition the policy target from **All resources (formerly 'All cloud apps')** to specific applications. Start with a review of applications that are used in your tenant. Use filters to tag appropriate applications.
 - You can use mobile device management (MDM) and the **Require device to be marked as compliant** control. Authenticator can satisfy this grant control if MDM fully manages the device and it's compliant. For example:
 
   - Condition: **All devices (Windows, Linux, macOS, Windows, Android)**
@@ -86,11 +86,11 @@ There are a couple workarounds:
   - Grant control: **Require approved client app**, or **Require app protection policy**, or **Require device to be marked as compliant**
 
 - You can grant users a temporary exemption from the Conditional Access policy. We recommend that you use one or more compensating controls:
-  - Only allow the exemption for a limited period of time. Communicate to the user when they're allowed to register a passkey. Remove the exemption after the time period, and direct users to call the help desk if they missed their time.
+  - Allow the exemption for only a limited period of time. Communicate to the user when they're allowed to register a passkey. Remove the exemption after the time period. Then direct users to call the help desk if they missed their time.
   - Use another Conditional Access policy to require that users register only from a specific network location or a compliant device.
 
->[!NOTE]
->With any proposed workaround, users must also satisfy any Conditional Access policy that targets **Register security info**, or they can't register the passkey. If you have other conditions set up with the **All resources** policies, they also must be met before users can register a passkey.
+> [!NOTE]
+> With any proposed workaround, users must also satisfy any Conditional Access policy that targets **Register security info** or they can't register the passkey. If you have other conditions set up with the **All resources** policies, they also must be met before users can register a passkey.
 
 ## Restrict Bluetooth usage to passkeys in Authenticator
 
