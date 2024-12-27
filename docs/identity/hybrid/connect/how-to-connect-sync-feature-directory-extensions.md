@@ -42,7 +42,7 @@ The installation shows the following attributes, which are valid candidates:
 * Multi-valued attributes: String, Binary
 
 > [!NOTE]
-> Not all features in Microsoft Entra ID support multi valued extension attributes. Please refer to the documentation of the feature in which you plan to use these attributes to confirm they are supported.
+> Not all features in Microsoft Entra ID support multi-valued extension attributes. Please refer to the documentation of the feature in which you plan to use these attributes to confirm they are supported.
 
 The list of attributes is read from the schema cache that's created during installation of Microsoft Entra Connect. If you have extended the Active Directory schema with additional attributes, you must [refresh the schema](how-to-connect-installation-wizard.md#refresh-directory-schema) before these new attributes are visible.
 
