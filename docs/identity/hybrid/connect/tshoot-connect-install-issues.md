@@ -21,7 +21,6 @@ Check which [Microsoft Entra Connect installation type](./how-to-connect-install
 However, if you don’t meet the express installation criteria and must do the custom installation then here are some best practices you can follow to avoid common issues. For the sake of simplicity only selective options are mentioned here:
 
 * Ensure you're an administrator on the machine on which you're installing Microsoft Entra Connect. Sign-in to the machine with same administrator credentials.
-
 * Let all the options to be default on the following page, except for “Use an existing SQL Server”, if you want to use existing SQL Server. Here are [more details](./how-to-connect-install-custom.md) about how to use custom installation options. 
 
     ![Use Existing SQL Server](media/tshoot-connect-install-issues/tshoot-connect-install-issues/useexistingsqlserver.png)
