@@ -4,7 +4,7 @@ description: The following document describes how the UserPrincipalName attribut
 author: billmath
 ms.subservice: hybrid-connect
 ms.author: billmath
-ms.date: 12/09/2024
+ms.date: 12/27/2024
 ms.topic: conceptual
 ms.service: entra-id
 manager: amycolannino

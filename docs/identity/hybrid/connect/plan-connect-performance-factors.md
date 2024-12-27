@@ -8,7 +8,7 @@ tags: azuread
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.topic: conceptual
-ms.date: 08/25/2024
+ms.date: 12/27/2024
 ms.reviewer: martincoetzer
 ms.author: billmath
 
