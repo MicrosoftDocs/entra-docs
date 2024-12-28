@@ -348,5 +348,5 @@ Follow these instructions to assign a role at application scope using the Micros
 ## Next steps
 
 - [List Microsoft Entra role assignments](view-assignments.md).
-- [Assign Microsoft Entra roles to users](manage-roles-portal.yml).
+- [Assign Microsoft Entra roles to users](/entra/identity/role-based-access-control/manage-roles-portal).
 - [Assign Microsoft Entra roles to groups](groups-assign-role.md)

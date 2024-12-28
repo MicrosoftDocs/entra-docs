@@ -59,7 +59,7 @@ A role assignment is a Microsoft Entra resource that attaches a *role definition
 - Role definition - A collection of permissions. 
 - Scope - A way to constrain where those permissions are applicable.
 
-You can [create role assignments](manage-roles-portal.yml) and [list the role assignments](view-assignments.md) using the Microsoft Entra admin center, [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview), or Microsoft Graph API. Azure CLI is not supported for Microsoft Entra role assignments.
+You can [create role assignments](/entra/identity/role-based-access-control/manage-roles-portal) and [list the role assignments](view-assignments.md) using the Microsoft Entra admin center, [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview), or Microsoft Graph API. Azure CLI is not supported for Microsoft Entra role assignments.
 
 The following diagram shows an example of a role assignment. In this example, Chris has been assigned the App Registration Administrator custom role at the scope of the Contoso Widget Builder app registration. The assignment grants Chris the permissions of the App Registration Administrator role for only this specific app registration.
 
@@ -100,7 +100,7 @@ For more information, see [Assign Microsoft Entra roles at different scopes](ass
 
 Microsoft Entra ID provides multiple options for assigning roles:
 
-- You can assign roles to users directly, which is the default way to assign roles. Both built-in and custom Microsoft Entra roles can be assigned to users, based on access requirements. For more information, see [Assign Microsoft Entra roles to users](manage-roles-portal.yml).
+- You can assign roles to users directly, which is the default way to assign roles. Both built-in and custom Microsoft Entra roles can be assigned to users, based on access requirements. For more information, see [Assign Microsoft Entra roles to users](/entra/identity/role-based-access-control/manage-roles-portal).
 - With Microsoft Entra ID P1, you can create role-assignable groups and assign roles to these groups. Assigning roles to a group instead of individuals allows for easy addition or removal of users from a role and creates consistent permissions for all members of the group. For more information, see [Assign Microsoft Entra roles to groups](groups-assign-role.md).
 - With Microsoft Entra ID P2, you can use Microsoft Entra Privileged Identity Management (Microsoft Entra PIM) to provide just-in-time access to roles. This feature allows you to grant time-limited access to a role to users who require it, rather than granting permanent access. It also provides detailed reporting and auditing capabilities. For more information, see [Assign Microsoft Entra roles in Privileged Identity Management](~/id-governance/privileged-identity-management/pim-how-to-add-role-to-user.md).
 
@@ -111,7 +111,5 @@ Using built-in roles in Microsoft Entra ID is free. Using custom roles require a
 ## Next steps
 
 - [Understand Microsoft Entra roles](concept-understand-roles.md)
-- [Assign Microsoft Entra roles to users](manage-roles-portal.yml)
-- [Create and assign a custom role in Microsoft Entra ID](custom-create.yml)
-- [Assign Microsoft Entra roles to users](manage-roles-portal.yml)
+- [Assign Microsoft Entra roles to users](/entra/identity/role-based-access-control/manage-roles-portal)
 - [Create and assign a custom role in Microsoft Entra ID](custom-create.yml)
