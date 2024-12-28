@@ -443,7 +443,7 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 
 ## Next steps
 
-- [Assign Microsoft Entra roles to users](manage-roles-portal.yml)
+- [Assign Microsoft Entra roles to users](/entra/identity/role-based-access-control/manage-roles-portal)
 - [Assign Microsoft Entra roles at different scopes](assign-roles-different-scopes.md)
 - [Create and assign a custom role in Microsoft Entra ID](custom-create.yml)
 - [Microsoft Entra built-in roles](permissions-reference.md)
