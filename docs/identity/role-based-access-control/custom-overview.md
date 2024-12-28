@@ -31,9 +31,9 @@ Both systems contain similarly used role definitions and role assignments. Howev
 Microsoft Entra ID supports two types of roles definitions:
 
 * [Built-in roles](./permissions-reference.md)
-* [Custom roles](./custom-create.yml)
+* [Custom roles](/entra/identity/role-based-access-control/custom-create)
 
-Built-in roles are out of box roles that have a fixed set of permissions. These role definitions cannot be modified. There are many [built-in roles](./permissions-reference.md) that Microsoft Entra ID supports, and the list is growing. To round off the edges and meet your sophisticated requirements, Microsoft Entra ID also supports [custom roles](./custom-create.yml). Granting permission using custom Microsoft Entra roles is a two-step process that involves creating a custom role definition and then assigning it using a role assignment. A custom role definition is a collection of permissions that you add from a preset list. These permissions are the same permissions used in the built-in roles.  
+Built-in roles are out of box roles that have a fixed set of permissions. These role definitions cannot be modified. There are many [built-in roles](./permissions-reference.md) that Microsoft Entra ID supports, and the list is growing. To round off the edges and meet your sophisticated requirements, Microsoft Entra ID also supports [custom roles](/entra/identity/role-based-access-control/custom-create). Granting permission using custom Microsoft Entra roles is a two-step process that involves creating a custom role definition and then assigning it using a role assignment. A custom role definition is a collection of permissions that you add from a preset list. These permissions are the same permissions used in the built-in roles.  
 
 Once you’ve created your custom role definition (or using a built-in role), you can assign it to a user by creating a role assignment. A role assignment grants the user the permissions in a role definition at a specified scope. This two-step process allows you to create a single role definition and assign it many times at different scopes. A scope defines the set of Microsoft Entra resources the role member has access to. The most common scope is organization-wide (org-wide) scope. A custom role can be assigned at org-wide scope, meaning the role member has the role permissions over all resources in the organization. A custom role can also be assigned at an object scope. An example of an object scope would be a single application. The same role can be assigned to one user over all applications in the organization and then to another user with a scope of only the Contoso Expense Reports app.  
 
@@ -112,4 +112,4 @@ Using built-in roles in Microsoft Entra ID is free. Using custom roles require a
 
 - [Understand Microsoft Entra roles](concept-understand-roles.md)
 - [Assign Microsoft Entra roles to users](/entra/identity/role-based-access-control/manage-roles-portal)
-- [Create and assign a custom role in Microsoft Entra ID](custom-create.yml)
+- [Create and assign a custom role in Microsoft Entra ID](/entra/identity/role-based-access-control/custom-create)
