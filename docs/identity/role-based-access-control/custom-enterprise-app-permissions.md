@@ -224,5 +224,5 @@ To delegate create, read, update, and delete (CRUD) permissions for updating the
 
 ## Next steps
 
-- [Create and assign a custom role in Microsoft Entra ID](custom-create.yml)
+- [Create and assign a custom role in Microsoft Entra ID](/entra/identity/role-based-access-control/custom-create)
 - [List role assignments](view-assignments.md)
