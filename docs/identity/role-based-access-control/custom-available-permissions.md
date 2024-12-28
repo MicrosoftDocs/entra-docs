@@ -167,5 +167,5 @@ Grants the same permissions as microsoft.directory/applications/permissions/upda
 
 ## Next steps
 
-- [Create and assign a custom role in Microsoft Entra ID](custom-create.yml)
+- [Create and assign a custom role in Microsoft Entra ID](/entra/identity/role-based-access-control/custom-create)
 - [List role assignments](view-assignments.md)

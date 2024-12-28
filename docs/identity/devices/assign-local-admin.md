@@ -36,7 +36,7 @@ By adding users to the Microsoft Entra Joined Device Local Administrator role, y
 
 To view and update the membership of an [administrator role](~/identity/role-based-access-control/permissions-reference.md) role, see:
 
-- [View all members of an administrator role in Microsoft Entra ID](~/identity/role-based-access-control/manage-roles-portal.yml)
+- [View all members of an administrator role in Microsoft Entra ID](/entra/identity/role-based-access-control/manage-roles-portal)
 - [Assign a user to administrator roles in Microsoft Entra ID](~/fundamentals/how-subscriptions-associated-directory.yml)
 
 ## Manage the Microsoft Entra Joined Device Local Administrator role
