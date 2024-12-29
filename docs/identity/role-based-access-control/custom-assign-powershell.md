@@ -15,7 +15,7 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 # Assign custom roles with resource scope using PowerShell in Microsoft Entra ID
 
-This article describes how to create a role assignment at organization-wide scope in Microsoft Entra ID. Assigning a role at organization-wide scope grants access across the Microsoft Entra organization. To create a role assignment with a scope of a single Microsoft Entra resource, see [Create and assign a custom role in Microsoft Entra ID](custom-create.yml). This article uses the [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation) module.
+This article describes how to create a role assignment at organization-wide scope in Microsoft Entra ID. Assigning a role at organization-wide scope grants access across the Microsoft Entra organization. To create a role assignment with a scope of a single Microsoft Entra resource, see [Create and assign a custom role in Microsoft Entra ID](/entra/identity/role-based-access-control/custom-create). This article uses the [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation) module.
 
 For more information about Microsoft Entra roles, see [Microsoft Entra built-in roles](permissions-reference.md).
 

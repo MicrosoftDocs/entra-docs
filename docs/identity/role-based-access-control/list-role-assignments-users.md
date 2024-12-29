@@ -91,5 +91,5 @@ Follow these steps to list Microsoft Entra roles assigned to a user using the Mi
 ## Next steps
 
 * [List Microsoft Entra role assignments](view-assignments.md).
-* [Assign Microsoft Entra roles to users](manage-roles-portal.yml).
+* [Assign Microsoft Entra roles to users](/entra/identity/role-based-access-control/manage-roles-portal).
 * [Assign Microsoft Entra roles to groups](groups-assign-role.md)
