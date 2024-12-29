@@ -1,6 +1,6 @@
 ---
-title: Remove role assignments in Microsoft Entra ID
-description: Remove role assignments in Microsoft Entra ID using the Microsoft Entra admin center, PowerShell, or Microsoft Graph API.
+title: Remove Microsoft Entra role assignments
+description: Remove role assignments in Microsoft Entra ID using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API.
 
 author: rolyon
 manager: amycolannino
@@ -15,9 +15,11 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 ---
 
-# Remove role assignments in Microsoft Entra ID
+# Remove Microsoft Entra role assignments
 
-This article describes how an IT admin can remove Microsoft Entra role assignments. In the Microsoft Entra admin center, you can remove both direct and indirect role assignments to a user. If a user is assigned a role by a group membership, remove the user from the group to remove the role assignment.
+This article describes how to remove Microsoft Entra role assignments using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API.
+
+In the Microsoft Entra admin center, you can remove both direct and indirect role assignments to a user. If a user is assigned a role by a group membership, remove the user from the group to remove the role assignment.
 
 ## Prerequisites
 
@@ -27,6 +29,8 @@ This article describes how an IT admin can remove Microsoft Entra role assignmen
 - Admin consent when using Graph explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
+
+## Remove Microsoft Entra role assignments
 
 # [Admin center](#tab/admin-center)
 

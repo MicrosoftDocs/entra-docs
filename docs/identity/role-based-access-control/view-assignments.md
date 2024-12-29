@@ -1,6 +1,6 @@
 ---
 title: List Microsoft Entra role assignments
-description: You can now see and manage members of a Microsoft Entra administrator role in the Microsoft Entra admin center.
+description: Learn how to list Microsoft Entra role assignments using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API.
 
 author: rolyon
 manager: amycolannino
@@ -15,9 +15,9 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 # List Microsoft Entra role assignments
 
-Role assignments contain information linking a given security principal (a user, group, or application service principal) to a role definition. Listing users, groups, and assigned roles are default user permissions.
+This article describes how to list roles you have assigned in Microsoft Entra ID using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API.
 
-This article describes how to list roles you have assigned in Microsoft Entra ID.
+Role assignments contain information linking a given security principal (a user, group, or application service principal) to a role definition. Listing users, groups, and assigned roles are default user permissions.
 
 ## Scopes
 
@@ -32,6 +32,8 @@ In Microsoft Entra ID, roles can be assigned at different scopes.
 - Admin consent when using Graph explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
+
+## List Microsoft Entra role assignments
 
 # [Admin center](#tab/admin-center)
 

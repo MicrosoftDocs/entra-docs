@@ -1,6 +1,6 @@
 ---
 title: Create a role-assignable group in Microsoft Entra ID
-description: Learn how to a role-assignable group in Microsoft Entra ID using the Microsoft Entra admin center, PowerShell, or Microsoft Graph API.
+description: Learn how to a role-assignable group in Microsoft Entra ID using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API.
 
 author: rolyon
 manager: amycolannino
@@ -17,9 +17,9 @@ ms.custom: it-pro, has-azure-ad-ps-ref
 
 # Create a role-assignable group in Microsoft Entra ID
 
-With Microsoft Entra ID P1 or P2, you can create [role-assignable groups](groups-concept.md) and assign Microsoft Entra roles to these groups. You create a new role-assignable group by setting **Microsoft Entra roles can be assigned to the group** to **Yes** or by setting the `isAssignableToRole` property set to `true`. A role-assignable group can't be a part of a [dynamic membership group](~/identity/users/groups-dynamic-membership.md) type. In Microsoft Entra, a single tenant can have a maximum of 500 role-assignable groups.
+This article describes how to create a role-assignable group using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API.
 
-This article describes how to create a role-assignable group using the Microsoft Entra admin center, PowerShell, or Microsoft Graph API.
+With Microsoft Entra ID P1 or P2, you can create [role-assignable groups](groups-concept.md) and assign Microsoft Entra roles to these groups. You create a new role-assignable group by setting **Microsoft Entra roles can be assigned to the group** to **Yes** or by setting the `isAssignableToRole` property set to `true`. A role-assignable group can't be a part of a [dynamic membership group](~/identity/users/groups-dynamic-membership.md) type. In Microsoft Entra, a single tenant can have a maximum of 500 role-assignable groups.
 
 ## Prerequisites
 
@@ -30,6 +30,8 @@ This article describes how to create a role-assignable group using the Microsoft
 - Admin consent when using Graph explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
+
+## Create a role-assignable group
 
 # [Admin center](#tab/admin-center)
 

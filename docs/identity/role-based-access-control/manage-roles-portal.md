@@ -1,6 +1,6 @@
 ---
 title: Assign Microsoft Entra roles
-description: Learn how to grant access to users and group in Microsoft Entra ID by assigning Microsoft Entra roles.
+description: Learn how to grant access to users and groups in Microsoft Entra ID by assigning Microsoft Entra roles using the Microsoft Entra admin center, Microsoft Graph PowerShell, Microsoft Graph API.
 author: rolyon
 ms.author: rolyon
 manager: amycolannino
@@ -14,9 +14,9 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 # Assign Microsoft Entra roles
 
-To grant access to users in Microsoft Entra ID, you assign Microsoft Entra roles. To simplify role management, you can also assign Microsoft Entra roles to [role-assignable groups](groups-concept.md) instead of individuals. A role is a collection of permissions.
+This article describes how to grant access to users and groups in Microsoft Entra ID by assigning Microsoft Entra roles using the Microsoft Entra admin center, Microsoft Graph PowerShell, Microsoft Graph API.
 
-This article describes how to assign Microsoft Entra roles using the Microsoft Entra admin center, PowerShell, Microsoft Graph API.
+To grant access to users in Microsoft Entra ID, you assign Microsoft Entra roles. To simplify role management, you can also assign Microsoft Entra roles to [role-assignable groups](groups-concept.md) instead of individuals. A role is a collection of permissions.
 
 ## Prerequisites
 
@@ -27,13 +27,15 @@ This article describes how to assign Microsoft Entra roles using the Microsoft E
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
+## Assign Microsoft Entra roles
+
 # [Admin center](#tab/admin-center)
 
 Follow these steps to assign Microsoft Entra roles using the Microsoft Entra admin center. Your experience will be different depending on whether you have [Microsoft Entra Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md) enabled.
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-### Assign a role
+### Assign a role to a user
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
@@ -146,7 +148,7 @@ Follow these steps to assign Microsoft Entra roles using PowerShell.
     $user = Get-MgUser -Filter "userPrincipalName eq 'johndoe@contoso.com'"
     ```
 
-### Assign a role
+### Assign a role to a user
 
 1. Use [Get-MgRoleManagementDirectoryRoleDefinition](/powershell/module/microsoft.graph.identity.governance/get-mgrolemanagementdirectoryroledefinition?view=graph-powershell-1.0&preserve-view=true) to get the role you want to assign.
 
@@ -218,7 +220,7 @@ If PIM is enabled, you have additional capabilities, such as making a user eligi
 
 Use the [Create unifiedRoleAssignment](/graph/api/rbacapplication-post-roleassignments) API to assign a role.
 
-### Assign a role
+### Assign a role to a user
 
 In this example, a security principal with objectID `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb` is assigned the Billing Administrator role (role definition ID `b0f54661-2d74-4c50-afa3-1ec803f12efe`) at tenant scope. To see the list of immutable role template IDs of all built-in roles, see [Microsoft Entra built-in roles](permissions-reference.md).
 
