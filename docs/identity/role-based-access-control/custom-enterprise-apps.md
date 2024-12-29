@@ -58,7 +58,7 @@ In the Microsoft Entra Admin Center, you can create and manage custom roles to c
 
 1. Select **New custom role**.
 
-    ![Add a new custom role from the roles list in Microsoft Entra ID](./media/custom-enterprise-apps/new-custom-role.png)
+    :::image type="content" source="../../media/common/entra-roles-admins.png" alt-text="Screenshot of Roles and administrators page in Microsoft Entra admin center." lightbox="../../media/common/entra-roles-admins.png":::
 
 1. On the **Basics** tab, provide "Manage user and group assignments" for the name of the role and "Grant permissions to manage user and group assignments" for the role description, then select **Next**.
 

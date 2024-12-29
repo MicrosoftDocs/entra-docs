@@ -38,7 +38,7 @@ This section describes how to assign roles at the tenant scope.
 
 1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
 
-    ![Roles and administrators page in Microsoft Entra ID.](./media/common/roles-and-administrators.png)
+    :::image type="content" source="../../media/common/entra-roles-admins.png" alt-text="Screenshot of Roles and administrators page in Microsoft Entra admin center." lightbox="../../media/common/entra-roles-admins.png":::
 
 1. Select a role to see its assignments. To help you find the role you need, use **Add filters** to filter the roles.
 

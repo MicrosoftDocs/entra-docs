@@ -43,7 +43,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 It's easy to list your own permissions as well. Select **Your Role** on the **Roles and administrators** page to see the roles that are currently assigned to you.
 
-   ![List my role assignments](./media/view-assignments/list-my-role-assignments.png)
+    :::image type="content" source="../../media/common/entra-roles-admins.png" alt-text="Screenshot of Roles and administrators page in Microsoft Entra admin center." lightbox="../../media/common/entra-roles-admins.png":::
 
 ### List role assignments for a user
 

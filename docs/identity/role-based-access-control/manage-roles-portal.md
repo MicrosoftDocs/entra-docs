@@ -41,7 +41,7 @@ Follow these steps to assign Microsoft Entra roles using the Microsoft Entra adm
 
 1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
 
-    ![Screenshot of Roles and administrators page in Microsoft Entra ID.](./media/common/roles-and-administrators.png)
+    :::image type="content" source="../../media/common/entra-roles-admins.png" alt-text="Screenshot of Roles and administrators page in Microsoft Entra admin center." lightbox="../../media/common/entra-roles-admins.png":::
 
 1. Find the role you need. You can use the search box or **Add filters** to filter the roles.
 
@@ -70,7 +70,7 @@ Assigning a Microsoft Entra role to a group is similar to assigning users and se
 
 1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
 
-    :::image type="content" source="media/common/roles-and-administrators.png" alt-text="Screenshot of Roles and administrators page in Microsoft Entra ID." lightbox="media/common/roles-and-administrators.png":::
+    :::image type="content" source="../../media/common/entra-roles-admins.png" alt-text="Screenshot of Roles and administrators page in Microsoft Entra admin center." lightbox="../../media/common/entra-roles-admins.png":::
 
 1. Select the role name to open the role. Don't add a check mark next to the role.
 
@@ -98,7 +98,7 @@ Follow these steps to assign roles using the **Roles and administrators** page. 
 
 1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
 
-    ![Screenshot of Roles and administrators page in Microsoft Entra ID when PIM enabled.](./media/common/roles-and-administrators.png)
+    :::image type="content" source="../../media/common/entra-roles-admins.png" alt-text="Screenshot of Roles and administrators page in Microsoft Entra admin center." lightbox="../../media/common/entra-roles-admins.png":::
 
 1. Find the role you need. You can use the search box or **Add filters** to filter the roles.
 

@@ -41,7 +41,7 @@ These steps describe how to create a custom role in the Microsoft Entra admin ce
 
 1. Select **New custom role**.
 
-    ![Create or edit roles from the Roles and administrators page](./media/custom-create/new-custom-role.png)
+    :::image type="content" source="../../media/common/entra-roles-admins.png" alt-text="Screenshot of Roles and administrators page in Microsoft Entra admin center." lightbox="../../media/common/entra-roles-admins.png":::
 
 1. On the **Basics** tab, provide a name and description for the role.
 
