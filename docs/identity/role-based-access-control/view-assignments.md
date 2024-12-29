@@ -57,11 +57,11 @@ Follow these steps to list Microsoft Entra roles for a user using the Microsoft 
 
     You can see the list of roles assigned to the user at different scopes. Additionally, you can see whether the role has been assigned directly or via a group.
     
-    ![list of roles assigned to a user in Azure portal](./media/list-role-assignments-users/list-role-definition.png)
+    ![list of roles assigned to a user in Azure portal](./media/view-assignments/list-role-definition.png)
 
     If you have a Premium P2 license, you'll see the PIM experience, which has eligible, active, and expired role assignment details.
 
-    ![list of roles assigned to a user in PIM](./media/list-role-assignments-users/list-role-definition-pim.png)
+    ![list of roles assigned to a user in PIM](./media/view-assignments/list-role-definition-pim.png)
 
 ### List role assignments for a group
 
@@ -73,7 +73,7 @@ Follow these steps to list Microsoft Entra roles for a user using the Microsoft 
 
 1. Select **Assigned roles**. You can now see all the Microsoft Entra roles assigned to this group.
 
-   ![View all roles assigned to a selected group](./media/groups-view-assignments/view-assignments.png)
+   ![View all roles assigned to a selected group](./media/view-assignments/view-assignments.png)
 
 ### Download role assignments
 
