@@ -5,7 +5,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: overview
-ms.date: 11/04/2024
+ms.date: 12/30/2024
 zone_pivot_groups: identity-governance-guest-new-project
 ms.author: billmath
 ---

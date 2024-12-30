@@ -21,6 +21,105 @@ For a more dynamic experience, you can now find the archive information in the M
 
 ---
 
+## June 2024
+
+### Plan for change - Passkey in Microsoft Authenticator (preview) registration experience is changing
+
+**Type:** Plan for change    
+**Service category:** MFA    
+**Product capability:** End User Experiences        
+
+Starting late July 2024, through end of August 2024, we're rolling out changes to the registration experience for passkey in Microsoft Authenticator (preview) on the My Security-Info page. This registration experience change will go from a WebAuthn approach, to guide users to register by signing into the Microsoft Authenticator app. This change will occur automatically, and admins won’t need to take any action. Here's more details:
+
+- By default, we'll guide users to sign into the Authenticator app to set up passkeys. 
+- If users are unable to sign in, they'll be able to fallback to an improved WebAuthn experience through a "*Having trouble?*" link on the page. 
+
+---
+
+### General Availability - Security Improvements to Microsoft Entra Connect Sync and Connect Health
+
+**Type:** Changed feature    
+**Service category:** Provisioning    
+**Product capability:** Microsoft Entra Connect    
+
+**Action Recommended: Security Improvements to Microsoft Entra Connect Sync and Connect Health**
+
+Since September 2023, we have been autoupgrading Microsoft Entra Connect Sync and Microsoft Entra Connect Health customers to an updated build as part of a precautionary security-related service change. For customers who previously opted out of autoupgrade, or for whom autoupgrade failed, **we strongly recommend** that you upgrade to the latest versions by **September 23, 2024**.
+
+When you upgrade to the latest versions, you ensure that when the service change takes effect, you avoid service disruptions for:
+
+- Microsoft Entra Connect Sync
+- Microsoft Entra Connect Health agent for Sync
+- Microsoft Entra Connect Health agent for ADDS
+- Microsoft Entra Connect Health agent for ADFS
+
+See documentation here: [Security improvements to the autoupgrade process](/entra/identity/hybrid/connect/security-updates-pks) for upgrade-related guidance, versioning information, and further details on the expected impacts of the service change.
+
+---
+
+### Public Preview - MS Graph API support for per-user multifactor authentication
+
+**Type:** New feature    
+**Service category:** MFA    
+**Product capability:** Identity Security & Protection    
+
+MS Graph API support for per-user multifactor authentication
+
+Starting June 2024, we're releasing the capability to manage user status (Enforced, Enabled, Disabled) for per-user multifactor authentication through MS Graph API. This update replaces the legacy MSOnline PowerShell module that is being retired. The recommended approach to protect users with Microsoft Entra multifactor authentication is Conditional Access (for licensed organizations) and security defaults (for unlicensed organizations). For more information, see: [Enable per-user Microsoft Entra multifactor authentication to secure sign-in events](..//identity/authentication/howto-mfa-userstates.md).
+
+---
+
+### Public Preview - Easy authentication with Azure App Service and Microsoft Entra External ID
+
+**Type:** Changed feature    
+**Service category:** B2C - Consumer Identity Management    
+**Product capability:** B2B/B2C    
+
+We improved the experience when using Microsoft Entra External ID as an identity provider for Azure App Service’s built-in authentication, simplifying the process of configuring authentication and authorization for external-facing apps. You can complete initial configuration directly from the App Service authentication setup without switching into the external tenant. For more information, see: [Quickstart: Add app authentication to your web app running on Azure App Service](/azure/app-service/scenario-secure-app-authentication-app-service?toc=%2fentra%2fexternal-id%2ftoc.json&bc=%2fentra%2fexternal-id%2fbreadcrumb%2ftoc.json&tabs=external-configuration)
+
+---
+
+### General Availability - Refactored account details screen in Microsoft Authenticator
+
+**Type:** Plan for change    
+**Service category:** Microsoft Authenticator App    
+**Product capability:** User Authentication    
+
+In July, enhancements for the Microsoft Authenticator app UX roll-out. The account details page of a user account is reorganized to help users better understand, and interact with, the information and buttons on the screen. Key actions that a user can do today are available in the refactored page, but they're organized in three sections or categories that help better communicate to users:
+
+- Credentials configured in the app
+- More sign in methods they can configure
+- Account management options in the app
+
+---
+
+### General Availability - SLA Attainment Report at the Tenant Level
+
+**Type:** New feature    
+**Service category:** Reporting    
+**Product capability:** Monitoring & Reporting    
+
+In addition to providing global SLA performance, Microsoft Entra ID reports tenant-level SLA performance for organizations with at least 5,000 monthly active users. This feature entered general availability in May 2024. The Service Level Agreement (SLA) sets a minimum bar of 99.99% for the availability of Microsoft Entra ID user authentication, reported on a monthly basis in the Microsoft Entra admin center. For more information, see: [What is Microsoft Entra Health?](../identity/monitoring-health/concept-microsoft-entra-health.md)
+
+---
+
+### Preview – QR code sign-in, a new authentication method for Frontline Workers 
+
+**Type:** New feature    
+**Service category:** Authentications (Logins)    
+**Product capability:** User Authentication    
+
+We're introducing a new simple way for Frontline Workers to authenticate in Microsoft Entra ID with a QR code and PIN. This capability eliminates the need for users to enter and reenter long UPNs and alphanumeric passwords. 
+
+Beginning in August 2024, all users in your tenant now see a new link *Sign in with QR code* when navigating to https://login.microsoftonline.com > *Sign-in options* > *Sign in to an organization*. This new link, *Sign in with QR code*, is visible only on mobile devices (Android/iOS/iPadOS). If you aren't participating in the preview, users from your tenant can't sign in through this method while we're still in review. They receive an error message if they try to sign-in. 
+
+The feature has a *preview* tag until it's generally available. Your organization needs to be enabled to test this feature. Broad testing is available in public preview, to be announced later.   
+
+While the feature is in preview, no technical support is provided. Learn more about support during previews here: [Microsoft Entra ID preview program information](../fundamentals/licensing-preview-info.md).
+
+---
+
+
 ## May 2024
 
 ### General Availability - Azure China 21Vianet now supports My sign-ins and MFA/SSPR Combined Registration
