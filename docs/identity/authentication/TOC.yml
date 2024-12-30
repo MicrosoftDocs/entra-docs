@@ -389,6 +389,8 @@
     href: /graph/api/resources/authenticationstrengths-overview
   - name: Authentication methods policy - Microsoft Graph
     href: /graph/api/resources/authenticationmethodspolicies-overview
+  - name: Authentication methods activity APIs - Microsoft Graph
+    href: /graph/api/resources/authenticationmethods-usage-insights-overview
   - name: Service limits and restrictions
     href: ~/identity/users/directory-service-limits-restrictions.md
 - name: Resources
