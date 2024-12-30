@@ -41,7 +41,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 ### List my role assignments
 
-It's easy to list your own permissions as well. Select **Your Role** on the **Roles and administrators** page to see the roles that are currently assigned to you.
+It's easy to list your own permissions as well. On the **Roles and administrators** page, select **Your Role** to see the roles that are currently assigned to you.
 
 :::image type="content" source="../../media/common/entra-roles-admins.png" alt-text="Screenshot of Roles and administrators page in Microsoft Entra admin center." lightbox="../../media/common/entra-roles-admins.png":::
 
@@ -56,12 +56,12 @@ Follow these steps to list Microsoft Entra roles for a user using the Microsoft 
 1. Select *user name* > **Assigned roles**.
 
     You can see the list of roles assigned to the user at different scopes. Additionally, you can see whether the role has been assigned directly or via a group.
-    
-    ![list of roles assigned to a user in Azure portal](./media/view-assignments/list-role-definition.png)
+
+    :::image type="content" source="./media/view-assignments/user-role-assignments.png" alt-text="Screenshot of roles assigned to a user." lightbox="./media/view-assignments/user-role-assignments.png":::
 
     If you have a Premium P2 license, you'll see the PIM experience, which has eligible, active, and expired role assignment details.
 
-    ![list of roles assigned to a user in PIM](./media/view-assignments/list-role-definition-pim.png)
+    :::image type="content" source="./media/view-assignments/user-role-assignments-pim.png" alt-text="Screenshot of roles assigned to a user in PIM." lightbox="./media/view-assignments/user-role-assignments-pim.png":::
 
 ### List role assignments for a group
 

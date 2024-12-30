@@ -43,11 +43,9 @@ Follow these steps to assign Microsoft Entra roles using the Microsoft Entra adm
 
     :::image type="content" source="../../media/common/entra-roles-admins.png" alt-text="Screenshot of Roles and administrators page in Microsoft Entra admin center." lightbox="../../media/common/entra-roles-admins.png":::
 
-1. Find the role you need. You can use the search box or **Add filters** to filter the roles.
-
 1. Select the role name to open the role. Don't add a check mark next to the role.
 
-    ![Screenshot that shows selecting a role.](./media/common/role-select-mouse.png)
+    :::image type="content" source="../../media/common/entra-roles-admins-mouse.png" alt-text="Screenshot of Roles and administrators page with mouse over role name.":::
 
 1. Select **Add assignments** and then select the users you want to assign to this role.
 
@@ -74,8 +72,6 @@ Assigning a Microsoft Entra role to a group is similar to assigning users and se
 
 1. Select the role name to open the role. Don't add a check mark next to the role.
 
-    :::image type="content" source="media/common/role-select-mouse.png" alt-text="Screenshot that shows selecting a role." lightbox="media/common/role-select-mouse.png":::
-
 1. Select **Add assignments**.
 
     If you see something different from the following screenshot, you might have Microsoft Entra ID P2. For more information, see [Assign Microsoft Entra roles in Privileged Identity Management](~/id-governance/privileged-identity-management/pim-how-to-add-role-to-user.md).
@@ -100,11 +96,7 @@ Follow these steps to assign roles using the **Roles and administrators** page. 
 
     :::image type="content" source="../../media/common/entra-roles-admins.png" alt-text="Screenshot of Roles and administrators page in Microsoft Entra admin center." lightbox="../../media/common/entra-roles-admins.png":::
 
-1. Find the role you need. You can use the search box or **Add filters** to filter the roles.
-
 1. Select the role name to open the role and see its eligible, active, and expired role assignments. Don't add a check mark next to the role.
-
-    ![Screenshot that shows selecting a role.](./media/common/role-select-mouse.png)
 
 1. Select **Add assignments**.
 

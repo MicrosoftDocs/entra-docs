@@ -39,11 +39,15 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
     :::image type="content" source="../../media/common/entra-roles-admins.png" alt-text="Screenshot of Roles and administrators page in Microsoft Entra admin center." lightbox="../../media/common/entra-roles-admins.png":::
 
-1. On the right, select the ellipsis and then **Description** to see the complete list of permissions for a role.
+1. Select the role name to open the role. Don't add a check mark next to the role.
+
+    :::image type="content" source="../../media/common/entra-roles-admins-mouse.png" alt-text="Screenshot of Roles and administrators page with mouse over role name.":::
+
+1. Select **Description** to see the summary and list of permissions for the role.
 
     The page includes links to relevant documentation to help guide you through managing roles.
 
-    ![Screenshot that shows the "Conditional Access Administrator - Description" page.](./media/role-definitions-list/role-description-updated.png)
+    :::image type="content" source="./media/role-definitions-list/roles-admins-description.png" alt-text="Screenshot of Roles and administrators page that shows role description." lightbox="./media/role-definitions-list/roles-admins-description.png":::
 
 # [PowerShell](#tab/ms-powershell)
 
