@@ -387,7 +387,7 @@
     href: /graph/api/resources/authenticationmethods-overview
   - name: Authentication strengths APIs - Microsoft Graph 
     href: /graph/api/resources/authenticationstrengths-overview
-  - name: Authentication methods policy - Microsoft Graph
+  - name: Authentication methods policy APIs - Microsoft Graph
     href: /graph/api/resources/authenticationmethodspolicies-overview
   - name: Authentication methods activity APIs - Microsoft Graph
     href: /graph/api/resources/authenticationmethods-usage-insights-overview
