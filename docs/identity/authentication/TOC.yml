@@ -191,7 +191,7 @@
             href: how-to-certificate-based-authentication.md
           - name: Configure certificate authorities
             href: how-to-configure-certificate-authorities.md
-          - name: Windows smart card logon
+          - name: Windows smart card sign-in
             href: concept-certificate-based-authentication-smartcard.md
           - name: Apple devices
             href: concept-certificate-based-authentication-mobile-ios.md
