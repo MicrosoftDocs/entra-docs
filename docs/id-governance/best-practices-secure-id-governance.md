@@ -110,7 +110,7 @@ We recommend that you [harden your Microsoft Entra provisioning agent](~/identit
 
 ## Backup and recovery 
 
-Backup your configuration so you can recover to a known good state in case of a compromise.  Use the following list to create a comprehensive backup strategy that covers the various areas of governance.
+Back up your configuration so you can recover to a known good state in case of a compromise.  Use the following list to create a comprehensive backup strategy that covers the various areas of governance.
 
  - [Microsoft Graph APIs](/graph/overview) can be used to export the current state of many Microsoft Entra configurations. 
  - [Microsoft Entra Exporter](https://github.com/microsoft/entraexporter) is a tool you can use to export your configuration settings. 
