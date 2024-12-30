@@ -76,7 +76,7 @@ Assigning a Microsoft Entra role to a group is similar to assigning users and se
 
     If you see something different from the following screenshot, you might have Microsoft Entra ID P2. For more information, see [Assign Microsoft Entra roles in Privileged Identity Management](~/id-governance/privileged-identity-management/pim-how-to-add-role-to-user.md).
 
-    :::image type="content" source="media/manage-roles-portal/add-assignments-pim-groups.png" alt-text="Screenshot of Add assignments pane to assign role to users or groups." lightbox="media/manage-roles-portal/add-assignments-pim-groups.png":::
+    :::image type="content" source="media/manage-roles-portal/add-assignments-groups.png" alt-text="Screenshot of Add assignments pane to assign role to users or groups." lightbox="media/manage-roles-portal/add-assignments-groups.png":::
 
 1. Select the group you want to assign to this role. Only role-assignable groups are displayed.
 

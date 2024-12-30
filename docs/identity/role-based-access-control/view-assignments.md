@@ -59,7 +59,7 @@ Follow these steps to list Microsoft Entra roles for a user using the Microsoft 
 
     :::image type="content" source="./media/view-assignments/user-role-assignments.png" alt-text="Screenshot of roles assigned to a user." lightbox="./media/view-assignments/user-role-assignments.png":::
 
-    If you have a Premium P2 license, you'll see the PIM experience, which has eligible, active, and expired role assignment details.
+    If you have a Microsoft Entra ID P2 license, you'll see the PIM experience, which has eligible, active, and expired role assignment details.
 
     :::image type="content" source="./media/view-assignments/user-role-assignments-pim.png" alt-text="Screenshot of roles assigned to a user in PIM." lightbox="./media/view-assignments/user-role-assignments-pim.png":::
 
@@ -69,33 +69,41 @@ Follow these steps to list Microsoft Entra roles for a user using the Microsoft 
 
 1. Browse to **Identity** > **Groups** > **All groups**.
 
-1. Select a role-assignable group that you are interested in.
+1. Select a role-assignable group.
 
-1. Select **Assigned roles**. You can now see all the Microsoft Entra roles assigned to this group.
+    To determine if a group is role-assignable, you can view the **Properties** for the group.
 
-   ![View all roles assigned to a selected group](./media/view-assignments/view-assignments.png)
+1. Select **Assigned roles**.
+
+    You can now see all the Microsoft Entra roles assigned to this group. If you don't see the **Assigned roles** option, the group is not a role-assignable grouop.
+
+    :::image type="content" source="./media/view-assignments/group-role-assignments.png" alt-text="Screenshot of roles assigned to a group." lightbox="./media/view-assignments/group-role-assignments.png":::
 
 ### Download role assignments
 
-To download all active role assignments across all roles, including built-in and custom roles, follow these steps (currently in Preview).
+To download all active role assignments across all roles, including built-in and custom roles, follow these steps.
+
+Bulk perations can only run for up to 1 hour and has limitations in large tenants. For more information, see [Bulk operations](../../fundamentals/bulk-operations-service-limitations.md) and [Bulk create users in Microsoft Entra ID](https://go.microsoft.com/fwlink/?linkid=2103821).
 
 1. On the **Roles and administrators** page, select **All roles**.
 
 1. Select **Download assignments**.
 
-    A CSV file that lists assignments at all scopes for all roles is downloaded.
-
     :::image type="content" source="./media/view-assignments/download-role-assignments-all.png" alt-text="Screenshot showing download all role assignments." lightbox="./media/view-assignments/download-role-assignments-all.png":::
 
-To download all assignments for a specific role, follow these steps.
+1. Specify a file name and select **Start download**.
+
+    A CSV file that lists assignments at all scopes for all roles is downloaded.
+
+To download role assignments for a specific role, follow these steps.
 
 1. On the **Roles and administrators** page, select a role.
 
 1. Select **Download assignments**.
 
-    A CSV file that lists assignments at all scopes for that role is downloaded.
+    If you have a Microsoft Entra ID P2 license, you'll see the PIM experience. Select **Export** to download the role assignments.
 
-    :::image type="content" source="./media/view-assignments/download-role-assignments.png" alt-text="Screenshot showing download all assignments for a specific role." lightbox="./media/view-assignments/download-role-assignments.png":::
+    A CSV file that lists assignments at all scopes for that role is downloaded.
 
 ### List role assignments at tenant scope
 
