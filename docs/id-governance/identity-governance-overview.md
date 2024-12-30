@@ -6,7 +6,7 @@ manager: amycolannino
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.topic: overview
-ms.date: 10/23/2024
+ms.date: 12/30/2024
 ms.author: billmath
 ms.reviewer: markwahl-msft
 ---
