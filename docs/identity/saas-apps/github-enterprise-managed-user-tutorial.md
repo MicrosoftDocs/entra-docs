@@ -133,10 +133,9 @@ In this section, you'll take the information provided from Microsoft Entra ID ab
 1. Enter the Sign-on URL. This URL is the Login URL that you copied from Microsoft Entra ID above.
 1. Enter the Issuer. This URL is the Microsoft Entra Identifier that you copied from Microsoft Entra ID above.
 1. Enter the Public Certificate. Please open the base64 certificate that you downloaded above and paste the text contents of that file into this dialog.
-1. Click on **Test SAML configuration**. This will open up a dialog for you to log in with your Microsoft Entra credentials to validate that SAML SSO is configured correctly. Log in with your Microsoft Entra credentials. you will receive a message **Passed: Successfully authenticated your SAML SSO identity** upon successful validation.
+1. Click on **Test SAML configuration**. This will open up a dialog for you to log in with your Microsoft Entra credentials to validate that SAML SSO is configured correctly. Log in with your Microsoft Entra credentials. You may need to clear your browser's cache when testing to ensure you're logging in to the correct tenant. You will receive a message **Passed: Successfully authenticated your SAML SSO identity** upon successful validation.
 1. Click **Save** to persist these settings.
 1. Please save (download, print, or copy) the recovery codes in a secure place.
-1. Click on **Enable SAML authentication**.
 1. At this point, only accounts with SSO are able to log into your Enterprise. Follow the instructions in the document below on provisioning in order to provision accounts backed by SSO.
 
 ## Next steps
