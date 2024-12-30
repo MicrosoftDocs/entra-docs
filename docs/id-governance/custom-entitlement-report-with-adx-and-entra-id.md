@@ -277,7 +277,7 @@ Next, follow these steps for each exported JSON file, to get your exported data 
  2. Select the data source from the available list. In this tutorial, you're ingesting data from a **Local file**.
  1. Select **+ New table** and enter a table name, based on the name of the JSON file you're importing, For example, if you're importing EntraUsers.json, name the table **EntraUsers**. After the first import, the table already exists, and you can select it as the target table for a subsequent import.
  1. Select **Browse for files**, select the JSON file, and select **Next**.
- 1. Azure Data Explorer automatically detects the schema and provide a preview in the **Inspect** tab. Select **Finish** to create the table and import the data from that file.
+ 1. Azure Data Explorer automatically detects the schema and provides a preview in the **Inspect** tab. Select **Finish** to create the table and import the data from that file.
  1. Repeat each of the preceding steps for each of the JSON files that you generated in the first section.
 
 ## 4: Use Azure Data Explorer to build custom reports 
