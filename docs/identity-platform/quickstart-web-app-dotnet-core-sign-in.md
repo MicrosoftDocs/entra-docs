@@ -27,6 +27,10 @@ This quickstart uses a sample ASP.NET Core web app to show you how to sign in us
 
 [!INCLUDE [Register a single-page application](./includes/register-app/web-app-common/register-application-web-app-common.md)]
 
+> NOTE:  You must go to the app registration and 'Manage -> API permissions' and 'Grant admin consent for xxx' for the
+> 'Microsoft Graph -> User.Read' permission in order for the test app to work.  Otherwise your app will throw an error
+> acquiring a token to access the graph api and get stuck in a redirect loop.
+
 ## Add a platform redirect URI
 
 [!INCLUDE [Add a platform redirect URI](./includes/register-app/web-app-common/add-platform-redirect-web-app-port-5001.md)]
