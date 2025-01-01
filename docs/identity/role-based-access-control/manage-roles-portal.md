@@ -43,7 +43,7 @@ Follow these steps to assign Microsoft Entra roles using the Microsoft Entra adm
 
     :::image type="content" source="../../media/common/entra-roles-admins.png" alt-text="Screenshot of Roles and administrators page in Microsoft Entra admin center." lightbox="../../media/common/entra-roles-admins.png":::
 
-1. Select the role name to open the role. Don't add a check mark next to the role.
+1. Select a role name to open the role. Don't add a check mark next to the role.
 
     :::image type="content" source="../../media/common/entra-roles-admins-mouse.png" alt-text="Screenshot of Roles and administrators page with mouse over role name.":::
 

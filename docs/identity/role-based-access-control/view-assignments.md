@@ -75,7 +75,7 @@ Follow these steps to list Microsoft Entra roles for a user using the Microsoft 
 
 1. Select **Assigned roles**.
 
-    You can now see all the Microsoft Entra roles assigned to this group. If you don't see the **Assigned roles** option, the group is not a role-assignable grouop.
+    You can now see all the Microsoft Entra roles assigned to this group. If you don't see the **Assigned roles** option, the group is not a role-assignable group.
 
     :::image type="content" source="./media/view-assignments/group-role-assignments.png" alt-text="Screenshot of roles assigned to a group." lightbox="./media/view-assignments/group-role-assignments.png":::
 
@@ -89,7 +89,7 @@ Bulk perations can only run for up to 1 hour and has limitations in large tenant
 
 1. Select **Download assignments**.
 
-    :::image type="content" source="./media/view-assignments/download-role-assignments-all.png" alt-text="Screenshot showing download all role assignments." lightbox="./media/view-assignments/download-role-assignments-all.png":::
+    :::image type="content" source="./media/view-assignments/download-role-assignments-all.png" alt-text="Screenshot of pane to download all role assignments." lightbox="./media/view-assignments/download-role-assignments-all.png":::
 
 1. Specify a file name and select **Start download**.
 
@@ -113,11 +113,15 @@ This procedure describes how to list role assignments with tenant scope.
 
 1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
 
-1. Select a role to open it and view its properties.
+1. Select a role name to open the role. Don't add a check mark next to the role.
+
+    :::image type="content" source="../../media/common/entra-roles-admins-mouse.png" alt-text="Screenshot of Roles and administrators page with mouse over role name.":::
 
 1. Select **Assignments** to list the role assignments.
 
-    ![List role assignments and permissions when you open a role from the list](./media/view-assignments/role-assignments.png)
+    :::image type="content" source="./media/view-assignments/role-assignments-tenant.png" alt-text="Screenshot that lists role assignments with tenant scope." lightbox="./media/view-assignments/role-assignments-tenant.png":::
+
+1. In the **Scope** column, see the role assignments with **Directory** scope.
 
 ### List role assignments with single-application scope
 
@@ -127,17 +131,21 @@ This section describes how to list role assignments with single-application scop
 
 1. Browse to **Identity** > **Applications** > **App registrations**.
 
-1. Select the app registration to view its properties. You might have to select **All applications** to see the complete list of app registrations in your Microsoft Entra organization.
+1. Select an app registration for the list of role assignments you want to view.
 
-    ![Create or edit app registrations from the App registrations page](./media/view-assignments/app-reg-all-apps.png)
+    You might have to select **All applications** to see the complete list of app registrations in your Microsoft Entra organization.
 
-1. In the app registration, select **Roles and administrators**, and then select a role to view its properties.
+1. Select **Roles and administrators**.
 
-    ![List app registration role assignments from the App registrations page](./media/view-assignments/app-reg-assignments.png)
+1. Select a role name to open the role.
 
-1. Select **Assignments** to list the role assignments. Opening the assignments page from within the app registration shows you the role assignments that are scoped to this Microsoft Entra resource.
+1. Select **Assignments** to list the role assignments.
 
-    ![List app registration role assignments from the properties of an app registration](./media/view-assignments/app-reg-assignments-2.png)
+    Opening the assignments page from within the app registration shows you the role assignments that are scoped to this Microsoft Entra resource.
+
+    :::image type="content" source="./media/view-assignments/role-assignments-app-registration.png" alt-text="Screenshot that lists role assignments with application registration scope." lightbox="./media/view-assignments/role-assignments-app-registration.png":::
+
+1. In the **Scope** column, see the role assignments with **This resource** scope.
 
 ### List role assignments with administrative unit scope
 
@@ -147,9 +155,17 @@ You can view all the role assignments created with an administrative unit scope 
 
 1. Browse to **Identity** > **Roles & admins** > **Admin units**.
 
-1. Select the administrative unit for the list of role assignments you want to view.
+1. Select an administrative unit for the list of role assignments you want to view.
 
-1. Select **Roles and administrators**, and then open a role to view the assignments in the administrative unit.
+1. Select **Roles and administrators**.
+
+1. Select a role name to open the role.
+
+1. Select **Assignments** to list the role assignments.
+
+    :::image type="content" source="./media/view-assignments/role-assignments-admin-unit.png" alt-text="Screenshot that lists role assignments with administrative unit scope." lightbox="./media/view-assignments/role-assignments-admin-unit.png":::
+
+1. In the **Scope** column, see the role assignments with **This resource** scope.
 
 # [PowerShell](#tab/ms-powershell)
 
