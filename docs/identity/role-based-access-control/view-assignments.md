@@ -105,7 +105,7 @@ To download role assignments for a specific role, follow these steps.
 
     A CSV file that lists assignments at all scopes for that role is downloaded.
 
-### List role assignments at tenant scope
+### List role assignments with tenant scope
 
 This procedure describes how to list role assignments with tenant scope.
 
@@ -123,9 +123,9 @@ This procedure describes how to list role assignments with tenant scope.
 
 1. In the **Scope** column, see the role assignments with **Directory** scope.
 
-### List role assignments with single-application scope
+### List role assignments with app registration scope
 
-This section describes how to list role assignments with single-application scope. This feature is currently in public preview.
+This section describes how to list role assignments with single-application scope.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
@@ -185,7 +185,7 @@ This section describes viewing assignments of a role with tenant scope. This sec
       Connect-MgGraph
       ```
 
-### List role assignments at tenant scope
+### List role assignments with tenant scope
 
 Use the [Get-MgRoleManagementDirectoryRoleDefinition](/powershell/module/microsoft.graph.identity.governance/get-mgrolemanagementdirectoryroledefinition) and [Get-MgRoleManagementDirectoryRoleAssignment](/powershell/module/microsoft.graph.identity.governance/get-mgrolemanagementdirectoryroleassignment) commands to list role assignments.
 
@@ -207,7 +207,7 @@ lAPpYvVpN0KRkAEhdxReEH2Fs3EjKm1BvSKkcYVN2to-1 aaaaaaaa-bbbb-cccc-1111-2222222222
 lAPpYvVpN0KRkAEhdxReEMdXLf2tIs1ClhpzQPsutrQ-1 bbbbbbbb-cccc-dddd-2222-333333333333 62e90394-69f5-4237-9190-012177145e10 /
 ```
 
-The following example shows how to list all active role assignments across all roles, including built-in and custom roles (currently in Preview).
+The following example shows how to list all active role assignments across all roles, including built-in and custom roles.
 
 ```powershell
 $roles = Get-MgRoleManagementDirectoryRoleDefinition
@@ -374,7 +374,7 @@ HTTP/1.1 200 OK
 }
 ```
 
-### List role assignments for a given scope
+### List role assignments with app registration scope
 
 ```http
 GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments?$filter=directoryScopeId+eq+'/d23998b1-8853-4c87-b95f-be97d6c6b610'
