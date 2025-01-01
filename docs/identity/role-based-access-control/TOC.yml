@@ -46,8 +46,6 @@
     items:
     - name: Assign roles
       href: manage-roles-portal.md
-    - name: Assign roles at different scopes
-      href: assign-roles-different-scopes.md
     - name: Create a role-assignable group
       href: groups-create-eligible.md
   - name: Remove role assignments

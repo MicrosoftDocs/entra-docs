@@ -1133,7 +1133,12 @@
     },
     {
       "source_path_from_root": "/docs/identity/role-based-access-control/admin-units-assign-roles.md",
-      "redirect_url": "/entra/identity/role-based-access-control/assign-roles-different-scopes",
+      "redirect_url": "/entra/identity/role-based-access-control/manage-roles-portal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/role-based-access-control/assign-roles-different-scopes.md",
+      "redirect_url": "/entra/identity/role-based-access-control/manage-roles-portal",
       "redirect_document_id": false
     },
     {

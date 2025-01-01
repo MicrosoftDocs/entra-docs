@@ -62,20 +62,10 @@ landingContent:
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Assign roles to users
+          - text: Assign roles to users and groups
             url: manage-roles-portal.md
-          - text: Assign roles at different scopes
-            url: assign-roles-different-scopes.md
-
-  # Card
-  - title: Assign roles to groups
-    linkLists:
-      - linkListType: how-to-guide
-        links:
           - text: Create a role-assignable group
             url: groups-create-eligible.md
-          - text: Assign roles to groups
-            url: groups-assign-role.md
 
   # Card
   - title: Create custom roles
@@ -97,4 +87,4 @@ landingContent:
           - text: Add members
             url: admin-units-members-add.md
           - text: Assign roles with scope
-            url: admin-units-assign-roles.md
+            url: manage-roles-portal.md
