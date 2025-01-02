@@ -1307,17 +1307,7 @@ Service principals on line of business (LOB) applications are now protected on a
 
 ## July 2023
 
-### General Availability - Include/exclude My Apps in Conditional Access policies
 
-**Type:** Fixed       
-**Service category:** Conditional Access                            
-**Product capability:** End User Experiences                  
-
-My Apps can now be targeted in Conditional Access policies. This solves a top customer blocker. The functionality is available in all clouds. GA also brings a new app launcher, which improves app launch performance for both SAML and other app types. 
-
-Learn More about setting up Conditional Access policies here: [Azure AD Conditional Access documentation](~/identity/conditional-access/index.yml).
-
----
 
 ### General Availability - Conditional Access for Protected Actions
 
