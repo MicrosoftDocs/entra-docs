@@ -212,23 +212,19 @@ This section describes how to assign roles at an application registration scope.
     :::image type="content" source="./media/manage-roles-portal/app-reg.png" alt-text="Screenshot of App registrations in Microsoft Entra ID." lightbox="./media/manage-roles-portal/app-reg.png":::
 
 1. Select **Roles and administrators** from the left navigation menu to see the list of all roles available to be assigned over the app registration.
-
-    > [!TIP]
-    > You won't see the entire list of Microsoft Entra built-in or custom roles here. This is expected. We show the roles which have permissions related to managing app registrations only.
     
     :::image type="content" source="./media/manage-roles-portal/app-reg-roles.png" alt-text="Screenshot of Roles for an app registration in Microsoft Entra ID." lightbox="./media/manage-roles-portal/app-reg-roles.png":::
 
 1. Select the desired role.
+
+    > [!TIP]
+    > You won't see the entire list of Microsoft Entra built-in or custom roles here. This is expected. We show the roles which have permissions related to managing app registrations only.
 
 1. Select **Add assignments** and then select the users or group you want to assign this role to.
 
     :::image type="content" source="./media/manage-roles-portal/app-reg-add-assignment.png" alt-text="Screenshot of Add role assignment scoped to an app registration in Microsoft Entra ID." lightbox="./media/manage-roles-portal/app-reg-add-assignment.png":::
 
 1. Select **Add** to assign the role scoped over the app registration.
-
-    :::image type="content" source="./media/manage-roles-portal/app-reg-assignment.png" alt-text="Screenshot of successfully added role assignment scoped to an app registration in Microsoft Entra ID." lightbox="./media/manage-roles-portal/app-reg-assignment.png":::
-
-    :::image type="content" source="./media/manage-roles-portal/app-reg-scoped-assignment.png" alt-text="Screenshot of role assigned to the user scoped to an app registration in Microsoft Entra ID." lightbox="./media/manage-roles-portal/app-reg-scoped-assignment.png":::
 
 # [PowerShell](#tab/ms-powershell)
 
@@ -393,13 +389,13 @@ It isn't currently possible to assign directory read permissions scoped to an ad
     :::image type="content" source="./media/manage-roles-portal/admin-units.png" alt-text="Screenshot of administrative units in Microsoft Entra ID." lightbox="./media/manage-roles-portal/admin-units.png":::
 
 1. Select **Roles and administrators** from the left navigation menu to see the list of all roles available to be assigned over an administrative unit.
-
-    > [!TIP]
-    > You won't see the entire list of Microsoft Entra built-in or custom roles here. This is expected. We show the roles which have permissions related to the objects that are supported within the administrative unit. To see the list of objects supported within an administrative unit, see [Administrative units in Microsoft Entra ID](administrative-units.md).
     
     :::image type="content" source="./media/manage-roles-portal/admin-units-roles.png" alt-text="Screenshot of Roles and administrators menu under administrative units in Microsoft Entra ID." lightbox="./media/manage-roles-portal/admin-units-roles.png":::
 
 1. Select the desired role.
+
+    > [!TIP]
+    > You won't see the entire list of Microsoft Entra built-in or custom roles here. This is expected. We show the roles which have permissions related to the objects that are supported within the administrative unit. To see the list of objects supported within an administrative unit, see [Administrative units in Microsoft Entra ID](administrative-units.md).
 
 1. Select **Add assignments** and then select the users or group you want to assign this role to.
 
