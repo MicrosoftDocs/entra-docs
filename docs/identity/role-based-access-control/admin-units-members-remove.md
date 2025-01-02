@@ -85,7 +85,7 @@ You can remove users, groups, or devices from administrative units individually 
 
 1. Select **Users** > **Bulk operations** > **Bulk remove members**.
 
-	:::image type="content" source="./media/admin-units-members-remove/bulk-user-remove.png" alt-text="Screenshot showing the "Bulk remove members" link on the "Users" pane." lightbox="./media/admin-units-members-remove/bulk-user-remove.png":::
+	:::image type="content" source="./media/admin-units-members-remove/bulk-user-remove.png" alt-text="Screenshot of Users page that shows the Bulk remove members link." lightbox="./media/admin-units-members-remove/bulk-user-remove.png":::
 
 1. In the **Bulk remove members** pane, download the comma-separated values (CSV) template.
 
