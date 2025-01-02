@@ -1399,16 +1399,6 @@ This feature enables admins to create rules for dynamic membership groups based 
 
 ---
 
-### General Availability - Enhanced Create User and Invite User Experiences
-
-**Type:** Changed feature       
-**Service category:** User Management                                  
-**Product capability:** User Management                      
-
-We've increased the number of properties admins are able to define when creating and inviting a user in the Entra admin portal, bringing our UX to parity with our Create User APIs. Additionally, admins can now add users to a group or administrative unit, and assign roles. For more information, see: [Add or delete users using Azure Active Directory](./add-users.md).
-
----
-
 ### General Availability - All Users and User Profile
 
 **Type:** Changed feature       
