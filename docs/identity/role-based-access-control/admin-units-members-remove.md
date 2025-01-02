@@ -35,7 +35,7 @@ You can remove users, groups, or devices from administrative units individually 
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
 1. Browse to **Identity**.
 
@@ -57,7 +57,7 @@ You can remove users, groups, or devices from administrative units individually 
 
 ### Remove users, groups, or devices from a single administrative unit
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
 1. Browse to **Identity** > **Roles & admins** > **Admin units**.
 
@@ -77,7 +77,7 @@ You can remove users, groups, or devices from administrative units individually 
 
 ### Remove users from an administrative unit in a bulk operation
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
 1. Browse to **Identity** > **Roles & admins** > **Admin units**.
 

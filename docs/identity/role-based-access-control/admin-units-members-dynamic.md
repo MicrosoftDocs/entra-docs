@@ -44,7 +44,7 @@ Follow these steps to create administrative units with rules for dynamic members
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
 1. Select the administrative unit that you want to add users or devices to.
 
@@ -135,7 +135,7 @@ When an administrative unit has been configured for dynamic membership groups, t
 
 # [Admin center](#tab/admin-center)
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
 1. Browse to **Identity** > **Roles & admins** > **Admin units**.
 
@@ -189,7 +189,7 @@ Follow these steps to change an administrative unit with rules for dynamic membe
 
 # [Admin center](#tab/admin-center)
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
 1. Browse to **Identity** > **Roles & admins** > **Admin units**.
 

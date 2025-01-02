@@ -52,7 +52,7 @@ In the Microsoft Entra Admin Center, you can create and manage custom roles to c
 >[!NOTE]
 > Custom roles are created and managed at an organization-wide level and are available only from the organization's Overview page.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
 1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
 
@@ -74,7 +74,7 @@ In the Microsoft Entra Admin Center, you can create and manage custom roles to c
 
 ### Assign the role to a user using the Microsoft Entra admin center
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 
 1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
 
