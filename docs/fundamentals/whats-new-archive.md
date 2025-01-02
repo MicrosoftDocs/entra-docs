@@ -1464,28 +1464,6 @@ For listing your application in the Azure AD app gallery, read the details here 
 
 ---
 
-### Public Preview - New provisioning connectors in the Azure AD Application Gallery - July 2023
-
-**Type:** New feature   
-**Service category:** App Provisioning               
-**Product capability:** Third Party Integration    
-
-
-We've added the following new applications in our App gallery with Provisioning support. You can now automate creating, updating, and deleting of user accounts for these newly integrated apps:
-
-- [Albert](~/identity/saas-apps/albert-provisioning-tutorial.md)
-- [Rhombus Systems](~/identity/saas-apps/rhombus-systems-provisioning-tutorial.md)
-- [Axiad Cloud](~/identity/saas-apps/axiad-cloud-provisioning-tutorial.md)
-- [Dagster Cloud](~/identity/saas-apps/dagster-cloud-provisioning-tutorial.md)
-- [WATS](~/identity/saas-apps/wats-provisioning-tutorial.md)
-- [Funnel Leasing](~/identity/saas-apps/funnel-leasing-provisioning-tutorial.md)
-
-
-For more information about how to better secure your organization by using automated user account provisioning, see: [Automate user provisioning to SaaS applications with Azure AD](~/identity/app-provisioning/user-provisioning.md).
-
-
----
-
 ### General Availability - Microsoft Authentication Library for .NET 4.55.0
 
 **Type:** New feature       
