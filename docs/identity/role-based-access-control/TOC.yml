@@ -1,4 +1,4 @@
-- name: Microsoft Entra roles documentation
+- name: Microsoft Entra RBAC documentation
   href: index.yml
 - name: Overview
   items:
