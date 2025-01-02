@@ -1,4 +1,4 @@
----
+fve---
 title: Regions requiring opt-in for SMS verification
 description: To protect customers, some regions require you to enable the country codes to receive SMS telephony verification for Microsoft Entra External ID external tenants.
 
@@ -50,9 +50,9 @@ Starting January 2025, the following country codes will be deactivated by defaul
 | 359 | Bulgaria |
 | 226 | Burkina Faso |
 | 257 | Burundi |
+| 238 | Cabo Verde |
 | 855 | Cambodia |
 | 237 | Cameroon |
-| 238 | Cape Verde |
 | 235 | Central African Republic |
 | 269 | Comoros |
 | 243 | Congo (Democratic Republic of the) |
