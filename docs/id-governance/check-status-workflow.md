@@ -97,4 +97,4 @@ To list task processing results for a user processing result via API using Micro
 ## Next steps
 
 - [Manage workflow versions](manage-workflow-tasks.md)
-- [Download workflow history reports (Preview)](download-workflow-history.md)
+- [Download workflow history reports](download-workflow-history.md)
