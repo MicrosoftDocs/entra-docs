@@ -25,7 +25,7 @@ With Microsoft Entra ID P1 or P2, you can create [role-assignable groups](groups
 
 - Microsoft Entra ID P1 or P2 license
 - [Privileged Role Administrator](./permissions-reference.md#privileged-role-administrator)
-- Microsoft.Graph module when using [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation)
+- [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation) module when using PowerShell
 - Admin consent when using Graph explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).

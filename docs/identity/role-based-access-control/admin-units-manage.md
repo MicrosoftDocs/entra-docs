@@ -28,7 +28,7 @@ This article describes how to create or delete administrative units to restrict 
 - Microsoft Entra ID P1 or P2 license for each administrative unit administrator
 - Microsoft Entra ID Free licenses for administrative unit members
 - Privileged Role Administrator role
-- Microsoft.Graph module when using [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation)
+- [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation) module when using PowerShell
 - Admin consent when using Graph Explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).

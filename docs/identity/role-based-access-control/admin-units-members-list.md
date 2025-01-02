@@ -21,7 +21,7 @@ In Microsoft Entra ID, you can list the users, groups, or devices in administrat
 
 - Microsoft Entra ID P1 or P2 license for each administrative unit administrator
 - Microsoft Entra ID Free licenses for administrative unit members
-- Microsoft Graph PowerShell SDK installed when using PowerShell
+- [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation) module when using PowerShell
 - Admin consent when using Graph Explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).

@@ -31,7 +31,7 @@ If you have a Microsoft Entra ID P2 license and Privileged Identity Management (
 ## Prerequisites
 
 - Privileged Role Administrator
-- [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) module when using PowerShell
+- [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation) module when using PowerShell
 - Admin consent when using Graph Explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).

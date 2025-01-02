@@ -27,7 +27,7 @@ This article describes how to add users, groups, or devices to administrative un
     - Privileged Role Administrator
 - To create new groups:
     - Groups Administrator (scoped to the administrative unit or entire directory)
-- Microsoft Graph PowerShell
+- [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation) module when using PowerShell
 - Admin consent when using Graph Explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).

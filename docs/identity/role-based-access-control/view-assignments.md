@@ -28,7 +28,7 @@ In Microsoft Entra ID, roles can be assigned at different scopes.
 
 ## Prerequisites
 
-- Microsoft Graph PowerShell module when using PowerShell
+- [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation) module when using PowerShell
 - Admin consent when using Graph explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).

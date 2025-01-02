@@ -27,7 +27,7 @@ Although administrative units with members assigned manually support multiple ob
 - Microsoft Entra ID P1 or P2 license for each administrative unit administrator
 - Microsoft Entra ID P1 or P2 license for each administrative unit member
 - Privileged Role Administrator
-- Microsoft Graph PowerShell SDK installed when using PowerShell
+- [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation) module when using PowerShell
 - Admin consent when using Graph Explorer for Microsoft Graph API
 - Global Azure cloud (not available in specialized clouds, such as Azure Government or Microsoft Azure operated by 21Vianet)
 

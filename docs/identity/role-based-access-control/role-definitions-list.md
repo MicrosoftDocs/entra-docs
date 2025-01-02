@@ -22,7 +22,7 @@ A role definition is a collection of permissions that can be performed, such as 
 
 ## Prerequisites
 
-- Microsoft Graph PowerShell SDK installed when using PowerShell
+- [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation) module when using PowerShell
 - Admin consent when using Graph explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).

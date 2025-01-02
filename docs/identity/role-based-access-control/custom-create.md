@@ -22,7 +22,7 @@ For the basics of custom roles, see the [custom roles overview](custom-overview.
 
 - Microsoft Entra ID P1 or P2 license
 - Privileged Role Administrator
-- Microsoft.Graph module when using PowerShell
+- [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation) module when using PowerShell
 - Admin consent when using Graph explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).

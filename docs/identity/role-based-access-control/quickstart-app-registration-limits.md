@@ -23,7 +23,7 @@ If you don't have an Azure subscription, [create a free account](https://azure.m
 
 - Microsoft Entra ID P1 or P2 license
 - Privileged Role Administrator
-- Microsoft Graph PowerShell module when using PowerShell
+- [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation) module when using PowerShell
 - Admin consent when using Graph explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
