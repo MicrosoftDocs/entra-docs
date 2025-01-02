@@ -380,6 +380,10 @@ Service principals and guest users won't be able to use a role assignment scoped
 
 It isn't currently possible to assign directory read permissions scoped to an administrative unit. For more information about default permissions for users, see [default user permissions](../../fundamentals/users-default-permissions.md). 
 
+### Assign roles with administrative unit scope
+
+This section describes how to assign roles at administrative unit scope.
+
 # [Admin center](#tab/admin-center)
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](./permissions-reference.md#privileged-role-administrator).
