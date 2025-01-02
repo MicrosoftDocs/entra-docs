@@ -62,15 +62,15 @@ In the Microsoft Entra Admin Center, you can create and manage custom roles to c
 
 1. On the **Basics** tab, provide "Manage user and group assignments" for the name of the role and "Grant permissions to manage user and group assignments" for the role description, then select **Next**.
 
-    ![Provide a name and description for the custom role](./media/custom-enterprise-apps/role-name-and-description.png)
+	:::image type="content" source="./media/custom-enterprise-apps/role-name-and-description.png" alt-text="Screenshot of Basics tab to provide a name and description for the custom role." lightbox="./media/custom-enterprise-apps/role-name-and-description.png":::
 
 1. On the **Permissions** tab, enter "microsoft.directory/servicePrincipals/appRoleAssignedTo/update" in the search box, select the checkboxes next to the desired permissions, then select **Next**.
 
-    ![Add the permissions to the custom role](./media/custom-enterprise-apps/role-custom-permissions.png)
+	:::image type="content" source="./media/custom-enterprise-apps/role-custom-permissions.png" alt-text="Screenshot of Permissions tab to add the permissions to the custom role." lightbox="./media/custom-enterprise-apps/role-custom-permissions.png":::
 
 1. On the **Review + create** tab, review the permissions and select **Create**.
 
-    ![Now you can create the custom role](./media/custom-enterprise-apps/role-custom-create.png)
+	:::image type="content" source="./media/custom-enterprise-apps/role-custom-create.png" alt-text="Screenshot of Review + create tab to create the custom role." lightbox="./media/custom-enterprise-apps/role-custom-create.png":::
 
 ### Assign the role to a user using the Microsoft Entra admin center
 
@@ -80,11 +80,11 @@ In the Microsoft Entra Admin Center, you can create and manage custom roles to c
 
 1. Select the **Manage user and group assignments** role.
 
-    ![Open Roles and Administrators and search for the custom role](./media/custom-enterprise-apps/select-custom-role.png)
+	:::image type="content" source="./media/custom-enterprise-apps/select-custom-role.png" alt-text="Screenshot of Roles and administrators page to search for the custom role." lightbox="./media/custom-enterprise-apps/select-custom-role.png":::
 
 1. Select **Add assignment**, select the desired user, and then click **Select** to add role assignment to the user.
 
-    ![Add an assignment for the custom role to the user](./media/custom-enterprise-apps/assign-user-to-role.png)
+	:::image type="content" source="./media/custom-enterprise-apps/assign-user-to-role.png" alt-text="Screenshot of Add assignment page to assign the custom role to a user." lightbox="./media/custom-enterprise-apps/assign-user-to-role.png":::
 
 #### Assignment tips
 
@@ -92,7 +92,7 @@ In the Microsoft Entra Admin Center, you can create and manage custom roles to c
 * To grant permissions to assignees to manage users and group access for a specific enterprise app, go to that app in Microsoft Entra ID and open in the **Roles and Administrators** list for that app. Select the new custom role and complete the user or group assignment. The assignees can manage users and group access only for the specific app.
 * To test your custom role assignment, sign in as the assignee and open an application’s **Users and groups** page to verify that the **Add user** option is enabled.
 
-    ![Verify the user permissions](./media/custom-enterprise-apps/verify-user-permissions.png)
+	:::image type="content" source="./media/custom-enterprise-apps/verify-user-permissions.png" alt-text="Screenshot of Users and groups page to verify the user permissions." lightbox="./media/custom-enterprise-apps/verify-user-permissions.png":::
 
 # [PowerShell](#tab/ms-powershell)
 

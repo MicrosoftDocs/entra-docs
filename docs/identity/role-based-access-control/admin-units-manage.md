@@ -47,7 +47,7 @@ You can create a new administrative unit by using either the Microsoft Entra adm
 
 1. Browse to **Identity** > **Roles & admins** > **Admin units**.
 
-    ![Screenshot of the Administrative units page.](./media/admin-units-manage/nav-to-admin-units.png)
+    :::image type="content" source="./media/admin-units-manage/nav-to-admin-units.png" alt-text="Screenshot of the Administrative units page." lightbox="./media/admin-units-manage/nav-to-admin-units.png":::
 
 1. Select **Add**.
 
@@ -55,11 +55,11 @@ You can create a new administrative unit by using either the Microsoft Entra adm
 
 1. If you don't want tenant-level administrators to be able to access this administrative unit, set the **Restricted management administrative unit** toggle to **Yes**. For more information, see [Restricted management administrative units](admin-units-restricted-management.md).
 
-    ![Screenshot showing the Add administrative unit page and the Name box for entering the name of the administrative unit.](./media/admin-units-manage/add-new-admin-unit.png)
+    :::image type="content" source="./media/admin-units-manage/add-new-admin-unit.png" alt-text="Screenshot showing the Add administrative unit page and the Name box for entering the name of the administrative unit." lightbox="./media/admin-units-manage/add-new-admin-unit.png":::
 
 1. Optionally, on the **Assign roles** tab, select a role and then select the users to assign the role to with this administrative unit scope.
 
-    ![Screenshot showing the Add assignments pane to add role assignments with this administrative unit scope.](./media/admin-units-manage/assign-roles-admin-unit.png)
+    :::image type="content" source="./media/admin-units-manage/assign-roles-admin-unit.png" alt-text="Screenshot showing the Add assignments pane to add role assignments with this administrative unit scope." lightbox="./media/admin-units-manage/assign-roles-admin-unit.png":::
 
 1. On the **Review + create** tab, review the administrative unit and any role assignments.
 
@@ -157,7 +157,7 @@ In Microsoft Entra ID, you can delete an administrative unit that you no longer 
 
 1. Select **Delete**.
 
-    ![Screenshot of the administrative unit Delete button and confirmation window.](./media/admin-units-manage/select-admin-unit-to-delete.png)
+    :::image type="content" source="./media/admin-units-manage/select-admin-unit-to-delete.png" alt-text="Screenshot of the administrative unit Delete button and confirmation window." lightbox="./media/admin-units-manage/select-admin-unit-to-delete.png":::
 
 1. To confirm that you want to delete the administrative unit, select **Yes**.
 

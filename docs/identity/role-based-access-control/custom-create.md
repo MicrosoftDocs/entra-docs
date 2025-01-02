@@ -47,13 +47,13 @@ These steps describe how to create a custom role in the Microsoft Entra admin ce
 
     You can clone the baseline permissions from a custom role but you can't clone a built-in role.
 
-    ![provide a name and description for a custom role on the Basics tab](./media/custom-create/basics-tab.png)
+	:::image type="content" source="./media/custom-create/basics-tab.png" alt-text="Screenshot of Basics tab to provide a name and description for a custom role." lightbox="./media/custom-create/basics-tab.png":::
 
 1. On the **Permissions** tab, select the permissions necessary to manage basic properties and credential properties of app registrations. For a detailed description of each permission, see [Application registration subtypes and permissions in Microsoft Entra ID](custom-available-permissions.md).
 
     1. First, enter "credentials" in the search bar and select the `microsoft.directory/applications/credentials/update` permission.
 
-        ![Select the permissions for a custom role on the Permissions tab](./media/custom-create/permissions-tab.png)
+	    :::image type="content" source="./media/custom-create/permissions-tab.png" alt-text="Screenshot of Permissions tab to select the permissions for a custom role." lightbox="./media/custom-create/permissions-tab.png":::
 
     1. Next, enter "basic" in the search bar, select the `microsoft.directory/applications/basic/update` permission, and then click **Next**.
 

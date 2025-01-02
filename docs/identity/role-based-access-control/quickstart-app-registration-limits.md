@@ -44,11 +44,11 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 1. On the **Basics** tab, enter "Application Registration Creator" for the name of the role and "Can create an unlimited number of application registrations" for the role description, and then select **Next**.
 
-    ![provide a name and description for a custom role on the Basics tab](./media/quickstart-app-registration-limits/basics-tab.png)
+	:::image type="content" source="./media/quickstart-app-registration-limits/basics-tab.png" alt-text="Screenshot of Basics tab to provide a name and description for a custom role." lightbox="./media/quickstart-app-registration-limits/basics-tab.png":::
 
 1. On the **Permissions** tab, enter "microsoft.directory/applications/create" in the search box, and then select the checkboxes next to the desired permissions, and then select **Next**.
 
-    ![Select the permissions for a custom role on the Permissions tab](./media/quickstart-app-registration-limits/permissions-tab.png)
+	:::image type="content" source="./media/quickstart-app-registration-limits/permissions-tab.png" alt-text="Screenshot of Permissions tab to select the permissions for a custom role." lightbox="./media/quickstart-app-registration-limits/permissions-tab.png":::
 
 1. On the **Review + create** tab, review the permissions and select **Create**.
 
