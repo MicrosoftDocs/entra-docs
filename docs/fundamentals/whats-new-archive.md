@@ -1307,28 +1307,6 @@ Service principals on line of business (LOB) applications are now protected on a
 
 ## July 2023
 
-
-
-### General Availability - Conditional Access for Protected Actions
-
-**Type:** New feature         
-**Service category:** Conditional Access                            
-**Product capability:** Identity Security & Protection                    
-
-Protected actions are high-risk operations, such as altering access policies or changing trust settings, that can significantly impact an organization's security. To add an extra layer of protection, Conditional Access for Protected Actions lets organizations define specific conditions for users to perform these sensitive tasks. For more information, see: [What are protected actions in Azure AD?](~/identity/role-based-access-control/protected-actions-overview.md).
-
----
-
-### General Availability - Access Reviews for Inactive Users
-
-**Type:** New feature         
-**Service category:** Access Reviews                            
-**Product capability:** Identity Governance                      
-
-This new feature, part of the Microsoft Entra ID Governance SKU, allows admins to review and address stale accounts that haven’t been active for a specified period. Admins can set a specific duration to determine inactive accounts that weren't used for either interactive or non-interactive sign-in activities. As part of the review process, stale accounts can automatically be removed. For more information, see: [Microsoft Entra ID Governance Introduces Two New Features in Access Reviews](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-id-governance-introduces-two-new-features-in/ba-p/2466930).
-
----
-
 ### General Availability - Automatic assignments to access packages in Microsoft Entra ID Governance
 
 **Type:** Changed feature       
