@@ -58,7 +58,7 @@ You can add users, groups, or devices to administrative units using the Microsof
 
 1. In the **Select** pane, select the administrative units and then select **Select**.
 
-	:::image type="content" source="./media/admin-units-members-add/assign-users-individually.png" alt-text="Screenshot of the Administrative units page for adding a user to an administrative unit." lightbox="./media/admin-units-members-add/assign-users-individually.png":::
+    :::image type="content" source="./media/admin-units-members-add/assign-users-individually.png" alt-text="Screenshot of the Administrative units page for adding a user to an administrative unit." lightbox="./media/admin-units-members-add/assign-users-individually.png":::
 
 ### Add users, groups, or devices to a single administrative unit
 
@@ -78,7 +78,7 @@ You can add users, groups, or devices to administrative units using the Microsof
 
 1. In the **Select** pane, select the users, groups, or devices you want to add to the administrative unit and then select **Select**.
 
-	:::image type="content" source="./media/admin-units-members-add/admin-unit-members-add.png" alt-text="Screenshot of adding multiple devices to an administrative unit." lightbox="./media/admin-units-members-add/admin-unit-members-add.png":::
+    :::image type="content" source="./media/admin-units-members-add/admin-unit-members-add.png" alt-text="Screenshot of adding multiple devices to an administrative unit." lightbox="./media/admin-units-members-add/admin-unit-members-add.png":::
 
 ### Add users to an administrative unit in a bulk operation
 
@@ -90,7 +90,7 @@ You can add users, groups, or devices to administrative units using the Microsof
 
 1. Select **Users** > **Bulk operations** > **Bulk add members**.
 
-	:::image type="content" source="./media/admin-units-members-add/bulk-assign-to-admin-unit.png" alt-text="Screenshot of the Users page for assigning users to an administrative unit as a bulk operation." lightbox="./media/admin-units-members-add/bulk-assign-to-admin-unit.png":::
+    :::image type="content" source="./media/admin-units-members-add/bulk-assign-to-admin-unit.png" alt-text="Screenshot of the Users page for assigning users to an administrative unit as a bulk operation." lightbox="./media/admin-units-members-add/bulk-assign-to-admin-unit.png":::
 
 1. In the **Bulk add members** pane, download the comma-separated values (CSV) template.
 
@@ -100,7 +100,7 @@ You can add users, groups, or devices to administrative units using the Microsof
 
 1. Save your changes and upload the CSV file.
 
-	:::image type="content" source="./media/admin-units-members-add/bulk-user-entries.png" alt-text="Screenshot of an edited CSV file for adding users to an administrative unit in bulk." lightbox="./media/admin-units-members-add/bulk-user-entries.png":::
+    :::image type="content" source="./media/admin-units-members-add/bulk-user-entries.png" alt-text="Screenshot of an edited CSV file for adding users to an administrative unit in bulk." lightbox="./media/admin-units-members-add/bulk-user-entries.png":::
 
 1. Select **Submit**.
 
@@ -116,7 +116,7 @@ You can add users, groups, or devices to administrative units using the Microsof
 
 1. Select **New group** and complete the steps to create a new group.
 
-	:::image type="content" source="./media/admin-units-members-add/admin-unit-create-group.png" alt-text="Screenshot of the Administrative units page for creating a new group in an administrative unit." lightbox="./media/admin-units-members-add/admin-unit-create-group.png":::
+    :::image type="content" source="./media/admin-units-members-add/admin-unit-create-group.png" alt-text="Screenshot of the Administrative units page for creating a new group in an administrative unit." lightbox="./media/admin-units-members-add/admin-unit-create-group.png":::
 
 # [PowerShell](#tab/ms-powershell)
 

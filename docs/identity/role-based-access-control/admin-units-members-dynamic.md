@@ -52,13 +52,13 @@ Follow these steps to create administrative units with rules for dynamic members
 
 1. In the **Membership type** list, select **Dynamic User** or **Dynamic Device**, depending on the type of rule you want to add.
 
-	:::image type="content" source="./media/admin-units-members-dynamic/admin-unit-properties.png" alt-text="Screenshot of an administrative unit Properties page with Membership type list displayed." lightbox="./media/admin-units-members-dynamic/admin-unit-properties.png":::
+    :::image type="content" source="./media/admin-units-members-dynamic/admin-unit-properties.png" alt-text="Screenshot of an administrative unit Properties page with Membership type list displayed." lightbox="./media/admin-units-members-dynamic/admin-unit-properties.png":::
 
 1. Select **Add dynamic query**.
 
 1. Use the rule builder to specify the rule for dynamic membership groups. For more information, see [Rule builder in the Azure portal](~/identity/users/groups-dynamic-membership.md#rule-builder-in-the-azure-portal).
 
-	:::image type="content" source="./media/admin-units-members-dynamic/dynamic-membership-rules-builder.png" alt-text="Screenshot of Dynamic membership rules page showing rule builder with property, operator, and value." lightbox="./media/admin-units-members-dynamic/dynamic-membership-rules-builder.png":::
+    :::image type="content" source="./media/admin-units-members-dynamic/dynamic-membership-rules-builder.png" alt-text="Screenshot of Dynamic membership rules page showing rule builder with property, operator, and value." lightbox="./media/admin-units-members-dynamic/dynamic-membership-rules-builder.png":::
 
 1. When finished, select **Save** to save the rule for dynamic membership groups.
 
@@ -143,7 +143,7 @@ When an administrative unit has been configured for dynamic membership groups, t
 
 1. Select **Membership rules** to edit the rules for dynamic membership groups using the rule builder.
 
-	:::image type="content" source="./media/admin-units-members-dynamic/membership-rules-options.png" alt-text="Screenshot of an administrative unit with Membership rules and Dynamic membership rules options to open rule builder." lightbox="./media/admin-units-members-dynamic/membership-rules-options.png":::
+    :::image type="content" source="./media/admin-units-members-dynamic/membership-rules-options.png" alt-text="Screenshot of an administrative unit with Membership rules and Dynamic membership rules options to open rule builder." lightbox="./media/admin-units-members-dynamic/membership-rules-options.png":::
 
     You can also open the rule builder by selecting **Dynamic membership rules** in the left navigation.
 
@@ -199,7 +199,7 @@ Follow these steps to change an administrative unit with rules for dynamic membe
 
 1. In the **Membership type** list, select **Assigned**.
 
-	:::image type="content" source="./media/admin-units-members-dynamic/admin-unit-properties.png" alt-text="Screenshot of an administrative unit Properties page with Membership type list displayed and Assigned selected." lightbox="./media/admin-units-members-dynamic/admin-unit-properties.png":::
+    :::image type="content" source="./media/admin-units-members-dynamic/admin-unit-properties.png" alt-text="Screenshot of an administrative unit Properties page with Membership type list displayed and Assigned selected." lightbox="./media/admin-units-members-dynamic/admin-unit-properties.png":::
 
 1. Select **Save** to save the membership type.
 

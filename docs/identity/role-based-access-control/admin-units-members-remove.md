@@ -53,7 +53,7 @@ You can remove users, groups, or devices from administrative units individually 
 
 1. Select **Remove from administrative unit**.
 
-	:::image type="content" source="./media/admin-units-members-remove/device-admin-unit-remove.png" alt-text="Screenshot of Devices and Administrative units page with Remove from administrative unit option." lightbox="./media/admin-units-members-remove/device-admin-unit-remove.png":::
+    :::image type="content" source="./media/admin-units-members-remove/device-admin-unit-remove.png" alt-text="Screenshot of Devices and Administrative units page with Remove from administrative unit option." lightbox="./media/admin-units-members-remove/device-admin-unit-remove.png":::
 
 ### Remove users, groups, or devices from a single administrative unit
 
@@ -73,7 +73,7 @@ You can remove users, groups, or devices from administrative units individually 
 
 1. Select **Remove member**, **Remove**, or **Remove device**.
 
-	:::image type="content" source="./media/admin-units-members-remove/admin-units-remove-user.png" alt-text="Screenshot showing a list users in an administrative unit with check marks and a Remove member option." lightbox="./media/admin-units-members-remove/admin-units-remove-user.png":::
+    :::image type="content" source="./media/admin-units-members-remove/admin-units-remove-user.png" alt-text="Screenshot showing a list users in an administrative unit with check marks and a Remove member option." lightbox="./media/admin-units-members-remove/admin-units-remove-user.png":::
 
 ### Remove users from an administrative unit in a bulk operation
 
@@ -85,7 +85,7 @@ You can remove users, groups, or devices from administrative units individually 
 
 1. Select **Users** > **Bulk operations** > **Bulk remove members**.
 
-	:::image type="content" source="./media/admin-units-members-remove/bulk-user-remove.png" alt-text="Screenshot of Users page that shows the Bulk remove members link." lightbox="./media/admin-units-members-remove/bulk-user-remove.png":::
+    :::image type="content" source="./media/admin-units-members-remove/bulk-user-remove.png" alt-text="Screenshot of Users page that shows the Bulk remove members link." lightbox="./media/admin-units-members-remove/bulk-user-remove.png":::
 
 1. In the **Bulk remove members** pane, download the comma-separated values (CSV) template.
 

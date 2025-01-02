@@ -364,8 +364,8 @@ The following Microsoft Entra roles can be assigned with administrative unit sco
 
 Certain role permissions apply only to nonadministrator users when assigned with the scope of an administrative unit. In other words, administrative unit scoped [Helpdesk Administrators](permissions-reference.md#helpdesk-administrator) can reset passwords for users in the administrative unit only if those users don't have administrator roles. The following list of permissions are restricted when the target of an action is another administrator:
 
--	Read and modify user authentication methods, or reset user passwords
--	Modify sensitive user properties such as telephone numbers, alternate email addresses, or Open Authorization (OAuth) secret keys
+- Read and modify user authentication methods, or reset user passwords
+- Modify sensitive user properties such as telephone numbers, alternate email addresses, or Open Authorization (OAuth) secret keys
 - Delete or restore user accounts
 
 ### Security principals that can be assigned with administrative unit scope

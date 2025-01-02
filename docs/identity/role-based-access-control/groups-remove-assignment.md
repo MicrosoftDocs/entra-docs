@@ -44,7 +44,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 1. Select the user or group from which you want to remove the role assignment and select **Remove assignment**.
 
-	:::image type="content" source="./media/groups-remove-assignment/remove-assignment.png" alt-text="Screenshot of Assignments page to remove a role assignment." lightbox="./media/groups-remove-assignment/remove-assignment.png":::
+    :::image type="content" source="./media/groups-remove-assignment/remove-assignment.png" alt-text="Screenshot of Assignments page to remove a role assignment." lightbox="./media/groups-remove-assignment/remove-assignment.png":::
 
 1. When asked to confirm your action, select **Yes**.
 
