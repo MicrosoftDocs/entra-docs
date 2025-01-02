@@ -40,9 +40,13 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 1. Browse to **Identity** > **Roles & admins** > **Roles & admins**.
 
-1. Select a *role name*.
+1. Select a role name to open the role. 
 
-1. Select the user or group from which you want to remove the role assignment and select **Remove assignment**.
+1. Add a check mark next to the users or groups from which you want to remove the role assignment.
+
+1. Select **Remove assignment**.
+
+    If your experience is different than the following screenshot, you might have Microsoft Entra ID P2 and PIM. For more information, see [Update or remove an existing role assignment in PIM](../../id-governance/privileged-identity-management/pim-how-to-add-role-to-user.md#update-or-remove-an-existing-role-assignment).
 
     :::image type="content" source="./media/groups-remove-assignment/remove-assignment.png" alt-text="Screenshot of Assignments page to remove a role assignment." lightbox="./media/groups-remove-assignment/remove-assignment.png":::
 
@@ -114,5 +118,5 @@ You are prevented from removing your own Global Administrator role assignment to
 
 ## Next steps
 
-- [Use Microsoft Entra groups to manage role assignments](groups-concept.md)
+- [Update or remove an existing role assignment in PIM](../../id-governance/privileged-identity-management/pim-how-to-add-role-to-user.md#update-or-remove-an-existing-role-assignment)
 - [Troubleshoot Microsoft Entra roles assigned to groups](groups-faq-troubleshooting.yml)

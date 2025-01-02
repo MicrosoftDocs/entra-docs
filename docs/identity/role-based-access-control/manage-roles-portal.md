@@ -535,4 +535,5 @@ Body
 
 - [List Microsoft Entra role assignments](view-assignments.md)
 - [Assign Microsoft Entra roles in Privileged Identity Management](../../id-governance/privileged-identity-management/pim-how-to-add-role-to-user.md)
-- [Create a custom role in Microsoft Entra ID](custom-create.md)
+- [Use Microsoft Entra groups to manage role assignments](groups-concept.md)
+- [Troubleshoot Microsoft Entra roles assigned to groups](groups-faq-troubleshooting.yml)
