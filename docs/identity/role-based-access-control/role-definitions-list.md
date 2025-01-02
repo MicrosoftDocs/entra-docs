@@ -114,7 +114,7 @@ Follow these instructions to list Microsoft Entra roles using the Microsoft Grap
 
 1. Select **Run query** to list the roles.
 
-    Here is an example of the response.
+    Here's an example of the response.
 
     ```http
     {
@@ -144,6 +144,6 @@ Follow these instructions to list Microsoft Entra roles using the Microsoft Grap
 
 ## Next steps
 
-* [List Microsoft Entra role assignments](view-assignments.md).
-* [Assign Microsoft Entra roles to users](/entra/identity/role-based-access-control/manage-roles-portal).
-* [Microsoft Entra built-in roles](permissions-reference.md).
+* [List Microsoft Entra role assignments](view-assignments.md)
+* [Assign Microsoft Entra roles to users](/entra/identity/role-based-access-control/manage-roles-portal)
+* [Microsoft Entra built-in roles](permissions-reference.md)

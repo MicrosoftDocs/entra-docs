@@ -65,7 +65,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 Done! In this quickstart, you successfully created a custom role with permission to create an unlimited number of app registrations, and then assign that role to a user.
 
 > [!TIP]
-> To assign the role to an application using the Microsoft Entra admin center, enter the name of the application into the search box of the assignment page. Applications are not shown in the list by default, but are returned in search results.
+> To assign the role to an application using the Microsoft Entra admin center, enter the name of the application into the search box of the assignment page. Applications aren't shown in the list by default, but are returned in search results.
 
 ### App registration permissions
 

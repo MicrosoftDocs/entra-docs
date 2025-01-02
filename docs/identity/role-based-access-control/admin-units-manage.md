@@ -29,15 +29,13 @@ This article describes how to create or delete administrative units to restrict 
 - Microsoft Entra ID Free licenses for administrative unit members
 - Privileged Role Administrator role
 - Microsoft.Graph module when using [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation)
-- Azure AD PowerShell module when using PowerShell
-- AzureADPreview module when using PowerShell and restricted management administrative units
 - Admin consent when using Graph Explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
 
 ## Create an administrative unit
 
-You can create a new administrative unit by using either the Microsoft Entra admin center, PowerShell or Microsoft Graph.
+You can create a new administrative unit by using either the Microsoft Entra admin center, Microsoft Entra PowerShell, or Microsoft Graph.
 
 # [Admin center](#tab/admin-center)
 

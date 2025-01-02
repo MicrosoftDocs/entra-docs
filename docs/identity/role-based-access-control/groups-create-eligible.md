@@ -25,8 +25,7 @@ With Microsoft Entra ID P1 or P2, you can create [role-assignable groups](groups
 
 - Microsoft Entra ID P1 or P2 license
 - [Privileged Role Administrator](./permissions-reference.md#privileged-role-administrator)
-- Microsoft.Graph module when using [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation?branch=main)
-- Azure AD PowerShell module when using [Azure AD PowerShell](/powershell/azure/active-directory/overview?branch=main)
+- Microsoft.Graph module when using [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation)
 - Admin consent when using Graph explorer for Microsoft Graph API
 
 For more information, see [Prerequisites to use PowerShell or Graph Explorer](prerequisites.md).
@@ -43,7 +42,7 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 1. Select **New group**.
 
-1. On the **New Group** page, provide group type, name and description.
+1. On the **New Group** page, provide group type, name, and description.
 
 1. Set **Microsoft Entra roles can be assigned to the group** to **Yes**.
 
@@ -125,7 +124,7 @@ POST https://graph.microsoft.com/v1.0/groups
 }
 ```
 
-For this type of group, `isPublic` will always be false and `isSecurityEnabled` will always be true.
+For this type of group, `isPublic` is always false and `isSecurityEnabled` is always true.
 
 ---
 
