@@ -1307,22 +1307,6 @@ Service principals on line of business (LOB) applications are now protected on a
 
 ## July 2023
 
-### General Availability: Azure Active Directory (Azure AD) is being renamed.
-
-**Type:** Changed feature       
-**Service category:**  N/A                          
-**Product capability:** End User Experiences                
-
-**No action is required from you, but you might need to update some of your own documentation.**
-
-Azure AD is being renamed to Microsoft Entra ID. The name change rolls out across all Microsoft products and experiences throughout the second half of 2023. 
-
-Capabilities, licensing, and usage of the product isn't changing. To make the transition seamless for you, the pricing, terms, service level agreements, URLs, APIs, PowerShell cmdlets, Microsoft Authentication Library (MSAL) and developer tooling remain the same.   
-
-Learn more and get renaming details: [New name for Azure Active Directory](new-name.md).
-
----
-
 ### General Availability - Include/exclude My Apps in Conditional Access policies
 
 **Type:** Fixed       
