@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: role-based-access-control
-ms.date: 08/25/2024
+ms.date: 01/03/2025
 ms.author: rolyon
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
