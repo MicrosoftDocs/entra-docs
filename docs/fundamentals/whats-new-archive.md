@@ -1307,17 +1307,6 @@ Service principals on line of business (LOB) applications are now protected on a
 
 ## July 2023
 
-
-### General Availability - Conditional Access templates
-
-**Type:** Plan for change         
-**Service category:** Conditional Access                             
-**Product capability:** Identity Security & Protection                  
-
-Conditional Access templates are predefined set of conditions and controls that provide a convenient method to deploy new policies aligned with Microsoft recommendations. Customers are assured that their policies reflect modern best practices for securing corporate assets, promoting secure, optimal access for their hybrid workforce. For more information, see: [Conditional Access templates](~/identity/conditional-access/concept-conditional-access-policy-common.md).
-
----
-
 ### General Availability - Lifecycle Workflows
 
 **Type:** New feature       
