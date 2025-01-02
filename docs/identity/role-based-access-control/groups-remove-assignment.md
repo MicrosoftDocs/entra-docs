@@ -19,7 +19,7 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 This article describes how to remove Microsoft Entra role assignments using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API.
 
-In the Microsoft Entra admin center, you can remove both direct and indirect role assignments to a user. If a user is assigned a role by a group membership, remove the user from the group to remove the role assignment. For more information, see [Use Microsoft Entra groups to manage role assignments](groups-concept.md).
+You can remove both direct and indirect role assignments for a user. If a user is assigned a role by a group membership, remove the user from the group to remove the role assignment. For more information, see [Use Microsoft Entra groups to manage role assignments](groups-concept.md).
 
 ## Microsoft Entra roles in PIM
 
