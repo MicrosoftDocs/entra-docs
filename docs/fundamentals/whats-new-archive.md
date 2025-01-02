@@ -1399,16 +1399,6 @@ This feature enables admins to create rules for dynamic membership groups based 
 
 ---
 
-### General Availability - All Users and User Profile
-
-**Type:** Changed feature       
-**Service category:** User Management                                  
-**Product capability:** User Management                   
-
-The All Users list now features an infinite scroll, and admins can now modify more properties in the User Profile. For more information, see: [How to create, invite, and delete users](~/fundamentals/how-to-create-delete-users.yml).
-
----
-
 ### Public Preview - Windows MAM
 
 **Type:** New feature       
