@@ -1379,19 +1379,6 @@ Announcing API support (beta) for managing PIM security alerts for Azure Active 
 
 ---
 
-### General Availability - Reset Password on Azure Mobile App
-
-**Type:** New feature       
-**Service category:** Other                            
-**Product capability:** End User Experiences                
-
-The Azure mobile app is enhanced to empower admins with specific permissions to conveniently reset their users' passwords. Self Service Password Reset isn't supported at this time. However, users can still more efficiently control and streamline their own sign-in and auth methods. The mobile app can be downloaded for each platform here:
-
-- Android: https://aka.ms/AzureAndroidWhatsNew
-- IOS: https://aka.ms/ReferAzureIOSWhatsNew
-
----
-
 ### Public Preview - API-driven inbound user provisioning 
 
 **Type:** New feature       
@@ -1464,12 +1451,3 @@ For listing your application in the Azure AD app gallery, read the details here 
 
 ---
 
-### General Availability - Microsoft Authentication Library for .NET 4.55.0
-
-**Type:** New feature       
-**Service category:** Other                                    
-**Product capability:** User Authentication                     
-
-Earlier this month we announced the release of [MSAL.NET 4.55.0](https://www.nuget.org/packages/Microsoft.Identity.Client/4.55.0), the latest version of the [Microsoft Authentication Library for the .NET platform](/entra/msal/dotnet/). The new version introduces support for user-assigned [managed identity](/entra/msal/dotnet/advanced/managed-identity) being specified through object IDs, CIAM authorities in the `WithTenantId` API, better error messages when dealing with cache serialization, and improved logging when using the [Windows authentication broker](/entra/msal/dotnet/acquiring-tokens/desktop-mobile/wam).
-
----
