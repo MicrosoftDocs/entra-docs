@@ -16,11 +16,13 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 This article describes how to assign Microsoft Entra roles to users and groups using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API. It also describes how to assign roles at different scopes, such as tenant, application registration, and administrative unit scopes.
 
+In the Microsoft Entra admin center, you can assign both direct and indirect role assignments to a user. If a user is assigned a role by a group membership, add the user to the group to add the role assignment. For more information, see [Use Microsoft Entra groups to manage role assignments](groups-concept.md).
+
 In Microsoft Entra ID, roles are typically assigned to apply to the entire tenant. However, you can also assign Microsoft Entra roles for different resources, such as application registrations or administrative units. For example, you could assign the Helpdesk Administrator role so that it just applies to a particular administrative unit and not the entire tenant. The resources that a role assignment applies to is also called the scope. Restricting the scope of a role assignment is supported for built-in and custom roles. For more information about scope, see [Overview of role-based access control (RBAC) in Microsoft Entra ID](custom-overview.md#scope).
 
-## Assign Microsoft Entra roles in PIM
+## Microsoft Entra roles in PIM
 
-If you have a Microsoft Entra ID P2 license and Privileged Identity Management (PIM), you have additional capabilities when assigning roles, such as making a user eligible for a role assignment or defining the start and end time for a role assignment. For information about assigning Microsoft Entra roles using PIM, see these articles:
+If you have a Microsoft Entra ID P2 license and Privileged Identity Management (PIM), you have additional capabilities when assigning roles, such as making a user eligible for a role assignment or defining the start and end time for a role assignment. For information about assigning Microsoft Entra roles in PIM, see these articles:
 
 | Method | Information |
 | --- | --- |
@@ -220,7 +222,7 @@ This section describes how to assign roles at an application registration scope.
     > [!TIP]
     > You won't see the entire list of Microsoft Entra built-in or custom roles here. This is expected. We show the roles which have permissions related to managing app registrations only.
 
-1. Select **Add assignments** and then select the users or group you want to assign this role to.
+1. Select **Add assignments** and then select the users or groups you want to assign this role to.
 
     :::image type="content" source="./media/manage-roles-portal/app-reg-add-assignment.png" alt-text="Screenshot of Add role assignment scoped to an app registration in Microsoft Entra ID." lightbox="./media/manage-roles-portal/app-reg-add-assignment.png":::
 
@@ -397,7 +399,7 @@ It isn't currently possible to assign directory read permissions scoped to an ad
     > [!TIP]
     > You won't see the entire list of Microsoft Entra built-in or custom roles here. This is expected. We show the roles which have permissions related to the objects that are supported within the administrative unit. To see the list of objects supported within an administrative unit, see [Administrative units in Microsoft Entra ID](administrative-units.md).
 
-1. Select **Add assignments** and then select the users or group you want to assign this role to.
+1. Select **Add assignments** and then select the users or groups you want to assign this role to.
 
 1. Select **Add** to assign the role scoped over the administrative unit.
 
