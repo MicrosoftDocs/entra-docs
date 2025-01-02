@@ -1307,15 +1307,6 @@ Service principals on line of business (LOB) applications are now protected on a
 
 ## July 2023
 
-### General Availability - Automatic assignments to access packages in Microsoft Entra ID Governance
-
-**Type:** Changed feature       
-**Service category:** Entitlement Management                          
-**Product capability:** Entitlement Management                
-
-Microsoft Entra ID Governance includes the ability for a customer to configure an assignment policy in an entitlement management access package that includes an attribute-based rule, similar to dynamic membership groups, of the users who should be assigned access. For more information, see: [Configure an automatic assignment policy for an access package in entitlement management](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md).
-
----
 
 ### General Availability - Custom Extensions in Entitlement Management 
 
