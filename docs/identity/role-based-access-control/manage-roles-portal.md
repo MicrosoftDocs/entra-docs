@@ -22,7 +22,7 @@ In Microsoft Entra ID, roles are typically assigned to apply to the entire tenan
 
 ## Microsoft Entra roles in PIM
 
-If you have a Microsoft Entra ID P2 license and Privileged Identity Management (PIM), you have additional capabilities when assigning roles, such as making a user eligible for a role assignment or defining the start and end time for a role assignment. For information about assigning Microsoft Entra roles in PIM, see these articles:
+If you have a Microsoft Entra ID P2 license and [Privileged Identity Management (PIM)](../../id-governance/privileged-identity-management/pim-configure.md), you have additional capabilities when assigning roles, such as making a user eligible for a role assignment or defining the start and end time for a role assignment. For information about assigning Microsoft Entra roles in PIM, see these articles:
 
 | Method | Information |
 | --- | --- |

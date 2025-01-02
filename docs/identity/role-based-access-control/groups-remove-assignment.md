@@ -23,7 +23,7 @@ You can remove both direct and indirect role assignments for a user. If a user i
 
 ## Microsoft Entra roles in PIM
 
-If you have a Microsoft Entra ID P2 license and Privileged Identity Management (PIM), you have additional capabilities for role assignments. For information about removing Microsoft Entra role assignments in PIM, see these articles:
+If you have a Microsoft Entra ID P2 license and [Privileged Identity Management (PIM)](../../id-governance/privileged-identity-management/pim-configure.md), you have additional capabilities for role assignments. For information about removing Microsoft Entra role assignments in PIM, see these articles:
 
 | Method | Information |
 | --- | --- |
