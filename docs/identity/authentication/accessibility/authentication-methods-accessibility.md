@@ -51,7 +51,7 @@ References:
 
 ## Conclusion
 
-Microsoft Entra ID's range of MFA options enables individuals with diverse needs to access secure authentication without compromising on usability. By offering various options like the Authenticator app, SMS and voice calls, FIDO2 keys, Windows Hello, and email verification, Microsoft Entra ID ensures that security measures remain accessible and inclusive for all users.
+Microsoft Entra ID's range of MFA options enables individuals with diverse needs to access secure authentication without compromising on usability. To ensure that security measures remain accessible and inclusive for all users, Microsoft Entra ID offers various options like the Authenticator app, SMS and voice calls, FIDO2 keys, Windows Hello, and email verification.
 
 Selecting the right MFA method depends on individual needs and constraints. Microsoft’s commitment to flexible and inclusive authentication helps everyone stay secure, regardless of their physical or technological limitations. For those with specific accessibility requirements, it’s worth exploring each MFA option to find the one that aligns best with personal preferences and usability needs.
 
