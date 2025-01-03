@@ -181,5 +181,5 @@ DELETE https://graph.microsoft.com/v1.0/directory/administrativeUnits/{admin-uni
 ## Next steps
 
 - [Add users, groups, or devices to an administrative unit](admin-units-members-add.md)
-- [Assign Microsoft Entra roles with administrative unit scope](admin-units-assign-roles.md)
+- [Assign Microsoft Entra roles with administrative unit scope](manage-roles-portal.md)
 - [Microsoft Entra administrative units: Troubleshooting and FAQ](admin-units-faq-troubleshoot.yml)
