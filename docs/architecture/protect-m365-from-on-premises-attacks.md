@@ -6,7 +6,7 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: how-to
-ms.date: 01/08/2026
+ms.date: 01/03/2025
 ms.author: jricketts
 ms.reviewer: ajburnle
 ms.custom:
@@ -197,7 +197,7 @@ Monitor the following key scenarios, in addition to any scenarios specific to yo
   - Updates to the custom role definitions
   - Newly created custom roles
 
-For comprehensive guidance on this topic, check [Microsoft Entra security operations guide](security-operations-introduction).
+For comprehensive guidance on this topic, check [Microsoft Entra security operations guide](security-operations-introduction.md).
 
 ### Log management
 
