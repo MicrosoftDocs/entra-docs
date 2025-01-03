@@ -83,7 +83,7 @@ Follow these steps to list Microsoft Entra roles for a user using the Microsoft 
 
 To download all active role assignments across all roles, including built-in and custom roles, follow these steps.
 
-Bulk perations can only run for up to 1 hour and has limitations in large tenants. For more information, see [Bulk operations](../../fundamentals/bulk-operations-service-limitations.md) and [Bulk create users in Microsoft Entra ID](https://go.microsoft.com/fwlink/?linkid=2103821).
+Bulk operations can only run for up to 1 hour and has limitations in large tenants. For more information, see [Bulk operations](../../fundamentals/bulk-operations-service-limitations.md) and [Bulk create users in Microsoft Entra ID](https://go.microsoft.com/fwlink/?linkid=2103821).
 
 1. On the **Roles and administrators** page, select **All roles**.
 

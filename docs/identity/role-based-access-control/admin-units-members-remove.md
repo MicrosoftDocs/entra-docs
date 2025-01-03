@@ -73,7 +73,7 @@ You can remove users, groups, or devices from administrative units individually 
 
 1. Select **Remove member**, **Remove**, or **Remove device**.
 
-    :::image type="content" source="./media/admin-units-members-remove/admin-units-remove-user.png" alt-text="Screenshot showing a list users in an administrative unit with check marks and a Remove member option." lightbox="./media/admin-units-members-remove/admin-units-remove-user.png":::
+    :::image type="content" source="./media/admin-units-members-remove/admin-units-remove-user.png" alt-text="Screenshot showing a list of users in an administrative unit with check marks and a Remove member option." lightbox="./media/admin-units-members-remove/admin-units-remove-user.png":::
 
 ### Remove users from an administrative unit in a bulk operation
 

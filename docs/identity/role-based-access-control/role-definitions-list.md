@@ -16,7 +16,7 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 # List Microsoft Entra role definitions
 
-This article describes how to list the Microsoft Entra built-in and custom role defintions and their permissions using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API.
+This article describes how to list the Microsoft Entra built-in and custom role definitions and their permissions using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API.
 
 A role definition is a collection of permissions that can be performed, such as read, write, and delete. It's typically referred to as a role. Microsoft Entra ID has over 100 built-in roles or you can create your own custom roles. If you ever wondered "What do these roles really do?", you can access a detailed list of permissions for each of the roles.
 
