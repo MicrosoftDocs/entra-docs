@@ -32,7 +32,7 @@ Custom security attributes are security sensitive and can only be managed by del
 | [Attribute Definition Administrator](../role-based-access-control/permissions-reference.md#attribute-definition-administrator) | Define and manage the definition of custom security attributes. |
 | [Attribute Definition Reader](../role-based-access-control/permissions-reference.md#attribute-definition-reader) | Read the definition of custom security attributes. |
 
-Assign the appropriate role to the users who manage or report on these attributes at the directory scope. For detailed steps, see [Assign a role](../role-based-access-control/manage-roles-portal.yml#assign-a-role).
+Assign the appropriate role to the users who manage or report on these attributes at the directory scope. For detailed steps, see [Assign a role](/entra/identity/role-based-access-control/manage-roles-portal#assign-a-role).
 
 [!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
 
