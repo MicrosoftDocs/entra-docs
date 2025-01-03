@@ -37,14 +37,14 @@ For information on how to download and install Microsoft Graph PowerShell cmdlet
 
 ## Activity-based automatic renewal
 
-With Microsoft Entra intelligence, groups are now automatically renewed based on whether they were recently used. This feature eliminates the need for manual action by group owners. It's based on user activity in groups across Microsoft 365 services like Outlook, SharePoint, Teams, or Yammer.
+With Microsoft Entra intelligence, groups are now automatically renewed based on whether they were recently used. This feature eliminates the need for manual action by group owners. It's based on user activity in groups across Microsoft 365 services like Outlook, SharePoint, Teams, or Viva Engage.
 
 For example, an owner or a group member might do something like:
 
 - Send an email to the group in Outlook.
 - Upload a document to SharePoint.
 - Visit a Teams channel.
-- View a post in Yammer.
+- View a post in Viva Engage.
 
 In the preceding scenarios, the group is automatically renewed around 35 days before the group expires and the owner doesn't get any renewal notifications.
 
@@ -61,7 +61,7 @@ The following user actions cause automatic group renewal:
 - **SharePoint**: View, edit, download, move, share, or upload files.
 - **Outlook**: Join a group, read or write a group message from a group space, or "like" a message (in Outlook Web Access).
 - **Teams**: Visit a Teams channel.
-- **Yammer**: View a post within a Yammer community or an interactive email in Outlook.
+- **Viva Engage**: View a post within a Viva Engage community or an interactive email in Outlook.
 
 ### Auditing and reporting
 

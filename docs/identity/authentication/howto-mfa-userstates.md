@@ -6,7 +6,7 @@ description: Learn how to enable per-user Microsoft Entra multifactor authentica
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/31/2024
+ms.date: 12/11/2024
 
 ms.author: justinha
 author: justinha
@@ -67,18 +67,6 @@ The per-user MFA administration experience in the Microsoft Entra admin center i
 
    :::image type="content" border="true" source="./media/howto-mfa-userstates/sort.png" alt-text="Screenshot that shows an example of how to filter a large user sort.":::
 
-During transition to the new per-user MFA experience, you can also access the legacy per-user MFA experience. The format is:
- 
-`https://account.activedirectory.windowsazure.com/usermanagement/multifactorverification.aspx?tenantId=${userTenantID}`
- 
-To get the `userTenantID`, copy the tenant ID on the **Overview** page in the Microsoft Entra admin center. Then follow these steps to view status for a user with the legacy experience:
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **Per-user MFA**. 
-   :::image type="content" border="true" source="./media/howto-mfa-userstates/selectmfa-cropped.png" alt-text="Screenshot of select per-user multifactor authentication.":::
-1. A new page opens that displays the user state, as shown in the following example.
-   :::image type="content" border="true" source="./media/howto-mfa-userstates/legacy-user-state.png" alt-text="Screenshot that shows example user state information for Microsoft Entra multifactor authentication.":::
 
 ## Change the status for a user
 

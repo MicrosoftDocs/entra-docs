@@ -6,7 +6,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 04/26/2024
+ms.date: 12/17/2024
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 
@@ -16,7 +16,7 @@ ms.author: billmath
 
 You can use the cloud sync feature of Microsoft Entra Connect to test configuration changes by applying these changes to a single user. This on-demand provisioning helps you validate and verify that the changes made to the configuration were applied properly and are being correctly synchronized to Microsoft Entra ID.  
 
-The following document will guide you through on-demand provisioning with Microsoft Entra Cloud Sync for provisioning from Microsoft Entra ID to Active Directory.  If you are looking for information on provisioning from AD to Microsoft Entra ID, see [ On-demand provisioning - Microsoft Entra ID to Active Directory](how-to-on-demand-provision-entra-to-active-directory.md).
+The following document guides you through on-demand provisioning with Microsoft Entra Cloud Sync for provisioning from Microsoft Entra ID to Active Directory.  If you are looking for information on provisioning from AD to Microsoft Entra ID, see [ On-demand provisioning - Microsoft Entra ID to Active Directory](how-to-on-demand-provision-entra-to-active-directory.md).
 
 > [!IMPORTANT] 
 > When you use on-demand provisioning, the scoping filters are not applied to the user that you selected. You can use on-demand provisioning on users who are outside the organization units that you specified.
@@ -69,7 +69,7 @@ The matching details show a message with one of the three following operations:
 - **Update**: A user is updated based on a change made in the configuration.
 - **Delete**: A user is removed from Microsoft Entra ID.
 
-Depending on the type of operation that you've performed, the message will vary.
+Depending on the type of operation that you've performed, the message varies.
 
 ### Perform action
 The **Perform action** section provides information on the user who was provisioned or exported into Microsoft Entra ID after the configuration was applied. This is what the user looks like after provisioning into Microsoft Entra ID. Select the **View details** link to display this information.

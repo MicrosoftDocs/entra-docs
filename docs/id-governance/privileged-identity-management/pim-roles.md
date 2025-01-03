@@ -1,6 +1,6 @@
 ---
-title: Roles you cannot manage in Privileged Identity Management
-description: Describes the roles you cannot manage in Microsoft Entra Privileged Identity Management (PIM).
+title: Roles you can't manage in Privileged Identity Management
+description: Describes the roles you can't manage in Microsoft Entra Privileged Identity Management (PIM).
 
 author: barclayn
 manager: amycolannino
@@ -8,10 +8,9 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: conceptual
 ms.subservice: privileged-identity-management
-ms.date: 11/28/2023
+ms.date: 12/13/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
-ms.custom: pim ; H1Hack27Feb2017;oldportal;it-pro;
 
 ---
 
@@ -21,7 +20,7 @@ You can manage just-in-time assignments to all [Microsoft Entra roles](~/identit
 
 ## Classic subscription administrator roles
 
-You cannot manage the following classic subscription administrator roles in Privileged Identity Management:
+You can't manage the following classic subscription administrator roles in Privileged Identity Management:
 
 - Account Administrator
 - Service Administrator

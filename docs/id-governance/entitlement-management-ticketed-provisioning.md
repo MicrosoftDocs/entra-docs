@@ -6,7 +6,7 @@ ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: tutorial
-ms.date: 10/17/2024
+ms.date: 12/19/2024
 ms.custom: template-tutorial
 ---
 
@@ -38,7 +38,15 @@ In this tutorial, you'll learn:
 
 ## Adding Logic App Workflow to an existing Catalog for Entitlement Management
 
-Logic App workflows can be added to an existing catalog. For more information on how to create a new catalog, see: [Create and manage a catalog of resources in entitlement management](entitlement-management-catalog-create.md).
+To add a Logic App workflow to an existing catalog use the ARM template for the Logic App creation here: 
+
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fdemos%2Fidentitygovernance-entitlementmanagement-extensibility-servicenow-sample-logicapp%2Fazuredeploy.json).
+
+:::image type="content" source="media/entitlement-management-servicenow-integration/logic-app-arm-template.png" alt-text="Screenshot of Logic App ARM template." lightbox="media/entitlement-management-servicenow-integration/logic-app-arm-template.png":::
+
+
+Provide the resource group details, along with the Catalog ID to associate the Logic App with and select purchase. For more information on how to create a new catalog, see: [Create and manage a catalog of resources in entitlement management](entitlement-management-catalog-create.md).
+
 
 After a catalog is created, you'd add a Logic App workflow by doing the following steps:
 
@@ -57,9 +65,9 @@ After a catalog is created, you'd add a Logic App workflow by doing the followin
     :::image type="content" source="media/entitlement-management-servicenow-integration/entitlement-management-custom-extension-behavior.png" alt-text="Screenshot of entitlement management custom extension behavior actions tab." lightbox="media/entitlement-management-servicenow-integration/entitlement-management-custom-extension-behavior.png":::
 1. Select **Launch and wait** in the **Extension Configuration** which will pause the associated access package action until after the Logic App linked to the extension completes its task, and a resume action is sent by the admin to continue the process. For more information on this process, see:  [Configuring custom extensions that pause entitlement management processes](entitlement-management-logic-apps-integration.md#configuring-custom-extensions-that-pause-entitlement-management-processes).
 
-1. In the **Details** tab, choose Yes in the "*Create new logic App*" field. Add a name for the Logic App, along with the subscription, and resource group, where you're putting it.
-    :::image type="content" source="media/entitlement-management-servicenow-integration/entitlement-management-custom-extension-details.png" alt-text="Screenshot of the entitlement management  custom extension details tab." lightbox="media/entitlement-management-servicenow-integration/entitlement-management-custom-extension-details.png":::
-1. In **Review and Create**, review the summary of your custom extension and make sure the details for your Logic App, and it's call-out, are correct. After reviewing these details, select **Create**.
+1.  In the **Details** tab, choose No in the "*Create new logic App*" field as the Logic App has already been created in the previous steps. However, you need to provide the Azure subscription and resource group details, along with the Logic App name.
+    :::image type="content" source="media/entitlement-management-servicenow-integration/entitlement-management-custom-extension-details.png" alt-text="Screenshot of the entitlement management custom extension details tab." lightbox="media/entitlement-management-servicenow-integration/entitlement-management-custom-extension-details.png":::
+1. In **Review and Create**, review the summary of your custom extension and make sure the details for your Logic App call-out are correct. Then select **Create**.
 
 1. Once created, the Logic App is able to be accessed under **Logic App** next to the custom extension on the custom extensions page. You're able to call on this in access package policies.
     :::image type="content" source="media/entitlement-management-servicenow-integration/custom-extension-list.png" alt-text="Screenshot of custom extension list.":::
@@ -180,13 +188,15 @@ At this point it's time to configure ServiceNow for resuming the entitlement man
         ```
     1. Select "*Submit*" to save the changes.
         :::image type="content" source="media/entitlement-management-servicenow-integration/entitlement-management-servicenow-resume-call.png" alt-text="Screenshot of resume call selection within ServiceNow." lightbox="media/entitlement-management-servicenow-integration/entitlement-management-servicenow-resume-call.png"::: 
-        :::image type="content" source="media/entitlement-management-servicenow-integration/entitlement-management-servicenow-request-call.png" alt-text="Screenshot of the http request within ServiceNow.":::
+        
+        :::image type="content" source="media/entitlement-management-servicenow-integration/entitlement-management-servicenow-request-call.png" alt-text="Screenshot of the http request within ServiceNow." lightbox="media/entitlement-management-servicenow-integration/entitlement-management-servicenow-request-call.png":::
 1. Modify the request table schema: To modify the request table schema, make changes to the three tables shown in the following image:
     :::image type="content" source="media/entitlement-management-servicenow-integration/entitlement-management-servicenow-request-table-schema.png" alt-text="Screenshot of the request table schema within ServiceNow." lightbox="media/entitlement-management-servicenow-integration/entitlement-management-servicenow-request-table-schema.png":::
-    Add the three column label and type as string:
+    Add the four column label and type as string:
     - AccessPackageAssignmentRequestId
     - AccessPackageAssignmentStage
     - StageInstanceId
+    - EntraUserObjectId
 1. To automate workflow with Flow Designer, you'd do the following:
     1. Sign in to ServiceNow and go to Flow Designer.
     1. Select the “*New*” button and create a new action. 
