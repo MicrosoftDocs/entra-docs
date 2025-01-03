@@ -39,9 +39,9 @@ To configure Staged Rollout, follow these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Search for and select **Microsoft Entra Connect**.
-1. On the Microsoft Entra Connect page, under the Staged Rollout of cloud authentication, click **Enable Staged Rollout for managed user sign-in**.
-1. On the **Enable Staged Rollout** feature page, click **On** for the option [Certificate-based authentication](./certificate-based-authentication-federation-get-started.md)
-1. Click **Manage groups** and add groups you want to be part of cloud authentication. To avoid a time-out, ensure that the security groups contain no more than 200 members initially.
+1. On the Microsoft Entra Connect page, under the Staged Rollout of cloud authentication, select **Enable Staged Rollout for managed user sign-in**.
+1. On the **Enable Staged Rollout** feature page, select **On** for the option [Certificate-based authentication](./certificate-based-authentication-federation-get-started.md)
+1. Select **Manage groups** and add groups you want to be part of cloud authentication. To avoid a time-out, ensure that the security groups contain no more than 200 members initially.
 
 For more information, see [Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md).
 
@@ -99,6 +99,6 @@ In Windows sign-in, the match depends on if the device is hybrid or Microsoft En
 - [How to configure Microsoft Entra CBA](how-to-certificate-based-authentication.md)
 - [Microsoft Entra CBA on iOS devices](concept-certificate-based-authentication-mobile-ios.md)
 - [Microsoft Entra CBA on Android devices](concept-certificate-based-authentication-mobile-android.md)
-- [Windows smart card logon using Microsoft Entra CBA](concept-certificate-based-authentication-smartcard.md)
+- [Windows smart card sign-in using Microsoft Entra CBA](concept-certificate-based-authentication-smartcard.md)
 - [Certificate user IDs](concept-certificate-based-authentication-certificateuserids.md)
 - [FAQ](certificate-based-authentication-faq.yml)
