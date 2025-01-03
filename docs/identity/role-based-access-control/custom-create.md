@@ -166,6 +166,6 @@ Follow these steps:
 
 ## Related content
 
-- [Microsoft Entra administrative roles forum](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789)
+- [Assign Microsoft Entra roles](manage-roles-portal.md)
 - [Microsoft Entra built-in roles](permissions-reference.md)
 - [Comparison of default guest and member user permissions](~/fundamentals/users-default-permissions.md?context=azure/active-directory/roles/context/ugr-context)

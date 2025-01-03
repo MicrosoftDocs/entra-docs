@@ -248,6 +248,6 @@ Body
 
 ## Next steps
 
-- [Assign Microsoft Entra roles with administrative unit scope](admin-units-assign-roles.md)
+- [Assign Microsoft Entra roles with administrative unit scope](manage-roles-portal.md)
 - [Add users or groups to an administrative unit](admin-units-members-add.md)
 - [Microsoft Entra administrative units: Troubleshooting and FAQ](admin-units-faq-troubleshoot.yml)
