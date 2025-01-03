@@ -28,7 +28,7 @@ Passkeys on Android are used only from the profile where they're stored. If a pa
 
 Use the following workarounds for Authenticator passkey issues.
 
-### An authentication strength Conditional Access policy loop
+### Workarounds for an authentication strength Conditional Access policy loop
 
 Users can get in a loop when they try to add a passkey in Authenticator if a Conditional Access policy requires phishing-resistant authentication to access **All resources (formerly 'All cloud apps')**. For example:
 
