@@ -23,13 +23,13 @@ This article explains how to migrate from running federated servers such as Acti
 
 A tenant admin could cut the federated domain fully over to Microsoft Entra CBA without pilot testing. This is done by enabling the CBA auth method in Microsoft Entra ID and converting the entire domain to managed authentication. However, if customer wants to test a small batch of users authenticate against Microsoft Entra CBA before the full domain cutover to managed, they can make use of staged rollout feature.
 
-[Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md) for Certificate-based Authentication (CBA) helps customers transition from performing CBA at a federated IdP to Microsoft Entra ID by selectively moving small set of users to use CBA at Microsoft Entra ID (no longer being redirected to the federated IdP) with selected groups of users before then converting the domain configuration in Microsoft Entra ID from federated to managed. Staged rollout is not designed for the domain to remain federated for long periods of time or for large amounts of users.
+[Staged Rollout](~/identity/hybrid/connect/how-to-connect-staged-rollout.md) for Certificate-based Authentication (CBA) helps customers transition from performing CBA at a federated IdP to Microsoft Entra ID by selectively moving small set of users to use CBA at Microsoft Entra ID (no longer being redirected to the federated IdP) with selected groups of users before then converting the domain configuration in Microsoft Entra ID from federated to managed. Staged rollout isn't designed for the domain to remain federated for long periods of time or for large amounts of users.
 
 Watch this quick video demonstrating the migration from ADFS certificate-based authentication to Microsoft Entra CBA
 > [!VIDEO https://www.youtube.com/embed/jsKQxo-xGgA]
 
 >[!NOTE]
-> When Staged rollout is enabled for a user, the user is considered a managed user and all authentication will happen at Microsoft Entra ID. For a federated Tenant, if CBA is enabled on Staged Rollout, password authentication only works if PHS is enabled too otherwise password authentication will fail.
+> When Staged rollout is enabled for a user, the user is considered a managed user and all authentication happens at Microsoft Entra ID. For a federated Tenant, if CBA is enabled on Staged Rollout, password authentication only works if PHS is enabled too. Otherwise, password authentication fails.
 
 ## Enable Staged Rollout for certificate-based authentication on your tenant
 
@@ -54,7 +54,7 @@ An AD FS admin can use **Synchronization Rules Editor** to create rules to sync 
 Microsoft Entra Connect requires a special role named **Hybrid Identity Administrator**, which grants the necessary permissions. You need this role for permission to write to the new cloud attribute.
 
 >[!NOTE] 
->If a user is using synchronized attributes, such as the onPremisesUserPrincipalName attribute in the user object for username binding, be aware that any user that has administrative access to the Microsoft Entra Connect server can change the synchronized attribute mapping, and change the value of the synchronized attribute. The user does not need to be a cloud admin. The AD FS admin should make sure the administrative access to the Microsoft Entra Connect server should be limited, and privileged accounts should be cloud-only accounts.
+>If a user is using synchronized attributes, such as the onPremisesUserPrincipalName attribute in the user object for username binding, then any user that has administrative access to the Microsoft Entra Connect server can change the synchronized attribute mapping, and change the value of the synchronized attribute. The user doesn't need to be a cloud admin. The AD FS admin should make sure the administrative access to the Microsoft Entra Connect server should be limited, and privileged accounts should be cloud-only accounts.
 
 <a name='frequently-asked-questions-about-migrating-from-ad-fs-to-azure-ad'></a>
 
@@ -66,7 +66,7 @@ Although it's possible, Microsoft recommends privileged accounts be cloud-only a
 
 ### If an organization is a hybrid running both AD FS and Azure CBA, are they still vulnerable to the AD FS compromise?
 
-Microsoft recommends privileged accounts be cloud-only accounts. This practice will limit the exposure in Microsoft Entra ID from a compromised on-premises environment. Maintaining privileged accounts a cloud-only is foundational to this goal. 
+Microsoft recommends privileged accounts be cloud-only accounts. This practice limits the exposure in Microsoft Entra ID from a compromised on-premises environment. Maintaining privileged accounts a cloud-only is foundational to this goal. 
 
 For synchronized accounts:
 
@@ -89,7 +89,7 @@ Microsoft Entra CBA requires the user or application to supply the Microsoft Ent
 
 In the browser example, the user most often types in their Microsoft Entra UPN. The Microsoft Entra UPN is used for realm and user discovery. The certificate used then must match this user by using one of the configured username bindings in the policy. 
 
-In Windows sign-in, the match depends on if the device is hybrid or Microsoft Entra joined. But in both cases, if username hint is provided, Windows will send the hint as a Microsoft Entra UPN. The certificate used then must match this user by using one of the configured username bindings in the policy.
+In Windows sign-in, the match depends on if the device is hybrid or Microsoft Entra joined. But in both cases, if username hint is provided, Windows sends the hint as a Microsoft Entra UPN. The certificate used then must match this user by using one of the configured username bindings in the policy.
 
 
 ## Next steps
