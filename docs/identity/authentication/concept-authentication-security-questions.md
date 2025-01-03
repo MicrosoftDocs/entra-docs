@@ -5,7 +5,7 @@ description: Learn about using security questions in Microsoft Entra ID to help 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/26/2024
+ms.date: 01/03/2024
 
 ms.author: justinha
 author: justinha

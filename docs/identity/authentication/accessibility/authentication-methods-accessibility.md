@@ -5,7 +5,7 @@ author:      gdaluz1 # GitHub alias
 ms.author: justinha
 ms.service: entra-id
 ms.topic: article
-ms.date:     11/05/2024
+ms.date:     01/03/2024
 ms.subservice: authentication
 ---
 # Improve accessibility with multifactor authentication in Microsoft Entra ID
