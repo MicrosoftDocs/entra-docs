@@ -1,6 +1,6 @@
 ---
 title: Register passkeys in Authenticator on Android and iOS devices
-description: Registration and management of passkeys with Authenticator on Android and iOS devices.
+description: Registration and management of passkeys with Microsoft Authenticator on Android and iOS devices.
 
 ms.service: entra-id 
 ms.subservice: authentication
@@ -29,9 +29,9 @@ Alternatively, you can add a passkey from your mobile device browser or through 
 
 | Scenario | iOS | Android |
 |------------------|---------------------------------|----------------|
-| **Same-device registration by signing into Authenticator**              | &#x2705;          | &#x2705;       |
-| **Same-device registration in a browser**            | &#x2705; | &#x2705;<sup>1</sup>     |
-| **Cross-device registration**  | &#x2705;  | &#x2705;    |
+| Same-device registration by signing into Authenticator              | &#x2705;          | &#x2705;       |
+| Same-device registration in a browser            | &#x2705; | &#x2705;<sup>1</sup>     |
+| Cross-device registration  | &#x2705;  | &#x2705;    |
 
 <sup>1</sup>Support for same-device registration in Microsoft Edge on Android is coming soon.
 
@@ -153,9 +153,9 @@ By default, **Security info** prompts users to sign in to the Authenticator app 
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-ios/passkey-ios-security-info-laptop.png" alt-text="Screenshot that shows a new passkey sign-in method on the Security info pane on your other device.":::
 
-### Alternate registration flow from Security Info if you have trouble (iOS)
+### Alternate registration flow from Security info if you have trouble (iOS)
 
-If you can't sign in to Authenticator to register a passkey, you can register directly from the **Security info** pane with `WebAuthn`. If you sign in to **Security info** on a different device, you need Bluetooth and an internet connection. Connectivity to the following two endpoints must be allowed in your organization:
+If you can't sign in to Authenticator to register a passkey, you can register directly from the **Security info** pane with WebAuthn. If you sign in to **Security info** on a different device, you need Bluetooth and an internet connection. Connectivity to the following two endpoints must be allowed in your organization:
 
 - `https://cable.ua5v.com`
 - `https://cable.auth.com`
@@ -321,7 +321,7 @@ By default, **Security info** prompts users to sign in to the Authenticator app 
 
 ## Alternate registration flow on Security info if you have trouble (Android)
 
-If you can't sign in to the Authenticator to register a passkey, you can register directly from the **Security info** pane with `WebAuthn`. If you sign in to **Security info** on a different device, you need Bluetooth and an internet connection. Connectivity to the following two endpoints must be allowed in your organization:
+If you can't sign in to the Authenticator to register a passkey, you can register directly from the **Security info** pane with WebAuthn. If you sign in to **Security info** on a different device, you need Bluetooth and an internet connection. Connectivity to the following two endpoints must be allowed in your organization:
 
 - `https://cable.ua5v.com`
 - `https://cable.auth.com`
@@ -353,8 +353,7 @@ If a user wants to revert to the original instructions and register a passkey in
 
 To remove the passkey from Authenticator, tap the account name, tap **Settings**, and then tap **Delete passkey**.
 
-> [!NOTE]
-> In most cases, the passkey is also deleted from [Security info](https://mysignins.microsoft.com/security-info). If not, go to the **Security info** pane and select **Delete** to remove it.
+In most cases, the passkey is also deleted from [Security info](https://mysignins.microsoft.com/security-info). If not, go to the **Security info** pane and select **Delete** to remove it.
 
 ### Troubleshooting
 
