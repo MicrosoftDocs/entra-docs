@@ -68,7 +68,7 @@ Identity federation allows you to access Microsoft Entra protected resources wit
 
 ### Create a least-privileged custom role to rotate application credentials
 
-Microsoft Entra roles allow you to grant granular permissions to your admins, abiding by the principle of least privilege. A custom role can be created to rotate application credentials, ensuring that only the necessary permissions are granted to complete the task. To learn more, see [Create a custom role in Microsoft Entra ID](/entra/identity/role-based-access-control/custom-create).
+Microsoft Entra roles allow you to grant granular permissions to your admins, abiding by the principle of least privilege. A custom role can be created to rotate application credentials, ensuring that only the necessary permissions are granted to complete the task. To learn more, see [Create a custom role in Microsoft Entra ID](../role-based-access-control/custom-create.md).
 
 ### Ensure you have a process to triage and monitor applications 
 

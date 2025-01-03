@@ -88,7 +88,7 @@ In Microsoft Entra ID, users who have privileged roles, such as administrators, 
 
 - To enable a rich role assignment experience that includes delegation and multiple roles at the same time, consider using Microsoft Entra security groups or Microsoft 365 Groups. These groups are collectively called *cloud groups*.
 
-  Also, enable role-based access control. See [Assign Microsoft Entra roles to groups](~/identity/role-based-access-control/groups-assign-role.md). You can use administrative units to restrict the scope of roles to a portion of the organization. See [Administrative units in Microsoft Entra ID](~/identity/role-based-access-control/administrative-units.md).
+  Also, enable role-based access control. See [Assign Microsoft Entra roles](../identity/role-based-access-control/manage-roles-portal.md). You can use administrative units to restrict the scope of roles to a portion of the organization. See [Administrative units in Microsoft Entra ID](~/identity/role-based-access-control/administrative-units.md).
 
 - Deploy emergency access accounts. Do *not* use on-premises password vaults to store credentials. See [Manage emergency access accounts in Microsoft Entra ID](~/identity/role-based-access-control/security-emergency-access.md).
 
