@@ -13,9 +13,9 @@ author: justinha
 manager: amycolannino
 ms.reviewer: mjsantani
 
-# Customer intent: As a Microsoft Entra administrator, I want to learn how to enable and enforce passkeys in Authenticator sign-in for users.
+# Customer intent: As a Microsoft Entra administrator, I want to learn how to enable and enforce passkeys in Microsoft Authenticator sign-in for users.
 ---
-# Enable passkeys in Microsoft Authenticator
+# Enable passkeys in Authenticator
 
 This article lists steps to enable and enforce use of passkeys in Authenticator for Microsoft Entra ID. First, you update the Authentication methods policy to allow users to register and sign in with passkeys in Authenticator. Then you can use Conditional Access authentication strengths policies to enforce passkey sign-in when users access a sensitive resource.
 
@@ -48,19 +48,19 @@ An Authentication Policy administrator needs to consent to allow Authenticator i
 
      - **iOS**: Authenticator attestation uses the [iOS App Attest service](https://developer.apple.com/documentation/devicecheck/preparing-to-use-the-app-attest-service) to ensure the legitimacy of the Authenticator app before registering the passkey.
      
-       >[!NOTE]
-       >Support for registering passkeys in Authenticator when attestation is enforced is currently rolling out to iOS Authenticator app users. Support for registering attested passkeys in Authenticator on Android devices is available to all users in the latest version of the app.
+       > [!NOTE]
+       > Support for registering passkeys in Authenticator when attestation is enforced is currently rolling out to iOS Authenticator app users. Support for registering attested passkeys in Authenticator on Android devices is available to all users in the latest version of the app.
        
      - **Android**:
        - For Play Integrity attestation, Authenticator attestation uses the [Play Integrity API](https://developer.android.com/google/play/integrity/overview) to ensure the legitimacy of the Authenticator app before registering the passkey.
        - For Key attestation, Authenticator attestation uses [key attestation by Android](https://developer.android.com/privacy-and-security/security-key-attestation) to verify that the passkey being registered is hardware-backed.
 
-     >[!NOTE]
-     >For both iOS and Android, Authenticator attestation relies upon Apple and Google services to verify the authenticity of the Authenticator app. Heavy service usage can make passkey registration fail, and users might need to try again. If Apple and Google services are down, Authenticator attestation blocks registration that requires attestation until services are restored. To monitor the status of Google Play Integrity service, see [Google Play Status Dashboard](https://status.play.google.com/). To monitor the status of the iOS App Attest service, see [System Status](https://developer.apple.com/system-status/).
+     > [!NOTE]
+     > For both iOS and Android, Authenticator attestation relies upon Apple and Google services to verify the authenticity of the Authenticator app. Heavy service usage can make passkey registration fail, and users might need to try again. If Apple and Google services are down, Authenticator attestation blocks registration that requires attestation until services are restored. To monitor the status of Google Play Integrity service, see [Google Play Status Dashboard](https://status.play.google.com/). To monitor the status of the iOS App Attest service, see [System Status](https://developer.apple.com/system-status/).
 
    - Key restrictions set the usability of specific passkeys for both registration and authentication. Set **Enforce key restrictions** to **Yes** to allow or block only certain passkeys, which are identified by their AAGUIDs.
    
-     This setting must be **Yes**, and you need to add the Authenticator AAGUIDs to allow users to register passkeys in Authenticator. They either sign in to the Authenticator app or add **Passkey in Microsoft Authenticator** from their **Security info** tab.
+     This setting must be **Yes**. You need to add the Authenticator AAGUIDs to allow users to register passkeys in Authenticator. They either sign in to the Authenticator app or add **Passkey in Microsoft Authenticator** from their **Security info** tab.
 
      [Security info](https://mysignins.microsoft.com/security-info) requires this setting to be set to **Yes** so that users can choose **Passkey in Authenticator** and go through a dedicated Authenticator passkey registration flow. If you choose **No**, users might still be able to add a passkey in Authenticator by choosing the **Security key or passkey** method, depending on their operating system and browser. However, we don't expect many users to discover and use that method.
      
@@ -76,15 +76,13 @@ An Authentication Policy administrator needs to consent to allow Authenticator i
      - **Authenticator for Android**: `de1e552d-db1d-4423-a619-566b625cdc84`
      - **Authenticator for iOS**: `90a3ccdf-635c-4729-a248-9b709135078f`
    
-     >[!NOTE]
-     >If you turn off key restrictions, make sure you clear the **Microsoft Authenticator** checkbox so that users aren't prompted to set up a passkey in the Authenticator app in [Security info](https://mysignins.microsoft.com/security-info).
+      If you turn off key restrictions, make sure that you clear the **Microsoft Authenticator** checkbox so that users aren't prompted to set up a passkey in the Authenticator app in [Security info](https://mysignins.microsoft.com/security-info).
 
    :::image type="content" border="true" source="media/how-to-enable-authenticator-passkey/optional-settings.png" alt-text="Screenshot that shows Authenticator enabled for passkey."lightbox="media/how-to-enable-authenticator-passkey/optional-settings.png":::
 
 1. After you finish the configuration, select **Save**.
 
-   >[!NOTE]
-   >If you see an error when you try to save, replace multiple groups with a single group in one operation, and then select **Save** again.
+   If you see an error when you try to save, replace multiple groups with a single group in one operation, and then select **Save** again.
 
 ## Enable passkeys in Authenticator by using Graph Explorer
 
@@ -100,7 +98,7 @@ To configure the policy by using Graph Explorer:
    GET https://graph.microsoft.com/beta/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
    ```
 
-1. To disable attestation enforcement and enforce key restrictions to allow only AAGUIDs for Authenticator, perform a PATCH operation by using the following request body:
+1. To disable attestation enforcement and enforce key restrictions to allow only AAGUIDs for Authenticator, perform a `PATCH` operation by using the following request body:
 
    ```json
    PATCH https://graph.microsoft.com/beta/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
@@ -185,12 +183,11 @@ If a user deletes a passkey in Authenticator, the passkey is also removed from t
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com), and search for the user whose passkey must be removed.
 1. Select **Authentication methods**, right-click **FIDO2 security key**, and select **Delete**.
 
-> [!NOTE]
-> Unless the user initiated the passkey deletion themselves in Authenticator, they need to also remove the passkey in Authenticator on their device.
+   Unless the user initiated the passkey deletion themselves in Authenticator, they need to also remove the passkey in Authenticator on their device.
 
 ## Enforce sign-in with passkeys in Authenticator
 
-To make users sign in with a passkey when they access a sensitive resource, use the built-in phishing-resistant authentication strength. Or, create a custom authentication strength by following these steps:
+To make users sign in with a passkey when they access a sensitive resource, use the built-in phishing-resistant authentication strength, or create a custom authentication strength by following these steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a Conditional Access administrator.
 1. Browse to **Protection** > **Authentication methods** > **Authentication strengths**.
@@ -207,4 +204,4 @@ To make users sign in with a passkey when they access a sensitive resource, use 
 
 ## Related content
 
-[Support for passkey in Windows](/windows/security/identity-protection/passkeys)
+- [Support for passkey in Windows](/windows/security/identity-protection/passkeys)

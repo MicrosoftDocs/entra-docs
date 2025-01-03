@@ -58,7 +58,7 @@ Here are some workarounds:
   | Exclude devices   | Android, iOS.                                 | N/A.                     |
   | Targeted resource | All resources.                               | All resources.          |
   | Grant control     | Authentication strength.                      | Authentication strength.<sup>1</sup> |
-  | Methods           | Passkey in Microsoft Authenticator. |TAP, passkey in Microsoft Authenticator. |
+  | Methods           | Passkey in Authenticator. |TAP, passkey in Authenticator. |
   | Policy result     | Users who can't sign in with a passkey in Authenticator are directed to the **My Sign-ins** wizard mode. After registration, they're asked to sign in to Authenticator on their mobile device. | Users who sign in to Authenticator with a TAP or another allowed method can register a passkey directly in Authenticator. No loop occurs because the user meets the authentication requirements. |
 
   <sup>1</sup>For users to register new sign-in methods, your grant control for the mobile policy needs to match your Conditional Access policy to register [Security info](https://mysignins.microsoft.com/security-info).
