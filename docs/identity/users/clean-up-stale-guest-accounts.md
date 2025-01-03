@@ -5,7 +5,7 @@ description: Monitor and clean up stale guest accounts using access reviews
 author: billmath
 ms.author: billmath
 manager: amycolannino
-ms.date: 06/29/2023
+ms.date: 12/30/2024
 ms.reviewer: gasinh
 ms.topic: how-to
 ms.service: entra-id

@@ -16,7 +16,7 @@ ms.author: jeedes
 ---
 # Tutorial: Microsoft Entra SSO integration with Benefitsolver
 
-In this tutorial, you'll learn how to integrate Benefitsolver with Microsoft Entra ID. When you integrate Benefitsolver with Microsoft Entra ID, you can:
+In this tutorial, you learn how to integrate Benefitsolver with Microsoft Entra ID. When you integrate Benefitsolver with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Benefitsolver.
 * Enable your users to be automatically signed-in to Benefitsolver with their Microsoft Entra accounts.
@@ -44,7 +44,7 @@ To configure the integration of Benefitsolver into Microsoft Entra ID, you need 
 1. In the **Add from the gallery** section, type **Benefitsolver** in the search box.
 1. Select **Benefitsolver** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-benefitsolver'></a>
 
@@ -70,7 +70,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Benefitsolver** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -86,9 +86,9 @@ Follow these steps to enable Microsoft Entra SSO.
     `http://<companyname>.benefitsolver.com`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Benefitsolver Client support team](https://www.businessolver.com/contact) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Benefitsolver Client support team](https://www.businessolver.com/contact-us) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. Benefitsolver application expects the SAML assertions in a specific format. Configure the following claims for this application. You can manage the values of these attributes from the **User Attributes** section on application integration page. On the **Set up Single Sign-On with SAML** page, click **Edit** button to open **User Attributes** dialog.
+1. Benefitsolver application expects the SAML assertions in a specific format. Configure the following claims for this application. You can manage the values of these attributes from the **User Attributes** section on application integration page. On the **Set up Single Sign-On with SAML** page, select **Edit** button to open **User Attributes** dialog.
 
 	![Screenshot shows User Attributes with the edit control called out.](common/edit-attribute.png)
 
@@ -96,13 +96,13 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	| Name |  Source Attribute|
 	|---------------|----------------|
-	| ClientID | You need to get this value from your [Benefitsolver Client support team](https://www.businessolver.com/contact).|
-	| ClientKey | You need to get this value from your [Benefitsolver Client support team](https://www.businessolver.com/contact).|
-	| LogoutURL | You need to get this value from your [Benefitsolver Client support team](https://www.businessolver.com/contact).|
-	| EmployeeID | You need to get this value from your [Benefitsolver Client support team](https://www.businessolver.com/contact).|
+	| ClientID | You need to get this value from your [Benefitsolver Client support team](https://www.businessolver.com/contact-us).|
+	| ClientKey | You need to get this value from your [Benefitsolver Client support team](https://www.businessolver.com/contact-us).|
+	| LogoutURL | You need to get this value from your [Benefitsolver Client support team](https://www.businessolver.com/contact-us).|
+	| EmployeeID | You need to get this value from your [Benefitsolver Client support team](https://www.businessolver.com/contact-us).|
 	| | |
 
-	a. Click **Add new claim** to open the **Manage user claims** dialog.
+	a. Select **Add new claim** to open the **Managed user claims** dialog.
 
 	![Screenshot shows User claims with Add new claim and Save called out.](common/new-save-attribute.png)
 
@@ -116,11 +116,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	e. From the **Source attribute** list, type the attribute value shown for that row.
 
-	f. Click **Ok**
+	f. Select **Ok**
 
-	g. Click **Save**.
+	g. Select **Save**.
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
 	![The Certificate download link](common/metadataxml.png)
 
@@ -132,7 +132,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ### Create a Microsoft Entra test user 
 
-In this section, you'll create a test user called B.Simon.
+In this section, you create a test user called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
@@ -148,36 +148,36 @@ In this section, you'll create a test user called B.Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting access to Benefitsolver.
+In this section, you enable B.Simon to use single sign-on by granting access to Benefitsolver.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Benefitsolver**.
 1. In the app's overview page, select **Users and groups**.
-1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
-   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-   1. In the **Add Assignment** dialog, click the **Assign** button.
+1. Select **Add user/group**, then select **Users and groups** in the **Added Assignment** dialog.
+   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then select the **Select** button at the bottom of the screen.
+   1. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
+   1. In the **Added Assignment** dialog, select the **Assign** button.
 
 ## Configure Benefitsolver SSO
 
-To configure single sign-on on **Benefitsolver** side, you need to send the downloaded **Metadata XML** and appropriate copied URLs from the application configuration to [Benefitsolver support team](https://www.businessolver.com/contact). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Benefitsolver** side, you need to send the downloaded **Metadata XML** and appropriate copied URLs from the application configuration to [Benefitsolver support team](https://www.businessolver.com/contact-us). They set this setting to have the SAML SSO connection set properly on both sides.
 
 > [!NOTE]
 > Your Benefitsolver support team has to do the actual SSO configuration. You will get a notification when SSO has been enabled for your subscription.
 
 ### Create Benefitsolver test user
 
-In this section, you create a user called Britta Simon in Benefitsolver. Work with [Benefitsolver support team](https://www.businessolver.com/contact) to add the users in the Benefitsolver platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in Benefitsolver. Work with [Benefitsolver support team](https://www.businessolver.com/contact-us) to add the users in the Benefitsolver platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to Benefitsolver Sign-on URL where you can initiate the login flow. 
+* Select on **Test this application**, this will redirect to Benefitsolver Sign-on URL where you can initiate the sign in flow. 
 
-* Go to Benefitsolver Sign-on URL directly and initiate the login flow from there.
+* Go to Benefitsolver Sign-on URL directly and initiate the sign in flow from there.
 
-* You can use Microsoft My Apps. When you click the Benefitsolver tile in the My Apps, this will redirect to Benefitsolver Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
+* You can use Microsoft My Apps. When you select the Benefitsolver tile in the My Apps, this will redirect to Benefitsolver Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 ## Next steps
 
