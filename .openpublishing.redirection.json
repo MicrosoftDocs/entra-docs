@@ -1501,10 +1501,11 @@
     {
       "source_path_from_root": "/docs/external-id/customers/sample-cli-app-node-sign-in-users.md",
       "redirect_url": "/entra/identity-platform/quickstart-cli-app-node-sign-in-users",
-=======
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/users/groups-write-back-portal.md",
       "redirect_url": "/entra/identity/hybrid/group-writeback-cloud-sync",
->>>>>>> 5ded5b70bd1968b95458480c8cbfd73ded5bdd3f
       "redirect_document_id": false
     },
     {
