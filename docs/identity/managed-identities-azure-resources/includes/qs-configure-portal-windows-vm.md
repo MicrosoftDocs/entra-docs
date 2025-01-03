@@ -95,4 +95,4 @@ To remove a user-assigned identity from a VM, your account needs the [Virtual Ma
 
 ## Next steps
 
-- Using the Azure portal, give an Azure VM's managed identity [access to another Azure resource](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/how-to-assign-access-azure-resource?pivots=identity-mi-access-portal).
+- Using the Azure portal, give an Azure VM's managed identity [access to another Azure resource](https://learn.microsoft.com/entra/identity/managed-identities-azure-resources/how-to-assign-access-azure-resource?pivots=identity-mi-access-portal).
