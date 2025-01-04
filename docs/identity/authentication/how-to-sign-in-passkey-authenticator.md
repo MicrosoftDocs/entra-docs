@@ -46,7 +46,7 @@ Follow these steps to sign in to Microsoft Entra ID with a passkey in Authentica
 
    1. Alternatively, select **Sign-in options** to sign in without entering a username.
 
-      :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-microsoft.png" alt-text="Screenshot that shows the sign-in options in Authenticator for iOS devices.":::
+      :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-microsoft.png" alt-text="Screenshot that shows sign-in options in Authenticator for iOS devices.":::
 
    1. If you selected **Sign-in options**, then select **Face, fingerprint, PIN or security key**. Otherwise, skip to the next step.
 
