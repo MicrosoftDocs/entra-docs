@@ -45,9 +45,7 @@ What's new in Microsoft Entra offers a comprehensive view of Microsoft Entra pro
 **Service category:** Provisioning    
 **Product capability:** Directory    
 
-To prepare for an upcoming security hardening, Microsoft will deploy a dedicated first-party application to enable the synchronization between Active Directory and Microsoft Entra ID. This new application will manifest as a first party service principal called the "Microsoft Entra AD Synchronization Service" (Application ID: 6bf85cfa-ac8a-4be5-b5de-425a0d0dc016), and will be visible in the Enterprise Applications experience within the Microsoft Entra Admin Center. This application is critical for the continued operation of their on-premises to Microsoft Entra ID synchronization functionality (through Microsoft Entra Connect Sync or Microsoft Entra Cloud Sync).
-
-In the upcoming release(s), Microsoft will share more information and guidance on upgrading to a new version of Microsoft Entra Connect that will use this first party application to synchronize between Active Directory and Microsoft Entra ID.
+As part of ongoing security hardening, Microsoft deployed Microsoft Entra AD Synchronization Service, a dedicated first-party application to enable the synchronization between Active Directory and Microsoft Entra ID. This new application with Application Id 6bf85cfa-ac8a-4be5-b5de-425a0d0dc016 was provisioned in customer tenants that use Microsoft Entra Connect Sync or the Microsoft Entra Cloud Sync service. 
 
 ---
 
