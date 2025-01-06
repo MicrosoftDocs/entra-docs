@@ -6,7 +6,7 @@ description: This article has information about moving your hybrid identity envi
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.topic: conceptual
-ms.date: 08/25/2024
+ms.date: 12/26/2024
 ms.author: billmath
 author: gargi-sinha
 manager: amycolannino

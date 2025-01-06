@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: conceptual
-ms.date: 02/29/2024
+ms.date: 12/23/2024
 ms.service: global-secure-access
 ms.subservice: entra-internet-access 
 ms.reviewer: frankgomulka
@@ -47,14 +47,7 @@ Once you link a security profile to a Conditional Access (CA) policy, if multipl
 
 ## Known limitations
 
-- Platform assumes standard ports for HTTP/S traffic (ports 80 and 443).
-- IPv6 isn't supported on this platform yet.
-- UDP isn't supported on this platform yet.
-- User-friendly end-user notifications are in development.
-- Remote network connectivity for Internet Access is in development.
-- Transport Layer Security (TLS) termination is in development.
-- URL path based filtering and URL categorization for HTTP and HTTPS traffic are in development.
-- Currently, an admin can create up to 100 web content filtering policies and up to 1,000 rules based on up to 8,000 total FQDNs. Admins can also create up to 256 security profiles.
+[!INCLUDE [known-limitations-include](../includes/known-limitations-include.md)]
 
 ## Next steps
 

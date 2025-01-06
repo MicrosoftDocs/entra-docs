@@ -4,7 +4,7 @@ description: The following document describes how the UserPrincipalName attribut
 author: billmath
 ms.subservice: hybrid-connect
 ms.author: billmath
-ms.date: 12/09/2024
+ms.date: 12/27/2024
 ms.topic: conceptual
 ms.service: entra-id
 manager: amycolannino
@@ -29,7 +29,7 @@ The following terminology is used in this article:
 |Alternate login ID|An on-premises attribute other than UserPrincipalName, such as mail attribute, used for login.|
 
 ## What is UserPrincipalName?
-UserPrincipalName is an attribute that is an Internet-style login name for a user based on the Internet standard [RFC 822](https://www.ietf.org/rfc/rfc0822.txt). 
+UserPrincipalName is an attribute that is an Internet-style login name for a user based on the Internet standard [RFC 822](https://datatracker.ietf.org/doc/html/rfc2822). 
 
 ### UPN format
 A UPN consists of a UPN prefix (the user account name) and a UPN suffix (a DNS domain name). The prefix is joined with the suffix using the "\@" symbol. For example, "someone\@example.com". A UPN must be unique among all security principal objects within a directory forest. 
@@ -89,7 +89,7 @@ The following are example scenarios of how the UPN is calculated based on the gi
 
 ![Scenario1](./media/plan-connect-userprincipalname/example1.png)
 
-On-Premises user object:
+On-premises user object:
 - mailNickName: &lt;not set&gt;
 - proxyAddresses: {SMTP:us1@contoso.com}
 - mail: us2@contoso.com
@@ -108,7 +108,7 @@ Microsoft Entra tenant user object:
 
 ![Scenario2](./media/plan-connect-userprincipalname/example2.png)
 
-On-Premises user object:
+On-premises user object:
 - mailNickName: us4
 - proxyAddresses: {SMTP:us1@contoso.com}
 - mail: us2@contoso.com
@@ -126,7 +126,7 @@ Microsoft Entra tenant user object:
 
 ![Scenario3](./media/plan-connect-userprincipalname/example3.png)
 
-On-Premises user object:
+On-premises user object:
 - mailNickName: us4
 - proxyAddresses: {SMTP:us1@contoso.com}
 - mail: us2@contoso.com
@@ -145,7 +145,7 @@ Microsoft Entra tenant user object:
 
 ![Scenario4](./media/plan-connect-userprincipalname/example4.png)
 
-On-Premises user object:
+On-premises user object:
 - mailNickName: us4
 - proxyAddresses: {SMTP:us6@contoso.com}
 - mail: us7@contoso.com
@@ -162,7 +162,7 @@ Microsoft Entra tenant user object:
 
 ![Scenario5](./media/plan-connect-userprincipalname/example5.png)
 
-On-Premises user object:
+On-premises user object:
 - mailNickName: us4
 - proxyAddresses: {SMTP:us6@contoso.com}
 - mail: us7@contoso.com

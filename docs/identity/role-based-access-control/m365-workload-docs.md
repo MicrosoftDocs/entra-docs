@@ -282,5 +282,5 @@ In addition to the previously mentioned RBAC systems, elevated permissions can b
 
 ## Next steps
 
-* [How to assign or remove Microsoft Entra administrator roles](manage-roles-portal.yml)
+* [How to assign or remove Microsoft Entra administrator roles](/entra/identity/role-based-access-control/manage-roles-portal)
 * [Microsoft Entra built-in roles](permissions-reference.md)

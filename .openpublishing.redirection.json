@@ -1237,6 +1237,41 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/role-based-access-control/admin-units-assign-roles.md",
+      "redirect_url": "/entra/identity/role-based-access-control/manage-roles-portal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/role-based-access-control/assign-roles-different-scopes.md",
+      "redirect_url": "/entra/identity/role-based-access-control/manage-roles-portal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/role-based-access-control/custom-assign-graph.md",
+      "redirect_url": "/entra/identity/role-based-access-control/manage-roles-portal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/role-based-access-control/custom-assign-powershell.md",
+      "redirect_url": "/entra/identity/role-based-access-control/manage-roles-portal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/role-based-access-control/groups-assign-role.md",
+      "redirect_url": "/entra/identity/role-based-access-control/manage-roles-portal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/role-based-access-control/groups-view-assignments.md",
+      "redirect_url": "/entra/identity/role-based-access-control/view-assignments",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/role-based-access-control/list-role-assignments-users.md",
+      "redirect_url": "/entra/identity/role-based-access-control/view-assignments",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/global-secure-access/how-to-target-resource-microsoft-365-profile.md",
       "redirect_url": "/entra/global-secure-access/how-to-target-resource-microsoft-profile",
       "redirect_document_id": false
@@ -1468,7 +1503,17 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/users/groups-write-back-portal.md",
+      "redirect_url": "/entra/identity/hybrid/group-writeback-cloud-sync",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/saas-apps/autotaskworkplace-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/vmware-identity-service-provisioning-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/tutorial-list",
       "redirect_document_id": false
     }
