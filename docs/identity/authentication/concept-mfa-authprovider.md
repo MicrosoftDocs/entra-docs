@@ -41,7 +41,7 @@ If your MFA provider isn't linked to a Microsoft Entra tenant, or you link the n
 ### Removing an authentication provider
 
 > [!CAUTION]
-> There is no confirmation when deleting an authentication provider. Selecting **Delete** is a permanent process.
+> There's no confirmation when deleting an authentication provider. Selecting **Delete** is a permanent process.
 
 Authentication providers can be found in the [Microsoft Entra admin center](https://entra.microsoft.com). Sign in as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator). Browse to **Protection** > **Multifactor authentication** > **Providers**. Click the listed providers to see details and configurations associated with that provider.
 

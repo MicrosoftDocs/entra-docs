@@ -30,8 +30,8 @@ The following table outlines the different SSPR scenarios for password change, r
 | Feature | Microsoft Entra ID Free | Microsoft 365 Business Standard | Microsoft 365 Business Premium | Microsoft Entra ID P1 or P2 |
 | --- |:---:|:---:|:---:|:---:|
 | **Cloud-only user password change**<br />When a user in Microsoft Entra ID knows their password and wants to change it to something new. | ● | ● | ● | ● |
-| **Cloud-only user password reset**<br />When a user in Microsoft Entra ID has forgotten their password and needs to reset it. | | ● | ● | ● |
-| **Hybrid user password change or reset with on-prem writeback**<br />When a user in Microsoft Entra that's synchronized from an on-premises directory using Microsoft Entra Connect wants to change or reset their password and also write the new password back to on-prem. | | | ● | ● |
+| **Cloud-only user password reset**<br />When a user in Microsoft Entra ID forgets their password and needs to reset it. | | ● | ● | ● |
+| **Hybrid user password change or reset with on-prem writeback**<br />When a user in Microsoft Entra synchronized from an on-premises directory using Microsoft Entra Connect wants to change or reset their password and also write the new password back to on-premises. | | | ● | ● |
 
 > [!WARNING]
 > Standalone Microsoft 365 Basic and Standard licensing plans don't support SSPR with on-premises writeback. The on-premises writeback feature requires Microsoft Entra ID P1, Premium P2, or Microsoft 365 Business Premium. 
