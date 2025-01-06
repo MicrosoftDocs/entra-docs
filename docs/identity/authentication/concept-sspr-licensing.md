@@ -21,7 +21,7 @@ This article details the different ways that self-service password reset can be 
 Although some unlicensed users may technically be able to access SSPR, a license is required for any user that you intend to benefit from the service.
 
 > [!NOTE] 
-> Some tenant services are not currently capable of limiting benefits to specific users. Efforts should be taken to limit the service benefits to licensed users. This will help avoid potential service disruption to your organization once targeting capabilities are available.
+> Some tenant services are not currently capable of limiting benefits to specific users. Efforts should be taken to limit the service benefits to licensed users. This helps avoid potential service disruption to your organization once targeting capabilities are available.
 
 ## Compare editions and features
 
