@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: conceptual
 ms.subservice: privileged-identity-management
-ms.date: 07/10/2024
+ms.date: 12/20/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
 ms.custom: pim
@@ -46,9 +46,9 @@ Also, Global Administrators and Privileged Role Administrators receive an email 
 
 - The user's role is activated (sent by Privileged Identity Management)
 
-The first two emails sent by the request approval engine can be delayed. Currently, 90% of emails take three to ten minutes, but for 1% customers it can be longer, up to fifteen minutes.
+The first two emails sent by the request approval engine can be delayed. Currently, 90% of emails take three to 10 minutes, but for 1% customers it can be longer, up to 15 minutes.
 
-If an approval request is approved in the Azure portal before the first email is sent, the first email will no longer be triggered and other approvers won't be notified by email of the approval request. It might appear as if they didn't get an email but it's the expected behavior.
+If an approval request is approved in the Azure portal before the first email is sent, the first email isn't triggered and other approvers don't receive email notifications of the approval request. It might appear as if they didn't get an email but it's the expected behavior.
 
 <a name='notifications-for-azure-ad-roles'></a>
 
@@ -78,7 +78,7 @@ The following shows an example email that is sent when a user activates a Micros
 
 ### Weekly Privileged Identity Management digest email for Microsoft Entra roles
 
-A weekly Privileged Identity Management summary email for Microsoft Entra roles is sent to Privileged Role Administrators, Security Administrators, and Global Administrators that have enabled Privileged Identity Management. This weekly email provides a snapshot of Privileged Identity Management activities for the week as well as privileged role assignments. It is only available for Microsoft Entra organizations on the public cloud. Here's an example email:
+A weekly Privileged Identity Management summary email for Microsoft Entra roles is sent to Privileged Role Administrators, Security Administrators, and Global Administrators that have enabled Privileged Identity Management. This weekly email provides a snapshot of Privileged Identity Management activities for the week and privileged role assignments. It's only available for Microsoft Entra organizations on the public cloud. Here's an example email:
 
 :::image type="content" source="./media/pim-email-notifications/email-directory-weekly.png" alt-text="Screenshot showing the weekly Privileged Identity Management digest email for Microsoft Entra roles.":::
 
@@ -104,7 +104,7 @@ For maintaining groups, the owner has the ability to manage the group, including
 - When a role is assigned
 - When a role is soon to expire
 - When a role is eligible to extend
-- When a role is being renewed by an end user
+- When a role is renewed by an end user
 - When a role activation request is completed
 
 Privileged Identity Management sends emails to end users when the following events occur for Azure resource roles:

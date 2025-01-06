@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 07/15/2024
+ms.date: 12/20/2024
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
@@ -16,11 +16,11 @@ ms.custom: it-pro
 
 # User management enhancements in Microsoft Entra ID
 
-This article describes how to use the user management enhancements in the admin center for Microsoft Entra ID, part of Microsoft Entra. The **All users** page and user profile pages have been updated to provide more information and make it easier to find users.
+This article describes how to use the user management enhancements in the Microsoft Entra admin center. In this article, you review the **All users** and **user profile** pages.
 
 Enhancements include:
 
-- Preloaded scrolling so that you no longer have to select ‘Load more’ to view more users 
+- Preloaded scrolling so that you no longer have to select "Load more" to view more users 
 - More user properties can be added as columns including city, country/region, employee ID, employee type, and external user state
 - More user properties can be filtered on including custom security attributes, on-premises extension attributes, and manager 
 - More ways to customize your view, like using drag-and-drop to reorder columns 
@@ -52,7 +52,7 @@ The user profile page is now organized into three tabs: **Overview**, **Monitori
 
 The overview tab contains key properties and insights about a user, such as: 
 
-- Properties like user principal name, object ID, created date/time and user type 
+- Properties like user principal name, object ID, created date/time, and user type 
 - Selectable aggregate values such as the number of groups that the user is a member of, the number of apps to which they have access, and the number of licenses that are assigned to them 
 - Quick alerts and insights about a user such as their current account enabled status, the last time they signed in, whether they can use multifactor authentication, and B2B collaboration options
 

@@ -1,6 +1,6 @@
 ---
 title: Bulk operations
-description: Learn about Microsoft Entra bulk operations related to users, groups, and devices in the Microsoft Entra admin portal could time out and fail on very large tenants.
+description: Learn about Microsoft Entra bulk operations related to users, groups, and devices in the Microsoft Entra admin portal could time out and fail on large tenants.
 keywords: Azure AD licensing
 author: barclayn
 manager: amycolannino
@@ -8,7 +8,7 @@ manager: amycolannino
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 07/15/2024
+ms.date: 12/20/2024
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
@@ -18,9 +18,9 @@ ms.custom: it-pro
 
 # Bulk operations
 
-Bulk operations in Microsoft Entra ID enable you to perform actions on multiple entities, such as users, groups, and devices, at once. This can include creating, deleting, or updating multiple records in a single operation, which can greatly streamline administrative tasks and improve efficiency.
+Bulk operations in Microsoft Entra ID enable you to perform actions on multiple entities, such as users, groups, and devices, at once. These actions can include creating, deleting, or updating multiple records in a single operation. Bulk operations can greatly streamline administrative tasks and improve efficiency.
 
-Bulk operations in the Microsoft Entra admin portal could time out and fail on very large tenants. This limitation is a known issue due to scaling limitations. The Microsoft engineering team is working on a new service that will eventually address this limitation.
+Bulk operations in the Microsoft Entra admin portal could time out and fail on large tenants. This limitation is a known issue due to scaling limitations. 
 
 > [!NOTE]
 > When performing bulk operations, such as import or create, you may encounter a problem if the bulk operation does not complete within the hour. To work around this issue, we recommend splitting the number of records processed per batch. For example, before starting an export you could limit the result set by filtering on a group type or user name to reduce the size of the results. By refining your filters, essentially you are limiting the data returned by the bulk operation. 
@@ -36,7 +36,7 @@ The following PowerShell code examples are for bulk operations related to:
 
 ## Users
 
-### Bulk download all users 
+### Download all users 
 
 ```azurepowershell
 # Import the Microsoft Graph module 
@@ -77,7 +77,7 @@ Disconnect-MgGraph
 Write-Host "User data exported to $outputCsvPath" 
 ```
 
-### Bulk create users 
+### Create users 
 
 ```azurepowershell 
 # Import the Microsoft Graph module 
@@ -121,7 +121,7 @@ Write-Host "Bulk user creation completed."
 > Make sure your CSV file contains the necessary columns (for example; `DisplayName`, `UserPrincipalName`, and so on). Also, adjust the script to match the actual column names in your CSV file. 
 
 
-### Bulk delete users 
+### Delete users 
 
 ```azurepowershell
 # Import the Microsoft Graph module 
