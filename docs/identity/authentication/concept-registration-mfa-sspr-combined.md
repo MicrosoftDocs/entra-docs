@@ -5,7 +5,7 @@ description: Learn about the combined registration experience for Microsoft Entr
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 12/01/2024
+ms.date: 01/06/2025
 
 ms.author: justinha
 author: justinha

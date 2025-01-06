@@ -6,7 +6,7 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: conceptual
-ms.date: 11/27/2024
+ms.date: 01/06/2025
 
 ms.author: justinha
 author: justinha

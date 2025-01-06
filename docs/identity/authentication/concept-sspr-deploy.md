@@ -5,7 +5,7 @@ description: Learn about deployment considerations and strategy for successful i
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/04/2024
+ms.date: 01/06/2025
 
 ms.author: justinha
 author: gargi-sinha

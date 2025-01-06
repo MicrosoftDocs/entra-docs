@@ -5,7 +5,7 @@ description: Learn about the difference Microsoft Entra self-service password re
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/27/2024
+ms.date: 01/06/2025
 
 ms.author: justinha
 author: justinha

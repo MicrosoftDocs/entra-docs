@@ -5,7 +5,7 @@ description: Learn how to dynamically ban weak passwords from your environment w
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 04/03/2024
+ms.date: 01/06/2025
 
 ms.author: justinha
 author: justinha

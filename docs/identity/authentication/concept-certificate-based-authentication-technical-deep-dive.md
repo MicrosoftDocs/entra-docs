@@ -5,7 +5,7 @@ description: Learn how Microsoft Entra certificate-based authentication works
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 12/02/2024
+ms.date: 01/06/2025
 
 
 ms.author: justinha
