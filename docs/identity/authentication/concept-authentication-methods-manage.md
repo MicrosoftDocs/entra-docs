@@ -5,7 +5,7 @@ description: Learn about the authentication methods policy and different ways to
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 12/03/2024
+ms.date: 01/03/2024
 
 ms.author: justinha
 author: justinha

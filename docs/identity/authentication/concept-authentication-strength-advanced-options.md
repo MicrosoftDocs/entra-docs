@@ -6,7 +6,7 @@ description: Learn how admins can create custom authentication strengths with ad
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 03/25/2024
+ms.date: 01/03/2024
 
 ms.author: justinha
 author: inbarckms
