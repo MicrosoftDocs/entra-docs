@@ -168,7 +168,7 @@ Define acceptable performance metrics to objectively test and ensure that your d
 - Is the network performance within your defined parameters?
 
   - The [Global Secure Access dashboard](../global-secure-access/concept-traffic-dashboard.md) provides you with visualizations of network traffic that Microsoft Entra Private and Microsoft Entra Internet Access acquire. It compiles data from network configurations including devices, users, and tenants.
-  - Use the [Microsoft 365 network assessment](/microsoft-365/enterprise/office-365-network-mac-perf-score?view=o365-worldwide) to distill an aggregate of network performance metrics into a snapshot of your enterprise network perimeter health.
+  - Use the [Microsoft 365 network assessment](/microsoft-365/enterprise/office-365-network-mac-perf-score) to distill an aggregate of network performance metrics into a snapshot of your enterprise network perimeter health.
   - Use the [Microsoft 365 network connectivity test](https://connectivity.office.com/) to measure the connectivity between your device and the internet, and from there to Microsoft's network.
 
 - Did you notice any latency increase during the pilot?
