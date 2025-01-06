@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: privileged-identity-management
 ms.topic: how-to
-ms.date: 12/10/2024
+ms.date: 12/30/2024
 ms.author: billmath
 ms.reviewer: shaunliu
 ms.custom: pim, devx-track-azurepowershell

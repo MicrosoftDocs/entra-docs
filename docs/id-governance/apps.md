@@ -5,7 +5,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: overview
-ms.date: 12/18/2024
+ms.date: 12/30/2024
 ms.author: billmath
 ms.reviewer: amycolannino
 ---
@@ -546,6 +546,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Nuclino](../identity/saas-apps/nuclino-tutorial.md) |  | ● |
 | [OfficeSpace Software](../identity/saas-apps/officespace-software-provisioning-tutorial.md) | ● | ● |
 | [Olfeo SAAS](../identity/saas-apps/olfeo-saas-provisioning-tutorial.md) | ● | ● |
+| [Omnissa Identity Service](../identity/saas-apps/omnissa-identity-service-provisioning-tutorial.md) | ● | ● |
 | [OneDesk](../identity/saas-apps/onedesk-tutorial.md) |  | ● |
 | [Oneflow](../identity/saas-apps/oneflow-provisioning-tutorial.md) | ● | ● |
 | [Oneteam](../identity/saas-apps/oneteam-tutorial.md) |  | ● |
@@ -848,7 +849,6 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Visibly](../identity/saas-apps/visibly-provisioning-tutorial.md) | ● | ● |
 | [Visitly](../identity/saas-apps/visitly-provisioning-tutorial.md) | ● | ● |
 | [Visma](../identity/saas-apps/visma-tutorial.md) |  | ● |
-| [VMware Identity Service](../identity/saas-apps/vmware-identity-service-provisioning-tutorial.md) | ● | ● |
 | [Vonage](../identity/saas-apps/vonage-provisioning-tutorial.md) | ● | ● |
 | [Voyance](../identity/saas-apps/voyance-tutorial.md) |  | ● |
 | [Vtiger CRM (SAML)](../identity/saas-apps/vtiger-crm-saml-tutorial.md) |  | ● |
