@@ -52,7 +52,7 @@ We recommend the following practices for service account privileges.
 - Don't assign built-in roles to service accounts
   - See, [`oAuth2PermissionGrant` resource type](/graph/api/resources/oauth2permissiongrant)
 - The service principal is assigned a privileged role
-  - [Create and assign a custom role in Microsoft Entra ID](/entra/identity/role-based-access-control/custom-create)
+  - [Create a custom role in Microsoft Entra ID](../identity/role-based-access-control/custom-create.md)
 - Don't include service accounts as members of any groups with elevated permissions
   - See, [Get-MgDirectoryRoleMember](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryrolemember):
 

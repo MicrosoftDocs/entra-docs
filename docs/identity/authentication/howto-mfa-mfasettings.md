@@ -222,7 +222,7 @@ In the United States, if you haven't configured MFA caller ID, voice calls from 
 
 Default number: *+1 (855) 330-8653*
 
-The following table lists more numbers for different countries.
+The following table lists more numbers for different countries/regions.
 
 | Country/Region       | Number(s)       |
 |:---------------------|:----------------|
