@@ -39,7 +39,7 @@ What's new in Microsoft Entra offers a comprehensive view of Microsoft Entra pro
 
 ---
 
-### General Availability - Dedicated new 1st party resource application to enable AD to Microsoft Entra ID sync using Microsoft Entra Connect Sync or Cloud Sync
+### General Availability - Dedicated new 1st party resource application to enable Active Directory to Microsoft Entra ID sync using Microsoft Entra Connect Sync or Cloud Sync
 
 **Type:** Changed feature    
 **Service category:** Provisioning    
