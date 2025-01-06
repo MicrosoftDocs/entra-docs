@@ -7,7 +7,7 @@ metadata:
   ms.author: barclayn
   manager: amycolannino
   ms.reviewer: jeffsta
-  ms.date: 11/29/2023
+  ms.date: 01/06/2024
   ms.service: entra
   ms.subservice: fundamentals
   ms.topic: how-to
@@ -34,7 +34,7 @@ prerequisites:
   summary: |
     Before you can associate or add your subscription, do the following steps:
     - Review the following list of changes that will occur after you associate or add your subscription, and how you might be affected:    
-        - Users that have been assigned roles using Azure RBAC will lose their access.
+        - Users assigned roles using Azure RBAC lose their access.
         - Service Administrator and Co-Administrators will lose access.
         - If you have any key vaults, they'll be inaccessible, and you'll have to fix them after association.
         - If you have any managed identities for resources such as Virtual Machines or Logic Apps, you must re-enable or recreate them after the association.
@@ -44,7 +44,7 @@ prerequisites:
 
     - Sign in using an account that:
         - Has an [Owner](/azure/role-based-access-control/built-in-roles#owner) role assignment for the subscription. For information about how to assign the Owner role, see [Assign Azure roles using the Azure portal](/azure/role-based-access-control/role-assignments-portal).
-        - Exists in both the current directory and in the new directory. The current directory is associated with the subscription. You'll associate the new directory with the subscription. For more information about getting access to another directory, see [Add Microsoft Entra B2B collaboration users in the Azure portal](~/external-id/add-users-administrator.yml).
+        - Exists in both the current directory and in the new directory. The current directory is associated with the subscription. You associate the new directory with the subscription. For more information about getting access to another directory, see [Add Microsoft Entra B2B collaboration users in the Azure portal](~/external-ID/add-users-administrator.yml).
         - Make sure that you're not using an Azure Cloud Service Providers (CSP) subscription (MS-AZR-0145P, MS-AZR-0146P, MS-AZR-159P), a Microsoft Internal subscription (MS-AZR-0015P), or a Microsoft Azure for Students Starter subscription (MS-AZR-0144P).
 
 procedureSection:

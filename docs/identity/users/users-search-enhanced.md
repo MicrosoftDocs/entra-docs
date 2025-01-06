@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 12/20/2024
+ms.date: 01/06/2025
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
@@ -28,7 +28,7 @@ Enhancements include:
 - An enhanced User Profile experience that gives you quick insights about a user and lets you view and edit more properties 
 
 > [!NOTE]
-> These enhancements are not currently available for Azure AD B2C tenants.
+> These enhancements aren't currently available for Azure AD B2C tenants.
 
 ## All users page
 
@@ -76,7 +76,7 @@ You can edit properties by selecting the pencil icon next to any category, which
 :::image type="content" source="./media/users-search-enhanced/user-properties-edit.png" alt-text="Screenshot of user profile properties open for editing.":::
 
 > [!NOTE] 
-> Some properties will not be visible or editable if they are read-only or if you don’t have sufficient role permissions to edit them. 
+> Some properties won't be visible or editable if they are read-only or if you don’t have sufficient role permissions to edit them. 
 
 ## Next steps
 

@@ -8,7 +8,7 @@ manager: amycolannino
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 12/20/2024
+ms.date: 01/06/2025
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
@@ -23,7 +23,7 @@ Bulk operations in Microsoft Entra ID enable you to perform actions on multiple 
 Bulk operations in the Microsoft Entra admin portal could time out and fail on large tenants. This limitation is a known issue due to scaling limitations. 
 
 > [!NOTE]
-> When performing bulk operations, such as import or create, you may encounter a problem if the bulk operation does not complete within the hour. To work around this issue, we recommend splitting the number of records processed per batch. For example, before starting an export you could limit the result set by filtering on a group type or user name to reduce the size of the results. By refining your filters, essentially you are limiting the data returned by the bulk operation. 
+> When performing bulk operations, such as import or create, you may encounter a problem if the bulk operation doesn't complete within the hour. To work around this issue, we recommend splitting the number of records processed per batch. For example, before starting an export you could limit the result set by filtering on a group type or user name to reduce the size of the results. By refining your filters, essentially you are limiting the data returned by the bulk operation. 
 
 ## Bulk operations workaround
 

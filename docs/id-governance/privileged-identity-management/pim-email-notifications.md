@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: conceptual
 ms.subservice: privileged-identity-management
-ms.date: 12/20/2024
+ms.date: 01/06/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
 ms.custom: pim
@@ -19,7 +19,7 @@ ms.custom: pim
 Privileged Identity Management (PIM) lets you know when important events occur in your Microsoft Entra organization, such as when a role is assigned or activated. Privileged Identity Management keeps you informed by sending you and other participants email notifications. These emails might also include links to relevant tasks, such activating or renewing a role. This article describes what these emails look like, when they are sent, and who receives them.
 
 >[!NOTE]
->One event in Privileged Identity Management can generate email notifications to multiple recipients – assignees, approvers, or administrators. The maximum number of notifications sent per one event is 1000. If the number of recipients exceeds 1000 – only the first 1000 recipients will receive an email notification. This does not prevent other assignees, administrators, or approvers from using their permissions in Microsoft Entra ID and Privileged Identity Management.
+>One event in Privileged Identity Management can generate email notifications to multiple recipients – assignees, approvers, or administrators. The maximum number of notifications sent per one event is 1000. If the number of recipients exceeds 1000 – only the first 1,000 recipients receive an email notification. This doesn't prevent other assignees, administrators, or approvers from using their permissions in Microsoft Entra ID and Privileged Identity Management.
 
 ## Sender email address and subject line
 
@@ -96,9 +96,9 @@ The **Overview of your top roles** section lists the top five roles in your orga
 ## Notifications for Azure resource roles
 
 > [!NOTE]
-> In PIM, an *eligible* Owner is someone who has been granted just-in-time (JIT) privileged access to perform certain tasks for managing groups, which can be activated when needed. This is different from a *permanent* Owner, who has ongoing access to manage groups. For more information about JIT ownership of a group, see [Assign eligibility for a group in Privileged Identity Management](groups-assign-member-owner.md).
+> In PIM, an *eligible* Owner is someone who has just-in-time (JIT) privileged access to perform certain tasks for managing groups, which can be activated when needed. This is different from a *permanent* Owner, who has ongoing access to manage groups. For more information about JIT ownership of a group, see [Assign eligibility for a group in Privileged Identity Management](groups-assign-member-owner.md).
 
-For maintaining groups, the owner has the ability to manage the group, including adding or removing members, renewing groups that are about to expire, and approving requests to join the group. PIM sends emails to *permanent* Owners, *eligible* Owners, and User Access Administrators when the following events occur for Azure resource roles:
+Group owners can manage the group, including adding or removing members, renewing groups that are about to expire, and approving requests to join the group. PIM sends emails to *permanent* Owners, *eligible* Owners, and User Access Administrators when the following events occur for Azure resource roles:
 
 - When a role assignment is pending approval
 - When a role is assigned

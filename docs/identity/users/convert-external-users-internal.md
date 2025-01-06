@@ -4,7 +4,7 @@ description: You can convert users from external to internal without the need to
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
-ms.date: 12/20/2024
+ms.date: 01/06/2025
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
