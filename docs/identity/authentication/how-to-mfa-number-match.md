@@ -25,28 +25,28 @@ Number matching is available for the following scenarios. When enabled, all scen
 - [Active Directory Federated Services (AD FS) adapter](#ad-fs-adapter)
 - [Network Policy Server (NPS) extension](#nps-extension)
 
-Number matching isn't supported for push notifications for Apple Watch or Android wearable devices. If you use a wearable device, you need to use your phone to approve notifications when number matching is enabled.
+Number matching isn't supported for push notifications for Apple Watch or Android wearable devices. Wearable device users need to use their phone to approve notifications when number matching is enabled.
 
 ### Multifactor authentication
 
-When you respond to an MFA push notification by using Authenticator, you see a number. You need to enter that number into the app to complete the approval. For more information about how to set up MFA, see [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](tutorial-enable-azure-mfa.md).
+When users respond to an MFA push notification by using Authenticator, they see a number. They need to enter that number into the app to complete the approval. For more information about how to set up MFA, see [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](tutorial-enable-azure-mfa.md).
 
 ![Screenshot that shows a user entering a number match.](media/howto-authentication-passwordless-phone/phone-sign-in-microsoft-authenticator-app.png)
 
 ### SSPR
 
-SSPR with Authenticator requires number matching when you use Authenticator. During SSPR, the sign-in page shows a number that you need to enter into the Authenticator notification. For more information about how to set up SSPR, see [Tutorial: Enable users to unlock their account or reset passwords](howto-sspr-deployment.md).
+SSPR with Authenticator requires number matching when a user uses Authenticator. During SSPR, the sign-in page shows a number that the user needs to enter into the Authenticator notification. For more information about how to set up SSPR, see [Tutorial: Enable users to unlock their account or reset passwords](howto-sspr-deployment.md).
 
 ### Combined registration
 
-Combined registration with Authenticator requires number matching. When you go through combined registration to set up Authenticator, you need to approve a notification to add the account. This notification shows a number that you need to enter into the Authenticator notification. For more information about how to set up combined registration, see [Enable combined security information registration](howto-registration-mfa-sspr-combined.md).
+Combined registration with Authenticator requires number matching. When a user goes through combined registration to set up Authenticator, the user needs to approve a notification to add the account. This notification shows a number that the user needs to enter into the Authenticator notification. For more information about how to set up combined registration, see [Enable combined security information registration](howto-registration-mfa-sspr-combined.md).
 
 ### AD FS adapter
 
-The AD FS adapter requires number matching on supported versions of Windows Server. On earlier versions, you continue to see the **Approve**/**Deny** experience and don't see number matching until you upgrade. The AD FS adapter supports number matching only after you install one of the updates in the following table. For more information about how to set up the AD FS adapter, see [Configure Microsoft Entra Multifactor Authentication Server to work with AD FS in Windows Server](howto-mfaserver-adfs-windows-server.md).
+The AD FS adapter requires number matching on supported versions of Windows Server. On earlier versions, users continue to see the **Approve**/**Deny** experience and don't see number matching until they upgrade. The AD FS adapter supports number matching only after they install one of the updates in the following table. For more information about how to set up the AD FS adapter, see [Configure Microsoft Entra Multifactor Authentication Server to work with AD FS in Windows Server](howto-mfaserver-adfs-windows-server.md).
 
 > [!NOTE]
-> Unpatched versions of Windows Server don't support number matching. You continue to see the **Approve**/**Deny** experience and don't see number matching unless these updates are applied.
+> Unpatched versions of Windows Server don't support number matching. Users continue to see the **Approve**/**Deny** experience and don't see number matching unless these updates are applied.
 
 | Version | Update |
 |---------|--------|
@@ -58,9 +58,9 @@ The AD FS adapter requires number matching on supported versions of Windows Serv
 
 Although NPS doesn't support number matching, the latest NPS extension does support time-based one-time password (TOTP) methods such as the TOTP available in Authenticator, other software tokens, and hardware FOBs. TOTP sign-in provides better security than the alternative **Approve**/**Deny** experience. Make sure that you run the latest version of the [NPS extension](https://www.microsoft.com/download/details.aspx?id=54688).
 
-Anyone who performs a RADIUS connection with NPS extension version 1.2.2216.1 or later is prompted to sign in with a TOTP method instead of **Approve**/**Deny**. You must have a TOTP authentication method registered to see this behavior. Without a TOTP method registered, you continue to see **Approve**/**Deny**.
+Anyone who performs a RADIUS connection with NPS extension version 1.2.2216.1 or later is prompted to sign in with a TOTP method instead of **Approve**/**Deny**. Users must have a TOTP authentication method registered to see this behavior. Without a TOTP method registered, users continue to see **Approve**/**Deny**.
 
-Organizations that run any of these earlier versions of the NPS extension can modify the registry to require you to enter a TOTP:
+Organizations that run any of these earlier versions of the NPS extension can modify the registry to require users to enter a TOTP:
 
 - 1.2.2131.2
 - 1.2.1959.1
@@ -85,7 +85,7 @@ To create the registry entry to override the **Approve**/**Deny** options in pus
 
 In addition:
 
-- If you perform TOTP, you must have either Authenticator registered as an authentication method or some other hardware or software OATH token. If you can't use a TOTP method, you always see **Approve**/**Deny** options with push notifications if you use a version of the NPS extension earlier than 1.2.2216.1.
+- Users who perform TOTP must have either Authenticator registered as an authentication method or some other hardware or software OATH token. Users who can't use a TOTP method always see **Approve**/**Deny** options with push notifications if they use a version of the NPS extension earlier than 1.2.2216.1.
 - The NPS server where the NPS extension is installed must be configured to use the Password Authentication Protocol (PAP). For more information, see [Determine which authentication methods your users can use](howto-mfa-nps-extension.md#determine-which-authentication-methods-your-users-can-use).
 
   > [!IMPORTANT]
@@ -95,13 +95,13 @@ In addition:
   >
   > You can configure the NPS server to support PAP. If PAP isn't an option, set `OVERRIDE_NUMBER_MATCHING_WITH_OTP = FALSE` to fall back to **Approve**/**Deny** push notifications.
 
-If your organization uses Remote Desktop Gateway and you're registered for a TOTP code along with Authenticator push notifications, you can't meet the Microsoft Entra MFA challenge and Remote Desktop Gateway sign-in fails. In this case, set `OVERRIDE_NUMBER_MATCHING_WITH_OTP = FALSE` to fall back to **Approve**/**Deny** push notifications with Authenticator.
+If your organization uses Remote Desktop Gateway and the user registered for a TOTP code along with Authenticator push notifications, the user can't meet the Microsoft Entra MFA challenge and Remote Desktop Gateway sign-in fails. In this case, set `OVERRIDE_NUMBER_MATCHING_WITH_OTP = FALSE` to fall back to **Approve**/**Deny** push notifications with Authenticator.
 
 ## FAQs
 
 This section provides answers to common questions.
 
-### Can I opt out of number matching?
+### Can users opt out of number matching?
 
 No, users can't opt out of number matching in Authenticator push notifications.
 
@@ -109,12 +109,13 @@ Relevant services will begin deploying these changes after May 8, 2023, and user
 
 ### Does number matching only apply if Authenticator push notifications are set as the default authentication method?
 
-Yes. If you have a different default authentication method, there's no change to your default sign-in. If the default method is Authenticator push notifications, you get number matching. If the default method is anything else, such as TOTP in Authenticator or another provider, there's no change.
+Yes. If the user has a different default authentication method, there's no change to their default sign-in. If the default method is Authenticator push notifications, they get number matching. If the default method is anything else, such as TOTP in Authenticator or another provider, there's no change.
 
-Regardless of your default method, if you're prompted to sign in with Authenticator push notifications, you see number matching. If you're prompted for another method, you won't see any change.
+Regardless of their default method, any user who is prompted to sign in with Authenticator push notifications sees number matching. If they're prompted for another method, they won't see any change.
 
-### What happens if I'm not specified in the Authentication methods policy but I'm enabled for notifications through the mobile app in the legacy MFA tenant-wide policy?
-If you're enabled for MFA push notifications in the legacy MFA policy, you also see number match if the legacy MFA policy enabled **Notification through mobile app**. You see number matching regardless of whether you're enabled for Authenticator in the Authentication methods policy.
+### What happens for users who aren't specified in the Authentication methods policy but they're enabled for notifications through the mobile app in the legacy MFA tenant-wide policy?
+
+Users who are enabled for MFA push notifications in the legacy MFA policy also see number match if the legacy MFA policy enabled **Notification through mobile app**. Users see number matching regardless of whether they're enabled for Authenticator in the Authentication methods policy.
 
 :::image type="content" border="true" source="./media/how-to-mfa-number-match/notifications-through-mobile-app.png" alt-text="Screenshot that shows the setting Notification through mobile app.":::
 
@@ -122,11 +123,11 @@ If you're enabled for MFA push notifications in the legacy MFA policy, you also 
 
 No, number matching isn't enforced because it's not a supported feature for MFA Server, which is [deprecated](https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/microsoft-entra-change-announcements-september-2022-train/ba-p/2967454).
 
-### What happens if I'm running an older version of Authenticator?
+### What happens if a user runs an older version of Authenticator?
 
-If you're running an older version of Authenticator that doesn't support number matching, authentication won't work. You need to upgrade to the latest version of Authenticator to use it for sign-in.
+If a user runs an older version of Authenticator that doesn't support number matching, authentication won't work. They need to upgrade to the latest version of Authenticator to use it for sign-in.
 
-### How can I recheck the number on mobile iOS devices after the match request appears?
+### How can users recheck the number on mobile iOS devices after the match request appears?
 
 During mobile iOS broker flows, the number match request appears over the number after a two-second delay. To recheck the number, select **Show me the number again**. This action occurs only in mobile iOS broker flows.
 

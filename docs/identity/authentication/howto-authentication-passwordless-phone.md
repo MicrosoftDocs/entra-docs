@@ -18,15 +18,15 @@ ms.reviewer: jogro
 
 # Enable passwordless sign-in with Authenticator
 
-You can use Authenticator to sign in to any Microsoft Entra account without using a password. Authenticator uses key-based authentication to enable a user credential that's tied to a device, where the device uses a PIN or biometric. [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-identity-verification) uses a similar technology.
+Authenticator is used to sign in to any Microsoft Entra account without using a password. Authenticator uses key-based authentication to enable a user credential that's tied to a device, where the device uses a PIN or biometric. [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-identity-verification) uses a similar technology.
 
-Authentication technology can be used on any device platform, including mobile. You can also use this technology with any app or website that integrates with Authentication Libraries.
+Authentication technology can be used on any device platform, including mobile. This technology is also used with any app or website that integrates with Authentication Libraries.
 
 :::image type="content" border="false" source="./media/howto-authentication-passwordless-phone/phone-sign-in-microsoft-authenticator-app-next.png" alt-text="Screenshot that shows an example of a browser sign-in asking the user to approve the sign-in.":::
 
-Phone sign-in from Authenticator shows a message that asks you to tap a number in the app. No username or password is asked for. To complete the sign-in process in the app, follow these steps:
+Phone sign-in from Authenticator shows a message that asks the user to tap a number in the app. No username or password is asked for. To complete the sign-in process in the app, follow these steps:
 
-1. Enter the number you see on the sign-in screen in to the Authenticator dialog.
+1. Enter the number seen on the sign-in screen in to the Authenticator dialog.
 1. Select **Approve**.
 1. Provide your PIN or biometric.
 
@@ -42,7 +42,7 @@ The Microsoft Entra accounts can be in the same tenant or different tenants. Gue
 
 To use passwordless phone sign-in with Authenticator, the following prerequisites must be met:
 
-- We recommend that you use Microsoft Entra multifactor authentication (MFA), with push notifications allowed as a verification method. Push notifications to your smartphone or tablet help the Authenticator app to prevent unauthorized access to accounts and stop fraudulent transactions. The Authenticator app automatically generates codes when set up to do push notifications. You have a backup sign-in method even if your device doesn't have connectivity.
+- Recommended: Microsoft Entra multifactor authentication (MFA), with push notifications allowed as a verification method. Push notifications to a user smartphone or tablet help the Authenticator app to prevent unauthorized access to accounts and stop fraudulent transactions. The Authenticator app automatically generates codes when set up to do push notifications. A user has a backup sign-in method even if their device doesn't have connectivity.
 - The latest version of Authenticator should be installed on devices running iOS or Android.
 - The device must be registered with each tenant where it's used to sign in. For example, the following device must be registered with Contoso and Wingtip Toys to allow all accounts to sign in:
 
@@ -55,13 +55,13 @@ To use passwordless authentication in Microsoft Entra ID, first enable the combi
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-With Microsoft Entra ID, [Authentication Policy administrators](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) can choose which authentication methods are used to sign in. You can enable **Microsoft Authenticator** in the Authentication methods policy to manage both the traditional push MFA method and the passwordless authentication method.
+With Microsoft Entra ID, [Authentication Policy Administrators](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) can choose which authentication methods are used to sign in. You can enable **Microsoft Authenticator** in the Authentication methods policy to manage both the traditional push MFA method and the passwordless authentication method.
 
-After **Microsoft Authenticator** is enabled as an authentication method, you can go to your [Security info](https://aka.ms/mysecurityinfo) pane to register Authenticator as a way to sign in. **Microsoft Authenticator** is listed as a method on the **Security info** pane. For example, **Microsoft Authenticator-Passwordless** or **Microsoft Authenticator-MFA Push** appears, depending on what's enabled and registered.
+After **Microsoft Authenticator** is enabled as an authentication method, users can go to [Security info](https://aka.ms/mysecurityinfo) to register Authenticator as a way to sign in. **Microsoft Authenticator** is listed as a method on **Security info**. For example, **Microsoft Authenticator-Passwordless** or **Microsoft Authenticator-MFA Push** appears, depending on what's enabled and registered.
 
 To enable the authentication method for passwordless phone sign-in, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Policies**.
 1. Under **Microsoft Authenticator**, select the following options:
    1. **Enable**: Select **Yes** or **No**.
@@ -74,11 +74,11 @@ To enable the authentication method for passwordless phone sign-in, follow these
 
 ## User registration
 
-As a user, you register yourself for the passwordless authentication method of Microsoft Entra ID. If you already registered the Authenticator app for [MFA](./concept-mfa-howitworks.md), skip to the next section and [enable phone sign-in](#enable-phone-sign-in).
+Users register for the passwordless authentication method of Microsoft Entra ID. Users who already registered the Authenticator app for [MFA](./concept-mfa-howitworks.md) can skip to the next section and [enable phone sign-in](#enable-phone-sign-in).
 
 ### Direct phone sign-in registration
 
-You can register for passwordless phone sign-in directly within the Authenticator app without the need to first register Authenticator with your account, all while never accruing a password. Here's how:
+Users can register for passwordless phone sign-in directly within the Authenticator app without the need to first register Authenticator with their account, all while never accruing a password. Here's how:
 
 1. Acquire a [Temporary Access Pass](~/identity/authentication/howto-authentication-temporary-access-pass.md) from your admin or organization.
 1. Download and install the Authenticator app on your mobile device.
@@ -90,59 +90,59 @@ You can register for passwordless phone sign-in directly within the Authenticato
 ### Guided registration with My Sign-Ins
 
 > [!NOTE]
-> You can register Authenticator via combined registration only if the Authenticator authentication mode is set to **Any** or **Push**.
+> Users can register Authenticator via combined registration only if the Authenticator authentication mode is set to **Any** or **Push**.
 
 To register the Authenticator app, follow these steps:
 
-1. Browse to the [Security info](https://aka.ms/mysecurityinfo) pane.
+1. Browse to [Security info](https://aka.ms/mysecurityinfo).
 1. Sign in, and then select **Add method** > **Authenticator app** > **Add** to add Authenticator.
 1. Follow the instructions to install and configure the Authenticator app on your device.
 1. Select **Done** to finish the Authenticator configuration.
 
 #### Enable phone sign-in
 
-After you register yourself for the Authenticator app, you need to enable phone sign-in:
+After users register for the Authenticator app, they need to enable phone sign-in:
 
 1. In **Microsoft Authenticator**, select the account registered.
 1. Select **Enable phone sign-in**.
 1. Follow the instructions in the app to finish registering the account for passwordless phone sign-in.
 
-An organization can direct you to sign in with your phone, without using a password. For further assistance configuring Authenticator and enabling phone sign-in, see [Sign in to your accounts by using the Authenticator app](https://support.microsoft.com/account-billing/sign-in-to-your-accounts-using-the-microsoft-authenticator-app-582bdc07-4566-4c97-a7aa-56058122714c).
+An organization can direct its users to sign in with their phones, without using a password. For further assistance configuring Authenticator and enabling phone sign-in, see [Sign in to your accounts by using the Authenticator app](https://support.microsoft.com/account-billing/sign-in-to-your-accounts-using-the-microsoft-authenticator-app-582bdc07-4566-4c97-a7aa-56058122714c).
 
 > [!NOTE]
-> If a policy restricts you from using phone sign-in, you can't enable it within Authenticator.
+> If a policy restricts the user from using phone sign-in, the user can't enable it within Authenticator.
 
 ## Sign in with a passwordless credential
 
-You can start using passwordless sign-in after all the following actions are completed:
+A user can start using passwordless sign-in after all the following actions are completed:
 
-- An admin enabled your tenant.
-- You added Authenticator as a sign-in method.
+- An admin enabled the user's tenant.
+- The user added Authenticator as a sign-in method.
 
-The first time you start the phone sign-in process, follow these steps:
+To start the phone sign-in process for the first time, follow these steps:
 
 1. Enter your name on the **Sign-in** pane.
 1. Select **Next**.
 1. If necessary, select **Other ways to sign in**.
 1. Select **Approve a request on my Authenticator app**.
 
-A number then appears. The app prompts you to authenticate by entering the appropriate number instead of by entering a password.
+A number then appears. The app prompts the user to authenticate by entering the appropriate number instead of by entering a password.
 
-After you use passwordless phone sign-in, the app continues to guide you through this method. You also see the option to choose another method.
+After the user uses passwordless phone sign-in, the app continues to guide the user through this method. The user also sees the option to choose another method.
 
 :::image type="content" border="true" source="./media/howto-authentication-passwordless-phone/number.png" alt-text="Screenshot that shows an example of a browser sign-in by using the Authenticator app.":::
 
-#### Temporary Access Password
+#### Temporary Access Pass
 
-If the tenant administrator enabled self-service password reset and you're setting up passwordless sign-in with the Authenticator app for the first time by using a Temporary Access Password, follow these steps:
+If the tenant administrator enabled self-service password reset for users to set up passwordless sign-in with the Authenticator app for the first time by using a Temporary Access Pass, follow these steps:
 
-1. Open a browser on a mobile device or desktop, and go to the [Security info](https://aka.ms/mysecurityinfo) pane.
+1. Open a browser on a mobile device or desktop, and go to [Security info](https://aka.ms/mysecurityinfo).
 1. Register the Authenticator app as your sign-in method. This action links your account to the app.
 1. Return to your mobile device and activate passwordless sign-in through the Authenticator app.
 
 ## Management
 
-We recommend the Authentication methods policy as the best way to manage Authenticator. [Authentication Policy administrators](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) can edit this policy to enable or disable Authenticator. Admins can include or exclude specific users and groups from using it.
+We recommend the Authentication methods policy as the best way to manage Authenticator. [Authentication Policy Administrators](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) can edit this policy to enable or disable Authenticator. Admins can include or exclude specific users and groups from using it.
 
 Admins can also configure parameters to better control how Authenticator is used. For example, they can add a location or the app name to the sign-in request so that users have greater context before they approve.
 
@@ -152,7 +152,7 @@ The following known issues exist.
 
 ### Not seeing the option for passwordless phone sign-in
 
-In one scenario, you might have an unanswered passwordless phone sign-in verification that's pending. If you attempt to sign in again, you see only the option to enter a password.
+In one scenario, a user might have an unanswered passwordless phone sign-in verification that's pending. If the user attempts to sign in again, the user sees only the option to enter a password.
 
 To resolve this scenario, follow these steps:
 
@@ -163,19 +163,19 @@ Then continue to use passwordless phone sign-in.
 
 ### AuthenticatorAppSignInPolicy not supported
 
-The legacy policy `AuthenticatorAppSignInPolicy` isn't supported with Authenticator. To enable push notifications or passwordless phone sign-in with the Authenticator app, use the [Authentication Methods policy](concept-authentication-methods-manage.md).
+The legacy policy `AuthenticatorAppSignInPolicy` isn't supported with Authenticator. To enable users for push notifications or passwordless phone sign-in with the Authenticator app, use the [Authentication Methods policy](concept-authentication-methods-manage.md).
 
 ### Federated accounts
 
-After you enable any passwordless credential, the Microsoft Entra sign-in process stops using `login\_hint`. The process no longer accelerates you toward a federated sign-in location.
+After a user enables any passwordless credential, the Microsoft Entra sign-in process stops using `login\_hint`. The process no longer accelerates the user toward a federated sign-in location.
 
 This logic generally prevents a user in a hybrid tenant from being directed to Active Directory Federated Services for sign-in verification. The option to select **Use your password instead** is still available.
 
 ### On-premises users
 
-Admins can enable users for MFA through an on-premises identity provider. You can still create and use a single passwordless phone sign-in credential.
+Admins can enable users for MFA through an on-premises identity provider. Users can still create and use a single passwordless phone sign-in credential.
 
-If you attempt to upgrade multiple installations (5+) of Authenticator with the passwordless phone sign-in credential, this change might result in an error.
+If a user attempts to upgrade multiple installations (5+) of Authenticator with the passwordless phone sign-in credential, this change might result in an error.
 
 ## Related content
 
