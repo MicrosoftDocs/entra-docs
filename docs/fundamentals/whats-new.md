@@ -39,6 +39,18 @@ What's new in Microsoft Entra offers a comprehensive view of Microsoft Entra pro
 
 ---
 
+### General Availability - Dedicated new 1st party resource application to enable AD to Microsoft Entra ID sync using Microsoft Entra Connect Sync or Cloud Sync
+
+**Type:** Changed feature    
+**Service category:** Provisioning    
+**Product capability:** Directory    
+
+To prepare for an upcoming security hardening, Microsoft will deploy a dedicated first-party application to enable the synchronization between Active Directory and Microsoft Entra ID. This new application will manifest as a first party service principal called the "Microsoft Entra AD Synchronization Service" (Application ID: 6bf85cfa-ac8a-4be5-b5de-425a0d0dc016) and will be visible in the Enterprise Applications experience within the Microsoft Entra admin center. This application is critical for the continued operation of their on-premises to Microsoft Entra ID synchronization functionality (through Microsoft Entra Connect Sync or Microsoft Entra Cloud Sync)
+
+In the upcoming release(s), Microsoft will share more information and guidance on upgrading to a new version of Microsoft Entra Connect that will use this first party application to synchronize between Active Directory and Microsoft Entra ID.
+
+---
+
 ### Public Preview - Microsoft Entra ID Governance: Approvers can revoke access in MyAccess
 
 **Type:** New feature    
