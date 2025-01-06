@@ -194,7 +194,7 @@ items:
       - name: Introduction
         href: gsa-deployment-guide-intro.md
       - name: Deploy Global Secure Access for Microsoft Traffic
-        href: gsa-deployment-guide-m365.md
+        href: gsa-deployment-guide-microsoft-traffic.md
       - name: Deploy Microsoft Global Secure Access for Microsoft Entra Internet Access
         href: gsa-deployment-guide-internet-access.md
       - name: Deploy Microsoft Global Secure Access for Microsoft Entra Private Access
