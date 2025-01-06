@@ -103,7 +103,8 @@ To reset the password, users go to the [password reset portal](https://aka.ms/ss
 
 * For hybrid users, SSPR writes back the password to the on-premises Active Directory via the Microsoft Entra Connect service. 
 
-Note: For users who have [Password hash synchronization (PHS)](~/identity/hybrid/connect/whatis-phs.md) disabled, SSPR stores the passwords in the on-premises Active Directory only.
+> [!Note]
+> For users who have [Password hash synchronization (PHS)](~/identity/hybrid/connect/whatis-phs.md) disabled, SSPR stores the passwords in the on-premises Active Directory only.
 
 ### Best practices
 
