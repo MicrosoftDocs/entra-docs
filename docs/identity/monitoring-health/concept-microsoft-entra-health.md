@@ -9,7 +9,6 @@ ms.subservice: monitoring-health
 ms.date: 12/17/2024
 ms.author: sarahlipsey
 ms.reviewer: sarbar
-
 ---
 
 # What is Microsoft Entra Health monitoring?
