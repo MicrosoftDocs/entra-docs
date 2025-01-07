@@ -145,7 +145,7 @@ Calculated offline. A password spray attack is where multiple identities are att
 
 #### Suspicious browser	 
 
-Calculated offline. Suspicious browser detection indicates anomalous behavior based on suspicious sign-in activity across multiple tenants from different countries in the same browser. 
+Calculated offline. Suspicious browser detection indicates anomalous behavior based on suspicious sign-in activity across multiple tenants from different countries/regions in the same browser. 
 
 [Tips for investigating suspicious browser detections.](howto-identity-protection-investigate-risk.md#investigating-suspicious-browser-detections)
 

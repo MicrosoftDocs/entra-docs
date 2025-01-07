@@ -263,6 +263,6 @@ Body
 ## Next steps
 
 - [Administrative units in Microsoft Entra ID](administrative-units.md)
-- [Assign Microsoft Entra roles with administrative unit scope](admin-units-assign-roles.md)
+- [Assign Microsoft Entra roles with administrative unit scope](manage-roles-portal.md)
 - [Manage users or devices for an administrative unit with rules for dynamic membership groups](admin-units-members-dynamic.md)
 - [Remove users, groups, or devices from an administrative unit](admin-units-members-remove.md)

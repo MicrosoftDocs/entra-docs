@@ -9,7 +9,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 07/30/2024
+ms.date: 01/06/2025
 ms.author: barclayn
 ms.reviewer: sumitp
 ms.custom: it-pro
@@ -21,12 +21,12 @@ ms.custom: it-pro
 
 This article walks you through assigning product licenses to a group of users and verifying that they're licensed correctly in Microsoft Entra ID, part of Microsoft Entra.
 
-In this example, the Microsoft Entra organization contains a security group called **HR Department**. This group includes all members of the human resources department (around 1,000 users). You want to assign Office 365 Enterprise E3 licenses to the entire department. The Yammer Enterprise service that's included in the product must be temporarily disabled until the department is ready to start using it. You also want to deploy Enterprise Mobility + Security licenses to the same group of users.
+In this example, the Microsoft Entra organization contains a security group called **HR Department**. This group includes all members of the human resources department (around 1,000 users). You want to assign Office 365 Enterprise E3 licenses to the entire department. The Yammer Enterprise service included in the product must be temporarily disabled until the department is ready to start using it. You also want to deploy Enterprise Mobility + Security licenses to the same group of users.
 
 > [!NOTE]
-> Some Microsoft services are not available in all locations. Before a license can be assigned to a user, the administrator has to specify the Usage location property on the user.
+> Some Microsoft services aren't available in all locations. Before a license can be assigned to a user, the administrator has to specify the Usage location property on the user.
 >
-> For group license assignment, any users without a usage location specified inherit the location of the directory. If you have users in multiple locations, we recommend that you always set usage location as part of your user creation flow in Microsoft Entra ID. For example, configure Microsoft Entra Connect configuration to set usage location. This recommendation makes sure the result of license assignment is always correct and users do not receive services in locations that are not allowed.
+> For group license assignment, any users without a usage location specified inherit the location of the directory. If you have users in multiple locations, we recommend that you always set usage location as part of your user creation flow in Microsoft Entra ID. For example, configure Microsoft Entra Connect configuration to set usage location. This recommendation makes sure the result of license assignment is always correct and users don't receive services in locations that aren't allowed.
 
 ## Step 1: Assign the required licenses
 
@@ -51,25 +51,25 @@ In this example, the Microsoft Entra organization contains a security group call
    >[!NOTE]
    >When assigning licenses to a group with service plans that have dependencies on other service plans, they must both be assigned together in the same group, otherwise the service plan with the dependency will be disabled.
 
-1. On the **Assign license** page, click **Assignment options**, which displays all service plans included in the two products that we selected previously. Find **Yammer Enterprise** and turn it **Off** to disable that service from the product license. Confirm by clicking **OK** at the bottom of **License options**.
+1. On the **Assign license** page, select **Assignment options**, which displays all service plans included in the two products that we selected previously. Find **Yammer Enterprise** and turn it **Off** to disable that service from the product license. Confirm by clicking **OK** at the bottom of **License options**.
 
    :::image type="content" source="./media/licensing-groups-assign/assignment-options.png" alt-text="Screenshot of select service plans for licenses.":::
   
-1. To complete the assignment, on the **Assign license** page, click **Assign** at the bottom of the page.
+1. To complete the assignment, on the **Assign license** page, select **Assign** at the bottom of the page.
 
-1. A notification is displayed in the upper-right corner that shows the status and outcome of the process. If the assignment to the group couldn't be completed (for example, because of pre-existing licenses in the group), click the notification to view details of the failure.
+1. A notification is displayed in the upper-right corner that shows the status and outcome of the process. If the assignment to the group couldn't be completed (for example, because of preexisting licenses in the group), select the notification to view details of the failure.
 
-When assign licenses to a group, Microsoft Entra ID processes all existing members of that group. This process might take some time, varying with the size of the group. The next step describes how to verify that the process has finished and determine if further attention is required to resolve problems.
+When assign licenses to a group, Microsoft Entra ID processes all existing members of that group. This process might take some time and its duration varies depending on the size of the group. In the next step, you learn how to check if the process is complete and decide if any issues need further attention.
 
-## Step 2: Verify that the initial assignment has finished
+## Step 2: Verify initial assignment completion
 
 1. Go to **Microsoft Entra ID** > **Groups** > **All groups**. Select the group that licenses were assigned to.
 
-1. On the group page, select **Licenses**. This lets you quickly confirm if licenses have been fully assigned to users and if there are any errors that you need to look into. The following information is available:
+1. On the group page, select **Licenses**. This lets you quickly confirm if licenses are fully assigned to users and if there are any errors that you need to look into. The following information is available:
 
-   - Service licenses that are currently assigned to the group. Select an entry to show the specific services that have been enabled and to make changes.
+   - Service licenses that are currently assigned to the group. Select an entry to show enabled services and to make changes.
 
-   - Status updates of the latest license changes, which are available if the changes are being processed or if processing has finished for all user members.
+   - Status updates of the latest license changes, which are available if the changes are being processed or if processing completed for all user members.
 
    - Information about user license assignments that are in an error state.
 
@@ -91,7 +91,7 @@ When assign licenses to a group, Microsoft Entra ID processes all existing membe
 
    :::image type="content" source="./media/licensing-groups-assign/failed-assignments.png" alt-text="Screenshot of licenses that couldn't be assigned.":::
 
-1. Select a user to open the user's **Licenses** page. This page shows all licenses that are currently assigned to the user. In this example, the user has the Office 365 Enterprise E1 license that was inherited from the **Kiosk users** group. This conflicts with the E3 license that the system tried to apply from the **HR Department** group. As a result, none of the licenses from that group has been assigned to the user.
+1. Select a user to open the user's **Licenses** page. This page shows all licenses that are currently assigned to the user. In this example, the user has the Office 365 Enterprise E1 license that was inherited from the **Kiosk users** group. This license conflicts with the E3 license that the system tried to apply from the **HR Department** group. As a result, none of the licenses from that group has been assigned to the user.
 
    :::image type="content" source="./media/licensing-groups-assign/user-licence-conflicting-service-plans.png" alt-text="Screenshot of the view of all license conflicts for a user.":::
 
