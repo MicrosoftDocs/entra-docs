@@ -69,7 +69,7 @@ Follow these steps to make a user eligible for a Microsoft Entra admin role.
 
 ## Assign a role with restricted scope
 
-For certain roles, the scope of the granted permissions can be restricted to a single admin unit, service principal, or application. This procedure is an example if assigning a role that has the scope of an administrative unit. For a list of roles that support scope via administrative unit, see [Assign scoped roles to an administrative unit](~/identity/role-based-access-control/admin-units-assign-roles.md). This feature is currently being rolled out to Microsoft Entra organizations.
+For certain roles, the scope of the granted permissions can be restricted to a single admin unit, service principal, or application. This procedure is an example if assigning a role that has the scope of an administrative unit. For a list of roles that support scope via administrative unit, see [Assign roles with administrative unit scope](../../identity/role-based-access-control/manage-roles-portal.md). This feature is currently being rolled out to Microsoft Entra organizations.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
