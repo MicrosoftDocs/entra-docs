@@ -23,7 +23,7 @@ Microsoft Entra ID is an Identity as a Service (IDaaS) solution that stores and 
 
 ## Core Store
 
-The Core Store is made up of tenants stored in scale units, each of which contains multiple tenants. Update or retrieval data operations in the Microsoft Entra Core Store relate to a single tenant, based on the user's security token, which achieves tenant isolation. Scale units are assigned to a geo-location. Each geo-location uses two or more Azure regions to store the data. In each Azure region, a scale unit data is replicated in the physical datacenters for resiliency and performance.
+The Core Store is made up of tenants stored in scale units, each of which contains multiple tenants. Update or retrieval data operations in the Microsoft Entra Core Store relate to a single tenant, based on the user's security token, which achieves tenant isolation. Scale units are assigned to a geo-location. Each geo-location uses two or more Azure regions to store the data. In each Azure region, a scale unit data is replicated in the physical datacenters for resiliency and performance, as described in [the Microsoft Entra architecture](/entra/architecture/architecture).
 
 For more information on the Core Score, see [Microsoft Entra Core Store Scale Units](https://www.youtube.com/watch?v=OcKO44GtHh8). For more information on Azure regions, see [Azure geographies](https://azure.microsoft.com/overview/datacenters/how-to-choose/).
 
@@ -68,7 +68,7 @@ Use the following table to see Microsoft Entra cloud solution models based on in
 
 **Table references**:
 
-(1) These are not currently available for external tenants.
+(1) These locations aren't currently available for external tenants.
 (2) **Data custodians**: datacenters in the US government cloud are operated by Microsoft. In China, Microsoft Entra ID is operated through a partnership with [21Vianet](/microsoft-365/admin/services-in-china/services-in-china?redirectSourcePath=%252fen-us%252farticle%252fLearn-about-Office-365-operated-by-21Vianet-a8ab5061-3346-4da0-bb7c-5260822b53ae&view=o365-21vianet&viewFallbackFrom=o365-worldwide&preserve-view=true).
 
 Learn more:
@@ -76,7 +76,6 @@ Learn more:
 - [Customer data storage and processing for European customers in Microsoft Entra ID](./data-storage-eu.md)
 - [Customer data storage for Australian and New Zealand customers in Microsoft Entra ID](./data-storage-australia-newzealand.md) and [Identity data storage for Australian and New Zealand customers in Microsoft Entra ID](./data-storage-australia.md)
 - [Customer data storage for Japan customers in Microsoft Entra ID](./data-storage-japan.md)
-- [What is the Microsoft Entra architecture?](/architecture/architecture.md)
 - [Microsoft Trust Center](https://www.microsoft.com/trustcenter/cloudservices/nationalcloud)
 
 <a name='data-residency-across-azure-ad-components'></a>
@@ -86,7 +85,7 @@ Learn more:
 Learn more: [Microsoft Entra product overview](https://www.microsoft.com/cloud-platform/azure-active-directory-features)
 
 > [!NOTE]
-> To understand service data location, such as Exchange Online, or Skype for Business, refer to the corresponding service documentation.
+> To understand service data location for other services beyond Microsoft Entra ID, such as Exchange Online, or Skype for Business, refer to the corresponding service documentation.
 
 <a name='azure-ad-components-and-data-storage-location'></a>
 
