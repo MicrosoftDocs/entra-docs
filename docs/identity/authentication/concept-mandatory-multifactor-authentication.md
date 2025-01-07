@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 12/03/2024
+ms.date: 01/06/2025
 ms.author: justinha
 author: najshahid
 manager: amycolannino
