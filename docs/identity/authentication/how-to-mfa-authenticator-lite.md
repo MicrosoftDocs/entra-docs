@@ -5,7 +5,7 @@ description: Learn about how to you can set up Microsoft Authenticator Lite for 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 08/20/2024
+ms.date: 01/07/2025
 
 ms.author: justinha
 author: justinha

@@ -201,6 +201,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/monitoring-health/howto-use-health-scenario-alerts.md",
+      "redirect_url": "/entra/identity/monitoring-health/howto-investigate-health-scenario-alerts",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/monitoring-health/reference-azure-monitor-sign-ins-log-schema.md",
       "redirect_url": "/entra/identity/monitoring-health/concept-activity-log-schemas",
       "redirect_document_id": false
