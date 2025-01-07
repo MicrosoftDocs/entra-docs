@@ -16,7 +16,7 @@ ms.collection:
 
 # Microsoft Entra ID and data residency
 
-Microsoft Entra ID is an Identity as a Service (IDaaS) solution that stores and manages identity and access data in the cloud. You can use the data to enable and manage access to cloud services, achieve mobility scenarios, and secure your organization. An instance of the Microsoft Entra service, called a [tenant](~/identity-platform/developer-glossary.md#tenant), is an isolated set of directory object data that the customer provisions and owns.
+Microsoft Entra ID is an Identity as a Service (IDaaS) solution that stores and manages identity and access data in the cloud. You can use the data to enable and manage access to cloud services, achieve mobility scenarios, and secure your organization. An instance of the Microsoft Entra ID service, called a [tenant](~/identity-platform/developer-glossary.md#tenant), is an isolated set of directory object data that the customer provisions and owns.
 
 > [!NOTE]
 > Microsoft Entra External ID is a customer identity and access management (CIAM) solution that stores and manages data in a separate tenant created for your customer-facing apps and customer directory data. This tenant is called the external tenant. When you create an external tenant, you have the option to select the geographic location for data storage. It’s important to note that the data locations and region availability may differ from those of Microsoft Entra ID, as indicated in this article.
@@ -25,7 +25,7 @@ Microsoft Entra ID is an Identity as a Service (IDaaS) solution that stores and 
 
 The Core Store is made up of tenants stored in scale units, each of which contains multiple tenants. Update or retrieval data operations in the Microsoft Entra Core Store relate to a single tenant, based on the user's security token, which achieves tenant isolation. Scale units are assigned to a geo-location. Each geo-location uses two or more Azure regions to store the data. In each Azure region, a scale unit data is replicated in the physical datacenters for resiliency and performance.
 
-Learn more: [Microsoft Entra Core Store Scale Units](https://www.youtube.com/watch?v=OcKO44GtHh8)
+For more information on the Core Score, see [Microsoft Entra Core Store Scale Units](https://www.youtube.com/watch?v=OcKO44GtHh8). For more information on Azure regions, see [Azure geographies](https://azure.microsoft.com/overview/datacenters/how-to-choose/).
 
 Microsoft Entra ID is available in the following clouds:
 
@@ -62,23 +62,21 @@ Use the following table to see Microsoft Entra cloud solution models based on in
 
 |Model|Locations|Data location|Operations personnel|Put a tenant in this model|
 |---|---|---|---|---|
-|Public geo located|Australia*, North America, EMEA, Japan*, Asia/Pacific|At rest, in the target location. Exceptions by service or feature|Operated by Microsoft. Microsoft datacenter personnel must pass a background check.|Create the tenant in the sign-up experience. Choose the location for data residency.|
+|Public geo located|Australia (1), North America, EMEA, Japan (1), Asia/Pacific|At rest, in the target location. Exceptions by component service or feature, listed in the next section|Operated by Microsoft. Microsoft datacenter personnel must pass a background check.|Create the tenant in the sign-up experience. Choose the location for data residency.|
 |Public worldwide|Worldwide|All locations|Operated by Microsoft. Microsoft datacenter personnel must pass a background check.|Tenant creation available via official support channel and subject to Microsoft discretion.|
-|Sovereign or national clouds|US government*, China*|At rest, in the target location. No exceptions.|Operated by a data custodian (1). Personnel are screened according to requirements.|Each national cloud instance has a sign-up experience.|
-
-*\* Not currently available for external tenants.*
+|Sovereign or national clouds|US government (1), China (1)|At rest, in the target location. No exceptions.|Operated by a data custodian (2). Personnel are screened according to requirements.|Each national cloud instance has a sign-up experience.|
 
 **Table references**:
 
-(1) **Data custodians**: datacenters in the US government cloud are operated by Microsoft. In China, Microsoft Entra ID is operated through a partnership with [21Vianet](/microsoft-365/admin/services-in-china/services-in-china?redirectSourcePath=%252fen-us%252farticle%252fLearn-about-Office-365-operated-by-21Vianet-a8ab5061-3346-4da0-bb7c-5260822b53ae&view=o365-21vianet&viewFallbackFrom=o365-worldwide&preserve-view=true).
+(1) These are not currently available for external tenants.
+(2) **Data custodians**: datacenters in the US government cloud are operated by Microsoft. In China, Microsoft Entra ID is operated through a partnership with [21Vianet](/microsoft-365/admin/services-in-china/services-in-china?redirectSourcePath=%252fen-us%252farticle%252fLearn-about-Office-365-operated-by-21Vianet-a8ab5061-3346-4da0-bb7c-5260822b53ae&view=o365-21vianet&viewFallbackFrom=o365-worldwide&preserve-view=true).
 
 Learn more:
 
 - [Customer data storage and processing for European customers in Microsoft Entra ID](./data-storage-eu.md)
 - [Customer data storage for Australian and New Zealand customers in Microsoft Entra ID](./data-storage-australia-newzealand.md) and [Identity data storage for Australian and New Zealand customers in Microsoft Entra ID](./data-storage-australia.md)
 - [Customer data storage for Japan customers in Microsoft Entra ID](./data-storage-japan.md)
-- [What is the Microsoft Entra architecture?](https://aka.ms/aadarch)
-- [Find the Azure geography that meets your needs](https://azure.microsoft.com/overview/datacenters/how-to-choose/)
+- [What is the Microsoft Entra architecture?](/architecture/architecture.md)
 - [Microsoft Trust Center](https://www.microsoft.com/trustcenter/cloudservices/nationalcloud)
 
 <a name='data-residency-across-azure-ad-components'></a>
