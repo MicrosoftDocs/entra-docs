@@ -59,7 +59,7 @@ You can view the Microsoft Entra Health monitoring signals from the Microsoft En
     - The data is updated every 15 minutes.
     - We recommend reviewing these signals on a regular schedule so that you can recognize your tenant's trends and patterns.
 
-    ![Screenshot of the sign-ins requiring MFA scenario.](media/howto-investigate-health-scenario-alerts/scenario-monitoring-MFA.png)
+    ![Screenshot of the sign-ins requiring multifactor authenitcation (MFA) scenario.](media/howto-investigate-health-scenario-alerts/scenario-monitoring-mfa.png)
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
@@ -150,5 +150,5 @@ We recommend looking at the alerts and health monitoring data regularly to ident
 ## Related content
 
 - [Sign-ins requiring a compliant or managed device](scenario-health-sign-ins-compliant-managed-device.md)
-- [Sign-ins requiring multifactor authentication (MFA)](scenario-health-sign-ins-mfa.md)
+- [Sign-ins requiring MFA](scenario-health-sign-ins-mfa.md)
 - [Microsoft Graph Health monitoring alerts API documentation](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true)

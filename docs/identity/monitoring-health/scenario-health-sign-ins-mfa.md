@@ -43,7 +43,7 @@ Investigating an alert starts with gathering data.
 
 1. Gather the signal details and impact summary.
     - View the signal in the Microsoft Entra admin center to get familiar with the pattern and identify anomalies.
-        ![Screenshot of the sign-ins requiring MFA signal.](media/scenario-health-sign-ins-mfa/scenario-monitoring-MFA.png)
+        ![Screenshot of the sign-ins requiring MFA signal.](media/scenario-health-sign-ins-mfa/scenario-monitoring-mfa.png)
     - Run the [List alerts](/graph/api/healthmonitoring-healthmonitoringroot-list-alerts?view=graph-rest-beta&preserve-view=true) API to retrieve all alerts for the tenant.
     - Run the [Get alert](/graph/api/healthmonitoring-alert-get?view=graph-rest-beta&preserve-view=true) API to retrieve the details of a specific alert.
 1. Review the sign-in logs.

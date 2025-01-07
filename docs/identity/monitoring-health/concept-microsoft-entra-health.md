@@ -14,7 +14,7 @@ ms.reviewer: sarbar
 
 # What is Microsoft Entra Health monitoring?
 
-Microsoft Entra Health provides you with observability of your Microsoft Entra tenant through continuous low-latency health monitoring and look-back reporting on Service Level Agreements (SLA). The low-latency health monitoring solution includes a set of health metric data streams, known as signals, with built-in alerts designed to help IT operations teams maintain high levels of uptime and service for common Microsoft Entra scenarios. The SLA Attainment is a monthly look-back solution that shows the core authentication availability of Microsoft Entra ID each month.
+Microsoft Entra Health provides you with observability of your Microsoft Entra tenant through continuous low-latency health monitoring and look-back reporting on [Service Level Agreements (SLA)](https://azure.microsoft.com/support/legal/sla/active-directory/v1_1/). The low-latency health monitoring solution includes a set of health metric data streams, known as signals, with built-in alerts designed to help IT operations teams maintain high levels of uptime and service for common Microsoft Entra scenarios. The SLA Attainment is a monthly look-back solution that shows the core authentication availability of Microsoft Entra ID each month.
 
 When these metrics and signals are paired together, you get a comprehensive view of the health of your Microsoft Entra tenant. Regularly monitoring the information provided in Microsoft Entra Health can help you identify trends, potential issues, and areas for improvement in your tenant's health. Email notifications can also be configured to alert you when the service identifies an anomaly in the pattern for your tenant. This article provides an overview of the Microsoft Entra Health monitoring features.
 
@@ -53,14 +53,14 @@ Many IT administrators spend a considerable amount of time investigating several
 
 The following key scenarios can be monitored in Microsoft Entra Health:
 
-- Interactive user sign-in requests that require Microsoft Entra multifactor authentication (MFA).
+- Interactive user sign-in requests that require MFA.
 - User sign-in requests that require a managed device through a Conditional Access policy.
 - User sign-in requests that require a compliant device through a Conditional Access policy.
 - User sign-in requests to applications using SAML authentication.
 
 The data associated with each of these scenarios is aggregated into a view that's specific to that scenario. If you're only interested in sign-ins from compliant devices, you can dive into that scenario without noise from other sign-in activities. 
 
-![Screenshot of the MFA scenario monitoring data.](media/concept-microsoft-entra-health/scenario-monitoring-MFA.png)
+![Screenshot of the MFA scenario monitoring data.](media/concept-microsoft-entra-health/scenario-monitoring-mfa.png)
 
 Each scenario detail page provides trends and totals for that scenario for the last 30 days. This data is aggregated every 15 minutes, for low latency insights into your tenant's health.
 
