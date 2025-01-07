@@ -24,7 +24,7 @@ This article discusses how to improve the security of user sign-in by adding the
 
 ## Passwordless phone sign-in and multifactor authentication
 
-When you receive a passwordless phone sign-in or multifactor authentication (MFA) push notification in Authenticator, you see the name of the application that requests the approval and the location based on the IP address from where the sign-in originated.
+When a user receives a passwordless phone sign-in or multifactor authentication (MFA) push notification in Authenticator, they see the name of the application that requests the approval and the location based on the IP address from where the sign-in originated.
 
 :::image type="content" border="false" source="./media/howto-authentication-passwordless-phone/location.png" alt-text="Screenshot that shows added context in the MFA push notification.":::
 
@@ -355,7 +355,7 @@ To turn off added context, you need to `PATCH` `displayAppInformationRequiredSta
 
 To enable the application name or geographic location in the Microsoft Entra admin center, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Microsoft Authenticator**.
 1. On the **Basics** tab, select **Yes** and **All users** to enable the policy for everyone. Change **Authentication mode** to **Any**.
 
