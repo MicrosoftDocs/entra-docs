@@ -35,9 +35,9 @@ To learn more about where you can use passkeys in Authenticator to sign in, see 
 
 ## Enable passkeys in Authenticator in the admin center
 
-An Authentication Policy administrator needs to consent to allow Authenticator in the **Passkey (FIDO2) settings** of the Authentication methods policy. They need to explicitly allow the Authenticator Attestation GUIDs (AAGUIDs) for Authenticator to enable users to register passkeys in the Authenticator app. There's no setting to enable passkeys in the **Microsoft Authenticator app** section of the Authentication methods policy.
+An Authentication Policy Administrator needs to consent to allow Authenticator in the **Passkey (FIDO2) settings** of the Authentication methods policy. They need to explicitly allow the Authenticator Attestation GUIDs (AAGUIDs) for Authenticator to enable users to register passkeys in the Authenticator app. There's no setting to enable passkeys in the **Microsoft Authenticator app** section of the Authentication methods policy.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Authentication method policy**.
 1. Under the method **Passkey (FIDO2)**, select **All users** or **Add groups** to select specific groups. *Only security groups are supported*.
 1. On the **Configure** tab:
@@ -60,7 +60,7 @@ An Authentication Policy administrator needs to consent to allow Authenticator i
 
    - Key restrictions set the usability of specific passkeys for both registration and authentication. Set **Enforce key restrictions** to **Yes** to allow or block only certain passkeys, which are identified by their AAGUIDs.
    
-     This setting must be **Yes**. You need to add the Authenticator AAGUIDs to allow users to register passkeys in Authenticator. They either sign in to the Authenticator app or add **Passkey in Microsoft Authenticator** from their **Security info** tab.
+     This setting must be **Yes**, and you need to add the Authenticator AAGUIDs to allow users to register passkeys in Authenticator, either by signing in to the Authenticator app or by adding **Passkey in Microsoft Authenticator** from **Security info**.
 
      [Security info](https://mysignins.microsoft.com/security-info) requires this setting to be set to **Yes** so that users can choose **Passkey in Authenticator** and go through a dedicated Authenticator passkey registration flow. If you choose **No**, users might still be able to add a passkey in Authenticator by choosing the **Security key or passkey** method, depending on their operating system and browser. However, we don't expect many users to discover and use that method.
      
@@ -86,7 +86,7 @@ An Authentication Policy administrator needs to consent to allow Authenticator i
 
 ## Enable passkeys in Authenticator by using Graph Explorer
 
-In addition to using the Microsoft Entra admin center, you can also enable passkeys in Authenticator by using Graph Explorer. If you're assigned at least the [Authentication Policy administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) role, you can update the Authentication methods policy to allow the AAGUIDs for Authenticator.
+In addition to using the Microsoft Entra admin center, you can also enable passkeys in Authenticator by using Graph Explorer. If you're assigned at least the [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) role, you can update the Authentication methods policy to allow the AAGUIDs for Authenticator.
 
 To configure the policy by using Graph Explorer:
 
@@ -178,7 +178,7 @@ Some organizations restrict Bluetooth usage, which includes the use of passkeys.
 
 ## Delete a passkey
 
-If a user deletes a passkey in Authenticator, the passkey is also removed from the user's sign-in methods. An Authentication Policy administrator can also follow these steps to delete a passkey from the user's authentication methods, but it won't remove the passkey from Authenticator.
+If a user deletes a passkey in Authenticator, the passkey is also removed from the user's sign-in methods. An Authentication Policy Administrator can also follow these steps to delete a passkey from the user's authentication methods, but it won't remove the passkey from Authenticator.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com), and search for the user whose passkey must be removed.
 1. Select **Authentication methods**, right-click **FIDO2 security key**, and select **Delete**.
@@ -189,7 +189,7 @@ If a user deletes a passkey in Authenticator, the passkey is also removed from t
 
 To make users sign in with a passkey when they access a sensitive resource, use the built-in phishing-resistant authentication strength, or create a custom authentication strength by following these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a Conditional Access administrator.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a Conditional Access Administrator.
 1. Browse to **Protection** > **Authentication methods** > **Authentication strengths**.
 1. Select **New authentication strength**.
 1. Provide a descriptive name for your new authentication strength.
