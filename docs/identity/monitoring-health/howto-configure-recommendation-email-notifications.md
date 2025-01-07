@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 12/19/2024
+ms.date: 01/07/2025
 ms.author: sarahlipsey
 ms.reviewer: deawari
 
@@ -19,7 +19,7 @@ Microsoft Entra recommendations are a powerful resource to monitor and maintain 
 
 > [!IMPORTANT]
 > Microsoft Entra recommendation emails are currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
 
@@ -36,6 +36,6 @@ Tenants are opted in to receive Microsoft Entra recommendation emails by default
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](../role-based-access-control/permissions-reference.md#security-administrator).
 1. Browse to **Identity** > **Overview** > **Recommendations**.
 1. Select **Email settings**.
-1. In the **Recommendation email settings** panel that opens, uncheck the **Opt out of email notifications** box.
+1. In the **Recommendation email settings** panel that opens, uncheck the **Send email notifications for new recommendations** box.
 
 All email notifications for all Microsoft Entra recommendations are now blocked and are no longer sent to the tenant's administrative roles.
