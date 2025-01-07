@@ -16,11 +16,11 @@ ms.reviewer: sarbar
 
 Microsoft Entra Health provides you with observability of your Microsoft Entra tenant through continuous low-latency health monitoring and look-back reporting on Service Level Agreements (SLA). The low-latency health monitoring solution includes a set of health metric data streams, known as signals, with built-in alerts designed to help IT operations teams maintain high levels of uptime and service for common Microsoft Entra scenarios. The SLA Attainment is a monthly look-back solution that shows the core authentication availability of Microsoft Entra ID each month.
 
-Paired together, these metrics and signals provide a comprehensive view of the health of your Microsoft Entra tenant. Regularly monitoring the information provided in Microsoft Entra Health can help you identify trends, potential issues, and areas for improvement in your tenant's health. In addition to the signals for these tenant health scenarios, email notifications can also be configured to alert you when the service identifies an anomaly in the pattern for your tenant. This article provide an overview of the Microsoft Entra Health monitoring features.
+When these metrics and signals are paired together, you get a comprehensive view of the health of your Microsoft Entra tenant. Regularly monitoring the information provided in Microsoft Entra Health can help you identify trends, potential issues, and areas for improvement in your tenant's health. Email notifications can also be configured to alert you when the service identifies an anomaly in the pattern for your tenant. This article provides an overview of the Microsoft Entra Health monitoring features.
 
 > [!IMPORTANT]
 > Microsoft Entra Health features are currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Access Microsoft Entra Health
 

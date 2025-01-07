@@ -22,7 +22,7 @@ This article describes how to configure email notifications for Microsoft Entra 
 
 > [!IMPORTANT]
 > Microsoft Entra Health scenario monitoring and alerts are currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
 

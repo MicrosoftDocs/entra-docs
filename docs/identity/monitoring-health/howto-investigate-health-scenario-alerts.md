@@ -15,13 +15,13 @@ ms.reviewer: sarbar
 
 # How to investigate Microsoft Entra Health monitoring alerts (preview)
 
-Microsoft Entra Health monitoring provides the ability to monitor the health of your Microsoft Entra tenant through a set of health metrics and intelligent alerts. Health metrics are fed into our anomaly detection service, which uses machine learning to understand the patterns for your tenant. When the anomaly detection service identifies a significant change in one of the tenant-level patterns, it triggers an alert.
+Microsoft Entra Health monitoring helps you monitor the health of your Microsoft Entra tenant through a set of health metrics and intelligent alerts. Health metrics are fed into our anomaly detection service, which uses machine learning to understand the patterns for your tenant. When the anomaly detection service identifies a significant change in one of the tenant-level patterns, it triggers an alert.
 
 The signals and alerts provided by Microsoft Entra Health provide you with the starting point for investigating potential issues in your tenant. Because there's a wide range of scenarios and even more data points to consider, it's important to understand how to investigate these alerts effectively. This article provides guidance on how to investigate an alert, but isn't specific to any alert.
 
 > [!IMPORTANT]
 > Microsoft Entra Health scenario monitoring and alerts are currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Prerequisites
 
@@ -48,7 +48,7 @@ You can view the Microsoft Entra Health monitoring signals from the Microsoft En
 
 1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 
-1. Browse to **Identity** > **Monitoring and health** > **Health**. The page opens to the SLA Attainment page.
+1. Browse to **Identity** > **Monitoring and health** > **Health**. The page opens to the Service Level Agreement (SLA) Attainment page.
 
 1. Select the **Scenario Monitoring** tab.
 
@@ -71,7 +71,7 @@ Running these queries provides the number of times that service activity occurre
 GET https://graph.microsoft.com/beta/reports/serviceActivity/getMetricsForMfaSignInSuccess(inclusiveIntervalStartDateTime=2023-01-01T00:00:00Z,exclusiveIntervalEndDateTime=2023-01-01T00:20:00Z,aggregationIntervalInMinutes=10)
 ```
 
-The response shows how many successful sign-ins occurred during the specific time frame, aggregated in ten minute intervals.
+The response shows how many successful sign-ins occurred during the specific time frame, aggregated in ten-minute intervals.
 
 ```http
 HTTP/1.1 200 OK
@@ -98,7 +98,7 @@ Content-Type: application/json
 
 ## Investigate the alert and signals
 
-With the email notifications configured, you and your team can more effectively monitor the health of these scenarios. When you receive an alert, or if you see a change to a pattern you suspect might need investigation, you typically need to investigate the following data sets:
+You and your team can more effectively monitor the health of these scenarios when you configure email notifications. When you receive an alert, or if you see a change to a pattern you suspect might need investigation, you typically need to investigate the following data sets:
 
 - **Alert impact**: The portion of the response after `impacts` quantifies the scope and summarizes impacted resources. These details include the `impactCount` so you can determine how widespread the issue is.  
 - **Alert signals**: The data stream, or health signal, that caused the alert. A query is provided in the response for further investigation.
