@@ -41,7 +41,7 @@ To make use of workload identity risk reports, including the new **Risky workloa
 To take action on risky workload identities we recommend setting up risk-based Conditional Access policies, which does require [Workload Identities Premium](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-identities#office-StandaloneSKU-k3hubfz) licensing: You can view, start a trial and acquire licenses on the [Workload Identities blade](https://portal.azure.com/#view/Microsoft_Azure_ManagedServiceIdentity/WorkloadIdentitiesBlade).
 
 > [!NOTE]
-> I With [Microsoft Security Copilot](/copilot/security/microsoft-security-copilot), you can use natural language prompts to get insights on risky workload identities. Learn more about how to [Assess application risks using Microsoft Security Copilot in Microsoft Entra](/entra/fundamentals/copilot-security-entra-investigate-risky-apps).
+> With [Microsoft Security Copilot](/copilot/security/microsoft-security-copilot), you can use natural language prompts to get insights on risky workload identities. Learn more about how to [Assess application risks using Microsoft Security Copilot in Microsoft Entra](/entra/fundamentals/copilot-security-entra-investigate-risky-apps).
 
 ## Workload identity risk detections
 
