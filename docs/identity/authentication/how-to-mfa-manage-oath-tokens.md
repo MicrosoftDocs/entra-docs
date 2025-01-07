@@ -174,7 +174,7 @@ This example shows how to delete a token with token ID 3dee0e53-f50f-43ef-85c0-b
 DELETE https://graph.microsoft.com/beta/directory/authenticationMethodDevices/hardwareOathDevices/3dee0e53-f50f-43ef-85c0-b44689f2d66d
 ```
 
-## Scenario: Admin creates and assigns a hardare OATH token that a user activates
+## Scenario: Admin creates and assigns a hardware OATH token that a user activates
 
 In this scenario, an Authentication Policy Administrator creates and assigns a token, and then a user can activate it on their Security info page, or by using Microsoft Graph Explorer. When you assign a token, you can share steps for the user to sign in to [Security info](https://aka.ms/mysecurityinfo) to activate their token. They can choose **Add sign-in method** > **Hardware token**. They need to provide the hardware token serial number, which is typically on the back of the device. 
 

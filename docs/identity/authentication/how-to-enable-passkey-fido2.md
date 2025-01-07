@@ -70,7 +70,7 @@ You can work with your security key vendor to determine the AAGUID of the passke
 
    - **Enforce key restrictions** should be set to **Yes** only if your organization wants to only allow or disallow certain security key models or passkey providers, which are identified by their AAGUID. You can work with your security key vendor to determine the AAGUID of the passkey. If the passkey is already registered, you can find the AAGUID by viewing the authentication method details of the passkey for the user.
 
-   When **Enforce key restrictions** is set to **Yes**, you can select Microsoft Authenticator to automatically add the Authenticator app AAGUIDs for you in the key restriction list. For more information, see [Enable passkeys in Microsoft Authenticator](how-to-enable-authenticator-passkey.md).
+   When **Enforce key restrictions** is set to **Yes**, you can select Microsoft Authenticator to automatically add the Authenticator app AAGUIDs for you in the key restrictions list. For more information, see [Enable passkeys in Microsoft Authenticator](how-to-enable-authenticator-passkey.md).
 
    >[!WARNING]
    >Key restrictions set the usability of specific models or providers for both registration and authentication. If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in.

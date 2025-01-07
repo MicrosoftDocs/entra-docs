@@ -181,16 +181,16 @@ Run the new installer on the Primary MFA Server. Before you upgrade a server, re
 ### Configure the MFA Server Migration Utility
 After installing the MFA Server update, open an elevated PowerShell command prompt: hover over the PowerShell icon, right-select, and select **Run as Administrator**. Run the .\Configure-MultiFactorAuthMigrationUtility.ps1 script found in your MFA Server installation directory (C:\Program Files\Multi-Factor Authentication Server by default).
 
-This script requires you to provide credentials for an Application Administrator in your Microsoft Entra tenant. The creates a new MFA Server Migration Utility application within Microsoft Entra ID, which is used to write user authentication methods to each Microsoft Entra user object.
+This script requires you to provide credentials for an Application Administrator in your Microsoft Entra tenant. It creates a new MFA Server Migration Utility application within Microsoft Entra ID, which is used to write user authentication methods to each Microsoft Entra user object.
 
-For government cloud customers who wish to carry out migrations, replace ".com" entries in the script with ".us". This script writes the HKLM:\SOFTWARE\WOW6432Node\Positive Networks\PhoneFactor\ StsUrl and GraphUrl registry entries and instruct the Migration Utility to use the appropriate GRAPH endpoints.
+For government cloud customers who wish to carry out migrations, replace ".com" entries in the script with ".us". This script writes the HKLM:\SOFTWARE\WOW6432Node\Positive Networks\PhoneFactor\ StsUrl and GraphUrl registry entries and instructs the Migration Utility to use the appropriate GRAPH endpoints.
 
 You'll also need access to the following URLs:
 
 - `https://graph.microsoft.com/*` (or `https://graph.microsoft.us/*` for government cloud customers)
 - `https://login.microsoftonline.com/*` (or `https://login.microsoftonline.us/*` for government cloud customers)
 
-The script instructs you to grant admin consent to the newly created application. Navigate to the URL provided, or within the Microsoft Entra admin center, select **Application Registrations**, find and select the **MFA Server Migration Utility** app, select on **API permissions** and then granting the appropriate permissions.
+The script instructs you to grant admin consent to the newly created application. Navigate to the URL provided, or within the Microsoft Entra admin center, select **Application Registrations**, find and select the **MFA Server Migration Utility** app, select on **API permissions** and then grant the appropriate permissions.
 
 :::image type="content" border="true" source="./media/how-to-mfa-server-migration-utility/permissions.png" alt-text="Screenshot of permissions.":::
 
@@ -238,7 +238,7 @@ The **Settings** option allows you to change the settings for the migration proc
   - The migration utility tries direct matching to UPN before using the on-premises Active Directory attribute.  
   - If no match is found, it calls a Windows API to find the Microsoft Entra UPN and get the SID, which it uses to search the MFA Server user list. 
   - If the Windows API doesn't find the user or the SID isn't found in the MFA Server, then it uses the configured Active Directory attribute to find the user in the on-premises Active Directory, and then use the SID to search the MFA Server user list.
-- Automatic synchronization – Starts a background service that continually monitors any authentication method changes to users in the on-premises MFA Server, and write them to Microsoft Entra ID at the specified time interval defined.
+- Automatic synchronization – Starts a background service that continually monitors any authentication method changes to users in the on-premises MFA Server, and writes them to Microsoft Entra ID at the specified time interval defined.
 - Synchronization server – Allows the MFA Server Migration Sync service to run on a secondary MFA Server rather than only run on the primary. To configure the Migration Sync service to run on a secondary server, the `Configure-MultiFactorAuthMigrationUtility.ps1` script must be run on the server to register a certificate with the MFA Server Migration Utility app registration. The certificate is used to authenticate to Microsoft Graph. 
 
 The migration process can be automatic or manual.
@@ -456,7 +456,8 @@ Content-Type: application/json
 
 
 #### Response
->**Note:** The response object shown here might be shortened for readability.
+> [!NOTE] 
+> The response object shown here might be shortened for readability.
 <!-- {
   "blockType": "response",
   "truncated": true,
@@ -487,7 +488,7 @@ Content-Type: application/json
 }
 ```
 
-Users are no longer be redirected to your on-premises federation server for MFA, whether they're targeted by the Staged Rollout tool or not. Note this can take up to 24 hours to take effect.
+Users are no longer redirected to your on-premises federation server for MFA, whether they're targeted by the Staged Rollout tool or not. Note this can take up to 24 hours to take effect.
 
 >[!NOTE]
 >The update of the domain federation setting can take up to 24 hours to take effect. 
