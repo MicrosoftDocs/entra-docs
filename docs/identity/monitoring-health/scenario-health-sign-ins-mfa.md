@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 10/14/2024
+ms.date: 01/07/2025
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -42,7 +42,10 @@ There are different roles, permissions, and license requirements to view health 
 Investigating an alert starts with gathering data.
 
 1. Gather the signal details and impact summary.
-    - For more information, see [Microsoft Graph health monitoring overview](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true).
+    - View the signal in the Microsoft Entra admin center to get familiar with the pattern and identify anomalies.
+        ![Screenshot of the sign-ins requiring MFA signal.](media/scenario-health-sign-ins-mfa/scenario-monitoring-MFA.png)
+    - Run the [List alerts](/graph/api/healthmonitoring-healthmonitoringroot-list-alerts?view=graph-rest-beta&preserve-view=true) API to retrieve all alerts for the tenant.
+    - Run the [Get alert](/graph/api/healthmonitoring-alert-get?view=graph-rest-beta&preserve-view=true) API to retrieve the details of a specific alert.
 1. Review the sign-in logs.
     - [Review the sign-in log details](concept-sign-in-log-activity-details.md).
     - Look for users being blocked from signing in *and* have a Conditional Access policy requiring MFA applied.

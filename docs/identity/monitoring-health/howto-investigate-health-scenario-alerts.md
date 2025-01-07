@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 12/17/2024
+ms.date: 01/07/2025
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -52,14 +52,14 @@ You can view the Microsoft Entra Health monitoring signals from the Microsoft En
 
 1. Select the **Scenario Monitoring** tab.
 
-    ![Screenshot of the Microsoft Entra Health landing page.](media/howto-use-health-scenario-alerts/identity-health-landing-page.png)
+    ![Screenshot of the Microsoft Entra Health landing page.](media/howto-investigate-health-scenario-alerts/identity-health-landing-page.png)
 
 1. Select **View details** for the scenario you wish to investigate.
     - The default view is the last seven days, but you can adjust the date range to 24 hours, seven days, or one month.
     - The data is updated every 15 minutes.
     - We recommend reviewing these signals on a regular schedule so that you can recognize your tenant's trends and patterns.
 
-    ![Screenshot of the sign-ins requiring MFA scenario.](media/howto-use-health-scenario-alerts/scenario-monitoring-MFA.png)
+    ![Screenshot of the sign-ins requiring MFA scenario.](media/howto-investigate-health-scenario-alerts/scenario-monitoring-MFA.png)
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 

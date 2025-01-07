@@ -62,7 +62,7 @@ To configure alert notifications, you need the ID of the Microsoft Entra group y
 1. Browse to **Groups** > **All groups** > and select the group you want to receive the alerts.
 1. Select **Properties** and copy the `Object ID` of the group. 
 
-    ![Screenshot of the group properties in the Microsoft Entra admin center.](media/howto-use-health-scenario-alerts/locate-group-id.png)
+    ![Screenshot of the group properties in the Microsoft Entra admin center.](media/howto-configure-health-alert-emails/locate-group-id.png)
 
 ### Locate the scenario alert type
 
