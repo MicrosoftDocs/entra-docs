@@ -75,6 +75,8 @@ Use the following table to see Microsoft Entra cloud solution models based on in
 Learn more:
 
 - [Customer data storage and processing for European customers in Microsoft Entra ID](./data-storage-eu.md)
+- [Customer data storage for Australian and New Zealand customers in Microsoft Entra ID](./data-storage-australia-newzealand.md) and [Identity data storage for Australian and New Zealand customers in Microsoft Entra ID](./data-storage-australia.md)
+- [Customer data storage for Japan customers in Microsoft Entra ID](./data-storage-japan.md)
 - [What is the Microsoft Entra architecture?](https://aka.ms/aadarch)
 - [Find the Azure geography that meets your needs](https://azure.microsoft.com/overview/datacenters/how-to-choose/)
 - [Microsoft Trust Center](https://www.microsoft.com/trustcenter/cloudservices/nationalcloud)
