@@ -46,7 +46,7 @@ To address on-premises threats, we recommend you adhere to the four principles t
 1. **Fully isolate your Microsoft 365 administrator accounts.** They should be:
 
    - Cloud-native accounts.
-   - Authenticated by using phishing-resistant credentials.
+   - Authenticated by using [phishing-resistant credentials](https://aka.ms/PasswordlessGuide).
    - Secured by Microsoft Entra Conditional Access.
    - Accessed only by using Cloud-managed [privileged access workstations](/security/privileged-access-workstations/privileged-access-devices).
 
