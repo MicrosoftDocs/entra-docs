@@ -5,7 +5,7 @@ description: Explains Microsoft Entra ID multifactor authentication (MFA) SAML/W
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 12/09/2024
+ms.date: 01/07/2025
 
 author: brozbab
 ms.author: justinha

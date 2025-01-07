@@ -5,7 +5,7 @@ description: Learn which apps are supported for users to sign in to Microsoft En
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/27/2024
+ms.date: 01/07/2025
 ms.author: justinha
 author: aanjusingh
 manager: amycolannino

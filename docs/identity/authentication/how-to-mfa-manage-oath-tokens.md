@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 12/11/2024
+ms.date: 01/07/2025
 
 ms.author: justinha
 author: justinha
@@ -49,7 +49,7 @@ To enable hardware OATH tokens in the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Hardware OATH tokens (Preview)**.
-1. Select **Enable**, choose which groups of users to include in the policy, and click **Save**.
+1. Select **Enable**, choose which groups of users to include in the policy, and select **Save**.
 
    :::image type="content" source="media/concept-authentication-oath-tokens/enable.png" alt-text="Screenshot of how to enable hardware OATH tokens in the Microsoft Entra admin center.":::
 
@@ -206,27 +206,27 @@ POST https://graph.microsoft.com/beta/users/00aa00aa-bb11-cc22-dd33-44ee44ee44ee
 Here are steps a user can follow to self-activate their hardware OATH token in Security info:
 
 1. Sign in to [Security info](https://aka.ms/mysecurityinfo).
-1. Click **Add sign-in method** and choose **Hardware token**.
+1. Select **Add sign-in method** and choose **Hardware token**.
 
    :::image type="content" source="media/concept-authentication-oath-tokens/add-sign-in-method.png" alt-text="Screenshot of how to add a new sign-in method in Security info.":::
 
-1. After you select **Hardware token**, click **Add**.
+1. After you select **Hardware token**, select **Add**.
 
    :::image type="content" source="media/concept-authentication-oath-tokens/add-hardware-token.png" alt-text="Screenshot of how to add a hardware OATH token in Security info.":::
 
-1. Check the back of the device for the serial number, enter it, and click **Next**.
+1. Check the back of the device for the serial number, enter it, and select **Next**.
 
    :::image type="content" source="media/concept-authentication-oath-tokens/add-serial-number.png" alt-text="Screenshot of how to add the serial number of a hardware OATH token.":::
 
-1. Create a friendly name to help you choose this method to complete multifactor authentication, and click **Next**.
+1. Create a friendly name to help you choose this method to complete multifactor authentication, and select **Next**.
 
    :::image type="content" source="media/concept-authentication-oath-tokens/add-name.png" alt-text="Screenshot of how to add a friendly name for a hardware OATH token.":::
 
-1. Supply the random verification code that appears when you tap the button on the device. For a token that refreshes its code every 30 seconds, you need to enter the code and click **Next** within one minute. For a token that refreshes every 60 seconds, you have two minutes. 
+1. Supply the random verification code that appears when you tap the button on the device. For a token that refreshes its code every 30 seconds, you need to enter the code and select **Next** within one minute. For a token that refreshes every 60 seconds, you have two minutes. 
 
    :::image type="content" source="media/concept-authentication-oath-tokens/add-code.png" alt-text="Screenshot of how to add a verification code to activate a hardware OATH token.":::
 
-1. When you see the hardware OATH token is successfully added, click **Done**.
+1. When you see the hardware OATH token is successfully added, select **Done**.
 
    :::image type="content" source="media/concept-authentication-oath-tokens/success.png" alt-text="Screenshot of a hardware OATH token after it's added.":::
 

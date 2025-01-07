@@ -4,7 +4,7 @@ description: Learn how to use additional context in MFA notifications
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/28/2024
+ms.date: 01/07/2025
 ms.author: justinha
 author: mjsantani
 # Customer intent: As an identity administrator, I want to encourage users to use the Microsoft Authenticator app in Microsoft Entra ID to improve and secure user sign-in events.
