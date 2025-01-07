@@ -380,6 +380,8 @@
      
     - name: Manage Microsoft Entra Connect
       items:
+      - name: Enable administrator auditing
+        href: connect/admin-audit-logging.md
       - name: Enable device writeback
         href: connect/how-to-connect-device-writeback.md
       - name: Enable group writeback
