@@ -39,7 +39,7 @@ The following table shows what features are available with each license.  Not al
 |[Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[PIM For Groups](~/id-governance/privileged-identity-management/concept-pim-for-groups.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[PIM CA Controls](../id-governance/privileged-identity-management/pim-how-to-change-default-settings.md#on-activation-require-microsoft-entra-conditional-access-authentication-context)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
-|[Access Reviews - Capabilities previously generally available in Microsoft Entra ID P2](~/id-governance/access-reviews-overview.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
+|[Access reviews - Capabilities previously generally available in Microsoft Entra ID P2](~/id-governance/access-reviews-overview.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[Access reviews - PIM For Groups (Preview)](~/id-governance/create-access-review-pim-for-groups.md)|||| :white_check_mark: | :white_check_mark: |
 |[Access reviews - Inactive Users reviews](~/id-governance/create-access-review.md)|||| :white_check_mark: | :white_check_mark: |
 |[Access Reviews - Inactive Users recommendations](~/id-governance/review-recommendations-access-reviews.md#inactive-user-recommendations)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
