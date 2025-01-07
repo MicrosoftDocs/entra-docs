@@ -81,7 +81,7 @@ Use Application discovery to create new Microsoft Entra ID applications based on
 > Application segments persist in the Application discovery main table even after you've created an application, until a user signs in to the new application and accesses the resource. In the future, the Application discovery main table will update regardless of user interaction. 
 
 ## Add to an existing application 
-You can use Application discovery to add application segments to an existing private application. This is helpful when configuring complex applications with many application segments, so that you can select a subset of application segments and ensure that connectivity is provided as expected before moving additional application segments from Quick Access to the Global Secure Access application. To add an application segment to an existing application:
+You can use Application discovery to add application segments to an existing private application. To add an application segment to an existing application:
 1. From the Application discovery list, choose one or more application segments. 
 1. Select **Add to an existing application**.   
 1. Choose the existing private application to which you would like to add the segments. The **Edit Global Secure Access application** screen opens, showing the properties of the existing application, the selected application segments (with status **Pending**), and any previously configured application segments (with status **Success**).

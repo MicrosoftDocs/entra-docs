@@ -130,6 +130,6 @@ For this type of group, `isPublic` is always false and `isSecurityEnabled` is al
 
 ## Next steps
 
-- [Assign Microsoft Entra roles to groups](groups-assign-role.md)
+- [Assign Microsoft Entra roles](manage-roles-portal.md)
 - [Use Microsoft Entra groups to manage role assignments](groups-concept.md)
 - [Troubleshoot Microsoft Entra roles assigned to groups](groups-faq-troubleshooting.yml)

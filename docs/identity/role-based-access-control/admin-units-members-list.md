@@ -221,4 +221,4 @@ Response
 ## Next steps
 
 - [Add users, groups, or devices to an administrative unit](admin-units-members-add.md)
-- [Assign Microsoft Entra roles with administrative unit scope](admin-units-assign-roles.md)
+- [Assign Microsoft Entra roles with administrative unit scope](manage-roles-portal.md)

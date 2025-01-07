@@ -17,7 +17,7 @@ ms.custom: it-pro
 
 In this article, you can find the information needed to restrict a user's administrator permissions by assigning least privileged roles in Microsoft Entra ID. You will find tasks organized by feature area and the least privileged role required to perform each task, along with additional non-Global Administrator roles that can perform the task.
 
-You can further restrict permissions by assigning roles at smaller scopes or by creating your own custom roles. For more information, see [Assign Microsoft Entra roles at different scopes](assign-roles-different-scopes.md) or [Create and assign a custom role in Microsoft Entra ID](/entra/identity/role-based-access-control/custom-create).
+You can further restrict permissions by assigning roles at smaller scopes or by creating your own custom roles. For more information, see [Assign Microsoft Entra roles](manage-roles-portal.md) or [Create a custom role in Microsoft Entra ID](custom-create.md).
 
 ## Application proxy
 
@@ -450,7 +450,6 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 
 ## Next steps
 
-- [Assign Microsoft Entra roles to users](/entra/identity/role-based-access-control/manage-roles-portal)
-- [Assign Microsoft Entra roles at different scopes](assign-roles-different-scopes.md)
-- [Create and assign a custom role in Microsoft Entra ID](/entra/identity/role-based-access-control/custom-create)
+- [Assign Microsoft Entra roles](manage-roles-portal.md)
+- [Create a custom role in Microsoft Entra ID](custom-create.md)
 - [Microsoft Entra built-in roles](permissions-reference.md)

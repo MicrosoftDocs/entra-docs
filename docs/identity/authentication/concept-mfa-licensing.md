@@ -6,7 +6,7 @@ description: Learn about the Microsoft Entra multifactor authentication client a
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/03/2024
+ms.date: 01/06/2025
 
 ms.author: justinha
 author: justinha
