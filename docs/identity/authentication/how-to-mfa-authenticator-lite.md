@@ -63,8 +63,9 @@ To disable Authenticator Lite in the Microsoft Entra admin center, follow these 
 
    <img width="664" alt="Authenticator Lite configuration settings" src="https://user-images.githubusercontent.com/108090297/228603364-53f2581f-a4e0-42ee-8016-79b23e5eff6c.png">
 
-   > [!NOTE]
-   > If your organization still manages authentication methods in the per-user MFA policy, you need to disable **Notification through mobile app** as a verification option there in addition to the preceding steps. We recommend that you do this step only after you enable Authenticator in the Authentication methods policy. You can continue to manage the remainder of your authentication methods in the per-user MFA policy while Authenticator is managed in the modern Authentication methods policy. However, we recommend that you [migrate](how-to-authentication-methods-manage.md) management of all authentication methods to the modern Authentication methods policy. The ability to manage authentication methods in the per-user MFA policy retires on September 30, 2025.
+If your organization still manages authentication methods in the per-user MFA policy, you need to disable **Notification through mobile app** as a verification option there in addition to the preceding steps. We recommend that you do this step only after you enable Authenticator in the Authentication methods policy.
+
+You can continue to manage the remainder of your authentication methods in the per-user MFA policy while Authenticator is managed in the modern Authentication methods policy. However, we recommend that you [migrate](how-to-authentication-methods-manage.md) management of all authentication methods to the modern Authentication methods policy. The ability to manage authentication methods in the per-user MFA policy retires on September 30, 2025.
 
 ### Enable Authenticator Lite via Graph APIs
 
@@ -80,8 +81,7 @@ After you identify the single target group, use the following API endpoint to ch
 https://graph.microsoft.com/beta/authenticationMethodsPolicy/authenticationMethodConfigurations/MicrosoftAuthenticator
 ```
 
-> [!NOTE]
-> In Graph Explorer, you need to consent to the `Policy.ReadWrite.AuthenticationMethod` permission.
+In Graph Explorer, you need to consent to the `Policy.ReadWrite.AuthenticationMethod` permission.
 
 ### Request
 
@@ -128,8 +128,7 @@ If users are enabled for Authenticator Lite, they're prompted to register your a
 
 :::image type="content" border="true" source="./media/how-to-mfa-authenticator-lite/registration.png" alt-text="Screenshot that shows how to register Authenticator Lite.":::
 
-> [!NOTE]
-> If users don't have any MFA methods registered, they're prompted to download Authenticator when they begin the registration flow. For the most seamless experience, provision users with a [Temporary Access Pass (TAP)](howto-authentication-temporary-access-pass.md) during Authenticator Lite registration.
+If users don't have any MFA methods registered, they're prompted to download Authenticator when they begin the registration flow. For the most seamless experience, provision users with a [Temporary Access Pass (TAP)](howto-authentication-temporary-access-pass.md) during Authenticator Lite registration.
 
 ## Monitor Authenticator Lite usage
 
