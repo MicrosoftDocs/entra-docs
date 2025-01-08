@@ -54,19 +54,42 @@ Email notifications are sent to the [Microsoft Entra group](../../fundamentals
 
 ## Configure the email notifications
 
-To configure alert notifications, you need the ID of the Microsoft Entra group you want to receive the alerts AND the scenario alert ID. You can configure different groups to receive alerts for different alert scenarios. 
+Email notification settings can be configured for each scenario in the Microsoft Entra admin center or using the Microsoft Graph API.
 
-### Locate the group's Object ID
+### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
+
+1. From a selected scenario, expand the **Group alert notifications** section.
+
+1. If you haven't added a group yet, select the **+ Select** option. If you have already added a group, select the **Edit** option.
+
+1. From the panel that opens, select the group(s) you want to receive the alerts.
+
+### [Microsoft Graph API](#tab/microsoft-graph-api)
+
+To configure alert notifications, you need the ID of the Microsoft Entra group you want to receive the alerts AND the scenario alert ID. 
+
+#### Locate the group's Object ID
+
+From the Microsoft Entra admin center:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Groups** > **All groups** > and select the group you want to receive the alerts.
 1. Select **Properties** and copy the `Object ID` of the group. 
 
-    ![Screenshot of the group properties in the Microsoft Entra admin center.](media/howto-configure-health-alert-emails/locate-group-id.png)
+      ![Screenshot of the group properties in the Microsoft Entra admin center.](media/howto-configure-health-alert-emails/locate-group-id.png)
 
-### Locate the scenario alert type
-
+Using the Microsoft Graph API:
 1. Sign in to [Microsoft Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer) as at least a [Helpdesk Administrator](../role-based-access-control/permissions-reference.md#helpdesk-administrator) and consent to the appropriate permissions.
+1. Select **GET** as the HTTP method from the dropdown and set the API version to **v1.0**.
+1. Run the following query to retrieve the list of alerts for your tenant.
+
+    ```
+    GET https://graph.microsoft.com/v1.0/groups
+    ```
+1. Locate and save the `id` of the group you want to receive the alerts.
+
+#### Locate the scenario alert type
+
 1. Select **GET** as the HTTP method from the dropdown and set the API version to **beta**.
 1. Run the following query to retrieve the list of alerts for your tenant.
 
@@ -75,7 +98,7 @@ To configure alert notifications, you need the ID of the Microsoft Entra group y
     ```
 1. Locate and save the `alertType` of the alert you want to be notified about, for example `alertType: "mfaSignInFailure`.
 
-### Configure the email notifications
+#### Configure the email notifications
 
 In Microsoft Graph Explorer, run the following PATCH query to configure email notifications for alerts.
 
@@ -97,6 +120,5 @@ Content-Type: application/json
 }
 ```
 
-## Next steps
+---
 
-- [How to investigate Microsoft Entra Health alerts](howto-use-health-scenario-alerts.md)

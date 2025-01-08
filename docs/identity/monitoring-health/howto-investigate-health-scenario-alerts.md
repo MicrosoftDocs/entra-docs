@@ -96,6 +96,27 @@ Content-Type: application/json
 }
 ```
 
+### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
+
+When you receive an alert, you typically need to investigate the following data sets:
+
+- **Affected entities**: Total number of identities identified by the alert. Include users, groups, service principals, devices, and applications. 
+- **Metrics**: The data stream, or health signal, that caused the alert. 
+
+To view these details: 
+
+1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Helpdesk Administrator](../role-based-access-control/permissions-reference.md#helpdesk-administrator).
+
+1. Browse to **Identity** > **Monitoring and health** > **Health**.
+
+1. Select the **Health Monitoring** tab and select a scenario.
+
+1. From the **Affected entities** section of the selected scenario, select the **View** link to see either a full list or a subset of the affected entities.
+
+1. Review the **Metrics** section to see a visualization of the health signals that caused the alert.
+
+### [Microsoft Graph API](#tab/microsoft-graph-api)
+
 ## Investigate the alert and signals
 
 You and your team can more effectively monitor the health of these scenarios when you configure email notifications. When you receive an alert, or if you see a change to a pattern you suspect might need investigation, you typically need to investigate the following data sets:
