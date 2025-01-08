@@ -529,8 +529,16 @@
                   href: custom-extension-tokenissuancestart-configuration.md
                 - name: Configure a SAML app to call a custom claims provider
                   href: custom-extension-configure-saml-app.md
-            - name: Create attribute collection start and submit events
-              href: custom-extension-attribute-collection.md
+                - name: Custom claims provider reference
+                  href: custom-claims-provider-reference.md
+            - name: Attribute collection
+              items: 
+                - name: Create attribute collection start and submit events
+                  href: custom-extension-attribute-collection.md
+                - name: Attribute collection start custom extension reference
+                  href: custom-extension-OnAttributeCollectionStart-reference.md
+                - name: Attribute collection submit custom extension reference
+                  href: custom-extension-OnAttributeCollectionSubmit-reference.md
             - name: Configure a custom email provider for one time code send events
               href: custom-extension-email-otp-get-started.md
             - name: Troubleshoot your custom authentication extension

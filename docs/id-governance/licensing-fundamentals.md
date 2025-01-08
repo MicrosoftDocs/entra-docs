@@ -5,7 +5,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: conceptual
-ms.date: 11/7/2024
+ms.date: 12/30/2024
 ms.author: billmath
 ---
 

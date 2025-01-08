@@ -191,7 +191,7 @@
             href: how-to-certificate-based-authentication.md
           - name: Configure certificate authorities
             href: how-to-configure-certificate-authorities.md
-          - name: Windows smart card logon
+          - name: Windows smart card sign-in
             href: concept-certificate-based-authentication-smartcard.md
           - name: Apple devices
             href: concept-certificate-based-authentication-mobile-ios.md
@@ -249,6 +249,8 @@
       href: howto-mfa-userdevicesettings.yml
     - name: Verify mandatory MFA 
       href: how-to-mandatory-multifactor-authentication.md
+    - name: Federate MFA setup
+      href: how-to-mfa-expected-inbound-assertions.md
     - name: Find coverage gaps
       href: how-to-authentication-find-coverage-gaps.md
     - name: Enable per-user MFA
@@ -385,8 +387,10 @@
     href: /graph/api/resources/authenticationmethods-overview
   - name: Authentication strengths APIs - Microsoft Graph 
     href: /graph/api/resources/authenticationstrengths-overview
-  - name: Authentication methods policy - Microsoft Graph
+  - name: Authentication methods policy APIs - Microsoft Graph
     href: /graph/api/resources/authenticationmethodspolicies-overview
+  - name: Authentication methods activity APIs - Microsoft Graph
+    href: /graph/api/resources/authenticationmethods-usage-insights-overview
   - name: Service limits and restrictions
     href: ~/identity/users/directory-service-limits-restrictions.md
 - name: Resources

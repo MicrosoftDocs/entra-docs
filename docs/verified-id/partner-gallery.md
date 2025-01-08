@@ -6,7 +6,7 @@ ms.service: entra-verified-id
 author: barclayn
 manager: amycolannino
 ms.topic: how-to
-ms.date: 10/12/2023
+ms.date: 12/13/2024
 ms.author: barclayn
 ---
 
