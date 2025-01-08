@@ -22,7 +22,7 @@ We recommend using PHS for cloud authentication.
 
 ## Staged rollout
 
-> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE3inQJ]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=252dc370-5709-4dfb-b346-2cbf76f1640f]
 
 Staged rollout is a great way to selectively test groups of users with cloud authentication capabilities like Microsoft Entra multifactor authentication, Conditional Access, Microsoft Entra ID Protection for leaked credentials, Identity Governance, and others, before cutting over your domains. 
 

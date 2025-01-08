@@ -48,7 +48,7 @@ ms.custom:
     > You can add only one instance of the application. If you have already added one and tried to provide the consent again, it will not be added again in the tenant. So logically, you can use only one app instance in the tenant.
 
 1. Follow the below video to add an OpenID application from the gallery.
-    >[!VIDEO https://www.microsoft.com/videoplayer/embed/RE4HoNI]
+    >[!VIDEO https://learn-video.azurefd.net/vod/player?id=4454201b-3a5a-4176-a259-dfd32e8ac2b7]
 
 ## Authentication flow using OpenID Connect
 
