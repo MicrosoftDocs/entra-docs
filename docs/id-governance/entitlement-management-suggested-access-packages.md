@@ -1,6 +1,6 @@
 ---
-title: Show suggested access packages for MyAccess in entitlement management (preview)
-description: Learn how to show suggested access packages to users in MyAccess so they can quickly find the most relevant access packages
+title: Show suggested access packages for My Access in entitlement management (preview)
+description: Learn how to show suggested access packages to users in My Access so they can quickly find the most relevant access packages
 author: owinfreyatl
 manager: amycolannino
 editor: markwahl-msft
@@ -13,15 +13,15 @@ ms.reviewer: myra-ramdenbourg
 #Customer intent: As an administrator, I want to allow my users to see the access packages that are most relevant to them.
 ---
 
-# Suggested access packages in MyAccess (Preview)
+# Suggested access packages in My Access (Preview)
 
-In MyAccess, Microsoft Entra ID Governance users can see a curated list of suggested access packages in MyAccess. This capability allows users to quickly view the most relevant access packages for them based off their peers' access packages and previous requests without scrolling through all their available access packages.
+In My Access, Microsoft Entra ID Governance users can see a curated list of suggested access packages in My Access. This capability allows users to quickly view the most relevant access packages for them based off their peers' access packages and previous requests without scrolling through all their available access packages.
 
 The suggested access packages list is created by finding people related to the user (manager, direct reports, organization, team members) and recommending access packages based on what the users’ peers have. The user is also suggested access packages that they previously owned.
 
-## Enable users to see their suggested access packages in MyAccess
+## Enable users to see their suggested access packages in My Access
 
-Follow these steps to enable suggested access packages in MyAccess.
+Follow these steps to enable suggested access packages in My Access.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 
