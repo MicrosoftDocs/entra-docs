@@ -1,5 +1,5 @@
 ---
-title: Tutorial - Call Microsoft Graph API from a Node/Express.js web app
+title: Tutorial-Call Microsoft Graph API from a Express.js web app
 description: Learn how to acquire an access token in a Node/Express.js web to read user's profile detail from Microsoft Graph API 
 author: kengaderdus
 manager: mwongerapk
@@ -18,7 +18,7 @@ In this tutorial, you call Microsoft Graph API from a Node/Express.js web app. O
 
 This tutorial is part 3 of the 3-part tutorial series.
 
-In this tutorial, you'll:
+In this tutorial, you:
 
 > [!div class="checklist"]
 >
@@ -213,11 +213,7 @@ The actual API call happens in the *fetch.js* file.
 ## Run and test the Node/Express.js web app
 
 1. Use the steps in [Run and test the Node/Express.js web app](tutorial-web-app-node-sign-in-sign-out.md#run-and-test-the-nodeexpressjs-web-app) to run your web app.
-1. Once you sign in, select **View user profile** link. If your app works correctly, you should see a page similar to the following screenshot:
-
-:::image type="content" source="media/tutorial-web-app-node-sign-in-sign-out/graph-call-screen.png" alt-text="Screenshot displaying user profile details":::
-
-The information on the is read from Microsoft Graph API and it represents the signed user's profile.
+1. Once you sign in, select **View user profile** link. If your app works correctly, you should see the signed-in user's profile as read from Microsoft Graph API.
 
 ## Related content
 
