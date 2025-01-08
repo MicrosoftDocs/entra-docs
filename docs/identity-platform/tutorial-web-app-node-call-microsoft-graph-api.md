@@ -74,7 +74,7 @@ In this tutorial, you:
     <a href="/">Go back</a>
     ```
 
-    - This pages displays the user's profile details that Microsoft Graph API returns.
+    - This page displays the user's profile details that Microsoft Graph API returns.
 
 
 ## Acquire an access token

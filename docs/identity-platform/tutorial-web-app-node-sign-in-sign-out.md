@@ -86,7 +86,7 @@ In your *authConfig.js* file, replace:
  
 - `Enter_the_Client_Secret_Here` with the app secret value you copied earlier.
 
-- `Enter_the_Graph_Endpoint_Here` with the Microsoft Graph API cloud instance that your app will call. USe the value *https://graph.microsoft.com/* (include the trailing forward-slash)
+- `Enter_the_Graph_Endpoint_Here` with the Microsoft Graph API cloud instance that your app will call. Use the value *https://graph.microsoft.com/* (include the trailing forward-slash)
 
 If you use the *.env* file to store your configuration information:
 
