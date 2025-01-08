@@ -41,7 +41,7 @@ The two primary threat vectors are *federation trust relationships* and *account
 
 To address on-premises threats, we recommend you adhere to the four principles that the following diagram illustrates.
 
-:::image type="content" source="media/protect-m365/protect-m365-principles-inline.png" alt-text="Reference architecture for protecting Microsoft 365, as described in the following list." lightbox="media/protect-m365/protect-m365-principles-expanded.png":::
+:::image type="content" source="media/protect-m365/protect-m365-principles-inline.png" alt-text="Diagram showing reference architecture for protecting Microsoft 365, as described in the following list." lightbox="media/protect-m365/protect-m365-principles-expanded.png":::
 
 1. **Fully isolate your Microsoft 365 administrator accounts.** They should be:
 
