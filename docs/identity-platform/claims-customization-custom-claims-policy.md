@@ -112,7 +112,7 @@ In this example, you create a customization to the claims that adds the `Employe
                         "condition": null,
                         "attribute": {
                             "@odata.type": "#microsoft.graph.sourcedAttribute",
-                            "id": " employeeid",
+                            "id": " employeeId",
                             "source": "user",
                             "isExtensionAttribute": false
                         },
