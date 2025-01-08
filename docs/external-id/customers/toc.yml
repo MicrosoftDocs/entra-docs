@@ -132,12 +132,12 @@ items:
       items: 
         - name: Node/Express.js
           items:
-                - name: Prepare tenant 
-                  href: tutorial-web-app-node-sign-in-prepare-tenant.md
-                - name: Create Nodejs app 
-                  href: tutorial-web-app-node-sign-in-prepare-app.md
-                - name: Add sign-in and sign-out
-                  href: tutorial-web-app-node-sign-in-sign-out.md
+            - name: Set up Nodejs app
+              href: /entra/identity-platform/tutorial-web-app-node-sign-in-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+            - name: Add sign in and sign out
+              href: /entra/identity-platform/tutorial-web-app-node-sign-in-sign-out?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+            - name: Call Microsoft Graph API
+              href: /entra/identity-platform/tutorial-web-app-node-call-microsoft-graph-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
         - name: ASP.NET Core
           items:
               - name: Prepare tenant

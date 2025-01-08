@@ -1,34 +1,34 @@
 ---
-title: 'Tutorial: Create a Node.js web application to sign in users in an external tenant'
-description: Learn how to create a Node web app project, then prepare it to sign in users
- 
+title: 'Sign in users in a Node.js/Express web app by using Microsoft identity platform'
+description: Set up node web app project that signs in users into customer facing app by in an external tenant or employees in a workforce tenant
 author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
-ms.service: entra-external-id 
-ms.subservice: external
+ms.service: identity-platform
 ms.topic: tutorial
-ms.date: 08/27/2024
-ms.custom: developer, devx-track-js
-#Customer intent: As a developer, devops, I want to learn about how to enable authentication in my own Node.js web app with an external tenant
+ms.date: 01/03/2025
+#Customer intent: As a developer, devops, I want to learn about how to build a Node.js/Express web app that signs in users into customer facing app by in an external tenant or employees in a workforce tenant by using Microsoft identity platform'
 ---
 
-# Tutorial: Create a Node.js web application to sign in users
+# Tutorial: Set up a Node.js web app to sign in users by using Microsoft identity platform
 
-This tutorial is part 2 of a series that demonstrates building a Node.js web app and preparing it for authentication using the Microsoft Entra admin center. In [part 1 of this series](tutorial-web-app-node-sign-in-prepare-tenant.md) you registered an application and configured user flows in your external tenant. In this tutorial, you create a Node.js(Express) project and organize all the folders and files you require. You enable sign-in to the application you prepare here. This Node.js(Express) web application's views use [Handlebars](https://handlebarsjs.com).
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
+
+In this tutorial, you learn how to build a Node/Express.js web app that signs in users into customer facing app in an external tenant or employees in a workforce tenant. The tutorial also demonstrates how to acquire an access token for calling Microsoft Graph API.
+
+This tutorial is part 1 of a 3-part series.
 
 In this tutorial you'll;
 
 > [!div class="checklist"]
 >
-> - Create a Node.js project
+> - Set up a Node.js project
 > - Install dependencies
 > - Add app views and UI components
 
 ## Prerequisites
 
-- [Tutorial: Prepare your external tenant to sign in users in a Node.js web app](tutorial-web-app-node-sign-in-prepare-tenant.md)
-- Although any integrated development environment (IDE) that supports React applications can be used, this tutorial uses [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
+- [Quickstart: Sign in users in a sample web app](quickstart-web-app-sign-in.md?pivots=external&tabs=node-external)
 - [Node.js](https://nodejs.org).
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
@@ -157,4 +157,4 @@ npm install express dotenv hbs express-session axios cookie-parser http-errors m
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Part 3: Add add sign-in and sign-out in your Node.js web application](tutorial-web-app-node-sign-in-sign-out.md)
+> [Tutorial: Add add sign-in in your Node/Express.js web app](tutorial-web-app-node-sign-in-sign-out.md).

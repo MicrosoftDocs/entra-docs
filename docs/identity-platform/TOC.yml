@@ -222,8 +222,14 @@
             href: tutorial-web-app-python-sign-in-users.md
           - name: Get user data from web API
             href: tutorial-web-app-python-call-api.md
-        - name: Node.js
-          href: tutorial-v2-nodejs-webapp-msal.md
+        - name: Node/Express.js
+          items:
+            - name: Set up Nodejs app
+              href: tutorial-web-app-node-sign-in-prepare-app.md?tabs=workforce-tenant
+            - name: Add sign in and sign out
+              href: tutorial-web-app-node-sign-in-sign-out.md?tabs=workforce-tenant
+            - name: Call Microsoft Graph API
+              href: tutorial-web-app-node-call-microsoft-graph-api.md?tabs=workforce-tenant
         - name: Java Spring
           href: /azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-active-directory?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
         - name: Secure web app accesses storage and Microsoft Graph
