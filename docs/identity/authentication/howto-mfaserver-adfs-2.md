@@ -6,7 +6,7 @@ description: Describes how to get started with Microsoft Entra multifactor authe
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/27/2024
+ms.date: 01/08/2025
 
 ms.author: justinha
 author: justinha

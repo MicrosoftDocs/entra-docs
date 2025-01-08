@@ -6,7 +6,7 @@ description: After you install the NPS extension, use these steps for advanced c
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/27/2024
+ms.date: 01/08/2025
 
 ms.author: justinha
 author: justinha
