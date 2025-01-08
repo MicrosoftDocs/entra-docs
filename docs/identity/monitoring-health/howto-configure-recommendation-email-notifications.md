@@ -1,19 +1,19 @@
 ---
-title: How to opt out of Microsoft Entra recommendation emails
-description: Learn how to opt out of the automatically generated Microsoft Entra recommendation email notifications for your tenant.
+title: How to configure Microsoft Entra recommendation emails
+description: Learn how to configure the automatically generated Microsoft Entra recommendation email notifications for your tenant.
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 01/07/2025
+ms.date: 01/08/2025
 ms.author: sarahlipsey
 ms.reviewer: deawari
 
 # Customer intent: As an IT admin, I want to learn how to use Microsoft Entra recommendations to monitor and improve the health of my tenant.
 ---
 
-# How to opt out of Microsoft Entra recommendation emails
+# How to configure Microsoft Entra recommendation emails
 
 Microsoft Entra recommendations are a powerful resource to monitor and maintain the health and security of your tenant. Email notifications are sent to specific tenant administrative roles when a new recommendation is available for your tenant. These emails help administrators stay on top of the latest recommendations so they can take quick action, but you can opt out of these emails for the tenant.
 
@@ -27,7 +27,7 @@ To update the Microsoft Entra recommendation email notification settings for you
 
 ## What do the recommendation emails contain?
 
-The email notifications provide a basic summary of the specific recommendation with a link to the related area of the Microsoft Entra admin center. The email also includes a link to related documentation so you can learn more about the recommendation and how to resolve it. These emails are not promotional or marketing emails and do not contain any upsell content. They are purely informational and designed to help you act quickly when a new recommendation is available.
+The email notifications provide a basic summary of the specific recommendation with a link to the related area of the Microsoft Entra admin center. The email also includes a link to related documentation so you can learn more about the recommendation and how to resolve it. These emails are enabled by default, are not promotional or marketing emails, and do not contain any upsell content. They are purely informational and designed to help you act quickly when a new recommendation is available.
 
 ## How to update your email notification settings
 
