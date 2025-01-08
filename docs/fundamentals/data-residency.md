@@ -76,7 +76,7 @@ Learn more:
 - [Customer data storage and processing for European customers in Microsoft Entra ID](./data-storage-eu.md)
 - [Customer data storage for Australian and New Zealand customers in Microsoft Entra ID](./data-storage-australia-newzealand.md) and [Identity data storage for Australian and New Zealand customers in Microsoft Entra ID](./data-storage-australia.md)
 - [Customer data storage for Japan customers in Microsoft Entra ID](./data-storage-japan.md)
-- [Microsoft Trust Center](https://www.microsoft.com/trustcenter/cloudservices/nationalcloud)
+- [Microsoft Trust Center - Where your data is located](https://www.microsoft.com/en-us/trust-center/privacy/data-location)
 
 <a name='data-residency-across-azure-ad-components'></a>
 
@@ -85,7 +85,7 @@ Learn more:
 Learn more: [Microsoft Entra product overview](https://www.microsoft.com/cloud-platform/azure-active-directory-features)
 
 > [!NOTE]
-> To understand service data location for other services beyond Microsoft Entra ID, such as Exchange Online, or Skype for Business, refer to the corresponding service documentation.
+> To understand service data location for other services beyond Microsoft Entra ID, such as Exchange Online, or Skype for Business, refer to the corresponding service documentation and the [Trust Center](https://www.microsoft.com/trust-center/privacy/data-location).
 
 <a name='azure-ad-components-and-data-storage-location'></a>
 
