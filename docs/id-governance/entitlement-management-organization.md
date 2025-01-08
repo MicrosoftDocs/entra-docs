@@ -60,7 +60,7 @@ How users from the Microsoft Entra directory or domain authenticate depends on t
 
 For a demonstration of how to add a connected organization, watch the following video:
 
->[!VIDEO https://www.microsoft.com/videoplayer/embed/RE4dskS]
+>[!VIDEO https://learn-video.azurefd.net/vod/player?id=15a99953-2677-4a28-8432-eedd333456ac]
 
 ## View the list of connected organizations
 
