@@ -87,8 +87,8 @@ Credentials are a primary attack vector. Implement the following practices to ma
   - [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/)
   - [Platform Credential for macOS](../identity/authentication/concept-authentication-passwordless.md#platform-credential-for-macos)
   - [Microsoft Authenticator app](../identity/authentication/howto-authentication-passwordless-phone.md)
-  - Passkeys ([FIDO2)](../identity/authentication/howto-authentication-passwordless-security-key-windows.md)
-  - Certificate-based authentication
+  - Passkeys [FIDO2)](../identity/authentication/howto-authentication-passwordless-security-key-windows.md)
+  - [Microsoft Entra Certificate-based authentication](../identity/authentication/concept-certificate-based-authentication.md)
 
 - **Deploy multifactor authentication**. For more information, see [Plan a Microsoft Entra multifactor authentication deployment](../identity/authentication/howto-mfa-getstarted.md). Provision multiple strong credentials by using Microsoft Entra multifactor authentication. That way, access to cloud resources requires a Microsoft Entra ID managed credential in addition to an on-premises password. For more information, see [Build resilience with credential management](resilience-in-credentials.md) and [Create a resilient access control management strategy by using Microsoft Entra ID](../identity/authentication/concept-resilient-controls.md).
 
