@@ -16,7 +16,7 @@ As an access package manager, you can change the resources in an access package 
 
 This video provides an overview of how to change an access package.
 
-> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE3LD4Z]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=cebe87cf-64db-4242-9527-f726b6d227f9]
 
 ## Check catalog for resources
 

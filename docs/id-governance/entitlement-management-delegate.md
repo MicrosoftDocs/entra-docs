@@ -27,7 +27,7 @@ By default, users in the Global Administrator role or the Identity Governance Ad
 
 This video provides an overview of how to delegate access governance from IT administrator to users who aren't administrators.
 
-> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE3Lq00]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=0915072b-63ec-4c78-b2ca-aa5f54a54219]
 
 ## Delegate example
 
