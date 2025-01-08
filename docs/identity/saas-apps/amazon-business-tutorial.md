@@ -23,7 +23,7 @@ In this tutorial, you learn how to integrate Amazon Business with Microsoft Entr
 * Enable your users to be automatically signed-in to Amazon Business with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE5cbi8]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=ab3feca1-0ca8-46e6-90a1-76704fdbd844]
 
 ## Prerequisites
 
