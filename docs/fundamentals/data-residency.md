@@ -25,7 +25,7 @@ Microsoft Entra ID is an Identity as a Service (IDaaS) solution that stores and 
 
 The Core Store is made up of tenants stored in scale units, each of which contains multiple tenants. Update or retrieval data operations in the Microsoft Entra Core Store relate to a single tenant, based on the user's security token, which achieves tenant isolation. Scale units are assigned to a geo-location. Each geo-location uses two or more Azure regions to store the data. In each Azure region, a scale unit data is replicated in the physical datacenters for resiliency and performance, as described in [the Microsoft Entra architecture](/entra/architecture/architecture).
 
-For more information on the Core Score, see [Microsoft Entra Core Store Scale Units](https://www.youtube.com/watch?v=OcKO44GtHh8). For more information on Azure regions, see [Azure geographies](https://azure.microsoft.com/overview/datacenters/how-to-choose/).
+For more information on the Core Store, see [Microsoft Entra Core Store Scale Units](https://www.youtube.com/watch?v=OcKO44GtHh8). For more information on Azure regions, see [Azure geographies](https://azure.microsoft.com/overview/datacenters/how-to-choose/).
 
 Microsoft Entra ID is available in the following clouds:
 
