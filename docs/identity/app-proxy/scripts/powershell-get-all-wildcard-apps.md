@@ -57,7 +57,7 @@ foreach ($item in $allApps) {
 
  $aadapApp = $null
  
- $aadapAppId =  Get-MgBetaApplication | where-object {$_.AppId -eq $item.AppId}
+ $aadapAppId =  Get-MgBetaApplication -Top 100000 | where-object {$_.AppId -eq $item.AppId}
  $aadapApp = Get-MgBetaApplication -ApplicationId $aadapAppId.Id -ErrorAction SilentlyContinue -select OnPremisesPublishing | select OnPremisesPublishing -expand OnPremisesPublishing 
  
 

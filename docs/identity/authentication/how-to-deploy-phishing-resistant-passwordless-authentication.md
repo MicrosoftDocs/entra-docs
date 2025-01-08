@@ -5,7 +5,7 @@ description: Detailed guidance to deploy passwordless and phishing-resistant aut
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/16/2024
+ms.date: 01/07/2025
 
 ms.author: justinha
 author: mepples21
