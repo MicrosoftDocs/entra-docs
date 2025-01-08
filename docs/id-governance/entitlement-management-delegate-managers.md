@@ -26,7 +26,7 @@ They can create access packages and policies, including policies referencing exi
 
 This video provides an overview of how to delegate access governance from catalog owner to access package manager.
 
-> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE3Lq08]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=b999927c-7cfd-4029-8b3a-a59efa9f5e8c]
 
 In addition to the catalog owner and access package manager roles, you can also add users to the catalog reader role, which provides view-only access to the catalog, or to the access package assignment manager role, which enables the users to change assignments but not access packages or policies.
 

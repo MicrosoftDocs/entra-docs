@@ -27,7 +27,7 @@ Admins can use the MFA Server Migration Utility to target single users or groups
 
 Take a look at our video for an overview of the MFA Server Migration Utility and how it works.
 
->[!VIDEO https://www.microsoft.com/videoplayer/embed/RW11N1N]
+>[!VIDEO https://learn-video.azurefd.net/vod/player?id=76b2e4d2-514f-4f8a-8675-2931c013c672]
 
 ## Limitations and requirements
 
