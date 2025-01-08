@@ -70,7 +70,7 @@ These fields are essential for real-time monitoring, threat response, and mainta
 | [Mass Access to Sensitive Files](#mass-access-to-sensitive-files) | Offline | Premium | mcasFinSuspiciousFileAccess |
 | [Microsoft Entra threat intelligence (sign-in)](#microsoft-entra-threat-intelligence-sign-in) | Real-time or Offline | Nonpremium | investigationsThreatIntelligence |
 | [New country](#new-country) | Offline | Premium | newCountry |
-| [Password spray](#password-spray) | Offline | Premium | passwordSpray |
+| [Password spray](#password-spray) | Real-time or Offline | Premium | passwordSpray |
 | [Suspicious browser](#suspicious-browser) | Offline | Premium | suspiciousBrowser |
 | [Suspicious inbox forwarding](#suspicious-inbox-forwarding) | Offline | Premium | suspiciousInboxForwarding |
 | [Suspicious inbox manipulation rules](#suspicious-inbox-manipulation-rules) | Offline | Premium | mcasSuspiciousInboxManipulationRules |
@@ -139,7 +139,7 @@ Calculated offline. This detection is discovered using information provided byâ€
 
 #### Password spray 
 
-Calculated offline. A password spray attack is where multiple identities are attacked using common passwords in a unified brute force manner. The risk detection is triggered when an account's password is valid and has an attempted sign in. This detection signals that the user's password has correctly been identified through a password spray attack, not that the attacker was able to access any resources.
+Calculated in real-time or offline. A password spray attack is where multiple identities are attacked using common passwords in a unified brute force manner. The risk detection is triggered when an account's password is valid and has an attempted sign in. This detection signals that the user's password has correctly been identified through a password spray attack, not that the attacker was able to access any resources.
 
 [Tips for investigating password spray detections.](howto-identity-protection-investigate-risk.md#investigating-password-spray-detections)
 
