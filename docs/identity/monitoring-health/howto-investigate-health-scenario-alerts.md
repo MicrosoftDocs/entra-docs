@@ -71,6 +71,8 @@ When you receive an alert, you typically need to investigate the following data 
 
 - **Affected entities**: Total number of identities identified by the alert. Include users, groups, service principals, devices, and applications. 
 - **Metrics**: The data stream, or health signal, that caused the alert. 
+- **Sign-in logs**: A query is provided in the response for further investigation into the sign-in logs where the health signal was generated. The sign-in logs provide detailed event metadata that might be used to identify a problem's root cause.
+- **Scenario-specific resources**: Depending on the scenario, you might need to investigate Intune compliance policies or Conditional Access policies. In many cases, a link to related documentation is provided in the response.
 
 To view these details: 
 
@@ -78,9 +80,13 @@ To view these details:
 
 1. Browse to **Identity** > **Monitoring and health** > **Health**.
 
-1. Select the **Health Monitoring** tab and select a scenario.
+1. Select the **Health Monitoring** tab and select a scenario with an active alert.
+
+      ![Screenshot of the Health monitoring page with active alert scenarios.](media/howto-investigate-health-scenario-alerts/health-alerts-sample1.png)
 
 1. From the **Affected entities** section of the selected scenario, select the **View** link to see either a full list or a subset of the affected entities.
+
+      ![Screenshot of the impacted resources on an alert.](media/howto-investigate-health-scenario-alerts/health-alerts-sample2.png)
 
 1. Review the **Metrics** section to see a visualization of the health signals that caused the alert.
 
@@ -148,12 +154,7 @@ When you receive an alert, or if you see a change to a pattern you suspect might
 - **Sign-in logs**: A query is provided in the response for further investigation into the sign-in logs where the health signal was generated. The sign-in logs provide detailed event metadata that might be used to identify a problem's root cause.
 - **Scenario-specific resources**: Depending on the scenario, you might need to investigate Intune compliance policies or Conditional Access policies. In many cases, a link to related documentation is provided in the response.
 
-### View the scenario-specific resources
-
-Each alert might have a different data set to investigate. For details on each alert type, see the following articles:
-
-- [Sign-ins requiring a compliant or managed device](scenario-health-sign-ins-compliant-managed-device.md)
-- [Sign-ins requiring multifactor authentication (MFA)](scenario-health-sign-ins-mfa.md)
+---
 
 ## Analyze the possible root causes
 
