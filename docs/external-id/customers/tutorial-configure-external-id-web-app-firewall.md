@@ -43,7 +43,7 @@ Create a WAF policy with Azure-managed default rule sets (DRS). See [Web Applica
 1. Select **Create**.
 1. Go to **Create a WAF policy**.
 1. Select **Basics**.
-1. **Policy for**: Select **Global WAF (Front Door)**.
+1. For **Policy for**, select **Global WAF (Front Door)**.
 1. **Front Door SKU**: Select the Premium SKU.
 1. **Subscription**: Select your Front Door subscription name.
 1. **Resource group**: Select your Front Door resource group name.
