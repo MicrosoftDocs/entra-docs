@@ -15,7 +15,7 @@ ms.reviewer: jpettere
 ---
 # Microsoft Entra user data collection for multifactor authentication and self-service password reset 
 
-This document explains how to find user information collected by Azure Multi-Factor Authentication Server (MFA Server), Microsoft Entra multifactor authentication (Cloud-based), and self-service password reset (SSPR) in the event you would like to remove it.
+This article explains how to find user information collected by Azure Multi-Factor Authentication Server (MFA Server), Microsoft Entra multifactor authentication (Cloud-based), and self-service password reset (SSPR) in the event you would like to remove it.
 
 [!INCLUDE [gdpr-hybrid-note](~/includes/azure-docs-pr/gdpr-hybrid-note.md)]
 
@@ -130,7 +130,7 @@ Changes (used to sync user changes to MFA Server or Microsoft Entra ID):
 
 For MFA Server version 8.0 or higher the following process allows administrators to export all data for users:
 
-- Log in to your MFA Server, navigate to the **Users** tab, select the user in question, and click the **Edit** button. Take screenshots (Alt-PrtScn) of each tab to provide the user their current MFA settings.
+- Log in to your MFA Server, navigate to the **Users** tab, select the user in question, and select the **Edit** button. Take screenshots (Alt-PrtScn) of each tab to provide the user their current MFA settings.
 - From the command line of the MFA Server, run the following command changing the path according to your installation `C:\Program Files\Multi-Factor Authentication Server\MultiFactorAuthGdpr.exe export <username>` to produce a JSON formatted file.
 - Administrators can also use the Web Service SDK GetUserGdpr operation as an option to export all MFA cloud service information collected for a given user or  incorporate into a larger reporting solution.
 - Search `C:\Program Files\Multi-Factor Authentication Server\Logs\MultiFactorAuthSvc.log` and any backups for "\<username>" (include the quotes in the search) to find all instances of the user record being added or changed.
@@ -195,7 +195,7 @@ Use the Microsoft Privacy portal to make a request for Account Close to delete a
 
 Users can add answers to security questions as part of SSPR. Security questions and answers are hashed to prevent unauthorized access. Only the hashed data is saved, so the security questions and answers can't be exported. Users can go to [My sign-ins](https://mysignins.microsoft.com/security-info) to edit or delete them. The only other information saved for SSPR is the user email address. 
 
-Those assigned the [Privileged Authentication Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-authentication-administrator) role can remove data collected for any user. On the **Users** page in Microsoft Entra ID, click **Authentication methods** and select a user to remove their phone or email address. 
+Those assigned the [Privileged Authentication Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-authentication-administrator) role can remove data collected for any user. On the **Users** page in Microsoft Entra ID, select **Authentication methods** and select a user to remove their phone or email address. 
 
 ## Next steps
 
