@@ -20,7 +20,7 @@ ms.reviewer: jogro
 
 Authenticator is used to sign in to any Microsoft Entra account without using a password. Authenticator uses key-based authentication to enable a user credential that's tied to a device, where the device uses a PIN or biometric. [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-identity-verification) uses a similar technology.
 
-Authentication technology can be used on any device platform, including mobile. This technology is also used with any app or website that integrates with Authentication Libraries.
+Authentication technology can be used on any device platform, including mobile. Authenticator can run on either iOS or Android.
 
 :::image type="content" border="false" source="./media/howto-authentication-passwordless-phone/phone-sign-in-microsoft-authenticator-app-next.png" alt-text="Screenshot that shows an example of a browser sign-in asking the user to approve the sign-in.":::
 
@@ -33,8 +33,6 @@ Phone sign-in from Authenticator shows a message that asks the user to tap a num
 ## Multiple accounts
 
 You can enable passwordless phone sign-in for multiple accounts in Authenticator on any supported Android or iOS device. Consultants, students, and other users with multiple accounts in Microsoft Entra ID can add each account to Authenticator and use passwordless phone sign-in for all of them from the same device.
-
-Previously, admins might not have required passwordless sign-in for users with multiple accounts because it required them to carry more devices for sign-in. Without the limitation of one user sign-in from a device, admins can more confidently encourage users to register passwordless phone sign-in and use it as their default sign-in method.
 
 The Microsoft Entra accounts can be in the same tenant or different tenants. Guest accounts aren't supported for multiple account sign-ins from one device.
 
@@ -55,7 +53,7 @@ To use passwordless authentication in Microsoft Entra ID, first enable the combi
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-With Microsoft Entra ID, [Authentication Policy Administrators](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) can choose which authentication methods are used to sign in. You can enable **Microsoft Authenticator** in the Authentication methods policy to manage both the traditional push MFA method and the passwordless authentication method.
+Microsoft Entra ID lets [Authentication Policy Administrators](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) choose which authentication methods can be used to sign in. You can enable **Microsoft Authenticator** in the Authentication methods policy to manage both the traditional push MFA method and the passwordless authentication method.
 
 After **Microsoft Authenticator** is enabled as an authentication method, users can go to [Security info](https://aka.ms/mysecurityinfo) to register Authenticator as a way to sign in. **Microsoft Authenticator** is listed as a method on **Security info**. For example, **Microsoft Authenticator-Passwordless** or **Microsoft Authenticator-MFA Push** appears, depending on what's enabled and registered.
 
@@ -63,11 +61,8 @@ To enable the authentication method for passwordless phone sign-in, follow these
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Policies**.
-1. Under **Microsoft Authenticator**, select the following options:
-   1. **Enable**: Select **Yes** or **No**.
-   1. **Target**: Select **All users** or choose **Select users**.
-1. Each added group or user is enabled by default to use Authenticator in both passwordless and push notification modes (**Any** mode). To change the mode, for each row for **Authentication mode**, select **Any** or **Passwordless**. Selecting **Push** prevents the use of the passwordless phone sign-in credential.
-1. To apply the new policy, select **Save**.
+
+Each group is enabled by default to use **Any** mode. **Any** mode allows group members to sign in with either a push notification or passwordless phone sign-in.
 
    > [!NOTE]
    > If you see an error when you try to save, it might be because of the number of users or groups being added. As a workaround, replace the users and groups that you're trying to add with a single group in the same operation. Then select **Save** again.

@@ -13,7 +13,7 @@ author: justinha
 
 This article explains how number matching in Authenticator push notifications improves user sign-in security. Number matching is a key security upgrade to traditional second-factor notifications in Authenticator.
 
-Number matching is enabled for all Authenticator push notifications. As relevant services deploy, users worldwide who are enabled for Authenticator push notifications will begin to see number matching in their approval requests. Admins can enable users for Authenticator push notifications either in the Authentication methods policy or the legacy multifactor authentication (MFA) policy if **Notifications through mobile app** is enabled.
+Number matching is enabled for all Authenticator push notifications.
 
 ## Number matching scenarios
 
@@ -104,8 +104,6 @@ This section provides answers to common questions.
 ### Can users opt out of number matching?
 
 No, users can't opt out of number matching in Authenticator push notifications.
-
-Relevant services will begin deploying these changes after May 8, 2023, and users will start to see number match in approval requests. As services deploy, some might see number match while others don't. To ensure consistent behavior for all users, we highly recommend that you enable number match for Authenticator push notifications in advance.
 
 ### Does number matching only apply if Authenticator push notifications are set as the default authentication method?
 
