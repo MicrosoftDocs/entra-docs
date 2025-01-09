@@ -138,9 +138,9 @@ In this step, you create an initial runbook. You can trigger this runbook to ver
 
 ```powershell
 Import-Module Microsoft.Graph.Authentication
-$ClientId = Get-AutomationVariable -Name 'ClientId'
-$TenantId = Get-AutomationVariable -Name 'TenantId'
-$Thumbprint = Get-AutomationVariable -Name 'Thumbprint'
+$ClientId = Get-AzAutomationVariable -Name 'ClientId'
+$TenantId = Get-AzAutomationVariable -Name 'TenantId'
+$Thumbprint = Get-AzAutomationVariable -Name 'Thumbprint'
 Connect-MgGraph -clientId $ClientId -tenantId $TenantId -certificatethumbprint $Thumbprint
 ```
 
@@ -158,9 +158,9 @@ If the app registration for your runbook has the **EntitlementManagement.Read.Al
 
 ```powershell
 Import-Module Microsoft.Graph.Authentication
-$ClientId = Get-AutomationVariable -Name 'ClientId'
-$TenantId = Get-AutomationVariable -Name 'TenantId'
-$Thumbprint = Get-AutomationVariable -Name 'Thumbprint'
+$ClientId = Get-AzAutomationVariable -Name 'ClientId'
+$TenantId = Get-AzAutomationVariable -Name 'TenantId'
+$Thumbprint = Get-AzAutomationVariable -Name 'Thumbprint'
 $auth = Connect-MgGraph -clientId $ClientId -tenantid $TenantId -certificatethumbprint $Thumbprint
 Import-Module Microsoft.Graph.Identity.Governance
 $ap = @(Get-MgEntitlementManagementAccessPackage -All -ErrorAction Stop)
