@@ -28,7 +28,7 @@ In this tutorial, you learn how to enable the [Azure Web Application Firewall](/
 > [!IMPORTANT]
 > After you configure the custom domain, [test your custom domain](how-to-custom-url-domain.md#test-your-custom-url-domains) before you use it.
 
-## Enable WAF
+## Enable Azure Web Application Firewall
 
 To enable WAF for protection, configure a WAF policy and associate it with Azure Front Door Premium. Microsoft optimizes Azure Front Door premium for security and manages the rule sets provided by the WAF to protect against common vulnerabilities including cross-site scripting and Java exploits. Additionally, Azure WAF provides rule sets that help protect against malicious bot activity and provide layer 7 DDoS protection for your application.
 
