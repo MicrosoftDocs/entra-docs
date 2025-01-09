@@ -23,7 +23,7 @@ In this tutorial, you learn how to enable the [Azure Web Application Firewall](/
 - **A Microsoft Entra External ID tenant**. Authorization server that verifies user credentials with custom policies in the tenant, also known as the identity provider (IdP). Learn how to [create an external tenant](how-to-create-external-tenant-portal.md).
 - **Azure Front Door Premium**. [Azure Front Door](/azure/frontdoor/) enables custom domains for the Microsoft Entra External ID tenant with security optimization and access to WAF managed rule sets.
 - **Azure Web Application Firewall** (requires Premium SKU). [Azure WAF](https://azure.microsoft.com/services/web-application-firewall/) manages traffic that the authorization server receives.
-- **Custom domains in Microsoft Entra External ID**. Use with the custom domain features in Azure Front Door. Learn how to [enable custom URL domains for apps in external tenants](how-to-custom-url-domain.md).
+- **A custom domain**. Use with the custom domain features in Azure Front Door. Learn how to [enable custom URL domains for apps in external tenants](how-to-custom-url-domain.md).
 
 > [!IMPORTANT]
 > After you configure the custom domain, [test your custom domain](how-to-custom-url-domain.md#test-your-custom-url-domains).
