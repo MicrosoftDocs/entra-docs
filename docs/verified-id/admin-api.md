@@ -285,7 +285,7 @@ Content-type: application/json
 
 ### Create authority
 
-This call creates a new **private key**, recovery key and update key, stores these keys in the specified Azure Key Vault and sets the permissions to this Key Vault for the verifiable credential service and a create new **DID** with corresponding DID Document.
+This call creates a new **private key** and stores the key in the specified Azure Key Vault and sets the permissions to this Key Vault for the verifiable credential service and creates new **DID** with corresponding DID Document.
 
 #### HTTP request
 
