@@ -53,7 +53,7 @@ At this point, you completed the initiate and plan stages of your Global Secure 
 1. Verify tenant restrictions by attempting to sign into a different tenant.
 1. Verify Source IP restoration by comparing the IP address in the sign-in log of a successful connection to SharePoint Online when connecting with Global Secure Access agent running vs. disabled to ensure they're the same.
    >[!NOTE]
-   >You must disable compliant network check for this verification.
+   >You must disable any Conditional Access policy that enforces the compliant network check for this verification.
 
 Update your configuration to address any issues. Repeat the test. Implement roll-back plans if needed. Iterate changes to your end user communications and deployment plan if needed.
 
