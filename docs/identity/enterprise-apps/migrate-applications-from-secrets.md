@@ -47,7 +47,6 @@ For applications that cannot be migrated in the short term, rotate the secret an
 
 Conditional Access for workload identities enables you to block service principals from outside of known public IP ranges, based on risk detected by Microsoft Entra ID Protection or in combination with authentication contexts. To learn more, see [Conditional Access for workload identities](../conditional-access/workload-identity.md). 
 
-
 > [!IMPORTANT]
 > Workload Identities Premium licenses are required to create or modify Conditional Access policies scoped to service principals.
 > In directories without appropriate licenses, existing Conditional Access policies for workload identities will continue to function, but can't be modified. For more information, see [Microsoft Entra Workload ID](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-identities#office-StandaloneSKU-k3hubfz).   
@@ -70,7 +69,6 @@ Identity federation allows you to access Microsoft Entra protected resources wit
 ### Create a least-privileged custom role to rotate application credentials
 
 Microsoft Entra roles allow you to grant granular permissions to your admins, abiding by the principle of least privilege. A custom role can be created to rotate application credentials, ensuring that only the necessary permissions are granted to complete the task. To learn more, see [Create a custom role in Microsoft Entra ID](../role-based-access-control/custom-create.md).
-
 
 ### Ensure you have a process to triage and monitor applications 
 
