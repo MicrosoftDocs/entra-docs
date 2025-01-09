@@ -50,7 +50,7 @@ For more information, see [microsoftAuthenticatorAuthenticationMethodConfigurati
 
 In `featureSettings`, change `displayAppInformationRequiredState` and `displayLocationInformationRequiredState` from `default` to `enabled`.
 
-The value of Authentication Mode is either `any` or `push`, depending on whether or not you also want to enable passwordless phone sign-in. In these examples, we use `any`, but if you don't want to allow passwordless, use `push`.
+The value of Authentication mode is either `any` or `push`, depending on whether or not you also want to enable passwordless phone sign-in. In these examples, we use `any`, but if you don't want to allow passwordless, use `push`.
 
 You might need to `PATCH` the entire schema to prevent overwriting any previous configuration. In that case, do a `GET` first. Then update only the relevant fields and then `PATCH`. The following example shows how to update `displayAppInformationRequiredState` and `displayLocationInformationRequiredState` under `featureSettings`.
 
