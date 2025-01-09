@@ -6,9 +6,9 @@ author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
-ms.date: 04/10/2024
+ms.date: 01/07/2025
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -40,7 +40,7 @@ You can also create user flows programmatically using the Company Branding Graph
 
 ## Branding elements
 
-By default, Microsoft offers a neutral branding for your tenant that can be personalized to suit your company's specific requirements. This default branding doesn't include any pre-existing Microsoft branding. If the custom company branding fails to load, the sign-in page will automatically switch back to this neutral branding. Additionally, each custom branding property can be manually added to the custom sign-in page.  
+By default, Microsoft offers a neutral branding for your tenant that can be personalized to suit your company's specific requirements. This default branding doesn't include any preexisting Microsoft branding. If the custom company branding fails to load, the sign-in page will automatically switch back to this neutral branding. Additionally, each custom branding property can be manually added to the custom sign-in page.  
 
 You can customize this neutral branding with a custom background image or color, favicon, layout, header, and footer. You can also customize the sign-in form and add custom text to different instances or upload [custom CSS](~/fundamentals/reference-company-branding-css-template.md). 
 The following image displays the neutral default branding of the tenant. You can find the numbered branding elements and their corresponding descriptions after the image.
@@ -63,7 +63,7 @@ Before you customize any settings, the neutral default branding appears in your 
 
    :::image type="content" source="media/how-to-customize-branding-customers/browse-to-company-branding.png" alt-text="Screenshot of the company branding option.":::
 
-1. On the **Default sign-in** tab select **Edit**.
+1. On the **Default sign-in** tab, select **Edit**.
 
    :::image type="content" source="media/how-to-customize-branding-customers/company-branding-default-edit-button.png" alt-text="Screenshot of the company branding edit button.":::
 
@@ -81,7 +81,7 @@ Before you customize any settings, the neutral default branding appears in your 
 
 1. Select **Next: Layout** if you would like to continue customizing or **Review + save** if you would like to save your changes.
 
-1. On the Layout tab, select the placement of web page elements on the sign-in page.
+1. On the **Layout** tab, select the placement of web page elements on the sign-in page.
 
    - **Template** – Choose whether the background displays full-screen or partial-screen.
 
@@ -107,7 +107,7 @@ Before you customize any settings, the neutral default branding appears in your 
 
    - **Privacy & Cookies** – Select the checkbox next to Privacy & Cookies to display this hyperlink in the footer. The Microsoft default privacy link displays unless you enter your own hyperlink Display text and URL. 
 
-   - **Terms of Use** – Select the checkbox next to Terms of Use to display this hyperlink in the footer. The Microsoft terms of use link displays unless you enter your own hyperlink Display text and URL. 
+   - **Terms of Use** – Select the checkbox next to Terms of Use to display this hyperlink in the footer. The Microsoft terms of use link display unless you enter your own hyperlink Display text and URL. 
 
    :::image type="content" source="media/how-to-customize-branding-customers/company-branding-footer-tab.png" alt-text="Screenshot of the company branding footer tab." lightbox="media/how-to-customize-branding-customers/company-branding-footer-tab.png":::
 
@@ -156,7 +156,7 @@ Before you customize any settings, the neutral default branding appears in your 
 
 For your tenant, you might have different requirements for the information you want to collect during sign-up and sign-in. The tenant comes with a built-in set of information stored in attributes, such as Given Name, Surname, City, and Postal Code. You can create custom attributes in your tenant using the  Microsoft Graph API or in the portal under the **Text** tab in **Company Branding**. 
 
-1. On the **Text** tab select **Add Custom Text**.
+1. On the **Text** tab, select **Add Custom Text**.
 1. Select any of the options:
 
       - Select **Attributes** to override the default values. 

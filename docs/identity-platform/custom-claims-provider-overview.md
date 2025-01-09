@@ -17,6 +17,7 @@ titleSuffix: Microsoft identity platform
 # Custom claims provider
 
 This article provides an overview to the Microsoft Entra custom claims provider.
+
 When a user authenticates to an application, a custom claims provider can be used to add  claims into the token. A custom claims provider is made up of a custom authentication extension that calls an external REST API, to fetch claims from external systems. A custom claims provider can be assigned to one or many applications in your directory.
 
 Key data about a user is often stored in systems external to Microsoft Entra ID. For example, secondary email, billing tier, or sensitive information. Some applications may rely on these attributes for the application to function as designed. For example, the application may block access to certain features based on a claim in the token.
@@ -29,6 +30,10 @@ Use a custom claims provider for the following scenarios:
 
 - **Migration of legacy systems** - You may have legacy identity systems such as Active Directory Federation Services (AD FS) or data stores (such as LDAP directory) that hold information about users. You'd like to migrate these applications, but can't fully migrate the identity data into Microsoft Entra ID. Your apps may depend on certain information on the token, and can't be rearchitected.
 - **Integration with other data stores that can't be synced to the directory** - You may have third-party systems, or your own systems that store user data. Ideally this information could be consolidated, either through [synchronization](~/identity/hybrid/cloud-sync/what-is-cloud-sync.md) or direct migration, in the Microsoft Entra directory. However, that isn't always feasible. The restriction may be because of data residency, regulations, or other requirements.
+
+> [!NOTE]
+>
+> A custom claims provider isn't the only way to add custom claims to a token. You can also [customize claims issued in the JSON web token (JWT) for enterprise applications](./jwt-claims-customization.md).
 
 ## Token issuance start event listener
 

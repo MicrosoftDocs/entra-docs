@@ -4,7 +4,7 @@ description: Learn how to use additional context in MFA notifications
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/28/2024
+ms.date: 01/07/2025
 ms.author: justinha
 author: mjsantani
 # Customer intent: As an identity administrator, I want to encourage users to use the Microsoft Authenticator app in Microsoft Entra ID to improve and secure user sign-in events.
@@ -220,7 +220,7 @@ Only users who are enabled for Microsoft Authenticator under Microsoft Authentic
 In **featureSettings**, change the states of **displayAppInformationRequiredState** and **displayLocationInformationRequiredState** from **default** to **enabled.** 
 Inside the **includeTarget** for each featureSetting, change the **id** from **all_users** to the ObjectID of the group from the Microsoft Entra admin center.
 
-In addition, for each of the features, you'll change the id of the excludeTarget to the ObjectID of the group from the Microsoft Entra admin center. This change excludes that group from seeing application name or geographic location.
+In addition, for each of the features, you'll change the ID of the excludeTarget to the ObjectID of the group from the Microsoft Entra admin center. This change excludes that group from seeing application name or geographic location.
 
 You need to PATCH the entire schema to prevent overwriting any previous configuration. We recommend that you do a GET first, and then update only the relevant fields and then PATCH. The following example shows an update to **displayAppInformationRequiredState** and **displayLocationInformationRequiredState** under **featureSettings**. 
 

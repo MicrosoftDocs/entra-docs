@@ -7,25 +7,24 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 07/23/2024
+ms.date: 12/20/2024
 ms.author: barclayn
-ms.reviewer: krbain
+ms.reviewer: MohitBhargava
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 
 # Set up self-service group management in Microsoft Entra ID
 
-You can enable users to create and manage their own security groups or Microsoft 365 groups in Microsoft Entra ID. The owner of the group can approve or deny membership requests and delegate control of group membership. Self-service group management features aren't available for [mail-enabled security groups or distribution lists](~/fundamentals/concept-learn-about-groups.md).
+Microsoft Entra ID provides self-service group management features that enable users to create and manage their own security groups or Microsoft 365 groups. The owner of the group can approve or deny membership requests and delegate control of group membership. Self-service group management features aren't available for [mail-enabled security groups or distribution lists](~/fundamentals/concept-learn-about-groups.md).
+
 
 ## Self-service group membership
 
-You can allow users to create security groups, which are used to manage access to shared resources. Users can create security groups in the Azure portal by using Azure Active Directory (Azure AD) PowerShell or from the [My Groups portal](https://myaccount.microsoft.com/groups).  
+You can allow users to create security groups to manage access to shared resources. Users can create security groups from the [Microsoft Entra admin center](https://entra.microsoft.com), using PowerShell, or from the [My Groups portal](https://myaccount.microsoft.com/groups).  
 
 :::image type="content" source="./media/groups-self-service-management/my-groups.png" alt-text="Screenshot that shows the My Groups portal." lightbox="./media/groups-self-service-management/my-groups.png":::
 
-[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
-
-Only the group's owners can update membership, but you can provide group owners with the ability to approve or deny membership requests from the My Groups portal. Security groups created by self-service through the My Groups portal are available to join for all users, whether owner-approved or autoapproved. In the My Groups portal, you can change membership options when you create the group.
+Only the group's owners can update membership. You can give group owners the ability to approve or deny membership requests from the My Groups portal. Security groups created by self-service through the My Groups portal are available to join for all users, whether owner-approved or autoapproved. In the My Groups portal, you can change membership options when you create the group.
 
 Microsoft 365 groups provide collaboration opportunities for your users. You can create groups in any of the Microsoft 365 applications, such as SharePoint, Microsoft Teams, and Planner. You can also create Microsoft 365 groups in Azure portals by using Microsoft Graph PowerShell or from the My Groups portal. For more information on the difference between security groups and Microsoft 365 groups, see [Learn about groups](~/fundamentals/concept-learn-about-groups.md#what-to-know-before-creating-a-group).
 
@@ -99,7 +98,7 @@ The group settings enable you to control who can create security and Microsoft 3
 | Users can create security groups in the Azure portal, API, or PowerShell. | Yes | All users in your Microsoft Entra organization are allowed to create new security groups and add members to these groups in the Azure portal, API, or PowerShell. These new groups also show up in the Access Panel for all other users. If the policy setting on the group allows it, other users can create requests to join these groups. |
 |  | No | Users can’t create security groups. They can still manage the membership of groups for which they’re an owner and approve requests from other users to join their groups. |
 | Users can create Microsoft 365 groups in the Azure portal, API, or PowerShell. | Yes | All users in your Microsoft Entra organization are allowed to create new Microsoft 365 groups and add members to these groups in the Azure portal, API, or PowerShell. These new groups also show up in the Access Panel for all other users. If the policy setting on the group allows it, other users can create requests to join these groups. |
-|  | No | Users can’t create M365 Groups. They can still manage the membership of groups for which they’re an owner and approve requests from other users to join their groups. |
+|  | No | Users can’t create Microsoft 365 Groups. They can still manage the membership of groups for which they’re an owner and approve requests from other users to join their groups. |
 
 Here are some more details about these group settings:
 

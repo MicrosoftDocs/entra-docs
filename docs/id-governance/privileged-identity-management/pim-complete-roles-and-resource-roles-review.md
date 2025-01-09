@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
-ms.date: 09/12/2023
+ms.date: 12/16/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
 ms.custom: pim
@@ -16,7 +16,7 @@ ms.custom: pim
 
 # Complete an access review of Azure resource and Microsoft Entra roles in PIM
 
-Privileged Role Administrators can review privileged access once an [access review has been started](./pim-create-roles-and-resource-roles-review.md). Privileged Identity Management (PIM) in Microsoft Entra ID will automatically send an email that prompts users to review their access. If a user doesn't receive an email, you can send them the instructions for [how to perform an access review](./pim-perform-roles-and-resource-roles-review.md).
+Privileged Role Administrators can review privileged access once an [access review starts](./pim-create-roles-and-resource-roles-review.md). Privileged Identity Management (PIM) in Microsoft Entra ID will automatically send an email that prompts users to review their access. If a user doesn't receive an email, you can send them the instructions for [how to perform an access review](./pim-perform-roles-and-resource-roles-review.md).
 
 Once the review has been created, follow the steps in this article to complete the review and see the results.
 
@@ -24,7 +24,7 @@ Once the review has been created, follow the steps in this article to complete t
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a user that is assigned to one of the prerequisite role(s).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a user that is assigned to one or more prerequisite roles.
 
 1. Browse to **Identity governance** > **Privileged Identity Management**. 
 

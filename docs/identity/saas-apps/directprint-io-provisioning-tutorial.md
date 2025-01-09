@@ -52,10 +52,6 @@ The scenario outlined in this tutorial assumes that you already have the followi
 1. Navigate to the Microsoft Entra SSO and Provisioning screen.
 1. Save the Tenant URL and secret toke for future reference. You will need it in **Step 5**.
 
-  ![Provisioning Tenant URL and Provision secret](media/directprint/sso-provisioning-screen.png)
-
-<a name='step-3-add-directprintio-from-the-azure-ad-application-gallery'></a>
-
 ## Step 3: Add directprint.io from the Microsoft Entra application gallery
 
 Add directprint.io from the Microsoft Entra application gallery to start managing provisioning to directprint.io. If you have previously setup directprint.io for SSO you can use the same application. However it is recommended that you create a separate app when testing out the integration initially. Learn more about adding an application from the gallery [here](~/identity/enterprise-apps/add-application-portal.md). 

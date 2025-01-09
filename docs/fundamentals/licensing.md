@@ -5,17 +5,17 @@ author: barclayn
 manager: amycolannino
 ms.service: entra
 ms.topic: conceptual
-ms.date: 06/03/2024
+ms.date: 12/19/2024
 ms.subservice: fundamentals
 ms.author: barclayn
 ---
 
 # Microsoft Entra licensing
 
-This article discusses licensing options for the Microsoft Entra product family. It is intended for security decision makers, identity and network access administrators, and IT professionals who are considering Microsoft Entra solutions for their organizations. 
+This article discusses licensing options for the Microsoft Entra product family. It's intended for security decision makers, identity and network access administrators, and IT professionals who are considering Microsoft Entra solutions for their organizations. 
 
 
-## Entra licensing options
+## Microsoft Entra licensing options
 
 [!INCLUDE [Entra offerings](../includes/definitions/entra-offerings.md)]
 

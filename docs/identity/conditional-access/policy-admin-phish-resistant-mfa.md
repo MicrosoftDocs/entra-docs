@@ -57,7 +57,7 @@ For external user scenarios, the MFA authentication methods that a resource tena
    1. Under **Include**, select **Directory roles** and choose at least the previously listed roles.
    
       > [!WARNING]
-      > Conditional Access policies support built-in roles. Conditional Access policies are not enforced for other role types including [administrative unit-scoped](~/identity/role-based-access-control/admin-units-assign-roles.md) or [custom roles](~/identity/role-based-access-control/custom-create.yml).
+      > Conditional Access policies support built-in roles. Conditional Access policies are not enforced for other role types including [administrative unit-scoped](../role-based-access-control/manage-roles-portal.md) or [custom roles](../role-based-access-control/custom-create.md).
 
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts.
 1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include**, select **All resources (formerly 'All cloud apps')**.

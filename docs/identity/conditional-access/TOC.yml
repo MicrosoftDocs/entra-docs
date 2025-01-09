@@ -120,6 +120,8 @@
         href: policy-old-require-mfa-admin-portals.md
       - name: Require MFA for Azure management
         href: policy-old-require-mfa-azure-mgmt.md
+    - name: Conditional Access for Generative AI
+      href: policy-all-users-copilot-ai-security.md
     - name: Block users with elevated insider risk
       href: policy-risk-based-insider-block.md
     - name: Require terms of use to be accepted
@@ -132,8 +134,6 @@
     href: managed-policies.md
   - name: Configure report only mode
     href: howto-conditional-access-insights-reporting.md
-  - name: Block legacy authentication
-    href: block-legacy-authentication.md
   - name: Require terms of use
     href: terms-of-use.md
   - name: Sign-in frequency and browser persistence control
@@ -152,8 +152,6 @@
     href: migrate-approved-client-app.md
 - name: Reference
   items:
-  - name: Upcoming changes
-    href: reference-resources-change.md
   - name: Office 365 application
     href: reference-office-365-application-contents.md
   - name: Microsoft Graph APIs

@@ -46,6 +46,16 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/conditional-access/block-legacy-authentication.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-block-legacy-authentication",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/conditional-access/reference-resources-change.md",
+      "redirect_url": "/entra/identity/conditional-access/concept-conditional-access-cloud-apps",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/conditional-access/how-to-policy-phish-resistant-admin-mfa.md",
       "redirect_url": "/entra/identity/conditional-access/policy-admin-phish-resistant-mfa",
       "redirect_document_id": true
@@ -191,6 +201,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/monitoring-health/howto-use-health-scenario-alerts.md",
+      "redirect_url": "/entra/identity/monitoring-health/howto-investigate-health-scenario-alerts",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/monitoring-health/reference-azure-monitor-sign-ins-log-schema.md",
       "redirect_url": "/entra/identity/monitoring-health/concept-activity-log-schemas",
       "redirect_document_id": false
@@ -333,6 +348,16 @@
     {
       "source_path_from_root": "/docs/identity/saas-apps/paycargo-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/paycargo-classic-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/logmein-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/goto-provisioning-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/logmein-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/goto-tutorial",
       "redirect_document_id": false
     },
     {
@@ -498,6 +523,11 @@
     {
       "source_path_from_root": "/docs/identity-platform/msal-v1-app-scopes.md",
       "redirect_url": "/entra/identity-platform/msal-acquire-cache-tokens",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/tutorial-v2-angular-auth-code.md",
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-apps-angular-register-app",
       "redirect_document_id": false
     },
     {
@@ -1107,6 +1137,41 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/role-based-access-control/admin-units-assign-roles.md",
+      "redirect_url": "/entra/identity/role-based-access-control/manage-roles-portal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/role-based-access-control/assign-roles-different-scopes.md",
+      "redirect_url": "/entra/identity/role-based-access-control/manage-roles-portal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/role-based-access-control/custom-assign-graph.md",
+      "redirect_url": "/entra/identity/role-based-access-control/manage-roles-portal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/role-based-access-control/custom-assign-powershell.md",
+      "redirect_url": "/entra/identity/role-based-access-control/manage-roles-portal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/role-based-access-control/groups-assign-role.md",
+      "redirect_url": "/entra/identity/role-based-access-control/manage-roles-portal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/role-based-access-control/groups-view-assignments.md",
+      "redirect_url": "/entra/identity/role-based-access-control/view-assignments",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/role-based-access-control/list-role-assignments-users.md",
+      "redirect_url": "/entra/identity/role-based-access-control/view-assignments",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/global-secure-access/how-to-target-resource-microsoft-365-profile.md",
       "redirect_url": "/entra/global-secure-access/how-to-target-resource-microsoft-profile",
       "redirect_document_id": false
@@ -1230,6 +1295,41 @@
     {
       "source_path_from_root": "/docs/identity-platform/quickstart-web-app-aspnet-sign-in.md",
       "redirect_url": "/entra/identity-platform/quickstart-web-app-dotnet-core-sign-in",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-edit-profile-prepare-tenant.md",
+      "redirect_url": "/entra/external-id/customers/how-to-web-app-node-edit-profile-prepare-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/enterprise-apps/configure-user-consent-groups.md",
+      "redirect_url": "/microsoftteams/platform/graph-api/rsc/grant-resource-specific-consent",
+      "redirect_document_id": false
+    }, 
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/bluejeans-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/bluejeans-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/users/groups-write-back-portal.md",
+      "redirect_url": "/entra/identity/hybrid/group-writeback-cloud-sync",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/autotaskworkplace-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/vmware-identity-service-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
       "redirect_document_id": false
     }
   ]

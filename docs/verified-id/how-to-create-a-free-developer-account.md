@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-verified-id
 
 ms.topic: how-to
-ms.date: 01/26/2023
+ms.date: 12/13/2024
 ms.author: barclayn
 # Customer intent: As a developer, I want to learn how to create a developer Microsoft Entra account so I can participate in the preview with a P2 license. 
 ---

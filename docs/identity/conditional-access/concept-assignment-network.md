@@ -14,7 +14,7 @@ ms.reviewer: lhuangnorth, inbarc
 ---
 # Conditional Access: Network assignment
 
-Administrators can create policies that target specific network locations as a signal along with other conditions in their decision making process. They can include or exclude these network locations as part of their policy configuration. These network locations might include public IPv4 or IPv6 network information, countries, unknown areas that don't map to specific countries, or [Global Secure Access' compliant network](../../global-secure-access/how-to-compliant-network.md).
+Administrators can create policies that target specific network locations as a signal along with other conditions in their decision making process. They can include or exclude these network locations as part of their policy configuration. These network locations might include public IPv4 or IPv6 network information, countries/regions, unknown areas that don't map to specific countries/regions, or [Global Secure Access' compliant network](../../global-secure-access/how-to-compliant-network.md).
 
 :::image type="content" source="media/common-conditional-access-media/conditional-access-signal-decision-enforcement.png" alt-text="Diagram showing concept of Conditional Access signals plus decision to enforce organizational policy." lightbox="media/common-conditional-access-media/conditional-access-signal-decision-enforcement.png":::
 
@@ -104,9 +104,9 @@ Locations marked as trusted can't be deleted without first removing the trusted 
 
 ### Countries
 
-Organizations can determine a geographic country location by IP address or GPS coordinates.
+Organizations can determine a geographic country or region location by IP address or GPS coordinates.
 
-To define a named location by country, you must: 
+To define a named location by country or region, you must: 
 
 - Provide a **Name** for the location.
 - Choose to determine location by IP address or GPS coordinates.
@@ -128,7 +128,9 @@ When selecting **Determine location by GPS coordinates**, users must have the Mi
 > [!NOTE]
 > A Conditional Access policy with GPS-based named locations in report-only mode prompts users to share their GPS location, even though they aren't blocked from signing in.
 
-GPS location doesn't work with [passwordless authentication methods](~/identity/authentication/concept-authentication-passwordless.md).
+GPS location can be used with [passwordless phone sign-in](~/identity/authentication/concept-authentication-authenticator-app.md) only if MFA push notifications are also enabled. Users can use Microsoft Authenticator to sign in, but they also need to approve subsequent MFA push notifications to share their GPS location.
+
+GPS location doesn't work when only [passwordless authentication methods](~/identity/authentication/concept-authentication-passwordless.md) are set.
 
 Multiple Conditional Access policies might prompt users for their GPS location before all are applied. Because of the way Conditional Access policies are applied, a user might be denied access if they pass the location check but fail another policy. For more information about policy enforcement, see the article [Building a Conditional Access policy](concept-conditional-access-policies.md).
 

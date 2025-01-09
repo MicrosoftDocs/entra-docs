@@ -24,7 +24,7 @@ Administrators who interact with **Global Secure Access** features must have the
 
 To follow the [Zero Trust principle of least privilege](/security/zero-trust/), consider using [Privileged Identity Management (PIM)](/azure/active-directory/privileged-identity-management/pim-configure) to activate just-in-time privileged role assignments.
 
-The product requires licensing. For details, see the licensing section of [What is Global Secure Access?](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense). To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended.
+The product requires licensing. For details, see the licensing section of [What is Global Secure Access?](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ## Install the client to acquire Microsoft traffic
 

@@ -31,7 +31,7 @@ To compute the assertion, you can use one of the many JWT libraries in the langu
 | --- | --- |
 | `alg` | Should be **PS256** |
 | `typ` | Should be **JWT** |
-| `x5t#s256` | Base64url-encoded SHA-256 thumbprint of the X.509 certificate's DER encoding. |
+| `x5t#S256` | Base64url-encoded SHA-256 thumbprint of the X.509 certificate's DER encoding. |
 
 ### Claims (payload)
 
@@ -55,7 +55,7 @@ The signature is computed by applying the certificate as described in the [JSON 
 {
   "alg": "PS256",
   "typ": "JWT",
-  "x5t#sha256": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u"
+  "x5t#S256": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u"
 }
 .
 {
@@ -64,7 +64,7 @@ The signature is computed by applying the certificate as described in the [JSON 
   "iss": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
   "jti": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
   "nbf": 1484592741,
-  "sub": "aaaabbbb-0000-cccc-1111-dddd2222eeee"
+  "sub": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
 }
 .
 "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u..."

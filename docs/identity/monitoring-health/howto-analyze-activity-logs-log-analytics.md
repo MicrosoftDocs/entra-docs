@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 10/02/2024
+ms.date: 11/08/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -29,7 +29,7 @@ This article describes to analyze the Microsoft Entra activity logs in your Log 
 
 To analyze activity logs with Log Analytics, you need:
 
-* A Microsoft Entra tenant with a [Premium P1 license](~/fundamentals/get-started-premium.md)
+* A working Microsoft Entra tenant with a Microsoft Entra ID P1 or P2 license associated with it.
 * A Log Analytics workspace *and* access to that workspace
 * The appropriate roles for Azure Monitor *and* Microsoft Entra ID
 
@@ -101,6 +101,13 @@ SigninLogs
 | sort by signInCount desc 
 ```
 
+To find risky sign-in events, use the following query:
+
+```kusto
+SigninLogs
+| where RiskState contains "atRisk"
+```
+
 To get the top audit events over the last week, use the following query:
 
 ```kusto
@@ -108,6 +115,24 @@ AuditLogs
 | where TimeGenerated >= ago(7d)
 | summarize auditCount = count() by OperationName 
 | sort by auditCount desc 
+```
+
+To summarize the count of provisioning events per day, by action:
+```kusto
+AADProvisioningLogs
+| where TimeGenerated > ago(7d)
+| summarize count() by Action, bin(TimeGenerated, 1d)
+```
+
+Take 100 provisioning events and project key properties:
+```kusto
+AADProvisioningLogs
+| extend SourceIdentity = parse_json(SourceIdentity)
+| extend TargetIdentity = parse_json(TargetIdentity)
+| extend ServicePrincipal = parse_json(ServicePrincipal)
+| where tostring(SourceIdentity.identityType) == "Group"
+| project tostring(ServicePrincipal.Id), tostring(ServicePrincipal.Name), ModifiedProperties, JobId, Id, CycleId, ChangeId, Action, SourceIdentity.identityType, SourceIdentity.details, TargetIdentity.identityType, TargetIdentity.details, ProvisioningSteps
+| take 100
 ```
 
 ## Related content

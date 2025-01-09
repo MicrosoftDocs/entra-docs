@@ -6,7 +6,7 @@ author: msmimart
 manager: celestedg
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: reference
 ms.date: 05/01/2023
 ms.author: mimart
