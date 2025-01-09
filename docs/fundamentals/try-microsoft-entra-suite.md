@@ -95,7 +95,7 @@ Microsoft Entra Internet Access protects enterprise users and managed devices fr
 1. Block a group from accessing websites based on FQDN 
 1. Allow a user to access a blocked website 
 
-To view the complete how-to guide, see [Deployment guide for Microsoft Entra Internet Access](~/architecture/sse-deployment-guide-internet-access.md).
+To view the complete how-to guide, see [Deployment guide for Microsoft Entra Internet Access](~/architecture/gsa-deployment-guide-internet-access.md).
 
 ### Step 4: Enable private access gateways 
 
@@ -105,7 +105,7 @@ Microsoft Entra Private Access converges network and identity access controls so
 1. Apply Microsoft Entra Conditional Access 
 1. Control access by multiple users to multiple apps 
 
-To view the complete how-to guide, see [Deployment guide for Microsoft Entra Private Access](~/architecture/sse-deployment-guide-private-access.md).
+To view the complete how-to guide, see [Deployment guide for Microsoft Entra Private Access](~/architecture/gsa-deployment-guide-private-access.md).
 
 ### Step 5: Onboard customers with a workflow portal 
 
