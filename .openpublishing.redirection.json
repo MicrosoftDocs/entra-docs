@@ -1303,9 +1303,29 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/architecture/sse-deployment-guide-microsoft-traffic.md",
+      "redirect_url": "/entra/architecture/gsa-deployment-guide-microsoft-traffic",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/architecture/sse-deployment-guide-intro.md",
+      "redirect_url": "/entra/architecture/gsa-deployment-guide-intro",
+      "redirect_document_id": true
+    },
+    {
       "source_path_from_root": "/docs/architecture/sse-deployment-guide-m365.md",
-      "redirect_url": "/entra/architecture/sse-deployment-guide-microsoft-traffic",
+      "redirect_url": "/entra/architecture/gsa-deployment-guide-microsoft-traffic",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/architecture/sse-deployment-guide-internet-access.md",
+      "redirect_url": "/entra/architecture/gsa-deployment-guide-internet-access",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/architecture/sse-deployment-guide-private-access.md",
+      "redirect_url": "/entra/architecture/gsa-deployment-guide-private-access",
+      "redirect_document_id": true
     },
     {
       "source_path_from_root": "/docs/identity-platform/scenario-daemon-overview.md",
