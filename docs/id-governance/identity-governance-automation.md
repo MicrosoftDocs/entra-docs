@@ -138,9 +138,11 @@ In this step, you create an initial runbook. You can trigger this runbook to ver
 
 ```powershell
 Import-Module Microsoft.Graph.Authentication
-$ClientId = Get-AzAutomationVariable -Name 'ClientId'
-$TenantId = Get-AzAutomationVariable -Name 'TenantId'
-$Thumbprint = Get-AzAutomationVariable -Name 'Thumbprint'
+$ResourceGroupName = "<Automation Account Resource Group Name>" # Specify your Automation Account Resource Group Name
+$AutomationAccountName = "<Automation Account Name>" # Specify your Automation Account Name
+$ClientId = Get-AzAutomationVariable -Name 'ClientId' -ResourceGroupName $ResourceGroupName -AutomationAccountName $AutomationAccountName
+$TenantId = Get-AzAutomationVariable -Name 'TenantId' -ResourceGroupName $ResourceGroupName -AutomationAccountName $AutomationAccountName
+$Thumbprint = Get-AzAutomationVariable -Name 'Thumbprint' -ResourceGroupName $ResourceGroupName -AutomationAccountName $AutomationAccountName
 Connect-MgGraph -clientId $ClientId -tenantId $TenantId -certificatethumbprint $Thumbprint
 ```
 
@@ -158,9 +160,11 @@ If the app registration for your runbook has the **EntitlementManagement.Read.Al
 
 ```powershell
 Import-Module Microsoft.Graph.Authentication
-$ClientId = Get-AzAutomationVariable -Name 'ClientId'
-$TenantId = Get-AzAutomationVariable -Name 'TenantId'
-$Thumbprint = Get-AzAutomationVariable -Name 'Thumbprint'
+$ResourceGroupName = "<Automation Account Resource Group Name>" # Specify your Automation Account Resource Group Name
+$AutomationAccountName = "<Automation Account Name>" # Specify your Automation Account Name
+$ClientId = Get-AzAutomationVariable -Name 'ClientId' -ResourceGroupName $ResourceGroupName -AutomationAccountName $AutomationAccountName
+$TenantId = Get-AzAutomationVariable -Name 'TenantId' -ResourceGroupName $ResourceGroupName -AutomationAccountName $AutomationAccountName
+$Thumbprint = Get-AzAutomationVariable -Name 'Thumbprint' -ResourceGroupName $ResourceGroupName -AutomationAccountName $AutomationAccountName
 $auth = Connect-MgGraph -clientId $ClientId -tenantid $TenantId -certificatethumbprint $Thumbprint
 Import-Module Microsoft.Graph.Identity.Governance
 $ap = @(Get-MgEntitlementManagementAccessPackage -All -ErrorAction Stop)
