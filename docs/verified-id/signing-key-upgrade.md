@@ -31,7 +31,9 @@ Microsoft advises that you upgrade anyway as the support for P-256K signing key 
 1. Check that your authority was set up using `Advanced Setup`. If your DID does ***not*** start with `did:web:verifiedid.entra.microsoft.com`, it was set up using `Advanced Setup` method. You can inspect your DID in the `Organization settings` in the portal or via the [Get authority](admin-api.md#get-authority) Admin API.
 
 1. Check if your authority is using the P-256K/secp256k1 signing key. You can determine the key type in two ways:
+
     1. In Azure Key Vault for your signing key identifier, inspect that the `Elliptic curve name` has a value of `P-256K`. Your Key Vault key is visible in the `Signing key identifier` field in the `Organization settings` in the portal. 
+
     1. Viewing your DID document, inspect the ***first*** entry of the `verificationMethod` collection and see that the `crv` attribute has a value of `secp256k1`. You can retrieve your DID Document via URL `https://<your-domain>/.well-known/did.json`.
 
 ## Prerequisites for upgrading
@@ -60,9 +62,9 @@ Upgrading the signing key is a seven step operation:
 
 Any signing activities, like issuing credentials or making presentation requests, are now signed by your new P-256 key. 
 
-Credentials that were issued before the signing key upgrade are signed by your old P-256K key. These credentials continue to work as long as you have the old P-256K keys in your DID document. When time comes to reissue these credentials, the credentials are signed using the new P-256 key. 
+Credentials that were issued before the signing key upgrade are signed by your old P-256K key. These credentials continue to work as long as you have the old P-256K keys in your DID document. When time comes to reissue these credentials, they are signed using the new P-256 key. 
 
-Eventually, you have no credentials signed by the old key as they all have expired and new have been reissued. If your credentials have a long lifetime before they expire, and you want to stop using the old P-256K, you should consider instructing your users to reissue in advance.
+Eventually, you have no credentials signed by the old key as they all have expired and new have been reissued. If your credentials have a long lifetime before they expire, and you want to stop using the old P-256K key, you should consider instructing your users to reissue in advance.
 
 If you want to remove old P-256K keys from your DID document, ensure that your users have reissued their credentials. Then disable the old P-256K keys in your Key Vault and you regenerate and redeploy your DID document.
 
