@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-verified-id
 ms.topic: how-to
 
-ms.date: 11/11/2025
+ms.date: 11/11/2024
 ms.author: barclayn
 
 #Customer intent: As an administrator, I'm looking for information on how to upgrate signing keys to become FIPS compliant.
@@ -44,7 +44,7 @@ Upgrading the signing key is a seven step operation:
 
 1. Call the [didInfo/signingKeys](admin-api.md#create-signing-key) API to create a new P-256 signing key in Key Vault. The access token in the call must be for an admin user with access to keys in the key vault. The `didDocumentStatus` attribute for the authority changes to an `outOfSync` value, which indicates that there's a discrepancy between Key Vault and the publicly available `did.json` document.
 
-1. Call the [generateDIDDocument](admin-api.md#generatediddocument) API to generate a new DID document. Save the response as a file named `did.json`. The generated DID document contains both the new P-256 key and the old P-256K key.
+1. Call the [generateDIDDocument](admin-api.md#generate-did-document) API to generate a new DID document. Save the response as a file named `did.json`. The generated DID document contains both the new P-256 key and the old P-256K key.
 
 1. Replace `did.json` on all web servers where it was previously deployed. Before you continue, make sure that you can retrieve the new `did.json` document from the public internet with a browser.
 
