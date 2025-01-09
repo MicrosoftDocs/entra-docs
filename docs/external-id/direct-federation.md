@@ -5,7 +5,7 @@ description: Set up direct federation with SAML 2.0 or WS-Fed identity providers
  
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 06/05/2024
+ms.date: 01/09/2025
 
 ms.author: mimart
 author: msmimart
@@ -19,7 +19,7 @@ ms.collection: M365-identity-device-management
 
 [!INCLUDE [applies-to-workforce-external](./includes/applies-to-workforce-external.md)]
 
-Your Microsoft Entra tenant can be directly federated with external organizations that use a SAML or WS-Fed identity provider (IdP). Users from the external organization can then use their IdP-managed account to sign in to your tenant, without having to create a separate Microsoft Entra account. For newly invited users, SAML/WS-Fed IdP federation takes precedence as the primary sign-in method. The user is redirected to their IdP when signing up or signing in to your app, and then returned to Microsoft Entra once they successfully sign in.
+Your Microsoft Entra tenant can be directly federated with external organizations that use a SAML or WS-Fed identity provider (IdP). Users from the external organization can then use their IdP-managed account to sign in to your tenant, without having to create a new Microsoft Entra account. For newly invited users, SAML/WS-Fed IdP federation takes precedence as the primary sign-in method. The user is redirected to their IdP when signing up or signing in to your app, and then returned to Microsoft Entra once they successfully sign in.
 
 You can associate multiple domains with a single federation configuration. The partner's domain can be either Microsoft Entra verified or non-verified.
 
@@ -33,12 +33,11 @@ After setting up federation, the sign-in experience for the external user depend
 
 You can set up SAML/WS-Fed IdP federation with:
 
-- **Microsoft Entra ID verified domains**: These are domains that have been verified within Microsoft Entra ID, including those where the tenant has undergone an [admin takeover](~/identity/users/domains-admin-takeover.md).
-- **Non-verified domains**: These are domains that aren’t DNS-verified in Microsoft Entra ID.
+- **Non-verified domains**: These are domains that aren’t DNS-verified in Microsoft Entra ID. For non-verified domains, users from the external organization are authenticated using the federated SAML/WS-Fed IdP.
+- **Microsoft Entra ID verified domains**: These are domains that have been verified within Microsoft Entra ID, including those where the tenant has undergone an [admin takeover](~/identity/users/domains-admin-takeover.md). For verified domains, Microsoft Entra ID is the primary identity provider used during invitation redemption. In the case of B2B collaboration in a workforce tenant, you can [change the redemption order](cross-tenant-access-overview.md#configurable-redemption) to make the federated IdP the primary method. 
 
-For verified domains, Microsoft Entra ID is the primary identity provider used during invitation redemption. In the case of B2B collaboration in a workforce tenant, you can [change the redemption order](cross-tenant-access-overview.md#configurable-redemption) to make the federated IdP the primary method. Currently, redemption order settings aren’t supported in external tenants or across clouds.
-
-For non-verified domains, users from the external organization are authenticated using the federated SAML/WS-Fed IdP.
+> [!NOTE]
+> Currently, redemption order settings aren’t supported in external tenants or across clouds.
 
 ### Federation with unmanaged (email-verified) tenants
 
@@ -74,9 +73,6 @@ Setting up federation involves configuring both your Microsoft Entra tenant and 
 ### Partner IdP requirements
 
 Depending on the partner's IdP, the partner might need to update their DNS records to enable federation with you. See [Step 1: Determine if the partner needs to update their DNS text records](#step-1-determine-if-the-partner-needs-to-update-their-dns-text-records).
-
-> [!NOTE]
-> We no longer support an allowlist of IdPs for new SAML/WS-Fed IdP federations.
 
 The Issuer URL in the SAML request sent by Microsoft Entra ID for external federations is now a tenanted endpoint, whereas previously it was a global endpoint. Existing federations with the global endpoint will continue to work. But for new federations, set the audience of the external SAML or WS-Fed IdP to a tenanted endpoint. See the [SAML 2.0 section](#required-saml-20-attributes-and-claims) and the [WS-Fed section](#required-ws-fed-attributes-and-claims) for required attributes and claims.
 
