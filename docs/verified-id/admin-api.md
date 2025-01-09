@@ -101,11 +101,12 @@ This endpoint can be used to create or update a Verifiable Credential service in
 | [Create Authority](#create-authority) | Authority | Create a new authority |
 | [Update authority](#update-authority) | Authority | Update authority |
 | [Delete authority](#delete-authority) | Authority | Delete authority |
-| [Generate Well known DID Configuration](#well-known-did-configuration) | | |
 | [Generate DID Document](#generate-did-document) | | |
-| [Validate Well-known DID config](#validate-well-known-did-configuration) | | |
 | [Rotate Signing Key](#rotate-signing-key) | Authority | Rotate signing key |
+| [Create Signing Key](#create-signing-key) | Authority | Create signing key |
 | [Synchronize with DID Document](#synchronize-with-did-document) | Authority | Synchronize DID document with new signing key |
+| [Generate Well known DID Configuration](#well-known-did-configuration) | | |
+| [Validate Well-known DID config](#validate-well-known-did-configuration) | | |
 
 
 ### Get authority
@@ -705,6 +706,42 @@ Content-type: application/json
         "resourceUrl": "https://vcwingtipskv.vault.azure.net/"
     },
     "linkedDomainsVerified": false
+}
+```
+
+### Create signing key
+
+The create signing key creates a new private key in the already existing Key Vault for the did:web authority. The DID document should be re-registered to reflect the update as the `didDocumentStatus` of the authority is changed to `outOfSync`. When the DID document is re-registered, call [synchronizeWithDidDocument](#synchronize-with-did-document) tell the system to start using the new key for signing.
+
+#### HTTP request
+
+`POST /v1.0/verifiableCredentials/authorities/:authorityId/didInfo/signingKeys`
+
+#### Request headers
+
+| Header | Value |
+| -------- | -------- |
+| Authorization | Bearer (token). Required |
+| Content-Type | application/json |
+
+#### Request Body
+
+```JSON
+{
+	"signingKeyCurve": "P-256"
+}
+```
+
+#### Response message
+
+```JSON
+HTTP/1.1 200 OK
+Content-type: application/json
+
+{
+	"id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
+	"keyUrl": "https://vcwingtipskv.vault.azure.net/keys/vcSigningKey-00aa00aa-bb11-cc22-dd33-44ee44ee44ee/5255b9f2d9b94dc19a369ff0d36e3407",
+	"curve": "P-256"
 }
 ```
 
