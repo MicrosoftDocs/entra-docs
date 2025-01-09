@@ -43,13 +43,13 @@ Create a WAF policy with Azure-managed default rule sets (DRS). See [Web Applica
 1. Select **Create**.
 1. Go to **Create a WAF policy**.
 1. Select **Basics**.
-   1. **Policy for**: select **Global WAF (Front Door)**.
-   1. **Front Door SKU**: Select the Premium SKU.
-   1. **Subscription**: Select your Front Door subscription name.
-   1. **Resource group**: Select your Front Door resource group name.
-   1. **Policy name**: Enter a unique name for your WAF policy.
-   1. **Policy state**: Select **Enabled**.
-   1. **Policy mode**: Select **Detection**.
+   - **Policy for**: select **Global WAF (Front Door)**.
+   - **Front Door SKU**: Select the Premium SKU.
+   - **Subscription**: Select your Front Door subscription name.
+   - **Resource group**: Select your Front Door resource group name.
+   - **Policy name**: Enter a unique name for your WAF policy.
+   - **Policy state**: Select **Enabled**.
+   - **Policy mode**: Select **Detection**.
 1. Go to **Create a WAF policy** > **Association**.
 1. Select **+ Associate a Front Door profile**.
 1. **Front Door**: Select the Front Door name that you associated with your Microsoft Entra External ID custom domain.
