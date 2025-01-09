@@ -6,7 +6,7 @@ author: barclayn
 manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: how-to
-ms.date: 01/22/2024
+ms.date: 01/06/2025
 ms.subservice: privileged-identity-management
 ms.author: barclayn
 ms.reviewer: shaunliu
