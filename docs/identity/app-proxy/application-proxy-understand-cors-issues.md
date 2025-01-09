@@ -114,7 +114,7 @@ Some CORS issues can't be resolved. For example, your application redirects to `
 
 ### Option 6: Complex application
 
-For applications composed of multiple individual web applications where preflight (OPTIONS) requests are used, you can publish them using the complex application feature. For more information, see [Understand complex applications in Microsoft Entra application proxy](~/identity-platform/application-proxy-configure-complex-application.md).
+For applications composed of multiple individual web applications where preflight (OPTIONS) requests are used, you can publish them using the complex application feature. For more information, see [Understand complex applications in Microsoft Entra application proxy](application-proxy-configure-complex-application.md).
 
 ## See also
 - [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md) 
