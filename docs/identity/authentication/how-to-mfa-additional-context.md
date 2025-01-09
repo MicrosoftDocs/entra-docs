@@ -1,36 +1,32 @@
 ---
-title: Use added context in Authenticator notifications
-description: Learn how to use added context in multifactor authentication (MFA) notifications.
+title: Use additional context in Authenticator notifications
+description: Learn how to use additional context in multifactor authentication (MFA) notifications.
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/28/2024
+ms.date: 01/07/2025
 ms.author: justinha
 author: mjsantani
 # Customer intent: As an identity administrator, I want to encourage users to use the Authenticator app in Microsoft Entra ID to improve and secure user sign-in events.
 ---
-# Use added context in Authenticator notifications - Authentication methods policy
+# Use additional context in Authenticator notifications - Authentication methods policy
 
 This article discusses how to improve the security of user sign-in by adding the application name and geographic location of the sign-in to Authenticator passwordless and push notifications.
 
 ## Prerequisites
 
 - Your organization needs to enable Authenticator passwordless and push notifications for some users or groups by using the new Authentication methods policy. You can edit the Authentication methods policy by using the Microsoft Entra admin center or Microsoft Graph API.
-
-  > [!NOTE]
-  > The policy schema for Microsoft Graph APIs is improved. The older policy schema is now deprecated. Make sure that you use the new schema to help prevent errors.
-
-- More context can be targeted to only a single group, which can be dynamic or nested. On-premises synchronized security groups and cloud-only security groups are supported for the Authentication method policy.
+- Additional context can be targeted to only a single group, which can be dynamic or nested. On-premises synchronized security groups and cloud-only security groups are supported for the Authentication method policy.
 
 ## Passwordless phone sign-in and multifactor authentication
 
 When a user receives a passwordless phone sign-in or multifactor authentication (MFA) push notification in Authenticator, they see the name of the application that requests the approval and the location based on the IP address from where the sign-in originated.
 
-:::image type="content" border="false" source="./media/howto-authentication-passwordless-phone/location.png" alt-text="Screenshot that shows added context in the MFA push notification.":::
+:::image type="content" border="false" source="./media/howto-authentication-passwordless-phone/location.png" alt-text="Screenshot that shows additional context in the MFA push notification.":::
 
-To further improve sign-in security, the added context is combined with [number matching](how-to-mfa-number-match.md).
+Admins can combine additional context with [number matching](how-to-mfa-number-match.md) to further improve sign-in security.
 
-:::image type="content" border="false" source="./media/howto-authentication-passwordless-phone/location-with-number-match.png" alt-text="Screenshot that shows added context with number matching in the MFA push notification.":::
+:::image type="content" border="false" source="./media/howto-authentication-passwordless-phone/location-with-number-match.png" alt-text="Screenshot that shows additional context with number matching in the MFA push notification.":::
 
 ### Policy schema changes
 
@@ -50,7 +46,7 @@ GET https://graph.microsoft.com/v1.0/authenticationMethodsPolicy/authenticationM
 
 For more information, see [microsoftAuthenticatorAuthenticationMethodConfiguration resource type](/graph/api/resources/microsoftAuthenticatorAuthenticationMethodConfiguration).
 
-#### Example of how to enable added context for all users
+#### Example of how to enable additional context for all users
 
 In `featureSettings`, change `displayAppInformationRequiredState` and `displayLocationInformationRequiredState` from `default` to `enabled`.
 
@@ -216,8 +212,6 @@ Only users who are enabled for Authenticator under `includeTargets` see the appl
 
 #### Example of how to exclude a group from the application name and geographic location
 
-In `featureSettings`, change the states of `displayAppInformationRequiredState` and `displayLocationInformationRequiredState` from `default` to `enabled`. Inside `includeTarget` for each `featureSetting` value, change the ID from `all_users` to the object ID of the group from the Microsoft Entra admin center.
-
 In addition, for each of the features, you change the ID of `excludeTarget` to the object ID of the group from the Microsoft Entra admin center. This change excludes that group from seeing the application name or geographic location.
 
 You need to `PATCH` the entire schema to prevent overwriting any previous configuration. We recommend that you do a `GET` first. Then update only the relevant fields and then `PATCH`. The following example shows an update to `displayAppInformationRequiredState` and `displayLocationInformationRequiredState` under `featureSettings`.
@@ -305,9 +299,9 @@ Only users who are enabled for Authenticator under `includeTargets` see the appl
 }
 ```
 
-### Turn off added context
+### Turn off additional context
 
-To turn off added context, you need to `PATCH` `displayAppInformationRequiredState` and `displayLocationInformationRequiredState` from `enabled` to `disabled`/`default`. You can also turn off only one of the features.
+To turn off additional context, you need to `PATCH` `displayAppInformationRequiredState` and `displayLocationInformationRequiredState` from `enabled` to `disabled`/`default`. You can also turn off only one of the features.
 
 ```json
 {
@@ -351,7 +345,7 @@ To turn off added context, you need to `PATCH` `displayAppInformationRequiredSta
 }
 ```
 
-## Enable added context in the Microsoft Entra admin center
+## Enable additional context in the Microsoft Entra admin center
 
 To enable the application name or geographic location in the Microsoft Entra admin center, follow these steps:
 
@@ -377,7 +371,7 @@ To enable the application name or geographic location in the Microsoft Entra adm
 
 ## Known issues
 
-- Added context isn't supported for Network Policy Server (NPS) or Active Directory Federation Services.
+- Additional context isn't supported for Network Policy Server (NPS) or Active Directory Federation Services.
 - Users can modify the location reported by iOS and Android devices. As a result, Authenticator is updating its security baseline for Location-Based Access Control (LBAC) Conditional Access policies. Authenticator denies authentications where the user might be using a different location than the actual GPS location of the mobile device where Authenticator is installed.  
 
   In the November 2023 release of Authenticator, users who modify the location of their device see a denial message in Authenticator when they do an LBAC authentication. Beginning in January 2024, any users who run older Authenticator versions are blocked from LBAC authentication with a modified location:
