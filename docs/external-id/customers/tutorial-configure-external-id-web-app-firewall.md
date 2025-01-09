@@ -19,7 +19,7 @@ In this tutorial, you learn how to enable the [Azure Web Application Firewall](/
 
 ## Prerequisites
 
-- **Azure subscription**. If you don’t have one, [get an Azure account](https://azure.microsoft.com/free/) for free.
+- **An Azure subscription**. If you don’t have one, [get an Azure account](https://azure.microsoft.com/free/) for free.
 - **Microsoft Entra External ID tenant**. Authorization server that verifies user credentials with custom policies in the tenant, also known as the identity provider (IdP). Learn how to [create an external tenant](how-to-create-external-tenant-portal.md).
 - **Azure Front Door Premium**. [Azure Front Door](/azure/frontdoor/) enables custom domains for the Microsoft Entra External ID tenant with security optimization and access to WAF managed rule sets.
 - **Azure Web Application Firewall** (requires Premium SKU). [Azure WAF](https://azure.microsoft.com/services/web-application-firewall/) manages traffic that the authorization server receives.
