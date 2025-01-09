@@ -112,6 +112,10 @@ You can change your application to support CORS by adding the Access-Control-All
 
 Some CORS issues can't be resolved. For example, your application redirects to `login.microsoftonline.com` to authenticate, and the access token expires. The CORS call then fails. A workaround for this scenario is to extend the lifetime of the access token, to prevent it from expiring during a user’s session. For more information, see [Configurable token lifetimes in Microsoft Entra ID](~/identity-platform/configurable-token-lifetimes.md).
 
+### Option 6: Complex application
+
+For applications composed of multiple individual web applications where preflight (OPTIONS) requests are used, you can publish them using the complex application feature. For more information, see [Understand complex applications in Microsoft Entra application proxy](~/identity-platform/application-proxy-configure-complex-application.md).
+
 ## See also
 - [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md) 
 - [Plan a Microsoft Entra application proxy deployment](conceptual-deployment-plan.md) 
