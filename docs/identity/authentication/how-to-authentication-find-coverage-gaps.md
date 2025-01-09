@@ -5,7 +5,7 @@ description: Learn how to find and address gaps in strong authentication coverag
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/19/2024
+ms.date: 01/06/2025
 
 ms.author: justinha
 author: inbarckMS 

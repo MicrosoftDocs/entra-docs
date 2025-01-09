@@ -141,11 +141,11 @@ Calculated offline. This detection is discovered using information provided byâ€
 
 Calculated offline. A password spray attack is where multiple identities are attacked using common passwords in a unified brute force manner. The risk detection is triggered when an account's password is valid and has an attempted sign in. This detection signals that the user's password has correctly been identified through a password spray attack, not that the attacker was able to access any resources.
 
-[Tips for investigating malicious IP address detections.](howto-identity-protection-investigate-risk.md#investigating-password-spray-detections)
+[Tips for investigating password spray detections.](howto-identity-protection-investigate-risk.md#investigating-password-spray-detections)
 
 #### Suspicious browser	 
 
-Calculated offline. Suspicious browser detection indicates anomalous behavior based on suspicious sign-in activity across multiple tenants from different countries in the same browser. 
+Calculated offline. Suspicious browser detection indicates anomalous behavior based on suspicious sign-in activity across multiple tenants from different countries/regions in the same browser. 
 
 [Tips for investigating suspicious browser detections.](howto-identity-protection-investigate-risk.md#investigating-suspicious-browser-detections)
 
