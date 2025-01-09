@@ -26,7 +26,7 @@ In this tutorial, you learn how to enable the [Azure Web Application Firewall](/
 - **A custom domain**. Use with the custom domain features in Azure Front Door. Learn how to [enable custom URL domains for apps in external tenants](how-to-custom-url-domain.md).
 
 > [!IMPORTANT]
-> After you configure the custom domain, [test your custom domain](how-to-custom-url-domain.md#test-your-custom-url-domains).
+> After you configure the custom domain, [test your custom domain](how-to-custom-url-domain.md#test-your-custom-url-domains) before you use it.
 
 ## Enable WAF
 
