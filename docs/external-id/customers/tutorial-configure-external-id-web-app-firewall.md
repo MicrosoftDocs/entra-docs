@@ -36,20 +36,20 @@ To enable WAF for protection, configure a WAF policy and associate it with Azure
 
 Create a WAF policy with Azure-managed default rule sets (DRS). See [Web Application Firewall DRS rule groups and rules](/azure/web-application-firewall/afds/waf-front-door-drs).
 
-1. Sign in to the **Azure portal**.
+1. Sign in to the [Azure portal](https://portal.azure.com).
 1. Under **Azure services**, select **Create a resource**.
 1. Search for **Azure WAF**.
 1. Select **Azure Service Web Application Firewall (WAF) from Microsoft**.
 1. Select **Create**.
 1. Go to **Create a WAF policy**.
 1. Select **Basics**.
-1. For **Policy for**, select **Global WAF (Front Door)**.
-1. **Front Door SKU**: Select the Premium SKU.
-1. **Subscription**: Select your Front Door subscription name.
-1. **Resource group**: Select your Front Door resource group name.
-1. **Policy name**: Enter a unique name for your WAF policy.
-1. **Policy state**: Select **Enabled**.
-1. **Policy mode**: Select **Detection**.
+   1. **Policy for**: select **Global WAF (Front Door)**.
+   1. **Front Door SKU**: Select the Premium SKU.
+   1. **Subscription**: Select your Front Door subscription name.
+   1. **Resource group**: Select your Front Door resource group name.
+   1. **Policy name**: Enter a unique name for your WAF policy.
+   1. **Policy state**: Select **Enabled**.
+   1. **Policy mode**: Select **Detection**.
 1. Go to **Create a WAF policy** > **Association**.
 1. Select **+ Associate a Front Door profile**.
 1. **Front Door**: Select the Front Door name that you associated with your Microsoft Entra External ID custom domain.
@@ -111,7 +111,7 @@ To see WAF act on request traffic, select **Switch to Prevention mode** from you
 
 To revert to **Detection mode**, select **Switch to Detection mode** from the **Overview** page.
 
-## Next steps
+## Related content
 
 - [Best practices for Azure Web Application Firewall in Azure Front Door](/azure//web-application-firewall/afds/waf-front-door-best-practices)
 - [Manage Web Application Firewall policies](/azure/firewall-manager/manage-web-application-firewall-policies)
