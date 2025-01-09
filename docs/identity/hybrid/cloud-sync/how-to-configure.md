@@ -6,7 +6,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 04/26/2024
+ms.date: 12/16/2024
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 
@@ -21,7 +21,7 @@ The following documentation demonstrates the new guided user experience for Micr
 For additional information and an example of how to configure cloud sync, see the video below.
 
 
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWKact]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=f88ca6c8-8308-4a63-a1b1-53de75214298]
 
 
 ## Configure provisioning

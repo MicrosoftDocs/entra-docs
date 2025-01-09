@@ -367,6 +367,8 @@ Example:
 
 Custom strings that can be used to categorize and identify the application.
 
+Individual tags must be between 1 and 256 characters (inclusive). No whitespaces or duplicate tags are allowed. There is no specific limit on the number of tags that can be added, subject to general manifest size limits.
+
 Example:
 
 ```json
@@ -451,7 +453,7 @@ Api:{
         }
     ],
     "preAuthorizedApplications": [{
-        "appId": "abcdefg2-000a-1111-a0e5-812ed8dd72e8",
+        "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",
         "permissionIds": [
         "8748f7db-21fe-4c83-8ab5-53033933c8f1"
         ]

@@ -26,6 +26,9 @@
   items:
   - name: Authentication methods
     items:
+    - name: Accessibility
+      href: ./accessibility/authentication-methods-accessibility.md
+      displayName: Accessibility, Special People, MFA Accessibility
     - name: Overview
       href: concept-authentication-methods.md
     - name: Manage 
@@ -134,11 +137,11 @@
         items:
         - name: Enable passkeys for an organization
           href: how-to-enable-passkey-fido2.md
-        - name: Register passkey (preview)
+        - name: Register passkey 
           href: how-to-register-passkey.md
-        - name: Register passkey with a mobile device (preview)
+        - name: Register passkey with a mobile device 
           href: how-to-register-passkey-mobile.md
-        - name: Sign in with passkey (preview)
+        - name: Sign in with passkey 
           href: how-to-sign-in-passkey.md  
         - name: Passkey (FIDO2) compatibility matrix
           href: concept-fido2-compatibility.md
@@ -146,15 +149,15 @@
           href: concept-fido2-hardware-vendor.md  
       - name: Microsoft Authenticator
         items:
-        - name: Enable passkeys in Authenticator (preview)
+        - name: Enable passkeys in Authenticator 
           href: how-to-enable-authenticator-passkey.md
-        - name: Support passkeys in Authenticator (preview)
+        - name: Support passkeys in Authenticator 
           href: how-to-support-authenticator-passkey.md
-        - name: Register passkeys in Authenticator (preview)
+        - name: Register passkeys in Authenticator 
           href: how-to-register-passkey-authenticator.md
-        - name: Sign in with passkeys in Authenticator (preview)
+        - name: Sign in with passkeys in Authenticator 
           href: how-to-sign-in-passkey-authenticator.md
-        - name: Passkeys in Authenticator FAQs (preview)
+        - name: Passkeys in Authenticator FAQs 
           href: passkey-authenticator-faq.yml
         - name: Enable Authenticator authentication method
           href: howto-authentication-passwordless-phone.md
@@ -186,7 +189,9 @@
             href: concept-certificate-based-authentication-technical-deep-dive.md
           - name: Configure Microsoft Entra CBA
             href: how-to-certificate-based-authentication.md
-          - name: Windows smart card logon
+          - name: Configure certificate authorities
+            href: how-to-configure-certificate-authorities.md
+          - name: Windows smart card sign-in
             href: concept-certificate-based-authentication-smartcard.md
           - name: Apple devices
             href: concept-certificate-based-authentication-mobile-ios.md
@@ -244,10 +249,16 @@
       href: howto-mfa-userdevicesettings.yml
     - name: Verify mandatory MFA 
       href: how-to-mandatory-multifactor-authentication.md
+    - name: Federate MFA setup
+      href: how-to-mfa-expected-inbound-assertions.md
     - name: Find coverage gaps
       href: how-to-authentication-find-coverage-gaps.md
     - name: Enable per-user MFA
       href: howto-mfa-userstates.md
+    - name: Manage hardware OATH tokens
+      href: how-to-mfa-manage-oath-tokens.md
+    - name: Upload hardware OATH tokens
+      href: how-to-mfa-upload-oath-tokens.md
     - name: Manage external authentication method
       href: how-to-authentication-external-method-manage.md
     - name: Configure authentication providers
@@ -376,8 +387,10 @@
     href: /graph/api/resources/authenticationmethods-overview
   - name: Authentication strengths APIs - Microsoft Graph 
     href: /graph/api/resources/authenticationstrengths-overview
-  - name: Authentication methods policy - Microsoft Graph
+  - name: Authentication methods policy APIs - Microsoft Graph
     href: /graph/api/resources/authenticationmethodspolicies-overview
+  - name: Authentication methods activity APIs - Microsoft Graph
+    href: /graph/api/resources/authenticationmethods-usage-insights-overview
   - name: Service limits and restrictions
     href: ~/identity/users/directory-service-limits-restrictions.md
 - name: Resources

@@ -9,7 +9,7 @@ ms.date: 02/09/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As a web app developer, I want to handle SameSite cookie changes in the Chrome browser, so that I can ensure authentication works correctly and prevent CSRF attacks in my web applications.
 ---
 

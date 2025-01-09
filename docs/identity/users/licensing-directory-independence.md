@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: conceptual
-ms.date: 11/15/2023
+ms.date: 12/16/2024
 ms.author: barclayn
 ms.custom: it-pro
 ms.reviewer: sumitp

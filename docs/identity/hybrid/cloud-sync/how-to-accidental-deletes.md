@@ -27,7 +27,7 @@ To use this feature, you set the threshold for the number of objects that, if de
 
 For more information and an example, see the following video.
 
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWK5mV]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=2af05990-497c-46b5-ae3e-d20c8909bbe8]
 
 
 ## Configure accidental delete prevention

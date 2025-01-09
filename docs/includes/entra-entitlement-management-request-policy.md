@@ -109,11 +109,11 @@ In the **Approval** section, you specify whether an approval is required when us
 
 For a demonstration of how to add approvers to a request policy, watch the following video:
 
->[!VIDEO https://www.microsoft.com/videoplayer/embed/RE4cZfg]
+>[!VIDEO https://learn-video.azurefd.net/vod/player?id=15df4213-d77d-4c88-b5c4-9ccfb261eefa]
 
 For a demonstration of how to add a multiple-stage approval to a request policy, watch the following video:
 
->[!VIDEO https://www.microsoft.com/videoplayer/embed/RE4d1Jw]
+>[!VIDEO https://learn-video.azurefd.net/vod/player?id=25c39e83-da3e-4f41-8d91-8b865b25b702]
 
 Follow these steps to specify the approval settings for requests for the access package:
 

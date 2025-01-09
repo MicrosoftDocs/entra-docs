@@ -51,7 +51,7 @@ The following metadata shows a sample tenant-specific `EntityDescriptor` element
 <EntityDescriptor
 xmlns="urn:oasis:names:tc:SAML:2.0:metadata"
 ID="_00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
-entityID="https://sts.windows.net/aaaabbbb-0000-cccc-1111-dddd2222eeee/">
+entityID="https://sts.windows.net/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/">
 ```
 
 You can replace the tenant ID in the tenant-independent endpoint with your tenant ID to create a tenant-specific `EntityID` value. The resulting value will be the same as the token issuer. The strategy allows a multitenant application to validate the issuer for a given tenant.

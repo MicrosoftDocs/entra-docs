@@ -538,6 +538,8 @@
       href: connect/howto-troubleshoot-upn-changes.md
     - name: End-to-end troubleshooting of objects and attributes
       href: /troubleshoot/azure/active-directory/troubleshoot-aad-connect-objects-attributes
+    - name: Clear on-premises attributes from migrated Microsoft Entra ID users and groups
+      href: connect/tshoot-clear-on-premises-attributes.md
   - name: Reference
     items:
     - name: Hybrid Identity Required Ports and Protocols

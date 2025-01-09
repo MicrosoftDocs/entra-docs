@@ -19,6 +19,9 @@ ms.reviewer: saumadan
 
 This article covers the recommendation to investigate unused applications. This recommendation is called `StaleApps` in the recommendations API in Microsoft Graph. 
 
+> [!NOTE]
+> With [Microsoft Security Copilot](/copilot/security/microsoft-security-copilot), you can use natural language prompts to get insights on unused applications. Learn more about how to [Assess application risks using Microsoft Security Copilot](/entra/fundamentals/copilot-security-entra-investigate-risky-apps#explore-unused-microsoft-entra-applications).
+
 ## Prerequisites
 
 [!INCLUDE [Recommendations roles](../../includes/recommendations-roles.md)]
@@ -79,7 +82,7 @@ To remove the application:
 
 To indicate the application is still needed and skip the recommendation:
 
-- [Update the recommendation status](howto-use-recommendations.md#how-to-update-a-recommendation) to **dismissed** or **postponed**.
+- [Update the recommendation status](howto-use-recommendations.md#how-to-update-a-recommendation-and-impacted-resources) to **dismissed** or **postponed**.
     - Use **dismissed** if determined that the app will remain inactive for the rest of its lifecycle.
     - Use **dismissed** if you think the app as included in the recommendation in error.
     - Use **postponed** if you need more time to review the app.
