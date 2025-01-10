@@ -68,10 +68,10 @@ The first time your organization uses these modules for this scenario, you need 
    Import-Module -Name $module 
    } 
 ``` 
- 3. Connect to Microsoft Graph.
+ 3. Connect to Microsoft Graph. This section of the tutorial illustrates reading users, groups, and applications, so requires the `User.Read.All`, `Group.Read.All`, `Application.Read.All`, and `Directory.Read.All` permission scopes. For more information on permissions, see [Microsoft Graph permissions reference](/graph/permissions-reference).
  
 ```powershell
-  Connect-MgGraph -Scopes "User.Read.All", "Group.Read.All", "Application.Read.All", "Directory.Read.All" -ContextScope Process
+  Connect-MgGraph -Scopes "User.Read.All", "Group.Read.All", "Application.Read.All", "Directory.Read.All" -ContextScope Process -NoWelcome
 ``` 
 
  This command prompts you to sign in with your Microsoft Entra credentials. After signing in, you may need to consent to the required permissions if it's your first time connecting, or if new permissions are required.
@@ -108,12 +108,12 @@ In these PowerShell scripts, we export selected properties from the Microsoft En
 We included a hard-coded **snapshot date** which identifies the data in the JSON file with a specific date and allows us to keep track of similar data sets over time in Azure Data Explorer. The snapshot date is also useful for comparing changes in data between two snapshot dates. 
 
 ```powershell
-$SnapshotDate = "2024-01-11"
+$SnapshotDate = Get-Date -AsUTC -Format "yyyy-MM-dd"
 ```
 
 ### Get Entra user data 
 
-This script exports selected properties from the Entra user object to a JSON file. We'll import this data into Azure Data Explorer in a [subsequent section of this tutorial](#3-import-json-files-with-data-from-microsoft-entra-id-into-azure-data-explorer).
+This script exports selected properties from the Entra user object to a JSON file. We'll import this and additional data from other JSON files into Azure Data Explorer in a [subsequent section of this tutorial](#3-import-json-files-with-data-from-microsoft-entra-id-into-azure-data-explorer).
 
      
 ```powershell
@@ -289,10 +289,10 @@ In this section, you'll use PowerShell to extract data from Microsoft Entra ID G
 For this you may need to [install Microsoft Graph PowerShell modules](/powershell/microsoftgraph/installation) to extract Microsoft Entra ID Governance data. The first time your organization uses these modules for this scenario, you need to be in a Global Administrator role to allow Microsoft Graph PowerShell to grant consent for use in your tenant. Subsequent interactions can use a lower-privileged role.
 
  1. Open PowerShell.
- 1. If you don't have all the [Microsoft Graph PowerShell modules](https://www.powershellgallery.com/packages/Microsoft.Graph) already installed, install the required Microsoft Graph modules. The following modules are required for this section of the tutorial. If you already have these modules installed, then continue at the next step.
+ 1. If you don't have all the [Microsoft Graph PowerShell modules](https://www.powershellgallery.com/packages/Microsoft.Graph) already installed, install the required Microsoft Graph modules. The following modules are required for this section of the tutorial: `Microsoft.Graph.Identity.Governance`. If you already have these modules installed, then continue at the next step.
 
 ```powershell
-   $modules = @()
+   $modules = @('Microsoft.Graph.Identity.Governance')
    foreach ($module in $modules) {
    Install-Module -Name $module -Scope CurrentUser -AllowClobber -Force
    }
@@ -300,24 +300,26 @@ For this you may need to [install Microsoft Graph PowerShell modules](/powershel
  2. Import the modules into the current PowerShell session. 
  
  ```powershell
-   $modules = @()
+   $modules = @('Microsoft.Graph.Identity.Governance')
    foreach ($module in $modules) {
    Import-Module -Name $module
    } 
 ``` 
- 3. Connect to Microsoft Graph.
+
+ 3. Connect to Microsoft Graph. This section of the tutorial illustrates retrieving data from entitlement management and access reviews, so requires the `AccessReview.Read.All` and `EntitlementManagement.Read.All` permission scopes. For other reporting use cases such as for PIM or lifecycle workflows, then update the `Scopes` parameter with the necessary permissions. For more information on permissions, see [Microsoft Graph permissions reference](/graph/permissions-reference).
  
 ```powershell
-  Connect-MgGraph -Scopes "" -ContextScope Process
+  Connect-MgGraph -Scopes "AccessReview.Read.All, EntitlementManagement.Read.All" -ContextScope Process -NoWelcome
 ``` 
 
  This command prompts you to sign in with your Microsoft Entra credentials. After signing in, you may need to consent to the required permissions if it's your first time connecting, or if new permissions are required.
 
-### PowerShell Queries to extract Microsoft Entra ID Governance data needed to build custom reports in Azure Data Explorer
+### PowerShell queries to extract Microsoft Entra ID Governance data needed to build custom reports in Azure Data Explorer
 
-The following queries extract Microsoft Entra ID Governance data from Microsoft Graph using PowerShell and export the data to JSON files which are imported into Azure Data Explorer in the subsequent section 3. There may be multiple scenarios for generating reports with this type of data, including:
- * access reviews
- * entitlement management
+You can use queries to extract Microsoft Entra ID Governance data from Microsoft Graph using PowerShell and export the data to JSON files, which are imported into Azure Data Explorer in the subsequent section. There may be multiple scenarios for generating reports with this type of data, including:
+
+ * reporting on historical access reviews
+ * reporting on assignments via entitlement management
 
 ## 5: Import JSON files with data from Microsoft Entra ID Governance into Azure Data Explorer
 
@@ -462,6 +464,9 @@ AppRoleAssignments
 
 ## Set up ongoing imports
 
+This tutorial illustrates a one-time data extract, transform and load (ETL) process to populate Azure Data Explorer with a single snapshot for reporting purposes. For ongoing reporting or to compare changes over time, you can automate the process of populating Azure Data Explorer from Microsoft Entra, so that your database continues to have current data. 
+
+You can use [Azure Automation](/azure/automation/overview), an Azure cloud service, to host the PowerShell scripts needed to extract data from Microsoft Entra ID and Microsoft Entra ID Governance and import it into Azure Data Explorer. For more information, see [Automate Microsoft Entra ID Governance tasks with Azure Automation](identity-governance-automation.md).
 
 ## Bring in data from other sources
 
