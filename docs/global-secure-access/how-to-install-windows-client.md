@@ -16,7 +16,7 @@ ms.reviewer: lirazbarak
 The Global Secure Access client, an essential component of Global Secure Access, helps organizations manage and secure network traffic on end-user devices. The client's main role is to route traffic that needs to be secured by Global Secure Access to the cloud service. All other traffic goes directly to the network. The [Forwarding Profiles](concept-traffic-forwarding.md), configured in the portal, determine which traffic the Global Secure Access client routes to the cloud service.
 
 >[!NOTE]
->The Global Secure Access Client is available for macOS, Android and iOS. To learn how to install the Global Secure Access client on the different platforms, see [Global Secure Access client for macOS](how-to-install-macos-client.md), [Global Secure Access client for Android](how-to-install-android-client.md), and [Global Secure Access client for iOS](how-to-install-ios-client.md).
+>The Global Secure Access Client is available for macOS, Android, and iOS. To learn how to install the Global Secure Access client on the different platforms, see [Global Secure Access client for macOS](how-to-install-macos-client.md), [Global Secure Access client for Android](how-to-install-android-client.md), and [Global Secure Access client for iOS](how-to-install-ios-client.md).
 
 This article describes how to download and install the Global Secure Access client for Windows.
 
