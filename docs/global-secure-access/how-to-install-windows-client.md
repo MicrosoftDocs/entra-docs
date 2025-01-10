@@ -30,15 +30,23 @@ This article describes how to download and install the Global Secure Access clie
 - The Global Secure Access client requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ## Download the client
+### Download and install the Global Secure Access client
+Download the Remote Desktop client installer, choosing the correct version for your device:
+1. Download the Remote Desktop client installer, choosing the correct version for your device:
+   - [Windows 64-bit](https://aka.ms/GlobalSecureAccess-windows)
+   - [Android](https://aka.ms/GlobalSecureAccess-Android-download)
+   - [iOS (Preview)](https://aka.ms/GlobalSecureAccess-iOS-download)
+   - [MacOS (Preview)](https://aka.ms/GlobalSecureAccess-macOS)
 
-The most current version of the Global Secure Access client is available to download from the Microsoft Entra admin center.
+### Downloading from the Microsoft Entra admin center
+The most current version of the Global Secure Access client is also available to download from the Microsoft Entra admin center.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Connect** > **Client download**.
 1. Select **Download Client**.
 :::image type="content" source="media/how-to-install-windows-client/client-download-screen.png" alt-text="Screenshot of the Client download screen with the Download Client button highlighted.":::
     
-## Install the Global Secure Access client
+## Install the Global Secure Access client for Windows
 ### Automated installation
 Organizations can install the Global Secure Access client silently with the `/quiet` switch, or use Mobile Device Management (MDM) solutions, such as [Microsoft Intune](/mem/intune/apps/apps-win32-app-management) to deploy the client to their devices.
 
