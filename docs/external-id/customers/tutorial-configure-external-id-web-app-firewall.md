@@ -104,7 +104,7 @@ AzureDiagnostics
 | render columnchart kind=stacked
 ```
 
-## Switch from Detction mode to Prevention mode
+## Switch from Detection mode to Prevention mode
 
 To observe activity on requested traffic, select **Switch to Prevention mode** from your WAF policy's **Overview** page in the Azure portal. This selection changes the mode from **Detection mode** to **Prevention mode**. The WAF blocks requests that match the rules in WAF policy and logs them in the WAF logs. The WAF takes the prescribed action when a request matches one or more rules and logs the results. By default, the DRS sets to [anomaly scoring mode](/azure/web-application-firewall/afds/waf-front-door-drs#anomaly-scoring-mode); the WAF doesn’t take action on a request unless it meets the anomaly score threshold.
 
