@@ -5,7 +5,7 @@ description: Learn about frontline worker management capabilities that are provi
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 02/16/2024
+ms.date: 01/07/2025
 ms.author: cmulligan
 author: csmulligan
 manager: CelesteDG

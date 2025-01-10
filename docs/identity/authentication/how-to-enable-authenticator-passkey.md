@@ -5,7 +5,7 @@ description: Learn about how to enable passkeys in Microsoft Authenticator for M
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/25/2024
+ms.date: 01/07/2025
 
 
 ms.author: justinha
@@ -71,12 +71,13 @@ An Authentication Policy Administrator needs to consent to allow Authenticator i
      If you change key restrictions and remove an AAGUID that you previously allowed, users who previously registered an allowed method can no longer use it for sign-in.
 
    - Set **Restrict specific keys** to **Allow**.
-   - Select **Microsoft Authenticator** to automatically add the Authenticator app AAGUIDs to the key restriction list. You can also manually add the following AAGUIDs to allow users to register passkeys in Authenticator by signing in to the Authenticator app or going through a guided flow on the **Security info** page:
+   - Select **Microsoft Authenticator** to automatically add the Authenticator app AAGUIDs to the key restrictions list. You can also manually add the following AAGUIDs to allow users to register passkeys in Authenticator by signing in to the Authenticator app or by going through a guided flow on **Security info**:
 
      - **Authenticator for Android**: `de1e552d-db1d-4423-a619-566b625cdc84`
      - **Authenticator for iOS**: `90a3ccdf-635c-4729-a248-9b709135078f`
    
-      If you turn off key restrictions, make sure that you clear the **Microsoft Authenticator** checkbox so that users aren't prompted to set up a passkey in the Authenticator app in [Security info](https://mysignins.microsoft.com/security-info).
+     > [!NOTE]
+     > If you turn off key restrictions, make sure you clear the **Microsoft Authenticator** checkbox so that users aren't prompted to set up a passkey in the Authenticator app on [Security info](https://mysignins.microsoft.com/security-info).
 
    :::image type="content" border="true" source="media/how-to-enable-authenticator-passkey/optional-settings.png" alt-text="Screenshot that shows Authenticator enabled for passkey."lightbox="media/how-to-enable-authenticator-passkey/optional-settings.png":::
 
