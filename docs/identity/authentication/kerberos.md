@@ -126,12 +126,6 @@ While traditional Kerberos requires network connectivity to on-premises domain c
     - Use [Microsoft Entra ID reports and monitoring tools](https://learn.microsoft.com/azure/active-directory/reports-monitoring/overview) to keep track of authentication events.
 
 
-4. **Manage Service Principals**:
-    - Monitor and rotate service principal passwords as required.
-
-5. **Monitor Authentication Activity**:
-    - Use Microsoft Entra ID reports and monitoring tools to keep track of authentication events.
-
 ## Conclusion
 
 Microsoft Entra Kerberos bridges the gap between traditional on-premises authentication and modern cloud-based services. By allowing Microsoft Entra ID to act as a KDC, it simplifies authentication for hybrid users accessing Azure services, enhances security with modern authentication methods, and reduces the need for on-premises infrastructure.
