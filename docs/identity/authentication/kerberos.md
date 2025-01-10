@@ -29,11 +29,8 @@ ms.reviewer:
 ## Benefits
 - **Seamless Access**: Authenticate to Azure services without VPN or direct on-premises connections.
 - **Modern Authentication**: Includes MFA, passwordless options like FIDO2 security keys, and conditional access policies.
-- **Single Sign-On (SSO)**: [Overview of Single Sign-On (SSO)](https://learn.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
-- **Multifactor Authentication (MFA)**: [What is Azure AD Multi-Factor Authentication?](https://learn.microsoft.com/azure/active-directory/authentication/concept-mfa-howitworks)
-- **Conditional Access**: [What is Conditional Access in Azure Active Directory?](https://learn.microsoft.com/azure/active-directory/conditional-access/overview)
-- **Windows Hello for Business (WHfB)**: [Windows Hello for Business Overview](https://learn.microsoft.com/windows/security/identity-protection/hello-for-business/hello-overview)
-- **Enhanced Security**: Centralized authentication with advanced security features like single sign-on (SSO), MFA, conditional access, and Windows Hello for Business (WHfB) cloud trust.
+- **Simplified Management**: Less need for on-premises authentication servers.
+- **Enhanced Security**: Centralized authentication with advanced security features like [single sign-on (SSO)](https://learn.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on), [MFA](https://learn.microsoft.com/azure/active-directory/authentication/concept-mfa-howitworks), [conditional access](https://learn.microsoft.com/azure/active-directory/conditional-access/overview), and [Windows Hello for Business (WHfB) cloud trust](https://learn.microsoft.com/windows/security/identity-protection/hello-for-business/hello-hybrid-cloud-trust).
 - **Scalability**: Supports large-scale deployments with ease.
 - **Interoperability**: Compatible with various operating systems and devices.
 
@@ -150,4 +147,5 @@ Administrators benefit from streamlined management, enhanced security features, 
 ## Learn more
 
 -	[Create the trusted domain object](/azure/storage/files/storage-files-identity-auth-hybrid-cloud-trust?tabs=azure-portal#create-the-trusted-domain-object)
+-	)
 -	[Configure a client to retrieve kerberos tickets](https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable?tabs=azure-portal%2Cintune#configure-the-clients-to-retrieve-kerberos-tickets)
