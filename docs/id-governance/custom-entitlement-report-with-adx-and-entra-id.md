@@ -1,6 +1,6 @@
 ---
 title: 'Custom reports using Microsoft Entra and application data'
-description: Tutorial that describes how to create customized reports in Azure Data Explorer using data from Microsoft Entra ID.
+description: Tutorial that describes how to create customized reports in Azure Data Explorer using data from Microsoft Entra.
 author: billmath
 manager: amycolannino
 ms.service: entra-id-governance
@@ -9,7 +9,7 @@ ms.date: 12/30/2024
 ms.author: billmath
 ---
 
-# Tutorial: Customized reports in Azure Data Explorer using data from Microsoft Entra ID
+# Tutorial: Customized reports in Azure Data Explorer using data from Microsoft Entra
 
 In this tutorial, you learn how to create customized reports in [Azure Data Explorer (ADX)](/azure/data-explorer/data-explorer-overview) using data from Microsoft Entra ID and Microsoft Entra ID Governance services. This tutorial complements other reporting options such as [Archive & report with Azure Monitor and entitlement management](entitlement-management-logs-and-reporting.md), which focuses on exporting the audit log into Azure Monitor for retention and analysis. By comparison, exporting Microsoft Entra ID data to Azure Data Explorer provides flexibility for creating custom reports on Microsoft Entra objects, including historical and deleted objects. In addition, use of Azure Data Explorer enables data aggregation from additional sources, with massive scalability, flexible schema, and retention policies. Azure Data Explorer is especially helpful when you need to retain access data for years, perform ad-hoc investigations, or need to run custom queries on user access data.
 
@@ -337,6 +337,24 @@ Generate a JSON file with access review definition names and IDs that are used t
       }
    }
    $definitions | ConvertTo-Json -Depth 10 | Set-Content "EntraAccessReviewDefinition.json"
+```
+
+### Get entitlement management access package data
+
+Generate a JSON file with access package names and IDs that are used to create custom views in Azure Data Explorer. The sample includes all access packages, but additional filtering can be included if needed.
+
+```powershell
+   $accesspackages1 = Get-MgEntitlementManagementAccessPackage -All
+   $accesspackages2 = @()
+   # Iterate over each access package
+   foreach ($accesspackage in $accesspackages1) {
+      $accesspackages2 += [PSCustomObject]@{
+         Id = $accesspackage.Id
+         DisplayName = $accesspackage.DisplayName
+         SnapshotDate = $SnapshotDate
+      }
+   }
+   $accesspackages2 | ConvertTo-Json -Depth 10 | Set-Content "EntraAccessPackage.json"
 ```
 
 ## 5: Import JSON files with data from Microsoft Entra ID Governance into Azure Data Explorer
