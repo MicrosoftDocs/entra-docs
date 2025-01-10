@@ -20,7 +20,7 @@ ms.reviewer:
 > For information on Kerberos in Windows, review [Kerberos authentication overview](/windows-server/security/kerberos/kerberos-authentication-overview)
 
 ## Key Features
-- **Cloud-Based KDC**: Uses Microsoft Entra ID as the Key Distribution Center, reducing the need for domain controllers in Azure.
+- **Cloud-Based KDC**: Uses Microsoft Entra ID as the Key Distribution Center, reducing the need for connectivity to domain controllers.
 - **Hybrid Identity Support**: Authenticates users from on-premises Active Directory, easing the move to cloud services.
 - **Modern Authentication**: Supports multifactor authentication (MFA), passwordless options, and conditional access policies.
 - **Simplified Infrastructure**: Reduces reliance on on-premises infrastructure, making management easier.
