@@ -20,7 +20,7 @@ In this article, you learn how to enable the [Azure Web Application Firewall](/a
 ## Prerequisites
 
 - **An Azure subscription**. If you don’t have one, [get an Azure account](https://azure.microsoft.com/free/) for free.
-- **A Microsoft Entra External ID tenant**. Authorization server that verifies user credentials with custom policies in the tenant, also known as the identity provider (IdP). Learn how to [create an external tenant](how-to-create-external-tenant-portal.md).
+- **A Microsoft Entra External ID tenant**. Authorization server that verifies user credentials with user flows in the tenant, also known as the identity provider (IdP). Learn how to [create an external tenant](how-to-create-external-tenant-portal.md).
 - **Azure Front Door Premium**. [Azure Front Door](/azure/frontdoor/) enables custom domains for the Microsoft Entra External ID tenant with security optimization and access to WAF managed rule sets.
 - **Azure Web Application Firewall** (requires Premium SKU). [Azure WAF](https://azure.microsoft.com/services/web-application-firewall/) manages traffic that the authorization server receives.
 - **A custom domain**. Use with the custom domain features in Azure Front Door. Learn how to [enable custom URL domains for apps in external tenants](how-to-custom-url-domain.md).
@@ -34,22 +34,21 @@ To enable WAF for protection, configure a WAF policy and associate it with Azure
 
 ### Create Azure Web Application Firewall policy
 
-Create a WAF policy with Azure-managed default rule sets (DRS). See [Web Application Firewall DRS rule groups and rules](/azure/web-application-firewall/afds/waf-front-door-drs).
+Use the following steps to create the WAF policy.
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
 1. Under **Azure services**, select **Create a resource**.
-1. Search for **Azure WAF**.
-1. Select **Azure Service Web Application Firewall (WAF) from Microsoft**.
+1. In the search bar, type **Azure WAF**, then select **Azure Service Web Application Firewall (WAF) from Microsoft**.
 1. Select **Create**.
 1. Go to **Create a WAF policy**.
 1. Select **Basics**.
-   - **Policy for**: select **Global WAF (Front Door)**.
-   - **Front Door SKU**: Select the Premium SKU.
-   - **Subscription**: Select your Front Door subscription name.
-   - **Resource group**: Select your Front Door resource group name.
-   - **Policy name**: Enter a unique name for your WAF policy.
-   - **Policy state**: Select **Enabled**.
-   - **Policy mode**: Select **Detection**.
+   - For **Policy for**, select **Global WAF (Front Door)**.
+   - For **Front Door SKU**, select the Premium SKU.
+   - For **Subscription**, select your Front Door subscription name.
+   - For **Resource group**, select your Front Door resource group name.
+   - For **Policy name**, enter a unique name for your WAF policy.
+   - For **Policy state**, select **Enabled**.
+   - For **Policy mode**, select **Detection**.
 1. Go to **Create a WAF policy** > **Association**.
 1. Select **+ Associate a Front Door profile**.
 1. **Front Door**: Select the Front Door name that you associated with your Microsoft Entra External ID custom domain.
@@ -105,9 +104,9 @@ AzureDiagnostics
 | render columnchart kind=stacked
 ```
 
-## Switch modes
+## Switch from Detction mode to Prevention mode
 
-To see WAF act on request traffic, select **Switch to Prevention mode** from your WAF policy’s **Overview** page in the Azure portal. This selection changes the mode from **Detection mode** to **Prevention mode**. The WAF blocks requests that match the rules in WAF policy and logs them in the WAF logs. The WAF takes the prescribed action when a request matches one or more rules and logs the results. By default, the DRS sets to [anomaly scoring mode](/azure/web-application-firewall/afds/waf-front-door-drs#anomaly-scoring-mode); the WAF doesn’t take action on a request unless it meets the anomaly score threshold.
+To observe activity on requested traffic, select **Switch to Prevention mode** from your WAF policy's **Overview** page in the Azure portal. This selection changes the mode from **Detection mode** to **Prevention mode**. The WAF blocks requests that match the rules in WAF policy and logs them in the WAF logs. The WAF takes the prescribed action when a request matches one or more rules and logs the results. By default, the DRS sets to [anomaly scoring mode](/azure/web-application-firewall/afds/waf-front-door-drs#anomaly-scoring-mode); the WAF doesn’t take action on a request unless it meets the anomaly score threshold.
 
 To revert to **Detection mode**, select **Switch to Detection mode** from the **Overview** page.
 
