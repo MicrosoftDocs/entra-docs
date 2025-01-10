@@ -47,15 +47,3 @@ Welcome to what's new in documentation for Microsoft Entra External ID in extern
 - [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md) -  SMS-based authentication updates
 - [Create self-service sign-up user flows for apps in external tenants](how-to-user-flow-sign-up-sign-in-customers.md) -  Graph API updates
 
-## September 2024
-
-### New articles
-
-- [Set up Azure Monitor in external tenants (preview)](how-to-azure-monitor.md)
-- [Microsoft Entra External ID training, live demo, and videos](reference-training-videos.md)
-
-### Updated articles
-
-- [Quickstart: Get started with the Microsoft Entra External ID extension for Visual Studio Code](visual-studio-code-extension.md) - Updated sign-in experience
-- [Service limits and restrictions](reference-service-limits.md) - Updated phone limits
-- [Tutorial: Prepare your iOS/macOS app for native authentication](tutorial-native-authentication-prepare-ios-macos-app.md) - MSAL framework updates
