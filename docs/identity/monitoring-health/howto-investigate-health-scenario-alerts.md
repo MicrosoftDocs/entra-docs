@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 01/07/2025
+ms.date: 01/09/2025
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -54,11 +54,20 @@ The signals and alerts are available in the Microsoft Entra Health area of the M
 
 1. Browse to **Identity** > **Monitoring and health** > **Health**. The page opens to the Service Level Agreement (SLA) Attainment page.
 
-1. Select the **Scenario Monitoring** tab.
+1. Select the **Health Monitoring** tab.
 
-    ![Screenshot of the Microsoft Entra Health landing page.](media/howto-investigate-health-scenario-alerts/identity-health-landing-page.png)
+    ![Screenshot of the Microsoft Entra Health landing page.](media/howto-investigate-health-scenario-alerts/health-monitoring-landing-page.png)
 
-1. Select **View details** for the scenario you wish to investigate.
+1. Select a scenario from the list. The page opens to the scenarios with active alerts, but if you want to view the signals for a different scenario, select the **All scenarios** filter button.
+
+1. 
+
+
+
+
+
+
+
     - The default view is the last seven days, but you can adjust the date range to 24 hours, seven days, or one month.
     - The data is updated every 15 minutes.
     - We recommend reviewing these signals on a regular schedule so that you can recognize your tenant's trends and patterns.
