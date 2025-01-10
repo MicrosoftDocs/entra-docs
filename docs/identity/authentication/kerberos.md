@@ -41,59 +41,45 @@ ms.reviewer:
 
 While traditional Kerberos requires network connectivity to on-premises domain controllers, **Microsoft Entra Kerberos** operates over the internet with Microsoft Entra ID.
 
-### Authentication Workflow
+### Authentication flow
 
-1. **User authentication**:
+1. **User Authentication**:
     - The user signs into a Windows device.
     - The Local Security Authority (LSA) uses the Cloud Authentication Provider (CloudAP) to authenticate via OAuth to Microsoft Entra ID.
     - Microsoft Entra ID issues a Primary Refresh Token (PRT) containing user and device information.
+    - If the user logged on with a FIDO key, they also receive a Partial TGT.
 
-2. **Cloud TGT issuance**:
+2. **Cloud TGT Issuance**:
     - Microsoft Entra ID functions as the KDC, issuing a Kerberos Ticket Granting Ticket (TGT) to the client.
     - The TGT is stored in the client's Kerberos ticket cache.
+    - The client maps to a different realm for cloud resources and captures the Azure AD tenant details.
 
-3. **Service ticket request**:
-    - When the user accesses a service (for example, Azure Files), the client requests a service ticket from Microsoft Entra ID by presenting the TGT.
+3. **Realm Mapping and Azure Tenant Info**:
+    - Windows LSASS obtains the Kerberos Cloud TGT, realm mapping, and Azure tenant info from Azure AD.
+    - When logging into Azure Virtual Desktop, the user authenticates and gets their PRT and Cloud TGT.
+    - Azure Virtual Desktop calls FSLogix to load the user profile from the Azure Files share.
+    - The Kerberos stack places the Cloud TGT in the cache along with the realm mapping and adds a "KDC Proxy" map between the realm mapping and the Azure AD tenant details.
+
+4. **Service Ticket Request**:
+    - When the user accesses a service (e.g., Azure Files), the client requests a service ticket from Microsoft Entra ID by presenting the TGT.
     - The client sends a Ticket Granting Service Request (TGS-REQ) to Microsoft Entra ID.
+    - Kerberos identifies the service (e.g., cifs/mystuff.file.core.windows.net) and maps the domain to KERBEROS.MICROSOFTONLINE.COM.
+    - The KDC Proxy protocol facilitates the transfer of Kerberos over the internet, and Azure AD receives the TGS-REQ.
 
-4. **Service Ticket Issuance**:
-    - Microsoft Entra ID validates the TGS-REQ and issues a service ticket (TGS-REP) encrypted with the service's key.
+5. **Service Ticket Issuance**:
+    - Azure AD verifies that the Cloud TGT matches the Azure AD tenant ID.
+    - Confirms the user's existence.
+    - Looks up the requested Service Principal Name (SPN) of the Azure Files resource registered as an application in Azure AD.
+    - Generates a ticket and encrypts it using the Azure Files storage keys stored in its SPN.
+    - Bundles everything into a TGS-REP and returns it to the client.
 
-5. **Resource Access**:
-    - The client presents the service ticket to the service.
-    - The service decrypts the ticket and grants access if the ticket is valid.
+6. **Resource Access**:
+    - The Kerberos stack receives the TGS-REP, strips out the ticket, and generates an Application Request (AP-REQ).
+    - The AP-REQ is handed to SMB, which embeds it into a header and sends the SMB hello to Azure Files.
+    - Azure Files receives the hello, decrypts the ticket using its storage keys, and grants access.
+    - FSLogix can now read the user profile in the Azure File Share and load the Azure Virtual Desktop session.
 
 
-
-## Example services that use Microsoft Entra Kerberos
-
-### Azure Files
-
-- **Description**: A managed file share service that uses SMB protocol.
-- **Usage**: Enables hybrid users to access file shares in Azure using Kerberos authentication.
-- **Benefit**: Allows storage of user profiles and data accessible from cloud services without on-premises dependencies.
-- **Learn more**: [Azure Files overview](https://learn.microsoft.com/azure/storage/files/storage-files-introduction)
-
-### Azure Virtual Desktop
-
-- **Description**: A desktop and application virtualization service.
-- **Usage**: Uses FSLogix profile containers stored in Azure Files authenticated via Microsoft Entra Kerberos.
-- **Benefit**: Provides a seamless, secure virtual desktop experience.
-- **Learn more**: [Azure Virtual Desktop overview](https://learn.microsoft.com/azure/virtual-desktop/overview)
-
-### Azure SQL Managed Instance
-
-- **Description**: A fully managed SQL Server instance offering.
-- **Usage**: Supports Windows Authentication using Microsoft Entra Kerberos.
-- **Benefit**: Enables secure database access without storing credentials in applications.
-- **Learn more**: [Azure SQL Managed Instance overview](https://learn.microsoft.com/azure/azure-sql/managed-instance/sql-managed-instance-paas-overview)
-
-### Azure Virtual Machines (Microsoft Entra ID Join)
-
-- **Description**: Virtual machines joined directly to a Microsoft Entra ID instance.
-- **Usage**: Authenticate to services using Microsoft Entra Kerberos.
-- **Benefit**: Simplifies VM management and authentication in the cloud.
-- **Learn more**: [Azure Virtual Machines overview](https://learn.microsoft.com/azure/virtual-machines/overview)
 
 ## Example Use Cases
 
