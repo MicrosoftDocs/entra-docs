@@ -1,7 +1,7 @@
 ---
 title: "What's new in Microsoft Entra External ID in external tenants"
 description: "New and updated documentation for Microsoft Entra External ID in external tenants."
-ms.date: 12/02/2024
+ms.date: 01/10/2025
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: whats-new
@@ -15,6 +15,12 @@ manager: CelesteDG
 # What's new in docs: External ID in external tenants
 
 Welcome to what's new in documentation for Microsoft Entra External ID in external tenants. This article lists new docs that were added and docs that were significantly updated in the last three months.
+
+## December 2024
+
+### Updated articles
+
+- [Supported features in workforce and external tenants](concept-supported-features-customers.md) - Added pricing and ID Governance details
 
 ## November 2024
 
@@ -36,20 +42,8 @@ Welcome to what's new in documentation for Microsoft Entra External ID in extern
 
 ### Updated articles
 
-- [Register an app in your external tenant](how-to-register-ciam-app.md) -  Implicit flow testing updates
+- [Register an app in your external tenant](how-to-register-ciam-app.md) -  Testing updates
 - [Multifactor authentication in external tenants](concept-multifactor-authentication-customers.md) -  SMS-based authentication updates
 - [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md) -  SMS-based authentication updates
 - [Create self-service sign-up user flows for apps in external tenants](how-to-user-flow-sign-up-sign-in-customers.md) -  Graph API updates
 
-## September 2024
-
-### New articles
-
-- [Set up Azure Monitor in external tenants (preview)](how-to-azure-monitor.md)
-- [Microsoft Entra External ID training, live demo, and videos](reference-training-videos.md)
-
-### Updated articles
-
-- [Quickstart: Get started with the Microsoft Entra External ID extension for Visual Studio Code](visual-studio-code-extension.md) - Updated sign-in experience
-- [Service limits and restrictions](reference-service-limits.md) - Updated phone limits
-- [Tutorial: Prepare your iOS/macOS app for native authentication](tutorial-native-authentication-prepare-ios-macos-app.md) - MSAL framework updates
