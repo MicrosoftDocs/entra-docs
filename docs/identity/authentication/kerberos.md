@@ -121,16 +121,20 @@ While traditional Kerberos requires network connectivity to on-premises domain c
 ## Getting Started with Microsoft Entra Kerberos
 
 1. **Set Up Microsoft Entra Connect**:
-    - Synchronize on-premises AD DS users to Microsoft Entra ID.
+    - Synchronize on-premises AD DS users to Microsoft Entra ID. Follow the steps in the [Microsoft Entra Connect installation guide](https://learn.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-prerequisites).
 
 2. **Enable Microsoft Entra Kerberos**:
-    - Configure Azure Files or other services to use Microsoft Entra Kerberos authentication.
+    - Configure Azure Files or other services to use Microsoft Entra Kerberos authentication. Refer to the [Azure Files Microsoft Entra Kerberos guide](https://learn.microsoft.com/azure/storage/files/storage-files-identity-auth-hybrid-cloud-trust?tabs=azure-portal).
 
 3. **Client Configuration**:
-    - Ensure Windows clients are up to date and configured to authenticate using Microsoft Entra Kerberos.
+    - Ensure Windows clients are up to date and [configured](https://learn.microsoft.com/azure/azure-sql/managed-instance/winauth-azuread-setup-incoming-trust-based-flow?view=azuresql#configure-the-group-policy-object-gpo) to authenticate using Microsoft Entra Kerberos.
 
-    > [!NOTE]
-    > Clients need to be [configured to use a KDC proxy](https://learn.microsoft.com/azure/azure-sql/managed-instance/winauth-azuread-setup-incoming-trust-based-flow?view=azuresql#configure-the-group-policy-object-gpo)
+4. **Manage Service Principals**:
+    - Monitor and rotate service principal passwords as required.
+
+5. **Monitor Authentication Activity**:
+    - Use [Microsoft Entra ID reports and monitoring tools](https://learn.microsoft.com/azure/active-directory/reports-monitoring/overview) to keep track of authentication events.
+
 
 4. **Manage Service Principals**:
     - Monitor and rotate service principal passwords as required.
