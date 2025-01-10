@@ -272,14 +272,14 @@ Once you have setup a database in your Azure Data Explorer cluster or free clust
 
 Next, follow these steps for each exported JSON file, to get your exported data into that Azure Data Explorer database.
 
- 1. Right-select on the database name of the database where you want to ingest the data. Select **Get Data**.
+ 1. Right-select on the database name of the database where you want to ingest the data. Select **Get data**.
 
     :::image type="content" source="/azure/data-explorer/media/get-data-file/get-data.png" alt-text="Screenshot of query tab, with right-select on a database and the get options dialog open." lightbox="/azure/data-explorer/media/get-data-file/get-data.png":::
 
  2. Select the data source from the available list. In this tutorial, you're ingesting data from a **Local file**.
  1. Select **+ New table** and enter a table name, based on the name of the JSON file you're importing, For example, if you're importing EntraUsers.json, name the table **EntraUsers**. After the first import, the table already exists, and you can select it as the target table for a subsequent import.
  1. Select **Browse for files**, select the JSON file, and select **Next**.
- 1. Azure Data Explorer automatically detects the schema and provides a preview in the **Inspect** tab. Select **Finish** to create the table and import the data from that file.
+ 1. Azure Data Explorer automatically detects the schema and provides a preview in the **Inspect** tab. Select **Finish** to create the table and import the data from that file. Once the data is ingested, click **Close**.
  1. Repeat each of the preceding steps for each of the JSON files that you generated in the previous section.
 
 ## 4: Extract Microsoft Entra ID Governance data with PowerShell
@@ -321,6 +321,24 @@ You can use queries to extract Microsoft Entra ID Governance data from Microsoft
  * reporting on historical access reviews
  * reporting on assignments via entitlement management
 
+### Get Access review schedule definition data
+
+Generate a JSON file with access review definition names and IDs that are used to create custom views in Azure Data Explorer. The sample includes all access reviews, but additional filtering can be included if needed. For more information, see [use the filter query parameter](/graph/api/accessreviewset-list-definitions?view=graph-rest-1.0&tabs=http#use-the-filter-query-parameter).
+
+```powershell
+   $allsched = Get-MgIdentityGovernanceAccessReviewDefinition -All
+   $definitions = @()
+   # Iterate over each definition
+   foreach ($definition in $allsched) {
+      $definitions += [PSCustomObject]@{
+         Id = $definition.Id
+         DisplayName = $definition.DisplayName
+         SnapshotDate = $SnapshotDate
+      }
+   }
+   $definitions | ConvertTo-Json -Depth 10 | Set-Content "EntraAccessReviewDefinition.json"
+```
+
 ## 5: Import JSON files with data from Microsoft Entra ID Governance into Azure Data Explorer
 
 In this section, we import the newly created JSON files for the Microsoft Entra ID Governance services into Azure Data Explorer, alongside the data already imported for the Microsoft Entra ID services, for further analysis.
@@ -332,14 +350,14 @@ In your Azure Data Explorer cluster or free cluster, navigate to the database wh
 
 Next, follow these steps for each exported JSON file from the previous section, to get your exported data into that Azure Data Explorer database.
 
- 1. Right-select on the database name of the database where you want to ingest the data. Select **Get Data**.
+ 1. Right-select on the database name of the database where you want to ingest the data. Select **Get data**.
 
     :::image type="content" source="/azure/data-explorer/media/get-data-file/get-data.png" alt-text="Screenshot of query tab, with right-select on a database and the get options dialog open." lightbox="/azure/data-explorer/media/get-data-file/get-data.png":::
 
  2. Select the data source from the available list. In this tutorial, you're ingesting data from a **Local file**.
  1. Select **+ New table** and enter a table name, based on the name of the JSON file you're importing, After the first import, the table already exists, and you can select it as the target table for a subsequent import.
  1. Select **Browse for files**, select the JSON file, and select **Next**.
- 1. Azure Data Explorer automatically detects the schema and provides a preview in the **Inspect** tab. Select **Finish** to create the table and import the data from that file.
+ 1. Azure Data Explorer automatically detects the schema and provides a preview in the **Inspect** tab. Select **Finish** to create the table and import the data from that file. Once the data is ingested, click **Close**.
  1. Repeat each of the preceding steps for each of the JSON files that you generated in the previous section.
 
 ## 6: Use Azure Data Explorer to build custom reports 
