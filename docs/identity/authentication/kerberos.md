@@ -72,24 +72,28 @@ While traditional Kerberos requires network connectivity to on-premises domain c
 - **Description**: A managed file share service that uses SMB protocol.
 - **Usage**: Enables hybrid users to access file shares in Azure using Kerberos authentication.
 - **Benefit**: Allows storage of user profiles and data accessible from cloud services without on-premises dependencies.
+- **Learn more**: [Azure Files overview](https://learn.microsoft.com/azure/storage/files/storage-files-introduction)
 
 ### Azure Virtual Desktop
 
 - **Description**: A desktop and application virtualization service.
 - **Usage**: Uses FSLogix profile containers stored in Azure Files authenticated via Microsoft Entra Kerberos.
 - **Benefit**: Provides a seamless, secure virtual desktop experience.
+- **Learn more**: [Azure Virtual Desktop overview](https://learn.microsoft.com/azure/virtual-desktop/overview)
 
 ### Azure SQL Managed Instance
 
 - **Description**: A fully managed SQL Server instance offering.
 - **Usage**: Supports Windows Authentication using Microsoft Entra Kerberos.
 - **Benefit**: Enables secure database access without storing credentials in applications.
+- **Learn more**: [Azure SQL Managed Instance overview](https://learn.microsoft.com/azure/azure-sql/managed-instance/sql-managed-instance-paas-overview)
 
 ### Azure Virtual Machines (Microsoft Entra ID Join)
 
 - **Description**: Virtual machines joined directly to a Microsoft Entra ID instance.
 - **Usage**: Authenticate to services using Microsoft Entra Kerberos.
 - **Benefit**: Simplifies VM management and authentication in the cloud.
+- **Learn more**: [Azure Virtual Machines overview](https://learn.microsoft.com/azure/virtual-machines/overview)
 
 ## Example Use Cases
 
@@ -151,5 +155,4 @@ Administrators benefit from streamlined management, enhanced security features, 
 ## Learn more
 
 -	[Create the trusted domain object](/azure/storage/files/storage-files-identity-auth-hybrid-cloud-trust?tabs=azure-portal#create-the-trusted-domain-object)
--	)
 -	[Configure a client to retrieve kerberos tickets](https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable?tabs=azure-portal%2Cintune#configure-the-clients-to-retrieve-kerberos-tickets)
