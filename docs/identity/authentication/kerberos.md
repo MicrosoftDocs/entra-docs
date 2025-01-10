@@ -6,67 +6,43 @@ manager: amycolannino
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 12/12/2024
+ms.date: 01/10/2025
 ms.author: barclayn
 ms.reviewer:
 ---
 
 # Microsoft Entra Kerberos overview
 
-Kerberos is a network authentication protocol designed to provide strong authentication for client-server applications by using secret-key cryptography. Developed by MIT, Kerberos works by assigning a unique key, known as a Ticket Granting Ticket (TGT), to each user. This TGT is used to request access to various services within a network without repeatedly transmitting the user's password. The protocol ensures secure communication by encrypting the tickets and authenticating both the user and the service, preventing eavesdropping and replay attacks.
 
-**Microsoft Entra Kerberos** enhances traditional Kerberos authentication by enabling Microsoft Entra ID to act as the Key Distribution Center (KDC) in the cloud. This allows hybrid identities—users synchronized from on-premises Active Directory Domain Services (AD DS) to authenticate to Azure services without the need for on-premises domain controllers. By using Microsoft Entra ID as the KDC, organizations can provide secure access to Azure resources while benefiting from modern authentication methods like multifactor authentication (MFA), passwordless authentication, and conditional access policies.
+**Microsoft Entra Kerberos** enhances traditional Kerberos authentication by enabling Microsoft Entra ID to act as the Key Distribution Center (KDC) in the cloud. This feature enables hybrid identities from on-premises Active Directory Domain Services (AD DS) to authenticate to Azure services using Microsoft Entra Kerberos, enhancing security, and simplifying management. By using Microsoft Entra ID as the KDC, organizations can provide secure access to Azure resources while benefiting from modern authentication methods.
 
 > [!NOTE]
 > For information on Kerberos in Windows, review [Kerberos authentication overview](/windows-server/security/kerberos/kerberos-authentication-overview)
 
-## Features of Microsoft Entra Kerberos
+## Key Features
+- **Cloud-Based KDC**: Uses Microsoft Entra ID as the Key Distribution Center, reducing the need for domain controllers in Azure.
+- **Hybrid Identity Support**: Authenticates users from on-premises Active Directory, easing the move to cloud services.
+- **Modern Authentication**: Supports multifactor authentication (MFA), passwordless options, and conditional access policies.
+- **Simplified Infrastructure**: Reduces reliance on on-premises infrastructure, making management easier.
+- **Azure Integration**: Works seamlessly with Azure services, requiring minimal configuration.
+- **Scalability and Reliability**: Uses Azure's infrastructure for scalable and reliable authentication.
+## Benefits
+- **Seamless Access**: Authenticate to Azure services without VPN or direct on-premises connections.
+- **Modern Authentication**: Includes MFA, passwordless options like FIDO2 security keys, and conditional access policies.
+- **Single Sign-On (SSO)**: [Overview of Single Sign-On (SSO)](https://learn.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
+- **Multifactor Authentication (MFA)**: [What is Azure AD Multi-Factor Authentication?](https://learn.microsoft.com/azure/active-directory/authentication/concept-mfa-howitworks)
+- **Conditional Access**: [What is Conditional Access in Azure Active Directory?](https://learn.microsoft.com/azure/active-directory/conditional-access/overview)
+- **Windows Hello for Business (WHfB)**: [Windows Hello for Business Overview](https://learn.microsoft.com/windows/security/identity-protection/hello-for-business/hello-overview)
+- **Enhanced Security**: Centralized authentication with advanced security features like single sign-on (SSO), MFA, conditional access, and Windows Hello for Business (WHfB) cloud trust.
+- **Scalability**: Supports large-scale deployments with ease.
+- **Interoperability**: Compatible with various operating systems and devices.
 
-Microsoft Entra Kerberos provides several key functionalities that enhance traditional authentication methods:
 
-- **Cloud-Based KDC**: By using Microsoft Entra ID as the Key Distribution Center, Microsoft Entra Kerberos eliminates the need for domain controllers to handle authentication requests in Azure.
-- **Hybrid Identity Support**: Enables authentication for users synchronized from on-premises Active Directory, facilitating a smooth transition to cloud services.
-- **Modern Authentication Methods**: Supports multifactor authentication (MFA), passwordless options, and conditional access policies to improve security.
-- **Reduced Infrastructure Complexity**: Minimizes the reliance on on-premises infrastructure, simplifying management and deployment in cloud settings.
-- **Compatibility with Azure Services**: Integrates with various Azure services, allowing secure access without extensive configuration changes.
-- **Scalability and Reliability**: Uses Azure's infrastructure to provide scalable and reliable authentication services for organizations of all sizes.
-
-## Traditional Kerberos Authentication
-
-### Key Components
-
-1. **Client**: The user or service requesting access.
-2. **Key Distribution Center (KDC)**: Trusted authority (typically an on-premises domain controller) that issues Kerberos tickets.
-3. **Service**: The network resource the client wants to access.
-
-### Authentication Process
-
-1. **User Logon**: The client authenticates with the KDC using credentials (password, smart card, etc.).
-2. **Ticket Granting Ticket (TGT) Issuance**: Upon successful authentication, the KDC issues a TGT to the client.
-3. **Service Ticket Request**: The client presents the TGT to the KDC to request a service ticket for a specific resource.
-4. **Service Ticket Issuance**: The KDC issues a service ticket encrypted with the service's secret key.
-5. **Resource Access**: The client presents the service ticket to the resource server, which decrypts it and grants access if valid.
-
-This process relies on the client’s ability to communicate with the on-premises KDC, which can be limiting in cloud scenarios.
-
-## Differences Between Traditional Kerberos and Microsoft Entra Kerberos
-
-### Authentication Source
-
-- **Traditional Kerberos**: Relies on on-premises AD DS domain controllers as the KDC.
-- **Microsoft Entra Kerberos**: Uses Microsoft Entra ID as the KDC, eliminating the need for on-premises domain controllers for cloud service authentication.
-
-### Capabilities
-
-- **Traditional Kerberos**: Limited to password-based authentication and lacks support for modern security features.
-- **Microsoft Entra Kerberos**: Supports modern authentication methods, including multifactor authentication (MFA), passwordless authentication (for example, FIDO2 security keys), and conditional access policies.
-
-### Infrastructure Requirements
-
-- **Traditional Kerberos**: Requires network connectivity to on-premises domain controllers.
-- **Microsoft Entra Kerberos**: Operates over the internet with Microsoft Entra ID, reducing infrastructure complexity and dependencies.
 
 ## How Microsoft Entra Kerberos Works
+
+
+While traditional Kerberos requires network connectivity to on-premises domain controllers, **Microsoft Entra Kerberos** operates over the internet with Microsoft Entra ID.
 
 ### Authentication Workflow
 
@@ -90,18 +66,14 @@ This process relies on the client’s ability to communicate with the on-premise
     - The client presents the service ticket to the service.
     - The service decrypts the ticket and grants access if the ticket is valid.
 
-### Benefits of this approach
 
-- **Seamless Access**: Users can authenticate to Azure services without VPN or direct connections to on-premises infrastructure.
-- **Modern Authentication**: Supports MFA, passwordless, and conditional access.
-- **Simplified Management**: Reduces the need for managing on-premises authentication servers for cloud resources.
 
-## Services that use Microsoft Entra Kerberos
+## Example services that use Microsoft Entra Kerberos
 
 ### Azure Files
 
 - **Description**: A managed file share service that uses SMB protocol.
-- **Usage**: Enables access to file shares in Azure using Kerberos authentication.
+- **Usage**: Enables hybrid users to access file shares in Azure using Kerberos authentication.
 - **Benefit**: Allows storage of user profiles and data accessible from cloud services without on-premises dependencies.
 
 ### Azure Virtual Desktop
@@ -121,13 +93,6 @@ This process relies on the client’s ability to communicate with the on-premise
 - **Description**: Virtual machines joined directly to a Microsoft Entra ID instance.
 - **Usage**: Authenticate to services using Microsoft Entra Kerberos.
 - **Benefit**: Simplifies VM management and authentication in the cloud.
-
-## Benefits to Administrators
-
-- **Enhanced Security**: Uses Microsoft Entra ID's security features, including conditional access and MFA.
-- **Reduced Infrastructure**: Eliminates the need for maintaining on-premises domain controllers for cloud resource authentication.
-- **Simplified User Experience**: Users have seamless access to resources without other prompts or VPN requirements.
-- **Modern Authentication Support**: Facilitates the adoption of passwordless and multifactor authentication methods.
 
 ## Example Use Cases
 
@@ -168,7 +133,7 @@ This process relies on the client’s ability to communicate with the on-premise
     - Ensure Windows clients are up to date and configured to authenticate using Microsoft Entra Kerberos.
 
     > [!NOTE]
-    > Clients will need to be [configured to use a KDC proxy](https://learn.microsoft.com/azure/azure-sql/managed-instance/winauth-azuread-setup-incoming-trust-based-flow?view=azuresql#configure-the-group-policy-object-gpo)
+    > Clients need to be [configured to use a KDC proxy](https://learn.microsoft.com/azure/azure-sql/managed-instance/winauth-azuread-setup-incoming-trust-based-flow?view=azuresql#configure-the-group-policy-object-gpo)
 
 4. **Manage Service Principals**:
     - Monitor and rotate service principal passwords as required.
@@ -184,4 +149,5 @@ Administrators benefit from streamlined management, enhanced security features, 
 
 ## Learn more
 
-
+-	[Create the trusted domain object](/azure/storage/files/storage-files-identity-auth-hybrid-cloud-trust?tabs=azure-portal#create-the-trusted-domain-object)
+-	[Configure a client to retrieve kerberos tickets](https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable?tabs=azure-portal%2Cintune#configure-the-clients-to-retrieve-kerberos-tickets)
