@@ -390,7 +390,7 @@ The following queries provide examples of common reports, but you can customize 
 
 This report provides a view of who had what access and when to the target app and can be used for security audits, compliance verification, and understanding access patterns within the organization. 
 
-This query targets a specific application within Microsoft Entra AD and analyzes the role assignments as of a certain date. The query retrieves both direct and group-based role assignments, merging this data with user details from the EntraUsers table and role information from the AppRoles table. 
+This query targets a specific application within Microsoft Entra AD and analyzes the role assignments as of a certain date. The query retrieves both direct and group-based role assignments, merging this data with user details from the EntraUsers table and role information from the AppRoles table. In the query below, set the `targetSnapshotDate` to the `snapshotDate` value that was used when loading the data.
 
 ```kusto
 /// Define constants 
