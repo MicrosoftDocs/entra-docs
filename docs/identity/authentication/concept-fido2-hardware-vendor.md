@@ -1,7 +1,7 @@
 ---
 title: Microsoft Entra ID attestation for FIDO2 security key vendors
 description: Explains requirements to prepare FIDO2 hardware for attestation with Microsoft Entra ID
-ms.date: 12/01/2024
+ms.date: 01/06/2025
 ms.service: entra-id
 ms.subservice: authentication
 author: justinha

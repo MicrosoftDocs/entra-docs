@@ -5,7 +5,7 @@ metadata:
   ms.service: entra-id
   ms.subservice: authentication
   ms.topic: faq
-  ms.date: 11/18/2024
+  ms.date: 12/19/2024
   ms.author: justinha
   author: justinha
   manager: amycolannino
@@ -53,4 +53,9 @@ sections:
           Manufacturers choose whether or not to implement these APIs for each device they make. 
           If your device doesn't support these APIs, then the Microsoft Authenticator app may not work for your device on Android 14. 
           For the best experience, we recommend upgrading to Android 15.
+      - question: |
+          Can I sign in with a passkey in Authenticator in China?
+        answer: |        
+          No. Only limited authentication methods are available for Microsoft Authenticator in China. For more information, see [Download Microsoft Authenticator in China](https://support.microsoft.com/account-billing/download-microsoft-authenticator-in-china-ebbef05c-a429-4236-8570-1bb1900fec35).
+
 
