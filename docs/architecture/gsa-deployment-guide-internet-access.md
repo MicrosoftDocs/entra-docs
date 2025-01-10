@@ -29,6 +29,9 @@ Before you enable Microsoft Entra Internet Access, plan for what you want it to 
 - Prevent specific users and groups from using managed devices to access websites by category (such as Alcohol and Tobacco or Social Media). Microsoft Entra Internet Access provides more than 60 categories from which you can choose.
 - Prevent users and groups from using managed devices to access specific fully qualified domain names (FQDN).
 - Configure override policies to allow groups of users to access sites that your web filtering rules would otherwise block.
+- Extend the capabilities of Microsoft Entra Internet Access to entire networks, including devices that are not running the Global Secure Access client
+   - [Simulate remote network connectivity using a remote virtual wide-area network (vWAN)](../global-secure-access/how-to-create-remote-network-vwan.md)
+   - [Simulate remote network connectivity using an Azure virtual network gateway (VNG)](../global-secure-access/how-to-simulate-remote-network.md)
 
 After you understand the capabilities you require in your use cases, create an inventory to associate your users and groups with these capabilities. Understand which users and groups to block or allow access to which web categories and FQDNs. Include rule prioritization for each user group.
 
@@ -47,6 +50,7 @@ At this point, you completed initiate and plan stages of your Secure Access Serv
 1. Create a roll-back plan that defines the circumstances and procedures for when you remove Global Secure Access client from a user device or disable the traffic forwarding profile.
 1. Send end user communications.
 1. Deploy the [Global Secure Access client for Windows](../global-secure-access/how-to-install-windows-client.md) on devices for your pilot group to test.
+1. Configure remote networks using [vWAN](../global-secure-access/how-to-create-remote-network-vwan.md) or [VNG](../global-secure-access/how-to-simulate-remote-network.md) if in scope.
 
 1. Configure [web content filtering policies](../global-secure-access/how-to-configure-web-content-filtering.md#create-a-web-content-filtering-policy) to allow or block categories or FQDNs based on the use cases that you defined during planning.
 

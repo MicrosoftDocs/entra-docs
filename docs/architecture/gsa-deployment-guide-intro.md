@@ -23,7 +23,7 @@ This Deployment Guide helps you to plan and deploy Microsoft Global Secure Acces
 
 ## Perform a Proof of Concept
 
-Perform a Proof of Concept (PoC) to ensure that the solution you choose provides the features and connectivity that you require.
+Perform a [Proof of Concept](https://aka.ms/globalsecureaccesscommunity) (PoC) to ensure that the solution you choose provides the features and connectivity that you require.
 
 Depending on which capabilities you plan to deploy in a PoC for Microsoft Global Secure Access, you need up to seven hours.
 
