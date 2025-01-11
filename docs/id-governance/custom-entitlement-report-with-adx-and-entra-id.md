@@ -282,6 +282,8 @@ Next, follow these steps for each exported JSON file, to get your exported data 
  1. Azure Data Explorer automatically detects the schema and provides a preview in the **Inspect** tab. Select **Finish** to create the table and import the data from that file. Once the data is ingested, click **Close**.
  1. Repeat each of the preceding steps for each of the JSON files that you generated in the previous section.
 
+At the end of those steps you will have the tables `EntraUsers`, `EntraGroups`, `EntraGroupMembership`, `Applications`, `AppRoles`, and `AppRoleAssignments` in the database.
+
 ## 4: Extract Microsoft Entra ID Governance data with PowerShell
 
 In this section, you'll use PowerShell to extract data from Microsoft Entra ID Governance services. If you do not have Microsoft Entra ID Governance, Microsoft Entra ID P2 or Microsoft Entra Suite, then continue in section [use Azure Data Explorer to build custom reports](#6-use-azure-data-explorer-to-build-custom-reports).
@@ -336,7 +338,7 @@ Generate a JSON file with access review definition names and IDs that are used t
          SnapshotDate = $SnapshotDate
       }
    }
-   $definitions | ConvertTo-Json -Depth 10 | Set-Content "EntraAccessReviewDefinition.json"
+   $definitions | ConvertTo-Json -Depth 10 | Set-Content "EntraAccessReviewDefinitions.json"
 ```
 
 ### Get entitlement management access package data
@@ -354,7 +356,7 @@ Generate a JSON file with access package names and IDs that are used to create c
          SnapshotDate = $SnapshotDate
       }
    }
-   $accesspackages2 | ConvertTo-Json -Depth 10 | Set-Content "EntraAccessPackage.json"
+   $accesspackages2 | ConvertTo-Json -Depth 10 | Set-Content "EntraAccessPackages.json"
 ```
 
 ### Get entitlement management access package assignment data
@@ -380,7 +382,7 @@ Generate a JSON file with assignments to access packages that are used to create
          SnapshotDate = $SnapshotDate
       }
    }
-   $apassignments2 | ConvertTo-Json -Depth 10 | Set-Content "EntraAccessPackageAssignment.json"
+   $apassignments2 | ConvertTo-Json -Depth 10 | Set-Content "EntraAccessPackageAssignments.json"
 ```
 
 ## 5: Create tables and import JSON files with data from Microsoft Entra ID Governance into Azure Data Explorer
@@ -404,6 +406,8 @@ Next, follow these steps for each exported JSON file from the previous section, 
  1. Azure Data Explorer automatically detects the schema and provides a preview in the **Inspect** tab. Select **Finish** to create the table and import the data from that file. Once the data is ingested, click **Close**.
  1. Repeat each of the preceding steps for each of the JSON files that you generated in the previous section.
 
+At the end of those steps you will have the tables `EntraAccessReviewDefinitions`, `EntraAccessPackages`, and `EntraAccessPackageAssignments` in the database, in addition to the tables created in section 3.
+
 ## 6: Use Azure Data Explorer to build custom reports 
 
 With the data now available in Azure Data Explorer, you're ready to begin creating customized reports based on your business requirements. 
@@ -416,7 +420,7 @@ The following queries provide examples of common reports, but you can customize 
 
 This report provides a view of who had what access and when to the target app and can be used for security audits, compliance verification, and understanding access patterns within the organization. 
 
-This query targets a specific application within Microsoft Entra AD and analyzes the role assignments as of a certain date. The query retrieves both direct and group-based role assignments, merging this data with user details from the EntraUsers table and role information from the AppRoles table. In the query below, set the `targetSnapshotDate` to the `snapshotDate` value that was used when loading the data.
+This query targets a specific application within Microsoft Entra AD and analyzes the role assignments as of a certain date. The query retrieves both direct and group-based role assignments, merging this data with user details from the `EntraUsers` table and role information from the `AppRoles` table. In the query below, set the `targetSnapshotDate` to the `snapshotDate` value that was used when loading the data.
 
 ```kusto
 /// Define constants 
@@ -462,7 +466,7 @@ directAssignments
 
 This report provides a view of who had what access to the target app between two dates and can be used for security audits, compliance verification, and understanding access patterns within the organization. 
 
-This query targets a specific application within Microsoft Entra ID and analyzes the role assignments between two dates. The query retrieves direct role assignments from the AppRoleAssignments table and merges this data with user details from the EntraUsers table and role information from the AppRoles table. 
+This query targets a specific application within Microsoft Entra ID and analyzes the role assignments between two dates. The query retrieves direct role assignments from the `AppRoleAssignments` table and merges this data with user details from the `EntraUsers` table and role information from the `AppRoles` table. 
 
 ```kusto
 // Set the date range and service principal ID for the query 
@@ -532,11 +536,11 @@ You can use [Azure Automation](/azure/automation/overview), an Azure cloud servi
 
 You can also use Azure features or command line tools such as `lightingest` to bring in data and populate an already existing table. For more information, see [use LightIngest to ingest data into Azure Data Explorer](/azure/data-explorer/lightingest).
 
-For example, to load a file `EntraAccessPackage.json` in the current directory into the `EntraAccessPackage` table as the currently logged-in user:
+For example, to load a file `EntraAccessPackages.json` in the current directory into the `EntraAccessPackages` table as the currently logged-in user:
 
 ```azurecli
 az login
-LightIngest.exe "https://ingest-CLUSTERHOSTNAME;Fed=True" -database:"DATABASE" -table:EntraAccessPackage -sourcepath:"." -pattern:"EntraAccessPackage.json" -format:multijson -azcli:true
+LightIngest.exe "https://ingest-CLUSTERHOSTNAME;Fed=True" -database:"DATABASE" -table:EntraAccessPackages -sourcepath:"." -pattern:"EntraAccessPackages.json" -format:multijson -azcli:true
 ```
 
 
