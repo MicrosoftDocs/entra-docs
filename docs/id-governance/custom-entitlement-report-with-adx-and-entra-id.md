@@ -167,7 +167,7 @@ Generate a JSON file with group names and IDs that are used to create custom vie
 ```
 ### Get Group Membership data 
 
-Generate a JSON file with group membership which is used to create custom views in Azure Data Explorer. 
+Generate a JSON file with group membership which is used to create custom views in Azure Data Explorer. The sample includes all groups, but additional filtering can be included if needed.
 ```powershell
     # Retrieve all groups from Microsoft Entra (Azure AD) 
     $groups = Get-MgGroup -All 
@@ -238,7 +238,7 @@ Generate a JSON file of all appRoles for enterprise apps in Microsoft Entra. Onc
 ``` 
 ### Get AppRole Assignment data 
 
-Generate a JSON file of all app role assignments in the tenant. 
+Generate a JSON file of all app role assignments of users in the tenant. 
 ```powershell
     $users = Get-MgUser -All 
     $result = @() 
@@ -355,6 +355,32 @@ Generate a JSON file with access package names and IDs that are used to create c
       }
    }
    $accesspackages2 | ConvertTo-Json -Depth 10 | Set-Content "EntraAccessPackage.json"
+```
+
+### Get entitlement management access package assignment data
+
+Generate a JSON file with assignments to access packages that are used to create custom views in Azure Data Explorer. The sample includes all assignments that are delivered, but additional filtering can be included if needed.
+
+```powershell
+   $apassignments1 = Get-MgEntitlementManagementAssignment -ExpandProperty target,accessPackage -filter "state eq 'Delivered'" -all
+   $apassignments2 = @()
+   # Iterate over each access package assignment
+   foreach ($assignment in $apassignments1) {
+      $apassignments2 += [PSCustomObject]@{
+         Id = $assignment.Id
+         ScheduleStartDateTime = $assignment.Schedule.StartDateTime -replace "\\/Date\((\d+)\)\\/", '$1' 
+         AccessPackageId = $assignment.AccessPackage.Id
+         AccessPackageDisplayName = $assignment.AccessPackage.DisplayName
+         TargetId = $assignment.Target.Id
+         TargetDisplayName = $assignment.Target.DisplayName
+         TargetEmail = $assignment.Target.Email
+         TargetObjectId = $assignment.Target.ObjectId
+         TargetPrincipalName = $assignment.Target.PrincipalName
+         TargetSubjectType = $assignment.Target.SubjectType
+         SnapshotDate = $SnapshotDate
+      }
+   }
+   $apassignments2 | ConvertTo-Json -Depth 10 | Set-Content "EntraAccessPackageAssignment.json"
 ```
 
 ## 5: Create tables and import JSON files with data from Microsoft Entra ID Governance into Azure Data Explorer
@@ -500,11 +526,11 @@ AppRoleAssignments
 
 ## Set up ongoing imports
 
-This tutorial illustrates a one-time data extract, transform and load (ETL) process to populate Azure Data Explorer with a single snapshot for reporting purposes. For ongoing reporting or to compare changes over time, you can automate the process of populating Azure Data Explorer from Microsoft Entra, so that your database continues to have current data.
+This tutorial illustrates a one-time data extract, transform, and load (ETL) process to populate Azure Data Explorer with a single snapshot for reporting purposes. For ongoing reporting or to compare changes over time, you can automate the process of populating Azure Data Explorer from Microsoft Entra, so that your database continues to have current data.
 
 You can use [Azure Automation](/azure/automation/overview), an Azure cloud service, to host the PowerShell scripts needed to extract data from Microsoft Entra ID and Microsoft Entra ID Governance. For more information, see [Automate Microsoft Entra ID Governance tasks with Azure Automation](identity-governance-automation.md).
 
-You can also use Azure features or command line tools such as `lightingest` to bring in data and populate an already existing table.  For more information, see [use LightIngest to ingest data into Azure Data Explorer](/azure/data-explorer/lightingest).
+You can also use Azure features or command line tools such as `lightingest` to bring in data and populate an already existing table. For more information, see [use LightIngest to ingest data into Azure Data Explorer](/azure/data-explorer/lightingest).
 
 For example, to load a file `EntraAccessPackage.json` in the current directory into the `EntraAccessPackage` table as the currently logged-in user:
 
