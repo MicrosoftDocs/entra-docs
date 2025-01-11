@@ -42,17 +42,18 @@ Follow these steps to sign in to Microsoft Entra ID with a passkey in Authentica
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-user-name.png" alt-text="Screenshot that shows the sign-in with username in Authenticator for iOS devices.":::
 
-   1. If you most recently used a passkey to sign in, you're prompted to sign in with a passkey. Otherwise, select **Other ways to sign in**, and then select **Face, fingerprint, PIN or security key**.
+   If you most recently used a passkey to sign in, you're prompted to sign in with a passkey. Otherwise, select **Other ways to sign in**, and then select **Face, fingerprint, PIN or security key**.
 
-   1. Alternatively, select **Sign-in options** to sign in without entering a username.
+   Alternatively, select **Sign-in options** to sign in without entering a username.
 
-      :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-microsoft.png" alt-text="Screenshot that shows sign-in options in Authenticator for iOS devices.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-microsoft.png" alt-text="Screenshot that shows sign-in options in Authenticator for iOS devices.":::
 
-   1. If you selected **Sign-in options**, then select **Face, fingerprint, PIN or security key**. Otherwise, skip to the next step.
+   If you selected **Sign-in options**, then select **Face, fingerprint, PIN or security key**. Otherwise, skip to the next step.
 
-      :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-options.png" alt-text="Screenshot that shows the options for sign-in in Authenticator for iOS devices.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-options.png" alt-text="Screenshot that shows the options for sign-in in Authenticator for iOS devices.":::
 
-   If you try to sign in without a username and multiple passkeys are saved to your device, you're prompted to choose which passkey to use for sign-in.
+   > [!NOTE]
+   > If you try to sign in without a username and multiple passkeys are saved to your device, you're prompted to choose which passkey to use for sign-in.
 
 1. To select your passkey, follow the steps in the iOS operating system dialog. Verify yourself by using Face ID or Touch ID, or by entering your device PIN.
 
@@ -68,17 +69,18 @@ Follow these steps to sign in to Microsoft Entra ID on another device with a pas
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-user-name.png" alt-text="Screenshot that shows Sign-in options with username in Authenticator for iOS devices.":::
 
-   1. If you last used a passkey to authenticate, you're prompted to authenticate with a passkey. Otherwise, select **Other ways to sign in**, and then select **Face, fingerprint, PIN or security key**.
+   If you last used a passkey to authenticate, you're prompted to authenticate with a passkey. Otherwise, select **Other ways to sign in**, and then select **Face, fingerprint, PIN or security key**.
 
-   1. Alternatively, select **Sign-in options** to sign in without entering a username.
+   Alternatively, select **Sign-in options** to sign in without entering a username.
 
-      :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-microsoft.png" alt-text="Screenshot that shows sign-in options in Authenticator for iOS devices.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-microsoft.png" alt-text="Screenshot that shows sign-in options in Authenticator for iOS devices.":::
 
-   1. If you selected **Sign-in options**, then select **Face, fingerprint, PIN or security key**. Otherwise, skip to the next step.
+   If you selected **Sign-in options**, then select **Face, fingerprint, PIN or security key**. Otherwise, skip to the next step.
 
-      :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-options.png" alt-text="Screenshot that shows the sign-in options in Authenticator for iOS devices.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-ios/sign-in-options.png" alt-text="Screenshot that shows the sign-in options in Authenticator for iOS devices.":::
 
-   If you try to sign in without a username and multiple passkeys are saved to your device, you're prompted to choose which passkey to use for sign-in.
+   > [!NOTE]
+   > If you try to sign in without a username and multiple passkeys are saved to your device, you're prompted to choose which passkey to use for sign-in.
 
 1. To begin cross-device authentication, follow the steps in the operating system or browser prompt. On Windows 11 23H2 or later, select **iPhone, iPad, or Android device**.
 
@@ -143,15 +145,15 @@ This sign-in option requires Bluetooth and an internet connection for both devic
 
    :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-android/sign-in-user-name.png" alt-text="Screenshot that shows the sign-in with a username in Authenticator for iOS devices.":::
 
-   1. If you last used a passkey to authenticate, you're prompted to authenticate with a passkey. Otherwise, select **Other ways to sign in**, and then select **Face, fingerprint, PIN or security key**.
+   If you last used a passkey to authenticate, you're prompted to authenticate with a passkey. Otherwise, select **Other ways to sign in**, and then select **Face, fingerprint, PIN or security key**.
 
-   1. Alternatively, select **Sign-in options** to sign in without having to enter a username.
+   Alternatively, select **Sign-in options** to sign in without having to enter a username.
 
-      :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-android/sign-in-microsoft.png" alt-text="Screenshot that shows the sign-in for Authenticator for Android devices.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-android/sign-in-microsoft.png" alt-text="Screenshot that shows the sign-in for Authenticator for Android devices.":::
 
-   1. If you selected **Sign-in options**, then select **Face, fingerprint, PIN or security key**. Otherwise, skip to the next step.
+   If you selected **Sign-in options**, then select **Face, fingerprint, PIN or security key**. Otherwise, skip to the next step.
 
-      :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-android/sign-in-options.png" alt-text="Screenshot that shows the sign-in options in Authenticator for Android devices.":::
+   :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct-android/sign-in-options.png" alt-text="Screenshot that shows the sign-in options in Authenticator for Android devices.":::
 
 1. To begin cross-device authentication, follow the steps in the operating system or browser prompt. On Windows 11 23H2 or later, select **iPhone, iPad, or Android device**.
 
