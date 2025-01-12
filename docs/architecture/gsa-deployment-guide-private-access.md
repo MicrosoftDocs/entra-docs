@@ -35,7 +35,7 @@ After you understand the capabilities you require in your use cases, create an i
 
 ## Test and deploy Microsoft Entra Private Access
 
-At this point, you completed the initiate and plan stages of your Secure Access Service Edge (SASE) deployment project. You understand what you need to implement for whom. You defined the users to enable in each wave. You have a schedule for each wave's deployment. You have met [licensing requirements](../global-secure-access/overview-what-is-global-secure-access#licensing-overview.md). You're ready to enable Microsoft Entra Private Access.
+At this point, you completed the initiate and plan stages of your Secure Access Service Edge (SASE) deployment project. You understand what you need to implement for whom. You defined the users to enable in each wave. You have a schedule for each wave's deployment. You have met [licensing requirements](../global-secure-access/overview-what-is-global-secure-access.md#licensing-overview). You're ready to enable Microsoft Entra Private Access.
 
 1. Create end user communications to set expectations and provide an escalation path.
 1. Create a roll-back plan that defines the circumstances and procedures for when you remove Global Secure Access client from a user device or disable the traffic forwarding profile.
