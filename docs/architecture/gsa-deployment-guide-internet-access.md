@@ -37,7 +37,7 @@ After you understand the capabilities you require in your use cases, create an i
 
 ## Test and deploy Microsoft Entra Internet Access
 
-At this point, you completed initiate and plan stages of your Secure Access Services Edge (SASE) deployment project. You understand what you need to implement for whom. You defined which users to enable in each wave. You have a schedule for each wave's deployment. You're ready to enable Microsoft Entra Internet Access.
+At this point, you completed initiate and plan stages of your Secure Access Services Edge (SASE) deployment project. You understand what you need to implement for whom. You defined which users to enable in each wave. You have a schedule for each wave's deployment. You have met [licensing requirements](../global-secure-access/overview-what-is-global-secure-access#licensing-overview.md). You're ready to enable Microsoft Entra Internet Access.
 
 1. Complete the Global Secure Access [prerequisites](../global-secure-access/quickstart-access-admin-center.md#prerequisites).
 1. [Create a Microsoft Entra group](../fundamentals/how-to-manage-groups.yml) that includes your pilot users.
