@@ -25,7 +25,7 @@ This Deployment Guide helps you to plan and deploy Microsoft Global Secure Acces
 
 Perform a [Proof of Concept](https://aka.ms/globalsecureaccesscommunity) (PoC) to ensure that the solution you choose provides the features and connectivity that you require.
 
-Depending on which capabilities you plan to deploy in a PoC for Microsoft Global Secure Access, you need up to seven hours.
+Depending on which capabilities you plan to deploy in a PoC for Microsoft Global Secure Access, you need up to seven hours. Ensure you have met the [licensing requirements](../global-secure-access/overview-what-is-global-secure-access.md#licensing-overview).
 
 - Configure prerequisites: One hour
 - Configure initial product: 20 minutes

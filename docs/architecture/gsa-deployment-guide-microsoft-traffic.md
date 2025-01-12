@@ -36,7 +36,7 @@ After you determine which capabilities you require for your use cases, include f
 
 ## Test and deploy Microsoft traffic profile
 
-At this point, you completed the initiate and plan stages of your Global Secure Access deployment project. You understand what you need to implement for whom. You defined the users to enable in each wave. You have a schedule for each wave's deployment. You're ready to enable Microsoft traffic profile.
+At this point, you completed the initiate and plan stages of your Global Secure Access deployment project. You understand what you need to implement for whom. You defined the users to enable in each wave. You have a schedule for each wave's deployment. You have met [licensing requirements](../global-secure-access/overview-what-is-global-secure-access.md#licensing-overview). You're ready to enable Microsoft traffic profile.
 
 1. Create end user communications to set expectations and provide an escalation path.
 1. Create a roll-back plan that defines the circumstances and procedures for when you remove Global Secure Access client from a user device or disable the traffic forwarding profile.
