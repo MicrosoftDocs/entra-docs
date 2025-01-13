@@ -5,7 +5,7 @@ author: omondiatieno
 manager: CelesteDG
 ms.author: jomondi
 ms.custom:
-ms.date: 11/17/2023
+ms.date: 05/29/2024
 ms.reviewer: jawoods, ludwignick, phsignor
 ms.service: identity-platform
 
@@ -86,6 +86,10 @@ Permission requests that contain custom application scopes aren't considered hig
 ### Preauthorization
 
 Preauthorization allows a resource application owner to grant permissions without requiring users to see a consent prompt for the same set of permissions that have been preauthorized. This way, an application that has been preauthorized won't ask users to consent to permissions. Resource owners can preauthorize client apps in the Azure portal or by using PowerShell and APIs, like Microsoft Graph.
+
+## Other authorization systems
+
+The consent framework is only one way an application or user can be authorized to access protected resources. Admins should be aware of other authorization systems that may grant access to sensitive information. Examples of various authorization systems at Microsoft include [Entra built-in roles](/entra/identity/role-based-access-control/permissions-reference), [Azure RBAC](/azure/role-based-access-control/overview), [Exchange RBAC](/exchange/permissions-exo/application-rbac), and [Teams resource-specific consent](/microsoftteams/platform/graph-api/rsc/resource-specific-consent). 
 
 ## See also
 

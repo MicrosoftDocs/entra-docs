@@ -8,7 +8,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 08/23/2024
 ms.author: barclayn
 ms.reviewer: jodah
 
@@ -51,7 +51,7 @@ You can also search and filter the lists individually. Filtering the all members
 
 ## Group memberships
 
-You can also view group memberships for a group on the **Group memberships** page. The **Group memberships** page supports search, sort, and filter operations that are similar to the other Groups pages.
+You can also view group memberships on the **Group memberships** page. The **Group memberships** page supports search, sort, and filter operations that are similar to the other Groups pages.
 
 ## Group member counts
 
@@ -64,8 +64,8 @@ The group **Overview** page provides member counts for groups. You can see the t
 These articles provide additional information on working with groups in Microsoft Entra ID.
 
 - [View your groups and members](~/fundamentals/groups-view-azure-portal.md)
-- [Manage group membership](~/fundamentals/how-to-manage-groups.yml)
-- [Manage dynamic rules for users in a group](groups-create-rule.md)
+- [Manage group memberships](~/fundamentals/how-to-manage-groups.yml)
+- [Manage rules for dynamic membership groups](groups-create-rule.md)
 - [Edit your group settings](~/fundamentals/how-to-manage-groups.yml)
 - [Manage access to resources using groups](~/fundamentals/concept-learn-about-groups.md)
 - [Manage access to SaaS apps using groups](groups-saasapps.md)

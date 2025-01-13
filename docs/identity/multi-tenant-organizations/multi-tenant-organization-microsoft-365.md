@@ -36,7 +36,7 @@ For people search to succeed, while scoped to local tenant boundaries, the entir
 
 :::image type="content" source="./media/multi-tenant-organization-microsoft-365/multi-tenant-user-set.png" alt-text="Diagram that shows users represented across multiple tenants." lightbox="./media/multi-tenant-organization-microsoft-365/multi-tenant-user-set.png":::
 
-Depending on your organization’s needs, the collaborating user set may contain a subset of collaborating employees, or eventually all employees.
+Depending on your organization's needs, the collaborating user set may contain a subset of collaborating employees, or eventually all employees.
 
 ## Sharing your users
 
@@ -54,7 +54,7 @@ Alternatively, pair-wise configuration of inbound and outbound cross-tenant sync
 
 ## B2B member users
 
-To ensure a seamless collaboration experience across the multitenant organization in new Microsoft Teams, B2B identities are provisioned as B2B users of [Member userType](~/external-id/user-properties.md#user-type). 
+To ensure a seamless collaboration experience across the multitenant organization in new Microsoft Teams, B2B identities are provisioned as B2B users of [Member userType](~/external-id/user-properties.md#user-type).
 
 | User synchronization method | Default userType property |
 | --- | --- |

@@ -94,11 +94,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Screenshot of Zscaler One Authentication Settings.](./media/zscaler-one-provisioning-tutorial/secret-token-1.png)
 
-	a. Select **Configure SAML** to open the **Configure SAML** options.
+1. Select **Configure SAML** to open the **Configure SAML** options.
 
 	![Screenshot of Zscaler One Configure SAML.](./media/zscaler-one-provisioning-tutorial/secret-token-2.png)
 
-	b. Select **Enable SCIM-Based Provisioning** to get the settings in **Base URL** and **Bearer Token**. Then save the settings. Copy the **Base URL** setting to **Tenant URL**. Copy the **Bearer Token** setting to **Secret Token**.
+1. Select **Enable SCIM-Based Provisioning** to get the settings in **Base URL** and **Bearer Token**. Then save the settings. Copy the **Base URL** setting to **Tenant URL**. Copy the **Bearer Token** setting to **Secret Token**.
 
 7. After you fill in the boxes shown in Step 5, select **Test Connection** to make sure that Microsoft Entra ID can connect to Zscaler One. If the connection fails, make sure your Zscaler One account has admin permissions and try again.
 
@@ -146,7 +146,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 17. When you're ready to provision, select **Save**.
 
-	![Screenshot of Zscaler One Save.](./media/zscaler-one-provisioning-tutorial/save-provisioning.png)
+	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
 This operation starts the initial synchronization of all users or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than later syncs. They occur approximately every 40 minutes as long as the Microsoft Entra provisioning service runs. 
 

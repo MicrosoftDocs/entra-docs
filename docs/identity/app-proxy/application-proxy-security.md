@@ -103,7 +103,7 @@ The connector uses a client certificate to authenticate to the application proxy
 When the connector is first set up, the following flow events take place:
 
 1. The connector registration to the service happens as part of the installation of the connector. Users are prompted to enter their Microsoft Entra admin credentials. The token acquired from this authentication is then presented to the Microsoft Entra application proxy service.
-2. The application proxy service evaluates the token. It checks whether the user is a Global Administrator in the tenant. If the user isn't an administrator, the process is terminated.
+2. The application proxy service evaluates the token. It checks whether the user is at least an Application Administrator in the tenant. If the user isn't, the process is terminated.
 3. The connector generates a client certificate request and passes it, along with the token, to the application proxy service. The service in turn verifies the token and signs the client certificate request.
 4. The connector uses the client certificate for future communication with the application proxy service.
 5. The connector performs an initial pull of the system configuration data from the service using its client certificate, and it's now ready to take requests.

@@ -139,15 +139,11 @@ In this section, you enable B.Simon to use Azure single sign-on by granting acce
 
     ![The Samlsingle](./media/bitbucket-tutorial/tutorial_bitbucket_samlsingle.png)
 
-4. On the **SAML SIngleSignOn Plugin Configuration page**, click **Add idp**. 
+4. On the **SAML SIngleSignOn Plugin Configuration page**, click **Add IdP**. 
 
-    ![The Add idp](./media/bitbucket-tutorial/tutorial_bitbucket_addidp.png)
+5. On the **Choose your SAML Identity Provider** Page, enter your IdP Type, Name and Description in the provided fields:
 
-5. On the **Choose your SAML Identity Provider** Page, perform the following steps:
-
-    ![The identity provider](./media/bitbucket-tutorial/tutorial_bitbucket_identityprovider.png)
-
-    a. Select **Idp Type** as **Microsoft Entra ID**.
+    a. Select **IdP Type** as **Microsoft Entra ID**.
 
     b. In the **Name** textbox, type the name.
 
@@ -155,13 +151,9 @@ In this section, you enable B.Simon to use Azure single sign-on by granting acce
 
     d. Click **Next**.
 
-6. On the **Identity provider configuration page**, click **Next**.
+6. On the **Identity provider configuration** page, click **Next**.
 
-    ![The identity config](./media/bitbucket-tutorial/tutorial_bitbucket_identityconfig.png)
-
-7.  On the **Import SAML Idp Metadata** Page, click **Load File** to upload the **METADATA XML** file which you have downloaded previously.
-
-    ![The idpmetadata](./media/bitbucket-tutorial/tutorial_bitbucket_idpmetadata.png)
+7. On the **Import SAML IdP Metadata** Page, click **Load File** to upload the **METADATA XML** file which you have downloaded previously.
 
 8. Click **Next**.
 

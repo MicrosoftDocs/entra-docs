@@ -1,13 +1,10 @@
 ---
 title: 'Tutorial: Configure XM Fax and XM SendSecure for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to XM Fax and XM SendSecure.
-
 author: thomasakelo
 manager: jeedes
-ms.assetid: a2f34d7d-17f9-4620-973f-89887005f337
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo

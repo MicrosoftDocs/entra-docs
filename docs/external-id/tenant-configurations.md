@@ -1,6 +1,6 @@
 ---
-title: Tenant configurations and External ID
-description: Learn about the different ways you can configure a Microsoft Entra tenant based on your External ID scenarios. Compare the workforce and external tenant configurations.
+title: Tenant configurations
+description: Learn about tenant configurations in Microsoft Entra External ID. Understand the differences between workforce and external tenants, and how to configure them for your organization's needs.
  
 author: msmimart
 manager: celestedg
@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: conceptual
-ms.date: 04/29/2024
+ms.date: 10/21/2024
 ms.author: mimart
 ms.custom: it-pro
 
@@ -38,8 +38,6 @@ You can create additional workforce tenants in either the Microsoft Entra admin 
 When you want to use External ID to add customer identity and access management (CIAM) to your apps, you create a new tenant in an *external* configuration. This tenant is distinct and separate from your workforce tenant. It follows the standard Microsoft Entra tenant model, but it's configured for your consumer and business customer scenarios.
 
 The external tenant is where you'll register your apps, create sign-up and sign-in user flows, and manage the users of your apps. The consumers and business customers who sign up for your apps are added to the tenant directory, but with [limited default permissions](customers/reference-user-permissions.md).
-
-[!INCLUDE [preview-alert](customers/includes/preview-alert/preview-alert-ciam.md)]
 
 ## When do I need to create an external tenant?
 

@@ -3,10 +3,8 @@ title: 'Tutorial: Configure Swit for automatic user provisioning with Microsoft 
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Swit.
 author: thomasakelo
 manager: jeedes
-ms.assetid: ce8e918b-3a0c-43af-8cb2-3c810143e484
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo

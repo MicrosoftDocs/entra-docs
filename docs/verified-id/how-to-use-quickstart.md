@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-verified-id
 ms.topic: how-to
 
-ms.date: 07/06/2022
+ms.date: 11/13/2024
 ms.author: barclayn
 
 #Customer intent: As a verifiable credentials administrator, I want to create a verifiable credential for the ID token hint scenario. 
@@ -40,7 +40,7 @@ The expected JSON for the display definitions is the inner content of the displa
       "backgroundColor": "#000000",
       "textColor": "#ffffff",
       "logo": {
-        "uri": "https://didcustomerplayground.blob.core.windows.net/public/VerifiedCredentialExpert_icon.png",
+        "uri": "https://didcustomerplayground.z13.web.core.windows.net/VerifiedCredentialExpert_icon.png",
         "description": "Verified Credential Expert Logo"
       },
       "description": "Use your verified credential to prove to anyone that you know all about verifiable credentials."
@@ -103,7 +103,7 @@ The expected JSON for the rules definitions is the inner content of the rules at
 
 ## Configure the samples to issue and verify your custom credential
 
-To configure your sample code to issue and verify by using custom credentials, you need:
+Before you can configure your sample code to issue and verify using custom credentials, you need:
 
 - Your tenant's issuer decentralized identifier (DID)
 - The credential type

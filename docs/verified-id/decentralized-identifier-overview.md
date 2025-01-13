@@ -1,13 +1,12 @@
 ---
 title: Introduction to Microsoft Entra Verified ID
-description: An overview Azure Verifiable Credentials.
+description: An overview Microsoft Entra Verified ID.
 
 author: barclayn
 manager: amycolannino
 ms.service: entra-verified-id
-
 ms.topic: overview
-ms.date: 06/12/2024
+ms.date: 08/08/2024
 ms.author: barclayn
 ms.reviewer: 
 ---

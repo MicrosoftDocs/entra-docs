@@ -10,7 +10,7 @@ ms.subservice: domain-services
 ms.custom:
   - linux-related-content
 ms.topic: how-to
-ms.date: 09/23/2023
+ms.date: 12/02/2024
 ms.author: justinha
 ---
 # Join a CoreOS virtual machine to a Microsoft Entra Domain Services managed domain

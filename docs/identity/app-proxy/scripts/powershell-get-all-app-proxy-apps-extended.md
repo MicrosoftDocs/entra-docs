@@ -37,7 +37,7 @@ The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/mic
 #
 # Before you begin:
 #    
-#    Required Microsoft Entra role: Global Administrator or Application Administrator or Application Developer
+#    Required Microsoft Entra role at least Application Administrator or Application Developer
 
 $ssoMode = "All"
 

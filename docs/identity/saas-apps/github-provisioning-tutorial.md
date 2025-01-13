@@ -38,7 +38,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 Microsoft Entra ID uses a concept called "assignments" to determine which users should receive access to selected apps. In the context of automatic user account provisioning, only the users and groups that have been "assigned" to an application in Microsoft Entra ID is synchronized. 
 
-Before configuring and enabling the provisioning service, you need to decide what users and/or groups in Microsoft Entra ID represent the users who need access to your GitHub Organzation. Once decided, you can assign these users by following the instructions here:
+Before configuring and enabling the provisioning service, you need to decide what users and/or groups in Microsoft Entra ID represent the users who need access to your GitHub Organization. Once decided, you can assign these users by following the instructions here:
 
 For more information, see [Assign a user or group to an enterprise app](~/identity/enterprise-apps/assign-user-or-group-access-portal.md).
 

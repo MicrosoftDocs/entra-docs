@@ -78,7 +78,7 @@ If automatic provisioning is enabled, then the assigned users and/or groups are 
  * If group objects were configured to be provisioned, then all assigned group objects are provisioned to Box, and all users that are members of those groups. The group and user memberships are preserved upon being written to Box.
 
 > [!TIP] 
-> You may also choose to enabled SAML-based Single Sign-On for Box, following the instructions provided in the [Azure portal](https://portal.azure.com). Single sign-on can be configured independently of automatic provisioning, though these two features compliment each other.
+> You may also choose to enabled SAML-based Single Sign-On for Box, following the instructions provided in the [Azure portal](https://portal.azure.com). Single sign-on can be configured independently of automatic provisioning, though these two features complement each other.
 
 ### To configure automatic user account provisioning:
 
@@ -93,7 +93,7 @@ The objective of this section is to outline how to enable provisioning of Active
 
 4. Set the **Provisioning Mode** to **Automatic**. 
 
-    ![Screenshot of the Provisioning tab for Box in Azure portal. Provisioning Mode is set to Automatic and Authorize is highlighted in Admin Credentials.](./media/box-userprovisioning-tutorial/provisioning.png)
+	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
 5. Under the **Admin Credentials** section, click **Authorize** to open a Box login dialog in a new browser window.
 

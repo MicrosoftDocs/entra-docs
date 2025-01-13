@@ -27,7 +27,7 @@ To hide an application from the My Apps portal and Microsoft 365 launcher, you n
 
 - An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - One of the following roles: Cloud Application Administrator, Application Administrator.
-- Global administrator is required to hide all Microsoft 365 applications.
+- Global Administrator is required to hide all Microsoft 365 applications.
 
 ## Hide an application from the end user
 
@@ -45,7 +45,7 @@ Use the following steps to hide an application from My Apps portal and Microsoft
 :::zone-end
 
 > [!NOTE]
-> These instructions apply only to Enterprise applications.
+> These instructions apply only to non-first-party Microsoft Enterprise Applications. To learn more about first-party Microsoft applications see [First-party Microsoft applications in sign-in reports](/troubleshoot/azure/entra/entra-id/governance/verify-first-party-apps-sign-in). Administrators also need to keep in mind that hiding the application from the users doesn't prevent them from signing into these applications via methods other than the My Apps portal, such as shared links or service dependencies. 
 
 :::zone pivot="aad-powershell"
 

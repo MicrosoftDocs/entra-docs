@@ -2,15 +2,10 @@
 title: 'Tutorial: Configure ProdPad for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to ProdPad.
 
-documentationcenter: ''
 author: thomasakelo
 manager: jeedes
-
-ms.assetid: 57511d3c-905a-4de5-9cc9-1a08bd7b8457
 ms.service: entra-id
 ms.subservice: saas-apps
-
-
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo

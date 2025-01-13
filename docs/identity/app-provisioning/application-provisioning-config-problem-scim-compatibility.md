@@ -235,7 +235,7 @@ Below are sample requests to help outline what the sync engine currently sends v
 ## Upgrading from the older customappsso job to the SCIM job
 Following the steps below will delete your existing customappsso job and create a new SCIM job.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Locate and select your existing SCIM application.
 1. In the **Properties** section of your existing SCIM app, copy the **Object ID**.
@@ -251,8 +251,6 @@ Following the steps below will delete your existing customappsso job and create 
 7. Run the command below to retrieve the attribute-mapping configuration, so you can make a backup. Use the same [object-id] as before, and replace [job-id] with the provisioning job ID copied from the last step.
 
    `GET https://graph.microsoft.com/beta/servicePrincipals/[object-id]/synchronization/jobs/[job-id]/schema`
-
-   ![Get Schema](media/application-provisioning-config-problem-scim-compatibility/get-schema.PNG "Get Schema") 
 
 8. Copy the JSON output from the last step, and save it to a text file. The JSON contains any custom attribute-mappings that you added to your old app, and should be approximately a few thousand lines of JSON.
 9. Run the command below to delete the provisioning job:
@@ -275,7 +273,7 @@ Following the steps below will delete your existing customappsso job and create 
 ## Downgrading from the SCIM job to the customappsso job (not recommended)
  We allow you to downgrade back to the old behavior but don't recommend it as the customappsso does not benefit from some of the updates we make, and may not be supported forever. 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 
 1. In the **Create application** section, create a new **Non-gallery** application.

@@ -94,7 +94,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	> [!NOTE] 
 	> The Reply URL value is not real. Update the value with the actual Reply URL. Contact [Convene Client support team](mailto:support@convene.me.uk) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. Convene application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, where as **nameidentifier** is mapped with **user.userprincipalname**. Convene application expects **nameidentifier** to be mapped with **user.mail**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
+1. Convene application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**. Convene application expects **nameidentifier** to be mapped with **user.mail**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
 
 	![image](common/edit-attribute.png)
 

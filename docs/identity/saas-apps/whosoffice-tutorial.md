@@ -145,8 +145,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Click on **Apps/Integrations**.
 
-    ![Screenshot shows Apps / Integrations selected from Company settings.](./media/whosoffice-tutorial/configuration2.png)
-
 1. Select **Microsoft Azure** from the provider dropdown and click on **Activate Login Provider**.
 
     ![Screenshot shows Activate Login Provider selected for Microsoft Azure.](./media/whosoffice-tutorial/configuration3.png)

@@ -4,7 +4,6 @@ description: Learn how to automatically provision and de-provision user accounts
 
 author: thomasakelo
 manager: jeedes
-ms.assetid: 1a831f80-8fe0-4cb5-a639-ab9e2a0e90f7
 ms.service: entra-id
 ms.subservice: saas-apps
 

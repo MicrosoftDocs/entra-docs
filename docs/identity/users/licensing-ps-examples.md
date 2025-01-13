@@ -9,14 +9,14 @@ ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-ms.date: 12/02/2020
+ms.date: 11/07/2024
 ms.author: barclayn
 ms.reviewer: sumitp
 ---
 
 # PowerShell and Microsoft Graph examples for group-based licensing in Microsoft Entra ID
 
-Full functionality for group-based licensing in Microsoft Entra ID, part of Microsoft Entra, is available through the [Azure portal](https://portal.azure.com), and currently there are some useful tasks that can be performed using the existing Microsoft Graph and [Microsoft Graph PowerShell](/powershell/microsoftgraph/). This document provides examples of what is possible.
+Full functionality for group-based licensing in Microsoft Entra ID is available through the [Azure portal](https://portal.azure.com), and currently there are some useful tasks that can be performed using the existing Microsoft Graph and [Microsoft Graph PowerShell](/powershell/microsoftgraph/). This document provides examples of what is possible.
 
 > [!NOTE]
 > Before you begin running cmdlets, make sure you connect to your organization first, by running the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) cmdlet.
@@ -176,7 +176,7 @@ c2652d63-9161-439b-b74e-fcd8228a7074 EMSandOffice             {ENTERPRISEPREMIUM
 ```
 
 ## Get statistics for groups with licenses
-You can report basic statistics for groups with licenses. In the example below, the script lists the total user count, the count of users with licenses already assigned by the group, and the count of users for whom licenses could not be assigned by the group.
+You can report basic statistics for groups with licenses. In the example below, the script lists the total user count, the count of users with licenses already assigned by the group, and the count of users for whom licenses couldn't be assigned by the group.
 
 ```powershell
 # Import User Graph Module
@@ -220,7 +220,7 @@ Access to Offi... 11151866-5419-4d93-9141-0603bbf78b42 STANDARDPACK             
 ```
 
 ## Get all groups with license errors
-To find groups that contain some users for whom licenses could not be assigned:
+To find groups that contain some users for whom licenses couldn't be assigned:
 
 ```powershell
 # Get all groups that have assigned licenses
@@ -396,7 +396,7 @@ Here is another version of the script that searches only through groups that con
 $groupIds = Get-MgGroup -All -Filter "HasMembersWithLicenseErrors eq true"
     foreach ($groupId in $groupIds) {
         $Members = Get-MgGroupMember -All -GroupId $groupId 
-        foreach ($Member in $Members) { Get-Get-MgUser -UserId $Member.Id |
+        foreach ($Member in $Members) { Get-MgUser -UserId $Member.Id |
             Where {$Member.AdditionalProperties.IndirectLicenseErrors -and $Member.AdditionalProperties.IndirectLicenseErrors.ReferencedObjectId -eq $groupId.ObjectID} |
             Select DisplayName, `
                    ObjectId, `
@@ -407,7 +407,7 @@ $groupIds = Get-MgGroup -All -Filter "HasMembersWithLicenseErrors eq true"
 
 ## Check if user license is assigned directly or inherited from a group
 
-For a user object, it is possible to check if a particular product license is assigned from a group or if it is assigned directly.
+For a user object, it's possible to check if a particular product license is assigned from a group or if it is assigned directly.
 
 The two sample functions below can be used to analyze the type of assignment on an individual user:
 

@@ -76,7 +76,7 @@ To configure Reward Gateway for automatic user provisioning with Microsoft Entra
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Reward Gateway based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Reward Gateway, following the instructions provided in the [Reward Gateway  Single sign-on tutorial](reward-gateway-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features compliment each other.
+> You may also choose to enable SAML-based single sign-on for Reward Gateway, following the instructions provided in the [Reward Gateway  Single sign-on tutorial](reward-gateway-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
 
 <a name='to-configure-automatic-user-provisioning-for-reward-gateway-in-azure-ad'></a>
 
@@ -110,8 +110,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 7. Click **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Reward Gateway**.
-
-	![Screenshot of the Mappings section with the Synchronize Microsoft Entra users to Reward Gateway option called out.](media/reward-gateway-provisioning-tutorial/user-mappings.png)
 
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Reward Gateway in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Reward Gateway for update operations. Select the **Save** button to commit any changes.
 

@@ -93,9 +93,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![The Certificate download link](common/certificatebase64.png)
 
-1. On the **Set up 8x8** section, copy the URL(s) and you will use these URL values later in the tutorial.
-
-	![Copy configuration URLs](./media/8x8virtualoffice-tutorial/copy-configuration-urls.png)
+1. On the **Set up 8x8** section, copy the URL(s) and you will use these URL values later in the tutorial: login URL, identifier, and logout URL.
 
 ### Create a Microsoft Entra test user
 
@@ -133,11 +131,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 1. Check **Single Sign On (SSO)** then select **Microsoft Entra ID**.
 
-    ![Screenshot that highlights the Single Sign on (SSO) and Microsoft Entra options.](./media/8x8virtualoffice-tutorial/configure2.png)
-
 1. Copy the three URLs and signing certificate from the **Set up Single Sign-On with SAML** page in Microsoft Entra ID into the **Microsoft Entra SAML Settings** section in 8x8 Admin Console.
-
-    ![8x8 Admin Console](./media/8x8virtualoffice-tutorial/configure3.png)
 
     a. Copy **Login URL** from Microsoft Entra admin center and paste in the **IDP Login URL** field.
 
@@ -165,7 +159,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * Click on **Test this application**, and you should be automatically signed in to the 8x8 for which you set up the SSO 
 
-You can also use Microsoft My Apps to test the application in any mode. When you click the 8x8 tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the 8x8 for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you click the 8x8 tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the 8x8 for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Next steps
 

@@ -8,7 +8,7 @@ ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
-ms.date: 05/24/2024
+ms.date: 07/15/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ShareCal so that I can control who has access to ShareCal, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -83,7 +83,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     `https://admin.sharecal.io/api/oauth/saml`
 
     c. In the **Sign on URL** text box, type the URL:
-    `https://admin.sharecal.io/api/oauth/saml`
+    `https://sharecal.io/app`
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 

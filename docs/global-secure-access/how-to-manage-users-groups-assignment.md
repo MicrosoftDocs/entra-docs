@@ -25,9 +25,9 @@ To assign a traffic forwarding profile to specific users and groups, you must ha
 
 ## Assign a traffic forwarding profile to specific users and groups
 
-If you already enabled a traffic forwarding profile, the traffic profile is assigned to all users by default. If you haven't yet enabled a traffic forwarding profile, when you enable it the traffic is assigned to zero users. This setting lets you roll out the feature in a controlled manner to a specific set of users.
+If you already enabled a traffic forwarding profile, the traffic profile is assigned to all users by default. If you haven't yet enabled a traffic forwarding profile, when you enable it the traffic is assigned to zero users. The **User and group assignments** setting lets you roll out the feature in a controlled manner to a specific set of users.
 
-The following screenshot illustrates this distinction. The Microsoft profile is disabled and is assigned to zero users and groups. The Private access and Internet access profiles are enabled and are assigned to all users.
+The screenshot illustrates the setting. The Microsoft profile is disabled and is assigned to zero users and groups. The Private Access and Internet Access profiles are enabled and are assigned to all users.
 
 :::image type="content" source="media/how-to-manage-users-groups-assignment/traffic-profile-user-assignment-comparison.png" alt-text="Screenshot of the traffic forwarding page with user assignments highlighted." lightbox="media/how-to-manage-users-groups-assignment/traffic-profile-user-assignment-comparison-expanded.png":::
 

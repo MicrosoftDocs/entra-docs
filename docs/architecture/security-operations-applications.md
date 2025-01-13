@@ -79,7 +79,7 @@ From the Azure portal, you can view the Microsoft Entra audit logs and download 
 
 * **[Microsoft Defender for Cloud Apps](/defender-cloud-apps/what-is-defender-for-cloud-apps)** – discover and manage apps, govern across apps and resources, and check your cloud apps’ compliance.
 
-* **[Securing workload identities with Identity Protection Preview](~/id-protection/concept-workload-identity-risk.md)** - detects risk on workload identities across sign-in behavior and offline indicators of compromise.
+* **[Securing workload identities with Microsoft Entra ID Protection](~/id-protection/concept-workload-identity-risk.md)** - detects risk on workload identities across sign-in behavior and offline indicators of compromise.
 
 Much of what you monitor and alert on are the effects of your Conditional Access policies. You can use the [Conditional Access insights and reporting workbook](~/identity/conditional-access/howto-conditional-access-insights-reporting.md) to examine the effects of one or more Conditional Access policies on your sign-ins, and the results of policies, including device state. Use the workbook to view a summary, and identify the effects over a time period. You can use the workbook to investigate the sign-ins of a specific user.
 
@@ -218,7 +218,7 @@ Alert when these changes are detected outside approved change management procedu
 
 * Azure Key Vault security overview and security guidance - [Azure Key Vault security overview](/azure/key-vault/general/security-features)
 
-* Solorgate risk information and tools - [Microsoft Entra workbook to help you access Solorigate risk](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/azure-ad-workbook-to-help-you-assess-solorigate-risk/ba-p/2010718)
+* Solorigate risk information and tools - [Microsoft Entra workbook to help you access Solorigate risk](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/azure-ad-workbook-to-help-you-assess-solorigate-risk/ba-p/2010718)
 
 * OAuth attack detection guidance - [Unusual addition of credentials to an OAuth app](/defender-cloud-apps/investigate-anomaly-alerts)
 

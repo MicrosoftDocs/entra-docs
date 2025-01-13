@@ -9,7 +9,7 @@ ms.date: 05/18/2020
 ms.reviewer: brianmel, jmprieur
 ms.service: identity-platform
 
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a mobile app that calls web APIs by using the Microsoft identity platform.
 ---
 
@@ -103,10 +103,6 @@ urlRequest.allHTTPHeaderFields = [ "Authorization" : "Bearer \(accessToken)" ]
 let task = URLSession.shared.dataTask(with: urlRequest as URLRequest) { (data: Data?, response: URLResponse?, error: Error?) in }
 task.resume()
 ```
-
-### Xamarin
-
-[!INCLUDE [Call web API in .NET](./includes/scenarios/scenarios-call-apis-dotnet.md)]
 
 ## Make several API requests
 

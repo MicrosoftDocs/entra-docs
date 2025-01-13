@@ -6,7 +6,7 @@ manager: mwongerapk
 
 ms.author: shermanouko
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.topic: tutorial
 ms.date: 03/19/2024
 
@@ -312,6 +312,11 @@ At this stage, you create your web app endpoints and add the business logic to y
 ## Run and test the sample web app
 
 [!INCLUDE [python-flask-web-app-run-app](./includes/run-app/flask-web-app.md)]
+
+
+## Use custom URL domain (Optional)
+
+[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url-python.md)]
 
 ## Reference material
 

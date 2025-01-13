@@ -112,8 +112,6 @@ You need the following components. Prior DAP experience isn't necessary.
 
 6.  In the **Virtual Directory**, select the **authentication** tab.
 
-    ![Screenshot shows the virtual directories authentication tab.](media/datawiza-access-proxy/authentication-tab.png)
-
 7.  On the authentication tab, select **Use one or more standard authentication methods**, and then select **Integrated Windows authentication**.
 
 8.  Select **save**
@@ -325,7 +323,7 @@ DCMC integration features help complete Microsoft Entra configuration. Instead, 
 
 To provide more sign-in security, you can enforce Microsoft Entra multifactor authentication. The process starts in the Microsoft Entra admin center.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 2. Browse to **Identity** > **Overview** > **Properties** tab.
 3. Under **Security defaults**, select **Manage security defaults**.
 4. On the **Security defaults** pane, toggle the dropdown menu to select **Enabled**.

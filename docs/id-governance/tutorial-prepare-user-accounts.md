@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: tutorial
-ms.date: 04/08/2024
+ms.date: 08/13/2024
 ms.author: owinfrey
 ms.reviewer: krbain
 ms.custom: template-tutorial, has-azure-ad-ps-ref
@@ -47,7 +47,7 @@ You need to edit the POST and replace the &lt;your tenant name here&gt; portion 
 First we create our employee, Melva Prince.
 
  1. Now navigate to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer).
- 2. Sign-in to Graph Explorer with the user administrator account for your tenant.
+ 2. Sign-in to Graph Explorer with the User Administrator account for your tenant.
  3. At the top, change **GET** to **POST** and add `https://graph.microsoft.com/v1.0/users/` to the box. 
  4. Copy the following code in to the **Request body** 
  5. Replace `<your tenant here>` in the following code with the value of your Microsoft Entra tenant.
@@ -65,7 +65,7 @@ First we create our employee, Melva Prince.
      "userPrincipalName": "mprince@<your tenant name here>",
      "passwordProfile" : {
        "forceChangePasswordNextSignIn": true,
-       "password": "xWwvJ]6NMw+bWH-d"
+       "password": "<Generated Password>"
      }
    }
    ```
@@ -90,7 +90,7 @@ Next, we create Britta Simon.  This account is used as our manager.
       "userPrincipalName": "bsimon@<your tenant name here>",
       "passwordProfile" : {
         "forceChangePasswordNextSignIn": true,
-        "password": "xWwvJ]6NMw+bWH-d"
+        "password": "<Generated Password>"
       }
     }
     ```
@@ -156,7 +156,7 @@ Once your user or users are successfully created in Microsoft Entra ID, you can 
 
 ## Other steps for prehire scenario
 
-There are some other steps that you should be aware of when testing either the [On-boarding users to your organization using Lifecycle workflows with the Microsoft Entra Admin Center](tutorial-onboard-custom-workflow-portal.md) tutorial or the [On-boarding users to your organization using Lifecycle workflows with Microsoft Graph](/graph/tutorial-lifecycle-workflows-onboard-custom-workflow) tutorial.
+There are some other steps that you should be aware of when testing either the [On-boarding users to your organization using Lifecycle workflows with the Microsoft Entra admin center](tutorial-onboard-custom-workflow-portal.md) tutorial or the [On-boarding users to your organization using Lifecycle workflows with Microsoft Graph](/graph/tutorial-lifecycle-workflows-onboard-custom-workflow) tutorial.
 
 ### Edit the users attributes using the Microsoft Entra admin center
 
@@ -257,5 +257,5 @@ A user with groups and Teams memberships is required before you begin the tutori
 ## Next steps
 - [On-boarding users to your organization using Lifecycle workflows with the Microsoft Entra admin center](tutorial-onboard-custom-workflow-portal.md)
 - [On-boarding users to your organization using Lifecycle workflows with Microsoft Graph](/graph/tutorial-lifecycle-workflows-onboard-custom-workflow)
-- [Tutorial: Off-boarding users from your organization using Lifecycle workflows with The Microsoft Entra Admin Center](tutorial-offboard-custom-workflow-portal.md)
+- [Tutorial: Off-boarding users from your organization using Lifecycle workflows with The Microsoft Entra admin center](tutorial-offboard-custom-workflow-portal.md)
 - [Tutorial: Off-boarding users from your organization using Lifecycle workflows with Microsoft Graph](/graph/tutorial-lifecycle-workflows-offboard-custom-workflow)

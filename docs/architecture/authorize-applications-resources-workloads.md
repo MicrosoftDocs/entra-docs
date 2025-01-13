@@ -69,7 +69,7 @@ Dynamic and incremental consent require no declared permissions during applicati
 
 To grant admin consent for an application, the Microsoft Entra admin center uses static consent by requesting consent with the `.default` scope for an app. Admins can't grant admin consent in the Microsoft Entra admin center to apps that require permission if developers don't declare them in app registration.
 
-Microsoft Entra ID customers can use [Conditional Access policies](~/identity/conditional-access/overview.md) to protect resources (APIs) and browser-based applications. By default, admins [can't apply Conditional Access policies](~/identity/conditional-access/concept-conditional-access-cloud-apps.md) to native app authentications. Tenant admins can target [all cloud apps](~/identity/conditional-access/concept-conditional-access-cloud-apps.md) or use [custom security attributes](~/identity/conditional-access/concept-filter-for-applications.md) to target native apps with Conditional Access policies. Even when otherwise targeted, policy enforcement [doesn't include some apps](~/identity/conditional-access/concept-conditional-access-cloud-apps.md) that access Microsoft Graph or Azure AD Graph.
+Microsoft Entra ID customers can use [Conditional Access policies](~/identity/conditional-access/overview.md) to protect resources (APIs) and browser-based applications. By default, admins [can't apply Conditional Access policies](~/identity/conditional-access/concept-conditional-access-cloud-apps.md) to native app authentications. Tenant admins can target [All resources (formerly 'All cloud apps')](~/identity/conditional-access/concept-conditional-access-cloud-apps.md) or use [custom security attributes](~/identity/conditional-access/concept-filter-for-applications.md) to target native apps with Conditional Access policies. Even when otherwise targeted, policy enforcement [doesn't include some apps](~/identity/conditional-access/concept-conditional-access-cloud-apps.md) that access Microsoft Graph or Azure AD Graph.
 
 Applications usually don't require special code for Conditional Access unless the following scenarios apply.
 
@@ -152,7 +152,7 @@ Microsoft Entra ID supports these client credential types:
 In addition to Microsoft Entra ID, the Microsoft Entra product family includes [Microsoft Entra Workload ID](~/workload-id/workload-identities-overview.md). Microsoft Entra Workload ID has the following premium features to enhance workload security.
 
 - [Conditional Access](~/identity/conditional-access/workload-identity.md) supports location- or risk-based policies for workload identities.
-- [Identity protection](~/id-protection/concept-workload-identity-risk.md) provides reports on compromised credentials, anomalous sign-ins, and suspicious changes to accounts.
+- [Microsoft Entra ID Protection](~/id-protection/concept-workload-identity-risk.md) provides reports on compromised credentials, anomalous sign-ins, and suspicious changes to accounts.
 - [Access reviews](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/introducing-azure-ad-access-reviews-for-service-principals/ba-p/1942488) enable review delegation to the right people, focused on the most important privileged roles.
 - [App health recommendations](~/identity/monitoring-health/howto-use-recommendations.md) suggest ways to address identity hygiene gaps in your application portfolio and improve tenant security and resilience posture.
 

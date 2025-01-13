@@ -149,8 +149,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 6. Select **SAML 2.0 Identity Providers** and click on **Continue** button.
 
-    ![Perimeter 81 add identity provider](./media/perimeter-81-tutorial/add-identity-provider.png)
-
 7. In the **SAML 2.0 Identity Providers** section, perform the following steps:
 
     ![Perimeter 81 setting up saml](./media/perimeter-81-tutorial/setting-up-saml.png)

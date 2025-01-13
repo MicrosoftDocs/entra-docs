@@ -1,71 +1,49 @@
 ---
 title: "What's new in Microsoft Entra External ID in external tenants"
 description: "New and updated documentation for Microsoft Entra External ID in external tenants."
-ms.date: 07/01/2024
+ms.date: 01/10/2025
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.topic: whats-new
  
 ms.author: cmulligan
 author: csmulligan
 manager: CelesteDG
+# Customer intent: As a Microsoft Entra External ID user, I want to stay updated on the new documentation and significant updates, so that I can stay informed about the changes and improvements in the service.
 ---
 
-# Microsoft Entra External ID in external tenants: What's new
+# What's new in docs: External ID in external tenants
 
-Welcome to what's new in documentation for Microsoft Entra External ID in external tenants. This article lists new docs that have been added and those that have had significant updates in the last three months. 
+Welcome to what's new in documentation for Microsoft Entra External ID in external tenants. This article lists new docs that were added and docs that were significantly updated in the last three months.
 
-## June 2024
+## December 2024
 
 ### Updated articles
 
-- [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md) - Screenshots and instructions updated
-- [Sign in users and call a web API in sample Node.js web application](sample-web-app-node-sign-in-call-api.md) - Editorial updates
-- [Tutorial: Add sign-in in Android app by using native authentication](tutorial-native-authentication-android-sign-in-sign-out.md) - Updated sign in instructions
+- [Supported features in workforce and external tenants](concept-supported-features-customers.md) - Added pricing and ID Governance details
 
-
-## May 2024
-
-This month, we announced the general availability of Microsoft Entra External ID. Additionally, we’ve added “Applies to” tags to many of our articles to help navigation within the documentation.
+## November 2024
 
 ### New articles
 
-- [Tutorial: Prepare your Android (Kotlin) app for authentication](tutorial-mobile-app-android-kotlin-prepare-app.md)
-- [Tutorial: Register and configure Android (Kotlin) mobile app](tutorial-mobile-app-android-kotlin-prepare-tenant.md)
-- [Tutorial: Call a protected web API in Android (Kotlin) app](tutorial-mobile-app-android-kotlin-sign-in-call-api.md)
-- [Tutorial: Sign in users in Android (Kotlin) mobile app](tutorial-mobile-app-android-kotlin-sign-in.md)
-- [Custom URL domains in Microsoft Entra External ID (Preview)](concept-custom-url-domain.md)
-- [Enable custom URL domains for Microsoft Entra External ID (Preview)](how-to-custom-url-domain.md)
-- [Tutorial: Prepare your iOS (Swift) app for authentication](tutorial-mobile-app-ios-swift-prepare-app.md)
-- [Tutorial: Register and configure iOS (Swift) mobile app](tutorial-mobile-app-ios-swift-prepare-tenant.md)
-- [Tutorial: Call a protected web API in iOS (Swift) app](tutorial-mobile-app-ios-swift-sign-in-call-api.md)
-- [Tutorial: Sign in users in iOS (Swift) mobile app](tutorial-mobile-app-ios-swift-sign-in.md)
-- [Delete an external tenant](how-to-delete-external-tenant-portal.md)
+- [Add Apple as an identity provider (preview)](how-to-apple-federation-customers.md)
+- [Add OpenID Connect as an external identity provider (preview)](how-to-custom-oidc-federation-customers.md)
+- [Add Azure AD B2C tenant as an OpenID Connect identity provider (preview)](how-to-b2c-federation-customers.md)
+- [OpenID Connect claims mapping (preview)](reference-oidc-claims-mapping-customers.md)
+- [Regions requiring opt-in for SMS verification (preview)](how-to-region-code-opt-in.md)
 
 ### Updated articles
 
-- [Tutorial: Add sign-in in Android app by using native authentication](tutorial-native-authentication-android-sign-in-sign-out.md) - Merged sign-in native authentication Android articles
-- [Supported features in workforce and external tenants](concept-supported-features-customers.md) - Added new supported features
-- [Samples for External ID developers](samples-ciam-all.md) - Updated the list of guides and tutorials for samples
-- [Tutorial: Add sign-up in an Android mobile app using native authentication](tutorial-native-authentication-android-sign-up.md) - Merged sign-in native authentication Android articles
-- [Tutorial: Prepare your Android mobile app for native authentication](tutorial-native-authentication-prepare-android-app.md) - Merged sign-in native authentication Android articles
-- [Authentication methods and identity providers in external tenants](concept-authentication-methods-customers.md) - Clarified authentication methods, identity providers, and MFA in external tenants
-- [Add and manage admin accounts](how-to-manage-admin-accounts.md) - Updated the least privileged role
-- [Microsoft Entra External ID frequently asked questions](faq-customers.md) - Updates some FAQs
+- [Gain insights into your app users’ activity](how-to-user-insights.md) - Added MFA Usage dashboard details
+- [Multifactor authentication in external tenants](concept-multifactor-authentication-customers.md) - Opt-in telephony regions update
+- [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md) - Opt-in telephony regions update
 
-## April 2024
-
-This month, we made updates to our table of contents to make navigation easier for you. Additionally, we revised the terminology used to describe the external tenant in Microsoft Entra External ID.
-
-### New articles
-
-- [Microsoft Entra ID and data residency](/entra/fundamentals/data-residency)
-- [Workforce and external tenant configurations in Microsoft Entra External ID](/entra/external-id/tenant-configurations)
+## October 2024
 
 ### Updated articles
 
-- [Supported features in workforce and external tenants](/entra/external-id/customers/concept-supported-features-customers) - Supported features for external tenants updated
-- [Overview: Secure your apps using External ID in an external tenant](/entra/external-id/customers/overview-customers-ciam) - Image and terminology updates
-- [Microsoft Entra External ID frequently asked questions](/entra/external-id/customers/faq-customers) - Updated pricing information
-- [Default user permissions in external tenants](/entra/external-id/customers/reference-user-permissions) - Updated user types
+- [Register an app in your external tenant](how-to-register-ciam-app.md) -  Testing updates
+- [Multifactor authentication in external tenants](concept-multifactor-authentication-customers.md) -  SMS-based authentication updates
+- [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md) -  SMS-based authentication updates
+- [Create self-service sign-up user flows for apps in external tenants](how-to-user-flow-sign-up-sign-in-customers.md) -  Graph API updates
 

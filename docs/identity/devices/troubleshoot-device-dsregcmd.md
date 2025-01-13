@@ -155,7 +155,7 @@ This section lists the statuses of various attributes for users who are currentl
 +----------------------------------------------------------------------+
 
                     NgcSet : YES
-                  NgcKeyId : {FA0DB076-A5D7-4844-82D8-50A2FB42EC7B}
+                  NgcKeyId : {aaaaaaaa-0b0b-1c1c-2d2d-333333333333}
                   CanReset : DestructiveAndNonDestructive
            WorkplaceJoined : NO
              WamDefaultSet : YES
@@ -227,7 +227,7 @@ You can ignore this section for Microsoft Entra registered devices.
             Attempt Status : 0xc000006d
              User Identity : john@contoso.com
            Credential Type : Password
-            Correlation ID : 0000aaaa-11bb-cccc-dd22-eeeeee333333
+            Correlation ID : aaaa0000-bb11-2222-33cc-444444dddddd
               Endpoint URI : https://login.microsoftonline.com/aaaabbbb-0000-cccc-1111-dddd2222eeee/oauth2/token/
                HTTP Method : POST
                 HTTP Error : 0x0

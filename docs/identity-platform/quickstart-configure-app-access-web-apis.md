@@ -29,7 +29,7 @@ By specifying a web API's scopes in your client app's registration, the client a
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-Access to APIs requires configuration of access scopes and roles. If you want to expose your resource application web APIs to client applications, you can configure access scopes and roles for the API. If you want a client application to access a web API, you configure permissions to access the API in the app registration.
+To enable client applications to access web APIs, you need to add permissions to the client application to access the web API. Similarly, in the web API, you need to configure access scopes and roles for the web API .
 
 To grant a client application to access to your own web API, you need to have two app registrations;
 
@@ -133,6 +133,14 @@ After granting consent, the permissions that required admin consent are shown as
 :::image type="content" source="media/quickstart-configure-app-access-web-apis/portal-04-admin-consent-granted.png" alt-text="Configure permissions table in Azure portal showing admin consent granted for the Files.Read.All permission":::
 
 The **Grant admin consent** button is *disabled* if you aren't an admin or if no permissions have been configured for the application. If you have permissions that have been granted but not yet configured, the admin consent button prompts you to handle these permissions. You can add them to configured permissions or remove them.
+
+### Remove application permissions
+
+It's important not to give an application too many permissions than is necessary. To revoke admin consent for a permission in your application;
+
+1. Navigate to your application and select **API permissions**.
+2. Under **Configured permissions**, select the three dots next to the permission you wish to remove, and select **Remove permission**
+3. In the pop-up that appears, select **Yes, remove** to revoke the admin consent for the permission.
 
 ## Related content
 

@@ -5,7 +5,7 @@ author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom: 
-ms.date: 04/24/2024
+ms.date: 12/03/2024
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
@@ -86,6 +86,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS230109 | CachedCredentialNonGWAuthNRequestsNotSupported - Backup Auth Service only allows AuthN requests from Microsoft Entra Gateway. This error is returned when traffic targets the backup auth service directly instead of going through the reverse proxy.  |
 | AADSTS28002 | Provided value for the input parameter scope '{scope}' isn't valid when requesting an access token. Specify a valid scope. |
 | AADSTS28003 | Provided value for the input parameter scope can't be empty when requesting an access token using the provided authorization code. Specify a valid scope.|
+| AADSTS399284 | InboundIdTokenIssuerInvalid - The inbound ID token received in the federation has an invalid issuer. Either it is empty, or it does not match the realm identifier. |
 | AADSTS40008 | OAuth2IdPUnretryableServerError - There's an issue with your federated Identity Provider. Contact your IDP to resolve this issue. |
 | AADSTS40009 | OAuth2IdPRefreshTokenRedemptionUserError - There's an issue with your federated Identity Provider. Contact your IDP to resolve this issue. |
 | AADSTS40010 | OAuth2IdPRetryableServerError - There's an issue with your federated Identity Provider. Contact your IDP to resolve this issue. |
@@ -102,6 +103,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS50006 | InvalidSignature - Signature verification failed because of an invalid signature. |
 | AADSTS50007 | PartnerEncryptionCertificateMissing - The partner encryption certificate wasn't found for this app. [Open a support ticket](~/fundamentals/how-to-get-support.md) with Microsoft to get this fixed. |
 | AADSTS50008 | InvalidSamlToken - SAML assertion is missing or misconfigured in the token. Contact your federation provider. |
+| AADSTS5000224 | NotAllowedTenantBlockedTenantFraud - We are sorry, this resource is not available. If you are seeing this message by mistake, please contact Microsoft support. |
 | AADSTS5000819 | InvalidSamlTokenEmailMissingOrInvalid - SAML Assertion is invalid. Email address claim is missing or doesn't match domain from an external realm. |
 | AADSTS50010 | AudienceUriValidationFailed - Audience URI validation for the app failed since no token audiences were configured. |
 | AADSTS50011 | InvalidReplyTo - The reply address is missing, misconfigured, or doesn't match reply addresses configured for the app. As a resolution ensures to add this missing reply address to the Microsoft Entra application or have someone with the permissions to manage your application in Microsoft Entra IF do this for you. To learn more, see the troubleshooting article for error [AADSTS50011](/troubleshoot/azure/active-directory/error-code-aadsts50011-reply-url-mismatch).|
@@ -125,7 +127,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS50048 | SubjectMismatchesIssuer - Subject mismatches Issuer claim in the client assertion. Contact the tenant admin. |
 | AADSTS50049 | NoSuchInstanceForDiscovery - Unknown or invalid instance. |
 | AADSTS50050 | MalformedDiscoveryRequest - The request is malformed. |
-| AADSTS50053 | This error can result from two different reasons: <br><ul><li>IdsLocked - The account is locked because the user tried to sign in too many times with an incorrect user ID or password. The user is blocked due to repeated sign-in attempts. See [Remediate risks and unblock users](~/id-protection/howto-identity-protection-remediate-unblock.md).</li><li>Or, sign-in was blocked because it came from an IP address with malicious activity.</li></ul> <br>To determine which failure reason caused this error, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).  Navigate to your Microsoft Entra tenant and then **Monitoring & health** -> **Sign-in logs**.  Find the failed user sign-in with **Sign-in error code** 50053 and check the **Failure reason**.|
+| AADSTS50053 | This error can result from two different reasons: <br><ul><li>IdsLocked - The account is locked because the user tried to sign in too many times with an incorrect user ID or password. The user is blocked due to repeated sign-in attempts. See [Remediate risks and unblock users](~/id-protection/howto-identity-protection-remediate-unblock.md).</li><li>Or, sign-in was blocked because it came from an IP address with malicious activity.</li></ul> <br>To determine which failure reason caused this error, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).  Navigate to your Microsoft Entra tenant and then **Monitoring & health** -> **Sign-in logs**.  Find the failed user sign-in with **Sign-in error code** 50053 and check the **Failure reason**.|
 | AADSTS50055 | InvalidPasswordExpiredPassword - The password is expired. The user's password is expired, and therefore their login or session was ended. They will be offered the opportunity to reset it, or can ask an admin to reset it via [Reset a user's password using Microsoft Entra ID](~/fundamentals/users-reset-password-azure-portal.yml). |
 | AADSTS50056 | Invalid or null password: password doesn't exist in the directory for this user. The user should be asked to enter their password again. |
 | AADSTS50057 | UserDisabled - The user account is disabled. The user object in Active Directory backing this account has been disabled. An admin can re-enable this account [through PowerShell](/powershell/module/activedirectory/enable-adaccount) |
@@ -152,7 +154,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS50107 | InvalidRealmUri - The requested federation realm object doesn't exist. Contact the tenant admin. |
 | AADSTS50120 | ThresholdJwtInvalidJwtFormat - Issue with JWT header. Contact the tenant admin. |
 | AADSTS50124 | ClaimsTransformationInvalidInputParameter - Claims Transformation contains invalid input parameter. Contact the tenant admin to update the policy. |
-| AADSTS501241 | Mandatory Input '{paramName}' missing from transformation ID '{transformId}'. This error is returned while Microsoft Entra ID is trying to build a SAML response to the application. NameID claim or NameIdentifier is mandatory in SAML response and if Microsoft Entra ID failed to get source attribute for NameID claim, it returns this error. As a resolution, ensure that you add claim rules. To add claim rules, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator), and then browse to **Identity** > **Applications** > **Enterprise applications**. Select your application, select **Single Sign-On** and then in **User Attributes & Claims** enter the Unique User Identifier (Name ID). |
+| AADSTS501241 | Mandatory Input '{paramName}' missing from transformation ID '{transformId}'. This error is returned while Microsoft Entra ID is trying to build a SAML response to the application. NameID claim or NameIdentifier is mandatory in SAML response and if Microsoft Entra ID failed to get source attribute for NameID claim, it returns this error. As a resolution, ensure that you add claim rules. To add claim rules, sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator), and then browse to **Identity** > **Applications** > **Enterprise applications**. Select your application, select **Single Sign-On** and then in **User Attributes & Claims** enter the Unique User Identifier (Name ID). |
 | AADSTS50125 | PasswordResetRegistrationRequiredInterrupt - Sign-in was interrupted because of a password reset or password registration entry. |
 | AADSTS50126 | InvalidUserNameOrPassword - Error validating credentials due to invalid username or password. The user didn't enter the right credentials. Expect to see some number of these errors in your logs due to users making mistakes. |
 | AADSTS50127 | BrokerAppNotInstalled - User needs to install a broker app to gain access to this content. |
@@ -227,7 +229,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS700030 | Invalid certificate - subject name in certificate isn't authorized. SubjectNames/SubjectAlternativeNames (up to 10) in token certificate are: {certificateSubjects}. |
 | AADSTS70004 | InvalidRedirectUri - The app returned an invalid redirect URI. The redirect address specified by the client does not match any configured addresses or any addresses on the OIDC approve list. |
 | AADSTS70005 | UnsupportedResponseType - The app returned an unsupported response type due to the following reasons:<ul><li>response type 'token' isn't enabled for the app</li><li>response type 'id_token' requires the 'OpenID' scope -contains an unsupported OAuth parameter value in the encoded wctx</li></ul> |
-| AADSTS700054 | Response_type 'id_token' isn't enabled for the application. The application requested an ID token from the authorization endpoint, but did not have ID token implicit grant enabled. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) and then browse to **Identity** > **Applications** > **App registrations**. Select your application and then select **Authentication**. Under **Implicit grant and hybrid flows**, make sure **ID tokens'** is selected.|
+| AADSTS700054 | Response_type 'id_token' isn't enabled for the application. The application requested an ID token from the authorization endpoint, but did not have ID token implicit grant enabled. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator) and then browse to **Identity** > **Applications** > **App registrations**. Select your application and then select **Authentication**. Under **Implicit grant and hybrid flows**, make sure **ID tokens'** is selected.|
 | AADSTS70007 | UnsupportedResponseMode - The app returned an unsupported value of `response_mode` when requesting a token.  |
 | AADSTS70008 | ExpiredOrRevokedGrant - The refresh token has expired due to inactivity. The token was issued on XXX and was inactive for a certain amount of time. |
 | AADSTS700082 | ExpiredOrRevokedGrantInactiveToken - The refresh token has expired due to inactivity. The token was issued on {issueDate} and was inactive for {time}. Expected part of the token lifecycle - the user went an extended period of time without using the application, so the token was expired when the app attempted to refresh it. |
@@ -319,6 +321,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS90101 | InvalidEmailAddress - The supplied data isn't a valid email address. The email address must be in the format `someone@example.com`. |
 | AADSTS90102 | InvalidUriParameter - The value must be a valid absolute URI. |
 | AADSTS90107 | InvalidXml - The request isn't valid. Make sure your data doesn't have invalid characters.|
+| AADSTS90112 | Application identifier is expected to be a GUID. |
 | AADSTS90114 | InvalidExpiryDate - The bulk token expiration timestamp will cause an expired token to be issued. |
 | AADSTS90117 | InvalidRequestInput |
 | AADSTS90119 | InvalidUserCode - The user code is null or empty.|
@@ -379,6 +382,9 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS7000114| Application 'appIdentifier' isn't allowed to make application on-behalf-of calls.|
 | AADSTS7500529 | The value ‘SAMLId-Guid’ isn't a valid SAML ID - Microsoft Entra ID uses this attribute to populate the InResponseTo attribute of the returned response. ID must not begin with a number, so a common strategy is to prepend a string like "ID" to the string representation of a GUID. For example, id6c1c178c166d486687be4aaf5e482730 is a valid ID. |
 | AADSTS9002341 | V2Error: `invalid_grant` - The user is required to permit single sign-On (SSO). This error occurs when the user has not granted the necessary permissions for the application to perform SSO. The user should be redirected to the consent screen to grant the necessary permissions. Refer to [this announcement](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/upcoming-changes-to-windows-single-sign-on/ba-p/4008151) for more information."|
+| AADSTS901011 | NoEmailAddressCollectedFromExternalOidcIDP - No email address was obtained from the external OpenID Connect (OIDC) identity provider. This usually happens when the user selects **Hide my email** upon signing up. |
+| AADSTS901012 | EmailAddressCollectedFromExternalOidcIDPNotVerified - No verified email address was obtained from the identity provider. The email address is not verified in the ID token from the external OIDC identity provider.  |
+| AADSTS901014 | NoExternalIdentifierCollectedFromExternalOidcIDP - The external identifier does not exist in the ID token from the external OIDC identity provider. |
 
 ## Next steps
 

@@ -75,18 +75,18 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
     a. In the **Identifier (Entity ID)** text box, type a value using the following pattern:
-    `urn:auth0:fullstory:fullstory-com-<ID>`
+    `urn:auth0:fullstory:<Entity ID>`
 
     b. In the **Reply URL** text box, type a URL using the following pattern:
-    `https://fullstory.auth0.com/login/callback?connection=fullstory-com-<ID>`
+    `https://fullstory.auth0.com/login/callback?connection=<Entity ID>`
 
     c. In the **Sign on URL** text box, type a URL using the following pattern:
-    `https://app.fullstory.com/sso/fullstory-com-<ID>`
+    `https://app.fullstory.com/sso/<Entity ID>`
 
 	> [!NOTE]
 	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Fullstory SAML support team](mailto:support@fullstory.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (PEM)** and select **Download** to download the certificate and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federated Certificate (XML)** and select **Download** to download the IdP-generated metadata.xml file and save it on your computer.
 
 	![Screenshot shows the Certificate download link.](common/certificate-base64-download.png "Certificate")
 
@@ -118,7 +118,7 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 ## Configure Fullstory SAML SSO
 
-To configure single sign-on on **Fullstory SAML** side, you need to send the downloaded **Certificate (PEM)** and appropriate copied URLs from Microsoft Entra admin center to [Fullstory SAML support team](mailto:support@fullstory.com). They set this setting to have the SAML SSO connection set properly on both sides. For more information, please refer [this](https://help.fullstory.com/hc/articles/360020623014-How-do-I-configure-SSO) document.
+To configure single sign-on on **Fullstory SAML** side, you need to the download the **Federated Certificate (XML)** to copy and paste the contents of your IdP-generated metadata.xml file into Fullstory to complete the configuration. For more information, please refer [this](https://help.fullstory.com/hc/articles/360020623014-How-do-I-configure-SSO) document.
 
 ### Create Fullstory SAML test user
 

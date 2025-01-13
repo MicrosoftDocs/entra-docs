@@ -19,13 +19,13 @@ Strictly enforce location policies is a new enforcement mode for continuous acce
 | Location enforcement mode | Recommended network topology | If the IP address detected by the Resource isn't in the allowed list | Benefits | Configuration |
 | --- | --- | --- | --- | --- |
 | Standard (Default) | Suitable for all topologies | A short-lived token is issued only if Microsoft Entra ID detects an allowed IP address. Otherwise, access is blocked | Falls back to the pre-CAE location detection mode in split tunnel network deployments where CAE enforcement would affect productivity. CAE still enforces other events and policies. | None (Default Setting) |
-| Strictly enforced location policies | Egress IP addresses are dedicated and enumerable for both Microsoft Entra ID and all resource provider traffic | Access blocked | Most secure, but requires well understood network paths | 1. Test IP address assumptions with a small population <br><br> 2. Enable “Strictly enforce” under Session controls |
+| Strictly enforced location policies | Egress IP addresses are dedicated and enumerable for both Microsoft Entra ID and all resource provider traffic | Access blocked | Most secure, but requires well understood network paths | 1. Test IP address assumptions with a small population <br><br> 2. Enable "Strictly enforce" under Session controls |
 
 ## Configure strictly enforced location policies
 
 ### Step 1 - Configure a Conditional Access location based policy for your target users
 
-Before administrators create a Conditional Access policy requiring strict location enforcement, they must be comfortable using policies like the one described in [Conditional Access location based policies](howto-conditional-access-policy-location.yml). Policies like this one should be tested with a subset of users before proceeding to the next step. Administrators can avoid discrepancies between the allowed and actual IP addresses seen by Microsoft Entra ID during authentication, by testing before enabling strict enforcement.
+Before administrators create a Conditional Access policy requiring strict location enforcement, they must be comfortable using policies like the one described in [Conditional Access location based policies](policy-block-by-location.md). Policies like this one should be tested with a subset of users before proceeding to the next step. Administrators can avoid discrepancies between the allowed and actual IP addresses seen by Microsoft Entra ID during authentication, by testing before enabling strict enforcement.
 
 ### Step 2 - Test policy on a small subset of users
 

@@ -54,9 +54,7 @@ The connectors are stateless and have no configuration data on the machine. The 
 
 Connectors also poll the server to find out whether there's a newer version of the connector. If one is found, the connectors update themselves.
 
-You can monitor your connectors from the machine they're running on, using either the event log and performance counters. For more information, see [Monitor and review logs for on-premises Microsoft Entra](../identity/authentication/howto-password-ban-bad-on-premises-monitor.md).
-
-You can also view their status in the Microsoft Entra admin center. For Microsoft Entra Private Access, navigate to Global Secure Access, Connect, and select Connectors. For application proxy, navigate to Identity, Applications, Enterprise applications, and select the application. On the application page select application proxy.
+You can monitor your connectors from the machine they're running on, using either the event log and performance counters. You can also view their status in the Microsoft Entra admin center. For Microsoft Entra Private Access, navigate to Global Secure Access, Connect, and select Connectors. For application proxy, navigate to Identity, Applications, Enterprise applications, and select the application. On the application page select application proxy.
 
 You don't have to manually delete connectors that are unused. When a connector is running, it remains active as it connects to the service. Unused connectors are tagged as `_inactive_` and are removed after 10 days of inactivity. If you do want to uninstall a connector, though, uninstall both the Connector service and the Updater service from the server. Restart the computer to fully remove the service.
 
@@ -109,6 +107,22 @@ Another factor that affects performance is the quality of the networking between
 
 For more information about optimizing your network, see [Network topology considerations when using Microsoft Entra application proxy](../identity/app-proxy/application-proxy-network-topology.md).
 
+## Specifications and Sizing Requirements
+The following specifications are recommended for each Entra Private Network Connector:
+
+- **Memory:** 8 GiB or more
+- **CPU:** 4 CPU cores  or more
+
+Ensure that your connectors are less than 70% for peak memory utilization and peak CPU utilization. If your CPU or memory utilization is above the suggested maximum, you may want to consider adding more connectors to distribute your workloads effectively. 
+
+- **Throughput:** 
+Each connector, configured with the above specifications, can support up to 1.5 Gbps throughput over TCP on an Azure VM. Throughput is measured as the total of both inbound and outbound traffic. Higher throughput can be achieved by running the connector on VMs with increased memory, CPU resources, and enhanced network link speeds.
+
+**Additional Details:**  
+- Sizing recommendations made above are based on performance testing done on a test tenant using iPerf3 tool with TCP data streams. Actual performance can vary under different testing environments. More details on specific test cases will be published as part of this documentation in coming months. 
+- Once a connector is enrolled, it establishes outbound TLS tunnels to the Private Access cloud infrastructure. These tunnels handle all data path traffic. In addition, we have some control plane channel, driving keep-alive heartbeat, health reporting, connector upgrades and so on utilizing minimal bandwidth.
+- You can deploy additional connectors within the same connector group to increase overall throughput, provided adequate network and internet connectivity is available. It is recommended to maintain a minimum of two healthy connectors to ensure resiliency and consistent availability. For best practices regarding high availability, refer to the guidance [here](https://learn.microsoft.com/entra/identity/app-proxy/application-proxy-high-availability-load-balancing#best-practices-for-high-availability-of-connectors).
+
 ## Domain joining
 
 Connectors can run on a machine that isn't domain-joined. However, if you want single sign-on (SSO) to applications that use integrated Windows authentication (IWA), you need a domain-joined machine. In this case, the connector machines must be joined to a domain that can perform [Kerberos](https://web.mit.edu/kerberos) Constrained Delegation on behalf of the users for the published applications.
@@ -159,7 +173,7 @@ You can examine the state of the service in the Services window. The connector i
 ## Inactive connectors
 A common issue is that connectors appear as inactive in a connector group. A firewall blocking the required ports is a common cause for inactive connectors.
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 

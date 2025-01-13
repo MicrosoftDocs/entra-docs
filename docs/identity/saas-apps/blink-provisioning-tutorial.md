@@ -69,7 +69,7 @@ Before configuring Blink for automatic user provisioning with Microsoft Entra ID
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users in Blink based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Blink, following the instructions provided in the [Blink Single sign-on tutorial](./blink-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features compliment each other
+> You may also choose to enable SAML-based single sign-on for Blink, following the instructions provided in the [Blink Single sign-on tutorial](./blink-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other
 
 <a name='to-configure-automatic-user-provisioning-for-blink-in-azure-ad'></a>
 
@@ -103,8 +103,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 7. Click **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Blink**.
-
-	![Blink User Mappings](media/blink-provisioning-tutorial/User_mappings.png)
 
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Blink in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Blink for update operations. Select the **Save** button to commit any changes.
 

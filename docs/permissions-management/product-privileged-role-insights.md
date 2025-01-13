@@ -15,14 +15,12 @@ ms.author: jfields
 The **Microsoft Entra Insights** tab shows you who is assigned to [privileged roles](/entra/identity/role-based-access-control/permissions-reference) in your organization. You can review a list of identities assigned to a privileged role and learn more about each identity.
 
 > [!NOTE] 
-> Microsoft recommends that you keep two break glass accounts permanently assigned to the Global Administrator role. Make sure that these accounts don't require the same multi-factor authentication mechanism to sign in as other administrative accounts. This is described further in [Manage emergency access accounts in Microsoft Entra](~/identity/role-based-access-control/security-emergency-access.md). 
-[!INCLUDE [emergency-access-accounts](../includes/definitions/emergency-access-accounts.md)]
-
-> [!NOTE] 
 > Keep role assignments permanent if a user has an additional Microsoft account (for example, an account they use to sign in to Microsoft services like Skype or Outlook.com). If you require multi-factor authentication to activate a role assignment, a user with an additional Microsoft account will be locked out.  
 
+[!INCLUDE [emergency-access-accounts](../includes/definitions/emergency-access-accounts.md)]
+
 ## Prerequisite
-To view information on the Microsoft Entra Insights tab, you must have Permissions Management Administrator role permissions.
+To view information on the Microsoft Entra Insights tab, you must have [Permissions Management Administrator](/entra/identity/role-based-access-control/permissions-reference#permissions-management-administrator) role permissions.
 
 <a name='view-information-in-the-azure-ad-insights-tab'></a>
 

@@ -112,7 +112,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	![Screenshot showing URLs.](common/idp-intiated.png)
 
 	> [!Note]
-	> If the **Identifier** and **Reply URL** values do not get auto polulated, then fill in the values manually according to your requirement.
+	> If the **Identifier** and **Reply URL** values do not get auto populated, then fill in the values manually according to your requirement.
 
 1. If you wish to configure the application in **SP** initiated mode:
 
@@ -250,5 +250,7 @@ You can also use Microsoft My Apps to test the application in any mode. When you
 ## Next steps
 
 Once you configure the SAP Cloud Identity Services you can enforce session controls, which protect exfiltration and infiltration of your organization’s sensitive data in real time. Session controls extend from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
+
+You can also manage access to SAP BTP applications, using Microsoft Entra ID Governance to populate groups associated to roles in the BTP role collection. For more information, see [Managing access to SAP BTP](https://community.sap.com/t5/technology-blogs-by-members/identity-and-access-management-with-microsoft-entra-part-i-managing-access/ba-p/13873276).
 
 Consult the [recommendations and best-practice guide](~/fundamentals/scenario-azure-first-sap-identity-integration.md) to operationalize the setup.

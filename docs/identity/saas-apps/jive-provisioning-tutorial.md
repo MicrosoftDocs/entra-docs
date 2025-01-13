@@ -44,7 +44,7 @@ Before configuring and enabling the provisioning service, you need to decide wha
 This section guides you through connecting your Microsoft Entra ID to Jive's user account provisioning API, and configuring the provisioning service to create, update, and disable assigned user accounts in Jive based on user and group assignment in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enabled SAML-based Single Sign-On for Jive, following the instructions provided in the [Azure portal](https://portal.azure.com). Single sign-on can be configured independently of automatic provisioning, though these two features compliment each other.
+> You may also choose to enabled SAML-based Single Sign-On for Jive, following the instructions provided in the [Azure portal](https://portal.azure.com). Single sign-on can be configured independently of automatic provisioning, though these two features complement each other.
 
 ### To configure user account provisioning:
 
@@ -59,8 +59,6 @@ As part of this procedure, you are required to provide a user security token you
 1. Select your instance of Jive, then select the **Provisioning** tab.
 
 1. Set the **Provisioning Mode** to **Automatic**. 
-
-    ![Screenshot shows the Jive Provisioning page, with Provisioning Mode set to Automatic and other values you can set.](./media/jive-provisioning-tutorial/provisioning.png)
 
 1. Under the **Admin Credentials** section, provide the following configuration settings:
    

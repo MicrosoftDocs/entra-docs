@@ -51,7 +51,7 @@
     - name: Share user accounts
       href: users-sharing-accounts.md
     - name: Assign users to admin roles    
-      href: ../role-based-access-control/manage-roles-portal.yml?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
+      href: ../role-based-access-control/manage-roles-portal.md?toc=/entra/identity/users/toc.json&bc=/entra/identity/users/breadcrumb/toc.json
     - name: User management enhancements
       href: users-search-enhanced.md
     - name: Delete users in bulk
@@ -190,7 +190,5 @@
     href: /graph/api/resources/azure-ad-overview
   - name: Microsoft Entra CLI    
     href: /cli/azure/ad
-  - name:  Azure AD PowerShell for Graph
-    href: /powershell/azure/active-directory/install-adv2
   - name: Microsoft Entra service limits
     href: directory-service-limits-restrictions.md

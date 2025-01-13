@@ -1,13 +1,10 @@
 ---
 title: 'Tutorial: Configure Plandisc for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Plandisc.
-
 author: thomasakelo
 manager: jeedes
-ms.assetid: 16244680-205d-4763-960a-9bc7a6e915bc
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo

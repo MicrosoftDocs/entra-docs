@@ -1,13 +1,10 @@
 ---
 title: 'Tutorial: Configure Templafy SAML2 for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Templafy SAML2.
-
 author: thomasakelo
 manager: CelesteDG
-ms.assetid: 8a966ef5-e364-435b-9e29-3caf27ffb498
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo
@@ -45,7 +42,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Important tips for assigning users to Templafy SAML2
 
-* It is recommended that a single Microsoft Entra user is assigned to Templafy SAML2 to test the automatic user provisioning configuration. More users and/or groups may be assigned later.
+* It's recommended that a single Microsoft Entra user is assigned to Templafy SAML2 to test the automatic user provisioning configuration. More users and/or groups may be assigned later.
 
 * When assigning a user to Templafy SAML2, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
@@ -53,7 +50,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Step 2: Configure Templafy SAML2 to support provisioning with Microsoft Entra ID
 
-Before configuring Templafy SAML2 for automatic user provisioning with Microsoft Entra ID, you will need to enable SCIM provisioning on Templafy SAML2.
+Before configuring Templafy SAML2 for automatic user provisioning with Microsoft Entra ID, you need to enable SCIM provisioning on Templafy SAML2.
 
 1. Sign in to your Templafy Admin Console. Click on **Administration**.
 
@@ -63,7 +60,7 @@ Before configuring Templafy SAML2 for automatic user provisioning with Microsoft
 
 	![Screenshot of the Templafy administration section with the Authentication method option called out.](media/templafy-saml-2-provisioning-tutorial/templafy-auth.png)
 
-3. Copy the **SCIM Api-key** value. This value will be entered in the **Secret Token** field in the Provisioning tab of your Templafy SAML2 application.
+3. Copy the **SCIM Api-key** value. This value is entered in the **Secret Token** field in the Provisioning tab of your Templafy SAML2 application.
 
 	![A screenshot of the S C I M A P I key.](media/templafy-saml-2-provisioning-tutorial/templafy-token.png)
 
@@ -84,7 +81,7 @@ To configure Templafy SAML2 for automatic user provisioning with Microsoft Entra
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Templafy SAML2 based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Templafy, following the instructions provided in the [Templafy Single sign-on tutorial](templafy-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features compliment each other.
+> You may also choose to enable SAML-based single sign-on for Templafy, following the instructions provided in the [Templafy Single sign-on tutorial](templafy-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
 
 <a name='to-configure-automatic-user-provisioning-for-templafy-saml2-in-azure-ad'></a>
 
@@ -119,8 +116,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Templafy SAML2**.
 
-	![Templafy SAML2 User Mappings](media/templafy-saml-2-provisioning-tutorial/user-mapping.png)
-
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Templafy SAML2 in the **Attribute Mappings** section. The attributes selected as **Matching** properties are used to match the user accounts in Templafy SAML2 for update operations. Select the **Save** button to commit any changes.
 
 
@@ -150,8 +145,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Templafy**.
 
-	![Templafy SAML2 Group Mappings](media/templafy-saml-2-provisioning-tutorial/group-mapping.png)
-
 11. Review the group attributes that are synchronized from Microsoft Entra ID to Templafy SAML2 in the **Attribute Mappings** section. The attributes selected as **Matching** properties are used to match the groups in Templafy SAML2 for update operations. Select the **Save** button to commit any changes.
 
       |Attribute|Type|Supported for filtering|
@@ -173,7 +166,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Provisioning Scope](common/provisioning-scope.png)
 
-15. When you are ready to provision, click **Save**.
+15. When you're ready to provision, click **Save**.
 
 	![Saving Provisioning Configuration](common/provisioning-configuration-save.png)
 
@@ -184,13 +177,13 @@ Once you've configured provisioning, use the following resources to monitor your
 
 * Use the [provisioning logs](~/identity/monitoring-health/concept-provisioning-logs.md) to determine which users have been provisioned successfully or unsuccessfully
 * Check the [progress bar](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) to see the status of the provisioning cycle and how close it is to completion
-* If the provisioning configuration seems to be in an unhealthy state, the application will go into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).
+* If the provisioning configuration seems to be in an unhealthy state, the application goes into quarantine. Learn more about quarantine states [here](~/identity/app-provisioning/application-provisioning-quarantine-status.md).
 
 ## Change log
 
 * 05/04/2023 - Added support for **Schema Discovery**.
 
-## Additional resources
+## More resources
 
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)

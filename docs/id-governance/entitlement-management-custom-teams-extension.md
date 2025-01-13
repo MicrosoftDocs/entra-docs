@@ -6,7 +6,7 @@ ms.author: owinfrey
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: tutorial
-ms.date: 07/05/2023
+ms.date: 07/15/2024
 ms.custom: template-tutorial
 ---
 
@@ -54,11 +54,11 @@ To create a Logic App and custom extension in a catalog, you'd follow these step
    > Another custom extension can be created for the **Pre-Expiration workflow**.
     
     :::image type="content" source="media/entitlement-management-servicenow-integration/entitlement-management-create-custom-extension.png" alt-text="Screenshot of creating a custom extension for entitlement management." lightbox="media/entitlement-management-servicenow-integration/entitlement-management-create-custom-extension.png":::
-1. Under Extension Configuration, select “**Launch and continue**”, which will ensure that Entitlement Management continues after this workflow is triggered.
+1. Under Extension Configuration, select “**Launch and continue**”, which ensures that Entitlement Management continues after this workflow is triggered.
     :::image type="content" source="media/entitlement-management-servicenow-integration/entitlement-management-custom-extension-behavior.png" alt-text="Screenshot of entitlement management custom extension behavior actions tab." lightbox="media/entitlement-management-servicenow-integration/entitlement-management-custom-extension-behavior.png":::
 1. In the **Details** tab, choose Yes in the "*Create new logic App*" field and provide the Azure subscription and resource group details, along with the Logic App name. Select “*Create a logic app*”. 
     :::image type="content" source="media/entitlement-management-servicenow-integration/entitlement-management-custom-extension-details-expanded.png" alt-text="Screenshot of expanded custom extension details selection." lightbox="media/entitlement-management-servicenow-integration/entitlement-management-custom-extension-details-expanded.png":::
-1. It shows as “*Deploying*”, and once done a success message will appear such as:
+1. It shows as “*Deploying*”, and once done a success message appears such as:
     :::image type="content" source="media/entitlement-management-servicenow-integration/entitlement-management-successful-deploy.png" alt-text="Screenshot of a successful deploy of a new Logic App.":::
 1. In **Review and Create**, review the summary of your custom extension and make sure the details for your Logic App call-out are correct. Then select **Create**. 
 
@@ -66,13 +66,13 @@ This custom extension to the linked Logic App now appears in your Custom Extensi
 
 ## Configuring the Logic App
 
-1. The custom extension created will show under the **Custom Extensions** tab. Select the “*Logic app*” in the custom extension that will redirect you to a page to configure the logic app.
+1. The custom extension created shows under the **Custom Extensions** tab. Select the “*Logic app*” in the custom extension that will redirect you to a page to configure the logic app.
     :::image type="content" source="media/entitlement-management-servicenow-integration/entitlement-management-configure-logic-app.png" alt-text="Screenshot of the configure logic apps screen." lightbox="media/entitlement-management-servicenow-integration/entitlement-management-configure-logic-app.png":::
 1. On the left menu, select **Logic app designer**.
     :::image type="content" source="media/entitlement-management-servicenow-integration/entitlement-management-logic-app-designer.png" alt-text="Screenshot of the logic apps designer screen." lightbox="media/entitlement-management-servicenow-integration/entitlement-management-logic-app-designer.png":::
 1. Delete the **Condition** by selecting the 3 dots on the right side and select “*Delete*” and select “*OK*”. Once deleted, the page should have an option to add a new step.
     :::image type="content" source="media/entitlement-management-servicenow-integration/entitlement-management-logic-app-designer-condition.png" alt-text="Screenshot of setting the logic app designer condition." lightbox="media/entitlement-management-servicenow-integration/entitlement-management-logic-app-designer-condition.png":::
-1. Select “*New Step*”, which will open a dialog box and then select **All** and expand the list of connectors.
+1. Select “*New Step*”, which opens a dialog box and then select **All** and expand the list of connectors.
     :::image type="content" source="media/entitlement-management-servicenow-integration/entitlement-management-logic-app-designer-connectors.png" alt-text="Screenshot of the list of connectors for the Logic App." lightbox="media/entitlement-management-servicenow-integration/entitlement-management-logic-app-designer-connectors.png":::
 1. In the list that appears, search and select Microsoft Teams.
     :::image type="content" source="media/entitlement-management-servicenow-integration/entitlement-management-logic-app-designer-connectors-teams.png" alt-text="Screenshot of Microsoft Teams app in the Logic App connectors list." lightbox="media/entitlement-management-servicenow-integration/entitlement-management-logic-app-designer-connectors-teams.png":::

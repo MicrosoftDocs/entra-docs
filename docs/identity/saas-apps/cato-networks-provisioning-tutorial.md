@@ -3,7 +3,6 @@ title: 'Tutorial: Configure Cato Networks for automatic user provisioning with M
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Cato Networks.
 author: thomasakelo
 manager: jeedes
-ms.assetid: bdaa6863-c0fe-40b0-8989-3632900464ef
 ms.service: entra-id
 ms.subservice: saas-apps
 

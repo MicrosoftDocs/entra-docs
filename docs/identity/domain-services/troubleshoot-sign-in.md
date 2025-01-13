@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: troubleshooting
-ms.date: 09/21/2023
+ms.date: 12/03/2024
 ms.author: justinha
 #Customer intent: As a directory administrator, I want to troubleshoot user account sign in problems in a Microsoft Entra Domain Services managed domain.
 ---

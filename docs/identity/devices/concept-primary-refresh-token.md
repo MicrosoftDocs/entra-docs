@@ -85,7 +85,7 @@ A PRT is used by two key components in Windows:
 
 A PRT is renewed in two different methods:
 
-- **Microsoft Entra CloudAP plugin every 4 hours:** The CloudAP plugin renews the PRT every 4 hours during Windows sign in. If the user doesn't have internet connection during that time, CloudAP plugin will renew the PRT after the device is connected to the internet.
+- **Microsoft Entra CloudAP plugin every 4 hours:** The CloudAP plugin renews the PRT every 4 hours during Windows sign in. If the user doesn't have internet connection during that time, CloudAP plugin will renew the PRT after the device is connected to the internet and a new Windows sign in is done.
 - **Microsoft Entra WAM plugin during app token requests:** The WAM plugin enables SSO on Windows 10 or newer devices by enabling silent token requests for applications. The WAM plugin can renew the PRT during these token requests in two different ways:
    - An app requests WAM for an access token silently but there's no refresh token available for that app. In this case, WAM uses the PRT to request a token for the app and gets back a new PRT in the response.
    - An app requests WAM for an access token but the PRT is invalid or Microsoft Entra ID requires extra authorization (for example, Microsoft Entra multifactor authentication). In this scenario, WAM initiates an interactive logon requiring the user to reauthenticate or provide extra verification and a new PRT is issued on successful authentication.
@@ -182,8 +182,8 @@ The following diagrams illustrate the underlying details in issuing, renewing, a
 | Step | Description |
 | :---: | --- |
 | A | User enters their password in the sign in UI. LogonUI passes the credentials in an auth buffer to LSA, which in turns passes it internally to CloudAP. CloudAP forwards this request to the CloudAP plugin. |
-| B | If the user has previously signed in to the user, Windows initiates cached sign in and validates credentials to log the user in. Every 4 hours, the CloudAP plugin initiates PRT renewal asynchronously. |
-| C | CloudAP plugin initiates a realm discovery request to identify the identity provider for the user. If user's tenant has a federation provider setup, Microsoft Entra ID returns the federation provider's Metadata Exchange endpoint (MEX) endpoint. If not, Microsoft Entra ID returns that the user is managed indicating that user can authenticate with Microsoft Entra ID. |
+| B | If the user has previously signed in to the session, Windows initiates cached sign in and validates credentials to log the user in. Every 4 hours, the CloudAP plugin initiates PRT renewal asynchronously. |
+| C | CloudAP plugin initiates a realm discovery request to identify the identity provider for the user. If the user's tenant has a federation provider setup, Microsoft Entra ID returns the federation provider's Metadata Exchange endpoint (MEX) endpoint. If not, Microsoft Entra ID returns that the user is managed indicating that user can authenticate with Microsoft Entra ID. |
 | D | If the user is federated, CloudAP plugin requests a SAML token from the federation provider with the user's credentials. Nonce is requested before the SAML token is sent to Microsoft Entra ID. If the user is managed, CloudAP will directly get the nonce from Microsoft Entra ID. |
 | E | CloudAP plugin constructs the authentication request with the user's credentials, nonce, and the existing PRT, signs the request with the Session key and sends it to Microsoft Entra ID. In a federated environment, CloudAP plugin uses the SAML token returned by the federation provider instead of the user' credentials. |
 | F | Microsoft Entra ID validates the Session key signature by comparing it against the Session key embedded in the PRT, validates the nonce and verifies that the device is valid in the tenant and issues a new PRT. As seen before, the PRT is again accompanied with the Session key encrypted by Transport key (tkpub). |

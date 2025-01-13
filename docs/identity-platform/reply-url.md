@@ -8,7 +8,7 @@ ms.date: 06/25/2024
 ms.reviewer:
 ms.service: identity-platform
 
-ms.topic: reference
+ms.topic: concept-article
 #Customer intent:As a developer registering an application with the Microsoft identity platform, I want to understand the restrictions and limitations of redirect URIs, so that I can correctly configure the redirect URI for successful authorization and token retrieval.
 ---
 
@@ -106,6 +106,7 @@ The Microsoft Entra application model specifies the following restrictions to re
     * `https://contoso.com/abc/response-oidc` is returned as `https://contoso.com/abc/response-oidc`
 
 * Redirect URIs *don't* support special characters - `! $ ' ( ) , ;`
+* Redirect URIs *don't* support Internationalized Domain Names
 
 ### Maximum number of redirect URIs and URI length
 

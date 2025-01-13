@@ -68,7 +68,7 @@ To configure MindTickle for automatic user provisioning with Microsoft Entra ID,
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in MindTickle based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for MindTickle, following the instructions provided in the [MindTickle Single sign-on tutorial](mindtickle-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features compliment each other
+> You may also choose to enable SAML-based single sign-on for MindTickle, following the instructions provided in the [MindTickle Single sign-on tutorial](mindtickle-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other
 
 <a name='to-configure-automatic-user-provisioning-for-mindtickle-in-azure-ad'></a>
 
@@ -102,8 +102,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 7. Click **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to MindTickle**.
-
-	:::image type="content" source="media/mindtickle-provisioning-tutorial/usermapping.png" alt-text="Screenshot of the Mappings section. Under Name, Synchronize Microsoft Entra users to MindTickle is visible." border="false":::
 
 9. Review the user attributes that are synchronized from Microsoft Entra ID to MindTickle in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in MindTickle for update operations. Select the **Save** button to commit any changes.
 

@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: conceptual
-ms.date: 07/02/2024
+ms.date: 08/28/2024
 ms.service: global-secure-access
 ms.subservice: entra-private-access 
 ms.reviewer: shkhalid
@@ -30,13 +30,13 @@ This document contains steps to deploy the two solutions side by side. Specifica
 In Microsoft Entra, you enable the Microsoft 365 traffic forwarding profile and disable the Internet Access and Private Access traffic forwarding profiles. Only Microsoft 365 traffic is captured. In Netskope, you capture Internet Access traffic and exclude Microsoft 365 traffic.
 
 > [!NOTE]
-> The clients must be installed on a Windows 10 or Windows 11 Entra joined device.
+> The clients must be installed on a Windows 10 or Windows 11 Microsoft Entra joined device or Microsoft Entra hybrid joined device.
 
 ## Microsoft Entra Internet Access for Microsoft 365 configuration
 
 Enable the Microsoft 365 traffic forwarding profile for your Microsoft Entra tenant. For more information about enabling and disabling profiles, see [Global Secure Access traffic forwarding profiles](concept-traffic-forwarding.md).
 
-Install and configure the Global Secure Access Client on end-user devices. Download the Global Secure Access Client from https://aka.ms/gsawithnetskope for coexistence with Netskope. For more information about clients, see [Global Secure Access clients](concept-clients.md). To learn how to install the Windows client, see [Global Secure Access client for Windows](how-to-install-windows-client.md).
+Install and configure the Global Secure Access Client on end-user devices. For more information about clients, see [Global Secure Access clients](concept-clients.md). To learn how to install the Windows client, see [Global Secure Access client for Windows](how-to-install-windows-client.md).
 
 ## Netskope configuration
 

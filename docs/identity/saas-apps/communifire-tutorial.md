@@ -105,9 +105,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     a. Select **Sign SAML response and assertion** from the **Signing Option**.
 
-    b. Click **Save**
-
-    ![Communifire Signing option](./media/communifire-tutorial/tutorial-communifire-signing-option.png)
+    b. Click **Save**.
 
 8. On the **Set up Communifire** section, copy the appropriate URL(s) as per your requirement.
 

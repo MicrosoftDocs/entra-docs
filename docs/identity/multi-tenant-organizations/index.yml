@@ -25,7 +25,7 @@ landingContent:
         links:
           - text: Multitenant organization capabilities
             url: overview.md
-          - text: Compare multitenant capabilities 
+          - text: Compare multitenant capabilities
             url: overview.md#compare-multitenant-capabilities
 
   # Card
@@ -61,7 +61,7 @@ landingContent:
     linkLists:
       - linkListType: concept
         links:
-          - text: Identity provisioning for Microsoft 365 
+          - text: Identity provisioning for Microsoft 365
             url: multi-tenant-organization-microsoft-365.md
           - text: Microsoft 365 multitenant people search
             url: /microsoft-365/enterprise/multi-tenant-people-search

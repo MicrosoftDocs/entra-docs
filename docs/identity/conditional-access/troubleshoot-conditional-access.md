@@ -22,14 +22,14 @@ The Conditional Access framework provides you with a great configuration flexibi
 
 Organizations should avoid the following configurations:
 
-**For all users, all cloud apps:**
+**For all users, all resources:**
 
 - **Block access** - This configuration blocks your entire organization.
 - **Require device to be marked as compliant** - For users that haven't enrolled their devices yet, this policy blocks all access including access to the Intune portal. If you're an administrator without an enrolled device, this policy blocks you from getting back in to change the policy.
 - **Require Hybrid Microsoft Entra domain joined device** - This policy block access has also the potential to block access for all users in your organization if they don't have a Microsoft Entra hybrid joined device.
 - **Require app protection policy** - This policy block access has also the potential to block access for all users in your organization if you don't have an Intune policy. If you're an administrator without a client application that has an Intune app protection policy, this policy blocks you from getting back into portals such as Intune and Azure.
 
-**For all users, all cloud apps, all device platforms:**
+**For all users, all resources, all device platforms:**
 
 - **Block access** - This configuration blocks your entire organization.
 
@@ -42,34 +42,6 @@ The first way is to review the error message that appears. For problems signing 
 In the above error, the message states that the application can only be accessed from devices or client applications that meet the company's mobile device management policy. In this case, the application and device don't meet that policy.
 
 <a name='azure-ad-sign-in-events'></a>
-
-## Tenant inaccessible due to inactivity
-
-Error message ```Error message: AADSTS5000225: This tenant has been blocked due to inactivity. To learn more about ...``` is expected for tenants' inaccessible due to inactivity. Administrators may request the tenant to be reactivated within twenty days of the tenant entering an inactive state. Tenants that remain in this state for longer than twenty days will be deleted. 
-
-:::image type="content" source="media/troubleshoot-conditional-access/tenant-block.png" alt-text="Screenshot showing an error when tenant access blocked due to inactivity." lightbox="media/troubleshoot-conditional-access/tenant-block.png":::
-
-Depending on your plans for the tenant we suggest:
-
-Administrators
-
-If you need to reactivate your tenant:
-
-- The tenant administrator can reach out to Microsoft, see the [global support phone numbers](https://support.microsoft.com/topic/global-customer-service-phone-numbers-c0389ade-5640-e588-8b0e-28de8afeb3f2).
-- Refrain from submitting another assistance request while your existing case is in process and until you have heard back a decision on this case. 
-
-If you do not plan to reactivate your tenant:
-
-- The tenant will be deleted after 20 days of being inaccessible due to inactivity and will not be recoverable.
-- Review Microsoft's data protection policies, [here](https://www.microsoft.com/trust-center/privacy/data-management#leave).  
-
-Application owners/developers
-
-- Minimize the number of authentication requests sent to this deactivated tenant until the tenant is reactivated.
-- Refrain from submitting another assistance request while your existing case is in process and until you have heard back a decision on this case.
-- Review Microsoft's [data protection policies](https://www.microsoft.com/trust-center/privacy/data-management#leave).  
-
-
 
 ## Microsoft Entra sign-in events
 

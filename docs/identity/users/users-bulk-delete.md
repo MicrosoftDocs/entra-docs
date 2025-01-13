@@ -5,7 +5,7 @@ description: Delete users in bulk in Microsoft Entra ID
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
-ms.date: 11/21/2023
+ms.date: 12/19/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
@@ -29,14 +29,12 @@ Using the admin center in Microsoft Entra ID, part of Microsoft Entra, you can r
 
 1. On the **Bulk delete user** page, select **Download** to download the latest version of the CSV template.
 1. Open the CSV file and add a line for each user you want to delete. The only required value is **User principal name**. Save the file.
-1. On the **Bulk delete user** page, under **Upload your csv file**, browse to the file. When you select the file and click submit, validation of the CSV file starts.
+1. On the **Bulk delete user** page, under **Upload your csv file**, browse to the file. When you select the file and select submit, validation of the CSV file starts.
 1. When the file contents are validated, you’ll see **File uploaded successfully**. If there are errors, you must fix them before you can submit the job.
 1. When your file passes validation, select **Submit** to start the bulk operation that deletes the users.
-1. When the deletion operation completes, you'll see a notification that the bulk operation succeeded.
+1. When the deletion operation completes, you see a notification that the bulk operation succeeded.
 
-If there are errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error.
-
-[!INCLUDE [Bulk update warning](~/includes/bulk-export.md)]
+If you experience errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error. The file submission must match the provided template and include the exact column names. For more information about bulk operations limitations, see [Bulk delete service limits](#bulk-delete-service-limits).
 
 ## CSV template structure
 
@@ -52,14 +50,14 @@ The rows in the example downloaded CSV template below are as follows:
 
 - The first two rows of the template must not be removed or modified, or the template can't be processed.
 - The required columns are listed first.
-- Don't add new columns to the template. Any additional columns you add are ignored and not processed.
+- Don't add new columns to the template. Any other columns you add are ignored and not processed.
 - Download the latest version of the CSV template before making new changes.
 
 ## Check status
 
 You can see the status of all of your pending bulk requests in the **Bulk operation results** page.
 
-   :::image type="content" source="./media/users-bulk-delete/bulk-center.png" alt-text="Screenshot of checking delete status in the Bulk Operations Results page.." lightbox="./media/users-bulk-delete/bulk-center.png":::
+   :::image type="content" source="./media/users-bulk-delete/bulk-center.png" alt-text="Screenshot of checking delete status in the Bulk Operations Results page." lightbox="./media/users-bulk-delete/bulk-center.png":::
 
 Next, you can check to see that the users you deleted exist in the Microsoft Entra organization either in the  portal or by using PowerShell.
 
@@ -78,6 +76,10 @@ Get-MgUser -Filter "UserType eq 'Member'"
 ```
 
 Verify that the users that you deleted are no longer listed.
+
+## Bulk delete service limits
+
+[!INCLUDE [Bulk operations limitations](~/includes/bulk-operations-limitations.md)]
 
 ## Next steps
 

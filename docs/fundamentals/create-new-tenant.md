@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: quickstart
-ms.date: 03/29/2024
+ms.date: 12/19/2024
 ms.author: barclayn
 ms.custom: it-pro, fasttrack-edit, mode-other
 ms.collection: M365-identity-device-management
@@ -14,9 +14,9 @@ ms.collection: M365-identity-device-management
 
 # Quickstart: Create a new tenant in Microsoft Entra ID
 
-You can do all of your administrative tasks using the Microsoft Entra admin center, including creating a new tenant for your organization.
+You can perform all of your administrative tasks using the Microsoft Entra admin center, including creating a new tenant for your organization.
 
-In this quickstart article, you'll learn how to get to the Azure portal and Microsoft Entra ID, and you'll learn how to create a basic tenant for your organization.
+In this quickstart article, you learn how to create a basic tenant for your organization.
 
 >[!Note]
 >Only paid customers can create a new Workforce tenant in Microsoft Entra ID. Customers using a free tenant, or a trial subscription won't be able to create additional tenants from the Microsoft Entra admin center. Customers facing this scenario who need a new tenant can sign up for a [free account](https://azure.microsoft.com/free/).

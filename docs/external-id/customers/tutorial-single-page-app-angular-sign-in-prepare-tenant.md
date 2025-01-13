@@ -5,7 +5,7 @@ services: active-directory
 author: garrodonnell
 manager: celestedg
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.topic: tutorial
 ms.date: 10/27/2023
 ms.author: godonnell
@@ -28,11 +28,13 @@ In this tutorial:
 
 ## Prerequisites
 
-- An external tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
+- An external tenant. To create one, choose from the following methods:
+  - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/tutorials/marketplace) to set up an external tenant directly in Visual Studio Code.
+  - [Create a new external tenant](how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 - This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-    - Application Administrator
-    - Application Developer
-    - Cloud Application Administrator
+  - Application Administrator
+  - Application Developer
+  - Cloud Application Administrator
 
 ## Register the SPA and record identifiers
 

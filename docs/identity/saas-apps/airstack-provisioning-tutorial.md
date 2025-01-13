@@ -28,7 +28,7 @@ The objective of this tutorial is to demonstrate the steps to be performed in Ai
 The scenario outlined in this tutorial assumes that you already have the following prerequisites:
 
 * A Microsoft Entra tenant
-* [An Airstack tenant](https://airstack.com/pricing/)
+* An Airstack tenant.
 * A user account in Airstack with Admin permissions.
 
 ## Assigning users to Airstack
@@ -46,7 +46,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Setup Airstack for provisioning
 
-1. Sign in to your [Airstack Admin Console](https://airstack-qa.lenovosoftware.com/). Navigate to **Settings**.
+1. Sign in to your Airstack Admin Console. Navigate to **Settings**.
 
 	![Airstack Admin Console](media/airstack-provisioning-tutorial/airstackadminmenu.png)
 
@@ -75,7 +75,7 @@ Before configuring Airstack for automatic user provisioning with Microsoft Entra
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Airstack based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Airstack, following the instructions provided in the [Airstack Single sign-on tutorial](./airstack-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features compliment each other
+> You may also choose to enable SAML-based single sign-on for Airstack, following the instructions provided in the [Airstack Single sign-on tutorial](./airstack-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other
 
 <a name='to-configure-automatic-user-provisioning-for-airstack-in-azure-ad'></a>
 
@@ -109,8 +109,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 7. Click **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Airstack**.
-
-	![Airstack User Mappings](media/airstack-provisioning-tutorial/mappings.png)
 
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Airstack in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Airstack for update operations. Select the **Save** button to commit any changes.
 

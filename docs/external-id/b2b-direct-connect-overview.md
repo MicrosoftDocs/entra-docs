@@ -5,7 +5,7 @@ description: Microsoft Entra B2B direct connect lets users from other Microsoft 
  
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 04/29/2024
+ms.date: 09/06/2024
 
 ms.author: cmulligan
 author: csmulligan
@@ -26,8 +26,6 @@ B2B direct connect is a feature of Microsoft Entra External ID that lets you set
 B2B direct connect requires a mutual trust relationship between two Microsoft Entra organizations to allow access to each other's resources. Both the resource organization and the external organization need to mutually enable B2B direct connect in their cross-tenant access settings. When the trust is established, the B2B direct connect user has single sign-on access to resources outside their organization using credentials from their home Microsoft Entra organization.
 
 Currently, B2B direct connect capabilities work with Teams shared channels. When B2B direct connect is established between two organizations, users in one organization can create a shared channel in Teams and invite an external B2B direct connect user to it. Then from within Teams, the B2B direct connect user can seamlessly access the shared channel in their home tenant Teams instance, without having to manually sign in to the organization hosting the shared channel.
-
-For licensing and pricing information related to B2B direct connect users, refer to [Microsoft Entra External ID pricing](https://azure.microsoft.com/pricing/details/active-directory/external-identities/).
 
 ## Managing cross-tenant access for B2B direct connect
 
@@ -173,6 +171,8 @@ For more information about Microsoft Teams audit logs, see the [Microsoft Teams 
 B2B direct connect lets your users and groups access apps and resources that are hosted by an external organization. To establish a connection, an admin from the external organization must also enable B2B direct connect.
 
 By enabling B2B connect with an external organization, you're allowing the external organizations that you have enabled outbound settings with to access limited contact data about your users. Microsoft shares this data with those organizations to help them send a request to connect with your users. Data collected by external organizations, including limited contact data, is subject to the privacy policies and practices of those organizations.
+
+When you configure a policy with a specific target resource tenant, you are consenting for that policy to be stored both in your tenant and in the target resource tenant. This includes a consent for your policy to be stored outside your geographic region if your target resource tenant is situated in a different region than your tenant. When you configure a default cross-tenant access policy, you are consenting for that policy to be accessed by other tenants. This means the policy is stored for general availability to other Microsoft tenants and will be stored outside of your tenant boundary. It follows a cross-geo replicated pattern to ensure access by possible collaboration partner tenants with reasonable performance. Either the tenant to specific tenant policy or the default policy can be implemented independently, each with their respective policy sharing conditions listed above.
 
 ### Outbound access
 
