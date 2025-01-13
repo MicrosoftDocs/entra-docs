@@ -62,15 +62,14 @@ Required permissions | For permissions required to apply an update, see [Microso
 
 |Version|End of support date|
 |-----|-----|
-|[2.2.1.0](#2210)|11 Oct 2024 (12 months after release of 2.2.8.0)|
-|[2.2.8.0](#2280)|12 Dec 2024 (12 months after release of 2.3.2.0)|
 |[2.3.2.0](#2320)|21 Feb 2025(12 months after release of 2.3.6.0)|
 |[2.3.6.0](#2360)|1 Apr 2025 (12 months after release of 2.3.8.0)|
 |[2.3.8.0](#2380)|25 Jul 2025 (12 months after release of 2.3.20.0)|
 |[2.3.20.0](#23200)|7 Oct 2025 (12 months after release of 2.4.18.0)|
 |[2.4.18.0](#24180)|9 Oct 2025 (12 months after release of 2.4.21.0)|
 |[2.4.21.0](#24210)|15 Nov 2025 (12 months after release of 2.4.27.0)|
-|[2.4.27.0](#24270)|TBD|
+|[2.4.27.0](#24270)|15 Jan 2015 (12 months after release of x.x.xx.x)|
+|[x.x.xx.x](#24270)|TBD|
 
 **All other versions are not supported**
 
@@ -93,6 +92,22 @@ Auto-upgrade is meant to push all important updates and critical fixes to you. I
 If you want all the latest features and updates, check this page and install what you need.
 
 To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade](how-to-connect-install-automatic-upgrade.md).
+
+## x.x.xx.x
+
+### Release status
+
+01/15/2025: Released for download
+
+### Added Features
+ -   Administrator Actions logging enabled for logging any admin changes made on Entra Connect Sync. This includes changes made using the UI and the Powershell scripts.  For more information see [Auditing administrator events in Microsoft Entra Connect Sync (Public Preview)](admin-audit-logging.md)
+
+### Bug fixes
+- Fixed the removal of the SSPR configuration when changes are made on the AAD Connector and saved in the Sync Service manager UI
+- Fixed validation for the global administrator/hybrid identity administrator role done during Entra Connect Sync installation and users with global administrator/hybrid identity administrator through Privileged Identity Management (PIM). 
+- Fixed the "no registered protocol handlers" error on Federate with AD FS scenario.
+- Fixed "Relying party must be unique (conflict error)" error on Federate with AD FS scenario.
+
 
 
 ## 2.4.27.0

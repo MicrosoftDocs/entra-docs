@@ -12,7 +12,7 @@ ms.author: billmath
 
 # Auditing administrator events in Microsoft Entra Connect Sync (Public Preview)
 
-In January 2025, we released a new version (2.4.27.0) of Microsoft Entra Connect Sync. This version contains an update to auditing which is enabled be default. With this update, you can now monitor administrator events and activity.  The following article describes how to disable the auditing feature.  **All customers are required to upgrade** to the [minimum versions](#minimum-versions) by **April 7, 2025**. 
+In January 2025, we released a new version (x.x.xx.x) of Microsoft Entra Connect Sync. This version contains an update to auditing which is enabled be default. With this update, you can now monitor administrator events and activity.  The following article describes how to disable the auditing feature.  **All customers are required to upgrade** to the [minimum versions](#minimum-versions) by **April 7, 2025**. 
 
 ## How to manually disable auditing of administrator events
 To enable auditing of administrator events, use the following steps
@@ -22,7 +22,7 @@ To enable auditing of administrator events, use the following steps
 3. Navigate to the following path: **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Azure AD Connect**.  
 4. Modify or Create the **AuditEventLogging** Value by right-click on the Azure AD Connect key, select New -> **DWORD (32-bit)** Value if the AuditEventLogging value does not already exist. 
 5. Name the new DWORD as **AuditEventLogging**. 
-6. Double-clicking on the **AuditEventLogging** entry and enter **0** to enable audit event logging.  Enter 0 to disable it. 
+6. Double-clicking on the **AuditEventLogging** entry and enter **0** to disable the audit event logging.  Enter 0 to Re-enable isable it. 
 
 :::image type="content" source="media/admin-audit-logging/logging-1.png" alt-text="Screenshot of the new AuditEventLogging registry kety." lightbox="media/admin-audit-logging/logging-1.png":::
 
