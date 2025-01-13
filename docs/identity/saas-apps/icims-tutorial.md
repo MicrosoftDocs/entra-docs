@@ -94,9 +94,6 @@ In this section, you'll add a client secret for your application.
  
 5. Record the Client secret and expiration date to provide to the iCIMS support team.
 
-    > [!NOTE]  
-    > If your organization does not want to configure a client secret, you can leverage an OpenID Connect integration and utilize front-channel authentication with the implicit grant flow.
-
 ### Add permissions to your Entra Application
 
 In this section, you'll add a permission to your application to sign in users and read the signed-in users' profiles.
