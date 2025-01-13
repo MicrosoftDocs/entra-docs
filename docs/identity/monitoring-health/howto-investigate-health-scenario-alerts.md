@@ -60,19 +60,15 @@ The signals and alerts are available in the Microsoft Entra Health area of the M
 
 1. Select a scenario from the list. The page opens to the scenarios with active alerts, but if you want to view the signals for a different scenario, select the **All scenarios** filter button.
 
+1. Active alerts appear in a table. If necessary, adjust the filters to see a different date range or status. Select the active alert you want to investigate. 
+
 1. 
 
 
 
 
 
-
-
-    - The default view is the last seven days, but you can adjust the date range to 24 hours, seven days, or one month.
-    - The data is updated every 15 minutes.
-    - We recommend reviewing these signals on a regular schedule so that you can recognize your tenant's trends and patterns.
-
-    ![Screenshot of the sign-ins requiring multifactor authenitcation (MFA) scenario.](media/howto-investigate-health-scenario-alerts/scenario-monitoring-signal-mfa.png)
+  ![Screenshot of the sign-ins requiring multifactor authenitcation (MFA) scenario.](media/howto-investigate-health-scenario-alerts/scenario-monitoring-signal-mfa.png)
 
 #### Investigate the alerts
 
