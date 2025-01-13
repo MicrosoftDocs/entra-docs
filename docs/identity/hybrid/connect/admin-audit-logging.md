@@ -46,27 +46,27 @@ You can also use PowerShell to enable audit logging of administrator events.  Us
 ## List of logged events
 The following table is a list of events that are logged with the new auditing feature.  To view the events, use Event Viewer and look in the Application log. 
 
-|EventID|EventName|Description|
-|-----|-----|-----|
-|2503|Add/Update/DeleteDirectories||
-|2504|EnableExpresssettingsmode|| 
-|2505|Enable/DisablealldomainsandOUforsync|| 
-|2506|Enable/DisablePHSSync|| 
-|2507|Enable/DisableSyncstartafterinstall|| 
-|2508|CreateADDSaccount|| 
-|2509|UseExistingADDSaccount|| 
-|2510|Create/Update/Deletecustominboundsyncrule|| 
-|2511|Enable/DisableDomainbasedfiltering||
-|2512|Enable/DisableOUbasedfiltering|| 
-|2513|UserSign-Inmethodchanged|| 
-|2514|ConfigurenewADFSfarm|| 
-|2515|Enable/DisableSinglesign-on|| 
-|2516|Installwebapplicationproxyserver||
-|2517|SetPermissions|| 
-|2518|ChangeADDSConnectorPasswordcredential|| 
-|2519|ReinitializeEntraIDConnectoraccountpassword|| 
-|2520|InstallADFSServer|| 
-|2521|SetADFSServiceAccount|| 
+|EventID|EventName|
+|-----|-----|
+|2503|Add/Update/DeleteDirectories|
+|2504|EnableExpresssettingsmode| 
+|2505|Enable/DisablealldomainsandOUforsync| 
+|2506|Enable/DisablePHSSync| 
+|2507|Enable/DisableSyncstartafterinstall| 
+|2508|CreateADDSaccount| 
+|2509|UseExistingADDSaccount| 
+|2510|Create/Update/Deletecustominboundsyncrule| 
+|2511|Enable/DisableDomainbasedfiltering|
+|2512|Enable/DisableOUbasedfiltering| 
+|2513|UserSign-Inmethodchanged|
+|2514|ConfigurenewADFSfarm| 
+|2515|Enable/DisableSinglesign-on| 
+|2516|Installwebapplicationproxyserver|
+|2517|SetPermissions| 
+|2518|ChangeADDSConnectorPasswordcredential| 
+|2519|ReinitializeEntraIDConnectoraccountpassword| 
+|2520|InstallADFSServer| 
+|2521|SetADFSServiceAccount| 
 
 
   ## Next steps
