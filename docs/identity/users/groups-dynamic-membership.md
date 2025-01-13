@@ -157,6 +157,8 @@ The following table lists all the supported operators and their syntax for a sin
 | Equals |-eq |
 | Not Starts With |-notStartsWith |
 | Starts With |-startsWith |
+| Not Ends With |-notEndsWith |
+| Ends With |-EndsWith |
 | Not Contains |-notContains |
 | Contains |-contains |
 | Not Match |-notMatch |
