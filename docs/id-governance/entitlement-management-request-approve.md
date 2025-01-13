@@ -81,6 +81,20 @@ After you open an access request pending approval, you can see details that will
 
     If none of the configured approvers in a stage are able to approve or deny the access request, the request expires after the configured request duration. The user gets notified that their access request has expired, and that they need to resubmit the access request.
 
+## Revoke a request (preview)
+
+Users with Microsoft Entra ID Governance can undo their approval for an access request that they previously approved. This will revoke the approval and the requestor will no longer have access to the access package. 
+
+**Prerequisite role:** Approver with Microsoft Entra ID Governance license
+
+1. In My Access, select **Approvals** > **History**.
+
+2. Select an approved request that you'd like to revoke the decision for.
+
+3. Select **Remove** to remove the user's access to the access package. Include a reason for why you are revoking your decision.
+
+4. Select **Remove** to submit your decision. 
+
 ## Next steps
 
 - [Request access to an access package](entitlement-management-request-access.md)

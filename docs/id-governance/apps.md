@@ -5,7 +5,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: overview
-ms.date: 12/18/2024
+ms.date: 12/30/2024
 ms.author: billmath
 ms.reviewer: amycolannino
 ---
@@ -20,8 +20,7 @@ ms.reviewer: amycolannino
 | :--- | :--- |
 | HR | [SuccessFactors - User Provisioning](../identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md) |
 | HR | [Workday - User Provisioning](../identity/saas-apps/workday-inbound-cloud-only-tutorial.md)|
-| HR | [API-driven connector from any HR source](../identity/app-provisioning/inbound-provisioning-api-concepts.md)<br>[Oracle HCM API-driven connector](../identity/saas-apps/oracle-hcm-provisioning-tutorial.md)|
-| HR | [Rippling HCM integration with Microsoft Entra ID/Active Directory](../identity/saas-apps/rippling-hcm-microsoft-entra-id-integration-tutorial.md) |
+| HR | [API-driven connector from any HR source](../identity/app-provisioning/inbound-provisioning-api-concepts.md)<br>[Rippling HCM integration with Microsoft Entra ID/Active Directory](../identity/saas-apps/rippling-hcm-microsoft-entra-id-integration-tutorial.md)<br>[Oracle HCM API-driven connector](../identity/saas-apps/oracle-hcm-provisioning-tutorial.md) |
 |[LDAP directory](../identity/app-provisioning/on-premises-ldap-connector-configure.md)| OpenLDAP<br>Microsoft Active Directory Lightweight Directory Services<br>389 Directory Server<br>Apache Directory Server<br>IBM Tivoli DS<br>Isode Directory<br>NetIQ eDirectory<br>Novell eDirectory<br>Open DJ<br>Open DS<br>Oracle (previously Sun ONE) Directory Server Enterprise Edition<br>RadiantOne Virtual Directory Server (VDS) |
 | [SQL database](../identity/app-provisioning/tutorial-ecma-sql-connector.md)| Microsoft SQL Server and Azure SQL<br>IBM DB2 10.x<br>IBM DB2 9.x<br>Oracle 10g and 11g<br>Oracle 12c and 18c<br>MySQL 5.x|
 | Cloud platform| [AWS IAM Identity Center](../identity/saas-apps/aws-single-sign-on-provisioning-tutorial.md) |
@@ -547,6 +546,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Nuclino](../identity/saas-apps/nuclino-tutorial.md) |  | ● |
 | [OfficeSpace Software](../identity/saas-apps/officespace-software-provisioning-tutorial.md) | ● | ● |
 | [Olfeo SAAS](../identity/saas-apps/olfeo-saas-provisioning-tutorial.md) | ● | ● |
+| [Omnissa Identity Service](../identity/saas-apps/omnissa-identity-service-provisioning-tutorial.md) | ● | ● |
 | [OneDesk](../identity/saas-apps/onedesk-tutorial.md) |  | ● |
 | [Oneflow](../identity/saas-apps/oneflow-provisioning-tutorial.md) | ● | ● |
 | [Oneteam](../identity/saas-apps/oneteam-tutorial.md) |  | ● |
@@ -849,7 +849,6 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Visibly](../identity/saas-apps/visibly-provisioning-tutorial.md) | ● | ● |
 | [Visitly](../identity/saas-apps/visitly-provisioning-tutorial.md) | ● | ● |
 | [Visma](../identity/saas-apps/visma-tutorial.md) |  | ● |
-| [VMware Identity Service](../identity/saas-apps/vmware-identity-service-provisioning-tutorial.md) | ● | ● |
 | [Vonage](../identity/saas-apps/vonage-provisioning-tutorial.md) | ● | ● |
 | [Voyance](../identity/saas-apps/voyance-tutorial.md) |  | ● |
 | [Vtiger CRM (SAML)](../identity/saas-apps/vtiger-crm-saml-tutorial.md) |  | ● |

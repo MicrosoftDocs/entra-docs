@@ -5,7 +5,7 @@ description: Restore deleted users in bulk in the Azure portal in Microsoft Entr
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
-ms.date: 07/01/2024
+ms.date: 12/19/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
@@ -15,7 +15,7 @@ ms.reviewer: jeffsta
 
 # Bulk restore deleted users in Microsoft Entra ID
 
-Microsoft Entra ID, part of Microsoft Entra, supports bulk user restore operations and supports downloading lists of users, groups, and group members.
+Microsoft Entra ID supports bulk user restore operations and downloading lists of users, groups, and group members.
 
 ## Understand the CSV template
 
@@ -53,10 +53,10 @@ The rows in a downloaded CSV template are as follows:
 
     :::image type="content" source="./media/users-bulk-restore/upload-button.png" alt-text="Screenshot of selecting a local CSV file in which you list the users you want to add":::
 
-1. On the **Bulk restore** page, under **Upload your csv file**, browse to the file. When you select the file and click **Submit**, validation of the CSV file starts.
-1. When the file contents are validated, you’ll see **File uploaded successfully**. If there are errors, you must fix them before you can submit the job.
+1. On the **Bulk restore** page, under **Upload your csv file**, browse to the file. When you select the file and select **Submit**, validation of the CSV file starts.
+1. When the file contents are validated, you see **File uploaded successfully**. If there are errors, you must fix them before you can submit the job.
 1. When your file passes validation, select **Submit** to start the bulk operation that restores the users.
-1. When the restore operation completes, you'll see a notification that the bulk operation succeeded.
+1. When the restore operation completes, you see a notification that the bulk operation succeeded.
 
 If you experience errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error. The file submission must match the provided template and include the exact column names. For more information about bulk operations limitations, see [Bulk restore service limits](#bulk-restore-service-limits).
 

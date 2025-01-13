@@ -16,6 +16,10 @@ ms.topic: whats-new
 
 Welcome to what's new in the Microsoft identity platform documentation. This article lists new articles that were added or had significant updates in the last three months.
 
+## December 2024
+
+No updates available.
+
 ## November 2024
 
 ### New articles
@@ -42,14 +46,4 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 - [Signing key rollover in the Microsoft identity platform](signing-key-rollover.md) - Add a description of the key refresh algorithm in a language neutral way
 - [What's new for authentication?](reference-breaking-changes.md) - Added clarity to the content
 
-## September 2024
 
-### New articles
-
-- [Set up an Android device in Shared Device Mode](tutorial-mobile-android-device-shared-mode.md)
-
-### Updated articles
-
-- [Overview of shared device mode](msal-shared-devices.md) - Added clarity to the content
-- [Shared device mode for Android devices](msal-android-shared-devices.md) - Added clarity to the content
-- [Tutorial: Add shared-device mode support to your Android application](tutorial-v2-shared-device-mode.md) - Added clarity to the content
