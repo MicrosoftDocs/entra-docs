@@ -58,11 +58,25 @@ Email notification settings can be configured for each scenario in the Microsoft
 
 ### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
 
-1. From a selected scenario, expand the **Group alert notifications** section.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Helpdesk Administrator](../role-based-access-control/permissions-reference.md#helpdesk-administrator).
 
-1. If you haven't added a group yet, select the **+ Select** option. If you have already added a group, select the **Edit** option.
+1. Browse to **Identity** > **Monitoring & health** > **Health** and select the **Health monitoring** tab.
 
-1. From the panel that opens, select the group(s) you want to receive the alerts.
+1. Select the scenario you want to configure email notifications for.
+
+    ![Screenshot of the Health monitoring landing page.](media/howto-configure-health-alert-emails/health-monitoring-landing-page.png)
+
+1. From the **Group alert notifications** section, select either the **+Select** or **Edit** button.
+    - If no group is selected, the **+Select** button is displayed.
+    - If a group is already selected, the **Edit** button is displayed.
+
+    ![Screenshot of the group alert notifications edit button.](media/howto-configure-health-alert-emails/email-notifications-edit-button.png)
+
+1. From the panel that opens, select the group you want to receive the alerts and select the **Select** button. 
+    - Only one group can be selected.
+    - The group is updated in the **Group alert notifications** section.
+
+    ![Screenshot of the group selection panel.](media/howto-configure-health-alert-emails/select-email-notification-group.png)
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
