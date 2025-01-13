@@ -158,7 +158,7 @@ sections:
              1. Navigate to the `$env:ProgramFiles"\Microsoft Azure Active Directory Connect"` folder.
              2. Import the Seamless SSO PowerShell module using this command: `Import-Module .\AzureADSSO.psd1`.
              3. Run PowerShell as an Administrator. In PowerShell, call `New-AzureADSSOAuthenticationContext`. This command should give you a popup to enter your tenant's Hybrid Identity Administrator credentials.
-             4. Call `Get-AzureADSSOStatus | ConvertFrom-Json`. This command provides you the list of AD forests (look at the "Domains" list) on which this feature has been enabled.
+             4. Call `Get-AzureADSSOStatus | ConvertFrom-Json`. This command provides you with the list of AD forests (look at the "Domains" list) on which this feature has been enabled.
           
              **Step 3. Manually delete the `AZUREADSSO` computer account from each AD forest that you see listed.**
           
