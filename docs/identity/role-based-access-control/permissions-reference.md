@@ -78,6 +78,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Insights Analyst](#insights-analyst) | Access the analytical capabilities in Microsoft Viva Insights and run custom queries. | 25df335f-86eb-4119-b717-0ff02de207e9 |
 > | [Insights Business Leader](#insights-business-leader) | Can view and share dashboards and insights via the Microsoft 365 Insights app. | 31e939ad-9672-4796-9c2e-873181342d2d |
 > | [Intune Administrator](#intune-administrator) | Can manage all aspects of the Intune product.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 3a2c62db-5318-420d-8d74-23affee5d9d5 |
+> | [IoT Device Administrator](#iot-device-administrator) | Provision new IoT devices, manage their lifecycle, configure certificates, and manage device templates. | 2ea5ce4c-b2d8-4668-bd81-3680bd2d227a |
 > | [Kaizala Administrator](#kaizala-administrator) | Can manage settings for Microsoft Kaizala. | 74ef975b-6605-40af-a5d2-b9539d836353 |
 > | [Knowledge Administrator](#knowledge-administrator) | Can configure knowledge, learning, and other intelligent features. | b5a8dcf3-09d5-43a9-a639-8e29ef291470 |
 > | [Knowledge Manager](#knowledge-manager) | Can organize, create, manage, and promote topics and knowledge. | 744ec460-397e-42ad-a462-8b3f9747a02c |
@@ -1750,6 +1751,29 @@ This role can create and manage all security groups. However, Intune Administrat
 > | microsoft.office365.organizationalMessages/allEntities/allProperties/read | Read all aspects of Microsoft 365 Organizational Messages |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
+
+## IoT Device Administrator
+
+Assign the IoT Device Administrator role to users who need to do the following tasks:
+
+- Provision new IoT devices using device templates
+- Manage the lifecycle of IoT devices
+- Configure certificates used for IoT device authentication
+- Manage the lifecycle of IoT device templates
+
+> [!div class="mx-tableFixed"]
+> | Actions | Description |
+> | --- | --- |
+> | microsoft.directory/certificateBasedDeviceAuthConfigurations/create | Create Certificate Authorities configurations for IoT Device trust and authentication |
+> | microsoft.directory/certificateBasedDeviceAuthConfigurations/credentials/update | Update crendential related properties on certificate authority configurations for Internet of Things (IoT) device trust and authentication |
+> | microsoft.directory/certificateBasedDeviceAuthConfigurations/delete | Delete certificate authority configurations for Internet of Things (IoT) device |
+> | microsoft.directory/certificateBasedDeviceAuthConfigurations/standard/read | Read standard properties on certificate authority configurations for Internet of Things (IoT) device trust and authentication |
+> | microsoft.directory/deviceTemplates/create | Create Internet of Things (IoT) device templates |
+> | microsoft.directory/deviceTemplates/createDeviceFromTemplate | Create IoT Device from Internet of Things (IoT) device templates |
+> | microsoft.directory/deviceTemplates/delete | Delete Internet of Things (IoT) device templates |
+> | microsoft.directory/deviceTemplates/deviceInstances/read | Read device instances from Internet of Things (IoT) device links |
+> | microsoft.directory/deviceTemplates/owners/read | Read owners on Internet of Things (IoT) device templates |
+> | microsoft.directory/deviceTemplates/owners/update | Update owners on Internet of Things (IoT) device templates |
 
 ## Kaizala Administrator
 
