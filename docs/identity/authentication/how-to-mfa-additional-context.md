@@ -16,7 +16,7 @@ This article discusses how to improve the security of user sign-in by adding the
 ## Prerequisites
 
 - Your organization needs to enable Authenticator passwordless and push notifications for some users or groups by using the new Authentication methods policy. You can edit the Authentication methods policy by using the Microsoft Entra admin center or Microsoft Graph API.
-- Additional context can be targeted to only a single group, which can be dynamic or nested. On-premises synchronized security groups and cloud-only security groups are supported for the Authentication methods policy.
+- Additional context can be targeted to only a single group, which can be dynamic or nested. The group can be synchronized from on-premises or cloud-only.
 
 ## Passwordless phone sign-in and multifactor authentication
 
