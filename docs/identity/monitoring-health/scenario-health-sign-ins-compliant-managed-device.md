@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 10/23/2024
+ms.date: 01/07/2025
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -44,7 +44,8 @@ There are different roles, permissions, and license requirements to view health 
 Investigating an alert starts with gathering data.
 
 1. Gather the signal details and impact summary.
-    - For more information, see [Microsoft Graph health monitoring overview](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true).
+    - View the signal in the Microsoft Entra admin center to get familiar with the pattern and identify anomalies.
+        ![Screenshot of the sign-ins requiring managed device signal.](media/scenario-health-sign-ins-compliant-managed-device/scenario-monitoring-managed-device.png)
     - Run the [List alerts](/graph/api/healthmonitoring-healthmonitoringroot-list-alerts?view=graph-rest-beta&preserve-view=true) API to retrieve all alerts for the tenant.
     - Run the [Get alert](/graph/api/healthmonitoring-alert-get?view=graph-rest-beta&preserve-view=true) API to retrieve the details of a specific alert.
 1. Review your Intune device compliance policies.

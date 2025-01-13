@@ -6,7 +6,7 @@ description: Describes how to get started with Microsoft Entra multifactor authe
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/27/2024
+ms.date: 01/08/2025
 
 ms.author: justinha
 author: justinha
@@ -41,12 +41,12 @@ To secure AD FS 2.0 with a proxy, install the Microsoft Entra multifactor authen
    ![MFA Server IIS Authentication window](./media/howto-mfaserver-adfs-2/setup1.png)
 
 4. To detect username, password, and domain variables automatically, enter the sign-in URL (like `https://sso.contoso.com/adfs/ls`) within the Auto-Configure Form-Based Website dialog box and select **OK**.
-5. Check the **Require Azure multifactor authentication user match** box if all users have been or will be imported into the Server and subject to two-step verification. If a significant number of users haven't yet been imported into the Server and/or will be exempt from two-step verification, leave the box unchecked.
+5. Check the **Require Azure multifactor authentication user match** box if all users are or will be imported into the Server and subject to two-step verification. If a significant number of users haven't yet been imported into the Server and/or will be exempt from two-step verification, leave the box unchecked.
 6. If the page variables can't be detected automatically, select the **Specify Manually…** button in the Auto-Configure Form-Based Website dialog box.
 7. In the Add Form-Based Website dialog box, enter the URL to the AD FS sign-in page in the Submit URL field (like `https://sso.contoso.com/adfs/ls`) and enter an Application name (optional). The Application name appears in Azure multifactor authentication reports and may be displayed within SMS or Mobile App authentication messages.
 8. Set the Request format to **POST or GET**.
-9. Enter the Username variable (ctl00$ContentPlaceHolder1$UsernameTextBox) and Password variable (ctl00$ContentPlaceHolder1$PasswordTextBox). If your form-based sign-in page displays a domain textbox, enter the Domain variable as well. To find the names of the input boxes on the sign-in page, go to the sign-in page in a web browser, right-select on the page and select **View Source**.
-10. Check the **Require Azure multifactor authentication user match** box if all users have been or will be imported into the Server and subject to two-step verification. If a significant number of users haven't yet been imported into the Server and/or will be exempt from two-step verification, leave the box unchecked.
+9. Enter the Username variable (ctl00$ContentPlaceHolder1$UsernameTextBox) and Password variable (ctl00$ContentPlaceHolder1$PasswordTextBox). If your form-based sign-in page displays a domain textbox, enter the Domain variable as well. To find the names of the input boxes on the sign-in page, go to the sign-in page in a web browser, right-select on the page, and select **View Source**.
+10. Check the **Require Azure multifactor authentication user match** box if all users are or will be imported into the Server and subject to two-step verification. If a significant number of users haven't yet been imported into the Server and/or will be exempt from two-step verification, leave the box unchecked.
 
     ![Add form-based website to MFA Server](./media/howto-mfaserver-adfs-2/manual.png)
 
@@ -102,7 +102,7 @@ You can secure AD FS when the AD FS proxy isn't used. Install the Microsoft Entr
 3. Select **Add**.
 4. In the Add Base URL dialogue box, enter the URL for the AD FS website where HTTP authentication is performed (like `https://sso.domain.com/adfs/ls/auth/integrated`) into the Base URL field. Then, enter an Application name (optional). The Application name appears in Azure multifactor authentication reports and may be displayed within SMS or Mobile App authentication messages.
 5. If desired, adjust the Idle timeout and Maximum session times.
-6. Check the **Require Azure multifactor authentication user match** box if all users have been or will be imported into the Server and subject to two-step verification. If a significant number of users aren't yet imported into the Server and/or will be exempt from two-step verification, leave the box unchecked.
+6. Check the **Require Azure multifactor authentication user match** box if all users are or will be imported into the Server and subject to two-step verification. If a significant number of users aren't yet imported into the Server and/or will be exempt from two-step verification, leave the box unchecked.
 7. Check the cookie cache box if desired.
 
    ![AD FS 2.0 Direct without a proxy](./media/howto-mfaserver-adfs-2/noproxy.png)
