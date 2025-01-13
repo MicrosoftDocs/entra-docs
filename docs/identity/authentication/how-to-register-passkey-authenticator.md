@@ -185,7 +185,7 @@ If a user wants to revert to the original instructions and register a passkey in
 
 ## Delete your passkey in Authenticator for iOS
 
-To remove the passkey from Authenticator, tap the account name, and tap **Settings** > **Delete passkey**. You also need to delete your passkey from [Security info](https://mysignins.microsoft.com/security-info).
+To remove the passkey from Authenticator, tap the account name, and then tap **Settings** > **Delete passkey**. You also need to delete your passkey from [Security info](https://mysignins.microsoft.com/security-info).
 
 ### Troubleshooting
 
