@@ -19,9 +19,9 @@ Use the following steps to create these reports:
 
  1. [Set up Azure Data Explorer](#1-setup-azure-data-explorer) in an Azure subscription, or create a free cluster.
  2. [Extract data from Microsoft Entra ID](#2-extract-microsoft-entra-id-data-with-powershell) using PowerShell scripts and Microsoft Graph.
- 3. [Import that data from Microsoft Entra ID into Azure Data Explorer](#3-import-json-files-with-data-from-microsoft-entra-id-into-azure-data-explorer).
+ 3. [Create tables and import that data from Microsoft Entra ID into Azure Data Explorer](#3-create-tables-and-import-json-files-with-data-from-microsoft-entra-id-into-azure-data-explorer).
  1. [Extract data from Microsoft Entra ID Governance](#4-extract-microsoft-entra-id-governance-data-with-powershell).
- 1. [Import that data from Microsoft Entra ID Governance into Azure Data Explorer](#5-import-json-files-with-data-from-microsoft-entra-id-governance-into-azure-data-explorer).
+ 1. [Create tables and import that data from Microsoft Entra ID Governance into Azure Data Explorer](#5-create-tables-and-import-json-files-with-data-from-microsoft-entra-id-governance-into-azure-data-explorer).
  1. [Build a custom query](#6-use-azure-data-explorer-to-build-custom-reports) using Kusto Query Language.
 
 By the end of this tutorial, you'll be able to develop customized views of the access rights and permissions of users. These views span across different applications using Microsoft supported tools. You can also bring in data from third-party databases or applications to report on those as well.
@@ -113,7 +113,7 @@ $SnapshotDate = Get-Date -AsUTC -Format "yyyy-MM-dd"
 
 ### Get Entra user data 
 
-This script exports selected properties from the Entra user object to a JSON file. We'll import this and additional data from other JSON files into Azure Data Explorer in a [subsequent section of this tutorial](#3-import-json-files-with-data-from-microsoft-entra-id-into-azure-data-explorer).
+This script exports selected properties from the Entra user object to a JSON file. We'll import this and additional data from other JSON files into Azure Data Explorer in a [subsequent section of this tutorial](#3-create-tables-and-import-json-files-with-data-from-microsoft-entra-id-into-azure-data-explorer).
 
      
 ```powershell
@@ -167,7 +167,7 @@ Generate a JSON file with group names and IDs that are used to create custom vie
 ```
 ### Get Group Membership data 
 
-Generate a JSON file with group membership which is used to create custom views in Azure Data Explorer. 
+Generate a JSON file with group membership which is used to create custom views in Azure Data Explorer. The sample includes all groups, but additional filtering can be included if needed.
 ```powershell
     # Retrieve all groups from Microsoft Entra (Azure AD) 
     $groups = Get-MgGroup -All 
@@ -194,7 +194,7 @@ Generate a JSON file with group membership which is used to create custom views 
 
 ### Get Application and Service Principal data 
 
-Generates JSON file with all applications and the corresponding service principals in the tenant. We'll import this data into Azure Data Explorer in [a subsequent section of this tutorial](#3-import-json-files-with-data-from-microsoft-entra-id-into-azure-data-explorer) which allows us to generate custom reports related to applications based on this data. 
+Generates JSON file with all applications and the corresponding service principals in the tenant. We'll import this data into Azure Data Explorer in [a subsequent section of this tutorial](#3-create-tables-and-import-json-files-with-data-from-microsoft-entra-id-into-azure-data-explorer) which allows us to generate custom reports related to applications based on this data. 
 ```powershell
     # Fetch applications and their corresponding service principals, then export to JSON 
     Get-MgApplication -All | ForEach-Object { 
@@ -238,7 +238,7 @@ Generate a JSON file of all appRoles for enterprise apps in Microsoft Entra. Onc
 ``` 
 ### Get AppRole Assignment data 
 
-Generate a JSON file of all app role assignments in the tenant. 
+Generate a JSON file of all app role assignments of users in the tenant. 
 ```powershell
     $users = Get-MgUser -All 
     $result = @() 
@@ -261,16 +261,16 @@ Generate a JSON file of all app role assignments in the tenant.
     $result | ConvertTo-Json -Depth 10 | Out-File "AppRoleAssignments.json" 
 ``` 
 
-## 3: Import JSON files with data from Microsoft Entra ID into Azure Data Explorer
+## 3: Create tables and import JSON files with data from Microsoft Entra ID into Azure Data Explorer
 
-In this section, we import the newly created JSON files for the Microsoft Entra ID services into Azure Data Explorer for further analysis.
+In this section, we import the newly created JSON files for the Microsoft Entra ID services as tables in Azure Data Explorer for further analysis. On the first import using the Azure Data Explorer web UI, you will create the tables based on schema that the web UI suggests from each JSON file.
 
 Once you have setup a database in your Azure Data Explorer cluster or free cluster, as described in the first section of this article, navigate to that database.
 
  1. Sign-in to the [Azure Data Explorer web UI](https://dataexplorer.azure.com/home).
  1. From the left menu, select **Query**.
 
-Next, follow these steps for each exported JSON file, to get your exported data into that Azure Data Explorer database.
+Next, follow these steps for each exported JSON file, to get your exported data into that Azure Data Explorer database as a new table.
 
  1. Right-select on the database name of the database where you want to ingest the data. Select **Get data**.
 
@@ -281,6 +281,8 @@ Next, follow these steps for each exported JSON file, to get your exported data 
  1. Select **Browse for files**, select the JSON file, and select **Next**.
  1. Azure Data Explorer automatically detects the schema and provides a preview in the **Inspect** tab. Select **Finish** to create the table and import the data from that file. Once the data is ingested, click **Close**.
  1. Repeat each of the preceding steps for each of the JSON files that you generated in the previous section.
+
+At the end of those steps you will have the tables `EntraUsers`, `EntraGroups`, `EntraGroupMembership`, `Applications`, `AppRoles`, and `AppRoleAssignments` in the database.
 
 ## 4: Extract Microsoft Entra ID Governance data with PowerShell
 
@@ -336,7 +338,7 @@ Generate a JSON file with access review definition names and IDs that are used t
          SnapshotDate = $SnapshotDate
       }
    }
-   $definitions | ConvertTo-Json -Depth 10 | Set-Content "EntraAccessReviewDefinition.json"
+   $definitions | ConvertTo-Json -Depth 10 | Set-Content "EntraAccessReviewDefinitions.json"
 ```
 
 ### Get entitlement management access package data
@@ -354,19 +356,45 @@ Generate a JSON file with access package names and IDs that are used to create c
          SnapshotDate = $SnapshotDate
       }
    }
-   $accesspackages2 | ConvertTo-Json -Depth 10 | Set-Content "EntraAccessPackage.json"
+   $accesspackages2 | ConvertTo-Json -Depth 10 | Set-Content "EntraAccessPackages.json"
 ```
 
-## 5: Import JSON files with data from Microsoft Entra ID Governance into Azure Data Explorer
+### Get entitlement management access package assignment data
 
-In this section, we import the newly created JSON files for the Microsoft Entra ID Governance services into Azure Data Explorer, alongside the data already imported for the Microsoft Entra ID services, for further analysis.
+Generate a JSON file with assignments to access packages that are used to create custom views in Azure Data Explorer. The sample includes all assignments that are delivered, but additional filtering can be included if needed.
+
+```powershell
+   $apassignments1 = Get-MgEntitlementManagementAssignment -ExpandProperty target,accessPackage -filter "state eq 'Delivered'" -all
+   $apassignments2 = @()
+   # Iterate over each access package assignment
+   foreach ($assignment in $apassignments1) {
+      $apassignments2 += [PSCustomObject]@{
+         Id = $assignment.Id
+         ScheduleStartDateTime = $assignment.Schedule.StartDateTime -replace "\\/Date\((\d+)\)\\/", '$1' 
+         AccessPackageId = $assignment.AccessPackage.Id
+         AccessPackageDisplayName = $assignment.AccessPackage.DisplayName
+         TargetId = $assignment.Target.Id
+         TargetDisplayName = $assignment.Target.DisplayName
+         TargetEmail = $assignment.Target.Email
+         TargetObjectId = $assignment.Target.ObjectId
+         TargetPrincipalName = $assignment.Target.PrincipalName
+         TargetSubjectType = $assignment.Target.SubjectType
+         SnapshotDate = $SnapshotDate
+      }
+   }
+   $apassignments2 | ConvertTo-Json -Depth 10 | Set-Content "EntraAccessPackageAssignments.json"
+```
+
+## 5: Create tables and import JSON files with data from Microsoft Entra ID Governance into Azure Data Explorer
+
+In this section, we import the newly created JSON files for the Microsoft Entra ID Governance services into Azure Data Explorer, alongside the data already imported for the Microsoft Entra ID services, for further analysis. On the first import using the Azure Data Explorer web UI, you will create tables based on schema that the web UI suggests from each JSON file.
 
 In your Azure Data Explorer cluster or free cluster, navigate to the database which holds your Microsoft Entra ID data.
 
  1. Sign-in to the [Azure Data Explorer web UI](https://dataexplorer.azure.com/home).
  1. From the left menu, select **Query**.
 
-Next, follow these steps for each exported JSON file from the previous section, to get your exported data into that Azure Data Explorer database.
+Next, follow these steps for each exported JSON file from the previous section, to get your exported data into that Azure Data Explorer database as a new table.
 
  1. Right-select on the database name of the database where you want to ingest the data. Select **Get data**.
 
@@ -377,6 +405,8 @@ Next, follow these steps for each exported JSON file from the previous section, 
  1. Select **Browse for files**, select the JSON file, and select **Next**.
  1. Azure Data Explorer automatically detects the schema and provides a preview in the **Inspect** tab. Select **Finish** to create the table and import the data from that file. Once the data is ingested, click **Close**.
  1. Repeat each of the preceding steps for each of the JSON files that you generated in the previous section.
+
+At the end of those steps you will have the tables `EntraAccessReviewDefinitions`, `EntraAccessPackages`, and `EntraAccessPackageAssignments` in the database, in addition to the tables created in section 3.
 
 ## 6: Use Azure Data Explorer to build custom reports 
 
@@ -390,7 +420,7 @@ The following queries provide examples of common reports, but you can customize 
 
 This report provides a view of who had what access and when to the target app and can be used for security audits, compliance verification, and understanding access patterns within the organization. 
 
-This query targets a specific application within Microsoft Entra AD and analyzes the role assignments as of a certain date. The query retrieves both direct and group-based role assignments, merging this data with user details from the EntraUsers table and role information from the AppRoles table. In the query below, set the `targetSnapshotDate` to the `snapshotDate` value that was used when loading the data.
+This query targets a specific application within Microsoft Entra AD and analyzes the role assignments as of a certain date. The query retrieves both direct and group-based role assignments, merging this data with user details from the `EntraUsers` table and role information from the `AppRoles` table. In the query below, set the `targetSnapshotDate` to the `snapshotDate` value that was used when loading the data.
 
 ```kusto
 /// Define constants 
@@ -436,7 +466,7 @@ directAssignments
 
 This report provides a view of who had what access to the target app between two dates and can be used for security audits, compliance verification, and understanding access patterns within the organization. 
 
-This query targets a specific application within Microsoft Entra ID and analyzes the role assignments between two dates. The query retrieves direct role assignments from the AppRoleAssignments table and merges this data with user details from the EntraUsers table and role information from the AppRoles table. 
+This query targets a specific application within Microsoft Entra ID and analyzes the role assignments between two dates. The query retrieves direct role assignments from the `AppRoleAssignments` table and merges this data with user details from the `EntraUsers` table and role information from the `AppRoles` table. 
 
 ```kusto
 // Set the date range and service principal ID for the query 
@@ -500,13 +530,23 @@ AppRoleAssignments
 
 ## Set up ongoing imports
 
-This tutorial illustrates a one-time data extract, transform and load (ETL) process to populate Azure Data Explorer with a single snapshot for reporting purposes. For ongoing reporting or to compare changes over time, you can automate the process of populating Azure Data Explorer from Microsoft Entra, so that your database continues to have current data. 
+This tutorial illustrates a one-time data extract, transform, and load (ETL) process to populate Azure Data Explorer with a single snapshot for reporting purposes. For ongoing reporting or to compare changes over time, you can automate the process of populating Azure Data Explorer from Microsoft Entra, so that your database continues to have current data.
 
-You can use [Azure Automation](/azure/automation/overview), an Azure cloud service, to host the PowerShell scripts needed to extract data from Microsoft Entra ID and Microsoft Entra ID Governance and import it into Azure Data Explorer. For more information, see [Automate Microsoft Entra ID Governance tasks with Azure Automation](identity-governance-automation.md).
+You can use [Azure Automation](/azure/automation/overview), an Azure cloud service, to host the PowerShell scripts needed to extract data from Microsoft Entra ID and Microsoft Entra ID Governance. For more information, see [Automate Microsoft Entra ID Governance tasks with Azure Automation](identity-governance-automation.md).
+
+You can also use Azure features or command line tools such as `lightingest` to bring in data and populate an already existing table. For more information, see [use LightIngest to ingest data into Azure Data Explorer](/azure/data-explorer/lightingest).
+
+For example, to load a file `EntraAccessPackages.json` in the current directory into the `EntraAccessPackages` table as the currently logged-in user:
+
+```azurecli
+az login
+LightIngest.exe "https://ingest-CLUSTERHOSTNAME;Fed=True" -database:"DATABASE" -table:EntraAccessPackages -sourcepath:"." -pattern:"EntraAccessPackages.json" -format:multijson -azcli:true
+```
+
 
 ## Bring in data from other sources
 
-You can also [create additional tables](/azure/data-explorer/create-table-wizard) in Azure Data Explorer to ingest data from other sources. If the data is in a JSON file, similar to the examples above, or a CSV file, then you can create the table at the time you first [get data from the file](/azure/data-explorer/get-data-file).
+You can also [create additional tables](/azure/data-explorer/create-table-wizard) in Azure Data Explorer to ingest data from other sources. If the data is in a JSON file, similar to the examples above, or a CSV file, then you can create the table at the time you first [get data from the file](/azure/data-explorer/get-data-file). One the table is created, you can also [use LightIngest to ingest data into Azure Data Explorer](/azure/data-explorer/lightingest) from a JSON or CSV file.
 
 For more information on data ingestion, see [Azure Data Explorer data ingestion overview](/azure/data-explorer/ingest-data-overview).
 
@@ -556,3 +596,4 @@ EntraUsers
 ## Next steps
 
 - [What is Microsoft Entra entitlement management?](entitlement-management-overview.md)
+- [Use Kusto .NET client libraries from PowerShell](/kusto/api/powershell/powershell?view=microsoft-fabric&tabs=user).

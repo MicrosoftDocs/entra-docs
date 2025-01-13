@@ -10,52 +10,50 @@ metadata:
   author: justinha
   manager: amycolannino
   ms.reviewer: mjsantani
-title: Frequently asked questions about passkey support in Microsoft Authenticator
+title: Frequently asked questions about passkey support in Authenticator
 summary: |
-  This article addresses frequently asked questions about passkey support in Microsoft Authenticator. 
-  Keep checking back for updated content.
+  This article addresses frequently asked questions about passkey support in Authenticator. Keep checking back for updated content.
 
 
 sections:
   - name: General
     questions:
       - question: |
-          Do I need to enable bluetooth to perform cross-device authentication?
+          Do I need to enable Bluetooth to perform cross-device authentication?
         answer: |
-          To complete cross-device authentication using passkeys in Authenticator, you must enable bluetooth on both the laptop and the mobile device, and both devices need internet access. 
+          To complete cross-device authentication by using passkeys in Authenticator, you must enable Bluetooth on both the laptop and the mobile device. Both devices need internet access. 
       - question: |
           Can I have multiple passkeys in Authenticator?
         answer: |        
-          You can only have one passkey for each account in Authenticator. At this time, Authenticator only supports passkeys for Microsoft Entra ID.
+          You can have only one passkey for each account in Authenticator. At this time, Authenticator only supports passkeys for Microsoft Entra ID.
       - question: |
-          Can I use Authenticator app camera to scan the WebAuthn QR code for registration and authentication?
+          Can I use the Authenticator app camera to scan the WebAuthn QR code for registration and authentication?
         answer: |
-          You can use the Authenticator camera to register and authenticate with passkeys. 
-          This option is useful if your organization doesn't push the system camera app to Android Work Profile. 
+          You can use the Authenticator camera to register and authenticate with passkeys. This option is useful if your organization doesn't push the system camera app to Android Work Profile. 
       - question: |
           Can I use passkeys in Authenticator without an internet connection?
         answer: |
           You can't use passkeys without an internet connection. 
           For same-device scenarios, the mobile device that contains the passkey needs internet access. 
-          For cross-device scenarios, both the device with the passkey and the secondary device where you want to sign in need internet access.  
+          For cross-device scenarios, both the device with the passkey and the secondary device where you want to sign in need internet access.
       - question: |
           Why is cross-device registration failing with "Device couldn't connect"?
         answer: |
-          Make sure Bluetooth and an active internet connection are enabled on both devices. 
-          Additionally, allow connectivity to these two endpoints in your organization to enable cross-device registration and authentication:
+          Make sure that Bluetooth and an active internet connection are enabled on both devices. 
+          Also, allow connectivity to these two endpoints in your organization to enable cross-device registration and authentication:
           
           - `https://cable.ua5v.com`
           - `https://cable.auth.com`
       - question: |
-          I'm on an Android 14 device and have followed all the steps but I'm not able to register passkeys in the Authenticator app?
+          I'm on an Android 14 device, and I followed all the steps. Why can't I register passkeys in the Authenticator app?
         answer: |
-          The Authenticator app leverages [Android APIs](https://developer.android.com/identity/sign-in/credential-provider) on Android 14 or higher to use passkeys. 
+          The Authenticator app uses [Android APIs](https://developer.android.com/identity/sign-in/credential-provider) on Android 14 or higher to use passkeys. 
           Manufacturers choose whether or not to implement these APIs for each device they make. 
-          If your device doesn't support these APIs, then the Microsoft Authenticator app may not work for your device on Android 14. 
-          For the best experience, we recommend upgrading to Android 15.
+          If your device doesn't support these APIs, the Authenticator app might not work for your device on Android 14. 
+          For the best experience, we recommend that you upgrade to Android 15.
       - question: |
           Can I sign in with a passkey in Authenticator in China?
         answer: |        
-          No. Only limited authentication methods are available for Microsoft Authenticator in China. For more information, see [Download Microsoft Authenticator in China](https://support.microsoft.com/account-billing/download-microsoft-authenticator-in-china-ebbef05c-a429-4236-8570-1bb1900fec35).
+          No. Only limited authentication methods are available for Authenticator in China. For more information, see [Download Microsoft Authenticator in China](https://support.microsoft.com/account-billing/download-microsoft-authenticator-in-china-ebbef05c-a429-4236-8570-1bb1900fec35).
 
 
