@@ -13,6 +13,9 @@ ms.subservice: entra-internet-access
 
 When you set up rules to filter web content, you can select based on a category. This article provides a list of categories along with explanations.
 
+> [!NOTE]
+> You can check a website's web category using the Web Category column in Global Secure Access [Traffic Logs](how-to-view-traffic-logs.md). If you would like to dispute a site's categorization, you can make a request via email using [this template](mailto:gsawebcatdispute@service.microsoft.com?subject=%5BCustomer%20Dispute%5D%20Miscategorized%20%3CFQDN%3E%20as%20%3CCategory%20Returned%3E&body=Dispute%20Type%3A%20Miscategorization%0AFQDN%20%3A%20%3C%3E%0ACategory%20Returned%20%3A%20%3C%3E%0ACategory%20Expected%20%3A%20%3C%3E%0AJustification%3A%20%3C%3E).
+
 ## Liability
 
 |Category |Description |

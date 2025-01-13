@@ -59,7 +59,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in MerchLogix based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for MerchLogix, following the instructions provided in the [MerchLogix single sign-on tutorial](merchlogix-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features compliment each other.
+> You may also choose to enable SAML-based single sign-on for MerchLogix, following the instructions provided in the [MerchLogix single sign-on tutorial](merchlogix-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
 
 <a name='to-configure-automatic-user-provisioning-for-merchlogix-in-azure-ad'></a>
 
@@ -74,7 +74,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 4. Set the **Provisioning Mode** to **Automatic**.
 
-	![Screenshot of the MerchLogix - Prisioning section with the Provisioning option called out, the Provisioning Mode set to Automatic, and the Test Connection option called out.](./media/merchlogix-provisioning-tutorial/Merchlogix1.png)
+	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
 5. Under the **Admin Credentials** section:
 

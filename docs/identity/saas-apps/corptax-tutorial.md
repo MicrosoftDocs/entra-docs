@@ -81,8 +81,6 @@ To configure Microsoft Entra single sign-on with Corptax, perform the following 
 
 1. On the **Select a Single sign-on method** dialog, select **SAML/WS-Fed** mode to enable single sign-on.
 
-    ![Single sign-on select mode](common/select_saml_option.png)
-
 1. On the **Set up Single Sign-On with SAML** page, click **Edit** icon to open **Basic SAML Configuration** dialog.
 
 	![Edit Basic SAML Configuration](common/edit_urls.png)

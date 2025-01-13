@@ -4,7 +4,6 @@ description: Learn how to automatically provision and deprovision user accounts 
 
 author: thomasakelo
 manager: jeedes
-ms.assetid: 6ec61b50-e786-4630-8b9d-05d2d714d2e9
 ms.service: entra-id
 ms.subservice: saas-apps
 
@@ -34,6 +33,8 @@ The scenario outlined in this tutorial assumes that you already have the followi
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A user account in ClearView Trade with Admin permissions.
+* To gain full access to this feature, please review the registration process outlined [here](https://clearviewtrade.com/en/single-sign-on-and-scim/).
+
 
 ## Step 1: Plan your provisioning deployment
 * Learn about [how the provisioning service works](~/identity/app-provisioning/user-provisioning.md).

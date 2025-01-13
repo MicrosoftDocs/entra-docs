@@ -88,7 +88,7 @@ Follow these steps to enable Microsoft Entra SSO in the Azure portal:
    1. When the metadata file is successfully uploaded, the **Identifier** and **Reply URL** values are auto populated in the Costpoint section.
 
       > [!NOTE]
-      > If the **Identifier** and **Reply URL** values are not auto polulated, enter the values manually according to your requirement. Verify that **Identifier (Entity ID)** and **Reply URL (Assertion Consumer Service URL)** are correctly set, and that **ACS URL** is a valid Costpoint URL that ends with **/LoginServlet.cps**.
+      > If the **Identifier** and **Reply URL** values are not auto populated, enter the values manually according to your requirement. Verify that **Identifier (Entity ID)** and **Reply URL (Assertion Consumer Service URL)** are correctly set, and that **ACS URL** is a valid Costpoint URL that ends with **/LoginServlet.cps**.
 
    1. Select **Set additional URLs**. For **Relay State**, enter a value using the following pattern:`system=[your system]` (for example, **system=DELTEKCP**).
 
@@ -138,9 +138,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 In this section, you create a user in Costpoint. Assume the user ID is **B.SIMON** and the user's name is **B.Simon**. Work with the [Costpoint Client support team](https://www.deltek.com/about/contact-us) to add the user in the Costpoint platform. The user must be created and activated before they can use single sign-on.
 
-After the user is created, the user's **Authentication Method** selection must be **Active Directory**, the **SAML Single Sign-on** check box must be selected, and the user name from Microsoft Entra ID must be **Active Directory or Certificate ID** (shown in the following screenshot).
-
-![Costpoint user](./media/costpoint-tutorial/costpoint-user.png)
+After the user is created, the user's **Authentication Method** selection should be **Active Directory**, the **SAML Single Sign-on** check box should be selected, and the user name from Microsoft Entra ID should be **Active Directory or Certificate ID**.
 
 ## Test SSO
 

@@ -114,9 +114,15 @@ Register the connector using a token created offline.
 
    **Using PowerShell:**
    ```powershell
-   # Load MSAL (Tested with version 4.7.1) 
+   # Loading DLLs
 
-   Add-Type -Path "..\MSAL\Microsoft.Identity.Client.dll"
+   Find-PackageProvider -Name NuGet| Install-PackageProvider -Force
+   Register-PackageSource -Name nuget.org -Location https://www.nuget.org/api/v2 -ProviderName NuGet
+   Install-Package Microsoft.IdentityModel.Abstractions  -ProviderName Nuget -RequiredVersion 6.22.0.0 
+   Install-Module Microsoft.Identity.Client
+ 
+   add-type -path "C:\Program Files\PackageManagement\NuGet\Packages\Microsoft.IdentityModel.Abstractions.6.22.0\lib\net461\Microsoft.IdentityModel.Abstractions.dll"
+   add-type -path "C:\Program Files\WindowsPowerShell\Modules\Microsoft.Identity.Client\4.53.0\Microsoft.Identity.Client.dll"
 
    # The AAD authentication endpoint uri
 

@@ -5,7 +5,7 @@ description: Guidance to move from MFA Server on-premises to Microsoft Entra mul
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 08/25/2024
 ms.author: gasinh
 author: gargi-sinha
 manager: martinco
@@ -45,8 +45,8 @@ Groups are used in three capacities for MFA migration.
 
   Use a group created in Microsoft Entra ID, also known as a cloud-only group. You can use Microsoft Entra security groups or Microsoft 365 Groups for both moving users to MFA and for Conditional Access policies. 
 
-  >[!IMPORTANT]
-  >Nested and dynamic groups aren't supported for Staged Rollout. Don't use these types of groups.
+  > [!IMPORTANT]
+  > Nested and dynamic membership groups aren't supported for Staged Rollout. Don't use these types of groups.
 
 * **Conditional Access policies**. 
   You can use either Microsoft Entra ID or on-premises groups for Conditional Access.
@@ -228,7 +228,7 @@ Now you're ready to enable [Staged Rollout](~/identity/hybrid/connect/how-to-con
 * First, you'll need to do either the [prework for PHS](~/identity/hybrid/connect/how-to-connect-staged-rollout.md#prework-for-password-hash-sync) or the [prework for PTA](~/identity/hybrid/connect/how-to-connect-staged-rollout.md#prework-for-pass-through-authentication). We  recommend PHS. 
 * Next, you'll do the [prework for seamless SSO](~/identity/hybrid/connect/how-to-connect-staged-rollout.md#prework-for-seamless-sso). 
 * [Enable the Staged Rollout of cloud authentication](~/identity/hybrid/connect/how-to-connect-staged-rollout.md#enable-a-staged-rollout-of-a-specific-feature-on-your-tenant) for your selected authentication method. 
-* Add the group(s) you created for Staged Rollout. Remember that you'll add users to groups iteratively, and that they can't be dynamic groups or nested groups. 
+* Add the group(s) you created for Staged Rollout. Remember that you'll add users to groups iteratively, and that they can't be nested or dynamic membership groups. 
 
 <a name='register-users-for-azure-ad-mfa'></a>
 
@@ -243,7 +243,7 @@ We recommend having your users register for combined security information, which
 Microsoft provides communication templates that you can provide to your users to guide them through the combined registration process. 
 These include templates for email, posters, table tents, and various other assets. Users register their information at `https://aka.ms/mysecurityinfo`, which takes them to the combined security registration screen. 
 
-We recommend that you [secure the security registration process with Conditional Access](~/identity/conditional-access/howto-conditional-access-policy-registration.md) that requires the registration to occur from a trusted device or location. For information on tracking registration statuses, see [Authentication method activity for Microsoft Entra ID](howto-authentication-methods-activity.md).
+We recommend that you [secure the security registration process with Conditional Access](~/identity/conditional-access/policy-all-users-security-info-registration.md) that requires the registration to occur from a trusted device or location. For information on tracking registration statuses, see [Authentication method activity for Microsoft Entra ID](howto-authentication-methods-activity.md).
 > [!NOTE]
 > Users who MUST register their combined security information from a non-trusted location or device can be issued a Temporary Access Pass or alternatively, temporarily excluded from the policy.
 
@@ -259,7 +259,7 @@ You can synchronize phone numbers, hardware tokens, and device registrations suc
 * Only after you add users to the appropriate Conditional Access rules, add users to the group that you created for Staged Rollout. Once done, they'll begin to use the Azure authentication method that you selected (PHS or PTA) and Microsoft Entra multifactor authentication when they're required to perform MFA.
 
 > [!IMPORTANT] 
-> Nested and dynamic groups aren't supported for Staged Rollout. Do not use these types of groups. 
+> Nested and dynamic membership groups aren't supported for Staged Rollout. Do not use these types of groups. 
 
 We don't recommend that you reuse groups that are used for security. If you're using a security group to secure a group of high-value apps with a Conditional Access policy, only use the group for that purpose.
 

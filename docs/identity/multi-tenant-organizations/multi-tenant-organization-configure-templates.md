@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: how-to
-ms.date: 04/23/2024
+ms.date: 10/15/2024
 ms.author: rolyon
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
@@ -20,11 +20,11 @@ This article describes how to configure a policy template for your multitenant o
 
 - For license information, see [License requirements](./multi-tenant-organization-overview.md#license-requirements).
 - [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator) role to configure cross-tenant access settings and templates for the multitenant organization.
-- [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role to consent to required permissions.
+- [Privileged Role Administrator](../role-based-access-control/permissions-reference.md#privileged-role-administrator) role to consent to required permissions.
 
 ## Cross-tenant access policy partner template
 
-The [cross-tenant access partner configuration](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml) handles trust settings and automatic user consent settings between partner tenants. For example, you can use these settings to trust multifactor authentication claims for inbound users from the target partner tenant. With the template in an unconfigured state, partner configurations for partner tenants in the multitenant organization won't be amended, with all trust settings passed through from default settings. However, if you configure the template, then partner configurations will be amended corresponding to the policy template. 
+The [cross-tenant access partner configuration](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml) handles trust settings and automatic user consent settings between partner tenants. For example, you can use these settings to trust multifactor authentication claims for inbound users from the target partner tenant. With the template in an unconfigured state, partner configurations for partner tenants in the multitenant organization won't be amended, with all trust settings passed through from default settings. However, if you configure the template, then partner configurations will be amended corresponding to the policy template.
 
 ### Configure inbound and outbound automatic redemption
 
@@ -167,7 +167,7 @@ To reset the template to its default state (decline inbound synchronization), us
 ```http
 POST https://graph.microsoft.com/beta/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationIdentitySynchronization/resetToDefaultSettings
 ```
-    
+
 ## Next steps
 
 - [Configure cross-tenant synchronization](cross-tenant-synchronization-configure.md)

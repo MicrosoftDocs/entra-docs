@@ -39,7 +39,7 @@ Learn more: [What is Conditional Access?](~/identity/conditional-access/overview
 
 ## Set up an identity provider
 
-Go to developers.cloudflare.com to [set up Microsoft Entra ID as an IdP](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/azuread/#set-up-azure-ad-as-an-identity-provider).
+Go to developers.cloudflare.com to [set up Microsoft Entra ID as an IdP](https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/entra-id/#set-up-entra-id-as-an-identity-provider).
 
    > [!NOTE]
    > It's recommended you name the IdP integration in relation to the target application. For example, **Microsoft Entra ID - Customer management portal**.

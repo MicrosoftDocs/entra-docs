@@ -52,7 +52,7 @@ From the Azure portal, you can view the Microsoft Entra audit logs and download 
 
 * **[Microsoft Defender for Cloud Apps](/cloud-app-security/what-is-cloud-app-security)** – Enables you to discover and manage apps, govern across apps and resources, and check your cloud apps’ compliance.
 
-* **[Securing workload identities with Identity Protection Preview](~/id-protection/concept-workload-identity-risk.md)** - Used to detect risk on workload identities across sign-in behavior and offline indicators of compromise.
+* **[Securing workload identities with Microsoft Entra ID Protection](~/id-protection/concept-workload-identity-risk.md)** - Used to detect risk on workload identities across sign-in behavior and offline indicators of compromise.
 
 The remainder of this article describes what to monitor and alert on. It is organized by the type of threat. Where there are pre-built solutions, you'll find links to them, after the table. Otherwise, you can build alerts using the preceding tools.
 

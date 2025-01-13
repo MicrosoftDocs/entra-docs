@@ -14,7 +14,7 @@ ms.topic: how-to
 
 # Single-page application: App registration
 
-To register a single-page application (SPA) in the Microsoft identity platform, complete the following steps. The registration steps differ between MSAL.js 1.0, which supports the implicit grant flow, and MSAL.js 2.0, which supports the authorization code flow with Proof of Key for Code Exchange (PKCE).
+To register a single-page application (SPA) in the Microsoft identity platform, complete the following steps. The registration steps differ between MSAL.js 1.0, which supports the implicit grant flow, and MSAL.js 2.0, which supports the authorization code flow with PKCE. If you are using MSAL.js 1.0, we recommend you migrate to MSAL.js 2.0 to take advantage of the authorization code flow with PKCE which is more secure.
 
 ## Create the app registration
 
@@ -33,6 +33,8 @@ Next, configure the app registration with a **Redirect URI** to specify where th
 
 - [MSAL.js 2.0 with auth code flow](#redirect-uri-msaljs-20-with-auth-code-flow) (recommended)
 - [MSAL.js 1.0 with implicit flow](#redirect-uri-msaljs-10-with-implicit-flow)
+
+Keep in mind that MSAL.js 2.0+ supports the authorization code flow with PKCE which is more secure than the implicit grant flow. If you're using MSAL.js 1.0, consider migrating to MSAL.js 2.0 to take advantage of the authorization code flow with PKCE.
 
 ## Redirect URI: [MSAL.js 2.0 with auth code flow](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-browser)
 

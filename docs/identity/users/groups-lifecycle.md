@@ -8,7 +8,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 11/14/2023
+ms.date: 08/23/2024
 ms.author: barclayn
 ms.reviewer: jodah
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -37,14 +37,14 @@ For information on how to download and install Microsoft Graph PowerShell cmdlet
 
 ## Activity-based automatic renewal
 
-With Microsoft Entra intelligence, groups are now automatically renewed based on whether they were recently used. This feature eliminates the need for manual action by group owners. It's based on user activity in groups across Microsoft 365 services like Outlook, SharePoint, Teams, or Yammer.
+With Microsoft Entra intelligence, groups are now automatically renewed based on whether they were recently used. This feature eliminates the need for manual action by group owners. It's based on user activity in groups across Microsoft 365 services like Outlook, SharePoint, Teams, or Viva Engage.
 
 For example, an owner or a group member might do something like:
 
 - Send an email to the group in Outlook.
 - Upload a document to SharePoint.
 - Visit a Teams channel.
-- View a post in Yammer.
+- View a post in Viva Engage.
 
 In the preceding scenarios, the group is automatically renewed around 35 days before the group expires and the owner doesn't get any renewal notifications.
 
@@ -61,7 +61,7 @@ The following user actions cause automatic group renewal:
 - **SharePoint**: View, edit, download, move, share, or upload files.
 - **Outlook**: Join a group, read or write a group message from a group space, or "like" a message (in Outlook Web Access).
 - **Teams**: Visit a Teams channel.
-- **Yammer**: View a post within a Yammer community or an interactive email in Outlook.
+- **Viva Engage**: View a post within a Viva Engage community or an interactive email in Outlook.
 
 ### Auditing and reporting
 
@@ -131,7 +131,7 @@ If the group you're restoring contains documents, SharePoint sites, or other per
 In addition to using Access Panel to view group details like expiration date and last renewed date, you can retrieve the expiration date of a Microsoft 365 group from Microsoft Graph REST API Beta. The group property `expirationDateTime` is enabled in Microsoft Graph Beta. You can retrieve it with a GET request. For more information, see [this example](/graph/api/group-get?view=graph-rest-beta&preserve-view=true#example).
 
 > [!NOTE]
-> To manage group memberships on Access Panel, **Restrict access to Groups in Access Panel** must be set to **No** in the Microsoft Entra groups **General** setting.
+> To manage group memberships on the Access Panel, **Restrict access to Groups in Access Panel** must be set to **No** in the Microsoft Entra groups **General** setting.
 
 ## Microsoft 365 group expiration with a mailbox on legal hold
 
@@ -213,4 +213,4 @@ For more information on Microsoft Entra groups, see:
 - [Manage settings of a group](~/fundamentals/how-to-manage-groups.yml)
 - [Manage members of a group](~/fundamentals/how-to-manage-groups.yml)
 - [Manage memberships of a group](~/fundamentals/how-to-manage-groups.yml)
-- [Manage dynamic rules for users in a group](groups-dynamic-membership.md)
+- [Manage rules for dynamic membership groups](groups-dynamic-membership.md)

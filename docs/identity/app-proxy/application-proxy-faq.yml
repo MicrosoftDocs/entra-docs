@@ -6,7 +6,7 @@ metadata:
   ms.service: entra-id
   ms.subservice: app-proxy
   ms.topic: faq
-  ms.date: 02/06/2024
+  ms.date: 09/11/2024
   ms.author: kenwith
   ms.reviewer: ashishj
 title: Microsoft Entra application proxy frequently asked questions
@@ -41,9 +41,13 @@ sections:
               If your license expires, application proxy is automatically disabled. Your application information is saved for up to one year.
 
       - question: |
-         Why is the "Enable application proxy button grayed out?
+         Why is the Enable application proxy button grayed out?
         answer: |
               Make sure you have at least a Microsoft Entra ID P1 or P2 license and a Microsoft Entra private network connector installed. After you successfully install your first connector, the Microsoft Entra application proxy service is enabled automatically.
+      - question: |
+         What are TCP ports 10200 and 10201 used for?
+        answer: |
+              Using a port scan utility on application proxy public endpoints (msappproxy.net or custom) may show that TCP ports 10200 and 10201 are open, in addition to ports 80 and/or 443. These ports are used for internal service health monitoring purposes. No customer data is accessible over these ports, and the services behind them do not process any information; they simply respond with "OK".
 
   - name: Connector configuration
     questions:
@@ -52,7 +56,22 @@ sections:
         answer: |
               Yes, Microsoft Entra private network connector is used by both application proxy and Microsoft Entra Private Access. To learn more about the connector, see [Microsoft Entra private network connector](../../global-secure-access/concept-connectors.md).
               To troubleshoot connector configuration, see [troubleshoot connectors](../../global-secure-access/troubleshoot-connectors.md).
-          
+
+      - question: | 
+         ConnectorTroubleshooter cannot start
+        answer: |
+            The ConnectorTroubleshooterLauncher.exe is deprecated and no longer functional. Currently, there is no replacement available.
+
+      - question: | 
+         Can I Change the Logon User of the Microsoft Entra Private Network Connector / Updater Services?         
+        answer: |
+         Changing the logon user of the connector or updater service is not supported.
+
+         Correct Configuration:
+
+         Microsoft Entra Private Network Connector: *Network Service*
+         Microsoft Entra Private Network Connector Updater: *NT Authority\System*
+
   - name: Application configuration
     questions:
       - question: |
@@ -202,12 +221,12 @@ sections:
           
               In this case there's a fallback to “User principal name”. For more details on the B2B scenario, please read [Grant B2B users in Microsoft Entra ID access to your on-premises applications](~/external-id/hybrid-cloud-to-on-premises.md).
           
-  - name: Pass-through authentication
+  - name: Passthrough preauthentication
     questions:
       - question: |
-         Can I use Conditional Access Policies for applications published with pass-through authentication?
+         Can I use Conditional Access Policies for applications published with passthrough preauthentication?
         answer: |
-              Conditional Access Policies are only enforced for successfully preauthenticated users in Microsoft Entra ID. Pass-through authentication doesn’t trigger Microsoft Entra authentication, so Conditional Access Policies can't be enforced. With pass-through authentication, MFA policies must be implemented on the on-premises server, if possible, or by enabling preauthentication with Microsoft Entra application proxy.
+              Conditional Access Policies are only enforced for successfully authenticated users in Microsoft Entra ID. Passthrough preauthentication doesn’t trigger Microsoft Entra authentication, so Conditional Access Policies can't be enforced. With passthrough preauthentication, MFA policies must be implemented on the on-premises server, if possible, or by enabling Microsoft Entra ID preauthentication with Microsoft Entra application proxy.
 
       - question: |
          Can I publish a web application with client certificate authentication requirement?

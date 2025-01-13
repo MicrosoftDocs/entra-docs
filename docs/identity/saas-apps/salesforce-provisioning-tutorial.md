@@ -64,7 +64,7 @@ Before configuring and enabling the provisioning service, you need to decide whi
 This section guides you through connecting your Microsoft Entra ID to [Salesforce's user account provisioning API - v40](https://developer.salesforce.com/docs/atlas.en-us.208.0.api.meta/api/implementation_considerations.htm)
 
 > [!Tip]
-> You may also choose to enabled SAML-based Single Sign-On for Salesforce, following the instructions provided in the [Azure portal](https://portal.azure.com). Single sign-on can be configured independently of automatic provisioning, though these two features compliment each other.
+> You may also choose to enabled SAML-based Single Sign-On for Salesforce, following the instructions provided in the [Azure portal](https://portal.azure.com). Single sign-on can be configured independently of automatic provisioning, though these two features complement each other.
 
 ### Configure automatic user account provisioning
 
@@ -79,7 +79,7 @@ The objective of this section is to outline how to enable user provisioning of A
 
 4. Set the **Provisioning Mode** to **Automatic**.
 
-    ![Screenshot shows the Salesforce Provisioning page, with Provisioning Mode set to Automatic and other values you can set.](./media/salesforce-provisioning-tutorial/provisioning.png)
+    ![Screenshot shows the Salesforce Provisioning page, with Provisioning Mode set to Automatic and other values you can set.](common/provisioning-automatic.png)
 
 5. Under the **Admin Credentials** section, provide the following configuration settings:
 
@@ -103,7 +103,7 @@ The objective of this section is to outline how to enable user provisioning of A
 
 10. Copy the token, go to your Microsoft Entra window, and paste it into the **Secret Token** field.
 
-11. The **Tenant URL** should be entered if the instance of Salesforce is on the Salesforce Government Cloud. Otherwise, it is optional. Enter the tenant URL using the format of "https://\<your-instance\>.my.salesforce.com," replacing \<your-instance\> with the name of your Salesforce instance.
+11. The **Tenant URL** should be entered if the instance of Salesforce is on the Salesforce Government Cloud. Otherwise, it is optional. Enter the tenant URL using the format of `https://<your-instance>.my.salesforce.com`, replacing `<your-instance>` with the name of your Salesforce instance.
 
 12. Select **Test Connection** to ensure Microsoft Entra ID can connect to your Salesforce app.
 

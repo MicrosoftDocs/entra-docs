@@ -81,7 +81,7 @@ To configuring Peakon  for automatic user provisioning with Microsoft Entra ID, 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Peakon  based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Peakon, following the instructions provided in the [Peakon Single sign-on tutorial](peakon-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features compliment each other.
+> You may also choose to enable SAML-based single sign-on for Peakon, following the instructions provided in the [Peakon Single sign-on tutorial](peakon-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
 
 <a name='to-configure-automatic-user-provisioning-for-peakon--in-azure-ad'></a>
 
@@ -115,8 +115,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 8. Click **Save**.
 
 9. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Peakon**.
-
-	![Peakon User Mappings](media/Peakon-provisioning-tutorial/Peakon-user-mappings.png)
 
 10. Review the user attributes that are synchronized from Microsoft Entra ID to Peakon  in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Peakon  for update operations. Select the **Save** button to commit any changes.
 

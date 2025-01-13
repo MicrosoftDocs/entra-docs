@@ -77,7 +77,7 @@ Use these instructions to enable Microsoft Entra SSO.
 
 1. On the **Set up single sign-on with SAML** page, perform the following steps: 
 
-    a. In **Identifier**, enter the following URL `https://api.<realm>.signalfx.com/v1/saml/metadata` and replace `<realm>` with your SignalFx realm. (except realm US0, the url should be `https://api.signalfx.com/v1/saml/metadata`). 
+    a. In **Identifier**, enter the following URL `https://api.<realm>.signalfx.com/v1/saml/metadata` and replace `<realm>` with your SignalFx realm, as well as `<integration ID>` with the Integration ID you copied earlier from the SignalFx UI. (except realm US0, the url should be `https://api.signalfx.com/v1/saml/metadata`). 
 
     b. In **Reply URL**, enter the following URL `https://api.<realm>.signalfx.com/v1/saml/acs/<integration ID>` and replace `<realm>` with your SignalFx realm, as well as `<integration ID>` with the **Integration ID** you copied earlier from the SignalFx UI. (except US0, the url should be `https://api.signalfx.com/v1/saml/acs/<integration ID>`)
 

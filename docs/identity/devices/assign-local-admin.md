@@ -30,14 +30,14 @@ At the time of Microsoft Entra join, the following security principals are added
 > [!NOTE]
 > This is done during the join operation only. If an administrator makes changes after this point they will need to update the group membership on the device.
 
-By adding Microsoft Entra roles to the local administrators group, you can update the users that can manage a device anytime in Microsoft Entra ID without modifying anything on the device. Microsoft Entra ID also adds the Microsoft Entra Joined Device Local Administrator role to the local administrators group to support the principle of least privilege (PoLP). In addition to users with the Global Administrator role, you can also enable users assigned only the Microsoft Entra Joined Device Local Administrator role to manage a device.
+By adding users to the Microsoft Entra Joined Device Local Administrator role, you can update the users that can manage a device anytime in Microsoft Entra ID without modifying anything on the device. The Microsoft Entra Joined Device Local Administrator role is added to the local administrators group to support the principle of least privilege.
 
 ## Manage administrator roles
 
-To view and update the membership of an [administrator role](~/identity/role-based-access-control/permissions-reference.md) role, see:
+To view and update the membership of an [administrator role](../role-based-access-control/permissions-reference.md) role, see:
 
-- [View all members of an administrator role in Microsoft Entra ID](~/identity/role-based-access-control/manage-roles-portal.yml)
-- [Assign a user to administrator roles in Microsoft Entra ID](~/fundamentals/how-subscriptions-associated-directory.yml)
+- [View all members of an administrator role in Microsoft Entra ID](../role-based-access-control/view-assignments.md)
+- [Assign a user to administrator roles in Microsoft Entra ID](../role-based-access-control/manage-roles-portal.md)
 
 ## Manage the Microsoft Entra Joined Device Local Administrator role
 
@@ -105,9 +105,9 @@ Additionally, you can also add users using the command prompt:
 - You can only assign role based groups to the Microsoft Entra Joined Device Local Administrator role.
 - The Microsoft Entra Joined Device Local Administrator role is assigned to all Microsoft Entra joined devices. This role can't be scoped to a specific set of devices.
 - Local administrator rights on Windows devices aren't applicable to [Microsoft Entra B2B guest users](~/external-id/what-is-b2b.md).
-- When you remove users from the Microsoft Entra Joined Device Local Administrator role, changes aren't instant. Users still have local administrator privilege on a device as long as they're signed in to it. The privilege is revoked during their next sign-in when a new primary refresh token is issued. This revocation, similar to the privilege elevation, could take upto 4 hours.
+- When you remove users from the Microsoft Entra Joined Device Local Administrator role, changes aren't instant. Users still have local administrator privilege on a device as long as they're signed in to it. The privilege is revoked during their next sign-in when a new primary refresh token is issued. This revocation, similar to the privilege elevation, could take up to 4 hours.
 
 ## Next steps
 
 - To get an overview of how to manage devices, see [Managing device identities](manage-device-identities.md).
-- To learn more about device-based Conditional Access, see [Conditional Access: Require compliant or Microsoft Entra hybrid joined device](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md).
+- To learn more about device-based Conditional Access, see [Conditional Access: Require compliant or Microsoft Entra hybrid joined device](~/identity/conditional-access/policy-alt-all-users-compliant-hybrid-or-mfa.md).

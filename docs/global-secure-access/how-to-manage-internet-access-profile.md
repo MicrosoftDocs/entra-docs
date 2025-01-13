@@ -32,7 +32,7 @@ View the policies that relate to the Internet Access traffic forwarding profile.
 1. Select the **View** link in the Internet Access policies section.
 
 The default Internet Access policies include:
-- **Custom Bypass** Contains user-defined traffic/endpoints that are *excluded* from the Internet traffic profile. In other words, you define the traffic that the profile shouldn't acquire.
+- **Custom Bypass** Contains user-defined traffic/endpoints that are *excluded* from the Internet traffic profile. In other words, you define the traffic that the profile shouldn't acquire. You might typically exclude traffic such as your VPN endpoints, private IP ranges, and squat IP ranges, and endpoints that leverage a network Access Control List (ACL). 
 - **Default Bypass** Contains predefined traffic that the Internet traffic profile doesn't acquire. For example, private IP ranges. You can't change rules in this policy.
 - **Default Acquire** Defines traffic that gets acquired by the Internet traffic profile. Currently, it’s all internet traffic on ports 80, 443 over Transmission Control Protocol (TCP). The policy takes lowest precedence after all bypass rules are evaluated. You can't change rules in this policy.
 
@@ -63,7 +63,7 @@ To enable the Microsoft Entra Internet Access forwarding profile to forward user
 1. Set policies on the traffic profile. For example, set a custom bypass rule to exclude specific traffic.
 1. Enable the **Internet access profile**. Internet traffic starts forwarding from all client devices to Microsoft's Security Service Edge (SSE) proxy, where you configure granular security policies.
     > [!NOTE]
-    > When you enable the Internet Access forwarding profile, you should also enable the Microsoft traffic forwarding profile for optimal routing of Microsoft traffic. You enable the **Microsoft traffic profile** by selecting the profile checkbox on the same page where you enable the Internet Access traffic forwarding profile. To learn more abou tthe Microsoft traffic forwarding profile, see [How to enable and manage the Microsoft profile](how-to-manage-microsoft-profile.md).
+    > When you enable the Internet Access forwarding profile, you should also enable the Microsoft traffic forwarding profile for optimal routing of Microsoft traffic. You enable the **Microsoft traffic profile** by selecting the profile checkbox on the same page where you enable the Internet Access traffic forwarding profile. To learn more about the Microsoft traffic forwarding profile, see [How to enable and manage the Microsoft profile](how-to-manage-microsoft-profile.md).
 
 ## Validate the Internet Access traffic forwarding profile
 A rule added to a policy takes 10-20 minutes to appear in the client on a user's computer. If the rule doesn't appear after this time, disable and then re-enable the Internet Access traffic forwarding profile. 
@@ -75,7 +75,7 @@ To validate the traffic forwarding profile, traffic forwarding policies, and rul
 1. Open a web browser and navigate to a public destination that is acquired by the profile. Confirm the traffic is being acquired under the **Internet channel**.
 
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 - [Learn about traffic forwarding](concept-traffic-forwarding.md)

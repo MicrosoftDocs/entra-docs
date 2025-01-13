@@ -39,8 +39,8 @@ You can also follow along in a related video: [How to enable and configure SSPR 
 
 To finish this tutorial, you need the following resources and privileges:
 
-* A working Microsoft Entra tenant with at least a Microsoft Entra ID P1 license is required for password reset. For more information about license requirements for password change and password reset in Entra ID, see [Licensing requirements for Microsoft Entra self-service password reset](concept-sspr-licensing.md).
-* An account with *Global Administrator* or *Authentication Policy Administrator* privileges.
+* A working Microsoft Entra tenant with at least a Microsoft Entra ID P1 license is required for password reset. For more information about license requirements for password change and password reset in Microsoft Entra ID, see [Licensing requirements for Microsoft Entra self-service password reset](concept-sspr-licensing.md).
+* An account with at least the Authentication Policy Administrator role.
 * A non-administrator user with a password you know, like *testuser*. You'll test the end-user SSPR experience using this account in this tutorial.
     * If you need to create a user, see [Quickstart: Add new users to Microsoft Entra ID](~/fundamentals/add-users.md).
 * A group that the non-administrator user is a member of, likes *SSPR-Test-Group*. You'll enable SSPR for this group in this tutorial.
@@ -101,7 +101,7 @@ An administrator can manually provide this contact information, or users can go 
 
 ## Set up notifications and customizations
 
-To keep users informed about account activity, you can set up Microsoft Entra ID to send email notifications when an SSPR event happens. These notifications can cover both regular user accounts and admin accounts. For admin accounts, this notification provides another layer of awareness when a privileged administrator account password is reset using SSPR. Microsoft Entra ID will notify all Global Administrators when someone uses SSPR on an admin account.
+To keep users informed about account activity, you can set up Microsoft Entra ID to send email notifications when an SSPR event happens. These notifications can cover both regular user accounts and admin accounts. For admin accounts, this notification provides another layer of awareness when a privileged administrator account password is reset using SSPR. Microsoft Entra ID can notify all Administrators when someone uses SSPR on an admin account.
 
 1. From the menu on the left side of the **Notifications** page, set up the following options:
 

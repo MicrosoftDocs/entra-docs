@@ -8,7 +8,7 @@ manager: mwongerapk
 ms.author: henrymbugua
 ms.service: entra-external-id
 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
 ms.date: 02/23/2024
 ms.custom: developer
@@ -120,4 +120,4 @@ Use the steps in [Call a protected web API in a sample iOS mobile app by using n
 
 ## Next steps 
 
-- [Tutorial: Prepare your iOS app for native authentication](tutorial-native-authentication-prepare-ios-app.md). 
+- [Tutorial: Prepare your iOS/macOS app for native authentication](tutorial-native-authentication-prepare-ios-macos-app.md). 

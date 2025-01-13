@@ -43,7 +43,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 * When assigning a user to RFPIO, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
-## Setup RFPIO for provisioning
+## Set up RFPIO for provisioning
 
 Before configuring RFPIO for automatic user provisioning with Microsoft Entra ID, you will need to enable SCIM provisioning on RFPIO.
 
@@ -84,7 +84,7 @@ To configure RFPIO for automatic user provisioning with Microsoft Entra ID, you 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in RFPIO based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for RFPIO, following the instructions provided in the [RFPIO Single sign-on tutorial](rfpio-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features compliment each other.
+> You may also choose to enable SAML-based single sign-on for RFPIO, following the instructions provided in the [RFPIO Single sign-on tutorial](rfpio-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
 
 <a name='to-configure-automatic-user-provisioning-for-rfpio-in-azure-ad'></a>
 
@@ -118,8 +118,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 7. Click **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to RFPIO**.
-
-	![RFPIO User Mappings](media/rfpio-provisioning-tutorial/usermapping.png)
 
 9. Review the user attributes that are synchronized from Microsoft Entra ID to RFPIO in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in RFPIO for update operations. Select the **Save** button to commit any changes.
 

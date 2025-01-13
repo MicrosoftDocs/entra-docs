@@ -26,13 +26,14 @@
     "*-mvp-*",
     "*september-october-november*",
     "product-azure-app-service",
-    "invalid-product-microsoft-visual-studio-vs"
+    "invalid-product-microsoft-visual-studio-vs",
+    "casing-prefixes-0026"
   ],
   "PreloadTOCFiles": [
   ],
   "TermFiles": [
     "Dictionary-Onboard.ps1",
-    "Bundle-Standard.txt",
+    "Bundle-EverGreen.txt",
     "Bundle-Cloud.txt"
   ],
   "ApplyPolicies": []

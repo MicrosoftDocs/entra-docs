@@ -1,13 +1,10 @@
 ---
 title: 'Tutorial: Configure Starmind for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Starmind.
-
 author: thomasakelo
 manager: jeedes
-ms.assetid: 0fc24c14-b9b8-4721-9ec3-f8ee5f2aebb7
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo

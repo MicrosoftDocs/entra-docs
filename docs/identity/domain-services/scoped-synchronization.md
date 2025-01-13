@@ -8,7 +8,7 @@ ms.assetid: 9389cf0f-0036-4b17-95da-80838edd2225
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 09/21/2023
+ms.date: 12/03/2024
 ms.author: justinha
 ---
 # Configure scoped synchronization from Microsoft Entra ID to Microsoft Entra Domain Services using the Microsoft Entra admin center

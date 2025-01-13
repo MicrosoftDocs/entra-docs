@@ -5,7 +5,7 @@ description: Explaining risk detections in Microsoft Entra ID Protection
 ms.service: entra-id-protection
 
 ms.topic: conceptual
-ms.date: 05/06/2024
+ms.date: 08/21/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -14,7 +14,7 @@ ms.reviewer: cokoopma, jaedwards
 ---
 # What are risk detections?
 
-Microsoft Entra ID Protection provides organizations with information to suspicious activity in their tenant and allows them to respond quickly to prevent further risk occurring. Risk detections are a powerful resource that can include any suspicious or anomalous activity related to a user account in the directory. ID Protection risk detections can be linked to an individual user or sign-in event and contribute to the overall user risk score found in the [Risky Users report](howto-identity-protection-investigate-risk.md#risky-users). 
+Microsoft Entra ID Protection provides organizations with information to suspicious activity in their tenant and allows them to respond quickly to prevent further risk occurring. Risk detections are a powerful resource that can include any suspicious or anomalous activity related to a user account in the directory. ID Protection risk detections can be linked to an individual user or sign-in event and contribute to the overall user risk score found in the [Risky Users report](howto-identity-protection-investigate-risk.md#risky-users-report). 
 
 User risk detections might flag a legitimate user account as at risk, when a potential threat actor gains access to an account by compromising their credentials or when they detect some type of anomalous user activity. Sign-in risk detections represent the probability that a given authentication request isn't the authorized owner of the account. Having the ability to identify risk at the user and sign-in level is critical for customers to be empowered to secure their tenant.
 
@@ -27,7 +27,7 @@ ID Protection categorizes risk into three tiers: low, medium, and high. Risk lev
 
 Many detections can fire at more than one of our risk levels depending on the number or severity of the anomalies detected. For example, [Unfamiliar sign-in properties](#unfamiliar-sign-in-properties) might fire at high, medium, or low based on the confidence in the signals. Some detections, like [Leaked Credentials](#leaked-credentials) and [Verified Threat Actor IP](#verified-threat-actor-ip) are always delivered as high risk. 
 
-This risk level is important when deciding which detections to prioritize, investigate, and remediate. They also play a key role in [configuring risk based Conditional Access policies](howto-identity-protection-configure-risk-policies.md#choosing-acceptable-risk-levels) as each policy can be set to trigger for low, medium, high, or no risk detected. Based on the risk tolerance of your organization, you can create policies that require MFA or password reset when ID Protection detects a certain risk level for one of your users. These policies can guide the user to self-remediate to resolve the risk.
+This risk level is important when deciding which detections to [prioritize, investigate, and remediate](howto-identity-protection-investigate-risk.md#investigation-and-risk-remediation-framework). They also play a key role in [configuring risk based Conditional Access policies](howto-identity-protection-configure-risk-policies.md#choosing-acceptable-risk-levels) as each policy can be set to trigger for low, medium, high, or no risk detected. Based on the risk tolerance of your organization, you can create policies that require MFA or password reset when ID Protection detects a certain risk level for one of your users. These policies can guide the user to self-remediate to resolve the risk.
 
 > [!IMPORTANT] 
 > All "low" risk level detections and users will persist in the product for 6 months, after which they will be automatically aged out to provide a cleaner investigation experience. Medium and high risk levels will persist until remediated or dismissed. 
@@ -44,11 +44,15 @@ Detections triggered in real-time take 5-10 minutes to surface details in the re
 > Our system might detect that the risk event that contributed to the risk user risk score was either: 
 > 
 > - A false positive
-> - The user risk was [remediated by policy](howto-identity-protection-remediate-unblock.md) by either: 
+> - The user risk was [remediated by policy](howto-identity-protection-remediate-unblock.md) by either: 
 >    - Completing multifactor authentication
 >    - Secure password change
 > 
 > Our system will dismiss the risk state and a risk detail of **AI confirmed sign-in safe** will show and no longer contribute to the user’s overall risk.
+
+On risk-detailed data, **Time Detection** records the exact moment a risk is identified during a user's sign-in, which allows for real-time risk assessment and immediate policy application to safeguard the user and organization. **Detection last updated** shows the latest update to a risk detection, which could be due to new information, risk level changes, or administrative actions, and ensures up-to-date risk management.
+
+These fields are essential for real-time monitoring, threat response, and maintaining secure access to organizational resources.
 
 ## Risk detections mapped to riskEventType 
 
@@ -58,7 +62,7 @@ Detections triggered in real-time take 5-10 minutes to surface details in the re
 | [Activity from anonymous IP address](#activity-from-anonymous-ip-address) | Offline | Premium | riskyIPAddress |
 | [Additional risk detected (sign-in)](#additional-risk-detected-sign-in) | Real-time or Offline | Nonpremium | generic = Premium detection classification for non-P2 tenants |
 | [Admin confirmed user compromised](#admin-confirmed-user-compromised) | Offline | Nonpremium | adminConfirmedUserCompromised |
-| [Anomalous Token](#anomalous-token) | Real-time or Offline | Premium | anomalousToken | 
+| [Anomalous Token (sign-in)](#anomalous-token-sign-in) | Real-time or Offline | Premium | anomalousToken | 
 | [Anonymous IP address](#anonymous-ip-address) | Real-time | Nonpremium | anonymizedIPAddress |
 | [Atypical travel](#atypical-travel) | Offline | Premium | unlikelyTravel |
 | [Impossible travel](#impossible-travel) | Offline | Premium | mcasImpossibleTravel |
@@ -75,6 +79,7 @@ Detections triggered in real-time take 5-10 minutes to surface details in the re
 | [Verified threat actor IP](#verified-threat-actor-ip) | Real-time | Premium | nationStateIP |
 | **User risk detections** | | | |
 | [Additional risk detected (user)](#additional-risk-detected-user) | Real-time or Offline | Nonpremium | generic = Premium detection classification for non-P2 tenants |
+| [Anomalous Token (user)](#anomalous-token-user) | Real-time or Offline | Premium | anomalousToken | 
 | [Anomalous user activity](#anomalous-user-activity) | Offline | Premium | anomalousUserActivity |
 | [Attacker in the Middle](#attacker-in-the-middle) | Offline | Premium | attackerinTheMiddle |
 | [Leaked credentials](#leaked-credentials) | Offline | Nonpremium | leakedCredentials |
@@ -83,6 +88,8 @@ Detections triggered in real-time take 5-10 minutes to surface details in the re
 | [Suspicious API Traffic](#suspicious-api-traffic) | Offline | Premium | suspiciousAPITraffic |
 | [Suspicious sending patterns](#suspicious-sending-patterns) | Offline | Premium | suspiciousSendingPatterns |
 | [User reported suspicious activity](#user-reported-suspicious-activity) | Offline | Premium | userReportedSuspiciousActivity |
+
+For more information on workload identity risk detections go to [Securing workload identities](/entra/id-protection/concept-workload-identity-risk).
 
 ## Premium detections 
 
@@ -94,11 +101,15 @@ The following premium detections are visible only to Microsoft Entra ID P2 custo
 
 Calculated offline. This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#activity-from-anonymous-ip-addresses). This detection identifies that users were active from an IP address identified as an anonymous proxy IP address. 
 
-#### Anomalous token 
+<a name='anomalous-token'></a>
+
+#### Anomalous token (sign-in)
 
 Calculated in real-time or offline. This detection indicates abnormal characteristics in the token, such as an unusual lifetime or a token played from an unfamiliar location. This detection covers Session Tokens and Refresh Tokens. 
 
 Anomalous token is tuned to incur more noise than other detections at the same risk level. This tradeoff is chosen to increase the likelihood of detecting replayed tokens that might otherwise go unnoticed. There's a higher than normal chance that some of the sessions flagged by this detection are false positives. We recommend investigating the sessions flagged by this detection in the context of other sign-ins from the user. If the location, application, IP address, User Agent, or other characteristics are unexpected for the user, the administrator should consider this risk as an indicator of potential token replay. 
+
+[Tips for investigating anomalous token detections.](howto-identity-protection-investigate-risk.md#investigating-anomalous-token-and-token-issuer-anomaly-detections)
 
 #### Atypical travel 
 
@@ -106,13 +117,17 @@ Calculated offline. This risk detection type identifies two sign-ins originating
 
 The algorithm ignores obvious "false positives" contributing to the impossible travel conditions, such as VPNs and locations regularly used by other users in the organization. The system has an initial learning period of the earliest of 14 days or 10 logins, during which it learns a new user's sign-in behavior. 
 
+[Tips for investigating atypical travel detections.](howto-identity-protection-investigate-risk.md#investigating-atypical-travel-detections)
+
 #### Impossible travel 
 
 Calculated offline. This detection is discovered using information provided by [Microsoft Defender for Cloud Apps](/defender-cloud-apps/anomaly-detection-policy#impossible-travel). This detection identifies user activities (in a single or multiple sessions) originating from geographically distant locations within a time period shorter than the time it takes to travel from the first location to the second. This risk might indicate that a different user is using the same credentials. 
 
 #### Malicious IP address 
 
-Calculated offline. This detection indicates sign-in from a malicious IP address. An IP address is considered malicious based on high failure rates because of invalid credentials received from the IP address or other IP reputation sources. 
+Calculated offline. This detection indicates sign-in from a malicious IP address. An IP address is considered malicious based on high failure rates because of invalid credentials received from the IP address or other IP reputation sources. In some instances, this detection triggers on previous malicious activity.
+
+[Tips for investigating malicious IP address detections.](howto-identity-protection-investigate-risk.md#investigating-malicious-ip-address-detections)
 
 #### Mass access to sensitive files 
 
@@ -124,11 +139,15 @@ Calculated offline. This detection is discovered using information provided by�
 
 #### Password spray 
 
-Calculated offline. A password spray attack is where multiple usernames are attacked using common passwords in a unified brute force manner to gain unauthorized access. This risk detection is triggered when a password spray attack is performed. For example, the attacker is successfully authenticated, in the detected instance. 
+Calculated offline. A password spray attack is where multiple identities are attacked using common passwords in a unified brute force manner. The risk detection is triggered when an account's password is valid and has an attempted sign in. This detection signals that the user's password has correctly been identified through a password spray attack, not that the attacker was able to access any resources.
+
+[Tips for investigating password spray detections.](howto-identity-protection-investigate-risk.md#investigating-password-spray-detections)
 
 #### Suspicious browser	 
 
-Calculated offline. Suspicious browser detection indicates anomalous behavior based on suspicious sign-in activity across multiple tenants from different countries in the same browser. 
+Calculated offline. Suspicious browser detection indicates anomalous behavior based on suspicious sign-in activity across multiple tenants from different countries/regions in the same browser. 
+
+[Tips for investigating suspicious browser detections.](howto-identity-protection-investigate-risk.md#investigating-suspicious-browser-detections)
 
 #### Suspicious inbox forwarding 
 
@@ -142,6 +161,8 @@ Calculated offline. This detection is discovered using information provided by�
 
 Calculated offline. This risk detection indicates the SAML token issuer for the associated SAML token is potentially compromised. The claims included in the token are unusual or match known attacker patterns. 
 
+[Tips for investigating token issuer anomaly detections.](howto-identity-protection-investigate-risk.md#investigating-anomalous-token-and-token-issuer-anomaly-detections)
+
 #### Unfamiliar sign-in properties 
 
 Calculated in real-time. This risk detection type considers past sign-in history to look for anomalous sign-ins. The system stores information about previous sign-ins, and triggers a risk detection when a sign-in occurs with properties that are unfamiliar to the user. These properties can include IP, ASN, location, device, browser, and tenant IP subnet. Newly created users are in a "learning mode" period where the unfamiliar sign-in properties risk detection is turned off while our algorithms learn the user's behavior. The learning mode duration is dynamic and depends on how much time it takes the algorithm to gather enough information about the user's sign-in patterns. The minimum duration is five days. A user can go back into learning mode after a long period of inactivity. 
@@ -150,7 +171,7 @@ We also run this detection for basic authentication (or legacy protocols). Becau
 
 Unfamiliar sign-in properties can be detected on both interactive and non-interactive sign-ins. When this detection is detected on non-interactive sign-ins, it deserves increased scrutiny due to the risk of token replay attacks. 
 
-Selecting an unfamiliar sign-in properties risk allows you to see additional info showing more detail about why this risk triggered.
+Selecting an unfamiliar sign-in properties risk allows you to see more info showing more detail about why this risk triggered.
 
 #### Verified threat actor IP 
 
@@ -158,13 +179,21 @@ Calculated in real-time. This risk detection type indicates sign-in activity tha
 
 ### Premium user risk detections 
 
+#### Anomalous token (user)
+
+Calculated in real-time or offline. This detection indicates abnormal characteristics in the token, such as an unusual lifetime or a token played from an unfamiliar location. This detection covers Session Tokens and Refresh Tokens. 
+
+Anomalous token is tuned to incur more noise than other detections at the same risk level. This tradeoff is chosen to increase the likelihood of detecting replayed tokens that might otherwise go unnoticed. There's a higher than normal chance that some of the sessions flagged by this detection are false positives. We recommend investigating the sessions flagged by this detection in the context of other sign-ins from the user. If the location, application, IP address, User Agent, or other characteristics are unexpected for the user, the administrator should consider this risk as an indicator of potential token replay. 
+
+[Tips for investigating anomalous token detections.](howto-identity-protection-investigate-risk.md#investigating-anomalous-token-and-token-issuer-anomaly-detections)
+
 #### Anomalous user activity 
 
 Calculated offline. This risk detection baselines normal administrative user behavior in Microsoft Entra ID, and spots anomalous patterns of behavior like suspicious changes to the directory. The detection is triggered against the administrator making the change or the object that was changed. 
 
 #### Attacker in the Middle 
 
-Calculated offline. Also known as Adversary in the Middle, this high precision detection is triggered when an authentication session is linked to a malicious reverse proxy. In this kind of attack, the adversary can intercept the user's credentials, including tokens issued to the user. The Microsoft Security Research team leverages Microsoft 365 Defender to capture the identified risk and raises the user to **High** risk. We recommend administrators manually investigate the user when this detection is triggered to ensure the risk is cleared. Clearing this risk might require secure password reset or revocation of existing sessions.
+Calculated offline. Also known as Adversary in the Middle, this high precision detection is triggered when an authentication session is linked to a malicious reverse proxy. In this kind of attack, the adversary can intercept the user's credentials, including tokens issued to the user. The Microsoft Security Research team uses Microsoft 365 Defender to capture the identified risk and raises the user to **High** risk. We recommend administrators manually investigate the user when this detection is triggered to ensure the risk is cleared. Clearing this risk might require secure password reset or revocation of existing sessions.
 
 #### Possible attempt to access Primary Refresh Token (PRT) 
 
@@ -204,6 +233,8 @@ Calculated in real-time. This risk detection type indicates sign-ins from an ano
 
 Calculated in real-time or offline. This risk detection type indicates user activity that is unusual for the user or consistent with known attack patterns. This detection is based on Microsoft's internal and external threat intelligence sources. 
 
+[Tips for investigating Microsoft Entra threat intelligence detections.](howto-identity-protection-investigate-risk.md#microsoft-entra-threat-intelligence)
+
 ### Nonpremium user risk detections 
 
 #### Additional risk detected (user) 
@@ -214,9 +245,13 @@ Calculated in real-time or offline. This detection indicates that one of the pre
 
 Calculated offline. This risk detection type indicates that the user's valid credentials leaked. When cybercriminals compromise valid passwords of legitimate users, they often share these gathered credentials. This sharing is typically done by posting publicly on the dark web, paste sites, or by trading and selling the credentials on the black market. When the Microsoft leaked credentials service acquires user credentials from the dark web, paste sites, or other sources, they're checked against Microsoft Entra users' current valid credentials to find valid matches. For more information about leaked credentials, see [common questions](#common-leaked-credentials-questions). 
 
+[Tips for investigating leaked credentials detections.](howto-identity-protection-investigate-risk.md#investigating-leaked-credentials-detections)
+
 #### Microsoft Entra threat intelligence (user) 
 
 Calculated offline. This risk detection type indicates user activity that is unusual for the user or consistent with known attack patterns. This detection is based on Microsoft's internal and external threat intelligence sources. 
+
+[Tips for investigating Microsoft Entra threat intelligence detections.](howto-identity-protection-investigate-risk.md#microsoft-entra-threat-intelligence)
 
 ## Common questions 
 
@@ -230,7 +265,7 @@ Risk detections like leaked credentials require the presence of password hashes 
 
 ### Why are risk detections generated for disabled accounts? 
 
-User accounts in a disabled state can be re-enabled. If the credentials of a disabled account are compromised, and the account gets re-enabled, bad actors might use those credentials to gain access. ID Protection generates risk detections for suspicious activities against these disabled accounts to alert customers about potential account compromise. If an account is no longer in use and wont be re-enabled, customers should consider deleting it to prevent compromise. No risk detections are generated for deleted accounts. 
+User accounts in a disabled state can be re-enabled. If the credentials of a disabled account are compromised, and the account gets re-enabled, bad actors might use those credentials to gain access. ID Protection generates risk detections for suspicious activities against these disabled accounts to alert customers about potential account compromise. If an account is no longer in use and won't be re-enabled, customers should consider deleting it to prevent compromise. No risk detections are generated for deleted accounts. 
 
 ### Common leaked credentials questions
 

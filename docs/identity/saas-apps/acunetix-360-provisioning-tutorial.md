@@ -1,13 +1,10 @@
 ---
 title: 'Tutorial: Configure Acunetix 360 for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Acunetix 360.
-
 author: thomasakelo
 manager: jeedes
-ms.assetid: cb0c2e2c-ade9-4e6b-9ce5-d7c7d2743d90
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo

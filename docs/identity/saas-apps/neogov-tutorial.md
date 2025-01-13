@@ -96,7 +96,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	| Sandbox | `https://login.uat.neogov.net/authentication/saml/consumer` |
 	| | |
 
-1. NEOGOV application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes,  where as **nameidentifier** is mapped with **user.userprincipalname**. NEOGOV application expects **nameidentifier** to be mapped with **user.objectid**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
+1. NEOGOV application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes,  whereas **nameidentifier** is mapped with **user.userprincipalname**. NEOGOV application expects **nameidentifier** to be mapped with **user.objectid**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
 
 	![image](common/edit-attribute.png)
 

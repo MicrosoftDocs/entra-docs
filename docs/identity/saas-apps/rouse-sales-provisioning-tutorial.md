@@ -1,16 +1,10 @@
 ---
 title: 'Tutorial: Configure Rouse Sales for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Rouse Sales.
-
 author: thomasakelo
 manager: jeedes
-
-ms.assetid: f25122aa-4a23-4fb9-8d4e-9997b5ba5329
 ms.service: entra-id
 ms.subservice: saas-apps
-
-
-
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo

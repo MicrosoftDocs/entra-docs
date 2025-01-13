@@ -30,7 +30,7 @@ This article provides guidance on managing consent to applications and evaluatin
 
  - Ensure that all administrators understand the:
    - [Permissions and consent framework](~/identity-platform/permissions-consent-overview.md)
-   - How the [consent consent experience and prompts](~/identity-platform/application-consent-experience.md) work.
+   - How the [consent experience and prompts](~/identity-platform/application-consent-experience.md) work.
    - How to [evaluate a request for tenant-wide admin consent](#evaluate-a-request-for-tenant-wide-admin-consent).
 
  - Review your organization's existing processes for users to request administrator approval for an application, and update them if necessary. If processes are changed:

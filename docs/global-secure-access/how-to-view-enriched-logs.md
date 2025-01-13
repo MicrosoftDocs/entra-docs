@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 11/02/2023
+ms.date: 11/27/2024
 ms.service: global-secure-access
 ---
 
@@ -22,12 +22,10 @@ To use the enriched logs, you need the following roles, configurations, and subs
 ### Roles and Permissions
 
 - A **Global Administrator** role is required to enable the enriched Microsoft 365 logs.
-- The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-- To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 
 ### Configurations
 
-- **Microsoft Profile** - Ensure the Microsoft profile is enabled. Microsoft traffic forwarding profile is required to capture traffic directed to Microsoft 365 services, which is fundamental for log enrichment. 
+- **Microsoft Profile** - Ensure the Microsoft traffic profile is enabled. Microsoft traffic forwarding profile is required to capture traffic directed to Microsoft 365 services, which is fundamental for log enrichment. 
 - **Microsoft 365 Common and Office Online Traffic Policy** - Required for log enrichment. Ensure it's enabled. 
 - **Tenant sending data** - Confirms that traffic, as configured in forwarding profiles, is accurately tunneled to the Global Secure Access service.
 - **Diagnostic Settings Configuration** - Set up Microsoft Entra diagnostic settings to channel the logs to a designated endpoint, like a Log Analytics workspace. The requirements for each endpoint differ and are outlined in the Configure Diagnostic settings section of this article.
@@ -35,7 +33,6 @@ To use the enriched logs, you need the following roles, configurations, and subs
 ### Subscriptions
 
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-- **Microsoft 365 E3 License** - Recommended for employing the Microsoft traffic forwarding profile. 
 
 You must configure the endpoint for where you want to route the logs prior to configuring Diagnostic settings. The requirements for each endpoint vary and are described in the [Configure Diagnostic settings](#configure-diagnostic-settings) section.
 
@@ -63,11 +60,9 @@ Viewing the enriched Microsoft 365 logs is a two-step process. First, you need t
 To enable the Enriched Microsoft 365 logs:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](/azure/active-directory/roles/permissions-reference#global-administrator).
-1. Browse to **Global Secure Access** > **Global settings** > **Logging**.
+1. Browse to **Global Secure Access** > **Settings** > **Logging**.
 1. Select the type of Microsoft 365 logs you want to enable.
 1. Select **Save**.
-
-    :::image type="content" source="media/how-to-view-enriched-logs/enriched-logs-sharepoint.png" alt-text="Screenshot of the Logging area of Global Secure Access." lightbox="media/how-to-view-enriched-logs/enriched-logs-sharepoint-expanded.png":::
 
 The enriched logs take up to 72 hours to fully integrate with the service.
 
@@ -112,9 +107,9 @@ With your endpoint created, you can configure Diagnostic settings.
 
 The following example is sending the enriched logs to a Log Analytics workspace, which requires selecting the Subscription and Log Analytics workspace from the menus that appear.
 
-:::image type="content" source="media/how-to-view-enriched-logs/diagnostic-settings-enriched-logs.png" alt-text="Screenshot of the Microsoft Entra diagnostic settings, with the enriched logs and Log Analytics options highlighted." lightbox="media/how-to-view-enriched-logs/diagnostic-settings-enriched-logs-expanded.png":::
+:::image type="content" source="media/how-to-view-enriched-logs/diagnostic-settings-enriched-logs.png" alt-text="Screenshot of the Microsoft Entra diagnostic settings, with the enriched logs and Log Analytics options highlighted." lightbox="media/how-to-view-enriched-logs/diagnostic-settings-enriched-logs.png":::
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 

@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 05/17/2024
+ms.date: 08/29/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Beeline Enterprise so that I can control who has access to Beeline Enterprise, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -72,7 +72,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
 
-   ![Edit Basic SAML Configuration](common/edit-urls.png)
+   ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
@@ -94,16 +94,16 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. The Beeline Enterprise application expects the SAML assertions in a specific format. Please work with [Beeline Enterprise support team](mailto:support@beeline.com) first to identify the correct user identifier which will be mapped into the application. Also please take the guidance from [Beeline Enterprise support team](mailto:support@beeline.com) about the attribute which they want to use for this mapping. You can manage the value of this attribute from the **User Attributes** tab of the application. The following screenshot shows an example for this. Here we have mapped the **User Identifier** claim with the **userprincipalname** attribute, which provides unique user ID, which will be sent to the Beeline Enterprise application in every successful SAML response.
 
-    ![image](common/edit-attribute.png)
+    ![Screenshot shows the image of default attributes.](common/edit-attribute.png "Image")
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
+1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Beeline Enterprise** > **Manage** > **Single sign-on**.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
 	![Screenshot shows the Certificate download link.](common/certificatebase64.png "Certificate")
 
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Beeline Enterprise**. 
-1. Select **Properties** and copy the User Access URL.
-
-    ![Copy User Access URL](media/beeline-tutorial/client-access-url.png)
+1. In the **Set up Beeline Enterprise** section, copy the **Login URL** and **Logout URL**.
+    
+    ![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png "Metadata")
 
 <a name='create-an-azure-ad-test-user'></a>
 
@@ -137,7 +137,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Beeline Enterprise SSO
 
-To configure single sign-on on **Beeline Enterprise** side, you need to send the downloaded **Certificate (Base64)**, User Access URL, Login URL and Logout URL properties to [Beeline Enterprise support team](mailto:support@beeline.com). They will configure single sign-on on the **Beeline Enterprise** side.
+To configure single sign-on on **Beeline Enterprise** side, you need to send the following items that you gathered from a step earlier in this tutorial to the [Beeline Enterprise support team](mailto:support@beeline.com). They will configure single sign-on on the **Beeline Enterprise** side.
+
+* **Certificate (Base64)**
+* **Login URL**
+* **Logout URL**
 
 ### Create Beeline Enterprise test user
 
@@ -149,7 +153,7 @@ In this section, you have two different ways to test your Microsoft Entra single
 
 * Browse to **Identity** > **Applications** > **Enterprise applications** > **Beeline Enterprise** > **Manage** > **Single sign-on**. Click **Test this application**, and you should be automatically signed in to the Beeline Enterprise for which you set up the SSO.
 
-* You can use Microsoft My Apps. When you click the **Beeline Enterprise** tile in **My Apps**, you should be automatically signed in to the Beeline Enterprise site for which you set up the SSO. For more information about the My Apps portal, see [Introduction to the My Apps portal](https://support.microsoft.com/account-billing/ign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you click the **Beeline Enterprise** tile in **My Apps**, you should be automatically signed in to the Beeline Enterprise site for which you set up the SSO. For more information about the My Apps portal, see [Introduction to the My Apps portal](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Next steps
 

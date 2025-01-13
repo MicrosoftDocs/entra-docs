@@ -3,10 +3,8 @@ title: 'Tutorial: Configure Taskize Connect for automatic user provisioning with
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Taskize Connect.
 author: thomasakelo
 manager: jeedes
-ms.assetid: 295b6542-879d-4330-afd7-e8867d83464d
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo

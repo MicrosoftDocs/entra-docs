@@ -1,9 +1,9 @@
 ---
-title: Enable source IP restoration with the Global Secure Access
+title: Enable Source IP Restoration with Global Secure Access
 description: Learn how to enable source IP restoration to ensure the source IP matches in downstream resources.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 05/09/2024
+ms.date: 12/23/2024
 ms.author: kenwith
 author: kenwith
 manager: amycolannino
@@ -16,7 +16,7 @@ With a cloud based network proxy between users and their resources, the IP addre
 Source IP restoration in Global Secure Access allows backward compatibility for Microsoft Entra customers to continue using original user Source IP. Administrators can benefit from the following capabilities:
 
 - Continue to enforce Source IP-based location policies across both [Conditional Access](/azure/active-directory/conditional-access/overview) and [continuous access evaluation](/azure/active-directory/conditional-access/concept-continuous-access-evaluation).
-- [Identity Protection risk detections](/azure/active-directory/identity-protection/concept-identity-protection-risks) get a consistent view of original user Source IP address for assessing various risk scores.
+- [Microsoft Entra ID Protection risk detections](/entra/id-protection/concept-identity-protection-risks) get a consistent view of original user Source IP address for assessing various risk scores.
 - Original user Source IP is also made available in [Microsoft Entra sign-in logs](/azure/active-directory/reports-monitoring/concept-all-sign-ins).
 
 ## Prerequisites
@@ -28,21 +28,14 @@ Source IP restoration in Global Secure Access allows backward compatibility for 
 
 ### Known limitations
 
-When source IP restoration is enabled, you can only see the source IP. The IP address of the Global Secure Access service isn't visible. If you want to see the Global Secure Access service IP address, disable source IP restoration.
-
-Source IP restoration is currently supported for only [Microsoft traffic](/microsoft-365/enterprise/urls-and-ip-address-ranges), like SharePoint Online, Exchange Online, Teams, and Microsoft Graph. If you have any IP location-based Conditional Access policies for non-Microsoft resources protected by continuous access evaluation (CAE), these policies aren’t evaluated at the resource as the source IP address isn’t known to the resource. 
-
-If you're using CAE’s [strict location enforcement](../identity/conditional-access/concept-continuous-access-evaluation-strict-enforcement.md), users are blocked despite being in a trusted IP range. To resolve this condition, do one of the following recommendations:
-
-- If you have IP location-based Conditional Access policies targeting non-Microsoft resources, don't enable strict location enforcement.  
-- Ensure that the traffic is supported by Source IP Restoration, or don't send the relevant traffic through Global Secure Access.
+[!INCLUDE [known-limitations-include](../includes/known-limitations-include.md)]
 
 ## Enable Global Secure Access signaling for Conditional Access
 
 To enable the required setting to allow source IP restoration, an administrator must take the following steps.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
-1. Browse to **Global Secure Access** > **Global settings** > **Session management** > **Adaptive Access**.
+1. Browse to **Global Secure Access** > **Settings** > **Session management** > **Adaptive Access**.
 1. Select the toggle to **Enable Global Secure Access signaling in Conditional Access**.
 
 This functionality allows services like Microsoft Graph, Microsoft Entra ID, SharePoint Online, and Exchange Online to see the actual source IP address.
@@ -65,7 +58,7 @@ Sign-in log data might take some time to appear this delay is normal as there's 
 
 :::image type="content" source="media/how-to-source-ip-restoration/sign-in-logs-enabled-disabled.png" alt-text="Screenshot of the sign-in logs showing events with source IP restoration on, then off, then on again." lightbox="media/how-to-source-ip-restoration/sign-in-logs-enabled-disabled.png":::
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Related content
 

@@ -43,7 +43,7 @@ Once you complete your terms of use policy document, use the following procedure
 
 1. In the **Name** box, enter a name for the terms of use policy.
 1. For **Terms of use document**, browse to your finalized terms of use policy PDF and select it.
-1. Select the language for your terms of use policy document. The language option allows you to upload multiple terms of use policies, each with a different language. The version of the terms of use policy that an end user sees is based on their browser preferences.
+1. Select the language for your terms of use policy document. The language option allows you to upload multiple terms of use documents, each with a different language. The version of the terms of use policy that an end user sees is based on their browser preferences.
 1. In the **Display name** box, enter a title that users see when they sign in.
 1. To require end users to view the terms of use policy before accepting them, set **Require users to expand the terms of use** to **On**.
 1. To require end users to accept your terms of use policy on every device they're accessing from, set **Require users to consent on every device** to **On**. Users might be required to install other applications if this option is enabled. For more information, see [Per-device terms of use](#per-device-terms-of-use).
@@ -84,7 +84,7 @@ Once you complete your terms of use policy document, use the following procedure
    > [!IMPORTANT]
    > Conditional Access policy controls (including terms of use policies) do not support enforcement on service accounts. We recommend excluding all service accounts from the Conditional Access policy.
 
-    Custom Conditional Access policies enable granular terms of use policies, down to a specific cloud application or group of users. For more information, see [Quickstart: Require terms of use to be accepted before accessing cloud apps](require-tou.md).
+    Custom Conditional Access policies enable granular terms of use policies, down to a specific cloud application or group of users. For more information, see [Quickstart: Require terms of use to be accepted before accessing cloud apps](policy-all-users-require-terms-of-use.md).
 
 1. Select **Create**.
 
@@ -166,7 +166,7 @@ The following procedure describes how to add a language to your terms of use.
 
 #### View previous versions of a terms of use
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Reader](../role-based-access-control/permissions-reference.md#security-reader).
 1. Browse to **Protection** > **Conditional Access** > **Terms of use**.
 1. Select the terms of use policy for which you want to view a version history.
 1. Select **Languages and version history**.
@@ -177,7 +177,7 @@ The following procedure describes how to add a language to your terms of use.
 
 The **Terms of use** blade shows a count of the users who accepted and declined. These counts and who accepted/declined are stored for the life of the terms of use policy.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Reader](../role-based-access-control/permissions-reference.md#security-reader).
 1. Browse to **Protection** > **Conditional Access** > **Terms of use**.
 
     ![A screenshot showing the terms of use blade listing the number of user show have accepted and declined.](./media/terms-of-use/view-tou.png)
@@ -277,7 +277,7 @@ A: Administrators might see two sign-ins when users haven't yet accepted a terms
 
 One sign-in is interrupted since the user can't provide proof of acceptance of the terms of use policy in their token. The **additional details** field in the sign-in log includes the following message:
 
-> The user is required to satisfy additional requirements before finishing authentication, and was redirected to another page (such as terms of use or a third party MFA provider). This code alone does not indicate a failure on your users part to sign in. The sign in logs may indicate that this challenge was succesfully passed or failed.
+> The user is required to satisfy additional requirements before finishing authentication, and was redirected to another page (such as terms of use or a third party MFA provider). This code alone does not indicate a failure on your users part to sign in. The sign in logs may indicate that this challenge was successfully passed or failed.
 
 If the user accepts the terms of use policy, the other sign-in is successful. 
 
@@ -325,4 +325,4 @@ A: Terms of use utilize the following endpoints for authentication: https://toke
 
 ## Related content
 
-* [Example policy to require terms of use to be accepted before accessing Microsoft Admin Portals](require-tou.md)
+* [Example policy to require terms of use to be accepted before accessing Microsoft Admin Portals](policy-all-users-require-terms-of-use.md)

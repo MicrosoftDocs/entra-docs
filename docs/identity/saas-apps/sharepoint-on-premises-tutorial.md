@@ -98,7 +98,7 @@ In this section, you configure the SAML authentication and define the claims tha
 
 ### Create the trust in SharePoint
 
-In this step, you create a SPTrustedLoginProvider to store the configuration that SharePoint needs to trust Microsoft Entra ID. For that, you need the information from Microsoft Entra ID that you copied above. Start the SharePoint Management Shell and run the following script to create it:
+In this step, you create a SPTrustedLoginProvider to store the configuration that SharePoint needs to trust Microsoft Entra ID. For that, you need the information from Microsoft Entra ID that you copied above.Note that using Windows PowerShell may make some commands to fail.Start the SharePoint Management Shell and run the following script to create it:
 
 ```powershell
 # Path to the public key of the Microsoft Entra SAML signing certificate (self-signed), downloaded from the Enterprise application in the Azure portal
@@ -322,8 +322,6 @@ Now, the configuration of EntraCP needs to be updated to reflect that change and
 1. Under **Security**, select **EntraCP global configuration**.
 1. In the section **User identifier property**: Set the **User identifier for 'Guest' users:** to **UserPrincipalName**.
 1. Click Ok
-
-![Screenshot of EntraCP guests accounts configuration.](./media/sharepoint-on-premises-tutorial/sp-entracp-attribute-for-guests.png)
 
 You can now invite any guest user in the SharePoint sites.
 

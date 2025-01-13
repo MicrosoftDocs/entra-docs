@@ -32,7 +32,7 @@ For developers, the Microsoft identity platform includes the following features.
 - Ensure that applications follow best practices for security in compliance with industry standards and protocols such as OAuth 2.0.
 - Unify authentication stories across applications and experiences with single sign-on (SSO) support.
 - Streamline social identity integration with Microsoft External ID.
-- Secure data and assets with minimal plumbing code and native support for Microsoft Entra ID capabilities such as [Conditional Access](~/identity/conditional-access/overview.md) (CA), [Continuous Access Evaluation (CAE)](~/identity/conditional-access/concept-continuous-access-evaluation.md), [Identity Protection](~/id-protection/overview-identity-protection.md), and [device management](~/identity/devices/overview.md).
+- Secure data and assets with minimal plumbing code and native support for Microsoft Entra ID capabilities such as [Conditional Access](~/identity/conditional-access/overview.md) (CA), [Continuous Access Evaluation (CAE)](~/identity/conditional-access/concept-continuous-access-evaluation.md), [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md), and [device management](~/identity/devices/overview.md).
 - Build applications that securely protect authentication tokens while ensuring device and policy compliance enforcement. Rely on support for authentication with modern brokers such as Microsoft Authenticator or built-in operating system components such as Web Account Manager (WAM) on Windows.
 
 ## Integrate applications with Microsoft Entra ID
@@ -107,7 +107,7 @@ Across all available platforms, the unified MSAL authentication framework seamle
 
 ## Access other resources
 
-Applications often need more than authentication and authorization (such as access to the tenant's directory data). Access may include getting attributes of the user, groups, group members, applications, governance, and identity protection.
+Applications often need more than authentication and authorization (such as access to the tenant's directory data). Access may include getting attributes of the user, groups, group members, applications, and governance.
 
 [Microsoft Graph](https://developer.microsoft.com/graph) provides access to the tenant's [identity and access](/graph/api/resources/azure-ad-overview?view=graph-rest-1.0&preserve-view=true), [users](/graph/api/resources/users?view=graph-rest-1.0&preserve-view=true), [groups](/graph/api/resources/groups-overview?view=graph-rest-1.0&tabs=http&preserve-view=true), and [applications](/graph/api/resources/application?view=graph-rest-1.0&preserve-view=true). Microsoft Graph is the gateway to data and intelligence in Microsoft 365. You can use its unified programmability model to access the tremendous amount of data in Microsoft 365, Windows, and Enterprise Mobility + Security (EMS).
 

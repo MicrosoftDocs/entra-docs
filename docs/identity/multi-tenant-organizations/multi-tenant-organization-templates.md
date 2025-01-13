@@ -20,7 +20,7 @@ To help apply homogenous cross-tenant access settings to partner tenants in the 
 
 ## Autogeneration of cross-tenant access settings
 
-Within a multitenant organization, each pair of tenants must have bi-directional [cross-tenant access settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml), for both, partner configuration and identity synchronization. These settings provide the underlying policy framework for enabling trust and for sharing users and applications.
+Within a multitenant organization, each pair of tenants must have bidirectional [cross-tenant access settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml), for both, partner configuration and identity synchronization. These settings provide the underlying policy framework for enabling trust and for sharing users and applications.
 
 When your tenant joins a new multitenant organization, or when a partner tenant joins your existing multitenant organization, cross-tenant access settings to other partner tenants in the enlarged multitenant organization, if they don't already exist, are automatically generated in an unconfigured state. In an unconfigured state, these cross-tenant access settings pass through the [default settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml#configure-default-settings).
 
@@ -89,9 +89,9 @@ For more information, see [Join or leave a multitenant organization in Microsoft
 
 ## Cross-tenant access settings at time of multitenant organization disassembly
 
-Currently, there's no equivalent policy template feature supporting the disassembly of a multitenant organization. When a partner tenant leaves the multitenant organization, each tenant administrator must re-examine and amend accordingly the cross-tenant access settings for the partner tenant that left the multitenant organization.
+Currently, there's no equivalent policy template feature supporting the disassembly of a multitenant organization. When a partner tenant leaves the multitenant organization, each tenant administrator must reexamine and amend accordingly the cross-tenant access settings for the partner tenant that left the multitenant organization.
 
-The partner tenant that left the multitenant organization must re-examine and amend accordingly the cross-tenant access settings for all former multitenant organization partner tenants as well as consider resetting the two policy templates for cross-tenant access settings.
+The partner tenant that left the multitenant organization must reexamine and amend accordingly the cross-tenant access settings for all former multitenant organization partner tenants as well as consider resetting the two policy templates for cross-tenant access settings.
 
 ## Next steps
 

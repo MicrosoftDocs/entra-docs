@@ -131,7 +131,7 @@ To configure Microsoft Entra single sign-on with Workstars, perform the followin
 
 4. On the **Single Sign On (SAML) - Settings** page, perform the following steps:
 	
-	![Workstars saml](./media/workstars-tutorial/tutorial_workstars_saml.png)
+	![Workstars saml](./media/workstars-tutorial/tutorial-workstars-saml.png)
 
 	a. In **Identity Provider Name** textbox, type **Office 365**.
 

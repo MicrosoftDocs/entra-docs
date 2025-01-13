@@ -103,7 +103,7 @@ To configure Microsoft Entra single sign-on with GTNexus SSO System, perform the
 	![image](common/idp-intiated.png)
 
 	> [!Note]
-	> If the **Identifier** and **Reply URL** values are not getting auto polulated, then fill in the values manually according to your requirement.
+	> If the **Identifier** and **Reply URL** values are not getting auto populated, then fill in the values manually according to your requirement.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 

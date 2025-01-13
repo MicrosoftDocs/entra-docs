@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 03/25/2024
+ms.date: 08/20/2024
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Tableau Cloud so that I can control who has access to Tableau Cloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -133,9 +133,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Tableau Cloud SSO
 
-
-
-
 1. In a different web browser window, sign in to your up Tableau Cloud company site as an administrator
 
 1. Go to **Settings** and then **Authentication**.
@@ -162,14 +159,13 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 	| ---------------| --------------- |
 	| DisplayName | user.displayname |
 
-
 	c. Copy the namespace value for these attributes: givenname, email and surname by using the following steps:
 
    ![Screenshot shows the Givenname, Surname, and Emailaddress attributes.](./media/tableauonline-tutorial/name.png)
 
     d. Click **user.givenname** value
 
-    e. Copy the value from the **Namespace** textbox.
+    e. Copy the value from the **Namespace** and **Claim name** textbox.
 
     ![Screenshot shows the Manage user claims section where you can enter the Namespace.](./media/tableauonline-tutorial/attributes.png)
 

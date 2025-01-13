@@ -6,7 +6,7 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom: devx-track-csharp,  scenarios:getting-started, "languages:aspnet-core", mode-api, devx-track-dotnet
-ms.date: 08/22/2022
+ms.date: 09/24/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
@@ -56,16 +56,7 @@ ms.topic: concept-article
 > > [!div class="sxs-lookup"]
 > > > [!NOTE]
 > > > `Enter_the_Supported_Account_Info_Here`
-> 
-> #### Step 3: Admin consent
-> 
-> If you try to run the application at this point, you'll receive an *HTTP 403 - Forbidden* error: "Insufficient privileges to complete the operation." This error happens because any app-only permission requires a Global Administrator of your directory to give consent to your application. Select one of the following options, depending on your role.
-> 
-> ##### Global tenant administrator
-> 
-> If you're a Global Administrator, go to the **API Permissions** page and select **Grant admin consent for Enter_the_Tenant_Name_Here**.
-> > [!div id="apipermissionspage"]
-> > [Go to the API Permissions page]()
+>
 > 
 > ##### Standard user
 > 

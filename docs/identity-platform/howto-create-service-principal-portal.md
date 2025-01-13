@@ -125,8 +125,6 @@ If you choose not to use a certificate, you can create a new client secret.
 
 Once you've saved the client secret, the value of the client secret is displayed. This is only displayed once, so copy this value and store it where your application can retrieve it, usually where your application keeps values like `clientId`, or `authority` in the source code. You'll provide the secret value along with the application's client ID to sign in as the application.
 
-   :::image type="content" source="media/howto-create-service-principal-portal/copy-secret.png" alt-text="Screenshot showing the client secret value.":::
-
 ## Configure access policies on resources
 
 You might need to configure extra permissions on resources that your application needs to access. For example, you must also [update a key vault's access policies](/azure/key-vault/general/security-features#privileged-access) to give your application access to keys, secrets, or certificates.

@@ -6,7 +6,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.topic: troubleshooting
-ms.date: 02/13/2024
+ms.date: 12/13/2024
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
@@ -49,7 +49,7 @@ After you configure the provisioning agent and the Extensible Connectivity(ECMA)
     ```
     https://localhost:8585/ecma2host_connectorName/scim
     ```
- 1. Navigate to the following folder to review the provisoning agent logs: C:\ProgramData\Microsoft\Azure AD Connect Provisioning Agent\Trace
+ 1. Navigate to the following folder to review the provisioning agent logs: C:\ProgramData\Microsoft\Azure AD Connect Provisioning Agent\Trace
     1. If you see the following error, please add the service account "NT SERVICE\AADConnectProvisioningAgent" to the local group called "Performance Log Users". This eliminates the "Unable to initialize metrics collector" exception error by allowing the account to access the desired registry key: HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Perflib
 
 ```

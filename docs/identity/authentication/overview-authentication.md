@@ -5,7 +5,7 @@ description: Learn about the different authentication methods and security featu
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: overview
-ms.date: 01/29/2023
+ms.date: 12/02/2024
 
 ms.author: justinha
 author: justinha
@@ -26,7 +26,7 @@ One of the main features of an identity platform is to verify, or *authenticate*
 
 Take a look at our short video to learn more about these authentication components.
 
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4KVJA]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=5ee3cad5-3360-48da-b520-1a0d96710a38]
 
 ## Improve the end-user experience
 

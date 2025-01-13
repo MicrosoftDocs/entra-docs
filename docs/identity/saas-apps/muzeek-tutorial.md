@@ -60,7 +60,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Navigate to **Authentication** tab on the left menu and perform the following steps:
 
-    a. Enable the **Access tokens (used for implicit flows)** and **ID tokens (used for implicit and hybrid flows)**
+    a. Enable the **Access tokens** and **ID tokens**
 
     [![Screenshot showing the Access tokens.](./media/muzeek-tutorial/access-token.png)](./media/muzeek-tutorial/access-token.png#lightbox)
 
@@ -134,12 +134,12 @@ Below are the configuration steps to complete the OIDC federation setup:
 
 ## Connect SSO via MyApps
 
-To connect your MyApps account to Muzeek in the Microsoft Entra Admin Center, please follow the below steps:
+To connect your MyApps account to Muzeek in the Microsoft Entra admin center, please follow the below steps:
 
 1. Navigate to **App Registrations** > **Muzeek**  > **Branding & Properties**.
 [![Screenshot showing the app registrations of Muzeek.](./media/Muzeek-tutorial/home.png)](./media/Muzeek-tutorial/home.png#lightbox)
 
-1. Paste the Home Page URL you copied from Muzeek portal into the **Home Page URL** field in Microsoft Entra Admin Center.
+1. Paste the Home Page URL you copied from Muzeek portal into the **Home Page URL** field in Microsoft Entra admin center.
 
 1. Click **Save** and wait for 10 - 15 minutes for the change to propagate in the system.
 

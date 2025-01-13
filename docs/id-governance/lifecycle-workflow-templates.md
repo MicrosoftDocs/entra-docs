@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: conceptual
-ms.date: 05/31/2023
+ms.date: 06/25/2024
 ms.custom: template-concept
 ---
 
@@ -35,6 +35,9 @@ The list of templates are as follows:
 - [Employee job profile change](lifecycle-workflow-templates.md#employee-job-profile-change)
 
 For a complete guide on creating a new workflow from a template, see: [Tutorial: On-boarding users to your organization using Lifecycle workflows with the Microsoft Entra admin center](tutorial-onboard-custom-workflow-portal.md).
+
+> [!NOTE]
+> Lifecycle workflows enhances Microsoft Entra ID Governance's [HR-driven provisioning](../identity/app-provisioning/what-is-hr-driven-provisioning.md) by automating routine processes. While HR provisioning manages the creation and attribute updates of user accounts, lifecycle workflows provide additional automation of tasks.
 
 ### Onboard pre-hire employee
 

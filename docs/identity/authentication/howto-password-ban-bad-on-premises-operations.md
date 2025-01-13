@@ -5,7 +5,7 @@ description: Learn how to enable Microsoft Entra Password Protection for an on-p
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 09/13/2023
+ms.date: 11/27/2024
 
 ms.author: justinha
 author: justinha

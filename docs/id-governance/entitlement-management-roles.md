@@ -7,7 +7,7 @@ editor: mamtakumar
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
-ms.date: 04/05/2024
+ms.date: 07/15/2024
 ms.author: owinfrey
 ms.reviewer: sponnada
 
@@ -16,7 +16,7 @@ ms.reviewer: sponnada
 
 # Assign Microsoft Entra roles (Preview)
 
-Entitlement Management supports access lifecycle for various resource types such as Applications, SharePoint sites, Groups, and Teams. Sometimes users need extra permissions to utilize these resources in specific ways. For instance, a user might need to have access to your organization’s Power BI dashboards, but would need the Power BI Administrator role to see org-wide metrics.  Although other Microsoft Entra ID functionalities, such as role-assignable groups, might support these Microsoft Entra role assignments, the access granted through those methods is less explicit. For example, you would be managing a group’s membership rather than managing users' role assignments directly.  
+Entitlement Management supports access lifecycle for various resource types such as Applications, SharePoint sites, Groups, and Teams. Sometimes users need extra permissions to utilize these resources in specific ways. For instance, a user might need to have access to your organization’s Power BI dashboards, but would need the Power BI Administrator role to see org-wide metrics. Although other Microsoft Entra ID functionalities, such as role-assignable groups, might support these Microsoft Entra role assignments, the access granted through those methods is less explicit. For example, you would be managing a group’s membership rather than managing users' role assignments directly.  
 
 By assigning Microsoft Entra roles to employees, and guests, using Entitlement Management, you can look at a user's entitlements to quickly determine which roles are assigned to that user. When you include a Microsoft Entra role as a resource in an access package, you can also specify whether that role assignment is “*eligible*” or “*active*”.
 
@@ -30,9 +30,11 @@ Let’s imagine that your organization recently hired 50 new employees for the S
 
 Now, new members joining the Support team can request access to this access package in *My Access* and get access to everything they need as soon as their manager approves the request. This saves you time and energy because the Support team is planning on expanding globally, hiring ~1,000 new employees, but you no longer have to manually assign each person to an access package. 
 
+### PIM access note:
+
 > [!NOTE]
 > We recommend that you use Privileged Identity Management to provide just-in-time access to a user to perform a task that requires elevated permissions. These permissions are provided through the Microsoft Entra Roles, that are tagged as *“privileged”*, in our documentation here: [Microsoft Entra built-in roles](../identity/role-based-access-control/permissions-reference.md).
-> Entitlement Management is better suited for assigning users a bundle of resources, which can include a Microsoft Entra role, necessary to do one’s job. Users assigned to access packages tend to have more longstanding access to resources. While we recommend that you manage high-privileged roles through Privileged Identity Management, you can set up eligibility for those roles through access packages in Entitlement Management.  
+> Entitlement Management is better suited for assigning users a bundle of resources, which can include a Microsoft Entra role, necessary to do one’s job. Users assigned to access packages tend to have more longstanding access to resources. While we recommend that you manage high-privileged roles through Privileged Identity Management, you can set up eligibility for those roles through access packages in Entitlement Management.
 
 ## Prerequisites
 
@@ -91,9 +93,9 @@ You can add Microsoft Entra roles as resources in an access package using Micros
 
 You can also add Microsoft Entra roles as resources in access packages in PowerShell with the cmdlets from the [Microsoft Graph PowerShell cmdlets for Identity Governance](https://www.powershellgallery.com/packages/Microsoft.Graph.Identity.Governance/2.15.0) module version 1.16.0 or later. 
 
-The following script illustrates using the `Beta` profile of Graph to add a Microsoft Entra role as a resource in an access package:
+The following script illustrates adding a Microsoft Entra role as a resource in an access package:
 
-First, retrieve the ID of the catalog, and of the resource in that catalog and its scopes and roles, that you want to include in the access package. Use a script similar to the following example. This assumes there's a single application resource in the catalog.
+First, retrieve the ID of the catalog, and of the resource in that catalog and its scopes and roles, that you want to include in the access package. Use a script similar to the following example. This assumes there's a Microsoft Entra role resource in the catalog.
 
 ```powershell
 Connect-MgGraph -Scopes "EntitlementManagement.ReadWrite.All"
@@ -106,7 +108,7 @@ $filt = "(id eq '" + $rsc.Id + "')"
 $rrs = Get-MgEntitlementManagementCatalogResource -AccessPackageCatalogId $catalog.id -Filter $filt -ExpandProperty roles,scopes
 ```
 
-Then, assign the Microsoft Entra role from that resource to the access package.  For example, if you wished to include the first resource role of the resource returned earlier as a resource role of an access package, you would use a script similar to the following.
+Then, assign the Microsoft Entra role from that resource to the access package. For example, if you wished to include the first resource role of the resource returned earlier as a resource role of an access package, you would use a script similar to the following.
 
 ```powershell
 $apid = "00001111-aaaa-2222-bbbb-3333cccc4444"
