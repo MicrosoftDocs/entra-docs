@@ -24,9 +24,9 @@ Authentication technology can be used on any device platform, including mobile. 
 
 :::image type="content" border="false" source="./media/howto-authentication-passwordless-phone/phone-sign-in-microsoft-authenticator-app-next.png" alt-text="Screenshot that shows an example of a browser sign-in asking the user to approve the sign-in.":::
 
-Phone sign-in from Authenticator shows a message that asks the user to tap a number in the app. No username or password is asked for. To complete the sign-in process in the app, follow these steps:
+Phone sign-in from Authenticator shows a message that asks the user to tap a number in the app. It doesn't ask for a username or password. To complete the sign-in process in the app, follow these steps:
 
-1. Enter the number seen on the sign-in screen in to the Authenticator dialog.
+1. In the Authenticator dialog, enter the number shown on the sign-in screen.
 1. Select **Approve**.
 1. Provide your PIN or biometric.
 
@@ -38,7 +38,7 @@ The Microsoft Entra accounts can be in the same tenant or different tenants. Gue
 
 ## Prerequisites
 
-To use passwordless phone sign-in with Authenticator, the following prerequisites must be met:
+To use passwordless phone sign-in with Authenticator, you must meet the following prerequisites:
 
 - Recommended: Microsoft Entra multifactor authentication (MFA), with push notifications allowed as a verification method. Push notifications to a user smartphone or tablet help the Authenticator app to prevent unauthorized access to accounts and stop fraudulent transactions. The Authenticator app automatically generates codes when set up to do push notifications. A user has a backup sign-in method even if their device doesn't have connectivity.
 - The latest version of Authenticator should be installed on devices running iOS or Android.
@@ -164,7 +164,7 @@ The legacy policy `AuthenticatorAppSignInPolicy` isn't supported with Authentica
 
 After a user enables any passwordless credential, the Microsoft Entra sign-in process stops using `login\_hint`. The process no longer accelerates the user toward a federated sign-in location.
 
-This logic generally prevents a user in a hybrid tenant from being directed to Active Directory Federated Services for sign-in verification. The option to select **Use your password instead** is still available.
+This logic generally prevents a user in a hybrid tenant from being directed to Active Directory Federation Services for sign-in verification. The option to select **Use your password instead** is still available.
 
 ### On-premises users
 
