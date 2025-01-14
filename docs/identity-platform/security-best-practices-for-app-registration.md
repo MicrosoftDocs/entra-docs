@@ -77,7 +77,7 @@ The **Application ID URI** property of the application specifies the globally un
 
 Best practices for defining the Application ID URI change depending on if the app is issued v1.0 or v2.0 access tokens. If you're unsure whether an app is issued v1.0 access tokens, check the `requestedAccessTokenVersion` of the [app manifest](reference-microsoft-graph-app-manifest.md).  A value of `null` or `1` indicates that the app receives v1.0 access tokens.  A value of `2` indicates that the app receives v2.0 access tokens.
 
-For the applications that are issued v1.0 access tokens, only the default URIs should be used.  The default URIs are `api://<appId>` and `api://<tenantId>/<appId>`. 
+For applications that are issued v1.0 access tokens, only the default URIs should be used.  The default URIs are `api://<appId>` and `api://<tenantId>/<appId>`. 
 
 For applications that are issued v2.0 access tokens, use the following guidelines when defining the App ID URI: 
 - The `api` or `https` URI schemes are recommended. Set the property in the supported formats to avoid URI collisions in your organization. Don't use wildcards.
