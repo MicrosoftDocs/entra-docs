@@ -17,7 +17,7 @@ ms.custom: has-adal-ref, has-azure-ad-ps-ref
 
 The Microsoft Entra team regularly updates Microsoft Entra Connect with new features and functionality. Not all additions apply to all audiences.
 
-This article helps you keep track of the versions that have been released and understand what the changes are in the latest version.
+This article helps you keep track of the versions that have released and the changes in those versions.
 
 
 ## Looking for the latest versions?
@@ -76,7 +76,7 @@ Required permissions | For permissions required to apply an update, see [Microso
 
 If you run a retired version of Microsoft Entra Connect, it might unexpectedly stop working. You also might not have the latest security fixes, performance improvements, troubleshooting and diagnostic tools, and service enhancements. If you require support, we might not be able to provide you with the level of service your organization needs.
 
-To learn more about what has changed in versions 2.x and how this change affects you, see [Microsoft Entra Connect v2](whatis-azure-ad-connect-v2.md).
+To learn more about versions 2.x and how this change affects you, see [Microsoft Entra Connect v2](whatis-azure-ad-connect-v2.md).
 
 To learn more about how to upgrade Microsoft Entra Connect to the latest version, see [Microsoft Entra Connect: Upgrade from a previous version to the latest](./how-to-upgrade-previous-version.md).
 
@@ -87,7 +87,7 @@ For version history information on retired versions, see [Microsoft Entra Connec
 
 Not all releases of Microsoft Entra Connect are made available for autoupgrade. The release status indicates whether a release is made available for autoupgrade or for download only. If autoupgrade was enabled on your Microsoft Entra Connect server, that server automatically upgrades to the latest version of Microsoft Entra Connect that's released for autoupgrade. Not all Microsoft Entra Connect configurations are eligible for autoupgrade.
 
-Auto-upgrade is meant to push all important updates and critical fixes to you. It isn't necessarily the latest version because not all versions will require or include a fix to a critical security issue. (This example is just one of many.) Critical issues are usually addressed with a new version provided via autoupgrade. If there are no such issues, there are no updates pushed out by using autoupgrade. In general, if you're using the latest autoupgrade version, you should be good.
+Auto-upgrade is meant to push all important updates and critical fixes to you. It isn't necessarily the latest version because not all versions will require or include a fix to a critical security issue. (This example is just one of many.) Critical issues are addressed with a new version provided via autoupgrade. If there are no such issues, there are no updates pushed out by using autoupgrade. In general, if you're using the latest autoupgrade version, you should be good.
 
 If you want all the latest features and updates, check this page and install what you need.
 
