@@ -184,7 +184,7 @@ RBAC admins can create assignments of type eligible and timebound duration from 
 **Service category:** Provisioning        
 **Product capability:** Network Access        
 
-Continuous Access Evaluation (CAE) revokes and revalidates network access in near real-time whenever Microsoft Entra ID detects changes to the identity. For more information, see: [Universal Continuous Access Evaluation (Preview)](../global-secure-access/concept-universal-continuous-access-evaluation.md).
+Continuous Access Evaluation (CAE) revokes, and revalidates, network access in near real-time whenever Microsoft Entra ID detects changes to the identity. For more information, see: [Universal Continuous Access Evaluation (Preview)](../global-secure-access/concept-universal-continuous-access-evaluation.md).
 
 ---
 
