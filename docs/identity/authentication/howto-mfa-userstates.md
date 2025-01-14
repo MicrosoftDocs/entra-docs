@@ -57,8 +57,8 @@ The per-user MFA administration experience in the Microsoft Entra admin center i
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
-1. Select a user account, and click **User MFA settings**.
-1. After you make any changes, click **Save**.
+1. Select a user account, and select **User MFA settings**.
+1. After you make any changes, select **Save**.
 
    :::image type="content" border="true" source="./media/howto-mfa-userstates/user-states.png" alt-text="Screenshot that shows an example of MFA settings for a user.":::
 
@@ -74,7 +74,7 @@ To change the per-user Microsoft Entra multifactor authentication state for a us
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
-1. Select a user account, and click **Enable MFA**. 
+1. Select a user account, and select **Enable MFA**. 
    :::image type="content" border="true" source="./media/howto-mfa-userstates/new-enable.png" alt-text="Screenshot that shows how to enable a user for Microsoft Entra multifactor authentication.":::
 
    > [!TIP]

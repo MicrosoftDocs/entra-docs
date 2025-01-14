@@ -32,7 +32,7 @@ introduction: |
 
   > [!NOTE]
   > The screenshots in this topic show how to manage user authentication methods by using an updated experience in the Microsoft Entra admin center. There's also a legacy experience, and admins can toggle between the two using a banner in the admin center. The modern experience has full parity with the legacy experience, and it manages modern methods like Temporary Access Pass, passkeys, and other settings.
-  > The legacy experience in the Microsoft Entra admin center will be retired starting Oct 31, 2024. There's no action required by organizations before the retirement.
+  > The legacy experience in the Microsoft Entra admin center retired on Oct 31, 2024. There's no action required by organizations before the retirement.
 
 prerequisites:
   summary: |
@@ -43,7 +43,7 @@ procedureSection:
       Add or change authentication methods for a user 
     summary: |
       You can add or change authentication methods for a user by using the Microsoft Entra admin center or Microsoft Graph PowerShell. 
-      In the Microsoft Entra admin center, the leagcy method for managing user authentication methods will be retired after Oct. 31, 2024. 
+      In the Microsoft Entra admin center, the leagcy method for managing user authentication methods retired after Oct. 31, 2024. 
 
       > [!NOTE]
       > For security reasons, public user contact information fields shouldn't be used to perform MFA. Instead, users should populate their authentication method numbers to be used for MFA.  
@@ -114,7 +114,7 @@ procedureSection:
   - title: |
       Delete users' existing app passwords
     summary: |
-      For users that have defined app passwords, administrators can also choose to delete these passwords, causing legacy authentication to fail in those applications. These actions may be necessary if you need to provide assistance to a user, or need to reset their authentication methods. Non-browser apps that were associated with these app passwords will stop working until a new app password is created. 
+      For users that have defined app passwords, administrators can also choose to delete these passwords, causing legacy authentication to fail in those applications. These actions may be necessary if you need to provide assistance to a user, or need to reset their authentication methods. Non-browser apps that were associated with these app passwords stop working until a new app password is created. 
 
       To delete a user's app passwords, complete the following steps:
     steps:
