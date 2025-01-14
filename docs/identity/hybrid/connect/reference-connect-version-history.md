@@ -27,7 +27,7 @@ This article helps you keep track of the versions that have released and the cha
 > 
 >All versions of [Windows Server support TLS 1.2](/windows-server/security/tls/tls-ssl-schannel-ssp-overview). If TLS 1.2 isn't enabled on your server, you need to enable it before you can deploy Microsoft Entra Connect V2.0.
 >
->For a PowerShell script to check whether TLS 1.2 is enabled, see [PowerShell script to check TLS](reference-connect-tls-enforcement.md#powershell-script-to-check-tls-12)
+>For a PowerShell script to check whether TLS 1.2 is enabled, see [PowerShell script to check TLS](reference-connect-tls-enforcement.md#PowerShell-script-to-check-tls-12)
 >
 >For more information about TLS 1.2, see [Microsoft Security Advisory 2960358](/security-updates/SecurityAdvisories/2015/2960358).
 >For more information on enabling TLS 1.2, see [how to enable TLS 1.2](reference-connect-tls-enforcement.md)
@@ -100,10 +100,10 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 01/15/2025: Released for download
 
 ### Added Features
- -  Auditing administrator events in Microsoft Entra Connect Sync enabled for logging any admin changes made on Entra Connect Sync. This includes changes made using the UI and the Powershell scripts. For more information see [Auditing administrator events in Microsoft Entra Connect Sync (Public Preview)](admin-audit-logging.md)
+ - Auditing administrator events in Microsoft Entra Connect Sync enabled for logging any admin changes made on Entra Connect Sync. This includes changes made using the UI and the PowerShell scripts. For more information see [Auditing administrator events in Microsoft Entra Connect Sync (Public Preview)](admin-audit-logging.md)
 
 ### Bug fixes
-- Fixed the removal of the SSPR configuration when changes are made on the AAD Connector and saved in the Sync Service manager UI
+- Fixed the removal of the SSPR configuration when changes are made on the Azure AD Connector and saved in the Sync Service manager UI
 - Fixed validation for the global administrator/hybrid identity administrator role done during Entra Connect Sync installation and users with global administrator/hybrid identity administrator through Privileged Identity Management (PIM). 
 - Fixed the "no registered protocol handlers" error on Federate with AD FS scenario.
 - Fixed "Relying party must be unique (conflict error)" error on Federate with AD FS scenario.
@@ -148,9 +148,9 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 ### Updated Features
 - The step **Connect to Microsoft Entra ID** in the Connect Sync Wizard won't require password before redirecting you to the login page.
 - Updated Default Rule: "onPremisesObjectIdentifier" attribute added to the **In from AD - User Account Enabled** sync rule.
-  - In the scenario:
-   - where the user information around the same user is spread across different forests
-   - and if the user is disabled in one of the forests adding this rule allows the sync to pick the **onPremisesObjectIdentifier** attribute from the user who is enabled. 
+ - In the scenario:
+  - where the user information around the same user is spread across different forests
+  - and if the user is disabled in one of the forests adding this rule allows the sync to pick the **onPremisesObjectIdentifier** attribute from the user who is enabled. 
 - This registry key change allows you to set the precedence number for custom rules to be more than 100 if needed. The precedence of the first standard rule can be set using the key **HLKM:\SOFTWARE\Microsoft\Azure AD Connect\FirstStandardRulePrecedence** to allow for more custom rules. If no value is set, 100 is the default.
 - Cmdlets in the ADSync PowerShell module that modify Microsoft Entra ID settings now require Microsoft Entra ID login.
 
@@ -189,7 +189,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 > 
 >All versions of [Windows Server support TLS 1.2](/windows-server/security/tls/tls-ssl-schannel-ssp-overview). If TLS 1.2 isn't enabled on your server you'll need to enable this before you can deploy Microsoft Entra Connect V2.0.
 >
->For a PowerShell script to check whether TLS 1.2 is enabled, see [PowerShell script to check TLS](reference-connect-tls-enforcement.md#powershell-script-to-check-tls-12)
+>For a PowerShell script to check whether TLS 1.2 is enabled, see [PowerShell script to check TLS](reference-connect-tls-enforcement.md#PowerShell-script-to-check-tls-12)
 >
 >For more information about TLS 1.2, see [Microsoft Security Advisory 2960358](/security-updates/SecurityAdvisories/2015/2960358).
 >For more information on enabling TLS 1.2, see [how to enable TLS 1.2](reference-connect-tls-enforcement.md)
@@ -342,14 +342,14 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
  - We modified the AD connector upgrade to refresh the schema – we no longer show constructed and non-replicated attributes in the Wizard during upgrade.
  - We fixed a bug in ADSyncConfig functions ConvertFQDNtoDN and ConvertDNtoFQDN - If a user decides to set variables called '$dn' or '$fqdn', these variables are no longer used inside the script scope.
  - We made the following Accessibility fixes:
-  - Fixed a bug where Focus is lost during keyboard navigation on Domain and OU Filtering page.
-  - We updated the accessible name of Clear Runs drop down.
-  - We fixed a bug where the tooltip of the "Help" button isn't accessible through keyboard if navigated with arrow keys. 
-  - We fixed a bug where the underline of hyperlinks was missing on the Welcome page of the wizard.
-  - We fixed a bug in Sync Service Manager's About dialog where the Screen reader isn't announcing the information about the data appearing under the "About" dialog box.
-  - We fixed a bug where the Management Agent Name wasn't mentioned in logs when an error occurred while validating MA Name.
-  - We fixed several accessibility issues with the keyboard navigation and custom control type fixes. The Tooltip of the "help" button isn't collapsing by pressing "Esc" key. There was an Illogical keyboard focus on the User Sign In radio buttons and there was an invalid control type on the help popups.
-  - We fixed a bug where an empty label was causing an accessibility error.
+ - Fixed a bug where Focus is lost during keyboard navigation on Domain and OU Filtering page.
+ - We updated the accessible name of Clear Runs drop down.
+ - We fixed a bug where the tooltip of the "Help" button isn't accessible through keyboard if navigated with arrow keys. 
+ - We fixed a bug where the underline of hyperlinks was missing on the Welcome page of the wizard.
+ - We fixed a bug in Sync Service Manager's About dialog where the Screen reader isn't announcing the information about the data appearing under the "About" dialog box.
+ - We fixed a bug where the Management Agent Name wasn't mentioned in logs when an error occurred while validating MA Name.
+ - We fixed several accessibility issues with the keyboard navigation and custom control type fixes. The Tooltip of the "help" button isn't collapsing by pressing "Esc" key. There was an Illogical keyboard focus on the User Sign In radio buttons and there was an invalid control type on the help popups.
+ - We fixed a bug where an empty label was causing an accessibility error.
 
 ## 2.1.1.0
 
@@ -634,8 +634,8 @@ You can use these cmdlets to retrieve the TLS 1.2 enablement status or set it as
 - We added the following new user properties to sync from on-premises Active Directory to Microsoft Entra ID:
  - employeeType
  - employeeHireDate
-  >[!NOTE]
-  > There's no corresponding EmployeeHireDate or EmployeeLeaveDateTime attribute in Active Directory. If you're importing from on-premises AD, you'll need to identify an attribute in AD that can be used. This attribute must be a string. For more information see, [Synchronizing lifecycle workflow attributes](~/id-governance/how-to-lifecycle-workflow-sync-attributes.md)
+ >[!NOTE]
+ > There's no corresponding EmployeeHireDate or EmployeeLeaveDateTime attribute in Active Directory. If you're importing from on-premises AD, you'll need to identify an attribute in AD that can be used. This attribute must be a string. For more information see, [Synchronizing lifecycle workflow attributes](~/id-governance/how-to-lifecycle-workflow-sync-attributes.md)
 
 - This release requires PowerShell version 5.0 or newer to be installed on the Windows server. This version is part of Windows Server 2016 and newer.
 - We increased the group sync membership limits to 250,000 with the new V2 endpoint.
@@ -716,13 +716,13 @@ This release fixes a bug that occurred in version 1.6.2.4. After upgrade to that
  - We added new default sync rules for limiting the membership count in group writeback (Out to AD - Group Writeback Member Limit) and group sync to Microsoft Entra ID (Out to Microsoft Entra ID - Group Writeup Member Limit) groups.
  - We added a member attribute to the Out to AD - Group SOAInAAD - Exchange rule to limit members in writeback groups to 50,000.
 - We updated sync rules to support group writeback V2:
-  - If the In from Microsoft Entra ID - Group SOAInAAD rule is cloned and Microsoft Entra Connect is upgraded:
-    - The updated rule is disabled by default, so targetWritebackType is null.
-    - Microsoft Entra Connect writes back all Cloud Groups (including Microsoft Entra Security Groups enabled for writeback) as Distribution Groups.
-  - If the Out to AD - Group SOAInAAD rule is cloned and Microsoft Entra Connect is upgraded:
-    - The updated rule is disabled by default. A new sync rule, Out to AD - Group SOAInAAD - Exchange, which is added is enabled.
-    - Depending on the Cloned Custom Sync Rule's precedence, Microsoft Entra Connect flows the Mail and Exchange attributes.
-  - If the Cloned Custom Sync Rule doesn't flow some Mail and Exchange attributes, the new Exchange Sync Rule adds those attributes.
+ - If the In from Microsoft Entra ID - Group SOAInAAD rule is cloned and Microsoft Entra Connect is upgraded:
+  - The updated rule is disabled by default, so targetWritebackType is null.
+  - Microsoft Entra Connect writes back all Cloud Groups (including Microsoft Entra Security Groups enabled for writeback) as Distribution Groups.
+ - If the Out to AD - Group SOAInAAD rule is cloned and Microsoft Entra Connect is upgraded:
+  - The updated rule is disabled by default. A new sync rule, Out to AD - Group SOAInAAD - Exchange, which is added is enabled.
+  - Depending on the Cloned Custom Sync Rule's precedence, Microsoft Entra Connect flows the Mail and Exchange attributes.
+ - If the Cloned Custom Sync Rule doesn't flow some Mail and Exchange attributes, the new Exchange Sync Rule adds those attributes.
 - We added support for [Selective Password Hash Synchronization](./how-to-connect-selective-password-hash-synchronization.md).
 - We added the new [Single Object Sync cmdlet](./how-to-connect-single-object-sync.md). Use this cmdlet to troubleshoot your Microsoft Entra Connect Sync configuration.
 - Microsoft Entra Connect now supports the Hybrid Identity Administrator role for configuring the service.
@@ -762,7 +762,7 @@ This release fixes a bug that occurred in version 1.6.2.4. After upgrade to that
  - Get-ADSyncAADConnectorExportApiVersion: To get the export AWS API version
 
 - We updated change tracking so that changes made to synchronization rules are now tracked to assist troubleshooting changes in the service. The cmdlet Get-ADSyncRuleAudit retrieves tracked changes.
-- We updated the Add-ADSyncADDSConnectorAccount cmdlet in the [ADSyncConfig PowerShell module](./how-to-connect-configure-ad-ds-connector-account.md#using-the-adsyncconfig-powershell-module) to allow a user in the ADSyncAdmin group to change the Active Directory Domain Services Connector account.
+- We updated the Add-ADSyncADDSConnectorAccount cmdlet in the [ADSyncConfig PowerShell module](./how-to-connect-configure-ad-ds-connector-account.md#using-the-adsyncconfig-PowerShell-module) to allow a user in the ADSyncAdmin group to change the Active Directory Domain Services Connector account.
 
 ### Bug fixes
 
