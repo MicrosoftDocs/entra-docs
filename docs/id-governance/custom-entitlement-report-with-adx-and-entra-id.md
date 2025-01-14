@@ -583,7 +583,8 @@ For more information on data ingestion, see [Azure Data Explorer data ingestion 
 
 This report illustrates how you can combine data from two separate systems to create custom reports in Azure Data Explorer. It aggregates data about users, their roles, and other attributes from two systems into a unified format for analysis or reporting. 
 
-This example assumes there's a table named `salesforceAssignments` that has been populated by bringing in data from another application.
+This example assumes there's a table named `salesforceAssignments` with columns `UserName`, `Name`, `EmployeeId`, `Department`, `JobTitle`, `AppName`, `Role`, and `CreatedDateTime` that has been populated by bringing in data from another application.
+
 
 ```kusto
 // Define the date range and service principal ID for the query 
