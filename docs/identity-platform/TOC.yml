@@ -279,10 +279,8 @@
       href: index-web-api.yml
     - name: Quickstart
       items:
-        - name: ASP.NET
-          href: quickstart-web-api-aspnet-protect-api.md
-        - name: ASP.NET Core
-          href: quickstart-web-api-aspnet-core-protect-api.md
+        - name: Sign in users
+          href: quickstart-web-api-aspnet-sign-in.md
     - name: Tutorials
       items:
         - name: ASP.NET Core
