@@ -1,6 +1,6 @@
 ---
 title: Lifecycle workflow execution conditions and scheduling
-description: Conceptual article about lifecycle Workflows execution conditions.
+description: Conceptual article about Lifecycle workflows execution conditions.
 author: owinfreyATL
 ms.author: owinfrey
 manager: amycolannino
@@ -14,7 +14,7 @@ ms.custom: template-concept
 
 # Lifecycle workflows execution conditions and scheduling
 
-Workflows created using lifecycle workflows allow you to automate common tasks for users based on where they fall in the joiner, mover, and leaver model of their lifecycle within your organization. These workflows are able to run in two ways, manually(on-demand) for specific users, or based on a schedule if the user meets the defined execution conditions of a workflow. These execution conditions are defined by two parts, a trigger, and a scope. This article describes execution conditions, the difference between the workflow triggers and their scopes, the conditions for a scheduled workflow, and when they run for users.
+Workflows created using Lifecycle workflows allow you to automate common tasks for users based on where they fall in the joiner, mover, and leaver model of their lifecycle within your organization. These workflows are able to run in two ways, manually(on-demand) for specific users, or based on a schedule if a user meets the defined execution conditions of a workflow. These execution conditions are defined by two parts, a trigger, and a scope. This article describes execution conditions, the difference between the workflow triggers and scopes, and the conditions for when a scheduled workflow runs for users.
 
 ## Workflow execution conditions
 
@@ -50,7 +50,7 @@ When setting a workflow where the trigger type is **Time based attribute**, the 
 |Event user attribute     | The attribute defining the change that triggers the workflow. The type of workflow being used determines the attributes available. A joiner workflow can have the attribute value of "*employeeHireDate*" or "*createdDateTime*", while a leaver workflow has an attribute value of "*employeeLeaveDate*" or "*LastSignInDateTime*". For a list of templates, and their event user attributes, see: [Lifecycle Workflows templates and categories](lifecycle-workflow-templates.md).       |
 
 > [!NOTE]
-> The event user attribute must be set within Microsoft Entra ID for users. For more information on this process, see [How to synchronize attributes for Lifecycle workflows](how-to-lifecycle-workflow-sync-attributes.md).
+> The event user attribute must be set within Microsoft Entra ID for users. For more information on this process, see: [How to synchronize attributes for Lifecycle workflows](how-to-lifecycle-workflow-sync-attributes.md).
 
 ### Time based attribute scope
 
@@ -138,14 +138,14 @@ For a detailed guide on running a workflow on-demand for users, see: [Run a work
 
 ## Execution user scope
 
-After the workflow trigger and scope are set for an enabled workflow, you're able to see a list of users who currently meet it's execution conditions. This user list is made up of users who the workflow runs for the next time it executes, and is based on the last time the workflow engine evaluated users within your tenant.
+After the execution conditions are set for an enabled workflow, you're able to see a list of users who currently meet it's execution conditions. This user list is made up of users who the workflow runs for the next time it executes, and is based on the last time the workflow engine evaluated users within your tenant.
 
 :::image type="content" source="media/lifecycle-workflow-execution-conditions/execution-user-scope.png" alt-text="Screenshot of a list of users in scope of the workflow's execution conditions.":::
 
-If the execution conditions recently changed for the workflow, then the execution user scope list might not be current. When the execution conditions change recently, the list refreshes with users meeting the latest execution conditions after the workflow engine evaluates the users again. Before the workflow runs for the users, it also checks to make sure the list of users still meet the current execution conditions.
+If the execution conditions recently changed for the workflow, then the execution user scope list might not be current. When the execution conditions are recently changed, the list refreshes with users meeting the latest execution conditions after the workflow engine evaluates the users again. Before the workflow runs for the users, it also checks to make sure the list of users still meet the current execution conditions.
 
 > [!NOTE]
-> There is currently a catch up window for users based on a 3 day period. This means that when a workflow is created, the workflow engine will consider users, who previously met its execution conditions, within 3 days of the scope of the users. For example, if you created a pre-hire workflow to run for users in a certain department 1 week before their hire date, a user who was created within 10 days before their hire date would also fall under the scope of the workflow and have it ran for them.
+> There is currently a catch up window for users based on a 3 day period. This means that when a workflow is created, the workflow engine will consider users, who previously met its execution conditions, within 3 days of the scope of the users. For example, if you created a pre-hire workflow to run for users in a certain department 1 week before their hire date, a user who was created within 10 days before their hire date would also fall under the scope of the workflow.
 
 For a detailed guide on viewing the execution user scope of a specific workflow, see: [Check execution user scope of a workflow](check-workflow-execution-scope.md).
 
@@ -153,10 +153,10 @@ For a detailed guide on viewing the execution user scope of a specific workflow,
 
 While newly created workflows are enabled by default, scheduling is an option that must be enabled manually. To verify whether the workflow is scheduled, you can view the **Scheduled** column on the workflow overview page.
 
-Once scheduling is enabled, the workflow is evaluated either every three hours(by default), or by the interval you select in **workflow settings**, to determine whether or not it should run based on the execution conditions.
+Once scheduling is enabled, the workflow is evaluated either every three hours(by default), or by the interval you select in **workflow settings**, to determine whether or not it should run.
 
 > [!NOTE]
-> Once the user meets the execution conditions and is queued to have the workflow run for them the Lifecycle Workflow engine will evaluate the user once again before the workflow starts to process them. If the user no longer meets the execution conditions of the workflow, then they will not be processed.
+> Once the user meets the execution conditions, and is in scope of the workflow, the Lifecycle workflow engine will evaluate the user once again before the workflow starts to process them. If the user no longer meets the execution conditions of the workflow, then they will not be processed.
 
 For a detailed guide on setting the execution conditions for a workflow, see: [Create a lifecycle workflow](create-lifecycle-workflow.md).
 
