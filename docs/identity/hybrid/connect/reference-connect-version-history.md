@@ -600,7 +600,7 @@ There are no functional changes in this release.
 - We enforce the use of TLS 1.2 in this release. If you enabled your Windows Server for TLS 1.2, Microsoft Entra Connect uses this protocol. If TLS 1.2 isn't enabled on the server, you'll see an error message when you attempt to install Microsoft Entra Connect. The installation won't continue until you've enabled TLS 1.2. You can use the new Set-ADSyncToolsTls12 cmdlets to enable TLS 1.2 on your server.
 - We made a change so that with this release, you can use the Hybrid Identity Administrator role to authenticate when you install Microsoft Entra Connect. You no longer need to use the Global Administrator role.
 - We upgraded the Visual C++ runtime library to version 14 as a prerequisite for SQL Server 2019.
-- We updated this release to use the Microsoft Authentication Library for authentication. We removed the older Azure AD Authentication Library, which will be retired in 2022.
+- We updated this release to use the Microsoft Authentication Library for authentication. We removed the older Azure AD Authentication Library, which was retired.
 - We no longer apply permissions on AdminSDHolders following Windows security guidance. We changed the parameter SkipAdminSdHolders to IncludeAdminSdHolders in the ADSyncConfig.psm1 module.
 - We made a change so that passwords are now reevaluated when an expired password is "unexpired," no matter if the password itself is changed. If the password is set to "Must change password at next logon" for a user, and this flag is cleared (which "unexpires" the password), the unexpired status and the password hash are synced to Microsoft Entra ID. In Microsoft Entra ID, when the user attempts to sign in, they can use the unexpired password.
 To sync an expired password from Active Directory to Microsoft Entra ID, use the feature in Microsoft Entra Connect to [synchronize temporary passwords](how-to-connect-password-hash-synchronization.md#synchronizing-temporary-passwords-and-force-password-change-on-next-logon). Enable password writeback to use this feature so that the password the user updates is written back to Active Directory.
@@ -702,8 +702,8 @@ This release fixes a bug that occurred in version 1.6.2.4. After upgrade to that
 > Update per March 30, 2021: We've discovered an issue in this build. After installation of this build, the Health services aren't registered. We recommend that you not install this build. We'll release a hotfix shortly.
 > If you already installed this build, you can manually register the Health services by using the cmdlet, as shown in [Microsoft Entra Connect Health agent installation](./how-to-connect-health-agent-install.md#manually-register-azure-ad-connect-health-for-sync).
 
-- This release will be made available for download only.
-- The upgrade to this release will require a full synchronization because of sync rule changes.
+- This release is available for download only.
+- The upgrade to this release requires a full synchronization because of sync rule changes.
 - This release defaults the Microsoft Entra Connect server to the new V2 endpoint.
 
 ### Release status
@@ -717,12 +717,12 @@ This release fixes a bug that occurred in version 1.6.2.4. After upgrade to that
   - We added a member attribute to the Out to AD - Group SOAInAAD - Exchange rule to limit members in writeback groups to 50,000.
 - We updated sync rules to support group writeback V2:
     - If the In from Microsoft Entra ID - Group SOAInAAD rule is cloned and Microsoft Entra Connect is upgraded:
-        - The updated rule will be disabled by default, so targetWritebackType will be null.
-        - Microsoft Entra Connect will write back all Cloud Groups (including Microsoft Entra Security Groups enabled for writeback) as Distribution Groups.
+        - The updated rule is disabled by default, so targetWritebackType is null.
+        - Microsoft Entra Connect writes back all Cloud Groups (including Microsoft Entra Security Groups enabled for writeback) as Distribution Groups.
     - If the Out to AD - Group SOAInAAD rule is cloned and Microsoft Entra Connect is upgraded:
-        - The updated rule will be disabled by default. A new sync rule, Out to AD - Group SOAInAAD - Exchange, which is added will be enabled.
-        - Depending on the Cloned Custom Sync Rule's precedence, Microsoft Entra Connect will flow the Mail and Exchange attributes.
-    - If the Cloned Custom Sync Rule doesn't flow some Mail and Exchange attributes, the new Exchange Sync Rule will add those attributes.
+        - The updated rule is disabled by default. A new sync rule, Out to AD - Group SOAInAAD - Exchange, which is added is enabled.
+        - Depending on the Cloned Custom Sync Rule's precedence, Microsoft Entra Connect flows the Mail and Exchange attributes.
+    - If the Cloned Custom Sync Rule doesn't flow some Mail and Exchange attributes, the new Exchange Sync Rule adds those attributes.
 - We added support for [Selective Password Hash Synchronization](./how-to-connect-selective-password-hash-synchronization.md).
 - We added the new [Single Object Sync cmdlet](./how-to-connect-single-object-sync.md). Use this cmdlet to troubleshoot your Microsoft Entra Connect Sync configuration.
 - Microsoft Entra Connect now supports the Hybrid Identity Administrator role for configuring the service.

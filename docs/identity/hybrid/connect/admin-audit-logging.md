@@ -12,7 +12,7 @@ ms.author: billmath
 
 # Auditing administrator events in Microsoft Entra Connect Sync (Public Preview)
 
-In January 2025, we released a new version (x.x.xx.x) of Microsoft Entra Connect Sync. This version contains an update to auditing which is enabled be default. With this update, you can now monitor administrator events and activity.  The following article describes how to disable the auditing feature.  **All customers are required to upgrade** to the [minimum versions](#minimum-versions) by **April 7, 2025**. 
+In January 2025, we released a new version (x.x.xx.x) of Microsoft Entra Connect Sync. This version contains an update to auditing which is enabled by default. With this update, you can now monitor administrator events and activity. The following article describes how to disable the auditing feature. **All customers are required to upgrade** to the [minimum versions](#minimum-versions) by **April 7, 2025**. 
 
 ### Minimum versions 
 
@@ -23,34 +23,34 @@ To avoid any service impact, customers should be on the following versions or la
 ## How to manually disable auditing of administrator events
 To enable auditing of administrator events, use the following steps
 
-1. Open the Registry Editor - Press Win + R to open the Run dialog. 
+1. Open the Registry Editor - Press Win + R to open the run dialog. 
 2. Type **regedit** and press Enter to launch the Registry Editor. Confirm any security prompts to proceed. 
-3. Navigate to the following path: **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Azure AD Connect**.  
-4. Modify or Create the **AuditEventLogging** Value by right-click on the Azure AD Connect key, select New -> **DWORD (32-bit)** Value if the AuditEventLogging value does not already exist. 
+3. Navigate to the following path: **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Azure AD Connect**. 
+4. Modify or Create the **AuditEventLogging** Value by right-click on the Azure AD Connect key, select New -> **DWORD (32-bit)** Value if the AuditEventLogging value doesn't already exist. 
 5. Name the new DWORD as **AuditEventLogging**. 
-6. Double-clicking on the **AuditEventLogging** entry and enter **0** to disable the audit event logging.  Enter 0 to Re-enable isable it. 
+6. Double-clicking on the **AuditEventLogging** entry and enter **0** to disable the audit event logging. Enter 0 to re-enable it. 
 
 :::image type="content" source="media/admin-audit-logging/logging-1.png" alt-text="Screenshot of the new AuditEventLogging registry key." lightbox="media/admin-audit-logging/logging-1.png":::
 
 
 ## How to use PowerShell to disable auditing of administrator events
-You can also use PowerShell to enable audit logging of administrator events.  Use the following script.
+You can also use PowerShell to enable audit logging of administrator events. Use the following script.
 
-  ```powershell
-  #Declare variables
-  $registryPath = 'HKLM:\SOFTWARE\Microsoft\Azure AD Connect'
-  $valueName = 'AuditEventLoggging'
-  $newValue = '0'
+ ```powershell
+ #Declare variables
+ $registryPath = 'HKLM:\SOFTWARE\Microsoft\Azure AD Connect'
+ $valueName = 'AuditEventLoggging'
+ $newValue = '0'
 
-  #Create the AuditEventLogging key if it does not exist
-  if (!(Test-Path $registryPath)) {New-Item -Path $registryPath -Force}
+ #Create the AuditEventLogging key if it doesn't exist
+ if (!(Test-Path $registryPath)) {New-Item -Path $registryPath -Force}
 
-  #Set the value of the new AuditEventLogging key
-  Set-ItemProperty -Path $registryPath -Name $valueName -Value $newValue
-  ```
+ #Set the value of the new AuditEventLogging key
+ Set-ItemProperty -Path $registryPath -Name $valueName -Value $newValue
+ ```
 
 ## List of logged events
-The following table is a list of events that are logged with the new auditing feature.  To view the events, use Event Viewer and look in the Application log. 
+The following table is a list of events that are logged with the new auditing feature. To view the events, use Event Viewer and look in the Application log. 
 
 :::image type="content" source="media/admin-audit-logging/logging-2.png" alt-text="Screenshot of Event Viewer." lightbox="media/admin-audit-logging/logging-2.png":::
 
@@ -77,7 +77,7 @@ The following table is a list of events that are logged with the new auditing fe
 |2521|SetADFSServiceAccount| 
 
 
-  ## Next steps
+ ## Next steps
 
 - [What is Microsoft Entra Connect V2?](whatis-azure-ad-connect-v2.md)
 - [Microsoft Entra Connect cloud sync](/azure/active-directory/cloud-sync/what-is-cloud-sync)
