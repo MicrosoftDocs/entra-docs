@@ -6,7 +6,7 @@ description: Step-by-step configuration guides for Microsoft Entra Multifactor A
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/26/2024
+ms.date: 01/14/2025
 
 ms.author: justinha
 author: justinha

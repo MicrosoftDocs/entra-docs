@@ -6,7 +6,7 @@ description: Deploying LDAP Authentication and Microsoft Entra multifactor authe
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/27/2024
+ms.date: 01/14/2025
 ms.author: justinha
 author: justinha
 manager: amycolannino
@@ -19,7 +19,7 @@ By default, the Microsoft Entra multifactor authentication Server is configured 
 To use Microsoft Entra multifactor authentication as an LDAP proxy, insert the Microsoft Entra multifactor authentication Server between the LDAP client (for example, VPN appliance, application) and the LDAP directory server. The Microsoft Entra multifactor authentication Server must be configured to communicate with both the client servers and the LDAP directory. In this configuration, the Microsoft Entra multifactor authentication Server accepts LDAP requests from client servers and applications and forwards them to the target LDAP directory server to validate the primary credentials. If the LDAP directory validates the primary credentials, Microsoft Entra multifactor authentication performs a second identity verification and sends a response back to the LDAP client. The entire authentication succeeds only if both the LDAP server authentication and the second-step verification succeed.
 
 > [!IMPORTANT]
-> In September 2022, Microsoft announced deprecation of Azure Multi-Factor Authentication Server. Beginning September 30, 2024, Azure Multi-Factor Authentication Server deployments will no longer service multifactor authentication (MFA) requests, which could cause authentications to fail for your organization. To ensure uninterrupted authentication services and to remain in a supported state, organizations should [migrate their users’ authentication data](how-to-migrate-mfa-server-to-mfa-user-authentication.md) to the cloud-based Microsoft Entra multifactor authentication service by using the latest Migration Utility included in the most recent [Microsoft Entra multifactor authentication Server update](https://www.microsoft.com/download/details.aspx?id=55849). For more information, see [Microsoft Entra multifactor authentication Server Migration](how-to-migrate-mfa-server-to-azure-mfa.md).
+> In September 2022, Microsoft announced deprecation of Azure Multi-Factor Authentication Server. Beginning September 30, 2024, Azure Multi-Factor Authentication Server deployments no longer service multifactor authentication (MFA) requests, which could cause authentications to fail for your organization. To ensure uninterrupted authentication services and to remain in a supported state, organizations should [migrate their users’ authentication data](how-to-migrate-mfa-server-to-mfa-user-authentication.md) to the cloud-based Microsoft Entra multifactor authentication service by using the latest Migration Utility included in the most recent [Microsoft Entra multifactor authentication Server update](https://www.microsoft.com/download/details.aspx?id=55849). For more information, see [Microsoft Entra multifactor authentication Server Migration](how-to-migrate-mfa-server-to-azure-mfa.md).
 >
 > To get started with cloud-based MFA, see [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](tutorial-enable-azure-mfa.md).
 

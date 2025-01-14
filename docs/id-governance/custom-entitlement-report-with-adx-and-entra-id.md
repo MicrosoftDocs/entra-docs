@@ -414,7 +414,12 @@ With the data now available in Azure Data Explorer, you're ready to begin creati
 
 Azure Data Explorer is a powerful data analysis tool that is highly scalable and flexible providing an ideal environment for generating customized user access reports. Azure Data Explorer uses the Kusto Query Language (KQL).
 
+ 1. Sign-in to the [Azure Data Explorer web UI](https://dataexplorer.azure.com/home).
+ 1. From the left menu, select **Query**.
+
 The following queries provide examples of common reports, but you can customize these reports to suit your needs and create additional reports. 
+
+You can also [view your reports in Excel](/azure/data-explorer/excel), by selecting the **Export** tab and then selecting **Open in Excel**.
 
 ### Example 1: Generate app role assignments for direct and group assignments for a specific snapshot date 
 
@@ -543,6 +548,30 @@ az login
 LightIngest.exe "https://ingest-CLUSTERHOSTNAME;Fed=True" -database:"DATABASE" -table:EntraAccessPackages -sourcepath:"." -pattern:"EntraAccessPackages.json" -format:multijson -azcli:true
 ```
 
+## Query data in Azure Monitor
+
+If you are sending the audit, sign-in or other Microsoft Entra logs to Azure Monitor, then you can incorporate those logs from that Azure Monitor Log Analytics workspace in your queries. For more information on the relationship of Azure Monitor and Azure Data Explorer, see [Query data in Azure Monitor using Azure Data Explorer](/azure/data-explorer/query-monitor-data).
+
+ 1. Sign-in to the Microsoft Entra admin center.
+ 1. Select [diagnostic settings](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/DiagnosticSettingsMenuBlade/~/General).
+ 1. Select the Log Analytics workplace where you are sending your logs.
+ 1. On the Log Analytics workspace overview, record the Subscription ID, Resource group name, and Workspace Name of the workspace.
+ 1. Sign-in to the Azure Portal.
+ 1. Navigate to the [Azure Data Explorer web UI](https://dataexplorer.azure.com/home).
+ 1. Ensure your Azure Data Explorer cluster is listed.
+ 1. Select **+ Add** then **Connection**.
+ 1. In the *Add Connection* window, type in the URL to the Log Analytics workspace, formed from the cloud-specific hostname, subscription ID, resource group name, and Workspace Name of the Azure Monitor Log Analytics workspace, as described in [Add a Log Analytics workspace](/azure/data-explorer/query-monitor-data#add-a-log-analytics-workspaceapplication-insights-resource-to-azure-data-explorer-client-tools).
+ 1. After the connection is established, your Log Analytics workspace will appear in the left pane with your native Azure Data Explorer cluster.
+ 1. From the left menu, select **Query**, and select your Azure Data Explorer cluster.
+ 1. In the query pane, you can then refer to the Azure Monitor tables containing the Microsoft Entra logs in your Azure Data Explorer queries. For example:
+
+    ```kusto
+    let CL1 = 'https://ade.loganalytics.io/subscriptions/*subscriptionid*/resourcegroups/*resourcegroupname*/providers/microsoft.operationalinsights/workspaces/*workspacename*';
+    cluster(CL1).database('*workspacename*').AuditLogs | where Category == "EntitlementManagement"  and OperationName == "Fulfill access package assignment request"
+    | mv-expand TargetResources | where TargetResources.type == 'AccessPackage' | project ActivityDateTime,APID = toguid(TargetResources.id)
+    | join EntraAccessPackage on $left.APID == $right.Id
+    | limit 100
+    ```
 
 ## Bring in data from other sources
 
@@ -554,7 +583,8 @@ For more information on data ingestion, see [Azure Data Explorer data ingestion 
 
 This report illustrates how you can combine data from two separate systems to create custom reports in Azure Data Explorer. It aggregates data about users, their roles, and other attributes from two systems into a unified format for analysis or reporting. 
 
-This example assumes there's a table named `salesforceAssignments` that has been populated by bringing in data from another application.
+This example assumes there's a table named `salesforceAssignments` with columns `UserName`, `Name`, `EmployeeId`, `Department`, `JobTitle`, `AppName`, `Role`, and `CreatedDateTime` that has been populated by bringing in data from another application.
+
 
 ```kusto
 // Define the date range and service principal ID for the query 
@@ -596,4 +626,4 @@ EntraUsers
 ## Next steps
 
 - [What is Microsoft Entra entitlement management?](entitlement-management-overview.md)
-- [Use Kusto .NET client libraries from PowerShell](/kusto/api/powershell/powershell?view=microsoft-fabric&tabs=user).
+- [Use Kusto .NET client libraries from PowerShell](/kusto/api/powershell/powershell?view=microsoft-fabric&tabs=user)
