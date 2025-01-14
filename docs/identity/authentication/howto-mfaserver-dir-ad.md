@@ -6,7 +6,7 @@ description: How to integrate the Azure Multi-Factor Authentication Server with 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/29/2023
+ms.date: 01/14/2025
 
 ms.author: justinha
 author: justinha

@@ -6,7 +6,7 @@ description: Learn how to enable per-user Microsoft Entra multifactor authentica
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 12/11/2024
+ms.date: 01/14/2025
 
 ms.author: justinha
 author: justinha
