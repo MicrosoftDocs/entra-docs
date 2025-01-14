@@ -556,7 +556,7 @@ If you are sending the audit, sign-in or other Microsoft Entra logs to Azure Mon
  1. Select [diagnostic settings](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/DiagnosticSettingsMenuBlade/~/General).
  1. Select the Log Analytics workplace where you are sending your logs.
  1. On the Log Analytics workspace overview, record the Subscription ID, Resource group name, and Workspace Name of the workspace.
- 1. Sign-in to Azure Portal.
+ 1. Sign-in to the Azure Portal.
  1. Navigate to the [Azure Data Explorer web UI](https://dataexplorer.azure.com/home).
  1. Ensure your Azure Data Explorer cluster is listed.
  1. Select **+ Add** then **Connection**.
@@ -625,4 +625,4 @@ EntraUsers
 ## Next steps
 
 - [What is Microsoft Entra entitlement management?](entitlement-management-overview.md)
-- [Use Kusto .NET client libraries from PowerShell](/kusto/api/powershell/powershell?view=microsoft-fabric&tabs=user).
+- [Use Kusto .NET client libraries from PowerShell](/kusto/api/powershell/powershell?view=microsoft-fabric&tabs=user)
