@@ -419,6 +419,8 @@ Azure Data Explorer is a powerful data analysis tool that is highly scalable and
 
 The following queries provide examples of common reports, but you can customize these reports to suit your needs and create additional reports. 
 
+You can also [view your reports in Excel](/azure/data-explorer/excel), by selecting the **Export** tab and then selecting **Open in Excel**.
+
 ### Example 1: Generate app role assignments for direct and group assignments for a specific snapshot date 
 
 This report provides a view of who had what access and when to the target app and can be used for security audits, compliance verification, and understanding access patterns within the organization. 
@@ -558,17 +560,18 @@ If you are sending the audit, sign-in or other Microsoft Entra logs to Azure Mon
  1. Navigate to the [Azure Data Explorer web UI](https://dataexplorer.azure.com/home).
  1. Ensure your Azure Data Explorer cluster is listed.
  1. Select **+ Add** then **Connection**.
- 1. In the *Add Connection* window, type in the URL to the Log Analytics workspace, formed from the cloud-specific hostname, subscription ID, resource group name, and Workspace Name of the Azure Monitor Log Analytics workspace, as described in [Add a Log Analytics workspace](/azure/data-explorer/query-monitor-data#add-a-log-analytics-workspaceapplication-insights-resource-to-azure-data-explorer-client-tools)
+ 1. In the *Add Connection* window, type in the URL to the Log Analytics workspace, formed from the cloud-specific hostname, subscription ID, resource group name, and Workspace Name of the Azure Monitor Log Analytics workspace, as described in [Add a Log Analytics workspace](/azure/data-explorer/query-monitor-data#add-a-log-analytics-workspaceapplication-insights-resource-to-azure-data-explorer-client-tools).
  1. After the connection is established, your Log Analytics workspace will appear in the left pane with your native Azure Data Explorer cluster.
- 1. You can then refer to the Azure Monitor tables containing the Microsoft Entra logs in your Azure Data Explorer queries. For example, you can reference the audit log:
+ 1. From the left menu, select **Query**, and select your Azure Data Explorer cluster.
+ 1. In the query pane, you can then refer to the Azure Monitor tables containing the Microsoft Entra logs in your Azure Data Explorer queries. For example:
 
-```kusto
+    ```kusto
     let CL1 = 'https://ade.loganalytics.io/subscriptions/*subscriptionid*/resourcegroups/*resourcegroupname*/providers/microsoft.operationalinsights/workspaces/*workspacename*';
     cluster(CL1).database('*workspacename*').AuditLogs | where Category == "EntitlementManagement"  and OperationName == "Fulfill access package assignment request"
     | mv-expand TargetResources | where TargetResources.type == 'AccessPackage' | project ActivityDateTime,APID = toguid(TargetResources.id)
     | join EntraAccessPackage on $left.APID == $right.Id
     | limit 100
-```
+    ```
 
 ## Bring in data from other sources
 
