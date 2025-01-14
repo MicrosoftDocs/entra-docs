@@ -548,7 +548,7 @@ LightIngest.exe "https://ingest-CLUSTERHOSTNAME;Fed=True" -database:"DATABASE" -
 
 ## Query data in Azure Monitor
 
-If you are sending the audit, sign-in or other Microsoft Entra logs to Azure Monitor, then you can include the data in that Azure Monitor Log Analytics workspace in your queries. For more information, see [Query data in Azure Monitor using Azure Data Explorer](/azure/data-explorer/query-monitor-data).
+If you are sending the audit, sign-in or other Microsoft Entra logs to Azure Monitor, then you can incorporate those logs from that Azure Monitor Log Analytics workspace in your queries. For more information on the relationship of Azure Monitor and Azure Data Explorer, see [Query data in Azure Monitor using Azure Data Explorer](/azure/data-explorer/query-monitor-data).
 
  1. Sign-in to the Microsoft Entra admin center.
  1. Select [diagnostic settings](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/DiagnosticSettingsMenuBlade/~/General).
@@ -560,15 +560,14 @@ If you are sending the audit, sign-in or other Microsoft Entra logs to Azure Mon
  1. Select **+ Add** then **Connection**.
  1. In the *Add Connection* window, type in the URL to the Log Analytics workspace, formed from the cloud-specific hostname, subscription ID, resource group name, and Workspace Name of the Azure Monitor Log Analytics workspace, as described in [Add a Log Analytics workspace](/azure/data-explorer/query-monitor-data#add-a-log-analytics-workspaceapplication-insights-resource-to-azure-data-explorer-client-tools)
  1. After the connection is established, your Log Analytics workspace will appear in the left pane with your native Azure Data Explorer cluster.
-
-You can then refer to the Azure Monitor tables in your queries. For example,
+ 1. You can then refer to the Azure Monitor tables containing the Microsoft Entra logs in your Azure Data Explorer queries. For example, you can reference the audit log:
 
 ```kusto
-let CL1 = 'https://ade.loganalytics.io/subscriptions/*subscriptionid*/resourcegroups/*resourcegroupname*/providers/microsoft.operationalinsights/workspaces/*workspacename*';
-cluster(CL1).database('*workspacename*').AuditLogs | where Category == "EntitlementManagement"  and OperationName == "Fulfill access package assignment request"
-| mv-expand TargetResources | where TargetResources.type == 'AccessPackage' | project ActivityDateTime,APID = toguid(TargetResources.id)
-| join EntraAccessPackage on $left.APID == $right.Id
-| limit 100 
+    let CL1 = 'https://ade.loganalytics.io/subscriptions/*subscriptionid*/resourcegroups/*resourcegroupname*/providers/microsoft.operationalinsights/workspaces/*workspacename*';
+    cluster(CL1).database('*workspacename*').AuditLogs | where Category == "EntitlementManagement"  and OperationName == "Fulfill access package assignment request"
+    | mv-expand TargetResources | where TargetResources.type == 'AccessPackage' | project ActivityDateTime,APID = toguid(TargetResources.id)
+    | join EntraAccessPackage on $left.APID == $right.Id
+    | limit 100
 ```
 
 ## Bring in data from other sources
