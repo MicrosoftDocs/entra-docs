@@ -2,15 +2,15 @@
 title: 'Tutorial: Microsoft Entra SSO integration with Fidelity NetBenefits'
 description: Learn how to configure single sign-on between Microsoft Entra ID and Fidelity NetBenefits.
 
-author: jeevansd
+author: omondiatieno
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.date: 01/25/2024
+ms.author: jomondi
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Fidelity NetBenefits so that I can control who has access to Fidelity NetBenefits, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
