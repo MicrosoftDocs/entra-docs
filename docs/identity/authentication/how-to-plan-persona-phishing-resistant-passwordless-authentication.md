@@ -5,7 +5,7 @@ description: Persona-specific guidance to deploy passwordless and phishing-resis
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/01/2024
+ms.date: 01/14/2025
 
 ms.author: justinha
 author: mepples21
