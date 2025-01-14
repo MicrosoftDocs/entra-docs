@@ -100,7 +100,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 01/15/2025: Released for download
 
 ### Added Features
- -   Administrator Actions logging enabled for logging any admin changes made on Entra Connect Sync. This includes changes made using the UI and the Powershell scripts.  For more information see [Auditing administrator events in Microsoft Entra Connect Sync (Public Preview)](admin-audit-logging.md)
+ -   Auditing administrator events in Microsoft Entra Connect Sync enabled for logging any admin changes made on Entra Connect Sync. This includes changes made using the UI and the Powershell scripts.  For more information see [Auditing administrator events in Microsoft Entra Connect Sync (Public Preview)](admin-audit-logging.md)
 
 ### Bug fixes
 - Fixed the removal of the SSPR configuration when changes are made on the AAD Connector and saved in the Sync Service manager UI
