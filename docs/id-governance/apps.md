@@ -849,6 +849,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Visibly](../identity/saas-apps/visibly-provisioning-tutorial.md) | ● | ● |
 | [Visitly](../identity/saas-apps/visitly-provisioning-tutorial.md) | ● | ● |
 | [Visma](../identity/saas-apps/visma-tutorial.md) |  | ● |
+| [VMware Identity Service](~/identity/saas-apps/vmware-identity-service-tutorial.md) |  | ● |
 | [Vonage](../identity/saas-apps/vonage-provisioning-tutorial.md) | ● | ● |
 | [Voyance](../identity/saas-apps/voyance-tutorial.md) |  | ● |
 | [Vtiger CRM (SAML)](../identity/saas-apps/vtiger-crm-saml-tutorial.md) |  | ● |
