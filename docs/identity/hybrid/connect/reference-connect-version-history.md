@@ -23,7 +23,7 @@ This article helps you keep track of the versions that have released and the cha
 ## Looking for the latest versions?
 
 >[!IMPORTANT]
->Version 2.3.20.0 is a security update. With this update, Microsoft Entra Connect requires TLS 1.2.  Ensure that you have TLS 1.2 enabled before updating to this version.
+>Version 2.3.20.0 is a security update. With this update, Microsoft Entra Connect requires TLS 1.2. Ensure that you have TLS 1.2 enabled before updating to this version.
 > 
 >All versions of [Windows Server support TLS 1.2](/windows-server/security/tls/tls-ssl-schannel-ssp-overview). If TLS 1.2 isn't enabled on your server, you need to enable it before you can deploy Microsoft Entra Connect V2.0.
 >
@@ -40,7 +40,7 @@ Get notified about when to revisit this page for updates by copying and pasting 
 
 The following table lists related topics:
 
-Topic |  Details
+Topic | Details
 --------- | --------- |
 Steps to upgrade from Microsoft Entra Connect | Different methods to [upgrade from a previous version to the latest](how-to-upgrade-previous-version.md) Microsoft Entra Connect release.
 Required permissions | For permissions required to apply an update, see [Microsoft Entra Connect: Accounts and permissions](reference-connect-accounts-permissions.md#upgrade).
@@ -100,7 +100,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 01/15/2025: Released for download
 
 ### Added Features
- -   Auditing administrator events in Microsoft Entra Connect Sync enabled for logging any admin changes made on Entra Connect Sync. This includes changes made using the UI and the Powershell scripts.  For more information see [Auditing administrator events in Microsoft Entra Connect Sync (Public Preview)](admin-audit-logging.md)
+ -  Auditing administrator events in Microsoft Entra Connect Sync enabled for logging any admin changes made on Entra Connect Sync. This includes changes made using the UI and the Powershell scripts. For more information see [Auditing administrator events in Microsoft Entra Connect Sync (Public Preview)](admin-audit-logging.md)
 
 ### Bug fixes
 - Fixed the removal of the SSPR configuration when changes are made on the AAD Connector and saved in the Sync Service manager UI
@@ -117,11 +117,11 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 11/14/2024: Released for download
 
 ### Updated Features
- -  SQL related drivers shipped with Microsoft Entra Connect have been updated to OLE DB [version 18.7.4](/sql/connect/oledb/release-notes-for-oledb-driver-for-sql-server?view=sql-server-ver16#1874)
+ - SQL related drivers shipped with Microsoft Entra Connect have been updated to OLE DB [version 18.7.4](/sql/connect/oledb/release-notes-for-oledb-driver-for-sql-server?view=sql-server-ver16#1874)
 
 ### Bug fixes
 - Fixed an issues with Privileged Identity Management (PIM), Microsoft Entra roles, and PIM for Groups to verify that PIM is enabled and that the user has the Hybrid Identity Administrator role enabled.
-- Fixed an issue where AD FS commands were failing when Connect Sync is installed on a non-ADFS server.  
+- Fixed an issue where AD FS commands were failing when Connect Sync is installed on a non-ADFS server. 
 
 
 
@@ -148,9 +148,9 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 ### Updated Features
 - The step **Connect to Microsoft Entra ID** in the Connect Sync Wizard won't require password before redirecting you to the login page.
 - Updated Default Rule: "onPremisesObjectIdentifier" attribute added to the **In from AD - User Account Enabled** sync rule.
-   - In the scenario:
-     - where the user information around the same user is spread across different forests
-     - and if the user is disabled in one of the forests adding this rule allows the sync to pick the **onPremisesObjectIdentifier** attribute from the user who is enabled. 
+  - In the scenario:
+   - where the user information around the same user is spread across different forests
+   - and if the user is disabled in one of the forests adding this rule allows the sync to pick the **onPremisesObjectIdentifier** attribute from the user who is enabled. 
 - This registry key change allows you to set the precedence number for custom rules to be more than 100 if needed. The precedence of the first standard rule can be set using the key **HLKM:\SOFTWARE\Microsoft\Azure AD Connect\FirstStandardRulePrecedence** to allow for more custom rules. If no value is set, 100 is the default.
 - Cmdlets in the ADSync PowerShell module that modify Microsoft Entra ID settings now require Microsoft Entra ID login.
 
@@ -185,7 +185,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 ## 2.3.20.0
 
 >[!IMPORTANT]
->Version 2.3.20.0 is a security update. With this update, Microsoft Entra Connect requires TLS 1.2.  Ensure that you have TLS 1.2 enabled before updating to this version.
+>Version 2.3.20.0 is a security update. With this update, Microsoft Entra Connect requires TLS 1.2. Ensure that you have TLS 1.2 enabled before updating to this version.
 > 
 >All versions of [Windows Server support TLS 1.2](/windows-server/security/tls/tls-ssl-schannel-ssp-overview). If TLS 1.2 isn't enabled on your server you'll need to enable this before you can deploy Microsoft Entra Connect V2.0.
 >
@@ -342,14 +342,14 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
  - We modified the AD connector upgrade to refresh the schema – we no longer show constructed and non-replicated attributes in the Wizard during upgrade.
  - We fixed a bug in ADSyncConfig functions ConvertFQDNtoDN and ConvertDNtoFQDN - If a user decides to set variables called '$dn' or '$fqdn', these variables are no longer used inside the script scope.
  - We made the following Accessibility fixes:
-   - Fixed a bug where Focus is lost during keyboard navigation on Domain and OU Filtering page.
-   - We updated the accessible name of Clear Runs drop down.
-   - We fixed a bug where the tooltip of the "Help" button isn't accessible through keyboard if navigated with arrow keys. 
-   - We fixed a bug where the underline of hyperlinks was missing on the Welcome page of the wizard.
-   - We fixed a bug in Sync Service Manager's About dialog where the Screen reader isn't announcing the information about the data appearing under the "About" dialog box.
-   - We fixed a bug where the Management Agent Name wasn't mentioned in logs when an error occurred while validating MA Name.
-   - We fixed several accessibility issues with the keyboard navigation and custom control type fixes. The Tooltip of the "help" button isn't collapsing by pressing "Esc" key. There was an Illogical keyboard focus on the User Sign In radio buttons and there was an invalid control type on the help popups.
-   - We fixed a bug where an empty label was causing an accessibility error.
+  - Fixed a bug where Focus is lost during keyboard navigation on Domain and OU Filtering page.
+  - We updated the accessible name of Clear Runs drop down.
+  - We fixed a bug where the tooltip of the "Help" button isn't accessible through keyboard if navigated with arrow keys. 
+  - We fixed a bug where the underline of hyperlinks was missing on the Welcome page of the wizard.
+  - We fixed a bug in Sync Service Manager's About dialog where the Screen reader isn't announcing the information about the data appearing under the "About" dialog box.
+  - We fixed a bug where the Management Agent Name wasn't mentioned in logs when an error occurred while validating MA Name.
+  - We fixed several accessibility issues with the keyboard navigation and custom control type fixes. The Tooltip of the "help" button isn't collapsing by pressing "Esc" key. There was an Illogical keyboard focus on the User Sign In radio buttons and there was an invalid control type on the help popups.
+  - We fixed a bug where an empty label was causing an accessibility error.
 
 ## 2.1.1.0
 
@@ -394,8 +394,8 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 - We upgraded the version of Microsoft.Data.OData from 5.8.1 to 5.8.4 to fix a vulnerability.
 - Accessibility fixes:
-  - We made the Microsoft Entra Connect wizard resizable to account for different zoom levels and screen resolutions.
-  - We named elements to satisfy accessibility requirements.
+ - We made the Microsoft Entra Connect wizard resizable to account for different zoom levels and screen resolutions.
+ - We named elements to satisfy accessibility requirements.
 - We fixed a bug where miisserver failed because of a null reference.
 - We fixed a bug to ensure the desktop SSO value persists after upgrading Microsoft Entra Connect to a newer version.
 - We modified the inetorgperson sync rules to fix an issue with account/resource forests.
@@ -406,8 +406,8 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 - We made a change so that group writeback DN is now configurable with the display name of the synced group.
 - We removed the hard requirement for exchange schema when you enable group writeback.
 - Microsoft Entra Kerberos changes:
-  - We extended the PowerShell command to support custom top-level names for trusted object creation.
-  - We made a change to set an official brand name for the Microsoft Entra Kerberos feature.
+ - We extended the PowerShell command to support custom top-level names for trusted object creation.
+ - We made a change to set an official brand name for the Microsoft Entra Kerberos feature.
 
 ## 1.6.16.0
 
@@ -446,7 +446,7 @@ When you upgrade to this V1.6 build or any newer builds, the group membership li
 - We fixed a bug where the wizard was incorrectly blocking the installation when the .NET version on the server was greater than 4.6 because of missing registry keys. Those registry keys aren't required and should only block installation if they're intentionally set to false.
 - We fixed a bug where an error was thrown if phantom objects were found during the initialization of a sync step. This bug blocked the sync step or removed transient objects. The phantom objects are now ignored.
 
-  A phantom object is a placeholder for an object that isn't there or hasn't been seen yet. For example, if a source object has a reference for a target object that isn't there, we create the target object as a phantom.
+ A phantom object is a placeholder for an object that isn't there or hasn't been seen yet. For example, if a source object has a reference for a target object that isn't there, we create the target object as a phantom.
 
 ### Functional changes
 
@@ -494,7 +494,7 @@ When you upgrade to this V1.6 build or any newer builds, the group membership li
 - We added the Replicating Directory Changes permission in the Set-ADSyncBasicReadPermissions cmdlet.
 - We made a change to prevent UseExistingDatabase and import configuration from being used together because they could contain conflicting configuration settings.
 - We made a change to allow a user with the Application Administrator role to change the application proxy service configuration.
-- We removed the  label from the labels of **Import/Export** settings. This functionality is generally available.
+- We removed the label from the labels of **Import/Export** settings. This functionality is generally available.
 - We changed some labels that still referred to Company Administrator. We now use the role name Global Administrator.
 - We created new Microsoft Entra Kerberos PowerShell cmdlets (\*-AADKerberosServer) to add a Claims Transform rule to the Microsoft Entra service principal.
 
@@ -605,43 +605,43 @@ There are no functional changes in this release.
 - We made a change so that passwords are now reevaluated when an expired password is "unexpired," no matter if the password itself is changed. If the password is set to "Must change password at next logon" for a user, and this flag is cleared (which "unexpires" the password), the unexpired status and the password hash are synced to Microsoft Entra ID. In Microsoft Entra ID, when the user attempts to sign in, they can use the unexpired password.
 To sync an expired password from Active Directory to Microsoft Entra ID, use the feature in Microsoft Entra Connect to [synchronize temporary passwords](how-to-connect-password-hash-synchronization.md#synchronizing-temporary-passwords-and-force-password-change-on-next-logon). Enable password writeback to use this feature so that the password the user updates is written back to Active Directory.
 - We added two new cmdlets to the ADSyncTools module to enable or retrieve TLS 1.2 settings from the Windows Server:
-  - Get-ADSyncToolsTls12
-  - Set-ADSyncToolsTls12
+ - Get-ADSyncToolsTls12
+ - Set-ADSyncToolsTls12
 
 You can use these cmdlets to retrieve the TLS 1.2 enablement status or set it as needed. TLS 1.2 must be enabled on the server for the installation or Microsoft Entra Connect to succeed.
 
 - We revamped ADSyncTools with several new and improved cmdlets. The [ADSyncTools article](reference-connect-adsynctools.md) has more details about these cmdlets.
-  The following cmdlets have been added or updated:
-  - Clear-ADSyncToolsMsDsConsistencyGuid
-  - ConvertFrom-ADSyncToolsAadDistinguishedName
-  - ConvertFrom-ADSyncToolsImmutableID
-  - ConvertTo-ADSyncToolsAadDistinguishedName
-  - ConvertTo-ADSyncToolsCloudAnchor
-  - ConvertTo-ADSyncToolsImmutableID
-  - Export-ADSyncToolsAadDisconnectors
-  - Export-ADSyncToolsObjects
-  - Export-ADSyncToolsRunHistory
-  - Get-ADSyncToolsAadObject
-  - Get-ADSyncToolsMsDsConsistencyGuid
-  - Import-ADSyncToolsObjects
-  - Import-ADSyncToolsRunHistory
-  - Remove-ADSyncToolsAadObject
-  - Search-ADSyncToolsADobject
-  - Set-ADSyncToolsMsDsConsistencyGuid
-  - Trace-ADSyncToolsADImport
-  - Trace-ADSyncToolsLdapQuery
+ The following cmdlets have been added or updated:
+ - Clear-ADSyncToolsMsDsConsistencyGuid
+ - ConvertFrom-ADSyncToolsAadDistinguishedName
+ - ConvertFrom-ADSyncToolsImmutableID
+ - ConvertTo-ADSyncToolsAadDistinguishedName
+ - ConvertTo-ADSyncToolsCloudAnchor
+ - ConvertTo-ADSyncToolsImmutableID
+ - Export-ADSyncToolsAadDisconnectors
+ - Export-ADSyncToolsObjects
+ - Export-ADSyncToolsRunHistory
+ - Get-ADSyncToolsAadObject
+ - Get-ADSyncToolsMsDsConsistencyGuid
+ - Import-ADSyncToolsObjects
+ - Import-ADSyncToolsRunHistory
+ - Remove-ADSyncToolsAadObject
+ - Search-ADSyncToolsADobject
+ - Set-ADSyncToolsMsDsConsistencyGuid
+ - Trace-ADSyncToolsADImport
+ - Trace-ADSyncToolsLdapQuery
 - We now use the V2 endpoint for import and export. We fixed an issue in the Get-ADSyncAADConnectorExportApiVersion cmdlet. To learn more about the V2 endpoint, see [Microsoft Entra Connect Sync V2 endpoint](how-to-connect-sync-endpoint-api-v2.md).
 - We added the following new user properties to sync from on-premises Active Directory to Microsoft Entra ID:
-  - employeeType
-  - employeeHireDate
-    >[!NOTE]
-    > There's no corresponding EmployeeHireDate or EmployeeLeaveDateTime attribute in Active Directory. If you're importing from on-premises AD, you'll need to identify an attribute in AD that can be used. This attribute must be a string.  For more information see, [Synchronizing lifecycle workflow attributes](~/id-governance/how-to-lifecycle-workflow-sync-attributes.md)
+ - employeeType
+ - employeeHireDate
+  >[!NOTE]
+  > There's no corresponding EmployeeHireDate or EmployeeLeaveDateTime attribute in Active Directory. If you're importing from on-premises AD, you'll need to identify an attribute in AD that can be used. This attribute must be a string. For more information see, [Synchronizing lifecycle workflow attributes](~/id-governance/how-to-lifecycle-workflow-sync-attributes.md)
 
 - This release requires PowerShell version 5.0 or newer to be installed on the Windows server. This version is part of Windows Server 2016 and newer.
 - We increased the group sync membership limits to 250,000 with the new V2 endpoint.
 - We updated the Generic LDAP Connector and the Generic SQL Connector to the latest versions. To learn more about these connectors, see the reference documentation for:
-  - [Generic LDAP Connector](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-connector-genericldap)
-  - [Generic SQL Connector](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-connector-genericsql)
+ - [Generic LDAP Connector](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-connector-genericldap)
+ - [Generic SQL Connector](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-connector-genericsql)
 - In the Microsoft 365 admin center, we now report the Microsoft Entra Connect client version whenever there's export activity to Microsoft Entra ID. This reporting ensures that the Microsoft 365 admin center always has the most up-to-date Microsoft Entra Connect client version, and that it can detect when you're using an outdated version.
 
 ### Bug fixes
@@ -713,39 +713,39 @@ This release fixes a bug that occurred in version 1.6.2.4. After upgrade to that
 ### Functional changes
 
 - We updated default sync rules to limit membership in writeback groups to 50,000 members.
-  - We added new default sync rules for limiting the membership count in group writeback (Out to AD - Group Writeback Member Limit) and group sync to Microsoft Entra ID (Out to Microsoft Entra ID - Group Writeup Member Limit) groups.
-  - We added a member attribute to the Out to AD - Group SOAInAAD - Exchange rule to limit members in writeback groups to 50,000.
+ - We added new default sync rules for limiting the membership count in group writeback (Out to AD - Group Writeback Member Limit) and group sync to Microsoft Entra ID (Out to Microsoft Entra ID - Group Writeup Member Limit) groups.
+ - We added a member attribute to the Out to AD - Group SOAInAAD - Exchange rule to limit members in writeback groups to 50,000.
 - We updated sync rules to support group writeback V2:
-    - If the In from Microsoft Entra ID - Group SOAInAAD rule is cloned and Microsoft Entra Connect is upgraded:
-        - The updated rule is disabled by default, so targetWritebackType is null.
-        - Microsoft Entra Connect writes back all Cloud Groups (including Microsoft Entra Security Groups enabled for writeback) as Distribution Groups.
-    - If the Out to AD - Group SOAInAAD rule is cloned and Microsoft Entra Connect is upgraded:
-        - The updated rule is disabled by default. A new sync rule, Out to AD - Group SOAInAAD - Exchange, which is added is enabled.
-        - Depending on the Cloned Custom Sync Rule's precedence, Microsoft Entra Connect flows the Mail and Exchange attributes.
-    - If the Cloned Custom Sync Rule doesn't flow some Mail and Exchange attributes, the new Exchange Sync Rule adds those attributes.
+  - If the In from Microsoft Entra ID - Group SOAInAAD rule is cloned and Microsoft Entra Connect is upgraded:
+    - The updated rule is disabled by default, so targetWritebackType is null.
+    - Microsoft Entra Connect writes back all Cloud Groups (including Microsoft Entra Security Groups enabled for writeback) as Distribution Groups.
+  - If the Out to AD - Group SOAInAAD rule is cloned and Microsoft Entra Connect is upgraded:
+    - The updated rule is disabled by default. A new sync rule, Out to AD - Group SOAInAAD - Exchange, which is added is enabled.
+    - Depending on the Cloned Custom Sync Rule's precedence, Microsoft Entra Connect flows the Mail and Exchange attributes.
+  - If the Cloned Custom Sync Rule doesn't flow some Mail and Exchange attributes, the new Exchange Sync Rule adds those attributes.
 - We added support for [Selective Password Hash Synchronization](./how-to-connect-selective-password-hash-synchronization.md).
 - We added the new [Single Object Sync cmdlet](./how-to-connect-single-object-sync.md). Use this cmdlet to troubleshoot your Microsoft Entra Connect Sync configuration.
 - Microsoft Entra Connect now supports the Hybrid Identity Administrator role for configuring the service.
 - We updated the Microsoft Entra Connect Health agent to 3.1.83.0.
 - We introduced a new version of the [ADSyncTools PowerShell module](./reference-connect-adsynctools.md), which has several new or improved cmdlets:
-  - Clear-ADSyncToolsMsDsConsistencyGuid
-  - ConvertFrom-ADSyncToolsAadDistinguishedName
-  - ConvertFrom-ADSyncToolsImmutableID
-  - ConvertTo-ADSyncToolsAadDistinguishedName
-  - ConvertTo-ADSyncToolsCloudAnchor
-  - ConvertTo-ADSyncToolsImmutableID
-  - Export-ADSyncToolsAadDisconnectors
-  - Export-ADSyncToolsObjects
-  - Export-ADSyncToolsRunHistory
-  - Get-ADSyncToolsAadObject
-  - Get-ADSyncToolsMsDsConsistencyGuid
-  - Import-ADSyncToolsObjects
-  - Import-ADSyncToolsRunHistory
-  - Remove-ADSyncToolsAadObject
-  - Search-ADSyncToolsADobject
-  - Set-ADSyncToolsMsDsConsistencyGuid
-  - Trace-ADSyncToolsADImport
-  - Trace-ADSyncToolsLdapQuery
+ - Clear-ADSyncToolsMsDsConsistencyGuid
+ - ConvertFrom-ADSyncToolsAadDistinguishedName
+ - ConvertFrom-ADSyncToolsImmutableID
+ - ConvertTo-ADSyncToolsAadDistinguishedName
+ - ConvertTo-ADSyncToolsCloudAnchor
+ - ConvertTo-ADSyncToolsImmutableID
+ - Export-ADSyncToolsAadDisconnectors
+ - Export-ADSyncToolsObjects
+ - Export-ADSyncToolsRunHistory
+ - Get-ADSyncToolsAadObject
+ - Get-ADSyncToolsMsDsConsistencyGuid
+ - Import-ADSyncToolsObjects
+ - Import-ADSyncToolsRunHistory
+ - Remove-ADSyncToolsAadObject
+ - Search-ADSyncToolsADobject
+ - Set-ADSyncToolsMsDsConsistencyGuid
+ - Trace-ADSyncToolsADImport
+ - Trace-ADSyncToolsLdapQuery
 
 - We updated error logging for token acquisition failures.
 - We updated **Learn More** links on the configuration page to give more detail on the linked information.
@@ -754,12 +754,12 @@ This release fixes a bug that occurred in version 1.6.2.4. After upgrade to that
 - We added the ability to autocreate a managed service account for an ADSync service account on a DC.
 - We added the ability to set and get the Microsoft Entra DirSync feature group writeback V2 in the existing cmdlets:
 
-  - Set-ADSyncAADCompanyFeature
-  - Get-ADSyncAADCompanyFeature
+ - Set-ADSyncAADCompanyFeature
+ - Get-ADSyncAADCompanyFeature
 - We added two cmdlets to read the AWS API version:
 
-  - Get-ADSyncAADConnectorImportApiVersion: To get the import AWS API version
-  - Get-ADSyncAADConnectorExportApiVersion: To get the export AWS API version
+ - Get-ADSyncAADConnectorImportApiVersion: To get the import AWS API version
+ - Get-ADSyncAADConnectorExportApiVersion: To get the export AWS API version
 
 - We updated change tracking so that changes made to synchronization rules are now tracked to assist troubleshooting changes in the service. The cmdlet Get-ADSyncRuleAudit retrieves tracked changes.
 - We updated the Add-ADSyncADDSConnectorAccount cmdlet in the [ADSyncConfig PowerShell module](./how-to-connect-configure-ad-ds-connector-account.md#using-the-adsyncconfig-powershell-module) to allow a user in the ADSyncAdmin group to change the Active Directory Domain Services Connector account.
