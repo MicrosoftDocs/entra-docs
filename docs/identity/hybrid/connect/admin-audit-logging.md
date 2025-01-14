@@ -14,6 +14,12 @@ ms.author: billmath
 
 In January 2025, we released a new version (x.x.xx.x) of Microsoft Entra Connect Sync. This version contains an update to auditing which is enabled be default. With this update, you can now monitor administrator events and activity.  The following article describes how to disable the auditing feature.  **All customers are required to upgrade** to the [minimum versions](#minimum-versions) by **April 7, 2025**. 
 
+### Minimum versions 
+
+To avoid any service impact, customers should be on the following versions or later by April 7, 2025. 
+- Customers in commercial clouds: [2.4.18.0](reference-connect-version-history.md#24180) or higher.
+- Customers in non-commercial clouds: [2.4.21.0](reference-connect-version-history.md#24210) or higher. 
+
 ## How to manually disable auditing of administrator events
 To enable auditing of administrator events, use the following steps
 
@@ -24,7 +30,7 @@ To enable auditing of administrator events, use the following steps
 5. Name the new DWORD as **AuditEventLogging**. 
 6. Double-clicking on the **AuditEventLogging** entry and enter **0** to disable the audit event logging.  Enter 0 to Re-enable isable it. 
 
-:::image type="content" source="media/admin-audit-logging/logging-1.png" alt-text="Screenshot of the new AuditEventLogging registry kety." lightbox="media/admin-audit-logging/logging-1.png":::
+:::image type="content" source="media/admin-audit-logging/logging-1.png" alt-text="Screenshot of the new AuditEventLogging registry key." lightbox="media/admin-audit-logging/logging-1.png":::
 
 
 ## How to use PowerShell to disable auditing of administrator events
@@ -45,6 +51,8 @@ You can also use PowerShell to enable audit logging of administrator events.  Us
 
 ## List of logged events
 The following table is a list of events that are logged with the new auditing feature.  To view the events, use Event Viewer and look in the Application log. 
+
+:::image type="content" source="media/admin-audit-logging/logging-2.png" alt-text="Screenshot of Event Viewer." lightbox="media/admin-audit-logging/logging-2.png":::
 
 |EventID|EventName|
 |-----|-----|
