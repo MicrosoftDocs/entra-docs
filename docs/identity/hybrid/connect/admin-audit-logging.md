@@ -12,13 +12,8 @@ ms.author: billmath
 
 # Auditing administrator events in Microsoft Entra Connect Sync (Public Preview)
 
-In January 2025, we released a new version [(2.4.129.0)](reference-connect-version-history.md#241290) of Microsoft Entra Connect Sync. This version contains an update to auditing which is enabled by default. With this update, you can now monitor administrator events and activity. The following article describes how to disable the auditing feature. **All customers are required to upgrade** to the [minimum versions](#minimum-versions) by **April 7, 2025**. 
+In January 2025, we released a new version [(2.4.129.0)](reference-connect-version-history.md#241290) of Microsoft Entra Connect Sync. This version contains an update to auditing which is enabled by default. With this update, you can now monitor administrator events and activity. The following article describes how to disable the auditing feature. 
 
-### Minimum versions 
-
-To avoid any service impact, customers should be on the following versions or later by April 7, 2025. 
-- Customers in commercial clouds: [2.4.18.0](reference-connect-version-history.md#24180) or higher.
-- Customers in non-commercial clouds: [2.4.21.0](reference-connect-version-history.md#24210) or higher. 
 
 ## How to manually disable auditing of administrator events
 To enable auditing of administrator events, use the following steps
