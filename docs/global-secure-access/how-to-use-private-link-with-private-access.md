@@ -9,6 +9,7 @@ ms.date: 01/15/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access 
 ms.reviewer: katabish
+ai-usage: ai-assisted
 ---
 
 # How to access an Azure Storage account behind Azure Private Link using Microsoft Entra Private Access
