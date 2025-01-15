@@ -20,6 +20,8 @@ To learn more about Azure Private Link, see [What is Azure Private Link?](/azure
 
 This article shows you how to use Microsoft Entra Private Access to access an Azure Storage account behind Azure Private Link.
 
+:::image type="content" source="media/how-to-use-private-link-with-private-access/architecture-diagram.png" alt-text="Diagram showing the architecture of Azure Private Link using Microsoft Entra Private Access." lightbox="media/how-to-use-private-link-with-private-access/architecture-diagram.png":::
+
 ## Prerequisites
 - Administrators who interact with **Global Secure Access** features must have one or more of the following role assignments depending on the tasks they're performing.
    - The [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access features.
@@ -40,6 +42,8 @@ This article shows you how to use Microsoft Entra Private Access to access an Az
 1. Select **Apply** to add the application segment.
 1. Select **Save** to save the application.
 1. Assign users to the application. 
+
+:::image type="content" source="media/how-to-use-private-link-with-private-access/network-access-properties.png" alt-text="Screenshot showing network access properties." lightbox="media/how-to-use-private-link-with-private-access/network-access-properties.png":::
 
 ## Validate the configuration
 Ensure connectivity to the storage account works from the connector machine. The connector is deployed on the same private virtual network.
