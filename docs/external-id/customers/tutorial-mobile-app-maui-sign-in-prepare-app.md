@@ -28,7 +28,7 @@ In this tutorial, you'll;
 ## Prerequisites
 
 - [Tutorial: Register and configure .NET MAUI mobile app in an external tenant](./tutorial-mobile-app-maui-sign-in-prepare-tenant.md)
-- [.NET SDK](https://dotnet.microsoft.com/en-us/download/dotnet/latest)
+- [.NET SDK](https://dotnet.microsoft.com/download/dotnet/latest)
 - [Visual Studio 2022](https://aka.ms/vsdownloads) with the MAUI workload installed:
   - [Instructions for Visual Studio Setup](/dotnet/maui/get-started/installation?tabs=visual-studio)
 
