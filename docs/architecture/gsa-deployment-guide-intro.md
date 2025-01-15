@@ -241,11 +241,9 @@ Repeat wave deployments until you cut over all users to Microsoft Global Secure 
 
 ### Plan for emergency access
 
-When Global Secure Access is down, users can't access resources that the Global Secure Access-compliant network check secures. The `GsaBreakglassEnforcement` script allows enterprise administrators to switch enabled compliant network Conditional Access policies to report-only mode. The script temporarily allows users to access those resources without Global Secure Access.
+When Global Secure Access is down, users can't access resources that the Global Secure Access-compliant network check secures. The `GsaBreakglassEnforcement` [script](../global-secure-access/scripts/powershell-break-glass.md) allows enterprise administrators to switch enabled compliant network Conditional Access policies to report-only mode. The script temporarily allows users to access those resources without Global Secure Access.
 
-After Global Secure Access is back, use the `GsaBreakglassRecovery` script to turn on all affected policies.
-
-At any time, use the `ListGsaCompliantNetworkCaPolicies` script to view all compliant network CA policies and their status.
+After Global Secure Access is back, use the `GsaBreakglassRecovery` [script](../global-secure-access/scripts/powershell-break-glass-recovery.md) to turn on all affected policies.
 
 ### Additional considerations
 
