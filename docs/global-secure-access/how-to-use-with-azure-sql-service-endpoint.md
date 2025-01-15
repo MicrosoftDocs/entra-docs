@@ -33,7 +33,9 @@ To set the policy to `proxy`:
 1. Sign in to the Azure portal and navigate to your SQL server.
 1. In the left hand navigation under **Security**, select **Networking**. 
 1. On the **Connectivity** tab, set **Connection Policy** to `Proxy`.
-1. Select **Save**. 
+1. Select **Save**.
+
+:::image type="content" source="media/how-to-use-with-azure-sql-service-endpoint/networking-connectivity.png" alt-text="Screenshot showing the connectivity tab on the networking page within Security section." lightbox="media/media/how-to-use-with-azure-sql-service-endpoint/networking-connectivity.png":::
 
 ## Create a Global Secure Access application for the Azure SQL server
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
