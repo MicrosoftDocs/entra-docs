@@ -114,8 +114,8 @@ dirSyncEnabled |true false |user.dirSyncEnabled -eq true
 | facsimileTelephoneNumber |Any string value or *null* | user.facsimileTelephoneNumber -eq "value" |
 | givenName |Any string value or *null* | user.givenName -eq "value" |
 | jobTitle |Any string value or *null* | user.jobTitle -eq "value" |
-| mail |Any string value or *null* (SMTP address of the user) | user.mail -eq "value" |
-| mailNickName |Any string value (mail alias of the user) | user.mailNickName -eq "value" |
+| mail |Any string value or *null* (SMTP address of the user) | ```user.mail -eq "value"``` or ```user.mail -notEndsWith "@Contoso.com"``` |
+| mailNickName |Any string value (mail alias of the user) | ```user.mailNickName -eq "value"``` or ```user.mailNickname -endsWith "-vendor"``` |
 | memberOf | Any string value (valid group object ID) | user.memberOf -any (group.objectId -in ['value']) |
 | mobile |Any string value or *null* | user.mobile -eq "value" |
 | objectId |GUID of the user object | user.objectId -eq "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb" |
@@ -138,8 +138,8 @@ dirSyncEnabled |true false |user.dirSyncEnabled -eq true
 
 | Properties | Allowed values | Example |
 | --- | --- | --- |
-| otherMails |Any string value | user.otherMails -startsWith "alias@domain" |
-| proxyAddresses |SMTP: alias@domain smtp: alias@domain | user.proxyAddresses -startsWith "SMTP: alias@domain" |
+| otherMails |Any string value | ```user.otherMails -startsWith "alias@domain"```, ```user.otherMails -endsWith"@contoso.com"``` |
+| proxyAddresses |SMTP: alias@domain smtp: alias@domain | user.proxyAddresses -startsWith "SMTP: alias@domain", ```user.proxyAddresses -notEndsWith "@outlook.com"``` |
 
 For the properties used for device rules, see [Rules for devices](#rules-for-devices).
 
@@ -153,6 +153,8 @@ The following table lists all the supported operators and their syntax for a sin
 
 | Operator | Syntax |
 | --- | --- |
+| Ends With | -endsWith |
+| Not Ends With | -notEndsWith |
 | Not Equals |-ne |
 | Equals |-eq |
 | Not Starts With |-notStartsWith |
