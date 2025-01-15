@@ -200,4 +200,4 @@ The Conditional Access policies are evaluated each time a user opens their Outlo
 
 ## Related content
 
-[Authentication methods in Microsoft Entra ID](concept-authentication-authenticator-app.md)
+- [Authentication methods in Microsoft Entra ID](concept-authentication-authenticator-app.md)
