@@ -35,15 +35,11 @@ There are different roles, permissions, and license requirements to view health 
 - The `HealthMonitoringAlert.Read.All` permission is required to *view the alerts using the Microsoft Graph API*.
 - The `HealthMonitoringAlert.ReadWrite.All` permission is required to *view and modify the alerts using the Microsoft Graph API*.
 - For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs).
-
-### Known limitations
-
-- Newly onboarded tenants might not have enough data to generate alerts for about 30 days.
-- Currently, alerts are only available with the Microsoft Graph API.
+- Note: Newly onboarded tenants might not have enough data to generate alerts for about 30 days.
 
 ## Determine email notification recipients
 
-With the Microsoft Graph health monitoring alerts API, you can run the API calls on a regular cadence (for example, daily or hourly) and configure email notifications for when an alert is triggered. We recommend daily monitoring of the scenario monitoring signals and alerts.
+We recommend daily review of the Microsoft Entra Health monitoring scenarios so you're familiar with the baseline metrics and so you can identify trends. It's important to also configure email notifications for when an alert is triggered.
 
 Email notifications are sent to the [Microsoft Entra group](../../fundamentals/concept-learn-about-groups.md) of your choice. We recommend sending alerts to users with the appropriate access to investigate and take action on the alerts. Not every role can take the same action, so consider including a group with the following roles: 
 
@@ -74,7 +70,7 @@ Email notification settings can be configured for each scenario in the Microsoft
 
 1. From the panel that opens, select the group you want to receive the alerts and select the **Select** button. 
     - Only one group can be selected.
-    - The group is updated in the **Group alert notifications** section.
+    - The group is updated in the **Group alert notifications** section of the scenario page.
 
     ![Screenshot of the group selection panel.](media/howto-configure-health-alert-emails/select-email-notification-group.png)
 
