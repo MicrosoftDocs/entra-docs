@@ -34,7 +34,7 @@ The most important thing to keep in mind is that you should avoid a situation wh
 
    - You can spot check individual users by looking at their license details. You will see that they have the same licenses assigned "directly" and "inherited" from groups.
 
-   - You can run a PowerShell script to [verify how licenses are assigned to users](licensing-group-advanced.md#use-powershell-to-see-who-has-inherited-and-direct-licenses).
+   - You can run a PowerShell script to verify how licenses are assigned to users.
 
    - When the same product license is assigned to the user both directly and through a group, only one license is consumed. Hence no other licenses are required to perform migration.
 

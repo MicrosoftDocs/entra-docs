@@ -138,6 +138,8 @@ items:
         href: how-to-configure-kerberos-sso.md
       - name: Source IP anchoring
         href: source-ip-anchoring.md
+      - name: Access Azure SQL with a service endpoint
+        href: how-to-use-with-azure-sql-service-endpoint.md
   - name: Internet Access
     expanded: true
     items:
