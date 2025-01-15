@@ -68,7 +68,7 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.3.20.0](#23200)|7 Oct 2025 (12 months after release of 2.4.18.0)|
 |[2.4.18.0](#24180)|9 Oct 2025 (12 months after release of 2.4.21.0)|
 |[2.4.21.0](#24210)|15 Nov 2025 (12 months after release of 2.4.27.0)|
-|[2.4.27.0](#24270)|15 Jan 2015 (12 months after release of x.x.xx.x)|
+|[2.4.27.0](#24270)|15 Jan 2026 (12 months after release of 2.4.129.0)|
 |[2.4.129.0](#241290)|TBD|
 
 **All other versions are not supported**
