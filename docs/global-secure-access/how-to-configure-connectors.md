@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 05/07/2024
+ms.date: 09/18/2024
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: katabish
@@ -18,8 +18,8 @@ Connectors are lightweight agents that sit on a server in a private network and 
 
 To add private resources and applications to Microsoft Entra ID you need:
 
-* The preview requires a Microsoft Entra ID P1 license. If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-* An application administrator account.
+* The product requires a license. To learn more about licensing, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense). 
+* An Application Administrator account.
 
 User identities must be synchronized from an on-premises directory or created directly within your Microsoft Entra tenants. Identity synchronization allows Microsoft Entra ID to pre-authenticate users before granting them access to application proxy published applications and to have the necessary user identifier information to perform single sign-on (SSO).
 
@@ -127,9 +127,14 @@ To use Private Access, install a connector on each Windows server you're using f
 >The minimum version of connector required for Private Access is **1.5.3417.0**.
 >Starting from the version 1.5.3437.0, having the .NET version 4.7.1 or greater is required for successful installation (upgrade).
 
-**To install the connector**:
+> [!Note]
+>**Deploy Private Network Connector for Your Azure, AWS, and GCP Workloads from respective Marketplaces (Preview)**
+> 
+> The Private Network Connector is now available on [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftcorporation1687208452115.entraprivatenetworkconnector?tab=overview), [AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-cgpbjiaphamuc), and [GCP Marketplace](https://console.cloud.google.com/marketplace/product/ciem-entra/entraprivatenetworkconnector) (in preview), in addition to the [Microsoft Entra admin center](https://entra.microsoft.com). Marketplace offerings allow users to deploy a windows virtual machine with a pre-installed Private Network Connector through a simplified model. The process automates installation and registration, thus improving ease and efficiency.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a Global Administrator of the directory that uses Application Proxy.
+**To install the connector from Microsoft Entra admin center**:
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an Application Administrator of the directory that uses Application Proxy.
 
     * For example, if the tenant domain is contoso.com, the admin should be `admin@contoso.com` or any other admin alias on that domain.
 1. Select your username in the upper-right corner. Verify you're signed in to a directory that uses Application Proxy. If you need to change directories, select **Switch directory** and choose a directory that uses Application Proxy.
@@ -139,7 +144,7 @@ To use Private Access, install a connector on each Windows server you're using f
     ![Screenshot of the Download connector service button in the App proxy page.](media/how-to-configure-connectors/app-proxy-download-connector-service.png)
 1. Read the Terms of Service. When you're ready, select **Accept terms & Download**.
 1. At the bottom of the window, select **Run** to install the connector. An install wizard opens.
-1. Follow the instructions in the wizard to install the service. When you're prompted to register the connector with the Application Proxy for your Microsoft Entra tenant, provide your Global Administrator credentials.
+1. Follow the instructions in the wizard to install the service. When you're prompted to register the connector with the Application Proxy for your Microsoft Entra tenant, provide your Application Administrator credentials.
     * For Internet Explorer (IE): If IE Enhanced Security Configuration is set to On, you may not see the registration screen. To get access, follow the instructions in the error message. Make sure that Internet Explorer Enhanced Security Configuration is set to Off.
 
 ## Things to know
@@ -163,7 +168,7 @@ For information about troubleshooting application proxy issues, see [Debug appli
 
 To confirm the connector installed and registered correctly:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a Global Administrator of the directory that uses Application Proxy.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an Application Administrator of the directory that uses Application Proxy.
 1. Browse to **Global Secure Access** > **Connect** > **Connectors**
     * All of your connectors and connector groups appear on this page.
 1. View a connector to verify its details.
@@ -181,7 +186,7 @@ To confirm the connector installed and registered correctly:
 1. Select the **Windows** key and enter `services.msc` to open the Windows Services Manager.
 1. Check to see if the status for the following services **Running**.
     * *Microsoft Entra private network connector* enables connectivity.
-    * *Microsoft Entra private network connector Updater* is an automated update service.
+    * *Microsoft Entra private network connector updater* is an automated update service.
     * The updater checks for new versions of the connector and updates the connector as needed.
 
     ![Screenshot of the private network connector and connector updater services in Windows Services Manager.](media/how-to-configure-connectors/app-proxy-services.png)
@@ -199,7 +204,7 @@ To create as many connector groups as you want:
 
 To learn more about connector groups, see [Understand Microsoft Entra private network connector groups](concept-connector-groups.md).
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 

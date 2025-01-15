@@ -77,7 +77,7 @@ To configure BitaBIZ for automatic user provisioning with Microsoft Entra ID, yo
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in BitaBIZ based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for BitaBIZ, following the instructions provided in the [BitaBIZ Single sign-on tutorial](BitaBIZ-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features compliment each other
+> You may also choose to enable SAML-based single sign-on for BitaBIZ, following the instructions provided in the [BitaBIZ Single sign-on tutorial](BitaBIZ-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other
 
 <a name='to-configure-automatic-user-provisioning-for-bitabiz-in-azure-ad'></a>
 
@@ -111,8 +111,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 7. Click **Save**.
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to BitaBIZ**.
-
-	![BitaBIZ User Mappings](media/bitabiz-provisioning-tutorial/usermapping.png)
 
 9. Review the user attributes that are synchronized from Microsoft Entra ID to BitaBIZ in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in BitaBIZ for update operations. Select the **Save** button to commit any changes.
 

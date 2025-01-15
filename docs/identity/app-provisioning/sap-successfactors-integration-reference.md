@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
-ms.date: 03/22/2024
+ms.date: 09/18/2024
 ms.author: kenwith
 ms.reviewer: chmutali
 ---
@@ -29,8 +29,8 @@ Microsoft Entra provisioning service uses basic authentication to connect to Emp
 
 To further secure the connectivity between Microsoft Entra provisioning service and SuccessFactors, add the Microsoft Entra IP ranges in the SuccessFactors IP allowlist:
 
-1. Download the [latest IP Ranges](https://www.microsoft.com/download/details.aspx?id=56519) for the Azure Public Cloud 
-1. Open the file and search for tag **Microsoft Entra ID**
+1. Download the [latest IP Ranges](https://www.microsoft.com/download/details.aspx?id=56519) for the Azure Public Cloud.
+1. Open the file and search for tag `AzureActiveDirectory`.
 1. Copy all IP address ranges listed within the element *addressPrefixes* and use the range to build your IP address restriction list.
 1. Translate the CIDR values to IP ranges.  
 1. Log in to SuccessFactors admin portal to add IP ranges to the allowlist. Refer to SAP [support note 2253200](https://userapps.support.sap.com/sap/support/knowledge/2253200). You can now [enter IP ranges](https://answers.sap.com/questions/12882263/whitelisting-sap-cloud-platform-ip-address-range-i.html) in this tool. 
@@ -85,7 +85,7 @@ Based on the attribute-mapping, during full sync Microsoft Entra provisioning se
 
 For each SuccessFactors user, the provisioning service looks for an account in the target (Microsoft Entra ID / on-premises Active Directory) using the matching attribute defined in the mapping. For example: if *personIdExternal* maps to *employeeId* and is set as the matching attribute, then the provisioning service uses the *personIdExternal* value to search for the user with *employeeId* filter. If a user match is found, then it updates the target attributes. If no match is found, then it creates a new entry in the target. 
 
-To validate the data returned by your OData API endpoint for a specific `personIdExternal`, update the `SuccessFactorsAPIEndpoint` in the API query with your API data center server URL and use a tool like [Postman](https://www.postman.com/downloads/) to invoke the query. If the "in" filter doesn't work, you can try the "eq" filter. 
+To validate the data returned by your OData API endpoint for a specific `personIdExternal`, update the `SuccessFactorsAPIEndpoint` in the API query with your API data center server URL and use a tool like cURL or Graph Explorer to invoke the query. If the "in" filter doesn't work, you can try the "eq" filter. 
 
 ```
 https://[SuccessFactorsAPIEndpoint]/odata/v2/PerPerson?$format=json&
@@ -103,7 +103,7 @@ employmentNav/jobInfoNav/employmentTypeNav,employmentNav/jobInfoNav/employeeClas
 
 After full sync, Microsoft Entra provisioning service maintains `LastExecutionTimestamp` and uses it to create delta queries for retrieving incremental changes. The timestamp attributes present in each SuccessFactors entity, such as `lastModifiedDateTime`, `startDate`, `endDate`, and `latestTerminationDate`, are evaluated to see if the change falls between the `LastExecutionTimestamp` and `CurrentExecutionTime`. If yes, then the entry change is considered to be effective and processed for sync. 
 
-Here's the OData API request template that Microsoft Entra ID uses to query SuccessFactors for incremental changes. You can update the variables `SuccessFactorsAPIEndpoint`, `LastExecutionTimestamp` and `CurrentExecutionTime` in the request template use a tool like [Postman](https://www.postman.com/downloads/) to check what data is returned. Alternatively, you can also retrieve the actual request payload from SuccessFactors by [enabling OData API Audit logs](#enabling-odata-api-audit-logs-in-successfactors). 
+Here's the OData API request template that Microsoft Entra ID uses to query SuccessFactors for incremental changes. You can update the variables `SuccessFactorsAPIEndpoint`, `LastExecutionTimestamp` and `CurrentExecutionTime` in the request template use a tool like cURL or Graph Explorer to check what data is returned. Alternatively, you can also retrieve the actual request payload from SuccessFactors by [enabling OData API Audit logs](#enabling-odata-api-audit-logs-in-successfactors). 
 
 ```
 https://[SuccessFactorsAPIEndpoint]/odata/v2/PerPerson/$count?$format=json&$filter=(personEmpTerminationInfoNav/activeEmploymentsCount ne null) and
@@ -411,7 +411,7 @@ If you want to exclude processing of prehires in the Onboarding module, update y
 1. Save the mapping and validate that the scoping filter works using provisioning on demand. 
 
 ### Enabling OData API Audit logs in SuccessFactors
-The Microsoft Entra SuccessFactors connector uses SuccessFactors OData API to retrieve changes and provision users. If you observe issues with the provisioning service and want to confirm what data was retrieved from SuccessFactors, you can enable OData API Audit logs in SuccessFactors. Retrieve the request payload sent by Microsoft Entra ID from the audit logs. To troubleshoot, you can copy this request payload in a tool like [Postman](https://www.postman.com/downloads/), set it up to use the same API user that is used by the connector and see if it returns the desired changes from SuccessFactors. 
+The Microsoft Entra SuccessFactors connector uses SuccessFactors OData API to retrieve changes and provision users. If you observe issues with the provisioning service and want to confirm what data was retrieved from SuccessFactors, you can enable OData API Audit logs in SuccessFactors. Retrieve the request payload sent by Microsoft Entra ID from the audit logs. To troubleshoot, you can copy this request payload in a tool like cURL or Graph Explorer, set it up to use the same API user that is used by the connector and see if it returns the desired changes from SuccessFactors. 
 
 ## Writeback scenarios
 This section covers different write-back scenarios. It recommends configuration approaches based on how email and phone number is set up in SuccessFactors.

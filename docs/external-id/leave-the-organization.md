@@ -1,12 +1,12 @@
 ---
 
-title: Leave an organization as a guest user
+title: Leave an Organization
 titleSuffix: Microsoft Entra External ID
-description: Shows how a Microsoft Entra B2B guest user can leave an organization by using the Access Panel.
+description: As a B2B collaboration user, learn how to leave an organization if you no longer need guest user access to apps. If you're an admin, see how to allow external users to leave.
 
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 06/27/2024
+ms.date: 12/16/2024
 
 ms.author: cmulligan 
 author: csmulligan 
@@ -18,15 +18,19 @@ adobe-target: true
 # Customer intent: As a Microsoft Entra B2B collaboration or B2B direct connect user, I want to leave an organization, so that I can stop using apps from that organization and end any association with it.
 ---
 
-# Leave an organization as an external user
+# Leave an organization where you have a guest account
 
 [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
-As a Microsoft Entra B2B collaboration or B2B direct connect user, you can leave an organization at any time if you no longer need to use apps from that organization, or maintain any association.
+As a Microsoft Entra B2B collaboration or B2B direct connect user, you can leave an organization whenever you no longer need access to its apps. Leaving the organization also ends your association with it.
 
 ## Before you begin
 
-You can usually leave an organization on your own without having to contact an administrator. However, in some cases this option won't be available and you'll need to contact your tenant admin, who can delete your account in the external organization. This article is intended for administrators. If you're a user looking for information about how to manage and leave an organization, see the [Manage organizations article.](https://support.microsoft.com/account-billing/manage-organizations-for-a-work-or-school-account-in-the-my-account-portal-a9b65a70-fec5-4a1a-8e00-09f99ebdea17)
+You can usually leave an organization on your own without having to contact an administrator. However, in some cases this option won't be available and you'll need to contact your tenant admin, who can delete your account in the external organization.
+
+This article is intended for administrators.
+
+If you're a user looking for information about how to manage and leave an organization, see the [Manage organizations article.](https://support.microsoft.com/account-billing/manage-organizations-for-a-work-or-school-account-in-the-my-account-portal-a9b65a70-fec5-4a1a-8e00-09f99ebdea17)
 
 ## What organizations do I belong to?
 
@@ -34,7 +38,6 @@ You can usually leave an organization on your own without having to contact an a
 
    - If you're using a work or school account, go to https://myaccount.microsoft.com and sign in.
    - If you're using a personal account or email one-time passcode, you'll need to use a My Account URL that includes your tenant name or tenant ID.
-   
    For example:
 
    `https://myaccount.microsoft.com?tenantId=contoso.onmicrosoft.com`
@@ -118,6 +121,10 @@ If desired, a tenant administrator can permanently delete the account at any tim
 Permanent deletion can be initiated by the admin, or it happens at the end of the soft deletion period. Permanent deletion can take up to an extra 30 days for data removal.
 
 For B2B direct connect users, data removal begins as soon as the user selects **Leave** in the confirmation message and can take up to 30 days to complete.
+
+## Need help?
+
+If you need additional assistance not covered in our content, you have several options. [Learn how to get help and support](/entra/fundamentals/how-to-get-support) from the Microsoft community, or submit a support request directly to Microsoft.
 
 ## Related content
 

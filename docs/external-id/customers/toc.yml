@@ -9,9 +9,13 @@ items:
     - name: Get started guide walkthrough
       href: quickstart-get-started-guide.md
     - name: Use the Visual Studio Code extension
-      href: visual-studio-code-extension.md
+      href: quickstart-get-started-guide.md
+    - name: Use the Visual Studio Connected Service
+      href: visual-studio-connected-service.md
     - name: Use Azure App Service built-in authentication
       href: /azure/app-service/scenario-secure-app-authentication-app-service?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-configuration
+    - name: Use Power Pages and External ID
+      href: /power-pages/security/authentication/entra-external-id?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-configuration
 - name: Samples
   expanded: false
   items:
@@ -92,6 +96,10 @@ items:
                   href: how-to-run-native-authentication-sample-android-app.md
                 - name: Sign in users and call an API
                   href: sample-native-authentication-android-sample-app-call-web-api.md
+            - name: macOS (Swift)
+              items:
+                - name: Sign in users
+                  href: how-to-run-native-authentication-sample-macos-app.md
             - name: iOS (Swift)
               items:
                 - name: Sign in users
@@ -258,20 +266,22 @@ items:
                 - name: Call an API
                   href: tutorial-native-authentication-android-sign-in-call-api.md
                   displayName: multiple access token 
-            - name: iOS (Swift)
+            - name: iOS/macOS (Swift)
               items:
-                - name: Prepare iOS app
-                  href: tutorial-native-authentication-prepare-ios-app.md
+                - name: Prepare iOS/macOS app
+                  href: tutorial-native-authentication-prepare-ios-macos-app.md
                 - name: Sign up
-                  href: tutorial-native-authentication-ios-sign-up.md
+                  href: tutorial-native-authentication-ios-macos-sign-up.md
                 - name: Sign in and sign out
-                  href: tutorial-native-authentication-ios-sign-in-sign-out.md
+                  href: tutorial-native-authentication-ios-macos-sign-in-sign-out.md
                 - name: Auto-sign in after sign-up
-                  href: tutorial-native-authentication-ios-sign-in-user-after-sign-up.md
+                  href: tutorial-native-authentication-ios-macos-sign-in-user-after-sign-up.md
                 - name: Self-service password reset
-                  href: tutorial-native-authentication-ios-self-service-password-reset.md
+                  href: tutorial-native-authentication-ios-macos-self-service-password-reset.md
                 - name: Support web fallback
-                  href: tutorial-native-authentication-ios-support-web-fallback.md
+                  href: tutorial-native-authentication-ios-macos-support-web-fallback.md
+                - name: Call an API
+                  href: tutorial-native-authentication-ios-sign-in-call-api.md
     - name: Command-line interface (CLI) app
       items:
         - name: Node.js
@@ -290,8 +300,16 @@ items:
       href: overview-solutions-customers.md
     - name: User profile attributes
       href: concept-user-attributes.md
-    - name: Authentication methods and identity providers
+    - name: Identity providers
       href: concept-authentication-methods-customers.md
+    - name: Multifactor authentication (MFA)
+      href: concept-multifactor-authentication-customers.md
+    - name: Custom authentication extensions
+      items:
+        - name: Overview
+          href: ~/identity-platform/custom-extension-overview.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+        - name: Custom claims provider
+          href: ~/identity-platform/custom-claims-provider-overview.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Native authentication
       items:
         - name: Native authentication
@@ -308,8 +326,6 @@ items:
       href: concept-custom-url-domain.md
     - name: Get started guide features explained
       href: concept-guide-explained.md
-    - name: Adding your own business logic
-      href: concept-custom-extensions.md
     - name: Security and governance
       href: concept-security-customers.md
     - name: Frequently asked questions (FAQ)
@@ -338,6 +354,14 @@ items:
             href: how-to-google-federation-customers.md
           - name: Facebook federation
             href: how-to-facebook-federation-customers.md
+          - name: Apple federation
+            href: how-to-apple-federation-customers.md
+          - name: OIDC federation
+            items:
+              - name: Custom OIDC federation
+                href: how-to-custom-oidc-federation-customers.md
+              - name: B2C federation
+                href: how-to-b2c-federation-customers.md
         displayName: rbac, roles claim, groups claim
       - name: Integrate apps 
         items:
@@ -347,14 +371,12 @@ items:
                 items:
                   - name:  Edit profile with MFA
                     items:
-                      - name: Set-up external tenant 
-                        href: how-to-web-app-node-edit-profile-prepare-tenant.md   
-                        displayName: Conditional Access, CA 
-                      - name: Set-up app 
+                      - name: Set up app 
                         href: how-to-web-app-node-edit-profile-prepare-app.md 
+                        displayName: Conditional Access, CA 
                       - name: Update profile
                         href: how-to-web-app-node-edit-profile-update-profile.md  
-                        displayName: protect with MFA, multifactor authentication, MFA            
+                        displayName: protect, multifactor authentication, MFA            
                   - name: Call API
                     items:
                       - name: Prepare tenant 
@@ -391,50 +413,68 @@ items:
           href: how-to-custom-url-domain.md
         - name: Configure optional claims
           href: /entra/identity-platform/optional-claims?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json 
-        - name: Advanced extensions
+        - name: Custom authentication extensions
           items:
-            - name: Add logic to attribute collection
+            - name: Custom claims provider
               items:
+                - name: Create REST API for token issuance event
+                  href: ~/identity-platform/custom-extension-tokenissuancestart-setup.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Configure a custom claims provider token issuance event
+                  href: ~/identity-platform/custom-extension-tokenissuancestart-configuration.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Configure a SAML app to call a custom claims provider
+                  href: ~/identity-platform/custom-extension-configure-saml-app.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                - name: Custom claims provider reference
+                  href: ~/identity-platform/custom-claims-provider-reference.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+            - name: Attribute collection
+              items: 
                 - name: Create attribute collection start and submit events
                   href: ~/identity-platform/custom-extension-attribute-collection.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: OnAttributeCollectionStart event reference
                   href: ~/identity-platform/custom-extension-OnAttributeCollectionStart-reference.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: OnAttributeCollectionSubmit event reference
                   href: ~/identity-platform/custom-extension-OnAttributeCollectionSubmit-reference.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-            - name: Add claims from external systems
-              items:
-                - name: About custom authentication extensions
-                  href: ~/identity-platform/custom-extension-overview.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-                - name: Token issuance start event
-                  href: ~/identity-platform/custom-extension-tokenissuancestart-configuration.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-                - name: Troubleshoot your custom claims provider API
-                  href: ~/identity-platform/custom-extension-troubleshoot.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+            - name: Configure a custom email provider for one time code send events
+              href: ~/identity-platform/custom-extension-email-otp-get-started.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+            - name: Troubleshoot your custom authentication extension
+              href: ~/identity-platform/custom-extension-troubleshoot.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Secure
       items:
       - name: Multifactor authentication
         href: how-to-multifactor-authentication-customers.md
-      - name: Identity Protection
+      - name: Regions requiring opt-in for SMS verification
+        href: how-to-region-code-opt-in.md
+      - name: ID Protection
         href: how-to-identity-protection-customers.md
       - name: Use application roles to manage access
         href: how-to-use-app-roles-customers.md
+      - name: Web Application Firewall partners
+        items: 
+        - name: Azure Web Application Firewall
+          href: tutorial-configure-external-id-web-app-firewall.md
+        - name: Cloudflare
+          href: tutorial-configure-cloudflare-integration.md
     - name: Manage users
       items:
         - name: Manage admin accounts
           href: how-to-manage-admin-accounts.md
         - name: Manage customer accounts
           href: how-to-manage-customer-accounts.md
+    - name: Monitor and troubleshoot
+      items:
         - name: User activity insights
           href: how-to-user-insights.md
-    - name: Troubleshoot
-      items:
+        - name: Azure Monitor
+          href: how-to-azure-monitor.md
         - name: Known issues
-          href: troubleshooting-known-issues.md
+          href: troubleshooting-known-issues.md   
     - name: Management APIs
       items:
         - name: Tenant management operations
           href: azure-rest-api-operations-tenant-management.md 
 - name: Reference
   items:
+    - name: Training, demos, and videos
+      href: reference-training-videos.md
     - name: Default user permissions
       href: reference-user-permissions.md
     - name: Service limits and restrictions
@@ -445,6 +485,8 @@ items:
       href: ~/fundamentals/data-residency.md
     - name: Company branding CSS template reference guide
       href: ~/fundamentals/reference-company-branding-css-template.md
+    - name: OIDC claims mapping
+      href: reference-oidc-claims-mapping-customers.md
     - name: Native authentication
       items:
         - name: API reference

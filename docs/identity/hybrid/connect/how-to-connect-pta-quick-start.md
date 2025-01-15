@@ -9,7 +9,7 @@ ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 12/20/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -41,7 +41,7 @@ Ensure that the following prerequisites are in place.
 
 ### In the Microsoft Entra admin center
 
-1. Create a cloud-only Hybrid Identity Administrator account or a Hybrid Identity administrator account on your Microsoft Entra tenant. This way, you can manage the configuration of your tenant should your on-premises services fail or become unavailable. Learn about [adding a cloud-only Hybrid Identity Administrator account](~/fundamentals/add-users.md). Completing this step is critical to ensure that you don't get locked out of your tenant.
+1. Create a cloud-only Hybrid Identity Administrator account or a Hybrid Identity Administrator account on your Microsoft Entra tenant. This way, you can manage the configuration of your tenant should your on-premises services fail or become unavailable. Learn about [adding a cloud-only Hybrid Identity Administrator account](~/fundamentals/add-users.md). Completing this step is critical to ensure that you don't get locked out of your tenant.
 2. Add one or more [custom domain names](~/fundamentals/add-custom-domain.yml) to your Microsoft Entra tenant. Your users can sign in with one of these domain names.
 
 ### In your on-premises environment
@@ -141,12 +141,12 @@ To begin, follow these instructions to download the Authentication Agent softwar
 
 There are two ways to deploy a standalone Authentication Agent:
 
-First, you can do it interactively by just running the downloaded Authentication Agent executable and providing your tenant's Global Administrator credentials when prompted.
+First, you can do it interactively by just running the downloaded Authentication Agent executable and providing your tenant's Hybrid Identity Administrator credentials when prompted.
 
 Second, you can create and run an unattended deployment script. This is useful when you want to deploy multiple Authentication Agents at once, or install Authentication Agents on Windows servers that don't have user interface enabled, or that you can't access with Remote Desktop. Here are the instructions on how to use this approach:
 
 1. Run the following command to install an Authentication Agent: `AADConnectAuthAgentSetup.exe REGISTERCONNECTOR="false" /q`.
-2. You can register the Authentication Agent with our service via PowerShell. Create a PowerShell Credentials object `$cred` that contains a Global Administrator username and password for your tenant. Run the following command, replacing `<username>` and `<password>`:
+2. You can register the Authentication Agent with our service via PowerShell. Create a PowerShell Credentials object `$cred` that contains a Hybrid Identity Administrator username and password for your tenant. Run the following command, replacing `<username>` and `<password>`:
 
   ```powershell
   $User = "<username>"

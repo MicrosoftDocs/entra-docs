@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 03/05/2024
+ms.date: 11/08/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -18,18 +18,21 @@ In large environments, user accounts aren't always deleted when employees leave 
 
 This article explains a method to handle obsolete user accounts in Microsoft Entra ID.
 
->[!NOTE]
->This article applies only to finding inactive user accounts in Microsoft Entra ID. It does not apply to finding inactive accounts in [Azure AD B2C](/azure/active-directory-b2c/overview).
+> [!NOTE]
+> This article applies only to finding inactive user accounts in Microsoft Entra ID. It does not apply to finding inactive accounts in [Azure AD B2C](/azure/active-directory-b2c/overview).
 
 ## Prerequisites
 
 To access the `lastSignInDateTime` property using Microsoft Graph:
 
-- You need a Microsoft Entra ID P1 or P2 edition license.
+- You need a Microsoft Entra ID P1 or P2 license.
 
 - You need to grant the app the following Microsoft Graph permissions:
   - AuditLog.Read.All
   - User.Read.All
+
+- [Reports Reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader) is the least privileged role required to access the activity logs.
+    - For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs).
 
 ## What are inactive user accounts?
 
@@ -40,6 +43,7 @@ The challenge of this method is to define what *for a while* means for your envi
 The last sign-in provides potential insights into a user's continued need for access to resources. It can help with determining if group membership or app access is still needed or could be removed. For external user management, you can understand if an external user is still active within the tenant or should be cleaned up.
 
 ## Detect inactive user accounts with Microsoft Graph
+
 <a name="how-to-detect-inactive-user-accounts"></a>
 
 You can detect inactive accounts by evaluating several properties, some of which are available on the `beta` endpoint of the Microsoft Graph API. We don't recommend using the beta endpoints in production, but invite you to try them out.
@@ -88,11 +92,11 @@ If you need to view the latest sign-in activity for a user, you can view the use
 1. Select a user from the list.
 1. In the **My Feed** area of the user's Overview, locate the **Sign-ins** tile.
 
-    ![Screenshot of the user overview page with the sign-in activity tile highlighted.](media/howto-manage-inactive-user-accounts/last-sign-activity-tile.png)
+    :::image type="content" source="media/howto-manage-inactive-user-accounts/user-last-sign-in-tile.png" alt-text="Screenshot of the user overview page with the sign-in activity tile highlighted." lightbox="media/howto-manage-inactive-user-accounts/user-last-sign-in-tile-expanded.png":::
 
 The last sign-in date and time shown on this tile might take up to 24 hours to update, which means the date and time might not be current. If you need to see the activity in near real time, select the **See all sign-ins** link on the **Sign-ins** tile to view all sign-in activity for that user.
 
-## Next steps
+## Related content
 
 - [Get data using the Microsoft Entra reporting API with certificates](./howto-configure-prerequisites-for-reporting-api.md)
 - [Audit API reference](/graph/api/resources/directoryaudit)

@@ -54,9 +54,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
         ![Screenshot of showing the identity configuration.](common/go-to-application.png)
 
-    1. Copy **Application (client) ID** and **Directory (tenant) ID** and use it later in the Continuity Software Platform side configuration.
-
-        ![Screenshot of application client values.](./media/continuity-software-platform-tutorial/application-id.png)
+    1. Under **Endpoints**, copy **Application (client) ID** and **Directory (tenant) ID**. Use them later in the Continuity Software Platform side configuration.
 
 1. Navigate to **Authentication** tab on the left menu and perform the following steps:
 
@@ -117,9 +115,6 @@ Below are the configuration steps to complete the OAuth/OIDC federation setup:
 3. Click **+**.
 
 4. The **Add Identity provider** window is displayed.
-
-
-    ![Screenshot of showing oidc setup at new auth method.](./media/continuity-software-platform-tutorial/configuration.png)
 
     a. In the **Name** field, enter the name for identification.
 

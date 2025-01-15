@@ -366,8 +366,6 @@ To configure the Citrix ADC SAML Connector for Microsoft Entra AAA KCD account:
     * Select the **Password for Delegated User** check box, and enter and confirm a password.
 
 1. Select **OK**.
- 
-    ![Screenshot of Citrix ADC SAML Connector for Microsoft Entra configuration - Configure KCD Account pane](./media/citrix-netscaler-tutorial/kcd.png "KCD Account")
 
 ### Citrix traffic policy and traffic profile
 

@@ -65,7 +65,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Zscaler Beta based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Zscaler Beta, following the instructions provided in the [Zscaler Beta single sign-on tutorial](zscaler-beta-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features compliment each other.
+> You may also choose to enable SAML-based single sign-on for Zscaler Beta, following the instructions provided in the [Zscaler Beta single sign-on tutorial](zscaler-beta-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
 
 > [!NOTE]
 > When users and groups are provisioned or de-provisioned we recommend to periodically restart provisioning to ensure that group memberships are properly updated. Doing a restart will force our service to re-evaluate all the groups and update the memberships.  
@@ -89,7 +89,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Set the **Provisioning Mode** to **Automatic**.
 
-	![The Automatic mode has been selected from the Provisioning Mode drop-down list. There are fields for Admin Credentials, used to connect to the Zscaler Beta API, and there is a Test Connection button.](./media/zscaler-beta-provisioning-tutorial/provisioning-credentials.png)
+	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
 1. Under the **Admin Credentials** section, input the **Tenant URL** and **Secret Token** of your Zscaler Beta account as described in Step 6.
 
@@ -105,7 +105,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Upon populating the fields shown in Step 5, click **Test Connection** to ensure Microsoft Entra ID can connect to Zscaler Beta. If the connection fails, ensure your Zscaler Beta account has Admin permissions and try again.
 
-	![On Admin Credentials, the Tenant URL and Secret Token fields have values, and the Test Connection button is highlighted.](./media/zscaler-beta-provisioning-tutorial/test-connection.png)
+ 	![Screenshot of Token.](common/provisioning-testconnection-tenanturltoken.png)
 
 1. In the **Notification Email** field, enter the email address of a person or group who should receive the provisioning error notifications and check the checkbox **Send an email notification when a failure occurs**.
 
@@ -115,19 +115,29 @@ This section guides you through the steps to configure the Microsoft Entra provi
  
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Zscaler Beta**.
 
-	![The Synchronize Microsoft Entra users to ZScalerBeta is selected and enabled.](./media/zscaler-beta-provisioning-tutorial/user-mappings.png)
 
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Zscaler Beta in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Zscaler Beta for update operations. Select the **Save** button to commit any changes.
 
-	![In the Attribute Mappings section for user attributes, the Active Directory attributes are shown next to the Zscalar Beta attributes they are synchronized with. One pair of attributes is shown as Matching.](./media/zscaler-beta-provisioning-tutorial/user-attribute-mappings.png)
+   |Attribute|Type|Supported for filtering|Required by Zscaler Beta|
+   |---|---|---|---|
+   |userName|String|&check;|&check;
+   |externalId|String||&check;
+   |active|Boolean||&check;
+   |name.givenName|String||
+   |name.familyName|String||
+   |displayName|String||&check;
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||&check;
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Zscaler Beta**.
 
-	![The Synchronize Microsoft Entra groups to ZScalerBeta is selected and enabled.](./media/zscaler-beta-provisioning-tutorial/group-mappings.png)
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Zscaler Beta in the **Attribute Mappings** section. The attributes selected as **Matching** properties are used to match the groups in Zscaler Beta for update operations. Select the **Save** button to commit any changes.
 
-	![In the Attribute Mappings section for group attributes, the Active Directory attributes are shown next to the Zscalar Beta attributes they are synchronized with. One pair of attributes is shown as Matching.](./media/zscaler-beta-provisioning-tutorial/group-attribute-mappings.png)
+   |Attribute|Type|Supported for filtering|Required by Zscaler Beta|
+   |---|---|---|---|
+   |displayName|String|&check;|&check;
+   |members|Reference||
+   |externalId|String||&check;
 
 1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
@@ -141,7 +151,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. When you are ready to provision, click **Save**.
 
-	![The Save button at the top of Zscaler Beta - Provisioning is highlighted. There is also a Discard button.](./media/zscaler-beta-provisioning-tutorial/save-provisioning.png)
+	![Screenshot of Saving Provisioning Configuration.](common/provisioning-configuration-save.png)
 
 This operation starts the initial synchronization of all users and/or groups defined in **Scope** in the **Settings** section. The initial sync takes longer to perform than subsequent syncs, which occur approximately every 40 minutes as long as the Microsoft Entra provisioning service is running. You can use the **Synchronization Details** section to monitor progress and follow links to provisioning activity report, which describes all actions performed by the Microsoft Entra provisioning service on Zscaler Beta.
 

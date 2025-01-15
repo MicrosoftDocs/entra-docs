@@ -129,7 +129,7 @@ To configure single sign-on on **HPE SaaS** side, you need to send the downloade
 
 ### Create HPE SaaS test user
 
-In this section, you create a user called Britta Simon in HPE SaaS. Work with [HPE SaaS support team](https://www.sas.com/en_us/contact.html) to add the users in the HPE SaaS platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in HPE SaaS. Work with [HPE SaaS support team](https://support.hpe.com/connect/s/product?language=en_US) to add the users in the HPE SaaS platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 

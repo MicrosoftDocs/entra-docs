@@ -82,7 +82,7 @@ Any constant (static) value can be assigned to any claim. Use the following step
 1. On the **Attributes & Claims** blade, select the required claim that you want to modify.
 1. Enter the constant value without quotes in the **Source attribute** as per your organization and select **Save**. The constant value is displayed.
 
-### Directory Schema extensions (Preview)
+### Directory Schema extensions
 
 You can also configure directory schema extension attributes as non-conditional/conditional attributes. Use the following steps to configure the single or multi-valued directory schema extension attribute as a claim:
 
@@ -109,13 +109,22 @@ To add application-specific claims:
 1. Enter the **name** of the claims. The value doesn't strictly need to follow a URI pattern, per the SAML spec. If you need a URI pattern, you can put that in the **Namespace** field.
 1. Select the **Source** where the claim is going to retrieve its value. You can select a user attribute from the source attribute dropdown or apply a transformation to the user attribute before emitting it as a claim.
 
+## Add a group claim
+
+Group claims are used to make authorization decisions to access a resource by an app or a service provider. To add group claims;
+
+1. Navigate to **App registrations** and select the app you wish to add a group claim to.
+1. Select **Add groups claim**.
+1. Select the group types to include in your token. You can add security groups, directory groups, or groups assigned to a particular application.
+1. Choose the values you wish to include in your groups claim, then select **Add**.
+
 ### Claim transformations
 
 To apply a transformation to a user attribute:
 
 1. In **Manage claim**, select *Transformation* as the claim source to open the **Manage transformation** page.
 1. Select the function from the transformation dropdown. Depending on the function selected, provide parameters and a constant value to evaluate in the transformation.
-1. Select the source of the attribute by clicking on the appropriate radio button. Directory schema extension source is in preview currently.
+1. Select the source of the attribute by clicking on the appropriate radio button. 
 1. Select the attribute name from the dropdown.
 1. **Treat source as multivalued** is a checkbox indicating whether the transform should be applied to all values or just the first. By default, transformations are only applied to the first element in a multi-value claim, by checking this box it ensures it's applied to all. This checkbox is only be enabled for multi-valued attributes, for example `user.proxyaddresses`.
 1. To apply multiple transformations, select **Add transformation**. You can apply a maximum of two transformations to a claim. For example, you could first extract the email prefix of the `user.mail`. Then, make the string upper case.
@@ -141,9 +150,9 @@ You can use the following functions to transform claims.
 | **ExtractNumeric() - Suffix** | Returns the suffix numerical part of the string. For example, if the input's value is `BSimon_123`, then it returns `123`. |
 | **IfEmpty()** | Outputs an attribute or constant if the input is null or empty. For example, if you want to output an attribute stored in an extension attribute if the employee ID for a user is empty. To perform this function, configure the following values: `Parameter 1(input): user.employeeid`, `Parameter 2 (output): user.extensionattribute1`, and `Parameter 3 (output if there's no match): user.employeeid`. |
 | **IfNotEmpty()** | Outputs an attribute or constant if the input isn't null or empty. For example, if you want to output an attribute stored in an extension attribute if the employee ID for a user isn't empty. To perform this function, configure the following values: `Parameter 1(input): user.employeeid` and `Parameter 2 (output): user.extensionattribute1`. |
-| **Substring() - Fixed Length** (Preview)| Extracts parts of a string claim type, beginning at the character at the specified position, and returns the specified number of characters. The `sourceClaim` is the claim source of the transform that should be executed. The `StartIndex` is the zero-based starting character position of a substring in this instance. The `Length` is the length in characters of the substring. For example, `sourceClaim - PleaseExtractThisNow`, `StartIndex - 6`, and `Length - 11` produces an output of `ExtractThis`. |
-| **Substring() - EndOfString** (Preview) | Extracts parts of a string claim type, beginning at the character at the specified position, and returns the rest of the claim from the specified start index. The `sourceClaim` is the claim source of the transform that should be executed. The `StartIndex` is the zero-based starting character position of a substring in this instance. For example, `sourceClaim - PleaseExtractThisNow` and `StartIndex - 6` produces an output of `ExtractThisNow`. |
-| **RegexReplace()** (Preview) | For more information about regex-based claims transformation, see the next section. |
+| **Substring() - Fixed Length** | Extracts parts of a string claim type, beginning at the character at the specified position, and returns the specified number of characters. The `sourceClaim` is the claim source of the transform that should be executed. The `StartIndex` is the zero-based starting character position of a substring in this instance. The `Length` is the length in characters of the substring. For example, `sourceClaim - PleaseExtractThisNow`, `StartIndex - 6`, and `Length - 11` produces an output of `ExtractThis`. |
+| **Substring() - EndOfString** | Extracts parts of a string claim type, beginning at the character at the specified position, and returns the rest of the claim from the specified start index. The `sourceClaim` is the claim source of the transform that should be executed. The `StartIndex` is the zero-based starting character position of a substring in this instance. For example, `sourceClaim - PleaseExtractThisNow` and `StartIndex - 6` produces an output of `ExtractThisNow`. |
+| **RegexReplace()** | For more information about regex-based claims transformation, see the next section. |
 
 ## Regex-based claims transformation
 
@@ -236,7 +245,7 @@ To add a claim condition:
 1. In **Manage claim**, expand the Claim conditions.
 1. Select the user type.
 1. Select the group(s) to which the user should belong. You can select up to 50 unique groups across all claims for a given application.
-1. Select the **Source** where the claim is going to retrieve its value. You can either select a user attribute from the dropdown for the source attribute or apply a transformation to the user attribute. You can also select a directory schema extension (preview) before emitting it as a claim.
+1. Select the **Source** where the claim is going to retrieve its value. You can either select a user attribute from the dropdown for the source attribute or apply a transformation to the user attribute. You can also select a directory schema extension before emitting it as a claim.
 
 The order in which you add the conditions are important. Microsoft Entra first evaluates all conditions with source `Attribute` and then evaluates all conditions with source `Transformation` to decide which value to emit in the claim. Conditions with the same source are evaluated from top to bottom. The last value, which matches the expression is emitted in the claim. Transformations such as `IsNotEmpty` and `Contains` act like  restrictions.
 

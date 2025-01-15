@@ -1,57 +1,57 @@
 ---
-title: Upgrading Azure MFA Server
-description: Steps and guidance to upgrade the Azure Multi-Factor Authentication Server to a newer version. 
+title: Upgrading Microsoft Entra Multifactor Authentication Server
+description: Steps and guidance to upgrade the Microsoft Entra Multifactor Authentication Server to a newer version. 
 
 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/10/2022
+ms.date: 01/14/2025
 
 ms.author: justinha
 author: justinha
 manager: amycolannino
 ms.reviewer: jpettere
 ---
-# Upgrade to the latest Azure Multi-Factor Authentication Server
+# Upgrade to the latest Microsoft Entra Multifactor Authentication Server
 
-This article walks you through the process of upgrading Azure Multi-Factor Authentication Server v6.0 or higher. If you need to upgrade an old version of the PhoneFactor Agent, refer to [Upgrade the PhoneFactor Agent to Azure Multi-Factor Authentication Server](howto-mfaserver-deploy-upgrade-pf.md).
+This article walks you through the process of upgrading Microsoft Entra Multifactor Authentication Server v6.0 or higher. If you need to upgrade an old version of the PhoneFactor Agent, refer to [Upgrade the PhoneFactor Agent to Microsoft Entra Multifactor Authentication Server](howto-mfaserver-deploy-upgrade-pf.md).
 
 If you're upgrading from v6.x or older to v7.x or newer, all components change from .NET 2.0 to .NET 4.5. All components also require Microsoft Visual C++ 2015 Redistributable Update 1 or higher. The MFA Server installer installs both the x86 and x64 versions of these components if they aren't already installed. If the User Portal and Mobile App Web Service run on separate servers, you need to install those packages before upgrading those components. You can search for the latest Microsoft Visual C++ 2015 Redistributable update on the [Microsoft Download Center](https://www.microsoft.com/download/). 
 
 > [!IMPORTANT]
-> In September 2022, Microsoft announced deprecation of Azure Multi-Factor Authentication Server. Beginning September 30, 2024, Azure Multi-Factor Authentication Server deployments will no longer service multifactor authentication requests, which could cause authentications to fail for your organization. To ensure uninterrupted authentication services and to remain in a supported state, organizations should [migrate their users’ authentication data](how-to-migrate-mfa-server-to-mfa-user-authentication.md) to the cloud-based Azure MFA service by using the latest Migration Utility included in the most recent [Azure MFA Server update](https://www.microsoft.com/download/details.aspx?id=55849). For more information, see [Azure MFA Server Migration](how-to-migrate-mfa-server-to-azure-mfa.md).  
+> In September 2022, Microsoft announced deprecation of Azure Multi-Factor Authentication Server. Beginning September 30, 2024, Azure Multi-Factor Authentication Server deployments no longer service multifactor authentication requests, which could cause authentications to fail for your organization. To ensure uninterrupted authentication services and to remain in a supported state, organizations should [migrate their users’ authentication data](how-to-migrate-mfa-server-to-mfa-user-authentication.md) to the cloud-based Microsoft Entra Multifactor Authentication service by using the latest Migration Utility included in the most recent [Microsoft Entra Multifactor Authentication Server update](https://www.microsoft.com/download/details.aspx?id=55849). For more information, see [Microsoft Entra Multifactor Authentication Server Migration](how-to-migrate-mfa-server-to-azure-mfa.md).  
 
 > To get started with cloud-based MFA, see [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](tutorial-enable-azure-mfa.md).
 
 
 Upgrade steps at a glance:
 
-* Upgrade Azure MFA Servers (Subordinates then Primary)
+* Upgrade Microsoft Entra Multifactor Authentication Servers (Subordinates then Primary)
 * Upgrade the User Portal instances
 * Upgrade the AD FS Adapter instances
 
-## Upgrade Azure MFA Server
+## Upgrade Microsoft Entra Multifactor Authentication Server
 
-1. Use the instructions in [Download the Azure Multi-Factor Authentication Server](howto-mfaserver-deploy.md#download-the-mfa-server) to get the latest version of the Azure MFA Server installer.
-2. Make a backup of the MFA Server data file located at C:\Program Files\Multi-Factor Authentication Server\Data\PhoneFactor.pfdata (assuming the default install location) on your primary MFA Server.
+1. Use the instructions in [Download the Microsoft Entra Multifactor Authentication Server](howto-mfaserver-deploy.md#download-the-mfa-server) to get the latest version of the Microsoft Entra Multifactor Authentication Server installer.
+2. Make a backup of the MFA Server data file located at C:\Program Files\Multifactor Authentication Server\Data\PhoneFactor.pfdata (assuming the default install location) on your primary MFA Server.
 3. If you run multiple servers for high availability, change the client systems that authenticate to the MFA Server so that they stop sending traffic to the servers that are upgrading. If you use a load balancer, remove a subordinate MFA Server from the load balancer, do the upgrade, and then add the server back into the farm.
 4. Run the new installer on each MFA Server. Upgrade subordinate servers first because they can read the old data file being replicated by the primary.
 
    > [!NOTE]
    > When upgrading a server it should be removed from any load balancing or traffic sharing with other MFA Servers.
    >
-   > You do not need to uninstall your current MFA Server before running the installer. The installer performs an in-place upgrade. The installation path is picked up from the registry from the previous installation, so it installs in the same location (for example, C:\Program Files\Multi-Factor Authentication Server).
+   > You don't need to uninstall your current MFA Server before running the installer. The installer performs an in-place upgrade. The installation path is picked up from the registry from the previous installation, so it installs in the same location (for example, C:\Program Files\Multifactor Authentication Server).
   
 5. If you're prompted to install a Microsoft Visual C++ 2015 Redistributable update package, accept the prompt. Both the x86 and x64 versions of the package are installed.
-6. If you use the Web Service SDK, you are prompted to install the new Web Service SDK. When you install the new Web Service SDK, make sure that the virtual directory name matches the previously installed virtual directory (for example, MultiFactorAuthWebServiceSdk).
+6. If you use the Web Service SDK, you're prompted to install the new Web Service SDK. When you install the new Web Service SDK, make sure that the virtual directory name matches the previously installed virtual directory (for example, MultiFactorAuthWebServiceSdk).
 7. Repeat the steps on all subordinate servers. Promote one of the subordinates to be the new primary, then upgrade the old primary server.
 
 ## Upgrade the User Portal
 
 Complete the upgrade of your MFA Servers before moving to this section.
 
-1. Make a backup of the web.config file that is in the virtual directory of the User Portal installation location (for example, C:\inetpub\wwwroot\MultiFactorAuth). If any changes were made to the default theme, make a backup of the App_Themes\Default folder as well. It is better to create a copy of the Default folder and create a new theme than to change the Default theme.
+1. Make a backup of the web.config file that is in the virtual directory of the User Portal installation location (for example, C:\inetpub\wwwroot\MultiFactorAuth). If any changes were made to the default theme, make a backup of the App_Themes\Default folder as well. It's better to create a copy of the Default folder and create a new theme than to change the Default theme.
 2. If the User Portal runs on the same server as the other MFA Server components, the MFA Server installation prompts you to update the User Portal. Accept the prompt and install the User Portal update. Check that the virtual directory name matches the previously installed virtual directory (for example, MultiFactorAuth).
 3. If the User Portal is on its own server, copy the MultiFactorAuthenticationUserPortalSetup64.msi file from the install location of one of the MFA Servers and put it onto the User Portal web server. Run the installer.
 
@@ -64,7 +64,7 @@ If you have the User Portal on multiple servers, repeat the installation on all 
 ## Upgrade the Mobile App Web Service
 
 > [!NOTE]
-> When upgrading from a version of Azure MFA Server older than 8.0 to 8.0+ then the mobile app web service can be uninstalled after the upgrade
+> When upgrading from a version of Microsoft Entra Multifactor Authentication Server older than 8.0 to 8.0+ then the mobile app web service can be uninstalled after the upgrade
 
 ## Upgrade the AD FS Adapters
 
@@ -72,7 +72,7 @@ Complete the upgrade of your MFA Servers and User Portal before moving to this s
 
 ### If MFA runs on different servers than AD FS
 
-These instructions only apply if you run Multi-Factor Authentication Server separately from your AD FS servers. If both services run on the same servers, skip this section and go to the installation steps. 
+These instructions only apply if you run Multifactor Authentication Server separately from your AD FS servers. If both services run on the same servers, skip this section and go to the installation steps. 
 
 1. Save a copy of the MultiFactorAuthenticationAdfsAdapter.config file that was registered in AD FS, or export the configuration using the following PowerShell command: `Export-AdfsAuthenticationProviderConfigurationData -Name [adapter name] -FilePath [path to config file]`. The adapter name is either "WindowsAzureMultiFactorAuthentication" or "AzureMfaServerAuthentication" depending on the version previously installed.
 2. Copy the following files from the MFA Server installation location to the AD FS servers:
@@ -100,8 +100,8 @@ These instructions only apply if you run Multi-Factor Authentication Server sepa
 
    Once this step is complete, two-step verification through MFA Server is not available in this AD FS cluster until you complete step 8.
 
-4. Unregister the older version of the AD FS adapter by running the Unregister-MultiFactorAuthenticationAdfsAdapter.ps1 PowerShell script. Ensure that the *-Name* parameter (either "WindowsAzureMultiFactorAuthentication" or "AzureMFAServerAuthentication") matches the name that was displayed in step 3. This applies to all servers in the same AD FS cluster since there is a central configuration.
-5. Register the new AD FS adapter by running the Register-MultiFactorAuthenticationAdfsAdapter.ps1 PowerShell script. This applies to all servers in the same AD FS cluster since there is a central configuration.
+4. Unregister the older version of the AD FS adapter by running the Unregister-MultiFactorAuthenticationAdfsAdapter.ps1 PowerShell script. Ensure that the *-Name* parameter (either "WindowsAzureMultiFactorAuthentication" or "AzureMFAServerAuthentication") matches the name that was displayed in step 3. This applies to all servers in the same AD FS cluster since there's a central configuration.
+5. Register the new AD FS adapter by running the Register-MultiFactorAuthenticationAdfsAdapter.ps1 PowerShell script. This applies to all servers in the same AD FS cluster since there's a central configuration.
 6. Restart the AD FS service on each server removed from the AD FS farm.
 7. Add the updated servers back to the AD FS farm and remove the other servers from the farm.
 8. Go to **AD FS** > **Authentication Policies** > **Edit Global multifactor authentication Policy**. Check **AzureMfaServerAuthentication**.

@@ -6,7 +6,7 @@ description: Learn how Microsoft Entra multifactor authentication helps safeguar
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 06/28/2024
+ms.date: 01/06/2025
 
 ms.author: justinha
 author: justinha
@@ -45,9 +45,11 @@ The following additional forms of verification can be used with Microsoft Entra 
 * Microsoft Authenticator 
 * Authenticator Lite (in Outlook)
 * Windows Hello for Business
-* Passkey (FIDO2) (preview)
+* Passkey (FIDO2) 
+* Passkey in Microsoft Authenticator (preview)
 * Certificate-based authentication (when configured for multifactor authentication)
 * External authentication methods (preview)
+* Temporary Access Pass (TAP)
 * OATH hardware token (preview)
 * OATH software token
 * SMS
@@ -63,9 +65,7 @@ For more granular controls, you can use [Conditional Access](~/identity/conditio
 
 ![Diagram that shows how Conditional Access works to secure the sign-in process.](media/tutorial-enable-azure-mfa/conditional-access-overview.png)
 
-## Next steps
-
-To learn about licensing, see [Features and licenses for Microsoft Entra multifactor authentication](concept-mfa-licensing.md).
+## Related content
 
 To learn more about different authentication and validation methods, see [Authentication methods in Microsoft Entra ID](concept-authentication-methods.md).
 

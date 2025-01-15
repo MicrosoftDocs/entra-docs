@@ -96,8 +96,6 @@ See the [team domain](https://developers.cloudflare.com/cloudflare-one/glossary#
 6. Select **Add**.
 7. Under **Client secrets**, from the **Value** field, copy the value. Consider the value an application password. The example value appears, Azure values appear in the Cloudflare Access configuration.
 
-   :::image type="content" source="./media/cloudflare-integration/cloudflare-access-configuration.png" alt-text="Screenshot of Client secrets input.":::
-
 ### Permissions
 
 1. In the left menu, select **API permissions**.

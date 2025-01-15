@@ -94,7 +94,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	![image3](common/idp-intiated.png)
 
 	> [!Note]
-	> If the **Identifier** and **Reply URL** values are not getting auto polulated, then fill in the values manually according to your requirement.
+	> If the **Identifier** and **Reply URL** values are not getting auto populated, then fill in the values manually according to your requirement.
 
 1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
@@ -163,8 +163,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
     c. Copy the content of the **SP X.509 Certificate(signing)** textbox into the notepad and save it in your computer.
 
 1. Click on **Upload XML file** to upload the **Federation Metadata XML** file which you copied previously.
-
-    ![Upload XML file](./media/linkedin-talent-solutions-tutorial/xml-file.png)
 
 ### Create LinkedIn Talent Solutions test user
 

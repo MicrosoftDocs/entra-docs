@@ -1,5 +1,5 @@
 ---
-title: Understand app manifest in Microsoft Graph format
+title: Understand the app manifest (Microsoft Graph format)
 description: Describes the Microsoft Entra app manifest (Microsoft Graph format), which represents an application's identity configuration in a Microsoft Entra tenant.
 services: active-directory
 author: rwike77
@@ -7,7 +7,7 @@ manager: CelesteDG
 ms.service: identity-platform
 ms.topic: reference
 ms.workload: identity
-ms.date: 06/13/2024
+ms.date: 09/18/2024
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: youazhou
@@ -367,6 +367,8 @@ Example:
 
 Custom strings that can be used to categorize and identify the application.
 
+Individual tags must be between 1 and 256 characters (inclusive). No whitespaces or duplicate tags are allowed. There is no specific limit on the number of tags that can be added, subject to general manifest size limits.
+
 Example:
 
 ```json
@@ -426,8 +428,7 @@ Specifies settings for an application that implements a web API. It includes fiv
 | Property | Type | Description |
 | --- | --- | --- |
 | acceptMappedClaims | Boolean | When set to true, it allows an application to use claims mapping without specifying a custom signing key. Applications that receive tokens rely on the fact that the claim values are authoritatively issued by Microsoft Entra ID and can't be tampered with. However, when you modify the token contents through claims-mapping policies, these assumptions may no longer be correct. Applications must explicitly acknowledge that tokens have been modified by the creator of the claims-mapping policy to protect themselves from claims-mapping policies created by malicious actors. Warning: Don't set acceptMappedClaims property to true for multitenant apps, which can allow malicious actors to create claims-mapping policies for your app. |
-| ownClientApplications | collection | Used for bundling consent if you have a solution that contains two parts: a client app and a custom web API app. If you set the appID of the client app to this value, the user only consents once to the client app. Microsoft Entra ID knows that consenting to the client means implicitly consenting to the web API and automatically provisions service principals for both APIs at the same time. Both the client and the web API app must be registered in the same tenant.  |
-| ownClientApplications | collection | Used for bundling consent if you have a solution that contains two parts: a client app and a custom web API app. If you set the appID of the client app to this value, the user only consents once to the client app. Microsoft Entra ID knows that consenting to the client means implicitly consenting to the web API and automatically provisions service principals for both APIs at the same time. Both the client and the web API app must be registered in the same tenant. |
+| knownClientApplications | collection | Used for bundling consent if you have a solution that contains two parts: a client app and a custom web API app. If you set the appID of the client app to this value, the user only consents once to the client app. Microsoft Entra ID knows that consenting to the client means implicitly consenting to the web API and automatically provisions service principals for both APIs at the same time. Both the client and the web API app must be registered in the same tenant. |
 | oauth2PermissionScopes | permissionScope collection | The definition of the delegated permissions exposed by the web API represented by this application registration. These delegated permissions may be requested by a client application, and may be granted by users or administrators during consent. Delegated permissions are sometimes referred to as OAuth 2.0 scopes. |
 | preAuthorizedApplications | preAuthorizedApplication collection | Lists the client applications that are preauthorized with the specified delegated permissions to access this application's APIs. Users aren't required to consent to any preauthorized application (for the permissions specified). However, any other permissions not listed in preAuthorizedApplications (requested through incremental consent for example) will require user consent. |
 | requestedAccessTokenVersion | Int32 | Specifies the access token version expected by this resource. This changes the version and format of the JWT produced independent of the endpoint or client used to request the access token. The endpoint used, v1.0 or v2.0, is chosen by the client and only impacts the version of id_tokens. Resources need to explicitly configure *requestedAccessTokenVersion* to indicate the supported access token format. Possible values for *requestedAccessTokenVersion* are 1, 2, or null. If the value is null, this defaults to 1, which corresponds to the v1.0 endpoint. If **signInAudience** on the application is configured as AzureADandPersonalMicrosoftAccount or PersonalMicrosoftAccount, the value for this property must be 2. |
@@ -451,7 +452,7 @@ Api:{
         }
     ],
     "preAuthorizedApplications": [{
-        "appId": "abcdefg2-000a-1111-a0e5-812ed8dd72e8",
+        "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",
         "permissionIds": [
         "8748f7db-21fe-4c83-8ab5-53033933c8f1"
         ]
@@ -539,13 +540,21 @@ An application manifest has multiple attributes that are referred to as collecti
 > [!NOTE]
 > In case you try to add more than 1200 entries in the application manifest, you may see an error **"Failed to update application xxxxxx. Error details: The size of the manifest has exceeded its limit. Please reduce the number of values and retry your request."**
 
-### Manifest migration from Azure AD Graph to Microsoft Graph app manifest
+### Troubleshoot manifest migration from Azure AD Graph format to Microsoft Graph format
 
 When you upload a previously downloaded app manifest in Azure AD Graph format, you may get the following error:
 
-**Failed to update {app name} application.  Error detail: invalid property '{property name}'.**
+#### Failed to update {app name} application.  Error detail: invalid property '{property name}'.**
 
 This might be due to the migration from Azure AD Graph to Microsoft Graph app manifest. Firstly, you should check if the app manifest is in [Azure AD Graph format](azure-active-directory-graph-app-manifest-deprecation.md#how-do-i-tell-the-format-of-my-app-manifest). If it is, you should [convert the app manifest to Microsoft Graph format](azure-active-directory-graph-app-manifest-deprecation.md#convert-an-app-manifest-in-azure-ad-graph-format-to-microsoft-graph-format).
+
+#### I can't find the trustedCertificateSubjects attribute
+
+**trustedCertificateSubjects** attribute is a Microsoft internal property. The Microsoft Entra admin center shows version 1.0 of the Microsoft Graph app manifest, **trustedCertificateSubjects** attribute is only present in beta version of the app manifest (Microsoft Graph format). Continue to edit this property using the app manifest (Azure AD Graph format) in the Microsoft Entra admin center. 
+
+#### ERROR: The application was not found. If the application was just created, wait a few minutes and refresh the page.**
+
+If your application was not just created, you might be getting this error because you have added an invalid attribute in the Microsoft Graph app manifest. Please review [attribute differences between Azure AD Graph and Microsoft Graph formats](azure-active-directory-graph-app-manifest-deprecation.md#attribute-differences-between-azure-ad-graph-and-microsoft-graph-formats) and see if you have added an attribute that is not supported in Microsoft Graph format v1.0 version that is shown in the portal.
 
 ## Next steps
 

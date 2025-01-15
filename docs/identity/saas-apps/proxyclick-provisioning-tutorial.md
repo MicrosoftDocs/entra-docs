@@ -61,7 +61,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Proxyclick based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Proxyclick, following the instructions provided in the [Proxyclick single sign-on tutorial](proxyclick-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features compliment each other.
+> You may also choose to enable SAML-based single sign-on for Proxyclick, following the instructions provided in the [Proxyclick single sign-on tutorial](proxyclick-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
 
 <a name='to-configure-automatic-user-provisioning-for-proxyclick-in-azure-ad'></a>
 
@@ -123,8 +123,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 9. Click **Save**.
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Proxyclick**.
-
-	![Proxyclick User Mappings](media/proxyclick-provisioning-tutorial/Proxyclick-user-mappings.png)
 
 11. Review the user attributes that are synchronized from Microsoft Entra ID to Proxyclick in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Proxyclick for update operations. Select the **Save** button to commit any changes.
 

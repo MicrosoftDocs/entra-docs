@@ -8,8 +8,8 @@ manager: mwongerapk
 ms.author: dmwendia
 ms.service: entra-external-id
  
-ms.subservice: customers
-ms.topic: sample
+ms.subservice: external
+ms.topic: quickstart
 ms.date: 08/04/2023
 ms.custom: developer, devx-track-js
 #Customer intent: As a dev, devops, I want to learn how to authenticate users in an external tenant using a sample Node.js CLI application
@@ -33,7 +33,9 @@ In this article, you complete the following tasks:
 
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 * [Node.js](https://nodejs.org).
-* An external tenant. If you don't already have one, <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">sign up for a free trial</a>.
+- An external tenant. To create one, choose from the following methods:
+  - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
+  - [Create a new external tenant](how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 
 ## Register the Node.js CLI app
 

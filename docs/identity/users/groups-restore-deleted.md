@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: quickstart
-ms.date: 11/15/2023
+ms.date: 01/15/2025
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, mode-other, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -20,8 +20,8 @@ Permissions that are required to restore a group are listed in the following tab
 
 Role | Permissions
 --------- | ---------
-Global administrator, Group administrator, Partner Tier 2 support, and Intune administrator | Can restore any deleted Microsoft 365 group
-User administrator and Partner Tier 1 support | Can restore any deleted Microsoft 365 group except those groups assigned to the Global Administrator role
+Global Administrator, Group Administrator, Partner Tier 2 Support, and Intune Administrator | Can restore any deleted Microsoft 365 group
+User Administrator and Partner Tier 1 Support | Can restore any deleted Microsoft 365 group except those groups assigned to the Global Administrator role
 User | Can restore any deleted Microsoft 365 group that they own
 
 ## View and manage the deleted Microsoft 365 groups that are available to restore
@@ -88,4 +88,4 @@ For more information on Microsoft Entra groups:
 * [Manage settings of a group](~/fundamentals/how-to-manage-groups.yml)
 * [Manage members of a group](~/fundamentals/how-to-manage-groups.yml)
 * [Manage memberships of a group](~/fundamentals/how-to-manage-groups.yml)
-* [Manage dynamic rules for users in a group](groups-dynamic-membership.md)
+* [Manage rules for dynamic membership groups](groups-dynamic-membership.md)

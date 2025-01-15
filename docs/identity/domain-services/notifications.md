@@ -8,7 +8,7 @@ ms.assetid: b9af1792-0b7f-4f3e-827a-9426cdb33ba6
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 10/07/2024
 ms.author: justinha
 ---
 # Configure email notifications for issues in Microsoft Entra Domain Services
@@ -44,13 +44,13 @@ The list of email recipients for Domain Services should be composed of people wh
 
 You can add up to five more recipients for email notifications. If you want more than five recipients for email notifications, create a distribution list and add that to the notification list instead.
 
-You can also choose to have all *Global Administrators* of the Microsoft Entra directory and every member of the *AAD DC Administrators* group receive email notifications. Domain Services only sends notification to up to 100 email addresses, including the list of Global Administrators and AAD DC Administrators.
+You can also choose to have highly privileged roles in the Microsoft Entra directory and every member of the *AAD DC Administrators* group receive email notifications. Domain Services only sends notification to up to 100 email addresses, including the list of highly privileged role holders and AAD DC Administrators.
 
 ## Configure email notifications
 
 To review the existing email notification recipients, or add recipients, complete the following steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](/azure/active-directory/roles/permissions-reference#authentication-policy-administrator).
+1. [!INCLUDE [Privileged role](~/includes/privileged-role-include.md)] 
 1. Search for and select **Microsoft Entra Domain Services**.
 1. Select your managed domain, such as *aaddscontoso.com*.
 1. On the left-hand side of the Domain Services resource window, select **Notification settings**. The existing recipients for email notifications are shown.
@@ -68,7 +68,7 @@ If an alert is resolved, the alert is cleared from the Microsoft Entra admin cen
 
 ### Why can I not edit the notification settings?
 
-If you're unable to access the notification settings page in the Microsoft Entra admin center, you don't have the permissions to edit the managed domain. Contact a Global Administrator to either get permissions to edit Domain Services resource or be removed from the recipient list.
+If you're unable to access the notification settings page in the Microsoft Entra admin center, you don't have the permissions to edit the managed domain. Contact a highly privileged administrator to either get permissions to edit Domain Services resource or be removed from the recipient list.
 
 ### I don't seem to be receiving email notifications even though I provided my email address. Why?
 

@@ -95,7 +95,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	e. In the **Identifier** textbox, type a URL using the following pattern: https:\//www.okta.com/saml2/service-provider/\<UniqueID>
 
 	> [!Note]
-	> If the **Identifier** value do not get auto polulated, then please fill in the value manually according to above pattern. The Identifier value is not real. Update this value with the actual Identifier. Contact [ForeSee CX Suite Client support team](mailto:support@foresee.com) to get this value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> If the **Identifier** value do not get auto populated, then please fill in the value manually according to above pattern. The Identifier value is not real. Update this value with the actual Identifier. Contact [ForeSee CX Suite Client support team](mailto:support@foresee.com) to get this value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 

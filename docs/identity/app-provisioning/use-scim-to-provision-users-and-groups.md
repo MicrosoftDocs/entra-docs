@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: tutorial
-ms.date: 02/15/2024
+ms.date: 10/22/2024
 ms.author: kenwith
 ms.reviewer: arvinh
 ---
@@ -917,7 +917,7 @@ TLS 1.2 Cipher Suites minimum bar:
 
 ### IP Ranges
 
-The Microsoft Entra provisioning service currently operates under the IP Ranges for Microsoft Entra ID as listed [here](https://www.microsoft.com/download/details.aspx?id=56519). You can add the IP ranges listed under the Microsoft Entra ID tag to allow traffic from the Microsoft Entra provisioning service into your application. You need to review the IP range list carefully for computed addresses. An address such as '40.126.25.32' could be represented in the IP range list as  '40.126.0.0/18'. You can also programmatically retrieve the IP range list using the following [API](/rest/api/virtualnetwork/service-tags/list).
+The Microsoft Entra provisioning service currently operates under the IP Ranges for Microsoft Entra ID as listed [here](https://www.microsoft.com/download/details.aspx?id=56519). You can add the IP ranges listed under the `AzureActiveDirectory` tag to allow traffic from the Microsoft Entra provisioning service into your application. You need to review the IP range list carefully for computed addresses. An address such as '40.126.25.32' could be represented in the IP range list as  '40.126.0.0/18'. You can also programmatically retrieve the IP range list using the following [API](/rest/api/virtualnetwork/service-tags/list).
 
 Microsoft Entra ID also supports an agent based solution to provide connectivity to applications in private networks (on-premises, hosted in Azure, hosted in AWS, and so on). Customers can deploy a lightweight agent, which provides connectivity to Microsoft Entra ID without opening any inbound ports, on a server in their private network. Learn more [here](./on-premises-scim-provisioning.md).
 
@@ -927,7 +927,7 @@ Now that you've designed your schema and understood the Microsoft Entra SCIM imp
 
 For guidance on how to build a SCIM endpoint including examples, see [Develop a sample SCIM endpoint](use-scim-to-build-users-and-groups-endpoints.md).
 
-The open source .NET Core [reference code example](https://aka.ms/SCIMReferenceCode) published by the Microsoft Entra provisioning team is one such resource that can jump start your development. Build a SCIM endpoint, then test it out. Use the collection of [Postman tests](https://github.com/AzureAD/SCIMReferenceCode/wiki/Test-Your-SCIM-Endpoint) provided as part of the reference code or run through the sample requests / responses [provided](#user-operations).  
+The open source .NET Core [reference code example](https://aka.ms/SCIMReferenceCode) published by the Microsoft Entra provisioning team is one such resource that can jump start your development. Build a SCIM endpoint, then test it out by running through the sample requests / responses [provided](#user-operations).  
 
    > [!Note]
    > The reference code is intended to help you get started building your SCIM endpoint and is provided "AS IS." Contributions from the community are welcome to help build and maintain the code.
@@ -1028,7 +1028,7 @@ public void Configure(IApplicationBuilder app)
 }
 ```
 
-A bearer token is also required to use of the provided [Postman tests](https://github.com/AzureAD/SCIMReferenceCode/wiki/Test-Your-SCIM-Endpoint) and perform local debugging using localhost. The sample code uses ASP.NET Core environments to change the authentication options during development stage and enable the use a self-signed token.
+The sample code uses ASP.NET Core environments to change the authentication options during development stage and enable the use a self-signed token.
 
 For more information on multiple environments in ASP.NET Core, see [Use multiple environments in ASP.NET Core](/aspnet/core/fundamentals/environments).
 
@@ -1315,7 +1315,7 @@ Applications that support the SCIM profile described in this article can be conn
 
 **To connect an application that supports SCIM:**
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. A list of all configured apps is shown, including apps that were added from the gallery.
 1. Select **+ New application** > **+ Create your own application**.
@@ -1326,12 +1326,7 @@ Applications that support the SCIM profile described in this article can be conn
    ![Screenshot shows the Microsoft Entra application gallery.](media/use-scim-to-provision-users-and-groups/scim-figure-2b-1.png) 
 
 1. In the app management screen, select **Provisioning** in the left panel.
-1. In the **Provisioning Mode** menu, select **Automatic**.
-    
-    The following screenshot shows the configuring provisioning settings in the Microsoft Entra admin center:
-
-   ![Screenshot of app provisioning page in the Microsoft Entra admin center.](media/use-scim-to-provision-users-and-groups/scim-figure-2b.png)
-
+1. Select **+ New configuration**.
 1. In the **Tenant URL** field, enter the URL of the application's SCIM endpoint. Example: `https://api.contoso.com/scim/`
 1. If the SCIM endpoint requires an OAuth bearer token from an issuer other than Microsoft Entra ID, then copy the required OAuth bearer token into the optional **Secret Token** field. If this field is left blank, Microsoft Entra ID includes an OAuth bearer token issued from Microsoft Entra ID with each request. Apps that use Microsoft Entra ID as an identity provider can validate this Microsoft Entra ID-issued token. 
    > [!NOTE]
@@ -1341,16 +1336,18 @@ Applications that support the SCIM profile described in this article can be conn
     > [!NOTE]
     > **Test Connection** queries the SCIM endpoint for a user that doesn't exist, using a random GUID as the matching property selected in the Microsoft Entra configuration. The expected correct response is HTTP 200 OK with an empty SCIM ListResponse message.
 
-1. If the attempts to connect to the application succeed, then select **Save** to save the admin credentials.
-1. In the **Mappings** section, there are two selectable sets of [attribute mappings](customize-application-attributes.md): one for user objects and one for group objects. Select each one to review the attributes that are synchronized from Microsoft Entra ID to your app. The attributes selected as **Matching** properties are used to match the users and groups in your app for update operations. Select **Save** to commit any changes.
+1. If the attempt to connect to the application succeeds, then select **Create** to create the provisioning job.
+1. If syncing only assigned users and groups (recommended), select the **Users and groups** tab. Then, assign the users or groups you want to sync.
+1. Select **Attribute mapping** in the left panel. There are two selectable sets of [attribute mappings](customize-application-attributes.md): one for user objects and one for group objects. Select each one to review the attributes that are synchronized from Microsoft Entra ID to your app. The attributes selected as **Matching** properties are used to match the users and groups in your app for update operations. Select **Save** to commit any changes.
 
-    > [!NOTE]
     > You can optionally disable syncing of group objects by disabling the "groups" mapping.
 
-1. Under **Settings**, the **Scope** field defines which users and groups are synchronized. Select **Sync only assigned users and groups** (recommended) to only sync users and groups assigned in the **Users and groups** tab.
-1. Once your configuration is complete, set the **Provisioning Status** to **On**.
-1. Select **Save** to start the Microsoft Entra provisioning service.
-1. If syncing only assigned users and groups (recommended), select the **Users and groups** tab. Then, assign the users or groups you want to sync.
+1. Select **Provision on-demand** in the left panel. Search for a user that is in scope for provisioning and provision them on-demand. Repeat with other users that you would like to test provisioning with.
+1. Once your configuration is complete, select **Overview** in the left panel.
+1. Select **Properties**.
+1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Click **Appy** to save the changes.   
+1. Select **Start provisioning** to start the Microsoft Entra provisioning service. 
+
 
 Once the initial cycle has started, you can select **Provisioning logs** in the left panel to monitor progress, which shows all actions done by the provisioning service on your app. For more information on how to read the Microsoft Entra provisioning logs, see [Reporting on automatic user account provisioning](check-status-user-account-provisioning.md).
 
@@ -1412,10 +1409,10 @@ When using the OAuth Code Grant flow, it's required that you support a model whe
 
 
 #### How to set up OAuth code grant flow
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Application** > **Provisioning** and select **Authorize**.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Select your application and go to **Provisioning**.
 1. Select **Authorize**.
@@ -1443,7 +1440,7 @@ To help drive awareness and demand of our joint integration, we recommend you up
 > [!div class="checklist"]
 > * Ensure your sales and customer support teams are aware, ready, and can speak to the integration capabilities. Brief your teams, provide them with FAQs and include the integration into your sales materials. 
 > * Craft a blog post or press release that describes the joint integration, the benefits and how to get started. [Example: Imprivata and Microsoft Entra Press Release](https://www.imprivata.com/company/press/imprivata-introduces-iam-cloud-platform-healthcare-supported-microsoft) 
-> * Leverage your social media like Twitter, Facebook or LinkedIn to promote the integration to your customers. Be sure to include @Microsoft Entra ID so we can retweet your post. [Example: Imprivata Twitter Post](https://twitter.com/azuread/status/1123964502909779968)
+> * Leverage your social media like X, Facebook or LinkedIn to promote the integration to your customers. Be sure to include @Microsoft Entra ID so we can retweet your post. [Example: Imprivata X Post](https://x.com/azuread/status/1123964502909779968)
 > * Create or update your marketing pages/website (such as integration page, partner page, pricing page, and so on) to include the availability of the joint integration. [Example: Pingboard integration Page](https://pingboard.com/org-chart-for), [Smartsheet integration page](https://www.smartsheet.com/marketplace/apps/directory-integrations), [Monday.com pricing page](https://monday.com/pricing/) 
 > * Create a help center article or technical documentation on how customers can get started. [Example: Envoy + Microsoft Entra integration.](https://envoy.help/en/articles/3453335-microsoft-azure-active-directory-integration) 
 > * Alert customers of the new integration through your customer communication (monthly newsletters, email campaigns, product release notes). 

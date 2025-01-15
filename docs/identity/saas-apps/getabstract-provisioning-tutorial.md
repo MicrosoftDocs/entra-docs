@@ -2,15 +2,14 @@
 title: 'Tutorial: Configure getAbstract for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to getAbstract.
 
-documentationcenter: ''
+
 author: thomasakelo
 manager: jeedes
 
-ms.assetid: bd8898f9-7a01-4e85-9dd4-61ae4b01ab5b
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.tgt_pltfrm: na
+
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo

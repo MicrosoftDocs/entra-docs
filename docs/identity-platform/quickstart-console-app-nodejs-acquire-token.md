@@ -34,7 +34,7 @@ Follow the steps below to get started.
 
 To register your application and add the app's registration information to your solution manually, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **App registrations**.
 1. Select **New registration**.
 1. Enter a **Name** for your application, for example `msal-node-cli`. Users of your app might see this name, and you can change it later.

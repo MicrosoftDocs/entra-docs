@@ -61,7 +61,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Keeper Password Manager & Digital Vault based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Keeper Password Manager & Digital Vault, following the instructions provided in the [Keeper Password Manager & Digital Vault single sign-on tutorial](keeperpasswordmanager-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features compliment each other.
+> You may also choose to enable SAML-based single sign-on for Keeper Password Manager & Digital Vault, following the instructions provided in the [Keeper Password Manager & Digital Vault single sign-on tutorial](keeperpasswordmanager-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
 
 <a name='to-configure-automatic-user-provisioning-for-keeper-password-manager--digital-vault-in-azure-ad'></a>
 
@@ -114,15 +114,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Keeper Password Manager & Digital Vault**.
 
-	![Keeper User Mappings](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-user-mappings.png)
-
 11. Review the user attributes that are synchronized from Microsoft Entra ID to Keeper Password Manager & Digital Vault in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Keeper Password Manager & Digital Vault for update operations. Select the **Save** button to commit any changes.
 
 	![Keeper User Attributes](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-user-attributes.png)
 
 12. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Keeper Password Manager & Digital Vault**.
-
-	![Keeper Group Mappings](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-group-mappings.png)
 
 13. Review the group attributes that are synchronized from Microsoft Entra ID to Keeper Password Manager & Digital Vault in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Keeper Password Manager & Digital Vault for update operations. Select the **Save** button to commit any changes.
 

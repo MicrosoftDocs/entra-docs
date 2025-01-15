@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 08/13/2024
 ms.author: jeedes
 
 
@@ -95,26 +95,13 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 ## Configure Parkable SSO
 
-To configure single sign-on on **Parkable** side, you need to send the downloaded **Certificate (PEM)** and appropriate copied URLs from the application configuration to [Parkable support team](mailto:support@parkable.com). They set this setting to have the SAML SSO connection set properly on both sides.
-
-### Create Parkable test user
-
-In this section, a user called B.Simon is created in Parkable. Parkable supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in Parkable, a new one is created after authentication.
-
-## Test SSO 
-
-In this section, you test your Microsoft Entra single sign-on configuration with following options. 
+To configure single sign-on on **Parkable**, you need to follow the steps outlined in [this document](https://admin.parkable.com/s/article/Set-up-SSP-SAML) to continue the setup on the Parkable admin panel.
 
 * Click on **Test this application**, this will redirect to Parkable Sign-on URL where you can initiate the login flow. 
 
 * Go to Parkable Sign-on URL directly and initiate the login flow from there.
 
 * You can use Microsoft My Apps. When you click the Parkable tile in the My Apps, this will redirect to Parkable Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
-
-## Additional resources
-
-* [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
-* [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 
 ## Next steps
 

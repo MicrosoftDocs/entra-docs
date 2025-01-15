@@ -6,9 +6,9 @@ author: csmulligan
 manager: CelesteDG
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
-ms.date: 02/29/2024
+ms.date: 12/05/2024
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -104,6 +104,6 @@ To go through the self-service password reset flow:
 
    :::image type="content" source="media/how-to-enable-password-reset-customers/update-password.png" alt-text="Screenshot that shows the update password screen.":::
 
-## Next steps
+## Related content
 
-- Add [Google](how-to-google-federation-customers.md) or [Facebook](how-to-facebook-federation-customers.md) federation.
+- Add [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md), [Apple](how-to-apple-federation-customers.md) or a custom [OIDC federation](how-to-custom-oidc-federation-customers.md) federation.

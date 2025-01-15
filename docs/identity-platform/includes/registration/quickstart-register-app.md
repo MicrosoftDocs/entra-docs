@@ -13,8 +13,8 @@ ms.service: identity-platform
 
 # This include file is currently referenced in the following documentation:
 
-# https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app
-# https://learn.microsoft.com/en-us/graph/auth-register-app-v2
+# https://learn.microsoft.com/azure/active-directory/develop/quickstart-register-app
+# https://learn.microsoft.com/graph/auth-register-app-v2
 ---
 
 Get started with the Microsoft identity platform by registering an application in the Microsoft Entra admin center.
@@ -93,7 +93,7 @@ To configure application settings based on the platform or device you're targeti
    | **Single-page application** | Enter a **Redirect URI** for your app. This URI is the location where the Microsoft identity platform redirects a user's client and sends security tokens after authentication.<br/><br/>Front-channel logout URL and implicit and hybrid flow properties can also be configured.<br/><br/>Select this platform if you're building a client-side web app by using JavaScript or a framework like Angular, Vue.js, React.js, or Blazor WebAssembly. |
    | **iOS / macOS** | Enter the app **Bundle ID**. Find it in **Build Settings** or in Xcode in *Info.plist*.<br/><br/>A redirect URI is generated for you when you specify a **Bundle ID**. |
    | **Android** | Enter the app **Package name**. Find it in the *AndroidManifest.xml* file. Also generate and enter the **Signature hash**.<br/><br/>A redirect URI is generated for you when you specify these settings. |
-   | **Mobile and desktop applications** | Select one of the suggested **Redirect URIs**. Or specify on or more **Custom redirect URIs**.<br/><br/>For desktop applications using embedded browser, we recommend<br/>`https://login.microsoftonline.com/common/oauth2/nativeclient`<br/><br/>For desktop applications using system browser, we recommend<br/>`http://localhost`<br/><br/>Select this platform for mobile applications that aren't using the latest Microsoft Authentication Library (MSAL) or aren't using a broker. Also select this platform for desktop applications. |
+   | **Mobile and desktop applications** | Select one of the suggested **Redirect URIs**. Or specify one or more **Custom redirect URIs**.<br/><br/>For desktop applications using embedded browser, we recommend<br/>`https://login.microsoftonline.com/common/oauth2/nativeclient`<br/><br/>For desktop applications using system browser, we recommend<br/>`http://localhost`<br/><br/>Select this platform for mobile applications that aren't using the latest Microsoft Authentication Library (MSAL) or aren't using a broker. Also select this platform for desktop applications. |
 
 1. Select **Configure** to complete the platform configuration.
 
@@ -120,7 +120,7 @@ Sometimes called a *public key*, a certificate is the recommended credential typ
 
 ### [Add a client secret](#tab/client-secret)
 
-Sometimes called an *application password*, a client secret is a string value your app can use in place of a certificate to identity itself.
+Sometimes called an *application password*, a client secret is a string value your app can use in place of a certificate to identify itself.
 
 Client secrets are considered less secure than certificate credentials. Application developers sometimes use client secrets during local app development because of their ease of use. However, you should use certificate credentials for any of your applications that are running in production.
 
@@ -151,7 +151,7 @@ To add a federated credential, follow these steps:
     - **Customer managed keys** for encrypt data in your tenant using Azure Key Vault in another tenant.
     - **GitHub actions deploying Azure resources** to [configure a GitHub workflow](~/workload-id/workload-identity-federation-create-trust.md#github-actions) to get tokens for your application and deploy assets to Azure.
     - **Kubernetes accessing Azure resources** to configure a [Kubernetes service account](~/workload-id/workload-identity-federation-create-trust.md#kubernetes) to get tokens for your application and access Azure resources.
-    - **Other issuer** to configure an identity managed by an external [OpenID Connect provider](~/workload-id/workload-identity-federation-create-trust.md#other-identity-providers) to get tokens for your application and access Azure resources.
+    - **Other issuer** to configure the application to [trust a managed identity](~/workload-id/workload-identity-federation-config-app-trust-managed-identity.md) or an identity managed by an external [OpenID Connect provider](~/workload-id/workload-identity-federation-create-trust.md#other-identity-providers) to get tokens for your application and access Azure resources.
 
 For more information, how to get an access token with a federated credential, check out the [Microsoft identity platform and the OAuth 2.0 client credentials flow](../../v2-oauth2-client-creds-grant-flow.md#third-case-access-token-request-with-a-federated-credential) article.
 

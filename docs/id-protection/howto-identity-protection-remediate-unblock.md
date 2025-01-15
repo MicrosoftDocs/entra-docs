@@ -43,7 +43,7 @@ The prerequisites for users before risk-based policies can be applied to allow s
 
 If a risk-based policy is applied to a user during sign-in before the above prerequisites are met, then the user is blocked. This block action is because they aren't able to perform the required access control, and admin intervention is required to unblock the user.
 
-Risk-based policies are configured based on risk levels and only apply if the risk level of the sign-in or user matches the configured level. Some detections might not raise risk to the level where the policy applies, and administrators need to handle those risky users manually. Administrators can determine that extra measures are necessary like [blocking access from locations](~/identity/conditional-access/howto-conditional-access-policy-location.yml) or lowering the acceptable risk in their policies.
+Risk-based policies are configured based on risk levels and only apply if the risk level of the sign-in or user matches the configured level. Some detections might not raise risk to the level where the policy applies, and administrators need to handle those risky users manually. Administrators can determine that extra measures are necessary like [blocking access from locations](~/identity/conditional-access/policy-block-by-location.md) or lowering the acceptable risk in their policies.
 
 ### Self-remediation with self-service password reset
 
@@ -120,11 +120,11 @@ If after investigation, an account is confirmed compromised:
 1. If a risk-based policy wasn't triggered, and the risk wasn't [self-remediated](#self-remediation-with-risk-based-policy), then take one or more of the following actions:
    1. [Request a password reset](#manual-password-reset).
    1. Block the user if you suspect the attacker can reset the password or do multifactor authentication for the user.
-   1. Revoke refresh tokens.
+   1. [Revoke refresh tokens](/entra/identity/users/users-revoke-access).
    1. [Disable any devices](~/identity/devices/manage-device-identities.md) that are considered compromised.
    1. If using [continuous access evaluation](~/identity/conditional-access/concept-continuous-access-evaluation.md), revoke all access tokens.
 
-For more information about what happens when confirming compromise, see the section [How should I give risk feedback and what happens under the hood?](howto-identity-protection-risk-feedback.md#how-should-i-give-risk-feedback-and-what-happens-under-the-hood).
+For more information about what happens when confirming compromise, see the section [How to give risk feedback on risks](howto-identity-protection-risk-feedback.md#how-to-give-risk-feedback-in-microsoft-entra-id-protection).
 
 ### Deleted users
 
@@ -151,6 +151,17 @@ To unblock an account based on sign-in risk, administrators have the following o
 1. **Exclude the user from policy** - If you think that the current configuration of your sign-in policy is causing issues for specific users, you can exclude the users from it. For more information, see the section Exclusions in the article [How To: Configure and enable risk policies](howto-identity-protection-configure-risk-policies.md#policy-exclusions).
 1. **Disable policy** - If you think that your policy configuration is causing issues for all your users, you can disable the policy. For more information, see the article [How To: Configure and enable risk policies](howto-identity-protection-configure-risk-policies.md).
 
+### Automatic blocking due to high confidence risk
+
+Microsoft Entra ID Protection automatically blocks sign-ins that have a very high confidence of being risky. This block most commonly occurs on sign-ins performed via legacy authentication protocols, and displaying properties of a malicious attempt.
+
+When a user is blocked with this mechanism they will receive a 50053 authentication error. Investigation of the sign-in logs will display the following block reason: "Sign-in was blocked by built-in protections due to high confidence of risk."
+
+To unblock an account based on high confidence sign-in risk, administrators have the following options:
+
+1. **Add the IP's being used to sign-in to the Trusted location settings** - If the sign-in is performed from a known location for your company, you can add the IP to be trusted. For more information, see the Trusted Locations section in article [Conditional Access: Network assignment](/entra/identity/conditional-access/concept-assignment-network#trusted-locations).
+1. **Use a modern authentication protocol** - If the sign-in is performed via a legacy protocol, switching to modern will unblock the attempt.
+
 ## Token theft related detections
 
 With a recent update to our detection architecture, we no longer autoremediate sessions with MFA claims when a token theft related or the Microsoft Threat Intelligence Center (MSTIC) Nation State IP detection triggers during sign-in. 
@@ -158,9 +169,10 @@ With a recent update to our detection architecture, we no longer autoremediate s
 The following ID Protection detections that identify suspicious token activity or the MSTIC Nation State IP detection are no longer autoremediated: 
 
 - Microsoft Entra threat intelligence  
-- Anomalous token  
-- Token issuer anomaly  
+- Anomalous token
+- Attacker in the Middle
 - MSTIC Nation State IP
+- Token issuer anomaly  
 
 ID Protection now surfaces session details in the Risk Detection Details pane for detections that emit sign-in data. This change ensures we don't close sessions containing detections where there's MFA-related risk. Providing session details with user level risk details provides valuable information to assist with investigation. This information includes:
 

@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: conceptual
-ms.date: 05/07/2024
+ms.date: 01/15/2025
 ms.author: justinha
 ms.reviewer: xyuan
 ---
@@ -73,7 +73,7 @@ You can connect application workloads hosted in other Azure virtual networks usi
 
 ### Virtual network peering
 
-Virtual network peering is a mechanism that connects two virtual networks in the same region through the Azure backbone network. Global virtual network peering can connect virtual network across Azure regions. Once peered, the two virtual networks let resources, such as VMs, communicate with each other directly using private IP addresses. Using virtual network peering lets you deploy a managed domain with your application workloads deployed in other virtual networks.
+Virtual network peering is a mechanism that connects two virtual networks through the Azure backbone network, allowing resources such as virtual machines (VMs) to communicate with each other directly using private IP addresses. Virtual network peering supports both regional peering, which connects VNets within the same Azure region, and global virtual network peering, which connects VNets across different Azure regions. This flexibility allows you to deploy a managed domain with your application workloads across multiple virtual networks, regardless of their regional locations.
 
 ![Virtual network connectivity using peering](./media/entra-domain-services-design-guide/vnet-peering.png)
 
@@ -150,7 +150,7 @@ If needed, you can [create the required network security group and rules using A
 
 ### Outbound connectivity
 
-For Outbound connectivity, you can either keep **AllowVnetOutbound** and **AllowInternetOutBound** or restrict Outbound traffic by using ServiceTags listed in the following table. The ServiceTag for AzureUpdateDelivery must be added via [PowerShell](powershell-create-instance.md). If you use [Log Analytics](/azure/azure-monitor/logs/logs-data-export), add **EventHub** to outbound destinations.
+For Outbound connectivity, you can either keep **AllowVnetOutbound** and **AllowInternetOutBound** or restrict Outbound traffic by using ServiceTags listed in the following table. If you use [Log Analytics](/azure/azure-monitor/logs/logs-data-export), add **EventHub** to outbound destinations.
 
 Make sure no other NSG with higher priority denies the Outbound connectivity. If Outbound connectivity is denied, replication won't work between replica sets. 
 
@@ -160,10 +160,12 @@ Make sure no other NSG with higher priority denies the Outbound connectivity. If
 | 443 | TCP	  | Any    | AzureActiveDirectoryDomainServices| Allow  | Yes      | Communication with the Microsoft Entra Domain Services management service. |
 | 443 | TCP   | Any    | AzureMonitor                      | Allow  | Yes      | Monitoring of the virtual machines. |
 | 443 | TCP	  | Any	   | Storage                           | Allow  | Yes      | Communication with Azure Storage.   | 
-| 443 | TCP	  | Any	   | Microsoft Entra ID              | Allow  | Yes      | Communication with Microsoft Entra ID.  |
-| 443 | TCP	  | Any	   | AzureUpdateDelivery               | Allow  | Yes      | Communication with Windows Update.  | 
-| 80  | TCP	  | Any	   | AzureFrontDoor.FirstParty         | Allow  | Yes      | Download of patches from Windows Update.    |
+| 443 | TCP	  | Any	   | AzureActiveDirectory              | Allow  | Yes      | Communication with Microsoft Entra ID.  |
 | 443 | TCP	  | Any	   | GuestAndHybridManagement          | Allow  | Yes      | Automated management of security patches.   |
+
+> [!NOTE]
+> The AzureUpdateDelivery and AzureFrontDoor.FirstParty tags are deprecated as of July 1, 2024. Microsoft Entra Domain Services manages WindowsUpdate independently, which removes the need for these tags. NSG adjustments aren't needed, with or without deprecated tags.
+
 
 
 ### Port 5986 - management using PowerShell remoting
@@ -174,7 +176,7 @@ Make sure no other NSG with higher priority denies the Outbound connectivity. If
 
 ### Port 3389 - management using remote desktop
 
-* Used for remote desktop connections to domain controllers in your managed domain.
+* Used for remote desktop connections to domain controllers in your managed domain, this port cannot be changed or encapsulated into another port.
 * The default network security group rule uses the *CorpNetSaw* service tag to further restrict traffic.
     * This service tag permits only secure access workstations on the Microsoft corporate network to use remote desktop to the managed domain.
     * Access is only allowed with business justification, such as for management or troubleshooting scenarios.

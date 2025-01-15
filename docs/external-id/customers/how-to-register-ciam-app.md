@@ -1,18 +1,18 @@
 ---
-title: Register an app in Microsoft Entra External ID
-description: Learn about how to register an app in the external tenant. 
+title: Register an App
+description: Learn how to register your application with External ID for customer identity and access management (CIAM). Choose your app type and get detailed steps. 
 author: csmulligan
 ms.author: cmulligan
 manager: CelesteDG
 ms.service: entra-external-id 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
-ms.date: 02/29/2024
-ms.custom: it-pro
+ms.date: 10/07/2024
+ms.custom: it-pro, seo-july-2024
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about how to register an app on the Microsoft Entra admin center.
 ---
-# Register your app in the external tenant
+# Register an app in your external tenant
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
@@ -73,6 +73,10 @@ If your SPA needs to call an API, you must grant your SPA API permissions so it 
 
 If you'd like to learn how to expose the permissions by adding a link, go to the [Web API](how-to-register-ciam-app.md?tabs=webapi) section.
 
+### Test the user flow (optional)
+
+[!INCLUDE [test user flow](../customers/includes/register-app/test-user-flow.md)]
+
 # [Web app](#tab/webapp)
 ## Register your Web app
 
@@ -115,6 +119,10 @@ The following steps show you how to register your web app in the Microsoft Entra
 If your web app needs to call an API, you must grant your web app API permissions so it can call the API. You must also [register the web API](how-to-register-ciam-app.md?tabs=webapi) that you need to call.
 
 [!INCLUDE [grant permissions for calling an API](../customers/includes/register-app/grant-api-permission-call-api.md)] 
+
+### Test the user flow (optional)
+
+[!INCLUDE [test user flow](../customers/includes/register-app/test-user-flow.md)]
 
 # [Web API](#tab/webapi)
 ## Register your Web API
@@ -162,7 +170,11 @@ The following steps show you how to register your app in the Microsoft Entra adm
 ### Grant API permissions (optional)
 
 If your mobile app needs to call an API, you must grant your mobile app API permissions so it can call the API. You must also [register the web API](how-to-register-ciam-app.md?tabs=webapi) that you need to call.
-[!INCLUDE [grant permissions for calling an API](../customers/includes/register-app/grant-api-permission-call-api.md)] 
+[!INCLUDE [grant permissions for calling an API](../customers/includes/register-app/grant-api-permission-call-api.md)]
+
+### Test the user flow (optional)
+
+[!INCLUDE [test user flow](../customers/includes/register-app/test-user-flow.md)]
 
 # [Daemon app](#tab/daemonapp)
 ## Register your Daemon app
@@ -175,6 +187,10 @@ A daemon app signs in as itself using the [OAuth 2.0 client credentials flow](~/
 
 [!INCLUDE [register daemon app](../customers/includes/register-app/grant-api-permissions-app-permissions.md)]
 
+### Test the user flow (optional)
+
+[!INCLUDE [test user flow](../customers/includes/register-app/test-user-flow.md)]
+
 # [Microsoft Graph API](#tab/graphapi)
 ## Register a Microsoft Graph API application
 [!INCLUDE [register client app](../customers/includes/register-app/register-client-app-common.md)]
@@ -184,6 +200,10 @@ A daemon app signs in as itself using the [OAuth 2.0 client credentials flow](~/
 
 ### Create a client secret 
 [!INCLUDE [add app client secret](../customers/includes/register-app/add-app-client-secret.md)]
+
+### Test the user flow (optional)
+
+[!INCLUDE [test user flow](../customers/includes/register-app/test-user-flow.md)]
 
 # [Native authentication](#tab/nativeauthentication)
 ## Register a native authentication application

@@ -6,7 +6,7 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom: mode-api, devx-track-js
-ms.date: 08/22/2022
+ms.date: 09/24/2024
 ms.service: identity-platform
 
 ms.topic: concept-article
@@ -55,7 +55,6 @@ ms.topic: concept-article
 > 
 > #### Step 3: Admin consent
 > 
-> If you try to run the application at this point, you'll receive *HTTP 403 - Forbidden* error: `Insufficient privileges to complete the operation`. This error happens because any *app-only permission* requires **admin consent**: a Global Administrator of your directory must give consent to your application. Select one of the options below depending on your role:
 > 
 > ##### Global tenant administrator
 > 

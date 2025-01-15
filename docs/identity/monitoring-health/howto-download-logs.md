@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 03/21/2024
+ms.date: 11/08/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -26,10 +26,11 @@ Microsoft Entra ID stores activity logs for a specific period, depending on your
 
 ## Prerequisites
 
-- For license and role requirements, see [Microsoft Entra monitoring and health licensing](../../fundamentals/licensing.md#microsoft-entra-monitoring-and-health).
+- A working Microsoft Entra tenant with the appropriate Microsoft Entra license associated with it.
+    - For a full list of license requirements, see [Microsoft Entra monitoring and health licensing](../../fundamentals/licensing.md#microsoft-entra-monitoring-and-health).
 - The option to download logs is available in all editions of Microsoft Entra ID.
 - Downloading logs programmatically with Microsoft Graph requires a [premium license](../../fundamentals/licensing.md#microsoft-entra-monitoring-and-health).
-- **Reports Reader** is the least privileged role required to view Microsoft Entra activity logs.
+- [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader) is the least privileged role required to view Microsoft Entra activity logs.
 
 ## Log download considerations
 

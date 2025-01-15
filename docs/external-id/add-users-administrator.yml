@@ -1,12 +1,12 @@
 ### YamlMime:HowTo
 ---
 metadata:
-  title: Add B2B collaboration users in the Microsoft Entra admin center
-  description: Shows how an admin can add guest users to their directory from a partner organization using Microsoft Entra B2B collaboration.
+  title: Add B2B collaboration users
+  description: Learn how to add B2B collaboration users in the Microsoft Entra admin center. Invite guest users to the directory, groups, or applications, and manage their access to resources.
   author: csmulligan
   ms.author: cmulligan
   manager: celestedg
-  ms.date: 12/14/2023
+  ms.date: 10/21/2024
   ms.service: entra-external-id
   ms.topic: how-to
   ms.collection: M365-identity-device-management
@@ -16,7 +16,7 @@ metadata:
   # Customer intent: As a user with limited administrator directory roles, I want to add B2B collaboration users in the Microsoft Entra admin center, so that I can invite guest users to the directory, group, or application and manage their access to resources.
 
 title: |
-  Add Microsoft Entra B2B collaboration users in the Microsoft Entra admin center
+  Add and manage B2B collaboration users in the Microsoft Entra admin center
 introduction: |
   [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
   
@@ -114,7 +114,7 @@ procedureSection:
         Go to **Identity** > **Users** > **All users** and select the invited guest user.
       - |
         In the **My Feed** section, locate the **B2B collaboration** tile. 
-         - If the invitation state is **PendingAcceptance**, select the **Resend invitation** link to send another email and follow the prompts.
+         - If the invitation state is **Pending acceptance**, select the **Resend invitation** link to send another email and follow the prompts.
          - You can also select the **Properties** for the user and view the **Invitation state**.
 
         :::image type="content" source="media/add-users-administrator/external-user-invitation-state.png" alt-text="Screenshot of the My Feed section of the user overview page.":::
@@ -148,7 +148,7 @@ procedureSection:
               
               b. In the search results, choose the user, and then choose **Select**.
 
-        You can also use dynamic groups with Microsoft Entra B2B collaboration. For more information, see [Dynamic groups and Microsoft Entra B2B collaboration](use-dynamic-groups.md).
+        You can also use dynamic membership groups with Microsoft Entra B2B collaboration. For more information, see [Dynamic groups and Microsoft Entra B2B collaboration](use-dynamic-groups.md).
 
   - title: |
       Add guest users to an application

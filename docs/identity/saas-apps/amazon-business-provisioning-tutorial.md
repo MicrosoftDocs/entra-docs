@@ -4,7 +4,6 @@ description: Learn how to automatically provision and deprovision user accounts 
 
 author: thomasakelo
 manager: jeedes
-ms.assetid: 48a929c5-6cfa-44ca-8471-641fa5a35ee0
 ms.service: entra-id
 ms.subservice: saas-apps
 
@@ -116,7 +115,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
    For **Tenant URL** and **Authorization endpoint** values please use the table below
 
-   |Country|Tenant URL|Authorization endpoint
+   |Country/region|Tenant URL|Authorization endpoint
    |---|---|---|
    |Canada|https://na.business-api.amazon.com/scim/v2/|https://www.amazon.ca/b2b/abws/oauth?state=1&redirect_uri=https://portal.azure.com/TokenAuthorize&applicationId=amzn1.sp.solution.ee27ec8c-1ee9-4c6b-9e68-26bdc37479d3|
    |Germany|https://eu.business-api.amazon.com/scim/v2/|https://www.amazon.de/b2b/abws/oauth?state=1&redirect_uri=https://portal.azure.com/TokenAuthorize&applicationId=amzn1.sp.solution.ee27ec8c-1ee9-4c6b-9e68-26bdc37479d3|

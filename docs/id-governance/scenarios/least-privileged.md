@@ -1,14 +1,15 @@
 ---
 title: 'Understanding least privilege with Microsoft Entra ID Governance'
 description: This article describes the concept of least privilege and how it relates with Microsoft Entra ID Governance.
-services: active-directory
-documentationcenter: ''
+ms.service: entra-id-governance
+ms.subservice:
+
 author: billmath
 manager: amycolannino
-editor: ''
-ms.service: active-directory
+
+
 ms.topic: conceptual
-ms.date: 07/28/2023
+ms.date: 12/30/2024
 ms.author: billmath
 ---
 
@@ -40,6 +41,7 @@ It's a best practice to use the least privileged role to perform administrative 
 | ------- | --------------------- |
 | Entitlement management | Identity Governance Administrator |
 | Access reviews | User Administrator (with the exception of access reviews of Azure or Microsoft Entra roles, which require Privileged Role Administrator) |
+| Lifecycle Workflows | Lifecycle Workflows Administrator |
 | Privileged Identity Management | Privileged Role Administrator |
 | Terms of use | Security Administrator or Conditional Access Administrator |
 

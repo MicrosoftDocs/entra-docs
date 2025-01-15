@@ -8,7 +8,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 11/16/2023
+ms.date: 01/14/2025
 ms.author: barclayn
 ms.reviewer: sumitp
 ms.custom: it-pro
@@ -16,21 +16,23 @@ ms.custom: it-pro
 
 # Change license assignments for a user or group in Microsoft Entra ID
 
-This article describes how to move users and groups between service license plans in Microsoft Entra ID, part of Microsoft Entra. The goal Microsoft Entra ID's approach is to ensure that there's no loss of service or data during the license change. Users should switch between services seamlessly. The license plan assignment steps in this article describe changing a user or group on Office 365 E1 to Office 365 E3, but the steps apply to all license plans. When you update license assignments for a user or group, the license assignment removals and new assignments are made simultaneously so that users do not lose access to their services during license changes or see license conflicts between plans.
+[!INCLUDE [licensing updates](~/includes/licensing-change.md)]
+
+This article describes how to move users and groups between service license plans in Microsoft Entra ID, part of Microsoft Entra. The goal Microsoft Entra ID's approach is to ensure that there's no loss of service or data during the license change. Users should switch between services seamlessly. The license plan assignment steps in this article describe changing a user or group on Office 365 E1 to Office 365 E3, but the steps apply to all license plans. When you update license assignments for a user or group, the license assignment removals and new assignments are made simultaneously so that users don't lose access to their services during license changes or see license conflicts between plans.
 
 ## Before you begin
 
 Before you update the license assignments, it's important to verify certain assumptions are true for all of the users or groups to be updated. If the assumptions aren't true for all of the users in a group, the migration might fail for some. As a result, some of the users might lose access to services or data. Ensure that:
 
-- Users have the current license plan (in this case, Office 365 E1) that's assigned to a group and inherited by the user and not assigned directly.
+- Users have the current license plan (in this case, Office 365 E1) assigned to a group and inherited by the user and not assigned directly.
 
 - You have enough available licenses for the license plan you're assigning. If you don't have enough licenses, some users might not be assigned the new license plan. You can check the number of available licenses.
 
-- Users don't have other assigned service licenses that can conflict with the desired license or prevent removal of the current license. For example, a license from a service such as Workplace Analytics or Project Online that has a dependency on other services.
+- Users don't have assigned service licenses that can conflict with the desired license or prevent removal of the current license. For example, a license from a service such as Workplace Analytics or Project Online that has a dependency on other services.
 
 - If you manage groups on-premises and sync them into Microsoft Entra ID via Microsoft Entra Connect, then you add or remove users by using your on-premises system. It can take some time for the changes to sync with Microsoft Entra ID to be picked up by group licensing.
 
-- If you're using Microsoft Entra dynamic group memberships, you add or remove users by changing their attributes, but the update process for license assignments remains the same.
+- If you're using Microsoft Entra dynamic membership groups, you add or remove users by changing their attributes, but the update process for license assignments remains the same.
 
 ## Change user license assignments
 
@@ -75,5 +77,5 @@ Learn about other scenarios for license management through groups in the followi
 - [Assigning licenses to a group in Microsoft Entra ID](licensing-groups-assign.md)
 - [Identifying and resolving license problems for a group in Microsoft Entra ID](licensing-groups-resolve-problems.md)
 - [How to migrate individual licensed users to group licensing in Microsoft Entra ID](licensing-groups-migrate-users.md)
-- [Microsoft Entra group licensing additional scenarios](licensing-group-advanced.md)
+- [Scenarios, limitations, and known issues using groups to manage licensing in Microsoft Entra ID](licensing-group-advanced.md)
 - [PowerShell examples for group licensing in Microsoft Entra ID](licensing-ps-examples.md)

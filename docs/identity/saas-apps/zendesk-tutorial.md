@@ -81,10 +81,10 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
 	a. In the **Sign on URL** text box, type a URL using the following pattern:
-    `https://<subdomain>.zendesk.com`
+    `<subdomain>.zendesk.com`
 
     b. In the **Identifier (Entity ID)** text box, type a URL using the following pattern:
-    `https://<subdomain>.zendesk.com`
+    `<subdomain>.zendesk.com`
 
     c. In the **Reply URL** text box, type a URL using the following pattern: `https://<subdomain>.zendesk.com/access/saml`
 

@@ -149,12 +149,10 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 4. Click the Metadata URL link to download the metadata document.
 
 	![Service Provider Metadata URL.](./media/moveittransfer-tutorial/metadata.png)
-	
-   a. Verify **entityID** matches **Identifier** in the **Basic SAML Configuration** section .
 
-   b. Verify **AssertionConsumerService** Location URL matches **REPLY URL**  in the **Basic SAML Configuration** section.
-	
-     :::image type="content" source="./media/moveittransfer-tutorial/file.png" alt-text="Screenshot of Configure Single Sign-On On App side." lightbox="./media/moveittransfer-tutorial/file.png":::
+   a. Verify that the **entityID** value in the **EntityDescriptor** matches **Identifier** in the **Basic SAML Configuration** section.
+
+   b. Verify that the **AssertionConsumerService** **Location** URL matches **REPLY URL**  in the **Basic SAML Configuration** section.
 
 5. Click **Add Identity Provider** button to add a new Federated Identity Provider.
 

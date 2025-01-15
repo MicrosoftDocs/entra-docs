@@ -8,7 +8,7 @@ ms.date: 12/15/2023
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As an application developer, I want to learn how to write a protected web API using the Microsoft identity platform for developers.
 ---
 
@@ -332,7 +332,7 @@ For a full version of `ValidateAppRole` for ASP.NET Core, refer to [_RolesRequir
 
 Users can also use roles claims in user assignment patterns, as shown in [How to add app roles in your application and receive them in the token](./howto-add-app-roles-in-apps.md). If the roles are assignable to both, checking roles will let apps sign in as users and users sign in as apps. We recommend that you declare different roles for users and apps to prevent this confusion.
 
-If you have defined app roles with user/group, then roles claim can also be verified in the API along with scopes. The verification logic of the app roles in this scenario remains same as if API is called by the daemon apps since there is no differentiation in the role claim for user/group and application.
+If you have defined app roles with user/group, then roles claim can also be verified in the API along with scopes. The verification logic of the app roles in this scenario remains the same as if the API is called by the daemon apps since there is no differentiation in the role claim for user/group and application.
 
 ### Accepting app-only tokens if the web API should be called only by daemon apps
 

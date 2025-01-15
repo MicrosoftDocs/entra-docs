@@ -6,7 +6,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 12/20/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -44,7 +44,7 @@ Before you begin, ensure that you have the following prerequisite.
 
 ## Use Microsoft Entra Connect
 
-If you're using pass-through authentication with Microsoft Entra Connect and you have it set to **Do not configure**, you can disable the setting. 
+If you're using pass-through authentication with Microsoft Entra Connect, and it's set to **Do not configure**, you can disable the setting. 
 
 >[!NOTE]
 >If you already have password hash synchronization enabled, disabling pass-through authentication will result in a tenant fallback to password hash synchronization.

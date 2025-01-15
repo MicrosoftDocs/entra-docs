@@ -1,6 +1,6 @@
 ---
-author: barclayn
-ms.author: barclayn
+author: rwike77
+ms.author: ryanwi
 ms.date: 06/05/2024
 ms.topic: include
 ms.service: entra-id

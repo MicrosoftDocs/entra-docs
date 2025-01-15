@@ -6,7 +6,7 @@ ms.service: entra-id
 ms.subservice: conditional-access
 
 ms.topic: conceptual
-ms.date: 07/18/2023
+ms.date: 08/25/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -31,10 +31,10 @@ There are multiple scenarios that organizations can now enable using filter for 
       - Policy 1: All users with an administrator role, accessing the Windows Azure Service Management API cloud app, and for Access controls, Grant access, but require multifactor authentication and require device to be marked as compliant.
       - Policy 2: All users with an administrator, accessing the Windows Azure Service Management API cloud app, excluding a filter for devices using rule expression device.extensionAttribute1 equals SAW and for Access controls, Block. Learn how to [update extensionAttributes on a Microsoft Entra device object](/graph/api/device-update?view=graph-rest-1.0&tabs=http&preserve-view=true).
 - **Block access to organization resources from devices running an unsupported Operating System**. For this example, lets say you want to block access to resources from Windows OS version older than Windows 10. For this scenario, organizations would create the following Conditional Access policy:
-   - All users, accessing all cloud apps, excluding a filter for devices using rule expression device.operatingSystem equals Windows and device.operatingSystemVersion startsWith "10.0" and for Access controls, Block.
+   - All users, accessing all resources, excluding a filter for devices using rule expression device.operatingSystem equals Windows and device.operatingSystemVersion startsWith "10.0" and for Access controls, Block.
 - **Do not require multifactor authentication for specific accounts on specific devices**. For this example, lets say you want to not require multifactor authentication when using service accounts on specific devices like Teams Phones or Surface Hub devices. For this scenario, organizations would create the following two Conditional Access policies:
-   - Policy 1: All users excluding service accounts, accessing all cloud apps, and for Access controls, Grant access, but require multifactor authentication.
-   - Policy 2: Select users and groups and include group that contains service accounts only, accessing all cloud apps, excluding a filter for devices using rule expression device.extensionAttribute2 not equals TeamsPhoneDevice and for Access controls, Block.
+   - Policy 1: All users excluding service accounts, accessing all resources, and for Access controls, Grant access, but require multifactor authentication.
+   - Policy 2: Select users and groups and include group that contains service accounts only, accessing all resources, excluding a filter for devices using rule expression device.extensionAttribute2 not equals TeamsPhoneDevice and for Access controls, Block.
 
 > [!NOTE] 
 > Microsoft Entra ID uses device authentication to evaluate device filter rules. For a device that is unregistered with Microsoft Entra ID, all device properties are considered as null values and the device attributes cannot be determined since the device does not exist in the directory. The best way to target policies for unregistered devices is by using the negative operator since the configured filter rule would apply. If you were to use a positive operator, the filter rule would only apply when a device exists in the directory and the configured rule matches the attribute on the device. 
@@ -55,28 +55,28 @@ Policy 1: All users with an administrator role, accessing the Windows Azure Serv
    1. Under **Include**, select **Directory roles**, then all roles with administrator in the name.
    
       > [!WARNING]
-      > Conditional Access policies support built-in roles. Conditional Access policies are not enforced for other role types including [administrative unit-scoped](~/identity/role-based-access-control/admin-units-assign-roles.md) or [custom roles](~/identity/role-based-access-control/custom-create.yml).
+      > Conditional Access policies support built-in roles. Conditional Access policies are not enforced for other role types including [administrative unit-scoped](../role-based-access-control/manage-roles-portal.md or [custom roles](../role-based-access-control/custom-create.md).
 
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts. 
    1. Select **Done**.
-1. Under **Target resources** > **Cloud apps** > **Include** > **Select apps**, choose **Windows Azure Service Management API**, and select **Select**.
+1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include** > **Select resources**, choose **Windows Azure Service Management API**, and select **Select**.
 1. Under **Access controls** > **Grant**, select **Grant access**, **Require multifactor authentication**, and **Require device to be marked as compliant**, then select **Select**.
 1. Confirm your settings and set **Enable policy** to **On**.
 1. Select **Create** to create to enable your policy.
 
 Policy 2: All users with an administrator role, accessing the Windows Azure Service Management API cloud app, excluding a filter for devices using rule expression device.extensionAttribute1 equals SAW and for Access controls, Block.
 
-1. Select **Create new policy**.
+1. Select **New policy**.
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **Directory roles**, then all roles with administrator in the name
    
       > [!WARNING]
-      > Conditional Access policies support built-in roles. Conditional Access policies are not enforced for other role types including [administrative unit-scoped](~/identity/role-based-access-control/admin-units-assign-roles.md) or [custom roles](~/identity/role-based-access-control/custom-create.yml).
+      > Conditional Access policies support built-in roles. Conditional Access policies are not enforced for other role types including [administrative unit-scoped](../role-based-access-control/manage-roles-portal.md) or [custom roles](../role-based-access-control/custom-create.md).
 
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts. 
    1. Select **Done**.
-1. Under **Target resources** > **Cloud apps** > **Include** > **Select apps**, choose **Windows Azure Service Management API**, and select **Select**.
+1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include** > **Select resources**, choose **Windows Azure Service Management API**, and select **Select**.
 1. Under **Conditions**, **Filter for devices**.
    1. Toggle **Configure** to **Yes**.
    1. Set **Devices matching the rule** to **Exclude filtered devices from policy**.
@@ -91,11 +91,11 @@ Policy 2: All users with an administrator role, accessing the Windows Azure Serv
 
 ### Setting attribute values
 
-Setting extension attributes is made possible through the Graph API. For more information about setting device attributes, see the article [Update device](/graph/api/device-update?tabs=http#example-2--write-extensionattributes-on-a-device).
+Setting extension attributes is made possible through the Microsoft Graph API. For more information about setting device attributes, see the article [Update device](/graph/api/device-update?tabs=http#example-2--write-extensionattributes-on-a-device).
 
 ### Filter for devices Graph API
 
-The filter for devices API is available in Microsoft Graph v1.0 endpoint and can be accessed using the endpoint `https://graph.microsoft.com/v1.0/identity/conditionalaccess/policies/`. You can configure a filter for devices when creating a new Conditional Access policy or you can update an existing policy to configure the filter for devices condition. To update an existing policy, you can do a patch call on the Microsoft Graph v1.0 endpoint by appending the policy ID of an existing policy and executing the following request body. The example here shows configuring a filter for devices condition excluding devices that aren't marked as SAW devices. The rule syntax can consist of more than one single expression. To learn more about the syntax, see [dynamic membership rules for groups in Microsoft Entra ID](~/identity/users/groups-dynamic-membership.md). 
+The filter for devices API is available in Microsoft Graph v1.0 endpoint and can be accessed using the endpoint `https://graph.microsoft.com/v1.0/identity/conditionalaccess/policies/`. You can configure a filter for devices when creating a new Conditional Access policy or you can update an existing policy to configure the filter for devices condition. To update an existing policy, you can do a patch call on the Microsoft Graph v1.0 endpoint by appending the policy ID of an existing policy and executing the following request body. The example here shows configuring a filter for devices condition excluding devices that aren't marked as SAW devices. The rule syntax can consist of more than one single expression. To learn more about the syntax, see [rules for dynamic membership groups for groups in Microsoft Entra ID](~/identity/users/groups-dynamic-membership.md). 
 
 ```json
 {
@@ -119,12 +119,12 @@ The following device attributes can be used with the filter for devices conditio
 
 | Supported device attributes | Supported operators | Supported values | Example |
 | --- | --- | --- | --- |
-| deviceId | Equals, NotEquals, In, NotIn | A valid deviceId that is a GUID | (device.deviceid -eq "498c4de7-1aee-4ded-8d5d-000000000000") |
+| deviceId | Equals, NotEquals, In, NotIn | A valid deviceId that is a GUID | (device.deviceid -eq "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb") |
 | displayName | Equals, NotEquals, StartsWith, NotStartsWith, EndsWith, NotEndsWith, Contains, NotContains, In, NotIn | Any string | (device.displayName -contains "ABC") |
 | deviceOwnership | Equals, NotEquals | Supported values are "Personal" for bring your own devices and "Company" for corporate owned devices  | (device.deviceOwnership -eq "Company") |
 | isCompliant | Equals, NotEquals | Supported values are "True" for compliant devices and "False" for non compliant devices  | (device.isCompliant -eq "True") |
 | manufacturer | Equals, NotEquals, StartsWith, NotStartsWith, EndsWith, NotEndsWith, Contains, NotContains, In, NotIn | Any string | (device.manufacturer -startsWith "Microsoft") |
-| mdmAppId | Equals, NotEquals, In, NotIn | A valid MDM application ID | (device.mdmAppId -in ["00001111-aaaa-2222-bbbb-3333cccc4444"] |
+| mdmAppId | Equals, NotEquals, In, NotIn | A valid MDM application ID | (device.mdmAppId -in ["00001111-aaaa-2222-bbbb-3333cccc4444"]) |
 | model | Equals, NotEquals, StartsWith, NotStartsWith, EndsWith, NotEndsWith, Contains, NotContains, In, NotIn | Any string | (device.model -notContains "Surface") |
 | operatingSystem | Equals, NotEquals, StartsWith, NotStartsWith, EndsWith, NotEndsWith, Contains, NotContains, In, NotIn | A valid operating system (like Windows, iOS, or Android) | (device.operatingSystem -eq "Windows") |
 | operatingSystemVersion | Equals, NotEquals, StartsWith, NotStartsWith, EndsWith, NotEndsWith, Contains, NotContains, In, NotIn | A valid operating system version (like 6.1 for Windows 7, 6.2 for Windows 8, or 10.0 for Windows 10 and Windows 11) | (device.operatingSystemVersion -in ["10.0.18363", "10.0.19041", "10.0.19042", "10.0.22000"]) |
@@ -141,13 +141,13 @@ The following device attributes can be used with the filter for devices conditio
 > The `Contains` and the `NotContains` operators work differently depending on attribute types. For string attributes such as `operatingSystem` and `model`, the `Contains` operator indicates whether a specified substring occurs within the attribute. For string collection attributes such as `physicalIds` and `systemLabels`, the `Contains` operator indicates whether a specified string matches one of the whole strings in the collection.
 
 > [!WARNING] 
-> Devices must be Microsoft Intune managed, compliant, or Microsoft Entra hybrid joined for a value to be available in extensionAttributes1-15 at the time of the Conditional Access Policy evaluation.
+> Devices must be Microsoft Intune managed, compliant, or Microsoft Entra hybrid joined for a value to be available in extensionAttributes1-15 at the time of the Conditional Access policy evaluation.
 
 ## Policy behavior with filter for devices
 
 The filter for devices condition in Conditional Access evaluates policy based on device attributes of a registered device in Microsoft Entra ID and hence it's important to understand under what circumstances the policy is applied or not applied. The following table illustrates the behavior when a filter for devices condition is configured. 
 
-| Filter for devices condition | Device registration state | Device filter Applied 
+| Filter for devices condition | Device registration state | Device filter Applied |
 | --- | --- | --- |
 | Include/exclude mode with positive operators (Equals, StartsWith, EndsWith, Contains, In) and use of any attributes | Unregistered device | No |
 | Include/exclude mode with positive operators (Equals, StartsWith, EndsWith, Contains, In) and use of attributes excluding extensionAttributes1-15 | Registered device | Yes, if criteria are met |
@@ -158,7 +158,7 @@ The filter for devices condition in Conditional Access evaluates policy based on
 | Include/exclude mode with negative operators (NotEquals, NotStartsWith, NotEndsWith, NotContains, NotIn) and use of any attributes including extensionAttributes1-15 | Registered device managed by Intune | Yes, if criteria are met |
 | Include/exclude mode with negative operators (NotEquals, NotStartsWith, NotEndsWith, NotContains, NotIn) and use of any attributes including extensionAttributes1-15 | Registered device not managed by Intune | Yes, if criteria are met. When extensionAttributes1-15 are used, the policy applies if device is compliant or Microsoft Entra hybrid joined |
 
-## Next steps
+## Related content
 
 - [Back to school – Using Boolean algebra correctly in complex filters](https://techcommunity.microsoft.com/t5/intune-customer-success/back-to-school-using-boolean-algebra-correctly-in-complex/ba-p/3422765)
 - [Update device Graph API](/graph/api/device-update?tabs=http)

@@ -5,7 +5,7 @@ description: Where to find what Conditional Access policies were applied and why
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: troubleshooting
-ms.date: 01/03/2024
+ms.date: 08/13/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -67,7 +67,7 @@ In this instance, the user would be blocked from accessing any cloud app on thei
 
 This test could be expanded to incorporate other data points to narrow the scope.
 
-## Next steps
+## Related content
 
 * [What is Conditional Access report-only mode?](concept-conditional-access-report-only.md)
 * [What is Microsoft Entra ID Protection?](~/id-protection/overview-identity-protection.md)

@@ -35,8 +35,8 @@ The sample requires the [Microsoft Graph Beta PowerShell module](/powershell/mic
 #
 # Before you begin:
 #    
-#    Required Microsoft Entra role: Global Administrator or Application Administrator or Application Developer 
-#    or appropriate custom permissions as documented https://learn.microsoft.com/en-us/azure/active-directory/roles/custom-enterprise-app-permissions
+#    Required Microsoft Entra role at least Application Administrator or Application Developer 
+#    or appropriate custom permissions as documented https://learn.microsoft.com/azure/active-directory/roles/custom-enterprise-app-permissions
 #
 # 
 
@@ -57,7 +57,7 @@ foreach ($item in $allApps) {
 
  $aadapApp = $null
  
- $aadapAppId =  Get-MgBetaApplication | where-object {$_.AppId -eq $item.AppId}
+ $aadapAppId =  Get-MgBetaApplication -Top 100000 | where-object {$_.AppId -eq $item.AppId}
  $aadapApp = Get-MgBetaApplication -ApplicationId $aadapAppId.Id -ErrorAction SilentlyContinue -select OnPremisesPublishing | select OnPremisesPublishing -expand OnPremisesPublishing 
  
 

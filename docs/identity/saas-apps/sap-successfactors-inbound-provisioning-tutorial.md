@@ -102,8 +102,6 @@ Work with your SuccessFactors admin team or implementation partner to create or 
     > [!div class="mx-imgBorder"]
     > ![Create New Permission Role](./media/sap-successfactors-inbound-provisioning/create-new-permission-role-1.png)
 1. Add a **Role Name** and **Description** for the new permission role. The name and description should indicate that the role is for API usage permissions.
-    > [!div class="mx-imgBorder"]
-    > ![Permission role detail](./media/sap-successfactors-inbound-provisioning/permission-role-detail.png)
 1. Under Permission settings, click **Permission...**, then scroll down the permission list and click **Manage Integration Tools**. Check the box for **Allow Admin to Access to OData API through Basic Authentication**.
     > [!div class="mx-imgBorder"]
     > ![Manage integration tools](./media/sap-successfactors-inbound-provisioning/manage-integration-tools.png)
@@ -143,12 +141,8 @@ Work with your SuccessFactors admin team or implementation partner to create or 
 1. In SuccessFactors Admin Center, search for *Manage Permission Roles*, then select **Manage Permission Roles** from the search results.
 1. From the **Permission Role List**, select the role that you created for API usage permissions.
 1. Under **Grant this role to...**, click the **Add...** button.
-1. Select **Permission Group...** from the drop-down menu, then click **Select...** to open the Groups window to search and select the group created above. 
-    > [!div class="mx-imgBorder"]
-    > ![Add permission group](./media/sap-successfactors-inbound-provisioning/add-permission-group.png)
-1. Review the Permission Role grant to the Permission Group. 
-    > [!div class="mx-imgBorder"]
-    > ![Permission Role and Group detail](./media/sap-successfactors-inbound-provisioning/permission-role-group.png)
+1. Select **Permission Group...** from the drop-down menu, then click **Select...** to open the Groups window to search and select the group created above.
+1. Review the Permission Role grant to the Permission Group.
 1. Click **Save Changes**.
 
 ## Configuring user provisioning from SuccessFactors to Active Directory
@@ -168,15 +162,15 @@ This section provides steps for user account provisioning from SuccessFactors to
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
 
-5. Search for **SuccessFactors to Active Directory User Provisioning**, and add that app from the gallery.
+1. Search for **SuccessFactors to Active Directory User Provisioning**, and add that app from the gallery.
 
-6. After the app is added and the app details screen is shown, select **Provisioning**
+1. After the app is added and the app details screen is shown, select **Provisioning**
 
-7. Change the **Provisioning** **Mode** to **Automatic**
+1. Change the **Provisioning** **Mode** to **Automatic**
 
-8. Click on the information banner displayed to download the Provisioning Agent. 
+1. Click on the information banner displayed to download the Provisioning Agent. 
    >[!div class="mx-imgBorder"]
-   >![Download Agent](./media/workday-inbound-tutorial/pa-download-agent.png "Download Agent Screen")
+   >![Screenshot of provisioning agent informational.](~/includes/governance/media/workday-inbound-tutorial/pa-download-agent.png "Download Agent Screen")
 
 ### Part 2: Install and configure on-premises Provisioning Agent(s)
 
@@ -210,8 +204,7 @@ In this step, we establish connectivity with SuccessFactors and Active Directory
      > The Microsoft Entra provisioning service sends email notification if the provisioning job goes into a [quarantine](~/identity/app-provisioning/application-provisioning-quarantine-status.md) state.
 
    * Click the **Test Connection** button. If the connection test succeeds, click the **Save** button at  the top. If it fails, double-check that the SuccessFactors credentials and the AD credentials configured on the agent setup are valid.
-     >[!div class="mx-imgBorder"]
-     >![Entra admin center](./media/sap-successfactors-inbound-provisioning/sf2ad-provisioning-creds.png)
+
 
    * Once the credentials are saved successfully, the **Mappings** section displays the default mapping **Synchronize SuccessFactors Users to On Premises Active Directory**
 

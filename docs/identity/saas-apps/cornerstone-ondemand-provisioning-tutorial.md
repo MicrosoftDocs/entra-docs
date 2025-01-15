@@ -56,7 +56,7 @@ Before you configure and enable automatic user provisioning, decide which users 
 
 ### Important tips for assigning users to Cornerstone OnDemand
 
-* We recommend that you assign a single Microsoft Entra user to Cornerstone OnDemand to test the automatic user provisioning configuration. You can assign additional users or groups later.
+* We recommend that you assign a single Microsoft Entra user to Cornerstone OnDemand to test the automatic user provisioning configuration. You can assign more users or groups later.
 
 * When you assign a user to Cornerstone OnDemand, select any valid application-specific role, if available, in the assignment dialog box. Users with the **Default Access** role are excluded from provisioning.
 
@@ -81,8 +81,6 @@ To configure automatic user provisioning for Cornerstone OnDemand in Microsoft E
 
 4. Set **Provisioning Mode** to **Automatic**.
 
-	![Cornerstone OnDemand Provisioning Mode](./media/cornerstone-ondemand-provisioning-tutorial/ProvisioningCredentials.png)
-
 5. Under the **Admin Credentials** section, enter the admin username, admin password, and domain of your Cornerstone OnDemand's account:
 
 	* In the **Admin Username** box, fill in the domain or username of the admin account on your Cornerstone OnDemand tenant. An example is contoso\admin.
@@ -102,8 +100,6 @@ To configure automatic user provisioning for Cornerstone OnDemand in Microsoft E
 8. Select **Save**.
 
 9. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Cornerstone OnDemand**.
-
-	![Cornerstone OnDemand synchronization](./media/cornerstone-ondemand-provisioning-tutorial/UserMapping.png)
 
 10. Review the user attributes that are synchronized from Microsoft Entra ID to Cornerstone OnDemand in the **Attribute Mappings** section. The attributes selected as **Matching** properties are used to match the user accounts in Cornerstone OnDemand for update operations. To save any changes, select **Save**.
 
@@ -139,7 +135,7 @@ The Cornerstone OnDemand **Position** attribute expects a value that corresponds
 
 ![Cornerstone OnDemand Provisioning position list](./media/cornerstone-ondemand-provisioning-tutorial/PostionId.png)
 
-## Additional resources
+## More resources
 
 * [Manage user account provisioning for enterprise apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)

@@ -57,8 +57,6 @@ The traffic logs can provide many details, so to start only some columns are vis
 
 Select **Columns** from the top of the page to change the columns that are displayed. 
 
-![Screenshot of the traffic logs with the columns button highlighted.](media/how-to-view-traffic-logs/traffic-logs-columns-button.png)
-
 To filter the traffic logs to a specific detail, select the **Add filter** button and then enter the detail you want to filter by.
 
 For example if you want to look at all the logs from a specific connection:
@@ -100,7 +98,7 @@ You can export the Global Secure Access traffic logs (preview) to an endpoint fo
     * **Stream to an event hub:** Select the appropriate details from the menus that appear.
     * **Send to partner solution:** Select the appropriate details from the menus that appear.
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 

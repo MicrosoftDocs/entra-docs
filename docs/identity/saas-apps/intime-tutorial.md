@@ -82,7 +82,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	In the **Sign on URL** text box, type a URL:
     `https://intime6.intimesoft.com/mytime/login/login.xhtml`
 
-5. Your InTime application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, where as **nameidentifier** is mapped with **user.userprincipalname**. InTime application expects **nameidentifier** to be mapped with **user.mail**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping. Ensure **Name identifier format** is set to **Default** in the Choose name identifier format.
+5. Your InTime application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**. InTime application expects **nameidentifier** to be mapped with **user.mail**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping. Ensure **Name identifier format** is set to **Default** in the Choose name identifier format.
 
 	![image](common/edit-attribute.png)
 

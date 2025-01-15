@@ -1,13 +1,10 @@
 ---
 title: 'Tutorial: Configure V-Client for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to V-Client.
-
 author: thomasakelo
 manager: jeedes
-ms.assetid: 95f8be6d-0b45-4414-84f3-20e260d15da4
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo

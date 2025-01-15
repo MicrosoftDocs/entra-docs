@@ -4,7 +4,7 @@ description: Include file
 author: billmath
 ms.service: entra-id
 ms.topic: Include
-ms.date: 01/23/2022
+ms.date: 09/20/2024
 ms.author: billmath
 ms.custom: Include file
 ---
@@ -38,26 +38,27 @@ The following prerequisites are required to implement provisioning groups to Act
 
  - The provisioning agent must be able to communicate with one or more domain controllers on ports TCP/389 (LDAP) and TCP/3268 (Global Catalog).
      - Required for global catalog lookup to filter out invalid membership references
- - Microsoft Entra Connect with build version [2.2.8.0](../connect/reference-connect-version-history.md#2280) or later
-     - Required to support on-premises user membership synchronized using Microsoft Entra Connect 
+ - Microsoft Entra Connect Sync with build version [2.2.8.0](../connect/reference-connect-version-history.md#2280) or later
+     - Required to support on-premises user membership synchronized using Microsoft Entra Connect Sync
      - Required to synchronize AD:user:objectGUID to AAD:user:onPremisesObjectIdentifier
 
-### Supported groups
-Only the following is supported:
+### Supported groups and scale limits
+The following is supported:
   - Only cloud created [Security groups](../../../fundamentals/concept-learn-about-groups.md#group-types) are supported
-  - These groups can have assigned or dynamic membership.
+  - These groups can have assigned or dynamic membership groups.
   - These groups can only contain on-premises synchronized users and / or additional cloud created security groups.
   - The on-premises user accounts that are synchronized and are members of this cloud created security group, can be from the same domain or cross-domain, but they all must be from the same forest.
   - These groups are written back with the AD groups scope of [universal](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope). Your on-premises environment must support the universal group scope.
   - Groups that are larger than 50,000 members aren't supported.
+  - Tenants that have more than 150,000 objects aren't supported. Meaning, if a tenant has any combination of users and groups that exceeds 150K objects, the tenant isn't supported.
   - Each direct child nested group counts as one member in the referencing group
-  - Reconciliation of groups between Microsoft Entra ID and Active Directory is not supported if the group is manually updated in Active Directory.
+  - Reconciliation of groups between Microsoft Entra ID and Active Directory isn't supported if the group is manually updated in Active Directory.
 
 ### Additional information
   The following is additional information on provisioning groups to Active Directory.
 
 - Groups provisioned to AD using cloud sync can only contain on-premises synchronized users and / or additional cloud created security groups.
-- All of these users must have the onPremisesObjectIdentifier attribute set on their account.
+- These users must have the onPremisesObjectIdentifier attribute set on their account.
 - The onPremisesObjectIdentifier must match a corresponding objectGUID in the target AD environment.
 - An on-premises users objectGUID attribute to a cloud users onPremisesObjectIdentifier attribute can be synchronized using either Microsoft Entra Cloud Sync ([1.1.1370.0](../cloud-sync/reference-version-history.md#1113700)) or Microsoft Entra Connect Sync ([2.2.8.0](../connect/reference-connect-version-history.md#2280))
 - If you're using Microsoft Entra Connect Sync ([2.2.8.0](../connect/reference-connect-version-history.md#2280)) to synchronize users, instead of Microsoft Entra Cloud Sync, and want to use Provisioning to AD, it must be [2.2.8.0](../connect/reference-connect-version-history.md#2280) or later.

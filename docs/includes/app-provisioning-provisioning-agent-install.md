@@ -1,7 +1,7 @@
 ## Install and configure the Microsoft Entra Connect Provisioning Agent
 
 If you have already downloaded the provisioning agent and configured it for another on-premises application, then continue reading in the next section.
- 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+ 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
  2. Browse to **Identity** > **Applications** > **Enterprise applications**.
  3. Search for the **On-premises ECMA app** application, give the app a name, and select **Create** to add it to your tenant.
  4. From the menu, navigate to the **Provisioning** page of your application.

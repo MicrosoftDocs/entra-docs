@@ -1,13 +1,10 @@
 ---
 title: 'Tutorial: Configure WEDO for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to WEDO.
-
 author: thomasakelo
 manager: jeedes
-ms.assetid: 3088D3EB-CED5-45A5-BD7E-E20B1D7C40F6
 ms.service: entra-id
 ms.subservice: saas-apps
-
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo

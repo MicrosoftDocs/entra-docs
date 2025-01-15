@@ -37,10 +37,7 @@ To create a user account in your Microsoft Entra tenant:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**
-1. Select **New user** at the top of the pane and then, select **Create new user**. 
-
-    :::image type="content" source="media/add-application-portal-assign-users/new-user.png" alt-text="Add a new user account to your Microsoft Entra tenant." lightbox="media/add-application-portal-assign-users/new-user.png":::
-    
+1. Select **New user** at the top of the pane and then, select **Create new user**.  
 1. In the **User principal name** field, enter the username of the user account. For example, `contosouser1@contoso.com`. Be sure to change `contoso.com` to the name of your tenant domain.
 1. In the **Display name** field, enter the name of the user of the account. For example, `contosouser1`.
 1. Enter the details required for the user under the **Groups and roles**, **Settings**, and **Job info** sections.

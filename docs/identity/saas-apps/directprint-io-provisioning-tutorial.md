@@ -2,15 +2,14 @@
 title: 'Tutorial: Configure directprint.io for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to directprint.io.
 
-documentationcenter: ''
+
 author: thomasakelo
 manager: jeedes
 
-ms.assetid: 0a79e880-bbdf-45e4-ae1e-2c74aec9f51e
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.tgt_pltfrm: na
+
 ms.topic: tutorial
 ms.date: 03/25/2024
 ms.author: thomasakelo
@@ -52,10 +51,6 @@ The scenario outlined in this tutorial assumes that you already have the followi
 1. log into your [directprint.io account](https://directprint.io/login/).
 1. Navigate to the Microsoft Entra SSO and Provisioning screen.
 1. Save the Tenant URL and secret toke for future reference. You will need it in **Step 5**.
-
-  ![Provisioning Tenant URL and Provision secret](media/directprint/sso-provisioning-screen.png)
-
-<a name='step-3-add-directprintio-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add directprint.io from the Microsoft Entra application gallery
 

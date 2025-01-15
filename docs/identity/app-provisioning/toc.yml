@@ -49,8 +49,6 @@ items:
         href: inbound-provisioning-api-custom-attributes.md
       - name: Quickstart using cURL
         href: inbound-provisioning-api-curl-tutorial.md
-      - name: Quickstart with Postman
-        href: inbound-provisioning-api-postman.md
       - name: Quickstart with Graph Explorer
         href: inbound-provisioning-api-graph-explorer.md
       - name: Quickstart with PowerShell
@@ -95,8 +93,12 @@ items:
         href: skip-out-of-scope-deletions.md
       - name: Manage application unmatched users
         href: application-provisioning-application-unmatched-users.md
-    - name: Provision on-demand
-      href: provision-on-demand.md
+    - name: Provisioning in Microsoft Entra ID
+      items:
+      - name: On-demand provisioning
+        href: provision-on-demand.md
+      - name: Provision custom security attributes (preview)
+        href: provision-custom-security-attributes.md
     - name: Monitor and report on provisioning
       items:
       - name: Monitor provisioning status and performance

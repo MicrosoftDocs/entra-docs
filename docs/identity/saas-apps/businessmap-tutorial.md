@@ -79,10 +79,10 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Basic SAML Configuration** section, if you wish to configure the application in **IDP** initiated mode, perform the following steps:
 
      a. In the **Identifier** text box, type a URL using the following pattern:
-    `https://<subdomain>.Businessmap.com/`
+    `https://<subdomain>.kanbanize.com/`
 
     b. In the **Reply URL** text box, type a URL using the following pattern:
-    `https://<subdomain>.Businessmap.com/saml/acs`
+    `https://<subdomain>.kanbanize.com/saml/acs`
 
 	c. Click **Set additional URLs**.
 
@@ -91,12 +91,12 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type a URL using the following pattern:
-    `https://<subdomain>.Businessmap.com`
+    `https://<subdomain>.kanbanize.com`
 
 	> [!NOTE]
 	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [Businessmap Client support team](mailto:support@businessmap.io) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. Businessmap application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, where as nameidentifier is mapped with **user.userprincipalname**. Businessmap application expects nameidentifier to be mapped with **user.mail**, so you need to edit the attribute mapping by clicking on Edit icon and change the attribute mapping.
+1. Businessmap application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas nameidentifier is mapped with **user.userprincipalname**. Businessmap application expects nameidentifier to be mapped with **user.mail**, so you need to edit the attribute mapping by clicking on Edit icon and change the attribute mapping.
 
 	![image](common/edit-attribute.png)
 

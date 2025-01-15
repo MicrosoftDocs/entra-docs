@@ -8,7 +8,7 @@ manager: mwongerapk
 ms.author: henrymbugua
 ms.service: entra-external-id
 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: tutorial
 ms.date: 03/20/2024
 ms.custom: developer
@@ -103,7 +103,7 @@ private fun displayAccount(accountState: AccountState) {
     }
 }
 ``` 
- 
+
 ## Next steps
 
 - [Tutorial: Self-service password reset](tutorial-native-authentication-android-self-service-password-reset.md)
