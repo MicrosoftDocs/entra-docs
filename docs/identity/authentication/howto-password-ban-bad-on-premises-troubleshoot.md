@@ -14,7 +14,7 @@ ms.reviewer: jsimmons
 ---
 # Troubleshoot: On-premises Microsoft Entra Password Protection
 
-After the deployment of Microsoft Entra Password Protection, troubleshooting may be required. This artic le goes into detail to help you understand some common troubleshooting steps.
+After the deployment of Microsoft Entra Password Protection, troubleshooting may be required. This article goes into detail to help you understand some common troubleshooting steps.
 
 ## The DC agent can't locate a proxy in the directory
 
