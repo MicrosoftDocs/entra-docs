@@ -54,27 +54,27 @@ The following table is a list of events that are logged with the new auditing fe
 
 :::image type="content" source="media/admin-audit-logging/logging-2.png" alt-text="Screenshot of Event Viewer." lightbox="media/admin-audit-logging/logging-2.png":::
 
-|EventID|EventName|
-|-----|-----|
-|2503|Add/Update/DeleteDirectories|
-|2504|EnableExpresssettingsmode| 
-|2505|Enable/DisablealldomainsandOUforsync| 
-|2506|Enable/DisablePHSSync| 
-|2507|Enable/DisableSyncstartafterinstall| 
-|2508|CreateADDSaccount| 
-|2509|UseExistingADDSaccount| 
-|2510|Create/Update/Deletecustominboundsyncrule| 
-|2511|Enable/DisableDomainbasedfiltering|
-|2512|Enable/DisableOUbasedfiltering| 
-|2513|UserSign-Inmethodchanged|
-|2514|ConfigurenewADFSfarm| 
-|2515|Enable/DisableSinglesign-on| 
-|2516|Installwebapplicationproxyserver|
-|2517|SetPermissions| 
-|2518|ChangeADDSConnectorPasswordcredential| 
-|2519|ReinitializeEntraIDConnectoraccountpassword| 
-|2520|InstallADFSServer| 
-|2521|SetADFSServiceAccount| 
+|EventID|EventName|Description|
+|-----|-----|-----|
+|2503|Add/Update/Delete Directories|Provides the name of the affected directory|
+|2504|Enable Express settings mode| This event will be logged when "Express Setup" is selected by the administrator|
+|2505|Enable/Disable domains and OU for sync| Shows a list of all domains connected to Connect Sync|
+|2506|Enable/Disable PHS Sync| Shows Password Hash Sync is enabled or disabled|
+|2507|Enable/Disable Sync start after install| Event is logged when sync is enabled or disabled when the installation is done|
+|2508|Create ADDS account| Shows the created account needed to connect to the new directory added|
+|2509|Use Existing ADDS account| Shows name of the account used to connect to the directory|
+|2510|Create/Update/Delete custom sync rule| Shows the name of the sync rule that has changed along with information on what changed|
+|2511|Enable/Disable Domain based filtering|Shows domain filtering is selected and lists selected domains|
+|2512|Enable/Disable OU based filtering| Shows OU based filtering is selected and lists selected OUs |
+|2513|User Sign-In method changed|Shows the old sign in method and the new one |
+|2514|Configure new ADFS farm| Shows the federation service name|
+|2515|Enable/Disable Single sign-on| Shows single sign on change |
+|2516|Install web application proxy server|Shows selected ADFS servers and Domain Admin username|
+|2517|Set Permissions| Shows the specific AD Sync permission changed|
+|2518|Change ADDS Connector credential| Shows ADDS Connector credential changed|
+|2519|Reinitialize Entra ID Connector account password| Shows that the AD Sync service account password was reset|
+|2520|Install ADFS Server| Shows the selected server|
+|2521|Set ADFS Service Account| Specifies if group-managed or domain user. Includes administrator username|
 
 
  ## Next steps
