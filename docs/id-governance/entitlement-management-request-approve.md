@@ -39,6 +39,10 @@ If you don't have the email, you can find the access requests pending your appro
 
 1. On the **Pending** tab, find the request.
 
+
+> [!NOTE]
+> If you dont see an email to approve request, make sure that the access package does not have notifications disabled.
+
 ## View requestor's answers to questions
 
 1. Navigate to the **Approvals** tab in My Access.
