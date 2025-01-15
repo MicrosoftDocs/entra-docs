@@ -59,7 +59,7 @@ To disable Authenticator Lite in the Microsoft Entra admin center, follow these 
 
    <img width="1112" alt="Microsoft Entra admin center Authenticator settings" src="https://user-images.githubusercontent.com/108090297/228603771-52c5933c-f95e-4f19-82db-eda2ba640b94.png">
 
-1. On the **Configure** tab, for **Microsoft Authenticator on companion applications**, change **Status** to **Disabled**, and select **Save**.
+1. On the **Configure** tab, for **Microsoft Authenticator on companion applications**, change **Status** to **Disabled**, and then select **Save**.
 
    <img width="664" alt="Authenticator Lite configuration settings" src="https://user-images.githubusercontent.com/108090297/228603364-53f2581f-a4e0-42ee-8016-79b23e5eff6c.png">
 
@@ -144,7 +144,7 @@ If a user has registered Authenticator Lite, the user's registered authenticatio
 
 ## Push notifications in Authenticator Lite
 
-Push notifications sent by Authenticator Lite aren't configurable and don't depend on the Authenticator feature settings. Authenticator Lite doesn't support passwordless authentication mode. The settings for features included in the Authenticator Lite experience are listed in the following table. Every authentication includes a number matching prompt and doesn't include app and location context, regardless of Authenticator feature settings.
+Push notifications sent by Authenticator Lite aren't configurable and don't depend on the Authenticator feature settings. Authenticator Lite doesn't support passwordless authentication mode. The following table lists the settings for features included in the Authenticator Lite experience. Every authentication includes a number matching prompt and doesn't include app and location context, regardless of Authenticator feature settings.
 
 | Authenticator feature    | Authenticator Lite experience|
 |:------------------------:|:----------------------------:|
@@ -164,7 +164,7 @@ To learn more about verification notifications, see [Microsoft Authenticator aut
 
 ## Common questions
 
-The following section lists common questions.
+The following sections list common questions.
 
 ### Does Authenticator Lite work as a broker app?
 
