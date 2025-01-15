@@ -16,20 +16,20 @@ In January 2025, we released a new version [(2.4.129.0)](reference-connect-versi
 
 
 ## How to manually disable auditing of administrator events
-To enable auditing of administrator events, use the following steps
+To disable auditing of administrator events, use the following steps:
 
 1. Open the Registry Editor - Press Win + R to open the run dialog. 
 2. Type **regedit** and press Enter to launch the Registry Editor. Confirm any security prompts to proceed. 
 3. Navigate to the following path: **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Azure AD Connect**. 
 4. Modify or Create the **AuditEventLogging** Value by right-click on the Azure AD Connect key, select New -> **DWORD (32-bit)** Value if the AuditEventLogging value doesn't already exist. 
 5. Name the new DWORD as **AuditEventLogging**. 
-6. Double-clicking on the **AuditEventLogging** entry and enter **0** to disable the audit event logging. Enter 0 to re-enable it. 
+6. Double-clicking on the **AuditEventLogging** entry and enter **0** to disable the audit event logging. Enter 1 to re-enable it. 
 
 :::image type="content" source="media/admin-audit-logging/logging-1.png" alt-text="Screenshot of the new AuditEventLogging registry key." lightbox="media/admin-audit-logging/logging-1.png":::
 
 
 ## How to use PowerShell to disable auditing of administrator events
-You can also use PowerShell to enable audit logging of administrator events. Use the following script.
+You can also use PowerShell to disable audit logging of administrator events. Use the following script.
 
  ```powershell
  #Declare variables
@@ -63,7 +63,7 @@ The following table is a list of events that are logged with the new auditing fe
 |2512|Enable/Disable OU based filtering| Shows OU based filtering is selected and lists selected OUs |
 |2513|User Sign-In method changed|Shows the old sign in method and the new one |
 |2514|Configure new ADFS farm| Shows the federation service name|
-|2515|Enable/Disable Single sign-on| Shows single sign on change |
+|2515|Enable/Disable Single sign-on| Shows single sign-on change |
 |2516|Install web application proxy server|Shows selected ADFS servers and Domain Admin username|
 |2517|Set Permissions| Shows the specific AD Sync permission changed|
 |2518|Change ADDS Connector credential| Shows ADDS Connector credential changed|

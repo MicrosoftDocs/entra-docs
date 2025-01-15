@@ -69,7 +69,7 @@ Required permissions | For permissions required to apply an update, see [Microso
 |[2.4.18.0](#24180)|9 Oct 2025 (12 months after release of 2.4.21.0)|
 |[2.4.21.0](#24210)|15 Nov 2025 (12 months after release of 2.4.27.0)|
 |[2.4.27.0](#24270)|15 Jan 2026 (12 months after release of 2.4.129.0)|
-|[2.4.129.0](#241290)|TBD|
+|[2.4.129.0](#241290)|Placeholder|
 
 **All other versions are not supported**
 
@@ -120,7 +120,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
  - SQL related drivers shipped with Microsoft Entra Connect have been updated to OLE DB [version 18.7.4](/sql/connect/oledb/release-notes-for-oledb-driver-for-sql-server?view=sql-server-ver16#1874)
 
 ### Bug fixes
-- Fixed an issues with Privileged Identity Management (PIM), Microsoft Entra roles, and PIM for Groups to verify that PIM is enabled and that the user has the Hybrid Identity Administrator role enabled.
+- Fixed an issue with Privileged Identity Management (PIM), Microsoft Entra roles, and PIM for Groups to verify that PIM is enabled and that the user has the Hybrid Identity Administrator role enabled.
 - Fixed an issue where AD FS commands were failing when Connect Sync is installed on a non-ADFS server. 
 
 
@@ -335,7 +335,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 ### Bug fixes
  - We fixed a bug that prevented localDB upgrades in some Locales.
  - We fixed a bug to prevent database corruption when using localDB.
- - We added timeout and size limit errors to the connection log.
+ - We added time out and size limit errors to the connection log.
  - We fixed a bug where, if child domain has a user with same name as parent domain user that happens to be an enterprise admin, the group membership failed.
  - We updated the expressions used in the "In from Microsoft Entra ID - Group SOAInAAD" rule to limit the description attribute to 448 characters.
  - We made a change to set extended rights for "Unexpire Password" for Password Reset.
