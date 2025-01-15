@@ -383,4 +383,4 @@ To enable the application name or geographic location in the Microsoft Entra adm
 
 ## Related content
 
-[Authentication methods in Microsoft Entra ID - Microsoft Authenticator app](concept-authentication-authenticator-app.md)
+- [Authentication methods in Microsoft Entra ID - Microsoft Authenticator app](concept-authentication-authenticator-app.md)
