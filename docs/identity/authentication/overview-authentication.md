@@ -63,7 +63,7 @@ If you only use a password to authenticate a user, it leaves an insecure vector 
 Microsoft Entra multifactor authentication works by requiring two or more of the following authentication methods:
 
 * Something you know, typically a password.
-* Something you have, such as a trusted device that is not easily duplicated, like a phone or hardware key.
+* Something you have, such as a trusted device that isn't easily duplicated, like a phone or hardware key.
 * Something you are - biometrics like a fingerprint or face scan.
 
 Users can register themselves for both self-service password reset and Microsoft Entra multifactor authentication in one step to simplify the on-boarding experience. Administrators can define what forms of secondary authentication can be used. Microsoft Entra multifactor authentication can also be required when users perform a self-service password reset to further secure that process.
