@@ -19,7 +19,7 @@ After deployment, many organizations want to know how or if self-service passwor
 The following questions can be answered by the reports that exist in the [Microsoft Entra admin center](https://entra.microsoft.com):
 
 > [!NOTE]
-> You must opt-in for this data to be gathered on behalf of your organization. To opt in, you must visit the **Reporting** tab or the audit logs at least once. Until then, data isn't collected for your organization.
+> You must opt-in for this data to be gathered on behalf of your organization. To optin, you must visit the **Reporting** tab or the audit logs at least once. Until then, data isn't collected for your organization.
 >
 
 * How many people have registered for password reset?
