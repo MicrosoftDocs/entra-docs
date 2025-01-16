@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: quickstart
-ms.date: 12/02/2024
+ms.date: 01/15/2025
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, mode-other
