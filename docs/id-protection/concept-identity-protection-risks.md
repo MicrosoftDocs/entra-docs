@@ -5,7 +5,7 @@ description: Learn about risk detections, risk levels, and how they map to risk 
 ms.service: entra-id-protection
 
 ms.topic: conceptual
-ms.date: 01/15/2025
+ms.date: 01/16/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -269,7 +269,7 @@ User accounts in a disabled state can be re-enabled. If the credentials of a dis
 
 ### I tried to sort the Risk detections report using the *Detection time* column, but it's not working
 
-Sorting by *Detection time* in the Risk detections report might not always give the correct result because of a known technical constraint. To sort by *Detection time*, select **Download** to export the data as a CSV file and sort accordingly.
+Sorting by *Detection time* in the Risk detections report might not always give the correct result because of a known technical constraint for tenants with over 10,000,000 detections over a 90-day period. To sort by *Detection time*, select **Download** to export the data as a CSV file and sort accordingly.
 
 ### Common leaked credentials questions
 
