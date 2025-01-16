@@ -263,9 +263,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 1. Under **Account Name/ Account Password**, Specify the APM Delegation Account and Password. 
 1. Specify the Domain Controller IP in the **KDC** Field. 
 1. Click **Save & Next**.
-
-    ![Screenshot that shows the "Single Sign-On Settings" with text boxes highlighted and the "Save & Next" button selected.](./media/kerbf5-tutorial/configure-09.png)   
-
 1. For purposes of this guidance, we will skip endpoint checks.  Refer to F5 documentation for details.  On screen select **Save & Next**.
 
 1. Accept the defaults and click **Save & Next**. Consult F5 documentation for details regarding SAML session management settings.
