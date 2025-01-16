@@ -9,6 +9,7 @@ ms.date: 01/13/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access 
 ms.reviewer: katabish
+ai-usage: ai-assisted
 ---
 
 # How to access Azure SQL with a service endpoint using Microsoft Entra Private Access
