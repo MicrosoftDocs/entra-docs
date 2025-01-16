@@ -76,6 +76,9 @@ Email notification settings can be configured for each scenario in the Microsoft
 
 Members of the selected group will receive an email notification the next time an alert is triggered for the scenario. Repeat this process for the other scenarios.
 
+> [!NOTE]
+> If the selected group has other groups added as members of that group, the notifications are sent to only the top three groups in the hierarchy.
+
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
 To configure alert notifications, you need the ID of the Microsoft Entra group you want to receive the alerts AND the scenario alert ID. 

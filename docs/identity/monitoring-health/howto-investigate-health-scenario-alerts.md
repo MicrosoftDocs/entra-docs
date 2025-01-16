@@ -95,7 +95,27 @@ With the Microsoft Graph APIs, you can view the metrics that make up the health 
 
 #### View the signals
 
-1. In Microsoft Graph, add the following query to retrieve all alerts for your tenant.
+1. Sign in to [Microsoft Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer) as at least a [Helpdesk Administrator](../role-based-access-control/permissions-reference.md#helpdesk-administrator) and consent to the appropriate permissions.
+1. Select **GET** as the HTTP method from the dropdown and set the API version to **beta**.
+1. Run the following query to retrieve the multifactor authentication (MFA) sign-in success metrics during a specific interval:
+
+  ```http
+    GET https://graph.microsoft.com/beta/reports/serviceActivity/getMetricsForMfaSignInFailure(inclusiveIntervalStartDateTime=2023-01-01T00:00:00Z,exclusiveIntervalEndDateTime=2023-01-01T00:20:00Z,aggregationIntervalInMinutes=10)
+    ```
+
+<!-- Need to run Graph query to test and provide a sample response with realistic data -->
+
+
+#### Investigate the alerts
+
+When you receive an alert, or if you see a change to a pattern you suspect might need investigation, you typically need to investigate the following data sets:
+
+- **Alert impact**: The portion of the response after `impacts` quantifies the scope and summarizes impacted resources. These details include the `impactCount` so you can determine how widespread the issue is.  
+- **Alert signals**: The data stream, or health signal, that caused the alert. A query is provided in the response for further investigation.
+- **Sign-in logs**: A query is provided in the response for further investigation into the sign-in logs where the health signal was generated. The sign-in logs provide detailed event metadata that might be used to identify a problem's root cause.
+- **Scenario-specific resources**: Depending on the scenario, you might need to investigate Intune compliance policies or Conditional Access policies. In many cases, a link to related documentation is provided in the response.
+
+1. Run the following query to retrieve all alerts for your tenant.
 
     ```http
     GET https://graph.microsoft.com/beta/reports/healthMonitoring/alerts
@@ -103,7 +123,7 @@ With the Microsoft Graph APIs, you can view the metrics that make up the health 
 
 1. Locate and save the `id` of the alert you want to investigate.
 
-1. Add the following query, using `id` as the `alertId`.
+1. Run the following query, using `id` as the `alertId`.
 
     ```http
     GET https://graph.microsoft.com/beta/reports/healthMonitoring/alerts/{alertId}
@@ -113,7 +133,7 @@ For sample requests and responses, see [Health monitoring List alert objects](/g
 - The `supportingData` portion includes the full query used to generate the alert.
 - The results of the query include everything identified by the anomaly detection service, but there might be results that aren't directly related to the alert.
 
-Running these queries provides the number of times that service activity occurred during a specific time frame. For example, to see the number of successful multifactor authentication (MFA) sign-ins, you'd run the following query:
+Running these queries provides the number of times that service activity occurred during a specific time frame. For example, to see the number of successful MFA sign-ins, you'd run the following query:
 
 ```http
 GET https://graph.microsoft.com/beta/reports/serviceActivity/getMetricsForMfaSignInSuccess(inclusiveIntervalStartDateTime=2023-01-01T00:00:00Z,exclusiveIntervalEndDateTime=2023-01-01T00:20:00Z,aggregationIntervalInMinutes=10)
@@ -144,14 +164,8 @@ Content-Type: application/json
 }
 ```
 
-#### Investigate the alerts
+<!-- Need to add better examples of an alert and the data needed to actually investigate. -->
 
-When you receive an alert, or if you see a change to a pattern you suspect might need investigation, you typically need to investigate the following data sets:
-
-- **Alert impact**: The portion of the response after `impacts` quantifies the scope and summarizes impacted resources. These details include the `impactCount` so you can determine how widespread the issue is.  
-- **Alert signals**: The data stream, or health signal, that caused the alert. A query is provided in the response for further investigation.
-- **Sign-in logs**: A query is provided in the response for further investigation into the sign-in logs where the health signal was generated. The sign-in logs provide detailed event metadata that might be used to identify a problem's root cause.
-- **Scenario-specific resources**: Depending on the scenario, you might need to investigate Intune compliance policies or Conditional Access policies. In many cases, a link to related documentation is provided in the response.
 
 ---
 
