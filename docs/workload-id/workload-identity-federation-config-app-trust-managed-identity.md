@@ -101,7 +101,7 @@ In this section, you'll configure a federated identity credential on an existing
 Open a terminal in your preferred IDE and run the following command to create a federated identity credential on your app. Replace the GUID with the Object (principal) ID of the managed identity.
 
 ```CLI
-az ad app federated-credential create --id 00001111-aaaa-2222-bbbb-3333cccc4444 --parameters credential.json
+az ad app federated-credential create --id 11112222-bbbb-3333-cccc-4444dddd5555 --parameters credential.json
 ```
 
 The `id` parameter specifies the identifier URI, application ID, or object ID of the application. The `parameters` parameter specifies the parameters, in JSON format, for creating the federated identity credential. You can refer to the following example for the contents of *credential.json*.
