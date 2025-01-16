@@ -33,7 +33,7 @@ When examining the public or confidential nature of a given client, we're evalua
 
 ## When should you enable allow a public client flow in your app registration?
 
-After determining the type of client application you're building, you can decide whether to enable the public client flow in your app registration. By default, allow public client flow in your app registration should be disabled unless you or your developer are building a public client application and using the following OAuth authorization protocol or features:
+After determining the type of client application you're building, you can decide whether to enable the public client flow in your app registration. By default, allow public client flow in your app registration should be disabled unless you or your developer are building a [public client application](./msal-client-applications#public-client-and-confidential-client-authorization) and using the following OAuth authorization protocol or features:
 
 | OAuth Authorization protocol/Feature | Type of public client application | Examples/notes |
 | --- | --- | --- |
