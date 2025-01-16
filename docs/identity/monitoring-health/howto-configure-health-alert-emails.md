@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 12/17/2024
+ms.date: 01/16/2025
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -73,6 +73,8 @@ Email notification settings can be configured for each scenario in the Microsoft
     - The group is updated in the **Group alert notifications** section of the scenario page.
 
     ![Screenshot of the group selection panel.](media/howto-configure-health-alert-emails/select-email-notification-group.png)
+
+Members of the selected group will receive an email notification the next time an alert is triggered for the scenario. Repeat this process for the other scenarios.
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 

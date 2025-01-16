@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 01/09/2025
+ms.date: 01/16/2025
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -56,17 +56,12 @@ The signals and alerts are available in the Microsoft Entra Health area of the M
 
 1. Select a scenario from the list. The page opens to the scenarios with active alerts, but if you want to view the signals for a different scenario, select the **All scenarios** filter button.
 
-1. Select the active alert you want to investigate.
-    - Active alerts appear in a table.
-    - If necessary, adjust the filters to see a different date range or status.  
+1. View the signal in the **View data graph** section. You might need to expand this section if you're viewing a scenario with an active alert.
+    - The date range can be changed to view the last 24 hours, seven days, or previous month.
+    - Hover your mouse over the graph to see the data points for a particular point in time.
+    - The value at the bottom of the graph is the total count for that scenario for the selected time frame.
 
-1. 
-
-
-
-
-
-  ![Screenshot of the sign-ins requiring multifactor authenitcation (MFA) scenario.](media/howto-investigate-health-scenario-alerts/scenario-monitoring-signal-mfa.png)
+:::image type="content" source="media/howto-investigate-health-scenario-alerts/scenario-health-mfa-signal.png" alt-text="Screenshot of the sign-ins requiring multifactor authentication (MFA) scenario." lightbox="media/howto-investigate-health-scenario-alerts/scenario-health-mfa-signal-expanded.png":::
 
 #### Investigate the alerts
 
@@ -77,21 +72,22 @@ When you receive an alert, you typically need to investigate the following data 
 - **Sign-in logs**: A query is provided in the response for further investigation into the sign-in logs where the health signal was generated. The sign-in logs provide detailed event metadata that might be used to identify a problem's root cause.
 - **Scenario-specific resources**: Depending on the scenario, you might need to investigate Intune compliance policies or Conditional Access policies. In many cases, a link to related documentation is provided in the response.
 
-To view these details: 
+To view these details from the **Health monitoring** landing page: 
 
-1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Helpdesk Administrator](../role-based-access-control/permissions-reference.md#helpdesk-administrator).
+1. Select the active alert you want to investigate.
 
-1. Browse to **Identity** > **Monitoring and health** > **Health**.
+    ![Screenshot of the Health monitoring page with active alert scenarios.](media/howto-investigate-health-scenario-alerts/scenario-health-active-alert.png)
 
-1. Select the **Health Monitoring** tab and select a scenario with an active alert.
+1. From the **Affected entities** section of the selected scenario, select **View** for the type of affected entity you want to investigate.
+    - Possible entities include users, groups, applications, devices, and service principals.
+    
+    :::image type="content" source="media/howto-investigate-health-scenario-alerts/scenario-health-active-alert-page.png" alt-text="Screenshot of the active alert page with the affected entities highlighted." lightbox="media/howto-investigate-health-scenario-alerts/scenario-health-active-alert-page-expanded.png":::
 
-      ![Screenshot of the Health monitoring page with active alert scenarios.](media/howto-investigate-health-scenario-alerts/health-alerts-sample1.png)
+1. From the details that appear in the panel that opens, select an entity to explore further.
 
-1. From the **Affected entities** section of the selected scenario, select the **View** link to see either a full list or a subset of the affected entities.
+1. After investigating and potentially resolving the root cause of the issue, you can dismiss the alert. From the active alert page, select the checkbox for that alert then select the **Mark alert as** menu and select **Dismissed**.
 
-      ![Screenshot of the impacted resources on an alert.](media/howto-investigate-health-scenario-alerts/health-alerts-sample2.png)
-
-1. Review the **Metrics** section to see a visualization of the health signals that caused the alert.
+    ![Screenshot of the alert page with the Mark alert as menu highlighted.](media/howto-investigate-health-scenario-alerts/mark-alert-as.png)
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
@@ -159,11 +155,6 @@ When you receive an alert, or if you see a change to a pattern you suspect might
 
 ---
 
-## Analyze the possible root causes
-
-After gathering all the data related to the scenario, you need to consider possible root causes and research potential solutions. Think about the seriousness of the alert. Are only a handful of users affected, or is it a widespread issue? Did a recent policy change have unintended consequences?
-
-We recommend looking at the alerts and health monitoring data regularly to identify trends and potential issues before they become widespread problems. 
 
 ## Related content
 
