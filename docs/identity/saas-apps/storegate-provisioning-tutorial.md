@@ -60,8 +60,6 @@ Before configuring Storegate for automatic user provisioning with Microsoft Entr
 
 3. Copy the **Tenant URL** and **Token**. These values will be entered in the **Tenant URL** and **Secret Token** fields respectively in the Provisioning tab of your Storegate application. 
 
-	![Storegate Create Token](media/storegate-provisioning-tutorial/token.png)
-
 ## Add Storegate from the gallery
 
 To configure Storegate for automatic user provisioning with Microsoft Entra ID, you need to add Storegate from the Microsoft Entra application gallery to your list of managed SaaS applications.
