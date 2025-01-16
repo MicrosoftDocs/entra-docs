@@ -217,6 +217,10 @@ Under this registry key, Microsoft Entra Connect checks to see if the following 
 - [DefaultLaunchPermission](/windows/win32/com/defaultlaunchpermission)
 
 ## Prerequisites for federation installation and configuration
+
+>[!IMPORTANT]
+>Please note that if you are configuring federation with AD FS or PingFederate you will need either an account with the global administrator role or an account that has the [hybrid identity administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) and [domain name administrator](../../role-based-access-control/permissions-reference.md#domain-name-administrator) roles. The configurations related to federation require permissions that the [hybrid identity administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) currently doesn't have but the [domain name administrator](../../role-based-access-control/permissions-reference.md#domain-name-administrator) role does.
+
 ### Windows Remote Management
 When you use Microsoft Entra Connect to deploy AD FS or the Web Application Proxy (WAP), check these requirements:
 
@@ -232,6 +236,8 @@ When you use Microsoft Entra Connect to deploy AD FS or the Web Application Prox
       * Add a DMZ WAP host to a machine pool. In the server manager, select **Manage** > **Add Servers**, and then use the **DNS** tab.
       * On the **Server Manager All Servers** tab, right-click the WAP server, and select **Manage As**. Enter local (not domain) credentials for the WAP machine.
       * To validate remote PowerShell connectivity, on the **Server Manager All Servers** tab, right-click the WAP server and select **Windows PowerShell**. A remote PowerShell session should open to ensure remote PowerShell sessions can be established.
+
+
 
 ### TLS/SSL certificate requirements
 * We recommend that you use the same TLS/SSL certificate across all nodes of your AD FS farm and all Web Application Proxy servers.
