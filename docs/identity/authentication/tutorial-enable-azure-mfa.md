@@ -5,7 +5,7 @@ description: In this tutorial, you learn how to enable Microsoft Entra multifact
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
-ms.date: 05/31/2024
+ms.date: 01/16/2025
 
 ms.author: justinha
 author: justinha
