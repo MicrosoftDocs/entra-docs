@@ -1,11 +1,11 @@
 ---
 title: What are risks in Microsoft Entra ID Protection
-description: Explaining risk detections in Microsoft Entra ID Protection
+description: Learn about risk detections, risk levels, and how they map to risk event types in Microsoft Entra ID Protection
 
 ms.service: entra-id-protection
 
 ms.topic: conceptual
-ms.date: 08/21/2024
+ms.date: 01/15/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -30,13 +30,13 @@ Many detections can fire at more than one of our risk levels depending on the nu
 This risk level is important when deciding which detections to [prioritize, investigate, and remediate](howto-identity-protection-investigate-risk.md#investigation-and-risk-remediation-framework). They also play a key role in [configuring risk based Conditional Access policies](howto-identity-protection-configure-risk-policies.md#choosing-acceptable-risk-levels) as each policy can be set to trigger for low, medium, high, or no risk detected. Based on the risk tolerance of your organization, you can create policies that require MFA or password reset when ID Protection detects a certain risk level for one of your users. These policies can guide the user to self-remediate to resolve the risk.
 
 > [!IMPORTANT] 
-> All "low" risk level detections and users will persist in the product for 6 months, after which they will be automatically aged out to provide a cleaner investigation experience. Medium and high risk levels will persist until remediated or dismissed. 
+> All "low" risk level detections and users will persist in the product for six months, after which they'll be automatically aged out to provide a cleaner investigation experience. Medium and high risk levels will persist until remediated or dismissed. 
 > 
 > Based on the risk tolerance of your organization, you can create policies that require MFA or password reset when ID Protection detects a certain risk level. These policies might guide the user to self-remediate and resolve the risk or block depending on your tolerances. 
 
 ## Real-time and offline detections
 
-ID Protection utilizes techniques to increase the precision of user and sign-in risk detections by calculating some risks in real-time or offline after authentication. Detecting risk in real-time at sign-in gives the advantage of identifying risk early so that customers can quickly investigate the potential compromise. On detections that calculate risk offline, they can provide more insight as to how the threat actor gained access to the account and the impact on the legitimate user. Some detections can be triggered both offline and during sign-in, which increases confidence in being precise on the compromise. 
+ID Protection utilizes techniques to increase the precision of user and sign-in risk detections by calculating some risks in real-time or offline after authentication. Detecting risk in real-time at sign-in gives the advantage of identifying risk early so that customers can quickly investigate the potential compromise. On detections that calculate risk offline, they can provide more insight as to how the threat actor gained access to the account and the effect on the legitimate user. Some detections can be triggered both offline and during sign-in, which increases confidence in being precise on the compromise. 
 
 Detections triggered in real-time take 5-10 minutes to surface details in the reports. Offline detections take up to 48 hours to surface in the reports, as it takes time to evaluate properties of the potential risk. 
 
@@ -48,7 +48,7 @@ Detections triggered in real-time take 5-10 minutes to surface details in the re
 >    - Completing multifactor authentication
 >    - Secure password change
 > 
-> Our system will dismiss the risk state and a risk detail of **AI confirmed sign-in safe** will show and no longer contribute to the user’s overall risk.
+> Our system dismisses the risk state and a risk detail of **AI confirmed sign-in safe** appears, so the risk state no longer contributes to the user’s overall risk.
 
 On risk-detailed data, **Time Detection** records the exact moment a risk is identified during a user's sign-in, which allows for real-time risk assessment and immediate policy application to safeguard the user and organization. **Detection last updated** shows the latest update to a risk detection, which could be due to new information, risk level changes, or administrative actions, and ensures up-to-date risk management.
 
@@ -89,7 +89,7 @@ These fields are essential for real-time monitoring, threat response, and mainta
 | [Suspicious sending patterns](#suspicious-sending-patterns) | Offline | Premium | suspiciousSendingPatterns |
 | [User reported suspicious activity](#user-reported-suspicious-activity) | Offline | Premium | userReportedSuspiciousActivity |
 
-For more information on workload identity risk detections go to [Securing workload identities](/entra/id-protection/concept-workload-identity-risk).
+For more information on workload identity risk detections, see [Securing workload identities](/entra/id-protection/concept-workload-identity-risk).
 
 ## Premium detections 
 
@@ -139,7 +139,7 @@ Calculated offline. This detection is discovered using information provided by�
 
 #### Password spray 
 
-Calculated in real-time or offline. A password spray attack is where multiple identities are attacked using common passwords in a unified brute force manner. The risk detection is triggered when an account's password is valid and has an attempted sign in. This detection signals that the user's password has correctly been identified through a password spray attack, not that the attacker was able to access any resources.
+Calculated in real-time or offline. A password spray attack is where multiple identities are attacked using common passwords in a unified brute force manner. The risk detection is triggered when an account's password is valid and has an attempted sign in. This detection signals that the user's password was correctly identified through a password spray attack, not that the attacker was able to access any resources.
 
 [Tips for investigating password spray detections.](howto-identity-protection-investigate-risk.md#investigating-password-spray-detections)
 
@@ -266,6 +266,10 @@ Risk detections like leaked credentials require the presence of password hashes 
 ### Why are risk detections generated for disabled accounts? 
 
 User accounts in a disabled state can be re-enabled. If the credentials of a disabled account are compromised, and the account gets re-enabled, bad actors might use those credentials to gain access. ID Protection generates risk detections for suspicious activities against these disabled accounts to alert customers about potential account compromise. If an account is no longer in use and won't be re-enabled, customers should consider deleting it to prevent compromise. No risk detections are generated for deleted accounts. 
+
+### I tried to sort the Risk detections report using the *Detection time* column, but it's not working
+
+Sorting by *Detection time* in the Risk detections report might not always give the correct result because of a known technical constraint. To sort by *Detection time*, select **Download** to export the data as a CSV file and sort accordingly.
 
 ### Common leaked credentials questions
 

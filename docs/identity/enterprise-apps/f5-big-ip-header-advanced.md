@@ -394,8 +394,6 @@ Perform the following test as a user.
 3. A redirection occurs to the BIG-IP virtual server for the app and signed in with SSO.
 4. The injected header output appears by the header-based application.
 
-   ![Screenshot of Server Variables, such as UPN, Employee ID, and Group Authorization.](./media/f5-big-ip-header-advanced/mytravel-example.png)
-
 For increased security, block direct access to the application, enforcing a path through the BIG-IP.
 
 ## Troubleshooting
