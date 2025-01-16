@@ -136,7 +136,7 @@ az rest --method POST --uri 'https://graph.microsoft.com/applications/{app_regis
 
 ### [Bicep](#tab/bicep)
 
-This example shows how to use Bicep to create a FIC to make your app trust the assigned managed identity. Replace the placeholders with the appropriate values. Note the [Microsoft Graph Bicep feature limitations](https://learn.microsoft.com/en-us/graph/templates/limitations#unsupported-deployment-features) that affect this sample.
+This example shows how to use Bicep to create a FIC to make your app trust the assigned managed identity. Replace the placeholders with the appropriate values. Note the [Microsoft Graph Bicep feature limitations](https://learn.microsoft.com/graph/templates/limitations#unsupported-deployment-features) that affect this sample.
 
 ```Bicep
 extension 'br:mcr.microsoft.com/bicep/extensions/microsoftgraph/v1.0:0.1.8-preview'
