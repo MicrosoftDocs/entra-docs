@@ -362,6 +362,8 @@ items:
                 href: how-to-custom-oidc-federation-customers.md
               - name: B2C federation
                 href: how-to-b2c-federation-customers.md
+          - name: SAML/WS-Fed IdP federation
+            href: ../direct-federation.md
         displayName: rbac, roles claim, groups claim
       - name: Integrate apps 
         items:
