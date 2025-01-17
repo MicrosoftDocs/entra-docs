@@ -54,20 +54,6 @@ Use the following tabs to create an ASP.NET Core project within an IDE.
     cd NewWebAPILocal
     dotnet new web
     ```
-
-### [Visual Studio for Mac](#tab/visual-studio-for-mac)
-
-1. Open Visual Studio, and then select **New**.
-1. Under **Web and Console** in the left navigation bar, select **App**.
-1. Under **ASP.NET Core**, select **API** and ensure **C#** is selected in the drop down menu, then select **Continue**.
-1. Accept the default for the **Target Framework** and **Advanced**, then select **Continue**.
-1. Enter a name for the **Project name**, this will be reflected in **Solution Name**. Provide a similar name to the one registered on the Microsoft Entra admin center, such as *NewAPI1*.
-1. Accept the default location for the project or choose a different location, and then select **Create**.
-
->[!NOTE]
-> Visual Studio for Mac is scheduled for retirement by August 31, 2024 in accordance with Microsoft’s [Modern Lifecycle Policy](/lifecycle/policies/modern). Visual Studio for Mac 17.6 will continue to be supported until August 31, 2024, with servicing updates for security issues and updated platforms from Apple.
-> Refer to [What's happening to Visual Studio for Mac](/visualstudio/mac/what-happened-to-vs-for-mac) for more information.
-
 ---
 
 ## Configure the ASP.NET Core project
@@ -117,13 +103,6 @@ Identity related **NuGet packages** must be installed in the project for authent
     ```powershell
     dotnet add package Microsoft.Identity.Web
     ```
-
-### [Visual Studio for Mac](#tab/visual-studio-for-mac)
-
-1. In the top menu, select **Tools** > **Manage NuGet Packages**.
-1. Search for **Microsoft.Identity.Web**, select the `Microsoft.Identity.Web` package, select **Project**, and then select **Add Package**.
-1. In the pop-up, ensure the correct project is selected, then select **Ok**.
-1. Select **Accept** if other **License Acceptance** windows appear.
 
 ---
 
