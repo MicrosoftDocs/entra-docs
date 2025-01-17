@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/06/2025
+ms.date: 01/17/2025
 ms.author: justinha
 author: najshahid
 manager: amycolannino
@@ -22,20 +22,25 @@ There's no change for users if your organization already enforces MFA for them, 
 
 ## Scope of enforcement 
  
-The scope of enforcement includes which applications plan to enforce MFA, when enforcement is planned to occur, and which accounts have a mandatory MFA requirement.
+The scope of enforcement includes which applications plan to enforce MFA, applications that are out of scope, when enforcement is planned to occur, and which accounts have a mandatory MFA requirement.
 
 ### Applications 
 
-| Application Name | App ID | Enforcement phase |
+The following table lists applications and their App IDs. In some cases, the URL is a better way to identify an affected app because an App ID can be associated with multiple app URLs that can be in or out of scope for enforcement. 
+
+| Application Name | URL | App ID | Enforcement phase |
 |------------------|---------------------------------------|------|
-| [Azure portal](/azure/azure-portal/)     | c44b4083-3bb0-49c1-b47d-974e53cbdf3c  | Second half of 2024 |
-| [Microsoft Entra admin center](https://aka.ms/MSEntraPortal) | c44b4083-3bb0-49c1-b47d-974e53cbdf3c | Second half of 2024 |
-| [Microsoft Intune admin center](https://aka.ms/IntunePortal) | c44b4083-3bb0-49c1-b47d-974e53cbdf3c | Second half of 2024 |
-| [Microsoft 365 admin center](https://admin.microsoft.com) | 00000006-0000-0ff1-ce00-000000000000 | Early 2025 |
-| [Azure command-line interface (Azure CLI)](/cli/azure/) | 04b07795-8ddb-461a-bbee-02f9e1bf7b46 | Early 2025 |
-| [Azure PowerShell](/powershell/azure/) | 1950a258-227b-4e31-a9cf-717495945fc2 | Early 2025 |
-| [Azure mobile app](/azure/azure-portal/mobile-app/overview)  | 0c1307d4-29d6-4389-a11c-5cbe7f65d7fa | Early 2025 |
-| [Infrastructure as Code (IaC) tools](/devops/deliver/what-is-infrastructure-as-code) | Use Azure CLI or Azure PowerShell IDs | Early 2025 | 
+| Azure portal    | `https://portal.azure.com` | c44b4083-3bb0-49c1-b47d-974e53cbdf3c  | Second half of 2024 |
+| Microsoft Entra admin center | `https://entra.microsoft.com` | c44b4083-3bb0-49c1-b47d-974e53cbdf3c | Second half of 2024 |
+| Microsoft Intune admin center| `https://intune.microsoft.com`  | c44b4083-3bb0-49c1-b47d-974e53cbdf3c | Second half of 2024 |
+| Microsoft 365 admin center | `https://portal.office.com/account` | 00000006-0000-0ff1-ce00-000000000000 | Out of scope |
+| Microsoft 365 admin center | `https://portal.office.com/adminportal/home` | 00000006-0000-0ff1-ce00-000000000000 | Early 2025 |
+| Microsoft 365 admin center | `https://admin.cloud.microsoft` | 618dd325-23f6-4b6f-8380-4df78026e39b | Early 2025 |
+| Microsoft 365 admin center | `https://admin.microsoft.com` | 00000006-0000-0ff1-ce00-000000000000 | Early 2025 |
+| Azure command-line interface (Azure CLI) | NA | 04b07795-8ddb-461a-bbee-02f9e1bf7b46 | Early 2025 |
+| Azure PowerShell | NA | 1950a258-227b-4e31-a9cf-717495945fc2 | Early 2025 |
+| Azure mobile app  | NA | 0c1307d4-29d6-4389-a11c-5cbe7f65d7fa | Early 2025 |
+| Infrastructure as Code (IaC) tools | NA | Use Azure CLI or Azure PowerShell IDs | Early 2025 | 
 
 ### Accounts 
 
