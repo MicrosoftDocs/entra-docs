@@ -93,6 +93,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Network Administrator](#network-administrator) | Can manage network locations and review enterprise network design insights for Microsoft 365 Software as a Service applications. | d37c8bed-0711-4417-ba38-b4abe66ce4c2 |
 > | [Office Apps Administrator](#office-apps-administrator) | Can manage Office apps cloud services, including policy and settings management, and manage the ability to select, unselect and publish 'what's new' feature content to end-user's devices. | 2b745bdf-0803-4d80-aa65-822c4493daac |
 > | [Organizational Branding Administrator](#organizational-branding-administrator) | Manage all aspects of organizational branding in a tenant. | 92ed04bf-c94a-4b82-9729-b799a7a4c178 |
+> | [Organizational Data Source Administrator](#organizational-data-source-administrator) | Set up and manage the ingestion of organizational data into Microsoft 365. | 9d70768a-0cbc-4b4c-aea3-2e124b2477f4 |
 > | [Organizational Messages Approver](#organizational-messages-approver) | Review, approve, or reject new organizational messages for delivery in the Microsoft 365 admin center before they are sent to users. | e48398e2-f4bb-4074-8f31-4586725e205b |
 > | [Organizational Messages Writer](#organizational-messages-writer) | Write, publish, manage, and review the organizational messages for end-users through Microsoft product surfaces. | 507f53e4-4e52-4077-abd3-d2e1558b6ea2 |
 > | [Partner Tier1 Support](#partner-tier1-support) | Do not use - not intended for general use.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 4ba39ca4-527c-499a-b93d-d9b492c50246 |
@@ -2000,6 +2001,25 @@ Assign the Organizational Branding Administrator role to users who need to do th
 > | Actions | Description |
 > | --- | --- |
 > | microsoft.directory/loginOrganizationBranding/allProperties/allTasks | Create and delete loginTenantBranding, and read and update all properties |
+
+## Organizational Data Source Administrator
+
+Assign the Organizational Data Source Administrator role to users who need to do the following tasks:
+
+- Manage settings related to ingesting and managing organizational data in Microsoft 365
+- Upload, update, and delete organizational data for the specified applications
+- Export organizational data from the authorized applications
+
+> [!div class="mx-tableFixed"]
+> | Actions | Description |
+> | --- | --- |
+> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
+> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
+> | microsoft.microsoft365.organizationalData/allEntities/allProperties/allTasks | Manage all aspects of organizational data in Microsoft 365 |
+> | microsoft.office365.messageCenter/messages/read | Read messages in Message Center in the Microsoft 365 admin center, excluding security messages |
+> | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
+> | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
+> | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
 
 ## Organizational Messages Approver
 
