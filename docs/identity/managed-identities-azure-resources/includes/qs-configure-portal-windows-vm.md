@@ -20,16 +20,11 @@ In this section, you learn how to enable and disable the system-assigned managed
 
 To enable system-assigned managed identity on a VM during its creation, your account needs the [Virtual Machine Contributor](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor) role assignment.  No other Microsoft Entra directory role assignments are required.
 
-In **Create a virtual machine**, select the **Management** tab.
+When creating a [Windows virtual machine](/azure/virtual-machines/windows/quick-create-portal#create-virtual-machine) or [Linux virtual machine](/azure/virtual-machines/linux/quick-create-portal#create-virtual-machine), select the **Management** tab.
 
 In the **Identity** section, select the **Enable system assigned managed identity** check-box.  
 
 :::image type="content" source="../media/msi-qs-configure-portal-windows-vm/enable-system-assigned-identity-vm-creation.png" alt-text="Screenshot showing how to enable system-assigned identity during VM creation.":::
-
-Refer to the following Quickstarts to create a VM: 
-
-- [Create a Windows virtual machine with the Azure portal](/azure/virtual-machines/windows/quick-create-portal#create-virtual-machine) 
-- [Create a Linux virtual machine with the Azure portal](/azure/virtual-machines/linux/quick-create-portal#create-virtual-machine)
 
 
 ### Enable system-assigned managed identity on an existing VM
@@ -68,10 +63,7 @@ If you have a Virtual Machine that no longer needs system-assigned managed ident
 
 To assign a user-assigned identity to a VM, your account needs the [Virtual Machine Contributor](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor) and [Managed Identity Operator](/azure/role-based-access-control/built-in-roles#managed-identity-operator) role assignments. No other Microsoft Entra directory role assignments are required.
 
-Currently, the Azure portal does not support assigning a user-assigned managed identity during the creation of a VM. Instead, refer to one of the following VM creation Quickstart articles to first create a VM, and then proceed to the next section for details on assigning a user-assigned managed identity to the VM:
-
-- [Create a Windows virtual machine with the Azure portal](/azure/virtual-machines/windows/quick-create-portal#create-virtual-machine)
-- [Create a Linux virtual machine with the Azure portal](/azure/virtual-machines/linux/quick-create-portal#create-virtual-machine)
+Currently, the Azure portal does not support assigning a user-assigned managed identity during the creation of a VM. First create a [Windows virtual machine](/azure/virtual-machines/windows/quick-create-portal#create-virtual-machine) or [Linux virtual machine](/azure/virtual-machines/linux/quick-create-portal#create-virtual-machine), then assign a user-assigned managed identity to the VM.
 
 ### Assign a user-assigned managed identity to an existing VM
 
@@ -81,7 +73,7 @@ To assign a user-assigned identity to a VM, your account needs the [Virtual Mach
 
 2. Navigate to the desired VM and click **Security** > **Identity**, **User assigned** and then **\+Add**.  Click the user-assigned identity you want to add to the VM and then click **Add**.
 
-3. Select the previously created user assigned managed identity from the list.
+3. Select the previously created [user assigned managed identity](how-manage-user-assigned-managed-identities.md#create-a-user-assigned-managed-identity) from the list.
 
    :::image type="content" source="../media/msi-qs-configure-portal-windows-vm/add-user-assigned-identity-vm-screenshot1.png" alt-text="Screenshot that shows the Identity page with User assigned selected and the Add button highlighted.":::
 

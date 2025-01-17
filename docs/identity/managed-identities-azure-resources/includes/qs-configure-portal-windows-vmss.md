@@ -58,9 +58,7 @@ In this section, you learn how to add and remove a user-assigned managed identit
 
 ### Assign a user-assigned managed identity during the creation of a virtual machine scale set
 
-Currently, the Azure portal does not support assigning a user-assigned managed identity during the creation of a virtual machine scale set. Instead, refer to the following virtual machine scale set creation Quickstart article to first create a virtual machine scale set, and then proceed to the next section for details on assigning a user-assigned managed identity to it:
-
-- [Create a Virtual Machine Scale Set in the Azure portal](/azure/virtual-machine-scale-sets/quick-create-portal)
+Currently, the Azure portal does not support assigning a user-assigned managed identity during the creation of a virtual machine scale set. First create a [Virtual Machine Scale Set](/azure/virtual-machine-scale-sets/quick-create-portal), then assign a user assigned managed identity to the scale set.
 
 ### Assign a user-assigned managed identity to an existing virtual machine scale set
 
@@ -68,7 +66,7 @@ Currently, the Azure portal does not support assigning a user-assigned managed i
 
 2. Navigate to the desired virtual machine scale set and click **Security** > **Identity**, **User assigned** and then **\+Add**.
 
-3. Select the previously created user assigned managed identity from the list.
+3. Select the previously created [user assigned managed identity](how-manage-user-assigned-managed-identities.md#create-a-user-assigned-managed-identity) from the list.
 
    :::image type="content" source="../media/msi-qs-configure-portal-windows-vmss/add-user-assigned-identity-vm-screenshot1.png" alt-text="Screenshot that shows the Identity page with User assigned selected and the Add button highlighted.":::
 
@@ -84,4 +82,3 @@ Navigate to the desired virtual machine scale set and click **Identity**, **User
 ## Next steps
 
 - Using the Azure portal, give an Azure virtual machine scale set managed identity [access to another Azure resource](~/identity/managed-identities-azure-resources/howto-assign-access-portal.md).
-- 
