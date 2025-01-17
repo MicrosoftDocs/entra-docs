@@ -41,11 +41,19 @@ There are different roles, permissions, and license requirements to view health 
 
 Investigating an alert starts with gathering data.
 
-1. Gather the signal details and impact summary.
-    - View the signal in the Microsoft Entra admin center to get familiar with the pattern and identify anomalies.
-        ![Screenshot of the sign-ins requiring MFA signal.](media/scenario-health-sign-ins-mfa/scenario-monitoring-signal-mfa.png)
-    - Run the [List alerts](/graph/api/healthmonitoring-healthmonitoringroot-list-alerts?view=graph-rest-beta&preserve-view=true) API to retrieve all alerts for the tenant.
-    - Run the [Get alert](/graph/api/healthmonitoring-alert-get?view=graph-rest-beta&preserve-view=true) API to retrieve the details of a specific alert.
+1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
+
+1. Browse to **Identity** > **Monitoring and health** > **Health**. The page opens to the Service Level Agreement (SLA) Attainment page.
+
+1. Select the **Health Monitoring** tab.
+
+1. Select the **Sign-ins requiring Entra ID MFA** scenario and then select an active alert.
+
+1. View the signal from the **View data graph** section to get familiar with the pattern and identify anomalies.
+    - If using the Microsoft Graph API, you can run the [List alerts](/graph/api/healthmonitoring-healthmonitoringroot-list-alerts?view=graph-rest-beta&preserve-view=true) API to retrieve all alerts or [Get alert](/graph/api/healthmonitoring-alert-get?view=graph-rest-beta&preserve-view=true) API to retrieve the details.
+
+    ![Screenshot of the sign-ins requiring MFA signal.](media/scenario-health-sign-ins-mfa/scenario-monitoring-signal-mfa.png)
+
 1. Review the sign-in logs.
     - [Review the sign-in log details](concept-sign-in-log-activity-details.md).
     - Look for users being blocked from signing in *and* have a Conditional Access policy requiring MFA applied.
@@ -62,10 +70,15 @@ An increase in sign-ins requiring MFA could indicate a policy change or new feat
 
 To investigate:
 
-- In the impact summary, if `resourceType` is "application" and there's only one or two applications listed, check the audit logs for changes to the listed applications.
-- In the audit logs, use the **Target** column to filter for the application or open the audit logs from Enterprise Applications, so the filter is already set.
-- Determine if the application was recently added or reconfigured. 
-- In the sign-in logs, use the **Application** column to filter for the same application or date range to look for any other patterns.
+1. From the **Affected entities** section of the selected scenario, select **View** for applications.
+    - A list of affected applications appears in a panel. Select the application to navigate directly to the application's details where you can view the audit logs and other details.
+    - With the Microsoft Graph API, look for the "application" `resourceType` in the impact summary.
+
+1. Review the audit logs for the application.
+    - Determine if the application was recently added or reconfigured, which might trigger a large number of users signing in. 
+
+1. Review the sign-in logs.
+    - Use the **Application** column to filter for the same application or date range to look for any other patterns.
 
 ### User authentication issues
 
@@ -73,14 +86,18 @@ An increase in sign-ins requiring MFA could indicate a brute force attack, where
 
 To investigate:
 
-- In the impact summary, if `resourceType` is "user" and the `impactedCount` value shows a small subset of users, the issue might be user-specific.
-- Use the following filters in the sign-in logs:
-    - **Status**: Failure
-    - **Authentication requirement**: Multifactor authentication
-    - Adjust the date to match the timeframe indicated in the impact summary.
-- Are the failed sign-in attempts coming from the same IP address?
-- Are the failed sign-in attempts from the same user?
-- Run the [sign-in diagnostic](howto-use-sign-in-diagnostics.md) to rule out standard user error issues or initial MFA setup issues.
+1. From the **Affected entities** section of the selected scenario, select **View** for users.
+    - A list of affected users appears in a panel. Select a user to navigate directly to their profile where you can view their sign-in activity and other details.
+    - With the Microsoft Graph API, look for the "user" `resourceType` and the `impactedCount` value in the impact summary.
+
+1. Review the sign-in logs.
+    - Use the following filters in the sign-in logs:
+        - **Status**: Failure
+        - **Authentication requirement**: Multifactor authentication
+        - Adjust the date to match the timeframe indicated in the impact summary.
+    - Are the failed sign-in attempts coming from the same IP address?
+    - Are the failed sign-in attempts from the same user?
+    - Run the [sign-in diagnostic](howto-use-sign-in-diagnostics.md) to rule out standard user error issues or initial MFA setup issues.
 
 ### Network issues
 
@@ -88,11 +105,18 @@ There could be a regional system outage that required a large number of users to
 
 To investigate:
 
-- In the impact summary, if `resourceType` is "user" and the `impactedCount` value shows a large percentage of your organization's users, you might be looking at a wide spread issue.
-- Check your system and network health to see if an outage or update matches the same timeframe as the anomaly.
+1. From the **Affected entities** section of the selected scenario, select **View** for users.
+    - A list of affected users appears in a panel. Select a user to navigate directly to their profile where you can view their sign-in activity and other details.
+    - With the Microsoft Graph API, look for the "user" `resourceType` and the `impactedCount` value in the impact summary.
 
+1. Check your system and network health to see if an outage or update matches the same timeframe as the anomaly.
 
-## Next steps
+1. [Review the sign-in logs](../monitoring-health/concept-sign-in-log-activity-details.md).
+    - Adjust your filter to show sign-ins from a region where an affected user is located.
+
+1. If your organization is using Global Secure Access, review the [traffic logs](../../global-secure-access/how-to-view-traffic-logs.md).
+
+## Related content
 
 - [Configure Conditional Access for MFA for all users](../conditional-access/howto-conditional-access-policy-all-users-mfa.md)
 - [Troubleshoot common sign-in errors](howto-troubleshoot-sign-in-errors.md)
