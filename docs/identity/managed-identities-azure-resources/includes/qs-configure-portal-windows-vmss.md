@@ -22,7 +22,7 @@ In this section, you will learn how to enable and disable the system-assigned ma
 
 ### Enable system-assigned managed identity during creation of a virtual machine scale set
 
-Currently, the Azure portal does not support enabling system-assigned managed identity during the creation of a virtual machine scale set. Instead, refer to the following virtual machine scale set creation Quickstart article to first create a virtual machine scale set, and then proceed to the next section for details on enabling system-assigned managed identity on a virtual machine scale set:
+Currently, the Azure portal does not support enabling system-assigned managed identity during the creation of a virtual machine scale set. First create a [Virtual Machine Scale Set](/azure/virtual-machine-scale-sets/quick-create-portal), then enable a system-assigned managed identity on the scale set:
 
 - [Create a Virtual Machine Scale Set in the Azure portal](/azure/virtual-machine-scale-sets/quick-create-portal)  
 
