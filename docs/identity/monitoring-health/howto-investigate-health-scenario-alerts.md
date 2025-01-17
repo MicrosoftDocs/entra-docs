@@ -40,6 +40,13 @@ There are different roles, permissions, and license requirements to view health 
 
 You can view the Microsoft Entra Health monitoring signals from the Microsoft Entra admin center. You can also view the properties of the signals and the public preview of health monitoring alerts, using [Microsoft Graph APIs](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true).
 
+When you receive an alert, you typically need to investigate the following data sets:
+
+- **Metrics**: The data stream, or health signal, that caused the alert. 
+- **Affected entities**: Total number of identities identified by the alert. Include users, groups, service principals, devices, and applications. 
+- **Activity logs**: Sign-in logs provide details around affected users. Audit logs provide insights into application configuration changes.
+- **Scenario-specific resources**: Depending on the scenario, you might need to investigate Intune compliance policies or Conditional Access policies.
+
 ### [Admin center](#tab/admin-center)
 
 The signals and alerts are available in the Microsoft Entra Health area of the Microsoft Entra admin center. Whether you're investigating an alert or just monitoring the health of your tenant, you can view the signals and alerts from the Microsoft Entra admin center.
@@ -64,13 +71,6 @@ The signals and alerts are available in the Microsoft Entra Health area of the M
 :::image type="content" source="media/howto-investigate-health-scenario-alerts/scenario-health-mfa-signal.png" alt-text="Screenshot of the sign-ins requiring multifactor authentication (MFA) scenario." lightbox="media/howto-investigate-health-scenario-alerts/scenario-health-mfa-signal-expanded.png":::
 
 #### Investigate the alerts
-
-When you receive an alert, you typically need to investigate the following data sets:
-
-- **Affected entities**: Total number of identities identified by the alert. Include users, groups, service principals, devices, and applications. 
-- **Metrics**: The data stream, or health signal, that caused the alert. 
-- **Sign-in logs**: A query is provided in the response for further investigation into the sign-in logs where the health signal was generated. The sign-in logs provide detailed event metadata that might be used to identify a problem's root cause.
-- **Scenario-specific resources**: Depending on the scenario, you might need to investigate Intune compliance policies or Conditional Access policies. In many cases, a link to related documentation is provided in the response.
 
 To view these details from the **Health monitoring** landing page: 
 

@@ -134,6 +134,8 @@ Content-Type: application/json
   ]
 }
 ```
+> [!NOTE]
+> If the selected group has other groups added as members of that group, the notifications are sent to only the top three groups in the hierarchy.
 
 ---
 

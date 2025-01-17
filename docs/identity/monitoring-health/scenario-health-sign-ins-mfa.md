@@ -49,6 +49,8 @@ Investigating an alert starts with gathering data.
 
 1. Select the **Sign-ins requiring Entra ID MFA** scenario and then select an active alert.
 
+    ![Screenshot of the Microsoft Entra Health landing page.](media/howto-investigate-health-scenario-alerts/health-monitoring-landing-page.png)
+
 1. View the signal from the **View data graph** section to get familiar with the pattern and identify anomalies.
     - If using the Microsoft Graph API, you can run the [List alerts](/graph/api/healthmonitoring-healthmonitoringroot-list-alerts?view=graph-rest-beta&preserve-view=true) API to retrieve all alerts or [Get alert](/graph/api/healthmonitoring-alert-get?view=graph-rest-beta&preserve-view=true) API to retrieve the details.
 
