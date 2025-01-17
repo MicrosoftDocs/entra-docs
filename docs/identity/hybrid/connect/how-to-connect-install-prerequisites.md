@@ -75,7 +75,7 @@ To read more about securing your Active Directory environment, see [Best practic
     - You must configure name resolution. 
 - It isn't supported to break and analyze traffic between Microsoft Entra Connect and Microsoft Entra ID. Doing so could disrupt the service.
 - If your Hybrid Identity Administrators have MFA enabled, the URL `https://secure.aadcdn.microsoftonline-p.com` *must* be in the trusted sites list. You're prompted to add this site to the trusted sites list when you're prompted for an MFA challenge and it isn't yet added. You can use Internet Explorer to add it to your trusted sites.
-- If you plan to use Microsoft Entra Connect Health for syncing, you need to use a global administrator account to install Microsoft Entra Connect Sync. If you use a hybrid administrator account, the agent is installed but in a disabled state. For more information, see [Microsoft Entra Connect Health agent installation](how-to-connect-health-agent-install.md).
+- If you plan to use Microsoft Entra Connect Health for syncing, you need to use a Global Administrator account to install Microsoft Entra Connect Sync. If you use a Hybrid Identity Administrator account, the agent is installed but in a disabled state. For more information, see [Microsoft Entra Connect Health agent installation](how-to-connect-health-agent-install.md).
 
 <a name='harden-your-azure-ad-connect-server-'></a>
 

@@ -80,7 +80,7 @@ At regular intervals, such as weekly, monthly or quarterly, based on the volume 
 
 * **Check that provisioning and deprovisioning are working as expected.** If you had previously configured provisioning of users to the application, then when the results of a review are applied, or a user's assignment to an access package expires, Microsoft Entra ID begins deprovisioning denied users from the application. You can [monitor the process of deprovisioning users](~/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md). If provisioning indicates an error with the application, you can [download the provisioning log](~/identity/monitoring-health/concept-provisioning-logs.md) to investigate if there was a problem with the application.
 
-* **Update the Microsoft Entra configuration with any role or group changes in the application.**  If the application administrator adds new app roles in its [manifest](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui), updates existing roles, or relies upon additional groups, then you need to update the access packages and access reviews to account for those new roles or groups.
+* **Update the Microsoft Entra configuration with any role or group changes in the application.**  If the Application Administrator adds new app roles in its [manifest](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui), updates existing roles, or relies upon additional groups, then you need to update the access packages and access reviews to account for those new roles or groups.
 
 ## Next steps
 
