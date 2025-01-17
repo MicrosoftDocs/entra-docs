@@ -1281,6 +1281,7 @@ This is a [privileged role](privileged-roles-permissions.md). Users with this ro
 > | microsoft.hardware.support/warrantyClaims/allProperties/allTasks | Create and manage all aspects of Microsoft hardware warranty claims |
 > | microsoft.insights/allEntities/allProperties/allTasks | Manage all aspects of Insights app |
 > | microsoft.intune/allEntities/allTasks | Manage all aspects of Microsoft Intune |
+> | microsoft.microsoft365.organizationalData/allEntities/allProperties/allTasks | Manage all aspects of organizational data in Microsoft 365 |
 > | microsoft.networkAccess/allEntities/allProperties/allTasks | Manage all aspects of Microsoft Entra Network Access |
 > | microsoft.office365.complianceManager/allEntities/allTasks | Manage all aspects of Office 365 Compliance Manager |
 > | microsoft.office365.copilot/allEntities/allProperties/allTasks | Create and manage all settings for Microsoft 365 Copilot |
@@ -1419,6 +1420,7 @@ Users with this role **cannot** do the following:
 > | microsoft.hardware.support/shippingStatus/allProperties/read | Read shipping status for open Microsoft hardware warranty claims |
 > | microsoft.hardware.support/warrantyClaims/allProperties/read | Read Microsoft hardware warranty claims |
 > | microsoft.insights/allEntities/allProperties/read | Read all aspects of Viva Insights |
+> | microsoft.microsoft365.organizationalData/allEntities/allProperties/read | Read all aspects of organizational data in Microsoft 365 |
 > | microsoft.networkAccess/allEntities/allProperties/read | Read all aspects of Microsoft Entra Network Access |
 > | microsoft.office365.copilot/allEntities/allProperties/read | Read all settings for Microsoft 365 Copilot |
 > | microsoft.office365.fileStorageContainers/allEntities/allProperties/read | Read entities and permissions of SharePoint Embedded containers |
