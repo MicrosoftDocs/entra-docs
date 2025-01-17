@@ -12,7 +12,7 @@ ms.date: 08/19/2024
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.custom: enterprise-apps
-# Customer intent: As an application administrator, I want to configure linked-based single sign-on for my application in Microsoft Entra ID, so that users can access the application through the My Apps or Microsoft 365 portal and be redirected to the correct sign-in page.
+# Customer intent: As an Application Administrator, I want to configure linked-based single sign-on for my application in Microsoft Entra ID, so that users can access the application through the My Apps or Microsoft 365 portal and be redirected to the correct sign-in page.
 ---
 
 # Add linked single sign-on to an application
