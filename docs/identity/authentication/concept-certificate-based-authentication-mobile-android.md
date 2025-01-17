@@ -27,7 +27,7 @@ Microsoft Entra Certificate-based authentication is supported with certificates 
 
 Customers can use their choice of Mobile Device Management (MDM) to provision the certificates on the device. End users must first register their devices with MDM and get the certificate provisioned on the device. Once the certificate is provisioned on the device, users can authenticate using CBA.
 
-Steps to test YubiKey on Microsoft apps on Android: 
+Steps to test on-device certificates on Microsoft apps on Android: 
 
 1. Open Outlook. 
 1. Select **Add account** and enter your user principal name (UPN).
