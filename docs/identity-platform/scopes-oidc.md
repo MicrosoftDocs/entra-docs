@@ -58,7 +58,7 @@ For a step by step guide on how to expose scopes in a web API, see [Configure an
 
 ## OpenID Connect scopes
 
-The Microsoft identity platform implementation of OpenID Connect has a few well-defined scopes that are also hosted on Microsoft Graph: `openid`, `email`, `profile`, and `offline_access`. The `address` and `phone` OpenID Connect scopes aren't supported.
+The Microsoft identity platform implementation of OpenID Connect has a few well-defined scopes that are also hosted on Microsoft Graph: `openid`, `email`, `profile`, and `offline_access`. The `address` and `phone` OpenID Connect scopes aren't supported.  These scopes are sometimes optional and considered for ID token enrichment.  These scopes will not always appear in separate lines in a consent prompt to a user.
 
 If you request the OpenID Connect scopes and a token, you get a token to call the [UserInfo endpoint](userinfo.md).
 
