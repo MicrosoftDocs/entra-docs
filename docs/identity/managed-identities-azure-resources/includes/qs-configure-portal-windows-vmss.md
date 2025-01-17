@@ -1,7 +1,7 @@
 ---
 author: rwike77
 ms.author: ryanwi
-ms.date: 05/27/2024
+ms.date: 01/16/2025
 ms.topic: include
 ---
 
@@ -65,20 +65,20 @@ Currently, the Azure portal does not support assigning a user-assigned managed i
 ### Assign a user-assigned managed identity to an existing virtual machine scale set
 
 1. Sign in to the [Azure portal](https://portal.azure.com) using an account associated with the Azure subscription that contains the virtual machine scale set.
-2. Navigate to the desired virtual machine scale set and click **Identity**, **User assigned** and then **\+Add**.
 
-      ![Screenshot that shows add user-assigned identity to virtual machine scale set.](../media/msi-qs-configure-portal-windows-vm/add-user-assigned-identity-vm-screenshot2.png)
+2. Navigate to the desired virtual machine scale set and click **Security** > **Identity**, **User assigned** and then **\+Add**.
 
-3. Click the user-assigned identity you want to add to the virtual machine scale set and then click **Add**.
-   
-   :::image type="content" source="../media/msi-qs-configure-portal-windows-vm/add-user-assigned-identity-vm-screenshot2.png" alt-text="Screenshot showing how to add a user-assigned identity to a virtual machine scale set.":::
+3. Select the previously created user assigned managed identity from the list.
+
+   :::image type="content" source="../media/msi-qs-configure-portal-windows-vmss/add-user-assigned-identity-vm-screenshot1.png" alt-text="Screenshot that shows the Identity page with User assigned selected and the Add button highlighted.":::
 
 ### Remove a user-assigned managed identity from a virtual machine scale set
 
-1. Sign in to the [Azure portal](https://portal.azure.com) using an account associated with the Azure subscription that contains the VM.
-2. Navigate to the desired virtual machine scale set and click **Identity**, **User assigned**, the name of the user-assigned managed identity you want to delete and then click **Remove** (click **Yes** in the confirmation pane).
+Sign in to the [Azure portal](https://portal.azure.com) using an account associated with the Azure subscription that contains the VM.
 
-   :::image type="content" source="../media/msi-qs-configure-portal-windows-vm/remove-user-assigned-identity-vmss-screenshot.png" alt-text="A screenshot showing how to remove user-assigned identity from a virtual machine scale set.":::
+Navigate to the desired virtual machine scale set and click **Identity**, **User assigned**, the name of the user-assigned managed identity you want to delete and then click **Remove** (click **Yes** in the confirmation pane).
+
+:::image type="content" source="../media/msi-qs-configure-portal-windows-vmss/remove-user-assigned-identity-vmss-screenshot.png" alt-text="A screenshot showing how to remove user-assigned identity from a virtual machine scale set.":::
 
 
 ## Next steps

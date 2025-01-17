@@ -77,9 +77,11 @@ Currently, the Azure portal does not support assigning a user-assigned managed i
 
 To assign a user-assigned identity to a VM, your account needs the [Virtual Machine Contributor](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor) and [Managed Identity Operator](/azure/role-based-access-control/built-in-roles#managed-identity-operator) role assignments. No other Microsoft Entra directory role assignments are required.
 
-Sign in to the [Azure portal](https://portal.azure.com) using an account associated with the Azure subscription that contains the VM.
+1. Sign in to the [Azure portal](https://portal.azure.com) using an account associated with the Azure subscription that contains the VM.
 
-Navigate to the desired VM and click **Security > Identity**, **User assigned** and then **\+Add**.  Click the user-assigned identity you want to add to the VM and then click **Add**.
+2. Navigate to the desired VM and click **Security** > **Identity**, **User assigned** and then **\+Add**.  Click the user-assigned identity you want to add to the VM and then click **Add**.
+
+3. Select the previously created user assigned managed identity from the list.
 
    :::image type="content" source="../media/msi-qs-configure-portal-windows-vm/add-user-assigned-identity-vm-screenshot1.png" alt-text="Screenshot that shows the Identity page with User assigned selected and the Add button highlighted.":::
 
@@ -87,10 +89,11 @@ Navigate to the desired VM and click **Security > Identity**, **User assigned** 
 
 To remove a user-assigned identity from a VM, your account needs the [Virtual Machine Contributor](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor) role assignment. No other Microsoft Entra directory role assignments are required.
 
-1. Sign in to the [Azure portal](https://portal.azure.com) using an account associated with the Azure subscription that contains the VM.
-2. Navigate to the desired VM and select **Security > Identity**, **User assigned**, the name of the user-assigned managed identity you want to delete and then click **Remove** (click **Yes** in the confirmation pane).
+Sign in to the [Azure portal](https://portal.azure.com) using an account associated with the Azure subscription that contains the VM.
 
-   :::image type="content" source="../media/msi-qs-configure-portal-windows-vm/remove-user-assigned-identity-vm-screenshot.png" alt-text="Screenshot showing how to remove user-assigned managed identity from a VM":::
+Navigate to the desired VM and select **Security** > **Identity**, **User assigned**, the name of the user-assigned managed identity you want to delete and then click **Remove** (click **Yes** in the confirmation pane).
+
+:::image type="content" source="../media/msi-qs-configure-portal-windows-vm/remove-user-assigned-identity-vm-screenshot.png" alt-text="Screenshot showing how to remove user-assigned managed identity from a VM":::
 
 ## Next steps
 
