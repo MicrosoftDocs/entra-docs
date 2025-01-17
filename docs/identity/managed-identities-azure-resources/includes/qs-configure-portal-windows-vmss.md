@@ -66,7 +66,7 @@ Currently, the Azure portal does not support assigning a user-assigned managed i
 
 2. Navigate to the desired virtual machine scale set and click **Security** > **Identity**, **User assigned** and then **\+Add**.
 
-3. Select the previously created [user assigned managed identity](how-manage-user-assigned-managed-identities.md#create-a-user-assigned-managed-identity) from the list.
+3. Select the previously created [user assigned managed identity](../how-manage-user-assigned-managed-identities.md#create-a-user-assigned-managed-identity) from the list.
 
    :::image type="content" source="../media/msi-qs-configure-portal-windows-vmss/add-user-assigned-identity-vm-screenshot1.png" alt-text="Screenshot that shows the Identity page with User assigned selected and the Add button highlighted.":::
 

@@ -73,7 +73,7 @@ To assign a user-assigned identity to a VM, your account needs the [Virtual Mach
 
 2. Navigate to the desired VM and click **Security** > **Identity**, **User assigned** and then **\+Add**.  Click the user-assigned identity you want to add to the VM and then click **Add**.
 
-3. Select the previously created [user assigned managed identity](how-manage-user-assigned-managed-identities.md#create-a-user-assigned-managed-identity) from the list.
+3. Select the previously created [user assigned managed identity](../how-manage-user-assigned-managed-identities.md#create-a-user-assigned-managed-identity) from the list.
 
    :::image type="content" source="../media/msi-qs-configure-portal-windows-vm/add-user-assigned-identity-vm-screenshot1.png" alt-text="Screenshot that shows the Identity page with User assigned selected and the Add button highlighted.":::
 
