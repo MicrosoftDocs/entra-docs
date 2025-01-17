@@ -2010,6 +2010,8 @@ Assign the Organizational Data Source Administrator role to users who need to do
 - Upload, update, and delete organizational data for the specified applications
 - Export organizational data from the authorized applications
 
+[Learn more](/viva/import-orgdata)
+
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
