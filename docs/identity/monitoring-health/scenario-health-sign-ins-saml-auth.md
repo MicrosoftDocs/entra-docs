@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 10/14/2024
+ms.date: 01/17/2025
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -20,4 +20,4 @@ The Security Assertion Markup Language (SAML) authentication scenario provides h
 - [Learn how the Microsoft Identity platform uses the SAML protocol](../../identity-platform/saml-protocol-reference.md)
 - [Use a SAML 2.0 IdP for single sign on](../hybrid/connect/how-to-connect-fed-saml-idp.md).
 
-![Screenshot of the SAML scenario.](media/scenario-health-sign-ins-saml-auth/scenario-monitoring-SAML.png)
+![Screenshot of the SAML scenario.](media/scenario-health-sign-ins-saml-auth/health-monitoring-saml-authentication.png)

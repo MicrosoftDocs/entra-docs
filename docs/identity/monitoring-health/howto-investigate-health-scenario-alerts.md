@@ -17,7 +17,7 @@ ms.reviewer: sarbar
 
 Microsoft Entra Health monitoring helps you monitor the health of your Microsoft Entra tenant through a set of health metrics and intelligent alerts. Health metrics are fed into our anomaly detection service, which uses machine learning to understand the patterns for your tenant. When the anomaly detection service identifies a significant change in one of the tenant-level patterns, it triggers an alert.
 
-The signals and alerts provided by Microsoft Entra Health provide you with the starting point for investigating potential issues in your tenant. Because there's a wide range of scenarios and even more data points to consider, it's important to understand how to investigate these alerts effectively. This article provides guidance on how to investigate an alert, but isn't specific to any alert.
+The signals and alerts provided by Microsoft Entra Health provide you with the starting point for investigating potential issues in your tenant. Because there's a wide range of scenarios and even more data points to consider, it's important to understand how to investigate these alerts effectively. This article provides guidance on how to investigate alerts, in general. For scenario-specific guidance, see the related content at the end of this article.
 
 > [!IMPORTANT]
 > Microsoft Entra Health scenario monitoring and alerts are currently in PREVIEW.
@@ -28,13 +28,15 @@ The signals and alerts provided by Microsoft Entra Health provide you with the s
 There are different roles, permissions, and license requirements to view health monitoring signals and configure and receive alerts. We recommend using a role with least privilege access to align with the [Zero Trust guidance](/security/zero-trust/zero-trust-overview).
 
 - A tenant with a [Microsoft Entra P1 or P2 license](../../fundamentals/get-started-premium.md) is required to *view* the Microsoft Entra health scenario monitoring signals.
-- A tenant with both a [Microsoft Entra P1 or P2 license](../../fundamentals/get-started-premium.md) *and* at least 100 monthly active users is required to *view alerts* and *receive alert notifications*.
+- A tenant with both a non-trial [Microsoft Entra P1 or P2 license](../../fundamentals/get-started-premium.md) *and* at least 100 monthly active users is required to *view alerts* and *receive alert notifications*.
 - The [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader) role is the least privileged role required to *view scenario monitoring signals, alerts, and alert configurations*.
 - The [Helpdesk Administrator](../role-based-access-control/permissions-reference.md#helpdesk-administrator) is the least privileged role required to *update alerts* and *update alert notification configurations*.
 - The `HealthMonitoringAlert.Read.All` permission is required to *view the alerts using the Microsoft Graph API*.
 - The `HealthMonitoringAlert.ReadWrite.All` permission is required to *view and modify the alerts using the Microsoft Graph API*.
 - For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs).
-- Note: Newly onboarded tenants might not have enough data to generate alerts for about 30 days.
+
+> [!NOTE]
+> Newly onboarded tenants might not have enough data to generate alerts for about 30 days.
 
 ## Investigate the signals and alerts
 
@@ -43,9 +45,9 @@ You can view the Microsoft Entra Health monitoring signals from the Microsoft En
 When you receive an alert, you typically need to investigate the following data sets:
 
 - **Metrics**: The data stream, or health signal, that caused the alert. 
-- **Affected entities**: Total number of identities identified by the alert. Include users, groups, service principals, devices, and applications. 
+- **Affected entities**: Total number of affected entities. Could include users and applications. 
 - **Activity logs**: Sign-in logs provide details around affected users. Audit logs provide insights into application configuration changes.
-- **Scenario-specific resources**: Depending on the scenario, you might need to investigate Intune compliance policies or Conditional Access policies.
+- **Scenario-specific resources**: Depending on the scenario, you might need to investigate other sources of information from different services. For example, for device-related scenarios, you might need to review Intune device compliance policies.
 
 ### [Admin center](#tab/admin-center)
 
@@ -79,14 +81,22 @@ To view these details from the **Health monitoring** landing page:
     ![Screenshot of the Health monitoring page with active alert scenarios.](media/howto-investigate-health-scenario-alerts/scenario-health-active-alert.png)
 
 1. From the **Affected entities** section of the selected scenario, select **View** for the type of affected entity you want to investigate.
-    - Possible entities include users, groups, applications, devices, and service principals.
-    
-    :::image type="content" source="media/howto-investigate-health-scenario-alerts/scenario-health-active-alert-page.png" alt-text="Screenshot of the active alert page with the affected entities highlighted." lightbox="media/howto-investigate-health-scenario-alerts/scenario-health-active-alert-page-expanded.png":::
+    - Possible entities include users and applications.
+    - A link is provided to a scenario-specific article for more information on how to investigate the issue.
+
+    ![Screenshot of the affected entities for an active alert.](media/howto-investigate-health-scenario-alerts/affected-entities-documentation.png)
 
 1. From the details that appear in the panel that opens, select an entity to explore further.
+    - The top ten most affected entities appear.
+    - Selecting an item from the list navigates you to the user or application's profile page for further investigation.
+
+1. The signal for the alert appears under the **Signals** section. Review the signal to understand the pattern and identify anomalies.
+    - The time frame shows the time during which the anomaly occurred. 
+
+    ![Screenshot of the signal for an active alert.](media/howto-investigate-health-scenario-alerts/active-alert-signal.png)
 
 1. After investigating and potentially resolving the root cause of the issue, you can dismiss the alert. From the active alert page, select the checkbox for that alert then select the **Mark alert as** menu and select **Dismissed**.
-
+    - The equivalent action using the Microsoft Graph API is to update the alert status to `resolved`.
     ![Screenshot of the alert page with the Mark alert as menu highlighted.](media/howto-investigate-health-scenario-alerts/mark-alert-as.png)
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
@@ -101,43 +111,7 @@ With the Microsoft Graph APIs, you can view the metrics that make up the health 
 
   ```http
     GET https://graph.microsoft.com/beta/reports/serviceActivity/getMetricsForMfaSignInFailure(inclusiveIntervalStartDateTime=2023-01-01T00:00:00Z,exclusiveIntervalEndDateTime=2023-01-01T00:20:00Z,aggregationIntervalInMinutes=10)
-    ```
-
-<!-- Need to run Graph query to test and provide a sample response with realistic data -->
-
-
-#### Investigate the alerts
-
-When you receive an alert, or if you see a change to a pattern you suspect might need investigation, you typically need to investigate the following data sets:
-
-- **Alert impact**: The portion of the response after `impacts` quantifies the scope and summarizes impacted resources. These details include the `impactCount` so you can determine how widespread the issue is.  
-- **Alert signals**: The data stream, or health signal, that caused the alert. A query is provided in the response for further investigation.
-- **Sign-in logs**: A query is provided in the response for further investigation into the sign-in logs where the health signal was generated. The sign-in logs provide detailed event metadata that might be used to identify a problem's root cause.
-- **Scenario-specific resources**: Depending on the scenario, you might need to investigate Intune compliance policies or Conditional Access policies. In many cases, a link to related documentation is provided in the response.
-
-1. Run the following query to retrieve all alerts for your tenant.
-
-    ```http
-    GET https://graph.microsoft.com/beta/reports/healthMonitoring/alerts
-    ```
-
-1. Locate and save the `id` of the alert you want to investigate.
-
-1. Run the following query, using `id` as the `alertId`.
-
-    ```http
-    GET https://graph.microsoft.com/beta/reports/healthMonitoring/alerts/{alertId}
-    ```
-For sample requests and responses, see [Health monitoring List alert objects](/graph/api/healthmonitoring-healthmonitoringroot-list-alerts?view=graph-rest-beta&preserve-view=true).
-- The portion of the response after `impacts` make up the impact summary for the alert.
-- The `supportingData` portion includes the full query used to generate the alert.
-- The results of the query include everything identified by the anomaly detection service, but there might be results that aren't directly related to the alert.
-
-Running these queries provides the number of times that service activity occurred during a specific time frame. For example, to see the number of successful MFA sign-ins, you'd run the following query:
-
-```http
-GET https://graph.microsoft.com/beta/reports/serviceActivity/getMetricsForMfaSignInSuccess(inclusiveIntervalStartDateTime=2023-01-01T00:00:00Z,exclusiveIntervalEndDateTime=2023-01-01T00:20:00Z,aggregationIntervalInMinutes=10)
-```
+  ```
 
 The response shows how many successful sign-ins occurred during the specific time frame, aggregated in ten-minute intervals.
 
@@ -164,8 +138,66 @@ Content-Type: application/json
 }
 ```
 
-<!-- Need to add better examples of an alert and the data needed to actually investigate. -->
+#### Investigate the alerts
 
+1. Run the following query to retrieve all active alerts for your tenant.
+
+    **Request**:
+
+    ```http
+    GET https://graph.microsoft.com/beta/reports/healthMonitoring/alerts?$filter=state eq microsoft.graph.healthmonitoring.alertState'active'&$select=id, alertType
+    ```
+
+    **Response**:
+
+    ```http
+    HTTP/1.1 200 OK
+    Content-Type: application/json
+    {
+      "@odata.context": "https://graph.microsoft.com/beta/$metadata#reports/healthMonitoring/alerts(id,alertType)",
+      "value": [
+        {
+          "id": "0c56dfcb-13db-4128-bda2-fc3e42742467",
+          "alertType": "mfaSignInFailure"
+        },
+        {
+          "id": "564bc4e2-10f6-4d76-b10c-25657637f748",
+          "alertType": "managedDeviceSignInFailure"
+        },
+      ]
+    }    
+    ```
+
+1. Locate and save the `id` of the alert you want to investigate and run the following query, using `id` as the `alertId`. The following query retrieves the alert details, expanding
+
+    **Request**:
+
+    ```http
+    GET https://graph.microsoft.com/beta/reports/healthMonitoring/alerts/{id}?$expand=enrichment/impacts/microsoft.graph.healthmonitoring.directoryobjectimpactsummary/resourceSampling&$select=alertType, createdDateTime, enrichment'
+    ```
+
+    **Response**:
+
+    
+1. Once you have the details for the affected entities, you can begin to troubleshoot the issue, potentially running queries for things like sign-in activity, audit logs, and Conditional Access.
+
+1. After investigating and potentially resolving the root cause of the issue, you can mark the alert as resolved. Run the following PATCH request:
+
+    - The equivalent action using the Microsoft Entra admin center is to update the alert status to **Dismissed**.
+
+    ```http
+    PATCH https://graph.microsoft.com/beta/reports/healthMonitoring/alerts/{alertId}
+    Content-Type: application/json
+
+    {
+      "state": "resolved"
+    }
+    ```
+
+For sample requests and responses, see [Health monitoring List alert objects](/graph/api/healthmonitoring-healthmonitoringroot-list-alerts?view=graph-rest-beta&preserve-view=true).
+- The portion of the response after `impacts` make up the impact summary for the alert.
+- The `supportingData` portion includes the full query used to generate the alert.
+- The results of the query include everything identified by the anomaly detection service, but there might be results that aren't directly related to the alert.
 
 ---
 

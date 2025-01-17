@@ -1,6 +1,6 @@
 ---
-title: Sign-ins requiring multifactor authentication
-description: Learn about the Microsoft Entra Health signals and alerts for sign-ins that require a multifactor authentication
+title: Sign-ins requiring Microsoft Entra multifactor authentication
+description: Learn about the Microsoft Entra Health signals and alerts for sign-ins that require Microsoft Entra multifactor authentication
 author: shlipsey3
 manager: amycolannino
 ms.service: entra-id
@@ -13,24 +13,24 @@ ms.reviewer: sarbar
 # Customer intent: As an IT admin, I want to understand the health of my tenant through identity related signals and alerts so I can proactively address issues and maintain a healthy tenant.
 ---
 
-# How to investigate sign-ins requiring multifactor authentication
+# How to investigate sign-ins requiring Microsoft Entra multifactor authentication
 
-Microsoft Entra Health monitoring provides a set of tenant-level health metrics you can monitor and alerts when a potential issue or failure condition is detected. There are multiple health scenarios that can be monitored, including multifactor authentication (MFA).
+Microsoft Entra Health monitoring provides a set of tenant-level health metrics you can monitor and alerts when a potential issue or failure condition is detected. There are multiple health scenarios that can be monitored, including Microsoft Entra multifactor authentication (MFA).
 
 This scenario:
 
 - Aggregates the number of users who successfully completed an MFA sign-in using a Microsoft Entra cloud MFA service.
-- Captures interactive sign-ins with MFA, aggregating both successes and failures.
+- Captures interactive sign-ins with Microsoft Entra MFA, aggregating both successes and failures.
 - Excludes when a user refreshes the session without completing the interactive MFA or using passwordless sign-in methods.
 
-This article describes these health metrics and how to troubleshoot a potential issue when you receive an alert.
+This article describes these health metrics and how to troubleshoot a potential issue when you receive an alert. For details on how to interact with the Health Monitoring scenarios and how to investigate all alerts, see [How to investigate health scenario alerts](../monitoring-health/howto-investigate-health-scenario-alerts.md).
 
 ## Prerequisites
 
 There are different roles, permissions, and license requirements to view health monitoring signals and configure and receive alerts. We recommend using a role with least privilege access to align with the [Zero Trust guidance](/security/zero-trust/zero-trust-overview).
 
 - A tenant with a [Microsoft Entra P1 or P2 license](../../fundamentals/get-started-premium.md) is required to *view* the Microsoft Entra health scenario monitoring signals.
-- A tenant with both a [Microsoft Entra P1 or P2 license](../../fundamentals/get-started-premium.md) *and* at least 100 monthly active users is required to *view alerts* and *receive alert notifications*.
+- A tenant with both a non-trial [Microsoft Entra P1 or P2 license](../../fundamentals/get-started-premium.md) *and* at least 100 monthly active users is required to *view alerts* and *receive alert notifications*.
 - The [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader) role is the least privileged role required to *view scenario monitoring signals, alerts, and alert configurations*.
 - The [Helpdesk Administrator](../role-based-access-control/permissions-reference.md#helpdesk-administrator) is the least privileged role required to *update alerts* and *update alert notification configurations*.
 - The `HealthMonitoringAlert.Read.All` permission is required to *view the alerts using the Microsoft Graph API*.
