@@ -14,7 +14,7 @@ ms.reviewer: ludwignick
 
 # Set up a Flexible Federated identity credential (preview)
 
-This article provides a guide on how to set up a Flexible Federated identity credential in the Azure portal or Microsoft Graph Explorer. Flexible federated identity credentials are an advanced feature of Microsoft Entra Workload ID that enhances the existing federated identity credential model.
+This article provides a guide on how to set up a [Flexible Federated identity credential](workload-identities-flexible-federated-identity-credentials.md) in the Azure portal or Microsoft Graph Explorer. Flexible federated identity credentials are an advanced feature of Microsoft Entra Workload ID that enhances the existing federated identity credential model.
 
 ## Prerequisites
 
