@@ -1,9 +1,9 @@
 ---
-title: Enable compliant network check with Conditional Access
+title: Enable Compliant Network Check with Conditional Access
 description: Learn how to require known compliant network locations in order to connect to your secured resources with Conditional Access.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 08/13/2024
+ms.date: 12/23/2024
 ms.author: kenwith
 author: kenwith
 manager: amycolannino
@@ -33,14 +33,10 @@ The compliant network is different than [IPv4, IPv6, or geographic locations](..
    - The [Global Secure Access Administrator role](/azure/active-directory/roles/permissions-reference) role to manage the Global Secure Access features.
    - [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) to create and interact with Conditional Access policies and named locations.
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-- To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 
 ### Known limitations
 
-- Compliant network check data plane enforcement (preview) with Continuous Access Evaluation is supported for SharePoint Online and Exchange Online.
-- Enabling Global Secure Access Conditional Access signaling enables signaling for both authentication plane (Microsoft Entra ID) and data plane signaling (preview). It is not currently possible to enable these settings separately.
-- Compliant network check is currently not supported for Private Access applications.
- 
+[!INCLUDE [known-limitations-include](../includes/known-limitations-include.md)]
 
 ## Enable Global Secure Access signaling for Conditional Access
 
@@ -68,7 +64,7 @@ The compliant network Conditional Access policy can be used to protect your Micr
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**.
    1. Under **Exclude**, select **Users and groups** and choose your organization's [emergency access or break-glass accounts](#user-exclusions).
-1. Under **Target resources** > **Include**, and select **All cloud apps**.
+1. Under **Target resources** > **Include**, and select **All resources (formerly 'All cloud apps')**.
    1. If your organization is enrolling devices into Microsoft Intune, it is recommended to exclude the applications **Microsoft Intune Enrollment** and **Microsoft Intune** from your Conditional Access policy to avoid a circular dependency.
 1. Under **Network**.
    1. Set **Configure** to **Yes**.
@@ -80,11 +76,17 @@ The compliant network Conditional Access policy can be used to protect your Micr
 1. Select the **Create** button to create to enable your policy.
 
 > [!NOTE]
-> You can use Global Secure Access traffic profiles along with a Conditional Access policy requiring a compliant network for **All cloud apps**. There's no exclusion required when setting up a policy using the **All Compliant Network locations** location and **All cloud apps**.
+> Use Global Secure Access along with Conditional Access policies that require a Compliant Network for *All Resources*.
 > 
-> Authentication to Global Secure Access traffic profiles are automatically excluded from Conditional Access enforcement when a compliant network is required. This exclusion enables the Global Secure Access client to access required resources to start and authenticate the user.
+> Global Secure Access resources are automatically excluded from the Conditional Access policy when *Compliant Network* is enabled in the policy. There's no explicit resource exclusion required. These automatic exclusions are required to ensure the Global Secure Access client is not blocked from accessing the resources it needs. The resources Global Secure Access needs are:
+> * Global Secure Access Traffic Profiles 
+> * Global Secure Access Policy Service (internal service)
 >
-> Sign-in events for authentication of excluded Global Secure Access traffic profiles appear in the Microsoft Entra ID sign-in logs as "ZTNA Network Access Traffic Profile".
+> Sign-in events for authentication of excluded Global Secure Access resources appear in the Microsoft Entra ID sign-in logs as: 
+> * Internet resources with Global Secure Access 
+> * Microsoft apps with Global Secure Access 
+> * All private resources with Global Secure Access 
+> * ZTNA Policy Service 
 
 ### User exclusions
 

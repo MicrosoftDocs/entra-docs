@@ -17,7 +17,7 @@ items:
     href: quickstart-access-admin-center.md
   - name: Install the Windows client to acquire Microsoft traffic
     href: quickstart-install-client.md
-  - name: Create a remote network to acquire Microsoft traffic
+  - name: Create a remote network
     href: quickstart-remote-network.md
   - name: Configure Quick Access to private resources
     href: quickstart-quick-access.md
@@ -45,6 +45,8 @@ items:
     href: concept-connector-groups.md
   - name: Understand remote network connectivity
     href: concept-remote-network-connectivity.md
+  - name: Universal Continuous Access Evaluation
+    href: concept-universal-continuous-access-evaluation.md
 - name: How-to guides
   expanded: true
   items:
@@ -53,8 +55,12 @@ items:
     items:
       - name: Install the Windows client
         href: how-to-install-windows-client.md
+      - name: Install the macOS client
+        href: how-to-install-macos-client.md
       - name: Install the Android client
         href: how-to-install-android-client.md
+      - name: Install the iOS client
+        href: how-to-install-ios-client.md
   - name: Remote networks
     expanded: false
     items:
@@ -74,7 +80,7 @@ items:
         href: how-to-manage-remote-networks.md
       - name: Assign a traffic forwarding profile to remote networks
         href: how-to-assign-traffic-profile-to-remote-network.md
-      - name: Simulate remote network connectivity using Azure VNG
+      - name: Simulate remote network connectivity using Azure Virtual Network Gateway (VNG)
         href: how-to-simulate-remote-network.md
       - name: Simulate remote network connectivity using Azure vWAN
         href: how-to-create-remote-network-vwan.md
@@ -86,7 +92,7 @@ items:
         items:
           - name: Understand Universal Conditional Access 
             href: concept-universal-conditional-access.md
-          - name: Microsoft traffic
+          - name: Internet traffic
             href: how-to-target-resource-microsoft-profile.md
       - name: Compliant network check
         href: how-to-compliant-network.md
@@ -101,6 +107,8 @@ items:
     items:
       - name: Understand traffic forwarding profiles
         href: concept-traffic-forwarding.md
+      - name: Understand the Microsoft traffic profile
+        href: concept-microsoft-traffic-profile.md
       - name: Manage the Microsoft profile
         href: how-to-manage-microsoft-profile.md
       - name: Manage the Private Access profile
@@ -121,11 +129,19 @@ items:
       - name: Configure per-app access
         href: how-to-configure-per-app-access.md
       - name: Configure Quick Access
-        href: how-to-configure-quick-access.md 
-      - name: Configure Private Access with PIM
+        href: how-to-configure-quick-access.md
+      - name: Application Discovery
+        href: how-to-application-discovery.md
+      - name: Configure Private Access with Privileged Identity Management (PIM)
         href: how-to-configure-global-access-with-pim.md
       - name: Kerberos single sign-on (SSO)
         href: how-to-configure-kerberos-sso.md
+      - name: Source IP anchoring
+        href: source-ip-anchoring.md
+      - name: Access Azure SQL with a service endpoint
+        href: how-to-use-with-azure-sql-service-endpoint.md
+      - name: Use with Azure Private Link
+        href: how-to-use-private-link-with-private-access.md
   - name: Internet Access
     expanded: true
     items:
@@ -150,28 +166,19 @@ items:
         href: reference-event-enrichment-logs.md
       - name: How to use workbooks
         href: how-to-use-workbooks.md 
-  - name: Deployment guides
+      - name: Export private network connector logs
+        href: how-to-export-connector-logs.md
+  - name: Microsoft Global Secure Access deployment guides
     expanded: false
     items:
-      - name: Deployment guide information
-        href: ~/architecture/sse-deployment-guide-intro.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
-      - name: Deploying Microsoft Entra Internet Access
-        href: ~/architecture/sse-deployment-guide-internet-access.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
-      - name: Deploying Microsoft Entra Internet Access for Microsoft 365
-        href: ~/architecture/sse-deployment-guide-m365.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
-      - name: Deploying Microsoft Entra Private Access
-        href: ~/architecture/sse-deployment-guide-private-access.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
-  - name: Secure access with Microsoft Entra and partners
-    expanded: true
-    items:
-    - name: Coexistence with Cisco
-      href: concept-cisco-coexistence.md
-    - name: Coexistence with Palo Alto Networks
-      href: concept-palo-alto-coexistence.md
-    - name: Coexistence with Zscaler
-      href: concept-zscaler-coexistence.md
-    - name: Coexistence with Netskope
-      href: concept-netskope-coexistence.md
+      - name: Introduction
+        href: ~/architecture/gsa-deployment-guide-intro.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
+      - name: Deploy Microsoft Global Secure Access for Microsoft Entra Internet Access
+        href: ~/architecture/gsa-deployment-guide-internet-access.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
+      - name: Deploy Global Secure Access for Microsoft Traffic
+        href: ~/architecture/gsa-deployment-guide-microsoft-traffic.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
+      - name: Deploy Microsoft Global Secure Access for Microsoft Entra Private Access
+        href: ~/architecture/gsa-deployment-guide-private-access.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
   - name: Troubleshoot
     expanded: false
     items:
@@ -181,16 +188,38 @@ items:
         href: troubleshoot-global-secure-access-client-advanced-diagnostics.md
       - name: "Troubleshoot the Global Secure Access client: Health check tab"
         href: troubleshoot-global-secure-access-client-diagnostics-health-check.md
+      - name: "Troubleshoot Distributed File System (DFS) issues"
+        href: troubleshoot-distributed-file-system.md
   - name: Partner ecosystem
-    expanded: false
+    expanded: true
     items:
-      - name: Find a Microsoft services partner
-        href: how-to-find-microsoft-services-partners.md
+       - name: Partner ecosystem overview
+         href: partner-ecosystems-overview.md
+       - name: Partner integrations
+         expanded: true
+         items:
+            - name: Integration with Netskope
+              href: concept-netskope-integration.md
+       - name: Coexistence with partners
+         expanded: false
+         items:
+           - name: Coexistence with Cisco
+             href: concept-cisco-coexistence.md
+           - name: Coexistence with Palo Alto Networks
+             href: concept-palo-alto-coexistence.md
+           - name: Coexistence with Zscaler
+             href: concept-zscaler-coexistence.md
+           - name: Coexistence with Netskope
+             href: concept-netskope-coexistence.md
+       - name: Find a Microsoft services partner
+         href: how-to-find-microsoft-services-partners.md
 - name: Reference
   expanded: false
   items:
   - name: Remote network valid configurations
     href: reference-remote-network-configurations.md
+  - name: Known limitations for Global Secure Access
+    href: reference-current-known-limitations.md
   - name: Points of presence and service addresses
     href: reference-points-of-presence.md
   - name: Data storage and privacy

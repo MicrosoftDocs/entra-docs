@@ -343,7 +343,7 @@ To ensure sign-ins are restricted on all devices and apps in your corporate netw
 
    |Header name  |Header Value  | Sample Value |
    |---------|---------|-----------------|
-   |`sec-Restrict-Tenant-Access-Policy`     |  `<TenantId>:<policyGuid>`       | 08b6c708-60ce-4da8-b457-4328119ff3cd:26222fa0-3632-45e7-b579-5b259c70f73c
+   |`sec-Restrict-Tenant-Access-Policy`     |  `<TenantId>:<policyGuid>`       | aaaabbbb-0000-cccc-1111-dddd2222eeee:1aaaaaa1-2bb2-3cc3-4dd4-5eeeeeeeeee5
 
    - `TenantID` is your Microsoft Entra tenant ID. Find this value by signing in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an administrator and browsing to **Identity** > **Overview** and selecting the **Overview** tab.
    - `policyGUID` is the object ID for your cross-tenant access policy. Find this value by calling `/crosstenantaccesspolicy/default` and using the “id” field returned.
@@ -376,7 +376,7 @@ Although these alternatives provide protection, certain scenarios can only be co
 
 ### Option 3: Enable tenant restrictions on Windows managed devices (preview)
 
-After you create a tenant restrictions v2 policy, you can enforce the policy on each Windows 10, Windows 11, and Windows Server 2022 device by adding your tenant ID and the policy ID to the device's **Tenant Restrictions** configuration. When tenant restrictions are enabled on a Windows device, corporate proxies aren't required for policy enforcement. Devices don't need to be Microsoft Entra ID managed to enforce tenant restrictions v2; domain-joined devices that are managed with Group Policy are also supported.
+After you create a tenant restrictions v2 policy, you can enforce the policy on each Windows 10, Windows 11 by adding your tenant ID and the policy ID to the device's **Tenant Restrictions** configuration. When tenant restrictions are enabled on a Windows device, corporate proxies aren't required for policy enforcement. Devices don't need to be Microsoft Entra ID managed to enforce tenant restrictions v2; domain-joined devices that are managed with Group Policy are also supported.
 
 > [!NOTE]
 > Tenant restrictions V2 on Windows is a partial solution that protects the authentication and data planes for some scenarios. It works on managed Windows devices and does not protect .NET stack, Chrome, or Firefox. The Windows solution provides a temporary solution until general availability of Universal tenant restrictions in [Microsoft Entra Global Secure Access](/entra/global-secure-access/overview-what-is-global-secure-access).
@@ -405,9 +405,7 @@ To test the tenant restrictions v2 policy on a device, follow these steps.
 1. Retrieve the **Tenant ID** and **Policy ID** you recorded earlier (in step 7 under [To configure default tenant restrictions](#to-configure-default-tenant-restrictions)) and enter them in the following fields (leave all other fields blank):
 
    - **Microsoft Entra Directory ID**: Enter the **Tenant ID** you recorded earlier. by signing in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an administrator and browsing to **Identity** > **Overview** and selecting the **Overview** tab.
-   - **Policy GUID**: The ID for your cross-tenant access policy. It's the **Policy ID** you recorded earlier. You can also find this ID by using the Graph Explorer command [https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/default](https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/default).
-
-    [//]: # (BROKEN LINK HttpLinkUnauthorized ABOVE: https://graph.microsoft.com/v1.0/policies/crossTenantAccessPolicy/default)
+   - **Policy GUID**: The ID for your cross-tenant access policy. It's the **Policy ID** you recorded earlier.
 
      :::image type="content" source="media/tenant-restrictions-v2/windows-cloud-policy-details.png" alt-text="Screenshot of Windows Cloud Policy Details.":::
 

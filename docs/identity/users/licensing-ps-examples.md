@@ -9,20 +9,20 @@ ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-ms.date: 12/02/2020
+ms.date: 01/15/2025
 ms.author: barclayn
 ms.reviewer: sumitp
 ---
 
 # PowerShell and Microsoft Graph examples for group-based licensing in Microsoft Entra ID
 
-Full functionality for group-based licensing in Microsoft Entra ID, part of Microsoft Entra, is available through the [Azure portal](https://portal.azure.com), and currently there are some useful tasks that can be performed using the existing Microsoft Graph and [Microsoft Graph PowerShell](/powershell/microsoftgraph/). This document provides examples of what is possible.
+Full functionality for group-based licensing in Microsoft Entra ID is available through the [Azure portal](https://portal.azure.com). There are some useful tasks that can be performed using the existing Microsoft Graph and [Microsoft Graph PowerShell](/powershell/microsoftgraph/). This document provides some examples.
 
 > [!NOTE]
 > Before you begin running cmdlets, make sure you connect to your organization first, by running the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) cmdlet.
 
 > [!WARNING]
-> This code is provided as an example for demonstration purposes. If you intend to use it in your environment, consider testing it first on a small scale, or in a separate test organization. You may have to adjust the code to meet the specific needs of your environment.
+> This code is provided as an example for demonstration purposes. If you intend to use it in your environment, consider testing it first on a small scale, or in a separate test organization. You can make adjustments to the code to meet your environment's specific needs.
 
 ## Assign licenses to a group
 
@@ -91,7 +91,7 @@ $skuPartNumbers = $skuIds | ForEach-Object {
 $skuPartNumbers
 ```
 
-This is the result:
+This output is what the results look like:
 
 ```output
 SkuPartNumber
@@ -101,7 +101,7 @@ EMSPREMIUM
 ```
 
 > [!NOTE]
-> The data retuned here is limited to product (SKU) information. To generate a list of disabled service plans in the license, see [Microsoft Graph PowerShell examples for group licensing](licensing-powershell-graph-examples.md#view-all-disabled-service-plan-licenses-assigned-to-a-group).
+> The data retuned is limited to product (SKU) information. To generate a list of disabled service plans in the license, see [Microsoft Graph PowerShell examples for group licensing](licensing-powershell-graph-examples.md#view-all-disabled-service-plan-licenses-assigned-to-a-group).
 
 
 Use the following sample to get the same data from Microsoft Graph.
@@ -164,7 +164,7 @@ $groupInfo = foreach ($group in $groups) {
 $groupInfo
 ```
 
-This is the result:
+This output is what the results look like:
 
 ```output
 Id                                   DisplayName              AssignedLicenses
@@ -176,7 +176,8 @@ c2652d63-9161-439b-b74e-fcd8228a7074 EMSandOffice             {ENTERPRISEPREMIUM
 ```
 
 ## Get statistics for groups with licenses
-You can report basic statistics for groups with licenses. In the example below, the script lists the total user count, the count of users with licenses already assigned by the group, and the count of users for whom licenses could not be assigned by the group.
+
+You can report basic statistics for groups with licenses. The script lists the total user count, the count of users with licenses already assigned by the group, and the count of users for whom licenses couldn't be assigned by the group.
 
 ```powershell
 # Import User Graph Module
@@ -220,7 +221,7 @@ Access to Offi... 11151866-5419-4d93-9141-0603bbf78b42 STANDARDPACK             
 ```
 
 ## Get all groups with license errors
-To find groups that contain some users for whom licenses could not be assigned:
+To find groups that contain some users for whom licenses couldn't be assigned:
 
 ```powershell
 # Get all groups that have assigned licenses
@@ -390,13 +391,13 @@ Catherine Gibson 22cc22cc-dd33-ee44-ff55-66aa66aa66aa 11151866-5419-4d93-9141-06
 Drew Fogarty     33dd33dd-ee44-ff55-aa66-77bb77bb77bb 1ebd5028-6092-41d0-9668-129a3c471332 MutuallyExclusiveViolation
 ```
 
-Here is another version of the script that searches only through groups that contain license errors. It may be more optimized for scenarios where you expect to have few groups with problems.
+This script is another version that searches only through groups that contain license errors. You can customize the script and it can help  in scenarios where you expect to have few groups with problems.
 
 ```powershell
 $groupIds = Get-MgGroup -All -Filter "HasMembersWithLicenseErrors eq true"
     foreach ($groupId in $groupIds) {
         $Members = Get-MgGroupMember -All -GroupId $groupId 
-        foreach ($Member in $Members) { Get-Get-MgUser -UserId $Member.Id |
+        foreach ($Member in $Members) { Get-MgUser -UserId $Member.Id |
             Where {$Member.AdditionalProperties.IndirectLicenseErrors -and $Member.AdditionalProperties.IndirectLicenseErrors.ReferencedObjectId -eq $groupId.ObjectID} |
             Select DisplayName, `
                    ObjectId, `
@@ -407,9 +408,9 @@ $groupIds = Get-MgGroup -All -Filter "HasMembersWithLicenseErrors eq true"
 
 ## Check if user license is assigned directly or inherited from a group
 
-For a user object, it is possible to check if a particular product license is assigned from a group or if it is assigned directly.
+You can check user objects to determine if a product license is assigned via group membership or through direct assignment. 
 
-The two sample functions below can be used to analyze the type of assignment on an individual user:
+These two sample functions can be used to analyze the type of assignment on an individual user:
 
 ```powershell
 #Returns TRUE if the user has the license assigned directly
@@ -472,7 +473,7 @@ function UserHasLicenseAssignedFromGroup
 }
 ```
 
-This script executes those functions on each user in the organization, using the SKU ID as input - in this example we are interested in the license for *Enterprise Mobility + Security*, which in our organization is represented with ID *contoso:EMS*:
+This script executes those functions on each user in the organization, using the SKU ID as input. In this example, the script is looking for the license for *Enterprise Mobility + Security*, which in our organization is represented with ID *contoso:EMS*:
 
 ```powershell
 #the license SKU we are interested in. use Get-MgSubscribedSku to see a list of all identifiers in your organization
@@ -555,7 +556,11 @@ HTTP/1.1 200 OK
 
 The purpose of this script is to remove unnecessary direct licenses from users who already inherit the same license from a group; for example, as part of a [transition to group-based licensing](licensing-groups-migrate-users.md).
 > [!NOTE]
-> It is important to first validate that the direct licenses to be removed do not enable more service functionality than the inherited licenses. Otherwise, removing the direct license may disable access to services and data for users. Currently it is not possible to check via PowerShell which services are enabled via inherited licenses vs direct. In the script, we specify the minimum level of services we know are being inherited from groups and check against that to make sure users do not unexpectedly lose access to services.
+> It's important to first validate that the direct licenses to be removed don't enable more service functionality than the inherited licenses. Otherwise, removing the direct license may disable access to services and data for users. Currently it isn't possible to check via PowerShell which services are enabled via inherited licenses vs direct.
+
+In the script, we specify the minimum level of services that are assigned through group assignment to ensure users don't experience unexpected service access loss.
+
+In the script, we specify the minimum level of services we know are being inherited from groups and check against that to make sure users don't unexpectedly lose access to services.
 
 ```powershell
 #BEGIN: Helper functions used by the script
@@ -731,7 +736,7 @@ aadbe4da-c4b5-4d84-800a-9400f31d7371 User has no direct license to remove. Skipp
 ```
 
 > [!NOTE]
-> Please update the values for the variables `$skuId` and `$groupId` which is being targeted for removal of Direct Licenses as per your test environment before running the above script.
+> Update the values for the variables `$skuId` and `$groupId` which is being targeted for removal of Direct Licenses as per your test environment before running the script.
 
 ## Next steps
 
@@ -742,5 +747,5 @@ To learn more about the feature set for license management through groups, see t
 * [Identifying and resolving license problems for a group in Microsoft Entra ID](licensing-groups-resolve-problems.md)
 * [How to migrate individual licensed users to group-based licensing in Microsoft Entra ID](licensing-groups-migrate-users.md)
 * [How to migrate users between product licenses using group-based licensing in Microsoft Entra ID](licensing-groups-change-licenses.md)
-* [Microsoft Entra group-based licensing additional scenarios](./licensing-group-advanced.md)
+* [Microsoft Entra group-based licensing scenarios](./licensing-group-advanced.md)
 * [PowerShell examples for group-based licensing in Microsoft Entra ID](licensing-ps-examples.md)

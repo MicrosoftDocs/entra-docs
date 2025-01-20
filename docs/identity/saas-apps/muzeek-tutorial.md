@@ -60,7 +60,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Navigate to **Authentication** tab on the left menu and perform the following steps:
 
-    a. Enable the **Access tokens (used for implicit flows)** and **ID tokens (used for implicit and hybrid flows)**
+    a. Enable the **Access tokens** and **ID tokens**
 
     [![Screenshot showing the Access tokens.](./media/muzeek-tutorial/access-token.png)](./media/muzeek-tutorial/access-token.png#lightbox)
 

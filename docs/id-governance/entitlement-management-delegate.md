@@ -27,7 +27,7 @@ By default, users in the Global Administrator role or the Identity Governance Ad
 
 This video provides an overview of how to delegate access governance from IT administrator to users who aren't administrators.
 
-> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE3Lq00]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=0915072b-63ec-4c78-b2ca-aa5f54a54219]
 
 ## Delegate example
 
@@ -94,7 +94,7 @@ Also, the chosen approver and a requestor of an access package have rights, alth
 
 The following table lists the tasks that the entitlement management roles can do within entitlement management.
 
-| Task | Admin | Catalog creator | Catalog owner | Access package manager | Access package assignment manager |
+| Task |  Identity Governance Administrator | Catalog creator | Catalog owner | Access package manager | Access package assignment manager |
 | --- | :---: | :---: | :---: | :---: | :---: |
 | [Delegate to a catalog creator](entitlement-management-delegate-catalog.md) | :heavy_check_mark: |  |  |  |  |
 | [Add a connected organization](entitlement-management-organization.md) | :heavy_check_mark: |  |  |  |  |

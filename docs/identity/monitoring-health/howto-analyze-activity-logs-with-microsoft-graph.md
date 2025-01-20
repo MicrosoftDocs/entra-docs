@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 03/04/2024
+ms.date: 11/08/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -15,23 +15,18 @@ ms.reviewer: egreenberg
 ---
 # How to analyze activity logs with Microsoft Graph
 
-The Microsoft Entra [reporting APIs](/graph/api/resources/azure-ad-auditlog-overview) provide you with programmatic access to the data through a set of REST APIs. You can call these APIs from many programming languages and tools. The Microsoft Graph API isn't designed for pulling large amounts of activity data. Pulling large amounts of activity data using the API might lead to issues with pagination and performance.
+The Microsoft Entra [reporting APIs](/graph/api/resources/azure-ad-auditlog-overview) provide you with programmatic access to the data through a set of REST APIs. You can call these APIs from many programming languages and tools.
 
 This article describes how to analyze Microsoft Entra activity logs with Microsoft Graph Explorer and Microsoft Graph PowerShell.
 
 ## Prerequisites
 
-- For license and role requirements, see [Microsoft Entra monitoring and health licensing](../../fundamentals/licensing.md#microsoft-entra-monitoring-and-health).
-- To consent to the required permissions, you need the [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-
-To make requests to the Microsoft Graph API, you must first:
-
-- [Register your app](/graph/auth-register-app-v2)
-- [Get authentication tokens for a user](/graph/auth-v2-user) or [service](/graph/auth-v2-service)
+- A working Microsoft Entra tenant with a Microsoft Entra ID P1 or P2 license associated with it.
+- To consent to the required permissions, you need the [Privileged Role Administrator](../../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 
 ## Access reports using Microsoft Graph Explorer
 
-With all the prerequisites configured, you can run activity log queries in Microsoft Graph. For more information on Microsoft Graph queries for activity logs, see [Activity reports API overview](/graph/api/resources/azure-ad-auditlog-overview).
+With all the prerequisites configured, you can run activity log queries in Microsoft Graph. The Microsoft Graph API isn't designed for pulling large amounts of activity data. Pulling large amounts of activity data using the API might lead to issues with pagination and performance. For more information on Microsoft Graph queries for activity logs, see [Activity reports API overview](/graph/api/resources/azure-ad-auditlog-overview).
 
 1. Start [Microsoft Graph Explorer tool](https://aka.ms/ge).
 
@@ -58,19 +53,20 @@ To search for specific activity log entries, use the $filter and createdDateTime
 Try using the following queries:
 
 - For sign-in attempts where Conditional Access failed:
-  - GET `https://graph.microsoft.com/v1.0/auditLogs/signIns?&$filter=conditionalAccessStatus eq 'failure'`
+  - GET `https://graph.microsoft.com/v1.0/auditLogs/signIns?$filter=conditionalAccessStatus eq 'failure'`
+  - Consider using a date filter so the request doesn't time out.
 
-- To find sign-ins to a specific application:
-  - GET `https://graph.microsoft.com/v1.0/auditLogs/signIns?&$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2024-01-14T17:43:26Z) and appId eq 'APP ID'`
+- To find sign-ins to a specific application during a specific time frame:
+  - GET `https://graph.microsoft.com/v1.0/auditLogs/signIns?$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2024-01-14T17:43:26Z) and appId eq 'APP ID'`
 
 - For non-interactive sign-ins:
-  - GET `https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2024-01-14T17:43:26Z) and signInEventTypes/any(t: t eq 'nonInteractiveUser')`
+  - GET `https://graph.microsoft.com/beta/auditLogs/signIns?$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2024-01-14T17:43:26Z) and signInEventTypes/any(t: t eq 'nonInteractiveUser')`
 
 - For service principal sign-ins: 
-  - GET `https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2024-01-14T17:43:26Z) and signInEventTypes/any(t: t eq 'servicePrincipal')`
+  - GET `https://graph.microsoft.com/beta/auditLogs/signIns?$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2024-01-14T17:43:26Z) and signInEventTypes/any(t: t eq 'servicePrincipal')`
 
 - For managed identity sign-ins: 
-  - GET `https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2024-01-14T17:43:26Z) and signInEventTypes/any(t: t eq 'managedIdentity')`
+  - GET `https://graph.microsoft.com/beta/auditLogs/signIns?$filter=(createdDateTime ge 2024-01-13T14:13:32Z and createdDateTime le 2024-01-14T17:43:26Z) and signInEventTypes/any(t: t eq 'managedIdentity')`
 
 - To get the authentication method of a user: 
   - GET `https://graph.microsoft.com/beta/users/{userObjectId}/authentication/methods`
@@ -112,7 +108,7 @@ Microsoft Graph PowerShell cmdlets:
 
 **Error: Application missing Microsoft Entra ID 'Read directory data' or 'Read all audit log data' permission**: The application must have either the `AuditLog.Read.All` or `Directory.Read.All` permission to access the activity logs with Microsoft Graph.
 
-## Next steps
+## Related content
 
 - [Get started with Microsoft Entra ID Protection and Microsoft Graph](../../id-protection/howto-identity-protection-graph-api.md)
 - [Audit API reference](/graph/api/resources/directoryaudit)

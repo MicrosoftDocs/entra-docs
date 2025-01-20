@@ -31,7 +31,7 @@ The API is protected through Microsoft Entra ID and uses OAuth2 bearer tokens. T
 
 ### User bearer tokens
 
-The app registration needs to have the API Permission for `Verifiable Credentials Service Admin` and then when acquiring the access token the app should use scope `6a8b4b39-c021-437c-b060-5a14a3fd65f3/full_access`. The access token must be for a user with the [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) or the [authentication policy administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) role. A user with role [global reader](~/identity/role-based-access-control/permissions-reference.md#global-reader) can perform read-only API calls.
+The app registration needs to have the API Permission for `Verifiable Credentials Service Admin` and then when acquiring the access token the app should use scope `6a8b4b39-c021-437c-b060-5a14a3fd65f3/full_access`. The access token must be for a user with the [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) or the [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) role. A user with role [global reader](~/identity/role-based-access-control/permissions-reference.md#global-reader) can perform read-only API calls.
 
 ### Application bearer tokens
 
@@ -101,11 +101,12 @@ This endpoint can be used to create or update a Verifiable Credential service in
 | [Create Authority](#create-authority) | Authority | Create a new authority |
 | [Update authority](#update-authority) | Authority | Update authority |
 | [Delete authority](#delete-authority) | Authority | Delete authority |
-| [Generate Well known DID Configuration](#well-known-did-configuration) | | |
 | [Generate DID Document](#generate-did-document) | | |
-| [Validate Well-known DID config](#validate-well-known-did-configuration) | | |
 | [Rotate Signing Key](#rotate-signing-key) | Authority | Rotate signing key |
+| [Create Signing Key](#create-signing-key) | Authority | Create signing key |
 | [Synchronize with DID Document](#synchronize-with-did-document) | Authority | Synchronize DID document with new signing key |
+| [Generate Well known DID Configuration](#well-known-did-configuration) | | |
+| [Validate Well-known DID config](#validate-well-known-did-configuration) | | |
 
 
 ### Get authority
@@ -284,7 +285,7 @@ Content-type: application/json
 
 ### Create authority
 
-This call creates a new **private key**, recovery key and update key, stores these keys in the specified Azure Key Vault and sets the permissions to this Key Vault for the verifiable credential service and a create new **DID** with corresponding DID Document.
+This call creates a new **private key** and stores the key in the specified Azure Key Vault and sets the permissions to this Key Vault for the verifiable credential service and creates new **DID** with corresponding DID Document.
 
 #### HTTP request
 
@@ -708,6 +709,42 @@ Content-type: application/json
 }
 ```
 
+### Create signing key
+
+The create signing key creates a new private key in the already existing Key Vault for the did:web authority. The DID document should be re-registered to reflect the update as the `didDocumentStatus` of the authority is changed to `outOfSync`. When the DID document is re-registered, call [synchronizeWithDidDocument](#synchronize-with-did-document) tell the system to start using the new key for signing.
+
+#### HTTP request
+
+`POST /v1.0/verifiableCredentials/authorities/:authorityId/didInfo/signingKeys`
+
+#### Request headers
+
+| Header | Value |
+| -------- | -------- |
+| Authorization | Bearer (token). Required |
+| Content-Type | application/json |
+
+#### Request Body
+
+```JSON
+{
+	"signingKeyCurve": "P-256"
+}
+```
+
+#### Response message
+
+```JSON
+HTTP/1.1 200 OK
+Content-type: application/json
+
+{
+	"id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
+	"keyUrl": "https://vcwingtipskv.vault.azure.net/keys/vcSigningKey-00aa00aa-bb11-cc22-dd33-44ee44ee44ee/5255b9f2d9b94dc19a369ff0d36e3407",
+	"curve": "P-256"
+}
+```
+
 ### Synchronize with DID Document
 
 After [rotating](#rotate-signing-key) the signing key, the DID document should be [re-registered](how-to-register-didwebsite.md#how-do-i-register-my-decentralized-id) to reflect the update. When this is done, the synchronizeWithDidDocument tells the system to start using the new key for signing.
@@ -1015,7 +1052,7 @@ example:
                 "title": "BankofWoodgroveIdentity",
                 "logo": {
                     "description": "Defaultbankofwoodgrovelogo",
-                    "uri": "https://didcustomerplayground.blob.core.windows.net/public/VerifiedCredentialExpert_icon.png"
+                    "uri": "https://didcustomerplayground.z13.web.core.windows.net/VerifiedCredentialExpert_icon.png"
                 }
             },
             "consent": {

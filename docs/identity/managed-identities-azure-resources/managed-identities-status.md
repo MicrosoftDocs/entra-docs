@@ -2,13 +2,13 @@
 title: Azure Services with managed identities support
 description: List of services supporting managed identities
 
-author: barclayn
-ms.author: barclayn
+author: rwike77
+ms.author: ryanwi
 ms.date: 03/14/2024
 ms.topic: conceptual
 ms.service: entra-id
 ms.subservice: managed-identities
-manager: amycolannino
+manager: CelesteDG
 
 ---
 
@@ -52,6 +52,8 @@ The following Azure services support managed identities for Azure resources:
 | Azure Digital Twins             | [Enable a managed identity for routing Azure Digital Twins events](/azure/digital-twins/how-to-enable-managed-identities-portal)                                                                                            |
 | Azure Event Grid                | [Event delivery with a managed identity](/azure/event-grid/managed-service-identity)|
 | Azure Event Hubs                | [Authenticate a managed identity with Microsoft Entra ID to access Event Hubs Resources](/azure/event-hubs/authenticate-managed-identity)|
+| Azure Health Data Services workspace services | [Authentication and authorization for Azure Health Data Services](/azure/healthcare-apis/authentication-authorization)|
+| Azure Health Data Services de-identification service | [Use managed identities with the de-identification service](/azure/healthcare-apis/deidentification/managed-identities)|
 | Azure Image Builder             | [Azure Image Builder overview](/azure/virtual-machines/image-builder-overview#permissions)                                                                                                    |
 | Azure Import/Export             | [Use customer-managed keys in Azure Key Vault for Import/Export service](/azure/import-export/storage-import-export-encryption-key-portal)|
 | Azure IoT Hub                   | [IoT Hub support for virtual networks with Private Link and Managed Identity](/azure/iot-hub/virtual-network-support)                                                                               |

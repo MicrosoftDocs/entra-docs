@@ -5,7 +5,7 @@ description: Enable and configure risk policies in Microsoft Entra ID Protection
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 06/17/2024
+ms.date: 12/17/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -36,9 +36,11 @@ The policy configurations that follow include the [sign-in frequency session con
 Microsoft recommends the following risk policy configurations to protect your organization:
 
 - User risk policy
-   - Require a secure password change when user risk level is **High**. Microsoft Entra multifactor authentication is required before the user can create a new password with password writeback to remediate their risk. 
+   - Require a secure password change when user risk level is **High**. Microsoft Entra multifactor authentication is required before the user can create a new password with password writeback to remediate their risk.
+   - A secure password change using self-service password reset is the only way to self-remediate user risk, regardless of the risk level. 
 - Sign-in risk policy
-   - Require Microsoft Entra multifactor authentication when sign-in risk level is **Medium** or **High**, allowing users to prove it's them by using one of their registered authentication methods, remediating the sign-in risk. 
+   - Require Microsoft Entra multifactor authentication when sign-in risk level is **Medium** or **High**, allowing users to prove it's them by using one of their registered authentication methods, remediating the sign-in risk.
+   - A successful multifactor authentication is the only way to self-remediate the sign-in risk, regardless of the risk level.
 
 Requiring access control when risk level is low introduces more friction and user interrupts than medium or high. Choosing to block access rather than allowing self-remediation options, like secure password change and multifactor authentication, affect your users and administrators even more. Weigh these choices when configuring your policies.
 

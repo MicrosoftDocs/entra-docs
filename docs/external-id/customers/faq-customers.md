@@ -1,14 +1,14 @@
 ---
 title: Frequently asked questions
-description: Find answers to some of the most frequently asked questions about Microsoft Entra External ID. 
+description: Find answers to frequently asked questions about Microsoft Entra External ID. Learn about pricing, features, and the future of Azure AD B2C and External Identities. 
  
 author: msmimart
 manager: celestedg
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: faq
-ms.date: 09/06/2024
+ms.date: 10/21/2024
 ms.author: mimart
 ms.custom: it-pro
 ---
@@ -93,7 +93,7 @@ Our next-generation CIAM platform is designed to accommodate equivalent capabili
 
 ### What identity providers does External ID support?
 
- External ID supports various identity providers, including Microsoft Entra accounts (via invite), Facebook, Google, and SAML/WS-Fed identity provider federation. Identity providers are based on the tenant configuration and whether the external user is invited or uses self-service sign-up. [Learn more about identity providers](../identity-providers.md) in External ID, and refer to our [supported feature comparison](concept-supported-features-customers.md).
+ External ID supports various identity providers, including Microsoft Entra accounts (via invite), Facebook, Google, Apple, custom OIDC, and SAML/WS-Fed identity provider federation. Identity providers are based on the tenant configuration and whether the external user is invited or uses self-service sign-up. [Learn more about identity providers](../identity-providers.md) in External ID, and refer to our [supported feature comparison](concept-supported-features-customers.md).
 
 ### Where can I find a list of External ID features?
 

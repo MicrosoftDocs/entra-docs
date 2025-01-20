@@ -149,17 +149,12 @@ You can reuse settings to publish more applications.
 4. Confirm the BIG-IP connects to your tenant.
 5. Select **Next**
 
-   ![Screenshot of entries and options for Configuration Properties.](./media/f5-big-ip-easy-button-ldap/config-properties.png)
-
 ### Service Provider
 
 In Service Provider settings, define SAML SP instance settings for the SHA-protected application.
 
 1. Enter a **Host**, the application public FQDN.
 2. Enter an **Entity ID**, the identifier Microsoft Entra ID uses to identify the SAML SP requesting a token.
-
-   ![Screenshot of input fields for Service Provider.](./media/f5-big-ip-easy-button-ldap/service-provider.png)
-
 3. (Optional) In Security Settings, select **Enable Encryption Assertion** to enable Microsoft Entra ID to encrypt issued SAML assertions. Microsoft Entra ID and BIG-IP APM encryption assertions help assure content tokens aren't intercepted, nor personal or corporate data compromised.
 
 4. In **Security Settings**, from the **Assertion Decryption Private Key** list, select **Create New**.
@@ -327,8 +322,6 @@ Deployment provides a breakdown of your configurations.
 3. A redirection occurs to the BIG-IP virtual server for the application and signed in with SSO.
 
 The following screenshot is injected headers output from the header-based application.
-
-   ![Screenshot of UPN, employee ID, and event roles under Server Variables.](./media/f5-big-ip-easy-button-ldap/app-view.png)
 
    > [!NOTE]
    > You can block direct access to the application, thereby enforcing a path through the BIG-IP.

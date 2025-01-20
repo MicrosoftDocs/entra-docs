@@ -1,9 +1,9 @@
 ---
 title: "What's new in Microsoft Entra External ID in external tenants"
 description: "New and updated documentation for Microsoft Entra External ID in external tenants."
-ms.date: 09/11/2024
+ms.date: 01/10/2025
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.topic: whats-new
  
 ms.author: cmulligan
@@ -16,35 +16,34 @@ manager: CelesteDG
 
 Welcome to what's new in documentation for Microsoft Entra External ID in external tenants. This article lists new docs that were added and docs that were significantly updated in the last three months.
 
-## August 2024
-
-### New article
-
-- [Multifactor authentication in external tenants](concept-multifactor-authentication-customers.md)
+## December 2024
 
 ### Updated articles
 
-- [Quickstart: Get started with Microsoft Entra External ID free trial](quickstart-trial-setup.md) - Updated the preview label
-- [Quickstart: Use your Azure subscription to create an external tenant](quickstart-tenant-setup.md) - Screenshot and editorial updates
-- [Supported features in workforce and external tenants](concept-supported-features-customers.md) - Updated the authentication methods to differentiate between primary auth and MFA methods
-- [Identity providers for external tenants](concept-authentication-methods-customers.md) - Added MFA updates
-- [Security and governance in Microsoft Entra External ID](concept-security-customers.md) - Added MFA updates
-- [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md) - Updated SMS as an MFA method 
-- [Create self-service sign-up user flows for apps in external tenants](how-to-user-flow-sign-up-sign-in-customers.md) - Added MFA options
-- [Service limits and restrictions](reference-service-limits.md) - Added telephony throttling limits
+- [Supported features in workforce and external tenants](concept-supported-features-customers.md) - Added pricing and ID Governance details
 
-## July 2024
+## November 2024
 
-### Updated articles
+### New articles
 
-- [Call an API in a sample Node.js daemon application](sample-daemon-node-call-api.md) - Editorial updates
-- [Sign in users in a sample Electron desktop application](how-to-desktop-app-electron-sample-sign-in.md) - Added user flow testing instructions
-- [Sign in users and edit profile in a sample Node.js web application](sample-web-app-node-sign-in-edit-profile.md) - Editorial updates
-
-## June 2024
+- [Add Apple as an identity provider (preview)](how-to-apple-federation-customers.md)
+- [Add OpenID Connect as an external identity provider (preview)](how-to-custom-oidc-federation-customers.md)
+- [Add Azure AD B2C tenant as an OpenID Connect identity provider (preview)](how-to-b2c-federation-customers.md)
+- [OpenID Connect claims mapping (preview)](reference-oidc-claims-mapping-customers.md)
+- [Regions requiring opt-in for SMS verification (preview)](how-to-region-code-opt-in.md)
 
 ### Updated articles
 
-- [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md) - Screenshots and instructions updated
-- [Sign in users and call a web API in sample Node.js web application](sample-web-app-node-sign-in-call-api.md) - Editorial updates
-- [Tutorial: Add sign-in in Android app by using native authentication](tutorial-native-authentication-android-sign-in-sign-out.md) - Updated sign in instructions
+- [Gain insights into your app users’ activity](how-to-user-insights.md) - Added MFA Usage dashboard details
+- [Multifactor authentication in external tenants](concept-multifactor-authentication-customers.md) - Opt-in telephony regions update
+- [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md) - Opt-in telephony regions update
+
+## October 2024
+
+### Updated articles
+
+- [Register an app in your external tenant](how-to-register-ciam-app.md) -  Testing updates
+- [Multifactor authentication in external tenants](concept-multifactor-authentication-customers.md) -  SMS-based authentication updates
+- [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md) -  SMS-based authentication updates
+- [Create self-service sign-up user flows for apps in external tenants](how-to-user-flow-sign-up-sign-in-customers.md) -  Graph API updates
+

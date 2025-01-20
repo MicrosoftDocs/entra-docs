@@ -104,8 +104,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Blink**.
 
-	![Blink User Mappings](media/blink-provisioning-tutorial/User_mappings.png)
-
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Blink in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Blink for update operations. Select the **Save** button to commit any changes.
 
    |Attribute|Type|Supported for filtering|

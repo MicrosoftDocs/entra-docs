@@ -1,11 +1,11 @@
 ---
-title: How to manage the Private Access profile
+title: How to Manage the Private Access Profile
 description: Learn how to manage the Private Access traffic forwarding profile for Microsoft Entra Private Access.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 05/02/2024
+ms.date: 12/23/2024
 ms.service: global-secure-access
 ms.subservice: entra-private-access 
 ms.reviewer: katabish
@@ -27,9 +27,7 @@ To enable the Private Access forwarding profile for your tenant, you must have:
 
 ### Known limitations
 
-- At this time, Private Access traffic can only be acquired with the Global Secure Access Client. Private Access traffic can't be acquired from remote networks.
-- Tunneling traffic to Private Access destinations by IP address is supported only for IP ranges outside of the end-user device local subnet. 
-- You must disable DNS over HTTPS (Secure DNS) to tunnel network traffic based on the rules of the fully qualified domain names (FQDNs) in the traffic forwarding profile. 
+[!INCLUDE [known-limitations-include](../includes/known-limitations-include.md)]
 
 ## Enable the Private Access traffic forwarding profile
 
@@ -48,8 +46,6 @@ To manage the details included in the Private Access traffic forwarding policy, 
 ![Screenshot of the Private Access profile, with the view applications link highlighted.](media/how-to-manage-private-access-profile/private-access-profile-link.png)
 
 Details of your Quick Access and enterprise apps for Private Access are displayed. Select the link for the application to view the details from the Enterprise applications area of Microsoft Entra ID.
-
-![Screenshot of the private access application details.](media/how-to-manage-private-access-profile/private-access-app-details.png)
 
 ## Linked Conditional Access policies
 

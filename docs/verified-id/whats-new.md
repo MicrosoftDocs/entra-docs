@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-verified-id
 
 ms.topic: whats-new
-ms.date: 10/31/2023
+ms.date: 12/16/2024
 ms.custom: references_regions
 ms.author: barclayn
 
@@ -17,6 +17,14 @@ ms.author: barclayn
 # What's new in Microsoft Entra Verified ID
 
 This article lists the latest features, improvements, and changes in the Microsoft Entra Verified ID service.
+
+## January 2025
+
+- Instructions for [upgrading signing key](signing-key-upgrade.md) to become FIPS compliant.
+
+## October 2024
+
+- FAQ section now contains information for [network hardening](verifiable-credentials-faq.md#network-hardening-for-callback-events) for Request Service API callbacks.
 
 ## September 2024
 
@@ -32,7 +40,7 @@ This article lists the latest features, improvements, and changes in the Microso
 
 ## April 2024
 
-- [Quick setup](verifiable-credentials-configure-tenant-quick.md) Generally available, it enables an admin to onboard Microsoft Entra Verified ID in an Microsoft Entra tenant with just one click of a button.
+- [Quick setup](verifiable-credentials-configure-tenant-quick.md) Generally available, it enables an admin to onboard Microsoft Entra Verified ID in a Microsoft Entra tenant with just one select of a button.
 
 ## March 2024
 
@@ -46,26 +54,26 @@ This article lists the latest features, improvements, and changes in the Microso
 
 ## January 2024
 
-- [FaceCheck](using-facecheck.md) is now in public preview. It allows enterprises to perform high-assurance verifications by performing facial matching between a user’s real-time selfie and a photo in the Verified ID credential. FaceCheck is offered free of cost during the Public Preview period and can be leveraged by any Verified ID project. Later in the year we will announce billing models.
+- [FaceCheck](using-facecheck.md) is now in public preview. It allows enterprises to perform high-assurance verifications by performing facial matching between a user’s real-time selfie and a photo in the Verified ID credential. FaceCheck is offered free of cost during the Public Preview period and can be used by any Verified ID project. 
 
 ## December 2023
 
 - [Request Service API](issuance-request-api.md#issuance-request-payload) now supports the issuing application to set the expiry date of the credential during and issuance request when the attestation is using the [idTokenHint flow](how-to-use-quickstart.md).
-- The option of selecting `did:ion` as a trust system is removed. The only trust system available is `did:web`. Please see the FAQ for [help on how move to did:web from did:ion](verifiable-credentials-faq.md#how-do-i-move-to-didweb-from-didion).
+- The option of selecting `did:ion` as a trust system is removed. The only trust system available is `did:web`. See the FAQ for [help on how move to did:web from did:ion](verifiable-credentials-faq.md#how-do-i-move-to-didweb-from-didion).
 
 ## November 2023
 
-[Request Service API](presentation-request-api.md#constraints-type) now supports claims constraints when making presentation requests. Claims constraints can be used to specify constraints on the Verified ID credential that the verifier is asking to be presented. Available constraints are direct match, contains and startsWith.
+[Request Service API](presentation-request-api.md#constraints-type) now supports claims constraints when making presentation requests. Claims constraints can be used to specify constraints on the Verified ID credential that the verifier is asking to be presented. Available constraints are direct match, contains, and startsWith.
 
 ## October 2023
 
-- [Quick setup](verifiable-credentials-configure-tenant-quick.md) introduced as preview which enables an admin to onboard a Microsoft Entra tenant with just one click of a button.
+- [Quick setup](verifiable-credentials-configure-tenant-quick.md) introduced as preview which enables an admin to onboard a Microsoft Entra tenant with just one select of a button.
 - [MyAccount available now to simplify issuance of Workplace Credentials](verifiable-credentials-configure-tenant-quick.md#myaccount-available-now-to-simplify-issuance-of-workplace-credentials)
 - [Advanced setup](verifiable-credentials-configure-tenant.md) still available as an option to `Quick setup`.
 
 ## September 2023
 
-Verified ID is retiring old Request Service API endpoints that were available before Verified ID was General Available. These APIs should not have been used since GA in August 2022, but if they are used in your app, you need to migrate. The API endpoints being retired are:
+Verified ID is retiring old Request Service API endpoints that were available before Verified ID was General Available. These APIs shouldn't have been used since GA in August 2022, but if they are used in your app, you need to migrate. The API endpoints being retired are:
 
 ```http
 POST https://verifiedid.did.msidentity.com/v1.0/:tenant/verifiablecredentials/request
@@ -74,7 +82,7 @@ POST https://verifiedid.did.msidentity.com/v1.0/:tenant/verifiablecredentials/pr
 POST https://verifiedid.did.msidentity.com/v1.0/:tenant/verifiablecredentials/issuance
 ```
 
-The first API was for creating an issuance or presentation request. The second API was for retrieving a request and the last two APIs was for a wallet completing issuance or presentation. The API endpoints to use since preview are the following.
+The first API was for creating an issuance or presentation request. The second API was for retrieving a request and the last two APIs was for a wallet completing issuance or presentation. The API endpoints to use since preview are:
 
 ```http
 POST https://verifiedid.did.msidentity.com/v1.0/verifiablecredentials/createPresentationRequest
@@ -84,9 +92,9 @@ POST https://verifiedid.did.msidentity.com/v1.0/verifiablecredentials/completeIs
 POST https://verifiedid.did.msidentity.com/v1.0/verifiablecredentials/verifyPresentation
 ```
 
-Please note that the `/request` API is split into two depending on if you are creating an issuance or presentation request.
+The `/request` API is split into two depending on if you are creating an issuance or presentation request.
 
-The retired API endpoints will not work after October 2023, 2023.
+The retired API endpoints don't work since October 2023.
 
 ## August 2023
 
@@ -113,13 +121,13 @@ Instructions for setting up place of work verification on LinkedIn available [he
 
 ## February 2023
 
-- *Public preview* - Entitlement Management customers can now create access packages that leverage Microsoft Entra Verified ID [learn more](~/id-governance/entitlement-management-verified-id-settings.md)
+- *Public preview* - Entitlement Management customers can now create access packages that use Microsoft Entra Verified ID [learn more](~/id-governance/entitlement-management-verified-id-settings.md)
 
 - The Request Service API can now do revocation check for verifiable credentials presented that was issued with [StatusList2021](https://www.w3.org/TR/vc-status-list/) or the [RevocationList2020](https://w3c-ccg.github.io/vc-status-rl-2020/) status list types.
 
 ## January 2023
 
-- Microsoft Authenticator user experience improvements on pin code, verifiable credential overview and verifiable credentials requirements.
+- Microsoft Authenticator user experience improvements on pin code, verifiable credential overview, and verifiable credentials requirements.
 
 ## November 2022
 
@@ -174,7 +182,7 @@ Microsoft Entra Verified ID is now generally available (GA) as the new member of
 
 ## May 2022
 
-We're expanding our service to all Azure AD customers! Verifiable credentials are now available to everyone with an Azure AD subscription (Free and Premium). Existing tenants that configured the Verifiable Credentials service prior to May 4, 2022 must make a small change to avoid service disruptions.
+We're expanding our service to all Microsoft Entra ID customers! Verifiable credentials are now available to everyone with a Microsoft Entra ID subscription (Free and Premium). Existing tenants that configured the Verifiable Credentials service prior to May 4, 2022 must make a small change to avoid service disruptions.
 
 ## April 2022
 

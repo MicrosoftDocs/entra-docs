@@ -1,14 +1,13 @@
 ---
-
-title: Tutorial to migrate your applications from Okta to Microsoft Entra ID
-description: Learn how to migrate your applications from Okta to Microsoft Entra ID.
+title: Migrate applications from Okta to Microsoft Entra ID
+description: Discover the process of migrating applications from Okta to Microsoft Entra ID, covering SAML, OpenID Connect, and OAuth 2.0 configurations.
 
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id
 
-ms.topic: tutorial
-ms.date: 12/14/2022
+ms.topic: how-to
+ms.date: 12/06/2024
 ms.author: gasinh
 ms.subservice: enterprise-apps
 ms.custom: not-enterprise-apps
@@ -16,9 +15,9 @@ ms.custom: not-enterprise-apps
 #customer intent: As an IT admin currently using Okta for application management, I want to migrate my applications to Microsoft Entra ID, so that I can centralize application access and management in one platform.
 ---
 
-# Tutorial: Migrate your applications from Okta to Microsoft Entra ID
+# Migrate applications from Okta to Microsoft Entra ID
 
-In this tutorial, you'll learn how to migrate your applications from Okta to Microsoft Entra ID.
+In this tutorial, you learn how to migrate your applications from Okta to Microsoft Entra ID.
 
 ## Prerequisites
 
@@ -43,13 +42,11 @@ To create an application inventory:
 
     ![Screenshot of the Name entry under Create Token.](media/migrate-applications-from-okta/token-created.png)
 
-4. Record the token value and save it. After you select **OK, got it**, it is not accessible.
+4. Record the token value and save it. After you select **OK, got it**, it isn't accessible.
 
     ![Screenshot of the Token Value field and the OK got it option.](media/migrate-applications-from-okta/record-created.png)
 
 5. In the Postman app, in the workspace, select **Import**.
-
-    ![Screenshot of the Import option on Postman.](media/migrate-applications-from-okta/import-api.png)
 
 6. On the **Import** page, select **Link**. To import the API, insert the following link:
 
@@ -65,7 +62,7 @@ To create an application inventory:
     ![Screenshot of the Import option on Import.](media/migrate-applications-from-okta/next-import-menu.png)
 
 8. After the API is imported, change the **Environment** selection to **{yourOktaDomain}**.
-9. To edit your Okta environment select the **eye** icon. Then select **Edit**.
+9. To edit your Okta environment, select the **eye** icon. Then select **Edit**.
 
     ![Screenshot of the eye icon and Edit option on Overview.](media/migrate-applications-from-okta/edit-environment.png)
 
@@ -84,13 +81,11 @@ To create an application inventory:
 
 We recommend you copy and convert this JSON list to a CSV format:
 
-* Use a public converter such as [Konklone](https://konklone.io/json/)
-* Or for PowerShell, use [ConvertFrom-Json](/powershell/module/microsoft.powershell.utility/convertfrom-json) and [ConvertTo-CSV](/powershell/module/microsoft.powershell.utility/convertto-csv)
+- Use a public converter such as [Konklone](https://konklone.io/json/)
+- Or for PowerShell, use [ConvertFrom-Json](/powershell/module/microsoft.powershell.utility/convertfrom-json) and [ConvertTo-CSV](/powershell/module/microsoft.powershell.utility/convertto-csv)
 
 >[!NOTE]
 >To have a record of the applications in your Okta tenant, download the CSV.
-
-<a name='migrate-a-saml-application-to-azure-ad'></a>
 
 ## Migrate a SAML application to Microsoft Entra ID
 
@@ -98,8 +93,6 @@ To migrate a SAML 2.0 application to Microsoft Entra ID, configure the applicati
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 2. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**, then select **New application**.
-
-    ![Screenshot of the New Application option on All applications.](media/migrate-applications-from-okta/list-of-new-applications.png)
 
 3. In **Microsoft Entra Gallery**, search for **Salesforce**, select the application, and then select **Create**.
 
@@ -117,19 +110,13 @@ To migrate a SAML 2.0 application to Microsoft Entra ID, configure the applicati
 
 7. Upload the XML file you downloaded from the Microsoft Entra admin center. Then select **Create**.
 8. Upload the certificate you downloaded from Azure. Select **Save**.
-
-    ![Screenshot of the Identity Provider Certificate entry under SAML Single Sign On.](media/migrate-applications-from-okta/create-saml-provider.png)
-
 9. Record the values in the following fields. The values are in Azure.
 
-   * **Entity ID**
-   * **Login URL**
-   * **Logout URL**
+   - **Entity ID**
+   - **Login URL**
+   - **Logout URL**
 
 10. Select **Download Metadata**.
-
-    ![Screenshot of the Download Metadata option, also entries for Entity ID and Your Organization.](media/migrate-applications-from-okta/record-values-for-azure.png)
-
 11. To upload the file to the Microsoft Entra admin center, in the Microsoft Entra ID **Enterprise applications** page, in the SAML SSO settings, select **Upload metadata file**.  
 12. Ensure the imported values match the recorded values. Select **Save**.
 
@@ -169,8 +156,6 @@ To migrate a SAML 2.0 application to Microsoft Entra ID, configure the applicati
 
     ![Screenshot of the Save option and Authentication Service options, under Authentication Configuration.](media/migrate-applications-from-okta/deselect-okta.png)
 
-<a name='migrate-an-openid-connect-or-oauth-20-application-to-azure-ad'></a>
-
 ## Migrate an OpenID Connect or OAuth 2.0 application to Microsoft Entra ID
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
@@ -198,8 +183,6 @@ To complete the migration, repeat configuration for all applications in the Okta
 
 9. On the left, select **Certificates & secrets**. Then select **+ New client secret**. Name the client secret and set its expiration.
 
-    ![Screenshot of New client secret entries on Certificates and secrets.](media/migrate-applications-from-okta/new-client-secret.png)
-
 10. Record the value and ID of the secret.
 
 >[!NOTE]
@@ -223,8 +206,6 @@ To complete the migration, repeat configuration for all applications in the Okta
 
 >[!NOTE]
 >Use the previous steps to configure your application with settings such as Client ID, Secret, and Scopes.
-
-<a name='migrate-a-custom-authorization-server-to-azure-ad'></a>
 
 ## Migrate a custom authorization server to Microsoft Entra ID
 

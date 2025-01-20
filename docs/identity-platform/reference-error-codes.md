@@ -5,7 +5,7 @@ author: rwike77
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom: 
-ms.date: 04/24/2024
+ms.date: 12/03/2024
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
@@ -86,6 +86,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS230109 | CachedCredentialNonGWAuthNRequestsNotSupported - Backup Auth Service only allows AuthN requests from Microsoft Entra Gateway. This error is returned when traffic targets the backup auth service directly instead of going through the reverse proxy.  |
 | AADSTS28002 | Provided value for the input parameter scope '{scope}' isn't valid when requesting an access token. Specify a valid scope. |
 | AADSTS28003 | Provided value for the input parameter scope can't be empty when requesting an access token using the provided authorization code. Specify a valid scope.|
+| AADSTS399284 | InboundIdTokenIssuerInvalid - The inbound ID token received in the federation has an invalid issuer. Either it is empty, or it does not match the realm identifier. |
 | AADSTS40008 | OAuth2IdPUnretryableServerError - There's an issue with your federated Identity Provider. Contact your IDP to resolve this issue. |
 | AADSTS40009 | OAuth2IdPRefreshTokenRedemptionUserError - There's an issue with your federated Identity Provider. Contact your IDP to resolve this issue. |
 | AADSTS40010 | OAuth2IdPRetryableServerError - There's an issue with your federated Identity Provider. Contact your IDP to resolve this issue. |
@@ -102,6 +103,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS50006 | InvalidSignature - Signature verification failed because of an invalid signature. |
 | AADSTS50007 | PartnerEncryptionCertificateMissing - The partner encryption certificate wasn't found for this app. [Open a support ticket](~/fundamentals/how-to-get-support.md) with Microsoft to get this fixed. |
 | AADSTS50008 | InvalidSamlToken - SAML assertion is missing or misconfigured in the token. Contact your federation provider. |
+| AADSTS5000224 | NotAllowedTenantBlockedTenantFraud - We are sorry, this resource is not available. If you are seeing this message by mistake, please contact Microsoft support. |
 | AADSTS5000819 | InvalidSamlTokenEmailMissingOrInvalid - SAML Assertion is invalid. Email address claim is missing or doesn't match domain from an external realm. |
 | AADSTS50010 | AudienceUriValidationFailed - Audience URI validation for the app failed since no token audiences were configured. |
 | AADSTS50011 | InvalidReplyTo - The reply address is missing, misconfigured, or doesn't match reply addresses configured for the app. As a resolution ensures to add this missing reply address to the Microsoft Entra application or have someone with the permissions to manage your application in Microsoft Entra IF do this for you. To learn more, see the troubleshooting article for error [AADSTS50011](/troubleshoot/azure/active-directory/error-code-aadsts50011-reply-url-mismatch).|
@@ -319,6 +321,7 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS90101 | InvalidEmailAddress - The supplied data isn't a valid email address. The email address must be in the format `someone@example.com`. |
 | AADSTS90102 | InvalidUriParameter - The value must be a valid absolute URI. |
 | AADSTS90107 | InvalidXml - The request isn't valid. Make sure your data doesn't have invalid characters.|
+| AADSTS90112 | Application identifier is expected to be a GUID. |
 | AADSTS90114 | InvalidExpiryDate - The bulk token expiration timestamp will cause an expired token to be issued. |
 | AADSTS90117 | InvalidRequestInput |
 | AADSTS90119 | InvalidUserCode - The user code is null or empty.|
@@ -379,6 +382,9 @@ The `error` field has several possible values - review the protocol documentatio
 | AADSTS7000114| Application 'appIdentifier' isn't allowed to make application on-behalf-of calls.|
 | AADSTS7500529 | The value ‘SAMLId-Guid’ isn't a valid SAML ID - Microsoft Entra ID uses this attribute to populate the InResponseTo attribute of the returned response. ID must not begin with a number, so a common strategy is to prepend a string like "ID" to the string representation of a GUID. For example, id6c1c178c166d486687be4aaf5e482730 is a valid ID. |
 | AADSTS9002341 | V2Error: `invalid_grant` - The user is required to permit single sign-On (SSO). This error occurs when the user has not granted the necessary permissions for the application to perform SSO. The user should be redirected to the consent screen to grant the necessary permissions. Refer to [this announcement](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/upcoming-changes-to-windows-single-sign-on/ba-p/4008151) for more information."|
+| AADSTS901011 | NoEmailAddressCollectedFromExternalOidcIDP - No email address was obtained from the external OpenID Connect (OIDC) identity provider. This usually happens when the user selects **Hide my email** upon signing up. |
+| AADSTS901012 | EmailAddressCollectedFromExternalOidcIDPNotVerified - No verified email address was obtained from the identity provider. The email address is not verified in the ID token from the external OIDC identity provider.  |
+| AADSTS901014 | NoExternalIdentifierCollectedFromExternalOidcIDP - The external identifier does not exist in the ID token from the external OIDC identity provider. |
 
 ## Next steps
 

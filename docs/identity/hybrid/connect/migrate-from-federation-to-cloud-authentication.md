@@ -6,7 +6,7 @@ description: This article has information about moving your hybrid identity envi
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.topic: conceptual
-ms.date: 08/25/2024
+ms.date: 12/26/2024
 ms.author: billmath
 author: gargi-sinha
 manager: amycolannino
@@ -22,7 +22,7 @@ We recommend using PHS for cloud authentication.
 
 ## Staged rollout
 
-> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE3inQJ]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=252dc370-5709-4dfb-b346-2cbf76f1640f]
 
 Staged rollout is a great way to selectively test groups of users with cloud authentication capabilities like Microsoft Entra multifactor authentication, Conditional Access, Microsoft Entra ID Protection for leaked credentials, Identity Governance, and others, before cutting over your domains. 
 
@@ -121,7 +121,7 @@ Evaluate if you're currently using Conditional Access for authentication, or if 
 
 Consider replacing AD FS access control policies with the equivalent Microsoft Entra [Conditional Access policies](~/identity/conditional-access/overview.md) and [Exchange Online Client Access Rules](/exchange/clients-and-mobile-in-exchange-online/client-access-rules/client-access-rules). You can use either Microsoft Entra ID or on-premises groups for Conditional Access.
 
-**Disable Legacy Authentication** - Due to the increased risk associated with legacy authentication protocols create [Conditional Access policy to block legacy authentication](~/identity/conditional-access/howto-conditional-access-policy-block-legacy.md).
+**Disable Legacy Authentication** - Due to the increased risk associated with legacy authentication protocols create [Conditional Access policy to block legacy authentication](~/identity/conditional-access/policy-block-legacy-authentication.md).
 
 ### Plan support for MFA
 

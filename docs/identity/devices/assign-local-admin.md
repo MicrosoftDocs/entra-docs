@@ -34,10 +34,10 @@ By adding users to the Microsoft Entra Joined Device Local Administrator role, y
 
 ## Manage administrator roles
 
-To view and update the membership of an [administrator role](~/identity/role-based-access-control/permissions-reference.md) role, see:
+To view and update the membership of an [administrator role](../role-based-access-control/permissions-reference.md) role, see:
 
-- [View all members of an administrator role in Microsoft Entra ID](~/identity/role-based-access-control/manage-roles-portal.yml)
-- [Assign a user to administrator roles in Microsoft Entra ID](~/fundamentals/how-subscriptions-associated-directory.yml)
+- [View all members of an administrator role in Microsoft Entra ID](../role-based-access-control/view-assignments.md)
+- [Assign a user to administrator roles in Microsoft Entra ID](../role-based-access-control/manage-roles-portal.md)
 
 ## Manage the Microsoft Entra Joined Device Local Administrator role
 
@@ -110,4 +110,4 @@ Additionally, you can also add users using the command prompt:
 ## Next steps
 
 - To get an overview of how to manage devices, see [Managing device identities](manage-device-identities.md).
-- To learn more about device-based Conditional Access, see [Conditional Access: Require compliant or Microsoft Entra hybrid joined device](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md).
+- To learn more about device-based Conditional Access, see [Conditional Access: Require compliant or Microsoft Entra hybrid joined device](~/identity/conditional-access/policy-alt-all-users-compliant-hybrid-or-mfa.md).

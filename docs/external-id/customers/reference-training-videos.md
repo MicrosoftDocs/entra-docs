@@ -6,9 +6,9 @@ author: msmimart
 manager: celestedg
 ms.service: entra-external-id
 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: concept-article
-ms.date: 01/07/2024
+ms.date: 12/12/2024
 ms.author: mimart
 ms.custom: it-pro
 
@@ -44,19 +44,33 @@ Microsoft Entra External ID videos are incorporated within our documentation and
 
 We regularly expand our video library, so be sure to subscribe to the Microsoft Security Channel for the latest updates. Here are some videos to help you get started with Microsoft Entra External ID.
 
-### Get started with Microsoft Entra external ID
+### Introduction to Microsoft Entra External ID
 
-This tutorial guides you through creating a new Microsoft Entra External ID tenant and helps you get started with running a sample app and signing in your users. It also explores the various components involved and discusses ways to enhance your configuration.
+Microsoft Entra External ID is Microsoft’s customer identity and access management (CIAM) platform. It helps control who has access to your external facing applications continually verify their online identity while ensuring their personal information and privacy remain safeguarded. This video gives you an introduction to Microsoft Entra External ID, its capabilities and what it’s like to use it as an end user.
 
-> [!VIDEO https://www.youtube.com/embed/AgjAgcBOehU?si=Rqg7UHxq-43VpCjy]
+> [!VIDEO https://www.youtube.com/embed/XuxXCMOYiSc?si=yX21DVcKsozFPM0v]
+
+### Microsoft Entra external ID overview
+
+Microsoft Entra External ID allows secure and customizable sign-ins for customer-facing apps. For businesses that want to provide their customers with apps for buying products, subscribing to services, or accessing their account data, it offers robust customer identity and access management (CIAM). It lets you easily integrate your apps and get all the security, reliability, and scalability benefits of Microsoft Entra. This video highlights some of the most commonly used Entra external ID features.
+
+> [!VIDEO https://www.youtube.com/embed/zb5tpY1sGaE?si=n1KLhaTF044jhnex]
+
 ### Woodgrove Groceries live demo
 
 The Woodgrove Groceries live demo is a fictional global food retailer that uses Microsoft Entra External ID for its online shopping app. This video shows how to use the live demo and demonstrates how you can try out the authentication features you can configure for customer-facing apps.
 
 > [!VIDEO https://www.youtube.com/embed/ZRhD-1WLrh8?si=y5iXA9dNskWfXO-Z]
+
+### Get started with Microsoft Entra external ID
+
+This tutorial guides you through creating a new Microsoft Entra External ID tenant and helps you get started with running a sample app and signing in your users. It also explores the various components involved and discusses ways to enhance your configuration.
+
+> [!VIDEO https://www.youtube.com/embed/AgjAgcBOehU?si=Rqg7UHxq-43VpCjy]
+
 ### Enable sign-in with social accounts
 
-The video covers how to integrate social identity providers like Facebook and Google into application sign-up and sign-in flows. It focuses on how you can enhance and personalize the registration experience. It also describes ways to ensure robust security and manage users efficiently using Microsoft Entra External ID.
+The video covers how to integrate social identity providers like Facebook, Google and Apple into application sign-up and sign-in flows. It focuses on how you can enhance and personalize the registration experience. It also describes ways to ensure robust security and manage users efficiently using Microsoft Entra External ID.
 
 > [!VIDEO https://www.youtube.com/embed/lIdGt9rDM-E?si=8n1_G_AqFbYDP22y]
 ### Authorize access to your application
@@ -78,11 +92,24 @@ This video explains the concept of a custom claims provider, which enables you t
 > [!VIDEO https://www.youtube.com/embed/1tPA7B9ztz0?si=0VXQJmDfnSUv_jAz]
 The second part shows how to [configure Microsoft Entra ID custom claims provider](https://youtu.be/fxQGVIwX8_4?si=vwcYT7wn7OzL6MzK) with the token issuance start event type, which triggers just before a security token is issued.  This event allows you to call a REST API to add claims to the token that's returned to your application.
 
+### Edit user's profile
+
+In this video, we’ll explore the various methods available for accessing and editing user profiles in Microsoft Entra External ID.
+
+> [!VIDEO https://www.youtube.com/embed/_zKCgukVHYw?si=8T6TAdEorg4SHUUc]
+
 ### Microsoft Graph and continuous integration
 
 This video examines the benefits of using Microsoft Graph API and Microsoft Graph PowerShell for automating tasks and running batch operations. Streamline deployment with GitHub workflows to reduce integration and deployment issues, speed up release cycles, improve change management, and maintain version control across different environments.
 
 > [!VIDEO https://www.youtube.com/embed/Gnv4ISZhzgA?si=ecX14P_QNKJPpEZM]
+
+### VS Code extension for Microsoft Entra External ID
+
+Microsoft Entra External ID [extension for Visual Studio Code](./visual-studio-code-extension.md) lets you quickly create external tenants, configure sign-in experiences for external users, and set up an External ID sample, all directly within Visual Studio Code. Watch this video to learn how to install and use the extension.
+
+> [!VIDEO https://www.youtube.com/embed/j_syxt3N1pg?si=p3wdSmyGzddGa3R7]
+
 ### How-to videos
 
 These how-to videos guide you through using Microsoft Entra External ID:

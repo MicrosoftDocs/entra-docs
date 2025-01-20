@@ -35,9 +35,9 @@ Make sure you meet the [prerequisites](publisher-verification-overview.md#requir
 
 1. Sign in using [multifactor authentication](~/identity/authentication/concept-mfa-licensing.md) to an organizational (Microsoft Entra) account authorized to make changes to the app you want to mark as Publisher Verified and on the Microsoft AI Cloud Partner Program Account in Partner Center.
 
-    - The Microsoft Entra user must have one of the following [roles](~/identity/role-based-access-control/permissions-reference.md): Application Administrator, Cloud Application Administrator, or Global Administrator. 
+    - The Microsoft Entra user must have one of the following [roles](~/identity/role-based-access-control/permissions-reference.md): Application Administrator or Cloud Application Administrator. 
 
-   - The user in Partner Center must have the following [roles](/partner-center/permissions-overview): Microsoft AI Cloud Partner Program Admin, Accounts Admin, or a Global Administrator (a shared role mastered in Microsoft Entra ID). 
+   - The user in Partner Center must have the following [roles](/partner-center/permissions-overview): Microsoft AI Cloud Partner Program Admin or Accounts Admin. 
       
 1. Navigate to the **App registrations** blade:  
 

@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 3/13/2024
+ms.date: 12/05/2024
 ms.service: global-secure-access
 ms.subservice: entra-internet-access 
 ms.reviewer: frankgomulka
@@ -28,7 +28,8 @@ The web filtering feature is currently limited to user- and context-aware Fully 
 - [Install the Global Secure Access client](how-to-install-windows-client.md) on end user devices.
 - You must disable Domain Name System (DNS) over HTTPS (Secure DNS) to tunnel network traffic. Use the rules of the fully qualified domain names (FQDNs) in the traffic forwarding profile. For more information, see [Configure the DNS client to support DoH](/windows-server/networking/dns/doh-client-support#configure-the-dns-client-to-support-doh).
 - Disable built-in DNS client on Chrome and Microsoft Edge.
-- User Datagram Protocol (UDP) traffic (that is, QUIC) isn't supported in the current preview of Internet Access. Most websites support fallback to TCP when QUIC cannot be established. For improved user experience, you can deploy a Windows Firewall rule that blocks outbound UDP 443: `@New-NetFirewallRule -DisplayName "Block QUIC" -Direction Outbound -Action Block -Protocol UDP  -RemotePort 443`. 
+- IPv6 traffic isn't acquired by the client and is therefore transferred directly to the network. To enable all relevant traffic to be tunneled, set the network adapter properties to [IPv4 preferred](troubleshoot-global-secure-access-client-diagnostics-health-check.md#ipv4-preferred).
+- User Datagram Protocol (UDP) traffic (that is, QUIC) isn't supported in the current preview of Internet Access. Most websites support fallback to Transmission Control Protocol (TCP) when QUIC can't be established. For an improved user experience, you can deploy a Windows Firewall rule that blocks outbound UDP 443: `@New-NetFirewallRule -DisplayName "Block QUIC" -Direction Outbound -Action Block -Protocol UDP  -RemotePort 443`. 
  
 
 - Review web content filtering concepts. For more information, see [web content filtering](concept-internet-access.md).
@@ -55,6 +56,8 @@ The first step is to enable the Internet Access traffic forwarding profile. To l
 1. Enter a name, select a [web category](reference-web-content-filtering-categories.md) or a valid FQDN, and then select **Add**.
      - Valid FQDNs in this feature can also include wildcards using the asterisk symbol, *.
 1. Select **Next** to review the policy and then select **Create policy**.
+> [!IMPORTANT]
+> Changes to web content filtering can take up to one hour to deploy.
 
 ## Create a security profile
 
@@ -81,17 +84,42 @@ Create a Conditional Access policy for end users or groups and deliver your secu
 1. Browse to **Identity** > **Protection** > **Conditional Access**.
 1. Select **Create new policy**.
 1. Enter a name and assign a user or group.
-1. Select **Target resources** and **Global Secure Access** from the drop-down menu to set what the policy applies to.
-1. Select **Internet traffic** from the drop-down menu to set the traffic profile this policy applies to.
+1. Select **Target resources** and **All internet resources with Global Secure Access**.
 1. Select **Session** > **Use Global Secure Access security profile** and choose a security profile.
 1. Select **Select**.
 1. In the **Enable policy** section, ensure **On** is selected.
 1. Select **Create**.
 
+## Internet Access flow diagram
+This example demonstrates the flow of Microsoft Entra Internet Access traffic when you apply web content filtering policies.
+
+The following flow diagram illustrates web content filtering policies blocking or allowing access to internet resources.
+
+:::image type="content" source="media/how-to-configure-web-content-filtering/internet-access-web-content-filtering-inline.png" alt-text="Diagram shows flow for web content filtering policies blocking or allowing access to internet resources." lightbox="media/how-to-configure-web-content-filtering/internet-access-web-content-filtering-expanded.png":::
+
+|Step|Description|
+|-----|-----|
+|1|The Global Secure Access client attempts to connect to Microsoft's Security Service Edge solution.|
+|2|The client redirects to Microsoft Entra ID for authentication and authorization.|
+|3|The user and device authenticate. Authentication happens seamlessly when the user has a valid Primary Refresh Token (PRT).|
+|4|After the user and device authenticate, Conditional Access matches on Internet Access CA rules and adds applicable security profiles to the token. It enforces applicable authorization policies.|
+|5|Microsoft Entra ID presents the token to Microsoft Security Service Edge for validation.|
+|6|The tunnel establishes between the Global Secure Access client and Microsoft Security Service Edge.|
+|7|Traffic starts being acquired and tunnels through the Internet Access tunnel.|
+|8|Microsoft Security Service Edge evaluates the security policies in the access token in priority order. After it matches on a web content filtering rule, web content filtering policy evaluation stops.|
+|9|Microsoft Security Service Edge enforces the security policies.|
+|10|Policy = block results in an error for HTTP traffic or a connection reset exception occurs for HTTPS traffic.|
+|11|Policy = allow results in traffic forwarding to the destination.|
+
+> [!NOTE]
+> Applying a new security profile can take up to 60-90 minutes due to security profile enforcement with access tokens. The user must receive a new access token with the new security profile ID as a claim before it takes effect. Changes to existing security profiles start being enforced much more quickly.
+
 ## User and group assignments
 You can scope the Internet Access profile to specific users and groups. To learn more about user and group assignment, see [How to assign and manage users and groups with traffic forwarding profiles](how-to-manage-users-groups-assignment.md).
 
 ## Verify end user policy enforcement
+
+When traffic reaches Microsoft's Secure Service Edge, Microsoft Entra Internet Access performs security controls in two ways. For unencrypted HTTP traffic, it uses the Uniform Resource Locator (URL). For HTTPS traffic encrypted with Transport Layer Security (TLS), it uses the Server Name Indication (SNI).
 
 Use a Windows device with the Global Secure Access client installed. Sign in as a user that is assigned the Internet traffic acquisition profile. Test that navigating to websites is allowed or restricted as expected.
 

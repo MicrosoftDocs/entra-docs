@@ -79,10 +79,6 @@ Currently, redemption order settings aren't supported across clouds. If the doma
  
 Yes, you can set up SAML/WS-Fed IdP federation with domains that aren't DNS-verified in Microsoft Entra ID, including unmanaged (email-verified or "viral") Microsoft Entra tenants. Such tenants are created when a user redeems a B2B invitation or performs self-service sign-up for Microsoft Entra ID using a domain that doesn’t currently exist.
 
-**How many federation relationships can I create?**
-
-Currently, a maximum of 1,000 federation relationships is supported. This limit includes both [internal federations](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdomainfederationconfiguration) and SAML/WS-Fed IdP federations.
-
 **Can I set up federation with multiple domains from the same tenant?**
 
 Yes, we now support SAML/WS-Fed IdP federation with multiple domains from the same tenant.
@@ -210,7 +206,7 @@ Next, configure federation with the IdP configured in step 1 in Microsoft Entra 
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
 1. Select the **Custom** tab, and then select **Add new** > **SAML/WS-Fed**.
 
@@ -271,7 +267,7 @@ On the **All identity providers** page, you can view the list of SAML/WS-Fed ide
 
 <!--TODO:::image type="content" source="media/direct-federation/new-saml-wsfed-idp-list-multi.png" alt-text="Screenshot showing an identity provider in the SAML WS-Fed list.":::-->
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
 1. Select the **Custom** tab.
 1. Scroll to an identity provider in the list or use the search box.
@@ -303,7 +299,7 @@ On the **All identity providers** page, you can view the list of SAML/WS-Fed ide
 You can remove your federation configuration. If you do, federation guest users who have already redeemed their invitations can no longer sign in. But you can give them access to your resources again by [resetting their redemption status](reset-redemption-status.md).
 To remove a configuration for an IdP in the Microsoft Entra admin center:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
 1. Select the **Custom** tab, and then scroll to the identity provider in the list or use the search box.
 1. Select the link in the **Domains** column to view the IdP's domain details.

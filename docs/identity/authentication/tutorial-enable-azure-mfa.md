@@ -5,7 +5,7 @@ description: In this tutorial, you learn how to enable Microsoft Entra multifact
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
-ms.date: 05/31/2024
+ms.date: 01/16/2025
 
 ms.author: justinha
 author: justinha
@@ -61,7 +61,7 @@ In this tutorial, we create a basic Conditional Access policy to prompt for MFA 
 First, create a Conditional Access policy and assign your test group of users as follows:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access**, select **+ New policy**, and then select **Create new policy**.
+1. Browse to **Protection** > **Security Center**>**Conditional Access**, select **+ New policy**, and then select **Create new policy**.
  
    :::image type="content" alt-text="A screenshot of the Conditional Access page, where you select 'New policy' and then select 'Create new policy'." source="media/tutorial-enable-azure-mfa/tutorial-enable-azure-mfa-conditional-access-menu-new-policy.png":::
 
@@ -101,12 +101,12 @@ For this tutorial, configure the Conditional Access policy to require multifacto
 
 1. Select the current value under **Cloud apps or actions**, and then under **Select what this policy applies to**, verify that **Cloud apps** is selected.
 
-1. Under **Include**, choose **Select apps**.
+1. Under **Include**, choose **Select resources**.
  
    Since no apps are yet selected, the list of apps (shown in the next step) opens automatically.
 
    > [!TIP]
-   > You can choose to apply the Conditional Access policy to **All cloud apps** or **Select apps**. To provide flexibility, you can also exclude certain apps from the policy.
+   > You can choose to apply the Conditional Access policy to **All resources (formerly 'All cloud apps')** or **Select resources**. To provide flexibility, you can also exclude certain apps from the policy.
 
 1. Browse the list of available sign-in events that can be used. For this tutorial, select **Windows Azure Service Management API** so that the policy applies to sign-in events. Then choose **Select**.
 
@@ -187,7 +187,7 @@ You configured the Conditional Access policy to require additional authenticatio
 If you no longer want to use the Conditional Access policy that you configured as part of this tutorial, delete the policy by using the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
-1. Browse to **Protection** > **Conditional Access**, and then select the policy that you created, such as **MFA Pilot**.
+1. Browse to **Policies** > **Conditional Access**, and then select the policy that you created, such as **MFA Pilot**.
 
 1. select **Delete**, and then confirm that you want to delete the policy.
 

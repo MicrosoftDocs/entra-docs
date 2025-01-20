@@ -134,8 +134,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Select **Connections** from the list under the **Management** tab.
 
-	![Screenshot that shows the "OpenAthens" company site page with "Connections" selected from the "Management" tab.](./media/openathens-tutorial/connections.png)
-
 1. Select **SAML 1.1/2.0**, and then select the **Configure** button.
 
 	![Screenshot that shows the "Select local authentication system type." dialog with "S A M L 1.1/2.0" and the "Configure" button selected.](./media/openathens-tutorial/saml.png)

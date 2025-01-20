@@ -56,9 +56,6 @@ Before configuring and enabling automatic user provisioning, you should decide w
 	![Meta Networks Connector Admin Console](media/meta-networks-connector-provisioning-tutorial/apikey.png)
 
 1. Click on the plus sign on the upper right side of the screen to create a new **API Key**.
-
-	![Meta Networks Connector plus icon](media/meta-networks-connector-provisioning-tutorial/plusicon.png)
-
 1. Set the **API Key Name** and **API Key Description**.
 
 	:::image type="content" source="media/meta-networks-connector-provisioning-tutorial/keyname.png" alt-text="Screenshot of the Meta Networks Connector Admin Console with highlighted A P I key name and A P I key description values of Microsoft Entra ID and A P I key." border="false":::
@@ -86,8 +83,6 @@ Before configuring and enabling automatic user provisioning, you should decide w
 	![Meta Networks Connector configure SCIM](media/meta-networks-connector-provisioning-tutorial/configure.png)
 
 1. Navigate to **Administration > Settings > IdP tab**. Click on the name of the IdP configuration created in the previous steps to view the **IdP ID**. This **ID** is added to the end of **Tenant URL** while entering the value in **Tenant URL** field in the Provisioning tab of your Meta Networks Connector application.
-
-	![Meta Networks Connector IdP ID](media/meta-networks-connector-provisioning-tutorial/idpid.png)
 
 <a name='step-3-add-meta-networks-connector-from-the-azure-ad-application-gallery'></a>
 
@@ -147,8 +142,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Meta Networks Connector**.
 
-	![Meta Networks Connector User Mappings](media/meta-networks-connector-provisioning-tutorial/usermappings.png)
-
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Meta Networks Connector in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Meta Networks Connector for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Meta Networks Connector API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
     |Attribute|Type|Supported for filtering|Required by Meta Networks Connector|
@@ -163,8 +156,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 	> phonenumbers value should be in E164 format. For example +16175551212
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Meta Networks Connector**.
-
-	![Meta Networks Connector Group Mappings](media/meta-networks-connector-provisioning-tutorial/groupmappings.png)
 
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Meta Networks Connector in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Meta Networks Connector for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Meta Networks Connector API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 

@@ -154,8 +154,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Under **Authentication**, locate **SAML 2.0** and select **Connect** from the ellipsis menu.
 
-	![Screenshot shows SAML 2.0.](./media/citrix-cloud-saml-sso-tutorial/access.png "SAML 2.0")
-
 1. In the **Configure SAML** page, perform the following steps.
 
 	![Screenshot shows Configuration.](./media/citrix-cloud-saml-sso-tutorial/connect.png "Configuration")

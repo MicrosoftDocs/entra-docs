@@ -5,7 +5,7 @@ description: Monitor and clean up stale guest accounts using access reviews
 author: billmath
 ms.author: billmath
 manager: amycolannino
-ms.date: 06/29/2023
+ms.date: 12/30/2024
 ms.reviewer: gasinh
 ms.topic: how-to
 ms.service: entra-id
@@ -184,3 +184,6 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
 11. Select **Create**.
 
 Guest users who don't sign into the tenant for the number of days you configured are disabled for 30 days, then deleted. After deletion, you can restore guests for up to 30 days, after which a new invitation is needed.
+
+> [!NOTE]
+> If the access review decisions are not yet applied , the API [accessReviewInstance: stopApplyDecisions](/graph/api/accessreviewinstance-stopapplydecisions) can be used to stop active applying decisions.

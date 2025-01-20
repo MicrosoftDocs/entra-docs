@@ -1,12 +1,12 @@
 ---
 
-title: Bulk invite guest users for B2B collaboration tutorial
-description: In this tutorial, you learn how to send bulk invitations using a CSV file to external Microsoft Entra B2B collaboration users. 
+title: Bulk invite B2B users
+description: Learn how to bulk invite B2B collaboration users in Microsoft Entra External ID. Follow the steps to prepare a CSV file, upload it, and verify guest users in the directory. 
 
  
 ms.service: entra-external-id
 ms.topic: tutorial
-ms.date: 06/27/2024
+ms.date: 10/21/2024
 
 ms.author: cmulligan
 author: csmulligan
@@ -18,7 +18,7 @@ ms.collection: M365-identity-device-management
 ms.custom:  
 ---
 
-# Tutorial: Bulk invite Microsoft Entra B2B collaboration users
+# Tutorial: Bulk invite B2B collaboration users in Microsoft Entra External ID
 
 [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 

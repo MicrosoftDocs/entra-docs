@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 09/24/2024
+ms.date: 09/26/2024
 ms.author: rolyon
 ms.custom: it-pro
 
@@ -17,7 +17,7 @@ ms.custom: it-pro
 
 In this article, you can find the information needed to restrict a user's administrator permissions by assigning least privileged roles in Microsoft Entra ID. You will find tasks organized by feature area and the least privileged role required to perform each task, along with additional non-Global Administrator roles that can perform the task.
 
-You can further restrict permissions by assigning roles at smaller scopes or by creating your own custom roles. For more information, see [Assign Microsoft Entra roles at different scopes](assign-roles-different-scopes.md) or [Create and assign a custom role in Microsoft Entra ID](custom-create.yml).
+You can further restrict permissions by assigning roles at smaller scopes or by creating your own custom roles. For more information, see [Assign Microsoft Entra roles](manage-roles-portal.md) or [Create a custom role in Microsoft Entra ID](custom-create.md).
 
 ## Application proxy
 
@@ -163,8 +163,7 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
-> | Add resources to a catalog | [Identity Governance Administrator](permissions-reference.md#identity-governance-administrator) | With entitlement management, you can delegate this task to the [catalog owner](~/id-governance/entitlement-management-catalog-create.md#add-more-catalog-owners) |
-> | Add SharePoint Online sites to catalog | [SharePoint Administrator](permissions-reference.md#sharepoint-administrator) |  |
+> | Tasks in Entitlement Management | [Identity Governance Administrator](permissions-reference.md#identity-governance-administrator). For roles lesser privlege than this within the Entitlement Management system, see: [Delegation and roles in entitlement management](../../id-governance/entitlement-management-delegate.md). | |
 
 ## Groups
 
@@ -185,24 +184,6 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Update group properties | [Group owner](~/fundamentals/users-default-permissions.md#object-ownership) | [User Administrator](permissions-reference.md#user-administrator) |
 > | Delete group | [Groups Administrator](permissions-reference.md#groups-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
 
-<a name='identity-protection'></a>
-
-#### Microsoft Entra ID Protection
-
-> [!div class="mx-tableFixed"]
-> | Task | Least privileged role | Additional roles |
-> | ---- | --------------------- | ---------------- |
-> | Configure alert notifications| [Security Administrator](permissions-reference.md#security-administrator) |  |
-> | Configure and enable or disable MFA policy| [Security Administrator](permissions-reference.md#security-administrator) |  |
-> | Configure and enable or disable sign-in risk policy| [Security Administrator](permissions-reference.md#security-administrator) |  |
-> | Configure and enable or disable user risk policy | [Security Administrator](permissions-reference.md#security-administrator) |  |
-> | Configure weekly digests | [Security Administrator](permissions-reference.md#security-administrator) |  |
-> | Dismiss all risk detections | [Security Administrator](permissions-reference.md#security-administrator) |  |
-> | Fix or dismiss vulnerability | [Security Administrator](permissions-reference.md#security-administrator) |  |
-> | Read all configuration | [Security Reader](permissions-reference.md#security-reader) |  |
-> | Read all risk detections | [Security Reader](permissions-reference.md#security-reader) |  |
-> | Read vulnerabilities | [Security Reader](permissions-reference.md#security-reader) |  |
-
 ## Licenses
 
 > [!div class="mx-tableFixed"]
@@ -213,21 +194,54 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Revoke license | [License Administrator](permissions-reference.md#license-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
 > | Try or buy subscription | [Billing Administrator](permissions-reference.md#billing-administrator) |  |
 
-## Monitoring - Audit logs
+## Lifecycle Workflows
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
-> | Read audit logs | [Reports Reader](permissions-reference.md#reports-reader) | [Security Reader](permissions-reference.md#security-reader)<br/>[Security Administrator](permissions-reference.md#security-administrator) |
+> | Create a workflow | [Lifecycle workflows Administrator](permissions-reference.md#lifecycle-workflows-administrator) |  |
+> | Add a custom extension to a workflow | [Lifecycle workflows Administrator](permissions-reference.md#lifecycle-workflows-administrator). You must also have either the [Logic App contributor](/azure/role-based-access-control/built-in-roles/integration#logic-app-contributor) or [Owner](/azure/role-based-access-control/built-in-roles/integration#logic-app-operator) Azure Resource Manager role.  |  |
 
-## Monitoring - Sign-ins
+## Microsoft Entra Health
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
-> | Read sign-in logs | [Reports Reader](permissions-reference.md#reports-reader) | [Security Reader](permissions-reference.md#security-reader)<br/>[Security Administrator](permissions-reference.md#security-administrator)<br/> [Global Reader](permissions-reference.md#global-reader) |
+> | View scenario monitoring signals | [Reports Reader](permissions-reference.md#reports-reader) | [Security Reader](permissions-reference.md#security-reader)<br>[Security Operator](permissions-reference.md#security-operator)<br>[Security Administrator](permissions-reference.md#security-administrator)<br>[Helpdesk Administrator](permissions-reference.md#helpdesk-administrator)<br>[Global Reader](permissions-reference.md#global-reader)<br>|
 
-## Monitoring - Recommendations
+<a name='identity-protection'></a>
+
+## Microsoft Entra ID Protection
+
+> [!div class="mx-tableFixed"]
+> | Task | Least privileged role | Additional roles |
+> | ---- | --------------------- | ---------------- |
+> | Configure alert notifications| [Security Administrator](permissions-reference.md#security-administrator) |  |
+> | Configure and enable or disable MFA policy| [Security Administrator](permissions-reference.md#security-administrator) |  |
+> | Configure and enable or disable sign-in risk policy| [Security Administrator](permissions-reference.md#security-administrator) |  |
+> | Configure and enable or disable user risk policy | [Security Administrator](permissions-reference.md#security-administrator) |  |
+> | Configure weekly digests | [Security Administrator](permissions-reference.md#security-administrator) |  |
+> | Dismiss all risk detections | [Security Operator](permissions-reference.md#security-operator)|  |
+> | Fix or dismiss vulnerability | [Security Administrator](permissions-reference.md#security-administrator) |  |
+> | Read all configuration | [Security Reader](permissions-reference.md#security-reader) |  |
+> | Read all risk detections | [Security Reader](permissions-reference.md#security-reader) |  |
+> | Read vulnerabilities | [Security Reader](permissions-reference.md#security-reader) |  |
+
+## Monitoring and health - Audit and sign-in logs
+
+> [!div class="mx-tableFixed"]
+> | Task | Least privileged role | Additional roles |
+> | ---- | --------------------- | ---------------- |
+> | Read audit logs | [Reports Reader](permissions-reference.md#reports-reader) | [Application Administrator](permissions-reference.md#application-administrator)<br/>[Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Cloud Device Administrator](permissions-reference.md#cloud-device-administrator)<br/>[Global Secure Access Administrator](permissions-reference.md#global-secure-access-administrator)<br/>[Hybrid Identity Administrator](permissions-reference.md#hybrid-identity-administrator)<br/>[Security Administrator](permissions-reference.md#security-administrator)<br/>[Security Operator](permissions-reference.md#security-operator)<br/>[Security Reader](permissions-reference.md#security-reader) |
+
+## Monitoring and health - Provisioning logs
+
+> [!div class="mx-tableFixed"]
+> | Task | Least privileged role | Additional roles |
+> | ---- | --------------------- | ---------------- |
+> | Read sign-in logs | [Reports Reader](permissions-reference.md#reports-reader) | [Application Administrator](permissions-reference.md#application-administrator)<br/>[Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Cloud Device Administrator](permissions-reference.md#cloud-device-administrator)<br/>[Hybrid Identity Administrator](permissions-reference.md#hybrid-identity-administrator)<br/>[Security Administrator](permissions-reference.md#security-administrator)<br/>[Security Operator](permissions-reference.md#security-operator)<br/>[Security Reader](permissions-reference.md#security-reader) |
+
+## Monitoring and health - Recommendations
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
@@ -348,6 +362,8 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Manage terms of use | [Conditional Access Administrator](permissions-reference.md#conditional-access-administrator) | [Security Administrator](permissions-reference.md#security-administrator) |
 > | Read all configuration | [Default user role](../../fundamentals/users-default-permissions.md) |  |
 > | Read named locations | [Default user role](../../fundamentals/users-default-permissions.md) |  |
+> | Read terms of use | [Security Reader](permissions-reference.md#security-reader) |  [Global Reader](permissions-reference.md#global-reader) |
+> | Read which terms of use were accepted by the signed-in user | [Default user role](../../fundamentals/users-default-permissions.md) |  |
 
 ## Security - Identity security score
 
@@ -434,7 +450,6 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 
 ## Next steps
 
-- [Assign Microsoft Entra roles to users](manage-roles-portal.yml)
-- [Assign Microsoft Entra roles at different scopes](assign-roles-different-scopes.md)
-- [Create and assign a custom role in Microsoft Entra ID](custom-create.yml)
+- [Assign Microsoft Entra roles](manage-roles-portal.md)
+- [Create a custom role in Microsoft Entra ID](custom-create.md)
 - [Microsoft Entra built-in roles](permissions-reference.md)

@@ -81,8 +81,8 @@ Before you begin, we recommend you create a security group, which contains exter
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All guests and external users**.
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts and the external users security group.
-1. Under **Target resources** > **Cloud apps**, select the following options:
-   1. Under **Include**, select **All cloud apps**
+1. Under **Target resources** > **Resources (formerly cloud apps)**, select the following options:
+   1. Under **Include**, select **All resources (formerly 'All cloud apps')**
    1. Under **Exclude**, select applications you want to exclude.
 1. Under **Access controls** > **Grant**, select **Block access**, then select **Select**.
 1. Select **Create** to create to enable your policy.

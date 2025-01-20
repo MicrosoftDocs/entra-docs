@@ -1,11 +1,11 @@
 ---
-title: How to configure Quick Access for Global Secure Access
+title: How to Configure Quick Access for Global Secure Access
 description: Learn how to specify the internal resources to secure with Microsoft Entra Private Access using a Quick Access app.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 09/03/2024
+ms.date: 12/23/2024
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: katabish
@@ -28,11 +28,8 @@ To manage Microsoft Entra private network connector groups, which is required fo
 - Microsoft Entra ID P1 or P2 licenses
 
 ### Known limitations
-Avoid overlapping app segments between Quick Access and per-app access.
 
-Tunneling traffic to Private Access destinations by IP address is supported only for IP ranges outside of the end-user device local subnet.
-
-At this time, Private access traffic can only be acquired with the Global Secure Access client. Remote networks can't be assigned to the Private Access traffic forwarding profile.
+[!INCLUDE [known-limitations-include](../includes/known-limitations-include.md)]
 
 ## High level steps
 

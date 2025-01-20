@@ -8,7 +8,7 @@ ms.assetid: 05f16c3e-9d23-45dc-afca-3d0fa9dbf501
 ms.service: entra-id
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 12/19/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 search.appverid:
@@ -170,6 +170,21 @@ Update-MgDirectoryOnPremiseSynchronization `
 #### Account expiration
 
 If your organization uses the accountExpires attribute as part of user account management, this attribute isn't synchronized to Microsoft Entra ID. As a result, an expired Active Directory account in an environment configured for password hash synchronization will still be active in Microsoft Entra ID. We recommend using a scheduled PowerShell script that disables users' AD accounts, once they expire (use the [Set-ADUser](/powershell/module/activedirectory/set-aduser) cmdlet). Conversely, during the process of removing the expiration from an AD account, the account should be re-enabled.
+
+### Password hash synchronization and smart card authentication 
+
+Customers can require that their users log in to Windows domains with a CAC/PIV physical smart card. They do this by configuring the  **Smart Card Required for Interactive Logon** (SCRIL) user property setting in Active Directory. 
+
+When SCRIL is enabled on a user object, the user’s AD password is randomized by the domain controller to a value no one knows, and the user has to enroll and subsequently authenticate to the Windows domain via smart card. 
+
+With password hash synchronization enabled, this AD password hash is synced with Microsoft Entra ID so that it can be used for cloud authentication as well. 
+
+> [!NOTE]
+> With the release of [version 2.4.18.0](reference-connect-version-history.md#24180) of Microsoft Entra Connect Sync, we fixed an issue that occurred when SCRIL is re-enabled on a user object. Re-enabling SCRIL is common in scenarios when a user loses their smart card, necessitating that SCRIL is disabled and the user is provided with a temporary password until they are issued a new smart card
+>
+> Previously, when SCRIL was re-enabled and a new randomized AD password was generated, the user was still able to use their old password to authenticate to Microsoft Entra ID. Now, Connect Sync has been updated so that new randomized AD password is synced to Microsoft Entra ID and the old password cannot be used once smart card login is enabled. 
+>
+> We recommend that admins perform a full sync if you have users with a SCRIL bit in your AD domain. If you do perform a full sync, there’s a chance that end users will be asked to re-login with the updated password if certificate-based authentication is not used. 
 
 ### Overwrite synchronized passwords
 

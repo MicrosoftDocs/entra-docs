@@ -307,9 +307,6 @@ You should see your tenanted login page instead of unauthenticated access previo
 ### Create a Kerberos Delegation Account for Kemp LoadMaster Microsoft Entra integration 
 
 1. Create a user Account (in this example AppDelegation).
-    
-    ![Screenshot that shows the "kcd user Properties" window with the "Account" tab selected.](./media/kemp-tutorial/kemp-10.png)
-
 
     a. Select the Attribute Editor tab.
 

@@ -5,7 +5,7 @@ description: Learn about certificate user IDs for Microsoft Entra certificate-ba
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 12/10/2023
+ms.date: 01/03/2024
 
 ms.author: justinha
 author: vimrang
@@ -60,21 +60,21 @@ Use the following steps to update certificateUserIds for users:
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificateuserids/user.png" alt-text="Screenshot of test user account.":::
 
-1. Click a user, and click **Edit Properties**. 
+1. Select a user, and select **Edit Properties**. 
 
-1. Next to **Authorization info**, click **View**.
+1. Next to **Authorization info**, select **View**.
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificateuserids/view.png" alt-text="Screenshot of View authorization info.":::
 
-1. Click **Edit certificate user IDs**.
+1. Select **Edit certificate user IDs**.
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificateuserids/edit-cert.png" alt-text="Screenshot of Edit certificate user IDs.":::
 
-1. Click **Add**.
+1. Select **Add**.
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificateuserids/add.png" alt-text="Screenshot of how to add a certificateUserIds.":::
 
-1. Enter the value and click **Save**. You can add up to four values, each of 120 characters.
+1. Enter the value and select **Save**. You can add up to four values, each of 120 characters.
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificateuserids/save.png" alt-text="Screenshot of a value to enter for certificateUserIds.":::
 
@@ -191,14 +191,14 @@ For this configuration, you can use [Microsoft Graph PowerShell](/powershell/mic
 Microsoft Entra Connect supports synchronizing values to certificateUserIds from an on-premises Active Directory environment. On-premises Active Directory supports certificate-based authentication and multiple username bindings. Make sure you use the latest version of [Microsoft Entra Connect](https://www.microsoft.com/download/details.aspx?id=47594).
 
 To use these mapping methods, you need to populate the altSecurityIdentities attribute of user objects in the on-premises Active Directory. 
-In addition, after you apply certificate-based authentication changes on Windows domain controllers as described in [KB5014754](https://support.microsoft.com/topic/kb5014754-certificate-based-authentication-changes-on-windows-domain-controllers-ad2c23b0-15d8-4340-a468-4d4f3b188f16), you may have implemented some of the non-reusable mapping methods (Type=strong) mapping methods to meet the on-premise Active Directory strong certificate binding enforcement requirements. 
+In addition, after you apply certificate-based authentication changes on Windows domain controllers as described in [KB5014754](https://support.microsoft.com/topic/kb5014754-certificate-based-authentication-changes-on-windows-domain-controllers-ad2c23b0-15d8-4340-a468-4d4f3b188f16), you may have implemented some of the nonreusable mapping methods (Type=strong) mapping methods to meet the on-premise Active Directory strong certificate binding enforcement requirements. 
 
 To prevent synchronization errors, make sure the values being synchronized follow one of the supported formats for the certificateUserIds.  
 
 Before you begin, make sure all user accounts that are synchronized from on-premises Active Directory have:
 
 - 5 or fewer values in their altSecurityIdentities attributes 
-- No value with more than 1024 characters
+- No value with more than 1,024 characters
 - No duplicate values
   
   Carefully consider if a duplicate value is meant to map a single certificate to multiple on-premises Active Directory accounts. For more information, see [Multiple username bindings](~/identity/authentication/concept-certificate-based-authentication-technical-deep-dive.md#securing-microsoft-entra-configuration-with-multiple-username-bindings).
@@ -218,19 +218,19 @@ Follow these steps to configure Microsoft Entra Connect to synchronize userPrinc
 
 1. On the Microsoft Entra Connect server, find and start the **Synchronization Rules Editor**.
 
-1. Click **Direction**, and click **Outbound**. 
+1. Select **Direction**, and select **Outbound**. 
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificateuserids/outbound.png" alt-text="Screenshot of outbound synchronization rule.":::
 
-1. Find the rule **Out to Microsoft Entra ID – User Identity**, click **Edit**, and click **Yes** to confirm. 
+1. Find the rule **Out to Microsoft Entra ID – User Identity**, select **Edit**, and select **Yes** to confirm. 
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificateuserids/user-identity.png" alt-text="Screenshot of user identity.":::
 
-1. Enter a high number in the **Precedence** field, and then click **Next**. 
+1. Enter a high number in the **Precedence** field, and then select **Next**. 
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificateuserids/precedence.png" alt-text="Screenshot of a precedence value.":::
 
-1. Click **Transformations** > **Add transformation**. You may need to scroll down the list of transformations before you can create a new one. 
+1. Select **Transformations** > **Add transformation**. You may need to scroll down the list of transformations before you can create a new one. 
 
 ### Synchronize X509:\<PN>PrincipalNameValue
  
@@ -252,11 +252,11 @@ To synchronize X509:\<RFC822>RFC822Name, create an outbound synchronization rule
 
 :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificateuserids/rfc822expression.png" alt-text="Screenshot of how to sync RFC822Name.":::
 
-1. Click **Target Attribute**, select **certificateUserIds**, click **Source**, select **userPrincipalName**, and then click **Save**. 
+1. Select **Target Attribute**, select **certificateUserIds**, select **Source**, select **userPrincipalName**, and then select **Save**. 
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificateuserids/edit-rule.png" alt-text="Screenshot of how to save a rule.":::
 
-1. Click **OK** to confirm. 
+1. Select **OK** to confirm. 
 
 >[!IMPORTANT]
 > The preceding examples use userPrincipalName attribute as a source attribute in the transform rule. You can use any available attribute with the appropriate value. For example, some organizations use the mail attribute. For more complex transform rules, see [Microsoft Entra Connect Sync: Understanding Declarative Provisioning Expressions](~/identity/hybrid/connect/concept-azure-ad-connect-sync-declarative-provisioning-expressions.md)
@@ -272,7 +272,7 @@ For more information about declarative provisioning expressions, see [Microsoft 
 
 The altSecurityIdentities attribute isn't part of the default attributes set. An administrator needs to add a new attribute to the person object in the Metaverse, and then create the appropriate synchronization rules to relay this data to certificateUserIds in Microsoft Entra ID.
 
-1. Open Metaverse Designer and select the person object. To create the alternativeSecurityId attribute, click **New attribute**. Select **String (non-indexable)** to create an attribute size up to 1024 characters, which is the maximum supported length for certificateUserIds. If you select **String (indexable)**, the maximum size of an attribute value is 448 characters. Make sure you select **Multi-valued**.
+1. Open Metaverse Designer and select the person object. To create the alternativeSecurityId attribute, select **New attribute**. Select **String (non-indexable)** to create an attribute size up to 1024 characters, which is the maximum supported length for certificateUserIds. If you select **String (indexable)**, the maximum size of an attribute value is 448 characters. Make sure you select **Multi-valued**.
  
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificateuserids/new-attribute.png" alt-text="Screenshot of how to create a new attribute.":::
 
@@ -292,7 +292,7 @@ The altSecurityIdentities attribute isn't part of the default attributes set. An
    |Metaverse Object Type | person |
    |Precedence | Choose a number under 100 that isn't currently used  |
   
-   Then click **Transformations** and create a direct mapping to the target attribute alternativeSecurityId from the source attribute altSecurityIdentities, as shown in the following screenshot.
+   Then select **Transformations** and create a direct mapping to the target attribute alternativeSecurityId from the source attribute altSecurityIdentities, as shown in the following screenshot.
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificateuserids/alt-security-identity-inbound.png" alt-text="Screenshot of how to transform from altSecurityIdentities to alternateSecurityId attribute.":::
 
@@ -306,7 +306,7 @@ The altSecurityIdentities attribute isn't part of the default attributes set. An
    |Metaverse Object Type | person |
    |Precedence | Choose a high number not currently used above all default rules, such as 150 |
 
-   Then click **Transformations** and create a direct mapping to the target attribute certificateUserIds from the source attribute alternativeSecurityId, as shown in the following screenshot. 
+   Then select **Transformations** and create a direct mapping to the target attribute certificateUserIds from the source attribute alternativeSecurityId, as shown in the following screenshot. 
 
    :::image type="content" border="true" source="./media/concept-certificate-based-authentication-certificateuserids/alt-security-identity-outbound.png" alt-text="Screenshot of outbound synchronization rule to transform from alternateSecurityId attribute to certificateUserIds.":::
 
@@ -327,7 +327,7 @@ IIF(IsPresent([alternativeSecurityId]),
 )
 ```
 
-Administrators can filter values from altSecurityIdentities that align with the supported patterns. Ensure that the CBA configuration has been updated to support the username bindings that are being synchronized to certificateUserIds to enable authentication using these values. 
+Administrators can filter values from altSecurityIdentities that align with the supported patterns. Ensure that the CBA configuration is updated to support the username bindings that are synchronized to certificateUserIds and enable authentication using these values. 
 
 ## Next steps
 

@@ -20,7 +20,7 @@ This tutorial shows how you can use Microsoft Entra features to manage identitie
 * Your organization has a Microsoft Entra tenant in the commercial cloud with a license for at least Microsoft Entra ID P1 in that tenant. (Some steps also illustrate using Microsoft Entra ID Governance features.)
 * You're an administrator of that tenant.
 * Your organization has a system of record source of workers, which is SAP SuccessFactors.
-* Your organization has SAP ERP Central Component (ECC), SAP S/4HANA, or other SAP applications, and optionally has other non-SAP applications.
+* Your organization has SAP ERP Central Component (ECC), SAP S/4HANA, other SAP applications, SAP BTP-based applications, and optionally has other non-SAP applications.
 * You're using SAP Cloud Identity Services for provisioning and single sign-on (SSO) to any SAP applications other than SAP ECC.
 
 ## Overview
@@ -53,7 +53,7 @@ Maybe your organization already integrated some applications with Microsoft Entr
 
 1. **Establish a priority order for applications to be integrated with Microsoft Entra for SSO and for provisioning.** Organizations generally start integrating with software as a service (SaaS) applications that support modern protocols. For SAP applications, we recommend that organizations that have SAP cloud applications start their integrations with the SSO and provisioning integrations with SAP Cloud Identity Services as middleware. Here, a user provisioning and SSO integration to Microsoft Entra can benefit multiple SAP applications.
 
-1. **Confirm how each application integrates with Microsoft Entra.** If your application is listed as one of the [SAP Cloud Identity Services provisioning target systems](https://help.sap.com/docs/identity-provisioning/identity-provisioning/target-systems), such as SAP S/4HANA, you can use SAP Cloud Identity Services as middleware to bridge SSO and provisioning from Microsoft Entra to the application. If your application is SAP ECC, you can integrate Microsoft Entra directly with SAP NetWeaver for SSO and to Business Application Programming Interfaces (BAPIs) of SAP ECC for provisioning.
+1. **Confirm how each application integrates with Microsoft Entra.** If your application is listed as one of the [SAP Cloud Identity Services provisioning target systems](https://help.sap.com/docs/identity-provisioning/identity-provisioning/target-systems), such as SAP S/4HANA, or uses SAP BTP, you can use SAP Cloud Identity Services as middleware to bridge SSO and provisioning from Microsoft Entra to the application. If your application is SAP ECC, you can integrate Microsoft Entra directly with SAP NetWeaver for SSO and to Business Application Programming Interfaces (BAPIs) of SAP ECC for provisioning.
 
    For non-SAP applications, follow the instructions in [Integrate the application with Microsoft Entra ID](../../id-governance/identity-governance-applications-integrate.md#integrate-the-application-with-microsoft-entra-id-to-ensure-only-authorized-users-can-access-the-application) to determine the supported integration technologies for SSO and provisioning for each of your applications.
 
@@ -88,7 +88,7 @@ In this section, you determine the organizational policies you plan to use to de
 
 1. **Select the appropriate conditional access policy for access to each application.** We recommend that you analyze your applications and organize them into collections of applications that have the same resource requirements for the same users.
 
-   The first time you integrate a federated SSO application with Microsoft Entra ID, you might need to create a new conditional access policy to express constraints. You might need to enforce requirements for multifactor authentication (MFA) or location-based access for that application and subsequent applications. You can also configure in conditional access that users must agree to [terms of use](~/identity/conditional-access/require-tou.md).
+   The first time you integrate a federated SSO application with Microsoft Entra ID, you might need to create a new conditional access policy to express constraints. You might need to enforce requirements for multifactor authentication (MFA) or location-based access for that application and subsequent applications. You can also configure in conditional access that users must agree to [terms of use](~/identity/conditional-access/policy-all-users-require-terms-of-use.md).
 
    For more considerations on how to define a conditional access policy, see [Plan a conditional access deployment](~/identity/conditional-access/plan-conditional-access.md).
 
@@ -204,7 +204,7 @@ If users need passwords, you can roll out the Microsoft Entra ID [self-service p
 
 If users will be using stronger authentication, enable the [Temporary Access Pass policy](../authentication/howto-authentication-temporary-access-pass.md) so that you can generate Temporary Access Passes for new users.
 
-1. **Verify that users are ready for Microsoft Entra MFA.** We recommend requiring Microsoft Entra MFA for business-critical applications integrated via federation. For these applications, a policy should require the user to meet an MFA requirement prior to Microsoft Entra ID that permits them to sign in to an application. Some organizations might also block access by locations or [require the user to access from a registered device](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md).
+1. **Verify that users are ready for Microsoft Entra MFA.** We recommend requiring Microsoft Entra MFA for business-critical applications integrated via federation. For these applications, a policy should require the user to meet an MFA requirement prior to Microsoft Entra ID that permits them to sign in to an application. Some organizations might also block access by locations or [require the user to access from a registered device](~/identity/conditional-access/policy-alt-all-users-compliant-hybrid-or-mfa.md).
 
    If there's no suitable policy already that includes the necessary conditions for authentication, location, device, and terms of use, [add a policy to your conditional access deployment](~/identity/conditional-access/plan-conditional-access.md).
 
@@ -224,7 +224,7 @@ In this section, you:
 
   :::image type="content" source="media/plan-sap-user-source-and-target/inbound-data-preparation.png" alt-text="Diagram that shows Microsoft and SAP technologies relevant to bringing in data about workers to Microsoft Entra ID." lightbox="media/plan-sap-user-source-and-target/inbound-data-preparation.png":::
 
-* Provision those users to SAP Cloud Identity Services or SAP ECC to enable them to sign in to SAP applications.
+* Provision those users to SAP Cloud Identity Services or SAP ECC to enable them to sign in to SAP applications or applications on SAP BTP.
 
   :::image type="content" source="media/plan-sap-user-source-and-target/outbound-provisioning-and-sso.png" alt-text="Diagram that shows Microsoft and SAP technologies relevant to provisioning identities from Microsoft Entra ID." lightbox="media/plan-sap-user-source-and-target/outbound-provisioning-and-sso.png":::
 
@@ -384,6 +384,8 @@ If you aren't using SAP Cloud Identity Services, skip to the next section.
 
 1. **Configure federated SSO from Microsoft Entra to SAP Cloud Identity Services.** Enable SAML-based SSO for SAP Cloud Identity Services. Follow the instructions provided in the [SAP Cloud Identity Services single sign-on tutorial](../saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md).
 
+1. **Create groups for SAP BTP application roles and assign groups to the BTP role collection.** If you have applications on BTP, then you can create Microsoft Entra security groups, and map those group IDs to the application roles. For more information, see [Managing access to SAP BTP](https://community.sap.com/t5/technology-blogs-by-members/identity-and-access-management-with-microsoft-entra-part-i-managing-access/ba-p/13873276).
+
 1. **Bring the application web endpoint into scope of the appropriate conditional access policy.** Perhaps you have an existing conditional access policy that was created for another application subject to the same governance requirements. Then you can update that policy to have it also apply to this application to avoid having a large number of policies.
 
    After you make the updates, check to ensure that the expected policies are being applied. You can see what policies would apply to a user with the [conditional access what-if tool](~/identity/conditional-access/troubleshoot-conditional-access-what-if.md).
@@ -430,10 +432,12 @@ Unless the tenant you're configuring is a fully isolated tenant configured speci
 
 As users that are assigned to an application are updated in Microsoft Entra ID, those changes are automatically provisioned to that application.
 
-If you have Microsoft Entra ID Governance, you can automate changes to the application role assignments for SAP Cloud Identity Services or SAP ECC in Microsoft Entra ID. You can use automation to add or remove assignments as people join the organization or leave or change roles.
+If you have applications in SAP BTP, you can also assign groups managed in Microsoft Entra to the roles of that application in SAP Cloud Identity Services.
 
-1. **Review existing assignments.** Optionally, [perform a one-time access review of the application role assignments](~/id-governance/access-reviews-application-preparation.md). When this review finishes, the access review removes assignments that are no longer necessary.
-1. **Configure the process to keep application role assignments up to date.** If you're using Microsoft Entra entitlement management, see [Create an access package in entitlement management for an application with a single role by using PowerShell](../../id-governance/entitlement-management-access-package-create-app.md) to configure assignments to the application that represent SAP cloud identity services or SAP ECC.
+If you have Microsoft Entra ID Governance, you can automate changes to the application role assignments for SAP Cloud Identity Services or SAP ECC, and groups, in Microsoft Entra ID. You can use automation to add or remove assignments as people join the organization or leave or change roles.
+
+1. **Review existing assignments.** Optionally, [perform a one-time access review of the application role assignments](~/id-governance/access-reviews-application-preparation.md) or group membership. When this review finishes, the access review removes assignments or members of the group that are no longer necessary.
+1. **Configure the process to keep application role assignments up to date.** If you're using Microsoft Entra entitlement management and have SAP applications, see [Create an access package in entitlement management for an application with a single role by using PowerShell](../../id-governance/entitlement-management-access-package-create-app.md) to configure assignments to the application that represent SAP cloud identity services or SAP ECC. If you have applications in SAP BTP, you can configure entitlement management to assign users to Microsoft Entra security groups. For more information, see [Managing access to SAP BTP](https://community.sap.com/t5/technology-blogs-by-members/identity-and-access-management-with-microsoft-entra-part-i-managing-access/ba-p/13873276).
 
    In that access package, you can have policies for users to be assigned access when they request it. Assignments can be made [by an administrator](~/id-governance/entitlement-management-access-package-assignments.md#directly-assign-a-user), [automatically based on rules](~/id-governance/entitlement-management-access-package-auto-assignment-policy.md), or generated through [Lifecycle Workflows](~/id-governance/entitlement-management-scenarios.md#administrator-assign-employees-access-from-lifecycle-workflows).
 

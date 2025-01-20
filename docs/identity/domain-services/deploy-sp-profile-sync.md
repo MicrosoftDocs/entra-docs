@@ -8,7 +8,7 @@ ms.assetid: 938a5fbc-2dd1-4759-bcce-628a6e19ab9d
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 01/29/2023
+ms.date: 12/02/2024
 ms.author: justinha
 ---
 # Configure Microsoft Entra Domain Services to support user profile synchronization for SharePoint Server

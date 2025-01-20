@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: has-adal-ref
-ms.date: 09/02/2024
+ms.date: 12/03/2024
 ms.service: identity-platform
 
 ms.topic: whats-new
@@ -16,33 +16,34 @@ ms.topic: whats-new
 
 Welcome to what's new in the Microsoft identity platform documentation. This article lists new articles that were added or had significant updates in the last three months.
 
-## August 2024
+## December 2024
+
+No updates available.
+
+## November 2024
+
+### New articles
+
+- [Configure a custom email provider for one time passcode send events (preview)](custom-extension-email-otp-get-started.md)
+- [Tutorial: Call an API from an Angular single-page app](tutorial-single-page-apps-angular-call-api.md)
+- [Tutorial: Create an Angular application and prepare it for authentication](tutorial-single-page-apps-angular-prepare-app.md)
+- [Tutorial: Register an Angular application in a Microsoft Entra ID tenant](tutorial-single-page-apps-angular-register-app.md)
+- [Tutorial: Add sign in and sign out in your Angular single-page application](tutorial-single-page-apps-angular-sign-in-users-app.md)
 
 ### Updated articles
 
-- [OpenID Connect on the Microsoft identity platform](v2-protocols-oidc.md) - SSO Public Client flow updates
-- [Tutorial: Sign in users and call the Microsoft Graph API from an Angular single-page application (SPA) using auth code flow](tutorial-v2-angular-auth-code.md) - Added clarity to the content
+- [How to use Continuous Access Evaluation enabled APIs in your applications](app-resilience-continuous-access-evaluation.md) - CAE page update with code snippets for MSAL libraries
+- [Single sign-on SAML protocol](single-sign-on-saml-protocol.md) - Added clarity to the content
+- [Signing key rollover in the Microsoft identity platform](signing-key-rollover.md) - Added clarity to the content
 
-
-## July 2024
-
-### Updated articles
-
-
-- [A web API that calls web APIs: Code configuration](scenario-web-api-call-api-app-configuration.md) - Added clarity to the content
-- [A web app that calls web APIs: Code configuration](scenario-web-app-call-api-app-configuration.md) - Added clarity to the content
-- [Customize claims issued in the JSON web token (JWT) for enterprise applications](jwt-claims-customization.md) - Updating the script with a working version
-- [Troubleshoot publisher verification](troubleshoot-publisher-verification.md) - Removed reference to Postman
-- [Restrict a Microsoft Entra app to a set of users](howto-restrict-your-app-to-a-set-of-users.md) - Added clarity to the content
-
-
-## June 2024
+## October 2024
 
 ### Updated articles
 
-- [Microsoft identity platform code samples](sample-v2-code.md) - Removed archived samples from code sample page and articles
-- [Quickstart: Configure a client application to access a web API](quickstart-configure-app-access-web-apis.md) - Added clarity to the content
-- [Quickstart: Configure an application to expose a web API](quickstart-configure-app-expose-web-apis.md) - Added clarity to the content
-- [Quickstart: Sign in users and call Microsoft Graph from an Android app](quickstart-mobile-app-android-sign-in.md) - Added clarity to the content
-- [Redirect URI (reply URL) outline and restrictions](reply-url.md) - Added clarity to the content
+- [Microsoft identity platform code samples](sample-v2-code.md) - Code sample page update
+- [Microsoft identity platform and OAuth 2.0 implicit grant flow](v2-oauth2-implicit-grant-flow.md) - Implicit grant flow protocol security guidance update
+- [Quickstart: Sign in users and call the Microsoft Graph API from a Node.js web app](quickstart-web-app-nodejs-sign-in.md) - Update NodeJS quickstart to new format
+- [Signing key rollover in the Microsoft identity platform](signing-key-rollover.md) - Add a description of the key refresh algorithm in a language neutral way
+- [What's new for authentication?](reference-breaking-changes.md) - Added clarity to the content
+
 

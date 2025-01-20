@@ -108,8 +108,6 @@ In the Oracle EBS Linux environment, generate a new DBC file for DAP. You need t
 1. For **EBS DBC Content**, use the content that you copied.
 1. Select **Next**.
 
-   [![Screenshot of entries and selections for adding an application.](./media/datawiza-sso-mfa-oracle-ebs/add-application.png)](./media/datawiza-sso-mfa-oracle-ebs/add-application.png#lightbox)
-
 ### IdP configuration
 
 Use the DCMC one-click integration to help you complete Microsoft Entra configuration. With this feature, you can reduce management costs and the likelihood of configuration errors.
@@ -119,8 +117,6 @@ Use the DCMC one-click integration to help you complete Microsoft Entra configur
 ### Docker Compose file
 
 Configuration on the management console is complete. You're prompted to deploy DAP with your application. Make a note of the deployment Docker Compose file. The file includes the DAP image, `PROVISIONING_KEY`, and `PROVISIONING_SECRET`. DAP uses this information to pull the latest configuration and policies from DCMC.
-
-   ![Screenshot of Docker information.](./media/datawiza-sso-mfa-oracle-ebs/docker-information.png)
 
 ### SSL configuration
 

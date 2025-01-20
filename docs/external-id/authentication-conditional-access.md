@@ -219,7 +219,7 @@ In external user scenarios, the authentication methods that are acceptable for f
 |Windows Hello for Business                   | &#x2705;        |          |
 |Certificate-based authentication             | &#x2705;        |          |
 
-To configure a Conditional Access policy that applies authentication strength requirements to external users or guests, see [Conditional Access: Require an authentication strength for external users](~/identity/conditional-access/howto-conditional-access-policy-authentication-strength-external.md).
+To configure a Conditional Access policy that applies authentication strength requirements to external users or guests, see [Conditional Access: Require an authentication strength for external users](~/identity/conditional-access/policy-guests-mfa-strength.md).
 
 <a name='user-experience-for-external-azure-ad-users'></a>
 
@@ -240,7 +240,7 @@ If the user is unable to complete MFA, or if a Conditional Access policy (such a
 
 Organizations can use Conditional Access policies to require users' devices to be managed by Microsoft Intune. Such policies can block external user access, because an external user can't register their unmanaged device with the resource organization. Devices can only be managed by a user's home tenant.
 
-However, you can use device trust settings to unblock external users while still requiring managed devices. In your cross-tenant access settings, you can choose to trust claims from an external user's home tenant about whether the user's device meets their device compliance policies or is [Microsoft Entra hybrid joined](~/identity/conditional-access/howto-conditional-access-policy-compliant-device.md). You can set device trust settings for all Microsoft Entra organizations or individual organizations.
+However, you can use device trust settings to unblock external users while still requiring managed devices. In your cross-tenant access settings, you can choose to trust claims from an external user's home tenant about whether the user's device meets their device compliance policies or is [Microsoft Entra hybrid joined](~/identity/conditional-access/policy-alt-all-users-compliant-hybrid-or-mfa.md). You can set device trust settings for all Microsoft Entra organizations or individual organizations.
 
 When device trust settings are enabled, Microsoft Entra ID checks a user's authentication session for a device claim. If the session contains a device claim indicating that the policies were already met in the user's home tenant, the external user is granted seamless sign-on to your shared resource.
 
