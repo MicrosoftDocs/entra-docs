@@ -4,7 +4,7 @@ description: Prepare an Angular Single-page Application in a Microsoft Entra ten
 author: henrymbuguakiarie
 manager: mwongerapk
 ms.author: henrymbugua
-ms.date: 11/11/2024
+ms.date: 01/20/2025
 ms.reviewer: ejahjaloo
 ms.service: identity-platform
 
@@ -162,6 +162,17 @@ We'll use the values recorded during the app registration to configure the appli
           storeAuthStateInCookie: isIE
         }
       });
+    }
+
+    // MSAL Interceptor is required to request access tokens in order to access the protected resource (Graph)
+    export function MSALInterceptorConfigFactory(): MsalInterceptorConfiguration {
+      const protectedResourceMap = new Map<string, Array<string>>();
+      protectedResourceMap.set('https://graph.microsoft.com/v1.0/me', ['user.read']);
+    
+      return {
+        interactionType: InteractionType.Redirect,
+        protectedResourceMap
+      };
     }
     
     // MSAL Guard is required to protect routes and require authentication before accessing protected routes
