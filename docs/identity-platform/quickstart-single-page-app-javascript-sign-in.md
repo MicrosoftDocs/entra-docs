@@ -44,6 +44,7 @@ This quickstart uses a sample JavaScript (JS) single-page app (SPA) to show you 
 * An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * [.NET SDK](https://dotnet.microsoft.com/download/dotnet)
 * [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/)
+---
 
 ## Clone or download the sample application
 
@@ -88,6 +89,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     ```
 
 - [Download the .zip file](https://github.com/Azure-Samples/ms-identity-docs-code-dotnet/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
+---
 
 ## Configure the project
 
@@ -113,7 +115,6 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     * `authority` - The authority is a URL that indicates a directory that MSAL can request tokens from. Replace *Enter_the_Tenant_Info_Here* with the **Directory (tenant) ID** value that was recorded earlier.
     * `redirectUri` - The **Redirect URI** of the application. If necessary, replace the text in quotes with the redirect URI that was recorded earlier.
 
-
 #### [Angular](#tab/angular-workforce)
 
 1. In your IDE, open the project folder, *ms-identity-docs-code-javascript/angular-spa*, containing the sample.
@@ -134,6 +135,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     
     * `Authority` - The authority is a URL that indicates a directory that MSAL can request tokens from. Replace *Enter_the_Tenant_Info_Here* with the **Directory (tenant) ID** value that was recorded earlier.
     * `ClientId` - The identifier of the application, also referred to as the client. Replace the text in quotes with the **Application (client) ID** value that was recorded earlier.
+---
 
 ## Run the application and sign in and sign out
 
@@ -197,6 +199,7 @@ Run the project with a web server by using Node.js:
 1. The application will request permission to maintain access to data you have given it access to, and to sign you in and read your profile. Select **Accept**. The following screenshot appears, indicating that you have signed in to the application and have accessed your profile details from the Microsoft Graph API.
 
     :::image type="content" source="./media/common-spa/blazor-spa/display-api-call-results-blazor-spa.png" alt-text="Screenshot of Blazor WASM SPA App depicting the results of the API call.":::
+---
 
 ## Sign out from the application
 
