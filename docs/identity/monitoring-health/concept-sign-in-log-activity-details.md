@@ -115,7 +115,8 @@ If Conditional Access (CA) policies are in use in your tenant, you can see if th
 - **Success:** The CA policy was applied successfully to the sign-in attempt.
 - **Failure:** The CA policy was applied to the sign-in attempt, but the sign-in attempt failed.
 - **Not Applied:** The sign-in didn't match the criteria for the policy to be applied.
-   - There are specific scenarios that due to their nature, are required to be exempt from Conditional Access evaluation to prevent a circular dependency (chicken-and-egg scenario) that would not be possible to complete. These are considered "bootstrap scenarios" and might include sign ins associated with device registration, device compliance, or Network Policy Server connectors.
+   - There are specific scenarios that due to their nature, are required to be exempt from Conditional Access evaluation to prevent a circular dependency (chicken-and-egg scenario) that would not be possible to complete. These are considered "bootstrap scenarios" and might include sign-ins associated with device registration, device compliance, or Network Policy Server connectors.
+   - Windows Hello for Business sign-ins show as "Not Applied" because Conditional Access policies protect sign-in attempts to cloud resources, not the Windows sign-in process.
 - **Disabled:** The policy was disabled at the time of the sign-in attempt.
 
 ### Report-only
@@ -133,7 +134,7 @@ The following scenarios are important to consider when you're reviewing sign-in 
 - **Date and time:** The date and time of a sign-in attempt is localized to the time zone for the person signed into the Microsoft Entra admin center, not the user who attempted the sign-in.
  
 - **Conditional Access:**
-  - `Not applied`: No policy applied to the user and application during sign-in.
+  - `Not applied`: No policy applied to the user and application during sign-in. Windows Hello for Business shows up as "Not Applied" because Conditional Access policies protect sign-in attempts to cloud resources, not the Windows sign-in process. Other sign-ins might get interrupted so a policy isn't applied.
   - `Success`: One or more Conditional Access policies applied to or were evaluated for the user and application (but not necessarily the other conditions) during sign-in. Even though a Conditional Access policy might not apply, if it was evaluated, the Conditional Access status shows *Success*.
   - `Failure`: The sign-in satisfied the user and application condition of at least one Conditional Access policy and grant controls are either not satisfied or set to block access.
   - Conditional Access does not apply to Windows sign-in, such as Windows Hello for Business. Conditional Access protects sign-in attempts to cloud resources, not the device sign-in process.

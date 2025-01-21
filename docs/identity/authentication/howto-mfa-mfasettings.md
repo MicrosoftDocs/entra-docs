@@ -6,7 +6,7 @@ description: Learn how to configure settings for Microsoft Entra multifactor aut
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/04/2024
+ms.date: 01/08/2025
 
 ms.author: justinha
 author: justinha
@@ -222,7 +222,7 @@ In the United States, if you haven't configured MFA caller ID, voice calls from 
 
 Default number: *+1 (855) 330-8653*
 
-The following table lists more numbers for different countries.
+The following table lists more numbers for different countries/regions.
 
 | Country/Region       | Number(s)       |
 |:---------------------|:----------------|
@@ -454,7 +454,7 @@ To enable or disable verification methods, complete the following steps:
 
 ### Remember multifactor authentication
 
- The **remember multifactor authentication** feature lets users bypass subsequent verifications for a specified number of days, after they've successfully signed in to a device by using MFA. To enhance usability and minimize the number of times a user has to perform MFA on a given device, select a duration of 90 days or more.
+ The **remember multifactor authentication** feature lets users bypass subsequent verifications for a specified number of days, after they've successfully signed in to a device by using MFA. To enhance usability and minimize the number of times a user has to perform MFA on a given device, select a duration of 90 days or less.
 
 > [!IMPORTANT]
 > If an account or device is compromised, remembering MFA for trusted devices can affect security. If a corporate account becomes compromised or a trusted device is lost or stolen, you should [Revoke MFA Sessions](howto-mfa-userdevicesettings.yml).

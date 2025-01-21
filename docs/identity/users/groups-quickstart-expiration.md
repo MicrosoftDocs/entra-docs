@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: quickstart
-ms.date: 11/15/2023
+ms.date: 01/15/2025
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, mode-other
@@ -22,7 +22,7 @@ Expiration policy is simple:
 
 - Groups with user activities are automatically renewed as the expiration nears
 - Group owners are notified to renew an expiring group
-- A group that is not renewed is deleted
+- A group that isn't renewed is deleted
 - A deleted Microsoft 365 group can be restored within 30 days by a group owner or by a Microsoft Entra administrator
 
 > [!NOTE]

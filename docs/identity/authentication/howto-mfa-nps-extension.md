@@ -6,7 +6,7 @@ description: Learn how to use Microsoft Entra multifactor authentication capabil
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/04/2024
+ms.date: 01/08/2025
 
 ms.author: justinha
 author: justinha
@@ -123,6 +123,7 @@ Additionally, connectivity to the following URLs is required to complete the [se
 
 * `https://onegetcdn.azureedge.net`
 * `https://login.microsoftonline.com`
+* `https://graph.microsoft.com`
 * `https://provisioningapi.microsoftonline.com`
 * `https://aadcdn.msauth.net`
 * `https://www.powershellgallery.com`
@@ -273,7 +274,11 @@ To provide load-balancing capabilities or for redundancy, repeat these steps on 
 If your previous computer certificate has expired, and a new certificate has been generated, you should delete any expired certificates. Having expired certificates can cause issues with the NPS Extension starting.
 
 > [!NOTE]
-> If you use your own certificates instead of generating certificates with the PowerShell script, make sure that they align to the NPS naming convention. The subject name must be **CN=\<TenantID\>,OU=Microsoft NPS Extension**.
+> If you use your own certificates instead of generating certificates with the PowerShell script, make sure that they include the Client Authentication purpose and that the private key has **READ** permission granted to the user *NETWORK SERVICE*. 
+>
+> If you use version 1.2.2893.1 or later, the certificate’s thumbprint can be used to identify the certificate. Set HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\AzureMfa\CLIENT_CERT_IDENTIFIER to the thumbprint in **Registry Settings**. There have been issues with subject name lookup for some certificates. Using thumbprint works around this issue.
+>
+> If you use version 1.2.2677.2 or earlier, the certificate must align to the NPS naming convention and the subject name must be **CN=\<TenantID\>,OU=Microsoft NPS Extension**. 
 
 ### Microsoft Azure Government or Microsoft Azure operated by 21Vianet additional steps
 
@@ -385,7 +390,10 @@ Open PowerShell command prompt and run the following commands:
 
 ```powershell
 Connect-MgGraph -Scopes 'Application.Read.All'
-(Get-MgServicePrincipal -Filter "appid eq '00001111-aaaa-2222-bbbb-3333cccc4444'" -Property "KeyCredentials").KeyCredentials | Format-List KeyId, DisplayName, StartDateTime, EndDateTime, @{Name = "Key"; Expression = {[System.Convert]::ToBase64String($_.Key)}}, @{Name = "Thumbprint"; Expression = {$Cert = New-object System.Security.Cryptography.X509Certificates.X509Certificate2; $Cert.Import([System.Text.Encoding]::UTF8.GetBytes([System.Convert]::ToBase64String($_.Key))); $Cert.Thumbprint}}
+(Get-MgServicePrincipal -Filter "appid eq '00001111-aaaa-2222-bbbb-3333cccc4444'" -Property "KeyCredentials").KeyCredentials | 
+Format-List KeyId, DisplayName, StartDateTime, EndDateTime, 
+@{Name = "Key"; Expression = {[System.Convert]::ToBase64String($_.Key) }}, 
+@{Name = "Thumbprint"; Expression = { [Convert]::ToBase64String($_.CustomKeyIdentifier)}}
 ```
 
 These commands print all the certificates associating your tenant with your instance of the NPS extension in your PowerShell session. Look for your certificate by exporting your client cert as a *Base-64 encoded X.509(.cer)* file without the private key, and compare it with the list from PowerShell. Compare the thumbprint of the certificate installed on the server to this one. The certificate thumbprints should match.

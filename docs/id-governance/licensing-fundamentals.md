@@ -5,7 +5,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: conceptual
-ms.date: 11/7/2024
+ms.date: 12/30/2024
 ms.author: billmath
 ---
 
@@ -24,7 +24,7 @@ The following licenses are available for use with Microsoft Entra ID Governance 
 >[!NOTE]
 >Some Microsoft Entra ID Governance scenarios can be configured to depend upon other features that aren't covered by Microsoft Entra ID Governance.  These features might have additional licensing requirements.  See the [Identity Governance overview](identity-governance-overview.md) for more information on governance scenarios that rely on additional features.
 
-Microsoft Entra ID Governance products aren't yet available in the US national clouds.
+The Microsoft Entra ID Governance for Government and Microsoft Entra ID Governance Add-on for Microsoft Entra ID P2 for Government products are available in the US Government community cloud (GCC), GCC-High, and Department of Defense cloud environments.
 
 ### Governance products and prerequisites
 

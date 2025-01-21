@@ -6,7 +6,7 @@ ms.service: entra-permissions-management
 
 ms.topic: how-to
 author: jenniferf-skc
-ms.date: 06/16/2023
+ms.date: 12/10/2024
 ms.author: jfields
 ---
 

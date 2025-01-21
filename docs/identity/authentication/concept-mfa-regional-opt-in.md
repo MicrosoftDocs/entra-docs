@@ -5,7 +5,7 @@ description: To protect customers, some regions require a support ticket to requ
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 09/12/2023
+ms.date: 01/06/2025
 
 author: aloom3
 ms.author: justinha
@@ -19,7 +19,7 @@ As a protection for our customers, Microsoft doesn't automatically support telep
 
 ## Why this protection is needed  
 
-In today's digital world, telecommunication services have become ingrained into our lives. But advancements come with a risk of fraudulent activities. International Revenue Share Fraud (IRSF) is a threat with severe financial implications that also makes using services more difficult. Let's look at IRSF fraud more in-depth.  
+In today's digital world, telecommunication services have become ingrained into our lives. But, advancements come with a risk of fraudulent activities. International Revenue Share Fraud (IRSF) is a threat with severe financial implications that also makes using services more difficult. Let's look at IRSF fraud more in-depth.  
 
 IRSF is a type of telephony fraud where criminals exploit the billing system of telecommunication services providers to make profit for themselves. Bad actors gain unauthorized access to a telecommunication network and divert traffic to those networks to skim profit for every transaction that is sent to that network. To divert traffic, bad actors steal existing usernames and passwords, create new usernames and passwords, or try a host of other things to send text message messages and voice calls through their telecommunication network. Bad actors take advantage of multifactor authentication screens, which require a text message or voice call before a user can access their account. This activity causes exorbitant charges and makes services unreliable for our customers, causing downtime, and system errors.  
 
@@ -215,35 +215,6 @@ For voice verification, the following region codes require an opt-in.
 | 1849        |  Dominican Republic                            |
 | 1869        |  Saint Kitts and Nevis                         |
 | 1876        |  Jamaica                                       |
-
-## Region specific service limits 
-| Region Code | Region Name                                    | Limit per tenant per 60 minutes | Limit per tenant per 24 hours            |                         
-|:----------- |:---------------------------------------------- |:------------------------------- | :----------------------------------------|
-| 228         |  Togo                                          | 10                              |  30                                      |
-| 257         |  Uzbek                                         | 10                              |  30                                      |
-| 970         |  State of Plaestine                            | 10                              |  30                                      |
-| 249         |  Sudan                                         | 10                              |  30                                      |
-| 226         |  Burina Faso                                   | 10                              |  30                                      |
-| 252         |  Somalia                                       | 10                              |  30                                      |  
-| 501         |  Belize                                        | 10                              |  30                                      |
-| 855         |  Cambodia                                      | 50                              |  200                                     |
-| 84         |  Vietnam                                       | 150                              |  500                                     |
-| 94         |  Sri Lanka                                     | 100                              |  500                                     |
-| 63         |  Philippines                                   | 50                              |  200                                     |
-| 62         |  Indonesia                                     | 50                              |  200                                     |
-| 7         |  Russia                                        | 100                              |  1000                                     |
-| 258         |  Mozambique                                    | 50                              |  200                                     |
-| 92         |  Pakistan                                    | 100                              |  1000                                     |
-| 994 | Azerbaijan | 50 | 200 | 
-| 880 | Bangladesh | 50 | 200 | 
-| 20  | Egypt | 50 | 200 | 
-| 260 | Zambia | 50 | 200 | 
-| 502 | Guatemala | 10 | 50 
-| 255 | Tanzania | 10 | 50 
-| 261 | Madagascar | 10 | 30 
-| 998 | Uzbekistan | 10 | 30 
-| 223 | Mali | 20 | 100 
-| 52 | Mexico | 100 | 500 
 
 ## Next steps
 

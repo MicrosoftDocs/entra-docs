@@ -174,7 +174,7 @@ $ap = New-MgEntitlementManagementAccessPackage -BodyParameter $params
 
 ```
 
-After you create the access package, assign the resource roles to it. For example, if you want to include the first resource role of the resource returned earlier as a resource role of the new access package, you can use a script similar to this one:
+After you create the access package, assign the resource roles to it. For example, if you want to include the first resource role of the resource returned earlier as a resource role of the new access package, and the role has an ID, you can use a script similar to this one:
 
 ```powershell
 
@@ -200,6 +200,8 @@ $rparams = @{
 
 New-MgEntitlementManagementAccessPackageResourceRoleScope -AccessPackageId $ap.Id -BodyParameter $rparams
 ```
+
+If the role doesn't have an ID, then don't include the `id` parameter of the `role` structure in the request payload.
 
 Finally, create the policies. In this policy, only the administrators or access package assignment managers can assign access, and there are no access reviews. For more examples, see [Create an assignment policy through PowerShell](entitlement-management-access-package-request-policy.md#create-an-access-package-assignment-policy-through-powershell) and [Create an assignmentPolicy](/graph/api/entitlementmanagement-post-assignmentpolicies?tabs=http&view=graph-rest-1.0&preserve-view=true).
 

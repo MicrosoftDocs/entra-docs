@@ -6,7 +6,7 @@ author: barclayn
 manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: how-to
-ms.date: 01/22/2024
+ms.date: 01/06/2025
 ms.subservice: privileged-identity-management
 ms.author: barclayn
 ms.reviewer: shaunliu
@@ -37,11 +37,11 @@ You can view and manage the management groups or subscriptions to which you have
 
 1.  Browse to **Identity governance** > **Privileged Identity Management** > **Azure Resources**.
 
-    If this is your first time using Privileged Identity Management for Azure resources, you'll see a **Discover resources** page.
+    If it is your first time using Privileged Identity Management for Azure resources, you see a **Discover resources** page.
 
     :::image type="content" source="./media/pim-resource-roles-discover-resources/discover-resources-first-run.png" alt-text="Screenshot of the Discover resources pane with no resources listed for first time experience.":::
 
-    If another administrator in your organization is already managing Azure resources in Privileged Identity Management, you'll see a list of the resources that are currently being managed.
+    If another administrator in your organization is already managing Azure resources in Privileged Identity Management, you see a list of the resources that are currently being managed.
 
     :::image type="content" source="./media/pim-resource-roles-discover-resources/discover-resources.png" alt-text="Screenshot of the Discover resources pane listing resources that are currently being managed.":::
 
@@ -65,7 +65,7 @@ You can view and manage the management groups or subscriptions to which you have
      
     :::image type="content" source="./media/pim-resource-roles-discover-resources/discovery-manage-resource.png" alt-text="Discovery pane with a resource selected and the Manage resource option highlighted":::
 
-1. If you see a message to confirm the onboarding of the selected resource for management, select **Yes**. PIM will then be configured to manage all the new and existing child objects under the resource(s).
+1. If you see a message to confirm the onboarding of the selected resource for management, select **Yes**. PIM will then be configured to manage all the new and existing child objects under the resource.
 
     :::image type="content" source="./media/pim-resource-roles-discover-resources/discovery-manage-resource-message.png" alt-text="Screenshot showing a Message confirming to onboard the selected resources for management.":::
 

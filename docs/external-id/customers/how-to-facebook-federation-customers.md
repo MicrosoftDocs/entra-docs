@@ -122,7 +122,8 @@ At this point, the Facebook identity provider has been set up in your external t
 
 1. At the top of the pane, select **Save**.
 
-## Next steps
+## Related content
 
-- [Add Google as an identity provider](how-to-google-federation-customers.md)
-- [Customize the branding for customer sign-in experiences](how-to-customize-branding-customers.md)
+- [Add Google as an identity provider (preview)](how-to-google-federation-customers.md)
+- [Add Apple as an identity provider](how-to-apple-federation-customers.md)
+- [Add OpenID Connect as an external identity provider (preview)](how-to-custom-oidc-federation-customers.md)

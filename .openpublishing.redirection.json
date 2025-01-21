@@ -46,6 +46,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/conditional-access/block-legacy-authentication.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-block-legacy-authentication",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/conditional-access/reference-resources-change.md",
       "redirect_url": "/entra/identity/conditional-access/concept-conditional-access-cloud-apps",
       "redirect_document_id": false
@@ -193,6 +198,11 @@
     {
       "source_path_from_root": "/docs/fundamentals/how-to-approve-support-access-requests.md",
       "redirect_url": "/entra/fundamentals/how-to-manage-support-access-requests",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/monitoring-health/howto-use-health-scenario-alerts.md",
+      "redirect_url": "/entra/identity/monitoring-health/howto-investigate-health-scenario-alerts",
       "redirect_document_id": false
     },
     {
@@ -516,10 +526,7 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/identity-platform/custom-extension-email-otp-get-started.md",
-      "redirect_url": "/entra/identity-platform/custom-extension-overview",
-      "redirect_document_id": false},
-    {"source_path_from_root": "/docs/identity-platform/tutorial-v2-angular-auth-code.md",
+      "source_path_from_root": "/docs/identity-platform/tutorial-v2-angular-auth-code.md",
       "redirect_url": "/entra/identity-platform/tutorial-single-page-apps-angular-register-app",
       "redirect_document_id": false
     },
@@ -1130,6 +1137,41 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/role-based-access-control/admin-units-assign-roles.md",
+      "redirect_url": "/entra/identity/role-based-access-control/manage-roles-portal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/role-based-access-control/assign-roles-different-scopes.md",
+      "redirect_url": "/entra/identity/role-based-access-control/manage-roles-portal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/role-based-access-control/custom-assign-graph.md",
+      "redirect_url": "/entra/identity/role-based-access-control/manage-roles-portal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/role-based-access-control/custom-assign-powershell.md",
+      "redirect_url": "/entra/identity/role-based-access-control/manage-roles-portal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/role-based-access-control/groups-assign-role.md",
+      "redirect_url": "/entra/identity/role-based-access-control/manage-roles-portal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/role-based-access-control/groups-view-assignments.md",
+      "redirect_url": "/entra/identity/role-based-access-control/view-assignments",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/role-based-access-control/list-role-assignments-users.md",
+      "redirect_url": "/entra/identity/role-based-access-control/view-assignments",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/global-secure-access/how-to-target-resource-microsoft-365-profile.md",
       "redirect_url": "/entra/global-secure-access/how-to-target-resource-microsoft-profile",
       "redirect_document_id": false
@@ -1156,9 +1198,29 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/architecture/sse-deployment-guide-microsoft-traffic.md",
+      "redirect_url": "/entra/architecture/gsa-deployment-guide-microsoft-traffic",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/architecture/sse-deployment-guide-intro.md",
+      "redirect_url": "/entra/architecture/gsa-deployment-guide-intro",
+      "redirect_document_id": true
+    },
+    {
       "source_path_from_root": "/docs/architecture/sse-deployment-guide-m365.md",
-      "redirect_url": "/entra/architecture/sse-deployment-guide-microsoft-traffic",
+      "redirect_url": "/entra/architecture/gsa-deployment-guide-microsoft-traffic",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/architecture/sse-deployment-guide-internet-access.md",
+      "redirect_url": "/entra/architecture/gsa-deployment-guide-internet-access",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/architecture/sse-deployment-guide-private-access.md",
+      "redirect_url": "/entra/architecture/gsa-deployment-guide-private-access",
+      "redirect_document_id": true
     },
     {
       "source_path_from_root": "/docs/identity-platform/scenario-daemon-overview.md",
@@ -1276,8 +1338,28 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/users/groups-write-back-portal.md",
+      "redirect_url": "/entra/identity/hybrid/group-writeback-cloud-sync",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/saas-apps/autotaskworkplace-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/vmware-identity-service-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/fidelitynetbenefits-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/enterprise-apps/one-click-sso-tutorial.md",
+      "redirect_url": "/docs/identity/enterprise-apps/what-is-application-management",
       "redirect_document_id": false
     }
   ]

@@ -1,11 +1,11 @@
 ---
-title: How to update and delete remote networks for Global Secure Access
+title: How to Update and Delete Remote Networks for Global Secure Access
 description: Learn how to update and delete remote networks for Global Secure Access.
 author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 03/04/2024
+ms.date: 12/23/2024
 ms.service: global-secure-access
 ---
 # Manage remote networks
@@ -18,11 +18,10 @@ This article explains how to manage your existing remote networks for Global Sec
 
 - A **Global Secure Access Administrator** role in Microsoft Entra ID.
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
-- To use the Microsoft traffic forwarding profile, a Microsoft 365 E3 license is recommended.
 
 ### Known limitations
 
-- At this time, remote networks can only be assigned to the Microsoft traffic forwarding profile.
+[!INCLUDE [known-limitations-include](../includes/known-limitations-include.md)]
 
 ## Update remote networks
 

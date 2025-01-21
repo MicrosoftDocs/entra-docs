@@ -4,7 +4,7 @@ description: In this tutorial, you learn how to enable Microsoft Entra self-serv
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
-ms.date: 05/21/2024
+ms.date: 01/16/2025
 ms.author: justinha
 author: justinha
 ms.reviewer: tilarso
@@ -92,12 +92,12 @@ An administrator can manually provide this contact information, or users can go 
 1. From the menu on the left side of the **Registration** page, select *Yes* for **Require users to register when signing in**.
 1. Set **Number of days before users are asked to reconfirm their authentication information** to *180*.
 
-    It's important to keep the contact information up to date. If outdated contact information exists when an SSPR event starts, the user may not be able to unlock their account or reset their password.
+    It's important to keep the contact information up to date. If outdated contact information exists when an SSPR event starts, the user might not be able to unlock their account or reset their password.
 
 1. To apply the registration settings, select **Save**.
 
 > [!NOTE]
-> The interruption to request to register contact information during signing in, will only occur, if the conditions configured on the settings are met, and will only apply to users and admin accounts that are enabled to reset passwords using Microsoft Entra self-service password reset. 
+> The interruption to request to register contact information during signing in only occurs if the conditions configured on the settings are met. This only applies to users and admin accounts that are enabled to reset passwords using Microsoft Entra self-service password reset. 
 
 ## Set up notifications and customizations
 
@@ -123,7 +123,7 @@ With SSPR enabled and set up, test the SSPR process with a user that's part of t
 > [!NOTE]
 > When you test self-service password reset, use a non-administrator account. By default, Microsoft Entra ID enables self-service password reset for admins. They're required to use two authentication methods to reset their password. For more information, see [Administrator reset policy differences](concept-sspr-policy.md#administrator-reset-policy-differences).
 
-1. To see the manual registration process, open a new browser window in InPrivate or incognito mode, and browse to *https:\//aka.ms/ssprsetup*. Microsoft Entra ID will direct users to this registration portal when they sign in next time.
+1. To see the manual registration process, open a new browser window in InPrivate or incognito mode, and browse to *https:\//aka.ms/ssprsetup*. Microsoft Entra ID directs users to this registration portal when they sign in next time.
 1. Sign in with a non-administrator test user, like *testuser*, and register your authentication methods contact information.
 1. Once finished, select the button marked **Looks good** and close the browser window.
 1. Open a new browser window in InPrivate or incognito mode, and browse to *https:\//aka.ms/sspr*.
@@ -131,13 +131,13 @@ With SSPR enabled and set up, test the SSPR process with a user that's part of t
 
     ![Enter user account information to reset the password](media/tutorial-enable-sspr/password-reset-page.png)
 
-1. Follow the verification steps to reset your password. When finished, you'll receive an email notification that your password was reset.
+1. Follow the verification steps to reset your password. When finished, you receive an email notification that your password was reset.
 
 ## Clean up resources
 
-In a later tutorial in this series, you'll set up password writeback. This feature writes password changes from Microsoft Entra SSPR back to an on-premises AD environment. If you want to continue with this tutorial series to set up password writeback, don't disable SSPR now.
+In a later tutorial in this series, you set up password writeback. This feature writes password changes from Microsoft Entra SSPR back to an on-premises AD environment. If you want to continue with this tutorial series to set up password writeback, don't disable SSPR now.
 
-If you no longer want to use the SSPR functionality you have set up as part of this tutorial, set the SSPR status to **None** using the following steps:
+If you no longer want to use the SSPR functionality you set up as part of this tutorial, set the SSPR status to **None** using the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Password reset**.
@@ -158,11 +158,11 @@ This section explains common questions from administrators and end-users who try
 
 - When a newly created user who is pre-populated with SSPR data such as phone and email visits the SSPR registration page, **Don’t lose access to your account!** appears as the title of the page. Why don't other users who have SSPR data pre-populated see the message?
 
-  A user who sees **Don’t lose access to your account!** is a member of SSPR/combined registration groups that are configured for the tenant. Users who don’t see **Don’t lose access to your account!** were not part of the SSPR/combined registration groups.
+  A user who sees **Don’t lose access to your account!** is a member of SSPR/combined registration groups that are configured for the tenant. Users who don’t see **Don’t lose access to your account!** weren't part of the SSPR/combined registration groups.
 
 - When some users go through SSPR process and reset their password, why don't they see the password strength indicator?
 
-  Users who don’t see weak/strong password strength have synchronized password writeback enabled. Since SSPR can’t determine the password policy of the customer’s on-premises environment, it cannot validate password strength or weakness. 
+  Users who don’t see weak/strong password strength have synchronized password writeback enabled. Since SSPR can’t determine the password policy of the customer’s on-premises environment, it can't validate password strength or weakness. 
 
 ## Next steps
 
