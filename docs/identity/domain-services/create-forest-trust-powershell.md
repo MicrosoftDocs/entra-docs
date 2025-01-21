@@ -429,7 +429,7 @@ For more conceptual information about forest types in Domain Services, see [How 
 
 [New-MgServicePrincipal](/powershell/module/microsoft.graph.applications/new-mgserviceprincipal): /powershell/module/microsoft.graph.applications/new-mgserviceprincipal
 
-[Get-AzureRMSubscription]: /powershell/module/azurerm.profile/get-azurermsubscription
+[Get-AzureRMSubscription]: /powershell/module/az.accounts/get-azsubscription
 
 [Install-Script]: /powershell/module/powershellget/install-script
 
