@@ -117,6 +117,8 @@
               href: claims-validation.md
         - name: Zero Trust
           href: zero-trust-for-developers.md
+        - name: Best practices for protecting frontline workers.md
+          href: security-best-practices-for-frontline-workers.md
     - name: Identity platform best practices
       href: identity-platform-integration-checklist.md
 - name: Single-page app (SPA)
