@@ -4,7 +4,7 @@ description: Learn how to set up a Flexible Federated identity credential in the
 author: cilwerner
 manager: CelesteDG
 ms.service: entra-workload-id
-ms.topic: faq
+ms.topic: how-to
 ms.date: 08/28/2024
 ms.author: cwerner
 ms.custom: 
