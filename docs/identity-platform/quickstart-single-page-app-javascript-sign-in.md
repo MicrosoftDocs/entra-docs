@@ -116,8 +116,6 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 #### [Angular](#tab/angular-workforce)
 
-## Configure the project
-
 1. In your IDE, open the project folder, *ms-identity-docs-code-javascript/angular-spa*, containing the sample.
 1. Open *src/app/app.module.ts* and update the following values with the information recorded earlier in the admin center.
 
@@ -128,8 +126,6 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     * `redirectUri` - The **Redirect URI** of the application. If necessary, replace the text in quotes with the redirect URI that was recorded earlier.
 
 #### [Blazor](#tab/blazor-workforce)
-
-## Configure the project
 
 1. In your IDE, open the project folder, *ms-identity-docs-code-dotnet/spa-blazor-wasm*, containing the sample.
 1. Open *wwwroot/appsettings.json* and update the following values with the information recorded earlier in the admin center.
