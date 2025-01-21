@@ -20,10 +20,6 @@ landingContent:
     linkLists:
       - linkListType: quickstart
         links:
-          - text: React
-            url: quickstart-single-page-app-react-sign-in.md
-          - text: Angular
-            url: quickstart-single-page-app-angular-sign-in.md
           - text: JavaScript
             url: quickstart-single-page-app-javascript-sign-in.md
   - title: "Learn by building"

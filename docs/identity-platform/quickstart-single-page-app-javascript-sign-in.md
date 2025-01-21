@@ -1,9 +1,9 @@
 ---
 title: "Quickstart: Sign in to a SPA & call an API - JavaScript"
 description: In this quickstart, learn how a JavaScript single-page application (SPA) can sign in users of personal accounts, work accounts, and school accounts by using the authorization code flow.
-author: henrymbuguakiarie
+author: OwenRichards1
 manager: CelesteDG
-ms.author: henrymbugua
+ms.author: owenrichards
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js
 ms.date: 03/05/2024
 ms.reviewer: OwenRichards1
@@ -77,8 +77,6 @@ A message appears indicating that you have signed out. You can now close the bro
 - [Quickstart: Protect an ASP.NET Core web API with the Microsoft identity platform](./quickstart-web-api-aspnet-core-protect-api.md).
 
 - Learn more by building a React SPA that signs in users in the following multi-part [tutorial series](./tutorial-single-page-app-react-register-app.md).
-
-
 
 
 <!-- REACT -->
