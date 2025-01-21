@@ -8,7 +8,7 @@ ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js
 ms.date: 03/05/2024
 ms.reviewer: OwenRichards1
 ms.service: identity-platform
-
+zone_pivot_groups: entra-tenants
 ms.topic: quickstart
 #Customer intent: As an app developer, I want to learn how to get access tokens and refresh tokens by using the Microsoft identity platform so that my JavaScript app can sign in users of personal accounts, work accounts, and school accounts.
 ---
@@ -202,6 +202,12 @@ Run the project with a web server by using Node.js:
 
     :::image type="content" source="./media/common-spa/blazor-spa/display-api-call-results-blazor-spa.png" alt-text="Screenshot of Blazor WASM SPA App depicting the results of the API call.":::
 
+## Sign out from the application
+
+1. Find the **Sign out** button in on the page, and select it.
+1. You'll be prompted to pick an account to sign out from. Select the account you used to sign in.
+
+A message appears indicating that you have signed out. You can now close the browser window.
 
 ## Related content
 
@@ -209,41 +215,20 @@ Run the project with a web server by using Node.js:
 
 - Learn more by building a React SPA that signs in users in the following multi-part [tutorial series](./tutorial-single-page-app-react-register-app.md).
 
-
 <!-- REACT -->
 <!-- # Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using React
 
 This quickstart uses a sample React single-page app (SPA) to show you how to sign in users by using the [authorization code flow](./v2-oauth2-auth-code-flow.md) with Proof Key for Code Exchange (PKCE). The sample uses the [Microsoft Authentication Library for JavaScript](/javascript/api/@azure/msal-react) to handle authentication. -->
-
-
-
-
-
-## Sign out from the application
-
-1. Find the **Sign out** button in the top right corner of the page, and select it.
-1. You're prompted to pick an account to sign out from. Select the account you used to sign in.
-
-A message appears indicating that you have signed out. You can now close the browser window.
 
 <!-- Blazor WebAssembly -->
 <!-- # Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using Blazor WebAssembly
 
 This quickstart uses a sample Blazor WebAssembly (WASM) single-page app (SPA) app to show you how to sign in users by using the [authorization code flow](./v2-oauth2-auth-code-flow.md) with Proof Key for Code Exchange (PKCE) and call the Microsoft Graph API. The sample uses the [Microsoft.Authentication.WebAssembly.MSAL](https://www.nuget.org/packages/Microsoft.Authentication.WebAssembly.Msal) to handle authentication. -->
 
-
-## Sign out from the application
-
-1. Find the **Sign out** button in the top right corner of the page, and select it.
-1. You'll be prompted to pick an account to sign out from. Select the account you used to sign in.
-
-A message appears indicating that you have signed out. You can now close the browser window.
-
 <!-- Angular -->
 <!-- # Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using Angular
 
 This quickstart uses a sample Angular single-page app (SPA) to show you how to sign in users by using the [authorization code flow](./v2-oauth2-auth-code-flow.md) with Proof Key for Code Exchange (PKCE) and call the Microsoft Graph API. The sample uses the [Microsoft Authentication Library for JavaScript](/javascript/api/%40azure/msal-react/) to handle authentication. -->
-
 
 ::: zone-end
 ::: zone pivot="external"
