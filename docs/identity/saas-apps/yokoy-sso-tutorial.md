@@ -52,7 +52,7 @@ To configure the integration of Yokoy into Microsoft Entra ID, you need to add Y
 
  Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
-<a name='configure-and-test-azure-ad-sso-for-versal'></a>
+<a name='configure-and-test-azure-ad-sso-for-Yokoy'></a>
 
 ## Configure and test Microsoft Entra SSO for Yokoy
 
@@ -63,8 +63,8 @@ To configure and test Microsoft Entra SSO with Yokoy, perform the following step
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
     1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
-1. **[Configure Yokoy SSO](#configure-versal-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Yokoy test user](#create-versal-test-user)** - to have a counterpart of B.Simon in Yokoy that is linked to the Microsoft Entra representation of user.
+1. **[Configure Yokoy SSO](#configure-Yokoy-sso)** - to configure the single sign-on settings on application side.
+    1. **[Create Yokoy test user](#create-Yokoy-test-user)** - to have a counterpart of B.Simon in Yokoy that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -86,7 +86,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `VERSAL`
 
     b. In the **Reply URL** text box, type a URL using the following pattern:
-    `https://versal.com/sso/saml/orgs/<organization_id>`
+    `https://Yokoy.com/sso/saml/orgs/<organization_id>`
 
     > [!NOTE]
     > The Reply URL value isn't real. Update this value with the actual Reply URL. Contact Yokoy Client support team to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
