@@ -253,3 +253,10 @@ Run the project with a web server by using Node.js:
     :::image type="content" source="./media/quickstarts/angular-spa/quickstart-angular-spa-sign-in.png" alt-text="Screenshot of JavaScript App depicting the results of the API call.":::
 
 ::: zone-end
+::: zone pivot="external"
+
+## Prerequisites
+
+test
+
+::: zone-end
