@@ -163,6 +163,9 @@ Required claims for the SAML 2.0 token issued by the IdP:
 |NameID Format     |`urn:oasis:names:tc:SAML:2.0:nameid-format:persistent`         |
 |`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`      | emailaddress |
 
+> [!NOTE]
+> Ensure the value of the `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress` claim is the UPN of the user as displayed in the Entra ID tenant
+
 ### WS-Fed configuration
 
 Microsoft Entra B2B can be configured to federate with IdPs that use the WS-Fed protocol. This section discusses the requirements. Currently, the two WS-Fed providers have been tested for compatibility with Microsoft Entra ID include AD FS and Shibboleth. For more information about establishing a relying party trust between a WS-Fed compliant provider with Microsoft Entra ID, see the "STS Integration Paper using WS Protocols" available in the [Microsoft Entra identity Provider Compatibility Docs](https://www.microsoft.com/download/details.aspx?id=56843).
