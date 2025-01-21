@@ -35,7 +35,7 @@ To get started, you need the following items:
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
-* Ardoq supports **SP and IDP** initiated SSO.
+* Ardoq only supports **SP** initiated SSO. To achieve something similar to an **IDP** initiated SSO, read the guide on [Supporting IDP-Initiated SAML Login](https://help.ardoq.com/en/articles/109003-supporting-idp-initiated-saml-login).
 * Ardoq supports **Just In Time** user provisioning.
 
 ## Adding Ardoq from the gallery
