@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
-ms.date: 03/25/2024
+ms.date: 01/22/2025
 ms.author: jeedes
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Yokoy so that I can control who has access to Yokoy, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -78,7 +78,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
-   ![Screenshot shows to edit Basic S A M L Configuration.](common/edit-urls.png "Basic Configuration")
+   ![Screenshot shows to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
 1. On the **Basic SAML Configuration** page, perform the following steps:
 
@@ -101,7 +101,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Set up Yokoy** section, copy one or more appropriate URLs based on your requirement.
 
-    ![Screenshot shows to copy appropriate configuration U R L.](common/copy-configuration-urls.png "Metadata")
+    ![Screenshot shows to copy appropriate configuration URL.](common/copy-configuration-urls.png "Metadata")
 
 <a name='create-an-azure-ad-test-user'></a>
 

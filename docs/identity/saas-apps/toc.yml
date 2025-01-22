@@ -3968,6 +3968,8 @@
         href: yardione-provisioning-tutorial.md
       - name: Yellowbox
         href: yellowbox-provisioning-tutorial.md
+      - name: Yokoy SSO
+        href: yokoy-sso-tutorial.md
       - name: Zapier
         href: zapier-provisioning-tutorial.md 
       - name: Zello
