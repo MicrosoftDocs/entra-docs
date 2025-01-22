@@ -3560,6 +3560,8 @@
         href: ideo-provisioning-tutorial.md
       - name: Ideagen Cloud
         href: ideagen-cloud-provisioning-tutorial.md        
+      - name: Infobric Equipment
+        href: infobric-equipment-provisioning-tutorial.md
       - name: Infor CloudSuite
         href: infor-cloudsuite-provisioning-tutorial.md
       - name: InformaCast
