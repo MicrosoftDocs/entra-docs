@@ -9,7 +9,7 @@ ms.topic: conceptual
 ms.date: 01/22/2025
 ms.author: jricketts
 ---
-# Microsoft Global Secure Access Deployment Guide - Configure Microsoft Entra Internet Access
+# Microsoft Global Secure Access Proof of Concept Guidance - Configure Microsoft Entra Internet Access
 
 The Proof of Concept (PoC) guidance in this series of articles helps you to learn, deploy, and test Microsoft Global Secure Access with Microsoft Entra Internet Access, Microsoft Entra Private Access, and the Microsoft traffic profile.
 
