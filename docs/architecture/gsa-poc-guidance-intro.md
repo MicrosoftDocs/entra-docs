@@ -92,6 +92,7 @@ Ensure that you meet these prerequisites for your PoC:
 
   - Windows 11 devices must be either Microsoft Entra ID joined or hybrid joined to your test tenant.
   - For Android and iOS devices, install the Microsoft Defender app and register it in your test tenant.
+
 - You must have the appropriate paid or trial licenses.
   - [Global Secure Access Licensing overview](../global-secure-access/overview-what-is-global-secure-access.md#licensing-overview)
   - [Microsoft Entra Suite trial licenses](https://aka.ms/EntraSuiteTrial)
@@ -135,10 +136,7 @@ Install the Global Secure Access client on each client device that connects to G
 
 To deploy the client to multiple devices, use Intune or another mobile device management solution.
 
-## Next steps
-
-- [Configure Microsoft Entra Private Access](gsa-poc-private-access.md)
-- [Configure Microsoft Entra Internet Access](gsa-poc-internet-access.md)
+## Troubleshooting
 
 If you run into issues during your PoC, these articles can help you with troubleshooting, logging, and monitoring:
 
@@ -148,6 +146,11 @@ If you run into issues during your PoC, these articles can help you with trouble
 - [Troubleshoot the Global Secure Access Client: Health check tab](../global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check.md)
 - [Troubleshoot Distributed File System issue with Global Secure Access](../global-secure-access/troubleshoot-distributed-file-system.md)
 - See [Global Secure Access logs and monitoring](../global-secure-access/concept-global-secure-access-logs-monitoring.md) for log locations and other details that can assist with monitoring and troubleshooting your Global Secure Access deployment.
+
+## Next steps
+
+- [Configure Microsoft Entra Private Access](gsa-poc-private-access.md)
+- [Configure Microsoft Entra Internet Access](gsa-poc-internet-access.md)
 - [How to use workbooks with Global Secure Access](../global-secure-access/how-to-use-workbooks.md).
 - [Introduction to Microsoft Global Secure Access Deployment Guide](gsa-deployment-guide-intro.md)
 - [Microsoft Global Secure Access Deployment Guide for Microsoft Entra Private Access](gsa-deployment-guide-private-access.md)

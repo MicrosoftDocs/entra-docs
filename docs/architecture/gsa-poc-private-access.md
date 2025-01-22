@@ -78,10 +78,7 @@ To protect on-premises resources such as DC by enabling MFA, reference [Microsof
 
 When customers deploy 3P solution, they might want to use Environmental Protection Agency (EPA) while using other solutions for Internet access. For guidance, reference [Partner ecosystem overview](../global-secure-access/partner-ecosystems-overview.md).
 
-## Next steps
-
-- [Introduction to Global Secure Access Proof of Concept Guidance](gsa-poc-guidance-intro.md)](gsa-poc-guidance-intro.md)
-- [Configure Microsoft Entra Internet Access](gsa-poc-internet-access.md)
+## Troubleshooting
 
 If you run into issues during your PoC, these articles can help you with troubleshooting, logging, and monitoring:
 
@@ -91,6 +88,11 @@ If you run into issues during your PoC, these articles can help you with trouble
 - [Troubleshoot the Global Secure Access Client: Health check tab](../global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check.md)
 - [Troubleshoot Distributed File System issue with Global Secure Access](../global-secure-access/troubleshoot-distributed-file-system.md)
 - See [Global Secure Access logs and monitoring](../global-secure-access/concept-global-secure-access-logs-monitoring.md) for log locations and other details that can assist with monitoring and troubleshooting your Global Secure Access deployment.
+
+## Next steps
+
+- [Introduction to Global Secure Access Proof of Concept Guidance](gsa-poc-guidance-intro.md)](gsa-poc-guidance-intro.md)
+- [Configure Microsoft Entra Internet Access](gsa-poc-internet-access.md)
 - [How to use workbooks with Global Secure Access](../global-secure-access/how-to-use-workbooks.md).
 - [Introduction to Microsoft Global Secure Access Deployment Guide](gsa-deployment-guide-intro.md)
 - [Microsoft Global Secure Access Deployment Guide for Microsoft Entra Private Access](gsa-deployment-guide-private-access.md)

@@ -99,10 +99,7 @@ After you enable the Microsoft traffic profile, follow these steps to implement 
 1. [Validate authentication plane protection](../global-secure-access/how-to-universal-tenant-restrictions.md#validate-the-authentication-plane-protection).
 1. [Validate data plane protection](../global-secure-access/how-to-universal-tenant-restrictions.md#validate-the-data-plane-protection).
 
-## Next steps
-
-- [Introduction to Global Secure Access Proof of Concept Guidance](gsa-poc-guidance-intro.md)](gsa-poc-guidance-intro.md)
-- [Configure Microsoft Entra Private Access](gsa-poc-private-access.md)
+## Troubleshooting
 
 If you run into issues during your PoC, these articles can help you with troubleshooting, logging, and monitoring:
 
@@ -112,6 +109,11 @@ If you run into issues during your PoC, these articles can help you with trouble
 - [Troubleshoot the Global Secure Access Client: Health check tab](../global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check.md)
 - [Troubleshoot Distributed File System issue with Global Secure Access](../global-secure-access/troubleshoot-distributed-file-system.md)
 - See [Global Secure Access logs and monitoring](../global-secure-access/concept-global-secure-access-logs-monitoring.md) for log locations and other details that can assist with monitoring and troubleshooting your Global Secure Access deployment.
+
+## Next steps
+
+- [Introduction to Global Secure Access Proof of Concept Guidance](gsa-poc-guidance-intro.md)](gsa-poc-guidance-intro.md)
+- [Configure Microsoft Entra Private Access](gsa-poc-private-access.md)
 - [How to use workbooks with Global Secure Access](../global-secure-access/how-to-use-workbooks.md).
 - [Introduction to Microsoft Global Secure Access Deployment Guide](gsa-deployment-guide-intro.md)
 - [Microsoft Global Secure Access Deployment Guide for Microsoft Entra Private Access](gsa-deployment-guide-private-access.md)
