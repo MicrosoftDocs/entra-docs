@@ -1,0 +1,72 @@
+---
+title: Register a SAML app
+description: Learn how to create and register a SAML app with External ID for customer identity and access management (CIAM). Choose your app type and get detailed steps. 
+author: msmimart
+ms.author: mimart
+manager: CelesteDG
+ms.service: entra-external-id 
+ms.subservice: external
+ms.topic: how-to
+ms.date: 01/22/2025
+ms.custom: it-pro
+
+#Customer intent: As a dev, devops, or it admin, I want to learn about how to register a SAML app through the Microsoft Entra admin center.
+---
+# Register a SAML app in your external tenant
+
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
+Applications registered in an external tenant typically use OpenID Connect (OIDC) for authentication and single sign-on (SSO). However, you can also register SAML apps. Instead of using the app registration process, which is designed specifically for OIDC apps, you can use the Enterprise applications feature to create and register your SAML app. This process generates a unique application ID (client ID) and adds your app to the App registrations, where you can view and manage its properties.
+
+This article describes how to register your own SAML application in your external tenant by creating a *non-gallery* app in **Enterprise applications**.
+
+> [!NOTE]
+> The following capabilities aren't supported for SAML apps in external tenants:
+>- Pre-integrated SAML applications in the Microsoft Entra gallery aren't supported in external tenants.
+>- Although the **Provisioning** tab is available in the SAML app settings, provisioning isn't supported for apps in external tenants.
+>- We don't currently generate IdP-initiated links for testing SAML apps.
+Before you begin, [create an external tenant](how-to-create-external-tenant-portal.md) and [create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
+
+1. Sign in to the Microsoft Entra admin center as at least an Application Administrator.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu and switch to your external tenant from the **Directories** menu.
+1. Go to **Identity** > **Applications** > **Enterprise Applications (Preview)**.
+1. Select **New application**.
+
+1. Select **Create your own application**.
+
+      :::image type="content" source="media/how-to-register-saml-app/create-your-own-application.png" alt-text="Screenshot of the Create your own application option in the Microsoft Entra Gallery.":::
+
+1. On the **Create your own application** pane:
+   1. Enter a name for your app.
+
+   > [!NOTE]
+   > You might see a gallery app selector, but you can disregard it as gallery apps aren't supported in external tenants.
+
+   1. Select "**(Preview) Integrate any other application you don't find in the gallery (Non-gallery)**".
+   1. Select **Create**.
+
+1. The app **Overview** page opens. In the left menu under **Manage**, select **Properties**. Switch the **Assignment required?** toggle to **No** so that users can use self-service sign-up, and then select **Save**.
+
+      :::image type="content" source="media/how-to-register-saml-app/assignment-toggle-no.png" alt-text="Screenshot of the Assignment required toggle.":::
+
+1. In the left menu under **Manage**, select **Single sign-on (Preview)**.
+1. Under **Select a single sign-on method**, select **SAML (preview)**.
+
+    :::image type="content" source="media/how-to-register-saml-app/select-single-sign-on-method.png" alt-text="Screenshot of the Single sign-on method tile.":::
+
+1. On the **SAML-based Sign-on (Preview)** page, do one of the following:
+
+   - Select **Upload metadata file**, browse to the file containing your metadata, and then select **Add**. Select **Save**.
+   - Or, use the **Edit** pencil option to update each section, and then select **Save**.
+
+   > [!NOTE]
+   > Make sure your SAML app uses your `ciamlogin` endpoint, for example `domainname.ciamlogin.com`, instead of `login.microsoft.com`. If you're downloading the federation metadata URL, it should be in the form `domain.ciamlogin.com/<tenantid>/federationmetadata/2007-06/federationmetadata.xml?appid=<appid>`.
+
+1. Select **Test**, and then select the **Test sign-in** button to see if single sign-on is working. This test verifies that your current admin account can sign in using the `https://login.microsoftonline.com` endpoint.  
+
+    :::image type="content" source="media/how-to-register-saml-app/test-application.png" alt-text="Screenshot of the test single sign-on option.":::
+
+   We don't currently generate an IdP-initiated link for testing external user sign-in, but you can test external user sign-in with these steps:
+   - [Create a sign-up and sign-in user flow](~/external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) if you haven't already.
+   - [Add your SAML application to the user flow](~/external-id/customers/how-to-user-flow-add-application.md).
+   - Run your application.
