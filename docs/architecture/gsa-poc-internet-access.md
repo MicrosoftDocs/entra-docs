@@ -1,5 +1,5 @@
 ---
-title: Microsoft Global Secure Access Deployment Guide - Configure Microsoft Entra Internet Access
+title: Microsoft Global Secure Access Proof of Concept Guidance - Configure Microsoft Entra Internet Access
 description: Learn how to deploy and test Microsoft Global Secure Access with Microsoft Entra Internet Access.
 customer intent: As a Microsoft Partner, I want to deploy Microsoft Global Secure Access for Microsoft Entra Internet Access as a Proof of Concept in my production or test environment.
 author: jricketts
@@ -109,12 +109,12 @@ If you run into issues during your PoC, these articles can help you with trouble
 - [Troubleshoot the Global Secure Access Client: Health check tab](../global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check.md)
 - [Troubleshoot Distributed File System issue with Global Secure Access](../global-secure-access/troubleshoot-distributed-file-system.md)
 - See [Global Secure Access logs and monitoring](../global-secure-access/concept-global-secure-access-logs-monitoring.md) for log locations and other details that can assist with monitoring and troubleshooting your Global Secure Access deployment.
+- [How to use workbooks with Global Secure Access](../global-secure-access/how-to-use-workbooks.md).
 
 ## Next steps
 
 - [Introduction to Global Secure Access Proof of Concept Guidance](gsa-poc-guidance-intro.md)](gsa-poc-guidance-intro.md)
 - [Configure Microsoft Entra Private Access](gsa-poc-private-access.md)
-- [How to use workbooks with Global Secure Access](../global-secure-access/how-to-use-workbooks.md).
 - [Introduction to Microsoft Global Secure Access Deployment Guide](gsa-deployment-guide-intro.md)
 - [Microsoft Global Secure Access Deployment Guide for Microsoft Entra Private Access](gsa-deployment-guide-private-access.md)
 - [Microsoft Global Secure Access Deployment Guide for Microsoft Entra Internet Access](gsa-deployment-guide-internet-access.md)
