@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/17/2025
+ms.date: 01/22/2025
 ms.author: justinha
 author: najshahid
 manager: amycolannino
@@ -36,10 +36,10 @@ The following table lists affected applications, URLs, and App IDs. In some case
 | Microsoft 365 admin center | `https://portal.office.com/adminportal/home` | 00000006-0000-0ff1-ce00-000000000000 | Early 2025 |
 | Microsoft 365 admin center | `https://admin.cloud.microsoft` | 618dd325-23f6-4b6f-8380-4df78026e39b | Early 2025 |
 | Microsoft 365 admin center | `https://admin.microsoft.com` | 00000006-0000-0ff1-ce00-000000000000 | Early 2025 |
-| Microsoft 365 admin center | `https://portal.office.com` | 4765445b-32c6-49b0-83e6-1d93765276ca | Out of scope |
-| Microsoft 365 admin center | `https://www.microsoft365.com` | 4765445b-32c6-49b0-83e6-1d93765276ca | Out of scope |
-| Microsoft 365 admin center | `https://portal.microsoftonline.com` | 4765445b-32c6-49b0-83e6-1d93765276ca | Out of scope |
-| Microsoft 365 admin center | `https://portal.office.com/account` | 00000006-0000-0ff1-ce00-000000000000 | Out of scope |
+| Microsoft 365 Copilot      | `https://portal.office.com` | 4765445b-32c6-49b0-83e6-1d93765276ca | Out of scope |
+| Microsoft 365 Copilot      | `https://www.microsoft365.com` | 4765445b-32c6-49b0-83e6-1d93765276ca | Out of scope |
+| Microsoft 365 Copilot      | `https://portal.microsoftonline.com` | 4765445b-32c6-49b0-83e6-1d93765276ca | Out of scope |
+| My account                 | `https://portal.office.com/account` | 00000006-0000-0ff1-ce00-000000000000 | Out of scope |
 | Azure command-line interface (Azure CLI) | NA | 04b07795-8ddb-461a-bbee-02f9e1bf7b46 | Early 2025 |
 | Azure PowerShell | NA | 1950a258-227b-4e31-a9cf-717495945fc2 | Early 2025 |
 | Azure mobile app  | NA | 0c1307d4-29d6-4389-a11c-5cbe7f65d7fa | Early 2025 |
