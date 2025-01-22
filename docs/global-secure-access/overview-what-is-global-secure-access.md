@@ -66,9 +66,9 @@ Microsoft Entra Internet Access, Microsoft Entra Internet Access for Microsoft s
 
 - Microsoft Entra Internet Access capabilities are included in the Microsoft Entra Suite license and standalone. Microsoft Entra Internet Access helps you secure access to all internet and SaaS applications. 
 - Microsoft Entra Private Access capabilities are included in the Microsoft Entra Suite license and standalone. Microsoft Entra Private Access elevates network security with a Zero Trust Network Access (ZTNA) solution. 
-- Microsoft Entra Internet Access for Microsoft services capabilities are included in a Microsoft Entra ID P1 or Microsoft Entra ID P2 license. Microsoft Entra Internet Access for Microsoft services enhances Microsoft Entra ID capabilities with direct connectivity to supported Microsoft services, improving security, performance, and resilience.
+- Microsoft Entra Internet Access for Microsoft services enhances Microsoft Entra ID capabilities with direct connectivity to supported Microsoft services, improving security, performance, and resilience.
 
-Prerequisite to use Microsoft Entra Private Access and Microsoft Entra Internet Access is Microsoft Entra ID P1 or Microsoft Entra ID P2.
+Prerequisite to use Microsoft Entra Private Access and Microsoft Entra Internet Access is Microsoft Entra Suite.
 
 To learn more about licensing costs and the Microsoft Entra Suite, see [Microsoft Entra Plans & Pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing). To learn more about purchasing individual license, see the Microsoft Entra Suite standalone products tab of the licensing page.
 
