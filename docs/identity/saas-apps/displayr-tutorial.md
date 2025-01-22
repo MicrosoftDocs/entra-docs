@@ -74,7 +74,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
 	a. In the **Identifier (Entity ID)** text box, type a value using the following pattern:
-	`<Entity ID>`
+	`<EntityID>`
 	
 	b. In the **Reply URL** text box, type the URL:
 	`<ACS URL>`.
@@ -85,7 +85,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	d. Click **Save**.
 
 	>[!NOTE]
-	>You can find the Entity ID and ACS URL on your Displayr account settings page. Navigate to **Account Settings** > **Settings** tab > **Configure Single Sign On (SAML)**, the details will be under the **Service Provider Information** heading.
+	>You can find the EntityID and ACS URL on your Displayr account settings page. Navigate to **Account Settings** > **Settings** tab > **Configure Single Sign On (SAML)**, the details will be under the **Service Provider Information** heading.
 
 1. On the **Set-up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
