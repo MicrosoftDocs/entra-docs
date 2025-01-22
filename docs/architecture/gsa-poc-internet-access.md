@@ -63,7 +63,7 @@ Perform the following steps to use a [baseline profile](../global-secure-access/
 
 ### Block a group from accessing websites based on FQDN
 
-1. [Create a web content filtering policy](../global-secure-access/how-to-configure-web-content-filtering#create-a-web-content-filtering-policy) that includes rules to block an FQDN (not URL).
+1. [Create a web content filtering policy](../global-secure-access/how-to-configure-web-content-filtering.md#create-a-web-content-filtering-policy) that includes rules to block an FQDN (not URL).
 1. [Create a security profile](../global-secure-access/how-to-configure-web-content-filtering.md#create-a-security-profile) to group and prioritize your web content filtering policies. Link the web content filtering policy to this profile.
 1. Create a [Conditional Access policy](../global-secure-access/how-to-configure-web-content-filtering.md#create-and-link-conditional-access-policy) to apply the security profile to your users.
 1. Sign in to your test device and attempt to access the blocked FQDN. You should see **DeniedTraffic** for http websites and a **Can't reach this page** notification for https websites. It can take up to 90 minutes for a newly assigned policy to take effect. It can take up to 20 minutes for changes to an existing policy to take effect.
@@ -97,7 +97,7 @@ After you enable the Microsoft traffic profile, follow these steps to implement 
 1. [Enable Global Secure Access signaling for tenant restrictions](../global-secure-access/how-to-universal-tenant-restrictions.md#enable-global-secure-access-signaling-for-tenant-restrictions).
 1. Sign in to your test device and attempt to access a different tenant's SharePoint Online or Exchange Online resource for which you have valid credentials.
 1. [Validate authentication plane protection](../global-secure-access/how-to-universal-tenant-restrictions.md#validate-the-authentication-plane-protection).
-1. [Validate data plane protection](../global-secure-access/how-to-universal-tenant-restrictions.mdvalidate-the-data-plane-protection).
+1. [Validate data plane protection](../global-secure-access/how-to-universal-tenant-restrictions.md#validate-the-data-plane-protection).
 
 ## Next steps
 
