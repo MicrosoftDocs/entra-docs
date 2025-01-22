@@ -36,11 +36,6 @@ The following table lists affected applications and URLs.
 | Microsoft 365 admin center | `https://portal.office.com/adminportal/home` | Early 2025 |
 | Microsoft 365 admin center | `https://admin.cloud.microsoft` | Early 2025 |
 | Microsoft 365 admin center | `https://admin.microsoft.com` | Early 2025 |
-| Azure command-line interface (Azure CLI) | NA |  Early 2025 |
-| Azure PowerShell | NA |  Early 2025 |
-| Azure mobile app  | NA |  Early 2025 |
-| Infrastructure as Code (IaC) tools | NA |  Early 2025 | 
-
 
 ### Accounts 
 
