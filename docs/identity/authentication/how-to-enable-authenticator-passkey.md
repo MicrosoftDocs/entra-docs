@@ -58,7 +58,7 @@ To learn more about FIDO2 support, see [Support for FIDO2 authentication with Mi
    
      You can set **Enforce key restrictions** to **Yes** to only allow or block certain passkeys, which are identified by their AAGUIDs. 
         
-     [Security info](https://mysignins.microsoft.com/security-info) requires this setting to be set to **Yes** so that users can choose **Passkey in Authenticator** and go through a dedicated Authenticator passkey registration flow. If you choose **No**, users might still be able to add a passkey in Authenticator by choosing the **Security key or passkey** method, depending on their operating system and browser. However, we don't expect many users to discover and use that method.
+     Until mid-February, [Security info](https://mysignins.microsoft.com/security-info) requires this setting to be set to **Yes** so that users can choose **Passkey in Authenticator** and go through a dedicated Authenticator passkey registration flow. If you choose **No**, users might still be able to add a passkey in Authenticator by choosing the **Security key or passkey** method, depending on their operating system and browser. However, we don't expect many users to discover and use that method.
 
      If you enforce key restrictions and already have active passkey usage, you should collect the AAGUIDs of the passkeys being used today. You can use a PowerShell script to find AAGUIDs that are used in your tenant. For more information, see [Find AAGUIDs](#find-aaguids).
 
