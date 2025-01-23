@@ -323,9 +323,6 @@
         href: how-to-migrate-mfa-server-to-mfa-with-federation.md
       - name: Migration Utility
         href: how-to-mfa-server-migration-utility.md
-    - name: Directory Integration
-    - name: Directory Federation
-    - name: RADIUS Integration
   - name: Troubleshoot
     items:
     - name: Self-service password reset (SSPR)
