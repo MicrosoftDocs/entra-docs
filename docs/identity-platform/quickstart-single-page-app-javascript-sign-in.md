@@ -210,7 +210,7 @@ Run the project with a web server by using Node.js:
 
 ## Prerequisites
 
-#### [JavaScript](#tab/javascript-workforce)
+#### [JavaScript](#tab/javascript-external)
 
 - An external tenant. To create one, choose from the following methods:
   - Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code. *(Recommended)*
@@ -218,9 +218,7 @@ Run the project with a web server by using Node.js:
 - [Node.js](https://nodejs.org/en/download/).
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
-#### [React](#tab/react-workforce)
-
-## Prerequisites
+#### [React](#tab/react-external)
 
 - An external tenant. To create one, choose from the following methods:
   - Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code. *(Recommended)*
@@ -228,7 +226,7 @@ Run the project with a web server by using Node.js:
 - [Node.js](https://nodejs.org/en/download/).
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
-#### [Angular](#tab/angular-workforce)
+#### [Angular](#tab/angular-external)
 
 - An external tenant. To create one, choose from the following methods:
   - Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code. *(Recommended)*
@@ -242,7 +240,7 @@ Run the project with a web server by using Node.js:
 
 To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
 
-#### [JavaScript](#tab/javascript-workforce)
+#### [JavaScript](#tab/javascript-external)
 
 - To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
@@ -252,7 +250,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 - [Download the sample](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters. 
 
-#### [React](#tab/react-workforce)
+#### [React](#tab/react-external)
 
 - To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
@@ -262,7 +260,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 - [Download the sample](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters. 
 
-#### [Angular](#tab/angular-workforce)
+#### [Angular](#tab/angular-external)
 
 - To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
@@ -276,30 +274,30 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 ## Configure the sample SPA
 
-#### [JavaScript](#tab/javascript-workforce)
+#### [JavaScript](#tab/javascript-external)
 
 1. Open `App/public/authConfig.js` and replace the following with the values obtained from the Microsoft Entra admin center:
 
      * `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
-     * `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+     * `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
 
 1. Save the file.
 
-#### [React](#tab/react-workforce)
+#### [React](#tab/react-external)
 
 1. Open `SPA\src\authConfig.js` and replace the following with the values obtained from the Microsoft Entra admin center:
 
      * `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
-     * `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+     * `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
 
 1. Save the file.
 
-#### [Angular](#tab/angular-workforce)
+#### [Angular](#tab/angular-external)
 
 1. Open `SPA/src/app/auth-config.ts` and replace the following with the values obtained from the Microsoft Entra admin center:
 
      * `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
-     * `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+     * `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
 
 1. Save the file.
 
@@ -348,6 +346,8 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 1. The following screenshot appears, indicating that you have signed in to the application and have accessed your profile details from the Microsoft Graph API.
 
     :::image type="content" source="./media/common-spa/angular-spa/customer-display-api-call-results-angular-spa.png" alt-text="Screenshot of JavaScript App depicting the results of the API call." lightbox="./media/common-spa/react-spa/display-api-call-results-react-spa.png":::
+
+---
 
 ::: zone-end
 
