@@ -236,6 +236,8 @@ Run the project with a web server by using Node.js:
 - [Node.js](https://nodejs.org/en/download/).
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
+---
+
 ## Clone or download sample SPA
 
 To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
@@ -270,8 +272,9 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 - [Download the sample](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
 
-## Configure the sample SPA
+---
 
+## Configure the sample SPA
 
 #### [JavaScript](#tab/javascript-workforce)
 
@@ -299,6 +302,8 @@ To obtain the sample application, you can either clone it from GitHub or downloa
      * `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
 
 1. Save the file.
+
+---
 
 ## Run your project and sign in
 
