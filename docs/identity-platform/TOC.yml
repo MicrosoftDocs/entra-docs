@@ -138,7 +138,7 @@
       href: index-spa.yml
     - name: Quickstart
       items: 
-        - name: Sign on users
+        - name: Sign in users
           href: quickstart-single-page-app-javascript-sign-in.md
     - name: Tutorials
       items:
