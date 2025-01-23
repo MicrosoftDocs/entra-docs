@@ -1,7 +1,7 @@
 ---
 title: Microsoft Entra ID attestation for FIDO2 security key vendors
 description: Explains requirements to prepare FIDO2 hardware for attestation with Microsoft Entra ID
-ms.date: 01/06/2025
+ms.date: 01/21/2025
 ms.service: entra-id
 ms.subservice: authentication
 author: justinha
@@ -140,7 +140,7 @@ The following table includes each FIDO2 security key model listed in MDS version
 |Security Key NFC by Yubico - Enterprise Edition|0bb43545-fd2c-4185-87dd-feb0b2916ace|![n]|![y]|![y]|![n]|
 |Security Key NFC by Yubico - Enterprise Edition|47ab2fb4-66ac-4184-9ae1-86be814012d5|![n]|![y]|![n]|![n]|
 |Sentry Enterprises CTAP2 Authenticator|89b19028-256b-4025-8872-255358d950e4|![y]|![y]|![n]|![y]|
-|SmartDisplayer BobeePass FIDO2 Authenticator|516d3969-5a57-5651-5958-4e7a49434167|![n]|![y]|![y]|![y]|
+|SmartDisplayer BobeePass FIDO2 Authenticator|516d3969-5a57-5651-5958-4e7a49434167|![y]|![y]|![y]|![y]|
 |Solo Secp256R1 FIDO2 CTAP2 Authenticator|8876631b-d4a0-427f-5773-0ec71c9e0279|![n]|![n]|![n]|![n]|
 |Solo Tap Secp256R1 FIDO2 CTAP2 Authenticator|8976631b-d4a0-427f-5773-0ec71c9e0279|![n]|![n]|![y]|![n]|
 |Somu Secp256R1 FIDO2 CTAP2 Authenticator|9876631b-d4a0-427f-5773-0ec71c9e0279|![n]|![n]|![n]|![n]|
