@@ -16,16 +16,23 @@ ms.custom: it-pro
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-In external tenants, you can register applications that use the OpenID Connect (OIDC) or SAML protocol for authentication and single sign-on. The [app registration](how-to-register-ciam-app.md) process is designed specifically for OIDC apps. But you can use the Enterprise applications feature to create and register your SAML app. This process generates a unique application ID (client ID) and adds your app to the App registrations, where you can view and manage its properties.
+In external tenants, you can register applications that use the OpenID Connect (OIDC) or Security Assertion Markup Language (SAML) protocol for authentication and single sign-on. The [app registration](how-to-register-ciam-app.md) process is designed specifically for OIDC apps. But you can use the Enterprise applications feature to create and register your SAML app. This process generates a unique application ID (client ID) and adds your app to the App registrations, where you can view and manage its properties.
 
 This article describes how to register your own SAML application in your external tenant by creating a *non-gallery* app in **Enterprise applications**.
 
 > [!NOTE]
 > The following capabilities aren't supported for SAML apps in external tenants:
->- Pre-integrated SAML applications in the Microsoft Entra gallery aren't supported in external tenants.
+>- Preintegrated SAML applications in the Microsoft Entra gallery aren't supported in external tenants.
 >- The availability of the **Provisioning** tab in the SAML app settings is a known issue. Provisioning isn't supported for apps in external tenants.
->- IdP initiated flow is not supported.
-Before you begin, [create an external tenant](how-to-create-external-tenant-portal.md) and [create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
+>- IdP initiated flow isn't supported.
+
+## Prerequisites
+
+- An Azure account that has an active subscription. <a href="https://azure.microsoft.com/free/?WT.mc_id=A261C142F" target="_blank">Create an account for free</a>.
+- A Microsoft Entra [external tenant](how-to-create-external-tenant-portal.md).
+- [A sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
+
+## Create and register a SAML app
 
 1. Sign in to the Microsoft Entra admin center as at least an Application Administrator.
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu and switch to your external tenant from the **Directories** menu.
