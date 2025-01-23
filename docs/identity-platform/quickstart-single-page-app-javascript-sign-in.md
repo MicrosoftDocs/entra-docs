@@ -236,8 +236,6 @@ Run the project with a web server by using Node.js:
 - [Node.js](https://nodejs.org/en/download/).
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
-::: zone-end
-
 ## Clone or download sample SPA
 
 To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
@@ -359,6 +357,6 @@ A message appears indicating that you have signed out. You can now close the bro
 
 - [Quickstart: Protect an ASP.NET Core web API with the Microsoft identity platform](./quickstart-web-api-aspnet-core-protect-api.md).
 - [Learn more by building a React SPA that signs in users in the following multi-part tutorial series](./tutorial-single-page-app-react-register-app.md).
-- [Enable password reset](how-to-enable-password-reset-customers.md).
-- [Customize the default branding](how-to-customize-branding-customers.md).
-- [Configure sign-in with Google](how-to-google-federation-customers.md).
+- [Enable password reset](../external-id/customers/how-to-enable-password-reset-customers.md).
+- [Customize the default branding](../external-id/customers/how-to-customize-branding-customers.md).
+- [Configure sign-in with Google](../external-id/customers/how-to-google-federation-customers.md).
