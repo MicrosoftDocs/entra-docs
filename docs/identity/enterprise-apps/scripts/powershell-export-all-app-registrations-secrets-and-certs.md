@@ -2,12 +2,13 @@
 title: 'PowerShell sample: Export secrets and certificates for app registrations'
 description: PowerShell example that exports all secrets and certificates for the specified app registrations in your Microsoft Entra tenant.
 
-author: mifarca
+author: omondiatieno
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: enterprise-apps
 
-ms.custom:
+ms.custom: 
+ai-usage: ai-assisted
 ms.topic: sample
 ms.date: 01/23/2025
 ms.author: jomondi
