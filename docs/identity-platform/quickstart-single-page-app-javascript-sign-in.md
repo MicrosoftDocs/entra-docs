@@ -279,7 +279,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 1. Open `App/public/authConfig.js` and replace the following with the values obtained from the Microsoft Entra admin center:
 
      * `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
-     * `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+     * `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 1. Save the file.
 
@@ -288,7 +288,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 1. Open `SPA\src\authConfig.js` and replace the following with the values obtained from the Microsoft Entra admin center:
 
      * `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
-     * `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+     * `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 1. Save the file.
 
@@ -297,7 +297,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 1. Open `SPA/src/app/auth-config.ts` and replace the following with the values obtained from the Microsoft Entra admin center:
 
      * `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
-     * `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+     * `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 1. Save the file.
 
@@ -305,7 +305,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 ## Run your project and sign in
 
-#### [JavaScript](#tab/javascript-workforce)
+#### [JavaScript](#tab/javascript-external)
 
 1. To start the server, run the following commands from within the project directory:
 
@@ -320,7 +320,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
     :::image type="content" source="./media/common-spa/react-spa/display-api-call-results-react-spa.png" alt-text="Screenshot of JavaScript App depicting the results of the API call." lightbox="./media/common-spa/react-spa/display-api-call-results-react-spa.png":::
 
-#### [React](#tab/react-workforce)
+#### [React](#tab/react-external)
 
 1. To start the server, run the following commands from within the project directory:
 
@@ -332,7 +332,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 1. Copy the `https` URL that appears in the terminal, for example, `https://localhost:3000`, and paste it into a browser. We recommend using a private or incognito browser session.
 1. Sign-in with an account registered to the external tenant.
 
-#### [Angular](#tab/angular-workforce)
+#### [Angular](#tab/angular-external)
 
 1. To start the server, run the following commands from within the project directory:
 
