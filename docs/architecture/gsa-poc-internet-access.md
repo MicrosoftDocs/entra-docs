@@ -1,7 +1,7 @@
 ---
 title: Microsoft Global Secure Access Proof of Concept Guidance - Configure Microsoft Entra Internet Access
-description: Learn how to deploy and test Microsoft Global Secure Access with Microsoft Entra Internet Access.
-customer intent: As a Microsoft Partner, I want to deploy Microsoft Global Secure Access for Microsoft Entra Internet Access as a Proof of Concept in my production or test environment.
+description: Learn how to deploy and test Microsoft Global Secure Access as a Proof of Concept with Microsoft Entra Internet Access.
+customer intent: As a Microsoft Partner, I want to deploy and test Microsoft Global Secure Access for Microsoft Entra Internet Access as a Proof of Concept in my production or test environment.
 author: jricketts
 manager: martinco
 ms.service: global-secure-access
@@ -13,7 +13,7 @@ ms.author: jricketts
 
 The Proof of Concept (PoC) guidance in this series of articles helps you to learn, deploy, and test Microsoft Global Secure Access with Microsoft Entra Internet Access, Microsoft Entra Private Access, and the Microsoft traffic profile.
 
-Detailed guidance begins in [Introduction to Global Secure Access Proof of Concept Guidance](gsa-poc-guidance-intro.md), continues with [Configure Microsoft Entra Private Access](gsa-poc-private-access.md), and concludes with this article.
+Detailed guidance begins with [Introduction to Global Secure Access Proof of Concept Guidance](gsa-poc-guidance-intro.md), continues with [Configure Microsoft Entra Private Access](gsa-poc-private-access.md), and concludes with this article.
 
 This article helps you to configure Microsoft Entra Internet Access to act as a secure web gateway. This solution allows you to configure web content filtering policies to allow or block internet traffic. You can then group those policies into security profiles that you apply to your users with Conditional Access policies.
 
@@ -32,7 +32,7 @@ To configure Microsoft Entra Internet Access, [How to configure Global Secure Ac
 
 ## Configure Microsoft Entra Internet Access use cases
 
-Configure and test use cases with web content filtering policies, security profiles, and Conditional Access policies. Here are example use cases with specific guidance in linked sections:
+Configure and test use cases with web content filtering policies, security profiles, and Conditional Access policies. Here are example use cases:
 
 - [Create a baseline policy applying to all internet access traffic routed through the service](#create-a-baseline-profile-applying-to-all-internet-access-traffic-routed-through-the-service)
 - [Block a group from accessing websites based on category](#block-a-group-from-accessing-websites-based-on-category)
@@ -48,7 +48,7 @@ Configure and test use cases with web content filtering policies, security profi
 
 Perform the following steps to use a [baseline profile](../global-secure-access/concept-internet-access.md#policy-processing-logic) to secure all traffic in your environment without needing to apply Conditional Access policies.
 
-1. [Create a web content filtering policy](../global-secure-access/how-to-configure-web-content-filtering.md#create-a-web-content-filtering-policy) that includes rules to allow or block fully qualified domain names (FQDN) or web categories across your user base. For example, create a rule that blocks the **Social Networking** category to block all social media sites.
+1. [Create a web content filtering policy](../global-secure-access/how-to-configure-web-content-filtering.md#create-a-web-content-filtering-policy) that includes rules to allow or block FQDNs or web categories across your user base. For example, create a rule that blocks the **Social Networking** category to block all social media sites.
 1. Link the web content filtering policy to the [baseline profile](../global-secure-access/how-to-configure-web-content-filtering.md#create-a-security-profile). In the Microsoft Entra admin center, navigate to **Global Secure Access** > **Secure** > **Security profiles** > **Baseline profile**.
 1. Sign in to your test device and attempt to access the blocked site.
 1. View activity in the [traffic log](../global-secure-access/how-to-view-traffic-logs.md) to confirm entries for your target FQDN show as blocked. If necessary, use **Add filter** to filter results on **User principal name** of your test user.
@@ -58,7 +58,7 @@ Perform the following steps to use a [baseline profile](../global-secure-access/
 1. [Create a web content filtering policy](../global-secure-access/how-to-configure-web-content-filtering.md#create-a-web-content-filtering-policy) that includes rules to block a web category. For example, create a rule that blocks the **Social Networking** category to block all social media sites.
 1. [Create a security profile](../global-secure-access/how-to-configure-web-content-filtering.md#create-a-security-profile) to group and prioritize your web content filtering policies. Link the web content filtering policy to this profile.
 1. Create a [Conditional Access policy](../global-secure-access/how-to-configure-web-content-filtering.md#create-and-link-conditional-access-policy) to apply the security profile to your users.
-1. Sign in to your test device and attempt to access a blocked site. You should see **DeniedTraffic** for http websites and a **Can't reach this page** notification for https websites. It can take up to 90 minutes for a newly assigned policy to take effect. It can take up to 20 minutes for changes to an existing policy to take effect.
+1. Sign in to your test device and attempt to access a blocked site. You should see **DeniedTraffic** for `http` websites and a **Can't reach this page** notification for `https` websites. It can take up to 90 minutes for a newly assigned policy to take effect. It can take up to 20 minutes for changes to an existing policy to take effect.
 1. View activity in the [traffic log](../global-secure-access/how-to-view-traffic-logs.md) to confirm entries for your target FQDN show as blocked. If necessary, use **Add filter** to filter results on **User principal name** of your test user.
 
 ### Block a group from accessing websites based on FQDN
@@ -66,7 +66,7 @@ Perform the following steps to use a [baseline profile](../global-secure-access/
 1. [Create a web content filtering policy](../global-secure-access/how-to-configure-web-content-filtering.md#create-a-web-content-filtering-policy) that includes rules to block an FQDN (not URL).
 1. [Create a security profile](../global-secure-access/how-to-configure-web-content-filtering.md#create-a-security-profile) to group and prioritize your web content filtering policies. Link the web content filtering policy to this profile.
 1. Create a [Conditional Access policy](../global-secure-access/how-to-configure-web-content-filtering.md#create-and-link-conditional-access-policy) to apply the security profile to your users.
-1. Sign in to your test device and attempt to access the blocked FQDN. You should see **DeniedTraffic** for http websites and a **Can't reach this page** notification for https websites. It can take up to 90 minutes for a newly assigned policy to take effect. It can take up to 20 minutes for changes to an existing policy to take effect.
+1. Sign in to your test device and attempt to access the blocked FQDN. You should see **DeniedTraffic** for `http` websites and a **Can't reach this page** notification for `https` websites. It can take up to 90 minutes for a newly assigned policy to take effect. It can take up to 20 minutes for changes to an existing policy to take effect.
 1. View activity in the [traffic log](../global-secure-access/how-to-view-traffic-logs.md) to confirm entries for your target FQDN show as blocked. If necessary, use **Add filter** to filter results on **User principal name** of your test user.
 
 ### Allow a user to access a blocked website
