@@ -16,15 +16,15 @@ ms.custom: it-pro
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-Applications registered in an external tenant typically use OpenID Connect (OIDC) for authentication and single sign-on (SSO). However, you can also register SAML apps. Instead of using the app registration process, which is designed specifically for OIDC apps, you can use the Enterprise applications feature to create and register your SAML app. This process generates a unique application ID (client ID) and adds your app to the App registrations, where you can view and manage its properties.
+In external tenants, you can register applications that use the OpenID Connect (OIDC) or SAML protocol for authentication and single sign-on. The [app registration](how-to-register-ciam-app.md) process is designed specifically for OIDC apps. But you can use the Enterprise applications feature to create and register your SAML app. This process generates a unique application ID (client ID) and adds your app to the App registrations, where you can view and manage its properties.
 
 This article describes how to register your own SAML application in your external tenant by creating a *non-gallery* app in **Enterprise applications**.
 
 > [!NOTE]
 > The following capabilities aren't supported for SAML apps in external tenants:
 >- Pre-integrated SAML applications in the Microsoft Entra gallery aren't supported in external tenants.
->- Although the **Provisioning** tab is available in the SAML app settings, provisioning isn't supported for apps in external tenants.
->- We don't currently generate IdP-initiated links for testing SAML apps.
+>- The availability of the **Provisioning** tab in the SAML app settings is a known issue. Provisioning isn't supported for apps in external tenants.
+>- IdP initiated flow is not supported.
 Before you begin, [create an external tenant](how-to-create-external-tenant-portal.md) and [create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
 
 1. Sign in to the Microsoft Entra admin center as at least an Application Administrator.
@@ -66,7 +66,7 @@ Before you begin, [create an external tenant](how-to-create-external-tenant-port
 
     :::image type="content" source="media/how-to-register-saml-app/test-application.png" alt-text="Screenshot of the test single sign-on option.":::
 
-   We don't currently generate an IdP-initiated link for testing external user sign-in, but you can test external user sign-in with these steps:
+   You can test external user sign-in with these steps:
    - [Create a sign-up and sign-in user flow](~/external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) if you haven't already.
    - [Add your SAML application to the user flow](~/external-id/customers/how-to-user-flow-add-application.md).
    - Run your application.
