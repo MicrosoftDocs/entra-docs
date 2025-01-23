@@ -138,14 +138,8 @@
       href: index-spa.yml
     - name: Quickstart
       items: 
-        - name: React
-          href: quickstart-single-page-app-react-sign-in.md
-        - name: Angular
-          href: quickstart-single-page-app-angular-sign-in.md
-        - name: JavaScript
+        - name: Sign on users
           href: quickstart-single-page-app-javascript-sign-in.md
-        - name: Blazor WebAssembly
-          href: quickstart-single-page-app-blazor-wasm-sign-in.md
     - name: Tutorials
       items:
         - name: React
