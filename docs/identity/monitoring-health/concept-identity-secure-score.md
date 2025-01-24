@@ -77,31 +77,17 @@ Each recommendation is measured based on your configuration. If you're using non
 - **Planned** - There are concrete plans in place to complete the improvement action.
 - **Resolved through third party** and **Resolved through alternate mitigation** - The improvement action was addressed by a non-Microsoft application or software, or an internal tool. You're awarded the points the action is worth, so your score better reflects your overall security posture. If a non-Microsoft or internal tool no longer covers the control, you can choose another status. Keep in mind, Microsoft has no visibility into the completeness of implementation if the improvement action is marked as either of these statuses.
 
-### Identity Secure Score and Microsoft Entra Recommendations
-
-Identity Secure Score improvement actions also appear in Microsoft Entra recommendations. They both appear in the same list, but the secure score recommendations show the score.
-
-![Screenshot of the recommendations list with the secure score recommendations highlighted.](./media/concept-identity-secure-score/secure-score-recommendations-list.png)
-
-To address a recommendation, select it from the list to view the details and action plan. If you take the appropriate action, the status changes automatically the next time the service runs. You can also mark the recommendation as *dismissed* or *postponed*. For more information on working with recommendations, see [How to use recommendations](./howto-use-recommendations.md).
-
-### How are controls scored?
-
-Controls can be scored in two ways. Some are scored in a binary fashion, so you get 100% of the score if you have the feature or setting configured based on our recommendation. Other scores are calculated as a percentage of the total configuration. For example, the recommendation states there's a maximum of 10.71% increase if you protect all your users with MFA. You have 5 of 100 total users protected, so you're given a partial score around 0.53% (5 protected / 100 total * 10.71% maximum = 0.53% partial score).
-
 ## Frequently asked questions
 
 Many factors can affect your score. Here are some frequently asked questions about the Identity Secure Score.
 
+### How are the recommendations scored?
+
+Recommendations can be scored in two ways. Some are scored in a binary fashion, so you get 100% of the score if you have the feature or setting configured based on our recommendation. Other scores are calculated as a percentage of the total configuration. For example, the recommendation states there's a maximum of 10.71% increase if you protect all your users with MFA. You have 5 of 100 total users protected, so you're given a partial score around 0.53% (5 protected / 100 total * 10.71% maximum = 0.53% partial score).
+
 ### What does [Not Scored] mean?
 
 Actions labeled as [Not Scored] are ones you can perform in your organization but aren't scored. So, you can still improve your security, but you aren't given credit for those actions right now.
-
-### How often is my score updated?
-
-The score is calculated once per day (around 1:00 AM PST). If you make a change to a measured action, the score will automatically update the next day. It might take up to 48 hours for a change to be reflected in your score.
-
-![Screenshot of the secure score with the last updated date and time highlighted.](./media/concept-identity-secure-score/secure-score-refresh-time.png)
 
 ### My score changed. How do I figure out why?
 
