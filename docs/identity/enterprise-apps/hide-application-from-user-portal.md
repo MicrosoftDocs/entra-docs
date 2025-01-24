@@ -117,9 +117,9 @@ Run the following queries.
 
 Use the following steps to hide all Microsoft 365 applications from the My Apps portal. The applications are still visible in the Office 365 portal.
 
+[!INCLUDE [least-privilege-note](../../includes/definitions/least-privilege-note.md)]
+
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
-   > [!IMPORTANT]
-   > Microsoft recommends that you use roles with the fewest permissions. This helps improve security for your organization. Global Administrator is a highly privileged role that should be limited to emergency scenarios when you can't use an existing role.
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Select **App launchers** under **Manage** menu items.
 1. Select **Settings**.

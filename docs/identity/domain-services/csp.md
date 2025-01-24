@@ -50,7 +50,7 @@ There are two ways in which you can use Domain Services with an Azure CSP subscr
 
 In this deployment model, Domain Services is enabled within a virtual network that belongs to the Azure CSP subscription. The CSP partner's admin agents have the following privileges:
 
-[!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)]
+A [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) is needed to manage this feature.
 
 Subscription owner privileges on the Azure CSP subscription are required for this feature.
 
