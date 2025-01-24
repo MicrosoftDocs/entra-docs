@@ -93,7 +93,7 @@ If you run into issues during your PoC, these articles can help you with trouble
 
 ## Next steps
 
-- [Introduction to Global Secure Access Proof of Concept Guidance](gsa-poc-guidance-intro.md)](gsa-poc-guidance-intro.md)
+- [Introduction to Global Secure Access Proof of Concept Guidance](gsa-poc-guidance-intro.md)
 - [Configure Microsoft Entra Internet Access](gsa-poc-internet-access.md)
 - [Introduction to Microsoft Global Secure Access Deployment Guide](gsa-deployment-guide-intro.md)
 - [Microsoft Global Secure Access Deployment Guide for Microsoft Entra Private Access](gsa-deployment-guide-private-access.md)
