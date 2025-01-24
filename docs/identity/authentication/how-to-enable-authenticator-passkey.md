@@ -30,7 +30,7 @@ This article lists steps to enable and enforce use of passkeys in Authenticator 
     - `https://cable.auth.com`
 
   > [!NOTE]
-  > Users can't register or sign in with a passkey in Authenticator across devices if you enable attestation. 
+  > Users can't register a passkey in Authenticator across devices if you enable attestation. 
 
 To learn more about FIDO2 support, see [Support for FIDO2 authentication with Microsoft Entra ID](fido2-compatibility.md).
 
