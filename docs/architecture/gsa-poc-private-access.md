@@ -24,6 +24,7 @@ This article helps you to test Microsoft Entra Private Access and configure at l
 ## Configure Microsoft Entra Private Access use cases
 
 Configure and test your use cases. Here are example use cases with specific guidance:
+
 - [VPN replacement](#vpn-replacement)
 - [Provide access to specific apps](#provide-access-to-specific-apps)
 - [Kerberos single sign-on (SSO) to Active Directory (AD) resources](#kerberos-sso-to-ad-resources)
@@ -36,10 +37,10 @@ Configure and test your use cases. Here are example use cases with specific guid
 
 VPN replacement enables you to open Microsoft Entra Private Access for traffic destined to all private network locations for all users. Follow these steps to seamlessly transition from full network access to Zero Trust network access:
 
-- [Configure Quick Access for Global Secure Access](../global-secure-access/how-to-configure-quick-access.md).
-- [Configure private domain name server (DNS)](../global-secure-access/how-to-configure-quick-access.md#add-private-dns-suffixes).
-- [Manage users and groups assignment to an application](../identity/enterprise-apps/assign-user-or-group-access-portal.md).
-- [Apply Conditional Access Policies to Microsoft Entra Private Access apps](../global-secure-access/how-to-target-resource-private-access-apps.md).
+1. [Configure Quick Access for Global Secure Access](../global-secure-access/how-to-configure-quick-access.md).
+1. [Configure private domain name server (DNS)](../global-secure-access/how-to-configure-quick-access.md#add-private-dns-suffixes).
+1. [Manage users and groups assignment to an application](../identity/enterprise-apps/assign-user-or-group-access-portal.md).
+1. [Apply Conditional Access Policies to Microsoft Entra Private Access apps](../global-secure-access/how-to-target-resource-private-access-apps.md).
 
 ### Provide access to specific apps
 
@@ -82,12 +83,12 @@ When customers deploy the 3P solution, they might want to use Environmental Prot
 
 If you run into issues during your PoC, these articles can help you with troubleshooting, logging, and monitoring:
 
-- To aid in troubleshooting, review [Global Secure Access FAQ](../global-secure-access/resource-faq.yml).
-- [Troubleshoot problems installing the Microsoft Entra private network connector](../global-secure-access/troubleshoot-connectors.md).
+- To aid in troubleshooting, review [Global Secure Access FAQ](../global-secure-access/resource-faq.yml)
+- [Troubleshoot problems installing the Microsoft Entra private network connector](../global-secure-access/troubleshoot-connectors.md)
 - [Troubleshoot the Global Secure Access client: diagnostics](../global-secure-access/troubleshoot-global-secure-access-client-advanced-diagnostics.md)
 - [Troubleshoot the Global Secure Access Client: Health check tab](../global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check.md)
 - [Troubleshoot Distributed File System issue with Global Secure Access](../global-secure-access/troubleshoot-distributed-file-system.md)
-- See [Global Secure Access logs and monitoring](../global-secure-access/concept-global-secure-access-logs-monitoring.md) for log locations and other details that can assist with monitoring and troubleshooting your Global Secure Access deployment.
+- See [Global Secure Access logs and monitoring](../global-secure-access/concept-global-secure-access-logs-monitoring.md) for log locations and other details that can assist with monitoring and troubleshooting your Global Secure Access deployment
 - [How to use workbooks with Global Secure Access](../global-secure-access/how-to-use-workbooks.md).
 
 ## Next steps
