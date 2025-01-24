@@ -39,40 +39,40 @@ Each recommendation contains a description, a summary of the value of addressing
 
 The recommendations listed in the following table are currently available in public preview or general availability the types of resources addressed by the recommendation, and more. The license requirements for recommendations in public preview are subject to change. The table provides links to available documentation for those recommendations that required separate guidance.
 
-| Recommendation | Impacted resources | Required license | Availability | Identity Secure Score | Target roles for email notifications |
-| --- | --- | --- | --- | --- | --- |
-| AAD Connect Deprecated | Tenant | All licenses | Preview | No | Hybrid Identity Administrator |
-| [Convert per-user MFA to Conditional Access MFA](recommendation-turn-off-per-user-mfa.md) | Users | All licenses | Generally available | No | Security Administrator |
-| Designate more than one Global Administrator | Users | All licenses | Generally available | Yes | Global Administrator |
-| Do not allow users to grant consent to unreliable applications | Tenant | All licenses | Preview | Yes | Global Administrator |
-| Do not expire passwords | Tenant | All licenses | Preview | Yes | Global Administrator |
-| Enable password hash sync if hybrid | Tenant | All licenses | Generally available | Yes | Hybrid Identity Administrator |
-| Enable policy to block legacy authentication | Users | All licenses | Generally available | Yes | Conditional Access Administrator, Security Administrator |
-| Enable self-service password reset | Users | Microsoft Entra P1 | Preview | Yes | Authentication Policy Administrator |
-| Ensure all users can complete multifactor authentication | Users | All licenses | Preview | Yes | Conditional Access Administrator, Security Administrator |
-| Long lived credentials in applications | Applications | | Preview | No | Global Administrator |
-| [Migrate applications from AD FS to Microsoft Entra ID](recommendation-migrate-apps-from-adfs-to-azure-ad.md) | Applications | All licenses | Generally available | No | Application Administrator, Authentication Administrator Hybrid Identity Administrator |
-| [Migrate applications from the retiring Azure AD Graph APIs to Microsoft Graph](recommendation-migrate-to-microsoft-graph-api.md) | Applications | All licenses | Preview | No | Application Administrator |
-| [Migrate from ADAL to MSAL](recommendation-migrate-from-adal-to-msal.md) | Applications | All licenses | Generally available | No | Application Administrator |
-| [Migrate from MFA server to Microsoft Entra MFA](recommendation-migrate-to-microsoft-entra-mfa.md) | Tenant | All licenses | Generally Available | No | Global Administrator |
-| [Migrate service principals from the retiring Azure AD Graph APIs to Microsoft Graph](recommendation-migrate-to-microsoft-graph-api.md) | Applications | All licenses | Preview | No | Application Administrator |
-| [Migrate to Microsoft Authenticator](recommendation-migrate-to-authenticator.md) | Users | All licenses | Preview | No | Global Administrator | 
-| [Minimize MFA prompts from known devices](recommendation-mfa-from-known-devices.md) | Users | All licenses | Generally available | No | Global Administrator |
-| Protect all users with a sign-in risk policy | Users | All licenses | Generally available | Yes | Conditional Access Administrator, Security Administrator |
-| Protect all users with a user risk policy | Users | Microsoft Entra P2 | Generally available | Yes | Conditional Access Administrator, Security Administrator |
-| [Protect your tenant with Insider Risk Conditional Access policy](recommendation-insider-risk-condition.md) | Users | Microsoft Entra P2 | Generally available | Yes | Conditional Access Administrator, Security Administrator |
-| Remove overprivileged permissions for your applications | Applications | N/A | Preview | No | Global Administrator |
-| [Remove unused applications](recommendation-remove-unused-apps.md) | Applications | Microsoft Entra Workload ID | Preview | No | Application Administrator |
-| [Remove unused credentials from applications](recommendation-remove-unused-credential-from-apps.md) | Applications | Microsoft Entra Workload ID | Preview | No | Application Administrator |
-| Remove unused redirect URIs in your app configuration | Applications | N/A | Preview | No | Application Administrator |
-| [Renew expiring application credentials](recommendation-renew-expiring-application-credential.md) | Applications | Microsoft Entra Workload ID | Preview | No | Application Administrator |
-| [Renew expiring service principal credentials](recommendation-renew-expiring-service-principal-credential.md) | Applications | Microsoft Entra Workload ID | Preview | No | Application Administrator |
-| Require MFA for administrative roles | Users | All licenses | Generally available | Yes | Conditional Access Administrator, Security Administrator |
-| Review inactive users with Access Reviews | Users | Microsoft Entra ID Governance | Preview | No | Identity Governance Administrator |
-| Secure and govern your apps with automatic user and group provisioning | Applications | All licenses | Preview | No | Application Administrator, IT Governance Administrator |
-| Update incorrectly configured multitenant application sign-in audience | Applications | N/A | Preview | Now | Application Administrator |
-| Use least privileged administrative roles | Users | All licenses | Preview | Yes | Privileged Role Administrator |
-| Verify App Publisher | Applications | All licenses | Preview | No | Global Administrator |
+| Recommendation | Impacted resources | Availability | Identity Secure Score | Target roles for email notifications |
+| --- | --- | --- | --- | --- |
+| AAD Connect Deprecated | Tenant | Preview | No | Hybrid Identity Administrator |
+| [Convert per-user MFA to Conditional Access MFA](recommendation-turn-off-per-user-mfa.md) | Users | Generally available | No | Security Administrator |
+| Designate more than one Global Administrator | Users | Generally available | Yes | Global Administrator |
+| Do not allow users to grant consent to unreliable applications | Tenant | Preview | Yes | Global Administrator |
+| Do not expire passwords | Tenant | Preview | Yes | Global Administrator |
+| Enable password hash sync if hybrid | Tenant | Generally available | Yes | Hybrid Identity Administrator |
+| Enable policy to block legacy authentication | Users | Generally available | Yes | Conditional Access Administrator, Security Administrator |
+| Enable self-service password reset | Users | Preview | Yes | Authentication Policy Administrator |
+| Ensure all users can complete multifactor authentication | Users | Preview | Yes | Conditional Access Administrator, Security Administrator |
+| Long lived credentials in applications | Applications | Preview | No | Global Administrator |
+| [Migrate applications from AD FS to Microsoft Entra ID](recommendation-migrate-apps-from-adfs-to-azure-ad.md) | Applications | Generally available | No | Application Administrator, Authentication Administrator Hybrid Identity Administrator |
+| [Migrate applications from the retiring Azure AD Graph APIs to Microsoft Graph](recommendation-migrate-to-microsoft-graph-api.md) | Applications | Preview | No | Application Administrator |
+| [Migrate from ADAL to MSAL](recommendation-migrate-from-adal-to-msal.md) | Applications | Generally available | No | Application Administrator |
+| [Migrate from MFA server to Microsoft Entra MFA](recommendation-migrate-to-microsoft-entra-mfa.md) | Tenant | Generally Available | No | Global Administrator |
+| [Migrate service principals from the retiring Azure AD Graph APIs to Microsoft Graph](recommendation-migrate-to-microsoft-graph-api.md) | Applications | Preview | No | Application Administrator |
+| [Migrate to Microsoft Authenticator](recommendation-migrate-to-authenticator.md) | Users | Preview | No | Global Administrator | 
+| [Minimize MFA prompts from known devices](recommendation-mfa-from-known-devices.md) | Users | Generally available | No | Global Administrator |
+| Protect all users with a sign-in risk policy | Users | Generally available | Yes | Conditional Access Administrator, Security Administrator |
+| Protect all users with a user risk policy | Users | Generally available | Yes | Conditional Access Administrator, Security Administrator |
+| [Protect your tenant with Insider Risk Conditional Access policy](recommendation-insider-risk-condition.md) | Users | Generally available | Yes | Conditional Access Administrator, Security Administrator |
+| Remove overprivileged permissions for your applications | Applications | Preview | No | Global Administrator |
+| [Remove unused applications](recommendation-remove-unused-apps.md) | Applications | Preview | No | Application Administrator |
+| [Remove unused credentials from applications](recommendation-remove-unused-credential-from-apps.md) | Applications | Preview | No | Application Administrator |
+| Remove unused redirect URIs in your app configuration | Applications | Preview | No | Application Administrator |
+| [Renew expiring application credentials](recommendation-renew-expiring-application-credential.md) | Applications | Preview | No | Application Administrator |
+| [Renew expiring service principal credentials](recommendation-renew-expiring-service-principal-credential.md) | Applications | Preview | No | Application Administrator |
+| Require MFA for administrative roles | Users | Generally available | Yes | Conditional Access Administrator, Security Administrator |
+| Review inactive users with Access Reviews | Users | Preview | No | Identity Governance Administrator |
+| Secure and govern your apps with automatic user and group provisioning | Applications | Preview | No | Application Administrator, IT Governance Administrator |
+| Update incorrectly configured multitenant application sign-in audience | Applications | Preview | Now | Application Administrator |
+| Use least privileged administrative roles | Users | Preview | Yes | Privileged Role Administrator |
+| Verify App Publisher | Applications | Preview | No | Global Administrator |
 
 Microsoft Entra only displays the recommendations that apply to your tenant, so you might not see all supported recommendations listed.
 
