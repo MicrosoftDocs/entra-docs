@@ -321,7 +321,7 @@ Audit logs for registration and password reset are available for 30 days. If sec
 
 ![SSPR Reporting screenshot](./media/howto-sspr-deployment/sspr-reporting.png)
 
-### Authentication methods- Usage and insights
+### Authentication methods - Usage and insights
 
 [Usage and insights](./howto-authentication-methods-activity.md) enable you to understand how authentication methods for features like Microsoft Entra multifactor authentication and SSPR are working in your organization. This reporting capability provides your organization with the means to understand what methods register and how to use them.
 
