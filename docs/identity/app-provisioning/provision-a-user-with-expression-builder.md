@@ -101,8 +101,6 @@ The process checks for specific users based on UPN and applies a custom modifica
 
 ## Next steps 
 
-[Check the status of user provisioning](entra/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user)
-
 [Find out when a specific user is able to access an app in Microsoft Entra Application Provisioning](/entra/identity/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user)
 
 
