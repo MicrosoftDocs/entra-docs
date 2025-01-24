@@ -83,12 +83,12 @@ To enable **Report suspicious activity** from the Authentication methods policy 
 
 ### Remediating risk for tenants with Microsoft Entra ID P1 license
 
-When a user reports an MFA prompt as suspicious, the event shows up in the Sign-ins report (as a sign-in that was rejected by the user), in the Audit logs, and in the Risk detections report.   
+When a user reports an MFA prompt as suspicious, the event shows up in the sign-in logs (as a sign-in that was rejected by the user), in the Audit logs, and in the Risk detections report.   
 
 | Report | Admin center | Details |
 |--------------|--------|---------|
 | Risk detections report | **Protection** > **Identity Protection** > **Risk detection** | Detection type: **User Reported Suspicious Activity**<br>Risk level: **High**<br>Source **End user reported** |
-| Sign-ins report | **Identity** > **Monitoring & health** > **Sign-in logs** > **Authentication details** | Result detail will show as **MFA denied, fraud code entered** |
+| sign-in logs | **Identity** > **Monitoring & health** > **Sign-in logs** > **Authentication details** | Result detail will show as **MFA denied, fraud code entered** |
 | Audit logs   | **Identity** > **Monitoring & health** > **Audit logs** | The fraud report will appear under Activity type **Fraud reported** |
 
 >[!NOTE]
