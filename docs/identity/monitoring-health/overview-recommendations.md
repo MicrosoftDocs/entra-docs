@@ -17,7 +17,7 @@ ms.reviewer: deawari
 
 Keeping track of all the settings and resources in your tenant can be overwhelming. The Microsoft Entra recommendations feature helps monitor the status of your tenant so you don't have to. These recommendations help ensure your tenant is in a secure and healthy state while also helping you maximize the value of the features available in Microsoft Entra ID.
 
-Microsoft Entra recommendations now include *Identity Secure Score* recommendations. These recommendations provide similar insights into the security of your tenant. Identity Secure Score recommendations include *secure score points*, which are calculated as an overall score based on several security factors. For more information, see [What is Identity Secure Score](concept-identity-secure-score.md). 
+Microsoft Entra recommendations now include *Identity Secure Score* recommendations. These recommendations provide similar insights into the security of your tenant. For more information, see [What is Identity Secure Score](concept-identity-secure-score.md). 
 
 All these Microsoft Entra recommendations provide you with personalized insights with actionable guidance to:
 
@@ -34,14 +34,6 @@ On a daily basis, Microsoft Entra ID analyzes the configuration of your tenant. 
 ![Screenshot of the Overview page of the tenant with the Recommendations option highlighted.](./media/overview-recommendations/recommendations-overview.png) 
 
 Each recommendation contains a description, a summary of the value of addressing the recommendation, and a step-by-step action plan. If applicable, impacted resources associated with the recommendation are listed, so you can resolve each affected area. If a recommendation doesn't have any associated resources, the impacted resource type is *Tenant level*, so your step-by-step action plan impacts the entire tenant and not just a specific resource.
-
-### Identity Secure Score
-
-Your Identity Secure Score, which appears at the top of the page, is a numerical representation of the health of your tenant. Recommendations that apply to the Identity Secure Score are given individual scores in the table at the bottom of the page. You can filter the list of recommendations to only those that apply to the Identity Secure Score using the **Security** filter card.
-
-These scores add up to generate your Identity Secure Score. For more information, see [What is Identity Secure Score](concept-identity-secure-score.md).
-
-![Screenshot of the Identity Secure Score.](./media/overview-recommendations/identity-secure-score.png)
 
 ## Recommendations overview table
 
@@ -84,6 +76,14 @@ The recommendations listed in the following table are currently available in pub
 | Verify App Publisher | Applications | All licenses | Preview | | Global Administrator |
 
 Microsoft Entra only displays the recommendations that apply to your tenant, so you might not see all supported recommendations listed.
+
+## Identity Secure Score
+
+Your Identity Secure Score, which appears at the top of the page, is a numerical representation of the health of your tenant. Recommendations that apply to the Identity Secure Score are given individual scores in the table at the bottom of the page. You can filter the list of recommendations to only those that apply to the Identity Secure Score using the **Security** filter card. Identity Secure Score recommendations include *secure score points*, which are calculated as an overall score based on several security factors.
+
+These scores add up to generate your Identity Secure Score. For more information, see [What is Identity Secure Score](concept-identity-secure-score.md).
+
+![Screenshot of the Identity Secure Score.](./media/overview-recommendations/identity-secure-score.png)
 
 ## Are Microsoft Entra recommendations related to Azure Advisor?
 
