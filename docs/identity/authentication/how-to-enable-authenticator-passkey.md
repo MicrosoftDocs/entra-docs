@@ -30,7 +30,7 @@ This article lists steps to enable and enforce use of passkeys in Authenticator 
     - `https://cable.auth.com`
 
   > [!NOTE]
-  > Users can't register a passkey in Authenticator across devices if you enable attestation. 
+  > Users can't register a passkey in Authenticator from across devices if you enable attestation. 
 
 To learn more about FIDO2 support, see [Support for FIDO2 authentication with Microsoft Entra ID](fido2-compatibility.md).
 
@@ -55,7 +55,7 @@ To learn more about FIDO2 support, see [Support for FIDO2 authentication with Mi
      > For both iOS and Android, Authenticator attestation relies upon Apple and Google services to verify the authenticity of the Authenticator app. Heavy service usage can make passkey registration fail, and users might need to try again. If Apple and Google services are down, Authenticator attestation blocks registration that requires attestation until services are restored. To monitor the status of Google Play Integrity service, see [Google Play Status Dashboard](https://status.play.google.com/). To monitor the status of the iOS App Attest service, see [System Status](https://developer.apple.com/system-status/).
     
     > [!NOTE]
-    > Users can register attested passkeys directly in the Authenticator app. Cross-device registration flows do not support registration of passkeys when attestation is enabled.
+    > Users can only register attested passkeys directly in the Authenticator app. Cross-device registration flows do not support registration of attested passkeys.
 
    - **Key restrictions** set the usability of specific passkeys for both registration and authentication. You can set **Enforce key restrictions** to **No**, to allow users to register any supported passkey including registering passkeys directly in the Authenticator app.
    
