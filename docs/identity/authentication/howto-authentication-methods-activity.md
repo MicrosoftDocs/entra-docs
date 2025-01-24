@@ -36,13 +36,13 @@ The following roles have the required permissions:
 - Security Administrator
 - Global Administrator
 
- A Microsoft Entra ID P1 or P2 license is required to access usage and insights. Microsoft Entra multifactor authentication and self-service password reset (SSPR) licensing information can be found on the [Microsoft Entra pricing site](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
+ A Microsoft Entra ID P1 or P2 license is required to access Usage and insights. Microsoft Entra multifactor authentication and self-service password reset (SSPR) licensing information can be found on the [Microsoft Entra pricing site](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
 
 ## How it works
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-To access authentication method usage and insights:
+To access authentication method Usage and insights:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication Methods** > **Activity**.
@@ -94,7 +94,7 @@ The **Usage** report shows which authentication methods are used to sign-in and 
 
 ![Screenshot of resets and unlocks](media/how-to-authentication-methods-usage-insights/password-changes.png)
 
-**Password resets by authentication method** shows the  number of successful and failed authentications during the password reset flow by authentication method.
+**Password resets by authentication method** shows the number of successful and failed authentications during the password reset flow by authentication method.
 
 ![Screenshot of Resets by method](media/how-to-authentication-methods-usage-insights/resets-by-method.png)
 
