@@ -103,17 +103,17 @@ After you enable the Microsoft traffic profile, follow these steps to implement 
 
 If you run into issues during your PoC, these articles can help you with troubleshooting, logging, and monitoring:
 
-- To aid in troubleshooting, review [Global Secure Access FAQ](../global-secure-access/resource-faq.yml).
-- [Troubleshoot problems installing the Microsoft Entra private network connector](../global-secure-access/troubleshoot-connectors.md).
+- To aid in troubleshooting, review [Global Secure Access FAQ](../global-secure-access/resource-faq.yml)
+- [Troubleshoot problems installing the Microsoft Entra private network connector](../global-secure-access/troubleshoot-connectors.md)
 - [Troubleshoot the Global Secure Access client: diagnostics](../global-secure-access/troubleshoot-global-secure-access-client-advanced-diagnostics.md)
 - [Troubleshoot the Global Secure Access Client: Health check tab](../global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check.md)
 - [Troubleshoot Distributed File System issue with Global Secure Access](../global-secure-access/troubleshoot-distributed-file-system.md)
-- See [Global Secure Access logs and monitoring](../global-secure-access/concept-global-secure-access-logs-monitoring.md) for log locations and other details that can assist with monitoring and troubleshooting your Global Secure Access deployment.
-- [How to use workbooks with Global Secure Access](../global-secure-access/how-to-use-workbooks.md).
+- See [Global Secure Access logs and monitoring](../global-secure-access/concept-global-secure-access-logs-monitoring.md) for log locations and other details that can assist with monitoring and troubleshooting your Global Secure Access deployment
+- [How to use workbooks with Global Secure Access](../global-secure-access/how-to-use-workbooks.md)
 
 ## Next steps
 
-- [Introduction to Global Secure Access Proof of Concept Guidance](gsa-poc-guidance-intro.md)](gsa-poc-guidance-intro.md)
+- [Introduction to Global Secure Access Proof of Concept Guidance](gsa-poc-guidance-intro.md)
 - [Configure Microsoft Entra Private Access](gsa-poc-private-access.md)
 - [Introduction to Microsoft Global Secure Access Deployment Guide](gsa-deployment-guide-intro.md)
 - [Microsoft Global Secure Access Deployment Guide for Microsoft Entra Private Access](gsa-deployment-guide-private-access.md)
