@@ -176,7 +176,7 @@ Some organizations restrict Bluetooth usage, which includes the use of passkeys.
 If a user deletes a passkey in Authenticator, the passkey is also removed from the user's sign-in methods. An Authentication Policy Administrator can also follow these steps to delete a passkey from the user's authentication methods, but it won't remove the passkey from Authenticator.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com), and search for the user whose passkey must be removed.
-1. Select **Authentication methods**, right-click **FIDO2 security key**, and select **Delete**.
+1. Select **Authentication methods**, right-click **Passkey**, and select **Delete**.
 
    Unless the user initiated the passkey deletion themselves in Authenticator, they need to also remove the passkey in Authenticator on their device.
 
