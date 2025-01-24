@@ -8,6 +8,7 @@ ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
 ms.date: 01/24/2025
+---
 
 # Provision a Use with Expression Builder
 
@@ -62,20 +63,21 @@ To apply custom changes for a subset of users, conditional logic with IIF statem
 
 **Expression:**
 
-```plaintext IIF( [userPrincipalName] = "Aman.Gupta@xpl57.onmicrosoft.com", Append(Mid([objectId], 1, 2), [userPrincipalName]), IIF( [userPrincipalName] = "Aarti@xpl57.onmicrosoft.com", Append(Mid([objectId], 1, 2), [userPrincipalName]), IIF( [userPrincipalName] = "AdeleV@xpl57.onmicrosoft.com", Append(Mid([objectId], 1, 2), [userPrincipalName]), [userPrincipalName] ) ) )```
+IIF( [userPrincipalName] = "Aman.Gupta@xpl57.onmicrosoft.com", Append(Mid([objectId], 1, 2), [userPrincipalName]), IIF( [userPrincipalName] = "Aarti@xpl57.onmicrosoft.com", Append(Mid([objectId], 1, 2), [userPrincipalName]), IIF( [userPrincipalName] = "AdeleV@xpl57.onmicrosoft.com", Append(Mid([objectId], 1, 2), [userPrincipalName]), [userPrincipalName] ) ) )
 
 The expression checks for specific users based on UPN and applies a custom modification by appending the first 2 characters from the Object ID to the userPrincipalName for Aman.Gupta@xpl57.onmicrosoft.com, Aarti@xpl57.onmicrosoft.com, and AdeleV@xpl57.onmicrosoft.com. 
 
-**Example test case** 
+**Example test case:** 
 
 Input UPN: Aman.Gupta@xpl57.onmicrosoft.com 
+
 Expected Output: 39Aman.Gupta@xpl57.onmicrosoft.com
 
 **A more advanced example is as follows:**
 
-```plaintext IIF( [userPrincipalName] = "Aman.Gupta@xpl57.onmicrosoft.com", Append([displayName], Append("", Mid([objectId], 1, 8))), IIF( [userPrincipalName] = "harjit@xpl57.onmicrosoft.com", Append([displayName], Append("", Mid([objectId], 1, 8))), IIF( [userPrincipalName] = "AdeleV@xpl57.onmicrosoft.com", Append([displayName], Append("_", Mid([objectId], 1, 8))), [userPrincipalName] ) ) )```
+IIF( [userPrincipalName] = "Aman.Gupta@xpl57.onmicrosoft.com", Append([displayName], Append("", Mid([objectId], 1, 8))), IIF( [userPrincipalName] = "harjit@xpl57.onmicrosoft.com", Append([displayName], Append("", Mid([objectId], 1, 8))), IIF( [userPrincipalName] = "AdeleV@xpl57.onmicrosoft.com", Append([displayName], Append("_", Mid([objectId], 1, 8))), [userPrincipalName] ) ) )
 
-Expression for testing: 
+**Expression for testing:** 
 
 Append(Mid([objectId], 1, 8), [userPrincipalName]) 
 
