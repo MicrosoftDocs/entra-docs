@@ -19,11 +19,11 @@ ms.collection: M365-identity-device-management
 
 [!INCLUDE [applies-to-workforce-external](./includes/applies-to-workforce-external.md)]
 
-Your Microsoft Entra tenant can be directly federated with external organizations that use a SAML or WS-Fed identity provider (IdP). Users from the external organization can then use their IdP-managed account to sign in to your tenant, without having to create a new Microsoft Entra account. For newly invited users, SAML/WS-Fed IdP federation takes precedence as the primary sign-in method. The user is redirected to their IdP when signing up or signing in to your app, and then returned to Microsoft Entra once they successfully sign in.
+Your Microsoft Entra tenant can be directly federated with external organizations that use a SAML or WS-Fed identity provider (IdP). Users from the external organization can then use their IdP-managed account to sign in to your tenant, without having to create new Microsoft Entra credentials. For newly invited users, SAML/WS-Fed IdP federation takes precedence as the primary sign-in method. The user is redirected to their IdP when signing up or signing in to your app, and then returned to Microsoft Entra once they successfully sign in.
 
 You can associate multiple domains with a single federation configuration. The partner's domain can be either Microsoft Entra verified or non-verified.
 
-Setting up direct federation requires configuration both in your tenant and in the external organization's IdP. In some cases, the partner will need to update their DNS text records. They'll also need to update their IdP with the required claims and relying party trusts.
+Setting up SAML/WS-Fed IdP federation requires configuration both in your tenant and in the external organization's IdP. In some cases, the partner will need to update their DNS text records. They'll also need to update their IdP with the required claims and relying party trusts.
 
 ## When is a user authenticated with SAML/WS-Fed IdP federation?
 
@@ -48,8 +48,7 @@ You can set up SAML/WS-Fed IdP federation with domains that aren't DNS-verified 
 Setting up federation doesn't change the authentication method for users who have already redeemed an invitation. For example:
 
 - Users who redeemed invitations before federation setup will continue using their original authentication method. For example, users who redeemed invitations with one-time passcode authentication before you set up federation will continue using one-time passcodes.
-- If the external organization moves to Microsoft Entra ID after federation setup, users who redeemed invitations will continue using the federated SAML/WS-Fed IdP.
-- If you set up federation with an external organization that subsequently moves to Microsoft Entra ID, users will continue using the federated IdP.
+- Users who redeemed invitations with the federated IdP will continue using that method, even if their organization later moves to Microsoft Entra.
 - Deleting federation will prevent users currently using the SAML/WS-Fed IdP from signing in.
 
 You don't need to send new invitations to existing users because they'll continue using their current sign-in method. But in the case of B2B collaboration in a workforce tenant, you can [reset a user's redemption status](reset-redemption-status.md) so they repeat the redemption steps and switch to federation the next time they access your app. Currently, redemption order settings aren't supported in external tenants or across clouds.
@@ -101,7 +100,7 @@ Use the following steps to determine if the partner needs to update their DNS re
 1. Check the partner's IdP passive authentication URL to see if the domain matches the target domain or a host within the target domain. In other words, when setting up federation for `fabrikam.com`:
 
    - If the passive authentication endpoint is `https://fabrikam.com` or `https://sts.fabrikam.com/adfs` (a host in the same domain), no DNS changes are needed.
-   - If the passive authentication endpoint is `https://fabrikamconglomerate.com/adfs` or `https://fabrikam.com.uk/adfs`, the domain doesn't match the fabrikam.com domain, so the partner needs to add a text record for the authentication URL to their DNS configuration.
+   - If the passive authentication endpoint is `https://fabrikamconglomerate.com/adfs` or `https://fabrikam.co.uk/adfs`, the domain doesn't match the fabrikam.com domain, so the partner needs to add a text record for the authentication URL to their DNS configuration.
 
 1. If DNS changes are needed based on the previous step, ask the partner to add a TXT record to their domain's DNS records, like the following example:
 
@@ -271,7 +270,7 @@ On the **All identity providers** page, you can view the list of SAML/WS-Fed ide
    :::image type="content" source="media/direct-federation/edit-domains.png" alt-text="Screenshot of the domain configuration page.":::
 
    > [!NOTE]
-   > To remove federation with the partner, delete all but one of the domains and follow the steps in the [next section](#how-do-i-remove-federation).
+   > To remove federation with a partner, first delete all domains except one, and then follow the steps in the [next section](#how-do-i-remove-federation).
 
 ## How do I remove federation?
 
