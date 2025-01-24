@@ -60,7 +60,7 @@ Append(Mid([objectId], 1, 2), Mid([userPrincipalName], 1, 50))
 
 - Extracts the first 2 characters from the **Object ID**. 
 
-- Appends these characters to the existing UPN (which is limited to the first 50 characters. While most users typically do not have a UPN that reaches this limit, the intent is to append 2 characters from the **Object ID** to the full UPN for uniqueness). 
+- Appends these characters to the existing UPN (which is limited to the first 50 characters. While most users typically don't have a UPN that reaches this limit, the intent is to append 2 characters from the **Object ID** to the full UPN for uniqueness). 
 
 ### Scenario 3: Conditional modifications for specific users 
 To apply custom changes for a subset of users, conditional logic with IIF statements can be employed. 
@@ -90,7 +90,7 @@ The process checks for specific users based on UPN and applies a custom modifica
 ## Key recommendations 
 
 - **Test Extensively:** Always test expressions in a non-production environment to verify functionality. 
-- **Character Limitations:** Ensure the transformed username doesn’t exceed character limits specified by the application (e.g., GitHub has a 39-character limit). 
+- **Character Limitations:** Ensure the transformed username doesn’t exceed character limits specified by the application (for example, GitHub has a 39-character limit). 
 - **Documentation:** Maintain clear documentation of expressions and changes for troubleshooting and future reference. 
 
 ## Tools and steps for testing 
