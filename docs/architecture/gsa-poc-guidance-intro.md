@@ -25,12 +25,12 @@ This guide assumes that you're running a PoC in a production environment. Runnin
 
 Follow the steps in this article to ensure a successful PoC launch:
 
-- [Understand the products](#understand-the-products)
-- [Identify use cases](#identify-use-cases)
-- [Scope and define success criteria](#scope-and-define-success-criteria)
-- [Meet prerequisites](#meet-prerequisites)
-- [Configure product for use cases](#configure-product-for-use-cases)
-- [Troubleshooting](#troubleshooting)
+1. [Understand the products](#understand-the-products).
+1. [Identify use cases](#identify-use-cases).
+1. [Scope and define success criteria](#scope-and-define-success-criteria).
+1. [Meet prerequisites](#meet-prerequisites).
+1. [Configure product for use cases](#configure-product-for-use-cases).
+1. [Troubleshooting](#troubleshooting).
 
 ## Understand the products
 
@@ -94,6 +94,7 @@ Ensure that you meet these prerequisites for your PoC:
   - For Android and iOS devices, install the Microsoft Defender app and register it in your test tenant.
 
 - You must have the appropriate paid or trial licenses.
+
   - [Global Secure Access Licensing overview](../global-secure-access/overview-what-is-global-secure-access.md#licensing-overview)
   - [Microsoft Entra Suite trial licenses](https://aka.ms/EntraSuiteTrial)
   - [Microsoft Entra Internet Access trial licenses](https://aka.ms/InternetAccessTrial)
@@ -111,10 +112,10 @@ To test Microsoft traffic scenarios, you need Microsoft 365 products such as Sha
 
 After you meet prerequisites, follow these steps to configure your test environment:
 
-- [Enable the product in your tenant](#enable-product-in-your-tenant).
-- [Install Global Secure Access client](#install-global-secure-access-client).
-- [Configure Microsoft Entra Private Access](gsa-poc-private-access.md).
-- [Configure Microsoft Entra Internet Access](gsa-poc-internet-access.md).
+1. [Enable the product in your tenant](#enable-product-in-your-tenant).
+1. [Install Global Secure Access client](#install-global-secure-access-client).
+1. [Configure Microsoft Entra Private Access](gsa-poc-private-access.md).
+1. [Configure Microsoft Entra Internet Access](gsa-poc-internet-access.md).
 
 ### Enable product in your tenant
 
@@ -140,13 +141,13 @@ To deploy the client to multiple devices, use Intune or another mobile device ma
 
 If you run into issues during your PoC, these articles can help you with troubleshooting, logging, and monitoring:
 
-- To aid in troubleshooting, review [Global Secure Access FAQ](../global-secure-access/resource-faq.yml).
-- [Troubleshoot problems installing the Microsoft Entra private network connector](../global-secure-access/troubleshoot-connectors.md).
+- To aid in troubleshooting, review [Global Secure Access FAQ](../global-secure-access/resource-faq.yml)
+- [Troubleshoot problems installing the Microsoft Entra private network connector](../global-secure-access/troubleshoot-connectors.md)
 - [Troubleshoot the Global Secure Access client: diagnostics](../global-secure-access/troubleshoot-global-secure-access-client-advanced-diagnostics.md)
 - [Troubleshoot the Global Secure Access Client: Health check tab](../global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check.md)
 - [Troubleshoot Distributed File System issue with Global Secure Access](../global-secure-access/troubleshoot-distributed-file-system.md)
-- See [Global Secure Access logs and monitoring](../global-secure-access/concept-global-secure-access-logs-monitoring.md) for log locations and other details that can assist with monitoring and troubleshooting your Global Secure Access deployment.
-- [How to use workbooks with Global Secure Access](../global-secure-access/how-to-use-workbooks.md).
+- See [Global Secure Access logs and monitoring](../global-secure-access/concept-global-secure-access-logs-monitoring.md) for log locations and other details that can assist with monitoring and troubleshooting your Global Secure Access deployment
+- [How to use workbooks with Global Secure Access](../global-secure-access/how-to-use-workbooks.md)
 
 ## Next steps
 
