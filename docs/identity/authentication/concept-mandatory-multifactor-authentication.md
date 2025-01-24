@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/22/2025
+ms.date: 01/23/2025
 ms.author: justinha
 author: najshahid
 manager: amycolannino
@@ -28,14 +28,18 @@ The scope of enforcement includes which applications plan to enforce MFA, applic
 
 The following table lists affected applications and URLs. 
 
-| Application Name | URL | Enforcement phase |
+| Application Name | URL | Enforcement starts |
 |------------------|---------------------------------------|------|
-| Azure portal    | `https://portal.azure.com` |  Second half of 2024 |
-| Microsoft Entra admin center | `https://entra.microsoft.com` |  Second half of 2024 |
-| Microsoft Intune admin center| `https://intune.microsoft.com`  | Second half of 2024 |
-| Microsoft 365 admin center | `https://portal.office.com/adminportal/home` | Early 2025 |
-| Microsoft 365 admin center | `https://admin.cloud.microsoft` | Early 2025 |
-| Microsoft 365 admin center | `https://admin.microsoft.com` | Early 2025 |
+| Azure portal    | `https://portal.azure.com` |  October 2024 |
+| Microsoft Entra admin center | `https://entra.microsoft.com` |  October 2024 |
+| Microsoft Intune admin center| `https://intune.microsoft.com`  | October 2024 |
+| Microsoft 365 admin center | `https://portal.office.com/adminportal/home` | February 2025 |
+| Microsoft 365 admin center | `https://admin.cloud.microsoft` | February 2025 |
+| Microsoft 365 admin center | `https://admin.microsoft.com` | February 2025 |
+| Azure command-line interface (Azure CLI) | NA	| Early 2025 |
+| Azure PowerShell | NA |	Early 2025 |
+| Azure mobile app |NA | Early 2025 |
+| Infrastructure as Code (IaC) tools	| NA |	Early 2025
 
 ### Accounts 
 
@@ -72,9 +76,9 @@ For example, if your organization chose to retain Microsoft’s [security defaul
 
 The enforcement of MFA rolls out in two phases: 
 
-- **Phase 1**: Starting in the second half of 2024, MFA will be required to sign in to the Azure portal, Microsoft Entra admin center, and Microsoft Intune admin center. The enforcement will gradually roll out to all tenants worldwide. This phase won't impact other Azure clients such as Azure CLI, Azure PowerShell, Azure mobile app, or IaC tools.  
+- **Phase 1**: Starting in October 2024, MFA will be required to sign in to the Azure portal, Microsoft Entra admin center, and Microsoft Intune admin center. The enforcement will gradually roll out to all tenants worldwide. This phase won't impact other Azure clients such as Azure CLI, Azure PowerShell, Azure mobile app, or IaC tools.  
 
-- **Phase 2**: Beginning in early 2025, MFA enforcement gradually begins for sign in to Azure CLI, Azure PowerShell, Azure mobile app, and IaC tools. Some customers may use a user account in Microsoft Entra ID as a service account. It's recommended to migrate these user-based service accounts to [secure cloud based service accounts](/entra/architecture/secure-service-accounts) with [workload identities](~/workload-id/workload-identities-overview.md). 
+- **Phase 2**: Starting in February 2025, MFA enforcement gradually begins for sign in to Microsoft 365 admin center, Azure CLI, Azure PowerShell, Azure mobile app, and IaC tools. Some customers may use a user account in Microsoft Entra ID as a service account. It's recommended to migrate these user-based service accounts to [secure cloud based service accounts](/entra/architecture/secure-service-accounts) with [workload identities](~/workload-id/workload-identities-overview.md). 
 
 ## Notification channels 
 
@@ -119,7 +123,6 @@ By postponing the start date of enforcement, you take extra risk because account
 **Answer**: Mandatory MFA will roll out to the Microsoft 365 admin center starting early in 2025. Learn more about the mandatory MFA requirement for the Microsoft 365 admin center on the blog post [Announcing mandatory multifactor authentication for the Microsoft 365 admin center](https://techcommunity.microsoft.com/t5/microsoft-365-blog/microsoft-will-require-mfa-to-access-the-microsoft-365-admin/ba-p/4232568). 
 
 **Question**: Is MFA mandatory for all users or only administrators? 
-
 
 **Answer**: All users who sign in to any of the [applications](#applications) listed previously are required to complete MFA, regardless of any administrator roles that are activated or eligible for them, or any [user exclusions](~/identity/conditional-access/policy-all-users-mfa-strength.md#user-exclusions) that are enabled for them.
 
