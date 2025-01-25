@@ -17,9 +17,9 @@ ms.reviewer: guptashi
 ---
 # What is Identity Secure Score?
 
-The Identity Secure Score is shown as a percentage that functions as an indicator for how aligned you are with Microsoft's recommendations for security. Each improvement action in Identity Secure Score is tailored to your configuration. You can access the score and view individual recommendations related to your score in Microsoft Entra recommendations. You can also view the score see how your score has changed over time. 
+The Identity Secure Score is shown as a percentage that functions as an indicator for how aligned you are with Microsoft's recommendations for security. Each improvement action in Identity Secure Score is tailored to your configuration. You can access the score and view individual recommendations related to your score in Microsoft Entra recommendations. You can also see how your score has changed over time. 
 
-![Secure score](./media/concept-identity-secure-score/secure-score-overview.png)
+![Screenshot of the Recommendations page with the Secure Score details highlighted.](./media/concept-identity-secure-score/secure-score-overview.png)
 
 The following recommendations are included in the Identity Secure Score:
 
@@ -70,7 +70,7 @@ The score and related recommendations are also found at **Identity** > **Overvie
 
 Each recommendation is measured based on your configuration. If you're using non-Microsoft products to enable a best practice recommendation, you can indicate this configuration in the settings of an improvement action. You might set recommendations to be ignored if they don't apply to your environment. An ignored recommendation doesn't contribute to the calculation of your score.
 
-![Ignore or mark action as covered by third party](./media/concept-identity-secure-score/identity-secure-score-ignore-or-non-microsoft-reccomendations.png)
+![Screenshot of the improvement action panel.](./media/concept-identity-secure-score/identity-secure-score-ignore-or-non-microsoft-reccomendations.png)
 
 - **To address** - You recognize that the improvement action is necessary and plan to address it at some point in the future. This state also applies to actions that are detected as partially, but not fully completed.
 - **Risk accepted** - Security should always be balanced with usability, and not every recommendation works for everyone. When that is the case, you can choose to accept the risk, or the remaining risk, and not enact the improvement action. You aren't awarded any points, and the action isn't visible in the list of improvement actions. You can view this action in history or undo it at any time.
