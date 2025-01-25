@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: conceptual
-ms.date: 03/11/2024
+ms.date: 01/21/2025
 ms.author: justinha
 ms.reviewer: wanjikumugo
 ms.custom: devx-track-azurepowershell, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -429,7 +429,7 @@ For more conceptual information about forest types in Domain Services, see [How 
 
 [New-MgServicePrincipal](/powershell/module/microsoft.graph.applications/new-mgserviceprincipal): /powershell/module/microsoft.graph.applications/new-mgserviceprincipal
 
-[Get-AzureRMSubscription]: /powershell/module/azurerm.profile/get-azurermsubscription
+[Get-AzureRMSubscription]: /powershell/module/az.accounts/get-azsubscription
 
 [Install-Script]: /powershell/module/powershellget/install-script
 

@@ -104,7 +104,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 ### Bug fixes
 - Fixed the removal of the SSPR configuration when changes are made on the Azure AD Connector and saved in the Sync Service manager UI
-- Fixed validation for the global administrator/hybrid identity administrator role done during Entra Connect Sync installation and users with global administrator/hybrid identity administrator through Privileged Identity Management (PIM). 
+- Fixed validation for the Global Administrator/Hybrid Identity Administrator role done during Entra Connect Sync installation and users with Global Administrator/Hybrid Identity Administrator through Privileged Identity Management (PIM). 
 - Fixed the "no registered protocol handlers" error on Federate with AD FS scenario.
 - Fixed "Relying party must be unique (conflict error)" error on Federate with AD FS scenario.
 

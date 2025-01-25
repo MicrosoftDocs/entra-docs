@@ -7,7 +7,7 @@ ms.assetid: 56ccb219-11b2-4e43-9f07-5a76e3cd8da8
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: conceptual
-ms.date: 10/07/2024
+ms.date: 01/21/2025
 ms.author: justinha
 ---
 # Microsoft Entra Domain Services deployment and management for Azure Cloud Solution Providers

@@ -26,12 +26,12 @@ Learn how to use Microsoft Entra application proxy to protect your Network Devic
    > You install the connector on any server within your corporate network with access to NDES. You don't have to install it on the NDES server itself.
 1. Run the setup file, such as *MicrosoftEntraPrivateNetworkConnectorInstaller.exe*. Accept the software license terms.
 1. During the install, you're prompted to register the connector with application proxy in your Microsoft Entra directory.
-    Provide the credentials for a global or application administrator in your Microsoft Entra directory. The Microsoft Entra global or application administrator credentials are often different from your Azure credentials in the portal.
+    Provide the credentials for a Global Administrator or Application Administrator in your Microsoft Entra directory. The Microsoft Entra Global Administrator or Application Administrator credentials are often different from your Azure credentials in the portal.
 
     > [!NOTE]
-    > The global or application administrator account used to register the connector must belong to the same directory where you enable the application proxy service.
+    > The Global Administrator or Application Administrator account used to register the connector must belong to the same directory where you enable the application proxy service.
     >
-    > For example, if the Microsoft Entra domain is *contoso.com*, the global/application administrator should be `admin@contoso.com` or another valid alias on that domain.
+    > For example, if the Microsoft Entra domain is *contoso.com*, the Global Administrator or Application Administrator should be `admin@contoso.com` or another valid alias on that domain.
 
    If Internet Explorer Enhanced Security Configuration is turned on for the server where you install the connector, the registration screen might be blocked. To allow access, follow the instructions in the error message, or turn off Internet Explorer Enhanced Security during the install process.
    
