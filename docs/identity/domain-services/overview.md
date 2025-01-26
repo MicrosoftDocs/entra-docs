@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: overview
-ms.date: 09/15/2023
+ms.date: 12/03/2024
 ms.author: justinha
 #Customer intent: As an IT administrator or decision maker, I want to understand what Domain Services is and how it can benefit my organization.
 ---
@@ -25,7 +25,7 @@ Domain Services integrates with your existing Microsoft Entra tenant. This integ
 
 Take a look at our short video to learn more about Domain Services.
 
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4LblD]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=0a092182-e2de-4538-a6b4-adfcacf1cc54]
 
 <a name='how-does-azure-ad-ds-work'></a>
 

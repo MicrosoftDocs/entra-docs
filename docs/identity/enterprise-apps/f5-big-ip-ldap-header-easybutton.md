@@ -302,10 +302,6 @@ Your application is published and accessible via SHA, either with its URL or thr
 
 From a browser, in the [Microsoft MyApps portal](https://myapplications.microsoft.com/) connect to the application external URL or select the application icon. After authenticating against Microsoft Entra ID, you're redirected to the BIG-IP virtual server for the application and signed in through SSO.
 
-See the following screenshot for output of the injected headers in our headers-based application.
-
-   ![Screenshot of output values under Server Variables on My Events.](./media/f5-big-ip-easy-button-ldap/app-view.png)
-
 For increased security, organizations using this pattern can block direct access to the application. This action forces a strict path through the BIG-IP.
 
 ## Advanced deployment

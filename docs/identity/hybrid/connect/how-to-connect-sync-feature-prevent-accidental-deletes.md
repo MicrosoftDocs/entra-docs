@@ -9,7 +9,7 @@ ms.assetid: 6b852cb4-2850-40a1-8280-8724081601f7
 ms.service: entra-id
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.date: 11/06/2023
+ms.date: 12/26/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -33,7 +33,7 @@ If there are too many deletes staged to be exported to Microsoft Entra ID, then 
 
 ![Prevent Accidental deletes email](./media/how-to-connect-sync-feature-prevent-accidental-deletes/email.png)
 
-> *Hello (technical contact). At (time) the Identity synchronization service detected that the number of deletions exceeded the configured deletion threshold for (organization name). A total of (number) objects were sent for deletion in this Identity synchronization run. This met or exceeded the configured deletion threshold value of (number) objects. We need you to provide confirmation that these deletions should be processed before we will proceed. Please see the preventing accidental deletions for more information about the error listed in this email message.*
+> *Hello (technical contact). At (time) the Identity synchronization service detected that the number of deletions exceeded the configured deletion threshold for (organization name). A total of (number) objects were sent for deletion in this Identity synchronization run. This met or exceeded the configured deletion threshold value of (number) objects. We need you to provide confirmation that these deletions should be processed before we will proceed. For more information about the error listed in this email message, please see the preventing accidental deletions.*
 >
 > 
 
@@ -46,7 +46,7 @@ If this was unexpected, then investigate and take corrective actions. To see whi
 2. Go to **Connectors**.
 3. Select the Connector with type **Microsoft Entra ID**.
 4. Under **Actions** to the right, select **Search Connector Space**.
-5. In the pop-up under **Scope**, select **Disconnected Since** and pick a time in the past. Click **Search**. This page provides a view of all objects about to be deleted. By clicking each item, you can get additional information about the object. You can also click **Column Setting** to add additional attributes to be visible in the grid.
+5. In the pop-up under **Scope**, select **Disconnected Since** and pick a time in the past. Select **Search**. This page provides a view of all objects about to be deleted. By selecting each item, you can get additional information about the object. You can also select **Column Setting** to add more attributes to be visible in the grid.
 
 ![Search Connector Space](./media/how-to-connect-sync-feature-prevent-accidental-deletes/searchcs.png)
 
@@ -56,7 +56,7 @@ If this was unexpected, then investigate and take corrective actions. To see whi
 If all the deletes are desired, then do the following:
 
 1. To retrieve the current deletion threshold, run the PowerShell cmdlet `Get-ADSyncExportDeletionThreshold`. The default value is 500.
-2. To temporarily disable this protection and let those deletes go through, run the PowerShell cmdlet: `Disable-ADSyncExportDeletionThreshold`.
+2. To temporarily disable this protection and let the deletes go through, run the PowerShell cmdlet: `Disable-ADSyncExportDeletionThreshold`.
 3. With the Microsoft Entra Connector still selected, select the action **Run** and select **Export**.
 4. To re-enable the protection, run the PowerShell cmdlet: `Enable-ADSyncExportDeletionThreshold -DeletionThreshold 500`. Replace 500 with the value you noticed when retrieving the current deletion threshold.
 

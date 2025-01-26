@@ -10,9 +10,8 @@ manager: celestedg
 ms.date: 11/7/2024
 ms.topic: conceptual
 ms.service: entra
-ms.custom: microsoft-copilot
+ms.custom: microsoft-copilot, ignite-2024
 ms.collection: ce-skilling-ai-copilot
-
 # Customer intent: As a SOC analyst or IT admin, I want to learn how to use the Microsoft Entra skills in Microsoft Security Copilot so that I can quickly respond to a potential identity-based security incident.
 ---
 
@@ -103,4 +102,3 @@ Learn more about:
 - [Risky users](/entra/id-protection/howto-identity-protection-investigate-risk#risky-users)
 - [What is risk in ID Protection?](/entra/id-protection/concept-identity-protection-risks)
 - [Risk-based Access Policies](/entra/id-protection/concept-identity-protection-policies)
-

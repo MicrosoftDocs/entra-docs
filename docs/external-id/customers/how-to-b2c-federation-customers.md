@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: customers
 ms.topic: how-to
-ms.date: 11/27/2024
+ms.date: 01/22/2025
 ms.author: cmulligan
 ms.reviewer: brozbab
 ms.custom: it-pro
@@ -29,7 +29,7 @@ To configure your Azure AD B2C tenant as an identity provider, you need to creat
 
 ## Configure your custom policy
 
-If it is enabled in the user flow, the external tenant may require the email claim to be returned in the token from your Azure AD B2C custom policy.
+If it's enabled in the user flow, the external tenant may require the email claim to be returned in the token from your Azure AD B2C custom policy.
 
 After provisioning the custom policy starter pack, download the `B2C_1A_signup_signin` file from the **Identity Experience Framework** blade within your Azure AD B2C tenant.
 
@@ -56,7 +56,7 @@ To create an application:
 1. Select **App registrations**, and then select **New registration**.
 1. Under **Name**, enter "Federation with Microsoft Entra ID".
 1. Under **Supported account types**, select **Accounts in any identity provider or organizational directory (for authenticating users with user flows)**.
-1. Under **Redirect URI**, select **Web**, and then enter the following URL in all lowercase letters, where `your-B2C-tenant-name` is replaced with the name of your Azure AD B2C tenant (for example, Contoso):
+1. Under **Redirect URI**, select **Web**, and then enter the following URL in all lowercase letters, where `your-B2C-tenant-name` is replaced with the name of your Entra tenant (for example, Contoso):
   
     `https://<tenant-subdomain>.ciamlogin.com/<tenant-ID>/federation/oauth2`
     

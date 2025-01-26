@@ -5,7 +5,7 @@ description: Learn about the authentication methods policy and different ways to
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/04/2024
+ms.date: 01/03/2024
 
 ms.author: justinha
 author: justinha
@@ -40,7 +40,7 @@ Two other policies, located in **Multifactor authentication** settings and **Pas
 >[!Important]
 >In March 2023, we announced the deprecation of managing authentication methods in the legacy multifactor authentication and self-service password reset (SSPR) policies. Beginning September 30, 2025, authentication methods can't be managed in these legacy MFA and SSPR policies. We recommend customers use the manual migration control to migrate to the Authentication methods policy by the deprecation date.
 
-To manage the legacy MFA policy, browes to **Protection** > **Multifactor authentication** > **Additional cloud-based multifactor authentication settings**.
+To manage the legacy MFA policy, browse to **Protection** > **Multifactor authentication** > **Additional cloud-based multifactor authentication settings**.
 
 :::image type="content" border="true" source="./media/concept-authentication-methods-manage/service-settings.png" alt-text="Screenshot of MFA service settings.":::
 
@@ -107,6 +107,9 @@ Tenants are set to either Pre-migration or Migration in Progress by default, dep
 ## Known issues and limitations
 - In recent updates, we removed the ability to target individual users. Previously targeted users will remain in the policy, but we recommend moving them to a targeted group.
 - Registration of an authentication method can fail if many groups are included in the Authentication methods policy or a registration campaign. We recommend consolidating multiple groups into a single group for each authentication method. To maintain registration for users during consolidation, add the new group and remove current groups in the same operation. 
+
+  >[!NOTE]
+  >You might not be able to save updates to the Authentication methods policy if it targets many groups and the policy size exceeds 20 KB. While we work to increase the policy size limit, consolidate targeted groups as much as possible. 
 
 ## Next steps
 

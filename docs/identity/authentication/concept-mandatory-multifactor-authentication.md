@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/05/2024
+ms.date: 01/06/2025
 ms.author: justinha
 author: najshahid
 manager: amycolannino
@@ -96,7 +96,7 @@ After enforcement, a banner appears in Microsoft Entra multifactor authenticatio
 
 Support for external MFA solutions is in preview with [external authentication methods](https://aka.ms/EAMAdminDocs), and can be used to meet the MFA requirement. The legacy Conditional Access custom controls preview doesn't satisfy the MFA requirement. You should migrate to the external authentication methods preview to use an external solution with Microsoft Entra ID.  
 
-If you're using a federated Identity Provider (IdP), such as Active Directory Federation Services, and your MFA provider is integrated directly with this federated IdP, the federated IdP must be configured to send an MFA claim. 
+If you're using a federated Identity Provider (IdP), such as Active Directory Federation Services, and your MFA provider is integrated directly with this federated IdP, the federated IdP must be configured to send an MFA claim. For more information, see [Expected inbound assertions for Microsoft Entra MFA](how-to-mfa-expected-inbound-assertions.md).
 
 ## Request more time to prepare for enforcement 
 
@@ -155,7 +155,7 @@ An option to postpone the enforcement start date is available for customers. Bet
 
 **Question**: How can I review MFA activity in Microsoft Entra ID? 
 
-**Answer**: To review details about when a user is prompted to sign in with MFA, use the Microsoft Entra sign-ins report. For more information, see [Sign-in event details for Microsoft Entra multifactor authentication](howto-mfa-reporting.md).
+**Answer**: To review details about when a user is prompted to sign in with MFA, use the Microsoft Entra sign-in logs. For more information, see [Sign-in event details for Microsoft Entra multifactor authentication](howto-mfa-reporting.md).
 
 **Question**: What if I have a "break glass" scenario? 
 

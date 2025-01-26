@@ -45,7 +45,7 @@ items:
       href: concept-diagnostic-settings-logs-options.md
     - name: Monitoring options and considerations
       href: concept-log-monitoring-integration-options-considerations.md
-    - name: Identity secure score
+    - name: Identity Secure Score
       href: concept-identity-secure-score.md
     - name: Usage and insights report
       href: concept-usage-insights-report.md
@@ -89,8 +89,10 @@ items:
   - name: Microsoft Entra Health 
     expanded: false
     items:
-    - name: How to use Microsoft Entra Health alerts
-      href: howto-use-health-scenario-alerts.md
+    - name: How to configure Microsoft Entra Health email notifications
+      href: howto-configure-health-alert-emails.md
+    - name: How to investigate Microsoft Entra Health alerts
+      href: howto-investigate-health-scenario-alerts.md
     - name: Sign-ins requiring a compliant or managed device
       href: scenario-health-sign-ins-compliant-managed-device.md
     - name: Sign-ins requiring MFA
@@ -139,6 +141,8 @@ items:
       href: workbook-cross-tenant-access-activity.md
     - name: Multifactor authentication gaps 
       href: workbook-mfa-gaps.md 
+    - name: Provisioning insights
+      href: ..\app-provisioning\application-provisioning-log-analytics.md?toc=/entra/identity/monitoring-health/toc.json&bc=/entra/identity/monitoring-health/breadcrumb/TOC.json
     - name: Risk analysis
       href: workbook-risk-analysis.md
     - name: Sensitive Operations Report 

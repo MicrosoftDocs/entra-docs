@@ -13,8 +13,9 @@ ms.custom: devx-track-azurepowershell
 ---
 # Archive logs and reporting on entitlement management in Azure Monitor
 
-Microsoft Entra ID stores audit events for up to 30 days in the audit log. However, you can keep the audit data for longer than the default retention period, outlined in [How long does Microsoft Entra ID store reporting data?](~/identity/monitoring-health/reference-reports-data-retention.md), by routing it to an Azure Storage account or using Azure Monitor. You can then use workbooks and custom queries and reports on this data.
+Microsoft Entra ID stores audit events for up for entitlement management and other Microsoft Entra ID Governance features to 30 days in the audit log. However, you can keep the audit data for longer than the default retention period, outlined in [How long does Microsoft Entra ID store reporting data?](~/identity/monitoring-health/reference-reports-data-retention.md), by routing it to an Azure Storage account or using Azure Monitor. You can then use workbooks and custom queries and reports on this data.
 
+This article outlines how to use Azure Monitor for audit log retention. To retain or report on Microsoft Entra objects, such as users or application role assignments, see [Customized reports in Azure Data Explorer (ADX) using data from Microsoft Entra ID](custom-entitlement-report-with-adx-and-entra-id.md).
 
 <a name='configure-azure-ad-to-use-azure-monitor'></a>
 
@@ -205,3 +206,4 @@ order by ActivityDateTime desc
 ## Next steps
 - [Create interactive reports with Azure Monitor workbooks](/azure/azure-monitor/visualize/workbooks-overview)
 - [Create custom alerts for Microsoft Entra ID Governance](governance-custom-alerts.md)
+- [Customized reports in Azure Data Explorer (ADX) using data from Microsoft Entra ID](custom-entitlement-report-with-adx-and-entra-id.md)

@@ -6,7 +6,7 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref
 ms.topic: troubleshooting
-ms.date: 01/29/2023
+ms.date: 12/02/2024
 
 ms.author: justinha
 author: justinha
