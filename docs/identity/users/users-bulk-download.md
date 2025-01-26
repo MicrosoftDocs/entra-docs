@@ -6,7 +6,7 @@ description: Download user records in bulk in the Azure admin center in Microsof
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
-ms.date: 07/01/2024
+ms.date: 12/19/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
@@ -20,7 +20,7 @@ Microsoft Entra ID, part of Microsoft Entra, supports bulk user list download op
 
 ## Required permissions
 
-Both admin and non-admin users can download user lists.
+Both admin and standard users can download user lists.
 
 ## To download a list of users
 

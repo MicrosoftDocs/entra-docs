@@ -5,7 +5,7 @@ description: Add group members in bulk by using a comma-separated values (CSV) f
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
-ms.date: 07/01/2024
+ms.date: 12/19/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users

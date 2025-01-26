@@ -10,7 +10,7 @@ ms.assetid: 2593b6c6-dc3f-46ef-8e02-a8e2dc4e9fb9
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 12/05/2024
+ms.date: 12/19/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -39,11 +39,15 @@ You'll also learn about other common AD FS tasks that you might need to perform 
 
 You can perform various AD FS-related tasks in Microsoft Entra Connect with minimal user intervention by using the Microsoft Entra Connect wizard. After you've finished installing Microsoft Entra Connect by running the wizard, you can run it again to perform other tasks.
 
+>[!IMPORTANT]
+>Please note that if you are configuring federation with AD FS or PingFederate you will need either an account with the global administrator role or an account that has the [hybrid identity administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) and [domain name administrator](../../role-based-access-control/permissions-reference.md#domain-name-administrator) roles. The configurations related to federation require permissions that the [hybrid identity administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) currently doesn't have but the [domain name administrator](../../role-based-access-control/permissions-reference.md#domain-name-administrator) role does.
+
 <a name="repairthetrust"></a>
 
 ## Repair the trust 
 
 You can use Microsoft Entra Connect to check the current health of the AD FS and Microsoft Entra ID trust and then take appropriate actions to repair the trust. To repair your Microsoft Entra ID and AD FS trust, do the following:
+
 
 1. Select **Repair Microsoft Entra ID and ADFS Trust** from the list of tasks.
 

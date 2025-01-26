@@ -5,7 +5,7 @@ description: Detailed guidance to deploy passwordless and phishing-resistant aut
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/16/2024
+ms.date: 01/07/2025
 
 ms.author: justinha
 author: mepples21
@@ -188,15 +188,12 @@ Use the following sections to create end user communications for each persona gr
 
 ### Plan end user communications
 
-Microsoft provides communication templates for end users. The [authentication rollout material](https://www.microsoft.com/download/details.aspx?id=57600) includes customizable posters and email templates to inform users about phishing-resistant passwordless authentication deployment. Use the following templates to communicate to your users so they understand the phishing-resistant passwordless deployment:
+Microsoft provides communication templates for end users. The [authentication rollout material](https://www.microsoft.com/download/details.aspx?id=57600) includes customizable email templates to inform users about phishing-resistant passwordless authentication deployment. Use the following templates to communicate to your users so they understand the phishing-resistant passwordless deployment:
 
-- [Passwordless sign-in with Microsoft Authenticator](howto-authentication-passwordless-phone.md)
-- [Register the password reset verification method for a work or school account](https://support.microsoft.com/account-billing/register-the-password-reset-verification-method-for-a-work-or-school-account-47a55d4a-05b0-4f67-9a63-f39a43dbe20a)
-- [Reset your work or school password using security info](https://support.microsoft.com/account-billing/reset-your-work-or-school-password-using-security-info-23dde81f-08bb-4776-ba72-e6b72b9dda9e)
-- [Set up a security key as your verification method](https://support.microsoft.com/account-billing/set-up-a-security-key-as-your-verification-method-2911cacd-efa5-4593-ae22-e09ae14c6698)
-- [Sign in to your accounts using the Microsoft Authenticator app](https://support.microsoft.com/account-billing/sign-in-to-your-accounts-using-the-microsoft-authenticator-app-582bdc07-4566-4c97-a7aa-56058122714c)
-- [Sign in to your work or school account using your two-step verification method](https://support.microsoft.com/account-billing/sign-in-to-your-work-or-school-account-using-your-two-step-verification-method-c7293464-ef5e-4705-a24b-c4a3ec0d6cf9)
-- [Work or school account sign-in blocked by tenant restrictions](https://support.microsoft.com/account-billing/work-or-school-account-sign-in-blocked-by-tenant-restrictions-8a9d5d06-28c4-4c79-bc50-1167abbf516b)
+- [Passkeys for Helpdesk](https://download.microsoft.com/download/1/4/E/14E6151E-C40A-42FB-9F66-D8D374D13B40/Passkey_Helpdesk.docx)
+- [Passkeys coming soon](https://download.microsoft.com/download/1/4/E/14E6151E-C40A-42FB-9F66-D8D374D13B40/Passkeys%20coming%20soon.docx)
+- [Register for Authenticator App Passkey](https://download.microsoft.com/download/1/4/E/14E6151E-C40A-42FB-9F66-D8D374D13B40/Register%20for%20Authenticator%20App%20Passkey.docx)
+- [Reminder to register for Authenticator App Passkey](https://download.microsoft.com/download/1/4/E/14E6151E-C40A-42FB-9F66-D8D374D13B40/Reminder%20to%20register%20for%20Authenticator%20App%20Passkey.docx)
 
 Communications should be repeated multiple times to help catch as many users as possible. For example, your organization may choose to communicate the different phases and timelines with a pattern like this:
 

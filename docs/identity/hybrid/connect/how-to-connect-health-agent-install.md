@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
-ms.date: 12/04/2024
+ms.date: 12/19/2024
 ms.topic: how-to
 ms.author: billmath
 
@@ -45,7 +45,7 @@ The following table lists requirements for using Microsoft Entra Connect Health:
 > If you have a highly locked-down and restricted environment, you need to add more URLs than the URLs the table lists for Internet Explorer enhanced security. Also add URLs that are listed in the table in the next section.
 
 >[!IMPORTANT]
->If you installed Microsoft Entra Connect Sync using an account with the hybrid administrator role, the agent will be in a disabled state.  To activate the agent, you will need to re-install it using an account that is a global administrator.
+>If you installed Microsoft Entra Connect Sync using an account with the Hybrid Identity Administrator role, the agent will be in a disabled state.  To activate the agent, you will need to re-install it using an account that is a Global Administrator.
 
 ### New versions of the agent and auto upgrade
 

@@ -57,9 +57,7 @@ Before configuring Priority Matrix for automatic user provisioning with Microsof
 
 	![Priority Matrix Add SCIM](media/priority-matrix-provisioning-tutorial/oauthlogin.png)
 
-4. Click the **GET NEW TOKEN** button. Copy the **Token String**. This value will be entered in the **Secret Token** field in the Provisioning tab of your Priority Matrix application. 
-
-	![Priority Matrix Create Token](media/priority-matrix-provisioning-tutorial/token.png)
+4. Click the **GET NEW TOKEN** button. Copy the **Token String**. This value will be entered in the **Secret Token** field in the Provisioning tab of your Priority Matrix application.
 
 ## Add Priority Matrix from the gallery
 
