@@ -65,9 +65,6 @@ Follow these steps to sign in to Microsoft Entra ID on another device with a pas
 
 This sign-in option requires Bluetooth and an internet connection for both devices. If your organization restricts Bluetooth usage, an administrator can allow cross-device sign-in for passkeys by permitting Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators. For more information about how to configure Bluetooth usage only for passkeys, see [Passkeys in Bluetooth-restricted environments](/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune#passkeys-in-bluetooth-restricted-environments).
 
-> [!NOTE]
-> You can't sign in with a passkey in Authenticator this way if attestation is enabled by you administrator. 
-
 1. On the other device where you want to sign in to Microsoft Entra ID, go to the resource you're trying to access, such as [Office](https://www.office.com).
 
 1. Enter your username to sign in.
@@ -143,9 +140,6 @@ You're now signed in to Microsoft Entra ID.
 Follow these steps to sign in to Microsoft Entra ID on another device with a passkey in Authenticator on your Android device.
 
 This sign-in option requires Bluetooth and an internet connection for both devices. If your organization restricts Bluetooth usage, an administrator can allow cross-device sign-in for passkeys by permitting Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators. For more information about how to configure Bluetooth usage only for passkeys, see [Passkeys in Bluetooth-restricted environments](/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune#passkeys-in-bluetooth-restricted-environments).
-
-> [!NOTE]
-> You can't sign in with a passkey in Authenticator this way if attestation is enabled by you administrator. 
 
 1. On the other device where you want to sign in to Microsoft Entra ID, go to the resource you're trying to access, such as [Office](https://www.office.com).
 

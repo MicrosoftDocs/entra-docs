@@ -30,7 +30,7 @@ This article lists steps to enable and enforce use of passkeys in Authenticator 
     - `https://cable.auth.com`
 
   > [!NOTE]
-  > Users can't register a passkey in Authenticator across devices if you enable attestation. 
+  > Users can't register a passkey in Authenticator from across devices if you enable attestation. 
 
 To learn more about FIDO2 support, see [Support for FIDO2 authentication with Microsoft Entra ID](fido2-compatibility.md).
 
@@ -53,12 +53,13 @@ To learn more about FIDO2 support, see [Support for FIDO2 authentication with Mi
 
      > [!NOTE]
      > For both iOS and Android, Authenticator attestation relies upon Apple and Google services to verify the authenticity of the Authenticator app. Heavy service usage can make passkey registration fail, and users might need to try again. If Apple and Google services are down, Authenticator attestation blocks registration that requires attestation until services are restored. To monitor the status of Google Play Integrity service, see [Google Play Status Dashboard](https://status.play.google.com/). To monitor the status of the iOS App Attest service, see [System Status](https://developer.apple.com/system-status/).
+    
+    > [!NOTE]
+    > Users can only register attested passkeys directly in the Authenticator app. Cross-device registration flows do not support registration of attested passkeys.
 
-   - Key restrictions set the usability of specific passkeys for both registration and authentication. If you don't set key restrictions, users can register and sign in with any passkey. They can add the passkey directly in the Authenticator app or by adding **Passkey in Microsoft Authenticator** from their Security info. 
+   - **Key restrictions** set the usability of specific passkeys for both registration and authentication. You can set **Enforce key restrictions** to **No**, to allow users to register any supported passkey including registering passkeys directly in the Authenticator app.
    
-     You can set **Enforce key restrictions** to **Yes** to only allow or block certain passkeys, which are identified by their AAGUIDs. 
-        
-     Until mid-February, [Security info](https://mysignins.microsoft.com/security-info) requires this setting to be set to **Yes** so that users can choose **Passkey in Authenticator** and go through a dedicated Authenticator passkey registration flow. If you choose **No**, users might still be able to add a passkey in Authenticator by choosing the **Security key or passkey** method, depending on their operating system and browser. However, we don't expect many users to discover and use that method.
+     You can set **Enforce key restrictions** to **Yes** to only allow or block certain passkeys, which are identified by their AAGUIDs. Until mid-February, [Security info](https://mysignins.microsoft.com/security-info) requires this setting to be set to **Yes** so that users can choose **Passkey in Authenticator** and go through a dedicated Authenticator passkey registration flow. If you choose **No**, users navigating to SecurityInfo might still be able to add a passkey in Authenticator by choosing the **Security key or passkey** method, depending on their operating system and browser. However, we don't expect many users to discover and use that method.
 
      If you enforce key restrictions and already have active passkey usage, you should collect the AAGUIDs of the passkeys being used today. You can use a PowerShell script to find AAGUIDs that are used in your tenant. For more information, see [Find AAGUIDs](#find-aaguids).
 
@@ -175,7 +176,7 @@ Some organizations restrict Bluetooth usage, which includes the use of passkeys.
 If a user deletes a passkey in Authenticator, the passkey is also removed from the user's sign-in methods. An Authentication Policy Administrator can also follow these steps to delete a passkey from the user's authentication methods, but it won't remove the passkey from Authenticator.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com), and search for the user whose passkey must be removed.
-1. Select **Authentication methods**, right-click **FIDO2 security key**, and select **Delete**.
+1. Select **Authentication methods**, right-click **Passkey**, and select **Delete**.
 
    Unless the user initiated the passkey deletion themselves in Authenticator, they need to also remove the passkey in Authenticator on their device.
 
