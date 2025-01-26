@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: conceptual
-ms.date: 01/21/2025
+ms.date: 01/26/2025
 ms.author: justinha
 ms.reviewer: wanjikumugo
 ms.custom: devx-track-azurepowershell, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -85,7 +85,7 @@ New-MgServicePrincipal
 
 ## Create a managed domain 
 
-To create a managed domain, you use the `New-AaddsResourceForest` script. This script is part of a wider set of commands that support managed domains, including create the one-way bound forest in a following section. These scripts are available from the [PowerShell Gallery](https://www.powershellgallery.com/) and are digitally signed by the Microsoft Entra engineering team.
+To create a managed domain, you use the `New-AaddsResourceForest` script. This script is part of a wider set of commands that support managed domains. They're available from the [PowerShell Gallery](https://www.powershellgallery.com/). They're digitally signed by the Microsoft Entra engineering team.
 
 1. First, create a resource group using the [New-AzResourceGroup][New-AzResourceGroup] cmdlet. In the following example, the resource group is named *myResourceGroup* and is created in the *westus* region. Use your own name and desired region:
 
@@ -125,7 +125,7 @@ To create a managed domain, you use the `New-AaddsResourceForest` script. This s
 1. Now create a managed domain forest using the `New-AaddsResourceForest` script. The following example creates a forest named *addscontoso.com* and creates a workload subnet. Provide your own parameter names and IP address ranges or existing virtual networks.
 
     ```powershell
-    New-AzureAaddsForest `
+    New-AaddsResourceForest `
         -azureSubscriptionId <subscriptionId> `
         -aaddsResourceGroupName "myResourceGroup" `
         -aaddsLocation "WestUS" `
