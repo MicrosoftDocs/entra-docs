@@ -5,7 +5,7 @@ description: Learn about how to enable passkeys in Microsoft Authenticator for M
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/21/2025
+ms.date: 01/26/2025
 
 
 ms.author: justinha
@@ -30,7 +30,7 @@ This article lists steps to enable and enforce use of passkeys in Authenticator 
     - `https://cable.auth.com`
 
   > [!NOTE]
-  > Users can't register a passkey in Authenticator from across devices if you enable attestation. 
+  > Users can't use cross-device registration if you enable attestation. 
 
 To learn more about FIDO2 support, see [Support for FIDO2 authentication with Microsoft Entra ID](fido2-compatibility.md).
 
@@ -55,9 +55,9 @@ To learn more about FIDO2 support, see [Support for FIDO2 authentication with Mi
      > For both iOS and Android, Authenticator attestation relies upon Apple and Google services to verify the authenticity of the Authenticator app. Heavy service usage can make passkey registration fail, and users might need to try again. If Apple and Google services are down, Authenticator attestation blocks registration that requires attestation until services are restored. To monitor the status of Google Play Integrity service, see [Google Play Status Dashboard](https://status.play.google.com/). To monitor the status of the iOS App Attest service, see [System Status](https://developer.apple.com/system-status/).
     
     > [!NOTE]
-    > Users can only register attested passkeys directly in the Authenticator app. Cross-device registration flows do not support registration of attested passkeys.
+    > Users can only register attested passkeys directly in the Authenticator app. Cross-device registration flows don't support registration of attested passkeys.
 
-   - **Key restrictions** set the usability of specific passkeys for both registration and authentication. You can set **Enforce key restrictions** to **No**, to allow users to register any supported passkey including registering passkeys directly in the Authenticator app.
+   - **Key restrictions** set the usability of specific passkeys for both registration and authentication. You can set **Enforce key restrictions** to **No** to allow users to register any supported passkey, including passkey registration directly in the Authenticator app.
    
      You can set **Enforce key restrictions** to **Yes** to only allow or block certain passkeys, which are identified by their AAGUIDs. Until mid-February, [Security info](https://mysignins.microsoft.com/security-info) requires this setting to be set to **Yes** so that users can choose **Passkey in Authenticator** and go through a dedicated Authenticator passkey registration flow. If you choose **No**, users navigating to SecurityInfo might still be able to add a passkey in Authenticator by choosing the **Security key or passkey** method, depending on their operating system and browser. However, we don't expect many users to discover and use that method.
 
