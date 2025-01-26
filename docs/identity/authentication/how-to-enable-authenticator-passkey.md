@@ -96,13 +96,13 @@ To configure the policy by using Graph Explorer:
 1. Retrieve the Authentication methods policy:
 
    ```json
-   GET https://graph.microsoft.com/beta/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
+   GET https://graph.microsoft.com/v1.0/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
    ```
 
 1. To disable attestation enforcement and enforce key restrictions to allow only AAGUIDs for Authenticator, perform a `PATCH` operation by using the following request body:
 
    ```json
-   PATCH https://graph.microsoft.com/beta/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
+   PATCH https://graph.microsoft.com/v1.0/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
    
    Request Body:
    {
@@ -124,7 +124,7 @@ To configure the policy by using Graph Explorer:
 1. Make sure that the passkey (FIDO2) policy is updated properly.
 
    ```json
-   GET https://graph.microsoft.com/beta/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
+   GET https://graph.microsoft.com/v1.0/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
    ```
 
 ## Find AAGUIDs
