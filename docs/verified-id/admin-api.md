@@ -31,7 +31,7 @@ The API is protected through Microsoft Entra ID and uses OAuth2 bearer tokens. T
 
 ### User bearer tokens
 
-The app registration needs to have the API Permission for `Verifiable Credentials Service Admin` and then when acquiring the access token the app should use scope `6a8b4b39-c021-437c-b060-5a14a3fd65f3/full_access`. The access token must be for a user with the [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) or the [authentication policy administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) role. A user with role [global reader](~/identity/role-based-access-control/permissions-reference.md#global-reader) can perform read-only API calls.
+The app registration needs to have the API Permission for `Verifiable Credentials Service Admin` and then when acquiring the access token the app should use scope `6a8b4b39-c021-437c-b060-5a14a3fd65f3/full_access`. The access token must be for a user with the [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) or the [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) role. A user with role [global reader](~/identity/role-based-access-control/permissions-reference.md#global-reader) can perform read-only API calls.
 
 ### Application bearer tokens
 
