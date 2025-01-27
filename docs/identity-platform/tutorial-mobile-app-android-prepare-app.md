@@ -1,6 +1,6 @@
 ---
-title: Register an Android (Kotlin and Java) app in External ID tenant
-description: The tutorials provide a step-by-step guide on how to register and configure an Android mobile app in External ID tenant.
+title: Sign in users in an Android app by using Microsoft identity platform
+description: Set up an Android app project that signs in users into customer facing app by in an external tenant or employees in a workforce tenant
 
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -10,7 +10,7 @@ ms.service: entra-external-id
 
 ms.subservice: external
 ms.topic: tutorial
-ms.date: 05/10/2024
+ms.date: 01/27/2025
 ms.custom: developer
 zone_pivot_groups: entra-tenants
 #Customer intent: As a developer, I want to authenticate users from a sample Android mobile app so that I can experience how Microsoft Entra External ID
