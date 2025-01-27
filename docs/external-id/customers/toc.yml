@@ -121,7 +121,7 @@ items:
   items: 
     - name: Single-page app (SPA)
       items: 
-        - name: Browser-developed authentication
+        - name: Browser-delegated authentication
           items:
             - name: JavaScript 
               items:
