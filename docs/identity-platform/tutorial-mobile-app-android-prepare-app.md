@@ -34,4 +34,50 @@ In this tutorial you'll;
 
 ## Prerequisites
 
-- [Quickstart: Sign in users in a sample mobile app](quickstart-mobile-app-sign-in.md?pivots=external&tabs=java-external)
+- [Quickstart: Sign in users in a sample mobile app](quickstart-mobile-app-sign-in.md?pivots=external&tabs=java-external).
+- An Android project. If you don't have an Android project, create it.
+
+## Add MSAL dependency and relevant libraries to your project
+
+To add MSAL dependencies in your Android project, follow these steps:
+
+1. Open your project in Android Studio or create a new project.
+1. Open your application's `build.gradle` and add the following dependencies:
+
+    ```gradle
+    allprojects {
+    repositories {
+        //Needed for com.microsoft.device.display:display-mask library
+        maven {
+            url 'https://pkgs.dev.azure.com/MicrosoftDeviceSDK/DuoSDK-Public/_packaging/Duo-SDK-Feed/maven/v1'
+            name 'Duo-SDK-Feed'
+        }
+        mavenCentral()
+        google()
+        }
+    }
+    //...
+    
+    dependencies { 
+        implementation 'com.microsoft.identity.client:msal:5.+'
+        //...
+    }
+    ```
+   
+    
+    In the `build.gradle` configuration, repositories are defined for project dependencies. It includes a Maven repository URL for the `com.microsoft.device.display:display-mask` library from Azure DevOps. Additionally, it utilizes Maven Central and Google repositories. The dependencies section specifies the implementation of the MSAL version 5 and potentially other dependencies. 
+
+1. In Android Studio, select **File** > **Sync Project with Gradle Files**.
+
+
+## Add configuration
+
+#### [Android workforce tenant configuration](#tab/android-workforce)
+
+Workforce tenant configuration is similar to external tenant configuration. The only difference is the tenant ID.
+
+#### [Android external tenenat configuration](#tab/android-external)
+
+External tenant configuration is similar to workforce tenant configuration. The only difference is the tenant ID.
+
+---
