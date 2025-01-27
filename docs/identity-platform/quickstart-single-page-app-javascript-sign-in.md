@@ -17,7 +17,7 @@ ms.topic: quickstart
 
 ::: zone pivot="workforce"
 
-This quickstart uses a sample JavaScript (JS) single-page app (SPA) to show you how to sign in users by using the [authorization code flow](./v2-oauth2-auth-code-flow.md) with Proof Key for Code Exchange (PKCE) and call the Microsoft Graph API. The sample uses the [Microsoft Authentication Library for JavaScript](/javascript/api/%40azure/msal-react/) to handle authentication.
+In this quickstart, you use a sample single-page app (SPA) to show you how to sign in users by using the [authorization code flow](./v2-oauth2-auth-code-flow.md) with Proof Key for Code Exchange (PKCE) and call the Microsoft Graph API. The sample uses the [Microsoft Authentication Library](msal-overview.md) to handle authentication.
 
 ## Prerequisites
 
@@ -109,7 +109,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 #### [React](#tab/react-workforce)
 
 1. In your IDE, open the project folder, *ms-identity-docs-code-javascript/react-spa*, containing the sample.
-1. Open *src/authConfig.js* and update the following values with the information recorded in the admin center.
+1. Open *react-spa/src/authConfig.js* and update the following values with the information recorded in the admin center.
 
     :::code language="JavaScript" source="~/../ms-identity-docs-code-javascript/react-spa/src/authConfig.js":::
 
@@ -120,7 +120,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 #### [Angular](#tab/angular-workforce)
 
 1. In your IDE, open the project folder, *ms-identity-docs-code-javascript/angular-spa*, containing the sample.
-1. Open *src/app/app.module.ts* and update the following values with the information recorded in the admin center.
+1. Open *angular-spa/src/app/app.module.ts* and update the following values with the information recorded in the admin center.
 
     :::code language="JavaScript" source="~/../ms-identity-docs-code-javascript/angular-spa/src/app/app.module.ts":::
 
@@ -131,7 +131,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 #### [Blazor](#tab/blazor-workforce)
 
 1. In your IDE, open the project folder, *ms-identity-docs-code-dotnet/spa-blazor-wasm*, containing the sample.
-1. Open *wwwroot/appsettings.json* and update the following values with the information recorded earlier in the admin center.
+1. Open *spa-blazor-wasm/wwwroot/appsettings.json* and update the following values with the information recorded earlier in the admin center.
 
     :::code language="JavaScript" source="~/../ms-identity-docs-code-dotnet/spa-blazor-wasm/wwwroot/appsettings.json":::
     
@@ -142,9 +142,9 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 ## Run the application and sign in and sign out
 
-Run the project with a web server by using Node.js:
-
 #### [JavaScript](#tab/javascript-workforce)
+
+Run the project with a web server by using Node.js:
 
 1. To start the server, run the following commands from within the project directory:
 
@@ -162,6 +162,8 @@ Run the project with a web server by using Node.js:
 
 #### [React](#tab/react-workforce)
 
+Run the project with a web server by using Node.js:
+
 1. To start the server, run the following commands from within the project directory:
 
     ```console
@@ -177,6 +179,8 @@ Run the project with a web server by using Node.js:
     :::image type="content" source="./media/common-spa/react-spa/display-api-call-results-react-spa.png" alt-text="Screenshot of JavaScript App depicting the results of the API call." lightbox="./media/common-spa/react-spa/display-api-call-results-react-spa.png":::
 
 #### [Angular](#tab/angular-workforce)
+
+Run the project with a web server by using Node.js:
 
 1. To start the server, run the following commands from within the project directory:
 
@@ -194,10 +198,13 @@ Run the project with a web server by using Node.js:
 
 #### [Blazor](#tab/blazor-workforce)
 
+Run the project with a web server by using dotnet:
+
 1. To start the server, run the following commands from within the project directory:
 
     ```console
-
+    cd spa-blazor-wasm
+    dotnet workload install wasm-tools
     dotnet run
     ```
 
@@ -338,8 +345,6 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 1. Copy the `https` URL that appears in the terminal, for example, `https://localhost:3000`, and paste it into a browser. We recommend using a private or incognito browser session.
 1. Sign-in with an account registered to the external tenant.
 1. The following screenshot appears, indicating that you have signed in to the application and have accessed your profile details from the Microsoft Graph API.
-
-<!-- TODO: Add Last step screenshot -->
 
 #### [Angular](#tab/angular-external)
 

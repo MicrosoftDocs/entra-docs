@@ -1689,32 +1689,32 @@
     },
     {
       "source_path_from_root": "/docs/identity-platform/quickstart-single-page-app-blazor-wasm-sign-in.md",
-      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-javascript-sign-in",
+      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-javascript-sign-in?pivots=workforce",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity-platform/quickstart-single-page-app-react-sign-in.md",
-      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-javascript-sign-in",
+      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-javascript-sign-in?pivots=workforce",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity-platform/quickstart-single-page-app-angular-sign-in.md",
-      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-javascript-sign-in",
+      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-javascript-sign-in?pivots=workforce",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/sample-single-page-app-vanillajs-sign-in.md",
-      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-javascript-sign-in",
+      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-javascript-sign-in?pivots=external",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/sample-single-page-app-react-sign-in.md",
-      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-javascript-sign-in",
+      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-javascript-sign-in?pivots=external",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/sample-single-page-app-angular-sign-in.md",
-      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-javascript-sign-in",
+      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-javascript-sign-in?pivots=external",
       "redirect_document_id": false
     }
   ]
