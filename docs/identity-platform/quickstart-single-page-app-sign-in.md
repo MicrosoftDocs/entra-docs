@@ -53,31 +53,35 @@ In this quickstart, you use a sample single-page app (SPA) to show you how to si
 
 [!INCLUDE [Register a single-page application](./includes/register-app/spa-common/register-application-spa-common.md)]
 
-##### Add a platform redirect URI
-
-[!INCLUDE [Add a platform redirect URI](./includes/register-app/spa-common/add-platform-redirect-spa-port-3000.md)]
-
 #### [React](#tab/react-workforce)
 
 [!INCLUDE [Register a single-page application](./includes/register-app/spa-common/register-application-spa-common.md)]
-
-## Add a platform redirect URI
-
-[!INCLUDE [Add a platform redirect URI](./includes/register-app/spa-common/add-platform-redirect-spa-port-3000.md)]
 
 #### [Angular](#tab/angular-workforce)
 
 [!INCLUDE [Register a single-page application](./includes/register-app/spa-common/register-application-spa-common.md)]
 
-##### Add a platform redirect URI
-
-[!INCLUDE [Add a platform redirect URI](./includes/register-app/spa-common/add-platform-redirect-spa-port-4200.md)]
-
 #### [Blazor](#tab/blazor-workforce)
 
 [!INCLUDE [Register a single-page application](./includes/register-app/spa-common/register-application-spa-common.md)]
 
-##### Add a platform redirect URI
+---
+
+## Add a platform redirect URI
+
+#### [JavaScript](#tab/javascript-workforce)
+
+[!INCLUDE [Add a platform redirect URI](./includes/register-app/spa-common/add-platform-redirect-spa-port-3000.md)]
+
+#### [React](#tab/react-workforce)
+
+[!INCLUDE [Add a platform redirect URI](./includes/register-app/spa-common/add-platform-redirect-spa-port-3000.md)]
+
+#### [Angular](#tab/angular-workforce)
+
+[!INCLUDE [Add a platform redirect URI](./includes/register-app/spa-common/add-platform-redirect-spa-port-4200.md)]
+
+#### [Blazor](#tab/blazor-workforce)
 
 [!INCLUDE [Add a platform redirect URI](./includes/register-app/spa-common/add-platform-redirect-spa-port-5000.md)]
 
