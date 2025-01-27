@@ -183,4 +183,6 @@ b) Update AndroidManifest.xml. In the app go to **app** > **src** > **main** > *
     - *ENTER_YOUR_PROJECT_PACKAGE_NAME_HERE* and replace it with your Android's project package name.
     - *ENTER_YOUR_SIGNATURE_HASH_HERE* and replace it with the Signature Hash that you generated earlier when you added the platform redirect URL.
 
+[!INCLUDE [external-id-custom-domain](../external-id/customers/includes/use-custom-domain-url-android.md)]
+
 ---
