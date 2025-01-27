@@ -5,7 +5,7 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-js
-ms.date: 03/05/2024
+ms.date: 01/27/2025
 ms.reviewer: OwenRichards1
 ms.service: identity-platform
 zone_pivot_groups: entra-tenants
@@ -36,13 +36,13 @@ In this quickstart, you use a sample single-page app (SPA) to show you how to si
 #### [Angular](#tab/angular-workforce)
 
 * An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* [Node.js](https://nodejs.org/en/download/)
+* [Node.js](https://nodejs.org/en/download/).
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
 #### [Blazor](#tab/blazor-workforce)
 
 * An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* [.NET SDK](https://dotnet.microsoft.com/download/dotnet)
+* [.NET SDK](https://dotnet.microsoft.com/download/dotnet).
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
 ---
@@ -86,7 +86,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 - To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
     ```console
-    git clone https://github.com/Azure-Samples/ms-identity-docs-code-dotnet
+    git clone https://github.com/Azure-Samples/ms-identity-docs-code-dotnet.git
     ```
 
 - [Download the .zip file](https://github.com/Azure-Samples/ms-identity-docs-code-dotnet/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
@@ -368,7 +368,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 ## Sign out from the application
 
-1. Find the **Sign out** button in on the page, and select it.
+1. Find the **Sign out** button on the page, and select it.
 1. You'll be prompted to pick an account to sign out from. Select the account you used to sign in.
 
 A message appears indicating that you have signed out. You can now close the browser window.
