@@ -72,12 +72,115 @@ To add MSAL dependencies in your Android project, follow these steps:
 
 ## Add configuration
 
-#### [Android workforce tenant configuration](#tab/android-workforce)
+You pass the required tenant identifiers, such as the application (client) ID, to the MSAL SDK through a JSON configuration setting.
+ 
+Use these steps to create configuration file:
 
-Workforce tenant configuration is similar to external tenant configuration. The only difference is the tenant ID.
+#### [Workforce tenant configuration](#tab/android-workforce)
 
-#### [Android external tenenat configuration](#tab/android-external)
+1. In Android Studio's project pane, navigate to **app\src\main\res**.
+1. Right-click **res** and choose **New** > **Directory**. Enter `raw` as the new directory name and select **OK**.
+1. In **app** > **src** > **main** > **res** > **raw**, create a new JSON file called `auth_config_single_account.json` and paste the MSAL Configuration that you saved earlier.
 
-External tenant configuration is similar to workforce tenant configuration. The only difference is the tenant ID.
+   Below the redirect URI, paste:
+
+   ```json
+     "account_mode" : "SINGLE",
+   ```
+
+   Your config file should resemble this example:
+
+   ```json
+   {
+     "client_id": "00001111-aaaa-bbbb-3333-cccc4444",
+     "authorization_user_agent": "WEBVIEW",
+     "redirect_uri": "msauth://com.azuresamples.msalandroidapp/00001111%cccc4444%3D",
+     "broker_redirect_uri_registered": true,
+     "account_mode": "SINGLE",
+     "authorities": [
+       {
+         "type": "AAD",
+         "audience": {
+           "type": "AzureADandPersonalMicrosoftAccount",
+           "tenant_id": "common"
+         }
+       }
+     ]
+   }
+   ```
+
+   As this tutorial only demonstrates how to configure an app in Single Account mode, see [single vs. multiple account mode](./single-multi-account.md) and [configuring your app](./msal-configuration.md) for more information
+
+1. We recommend using 'WEBVIEW'. In case you want to configure  "authorization_user_agent" as 'BROWSER' in your app, you need make the following updates.
+a) Update auth_config_single_account.json with  "authorization_user_agent": "Browser". 
+b) Update AndroidManifest.xml. In the app go to **app** > **src** > **main** > **AndroidManifest.xml**, add the `BrowserTabActivity` activity as a child of the `<application>` element. This entry allows Microsoft Entra ID to call back to your application after it completes the authentication:
+
+   ```xml
+   <!--Intent filter to capture System Browser or Authenticator calling back to our app after sign-in-->
+   <activity
+       android:name="com.microsoft.identity.client.BrowserTabActivity"
+       android:exported="true">
+       <intent-filter>
+           <action android:name="android.intent.action.VIEW" />
+           <category android:name="android.intent.category.DEFAULT" />
+           <category android:name="android.intent.category.BROWSABLE" />
+           <data android:scheme="msauth"
+               android:host="Enter_the_Package_Name"
+               android:path="/Enter_the_Signature_Hash" />
+       </intent-filter>
+   </activity>
+   ```
+
+   - Use the **Package name** to replace `android:host=.` value. It should look like `com.azuresamples.msalandroidapp`.
+   - Use the **Signature Hash** to replace `android:path=` value. Ensure that there's a leading `/` at the beginning of your Signature Hash. It should look like `/aB1cD2eF3gH4+iJ5kL6-mN7oP8q=`.
+
+   You can find these values in the Authentication blade of your app registration as well.
+
+
+#### [External tenenat configuration](#tab/android-external)
+
+
+1. In Android Studio's project pane, navigate to *app\src\main\res*.  
+1. Right-click **res** and select **New** > **Directory**. Enter `raw` as the new directory name and select **OK**.  
+1. In *app\src\main\res\raw*, create a new JSON file called `auth_config_ciam_auth.json`.  
+1. In the `auth_config_ciam_auth.json` file, add the following MSAL configurations:
+
+    ```json
+    {
+      "client_id" : "Enter_the_Application_Id_Here",
+      "authorization_user_agent" : "DEFAULT",
+      "redirect_uri" : "Enter_the_Redirect_Uri_Here",
+      "account_mode" : "SINGLE",
+      "authorities" : [
+        {
+          "type": "CIAM",
+          "authority_url": "https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/Enter_the_Tenant_Subdomain_Here.onmicrosoft.com/"
+        }
+      ]
+    }
+    ```
+
+    The JSON configuration file specifies various settings for an Android application. It includes the client ID, authorization user agent, redirect URI, and account mode. Additionally, it defines an authority for authentication, specifying the type and authority URL.    
+
+    Replace the following placeholders with your tenant values that you obtained from the Microsoft Entra admin center:
+
+    - `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the app you registered earlier.
+    - `Enter_the_Redirect_Uri_Here` and replace it with the value of *redirect_uri* in the Microsoft Authentication Library (MSAL) configuration file you downloaded earlier when you added the platform redirect URL.
+    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't know your tenant subdomain, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+
+1. Open */app/src/main/AndroidManifest.xml* file.
+1. In *AndroidManifest.xml*, add the following data specification to an intent filter:
+
+    ```xml
+    <data
+        android:host="ENTER_YOUR_PROJECT_PACKAGE_NAME_HERE"
+        android:path="/ENTER_YOUR_SIGNATURE_HASH_HERE"
+        android:scheme="msauth" />
+    ```
+    
+    Find the placeholder:
+    
+    - *ENTER_YOUR_PROJECT_PACKAGE_NAME_HERE* and replace it with your Android's project package name.
+    - *ENTER_YOUR_SIGNATURE_HASH_HERE* and replace it with the Signature Hash that you generated earlier when you added the platform redirect URL.
 
 ---
