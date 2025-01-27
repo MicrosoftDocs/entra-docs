@@ -12,7 +12,7 @@ ms.subservice: external
 ms.topic: tutorial
 ms.date: 01/27/2025
 ms.custom: developer
-zone_pivot_groups: entra-tenants
+
 #Customer intent: As a developer, I want to authenticate users from a sample Android mobile app so that I can experience how Microsoft Entra External ID
 ---
 
