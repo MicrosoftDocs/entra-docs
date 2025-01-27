@@ -29,7 +29,6 @@ In this tutorial you'll;
 >
 > - Add MSAL dependency
 > - Add configuration
-> - Use custom URL domain (Optional)
 > - Create MSAL SDK instance
 
 ## Prerequisites
@@ -166,7 +165,7 @@ b) Update AndroidManifest.xml. In the app go to **app** > **src** > **main** > *
 
     - `Enter_the_Application_Id_Here` and replace it with the **Application (client) ID** of the app you registered earlier.
     - `Enter_the_Redirect_Uri_Here` and replace it with the value of *redirect_uri* in the Microsoft Authentication Library (MSAL) configuration file you downloaded earlier when you added the platform redirect URL.
-    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't know your tenant subdomain, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't know your tenant subdomain, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-customer-tenant-details).
 
 1. Open */app/src/main/AndroidManifest.xml* file.
 1. In *AndroidManifest.xml*, add the following data specification to an intent filter:
@@ -186,3 +185,55 @@ b) Update AndroidManifest.xml. In the app go to **app** > **src** > **main** > *
 [!INCLUDE [external-id-custom-domain](../external-id/customers/includes/use-custom-domain-url-android.md)]
 
 ---
+
+## Create MSAL SDK instance
+
+To initialize MSAL SDK instance, use the following code:
+
+#### [Workforce tenant configuration](#tab/android-workforce)
+
+```java
+PublicClientApplication.createSingleAccountPublicClientApplication(
+    getContext(),
+    R.raw.auth_config_single_account,
+    new IPublicClientApplication.ISingleAccountApplicationCreatedListener() {
+        @Override
+        public void onCreated(ISingleAccountPublicClientApplication application) {
+            // Initialize the single account application instance
+            mSingleAccountApp = application;
+            loadAccount();
+        }
+
+        @Override
+        public void onError(MsalException exception) {
+            // Handle any errors that occur during initialization
+            displayError(exception);
+        }
+    }
+);
+```
+
+This code creates a single account public client application using the configuration file auth_config_single_account.json. When the application is successfully created, it assigns the instance to mSingleAccountApp and calls the loadAccount() method. If an error occurs during the creation, it handles the error by calling the displayError(exception) method.
+
+
+#### [External tenant configuration](#tab/android-external)
+
+```kotlin
+private suspend fun initClient(): ISingleAccountPublicClientApplication = withContext(Dispatchers.IO) {
+    return@withContext PublicClientApplication.createSingleAccountPublicClientApplication(
+        this@MainActivity,
+        R.raw.auth_config_ciam_auth
+    )
+}
+```
+
+The code initializes a single account public client application asynchronously. It uses the provided authentication configuration file and runs on the I/O dispatcher.
+
+---
+
+Make sure you include the import statements. Android Studio should include the import statements for you automatically.
+
+## Next steps
+
+> [!div class="nextstepaction"]
+> [Tutorial: Add add sign-in in your Android app](tutorial-web-app-node-sign-in-sign-out.md).
