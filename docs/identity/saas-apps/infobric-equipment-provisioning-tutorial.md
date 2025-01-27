@@ -42,7 +42,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Step 1: Obtain your Infobric Equipment endpoint and token
 
-1. Log in to Infobric Equipment [here](https://company.infobricequipment.application/).
+1. Log in to Infobric Equipment [here](https://company.infobricequipment.app/).
 1. If you are a member of multiple companies: Make sure you have picked the correct company in the top left corner:
 
    ![Screenshot of Infobric Equipment company picker](./media/infobric-equipment-provisioning-tutorial/pick-company.png)
