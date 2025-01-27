@@ -152,13 +152,13 @@ After the module is installed, use the following steps to complete each task as 
    * To see if a single user's password is set to never expire, run the following cmdlet. Replace `<user ID>` with the user ID of the user you want to check:
 
        ```powershell
-       Get-MgUser -UserId <user ID> | Select-Object @{N="PasswordNeverExpires";E={$_.PasswordPolicies -contains "DisablePasswordExpiration"}}
+       Get-MgUser -UserId <user ID> -Property UserPrincipalName, PasswordPolicies | Select-Object @{N="PasswordNeverExpires";E={$_.PasswordPolicies -contains "DisablePasswordExpiration"}}
        ```
 
    * To see the **Password never expires** setting for all users, run the following cmdlet:
 
        ```powershell
-       Get-MgUser -All | Select-Object UserPrincipalName, @{N="PasswordNeverExpires";E={$_.PasswordPolicies -contains "DisablePasswordExpiration"}}
+       Get-MgUser -All -Property UserPrincipalName, PasswordPolicies | Select-Object UserPrincipalName, @{N="PasswordNeverExpires";E={$_.PasswordPolicies -contains "DisablePasswordExpiration"}}
        ```
 
 ### Set a password to expire
