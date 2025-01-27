@@ -137,7 +137,7 @@ b) Update AndroidManifest.xml. In the app go to **app** > **src** > **main** > *
    You can find these values in the Authentication blade of your app registration as well.
 
 
-#### [External tenenat configuration](#tab/android-external)
+#### [External tenant configuration](#tab/android-external)
 
 
 1. In Android Studio's project pane, navigate to *app\src\main\res*.  
