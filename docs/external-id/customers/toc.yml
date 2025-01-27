@@ -26,7 +26,7 @@ items:
       - name: JavaScript
         items:
           - name: Sign in users
-            href: /entra/identity-platform/quickstart-single-page-app-javascript-app-sign-in
+            href: /entra/identity-platform/quickstart-javascript-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
   - name: Web app
     items:
       - name: Sign in users
