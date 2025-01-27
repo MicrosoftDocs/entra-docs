@@ -109,7 +109,19 @@ Infobric is not yet listed in the [Microsoft Entra App Gallery](https://www.micr
 
 ## Step 6: Map group attributes
 
-No changes are needed for the group mappings.
+1. Click **Attribute mapping** (may still be **Attribute mapping (Preview)**)
+1. Click **Provision Microsoft Entra ID Groups**.
+1. Remove mappings that are not in the table below.
+1. Add any mappings that are in the table but not already among the Entra mappings.
+1. Make sure that all fields match exactly as shown in the table below.
+1. Keep all other defaults on the Attribute mapping page.
+1. Click **Save**.
+
+| Equipment     | Entra         | Matching | When?  |
+| ------------- | ------------- | :------: | ------ |
+| `displayName` | `displayName` |    1     | Always |
+| `externalId`  | `objectId`    |          | Always |
+| `members`     | `members`     |          | Always |
 
 ## Step 7: Provision a single user and a single group
 
@@ -119,7 +131,7 @@ No changes are needed for the group mappings.
 
    ![Screenshot of successful user proviosioned on demand.](./media/infobric-equipment-provisioning-tutorial/provion-user-on-demand-success.png)
 
-1. Select a single group and click **Provision**. The users should be created in Infobric Equipment.
+1. Select a single group and click **Provision**. As with the user, success should be obvious.
 
 If you encounter any issues with provisioning on demand, please check the mappings in steps 5 and 6. Then try again. If that does not work, please contact Infobric Equipment via the chat.
 
