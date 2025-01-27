@@ -225,7 +225,7 @@ Run the project with a web server by using dotnet:
 
 - An external tenant. To create one, choose from the following methods:
   - Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code. *(Recommended)*
-  - [Create a new external tenant](how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+  - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 - [Node.js](https://nodejs.org/en/download/).
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
@@ -233,7 +233,7 @@ Run the project with a web server by using dotnet:
 
 - An external tenant. To create one, choose from the following methods:
   - Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code. *(Recommended)*
-  - [Create a new external tenant](how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+  - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 - [Node.js](https://nodejs.org/en/download/).
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
@@ -241,7 +241,7 @@ Run the project with a web server by using dotnet:
 
 - An external tenant. To create one, choose from the following methods:
   - Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code. *(Recommended)*
-  - [Create a new external tenant](how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+  - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 - [Node.js](https://nodejs.org/en/download/).
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
