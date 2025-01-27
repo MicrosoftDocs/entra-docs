@@ -1892,6 +1892,36 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/saas-apps/omnissa-identity-service-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/bersin-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/lines-elibrary-advance-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/soonr-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/work-com-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/quickstart-single-page-app-javascript-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-sign-in",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity-platform/quickstart-single-page-app-blazor-wasm-sign-in.md",
       "redirect_url": "/entra/identity-platform/quickstart-single-page-app-javascript-sign-in",
       "redirect_document_id": false
