@@ -30,6 +30,9 @@ This article shares the best practices for protecting FLWs across various home/w
 
 ## Best Practices for Protecting FLW Across Various Home/Work Access Scenarios
 
+:::image type="content" source="./media/security-practices-for-frontline-workers/front-line-workers-scenarios.png alt-text="Screenshot that shows possible scenarios when working with frontline workers.":::
+
+
 ### Device Types and Descriptions
 
 | **Device Types**           | **Description**                                                                                                                                         |
