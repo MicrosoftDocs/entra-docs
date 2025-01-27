@@ -236,4 +236,4 @@ Make sure you include the import statements. Android Studio should include the i
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial: Add add sign-in in your Android app](tutorial-web-app-node-sign-in-sign-out.md).
+> [Tutorial: Add add sign-in in your Android app](tutorial-mobile-app-android-sign-in-sign-out.md).
