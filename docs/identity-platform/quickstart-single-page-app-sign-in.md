@@ -305,15 +305,15 @@ Run the project with a web server by using dotnet:
 
 ## Add a platform redirect URI
 
-#### [JavaScript](#tab/javascript-workforce)
+#### [JavaScript](#tab/javascript-external)
 
 [!INCLUDE [Add a platform redirect URI](./includes/register-app/spa-common/add-platform-redirect-spa-port-3000.md)]
 
-#### [React](#tab/react-workforce)
+#### [React](#tab/react-external)
 
 [!INCLUDE [Add a platform redirect URI](./includes/register-app/spa-common/add-platform-redirect-spa-port-3000.md)]
 
-#### [Angular](#tab/angular-workforce)
+#### [Angular](#tab/angular-external)
 
 [!INCLUDE [Add a platform redirect URI](./includes/register-app/spa-common/add-platform-redirect-spa-port-4200.md)]
 
