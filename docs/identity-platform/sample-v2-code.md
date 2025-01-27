@@ -1,6 +1,6 @@
 ---
 title: Code samples for authentication and authorization
-description: An index of code samples in the Microsoft Identity platform, grouped by app types, languages, and frameworks, demonstrates how these libraries are used in apps for authentication and authorization.
+description: An index of code samples in the Microsoft identity platform, grouped by app types, languages, and frameworks, demonstrates how these libraries are used in apps for authentication and authorization.
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
