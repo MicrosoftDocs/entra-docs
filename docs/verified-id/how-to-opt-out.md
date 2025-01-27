@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-verified-id
 ms.topic: how-to
 
-ms.date: 11/11/2024
+ms.date: 01/21/2025
 ms.author: barclayn
 
 #Customer intent: As an administrator, I'm looking for information to help me disable my Microsoft Entra Verified ID environment.
