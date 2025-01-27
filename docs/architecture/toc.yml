@@ -305,7 +305,7 @@ items:
         href: service-accounts-standalone-managed.md
       - name: Secure computer accounts
         href: service-accounts-computer.md
-      - name: Secure on-premises service accounts
+      - name: Secure on-premises user service accounts
         href: service-accounts-user-on-premises.md
       - name: Govern on-premises service accounts
         href: service-accounts-govern-on-premises.md
