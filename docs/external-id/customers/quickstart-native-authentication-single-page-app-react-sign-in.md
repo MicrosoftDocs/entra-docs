@@ -119,4 +119,4 @@ You've now configured the sample app and it's ready to run.
 
 - [Set up a reverse proxy for a single-page app that uses native authentication API by using Azure Function App](how-to-native-authentication-cors-solution-test-environment.md).
 - [Use Azure Front Door as a reverse proxy in production environment for a single-page app that uses native authentication](how-to-native-authentication-cors-solution-production-environment.md).
-- [Build a React SPA that uses native authentication APIs from scratch](tutorial-native-authentication-single-page-app-react-sign-up.md).
+- [Build a React SPA that uses native authentication API from scratch](tutorial-native-authentication-single-page-app-react-sign-up.md).
