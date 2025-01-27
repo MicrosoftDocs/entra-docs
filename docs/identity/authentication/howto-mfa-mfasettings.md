@@ -444,7 +444,7 @@ For more information, see [What authentication and verification methods are avai
 To enable or disable verification methods, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Identity** > **Users**.
+1. Browse to **Identity** > **Users** > **All users**.
 1. Select **Per-user MFA**.
 1. Under **Multifactor authentication** at the top of the page, select **Service settings**.
 1. On the **Service settings** page, under **Verification options**, select or clear the appropriate checkboxes.
@@ -485,7 +485,7 @@ The feature reduces the number of authentications on web apps, which normally pr
 To enable and configure the option to allow users to remember their MFA status and bypass prompts, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Identity** > **Users**.
+1. Browse to **Identity** > **Users** > **All users**.
 1. Select **Per-user MFA**.
 1. Under **Multifactor authentication** at the top of the page, select **service settings**.
 1. On the **service settings** page, under **remember multifactor authentication**, select **Allow users to remember multifactor authentication on devices they trust**.

@@ -4,7 +4,7 @@ description: "Add sign in logic to a Python web app"
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
-ms.date: 04/03/2024
+ms.date: 01/27/2025
 ms.service: identity-platform
 
 ms.topic: tutorial
@@ -65,7 +65,7 @@ app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
 
 ## Initialize an authentication object
 
-Next, you initialize an authentication object by creating an instance of the `[identity.web.Auth](https://identity-library.readthedocs.io/en/latest/#identity.web.Auth)` class. You also pass the parameters `session`, `authority`, `client_id`, and `client_credential` in the constructor when initializing the Auth object, as follows: 
+Next, you initialize an authentication object by creating an instance of the [`identity.web.Auth`](https://identity-library.readthedocs.io/en/latest/#identity.web.Auth) class. You also pass the parameters `session`, `authority`, `client_id`, and `client_credential` in the constructor when initializing the Auth object, as follows: 
 
 ```python
 app.jinja_env.globals.update(Auth=identity.web.Auth)  # Useful in template for B2C
