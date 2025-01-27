@@ -1,5 +1,5 @@
 ---
-title: How trusts work for Microsoft Entra Domain Services | Microsoft Docs
+title: How trusts work for Microsoft Entra Domain Services (Preview) | Microsoft Learn
 description: Learn more about how forest trust work with Microsoft Entra Domain Services
 author: justinha
 manager: amycolannino
@@ -7,11 +7,11 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: conceptual
-ms.date: 01/21/2025
+ms.date: 01/27/2025
 ms.author: justinha
 ---
 
-# How trust relationships work for forests in Active Directory 
+# How trust relationships work for forests in Active Directory (Preview)
 
 Active Directory Domain Services (AD DS) provides security across multiple domains or forests through domain and forest trust relationships. Before authentication can occur across trusts, Windows must first check if the domain being requested by a user, computer, or service has a trust relationship with the domain of the requesting account.
 
@@ -22,7 +22,7 @@ The access control mechanisms provided by AD DS and the Windows distributed secu
 The Net Logon service implements the trust path using an authenticated remote procedure call (RPC) connection to the trusted domain authority. A secured channel also extends to other AD DS domains through interdomain trust relationships. This secured channel is used to obtain and verify security information, including security identifiers (SIDs) for users and groups.
 
 >[!NOTE]
->Domain Services supports multiple forest trust directions, including two-way trusts and one-way trusts that can be either incoming or outgoing. 
+>Domain Services supports multiple forest trust directions, including a current preview of two-way trusts and one-way trusts that can be either incoming or outgoing. 
 
 For an overview of how trusts apply to Domain Services, see [Forest concepts and features][create-forest-trust].
 
@@ -40,7 +40,7 @@ The following diagram shows that all domains in *Tree 1* and *Tree 2* have trans
 
 ### One-way and two-way trusts
 
-Trust relationships enable access to resources can be either one-way or two-way.
+Trust relationships enable access to resources can be either one-way or two-way. 
 
 A one-way trust is a unidirectional authentication path created between two domains. In a one-way trust between *Domain A* and *Domain B*, users in *Domain A* can access resources in *Domain B*. However, users in *Domain B* can't access resources in *Domain A*.
 

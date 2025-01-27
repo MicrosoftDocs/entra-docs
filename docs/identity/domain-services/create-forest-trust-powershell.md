@@ -1,5 +1,5 @@
 ---
-title: Create a Microsoft Entra Domain Services forest trust using Azure PowerShell | Microsoft Docs
+title: Create a Microsoft Entra Domain Services forest trust using Azure PowerShell (Preview) | Microsoft Learn
 description: In this article, learn how to create and configure a Microsoft Entra Domain Services forest trust to an on-premises Active Directory Domain Services environment using Azure PowerShell.
 author: justinha
 manager: amycolannino
@@ -14,9 +14,11 @@ ms.custom: devx-track-azurepowershell, has-azure-ad-ps-ref, azure-ad-ref-level-o
 #Customer intent: As an identity administrator, I want to create a Microsoft Entra Domain Services forest and one-way outbound trust from a Microsoft Entra Domain Services forest to an on-premises Active Directory Domain Services forest using Azure PowerShell to provide authentication and resource access between forests.
 ---
 
-# Create a Microsoft Entra Domain Services forest trust to an on-premises domain using Azure PowerShell
+# Create a Microsoft Entra Domain Services forest trust to an on-premises domain using Azure PowerShell (Preview)
 
-In environments where you can't synchronize password hashes, or you have users that exclusively sign in using smart cards so they don't know their password, you can create a one-way outbound trust from Microsoft Entra Domain Services to one or more on-premises AD DS environments. This trust relationship lets users, applications, and computers authenticate against an on-premises domain from the Domain Services managed domain. In this case, on-premises password hashes are never synchronized.
+Organizations often create a trust to improve user collaboration when they might manage identities in a hybrid environment, or they plan for a merger or acquisition. Microsoft Entra Domain Services always supported one-way, outbound trusts from a managed domain to another domain. Currently in preview, you can also create one-way inbound trusts or two-way trusts. 
+
+For example, in environments where you can't synchronize password hashes, or you have users that exclusively sign in using smart cards so they don't know their password, you can create a one-way outbound trust from Microsoft Entra Domain Services to one or more on-premises AD DS environments. This trust relationship lets users, applications, and computers authenticate against an on-premises domain from the Domain Services managed domain. In this case, on-premises password hashes are never synchronized.
 
 ![Diagram of forest trust from Domain Services to on-premises AD DS](./media/create-forest-powershell/forest-trust-relationship.png)
 
