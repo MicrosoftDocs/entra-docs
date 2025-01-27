@@ -1444,7 +1444,7 @@
     },
     {
       "source_path_from_root": "/docs/identity/enterprise-apps/one-click-sso-tutorial.md",
-      "redirect_url": "/docs/identity/enterprise-apps/what-is-application-management",
+      "redirect_url": "/entra/identity/enterprise-apps/what-is-application-management",
       "redirect_document_id": false
     },
     {
