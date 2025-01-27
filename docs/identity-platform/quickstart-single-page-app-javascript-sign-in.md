@@ -1,6 +1,6 @@
 ---
-title: "Quickstart: Sign in to a SPA & call an API - JavaScript"
-description: In this quickstart, learn how a JavaScript single-page application (SPA) can sign in users of personal accounts, work accounts, and school accounts by using the authorization code flow.
+title: Quickstart - Sign in to a SPA & call an API
+description: Quickstart that shows how to configure a sample SPA that signs in employees or customers by using Microsoft identity platform
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
@@ -10,10 +10,10 @@ ms.reviewer: OwenRichards1
 ms.service: identity-platform
 zone_pivot_groups: entra-tenants
 ms.topic: quickstart
-#Customer intent: As an app developer, I want to learn how to get access tokens and refresh tokens by using the Microsoft identity platform so that my JavaScript app can sign in users of personal accounts, work accounts, and school accounts.
+#Customer intent: As an app developer, I want to learn how to get access tokens and refresh tokens by using the Microsoft identity platform so that my single-page app app can sign in users of personal accounts, work accounts, and school accounts.
 ---
 
-# Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using JavaScript
+# Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API
 
 In this quickstart, you use a sample single-page app (SPA) to show you how to sign in users by using the [authorization code flow](./v2-oauth2-auth-code-flow.md) with Proof Key for Code Exchange (PKCE) and call the Microsoft Graph API. The sample uses the [Microsoft Authentication Library](msal-overview.md) to handle authentication.
 
