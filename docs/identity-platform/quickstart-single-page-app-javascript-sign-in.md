@@ -15,9 +15,9 @@ ms.topic: quickstart
 
 # Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using JavaScript
 
-::: zone pivot="workforce"
-
 In this quickstart, you use a sample single-page app (SPA) to show you how to sign in users by using the [authorization code flow](./v2-oauth2-auth-code-flow.md) with Proof Key for Code Exchange (PKCE) and call the Microsoft Graph API. The sample uses the [Microsoft Authentication Library](msal-overview.md) to handle authentication.
+
+::: zone pivot="workforce"
 
 ## Prerequisites
 
