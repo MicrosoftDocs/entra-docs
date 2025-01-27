@@ -287,6 +287,50 @@ Run the project with a web server by using dotnet:
 
 ---
 
+## Register the application and record identifiers
+
+#### [JavaScript](#tab/javascript-external)
+
+[!INCLUDE [Register a single-page application](../external-id/customers/includes/register-app/register-client-app-common.md)]
+
+#### [React](#tab/react-external)
+
+[!INCLUDE [Register a single-page application](../external-id/customers/includes/register-app/register-client-app-common.md)]
+
+#### [Angular](#tab/angular-external)
+
+[!INCLUDE [Register a single-page application](../external-id/customers/includes/register-app/register-client-app-common.md)]
+
+---
+
+## Add a platform redirect URI
+
+#### [JavaScript](#tab/javascript-workforce)
+
+[!INCLUDE [Add a platform redirect URI](./includes/register-app/spa-common/add-platform-redirect-spa-port-3000.md)]
+
+#### [React](#tab/react-workforce)
+
+[!INCLUDE [Add a platform redirect URI](./includes/register-app/spa-common/add-platform-redirect-spa-port-3000.md)]
+
+#### [Angular](#tab/angular-workforce)
+
+[!INCLUDE [Add a platform redirect URI](./includes/register-app/spa-common/add-platform-redirect-spa-port-4200.md)]
+
+---
+
+## Grant admin consent
+
+[!INCLUDE [Grant admin consent](../external-id/customers/includes/configure-user-flow/create-sign-in-sign-out-user-flow.md)]
+
+## Create a user flow
+
+[!INCLUDE [Create a user flow](../external-id/customers/includes/configure-user-flow/add-app-user-flow.md)]
+
+## Associate the SPA with the user flow
+
+[!INCLUDE [Associate the SPA with the user flow](../external-id/customers/includes/configure-user-flow/add-app-user-flow.md)]
+
 ## Clone or download sample SPA
 
 To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
