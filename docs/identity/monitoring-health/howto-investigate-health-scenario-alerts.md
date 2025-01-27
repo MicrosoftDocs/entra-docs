@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 01/16/2025
+ms.date: 01/27/2025
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -87,7 +87,7 @@ To view these details from the **Health monitoring** landing page:
     ![Screenshot of the affected entities for an active alert.](media/howto-investigate-health-scenario-alerts/affected-entities-documentation.png)
 
 1. From the details that appear in the panel that opens, select an entity to explore further.
-    - The top ten most affected entities appear.
+    - The top 10 most affected entities appear.
     - Selecting an item from the list navigates you to the user or application's profile page for further investigation.
 
 1. The signal for the alert appears under the **Signals** section. Review the signal to understand the pattern and identify anomalies.
@@ -101,44 +101,52 @@ To view these details from the **Health monitoring** landing page:
 
 ### [Microsoft Graph API](#tab/microsoft-graph-api)
 
-With the Microsoft Graph APIs, you can view the metrics that make up the health signals and alerts and review the impact summary for a health alert. The `serviceActivity` resource gets the metrics that feed into the Microsoft Entra Health monitoring signals, which are visualized in the Microsoft Entra admin center. For more information, see [serviceActivity resource type](/graph/api/resources/serviceactivity?view=graph-rest-beta&preserve-view=true).
+With the Microsoft Graph APIs, you can view the metrics that make up the health signals and alerts and review the impact summary for a health alert.
 
 #### View the signals
+
+The `serviceActivity` resource gets the metrics that feed into the Microsoft Entra Health monitoring signals, which are visualized in the Microsoft Entra admin center. For more information, see [serviceActivity resource type](/graph/api/resources/serviceactivity?view=graph-rest-beta&preserve-view=true).
 
 1. Sign in to [Microsoft Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer) as at least a [Helpdesk Administrator](../role-based-access-control/permissions-reference.md#helpdesk-administrator) and consent to the appropriate permissions.
 1. Select **GET** as the HTTP method from the dropdown and set the API version to **beta**.
 1. Run the following query to retrieve the multifactor authentication (MFA) sign-in success metrics during a specific interval:
 
-  ```http
-    GET https://graph.microsoft.com/beta/reports/serviceActivity/getMetricsForMfaSignInFailure(inclusiveIntervalStartDateTime=2023-01-01T00:00:00Z,exclusiveIntervalEndDateTime=2023-01-01T00:20:00Z,aggregationIntervalInMinutes=10)
-  ```
+  **Request**:
 
-The response shows how many successful sign-ins occurred during the specific time frame, aggregated in ten-minute intervals.
+    ```http
+      GET https://graph.microsoft.com/beta/reports/serviceActivity/getMetricsForMfaSignInFailure(inclusiveIntervalStartDateTime=2023-01-01T00:00:00Z,exclusiveIntervalEndDateTime=2023-01-01T00:20:00Z,aggregationIntervalInMinutes=10)
+    ```
 
-```http
-HTTP/1.1 200 OK
-Content-Type: application/json
+  **Response**:
 
-{
-  "@odata.context": "https://graph.microsoft.com/beta/networkAccess/reports/$metadata#Collection(serviceActivityValueMetric)",
-  "value": [
+  The response shows how many successful sign-ins occurred during the specific time frame, aggregated in ten-minute intervals. 
+
+    ```http
+    HTTP/1.1 200 OK
+    Content-Type: application/json
+    
     {
-      "intervalStartDateTime": "2023-01-10T00:00:00Z",
-      "value": 4
-    },
-    {
-      "intervalStartDateTime": "2023-01-10T00:10:00Z",
-      "value": 5
-    },
-    {
-      "intervalStartDateTime": "2023-01-10T00:20:00Z",
-      "value": 4
+      "@odata.context": "https://graph.microsoft.com/beta/networkAccess/reports/$metadata#Collection(serviceActivityValueMetric)",
+      "value": [
+        {
+          "intervalStartDateTime": "2023-01-10T00:00:00Z",
+          "value": 4
+        },
+        {
+          "intervalStartDateTime": "2023-01-10T00:10:00Z",
+          "value": 5
+        },
+        {
+          "intervalStartDateTime": "2023-01-10T00:20:00Z",
+          "value": 4
+        }
+      ]
     }
-  ]
-}
-```
+    ```
 
 #### Investigate the alerts
+
+The `alert` resource type provides details about the health monitoring alerts, including the impact summary for the alert. For more information, see [alert resource type](/graph/api/resources/healthmonitoring-alert?view=graph-rest-beta&preserve-view=true).
 
 1. Run the following query to retrieve all active alerts for your tenant.
 
@@ -157,11 +165,11 @@ Content-Type: application/json
       "@odata.context": "https://graph.microsoft.com/beta/$metadata#reports/healthMonitoring/alerts(id,alertType)",
       "value": [
         {
-          "id": "0c56dfcb-13db-4128-bda2-fc3e42742467",
+          "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
           "alertType": "mfaSignInFailure"
         },
         {
-          "id": "564bc4e2-10f6-4d76-b10c-25657637f748",
+          "id": "bbbbbbbb-1111-2222-3333-cccccccccccc",
           "alertType": "managedDeviceSignInFailure"
         },
       ]
@@ -171,6 +179,8 @@ Content-Type: application/json
 1. Locate and save the `id` of the alert you want to investigate and run the following query, using `id` as the `alertId`. The following query retrieves the alert details, expanding
 
     **Request**:
+    
+    For this example, we're using the `mfaSignInFailure` alert type, but the `id` value is a placeholder value. Replace it with the `id` of the alert you want to investigate.
 
     ```http
     GET https://graph.microsoft.com/beta/reports/healthMonitoring/alerts/{id}?$expand=enrichment/impacts/microsoft.graph.healthmonitoring.directoryobjectimpactsummary/resourceSampling&$select=alertType, createdDateTime, enrichment'
@@ -178,8 +188,51 @@ Content-Type: application/json
 
     **Response**:
 
+    The response is shortened for readability. The response includes the User IDs of the affected entities, which can be used in further inquiries into the user's sign-in activity. The response also includes queries for the related reports.
+
+    ```http
+    {
+      "@odata.context": "https://graph.microsoft.com/beta/$metadata#reports/healthMonitoring/alerts(enrichment/impacts/microsoft.graph.healthMonitoring.directoryObjectImpactSummary/resourceSampling())/$entity",
+      "id": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+      "alertType": "mfaSignInFailure",
+      "scenario": "mfa",
+      "category": "authentication",
+      "createdDateTime": "2025-01-10T23:59:41.1216288Z",
+      "state": "resolved",
+      "enrichment": {
+          "state": "enriched",
+          "supportingData": null,
+          "impacts": [
+              {
+                  "@odata.type": "#microsoft.graph.healthMonitoring.userImpactSummary",
+                  "resourceType": "User",
+                  "impactedCount": "4",
+                  "impactedCountLimitExceeded": false,
+                  "resourceSampling": [
+                      {
+                          "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
+                      },
+                      {
+                          "id": "66aa66aa-bb77-cc88-dd99-00ee00ee00ee"
+                      },
+                      {
+                          "id": "11bb11bb-cc22-dd33-ee44-55ff55ff55ff"
+                      },
+                      {
+                          "id": "55ff55ff-aa66-bb77-cc88-99dd99dd99dd"
+                      }
+                  ]
+              },
+          ]
+          "signals": {
+              "mfaSignInFailure": "https://graph.microsoft.com//beta/reports/serviceActivity/getMetricsForMfaSignInFailure/(inclusiveIntervalStartDateTime=2024-12-26T23:59:41Z,exclusiveIntervalEndDateTime=2025-01-10T23:59:41Z)",
+              "mfaSignInSuccess": "https://graph.microsoft.com//beta/reports/serviceActivity/getMetricsForMfaSignInSuccess/(inclusiveIntervalStartDateTime=2024-12-26T23:59:41Z,exclusiveIntervalEndDateTime=2025-01-10T23:59:41Z)"
+          }
+        }
+      }    
+    ```
     
-1. Once you have the details for the affected entities, you can begin to troubleshoot the issue, potentially running queries for things like sign-in activity, audit logs, and Conditional Access.
+1. Once you have the details for the affected entities, you can begin to troubleshoot things like sign-in activity, audit logs, and Conditional Access.
 
 1. After investigating and potentially resolving the root cause of the issue, you can mark the alert as resolved. Run the following PATCH request:
 
@@ -200,7 +253,6 @@ For sample requests and responses, see [Health monitoring List alert objects](/g
 - The results of the query include everything identified by the anomaly detection service, but there might be results that aren't directly related to the alert.
 
 ---
-
 
 ## Related content
 

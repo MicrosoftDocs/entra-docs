@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 01/07/2025
+ms.date: 01/27/2025
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -20,9 +20,11 @@ Microsoft Entra Health monitoring provides a set of tenant-level health metrics 
 - Sign-ins requiring a Conditional Access compliant device
 - Sign-ins requiring a Conditional Access managed device
 
-These scenarios allow you to monitor and receive alerts on user authentication that satisfy a Conditional Access policy requiring signing in from a compliant or managed device. To learn more about how Microsoft Entra Health works, see:
-
 This article describes the health metrics related to compliant and managed devices and how to troubleshoot a potential issue when you receive an alert. For details on how to interact with the Health Monitoring scenarios and how to investigate all alerts, see [How to investigate health scenario alerts](../monitoring-health/howto-investigate-health-scenario-alerts.md).
+
+> [!IMPORTANT]
+> Microsoft Entra Health scenario monitoring and alerts are currently in PREVIEW.
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. The Microsoft Entra admin center experience is being released in phases, so you might not see all the features described in this article.
 
 ## Prerequisites
 
@@ -38,7 +40,7 @@ There are different roles, permissions, and license requirements to view health 
 
 ## Investigate the signals and alerts
 
-Investigating an alert starts with gathering data. With Microsoft Entra Health in the Microsoft Entra admin center, you can view the signal and alert details in one place.
+Investigating an alert starts with gathering data. With Microsoft Entra Health in the Microsoft Entra admin center, you can view the signal and alert details in one place. You can also view the signals and alerts using the Microsoft Graph API. For more information, see [How to investigate health scenario alerts](../monitoring-health/howto-investigate-health-scenario-alerts.md) for guidance on how to gather data using the Microsoft Graph API. 
 
 1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 
@@ -47,9 +49,6 @@ Investigating an alert starts with gathering data. With Microsoft Entra Health i
 1. Select the **Health Monitoring** tab.
 
 1. Select the **Sign-ins requiring a compliant device** or **Sign-ins requiring a managed device** scenario and then select an active alert.
-
-    - If using the Microsoft Graph API, you can run the [List alerts](/graph/api/healthmonitoring-healthmonitoringroot-list-alerts?view=graph-rest-beta&preserve-view=true) API to retrieve all alerts or [Get alert](/graph/api/healthmonitoring-alert-get?view=graph-rest-beta&preserve-view=true) API to retrieve the details.
-    ![Screenshot of the Microsoft Entra Health landing page.](media/scenario-health-sign-ins-compliant-managed-device/health-monitoring-landing-page-compliant-device.png)
 
 1. View the signal from the **View data graph** section to get familiar with the pattern and identify anomalies.
     
