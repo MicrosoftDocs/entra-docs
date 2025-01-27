@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra 
 ms.subservice: fundamentals
 ms.topic: whats-new
-ms.date: 09/19/2024
+ms.date: 01/27/2025
 ms.author: owinfrey
 ms.reviewer: dhanyahk
 ms.custom: it-pro, has-adal-ref, has-azure-ad-ps-ref
