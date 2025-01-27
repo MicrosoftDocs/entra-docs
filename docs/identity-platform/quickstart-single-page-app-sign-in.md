@@ -212,7 +212,7 @@ Run the project with a web server by using dotnet:
 1. Follow the steps and enter the necessary details to sign in with your Microsoft account. You'll be requested an email address so a one time passcode can be sent to you. Enter the code when prompted.
 1. The application will request permission to maintain access to data you have given it access to, and to sign you in and read your profile. Select **Accept**. The following screenshot appears, indicating that you have signed in to the application and have accessed your profile details from the Microsoft Graph API.
 
-    :::image type="content" source="./media/common-spa/blazor-spa/display-api-call-results-blazor-spa.png" alt-text="Screenshot of Blazor WASM SPA App depicting the results of the API call. lightbox="./media/common-spa/blazor-spa/display-api-call-results-blazor-spa.png":::
+    :::image type="content" source="./media/common-spa/blazor-spa/display-api-call-results-blazor-spa.png" alt-text="Screenshot of Blazor WASM SPA App depicting the results of the API call." lightbox="./media/common-spa/blazor-spa/display-api-call-results-blazor-spa.png":::
 
 ---
 
