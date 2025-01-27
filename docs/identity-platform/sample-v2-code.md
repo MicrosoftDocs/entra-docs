@@ -1,10 +1,10 @@
 ---
-title: Code samples for Microsoft identity platform authentication and authorization
-description: An index of Microsoft-maintained code samples demonstrating authentication and authorization in several application types, development languages, and frameworks.
+title: Code samples for authentication and authorization
+description: An index of code samples in the Microsoft Identity platform, grouped by app types, languages, and frameworks, demonstrates how these libraries are used in apps for authentication and authorization.
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.date: 10/15/2024
+ms.date: 01/27/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
@@ -12,7 +12,7 @@ ms.topic: sample
 #Customer intent: As a developer working with the Microsoft identity platform, I want to access code samples that demonstrate how to implement authentication and authorization scenarios in different application types and languages, so that I can understand how to integrate the Microsoft identity platform into my own applications.
 ---
 
-# Microsoft identity platform code samples
+# Microsoft identity platform code samples for authentication and authorization 
 
 These code samples are built and maintained by Microsoft to demonstrate usage of our authentication libraries with the Microsoft identity platform. Common authentication and authorization scenarios are implemented in several [application types](v2-app-types.md), development languages, and frameworks.
 
