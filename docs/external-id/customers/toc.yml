@@ -23,7 +23,7 @@ items:
     href: samples-ciam-all.md
   - name: Single-page app
     items:
-      - name: JavaScript
+      - name: Browser-delegated authentication
         items:
           - name: Sign in users
             href: /entra/identity-platform/quickstart-single-page-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
@@ -90,36 +90,50 @@ items:
   items: 
     - name: Single-page app (SPA)
       items: 
-        - name: JavaScript 
+        - name: Browser-developed authentication
           items:
-              - name: Prepare tenant
-                href: tutorial-single-page-app-vanillajs-prepare-tenant.md
-              - name: Create JavaScript app
-                href: tutorial-single-page-app-vanillajs-prepare-app.md
-              - name: Configure app for authentication
-                href: tutorial-single-page-app-vanillajs-configure-authentication.md
-              - name: Sign in and sign out
-                href: tutorial-single-page-app-vanillajs-sign-in-sign-out.md
-        - name: React
+            - name: JavaScript 
+              items:
+                  - name: Prepare tenant
+                    href: tutorial-single-page-app-vanillajs-prepare-tenant.md
+                  - name: Create JavaScript app
+                    href: tutorial-single-page-app-vanillajs-prepare-app.md
+                  - name: Configure app for authentication
+                    href: tutorial-single-page-app-vanillajs-configure-authentication.md
+                  - name: Sign in and sign out
+                    href: tutorial-single-page-app-vanillajs-sign-in-sign-out.md
+            - name: React
+              items:
+                  - name: Prepare tenant
+                    href: tutorial-single-page-app-react-sign-in-prepare-tenant.md
+                  - name: Create React app
+                    href: tutorial-single-page-app-react-sign-in-prepare-app.md
+                  - name: Configure app for authentication
+                    href: tutorial-single-page-app-react-sign-in-configure-authentication.md
+                  - name: Sign in and sign out
+                    href: tutorial-single-page-app-react-sign-in-sign-out.md
+            - name: Angular
+              items:
+                  - name: Prepare tenant
+                    href: tutorial-single-page-app-angular-sign-in-prepare-tenant.md
+                  - name: Create Angular app
+                    href: tutorial-single-page-app-angular-sign-in-prepare-app.md
+                  - name: Configure app for authentication
+                    href: tutorial-single-page-app-angular-sign-in-configure-authentication.md
+                  - name: Sign in and sign out
+                    href: tutorial-single-page-app-angular-sign-in-sign-out.md
+        - name: Native authentication
           items:
-              - name: Prepare tenant
-                href: tutorial-single-page-app-react-sign-in-prepare-tenant.md
-              - name: Create React app
-                href: tutorial-single-page-app-react-sign-in-prepare-app.md
-              - name: Configure app for authentication
-                href: tutorial-single-page-app-react-sign-in-configure-authentication.md
-              - name: Sign in and sign out
-                href: tutorial-single-page-app-react-sign-in-sign-out.md
-        - name: Angular
-          items:
-              - name: Prepare tenant
-                href: tutorial-single-page-app-angular-sign-in-prepare-tenant.md
-              - name: Create Angular app
-                href: tutorial-single-page-app-angular-sign-in-prepare-app.md
-              - name: Configure app for authentication
-                href: tutorial-single-page-app-angular-sign-in-configure-authentication.md
-              - name: Sign in and sign out
-                href: tutorial-single-page-app-angular-sign-in-sign-out.md
+            - name: React
+              items:
+                - name: Sign up
+                  href: tutorial-native-authentication-single-page-app-react-sign-up.md
+                - name: Set up local CORS
+                  href: tutorial-native-authentication-single-page-app-react-setup-local-cors.md
+                - name: Sign in
+                  href: tutorial-native-authentication-single-page-app-react-sign-in.md
+                - name: Reset password
+                  href: tutorial-native-authentication-single-page-app-react-reset-password.md
     - name: Web app
       items: 
         - name: Node/Express.js
@@ -369,6 +383,12 @@ items:
                   - name: Use role-based access control
                     href: how-to-web-app-role-based-access-control.md 
                     displayName: rbac, roles, roles claim, groups claim
+          - name: Native authentication
+            items:
+              - name: Set up CORS in test
+                href: how-to-native-authentication-cors-solution-test-environment.md
+              - name: Set up CORS in production
+                href: how-to-native-authentication-cors-solution-production-environment.md
       - name: Delete an external tenant
         href: how-to-delete-external-tenant-portal.md
     - name: Customize
