@@ -39,11 +39,11 @@ If you've worked with Microsoft Entra ID, you're already familiar with using a M
 
 - **Extensions**: If you need to add user attributes and data from external systems, you can create custom authentication extensions for your user flows.
 
-- **Sign-in methods**: You can enable various options for signing in to your app, including username and password, one-time passcode, and Google or Facebook identities.
+- **Sign-in methods**: You can enable various options for signing in to your app, including username and password, one-time passcode, and Google, Facebook, Apple or custom OIDC identities.
 
 - **Encryption keys**: Add and manage encryption keys for signing and validating tokens, client secrets, certificates, and passwords.
 
-Learn more about [password and one-time passcode](how-to-enable-password-reset-customers.md) sign-in, and about [Google](how-to-google-federation-customers.md) and [Facebook](how-to-facebook-federation-customers.md) federation.
+Learn more about [password and one-time passcode](how-to-enable-password-reset-customers.md) sign-in, and about [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md), [Apple](how-to-apple-federation-customers.md) and [OIDC](how-to-custom-oidc-federation-customers.md) federation.
 
 There are two types of user accounts you can manage in your external tenant:
 
@@ -77,11 +77,11 @@ Learn more about [adding sign-in and sign-up to your app](concept-planning-your-
 
 ## Design user flows for self-service sign-up
 
-You can create a simple sign-up and sign-in experience for your customers by adding a user flow to your application. The user flow defines the series of sign-up steps customers follow and the sign-in methods they can use (such as email and password, one-time passcodes, or social accounts from [Google](how-to-google-federation-customers.md) or [Facebook](how-to-facebook-federation-customers.md)). You can also collect information from customers during sign-up by selecting from a series of user built-in attributes or adding your own custom attributes.
+You can create a simple sign-up and sign-in experience for your customers by adding a user flow to your application. The user flow defines the series of sign-up steps customers follow and the sign-in methods they can use (such as email and password, one-time passcodes, social accounts from [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md) or [Apple](how-to-apple-federation-customers.md), as well as [custom OIDC](how-to-custom-oidc-federation-customers.md) identity providers). You can also collect information from customers during sign-up by selecting from a series of user built-in attributes or adding your own custom attributes.
 
 Several user flow settings let you control how the customer signs up for the application, including:
 
-- Sign-in methods and social identity providers (Google or Facebook)
+- Sign-in methods and external identity providers
 - Attributes to be collected from the customer signing up, such as first name, postal code, or country/region of residency
 - Company branding and language customization
 

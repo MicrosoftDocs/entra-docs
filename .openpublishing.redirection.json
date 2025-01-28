@@ -1,6 +1,91 @@
 {
   "redirections": [
     {
+      "source_path": "docs/identity/authentication/howto-mfaserver-deploy.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-deploy",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfa-nps-extension-errors.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfa-nps-extension-errors",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfaserver-nps-vpn.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-nps-vpn",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfaserver-nps-rdg.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-nps-rdg",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfaserver-adfs-2.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-adfs-2",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfaserver-adfs-windows-server.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-adfs-windows-server",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfaserver-dir-ad.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-dir-ad",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfaserver-dir-radius.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-dir-radius",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfaserver-dir-ldap.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-dir-ldap",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfaserver-iis.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-iis",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfaserver-windows.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-windows",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfaserver-deploy-upgrade-pf.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-deploy-upgrade-pf",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfaserver-deploy-upgrade.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-deploy-upgrade",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfa-server-settings.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfa-server-settings",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfaserver-deploy-mobileapp.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-deploy-mobileapp",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfaserver-deploy-userportal.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-deploy-userportal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfaserver-deploy-ha.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-deploy-ha",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/domain-services/delete-aadds.md",
       "redirect_url": "/entra/identity/domain-services/delete",
       "redirect_document_id": false
@@ -43,6 +128,11 @@
     {
       "source_path_from_root": "/docs/fundamentals/whats-new-sovereign-clouds-archive.md",
       "redirect_url": "/entra/fundamentals/whats-new",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/conditional-access/block-legacy-authentication.md",
+      "redirect_url": "/entra/identity/conditional-access/policy-block-legacy-authentication",
       "redirect_document_id": false
     },
     {
@@ -193,6 +283,11 @@
     {
       "source_path_from_root": "/docs/fundamentals/how-to-approve-support-access-requests.md",
       "redirect_url": "/entra/fundamentals/how-to-manage-support-access-requests",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/monitoring-health/howto-use-health-scenario-alerts.md",
+      "redirect_url": "/entra/identity/monitoring-health/howto-investigate-health-scenario-alerts",
       "redirect_document_id": false
     },
     {
@@ -516,8 +611,8 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/identity-platform/custom-extension-email-otp-get-started.md",
-      "redirect_url": "/entra/identity-platform/custom-extension-overview",
+      "source_path_from_root": "/docs/identity-platform/tutorial-v2-angular-auth-code.md",
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-apps-angular-register-app",
       "redirect_document_id": false
     },
     {
@@ -1127,6 +1222,41 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity/role-based-access-control/admin-units-assign-roles.md",
+      "redirect_url": "/entra/identity/role-based-access-control/manage-roles-portal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/role-based-access-control/assign-roles-different-scopes.md",
+      "redirect_url": "/entra/identity/role-based-access-control/manage-roles-portal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/role-based-access-control/custom-assign-graph.md",
+      "redirect_url": "/entra/identity/role-based-access-control/manage-roles-portal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/role-based-access-control/custom-assign-powershell.md",
+      "redirect_url": "/entra/identity/role-based-access-control/manage-roles-portal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/role-based-access-control/groups-assign-role.md",
+      "redirect_url": "/entra/identity/role-based-access-control/manage-roles-portal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/role-based-access-control/groups-view-assignments.md",
+      "redirect_url": "/entra/identity/role-based-access-control/view-assignments",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/role-based-access-control/list-role-assignments-users.md",
+      "redirect_url": "/entra/identity/role-based-access-control/view-assignments",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/global-secure-access/how-to-target-resource-microsoft-365-profile.md",
       "redirect_url": "/entra/global-secure-access/how-to-target-resource-microsoft-profile",
       "redirect_document_id": false
@@ -1153,9 +1283,29 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/architecture/sse-deployment-guide-microsoft-traffic.md",
+      "redirect_url": "/entra/architecture/gsa-deployment-guide-microsoft-traffic",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/architecture/sse-deployment-guide-intro.md",
+      "redirect_url": "/entra/architecture/gsa-deployment-guide-intro",
+      "redirect_document_id": true
+    },
+    {
       "source_path_from_root": "/docs/architecture/sse-deployment-guide-m365.md",
-      "redirect_url": "/entra/architecture/sse-deployment-guide-microsoft-traffic",
+      "redirect_url": "/entra/architecture/gsa-deployment-guide-microsoft-traffic",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/architecture/sse-deployment-guide-internet-access.md",
+      "redirect_url": "/entra/architecture/gsa-deployment-guide-internet-access",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/architecture/sse-deployment-guide-private-access.md",
+      "redirect_url": "/entra/architecture/gsa-deployment-guide-private-access",
+      "redirect_document_id": true
     },
     {
       "source_path_from_root": "/docs/identity-platform/scenario-daemon-overview.md",
@@ -1269,6 +1419,56 @@
     },
     {
       "source_path_from_root": "/docs/identity/saas-apps/bluejeans-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/users/groups-write-back-portal.md",
+      "redirect_url": "/entra/identity/hybrid/group-writeback-cloud-sync",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/autotaskworkplace-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/vmware-identity-service-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/fidelitynetbenefits-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/enterprise-apps/one-click-sso-tutorial.md",
+      "redirect_url": "/entra/identity/enterprise-apps/what-is-application-management",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/omnissa-identity-service-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/bersin-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/lines-elibrary-advance-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/soonr-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/work-com-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/tutorial-list",
       "redirect_document_id": false
     }

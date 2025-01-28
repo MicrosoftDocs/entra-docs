@@ -410,8 +410,6 @@ For increased security, block direct access to the application, enforcing a path
 6. The information is submitted.
 7. The user is signed in to the application.
 
-   ![Screenshot of Welcome page.](./media/f5-big-ip-forms-advanced/welcome-message.png)
-
 ## Troubleshoot
 
 When troubleshooting, consider the following information:

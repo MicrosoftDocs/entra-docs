@@ -97,8 +97,6 @@ To integrate Oracle Hyperion EMP with Microsoft Entra ID:
 17. The DAP deployment page appears.
 18. Make a note of the deployment Docker Compose file. The file includes the DAP image, also the Provisioning Key and Provisioning Secret, which pull the latest configuration and policies from DCMC.
 
-    [![Screenshot shows the DAP deployment page.](./media/datawiza-mfa-sso-oracle-hyperion-epm/datawiza-access-proxy-deployment-page.png)](./media/datawiza-mfa-sso-oracle-hyperion-epm/datawiza-access-proxy-deployment-page.png#lightbox)
-
 19. Select **Done**.
 
 ## SSO and HTTP headers

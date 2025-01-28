@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-verified-id
 ms.topic: how-to
 
-ms.date: 07/06/2022
+ms.date: 01/17/2025
 ms.author: barclayn
 
 #Customer intent: As a verifiable credentials administrator, I want to create a verifiable credential with multiple attestations. 
@@ -17,9 +17,9 @@ ms.author: barclayn
 
   
 
-A [rules definition](rules-and-display-definitions-model.md#rulesmodel-type) that uses multiple attestations types produces an issuance flow where claims come from more than one source. For instance you may be required to present an existing credential and also manually enter values for claims in Microsoft Authenticator.  
+A [rules definition](rules-and-display-definitions-model.md#rulesmodel-type) that uses multiple attestations types produces an issuance flow where claims come from more than one source. For instance, you may be required to present an existing credential and also manually enter values for claims in Microsoft Authenticator.  
 
-In this how-to guide, we will extend the [ID token hint attestation](how-to-use-quickstart-idtoken.md) example by adding a self attested claim that the user has to enter in the Authenticator during issuance. The issuance request to Verified ID will contain an ID token hint with the claim values for `given_name` and `family_name` and a self issued attestation type for claim `displayName` that the user enters themselves.
+In this how-to guide, we extend the [ID token hint attestation](how-to-use-quickstart-idtoken.md) example by adding a self attested claim that the user has to enter in the Authenticator during issuance. The issuance request to Verified ID contains an ID token hint with the claim values for `given_name` and `family_name` and a self issued attestation type for claim `displayName` that the user enters themselves.
   
 ## Create a custom credential with multiple attestation types
 
@@ -75,7 +75,7 @@ The JSON display definition has one extra claim named **displayName** compared t
 
 ## Sample JSON rules definitions
 
-The JSON rules definition contains two different attestations that instruct the Authenticator to get claim values from two different sources. The issuance request to the Request Service API provides the values for the claims **given_name** and **family_name** to satisfy the **idTokenHints** attestation. The user will be requested to enter the claim value for **displayName** in the Authenticator during issuance. 
+The JSON rules definition contains two different attestations that instruct the Authenticator to get claim values from two different sources. The issuance request to the Request Service API provides the values for the claims **given_name** and **family_name** to satisfy the **idTokenHints** attestation. The user is asked to enter the claim value for **displayName** in the Authenticator during issuance. 
 
 ```json
 {
@@ -128,7 +128,7 @@ During issuance, Authenticator prompts the user to enter values for the specifie
 
 ## Claims in issued credential
 
-The issued credential will have three claims in total, where the `First` and `Last name` came from the **id token hint** attestation and the `Name` came from the **self issued** attestation.
+The issued credentials have three claims in total, where the `First` and `Last name` came from the **id token hint** attestation and the `Name` came from the **self issued** attestation.
 
 :::image type="content" source="media/how-to-use-quickstart-multiple/multiple-attestations-vc.png" alt-text="Screenshot of claims in issued credential.":::
 

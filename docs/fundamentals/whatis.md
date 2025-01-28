@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: overview
-ms.date: 08/25/2024
+ms.date: 12/19/2024
 ms.author: barclayn
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
@@ -51,7 +51,7 @@ To enhance your Microsoft Entra implementation, you can also add paid features b
 
 - **Microsoft Entra ID P1.** In addition to the Free features, P1 also lets your hybrid users access both on-premises and cloud resources. It also supports advanced administration, such as dynamic membership groups, self-service group management, Microsoft Identity Manager, and cloud write-back capabilities, which allow self-service password reset for your on-premises users.
 
-- **Microsoft Entra ID P2.** In addition to the Free and P1 features, P2 also offers [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) to help provide risk-based Conditional Access to your apps and critical company data and [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-getting-started.md) to help discover, restrict, and monitor administrators and their access to resources and to provide just-in-time access when needed.
+- **Microsoft Entra ID P2.** includes features in addition to the features included in Free and P1. P2 includes [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) to help provide risk-based Conditional Access to your apps and critical company data and [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-getting-started.md) to help discover, restrict, monitor administrators,  their access to resources and to provide just-in-time access when needed.
 
 In addition to Microsoft Entra ID licenses, you can enable additional identity management capabilities with licenses for other Microsoft Entra products, including:
 
@@ -102,7 +102,7 @@ To better understand Microsoft Entra ID and its documentation, we recommend revi
 |Account Administrator|This classic subscription administrator role is conceptually the billing owner of a subscription. This role enables you to manage all subscriptions in an account. For more information, see [Azure roles, Microsoft Entra roles, and classic subscription administrator roles](/azure/role-based-access-control/rbac-and-directory-admin-roles).|
 |Service Administrator|This classic subscription administrator role enables you to manage all Azure resources, including access. This role has the equivalent access of a user who is assigned the Owner role at the subscription scope. For more information, see [Azure roles, Microsoft Entra roles, and classic subscription administrator roles](/azure/role-based-access-control/rbac-and-directory-admin-roles).|
 |Owner|This role helps you manage all Azure resources, including access. This role is built on a newer authorization system called Azure role-based access control (Azure RBAC) that provides fine-grained access management to Azure resources. For more information, see [Azure roles, Microsoft Entra roles, and classic subscription administrator roles](/azure/role-based-access-control/rbac-and-directory-admin-roles).|
-|Microsoft Entra Global Administrator|This administrator role is automatically assigned to whomever created the Microsoft Entra tenant. You can have multiple accounts with this role, but anyone with at least [Privileged Role Administrator](../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) can assign administrator roles to users. For more information about the various administrator roles, see [Administrator role permissions in Microsoft Entra ID](~/identity/role-based-access-control/permissions-reference.md).|
+|Microsoft Entra Global Administrator|By default, the user who creates a Microsoft Entra tenant is automatically assigned the [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator) role. You can have multiple accounts with this role, but anyone with at least [Privileged Role Administrator](../identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) can assign administrator roles to users. For more information about the various administrator roles, see [Administrator role permissions in Microsoft Entra ID](~/identity/role-based-access-control/permissions-reference.md).|
 |Azure subscription| Used to pay for Azure cloud services. You can have many subscriptions and they're linked to a credit card.|
 |Tenant| A dedicated and trusted instance of Microsoft Entra ID. The tenant is automatically created when your organization signs up for a Microsoft cloud service subscription. These subscriptions include Microsoft Azure, Microsoft Intune, or Microsoft 365. This tenant represents a single organization and is intended for managing your employees, business apps, and other internal resources. For this reason, it's considered a workforce tenant configuration. By contrast, you can create a tenant in an *external* configuration, which is used in customer identity and access management (CIAM) solutions for your consumer-facing apps (learn more about [Microsoft Entra External ID](~/external-id/customers/overview-customers-ciam.md)).|
 |Single tenant| Azure tenants that access other services in a dedicated environment are considered single tenant.|

@@ -8,7 +8,7 @@ ms.assetid: 81208c0b-8d41-4f65-be15-42119b1b5957
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: troubleshooting
-ms.date: 09/15/2023
+ms.date: 01/21/2025
 ms.author: justinha
 ---
 # Known issues: Secure LDAP alerts in Microsoft Entra Domain Services

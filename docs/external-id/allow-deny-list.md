@@ -39,8 +39,7 @@ This article discusses two ways to configure an allow or blocklist for B2B colla
 
 By default, the **Allow invitations to be sent to any domain (most inclusive)** setting is enabled. In this case, you can invite B2B users from any organization.
 
-> [!IMPORTANT]
-> Microsoft recommends that you use roles with the fewest permissions. This helps improve security for your organization. Global Administrator is a highly privileged role that should be limited to emergency scenarios when you can't use an existing role.
+[!INCLUDE [least-privilege-note](../includes/definitions/least-privilege-note.md)]
 
 ### Add a blocklist
 

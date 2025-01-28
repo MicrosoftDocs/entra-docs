@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: conceptual
-ms.date: 08/23/2024
+ms.date: 12/19/2024
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro
@@ -17,12 +17,13 @@ ms.custom: it-pro
 
 You can create user or device attribute-based rules to enable membership for dynamic membership groups in Microsoft Entra ID, part of Microsoft Entra. You can add and remove dynamic membership groups automatically using membership rules based on member attributes. In Microsoft Entra, a single tenant can have a maximum of 15,000 dynamic membership groups.
 
-This article details the properties and syntax to create rules for dynamic membership groups based on users or devices. 
+This article details the properties and syntax to create rules for dynamic membership groups based on users or devices.
 
 > [!NOTE]
 > Security groups can be used for either devices or users, but Microsoft 365 groups can include only users. 
 
 When the attributes of a user or a device change, the system evaluates all rules for dynamic membership groups in a directory to see if the change would trigger any group adds or removes. If a user or device satisfies a rule on a group, they're added as a member of that group. If they no longer satisfy the rule, they're removed. You can't manually add or remove a member of a dynamic membership group.
+
 - You can create a dynamic membership groups for users or devices, but you can't create a rule that contains both users and devices.
 - You can't create a device membership group based on the user attributes of the device owner. Device membership rules can reference only device attributes.
 
@@ -33,6 +34,9 @@ When the attributes of a user or a device change, the system evaluates all rules
 ## Rule builder in the Azure portal
 
 Microsoft Entra ID provides a rule builder to create and update your important rules more quickly. The rule builder supports the construction of up to five expressions. The rule builder makes it easier to form a rule with a few simple expressions, however, it can't be used to reproduce every rule. If the rule builder doesn't support the rule you want to create, you can use the text box.
+
+>[!IMPORTANT]
+> The rule builder is available only for user-based dynamic membership groups. Device-based dynamic membership groups can be created only using the text box.
 
 Here are some examples of advanced rules or syntax that require the use of the text box:
 
@@ -59,7 +63,7 @@ The following example illustrates a properly constructed membership rule with a 
 user.department -eq "Sales"
 ```
 
-Parentheses are optional for a single expression. The total length of the body of your membership rule can't exceed 3072 characters.
+Parentheses are optional for a single expression. The total length of the body of your membership rule can't exceed 3,072 characters.
 
 ## Constructing the body of a membership rule
 
@@ -83,58 +87,59 @@ There are three types of properties that can be used to construct a membership r
 
 The following are the user properties that you can use to create a single expression.
 
+
 ### Properties of type boolean
 
 Properties | Allowed values | Usage
 --- | --- | ---
-accountEnabled |true false |user.accountEnabled -eq true
-dirSyncEnabled |true false |user.dirSyncEnabled -eq true
+accountEnabled |true false |```user.accountEnabled -eq true```
+dirSyncEnabled |true false |```user.dirSyncEnabled -eq true```
 
 ### Properties of type dateTime
 
 | Properties | Allowed values | Usage |
 | --- | --- | --- |
-| employeeHireDate (Preview) |Any DateTimeOffset value or keyword system.now | user.employeeHireDate -eq "value" |
+| employeeHireDate (Preview) |Any DateTimeOffset value or keyword system.now | ```user.employeeHireDate -eq "value"``` |
 
 ### Properties of type string
 
 | Properties | Allowed values | Usage |
 | --- | --- | --- |
-| city |Any string value or *null* | user.city -eq "value" |
-| country |Any string value or *null* | user.country -eq "value" |
-| companyName | Any string value or *null* | user.companyName -eq "value" |
-| department |Any string value or *null* | user.department -eq "value" |
-| displayName |Any string value | user.displayName -eq "value" |
-| employeeId |Any string value | user.employeeId -eq "value"<br>user.employeeId -ne *null* |
-| facsimileTelephoneNumber |Any string value or *null* | user.facsimileTelephoneNumber -eq "value" |
-| givenName |Any string value or *null* | user.givenName -eq "value" |
-| jobTitle |Any string value or *null* | user.jobTitle -eq "value" |
-| mail |Any string value or *null* (SMTP address of the user) | user.mail -eq "value" |
-| mailNickName |Any string value (mail alias of the user) | user.mailNickName -eq "value" |
-| memberOf | Any string value (valid group object ID) | user.memberOf -any (group.objectId -in ['value']) |
-| mobile |Any string value or *null* | user.mobile -eq "value" |
-| objectId |GUID of the user object | user.objectId -eq "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb" |
-| onPremisesDistinguishedName | Any string value or *null* | user.onPremisesDistinguishedName -eq "value" |
-| onPremisesSecurityIdentifier | On-premises security identifier (SID) for users who were synchronized from on-premises to the cloud. | user.onPremisesSecurityIdentifier -eq "S-1-1-11-1111111111-1111111111-1111111111-1111111" |
-| passwordPolicies |None<br>DisableStrongPassword<br>DisablePasswordExpiration<br>DisablePasswordExpiration, DisableStrongPassword | user.passwordPolicies -eq "DisableStrongPassword" |
-| physicalDeliveryOfficeName |Any string value or *null* | user.physicalDeliveryOfficeName -eq "value" |
-| postalCode |Any string value or *null* | user.postalCode -eq "value" |
-| preferredLanguage |ISO 639-1 code | user.preferredLanguage -eq "en-US" |
-| sipProxyAddress |Any string value or *null* | user.sipProxyAddress -eq "value" |
-| state |Any string value or *null* | user.state -eq "value" |
-| streetAddress |Any string value or *null* | user.streetAddress -eq "value" |
-| surname |Any string value or *null* | user.surname -eq "value" |
-| telephoneNumber |Any string value or *null* | user.telephoneNumber -eq "value" |
-| usageLocation |Two letter country or region code | user.usageLocation -eq "US" |
-| userPrincipalName |Any string value | user.userPrincipalName -eq "alias@domain" |
-| userType |member guest *null* | user.userType -eq "Member" |
+| city |Any string value or *null* | ```user.city -eq "value"``` |
+| country |Any string value or *null* | ```user.country -eq "value"``` |
+| companyName | Any string value or *null* | ```user.companyName -eq "value"``` |
+| department |Any string value or *null* | ```user.department -eq "value"``` |
+| displayName |Any string value | ```user.displayName -eq "value"``` |
+| employeeId |Any string value | ```user.employeeId -eq "value"<br>user.employeeId -ne *null*``` |
+| facsimileTelephoneNumber |Any string value or *null* | ```user.facsimileTelephoneNumber -eq "value"``` |
+| givenName |Any string value or *null* | ```user.givenName -eq "value"``` |
+| jobTitle |Any string value or *null* | ```user.jobTitle -eq "value"``` |
+| mail |Any string value or *null* (SMTP address of the user) | ```user.mail -eq "value"``` or ```user.mail -notEndsWith "@Contoso.com"``` |
+| mailNickName |Any string value (mail alias of the user) | ```user.mailNickName -eq "value"``` or ```user.mailNickname -endsWith "-vendor"``` |
+| memberOf | Any string value (valid group object ID) | ```user.memberOf -any (group.objectId -in ['value'])``` |
+| mobile |Any string value or *null* | ```user.mobile -eq "value" ```|
+| objectId |GUID of the user object | ```user.objectId -eq "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb" ```|
+| onPremisesDistinguishedName | Any string value or *null* | ```user.onPremisesDistinguishedName -eq "value" ```|
+| onPremisesSecurityIdentifier | On-premises security identifier (SID) for users who were synchronized from on-premises to the cloud. | ```user.onPremisesSecurityIdentifier -eq "S-1-1-11-1111111111-1111111111-1111111111-1111111"``` |
+| passwordPolicies |None<br>DisableStrongPassword<br>DisablePasswordExpiration<br>DisablePasswordExpiration, DisableStrongPassword | ```user.passwordPolicies -eq "DisableStrongPassword"``` |
+| physicalDeliveryOfficeName |Any string value or *null* | ```user.physicalDeliveryOfficeName -eq "value"``` |
+| postalCode |Any string value or *null* | ```user.postalCode -eq "value"``` |
+| preferredLanguage |ISO 639-1 code | ```user.preferredLanguage -eq "en-US"``` |
+| sipProxyAddress |Any string value or *null* | ```user.sipProxyAddress -eq "value"``` |
+| state |Any string value or *null* | ```user.state -eq "value"``` |
+| streetAddress |Any string value or *null* | ```user.streetAddress -eq "value"``` |
+| surname |Any string value or *null* | ```user.surname -eq "value"``` |
+| telephoneNumber |Any string value or *null* | ```user.telephoneNumber -eq "value"``` |
+| usageLocation |Two letter country or region code | ```user.usageLocation -eq "US"``` |
+| userPrincipalName |Any string value | ```user.userPrincipalName -eq "alias@domain"``` |
+| userType |member guest *null* | ```user.userType -eq "Member"``` |
 
 ### Properties of type string collection
 
 | Properties | Allowed values | Example |
 | --- | --- | --- |
-| otherMails |Any string value | user.otherMails -startsWith "alias@domain" |
-| proxyAddresses |SMTP: alias@domain smtp: alias@domain | user.proxyAddresses -startsWith "SMTP: alias@domain" |
+| otherMails |Any string value | ```user.otherMails -startsWith "alias@domain"```, ```user.otherMails -endsWith"@contoso.com"``` |
+| proxyAddresses |SMTP: alias@domain smtp: alias@domain | user.proxyAddresses -startsWith "SMTP: alias@domain", ```user.proxyAddresses -notEndsWith "@outlook.com"``` |
 
 For the properties used for device rules, see [Rules for devices](#rules-for-devices).
 
@@ -142,8 +147,14 @@ For the properties used for device rules, see [Rules for devices](#rules-for-dev
 
 The following table lists all the supported operators and their syntax for a single expression. Operators can be used with or without the hyphen (-) prefix. The **Contains** operator does partial string matches but not item in a collection matches.
 
+
+>[!CAUTION]
+> For best results, minimize the use of MATCH or CONTAINS as much as possible. [Create simpler, more efficient rules for dynamic membership groups](groups-dynamic-rule-more-efficient.md) provides guidance on how to create rules that result in better dynamic group processing times. The [''memberOf''](groups-dynamic-rule-member-of.md) operator is in preview and should be used with caution, as it has some limitations.
+
 | Operator | Syntax |
 | --- | --- |
+| Ends With | -endsWith |
+| Not Ends With | -notEndsWith |
 | Not Equals |-ne |
 | Equals |-eq |
 | Not Starts With |-notStartsWith |
@@ -202,7 +213,7 @@ The values used in an expression can consist of several types, including:
 When specifying a value within an expression, it's important to use the correct syntax to avoid errors. Some syntax tips are:
 
 - Double quotes are optional unless the value is a string.
-- Regex and string operations are not case sensitive.
+- Regex and string operations aren't case sensitive.
 - Ensure that property names are correctly formatted as shown, as they're case sensitive.
 - When a string value contains double quotes, both quotes should be escaped using the \` character, for example, user.department -eq \`"Sales\`" is the proper syntax when "Sales" is the value. Single quotes should be escaped by using two single quotes instead of one each time.
 - You can also perform Null checks, using null as a value, for example, `user.department -eq null`.
@@ -270,8 +281,8 @@ Multi-value properties are collections of objects of the same type. They can be 
 
 | Properties | Values | Usage |
 | --- | --- | --- |
-| assignedPlans | Each object in the collection exposes the following string properties: capabilityStatus, service, servicePlanId |user.assignedPlans -any (assignedPlan.servicePlanId -eq "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e" -and assignedPlan.capabilityStatus -eq "Enabled") |
-| proxyAddresses| SMTP: alias@domain smtp: alias@domain | (user.proxyAddresses -any (\_ -startsWith "contoso")) |
+| assignedPlans | Each object in the collection exposes the following string properties: capabilityStatus, service, servicePlanId | ```user.assignedPlans -any (assignedPlan.servicePlanId -eq "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e" -and assignedPlan.capabilityStatus -eq "Enabled") ```|
+| proxyAddresses | SMTP: alias@domain smtp: alias@domain | ```(user.proxyAddresses -any (\_ -startsWith "contoso"))``` |
 
 ### Using the -any and -all operators
 
@@ -368,7 +379,7 @@ device.objectId -ne null
 
 ## Extension properties and custom extension properties
 
-Extension attributes and custom extension properties are supported as string properties in rules for dynamic membership groups. [Extension attributes](/graph/api/resources/onpremisesextensionattributes) can be synced from on-premises Window Server Active Directory or updated using Microsoft Graph and take the format of "ExtensionAttributeX", where X equals 1 - 15. Multi-value extension properties aren't supported in rules for dynamic membership groups. 
+Extension attributes and custom extension properties are supported as string properties in rules for dynamic membership groups. [Extension attributes](/graph/api/resources/onpremisesextensionattributes) can be synced from on-premises Window Server Active Directory or updated using Microsoft Graph and take the format of "ExtensionAttributeX," where X equals 1 - 15. Multi-value extension properties aren't supported in rules for dynamic membership groups. 
 
 Here's an example of a rule that uses an extension attribute as a property:
 
@@ -388,6 +399,7 @@ user.extension_c272a57b722d4eb29bfe327874ae79cb_OfficeNumber -eq "123"
 ```
 
 Custom extension properties are also called directory or Microsoft Entra extension properties.
+
 
 The custom property name can be found in the directory by querying a user's property using Graph Explorer and searching for the property name. Also, you can now select **Get custom extension properties** link in the dynamic membership groups rule builder to enter a unique app ID and receive the full list of custom extension properties to use when creating a rule for dynamic membership groups. This list can also be refreshed to get any new custom extension properties for that app. Extension attributes and custom extension properties must be from applications in your tenant.  
 

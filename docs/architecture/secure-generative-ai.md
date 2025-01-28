@@ -7,29 +7,28 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 11/08/2024
+ms.date: 11/12/2024
 ms.reviewer: joflore
 
 #CustomerIntent: As an identity and security administrator, I want to mitigate security challenges that Generative AI (Gen AI) poses, so that I can ensure organizational security with Microsoft Entra.
 ---
-
 # Secure Generative AI with Microsoft Entra
 
-As the digital landscape rapidly evolves, businesses across various industries increasingly adopt [Generative Artificial Intelligence](/ai/playbook/technology-guidance/generative-ai/) (Gen AI) to drive innovation and enhance productivity. A recent [research study](https://techcommunity.microsoft.com/t5/security-compliance-and-identity/security-for-ai-how-to-secure-and-govern-ai-usage/ba-p/4082269) indicates that 93% of businesses are implementing or developing an AI strategy. Approximately the same percentage of risk leaders report feeling under-prepared or only somewhat prepared to address the associated risks. As you integrate Gen AI into your operations, you must mitigate significant security and governance risks.
+As the digital landscape rapidly evolves, organizations across various industries increasingly adopt [Generative Artificial Intelligence](/ai/playbook/technology-guidance/generative-ai/) (Gen AI) to drive innovation and enhance productivity. A recent [research study](https://techcommunity.microsoft.com/t5/security-compliance-and-identity/security-for-ai-how-to-secure-and-govern-ai-usage/ba-p/4082269) indicates that 93% of businesses are implementing or developing an AI strategy. Approximately the same percentage of risk leaders report feeling under-prepared or only somewhat prepared to address the associated risks. As you integrate Gen AI into your operations, you must mitigate significant security and governance risks.
 
 Microsoft Entra offers a comprehensive suite of capabilities to securely manage AI applications, appropriately control access, and protect sensitive data:
 
 - [Microsoft Entra Permissions Management](../permissions-management/overview.md) (MEPM)
 - [Microsoft Entra ID Governance](/graph/api/resources/identitygovernance-overview)
-- [Microsoft Entra Conditional Access](../identity/conditional-access/overview.md) (CA)
+- [Microsoft Entra Conditional Access](../identity/conditional-access/overview.md)
 - [Microsoft Entra Privileged Identity Management](../id-governance/privileged-identity-management/pim-configure.md) (PIM)
 - [Microsoft Purview Insider Risk](/purview/insider-risk-management-adaptive-protection)
 
-This article delves into the specific security challenges that Gen AI poses and how you can address them with Microsoft Entra.
+This article delves into the specific security challenges that Gen AI poses and how you can address them with the capabilities offered by Microsoft Entra.
 
 ## Discover overprivileged identities
 
-Ensure that users have the appropriate permissions to comply with the [principal of least privilege](../identity-platform/secure-least-privileged-access.md). Based on our telemetry, over 90% of identities use less than 5% of permissions granted. Over 50% of those permissions are high risk. Compromised accounts can cause catastrophic damage.
+Ensure that users have the appropriate permissions to comply with the [principle of least privilege](../identity-platform/secure-least-privileged-access.md). Based on our telemetry, over 90% of identities use less than 5% of permissions granted. Over 50% of those permissions are high risk. Compromised accounts can cause catastrophic damage.
 
 Multicloud environment management is difficult as Identity and Access Management (IAM) and security teams often need to collaborate cross-functionally. Multicloud environments can limit comprehensive view into identities, permissions, and resources. This limited view increases the attack surface on identities that have overly privileged roles and over permissioned accounts. Risk of compromised unused accounts with high permissions increases as organizations adopt multicloud.
 
@@ -37,12 +36,11 @@ Multicloud environment management is difficult as Identity and Access Management
 
 Nonhuman accounts have repeatable patterns and are less likely to change over time. When you identify these accounts, consider using [workload or managed identities](../workload-id/workload-identities-overview.md) and Microsoft Entra Permissions Management. Permissions Management is a Cloud Infrastructure Entitlement Management (CIEM) tool. It provides comprehensive visibility into permissions that you assign to all identities across Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP).
 
-
 Trim roles down to the [Zero Trust](/security/zero-trust/zero-trust-overview) least privilege access security principle. Pay close attention to [super identities](https://techcommunity.microsoft.com/blog/identity/securing-access-to-any-resource-anywhere/4120308) (such as [serverless functions and apps](https://azure.microsoft.com/resources/cloud-computing-dictionary/what-is-serverless-computing)). Factor in use cases for Gen AI applications.
 
 ### Enforce just-in-time access for Microsoft Entra roles
 
-Microsoft Entra Privileged Identity Management (PIM) helps you manage, control, and monitor access to resources in Microsoft Entra ID, Azure, and other Microsoft Online Services (such as Microsoft 365 or Microsoft Intune). Non-PIM enabled privileged users have standing access (always in their assigned roles even when they don't need their privileges). The PIM [discovery and insights page](../id-governance/privileged-identity-management/pim-security-wizard.md) shows permanent global administrator assignments, accounts with highly privileged roles, and service principals with privileged role assignments. When you see these permissions, make note of what should be normal for your environment. Consider trimming down these roles or reducing them to just-in-time (JIT) access with PIM eligible assignments.
+Microsoft Entra Privileged Identity Management (PIM) helps you manage, control, and monitor access to resources in Microsoft Entra ID, Azure, and other Microsoft Online Services (such as Microsoft 365 or Microsoft Intune). Non-PIM enabled privileged users have standing access (always in their assigned roles even when they don't need their privileges). The PIM [discovery and insights page](../id-governance/privileged-identity-management/pim-security-wizard.md) shows permanent Global Administrator assignments, accounts with highly privileged roles, and service principals with privileged role assignments. When you see these permissions, make note of what should be normal for your environment. Consider trimming down these roles or reducing them to just-in-time (JIT) access with PIM eligible assignments.
 
 Directly within the discovery and insights page, you can make privileged roles PIM-eligible to reduce standing access. You can remove the assignment altogether if they don't need privileged access. You can create an access review for Global Administrators that prompts them to regularly review their own access.
 
@@ -68,7 +66,7 @@ Conditional Access brings signals together to make decisions and enforce organiz
 
 Enforce least privilege principles and apply the right access controls to keep your organization secure with [Conditional Access policies](../identity/conditional-access/plan-conditional-access.md). Think of Conditional Access policies as if-then statements where identities that meet certain criteria can only access resources if they meet specific requirements such as MFA or device compliance status.
 
-Restrict access to Gen AI apps based on signals like users, groups, roles, location, or risk to enhance policy decisions.
+[Restrict access to Gen AI apps based on signals](/entra/identity/conditional-access/policy-all-users-copilot-ai-security) like users, groups, roles, location, or risk to enhance policy decisions.
 
 - Use the [authentication strength](../identity/authentication/concept-authentication-strengths.md) Conditional Access control that specifies combinations of authentication methods to access a resource. Require users to complete [phishing-resistant multifactor authentication](../identity/conditional-access/policy-all-users-mfa-strength.md) (MFA) to access Gen AI apps.
 - Deploy [Microsoft Purview adaptive protection](/purview/insider-risk-management-adaptive-protection) to mitigate and manage AI usage risks. Use the [Insider Risk](../identity/conditional-access/concept-conditional-access-conditions.md#insider-risk) condition to [block Gen AI apps access for users with elevated insider risk](../identity/conditional-access/policy-risk-based-insider-block.md).
@@ -133,6 +131,6 @@ Continually review Permissions Management. As identities stay with an organizati
 
 ## Related content
 
-- [Microsoft Copilot for Security](/copilot/security/microsoft-security-copilot) helps support security professionals in end-to-end scenarios such as incident response, threat hunting, intelligence gathering, and posture management.
+- [Microsoft Security Copilot](/copilot/security/microsoft-security-copilot) helps support security professionals in end-to-end scenarios such as incident response, threat hunting, intelligence gathering, and posture management.
 - [Microsoft Purview Information Barriers](/purview/information-barriers) are policies that can prevent individuals or groups from communicating with each other. [Information barriers in Microsoft Teams](/purview/information-barriers-teams) can determine and prevent unauthorized collaborations.
 - For [Microsoft 365 Copilot requirements](/microsoft-365-copilot/microsoft-365-copilot-requirements), review [Enterprise data protection in Copilot for Microsoft 365 and Microsoft Copilot](/copilot/microsoft-365/enterprise-data-protection#what-is-enterprise-data-protection-in-copilot-for-microsoft-365-and-microsoft-copilot).

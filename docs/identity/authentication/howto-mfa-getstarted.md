@@ -5,7 +5,7 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 04/10/2024
+ms.date: 01/08/2025
 ms.author: justinha
 author: justinha
 manager: amycolannino
@@ -40,8 +40,8 @@ Methods include:
 - [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-overview)
 - [Microsoft Authenticator app](concept-authentication-authenticator-app.md)
 - [FIDO2 security key](concept-authentication-passwordless.md)
-- [OATH hardware tokens (preview)](concept-authentication-oath-tokens.md#oath-hardware-tokens-preview)
-- [OATH software tokens](concept-authentication-oath-tokens.md#oath-software-tokens)
+- [Hardware OATH tokens (preview)](concept-authentication-oath-tokens.md#hardware-oath-tokens-preview)
+- [Software OATH tokens](concept-authentication-oath-tokens.md#software-oath-tokens)
 - [SMS verification](concept-authentication-phone-options.md#mobile-phone-verification)
 - [Voice call verification](concept-authentication-phone-options.md)
 
@@ -102,7 +102,7 @@ To manage your Conditional Access policies, the location condition of a Conditio
 
 ### Risk-based policies
 
-If your organization uses [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) to detect risk signals, consider using [risk-based policies](~/id-protection/howto-identity-protection-configure-risk-policies.md) instead of named locations. Policies can be created to force password changes when there is a threat of compromised identity or require MFA when a sign-in is deemed [at risk](~/id-protection/howto-identity-protection-configure-risk-policies.md) such as leaked credentials, sign-ins from anonymous IP addresses, and more. 
+If your organization uses [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) to detect risk signals, consider using [risk-based policies](~/id-protection/howto-identity-protection-configure-risk-policies.md) instead of named locations. Policies can be created to force password changes when there's a threat of compromised identity or require MFA when a sign-in is deemed [at risk](~/id-protection/howto-identity-protection-configure-risk-policies.md) such as leaked credentials, sign-ins from anonymous IP addresses, and more. 
 
 Risk policies include:
 
@@ -124,7 +124,7 @@ For more information, see [Optimize reauthentication prompts and understand sess
 
 ## Plan user registration
 
-A major step in every multifactor authentication deployment is getting users registered to use Microsoft Entra multifactor authentication. Authentication methods such as Voice and SMS allow pre-registration, while others like the Authenticator App require user interaction. Administrators must determine how users will register their methods. 
+A major step in every multifactor authentication deployment is getting users registered to use Microsoft Entra multifactor authentication. Authentication methods such as Voice and SMS allow preregistration, while others like the Authenticator App require user interaction. Administrators must determine how users will register their methods. 
 
 <a name='combined-registration-for-sspr-and-azure-ad-mfa'></a>
 
@@ -136,7 +136,7 @@ It's critical to inform users about upcoming changes, registration requirements,
 
 ### Registration with Microsoft Entra ID Protection
 
-Microsoft Entra ID Protection contributes both a registration policy for and automated risk detection and remediation policies to the Microsoft Entra multifactor authentication story. Policies can be created to force password changes when there is a threat of compromised identity or require MFA when a sign-in is deemed risky.
+Microsoft Entra ID Protection contributes both a registration policy for and automated risk detection and remediation policies to the Microsoft Entra multifactor authentication story. Policies can be created to force password changes when there's a threat of compromised identity or require MFA when a sign-in is deemed risky.
 If you use Microsoft Entra ID Protection, [configure the Microsoft Entra multifactor authentication registration policy](~/id-protection/howto-identity-protection-configure-mfa-policy.md) to prompt your users to register the next time they sign in interactively.
 
 ### Registration without Microsoft Entra ID Protection
@@ -153,7 +153,7 @@ If you have users registered for MFA using SMS or voice calls, you may want to m
 ### Plan recovery scenarios 
 
 As mentioned before, ensure users are registered for more than one MFA method, so that if one is unavailable, they have a backup. 
-If the user does not have a backup method available, you can: 
+If the user doesn't have a backup method available, you can: 
 
 - Provide them a Temporary Access Pass so that they can manage their own authentication methods. You can also provide a Temporary Access Pass to enable temporary access to resources. 
 - Update their methods as an administrator. To do so, select the user in the Microsoft Entra admin center, then select **Protection** > **Authentication methods** and update their methods.
@@ -162,11 +162,11 @@ If the user does not have a backup method available, you can:
 ## Plan integration with on-premises systems
 
 Applications that authenticate directly with Microsoft Entra ID and have modern authentication (WS-Fed, SAML, OAuth, OpenID Connect) can make use of Conditional Access policies.
-Some legacy and on-premises applications do not authenticate directly against Microsoft Entra ID and require additional steps to use Microsoft Entra multifactor authentication. You can integrate them by using Microsoft Entra application proxy or [Network policy services](/windows-server/networking/core-network-guide/core-network-guide#BKMK_optionalfeatures).
+Some legacy and on-premises applications don't authenticate directly against Microsoft Entra ID and require additional steps to use Microsoft Entra multifactor authentication. You can integrate them by using Microsoft Entra application proxy or [Network policy services](/windows-server/networking/core-network-guide/core-network-guide#BKMK_optionalfeatures).
 
 ### Integrate with AD FS resources
 
-We recommend migrating applications secured with Active Directory Federation Services (AD FS) to Microsoft Entra ID. However, if you are not ready to migrate these to Microsoft Entra ID, you can use the Azure multifactor authentication adapter with AD FS 2016 or newer.
+We recommend migrating applications secured with Active Directory Federation Services (AD FS) to Microsoft Entra ID. However, if you aren't ready to migrate these to Microsoft Entra ID, you can use the Azure multifactor authentication adapter with AD FS 2016 or newer.
 
 If your organization is federated with Microsoft Entra ID, you can [configure Microsoft Entra multifactor authentication as an authentication provider with AD FS resources](/windows-server/identity/ad-fs/operations/configure-ad-fs-and-azure-mfa) both on-premises and in the cloud.  
 
@@ -174,7 +174,7 @@ If your organization is federated with Microsoft Entra ID, you can [configure Mi
 
 ### RADIUS clients and Microsoft Entra multifactor authentication
 
-For applications that are using RADIUS authentication, we recommend moving client applications to modern protocols such as SAML, OpenID Connect, or OAuth on Microsoft Entra ID. If the application cannot be updated, then you can deploy [Network Policy Server (NPS) extension](howto-mfa-nps-extension.md). The network policy server (NPS) extension acts as an adapter between RADIUS-based applications and Microsoft Entra multifactor authentication to provide a second factor of authentication.
+For applications that are using RADIUS authentication, we recommend moving client applications to modern protocols such as SAML, OpenID Connect, or OAuth on Microsoft Entra ID. If the application can't be updated, then you can deploy [Network Policy Server (NPS) extension](howto-mfa-nps-extension.md). The network policy server (NPS) extension acts as an adapter between RADIUS-based applications and Microsoft Entra multifactor authentication to provide a second factor of authentication.
 
 #### Common integrations
 
@@ -199,7 +199,7 @@ Others might include:
 
 Your Microsoft Entra multifactor authentication rollout plan should include a pilot deployment followed by deployment waves that are within your support capacity. Begin your rollout by applying your Conditional Access policies to a small group of pilot users. After evaluating the effect on the pilot users, process used, and registration behaviors, you can either add more groups to the policy or add more users to the existing groups.
 
-Follow the steps below:
+Follow these steps:
 
 1. Meet the necessary prerequisites
 1. Configure chosen authentication methods

@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: tutorial
-ms.date: 09/21/2023
+ms.date: 12/03/2024
 ms.author: justinha
 #Customer intent: As a server administrator, I want to learn how to enable password hash synchronization with Microsoft Entra Connect to create a hybrid environment using an on-premises AD DS domain.
 ---

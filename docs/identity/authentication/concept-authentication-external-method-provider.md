@@ -6,7 +6,7 @@ description: Learn how to configure an external authentication method (EAM) prov
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 05/03/2024
+ms.date: 01/03/2024
 
 ms.author: justinha
 author: gregkmsft
@@ -302,19 +302,19 @@ This section describes the required content of the token passed as id_token_hint
 | Claim |Value | Description |
 |-------|------|-------------|
 |iss    |      | Identifies the security token service (STS) that constructs and returns the token, and the Microsoft Entra ID tenant in which the user authenticated. Your app should use the GUID portion of the claim to restrict the set of tenants that can sign in to the app, if applicable. Issuer should match the issuer URL from the OIDC discovery JSON metadata for the tenant where the user signed in.|
-| aud   |        | The audience should be set to the external identity provider’s client ID for Microsoft Entra ID.|
+|aud   |        | The audience should be set to the external identity provider’s client ID for Microsoft Entra ID.|
 |exp    |        | The expiration time is set to expire a short time after the issuing time, sufficient to avoid time skew issues. Because this token isn't meant for authentication, there's no reason for its validity to outlast the request by much. |
 |iat    |        | Set issuing time as usual.|
 |tid    |        | The tenant ID is for advertising the tenant to the provider. It represents the Microsoft Entra ID tenant that the user is from. |
 |oid    |        | The immutable identifier for an object in the Microsoft identity platform. In this case, it's a user account. It can also be used to perform authorization checks safely, and as a key in database tables. This ID uniquely identifies the user across applications. Two different applications that sign in the same user receive the same value in the oid claim. Thus, oid can be used in queries to Microsoft online services, such as Microsoft Graph. |
-| preferred_username |        | Provides a human readable value that identifies the subject of the token. This value isn't guaranteed to be unique within a tenant, and is meant only for display purposes. |
-| sub  |            | Subject identifier for the end user at the Issuer. The principal about which the token asserts information, such as the user of an application. This value is immutable and can't be reassigned or reused. It can be used to perform authorization checks safely, such as when the token is used to access a resource, and can be used as a key in database tables. Because the subject is always present in the tokens that Microsoft Entra ID issues, we recommend using this value in a general-purpose authorization system. The subject is, however, a pairwise identifier; it's unique to a particular application ID. *Therefore, if a single user signs in to two different applications using two different client IDs, those applications receive two different values for the subject claim*. This result may or may not be desired, depending on your architecture and privacy requirements. See also the **oid** claim (which does remain the same across apps within a tenant).| 
+|preferred_username |        | Provides a human readable value that identifies the subject of the token. This value isn't guaranteed to be unique within a tenant, and is meant only for display purposes. |
+|sub  |            | Subject identifier for the end user at the Issuer. The principal about which the token asserts information, such as the user of an application. This value is immutable and can't be reassigned or reused. It can be used to perform authorization checks safely, such as when the token is used to access a resource, and can be used as a key in database tables. Because the subject is always present in the tokens that Microsoft Entra ID issues, we recommend using this value in a general-purpose authorization system. The subject is, however, a pairwise identifier; it's unique to a particular application ID. *Therefore, if a single user signs in to two different applications using two different client IDs, those applications receive two different values for the subject claim*. This result may or may not be desired, depending on your architecture and privacy requirements. See also the **oid** claim (which does remain the same across apps within a tenant).| 
 
 To prevent it from being used for anything other than a hint, the token is issued as expired. The token is signed, and can be verified using the published Microsoft Entra ID discovery metadata.
 
 #### Optional claims from Microsoft Entra ID
 
-If a provider needs optional claims from Microsoft Entra ID, then you can configure these optional claims for id_token. For more information, see [Optional claims](/azure/active-directory/develop/optional-claims).
+If a provider needs optional claims from Microsoft Entra ID, then you can configure the following optional claims for id_token: `given_name`, `family_name`, `preferred_username`, `upn`. For more information, see [Optional claims](/azure/active-directory/develop/optional-claims).
 
 #### Recommended use of claims
 Microsoft recommends associating accounts on the provider side with the account in Azure AD by using the oid and tid claims. These two claims are guaranteed to be unique for the account in the tenant. 
@@ -468,7 +468,7 @@ Error |           | An ASCII error code, such as access_denied or temporarily_un
 
 Microsoft Entra ID considers the request successful if the id_token parameter is present in the response, and if the token is valid. Otherwise, the request is considered unsuccessful. Microsoft Entra ID fails the original authentication attempt due to requirement of the Conditional Access policy.
 
-Microsoft Entra ID abandons the state of the authentication attempt on its end about 10 minutes after the redirection to the provider.
+Microsoft Entra ID abandons the state of the authentication attempt on its end about 5 minutes after the redirection to the provider.
 
 ## Microsoft Entra ID error response handling
 

@@ -317,9 +317,9 @@ procedureSection:
 
       2. Select **External Identities** > **Cross-tenant access settings**.
 
-      3. Under **Organizational settings**, select the link in the **Inbound access** column and the **B2B collaboration** tab.
+      3. On the **Default settings** tab, under **Inbound access settings**, select **Edit inbound defaults**.
 
-      4. Select the **Redemption order** tab.
+      4. On the **B2B collaboration** tab, select the **Redemption order** tab.
 
       5. Under **Fallback identity providers** disable Microsoft service account (MSA).
 

@@ -1,7 +1,7 @@
 ---
 title: Microsoft Entra ID attestation for FIDO2 security key vendors
 description: Explains requirements to prepare FIDO2 hardware for attestation with Microsoft Entra ID
-ms.date: 10/27/2024
+ms.date: 01/21/2025
 ms.service: entra-id
 ms.subservice: authentication
 author: justinha
@@ -120,8 +120,8 @@ The following table includes each FIDO2 security key model listed in MDS version
 |Nymi FIDO2 Authenticator|0acf3011-bc60-f375-fb53-6f05f43154e0|![y]|![n]|![y]|![n]|
 |OCTATCO EzFinger2 FIDO2 AUTHENTICATOR|a1f52be5-dfab-4364-b51c-2bd496b14a56|![y]|![n]|![n]|![n]|
 |OneSpan DIGIPASS FX1 BIO|30b5035e-d297-4ff1-b00b-addc96ba6a98|![y]|![y]|![y]|![y]|
-|OneSpan DIGIPASS FX1a|30b5035e-d297-4ff1-010b-addc96ba6a98|![y]|![y]|![n]|![n]|
-|OneSpan DIGIPASS FX7|30b5035e-d297-4ff7-b00b-addc96ba6a98|![n]|![y]|![n]|![y]|
+|OneSpan DIGIPASS FX1a|30b5035e-d297-4ff1-010b-addc96ba6a98|![y]|![y]|![y]|![n]|
+|OneSpan DIGIPASS FX7|30b5035e-d297-4ff7-b00b-addc96ba6a98|![n]|![y]|![n]|![n]|
 |OneSpan FIDO Touch|30b5035e-d297-4fc1-b00b-addc96ba6a97|![n]|![y]|![n]|![y]|
 |OnlyKey Secp256R1 FIDO2 CTAP2 Authenticator|998f358b-2dd2-4cbe-a43a-e8107438dfb3|![n]|![n]|![n]|![n]|
 |OpenSK authenticator|664d9f67-84a2-412a-9ff7-b4f7d8ee6d05|![n]|![y]|![n]|![n]|
@@ -140,7 +140,7 @@ The following table includes each FIDO2 security key model listed in MDS version
 |Security Key NFC by Yubico - Enterprise Edition|0bb43545-fd2c-4185-87dd-feb0b2916ace|![n]|![y]|![y]|![n]|
 |Security Key NFC by Yubico - Enterprise Edition|47ab2fb4-66ac-4184-9ae1-86be814012d5|![n]|![y]|![n]|![n]|
 |Sentry Enterprises CTAP2 Authenticator|89b19028-256b-4025-8872-255358d950e4|![y]|![y]|![n]|![y]|
-|SmartDisplayer BobeePass FIDO2 Authenticator|516d3969-5a57-5651-5958-4e7a49434167|![n]|![y]|![y]|![y]|
+|SmartDisplayer BobeePass FIDO2 Authenticator|516d3969-5a57-5651-5958-4e7a49434167|![y]|![y]|![y]|![y]|
 |Solo Secp256R1 FIDO2 CTAP2 Authenticator|8876631b-d4a0-427f-5773-0ec71c9e0279|![n]|![n]|![n]|![n]|
 |Solo Tap Secp256R1 FIDO2 CTAP2 Authenticator|8976631b-d4a0-427f-5773-0ec71c9e0279|![n]|![n]|![y]|![n]|
 |Somu Secp256R1 FIDO2 CTAP2 Authenticator|9876631b-d4a0-427f-5773-0ec71c9e0279|![n]|![n]|![n]|![n]|
@@ -166,7 +166,7 @@ The following table includes each FIDO2 security key model listed in MDS version
 |YubiKey 5 Series with Lightning|a02167b9-ae71-4ac7-9a07-06432ebb6f1c|![n]|![y]|![n]|![n]|
 |YubiKey 5 Series with Lightning|c5ef55ff-ad9a-4b9f-b580-adebafe026d0|![n]|![y]|![n]|![n]|
 |YubiKey 5 Series with NFC|2fc0579f-8113-47ea-b116-bb5a8db9202a|![n]|![y]|![y]|![n]|
-|YubiKey 5 Series with NFC|a25342c0-3cdc-4414-8e46-f4807fca511c|![n]|![y]|![n]|![n]|
+|YubiKey 5 Series with NFC|a25342c0-3cdc-4414-8e46-f4807fca511c|![n]|![y]|![y]|![n]|
 |YubiKey 5 Series with NFC|fa2b99dc-9e39-4257-8f92-4a30d23c4118|![n]|![y]|![y]|![n]|
 |YubiKey Bio FIDO Edition|dd86a2da-86a0-4cbe-b462-4bd31f57bc6f|![y]|![y]|![n]|![n]|
 |YubiKey Bio Series|d8522d9f-575b-4866-88a9-ba99fa02f35b|![y]|![y]|![n]|![n]|

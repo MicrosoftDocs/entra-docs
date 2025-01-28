@@ -58,7 +58,7 @@
     - name: Troubleshoot Microsoft Entra hybrid join
       expanded: false
       items:
-      - name: Troubleshoot Microsoft Entra hybrid joined Windows current version
+      - name: Troubleshoot Microsoft Entra hybrid joined Windows devices
         href: troubleshoot-hybrid-join-windows-current.md
       - name: Troubleshoot pending device state
         href: /troubleshoot/azure/active-directory/pending-devices?context=/entra/identity/devices/context/devices-context.json
@@ -102,6 +102,8 @@
       href: enterprise-state-roaming-group-policy-settings.md
     - name: Enterprise state roaming Windows settings
       href: enterprise-state-roaming-windows-settings-reference.md
+  - name: KDFv1 removal
+    href: deprecation-key-derivation-function-version-1.md
 - name: Reference
   items:
   - name: Microsoft Entra hybrid join reference
