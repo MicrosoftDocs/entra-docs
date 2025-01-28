@@ -72,7 +72,7 @@ To change the directory name attribute in the Microsoft Entra admin center:
 
 [!INCLUDE [least-privilege-note](../../includes/definitions/least-privilege-note.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Browse to **Identity** > **Overview** > **Properties**. 
 1. Update the **Name**.
 1. Select **Save**.
