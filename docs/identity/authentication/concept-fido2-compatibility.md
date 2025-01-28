@@ -28,9 +28,9 @@ For enabling FIDO2 security keys to unlock a Windows device, see [Enable FIDO2 s
 | **Windows**  | &#x2705; | &#x2705; | &#x2705; | N/A | &#x2705; |
 | **macOS**  | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705;<sup>1</sup> |
 | **ChromeOS**  | &#x2705; | N/A | N/A | N/A | N/A |
-| **Linux**  | &#x2705; | &#x2705; | &#x2705 | N/A | &#10060; |
+| **Linux**  | &#x2705; | &#x2705; | &#x2705; | N/A | &#10060; |
 | **iOS**  | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705;<sup>1</sup> |
-| **Android**  | &#x2705; | &#x2705| &#10060; | N/A | &#x2705;<sup>1</sup> |
+| **Android**  | &#x2705; | &#x2705; | &#10060; | N/A | &#x2705;<sup>1</sup> |
 
 <sup>1</sup>Requires an authentication broker to be installed on the user's device. Some Microsoft apps support passkey authentication without an authentication broker. For more information, see [Native application support](#native-application-support).
 
