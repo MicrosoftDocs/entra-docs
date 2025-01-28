@@ -307,7 +307,7 @@ items:
         href: service-accounts-computer.md
       - name: Secure on-premises user service accounts
         href: service-accounts-user-on-premises.md
-      - name: Govern on-premises user service accounts
+      - name: Govern on-premises service accounts
         href: service-accounts-govern-on-premises.md
   - name: Secure for AI
     items: 

@@ -31,13 +31,10 @@ procedureSection:
       After you get your domain name, you can create your first directory. Sign in to the [Azure portal](https://portal.azure.com) for your directory, using an account with the [Owner](/azure/role-based-access-control/built-in-roles#owner) role for the subscription.
     steps: 
       - |
-        Create your new directory by following the steps in [Create a new tenant for your organization](./create-new-tenant.md#create-a-new-tenant-for-your-organization).
-
-        > [!IMPORTANT]
-        > The person who creates the tenant is automatically granted [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) privileges. This role is highly privileged and can add additional administrators to the tenant.
+        Create your new directory by following the steps in [Create a new tenant for your organization](./create-new-tenant.md#create-a-new-tenant-for-your-organization). 
       
       - |
-        For more information about subscription roles, see [Azure roles](/azure/role-based-access-control/rbac-and-directory-admin-roles#azure-roles).
+        By default, the user who creates a Microsoft Entra tenant is automatically assigned the [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator) role.
 
         > [!TIP]
         > If you plan to federate on-premises Windows Server Active Directory with Microsoft Entra ID, then you need to select **I plan to configure this domain for single sign-on with my local Active Directory** when you run the Microsoft Entra Connect tool to synchronize your directories.
