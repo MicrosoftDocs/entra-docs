@@ -61,9 +61,7 @@ Follow these steps to create the app registration:
 > [!IMPORTANT]
 > New app registrations are hidden to users by default. When you are ready for users to see the app on their [My Apps page](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510) you can enable it. To enable the app, in the Microsoft Entra admin center navigate to **Identity** > **Applications** > **Enterprise applications** and select the app. Then on the **Properties** page toggle **Visible to users?** to Yes.
 
-## Grant admin consent
-
-[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+## Grant admin consent (external tenants only)
 
 Once you register your application, it gets assigned the **User.Read** permission. However, for external tenants, the customer users themselves can't consent to this permission. You as the admin must consent to this permission on behalf of all the users in the tenant:
 
