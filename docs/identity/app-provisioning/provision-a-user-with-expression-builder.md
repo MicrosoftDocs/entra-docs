@@ -10,7 +10,7 @@ ms.topic: reference
 ms.date: 01/24/2025
 ---
 
-# Provision a Use with Expression Builder
+# Provision a User with Expression Builder
 
 User provisioning can sometimes be challenging such as when there are duplicate users present in enterprise applications that use Microsoft Entra ID. The Expression Builder tool simplifies this process, offering the flexibility to transform and map user attributes. 
 
@@ -18,7 +18,7 @@ By default, user provisioning happens based on the UPN. However, there might be 
 
 When we have this situation, there might be user provisioning failures at the application side. For example, some applications like GitHub Copilot (GHCP) provision users in the format a-b-test, where **"a"** is the first name in the UPN, **"b"** is the second name, and **test** is the GHCP instance name. 
 
-Now, if we have users a.b@onmicrosoft.com and a_b@onmicrosoft.com, GHCP would provision one user, and the other user would fail due to duplication. 
+Now, if we have users a.b@onmicrosoft.com and a_b@onmicrosoft.com, GHCP provisions one user, and the other user fails due to duplication. 
 
 Expression Builder simplifies user provisioning by enabling attribute transformation and mapping based on organizational needs. While it offers flexibility and precision, proper testing and validation are crucial for successful implementation in production environments.
 
@@ -45,7 +45,7 @@ Append(Mid([displayName], 1, 15), Mid([objectId], 1, 8))
 
 **Advantages:** 
 
-- Uniqueness ensured via **Object ID**. 
+- Uniqueness ensured through **Object ID**. 
 - Mitigates risk of duplication. 
 
 ### Scenario 2: Modify the user principal name (UPN) for compatibility 
