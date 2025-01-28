@@ -216,7 +216,7 @@ The callback endpoint is called when a user scans the QR code, uses the deep lin
 |Property |Type |Description |
 |---------|---------|---------|
 | `requestId`| string | Mapped to the original request when the payload was posted to the Verifiable Credentials service.|
-| `requestStatus` |string |The status returned when the request was retrieved by the authenticator app. Possible values: <ul><li>`request_retrieved`: The user scanned the QR code or selected the link that starts the presentation flow.</li><li>`presentation_verified`: The verifiable credential validation completed successfully.</li>li>`presentation_error`: There was an error in the presentation.</li></ul>    |
+| `requestStatus` |string |The status returned when the request was retrieved by the authenticator app. Possible values: <ul><li>`request_retrieved`: The user scanned the QR code or selected the link that starts the presentation flow.</li><li>`presentation_verified`: The verifiable credential validation completed successfully.</li><li>`presentation_error`: There was an error in the presentation.</li></ul>    |
 | `state` |string| Returns the state value that you passed in the original payload.   |
 | `subject`|string | The verifiable credential user DID.|
 | `verifiedCredentialsData`| array |Returns an array of verifiable credentials requested. For each verifiable credential, it provides: </li><li>The verifiable credential type(s).</li><li>The issuer's DID</li><li>The claims retrieved.</li><li>The verifiable credential issuer's domain. </li><li>The verifiable credential issuer's domain validation status. </li></ul> |

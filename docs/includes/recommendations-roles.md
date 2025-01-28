@@ -3,7 +3,7 @@ ms.author: sarahlipsey
 author: shlipsey3
 ms.service: entra-id
 ms.topic: include
-ms.date: 09/24/2024
+ms.date: 01/24/2025
 # Include file for recommendations roles.
 ---
 
@@ -20,4 +20,4 @@ There are different role requirements for viewing or updating a recommendation. 
 | `DirectoryRecommendations.Read.All` | Read-only in Microsoft Graph |
 | `DirectoryRecommendations.ReadWrite.All` | Update and read in Microsoft Graph |
 
-Some recommendations might require a P2 or other license. For more information, see [Recommendation availability and license requirements](../identity/monitoring-health/overview-recommendations.md#recommendation-availability-and-license-requirements).
+Some recommendations might require a P2 or other license. For more information, see the [Recommendations overview table](../identity/monitoring-health/overview-recommendations.md#recommendations-overview-table).

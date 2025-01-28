@@ -1,9 +1,9 @@
 ---
-title: Global Secure Access and universal tenant restrictions
+title: Global Secure Access and Universal Tenant Restrictions
 description: Learn about how Global Secure Access secures access to your corporate network by restricting access to external tenants.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 07/19/2024
+ms.date: 12/23/2024
 ms.author: kenwith
 author: kenwith
 manager: amycolannino
@@ -102,9 +102,7 @@ Tenant restrictions are not enforced when a user (or a guest user) tries to acce
 
 ### Known limitations
 
-- Data plane protection capabilities are in preview (authentication plane protection is generally available)
-- When you use Universal Tenant Restrictions and access the Microsoft Entra admin center to manage a partner tenant allowed by the Tenant Restrictions v2 policy, you may get authorization errors. To work around this issue, you need to add `?exp.msaljsoptedoutextensions=%7B%7D` query parameter to the Microsoft Entra admin center URL (for example, `https://entra.microsoft.com/?exp.msaljsoptedoutextensions=%7B%7D`).
-- When the Teams service blocks anonymous meeting join due to Universal Tenant Restrictions, a generic error message is presented in the Teams client application.
+[!INCLUDE [known-limitations-include](../includes/known-limitations-include.md)]
 
 ## Next steps
 - [Enable enhanced Global Secure Access signaling](how-to-source-ip-restoration.md#enable-global-secure-access-signaling-for-conditional-access)

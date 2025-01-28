@@ -189,16 +189,24 @@ items:
         href: deployment-scenario-remote-access.md
       - name: Scenario - Internet access
         href: deployment-scenario-internet-access.md
-    - name: Microsoft's Security Service Edge Solution deployment plans
+    - name: Microsoft Global Secure Access deployment guides
       items:
       - name: Introduction
-        href: sse-deployment-guide-intro.md
-      - name: Deploying Microsoft Entra Internet Access for Microsoft 365
-        href: sse-deployment-guide-m365.md
-      - name: Deploying Microsoft Entra Internet Access
-        href: sse-deployment-guide-internet-access.md
-      - name: Deploying Microsoft Entra Private Access
-        href: sse-deployment-guide-private-access.md 
+        href: gsa-deployment-guide-intro.md
+      - name: Deploy Global Secure Access for Microsoft Traffic
+        href: gsa-deployment-guide-microsoft-traffic.md
+      - name: Deploy Microsoft Global Secure Access for Microsoft Entra Internet Access
+        href: gsa-deployment-guide-internet-access.md
+      - name: Deploy Microsoft Global Secure Access for Microsoft Entra Private Access
+        href: gsa-deployment-guide-private-access.md
+      - name: Microsoft Global Secure Access Proof of Concept Guidance
+        items:
+        - name: Introduction
+          href: gsa-poc-guidance-intro.md
+        - name: Configure Microsoft Entra Private Access
+          href: gsa-poc-private-access.md
+        - name: Configure Microsoft Entra Internet Access
+          href: gsa-poc-internet-access.md
   - name: Migration best practices
     items:
     - name: Migration best practices

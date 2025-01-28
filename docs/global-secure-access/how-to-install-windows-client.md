@@ -1,9 +1,9 @@
 ---
-title: The Global Secure Access client for Windows
+title: The Global Secure Access Client for Windows
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Windows client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 12/16/2024
+ms.date: 01/10/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -14,6 +14,9 @@ ms.reviewer: lirazbarak
 ---
 # Global Secure Access client for Microsoft Windows
 The Global Secure Access client, an essential component of Global Secure Access, helps organizations manage and secure network traffic on end-user devices. The client's main role is to route traffic that needs to be secured by Global Secure Access to the cloud service. All other traffic goes directly to the network. The [Forwarding Profiles](concept-traffic-forwarding.md), configured in the portal, determine which traffic the Global Secure Access client routes to the cloud service.
+
+>[!NOTE]
+>The Global Secure Access Client is also available for macOS, Android, and iOS. To learn how to install the Global Secure Access client on these platforms, see [Global Secure Access client for macOS](how-to-install-macos-client.md), [Global Secure Access client for Android](how-to-install-android-client.md), and [Global Secure Access client for iOS](how-to-install-ios-client.md).
 
 This article describes how to download and install the Global Secure Access client for Windows.
 
@@ -85,80 +88,8 @@ Double-click the Global Secure Access icon to open the client status notificatio
 |:::image type="icon" source="media/how-to-install-windows-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access - could not connect to the Internet	|The client couldn't detect an internet connection. The device is either connected to a network that doesn't have an Internet connection or a network that requires captive portal sign in.    |
 
 ## Known limitations
-Known limitations for the current version of the Global Secure Access client include:
 
-### Secure Domain Name System (DNS)
-The Global Secure Access client doesn't currently support secure DNS in its different versions, such as DNS over HTTPS (DoH), DNS over TLS (DoT), or DNS Security Extensions (DNSSEC). To configure the client so it can acquire network traffic, you must disable secure DNS. To disable secure DNS in the browser, see [Secure DNS disabled in browsers](troubleshoot-global-secure-access-client-diagnostics-health-check.md#secure-dns-disabled-in-browsers-microsoft-edge-chrome-firefox). 
-
-### DNS over TCP
-DNS uses port 53 UDP for name resolution. Some browsers have their own DNS client that also supports port 53 TCP. Currently the Global Secure Access client doesn't support DNS port 53 TCP. As a mitigation, disable the browser's DNS client by setting the following registry values:
-- Microsoft Edge   
-``[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]   
-"BuiltInDnsClientEnabled"=dword:00000000``
-- Chrome   
-``[HKEY_CURRENT_USER\Software\Policies\Google\Chrome]   
-"BuiltInDnsClientEnabled"=dword:00000000``   
-Also add browsing `chrome://flags` and disabling `Async DNS resolver`.
-
-### IPv6 not supported
-The client tunnels only IPv4 traffic. IPv6 traffic isn't acquired by the client and is therefore transferred directly to the network. To enable all relevant traffic to be tunneled, set the network adapter properties to [IPv4 preferred](troubleshoot-global-secure-access-client-diagnostics-health-check.md#ipv4-preferred).
-
-### Connection fallback
-If there's a connection error to the cloud service, the client falls back to either direct Internet connection or blocking the connection, based on the ***hardening*** value of the matching rule in the forwarding profile.
-
-### Geolocation
-For network traffic that is tunneled to the cloud service, the application server (website) detects the connection's source IP as the edge's IP address (and not as the user-device's IP address). This scenario might affect services that rely on geolocation.
-> [!TIP]
-> For Office 365 and Entra to detect the device's true source IP, consider enabling [Source IP restoration](how-to-source-ip-restoration.md).
-
-### Virtualization support
-Hyper-V support: 
-1. External virtual switch: The Global Secure Access Windows client doesn't currently support host machines that have a Hyper-V external virtual switch. However, the client can be installed on the virtual machines to tunnel traffic to Global Secure Access.   
-1. Internal virtual switch: The Global Secure Access Windows client can be installed on host and guest machines. The client tunnels only the network traffic of the machine it's installed on. In other words, a client installed on a host machine doesn’t tunnel the network traffic of the guest machines.      
-
-The Global Secure Access Windows client supports Azure Virtual Machines. 
-
-The Global Secure Access Windows client supports Azure Virtual Desktop (AVD).
-> [!NOTE]
-> AVD multi-session is not supported.
-
-### Proxy
-If a proxy is configured at the application level (such as a browser) or at the OS level, configure a proxy auto configuration (PAC) file to exclude all FQDNs and IPs that you expect the client to tunnel.
-
-To prevent HTTP requests for specific FQDNs/IPs from tunneling to the proxy, add the FQDNs/IPs to the PAC file as exceptions. (These FQDNs/IPs are in the forwarding profile of Global Secure Access for tunneling). For example:
-
-```http
-function FindProxyForURL(url, host) {   
-        if (isPlainHostName(host) ||   
-            dnsDomainIs(host, ".microsoft.com") || // tunneled 
-            dnsDomainIs(host, ".msn.com")) // tunneled 
-           return "DIRECT";                    // If true, sets "DIRECT" connection 
-        else                                   // If not true... 
-           return "PROXY 10.1.0.10:8080";  // forward the connection to the proxy
-}
-```
-If a direct internet connection isn't possible, configure the client to connect to the Global Secure Access service through a proxy. For example, set the `grpc_proxy` system variable to match the value of the proxy, such as `http://proxy:8080`.
-
-To apply the configuration changes, restart the Global Secure Access client Windows services.
-
-### Packet injection
-The client only tunnels traffic sent using sockets. It doesn't tunnel traffic injected to the network stack using a driver (for example, some of the traffic generated by Network Mapper (Nmap)). Injected packets go directly to the network.
-
-### Multi-session
-The Global Secure Access client doesn't support concurrent sessions on the same machine. This limitation applies to RDP servers and VDI solutions like Azure Virtual Desktop (AVD) that are configured for multi-session.
-
-### Arm64
-The Global Secure Access client doesn't support Arm64 architecture.
-
-### QUIC not supported for Internet Access
-Since QUIC isn't yet supported for Internet Access, traffic to ports 80 UDP and 443 UDP can't be tunneled.
-> [!TIP]
-> QUIC is currently supported in Private Access and Microsoft 365 workloads.
-
-Administrators can disable QUIC protocol triggering clients to fall back to HTTPS over TCP, which is fully supported in Internet Access. For more information, see [QUIC not supported for Internet Access](troubleshoot-global-secure-access-client-diagnostics-health-check.md#quic-not-supported-for-internet-access).
-
-### WSL 2 connectivity
-When the Global Secure Access client for Windows is enabled on the host machine, outgoing connections from the Windows Subsystem for Linux (WSL) 2 environment might be blocked. To mitigate this occurrence, create a `.wslconfig` file that sets dnsTunneling to **false**. This way, all traffic from the WSL bypasses Global Secure Access and goes directly to the network. For more information, see [Advanced settings configuration in WSL](/windows/wsl/wsl-config#wslconfig).
+[!INCLUDE [known-limitations-include](../includes/known-limitations-include.md)]
 
 ## Troubleshooting
 To troubleshoot the Global Secure Access client, right-click the client icon in the taskbar and select one of the troubleshooting options: **Collect logs** or **Advanced diagnostics**.

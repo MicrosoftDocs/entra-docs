@@ -23,7 +23,7 @@ The following document guides you through on-demand provisioning with Microsoft 
 
 For additional information and an example see the following video.
 
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWK5mW]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=abcf1d11-c101-49a6-ab56-cdc45cc34817]
 
 ## Validate a user
 To use on-demand provisioning, follow these steps:

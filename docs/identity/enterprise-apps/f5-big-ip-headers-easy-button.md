@@ -323,8 +323,6 @@ Deployment provides a breakdown of your configurations.
 
 The following screenshot is injected headers output from the header-based application.
 
-   ![Screenshot of UPN, employee ID, and event roles under Server Variables.](./media/f5-big-ip-easy-button-ldap/app-view.png)
-
    > [!NOTE]
    > You can block direct access to the application, thereby enforcing a path through the BIG-IP.
 

@@ -6,7 +6,7 @@ description: This article has information about moving your hybrid identity envi
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.topic: conceptual
-ms.date: 08/25/2024
+ms.date: 12/26/2024
 ms.author: billmath
 author: gargi-sinha
 manager: amycolannino
@@ -22,7 +22,7 @@ We recommend using PHS for cloud authentication.
 
 ## Staged rollout
 
-> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE3inQJ]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=252dc370-5709-4dfb-b346-2cbf76f1640f]
 
 Staged rollout is a great way to selectively test groups of users with cloud authentication capabilities like Microsoft Entra multifactor authentication, Conditional Access, Microsoft Entra ID Protection for leaked credentials, Identity Governance, and others, before cutting over your domains. 
 

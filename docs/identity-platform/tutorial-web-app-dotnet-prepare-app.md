@@ -58,19 +58,6 @@ Use the following tabs to create an ASP.NET Core project within an IDE.
     dotnet new webapp
     ```
 
-### [Visual Studio for Mac](#tab/visual-studio-for-mac)
-
-1. Open Visual Studio, and then select **New**.
-1. Under **Web and Console** in the left navigation bar, select **App**.
-1. Under **ASP.NET Core**, select **Web Application** and ensure **C#** is selected in the drop down menu, then select **Continue**.
-1. Ensure the **Target Framework** is set to **.NET 6.0** at a minimum.
-1. Enter a name for **Project name**, this is reflected in **Solution Name**. Provide a similar name to the one registered in the Microsoft Entra admin center, such as *NewWebAppLocal*.
-1. Accept the default location for the project or choose a different location, and then select **Create**.
-
->[!NOTE]
-> Visual Studio for Mac is scheduled for retirement by August 31, 2024 in accordance with Microsoft’s [Modern Lifecycle Policy](/lifecycle/policies/modern). Visual Studio for Mac 17.6 will continue to be supported until August 31, 2024, with servicing updates for security issues and updated platforms from Apple.
-> Refer to [What's happening to Visual Studio for Mac](/visualstudio/mac/what-happened-to-vs-for-mac) for more information.
-
 ---
 
 ## Create and upload a self-signed certificate
@@ -94,20 +81,6 @@ The use of certificates is a suggested way of securing communication between cli
     ```powershell
     dotnet dev-certs https -ep ./certificate.crt --trust
     ```
-
-### [Visual Studio for Mac](#tab/visual-studio-for-mac)
-
-1. Locate the **Terminal** option in your project.
-
-1. Enter the following command to create a new self-signed certificate:
-
-    ```powershell
-    dotnet dev-certs https -ep ./certificate.crt --trust
-    ```
-
->[!NOTE]
-> Visual Studio for Mac is scheduled for retirement by August 31, 2024 in accordance with Microsoft’s [Modern Lifecycle Policy](/lifecycle/policies/modern). Visual Studio for Mac 17.6 will continue to be supported until August 31, 2024, with servicing updates for security issues and updated platforms from Apple.
-> Refer to [What's happening to Visual Studio for Mac](/visualstudio/mac/what-happened-to-vs-for-mac) for more information.
 
 ---
 

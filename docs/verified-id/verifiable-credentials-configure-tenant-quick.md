@@ -27,7 +27,7 @@ Specifically, you learn how to:
 
 ## Prerequisites
 
-- Ensure that you have the [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) or the [authentication policy administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) permission for the directory you want to configure. If you're not the Global Administrator, you need the [application administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) permission to complete the app registration including granting admin consent.
+- Ensure that you have the [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) or the [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) permission for the directory you want to configure. If you're not the Global Administrator, you need the [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) permission to complete the app registration including granting admin consent.
 - Ensure that you have a [custom domain registered](~/identity/users/domains-manage.md) for the Microsoft Entra tenant. If you don't have one registered, the setup defaults to the advanced setup experience.
 
 > [!NOTE]

@@ -5,7 +5,7 @@ description: Learn about using the Microsoft Authenticator in Microsoft Entra ID
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/29/2024
+ms.date: 01/03/2024
 
 ms.author: justinha
 author: justinha

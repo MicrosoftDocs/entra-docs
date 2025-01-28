@@ -216,8 +216,6 @@ A Network access list provisions the service with IP and DNS settings from the V
 10. For **IPV4 Primary Name Server**: Your environment DNS IP
 11. For **DNS Default Domain Suffix**: The domain suffix for this VPN connection. For example, contoso.com
 
-    ![Screenshot of entries for IPV4 Primary Server Name and DNS Default Domain Suffix.](media/f5-passwordless-vpn/domain-suffix.png)
-
    >[!NOTE]
    >See the F5 article, [Configuring Network Access Resources](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-network-access-11-5-0/2.html) for other settings.
 
