@@ -49,21 +49,8 @@ In this quickstart, you use a sample single-page app (SPA) to show you how to si
 
 ## Register the application and record identifiers
 
-#### [JavaScript](#tab/javascript-workforce)
-
 [!INCLUDE [Register a single-page application](./includes/register-app/spa-common/register-application-spa-common.md)]
 
-#### [React](#tab/react-workforce)
-
-[!INCLUDE [Register a single-page application](./includes/register-app/spa-common/register-application-spa-common.md)]
-
-#### [Angular](#tab/angular-workforce)
-
-[!INCLUDE [Register a single-page application](./includes/register-app/spa-common/register-application-spa-common.md)]
-
-#### [Blazor](#tab/blazor-workforce)
-
-[!INCLUDE [Register a single-page application](./includes/register-app/spa-common/register-application-spa-common.md)]
 
 ---
 
@@ -289,19 +276,7 @@ Run the project with a web server by using dotnet:
 
 ## Register the application and record identifiers
 
-#### [JavaScript](#tab/javascript-external)
-
 [!INCLUDE [Register a single-page application](../external-id/customers/includes/register-app/register-client-app-common.md)]
-
-#### [React](#tab/react-external)
-
-[!INCLUDE [Register a single-page application](../external-id/customers/includes/register-app/register-client-app-common.md)]
-
-#### [Angular](#tab/angular-external)
-
-[!INCLUDE [Register a single-page application](../external-id/customers/includes/register-app/register-client-app-common.md)]
-
----
 
 ## Add a platform redirect URI
 
