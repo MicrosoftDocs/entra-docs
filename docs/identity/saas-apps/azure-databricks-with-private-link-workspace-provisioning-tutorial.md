@@ -7,7 +7,7 @@ ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: tutorial
 
-ms.date: 03/25/2024
+ms.date: 12/30/2024
 ms.author: billmath
 ms.reviewer: owinoakelo
 

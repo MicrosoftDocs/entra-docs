@@ -6,7 +6,7 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 11/26/2024
+ms.date: 01/03/2024
 
 ms.author: justinha
 author: justinha
@@ -70,10 +70,11 @@ The related information exists for the following device platforms:
 
 [!INCLUDE [Get-AzureAD](~/includes/entra-authentication-get-trusted.md)]
 
+[!INCLUDE [least-privilege-note](../../includes/definitions/least-privilege-note.md)]
 
 To add, modify, or remove a CA, use the Microsoft Entra admin center:
 
-1. [!INCLUDE [Privileged role](../../includes/privileged-role-include.md)]
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Browse to **Protection** > **Show more** > **Security Center** (or **Identity Secure Score**) > **Certificate authorities**.
 1. To upload a CA, select **Upload**: 
    1. Select the CA file.

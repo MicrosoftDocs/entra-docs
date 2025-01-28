@@ -3,13 +3,13 @@
 title: Resolve group license assignment problems
 description: How to identify and resolve license assignment problems when you're using Microsoft Entra group-based licensing
 
-keywords: Azure AD licensing
+keywords: Microft Entra ID licensing
 author: barclayn
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 08/23/2024
+ms.date: 01/14/2025
 ms.author: barclayn
 ms.reviewer: sumitp
 ms.custom: it-pro
@@ -60,7 +60,7 @@ The following sections give a description of each potential problem and ways to 
 
 To see how many licenses are available, go to **Identity** > **Billing** > **Licenses** > **All products**.
 
-To see which users and groups are consuming licenses, select a product. Under **Licensed users**, you see a list of all users who've had licenses assigned directly or via one or more groups. Under **Licensed groups**, you see all groups that have that products assigned.
+To see which users and groups are consuming licenses, select a product. Under **Licensed users**, you see a list of all users who have licenses assigned directly or via one or more groups. Under **Licensed groups**, you see all groups that have that products assigned.
 
 **PowerShell:** PowerShell cmdlets report this error as *CountViolation*.
 
@@ -69,7 +69,7 @@ To see which users and groups are consuming licenses, select a product. Under **
 **Problem:** One of the products specified in the group contains a service plan that conflicts with another service plan already assigned to the user via a different product. Some service plans are configured in a way that they can't be assigned to the same user as another, related service plan.
 
 > [!TIP]
-> Previously, Exchange Online Plan1 and Plan2 were unique and couldn't be duplicated. Now, both service plans have been updated to allow duplication.
+> Previously, Exchange Online Plan1 and Plan2 were unique and couldn't be duplicated. Now, both service plans allow duplication.
 > If you are experiencing conflicts with these service plans, try reprocessing them.
 
 The decision about how to resolve conflicting product licenses always belongs to the administrator. Microsoft Entra ID doesn't automatically resolve license conflicts.
@@ -88,23 +88,23 @@ To solve this problem, you need to make sure that the required plan is still ass
 
 **Problem:** Some Microsoft services aren't available in all locations because of local laws and regulations. Before you can assign a license to a user, you must specify the **Usage location** property for the user. You can specify the location under the **User** > **Profile** > **Edit** section in the portal.
 
-When Microsoft Entra ID attempts to assign a group license to a user whose usage location isn't supported, it fails and records an error on the user.
+When Microsoft Entra ID attempts to assign a group license to a user in an unsupported usage location, it fails. The system records an error on the user.
 
-To solve this problem, remove users from unsupported locations from the licensed group. Or, if the current usage location values don't represent the actual user location, you can modify them so that the licenses are correctly assigned next time (if the new location is supported).
+To solve this problem, remove users from unsupported locations from the licensed group. If the current usage location values don't represent the actual user location, you can modify them so licenses are correctly assigned next time (if the new location is supported).
 
 **PowerShell:** PowerShell cmdlets report this error as *ProhibitedInUsageLocationViolation*.
 
 > [!NOTE]
 > - When Microsoft Entra ID assigns group licenses, any users without a specified usage location inherit the location of the directory. Microsoft recommends that administrators set the correct usage location values on users before using group-based licensing to comply with local laws and regulations.
-> - The attributes of First name, Last name, Other email address, and User type are not mandatory for license assignment.
+> - The attributes of First name, Last name, Other email address, and User type aren't mandatory for license assignment.
 
 
 ## License removal of dynamic membership groups with rules based on licenses with an initial static group
 
-This error happens due to users being added and removed from another batch of dynamic membership groups, due to the cascading setup of dynamic membership groups with rules based on licenses on an initial static group. This error can impact multiple dynamic membership groups and require extensive reprocessing to restore access. 
+This error occurs because users are added and removed from another batch of dynamic membership groups. The cascading setup of dynamic membership groups, with rules based on licenses in an initial static group, creates this issue. This error can affect multiple dynamic membership groups and demands extensive reprocessing to restore access.
 
 > [!WARNING]
-> When changing an existing static group to a dynamic group, all existing members are removed from the group, and then the membership rule is processed to add new members. If the group is used to control access to apps or resources, be aware that the original members might lose access until the membership rule is fully processed.
+> When you change an existing static group to a dynamic group, all existing members are removed from the group, and then the membership rule is processed to add new members. If the group is used to control access to apps or resources, the original members might lose access until the membership rule is fully processed.
 >
 > We recommend that you test the new membership rule beforehand to make sure that the new membership in the group is as expected. If you encounter errors during your test, see [Use audit logs to monitor group-based licensing activity](licensing-group-advanced.md#use-audit-logs-to-monitor-group-based-licensing-activity).
 
@@ -114,7 +114,7 @@ This error happens due to users being added and removed from another batch of dy
 **Problem:** If you use Exchange Online, some users in your organization might be incorrectly configured with the same proxy address value. When group-based licensing tries to assign a license to such a user, it fails and shows  “Proxy address is already being used”.
 
 > [!TIP]
-> To see if there is a duplicate proxy address, execute the following PowerShell cmdlet against Exchange Online:
+> To see if there's a duplicate proxy address, execute the following PowerShell cmdlet against Exchange Online:
 > ```
 > Get-Recipient -Filter "EmailAddresses -eq 'user@contoso.onmicrosoft.com'" | fl DisplayName, RecipientType,Emailaddresses
 > ```
@@ -134,29 +134,29 @@ Updating license assignment on a user causes the proxy address calculation to be
 ## LicenseAssignmentAttributeConcurrencyException in audit logs
 
 **Problem:** User has `LicenseAssignmentAttributeConcurrencyException` for license assignment in audit logs.
-When group-based licensing tries to process concurrent license assignment of the same license to a user, this exception is recorded on the user. This usually happens when a user is a member of more than one group with same assigned license. Microsoft Entra ID retries processing the user license until the issue is resolved. There's no action required from the customer to fix this issue.
+When group-based licensing tries to process concurrent license assignment of the same license to a user, this exception is recorded on the user. This problem usually happens when a user is a member of more than one group with same assigned license. Microsoft Entra ID retries processing the user license until the issue is resolved. There's no action required from the customer to fix this issue.
 
 ## More than one product license assigned to a group
 
 You can assign more than one product license to a group. For example, you can assign Office 365 Enterprise E3 and Enterprise Mobility + Security to a group to easily enable all included services for users.
 
-**Problem:** Microsoft Entra ID attempts to assign all specified licenses in the group to each user. However, if Microsoft Entra ID encounters issues such as insufficient licenses or conflicts with other services enabled, it won't assign other licenses in the group either. You can check which users have failed to get assigned and which products were affected by this problem.
+**Problem:** Microsoft Entra ID attempts to assign all specified licenses in the group to each user. However, if Microsoft Entra ID encounters issues such as insufficient licenses or conflicts with other services enabled, it doesn't assign other licenses in the group either. You can check which users have license assignment failures and products affected.
 
-It's important to note that when assigning licenses to a group, if there are not enough available licenses, or an issue occurs like service plans that can't be assigned at the same time, the assignment to the group might not be completed. An example is if there aren't enough licenses for all, or if there are conflicts with other services that are enabled for the user.
+If a problem occurs during license assignment, the process may not complete. For example, issues like insufficient licenses or service plans that can't be assigned at the same time, would prevent the process from finishing.
 
-One potential work around for this problem is to [create dynamic membership groups](~/identity/users/groups-dynamic-rule-member-of.md). You could create dynamic membership groups to assign licenses, such as Exchange Online, and then use a second dynamic group with the same membership rules to apply prerequisite licenses. You can then assign those additional licenses after the initial group has applied the Exchange Online license to the users.
+One potential work-around for this problem is to [create dynamic membership groups](~/identity/users/groups-dynamic-rule-member-of.md). You could create dynamic membership groups to assign licenses, such as Exchange Online, and then use a second dynamic group with the same membership rules to apply prerequisite licenses. You can then assign those other licenses after the initial group applies the Exchange Online license to the users.
 
 If you encounter any licensing errors, they're recorded on the user object and reported via the Azure portal for resolution. For more information, see [Microsoft Graph PowerShell group-based licensing examples](~/identity/users/licensing-powershell-graph-examples.md).
 
 ## When a licensed group is deleted
 
-**Problem:** You must remove all licenses assigned to a group before you can delete the group. However, removing licenses from all the users in the group may take time. While removing license assignments from a group, there can be failures if user has a dependent license assigned or if there is a proxy address conflict issue which prohibits the license removal. If a user has a license that is dependent on a license which is being removed due to group deletion, the license assignment to the user is converted from inherited to direct.
+**Problem:** You must remove all licenses assigned to a group before you can delete the group. However, removing licenses from all the users in the group may take time. While removing license assignments from a group, there can be failures if user has a dependent license assigned or if there's a proxy address conflict issue that prevents the license removal. If a user has a license that is dependent on a license which is being removed due to group deletion, the license assignment to the user is converted from inherited to direct.
 
-For example, consider a group that has Office 365 E3/E5 assigned with a Skype for Business service plan enabled. Also imagine that a few members of the group have Audio Conferencing licenses assigned directly. When the group is deleted, group-based licensing will try to remove Office 365 E3/E5 from all users. Because Audio Conferencing is dependent on Skype for Business, for any users with Audio Conferencing assigned, group-based licensing converts the Office 365 E3/E5 licenses to direct license assignment.
+For example, consider a group that has Office 365 E3/E5 assigned with a Skype for Business service plan enabled. Also imagine that a few members of the group have Audio Conferencing licenses assigned directly. When the group is deleted, group-based licensing tries to remove Office 365 E3/E5 from all users. Because Audio Conferencing is dependent on Skype for Business, for any users with Audio Conferencing assigned, group-based licensing converts the Office 365 E3/E5 licenses to direct license assignment.
 
 ## Manage licenses for products with prerequisites
 
-Some Microsoft Online products you might own are *add-ons*. Add-ons require a prerequisite service plan to be enabled for a user or a group before they can be assigned a license. With group-based licensing, the system requires that both the prerequisite and add-on service plans be present in the same group. This is done to ensure that any users who are added to the group can receive the fully working product. Let's consider the following example:
+Some Microsoft Online products you might own are *add-ons*. Add-ons require a prerequisite service plan to be enabled for a user or a group before they can be assigned a license. With group-based licensing, the system requires that both the prerequisite and add-on service plans be present in the same group. This requirement exists to ensure that any users who are added to the group can receive the fully working product. Let's consider the following example:
 
 Microsoft Workplace Analytics is an add-on product. It contains a single service plan with the same name. You can only assign this service plan to a user, or group, when one of the following prerequisites is also assigned:
 
@@ -177,17 +177,17 @@ It's also possible to create a standalone group that contains only the minimum r
 From now on, any users added to this group consume one license of the E3 product and one license of the Workplace Analytics product. At the same time, those users can be members of another group that gives them the full E3 product, and they still consume only one license for that product.
 
 > [!TIP]
-> You can create multiple groups for each prerequisite service plan. For example, if you use both Office 365 Enterprise E1 and Office 365 Enterprise E3 for your users, you can create two groups to license Microsoft Workplace Analytics: one that uses E1 as a prerequisite and the other that uses E3. This lets you distribute the add-on to E1 and E3 users without consuming additional licenses.
+> You can create multiple groups for each prerequisite service plan. For example, if you use both Office 365 Enterprise E1 and Office 365 Enterprise E3 for your users, you can create two groups to license Microsoft Workplace Analytics: one that uses E1 as a prerequisite and the other that uses E3. This approach lets you distribute the add-on to E1 and E3 users without consuming other licenses.
 
 ## Force group license processing to resolve errors
 
-**Problem:** Depending on what steps you've taken to resolve the errors, it might be necessary to manually trigger the processing of a group to update the user state.
+**Problem:** Depending on what steps you took to resolve the errors, it might be necessary to manually trigger the processing of a group to update the user state.
 
 For example, if you free up some licenses by removing direct license assignments from users, you need to trigger the processing of groups that previously failed to fully license all user members. To reprocess a group, go to the group pane, open **Licenses**, and then select the **Reprocess** button on the toolbar.
 
 ## Force user license processing to resolve errors
 
-**Problem:** Depending on what steps you've taken to resolve the errors, it might be necessary to manually trigger the processing of a user to update the users state.
+**Problem:** Depending on what steps you took to resolve the errors, it might be necessary to manually trigger the processing of a user to update the users state.
 
 For example, after you resolve duplicate proxy address problem for an affected user, you need to trigger the processing of the user. To reprocess a user, go to the user pane, open **Licenses**, and then select the **Reprocess** button on the toolbar.
 

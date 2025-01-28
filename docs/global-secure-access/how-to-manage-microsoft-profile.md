@@ -14,7 +14,8 @@ ms.subservie: entra-internet-access
 With the Microsoft profile enabled, Microsoft Entra Internet Access acquires the traffic going to Microsoft services. The **Microsoft** profile manages the following policy groups:
 
 - Exchange Online
-- SharePoint Online and Microsoft OneDrive. 
+- SharePoint Online and Microsoft OneDrive
+- Microsoft Teams
 - Microsoft 365 Common and Office Online
 
 ## Prerequisites

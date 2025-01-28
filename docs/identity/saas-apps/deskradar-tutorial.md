@@ -144,18 +144,16 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Deskradar SSO
 
-
-
-
 1. In a different web browser window, sign in to your Deskradar company site as an administrator
 
 1. Open **Team** panel by clicking the icon in the Sidebar.
 
 1. Switch to **Authentication** tab.
 
-1. On the **SAML 2.0** tab, perform the following steps:
+1. On the **SAML 2.0** tab, enter the **Login URL** and **Microsoft Entra Identifier** values, which you copied previously into the following fields:
 
-    ![Screenshot that shows the "S A M L 2.0" tab with arrows pointing to the "S A M L S S D U R L" and "Identifier Provider Issuer" fields.](./media/deskradar-tutorial/14-paste-urls.jpg)
+    - **SAML SSO URL**: The **Login URL** value that you copied previously.
+    - **Identity Provider Issuer**: The **Microsoft Entra Identifier** value that you copied previously.
 
 	a. Enable **SAML** authentication method.
 
@@ -164,8 +162,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 	c. In the **Identity Provider Issuer** textbox, enter the **Microsoft Entra Identifier** value, which you copied previously.
 
 1. Open the downloaded **Certificate (Base64)** file with a text editor and copy and paste its content into **Public Certificate** field in Deskradar.
-
-	![Deskradar Configuration](./media/deskradar-tutorial/15-paste-certificate.jpg)
 
 ### Create Deskradar test user
 

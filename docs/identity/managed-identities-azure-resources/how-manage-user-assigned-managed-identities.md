@@ -7,7 +7,7 @@ manager: CelesteDG
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: how-to
-ms.date: 05/10/2023
+ms.date: 01/15/2025
 ms.author: ryanwi
 ms.custom: devx-track-azurecli, devx-track-linux
 zone_pivot_groups: identity-mi-methods

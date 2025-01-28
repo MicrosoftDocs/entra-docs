@@ -6,7 +6,7 @@ description: Learn how to use Microsoft Entra multifactor authentication capabil
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 12/05/2024
+ms.date: 01/08/2025
 
 ms.author: justinha
 author: justinha
@@ -264,9 +264,7 @@ To provide load-balancing capabilities or for redundancy, repeat these steps on 
    .\AzureMfaNpsExtnConfigSetup.ps1
    ```
 
-1. When prompted, sign in to Microsoft Entra ID. 
-
-   [!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)] 
+1. When prompted, sign in to Microsoft Entra ID. A [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) is needed to manage this feature.
 
 1. PowerShell prompts for your tenant ID. Use the *Tenant ID* GUID that you copied in the prerequisites section.
 1. A success message is shown when the script is finished.  
