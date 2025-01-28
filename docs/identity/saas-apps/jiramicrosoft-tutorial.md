@@ -32,7 +32,7 @@ Use your Microsoft Entra account with Atlassian JIRA server to enable single sig
 To configure Microsoft Entra integration with JIRA SAML SSO by Microsoft, you need the following items:
 
 - A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
-- JIRA Core and Software 7.0 to 9.17.4 or JIRA Service Desk 3.0 to 4.22.1 should be installed and configured on Windows 64-bit version.
+- JIRA Core and Software 7.0 to 9.17.5 or JIRA Service Desk 3.0 to 4.22.1 should be installed and configured on Windows 64-bit version.
 - JIRA server is HTTPS enabled.
 - Note the supported versions for JIRA Plugin are mentioned in below section.
 - JIRA server is reachable on the Internet particularly to the Microsoft Entra login page for authentication and should able to receive the token from Microsoft Entra ID.
@@ -53,7 +53,7 @@ To get started, you need the following items:
 
 ## Supported versions of JIRA
 
-* JIRA Core and Software: 7.0 to 9.17.4.
+* JIRA Core and Software: 7.0 to 9.17.5.
 * JIRA Service Desk 3.0 to 4.22.1.
 * JIRA also supports 5.2. For more details, click [Microsoft Entra single sign-on for JIRA 5.2](jira52microsoft-tutorial.md).
 
