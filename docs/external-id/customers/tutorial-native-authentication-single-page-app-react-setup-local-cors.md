@@ -12,7 +12,7 @@ ms.date: 02/07/2025
 #Customer intent: As a developer, devops, I want to 
 ---
 
-# Tutorial: Set up CORS Proxy server to manage CORS headers for native authentication
+# Tutorial: Set up CORS proxy server to manage CORS headers for native authentication
 
 In this tutorial, you learn how to set up the CORS proxy server to manage CORS headers while interacting with native authentication API from a React single-page app (SPA). The CORS proxy server is a solution to the native authentication API's inability to support [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/docs/Web/HTTP/CORS).
 
@@ -139,6 +139,14 @@ At this point, the React app and the CORS proxy server are ready to run.
 1. To sign up for an account, input your details, select the **Sign Up** button, then follow the prompts.
 
 At this point, you've successfully created a React app that can sign up a user by using the native authentication API. Next, you can update the React app to sign in a user or reset the user's password.
+
+## CORS proxy server alternatives
+
+In this tutorial, you set up a local CORS server. However, you can [set up a reverse proxy server to manage CORS headers by using Azure Function App as explained in a test environment](how-to-native-authentication-cors-solution-test-environment.md).
+
+In a production environment, you can use the steps in [Set up a reverse proxy for a single-page app that uses native authentication API by using Azure Function App](how-to-native-authentication-cors-solution-production-environment.md) to set up your CORS proxy server.
+
+<other ways of setting up proxy server Azure function app and Azure Front Door>
 
 ## Related content
 
