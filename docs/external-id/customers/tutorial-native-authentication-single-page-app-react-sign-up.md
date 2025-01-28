@@ -14,7 +14,7 @@ ms.date: 02/07/2025
 
 # Tutorial: Sign up users into a React single-page app by using native authentication
 
-In this tutorial, you learn how to build a React single-page app that signs up users by using native authentication API.
+In this tutorial, you learn how to build a React single-page app that signs up users by using native authentication.
 
 In this tutorial, you learn how to:
 
