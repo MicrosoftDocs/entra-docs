@@ -13,7 +13,7 @@ ms.reviewer: poulomib
 # Customer intent: As an IT admin, I need to make sure that high risk users are blocked from certain activities.
 ---
 
-# Microsoft Entra recommendation: Enable Microsoft Purview Adaptive Protection and the Insider Risk condition in Conditional Access
+# Microsoft Entra recommendation: Protect your tenant with Insider Risk condition in Conditional Access policy
 
 [Microsoft Entra recommendations](overview-recommendations.md) is a feature that provides you with personalized insights and actionable guidance to align your tenant with recommended best practices.
 

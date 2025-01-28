@@ -45,7 +45,7 @@ items:
       href: concept-diagnostic-settings-logs-options.md
     - name: Monitoring options and considerations
       href: concept-log-monitoring-integration-options-considerations.md
-    - name: Identity secure score
+    - name: Identity Secure Score
       href: concept-identity-secure-score.md
     - name: Usage and insights report
       href: concept-usage-insights-report.md
