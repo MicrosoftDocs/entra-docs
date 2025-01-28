@@ -67,7 +67,7 @@ Before you start, Microsoft recommends enabling passkey and other credentials fo
 
 This section focuses on phases 1-3:
 
-:::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/planning-phases.png" alt-text="Diagram that shows the first three phases of the planning process.":::
+:::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/planning-phases.png" alt-text="Diagram that shows the first three phases of the planning process." lightbox="media/how-to-deploy-phishing-resistant-passwordless-authentication/planning-phases.png":::
 
 
 Users should have at least two authentication methods registered. With another method registered, the user has a backup method available if something happens to their primary method, like when a device is lost or stolen. For example, it's a good practice for users to have passkeys registered both on their phone, and locally on their workstation in Windows Hello for Business.
@@ -78,7 +78,7 @@ Users should have at least two authentication methods registered. With another m
 >[!NOTE] 
 >This guidance is tailored for currently existing support for passkeys in Microsoft Entra ID, which includes device-bound passkeys in Microsoft Authenticator and device-bound passkeys on physical security keys. Microsoft Entra ID plans to add support for synced passkeys. For more information, see [Public preview: Expanding passkey support in Microsoft Entra ID](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/public-preview-expanding-passkey-support-in-microsoft-entra-id/ba-p/4062702). This guide will be updated to include synced passkey guidance once available. For example, many organizations may benefit from relying on sync for phase 3 in the preceding diagram rather than bootstrapping entirely new credentials.
 
-### Onboarding step 1: Identity verification
+### Onboarding step 1: identity verification
 
 For remote users who haven't proven their identity, enterprise onboarding is a significant challenge. Without proper identity verification, an organization cannot be completely certain that they are onboarding the person that they intend to. Microsoft Entra Verified ID can provide high assurance identity verification. Organizations can work with an identity verification partner (IDV) to verify the identities of new remote users in the onboarding process. After processing a user’s government-issued ID, the IDV can provide a Verified ID that affirms the user's identity. The new user presents this identity-affirming Verified ID to the hiring organization to establish trust and confirm that the organization is onboarding the right person. Organizations can add Face Check with Microsoft Entra Verified ID which adds a facial matching layer to the verification, ensuring that the trusted user is presenting the identity-affirming Verified ID in that moment.
 
@@ -97,7 +97,7 @@ Refer to the following links for licensing details for Microsoft Entra Verified 
 
 Some organizations might choose other methods than Microsoft Entra Verified ID to onboard users and issue them their first credential. Microsoft recommends those organizations still use TAPs, or another way that lets a user onboard without a password. For example, you can [provision FIDO2 security keys using Microsoft Graph API](how-to-enable-passkey-fido2.md#provision-fido2-security-keys-using-microsoft-graph-api-preview).
 
-### Onboarding step 2: Bootstrap a portable credential
+### Onboarding step 2: bootstrap a portable credential
 
 To bootstrap existing users to phishing-resistant passwordless credentials, first determine if your users are registered for traditional MFA already. Users with traditional MFA methods registered can be targeted with phishing-resistant passwordless registration policies. They can use their traditional MFA to register for their first portable phishing-resistant credential, and then move on to register for local credentials as needed.
 
@@ -125,7 +125,7 @@ Security keys | <li>Security keys are turned off by default in Microsoft Entra I
 Smart card/certificate-based authentication (CBA) | <li>Certificate-based authentication is more complicated to configure than passkeys or other methods. Consider only using it if necessary.<li>[How to configure Microsoft Entra certificate-based authentication](how-to-certificate-based-authentication.md).<li>Make sure to configure your on-premises PKI and Microsoft Entra ID CBA policies so that users truly complete multifactor authentication to sign in. The configuration generally requires the smart card Policy Object Identifier (OID) and the necessary affinity binding settings. For more advanced CBA configurations, see [Understanding the authentication binding policy](concept-certificate-based-authentication-technical-deep-dive.md#understanding-the-authentication-binding-policy).
 
 
-### Onboarding step 3: Bootstrap local credentials on computing devices
+### Onboarding step 3: bootstrap local credentials on computing devices
 
 After users have registered a portable credential, they're ready to bootstrap other credentials on each computing device they regularly use in a 1:1 relationship, which benefits their day-to-day user experience. 
 This type of credential is common for information workers and IT pros, but not for frontline workers who share devices. 
@@ -186,22 +186,22 @@ Microsoft recommends driving usage based on which user personas are most ready f
 
 Use the following sections to create end user communications for each persona group, scope and rollout the passkeys registration feature, and user reporting and monitoring to track rollout progress.
 
-### Driving Readiness with the Phishing-Resistant Passwordless Workbook (Preview)
+### Driving readiness with the Phishing-Resistant Passwordless Workbook (Preview)
 
 Organizations may optionally choose to export their Microsoft Entra ID sign-in logs to [Azure Monitor](~/identity/monitoring-health/howto-integrate-activity-logs-with-azure-monitor-logs.yml) for long-term retention, threat hunting, and other purposes. Microsoft has released a [workbook](~/identity/monitoring-health/overview-workbooks.md) that organizations with logs in Azure Monitor may use to help with various phases of a phishing-resistant passwordless deployment. The Phishing-Resistant Passwordless Workbook can be accessed here: [aka.ms/PasswordlessWorkbook](https://aka.ms/PasswordlessWorkbook). Choose the workbook titled ***Phishing-Resistant Passwordless Deployment (Preview)***:
 
-:::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-gallery.png" alt-text="Screenshot of various workbooks in Entra ID.":::
+:::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-gallery.png" alt-text="Screenshot of various workbooks in Microsoft Entra ID." lightbox="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-gallery.png":::
 
 The workbook has two primary sections:
 
 1. Enrollment Readiness Phase
 1. Enforcement Readiness Phase
 
-#### Enrollment Readiness Phase
+#### Enrollment readiness phase
 
-Use the Enrollment Readiness Phase tab to analyze sign-in logs in your tenant, determining which users are ready for registration and which users may be blocked from registration. For example, with the Enrollment Readiness Phase tab you can select iOS as the OS platform and then Authenticator App Passkey as the type of credential you would like to asses your readiness for. You can then click on the workbook visualizations to filter down to users who are expected to have registration issues and export the list:
+Use the Enrollment Readiness Phase tab to analyze sign-in logs in your tenant, determining which users are ready for registration and which users may be blocked from registration. For example, with the Enrollment Readiness Phase tab you can select iOS as the OS platform and then Authenticator App Passkey as the type of credential you would like to assess your readiness for. You can then click on the workbook visualizations to filter down to users who are expected to have registration issues and export the list:
 
-:::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-ios-filter.png" alt-text="Screenshot of the Enrollment phase of the Phishing-Resistant Passwordless workbook.":::
+:::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-ios-filter.png" alt-text="Screenshot of the Enrollment phase of the Phishing-Resistant Passwordless workbook." lightbox="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-ios-filter.png":::
 
 The Enrollment Readiness Phase tab of the workbook can help you evaluate readiness for the following OSes and credentials:
 
@@ -228,7 +228,7 @@ Use each exported list to triage users who may have registration issues. Respons
 
 Similarly, use the enrollment readiness report to assist you in building out lists of users who are ready to begin enrollment communications and campaigns, in alignment with your overall [rollout strategy](#plan-rollout-strategy).
 
-#### Enforcement Readiness Phase
+#### Enforcement readiness phase
 
 The first step of the enforcement readiness phase is creating a conditional access policy in Report-Only mode. This policy will populate your sign-in logs with data regarding whether or not access would have been blocked if you were to put users/devices in scope for phishing-resistant enforcement. Create a new conditional access policy in your tenant with these settings:
 
@@ -243,19 +243,19 @@ Create this policy as early as possible in your rollout, preferably before even 
 
 Next, use the workbook to analyze where user/device pairs are ready for enforcement. Download lists of users who are ready for enforcement and add them to groups created in alignment with your [enforcement policies](#recommended-enforcement-conditional-access-policies). Begin by selecting the read-only conditional access policy in the policy filter:
 
-:::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-enforcement-policy-selection-1.png" alt-text="Screenshot of the Enforcement phase of the Phishing-Resistant Passwordless workbook with a report-only conditional access policy selected.":::
+:::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-enforcement-policy-selection-1.png" alt-text="Screenshot of the Enforcement phase of the Phishing-Resistant Passwordless workbook with a report-only conditional access policy selected." lightbox="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-enforcement-policy-selection-1.png":::
 
 The report will provide you with a list of users who would have been able to successfully pass the phishing-resistant passwordless requirement on each device platform. Download each list and put the appropriate users in enforcement group that aligns to the device platform.
 
-:::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-enforcement-user-lists-1.png" alt-text="Screenshot of the Enforcement phase of the Phishing-Resistant Passwordless workbook's list of users ready for enforcement.":::
+:::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-enforcement-user-lists-1.png" alt-text="Screenshot of the Enforcement phase of the Phishing-Resistant Passwordless workbook's list of users ready for enforcement." lightbox="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-enforcement-user-lists-1.png":::
 
 Repeat this process over time, until you reach the point where each enforcement group contains most or all users. Eventually, you should be able to enable the report-only policy to provide enforcement for all users and device platforms in the tenant. Once you have reached this completed state you can remove the individual enforcement policies for each device OS, reducing the number of conditional access policies needed.
 
-##### Investigating Users Not Ready for Enforcement
+##### Investigating users not ready for enforcement
 
 Use the ***Further Data Analysis*** tab to investigate why certain users are not ready for enforcement on various platforms. Select the ***Policy Not Satisfied*** box to filter the data down to user sign-ins that would have been blocked by the report-only conditional access policy.
 
-:::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-enforcement-further-data-analysis-1.png" alt-text="Screenshot of the Enforcement phase of the Phishing-Resistant Passwordless workbook's further data analysis tab.":::
+:::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-enforcement-further-data-analysis-1.png" alt-text="Screenshot of the Enforcement phase of the Phishing-Resistant Passwordless workbook's further data analysis tab." lightbox="media/how-to-deploy-phishing-resistant-passwordless-authentication/workbook-enforcement-further-data-analysis-1.png":::
 
 Use the data provided by this report to determine which users would have been blocked, which device OSes they were on, what type of client apps they were using, and what resources they were trying to access. This data should help you target those users for various remediation or enrollment actions, so that they can be effectively moved into scope for enforcement.
 
@@ -329,7 +329,7 @@ As you execute these different phases, you may need to slow down depending on th
 
 This section focuses on phase 4.
 
-:::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/enforcement-phase.png" alt-text="Diagram that highlights the enforcement phase of the deployment.":::
+:::image type="content" border="true" source="media/how-to-deploy-phishing-resistant-passwordless-authentication/enforcement-phase.png" alt-text="Diagram that highlights the enforcement phase of the deployment." lightbox="media/how-to-deploy-phishing-resistant-passwordless-authentication/enforcement-phase.png":::
 
 The final phase of a phishing-resistant passwordless deployment is enforcing the use of phishing-resistant credentials. The primary mechanism for doing this in Microsoft Entra ID is [Conditional Access authentication strengths](concept-authentication-strengths.md#authentication-strengths). Microsoft recommends you approach enforcement for each persona based on a user/device pair methodology. For example, an enforcement rollout could follow this pattern:
 
@@ -368,7 +368,7 @@ Then move on to other scenarios where the user/device pairs require readiness ef
 
 Create a set of Microsoft Entra ID groups to roll out enforcement gradually. Reuse the groups from the [previous step](#monitor-help-desk-ticket-volume) if you used the wave-based rollout approach.
 
-### Recommended Enforcement Conditional Access Policies
+### Recommended enforcement conditional access policies
 
 Target each group with a specific Conditional Access policy. This approach helps you roll out your enforcement controls gradually by user/device pair.
 
@@ -381,10 +381,6 @@ Policy | Group name targeted in the policy | Policy – Device platform conditio
 5	| Other phishing-resistant passwordless ready users | Any except Windows, macOS, iOS, or Android | Require authentication strength – Phishing-resistant MFA
 
 Add each user to each group as you determine whether their device and operating system is ready, or they don’t have a device of that type. At the end of the rollout, each user should be in one of the groups.
-
-### Driving Enforcement with the Phishing-Resistant Passwordless Workbook (Preview)
-
-
 
 ## Respond to risk for passwordless users
 
