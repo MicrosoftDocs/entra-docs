@@ -1,9 +1,9 @@
 ---
-title: Enable compliant network check with Conditional Access
+title: Enable Compliant Network Check with Conditional Access
 description: Learn how to require known compliant network locations in order to connect to your secured resources with Conditional Access.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 10/31/2024
+ms.date: 12/23/2024
 ms.author: kenwith
 author: kenwith
 manager: amycolannino
@@ -11,7 +11,7 @@ ms.reviewer: smistry
 ---
 # Enable compliant network check with Conditional Access
 
-Organizations who use Conditional Access along with the Global Secure Access, can prevent malicious access to Microsoft apps, third-party SaaS apps, and private line-of-business (LoB) apps using multiple conditions to provide defense-in-depth. These conditions might include device compliance, location, and more to provide protection against user identity or token theft. Global Secure Access introduces the concept of a compliant network within Microsoft Entra ID Conditional Access. This compliant network check ensures users connect from a verified network connectivity model for their specific tenant and are compliant with security policies enforced by administrators.
+Organizations who use Conditional Access along with the Global Secure Access, can prevent malicious access to Microsoft apps, third-party SaaS apps, and private line-of-business (LoB) apps using multiple conditions to provide defense-in-depth. These conditions might include device compliance, location, and more to provide protection against user identity or token theft. Global Secure Access introduces the concept of a compliant network within Microsoft Entra ID Conditional Access. This compliant network check ensures users connect via the Global Secure Access service for their specific tenant and are compliant with security policies enforced by administrators.
 
 
 The Global Secure Access Client installed on devices or users behind configured remote networks allows administrators to secure resources behind a compliant network with advanced Conditional Access controls. This compliant network feature makes it easier for administrators to manage access policies, without having to maintain a list of egress IP addresses. This removes the requirement to hairpin traffic through organization's VPN.
@@ -36,11 +36,7 @@ The compliant network is different than [IPv4, IPv6, or geographic locations](..
 
 ### Known limitations
 
-- Compliant network check data plane enforcement (preview) with Continuous Access Evaluation is supported for SharePoint Online and Exchange Online.
-- Enabling Global Secure Access Conditional Access signaling enables signaling for both authentication plane (Microsoft Entra ID) and data plane signaling (preview). It is not currently possible to enable these settings separately.
-- Compliant network check is currently not supported for Private Access applications.
-- After a Windows device resumes from sleep or hibernate, the Teams client may display an error banner prompting the user to sign in. This happens because the Teams client is attempting to connect to SharePoint online prior to the GSA client establishing a tunnel for the Microsoft traffic profile, which fails the Compliant Network check. Clicking the 'Sign In' button after the GSA client is reconnected will resume the user session in Teams.
- 
+[!INCLUDE [known-limitations-include](../includes/known-limitations-include.md)]
 
 ## Enable Global Secure Access signaling for Conditional Access
 

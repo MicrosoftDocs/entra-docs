@@ -8,7 +8,7 @@ ms.assetid: 7b9df836-e8a5-4228-97da-2faec9238b31
 ms.service: entra-id
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 12/09/2024
+ms.date: 12/26/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 

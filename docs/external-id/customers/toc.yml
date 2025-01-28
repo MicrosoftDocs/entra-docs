@@ -9,7 +9,9 @@ items:
     - name: Get started guide walkthrough
       href: quickstart-get-started-guide.md
     - name: Use the Visual Studio Code extension
-      href: visual-studio-code-extension.md
+      href: quickstart-get-started-guide.md
+    - name: Use the Visual Studio Connected Service
+      href: visual-studio-connected-service.md
     - name: Use Azure App Service built-in authentication
       href: /azure/app-service/scenario-secure-app-authentication-app-service?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-configuration
     - name: Use Power Pages and External ID
@@ -447,6 +449,8 @@ items:
         href: how-to-use-app-roles-customers.md
       - name: Web Application Firewall partners
         items: 
+        - name: Azure Web Application Firewall
+          href: tutorial-configure-external-id-web-app-firewall.md
         - name: Cloudflare
           href: tutorial-configure-cloudflare-integration.md
     - name: Manage users

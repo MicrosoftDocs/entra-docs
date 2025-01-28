@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 12/03/2024
+ms.date: 01/06/2025
 ms.author: justinha
 author: najshahid
 manager: amycolannino
@@ -155,7 +155,7 @@ An option to postpone the enforcement start date is available for customers. Bet
 
 **Question**: How can I review MFA activity in Microsoft Entra ID? 
 
-**Answer**: To review details about when a user is prompted to sign in with MFA, use the Microsoft Entra sign-ins report. For more information, see [Sign-in event details for Microsoft Entra multifactor authentication](howto-mfa-reporting.md).
+**Answer**: To review details about when a user is prompted to sign in with MFA, use the Microsoft Entra sign-in logs. For more information, see [Sign-in event details for Microsoft Entra multifactor authentication](howto-mfa-reporting.md).
 
 **Question**: What if I have a "break glass" scenario? 
 

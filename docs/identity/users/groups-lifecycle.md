@@ -8,7 +8,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 08/23/2024
+ms.date: 01/15/2025
 ms.author: barclayn
 ms.reviewer: jodah
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -107,13 +107,13 @@ For more information on permissions to restore a deleted group, see [Restore a d
 
 ## Email notifications
 
-If groups aren't automatically renewed, email notifications like the following example are sent to the Microsoft 365 group owners 30 days, 15 days, and 1 day prior to expiration of the group.
+If groups aren't automatically renewed, email notifications like the following example are sent to the Microsoft 365 group owners 30 days, 15 days, and 1 day before group expiration.
 
  The groups owner's preferred language or the Microsoft Entra language setting determines the language of the email. If the group owner defined a preferred language, or multiple owners have the same preferred language, that language is used. For all other cases, the Microsoft Entra language setting is used.
 
 :::image type="content" source="./media/groups-lifecycle/expiration-notification.png" alt-text="Screenshot that shows expiration email notifications.":::
 
-From the **Renew group** notification email, group owners can directly access the group details page in the [Access Panel](https://account.activedirectory.windowsazure.com/r#/applications). There, users can get more information about the group, such as its description, when it was last renewed, when it will expire, and also the ability to renew the group. The group details page now also includes links to the Microsoft 365 group resources so that the group owner can conveniently view the content and activity in their group.
+From the **Renew group** notification email, group owners can directly access the group details page in the [Access Panel](https://account.activedirectory.windowsazure.com/r#/applications). There, users can get more information about the group, such as its description, when it was last renewed, when it expires, and also the ability to renew the group. The group details page now also includes links to the Microsoft 365 group resources so that the group owner can conveniently view the content and activity in their group.
 
 >[!Important]
 > If there's any problem with the notification emails and they aren't sent out or they're delayed, be assured that Microsoft never deletes a group before the last email is sent.

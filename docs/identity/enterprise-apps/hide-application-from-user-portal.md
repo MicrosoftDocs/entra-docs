@@ -35,7 +35,7 @@ To hide an application from the My Apps portal and Microsoft 365 launcher, you n
 
 Use the following steps to hide an application from My Apps portal and Microsoft 365 application launcher.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [cloud application administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Search for the application you want to hide, and select the application.
 1. In the left navigation pane, select **Properties**.

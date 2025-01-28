@@ -3,7 +3,7 @@ title: Learn about Universal Continuous Evaluation (Preview)
 description: Learn about Universal Continuous Evaluation concepts
 ms.service: global-secure-access
 ms.topic: conceptual
-ms.date: 11/11/2024
+ms.date: 12/23/2024
 ms.author: alexpav
 author: idmdev
 manager: sineado
@@ -12,9 +12,6 @@ ms.reviewer: dhruvinshah
 # Universal Continuous Access Evaluation (Preview)
 
 Universal Continuous Access Evaluation (CAE) is a platform feature of Global Secure Access (GSA) that works together with Microsoft Entra ID to ensure that access to the GSA edge is validated every time a connection to a new application resource is established. Universal CAE protects the GSA access tokens from theft and replay. Universal CAE revokes and revalidates network access in near real-time whenever Entra ID detects changes to the identity. Traditional Entra ID CAE requires each workload to adopt special libraries and is limited to first-party applications only. Universal CAE extends benefits of CAE to any application accessed with Global Secure Access, without requiring the application to be CAE aware.
-
-> [!Note]
-> Universal CAE is currently being deployed and will be available to all Global Secure Access Windows clients by December 31, 2024.
 
 ## Benefits of Universal CAE
 
@@ -30,7 +27,7 @@ Here are some examples of how Universal CAE benefits your organization when Entr
 
 Global Secure Access relies on Entra ID access tokens to authenticate to the service tunnels (Microsoft traffic, Internet Access, and Private Access traffic forwarding profiles). Access tokens are valid between 60 and 90 minutes. Before access token expiration, the GSA client uses the Entra ID refresh token to obtain a new access token.
 
-As per the OAuth2 specification, access tokens are valid until expired. For example, when you disable a user account, Entra ID invalidiates refresh tokens immediately, but it takes up to 90 minutes for the GSA access tokens to expire.
+As per the OAuth2 specification, access tokens are valid until expired. For example, when you disable a user account, Entra ID invalidates refresh tokens immediately, but it takes up to 90 minutes for the GSA access tokens to expire.
 
 With Universal CAE, changes to user identity are communicated to Global Secure Access in near real time. Even though the access token is still valid, Global Secure Access sends a special claims challenge back to the end user, requiring the user to reauthenticate. If the user is unable to complete Entra ID authentication challenge, network access through GSA is blocked. Universal CAE shortens the time window between Entra ID account state change and requiring the user to reauthenticate, reducing the risk of data exfiltration by a departing employee.
 
@@ -58,10 +55,7 @@ Entra ID Conditional Access can be used to control CAE behavior in your tenant. 
 
 ## Known limitations
 
-* Only Windows versions of Global Secure Access client, starting with version 1.8.239.0, are aware of Universal CAE. Other clients use regular access tokens.
-* Entra ID issues short lived tokens for Global Secure Access. Universal CAE access token lifetime is between 60 and 90 minutes, with support for near real-time revocation.
-* It takes approximately 2 to 5 minutes for the Entra ID signal to reach the Global Secure Access client and prompt the user to reauthenticate
-* The user has a grace period of 2 minutes after receiving a CAE event to complete reauthentication. After 2 minutes, existing network flows through GSA are interrupted until the user successfully signs in to the GSA client.
+[!INCLUDE [known-limitations-include](../includes/known-limitations-include.md)]
 
 ## Related content
 

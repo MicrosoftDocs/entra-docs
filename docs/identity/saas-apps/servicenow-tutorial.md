@@ -23,7 +23,7 @@ In this tutorial, you'll learn how to integrate ServiceNow with Microsoft Entra 
 * Enable your users to be automatically signed-in to ServiceNow with their Microsoft Entra accounts.
 * Manage your accounts in one central location: the Azure portal.
 
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4Jao6]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=497330f1-661a-4719-9156-e44708fe9401]
 
 ## Prerequisites
 

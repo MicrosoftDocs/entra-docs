@@ -5,7 +5,7 @@ description: Learn about how to centrally manage multifactor authentication and 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 12/01/2024
+ms.date: 01/07/2025
 
 
 ms.author: justinha
@@ -47,7 +47,7 @@ Once you're happy with the configuration, select **Migrate**, and then confirm t
 The Authentication methods policy gets updated to match the configuration specified in the wizard. 
 Authentication methods in the legacy MFA and SSPR policies become grayed out and no longer apply. 
 
-Your migration status will be updated to **Migration Complete**. 
+Your migration status is updated to **Migration Complete**. 
 You can change this status back to **In Progress** anytime to re-enable methods in the legacy policies if needed.
 
 ## Manual migration
@@ -116,7 +116,7 @@ After you capture available authentication methods from the policies you're curr
 
 :::image type="content" border="false" source="media/how-to-authentication-methods-manage/start-mfa-migration.png" alt-text="Screenshot that shows how to start the migration process." lightbox="media/how-to-authentication-methods-manage/start-mfa-migration.png":::
 
-You'll want to set this option before you make any changes as it will apply your new policy to both sign-in and password reset scenarios.
+You set this option before you make any changes as it applies your new policy to both sign-in and password reset scenarios.
 
 :::image type="content" border="true" source="./media/Concept-authentication-methods-manage/manage-migration.png" alt-text="Screenshot of Migration in progress.":::
 
@@ -157,7 +157,7 @@ If **Verification code from mobile app or hardware token** is enabled in the leg
 :::image type="content" border="true" source="./media/how-to-authentication-methods-manage/one-time-password.png" alt-text="Screenshot of Microsoft Authenticator OTP.":::
 
 > [!NOTE]
-> If users register Microsoft Authenticator only for OTP code using the **I want to use a different authenticator app** wizard, it will be needed to enable **Third-party software OATH tokens** policy.
+> If users register Microsoft Authenticator only for OTP code using the **I want to use a different authenticator app** wizard, it's needed to enable **Third-party software OATH tokens** policy.
 
 ### SMS and voice calls
 
@@ -166,7 +166,7 @@ The legacy MFA policy has separate controls for **SMS** and **Phone calls**. But
 The Authentication methods policy has controls for **SMS** and **Voice calls**, matching the legacy MFA policy. If your tenant is using SSPR and **Mobile phone** is enabled, you'll want to enable both **SMS** and **Voice calls** in the Authentication methods policy. If your tenant is using SSPR and **Office phone** is enabled, you'll want to enable **Voice calls** in the Authentication methods policy, and ensure that the **Office phone** option is enabled. 
 
 > [!NOTE] 
-> The **Use for sign-in** option is default enabled on **SMS** settings. This option enables SMS sign-in. If SMS sign-in is enabled for users, they will be skipped from cross-tenant synchronization. If you are using cross-tenant synchronization or don't want to enable SMS sign-in, disable SMS Sign-in for target users.
+> The **Use for sign-in** option is default enabled on **SMS** settings. This option enables SMS sign-in. If SMS sign-in is enabled for users, they're skipped from cross-tenant synchronization. If you are using cross-tenant synchronization or don't want to enable SMS sign-in, disable SMS Sign-in for target users.
 
 ### OATH tokens
 
