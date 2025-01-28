@@ -63,9 +63,14 @@ Create two or more emergency access accounts. These accounts should be cloud-onl
 
 When you configure these accounts, the following requirements must be met:
 
-- The emergency access accounts shouldn't be associated with any individual user in the organization. Make sure that your accounts aren't connected with any employee-supplied mobile phones, hardware tokens that travel with individual employees, or other employee-specific credentials. This precaution covers instances where an individual employee is unreachable when the credential is needed. It's important to ensure that any registered devices are kept in a known, secure location that has multiple means of communicating with Microsoft Entra ID.
+- In most organizations, emergency access accounts are not associated with any individual user in the organization. Credentials are in a known secure location available to multiple members of administration team and not connected with any employee-supplied devices such as phones. This approach is commonly used to unify emergency access accounts management: most organizations need emergency access accounts not only for Microsoft Cloud infrastructure, but also on-premises environment, federated SaaS applications, and other critical systems.
+
+    Alternatively, you can choose to create individual emergency access accounts for administrators. This solution promotes accountability and allows administrators to use emergency access accounts from remote locations.
+
 - Use strong authentication for your emergency access accounts and make sure it doesn't use the same authentication methods as your other administrative accounts. For example, if your normal administrator account uses the Microsoft Authenticator app for strong authentication, use a FIDO2 security key for your emergency accounts. Consider the [dependencies of various authentication methods](~/architecture/resilience-in-credentials.md), to avoid adding external requirements into the authentication process.
+
 - The device or credential must not expire or be in scope of automated cleanup due to lack of use.  
+
 - In Microsoft Entra Privileged Identity Management, you should make the Global Administrator role assignment permanent rather than eligible for your emergency access accounts. 
 
 ## Federation guidance
