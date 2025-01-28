@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 11/08/2024
+ms.date: 01/28/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -46,9 +46,7 @@ The last sign-in provides potential insights into a user's continued need for ac
 
 <a name="how-to-detect-inactive-user-accounts"></a>
 
-You can detect inactive accounts by evaluating several properties, some of which are available on the `beta` endpoint of the Microsoft Graph API. We don't recommend using the beta endpoints in production, but invite you to try them out.
-
-The `lastSignInDateTime` property exposed by the `signInActivity` resource type of the **Microsoft Graph API**. The lastSignInDateTime property shows the last time a user attempted to make an interactive sign-in attempt in Microsoft Entra ID. Using this property, you can implement a solution for the following scenarios:
+You can detect inactive accounts by evaluating several properties. The `lastSignInDateTime` property exposed by the `signInActivity` resource type of the **Microsoft Graph API**. The lastSignInDateTime property shows the last time a user attempted to make an interactive sign-in attempt in Microsoft Entra ID. Using this property, you can implement a solution for the following scenarios:
 
 - **Last sign-in date and time for all users**: In this scenario, you need to generate a report of the last sign-in date of all users. You request a list of all users, and the last lastSignInDateTime for each respective user:
   - `https://graph.microsoft.com/v1.0/users?$select=displayName,signInActivity`
@@ -59,7 +57,7 @@ The `lastSignInDateTime` property exposed by the `signInActivity` resource type 
 - **Users by date**: In this scenario, you request a list of users with a lastSignInDateTime before a specified date:
   - `https://graph.microsoft.com/v1.0/users?$filter=signInActivity/lastSignInDateTime le 2019-06-01T00:00:00Z`
 
-- **Last successful sign-in date and time (beta)**: This scenario is available only on the `beta` endpoint of the Microsoft Graph API. You can request a list of users with a `lastSuccessfulSignInDateTime` before a specified date:
+- **Last successful sign-in date and time (beta)**: You can request a list of users with a `lastSuccessfulSignInDateTime` before a specified date:
   - `https://graph.microsoft.com/beta/users?$filter=signInActivity/lastSuccessfulSignInDateTime le 2019-06-01T00:00:00Z`
 
 > [!NOTE]
