@@ -78,7 +78,7 @@ The following table compares the [identity providers](../identity-providers.md) 
 
 ## Application registration
 
-The following table compares the features available for [Application registration](./how-to-register-ciam-app.md) in each type of tenant.
+The following table compares the features available for [Application registration](../../identity-platform/quickstart-register-app.md) in each type of tenant.
 
 |Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|

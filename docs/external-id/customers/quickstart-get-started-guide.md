@@ -85,7 +85,7 @@ Explore the features set up by the get started guide in the detailed article on 
 For the latest developer content and resources, see the [External ID developer center](https://aka.ms/ciam/dev).
 
 ## Related content
- - [Register an app in CIAM](how-to-register-ciam-app.md) 
+ - [Register an app in CIAM](/entra/identity-platform/quickstart-register-app) 
  - [Customize user experience for your customers](how-to-customize-branding-customers.md)
  - [Create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md)
 

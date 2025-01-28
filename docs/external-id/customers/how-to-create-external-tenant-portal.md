@@ -93,6 +93,7 @@ If you're not sure which directory contains your external tenant, you can find t
 You can find the same details if you go to **Microsoft Entra ID** in the Azure portal. On the **Microsoft Entra ID** page, you can find the tenant **Name**, **Tenant ID** and **Primary domain** under **Overview** > **Basic information**.
 
 ## Related content
-- [Register an app](how-to-register-ciam-app.md)
+
+- [Register an app](/entra/identity-platform/quickstart-register-app)
 - [Create user flows](how-to-user-flow-sign-up-sign-in-customers.md)
 - [Delete an external tenant](how-to-delete-external-tenant-portal.md)

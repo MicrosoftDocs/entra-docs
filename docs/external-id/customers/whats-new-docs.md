@@ -42,7 +42,7 @@ Welcome to what's new in documentation for Microsoft Entra External ID in extern
 
 ### Updated articles
 
-- [Register an app in your external tenant](how-to-register-ciam-app.md) -  Testing updates
+- [Register an app in your external tenant](/entra/identity-platform/quickstart-register-app) -  Testing updates
 - [Multifactor authentication in external tenants](concept-multifactor-authentication-customers.md) -  SMS-based authentication updates
 - [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md) -  SMS-based authentication updates
 - [Create self-service sign-up user flows for apps in external tenants](how-to-user-flow-sign-up-sign-in-customers.md) -  Graph API updates

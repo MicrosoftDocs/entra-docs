@@ -28,12 +28,12 @@ In this tutorial;
 
 ## Prerequisites
 
-- An API registration that exposes at least one scope (delegated permissions) and one app role (application permission) such as *ToDoList.Read*. If you haven't already, [register an API in the Microsoft Entra admin center](how-to-register-ciam-app.md?tabs=webapi&preserve-view=true) by following the registration steps. Ensure you have the following:
+- An API registration that exposes at least one scope (delegated permissions) and one app role (application permission) such as *ToDoList.Read*. If you haven't already, [register an API in the Microsoft Entra admin center](/entra/identity-platform/quickstart-register-app) by following the registration steps. Ensure you have the following:
     - Application (client) ID of the Web API
     - Directory (tenant) ID of the Web API is registered
     - Directory (tenant) subdomain of where the Web API is registered. For example, if your [primary domain](how-to-create-external-tenant-portal.md#get-the-external-tenant-details) is *contoso.onmicrosoft.com*, your Directory (tenant) subdomain is *contoso*.
-    - *ToDoList.Read* and *ToDoList.ReadWrite* as the [delegated permissions (scopes) exposed by the Web API](./how-to-register-ciam-app.md?tabs=webapi&preserve-view=true#expose-permissions).
-    - *ToDoList.Read.All* and *ToDoList.ReadWrite.All* as the [application permissions (app roles) exposed by the Web API](how-to-register-ciam-app.md?tabs=webapi&preserve-view=true#add-app-roles).
+    - *ToDoList.Read* and *ToDoList.ReadWrite* as the [delegated permissions (scopes) exposed by the Web API](/entra/identity-platform/quickstart-configure-app-access-web-apis#delegated-permission-to-microsoft-graph).
+    - *ToDoList.Read.All* and *ToDoList.ReadWrite.All* as the [application permissions (app roles) exposed by the Web API](/entra/identity-platform/quickstart-configure-app-access-web-apis#application-permission-to-microsoft-graph).
 
 - [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0) or later.
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.

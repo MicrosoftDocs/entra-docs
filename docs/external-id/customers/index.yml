@@ -45,7 +45,7 @@ landingContent:
           - text: Create an external tenant
             url: how-to-create-external-tenant-portal.md 
           - text: Register your app
-            url: how-to-register-ciam-app.md 
+            url: /entra/identity-platform/quickstart-register-app
           - text: Add a sign-up and sign-in flow
             url: how-to-user-flow-sign-up-sign-in-customers.md 
           - text: Add your application
