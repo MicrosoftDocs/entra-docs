@@ -26,7 +26,7 @@ The Microsoft identity platform performs identity and access management (IAM) on
 - An Azure account that has an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - The Azure account must be at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 - A workforce or external tenant. Refer to the following for setting up the correct tenant.
-    - [Set up a workforce tenant](/entra/identity-platform/quickstart-create-new-tenant.md).
+    - [Set up a workforce tenant](/entra/identity-platform/quickstart-create-new-tenant).
     - [Set up an external tenant](/entra/external-id/customers/quickstart-tenant-setup).
 
 ## Register an application
@@ -37,12 +37,11 @@ Registering your application establishes a trust relationship between your app a
 
 Follow these steps to create the app registration:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer). 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **Applications** > **App registrations** and select **New registration**.
-1. Enter a display **Name** for your application. Users of your application might see the display name when they use the app, for example during sign-in.
-   You can change the display name at any time and multiple app registrations can share the same name. The app registration's automatically generated Application (client) ID, not its display name, uniquely identifies your app within the identity platform.
-1. Specify who can use the application, sometimes called its *sign-in audience*. We recommend you select **Accounts in this organizational directory only** for most applications. 
+1. Enter a maeningful application display **Name** name that will be displayed to users of the app, for example *identity-client-app*. You can change the display name at any time and multiple app registrations can share the same name.
+1. Under **Supported account types**, specify who can use the application. We recommend you select **Accounts in this organizational directory only** for most applications. Refer to the table below for more information on each option.
 
    | Supported account types | Description   |
    | ----------------------- | ------------- |
@@ -51,12 +50,11 @@ Follow these steps to create the app registration:
    | **Accounts in any organizational directory and personal Microsoft accounts** | For *multitenant* apps that support both organizational and personal Microsoft accounts (e.g., Skype, Xbox, Live, Hotmail). |
    | **Personal Microsoft accounts** | For apps used only by personal Microsoft accounts (e.g., Skype, Xbox, Live, Hotmail). |
 
-1. Leave **Redirect URI (optional)** alone for now as you configure a redirect URI in the next section. The redirect URI will vary depending on your application type.
 1. Select **Register** to complete the app registration.
 
    :::image type="content" source="./media/quickstart-register-app/portal-02-app-reg-01.png" alt-text="Screenshot of Microsoft Entra admin center in a web browser, showing the Register an application pane." lightbox="./media/quickstart-register-app/portal-02-app-reg-01.png":::
 
-1. On the application's **Overview** page, record the **Application (client) ID**. This value uniquely identifies your application and is used in your application's code as part of validating the security tokens it receives from the identity platform.
+1. The application's **Overview**  page is displayed. Record the **Application (client) ID**, which uniquely identifies your application and is used in your application's code as part of validating the security tokens it receives from the Microsoft identity platform.
 
 :::image type="content" source="./media/quickstart-register-app/portal-03-app-reg-02.png" alt-text="Screenshot of the Microsoft Entra admin center in a web browser, showing an app registration's Overview pane." lightbox="./media/quickstart-register-app/portal-03-app-reg-02.png":::
 
@@ -70,8 +68,8 @@ Follow these steps to create the app registration:
 Once you register your application, it gets assigned the **User.Read** permission. However, for external tenants, the customer users themselves can't consent to this permission. You as the admin must consent to this permission on behalf of all the users in the tenant:
 
 1. From the **Overview** page of your app registration, under **Manage** select **API permissions**.
-1. Select **Grant admin consent** for <your tenant name>, then select **Yes**.
-1. Select **Refresh**, then verify that **Granted for <your tenant name>** appears under **Status** for the permission.
+1. Select **Grant admin consent for < tenant name >**, then select **Yes**.
+1. Select **Refresh**, then verify that **Granted for < tenant name >** appears under **Status** for the permission.
 
 ## Add a redirect URI
 
