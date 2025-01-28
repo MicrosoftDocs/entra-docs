@@ -39,6 +39,28 @@ Customers can now manage, and customize, Lifecycle Workflows using natural langu
 
 ---
 
+### General Availability - Improving visibility into downstream tenant sign-ins
+
+**Type:** New feature    
+**Service category:** Reporting    
+**Product capability:** Monitoring & Reporting    
+
+Microsoft Security wants to ensure that all customers are aware of how to notice when a partner is accessing a downstream tenant's resources. Interactive sign-in logs currently provide a list of sign in events, but there's no clear indication of which logins are from partners accessing downstream tenant resources. For example, when reviewing the logs, you might see a series of events, but without any additional context, it’s difficult to tell whether these logins are from a partner accessing another tenant’s data.
+
+Here's a list of steps that one can take to clarify which logins are associated with partner tenants:
+
+1. Take note of the  "ServiceProvider" value in the CrossTenantAccessType column:
+    - This filter can be applied to refine the log data. When activated, it immediately isolates events related to partner logins.
+2. Utilize the "Home Tenant ID" and "Resource Tenant ID" Columns:
+    - These two columns identify logins coming from the partner’s tenant to a downstream tenant.
+
+
+After seeing a partner logging into a downstream tenant’s resources, an important follow-up activity to perform is to validate the activities that might have occurred in the downstream environment. Some examples of logs to look at are Microsoft Entra Audit logs for Microsoft Entra ID events, Microsoft 365 Unified Audit Log (UAL) for Microsoft 365 and Microsoft Entra ID events, and/or the Azure Monitor activity log for Azure events. By following these steps, you're able to clearly identify when a partner is logging into a downstream tenant’s resources and subsequent activity in the environment, enhancing your ability to manage and monitor cross-tenant access efficiently.
+
+To increase visibility into the aforementioned columns, Microsoft Entra will begin enabling these columns to display by default when loading the sign-in logs UX starting on March 7, 2025.
+
+---
+
 ### Public Preview - Auditing administrator events in Microsoft Entra Connect
 
 **Type:** New feature    
