@@ -21,7 +21,7 @@ This article shows you how to view the Domain Services health status and underst
 
 The health status for a managed domain is viewed using the Microsoft Entra admin center. Information on the last backup time and synchronization with Microsoft Entra ID can be seen, along with any alerts that indicate a problem with the managed domain's health. To view the health status for a managed domain, complete the following steps:
 
-1. [!INCLUDE [Privileged role](~/includes/privileged-role-include.md)] 
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Search for and select **Microsoft Entra Domain Services**.
 1. Select your managed domain, such as *aaddscontoso.com*.
 1. On the left-hand side of the Domain Services resource window, select **Health**. The following example screenshot shows a healthy managed domain and the status of the last backup and Microsoft Entra synchronization:
