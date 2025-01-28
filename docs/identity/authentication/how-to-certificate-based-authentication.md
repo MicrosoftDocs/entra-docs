@@ -49,7 +49,7 @@ Make sure that the following prerequisites are in place:
 
 Some configuration steps need to be done before you enable Microsoft Entra CBA. First, an admin must configure the trusted CAs that issue user certificates. As seen in the following diagram, we use role-based access control to make sure only least-privileged administrators are needed to make changes. 
 
-[!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)]
+[!INCLUDE [least-privilege-note](../../includes/definitions/least-privilege-note.md)]
 
 Optionally, you can also configure authentication bindings to map certificates to single-factor or multifactor authentication, and configure username bindings to map the certificate field to an attribute of the user object. [Authentication Policy Administrators](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) can configure user-related settings. Once all the configurations are complete, enable Microsoft Entra CBA on the tenant. 
 

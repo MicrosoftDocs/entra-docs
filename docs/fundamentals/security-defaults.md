@@ -48,7 +48,9 @@ To help protect organizations, we're always working to improve the security of M
 
 After this setting is enabled, all users in the organization will need to register for multifactor authentication. To avoid confusion, refer to the email you received and alternatively you can [disable security defaults](#disabling-security-defaults) after it's enabled.
 
-To configure security defaults in your directory, you must be assigned at least the [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role. By default the first account in any directory is assigned a higher privileged role known as [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator). 
+To configure security defaults in your directory, you must be assigned at least the [Conditional Access Administrator](../identity/role-based-access-control/permissions-reference.md#conditional-access-administrator) role. 
+
+[!INCLUDE [tenant-installation-account](../includes/definitions/tenant-installation-account.md)]
 
 To enable security defaults:
 
