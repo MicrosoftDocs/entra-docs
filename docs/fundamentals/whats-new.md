@@ -29,7 +29,7 @@ For a more dynamic experience, you can now find this information in the Microsof
 
 ## January 2025
 
-### Public Preview - Manage Lifecycle Workflows with Microsoft Security CoPilot in Entra
+### Public Preview - Manage Lifecycle Workflows with Microsoft Security CoPilot in Microsoft Entra
 
 **Type:** New feature    
 **Service category:** Lifecycle Workflows    
@@ -39,15 +39,15 @@ Customers can now manage, and customize, Lifecycle Workflows using natural langu
 
 ---
 
-### Public Preview - Auditing administrator events in Entra Connect
+### Public Preview - Auditing administrator events in Microsoft Entra Connect
 
 **Type:** New feature    
-**Service category:** Entra Connect    
-**Product capability:** Entra Connect    
+**Service category:** Microsoft Entra Connect    
+**Product capability:** Microsoft Entra Connect    
 
-We have released a new version of Microsoft Entra Connect, version 2.4.129.0, that supports the logging of the changes an administrator makes on the Connect Sync Wizard and PowerShell. For more details, see: [Auditing administrator events in Microsoft Entra Connect Sync (Public Preview)](../identity/hybrid/connect/admin-audit-logging.md).
+We have released a new version of Microsoft Entra Connect, version 2.4.129.0, that supports the logging of the changes an administrator makes on the Connect Sync Wizard and PowerShell. For more information, see: [Auditing administrator events in Microsoft Entra Connect Sync (Public Preview)](../identity/hybrid/connect/admin-audit-logging.md).
 
-Where supported, we will also auto-upgrade customers to this version of Microsoft Entra Connect in February 2025. For customers who wish to be auto-upgraded, [ensure that you have auto-upgrade configured](../identity/hybrid/connect/how-to-connect-install-automatic-upgrade.md).
+Where supported, we'll also autoupgrade customers to this version of Microsoft Entra Connect in February 2025. For customers who wish to be autoupgraded, [ensure that you have auto-upgrade configured](../identity/hybrid/connect/how-to-connect-install-automatic-upgrade.md).
 
 For upgrade-related guidance, see [Microsoft Entra Connect: Upgrade from a previous version to the latest](../identity/hybrid/connect/how-to-upgrade-previous-version.md).
 
@@ -59,11 +59,11 @@ For upgrade-related guidance, see [Microsoft Entra Connect: Upgrade from a previ
 **Service category:** Authentications (Logins)    
 **Product capability:** Developer Experience    
 
-Flexible Federated Identity Credentials extend the existing Federated Identity Credential model by providing the ability to use wildcard matching against certain claims. Currently available for GitHub, GitLab, and Terraform Cloud scenarios, this functionality can be used to lower the total number of FIC's required to managed similar scenarios. For more information, see: [Flexible federated identity credentials (preview)](../workload-id/workload-identities-flexible-federated-identity-credentials.md).
+Flexible Federated Identity Credentials extend the existing Federated Identity Credential model by providing the ability to use wildcard matching against certain claims. Currently available for GitHub, GitLab, and Terraform Cloud scenarios, this functionality can be used to lower the total number of FICs required to managed similar scenarios. For more information, see: [Flexible federated identity credentials (preview)](../workload-id/workload-identities-flexible-federated-identity-credentials.md).
 
 ---
 
-### General Availability - Real-time Password Spray Detection in Entra ID Protection
+### General Availability - Real-time Password Spray Detection in Microsoft Entra ID Protection
 
 **Type:** New feature    
 **Service category:** Identity Protection    
@@ -81,7 +81,7 @@ Risk-based Conditional Access can automatically respond to this new signal by ra
 **Service category:** Other    
 **Product capability:** Identity Security & Protection    
 
-Customers can now configure Conditional Access policies to protect against early hard deletions. Protected action for hard deletion protects hard deletion of users, M365 groups, and applications. For more information, see: [What are protected actions in Microsoft Entra ID?](../identity/role-based-access-control/protected-actions-overview.md)
+Customers can now configure Conditional Access policies to protect against early hard deletions. Protected action for hard deletion protects hard deletion of users, Microsoft 365 groups, and applications. For more information, see: [What are protected actions in Microsoft Entra ID?](../identity/role-based-access-control/protected-actions-overview.md)
 
 ---
 
@@ -93,21 +93,21 @@ Customers can now configure Conditional Access policies to protect against early
 
 The Azure AD Graph API service was [deprecated] in 2020. [Retirement of the Azure AD Graph API service](https://techcommunity.microsoft.com/t5/microsoft-entra-blog/june-2024-update-on-azure-ad-graph-api-retirement/ba-p/4094534) began in September 2024, and the next phase of this retirement starts February 1, 2025. This phase will impact new and existing applications unless action is taken. The latest updates on Azure AD Graph retirement can be found here: [Take action by February 1: Azure AD Graph is retiring](https://aka.ms/AzureADGraphRetirement).
 
-Starting from February 1st, both new and existing applications will be prevented from calling Azure AD Graph APIs, unless they are configured for an extension. You may not see impact right away, as we’re rolling out this change in stages across tenants.  We anticipate full deployment of this change around the end of February, and by the end of March for national cloud deployments.
+Starting from February 1, both new and existing applications will be prevented from calling Azure AD Graph APIs, unless they're configured for an extension. You might not see impact right away, as we’re rolling out this change in stages across tenants. We anticipate full deployment of this change around the end of February, and by the end of March for national cloud deployments.
 
-If you have not already, it is now urgent to review the applications on your tenant to see which ones depend on Azure AD Graph API access, and mitigate or migrate these before the February 1st cutoff date. For applications that have not migrated to Microsoft Graph APIs, [an extension](/graph/applications-authenticationbehaviors?tabs=http#allow-extended-azure-ad-graph-access-until-june-30-2025) can be set to allow the application access to Azure AD Graph through June 30, 2025.
+If you haven't already, it's now urgent to review the applications on your tenant to see which ones depend on Azure AD Graph API access, and mitigate or migrate these before the February 1 cutoff date. For applications that haven't migrated to Microsoft Graph APIs, [an extension](/graph/applications-authenticationbehaviors?tabs=http#allow-extended-azure-ad-graph-access-until-june-30-2025) can be set to allow the application access to Azure AD Graph through June 30, 2025.
 
-Microsoft Entra Recommendations are the best tool to identify applications that are using Azure AD Graph APIs in your tenant and require action. Please reference this blog post: Action required: [Azure AD Graph API retirement](https://techcommunity.microsoft.com/blog/identity/action-required-azure-ad-graph-api-retirement/4090533) for step by step guidance.
+Microsoft Entra Recommendations are the best tool to identify applications that are using Azure AD Graph APIs in your tenant and require action. Reference this blog post: Action required: [Azure AD Graph API retirement](https://techcommunity.microsoft.com/blog/identity/action-required-azure-ad-graph-api-retirement/4090533) for step by step guidance.
 
 ---
 
 ### General Availability - Microsoft Entra Connect Version 2.4.129.0
 
 **Type:** Changed feature    
-**Service category:** Entra Connect    
-**Product capability:** Entra Connect    
+**Service category:** Microsoft Entra Connect    
+**Product capability:** Microsoft Entra Connect    
 
-On January 15, 2025, we released Microsoft Entra Connect Sync Version 2.4.129.0 which supports auditing administrator events. More details are available in the [release notes](../identity/hybrid/connect/reference-connect-version-history.md#241290). We will automatically upgrade eligible customers to this latest version of Microsoft Entra Connect in February 2025. For customers who wish to be auto-upgraded, [ensure that you have auto-upgrade configured](../identity/hybrid/connect/how-to-connect-install-automatic-upgrade.md).  
+On January 15, 2025, we released Microsoft Entra Connect Sync Version 2.4.129.0 which supports auditing administrator events. More details are available in the [release notes](../identity/hybrid/connect/reference-connect-version-history.md#241290). We'll automatically upgrade eligible customers to this latest version of Microsoft Entra Connect in February 2025. For customers who wish to be autoupgraded, [ensure that you have auto-upgrade configured](../identity/hybrid/connect/how-to-connect-install-automatic-upgrade.md).  
 
 ---
 
@@ -127,9 +127,9 @@ This feature enables administrators to export and stream Elevate Access events t
 **Service category:** Legacy MSOnline and AzureAD PowerShell modules    
 **Product capability:** Developer Experience    
 
-As announced in Microsoft Entra [change announcements](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/ChangeManagementHubList.ReactView) and in the Microsoft Entra [Blog](https://techcommunity.microsoft.com/blog/identity/important-update-deprecation-of-azure-ad-powershell-and-msonline-powershell-modu/4094536), the MSOnline and Microsoft Azure AD PowerShell modules (for Microsoft Entra ID) retired on March 30, 2024.
+As announced in Microsoft Entra [change announcements](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/ChangeManagementHubList.ReactView) and in the Microsoft Entra [Blog](https://techcommunity.microsoft.com/blog/identity/important-update-deprecation-of-azure-ad-powershell-and-msonline-powershell-modu/4094536), the MSOnline, and Microsoft Azure AD PowerShell modules (for Microsoft Entra ID) retired on March 30, 2024.
 
-The retirement for MSOnline PowerShell module starts in early April 2025, and ends in late May 2025. If you are using MSOnline PowerShell, you must take action by March 30, 2025 to avoid impact after the retirement by migrating any use of MSOnline to [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation) or [Microsoft Entra PowerShell](/powershell/entra-powershell/installation).
+The retirement for MSOnline PowerShell module starts in early April 2025, and ends in late May 2025. If you're using MSOnline PowerShell, you must take action by March 30, 2025 to avoid impact after the retirement by migrating any use of MSOnline to [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation) or [Microsoft Entra PowerShell](/powershell/entra-powershell/installation).
 
 Key points
 
