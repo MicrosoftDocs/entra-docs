@@ -2164,13 +2164,13 @@ Users with this role **cannot** do the following:
 Assign the People Administrator role to users who need to do the following tasks:
 
 - Update profile photos for all users including administrators
-- Update people settings for all users, such as pronouns, name pronunciation, and people card settings
+- Update people settings for all users, such as pronouns, name pronunciation, and profile card settings
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
-> | microsoft.peopleAdmin/organization/allProperties/read | Read people settings for users, such as pronouns, name pronunciation, and people card settings |
-> | microsoft.peopleAdmin/organization/allProperties/update | Update people settings for users, such as pronouns, name pronunciation, and people card settings |
+> | microsoft.peopleAdmin/organization/allProperties/read | Read people settings for users, such as pronouns, name pronunciation, and profile card settings |
+> | microsoft.peopleAdmin/organization/allProperties/update | Update people settings for users, such as pronouns, name pronunciation, and profile card settings |
 > | microsoft.people/users/photo/read | Read profile photo of user |
 > | microsoft.people/users/photo/update | Update profile photo of user |
 
