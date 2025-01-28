@@ -18,8 +18,10 @@ In this quickstart, you learn how to register an application in Microsoft Entra 
 ## Prerequisites
 
 - An Azure account that has an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- The Azure account must be at least a [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
-- A workforce or external tenant. You can use your **Default Directory** for this quickstart. If you need an external tenant, complete [set up an external tenant](/entra/external-id/customers/quickstart-tenant-setup).
+- The Azure account must be at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+- A workforce or external tenant. Refer to the following for setting up the correct tenant.
+    - [Set up a workforce tenant](/entra/identity-platform/quickstart-create-new-tenant.md).
+    - [Set up an external tenant](/entra/external-id/customers/quickstart-tenant-setup).
 
 ## Register an application
 
@@ -37,8 +39,8 @@ Follow these steps to create the app registration:
    | ----------------------- | ------------- |
    | **Accounts in this organizational directory only** | For *single-tenant* apps for use only by users (or guests) in *your* tenant. |
    | **Accounts in any organizational directory** | For *multitenant* apps and you want users in *any* Microsoft Entra tenant to be able to use your application. Ideal for software-as-a-service (SaaS) applications that you intend to provide to multiple organizations. |
-   | **Accounts in any organizational directory and personal Microsoft accounts** | For *multitenant* apps that support both organizational and personal Microsoft accounts (for example, Skype, Xbox, Live, Hotmail). |
-   | **Personal Microsoft accounts** | For apps used only by personal Microsoft accounts (for example, Skype, Xbox, Live, Hotmail). |
+   | **Accounts in any organizational directory and personal Microsoft accounts** | For *multitenant* apps that support both organizational and personal Microsoft accounts (e.g., Skype, Xbox, Live, Hotmail). |
+   | **Personal Microsoft accounts** | For apps used only by personal Microsoft accounts (e.g., Skype, Xbox, Live, Hotmail). |
 
 1. Select **Register** to complete the app registration.
 
@@ -46,7 +48,7 @@ Follow these steps to create the app registration:
 
 1. The application's **Overview** page is displayed. Record the **Application (client) ID**, which uniquely identifies your application and is used in your application's code as part of validating the security tokens it receives from the Microsoft identity platform.
 
-    :::image type="content" source="./media/quickstart-register-app/portal-03-app-reg-02.png" alt-text="Screenshot of the Microsoft Entra admin center in a web browser, showing an app registration's Overview pane." lightbox="./media/quickstart-register-app/portal-03-app-reg-02.png":::
+:::image type="content" source="./media/quickstart-register-app/portal-03-app-reg-02.png" alt-text="Screenshot of the Microsoft Entra admin center in a web browser, showing an app registration's Overview pane." lightbox="./media/quickstart-register-app/portal-03-app-reg-02.png":::
 
 > [!IMPORTANT]
 > New app registrations are hidden to users by default. When you're ready for users to see the app on their [My Apps page](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510) you can enable it. To enable the app, in the Microsoft Entra admin center navigate to **Identity** > **Applications** > **Enterprise applications** and select the app. Then on the **Properties** page, set **Visible to users?** to **Yes**.
@@ -59,9 +61,30 @@ Once you register your application, it gets assigned the **User.Read** permissio
 1. Select **Grant admin consent for < tenant name >**, then select **Yes**.
 1. Select **Refresh**, then verify that **Granted for < tenant name >** appears under **Status** for the permission.
 
+## Grant admin consent
+
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
+Once you register your application, it gets assigned the **User.Read** permission. However, for external tenants, the customer users themselves can't consent to this permission. You as the admin must consent to this permission on behalf of all the users in the tenant:
+
+1. From the **Overview** page of your app registration, under **Manage** select **API permissions**.
+1. Select **Grant admin consent** for <your tenant name>, then select **Yes**.
+1. Select **Refresh**, then verify that **Granted for <your tenant name>** appears under **Status** for the permission.
+
 ## Add a redirect URI
 
-A *redirect URI* is where the Microsoft identity platform sends security tokens after authentication. You can configure redirect URIs in **Platform configurations** in the Microsoft Entra admin center. For **Web** and **Single-page applications**, you need to specify a redirect URI manually. For **Mobile and desktop** platforms, you select from generated redirect URIs. Follow these steps to configure settings based on your target platform or device:
+A *redirect URI* is the location where the Microsoft identity platform redirects a user's client and sends security tokens after authentication. Redirect URIs should be added to;
+
+- Web applications
+- Single-page applications
+- Mobile applications
+- Desktop applications
+
+### Configure platform settings
+
+Settings for each application type, including redirect URIs, are configured in **Platform configurations** in the Azure portal. Some platforms, like **Web** and **Single-page applications**, require you to manually specify a redirect URI. For other platforms, like mobile and desktop, you can select from redirect URIs generated for you when you configure their other settings.
+
+To configure application settings based on the platform or device you're targeting, follow these steps:
 
 1. In the Microsoft Entra admin center, in **App registrations**, select your application.
 1. Under **Manage**, select **Authentication**.
@@ -73,10 +96,10 @@ A *redirect URI* is where the Microsoft identity platform sends security tokens 
    | Platform  | Configuration settings | Example |
    | --------- |------------------------|---------|
    | **Web**   | Enter the **Redirect URI** for a web app that runs on a server. Front channel logout URLs can also be added | Node.js: <br>&#8226; `http://localhost:3000/auth/redirect` <br> ASP.NET Core:<br>  &#8226; `https://localhost:7274/signin-oidc` <br>  &#8226; `https://localhost:7274/signout-callback-oidc` (Front-channel logout URL) <br> Python: <br>&#8226; `http://localhost:3000/getAToken` |
-   | **Single-page application** | Enter a **Redirect URI** for client-side apps using JavaScript, Angular, React.js, or Blazor WebAssembly. Front channel logout URLs can also be added | JavaScript, React: <br>&#8226; `http://localhost:3000` <br>Angular: <br>&#8226; `http://localhost:4200/`|
+   | **Single-page application** | Enter a **Redirect URI** for client-side apps using JavaScript, Angular, Vue.js, React.js, or Blazor WebAssembly. Front channel logout URLs can also be added | JavaScript, React: <br>&#8226; `http://localhost:3000` <br>Angular: <br>&#8226; `http://localhost:4200/`|
    | **iOS / macOS** | Enter the app **Bundle ID**, which generates a redirect URI for you. Find it in **Build Settings** or in Xcode in *Info.plist*. | <br>Workforce tenant: <br>&#8226; `com.<yourname>.identitysample.MSALMacOS` <br>External tenant: <br>&#8226; `com.microsoft.identitysample.ciam.MSALiOS` |
-   | **Android** | Enter the app **Package name**, which generates a redirect URI for you. Find it in the *AndroidManifest.xml* file. Also generate and enter the **Signature hash**. | Kotlin: <br>&#8226; `com.azuresamples.msaldelegatedandroidkotlinsampleapp` <br>.NET MAUI: <br>&#8226; `msal{CLIENT_ID}://auth`  <br> Java: <br>&#8226; `com.azuresamples.msalandroidapp` |
-   | **Mobile and desktop applications** | Select this platform for desktop apps or mobile apps not using MSAL or a broker. Select a suggested **Redirect URI**, or specify one or more **Custom redirect URIs** | Embedded browser desktop app: <br>&#8226; `https://login.microsoftonline.com/common/oauth2/nativeclient` <br> System browser desktop app:<br>&#8226; `http://localhost` |
+   | **Android** | Enter the app **Package name**, which generates a redirect URI for you. Find it in the *AndroidManifest.xml* file. Also generate and enter the **Signature hash**. | Kotlin: <br>&#8226; `com.azuresamples.msaldelegatedandroidkotlinsampleapp` <> .NET MAUI: <br>&#8226; `msal{CLIENT_ID}://auth`  <br> Java: <br>&#8226; `com.azuresamples.msalandroidapp` |
+   | **Mobile and desktop applications** | Select this platform for desktop apps or mobile apps not using MSAL or a broker. Select a suggested **Redirect URI**, or specify one or more **Custom redirect URIs** | Embedded browser desktop app: <br>&#8226;`https://login.microsoftonline.com/common/oauth2/nativeclient` <br> System browser desktop app:<br>&#8226; `http://localhost` |
 
 1. Select **Configure** to complete the platform configuration.
 
