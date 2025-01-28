@@ -31,6 +31,8 @@ Microsoft Entra certificate-based authentication (CBA) fails if there are missin
 
 To configure certificate authorities to enable CBA in the Microsoft Entra admin center, complete the following steps:
 
+[!INCLUDE [least-privilege-note](../../includes/definitions/least-privilege-note.md)]
+
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Browse to **Protection** > **Show more** > **Security Center** (or **Identity Secure Score**) > **Certificate authorities**.
 1. To upload a CA, select **Upload**: 
@@ -47,8 +49,6 @@ To configure certificate authorities to enable CBA in the Microsoft Entra admin 
 
 > [!NOTE]
 > Upload of a new CA fails if any existing CA expired. You should delete any expired CA, and retry to upload the new CA.
-
-[!INCLUDE [least-privilege-note](../../includes/definitions/least-privilege-note.md)]
 
 ### Configure certificate authorities (CA) using PowerShell
 
