@@ -1306,3 +1306,10 @@ Make sure you include the import statements. Android Studio should include the i
 
 
 ---
+
+
+## Next steps
+
+> [!div class="nextstepaction"]
+> [Tutorial: Call a protected web API in Android app](tutorial-mobile-app-android-call-web-api.md)
+
