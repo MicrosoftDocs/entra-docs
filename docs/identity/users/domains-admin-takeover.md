@@ -22,9 +22,9 @@ This article describes two ways to take over a DNS domain name in an unmanaged d
 
 During the process of admin takeover, you can prove ownership as described in [Add a custom domain name to Microsoft Entra ID](~/fundamentals/add-custom-domain.yml). The next sections explain the admin experience in more detail, but here's a summary:
 
-* When you perform an ["internal" admin takeover](#internal-admin-takeover) of an unmanaged Azure directory, you're added as the Global Administrator of the unmanaged directory. No users, domains, or service plans are migrated to any other directory you administer.
+* When you perform an ["internal" admin takeover](#internal-admin-takeover) of an unmanaged directory, you're assigned the [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator) role of the unmanaged directory. No users, domains, or service plans are migrated to any other directory you administer.
 
-* When you perform an ["external" admin takeover](#external-admin-takeover) of an unmanaged Azure directory, you add the DNS domain name of the unmanaged directory to your managed Azure directory. When you add the domain name, a mapping of users to resources is created in your managed Azure directory so that users can continue to access services without interruption. 
+* When you perform an ["external" admin takeover](#external-admin-takeover) of an unmanaged directory, you add the DNS domain name of the unmanaged directory to your managed Azure directory. When you add the domain name, a mapping of users to resources is created in your managed directory so that users can continue to access services without interruption. 
 
 > [!NOTE]
 > An ["internal" admin takeover](#internal-admin-takeover) requires you to have some level of access to the unmanaged directory. If you are unable to access the directory that you're attempting to takeover, you need to perform an ["external" admin takeover](#external-admin-takeover).

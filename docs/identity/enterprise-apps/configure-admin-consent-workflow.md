@@ -30,8 +30,8 @@ To configure the admin consent workflow, you need:
 
 - An Azure account. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - You must be a Global Administrator to turn on the admin consent workflow.
-     > [!IMPORTANT]
-     > Microsoft recommends that you use roles with the fewest permissions. This helps improve security for your organization. Global Administrator is a highly privileged role that should be limited to emergency scenarios when you can't use an existing role.
+
+[!INCLUDE [least-privilege-note](../../includes/definitions/least-privilege-note.md)]
 
 ## Enable the admin consent workflow
 
