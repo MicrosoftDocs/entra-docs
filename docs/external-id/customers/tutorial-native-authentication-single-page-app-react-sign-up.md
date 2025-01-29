@@ -178,7 +178,7 @@ To define the type of responses the app can receive from the native authenticati
 
 ### Process sign-up requests
 
-In this section, you add code that processes sign-up flow requests. Examples of these requests are start a sign-up flow, select an authentication method or submit a one-time passcode.s
+In this section, you add code that processes sign-up flow requests. Examples of these requests are starting a sign-up flow, selecting an authentication method, and submitting a one-time passcode.
 
 To do so, create a file called *src/client/SignUpService.ts*, then add the following code snippet:
 
