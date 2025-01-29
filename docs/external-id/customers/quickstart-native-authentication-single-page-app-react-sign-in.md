@@ -40,7 +40,7 @@ In this quickstart, you use a React single-page application (SPA) to demonstrate
  
 [!INCLUDE [Create user flow](../customers/includes/configure-user-flow/create-native-authentication-sign-in-sign-out-user-flow.md)]
 
-For this quickstart, select **Given Name** and **Surname** as your user attributes. The sample app in this quickstart submits the given name and surname to the native authentication API, so if you select any other user attribute, it prevents the sample from working properly.
+For this quickstart, select **Given Name** and **Surname** as your user attributes. The sample app in this quickstart submits the given name and surname to the native authentication API. If you select any other user attribute, the sample won't work properly
  
 ## Associate the app with the user flow
 
@@ -50,13 +50,13 @@ For this quickstart, select **Given Name** and **Surname** as your user attribut
 
 To obtain the sample application, you can either clone it from GitHub or download it as a .zip file.
 
-- To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
+To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
     ```console
     git clone https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples.git
     ```
 
-- [Download the sample](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
+Alternatively, [Download the sample](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/archive/refs/heads/main.zip), then extract it to a file path where the length of the name is fewer than 260 characters.
 
 ## Install project dependencies
 
@@ -102,7 +102,7 @@ You've now configured the sample app and it's ready to run.
     npm run cors
     ```
 
-1. Open another terminal window, then run the following commands to start your React app.
+1. To start your React app, open another terminal window, then run the following commands:
 
     ```console
     cd API\React\ReactAuthSimple
