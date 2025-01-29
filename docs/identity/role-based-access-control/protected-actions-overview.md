@@ -28,7 +28,7 @@ We recommend using multifactor authentication on all accounts, especially accoun
 
 - Stronger MFA authentication strengths, such as [Passwordless MFA](~/identity/authentication/concept-authentication-strengths.md#built-in-authentication-strengths) or [Phishing-resistant MFA](~/identity/authentication/concept-authentication-strengths.md#built-in-authentication-strengths),  
 - Privileged access workstations, by using Conditional Access policy [device filters](~/identity/conditional-access/concept-condition-filters-for-devices.md).
-- Shorter session timeouts, by using Conditional Access [sign-in frequency session controls](~/identity/conditional-access/concept-session-lifetime.md#user-sign-in-frequency). 
+- Shorter session time-outs, by using Conditional Access [sign-in frequency session controls](~/identity/conditional-access/concept-session-lifetime.md#user-sign-in-frequency). 
 
 ## What permissions can be used with protected actions?
 
