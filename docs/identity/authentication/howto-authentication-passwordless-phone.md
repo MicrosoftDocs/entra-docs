@@ -41,7 +41,6 @@ The Microsoft Entra accounts can be in the same tenant or different tenants. Gue
 To use passwordless phone sign-in with Authenticator, you must meet the following prerequisites:
 
 - Recommended: Microsoft Entra multifactor authentication (MFA), with push notifications allowed as a verification method. Push notifications to a user smartphone or tablet help the Authenticator app to prevent unauthorized access to accounts and stop fraudulent transactions. The Authenticator app automatically generates codes when set up to do push notifications. A user has a backup sign-in method even if their device doesn't have connectivity.
-- The latest version of Authenticator should be installed on devices running iOS or Android.
 - The device must be registered with each tenant where it's used to sign in. For example, the following device must be registered with Contoso and Wingtip Toys to allow all accounts to sign in:
 
   - balas@contoso.com

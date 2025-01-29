@@ -24,9 +24,6 @@ This article shows how to register a passkey by using Authenticator on your iOS 
 
 Alternatively, you can add a passkey from your mobile device browser or through cross-device registration by using another device, such as a laptop. Your mobile device needs to run iOS version 17 or Android version 14, or later. 
 
-> [!NOTE]
-> Support for registering passkeys in Authenticator when attestation is enforced is currently rolling out to iOS Authenticator app users. Support for registering attested passkeys in Authenticator on Android devices is available to all users in the latest version of the app.
-
 | Scenario | iOS | Android |
 |------------------|---------------------------------|----------------|
 | Same-device registration by signing into Authenticator              | &#x2705;          | &#x2705;       |
@@ -155,7 +152,12 @@ By default, **Security info** prompts users to sign in to the Authenticator app 
 
 ### Alternate registration flow from Security info if you have trouble (iOS)
 
-If you can't sign in to Authenticator to register a passkey, you can register directly from **Security info** with WebAuthn. If you sign in to **Security info** on a different device, you need Bluetooth and an internet connection. Connectivity to the following two endpoints must be allowed in your organization:
+If you can't sign in to Authenticator to register a passkey, you can register directly from **Security info** with WebAuthn. 
+
+> [!NOTE]
+> You can't register a passkey in Authenticator this way if attestation is enabled by you administrator. 
+
+If you sign in to **Security info** on a different device, you need Bluetooth and an internet connection. Connectivity to the following two endpoints must be allowed in your organization:
 
 - `https://cable.ua5v.com`
 - `https://cable.auth.com`
@@ -321,7 +323,12 @@ By default, **Security info** prompts users to sign in to the Authenticator app 
 
 ## Alternate registration flow on Security info if you have trouble (Android)
 
-If you can't sign in to the Authenticator to register a passkey, you can register directly from **Security info** with WebAuthn. If you sign in to **Security info** on a different device, you need Bluetooth and an internet connection. Connectivity to the following two endpoints must be allowed in your organization:
+If you can't sign in to the Authenticator to register a passkey, you can register directly from **Security info** with WebAuthn. 
+
+> [!NOTE]
+> You can't register a passkey in Authenticator this way if attestation is enabled by you administrator. 
+
+If you sign in to **Security info** on a different device, you need Bluetooth and an internet connection. Connectivity to the following two endpoints must be allowed in your organization:
 
 - `https://cable.ua5v.com`
 - `https://cable.auth.com`

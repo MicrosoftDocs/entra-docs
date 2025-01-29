@@ -50,7 +50,7 @@ The flow diagram demonstrates the OAuth 2.0 authorization code grant flow (with 
 
 :::image type="content" source="media/v2-oauth-auth-code-spa/oauth-code-spa.svg" alt-text="Diagram showing the OAuth 2.0 authorization code flow between a single-page app and the security token service endpoint." border="false":::
 
-To see this in action, refer to the [Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using JavaScript](./quickstart-single-page-app-javascript-sign-in.md).
+To see this in action, refer to the [Quickstart: Sign in users in a single-page app (SPA) and call the Microsoft Graph API using JavaScript](./quickstart-single-page-app-sign-in.md).
 
 ## Web apps
 

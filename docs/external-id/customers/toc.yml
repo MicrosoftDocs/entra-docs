@@ -26,15 +26,7 @@ items:
       - name: JavaScript
         items:
           - name: Sign in users
-            href: sample-single-page-app-vanillajs-sign-in.md
-      - name: Angular
-        items:
-          - name: Sign in users
-            href: sample-single-page-app-angular-sign-in.md
-      - name: React
-        items:
-          - name: Sign in users
-            href: sample-single-page-app-react-sign-in.md
+            href: /entra/identity-platform/quickstart-single-page-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
   - name: Web app
     items:
       - name: Sign in users

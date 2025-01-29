@@ -1,6 +1,91 @@
 {
   "redirections": [
     {
+      "source_path": "docs/identity/authentication/howto-mfaserver-deploy.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-deploy",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfa-nps-extension-errors.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfa-nps-extension-errors",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfaserver-nps-vpn.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-nps-vpn",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfaserver-nps-rdg.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-nps-rdg",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfaserver-adfs-2.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-adfs-2",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfaserver-adfs-windows-server.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-adfs-windows-server",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfaserver-dir-ad.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-dir-ad",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfaserver-dir-radius.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-dir-radius",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfaserver-dir-ldap.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-dir-ldap",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfaserver-iis.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-iis",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfaserver-windows.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-windows",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfaserver-deploy-upgrade-pf.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-deploy-upgrade-pf",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfaserver-deploy-upgrade.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-deploy-upgrade",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfa-server-settings.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfa-server-settings",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfaserver-deploy-mobileapp.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-deploy-mobileapp",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfaserver-deploy-userportal.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-deploy-userportal",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "docs/identity/authentication/howto-mfaserver-deploy-ha.md",
+      "redirect_url": "/previous-versions/entra/identity/authentication/howto-mfaserver-deploy-ha",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/domain-services/delete-aadds.md",
       "redirect_url": "/entra/identity/domain-services/delete",
       "redirect_document_id": false
@@ -1579,7 +1664,67 @@
     },
     {
       "source_path_from_root": "/docs/identity/enterprise-apps/one-click-sso-tutorial.md",
-      "redirect_url": "/docs/identity/enterprise-apps/what-is-application-management",
+      "redirect_url": "/entra/identity/enterprise-apps/what-is-application-management",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/omnissa-identity-service-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/bersin-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/lines-elibrary-advance-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/soonr-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/work-com-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/quickstart-single-page-app-javascript-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-sign-in?pivots=workforce&tabs=javascript-workforce",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/quickstart-single-page-app-blazor-wasm-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-sign-in?pivots=workforce&tabs=blazor-workforce",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/quickstart-single-page-app-react-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-sign-in?pivots=workforce&tabs=react-workforce",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/quickstart-single-page-app-angular-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-sign-in?pivots=workforce&tabs=angular-workforce",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/sample-single-page-app-vanillajs-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-sign-in?pivots=external&tabs=javascript-external",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/sample-single-page-app-react-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-sign-in?pivots=external&tabs=react-external",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/sample-single-page-app-angular-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-sign-in?pivots=external&tabs=angular-external",
       "redirect_document_id": false
     }
   ]
