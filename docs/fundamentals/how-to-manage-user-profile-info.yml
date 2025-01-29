@@ -198,10 +198,8 @@ procedureSection:
         There are two ways to update the users. Either select “Edit” from the top of the page or right click on the selected users. 
       - |
         Select one of the available user management actions in the drop down to perform on your selected users. 
-
-        
-        > [!NOTE]
-        > If you select the Edit properties action, the following properties will be available to edit: 
+      - |
+        If you select the **Edit properties** action, the following properties will be available to edit: 
           - City
           - Company name
           - Country or region
@@ -214,7 +212,9 @@ procedureSection:
           - Street address
           - Usage location
           - Zip or postal code
-          Visit specific user profiles to edit other properties.
+        
+        >[!NOTE]
+        > You must visit specific user profiles to edit other properties.
 
         
 
