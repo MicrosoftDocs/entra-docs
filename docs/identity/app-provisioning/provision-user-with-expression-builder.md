@@ -1,6 +1,6 @@
 ---
 title: Provision a User with Expression Builder
-description: Learn how to simplify user provisioning with Expression Builder, handle duplicate users, and transform user attributes for seamless integration 
+description: Learn how to simplify user provisioning with Expression Builder, handle duplicate users, and transform user attributes for seamless integration. 
 author: jenniferf-skc
 manager: amycolannino
 ms.author: jfields
