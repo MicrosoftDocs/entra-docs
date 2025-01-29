@@ -55,5 +55,3 @@ Why are we doing this
 What to expect once the policy is enabled
 
 the enablement schedule, and how they can check if the change was already made
-
-[!INCLUDE [Azure Help Support](../../../includes/azure-help-support.md)]
