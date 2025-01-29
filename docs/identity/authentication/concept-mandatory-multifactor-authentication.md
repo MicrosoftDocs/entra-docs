@@ -28,7 +28,7 @@ The scope of enforcement includes which applications plan to enforce MFA, applic
 
 Click each tab to see which apps are scheduled to enforce MFA for Azure and Microsoft 365.
 
-#### [**Azure application**](#tab/Azure)
+#### [**Azure**](#tab/Azure)
 
 The following table lists affected apps, app IDs, and URLs for Azure. 
 
@@ -43,7 +43,7 @@ The following table lists affected apps, app IDs, and URLs for Azure.
 | [Infrastructure as Code (IaC) tools](/devops/deliver/what-is-infrastructure-as-code) | Use Azure CLI or Azure PowerShell IDs | Early 2025 | 
 
 
-#### [**Microsoft 365 applications**](#tab/iOS)
+#### [**Microsoft 365**](#tab/iOS)
 
 The following table lists affected apps and URLs for Microsoft 365. 
 
