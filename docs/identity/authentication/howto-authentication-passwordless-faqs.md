@@ -163,7 +163,7 @@ No, this feature isn't supported for on-premises only device. The FIDO2 credenti
 
 The default security policy doesn't grant Microsoft Entra permission to sign high privilege accounts on to on-premises resources.
 
-To unblock the accounts, use **Active Directory Users and Computers** to modify the *msDS-NeverRevealGroup* property of the *Microsoft Entra Kerberos Computer object (CN=AzureADKerberos,OU=Domain Controllers,\<domain-DN>)*.
+Due to possible attack vectors from Microsoft Entra ID to Active Directory, it's not recommended to unblock these accounts by relaxing the Password Replication Policy of the computer object CN=AzureADKerberos,OU=Domain Controllers,<domain-DN>.
 
 ## Under the hood
 
