@@ -201,7 +201,20 @@ procedureSection:
 
         
         > [!NOTE]
-        > If you select the Edit properties action, the following properties will be available to edit: City, Company name, Country or region, Department, Employee hire date, Employee type, Job title, Office location, State of province, Street address, Usage location, Zip or postal code. Visit specific user profiles to edit other properties.  
+        > If you select the Edit properties action, the following properties will be available to edit: 
+          - City
+          - Company name
+          - Country or region
+          - Department
+          - Employee hire date
+          - Employee type
+          - Job title
+          - Office location
+          - State or province
+          - Street address
+          - Usage location
+          - Zip or postal code
+          Visit specific user profiles to edit other properties.
 
         
 
