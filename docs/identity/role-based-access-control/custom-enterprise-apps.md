@@ -45,7 +45,6 @@ Granting the update permission is done in two steps:
 
 ### Create a new custom role
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 In the Microsoft Entra Admin Center, you can create and manage custom roles to control access and permissions for enterprise apps.
 

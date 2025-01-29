@@ -40,7 +40,6 @@ The following roles have the required permissions:
 
 ## How it works
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To access authentication method Usage and insights:
 

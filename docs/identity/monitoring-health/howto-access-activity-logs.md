@@ -115,7 +115,6 @@ The SIEM tools you can integrate with your event hub can provide analysis and mo
 
 The Microsoft Graph API provides a unified programmability model that you can use to access data for your Microsoft Entra ID P1 or P2 tenants. It doesn't require an administrator or developer to set up extra infrastructure to support your script or app.  
 
-[!INCLUDE [portal update](../../includes/portal-update.md)]
 
 ### Recommended uses
 

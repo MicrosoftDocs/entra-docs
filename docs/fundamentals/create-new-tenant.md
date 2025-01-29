@@ -23,7 +23,6 @@ In this quickstart article, you learn how to create a basic tenant for your orga
 
 ## Create a new tenant for your organization
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 After you sign in to the [Azure portal](https://portal.azure.com), you can create a new tenant for your organization. Your new tenant represents your organization and helps you to manage a specific instance of Microsoft Cloud services for your internal and external users.
 

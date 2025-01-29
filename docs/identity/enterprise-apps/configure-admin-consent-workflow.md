@@ -35,7 +35,6 @@ To configure the admin consent workflow, you need:
 
 ## Enable the admin consent workflow
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To enable the admin consent workflow and choose reviewers:
 

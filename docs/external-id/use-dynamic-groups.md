@@ -28,7 +28,6 @@ A dynamic membership group is a security-based configuration for Microsoft Entra
 
 ## Creating an "all users" dynamic group
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 You can create a group containing all users within a tenant using a membership rule. When users are added or removed from the tenant in the future, the group's membership is adjusted automatically.
 

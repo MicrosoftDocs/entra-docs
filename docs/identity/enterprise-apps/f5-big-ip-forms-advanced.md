@@ -93,7 +93,6 @@ The configuration in this article is a flexible SHA implementation: manual creat
 
 ## Register F5 BIG-IP in Microsoft Entra ID
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 BIG-IP registration is the first step for SSO between entities. The app you create from the F5 BIG-IP gallery template is the relying party, representing the SAML SP for the BIG-IP published application.
 

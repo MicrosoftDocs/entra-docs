@@ -85,7 +85,6 @@ There are two ways to capture sign-in fields for your custom apps:
 
 In general, if automatic sign-in field capture doesn't work, try the manual option.
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ### Automatically capture sign-in fields for an app
 

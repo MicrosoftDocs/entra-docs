@@ -287,7 +287,6 @@ If you encounter issues or want to share feedback about this passwordless securi
 
 ## Passwordless security key sign-in FAQ
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Here are some answers to commonly asked questions about passwordless sign-in:
 
