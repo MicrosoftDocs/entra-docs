@@ -623,6 +623,51 @@ EntraUsers
     | project UserPrincipalName = UserName, DisplayName = Name, EmployeeId = tostring(EmployeeId), Department, JobTitle, AccountEnabled = "N/A", ResourceDisplayName = AppName, RoleDisplayName = Role, CreatedDateTime, Source = "salesforceAssignments", ReportDate = now() 
 ) 
 ``` 
+### Example 5:  Export all Access Review definitions, instances, and decisions for specific dates
+To export all Access Review definitions, instances, and decisions into a structured folder format using PowerShell, you can utilize the Microsoft Graph API. This approach ensures that your data is organized hierarchically, aligning with the specified folder structure. 
+
+Before you begin be aware of the following:
+
+- Ensure you have the necessary permissions to access Access Reviews data in Microsoft Graph. 
+- Depending on the volume of data, the script's execution time may vary. Monitor the process and adjust parameters as needed. 
+- Regularly update the Microsoft Graph PowerShell module to benefit from the latest features and fixes. 
+
+Use the following steps to export the Access Review data and import it.
+
+ 1. Open PowerShell.
+ 2. If you don't have all the [Microsoft Graph PowerShell modules](https://www.powershellgallery.com/packages/Microsoft.Graph) already installed, install the required Microsoft Graph modules. If you already have these modules installed, then continue at the next step.
+
+```powershell
+   $modules = @('Microsoft.Graph') 
+   foreach ($module in $modules) { 
+   Install-Module -Name $module -Scope CurrentUser 
+   } 
+```  
+  
+ 3. Import the modules into the current PowerShell session. 
+ 
+```powershell
+   $modules = @('Microsoft.Graph') 
+   foreach ($module in $modules) { 
+   Import-Module -Name $module 
+   } 
+``` 
+ 3. Connect to Microsoft Graph.
+ 
+```powershell
+   $Scopes = @( "AccessReview.Read.All" ) 
+  Connect-MgGraph -Scopes $Scopes
+  -ContextScope Process -NoWelcome
+``` 
+4. Run the [ExportAccessReviews.ps1](https://github.com/microsoft/Entra-reporting/blob/main/PowerShell/Export_Access_Reviews.ps1) script using the following command which will output all data into three sub-folders ReviewInstances, ReviewInstanceDecisionItems and ReviewInstanceContactedReviewers 
+
+```powershell
+ .\ExportAccessReviews.ps1 -InstanceStartDate "11/15/2024" -InstanceEndDate "12/15/2024" -ExportFolder "C:\AccessReviewsExport\11_15_to_12_15" 
+``` 
+5. [Configure ADX](#3-create-tables-and-import-json-files-with-data-from-microsoft-entra-id-into-azure-data-explorer) and upload all files from **ReviewInstances** folder to a table called **ReviewInstances**. Make sure all files are uploaded.
+6. Next, repeat the previous step to upload all the files from the folder **ReviewInstanceDecisionItems** to a table called **ReviewInstanceDecisionItems** and **ReviewInstanceContactedReviewers** to a table called **ReviewInstanceContactedReviewers**. Make sure all files are uploaded 
+
+
 ## Next steps
 
 - [What is Microsoft Entra entitlement management?](entitlement-management-overview.md)
