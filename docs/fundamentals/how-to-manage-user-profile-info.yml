@@ -30,7 +30,7 @@ prerequisites:
    The required role of least privilege varies based on the type of user you're adding and if you need to assign Microsoft Entra roles at the same time. Whenever possible you should use the least privileged role.
 
    | Task | Role |
-   | -- | -- |
+   |--|--|
    | Create a new user | User Administrator |
    | Invite an external guest | Guest Inviter |
    | Assign Microsoft Entra roles | Privileged Role Administrator |
@@ -183,7 +183,7 @@ procedureSection:
   - title: |
       Edit multiple users at once (preview)
     summary: |
-          Users who have at least the user administrator role assigned can edit a subset of user properties for multiple users at once. You must visit specific user profiles to edit other properties.
+         This new Microsoft Entra admin center update allows editing certain user attributes in bulk. On the All Users page, you can select up to 60 users at a time and update their attributes at once.
     steps:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
