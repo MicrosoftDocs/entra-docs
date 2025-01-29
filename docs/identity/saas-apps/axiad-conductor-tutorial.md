@@ -59,8 +59,8 @@ To configure and test Microsoft Entra SSO with Axiad Conductor for Entra ID, per
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
     1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
-1. **[Configure Axiad Conductor for Entra ID SSO](#configure-axiad-cloud-connector-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Axiad Conductor for Entra ID test user](#create-axiad-cloud-connector-test-user)** - to have a counterpart of B.Simon in Axiad Conductor for Entra ID that is linked to the Microsoft Entra representation of user.
+1. **[Configure Axiad Conductor for Entra ID SSO](#configure-axiad-conductor-sso)** - to configure the single sign-on settings on application side.
+    1. **[Create Axiad Conductor for Entra ID test user](#create-axiad-conductor-test-user)** - to have a counterpart of B.Simon in Axiad Conductor for Entra ID that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
