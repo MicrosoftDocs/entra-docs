@@ -61,7 +61,7 @@ Administrators can then choose to take action on these events. Administrators ca
 - Confirm user compromise
 - Dismiss user risk
 - Block user from signing in
-- Investigate further using Azure ATP
+- Investigate further using Microsoft Defender for Identity
 
 An administrator can choose to dismiss a user's risk in the Microsoft Entra admin center or programmatically through the Microsoft Graph API [Dismiss User Risk](/graph/api/riskyusers-dismiss?preserve-view=true&view=graph-rest-beta). Administrator privileges are required to dismiss a user's risk. The risky user or an administrator working on the user's behalf can remediate the risk, for example through a password reset.
 
