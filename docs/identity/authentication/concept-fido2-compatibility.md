@@ -86,8 +86,7 @@ The following sections cover support for passkey (FIDO2) authentication in Micro
 | **iOS**      | &#x2705;<sup>1</sup> |
 | **Android**  | &#x2705;<sup>1</sup> |
 
-<sup>1</sup>Requires an authentication broker to be installed on the user's device. Some Microsoft apps support passkey authentication without an authentication broker. For more information, see [Native application support](#native-application-support).
-
+<sup>1</sup>Requires an authentication broker to be installed on the user's device. Some Microsoft apps support passkey authentication without an authentication broker. 
 
 ### Native application support with authentication broker
 
