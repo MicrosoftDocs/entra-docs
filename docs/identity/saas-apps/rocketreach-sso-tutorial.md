@@ -128,11 +128,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 To configure single sign-on on **RocketReach SSO** side, you must follow the below steps:
 
-1. Login to RocketReach.co as a Team Owner or Team Administrator
-2. Proceed to the **Account Settings** > **Security** section and click on the **Setup SSO** button
-3. Choose **Azure** in the sidebar menu
-4. Copy the URLs from the Microsoft Entra platform into the **Login URL** and **Azure AD Identifier** fields
-5. Past the contents of the **Certificate (Base64)** file from Microsoft Entra into the **Key x509 Certificate field
+1. Login to RocketReach.co as a Team Owner or Team Administrator.
+2. Proceed to the **Account Settings** > **Security** section and click on the **Setup SSO** button.
+3. Choose **Azure** in the sidebar menu.
+4. Copy the URLs from the Microsoft Entra platform into the **Login URL** and **Azure AD Identifier** fields.
+5. Past the contents of the **Certificate (Base64)** file from Microsoft Entra into the **Key x509 Certificate field.
 6. Test the SAML connection and save your changes.
 
 ### Create RocketReach SSO test user
