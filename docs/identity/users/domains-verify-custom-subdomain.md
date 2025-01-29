@@ -37,7 +37,7 @@ Because subdomains inherit the authentication type of the root domain by default
     
     # Define the parameters for the new domain
     $domainParams = @{
-        Name = "child6.mydomain.com"
+        Id = "child6.mydomain.com"
         AuthenticationType = "Federated"
     }
     
