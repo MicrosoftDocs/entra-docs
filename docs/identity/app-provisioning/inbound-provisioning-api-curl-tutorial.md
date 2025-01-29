@@ -1,18 +1,18 @@
 ---
-title: Quickstart API-driven inbound provisioning with cURL
-description: Learn how to get started with API-driven inbound provisioning using cURL.
+title: Quickstart for API-driven inbound provisioning with cURL
+description: This tutorial provides step-by-step instructions so you can get started with API-driven inbound provisioning using cURL.
 
 author: jenniferf-skc
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 02/28/2024
+ms.date: 01/29/2025
 ms.author: jfields
 ms.reviewer: cmmdesai
 ---
 
-# Quickstart API-driven inbound provisioning with cURL
+# Quickstart: Get started with API-driven inbound provisioning using cURL
 
 ## Introduction
 
