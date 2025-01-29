@@ -28,7 +28,7 @@ The scope of enforcement includes which applications plan to enforce MFA, applic
 
 Click each tab to see which apps are scheduled to enforce MFA for Azure and Microsoft 365.
 
-#### [**Azure**](#tab/Azure)
+#### Azure applicationss
 
 The following table lists affected apps, app IDs, and URLs for Azure. 
 
@@ -43,7 +43,7 @@ The following table lists affected apps, app IDs, and URLs for Azure.
 | [Infrastructure as Code (IaC) tools](/devops/deliver/what-is-infrastructure-as-code) | Use Azure CLI or Azure PowerShell IDs | Early 2025 | 
 
 
-#### [**Microsoft 365**](#tab/iOS)
+#### Microsoft 365 applications
 
 The following table lists affected apps and URLs for Microsoft 365. 
 
@@ -53,7 +53,6 @@ The following table lists affected apps and URLs for Microsoft 365.
 | Microsoft 365 admin center | `https://admin.cloud.microsoft` | February 2025 |
 | Microsoft 365 admin center | `https://admin.microsoft.com` | February 2025 |
 
----
 
 ### Accounts 
 
@@ -120,7 +119,7 @@ If you're using a federated Identity Provider (IdP), such as Active Directory 
 
 We understand that some customers may need more time to prepare for this MFA requirement. Microsoft is allowing customers with complex environments or technical barriers to postpone the enforcement for their tenants until September 30, 2025. 
 
-Starting in 2nd half of February 2025, Global Administrators can go to the [Azure portal](https://aka.ms/managemfaforazure) to select the start date of enforcement for their tenant for Phase 1 (admin portals). Global Administrators must have [elevated access](https://aka.ms/enableelevatedaccess) before postponing the start date of MFA enforcement on this page.  
+Starting in 2nd half of February 2025, Global Administrators can go to the [Azure portal](https://aka.ms/managemfaforazure) to select the start date of enforcement for their tenant for admin portals in Phase 1. Global Administrators must [elevate access](https://aka.ms/enableelevatedaccess) before they can postpone the start date of MFA enforcement.  
 
 Global Administrators must perform this action for every tenant where they want to postpone the start date of enforcement.  
 
