@@ -87,7 +87,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<CUSTOMER_NAME>.smartkargo.com/`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [SmartKargo Client support team](https://www.smartkargo.com/company/contact-2/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [SmartKargo Client support team](https://www.smartkargo.com/contactus) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -129,11 +129,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure SmartKargo SSO
 
-To configure single sign-on on **SmartKargo** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [SmartKargo platform support team](https://www.smartkargo.com/company/contact-2/). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **SmartKargo** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [SmartKargo platform support team](https://www.smartkargo.com/contactus). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create SmartKargo test user
 
-In this section, you create a user called B.Simon in SmartKargo. Please with [SmartKargo platform support team](https://www.smartkargo.com/company/contact-2/) to add the users in the SmartKargo platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called B.Simon in SmartKargo. Please with [SmartKargo platform support team](https://www.smartkargo.com/contactus) to add the users in the SmartKargo platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO 
 
