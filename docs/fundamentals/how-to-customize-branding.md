@@ -38,6 +38,8 @@ The **Organizational Branding Administrator** role is the minimum role required 
 
 **External URLs aren't supported in the sign-in experience.** For example, if you add an external URL for your internal help desk to the footer, that URL is displayed explicitly but isn't clickable. Users must copy the URL and navigate to it directly.
 
+**The Azure Active Directory B2C (Azure AD B2C) company branding options are different.** Azure AD B2C branding is currently limited to background image, banner logo, and background color customization. For more information, see [Customize the UI](/azure/active-directory-b2c/customize-ui?pivots=b2c-user-flow#configure-company-branding.md) in the Azure AD B2C documentation.
+
 **Use Microsoft Graph with Microsoft Entra company branding.** Company branding can be viewed and managed using Microsoft Graph on the `/beta` endpoint and the `organizationalBranding` resource type. For more information, see the [organizational branding API documentation](/graph/api/resources/organizationalbranding?view=graph-rest-beta&preserve-view=true).
 
 The branding elements are called out in the following example. Text descriptions are provided following the image.
@@ -121,7 +123,8 @@ If you haven't enabled the footer, go to the **Layout** section and select **Sho
 
 - **Show 'Terms of Use':** This option is also selected by default and displays the [Microsoft 'Terms of Use'](https://www.microsoft.com/servicesagreement/) link.
 
-    Uncheck this option to hide the default Microsoft link. Optionally provide your own **Display text** and **URL**. The text and links don't have to be related to your terms of use.
+  - Uncheck this option to hide the default Microsoft link. Optionally provide your own **Display text** and **URL**.
+  - The text and links don't have to be related to your terms of use.
 
     > [!IMPORTANT]
     > The default Microsoft 'Terms of Use' link isn't the same as the Conditional Access Terms of Use. Seeing the terms here doesn't mean you accepted those terms and conditions.
