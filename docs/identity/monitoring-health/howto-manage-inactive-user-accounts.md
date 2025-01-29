@@ -42,23 +42,50 @@ The challenge of this method is to define what *for a while* means for your envi
 
 The last sign-in provides potential insights into a user's continued need for access to resources. It can help with determining if group membership or app access is still needed or could be removed. For external user management, you can understand if an external user is still active within the tenant or should be cleaned up.
 
-## Detect inactive user accounts with Microsoft Graph
+## Find inactive user accounts
+
+You can use the Microsoft Entra admin center or Microsoft Graph to find inactive user accounts. While there isn't a built-in report for inactive user accounts, you can use the last sign-in date and time to determine if a user account is inactive.
+
+## [Admin center](#tab/admin-center)
+
+One way to find the last sign-in time for a user is to look at your user list in the Microsoft Entra admin center. It might be easier to find the last sign-in time here, instead of in the sign-in logs. While all users can see the list of users, some columns and details are only available to users with the appropriate permissions.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
+1. Browse to **Identity** > **Users** > **All users**.
+1. Select **Manage view** and then **Edit columns**.
+
+    ![Screenshot of the Users view with the manage view option highlighted.](media/howto-manage-inactive-user-accounts/users-manage-views.png)
+
+1. From the list, select **+ Add column**, select **Last interactive sign-in time** from the list, then select **Save**.
+
+    ![Screenshot of the Edit columns pane with the Last interactive sign-in time option highlighted.](media/howto-manage-inactive-user-accounts/add-column-last-interactive-sign-in.png)
+
+1. With the column now visible in the all users list, select **Add filter** and set a time frame for your search using the filter options.
+    - Select **< =** as the **Operator**, then select the date to find the last sign-in *before* that selected date.
+
+## [Microsoft Graph](#tab/microsoft-graph)
 
 <a name="how-to-detect-inactive-user-accounts"></a>
 
 You can detect inactive accounts by evaluating several properties. The `lastSignInDateTime` property exposed by the `signInActivity` resource type of the **Microsoft Graph API**. The lastSignInDateTime property shows the last time a user attempted to make an interactive sign-in attempt in Microsoft Entra ID. Using this property, you can implement a solution for the following scenarios:
 
-- **Last sign-in date and time for all users**: In this scenario, you need to generate a report of the last sign-in date of all users. You request a list of all users, and the last lastSignInDateTime for each respective user:
+### Last sign-in date and time for all users
+
+Generate a report of the last sign-in date of *all users*. The response provides a list of all users, and the last lastSignInDateTime for each respective user.
   - `https://graph.microsoft.com/v1.0/users?$select=displayName,signInActivity`
 
-- **Users by name**: In this scenario, you search for a specific user by name, which enables you to evaluate the lastSignInDateTime:
-  - `https://graph.microsoft.com/v1.0/users?$filter=startswith(displayName,'Isabella Simonsen')&$select=displayName,signInActivity`
+### Last successful sign-in date and time
 
-- **Users by date**: In this scenario, you request a list of users with a lastSignInDateTime before a specified date:
-  - `https://graph.microsoft.com/v1.0/users?$filter=signInActivity/lastSignInDateTime le 2019-06-01T00:00:00Z`
+This query is similar to adding the last sign-in date to the users list and filtering by a specific date in the Microsoft Entra admin center. You can request a list of users with a `lastSuccessfulSignInDateTime` or 'lastSignInDateTime` *before* a specified date. The response for this query provides the user details, but doesn't the users's sign-in activity. To see those details, try the query in the **Users by name** scenario.
 
-- **Last successful sign-in date and time (beta)**: You can request a list of users with a `lastSuccessfulSignInDateTime` before a specified date:
-  - `https://graph.microsoft.com/beta/users?$filter=signInActivity/lastSuccessfulSignInDateTime le 2019-06-01T00:00:00Z`
+  - `https://graph.microsoft.com/v1.0/users?$filter=signInActivity/lastSuccessfulSignInDateTime le 2024-06-01T00:00:00Z`
+  - `https://graph.microsoft.com/v1.0/users?$filter=signInActivity/lastSignInDateTime le 2024-06-01T00:00:00Z`
+
+### Users by name
+
+In this scenario, you search for a specific user by name. The response for this query includes the date, time, and request ID for their last sign-in attempt, their last interactive sign-in attempt, and their last successful sign-in.
+
+  - `https://graph.microsoft.com/v1.0/users?$filter=startswith(displayName,'Isabella Simonsen')&$select=displayName,signInActivity` 
 
 > [!NOTE]
 > The `signInActivity` property supports `$filter` (`eq`, `ne`, `not`, `ge`, `le`) *but not with any other filterable properties*. You must specify `$select=signInActivity` or `$filter=signInActivity` while [listing users](/graph/api/user-list?view=graph-rest-beta&preserve-view=true), as the signInActivity property is not returned by default.
