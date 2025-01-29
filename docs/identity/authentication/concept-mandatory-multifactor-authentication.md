@@ -53,6 +53,7 @@ The following table lists affected apps and URLs for Microsoft 365.
 | Microsoft 365 admin center | `https://admin.cloud.microsoft` | February 2025 |
 | Microsoft 365 admin center | `https://admin.microsoft.com` | February 2025 |
 
+---
 
 ### Accounts 
 
