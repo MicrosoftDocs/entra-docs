@@ -13,7 +13,7 @@ ms.topic: quickstart
 
 # Quickstart: Register an application in Microsoft Entra ID
 
-To get started with Microsoft Entra ID, you need to register your application in the Microsoft Entra admin center. This registration is crucial as it establishes a trust relationship between your application and the Microsoft identity platform, enabling identity and access management (IAM) for your app. This article shows you how to register an application in the Microsoft Entra admin center.
+In this quickstart, you learn how to register an application in Microsoft Entra ID. This process is essential for establishing a trust relationship between your application and the Microsoft identity platform. By completing this quickstart, you enable identity and access management (IAM) for your app, allowing it to securely interact with Microsoft services and APIs.
 
 ## Prerequisites
 
