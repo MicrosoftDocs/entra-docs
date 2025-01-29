@@ -12,9 +12,9 @@ ms.date: 02/07/2025
 #Customer intent: As a developer, devops, I want to 
 ---
 
-# Quickstart:Sign in users in a sample React single-page application by using native authentication
+# Quickstart: Sign in users in a sample React single-page application by using native authentication
 
-In this quickstart, you use a React single-page application (SPA) to demonstrate how to authenticate users by using [native authentication API](../../identity-platform/reference-native-authentication-api.md). The sample app demonstrates user sign up, sign in, sign out and password reset with an email and a password.
+In this quickstart, you use a React single-page application (SPA) to demonstrate how to authenticate users by using [native authentication API](../../identity-platform/reference-native-authentication-api.md). The sample app demonstrates user sign-up, sign in, sign out and password reset with an email and a password.
 
 ## Prerequisites
 
@@ -40,7 +40,7 @@ In this quickstart, you use a React single-page application (SPA) to demonstrate
  
 [!INCLUDE [Create user flow](../customers/includes/configure-user-flow/create-native-authentication-sign-in-sign-out-user-flow.md)]
 
-For this quickstart, select **Given Name** and **Surname** as your user attributes. The sample app in this quickstart submits the given name and surname to the native authentication API, so if you select any other user attributes will prevent the sample from working properly.
+For this quickstart, select **Given Name** and **Surname** as your user attributes. The sample app in this quickstart submits the given name and surname to the native authentication API, so if you select any other user attribute, it prevents the sample from working properly.
  
 ## Associate the app with the user flow
 
@@ -82,7 +82,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 ## Configure CORS proxy server
 
-The native authentication APIs don't support [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/docs/Web/HTTP/CORS) so you must setup a proxy server between your SPA app and the APIs.
+The native authentication APIs don't support [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/docs/Web/HTTP/CORS) so you must set up a proxy server between your SPA app and the APIs.
 
 This code sample includes a CORS proxy server that forwards requests to native authentication API URL endpoints. The CORS proxy server is a Node.js server that listens on port 3001.
 

@@ -1,6 +1,6 @@
 ---
 title: Set up CORS proxy server to manage headers for SPA with native authentication
-description: Learn how to build set up a CORS proxy server for single-page application that uses native authentication API
+description: Learn how to set up a CORS proxy server for single-page application that uses native authentication API
 
 author: kengaderdus
 manager: mwongerapk
@@ -105,7 +105,7 @@ In this tutorial, you learn how to:
 
     - `tenantId` and replace it with the Directory (tenant) ID. If you don't have your tenant ID, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
-1. Open *package,json* file, then add the following command in the *scripts* object:
+1. Open *package.json* file, then add the following command in the *scripts* object:
 
     ```json
     "cors": "node cors.js",
@@ -134,7 +134,7 @@ At this point, the React app and the CORS proxy server are ready to run.
     npm start
     ```
 
-1. Open a web browser and navigate to `http://localhost:3000/`. A sign-up forms appears.
+1. Open a web browser and navigate to `http://localhost:3000/`. A sign-up form appears.
 
 1. To sign up for an account, input your details, select the **Sign Up** button, then follow the prompts.
 

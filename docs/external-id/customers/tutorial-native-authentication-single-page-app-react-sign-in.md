@@ -29,7 +29,7 @@ In this tutorial, you learn how to:
 
 ## Define types of calls the app makes to the native authentication API
 
-During the sign-in flow, the app makes multiple calls to the native authentication API such as starting a sign-in request, selecting an authentication method and requesting for security tokens.
+During the sign-in flow, the app makes multiple calls to the native authentication API such as starting a sign-in request, selecting an authentication method, and requesting for security tokens.
 
 To define these calls, open the *scr/client/RequestTypes.ts* file, then append following code snippet:
 
@@ -92,7 +92,7 @@ To define the type of responses the app can receive from the native authenticati
 
 ## Process sign-in requests
 
-In this section, you add code that processes sign-in flow requests. Examples of these requests is start a sign-in flow, select an authentication method or request a security token.
+In this section, you add code that processes sign-in flow requests. Examples of these requests are start a sign-in flow, select an authentication method or request a security token.
 
 To do so, create a file called *src/client/SignInService.ts*, then add the following code snippet:
 
@@ -146,11 +146,11 @@ The `challenge_type` property shows the authentication methods that the client a
 
 ## Create UI components
 
-During sign-in flow, this app collects the user's credentials, username (email) and password, to sign in the user. After the user successfully signs in, the app displays the users details.
+During sign-in flow, this app collects the user's credentials, username (email), and password, to sign in the user. After the user successfully signs in, the app displays the user's details.
 
 1. Create a folder called */pages/signin* in the *src* folder.
 
-1. To create, display and submit the a sign-in form, create a file *src/pages/signin/SignIn.tsx*, then add the following code:
+1. To create, display and submit the sign-in form, create a file *src/pages/signin/SignIn.tsx*, then add the following code:
 
     ```typescript
         import React, { useState } from "react";
@@ -321,7 +321,7 @@ export const AppRoutes = () => {
 };
 ```
 
-## Run and test you app
+## Run and test your app
 
 Use the steps in [Run and test you app](tutorial-native-authentication-single-page-app-react-setup-local-cors.md#run-and-test-you-app) to run your app, but this time, test the sign in flow by using the user account that you signed up earlier.
 

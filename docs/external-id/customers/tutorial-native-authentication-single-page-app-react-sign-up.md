@@ -31,7 +31,7 @@ In this tutorial, you learn how to:
 
 ## Create a React project and install dependencies
 
-1. In a location of choice in your computer, run the following commands to create a new React project with the name *reactspa*, navigate into the project folder and install packages:
+1. In a location of choice in your computer, run the following commands to create a new React project with the name *reactspa*, navigate into the project folder, then install packages:
 
     ```powershell
     npx create-react-app reactspa --template typescript
@@ -64,7 +64,7 @@ export const ENV = {
 
 ## Set up react app to call native authentication API and handle response
 
-To complete an authentication flow, such as a sign-up flow, with the native authentication APIs, the app makes calla dn handles response. For example, the app initiates a sign-up flow and waits for a response, then, it submits user attributes and waits again until the user is successfully signed up.
+To complete an authentication flow, such as a sign-up flow, with the native authentication APIs, the app makes calla dn handles response. For example, the app initiates a sign-up flow and waits for a response then it submits user attributes and waits again until the user is successfully signed up.
 
 ### Set up client call to the native authentication API
 
@@ -178,7 +178,7 @@ To define the type of responses the app can receive from the native authenticati
 
 ### Process sign-up requests
 
-In this section, you add code that processes sign-up flow requests. Examples of these requests is start a sign-up flow, select an authentication method or submit a one-time passcode.s
+In this section, you add code that processes sign-up flow requests. Examples of these requests are start a sign-up flow, select an authentication method or submit a one-time passcode.s
 
 To do so, create a file called *src/client/SignUpService.ts*, then add the following code snippet:
 
@@ -232,11 +232,11 @@ The `challenge_type` property shows the authentication methods that the client a
 
 ### Create UI components
 
-This app collects user details such as given name, surname (email) and  password and a one-time passcode from the user. So, the app needs to have a sign-up and a one-time passcode collection form.
+This app collects user details such as given name, surname (email), and  password and a one-time passcode from the user. So, the app needs to have a sign-up and a one-time passcode collection form.
 
 1. Create a folder called */pages/signup* in the *src* folder.
 
-1. To create, display and submit the a sign-up form, create a file *src/pages/signup/SignUp.tsx*, then add the following code:
+1. To create, display and submit the sign-up form, create a file *src/pages/signup/SignUp.tsx*, then add the following code:
 
     ```typescript
         import React, { useState } from 'react';
@@ -399,7 +399,7 @@ This app collects user details such as given name, surname (email) and  password
         min-height: 100vh;
         ```
 
-    1. Open the *src/Index.css* file, then add code from from [src/index.css](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/API/React/ReactAuthSimple/src/index.css)
+    1. Open the *src/Index.css* file, then add code from [src/index.css](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/API/React/ReactAuthSimple/src/index.css)
 
 ### Add app routes
 
