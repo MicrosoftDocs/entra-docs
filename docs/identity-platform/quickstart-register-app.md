@@ -5,61 +5,53 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: mode-other
-ms.date: 06/10/2024
+ms.date: 01/29/2025
 ms.service: identity-platform
-
 ms.topic: quickstart
 #Customer intent: As developer, I want to know how to register my application with the Microsoft identity platform so that the security token service can issue ID and/or access tokens to client applications that request them.
 ---
 
-# Quickstart: Register an application in a Microsoft Entra tenant
+# Quickstart: Register an application in Microsoft Entra ID
 
-Get started with the Microsoft Entra ID by registering an application in the Microsoft Entra admin center.
-
-The Microsoft identity platform performs identity and access management (IAM) only for registered applications. Whether it's a client application like a web or mobile app, or it's a web API that backs a client app, registering it establishes a trust relationship between your application and the identity provider, the Microsoft identity platform.
-
-> [!TIP]
-> To register an application for Azure AD B2C, follow the steps in [Tutorial: Register a web application in Azure AD B2C](/azure/active-directory-b2c/tutorial-register-applications).
+To get started with Microsoft Entra ID, you need to register your application in the Microsoft Entra admin center. This registration is crucial as it establishes a trust relationship between your application and the Microsoft identity platform, enabling identity and access management (IAM) for your app. This article shows you how to register an application in the Microsoft Entra admin center.
 
 ## Prerequisites
 
 - An Azure account that has an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- The Azure account must be at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-- A workforce or external tenant. Refer to the following for setting up the correct tenant.
-    - [Set up a workforce tenant](/entra/identity-platform/quickstart-create-new-tenant).
-    - [Set up an external tenant](/entra/external-id/customers/quickstart-tenant-setup).
+- The Azure account must be at least a [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
+- A workforce or external tenant. You can use your **Default Directory** for this quickstart. If you need an external tenant, complete [set up an external tenant](/entra/external-id/customers/quickstart-tenant-setup).
 
 ## Register an application
 
 [!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-Registering your application establishes a trust relationship between your app and the Microsoft identity platform. The trust is unidirectional. Your app trusts the Microsoft identity platform, and not the other way around. Once created, the application object cannot be moved between different tenants. 
+Registering your application in Microsoft Entra establishes a trust relationship between your app and the Microsoft identity platform. The trust is unidirectional. Your app trusts the Microsoft identity platform, and not the other way around. Once created, the application object can't be moved between different tenants.
 
 Follow these steps to create the app registration:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer). 
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **Applications** > **App registrations** and select **New registration**.
-1. Enter a maeningful application display **Name** name that will be displayed to users of the app, for example *identity-client-app*. You can change the display name at any time and multiple app registrations can share the same name.
+1. Enter a meaningful application display **Name** name that is displayed to users of the app, for example *identity-client-app*. You can change the display name at any time and multiple app registrations can share the same name.
 1. Under **Supported account types**, specify who can use the application. We recommend you select **Accounts in this organizational directory only** for most applications. Refer to the table below for more information on each option.
 
    | Supported account types | Description   |
    | ----------------------- | ------------- |
    | **Accounts in this organizational directory only** | For *single-tenant* apps for use only by users (or guests) in *your* tenant. |
    | **Accounts in any organizational directory** | For *multitenant* apps and you want users in *any* Microsoft Entra tenant to be able to use your application. Ideal for software-as-a-service (SaaS) applications that you intend to provide to multiple organizations. |
-   | **Accounts in any organizational directory and personal Microsoft accounts** | For *multitenant* apps that support both organizational and personal Microsoft accounts (e.g., Skype, Xbox, Live, Hotmail). |
-   | **Personal Microsoft accounts** | For apps used only by personal Microsoft accounts (e.g., Skype, Xbox, Live, Hotmail). |
+   | **Accounts in any organizational directory and personal Microsoft accounts** | For *multitenant* apps that support both organizational and personal Microsoft accounts (for example, Skype, Xbox, Live, Hotmail). |
+   | **Personal Microsoft accounts** | For apps used only by personal Microsoft accounts (for example, Skype, Xbox, Live, Hotmail). |
 
 1. Select **Register** to complete the app registration.
 
    :::image type="content" source="./media/quickstart-register-app/portal-02-app-reg-01.png" alt-text="Screenshot of Microsoft Entra admin center in a web browser, showing the Register an application pane." lightbox="./media/quickstart-register-app/portal-02-app-reg-01.png":::
 
-1. The application's **Overview**  page is displayed. Record the **Application (client) ID**, which uniquely identifies your application and is used in your application's code as part of validating the security tokens it receives from the Microsoft identity platform.
+1. The application's **Overview** page is displayed. Record the **Application (client) ID**, which uniquely identifies your application and is used in your application's code as part of validating the security tokens it receives from the Microsoft identity platform.
 
     :::image type="content" source="./media/quickstart-register-app/portal-03-app-reg-02.png" alt-text="Screenshot of the Microsoft Entra admin center in a web browser, showing an app registration's Overview pane." lightbox="./media/quickstart-register-app/portal-03-app-reg-02.png":::
 
 > [!IMPORTANT]
-> New app registrations are hidden to users by default. When you are ready for users to see the app on their [My Apps page](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510) you can enable it. To enable the app, in the Microsoft Entra admin center navigate to **Identity** > **Applications** > **Enterprise applications** and select the app. Then on the **Properties** page toggle **Visible to users?** to Yes.
+> New app registrations are hidden to users by default. When you're ready for users to see the app on their [My Apps page](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510) you can enable it. To enable the app, in the Microsoft Entra admin center navigate to **Identity** > **Applications** > **Enterprise applications** and select the app. Then on the **Properties** page, set **Visible to users?** to **Yes**.
 
 ## Grant admin consent (external tenants only)
 
@@ -107,20 +99,22 @@ There are some restrictions on the format of the redirect URIs you add to an app
 
 ## Add credentials
 
-Credentials are used by [confidential client applications](./msal-client-applications.md) that access a web API. Examples of confidential clients are web apps, other web APIs, or service-type and daemon-type applications. Credentials allow your application to authenticate as itself, requiring no interaction from a user at runtime.
+After registering an app, you can add certificates, client secrets (a string), or federated identity credentials as credentials to your confidential client app registration. Credentials allow your application to authenticate as itself, requiring no interaction from a user at runtime, and are used by [confidential client applications](./msal-client-applications.md) that access a web API. 
 
-You can add certificates, client secrets (a string), or federated identity credentials as credentials to your confidential client app registration. It's  recommended to use certificates from a trusted certificate authority (CA) where possible.
+Examples of confidential clients are web apps, other web APIs, or service-type and daemon-type applications. Public client applications, like single-page apps, mobile and desktop apps use different methods such as Authorization Code flow with PKCE to authenticate users.
 
 :::image type="content" source="./media/quickstart-register-app/portal-05-app-reg-04-credentials.png" alt-text="Screenshot of the Microsoft Entra admin center, showing the Certificates and secrets pane in an app registration." lightbox="./media/quickstart-register-app/portal-05-app-reg-04-credentials.png":::
 
 ### [Add a certificate](#tab/certificate)
 
-Sometimes called a *public key*, a certificate is the recommended credential type because they're considered more secure than client secrets. For more information about using a certificate as an authentication method in your application, see [Microsoft identity platform application authentication certificate credentials](./certificate-credentials.md).
+Sometimes called a *public key*, a certificate is the recommended credential type because they're considered more secure than client secrets. 
 
 1. In the Microsoft Entra admin center, in **App registrations**, select your application.
 2. Select **Certificates & secrets** > **Certificates** > **Upload certificate**.
 3. Select the file you want to upload. It must be one of the following file types: *.cer*, *.pem*, *.crt*.
 4. Select **Add**.
+
+In production, you should use a certificate signed by a well known certificate authority (CA) such as [Azure Key Vault](https://azure.microsoft.com/products/key-vault/). For more information about using a certificate as an authentication method in your application, see [Microsoft identity platform application authentication certificate credentials](./certificate-credentials.md).
 
 ### [Add a client secret](#tab/client-secret)
 
@@ -157,7 +151,7 @@ To add a federated credential, follow these steps:
     - **Kubernetes accessing Azure resources** to configure a [Kubernetes service account](~/workload-id/workload-identity-federation-create-trust.md#kubernetes) to get tokens for your application and access Azure resources.
     - **Other issuer** to configure the application to [trust a managed identity](~/workload-id/workload-identity-federation-config-app-trust-managed-identity.md) or an identity managed by an external [OpenID Connect provider](~/workload-id/workload-identity-federation-create-trust.md#other-identity-providers) to get tokens for your application and access Azure resources.
 
-For more information, how to get an access token with a federated credential, check out the [Microsoft identity platform and the OAuth 2.0 client credentials flow](./v2-oauth2-client-creds-grant-flow.md#third-case-access-token-request-with-a-federated-credential) article.
+For more information on how to get an access token with a federated credential, see [Microsoft identity platform and the OAuth 2.0 client credentials flow](./v2-oauth2-client-creds-grant-flow.md#third-case-access-token-request-with-a-federated-credential).
 
 ---
 
