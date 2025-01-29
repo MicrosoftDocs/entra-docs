@@ -32,7 +32,7 @@ Click each tab to see which apps are scheduled to enforce MFA for Azure and Micr
 
 The following table lists affected apps, app IDs, and URLs for Azure. 
 
-| Application Name | App ID | Enforcement phase |
+| Application Name | App ID | Enforcement starts |
 |------------------|---------------------------------------|------|
 | [Azure portal](/azure/azure-portal/)     | c44b4083-3bb0-49c1-b47d-974e53cbdf3c  | Second half of 2024 |
 | [Microsoft Entra admin center](https://aka.ms/MSEntraPortal) | c44b4083-3bb0-49c1-b47d-974e53cbdf3c | Second half of 2024 |
