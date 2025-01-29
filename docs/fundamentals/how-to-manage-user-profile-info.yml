@@ -183,7 +183,7 @@ procedureSection:
   - title: |
       Edit multiple users at once (preview)
     summary: |
-          This new user update feature allows Microsoft Entra admins to perform bulk actions on multiple users at once. The feature aims to improve the efficiency and usability of user management tasks, as well as address customer feedback and requests.
+          Users who have at least the user administrator role assigned can edit a subset of user properties for multiple users at once. You must visit specific user profiles to edit other properties.
     steps:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
