@@ -15,6 +15,8 @@ ms.topic: how-to
 
 # Get a token for a mobile app that calls web APIs
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 Before your app can call protected web APIs, it needs an access token. This article walks you through the process to get a token by using the Microsoft Authentication Library (MSAL).
 
 ## Define a scope

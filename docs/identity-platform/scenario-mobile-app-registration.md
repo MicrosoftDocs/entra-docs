@@ -15,6 +15,8 @@ ms.topic: how-to
 
 # Register mobile apps that call web APIs
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 This article contains instructions to help you register a mobile application that you're creating.
 
 ## Supported account types

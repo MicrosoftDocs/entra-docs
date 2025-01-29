@@ -15,6 +15,8 @@ ms.topic: how-to
 
 # Protected web API: App registration
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 This article explains how to register an application for a protected web API.
 
 For the common steps to register an app, see [Quickstart: Register an application with the Microsoft identity platform](quickstart-register-app.md).

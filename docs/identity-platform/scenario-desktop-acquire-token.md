@@ -14,6 +14,8 @@ ms.topic: how-to
 
 # Desktop app that calls web APIs: Acquire a token
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 After you've built an instance of the public client application, you'll use it to acquire a token that you'll then use to call a web API.
 
 ## Recommended pattern
