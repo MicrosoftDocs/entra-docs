@@ -1,11 +1,11 @@
 ---
 title: Configure optional claims
-description: Learn how to configure optional claims in tokens issued by Microsoft identity platform.
+description: Learn how to configure optional claims and attributes in access tokens issued by Microsoft identity platform; optional claims can add useful user information for your app.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: curation-claims
-ms.date: 06/10/2024
+ms.date: 01/27/2025
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
@@ -13,7 +13,7 @@ ms.topic: how-to
 #Customer intent: As an application developer, I want to configure optional claims for my application, so that I can customize the claims returned in ID tokens, access tokens, and SAML tokens based on my specific requirements and scenarios.
 ---
 
-# Configure optional claims
+# Configure and manage optional claims in ID tokens, access tokens, and SAML tokens
 
 Tokens that Microsoft Entra returns are kept smaller to ensure optimal performance by clients that request them. As a result, several claims are no longer present in the token by default and must be asked for specifically on a per-application basis.
 
