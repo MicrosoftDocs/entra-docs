@@ -1,23 +1,26 @@
 ---
-title: Unable to add an identifier URI due to policy
-description: Understand why an app management policy may block the addition of an identifier URI
-ms.date: 12/16/2024
+title: Restrictions on identifier URIs of Entra applications
+description: Understand why an app management policy may block the addition of an identifier URI, and learn more about the policy and the restrictions it enforces on identifier URIs
+ms.date: 1/29/2025
 author: arcrowe
 ms.author: arcrowe
 editor: 
-ms.reviewer: 
-ms.service: entra-id
+ms.reviewer: arcrowe
+ms.service: identity-platform
+
+ms.topic: concept-article
+#Customer intent: As a developer integrating with the Microsoft identity platform, I want to understand why an app management policy blocked the addition of an identifier URI I tried to add, and learn more about the policy and the restrictions it enforces on identifier URIs.
 ---
 
-# Unable to add an identifier URI due to policy
+# Restrictions on identifier URIs of Entra applications
 
 When creating or updating an Entra application, if you attempt to add an `identifier URI` (also referred to as `App ID URI`) that doesn't comply with the default formats of `api://{appId}` or `api://{tenantId}/{appId}`, you may receive an error like:
 
-**The newly added URI {URI} must comply with the format 'api://{appId}' or 'api://{tenantId}/{appId}' as per the default app management policy of your organization.  Please ensure that the identifier host matches the correct app ID. If the requestedAccessTokenVersion is set to 2, this restriction may not apply.  See https://aka.ms/identifier-uri-addition-error for more information on this error.**
+**The newly added URI {URI} must comply with the format 'api://{appId}' or 'api://{tenantId}/{appId}' as per the default app management policy of your organization. If the requestedAccessTokenVersion is set to 2, this restriction may not apply.  See https://aka.ms/identifier-uri-addition-error for more information on this error.**
 
 You're receiving this error because your organization has an [app management policy](https://learn.microsoft.com/en-us/graph/api/resources/applicationauthenticationmethodpolicy?view=graph-rest-beta) that blocks the addition of insecure identifier URIs.  Microsoft may have enabled this policy in your organization to improve its security.  
 
-The next sections will provide troubleshooting guidance depending on your role in your organization.  You can also jump to [learn more about this policy](#more-details-on-this-policy).
+The next sections will provide guidance depending on your role in your organization.  You can also jump to [learn more about this policy](#more-details-on-this-policy).
 
 ## Guidance for administrators
 
