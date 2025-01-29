@@ -146,8 +146,6 @@ In this tutorial, you set up a local CORS server. However, you can [set up a rev
 
 In a production environment, you can use the steps in [Set up a reverse proxy for a single-page app that uses native authentication API by using Azure Function App](how-to-native-authentication-cors-solution-production-environment.md) to set up your CORS proxy server.
 
-<other ways of setting up proxy server Azure function app and Azure Front Door>
-
 ## Related content
 
 - [Tutorial: Sign in users into a React single-page app app by using native authentication](tutorial-native-authentication-single-page-app-react-sign-in.md).
