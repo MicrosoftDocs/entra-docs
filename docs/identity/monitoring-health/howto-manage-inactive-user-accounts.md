@@ -38,17 +38,17 @@ To access the `lastSignInDateTime` property using Microsoft Graph:
 
 Inactive accounts are user accounts that aren't required anymore by members of your organization to gain access to your resources. One key identifier for inactive accounts is that they haven't been used *for a while* to sign in to your environment. Because inactive accounts are tied to the sign-in activity, you can use the timestamp of the last time an account attempted to sign in to detect inactive accounts.
 
-The challenge of this method is to define what *for a while* means for your environment. For example, users might not sign in to an environment *for a while*, because they are on vacation. When defining what your delta for inactive user accounts is, you need to factor in all legitimate reasons for not signing in to your environment. In many organizations, the delta for inactive user accounts is between 90 and 180 days.
+The challenge of this method is to define what *for a while* means for your environment. For example, users might not sign in to an environment *for a while*, because they are on vacation. You need to consider all legitimate reasons for not signing in to your environment. In many organizations, a reasonable window for inactive user accounts is between 90 and 180 days.
 
-The last sign-in provides potential insights into a user's continued need for access to resources. It can help with determining if group membership or app access is still needed or could be removed. For external user management, you can understand if an external user is still active within the tenant or should be cleaned up.
+The last sign-in date provides potential insights into a user's continued need for access to resources. It can help with determining if group membership or app access is still needed or could be removed. For external user management, you can determine if an external user is still active within the tenant or should be removed.
 
-## Find inactive user accounts
+## How to find inactive user accounts
 
-You can use the Microsoft Entra admin center or Microsoft Graph to find inactive user accounts. While there isn't a built-in report for inactive user accounts, you can use the last sign-in date and time to determine if a user account is inactive.
+You can use the Microsoft Entra admin center or the Microsoft Graph API to find inactive user accounts. While there isn't a built-in report for inactive user accounts, you can use the last sign-in date and time to determine if a user account is inactive.
 
 ## [Admin center](#tab/admin-center)
 
-One way to find the last sign-in time for a user is to look at your user list in the Microsoft Entra admin center. It might be easier to find the last sign-in time here, instead of in the sign-in logs. While all users can see the list of users, some columns and details are only available to users with the appropriate permissions.
+To find the last sign-in time for a user, you can look at your user list in the Microsoft Entra admin center. While all users can see the list of users, some columns and details are only available to users with the appropriate permissions.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Users** > **All users**.
@@ -62,6 +62,8 @@ One way to find the last sign-in time for a user is to look at your user list in
 
 1. With the column now visible in the all users list, select **Add filter** and set a time frame for your search using the filter options.
     - Select **< =** as the **Operator**, then select the date to find the last sign-in *before* that selected date.
+
+![Screenshot of the last sign-in filter results.](media/howto-manage-inactive-user-accounts/last-sign-in-filter-results.png)
 
 ## [Microsoft Graph](#tab/microsoft-graph)
 
@@ -106,10 +108,12 @@ The following details relate to the `lastSignInDateTime` property.
 
 - The last sign-in date is associated with the user object. The value is retained until the next sign-in of the user. It might take up to 24 hours to update.
 
+---
+
 ## How to investigate a single user in the Microsoft Entra admin center
 
 
-If you need to view the latest sign-in activity for a user, you can view the user's sign-in details in Microsoft Entra ID. You can also use the Microsoft Graph **users by name** scenario described in the [previous section](#detect-inactive-user-accounts-with-microsoft-graph).
+If you need to view the latest sign-in activity for a user, you can view the user's sign-in details in Microsoft Entra ID. You can also use the Microsoft Graph **users by name** scenario described in the [previous section](#how-to-find-inactive-user-accounts).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Users** > **All users**.
