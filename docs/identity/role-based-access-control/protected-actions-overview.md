@@ -24,7 +24,7 @@ You use protected actions when you want to add an additional layer of protection
 
 ## What policies are typically used with protected actions?
 
-We recommend using multi-factor authentication on all accounts, especially accounts with privileged roles. Protected actions can be used to require additional security. Here are some common stronger Conditional Access policies.
+We recommend using multifactor authentication on all accounts, especially accounts with privileged roles. Protected actions can be used to require additional security. Here are some common stronger Conditional Access policies.
 
 - Stronger MFA authentication strengths, such as [Passwordless MFA](~/identity/authentication/concept-authentication-strengths.md#built-in-authentication-strengths) or [Phishing-resistant MFA](~/identity/authentication/concept-authentication-strengths.md#built-in-authentication-strengths),  
 - Privileged access workstations, by using Conditional Access policy [device filters](~/identity/conditional-access/concept-condition-filters-for-devices.md).
@@ -72,7 +72,7 @@ Here's the initial set of permissions:
 
 Microsoft Entra ID supports two types of deletion for most directory objects: soft deletion and hard deletion. When a directory object is soft deleted, the object, its property values and relationships are preserved in the recycle bin for 30 days. A soft-deleted object can be restored with the same ID and all the property values and relationships intact. When a soft-deleted object is hard deleted, the object is permanently deleted and it cannot be recreated with the same object ID.
 
-To help protect against accidental or malicious hard deletions and permanent data loss of some directory objects, you can add a proteced action for the following permission. This deletion applies to users, Microsoft 365 groups, and applications.
+To help protect against accidental or malicious hard deletions and permanent data loss of some directory objects, you can add a protected action for the following permission. This deletion applies to users, Microsoft 365 groups, and applications.
 
 - microsoft.directory/deletedItems/delete
 
@@ -83,7 +83,7 @@ To help protect against accidental or malicious hard deletions and permanent dat
 ## Steps to use protected actions
 
 > [!NOTE]
-> You should perform these steps in the following sequence to ensure that protected actions are properly configured and enforced. If you don't follow this order, you may get unexpected behavior, such as [getting repeated requests to reauthenticate](./protected-actions-add.md#symptom---policy-is-never-satisfied).
+> You should perform these steps in the following sequence to ensure that protected actions are properly configured and enforced. If you don't follow this order, you might get unexpected behavior, such as [getting repeated requests to reauthenticate](./protected-actions-add.md#symptom---policy-is-never-satisfied).
 
 1. **Check permissions**
 
@@ -99,11 +99,11 @@ To help protect against accidental or malicious hard deletions and permanent dat
 
 1. **Test protected actions**
 
-    Sign in as a user and test the user experience by performing the protected action. You should be prompted to satisfy the Conditional Access policy requirements. For example, if the policy requires multi-factor authentication, you should be redirected to the sign-in page and prompted for strong authentication. [Learn more](./protected-actions-add.md#step-3-test-protected-actions)
+    Sign in as a user and test the user experience by performing the protected action. You should be prompted to satisfy the Conditional Access policy requirements. For example, if the policy requires multifactor authentication, you should be redirected to the sign-in page and prompted for strong authentication. [Learn more](./protected-actions-add.md#step-3-test-protected-actions)
 
 ## What happens with protected actions and applications?
 
-If an application or service attempts to perform a protection action, it must be able to handle the required Conditional Access policy. In some cases, a user might need to intervene and satisfy the policy. For example, they may be required to complete multi-factor authentication. The following applications support step-up authentication for protected actions:
+If an application or service attempts to perform a protection action, it must be able to handle the required Conditional Access policy. In some cases, a user might need to intervene and satisfy the policy. For example, they might be required to complete multifactor authentication. The following applications support step-up authentication for protected actions:
 
 - Microsoft Entra administrator experiences for the actions in the [Microsoft Entra admin center](https://entra.microsoft.com)
 - [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview?branch=main)
@@ -131,7 +131,7 @@ Here are some best practices for using protected actions.
 
 - **Use named network locations**
 
-    Named network location permissions aren't used when managing multi-factor authentication trusted IPs. We recommend using [named network locations](../conditional-access/concept-assignment-network.md).
+    Named network location permissions aren't used when managing multifactor authentication trusted IPs. We recommend using [named network locations](../conditional-access/concept-assignment-network.md).
 
 - **Don't use protected actions to block access based on identity or group membership**
 
