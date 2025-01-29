@@ -667,6 +667,260 @@ Use the following steps to export the Access Review data and import it.
 5. [Configure ADX](#3-create-tables-and-import-json-files-with-data-from-microsoft-entra-id-into-azure-data-explorer) and upload all files from **ReviewInstances** folder to a table called **ReviewInstances**. Make sure all files are uploaded.
 6. Next, repeat the previous step to upload all the files from the folder **ReviewInstanceDecisionItems** to a table called **ReviewInstanceDecisionItems** and **ReviewInstanceContactedReviewers** to a table called **ReviewInstanceContactedReviewers**. Make sure all files are uploaded 
 
+Once the data has been uploaded, use the following Kusto queries to review it.
+
+#### Review Completion & Timeline Information 
+
+When was the last access review cycle completed? How long did it take? 
+
+```kusto
+ReviewInstances 
+| summarize LastCompletedDate = max(ReviewInstanceEndDateTime),  
+            ReviewDuration = datetime_diff('minute', max(ReviewInstanceEndDateTime), min(ReviewInstanceStartDateTime))  
+```
+
+Is the access review process conducted on time (e.g., quarterly, annually)? 
+
+```kusto
+ReviewInstances 
+| extend ExpectedFrequency = "Quarterly" // Replace with organization's frequency 
+| summarize ReviewsCompleted = count(), LastReviewEndDate = max(ReviewInstanceEndDateTime) 
+| extend CurrentDate = now(),  
+         TimeSinceLastReview = datetime_diff('day', now(), LastReviewEndDate) 
+| extend IsOnSchedule = iff(TimeSinceLastReview <= 90, "Yes", "No") // Assuming quarterly = 90 days  
+```
+#### Review Participation & Engagement 
+
+Who were the reviewers assigned? 
+
+```kusto
+ReviewInstanceContactedReviewers 
+| project AccessReviewDefinitionId, AccessReviewInstanceId, ReviewerName = DisplayName, ReviewerUserPrincipalName = UserPrincipalName, CreatedDateTime  
+```
+Which reviewers actively participated and provided responses? 
+
+```kusto
+ReviewInstanceDecisionItems 
+| where ReviewedBy_DisplayName != "AAD Access Reviews" 
+| where Decision in ("Approve", "Deny") 
+| project AccessReviewDefinitionId, AccessReviewInstanceId, ReviewerName = ReviewedBy_DisplayName, 
+ReviewerUserPrincipalName = ReviewedBy_UserPrincipalName, Decision, ReviewedDateTime 
+| distinct AccessReviewDefinitionId, AccessReviewInstanceId, ReviewerName, ReviewerUserPrincipalName, Decision   
+```
+Percentage of reviewers who responded to the access review request. 
+
+```kusto
+let TotalReviewers = ReviewInstanceContactedReviewers 
+    | summarize Total = dcount(Id) by AccessReviewDefinitionId, AccessReviewInstanceId;  
+
+let RespondedReviewers = ReviewInstanceDecisionItems 
+    | where ReviewedBy_DisplayName != "AAD Access Reviews" 
+    | where ReviewedBy_Id != "00000000-0000-0000-0000-000000000000" 
+    | where Decision in ("Approve", "Deny") 
+    | summarize Responded = dcount(ReviewedBy_Id) by AccessReviewDefinitionId, AccessReviewInstanceId;  
+
+TotalReviewers 
+| join kind=leftouter RespondedReviewers on AccessReviewDefinitionId, AccessReviewInstanceId 
+| extend Responded = coalesce(Responded, 0)  // Replace null with 0 for Responded 
+| extend NotResponded = Total - Responded   // Calculate the number of non-responders 
+| extend ResponsePercentage = (Responded * 100.0) / Total  // Percentage of those who responded 
+| extend NonResponsePercentage = (NotResponded * 100.0) / Total  // Percentage of those who didn’t respond 
+| project AccessReviewDefinitionId, AccessReviewInstanceId, Total, Responded, ResponsePercentage, NotResponded, NonResponsePercentage  
+```
+When did each reviewer complete their tasks? 
+
+```kusto
+ReviewInstanceDecisionItems 
+| where Decision in ("Approve", "Deny") 
+| project AccessReviewDefinitionId, AccessReviewInstanceId, ReviewerName = ReviewedBy_DisplayName, ReviewerUserPrincipalName = ReviewedBy_UserPrincipalName, ReviewedDateTime  
+```
+Which reviewers did not make any decisions? 
+
+```kusto
+let AllReviewers = ReviewInstanceContactedReviewers 
+    | project AccessReviewDefinitionId, AccessReviewInstanceId, ReviewerId = Id, ReviewerUserPrincipalName = UserPrincipalName, ReviewerName = DisplayName; 
+  
+let ActiveReviewers = ReviewInstanceDecisionItems 
+    | where Decision in ("Approve", "Deny") 
+    | where ReviewedBy_DisplayName != "AAD Access Reviews" 
+    | where ReviewedBy_Id != "00000000-0000-0000-0000-000000000000" 
+    | summarize ActiveReviewers = make_set(ReviewedBy_Id) by AccessReviewDefinitionId, AccessReviewInstanceId; 
+
+AllReviewers 
+| extend ReviewerId = tostring(ReviewerId)  // Ensure ReviewerId is a string 
+| join kind=leftanti ( 
+    ActiveReviewers 
+    | mv-expand ActiveReviewers 
+    | extend ActiveReviewers = tostring(ActiveReviewers)  // Cast ActiveReviewers to a string 
+) on $left.ReviewerId == $right.ActiveReviewers 
+| project AccessReviewDefinitionId, AccessReviewInstanceId, ReviewerUserPrincipalName, ReviewerName 
+```
+Percentage of reviewers who did not interact. 
+
+```kusto
+let TotalReviewers = ReviewInstanceContactedReviewers 
+    | summarize Total = dcount(Id) by AccessReviewDefinitionId, AccessReviewInstanceId; 
+
+let RespondedReviewers = ReviewInstanceDecisionItems 
+    | where ReviewedBy_DisplayName != "AAD Access Reviews" 
+    | where ReviewedBy_Id != "00000000-0000-0000-0000-000000000000" 
+    | where Decision in ("Approve", "Deny") 
+    | summarize Responded = dcount(ReviewedBy_Id) by AccessReviewDefinitionId, AccessReviewInstanceId; 
+  
+TotalReviewers 
+| join kind=leftouter RespondedReviewers on AccessReviewDefinitionId, AccessReviewInstanceId 
+| extend Responded = coalesce(Responded, 0)  // Replace null with 0 for Responded 
+| extend NotResponded = Total - Responded   // Calculate the number of non-responders 
+| extend ResponsePercentage = (Responded * 100.0) / Total  // Percentage of those who responded 
+| extend NonResponsePercentage = (NotResponded * 100.0) / Total  // Percentage of those who didn’t respond 
+| project AccessReviewDefinitionId, AccessReviewInstanceId, Total, Responded, ResponsePercentage, NotResponded, NonResponsePercentage  
+```
+
+Were reminders triggered for non-responsive reviewers? Pending decisions? 
+
+```kusto
+// Step 1: Get the list of all reviewers 
+let TotalReviewers = ReviewInstanceContactedReviewers 
+    | project AccessReviewDefinitionId, AccessReviewInstanceId, ReviewerId = Id, ReviewerUserPrincipalName = UserPrincipalName, ReviewerName = DisplayName; 
+ 
+// Step 2: Get the list of reviewers who have responded 
+let RespondedReviewers = ReviewInstanceDecisionItems 
+    | where ReviewedBy_DisplayName != "AAD Access Reviews" 
+    | where ReviewedBy_Id != "00000000-0000-0000-0000-000000000000" 
+    | where Decision in ("Approve", "Deny") 
+    | project AccessReviewDefinitionId, AccessReviewInstanceId, RespondedReviewerId = ReviewedBy_Id; 
+
+// Step 3: Get the list of review instances 
+let ReviewInstancesWithDetails = ReviewInstances 
+    | project AccessReviewDefinitionId = ReviewDefinitionId,  
+              AccessReviewInstanceId = ReviewInstanceId,  
+              RemindersSent = ReviewDefinitionSettings_ReminderNotificationsEnabled,  
+              StartDate = todatetime(ReviewInstanceStartDateTime),  
+              EndDate = todatetime(ReviewInstanceEndDateTime) 
+    | extend 
+              ReminderSentDate = iif(RemindersSent, StartDate + (EndDate - StartDate) / 2, datetime(null)); 
+
+// Step 4: Identify non-responsive reviewers and join with review instance details 
+TotalReviewers 
+| join kind=leftouter (ReviewInstancesWithDetails) on AccessReviewDefinitionId, AccessReviewInstanceId 
+| join kind=leftanti RespondedReviewers on $left.ReviewerId == $right.RespondedReviewerId 
+| project AccessReviewDefinitionId, AccessReviewInstanceId, ReviewerUserPrincipalName, ReviewerName, RemindersSent, ReminderSentDate 
+```
+#### Users & Access Changes 
+
+Who lost access to specific resources during the access review? 
+
+```kusto
+ReviewInstanceDecisionItems 
+| where Decision == "Deny" 
+| project User = Principal_DisplayName, Resource = Resource_DisplayName, Decision, Justification 
+```
+Were users flagged due to inactivity? 
+
+```kusto
+ReviewInstanceDecisionItems 
+| where Insights contains "inactive" 
+| project User = Principal_DisplayName, Resource = Resource_DisplayName, Insights, Decision 
+```
+Access removal date and reasoning for losing access. 
+
+```kusto
+ReviewInstanceDecisionItems 
+| where Decision == "Deny" 
+| project User = Principal_DisplayName, Resource=Resource_DisplayName, AccessRemovalDate = AppliedDateTime, Reason = Justification  
+```
+Users with no decisions made. 
+
+```kusto
+ReviewInstanceDecisionItems 
+| where Decision == "NotReviewed" 
+| project User = Principal_DisplayName, Resource=Resource_DisplayName 
+```kusto
+  
+Reviews with no reviewers. 
+
+```kusto
+ReviewInstances 
+| join kind=leftanti ( 
+    ReviewInstanceContactedReviewers 
+    | summarize by AccessReviewInstanceId 
+) on $left.ReviewInstanceId == $right.AccessReviewInstanceId  
+```kusto
+  
+Reviews with no users. 
+
+```kusto
+ReviewInstances 
+| join kind=leftanti ( 
+    ReviewInstanceDecisionItems 
+    | summarize by AccessReviewInstanceId 
+) on $left.ReviewInstanceId == $right.AccessReviewInstanceId 
+```
+
+#### Review Decision Data 
+
+Decisions made: Approved, Denied, or Unchanged. 
+
+```kusto
+ReviewInstanceDecisionItems 
+| summarize count() by Decision 
+```
+Number of users approved or denied access. 
+
+```kusto
+ReviewInstanceDecisionItems 
+| summarize ApprovedCount = countif(Decision == "Approve"), DeniedCount = countif(Decision == "Deny") 
+```
+Were approval reasons documented? 
+
+```kusto
+ReviewInstanceDecisionItems 
+| where Decision == "Approve" and isnotempty(Justification) 
+| summarize count() by ReviewedBy_DisplayName 
+```
+
+#### Access Review Quality and Compliance Checks 
+
+Were access revocations considered for dormant users? 
+
+```kusto
+ReviewInstanceDecisionItems 
+| where Insights contains "inactive" and Decision == "Deny" 
+| project User = Principal_DisplayName, Decision 
+```
+
+Were there any access not properly removed? 
+
+```kusto
+ReviewInstanceDecisionItems 
+| where ApplyResult != "New" and ApplyResult != "AppliedSuccessfully" 
+```
+Did reviewers document their decisions? 
+
+```kusto
+ReviewInstanceDecisionItems 
+| where isnotempty(Justification) 
+| summarize count() by ReviewedBy_DisplayName 
+```
+Were comments captured for each user? 
+
+```kusto
+ReviewInstanceDecisionItems 
+| where isnotempty(Justification) 
+| project User = Principal_DisplayName, Resource = Resource_DisplayName, Comments = Justification 
+```
+  
+  
+  
+
+  
+
+
+
+
+
+
+
 
 ## Next steps
 
