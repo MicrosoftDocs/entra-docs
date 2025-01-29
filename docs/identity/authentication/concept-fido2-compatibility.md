@@ -5,7 +5,7 @@ description: Web browser and native app support for FIDO2 passwordless authentic
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/28/2025
+ms.date: 01/29/2025
 
 author: justinha
 ms.author: justinha
@@ -21,18 +21,16 @@ For enabling FIDO2 security keys to unlock a Windows device, see [Enable FIDO2 s
 > [!NOTE]
 > Microsoft Entra ID currently supports device-bound passkeys stored on FIDO2 security keys and in Microsoft Authenticator. Microsoft is committed to securing customers and users with passkeys. We are investing in both synced and device-bound passkeys for work accounts.
 
-## Overview
+## [**Web apps**](#tab/web)
 
-| OS  | Chrome | Edge | Firefox | Safari | Native apps |
-|:---:|:------:|:----:|:-------:|:------:|:------:|
-| **Windows**  | &#x2705; | &#x2705; | &#x2705; | N/A | &#x2705; |
-| **macOS**  | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705;<sup>1</sup> |
-| **ChromeOS**  | &#x2705; | N/A | N/A | N/A | N/A |
-| **Linux**  | &#x2705; | &#x2705; | &#x2705; | N/A | &#10060; |
-| **iOS**  | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705;<sup>1</sup> |
-| **Android**  | &#x2705; | &#x2705; | &#10060; | N/A | &#x2705;<sup>1</sup> |
-
-<sup>1</sup>Requires an authentication broker to be installed on the user's device. Some Microsoft apps support passkey authentication without an authentication broker. For more information, see [Native application support](#native-application-support).
+| OS  | Chrome | Edge | Firefox | Safari | 
+|:---:|:------:|:----:|:-------:|:------:|
+| **Windows**  | &#x2705; | &#x2705; | &#x2705; | N/A | 
+| **macOS**  | &#x2705; | &#x2705; | &#x2705; | &#x2705; | 
+| **ChromeOS**  | &#x2705; | N/A | N/A | N/A | 
+| **Linux**  | &#x2705; | &#x2705; | &#x2705; | N/A | 
+| **iOS**  | &#x2705; | &#x2705; | &#x2705; | &#x2705; | 
+| **Android**  | &#x2705; | &#x2705; | &#10060; | N/A | 
 
 ## Considerations for each platform
 
@@ -71,12 +69,25 @@ For enabling FIDO2 security keys to unlock a Windows device, see [Enable FIDO2 s
 - Security key registration with Microsoft Entra ID isn't yet supported on Android.
 - Sign-in with passkey isn't supported in Firefox on Android.
 
-## Native application support
+---
+## [**Native apps**](#tab/native)
 
 The following sections cover support for passkey (FIDO2) authentication in Microsoft and third-party applications with Microsoft Entra ID.
 
 > [!NOTE]
 > Passkey authentication with a third-party Identity Provider (IDP) isn't supported in third-party applications using authentication broker, or Microsoft applications on macOS, iOS, or Android at this time.
+
+| OS  | Native apps |
+|:---:|:------:|
+| **Windows**  | &#x2705; |
+| **macOS**    | &#x2705;<sup>1</sup> |
+| **ChromeOS** | N/A |
+| **Linux**    | &#10060; |
+| **iOS**      | &#x2705;<sup>1</sup> |
+| **Android**  | &#x2705;<sup>1</sup> |
+
+<sup>1</sup>Requires an authentication broker to be installed on the user's device. Some Microsoft apps support passkey authentication without an authentication broker. For more information, see [Native application support](#native-application-support).
+
 
 ### Native application support with authentication broker
 
@@ -116,6 +127,8 @@ The following table lists Microsoft application support for passkey (FIDO2) with
 ### Third-party application support without authentication broker
 
 If the user has yet to install an authentication broker, they can still sign in with a passkey when they access MSAL-enabled applications. For more information about requirements for MSAL-enabled applications, see [Support passwordless authentication with FIDO2 keys in apps you develop](~/identity-platform/support-fido2-authentication.md).
+
+---
 
 ## Known issues
 
