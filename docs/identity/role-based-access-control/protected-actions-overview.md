@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.custom: has-azure-ad-ps-ref
 ms.topic: conceptual
-ms.date: 04/10/2023
+ms.date: 01/31/2025
 ---
 
 # What are protected actions in Microsoft Entra ID?
@@ -36,6 +36,7 @@ Conditional Access policies can be applied to limited set of permissions. You ca
 
 - Conditional Access policy management
 - Cross-tenant access settings management
+- Hard deletion of some directory objects
 - Custom rules that define network locations
 - Protected action management
 
@@ -61,10 +62,19 @@ Here's the initial set of permissions:
 > | microsoft.directory/crossTenantAccessPolicy/partners/crossCloudMeetings/update | Update cross-cloud Teams meeting settings  of cross-tenant access policy for partners. |
 > | microsoft.directory/crossTenantAccessPolicy/partners/delete | Delete cross-tenant access policy for partners. |
 > | microsoft.directory/crossTenantAccessPolicy/partners/tenantRestrictions/update | Update tenant restrictions of cross-tenant access policy for partners. |
+> | microsoft.directory/deletedItems/delete | Permanently delete objects, which can no longer be restored |
 > | microsoft.directory/namedLocations/basic/update | Update basic properties of custom rules that define network locations |
 > | microsoft.directory/namedLocations/create | Create custom rules that define network locations |
 > | microsoft.directory/namedLocations/delete | Delete custom rules that define network locations |
 > | microsoft.directory/resourceNamespaces/resourceActions/authenticationContext/update | Update Conditional Access authentication context of Microsoft 365 role-based access control (RBAC) resource actions |
+
+## Deletion of directory objects
+
+Microsoft Entra ID supports two types of deletion for most directory objects: soft deletion and hard deletion. When a directory object is soft deleted, the object, its property values and relationships are preserved in the recycle bin for 30 days. A soft-deleted object can be restored with the same ID and all the property values and relationships intact. When a soft-deleted object is hard deleted, the object is permanently deleted and it cannot be recreated with the same object ID.
+
+To help protect against accidental or malicious hard deletions and permanent data loss of some directory objects, you can add a proteced action for the following permission. This deletion applies to users, Microsoft 365 groups, and applications.
+
+- microsoft.directory/deletedItems/delete
 
 ## How do protected actions compare with Privileged Identity Management role activation?
 
