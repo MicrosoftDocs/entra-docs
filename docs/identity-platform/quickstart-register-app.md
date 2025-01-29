@@ -120,7 +120,7 @@ In production, you should use a certificate signed by a well known certificate a
 
 Sometimes called an *application password*, a client secret is a string value your app can use in place of a certificate to identify itself.
 
-Client secrets are considered less secure than certificate credentials. Application developers sometimes use client secrets during local app development because of their ease of use. However, you should use certificate credentials for any of your applications that are running in production.
+Client secrets are less secure than certificate or federated credentials and therefore should **not be used** in production environments. While they may be convenient for local app development, it is imperative to use certificate or federated credentials for any applications running in production to ensure higher security.
 
 1. In the Microsoft Entra admin center, in **App registrations**, select your application.
 1. Select **Certificates & secrets** > **Client secrets** > **New client secret**.
@@ -157,12 +157,18 @@ For more information on how to get an access token with a federated credential, 
 
 ## Next step
 
-If you're using this application to expose a web API, refer to;
+### [Expose a web API](#tab/expose-a-web-api)
+
+After registering an app, you can configure it to expose a web API. To learn how, refer to;
 
 > [!div class="nextstepaction"]
 > [Configure an application to expose a web API](quickstart-configure-app-expose-web-apis.md)
 
-For developers who want to use an application to test sample code, refer to;
+### [Explore sample code](#tab/explore-sample-code)
+
+The Microsoft identity platform offers a variety of code samples tailored for different application types and platforms. To explore these samples, refer to;
 
 > [!div class="nextstepaction"]
 > [Microsoft identity platform code samples](./sample-v2-code.md)
+
+---
