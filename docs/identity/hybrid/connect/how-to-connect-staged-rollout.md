@@ -169,7 +169,6 @@ To roll out a specific feature (*pass-through authentication*, *password hash sy
 
 ### Enable a Staged Rollout of a specific feature on your tenant
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 You can roll out these options:
 

@@ -50,7 +50,6 @@ After each organization completes these steps, Microsoft Entra B2B collaboration
 
 ## Enable the cloud in your Microsoft cloud settings
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 In your Microsoft cloud settings, enable the Microsoft Azure cloud you want to collaborate with.
 

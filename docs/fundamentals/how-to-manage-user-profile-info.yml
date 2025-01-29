@@ -39,8 +39,6 @@ procedureSection:
   - title: |
       Add or change profile information
     summary: |
-      [!INCLUDE [portal update](../includes/portal-update.md)]
-
       When new users are created, only a few details are added to their user profile. If your organization needs more details, they can be added after the user is created.
     steps:
       - |

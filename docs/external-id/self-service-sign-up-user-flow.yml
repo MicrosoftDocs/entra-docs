@@ -49,8 +49,6 @@ procedureSection:
   - title: |
       Enable self-service sign-up for your tenant
     summary: |
-      [!INCLUDE [portal updates](~/includes/portal-update.md)]
-
       Before you can add a self-service sign-up user flow to your applications, you need to enable the feature for your tenant. Then controls become available that let you associate the user flow with an application.
 
       > [!NOTE]

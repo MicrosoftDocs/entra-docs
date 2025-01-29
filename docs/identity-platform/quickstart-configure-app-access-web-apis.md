@@ -27,7 +27,6 @@ By specifying a web API's scopes in your client app's registration, the client a
 
 ## Add permissions to access your web API
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To enable client applications to access web APIs, you need to add permissions to the client application to access the web API. Similarly, in the web API, you need to configure access scopes and roles for the client application.
 

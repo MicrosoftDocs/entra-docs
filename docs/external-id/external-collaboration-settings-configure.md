@@ -40,7 +40,6 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
 
 ## Configure settings in the portal
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ### To configure guest user access
 

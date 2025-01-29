@@ -45,7 +45,6 @@ To enable self-service application access, you need:
 
 ## Enable self-service application access to allow users to find their own applications
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Self-service application access is a great way to allow users to self-discover applications, and optionally allow the business group to approve access to those applications. For password single-sign on applications, you can also allow the business group to manage the credentials assigned to those users from their own My Apps portal.
 

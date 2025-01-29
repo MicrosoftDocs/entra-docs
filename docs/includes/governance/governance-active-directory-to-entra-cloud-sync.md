@@ -50,7 +50,6 @@ If you're using the  [Basic AD and Azure environment](~/identity/hybrid/cloud-sy
 
 ## Configure Microsoft Entra Cloud Sync
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Use the following steps to configure and start the provisioning:
 
