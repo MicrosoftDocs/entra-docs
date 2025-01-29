@@ -8,7 +8,7 @@ ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
 ms.date: 02/07/2025
-#Customer intent: As a developer, devops, I want to 
+#Customer intent: As a developer, devops, I want to create a reverse proxy by using Azure Function App so that I can use in for a single-page app that authenticates users by using native authentication API in a test environment
 ---
 
 # Set up a reverse proxy for a single-page app that calls native authentication API by using Azure Function App
@@ -74,7 +74,9 @@ This solution is for testing purposes and should **NOT be used in a production e
     - `Enter_Location_Name_Here` with the geographical region where the resource group is be created.
     - `Enter_The_SPA_URL_Here` with the SPA app URL you recorded earlier.
 
-1. Open */API/CORSTestEnviroment/ReverseProxy/index.js* file, then replace the placeholder`Enter_the_Tenant_Subdomain_Here` with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+1. Open */API/CORSTestEnviroment/ReverseProxy/index.js* file, then replace the placeholder `Enter_the_Tenant_Subdomain_Here` with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+
+    The name of the directory, such as *ReverseProxy*, need to match the value, such as *"ReverseProxy/*"*, of the `route` key in the *function.json* file.
 
 1. Deploy the project files to an Azure Function App:
 
