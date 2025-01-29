@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 02/06/2024
+ms.date: 01/29/2025
 ms.author: sarahlipsey
 ms.reviewer: almars
 ---
@@ -17,9 +17,6 @@ ms.reviewer: almars
 When users authenticate into your corporate intranet or web-based applications, Microsoft Entra ID provides the identity and access management (IAM) service. You can add company branding that applies to all these experiences to create a consistent sign-in experience for your users.
 
 The default sign-in experience is the global look and feel that applies across all sign-ins to your tenant. Before you customize any settings, the default Microsoft branding appears in your sign-in pages. You can customize this default experience with a custom background image or color, favicon, layout, header, and footer. You can also upload a custom CSS file.
-
-> [!NOTE]
-> Instructions for how to manage the **'Stay signed in prompt?'** can be found in the **[Manage the 'Stay signed in?' prompt](how-to-manage-stay-signed-in-prompt.yml)** article.
 
 ## Prerequisites
 
@@ -38,6 +35,8 @@ The **Organizational Branding Administrator** role is the minimum role required 
 **All branding elements are optional. Default settings will remain, if left unchanged.** For example, if you specify a banner logo but no background image, the sign-in page shows your logo with a default background image from the destination site such as Microsoft 365. Additionally, sign-in page branding doesn't carry over to personal Microsoft accounts. If your users or guests authenticate using a personal Microsoft account, the sign-in page doesn't reflect the branding of your organization.
 
 **Images have different image and file size requirements.** We recommend you review the company branding process in the Microsoft Entra admin center to gather the image requirements you need. You might need to use a photo editor to create the right size images. The preferred image type for all images is PNG, but JPG is accepted.
+
+**External URLs aren't supported in the sign-in experience.** For example, if you add an external URL for your internal help desk to the footer, that URL is displayed explicitly but isn't clickable. Users must copy the URL and navigate to it directly.
 
 **Use Microsoft Graph with Microsoft Entra company branding.** Company branding can be viewed and managed using Microsoft Graph on the `/beta` endpoint and the `organizationalBranding` resource type. For more information, see the [organizational branding API documentation](/graph/api/resources/organizationalbranding?view=graph-rest-beta&preserve-view=true).
 
@@ -116,14 +115,16 @@ If you haven't enabled the footer, go to the **Layout** section and select **Sho
 
 - **Show 'Privacy & Cookies':** This option is selected by default and displays the [Microsoft 'Privacy & Cookies'](https://privacy.microsoft.com/privacystatement) link.
 
-    Uncheck this option to hide the default Microsoft link. Optionally provide your own **Display text** and **URL**. The text and links don't have to be related to privacy and cookies.
+  - Uncheck this option to hide the default Microsoft link.
+  - Optionally provide your own **Display text** and **URL**. The text and links don't have to be related to privacy and cookies.
+  - Custom URLs are displayed as text and aren't clickable.
 
 - **Show 'Terms of Use':** This option is also selected by default and displays the [Microsoft 'Terms of Use'](https://www.microsoft.com/servicesagreement/) link.
 
     Uncheck this option to hide the default Microsoft link. Optionally provide your own **Display text** and **URL**. The text and links don't have to be related to your terms of use.
 
     > [!IMPORTANT]
-    > The default Microsoft 'Terms of Use' link is not the same as the Conditional Access Terms of Use. Seeing the terms here doesn't mean you've accepted those terms and conditions.
+    > The default Microsoft 'Terms of Use' link isn't the same as the Conditional Access Terms of Use. Seeing the terms here doesn't mean you accepted those terms and conditions.
 
    :::image type="content" source="media/how-to-customize-branding/customize-branding-footer.png" alt-text="Screenshot of customizing branding on the Footer section.":::
 
@@ -157,7 +158,7 @@ If you haven't enabled the footer, go to the **Layout** section and select **Sho
 
 - **Self-service password reset**:
     - Show self-service password reset (SSPR): Select the checkbox to turn on SSPR.
-    - Common URL: Enter the destination URL for where your users reset their passwords. This URL appears on the username and password collection screens.
+    - Common URL: Enter the destination URL for where your users reset their passwords. This URL appears on the username and password collection screens as text and isn't clickable.
     - Username collection display text: Replace the default text with your own custom username collection text.
     - Password collection display text: Replace the default text with your own customer password collection text.
 

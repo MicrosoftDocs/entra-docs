@@ -78,16 +78,44 @@ Generate a report of the last sign-in date of *all users*. The response provides
 
 ### Last successful sign-in date and time
 
-This query is similar to adding the last sign-in date to the users list and filtering by a specific date in the Microsoft Entra admin center. You can request a list of users with a `lastSuccessfulSignInDateTime` or 'lastSignInDateTime` *before* a specified date. The response for this query provides the user details, but doesn't the users's sign-in activity. To see those details, try the query in the **Users by name** scenario.
+This query is similar to adding the last sign-in date to the users list and filtering by a specific date in the Microsoft Entra admin center. You can request a list of users with a `lastSuccessfulSignInDateTime` or `lastSignInDateTime` *before* a specified date. The response for this query provides the user's details, but doesn't provide the users's sign-in activity. To see those details, try the query in the **Users by name** scenario.
 
   - `https://graph.microsoft.com/v1.0/users?$filter=signInActivity/lastSuccessfulSignInDateTime le 2024-06-01T00:00:00Z`
   - `https://graph.microsoft.com/v1.0/users?$filter=signInActivity/lastSignInDateTime le 2024-06-01T00:00:00Z`
 
 ### Users by name
 
-In this scenario, you search for a specific user by name. The response for this query includes the date, time, and request ID for their last sign-in attempt, their last interactive sign-in attempt, and their last successful sign-in.
+In this scenario, you search for a specific user by name. The response for this query includes the date, time, and request ID for their last sign-ins.
 
-  - `https://graph.microsoft.com/v1.0/users?$filter=startswith(displayName,'Isabella Simonsen')&$select=displayName,signInActivity` 
+**Request**:
+```http
+GET `https://graph.microsoft.com/v1.0/users?$filter=startswith(displayName,'Isabella Simonsen')&$select=displayName,signInActivity`
+```
+
+**Response**:
+
+```json
+{
+    "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users(displayName,signInActivity)",
+    "value": [
+        {
+            "displayName": "Stine Romund",
+            "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
+            "signInActivity": {
+                "lastSignInDateTime": "2024-12-10T17:38:26Z",
+                "lastSignInRequestId": "20a94b1b-ade2-4f4e-9c55-609f7cd97600",
+                "lastNonInteractiveSignInDateTime": "2024-12-10T17:38:11Z",
+                "lastNonInteractiveSignInRequestId": "94c369e6-249e-4595-bb86-495ea9a81e00",
+                "lastSuccessfulSignInDateTime": "2024-12-10T17:38:26Z",
+                "lastSuccessfulSignInRequestId": "20a94b1b-ade2-4f4e-9c55-609f7cd97600"
+            }
+        }
+    ]
+}
+```
+  - `lastSignInDateTime`: The date and time of the last interactive sign-in attempt, including sign-in failures. In the case where the last sign-in attempt was successful, the date and time of this property will be the same as the `lastSuccessfulSignInDateTime`.
+  - `lastNonInteractiveSignInDateTime`: The date and time of the last non-interactive sign-in attempt.
+  - `lastSuccessfulSignInDateTime`: The date and time of the last successful interactive sign-in.
 
 > [!NOTE]
 > The `signInActivity` property supports `$filter` (`eq`, `ne`, `not`, `ge`, `le`) *but not with any other filterable properties*. You must specify `$select=signInActivity` or `$filter=signInActivity` while [listing users](/graph/api/user-list?view=graph-rest-beta&preserve-view=true), as the signInActivity property is not returned by default.
