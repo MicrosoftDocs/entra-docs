@@ -41,7 +41,6 @@ To complete the steps in this article, you need the following resources and priv
 
 ## How to enable My Staff
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 After configuring administrative units, you can apply this scope to your users who access My Staff. Only users who are assigned an administrative role can access My Staff. To enable My Staff, complete the following steps:
 

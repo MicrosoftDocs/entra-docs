@@ -88,7 +88,6 @@ Create the application using the following steps:
 
 ## Register your application
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To register and configure your application, follow these steps:
 

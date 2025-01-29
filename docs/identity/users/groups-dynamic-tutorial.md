@@ -35,7 +35,6 @@ You're not required to assign licenses to the users for them to be members in dy
 
 ## To create a group of guest users
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 First, you'll create a group for your guest users who all are from a single partner company. They need special licensing, so it's often more efficient to create a group for this purpose.
 

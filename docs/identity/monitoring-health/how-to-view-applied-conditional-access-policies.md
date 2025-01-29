@@ -76,7 +76,6 @@ You can access the sign-in logs by using the Microsoft Entra admin center, the A
 
 ### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
 
-[!INCLUDE [portal update](../../includes/portal-update.md)]
 
 The activity details of sign-in logs contain several tabs. The **Conditional Access** tab lists the Conditional Access policies applied to that sign-in event.
 

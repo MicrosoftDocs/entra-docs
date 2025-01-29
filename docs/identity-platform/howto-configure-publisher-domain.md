@@ -66,7 +66,6 @@ If your app was registered *before May 21, 2019*, your app's consent prompt show
 
 ## Set a publisher domain in the Microsoft Entra admin center
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To set a publisher domain for your app by using the Microsoft Entra admin center:
 

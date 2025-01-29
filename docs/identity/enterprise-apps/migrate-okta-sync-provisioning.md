@@ -204,7 +204,6 @@ After you disable Okta provisioning, the Microsoft Entra Connect server can sync
 
 ## Enable cloud sync agents
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 After you disable Okta provisioning, the Microsoft Entra Connect cloud sync agent can synchronize objects.
 

@@ -80,7 +80,6 @@ This tutorial uses Guided Configuration 16.1 with an Easy Button template. With 
 
 ## Register Easy Button
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Before a client or service can access Microsoft Graph, it's trusted by the [Microsoft identity platform.](~/identity-platform/quickstart-register-app.md)
 

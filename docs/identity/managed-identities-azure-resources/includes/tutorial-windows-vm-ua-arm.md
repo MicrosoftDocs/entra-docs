@@ -124,7 +124,6 @@ CanDelegate: False
 
 ## Access data
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ### Get an access token
 

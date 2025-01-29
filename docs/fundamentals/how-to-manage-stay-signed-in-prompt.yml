@@ -47,8 +47,6 @@ procedureSection:
   - title: |
       Enable the 'Stay signed in?' prompt
     summary: |
-      [!INCLUDE [portal update](../includes/portal-update.md)]
-
       The KMSI setting is managed in **User settings**.
     steps:
       - |

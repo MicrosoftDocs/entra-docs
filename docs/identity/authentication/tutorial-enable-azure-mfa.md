@@ -48,7 +48,6 @@ To complete this tutorial, you need the following resources and privileges:
 
 ## Create a Conditional Access policy
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 The recommended way to enable and use Microsoft Entra multifactor authentication is with Conditional Access policies. Conditional Access lets you create and define policies that react to sign-in events and that request additional actions before a user is granted access to an application or service.
 
