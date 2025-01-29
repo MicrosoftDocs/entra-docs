@@ -5,7 +5,7 @@ description: Set up direct federation with SAML 2.0 or WS-Fed identity providers
  
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 01/09/2025
+ms.date: 01/29/2025
 
 ms.author: mimart
 author: msmimart
@@ -24,6 +24,9 @@ Your Microsoft Entra tenant can be directly federated with external organization
 You can associate multiple domains with a single federation configuration. The partner's domain can be either Microsoft Entra verified or non-verified.
 
 Setting up SAML/WS-Fed IdP federation requires configuration both in your tenant and in the external organization's IdP. In some cases, the partner will need to update their DNS text records. They'll also need to update their IdP with the required claims and relying party trusts.
+
+> [!NOTE]
+> This feature is in preview in external tenants. For more information about previews, see [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## When is a user authenticated with SAML/WS-Fed IdP federation?
 
