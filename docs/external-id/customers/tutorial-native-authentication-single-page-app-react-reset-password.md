@@ -308,6 +308,6 @@ Use the steps in [Run and test you app](tutorial-native-authentication-single-pa
 
 ## Related content
 
-- [Set up a reverse proxy for a single-page app that uses native authentication API by using Azure Function App]().
-- [ Use Azure Front Door as a reverse proxy in production environment for a single-page app that uses native authentication]().
+- [Set up a reverse proxy for a single-page app that uses native authentication API by using Azure Function App](how-to-native-authentication-cors-solution-test-environment.md).
+- [Use Azure Front Door as a reverse proxy in production environment for a single-page app that uses native authentication](how-to-native-authentication-cors-solution-production-environment.md).
 - [Native authentication API reference](/entra/identity-platform/reference-native-authentication-api?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json&tabs=emailOtp).
