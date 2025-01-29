@@ -70,7 +70,7 @@ To define the type of responses the app can receive from the native authenticati
 
 ## Process password reset requests
 
-In this section, you add code that processes password reset flow requests. Examples of these requests is initiating a password reset request and submitting a password reset form.
+In this section, you add code that processes password reset flow requests. Examples of these requests are initiating a password reset request and submitting a password reset form.
 
 To do so, create a file called *src/client/ResetPasswordService.ts*, then add the following code snippet:
 
@@ -134,11 +134,11 @@ The `challenge_type` property shows the authentication methods that the client a
 
 ## Create UI components
 
-During password reset flow, this app, on different screens, collects the user's username (email), a one-time passcode and a new user password.
+During password reset flow, this app, on different screens, collects the user's username (email), a one-time passcode, and a new user password.
 
 1. Create a folder called */pages/resetpassword* in the *src* folder.
 
-1. To create, display and submit the a password reset forms, create a file *src/pages/resetpassword/ResetPassword.tsx*, then add the following code:
+1. To create, display and submit the password reset forms, create a file *src/pages/resetpassword/ResetPassword.tsx*, then add the following code:
 
     ```typescript
     // ResetPassword.tsx
@@ -304,7 +304,7 @@ Open the *src/AppRoutes.tsx* file, then uncomment the following lines of code:
 
 ## Run and test your app
 
-Use the steps in [Run and test you app](tutorial-native-authentication-single-page-app-react-setup-local-cors.md#run-and-test-you-app) to run your app, but this time, test the password reset flow by using the user account that you signed up earlier.
+Use the steps in [Run and test your app](tutorial-native-authentication-single-page-app-react-setup-local-cors.md#run-and-test-you-app) to run your app. However, test the password reset flow only using the user account you signed up earlier.
 
 ## Related content
 

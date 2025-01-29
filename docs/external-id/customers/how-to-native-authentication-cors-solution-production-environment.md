@@ -13,17 +13,17 @@ ms.date: 02/07/2025
 
 # Use Azure Front Door as a reverse proxy in production environment for a single-page app that uses native authentication
 
-In this article, you learn how to Use Azure Front Door as a reverse proxy for a single-page app (SPA) that uses uses [native authentication API](/entra/identity-platform/reference-native-authentication-api?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json&tabs=emailOtp).
+In this article, you learn how to Use Azure Front Door as a reverse proxy for a single-page app (SPA) that uses [native authentication API](/entra/identity-platform/reference-native-authentication-api?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json&tabs=emailOtp).
 
-Native authentication API doesn't support Cross-Origin Resource Sharing (CORS). So, a SPA that authenticates users via native authentication API can't successfully make requests from front-end JavaScript code.In order to inject the appropriate CORS headers into the response from native authentication API, you need to add a proxy server between the SPA and the native authentication API. 
+The native authentication API doesn't support Cross-Origin Resource Sharing (CORS). Therefore, a single-page app (SPA) that uses this API for user authentication can't make successful requests from front-end JavaScript code. To resolve this, you need to add a proxy server between the SPA and the native authentication API. This proxy server injects the appropriate CORS headers into the response.
 
 In a production environment, we recommended using [Azure Front Door with a Standard/Premium subscription](/azure/frontdoor/standard-premium/troubleshoot-cross-origin-resources) to manage the CORS headers.
 
 ## Prerequisites
 - An Azure subscription. [Create an account for free](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 - A sample SPA that you can access via a URL such as `http://www.contoso.com`:
-    - You can use the React app described in [Quickstart: Sign in users into a sample React SPA by using native authentication API](quickstart-native-authentication-single-page-app-react-sign-in.md). However, don't configure or run the proxy server, as this guide covers that setup.
-    - Once you run the app, record the app URL for later use in this guide. In production, this URL contain the domain that you want to use as a custom domain URL, such as `http://www.contoso.com`
+    - You can use the React app described in [Quickstart: Sign in users into a sample React SPA by using native authentication API](quickstart-native-authentication-single-page-app-react-sign-in.md). However, don't configure or run the proxy server, as this guide covers that set-up.
+    - Once you run the app, record the app URL for later use in this guide. In production, this URL contains the domain that you want to use as a custom domain URL, such as `http://www.contoso.com`
 
 ## Set up Azure Front Door as a reverse proxy
 
