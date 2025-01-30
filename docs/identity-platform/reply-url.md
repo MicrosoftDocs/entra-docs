@@ -20,6 +20,8 @@ To sign in a user, your application must send a login request to the Microsoft E
 
 A redirect URI, or reply URL, is the location where the Microsoft Entra authentication server sends the user once they have successfully authorized and been granted an access token. To sign in a user, your application must send a login request with a redirect URI specified as a parameter, so after the user has successfully signed in, the authentication server will redirect the user and issue an access token to the redirect URI specified in the login request.
 
+In a production web application, for example, the redirect URI is often a public endpoint where your app is running, like `https://contoso.com/auth-response`. During development, it's common to also add the endpoint where you run your app locally, like `https://127.0.0.1/auth-response` or `http://localhost/auth-response`. Be sure that any unnecessary development environments/redirect URIs are not exposed in the production app. This can be done by having separate app registrations for development and production.
+
 ## Why do redirect URI(s) need to be added to an app registration?
 
 For security reasons, the authentication server won't redirect users or send tokens to a URI that isn't added to the app registration. Microsoft Entra login servers only redirect users and send tokens to redirect URIs that have been added to an app registration. If the redirect URI specified in the login request doesn’t match any of the redirect URIs you have added in your application, you receive an error message such as `AADSTS50011: The reply URL specified in the request does not match the reply URLs configured for the application`. 

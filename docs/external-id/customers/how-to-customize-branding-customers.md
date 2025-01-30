@@ -30,7 +30,7 @@ You can also create user flows programmatically using the Company Branding Graph
 ## Prerequisites
 
 - If you haven't already created your own Microsoft Entra external tenant, create one now.
-- [Register an application](how-to-register-ciam-app.md).  
+- [Register an application](/entra/identity-platform/quickstart-register-app).  
 - [Create a user flow](how-to-user-flow-sign-up-sign-in-customers.md)
 - Review the file size requirements for each image you want to add. You may need to use a photo editor to create the right-sized images. The preferred image type for all images is PNG, but JPG is accepted.
 
