@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 09/26/2024
+ms.date: 01/31/2025
 ms.author: rolyon
 ms.custom: it-pro
 
@@ -15,11 +15,13 @@ ms.custom: it-pro
 
 # Least privileged roles by task in Microsoft Entra ID
 
-In this article, you can find the information needed to restrict a user's administrator permissions by assigning least privileged roles in Microsoft Entra ID. You will find tasks organized by feature area and the least privileged role required to perform each task, along with additional non-Global Administrator roles that can perform the task.
+This article describes the least privileged role you should use for several tasks in Microsoft Entra ID. You will find tasks organized by feature area and the least privileged role required to perform each task, along with additional non-Global Administrator roles that can perform the task.
 
 You can further restrict permissions by assigning roles at smaller scopes or by creating your own custom roles. For more information, see [Assign Microsoft Entra roles](manage-roles-portal.md) or [Create a custom role in Microsoft Entra ID](custom-create.md).
 
-## Application proxy
+## Application proxy and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks in [Microsoft Entra application proxy](../app-proxy/overview-what-is-app-proxy.md).
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
@@ -33,12 +35,14 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Download connector service | [Application Administrator](permissions-reference.md#application-administrator) |  |
 > | Read all configuration | [Application Administrator](permissions-reference.md#application-administrator) |  |
 
-## External Identities/B2C
+## External Identities/Azure AD B2C and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks in [Microsoft Entra External ID](../../external-id/external-identities-overview.md) and [Azure Active Directory B2C](/azure/active-directory-b2c/overview).
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
-> | Create Azure AD B2C directories | [All non-guest users](~/fundamentals/users-default-permissions.md) |  |
+> | Create Azure AD B2C directories | [All non-guest users](../../fundamentals/users-default-permissions.md) |  |
 > | Create enterprise applications | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator) | [Application Administrator](permissions-reference.md#application-administrator) |
 > | Create, read, update, and delete B2C policies | [B2C IEF Policy Administrator](permissions-reference.md#b2c-ief-policy-administrator) |  |
 > | Create, read, update, and delete identity providers | [External Identity Provider Administrator](permissions-reference.md#external-identity-provider-administrator) |  |
@@ -58,15 +62,19 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > [!NOTE]
 > Azure AD B2C Global Administrators do not have the same permissions as Microsoft Entra Global Administrators. If you have Azure AD B2C Global Administrator privileges, make sure that you are in an Azure AD B2C directory and not a Microsoft Entra directory.
 
-## Company branding
+## Company branding and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks for [company branding](../../fundamentals/how-to-customize-branding.md) in Microsoft Entra ID.
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
 > | Configure company branding | [Organizational Branding Administrator](permissions-reference.md#organizational-branding-administrator) |  |
-> | Read all configuration | [Directory Readers](permissions-reference.md#directory-readers) | [Default user role](~/fundamentals/users-default-permissions.md) |
+> | Read all configuration | [Directory Readers](permissions-reference.md#directory-readers) | [Default user role](../../fundamentals/users-default-permissions.md) |
 
-## Connect
+## Connect and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks in [Microsoft Entra Connect](../hybrid/connect/whatis-azure-ad-connect.md).
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
@@ -75,14 +83,18 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Read all configuration | [Global Reader](permissions-reference.md#global-reader) | [Hybrid Identity Administrator](permissions-reference.md#hybrid-identity-administrator) |
 > | Seamless single sign-on | [Hybrid Identity Administrator](permissions-reference.md#hybrid-identity-administrator) |  |
 
-## Connect Sync
+## Connect Sync and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks in [Microsoft Entra Connect Sync](../hybrid/connect/how-to-connect-sync-whatis.md).
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
 > | Manage on-premises directory synchronization | [Hybrid Identity Administrator](permissions-reference.md#hybrid-identity-administrator) |  |
 
-## Cloud Provisioning
+## Cloud Provisioning and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks for [identity provisioning](../hybrid/what-is-provisioning.md) in Microsoft Entra ID.
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
@@ -91,15 +103,17 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Read all configuration | [Global Reader](permissions-reference.md#global-reader) | [Hybrid Identity Administrator](permissions-reference.md#hybrid-identity-administrator) |
 > | Seamless single sign-on | [Hybrid Identity Administrator](permissions-reference.md#hybrid-identity-administrator) |  |
 
-## Connect Health
+## Connect Health and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks in [Microsoft Entra Connect Health](../hybrid/connect/whatis-azure-ad-connect.md).
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
-> | [Add or delete services](~/identity/hybrid/connect/how-to-connect-health-operations.md) | [Owner](/azure/role-based-access-control/built-in-roles#owner) |  |
+> | [Add or delete services](../hybrid/connect/how-to-connect-health-operations.md) | [Owner](/azure/role-based-access-control/built-in-roles#owner) |  |
 > | Apply fixes to sync error | [Contributor](/azure/role-based-access-control/built-in-roles#contributor) | [Owner](/azure/role-based-access-control/built-in-roles#owner) |
 > | Configure notifications | [Contributor](/azure/role-based-access-control/built-in-roles#contributor) | [Owner](/azure/role-based-access-control/built-in-roles#owner) |
-> | [Configure settings](~/identity/hybrid/connect/how-to-connect-health-operations.md) | [Owner](/azure/role-based-access-control/built-in-roles#owner) |  |
+> | [Configure settings](../hybrid/connect/how-to-connect-health-operations.md) | [Owner](/azure/role-based-access-control/built-in-roles#owner) |  |
 > | Configure sync notifications | [Contributor](/azure/role-based-access-control/built-in-roles#contributor) | [Owner](/azure/role-based-access-control/built-in-roles#owner) |
 > | Read ADFS security reports | [Security Reader](/azure/role-based-access-control/built-in-roles#security-reader) | [Contributor](/azure/role-based-access-control/built-in-roles#contributor)<br/>[Owner](/azure/role-based-access-control/built-in-roles#owner)
 > | Read all configuration | [Reader](/azure/role-based-access-control/built-in-roles#reader) | [Contributor](/azure/role-based-access-control/built-in-roles#contributor)<br/>[Owner](/azure/role-based-access-control/built-in-roles#owner) |
@@ -109,24 +123,30 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | View metrics and alerts | [Reader](/azure/role-based-access-control/built-in-roles#reader) | [Contributor](/azure/role-based-access-control/built-in-roles#contributor)<br/>[Owner](/azure/role-based-access-control/built-in-roles#owner) |
 > | View sync service metrics and alerts | [Reader](/azure/role-based-access-control/built-in-roles#reader) | [Contributor](/azure/role-based-access-control/built-in-roles#contributor)<br/>[Owner](/azure/role-based-access-control/built-in-roles#owner) |
 
-## Custom domain names
+## Custom domain names and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks for [custom domain names](../../fundamentals/add-custom-domain.yml) in Microsoft Entra ID.
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
 > | Manage domains | [Domain Name Administrator](permissions-reference.md#domain-name-administrator) |  |
-> | Read all configuration | [Directory Readers](permissions-reference.md#directory-readers) | [Default user role](~/fundamentals/users-default-permissions.md) |
+> | Read all configuration | [Directory Readers](permissions-reference.md#directory-readers) | [Default user role](../../fundamentals/users-default-permissions.md) |
 
-## Domain Services
+## Domain Services and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks in [Microsoft Entra Domain Services](../domain-services/overview.md).
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
 > | Create Microsoft Entra Domain Services instance | [Application Administrator](permissions-reference.md#application-administrator)<br>[Groups Administrator](permissions-reference.md#groups-administrator)<br> [Domain Services Contributor](/azure/role-based-access-control/built-in-roles#domain-services-contributor)|   |
-> | Perform all Microsoft Entra Domain Services tasks | [AAD DC Administrators group](/entra/identity/domain-services/tutorial-create-management-vm#administrative-tasks-you-can-perform-on-a-managed-domain) |  |
+> | Perform all Microsoft Entra Domain Services tasks | [AAD DC Administrators group](../domain-services/tutorial-create-management-vm.md#administrative-tasks-you-can-perform-on-a-managed-domain) |  |
 > | Read all configuration | Reader on Azure subscription containing AD DS service |  |
 
-## Devices
+## Devices and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks for [device identity](../devices/overview.md) in Microsoft Entra ID.
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
@@ -134,10 +154,12 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Delete device | [Cloud Device Administrator](permissions-reference.md#cloud-device-administrator) | [Intune Administrator](permissions-reference.md#intune-administrator) |
 > | Disable device | [Cloud Device Administrator](permissions-reference.md#cloud-device-administrator) | [Intune Administrator](permissions-reference.md#intune-administrator) |
 > | Enable device | [Cloud Device Administrator](permissions-reference.md#cloud-device-administrator) | [Intune Administrator](permissions-reference.md#intune-administrator) |
-> | Read basic configuration | [Default user role](~/fundamentals/users-default-permissions.md) |  |
+> | Read basic configuration | [Default user role](../../fundamentals/users-default-permissions.md) |  |
 > | Read BitLocker keys | [Cloud Device Administrator](permissions-reference.md#cloud-device-administrator) | [Helpdesk Administrator](permissions-reference.md#helpdesk-administrator)<br/>[Intune Administrator](permissions-reference.md#intune-administrator)<br/>[Security Administrator](permissions-reference.md#security-administrator)<br/>[Security Reader](permissions-reference.md#security-reader) |
 
-## Enterprise applications
+## Enterprise applications and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks for [application management](../enterprise-apps/what-is-application-management.md) in Microsoft Entra ID.
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
@@ -145,27 +167,31 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Consent to any delegated permissions | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator) | [Application Administrator](permissions-reference.md#application-administrator) |
 > | Consent to application permissions not including Microsoft Graph | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator) | [Application Administrator](permissions-reference.md#application-administrator) |
 > | Consent to application permissions to Microsoft Graph | [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator) |  |
-> | Consent to applications accessing own data | [Default user role](~/fundamentals/users-default-permissions.md) |  |
+> | Consent to applications accessing own data | [Default user role](../../fundamentals/users-default-permissions.md) |  |
 > | Create enterprise application | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator) | [Application Administrator](permissions-reference.md#application-administrator) |
 > | Manage Application Proxy | [Application Administrator](permissions-reference.md#application-administrator) |  |
 > | Read access review of a group or of an app | [Security Reader](permissions-reference.md#security-reader) | [Security Administrator](permissions-reference.md#security-administrator)<br/>[User Administrator](permissions-reference.md#user-administrator) |
-> | Read all configuration | [Default user role](~/fundamentals/users-default-permissions.md) |  |
-> | Update enterprise application assignments | [Enterprise application owner](~/fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator)<br/>[User Administrator](permissions-reference.md#user-administrator) |
-> | Update enterprise application owners | [Enterprise application owner](~/fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator) |
-> | Update enterprise application properties | [Enterprise application owner](~/fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator) |
-> | Update enterprise application provisioning | [Enterprise application owner](~/fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator) |
-> | Update enterprise application self-service | [Enterprise application owner](~/fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator) |
-> | Update single sign-on properties | [Enterprise application owner](~/fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator) |
+> | Read all configuration | [Default user role](../../fundamentals/users-default-permissions.md) |  |
+> | Update enterprise application assignments | [Enterprise application owner](../../fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator)<br/>[User Administrator](permissions-reference.md#user-administrator) |
+> | Update enterprise application owners | [Enterprise application owner](../../fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator) |
+> | Update enterprise application properties | [Enterprise application owner](../../fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator) |
+> | Update enterprise application provisioning | [Enterprise application owner](../../fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator) |
+> | Update enterprise application self-service | [Enterprise application owner](../../fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator) |
+> | Update single sign-on properties | [Enterprise application owner](../../fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator) |
 > | Create and modify custom authentication extensions | [Authentication Extensibility Administrator](permissions-reference.md#authentication-extensibility-administrator) | [Application Administrator](permissions-reference.md#application-administrator) |
 
-## Entitlement management
+## Entitlement management and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks for [entitlement management](../../id-governance/entitlement-management-overview.md) in Microsoft Entra ID Governance.
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
 > | Tasks in Entitlement Management | [Identity Governance Administrator](permissions-reference.md#identity-governance-administrator). For roles lesser privlege than this within the Entitlement Management system, see: [Delegation and roles in entitlement management](../../id-governance/entitlement-management-delegate.md). | |
 
-## Groups
+## Groups and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks for [groups](../../fundamentals/concept-learn-about-groups.md) in Microsoft Entra ID.
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
@@ -175,26 +201,30 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Create, update, or delete access review of a group or of an app | [User Administrator](permissions-reference.md#user-administrator) |  |
 > | Manage group expiration | [User Administrator](permissions-reference.md#user-administrator) |  |
 > | Manage group settings | [Groups Administrator](permissions-reference.md#groups-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
-> | Read all configuration (except hidden membership) | [Directory Readers](permissions-reference.md#directory-readers) | [Default user role](~/fundamentals/users-default-permissions.md) |
-> | Read hidden membership | Group member | [Group owner](~/fundamentals/users-default-permissions.md#object-ownership)<br/>[Password Administrator](permissions-reference.md#password-administrator)<br/>[Exchange Administrator](permissions-reference.md#exchange-administrator)<br/>[SharePoint Administrator](permissions-reference.md#sharepoint-administrator)<br/>[Teams Administrator](permissions-reference.md#teams-administrator)<br/>[User Administrator](permissions-reference.md#user-administrator) |
+> | Read all configuration (except hidden membership) | [Directory Readers](permissions-reference.md#directory-readers) | [Default user role](../../fundamentals/users-default-permissions.md) |
+> | Read hidden membership | Group member | [Group owner](../../fundamentals/users-default-permissions.md#object-ownership)<br/>[Password Administrator](permissions-reference.md#password-administrator)<br/>[Exchange Administrator](permissions-reference.md#exchange-administrator)<br/>[SharePoint Administrator](permissions-reference.md#sharepoint-administrator)<br/>[Teams Administrator](permissions-reference.md#teams-administrator)<br/>[User Administrator](permissions-reference.md#user-administrator) |
 > | Read membership of groups with hidden membership | [Helpdesk Administrator](permissions-reference.md#helpdesk-administrator) | [User Administrator](permissions-reference.md#user-administrator)<br/>[Teams Administrator](permissions-reference.md#teams-administrator) |
 > | Revoke license | [License Administrator](permissions-reference.md#license-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
-> | Update dynamic membership groups | [Group owner](~/fundamentals/users-default-permissions.md#object-ownership) | [User Administrator](permissions-reference.md#user-administrator) |
-> | Update group owners | [Group owner](~/fundamentals/users-default-permissions.md#object-ownership) | [User Administrator](permissions-reference.md#user-administrator) |
-> | Update group properties | [Group owner](~/fundamentals/users-default-permissions.md#object-ownership) | [User Administrator](permissions-reference.md#user-administrator) |
+> | Update dynamic membership groups | [Group owner](../../fundamentals/users-default-permissions.md#object-ownership) | [User Administrator](permissions-reference.md#user-administrator) |
+> | Update group owners | [Group owner](../../fundamentals/users-default-permissions.md#object-ownership) | [User Administrator](permissions-reference.md#user-administrator) |
+> | Update group properties | [Group owner](../../fundamentals/users-default-permissions.md#object-ownership) | [User Administrator](permissions-reference.md#user-administrator) |
 > | Delete group | [Groups Administrator](permissions-reference.md#groups-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
 
-## Licenses
+## Licenses and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks for [Microsoft Entra licensing](../../fundamentals/licensing.md).
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
 > | Assign license | [License Administrator](permissions-reference.md#license-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
-> | Read all configuration | [Directory Readers](permissions-reference.md#directory-readers) | [Default user role](~/fundamentals/users-default-permissions.md) |
+> | Read all configuration | [Directory Readers](permissions-reference.md#directory-readers) | [Default user role](../../fundamentals/users-default-permissions.md) |
 > | Revoke license | [License Administrator](permissions-reference.md#license-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
 > | Try or buy subscription | [Billing Administrator](permissions-reference.md#billing-administrator) |  |
 
-## Lifecycle Workflows
+## Lifecycle Workflows and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks for [lifecycle workflows](../../id-governance/what-are-lifecycle-workflows.md) in Microsoft Entra ID Governance.
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
@@ -202,7 +232,9 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Create a workflow | [Lifecycle workflows Administrator](permissions-reference.md#lifecycle-workflows-administrator) |  |
 > | Add a custom extension to a workflow | [Lifecycle workflows Administrator](permissions-reference.md#lifecycle-workflows-administrator). You must also have either the [Logic App contributor](/azure/role-based-access-control/built-in-roles/integration#logic-app-contributor) or [Owner](/azure/role-based-access-control/built-in-roles/integration#logic-app-operator) Azure Resource Manager role.  |  |
 
-## Microsoft Entra Health
+## Microsoft Entra Health and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks in [Microsoft Entra Health monitoring](../monitoring-health/concept-microsoft-entra-health.md).
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
@@ -211,7 +243,9 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 
 <a name='identity-protection'></a>
 
-## Microsoft Entra ID Protection
+## Microsoft Entra ID Protection and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks in [Microsoft Entra ID Protection](../../id-protection/overview-identity-protection.md).
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
@@ -227,21 +261,27 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Read all risk detections | [Security Reader](permissions-reference.md#security-reader) |  |
 > | Read vulnerabilities | [Security Reader](permissions-reference.md#security-reader) |  |
 
-## Monitoring and health - Audit and sign-in logs
+## Monitoring and health - Audit and sign-in logs and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks for audit and sign-in logs in [Microsoft Entra monitoring](../monitoring-health/overview-monitoring-health.md).
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
 > | Read audit logs | [Reports Reader](permissions-reference.md#reports-reader) | [Application Administrator](permissions-reference.md#application-administrator)<br/>[Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Cloud Device Administrator](permissions-reference.md#cloud-device-administrator)<br/>[Global Secure Access Administrator](permissions-reference.md#global-secure-access-administrator)<br/>[Hybrid Identity Administrator](permissions-reference.md#hybrid-identity-administrator)<br/>[Security Administrator](permissions-reference.md#security-administrator)<br/>[Security Operator](permissions-reference.md#security-operator)<br/>[Security Reader](permissions-reference.md#security-reader) |
 
-## Monitoring and health - Provisioning logs
+## Monitoring and health - Provisioning logs and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks for provisioning logs in [Microsoft Entra monitoring](../monitoring-health/overview-monitoring-health.md).
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
 > | Read sign-in logs | [Reports Reader](permissions-reference.md#reports-reader) | [Application Administrator](permissions-reference.md#application-administrator)<br/>[Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Cloud Device Administrator](permissions-reference.md#cloud-device-administrator)<br/>[Hybrid Identity Administrator](permissions-reference.md#hybrid-identity-administrator)<br/>[Security Administrator](permissions-reference.md#security-administrator)<br/>[Security Operator](permissions-reference.md#security-operator)<br/>[Security Reader](permissions-reference.md#security-reader) |
 
-## Monitoring and health - Recommendations
+## Monitoring and health - Recommendations and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks for identity recommendations in [Microsoft Entra monitoring](../monitoring-health/overview-monitoring-health.md).
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
@@ -249,19 +289,23 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Read recommendations | [Reports Reader](permissions-reference.md#reports-reader) | [Security Reader](permissions-reference.md#security-reader)<br/>[Global Reader](permissions-reference.md#global-reader)<br/>[Helpdesk Administrator](permissions-reference.md#helpdesk-administrator)<br/>[Service Support Administrator](permissions-reference.md#service-support-administrator)<br/>[User Administrator](permissions-reference.md#user-administrator) |
 > | Update recommendations | [Authentication Policy Administrator](permissions-reference.md#authentication-policy-administrator) | [Application Administrator](permissions-reference.md#application-administrator)<br/>[Authentication Administrator](permissions-reference.md#authentication-administrator)<br/>[Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Conditional Access Administrator](permissions-reference.md#conditional-access-administrator)<br/>[Exchange Administrator](permissions-reference.md#exchange-administrator)<br/>[Hybrid Identity Administrator](permissions-reference.md#hybrid-identity-administrator)<br/>[Identity Governance Administrator](permissions-reference.md#identity-governance-administrator)<br/>[Privileged Role Administrator](permissions-reference.md#privileged-role-administrator)<br/>[Security Administrator](permissions-reference.md#security-administrator)<br/>[Security Operator](permissions-reference.md#security-operator)<br/>[SharePoint Administrator](permissions-reference.md#sharepoint-administrator) |
 
-## Multifactor authentication
+## Multifactor authentication and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks in [Microsoft Entra authentication](../authentication/overview-authentication.md).
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
 > | Delete all existing app passwords generated by the selected users | [Authentication Policy Administrator](permissions-reference.md#authentication-policy-administrator) | [Authentication Administrator](permissions-reference.md#authentication-administrator) |
-> | [Disable per-user MFA](~/identity/authentication/howto-mfa-userstates.md) | [Authentication Administrator](permissions-reference.md#authentication-administrator) | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator) |
-> | [Enable per-user MFA](~/identity/authentication/howto-mfa-userstates.md) | [Authentication Administrator](permissions-reference.md#authentication-administrator)  | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator) | 
+> | [Disable per-user MFA](../authentication/howto-mfa-userstates.md) | [Authentication Administrator](permissions-reference.md#authentication-administrator) | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator) |
+> | [Enable per-user MFA](../authentication/howto-mfa-userstates.md) | [Authentication Administrator](permissions-reference.md#authentication-administrator)  | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator) | 
 > | Manage MFA service settings | [Authentication Policy Administrator](permissions-reference.md#authentication-policy-administrator) |  |
 > | Require selected users to provide contact methods again | [Authentication Administrator](permissions-reference.md#authentication-administrator) |  |
 > | Restore multifactor authentication on all remembered devices  | [Authentication Administrator](permissions-reference.md#authentication-administrator) |  |
 
-## MFA Server
+## MFA Server and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks in [MFA Server](../authentication/how-to-migrate-mfa-server-to-azure-mfa.md).
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
@@ -279,7 +323,9 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Read all configuration | [Global Reader](permissions-reference.md#global-reader) |  |
 > | Read server status | [Global Reader](permissions-reference.md#global-reader) |  |
 
-## Organizational relationships
+## Organizational relationships and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks for [external collaboration settings](../../external-id/external-collaboration-settings-configure.md) in Microsoft Entra External ID.
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
@@ -287,7 +333,9 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Manage identity providers | [External Identity Provider Administrator](permissions-reference.md#external-identity-provider-administrator) |  |
 > | Read all configuration | [Global Reader](permissions-reference.md#global-reader) |  |
 
-## Password reset
+## Password reset and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks for [password reset](../authentication/concept-sspr-howitworks.md) in Microsoft Entra ID.
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
@@ -300,9 +348,9 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Configure registration | [Authentication Policy Administrator](permissions-reference.md#authentication-policy-administrator) |  |
 > | Read all configuration | [Security Administrator](permissions-reference.md#security-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
 
-## Permissions management
+## Permissions management and least privileged roles
 
-[What's Microsoft Entra Permissions Management](../../permissions-management/overview.md)
+Here are the least privileged roles you should use when performing tasks in [Microsoft Entra Permissions Management](../../permissions-management/overview.md).
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
@@ -312,7 +360,9 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Assign permissions in Microsoft Entra Permissions Management | [Permissions Management Administrator](permissions-reference.md#permissions-management-administrator) |  |
 > | Start trial and buy Microsoft Entra Permissions Management licenses | [Billing Administrator](permissions-reference.md#billing-administrator) |  |
 
-## Privileged identity management
+## Privileged Identity Management and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks for [Microsoft Entra Privileged Identity Management](../../id-governance/privileged-identity-management/pim-configure.md) in Microsoft Entra ID Governance.
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
@@ -322,16 +372,20 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | View audit activity | [Security Reader](permissions-reference.md#security-reader) |  |
 > | View role memberships | [Security Reader](permissions-reference.md#security-reader) |  |
 
-## Roles and administrators
+## Roles and administrators and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks for [roles and administrators](manage-roles-portal.md) in Microsoft Entra ID.
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
 > | Manage role assignments | [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator) |  |
 > | Read access review of a Microsoft Entra role  | [Security Reader](permissions-reference.md#security-reader) | [Security Administrator](permissions-reference.md#security-administrator)<br/>[Privileged Role Administrator](permissions-reference.md#privileged-role-administrator) |
-> | Read all configuration | [Default user role](~/fundamentals/users-default-permissions.md) |  |
+> | Read all configuration | [Default user role](../../fundamentals/users-default-permissions.md) |  |
 
-## Security - Authentication methods
+## Security - Authentication methods and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks for [authentication methods](../authentication/concept-authentication-methods.md) in Microsoft Entra ID.
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
@@ -342,7 +396,9 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Configure smart lockout | [Security Administrator](permissions-reference.md#security-administrator) |
 > | Read all configuration | [Global Reader](permissions-reference.md#global-reader) |  |
 
-## Security - Conditional Access
+## Security - Conditional Access and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks for [Conditional Access](../conditional-access/overview.md) in Microsoft Entra ID.
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
@@ -365,7 +421,9 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Read terms of use | [Security Reader](permissions-reference.md#security-reader) |  [Global Reader](permissions-reference.md#global-reader) |
 > | Read which terms of use were accepted by the signed-in user | [Default user role](../../fundamentals/users-default-permissions.md) |  |
 
-## Security - Identity security score
+## Security - Identity Security Score and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks for [Identity Secure Score](../monitoring-health/concept-identity-secure-score.md) in Microsoft Entra ID.
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles | 
@@ -374,7 +432,9 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Read security score | [Security Reader](permissions-reference.md#security-reader) | [Security Administrator](permissions-reference.md#security-administrator) |
 > | Update event status | [Security Administrator](permissions-reference.md#security-administrator) |  |
 
-## Security - Risky sign-ins
+## Security - Risky sign-ins and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks for [risky sign-ins](../../id-protection/overview-identity-protection.md) in Microsoft Entra ID Protection.
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
@@ -382,7 +442,9 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Read all configuration | [Security Reader](permissions-reference.md#security-reader) |  |
 > | Read risky sign-ins | [Security Reader](permissions-reference.md#security-reader) |  |
 
-## Security - Users flagged for risk
+## Security - Users flagged for risk and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks for [users flagged for risk](../../id-protection/howto-identity-protection-configure-notifications.md) in Microsoft Entra ID Protection.
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
@@ -391,7 +453,9 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Read all configuration | [Security Reader](permissions-reference.md#security-reader) |  |
 > | Read users flagged for risk | [Security Reader](permissions-reference.md#security-reader) |  |
 
-## Temporary Access Pass
+## Temporary Access Pass and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks for [Temporary Access Pass](../authentication/howto-authentication-temporary-access-pass.md) in Microsoft Entra ID.
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
@@ -401,7 +465,9 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | View a Temporary Access Pass details for a user (without reading the code itself) | [Global Reader](permissions-reference.md#global-reader) |  |
 > | Configure or update the Temporary Access Pass authentication method policy | [Authentication Policy Administrator](permissions-reference.md#authentication-policy-administrator) |  |
 
-## Tenant
+## Tenants and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks in [Microsoft Entra tenants](../../fundamentals/create-new-tenant.md).
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
@@ -410,7 +476,9 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Update Microsoft Entra tenant properties | [Billing Administrator](permissions-reference.md#billing-administrator) |  |
 > | [Manage privacy statement and contact](../../fundamentals/properties-area.yml) | [Billing Administrator](permissions-reference.md#billing-administrator) |  |
 
-## Users
+## Users and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks for [users](../../fundamentals/how-to-create-delete-users.yml) in Microsoft Entra ID.
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
@@ -425,7 +493,7 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | Invalidate refresh tokens of limited admins | [User Administrator](permissions-reference.md#user-administrator) |  |
 > | Invalidate refresh tokens of non-admins | [Helpdesk Administrator](permissions-reference.md#helpdesk-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
 > | Invalidate refresh tokens of privileged admins | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator) |  |
-> | Read basic configuration | [Default user role](~/fundamentals/users-default-permissions.md) |  |
+> | Read basic configuration | [Default user role](../../fundamentals/users-default-permissions.md) |  |
 > | Reset password for limited admins | [User Administrator](permissions-reference.md#user-administrator) |  |
 > | Reset password of non-admins | [Password Administrator](permissions-reference.md#password-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
 > | Reset password of privileged admins | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator) |  |
@@ -441,7 +509,9 @@ You can further restrict permissions by assigning roles at smaller scopes or by 
 > | [Update user settings - Show keep user signed in](../../fundamentals/how-to-manage-stay-signed-in-prompt.yml) | [Global Administrator](permissions-reference.md#global-administrator) |  |
 > | Update Authentication methods | [Authentication Administrator](permissions-reference.md#authentication-administrator) | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator) |
 
-## Support
+## Support and least privileged roles
+
+Here are the least privileged roles you should use when performing tasks for [support](../../fundamentals/how-to-get-support.md) in Microsoft Entra ID.
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
