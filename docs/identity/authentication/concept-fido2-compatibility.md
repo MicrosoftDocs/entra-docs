@@ -69,7 +69,7 @@ For enabling FIDO2 security keys to unlock a Windows device, see [Enable FIDO2 s
 - Security key registration with Microsoft Entra ID isn't yet supported on Android.
 - Sign-in with passkey isn't supported in Firefox on Android.
 
----
+
 ## [**Native apps**](#tab/native)
 
 The following sections cover support for passkey (FIDO2) authentication in Microsoft and third-party applications with Microsoft Entra ID.
