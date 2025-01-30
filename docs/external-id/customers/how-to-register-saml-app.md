@@ -7,12 +7,12 @@ manager: CelesteDG
 ms.service: entra-external-id 
 ms.subservice: external
 ms.topic: how-to
-ms.date: 01/22/2025
+ms.date: 01/29/2025
 ms.custom: it-pro
 
 #Customer intent: As a dev, devops, or it admin, I want to learn about how to register a SAML app through the Microsoft Entra admin center.
 ---
-# Register a SAML app in your external tenant
+# Register a SAML app in your external tenant (preview)
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
