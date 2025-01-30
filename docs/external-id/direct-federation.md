@@ -1,8 +1,7 @@
 ---
 title: SAML/WS-Fed Federation
-description: Set up direct federation with SAML 2.0 or WS-Fed identity providers (IdP) so guests can sign in with their own work accounts. Understand attributes and claims required for federation.
+description: Set up direct federation with SAML 2.0 or WS-Fed identity providers so users can sign in with work accounts. Understand attributes and claims for federation.
 
- 
 ms.service: entra-external-id
 ms.topic: how-to
 ms.date: 01/30/2025
@@ -26,7 +25,7 @@ You can associate multiple domains with a single federation configuration. The p
 Setting up SAML/WS-Fed IdP federation requires configuration both in your tenant and in the external organization's IdP. In some cases, the partner will need to update their DNS text records. They'll also need to update their IdP with the required claims and relying party trusts.
 
 > [!NOTE]
-> This feature is in preview in external tenants. For more information about previews, see [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+> This feature is currently in preview for external tenants and is generally available for workforce tenants.
 
 ## When is a user authenticated with SAML/WS-Fed IdP federation?
 
