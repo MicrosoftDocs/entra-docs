@@ -56,7 +56,7 @@ Before configuring device identities in Microsoft Entra ID for your VDI environm
 |   |   |   | Non-persistent | No |
 | Microsoft Entra registered | Federated/Managed | Windows current | Persistent/Non-persistent | Not Applicable |
 
-<sup>3</sup> A **Federated** identity infrastructure environment represents an environment with an identity provider (IdP) such as AD FS or other non-Microsoft IdP. In a federated identity infrastructure environment, computers follow the [managed device registration flow](device-registration-how-it-works.md#hybrid-azure-ad-joined-in-managed-environments) based on the [Microsoft Windows Server Active Directory Service Connection Point (SCP) settings](hybrid-join-manual.md#configure-a-service-connection-point).
+<sup>3</sup> A **Federated** identity infrastructure environment represents an environment with an identity provider (IdP) such as AD FS or other non-Microsoft IdP. In a federated identity infrastructure environment, computers follow the [federated device registration flow](device-registration-how-it-works.md#microsoft-entra-joined-in-federated-environments) based on the [Microsoft Windows Server Active Directory Service Connection Point (SCP) settings](hybrid-join-manual.md#configure-a-service-connection-point).
 
 <sup>4</sup> A **Managed** identity infrastructure environment represents an environment with Microsoft Entra ID as the identity provider deployed with either [password hash sync (PHS)](~/identity/hybrid/connect/whatis-phs.md) or [pass-through authentication (PTA)](~/identity/hybrid/connect/how-to-connect-pta.md) with [seamless single sign-on](~/identity/hybrid/connect/how-to-connect-sso.md).
 

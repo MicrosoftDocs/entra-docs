@@ -113,7 +113,6 @@ Run the following queries.
 
 ## Hide Microsoft 365 applications from the My Apps portal
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Use the following steps to hide all Microsoft 365 applications from the My Apps portal. The applications are still visible in the Office 365 portal.
 

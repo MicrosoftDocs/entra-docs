@@ -66,7 +66,6 @@ Access to My Apps can be blocked due to a problem with the user’s account. Fol
 - [Check a user’s assigned licenses](#check-a-users-assigned-licenses)
 - [Assign a user a license](#assign-a-user-a-license)
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 <a name='check-if-a-user-account-exists-in-azure-active-directory'></a>
 

@@ -143,7 +143,6 @@ You can use either Microsoft Entra admin center or Graph PowerShell to set up th
 
 ### Microsoft Entra admin center
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Hybrid Identity Administrator](../role-based-access-control/permissions-reference.md#hybrid-identity-administrator).
 1. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Connect Sync**

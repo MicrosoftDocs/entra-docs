@@ -19,7 +19,7 @@ title: |
 introduction: |
   All Azure subscriptions have a trust relationship with a Microsoft Entra tenant. Subscriptions rely on this tenant (directory) to authenticate and authorize security principals and devices. When a subscription expires, the trusted instance remains, but the security principals lose access to Azure resources. Subscriptions can only trust a single directory while one Microsoft Entra tenant may be trusted by multiple subscriptions.
 
-  By default, the user who creates a Microsoft Entra tenant is automatically assigned the [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator) role. However, when an owner of a subscription joins their subscription to an existing tenant, the owner isn't assigned to the Global Administrator role.
+  [!INCLUDE [tenant-installation-account](../includes/definitions/tenant-installation-account.md)] However, when an owner of a subscription joins their subscription to an existing tenant, the owner isn't assigned to the Global Administrator role.
 
   While users may only have a single authentication *home* directory, users may participate as guests in multiple directories. You can see both the home and guest directories for each user in Microsoft Entra ID.
 

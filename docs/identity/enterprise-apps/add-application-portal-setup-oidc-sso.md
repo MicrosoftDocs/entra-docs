@@ -22,7 +22,6 @@ Add an application that supports [OpenID Connect (OIDC)](~/identity-platform/v2-
 
 We recommend you use a nonproduction environment to test the steps in this page.
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ## Prerequisites
 

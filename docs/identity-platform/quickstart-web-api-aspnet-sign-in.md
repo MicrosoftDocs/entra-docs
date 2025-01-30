@@ -26,7 +26,6 @@ In this quickstart, you use a sample web app to show you how to protect an ASP.N
 
 ## Register web API application
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To complete registration, provide the application a name and specify the supported account types. Once registered, the application **Overview** page displays the identifiers needed in the application source code.
 

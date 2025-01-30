@@ -44,7 +44,6 @@ For more information, see [License requirements](entitlement-management-overview
 
 ## Step 1: Set up users and group
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 A resource directory has one or more resources to share. In this step, you create a group named **Marketing resources** in the Woodgrove Bank directory that is the target resource for entitlement management. You also set up an internal requestor.
 
