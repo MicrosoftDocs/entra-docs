@@ -30,7 +30,7 @@ It's easy to remember and type when compared to complex alphanumeric passwords, 
 A combination of QR code and PIN as way to sign-in into applications provides a simple and fast authentication solution to frontline workers. 
 They can increase their productivity with a seamless authentication experience. 
 
-:::image type="content" source="media/concept-authentication-qr-code/qr-code-plus-pin.png" alt-text="Image of a QR code plus PIN.":::
+:::image type="content" source="media/concept-authentication-qr-code/qr-code-plus-pin.png" alt-text="Image that shows a QR code plus PIN.":::
 
 
 ## Benefits of QR code authentication method
@@ -96,7 +96,7 @@ The following policies are applied when an Authentication Policy Administrator c
 Policy  | Values
 :-------|:-------
 Allowed characters | Numbers (0-9)
-Unallowed characters | characters (A-Z; a-z), Symbols (- @ # $ % ^ & * - _ ! + = [ ] { } | \ : ' , . ? / ` ~ " ( ) ; < >), Unicode characters, and blank space
+Unallowed characters | - Characters (`A-Z`,`a-z`)<br>- Symbols (`- @ # $ % ^ & * - _ ! + = [ ] { } | \ : ' , . ? / \`` ~ " ( ) ; < >`)<br>- Unicode characters<br>- Blank space
 Minimum PIN length |  8-20 digits. 
 PIN complexity     | Should be enforced to avoid repetition and common sequences. The following patterns are checked:<br>- Don't contain 0123456789 or 9876543210.<br>- Don't repeat a sequence of 2-3 digits in the PIN, like 121212, or 123123 or 342342.<br>An `Invalid PIN` error appears if the PIN has unallowed characters or is less than the minimum PIN length. 
 PIN not recently used | Don’t repeat the last 3 PINs during admin reset, or user reset. 
