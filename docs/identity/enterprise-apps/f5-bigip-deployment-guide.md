@@ -61,7 +61,6 @@ If you don't have the previous items for testing, you can deploy an AD domain en
 
 ## Azure deployment
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 You can deploy a BIG-IP in different topologies. This guide focuses on a network interface card (NIC) deployment. However, if your BIG-IP deployment requires multiple network interfaces for high availability, network segregation, or more than 1-GB throughput, consider using F5 pre-compiled [Azure Resource Manager (ARM) templates](https://clouddocs.f5.com/cloud/public/v1/azure/Azure_multiNIC.html).
 

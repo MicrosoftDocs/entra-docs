@@ -32,7 +32,6 @@ In addition to the catalog owner and access package manager roles, you can also 
 
 ## As a catalog owner, delegate to an access package manager
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 Follow these steps to assign a user to the access package manager role:
 

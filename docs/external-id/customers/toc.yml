@@ -339,6 +339,8 @@ items:
         href: how-to-create-external-tenant-portal.md
       - name: Register an app
         href: how-to-register-ciam-app.md
+      - name: Register a SAML app
+        href: how-to-register-saml-app.md
       - name: Add a sign-up and sign-in flow
         href: how-to-user-flow-sign-up-sign-in-customers.md
         displayName: disable sign-up, disable sign up 
@@ -451,6 +453,8 @@ items:
         href: how-to-use-app-roles-customers.md
       - name: Web Application Firewall partners
         items: 
+        - name: Azure Web Application Firewall
+          href: tutorial-configure-external-id-web-app-firewall.md
         - name: Cloudflare
           href: tutorial-configure-cloudflare-integration.md
     - name: Manage users

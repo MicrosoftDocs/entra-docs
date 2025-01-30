@@ -56,9 +56,6 @@ Before configuring and enabling automatic user provisioning, you should decide w
 	![Meta Networks Connector Admin Console](media/meta-networks-connector-provisioning-tutorial/apikey.png)
 
 1. Click on the plus sign on the upper right side of the screen to create a new **API Key**.
-
-	![Meta Networks Connector plus icon](media/meta-networks-connector-provisioning-tutorial/plusicon.png)
-
 1. Set the **API Key Name** and **API Key Description**.
 
 	:::image type="content" source="media/meta-networks-connector-provisioning-tutorial/keyname.png" alt-text="Screenshot of the Meta Networks Connector Admin Console with highlighted A P I key name and A P I key description values of Microsoft Entra ID and A P I key." border="false":::
@@ -86,8 +83,6 @@ Before configuring and enabling automatic user provisioning, you should decide w
 	![Meta Networks Connector configure SCIM](media/meta-networks-connector-provisioning-tutorial/configure.png)
 
 1. Navigate to **Administration > Settings > IdP tab**. Click on the name of the IdP configuration created in the previous steps to view the **IdP ID**. This **ID** is added to the end of **Tenant URL** while entering the value in **Tenant URL** field in the Provisioning tab of your Meta Networks Connector application.
-
-	![Meta Networks Connector IdP ID](media/meta-networks-connector-provisioning-tutorial/idpid.png)
 
 <a name='step-3-add-meta-networks-connector-from-the-azure-ad-application-gallery'></a>
 

@@ -38,7 +38,6 @@ To use entitlement management and assign users to access packages, you must have
 
 ## Configure another access package or group membership as incompatible for requesting access to an access package
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 Follow these steps to change the list of incompatible groups or other access packages for an existing access package:
 
@@ -100,7 +99,7 @@ Follow these steps to view the list of other access packages that have indicated
 
 1. Select on **Incompatible With**.
 
-## Identifying users who already have incompatible access to another access package (Preview)
+## Identifying users who already have incompatible access to another access package
 
 If you've configured incompatible access settings on an access package that already has users assigned to it, then you can download a list of those users who have that extra access. Those users who also have an assignment to the incompatible access package won't be able to re-request access.
 

@@ -415,7 +415,6 @@ Then read and write data as described in [these samples](/azure/cosmos-db/sql/sq
 
 ## Clean up steps
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 # [Portal](#tab/azure-portal)
 

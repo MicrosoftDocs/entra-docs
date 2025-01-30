@@ -4,7 +4,7 @@ description: Call an API from an Angular single-page app in a Microsoft Entra te
 author: henrymbuguakiarie
 manager: mwongerapk
 ms.author: henrymbugua
-ms.date: 11/11/2024
+ms.date: 01/20/2025
 ms.reviewer: ejahjaloo
 ms.service: identity-platform
 
@@ -29,23 +29,6 @@ In this tutorial:
 ## Create the API call to Microsoft Graph
 
 To configure your Angular application to interact with the Microsoft Graph API, complete the following steps:
-
-1. Open the `src/app/app.module.ts` file and add the following code snippet:
-
-    ```typescript
-    // MSAL Interceptor is required to request access tokens in order to access the protected resource (Graph)
-    export function MSALInterceptorConfigFactory(): MsalInterceptorConfiguration {
-      const protectedResourceMap = new Map<string, Array<string>>();
-      protectedResourceMap.set('https://graph.microsoft.com/v1.0/me', ['user.read']);
-    
-      return {
-        interactionType: InteractionType.Redirect,
-        protectedResourceMap
-      };
-    }
-    ```
-    
-    The `MSALInterceptorConfigFactory` function configures the MSAL Interceptor to request access tokens for protected resources. It creates a `protectedResourceMap`, linking the Microsoft Graph API endpoint `https://graph.microsoft.com/v1.0/me` with the `user.read` permission. The function then returns an `MsalInterceptorConfiguration` that specifies `Redirect` for `interactionType` and includes the `protectedResourceMap`, allowing the interceptor to add access tokens to API requests automatically.
 
 1. Open the `src/app/profile/profile.component.ts` file and replace the contents with the following code snippet:
 

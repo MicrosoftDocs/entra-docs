@@ -21,7 +21,6 @@ These JSON Web tokens (JWT) used by OIDC and OAuth applications contain pieces o
 
 ## View or edit claims
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Optional JWT claims can be configured in the the original application registration, however they can also be configured in the enterprise application. To view or edit the claims issued in the JWT to the application:
 

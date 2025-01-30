@@ -44,7 +44,6 @@ The following diagram illustrates the Microsoft Entra Verified ID architecture a
 
 ## Create the verified credential expert card in Azure
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 In this step, you create the verified credential expert card by using Microsoft Entra Verified ID. After you create the credential, your Microsoft Entra tenant can issue it to users who initiate the process.
 

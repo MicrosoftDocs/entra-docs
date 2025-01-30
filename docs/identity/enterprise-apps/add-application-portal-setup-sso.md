@@ -33,7 +33,6 @@ To configure SSO, you need:
 
 ## Enable single sign-on
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To enable SSO for an application:
 

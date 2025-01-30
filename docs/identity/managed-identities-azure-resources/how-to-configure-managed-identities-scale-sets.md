@@ -6,7 +6,7 @@ manager: CelesteDG
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: quickstart
-ms.date: 05/27/2024
+ms.date: 01/16/2025
 ms.author: ryanwi
 ms.custom: mode-api, devx-track-azurecli, devx-track-linux, devx-track-arm-template, devx-track-azurepowershell
 ms.devlang: azurecli

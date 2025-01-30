@@ -43,7 +43,6 @@ You have two options to start your quickstart application:
 
 #### Step 1: Register your application
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To register your application and add the app's registration information to your solution, follow these steps:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).

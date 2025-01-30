@@ -63,8 +63,6 @@ The branding elements are called out in the following example. Text descriptions
 
 ## How to navigate the company branding process
 
-[!INCLUDE [portal update](../includes/portal-update.md)]
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Organizational Branding Administrator](../identity/role-based-access-control/permissions-reference.md#organizational-branding-administrator).
 
 1. Browse to **Identity** > **User experiences** > **Company branding**.

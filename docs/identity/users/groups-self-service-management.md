@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 12/20/2024
+ms.date: 01/15/2025
 ms.author: barclayn
 ms.reviewer: MohitBhargava
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -40,7 +40,7 @@ Two scenarios help to explain self-service group management.
 
 ### Delegated group management
 
-In this example scenario, an administrator manages access to a software as a service (SaaS) application that the company is using. Managing the access rights is cumbersome, so the administrator asks the business owner to create a new group. The administrator assigns access for the application to the new group and adds to the group all people already accessing the application. The business owner then can add more users, and those users are automatically provisioned to the application.
+In this example scenario, an administrator manages access to a Software as a Service (SaaS) application that the company is using. Managing the access rights is cumbersome, so the administrator asks the business owner to create a new group. The administrator assigns access for the application to the new group and adds to the group all people already accessing the application. The business owner then can add more users, and those users are automatically provisioned to the application.
 
 The business owner doesn't need to wait for the administrator to manage access for users. If the administrator grants the same permission to a manager in a different business group, that person can also manage access for their own group members. The business owner and the manager can't view or manage each other's group memberships. The administrator can still see all users who have access to the application and block access rights, if needed.
 
@@ -66,7 +66,7 @@ When someone wants access, they request it from the [My Groups portal](https://m
    :::image type="content" source="./media/groups-self-service-management/groups-settings-general.png" alt-text="Screenshot that shows Microsoft Entra groups General settings." lightbox="./media/groups-self-service-management/groups-settings-general.png":::
 
    > [!NOTE]
-   > Changes regarding the Self Service Group Management setting, initially scheduled for June 2024, are currently under review and will not take place as originally planned. A deprecation date will be announced in the future.
+   > Changes regarding the Self Service Group Management setting, are currently under review and won't take place as originally planned. A deprecation date will be announced in the future.
 
 1. Set **Owners can manage group membership requests in the Access Panel** to **Yes**.
 1. Set **Restrict user ability to access groups features in the Access Panel** to **No**.

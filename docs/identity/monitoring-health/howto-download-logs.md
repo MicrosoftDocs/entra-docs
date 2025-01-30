@@ -62,7 +62,6 @@ For example, if you're in the **Groups** or **Licenses** section of Microsoft En
 
 ### Audit logs
 
-[!INCLUDE [portal update](../../includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Monitoring & health** > **Audit logs**.

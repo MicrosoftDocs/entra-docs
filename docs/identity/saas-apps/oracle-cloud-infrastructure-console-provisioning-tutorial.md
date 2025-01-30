@@ -56,9 +56,6 @@ The scenario outlined in this tutorial assumes that you already have the followi
 	![Screenshot shows the Oracle Admin.](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/identity.png "Admin")
 
 2. Click on the URL displayed on the page beside Oracle Identity Cloud Service Console.
-
-	![Screenshot shows the Oracle URL.](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/url.png "URL")
-
 3. Click on **Add Identity Provider** to create a new identity provider. Save the IdP ID to be used as a part of tenant URL. Select the plus icon beside the **Applications** tab to create an OAuth Client and Grant IDCS Identity Domain Administrator AppRole.
 
 	![Screenshot shows the Oracle Cloud Icon.](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/add.png "Icon")

@@ -290,8 +290,8 @@
         href: aws-clientvpn-tutorial.md
       - name: AWS IAM Identity Center
         href: aws-single-sign-on-tutorial.md
-      - name: Axiad Cloud Connector
-        href: axiad-cloud-connector-tutorial.md
+      - name: Axiad Conductor
+        href: axiad-conductor-tutorial.md
       - name: Axway CSOS
         href: axway-csos-tutorial.md  
     - name: B
@@ -328,8 +328,6 @@
         href: benq-iam-tutorial.md  
       - name: BenSelect
         href: benselect-tutorial.md
-      - name: Bersin
-        href: bersin-tutorial.md
       - name: BetterWorks
         href: betterworks-tutorial.md
       - name: Beyond Identity Admin Console
@@ -1045,8 +1043,6 @@
         href: fexa-tutorial.md  
       - name: Field iD
         href: field-id-tutorial.md
-      - name: Fidelity NetBenefits
-        href: fidelitynetbenefits-tutorial.md
       - name: Fidelity PlanViewer
         href: fidelity-planviewer-tutorial.md
       - name: Fieldglass
@@ -1553,8 +1549,6 @@
         href: justlogin-tutorial.md
       - name: Kairos Business
         href: kairos-business-tutorial.md
-      - name: Kallidus
-        href: kallidus-tutorial.md
       - name: KanbanBOX
         href: kanbanbox-tutorial.md
       - name: Kanbanize
@@ -1695,8 +1689,6 @@
         href: litmus-tutorial.md
       - name: Learnster
         href: learnster-tutorial.md
-      - name: Lines eLibrary Advance
-        href: lines-elibrary-advance-tutorial.md
       - name: LinkedIn Elevate
         href: linkedinelevate-tutorial.md
       - name: LinkedIn Learning
@@ -2671,8 +2663,6 @@
         href: soloinsight-cloudgate-sso-tutorial.md
       - name: Sonarqube
         href: sonarqube-tutorial.md
-      - name: Soonr Workplace
-        href: soonr-tutorial.md
       - name: SpaceIQ
         href: spaceiq-tutorial.md
       - name: Spacio
@@ -3153,8 +3143,6 @@
         href: wiz-sso-tutorial.md
       - name: Wootric
         href: wootric-tutorial.md
-      - name: Work.com
-        href: work-com-tutorial.md
       - name: Workable
         href: workable-tutorial.md
       - name: WorkBoard
@@ -3698,8 +3686,6 @@
         href: officespace-software-provisioning-tutorial.md
       - name: Olfeo SAAS
         href: olfeo-saas-provisioning-tutorial.md
-      - name: Omnissa Identity Service
-        href: omnissa-identity-service-provisioning-tutorial.md
       - name: Oneflow
         href: oneflow-provisioning-tutorial.md
       - name: OpenForms
@@ -3970,6 +3956,8 @@
         href: yardione-provisioning-tutorial.md
       - name: Yellowbox
         href: yellowbox-provisioning-tutorial.md
+      - name: Yokoy SSO
+        href: yokoy-sso-tutorial.md
       - name: Zapier
         href: zapier-provisioning-tutorial.md 
       - name: Zello

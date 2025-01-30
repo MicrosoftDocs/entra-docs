@@ -12,7 +12,7 @@ ms.date: 06/27/2024
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.custom: enterprise-apps
-# Customer intent: As an application administrator, I want to configure password-based single sign-on (SSO) in Microsoft Entra ID, so that users can sign in to the application with a username and password and have their credentials securely stored and sent to the application after the first sign-on.
+# Customer intent: As an Application Administrator, I want to configure password-based single sign-on (SSO) in Microsoft Entra ID, so that users can sign in to the application with a username and password and have their credentials securely stored and sent to the application after the first sign-on.
 ---
 
 # Add password-based single sign-on to an application
@@ -27,7 +27,6 @@ Choose password-based SSO when:
 
 The configuration page for password-based SSO is simple. It includes only the URL of the sign-on page that the application uses. This string must be the page that includes the username input field.
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ## Prerequisites
 

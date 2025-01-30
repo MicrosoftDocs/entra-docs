@@ -39,6 +39,10 @@ If you don't have the email, you can find the access requests pending your appro
 
 1. On the **Pending** tab, find the request.
 
+
+> [!NOTE]
+> If you dont see an email to approve request, make sure that the access package does not have notifications disabled.
+
 ## View requestor's answers to questions
 
 1. Navigate to the **Approvals** tab in My Access.
@@ -83,11 +87,11 @@ After you open an access request pending approval, you can see details that will
 
 ## Revoke a request (preview)
 
-To undo your approval for an access request that you previously approved, you can revoke your decision. 
+Users with Microsoft Entra ID Governance can undo their approval for an access request that they previously approved. This will revoke the approval and the requestor will no longer have access to the access package. 
 
-**Prerequisite role:** Approver
+**Prerequisite role:** Approver with Microsoft Entra ID Governance license
 
-1. In MyAccess, select **Approvals** > **History**.
+1. In My Access, select **Approvals** > **History**.
 
 2. Select an approved request that you'd like to revoke the decision for.
 

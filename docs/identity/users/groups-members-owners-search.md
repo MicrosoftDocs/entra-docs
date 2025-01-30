@@ -8,7 +8,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 08/23/2024
+ms.date: 01/15/2025
 ms.author: barclayn
 ms.reviewer: jodah
 

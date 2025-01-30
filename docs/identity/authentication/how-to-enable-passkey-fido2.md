@@ -54,7 +54,7 @@ You can work with your security key vendor to determine the AAGUID of the passke
 ## Enable passkey (FIDO2) authentication method 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
-1. Browse to **Protection** > **Authentication methods** > **Authentication method policy**.
+1. Browse to **Protection** > **Authentication methods** > **Policies**.
 1. Under the method **Passkey (FIDO2)**, set the toggle to **Enable**. Select **All users** or **Add groups** to select specific groups. *Only security groups are supported*.
 1. On the **Configure** tab:
 
