@@ -5,7 +5,7 @@ description: Set up direct federation with SAML 2.0 or WS-Fed identity providers
  
 ms.service: entra-external-id
 ms.topic: how-to
-ms.date: 01/29/2025
+ms.date: 01/30/2025
 
 ms.author: mimart
 author: msmimart
