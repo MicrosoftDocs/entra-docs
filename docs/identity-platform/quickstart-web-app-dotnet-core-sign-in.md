@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: "devx-track-csharp,  scenarios:getting-started, languages:aspnet-core"
-ms.date: 01/18/2024
+ms.date: 01/30/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
