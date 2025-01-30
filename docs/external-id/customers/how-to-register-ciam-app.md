@@ -23,7 +23,7 @@ During app registration, you specify the redirect URI. The redirect URI is the e
 
 External ID supports authentication for various modern application architectures, for example web app or single-page app. The interaction of each application type with the external tenant is different, therefore, you must specify the type of application you want to register.
 
-In this article, you learn how to register an application in your external tenant.
+In this article, you learn how to register an OpenID Connect (OIDC) application in your external tenant. You can also register a SAML app in your external tenant by adding it to your enterprise applications ([learn more](how-to-register-saml-app.md)).
 
 ## Prerequisites
 
