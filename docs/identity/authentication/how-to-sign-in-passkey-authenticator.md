@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/15/2024
+ms.date: 01/22/2025
 
 ms.author: justinha
 author: justinha
@@ -61,7 +61,9 @@ You're now signed in to Microsoft Entra ID.
 
 ### Cross-device authentication (iOS)
 
-Follow these steps to sign in to Microsoft Entra ID on another device with a passkey in Authenticator on your iOS device.
+Follow these steps to sign in to Microsoft Entra ID on another device with a passkey in Authenticator on your iOS device. 
+
+This sign-in option requires Bluetooth and an internet connection for both devices. If your organization restricts Bluetooth usage, an administrator can allow cross-device sign-in for passkeys by permitting Bluetooth pairing exclusively with passkey-enabled FIDO2 authenticators. For more information about how to configure Bluetooth usage only for passkeys, see [Passkeys in Bluetooth-restricted environments](/windows/security/identity-protection/passkeys/?tabs=windows%2Cintune#passkeys-in-bluetooth-restricted-environments).
 
 1. On the other device where you want to sign in to Microsoft Entra ID, go to the resource you're trying to access, such as [Office](https://www.office.com).
 

@@ -37,7 +37,6 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 # [Admin center](#tab/admin-center)
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ### List my role assignments
 

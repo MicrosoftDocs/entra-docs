@@ -11,11 +11,8 @@ ms.date: 01/10/2025
 ms.topic: conceptual
 ms.service: entra
 ms.custom: microsoft-copilot
-
-# Customer intent: As a lifecycle workflows Administrators or Global Administrators, I want to learn about risky user summarization in the Identity Protection UX so that I can quickly respond to identity threats.
 ---
-
-# Manage employee lifecycle using Microsoft Security Copilot
+# Manage employee lifecycle using Microsoft Security Copilot (Preview)
 
 Microsoft Entra ID Governance applies the capabilities of [Microsoft Security Copilot](/security-copilot/microsoft-security-copilot) to save identity administrators time and effort when configuring custom workflows to manage the lifecycle of users across JML scenarios. It also helps you to customize workflows more efficiently using natural language to configure workflow information including custom tasks, execute workflows, and get workflow insights.
 

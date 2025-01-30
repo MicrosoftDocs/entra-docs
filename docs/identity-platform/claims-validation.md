@@ -38,7 +38,7 @@ The `aud` claim identifies the intended audience of the token. Before validating
 * For v1.0 tokens, the audience is one of the appID URIs declared in the web API that validates the token. For example,
 `api://{ApplicationID}`, or a unique name starting with a domain name (if the domain name is associated with a tenant).
 
-For more information about the appID URI of an application, see [Application ID URI](security-best-practices-for-app-registration.md#application-id-uri).
+For more information about the appID URI of an application, see [Application ID URI](security-best-practices-for-app-registration.md#application-id-uri-also-known-as-identifier-uri).
 
 ## Validate the tenant
 

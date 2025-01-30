@@ -76,7 +76,6 @@ In this scenario, you use the following credentials:
 
 ## Allow users to create app passwords
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 By default, users can't create app passwords. The app passwords feature must be enabled before users can use them. To give users the ability to create app passwords, **admin needs** to complete the following steps:
 

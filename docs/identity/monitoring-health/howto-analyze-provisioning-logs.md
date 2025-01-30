@@ -36,7 +36,6 @@ There are several ways to view or analyze the Provisioning logs:
 - Access logs programmatically through the [Microsoft Graph API](/graph/api/resources/provisioningobjectsummary).
 - [Download the logs](howto-download-logs.md) as a CSV or JSON file.
 
-[!INCLUDE [portal update](../../includes/portal-update.md)]
 
 To access the logs in the Microsoft Entra admin center:
 

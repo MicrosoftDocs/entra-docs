@@ -44,7 +44,6 @@ This section describes how to assign roles at tenant scope.
 
 # [Admin center](#tab/admin-center)
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](./permissions-reference.md#privileged-role-administrator).
 

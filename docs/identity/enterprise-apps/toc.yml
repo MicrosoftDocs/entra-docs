@@ -135,8 +135,6 @@ items:
         href: add-application-portal-setup-oidc-sso.md
       - name: Enable Password based single sign-on
         href: configure-password-single-sign-on-non-gallery-applications.md
-      - name: Perform One-click SSO
-        href: one-click-sso-tutorial.md
     - name: Manage access
       items:
       - name: Manage consent and permissions

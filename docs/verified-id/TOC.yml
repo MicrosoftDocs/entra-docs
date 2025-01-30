@@ -70,6 +70,8 @@
     href: how-to-dnsbind.md
   - name: Rotate signing keys
     href: how-to-rotate-keys.md
+  - name: Upgrade signing key
+    href: signing-key-upgrade.md
   - name: Opt out of Verified ID service
     href: how-to-opt-out.md
   - name: Using the Authenticator

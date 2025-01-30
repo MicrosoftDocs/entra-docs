@@ -26,6 +26,7 @@ ms.reviewer: amycolannino
 | Cloud platform| [AWS IAM Identity Center](../identity/saas-apps/aws-single-sign-on-provisioning-tutorial.md) |
 | Cloud platform| [Google Cloud Platform - User Provisioning](../identity/saas-apps/g-suite-provisioning-tutorial.md) |
 | Business applications|SAP applications integrated with [SAP Cloud Identity Services](../identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md) |
+| Business applications|Applications on SAP BTP [using role collections](https://community.sap.com/t5/technology-blogs-by-members/identity-and-access-management-with-microsoft-entra-part-i-managing-access/ba-p/13873276) |
 | CRM| [Salesforce - User Provisioning](../identity/saas-apps/salesforce-provisioning-tutorial.md) |
 | ITSM| [ServiceNow](../identity/saas-apps/servicenow-provisioning-tutorial.md)|
 
@@ -849,6 +850,7 @@ Microsoft Entra ID Governance can be integrated with many other applications, us
 | [Visibly](../identity/saas-apps/visibly-provisioning-tutorial.md) | ● | ● |
 | [Visitly](../identity/saas-apps/visitly-provisioning-tutorial.md) | ● | ● |
 | [Visma](../identity/saas-apps/visma-tutorial.md) |  | ● |
+| [VMware Identity Service](~/identity/saas-apps/vmware-identity-service-tutorial.md) |  | ● |
 | [Vonage](../identity/saas-apps/vonage-provisioning-tutorial.md) | ● | ● |
 | [Voyance](../identity/saas-apps/voyance-tutorial.md) |  | ● |
 | [Vtiger CRM (SAML)](../identity/saas-apps/vtiger-crm-saml-tutorial.md) |  | ● |

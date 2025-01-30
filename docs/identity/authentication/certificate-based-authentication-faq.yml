@@ -28,8 +28,8 @@ sections:
       - question: |
           Where can I get more diagnostic information after a user sign-in failed? 
         answer: |
-          On the error page, select **More Details** for more information to help your tenant admin. The tenant admin can check the **Sign-ins report** to investigate further. For example, if a user certificate is revoked and is part of a Certificate Revocation List, then authentication fails correctly.
-          To get more diagnostic information, check the **Sign-ins report**.
+          On the error page, select **More Details** for more information to help your tenant admin. The tenant admin can check the **sign-in logs** to investigate further. For example, if a user certificate is revoked and is part of a Certificate Revocation List, then authentication fails correctly.
+          To get more diagnostic information, check the **sign-in logs**.
 
       - question: |
           How can an administrator enable Microsoft Entra CBA?

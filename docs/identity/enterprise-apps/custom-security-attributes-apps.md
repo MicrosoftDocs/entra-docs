@@ -38,7 +38,6 @@ Learn how to work with custom attributes for applications in Microsoft Entra ID.
 
 :::zone pivot="portal"
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Undertake the following steps to assign custom security attributes through the Microsoft Entra admin center.
 

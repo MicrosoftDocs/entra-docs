@@ -33,7 +33,6 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 These steps describe how to create a custom role in the Microsoft Entra admin center to manage app registrations.
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 

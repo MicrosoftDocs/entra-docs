@@ -198,7 +198,15 @@ items:
       - name: Deploy Microsoft Global Secure Access for Microsoft Entra Internet Access
         href: gsa-deployment-guide-internet-access.md
       - name: Deploy Microsoft Global Secure Access for Microsoft Entra Private Access
-        href: gsa-deployment-guide-private-access.md 
+        href: gsa-deployment-guide-private-access.md
+      - name: Microsoft Global Secure Access Proof of Concept Guidance
+        items:
+        - name: Introduction
+          href: gsa-poc-guidance-intro.md
+        - name: Configure Microsoft Entra Private Access
+          href: gsa-poc-private-access.md
+        - name: Configure Microsoft Entra Internet Access
+          href: gsa-poc-internet-access.md
   - name: Migration best practices
     items:
     - name: Migration best practices
@@ -299,7 +307,7 @@ items:
         href: service-accounts-computer.md
       - name: Secure on-premises user service accounts
         href: service-accounts-user-on-premises.md
-      - name: Govern on-premises user service accounts
+      - name: Govern on-premises service accounts
         href: service-accounts-govern-on-premises.md
   - name: Secure for AI
     items: 
