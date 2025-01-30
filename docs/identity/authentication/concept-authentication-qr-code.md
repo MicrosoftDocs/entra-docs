@@ -40,13 +40,14 @@ Benefit | Description
 Easier and faster sign-in | Frontline workers might be less tech-savvy, work with difficult devices, or have accessibility requirements. They can sign in with a QR code and PIN quicker than a username and password, which increases their productivity. They also don't have to remember their username to sign in, which reduces support costs. 
 Inexpensive | Printing a QR code costs less than a hardware keys, which can be cost probitive for organizations with temporary frontline workers.
 
-3.1	QR code auth method Policy Requirements ( Entra ID UX)
+## QR code Authentication method policy requirements 
 
-•	Adding QR code as new auth method in Auth Method Policy, following the existing Auth Method framework
-•	QR code ‘state’ is disabled by default in Auth Method | Policies.
-•	Allowed configurations at QR code auth method level. 
-o	PIN length: min. default is 8 digits as per NIST standard; Range: 8-20 digits. PIN length is minimum PIN length allowed based on admin configuration settings.
-o	Lifetime of standard QR code: default is 365 days; Range: 1-395 days. This property is customizable at user level while adding the standard QR code. For example, if admin set the expiration in Auth method Policies | configuration to be ‘30-days’. For every user in that tenant, the default expiration of standard QR Code will be 30 days. However, admin can change the expiry time of standard QR code for a specific user’s QR code auth method if they want.
+Authentication Policy Administrators can enable QR code in Authentication methods in the Microsoft Entra admin center. QR code authnetication is disabled by default.
+
+In the Authentication method policy for QR code, you can configure:
+
+- PIN length: min. default is 8 digits as per NIST standard; Range: 8-20 digits. PIN length is minimum PIN length allowed based on admin configuration settings.
+- Lifetime of standard QR code: default is 365 days; Range: 1-395 days. This property is customizable at user level while adding the standard QR code. For example, if admin set the expiration in Auth method Policies | configuration to be ‘30-days’. For every user in that tenant, the default expiration of standard QR Code will be 30 days. However, admin can change the expiry time of standard QR code for a specific user’s QR code auth method if they want.
 
 In this screenshot, the PIN length is set to the default of 8 digits, and the lifetime for the standard QR code is reduced to 200 days.
 
