@@ -667,11 +667,12 @@ Use the following steps to export the Access Review data and import it.
 5. [Configure ADX](#3-create-tables-and-import-json-files-with-data-from-microsoft-entra-id-into-azure-data-explorer) and upload all files from **ReviewInstances** folder to a table called **ReviewInstances**. Make sure all files are uploaded.
 6. Next, repeat the previous step to upload all the files from the folder **ReviewInstanceDecisionItems** to a table called **ReviewInstanceDecisionItems** and **ReviewInstanceContactedReviewers** to a table called **ReviewInstanceContactedReviewers**. Make sure all files are uploaded 
 
-Once the data has been uploaded, use the following Kusto queries to review it.
+
 
 #### Review Completion & Timeline Information 
+Once the data has been uploaded, use the following Kusto queries to review it.
 
-When was the last access review cycle completed? How long did it take? 
+- When was the last access review cycle completed? How long did it take? 
 
 ```kusto
 ReviewInstances 
@@ -679,7 +680,7 @@ ReviewInstances
             ReviewDuration = datetime_diff('minute', max(ReviewInstanceEndDateTime), min(ReviewInstanceStartDateTime))  
 ```
 
-Is the access review process conducted on time (e.g., quarterly, annually)? 
+- Is the access review process conducted on time (e.g., quarterly, annually)? 
 
 ```kusto
 ReviewInstances 
@@ -691,13 +692,13 @@ ReviewInstances
 ```
 #### Review Participation & Engagement 
 
-Who were the reviewers assigned? 
+- Who were the reviewers assigned? 
 
 ```kusto
 ReviewInstanceContactedReviewers 
 | project AccessReviewDefinitionId, AccessReviewInstanceId, ReviewerName = DisplayName, ReviewerUserPrincipalName = UserPrincipalName, CreatedDateTime  
 ```
-Which reviewers actively participated and provided responses? 
+- Which reviewers actively participated and provided responses? 
 
 ```kusto
 ReviewInstanceDecisionItems 
@@ -707,7 +708,7 @@ ReviewInstanceDecisionItems
 ReviewerUserPrincipalName = ReviewedBy_UserPrincipalName, Decision, ReviewedDateTime 
 | distinct AccessReviewDefinitionId, AccessReviewInstanceId, ReviewerName, ReviewerUserPrincipalName, Decision   
 ```
-Percentage of reviewers who responded to the access review request. 
+- Percentage of reviewers who responded to the access review request. 
 
 ```kusto
 let TotalReviewers = ReviewInstanceContactedReviewers 
@@ -727,14 +728,14 @@ TotalReviewers
 | extend NonResponsePercentage = (NotResponded * 100.0) / Total  // Percentage of those who didn’t respond 
 | project AccessReviewDefinitionId, AccessReviewInstanceId, Total, Responded, ResponsePercentage, NotResponded, NonResponsePercentage  
 ```
-When did each reviewer complete their tasks? 
+- When did each reviewer complete their tasks? 
 
 ```kusto
 ReviewInstanceDecisionItems 
 | where Decision in ("Approve", "Deny") 
 | project AccessReviewDefinitionId, AccessReviewInstanceId, ReviewerName = ReviewedBy_DisplayName, ReviewerUserPrincipalName = ReviewedBy_UserPrincipalName, ReviewedDateTime  
 ```
-Which reviewers did not make any decisions? 
+- Which reviewers did not make any decisions? 
 
 ```kusto
 let AllReviewers = ReviewInstanceContactedReviewers 
@@ -755,7 +756,7 @@ AllReviewers
 ) on $left.ReviewerId == $right.ActiveReviewers 
 | project AccessReviewDefinitionId, AccessReviewInstanceId, ReviewerUserPrincipalName, ReviewerName 
 ```
-Percentage of reviewers who did not interact. 
+- Percentage of reviewers who did not interact. 
 
 ```kusto
 let TotalReviewers = ReviewInstanceContactedReviewers 
@@ -776,7 +777,7 @@ TotalReviewers
 | project AccessReviewDefinitionId, AccessReviewInstanceId, Total, Responded, ResponsePercentage, NotResponded, NonResponsePercentage  
 ```
 
-Were reminders triggered for non-responsive reviewers? Pending decisions? 
+- Were reminders triggered for non-responsive reviewers? Pending decisions? 
 
 ```kusto
 // Step 1: Get the list of all reviewers 
