@@ -5,7 +5,7 @@ description: Learn about using QR code authentication method in Microsoft Entra 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 12/15/2024
+ms.date: 01/30/2025
 
 ms.author: justinha
 author: aanjusingh
@@ -53,45 +53,53 @@ In the Authentication method policy for QR code, you can configure:
   For every user in that tenant, the default expiration of a standard QR code is 30 days. 
   An admin can change the default lifetime of the standard QR code for a specific user.
 
-In this screenshot, the PIN length is set to the default of 8 digits, and the lifetime for the standard QR code is reduced to 200 days.
+In this screenshot, the PIN length is set to the default of 8 digits. The lifetime for the standard QR code is reduced to 200 days.
 
 :::image type="content" source="media/concept-authentication-qr-code/qr-code-settings.png" alt-text="Screenshot that shows QR code settings.":::
 
-## QR code Auth Method Details and Properties
+## Add or delete a QR code authentication method
 
-1	Only one QR code auth method can be active at a time for a user.
-2	When QR code auth method is deleted for the user, they will not be able to sign-in with existing QR code and PIN. Deleting the QR code removes the data from storage.
-3	When a QR code auth method is created only Standard QR code and PIN will be added.
-4	Temporary QR code can be added only on ‘Edit’ page of QR code auth method.
-5	States of Standard QR code, Temporary QR code, and PIN on QR code auth method are not related to each other. For instance, an active QR code auth method can have deleted or expired Standard QR code and active temporary QR code. 
-6	At any given point of time, there can be only a single active standard QR code and a single active temporary QR code.
-7	User PIN will work with both Standard and Temporary QR codes because PIN is per QR code auth method.
-8	Admin will be able to provide custom PIN during QR code auth method creation. Auto-generate PIN capability will exist for both reset and QR code auth method creation.
-9	Admins will be able to see only temporary PIN during creation. PIN will be shown in masked format after it is added to the QR code auth method to protect the exposure of user chosen PIN.
-10	Combinations examples of valid states of Standard QR code, Temporary QR code, and PIN on QR code auth method. An active QR code and active PIN are required for successful authentication. When QR code is deleted or expired, the user will not be able to perform authentication.
-a.	Standard QR code is active, Temporary QR code doesn’t exist, and PIN is Temporary, or user updated.
-b.	Standard QR code is active, Temporary QR code is active, and PIN is Temporary, or user updated.
-c.	Standard QR code is deleted, Temporary QR code doesn’t exist, and PIN is Temporary, or user updated.
-d.	Standard QR code is expired, Temporary QR code is active, and PIN is Temporary, or user updated.
-e.	Standard QR code is expired, Temporary QR code is expired, and PIN is Temporary, or user updated.
+When an Authentication Policy Administrator creates a QR code authentication method, they can add only a standard QR code and PIN.
+To create a temporary QR code, they need edit a QR code authentication method. 
 
+Only one QR code authentication method can be active at a time for a user.
+When a QR code authentication method is deleted for the user, they can't sign-in with their existing QR code and PIN. The QR code data is removed from storage.
 
+A PIN works with both standard and temporary QR codes because PIN is valid for the QR code authentication method.
+An Authentication Policy Administrator can provide a custom PIN when they create a QR code authentication method. 
+They can automatically generate a custom PIN when they reset or create a new QR code authentication method.
 
+Admins can only see a temporary PIN when they create a QR code authentication method. 
+The PIN is masked after it's added to the QR code authentication method to prevent exposure.
+
+The states for a standard QR code, a temporary QR code, and the PIN for a QR code authentication method aren't related to each other. 
+For example, an active QR code authentication method can have a deleted or expired standard QR code, and an active temporary QR code. 
+At any given point of time, there can be only a single active standard QR code and a single active temporary QR code.
+
+The following table lists examples for combinations for the states for a standard QR code, a temporary QR code, and PIN. 
+An active QR code and active PIN are required for successful authentication. 
+
+Standard QR code | Temporary QR code | PIN for QR code authentication method
+:---------------:|:-----------------:|:------------------------------------:
+Active           | Doesn’t exist     | Temporary, or user updated
+Active           | Active            | Temporary, or user updated
+Deleted          | Doesn’t exist     | Temporary, or user updated
+Expired          | Active            | Temporary, or user updated
+Expired          | Expired           | Temporary, or user updated
+
+For more information about how to manage QR codes, see [How to enable the QR code authentication method in Microsoft Entra ID (Preview)](how-to-authentication-qr-code.md).
 
 ### PIN properties
 
-The following policies will be applied for PIN generation and reset. 
+The following policies are applied when an Authentication Policy Administrator creates or resets a PIN. 
 
-1.	Character Allowed: Numbers (0-9)
-2.	Characters not Allowed: characters (A-Z; a-z), Symbols (- @ # $ % ^ & * - _ ! + = [ ] { } | \ : ' , . ? / ` ~ " ( ) ; < >), Unicode characters, and blank space
-3.	Pin length: min. 8 digits default (max. length 20 digits). It can be configured at QR code auth method level in Auth Method policy. Pin length setting is to configure minimum PIN length for all the users.
-4.	Pin complexity: PIN complexity should be enforced to avoid repetition and sequencing such as Common sequences from a keyboard row: 12345678, 1111111, 12121212, 123123123, etc. Currently, password checks weak and bad passwords. We can use existing digit pattern checks for PIN. (server will validate the pin complexity and auth method policy configurations on pin length; UX will validate min length and all digits). Based on existing rules, following pattern will be checked:
-•	Do not contain 0123456789 or 9876543210
-•	Do not repeat a 2–3-digit sequence across the pin like 121212, or 123123 or 342342
-
-If PIN is all digits but not correct/ PIN length doesn’t meet auth method policy configuration (less than min. PIN length), ‘Invalid PIN’ error is shown.
-
-5.	Pin not recently used: Don’t repeat last 3 PINs for both admin reset, and user forced reset flows. Self-service PIN reset is out of scope in V1.
+Policy  | Values
+:-------|:-------
+Allowed characters | Numbers (0-9)
+Unallowed characters | characters (A-Z; a-z), Symbols (- @ # $ % ^ & * - _ ! + = [ ] { } | \ : ' , . ? / ` ~ " ( ) ; < >), Unicode characters, and blank space
+Minimum PIN length |  8-20 digits. 
+PIN complexity     | Should be enforced to avoid repetition and common sequences. The following patterns are checked:<br>- Don't contain 0123456789 or 9876543210.<br>- Don't repeat a sequence of 2-3 digits in the PIN, like 121212, or 123123 or 342342.<br>An `Invalid PIN` error appears if the PIN has unallowed characters or is less than the minimum PIN length. 
+PIN not recently used | Don’t repeat the last 3 PINs during admin reset, or user reset. 
 
 ## QR code authentication management for users
 
