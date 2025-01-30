@@ -234,9 +234,9 @@ The `challenge_type` property shows the authentication methods that the client a
 
 This app collects user details such as given name, surname (email), and  password and a one-time passcode from the user. So, the app needs to have a sign-up and a one-time passcode collection form.
 
-1. Create a folder called */pages/signup* in the *src* folder.
+1. Create a folder called */pages/SignUp* in the *src* folder.
 
-1. To create, display and submit the sign-up form, create a file *src/pages/signup/SignUp.tsx*, then add the following code:
+1. To create, display and submit the sign-up form, create a file *src/pages/SignUp/SignUp.tsx*, then add the following code:
 
     ```typescript
         import React, { useState } from 'react';
@@ -269,7 +269,7 @@ This app collects user details such as given name, surname (email), and  passwor
               setError('');
               try {
                 setIsloading(true);
-                const res1 = await signupStart({ name, surname, username: email });
+                const res1 = await signupStart({ name, surname, username: email, password });
                 const res2 = await signupChallenge({ continuation_token: res1.continuation_token });
                 navigate('/signup/challenge', { state: { ...res2} });
               } catch (err) {
