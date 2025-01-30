@@ -1,6 +1,6 @@
 ---
-title: "Quickstart: Register an app in a Microsoft Entra tenant"
-description: In this quickstart, you learn how to register an application with the Microsoft identity platform.
+title: "Quickstart: Register an app in Microsoft Entra ID"
+description: In this quickstart, you learn how to register an application in a Microsoft Entra tenant.
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
@@ -8,12 +8,12 @@ ms.custom: mode-other
 ms.date: 01/29/2025
 ms.service: identity-platform
 ms.topic: quickstart
-#Customer intent: As developer, I want to know how to register my application with the Microsoft identity platform so that the security token service can issue ID and/or access tokens to client applications that request them.
+#Customer intent: As developer, I want to know how to register my application in Microsoft Entra tenant. I want to understand the additional configurations to help make my application secure. 
 ---
 
 # Quickstart: Register an application in Microsoft Entra ID
 
-In this quickstart, you learn how to register an application in Microsoft Entra ID. This process is essential for establishing a trust relationship between your application and the Microsoft identity platform. By completing this quickstart, you enable identity and access management (IAM) for your app, allowing it to securely interact with Microsoft services and APIs.
+In this quickstart, you learn how to register an application in Microsoft Entra ID. This process is essential for establishing a trust relationship between your application and the Microsoft identity platform. By completing this quickstart, you enable identity and access management (IAM) for your app, allowing it to securely interact with Microsoft services and APIs. 
 
 ## Prerequisites
 
@@ -30,9 +30,9 @@ Registering your application in Microsoft Entra establishes a trust relationship
 Follow these steps to create the app registration:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer). 
-1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application from the **Directories + subscriptions** menu.
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="./media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application.
 1. Browse to **Identity** > **Applications** > **App registrations** and select **New registration**.
-1. Enter a meaningful application display **Name** name that is displayed to users of the app, for example *identity-client-app*. You can change the display name at any time and multiple app registrations can share the same name.
+1. Enter a meaningful **Name** for your, for example *identity-client-app*. App users can see this name, and it can be changed at any time. You can have multiple app registrations with the same name.
 1. Under **Supported account types**, specify who can use the application. We recommend you select **Accounts in this organizational directory only** for most applications. Refer to the table below for more information on each option.
 
    | Supported account types | Description   |
@@ -63,18 +63,7 @@ Once you register your application, it gets assigned the **User.Read** permissio
 
 ## Add a redirect URI
 
-A *redirect URI* is the location where the Microsoft identity platform redirects a user's client and sends security tokens after authentication. Redirect URIs should be added to;
-
-- Web applications
-- Single-page applications
-- Mobile applications
-- Desktop applications
-
-### Configure platform settings
-
-Settings for each application type, including redirect URIs, are configured in **Platform configurations** in the Azure portal. Some platforms, like **Web** and **Single-page applications**, require you to manually specify a redirect URI. For other platforms, like mobile and desktop, you can select from redirect URIs generated for you when you configure their other settings.
-
-To configure application settings based on the platform or device you're targeting, follow these steps:
+A *redirect URI* is where the Microsoft identity platform sends security tokens after authentication. You can configure redirect URIs in **Platform configurations** in the Microsoft Entra admin center. For **Web** and **Single-page applications**, you need to specify a redirect URI manually. For **Mobile and desktop** platforms, you select from generated redirect URIs. Follow these steps to configure settings based on your target platform or device:
 
 1. In the Microsoft Entra admin center, in **App registrations**, select your application.
 1. Under **Manage**, select **Authentication**.
@@ -86,7 +75,7 @@ To configure application settings based on the platform or device you're targeti
    | Platform  | Configuration settings | Example |
    | --------- |------------------------|---------|
    | **Web**   | Enter the **Redirect URI** for a web app that runs on a server. Front channel logout URLs can also be added | Node.js: <br>&#8226; `http://localhost:3000/auth/redirect` <br> ASP.NET Core:<br>  &#8226; `https://localhost:7274/signin-oidc` <br>  &#8226; `https://localhost:7274/signout-callback-oidc` (Front-channel logout URL) <br> Python: <br>&#8226; `http://localhost:3000/getAToken` |
-   | **Single-page application** | Enter a **Redirect URI** for client-side apps using JavaScript, Angular, Vue.js, React.js, or Blazor WebAssembly. Front channel logout URLs can also be added | JavaScript, React: <br>&#8226; `http://localhost:3000` <br>Angular: <br>&#8226; `http://localhost:4200/`|
+   | **Single-page application** | Enter a **Redirect URI** for client-side apps using JavaScript, Angular, React.js, or Blazor WebAssembly. Front channel logout URLs can also be added | JavaScript, React: <br>&#8226; `http://localhost:3000` <br>Angular: <br>&#8226; `http://localhost:4200/`|
    | **iOS / macOS** | Enter the app **Bundle ID**, which generates a redirect URI for you. Find it in **Build Settings** or in Xcode in *Info.plist*. | <br>Workforce tenant: <br>&#8226; `com.<yourname>.identitysample.MSALMacOS` <br>External tenant: <br>&#8226; `com.microsoft.identitysample.ciam.MSALiOS` |
    | **Android** | Enter the app **Package name**, which generates a redirect URI for you. Find it in the *AndroidManifest.xml* file. Also generate and enter the **Signature hash**. | Kotlin: <br>&#8226; `com.azuresamples.msaldelegatedandroidkotlinsampleapp` <br>.NET MAUI: <br>&#8226; `msal{CLIENT_ID}://auth`  <br> Java: <br>&#8226; `com.azuresamples.msalandroidapp` |
    | **Mobile and desktop applications** | Select this platform for desktop apps or mobile apps not using MSAL or a broker. Select a suggested **Redirect URI**, or specify one or more **Custom redirect URIs** | Embedded browser desktop app: <br>&#8226; `https://login.microsoftonline.com/common/oauth2/nativeclient` <br> System browser desktop app:<br>&#8226; `http://localhost` |
@@ -100,8 +89,6 @@ There are some restrictions on the format of the redirect URIs you add to an app
 ## Add credentials
 
 After registering an app, you can add certificates, client secrets (a string), or federated identity credentials as credentials to your confidential client app registration. Credentials allow your application to authenticate as itself, requiring no interaction from a user at runtime, and are used by [confidential client applications](./msal-client-applications.md) that access a web API. 
-
-Examples of confidential clients are web apps, other web APIs, or service-type and daemon-type applications. Public client applications, like single-page apps, mobile and desktop apps use different methods such as Authorization Code flow with PKCE to authenticate users.
 
 :::image type="content" source="./media/quickstart-register-app/portal-05-app-reg-04-credentials.png" alt-text="Screenshot of the Microsoft Entra admin center, showing the Certificates and secrets pane in an app registration." lightbox="./media/quickstart-register-app/portal-05-app-reg-04-credentials.png":::
 
@@ -131,7 +118,7 @@ Client secrets are less secure than certificate or federated credentials and the
 1. Select **Add**.
 1. *Record the secret's value* for use in your client application code. This secret value is *never displayed again* after you leave this page.
 
-For application security recommendations, see [Microsoft identity platform best practices and recommendations](./identity-platform-integration-checklist.md#security).
+To learn more about client secret vulnerabilities, refer to [Migrate applications away from secret-based authentication](/entra/identity/enterprise-apps/migrate-applications-from-secrets).
 
 If you're using an Azure DevOps service connection that automatically creates a service principal, you need to update the client secret from the Azure DevOps portal site instead of directly updating the client secret. Refer to this document on how to update the client secret from the Azure DevOps portal site:
 [Troubleshoot Azure Resource Manager service connections](/azure/devops/pipelines/release/azure-rm-endpoint#service-principals-token-expired).
