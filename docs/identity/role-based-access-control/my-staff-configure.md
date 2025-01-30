@@ -41,7 +41,6 @@ To complete the steps in this article, you need the following resources and priv
 
 ## How to enable My Staff
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 After configuring administrative units, you can apply this scope to your users who access My Staff. Only users who are assigned an administrative role can access My Staff. To enable My Staff, complete the following steps:
 
@@ -71,6 +70,9 @@ You'll see the service principal when you create a Conditional Access policy tha
 When a user selects My Staff, they are shown the names of the [administrative units](administrative-units.md) over which they have administrative permissions. In the [My Staff user documentation](https://support.microsoft.com/account-billing/manage-front-line-users-with-my-staff-c65b9673-7e1c-4ad6-812b-1a31ce4460bd), we use the term "location" to refer to administrative units. If an administrator's permissions donn't have an administrative unit scope, then the permissions apply across the organization. 
 
 After My Staff has been enabled, the users who are enabled and have been assigned an administrative role can access it through [https://mystaff.microsoft.com](https://mystaff.microsoft.com). They can select an administrative unit to view the users in that unit, and select a user to open their profile.
+
+### Limitations
+My Staff shows up to 999 users per administrative unit.
 
 ## Reset a user's password
 

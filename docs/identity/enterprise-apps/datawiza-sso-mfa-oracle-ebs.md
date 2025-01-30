@@ -143,7 +143,6 @@ Configuration on the management console is complete. You're prompted to deploy D
 
 ### Optional: Enable multifactor authentication on Microsoft Entra ID
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To provide more security for sign-ins, you can enable multifactor authentication in the Microsoft Entra admin center:
 

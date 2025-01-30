@@ -53,7 +53,6 @@ Ensure that the following prerequisites are in place:
 
 ## Enable the feature
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Enable Seamless SSO through [Microsoft Entra Connect](../whatis-hybrid-identity.md).
 

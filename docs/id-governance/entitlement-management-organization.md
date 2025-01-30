@@ -64,7 +64,6 @@ For a demonstration of how to add a connected organization, watch the following 
 
 ## View the list of connected organizations
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
 

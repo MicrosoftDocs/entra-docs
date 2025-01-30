@@ -40,7 +40,6 @@ To assign users to an enterprise application, you need:
 
 :::zone pivot="portal"
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ## Assign users and groups to an application using the Microsoft Entra admin center
 

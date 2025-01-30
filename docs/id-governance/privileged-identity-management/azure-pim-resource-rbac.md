@@ -107,7 +107,6 @@ My audit enables you to view your personal role activity.
 
 ## Get reason, approver, and ticket number for approval events
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 

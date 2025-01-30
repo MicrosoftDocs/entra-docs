@@ -16,7 +16,7 @@ ms.author: jeedes
 ---
 # Tutorial: Microsoft Entra SSO integration with Snowflake
 
-In this tutorial, you'll learn how to integrate Snowflake with Microsoft Entra ID. When you integrate Snowflake with Microsoft Entra ID, you can:
+In this tutorial, you learn how to integrate Snowflake with Microsoft Entra ID. When you integrate Snowflake with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Snowflake.
 * Enable your users to be automatically signed-in to Snowflake with their Microsoft Entra accounts.
@@ -27,7 +27,7 @@ In this tutorial, you'll learn how to integrate Snowflake with Microsoft Entra I
 To configure Microsoft Entra integration with Snowflake, you need the following items:
 
 * A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get a [free account](https://azure.microsoft.com/free/).
-* Snowflake single sign-on enabled subscription.
+* Snowflakes single sign-on enabled subscription.
 * Along with Cloud Application Administrator, Application Administrator can also add or manage applications in Microsoft Entra ID.
 For more information, see [Azure built-in roles](~/identity/role-based-access-control/permissions-reference.md).
 
@@ -36,7 +36,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you will configure and test Microsoft Entra single sign-on in a test environment.
+In this tutorial, you'll configure and test Microsoft Entra single sign-on in a test environment.
 
 * Snowflake supports **SP and IDP** initiated SSO.
 * Snowflake supports [automated user provisioning and deprovisioning](snowflake-provisioning-tutorial.md) (recommended).
@@ -50,7 +50,7 @@ To configure the integration of Snowflake into Microsoft Entra ID, you need to a
 1. In the **Add from the gallery** section, type **Snowflake** in the search box.
 1. Select **Snowflake** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-snowflake'></a>
 
@@ -76,7 +76,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Snowflake** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot shows to edit Basic S A M L Configuration.](common/edit-urls.png "Basic Configuration")
 
@@ -88,7 +88,7 @@ Follow these steps to enable Microsoft Entra SSO.
     b. In the **Reply URL** text box, type a URL using the following pattern:
     `https://<SNOWFLAKE-URL>.snowflakecomputing.com/fed/login`
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
 	a. In the **Sign-on URL** text box, type a URL using the following pattern:
     `https://<SNOWFLAKE-URL>.snowflakecomputing.com`
@@ -97,13 +97,13 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<SNOWFLAKE-URL>.snowflakecomputing.com/fed/logout`
 
     > [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL, Sign-on URL and Logout URL. Contact [Snowflake Client support team](https://support.snowflake.net/s/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier, Reply URL, Sign-on URL, and sign out URL. Contact [Snowflake Client support team](https://support.snowflake.net/s/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
 	![Screenshot shows the Certificate download link.](common/certificatebase64.png "Certificate")
 
-1. On the **Set up Snowflake** section, copy the appropriate URL(s) as per your requirement.
+1. On the **Set up Snowflake** section, copy one or more appropriate URLs as per your requirement.
 
 	![Screenshot shows to copy configuration appropriate U R L.](common/copy-configuration-urls.png "Metadata")  
 
@@ -111,7 +111,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ### Create a Microsoft Entra test user
 
-In this section, you'll create a test user called B.Simon.
+In this section, you create a test user called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
@@ -127,19 +127,19 @@ In this section, you'll create a test user called B.Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting access to Snowflake.
+In this section, you enable B.Simon to use single sign-on by granting access to Snowflake.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Snowflake**.
 1. In the app's overview page, select **Users and groups**.
-1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
-   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-   1. In the **Add Assignment** dialog, click the **Assign** button.
+1. Select **Add user/group**, then select **Users and groups** in the **Added Assignment** dialog.
+   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then select the **Select** button at the bottom of the screen.
+   1. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
+   1. In the **Added Assignment** dialog, select the **Assign** button.
 
 ## Configure Snowflake SSO
 
-1. In a different web browser window, log in to Snowflake as a Security Administrator.
+1. In a different web browser window, sign in to Snowflake as a Security Administrator.
 
 1. **Switch Role** to **ACCOUNTADMIN**, by clicking on **profile** on the top right side of page.
 
@@ -156,7 +156,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. In the **SAML2_PROVIDER**, give the value like `CUSTOM`.
 
-1. Select the **All Queries** and click **Run**.
+1. Select the **All Queries** and select **Run**.
 
     ![Snowflake sql](./media/snowflake-tutorial/certificate.png)
 
@@ -179,9 +179,9 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
     [ SAML2_SNOWFLAKE_ACS_URL = '<string_literal>' ]
     ```
 
-If you are using a new Snowflake URL with an organization name as the login URL, it is necessary to update the following parameters:
+If you're using a new Snowflake URL with an organization name as the sign in URL, it's necessary to update the following parameters:
 
-Alter the integration to add Snowflake Issuer URL and SAML2 Snowflake ACS URL, please follow  the step-6 in [this](https://community.snowflake.com/s/article/HOW-TO-SETUP-SSO-WITH-ADFS-AND-THE-SNOWFLAKE-NEW-URL-FORMAT-OR-PRIVATELINK) article for more information.
+Alter the integration to add Snowflake Issuer URL and SAML2 Snowflake ACS URL, please follow  the step-6 in [this](https://community.snowflake.com/s/knowledgebase) article for more information.
 
 1. [ SAML2_SNOWFLAKE_ISSUER_URL = '<string_literal>' ] 
 
@@ -192,24 +192,24 @@ Alter the integration to add Snowflake Issuer URL and SAML2 Snowflake ACS URL, p
     alter security integration `<your security integration name goes here>` set SAML2_SNOWFLAKE_ACS_URL = `https://<organization_name>-<account name>.snowflakecomputing.com/fed/login`;
 
 > [!NOTE]
-> Please follow [this](https://docs.snowflake.com/en/sql-reference/sql/create-security-integration.html) guide to know more about how to create a SAML2 security integration.
+> Follow [this](https://docs.snowflake.com/en/sql-reference/sql/create-security-integration.html) guide to know more about how to create a SAML2 security integration.
 
 > [!NOTE]
 > If you have an existing SSO setup using `saml_identity_provider` account parameter, then follow [this](https://docs.snowflake.com/en/user-guide/admin-security-fed-auth-advanced.html) guide to migrate it to the SAML2 security integration.
 
 ### Create Snowflake test user
 
-To enable Microsoft Entra users to log in to Snowflake, they must be provisioned into Snowflake. In Snowflake, provisioning is a manual task.
+To enable Microsoft Entra users to sign in to Snowflake, they must be provisioned into Snowflake. In Snowflake, provisioning is a manual task.
 
 **To provision a user account, perform the following steps:**
 
-1. Log in to Snowflake as a Security Administrator.
+1. Sign in to Snowflake as a Security Administrator.
 
 2. **Switch Role** to **ACCOUNTADMIN**, by clicking on **profile** on the top right side of page.  
 
 	![The Snowflake admin](./media/snowflake-tutorial/account.png)
 
-3. Create the user by running the below SQL query, ensuring "Login name" is set to the Microsoft Entra username on the worksheet as shown below.
+3. Create the user by running the below SQL query, ensuring "sign in name" is set to the Microsoft Entra username on the worksheet as shown below.
 
 	![The Snowflake adminsql](./media/snowflake-tutorial/user.png)
 
@@ -226,7 +226,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Click on **Test this application**, this will redirect to Snowflake Sign-on URL where you can initiate the login flow.  
+* Select on **Test this application**, this will redirect to Snowflake Sign on URL where you can initiate the login flow.  
 
 * Go to Snowflake Sign-on URL directly and initiate the login flow from there.
 
