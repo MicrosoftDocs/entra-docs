@@ -39,6 +39,16 @@ Customers can now manage, and customize, Lifecycle Workflows using natural langu
 
 ---
 
+### General Availability - Microsoft Entra PowerShell
+
+**Type:** New feature    
+**Service category:** MS Graph    
+**Product capability:** Developer Experience    
+
+Manage and automate Microsoft Entra resources programmatically with the scenario-focused Microsoft Entra PowerShell module. For more information, see: [Microsoft Entra PowerShell module now generally available](https://techcommunity.microsoft.com/blog/microsoft-entra-blog/microsoft-entra-powershell-module-now-generally-available/4365718).
+
+---
+
 ### General Availability - Improving visibility into downstream tenant sign-ins
 
 **Type:** New feature    
