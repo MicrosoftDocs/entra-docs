@@ -7,7 +7,7 @@ ms.date: 01/24/2025
 # Include file for recommendations roles.
 ---
 
-There are different role requirements for viewing or updating a recommendation. Use the least-privileged role for the type of access needed. For a full list of roles, see [Least privileged roles by task](../identity/role-based-access-control/delegate-by-task.md#monitoring-and-health---recommendations).
+There are different role requirements for viewing or updating a recommendation. Use the least-privileged role for the type of access needed. For a full list of roles, see [Least privileged roles by task](../identity/role-based-access-control/delegate-by-task.md#monitoring-and-health---recommendations-and-least-privileged-roles).
 
 | Microsoft Entra role | Access type |
 |---- |---- |

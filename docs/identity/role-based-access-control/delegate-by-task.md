@@ -191,7 +191,7 @@ Here are the least privileged roles you should use when performing tasks for [en
 
 ## Groups and least privileged roles
 
-Here are the least privileged roles you should use when performing tasks for [groups](../../fundamentals/concept-learn-about-groups.md) in Microsoft Entra ID.
+Here are the least privileged roles you should use when performing tasks for [groups](../../fundamentals/how-to-manage-groups.yml) in Microsoft Entra ID.
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
