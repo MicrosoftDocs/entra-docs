@@ -23,8 +23,6 @@ In this quickstart, you learn how to register an application in Microsoft Entra 
 
 ## Register an application
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
-
 Registering your application in Microsoft Entra establishes a trust relationship between your app and the Microsoft identity platform. The trust is unidirectional. Your app trusts the Microsoft identity platform, and not the other way around. Once created, the application object can't be moved between different tenants.
 
 Follow these steps to create the app registration:
