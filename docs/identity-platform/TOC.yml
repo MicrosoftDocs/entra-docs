@@ -389,8 +389,14 @@
       items:
         - name: Android
           items:
-            - name: Sign in users and call a web API
-              href: tutorial-v2-android.md
+            - name: Browser-delegated authentication
+              items:
+                - name: Prepare your app
+                  href: tutorial-mobile-app-android-prepare-app.md?tabs=workforce-tenant
+                - name: Add sign in and sign out
+                  href: tutorial-mobile-app-android-sign-in-sign-out.md?tabs=workforce-tenant
+                - name: Call web API
+                  href: tutorial-mobile-app-android-call-web-api.md?tabs=workforce-tenant
             - name: Enable Shared Device Mode in your app using MSAL
               href: tutorial-v2-shared-device-mode.md
             - name: Set up an Android device in Shared Device Mode

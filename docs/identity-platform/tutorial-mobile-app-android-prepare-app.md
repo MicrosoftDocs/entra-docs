@@ -21,7 +21,7 @@ ms.custom: developer
 [!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
 
 
-This is the second tutorial in the tutorial series that demonstrates how to add Microsoft Authentication Library (MSAL) for Android to your Android app. MSAL enables Android applications to authenticate users with Microsoft Entra.
+In this tutorial you how to add Microsoft Authentication Library (MSAL) for Android to your Android app. MSAL enables Android applications to authenticate users with Microsoft Entra.
 
 In this tutorial you'll;
 
@@ -213,7 +213,7 @@ PublicClientApplication.createSingleAccountPublicClientApplication(
 );
 ```
 
-This code creates a single account public client application using the configuration file auth_config_single_account.json. When the application is successfully created, it assigns the instance to mSingleAccountApp and calls the loadAccount() method. If an error occurs during the creation, it handles the error by calling the displayError(exception) method.
+This code creates a single account public client application using the configuration file auth_config_single_account.json. When the application is successfully created, it assigns the instance to `mSingleAccountApp` and calls the `loadAccount()` method. If an error occurs during the creation, it handles the error by calling the displayError(exception) method.
 
 
 #### [External tenant configuration](#tab/android-external)

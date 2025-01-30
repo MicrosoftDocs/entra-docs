@@ -36,7 +36,7 @@ In this tutorial, you'll:
 
 - [Tutorial: Set up an Android app to sign in users by using Microsoft identity platform](tutorial-mobile-app-android-prepare-app.md)
 
-## Sign and sign out users
+## Sign in and sign out users
 
 #### [Workforce tenant configuration](#tab/android-workforce)
 
