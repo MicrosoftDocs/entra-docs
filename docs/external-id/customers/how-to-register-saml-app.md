@@ -43,14 +43,14 @@ This article describes how to register your own SAML application in your externa
 
       :::image type="content" source="media/how-to-register-saml-app/create-your-own-application.png" alt-text="Screenshot of the Create your own application option in the Microsoft Entra Gallery.":::
 
-1. On the **Create your own application** pane:
-   1. Enter a name for your app.
+1. On the **Create your own application** pane, enter a name for your app.
 
    > [!NOTE]
    > You might see a gallery app selector, but you can disregard it as gallery apps aren't supported in external tenants.
 
-   1. Select "**(Preview) Integrate any other application you don't find in the gallery (Non-gallery)**".
-   1. Select **Create**.
+1. Select "**(Preview) Integrate any other application you don't find in the gallery (Non-gallery)**".
+
+1. Select **Create**.
 
 1. The app **Overview** page opens. In the left menu under **Manage**, select **Properties**. Switch the **Assignment required?** toggle to **No** so that users can use self-service sign-up, and then select **Save**.
 
