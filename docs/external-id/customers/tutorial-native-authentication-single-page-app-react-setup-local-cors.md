@@ -140,7 +140,7 @@ At this point, the React app and the CORS proxy server are ready to run.
 
 At this point, you've successfully created a React app that can sign up a user by using the native authentication API. Next, you can update the React app to sign in a user or reset the user's password.
 
-## CORS proxy server alternatives
+## Additional information about CORS proxy server
 
 In this tutorial, you set up a local CORS server. However, you can [set up a reverse proxy server to manage CORS headers by using Azure Function App as explained in a test environment](how-to-native-authentication-cors-solution-test-environment.md).
 
