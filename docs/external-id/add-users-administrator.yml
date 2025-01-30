@@ -37,8 +37,6 @@ procedureSection:
   - title: |
       Add guest users to the directory
     summary: |
-      [!INCLUDE [portal updates](~/includes/portal-update.md)]
-
       To add B2B collaboration users to the directory, follow these steps:
 
       1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).

@@ -49,7 +49,6 @@ Due to the greater flexibility of the system to respond to a sign-in attempt, yo
 
 There are a three ways to access the Sign-in diagnostic in Microsoft Entra ID. Select a tab to learn about each method.
 
-[!INCLUDE [portal update](../../includes/portal-update.md)]
 
 ### [From Diagnose and Solve Problems](#tab/from-diagnose-and-solve-problems)
 

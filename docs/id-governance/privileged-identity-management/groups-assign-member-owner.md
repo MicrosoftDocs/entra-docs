@@ -28,7 +28,6 @@ When a membership or ownership is assigned, the assignment:
 
 ## Assign an owner or member of a group
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Follow these steps to make a user eligible member or owner of a group. You need permissions to manage groups. For role-assignable groups, you need to be at least a Privileged Role Administrator role or be an Owner of the group. For non-role-assignable groups, you need to be at least a Directory Writer, Groups Administrator, or Identity Governance Administrator, User Administrator role, or be an Owner of the group. Role assignments for administrators should be scoped at directory level (not administrative unit level). 
 
@@ -75,7 +74,6 @@ Follow these steps to make a user eligible member or owner of a group. You need 
 
 ## Update or remove an existing role assignment
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Follow these steps to update or remove an existing role assignment. You need permissions to manage groups. For role-assignable groups, you need to be at least a Privileged Role Administrator role or be an Owner of the group. For non-role-assignable groups, you need to have at least the Directory Writer, Groups Administrator, Identity Governance Administrator, User Administrator role, or be an Owner of the group. Role assignments for administrators should be scoped at directory level (not administrative unit level). 
 

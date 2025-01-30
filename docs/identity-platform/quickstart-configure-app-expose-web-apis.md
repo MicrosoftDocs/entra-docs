@@ -55,7 +55,6 @@ Access to APIs requires configuration of access scopes and roles. If you want to
 
 ## Add a scope
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 With the web API registered, assigned an app role and owner, you can add scopes to the API's code so it can provide granular permission to consumers.
 

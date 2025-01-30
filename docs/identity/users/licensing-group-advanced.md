@@ -19,7 +19,6 @@ Use the following information and examples to gain a more advanced understanding
 
 ## Usage location
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Some Microsoft services aren't available in all locations. For group license assignment, any users without a usage location specified inherit the location of the directory. If you have users in multiple locations, make sure to reflect that correctly in your user resources before adding users to groups with licenses. Before a license can be assigned to a user, the administrator should specify the **Usage location** property on the user.
 

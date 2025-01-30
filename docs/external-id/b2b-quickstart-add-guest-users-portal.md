@@ -35,7 +35,6 @@ To complete the scenario in this quickstart, you need:
 
 ## Invite an external guest user
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 

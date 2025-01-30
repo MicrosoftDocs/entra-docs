@@ -210,7 +210,7 @@ Known limitations for the Global Secure Access client for Android include:
 - Global Secure Access coexistence with Microsoft Tunnel isn't currently supported. For more information, see [Prerequisites for the Microsoft Tunnel in Intune](/mem/intune/protect/microsoft-tunnel-prerequisites). 
 
 ### [iOS client](#tab/ios-client)
-Known limitations for the Global Secure Access client for Android include:
+Known limitations for the Global Secure Access client for iOS include:
 - Tunneling Quick User Datagram Protocol (UDP) Internet Connections (QUIC) traffic (except for Exchange Online) isn't supported.
 - Global Secure Access coexistence with Microsoft Tunnel isn't currently supported. For more information, see [Prerequisites for the Microsoft Tunnel in Intune](/mem/intune/protect/microsoft-tunnel-prerequisites).
     

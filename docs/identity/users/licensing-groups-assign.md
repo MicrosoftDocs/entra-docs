@@ -30,7 +30,6 @@ In this example, the Microsoft Entra organization contains a security group call
 
 ## Step 1: Assign the required licenses
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [License Administrator](~/identity/role-based-access-control/permissions-reference.md#license-administrator).
 1. Select Microsoft Entra ID.

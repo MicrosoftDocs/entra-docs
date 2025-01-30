@@ -49,7 +49,6 @@ We'll now look at these files in more detail and call out the MSAL-specific code
 - Kotlin: [Download the code](https://github.com/Azure-Samples/ms-identity-android-kotlin/archive/master.zip).
 
 ## Register the sample app
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application from the **Directories + subscriptions** menu.

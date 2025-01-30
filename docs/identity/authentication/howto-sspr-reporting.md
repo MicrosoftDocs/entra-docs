@@ -33,7 +33,6 @@ The following questions can be answered by the reports that exist in the [Micros
 
 ## How to view password management reports
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Use the following the steps to find the password reset and password reset registration events:
 

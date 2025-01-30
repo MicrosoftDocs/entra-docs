@@ -24,7 +24,6 @@ Both admin and standard users can download user lists.
 
 ## To download a list of users
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Select Microsoft Entra ID.
