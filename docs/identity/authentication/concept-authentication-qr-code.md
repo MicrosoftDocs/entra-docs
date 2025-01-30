@@ -24,7 +24,7 @@ A QR code has an embedded user principal name (UPN), tenant ID, and private key.
 Frontline workers don't need to type their UPN on a keypad. They only need to scan the QR code and enter a PIN to sign in. 
 
 The PIN can be from 8 to 20 digits in length. 
-It's bound only to the QR code and can’t be used with any other user identifiers, such as UPN or phone number.
+It's bound only to the QR code and can't be used with any other user identifiers, such as UPN or phone number.
 
 It's easy to remember and type when compared to complex alphanumeric passwords, which makes sign-in faster. 
 A combination of QR code and PIN as way to sign-in into applications provides a simple and fast authentication solution to frontline workers. 
@@ -46,14 +46,18 @@ Authentication Policy Administrators can enable QR code in Authentication method
 
 In the Authentication method policy for QR code, you can configure:
 
-- PIN length: min. default is 8 digits as per NIST standard; Range: 8-20 digits. PIN length is minimum PIN length allowed based on admin configuration settings.
-- Lifetime of standard QR code: default is 365 days; Range: 1-395 days. This property is customizable at user level while adding the standard QR code. For example, if admin set the expiration in Auth method Policies | configuration to be ‘30-days’. For every user in that tenant, the default expiration of standard QR Code will be 30 days. However, admin can change the expiry time of standard QR code for a specific user’s QR code auth method if they want.
+- PIN length: 8-20 digits.
+- Lifetime of standard QR code: 1-395 days. Default is 365 days. An Authentication Policy Administrator can change the default value when they add a standard QR code for a user. 
+
+  For example, an admin can set the value to 30 days in the Authentication method policy. 
+  For every user in that tenant, the default expiration of a standard QR code is 30 days. 
+  An admin can change the default lifetime of the standard QR code for a specific user.
 
 In this screenshot, the PIN length is set to the default of 8 digits, and the lifetime for the standard QR code is reduced to 200 days.
 
 :::image type="content" source="media/concept-authentication-qr-code/qr-code-settings.png" alt-text="Screenshot that shows QR code settings.":::
 
-3.3	QR code Auth Method Details and Properties
+## QR code Auth Method Details and Properties
 
 1	Only one QR code auth method can be active at a time for a user.
 2	When QR code auth method is deleted for the user, they will not be able to sign-in with existing QR code and PIN. Deleting the QR code removes the data from storage.
@@ -76,7 +80,6 @@ e.	Standard QR code is expired, Temporary QR code is expired, and PIN is Tempora
 
 ### PIN properties
 
-3.3.2	PIN Properties 
 The following policies will be applied for PIN generation and reset. 
 
 1.	Character Allowed: Numbers (0-9)
@@ -90,15 +93,15 @@ If PIN is all digits but not correct/ PIN length doesn’t meet auth method poli
 
 5.	Pin not recently used: Don’t repeat last 3 PINs for both admin reset, and user forced reset flows. Self-service PIN reset is out of scope in V1.
 
+## QR code authentication management for users
 
-3.4	QR code auth management at user level: User | Authentication methods | QR code
 
 ## Known issues and mitigation for QR code authentication method 
 
 Admins should replace a QR code thet gets lost or stolen. 
 A QR code can't be used alone without a PIN. 
 
-The PIN can’t be used with any other identifier, such as a UPN, or email account. 
+The PIN can't be used with any other identifier, such as a UPN, or email account. 
 A QR code also has a secret that is replay resistant to online threats for a primary credential.
 
 Admins can also take following precautions to mitigate the risk of a lost or stolen QR code:
