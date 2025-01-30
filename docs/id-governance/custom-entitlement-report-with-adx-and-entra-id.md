@@ -809,36 +809,35 @@ TotalReviewers
 ```
 #### Users & Access Changes 
 
-Who lost access to specific resources during the access review? 
+- Who lost access to specific resources during the access review? 
 
 ```kusto
 ReviewInstanceDecisionItems 
 | where Decision == "Deny" 
 | project User = Principal_DisplayName, Resource = Resource_DisplayName, Decision, Justification 
 ```
-Were users flagged due to inactivity? 
+- Were users flagged due to inactivity? 
 
 ```kusto
 ReviewInstanceDecisionItems 
 | where Insights contains "inactive" 
 | project User = Principal_DisplayName, Resource = Resource_DisplayName, Insights, Decision 
 ```
-Access removal date and reasoning for losing access. 
+- Access removal date and reasoning for losing access. 
 
 ```kusto
 ReviewInstanceDecisionItems 
 | where Decision == "Deny" 
 | project User = Principal_DisplayName, Resource=Resource_DisplayName, AccessRemovalDate = AppliedDateTime, Reason = Justification  
 ```
-Users with no decisions made. 
+- Users with no decisions made. 
 
 ```kusto
 ReviewInstanceDecisionItems 
 | where Decision == "NotReviewed" 
 | project User = Principal_DisplayName, Resource=Resource_DisplayName 
-```kusto
-  
-Reviews with no reviewers. 
+```
+- Reviews with no reviewers. 
 
 ```kusto
 ReviewInstances 
@@ -846,9 +845,8 @@ ReviewInstances
     ReviewInstanceContactedReviewers 
     | summarize by AccessReviewInstanceId 
 ) on $left.ReviewInstanceId == $right.AccessReviewInstanceId  
-```kusto
-  
-Reviews with no users. 
+```
+- Reviews with no users. 
 
 ```kusto
 ReviewInstances 
@@ -860,19 +858,19 @@ ReviewInstances
 
 #### Review Decision Data 
 
-Decisions made: Approved, Denied, or Unchanged. 
+- Decisions made: Approved, Denied, or Unchanged. 
 
 ```kusto
 ReviewInstanceDecisionItems 
 | summarize count() by Decision 
 ```
-Number of users approved or denied access. 
+- Number of users approved or denied access. 
 
 ```kusto
 ReviewInstanceDecisionItems 
 | summarize ApprovedCount = countif(Decision == "Approve"), DeniedCount = countif(Decision == "Deny") 
 ```
-Were approval reasons documented? 
+- Were approval reasons documented? 
 
 ```kusto
 ReviewInstanceDecisionItems 
@@ -882,7 +880,7 @@ ReviewInstanceDecisionItems
 
 #### Access Review Quality and Compliance Checks 
 
-Were access revocations considered for dormant users? 
+- Were access revocations considered for dormant users? 
 
 ```kusto
 ReviewInstanceDecisionItems 
@@ -890,20 +888,20 @@ ReviewInstanceDecisionItems
 | project User = Principal_DisplayName, Decision 
 ```
 
-Were there any access not properly removed? 
+- Were there any access not properly removed? 
 
 ```kusto
 ReviewInstanceDecisionItems 
 | where ApplyResult != "New" and ApplyResult != "AppliedSuccessfully" 
 ```
-Did reviewers document their decisions? 
+- Did reviewers document their decisions? 
 
 ```kusto
 ReviewInstanceDecisionItems 
 | where isnotempty(Justification) 
 | summarize count() by ReviewedBy_DisplayName 
 ```
-Were comments captured for each user? 
+- Were comments captured for each user? 
 
 ```kusto
 ReviewInstanceDecisionItems 
