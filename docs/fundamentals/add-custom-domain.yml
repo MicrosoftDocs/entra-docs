@@ -32,7 +32,7 @@ procedureSection:
         Create your new directory by following the steps in [Create a new tenant for your organization](./create-new-tenant.md#create-a-new-tenant-for-your-organization). 
       
       - |
-        By default, the user who creates a Microsoft Entra tenant is automatically assigned the [Global Administrator](/entra/identity/role-based-access-control/permissions-reference#global-administrator) role.
+        [!INCLUDE [tenant-installation-account](../includes/definitions/tenant-installation-account.md)]
 
         > [!TIP]
         > If you plan to federate on-premises Windows Server Active Directory with Microsoft Entra ID, then you need to select **I plan to configure this domain for single sign-on with my local Active Directory** when you run the Microsoft Entra Connect tool to synchronize your directories.
