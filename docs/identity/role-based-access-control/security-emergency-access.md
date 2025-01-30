@@ -16,7 +16,7 @@ ms.reviewer: mwahl
 
 # Manage emergency access accounts in Microsoft Entra ID
 
-It's important that you prevent being accidentally locked out of your Microsoft Entra organization because you can't sign in or activate another user's account as an administrator. You can mitigate the impact of accidental lack of administrative access by creating two or more *emergency access accounts* in your organization.
+It's important that you prevent being accidentally locked out of your Microsoft Entra organization because you can't sign in or activate a role. You can mitigate the impact of accidental lack of administrative access by creating two or more *emergency access accounts* in your organization.
 
 User accounts with the Global Administrator role have high privileges in the system, this includes emergency access accounts with the Global Administrator role. Emergency access accounts are limited to emergency or "break glass" scenarios where normal administrative accounts can't be used. We recommend that you maintain a goal of restricting emergency account use to only the times when it's absolutely necessary.
 
@@ -71,7 +71,7 @@ When you configure these accounts, the following requirements must be met:
 
 - The device or credential must not expire or be in scope of automated cleanup due to lack of use.  
 
-- In Microsoft Entra Privileged Identity Management, you should make the Global Administrator role assignment permanent rather than eligible for your emergency access accounts. 
+- In Microsoft Entra Privileged Identity Management, you should make the Global Administrator role assignment active permanent rather than eligible for your emergency access accounts.
 
 ## Federation guidance
 
