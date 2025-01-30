@@ -32,7 +32,6 @@ They can increase their productivity with a seamless authentication experience.
 
 :::image type="content" source="media/concept-authentication-qr-code/qr-code-plus-pin.png" alt-text="Image that shows a QR code plus PIN.":::
 
-
 ## Benefits of QR code authentication method
 
 Benefit | Description
@@ -40,7 +39,7 @@ Benefit | Description
 Easier and faster sign-in | Frontline workers might be less tech-savvy, work with difficult devices, or have accessibility requirements. They can sign in with a QR code and PIN quicker than a username and password, which increases their productivity. They also don't have to remember their username to sign in, which reduces support costs. 
 Inexpensive | Printing a QR code costs less than a hardware keys, which can be cost probitive for organizations with temporary frontline workers.
 
-## QR code Authentication method policy requirements 
+## QR code requirements for the Authentication method policy
 
 Authentication Policy Administrators can enable QR code in Authentication methods in the Microsoft Entra admin center. QR code authnetication is disabled by default.
 
@@ -81,9 +80,9 @@ An active QR code and active PIN are required for successful authentication.
 
 Standard QR code | Temporary QR code | PIN for QR code authentication method
 :---------------:|:-----------------:|:------------------------------------:
-Active           | Doesn’t exist     | Temporary, or user updated
+Active           | Doesn't exist     | Temporary, or user updated
 Active           | Active            | Temporary, or user updated
-Deleted          | Doesn’t exist     | Temporary, or user updated
+Deleted          | Doesn't exist     | Temporary, or user updated
 Expired          | Active            | Temporary, or user updated
 Expired          | Expired           | Temporary, or user updated
 
@@ -99,7 +98,7 @@ Allowed characters | Numbers (0-9)
 Unallowed characters | - Characters (`A-Z`,`a-z`)<br>- Symbols (`- @ # $ % ^ & * - _ ! + = [ ] { } | \ : ' , . ? / \`` ~ " ( ) ; < >`)<br>- Unicode characters<br>- Blank space
 Minimum PIN length |  8-20 digits. 
 PIN complexity     | Should be enforced to avoid repetition and common sequences. The following patterns are checked:<br>- Don't contain 0123456789 or 9876543210.<br>- Don't repeat a sequence of 2-3 digits in the PIN, like 121212, or 123123 or 342342.<br>An `Invalid PIN` error appears if the PIN has unallowed characters or is less than the minimum PIN length. 
-PIN not recently used | Don’t repeat the last 3 PINs during admin reset, or user reset. 
+PIN not recently used | Don't repeat the last 3 PINs during admin reset, or user reset. 
 
 ## QR code authentication management for users
 
