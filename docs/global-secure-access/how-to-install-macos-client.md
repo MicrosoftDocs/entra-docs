@@ -3,7 +3,7 @@ title: The Global Secure Access Client for macOS
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the macOS client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 12/23/2024
+ms.date: 01/29/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -51,17 +51,28 @@ The client uses system extensions and a transparent application proxy that need 
 The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win32-app-management) and you can adapt them for different MDMs:
 
 1. In the Microsoft Intune admin center, select **Devices** > **Manage devices** > **Configuration** > **Policies** > **Create** > **New policy**.
-1. Create a profile for the macOS platform based on a template of type **Extensions**. Select **Create**.
-:::image type="content" source="media/how-to-install-macos-client/macos-client-create-profile.png" alt-text="Screenshot of the Create a profile form with the macOS Platform, Templates Profile type, and the Extensions template highlighted.":::
+1. Create a profile with a **Platform** of **macOS** and a **Profile type** set to **Settings catalog**. Select **Create**.
+:::image type="content" source="media/how-to-install-macos-client/macos-client-create-profile.png" alt-text="Screenshot of the Create a profile form with the macOS Platform and Settings catalog Profile type highlighted.":::
 1. On the **Basics** tab, enter a name for the new profile and select **Next**.
-1. On the **Configuration settings** tab, enter the **Bundle identifier** and the **Team identifier** of the two extensions according to the following table. Select **Next**.   
- 
-|Bundle identifier  |Team identifier  |
-|---------|---------|
-|com.microsoft.naas.globalsecure.tunnel-df     |UBF8T346G9         |
-|com.microsoft.naas.globalsecure-df     |UBF8T346G9         |
+1. On the **Configuration settings** tab, select **+ Add settings**.
+1. In the **Settings picker**, expand the **System Configuration** category and select **System Extensions**.
+1. From the **System Extensions** subcategory, select **Allowed System Extensions**.
+:::image type="content" source="media/how-to-install-macos-client/macOS-settings-picker.png" alt-text="Screenshot of the Settings picker with the category and subcategory selections highlighted.":::
+1. Close the Settings picker.
+1. In the list of **Allowed System Extensions**, select **+ Edit instance**.
+1. In the **Configure instance** dialog, configure the System Extensions payload settings with the following entries:
 
-5. Complete the creation of the profile by assigning users and devices according to your needs.
+|Bundle identifier   |Team identifier   |
+|---------|---------|
+|com.microsoft.naas.globalsecure.tunnel-df   |C99DD00EE1   |
+|com.microsoft.naas.globalsecure-df   |C99DD00EE1   |
+
+:::image type="content" source="media/how-to-install-macos-client/macOS-configure-instance.png" alt-text="Screenshot of the Configure instance dialog with the System Extensions payload settings highlighted.":::   
+
+10. Select **Save** and **Next**.   
+1. On the **Scope tags** tab, add tags as appropriate.
+1. On the **Assignments** tab, assign the profile to a group of macOS devices or users.
+1. On the **Review + create** tab, review the configuration and select **Create**.
 
 ### Allow transparent application proxy through MDM
 The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win32-app-management) and you can adapt them for different MDMs:
