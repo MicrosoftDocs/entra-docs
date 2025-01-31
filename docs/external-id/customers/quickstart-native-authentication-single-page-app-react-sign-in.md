@@ -1,6 +1,6 @@
 ---
 title: Sign in users in a React SPA by using native authentication
-description: Learn how to configure a sample React single-page application that uses native authentication API to sign up users
+description: Learn how to configure a sample React single-page application that uses native authentication API to sign up users.
 
 author: kengaderdus
 manager: mwongerapk
