@@ -24,7 +24,7 @@ This article describes the properties that you can configure for an enterprise a
 
 If this option is set to **Yes**, then assigned users are able to sign in to the application from the My Apps portal, the User access URL, or by navigating to the application URL directly. If assignment is required, then only users who are assigned to the application are able to sign-in. If assignment is required, applications must be assigned to get a token.
 
-If this option is set to **No**, then no users are able to sign in to the application, even if they're assigned to it. Tokens aren't issued for the application.  
+If this option is set to **No**, then no users are able to sign in to the application, even if they're assigned to it. Tokens aren't issued for the application. When the **Enabled for users to sign in?** setting is set to **no** it not only prevents users from signing in but also restricts service principals from accessing the application using application permissions.
 
 ## Name
 
