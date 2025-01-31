@@ -1731,6 +1731,11 @@
       "source_path_from_root": "/docs/external-id/customers/sample-single-page-app-angular-sign-in.md",
       "redirect_url": "/entra/identity-platform/quickstart-single-page-app-sign-in?pivots=external&tabs=angular-external",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/kallidus-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
     }
   ]
 }
