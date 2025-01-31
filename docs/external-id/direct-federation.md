@@ -130,7 +130,7 @@ The following tables show requirements for specific attributes and claims that m
 > [!NOTE]
 > Ensure the value matches the cloud for which you're setting up external federation.
 
-Required attributes for the SAML 2.0 response from the IdP:
+**Table 1. Required attributes for the SAML 2.0 response from the IdP.**
 
 |Attribute  |Value  |
 |---------|---------|
@@ -139,7 +139,7 @@ Required attributes for the SAML 2.0 response from the IdP:
 |Issuer     |The issuer URI of the partner's IdP, for example `http://www.example.com/exk10l6w90DHM0yi...`         |
 
 
-Required claims for the SAML 2.0 token issued by the IdP:
+**Table 2. Required claims for the SAML 2.0 token issued by the IdP.**
 
 |Attribute Name |Value  |
 |---------|---------|
@@ -160,7 +160,7 @@ The following tables show requirements for specific attributes and claims that m
 > [!NOTE]
 > Ensure the value matches the cloud for which you're setting up external federation.
 
-Required attributes in the WS-Fed message from the IdP:
+**Table 3. Required attributes in the WS-Fed message from the IdP.**
  
 |Attribute  |Value  |
 |---------|---------|
@@ -168,7 +168,7 @@ Required attributes in the WS-Fed message from the IdP:
 |Audience     |`https://login.microsoftonline.com/<tenant ID>/` (Recommended) Replace `<tenant ID>` with the tenant ID of the Microsoft Entra tenant you're setting up federation with.<br></br> In the SAML request sent by Microsoft Entra ID for external federations, the Issuer URL is a tenanted endpoint (for example, `https://login.microsoftonline.com/<tenant ID>/`). For any new federations, we recommend that all our partners set the audience of the SAML or WS-Fed based IdP to a tenanted endpoint. Any existing federations configured with the global endpoint (for example, `urn:federation:MicrosoftOnline`) continue to work, but new federations stop working if your external IdP is expecting a global issuer URL in the SAML request sent by Microsoft Entra ID.          |
 |Issuer     |The issuer URI of the partner's IdP, for example `http://www.example.com/exk10l6w90DHM0yi...`         |
 
-Required claims for the WS-Fed token issued by the IdP:
+**Table 4. Required claims for the WS-Fed token issued by the IdP.**
 
 |Attribute  |Value  |
 |---------|---------|
@@ -232,7 +232,7 @@ You can use the Microsoft Graph API [samlOrWsFedExternalDomainFederation](/graph
 
 <a name='step-4-test-samlws-fed-idp-federation-in-azure-ad'></a>
 
-## Configure the redemption order (for B2B collaboration in workforce tenants)
+## Configure redemption order (B2B collaboration in workforce tenants)
 
 If you're configuring federation in your workforce tenant for B2B collaboration with a verified domain, make sure the federated IdP is used first during invitiation redemption. [Configure the **Redemption order** settings](cross-tenant-access-settings-b2b-collaboration.yml) in your cross-tenant access settings for inbound B2B collaboration. Move **SAML/WS-Fed identity providers** to the top of the **Primary identity providers** list to prioritize redemption with the federated IdP. For B2B collaboration with a verified domain, make the federated IdP the primary identity provider for invitation redemption. over other identity providers during invitation redemption.  
 
