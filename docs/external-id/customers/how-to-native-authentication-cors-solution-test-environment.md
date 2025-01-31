@@ -11,7 +11,7 @@ ms.date: 02/07/2025
 #Customer intent: As a developer, devops, I want to create a reverse proxy by using Azure Function App so that I can use in for a single-page app that authenticates users by using native authentication API in a test environment
 ---
 
-# Set up a reverse proxy for a single-page app that calls native authentication API by using Azure Function App
+# Set up a reverse proxy for a single-page app that calls native authentication API by using Azure Function App (preview)
 
 In this article, you learn how to set up a reverse proxy by using Azure Functions App to manage CORS headers in a test environment for a single-page app (SPA) that uses [native authentication API](/entra/identity-platform/reference-native-authentication-api?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json&tabs=emailOtp).
 

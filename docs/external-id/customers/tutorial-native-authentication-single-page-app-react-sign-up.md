@@ -12,7 +12,7 @@ ms.date: 02/07/2025
 #Customer intent: As a developer, devops, I want to 
 ---
 
-# Tutorial: Sign up users into a React single-page app by using native authentication
+# Tutorial: Sign up users into a React single-page app by using native authentication (preview)
 
 In this tutorial, you learn how to build a React single-page app that signs up users by using native authentication.
 

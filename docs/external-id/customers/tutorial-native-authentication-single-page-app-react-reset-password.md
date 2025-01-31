@@ -12,7 +12,7 @@ ms.date: 02/07/2025
 #Customer intent: As a developer, devops, I want to 
 ---
 
-# Tutorial: Reset password in a React single-page app by using native authentication
+# Tutorial: Reset password in a React single-page app by using native authentication (preview)
 
 In this tutorial, you learn how to reset password in a React single-page app (SPA) by using native authentication.
 
