@@ -328,4 +328,4 @@ Use the steps in [Run and test you app](tutorial-native-authentication-single-pa
 ## Next step
 
 > [!div class="nextstepaction"]
-> - [Tutorial: Reset password in a React app for users in an external tenant using native authentication](tutorial-native-authentication-single-page-app-react-reset-password.md).
+> [Tutorial: Reset password in a React app for users in an external tenant using native authentication](tutorial-native-authentication-single-page-app-react-reset-password.md).
