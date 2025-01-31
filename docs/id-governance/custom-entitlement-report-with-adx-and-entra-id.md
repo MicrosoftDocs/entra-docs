@@ -422,7 +422,7 @@ Next, follow these steps for each exported JSON file from the previous section, 
  1. Select **Browse for files**, select the JSON file, and select **Next**.
  1. Azure Data Explorer automatically detects the schema and provides a preview in the **Inspect** tab. Select **Finish** to create the table and import the data from that file. Once the data is ingested, click **Close**.
  1. Repeat each of the preceding steps for each of the JSON files that you generated in the previous section, for each of the folders.
- 1. If there are many files in a folder, then you can use `lightinjest` to import the rest once the table is created.
+ 1. If there are many files in a folder, then you can use `lightingest` to import the rest once the table is created.
 
 At the end of those steps you'll have the tables `EntraAccessReviewDefinitions`, `EntraAccessPackages`, and `EntraAccessPackageAssignments`, `ReviewInstances`, `ReviewInstanceDecisionItems`, `ReviewInstanceContactedReviewers` in the database, in addition to the tables created in section 3.
 
