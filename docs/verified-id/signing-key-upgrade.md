@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-verified-id
 ms.topic: how-to
 
-ms.date: 11/11/2024
+ms.date: 01/31/2025
 ms.author: barclayn
 
 #Customer intent: As an administrator, I'm looking for information on how to upgrate signing keys to become FIPS compliant.
@@ -52,7 +52,7 @@ Upgrading the signing key is a seven step operation:
 
 1. Call the [synchronizeWithDidDocument](admin-api.md#synchronize-with-did-document) API to start using the new P-256 signing key. This API call validates that Key Vault and the public `did.json` document match. If they match, the Verified ID authority starts signing by using the new key in Key Vault. From this point, your authority signs using the new P-256 key. As your DID document also contains one or more old P-256K key(s), previously issued credentials, signed by a P-256K key, continue to work in presentations. The `didDocumentStatus` in the returned authority JSON object has a value of `published`. If the value still is `outOfSync`, there's a discrepancy between Key Vault and the `did.json` document and the previous key is still used for signing.
 
-1. Call the [generateWellKnownDidConfiguration](admin-api.md#well-known-did-configuration) API to regenerate the linked domain configuration. Save the response as a file named `did-configuration.json`. Technically, you could delay this step as the old P-256K keys that was used to sign the linked domain configuration is still available in the DID document. Performing this step here is a good test that the new signing key is active.
+1. Call the [generateWellKnownDidConfiguration](admin-api.md#well-known-did-configuration) API to regenerate the linked domain configuration. Save the response as a file named `did-configuration.json`. Technically, you could delay this step as the old P-256K keys that were used to sign the linked domain configuration is still available in the DID document. Performing this step here is a good test that the new signing key is active.
 
 1. Replace `did-configuration.json` on all web servers where it was previously deployed. Before you continue, make sure that you can retrieve the new `did-configuration.json` document from the public internet with a browser.
 
@@ -64,7 +64,7 @@ Any signing activities, like issuing credentials or making presentation requests
 
 Credentials that were issued before the signing key upgrade are signed by your old P-256K key. These credentials continue to work as long as you have the old P-256K keys in your DID document. When time comes to reissue these credentials, they are signed using the new P-256 key. 
 
-Eventually, you have no credentials signed by the old key as they all have expired and new have been reissued. If your credentials have a long lifetime before they expire, and you want to stop using the old P-256K key, you should consider instructing your users to reissue in advance.
+Eventually, you have no credentials signed by the old key as they all expire and new ones are issued. If your credentials have a long lifetime before they expire, and you want to stop using the old P-256K key, you should consider instructing your users to reissue in advance.
 
 If you want to remove old P-256K keys from your DID document, ensure that your users have reissued their credentials. Then disable the old P-256K keys in your Key Vault and you regenerate and redeploy your DID document.
 
