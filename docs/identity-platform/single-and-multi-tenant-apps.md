@@ -40,6 +40,13 @@ Building great multitenant apps can be challenging because of the number of diff
 - Follow the principle of least user access to ensure that your app only requests permissions it actually needs.
 - Provide appropriate names and descriptions for any permissions you expose as part of your app. This helps users and admins know what they're agreeing to when they attempt to use your app's APIs. For more information, see the best practices section in the [permissions guide](./permissions-consent-overview.md).
 
+> [!NOTE]
+> Multi-tenant applications can be deployed to the same National cloud instances, but not acrossed Nation Cloud instances.
+> [Azure National Clouds](https://learn.microsoft.com/en-us/entra/identity-platform/authentication-national-cloud)
+> Examples:
+> - A Multi-tenant application created in a commercial tenant, can be added to other commercial tenants.
+> - A Multi-tenant application created in an Azure Government tenant, can be added to other Azure Government tenants.
+
 ## Next steps
 
 For more information about tenancy in Microsoft Entra ID, see:
