@@ -97,6 +97,8 @@
         href: identity-governance-applications-not-provisioned-users.md
       - name: Manage access to SAP applications
         href: sap.md
+      - name: Using Entra Private Access with Entitlement Management  
+        href: scenarios/entitlement-management-private-access.md    
   - name: Migrations
     items:
     - name: Transform your cloud posture
@@ -140,6 +142,7 @@
         href: entitlement-management-custom-teams-extension.md      
       - name: Customized entitlement reports in Azure Data Explorer
         href: custom-entitlement-report-with-adx-and-entra-id.md      
+ 
     - name: Access Reviews
       items:
       - name: Review access to Microsoft 365 groups - Microsoft Graph
