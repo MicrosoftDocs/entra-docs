@@ -189,6 +189,7 @@ Next, configure federation with the IdP configured in step 1 in Microsoft Entra 
 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu and switch to your tenant from the **Directories** menu.
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
 1. Select the **Custom** tab, and then select **Add new** > **SAML/WS-Fed**.
 
@@ -236,12 +237,10 @@ You can use the Microsoft Graph API [samlOrWsFedExternalDomainFederation](/graph
 
 If you're configuring federation in your workforce tenant for B2B collaboration with a verified domain, make sure the federated IdP is used first during invitiation redemption. [Configure the **Redemption order** settings](cross-tenant-access-settings-b2b-collaboration.yml) in your cross-tenant access settings for inbound B2B collaboration. Move **SAML/WS-Fed identity providers** to the top of the **Primary identity providers** list to prioritize redemption with the federated IdP. For B2B collaboration with a verified domain, make the federated IdP the primary identity provider for invitation redemption. over other identity providers during invitation redemption.  
 
+You can test your federation setup by inviting a new B2B guest user. For details, see [Add Microsoft Entra B2B collaboration users in the Microsoft Entra admin center](add-users-administrator.yml).
+
 > [!NOTE]
 > The Microsoft Entra admin center settings for the configurable redemption feature are currently rolling out to customers. Until the settings are available in the admin center, you can configure the invitation redemption order using the Microsoft Graph REST API (beta version). See [Example 2: Update default invitation redemption configuration](/graph/api/crosstenantaccesspolicyconfigurationdefault-update?view=graph-rest-beta&tabs=http#example-2-update-default-invitation-redemption-configuration&preserve-view=true) in the Microsoft Graph reference documentation.
-
-## Test federation (B2B collaboration in workforce tenants)
-
-If you're configuring federation in your workforce tenant for B2B collaboration, you can test your federation setup by inviting a new B2B guest user. For details, see [Add Microsoft Entra B2B collaboration users in the Microsoft Entra admin center](add-users-administrator.yml).
  
 ## How do I update the certificate or configuration details?
 
