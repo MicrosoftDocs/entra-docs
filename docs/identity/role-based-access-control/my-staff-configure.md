@@ -71,6 +71,9 @@ When a user selects My Staff, they are shown the names of the [administrative un
 
 After My Staff has been enabled, the users who are enabled and have been assigned an administrative role can access it through [https://mystaff.microsoft.com](https://mystaff.microsoft.com). They can select an administrative unit to view the users in that unit, and select a user to open their profile.
 
+### Limitations
+My Staff shows up to 999 users per administrative unit.
+
 ## Reset a user's password
 
 Before you can reset passwords for on-premises users, you must fulfill the following prerequisite conditions. For detailed instructions, see [Enable self-service password reset](~/identity/authentication/tutorial-enable-sspr-writeback.md) tutorial.
