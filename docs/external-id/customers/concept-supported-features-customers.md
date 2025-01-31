@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 12/03/2024
+ms.date: 01/29/2025
 ms.author: mimart
 ms.custom: it-pro, seo-july-2024
 
@@ -82,7 +82,7 @@ The following table compares the features available for [Application registratio
 
 |Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
-|   **Protocol**     |   SAML relying parties, OpenID Connect, and OAuth2    |   OpenID Connect and OAuth2    |
+|   **Protocol** |  SAML relying parties, OpenID Connect, and OAuth2  |  [SAML relying parties](how-to-register-saml-app.md), [OpenID Connect](how-to-register-ciam-app.md), and OAuth2 |
 | **Supported account types**| The following [account types](~/identity-platform/quickstart-register-app.md#register-an-application): <ul><li>Accounts in this organizational directory only (Single tenant)</li><li>Accounts in any organizational directory (Any Microsoft Entra tenant - Multitenant)</li><li>Accounts in any organizational directory (Any Microsoft Entra tenant - Multitenant) and personal Microsoft accounts (such as Skype, Xbox)</li><li>Personal Microsoft accounts only</li></ul> | Always use *Accounts in this organizational directory only (Single tenant)*. |
 | **Platform** | The following [platforms](~/identity-platform/quickstart-register-app.md#configure-platform-settings): <ul><li>Public client/native (mobile & desktop)</li><li>Web</li><li>Single page application (SPA)</li><ul>| The following [platforms](~/identity-platform/quickstart-register-app.md#configure-platform-settings): <ul><li>Public client (mobile & desktop)</li><li>[Native authentication mobile](concept-native-authentication.md) </li><li>Web</li><li>Single page application (SPA)</li><ul>|
 | **Authentication** > **Redirect URIs**| The URIs Microsoft Entra ID accepts as destinations when returning authentication responses (tokens) after successfully authenticating or signing out users. | Same as workforce.|

@@ -7,7 +7,7 @@ metadata:
   ms.author: barclayn
   manager: amycolannino
   ms.reviewer: jeffsta
-  ms.date: 09/06/2024
+  ms.date: 01/31/2025
   ms.service: entra
   ms.subservice: fundamentals
   ms.topic: how-to
@@ -32,7 +32,7 @@ procedureSection:
 
       
         > [!NOTE]
-        > Starting September 1st, the Microsoft Entra ID Admin Center and the Microsoft Azure portal will no longer support the assignment of licenses through their user interfaces. To manage license assignments for users and groups, administrators are required to use the Microsoft 365 Admin Center. This update is designed to streamline the license management process within the Microsoft ecosystem. This change is limited to the user interface. API and PowerShell access remain unaffected. For detailed guidance on assigning licenses using the Microsoft 365 Admin Center, refer to the following resources:
+        > Starting September 1, the Microsoft Entra ID Admin Center, and the Microsoft Azure portal will no longer support the assignment of licenses through their user interfaces. To manage license assignments for users and groups, administrators are required to use the Microsoft 365 Admin Center. This update is designed to streamline the license management process within the Microsoft ecosystem. This change is limited to the user interface. API and PowerShell access remain unaffected. For detailed guidance on assigning licenses using the Microsoft 365 Admin Center, refer to the following resources:
         > - [Assign or Unassign Licenses for Users in the Microsoft 365 Admin Center](/microsoft-365/admin/manage/assign-licenses-to-users?view=o365-worldwide)
         > - [Add Users and Assign Licenses in Microsoft 365](/microsoft-365/admin/add-users/add-users?view=o365-worldwide)
         > - [Assign Licenses to a Group Using the Microsoft 365 Admin Center](../identity/users/licensing-admin-center.md) </br>
@@ -98,7 +98,7 @@ procedureSection:
         The **Assign license** page updates to show that a user is selected and that the assignments are configured.
 
         > [!NOTE]
-        > Not all Microsoft services are available in all locations. Before a license can be assigned to a user, you must specify the **Usage location**. You can set this value in **Identity** > **Users** > **All users** > *select a user* > **Properties**. When assigning licenses to a group or bulk updates such as disabling the synchronization status for the organization, any user whose usage location isn't specified inherits the location of the tenant.
+        > Not all Microsoft services are available in all locations. Before a license can be assigned to a user, you must specify the **Usage location**. You can set this value in **Identity** > **Users** > **All users** > *select a user* > **Properties**. When you assign licenses to a group or you make bulk updates, such as disabling the synchronization status for the organization, any user whose usage location isn't specified inherits the location of the tenant.
 
       7. Select **Assign**.
 

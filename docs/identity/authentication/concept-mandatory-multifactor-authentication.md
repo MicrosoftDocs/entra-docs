@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/06/2025
+ms.date: 01/30/2025
 ms.author: justinha
 author: najshahid
 manager: amycolannino
@@ -22,20 +22,30 @@ There's no change for users if your organization already enforces MFA for them, 
 
 ## Scope of enforcement 
  
-The scope of enforcement includes which applications plan to enforce MFA, when enforcement is planned to occur, and which accounts have a mandatory MFA requirement.
+The scope of enforcement includes which applications plan to enforce MFA, applications that are out of scope, when enforcement is planned to occur, and which accounts have a mandatory MFA requirement.
 
-### Applications 
+### Applications
 
-| Application Name | App ID | Enforcement phase |
+The following table lists affected apps, app IDs, and URLs for Azure. 
+
+| Application Name | App ID | Enforcement starts |
 |------------------|---------------------------------------|------|
 | [Azure portal](/azure/azure-portal/)     | c44b4083-3bb0-49c1-b47d-974e53cbdf3c  | Second half of 2024 |
 | [Microsoft Entra admin center](https://aka.ms/MSEntraPortal) | c44b4083-3bb0-49c1-b47d-974e53cbdf3c | Second half of 2024 |
 | [Microsoft Intune admin center](https://aka.ms/IntunePortal) | c44b4083-3bb0-49c1-b47d-974e53cbdf3c | Second half of 2024 |
-| [Microsoft 365 admin center](https://admin.microsoft.com) | 00000006-0000-0ff1-ce00-000000000000 | Early 2025 |
 | [Azure command-line interface (Azure CLI)](/cli/azure/) | 04b07795-8ddb-461a-bbee-02f9e1bf7b46 | Early 2025 |
 | [Azure PowerShell](/powershell/azure/) | 1950a258-227b-4e31-a9cf-717495945fc2 | Early 2025 |
 | [Azure mobile app](/azure/azure-portal/mobile-app/overview)  | 0c1307d4-29d6-4389-a11c-5cbe7f65d7fa | Early 2025 |
 | [Infrastructure as Code (IaC) tools](/devops/deliver/what-is-infrastructure-as-code) | Use Azure CLI or Azure PowerShell IDs | Early 2025 | 
+
+The following table lists affected apps and URLs for Microsoft 365. 
+
+| Application Name | URL | Enforcement starts |
+|------------------|---------------------------------------|------|
+| Microsoft 365 admin center | `https://portal.office.com/adminportal/home` | February 2025 |
+| Microsoft 365 admin center | `https://admin.cloud.microsoft` | February 2025 |
+| Microsoft 365 admin center | `https://admin.microsoft.com` | February 2025 |
+
 
 ### Accounts 
 
@@ -72,9 +82,9 @@ For example, if your organization chose to retain Microsoft’s [security defaul
 
 The enforcement of MFA rolls out in two phases: 
 
-- **Phase 1**: Starting in the second half of 2024, MFA will be required to sign in to the Azure portal, Microsoft Entra admin center, and Microsoft Intune admin center. The enforcement will gradually roll out to all tenants worldwide. This phase won't impact other Azure clients such as Azure CLI, Azure PowerShell, Azure mobile app, or IaC tools.  
+- **Phase 1**: Starting in October 2024, MFA is required to sign in to the Azure portal, Microsoft Entra admin center, and Microsoft Intune admin center. The enforcement will gradually roll out to all tenants worldwide. Starting in February 2025, MFA enforcement gradually begins for sign in to Microsoft 365 admin center. This phase won't impact other Azure clients such as Azure CLI, Azure PowerShell, Azure mobile app, or IaC tools.  
 
-- **Phase 2**: Beginning in early 2025, MFA enforcement gradually begins for sign in to Azure CLI, Azure PowerShell, Azure mobile app, and IaC tools. Some customers may use a user account in Microsoft Entra ID as a service account. It's recommended to migrate these user-based service accounts to [secure cloud based service accounts](/entra/architecture/secure-service-accounts) with [workload identities](~/workload-id/workload-identities-overview.md). 
+- **Phase 2**: Later in 2025, MFA enforcement will gradually begin for Azure CLI, Azure PowerShell, Azure mobile app, and IaC tools. Some customers may use a user account in Microsoft Entra ID as a service account. It's recommended to migrate these user-based service accounts to [secure cloud based service accounts](/entra/architecture/secure-service-accounts) with [workload identities](~/workload-id/workload-identities-overview.md). 
 
 ## Notification channels 
 
@@ -100,13 +110,13 @@ If you're using a federated Identity Provider (IdP), such as Active Directory 
 
 ## Request more time to prepare for enforcement 
 
-We understand that some customers may need more time to prepare for this MFA requirement. Microsoft is allowing customers with complex environments or technical barriers to postpone the enforcement for their tenants until March 15, 2025. 
+We understand that some customers may need more time to prepare for this MFA requirement. Microsoft is allowing customers with complex environments or technical barriers to postpone the enforcement for their tenants until September 30, 2025. 
 
-Between August 15, 2024 and October 15, 2024, Global Administrators can go to the [Azure portal](https://aka.ms/managemfaforazure) to postpone the start date of enforcement for their tenant to March 15, 2025. Global Administrators must have [elevated access](https://aka.ms/enableelevatedaccess) before postponing the start date of MFA enforcement on this page.  
+Starting in 2nd half of February 2025, Global Administrators can go to the [Azure portal](https://aka.ms/managemfaforazure) to select the start date of enforcement for their tenant for admin portals in Phase 1. Global Administrators must [elevate access](https://aka.ms/enableelevatedaccess) before they can postpone the start date of MFA enforcement.  
 
 Global Administrators must perform this action for every tenant where they want to postpone the start date of enforcement.  
 
-By postponing the start date of enforcement, you take extra risk because accounts that access Microsoft services like the Azure portal are highly valuable targets for threat actors. We recommend all tenants set up MFA now to secure cloud resources.  
+By postponing the start date of enforcement, you take extra risk because accounts that access Microsoft services like the Azure portal are highly valuable targets for threat actors. We recommend all tenants set up MFA now to secure cloud resources.
 
 ## FAQs
 
@@ -116,10 +126,9 @@ By postponing the start date of enforcement, you take extra risk because account
 
 **Question**: How does this requirement impact the Microsoft 365 admin center?
 
-**Answer**: Mandatory MFA will roll out to the Microsoft 365 admin center starting early in 2025. Learn more about the mandatory MFA requirement for the Microsoft 365 admin center on the blog post [Announcing mandatory multifactor authentication for the Microsoft 365 admin center](https://techcommunity.microsoft.com/t5/microsoft-365-blog/microsoft-will-require-mfa-to-access-the-microsoft-365-admin/ba-p/4232568). 
+**Answer**: Mandatory MFA will roll out to the Microsoft 365 admin center starting in February 2025. Learn more about the mandatory MFA requirement for the Microsoft 365 admin center on the blog post [Announcing mandatory multifactor authentication for the Microsoft 365 admin center](https://techcommunity.microsoft.com/t5/microsoft-365-blog/microsoft-will-require-mfa-to-access-the-microsoft-365-admin/ba-p/4232568). 
 
 **Question**: Is MFA mandatory for all users or only administrators? 
-
 
 **Answer**: All users who sign in to any of the [applications](#applications) listed previously are required to complete MFA, regardless of any administrator roles that are activated or eligible for them, or any [user exclusions](~/identity/conditional-access/policy-all-users-mfa-strength.md#user-exclusions) that are enabled for them.
 
