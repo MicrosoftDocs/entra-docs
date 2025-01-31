@@ -169,6 +169,16 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the Genea Access Control tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Genea Access Control for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
+## Multiple Microsoft Entra Instances in One Genea Portal
+
+* Does Genea Support Multiple Microsoft Entra Instances  ?
+
+	Yes, it is possible to connect with multiple Microsoft Entra instances to a single Genea portal where user groups are enabled. Here are mandatory considerations to keep in mind:
+
+	1.	External ID Mapping: Ensure that the external ID is mapped to the object ID for user provisioning; else, the user may lose access. To update the mapping, log in to Entra and go to Enterprise Applications > Genea SCIM Application > Provisioning > Edit Provisioning > Mappings > Edit User Mapping, then change the externalId mapping from mailNickname to objectId.
+	2.	Unique Group Names: Genea doesn’t support duplicate user group names. Ensure that each Entra instance uses distinct group names to avoid any potential errors.
+	3.	Moving to single Entra Instances: If you plan to transition from multiple Entra instances to a single one, it’s essential to have a clear migration plan. You can either manage this transition internally or collaborate with Genea to ensure a smooth migration without service disruptions.
+
 ## Next steps
 
 Once you configure Genea Access Control you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
