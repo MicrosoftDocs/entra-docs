@@ -12,7 +12,7 @@ ms.date: 02/07/2025
 #Customer intent: As a developer, devops, I want to 
 ---
 
-# Tutorial: Sign in users into a React single-page app by using native authentication
+# Tutorial: Sign in users into a React single-page app by using native authentication (preview)
 
 In this tutorial, you learn how to sign in users into a React single-page app (SPA) by using native authentication. 
 

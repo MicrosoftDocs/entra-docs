@@ -11,7 +11,7 @@ ms.date: 02/07/2025
 #Customer intent: As a developer, devops, I want to set up Azure Front Door so that I can use it as a reverse proxy server for a single-page app that authenticates users by using native authentication API in a production environment
 ---
 
-# Use Azure Front Door as a reverse proxy in production environment for a single-page app that uses native authentication
+# Use Azure Front Door as a reverse proxy in production environment for a single-page app that uses native authentication (preview)
 
 In this article, you learn how to Use Azure Front Door as a reverse proxy for a single-page app (SPA) that uses [native authentication API](/entra/identity-platform/reference-native-authentication-api?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json&tabs=emailOtp).
 

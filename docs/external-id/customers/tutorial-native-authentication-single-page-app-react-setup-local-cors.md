@@ -12,7 +12,7 @@ ms.date: 02/07/2025
 #Customer intent: As a developer, devops, I want to 
 ---
 
-# Tutorial: Set up CORS proxy server to manage CORS headers for native authentication
+# Tutorial: Set up CORS proxy server to manage CORS headers for native authentication (preview)
 
 In this tutorial, you learn how to set up the CORS proxy server to manage CORS headers while interacting with native authentication API from a React single-page app (SPA). The CORS proxy server is a solution to the native authentication API's inability to support [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/docs/Web/HTTP/CORS).
 
