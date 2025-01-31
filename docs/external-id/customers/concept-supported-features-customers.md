@@ -8,11 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: concept-article
-<<<<<<< HEAD
 ms.date: 01/30/2025
-=======
-ms.date: 01/29/2025
->>>>>>> 86b90e2432cefb3006308966f5ad9d72ebad5ca8
 ms.author: mimart
 ms.custom: it-pro, seo-july-2024
 
