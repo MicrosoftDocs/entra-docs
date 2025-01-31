@@ -101,9 +101,9 @@ Flexible Federated Identity Credentials extend the existing Federated Identity C
 **Service category:** Identity Protection    
 **Product capability:** Identity Security & Protection    
 
-Traditionally, security admins comb through logs to identify password spray attack patterns. Now, we’ve enhanced Microsoft Entra ID Protection to detect password spray attacks in real-time. It reduces remediation from hours to seconds by interrupting attacks during the sign-in flow.
+Traditionally, password spray attacks are detected post breach or as part of hunting activity. Now, we’ve enhanced Microsoft Entra ID Protection to detect password spray attacks in real-time before the attacker ever obtains a token. This reduces remediation from hours to seconds by interrupting attacks during the sign-in flow.
 
-Risk-based Conditional Access can automatically respond to this new signal by raising session risk, immediately challenging the next risky sign-in attempt, and stopping password spray attempts in their tracks. This cutting-edge detection, coming soon to public preview, works alongside existing detections for advanced attacks such as Adversary-in-the-Middle (AitM) phishing and token theft, to ensure comprehensive coverage against modern attacks. For more information, see: [What is Microsoft Entra ID Protection?](../id-protection/overview-identity-protection.md)
+Risk-based Conditional Access can automatically respond to this new signal by raising session risk, immediately challenging the sign-in attempt, and stopping password spray attempts in their tracks. This cutting-edge detection, now Generally Available, works alongside existing detections for advanced attacks such as Adversary-in-the-Middle (AitM) phishing and token theft, to ensure comprehensive coverage against modern attacks. For more information, see: [What is Microsoft Entra ID Protection?](../id-protection/overview-identity-protection.md)
 
 ---
 
