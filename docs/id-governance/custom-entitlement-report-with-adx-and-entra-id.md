@@ -623,7 +623,7 @@ EntraUsers
     | project UserPrincipalName = UserName, DisplayName = Name, EmployeeId = tostring(EmployeeId), Department, JobTitle, AccountEnabled = "N/A", ResourceDisplayName = AppName, RoleDisplayName = Role, CreatedDateTime, Source = "salesforceAssignments", ReportDate = now() 
 ) 
 ``` 
-### Example 5:  Export all Access Review definitions, instances, and decisions for specific dates
+## Export all Access Review definitions, instances, and decisions for specific dates
 To export all Access Review definitions, instances, and decisions into a structured folder format using PowerShell, you can utilize the Microsoft Graph API. This approach ensures that your data is organized hierarchically, aligning with the specified folder structure. 
 
 Before you begin be aware of the following:
@@ -669,7 +669,7 @@ Use the following steps to export the Access Review data and import it.
 
 
 
-#### Review Completion & Timeline Information 
+### Review Completion & Timeline Information 
 Once the data has been uploaded, use the following Kusto queries to review it.
 
 - When was the last access review cycle completed? How long did it take? 
@@ -690,7 +690,7 @@ ReviewInstances
          TimeSinceLastReview = datetime_diff('day', now(), LastReviewEndDate) 
 | extend IsOnSchedule = iff(TimeSinceLastReview <= 90, "Yes", "No") // Assuming quarterly = 90 days  
 ```
-#### Review Participation & Engagement 
+### Review Participation & Engagement 
 
 - Who were the reviewers assigned? 
 
@@ -807,7 +807,7 @@ TotalReviewers
 | join kind=leftanti RespondedReviewers on $left.ReviewerId == $right.RespondedReviewerId 
 | project AccessReviewDefinitionId, AccessReviewInstanceId, ReviewerUserPrincipalName, ReviewerName, RemindersSent, ReminderSentDate 
 ```
-#### Users & Access Changes 
+### Users & Access Changes 
 
 - Who lost access to specific resources during the access review? 
 
@@ -856,7 +856,7 @@ ReviewInstances
 ) on $left.ReviewInstanceId == $right.AccessReviewInstanceId 
 ```
 
-#### Review Decision Data 
+### Review Decision Data 
 
 - Decisions made: Approved, Denied, or Unchanged. 
 
@@ -878,7 +878,7 @@ ReviewInstanceDecisionItems
 | summarize count() by ReviewedBy_DisplayName 
 ```
 
-#### Access Review Quality and Compliance Checks 
+### Access Review Quality and Compliance Checks 
 
 - Were access revocations considered for dormant users? 
 
