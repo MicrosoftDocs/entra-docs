@@ -39,7 +39,7 @@ items:
               href: sample-single-page-app-react-sign-in.md
       - name: Native authentication 
         items:
-          - name: React
+          - name: Sign in users
             href: quickstart-native-authentication-single-page-app-react-sign-in.md
   - name: Web app
     items:

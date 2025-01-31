@@ -40,7 +40,8 @@ In this quickstart, you use a React single-page application (SPA) to demonstrate
  
 [!INCLUDE [Create user flow](../customers/includes/configure-user-flow/create-native-authentication-sign-in-sign-out-user-flow.md)]
 
-For this quickstart, select **Given Name** and **Surname** as your user attributes. The sample app in this quickstart submits the given name and surname to the native authentication API. If you select any other user attribute, the sample won't work properly
+> [!NOTE] 
+> For this quickstart, select **Given Name** and **Surname** as your user attributes. The sample app in this quickstart submits the given name and surname to the native authentication API. If you select any other user attribute, the sample won't work properly
  
 ## Associate the app with the user flow
 

@@ -17,7 +17,7 @@ In this article, you learn how to Use Azure Front Door as a reverse proxy for a 
 
 The native authentication API doesn't support Cross-Origin Resource Sharing (CORS). Therefore, a single-page app (SPA) that uses this API for user authentication can't make successful requests from front-end JavaScript code. To resolve this, you need to add a proxy server between the SPA and the native authentication API. This proxy server injects the appropriate CORS headers into the response.
 
-In a production environment, we recommended using [Azure Front Door with a Standard/Premium subscription](/azure/frontdoor/standard-premium/troubleshoot-cross-origin-resources) to manage the CORS headers.
+In a production environment, we recommended using [Azure Front Door with a Standard/Premium subscription](/azure/frontdoor/standard-premium/troubleshoot-cross-origin-resources) as a reverse proxy.
 
 ## Prerequisites
 - An Azure subscription. [Create an account for free](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
@@ -53,4 +53,4 @@ When you configure Azure Front Door, only allow your SPA domain url, such as `ht
 
 ## Related content
 - Read more about [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/docs/Web/HTTP/CORS).
-- [Native authentication API reference](/entra/identity-platform/reference-native-authentication-api?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json&tabs=emailOtp).
+- [Native authentication API reference](/entra/identity-platform/reference-native-authentication-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json).
