@@ -40,7 +40,7 @@ Discover applications using ADFS:
 If you're using other identity providers, you can use the following approaches to discover applications:
 
 - If you’re currently using Okta, refer to our [Okta to Microsoft Entra migration guide](migrate-applications-from-okta.md).
-- If you’re currently using Ping Federate, then consider using the [Ping Administrative API](https://docs.pingidentity.com/r/en-us/pingfederate-112/pf_admin_api)
+- If you’re currently using Ping Federate, then consider using the [Ping Administrative API](https://docs.pingidentity.com/en-us/pingfederate-112/pf_admin_api)
 - If the applications are integrated with Active Directory, search for service principals or service accounts that may be used for applications.  
 
 ## Using cloud discovery tools
