@@ -74,5 +74,5 @@ When the access assignment expires, Entra ID Governance will similarly open anot
 
 ## Next steps
 
-- [What is Microsoft Entra entitlement management?](entitlement-management-overview.md)
+- [What is Microsoft Entra entitlement management?](../entitlement-management-overview.md)
 - [What is Global Secure Access?](../../global-secure-access/overview-what-is-global-secure-access.md)
