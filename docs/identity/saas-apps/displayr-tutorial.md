@@ -74,10 +74,10 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
 	a. In the **Identifier (Entity ID)** text box, type a value using the following pattern:
-	`<YOURDOMAIN>.displayr.com`
+	`<EntityID>`
 	
 	b. In the **Reply URL** text box, type the URL:
-	`https://app.displayr.com/Login/ProcessSamlResponse`.
+	`<ACS URL>`.
 	
 	c. In the **Sign-on URL** text box, type a URL using the following pattern:
     `https://<YOURDOMAIN>.displayr.com`
