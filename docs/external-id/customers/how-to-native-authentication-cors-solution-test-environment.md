@@ -24,7 +24,7 @@ This solution is for testing purposes and should **NOT be used in a production e
 - An Azure subscription. [Create an account for free](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 - [Azure Developer CLI](/cli/azure/install-azure-cli). After you install it, sign into it for the first time. For more information, see [Sign into the Azure CLI](/cli/azure/get-started-with-azure-cli#sign-into-the-azure-cli).
 - A sample SPA that you can access via a URL such as `http://www.contoso.com`:
-    - You can use the React app described in [Quickstart: Sign in users into a sample React SPA by using native authentication API](quickstart-native-authentication-single-page-app-react-sign-in.md). However, don't configure or run the proxy server, as this guide covers that set-up.
+    - You can use the React app described in [Quickstart: Sign in users into a sample React SPA by using native authentication API](quickstart-native-authentication-single-page-app-react-sign-in.md). However, don't configure or run the proxy server, as this guide covers that setup.
     - Once you run the app, record the app URL for later use in this guide.
 
 ## Create reverse proxy in an Azure function app by using Azure Resource Manager template
@@ -41,21 +41,21 @@ This solution is for testing purposes and should **NOT be used in a production e
 
     Wait for this process to complete before creating the function app.
 
-1. Get the Azure Resource Manager (ARM) template:
+1. To get the Azure Resource Manager (ARM) template:
 
     1. Clone a sample SPA that contains the ARM template:
 
-    ```console
-    git clone https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples.git
-    ```
+        ```console
+        git clone https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples.git
+        ```
 
     1. Navigate to the ARM template directory by using the following command:
 
-    ```console
-    cd API/CORSTestEnviroment
-    ```
+        ```console
+        cd API/CORSTestEnviroment
+        ```
 
-1. Create the function app running the following command:
+1. Create the function app by running the following command:
 
     ```console
     az deployment group create \
@@ -74,24 +74,24 @@ This solution is for testing purposes and should **NOT be used in a production e
 
 1. Open */API/CORSTestEnviroment/ReverseProxy/index.js* file, then replace the placeholder `Enter_the_Tenant_Subdomain_Here` with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
-    The name of the directory, such as *ReverseProxy*, need to match the value, such as *"ReverseProxy/*"*, of the `route` key in the *function.json* file.
+    The name of the directory, such as *ReverseProxy*, need to match the value, such as *ReverseProxy/{\*path}*, of the `route` key in the *function.json* file. If you change the name of the directory to *TriggerFunc*, then the value of the `route` key needs to be *TriggerFunc/{\*path}*.
 
-1. Deploy the project files to an Azure Function App:
+1. To deploy the project files to an Azure Function App:
 
     1. Make sure you're in the */API/CORSTestEnviroment/* directory, then zip the project files by using the following command:
-
-    ```console
-    zip -r ReverseProxy.zip ReverseProxy
-    ```
+    
+        ```console
+        zip -r ReverseProxy.zip ReverseProxy
+        ```
 
     1. Deploy app files by using the following command:
 
-    ```console
-    az functionapp deployment source config-zip \
-        --resource-group "Enter_Resource_Group_Name_Here" \
-        --name "Enter_App_Function_Name_Here" \
-        --src ReverseProxy.zip  
-    ```
+        ```console
+        az functionapp deployment source config-zip \
+            --resource-group "Enter_Resource_Group_Name_Here" \
+            --name "Enter_App_Function_Name_Here" \
+            --src ReverseProxy.zip  
+        ```
 
 ## Test your sample SPA with the reverse proxy
 

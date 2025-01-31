@@ -31,7 +31,7 @@ In this tutorial, you learn how to:
 
 ## Create a React project and install dependencies
 
-1. In a location of choice in your computer, run the following commands to create a new React project with the name *reactspa*, navigate into the project folder, then install packages:
+In a location of choice in your computer, run the following commands to create a new React project with the name *reactspa*, navigate into the project folder, then install packages:
 
     ```powershell
     npm config set legacy-peer-deps true
@@ -472,4 +472,4 @@ At this point, your React app can send sign-up requests to the native authentica
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Setup CORS Proxy server to manage CORS headers for native authentication](tutorial-native-authentication-single-page-app-react-setup-local-cors.md).
+> [Tutorial: Setup CORS Proxy server to manage CORS headers for native authentication](tutorial-native-authentication-single-page-app-react-set-up-local-cors.md)

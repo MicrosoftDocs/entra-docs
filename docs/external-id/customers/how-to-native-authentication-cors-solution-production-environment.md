@@ -22,7 +22,7 @@ In a production environment, we recommended using [Azure Front Door with a Stand
 ## Prerequisites
 - An Azure subscription. [Create an account for free](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 - A sample SPA that you can access via a URL such as `http://www.contoso.com`:
-    - You can use the React app described in [Quickstart: Sign in users into a sample React SPA by using native authentication API](quickstart-native-authentication-single-page-app-react-sign-in.md). However, don't configure or run the proxy server, as this guide covers that set-up.
+    - You can use the React app described in [Quickstart: Sign in users into a sample React SPA by using native authentication API](quickstart-native-authentication-single-page-app-react-sign-in.md). However, don't configure or run the proxy server, as this guide covers that setup.
     - Once you run the app, record the app URL for later use in this guide. In production, this URL contains the domain that you want to use as a custom domain URL, such as `http://www.contoso.com`
 
 ## Set up Azure Front Door as a reverse proxy
