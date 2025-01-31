@@ -177,9 +177,9 @@ Required claims for the WS-Fed token issued by the IdP:
 
 <a name='step-3-configure-samlws-fed-idp-federation-in-azure-ad'></a>
 
-### Step 3: Configure SAML/WS-Fed IdP federation in Microsoft Entra ID
+### Step 3: Configure SAML/WS-Fed IdP federation in Microsoft Entra External ID
 
-Next, configure federation with the IdP configured in step 1 in Microsoft Entra ID. You can use either the Microsoft Entra admin center or the [Microsoft Graph API](/graph/api/resources/samlorwsfedexternaldomainfederation?view=graph-rest-beta&preserve-view=true). It might take 5-10 minutes before the federation policy takes effect. During this time, don't attempt to redeem an invitation for the federation domain. The following attributes are required:
+Next, configure federation with the IdP configured in step 1 in Microsoft Entra External ID. You can use either the Microsoft Entra admin center or the [Microsoft Graph API](/graph/api/resources/samlorwsfedexternaldomainfederation?view=graph-rest-beta&preserve-view=true). It might take 5-10 minutes before the federation policy takes effect. During this time, don't attempt to redeem an invitation for the federation domain. The following attributes are required:
 
 - Issuer URI of the partner's IdP
 - Passive authentication endpoint of partner IdP (only https is supported)
@@ -234,14 +234,14 @@ You can use the Microsoft Graph API [samlOrWsFedExternalDomainFederation](/graph
 
 ## Configure the redemption order (for B2B collaboration in workforce tenants)
 
-This section applies to B2B collaboration in workforce tenants. If the domain is Microsoft Entra ID verified, [configure the **Redemption order** settings](cross-tenant-access-settings-b2b-collaboration.yml) in your cross-tenant access settings for inbound B2B collaboration. Move **SAML/WS-Fed identity providers** to the top of the **Primary identity providers** list to prioritize redemption with the federated IdP.
+If you're configuring federation in your workforce tenant for B2B collaboration with a verified domain, make sure the federated IdP is used first during invitiation redemption. [Configure the **Redemption order** settings](cross-tenant-access-settings-b2b-collaboration.yml) in your cross-tenant access settings for inbound B2B collaboration. Move **SAML/WS-Fed identity providers** to the top of the **Primary identity providers** list to prioritize redemption with the federated IdP. For B2B collaboration with a verified domain, make the federated IdP the primary identity provider for invitation redemption. over other identity providers during invitation redemption.  
 
 > [!NOTE]
 > The Microsoft Entra admin center settings for the configurable redemption feature are currently rolling out to customers. Until the settings are available in the admin center, you can configure the invitation redemption order using the Microsoft Graph REST API (beta version). See [Example 2: Update default invitation redemption configuration](/graph/api/crosstenantaccesspolicyconfigurationdefault-update?view=graph-rest-beta&tabs=http#example-2-update-default-invitation-redemption-configuration&preserve-view=true) in the Microsoft Graph reference documentation.
 
 ## Test federation (B2B collaboration in workforce tenants)
 
-This section applies to B2B collaboration in workforce tenants. You can test your federation setup by inviting a new B2B guest user. For details, see [Add Microsoft Entra B2B collaboration users in the Microsoft Entra admin center](add-users-administrator.yml).
+If you're configuring federation in your workforce tenant for B2B collaboration, you can test your federation setup by inviting a new B2B guest user. For details, see [Add Microsoft Entra B2B collaboration users in the Microsoft Entra admin center](add-users-administrator.yml).
  
 ## How do I update the certificate or configuration details?
 
