@@ -9,7 +9,7 @@ ms.assetid: 06a149f7-4aa1-4fb9-a8ec-ac2633b031fb
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: reference
-ms.date: 12/02/2024
+ms.date: 1/31/2025
 ms.author: owinfrey
 ms.reviewer: dhanyahk
 ms.custom: it-pro, has-azure-ad-ps-ref
