@@ -341,6 +341,23 @@ Generate a JSON file with access review definition names and IDs that are used t
    $definitions | ConvertTo-Json -Depth 10 | Set-Content "EntraAccessReviewDefinitions.json"
 ```
 
+### Get Access review instance data
+
+To export all Access Review definitions, instances, and decisions into a structured folder format using PowerShell, you can utilize the Microsoft Graph API. This approach ensures that your data is organized hierarchically, aligning with the specified folder structure. 
+
+Before you begin be aware of the following:
+
+- Ensure you have the necessary permissions to access Access Reviews data in Microsoft Graph. 
+- Depending on the volume of data, the script's execution time may vary. Monitor the process and adjust parameters as needed. 
+
+1. Download the [Export_Access_Reviews.ps1](https://github.com/microsoft/Entra-reporting/blob/main/PowerShell/Export_Access_Reviews.ps1) script and save it locally.
+1. In file explorer, Unblock the script so it can be run in PowerShell.
+1. Run the following command, which will output all data into three sub-folders `ReviewInstances`, `ReviewInstanceDecisionItems` and `ReviewInstanceContactedReviewers`. 
+
+```powershell
+ .\ExportAccessReviews.ps1 -InstanceStartDate "11/15/2024" -InstanceEndDate "12/15/2024" -ExportFolder "C:\AccessReviewsExport\11_15_to_12_15" 
+```
+
 ### Get entitlement management access package data
 
 Generate a JSON file with access package names and IDs that are used to create custom views in Azure Data Explorer. The sample includes all access packages, but additional filtering can be included if needed.
@@ -404,9 +421,10 @@ Next, follow these steps for each exported JSON file from the previous section, 
  1. Select **+ New table** and enter a table name, based on the name of the JSON file you're importing, After the first import, the table already exists, and you can select it as the target table for a subsequent import.
  1. Select **Browse for files**, select the JSON file, and select **Next**.
  1. Azure Data Explorer automatically detects the schema and provides a preview in the **Inspect** tab. Select **Finish** to create the table and import the data from that file. Once the data is ingested, click **Close**.
- 1. Repeat each of the preceding steps for each of the JSON files that you generated in the previous section.
+ 1. Repeat each of the preceding steps for each of the JSON files that you generated in the previous section, for each of the folders.
+ 1. If there are many files in a folder, then you can use `lightinjest` to import the rest once the table is created.
 
-At the end of those steps you'll have the tables `EntraAccessReviewDefinitions`, `EntraAccessPackages`, and `EntraAccessPackageAssignments` in the database, in addition to the tables created in section 3.
+At the end of those steps you'll have the tables `EntraAccessReviewDefinitions`, `EntraAccessPackages`, and `EntraAccessPackageAssignments`, `ReviewInstances`, `ReviewInstanceDecisionItems`, `ReviewInstanceContactedReviewers` in the database, in addition to the tables created in section 3.
 
 ## 6: Use Azure Data Explorer to build custom reports 
 
@@ -533,143 +551,9 @@ AppRoleAssignments
 | project UserPrincipalName, DisplayName, RoleDisplayName, CreatedDateTime, PrincipalId, Change = "Added" 
 ``` 
 
-## Set up ongoing imports
+### Example 4: Access Reviews
 
-This tutorial illustrates a one-time data extract, transform, and load (ETL) process to populate Azure Data Explorer with a single snapshot for reporting purposes. For ongoing reporting or to compare changes over time, you can automate the process of populating Azure Data Explorer from Microsoft Entra, so that your database continues to have current data.
-
-You can use [Azure Automation](/azure/automation/overview), an Azure cloud service, to host the PowerShell scripts needed to extract data from Microsoft Entra ID and Microsoft Entra ID Governance. For more information, see [Automate Microsoft Entra ID Governance tasks with Azure Automation](identity-governance-automation.md).
-
-You can also use Azure features or command line tools such as `lightingest` to bring in data and populate an already existing table. For more information, see [use LightIngest to ingest data into Azure Data Explorer](/azure/data-explorer/lightingest).
-
-For example, to load a file `EntraAccessPackages.json` in the current directory into the `EntraAccessPackages` table as the currently logged-in user:
-
-```azurecli
-az login
-LightIngest.exe "https://ingest-CLUSTERHOSTNAME;Fed=True" -database:"DATABASE" -table:EntraAccessPackages -sourcepath:"." -pattern:"EntraAccessPackages.json" -format:multijson -azcli:true
-```
-
-## Query data in Azure Monitor
-
-If you are sending the audit, sign-in or other Microsoft Entra logs to Azure Monitor, then you can incorporate those logs from that Azure Monitor Log Analytics workspace in your queries. For more information on the relationship of Azure Monitor and Azure Data Explorer, see [Query data in Azure Monitor using Azure Data Explorer](/azure/data-explorer/query-monitor-data).
-
- 1. Sign-in to the Microsoft Entra admin center.
- 1. Select [diagnostic settings](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/DiagnosticSettingsMenuBlade/~/General).
- 1. Select the Log Analytics workplace where you are sending your logs.
- 1. On the Log Analytics workspace overview, record the Subscription ID, Resource group name, and Workspace Name of the workspace.
- 1. Sign-in to the Azure portal.
- 1. Navigate to the [Azure Data Explorer web UI](https://dataexplorer.azure.com/home).
- 1. Ensure your Azure Data Explorer cluster is listed.
- 1. Select **+ Add** then **Connection**.
- 1. In the *Add Connection* window, type in the URL to the Log Analytics workspace, formed from the cloud-specific hostname, subscription ID, resource group name, and Workspace Name of the Azure Monitor Log Analytics workspace, as described in [Add a Log Analytics workspace](/azure/data-explorer/query-monitor-data#add-a-log-analytics-workspaceapplication-insights-resource-to-azure-data-explorer-client-tools).
- 1. After the connection is established, your Log Analytics workspace will appear in the left pane with your native Azure Data Explorer cluster.
- 1. From the left menu, select **Query**, and select your Azure Data Explorer cluster.
- 1. In the query pane, you can then refer to the Azure Monitor tables containing the Microsoft Entra logs in your Azure Data Explorer queries. For example:
-
-    ```kusto
-    let CL1 = 'https://ade.loganalytics.io/subscriptions/*subscriptionid*/resourcegroups/*resourcegroupname*/providers/microsoft.operationalinsights/workspaces/*workspacename*';
-    cluster(CL1).database('*workspacename*').AuditLogs | where Category == "EntitlementManagement"  and OperationName == "Fulfill access package assignment request"
-    | mv-expand TargetResources | where TargetResources.type == 'AccessPackage' | project ActivityDateTime,APID = toguid(TargetResources.id)
-    | join EntraAccessPackage on $left.APID == $right.Id
-    | limit 100
-    ```
-
-## Bring in data from other sources
-
-You can also [create additional tables](/azure/data-explorer/create-table-wizard) in Azure Data Explorer to ingest data from other sources. If the data is in a JSON file, similar to the examples above, or a CSV file, then you can create the table at the time you first [get data from the file](/azure/data-explorer/get-data-file). One the table is created, you can also [use LightIngest to ingest data into Azure Data Explorer](/azure/data-explorer/lightingest) from a JSON or CSV file.
-
-For more information on data ingestion, see [Azure Data Explorer data ingestion overview](/azure/data-explorer/ingest-data-overview).
-
-### Example 4: Combine App Assignments from an Entra and a second source to create a report of all users who had access to an application between two dates
-
-This report illustrates how you can combine data from two separate systems to create custom reports in Azure Data Explorer. It aggregates data about users, their roles, and other attributes from two systems into a unified format for analysis or reporting. 
-
-This example assumes there's a table named `salesforceAssignments` with columns `UserName`, `Name`, `EmployeeId`, `Department`, `JobTitle`, `AppName`, `Role`, and `CreatedDateTime` that has been populated by bringing in data from another application.
-
-
-```kusto
-// Define the date range and service principal ID for the query 
-
-let startDate = datetime("2023-06-01"); 
-let endDate = datetime("2024-03-13"); 
-let servicePrincipalId = "<your service principal-id>"; 
-
-// Pre-process AppRoleAssignments with specific filters and projections 
-let processedAppRoleAssignments = AppRoleAssignments 
-    | where ResourceId == servicePrincipalId and todatetime(CreatedDateTime) between (startDate .. endDate) 
-    | extend AppRoleId = tostring(AppRoleId) 
-    | project PrincipalId, AppRoleId, CreatedDateTime, ResourceDisplayName; // Exclude DeletedDateTime and keep ResourceDisplayName 
-
-// Pre-process AppRoles to get RoleDisplayName for each role 
-let processedAppRoles = AppRoles 
-    | mvexpand AppRoles 
-    | project AppRoleId = tostring(AppRoles.Id), RoleDisplayName = tostring(AppRoles.DisplayName); 
-
-// Main query: Process EntraUsers by joining with processed role assignments and roles 
-EntraUsers 
-    | join kind=inner processedAppRoleAssignments on $left.ObjectID == $right.PrincipalId // Join with role assignments 
-    | join kind=inner processedAppRoles on $left.AppRoleId == $right.AppRoleId // Join with roles to get display names 
-
-    // Summarize to get the latest record for each unique combination of user and role attributes 
-    | summarize arg_max(AccountEnabled, *) by UserPrincipalName, DisplayName, tostring(EmployeeId), Department, JobTitle, ResourceDisplayName, RoleDisplayName, CreatedDateTime 
-
-    // Final projection of relevant fields including source indicator and report date 
-    | project UserPrincipalName, DisplayName, EmployeeId=tostring(EmployeeId), Department, JobTitle, AccountEnabled=tostring(AccountEnabled), ResourceDisplayName, RoleDisplayName, CreatedDateTime, Source="EntraUsers", ReportDate = now() 
-
-// Union with processed salesforceAssignments to create a combined report 
-| union ( 
-    salesforceAssignments 
-
-    // Project fields from salesforceAssignments to align with the EntraUsers data structure 
-    | project UserPrincipalName = UserName, DisplayName = Name, EmployeeId = tostring(EmployeeId), Department, JobTitle, AccountEnabled = "N/A", ResourceDisplayName = AppName, RoleDisplayName = Role, CreatedDateTime, Source = "salesforceAssignments", ReportDate = now() 
-) 
-``` 
-## Export all Access Review definitions, instances, and decisions for specific dates
-To export all Access Review definitions, instances, and decisions into a structured folder format using PowerShell, you can utilize the Microsoft Graph API. This approach ensures that your data is organized hierarchically, aligning with the specified folder structure. 
-
-Before you begin be aware of the following:
-
-- Ensure you have the necessary permissions to access Access Reviews data in Microsoft Graph. 
-- Depending on the volume of data, the script's execution time may vary. Monitor the process and adjust parameters as needed. 
-- Regularly update the Microsoft Graph PowerShell module to benefit from the latest features and fixes. 
-
-Use the following steps to export the Access Review data and import it.
-
- 1. Open PowerShell.
- 2. If you don't have all the [Microsoft Graph PowerShell modules](https://www.powershellgallery.com/packages/Microsoft.Graph) already installed, install the required Microsoft Graph modules. If you already have these modules installed, then continue at the next step.
-
-```powershell
-   $modules = @('Microsoft.Graph') 
-   foreach ($module in $modules) { 
-   Install-Module -Name $module -Scope CurrentUser 
-   } 
-```  
-  
- 3. Import the modules into the current PowerShell session. 
- 
-```powershell
-   $modules = @('Microsoft.Graph') 
-   foreach ($module in $modules) { 
-   Import-Module -Name $module 
-   } 
-``` 
- 4. Connect to Microsoft Graph.
- 
-```powershell
-   $Scopes = @( "AccessReview.Read.All" ) 
-  Connect-MgGraph -Scopes $Scopes
-  -ContextScope Process -NoWelcome
-``` 
-5. Run the [ExportAccessReviews.ps1](https://github.com/microsoft/Entra-reporting/blob/main/PowerShell/Export_Access_Reviews.ps1) script using the following command which will output all data into three sub-folders ReviewInstances, ReviewInstanceDecisionItems and ReviewInstanceContactedReviewers 
-
-```powershell
- .\ExportAccessReviews.ps1 -InstanceStartDate "11/15/2024" -InstanceEndDate "12/15/2024" -ExportFolder "C:\AccessReviewsExport\11_15_to_12_15" 
-``` 
-6. [Configure ADX](#3-create-tables-and-import-json-files-with-data-from-microsoft-entra-id-into-azure-data-explorer) and upload all files from **ReviewInstances** folder to a table called **ReviewInstances**. Make sure all files are uploaded.
-7. Next, repeat the previous step to upload all the files from the folder **ReviewInstanceDecisionItems** to a table called **ReviewInstanceDecisionItems** and **ReviewInstanceContactedReviewers** to a table called **ReviewInstanceContactedReviewers**. Make sure all files are uploaded 
-
-
-
-### Review Completion & Timeline Information 
+#### Review Completion & Timeline Information 
 Once the data has been uploaded, use the following Kusto queries to review it.
 
 - When was the last access review cycle completed? How long did it take? 
@@ -690,7 +574,7 @@ ReviewInstances
          TimeSinceLastReview = datetime_diff('day', now(), LastReviewEndDate) 
 | extend IsOnSchedule = iff(TimeSinceLastReview <= 90, "Yes", "No") // Assuming quarterly = 90 days  
 ```
-### Review Participation & Engagement 
+#### Review Participation & Engagement 
 
 - Who were the reviewers assigned? 
 
@@ -807,7 +691,7 @@ TotalReviewers
 | join kind=leftanti RespondedReviewers on $left.ReviewerId == $right.RespondedReviewerId 
 | project AccessReviewDefinitionId, AccessReviewInstanceId, ReviewerUserPrincipalName, ReviewerName, RemindersSent, ReminderSentDate 
 ```
-### Users & Access Changes 
+#### Users & Access Changes 
 
 - Who lost access to specific resources during the access review? 
 
@@ -856,7 +740,7 @@ ReviewInstances
 ) on $left.ReviewInstanceId == $right.AccessReviewInstanceId 
 ```
 
-### Review Decision Data 
+#### Review Decision Data 
 
 - Decisions made: Approved, Denied, or Unchanged. 
 
@@ -878,7 +762,7 @@ ReviewInstanceDecisionItems
 | summarize count() by ReviewedBy_DisplayName 
 ```
 
-### Access Review Quality and Compliance Checks 
+#### Access Review Quality and Compliance Checks 
 
 - Were access revocations considered for dormant users? 
 
@@ -912,9 +796,96 @@ ReviewInstanceDecisionItems
   
   
 
-  
+## Set up ongoing imports
+
+This tutorial illustrates a one-time data extract, transform, and load (ETL) process to populate Azure Data Explorer with a single snapshot for reporting purposes. For ongoing reporting or to compare changes over time, you can automate the process of populating Azure Data Explorer from Microsoft Entra, so that your database continues to have current data.
+
+You can use [Azure Automation](/azure/automation/overview), an Azure cloud service, to host the PowerShell scripts needed to extract data from Microsoft Entra ID and Microsoft Entra ID Governance. For more information, see [Automate Microsoft Entra ID Governance tasks with Azure Automation](identity-governance-automation.md).
+
+You can also use Azure features or command line tools such as `lightingest` to bring in data and populate an already existing table. For more information, see [use LightIngest to ingest data into Azure Data Explorer](/azure/data-explorer/lightingest).
+
+For example, to load a file `EntraAccessPackages.json` in the current directory into the `EntraAccessPackages` table as the currently logged-in user:
+
+```azurecli
+az login
+LightIngest.exe "https://ingest-CLUSTERHOSTNAME;Fed=True" -database:"DATABASE" -table:EntraAccessPackages -sourcepath:"." -pattern:"EntraAccessPackages.json" -format:multijson -azcli:true
+```
+
+## Query data in Azure Monitor
+
+If you are sending the audit, sign-in or other Microsoft Entra logs to Azure Monitor, then you can incorporate those logs from that Azure Monitor Log Analytics workspace in your queries. For more information on the relationship of Azure Monitor and Azure Data Explorer, see [Query data in Azure Monitor using Azure Data Explorer](/azure/data-explorer/query-monitor-data).
+
+ 1. Sign-in to the Microsoft Entra admin center.
+ 1. Select [diagnostic settings](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/DiagnosticSettingsMenuBlade/~/General).
+ 1. Select the Log Analytics workplace where you are sending your logs.
+ 1. On the Log Analytics workspace overview, record the Subscription ID, Resource group name, and Workspace Name of the workspace.
+ 1. Sign-in to the Azure portal.
+ 1. Navigate to the [Azure Data Explorer web UI](https://dataexplorer.azure.com/home).
+ 1. Ensure your Azure Data Explorer cluster is listed.
+ 1. Select **+ Add** then **Connection**.
+ 1. In the *Add Connection* window, type in the URL to the Log Analytics workspace, formed from the cloud-specific hostname, subscription ID, resource group name, and Workspace Name of the Azure Monitor Log Analytics workspace, as described in [Add a Log Analytics workspace](/azure/data-explorer/query-monitor-data#add-a-log-analytics-workspaceapplication-insights-resource-to-azure-data-explorer-client-tools).
+ 1. After the connection is established, your Log Analytics workspace will appear in the left pane with your native Azure Data Explorer cluster.
+ 1. From the left menu, select **Query**, and select your Azure Data Explorer cluster.
+ 1. In the query pane, you can then refer to the Azure Monitor tables containing the Microsoft Entra logs in your Azure Data Explorer queries. For example:
+
+    ```kusto
+    let CL1 = 'https://ade.loganalytics.io/subscriptions/*subscriptionid*/resourcegroups/*resourcegroupname*/providers/microsoft.operationalinsights/workspaces/*workspacename*';
+    cluster(CL1).database('*workspacename*').AuditLogs | where Category == "EntitlementManagement"  and OperationName == "Fulfill access package assignment request"
+    | mv-expand TargetResources | where TargetResources.type == 'AccessPackage' | project ActivityDateTime,APID = toguid(TargetResources.id)
+    | join EntraAccessPackage on $left.APID == $right.Id
+    | limit 100
+    ```
+
+## Bring in data from other sources
+
+You can also [create additional tables](/azure/data-explorer/create-table-wizard) in Azure Data Explorer to ingest data from other sources. If the data is in a JSON file, similar to the examples above, or a CSV file, then you can create the table at the time you first [get data from the file](/azure/data-explorer/get-data-file). One the table is created, you can also [use LightIngest to ingest data into Azure Data Explorer](/azure/data-explorer/lightingest) from a JSON or CSV file.
+
+For more information on data ingestion, see [Azure Data Explorer data ingestion overview](/azure/data-explorer/ingest-data-overview).
+
+### Example 5: Combine App Assignments from an Entra and a second source to create a report of all users who had access to an application between two dates
+
+This report illustrates how you can combine data from two separate systems to create custom reports in Azure Data Explorer. It aggregates data about users, their roles, and other attributes from two systems into a unified format for analysis or reporting. 
+
+This example assumes there's a table named `salesforceAssignments` with columns `UserName`, `Name`, `EmployeeId`, `Department`, `JobTitle`, `AppName`, `Role`, and `CreatedDateTime` that has been populated by bringing in data from another application.
 
 
+```kusto
+// Define the date range and service principal ID for the query 
+
+let startDate = datetime("2023-06-01"); 
+let endDate = datetime("2024-03-13"); 
+let servicePrincipalId = "<your service principal-id>"; 
+
+// Pre-process AppRoleAssignments with specific filters and projections 
+let processedAppRoleAssignments = AppRoleAssignments 
+    | where ResourceId == servicePrincipalId and todatetime(CreatedDateTime) between (startDate .. endDate) 
+    | extend AppRoleId = tostring(AppRoleId) 
+    | project PrincipalId, AppRoleId, CreatedDateTime, ResourceDisplayName; // Exclude DeletedDateTime and keep ResourceDisplayName 
+
+// Pre-process AppRoles to get RoleDisplayName for each role 
+let processedAppRoles = AppRoles 
+    | mvexpand AppRoles 
+    | project AppRoleId = tostring(AppRoles.Id), RoleDisplayName = tostring(AppRoles.DisplayName); 
+
+// Main query: Process EntraUsers by joining with processed role assignments and roles 
+EntraUsers 
+    | join kind=inner processedAppRoleAssignments on $left.ObjectID == $right.PrincipalId // Join with role assignments 
+    | join kind=inner processedAppRoles on $left.AppRoleId == $right.AppRoleId // Join with roles to get display names 
+
+    // Summarize to get the latest record for each unique combination of user and role attributes 
+    | summarize arg_max(AccountEnabled, *) by UserPrincipalName, DisplayName, tostring(EmployeeId), Department, JobTitle, ResourceDisplayName, RoleDisplayName, CreatedDateTime 
+
+    // Final projection of relevant fields including source indicator and report date 
+    | project UserPrincipalName, DisplayName, EmployeeId=tostring(EmployeeId), Department, JobTitle, AccountEnabled=tostring(AccountEnabled), ResourceDisplayName, RoleDisplayName, CreatedDateTime, Source="EntraUsers", ReportDate = now() 
+
+// Union with processed salesforceAssignments to create a combined report 
+| union ( 
+    salesforceAssignments 
+
+    // Project fields from salesforceAssignments to align with the EntraUsers data structure 
+    | project UserPrincipalName = UserName, DisplayName = Name, EmployeeId = tostring(EmployeeId), Department, JobTitle, AccountEnabled = "N/A", ResourceDisplayName = AppName, RoleDisplayName = Role, CreatedDateTime, Source = "salesforceAssignments", ReportDate = now() 
+) 
+``` 
 
 
 
