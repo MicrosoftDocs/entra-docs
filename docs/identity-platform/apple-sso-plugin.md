@@ -200,6 +200,9 @@ To *disable* SSO for Safari or Safari View Service, you must explicitly do so by
 - iOS: `com.apple.mobilesafari`, `com.apple.SafariViewService`
 - macOS: `com.apple.Safari`
 
+>[!NOTE]
+> SSO cannot be disabled for apps that use a Microsoft Authentication Library using this setting.
+
 #### Enable SSO through cookies for a specific application
 
 Some iOS apps that have advanced network settings might experience unexpected issues when they're enabled for SSO. For example, you might see an error indicating that a network request was canceled or interrupted.
@@ -219,6 +222,9 @@ If your users have problems signing in to an application even after you've enabl
 Try this configuration only for applications that have unexpected sign-in failures. This key is to be used only for iOS apps and not for macOS apps.
 
 #### Summary of keys
+
+>[!NOTE]
+> Keys described in this section only apply to apps that are not using a Microsoft Authentication Library.
 
 | Key | Type | Value |
 |--|--|--|
