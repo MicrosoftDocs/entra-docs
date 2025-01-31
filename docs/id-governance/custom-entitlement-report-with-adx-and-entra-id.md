@@ -556,7 +556,7 @@ If you are sending the audit, sign-in or other Microsoft Entra logs to Azure Mon
  1. Select [diagnostic settings](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/DiagnosticSettingsMenuBlade/~/General).
  1. Select the Log Analytics workplace where you are sending your logs.
  1. On the Log Analytics workspace overview, record the Subscription ID, Resource group name, and Workspace Name of the workspace.
- 1. Sign-in to the Azure Portal.
+ 1. Sign-in to the Azure portal.
  1. Navigate to the [Azure Data Explorer web UI](https://dataexplorer.azure.com/home).
  1. Ensure your Azure Data Explorer cluster is listed.
  1. Select **+ Add** then **Connection**.
@@ -652,20 +652,20 @@ Use the following steps to export the Access Review data and import it.
    Import-Module -Name $module 
    } 
 ``` 
- 3. Connect to Microsoft Graph.
+ 4. Connect to Microsoft Graph.
  
 ```powershell
    $Scopes = @( "AccessReview.Read.All" ) 
   Connect-MgGraph -Scopes $Scopes
   -ContextScope Process -NoWelcome
 ``` 
-4. Run the [ExportAccessReviews.ps1](https://github.com/microsoft/Entra-reporting/blob/main/PowerShell/Export_Access_Reviews.ps1) script using the following command which will output all data into three sub-folders ReviewInstances, ReviewInstanceDecisionItems and ReviewInstanceContactedReviewers 
+5. Run the [ExportAccessReviews.ps1](https://github.com/microsoft/Entra-reporting/blob/main/PowerShell/Export_Access_Reviews.ps1) script using the following command which will output all data into three sub-folders ReviewInstances, ReviewInstanceDecisionItems and ReviewInstanceContactedReviewers 
 
 ```powershell
  .\ExportAccessReviews.ps1 -InstanceStartDate "11/15/2024" -InstanceEndDate "12/15/2024" -ExportFolder "C:\AccessReviewsExport\11_15_to_12_15" 
 ``` 
-5. [Configure ADX](#3-create-tables-and-import-json-files-with-data-from-microsoft-entra-id-into-azure-data-explorer) and upload all files from **ReviewInstances** folder to a table called **ReviewInstances**. Make sure all files are uploaded.
-6. Next, repeat the previous step to upload all the files from the folder **ReviewInstanceDecisionItems** to a table called **ReviewInstanceDecisionItems** and **ReviewInstanceContactedReviewers** to a table called **ReviewInstanceContactedReviewers**. Make sure all files are uploaded 
+6. [Configure ADX](#3-create-tables-and-import-json-files-with-data-from-microsoft-entra-id-into-azure-data-explorer) and upload all files from **ReviewInstances** folder to a table called **ReviewInstances**. Make sure all files are uploaded.
+7. Next, repeat the previous step to upload all the files from the folder **ReviewInstanceDecisionItems** to a table called **ReviewInstanceDecisionItems** and **ReviewInstanceContactedReviewers** to a table called **ReviewInstanceContactedReviewers**. Make sure all files are uploaded 
 
 
 
