@@ -118,7 +118,7 @@ The following table lists the tasks that the entitlement management roles can do
 | [Hide an access package](entitlement-management-access-package-edit.md#change-the-hidden-setting) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  |
 | [Delete an access package](entitlement-management-access-package-edit.md#delete-an-access-package) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  |
 
-To determine the least privileged role for a task, you can also reference [Least privileged roles by task in Microsoft Entra ID](../identity/role-based-access-control/delegate-by-task.md#entitlement-management-and-least-privileged-roles).
+To determine the least privileged role for a task, you can also reference [Least privileged roles by task in Microsoft Entra ID](../identity/role-based-access-control/delegate-by-task.md#entitlement-management-least-privileged-roles).
 
 > [!NOTE]
 > Users that have been assigned the Access package assignment manager role will no longer be able to bypass approval settings when directly assigning a user if the access package policy requires approval. If you have a scenario in which you need to bypass approval, we recommend creating a second policy on the access package that does not require approval and is scoped only to users who need access.

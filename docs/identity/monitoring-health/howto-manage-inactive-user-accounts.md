@@ -32,7 +32,7 @@ To access the `lastSignInDateTime` property using Microsoft Graph:
   - User.Read.All
 
 - [Reports Reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader) is the least privileged role required to access the activity logs.
-    - For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs-and-least-privileged-roles).
+    - For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs-least-privileged-roles).
 
 ## What are inactive user accounts?
 
