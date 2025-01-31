@@ -27,7 +27,7 @@ This solution is for testing purposes and should **NOT be used in a production e
     - You can use the React app described in [Quickstart: Sign in users into a sample React SPA by using native authentication API](quickstart-native-authentication-single-page-app-react-sign-in.md). However, don't configure or run the proxy server, as this guide covers that set-up.
     - Once you run the app, record the app URL for later use in this guide.
 
-## Create reverse proxy in an Azure function app by using ARM template
+## Create reverse proxy in an Azure function app by using Azure Resource Manager template
 
 1. [Create a Resource Group](/azure/azure-resource-manager/management/manage-resource-groups-cli#create-resource-groups) using `az group create`
 
@@ -41,7 +41,7 @@ This solution is for testing purposes and should **NOT be used in a production e
 
     Wait for this process to complete before creating the function app.
 
-1. Get an Azure Resource Manager (ARM) template:
+1. Get the Azure Resource Manager (ARM) template:
 
     1. Clone a sample SPA that contains the ARM template:
 

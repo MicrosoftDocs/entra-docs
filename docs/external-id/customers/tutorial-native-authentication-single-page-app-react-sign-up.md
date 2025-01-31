@@ -34,8 +34,11 @@ In this tutorial, you learn how to:
 1. In a location of choice in your computer, run the following commands to create a new React project with the name *reactspa*, navigate into the project folder, then install packages:
 
     ```powershell
+    npm config set legacy-peer-deps true
     npx create-react-app reactspa --template typescript
     cd reactspa
+    npm install ajv
+    npm installreact-router-dom
     npm install
     ```
 
@@ -62,7 +65,7 @@ export const ENV = {
 
 - The `BASE_API_URL` points to a [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/docs/Web/HTTP/CORS) proxy server, which we set up later in this tutorial series. Native authentication API doesn't support  CORS, so we set up a CORS proxy server between the React SPA and the Native authentication API to manage the CORS headers.
 
-## Set up react app to call native authentication API and handle response
+## Set up React app to call native authentication API and handle response
 
 To complete an authentication flow, such as a sign-up flow, with the native authentication APIs, the app makes calla dn handles response. For example, the app initiates a sign-up flow and waits for a response then it submits user attributes and waits again until the user is successfully signed up.
 
@@ -108,6 +111,8 @@ In this section, you define how to make calls to the native authentication and h
     return await response.json();
     };
     ```
+
+    This code defines how the app makes calls to the native authentication API and handling the responses. Whenever the app needs to initiate an authentication flow, it uses the `postRequest` function by specifying the URL and payload data.
 
 ### Define types of calls the app makes to the native authentication API
 
@@ -391,6 +396,44 @@ This app collects user details such as given name, surname (email), and  passwor
 
     This page displays a success message and a button to take the user to the sign-in page after they successfully sign up.
 
+1. Open the *src/App.tsx* file, then replace its contents with the following code:
+
+    ```typescript
+    import React from "react";
+    import { BrowserRouter, Link } from "react-router-dom";
+    import "./App.css";
+    import { AppRoutes } from "./AppRoutes";
+    
+    function App() {
+      return (
+        <div className="App">
+          <BrowserRouter>
+            <header>
+              <nav>
+                <ul>
+                  <li>
+                    <Link to="/signup">Sign Up</Link>
+                  </li>
+                  <li>
+                    <Link to="/signin">Sign In</Link>
+                  </li>
+                  <li>
+                    <Link to="/reset">Reset Password</Link>
+                  </li>
+                </ul>
+              </nav>
+            </header>
+            <AppRoutes />
+          </BrowserRouter>
+        </div>
+      );
+    }
+    
+    export default App;
+    ```
+
+      
+
 1. To display the React app properly:
 
     1. Open the *src/App.css* file, then add the following property in the `App-header` class:
@@ -399,7 +442,7 @@ This app collects user details such as given name, surname (email), and  passwor
         min-height: 100vh;
         ```
 
-    1. Open the *src/Index.css* file, then add code from [src/index.css](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/API/React/ReactAuthSimple/src/index.css)
+    1. Open the *src/Index.css* file, then replace its contents with code from [src/index.css](https://github.com/Azure-Samples/ms-identity-ciam-native-javascript-samples/blob/main/API/React/ReactAuthSimple/src/index.css)
 
 ### Add app routes
 
