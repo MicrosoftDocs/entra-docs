@@ -22,8 +22,8 @@ Similar to cloud apps, on-premises apps that support provisioning or federation,
 
 Traditionally, Entra Application Proxy has been used to provide secure remote access to on-premises web-based applications without requiring a VPN. Users working remotely may still need access to non-web-based apps which traditionally require a VPN for protocols like MSSQL, SSH, or RDP. This presents two key issues: 
 
- 1. Most VPNs give access to the entire network
- 2. Some VPNs historically give access to anyone with a client and don't check the user's authorized need for access. 
+ - Most VPNs give access to the entire network
+ - Some VPNs historically give access to anyone with a client and don't check the user's authorized need for access. 
 
 ## Common Scenarios 
 
@@ -64,7 +64,7 @@ With the user’s access provisioned, they can now securely connect to the on-pr
 
 Organizations may have legacy applications that don’t support any provisioning protocols or modern authentication protocols like Kerberos or SAML. ​In these scenarios, organizations can​ manually provision users to the app and then put the app into a separate network segment (a VLAN) along with its dependences and the Entra Private Access proxy. This prevents users, even on premises, from connecting to the app. 
 
-Users can then request access to the protected app. Once approved, Entra ID Governance opens a service ticket (e.g., in ServiceNow) for the app owner to manually give the employee an account in that system (../entitlement-management-ticketed-provisioning.md). Entra ID Governance then assigns the user to the representation of the app in Entra.  
+Users can then request access to the protected app. Once approved, Entra ID Governance opens a service ticket (e.g., in ServiceNow) for the app owner to manually give the employee [an account in that system](../entitlement-management-ticketed-provisioning.md). Entra ID Governance then assigns the user to the representation of the app in Entra.  
  
 Now, when the employee connects to the app from their PC, Entra Private Access automatically tunnels their connection securely from their PC to the protected app.  
  
