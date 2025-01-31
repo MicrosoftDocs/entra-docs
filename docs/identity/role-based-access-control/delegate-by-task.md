@@ -19,7 +19,7 @@ This article describes the least privileged role you should use for several task
 
 You can further restrict permissions by assigning roles at smaller scopes or by creating your own custom roles. For more information, see [Assign Microsoft Entra roles](manage-roles-portal.md) or [Create a custom role in Microsoft Entra ID](custom-create.md).
 
-## Application proxy and least privileged roles
+## Application proxy least privileged roles
 
 Here are the least privileged roles you should use when performing tasks in [Microsoft Entra application proxy](../app-proxy/overview-what-is-app-proxy.md).
 
@@ -35,7 +35,7 @@ Here are the least privileged roles you should use when performing tasks in [Mic
 > | Download connector service | [Application Administrator](permissions-reference.md#application-administrator) |  |
 > | Read all configuration | [Application Administrator](permissions-reference.md#application-administrator) |  |
 
-## External Identities/Azure AD B2C and least privileged roles
+## External Identities/Azure AD B2C least privileged roles
 
 Here are the least privileged roles you should use when performing tasks in [Microsoft Entra External ID](../../external-id/external-identities-overview.md) and [Azure Active Directory B2C](/azure/active-directory-b2c/overview).
 
@@ -62,7 +62,7 @@ Here are the least privileged roles you should use when performing tasks in [Mic
 > [!NOTE]
 > Azure AD B2C Global Administrators do not have the same permissions as Microsoft Entra Global Administrators. If you have Azure AD B2C Global Administrator privileges, make sure that you are in an Azure AD B2C directory and not a Microsoft Entra directory.
 
-## Company branding and least privileged roles
+## Company branding least privileged roles
 
 Here are the least privileged roles you should use when performing tasks for [company branding](../../fundamentals/how-to-customize-branding.md) in Microsoft Entra ID.
 
@@ -72,7 +72,7 @@ Here are the least privileged roles you should use when performing tasks for [co
 > | Configure company branding | [Organizational Branding Administrator](permissions-reference.md#organizational-branding-administrator) |  |
 > | Read all configuration | [Directory Readers](permissions-reference.md#directory-readers) | [Default user role](../../fundamentals/users-default-permissions.md) |
 
-## Connect and least privileged roles
+## Connect least privileged roles
 
 Here are the least privileged roles you should use when performing tasks in [Microsoft Entra Connect](../hybrid/connect/whatis-azure-ad-connect.md).
 
@@ -83,7 +83,7 @@ Here are the least privileged roles you should use when performing tasks in [Mic
 > | Read all configuration | [Global Reader](permissions-reference.md#global-reader) | [Hybrid Identity Administrator](permissions-reference.md#hybrid-identity-administrator) |
 > | Seamless single sign-on | [Hybrid Identity Administrator](permissions-reference.md#hybrid-identity-administrator) |  |
 
-## Connect Sync and least privileged roles
+## Connect Sync least privileged roles
 
 Here are the least privileged roles you should use when performing tasks in [Microsoft Entra Connect Sync](../hybrid/connect/how-to-connect-sync-whatis.md).
 
@@ -92,7 +92,7 @@ Here are the least privileged roles you should use when performing tasks in [Mic
 > | ---- | --------------------- | ---------------- |
 > | Manage on-premises directory synchronization | [Hybrid Identity Administrator](permissions-reference.md#hybrid-identity-administrator) |  |
 
-## Cloud Provisioning and least privileged roles
+## Cloud Provisioning least privileged roles
 
 Here are the least privileged roles you should use when performing tasks for [identity provisioning](../hybrid/what-is-provisioning.md) in Microsoft Entra ID.
 
@@ -103,7 +103,7 @@ Here are the least privileged roles you should use when performing tasks for [id
 > | Read all configuration | [Global Reader](permissions-reference.md#global-reader) | [Hybrid Identity Administrator](permissions-reference.md#hybrid-identity-administrator) |
 > | Seamless single sign-on | [Hybrid Identity Administrator](permissions-reference.md#hybrid-identity-administrator) |  |
 
-## Connect Health and least privileged roles
+## Connect Health least privileged roles
 
 Here are the least privileged roles you should use when performing tasks in [Microsoft Entra Connect Health](../hybrid/connect/whatis-azure-ad-connect.md).
 
@@ -123,7 +123,7 @@ Here are the least privileged roles you should use when performing tasks in [Mic
 > | View metrics and alerts | [Reader](/azure/role-based-access-control/built-in-roles#reader) | [Contributor](/azure/role-based-access-control/built-in-roles#contributor)<br/>[Owner](/azure/role-based-access-control/built-in-roles#owner) |
 > | View sync service metrics and alerts | [Reader](/azure/role-based-access-control/built-in-roles#reader) | [Contributor](/azure/role-based-access-control/built-in-roles#contributor)<br/>[Owner](/azure/role-based-access-control/built-in-roles#owner) |
 
-## Custom domain names and least privileged roles
+## Custom domain names least privileged roles
 
 Here are the least privileged roles you should use when performing tasks for [custom domain names](../../fundamentals/add-custom-domain.yml) in Microsoft Entra ID.
 
@@ -133,7 +133,7 @@ Here are the least privileged roles you should use when performing tasks for [cu
 > | Manage domains | [Domain Name Administrator](permissions-reference.md#domain-name-administrator) |  |
 > | Read all configuration | [Directory Readers](permissions-reference.md#directory-readers) | [Default user role](../../fundamentals/users-default-permissions.md) |
 
-## Domain Services and least privileged roles
+## Domain Services least privileged roles
 
 Here are the least privileged roles you should use when performing tasks in [Microsoft Entra Domain Services](../domain-services/overview.md).
 
@@ -144,7 +144,7 @@ Here are the least privileged roles you should use when performing tasks in [Mic
 > | Perform all Microsoft Entra Domain Services tasks | [AAD DC Administrators group](../domain-services/tutorial-create-management-vm.md#administrative-tasks-you-can-perform-on-a-managed-domain) |  |
 > | Read all configuration | Reader on Azure subscription containing AD DS service |  |
 
-## Devices and least privileged roles
+## Devices least privileged roles
 
 Here are the least privileged roles you should use when performing tasks for [device identity](../devices/overview.md) in Microsoft Entra ID.
 
@@ -157,7 +157,7 @@ Here are the least privileged roles you should use when performing tasks for [de
 > | Read basic configuration | [Default user role](../../fundamentals/users-default-permissions.md) |  |
 > | Read BitLocker keys | [Cloud Device Administrator](permissions-reference.md#cloud-device-administrator) | [Helpdesk Administrator](permissions-reference.md#helpdesk-administrator)<br/>[Intune Administrator](permissions-reference.md#intune-administrator)<br/>[Security Administrator](permissions-reference.md#security-administrator)<br/>[Security Reader](permissions-reference.md#security-reader) |
 
-## Enterprise applications and least privileged roles
+## Enterprise applications least privileged roles
 
 Here are the least privileged roles you should use when performing tasks for [application management](../enterprise-apps/what-is-application-management.md) in Microsoft Entra ID.
 
@@ -180,7 +180,7 @@ Here are the least privileged roles you should use when performing tasks for [ap
 > | Update single sign-on properties | [Enterprise application owner](../../fundamentals/users-default-permissions.md#object-ownership) | [Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Application Administrator](permissions-reference.md#application-administrator) |
 > | Create and modify custom authentication extensions | [Authentication Extensibility Administrator](permissions-reference.md#authentication-extensibility-administrator) | [Application Administrator](permissions-reference.md#application-administrator) |
 
-## Entitlement management and least privileged roles
+## Entitlement management least privileged roles
 
 Here are the least privileged roles you should use when performing tasks for [entitlement management](../../id-governance/entitlement-management-overview.md) in Microsoft Entra ID Governance.
 
@@ -189,7 +189,7 @@ Here are the least privileged roles you should use when performing tasks for [en
 > | ---- | --------------------- | ---------------- |
 > | Tasks in Entitlement Management | [Identity Governance Administrator](permissions-reference.md#identity-governance-administrator). For roles lesser privlege than this within the Entitlement Management system, see: [Delegation and roles in entitlement management](../../id-governance/entitlement-management-delegate.md). | |
 
-## Groups and least privileged roles
+## Groups least privileged roles
 
 Here are the least privileged roles you should use when performing tasks for [groups](../../fundamentals/how-to-manage-groups.yml) in Microsoft Entra ID.
 
@@ -210,7 +210,7 @@ Here are the least privileged roles you should use when performing tasks for [gr
 > | Update group properties | [Group owner](../../fundamentals/users-default-permissions.md#object-ownership) | [User Administrator](permissions-reference.md#user-administrator) |
 > | Delete group | [Groups Administrator](permissions-reference.md#groups-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
 
-## Licenses and least privileged roles
+## Licenses least privileged roles
 
 Here are the least privileged roles you should use when performing tasks for [Microsoft Entra licensing](../../fundamentals/licensing.md).
 
@@ -222,7 +222,7 @@ Here are the least privileged roles you should use when performing tasks for [Mi
 > | Revoke license | [License Administrator](permissions-reference.md#license-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
 > | Try or buy subscription | [Billing Administrator](permissions-reference.md#billing-administrator) |  |
 
-## Lifecycle Workflows and least privileged roles
+## Lifecycle Workflows least privileged roles
 
 Here are the least privileged roles you should use when performing tasks for [lifecycle workflows](../../id-governance/what-are-lifecycle-workflows.md) in Microsoft Entra ID Governance.
 
@@ -232,7 +232,7 @@ Here are the least privileged roles you should use when performing tasks for [li
 > | Create a workflow | [Lifecycle workflows Administrator](permissions-reference.md#lifecycle-workflows-administrator) |  |
 > | Add a custom extension to a workflow | [Lifecycle workflows Administrator](permissions-reference.md#lifecycle-workflows-administrator). You must also have either the [Logic App contributor](/azure/role-based-access-control/built-in-roles/integration#logic-app-contributor) or [Owner](/azure/role-based-access-control/built-in-roles/integration#logic-app-operator) Azure Resource Manager role.  |  |
 
-## Microsoft Entra Health and least privileged roles
+## Microsoft Entra Health least privileged roles
 
 Here are the least privileged roles you should use when performing tasks in [Microsoft Entra Health monitoring](../monitoring-health/concept-microsoft-entra-health.md).
 
@@ -243,7 +243,7 @@ Here are the least privileged roles you should use when performing tasks in [Mic
 
 <a name='identity-protection'></a>
 
-## Microsoft Entra ID Protection and least privileged roles
+## Microsoft Entra ID Protection least privileged roles
 
 Here are the least privileged roles you should use when performing tasks in [Microsoft Entra ID Protection](../../id-protection/overview-identity-protection.md).
 
@@ -261,7 +261,7 @@ Here are the least privileged roles you should use when performing tasks in [Mic
 > | Read all risk detections | [Security Reader](permissions-reference.md#security-reader) |  |
 > | Read vulnerabilities | [Security Reader](permissions-reference.md#security-reader) |  |
 
-## Monitoring and health - Audit and sign-in logs and least privileged roles
+## Monitoring and health - Audit and sign-in logs least privileged roles
 
 Here are the least privileged roles you should use when performing tasks for audit and sign-in logs in [Microsoft Entra monitoring](../monitoring-health/overview-monitoring-health.md).
 
@@ -270,7 +270,7 @@ Here are the least privileged roles you should use when performing tasks for aud
 > | ---- | --------------------- | ---------------- |
 > | Read audit logs | [Reports Reader](permissions-reference.md#reports-reader) | [Application Administrator](permissions-reference.md#application-administrator)<br/>[Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Cloud Device Administrator](permissions-reference.md#cloud-device-administrator)<br/>[Global Secure Access Administrator](permissions-reference.md#global-secure-access-administrator)<br/>[Hybrid Identity Administrator](permissions-reference.md#hybrid-identity-administrator)<br/>[Security Administrator](permissions-reference.md#security-administrator)<br/>[Security Operator](permissions-reference.md#security-operator)<br/>[Security Reader](permissions-reference.md#security-reader) |
 
-## Monitoring and health - Provisioning logs and least privileged roles
+## Monitoring and health - Provisioning logs least privileged roles
 
 Here are the least privileged roles you should use when performing tasks for provisioning logs in [Microsoft Entra monitoring](../monitoring-health/overview-monitoring-health.md).
 
@@ -279,7 +279,7 @@ Here are the least privileged roles you should use when performing tasks for pro
 > | ---- | --------------------- | ---------------- |
 > | Read sign-in logs | [Reports Reader](permissions-reference.md#reports-reader) | [Application Administrator](permissions-reference.md#application-administrator)<br/>[Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Cloud Device Administrator](permissions-reference.md#cloud-device-administrator)<br/>[Hybrid Identity Administrator](permissions-reference.md#hybrid-identity-administrator)<br/>[Security Administrator](permissions-reference.md#security-administrator)<br/>[Security Operator](permissions-reference.md#security-operator)<br/>[Security Reader](permissions-reference.md#security-reader) |
 
-## Monitoring and health - Recommendations and least privileged roles
+## Monitoring and health - Recommendations least privileged roles
 
 Here are the least privileged roles you should use when performing tasks for identity recommendations in [Microsoft Entra monitoring](../monitoring-health/overview-monitoring-health.md).
 
@@ -289,7 +289,7 @@ Here are the least privileged roles you should use when performing tasks for ide
 > | Read recommendations | [Reports Reader](permissions-reference.md#reports-reader) | [Security Reader](permissions-reference.md#security-reader)<br/>[Global Reader](permissions-reference.md#global-reader)<br/>[Helpdesk Administrator](permissions-reference.md#helpdesk-administrator)<br/>[Service Support Administrator](permissions-reference.md#service-support-administrator)<br/>[User Administrator](permissions-reference.md#user-administrator) |
 > | Update recommendations | [Authentication Policy Administrator](permissions-reference.md#authentication-policy-administrator) | [Application Administrator](permissions-reference.md#application-administrator)<br/>[Authentication Administrator](permissions-reference.md#authentication-administrator)<br/>[Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Conditional Access Administrator](permissions-reference.md#conditional-access-administrator)<br/>[Exchange Administrator](permissions-reference.md#exchange-administrator)<br/>[Hybrid Identity Administrator](permissions-reference.md#hybrid-identity-administrator)<br/>[Identity Governance Administrator](permissions-reference.md#identity-governance-administrator)<br/>[Privileged Role Administrator](permissions-reference.md#privileged-role-administrator)<br/>[Security Administrator](permissions-reference.md#security-administrator)<br/>[Security Operator](permissions-reference.md#security-operator)<br/>[SharePoint Administrator](permissions-reference.md#sharepoint-administrator) |
 
-## Multifactor authentication and least privileged roles
+## Multifactor authentication least privileged roles
 
 Here are the least privileged roles you should use when performing tasks in [Microsoft Entra authentication](../authentication/overview-authentication.md).
 
@@ -303,7 +303,7 @@ Here are the least privileged roles you should use when performing tasks in [Mic
 > | Require selected users to provide contact methods again | [Authentication Administrator](permissions-reference.md#authentication-administrator) |  |
 > | Restore multifactor authentication on all remembered devices  | [Authentication Administrator](permissions-reference.md#authentication-administrator) |  |
 
-## MFA Server and least privileged roles
+## MFA Server least privileged roles
 
 Here are the least privileged roles you should use when performing tasks in [MFA Server](../authentication/how-to-migrate-mfa-server-to-azure-mfa.md).
 
@@ -323,7 +323,7 @@ Here are the least privileged roles you should use when performing tasks in [MFA
 > | Read all configuration | [Global Reader](permissions-reference.md#global-reader) |  |
 > | Read server status | [Global Reader](permissions-reference.md#global-reader) |  |
 
-## Organizational relationships and least privileged roles
+## Organizational relationships least privileged roles
 
 Here are the least privileged roles you should use when performing tasks for [external collaboration settings](../../external-id/external-collaboration-settings-configure.md) in Microsoft Entra External ID.
 
@@ -333,7 +333,7 @@ Here are the least privileged roles you should use when performing tasks for [ex
 > | Manage identity providers | [External Identity Provider Administrator](permissions-reference.md#external-identity-provider-administrator) |  |
 > | Read all configuration | [Global Reader](permissions-reference.md#global-reader) |  |
 
-## Password reset and least privileged roles
+## Password reset least privileged roles
 
 Here are the least privileged roles you should use when performing tasks for [password reset](../authentication/concept-sspr-howitworks.md) in Microsoft Entra ID.
 
@@ -348,7 +348,7 @@ Here are the least privileged roles you should use when performing tasks for [pa
 > | Configure registration | [Authentication Policy Administrator](permissions-reference.md#authentication-policy-administrator) |  |
 > | Read all configuration | [Security Administrator](permissions-reference.md#security-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
 
-## Permissions management and least privileged roles
+## Permissions management least privileged roles
 
 Here are the least privileged roles you should use when performing tasks in [Microsoft Entra Permissions Management](../../permissions-management/overview.md).
 
@@ -360,7 +360,7 @@ Here are the least privileged roles you should use when performing tasks in [Mic
 > | Assign permissions in Microsoft Entra Permissions Management | [Permissions Management Administrator](permissions-reference.md#permissions-management-administrator) |  |
 > | Start trial and buy Microsoft Entra Permissions Management licenses | [Billing Administrator](permissions-reference.md#billing-administrator) |  |
 
-## Privileged Identity Management and least privileged roles
+## Privileged Identity Management least privileged roles
 
 Here are the least privileged roles you should use when performing tasks for [Microsoft Entra Privileged Identity Management](../../id-governance/privileged-identity-management/pim-configure.md) in Microsoft Entra ID Governance.
 
@@ -372,7 +372,7 @@ Here are the least privileged roles you should use when performing tasks for [Mi
 > | View audit activity | [Security Reader](permissions-reference.md#security-reader) |  |
 > | View role memberships | [Security Reader](permissions-reference.md#security-reader) |  |
 
-## Roles and administrators and least privileged roles
+## Roles and administrators least privileged roles
 
 Here are the least privileged roles you should use when performing tasks for [roles and administrators](manage-roles-portal.md) in Microsoft Entra ID.
 
@@ -383,7 +383,7 @@ Here are the least privileged roles you should use when performing tasks for [ro
 > | Read access review of a Microsoft Entra role  | [Security Reader](permissions-reference.md#security-reader) | [Security Administrator](permissions-reference.md#security-administrator)<br/>[Privileged Role Administrator](permissions-reference.md#privileged-role-administrator) |
 > | Read all configuration | [Default user role](../../fundamentals/users-default-permissions.md) |  |
 
-## Security - Authentication methods and least privileged roles
+## Security - Authentication methods least privileged roles
 
 Here are the least privileged roles you should use when performing tasks for [authentication methods](../authentication/concept-authentication-methods.md) in Microsoft Entra ID.
 
@@ -396,7 +396,7 @@ Here are the least privileged roles you should use when performing tasks for [au
 > | Configure smart lockout | [Security Administrator](permissions-reference.md#security-administrator) |
 > | Read all configuration | [Global Reader](permissions-reference.md#global-reader) |  |
 
-## Security - Conditional Access and least privileged roles
+## Security - Conditional Access least privileged roles
 
 Here are the least privileged roles you should use when performing tasks for [Conditional Access](../conditional-access/overview.md) in Microsoft Entra ID.
 
@@ -421,7 +421,7 @@ Here are the least privileged roles you should use when performing tasks for [Co
 > | Read terms of use | [Security Reader](permissions-reference.md#security-reader) |  [Global Reader](permissions-reference.md#global-reader) |
 > | Read which terms of use were accepted by the signed-in user | [Default user role](../../fundamentals/users-default-permissions.md) |  |
 
-## Security - Identity Security Score and least privileged roles
+## Security - Identity Security Score least privileged roles
 
 Here are the least privileged roles you should use when performing tasks for [Identity Secure Score](../monitoring-health/concept-identity-secure-score.md) in Microsoft Entra ID.
 
@@ -432,7 +432,7 @@ Here are the least privileged roles you should use when performing tasks for [Id
 > | Read security score | [Security Reader](permissions-reference.md#security-reader) | [Security Administrator](permissions-reference.md#security-administrator) |
 > | Update event status | [Security Administrator](permissions-reference.md#security-administrator) |  |
 
-## Security - Risky sign-ins and least privileged roles
+## Security - Risky sign-ins least privileged roles
 
 Here are the least privileged roles you should use when performing tasks for [risky sign-ins](../../id-protection/overview-identity-protection.md) in Microsoft Entra ID Protection.
 
@@ -442,7 +442,7 @@ Here are the least privileged roles you should use when performing tasks for [ri
 > | Read all configuration | [Security Reader](permissions-reference.md#security-reader) |  |
 > | Read risky sign-ins | [Security Reader](permissions-reference.md#security-reader) |  |
 
-## Security - Users flagged for risk and least privileged roles
+## Security - Users flagged for risk least privileged roles
 
 Here are the least privileged roles you should use when performing tasks for [users flagged for risk](../../id-protection/howto-identity-protection-configure-notifications.md) in Microsoft Entra ID Protection.
 
@@ -453,7 +453,7 @@ Here are the least privileged roles you should use when performing tasks for [us
 > | Read all configuration | [Security Reader](permissions-reference.md#security-reader) |  |
 > | Read users flagged for risk | [Security Reader](permissions-reference.md#security-reader) |  |
 
-## Temporary Access Pass and least privileged roles
+## Temporary Access Pass least privileged roles
 
 Here are the least privileged roles you should use when performing tasks for [Temporary Access Pass](../authentication/howto-authentication-temporary-access-pass.md) in Microsoft Entra ID.
 
@@ -465,7 +465,7 @@ Here are the least privileged roles you should use when performing tasks for [Te
 > | View a Temporary Access Pass details for a user (without reading the code itself) | [Global Reader](permissions-reference.md#global-reader) |  |
 > | Configure or update the Temporary Access Pass authentication method policy | [Authentication Policy Administrator](permissions-reference.md#authentication-policy-administrator) |  |
 
-## Tenants and least privileged roles
+## Tenants least privileged roles
 
 Here are the least privileged roles you should use when performing tasks in [Microsoft Entra tenants](../../fundamentals/create-new-tenant.md).
 
@@ -476,7 +476,7 @@ Here are the least privileged roles you should use when performing tasks in [Mic
 > | Update Microsoft Entra tenant properties | [Billing Administrator](permissions-reference.md#billing-administrator) |  |
 > | [Manage privacy statement and contact](../../fundamentals/properties-area.yml) | [Billing Administrator](permissions-reference.md#billing-administrator) |  |
 
-## Users and least privileged roles
+## Users least privileged roles
 
 Here are the least privileged roles you should use when performing tasks for [users](../../fundamentals/how-to-create-delete-users.yml) in Microsoft Entra ID.
 
@@ -509,7 +509,7 @@ Here are the least privileged roles you should use when performing tasks for [us
 > | [Update user settings - Show keep user signed in](../../fundamentals/how-to-manage-stay-signed-in-prompt.yml) | [Global Administrator](permissions-reference.md#global-administrator) |  |
 > | Update Authentication methods | [Authentication Administrator](permissions-reference.md#authentication-administrator) | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator) |
 
-## Support and least privileged roles
+## Support least privileged roles
 
 Here are the least privileged roles you should use when performing tasks for [support](../../fundamentals/how-to-get-support.md) in Microsoft Entra ID.
 

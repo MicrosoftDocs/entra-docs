@@ -27,7 +27,7 @@ procedureSection:
   - title: | 
       Create a basic group and add members
     summary: |
-      You can create a basic group and add your members at the same time using the Microsoft Entra admin center. You must have at least the **Groups Administrator** or **User Administrator** role assigned to create groups. Review the [appropriate Microsoft Entra roles for managing groups](~/identity/role-based-access-control/delegate-by-task.md#groups-and-least-privileged-roles)
+      You can create a basic group and add your members at the same time using the Microsoft Entra admin center. You must have at least the **Groups Administrator** or **User Administrator** role assigned to create groups. Review the [appropriate Microsoft Entra roles for managing groups](~/identity/role-based-access-control/delegate-by-task.md#groups-least-privileged-roles)
 
       To create a basic group and add members:
     steps: 
