@@ -33,14 +33,14 @@ In this tutorial, you learn how to:
 
 In a location of choice in your computer, run the following commands to create a new React project with the name *reactspa*, navigate into the project folder, then install packages:
 
-    ```powershell
-    npm config set legacy-peer-deps true
-    npx create-react-app reactspa --template typescript
-    cd reactspa
-    npm install ajv
-    npm installreact-router-dom
-    npm install
-    ```
+  ```console
+  npm config set legacy-peer-deps true
+  npx create-react-app reactspa --template typescript
+  cd reactspa
+  npm install ajv
+  npm installreact-router-dom
+  npm install
+  ```
 
 ## Add configuration file for your app
 
