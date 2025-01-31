@@ -25,7 +25,7 @@ In this tutorial, you:
 
 ## Prerequisites
 
-- Complete the steps in [Tutorial: Set up CORS Proxy server to manage CORS headers for native authentication](tutorial-native-authentication-single-page-app-react-setup-local-cors.md).
+- Complete the steps in [Tutorial: Set up CORS Proxy server to manage CORS headers for native authentication](tutorial-native-authentication-single-page-app-react-set-up-local-cors.md).
 
 ## Define types of calls the app makes to the native authentication API
 
@@ -304,7 +304,7 @@ Open the *src/AppRoutes.tsx* file, then uncomment the following lines of code:
 
 ## Run and test your app
 
-Use the steps in [Run and test your app](tutorial-native-authentication-single-page-app-react-setup-local-cors.md#run-and-test-you-app) to run your app. However, test the password reset flow only using the user account you signed up earlier.
+Use the steps in [Run and test your app](tutorial-native-authentication-single-page-app-react-set-up-local-cors.md#run-and-test-you-app) to run your app. However, test the password reset flow only using the user account you signed up earlier.
 
 ## Related content
 
