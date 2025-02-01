@@ -77,17 +77,6 @@ The following sections cover support for passkey (FIDO2) authentication in Micro
 > [!NOTE]
 > Passkey authentication with a third-party Identity Provider (IDP) isn't supported in third-party applications using authentication broker, or Microsoft applications on macOS, iOS, or Android at this time.
 
-| OS  | Native apps |
-|:---:|:------:|
-| **Windows**  | &#x2705; |
-| **macOS**    | &#x2705;<sup>1</sup> |
-| **ChromeOS** | N/A |
-| **Linux**    | &#10060; |
-| **iOS**      | &#x2705;<sup>1</sup> |
-| **Android**  | &#x2705;<sup>1</sup> |
-
-<sup>1</sup>Requires an authentication broker to be installed on the user's device. Some Microsoft apps support passkey authentication without an authentication broker. 
-
 ### Native application support with authentication broker
 
 Microsoft applications provide native support for passkey authentication for all users who have an authentication broker installed for their operating system. Passkey authentication is also supported for third-party applications using the authentication broker.
@@ -102,6 +91,8 @@ The following tables lists which authentication brokers are supported for differ
 | **macOS** | Microsoft Intune Company Portal |
 | **Android** | Authenticator, Company Portal, or Link to Windows app |
 
+## Considerations for each platform
+
 #### iOS
 - Sign-in with passkey in native apps without [Microsoft Enterprise Single Sign On (SSO) plug-in](~/identity-platform/apple-sso-plugin.md) requires iOS 16.0 or later.
 - Sign-in with passkey in native apps with the SSO plug-in requires iOS 17.1 or later.
@@ -113,6 +104,7 @@ The following tables lists which authentication brokers are supported for differ
 #### Android
 - Sign-in with FIDO2 security key to native apps requires Android 13 or later.
 - Sign-in with passkey in Microsoft Authenticator to native apps requires Android 14 or later.
+- Sign-in with FIDO2 security key or passkey in Microsoft Authenticator to native apps might not work on Samsung Galaxy devices.
 
 ### Microsoft application support without authentication broker 
 
@@ -122,6 +114,16 @@ The following table lists Microsoft application support for passkey (FIDO2) with
 |----------------|----------|----------|----------|
 | [Remote Desktop](/azure/virtual-desktop/compare-remote-desktop-clients) | &#x2705; | &#x2705; | &#10060; |
 | [Windows App](/windows-app/compare-platforms-features)  | &#x2705; | &#x2705; | &#10060; |
+| M365 Copilot (Office) | &#x2705; | &#x2705; | &#10060; |
+| Word | &#x2705; | &#x2705; | &#10060; |
+| PowerPoint | &#x2705; | &#x2705; | &#10060; |
+| Excel | &#x2705; | &#x2705; | &#10060; |
+| OneNote | &#x2705; | &#x2705; | &#10060; |
+| Loop | N/A | &#x2705; | &#10060; |
+| OneDrive | &#x2705; | &#x2705; | &#10060; |
+| Outlook | &#x2705; | &#x2705; | &#10060; |
+| Teams | &#x2705; | &#x2705; | &#10060; |
+| Edge | &#x2705; | &#x2705; | &#10060; |
 
 ### Third-party application support without authentication broker
 
