@@ -35,14 +35,11 @@ For enabling FIDO2 security keys to unlock a Windows device, see [Enable FIDO2 s
 ## Considerations for each platform
 
 ### Windows
-- The best passkey sign-in experience is on Windows 11 version 22H2 or later.
 - Sign-in with security key requires one of the following items:
   - Windows 10 version 1903 or later
   - Chromium-based Microsoft Edge
   - Chrome 76 or later
   - Firefox 66 or later
-- [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) supports passkey (FIDO2). Some PowerShell modules that use Internet Explorer instead of Edge aren't capable of performing FIDO2 authentication. For example, PowerShell modules for SharePoint Online or Teams, or any PowerShell scripts that require admin credentials, don't prompt for FIDO2.
-  - As a workaround, most vendors can put certificates on the FIDO2 security keys. Certificate-based authentication (CBA) works in all browsers. If you can enable CBA for those admin accounts, you can require CBA instead of FIDO2 in the interim. 
 
 ### macOS
 - Sign-in with passkey requires macOS Catalina 11.1 or later with Safari 14 or later because Microsoft Entra ID requires user verification for multifactor authentication.
@@ -99,6 +96,11 @@ The following tables lists which authentication brokers are supported for differ
 | **Android** | Authenticator, Company Portal, or Link to Windows app |
 
 ## Considerations for each platform
+
+### Windows
+- Sign-in with passkey in Microsoft Authenticator to native apps requires Windows 11 version 22H2 or later.
+- [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) supports passkey (FIDO2). Some PowerShell modules that use Internet Explorer instead of Edge aren't capable of performing FIDO2 authentication. For example, PowerShell modules for SharePoint Online or Teams, or any PowerShell scripts that require admin credentials, don't prompt for FIDO2.
+  - As a workaround, most vendors can put certificates on the FIDO2 security keys. Certificate-based authentication (CBA) works in all browsers. If you can enable CBA for those admin accounts, you can require CBA instead of FIDO2 in the interim. 
 
 #### iOS
 - Sign-in with passkey in native apps without [Microsoft Enterprise Single Sign On (SSO) plug-in](~/identity-platform/apple-sso-plugin.md) requires iOS 16.0 or later.
