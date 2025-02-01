@@ -21,7 +21,7 @@ For enabling FIDO2 security keys to unlock a Windows device, see [Enable FIDO2 s
 > [!NOTE]
 > Microsoft Entra ID currently supports device-bound passkeys stored on FIDO2 security keys and in Microsoft Authenticator. Microsoft is committed to securing customers and users with passkeys. We are investing in both synced and device-bound passkeys for work accounts.
 
-## [**Web apps**](#tab/web)
+## [**Web browsers**](#tab/web)
 
 | OS  | Chrome | Edge | Firefox | Safari | 
 |:---:|:------:|:----:|:-------:|:------:|
@@ -69,6 +69,13 @@ For enabling FIDO2 security keys to unlock a Windows device, see [Enable FIDO2 s
 - Security key registration with Microsoft Entra ID isn't yet supported on Android.
 - Sign-in with passkey isn't supported in Firefox on Android.
 
+## Known issues
+
+### Sign in when more than three passkeys are registered
+
+If you registered more than three passkeys, sign in with a passkey might not work on iOS or Safari on macOS. If you have more than three passkeys, as a workaround, click **Sign-in options** and sign in without entering a username.
+
+:::image type="content" border="true" source="media/fido2-compatibility/sign-in-options.png" alt-text="Screenshot of sign-in options.":::
 
 ## [**Native apps**](#tab/native)
 
@@ -130,14 +137,6 @@ The following table lists Microsoft application support for passkey (FIDO2) with
 If the user has yet to install an authentication broker, they can still sign in with a passkey when they access MSAL-enabled applications. For more information about requirements for MSAL-enabled applications, see [Support passwordless authentication with FIDO2 keys in apps you develop](~/identity-platform/support-fido2-authentication.md).
 
 ---
-
-## Known issues
-
-### Sign in when more than three passkeys are registered
-
-If you registered more than three passkeys, sign in with a passkey might not work on iOS or Safari on macOS. If you have more than three passkeys, as a workaround, click **Sign-in options** and sign in without entering a username.
-
-:::image type="content" border="true" source="media/fido2-compatibility/sign-in-options.png" alt-text="Screenshot of sign-in options.":::
 
 ## Next steps
 [Enable passwordless security key sign-in](./howto-authentication-passwordless-security-key.md)
