@@ -23,6 +23,8 @@ For enabling FIDO2 security keys to unlock a Windows device, see [Enable FIDO2 s
 
 ## [**Web browsers**](#tab/web)
 
+The following section covers support for passkey (FIDO2) authentication in web browsers with Microsoft Entra ID.
+
 | OS  | Chrome | Edge | Firefox | Safari | 
 |:---:|:------:|:----:|:-------:|:------:|
 | **Windows**  | &#x2705; | &#x2705; | &#x2705; | N/A | 
@@ -57,6 +59,7 @@ For enabling FIDO2 security keys to unlock a Windows device, see [Enable FIDO2 s
 ### iOS
 - Sign-in with passkey requires iOS 14.3 or later because Microsoft Entra ID requires user verification for multifactor authentication.
 - BLE security keys aren't supported on iOS by Apple.
+- NFC with FIPS 140-3 certified security keys isn't supported on iOS by Apple.
 - New security key registration doesn't work on iOS browsers because they don't prompt to set up biometrics or PIN.
 - See [Sign in when more than three passkeys are registered](#sign-in-when-more-than-three-passkeys-are-registered).
 
@@ -76,7 +79,7 @@ If you registered more than three passkeys, sign in with a passkey might not wor
 
 ## [**Native apps**](#tab/native)
 
-The following sections cover support for passkey (FIDO2) authentication in Microsoft and third-party applications with Microsoft Entra ID.
+The following section covers support for passkey (FIDO2) authentication in Microsoft and third-party applications with Microsoft Entra ID.
 
 > [!NOTE]
 > Passkey authentication with a third-party Identity Provider (IDP) isn't supported in third-party applications using authentication broker, or Microsoft applications on macOS, iOS, or Android at this time.
@@ -94,26 +97,6 @@ The following tables lists which authentication brokers are supported for differ
 | **iOS** | Microsoft Authenticator         |
 | **macOS** | Microsoft Intune Company Portal |
 | **Android** | Authenticator, Company Portal, or Link to Windows app |
-
-## Considerations for each platform
-
-### Windows
-- Sign-in with passkey in Microsoft Authenticator to native apps requires Windows 11 version 22H2 or later.
-- [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) supports passkey (FIDO2). Some PowerShell modules that use Internet Explorer instead of Edge aren't capable of performing FIDO2 authentication. For example, PowerShell modules for SharePoint Online or Teams, or any PowerShell scripts that require admin credentials, don't prompt for FIDO2.
-  - As a workaround, most vendors can put certificates on the FIDO2 security keys. Certificate-based authentication (CBA) works in all browsers. If you can enable CBA for those admin accounts, you can require CBA instead of FIDO2 in the interim. 
-
-#### iOS
-- Sign-in with passkey in native apps without [Microsoft Enterprise Single Sign On (SSO) plug-in](~/identity-platform/apple-sso-plugin.md) requires iOS 16.0 or later.
-- Sign-in with passkey in native apps with the SSO plug-in requires iOS 17.1 or later.
-
-#### macOS
-- On macOS, the [Microsoft Enterprise Single Sign On (SSO) plug-in](~/identity-platform/apple-sso-plugin.md) is required to enable Company Portal as an authentication broker. Devices that run macOS must meet SSO plug-in requirements, including enrollment in mobile device management.
-- Sign-in with passkey in native apps with the SSO plug-in requires macOS 14.0 or later.
-
-#### Android
-- Sign-in with FIDO2 security key to native apps requires Android 13 or later.
-- Sign-in with passkey in Microsoft Authenticator to native apps requires Android 14 or later.
-- Sign-in with FIDO2 security key or passkey in Microsoft Authenticator to native apps might not work on Samsung Galaxy devices.
 
 ### Microsoft application support without authentication broker 
 
@@ -137,6 +120,27 @@ The following table lists Microsoft application support for passkey (FIDO2) with
 ### Third-party application support without authentication broker
 
 If the user has yet to install an authentication broker, they can still sign in with a passkey when they access MSAL-enabled applications. For more information about requirements for MSAL-enabled applications, see [Support passwordless authentication with FIDO2 keys in apps you develop](~/identity-platform/support-fido2-authentication.md).
+
+## Considerations for each platform
+
+### Windows
+- Sign-in with FIDO2 security key to native apps requires Windows 10 version 1903 or later.
+- Sign-in with passkey in Microsoft Authenticator to native apps requires Windows 11 version 22H2 or later.
+- [Microsoft Graph PowerShell](/powershell/microsoftgraph/overview) supports passkey (FIDO2). Some PowerShell modules that use Internet Explorer instead of Edge aren't capable of performing FIDO2 authentication. For example, PowerShell modules for SharePoint Online or Teams, or any PowerShell scripts that require admin credentials, don't prompt for FIDO2.
+  - As a workaround, most vendors can put certificates on the FIDO2 security keys. Certificate-based authentication (CBA) works in all browsers. If you can enable CBA for those admin accounts, you can require CBA instead of FIDO2 in the interim. 
+
+#### iOS
+- Sign-in with passkey in native apps without [Microsoft Enterprise Single Sign On (SSO) plug-in](~/identity-platform/apple-sso-plugin.md) requires iOS 16.0 or later.
+- Sign-in with passkey in native apps with the SSO plug-in requires iOS 17.1 or later.
+
+#### macOS
+- On macOS, the [Microsoft Enterprise Single Sign On (SSO) plug-in](~/identity-platform/apple-sso-plugin.md) is required to enable Company Portal as an authentication broker. Devices that run macOS must meet SSO plug-in requirements, including enrollment in mobile device management.
+- Sign-in with passkey in native apps with the SSO plug-in requires macOS 14.0 or later.
+
+#### Android
+- Sign-in with FIDO2 security key to native apps requires Android 13 or later.
+- Sign-in with passkey in Microsoft Authenticator to native apps requires Android 14 or later.
+- Sign-in with Yubico-manufactured FIDO2 security keys with YubiOTP enabled might not work on Samsung Galaxy devices. As a workaround, users can disable YubiOTP and attempt to sign in again.
 
 ---
 
