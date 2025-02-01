@@ -73,6 +73,8 @@ When you configure these accounts, the following requirements must be met:
 
 - In Microsoft Entra Privileged Identity Management, you should make the Global Administrator role assignment active permanent rather than eligible for your emergency access accounts.
 
+- Individuals authorized to use these emergency access accounts must utilize a designated, secure workstation or similar client computing environment, such as a Privileged Access Workstation. These workstations should be employed when interacting with the emergency access accounts. For more information about configuring a Microsoft Entra tenant where there are designated workstations, see [deploying a privileged access solution](/security/privileged-access-workstations/privileged-access-deployment).
+
 ## Federation guidance
 
 Some organizations use AD Domain Services and AD FS or similar identity provider to federate to Microsoft Entra ID. The emergency access for on-premises systems and the emergency access for cloud services should be kept distinct, with no dependency of one on the other. Mastering and or sourcing authentication for accounts with emergency access privileges from other systems adds unnecessary risk in the event of an outage of those systems.
@@ -83,7 +85,7 @@ Organizations need to ensure that the credentials for emergency access accounts 
 
 ## Monitor sign-in and audit logs
 
-Organizations should monitor sign-in and audit log activity from the emergency accounts and trigger notifications to other administrators. When you monitor the activity for emergency access accounts, you can verify these accounts are only used for testing or actual emergencies. You can use Azure Log Analytics to monitor the sign-in logs and trigger email and SMS alerts to your admins whenever emergency access accounts sign in.
+Organizations should monitor sign-in and audit log activity from the emergency accounts and trigger notifications to other administrators. When you monitor the activity for emergency access accounts, you can verify these accounts are only used for testing or actual emergencies. You can use Azure Monitor, Azure Sentinel, or other tools to monitor the sign-in logs and trigger email and SMS alerts to your administrators whenever emergency access accounts sign in. This section illustrates using Azure Monitor.
 
 ### Prerequisites
 
@@ -191,21 +193,33 @@ Organizations should monitor sign-in and audit log activity from the emergency a
 
 1. Select **OK**.
 
+### Prepare a post-mortem team to evaluate each emergency access account credential use
+ 
+If the alert is triggered, preserve the logs from Microsoft Entra and other workloads. Conduct a review of the circumstances and the results of the emergency access account usage. This review will determine whether the account was used: 
+
+- For a planned drill to validate its suitability
+- In response to an actual emergency where no administrator could use their regular accounts
+- Or as a result of misuse or unauthorized usage of the account
+ 
+Next, examine the logs to determine what actions were taken by the individual with the emergency access account to ensure that that those actions align with the authorized use of the account. 
+
 ## Validate accounts regularly
 
-When you train staff members to use emergency access accounts and validate the emergency access accounts, at minimum do the following steps at regular intervals:
+In addition to training staff members to use emergency access accounts, you should also have an ongoing process to validate the emergency access accounts remain accessible to authorized staff. Regular drills should be conducted to validate the funcationality of the accounts and to confirm that monitoring and alerting rules are triggered in case an account is subsequently misused. At a minimum, the following steps should be performed at regular intervals:
 
 - Ensure that security-monitoring staff is aware that the account-check activity is ongoing.
+- Review and update the list of individuals authorized to use the emergency access account credentials.
 - Ensure that the emergency break glass process to use these accounts is documented and current.
 - Ensure that administrators and security officers who might need to perform these steps during an emergency are trained on the process.
 - Validate that the emergency access accounts can sign-in and perform administrative tasks.
 - Ensure that users haven't registered multifactor authentication or self-service password reset (SSPR) to any individual user's device or personal details. 
 - If the accounts are registered for multifactor authentication to a device, for use during sign-in or role activation, ensure that the device is accessible to all administrators who might need to use it during an emergency. Also verify that the device can communicate through at least two network paths that don't share a common failure mode. For example, the device can communicate to the internet through both a facility's wireless network and a cell provider network.
+- Change the combinations on any safes after someone with access leaves the organization, as well as on a regular basis.
 
 These steps should be performed at regular intervals and for key changes:
 
 - At least every 90 days
-- When there has been a recent change in IT staff, such as a job change, a departure, or a new hire
+- When there has been a recent change in IT staff, such as after termination or position change
 - When the Microsoft Entra subscriptions in the organization have changed
 
 ## Next steps
