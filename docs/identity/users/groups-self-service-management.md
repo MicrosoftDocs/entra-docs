@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 01/15/2025
+ms.date: 02/03/2025
 ms.author: barclayn
 ms.reviewer: MohitBhargava
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -55,7 +55,7 @@ When someone wants access, they request it from the [My Groups portal](https://m
 
 ## Make a group available for user self-service
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Select **Microsoft Entra ID**.
 
 1. Select **All groups** > **Groups**, and then select **General** settings.
