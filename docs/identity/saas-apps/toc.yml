@@ -290,8 +290,8 @@
         href: aws-clientvpn-tutorial.md
       - name: AWS IAM Identity Center
         href: aws-single-sign-on-tutorial.md
-      - name: Axiad Cloud Connector
-        href: axiad-cloud-connector-tutorial.md
+      - name: Axiad Conductor
+        href: axiad-conductor-tutorial.md
       - name: Axway CSOS
         href: axway-csos-tutorial.md  
     - name: B
@@ -1549,8 +1549,6 @@
         href: justlogin-tutorial.md
       - name: Kairos Business
         href: kairos-business-tutorial.md
-      - name: Kallidus
-        href: kallidus-tutorial.md
       - name: KanbanBOX
         href: kanbanbox-tutorial.md
       - name: Kanbanize

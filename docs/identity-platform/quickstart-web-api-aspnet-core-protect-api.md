@@ -26,7 +26,6 @@ This quickstart uses an ASP.NET Core web API code sample to demonstrate how to r
 
 ## Register the application and record identifiers
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To complete registration, provide the application a name and specify the supported account types. Once registered, the application **Overview** page displays the identifiers needed in the application source code.
 

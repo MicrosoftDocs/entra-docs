@@ -33,7 +33,6 @@ The number of roles you add counts toward application manifest limits enforced b
 
 ### App roles UI
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To create an app role by using the Microsoft Entra admin center's user interface:
 

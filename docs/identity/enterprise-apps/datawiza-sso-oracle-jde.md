@@ -150,7 +150,6 @@ The Oracle JDE application needs to recognize the user: using a name, the applic
 
 ## Enable Microsoft Entra multifactor authentication 
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To provide more security for sign-ins, you can enforce MFA for user sign-in. 
 

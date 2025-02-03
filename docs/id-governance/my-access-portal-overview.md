@@ -27,7 +27,7 @@ Administrators, via the Microsoft Entra admin center, can configure:
 - Access packages that users can request
 - Access reviews for access packages
 - Access reviews for groups and applications
-- An overview page (preview)
+- An overview page
 
 ## License requirements
 

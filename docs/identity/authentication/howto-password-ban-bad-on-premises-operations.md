@@ -26,7 +26,6 @@ This article shows you how to enable Microsoft Entra Password Protection for you
 
 ## Enable on-premises password protection
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Password protection**.

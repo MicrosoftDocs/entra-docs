@@ -30,7 +30,6 @@ In this article, you learn how to create, list, delete, or assign a role to a us
 
 ## Create a user-assigned managed identity
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To create a user-assigned managed identity, your account needs the [Managed Identity Contributor](/azure/role-based-access-control/built-in-roles#managed-identity-contributor) role assignment.
 

@@ -28,7 +28,6 @@ To assign or remove custom security attributes for a user in your Microsoft Entr
     
 ## Assign custom security attributes to a user
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator).
 

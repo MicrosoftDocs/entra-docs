@@ -32,9 +32,6 @@ procedureSection:
       Your privacy and technical information is located in the **Properties** area of the Microsoft Entra admin center.
 
       ### To access the properties area and add your privacy information
-
-      [!INCLUDE [portal updates](~/includes/portal-update.md)]
-
     steps:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Billing Administrator](../identity/role-based-access-control/permissions-reference.md#billing-administrator).

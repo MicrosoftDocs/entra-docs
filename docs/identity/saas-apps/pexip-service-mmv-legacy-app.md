@@ -119,11 +119,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Pexip Service (MMV legacy app) SSO
 
-To configure single sign-on on **Pexip Service (MMV legacy app)** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to [Pexip Service (MMV legacy app) support team](https://support.videxio.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Pexip Service (MMV legacy app)** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to [Pexip Service (MMV legacy app) support team](https://help.pexip.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Pexip Service (MMV legacy app) test user
 
-In this section, you create a user called Britta Simon in Pexip Service (MMV legacy app). Work with [Pexip Service (MMV legacy app) support team](https://support.videxio.com) to add the users in the Pexip Service (MMV legacy app) platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in Pexip Service (MMV legacy app). Work with [Pexip Service (MMV legacy app) support team](https://help.pexip.com) to add the users in the Pexip Service (MMV legacy app) platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 

@@ -1,17 +1,17 @@
 ---
 title: Troubleshoot manager update issues with HR provisioning
-description: Learn how to troubleshoot manager update issues with HR provisioning
+description: This article provides potential issues and resolutions that show you how to troubleshoot manager update issues with HR provisioning
 author: jenniferf-skc
 manager: amycolannino
 ms.service: entra-id
-ms.date: 05/23/2024
+ms.date: 01/29/2025
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
 ms.author: jfields
 ms.reviewer: chmutali
 ---
 
-# Troubleshoot HR manager update issues
+# Troubleshoot HR manager update issues with HR user provisioning
 
 **Applies to:**
 * Workday to on-premises Active Directory user provisioning
