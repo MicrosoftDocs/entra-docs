@@ -111,22 +111,25 @@ Administrators can add any Microsoft Entra registered application to Conditional
 > [!NOTE]
 > Since Conditional Access policy sets the requirements for accessing a service, you aren't able to apply it to a client (public/native) application. In other words, the policy isn't set directly on a client (public/native) application, but is applied when a client calls a service. For example, a policy set on SharePoint service applies to all clients calling SharePoint. A policy set on Exchange applies to the attempt to access the email using Outlook client. That is why client (public/native) applications aren't available for selection in the app picker and Conditional Access option isn't available in the application settings for the client (public/native) application registered in your tenant.
 
+Some applications don't appear in the picker at all. The only way to include these applications in a Conditional Access policy is to include **All resources (formerly 'All cloud apps')**.
+
 #### Understanding Conditional Access for different client types
 
-Conditional Access applies to resources and not clients except when the client is a confidential client requesting an ID token. The following explains how Conditional Access behavior differs among client types.
+Conditional Access applies to resources not clients, except when the client is a confidential client requesting an ID token.
 
-- Client app is a public client
-   - Public clients are those that run locally on devices like Microsoft Outlook on the desktop or mobile apps like Microsoft Teams. Conditional Access policies do not apply to the public client itself but applies based on the resources requested by the public clients.   
-- Client app is a confidential client
-   - Conditional Access applies to the resources requested by the client and the confidential client itself, if it requests an ID token       . E.g. if Outlook Web requests a token for scopes Mail.Read and Files.Read, Conditional Access will apply policies for Exchange and SharePoint. Additionally, if Outlook Web requests an ID token, Conditional Access will also apply the policies for Outlook Web.
+- Public client
+   - Public clients are those that run locally on devices like Microsoft Outlook on the desktop or mobile apps like Microsoft Teams. 
+   - Conditional Access policies don't apply to the public client itself, but apply based on the resources requested by the public clients.
+- Confidential client
+   - Conditional Access applies to the resources requested by the client and the confidential client itself. 
+   - For example: If Outlook Web requests a token for scopes `Mail.Read` and `Files.Read`, Conditional Access applies policies for Exchange and SharePoint. Additionally, if Outlook Web requests an ID token, Conditional Access also applies the policies for Outlook Web.
 
-To view confidential client sign-in logs from the Microsoft Entra admin center:
-1.	Sign in to the Microsoft Entra admin center as at least a Reports Reader.
-2.	Browse to Identity> Monitoring & health > Sign-in logs. 
-3.	Adjust the ‘Client credential type’ filter to view a specific set of logs based on the client credential used in the sign-in.
+To view [sign-in logs](/entra/identity/monitoring-health/concept-sign-ins) for these client types from the Microsoft Entra admin center:
 
-
-Some applications don't appear in the picker at all. The only way to include these applications in a Conditional Access policy is to include **All resources (formerly 'All cloud apps')**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
+1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**. 
+1. Add a filter for **Client credential type**.
+1. Adjust the filter to view a specific set of logs based on the client credential used in the sign-in.
 
 <a name='all-cloud-apps'></a>
 
