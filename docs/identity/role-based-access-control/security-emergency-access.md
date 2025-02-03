@@ -205,7 +205,7 @@ Next, examine the logs to determine what actions were taken by the individual wi
 
 ## Validate accounts regularly
 
-In addition to training staff members to use emergency access accounts, you should also have an ongoing process to validate the emergency access accounts remain accessible to authorized staff. Regular drills should be conducted to validate the funcationality of the accounts and to confirm that monitoring and alerting rules are triggered in case an account is subsequently misused. At a minimum, the following steps should be performed at regular intervals:
+In addition to training staff members to use emergency access accounts, you should also have an ongoing process to validate the emergency access accounts remain accessible to authorized staff. Regular drills should be conducted to validate the functionality of the accounts and to confirm that monitoring and alerting rules are triggered in case an account is subsequently misused. At a minimum, the following steps should be performed at regular intervals:
 
 - Ensure that security-monitoring staff is aware that the account-check activity is ongoing.
 - Review and update the list of individuals authorized to use the emergency access account credentials.
