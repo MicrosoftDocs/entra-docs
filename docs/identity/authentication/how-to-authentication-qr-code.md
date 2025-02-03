@@ -38,10 +38,13 @@ You can enable the QR code authentication method by using the Microsoft Entra ad
 1. Browse to **Protection** > **Authentication methods** > **Policies**.
 1. Click **QR code** > **Enable and target** > **Add target** > select a group of users who need to sign in with a QR code. 
 
+   :::image type="content" source="media/how-to-authentication-qr-code/enable-qr-code.png" alt-text="Screenshot that shows how to enable QR code for an organization.":::
 
 1. Update default QR code settings as needed:
    - By default, the PIN length is 8 digits. The PIN length can be 8 to 20 digits. If you increase the PIN length, the new value becomes the minimum number of digits required for the PIN. For example, if you increase the PIN length to 10, a user needs to create a PIN with at least 10 digits when they are forced to change their PIN.
    - The default lifetime of a standard QR code (provided to the users for long term use) is 365 days. The range is between 1-395 days.
+
+   :::image type="content" source="media/concept-authentication-qr-code/qr-code-settings.png" alt-text="Screenshot that shows how to updates QR code settings.":::
 
 ### Enable QR code authentication method in Microsoft Graph API
 
