@@ -34,7 +34,7 @@ To get started, you need the following items:
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
-* Axiad Conductor for Entra ID supports **SP** initiated SSO.
+* Axiad Conductor for Entra ID supports **SP** and **IDP** initiated SSO.
 * Axiad Conductor for Entra ID supports [Automated user provisioning](axiad-cloud-provisioning-tutorial.md).
 
 ## Add Axiad Conductor for Entra ID from the gallery
@@ -79,13 +79,21 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Basic SAML Configuration** section, perform the following steps: 
 
     a. In the **Identifier (Entity ID)** text box, type a URL using the following pattern:
-    `https://access-<INSTANCE_NAME>.axiadids.net/<CUSTOM_URL>`
+    `https://access-<tenantName>.<platform>.axiadids.net/auth/realms/master`
 
-    b. In the **Reply URL** textbox, type a URL using the following pattern:
-    `https://access-<INSTANCE_NAME>.axiadids.net/<CUSTOM_URL>`
+    b. In the **Reply URL** textbox, type one of the following URLs:
 
-    c. In the **Sign on URL** text box, type a URL using the following pattern:
-    `https://portal-<INSTANCE_NAME>.axiadids.net`
+    | Reply URL |
+    |----|
+    | `https://access-user-<tenantName>.<platform>.axiadids.net/auth/realms/master/broker/saml/endpoint` |
+    | `https://access-<tenantName>.<platform>.axiadids.net/auth/realms/master/broker/saml/endpoint` |
+
+    c. In the **Sign on URL** text box, type one of the following URLs:  
+
+    | Sign on URL |
+    |----|
+    | `https://portal-<tenantName>.<platform>.axiadids.net/user` |
+    | `https://portal-<tenantName>.<platform>.axiadids.net/operator` |
 
 	> [!NOTE]
 	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Axiad Conductor for Entra ID support team](mailto:support@axiad.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
