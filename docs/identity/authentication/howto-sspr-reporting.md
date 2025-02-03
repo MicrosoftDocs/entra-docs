@@ -19,7 +19,7 @@ After deployment, many organizations want to know how or if self-service passwor
 The following questions can be answered by the reports that exist in the [Microsoft Entra admin center](https://entra.microsoft.com):
 
 > [!NOTE]
-> You must opt-in for this data to be gathered on behalf of your organization. To optin, you must visit the **Reporting** tab or the audit logs at least once. Until then, data isn't collected for your organization.
+> You must opt in for this data to be gathered on behalf of your organization. To opt in, you must visit the **Reporting** tab or the audit logs at least once. Until then, data isn't collected for your organization.
 >
 
 * What changes were made to the SSPR policy?
@@ -85,8 +85,8 @@ The following list explains this activity in detail:
 * **Activity actor**: The display name and user principal name (UPN) of the administrator who made the changes.
 * **Activity target**: Updated properties in the SSPR policy. 
 * **Activity statuses**:
-  - *Success*: Indicates that a user successfully changed a seeting in the SSPR policy.
-  - *Failure*: Indicates that a user failed to change a seeting in the SSPR policy. 
+  - *Success*: Indicates that a user successfully changed a setting in the SSPR policy.
+  - *Failure*: Indicates that a user failed to change a setting in the SSPR policy. 
 * **Activity status failure reason**:
   - Permission failure? 
 
