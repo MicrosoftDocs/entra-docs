@@ -4,7 +4,7 @@ description: Reporting on Microsoft Entra self-service password reset events
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/04/2024
+ms.date: 01/24/2025
 ms.author: justinha
 author: justinha
 manager: amycolannino
@@ -19,7 +19,7 @@ After deployment, many organizations want to know how or if self-service passwor
 The following questions can be answered by the reports that exist in the [Microsoft Entra admin center](https://entra.microsoft.com):
 
 > [!NOTE]
-> You must opt-in for this data to be gathered on behalf of your organization. To opt in, you must visit the **Reporting** tab or the audit logs at least once. Until then, data is not collected for your organization.
+> You must opt-in for this data to be gathered on behalf of your organization. To optin, you must visit the **Reporting** tab or the audit logs at least once. Until then, data isn't collected for your organization.
 >
 
 * How many people have registered for password reset?
@@ -33,7 +33,6 @@ The following questions can be answered by the reports that exist in the [Micros
 
 ## How to view password management reports
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Use the following the steps to find the password reset and password reset registration events:
 
@@ -164,7 +163,7 @@ The following list explains this activity in detail:
   - *Failure*: Indicates that a user failed to register for password reset. You can select the row to see the **Activity status reason** category to learn more about why the failure occurred.
 
      >[!NOTE]
-     >Failure doesn't mean a user is unable to reset their own password. It means that they didn't finish the registration process. If there is unverified data on their account that's correct, such as a phone number that's not validated, even though they have not verified this phone number, they can still use it to reset their password.
+     >Failure doesn't mean a user is unable to reset their own password. It means that they didn't finish the registration process. If there's unverified data on their account that's correct, such as a phone number that's not validated, even though they haven't verified this phone number, they can still use it to reset their password.
 
 ## Next steps
 

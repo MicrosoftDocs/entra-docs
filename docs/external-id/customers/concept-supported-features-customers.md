@@ -1,14 +1,14 @@
 ---
 title: External Tenant Features
-description: Compare the features and capabilities of a workforce vs. an external tenant configuration. Determine which tenant type applies to your external identities scenario.
- 
+description: Compare features and capabilities of a workforce vs. an external tenant configuration. Determine which tenant type applies to your external identities scenario.
+
 author: msmimart
 manager: celestedg
 ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 12/03/2024
+ms.date: 01/30/2025
 ms.author: mimart
 ms.custom: it-pro, seo-july-2024
 
@@ -73,7 +73,7 @@ The following table compares the [identity providers](../identity-providers.md) 
 
 |Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
-| **Identity providers for external users (primary authentication)** | **For self-service sign-up guests**</br>- Microsoft Entra accounts</br>- Microsoft accounts</br>- Email one-time passcode</br>- Google federation</br>- Facebook federation<br></br>**For invited guests**</br>- Microsoft Entra accounts</br>- Microsoft accounts</br>- Email one-time passcode</br>- Google federation</br>- SAML/WS-Fed federation | **For self-service sign-up users (consumers, business customers)**</br>- [Email with password](concept-authentication-methods-customers.md#email-and-password-sign-in)</br>- [Email one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in)</br>- [Google federation (preview)](./how-to-google-federation-customers.md)</br>- [Facebook federation (preview)](./how-to-facebook-federation-customers.md)</br>- [Apple federation (preview)](./how-to-apple-federation-customers.md)</br>- [OIDC federation (preview)](./how-to-custom-oidc-federation-customers.md)<br></br>**For invited guests (preview)**</br>Guests invited with a directory role (for example, admins):</br>- Microsoft Entra accounts </br>- Microsoft accounts </br>- [Email one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in) |
+| **Identity providers for external users (primary authentication)** | **For self-service sign-up guests**</br>- Microsoft Entra accounts</br>- Microsoft accounts</br>- Email one-time passcode</br>- Google federation</br>- Facebook federation<br></br>**For invited guests**</br>- Microsoft Entra accounts</br>- Microsoft accounts</br>- Email one-time passcode</br>- Google federation</br>- SAML/WS-Fed federation | **For self-service sign-up users (consumers, business customers)**</br>- [Email with password](concept-authentication-methods-customers.md#email-and-password-sign-in)</br>- [Email one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in)</br>- [Google federation (preview)](./how-to-google-federation-customers.md)</br>- [Facebook federation (preview)](./how-to-facebook-federation-customers.md)</br>- [Apple federation (preview)](./how-to-apple-federation-customers.md)</br>- [OIDC federation (preview)](./how-to-custom-oidc-federation-customers.md)<br></br>**For invited guests (preview)**</br>Guests invited with a directory role (for example, admins):</br>- Microsoft Entra accounts </br>- Microsoft accounts </br>- [Email one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in)<br>- [SAML/WS-Fed federation](../direct-federation.md) |
 |   **Authentication methods for MFA**  | **For internal users (employees and admins)** </br>- [Authentication and verification methods](~/identity/authentication/concept-authentication-methods.md) </br>**For guests (invited or self-service sign-up)** </br>- [Authentication methods for guest MFA](../authentication-conditional-access.md#table-1-authentication-strength-mfa-methods-for-external-users)  |  **For self-service sign-up users (consumers, business customers) or invited users (preview)**</br>- [Email one-time passcode](concept-multifactor-authentication-customers.md#email-one-time-passcode)</br>- [SMS-based authentication](concept-multifactor-authentication-customers.md#sms-based-authentication)    |
 
 ## Application registration
@@ -82,7 +82,7 @@ The following table compares the features available for [Application registratio
 
 |Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
-|   **Protocol**     |   SAML relying parties, OpenID Connect, and OAuth2    |   OpenID Connect and OAuth2    |
+|   **Protocol** |  SAML relying parties, OpenID Connect, and OAuth2  |  [SAML relying parties](how-to-register-saml-app.md), [OpenID Connect](how-to-register-ciam-app.md), and OAuth2 |
 | **Supported account types**| The following [account types](~/identity-platform/quickstart-register-app.md#register-an-application): <ul><li>Accounts in this organizational directory only (Single tenant)</li><li>Accounts in any organizational directory (Any Microsoft Entra tenant - Multitenant)</li><li>Accounts in any organizational directory (Any Microsoft Entra tenant - Multitenant) and personal Microsoft accounts (such as Skype, Xbox)</li><li>Personal Microsoft accounts only</li></ul> | Always use *Accounts in this organizational directory only (Single tenant)*. |
 | **Platform** | The following [platforms](~/identity-platform/quickstart-register-app.md#configure-platform-settings): <ul><li>Public client/native (mobile & desktop)</li><li>Web</li><li>Single page application (SPA)</li><ul>| The following [platforms](~/identity-platform/quickstart-register-app.md#configure-platform-settings): <ul><li>Public client (mobile & desktop)</li><li>[Native authentication mobile](concept-native-authentication.md) </li><li>Web</li><li>Single page application (SPA)</li><ul>|
 | **Authentication** > **Redirect URIs**| The URIs Microsoft Entra ID accepts as destinations when returning authentication responses (tokens) after successfully authenticating or signing out users. | Same as workforce.|

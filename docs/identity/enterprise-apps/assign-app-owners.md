@@ -19,7 +19,7 @@ ms.custom: enterprise-apps
 
 # Assign enterprise application owners
 
-An [owner of an enterprise application](overview-assign-app-owners.md) in Microsoft Entra ID can manage the organization-specific configuration of the application, such as single sign-on, provisioning, and user assignments. An owner can also add or remove other owners. Unlike other application administrators, owners can manage only the enterprise applications they own. In this article, you learn how to assign an owner of an application.
+An [owner of an enterprise application](overview-assign-app-owners.md) in Microsoft Entra ID can manage the organization-specific configuration of the application, such as single sign-on, provisioning, and user assignments. An owner can also add or remove other owners. Unlike other Application Administrators, owners can manage only the enterprise applications they own. In this article, you learn how to assign an owner of an application.
 
 ## Prerequisites
 
@@ -27,7 +27,6 @@ To add an enterprise application to your Microsoft Entra tenant, you need:
 
 - A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - One of the following roles: Cloud Application Administrator, or Application Administrator.
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ## Assign an owner
 

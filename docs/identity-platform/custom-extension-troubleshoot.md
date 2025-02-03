@@ -34,7 +34,6 @@ In order to troubleshoot issues with your custom claims provider REST API endpoi
 
 ## Microsoft Entra sign-in logs
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 You can also use [Microsoft Entra sign-in logs](~/identity/monitoring-health/concept-sign-ins.md) in addition to your REST API logs, and hosting environment diagnostics solutions. Using Microsoft Entra sign-in logs, you can find errors, which may affect the users' sign-ins. The Microsoft Entra sign-in logs provide  information about the HTTP status, error code, execution duration, and number of retries that occurred the API was called by Microsoft Entra ID.
 

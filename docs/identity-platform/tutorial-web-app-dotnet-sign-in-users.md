@@ -48,18 +48,6 @@ Identity related **NuGet packages** must be installed in the project for authent
     dotnet add package Microsoft.Identity.Web.DownstreamApi 
     ```
 
-### [Visual Studio for Mac](#tab/visual-studio-for-mac)
-
-1. In the top menu, select **Tools** > **Manage NuGet Packages**.
-1. Search for **Microsoft.Identity.Web**, select the `Microsoft.Identity.Web` package, select **Project**, and then select **Add Package**.
-1. Modify your search to read **Microsoft.Identity.Web.UI** and select **Add Packages**.
-1. In the pop-up, ensure the correct project is selected, then select **Ok**.
-1. Select **Accept** if additional **License Acceptance** windows appear.
-
->[!NOTE]
-> Visual Studio for Mac is scheduled for retirement by August 31, 2024 in accordance with Microsoft’s [Modern Lifecycle Policy](/lifecycle/policies/modern). Visual Studio for Mac 17.6 will continue to be supported until August 31, 2024, with servicing updates for security issues and updated platforms from Apple.
-> Refer to [What's happening to Visual Studio for Mac](/visualstudio/mac/what-happened-to-vs-for-mac) for more information.
-
 ---
 
 ## Implement authentication and acquire tokens
@@ -83,12 +71,6 @@ After installing the NuGet packages and adding necessary code for authentication
 ### [Visual Studio Code](#tab/visual-studio-code)
 
 In the Explorer bar, select **Pages**, right-click **Shared**, and select **New File**. Give it the name *_LoginPartial.cshtml*.
-
-### [Visual Studio for Mac](#tab/visual-studio-for-mac)
-
-1. Expand **Pages**, right-click **Shared**, and then select **Add > Razor page**.
-1. Select **Razor Page - Empty**, and then select **Add**.
-1. Enter *_LoginPartial.cshtml* for the name, and then select **Add**.
 
 ---
 

@@ -30,7 +30,6 @@ The following property usage scenarios are considered as sensitive:
 
 ## Configure an app instance lock
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To configure an app instance lock:
 

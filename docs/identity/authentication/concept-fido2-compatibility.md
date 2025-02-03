@@ -5,7 +5,7 @@ description: Web browser and native app support for FIDO2 passwordless authentic
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/06/2025
+ms.date: 01/28/2025
 
 author: justinha
 ms.author: justinha
@@ -26,15 +26,13 @@ For enabling FIDO2 security keys to unlock a Windows device, see [Enable FIDO2 s
 | OS  | Chrome | Edge | Firefox | Safari | Native apps |
 |:---:|:------:|:----:|:-------:|:------:|:------:|
 | **Windows**  | &#x2705; | &#x2705; | &#x2705; | N/A | &#x2705; |
-| **macOS**  | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705;<sup>2</sup> |
+| **macOS**  | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705;<sup>1</sup> |
 | **ChromeOS**  | &#x2705; | N/A | N/A | N/A | N/A |
-| **Linux**  | &#x2705; | &#x2705; | &#x2705;<sup>1</sup> | N/A | &#10060; |
-| **iOS**  | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705;<sup>2</sup> |
-| **Android**  | &#x2705; | &#x2705;<sup>1</sup> | &#10060; | N/A | &#x2705;<sup>2</sup> |
+| **Linux**  | &#x2705; | &#x2705; | &#x2705; | N/A | &#10060; |
+| **iOS**  | &#x2705; | &#x2705; | &#x2705; | &#x2705; | &#x2705;<sup>1</sup> |
+| **Android**  | &#x2705; | &#x2705; | &#10060; | N/A | &#x2705;<sup>1</sup> |
 
-<sup>1</sup>Sign-in with passkey in Microsoft Authenticator isn't supported in this scenario yet.
-
-<sup>2</sup>Requires an authentication broker to be installed on the user's device. Some Microsoft apps support passkey authentication without an authentication broker. For more information, see [Native application support](#native-application-support).
+<sup>1</sup>Requires an authentication broker to be installed on the user's device. Some Microsoft apps support passkey authentication without an authentication broker. For more information, see [Native application support](#native-application-support).
 
 ## Considerations for each platform
 
