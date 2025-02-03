@@ -121,7 +121,7 @@ Conditional Access applies to resources not clients, except when the client is a
    - Public clients are those that run locally on devices like Microsoft Outlook on the desktop or mobile apps like Microsoft Teams. 
    - Conditional Access policies don't apply to the public client itself, but apply based on the resources requested by the public clients.
 - Confidential client
-   - Conditional Access applies to the resources requested by the client and the confidential client itself. 
+   - Conditional Access applies to the resources requested by the client and the confidential client itself if it requests an ID token.
    - For example: If Outlook Web requests a token for scopes `Mail.Read` and `Files.Read`, Conditional Access applies policies for Exchange and SharePoint. Additionally, if Outlook Web requests an ID token, Conditional Access also applies the policies for Outlook Web.
 
 To view [sign-in logs](/entra/identity/monitoring-health/concept-sign-ins) for these client types from the Microsoft Entra admin center:
