@@ -5,7 +5,7 @@ description: Learn how to enable passwordless security key sign-in to on-premise
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/11/2024
+ms.date: 01/08/2025
 
 ms.author: justinha
 author: justinha
@@ -287,7 +287,6 @@ If you encounter issues or want to share feedback about this passwordless securi
 
 ## Passwordless security key sign-in FAQ
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Here are some answers to commonly asked questions about passwordless sign-in:
 

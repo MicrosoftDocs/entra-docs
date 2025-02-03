@@ -118,21 +118,20 @@ Users need to have a way to get MFA and register passwordless sign-in or FIDO2 i
 
 ## Options to get MFA capability with Single factor certificates
 
-Microsoft Entra CBA is capable of multifactor authentication (MFA). Microsoft Entra CBA can be either single-factor (SF) or multifactor (MF) depending on the tenant configuration. Enabling CBA makes a user potentially capable to complete MFA. A user with single factor certificate needs another factor to complete MFA. If the user doesn't have any other auth method registered and are added into scope for CBA auth method, the user can't proof up to register other authentication methods.
+Microsoft Entra CBA is capable of multifactor authentication (MFA). Microsoft Entra CBA can be either single-factor (SF) or multifactor (MF) depending on the tenant configuration. Enabling CBA makes a user potentially capable to complete MFA. A user with single factor certificate needs another factor to complete MFA which is why we will not allow registration of other methods without satisfying MFA. If the user doesn't have any other MFA auth method registered and are added into scope for CBA auth method, the user can't proof up to register other authentication methods and get MFA.
 
 If the CBA-enabled user only has a Single Factor (SF) certificate and needs to complete MFA:
-   1. Use a password and SF certificate.
-   1. Issue a Temporary Access Pass.
+   1. Use a password and SF certificate (OR)
+   1. Authentication Policy Administrator can issue a Temporary Access Pass (OR)
    1. Authentication Policy Administrator adds a phone number and allows voice/text message authentication for the user account.
 
 If the CBA-enabled user hasn't yet been issued a certificate and needs to complete MFA:
-   1. Issue a Temporary Access Pass.
+   1. Authentication Policy Administrator can issue a Temporary Access Pass (OR)
    1. Authentication Policy Administrator adds a phone number and allows voice/text message authentication for the user account.
 
 If the CBA-enabled user can't use an MF cert, such as on mobile device without smart card support, and needs to complete MFA:
-   1. Issue a Temporary Access Pass.
-   1. User needs to register another MFA method (when user can use MF cert).
-   1. Use password and MF cert (when user can use MF cert).
+   1. Authentication Policy Administrator can issue a Temporary Access Pass (OR)
+   1. User needs to register another MFA method (when user can use MF cert on some device) (OR)
    1. Authentication Policy Administrator adds a phone number and allows voice/text message authentication for the user account.
       
 **Steps to set up passwordless phone sign in (PSI) with CBA**

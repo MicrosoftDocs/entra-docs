@@ -265,7 +265,7 @@ We don't recommend that you reuse groups that are used for security. If you're u
 
 ## Monitoring
 
-Many [Azure Monitor workbooks](~/identity/monitoring-health/howto-use-workbooks.md) and **Usage & Insights** reports are available to monitor your deployment. 
+Many [Azure Monitor workbooks](~/identity/monitoring-health/howto-use-workbooks.md) and **Usage & insights** reports are available to monitor your deployment. 
 These reports can be found in Microsoft Entra ID in the navigation pane under **Monitoring**. 
 
 ### Monitoring Staged Rollout
@@ -282,7 +282,7 @@ This workbook can be used to monitor the following activities:
 ### Monitoring Microsoft Entra multifactor authentication registration
 Microsoft Entra multifactor authentication registration can be monitored using the [Authentication methods usage & insights report](https://portal.azure.com/#blade/Microsoft_AAD_IAM/AuthenticationMethodsMenuBlade/AuthMethodsActivity/menuId/AuthMethodsActivity). This report can be found in Microsoft Entra ID. Select **Monitoring**, then select **Usage & insights**. 
 
-![Screenshot of how to find the Usage and Insights report.](media/how-to-migrate-mfa-server-to-mfa-user-authentication/usage-report.png)
+![Screenshot of how to find the Usage and insights report.](media/how-to-migrate-mfa-server-to-mfa-user-authentication/usage-report.png)
 
 In Usage & insights, select **Authentication methods**. 
 

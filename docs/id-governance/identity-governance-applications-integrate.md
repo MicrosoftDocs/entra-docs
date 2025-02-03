@@ -41,7 +41,7 @@ Next, if the application implements a provisioning protocol, then you should con
    If the SaaS application isn't in the gallery, then [ask the SaaS vendor to onboard](~/identity/enterprise-apps/v2-howto-app-gallery-listing.md).  
 1. If this is a private or custom application, you can also select a single sign-on integration that's most appropriate, based on the location and capabilities of the application.
 
-   * If this application is on SAP BTP, then configure Microsoft Entra integration with SAP Cloud Identity Services. For more information, see [Managing access to SAP BTP](https://community.sap.com/t5/technology-blogs-by-members/identity-and-access-management-with-microsoft-entra-part-i-managing-access/ba-p/13873276).
+   * If this application is on SAP Business Technology Platform (BTP), then configure Microsoft Entra integration with SAP Cloud Identity Services. For more information, see [Microsoft Entra SSO integration with SAP BTP](../identity/saas-apps/sap-hana-cloud-platform-tutorial.md) and [Managing access to SAP BTP](https://community.sap.com/t5/technology-blogs-by-members/identity-and-access-management-with-microsoft-entra-part-i-managing-access/ba-p/13873276).
 
    * If this application is in the public cloud, and it supports single sign-on, then configure single sign-on directly from Microsoft Entra ID to the application.
 

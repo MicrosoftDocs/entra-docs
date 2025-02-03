@@ -64,8 +64,9 @@ Users aren't directly listed in the local administrator group, their permissions
 > The above actions are not applicable to users who have not signed in to the relevant device previously. In this case, the administrator privileges are applied immediately after their first sign in to the device.
 
 <a name='manage-administrator-privileges-using-azure-ad-groups-preview'></a>
+<a name='manage-administrator-privileges-using-microsoft-entra-groups-preview'></a>
 
-## Manage administrator privileges using Microsoft Entra groups (preview)
+## Manage administrator privileges using Microsoft Entra groups
 
 You can use Microsoft Entra groups to manage administrator privileges on Microsoft Entra joined devices with the [Local Users and Groups](/windows/client-management/mdm/policy-csp-localusersandgroups) mobile device management (MDM) policy. This policy allows you to assign individual users or Microsoft Entra groups to the local administrators group on a Microsoft Entra joined device, providing you with the granularity to configure distinct administrators for different groups of devices.
 

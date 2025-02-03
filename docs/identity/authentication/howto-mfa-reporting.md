@@ -6,7 +6,7 @@ description: Learn how to view sign-in activity for Microsoft Entra multifactor 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/27/2024
+ms.date: 01/24/2025
 
 ms.author: justinha
 author: justinha
@@ -16,17 +16,16 @@ ms.reviewer: michmcla
 
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
-# Use the sign-ins report to review Microsoft Entra multifactor authentication events
+# Use the sign-in logs to review Microsoft Entra multifactor authentication events
 
-To review and understand Microsoft Entra multifactor authentication events, you can use the Microsoft Entra sign-ins report. This report shows authentication details for events when a user is prompted for multifactor authentication, and if any Conditional Access policies were in use. For detailed information on the sign-ins report, see the [overview of sign-in activity reports in Microsoft Entra ID](~/identity/monitoring-health/concept-sign-ins.md).
+To review and understand Microsoft Entra multifactor authentication events, you can use the Microsoft Entra sign-in logs. This report shows authentication details for events when a user is prompted for multifactor authentication, and if any Conditional Access policies were in use. For detailed information on the sign-in logs, see the [overview of sign-in activity reports in Microsoft Entra ID](~/identity/monitoring-health/concept-sign-ins.md).
 
 <a name='view-the-azure-ad-sign-ins-report'></a>
 
-## View the Microsoft Entra sign-ins report
+## View the Microsoft Entra sign-in logs
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-The sign-ins report provides you with information about the usage of managed applications and user sign-in activities, which includes information about multifactor authentication usage. The MFA data gives you insights into how MFA is working in your organization. It answers questions like:
+The sign-in logs provides you with information about the usage of managed applications and user sign-in activities, which includes information about multifactor authentication usage. The MFA data gives you insights into how MFA is working in your organization. It answers questions like:
 
 - Was the sign-in challenged with MFA?
 - How did the user complete MFA?
@@ -45,7 +44,7 @@ To view the sign-in activity report in the [Microsoft Entra admin center](https:
 
     The **Conditional Access** tab of the event details shows you which policy triggered the MFA prompt.
 
-    [![Screenshot of example Microsoft Entra sign-ins report](media/howto-mfa-reporting/sign-in-report-cropped.png)](media/howto-mfa-reporting/sign-in-report.png#lightbox)
+    [![Screenshot of example Microsoft Entra sign-in logs](media/howto-mfa-reporting/sign-in-report-cropped.png)](media/howto-mfa-reporting/sign-in-report.png#lightbox)
 
 If available, the authentication is shown, such as text message, Microsoft Authenticator app notification, or phone call.
 
@@ -63,7 +62,7 @@ This information allows admins to troubleshoot each step in a user’s sign-in, 
 - Usage of passwordless authentication methods (such as Passwordless Phone Sign-in, FIDO2, and Windows Hello for Business) 
 - How frequently authentication requirements are satisfied by token claims (where users aren't interactively prompted to enter a password, enter an SMS OTP, and so on)
 
-While viewing the sign-ins report, select the **Authentication Details** tab: 
+While viewing the sign-in logs, select the **Authentication Details** tab: 
 
 ![Screenshot of the Authentication Details tab](media/howto-mfa-reporting/auth-details-tab.png)
 

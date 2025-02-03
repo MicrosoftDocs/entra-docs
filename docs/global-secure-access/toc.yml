@@ -17,7 +17,7 @@ items:
     href: quickstart-access-admin-center.md
   - name: Install the Windows client to acquire Microsoft traffic
     href: quickstart-install-client.md
-  - name: Create a remote network to acquire Microsoft traffic
+  - name: Create a remote network
     href: quickstart-remote-network.md
   - name: Configure Quick Access to private resources
     href: quickstart-quick-access.md
@@ -80,7 +80,7 @@ items:
         href: how-to-manage-remote-networks.md
       - name: Assign a traffic forwarding profile to remote networks
         href: how-to-assign-traffic-profile-to-remote-network.md
-      - name: Simulate remote network connectivity using Azure VNG
+      - name: Simulate remote network connectivity using Azure Virtual Network Gateway (VNG)
         href: how-to-simulate-remote-network.md
       - name: Simulate remote network connectivity using Azure vWAN
         href: how-to-create-remote-network-vwan.md
@@ -132,12 +132,16 @@ items:
         href: how-to-configure-quick-access.md
       - name: Application Discovery
         href: how-to-application-discovery.md
-      - name: Configure Private Access with PIM
+      - name: Configure Private Access with Privileged Identity Management (PIM)
         href: how-to-configure-global-access-with-pim.md
       - name: Kerberos single sign-on (SSO)
         href: how-to-configure-kerberos-sso.md
       - name: Source IP anchoring
         href: source-ip-anchoring.md
+      - name: Access Azure SQL with a service endpoint
+        href: how-to-use-with-azure-sql-service-endpoint.md
+      - name: Use with Azure Private Link
+        href: how-to-use-private-link-with-private-access.md
   - name: Internet Access
     expanded: true
     items:
@@ -164,17 +168,17 @@ items:
         href: how-to-use-workbooks.md 
       - name: Export private network connector logs
         href: how-to-export-connector-logs.md
-  - name: Deployment guides
+  - name: Microsoft Global Secure Access deployment guides
     expanded: false
     items:
-      - name: Deployment guide information
-        href: ~/architecture/sse-deployment-guide-intro.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
-      - name: Deploying Microsoft Entra Internet Access
-        href: ~/architecture/sse-deployment-guide-internet-access.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
-      - name: Deploying Microsoft Entra Internet Access for Microsoft 365
-        href: ~/architecture/sse-deployment-guide-m365.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
-      - name: Deploying Microsoft Entra Private Access
-        href: ~/architecture/sse-deployment-guide-private-access.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
+      - name: Introduction
+        href: ~/architecture/gsa-deployment-guide-intro.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
+      - name: Deploy Microsoft Global Secure Access for Microsoft Entra Internet Access
+        href: ~/architecture/gsa-deployment-guide-internet-access.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
+      - name: Deploy Global Secure Access for Microsoft Traffic
+        href: ~/architecture/gsa-deployment-guide-microsoft-traffic.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
+      - name: Deploy Microsoft Global Secure Access for Microsoft Entra Private Access
+        href: ~/architecture/gsa-deployment-guide-private-access.md?toc=/entra/global-secure-access/toc.json&bc=/entra/global-secure-access/breadcrumb/toc.json
   - name: Troubleshoot
     expanded: false
     items:

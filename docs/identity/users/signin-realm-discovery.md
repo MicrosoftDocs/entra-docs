@@ -43,10 +43,8 @@ Another benefit of this work is improved error messaging. Here are some examples
    :::image type="content" source="./media/signin-realm-discovery/incorrect-password.png" alt-text="Screenshot of password is mistyped with good username.":::
   
 > [!IMPORTANT]
-> This feature might have an impact on federated domains relying on the old domain-level Home Realm Discovery to force federation. For updates on when federated domain support will be added, see [Home realm discovery during sign-in for Microsoft 365 services](https://azure.microsoft.com/updates/signin-hrd/). In the meantime, some organizations have trained their employees to sign in with a username that doesn’t exist in Microsoft Entra ID but contains the proper domain name, because the domain names routes users currently to their organization's domain endpoint. The new sign-in behavior doesn't allow this. The user is notified to correct the user name, and they aren't allowed to sign in with a username that does not exist in Microsoft Entra ID.
->
+> This feature might have an impact on federated domains relying on the old domain-level Home Realm Discovery to force federation. Federated domain support for this new behavior it's not currently available. In the meantime, some organizations have trained their employees to sign in with a username that doesn’t exist in Microsoft Entra ID but contains the proper domain name, because the domain names routes users currently to their organization's domain endpoint. The new sign-in behavior doesn't allow this. The user is notified to correct the user name, and they aren't allowed to sign in with a username that does not exist in Microsoft Entra ID.
 > If you or your organization have practices that depend on the old behavior, it is important for organization administrators to update employee sign-in and authentication documentation and to train employees to use their Microsoft Entra username to sign in.
-  
 If you have concerns with the new behavior, leave your remarks in the **Feedback** section of this article.  
 
 ## Next steps

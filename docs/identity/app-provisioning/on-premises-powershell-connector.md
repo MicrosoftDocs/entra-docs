@@ -68,7 +68,6 @@ If you've downloaded the provisioning agent and configured it for another on-pre
 
 ## Configure the On-premises ECMA app
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**. 

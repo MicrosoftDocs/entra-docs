@@ -27,7 +27,7 @@ Before you try this feature, we suggest that you review our guide on choosing th
 
 For an overview of the feature, view this "What is Staged Rollout?" video:
 
->[!VIDEO https://www.microsoft.com/videoplayer/embed/RE3inQJ]
+>[!VIDEO https://learn-video.azurefd.net/vod/player?id=252dc370-5709-4dfb-b346-2cbf76f1640f]
 
 
 
@@ -169,7 +169,6 @@ To roll out a specific feature (*pass-through authentication*, *password hash sy
 
 ### Enable a Staged Rollout of a specific feature on your tenant
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 You can roll out these options:
 
