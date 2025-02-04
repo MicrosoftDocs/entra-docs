@@ -71,7 +71,7 @@ extension ViewController: SignInAfterSignUpDelegate {
 }
 ```
 
-The `getAccessToken(parameters:delegate)` accepts a delegate parameter and we must implement the required methods in the `CredentialsDelegate` protocol.
+The `getAccessToken(parameters:delegate)` accepts a `MSALNativeAuthGetAccessTokenParameters` instance and a delegate parameter and we must implement the required methods in the `CredentialsDelegate` protocol.
 
 In the most common scenario, we receive a call to `onAccessTokenRetrieveCompleted(result)` indicating that the user obtained an `access token`.
 
