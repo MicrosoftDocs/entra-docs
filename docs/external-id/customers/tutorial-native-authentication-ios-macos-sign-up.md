@@ -91,7 +91,7 @@ To sign up a user, you need to:
         nativeAuth.signUp(parameters: parameters, delegate: self)
         ```
     
-        In the `signUp(parameters:delegate)` method, we pass a `MSALNativeAuthSignUpParameters` object containing the user's email address and their password alongside the delegate (a class that implements the `SignUpStartDelegate` protocol).
+        In the `signUp(parameters:delegate)` method, we pass a `MSALNativeAuthSignUpParameters` instance containing the user's email address and their password alongside the delegate (a class that implements the `SignUpStartDelegate` protocol).
 
     - To implement `SignUpStartDelegate` protocol as an extension to our class, use:
 
