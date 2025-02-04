@@ -6,7 +6,7 @@ description: If you have internal user accounts for partners, distributors, supp
 ms.service: entra-external-id
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 05/20/2024
+ms.date: 02/04/2025
 
 ms.author: cmulligan
 author: csmulligan
@@ -21,7 +21,6 @@ ms.collection: M365-identity-device-management
 [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 
 Before the availability of Microsoft Entra B2B collaboration, organizations could collaborate with distributors, suppliers, vendors, and other guest users by setting up internal credentials for them. If you have internal guest users like these, you can invite them to use B2B collaboration instead. These B2B guest users will be able to sign in using their own identities and credentials, eliminating the need for password maintenance or account lifecycle management.
-
 
 Sending an invitation to an existing internal account lets you retain that user’s object ID, UPN, group memberships, and app assignments. You don’t need to manually delete and reinvite the user or reassign resources. To invite the user, you use the invitation API to pass both the internal user object and the guest user’s email address along with the invitation. When the user accepts the invitation, the B2B service changes the existing internal user object to a B2B user. Going forward, the user must sign in to cloud resources services using their B2B credentials.
 
@@ -49,7 +48,6 @@ You can use the Microsoft Entra admin center, PowerShell, or the invitation API 
 
 ## Use the Microsoft Entra admin center to send a B2B invitation
 
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
 1. Find the user in the list or use the search box. Then select the user.
@@ -75,8 +73,9 @@ You'll need the [latest Microsoft Graph PowerShell module](/powershell/microsoft
 
 ```powershell
 Update-Module Microsoft.Graph
+Connect-MgGraph -Scopes "User.ReadWrite.All"
 Get-MgUser -UserId '00aa00aa-bb11-cc22-dd33-44ee44ee44ee' 
-New-MgInvitation -InvitedUserEmailAddress John@contoso.com -SendInvitationMessage:$true -InviteRedirectUrl "https://myapplications.microsoft.com" -InvitedUser $msGraphUser
+New-MgInvitation -InvitedUserEmailAddress John@contoso.com -SendInvitationMessage:$true -InviteRedirectUrl "https://myapps.microsoft.com" -InvitedUser $msGraphUser
 ```
 
 ## Use the invitation API to send a B2B invitation
@@ -110,7 +109,8 @@ ContentType: application/json
 ```
 
 The response to the API is the same response you get when you invite a new guest user to the directory.
-## Next steps
+
+## RElated content
 
 - [Add and invite guest users](add-users-administrator.yml)
 - [Customize invitations using API](customize-invitation-api.md)
