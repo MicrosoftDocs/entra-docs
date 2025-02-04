@@ -136,6 +136,9 @@ During sign-up, not all actions succeed. For instance, the user might attempt to
 To handle errors for the `signUp()` method, use the following code snippet: 
 
    ```kotlin
+    val parameters = NativeAuthSignUpParameters(username = email)
+    // Pass 'password' param if you sign in with username (email) and password
+    // parameters.password = password
    val actionResult: SignUpResult = authClient.signUp(parameters)
 
    if (actionResult is SignUpResult.CodeRequired) {

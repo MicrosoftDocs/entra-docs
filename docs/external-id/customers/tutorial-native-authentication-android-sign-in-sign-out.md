@@ -118,6 +118,9 @@ During sign-in, not all actions succeed. For instance, the user might attempt to
 To handle errors in the `signIn(parameters)` method, use the following code snippet: 
 
    ```Kotlin
+    val parameters = NativeAuthSignInParameters(username = email)
+    // Pass 'password' param if you sign in with username (email) and password
+    // parameters.password = password
    val actionResult: SignInResult = authClient.signIn(parameters)
 
    if (actionResult is SignInResult.CodeRequired) {

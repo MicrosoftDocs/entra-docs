@@ -82,7 +82,8 @@ The `SignInContinuationState.signIn(parameters)` method returns `SignInResult.Co
  
 To handle errors in `SignInContinuationState.signIn(parameters)`, use the following code snippet:  
  
-```kotlin 
+```kotlin
+val parameters = NativeAuthSignInContinuationParameters()
 val signInActionResult = signInContinuationState.signIn(parameters)
 
 when (signInActionResult) {
