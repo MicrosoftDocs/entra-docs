@@ -442,7 +442,7 @@ You'll use the Azure portal to configure the mapping between the Microsoft Entra
 Now that you have the Microsoft Entra ECMA Connector Host talking with Microsoft Entra ID, and the attribute mapping configured, you can move on to configuring who's in scope for provisioning.
 
 >[!IMPORTANT]
->If you were signed in using a Hybrid Identity Administrator role, you need to sign-out and sign-in with an account that has the at least the Application Administrator role for this section. The Hybrid Identity Administrator role doesn't have permissions to assign users to applications.
+>If you were signed in using a Hybrid Identity Administrator role, you need to sign-out and sign-in with an account that has at least the Application Administrator role for this section. The Hybrid Identity Administrator role doesn't have permissions to assign users to applications.
 
 
 If there are existing users in the SQL database, then you should create application role assignments for those existing users. To learn more about how to create application role assignments in bulk, see [governing an application's existing users in Microsoft Entra ID](~/id-governance/identity-governance-applications-existing-users.md).
