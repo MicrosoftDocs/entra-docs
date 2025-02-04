@@ -101,7 +101,7 @@ Custom URL domains are not supported in workforce tenants.
 
 #### [External tenant](#tab/external-tenant)
 
-Use a custom domain to fully brand the authentication URL. From a user perspective, users remain on your domain during the authentication process, rather than being redirected to *ciamlogin.com* domain name.
+Use a custom domain to fully brand the authentication URL. From a user perspective, users remain on your domain during the authentication process, rather than being redirected to the *ciamlogin.com* domain name.
 
 Follow these steps to use a custom domain:
 
@@ -137,7 +137,6 @@ After you make the changes to your *appsettings.json* file, if your custom URL d
   "AllowedHosts": "*"
 }
 ```
-
 ---
 
 ## Next step
