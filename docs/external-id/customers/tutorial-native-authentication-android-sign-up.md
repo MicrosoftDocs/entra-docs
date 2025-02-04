@@ -85,7 +85,7 @@ To sign up a user, you need to:
 
 Whether you sign up a user using email one-time passcode or username (email) and password, you can collect user attributes before a user's account is created:
 
-- The `NativeAuthSignUpParameters` accepts an `attributes` parameter, as `this.attributes = userAttributes`:
+- The `NativeAuthSignUpParameters` instance accepts an `attributes` parameter:
     
     ```kotlin
         CoroutineScope(Dispatchers.Main).launch {
