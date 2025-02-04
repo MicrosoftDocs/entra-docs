@@ -106,7 +106,7 @@ The following table lists Microsoft application support for passkey (FIDO2) with
 |----------------|----------|----------|----------|
 | [Remote Desktop](/azure/virtual-desktop/compare-remote-desktop-clients) | &#x2705; | &#x2705; | &#10060; |
 | [Windows App](/windows-app/compare-platforms-features)  | &#x2705; | &#x2705; | &#10060; |
-| M365 Copilot (Office) | &#x2705; | &#x2705; | &#10060; |
+| Microsoft 365 Copilot (Office) | N/A | &#x2705; | &#10060; |
 | Word | &#x2705; | &#x2705; | &#10060; |
 | PowerPoint | &#x2705; | &#x2705; | &#10060; |
 | Excel | &#x2705; | &#x2705; | &#10060; |
