@@ -67,7 +67,7 @@ To handle the request when the user selects the **Forget Password** button or li
     } 
    ``` 
 
-- `resetPassword(resetPasswordParameters)` method initiates password reset flow and an email one-time passcode is sent to the user's emails address for verification.  
+- `resetPassword(parameters)` method initiates password reset flow and an email one-time passcode is sent to the user's emails address for verification.  
 - The return result of `resetPassword(resetPasswordParameters)` is either `ResetPasswordStartResult.CodeRequired` or `ResetPasswordError`.
 - If `resetPasswordResult is ResetPasswordStartResult.CodeRequired`, the app needs to collect the email one-time passcode from the user and submits it as shown in [Submit email one-time passcode](#submit-email-one-time-passcode). 
 - If `resetPasswordResult is ResetPasswordError`, Android SDK provides utility methods to enable you to analyze the specific errors further: 
