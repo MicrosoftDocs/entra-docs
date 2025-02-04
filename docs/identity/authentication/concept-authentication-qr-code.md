@@ -36,8 +36,8 @@ They can increase their productivity with a seamless authentication experience.
 
 Benefit | Description
 --------|------------
-Easier and faster sign-in | Frontline workers might be less tech-savvy, work with difficult devices, or have accessibility requirements. They can sign in with a QR code and PIN quicker than a username and password, which increases their productivity. They also don't have to remember their username to sign in, which reduces support costs. 
-Inexpensive | Printing a QR code costs less than a hardware keys, which can be cost probitive for organizations with temporary frontline workers.
+Easier and faster sign-in | Frontline workers might be less tech-savvy, work with difficult devices, or have accessibility requirements. Their productivity improves because they can sign in with a QR code and PIN quicker than a username and password. They also don't have to remember their username to sign in, which reduces support costs. 
+Inexpensive | Printing a QR code costs less than a hardware key, which can be cost prohibitive for organizations with temporary frontline workers.
 
 ## QR code requirements for the Authentication method policy
 
@@ -59,7 +59,7 @@ In this screenshot, the PIN length is set to the default of 8 digits. The lifeti
 ## Add or delete a QR code authentication method
 
 When an Authentication Policy Administrator creates a QR code authentication method, they can add only a standard QR code and PIN.
-To create a temporary QR code, they need edit a QR code authentication method. 
+To create a temporary QR code, they need to edit a QR code authentication method. 
 
 Only one QR code authentication method can be active at a time for a user.
 When a QR code authentication method is deleted for the user, they can't sign-in with their existing QR code and PIN. The QR code data is removed from storage.
@@ -101,6 +101,16 @@ The following policies are applied when an Authentication Policy Administrator c
 | PIN not recently used | Don't repeat the last 3 PINs during admin reset, or user reset. |
 
 ## QR code authentication management for users
+
+
+## Accelerating 
+
+You can also create an accelerated QR code endpoint for your apps by using the Microsoft Authentication Library (MSAL). 
+An accelerated QR code endpoint helps users sign in with fewer clicks. 
+For example, following screenshot shows how the Teams app has a way to scan a QR code to sign in rather than enter a username and password.
+
+:::image type="content" source="media/how-to-authentication-qr-code/sign-in.png" alt-text="Screenshot that shows QR code settings.":::
+
 
 
 ## Known issues and mitigation for QR code authentication method 
