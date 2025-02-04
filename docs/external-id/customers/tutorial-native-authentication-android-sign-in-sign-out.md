@@ -51,7 +51,7 @@ To sign in a user, you need to:
    ```kotlin
     CoroutineScope(Dispatchers.Main).launch {
         val parameters = NativeAuthSignInParameters(username = email)
-        // Pass 'password' param if you sign in with username (email) and password
+        // Assign 'password' param if you sign in with username (email) and password
         // parameters.password = password
         val actionResult: SignInResult = authClient.signIn(parameters)
 
@@ -119,7 +119,7 @@ To handle errors in the `signIn(parameters)` method, use the following code snip
 
    ```Kotlin
     val parameters = NativeAuthSignInParameters(username = email)
-    // Pass 'password' param if you sign in with username (email) and password
+    // Assign 'password' param if you sign in with username (email) and password
     // parameters.password = password
    val actionResult: SignInResult = authClient.signIn(parameters)
 

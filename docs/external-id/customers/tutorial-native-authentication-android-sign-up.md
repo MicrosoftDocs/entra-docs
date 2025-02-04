@@ -54,7 +54,7 @@ To sign up a user, you need to:
    ```kotlin
    CoroutineScope(Dispatchers.Main).launch {
         val parameters = NativeAuthSignUpParameters(username = email)
-        // Pass 'password' param if you sign in with username (email) and password
+        // Assign 'password' param if you sign in with username (email) and password
         // parameters.password = password
         val actionResult: SignUpResult = authClient.signUp(parameters)
        
@@ -90,7 +90,7 @@ Whether you sign up a user using email one-time passcode or username (email) and
     ```kotlin
         CoroutineScope(Dispatchers.Main).launch {
             val parameters = NativeAuthSignUpParameters(username = email)
-            // Pass 'password' param if you sign in with username (email) and password
+            // Assign 'password' param if you sign in with username (email) and password
             // parameters.password = password
             parameters.attributes = userAttributes
             val actionResult: SignUpResult = authClient.signUp(parameters)
@@ -115,7 +115,7 @@ Whether you sign up a user using email one-time passcode or username (email) and
 
     ```kotlin
     val parameters = NativeAuthSignUpParameters(username = email)
-    // Pass 'password' param if you sign in with username (email) and password
+    // Assign 'password' param if you sign in with username (email) and password
     // parameters.password = password
     parameters.attributes = userAttributes
     val actionResult: SignUpResult = authClient.signUp(parameters)
@@ -141,7 +141,7 @@ To handle errors for the `signUp()` method, use the following code snippet:
 
    ```kotlin
     val parameters = NativeAuthSignUpParameters(username = email)
-    // Pass 'password' param if you sign in with username (email) and password
+    // Assign 'password' param if you sign in with username (email) and password
     // parameters.password = password
    val actionResult: SignUpResult = authClient.signUp(parameters)
 
@@ -175,7 +175,7 @@ To handle errors for the `signUp()` method, use the following code snippet:
 
     ```kotlin
     val parameters = NativeAuthSignUpParameters(username = email)
-    // Pass 'password' param if you sign in with username (email) and password
+    // Assign 'password' param if you sign in with username (email) and password
     // parameters.password = password
     parameters.attributes = userAttributes
     val actionResult: SignUpResult = authClient.signUp(parameters)
@@ -185,7 +185,7 @@ To handle errors for the `signUp()` method, use the following code snippet:
 
         // Handle "invalid attributes" error, this time submit valid attributes
         val parameters = NativeAuthSignUpParameters(username = email)
-        // Pass 'password' param if you sign in with username (email) and password
+        // Assign 'password' param if you sign in with username (email) and password
         // parameters.password = password
         parameters.attributes = userAttributes
         authClient.signUp(parameters)

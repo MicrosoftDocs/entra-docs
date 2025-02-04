@@ -39,9 +39,9 @@ MSAL native authentication SDK supports multiple access tokens, so you can speci
     ```kotlin
     companion object {
         // Set values for respective API scopes for their web API resources here, for example: ["api://<Resource_App_ID>/ToDoList.Read", "api://<Resource_App_ID>/ToDoList.ReadWrite"]
-        //A list of scope for API 1
+        // A list of scope for API 1
         private val scopesForAPI1 = listOf<String>()
-        //A list of scope for API 2
+        // A list of scope for API 2
         private val scopesForAPI2 = listOf<String>()
     }
     ```
@@ -70,20 +70,20 @@ MSAL native authentication SDK supports multiple access tokens, so you can speci
         when (accountResult) {
             is GetAccountResult.AccountFound -> {
                 try {
-                    //Access token for API 1
+                    // Access token for API 1
                     val accessTokenOne = getAccessToken(accountResult.resultValue, scopesForAPI1)
-                    //Access token for API 2
+                    // Access token for API 2
                     val accessTokenTwo = getAccessToken(accountResult.resultValue, scopesForAPI2)
                     // Proceed to make a call to an API
                 } catch (e: Exception) {
-                    //Handle Exception
+                    // Handle Exception
                 }
             }
             is GetAccountResult.NoAccountFound -> {
-                //Handle etAccountResult.NoAccountFound
+                // Handle etAccountResult.NoAccountFound
             }
             is GetAccountError -> {
-                //Handle GetAccountError 
+                // Handle GetAccountError 
             }
         }
     }   
@@ -117,9 +117,9 @@ To make an API call, use the access token you acquired in [Acquire an access tok
     ```kotlin
     companion object {
         // Set values for respective API scopes for web API resources here, for example: ["api://<Resource_App_ID>/ToDoList.Read", "api://<Resource_App_ID>/ToDoList.ReadWrite"]
-        //A list of scope for API 1
+        // A list of scope for API 1
         private val scopesForAPI1 = listOf<String>()
-        //A list of scope for API 2
+        // A list of scope for API 2
         private val scopesForAPI2 = listOf<String>()
         // Set the URL of first web API resource here
         private const val WEB_API_URL_1 = "Enter_URL_Of_First_Web_API" 
@@ -136,7 +136,7 @@ To make an API call, use the access token you acquired in [Acquire an access tok
 1. Use the following code snippets to call an API:
 
     ```kotlin
-    //After you acquire an access token, use it to call an API
+    // After you acquire an access token, use it to call an API
 
     val firstApiResponse = useAccessToken(WEB_API_URL_1, accessTokenOne)
     val secondApiResponse = useAccessToken(WEB_API_URL_2, accessTokenTwo)
