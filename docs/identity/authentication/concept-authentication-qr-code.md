@@ -103,11 +103,11 @@ PIN not recently used | Don't repeat the last 3 PINs during admin reset, or user
 ## QR code authentication management for users
 
 
-## Accelerating 
+## Add QR code sign-in to apps
 
-You can also create an accelerated QR code endpoint for your apps by using the Microsoft Authentication Library (MSAL). 
-An accelerated QR code endpoint helps users sign in with fewer clicks. 
-For example, following screenshot shows how the Teams app has a way to scan a QR code to sign in rather than enter a username and password.
+You can use the Microsoft Authentication Library (MSAL) to add an option for users to scan a QR code to sign in to your apps directly. 
+This option helps users sign in with fewer clicks. 
+For example, the following screenshot shows Teams with an option to scan a QR code to sign in rather than enter a username and password.
 
 :::image type="content" source="media/how-to-authentication-qr-code/sign-in.png" alt-text="Screenshot that shows how to scan a QR code to sign in to Teams.":::
 
