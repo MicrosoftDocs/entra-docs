@@ -53,7 +53,7 @@ extension ViewController: SignUpVerifyCodeDelegate {
 }
 ```
 
-The `signIn(parameters: delegate)` accepts a delegate parameter and we must implement the required methods in the `SignInAfterSignUpDelegate` protocol. 
+The `signIn(parameters:delegate)` accepts a delegate parameter and we must implement the required methods in the `SignInAfterSignUpDelegate` protocol. 
 
 In the most common scenario, we receive a call to `onSignInCompleted(result)` indicating that the user has signed in. The result can be used to retrieve the `access token`.
 
@@ -71,7 +71,7 @@ extension ViewController: SignInAfterSignUpDelegate {
 }
 ```
 
-The `getAccessToken(parameters: delegate)` accepts a delegate parameter and we must implement the required methods in the `CredentialsDelegate` protocol.
+The `getAccessToken(parameters:delegate)` accepts a delegate parameter and we must implement the required methods in the `CredentialsDelegate` protocol.
 
 In the most common scenario, we receive a call to `onAccessTokenRetrieveCompleted(result)` indicating that the user obtained an `access token`.
 
