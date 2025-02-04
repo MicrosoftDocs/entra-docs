@@ -45,35 +45,30 @@ When users forget their passwords, they need a form to input their usernames (em
 
 ### Start password reset flow
 
-To handle the request when the user selects the **Forget Password** button or link, use the Android SDK's `resetPassword(username)` method as shown in the following code snippet:  
+To handle the request when the user selects the **Forget Password** button or link, use the Android SDK's `resetPassword(resetPasswordParameters)` method as shown in the following code snippet:  
  
    ```kotlin 
     private fun forgetPassword() { 
-     CoroutineScope(Dispatchers.Main).launch { 
-         try { 
-           val resetPasswordResult = authClient.resetPassword( 
-                 username = emailAddress 
-             ) 
+        CoroutineScope(Dispatchers.Main).launch { 
+            val parameter = NativeAuthResetPasswordParameters(username = email)
+            val actionResult = authClient.resetPassword(parameter)
 
             when (resetPasswordResult) { 
                 is ResetPasswordStartResult.CodeRequired -> { 
                     // The implementation of submiteCode() please see below. 
                     submitCode(resetPasswordResult.nextState) 
                 } 
-                 is ResetPasswordError -> {
-                     // Handle errors
-                     handleResetPasswordError(resetPasswordResult)
-                 }
-            } 
-        } catch (exception: MsalException) { 
-             // Handle exception 
-         } 
-     } 
+                is ResetPasswordError -> {
+                    // Handle errors
+                    handleResetPasswordError(resetPasswordResult)
+                }
+            }
+        } 
     } 
    ``` 
 
-- `resetPassword(username)` method initiates password reset flow and an email one-time passcode is sent to the user's emails address for verification.  
-- The return result of `resetPassword(username)` is either `ResetPasswordStartResult.CodeRequired` or `ResetPasswordError`.
+- `resetPassword(resetPasswordParameters)` method initiates password reset flow and an email one-time passcode is sent to the user's emails address for verification.  
+- The return result of `resetPassword(resetPasswordParameters)` is either `ResetPasswordStartResult.CodeRequired` or `ResetPasswordError`.
 - If `resetPasswordResult is ResetPasswordStartResult.CodeRequired`, the app needs to collect the email one-time passcode from the user and submits it as shown in [Submit email one-time passcode](#submit-email-one-time-passcode). 
 - If `resetPasswordResult is ResetPasswordError`, Android SDK provides utility methods to enable you to analyze the specific errors further: 
       - `isUserNotFound()` 
@@ -191,24 +186,30 @@ To automatically sign in users after a password reset, use the following code sn
     } 
     
     private suspend fun signInAfterPasswordReset(nextState: SignInContinuationState) {
-         val currentState = nextState
-         val actionResult = currentState.signIn()
-         when (actionResult) {
-             is SignInResult.Complete -> {
-                 fetchTokens(accountState = actionResult.resultValue)
-             }
-             else {
-                 // Handle unexpected error
-             }
-         }
+        val currentState = nextState
+        val signInContinuationState = actionResult.nextState
+
+        val parameters = NativeAuthSignInContinuationParameters()
+        val signInActionResult = signInContinuationState.signIn(parameters)
+
+        when (actionResult) {
+            is SignInResult.Complete -> {
+                fetchTokens(accountState = actionResult.resultValue)
+            }
+            else {
+                // Handle unexpected error
+            }
+        }
      }
     
-     private suspend fun fetchTokens(accountState: AccountState) {
-         val accessTokenResult = accountState.getAccessToken()
-         if (accessTokenResult is GetAccessTokenResult.Complete) {
-             val accessToken =  accessTokenResult.resultValue.accessToken
-             val idToken = accountState.getIdToken()
-         }
+    private suspend fun fetchTokens(accountState: AccountState) {
+        val getAccessTokenParameters = NativeAuthGetAccessTokenParameters()
+        val accessTokenResult = accountState.getAccessToken(getAccessTokenParameters)
+
+        if (accessTokenResult is GetAccessTokenResult.Complete) {
+            val accessToken =  accessTokenResult.resultValue.accessToken
+            val idToken = accountState.getIdToken()
+        }
     }
    ```
 
