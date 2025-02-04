@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 02/03/2025
+ms.date: 02/04/2025
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -50,6 +50,8 @@ Investigating an alert starts with gathering data. With Microsoft Entra Health i
 
 1. Select the **Sign-ins requiring a compliant device** or **Sign-ins requiring a managed device** scenario and then select an active alert.
 
+    :::image type="content" source="media/scenario-health-sign-ins-compliant-managed-device/health-monitoring-landing-page-compliant-device.png" alt-text="Screenshot of the Microsoft Entra Health landing page." lightbox="media/scenario-health-sign-ins-compliant-managed-device/health-monitoring-landing-page-compliant-device-expanded.png":::
+
 1. View the signal from the **View data graph** section to get familiar with the pattern and identify anomalies.
     
     ![Screenshot of the sign-ins requiring managed device signal.](media/scenario-health-sign-ins-compliant-managed-device/health-monitoring-compliant-device-signal.png)
@@ -76,7 +78,7 @@ The following common issues could cause a spike in sign-ins requiring a complian
 
 ### Many users are blocked from signing in from known devices
 
-If a large group of users are blocked from signing in to known devices, a spike could indicate that these devices have fallen out of compliance. If the number of affected users indicates a high percentage of your organization's users, you might be looking at a wide spread issue.
+If a large group of users are blocked from signing in to known devices, a spike could indicate that these devices have fallen out of compliance. If the number of affected users indicates a high percentage of your organization's users, you might be looking at a widespread issue.
  
 To investigate:
 
@@ -102,7 +104,9 @@ To investigate:
 1. [Review the sign-in logs](../monitoring-health/concept-sign-in-log-activity-details.md).
 
 1. [Investigate risk with Microsoft Entra ID Protection](../../id-protection/howto-identity-protection-investigate-risk.md).
-    - Note: Microsoft Entra ID Protection requires a Microsoft Entra P2 license.
+
+> [!NOTE]
+> Microsoft Entra ID Protection requires a Microsoft Entra P2 license.
 
 ### Network issues
 
@@ -123,6 +127,5 @@ To investigate:
 
 ## Related content
 
-- [Learn about Conditional Access and Intune](/mem/intune/protect/conditional-access)
 - [Learn about Conditional Access and Intune](/mem/intune/protect/conditional-access)
 - [Learn about Microsoft Entra hybrid joined devices](../devices/concept-hybrid-join.md)

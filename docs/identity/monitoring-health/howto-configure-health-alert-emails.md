@@ -60,7 +60,7 @@ Email notification settings can be configured for each scenario in the Microsoft
 
 1. Select the scenario you want to configure email notifications for.
 
-    ![Screenshot of the Health monitoring landing page.](media/howto-configure-health-alert-emails/health-monitoring-landing-page.png)
+    :::image type="content" source="media/howto-configure-health-alert-emails/health-monitoring-landing-page.png" alt-text="Screenshot of the Microsoft Entra Health landing page." lightbox="media/howto-configure-health-alert-emails/health-monitoring-landing-page-expanded.png":::
 
 1. From the **Group alert notifications** section, select either the **+Select** or **Edit** button.
     - If no group is selected, the **+Select** button is displayed.
@@ -71,8 +71,6 @@ Email notification settings can be configured for each scenario in the Microsoft
 1. From the panel that opens, select the group you want to receive the alerts and select the **Select** button. 
     - Only one group can be selected.
     - The group is updated in the **Group alert notifications** section of the scenario page.
-
-    ![Screenshot of the group selection panel.](media/howto-configure-health-alert-emails/select-email-notification-group.png)
 
 Members of the selected group will receive an email notification the next time an alert is triggered for the scenario. Repeat this process for the other scenarios.
 

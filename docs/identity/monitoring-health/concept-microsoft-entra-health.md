@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 01/31/2025
+ms.date: 02/04/2025
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 ---
@@ -30,7 +30,7 @@ Scenario monitoring and SLA Attainment are available in the Microsoft Entra Heal
 
 The page opens to the SLA Attainment page.
 
-![Screenshot of the Microsoft Entra Health landing page.](media/concept-microsoft-entra-health/identity-health-landing-page-attainment.png)
+:::image type="content" source="media/concept-microsoft-entra-health/identity-health-landing-page-attainment.png" alt-text="Screenshot of the Microsoft Entra Health landing page." lightbox="media/concept-microsoft-entra-health/identity-health-landing-page-attainment-expanded.png":::
 
 ## How Microsoft Entra Health monitoring (preview) works
 
