@@ -29,7 +29,7 @@ To achieve AAL1, you can use any NIST single-factor or multifactor [permitted au
 
 |Microsoft Entra authentication method|NIST authenticator type |
 | - | - |
-|Password |Memorized Secret |
+|Password <br> QR Code (PIN) |Memorized Secret |
 |Phone (SMS): Not recommended | Single-factor out-of-band |
 |Microsoft Authenticator app (Phone Sign-In)|Multi-factor out-of-band |
 |Single-factor software certificate | Single-factor crypto software |

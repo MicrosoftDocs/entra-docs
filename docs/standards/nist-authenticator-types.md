@@ -18,7 +18,7 @@ The authentication process begins when a claimant asserts its control of one of 
 
 |NIST authenticator type| Microsoft Entra authentication method|
 | - | - |
-|Memorized secret <br> (something you know)|  Password|
+|Memorized secret <br> (something you know)|  Password <br> QR Code (PIN)|
 |Look-up secret <br> (something you have)| None|
 |Single-factor out-of-band <br>(something you have)| Microsoft Authenticator app (Push Notification) <br> Microsoft Authenticator Lite (Push Notification) <br> Phone (SMS): Not recommended |
 Multi-factor Out-of-band <br> (something you have + something you know/are) | Microsoft Authenticator app (Phone Sign-In) |
