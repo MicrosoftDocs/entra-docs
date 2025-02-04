@@ -19,8 +19,9 @@ In this tutorial:
 
 > [!div class="checklist"]
 >
-> * Call the API and display the results
-> * Test the application
+> * Test the application and display the results from the API
+> * Sign out of the application
+> * Clean up resources
 
 ## Prerequisites
 
@@ -58,9 +59,15 @@ This section demonstrates how to test the application by signing in and calling 
 
 ## Sign-out from the application
 
+Now that you've tested the application and called the Microsoft Graph API, you should sign out of the application.
+
 1. Find the **Sign out** link in the top right corner of the page, and select it.
 1. You're prompted to pick an account to sign out from. Select the account you used to sign in.
 1. A message appears indicating that you signed out. You can now close the browser window.
+
+## Clean up resources
+
+Navigate to the Microsoft Entra admin center and delete the application registration. This will remove the application from your tenant and prevent any further access to the application.
 
 ## See also
 

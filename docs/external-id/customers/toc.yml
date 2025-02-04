@@ -132,12 +132,12 @@ items:
               href: /entra/identity-platform/tutorial-web-app-node-call-microsoft-graph-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
         - name: ASP.NET Core
           items:
-              - name: Prepare tenant
-                href: tutorial-web-app-dotnet-sign-in-prepare-tenant.md
-              - name: Create ASP.NET Core app
-                href: tutorial-web-app-dotnet-sign-in-prepare-app.md
-              - name: Sign in and sign out
-                href: tutorial-web-app-dotnet-sign-in-sign-out.md
+              - name: Prepare your app
+                href: /entra/identity-platform/tutorial-web-app-dotnet-prepare-app.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+              - name: Add authentication elements
+                href: /entra/identity-platform/tutorial-web-app-dotnet-sign-in-users.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+              - name: Test your application
+                href: /entra/identity-platform/tutorial-web-app-dotnet-call-api.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
         - name: Python Flask
           items:
               - name: Prepare tenant
