@@ -35,7 +35,7 @@ In this tutorial, you learn how to:
  
 After a successful sign-up flow, you can automatically sign in your users without initiating a fresh sign-in flow. 
  
-The `SignUpResult.Complete` returns `SignInContinuationState` object. The `SignInContinuationState` object provides access to `signIn()` method.  
+The `SignUpResult.Complete` returns `SignInContinuationState` object. The `SignInContinuationState` object provides access to `signIn(parameters)` method.  
  
 To sign up a user with email and password, then automatically sign them in, use the following code snippet:  
  
@@ -50,10 +50,13 @@ CoroutineScope(Dispatchers.Main).launch {
         val submitCodeActionResult = nextState.submitCode( 
             code = code 
         ) 
-        if (submitCodeActionResult is SignUpResult.Complete) { 
+        if (submitCodeActionResult is SignUpResult.Complete) {
             // Handle sign up success 
             val signInContinuationState = actionResult.nextState 
-            val signInActionResult = signInContinuationState.signIn() 
+
+            val parameters = NativeAuthSignInContinuationParameters()
+            val signInActionResult = signInContinuationState.signIn(parameters)
+
             if (signInActionResult is SignInResult.Complete) { 
                 // Handle sign in success
                 val accountState = signInActionResult.resultValue
@@ -75,13 +78,11 @@ To retrieve ID token claims after sign-in, use the steps in [Read ID token claim
  
 ## Handle sign-in errors 
 
-The `SignInContinuationState.signIn()` method returns `SignInResult.Complete` after a successful sign-in. It can also return an error. 
+The `SignInContinuationState.signIn(parameters)` method returns `SignInResult.Complete` after a successful sign-in. It can also return an error. 
  
-To handle errors in `SignInContinuationState.signIn()`, use the following code snippet:  
+To handle errors in `SignInContinuationState.signIn(parameters)`, use the following code snippet:  
  
 ```kotlin 
-val signInContinuationState = actionResult.nextState
-val parameters = NativeAuthSignInContinuationParameters()
 val signInActionResult = signInContinuationState.signIn(parameters)
 
 when (signInActionResult) {

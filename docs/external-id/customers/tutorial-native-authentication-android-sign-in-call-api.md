@@ -142,7 +142,6 @@ To make an API call, use the access token you acquired in [Acquire an access tok
     val firstApiResponse = useAccessToken(WEB_API_URL_1, accessTokenOne)
     val secondApiResponse = useAccessToken(WEB_API_URL_2, accessTokenTwo)
 
-
     private suspend fun useAccessToken(WEB_API_URL: String, accessToken: String): Response {
         return withContext(Dispatchers.IO) {
             ApiClient.performGetApiRequest(WEB_API_URL, accessToken)

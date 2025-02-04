@@ -60,7 +60,7 @@ To sign in a user, you need to:
             val submitCodeActionResult = nextState.submitCode(
                 code = code
             )
-            if (submitCodeActionResult is SignInResult.Complete){
+            if (submitCodeActionResult is SignInResult.Complete) {
                 // Handle sign in success
                 val accountState = submitCodeActionResult.resultValue
 
@@ -141,7 +141,7 @@ To handle errors in the `signIn(parameters)` method, use the following code snip
    }
    ```
 
-- `SignInError` indicates an unsuccessful action result returned by `signIn()`, so the action result doesn't include a reference to the new state.
+- `SignInError` indicates an unsuccessful action result returned by `signIn(parameters)`, so the action result doesn't include a reference to the new state.
 - If `actionResult is SignUpError`, the Android SDK provides utility methods to enable you to analyze the specific errors further:
     - The method `isUserNotFound()` checks whether the user signs in with a username (email address) that doesn't exist.
     - The method `isBrowserRequired()` checks the need for a browser (web fallback), to complete authentication flow. This scenario happens when native authentication isn't sufficient to complete the authentication flow. For examples, an admin configures email and password as the authentication method, but the app fails to send *password* as a challenge type or simply doesn't support it. Use the steps in [Support web fallback in Android app](tutorial-native-authentication-android-support-web-fallback.md) to handle scenario when it happens.
