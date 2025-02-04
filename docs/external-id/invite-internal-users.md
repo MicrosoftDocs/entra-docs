@@ -110,7 +110,7 @@ ContentType: application/json
 
 The response to the API is the same response you get when you invite a new guest user to the directory.
 
-## RElated content
+## Related content
 
 - [Add and invite guest users](add-users-administrator.yml)
 - [Customize invitations using API](customize-invitation-api.md)
