@@ -345,6 +345,10 @@ This section covers how to create policies that restrict QR code authentication 
    1. Under **Conditions** > **Filter for devices** > **Configure** > select **Yes** > **Include filtered devices from policy** > **ProfileType** **Equals** **Shared**.
    1. Under **Access controls** > **Grant** > select **Require device to be marked as compliant**.
 
+
+## User sign-in
+
+
 ## Related content
 
 [Authentication methods in Microsoft Entra ID - QR code authentication method (Preview)](concept-authentication-qr-code.md)
