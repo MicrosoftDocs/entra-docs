@@ -71,7 +71,7 @@ To sign up a user, you need to:
    ```
 
     - Use the SDK's instance method, `signUp(parameters)` to start the sign-up flow.
-        - To sign up using username (email address) and password, pass your password parameter to the `NativeAuthSignUpParameters`. 
+        - To sign up using username (email address) and password, create an instance of `NativeAuthSignUpParameters` class and assign username and password. 
     - The sign-up parameter, `username`, is then email address you collect from the user. 
     - In most common scenario, the `signUp(parameters)` returns a result, `SignUpResult.CodeRequired`, which indicates that the SDK expects the app to submit the email one-time passcode sent to the user's emails address.
     - The `SignUpResult.CodeRequired` object contains a new state reference, which we can retrieve through `actionResult.nextState`. 
