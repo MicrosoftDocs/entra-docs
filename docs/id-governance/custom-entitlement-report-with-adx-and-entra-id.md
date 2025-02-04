@@ -30,7 +30,7 @@ In this tutorial, you:
 > - Create tables and import data from Microsoft Entra ID Governance into Azure Data Explorer.
 > - Build a custom query by using KQL.
 
-By the end of this tutorial, you'll be able to develop customized views of the access rights and permissions of users. These views span multiple applications via Microsoft-supported tools. You can also bring in data from third-party databases or applications to report on those.
+By the end of this tutorial, you'll be able to develop customized views of the access rights and permissions of users. These views span multiple applications via Microsoft-supported tools. You can also bring in data from third-party databases or applications to report on those access rights and permissions.
 
 ## Prerequisites
 
@@ -209,7 +209,7 @@ Generate a JSON file with group membership, which is used to create custom views
 
 #### Get application and service principal data
 
-Generate a JSON file with all applications and the corresponding service principals in the tenant. You'll import this data into Azure Data Explorer in a [later section of this tutorial](create-tables-and-import-json-files-with-data-from-microsoft-entra-id-into-azure-data-explorer), so that you can generate custom reports related to applications based on this data.
+Generate a JSON file with all applications and the corresponding service principals in the tenant. You'll import this data into Azure Data Explorer in a [later section of this tutorial](#create-tables-and-import-json-files-with-data-from-microsoft-entra-id-into-azure-data-explorer), so that you can generate custom reports related to applications based on this data.
 
 ```powershell
     # Fetch applications and their corresponding service principals, and then export to JSON 
@@ -311,7 +311,7 @@ At the end of those steps, you have the tables `EntraUsers`, `EntraGroups`, `Ent
 
 ## Extract Microsoft Entra ID Governance data by using PowerShell
 
-In this section, you use PowerShell to extract data from Microsoft Entra ID Governance services. If you don't have Microsoft Entra ID Governance, Microsoft Entra ID P2, or Microsoft Entra Suite, continue in the section [Use Azure Data Explorer to build custom reports](use-azure-data-explorer-to-build-custom-reports).
+In this section, you use PowerShell to extract data from Microsoft Entra ID Governance services. If you don't have Microsoft Entra ID Governance, Microsoft Entra ID P2, or Microsoft Entra Suite, continue in the section [Use Azure Data Explorer to build custom reports](#use-azure-data-explorer-to-build-custom-reports).
 
 For the following steps, you might need to [install Microsoft Graph PowerShell modules](/powershell/microsoftgraph/installation) to extract Microsoft Entra ID Governance data. The first time that your organization uses these modules for this scenario, you need to be in a Global Administrator role to allow Microsoft Graph PowerShell to grant consent for use in your tenant. Subsequent interactions can use a lower-privileged role.
 
@@ -354,7 +354,7 @@ Scenarios for generating reports with this type of data include:
 
 #### Get definition data for access review schedules
 
-Generate a JSON file with access review definition names and IDs that are used to create custom views in Azure Data Explorer. The sample includes all access reviews, but you can include additional filtering if necessary. For more information, see [Use the filter query parameter](/graph/api/accessreviewset-list-definitions?view=graph-rest-1.0&tabs=http#use-the-filter-query-parameter).
+Generate a JSON file with access review definition names and IDs that are used to create custom views in Azure Data Explorer. The sample includes all access reviews, but you can include additional filtering if necessary. For more information, see [Use the filter query parameter](/graph/api/accessreviewset-list-definitions?view=graph-rest-1.0&tabs=http#use-the-filter-query-parameter&preserve-view=true).
 
 ```powershell
    $allsched = Get-MgIdentityGovernanceAccessReviewDefinition -All
@@ -950,4 +950,4 @@ EntraUsers
 ## Related content
 
 - [What is entitlement management?](entitlement-management-overview.md)
-- [Use Kusto .NET client libraries from PowerShell](/kusto/api/powershell/powershell?view=microsoft-fabric&tabs=user)
+- [Use Kusto .NET client libraries from PowerShell](/kusto/api/powershell/powershell?view=microsoft-fabric&tabs=user&preserve-view=true)
