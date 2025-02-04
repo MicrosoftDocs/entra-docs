@@ -79,8 +79,6 @@ In this section, you'll create an ASP.NET Core project in Visual Studio Code.
     dotnet new webapp
     ```
 
----
-
 ## Install identity packages
 
 Identity related NuGet packages must be installed in the project to authenticate users.
@@ -114,4 +112,4 @@ The values recorded in your application setup are used to configure the applicat
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Add authentication to your app](tutorial-web-app-dotnet-sign-in-users.md)
+> [Configure an ASP.NET Core web app for authorization and authentication](./tutorial-web-app-dotnet-sign-in-users.md)
