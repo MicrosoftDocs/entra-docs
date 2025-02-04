@@ -191,7 +191,7 @@ Whether you sign up a user using email one-time passcode or username (email) and
 
 To spread the attributes across one or more pages, we must set the attributes we intend to collect across different pages as mandatory in the customer identity and access management (CIAM) tenant configuration. 
 
-We call `signUp(parameters:delegate)` without passing any attributes in the `MSALNativeAuthSignUpParameters` object. The next step will be to call `newState.submitCode(code: userSuppliedCode, delegate: self)` to verify user's email. 
+We call `signUp(parameters:delegate)` without passing any attributes in the `MSALNativeAuthSignUpParameters` instance. The next step will be to call `newState.submitCode(code: userSuppliedCode, delegate: self)` to verify user's email. 
 
 We implement the `SignUpVerifyCodeDelegate` protocol as an extension to our class as before, but this time we must implement the optional method `onSignUpAttributesRequired(attributes:newState)` in addition to the  required methods:
 
