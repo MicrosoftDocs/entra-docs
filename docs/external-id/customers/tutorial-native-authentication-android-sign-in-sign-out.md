@@ -101,7 +101,7 @@ To sign in a user, you need to:
     
 
     - To start the sign-in flow, use the SDK's `signIn(parameters)` method. 
-    - The sign-in parameter, `username` is then email address you collect from the user.
+    - An instance of the `NativeAuthSignInParameters` class, containing the `username` that is the email address you collect from the user.
     - If the sign-in method is username (email) and password, the method's parameter, `password` is then password you collect from the user.
     - In most common scenario, the `signIn(parameters)` returns a result, `SignInResult.CodeRequired`, which indicates that the SDK expects the app to submit the email one-time passcode sent to the user's emails address. 
     - The `SignInResult.CodeRequired` object contains a new state reference, which we can retrieve through `actionResult.nextState`. 
