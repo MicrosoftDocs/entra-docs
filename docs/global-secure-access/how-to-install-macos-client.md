@@ -3,7 +3,7 @@ title: The Global Secure Access Client for macOS
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the macOS client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 01/29/2025
+ms.date: 02/04/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -15,7 +15,7 @@ ms.reviewer: lirazbarak
 # Global Secure Access client for macOS (Preview)
 > [!IMPORTANT]
 > The Global Secure Access client for macOS is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 The Global Secure Access client, an essential component of Global Secure Access, helps organizations manage and secure network traffic on end-user devices. The client's main role is to route traffic that needs to be secured by Global Secure Access to the cloud service. All other traffic goes directly to the network. The [Forwarding Profiles](concept-traffic-forwarding.md), configured in the portal, determine which traffic the Global Secure Access client routes to the cloud service.
 
@@ -45,7 +45,7 @@ Use the following command for silent installation.
 
 `sudo installer -pkg ~/Downloads/GlobalSecureAccessClient.pkg -target / -verboseR`
 
-The client uses system extensions and a transparent application proxy that need to be approved during the installation. For a silent deployment without prompting the end user to allow these components, you can deploy a policy to automatically approve the components.
+The client uses system extensions and a transparent application proxy that need to be approved during the installation. For a silent deployment without prompting the end user to allow these components, you can deploy a policy to automatically approve the components with mobile device management.
 
 ### Allow system extensions through mobile device management (MDM)
 The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win32-app-management) and you can adapt them for different MDMs:
@@ -64,10 +64,8 @@ The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win3
 
 |Bundle identifier   |Team identifier   |
 |---------|---------|
-|com.microsoft.naas.globalsecure.tunnel-df   |C99DD00EE1   |
-|com.microsoft.naas.globalsecure-df   |C99DD00EE1   |
-
-:::image type="content" source="media/how-to-install-macos-client/macOS-configure-instance.png" alt-text="Screenshot of the Configure instance dialog with the System Extensions payload settings highlighted.":::   
+|com.microsoft.naas.globalsecure.tunnel-df   |UBF8T346G9   |
+|com.microsoft.naas.globalsecure-df   |UBF8T346G9   |
 
 10. Select **Save** and **Next**.   
 1. On the **Scope tags** tab, add tags as appropriate.
@@ -80,8 +78,7 @@ The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win3
 1. In the Microsoft Intune admin center, select **Devices** > **Manage devices** > **Configuration** > **Policies** > **Create** > **New policy**.
 1. Create a profile for the macOS platform based on a template of type **Custom** and select **Create**.
 :::image type="content" source="media/how-to-install-macos-client/macos-client-create-profile-custom.png" alt-text="Screenshot of the Create a profile form with the macOS Platform, Templates Profile type, and Custom template highlighted.":::
-1. On the **Basics** tab, enter a **Name** for the profile.
-image.png
+1. On the **Basics** tab, enter a **Name** for the profile.   
 1. On the **Configuration settings** tab, enter a **Custom configuration profile name**.
 1. Keep **Deployment channel** set to "Device channel."
 1. Upload an .xml file that contains the following data:
@@ -90,46 +87,70 @@ image.png
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-    <key>PayloadDescription</key>
-    <string>Ttransparent proxy settings</string>
-    <key>PayloadDisplayName</key>
-    <string>Global Secure Access Client - AppProxy</string>
-    <key>PayloadIdentifier</key>
-    <string>com.microsoft.naas.globalsecure-df.</string>
-    <key>PayloadType</key>
-    <string>Configuration</string>
-    <key>PayloadUUID</key>
-    <string>68C6A9A4-ECF8-4FB7-BA00-291610F998D6</string>
-    <key>PayloadVersion</key>
-    <real>1</real>
-    <key>TransparentProxy</key>
-    <dict>
-        <key>AuthName</key>
-        <string>NA</string>
-        <key>AuthPassword</key>
-        <string>NA</string>
-        <key>AuthenticationMethod</key>
-        <string>Password</string>
-        <key>ProviderBundleIdentifier</key>
-        <string>com.microsoft.naas.globalsecure.tunnel-df</string>
-        <key>RemoteAddress</key>
-        <string>100.64.0.0</string>
-        <key>ProviderDesignatedRequirement</key>
-        <string>identifier &quot;com.microsoft.naas.globalsecure.tunnel-df&quot; and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = UBF8T346G9</string>
-        <key>Order</key>
-        <string>1</string>
-    </dict>
-    <key>UserDefinedName</key>
-    <string>Global Secure Access Client - AppProxy</string>
-    <key>VPNSubType</key>
-    <string>com.microsoft.naas.globalsecure.tunnel-df</string>
-    <key>VPNType</key>
-    <string>TransparentProxy</string>
-</dict>
+	<dict>
+		<key>PayloadUUID</key>
+		<string>87cbb424-6af7-4748-9d43-f1c5dda7a0a6</string>
+		<key>PayloadType</key>
+		<string>Configuration</string>
+		<key>PayloadOrganization</key>
+		<string>Microsoft Corporation</string>
+		<key>PayloadIdentifier</key>
+		<string>com.microsoft.naas.globalsecure-df</string>
+		<key>PayloadDisplayName</key>
+		<string>Global Secure Access Proxy Configuration</string>
+		<key>PayloadDescription</key>
+		<string>Add Global Secure Access Proxy Configuration</string>
+		<key>PayloadVersion</key>
+		<integer>1</integer>
+		<key>PayloadEnabled</key>
+		<true/>
+		<key>PayloadRemovalDisallowed</key>
+		<true/>
+		<key>PayloadScope</key>
+		<string>System</string>
+		<key>PayloadContent</key>
+		<array>
+			<dict>
+				<key>PayloadUUID</key>
+				<string>04e13063-2bb8-4b72-b1ed-45290f91af68</string>
+				<key>PayloadType</key>
+				<string>com.apple.vpn.managed</string>
+				<key>PayloadOrganization</key>
+				<string>Microsoft Corporation</string>
+				<key>PayloadIdentifier</key>
+				<string>com.microsoft.naas.globalsecure-df</string>
+				<key>PayloadDisplayName</key>
+				<string>Global Secure Access Proxy Configuration</string>
+				<key>PayloadDescription</key>
+				<string/>
+				<key>PayloadVersion</key>
+				<integer>1</integer>
+				<key>TransparentProxy</key>
+				<dict>
+					<key>AuthenticationMethod</key>
+					<string>Password</string>
+					<key>Order</key>
+					<integer>1</integer>
+					<key>ProviderBundleIdentifier</key>
+					<string>com.microsoft.naas.globalsecure.tunnel-df</string>
+					<key>ProviderDesignatedRequirement</key>
+					<string>identifier "com.microsoft.naas.globalsecure.tunnel-df" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = UBF8T346G9</string>
+					<key>ProviderType</key>
+					<string>app-proxy</string>
+					<key>RemoteAddress</key>
+					<string>100.64.0.0</string>
+				</dict>
+				<key>UserDefinedName</key>
+				<string>Global Secure Access Proxy Configuration</string>
+				<key>VPNSubType</key>
+				<string>com.microsoft.naas.globalsecure-df</string>
+				<key>VPNType</key>
+				<string>TransparentProxy</string>
+			</dict>
+		</array>
+	</dict>
 </plist>
 ```
-:::image type="content" source="media/how-to-install-macos-client/macos-client-custom-configuration-settings.png" alt-text="Screenshot of the Configuration settings tab showing a portion of the .xml data.":::
 
 7. Complete the creation of the profile by assigning users and devices according to your needs.
 
