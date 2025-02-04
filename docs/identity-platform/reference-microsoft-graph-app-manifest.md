@@ -7,7 +7,7 @@ manager: CelesteDG
 ms.service: identity-platform
 ms.topic: reference
 ms.workload: identity
-ms.date: 09/18/2024
+ms.date: 02/03/2025
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: youazhou
@@ -390,6 +390,8 @@ Example:
 ```json
 "isFallbackPublicClient ": "false",
 ```
+
+Microsoft does not recommend the ROPC flow, which is an insecure pattern. In most scenarios, there exist more secure flows that you can use.
 
 ### info attribute 
 
