@@ -63,6 +63,8 @@ For SMS verification, the following region codes require an opt-in. This means t
 | 380 | Ukraine | 
 | 216 | Tunisia | 
 | 212 | Morocco | 
+| 257 | Burundi | 
+
 
 ## Voice verification
 For voice verification, the following region codes require an opt-in.
