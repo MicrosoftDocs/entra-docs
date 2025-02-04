@@ -37,7 +37,7 @@ For external user scenarios, the MFA authentication methods that a resource tena
 
 ## Create a Conditional Access policy
 
-The following steps help create a Conditional Access policy to require all users do multifactor authentication using the authentication strength policy.
+The following steps help create a Conditional Access policy to require all users do multifactor authentication, using the authentication strength policy, [without any app exclusions](concept-conditional-access-cloud-apps.md#conditional-access-behavior-when-an-all-resources-policy-has-an-app-exclusion).
 
 > [!WARNING]
 > If you use [external authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage), these are currently incompatable with authentication strength and you should use the **[Require multifactor authentication](concept-conditional-access-grant.md#require-multifactor-authentication)** grant control.
