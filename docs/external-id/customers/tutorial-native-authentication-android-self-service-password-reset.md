@@ -45,7 +45,7 @@ When users forget their passwords, they need a form to input their usernames (em
 
 ### Start password reset flow
 
-To handle the request when the user selects the **Forget Password** button or link, use the Android SDK's `resetPassword(resetPasswordParameters)` method as shown in the following code snippet:  
+To handle the request when the user selects the **Forget Password** button or link, use the Android SDK's `resetPassword(parameters)` method as shown in the following code snippet:  
  
    ```kotlin 
     private fun forgetPassword() { 
@@ -67,8 +67,8 @@ To handle the request when the user selects the **Forget Password** button or li
     } 
    ``` 
 
-- `resetPassword(resetPasswordParameters)` method initiates password reset flow and an email one-time passcode is sent to the user's emails address for verification.  
-- The return result of `resetPassword(resetPasswordParameters)` is either `ResetPasswordStartResult.CodeRequired` or `ResetPasswordError`.
+- `resetPassword(parameters)` method initiates password reset flow and an email one-time passcode is sent to the user's emails address for verification.  
+- The return result of `resetPassword(parameters)` is either `ResetPasswordStartResult.CodeRequired` or `ResetPasswordError`.
 - If `resetPasswordResult is ResetPasswordStartResult.CodeRequired`, the app needs to collect the email one-time passcode from the user and submits it as shown in [Submit email one-time passcode](#submit-email-one-time-passcode). 
 - If `resetPasswordResult is ResetPasswordError`, Android SDK provides utility methods to enable you to analyze the specific errors further: 
       - `isUserNotFound()` 
