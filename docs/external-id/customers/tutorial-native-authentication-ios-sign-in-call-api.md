@@ -34,7 +34,7 @@ In this tutorial, you learn how to:
 
 ## Acquire one or multiple access tokens
 
-MSAL native authentication SDK can store multiple access tokens. After signing in, you can obtain an access token by using the `getAccessToken(scope:)` function and specifying the scopes for the new access token you wish to grant.
+MSAL native authentication SDK can store multiple access tokens. After signing in, you can obtain an access token by using the `getAccessToken(parametres:)` function and specifying the scopes for the new access token you wish to grant.
 
 1. Declare and set values for a set of API scopes by using the following code snippet:
 
@@ -67,8 +67,9 @@ MSAL native authentication SDK can store multiple access tokens. After signing i
         print("Signing in with email \(email) and password")
 
         showResultText("Signing in...")
-
-        nativeAuth.signIn(username: email, password: password, delegate: self)
+        let parameters = MSALNativeAuthSignInParameters(username: email)
+        parameters.password = password
+        nativeAuth.signIn(parameters: parameters, delegate: self)
     }
     ```
 
@@ -86,7 +87,9 @@ MSAL native authentication SDK can store multiple access tokens. After signing i
         if let accessToken = accessTokenAPI1 {
             accessProtectedAPI(apiUrl: url, accessToken: accessToken)
         } else {
-            accountResult?.getAccessToken(scopes: protectedAPIScopes1, delegate: self)
+            let parameters = MSALNativeAuthGetAccessTokenParameters()
+            parameters.scopes = protectedAPIScopes1
+            accountResult?.getAccessToken(parameters: parameters, delegate: self)
             let message = "Retrieving access token to use with API 1..."
             showResultText(message)
             print(message)
@@ -102,7 +105,9 @@ MSAL native authentication SDK can store multiple access tokens. After signing i
         if let accessToken = accessTokenAPI2 {
             accessProtectedAPI(apiUrl: url, accessToken: accessToken)
         } else {
-            accountResult?.getAccessToken(scopes: protectedAPIScopes2, delegate: self)
+            let parameters = MSALNativeAuthGetAccessTokenParameters()
+            parameters.scopes = protectedAPIScopes2
+            accountResult?.getAccessToken(parameters: parameters, delegate: self)
             let message = "Retrieving access token to use with API 2..."
             showResultText(message)
             print(message)
