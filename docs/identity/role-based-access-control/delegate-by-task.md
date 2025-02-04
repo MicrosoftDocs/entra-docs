@@ -416,8 +416,8 @@ Here are the least privileged roles you should use when performing tasks for [Co
 > | Manage custom controls | [Conditional Access Administrator](permissions-reference.md#conditional-access-administrator) | [Security Administrator](permissions-reference.md#security-administrator) |
 > | Manage named locations | [Conditional Access Administrator](permissions-reference.md#conditional-access-administrator) | [Security Administrator](permissions-reference.md#security-administrator) |
 > | Manage terms of use | [Conditional Access Administrator](permissions-reference.md#conditional-access-administrator) | [Security Administrator](permissions-reference.md#security-administrator) |
-> | Read all configuration | [Default user role](../../fundamentals/users-default-permissions.md) |  |
-> | Read named locations | [Default user role](../../fundamentals/users-default-permissions.md) |  |
+> | Read all configuration | [Security Reader](permissions-reference.md#security-reader) |  |
+> | Read named locations | [Security Reader](permissions-reference.md#security-reader) |  |
 > | Read terms of use | [Security Reader](permissions-reference.md#security-reader) |  [Global Reader](permissions-reference.md#global-reader) |
 > | Read which terms of use were accepted by the signed-in user | [Default user role](../../fundamentals/users-default-permissions.md) |  |
 
