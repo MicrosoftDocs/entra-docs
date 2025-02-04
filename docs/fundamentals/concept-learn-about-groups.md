@@ -91,6 +91,22 @@ The group owner can let users find their own groups to join, instead of assignin
 
 After a user requests to join a group, the request is forwarded to the group owner. If required, the owner can approve the request and the user is notified of the group membership. If you have multiple owners and one of them disapproves, the user is notified, but isn't added to the group. For more information and instructions about how to let your users request to join groups, see [Set up Microsoft Entra ID so users can request to join groups](~/identity/users/groups-self-service-management.md).
 
+## Best practices for managing groups in the cloud
+The following are best practices for managing groups in the cloud:  
+
+- **Enable Self-Service Group Management:** Allow users to create and manage their own Microsoft 365 (M365) groups. This empowers teams to organize themselves while reducing the administrative burden on IT. Apply a Group Naming Policy to block the use of restricted words and ensure consistency. Prevent inactive groups from lingering by enabling group expiration policies. This automatically deletes unused groups after a specified period, unless renewed by a group owner.  For more information, see [Set up self-service group management in Microsoft Entra ID](groups-self-service-management.md)
+- **Leverage Sensitivity Labels:** Use sensitivity labels to classify and govern M365 groups based on their security and compliance needs. This provides fine-grained access controls and ensures that sensitive resources are protected. For more information, see [Assign sensitivity labels to Microsoft 365 groups in Microsoft Entra ID](groups-assign-sensitivity-labels.md)
+- **Automate Membership with Dynamic Groups:** Implement dynamic membership rules to automatically add or remove users and devices from groups based on attributes like department, location, or job title. This minimizes manual updates and reduces the risk of lingering access. This feature applies to M365 groups and Security Groups.  
+- **Conduct Periodic Access Reviews:** Use Entra Identity Governance capabilities to schedule regular access reviews. These ensure that membership in assigned groups remains accurate and relevant over time. For more information, see [Create or update a dynamic membership group in Microsoft Entra ID](../identity/users/groups-create-rule.md)
+- **Manage Membership with Access Packages:** Create access packages with Entra Identity Governance to streamline the management of multiple group memberships. Access packages can: 
+     - Include approval workflows for membership 
+     - Define criteria for access expiration 
+     - Provide a centralized way to grant, review, and revoke access across groups and applications 
+For more information, see [Create an access package in entitlement management](../id-governance/entitlement-management-access-package-create.md)   
+- **Assign Multiple Group Owners:** Assign at least two owners to a group to ensure continuity and reduce dependencies on a single individual. For more information, see [Manage Microsoft Entra groups and group membership](how-to-manage-groups.yml)
+- **Use Group Based Licensing:** Group based licensing simplifies user provisioning and ensures consistent license assignments. You can also use dynamic membership groups to automatically manage licensing for users meeting specific criteria. For more information, see [What is group-based licensing in Microsoft Entra ID?](concept-group-based-licensing.md)
+- **Enforce Role Based Access Controls (RBAC):** Assign roles (e.g. Group Admin) to control who can manage groups. RBAC reduces the risk of privilege misuse and simplifies group management. For more information, see [Overview of role-based access control in Microsoft Entra ID](../identity/role-based-access-control/custom-overview.md)
+
 ## Next steps
 
 - [Create and manage Microsoft Entra groups and group membership](how-to-manage-groups.yml)
