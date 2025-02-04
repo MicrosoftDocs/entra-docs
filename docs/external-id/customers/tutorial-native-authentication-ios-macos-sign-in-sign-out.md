@@ -69,7 +69,7 @@ To sign in a user, you need to:
     nativeAuth.signIn(parameters: parameters, delegate: self)
     ```
 
-    The `signIn(parameters:delegate)` method, which responds asynchronously by calling one of the methods on the passed delegate object, must implement the `SignInStartDelegate` protocol. We pass the email address that the user provides in the email submission form and pass `self` as the delegate.
+    The `signIn(parameters:delegate)` method, which responds asynchronously by calling one of the methods on the passed delegate object, must implement the `SignInStartDelegate` protocol. We pass an instance of `MSALNativeAuthSignInParameters` which contains the email address that the user provides in the email submission form and pass `self` as the delegate.
 
     To sign in a user using **Email with password** flow, we use the following code snippet:
 
