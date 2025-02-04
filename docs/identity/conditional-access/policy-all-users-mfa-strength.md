@@ -53,7 +53,7 @@ The following steps help create a Conditional Access policy to require all users
 1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include**, select **All resources (formerly 'All cloud apps')**.
 
    > [!TIP]
-   > Microsoft recommends all organizations create a baseline Conditional Access policy that targets: All users, all resources, and requires multifactor authentication.
+   > Microsoft recommends all organizations create a baseline Conditional Access policy that targets: All users, all resources without any app exclusions, and requires multifactor authentication.
 
 1. Under **Access controls** > **Grant**, select **Grant access**.
    1. Select **Require authentication strength**, then select the built-in **Multifactor authentication strength** from the list.
