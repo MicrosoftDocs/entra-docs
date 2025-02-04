@@ -41,9 +41,8 @@ To sign up a user with email and password, then automatically sign them in, use 
  
 ```kotlin 
 CoroutineScope(Dispatchers.Main).launch {
-    val parameters = NativeAuthSignUpParameters(username = email).apply {
-        this.password = password
-    }
+    val parameters = NativeAuthSignUpParameters(username = email)
+    parameters.password = password
     val actionResult: SignUpResult = authClient.signUp(parameters)
 
     if (SignUpActionResult is SignUpResult.CodeRequired) { 

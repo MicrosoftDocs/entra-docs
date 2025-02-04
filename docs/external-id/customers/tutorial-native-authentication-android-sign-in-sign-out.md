@@ -50,10 +50,9 @@ To sign in a user, you need to:
 
    ```kotlin
     CoroutineScope(Dispatchers.Main).launch {
-        val parameters = NativeAuthSignInParameters(username = email).apply {
-            // this.password = password
-            // Pass 'password' param if you sign in with username (email) and password
-        }
+        val parameters = NativeAuthSignInParameters(username = email)
+        // Pass 'password' param if you sign in with username (email) and password
+        // parameters.password = password
         val actionResult: SignInResult = authClient.signIn(parameters)
 
         if (actionResult is SignInResult.CodeRequired) {
@@ -81,9 +80,8 @@ To sign in a user, you need to:
 
     ```kotlin
     CoroutineScope(Dispatchers.Main).launch {
-        val parameters = NativeAuthSignInParameters(username = email).apply {
-            this.password = password
-        }
+        val parameters = NativeAuthSignInParameters(username = email)
+        parameters.password = password
         val actionResult: SignInResult = authClient.signIn(parameters)
         
         if (actionResult is SignInResult.Complete) -> {

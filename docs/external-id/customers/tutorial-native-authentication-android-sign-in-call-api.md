@@ -50,9 +50,8 @@ MSAL native authentication SDK supports multiple access tokens, so you can speci
 
     ```kotlin    
     CoroutineScope(Dispatchers.Main).launch {
-         val parameters = NativeAuthSignInParameters(username = email).apply {
-            this.password = password
-        }
+        val parameters = NativeAuthSignInParameters(username = email)
+        parameters.password = password
         val actionResult: SignInResult = authClient.signIn(parameters)
 
         if (actionResult is SignInResult.Complete) -> {
@@ -95,10 +94,9 @@ MSAL native authentication SDK supports multiple access tokens, so you can speci
 
     ```kotlin    
     private suspend fun getAccessToken(accountState: AccountState, scopes: List<String>): String {
-        val parameters = NativeAuthGetAccessTokenParameters().apply {
-            this.forceRefresh = false
-            this.scopes = scopes
-        }
+        val parameters = NativeAuthGetAccessTokenParameters()
+        parameters.forceRefresh = false
+        parameters.scopes = scopes
         val accessTokenState = accountState.getAccessToken(parameters)
 
         return if (accessTokenState is GetAccessTokenResult.Complete) {
