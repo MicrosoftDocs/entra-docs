@@ -114,6 +114,10 @@ Whether you sign up a user using email one-time passcode or username (email) and
 - The `SignUpResult.AttributesRequired` result contains a `requiredAttributes` parameter. `requiredAttributes` is a list of `RequiredUserAttribute` objects that contains details about the user attributes that the app needs to submit. To handle `actionResult is SignUpResult.AttributesRequired`, use the following code snippet:
 
     ```kotlin
+    val parameters = NativeAuthSignUpParameters(username = email)
+    // Pass 'password' param if you sign in with username (email) and password
+    // parameters.password = password
+    parameters.attributes = userAttributes
     val actionResult: SignUpResult = authClient.signUp(parameters)
 
     if (actionResult is SignUpResult.AttributesRequired) {
@@ -169,7 +173,11 @@ To handle errors for the `signUp()` method, use the following code snippet:
   
 - To handle the error of invalid attributes, use the following code snippet:
 
-    ```kotlin 
+    ```kotlin
+    val parameters = NativeAuthSignUpParameters(username = email)
+    // Pass 'password' param if you sign in with username (email) and password
+    // parameters.password = password
+    parameters.attributes = userAttributes
     val actionResult: SignUpResult = authClient.signUp(parameters)
 
     if (actionResult is SignUpError && actionResult.isInvalidAttributes()) {
