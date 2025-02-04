@@ -71,16 +71,16 @@ To sign up a user, you need to:
    }
    ```
 
-    - Use the SDK's instance method, `signUp(signUpParameters)` to start the sign-up flow.
+    - Use the SDK's instance method, `signUp(parameters)` to start the sign-up flow.
         - To sign up using username (email address) and password, pass your password parameter to the `NativeAuthSignUpParameters`. 
     - The sign-up parameter, `username`, is then email address you collect from the user. 
-    - In most common scenario, the `signUp(signUpParameters)` returns a result, `SignUpResult.CodeRequired`, which indicates that the SDK expects the app to submit the email one-time passcode sent to the user's emails address.
+    - In most common scenario, the `signUp(parameters)` returns a result, `SignUpResult.CodeRequired`, which indicates that the SDK expects the app to submit the email one-time passcode sent to the user's emails address.
     - The `SignUpResult.CodeRequired` object contains a new state reference, which we can retrieve through `actionResult.nextState`. 
     - The new state gives us access to two new methods: 
         - `submitCode()` submits the email one-time passcode that the app collects from the user. 
         - `resendCode()` resends the email one-time passcode if the user doesn't receive the code. 
     - The `submitCode()` returns `SignUpResult.Complete`, which indicates that the flow is complete and the user has been signed up.
-    - The `signUp(signUpParameters)` can also return `SignUpError` to denote that an error has occurred. 
+    - The `signUp(parameters)` can also return `SignUpError` to denote that an error has occurred. 
 
 ### Collect user attributes during sign-up
 
@@ -112,7 +112,7 @@ Whether you sign up a user using email one-time passcode or username (email) and
     
     The method names in the `UserAttribute.Builder` class are same as the programmable names of the user attributes that they build. Learn more about [Android SDK attribute builder](concept-native-authentication-user-attribute-builder.md?tabs=android-kotlin).
 
-- The `signUp(signUpParameters)` method can return `SignUpResult.AttributesRequired` to indicate that the app needs to submit one or more required attributes before Microsoft Entra creates an account. These attributes are configured by the administrator as mandatory in the Microsoft Entra admin center. Microsoft Entra doesn't explicitly request for optional user attributes. 
+- The `signUp(parameters)` method can return `SignUpResult.AttributesRequired` to indicate that the app needs to submit one or more required attributes before Microsoft Entra creates an account. These attributes are configured by the administrator as mandatory in the Microsoft Entra admin center. Microsoft Entra doesn't explicitly request for optional user attributes. 
 
 - The `SignUpResult.AttributesRequired` result contains a `requiredAttributes` parameter. `requiredAttributes` is a list of `RequiredUserAttribute` objects that contains details about the user attributes that the app needs to submit. To handle `actionResult is SignUpResult.AttributesRequired`, use the following code snippet:
 
@@ -155,7 +155,7 @@ To handle errors for the `signUp()` method, use the following code snippet:
    }
    ```
 
-   - `signUp(signUpParameters)` can return `SignUpError`. 
+   - `signUp(parameters)` can return `SignUpError`. 
    - `SignUpError` indicates an unsuccessful action result returned by `signUp()` and won't include a reference to the new state.
    - If  `actionResult is SignUpError`, MSAL Android SDK provides utility methods to enable you to analyze the specific errors further:
         - The  method `isUserAlreadyExists()` checks whether the username has already been used to create an account.  

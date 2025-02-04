@@ -76,7 +76,7 @@ Let's look at an example flow that returns `isBrowserRequired()`, and how you ca
  
 1. In the Microsoft Entra admin center, [configure your user flow](how-to-user-flow-sign-up-sign-in-customers.md) to use **Email with password** as the authentication method.    
  
-2. Start a sign-up flow by using the SDK's `signUp(signUpParameters)` method. You get a `SignUpError` that passes the `isBrowserRequired()` check as Microsoft Entra expects *password* and *oob* challenge type, but you configured your SDK with only *oob*.  
+2. Start a sign-up flow by using the SDK's `signUp(parameters)` method. You get a `SignUpError` that passes the `isBrowserRequired()` check as Microsoft Entra expects *password* and *oob* challenge type, but you configured your SDK with only *oob*.  
 
 3. To check and handle the `isBrowserRequired()`, use the following code snippet: 
  

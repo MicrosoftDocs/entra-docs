@@ -102,10 +102,10 @@ To sign in a user, you need to:
     ```
     
 
-    - To start the sign-in flow, use the SDK's `signIn(signInParameters)` method. 
+    - To start the sign-in flow, use the SDK's `signIn(parameters)` method. 
     - The sign-in parameter, `username` is then email address you collect from the user.
     - If the sign-in method is username (email) and password, the method's parameter, `password` is then password you collect from the user.
-    - In most common scenario, the `signIn(signInParameters)` returns a result, `SignInResult.CodeRequired`, which indicates that the SDK expects the app to submit the email one-time passcode sent to the user's emails address. 
+    - In most common scenario, the `signIn(parameters)` returns a result, `SignInResult.CodeRequired`, which indicates that the SDK expects the app to submit the email one-time passcode sent to the user's emails address. 
     - The `SignInResult.CodeRequired` object contains a new state reference, which we can retrieve through `actionResult.nextState`. 
     - The new state gives us access to two new methods: 
         - `submitCode()` submits the email one-time passcode that the app collects from the user. 
@@ -117,7 +117,7 @@ During sign-in, not all actions succeed. For instance, the user might attempt to
 
 #### Handle sign-in start errors
 
-To handle errors in the `signIn(signInParameters)` method, use the following code snippet: 
+To handle errors in the `signIn(parameters)` method, use the following code snippet: 
 
    ```Kotlin
    val actionResult: SignInResult = authClient.signIn(parameters)
