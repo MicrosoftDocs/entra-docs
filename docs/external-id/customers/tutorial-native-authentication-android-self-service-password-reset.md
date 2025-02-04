@@ -45,7 +45,7 @@ When users forget their passwords, they need a form to input their usernames (em
 
 ### Start password reset flow
 
-To handle the request when the user selects the **Forget Password** button or link, use the Android SDK's `resetPassword(resetPasswordParameters)` method as shown in the following code snippet:  
+To handle the request when the user selects the **Forget Password** button or link, use the Android SDK's `resetPassword(parameters)` method as shown in the following code snippet:  
  
    ```kotlin 
     private fun forgetPassword() { 
