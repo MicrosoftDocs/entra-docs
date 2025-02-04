@@ -5,7 +5,7 @@ description: Learn about using QR code authentication method in Microsoft Entra 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/30/2025
+ms.date: 02/03/2025
 
 ms.author: justinha
 author: aanjusingh
@@ -92,13 +92,13 @@ For more information about how to manage QR codes, see [How to enable the QR cod
 
 The following policies are applied when an Authentication Policy Administrator creates or resets a PIN. 
 
-| Policy  | Values |
-|:-------|:--------|
-|Allowed characters | Numbers (0-9) |
-|Unallowed characters | - Characters (`A-Z`,`a-z`)<br>- Symbols (- @ # $ % ^ & * - _ ! + = [ ] { } | \ : ' , . ? / ` ~ " ( ) ; < >)<br>- Unicode characters<br>- Blank space |
-|Minimum PIN length |  8-20 digits | 
-| PIN complexity     | Should be enforced to avoid repetition and common sequences. The following patterns are checked:<br>- Don't contain 0123456789 or 9876543210.<br>- Don't repeat a sequence of 2-3 digits in the PIN, like 121212, or 123123 or 342342.<br>An `Invalid PIN` error appears if the PIN has unallowed characters or is less than the minimum PIN length. |
-| PIN not recently used | Don't repeat the last 3 PINs during admin reset, or user reset. |
+Policy | Values 
+-------|--------
+Allowed characters | Numbers (0-9) 
+Unallowed characters | - Characters (A-Z,a-z)<br>- Symbols (- @ # $ % ^ & * - _ ! + = [ ] { } \| \ : ' , . ? / ` ~ " ( ) ; < >)<br>- Unicode characters<br>- Blank space 
+Minimum PIN length |  8-20 digits 
+PIN complexity     | Should be enforced to avoid repetition and common sequences. The following patterns are checked:<br>- Don't contain 0123456789 or 9876543210.<br>- Don't repeat a sequence of 2-3 digits in the PIN, like 121212, or 123123 or 342342.<br>An `Invalid PIN` error appears if the PIN has unallowed characters or is less than the minimum PIN length. 
+PIN not recently used | Don't repeat the last 3 PINs during admin reset, or user reset. 
 
 ## QR code authentication management for users
 
@@ -109,7 +109,7 @@ You can also create an accelerated QR code endpoint for your apps by using the M
 An accelerated QR code endpoint helps users sign in with fewer clicks. 
 For example, following screenshot shows how the Teams app has a way to scan a QR code to sign in rather than enter a username and password.
 
-:::image type="content" source="media/how-to-authentication-qr-code/sign-in.png" alt-text="Screenshot that shows QR code settings.":::
+:::image type="content" source="media/how-to-authentication-qr-code/sign-in.png" alt-text="Screenshot that shows how to scan a QR code to sign in to Teams.":::
 
 
 
