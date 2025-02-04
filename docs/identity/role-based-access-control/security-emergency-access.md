@@ -224,9 +224,8 @@ These steps should be performed at regular intervals and for key changes:
 
 ## Next steps
 
-- [Securing privileged access for hybrid and cloud deployments in Microsoft Entra ID](security-planning.md)
-- [Add users using Microsoft Entra ID](~/fundamentals/add-users.md) and [assign roles to the new user](~/fundamentals/how-subscriptions-associated-directory.yml)
-- [Sign up for Microsoft Entra ID P1 or P2](~/fundamentals/get-started-premium.md), if you haven't signed up already
 - [How to verify that users are set up for mandatory MFA](../authentication/how-to-mandatory-multifactor-authentication.md)
+- [Require phishing-resistant multifactor authentication for administrators](../conditional-access/policy-admin-phish-resistant-mfa.md)
+- [Securing privileged access for hybrid and cloud deployments in Microsoft Entra ID](security-planning.md)
 - [Configure additional protections for privileged roles in Microsoft 365](/microsoft-365/enterprise/protect-your-global-administrator-accounts), if you're using Microsoft 365
-- [Start an access review of privileged roles](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md) and [transition existing privileged role assignments to more specific administrator roles](permissions-reference.md)
+- [Start an access review of privileged roles](../../id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md) and [transition existing privileged role assignments to more specific administrator roles](permissions-reference.md)
