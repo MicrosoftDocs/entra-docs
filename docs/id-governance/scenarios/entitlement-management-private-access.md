@@ -8,7 +8,7 @@ manager: amycolannino
 
 ms.workload: identity
 ms.topic: overview
-ms.date: 01/31/2025
+ms.date: 02/04/2025
 ms.author: billmath
 ---
 
@@ -35,7 +35,7 @@ Entra ID Governance can establish who should have access to an on-premises app, 
 
 Many organizations have applications on private networks enabling assigned users to access those apps while users are on their organization’s network. Through Microsoft Entra’s provisioning connectors, Entra ID Governance can orchestrate the creation of user accounts in most on-premises systems, such as LDAP directories or SQL databases. ​ 
 
-The Microsoft Entra Suite provides a better alternative that addresses both. Depending on your scenario, there will be two or three objects in Entra representing your real-world application: 
+Depending on your scenario, there will be two or three objects in Entra representing your real-world application: 
 
 - There will be an application object representing the Entra Private Access connection to that application's endpoints.
 - If the application is federated to your Microsoft Entra directory as an identity provider, there will be an application object representing authenticating the user to the application's endpoint, such as using SAML, OAuth, or OpenID Connect. 
