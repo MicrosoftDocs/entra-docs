@@ -53,7 +53,7 @@ extension ViewController: SignUpVerifyCodeDelegate {
 }
 ```
 
-The `signIn(parameters:delegate)` accepts a delegate parameter and we must implement the required methods in the `SignInAfterSignUpDelegate` protocol. 
+The `signIn(parameters:delegate)` accepts a `MSALNativeAuthSignInAfterSignUpParameters` instance and a delegate parameter and we must implement the required methods in the `SignInAfterSignUpDelegate` protocol. 
 
 In the most common scenario, we receive a call to `onSignInCompleted(result)` indicating that the user has signed in. The result can be used to retrieve the `access token`.
 
