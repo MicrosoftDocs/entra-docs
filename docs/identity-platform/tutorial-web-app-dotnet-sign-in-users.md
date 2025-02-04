@@ -84,7 +84,7 @@ In the Explorer bar, select **Pages**, right-click **Shared**, and select **New 
 
    :::code language="csharp" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/Pages/Shared/_Layout.cshtml" range="29-31" :::
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Call an API and display results](tutorial-web-app-dotnet-call-api.md)
+> [Test your ASP.NET Core web app](./tutorial-web-app-dotnet-call-api.md)
