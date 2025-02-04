@@ -186,8 +186,7 @@ To automatically sign in users after a password reset, use the following code sn
     } 
     
     private suspend fun signInAfterPasswordReset(nextState: SignInContinuationState) {
-        val currentState = nextState
-        val signInContinuationState = actionResult.nextState
+        val signInContinuationState = nextState
 
         val parameters = NativeAuthSignInContinuationParameters()
         val signInActionResult = signInContinuationState.signIn(parameters)
