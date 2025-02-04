@@ -95,7 +95,6 @@ MSAL native authentication SDK supports multiple access tokens, so you can speci
     ```kotlin    
     private suspend fun getAccessToken(accountState: AccountState, scopes: List<String>): String {
         val parameters = NativeAuthGetAccessTokenParameters()
-        parameters.forceRefresh = false
         parameters.scopes = scopes
         val accessTokenState = accountState.getAccessToken(parameters)
 
