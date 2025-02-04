@@ -210,9 +210,8 @@ To create a generic SQL connector, follow these steps:
 1. If you haven't already done so, launch the **Microsoft ECMA2Host Configuration Wizard** from the Windows Start menu.
 
 2. Select **New Connector**.
-3. On the **Properties** page, fill in the boxes with the values specified in the table that follows the image and select **Next**.
+3. On the **Properties** page, fill in the boxes with the values specified in the following table and select **Next**.
 
-     [![Screenshot that shows entering properties.](.\media\app-provisioning-sql\conn-1.png)](.\media\app-provisioning-sql\conn-1.png#lightbox)
 
      |Property|Value|
      |-----|-----|
