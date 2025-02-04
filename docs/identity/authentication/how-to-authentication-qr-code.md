@@ -5,7 +5,7 @@ description: Learn about how to enable QR code authentication method in Microsof
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 12/15/2024
+ms.date: 02/04/2025
 
 ms.author: justinha
 author: aanjusingh
@@ -45,6 +45,8 @@ You can enable the QR code authentication method by using the Microsoft Entra ad
    - The default lifetime of a standard QR code (provided to the users for long term use) is 365 days. The range is between 1-395 days.
 
    :::image type="content" source="media/concept-authentication-qr-code/qr-code-settings.png" alt-text="Screenshot that shows how to updates QR code settings.":::
+
+1. When you are done, click **Save**.
 
 ### Enable QR code authentication method in Microsoft Graph API
 
