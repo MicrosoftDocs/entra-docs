@@ -23,7 +23,7 @@ This topic covers how to enable the QR code authentication method in the Authent
 
 - Microsoft Entra ID tenant with at least an F1, F3 or P1 license. 
 - Android, iOS or iPadOS (iOS/iPadOS version 15.0 or later) shared devices. 
-- [Optional but highly recommended] Shared device mode enabled on the shared devices. 
+- Shared device mode enabled on the shared devices (optional but highly recommended). 
 - A printer to print 2" x 2" QR codes. 
 - Teams app installed on the shared device (Android version 1.0.0.2024143204 or later and iOS version 1.0.0.77.2024132501 or later)
 - [Enable and setup MyStaff portal](~/identity/role-based-access-control/my-staff-configure.md#how-to-enable-my-staff) if you plan for frontline managers to use MyStaff to provision, manage, and reset QR code and PINs. 

@@ -102,6 +102,9 @@ PIN not recently used | Don't repeat the last 3 PINs during admin reset, or user
 
 ## QR code authentication management for users
 
+Administrators can manage QR codes in the Authentication methods for each user.
+
+:::image type="content" source="media/how-to-authentication-qr-code/add-qr-code.png" alt-text="Screenshot that shows how add a QR code for a user.":::
 
 ## Add QR code sign-in to apps
 
@@ -110,8 +113,6 @@ This option helps users sign in with fewer clicks.
 For example, the following screenshot shows Teams with an option to scan a QR code to sign in rather than enter a username and password.
 
 :::image type="content" source="media/how-to-authentication-qr-code/sign-in.png" alt-text="Screenshot that shows how to scan a QR code to sign in to Teams.":::
-
-
 
 ## Known issues and mitigation for QR code authentication method 
 
