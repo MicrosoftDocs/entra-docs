@@ -3,7 +3,7 @@ title: Global Secure Access Client for Windows Release Notes
 description: This article tracks the changes in each released version of the Global Secure Access client for Windows.
 ms.service: global-secure-access
 ms.topic: reference
-ms.date: 02/04/2025
+ms.date: 02/05/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -23,7 +23,7 @@ The current version of the Global Secure Access client is available to download 
 :::image type="content" source="media/reference-windows-client-release-history/client-download-screen.png" alt-text="Screenshot of the Client download screen with the Download Client button highlighted.":::
 
 ## Version 2.14.80
-Released for download on February 10, 2025.
+Released for download on February 11, 2025.
 ### Functional changes
 - Support for long-lived User Datagram Protocol (UDP) connections.
 - Support for routing connections directly to the network when there's no successful tunnel established to the Global Secure Access cloud service.
@@ -50,7 +50,7 @@ Released for download on November 26, 2024.
 - Show health check tests when loading a log zip file to advanced diagnostics.
 - Support for the Hyper-V internal switch: the Global Secure Access client installed on the host bypasses network traffic from Hyper-V guest machines. If needed, the Global Secure Access client can be installed on the guest machine, on the host machine, or both. 
 > [!NOTE]
-> Host machines that have the Hyper-V external virtual switch don't support this version of the Global Secure Access client.
+> The Global Secure Access client doesn't support host machines that have a Hyper-V external virtual switch.
 - The forwarding profile update is triggered when a user signs in to Windows.
 - Global Secure Access client's driver events are written to the Event Viewer under:    
 `Applications and Services Logs > Microsoft > Windows > Global Secure Access > Kernel`
