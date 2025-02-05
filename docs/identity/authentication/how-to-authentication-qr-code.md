@@ -307,7 +307,7 @@ Users need to [download Teams](https://aka.ms/teamsmobiledownload):
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/sign-in.png" alt-text="Screenshot that shows how to sign in to Teams with a QR code and PIN.":::
 
-## User sign-in 
+## Sign-in with a QR code to login.microsoftonline.com
 
 1. Click **More sign-in options** > **Sign in to an organization** > **Sign in with QR code**.
 
@@ -332,15 +332,28 @@ This section covers how to create policies that restrict QR code authentication 
 ### Restrict a QR + PIN to shared devices 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator). 
-1. Create a custom authentication strength Conditional Access policy and select all authentication combinations except QR + PIN.  
+1. Click **Conditional Access** > **Authentication strengths** > **New authentication strength**.
+
+   :::image type="content" border="true" source="media/how-to-authentication-qr-code/new-authentication-strength.png" alt-text="Screenshot that shows how to create a new authentication strength.":::
+
+1. Create a custom authentication strength Conditional Access policy, select all authentication combinations except **QR code (Preview)**.  
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/configure-authentication-strength.png" alt-text="Screenshot that shows the Microsoft Entra admin center that shows how to select method combinations for an authentication strength.":::
 
-1. Create a Conditional Access policy to enforce the authentication strength policy, and restrict usage of QR + PIN from any device type except shared devices. 
+1. Click **Next**, and click **Create**.
+
+1. Click **Conditional Access** > **Create new policy**. This new Conditional Access policy enforces the authentication strength policy, and restricts usage of QR code from any device type except shared devices. 
    1. Under **Users or workload identities**, select **All Users**.  
-   1. Under **Target resources** > **Include** > select **All cloud apps**.
-   1. Under **Conditions** > **Filter for devices** > **Exclude filtered devices from policy** > **ProfileType** **Equals** **Shared**. 
-   1. Under **Grant** > **Grant access** > select **Require authentication strength**.  
+   1. Under **Target resources** > **Include** > select **All resources (formerly 'All cloud apps')**.
+   1. Under **Conditions**, click **Filter for devices**, set **Configure** to **Yes**.
+   1. Click **Exclude filtered devices from policy**.
+   1. For **Property**, select **profileType**.
+   1. For **Operator**, select **Equals**.
+   1. For **Value**, select **Shared**. 
+
+      :::image type="content" border="true" source="media/how-to-authentication-qr-code/filter-devices.png" alt-text="Screenshot that shows how to filter devices for an authentication strength.":::
+
+   1. Under **Grant** > **Grant access** > select **Require authentication strength**, and click **Select**.  
 
 1. Create a Conditional Access policy that requires shared devices be marked as compliant with policies from Intune or other mobile device management (MDM) solution. This policy makes sure that frontline workers can access only specific resources from a compliant, shared device by using QR + PIN, or another registered authentication method. 
    1. Under **Users or workload identities** > **Include** > select **Users and groups**, and choose your frontline worker group. 
