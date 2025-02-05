@@ -19,12 +19,23 @@ manager: amycolannino
 
 QR code authentication method enables frontline workers to sign in quickly and easily in apps on shared device. Users will be able to use unique QR code provided by their admins and enter their PIN to sign in, eliminating the need to enter lengthy usernames and intricate passwords.
 
-# What is QR code authentication method
+## What is QR code authentication?
 
-QR code authentication is a simple authentication method primarly designed for frontline workers. It consist of a unique QR code and PIN (digit only). The QR code serves as an identifier and has a unique key for each user. It can be downloaded/printed via Microsoft Entra portal, MyStaff, or MSGraph API. For convenience, the QR code can be attached to a badge or any other wearable item. The PIN is a digit-based memorized secret. Admins provide temporary PIN to users who then change it during sign-in. The PIN is exclusively bound to QR code only and cannot be used with other user identifiers, such as username or phone number.
+QR code authentication is a simple authentication method primarly designed for frontline workers. 
+It consists of a unique QR code and numeric PIN. 
+The QR code serves as an identifier and has a unique key for each user. 
+
+It can be downloaded and printed from the Microsoft Entra admin center, MyStaff, or MSGraph API. 
+For convenience, the QR code can be attached to a badge or any other wearable item. 
+
+The PIN is a memorized numeric secret. 
+Authentication Administrators provide a temporary PIN to users, who then change it during sign-in. 
+
+The PIN is exclusively bound to the QR code only. 
+It can't be used with other user identifiers, such as username or phone number.
 QR code authentication is a single-factor method in which PIN (something you know) is a credential.
 
-## Benefits of QR code authentication method
+## Benefits of QR code authentication
 
 Benefit | Description
 --------|------------
@@ -33,7 +44,7 @@ Inexpensive | Printing a QR code costs less than a hardware key, which can be co
 
 ## QR code configurations in Authentication method policy
 
-Authentication Policy Administrators can enable QR code in Authentication methods in the Microsoft Entra admin center. QR code authnetication is disabled by default.
+Authentication Policy Administrators can enable QR code in Authentication methods in the Microsoft Entra admin center. QR code authentication is disabled by default.
 
 In the Authentication method policy for QR code, you can configure:
 
