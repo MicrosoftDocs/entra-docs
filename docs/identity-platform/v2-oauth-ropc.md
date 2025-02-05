@@ -43,8 +43,8 @@ If you are an end-user of an application, such as the Azure CLI, use an interact
 If you are an app developer who needs to access a resource, use a form of interactive authentication. The user can be only challenged for MFA when prompted in the browser.
 
 - For web applications 
-- - if the authentication is done in the front-end, see [Single Page Application](./sample-v2-code.md?tabs=apptype#single-page-applications)
-- - if authentication is done in the back-end, see [Web Applications](./sample-v2-code.md?tabs=apptype#web-applications)
+  - if the authentication is done in the front-end, see [Single Page Application](./sample-v2-code.md?tabs=apptype#single-page-applications)
+  - if authentication is done in the back-end, see [Web Applications](./sample-v2-code.md?tabs=apptype#web-applications)
 - Web APIs cannot display a browser. Instead, they must return a challenge back to the client. Clients must be able to understand this challenge. For details, see [Web APIs](./sample-v2-code.md?tabs=apptype#web-api) and [challenging users in web APIs](v2-oauth2-on-behalf-of-flow.md#error-response-example).
 - Desktop applications should use broker-based authentication. Brokers use browser-based authentication, so they can enforce MFA, and also enable the most secure posture possible.
 - Mobile applications should also be configured to use broker (Authenticator, Company Portal) based authentication.
@@ -56,9 +56,8 @@ Examples of scenarios where no user context is involved can be, but is not limit
 - A script running as part of a CI pipeline.
 - A service needing to call a resource on behalf of itself, with no user details.
 
-
-- If you are an end-user of an application, such as Azure CLI, use service principal login methods such as certificates, managed identities, or federated identities.
-- If you are an application developer, the recommendation is to use [Service Principal authentication](app-objects-and-service-principals.md), which is illustrated in the [daemon samples](./sample-v2-code.md?tabs=apptype#service--daemon). 
+In these sceenarios, an end-user of an application, such as Azure CLI, should configure the use of service principal login methods such as certificates, managed identities, or federated identities.
+Application developer should use [Service Principal authentication](app-objects-and-service-principals.md), which is illustrated in the [daemon samples](./sample-v2-code.md?tabs=apptype#service--daemon). 
 
 There are multiple ways to authenticate as a service principal:
 
