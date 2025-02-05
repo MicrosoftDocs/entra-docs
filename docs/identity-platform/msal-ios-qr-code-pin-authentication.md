@@ -1,5 +1,5 @@
 ---
-title: Set up QR Code and PIN Authentication in iOS App
+title: Set up QR Code and PIN Authentication in iOS/macOS App
 description: Learn how to configure your iOS app to use QR code and PIN authentication using the Microsoft Authentication Library for iOS and macOS.
 author: henrymbuguakiarie
 manager: CelesteDG
@@ -13,7 +13,7 @@ ms.reviewer: amgusain, akgoel, dmwendia
 #Customer intent: As a developer, I want to learn how to configure your iOS app to use QR code and PIN authentication using the Microsoft Authentication Library for iOS and macOS.
 ---
 
-# Set up QR code authentication in iOS app
+# Set up QR code authentication in iOS/macOS app
 
 QR code authentication method enables frontline workers to sign in quickly and easily in apps on shared device. Users are able to use unique QR code provided by their admins and enter their PIN to sign in, eliminating the need to enter usernames and passwords.
 
@@ -32,9 +32,9 @@ To configure your app to use QR code authentication, you can call the `getDevice
 
 ```
 
-`MSALPreferredAuthMethod` is an enumeration that describes the different authentication methods available. The `configuredPreferredAuthMethod` property allows you to retrieve the preferred authentication method that has been set for the application. Currently, QR code and PIN are private enum value of 1. When released to general availability (GA), it will be `MSALPreferredAuthMethodQRPIN`.
+`MSALPreferredAuthMethod` is an enumeration that describes the different authentication methods available. The `configuredPreferredAuthMethod` property allows you to retrieve the preferred authentication method for the application.. Currently, QR code and PIN are private enum value of 1. When released to general availability (GA), it's `MSALPreferredAuthMethodQRPIN`.
 
-`MSALInteractiveTokenParameters` will also define a new, optional parameter of type `MSALPreferredAuthMethod: preferredAuthMethod`. When this parameter is set for QR code and PIN, the resulting interactive sign-in UI takes the user directly to the QR code and PIN entry page. The following code snippet shows how to configure your app to use QR code authentication:
+`MSALInteractiveTokenParameters` also define a new, optional parameter of type `MSALPreferredAuthMethod: preferredAuthMethod`. When this parameter is set for QR code and PIN, the resulting interactive sign-in UI takes the user directly to the QR code and PIN entry page. The following code snippet shows how to configure your app to use QR code authentication:
 
 
 
