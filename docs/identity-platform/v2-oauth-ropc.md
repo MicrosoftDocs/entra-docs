@@ -50,7 +50,11 @@ If you are an app developer who needs to access a resource, use a form of intera
 
 ### When user context is not available
 
-In these scenarios where there is no user context, for example a script running as part of a CI pipeline, or a service needing to call a resource on behalf of itself, with no user details.
+Examples of scenarios where no user context is involved can be, but is not limited to, the following:
+
+- A script running as part of a CI pipeline.
+- A service needing to call a resource on behalf of itself, with no user details.
+
 
 - If you are an end-user of an application, such as Azure CLI, use service principal login methods such as certificates, managed identities, or federated identities.
 - If you are an application developer, the recommendation is to use [Service Principal authentication](app-objects-and-service-principals.md), which is illustrated in the [daemon samples](./sample-v2-code.md?tabs=apptype#service--daemon). 
