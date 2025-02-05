@@ -382,6 +382,8 @@
                       href: msal-net-system-browser-android-considerations.md
                     - name: Shared device mode for Android devices
                       href: msal-android-shared-devices.md
+                    - name: QR code authentication
+                      href: msal-android-qr-code-pin-authentication.md
                 - name: iOS
                   items:
                     - name: Microsoft Enterprise SSO plug-in for Apple devices
