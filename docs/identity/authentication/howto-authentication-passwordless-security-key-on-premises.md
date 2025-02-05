@@ -140,7 +140,7 @@ _(Example: For US Government Cloud)_
    $cloudCred = Get-Credential -Message 'An Active Directory user who is a member of the Hybrid Identity Administrators group for Microsoft Entra ID.'
 
    # Enter a Domain Administrator username and password.
-   $domainCred = Get-Credential -Message 'An Active Directory user who is a member of the Domain Admins group.'
+   $domainCred = Get-Credential -Message 'An Active Directory user who is a member of the Domain Admins group And an Enterprise Admin for the forest.'
 
    # Create the new Microsoft Entra ID Kerberos Server object in Active Directory
    # and then publish it to Azure Active Directory.
