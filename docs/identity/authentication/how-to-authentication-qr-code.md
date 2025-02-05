@@ -149,7 +149,7 @@ You can edit QR code authentication method for a user by using the Microsoft Ent
 
   :::image type="content" border="true" source="media/how-to-authentication-qr-code/edit-usable-authentication-method.png" alt-text="Screenshot that shows how to edit the usable authentication method for a user.":::
 
-- Change the expiration time for the standard QR code, and click **Save**.
+- Change the expiration time for the standard QR code, and click **Save**. After you make edits, click **Done**.
 
   :::image type="content" border="true" source="media/how-to-authentication-qr-code/change-expiration.png" alt-text="Screenshot that shows how to change the expiration date.":::
 
@@ -163,11 +163,11 @@ You can edit QR code authentication method for a user by using the Microsoft Ent
   You need to print and distribute the new QR code to the user. 
   The user can continue to use their existing PIN. 
   
-  If you want the user to update the PIN, you can delete the QR code authentication method for the user, and add it back again to generate a new Standard QR code and temporary PIN. The user needs to use the new QR code and update the PIN on when they first sign in. 
+  If you want the user to update the PIN, you can delete the QR code authentication method for the user, and add it back again to generate a new standard QR code and temporary PIN. The user needs to use the new QR code and update the PIN on when they first sign in. 
 
   :::image type="content" border="true" source="media/how-to-authentication-qr-code/replace-qr-code.png" alt-text="Screenshot that shows how to replace a lost or stolen QR code.":::
 
-- Reset a PIN. Click the pencil icon after the masked PIN. Click **Generate new PIN** to create a new temporary PIN. The user is forced to change the temporary PIN when they next sign in. Copy the temporary PIN and share it with the frontline worker. 
+- Reset a PIN. Click the pencil icon after the masked PIN. Click **Generate new PIN** to create a new temporary PIN. Click **OK** to confirm that the user is forced to change the temporary PIN when they next sign in. Copy the temporary PIN and share it with the frontline worker. 
 
   :::image type="content" border="true" source="media/how-to-authentication-qr-code/reset-pin.png" alt-text="Screenshot that shows how to reset a PIN.":::
 
@@ -252,9 +252,12 @@ You can delete the QR code authentication method for a user by using the Microso
 
 If a QR code authentication method is deleted for a user, they can no longer sign in by using that authentication method. 
 
-Navigate to **Users** > **User** > **Usable authentication methods**.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 
-:::image type="content" border="true" source="media/how-to-authentication-qr-code/delete-qr-code-method-admin-center.png" alt-text="Screenshot that shows how to delete the QR code authentication method for a user in the Microsoft Entra admin center.":::
+1. Go to **Users**, select a user, and click **Authentication methods**.
+1. Under **Usable authentication methods**, click the elipsis on the right side of the QR code, and click Delete.
+
+   :::image type="content" border="true" source="media/how-to-authentication-qr-code/delete-qr-code-method-admin-center.png" alt-text="Screenshot that shows how to delete the QR code authentication method for a user in the Microsoft Entra admin center.":::
 
 ### Delete the QR code authentication method for a user in in My Staff
 
@@ -348,6 +351,13 @@ This section covers how to create policies that restrict QR code authentication 
 
 ## User sign-in
 
+1. Click **More sign-in options** > **Sign in to an organization** > **Sign in with QR code**.
+
+   :::image type="content" border="true" source="media/how-to-authentication-qr-code/sign-in-qr-code.png" alt-text="Screenshots that show how to sign in with a QR code on a mobile device.":::
+
+2. Allow camera prompt > scan the QR code > enter your PIN > you're successfully signed-in. 
+
+   :::image type="content" border="true" source="media/how-to-authentication-qr-code/configure-authentication-strength.png" alt-text="Screenshot that shows how to enter your PIN to sign in.":::
 
 ## Related content
 
