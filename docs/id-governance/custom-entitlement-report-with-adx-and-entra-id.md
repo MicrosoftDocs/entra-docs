@@ -37,7 +37,7 @@ Determine what data you want to include in your reports. The scripts in this art
   - Groups data: Global Administrator, Privileged Role Administrator, Group Administrator 
   - Applications/App Role Assignments: Global Administrator, Privileged Role Administrator, Application Administrator, Cloud Application Administrator 
 - Microsoft Graph PowerShell must be consented to allow for retrieval of Microsoft Entra objects via Microsoft Graph. The examples in this tutorial require the delegated User.Read.All, Group.Read.All, Application.Read.All, and Directory.Read.All permissions. If you're planning on retrieving data using automation without a signed-in user, then consent to the corresponding application permissions instead. See [Microsoft Graph permissions reference](/graph/permissions-reference) for additional information. If you haven't already consented Microsoft Graph PowerShell to those permissions, you need to be a Global Administrator to perform this consent operation.
-- This tutorial doesn't illustrate custom security attributes. By default, Global Administrator and other administrator roles don't include permissions to read custom security attributes from Microsoft Entra users. If you're planning on retrieving custom security attributes, then more roles and permissions may be required.
+- This tutorial does not illustrate custom security attributes. By default, Global Administrator and other administrator roles don't include permissions to read custom security attributes from Microsoft Entra users. If you're planning on retrieving custom security attributes, then more roles and permissions may be required.
 - On the computer where Microsoft Graph PowerShell is installed, ensure you have write access to the file system directory. This is where you install the required Microsoft Graph PowerShell modules and where the exported Microsoft Entra data is saved. 
 - Ensure you have permissions to retrieve data from other data sources beyond Microsoft Entra, if you wish to incorporate that data into Azure Data Explorer as well.
 
@@ -263,7 +263,7 @@ Generate a JSON file of all app role assignments of users in the tenant.
 
 ## 3: Create tables and import JSON files with data from Microsoft Entra ID into Azure Data Explorer
 
-In this section, we import the newly created JSON files for the Microsoft Entra ID services as tables in Azure Data Explorer for further analysis. On the first import using the Azure Data Explorer web UI, you'll create the tables based on schema that the web UI suggests from each JSON file.
+In this section, we import the newly created JSON files for the Microsoft Entra ID services as tables in Azure Data Explorer for further analysis. On the first import using the Azure Data Explorer web UI, you will create the tables based on schema that the web UI suggests from each JSON file.
 
 Once you have setup a database in your Azure Data Explorer cluster or free cluster, as described in the first section of this article, navigate to that database.
 
@@ -282,11 +282,11 @@ Next, follow these steps for each exported JSON file, to get your exported data 
  1. Azure Data Explorer automatically detects the schema and provides a preview in the **Inspect** tab. Select **Finish** to create the table and import the data from that file. Once the data is ingested, click **Close**.
  1. Repeat each of the preceding steps for each of the JSON files that you generated in the previous section.
 
-At the end of those steps you'll have the tables `EntraUsers`, `EntraGroups`, `EntraGroupMembership`, `Applications`, `AppRoles`, and `AppRoleAssignments` in the database.
+At the end of those steps you will have the tables `EntraUsers`, `EntraGroups`, `EntraGroupMembership`, `Applications`, `AppRoles`, and `AppRoleAssignments` in the database.
 
 ## 4: Extract Microsoft Entra ID Governance data with PowerShell
 
-In this section, you'll use PowerShell to extract data from Microsoft Entra ID Governance services. If you don't have Microsoft Entra ID Governance, Microsoft Entra ID P2 or Microsoft Entra Suite, then continue in section [use Azure Data Explorer to build custom reports](#6-use-azure-data-explorer-to-build-custom-reports).
+In this section, you'll use PowerShell to extract data from Microsoft Entra ID Governance services. If you do not have Microsoft Entra ID Governance, Microsoft Entra ID P2 or Microsoft Entra Suite, then continue in section [use Azure Data Explorer to build custom reports](#6-use-azure-data-explorer-to-build-custom-reports).
 
 For this you may need to [install Microsoft Graph PowerShell modules](/powershell/microsoftgraph/installation) to extract Microsoft Entra ID Governance data. The first time your organization uses these modules for this scenario, you need to be in a Global Administrator role to allow Microsoft Graph PowerShell to grant consent for use in your tenant. Subsequent interactions can use a lower-privileged role.
 
@@ -341,23 +341,6 @@ Generate a JSON file with access review definition names and IDs that are used t
    $definitions | ConvertTo-Json -Depth 10 | Set-Content "EntraAccessReviewDefinitions.json"
 ```
 
-### Get Access review instance data
-
-To export all Access Review definitions, instances, and decisions into a structured folder format using PowerShell, you can utilize the Microsoft Graph API. This approach ensures that your data is organized hierarchically, aligning with the specified folder structure. 
-
-Before you begin be aware of the following:
-
-- Ensure you have the necessary permissions to access Access Reviews data in Microsoft Graph. 
-- Depending on the volume of data, the script's execution time may vary. Monitor the process and adjust parameters as needed. 
-
-1. Download the [Export_Access_Reviews.ps1](https://github.com/microsoft/Entra-reporting/blob/main/PowerShell/Export_Access_Reviews.ps1) script and save it locally.
-1. In file explorer, Unblock the script so it can be run in PowerShell.
-1. Run the following command, which will output all data into three sub-folders `ReviewInstances`, `ReviewInstanceDecisionItems` and `ReviewInstanceContactedReviewers`. 
-
-```powershell
- .\ExportAccessReviews.ps1 -InstanceStartDate "11/15/2024" -InstanceEndDate "12/15/2024" -ExportFolder "C:\AccessReviewsExport\11_15_to_12_15" 
-```
-
 ### Get entitlement management access package data
 
 Generate a JSON file with access package names and IDs that are used to create custom views in Azure Data Explorer. The sample includes all access packages, but additional filtering can be included if needed.
@@ -404,7 +387,7 @@ Generate a JSON file with assignments to access packages that are used to create
 
 ## 5: Create tables and import JSON files with data from Microsoft Entra ID Governance into Azure Data Explorer
 
-In this section, we import the newly created JSON files for the Microsoft Entra ID Governance services into Azure Data Explorer, alongside the data already imported for the Microsoft Entra ID services, for further analysis. On the first import using the Azure Data Explorer web UI, you'll create tables based on schema that the web UI suggests from each JSON file.
+In this section, we import the newly created JSON files for the Microsoft Entra ID Governance services into Azure Data Explorer, alongside the data already imported for the Microsoft Entra ID services, for further analysis. On the first import using the Azure Data Explorer web UI, you will create tables based on schema that the web UI suggests from each JSON file.
 
 In your Azure Data Explorer cluster or free cluster, navigate to the database which holds your Microsoft Entra ID data.
 
@@ -421,10 +404,9 @@ Next, follow these steps for each exported JSON file from the previous section, 
  1. Select **+ New table** and enter a table name, based on the name of the JSON file you're importing, After the first import, the table already exists, and you can select it as the target table for a subsequent import.
  1. Select **Browse for files**, select the JSON file, and select **Next**.
  1. Azure Data Explorer automatically detects the schema and provides a preview in the **Inspect** tab. Select **Finish** to create the table and import the data from that file. Once the data is ingested, click **Close**.
- 1. Repeat each of the preceding steps for each of the JSON files that you generated in the previous section, for each of the folders.
- 1. If there are many files in a folder, then you can use `lightingest` to import the rest once the table is created.
+ 1. Repeat each of the preceding steps for each of the JSON files that you generated in the previous section.
 
-At the end of those steps you'll have the tables `EntraAccessReviewDefinitions`, `EntraAccessPackages`, and `EntraAccessPackageAssignments`, `ReviewInstances`, `ReviewInstanceDecisionItems`, `ReviewInstanceContactedReviewers` in the database, in addition to the tables created in section 3.
+At the end of those steps you will have the tables `EntraAccessReviewDefinitions`, `EntraAccessPackages`, and `EntraAccessPackageAssignments` in the database, in addition to the tables created in section 3.
 
 ## 6: Use Azure Data Explorer to build custom reports 
 
@@ -551,251 +533,6 @@ AppRoleAssignments
 | project UserPrincipalName, DisplayName, RoleDisplayName, CreatedDateTime, PrincipalId, Change = "Added" 
 ``` 
 
-### Example 4: Access Reviews
-
-#### Review Completion & Timeline Information 
-Once the data has been uploaded, use the following Kusto queries to review it.
-
-- When was the last access review cycle completed? How long did it take? 
-
-```kusto
-ReviewInstances 
-| summarize LastCompletedDate = max(ReviewInstanceEndDateTime),  
-            ReviewDuration = datetime_diff('minute', max(ReviewInstanceEndDateTime), min(ReviewInstanceStartDateTime))  
-```
-
-- Is the access review process conducted on time (e.g., quarterly, annually)? 
-
-```kusto
-ReviewInstances 
-| extend ExpectedFrequency = "Quarterly" // Replace with organization's frequency 
-| summarize ReviewsCompleted = count(), LastReviewEndDate = max(ReviewInstanceEndDateTime) 
-| extend CurrentDate = now(),  
-         TimeSinceLastReview = datetime_diff('day', now(), LastReviewEndDate) 
-| extend IsOnSchedule = iff(TimeSinceLastReview <= 90, "Yes", "No") // Assuming quarterly = 90 days  
-```
-#### Review Participation & Engagement 
-
-- Who were the reviewers assigned? 
-
-```kusto
-ReviewInstanceContactedReviewers 
-| project AccessReviewDefinitionId, AccessReviewInstanceId, ReviewerName = DisplayName, ReviewerUserPrincipalName = UserPrincipalName, CreatedDateTime  
-```
-- Which reviewers actively participated and provided responses? 
-
-```kusto
-ReviewInstanceDecisionItems 
-| where ReviewedBy_DisplayName != "AAD Access Reviews" 
-| where Decision in ("Approve", "Deny") 
-| project AccessReviewDefinitionId, AccessReviewInstanceId, ReviewerName = ReviewedBy_DisplayName, 
-ReviewerUserPrincipalName = ReviewedBy_UserPrincipalName, Decision, ReviewedDateTime 
-| distinct AccessReviewDefinitionId, AccessReviewInstanceId, ReviewerName, ReviewerUserPrincipalName, Decision   
-```
-- Percentage of reviewers who responded to the access review request. 
-
-```kusto
-let TotalReviewers = ReviewInstanceContactedReviewers 
-    | summarize Total = dcount(Id) by AccessReviewDefinitionId, AccessReviewInstanceId;  
-
-let RespondedReviewers = ReviewInstanceDecisionItems 
-    | where ReviewedBy_DisplayName != "AAD Access Reviews" 
-    | where ReviewedBy_Id != "00000000-0000-0000-0000-000000000000" 
-    | where Decision in ("Approve", "Deny") 
-    | summarize Responded = dcount(ReviewedBy_Id) by AccessReviewDefinitionId, AccessReviewInstanceId;  
-
-TotalReviewers 
-| join kind=leftouter RespondedReviewers on AccessReviewDefinitionId, AccessReviewInstanceId 
-| extend Responded = coalesce(Responded, 0)  // Replace null with 0 for Responded 
-| extend NotResponded = Total - Responded   // Calculate the number of non-responders 
-| extend ResponsePercentage = (Responded * 100.0) / Total  // Percentage of those who responded 
-| extend NonResponsePercentage = (NotResponded * 100.0) / Total  // Percentage of those who didn’t respond 
-| project AccessReviewDefinitionId, AccessReviewInstanceId, Total, Responded, ResponsePercentage, NotResponded, NonResponsePercentage  
-```
-- When did each reviewer complete their tasks? 
-
-```kusto
-ReviewInstanceDecisionItems 
-| where Decision in ("Approve", "Deny") 
-| project AccessReviewDefinitionId, AccessReviewInstanceId, ReviewerName = ReviewedBy_DisplayName, ReviewerUserPrincipalName = ReviewedBy_UserPrincipalName, ReviewedDateTime  
-```
-- Which reviewers didn't make any decisions? 
-
-```kusto
-let AllReviewers = ReviewInstanceContactedReviewers 
-    | project AccessReviewDefinitionId, AccessReviewInstanceId, ReviewerId = Id, ReviewerUserPrincipalName = UserPrincipalName, ReviewerName = DisplayName; 
-  
-let ActiveReviewers = ReviewInstanceDecisionItems 
-    | where Decision in ("Approve", "Deny") 
-    | where ReviewedBy_DisplayName != "AAD Access Reviews" 
-    | where ReviewedBy_Id != "00000000-0000-0000-0000-000000000000" 
-    | summarize ActiveReviewers = make_set(ReviewedBy_Id) by AccessReviewDefinitionId, AccessReviewInstanceId; 
-
-AllReviewers 
-| extend ReviewerId = tostring(ReviewerId)  // Ensure ReviewerId is a string 
-| join kind=leftanti ( 
-    ActiveReviewers 
-    | mv-expand ActiveReviewers 
-    | extend ActiveReviewers = tostring(ActiveReviewers)  // Cast ActiveReviewers to a string 
-) on $left.ReviewerId == $right.ActiveReviewers 
-| project AccessReviewDefinitionId, AccessReviewInstanceId, ReviewerUserPrincipalName, ReviewerName 
-```
-- Percentage of reviewers who didn't interact. 
-
-```kusto
-let TotalReviewers = ReviewInstanceContactedReviewers 
-    | summarize Total = dcount(Id) by AccessReviewDefinitionId, AccessReviewInstanceId; 
-
-let RespondedReviewers = ReviewInstanceDecisionItems 
-    | where ReviewedBy_DisplayName != "AAD Access Reviews" 
-    | where ReviewedBy_Id != "00000000-0000-0000-0000-000000000000" 
-    | where Decision in ("Approve", "Deny") 
-    | summarize Responded = dcount(ReviewedBy_Id) by AccessReviewDefinitionId, AccessReviewInstanceId; 
-  
-TotalReviewers 
-| join kind=leftouter RespondedReviewers on AccessReviewDefinitionId, AccessReviewInstanceId 
-| extend Responded = coalesce(Responded, 0)  // Replace null with 0 for Responded 
-| extend NotResponded = Total - Responded   // Calculate the number of non-responders 
-| extend ResponsePercentage = (Responded * 100.0) / Total  // Percentage of those who responded 
-| extend NonResponsePercentage = (NotResponded * 100.0) / Total  // Percentage of those who didn’t respond 
-| project AccessReviewDefinitionId, AccessReviewInstanceId, Total, Responded, ResponsePercentage, NotResponded, NonResponsePercentage  
-```
-
-- Were reminders triggered for non-responsive reviewers? Pending decisions? 
-
-```kusto
-// Step 1: Get the list of all reviewers 
-let TotalReviewers = ReviewInstanceContactedReviewers 
-    | project AccessReviewDefinitionId, AccessReviewInstanceId, ReviewerId = Id, ReviewerUserPrincipalName = UserPrincipalName, ReviewerName = DisplayName; 
- 
-// Step 2: Get the list of reviewers who have responded 
-let RespondedReviewers = ReviewInstanceDecisionItems 
-    | where ReviewedBy_DisplayName != "AAD Access Reviews" 
-    | where ReviewedBy_Id != "00000000-0000-0000-0000-000000000000" 
-    | where Decision in ("Approve", "Deny") 
-    | project AccessReviewDefinitionId, AccessReviewInstanceId, RespondedReviewerId = ReviewedBy_Id; 
-
-// Step 3: Get the list of review instances 
-let ReviewInstancesWithDetails = ReviewInstances 
-    | project AccessReviewDefinitionId = ReviewDefinitionId,  
-              AccessReviewInstanceId = ReviewInstanceId,  
-              RemindersSent = ReviewDefinitionSettings_ReminderNotificationsEnabled,  
-              StartDate = todatetime(ReviewInstanceStartDateTime),  
-              EndDate = todatetime(ReviewInstanceEndDateTime) 
-    | extend 
-              ReminderSentDate = iif(RemindersSent, StartDate + (EndDate - StartDate) / 2, datetime(null)); 
-
-// Step 4: Identify non-responsive reviewers and join with review instance details 
-TotalReviewers 
-| join kind=leftouter (ReviewInstancesWithDetails) on AccessReviewDefinitionId, AccessReviewInstanceId 
-| join kind=leftanti RespondedReviewers on $left.ReviewerId == $right.RespondedReviewerId 
-| project AccessReviewDefinitionId, AccessReviewInstanceId, ReviewerUserPrincipalName, ReviewerName, RemindersSent, ReminderSentDate 
-```
-#### Users & Access Changes 
-
-- Who lost access to specific resources during the access review? 
-
-```kusto
-ReviewInstanceDecisionItems 
-| where Decision == "Deny" 
-| project User = Principal_DisplayName, Resource = Resource_DisplayName, Decision, Justification 
-```
-- Were users flagged due to inactivity? 
-
-```kusto
-ReviewInstanceDecisionItems 
-| where Insights contains "inactive" 
-| project User = Principal_DisplayName, Resource = Resource_DisplayName, Insights, Decision 
-```
-- Access removal date and reasoning for losing access. 
-
-```kusto
-ReviewInstanceDecisionItems 
-| where Decision == "Deny" 
-| project User = Principal_DisplayName, Resource=Resource_DisplayName, AccessRemovalDate = AppliedDateTime, Reason = Justification  
-```
-- Users with no decisions made. 
-
-```kusto
-ReviewInstanceDecisionItems 
-| where Decision == "NotReviewed" 
-| project User = Principal_DisplayName, Resource=Resource_DisplayName 
-```
-- Reviews with no reviewers. 
-
-```kusto
-ReviewInstances 
-| join kind=leftanti ( 
-    ReviewInstanceContactedReviewers 
-    | summarize by AccessReviewInstanceId 
-) on $left.ReviewInstanceId == $right.AccessReviewInstanceId  
-```
-- Reviews with no users. 
-
-```kusto
-ReviewInstances 
-| join kind=leftanti ( 
-    ReviewInstanceDecisionItems 
-    | summarize by AccessReviewInstanceId 
-) on $left.ReviewInstanceId == $right.AccessReviewInstanceId 
-```
-
-#### Review Decision Data 
-
-- Decisions made: Approved, Denied, or Unchanged. 
-
-```kusto
-ReviewInstanceDecisionItems 
-| summarize count() by Decision 
-```
-- Number of users approved or denied access. 
-
-```kusto
-ReviewInstanceDecisionItems 
-| summarize ApprovedCount = countif(Decision == "Approve"), DeniedCount = countif(Decision == "Deny") 
-```
-- Were approval reasons documented? 
-
-```kusto
-ReviewInstanceDecisionItems 
-| where Decision == "Approve" and isnotempty(Justification) 
-| summarize count() by ReviewedBy_DisplayName 
-```
-
-#### Access Review Quality and Compliance Checks 
-
-- Were access revocations considered for dormant users? 
-
-```kusto
-ReviewInstanceDecisionItems 
-| where Insights contains "inactive" and Decision == "Deny" 
-| project User = Principal_DisplayName, Decision 
-```
-
-- Was there any access not properly removed? 
-
-```kusto
-ReviewInstanceDecisionItems 
-| where ApplyResult != "New" and ApplyResult != "AppliedSuccessfully" 
-```
-- Did reviewers document their decisions? 
-
-```kusto
-ReviewInstanceDecisionItems 
-| where isnotempty(Justification) 
-| summarize count() by ReviewedBy_DisplayName 
-```
-- Were comments captured for each user? 
-
-```kusto
-ReviewInstanceDecisionItems 
-| where isnotempty(Justification) 
-| project User = Principal_DisplayName, Resource = Resource_DisplayName, Comments = Justification 
-```
-  
-  
-  
-
 ## Set up ongoing imports
 
 This tutorial illustrates a one-time data extract, transform, and load (ETL) process to populate Azure Data Explorer with a single snapshot for reporting purposes. For ongoing reporting or to compare changes over time, you can automate the process of populating Azure Data Explorer from Microsoft Entra, so that your database continues to have current data.
@@ -819,7 +556,7 @@ If you are sending the audit, sign-in or other Microsoft Entra logs to Azure Mon
  1. Select [diagnostic settings](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/DiagnosticSettingsMenuBlade/~/General).
  1. Select the Log Analytics workplace where you are sending your logs.
  1. On the Log Analytics workspace overview, record the Subscription ID, Resource group name, and Workspace Name of the workspace.
- 1. Sign-in to the Azure portal.
+ 1. Sign-in to the Azure Portal.
  1. Navigate to the [Azure Data Explorer web UI](https://dataexplorer.azure.com/home).
  1. Ensure your Azure Data Explorer cluster is listed.
  1. Select **+ Add** then **Connection**.
@@ -842,7 +579,7 @@ You can also [create additional tables](/azure/data-explorer/create-table-wizard
 
 For more information on data ingestion, see [Azure Data Explorer data ingestion overview](/azure/data-explorer/ingest-data-overview).
 
-### Example 5: Combine App Assignments from an Entra and a second source to create a report of all users who had access to an application between two dates
+### Example 4: Combine App Assignments from an Entra and a second source to create a report of all users who had access to an application between two dates
 
 This report illustrates how you can combine data from two separate systems to create custom reports in Azure Data Explorer. It aggregates data about users, their roles, and other attributes from two systems into a unified format for analysis or reporting. 
 
@@ -886,12 +623,6 @@ EntraUsers
     | project UserPrincipalName = UserName, DisplayName = Name, EmployeeId = tostring(EmployeeId), Department, JobTitle, AccountEnabled = "N/A", ResourceDisplayName = AppName, RoleDisplayName = Role, CreatedDateTime, Source = "salesforceAssignments", ReportDate = now() 
 ) 
 ``` 
-
-
-
-
-
-
 ## Next steps
 
 - [What is Microsoft Entra entitlement management?](entitlement-management-overview.md)
