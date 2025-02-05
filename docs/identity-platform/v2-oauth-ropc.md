@@ -57,7 +57,7 @@ Examples of scenarios where no user context is involved can be, but is not limit
 - A service needing to call a resource on behalf of itself, with no user details.
 
 In these sceenarios, an end-user of an application, such as Azure CLI, should configure the use of service principal login methods such as certificates, managed identities, or federated identities.
-Application developer should use [Service Principal authentication](app-objects-and-service-principals.md), which is illustrated in the [daemon samples](./sample-v2-code.md?tabs=apptype#service--daemon). 
+Application developers should use [Service Principal authentication](app-objects-and-service-principals.md), which is illustrated in the [daemon samples](./sample-v2-code.md?tabs=apptype#service--daemon). 
 
 There are multiple ways to authenticate as a service principal:
 
