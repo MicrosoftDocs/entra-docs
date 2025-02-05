@@ -69,7 +69,7 @@ The QR code authentication method is configured by the Authentication Policy Adm
 
 ![Configure QR code authentication](media/common/configure-qr-code-auth.png)
 
-You can get the preferred authentication method for the current account by calling the `getPreferredAuthMethod` method on the `IAccount` object. The following code snippet shows how to get the preferred authentication method for the current account:
+You can get the preferred authentication method for the current account by calling the `getPreferredAuthMethod` method on the `mpca` object. The following code snippet shows how to get the preferred authentication method for the current account:
 
 ```java
 mpca.getPreferredAuthConfiguration()
