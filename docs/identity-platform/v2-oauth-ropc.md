@@ -52,12 +52,12 @@ If you are an app developer, who needs to access a resource, use a form of inter
 
 In these scenarios where there is no user context, for example a script running as part of a CI pipeline, or a service needing to call a resource on behalf of itself, with no user details.
 
-If you are an end-user of an application, such as Azure CLI, use service principal login methods such as certificates, managed identities, or federated identities.
-If you are an application developer, the recommendation is to use [Service Principal authentication](app-objects-and-service-principals.md), which is illustrated in the [Daemon samples](./sample-v2-code.md?tabs=apptype#service--daemon). 
+- If you are an end-user of an application, such as Azure CLI, use service principal login methods such as certificates, managed identities, or federated identities.
+- If you are an application developer, the recommendation is to use [Service Principal authentication](app-objects-and-service-principals.md), which is illustrated in the [daemon samples](./sample-v2-code.md?tabs=apptype#service--daemon). 
 
 There are multiple ways to authenticate as a service principal:
 
-- If your app is running on Azure infrastructure, use [Managed Identity](./../identity/managed-identities-azure-resources/overview.md). This eliminates the overhead of maintaining and rotating secrets and certificates.
+- If your app is running on Azure infrastructure, use [Managed Identity](./../identity/managed-identities-azure-resources/overview.md). Managed Identity eliminates the overhead of maintaining and rotating secrets and certificates.
 - If your app is running on a system managed by another OAuth2-compliant Identity provider, such as GitHub, use [Federated Identity Credentials](./../workload-id/workload-identity-federation-create-trust.md?pivots=identity-wif-apps-methods-azp).
 - If you cannot use a Managed Identity or a Federated Identity, use a [certificate credential](certificate-credentials.md).
 
