@@ -8,7 +8,7 @@ ms.assetid: 804438c4-51a1-497d-8ccc-5be775980203
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 12/02/2024
+ms.date: 02/05/2025
 ms.author: justinha
 ms.custom: fasttrack-edit, devx-track-linux, linux-related-content
 ---

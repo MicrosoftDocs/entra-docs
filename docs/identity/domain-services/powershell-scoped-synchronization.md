@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 10/07/2024
+ms.date: 02/05/2025
 ms.author: justinha
 ms.reviewer: wanjikumugo
 ms.custom: has-azure-ad-ps-ref, devx-track-azurepowershell, azure-ad-ref-level-one-done
