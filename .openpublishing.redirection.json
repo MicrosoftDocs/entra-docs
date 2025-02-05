@@ -1533,21 +1533,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/identity-platform/quickstart-web-app-dotnet-core-sign-in.md",
-      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=workforce",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/identity-platform/quickstart-web-app-nodejs-sign-in.md",
-      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=workforce",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/identity-platform/quickstart-web-app-java-sign-in.md",
-      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=workforce",
-      "redirect_document_id": false
-    },
-    {
       "source_path_from_root": "/docs/identity-platform/quickstart-web-app-python-flask.md",
       "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=workforce",
       "redirect_document_id": false
@@ -1560,16 +1545,6 @@
     {
       "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-edit-profile-prepare-tenant.md",
       "redirect_url": "/entra/external-id/customers/how-to-web-app-node-edit-profile-prepare-app",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/external-id/customers/sample-web-app-node-sign-in-edit-profile.md",
-      "redirect_url": "/entra/identity-platform/quickstart-web-app-node-sign-in-edit-profile",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/external-id/customers/sample-web-app-python-django-sign-in.md",
-      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=external",
       "redirect_document_id": false
     },
     {
@@ -1587,16 +1562,6 @@
       "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=external",
       "redirect_document_id": false
     },
-    {
-      "source_path_from_root": "/docs/external-id/customers/sample-web-app-dotnet-sign-in.md",
-      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=external&tab=asp-dot-net-core-workforce",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/identity/enterprise-apps/configure-user-consent-groups.md",
-      "redirect_url": "/microsoftteams/platform/graph-api/rsc/grant-resource-specific-consent",
-      "redirect_document_id": false
-    }, 
     {
       "source_path_from_root": "/docs/identity/saas-apps/bluejeans-provisioning-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/tutorial-list",
@@ -1630,16 +1595,6 @@
     {
       "source_path_from_root": "/docs/external-id/customers/sample-cli-app-node-sign-in-users.md",
       "redirect_url": "/entra/identity-platform/quickstart-cli-app-node-sign-in-users",
-      "redirect_document_id": false
-    },    
-    {
-      "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-node-sign-in-prepare-tenant.md", 
-      "redirect_url": "/entra/identity-platform/tutorial-web-app-node-sign-in-prepare-app?tabs=external-tenant",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-node-sign-in-prepare-app.md", 
-      "redirect_url": "/entra/identity-platform/tutorial-web-app-node-sign-in-prepare-app?tabs=external-tenant",
       "redirect_document_id": false
     },
     {
@@ -1743,21 +1698,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/external-id/customers/sample-web-app-node-sign-in.md",
-      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=external",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/external-id/customers/sample-web-app-python-django-sign-in.md",
-      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=external",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-node-sign-in-sign-out.md",
-      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=external",
-      "redirect_document_id": false
-    },
-    {
       "source_path_from_root": "/docs/identity-platform/quickstart-web-app-dotnet-core-sign-in.md",
       "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=workforce",
       "redirect_document_id": false
@@ -1773,32 +1713,12 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/identity-platform/quickstart-web-app-python-flask.md",
-      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=workforce",
-      "redirect_document_id": false
-    },    
-    {
-      "source_path_from_root": "/docs/external-id/customers/sample-web-app-node-sign-in-call-api.md",
-      "redirect_url": "/entra/identity-platform/quickstart-web-app-node-sign-in-call-api",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-edit-profile-prepare-tenant.md",
-      "redirect_url": "/entra/external-id/customers/how-to-web-app-node-edit-profile-prepare-app",
-      "redirect_document_id": false
-    },
-    {
       "source_path_from_root": "/docs/external-id/customers/sample-web-app-node-sign-in-edit-profile.md",
       "redirect_url": "/entra/identity-platform/quickstart-web-app-node-sign-in-edit-profile",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/sample-web-app-python-django-sign-in.md",
-      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=external",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/external-id/customers/sample-web-app-python-flask-sign-in.md",
       "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=external",
       "redirect_document_id": false
     },
@@ -1811,47 +1731,7 @@
       "source_path_from_root": "/docs/identity/enterprise-apps/configure-user-consent-groups.md",
       "redirect_url": "/microsoftteams/platform/graph-api/rsc/grant-resource-specific-consent",
       "redirect_document_id": false
-    }, 
-    {
-      "source_path_from_root": "/docs/identity/saas-apps/bluejeans-provisioning-tutorial.md",
-      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/identity/saas-apps/bluejeans-tutorial.md",
-      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/external-id/customers/sample-cli-app-node-sign-in-users.md",
-      "redirect_url": "/entra/identity-platform/quickstart-cli-app-node-sign-in-users",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/identity-platform/quickstart-daemon-dotnet-acquire-token.md",
-      "redirect_url": "/entra/identity-platform/quickstart-daemon-app-call-api?pivots=workforce&tab=asp-dot-net-core-workforce",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/identity-platform/quickstart-daemon-app-java-acquire-token.md",
-      "redirect_url": "/entra/identity-platform/quickstart-daemon-app-call-api?pivots=workforce&tab=java-workforce",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/identity-platform/quickstart-console-app-nodejs-acquire-token.md",
-      "redirect_url": "/entra/identity-platform/quickstart-daemon-app-call-api?pivots=workforce&tab=node-workforce",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/identity-platform/quickstart-daemon-app-python-acquire-token.md",
-      "redirect_url": "/entra/identity-platform/quickstart-daemon-app-call-api?pivots=workforce&tab=python-workforce",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/external-id/customers/sample-cli-app-node-sign-in-users.md",
-      "redirect_url": "/entra/identity-platform/quickstart-cli-app-node-sign-in-users",
-      "redirect_document_id": false
-    },    
+    },  
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-node-sign-in-prepare-tenant.md", 
       "redirect_url": "/entra/identity-platform/tutorial-web-app-node-sign-in-prepare-app?tabs=external-tenant",
@@ -1861,10 +1741,6 @@
       "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-node-sign-in-prepare-app.md", 
       "redirect_url": "/entra/identity-platform/tutorial-web-app-node-sign-in-prepare-app?tabs=external-tenant",
       "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-node-sign-in-sign-out.md",
-      "redirect_url": "/entra/identity-platform/tutorial-web-app-node-sign-in-sign-out?tabs=external-tenant",
     },
     {
       "source_path_from_root": "/docs/identity/users/groups-write-back-portal.md",
