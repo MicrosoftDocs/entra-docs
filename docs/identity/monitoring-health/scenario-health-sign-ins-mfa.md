@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 02/03/2025
+ms.date: 02/05/2025
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -53,11 +53,11 @@ Investigating an alert starts with gathering data. With Microsoft Entra Health i
 
 1. Select the **Sign-ins requiring Entra ID MFA** scenario and then select an active alert.
 
-    ![Screenshot of the Microsoft Entra Health landing page.](media/howto-investigate-health-scenario-alerts/health-monitoring-landing-page.png)
+    :::image type="content" source="media/scenario-health-sign-ins-mfa/health-monitoring-landing-page.png" alt-text="Screenshot of the Microsoft Entra Health landing page." lightbox="media/scenario-health-sign-ins-mfa/health-monitoring-landing-page-expanded.png":::
 
 1. View the signal from the **View data graph** section to get familiar with the pattern and identify anomalies.
 
-    ![Screenshot of the sign-ins requiring MFA signal.](media/scenario-health-sign-ins-mfa/scenario-monitoring-signal-mfa.png)
+    :::image type="content" source="media/scenario-health-sign-ins-mfa/scenario-monitoring-signal-mfa.png" alt-text="Screenshot of the sign-ins requiring MFA signal." lightbox="media/scenario-health-sign-ins-mfa/scenario-monitoring-signal-mfa-expanded.png":::
 
 1. Review the sign-in logs.
     - [Review the sign-in log details](concept-sign-in-log-activity-details.md).

@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 02/03/2025
+ms.date: 02/05/2025
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -66,7 +66,7 @@ Email notification settings can be configured for each scenario in the Microsoft
     - If no group is selected, the **+Select** button is displayed.
     - If a group is already selected, the **Edit** button is displayed.
 
-    ![Screenshot of the group alert notifications edit button.](media/howto-configure-health-alert-emails/email-notifications-edit-button.png)
+    :::image type="content" source="media/howto-configure-health-alert-emails/email-notifications-edit-button.png" alt-text="Screenshot of the group alert notifications edit button." lightbox="media/howto-configure-health-alert-emails/email-notifications-edit-button-expanded.png":::
 
 1. From the panel that opens, select the group you want to receive the alerts and select the **Select** button. 
     - Only one group can be selected.
@@ -89,7 +89,7 @@ From the Microsoft Entra admin center:
 1. Browse to **Groups** > **All groups** > and select the group you want to receive the alerts.
 1. Select **Properties** and copy the `Object ID` of the group. 
 
-      ![Screenshot of the group properties in the Microsoft Entra admin center.](media/howto-configure-health-alert-emails/locate-group-id.png)
+    :::image type="content" source="media/howto-configure-health-alert-emails/locate-group-id.png" alt-text="Screenshot of the group properties in the Microsoft Entra admin center." lightbox="media/howto-configure-health-alert-emails/locate-group-id-expanded.png":::
 
 Using the Microsoft Graph API:
 1. Sign in to [Microsoft Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer) as at least a [Helpdesk Administrator](../role-based-access-control/permissions-reference.md#helpdesk-administrator) and consent to the appropriate permissions.
