@@ -307,7 +307,7 @@ Users need to [download Teams](https://aka.ms/teamsmobiledownload):
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/sign-in.png" alt-text="Screenshot that shows how to sign in to Teams with a QR code and PIN.":::
 
-## Sign in to login.microsoftonline.com with a QR code 
+## User sign-in 
 
 1. Click **More sign-in options** > **Sign in to an organization** > **Sign in with QR code**.
 
@@ -347,17 +347,6 @@ This section covers how to create policies that restrict QR code authentication 
    1. Under **Target resources** > **Cloud apps** > **Include** > select specific resources that frontline workers can access.
    1. Under **Conditions** > **Filter for devices** > **Configure** > select **Yes** > **Include filtered devices from policy** > **ProfileType** **Equals** **Shared**.
    1. Under **Access controls** > **Grant** > select **Require device to be marked as compliant**.
-
-
-## User sign-in
-
-1. Click **More sign-in options** > **Sign in to an organization** > **Sign in with QR code**.
-
-   :::image type="content" border="true" source="media/how-to-authentication-qr-code/sign-in-qr-code.png" alt-text="Screenshots that show how to sign in with a QR code on a mobile device.":::
-
-2. Allow camera prompt > scan the QR code > enter your PIN > you're successfully signed-in. 
-
-   :::image type="content" border="true" source="media/how-to-authentication-qr-code/configure-authentication-strength.png" alt-text="Screenshot that shows how to enter your PIN to sign in.":::
 
 ## Related content
 

@@ -5,7 +5,7 @@ description: Learn about using QR code authentication method in Microsoft Entra 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/03/2025
+ms.date: 02/05/2025
 
 ms.author: justinha
 author: aanjusingh
@@ -42,7 +42,7 @@ Benefit | Description
 Easier and faster sign-in | Frontline workers don't have to enter complex usernames and complex passwords to sign in multiple times into shared devices through their shift
 Inexpensive | Printing a QR code costs less than a hardware key, which can be cost prohibitive for organizations with temporary frontline workers.
 
-## QR code configurations in Authentication method policy
+## QR code configurations in the Authentication method policy
 
 Authentication Policy Administrators can enable QR code in Authentication methods in the Microsoft Entra admin center. QR code authentication is disabled by default.
 
@@ -108,6 +108,14 @@ PIN not recently used | Don't repeat the last 3 PINs during admin reset, or user
 Administrators can manage QR codes in the Authentication methods for each user.
 
 :::image type="content" source="media/how-to-authentication-qr-code/add-qr-code.png" alt-text="Screenshot that shows how add a QR code for a user.":::
+
+## Security guidelines for QR code authentication 
+
+We recommend the following security measures when you enable QR code authentication method as it is a single factor authentication (something you know).  
+
+- QR code authentication is primarily for frontline workers as they don’t have dedicated devices or hardware keys to perform phishing-resistant authentication. 
+- Combine QR code authentication with Conditional Access policies to add another security layer. Recommended policies are compliant devices, access within network, allow for certain applications, and shared device mode. 
+- Enforce phishing-resistant MFA when users access resources from outside of the store or workplace network. 
 
 ## Add QR code sign-in to apps
 
