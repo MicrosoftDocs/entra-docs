@@ -9,7 +9,7 @@ ms.service: entra-external-id
 ms.subservice: external
 ms.topic: tutorial
 ms.date: 02/07/2025
-#Customer intent: As a developer, devops, I want to 
+#Customer intent: As a developer or DevOps engineer, I want to set up a CORS proxy server for a React single-page application that uses native authentication API so that I can manage CORS headers and enable the app to interact with the native authentication API.
 ---
 
 # Tutorial: Set up CORS proxy server to manage CORS headers for native authentication (preview)

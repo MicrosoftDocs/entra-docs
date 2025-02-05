@@ -9,7 +9,7 @@ ms.service: entra-external-id
 ms.subservice: external
 ms.topic: tutorial
 ms.date: 02/07/2025
-#Customer intent: As a developer, devops, I want to 
+#Customer intent: As a developer, I want to build a React single-page application that uses native authentication API so that I can sign in users with a username (email) and password.
 ---
 
 # Tutorial: Sign in users into a React single-page app by using native authentication (preview)
