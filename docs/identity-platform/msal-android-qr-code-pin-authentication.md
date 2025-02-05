@@ -64,7 +64,7 @@ This initiates the token acquisition process using the specified parameters, inc
 
 ## Get preferred authentication method
 
-The QR code authentication method is configured by the Authentication Policy Administrator through an [app configuration policy for managed Android Enterprise devices](~/mem/intune/apps/app-configuration-policies-use-android) on the Microsoft Authenticator App, setting `preferred_auth_method` equal to `qrpin`.
+The QR code authentication method is configured by the Authentication Policy Administrator through an [app configuration policy for managed Android Enterprise devices](/mem/intune/apps/app-configuration-policies-use-android) on the Microsoft Authenticator App, setting `preferred_auth_method` equal to `qrpin`.
 
 
 ![Configure QR code authentication](media/common/configure-qr-code-auth.png)
