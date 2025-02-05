@@ -40,7 +40,7 @@ If you are using ROPC to acquire tokens to call protected downstream APIs, migra
 
 If you are an end-user of an application, such as Azure CLI, use an interactive method for authentication. Avoid ROPC or Device Code options.
 
-If you are an app developer, who needs to access a resource, use a form of interactive authentication. The user can be only challenged for MFA if shown a browser.
+If you are an app developer who needs to access a resource, use a form of interactive authentication. The user can be only challenged for MFA when prompted in the browser.
 
 - For web applications where the authentication is done in the front-end, see [Single Page Application](./sample-v2-code.md?tabs=apptype#single-page-applications)
 - For web applications where the authentication is done in the back-end, see [Web Applications](./sample-v2-code.md?tabs=apptype#web-applications)
