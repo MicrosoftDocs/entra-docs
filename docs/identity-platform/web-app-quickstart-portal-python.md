@@ -26,7 +26,6 @@ ms.topic: quickstart
 >
 > In this quickstart, you download and run a code sample that demonstrates how a Python web application can sign in users and get an access token to call the Microsoft Graph API. Users with a personal Microsoft Account or an account in any Microsoft Entra organization can sign into the application.
 > 
-> See [How the sample works](#how-the-sample-works) for an illustration.
 > 
 > ## Prerequisites
 > 
