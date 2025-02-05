@@ -25,7 +25,7 @@ If you need to add resources to an access package, you should check whether the 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]
-    > Other least privilege roles that can complete this task include the Catalog owner and the Access package manager.
+    > Other least privileged roles that can complete this task include the Catalog owner and the Access package manager.
 1. Browse to **Identity governance** > **Entitlement management** > **Access package**.
 
 1. On the **Access packages** page, open the access package you want to check to ensure that its catalog has the necessary resources.
@@ -36,7 +36,7 @@ If you need to add resources to an access package, you should check whether the 
 
     ![List of resources in a catalog](./media/entitlement-management-access-package-resources/catalog-resources.png)
 
-1. If the resources aren't already in the catalog, and you're an administrator or a catalog owner, you can [add resources to a catalog](entitlement-management-catalog-create.md#add-resources-to-a-catalog). The types of resources you can add are groups, applications you've integrated with your directory, and SharePoint Online sites. For example:
+1. If the resources aren't already in the catalog, and you're an administrator or a catalog owner, you can [add resources to a catalog](entitlement-management-catalog-create.md#add-resources-to-a-catalog). The types of resources you can add are groups, applications you've integrated with your directory, Microsoft Entra Roles, and SharePoint Online sites. For example:
 
    * Groups can be cloud-created Microsoft 365 Groups or cloud-created Microsoft Entra security groups. Groups that originate in an on-premises Active Directory can't be assigned as resources because their owner, or member, attributes can't be changed in Microsoft Entra ID. To give users access to an application that uses AD security group memberships, create a new group in Microsoft Entra ID, configure [group writeback to AD](../identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md), and [enable that group to be written to AD](entitlement-management-group-writeback.md). Groups that originate in Exchange Online as Distribution groups can't be modified in Microsoft Entra ID either.
    * Applications can be Microsoft Entra enterprise applications, which include software as a service (SaaS) applications, on-premises applications that use a different directory or database, and your own applications integrated with Microsoft Entra ID. If your application hasn't yet been integrated with your Microsoft Entra directory, see [govern access for applications in your environment](identity-governance-applications-prepare.md) and [integrate an application with Microsoft Entra ID](identity-governance-applications-integrate.md).
@@ -201,7 +201,10 @@ Assigning Microsoft Entra roles through access packages helps to efficiently man
 
 Follow these steps to include a Microsoft Entra role as a resource in an access package: 
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+
+> [!NOTE]
+> [Identity Governance Administrators](~/identity/role-based-access-control/permissions-reference.md#identity-governance-administrator) and [Catalog Owners](entitlement-management-delegate.md) who also have the [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator) role can add Microsoft Entra roles to an access package. 
 
 1. Browse to **Identity governance** > **Entitlement management** > **Access packages**.
 
