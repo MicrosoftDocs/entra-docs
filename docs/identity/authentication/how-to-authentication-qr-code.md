@@ -5,7 +5,7 @@ description: Learn about how to enable QR code authentication method in Microsof
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/04/2025
+ms.date: 02/05/2025
 
 ms.author: justinha
 author: aanjusingh
@@ -325,7 +325,7 @@ This section covers how to create policies that restrict QR code authentication 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **QR code** > **Enable and target**.
-1. Click **Add target** > select the **Pilot users** group, which only include frontline workers. This group selection restricts enablement of the QR code authentication method only to frontline workers added to the **Pilot users** group. 
+1. Click **Add target** > select a group that only includes frontline workers, such as **Frontline workers** in the following screenshot. This group selection restricts enablement of the QR code authentication method only to frontline workers added to the **Frontline workers** group. 
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/add-groups-and-roles.png" alt-text="Screenshot that shows the Microsoft Entra admin center that shows how to add groups to the QR code settings.":::
 
@@ -358,7 +358,7 @@ This section covers how to create policies that restrict QR code authentication 
    1. Click **Create**.
 
 1. Create a Conditional Access policy that requires shared devices be marked as compliant with policies from Intune or other mobile device management (MDM) solution. This policy makes sure that frontline workers can access only specific resources from a compliant, shared device by using a QR code + PIN, or another registered authentication method. 
-   1. Under **Users or workload identities** > **Include** > select **Users and groups**, and choose your **Pilot users** frontline worker group. 
+   1. Under **Users or workload identities** > **Include** > select **Users and groups**, and choose your **Frontline workers** frontline worker group. 
    1. Under **Target resources** > **Include** > select specific resources that frontline workers can access.
    1. Under **Conditions**, click **Filter for devices**, set **Configure** to **Yes**.
    1. Click **Include filtered devices from policy**.
@@ -366,7 +366,7 @@ This section covers how to create policies that restrict QR code authentication 
    1. For **Operator**, select **Equals**.
    1. For **Value**, select **Shared**.  
 
-      :::image type="content" border="true" source="media/how-to-authentication-qr-code/include-filtered-devices.png" alt-text="Screenshot that shows how to filter devices for an authentication strength.":::
+      :::image type="content" border="true" source="media/how-to-authentication-qr-code/include-filtered-devices.png" alt-text="Screenshot that shows how to include filtered devices from a policy for an authentication strength.":::
    
    1. Under **Access controls** > **Grant** > select **Require device to be marked as compliant**, and click **Select**.  
    1. Click **Create**.

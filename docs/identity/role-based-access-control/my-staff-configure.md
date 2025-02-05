@@ -67,7 +67,7 @@ You'll see the service principal when you create a Conditional Access policy tha
 
 ## Using My Staff
 
-When a user selects My Staff, they are shown the names of the [administrative units](administrative-units.md) over which they have administrative permissions. In the [My Staff user documentation](https://support.microsoft.com/account-billing/manage-front-line-users-with-my-staff-c65b9673-7e1c-4ad6-812b-1a31ce4460bd), we use the term "location" to refer to administrative units. If an administrator's permissions donn't have an administrative unit scope, then the permissions apply across the organization. 
+When a user selects My Staff, they are shown the names of the [administrative units](administrative-units.md) over which they have administrative permissions. In the [My Staff user documentation](https://support.microsoft.com/account-billing/manage-front-line-users-with-my-staff-c65b9673-7e1c-4ad6-812b-1a31ce4460bd), we use the term "location" to refer to administrative units. If an administrator's permissions don't have an administrative unit scope, then the permissions apply across the organization. 
 
 After My Staff has been enabled, the users who are enabled and have been assigned an administrative role can access it through [https://mystaff.microsoft.com](https://mystaff.microsoft.com). They can select an administrative unit to view the users in that unit, and select a user to open their profile.
 
@@ -93,11 +93,11 @@ The following roles have permission to reset a user's password:
 From **My Staff**, open a user's profile. Select **Reset password**.
 
 * If the user is cloud-only, you can see a temporary password that you can give to the user.
-* If the user is synced from on-premises Active Directory, you can enter a password that meets your on-premises AD policies. You can then give that password to the user.
+* If the user is synced from on-premises Active Directory, you can enter a password that meets your on-premises domain policies. You can then give that password to the user.
 
     ![Password reset progress indicator and success notification](./media/my-staff-configure/reset-password.png)
 
-The user is required to change their password the next time they sign in.
+The user needs to change their password the next time they sign in.
 
 ## Manage a phone number
 
