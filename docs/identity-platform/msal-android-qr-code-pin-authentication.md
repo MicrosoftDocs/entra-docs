@@ -79,4 +79,5 @@ The `getPreferredAuthConfiguration` method requires the Microsoft Authenticator 
 
 ## Related content
 
+- [Set up QR code authentication in iOS app](msal-ios-qr-code-pin-authentication.md)
 - [Authentication methods in Microsoft Entra ID - QR code authentication method (Preview)](/entra/identity/authentication/how-to-authentication-qr-code)
