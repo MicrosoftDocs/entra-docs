@@ -17,20 +17,14 @@ manager: amycolannino
 
 # Authentication methods in Microsoft Entra ID - QR code authentication method (Preview)
 
-QR code authentication method enables frontline workers to sign in quickly and easily in apps on shared device. Users will be able to use unique QR code provided by their admins and enter their PIN to sign in, eliminating the need to enter lengthy usernames and intricate passwords.
-
-## What is QR code authentication?
-
 QR code authentication is a simple authentication method primarly designed for frontline workers. 
 It consists of a unique QR code and numeric PIN. 
 The QR code serves as an identifier and has a unique key for each user. 
-
 It can be downloaded and printed from the Microsoft Entra admin center, MyStaff, or MSGraph API. 
 For convenience, the QR code can be attached to a badge or any other wearable item. 
 
 The PIN is a memorized numeric secret. 
 Authentication Administrators provide a temporary PIN to users, who then change it during sign-in. 
-
 The PIN is exclusively bound to the QR code only. 
 It can't be used with other user identifiers, such as username or phone number.
 QR code authentication is a single-factor method in which PIN (something you know) is a credential.
