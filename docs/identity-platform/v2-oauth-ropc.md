@@ -38,7 +38,7 @@ If you are using ROPC to acquire tokens to call protected downstream APIs, migra
 
 ### When user context is available
 
-If you are an end-user of an application, such as Azure CLI, use an interactive method for authentication. Avoid ROPC or Device Code options.
+If you are an end-user of an application, such as the Azure CLI, use an interactive method for authentication. Avoid using the ROPC or Device Code flow.
 
 If you are an app developer who needs to access a resource, use a form of interactive authentication. The user can be only challenged for MFA when prompted in the browser.
 
