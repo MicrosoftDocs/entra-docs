@@ -32,7 +32,7 @@ The Microsoft identity platform supports the [OAuth 2.0 Resource Owner Password 
 
 ## How to migrate away from ROPC
 
-As MFA becomes more prevalent, certain Microsoft web APIs will only accept access tokens if they have passed MFA requirements. Applications and test rigs relying on ROPC will be locked out as Microsoft Entra will either refuse to issue the token or the resource will reject it.
+As MFA becomes more prevalent, certain Microsoft web APIs will only accept access tokens if they have passed MFA requirements. Applications and test rigs relying on ROPC will be locked out as Microsoft Entra will either refuse to issue the token or the resource will reject the request.
 
 If you are using ROPC to acquire tokens to call protected downstream APIs, migrate to a secure token acquisition strategy.
 
@@ -140,4 +140,3 @@ If the user hasn't provided the correct username or password, or the client hasn
 ## Learn more
 
 For an example implementation of the ROPC flow, see the [.NET console application](https://github.com/azure-samples/active-directory-dotnetcore-console-up-v2) code sample on GitHub.
-o
