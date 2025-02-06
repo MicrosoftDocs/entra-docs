@@ -245,9 +245,7 @@ Once you have the details for the affected entities, you can begin to troublesho
 
 #### Update the status
 
-After investigating and potentially resolving the root cause of the issue, you can mark the alert as resolved. Run the following PATCH request:
-
-  - The equivalent action using the Microsoft Entra admin center is to update the alert status to **Dismissed**.
+After investigating and potentially resolving the root cause of the issue, you can mark the alert as resolved. Run the following PATCH request. The equivalent action using the Microsoft Entra admin center is to update the alert status to **Dismissed**.
 
 ```http
 PATCH https://graph.microsoft.com/beta/reports/healthMonitoring/alerts/{alertId}

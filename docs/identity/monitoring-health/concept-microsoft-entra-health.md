@@ -59,7 +59,7 @@ The following key scenarios can be monitored in Microsoft Entra Health:
 
 The data associated with each of these scenarios is aggregated into a view that's specific to that scenario. If you're only interested in sign-ins from compliant devices, you can dive into that scenario without noise from other sign-in activities. 
 
-![Screenshot of the MFA scenario monitoring data.](media/concept-microsoft-entra-health/scenario-monitoring-signal-mfa.png)
+:::image type="content" source="media/concept-microsoft-entra-health/scenario-monitoring-signal-mfa.png" alt-text="Screenshot of the MFA scenario monitoring data." lightbox="media/concept-microsoft-entra-health/scenario-monitoring-signal-mfa-expanded.png":::
 
 Each scenario detail page provides trends and totals for that scenario for the last 30 days. This data is aggregated every 15 minutes, for low latency insights into your tenant's health.
 
@@ -74,8 +74,6 @@ The service provides alerts for the following scenarios:
 - [Sign-ins requiring a Conditional Access compliant device](scenario-health-sign-ins-compliant-managed-device.md)
 - [Sign-ins requiring a Conditional Access managed device](scenario-health-sign-ins-compliant-managed-device.md)
 - [Sign-ins requiring multifactor authentication (MFA)](scenario-health-sign-ins-mfa.md)
-
-At this time, alerts are only available through the Microsoft Graph API. With the Microsoft Graph health monitoring alerts APIs, you can view the alerts, configure email notifications, and update the state of the alert. For more information, see [Microsoft Graph Health monitoring alerts API documentation](/graph/api/resources/healthmonitoring-overview?view=graph-rest-beta&preserve-view=true).
 
 ## Related content
 

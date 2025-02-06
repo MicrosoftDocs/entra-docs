@@ -35,7 +35,9 @@ There are different roles, permissions, and license requirements to view health 
 - The `HealthMonitoringAlert.Read.All` permission is required to *view the alerts using the Microsoft Graph API*.
 - The `HealthMonitoringAlert.ReadWrite.All` permission is required to *view and modify the alerts using the Microsoft Graph API*.
 - For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs-least-privileged-roles).
-- Note: Newly onboarded tenants might not have enough data to generate alerts for about 30 days.
+
+> [!NOTE]
+> Newly onboarded tenants might not have enough data to generate alerts for about 30 days.
 
 ## Determine email notification recipients
 

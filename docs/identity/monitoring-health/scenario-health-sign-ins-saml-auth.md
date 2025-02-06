@@ -43,4 +43,4 @@ You can view the signal using the Microsoft Entra admin center and the Microsoft
 
 1. Select the **Sign-ins to applications using SAML authentication** scenario.
 
-    ![Screenshot of the SAML scenario.](media/scenario-health-sign-ins-saml-auth/health-monitoring-saml-authentication.png)
+    :::image type="content" source="media/scenario-health-sign-ins-saml-auth/health-monitoring-saml-authentication.png" alt-text="Screenshot of the SAML Health monitoring scenario." lightbox="media/scenario-health-sign-ins-saml-auth/health-monitoring-saml-authentication-expanded.png":::
