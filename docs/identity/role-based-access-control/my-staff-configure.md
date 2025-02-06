@@ -116,6 +116,18 @@ To manage a user's phone number, you must be assigned one of the following roles
 * [Authentication Administrator](permissions-reference.md#authentication-administrator)
 * [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator)
 
+## Manage QR code authentication
+
+You can use **My Staff** to manage the QR code authentication method for users.
+
+### Add QR code authentication method for a user in My Staff
+
+[!Include [Add QR code]](~/../includes/add-qr-code-my-staff.md)
+
+### Edit the QR code authentication method for a user in My Staff
+
+[!Include [Edit QR code]](~/../includes/edit-qr-code-my-staff.md)
+
 ## Search
 
 You can search for administrative units and users in your organization using the search bar in My Staff. You can search across all administrative units and users in your organization, but you can only make changes to users who are in an administrative unit over which you have been given admin permissions.
