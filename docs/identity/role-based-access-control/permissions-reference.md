@@ -410,7 +410,7 @@ This is a [privileged role](privileged-roles-permissions.md). Assign the Attribu
 - Read and write attribute mappings for custom security attributes when provisioning in an application.
 - Read and write provisioning and auditing logs for custom security attributes when provisioning in an application.
 
-Users with this role cannot read audit logs for other events. This role must be used in in conjunction with the Cloud Application Administrator or Application Administrator roles (from least to most privileged) to read provisioning configurations.
+Users with this role cannot read audit logs for other events. This role must be used in conjunction with the Cloud Application Administrator or Application Administrator roles (from least to most privileged) to read provisioning configurations.
 
 > [!IMPORTANT]
 > This role does not have the ability to create custom security attribute sets or to directly assign or update custom security attribute values for the user object. This role can only configure the flow of the custom security attributes in the provisioning app.
@@ -432,7 +432,7 @@ This is a [privileged role](privileged-roles-permissions.md). Assign the Attribu
 - Read the attribute mappings for custom security attributes when provisioning in an application.
 - Read the provisioning and auditing logs for custom security attributes when provisioning in an application.
 
-Users with this role cannot read audit logs for other events. This role must be used in in conjunction with the Cloud Application Administrator or Application Administrator roles (from least to most privileged) to read provisioning configurations.
+Users with this role cannot read audit logs for other events. This role must be used in conjunction with the Cloud Application Administrator or Application Administrator roles (from least to most privileged) to read provisioning configurations.
 
 [Learn more](../app-provisioning/provision-custom-security-attributes.md)
 
