@@ -50,19 +50,23 @@ To sign in a user, you need to:
 
    ```kotlin
     CoroutineScope(Dispatchers.Main).launch {
-        val actionResult = authClient.signIn(
-            username = emailAddress
-            //password = password, Pass 'password' param if you sign in with username (email) and password
-        )
+        val parameters = NativeAuthSignInParameters(username = email)
+        // Assign 'password' param if you sign in with username (email) and password
+        // parameters.password = password
+        val actionResult: SignInResult = authClient.signIn(parameters)
+
         if (actionResult is SignInResult.CodeRequired) {
             val nextState = actionResult.nextState
             val submitCodeActionResult = nextState.submitCode(
                 code = code
             )
-            if (submitCodeActionResult is SignInResult.Complete){
+            if (submitCodeActionResult is SignInResult.Complete) {
                 // Handle sign in success
                 val accountState = submitCodeActionResult.resultValue
-                val accessTokenResult = accountState.getAccessToken()
+
+                val getAccessTokenParameters = NativeAuthGetAccessTokenParameters()
+                val accessTokenResult = accountState.getAccessToken(getAccessTokenParameters)
+
                 if (accessTokenResult is GetAccessTokenResult.Complete) {
                     val accessToken = accessTokenResult.resultValue.accessToken
                     val idToken = accountState.getIdToken()
@@ -75,28 +79,31 @@ To sign in a user, you need to:
     If the user isn't required to submit a passcode, such as where a user signs in with email and password, use the following code snippet:
 
     ```kotlin
-        CoroutineScope(Dispatchers.Main).launch {
-            val actionResult = authClient.signIn(
-                username = emailAddress,
-                password = password
-            )
-            if (actionResult is SignInResult.Complete) -> {
-                // Handle sign in success
-                val accountState = actionResult.resultValue
-                val accessTokenResult = accountState.getAccessToken()
-                if (accessTokenResult is GetAccessTokenResult.Complete) {
-                        val accessToken = accessTokenResult.resultValue.accessToken
-                        val idToken = accountState.getIdToken()
-                    }
+    CoroutineScope(Dispatchers.Main).launch {
+        val parameters = NativeAuthSignInParameters(username = email)
+        parameters.password = password
+        val actionResult: SignInResult = authClient.signIn(parameters)
+        
+        if (actionResult is SignInResult.Complete) -> {
+            // Handle sign in success
+            val accountState = actionResult.resultValue
+
+            val getAccessTokenParameters = NativeAuthGetAccessTokenParameters()
+            val accessTokenResult = accountState.getAccessToken(getAccessTokenParameters)
+
+            if (accessTokenResult is GetAccessTokenResult.Complete) {
+                val accessToken = accessTokenResult.resultValue.accessToken
+                val idToken = accountState.getIdToken()
             }
         }
+    }
     ```
     
 
-    - To start the sign-in flow, use the SDK's `signIn(username)` or `signIn(username, password)` method. 
-    - The method's parameter, `username` is then email address you collect from the user.
+    - To start the sign-in flow, use the SDK's `signIn(parameters)` method. 
+    - An instance of the `NativeAuthSignInParameters` class, containing the `username` that is the email address you collect from the user.
     - If the sign-in method is username (email) and password, the method's parameter, `password` is then password you collect from the user.
-    - In most common scenario, the `signIn(username)` or `signIn(username, password)`returns a result, `SignInResult.CodeRequired`, which indicates that the SDK expects the app to submit the email one-time passcode sent to the user's emails address. 
+    - In most common scenario, the `signIn(parameters)` returns a result, `SignInResult.CodeRequired`, which indicates that the SDK expects the app to submit the email one-time passcode sent to the user's emails address. 
     - The `SignInResult.CodeRequired` object contains a new state reference, which we can retrieve through `actionResult.nextState`. 
     - The new state gives us access to two new methods: 
         - `submitCode()` submits the email one-time passcode that the app collects from the user. 
@@ -108,13 +115,14 @@ During sign-in, not all actions succeed. For instance, the user might attempt to
 
 #### Handle sign-in start errors
 
-To handle errors in the `signIn(username)` or `signIn(username, password)` method, use the following code snippet: 
+To handle errors in the `signIn(parameters)` method, use the following code snippet: 
 
    ```Kotlin
-   val actionResult = authClient.sign(
-       username = emailAddress
-       //password = password, Pass 'password' param if you sign in with username (email) and password
-   )
+    val parameters = NativeAuthSignInParameters(username = email)
+    // Assign 'password' param if you sign in with username (email) and password
+    // parameters.password = password
+   val actionResult: SignInResult = authClient.signIn(parameters)
+
    if (actionResult is SignInResult.CodeRequired) {
        // Next step: submit code
    } else if (actionResult is SignInError) {
@@ -124,7 +132,7 @@ To handle errors in the `signIn(username)` or `signIn(username, password)` metho
                 // Handle "user not found" error
             }
             actionResult.isAuthNotSupported() -> {
-            // Handle "authentication type not support" error
+                // Handle "authentication type not support" error
             }
             actionResult.isInvalidCredentials() -> {
                 // Handle specific errors
@@ -136,7 +144,7 @@ To handle errors in the `signIn(username)` or `signIn(username, password)` metho
    }
    ```
 
-- `SignInError` indicates an unsuccessful action result returned by `signIn()`, so the action result doesn't include a reference to the new state.
+- `SignInError` indicates an unsuccessful action result returned by `signIn(parameters)`, so the action result doesn't include a reference to the new state.
 - If `actionResult is SignUpError`, the Android SDK provides utility methods to enable you to analyze the specific errors further:
     - The method `isUserNotFound()` checks whether the user signs in with a username (email address) that doesn't exist.
     - The method `isBrowserRequired()` checks the need for a browser (web fallback), to complete authentication flow. This scenario happens when native authentication isn't sufficient to complete the authentication flow. For examples, an admin configures email and password as the authentication method, but the app fails to send *password* as a challenge type or simply doesn't support it. Use the steps in [Support web fallback in Android app](tutorial-native-authentication-android-support-web-fallback.md) to handle scenario when it happens.
@@ -195,7 +203,7 @@ To sign out a user, you need to remove the account currently stored in the cache
    ```kotlin
    private fun performSignOut(accountState: AccountState) {
         CoroutineScope(Dispatchers.Main).launch {
-           val accountResult = authClient.getCurrentAccount()
+            val accountResult = authClient.getCurrentAccount()
             if (accountResult is GetAccountResult.AccountFound) {
                 val signOutResult = accountResult.resultValue.signOut()
                 if (signOutResult is SignOutResult.Complete) {

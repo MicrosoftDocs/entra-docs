@@ -53,46 +53,47 @@ To sign up a user, you need to:
 
    ```kotlin
    CoroutineScope(Dispatchers.Main).launch {
-       val actionResult = authClient.signUp(
-           username = emailAddress
-           //password = password, Pass 'password' param if you sign up with username (email) and password
-       )
-       if (actionResult is SignUpResult.CodeRequired) {
-           val nextState = actionResult.nextState
-           val submitCodeActionResult = nextState.submitCode(
+        val parameters = NativeAuthSignUpParameters(username = email)
+        // Assign 'password' param if you sign in with username (email) and password
+        // parameters.password = password
+        val actionResult: SignUpResult = authClient.signUp(parameters)
+       
+        if (actionResult is SignUpResult.CodeRequired) {
+            val nextState = actionResult.nextState
+            val submitCodeActionResult = nextState.submitCode(
                code = code
-           )
-           if (submitCodeActionResult is SignUpResult.Complete) {
+            )
+            if (submitCodeActionResult is SignUpResult.Complete) {
                // Handle sign up success
-           }
+            }
        }
    }
    ```
 
-    - Use the SDK's instance method, `signUp(username)` to start the sign-up flow.
-        - To sign up using username (email address) and password, pass your password parameter to the `signUp` function, `signUp(username, password)`. 
-    - The method's parameter, `username`, is then email address you collect from the user. 
-    - In most common scenario, the `signUp(username)` or `signUp(username, password)` returns a result, `SignUpResult.CodeRequired`, which indicates that the SDK expects the app to submit the email one-time passcode sent to the user's emails address.
+    - Use the SDK's instance method, `signUp(parameters)` to start the sign-up flow.
+    - To sign up using username (email address) and password, create an instance of `NativeAuthSignUpParameters` class and assign your username and password. 
+    - The sign-up parameter, `username`, is the email address you collect from the user. 
+    - In most common scenario, the `signUp(parameters)` returns a result, `SignUpResult.CodeRequired`, which indicates that the SDK expects the app to submit the email one-time passcode sent to the user's emails address.
     - The `SignUpResult.CodeRequired` object contains a new state reference, which we can retrieve through `actionResult.nextState`. 
     - The new state gives us access to two new methods: 
         - `submitCode()` submits the email one-time passcode that the app collects from the user. 
         - `resendCode()` resends the email one-time passcode if the user doesn't receive the code. 
     - The `submitCode()` returns `SignUpResult.Complete`, which indicates that the flow is complete and the user has been signed up.
-    - The `signUp(username)` or `signUp(username, password)` can also return `SignUpError` to denote that an error has occurred. 
+    - The `signUp(parameters)` can also return `SignUpError` to denote that an error has occurred. 
 
 ### Collect user attributes during sign-up
 
 Whether you sign up a user using email one-time passcode or username (email) and password, you can collect user attributes before a user's account is created:
 
-- The `signUp()` method accepts an `attributes` parameter, as `signUp(username, attributes)`:
+- The `NativeAuthSignUpParameters` instance accepts an `attributes` parameter:
     
     ```kotlin
         CoroutineScope(Dispatchers.Main).launch {
-            val actionResult = authClient.signUp(
-                username = emailAddress,
-                attributes = userAttributes
-                //password = password, Pass 'password' param if you sign up with username (email) and password
-            )
+            val parameters = NativeAuthSignUpParameters(username = email)
+            // Assign 'password' param if you sign in with username (email) and password
+            // parameters.password = password
+            parameters.attributes = userAttributes
+            val actionResult: SignUpResult = authClient.signUp(parameters)
             //...
         }
     ```
@@ -108,16 +109,17 @@ Whether you sign up a user using email one-time passcode or username (email) and
     
     The method names in the `UserAttribute.Builder` class are same as the programmable names of the user attributes that they build. Learn more about [Android SDK attribute builder](concept-native-authentication-user-attribute-builder.md?tabs=android-kotlin).
 
-- The `signUp(username, attributes)` or `signUp(username, attributes, password)`method can return `SignUpResult.AttributesRequired` to indicate that the app needs to submit one or more required attributes before Microsoft Entra creates an account. These attributes are configured by the administrator as mandatory in the Microsoft Entra admin center. Microsoft Entra doesn't explicitly request for optional user attributes. 
+- The `signUp(parameters)` method can return `SignUpResult.AttributesRequired` to indicate that the app needs to submit one or more required attributes before Microsoft Entra creates an account. These attributes are configured by the administrator as mandatory in the Microsoft Entra admin center. Microsoft Entra doesn't explicitly request for optional user attributes. 
 
 - The `SignUpResult.AttributesRequired` result contains a `requiredAttributes` parameter. `requiredAttributes` is a list of `RequiredUserAttribute` objects that contains details about the user attributes that the app needs to submit. To handle `actionResult is SignUpResult.AttributesRequired`, use the following code snippet:
 
     ```kotlin
-    val actionResult = authClient.signUp(
-        username = email,
-        attributes = attributes
-        //password = password, Pass 'password' param if you sign up with username (email) and password
-    )
+    val parameters = NativeAuthSignUpParameters(username = email)
+    // Assign 'password' param if you sign in with username (email) and password
+    // parameters.password = password
+    parameters.attributes = userAttributes
+    val actionResult: SignUpResult = authClient.signUp(parameters)
+
     if (actionResult is SignUpResult.AttributesRequired) {
             val requiredAttributes = actionResult.requiredAttributes 
             // Handle "attributes required" result 
@@ -138,9 +140,11 @@ During sign-up, not all actions succeed. For instance, the user might attempt to
 To handle errors for the `signUp()` method, use the following code snippet: 
 
    ```kotlin
-   val actionResult = authClient.signUp(
-       username = email
-   )
+    val parameters = NativeAuthSignUpParameters(username = email)
+    // Assign 'password' param if you sign in with username (email) and password
+    // parameters.password = password
+   val actionResult: SignUpResult = authClient.signUp(parameters)
+
    if (actionResult is SignUpResult.CodeRequired) {
        // Next step: submit code
    } else if (actionResult is SignUpError) {
@@ -155,7 +159,7 @@ To handle errors for the `signUp()` method, use the following code snippet:
    }
    ```
 
-   - `signUp(username, attributes)` or `signUp(username, password, attributes)` can return `SignUpError`. 
+   - `signUp(parameters)` can return `SignUpError`. 
    - `SignUpError` indicates an unsuccessful action result returned by `signUp()` and won't include a reference to the new state.
    - If  `actionResult is SignUpError`, MSAL Android SDK provides utility methods to enable you to analyze the specific errors further:
         - The  method `isUserAlreadyExists()` checks whether the username has already been used to create an account.  
@@ -169,20 +173,22 @@ To handle errors for the `signUp()` method, use the following code snippet:
   
 - To handle the error of invalid attributes, use the following code snippet:
 
-    ```kotlin 
-    val actionResult = authClient.signUp(
-        username = email,
-        attributes = attributes
-        //password = password, Pass 'password' param if you sign up with username (email) and password
-    )
+    ```kotlin
+    val parameters = NativeAuthSignUpParameters(username = email)
+    // Assign 'password' param if you sign in with username (email) and password
+    // parameters.password = password
+    parameters.attributes = userAttributes
+    val actionResult: SignUpResult = authClient.signUp(parameters)
+
     if (actionResult is SignUpError && actionResult.isInvalidAttributes()) {
         val invalidAttributes = actionResult.invalidAttributes
+
         // Handle "invalid attributes" error, this time submit valid attributes
-        authClient.signUp(
-            username = emailAddress,
-            attributes = resubmittedAttributes
-            //password = password, Pass 'password' param if you sign up with username (email) and password
-        )
+        val parameters = NativeAuthSignUpParameters(username = email)
+        // Assign 'password' param if you sign in with username (email) and password
+        // parameters.password = password
+        parameters.attributes = userAttributes
+        authClient.signUp(parameters)
     } 
     //...
     ``` 
