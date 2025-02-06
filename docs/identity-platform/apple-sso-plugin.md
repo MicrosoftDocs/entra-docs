@@ -466,7 +466,7 @@ The root cause of this issue is a regression in the underlying PluginKit layer, 
 ### Identifying Impacted Users
 To determine if your users are affected, you can collect a sysdiagnose and look for the following error information:
 
-'Error Domain=PlugInKit Code=16 "other version in use: <id<PKPlugIn>'
+'Error Domain=PlugInKit Code=16 other version in use'
 
 Here's a sample how this error would look like:
 
