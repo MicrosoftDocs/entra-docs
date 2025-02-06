@@ -182,7 +182,7 @@ You can delete the temporary QR code. The QR code is unusable after its expiry.
 
 - To edit the expiration date for a standard QR code, click **Edit**. Edit the expiration date and save the changes.
 
-  :::image type="content" border="true" source="media/how-to-authentication-qr-code/edit-qr-code-my-staff.png" alt-text="Screenshot that shows how to edit a QR code in My Staff.":::
+  :::image type="content" border="true" source="../media/how-to-authentication-qr-code/edit-qr-code-my-staff.png" alt-text="Screenshot that shows how to edit a QR code in My Staff.":::
 
 - To delete a standard QR code, click **Delete**, and confirm the action.
 
