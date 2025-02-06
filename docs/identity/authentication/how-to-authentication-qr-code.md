@@ -5,7 +5,7 @@ description: Learn about how to enable QR code authentication method in Microsof
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/05/2025
+ms.date: 02/06/2025
 
 ms.author: justinha
 author: aanjusingh
@@ -124,7 +124,7 @@ You can add a QR code authentication method for a user by using the Microsoft En
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/activation-date.png" alt-text="Screenshot that shows how to set the activation date for a QR code authentication method.":::
 
-1. Save the PIN, and click **Download QR image** to download the QR code to print. The QR code image download has the smallest optimum print size. If you reduce the size, the QR code is hard to scan. You can't regenerate the same QR code because it has a unique secret. If the QR code can’t work for some reason, delete it. Create a new QR code for the user.
+1. Save the PIN, download or print the QR code to print, and then click **Done**. The QR code image download has the smallest optimum print size. If you reduce the size, the QR code is hard to scan. You can't regenerate the same QR code because it has a unique secret. If the QR code can’t work for some reason, delete it. Create a new QR code for the user.
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/qr-code-done.png" alt-text="Screenshot that shows a QR code authentication method after an administrator adds it.":::
 
@@ -184,7 +184,7 @@ You can delete the temporary QR code. The QR code is unusable after its expiry.
 
   :::image type="content" border="true" source="media/how-to-authentication-qr-code/edit-qr-code-my-staff.png" alt-text="Screenshot that shows how to edit a QR code in My Staff.":::
 
-- To delete Standard QR code, click **Delete**. Confirm the action.
+- To delete a standard QR code, click **Delete**, and confirm the action.
 
   :::image type="content" border="true" source="media/how-to-authentication-qr-code/delete-qr-code-my-staff.png" alt-text="Screenshot that shows how to delete a QR code in My Staff.":::
 
@@ -192,19 +192,19 @@ You can delete the temporary QR code. The QR code is unusable after its expiry.
 
   :::image type="content" border="true" source="media/how-to-authentication-qr-code/add-new-qr-code-my-staff.png" alt-text="Screenshot that shows how to add a new a QR code in My Staff.":::
 
-  Select the activation time and expiration date for the QR Code. 
+  Select the activation time and expiration date for the QR code, and click **Add**. 
 
   :::image type="content" border="true" source="media/how-to-authentication-qr-code/select-qr-code-expiration-my-staff.png" alt-text="Screenshot that shows how to select the expiration date of a QR code in My Staff.":::
 
-  Click **Add** to view the QR code for this user.
+  Download or print the QR code, and click **Done**.
 
   :::image type="content" border="true" source="media/how-to-authentication-qr-code/view-qr-code-my-staff.png" alt-text="Screenshot that shows how to view a newly added QR code in My Staff.":::
 
-- To add a temporary QR code, click **Add new** next to the temporary QR code. Specify the **Lifetime in hours** and the **Activation date**.
+- To add a temporary QR code, click **Add new** next to the temporary QR code. Specify the **Lifetime in hours** and the **Activation date**, and click **Add**.
 
   :::image type="content" border="true" source="media/how-to-authentication-qr-code/set-temporary-qr-code-expiration.png" alt-text="Screenshot that shows how to set the expiration date for a temporary QR code.":::
 
-  Click **Add** to view the QR code for this user.
+  Download or print the QR code, and click **Done**.
 
   :::image type="content" border="true" source="media/how-to-authentication-qr-code/view-temporary-qr-code-my-staff.png" alt-text="Screenshot that shows how to view a temporary QR code in My Staff.":::
 
