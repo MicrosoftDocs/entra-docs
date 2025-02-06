@@ -14,7 +14,7 @@ ms.custom: oldportal;it-pro;
 ---
 # Manage your users with My Staff
 
-:::image type="content" border="true" source="../media/how-to-authentication-qr-code/edit-qr-code-my-staff.png" alt-text="Screenshot that shows how to edit a QR code in My Staff.":::
+:::image type="content" border="true" source="../identity/authentication/media/how-to-authentication-qr-code/edit-qr-code-my-staff.png" alt-text="Screenshot that shows how to edit a QR code in My Staff.":::
 
 My Staff enables you to delegate permissions to a figure of authority, such as a store manager or a team lead, ensuring that staff members are able to access their Microsoft Entra accounts. Instead of relying on a central helpdesk, organizations can delegate common tasks such as resetting passwords or changing phone numbers to a local team manager. With My Staff, a user who can't access their account can regain access in just a couple of clicks, with no helpdesk or IT staff required.
 
