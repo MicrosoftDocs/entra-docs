@@ -104,7 +104,9 @@ You can add a QR code authentication method for a user by using the Microsoft En
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/usable-authentication-methods.png" alt-text="Screenshot that shows the QR code authentication method listed in usable authentication methods for a user.":::
 
+### Add the QR code authentication method for a user in My Staff
 
+[!Include [Add QR code]](../../includes/add-qr-code-my-staff.md)
 
 ### Add QR code authentication method for a user in Microsoft Graph API
 
@@ -158,7 +160,7 @@ You can delete the temporary QR code. The QR code is unusable after its expiry.
 
 ### Edit the QR code authentication method for a user in My Staff
 
-[!Include [Edit QR code]](~/../includes/edit-qr-code-my-staff.md)
+[!Include [Edit QR code]](../../includes/edit-qr-code-my-staff.md)
 
 ### Edit the QR code authentication method for a user in Microsoft Graph API
 

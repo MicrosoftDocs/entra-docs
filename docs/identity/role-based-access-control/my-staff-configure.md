@@ -122,11 +122,11 @@ You can use **My Staff** to manage the QR code authentication method for users.
 
 ### Add QR code authentication method for a user in My Staff
 
-[!Include [Add QR code]](~/../includes/add-qr-code-my-staff.md)
+[!Include [Add QR code]](../../includes/add-qr-code-my-staff.md)
 
 ### Edit the QR code authentication method for a user in My Staff
 
-[!Include [Edit QR code]](~/../includes/edit-qr-code-my-staff.md)
+[!Include [Edit QR code]](../../includes/edit-qr-code-my-staff.md)
 
 ## Search
 
