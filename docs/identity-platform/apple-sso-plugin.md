@@ -463,7 +463,7 @@ A recent update to macOS 15.3 and iOS 18.1.1 has introduced a regression affecti
 ### Root Cause
 The root cause of this issue is a regression in the underlying PluginKit layer, which prevents the Entra ID SSO extension from being launched by the operating system. Apple has acknowledged this issue.
 
-### Identifying Impacted Users
+### Identifying impacted users
 To determine if your users are affected, you can collect a sysdiagnose and look for the following error information:
 
 'Error Domain=PlugInKit Code=16 other version in use'
