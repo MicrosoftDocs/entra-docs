@@ -17,7 +17,7 @@ The proof-of-concept (PoC) guidance in this series of articles helps you to lear
 
 Detailed guidance begins with [Introduction to Microsoft Global Secure Access proof-of-concept guidance](gsa-poc-guidance-intro.md), continues with [Configure Microsoft Entra Private Access](gsa-poc-private-access.md), and concludes with this article.
 
-This article helps you to configure Microsoft Entra Internet Access to act as a secure web gateway. This solution allows you to configure policies for filtering web content to allow or block internet traffic. You can then group those policies into security profiles that you apply to your users through Conditional Access policies.
+This article helps you to configure Microsoft Entra Internet Access to act as a secure web gateway. This solution enables you to configure policies for filtering web content to allow or block internet traffic. You can then group those policies into security profiles that you apply to your users through Conditional Access policies.
 
 > [!NOTE]
 > Apply rules and policies in [order of priority](../global-secure-access/concept-internet-access.md#policy-processing-logic). For detailed guidance, refer to [Policy processing logic](../global-secure-access/concept-internet-access.md#policy-processing-logic).
@@ -95,7 +95,7 @@ The ability to help secure Microsoft traffic is a key feature of Microsoft Entra
 
 1. Assign users and groups to the profile.
 
-1. If desired, configure Conditional Access policies to enforce compliant network check.
+1. If desired, configure Conditional Access policies to enforce compliant network checks.
 
 1. Sign in to your test device and try to access SharePoint Online and Exchange Online.
 

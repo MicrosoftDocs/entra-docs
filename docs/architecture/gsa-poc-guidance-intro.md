@@ -33,7 +33,7 @@ Understanding the products and their core concepts is the first step toward runn
 
 ### Microsoft's Security Service Edge (SSE) solution
 
-- [What is Microsoft's Security Service Edge (SSE)?](../global-secure-access/overview-what-is-global-secure-access.md#microsofts-security-service-edge-sse-solution)
+- [What is Microsoft's Security Service Edge (SSE) solution?](../global-secure-access/overview-what-is-global-secure-access.md#microsofts-security-service-edge-sse-solution)
 - [Accelerate your Zero Trust journey with unified access controls](https://www.youtube.com/watch?v=_EGK57wwHfs) (video)
 
 ### Microsoft Entra Internet Access
@@ -63,7 +63,7 @@ Consider the following questions as you map out your Microsoft Entra Private Acc
 
   To define access to specific resources that only selected users should access, create enterprise apps. For example, only administrators should be able to remotely access servers. To understand the recommended configuration, review the [VPN replacement](gsa-poc-private-access.md#replace-vpn) scenario.
 
-- **What device types do you plan to test? Users' day-to-day work devices or separate test devices?** If you plan to use work devices, consider testing the [VPN replacement](gsa-poc-private-access.md#replace-VPN) scenario so that you can use Microsoft Entra Private Access for all your daily work.
+- **What device types do you plan to test? Users' day-to-day work devices or separate test devices?** If you plan to use work devices, consider testing the [VPN replacement](gsa-poc-private-access.md#replace-vpn) scenario so that you can use Microsoft Entra Private Access for all your daily work.
 
   If you decide to [publish only certain resources by using Microsoft Entra Private Access](gsa-poc-private-access.md#provide-access-to-specific-apps), consider how users authenticate to those resources and if you require [single sign-on (SSO) with Active Directory](gsa-poc-private-access.md#use-kerberos-sso-to-active-directory-resources). You also might need to switch to using your VPN to access other resources that you need during your day.
 
@@ -71,7 +71,7 @@ Consider the following questions as you map out your Microsoft Entra Private Acc
 
 You can test several Microsoft Entra Internet Access and Microsoft Entra Internet Access for Microsoft Services scenarios in your PoC. Consider testing coexistence with other solutions, as the [Learn about Security Service Edge (SSE) coexistence with Microsoft and Cisco](../global-secure-access/concept-cisco-coexistence.md) article describes.
 
-- **Do you need to block or allow certain fully qualified domain names (FQDNs) or web categories from access by all users when they're using a managed device?** If you plan to block or allow most of your user base's access to specific FQDNs or web categories, consider testing the [Create a baseline policy that applies to all internet access traffic routed through the service](gsa-poc-internet-access.md#create-a-baseline-profile-that-applies-to-all-internet-access-traffic-routed-through-the-service) use case. You can create and apply the baseline policy to all users without needing to create Conditional Access policies. If necessary, you can override it for subsets of users.
+- **Do you need to block or allow certain fully qualified domain names (FQDNs) or web categories from access by all users when they're using a managed device?** If you plan to block or allow most of your user base's access to specific FQDNs or web categories, consider testing the [Create a baseline policy that applies to all internet access traffic routed through the service](gsa-poc-internet-access.md#create-a-baseline-profile-that-applies-to-all-internet-traffic-routed-through-the-service) use case. You can create and apply the baseline policy to all users without needing to create Conditional Access policies. If necessary, you can override it for subsets of users.
 
 - **Do you need to block certain groups from accessing websites based on category or FQDN?** If you need to prevent specific groups of users from accessing FQDNs or web categories, consider testing the [Block a group from accessing websites based on category](gsa-poc-internet-access.md#block-a-group-from-accessing-websites-based-on-category) and [Block a group from accessing websites based on FQDN](gsa-poc-internet-access.md#block-a-group-from-accessing-websites-based-on-fqdn) use cases.
 
