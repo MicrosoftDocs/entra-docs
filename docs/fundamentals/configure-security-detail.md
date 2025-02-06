@@ -24,7 +24,7 @@ In Microsoft Entra, we group our security recommendations into several main area
 > You can use the Zero Trust assessment tool (preview) to validate your configuration against the security recommendations outlined in this document. You can find more information about this tool at https://aka.ms/<>.
 --->
 
-We recommend that all of the following controls be implemented where licenses are available. This helps provide a foundation for, or shore up an existing one, for other resources built on top of this secure foundation. 
+We recommend that all of the following controls be implemented where licenses are available. This helps to provide a foundation for other resources built on top of this solution.
 
 ## Privileged access
 
