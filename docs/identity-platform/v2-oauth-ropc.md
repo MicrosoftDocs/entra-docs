@@ -38,7 +38,7 @@ If you are using ROPC to acquire tokens to call protected downstream APIs, migra
 
 ### When user context is available
 
-If you are an app developer who needs to access a resource, use a form of interactive authentication. The user can be only challenged for MFA when prompted in the browser.
+If an end user needs the application to access a resource on their behalf, the application should use a form of interactive authentication. The end user can be only challenged for MFA when prompted in the browser.
 
 - For web applications:
   - If the authentication is done in the front-end, see [Single Page Application](./sample-v2-code.md?tabs=apptype#single-page-applications).
@@ -54,13 +54,16 @@ Examples of scenarios where no user context is involved can be, but is not limit
 - A script running as part of a CI pipeline.
 - A service needing to call a resource on behalf of itself, with no user details.
 
-Application developers should use [Service Principal authentication](app-objects-and-service-principals.md), which is illustrated in the [daemon samples](./sample-v2-code.md?tabs=apptype#service--daemon). 
+Application developers should use [Service Principal authentication](app-objects-and-service-principals.md), which is illustrated in the [daemon samples](./sample-v2-code.md?tabs=apptype#service--daemon). MFA does not apply to Service Principals.
 
 There are multiple ways to authenticate as a service principal:
 
 - If your app is running on Azure infrastructure, use [Managed Identity](./../identity/managed-identities-azure-resources/overview.md). Managed Identity eliminates the overhead of maintaining and rotating secrets and certificates.
 - If your app is running on a system managed by another OAuth2-compliant Identity provider, such as GitHub, use [Federated Identity Credentials](./../workload-id/workload-identity-federation-create-trust.md?pivots=identity-wif-apps-methods-azp).
 - If you cannot use a Managed Identity or a Federated Identity, use a [certificate credential](certificate-credentials.md).
+
+![NOTE]
+> Do not use Service Principal authentication when a user context is available.  App-only access is inherently high-privilege, often granting tenant-wide access and potentially allowing a bad actor to access customer data for any user. 
 
 ## Protocol diagram
 
@@ -137,3 +140,4 @@ If the user hasn't provided the correct username or password, or the client hasn
 ## Learn more
 
 For an example implementation of the ROPC flow, see the [.NET console application](https://github.com/azure-samples/active-directory-dotnetcore-console-up-v2) code sample on GitHub.
+o
