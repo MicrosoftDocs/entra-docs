@@ -39,7 +39,7 @@ In this tutorial:
   * **Supported account types**: *Accounts in this organizational directory only*
   * **Redirect URI**: `https://localhost:7274/signin-oidc`
   * **Front channel logout URL**: `https://localhost:7274/signout-oidc`
-* For development purposes, [add a client secret](./quickstart-register-app.md#add-a-client-secret), and ensure you record the secret's **Value**. For security reasons, **do not use client secrets in a production setting**. Use a certificate or federated credentials instead.
+* For development purposes, [add a client secret](./quickstart-register-app.md#add-credentials), and ensure you record the secret's **Value**. For security reasons, **do not use client secrets in a production setting**. Use a certificate or federated credentials instead.
 * Although any integrated development environment (IDE) that supports ASP.NET Core applications can be used, this tutorial uses **Visual Studio Code**. You can download it [here](https://visualstudio.microsoft.com/downloads/).
 * A minimum requirement of [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet).
 
@@ -56,7 +56,7 @@ In this tutorial:
   * **Supported account types**: *Accounts in this organizational directory only*
   * **Redirect URI**: `https://localhost:7274/signin-oidc`
   * **Front channel logout URL**: `https://localhost:7274/signout-oidc`
-* For development purposes, [add a client secret](./quickstart-register-app.md#add-a-client-secret), and ensure you record the secret's **Value**. For security reasons, **do not use client secrets in a production setting**. Use a certificate or federated credentials instead.
+* For development purposes, [add a client secret](./quickstart-register-app.md#add-credentials), and ensure you record the secret's **Value**. For security reasons, **do not use client secrets in a production setting**. Use a certificate or federated credentials instead.
 * To use your application in your external tenant; 
   * [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
   * [Grant admin consent for your tenant](./quickstart-register-app.md#grant-admin-consent-external-tenants-only).

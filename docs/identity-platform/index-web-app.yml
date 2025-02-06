@@ -26,7 +26,7 @@ landingContent:
       - linkListType: tutorial
         links:
           - text: ASP.NET Core
-            url: tutorial-web-app-dotnet-register-app.md
+            url: tutorial-web-app-dotnet-prepare-app.md
           - text: Node.js with Express
             url: tutorial-v2-nodejs-webapp-msal.md
           - text: Spring

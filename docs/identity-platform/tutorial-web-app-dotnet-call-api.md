@@ -71,4 +71,4 @@ Navigate to the Microsoft Entra admin center and delete the application registra
 
 ## See also
 
-- [Enable self-service password reset](./how-to-enable-password-reset-customers.md)
+- [Enable self-service password reset](../external-id/customers/how-to-enable-password-reset-customers.md)
