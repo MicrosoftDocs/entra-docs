@@ -455,7 +455,7 @@ This isn't an exhaustive list and we do advise both consumers and vendors of app
 #### Registered/Enrolled Device Conditional Access Policy Support in Chrome
 To support device Conditional Access policies in Google Chrome with Secure Enclave based storage enabled, you'll need to have the [Microsoft Single Sign On](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension installed and enabled.
 
-## Important Update on macOS 15.3 and iOS 18.1.1 Impacting Enterprise SSO
+## Important update on macOS 15.3 and iOS 18.1.1 impacting Enterprise SSO
 
 ### Overview
 A recent update to macOS 15.3 and iOS 18.1.1 has introduced a regression affecting a small number of users. This issue prevents the Enterprise SSO extension framework from functioning correctly, leading to unexpected authentication failures across all apps integrated with Entra ID. Impacted users may also encounter an error tagged as '4s8qh'.
