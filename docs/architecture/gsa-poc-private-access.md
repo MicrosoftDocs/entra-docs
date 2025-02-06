@@ -15,7 +15,7 @@ ms.author: jricketts
 
 The proof-of-concept (PoC) guidance in this series of articles helps you to learn, deploy, and test Microsoft Global Secure Access with Microsoft Entra Internet Access, Microsoft Entra Private Access, and the Microsoft traffic profile.
 
-Detailed guidance begins with [Introduction to Global Secure Access proof-of-concept guidance](gsa-poc-guidance-intro.md) and continues after this article with [Configure Microsoft Entra Internet Access](gsa-poc-internet-access.md).
+Detailed guidance begins with [Introduction to Microsoft Global Secure Access proof-of-concept guidance](gsa-poc-guidance-intro.md) and continues after this article with [Configure Microsoft Entra Internet Access](gsa-poc-internet-access.md).
 
 This article helps you to test Microsoft Entra Private Access and configure at least one private network connector. For detailed guidance, see [How to configure connectors for Microsoft Entra Private Access](../global-secure-access/how-to-configure-connectors.md).
 
@@ -78,7 +78,7 @@ If you have problems with your PoC, these articles can help you with troubleshoo
 
 - [Global Secure Access FAQ](../global-secure-access/resource-faq.yml)
 - [Troubleshoot problems installing the Microsoft Entra private network connector](../global-secure-access/troubleshoot-connectors.md)
-- [Troubleshoot the Global Secure Access client: diagnostics](../global-secure-access/troubleshoot-global-secure-access-client-advanced-diagnostics.md)
+- [Troubleshoot the Global Secure Access client: Diagnostics](../global-secure-access/troubleshoot-global-secure-access-client-advanced-diagnostics.md)
 - [Troubleshoot the Global Secure Access client: Health check tab](../global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check.md)
 - [Troubleshoot a Distributed File System issue with Global Secure Access](../global-secure-access/troubleshoot-distributed-file-system.md)
 - [Global Secure Access logs and monitoring](../global-secure-access/concept-global-secure-access-logs-monitoring.md)
@@ -86,7 +86,7 @@ If you have problems with your PoC, these articles can help you with troubleshoo
 
 ## Related content
 
-- [Introduction to Global Secure Access proof-of-concept guidance](gsa-poc-guidance-intro.md)
+- [Introduction to Microsoft Global Secure Access proof-of-concept guidance](gsa-poc-guidance-intro.md)
 - [Configure Microsoft Entra Internet Access](gsa-poc-internet-access.md)
 - [Introduction to the Microsoft Global Secure Access deployment guide](gsa-deployment-guide-intro.md)
 - [Microsoft Global Secure Access deployment guide for Microsoft Entra Private Access](gsa-deployment-guide-private-access.md)

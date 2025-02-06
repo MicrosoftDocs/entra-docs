@@ -150,7 +150,7 @@ If you have problems with your PoC, these articles can help you with troubleshoo
 
 - [Global Secure Access FAQ](../global-secure-access/resource-faq.yml)
 - [Troubleshoot problems installing the Microsoft Entra private network connector](../global-secure-access/troubleshoot-connectors.md)
-- [Troubleshoot the Global Secure Access client: diagnostics](../global-secure-access/troubleshoot-global-secure-access-client-advanced-diagnostics.md)
+- [Troubleshoot the Global Secure Access client: Diagnostics](../global-secure-access/troubleshoot-global-secure-access-client-advanced-diagnostics.md)
 - [Troubleshoot the Global Secure Access client: Health check tab](../global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check.md)
 - [Troubleshoot a Distributed File System issue with Global Secure Access](../global-secure-access/troubleshoot-distributed-file-system.md)
 - [Global Secure Access logs and monitoring](../global-secure-access/concept-global-secure-access-logs-monitoring.md)

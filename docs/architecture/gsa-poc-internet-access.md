@@ -1,6 +1,6 @@
 ---
 title: Microsoft Global Secure Access Proof-of-Concept Guidance - Configure Microsoft Entra Internet Access
-description: Learn how to deploy and test Microsoft Global Secure Access as a proof ofcConcept with Microsoft Entra Internet Access.
+description: Learn how to deploy and test Microsoft Global Secure Access as a proof of concept with Microsoft Entra Internet Access.
 author: jricketts
 manager: martinco
 ms.service: global-secure-access
@@ -15,7 +15,7 @@ ms.author: jricketts
 
 The proof-of-concept (PoC) guidance in this series of articles helps you to learn, deploy, and test Microsoft Global Secure Access with Microsoft Entra Internet Access, Microsoft Entra Private Access, and the Microsoft traffic profile.
 
-Detailed guidance begins with [Introduction to Global Secure Access proof-of-concept guidance](gsa-poc-guidance-intro.md), continues with [Configure Microsoft Entra Private Access](gsa-poc-private-access.md), and concludes with this article.
+Detailed guidance begins with [Introduction to Microsoft Global Secure Access proof-of-concept guidance](gsa-poc-guidance-intro.md), continues with [Configure Microsoft Entra Private Access](gsa-poc-private-access.md), and concludes with this article.
 
 This article helps you to configure Microsoft Entra Internet Access to act as a secure web gateway. This solution allows you to configure policies for filtering web content to allow or block internet traffic. You can then group those policies into security profiles that you apply to your users through Conditional Access policies.
 
@@ -55,7 +55,7 @@ Perform the following steps to use a [baseline profile](../global-secure-access/
 
 1. [Create a policy for filtering web content](../global-secure-access/how-to-configure-web-content-filtering.md#create-a-web-content-filtering-policy) that includes rules to block a web category. For example, create a rule that blocks the **Social Networking** category to block all social media sites.
 
-1. [Create a security profile](../global-secure-access/how-to-configure-web-content-filtering.md#create-a-security-profile) to group and prioritize your policies for filtering web content. Link the policy for filtering web content to this profile.
+1. [Create a security profile](../global-secure-access/how-to-configure-web-content-filtering.md#create-a-security-profile) to group and prioritize your policies. Link the policy for filtering web content to this profile.
 
 1. Create a [Conditional Access policy](../global-secure-access/how-to-configure-web-content-filtering.md#create-and-link-conditional-access-policy) to apply the security profile to your users.
 
@@ -67,7 +67,7 @@ Perform the following steps to use a [baseline profile](../global-secure-access/
 
 1. [Create a policy for filtering web content](../global-secure-access/how-to-configure-web-content-filtering.md#create-a-web-content-filtering-policy) that includes rules to block an FQDN (not a URL).
 
-1. [Create a security profile](../global-secure-access/how-to-configure-web-content-filtering.md#create-a-security-profile) to group and prioritize your policies for filtering web content. Link the policy for filtering web content to this profile.
+1. [Create a security profile](../global-secure-access/how-to-configure-web-content-filtering.md#create-a-security-profile) to group and prioritize your policies. Link the policy for filtering web content to this profile.
 
 1. Create a [Conditional Access policy](../global-secure-access/how-to-configure-web-content-filtering.md#create-and-link-conditional-access-policy) to apply the security profile to your users.
 
@@ -81,7 +81,7 @@ Perform the following steps to use a [baseline profile](../global-secure-access/
 
 1. [Create a security profile](../global-secure-access/how-to-configure-web-content-filtering.md#create-a-security-profile) to group and prioritize your policies for filtering web content. Give this allowed profile a higher priority than the blocked profile. For example, if the blocked profile is set to priority 500, set the allowed profile to 400.
 
-1. Create a [Conditional Access policy](../global-secure-access/how-to-configure-web-content-filtering.md#create-and-link-conditional-access-policy) to apply the security profile to the users for whom you want to allow access to the blocked FQDN.
+1. Create a [Conditional Access policy](../global-secure-access/how-to-configure-web-content-filtering.md#create-and-link-conditional-access-policy) to apply the security profile to the users who need access to the blocked FQDN.
 
 1. Sign in to your test device and try to access the allowed FQDN. It can take up to 90 minutes for a newly assigned policy to take effect. It can take up to 20 minutes for changes to an existing policy to take effect.
 
@@ -103,17 +103,17 @@ The ability to help secure Microsoft traffic is a key feature of Microsoft Entra
 
 ### Implement universal tenant restrictions
 
-[Universal tenant restrictions](../global-secure-access/how-to-universal-tenant-restrictions.md) enable you to control access to external tenants by unmanaged identities on company-managed devices and networks. You can enforce this restriction at the authentication plane with Tenant Restrictions v1, either blocking or allowing all traffic to an external tenant.
+[Universal tenant restrictions](../global-secure-access/how-to-universal-tenant-restrictions.md) enable you to control access to external tenants by unmanaged identities on company-managed devices and networks. You can enforce this restriction at the authentication plane with tenant restrictions v1, by either blocking or allowing all traffic to an external tenant.
 
-This scenario usually requires hair-pinning traffic to a corporate network proxy. With Universal Tenant Restrictions, organizations can restrict access on a per application level, extend protection to the data plane (in addition to the authentication plane), and eliminate the need to hair-pin traffic reducing network latency.
+This scenario usually requires hair-pinning traffic to a corporate network proxy. With universal tenant restrictions, organizations can restrict access on a per-application level, extend protection to the data plane (in addition to the authentication plane), and eliminate the need to hair-pin traffic to reduce network latency.
 
-After you enable the Microsoft traffic profile, follow these steps to implement Universal Tenant Restrictions:
+After you enable the Microsoft traffic profile, follow these steps to implement universal tenant restrictions:
 
-1. [Set up tenant restrictions v2](/azure/active-directory/external-identities/tenant-restrictions-v2). If your organization currently uses Tenant Restrictions v1, review the [TRv2 migration guide](https://aka.ms/trv2migration).
+1. [Set up tenant restrictions v2](/azure/active-directory/external-identities/tenant-restrictions-v2). If your organization currently uses tenant restrictions v1, review the [guide for migrating to tenant restrictions v2](https://aka.ms/trv2migration).
 
 1. [Enable Global Secure Access signaling for tenant restrictions](../global-secure-access/how-to-universal-tenant-restrictions.md#enable-global-secure-access-signaling-for-tenant-restrictions).
 
-1. Sign in to your test device and attempt to access a different tenant's SharePoint Online or Exchange Online resource for which you have valid credentials.
+1. Sign in to your test device and try to access a different tenant's SharePoint Online or Exchange Online resource for which you have valid credentials.
 
 1. [Validate authentication plane protection](../global-secure-access/how-to-universal-tenant-restrictions.md#validate-the-authentication-plane-protection).
 
@@ -125,7 +125,7 @@ If you have problems with your PoC, these articles can help you with troubleshoo
 
 - [Global Secure Access FAQ](../global-secure-access/resource-faq.yml)
 - [Troubleshoot problems installing the Microsoft Entra private network connector](../global-secure-access/troubleshoot-connectors.md)
-- [Troubleshoot the Global Secure Access client: diagnostics](../global-secure-access/troubleshoot-global-secure-access-client-advanced-diagnostics.md)
+- [Troubleshoot the Global Secure Access client: Diagnostics](../global-secure-access/troubleshoot-global-secure-access-client-advanced-diagnostics.md)
 - [Troubleshoot the Global Secure Access client: Health check tab](../global-secure-access/troubleshoot-global-secure-access-client-diagnostics-health-check.md)
 - [Troubleshoot a Distributed File System issue with Global Secure Access](../global-secure-access/troubleshoot-distributed-file-system.md)
 - [Global Secure Access logs and monitoring](../global-secure-access/concept-global-secure-access-logs-monitoring.md)
@@ -133,7 +133,7 @@ If you have problems with your PoC, these articles can help you with troubleshoo
 
 ## Related content
 
-- [Introduction to Global Secure Access proof-of-concept guidance](gsa-poc-guidance-intro.md)
+- [Introduction to Microsoft Global Secure Access proof-of-concept guidance](gsa-poc-guidance-intro.md)
 - [Configure Microsoft Entra Private Access](gsa-poc-private-access.md)
 - [Introduction to the Microsoft Global Secure Access deployment guide](gsa-deployment-guide-intro.md)
 - [Microsoft Global Secure Access deployment guide for Microsoft Entra Private Access](gsa-deployment-guide-private-access.md)
