@@ -126,6 +126,10 @@ You can use **My Staff** to manage the QR code authentication method for users.
 
 [!Include [Edit QR code](../../includes/edit-qr-code-my-staff.md)]
 
+### Delete the QR code authentication method for a user in in My Staff
+
+[!Include [Delete QR authentication method](../../includes/delete-qr-code-authentication-method-my-staff.md)]
+
 ## Search
 
 You can search for administrative units and users in your organization using the search bar in My Staff. You can search across all administrative units and users in your organization, but you can only make changes to users who are in an administrative unit over which you have been given admin permissions.

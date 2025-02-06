@@ -207,14 +207,7 @@ If a QR code authentication method is deleted for a user, they can no longer sig
 
 ### Delete the QR code authentication method for a user in in My Staff
 
-1. To delete QR code auth method itself, click **Delete QR code method**.
-
-   :::image type="content" border="true" source="media/how-to-authentication-qr-code/delete-qr-code-method-my-staff.png" alt-text="Screenshot that shows how to delete the QR code authentication method in My Staff.":::
-
-1. Click **Delete** to confirm the action.
-
-   :::image type="content" border="true" source="media/how-to-authentication-qr-code/confirm-delete-qr-code-method-my-staff.png" alt-text="Screenshot that shows how to confirm deletion of the QR code authentication method in My Staff.":::
-
+[!Include [Edit QR code](../../includes/delete-qr-code-authentication-method-my-staff.md)]
 
 ### Delete the QR code authentication method for a user in Microsoft Graph API
 
