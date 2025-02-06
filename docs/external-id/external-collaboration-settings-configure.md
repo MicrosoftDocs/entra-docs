@@ -5,7 +5,7 @@ description: Learn how to configure external collaboration settings in Microsoft
 ms.service: entra-external-id
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 10/21/2024
+ms.date: 02/06/2025
 
 ms.author: mimart
 author: msmimart
@@ -36,7 +36,7 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
 :::image type="content" source="media/external-identities-overview/b2b-comparison.png" alt-text="Screenshots showing a comparison of the branded sign-in experience and the default sign-in experience.":::
 
 > [!NOTE]
-> Depending on the external collaboration settings you want to configure, different admin roles might be required. This article specifies the role required for each type of setting. See also [Least privileged roles by task for External ID/B2C](/entra/identity/role-based-access-control/delegate-by-task#external-identitiesb2c).
+> In the Microsoft Entra admin center, you must be assigned the Global Administrator role to activate the External Collaboration Settings page and update the settings. When using Microsoft Graph, lesser privileged roles might be available for individual settings; see [Configure settings with Microsoft Graph](#configure-settings-with-microsoft-graph) later in this article.
 
 ## Configure settings in the portal
 
@@ -114,8 +114,9 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
 
 External collaboration settings can be configured by using the Microsoft Graph API:
 
-- For **Guest user access restrictions** and **Guest invite restrictions**, use the [authorizationPolicy](/graph/api/resources/authorizationpolicy?view=graph-rest-1.0&preserve-view=true) resource type.
-- For the **Enable guest self-service sign up via user flows** setting, use [authenticationFlowsPolicy](/graph/api/resources/authenticationflowspolicy?view=graph-rest-1.0&preserve-view=true) resource type.
+- For **Guest user access restrictions** and **Guest invite restrictions**, use the [authorizationPolicy](/graph/api/resources/authorizationpolicy?view=graph-rest-1.0&preserve-view=true) resource type. The least privileged role required to update these settings is Privileged Role Administrator.
+- For the **Enable guest self-service sign up via user flows** setting, use the [authenticationFlowsPolicy](/graph/api/resources/authenticationflowspolicy?view=graph-rest-1.0&preserve-view=true) resource type. The least privileged role required to update this setting is External ID User Flow Administrator.
+- For **External user leave settings**, use the [externalidentitiespolicy](/graph/api/resources/externalidentitiespolicy?view=graph-rest-1.0&preserve-view=true) resource type. The least privileged role required to update this setting is External Identity Provider Administrator.
 - For email one-time passcode settings (now on the **All identity providers** page in the Microsoft Entra admin center), use the [emailAuthenticationMethodConfiguration](/graph/api/resources/emailAuthenticationMethodConfiguration?view=graph-rest-1.0&preserve-view=true) resource type.
 
 ## Assign the Guest Inviter role to a user
