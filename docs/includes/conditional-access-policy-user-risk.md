@@ -43,7 +43,7 @@ For organizations that adopt [passwordless authentication methods](/entra/identi
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts.
    1. Select **Done**.
 1. Under **Conditions** > **Sign-in risk**, set **Configure** to **Yes**.
-    1. Under **Select the sign-in risk level this policy will apply to**, select **High** and **Medium**. For more information on risk levels, see [Choosing acceptable risk levels](howto-identity-protection-configure-risk-policies.md#choosing-acceptable-risk-levels).
+    1. Under **Select the sign-in risk level this policy will apply to**, select **High** and **Medium**. For more information on risk levels, see [Choosing acceptable risk levels](../id-protection/howto-identity-protection-configure-risk-policies.md#choosing-acceptable-risk-levels).
     1. Select **Done**.
 1. Under **Access controls** > **Grant**, select **Grant access**.
     1. Select **Require authentication strength**, then select the built-in **Multifactor authentication** or your desired authentication strength from the list.
