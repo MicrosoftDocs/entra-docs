@@ -158,6 +158,8 @@ You can delete the temporary QR code. The QR code is unusable after its expiry.
 
 ### Edit the QR code authentication method for a user in My Staff
 
+[!Include [Edit QR code]](~/../includes/edit-qr-code-my-staff.md)
+
 ### Edit the QR code authentication method for a user in Microsoft Graph API
 
 - This example shows how to delete the standard QR code for a user if they lose their badge, and create a new standard QR code. The user isn't required to change their PIN.

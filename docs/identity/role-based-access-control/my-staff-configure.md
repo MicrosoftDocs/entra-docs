@@ -7,9 +7,9 @@ manager: amycolannino
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: role-based-access-control
-ms.date: 05/18/2021
+ms.date: 02/06/2025
 ms.author: rolyon
-ms.reviewer: sahenry
+ms.reviewer: lenalepa
 ms.custom: oldportal;it-pro;
 ---
 # Manage your users with My Staff
