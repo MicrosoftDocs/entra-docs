@@ -261,9 +261,13 @@ This is a [privileged role](privileged-roles-permissions.md). Users in this role
 
 ## Attack Payload Author
 
-Users in this role can create attack payloads but not actually launch or schedule them. Attack payloads are then available to all administrators in the tenant who can use them to create a simulation.
+Users in this role can create attack payloads but not actually launch or schedule them. Attack payloads are then available to all administrators in the tenant who can use them to create a simulation. Access to reports is limited to simulations executed by the user, and this role does not grant access to aggregate reports such as Training efficacy, Repeat offenders, Training completion, or User coverage.
 
-For more information, see [Microsoft Defender for Office 365 permissions in the Microsoft 365 Defender portal](/microsoft-365/security/office-365-security/mdo-portal-permissions) and [Permissions in the Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center-permissions).
+For more information, see these articles:
+
+- [Get started using Attack simulation training](/defender-office-365/attack-simulation-training-get-started)
+- [Microsoft Defender for Office 365 permissions in the Microsoft Defender portal](/microsoft-365/security/office-365-security/mdo-portal-permissions)
+- [Permissions in the Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center-permissions)
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -275,7 +279,10 @@ For more information, see [Microsoft Defender for Office 365 permissions in the 
 
 Users in this role can create and manage all aspects of attack simulation creation, launch/scheduling of a simulation, and the review of simulation results. Members of this role have this access for all simulations in the tenant.
 
-For more information, see [Microsoft Defender for Office 365 permissions in the Microsoft 365 Defender portal](/microsoft-365/security/office-365-security/mdo-portal-permissions) and [Permissions in the Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center-permissions).
+For more information, see these articles:
+
+- [Microsoft Defender for Office 365 permissions in the Microsoft Defender portal](/microsoft-365/security/office-365-security/mdo-portal-permissions)
+- [Permissions in the Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center-permissions)
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |

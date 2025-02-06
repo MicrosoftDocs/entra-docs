@@ -24,7 +24,7 @@ This article describes the options for downloading the provisioning logs from th
 
 - A working Microsoft Entra tenant with a Microsoft Entra ID P1 or P2 license associated with it.
 - [Reports Reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader) is the least privileged role required to access the provisioning logs.
-    - For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs).
+    - For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs-least-privileged-roles).
 
 ## How to view the provisioning logs
 

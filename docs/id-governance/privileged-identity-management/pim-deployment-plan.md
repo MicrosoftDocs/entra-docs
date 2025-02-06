@@ -182,7 +182,7 @@ The following table shows example settings:
 
 For Microsoft Entra roles in PIM, only a user who is in the Privileged Role Administrator or Global Administrator role can manage assignments for other administrators. Global Administrators, Security Administrators, Global Readers, and Security Readers can also view assignments to Microsoft Entra roles in PIM. 
 
-Follow the instructions in the links below:
+Follow the instructions in each of the following steps:
 
 1. [Give eligible assignments](pim-how-to-add-role-to-user.md).
 
@@ -283,7 +283,7 @@ Follow these tasks to prepare PIM to manage PIM for Groups.
 
 ### Discover PIM for Groups
 
-It may be the case that an individual has five or six eligible assignments to Microsoft Entra roles through PIM. They have to activate each role individually, which can reduce productivity. Worse still, they can also have tens or hundreds of Azure resources assigned to them, which aggravates the problem.
+Someone could have five or six eligible assignments to Microsoft Entra roles through PIM. They have to activate each role individually, which can reduce productivity. Worse still, they can also have tens or hundreds of Azure resources assigned to them, which aggravates the problem.
 
 In this case, you should use PIM for Groups. Create a PIM for Groups and grant it permanent active access to multiple roles. See [Privileged Identity Management (PIM) for Groups (preview)](concept-pim-for-groups.md).
 
