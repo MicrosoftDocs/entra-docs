@@ -34,16 +34,16 @@ The Microsoft identity platform supports the [OAuth 2.0 Resource Owner Password 
 
 As MFA becomes more prevalent, certain Microsoft web APIs will only accept access tokens if they have passed MFA requirements. Applications and test rigs relying on ROPC will be locked out as Microsoft Entra will either refuse to issue the token or the resource will reject it.
 
-If you are using ROPC to acquire tokens to call protected downstream APIs, migrate to a secure token acquisition strategy:
+If you are using ROPC to acquire tokens to call protected downstream APIs, migrate to a secure token acquisition strategy.
 
 ### When user context is available
 
-If an end user needs the application to access a resource on their behalf, the application should use a form of interactive authentication. The end user can be only challenged for MFA when prompted in the browser.
+If an end user needs to access a resource, the client application that acts on their behalf should use a form of interactive authentication. The end user can be only challenged for MFA when prompted in the browser.
 
 - For web applications:
   - If the authentication is done in the front-end, see [Single Page Application](./sample-v2-code.md?tabs=apptype#single-page-applications).
   - If the authentication is done in the back-end, see [Web Applications](./sample-v2-code.md?tabs=apptype#web-applications).
-- Web APIs cannot display a browser. Instead, they must return a challenge back to the client. Clients must be able to understand this challenge. For details, see [Web APIs](./sample-v2-code.md?tabs=apptype#web-api) and [challenging users in web APIs](v2-oauth2-on-behalf-of-flow.md#error-response-example).
+- Web APIs cannot display a browser. Instead, they must return a challenge back to the client application. For details, see [Web APIs](./sample-v2-code.md?tabs=apptype#web-api) and [challenging users in web APIs](v2-oauth2-on-behalf-of-flow.md#error-response-example).
 - Desktop applications should use broker-based authentication. Brokers use browser-based authentication, so they can enforce MFA, and also enable the most secure posture possible.
 - Mobile applications should also be configured to use broker (Authenticator, Company Portal) based authentication.
 
