@@ -62,7 +62,7 @@ There are multiple ways to authenticate as a service principal:
 - If your app is running on a system managed by another OAuth2-compliant Identity provider, such as GitHub, use [Federated Identity Credentials](./../workload-id/workload-identity-federation-create-trust.md?pivots=identity-wif-apps-methods-azp).
 - If you cannot use a Managed Identity or a Federated Identity, use a [certificate credential](certificate-credentials.md).
 
-![NOTE]
+> ![WARNING]
 > Do not use Service Principal authentication when a user context is available.  App-only access is inherently high-privilege, often granting tenant-wide access and potentially allowing a bad actor to access customer data for any user. 
 
 ## Protocol diagram
