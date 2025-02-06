@@ -14,6 +14,8 @@ ms.topic: how-to
 
 # Protected web API: Verify scopes and app roles
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 This article describes how you can add authorization to your web API. This protection ensures that the API is called only by:
 
 - Applications on behalf of users who have the right scopes and roles.

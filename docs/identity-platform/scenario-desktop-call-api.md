@@ -15,6 +15,8 @@ ms.topic: how-to
 
 # Desktop app that calls web APIs: Call a web API
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 Now that you have a token, you can call a protected web API.
 
 ## Call a web API
