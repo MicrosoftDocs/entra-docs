@@ -1,6 +1,6 @@
 ---
 title: Configure Microsoft Entra for increased security
-description: 
+description: Learn how to improve your security posture with Microsoft Entra.
 
 ms.service: entra
 ms.subservice: fundamentals
