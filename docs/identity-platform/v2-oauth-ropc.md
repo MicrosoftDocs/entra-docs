@@ -38,8 +38,6 @@ If you are using ROPC to acquire tokens to call protected downstream APIs, migra
 
 ### When user context is available
 
-If you are an end-user of an application, such as the Azure CLI, use an interactive method for authentication. Avoid using the ROPC or Device Code flow.
-
 If you are an app developer who needs to access a resource, use a form of interactive authentication. The user can be only challenged for MFA when prompted in the browser.
 
 - For web applications 
@@ -56,7 +54,6 @@ Examples of scenarios where no user context is involved can be, but is not limit
 - A script running as part of a CI pipeline.
 - A service needing to call a resource on behalf of itself, with no user details.
 
-In these sceenarios, an end-user of an application, such as Azure CLI, should configure the use of service principal login methods such as certificates, managed identities, or federated identities.
 Application developers should use [Service Principal authentication](app-objects-and-service-principals.md), which is illustrated in the [daemon samples](./sample-v2-code.md?tabs=apptype#service--daemon). 
 
 There are multiple ways to authenticate as a service principal:
