@@ -3,7 +3,7 @@ author: joflore
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: include
-ms.date: 09/17/2024
+ms.date: 02/06/2025
 ms.author: joflore
 ---
 
@@ -39,13 +39,19 @@ For organizations that adopt [passwordless authentication methods](/entra/identi
 #### Update your passwordless user risk policy
 
 1. Under **Users**:
-   1. **Include**, select **Users and groups** and target your passwordless users.
-1. Under **Access controls** > **Block** access for passwordless users.
-
-> [!TIP]
-> You might need to have two policies for a period of time while deploying passwordless methods. 
-> - One that allows self-remediation for those not using passwordless methods. 
-> - Another that blocks passwordless users at high risk.
+   1. **Include**, select **Users and groups** and target all users. Make sure all users can satisfy multifactor authentication.
+   1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts.
+   1. Select **Done**.
+1. Under **Conditions** > **Sign-in risk**, set **Configure** to **Yes**.
+    1. Under **Select the sign-in risk level this policy will apply to**, select **High** and **Medium**. For more information on risk levels, see [Choosing acceptable risk levels](howto-identity-protection-configure-risk-policies.md#choosing-acceptable-risk-levels).
+    1. Select **Done**.
+1. Under **Access controls** > **Grant**, select **Grant access**.
+    1. Select **Require authentication strength**, then select the built-in **Multifactor authentication** or your desired authentication strength from the list.
+    1. Select **Select**.
+1. Under **Session**:
+    1. Select **Sign-in frequency**.
+    1. Ensure **Every time** is selected.
+    1. Select **Select**.
 
 #### Remediate and unblock passwordless user risk
 
