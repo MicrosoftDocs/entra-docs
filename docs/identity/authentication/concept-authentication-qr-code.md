@@ -109,8 +109,8 @@ You can use Microsoft's web browser login experience (login.microsoft.com) to si
 ![image](https://github.com/user-attachments/assets/aebf52f5-1a25-4fb3-863f-cca86c66c70c)
 
 ### Mobile native app expereince 
-The above login expereince can be optimized for your apps by using Microsoft Authentication Library (MSAL) to add an QR code sign-in option on your apps login page. This option eliminates two clicks to scan the QR code. For example, see Teams login page with QR code sign-in entry point.
-![image](https://github.com/user-attachments/assets/13bf065e-f73c-43ea-b410-9f92bf58fc49)
+The above login expereince can be optimized for your apps by using Microsoft Authentication Library (MSAL) to add an QR code sign-in option on your apps login page. This option eliminates two clicks to scan the QR code. For example, see Teams login page with QR code sign-in entrypoint.
+![image](https://github.com/user-attachments/assets/aa64d628-1b1f-4599-b9d0-a5a5e65f005a)
 
 ## Unsupported user scenarios in current release
 
