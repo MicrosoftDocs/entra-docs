@@ -16,7 +16,7 @@ With access reviews, you can create a downloadable review history to help your o
  
 ## Who can access and request review history
 
-Review history and request review history are available for any user if they're authorized to view access reviews. To see which roles can view and create access reviews, see [What resource types can be reviewed?](deploy-access-reviews.md#what-resource-types-can-be-reviewed). Global Administrator, Privileged Role Administrator, Identity Governance Administrator, User Administrator, Security Reader, Global Reader, and Security Administrator roles can create history reports.
+Review history and request review history are available for any user if they're authorized to view access reviews. To see which roles can view and create access reviews, see [What resource types can be reviewed?](deploy-access-reviews.md#what-resource-types-can-be-reviewed) Global Administrator, Privileged Role Administrator, Identity Governance Administrator, User Administrator, Security Reader, Global Reader, and Security Administrator roles can create history reports.
 
 ## How to create a review history report
 
