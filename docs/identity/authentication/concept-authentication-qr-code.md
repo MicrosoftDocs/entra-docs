@@ -5,7 +5,7 @@ description: Learn about using QR code authentication method in Microsoft Entra 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/06/2025
+ms.date: 02/07/2025
 
 ms.author: justinha
 author: aanjusingh
@@ -103,23 +103,27 @@ For more information about how to manage QR codes, see [How to enable the QR cod
 
 ## User sign-in experience with QR code authentication
 
+Users can sign in to their organization with a QR code, or they can directly sign in to native apps.
+
 ### Mobile web sign-in expereince
-You can use Microsoft's web browser login experience (login.microsoft.com) to sign in users. User need to click 'Sign in options'- 'Sign in to an organization'- 'Sign in with a QR code'
-![image](https://github.com/user-attachments/assets/08a4ab3a-243c-4f68-a2e9-8a3a9411d8ca)
+You can use Microsoft's web browser login experience (login.microsoft.com) to sign in users. Users can click **Sign in options** > **Sign in to an organization** > **Sign in with a QR code**.
+
+![Screenshot that shows how to sign in to Microsoft](https://github.com/user-attachments/assets/08a4ab3a-243c-4f68-a2e9-8a3a9411d8ca)
 
 
 ### Mobile native app sign-in expereince 
-The above login expereince can be optimized for your apps by using Microsoft Authentication Library (MSAL) to add an QR code sign-in option on your apps login page. This option eliminates two clicks to scan the QR code. For example, see Teams login page with QR code sign-in entrypoint.
-![image](https://github.com/user-attachments/assets/23ae8dc1-e6be-492c-b998-c426b5518343)
+You can optimize sign-in for your apps by using Microsoft Authentication Library (MSAL) to add a QR code sign-in option to your apps sign-in page. This option eliminates two clicks to scan the QR code. For example, you can add QR code sign-in to the Teams app.
+
+![Screenshot that shows how to sign in to native apps](https://github.com/user-attachments/assets/23ae8dc1-e6be-492c-b998-c426b5518343)
 
 
 ## Unsupported user scenarios in current release
 
 - Self-service PIN reset for users
 - Bulk provisioning of QR code and PIN
-- QR code scan via Barcode scanners
-- QR code auth is unviable on Desktop apps or browsers
-- Tenanted endpoint for login
+- QR code scan by barcode scanners
+- QR code authentication doesn't work with desktop apps or browsers
+- Custom tenant endpoint for sign in. 
 
 
 ## Related content
