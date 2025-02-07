@@ -1,30 +1,25 @@
 ---
 title: Configure Microsoft Entra for increased security
-description: 
+description: Learn how to improve your security posture with Microsoft Entra.
 
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: reference
-ms.date: 02/03/2025
+ms.date: 02/07/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: 
 ---
-# Configure Microsoft Entra for increased security
+# Configure Microsoft Entra for increased security (Preview)
 
 In Microsoft Entra, we group our security recommendations into several main areas. This structure allows organizations to logically break up projects into related consumable chunks.
 
 > [!TIP]
-> Some organizations might take these recommendations exactly as written, while others might choose to make modifications based on their own business needs. In our initial release of this guidance, we focus on traditional [workforce tenants](https://learn.microsoft.com/entra/external-id/tenant-configurations#workforce-tenants). These workforce tenants are for your employees, internal business apps, and other organizational resources. 
+> Some organizations might take these recommendations exactly as written, while others might choose to make modifications based on their own business needs. In our initial release of this guidance, we focus on traditional [workforce tenants](/entra/external-id/tenant-configurations#workforce-tenants). These workforce tenants are for your employees, internal business apps, and other organizational resources. 
 
-<!--- 
-> 
-> You can use the Zero Trust assessment tool (preview) to validate your configuration against the security recommendations outlined in this document. You can find more information about this tool at https://aka.ms/<>.
---->
-
-We recommend that all of the following controls be implemented where licenses are available. This helps provide a foundation for, or shore up an existing one, for other resources built on top of this secure foundation. 
+We recommend that all of the following controls be implemented where licenses are available. This helps to provide a foundation for other resources built on top of this solution. More controls will be added to this document over time.
 
 ## Privileged access
 
@@ -55,12 +50,6 @@ We recommend that all of the following controls be implemented where licenses ar
 ### Privileged Microsoft Entra built-in roles are targeted with Conditional Access policies to enforce phishing-resistant methods 
 
 [!INCLUDE [21783](../includes/secure-recommendations/21783.md)]
-
-<!--- 
-## Devices
-
-COMING SOON...
---->
 
 ## Application management
 
@@ -97,12 +86,6 @@ COMING SOON...
 ### Guest access is protected by strong authentication methods 
 
 [!INCLUDE [21851](../includes/secure-recommendations/21851.md)]
-
-<!--- 
-## Identity governance
-
-COMING SOON...
---->
 
 ## Monitoring
 
