@@ -1,4 +1,4 @@
-1. Sign in to the MyStaff portal as a frontline manager. Select an administrative unit (AU) and a frontline worker.
+1. Sign in to the My Staff portal as a frontline manager. Select an administrative unit (AU) and a frontline worker.
 
    :::image type="content" border="true" source="media/add-qr-code-my-staff/select-admin-unit.png" alt-text="Screenshot that shows how to select an admin unit.":::
 
