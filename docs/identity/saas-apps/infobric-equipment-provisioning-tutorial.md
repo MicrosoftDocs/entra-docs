@@ -91,21 +91,21 @@ Infobric is not yet listed in the [Microsoft Entra App Gallery](https://www.micr
 
 1. Click **Attribute mapping** (may still be **Attribute mapping (Preview)**)
 1. Click **Provision Microsoft Entra ID Users**.
-1. Remove mappings that are not in the table below.
+1. Remove mappings that are not in the table below. (Yes. That many. If you accidentally remove a mapping, you can add it back by clicking **Add attribute** and using the table below.)
 1. Add any mappings that are in the table but not already among the Entra mappings.
 1. Make sure that all fields match exactly as shown in the table below.
 1. Keep all other defaults on the Attribute mapping page.
 1. Click **Save**.
 
-| Equipment                              | Entra                                                         | Matching | When?  |
-| -------------------------------------- | ------------------------------------------------------------- | :------: | ------ |
-| `active`                               | `Switch([IsSoftDeleted], , "False", "True", "True", "False")` |          | Always |
-| `displayName`                          | `displayName`                                                 |          | Always |
-| `emails[type eq "work"].value`         | `mail`                                                        |          | Always |
-| `name.familyName`                      | `surname`                                                     |          | Always |
-| `name.givenName`                       | `givenName`                                                   |          | Always |
-| `phoneNumbers[type eq "mobile"].value` | `mobile`                                                      |          | Always |
-| `userName`                             | `userPrincipalName`                                           |    1     | Always |
+| Equipment                              | Entra                                                         | Matching | When?  | Type       |
+| -------------------------------------- | ------------------------------------------------------------- | :------: | ------ | ---------- |
+| `active`                               | `Switch([IsSoftDeleted], , "False", "True", "True", "False")` |          | Always | Expression |
+| `displayName`                          | `displayName`                                                 |          | Always | Direct     |
+| `emails[type eq "work"].value`         | `mail`                                                        |          | Always | Direct     |
+| `name.familyName`                      | `surname`                                                     |          | Always | Direct     |
+| `name.givenName`                       | `givenName`                                                   |          | Always | Direct     |
+| `phoneNumbers[type eq "mobile"].value` | `mobile`                                                      |          | Always | Direct     |
+| `userName`                             | `userPrincipalName`                                           |    1     | Always | Direct     |
 
 ## Step 6: Map group attributes
 
@@ -117,11 +117,11 @@ Infobric is not yet listed in the [Microsoft Entra App Gallery](https://www.micr
 1. Keep all other defaults on the Attribute mapping page.
 1. Click **Save**.
 
-| Equipment     | Entra         | Matching | When?  |
-| ------------- | ------------- | :------: | ------ |
-| `displayName` | `displayName` |    1     | Always |
-| `externalId`  | `objectId`    |          | Always |
-| `members`     | `members`     |          | Always |
+| Equipment     | Entra         | Matching | When?  | Type   |
+| ------------- | ------------- | :------: | ------ | ------ |
+| `displayName` | `displayName` |    1     | Always | Direct |
+| `externalId`  | `objectId`    |          | Always | Direct |
+| `members`     | `members`     |          | Always | Direct |
 
 ## Step 7: Provision a single user and a single group
 
