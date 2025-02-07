@@ -103,21 +103,14 @@ For more information about how to manage QR codes, see [How to enable the QR cod
 
 ## User sign-in experience with QR code authentication
 
-You can use the Microsoft Authentication Library (MSAL) to add an QR code sign-in option on your apps login page for optimized sign-in expereince.
-This option helps users sign in with fewer clicks. 
-For example, the following screenshot shows Teams login page (image 1.) with QR code sign instead of clicking 'Sign in options'- 'Sign in to an organization'- 'Sign in with a QR code' (image 2.)
-
-:::image type="content" source="media/how-to-authentication-qr-code/sign-in.png" alt-text="Screenshot that shows how to scan a QR code to sign in to Teams.":::
-
-![image](https://github.com/user-attachments/assets/1263aff6-eb9d-40e9-8ea1-e8eb5b9df4a9)
-
-## User sign-in experience with QR code authentication
-
 ### Mobile web expereince
+You can use Microsoft's web browser login experience (login.microsoft.com) to sign in users. User need to click 'Sign in options'- 'Sign in to an organization'- 'Sign in with a QR code'
 
-### Mobile ative app expereince 
+![image](https://github.com/user-attachments/assets/aebf52f5-1a25-4fb3-863f-cca86c66c70c)
 
-
+### Mobile native app expereince 
+The above login expereince can be optimized for your apps by using Microsoft Authentication Library (MSAL) to add an QR code sign-in option on your apps login page. This option eliminates two clicks to scan the QR code. For example, see Teams login page with QR code sign-in entry point.
+![image](https://github.com/user-attachments/assets/13bf065e-f73c-43ea-b410-9f92bf58fc49)
 
 ## Unsupported user scenarios in current release
 
@@ -125,6 +118,7 @@ For example, the following screenshot shows Teams login page (image 1.) with QR 
 - Bulk provisioning of QR code and PIN
 - QR code scan via Barcode scanners
 - QR code auth is unviable on Desktop apps or browsers
+- Tenanted endpoint for login
 
 
 ## Related content
