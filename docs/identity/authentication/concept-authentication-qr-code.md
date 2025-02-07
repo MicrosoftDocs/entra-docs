@@ -103,14 +103,15 @@ For more information about how to manage QR codes, see [How to enable the QR cod
 
 ## User sign-in experience with QR code authentication
 
-### Mobile web expereince
+### Mobile web sign-in expereince
 You can use Microsoft's web browser login experience (login.microsoft.com) to sign in users. User need to click 'Sign in options'- 'Sign in to an organization'- 'Sign in with a QR code'
+![image](https://github.com/user-attachments/assets/08a4ab3a-243c-4f68-a2e9-8a3a9411d8ca)
 
-![image](https://github.com/user-attachments/assets/aebf52f5-1a25-4fb3-863f-cca86c66c70c)
 
-### Mobile native app expereince 
+### Mobile native app sign-in expereince 
 The above login expereince can be optimized for your apps by using Microsoft Authentication Library (MSAL) to add an QR code sign-in option on your apps login page. This option eliminates two clicks to scan the QR code. For example, see Teams login page with QR code sign-in entrypoint.
-![image](https://github.com/user-attachments/assets/aa64d628-1b1f-4599-b9d0-a5a5e65f005a)
+![image](https://github.com/user-attachments/assets/23ae8dc1-e6be-492c-b998-c426b5518343)
+
 
 ## Unsupported user scenarios in current release
 
