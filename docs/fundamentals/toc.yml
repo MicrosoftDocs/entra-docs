@@ -94,6 +94,8 @@ items:
 - name: Quick security wins
   expanded: false
   items:
+  - name: Configure security recommedations
+    href: configure-security.md
   - name: Enable MFA
     href: ~/identity/authentication/concept-mfa-licensing.md?toc=/entra/identity/fundamentals/toc.json&bc=/entra/fundamentals/breadcrumb/toc.json
   - name: Identity secure score
