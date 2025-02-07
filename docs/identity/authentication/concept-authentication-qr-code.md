@@ -17,7 +17,7 @@ manager: amycolannino
 
 # Authentication methods in Microsoft Entra ID - QR code authentication method (Preview)
 
-QR code authentication method enables frontline workers to sign in efficiently in apps on shared devices. Users will be able to use unique QR code provided to them and enter their PIN to sign in, eliminating the need to enter intricate usernames and passwords.
+QR code authentication method enables frontline workers to sign in efficiently in apps on shared devices. Users will be able to use unique QR code provided to them and enter their PIN to sign in, eliminating the need to enter intricate usernames and passwords. QR code authentication is supported on mobilde device (iOS, Android, and iPad).
 
 ## What is QR code authentication?
 
@@ -33,11 +33,30 @@ It can't be used with other user identifiers, such as username or phone number.
 QR code authentication is a single-factor method in which PIN (something you know) is a credential.
 
 ## Benefits of QR code authentication
-
 Benefit | Description
 --------|------------
 Easier and faster sign-in | Frontline workers don't have to enter complex usernames and complex passwords to sign in multiple times into shared devices through their shift
 Inexpensive | Printing a QR code costs less than a hardware key, which can be cost prohibitive for organizations with temporary frontline workers.
+
+### PIN properties
+
+The following policies are applied when an Authentication Policy Administrator creates or resets a PIN. 
+
+Policy | Values 
+-------|--------
+Allowed characters | Numbers (0-9) 
+Unallowed characters | - Characters (A-Z, a-z)<br>- Symbols (- @ # $ % ^ & * - _ ! + = [ ] { } \| \ : ' , . ? / ` ~ " ( ) ; < >)<br>- Unicode characters<br>- Blank space 
+Minimum PIN length |  8-20 digits 
+PIN complexity     | Should be enforced to avoid repetition and common sequences. The following patterns are checked:<br>- Don't contain 0123456789 or 9876543210.<br>- Don't repeat a sequence of 2-3 digits in the PIN, like 121212, or 123123 or 342342.<br>An **Invalid PIN** error appears if the PIN has unallowed characters or is less than the minimum PIN length. 
+
+## Best security practices to apply with QR code authentication 
+
+We recommend the following measures when you enable QR code authentication method as it is a single factor authentication (something you know).  
+
+- QR code authentication is primarily for frontline workers and not for IW workers. We recommend MFA or Phishing resistant auth methods for IW workers.
+- Combine QR code authentication with Conditional Access policies to add another security layer. Recommended policies are compliant devices, access within network, allow for certain applications, and shared device mode. 
+- Enforce phishing-resistant or multifactor authentication when users access resources from outside of the store or workplace network.
+- Replace QR codes that are lost or stolen.
 
 ## QR code configurations in the Authentication method policy
 
@@ -56,12 +75,10 @@ In this screenshot, the PIN length is set to the default of 8 digits. The lifeti
 
 :::image type="content" source="media/concept-authentication-qr-code/qr-code-settings.png" alt-text="Screenshot that shows QR code settings.":::
 
-## Add or delete a QR code authentication method
+## Functional details of QR code authentication method
 
-When an Authentication Policy Administrator creates a QR code authentication method, they can add only a standard QR code and PIN.
-To create a temporary QR code, they need to edit a QR code authentication method. Only one QR code authentication method can be active at a time for a user.
-
-When a QR code authentication method is deleted for the user, they can't sign-in with their existing QR code and PIN.
+When an Authentication Policy Administrator adds a QR code authentication method for a user, they can add only a standard QR code and PIN.
+To create a temporary QR code, they need to edit a QR code authentication method. Only one QR code authentication method can be active at a time for a user. When a QR code authentication method is deleted for the user, they can't sign-in with their existing QR code and PIN.
 
 A PIN works with both standard and temporary QR codes because PIN is valid for the QR code authentication method.
 An Authentication Policy Administrator can provide a custom PIN or generate a PIN when they create a QR code authentication method. Admins can copy a temporary PIN only when generated. The PIN is masked after it's added to prevent exposure.
@@ -83,32 +100,8 @@ Expired          | Expired           | Temporary, or user updated
 
 For more information about how to manage QR codes, see [How to enable the QR code authentication method in Microsoft Entra ID (Preview)](how-to-authentication-qr-code.md).
 
-### PIN properties
 
-The following policies are applied when an Authentication Policy Administrator creates or resets a PIN. 
-
-Policy | Values 
--------|--------
-Allowed characters | Numbers (0-9) 
-Unallowed characters | - Characters (A-Z, a-z)<br>- Symbols (- @ # $ % ^ & * - _ ! + = [ ] { } \| \ : ' , . ? / ` ~ " ( ) ; < >)<br>- Unicode characters<br>- Blank space 
-Minimum PIN length |  8-20 digits 
-PIN complexity     | Should be enforced to avoid repetition and common sequences. The following patterns are checked:<br>- Don't contain 0123456789 or 9876543210.<br>- Don't repeat a sequence of 2-3 digits in the PIN, like 121212, or 123123 or 342342.<br>An **Invalid PIN** error appears if the PIN has unallowed characters or is less than the minimum PIN length. 
-
-## QR code authentication management for users
-
-Administrators can manage QR codes in the Authentication methods for each user.
-
-:::image type="content" source="media/how-to-authentication-qr-code/add-qr-code.png" alt-text="Screenshot that shows how add a QR code for a user.":::
-
-## Security guidelines for QR code authentication 
-
-We recommend the following security measures when you enable QR code authentication method as it is a single factor authentication (something you know).  
-
-- QR code authentication is primarily for frontline workers and not for IW workers. We recommend MFA or Phishing resistant methods for IW workers.
-- Combine QR code authentication with Conditional Access policies to add another security layer. Recommended policies are compliant devices, access within network, allow for certain applications, and shared device mode. 
-- Enforce phishing-resistant or MFA authentication when users access resources from outside of the store or workplace network. 
-
-## Add QR code sign-in to apps
+## User sign-in experience with QR code authentication
 
 You can use the Microsoft Authentication Library (MSAL) to add an QR code sign-in option on your apps login page for optimized sign-in expereince.
 This option helps users sign in with fewer clicks. 
@@ -118,16 +111,20 @@ For example, the following screenshot shows Teams login page (image 1.) with QR 
 
 ![image](https://github.com/user-attachments/assets/1263aff6-eb9d-40e9-8ea1-e8eb5b9df4a9)
 
+## User sign-in experience with QR code authentication
 
-## Known issues and mitigation for QR code authentication method 
+### Mobile web expereince
 
-- Self-service PIN reset is not available
-- Bulk provisioning is not supported but you can leverage MSGraph API to program bulk printing
-- Barcode scanners are not supported
-- Desktop apps and browsers are not supported 
-- Don't use QR code authentication for resources that require MFA.
-- Replace QR codes that get lost or stolen.
-- Create Conditional Access policies to restrict the authentication method to specified apps, store devices, and secure networks.
+### Mobile ative app expereince 
+
+
+
+## Unsupported user scenarios in current release
+
+- Self-service PIN reset for users
+- Bulk provisioning of QR code and PIN
+- QR code scan via Barcode scanners
+- QR code auth is unviable on Desktop apps or browsers
 
 
 ## Related content
