@@ -27,23 +27,15 @@ To take advantage of QR code and PIN authentication method, app developers and [
 To configure your app to use QR code authentication, you need to set the `PreferredAuthMethod` to QR in the `AcquireTokenParameters` object. The following code snippet shows how to configure your app to use QR code authentication:
 
 ```java 
-final AcquireTokenParameters acquireTokenParameters =  
-
-        new AcquireTokenParameters.Builder() 
-
-        .startAuthorizationFromActivity(activity) 
-
-        .withLoginHint(requestOptions.getLoginHint()) 
-
-        .forAccount(requestOptions.getAccount()) 
-
-        .withPrompt(requestOptions.getPrompt()) 
-
-        .withPreferredAuthMethod(PreferredAuthMethod.QR) 
-
-        .withCallback(getAuthenticationCallback(callback)) 
-
-        .build(); 
+final AcquireTokenParameters acquireTokenParameters = 
+    new AcquireTokenParameters.Builder()
+    .startAuthorizationFromActivity(activity)
+    .withLoginHint(requestOptions.getLoginHint())
+     .forAccount(requestOptions.getAccount())
+     .withPrompt(requestOptions.getPrompt())
+     .withPreferredAuthMethod(PreferredAuthMethod.QR)
+     .withCallback(getAuthenticationCallback(callback))
+     .build(); 
 ```
 
 
