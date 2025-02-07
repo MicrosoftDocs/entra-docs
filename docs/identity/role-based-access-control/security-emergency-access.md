@@ -5,7 +5,7 @@ description: This article describes how to use emergency access accounts to help
 author: markwahl-msft
 manager: amycolannino
 ms.author: rolyon
-ms.date: 10/01/2024
+ms.date: 02/10/2025
 ms.topic: conceptual
 ms.service: entra-id
 ms.subservice: role-based-access-control
