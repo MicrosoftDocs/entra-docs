@@ -18,7 +18,7 @@ ms.topic: concept-article
 The Microsoft identity platform supports the [OAuth 2.0 Resource Owner Password Credentials (ROPC) grant](https://tools.ietf.org/html/rfc6749#section-4.3), which allows an application to sign in the user by directly handling their password.  This article describes how to program directly against the protocol in your application.  When possible, we recommend you use the supported Microsoft Authentication Libraries (MSAL) instead to [acquire tokens and call secured web APIs](authentication-flows-app-scenarios.md#scenarios-and-supported-authentication-flows).  Also take a look at the [sample apps that use MSAL](sample-v2-code.md).
 
 > [!WARNING]
-> Microsoft recommends you do *not* use the ROPC flow; it's incompatible with Multi-Factor Authentication (MFA). In most scenarios, more secure alternatives are available and recommended. This flow requires a very high degree of trust in the application, and carries risks that aren't present in other flows. You should only use this flow when more secure flows aren't viable.
+> Microsoft recommends you do *not* use the ROPC flow; it's incompatible with multifactor authentication (MFA). In most scenarios, more secure alternatives are available and recommended. This flow requires a very high degree of trust in the application, and carries risks that aren't present in other flows. You should only use this flow when more secure flows aren't viable.
 
 > [!IMPORTANT]
 >
@@ -62,7 +62,7 @@ There are multiple ways to authenticate as a service principal:
 - If your app is running on a system managed by another OAuth2-compliant Identity provider, such as GitHub, use [Federated Identity Credentials](./../workload-id/workload-identity-federation-create-trust.md?pivots=identity-wif-apps-methods-azp).
 - If you cannot use a Managed Identity or a Federated Identity, use a [certificate credential](certificate-credentials.md).
 
-> ![WARNING]
+> [!WARNING]
 > Do not use Service Principal authentication when a user context is available.  App-only access is inherently high-privilege, often granting tenant-wide access and potentially allowing a bad actor to access customer data for any user. 
 
 ## Protocol diagram
