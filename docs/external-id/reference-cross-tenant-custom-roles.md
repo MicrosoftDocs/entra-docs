@@ -23,7 +23,7 @@ The following actions are recommended for this role.
 
 | Actions |
 | ------- |
-| microsoft.directory.tenantRelationships/standard/read |
+| microsoft.directory/tenantRelationships/standard/read |
 | microsoft.directory/crossTenantAccessPolicy/standard/read |
 | microsoft.directory/crossTenantAccessPolicy/allowedCloudEndpoints/update |
 | microsoft.directory/crossTenantAccessPolicy/basic/update |
