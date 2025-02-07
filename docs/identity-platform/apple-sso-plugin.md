@@ -470,7 +470,7 @@ To determine if your users are affected, you can collect a sysdiagnose and look 
 
 Here's a sample how this error would look like:
 
-'Request for extension <EXConcreteExtension: 0x60000112d080> {id = com.microsoft.CompanyPortalMac.ssoextension} failed with error Error Domain=PlugInKit Code=16 "other version in use: <id<PKPlugIn>: 0x1526066c0; core = <[...] [com.microsoft.CompanyPortalMac.ssoextension(5.2412.0)],[...] [/Applications/Company Portal.app/Contents/PlugIns/Mac SSO Extension.appex]>, instance = [(null)], state = 1, useCount = 1>" UserInfo={NSLocalizedDescription=other version in use: <id<PKPlugIn>: 0x1526066c0; core = <[...] [com.microsoft.CompanyPortalMac.ssoextension(5.2412.0)],[...] [/Applications/Company Portal.app/Contents/PlugIns/Mac SSO Extension.appex]>, instance = [(null)], state = 1, useCount = 1>}'
+`Request for extension <EXConcreteExtension: 0x60000112d080> {id = com.microsoft.CompanyPortalMac.ssoextension} failed with error Error Domain=PlugInKit Code=16 "other version in use: <id<PKPlugIn>: 0x1526066c0; core = <[...] [com.microsoft.CompanyPortalMac.ssoextension(5.2412.0)],[...] [/Applications/Company Portal.app/Contents/PlugIns/Mac SSO Extension.appex]>, instance = [(null)], state = 1, useCount = 1>" UserInfo={NSLocalizedDescription=other version in use: <id<PKPlugIn>: 0x1526066c0; core = <[...] [com.microsoft.CompanyPortalMac.ssoextension(5.2412.0)],[...] [/Applications/Company Portal.app/Contents/PlugIns/Mac SSO Extension.appex]>, instance = [(null)], state = 1, useCount = 1>}`
 
 ### Recovery Steps
 If your users are impacted by this issue, they can reboot their device to recover. 
