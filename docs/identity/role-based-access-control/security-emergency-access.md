@@ -30,7 +30,7 @@ An organization might need to use an emergency access account in the following s
 - The administrators are registered through Microsoft Entra multifactor authentication, and all their individual devices are unavailable or the service is unavailable. Users might be unable to complete multifactor authentication to activate a role. For example, a cell network outage is preventing them from answering phone calls or receiving text messages, the only two authentication mechanisms that they registered for their device.
 - The person with the most recent Global Administrator access has left the organization. Microsoft Entra ID prevents the last Global Administrator account from being deleted, but it doesn't prevent the account from being deleted or disabled on-premises. Either situation might make the organization unable to recover the account.
 - Unforeseen circumstances such as a natural disaster emergency, during which a mobile phone or other networks might be unavailable.
-- If role assignments for Global Administrator and Privileged Role Administrator roles are eligible, approval is required for activation, but no approvers are selected (or all approvers are removed from the directory). Active Global Administrators and Privileged Role Administrators are default approvers. But there will be no active Global Administrators and Privileged Role Administrators and administration of the tenant will be effectively be locked, unless emergency access accounts are used.
+- If role assignments for Global Administrator and Privileged Role Administrator roles are eligible, approval is required for activation, but no approvers are selected (or all approvers are removed from the directory). Active Global Administrators and Privileged Role Administrators are default approvers. But there will be no active Global Administrators and Privileged Role Administrators and administration of the tenant will effectively be locked, unless emergency access accounts are used.
 
 ## Create emergency access accounts
 
@@ -119,7 +119,7 @@ Organizations should monitor sign-in and audit log activity from the emergency a
     1. Under **Search query**, enter the following query, inserting the object IDs of the two emergency access accounts.
     
         > [!NOTE]
-        > For each additional emergency access account you want to include, add another "or UserId == "ObjectGuid"" to the query.
+        > For each additional emergency access account you want to include, add another `or UserId == "ObjectGuid"` to the query.
                 
         Sample queries:
         ```kusto
@@ -201,7 +201,7 @@ If the alert is triggered, preserve the logs from Microsoft Entra and other work
 - In response to an actual emergency where no administrator could use their regular accounts
 - Or as a result of misuse or unauthorized usage of the account
  
-Next, examine the logs to determine what actions were taken by the individual with the emergency access account to ensure that that those actions align with the authorized use of the account. 
+Next, examine the logs to determine what actions were taken by the individual with the emergency access account to ensure that those actions align with the authorized use of the account. 
 
 ## Validate accounts regularly
 
