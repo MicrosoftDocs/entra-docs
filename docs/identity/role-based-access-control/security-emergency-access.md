@@ -38,7 +38,7 @@ Create two or more emergency access accounts. These accounts should be cloud-onl
 
 1. Find your existing emergency access accounts or create new accounts with the Global Administrator role.
 
-    :::image type="content" source="./media/security-emergency-access/create-emergency-access-account.png" alt-text="Creating an emergency access account in Microsoft Entra ID." lightbox="./media/security-emergency-access/create-emergency-access-account.png":::
+    :::image type="content" source="./media/security-emergency-access/create-emergency-access-account.png" alt-text="Screenshot of creating an emergency access account in Microsoft Entra ID." lightbox="./media/security-emergency-access/create-emergency-access-account.png":::
 
 1. Select one of these passwordless authentication methods for your emergency access accounts. These methods satisfy the [mandatory multifactor authentication requirements](../authentication/concept-mandatory-multifactor-authentication.md).
 
