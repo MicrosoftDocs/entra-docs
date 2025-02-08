@@ -63,7 +63,7 @@ Create two or more emergency access accounts. These accounts should be cloud-onl
 
 When you configure these accounts, the following requirements must be met:
 
-- In most organizations, emergency access accounts are not associated with any individual user in the organization. Credentials are in a known secure location available to multiple members of administration team and not connected with any employee-supplied devices such as phones. This approach is commonly used to unify emergency access accounts management: most organizations need emergency access accounts not only for Microsoft Cloud infrastructure, but also on-premises environment, federated SaaS applications, and other critical systems.
+- In most organizations, emergency access accounts aren't associated with any individual user in the organization. Credentials are in a known secure location available to multiple members of administration team and not connected with any employee-supplied devices such as phones. This approach is commonly used to unify emergency access accounts management: most organizations need emergency access accounts not only for Microsoft Cloud infrastructure, but also on-premises environment, federated SaaS applications, and other critical systems.
 
     Alternatively, you can choose to create individual emergency access accounts for administrators. This solution promotes accountability and allows administrators to use emergency access accounts from remote locations.
 
@@ -77,7 +77,7 @@ When you configure these accounts, the following requirements must be met:
 
 ## Federation guidance
 
-Some organizations use AD Domain Services and AD FS or similar identity provider to federate to Microsoft Entra ID. The emergency access for on-premises systems and the emergency access for cloud services should be kept distinct, with no dependency of one on the other. Mastering and or sourcing authentication for accounts with emergency access privileges from other systems adds unnecessary risk in the event of an outage of those systems.
+Some organizations use Active Directory Domain Services and Active Directory Federation Service (AD FS) or similar identity provider to federate to Microsoft Entra ID. The emergency access for on-premises systems and the emergency access for cloud services should be kept distinct, with no dependency of one on the other. Mastering and or sourcing authentication for accounts with emergency access privileges from other systems adds unnecessary risk in the event of an outage of those systems.
 
 ## Store account credentials safely
 
@@ -85,7 +85,7 @@ Organizations need to ensure that the credentials for emergency access accounts 
 
 ## Monitor sign-in and audit logs
 
-Organizations should monitor sign-in and audit log activity from the emergency accounts and trigger notifications to other administrators. When you monitor the activity for emergency access accounts, you can verify these accounts are only used for testing or actual emergencies. You can use Azure Monitor, Azure Sentinel, or other tools to monitor the sign-in logs and trigger email and SMS alerts to your administrators whenever emergency access accounts sign in. This section illustrates using Azure Monitor.
+Organizations should monitor sign-in and audit log activity from the emergency accounts and trigger notifications to other administrators. When you monitor the activity for emergency access accounts, you can verify these accounts are only used for testing or actual emergencies. You can use Azure Monitor, Microsoft Sentinel, or other tools to monitor the sign-in logs and trigger email and SMS alerts to your administrators whenever emergency access accounts sign in. This section illustrates using Azure Monitor.
 
 ### Prerequisites
 
