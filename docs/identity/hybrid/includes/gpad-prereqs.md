@@ -44,7 +44,7 @@ The following prerequisites are required to implement provisioning groups to Act
 
 ### Supported groups and scale limits
 The following is supported:
-  - Only cloud created [Security groups](../../../fundamentals/concept-learn-about-groups.md#group-types) are supported
+  - Only cloud created [Security groups](../../../fundamentals/concept-learn-about-groups.md#group-types) are supported. See the attribute filtering's [default security grouping](../cloud-sync/how-to-attribute-mapping-entra-to-active-directory.md#the-default-security-grouping) for more details.
   - These groups can have assigned or dynamic membership groups.
   - These groups can only contain on-premises synchronized users and / or additional cloud created security groups.
   - The on-premises user accounts that are synchronized and are members of this cloud created security group, can be from the same domain or cross-domain, but they all must be from the same forest.
