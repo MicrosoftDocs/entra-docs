@@ -51,7 +51,7 @@ The following table shows a sample application proxy configuration. This sample 
 |---- | ----------------------- | --------------- | ---------------------- |
 | **Internal URL** | `contoso.com` | `contoso.com` | If the apps are hosted in different regions, you can use the same internal URL for each app. |
 | **External URL** | `nam.contoso.com` | `india.contoso.com` | Configure a custom domain for each app.|
-| **Custom domain certificate** | Domain Name System (DNS): `nam.contoso.com` Subject Alternative Name (SAN): `www.contoso.com` | DNS: `nam.contoso.com` SAN: `www.contoso.com` | In the certificate you upload for each app, set the SAN value to the alternate URL. The alternate URL is the URL all users use to reach the app.|
+| **Custom domain certificate** | Domain Name System (DNS): `nam.contoso.com` Subject Alternative Name (SAN): `www.contoso.com` | DNS: `india.contoso.com` SAN: `www.contoso.com` | In the certificate you upload for each app, set the SAN value to the alternate URL. The alternate URL is the URL all users use to reach the app.|
 | **Connector group** | NAM Geo Group | India Geo Group | Ensure you assign each app to the correct connector group by using the geo-routing functionality. |
 | **Redirects** | (Optional) To maintain redirects for the alternate URL, add the application registration for the app.  | (Optional) To maintain redirects for the alternate URL, add the application registration for the app.  | This step is required if the alternate URL `www.contoso.com` is to be maintained for all redirections. |
 | **Reply URL** | `www.contoso.com` | `www.contoso.com` |
