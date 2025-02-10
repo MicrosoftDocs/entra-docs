@@ -13,6 +13,8 @@ ms.topic: tutorial
 
 # Tutorial: Configure an ASP.NET Core web app for authorization and authentication
 
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
+
 In this tutorial, you add the authentication and authorization elements to an ASP.NET Core web app. In the [previous tutorial](./tutorial-web-app-dotnet-prepare-app.md), you created an ASP.NET Core project and configured it for authentication. 
 
 In this tutorial:
@@ -38,7 +40,7 @@ The *HomeController.cs* file contains the code for the home page of the applicat
 1. In your code editor, open *Controllers\HomeController.cs* file.
 1. Authorization needs to be added to the controller, add `Microsoft.AspNetCore.Authorization` so that the top of the file is identical to the following snippet:
 
-    ```cshtml
+    ```csharp
     using System.Diagnostics;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
@@ -67,9 +69,8 @@ The *Program.cs* file is where we add authentication and authorization to the we
     ```
 
 1. Next, add the authentication services to the application which will enable the web app to sign in users with the Microsoft identity platform. You can replace the rest of the code in *Program.cs* with the following snippet:
-1. 
-   :::code language="csharp" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/Program.cs" :::
 
+   :::code language="csharp" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/Program.cs" :::
 
 ## View ID token claims
 
@@ -78,7 +79,6 @@ The web app is now configured to sign in users with the Microsoft identity platf
 1. Open *Views/Home/Index.cshtml* and replace the contents of the file with the following snippet:
 
     :::code language="csharp" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/Program.cs" :::
-
 
 ## Add the sign in and sign out experience
 

@@ -35,11 +35,11 @@ In this tutorial:
   * Cloud Application Administrator
 * A workforce tenant. Use your **Default Directory** or [set up a new tenant](./quickstart-create-new-tenant.md)
 * An application registered in the Microsoft Entra admin center with the following setup.
-  * **Name**: *NewWebAppLocal*
+  * **Name**: *identity-client-web-app*
   * **Supported account types**: *Accounts in this organizational directory only*
-  * **Redirect URI**: `https://localhost:7274/signin-oidc`
-  * **Front channel logout URL**: `https://localhost:7274/signout-oidc`
-* For development purposes, [add a client secret](./quickstart-register-app.md#add-credentials), and ensure you record the secret's **Value**. For security reasons, **do not use client secrets in a production setting**. Use a certificate or federated credentials instead.
+  * **Redirect URI**: `https://localhost:5001/signin-oidc`
+  * **Front channel logout URL**: `https://localhost:5001/signout-oidc`
+* For development purposes, [add a certificate](./quickstart-register-app.md#add-credentials), and ensure you record the certificate **Thumbprint**. **Do not use a self signed certificate** for production apps.
 * Although any integrated development environment (IDE) that supports ASP.NET Core applications can be used, this tutorial uses **Visual Studio Code**. You can download it [here](https://visualstudio.microsoft.com/downloads/).
 * A minimum requirement of [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet).
 
@@ -56,7 +56,7 @@ In this tutorial:
   * **Supported account types**: *Accounts in this organizational directory only*
   * **Redirect URI**: `https://localhost:7274/signin-oidc`
   * **Front channel logout URL**: `https://localhost:7274/signout-oidc`
-* For development purposes, [add a client secret](./quickstart-register-app.md#add-credentials), and ensure you record the secret's **Value**. For security reasons, **do not use client secrets in a production setting**. Use a certificate or federated credentials instead.
+* For development purposes, [add a certificate](./quickstart-register-app.md#add-credentials), and ensure you record the certificate **Thumbprint**. **Do not use a self signed certificate** for production apps.
 * To use your application in your external tenant; 
   * [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
   * [Grant admin consent for your tenant](./quickstart-register-app.md#grant-admin-consent-external-tenants-only).
@@ -74,7 +74,7 @@ In this section, you'll create an ASP.NET Core project in Visual Studio Code.
 1. Open a new terminal by selecting **Terminal > New Terminal**.
 1. To create an ASP.NET Core web app template, run the following commands in the terminal to change into the directory and create the project:
 
-    ```powershell
+    ```console
     cd NewWebAppLocal
     dotnet new webapp
     ```
@@ -85,7 +85,7 @@ Identity related NuGet packages must be installed in the project to authenticate
 
 1. Enter the following commands to change into the *dotnetcore_webapp* folder and install the relevant NuGet package:
 
-    ```powershell
+    ```console
     cd dotnetcore_webapp
     dotnet add package Microsoft.Identity.Web.UI
     ```
