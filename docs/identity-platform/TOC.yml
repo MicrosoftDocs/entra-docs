@@ -186,13 +186,13 @@
     - name: Quickstarts
       items:
         - name: Sign in users
-          href: quickstart-web-app-sign-in.md?pivots=workforce
+          href: quickstart-web-app-sign-in.md
           displayName: Node, ASP.NET,  ASP.NET Core, Python, Java Spring
         - name: Call an API
-          href: quickstart-web-app-node-sign-in-call-api.md?pivots=workforce
+          href: quickstart-web-app-node-sign-in-call-api.md
           displayName: Node.js, Nodejs, Nodejs web app
         - name: Edit profile
-          href: quickstart-web-app-node-sign-in-edit-profile.md?pivots=workforce
+          href: quickstart-web-app-node-sign-in-edit-profile.md
           displayName: Node.js, Nodejs, Nodejs web app
     - name: Tutorials
       items:
