@@ -1872,9 +1872,8 @@ Users in this role can monitor notifications and advisory health updates in [Mes
 Assign the Microsoft 365 Backup Administrator role to users who need to do the following tasks:
 
 - Manage all aspects of Microsoft 365 Backup
-- Back up and restore content across SharePoint, OneDrive, and Exchange Online
 - Create, edit, and manage backup configuration policies for SharePoint, OneDrive, and Exchange Online
-- Perform restore operations for SharePoint, OneDrive, and Exchange Online
+- Perform restore operations for backed-up SharePoint sites, OneDrive accounts, and Exchange mailboxes
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
