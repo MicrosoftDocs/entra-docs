@@ -14,6 +14,8 @@ ms.date: 02/07/2025
 
 # Tutorial: Reset password in a React single-page app by using native authentication (preview)
 
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
 In this tutorial, you learn how to reset password in a React single-page app (SPA) by using native authentication.
 
 In this tutorial, you:

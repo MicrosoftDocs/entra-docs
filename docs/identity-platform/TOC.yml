@@ -138,20 +138,38 @@
       href: index-spa.yml
     - name: Quickstart
       items: 
-        - name: Sign in users
-          href: quickstart-single-page-app-sign-in.md?pivots=workforce
+          - name: Browser-delegated authentication
+            items:
+            - name: Sign in users
+              href: quickstart-single-page-app-sign-in.md?pivots=workforce
+          - name: Native authentication
+            items:
+              - name: Sign in users
+                href: quickstart-native-authentication-single-page-app-react-sign-in.md?pivots=workforce
     - name: Tutorials
       items:
         - name: React
           items:
-          - name: Register your app
-            href: tutorial-single-page-app-react-register-app.md
-          - name: Prepare your app
-            href: tutorial-single-page-app-react-prepare-spa.md
-          - name: Sign in users
-            href: tutorial-single-page-app-react-sign-in-users.md
-          - name: Get user data from web API
-            href: tutorial-single-page-app-react-call-api.md
+            - name: Browser-delegated authentication
+              items:
+              - name: Register your app
+                href: tutorial-single-page-app-react-register-app.md
+              - name: Prepare your app
+                href: tutorial-single-page-app-react-prepare-spa.md
+              - name: Sign in users
+                href: tutorial-single-page-app-react-sign-in-users.md
+              - name: Get user data from web API
+                href: tutorial-single-page-app-react-call-api.md
+            - name: Native authentication
+              items:
+                - name: Sign up
+                  href: tutorial-native-authentication-single-page-app-react-sign-up.md?pivots=workforce
+                - name: Set up local CORS
+                  href: tutorial-native-authentication-single-page-app-react-set-up-local-cors.md?pivots=workforce
+                - name: Sign in
+                  href: tutorial-native-authentication-single-page-app-react-sign-in.md?pivots=workforce
+                - name: Reset password
+                  href: tutorial-native-authentication-single-page-app-react-reset-password.md?pivots=workforce
         - name: Angular
           items:
           - name: Register your app
@@ -167,18 +185,28 @@
       href: sample-v2-code.md#single-page-applications
     - name: How-to
       items:
-        - name: SPA that signs in users and calls web API
+        - name: Browser-delegated authentication
           items:
-            - name: App registration
-              href: scenario-spa-app-registration.md
-            - name: Code configuration
-              href: scenario-spa-app-configuration.md
-            - name: Sign in and sign out
-              href: scenario-spa-sign-in.md
-            - name: Acquire token for an API
-              href: scenario-spa-acquire-token.md
-            - name: Call a web API
-              href: scenario-spa-call-api.md
+            - name: SPA that signs in users and calls web API
+              items:
+                - name: App registration
+                  href: scenario-spa-app-registration.md
+                - name: Code configuration
+                  href: scenario-spa-app-configuration.md
+                - name: Sign in and sign out
+                  href: scenario-spa-sign-in.md
+                - name: Acquire token for an API
+                  href: scenario-spa-acquire-token.md
+                - name: Call a web API
+                  href: scenario-spa-call-api.md
+        - name: Native authentication
+          items:
+            - name: SPA that signs in users
+              items:
+                - name: Set up CORS in test
+                  href: how-to-native-authentication-cors-solution-test-environment.md
+                - name: Set up CORS in production
+                  href: how-to-native-authentication-cors-solution-production-environment.md
 - name: Web app
   items:
     - name: Web app authentication

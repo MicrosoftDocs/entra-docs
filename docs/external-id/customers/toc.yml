@@ -27,6 +27,10 @@ items:
         items:
           - name: Sign in users
             href: /entra/identity-platform/quickstart-single-page-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
+      - name: Native authentication
+        items:
+          - name: Sign in users
+            href: /entra/identity-platform/quickstart-native-authentication-single-page-app-react-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
   - name: Web app
     items:
       - name: Sign in users
@@ -127,13 +131,13 @@ items:
             - name: React
               items:
                 - name: Sign up
-                  href: tutorial-native-authentication-single-page-app-react-sign-up.md
+                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
                 - name: Set up local CORS
-                  href: tutorial-native-authentication-single-page-app-react-set-up-local-cors.md
+                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-set-up-local-cors?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
                 - name: Sign in
-                  href: tutorial-native-authentication-single-page-app-react-sign-in.md
+                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
                 - name: Reset password
-                  href: tutorial-native-authentication-single-page-app-react-reset-password.md
+                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-reset-password?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
     - name: Web app
       items: 
         - name: Node/Express.js
@@ -386,9 +390,9 @@ items:
           - name: Native authentication
             items:
               - name: Set up CORS in test
-                href: how-to-native-authentication-cors-solution-test-environment.md
+                href: /entra/identity-platform/how-to-native-authentication-cors-solution-test-environment?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
               - name: Set up CORS in production
-                href: how-to-native-authentication-cors-solution-production-environment.md
+                href: /entra/identity-platform/how-to-native-authentication-cors-solution-production-environment?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
       - name: Delete an external tenant
         href: how-to-delete-external-tenant-portal.md
     - name: Customize

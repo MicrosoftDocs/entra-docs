@@ -14,6 +14,8 @@ ms.date: 02/07/2025
 
 # Quickstart: Sign in users in a sample React single-page application by using native authentication (preview)
 
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
 In this quickstart, you use a React single-page application (SPA) to demonstrate how to authenticate users by using [native authentication API](../../identity-platform/reference-native-authentication-api.md). The sample app demonstrates user sign-up, sign in, sign out and password reset with an email and a password.
 
 ## Prerequisites
