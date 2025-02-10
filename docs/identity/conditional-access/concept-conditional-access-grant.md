@@ -201,11 +201,15 @@ The following restrictions apply when you configure a policy by using the passwo
 
 If your organization created terms of use, other options might be visible under grant controls. These options allow administrators to require acknowledgment of terms of use as a condition of accessing the resources that the policy protects. You can find more information about terms of use in [Microsoft Entra terms of use](terms-of-use.md).
 
-> [!NOTE]
-> When multiple grant controls are applied to a user, it's important to understand that conditional access policies follow a specific validation order by design. For example, if a user has two policies requiring Multi-Factor Authentication (MFA) and Terms of Use (ToU), the conditional access will first validate the user's MFA and then the ToU.
-If the MFA claim is not present in the token, you will see an "interrupt" (pending MFA) and a failure for ToU, even if the ToU was already accepted in a previous sign-in. 
-Once the MFA is completed, a second log will appear, validating the ToU. If the user has already accepted the ToU, you will see success for both MFA and ToU. However, if the MFA claim is present in the token, a single log will show success for both MFA and ToU.
-If multiple policies are applied to a user requiring MFA, Device State, and ToU, the process will be similar. The validation order will be MFA, Device State, and then ToU.
+## Multiple grant controls
+
+When multiple grant controls are applied to a user, it's important to understand that Conditional Access policies follow a specific validation order by design. For example, if a user has two policies requiring multifactor authentication (MFA) and Terms of Use (ToU), Conditional Access first validates the user's MFA claim and then the ToU.
+ 
+- If a valid MFA claim isn't present in the token, you see an "interrupt" (pending MFA) and a failure for ToU in the logs, even if the ToU was already accepted in a previous sign-in.
+- Once multifactor authentication is completed, a second log entry appears, validating the ToU. If the user already accepted the ToU, you see success for both MFA and ToU. 
+- If a valid MFA claim is present in the token, a single log shows success for both MFA and ToU.
+ 
+If multiple policies are applied to a user requiring MFA, Device State, and ToU, the process is similar. The validation order is MFA, Device State, and then ToU.
 
 ### Custom controls (preview)
 
