@@ -112,7 +112,8 @@ Users can reset the local password via Apple ID or an admin recovery key.
 
 ### Unexpected/frequent re-registration prompts on macOS Sequoia
 
-> [!IMPORTANT] Latest update on the PSSO re-registration issue on macOS 15.x described below: Apple confirmed the fix is deployed in macOS 15.3. If users still experience the re-registration issue on macOS 15.3+, please engage with Apple and share the logs via Apple support.
+> [!IMPORTANT]
+> Latest update on the PSSO re-registration issue on macOS 15.x described below: Apple confirmed the fix is deployed in macOS 15.3. If users still experience the re-registration issue on macOS 15.3+, please engage with Apple and share the logs via Apple support.
 
 There's a known concurrency issue on macOS 15+ (Sequoia) that can cause the PSSO device configuration to become corrupted. The device configuration can be corrupted by simultaneous updates from the system AppSSOAgent and AppSSODaemon processes. The corrupted configuration causes the operating system to trigger its re-registration remediation flow, resulting in unexpected registration prompts for users.
 
