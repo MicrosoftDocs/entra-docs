@@ -14,11 +14,11 @@ ms.custom: it-pro
 
 # Meet identity requirements of memorandum 22-09 with Microsoft Entra ID
 
-The Executive Order on Improving the Nation’s Cybersecurity (14028), directs federal agencies to advance security measures that significantly reduce the risk of successful cyberattacks against federal government digital infrastructure. On January 26, 2022, in support of Executive Order (EO) 14028, the Office of Management and Budget (OMB)] released the federal Zero Trust strategy in M 22-09 Memorandum for Heads of Executive Departments and Agencies. 
+The Executive Order on Improving the Nation’s Cybersecurity (14028), directs federal agencies to advance security measures that significantly reduce the risk of successful cyberattacks against federal government digital infrastructure. On January 26, 2022, in support of Executive Order (EO) 14028, the Office of Management and Budget (OMB) released the federal Zero Trust strategy in [M 22-09 Memorandum for Heads of Executive Departments and Agencies](https://bidenwhitehouse.archives.gov/wp-content/uploads/2022/01/M-22-09.pdf). 
 
-This article series has guidance to employ Microsoft Entra ID as a centralized identity management system when implementing Zero Trust principles, as described in memorandum 22-09. 
+This article series has guidance to employ Microsoft Entra ID as a centralized identity management system when implementing Zero Trust principles, as described in Memo 22-09. 
 
-Memorandum 22-09 supports Zero Trust initiatives in federal agencies. It has regulatory guidance for federal cybersecurity and data privacy laws. The memo cites the [US Department of Defense (DoD) Zero Trust Reference Architecture](https://cloudsecurityalliance.org/artifacts/dod-zero-trust-reference-architecture/): 
+Memo 22-09 supports Zero Trust initiatives in federal agencies. It has regulatory guidance for federal cybersecurity and data privacy laws. The memo cites the [US Department of Defense (DoD) Zero Trust Reference Architecture](https://cloudsecurityalliance.org/artifacts/dod-zero-trust-reference-architecture/): 
 
 "*The foundational tenet of the Zero Trust Model is that no actor, system, network, or service operating outside or within the security perimeter is trusted. Instead, we must verify anything and everything attempting to establish access. It's a dramatic paradigm shift in philosophy of how we secure our infrastructure, networks, and data, from verify once at the perimeter to continual verification of each user, device, application, and transaction.*"
 
