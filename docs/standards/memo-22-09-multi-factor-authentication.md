@@ -14,7 +14,7 @@ ms.custom: it-pro
 
 # Meet multifactor authentication requirements of memorandum 22-09
 
-Learn about using Microsoft Entra ID as the centralized identity management system when implementing Zero Trust principles. See, US Office of Management and Budget (OMB) M 22-09 Memorandum for the Heads of Executive Departments and Agencies.
+Learn about using Microsoft Entra ID as the centralized identity management system when implementing Zero Trust principles. See, US Office of Management and Budget (OMB) M 22-09 Memorandum for the Heads of Executive Departments and Agencies. 
 
 The memo requirements are that employees use enterprise-managed identities to access applications, and that multifactor authentication protects employees from sophisticated online attacks, such as phishing. This attack method attempts to obtain and compromise credentials, with links to inauthentic sites.
 
