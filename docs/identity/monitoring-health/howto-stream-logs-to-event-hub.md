@@ -27,7 +27,6 @@ This article shows how you can stream your logs to an event hub, to integrate wi
 
 ## Stream logs to an event hub
 
-[!INCLUDE [portal update](../../includes/portal-update.md)]
 
 [!INCLUDE [diagnostic-settings-include](../../includes/diagnostic-settings-include.md)]
 

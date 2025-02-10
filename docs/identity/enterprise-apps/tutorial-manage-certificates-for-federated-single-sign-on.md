@@ -59,7 +59,6 @@ The following two sections help you perform these steps.
 
 ### Create a new certificate
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 First create and save the new certificate with a different expiration date:
 

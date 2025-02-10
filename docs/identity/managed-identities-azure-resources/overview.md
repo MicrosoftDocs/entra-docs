@@ -30,9 +30,6 @@ Here are some of the benefits of using managed identities:
 - You can use managed identities to authenticate to any resource that supports [Microsoft Entra authentication](~/identity/authentication/overview-authentication.md), including your own applications.
 - Managed identities can be used at no extra cost.
 
-> [!NOTE]
-> Managed identities for Azure resources is the new name for the service formerly known as Managed Service Identity (MSI).
-
 ## Managed identity types
 
 There are two types of managed identities:

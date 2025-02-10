@@ -88,7 +88,6 @@ This article covers the advanced configuration, a flexible SHA implementing that
 
 ## Register F5 BIG-IP in Microsoft Entra ID
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Before BIG-IP can hand off preauthentication to Microsoft Entra ID, register it in your tenant. This process initiates SSO between both entities. The app you create from the F5 BIG-IP gallery template is the relying party that represents the SAML SP for the BIG-IP published application.
 

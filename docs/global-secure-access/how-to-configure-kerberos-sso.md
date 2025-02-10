@@ -25,7 +25,7 @@ Before you get started with single sign-on, make sure your environment is ready.
 ### Publish resources for use with single sign-on
 To test single sign-on, create a new enterprise application that publishes a file share. Using an enterprise application to publish your file share lets you assign a Conditional Access policy to the resource and enforce extra security controls, such as multifactor authentication.
 
-1. Sign in to [Microsoft Entra](https://entra.microsoft.com/) as at least a [Application administrator](reference-role-based-permissions.md#application-administrator). 
+1. Sign in to [Microsoft Entra](https://entra.microsoft.com/) as at least a [Application Administrator](reference-role-based-permissions.md#application-administrator). 
 1. Browse to **Global Secure Access** > **Applications** > **Enterprise Applications**.
 1. Select **New Application**. 
 1. Add a new app segment with the IP of your file server using port `445/TCP` and then select **Save**. The Server Message Block (SMB) protocol uses the port.
@@ -63,7 +63,7 @@ The Domain Controller ports are required to enable SSO to on-premises resources.
 > [!NOTE]
 > The guide focuses on enabling SSO to on-premises resources and excludes configuration required for Windows domain-joined clients to perform domain operations (password change, Group Policy, etc.).
 
-1. Sign in to [Microsoft Entra](https://entra.microsoft.com/) as at least a [Application administrator](reference-role-based-permissions.md#application-administrator).
+1. Sign in to [Microsoft Entra](https://entra.microsoft.com/) as at least a [Application Administrator](reference-role-based-permissions.md#application-administrator).
 1. Browse to **Global Secure Access** > **Applications** > **Enterprise Applications**.
 1. Select **New Application** to create a new application to publish your Domain Controllers.
 1. Select **Add application segment** and then add all of your Domain Controllers’ IPs or Fully Qualified Domain Names (FQDNs) and ports as per the table. Only the Domain Controllers in the Active Directory site where the Private Access connectors are located should be published.

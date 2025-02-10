@@ -48,7 +48,6 @@ To finish this tutorial, you need the following resources and privileges:
 
 ## Enable self-service password reset
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Microsoft Entra ID lets you enable SSPR for *None*, *Selected*, or *All* users. This granular ability lets you choose a subset of users to test the SSPR registration process and workflow. When you're comfortable with the process and the time is right to communicate the requirements with a broader set of users, you can select a group of users to enable for SSPR. Or, you can enable SSPR for everyone in the Microsoft Entra tenant.
 

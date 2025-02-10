@@ -23,7 +23,6 @@ Because this configuration is widely used with the *Workday to Active Directory 
 
 ## Step 1: Retrieve your Provisioning App Service Principal ID (Object ID)
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.

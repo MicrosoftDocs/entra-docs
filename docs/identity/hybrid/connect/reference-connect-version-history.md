@@ -97,14 +97,14 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 ### Release status
 
-01/15/2025: Released for download
+01/15/2025: Released for download and autoupgrade
 
 ### Added Features
  - Auditing administrator events in Microsoft Entra Connect Sync enabled for logging any admin changes made on Entra Connect Sync. This includes changes made using the UI and the PowerShell scripts. For more information see [Auditing administrator events in Microsoft Entra Connect Sync (Public Preview)](admin-audit-logging.md)
 
 ### Bug fixes
 - Fixed the removal of the SSPR configuration when changes are made on the Azure AD Connector and saved in the Sync Service manager UI
-- Fixed validation for the global administrator/hybrid identity administrator role done during Entra Connect Sync installation and users with global administrator/hybrid identity administrator through Privileged Identity Management (PIM). 
+- Fixed validation for the Global Administrator/Hybrid Identity Administrator role done during Entra Connect Sync installation and users with Global Administrator/Hybrid Identity Administrator through Privileged Identity Management (PIM). 
 - Fixed the "no registered protocol handlers" error on Federate with AD FS scenario.
 - Fixed "Relying party must be unique (conflict error)" error on Federate with AD FS scenario.
 

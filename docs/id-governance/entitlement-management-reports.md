@@ -25,7 +25,6 @@ Watch the following video to learn how to view what resources users have access 
 
 ## View users assigned to an access package
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 This report enables you to list all of the users who are assigned to an access package.
 

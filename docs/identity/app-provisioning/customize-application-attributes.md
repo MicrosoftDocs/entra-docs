@@ -28,7 +28,6 @@ You can customize the default attribute-mappings according to your business need
 
 ## Editing user attribute-mappings
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Follow these steps to access the **Mappings** feature of user provisioning:
 

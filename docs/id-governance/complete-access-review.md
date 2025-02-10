@@ -29,7 +29,6 @@ For more information, see: [License requirements](access-reviews-overview.md#lic
  
 ## View the status of an access review
  
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 Do the following steps to track the progress of access reviews as they're completed.
  
