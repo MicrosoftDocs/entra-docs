@@ -5,7 +5,7 @@ description: Learn about using QR code authentication method in Microsoft Entra 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/07/2025
+ms.date: 02/10/2025
 
 ms.author: justinha
 author: aanjusingh

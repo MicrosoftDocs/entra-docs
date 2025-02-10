@@ -5,7 +5,7 @@ description: Learn about how to enable QR code authentication method in Microsof
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/07/2025
+ms.date: 02/10/2025
 
 ms.author: justinha
 author: aanjusingh
@@ -25,7 +25,7 @@ This topic covers how to enable the QR code authentication method in the Authent
 - Android, iOS or iPadOS (iOS/iPadOS version 15.0 or later) shared devices. 
 - Shared device mode enabled on the shared devices (optional but highly recommended). 
 - A printer to print 2" x 2" QR codes. 
-- Teams app installed on the shared device (Android version 1.0.0.2024143204 or later and iOS version 1.0.0.77.2024132501 or later)
+- Teams app installed on the shared device (Android version 1.0.0.2024143204 or later, and iOS version 1.0.0.77.2024132501 or later).
 - [Enable and setup My Staff portal](~/identity/role-based-access-control/my-staff-configure.md#how-to-enable-my-staff) if you plan for frontline managers to use My Staff to provision, manage, and reset QR code and PINs. 
 
 ## Enable QR code authentication method
@@ -205,7 +205,7 @@ If a QR code authentication method is deleted for a user, they can no longer sig
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/delete-qr-code-method-admin-center.png" alt-text="Screenshot that shows how to delete the QR code authentication method for a user in the Microsoft Entra admin center.":::
 
-### Delete the QR code authentication method for a user in in My Staff
+### Delete the QR code authentication method for a user in My Staff
 
 [!Include [Edit QR code](../../includes/delete-qr-code-authentication-method-my-staff.md)]
 

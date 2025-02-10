@@ -16,6 +16,6 @@
 
    :::image type="content" border="true" source="media/add-qr-code-my-staff/activation-date.png" alt-text="Screenshot that shows how to set the activation date for a QR code authentication method.":::
 
-1. Save the PIN, download or print the QR code to print, and then click **Done**. The QR code image download has the smallest optimum print size. If you reduce the size, the QR code is hard to scan. You can't regenerate the same QR code because it has a unique secret. If the QR code can’t work for some reason, delete it. Create a new QR code for the user.
+1. Save the PIN, download or print the QR code, and then click **Done**. The QR code image download has the smallest optimum print size. If you reduce the size, the QR code is hard to scan. You can't regenerate the same QR code because it has a unique secret. If the QR code can’t work for some reason, delete it. Create a new QR code for the user.
 
    :::image type="content" border="true" source="media/add-qr-code-my-staff/qr-code-done.png" alt-text="Screenshot that shows a QR code authentication method after an administrator adds it.":::

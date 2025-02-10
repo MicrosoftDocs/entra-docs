@@ -1,5 +1,5 @@
 
-1. To delete QR code auth method itself, click **Delete QR code method**.
+1. To delete the QR code auth method itself, click **Delete QR code method**.
 
    :::image type="content" border="true" source="media/delete-qr-code-authentication-method-my-staff/delete-qr-code-method-my-staff.png" alt-text="Screenshot that shows how to delete the QR code authentication method in My Staff.":::
 
