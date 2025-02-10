@@ -112,7 +112,53 @@ You can add a QR code authentication method for a user by using the Microsoft En
 
 This example adds QR code authentication method for a user: 
 
-:::image type="content" border="true" source="media/how-to-authentication-qr-code/add-qr-code-graph.png" alt-text="Screenshot that shows Microsoft Graph response after you add a QR code authentication method for a user.":::
+- **Request**
+
+  ```https
+  HTTP PUT/users/{id | userPrincipalName}/authentication/qrCodePinMethod
+  
+  
+  {
+    "standardQRCode": {
+      "expireDateTime": "2024-12-30T12:00:00Z",
+      "startDateTime": "2024-10-30T12:00:00Z"
+    },
+    "pin": {
+      "code": "<PIN>"
+    }
+  }
+  ```
+
+- **Response**
+
+  ```https
+  HTTP/1.1 201 Created
+  Location: /beta/users//authentication/qrCodePinMethod
+  Content-type: application/json
+  {
+    "standardQRCode": {
+      "id"" ""
+      "expireDateTime": "2024-12-30T12:00:00Z",
+      "startDateTime": "2024-10-30T12:00:00Z"
+      "createdDateTime": "2024-10-30T12:00:00Z",
+      "lastUsedDateTime": null,
+       "image":
+          {
+    "binaryValue": "<binaryImageData>",
+           "version": 1,
+           "errorCorrectionLevel": "H".
+           "rawContent": <binary data encoded in QR>        
+    }
+      },
+    "temporaryQRCode": null,
+    "pin": {
+      "code": "<PIN>",
+      "isForcePinChangeRequired": true,
+      "createdDateTime": "2024-10-30T12:00:00Z",
+      "updatedDateTime": null
+    }  
+  }
+  ```
 
 This example confirms whether QR code authentication method is added for the user:
 
