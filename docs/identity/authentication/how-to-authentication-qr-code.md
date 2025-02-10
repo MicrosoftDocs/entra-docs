@@ -568,6 +568,8 @@ This section covers how to create policies that restrict QR code authentication 
 
 ## Related content
 
-[Authentication methods in Microsoft Entra ID - QR code authentication method (Preview)](concept-authentication-qr-code.md)
+- [Authentication methods in Microsoft Entra ID - QR code authentication method (Preview)](concept-authentication-qr-code.md)
+- [Manage your users with My Staff](~/identity/role-based-access-control/my-staff-configure.md)
+- [What authentication and verification methods are available in Microsoft Entra ID?](concept-authentication-methods.md)
 
 

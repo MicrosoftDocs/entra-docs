@@ -108,14 +108,13 @@ Users can sign in to their organization with a QR code, or they can directly sig
 ### Mobile web sign-in expereince
 You can use Microsoft's web browser login experience (login.microsoft.com) to sign in users. Users can click **Sign in options** > **Sign in to an organization** > **Sign in with a QR code**.
 
-![Screenshot that shows how to sign in to Microsoft](https://github.com/user-attachments/assets/08a4ab3a-243c-4f68-a2e9-8a3a9411d8ca)
+:::image type="content" source="media/concept-authentication-qr-code/sign-in-web.png" alt-text="Screenshot that shows how to sign in to web apps on a mobile device.":::
 
 
 ### Mobile native app sign-in expereince 
 You can optimize sign-in for your apps by using Microsoft Authentication Library (MSAL) to add a QR code sign-in option to your apps sign-in page. This option eliminates two clicks to scan the QR code. For example, you can add QR code sign-in to the Teams app.
 
-![Screenshot that shows how to sign in to native apps](https://github.com/user-attachments/assets/23ae8dc1-e6be-492c-b998-c426b5518343)
-
+:::image type="content" source="media/concept-authentication-qr-code/sign-in-app.png" alt-text="Screenshot that shows how to sign in to mobile native apps.":::
 
 ## Unsupported user scenarios in current release
 
@@ -123,9 +122,10 @@ You can optimize sign-in for your apps by using Microsoft Authentication Library
 - Bulk provisioning of QR code and PIN
 - QR code scan by barcode scanners
 - QR code authentication doesn't work with desktop apps or browsers
-- Custom tenant endpoint for sign in. 
-
+- Custom tenant endpoint for sign in 
 
 ## Related content
 
-[How to enable the QR code authentication method in Microsoft Entra ID (Preview)](how-to-authentication-qr-code.md)
+- [How to enable the QR code authentication method in Microsoft Entra ID (Preview)](how-to-authentication-qr-code.md)
+- [Manage your users with My Staff](~/identity/role-based-access-control/my-staff-configure.md)
+- [What authentication and verification methods are available in Microsoft Entra ID?](concept-authentication-methods.md)
