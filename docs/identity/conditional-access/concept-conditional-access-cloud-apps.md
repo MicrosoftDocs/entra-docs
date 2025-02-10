@@ -131,11 +131,8 @@ To view [sign-in logs](/entra/identity/monitoring-health/concept-sign-ins) for t
 1. Add a filter for **Client credential type**.
 1. Adjust the filter to view a specific set of logs based on the client credential used in the sign-in.
 
-<<<<<<< HEAD
-=======
 For more information see the article [Public client and confidential client applications](/entra/identity-platform/msal-client-applications).
 
->>>>>>> cc980de7b9275534053ee06bf0ca0c679bc434e5
 <a name='all-cloud-apps'></a>
 
 ### All resources
