@@ -133,7 +133,7 @@ This example adds QR code authentication method for a user:
 
   ```https
   HTTP/1.1 201 Created
-  Location: /beta/users/aaaaaaaa-bbbb-cccc-1111-222222222222/authentication/qrCodePinMethod
+  Location: /beta/users/aaaaaaaa-bbbb-cccc-1111-222222222222/authentication/qrCodePinMethod`
   Content-type: application/json
 
   {
@@ -166,7 +166,7 @@ This example confirms whether QR code authentication method is added for the use
 - **Request**
 
   ```https
-  GET https://graph.microsoft.com/bet/users/flokreg@contoso.com/authentication/qrCodePinMethod
+  GET https://graph.microsoft.com/bet/users/flokreg@contoso.com/authentication/qrCodePinMethod`
   ```
 
 
@@ -247,13 +247,91 @@ To deprovision the QR code, you can delete the temporary QR code or let it expir
 
 ### Edit the QR code authentication method for a user in Microsoft Graph API
 
-- This example shows how to delete the standard QR code for a user if they lose their badge, and create a new standard QR code. The user isn't required to change their PIN.
+This example shows how to delete the standard QR code for a user if they lose their badge, and create a new standard QR code. The user isn't required to change their PIN.
 
-  :::image type="content" border="true" source="media/how-to-authentication-qr-code/delete-standard-qr-code-graph.png" alt-text="Screenshot that shows how to delete a standard QR code for a user in Microsoft Graph.":::
+Delete the standard QR code:
 
-  :::image type="content" border="true" source="media/how-to-authentication-qr-code/replace-qr-code-graph.png" alt-text="Screenshot that shows how to replace a deleted standard QR code for a user in Microsoft Graph.":::
+- **Request**
 
-  :::image type="content" border="true" source="media/how-to-authentication-qr-code/get-standard-qr-code-graph.png" alt-text="Screenshot that shows how to get a deleted standard QR code for a user in Microsoft Graph.":::
+  ```https
+  DELETE https://graph.microsoft.com/bet/users/flokreg@contoso.com/authentication/qrCodePinMethod/standardQRCode`
+  ```
+
+
+- **Response**
+
+  ```https
+  HTTP/1.1 204 No Content
+  ```
+
+Create a standard QR code:
+
+- **Request**
+
+  ```https
+  HTTP PATCH/users/{id | userPrincipalName}/authentication/qrCodePinMethod/standardQRCode`
+  
+  
+  {
+      "startDateTime": "2024-10-30T12:00:00Z",
+      "expireDateTime": "2024-12-30T12:00:00Z"
+  }
+  ```
+
+- **Response**
+
+  ```https
+  HTTP/1.1 201 Created
+  Location: /beta/users/aaaaaaaa-bbbb-cccc-1111-222222222222/authentication/qrCodePinMethod/standardQRCode`
+  Content-type: application/json
+
+  {
+      "id": "BBBBBBBB-1C1C-2D2D-3E3E-444444444444"
+      "expireDateTime": "2024-12-30T12:00:00Z",
+      "startDateTime": "2024-10-30T12:00:00Z"
+      "createdDateTime": "2024-10-30T12:00:00Z",
+      "lastUsedDateTime": null,
+       "image":
+          {
+    "binaryValue": "<binaryImageData>",
+           "version": 1,
+           "errorCorrectionLevel": "H".
+           "rawContent": <binary data encoded in QR>        
+    }
+    }
+  
+Get a standard QR code:
+
+- **Request**
+
+  ```https
+  GET https://graph.microsoft.com/bet/users/{id|UPN}/authentication/qrCodePinMethod/standardQRCode`
+  ```
+
+  ```https
+  HTTP PATCH/users/{id | userPrincipalName}/authentication/qrCodePinMethod/standardQRCode`
+  
+  
+  {
+      "startDateTime": "2024-10-30T12:00:00Z",
+      "expireDateTime": "2024-12-30T12:00:00Z"
+  }
+  ```
+
+- **Response**
+
+  ```https
+  HTTP/1.1 200 OK
+  Content-type: application/json
+
+  {
+      "id": "BBBBBBBB-1C1C-2D2D-3E3E-444444444444",
+      "image": null,
+      "expireDateTime": "2024-12-30T12:00:00Z",
+      "startDateTime": "2024-10-30T12:00:00Z"
+      "createdDateTime": "2024-10-30T12:00:00Z",
+      "lastUsedDateTime": "2024-12-30T12:00:00Z"
+  }
 
 - This example shows how to create a temporary QR code for a user. The user can use the existing PIN. 
 
