@@ -2037,7 +2037,7 @@ Assign the Organizational Branding Administrator role to users who need to do th
 Assign the Organizational Data Source Administrator role to users who need to do the following tasks:
 
 - Manage settings related to ingesting and managing organizational data in Microsoft 365
-- Upload, update, and delete organizational data for the specified applications
+- Upload, update, and delete organizational data for the specified applications and general usage in Microsoft 365
 - Export organizational data from the authorized applications
 
 [Learn more](/viva/import-orgdata)
