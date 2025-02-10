@@ -88,7 +88,7 @@ items:
       href: howto-integrate-activity-logs-with-azure-monitor-logs.yml  
     - name: Analyze activity logs in Log Analytics
       href: howto-analyze-activity-logs-log-analytics.md
-  - name: Microsoft Entra Health 
+  - name: Microsoft Entra Health Monitoring
     expanded: false
     items:
     - name: How to configure Microsoft Entra Health email notifications
