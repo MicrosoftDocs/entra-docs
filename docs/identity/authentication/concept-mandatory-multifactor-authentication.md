@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/30/2025
+ms.date: 02/07/2025
 ms.author: justinha
 author: najshahid
 manager: amycolannino
@@ -16,7 +16,7 @@ ms.reviewer: nashahid, gkinasewitz
 
 At Microsoft, we're committed to providing our customers with the highest level of security. One of the most effective security measures available to them is multifactor authentication (MFA). [Research by Microsoft](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RW166lD) shows that MFA can block more than 99.2% of account compromise attacks. 
 
-That's why, starting in 2024, we'll enforce mandatory multifactor authentication (MFA) for all Azure sign-in attempts. For more background about this requirement, check out our [blog post](https://aka.ms/azuremfablogpost). This topic covers which applications and accounts are affected, how enforcement gets rolled out to tenants, and other common questions and answers.
+That's why, starting in 2024, we'll enforce mandatory MFA for all Azure sign-in attempts. For more background about this requirement, see our [blog post](https://aka.ms/azuremfablogpost). This topic covers which applications and accounts are affected, how enforcement gets rolled out to tenants, and other common questions and answers.
 
 There's no change for users if your organization already enforces MFA for them, or if they sign in with stronger methods like passwordless or passkey (FIDO2). To verify that MFA is enabled, see [How to verify that users are set up for mandatory MFA](how-to-mandatory-multifactor-authentication.md). 
 
@@ -46,7 +46,6 @@ The following table lists affected apps and URLs for Microsoft 365.
 | Microsoft 365 admin center | `https://admin.cloud.microsoft` | February 2025 |
 | Microsoft 365 admin center | `https://admin.microsoft.com` | February 2025 |
 
-
 ### Accounts 
 
 All users who sign into the [applications](#applications) listed earlier to perform any Create, Read, Update, or Delete (CRUD) operation must complete MFA when the enforcement begins. Users aren't required to use MFA if they access other applications, websites, or services hosted on Azure. Each application, website, or service owner listed earlier controls the authentication requirements for users. 
@@ -54,6 +53,17 @@ All users who sign into the [applications](#applications) listed earlier to pe
 Break glass or emergency access accounts are also required to sign in with MFA once enforcement begins. We recommend that you update these accounts to use [passkey (FIDO2)](~/identity/authentication/how-to-enable-passkey-fido2.md) or configure [certificate-based authentication](~/identity/authentication/how-to-certificate-based-authentication.md) for MFA. Both methods satisfy the MFA requirement. 
 
 Workload identities, such as managed identities and service principals, aren't impacted by [either phase](#enforcement-phases) of this MFA enforcement. If user identities are used to sign in as a service account to run automation (including scripts or other automated tasks), those user identities need to sign in with MFA once enforcement begins. User identities aren't recommended for automation. You should migrate those user identities to [workload identities](~/workload-id/workload-identities-overview.md).
+
+### Client libraries
+
+The OAuth 2.0 Resource Owner Password Credentials (ROPC) token grant flow is incompatible with MFA. Once MFA is enabled in your Entra tenant, ROPC-based APIs used in your applications will begin throwing exceptions. Guidance for migrating away from ROPC-based APIs in [Microsoft Authentication Libraries (MSAL)](/entra/msal/) is provided at [How to migrate away from ROPC](/entra/identity-platform/v2-oauth-ropc#how-to-migrate-away-from-ropc).
+
+The same general MSAL guidance applies to the Azure Identity libraries for [.NET](/dotnet/api/overview/azure/identity-readme), [Java](/java/api/overview/azure/identity-readme), [JavaScript](/javascript/api/overview/azure/identity-readme), and [Python](/python/api/overview/azure/identity-readme). The `UsernamePasswordCredential` class provided in those languages' libraries uses MSAL ROPC-based APIs. Changes are required if you're doing one of the following things in your application:
+
+- Using `DefaultAzureCredential` or `EnvironmentCredential` with the following two environment variables set:
+    - `AZURE_USERNAME`
+    - `AZURE_PASSWORD`
+- Using `UsernamePasswordCredential`
 
 ### Migrate user-based service accounts to workload identities
 
@@ -104,7 +114,7 @@ After enforcement, a banner appears in Microsoft Entra multifactor authenticatio
 
 ## External authentication methods and identity providers 
 
-Support for external MFA solutions is in preview with [external authentication methods](https://aka.ms/EAMAdminDocs), and can be used to meet the MFA requirement. The legacy Conditional Access custom controls preview doesn't satisfy the MFA requirement. You should migrate to the external authentication methods preview to use an external solution with Microsoft Entra ID.  
+Support for external MFA solutions is in preview with [external authentication methods](https://aka.ms/EAMAdminDocs), and can be used to meet the MFA requirement. The legacy Conditional Access custom controls preview doesn't satisfy the MFA requirement. You should migrate to the external authentication methods preview to use an external solution with Microsoft Entra ID.
 
 If you're using a federated Identity Provider (IdP), such as Active Directory Federation Services, and your MFA provider is integrated directly with this federated IdP, the federated IdP must be configured to send an MFA claim. For more information, see [Expected inbound assertions for Microsoft Entra MFA](how-to-mfa-expected-inbound-assertions.md).
 

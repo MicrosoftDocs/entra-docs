@@ -5,7 +5,11 @@ description: Web browser and native app support for FIDO2 passwordless authentic
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
+<<<<<<< HEAD
 ms.date: 02/03/2025
+=======
+ms.date: 02/06/2025
+>>>>>>> cc980de7b9275534053ee06bf0ca0c679bc434e5
 
 author: justinha
 ms.author: justinha
@@ -100,7 +104,11 @@ The following tables lists which authentication brokers are supported for differ
 
 ### Microsoft application support without authentication broker 
 
+<<<<<<< HEAD
 The following table lists Microsoft application support for passkey (FIDO2) without an authentication broker. 
+=======
+The following table lists Microsoft application support for passkey (FIDO2) without an authentication broker. Update your apps to the latest version to make sure they work with passkeys.
+>>>>>>> cc980de7b9275534053ee06bf0ca0c679bc434e5
 
 | Application    | macOS    | iOS      | Android  |
 |----------------|----------|----------|----------|

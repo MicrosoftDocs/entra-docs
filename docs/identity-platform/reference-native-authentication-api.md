@@ -4,7 +4,7 @@ description: Find out how to use native authentication APIs to authenticate user
 author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
-ms.service: identity-platform 
+ms.service: entra-external-id 
 ms.subservice: external
 ms.topic: reference
 ms.date:  09/30/2024

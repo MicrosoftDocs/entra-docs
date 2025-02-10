@@ -131,6 +131,11 @@ To view [sign-in logs](/entra/identity/monitoring-health/concept-sign-ins) for t
 1. Add a filter for **Client credential type**.
 1. Adjust the filter to view a specific set of logs based on the client credential used in the sign-in.
 
+<<<<<<< HEAD
+=======
+For more information see the article [Public client and confidential client applications](/entra/identity-platform/msal-client-applications).
+
+>>>>>>> cc980de7b9275534053ee06bf0ca0c679bc434e5
 <a name='all-cloud-apps'></a>
 
 ### All resources
@@ -157,7 +162,11 @@ For more information on the scopes mentioned, see [Microsoft Graph permissions r
 
 #### Protecting directory information
 
+<<<<<<< HEAD
 If the [recommended baseline MFA policy without app exclusions](policy-all-users-mfa-strength.md) can't be configured due to business reasons, and your organization’s security policy must include these low privilege scopes, the alternative is to create a separate Conditional Access policy targeting `Windows Azure Active Directory` (00000002-0000-0000-c000-000000000000). Windows Azure Active Directory (also called Azure AD Graph) is a resource representing data stored in the directory such as users, groups, and applications. The Windows Azure Active Directory resource is included in **All resources** but can be individually targeted in Conditional Access policies by using the following steps:
+=======
+If the [recommended baseline MFA policy without app exclusions](policy-all-users-mfa-strength.md) can't be configured due to business reasons, and your organization’s security policy must include directory-related low privilege scopes (`User.Read`, `User.Read.All`, `User.ReadBasic.All`, `People.Read`, `People.Read.All`, `GroupMember.Read.All`, `Member.Read.Hidden`), the alternative is to create a separate Conditional Access policy targeting `Windows Azure Active Directory` (00000002-0000-0000-c000-000000000000). Windows Azure Active Directory (also called Azure AD Graph) is a resource representing data stored in the directory such as users, groups, and applications. The Windows Azure Active Directory resource is included in **All resources** but can be individually targeted in Conditional Access policies by using the following steps:
+>>>>>>> cc980de7b9275534053ee06bf0ca0c679bc434e5
  
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as an [Attribute Definition Administrator](/entra/identity/role-based-access-control/permissions-reference#attribute-definition-administrator) and [Attribute Assignment Administrator](/entra/identity/role-based-access-control/permissions-reference#attribute-assignment-administrator).
 1. Browse to **Protection** > **Custom security attributes**.
