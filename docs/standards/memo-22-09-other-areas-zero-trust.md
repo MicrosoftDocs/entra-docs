@@ -12,7 +12,7 @@ ms.date: 02/10/2025
 ms.custom: it-pro
 ---
 
-# Other areas of Zero Trust addressed in memorandum 22-09 
+# Other areas of Zero Trust addressed in Memo 22-09
 
 The other articles in this guidance address the identity pillar of Zero Trust principles, as described in the US Office of Management and Budget (OMB) [Memo 22-09, Memorandum for the Heads of Executive Departments and Agencies](https://bidenwhitehouse.archives.gov/wp-content/uploads/2022/01/M-22-09.pdf). This article covers Zero Trust maturity model areas beyond the identity pillar, and it addresses the following themes:
 
