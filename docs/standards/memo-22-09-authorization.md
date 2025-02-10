@@ -8,13 +8,13 @@ author: gargi-sinha
 ms.author: gasinh
 manager: martinco
 ms.reviewer: martinco
-ms.date: 08/23/2024
+ms.date: 02/10/2025
 ms.custom: it-pro
 ---
 
 # Meet authorization requirements of memorandum 22-09
 
-This article series has guidance to employ Microsoft Entra ID as a centralized identity management system when implementing Zero Trust principles. See, US Office of Management and Budget (OMB) [M 22-09 Memorandum for the Heads of Executive Departments and Agencies](https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf).
+This article series has guidance to employ Microsoft Entra ID as a centralized identity management system when implementing Zero Trust principles. It's based on US Office of Management and Budget (OMB) M-22-09 Memorandum for the Heads of Executive Departments and Agencies.
 
 The memo requirements are enforcement types in multifactor authentication policies, and controls for devices, roles, attributes, and privileged access management.
 
