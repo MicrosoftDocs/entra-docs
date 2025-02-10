@@ -3,7 +3,7 @@ title: The Global Secure Access Client for macOS
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the macOS client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 02/04/2025
+ms.date: 02/10/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -58,7 +58,7 @@ The following instructions are for [Microsoft Intune](/mem/intune/apps/apps-win3
 1. In the **Settings picker**, expand the **System Configuration** category and select **System Extensions**.
 1. From the **System Extensions** subcategory, select **Allowed System Extensions**.
 :::image type="content" source="media/how-to-install-macos-client/macOS-settings-picker.png" alt-text="Screenshot of the Settings picker with the category and subcategory selections highlighted.":::
-1. Close the Settings picker.
+1. Close the **Settings picker**.
 1. In the list of **Allowed System Extensions**, select **+ Edit instance**.
 1. In the **Configure instance** dialog, configure the System Extensions payload settings with the following entries:
 
