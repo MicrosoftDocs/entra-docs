@@ -37,36 +37,6 @@ IRSF poses a significant threat to online businesses and can cause reputational 
 
 For SMS verification, the following region codes require an opt-in. This means that if you'd like to use telecom in these regions, you'll have to reach out to support. 
 
-<<<<<<< HEAD
-| Region Code | Region Name                                    |
-|:----------- |:---------------------------------------------- |
-| 222         |  Mauritania                                    |
-| 998         |  Uzbek                                         |
-| 63 | Philippines | 
-| 20 | Egypt | 
-| 967 | Yemen | 
-| 84 | Vietnam | 
-| 62 | Indonesia | 
-| 234 | Nigeria | 
-| 972 | Israel | 
-| 233 | Ghana | 
-| 92 | Pakistan | 
-| 966 | Saudi Arabia | 
-| 971 | United Arab Emriates | 
-| 94 | Sri Lanka | 
-| 258 | Mozambique | 
-| 502 | Guatemala | 
-| 974 | Qatar | 
-| 591 | Bolivia | 
-| 254 | Kenya | 
-| 255 | Tanzania | 
-| 7 | Russia / Kazakhstan | 
-| 380 | Ukraine | 
-| 216 | Tunisia | 
-| 212 | Morocco | 
-| 257 | Burundi | 
-
-=======
 | Region Code | Region Name |
 |------------|------------|
 | 7          | Russia |
@@ -226,7 +196,6 @@ For SMS verification, the following region codes require an opt-in. This means t
 | 1849       | Dominican Republic |
 | 1869       | Saint Kitts and Nevis |
 | 1876       | Jamaica |
->>>>>>> cc980de7b9275534053ee06bf0ca0c679bc434e5
 
 ## Voice verification
 For voice verification, the following region codes require an opt-in.
