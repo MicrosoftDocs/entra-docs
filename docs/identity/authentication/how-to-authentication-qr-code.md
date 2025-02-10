@@ -133,11 +133,11 @@ This example adds QR code authentication method for a user:
 
   ```https
   HTTP/1.1 201 Created
-  Location: /beta/users//authentication/qrCodePinMethod
+  Location: /beta/users/aaaaaaaa-bbbb-cccc-1111-222222222222/authentication/qrCodePinMethod
   Content-type: application/json
   {
     "standardQRCode": {
-      "id"" ""
+      "id": "bbbbbbbb-1c1c-2d2d-3e3e-444444444444"
       "expireDateTime": "2024-12-30T12:00:00Z",
       "startDateTime": "2024-10-30T12:00:00Z"
       "createdDateTime": "2024-10-30T12:00:00Z",
