@@ -135,9 +135,10 @@ This example adds QR code authentication method for a user:
   HTTP/1.1 201 Created
   Location: /beta/users/aaaaaaaa-bbbb-cccc-1111-222222222222/authentication/qrCodePinMethod
   Content-type: application/json
+
   {
     "standardQRCode": {
-      "id": "bbbbbbbb-1c1c-2d2d-3e3e-444444444444"
+      "id": "BBBBBBBB-1C1C-2D2D-3E3E-444444444444"
       "expireDateTime": "2024-12-30T12:00:00Z",
       "startDateTime": "2024-10-30T12:00:00Z"
       "createdDateTime": "2024-10-30T12:00:00Z",
@@ -162,8 +163,44 @@ This example adds QR code authentication method for a user:
 
 This example confirms whether QR code authentication method is added for the user:
 
-:::image type="content" border="true" source="media/how-to-authentication-qr-code/confirm-add-qr-code-graph.png" alt-text="Screenshot that shows confirmation after you add a QR code authentication method for a user.":::
+- **Request**
 
+  ```https
+  GET https://graph.microsoft.com/bet/users/flokreg@contoso.com/authentication/qrCodePinMethod
+  ```
+
+
+- **Response**
+
+  ```https
+  HTTP/1.1 200 OK
+  Content-type: application/json
+  
+  {
+    "id": "<id>",
+    "standardQRCode": {
+      "id": "BBBBBBBB-1C1C-2D2D-3E3E-444444444444"
+      "image": null,
+      "expireDateTime": "2024-12-30T12:00:00Z",
+      "startDateTime": "2024-10-30T12:00:00Z"
+      "createdDateTime": "2024-10-30T12:00:00Z",
+      "lastUsedDateTime": "2024-12-30T12:00:00Z"
+    },
+    "temporaryQRCode": {
+      "id": "CCCCCCCC-2D2D-3E3E-4F4F-555555555555"
+      "image": null,
+      "expireDateTime": "2024-12-30T12:00:00Z",
+      "startDateTime": "2024-10-30T12:00:00Z"
+      "createdDateTime": "2024-10-30T12:00:00Z",
+      "lastUsedDateTime": "2024-12-30T12:00:00Z"
+    },
+    "pin": {
+      "code": null,
+      "isForcePinChangeRequired": false,
+      "createdDateTime": "2024-10-30T12:00:00Z",
+      "updatedDateTime": "2024-11-30T12:00:00Z"
+    }
+  }
 
 ## Edit the QR code authentication method for a user
 
