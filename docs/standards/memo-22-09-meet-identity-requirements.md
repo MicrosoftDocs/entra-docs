@@ -8,13 +8,13 @@ author: gargi-sinha
 ms.author: gasinh
 manager: martinco
 ms.reviewer: martinco
-ms.date: 04/28/2023
+ms.date: 02/10/2025
 ms.custom: it-pro
 ---
 
 # Meet identity requirements of memorandum 22-09 with Microsoft Entra ID
 
-The [Executive Order on Improving the Nation’s Cybersecurity (14028)](https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity), directs federal agencies to advance security measures that significantly reduce the risk of successful cyberattacks against federal government digital infrastructure. On January 26, 2022, in support of Executive Order (EO) 14028, the [Office of Management and Budget (OMB)](https://www.whitehouse.gov/omb/) released the federal Zero Trust strategy in [M 22-09 Memorandum for Heads of Executive Departments and Agencies](https://www.whitehouse.gov/wp-content/uploads/2022/01/M-22-09.pdf). 
+The Executive Order on Improving the Nation’s Cybersecurity (14028), directs federal agencies to advance security measures that significantly reduce the risk of successful cyberattacks against federal government digital infrastructure. On January 26, 2022, in support of Executive Order (EO) 14028, the Office of Management and Budget (OMB)] released the federal Zero Trust strategy in M 22-09 Memorandum for Heads of Executive Departments and Agencies. 
 
 This article series has guidance to employ Microsoft Entra ID as a centralized identity management system when implementing Zero Trust principles, as described in memorandum 22-09. 
 
