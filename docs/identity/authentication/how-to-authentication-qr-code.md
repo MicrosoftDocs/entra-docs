@@ -166,7 +166,7 @@ This example confirms whether QR code authentication method is added for the use
 - **Request**
 
   ```https
-  GET https://graph.microsoft.com/bet/users/flokreg@contoso.com/authentication/qrCodePinMethod`
+  GET https://graph.microsoft.com/beta/users/flokreg@contoso.com/authentication/qrCodePinMethod`
   ```
 
 
@@ -249,14 +249,13 @@ To deprovision the QR code, you can delete the temporary QR code or let it expir
 
 This example shows how to delete the standard QR code for a user if they lose their badge, and create a new standard QR code. The user isn't required to change their PIN.
 
-Delete the standard QR code:
+Delete a standard QR code:
 
 - **Request**
 
   ```https
-  DELETE https://graph.microsoft.com/bet/users/flokreg@contoso.com/authentication/qrCodePinMethod/standardQRCode`
+  DELETE https://graph.microsoft.com/beta/users/flokreg@contoso.com/authentication/qrCodePinMethod/standardQRCode`
   ```
-
 
 - **Response**
 
@@ -305,17 +304,7 @@ Get a standard QR code:
 - **Request**
 
   ```https
-  GET https://graph.microsoft.com/bet/users/{id|UPN}/authentication/qrCodePinMethod/standardQRCode`
-  ```
-
-  ```https
-  HTTP PATCH/users/{id | userPrincipalName}/authentication/qrCodePinMethod/standardQRCode`
-  
-  
-  {
-      "startDateTime": "2024-10-30T12:00:00Z",
-      "expireDateTime": "2024-12-30T12:00:00Z"
-  }
+  GET https://graph.microsoft.com/beta/users/{id|UPN}/authentication/qrCodePinMethod/standardQRCode`
   ```
 
 - **Response**
@@ -333,23 +322,117 @@ Get a standard QR code:
       "lastUsedDateTime": "2024-12-30T12:00:00Z"
   }
 
-- This example shows how to create a temporary QR code for a user. The user can use the existing PIN. 
+This example shows how to create a temporary QR code for a user. The user can use the existing PIN. This operation returns an error if a temporary QR code already exists for the user, or if the **expireDateTime** is more than 12 hours past the **startDateTime**. 
 
-  :::image type="content" border="true" source="media/how-to-authentication-qr-code/add-temporary-qr-code-graph.png" alt-text="Screenshot that shows how to add a temporary QR code for a user in Microsoft Graph.":::
+- **Request**
 
-  :::image type="content" border="true" source="media/how-to-authentication-qr-code/get-temporary-qr-code-graph.png" alt-text="Screenshot that shows how to get a temporary QR code for a user in Microsoft Graph.":::
+  ```https
+  HTTP PATCH/users/{id | userPrincipalName}/authentication/qrCodePinMethod/temporaryQRCode`
+  
+  
+  {
+      "startDateTime": "2024-10-30T12:00:00Z",
+      "expireDateTime": "2024-10-30T22:00:00Z"
+  }
+  ```
 
-- This example shows how to delete a temporary QR code for a user.  
+- **Response**
 
-  :::image type="content" border="true" source="media/how-to-authentication-qr-code/delete-temporary-qr-code-graph.png" alt-text="Screenshot that shows how to delete a temporary QR code for a user in Microsoft Graph.":::
+  ```https
+  HTTP/1.1 201 Created
+  Location: /beta/users/aaaaaaaa-bbbb-cccc-1111-222222222222/authentication/qrCodePinMethod/temporaryQRCode`
+  Content-type: application/json
 
-- This example shows how to reset the PIN a QR code authentication method.
+  {
+      "id": "EEEEEEEE-4F$F-5A5A-6B6B-777777777777"
+      "expireDateTime": "2024-10-30T22:00:00Z",
+      "startDateTime": "2024-10-30T12:00:00Z"
+      "createdDateTime": "2024-10-30T12:00:00Z",
+      "lastUsedDateTime": null,
+       "image":
+          {
+    "binaryValue": "<binaryImageData>",
+           "version": 1,
+           "errorCorrectionLevel": "H".
+           "rawContent": <binary data encoded in QR>        
+    }
+    }
 
-  :::image type="content" border="true" source="media/how-to-authentication-qr-code/reset-pin-qr-code-graph.png" alt-text="Screenshot that shows how to reset the PIN for the QR code for a user in Microsoft Graph.":::
 
-- This example shows how to force a user to change their PIN for a QR code authentication method.
+Get a temporary QR code:
 
-  :::image type="content" border="true" source="media/how-to-authentication-qr-code/force-pin-change-graph.png" alt-text="Screenshot that shows how to force a user to change the PIN of their QR code authentication method.":::
+- **Request**
+
+  ```https
+  GET https://graph.microsoft.com/beta/users/{id|UPN}/authentication/qrCodePinMethod/temporaryQRCode`
+  ```
+
+- **Response**
+
+  ```https
+  HTTP/1.1 200 OK
+  Content-type: application/json
+
+  {
+      "id": "EEEEEEEE-4F$F-5A5A-6B6B-777777777777",
+      "image": null,
+      "expireDateTime": "2024-10-30T22:00:00Z",
+      "startDateTime": "2024-10-30T12:00:00Z"
+      "createdDateTime": "2024-10-30T12:00:00Z",
+      "lastUsedDateTime": "2024-10-30T20:00:00Z"
+  }
+
+This example shows how to delete a temporary QR code for a user.  
+
+- **Request**
+
+  ```https
+  DELETE https://graph.microsoft.com/beta/users/flokreg@contoso.com/authentication/qrCodePinMethod/temporaryQRCode`
+  ```
+
+- **Response**
+
+  ```https
+  HTTP/1.1 204 No Content
+  ```
+
+This example shows how to reset the PIN a QR code authentication method:
+
+- **Request**
+
+  ```https
+  PATCH https://graph.microsoft.com/beta/users/flokreg@contoso.com/authentication/qrCodePinMethod/pin`
+  ```
+
+- **Response**
+
+  ```https
+  {
+    "code": <PIN>,
+    "forceChangePinNextSignIn": true,
+    "createdDateTime": "2024-10-30T12:00:00Z",
+    "updatedDateTime": null
+  }
+  ```
+
+This example shows how to force a user to change their PIN for a QR code authentication method:
+
+- **Request**
+
+  ```https
+  PATCH https://graph.microsoft.com/beta/users/flokreg@contoso.com/authentication/qrCodePinMethod/updatePin`
+
+  {
+    "currentPin": "<Old PIN>",
+    "newPin": "<New PIN>"
+  }
+  ```
+
+- **Response**
+
+  ```https
+  HTTP/1.1 204 No Content
+  ```
 
 ## Delete the QR code authentication method for a user
 
@@ -372,7 +455,19 @@ If a QR code authentication method is deleted for a user, they can no longer sig
 
 ### Delete the QR code authentication method for a user in Microsoft Graph API
 
-:::image type="content" border="true" source="media/how-to-authentication-qr-code/delete-qr-code-graph.png" alt-text="Screenshot that shows how to delete a QR code in Microsoft Graph.":::
+This example shows how to delete a standard QR code for a user.  
+
+- **Request**
+
+  ```https
+  DELETE https://graph.microsoft.com/beta/users/flokreg@contoso.com/authentication/qrCodePinMethod/standardQRCode`
+  ```
+
+- **Response**
+
+  ```https
+  HTTP/1.1 204 No Content
+  ```
 
 ## Sign in to Microsoft Teams with a QR code
 
