@@ -201,7 +201,7 @@
                   href: scenario-spa-call-api.md
         - name: Native authentication
           items:
-            - name: Set up CORS in test
+            - name: Set up CORS in test environment
               href: how-to-native-authentication-cors-solution-test-environment.md
             - name: Set up CORS in production
               href: how-to-native-authentication-cors-solution-production-environment.md
