@@ -111,7 +111,48 @@ For each connection, the available columns include:
 
 ## Advanced log collection tab
 The advanced log collection tab allows for the collection of verbose logs of the client, the operating systems, and the network traffic during a specific period. The logs are archived to a ZIP file that can be sent to the administrator or Microsoft Support for investigation.
-- **Start recording**: Select to begin recording the verbose logs. You need to reproduce the issue while recording.
+- **Start recording**: Select to begin recording the verbose logs. You need to reproduce the issue while recording. In the event the issue cannot be reproduced at will, instruct users to collect logs for as long as needed until the issue reappears. The log collection will include several hours of GSA activity.
 - **Stop recording**: After reproducing the issue, select this button to stop the recording and save the collected logs to a ZIP file. Share the ZIP file with support for troubleshooting assistance.
 
 :::image type="content" source="media/troubleshoot-global-secure-access-client-advanced-diagnostics/global-secure-access-client-advanced-advanced-log-collection-tab.png" alt-text="Screenshot showing the Global Secure Access Client - Advanced diagnostics dialog box on the Advanced log collection tab.":::
+
+When you stop advanced log collection, the folder that contains the log files will open. By default, this folder is C:\Program Files\Global Secure Access Client\Logs. You'll see a zip file as well as two ETL files. If needed, you can remove the zip files after issues are resolved, however it is best to leave the ETL files. These are circular logs and removing them can create issues with future log collection. 
+
+The following files are collected:
+|File|Description|
+|---|---|
+|Application-Crash.evtx|Application log filtered by event ID 1001. This is useful if services are crashing.|
+|BindingNetworkDrivers.txt|Result of "Get-NetAdapterBinding -AllBindings -IncludeHidden" showing all the modules bound to network adapters. This is useful to identify if non-Microsoft drivers are bound to the network stack|
+|ClientChecker.log|Results of the GSA client health checks. This is easier to analyze if you load the zip file in the GSA client (see below)|
+|DeviceInformation.log|Environment variables including OS version and GSA client version.|
+|dsregcmd.txt|Output of dsregcmd /status showing device state including Entra Joined, Hybrid Joined, PRT details, and Windows Hello for Business details|
+|filterDriver.txt|Windows Filtering Platform filters|
+|ForwardingProfile.json|The json policy that was delivered to the GSA client and includes the GSA service edge IP address your GSA client is connecting to (*.globalsecureaccess.microsoft.com) as well as forwarding profile rules|
+|GlobalSecureAccess-Boot-Trace.etl|GSA client debug logging|
+|GlobalSecureAccess-Boot-Trace.etl|GSA client debug logging|
+|Multiple .reg files|GSA client registry exports|
+|hosts|Host file|
+|installedPrograms.txt|Windows installed apps, which can by useful to understand what might be causing issues|
+|ipconfig.txt|Ipconfig /all output including IP address and DNS servers that have been assigned to the device|
+|Kerberos_info.txt|Output of klist, klist tgt, and klist cloud_debug. This is useful for troubleshooting kerberos issues, and SSO with Windows Hello for Business|
+|LogsCollectorLog.log and LogsCollectorLog.log.x|Logs for the log collector process itself. This is useful if you are having issues with GSA log collection|
+|Multiple .evtx|Exports of multiple Windows event logs|
+|NetworkInformation.log|Output of route print, NRPT table, and latency results for GSA connectivity test. This is useful to troubleshoot NRPT issues.|
+|RunningProcesses.log|Running processes|
+|systeminfo.txt|System information including hardware, OS versions, and patches|
+|systemWideProxy.txt|Output of netsh winhttp show proxy|
+|userConfiguredProxy|Output of proxy settings in the registry|
+|userSessions.txt|User session list|
+|DNSClient.etl|DNS client logs. This is useful for diagnosomg DNS resolution issues. Open with Event Log viewer, or filter to the specific names of interest with PowerShell: Get-WinEvent -Path .\DNSClient.etl -Oldest | where Message -Match replace with name/FQDN | Out-GridView|
+|InternetDebug.etl|Logs collected using "netsh trace start scenario=internetClient_dbg capture=yes persistent=yes"|
+|NetworkTrace.etl|Net capture taken with pktmon|
+|NetworkTrace.pcap|Network capture including traffic inside the tunnel|
+|NetworkTrace.txt|Pkmon trace in text format|
+|wfplog.cab|Windows Filtering Platform logs|
+
+### Useful Network Traffic Analyzer filters
+In some instances, you may need to investigate traffic within the GSA service tunnel. By default, a network capture will only show encrypted traffic. Instead, analyze the network capture created by GSA advanced log collection in a network traffic analyzer. For example, to see Private DNS traffic being handled by the GSA service, create a filter to view DNS queries handled on IP 6.6.255.254, which targets the IP address that the GSA services use for Private DNS queries to be resolved by your on premises private network connectors.
+
+### Analyse GSA client logs on a dfferent device than where they were collected
+In many cases, you may need to analyze the data your users collect using your own device. To accomplish this, open the GSA client on your device, open Advanced Diagnostic tool, and then click the folder icon to the far right of the menu bar. From here, you can navigate to the the zip file or the GlobalSecureAccess-Trace.etl file. Loading the zip file will also load information including tenant ID, device ID, client version, health check, and forwarding profile rules as if you were troubleshooting locally on the device used for data collection.
+
