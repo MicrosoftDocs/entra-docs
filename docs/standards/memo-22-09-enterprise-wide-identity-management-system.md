@@ -14,7 +14,7 @@ ms.custom: it-pro
 
 # Memo 22-09 enterprise-wide identity management system
 
-M-22-09 Memorandum for Heads of Executive Departments and Agencies requires agencies to develop a consolidation plan for their identity platforms. The goal is to have as few agency-managed identity systems as possible within 60 days of the publication date (March 28, 2022). There are several advantages to consolidating identity platform:
+[M-22-09 Memorandum for Heads of Executive Departments and Agencies](https://bidenwhitehouse.archives.gov/wp-content/uploads/2022/01/M-22-09.pdf) requires agencies to develop a consolidation plan for their identity platforms. The goal is to have as few agency-managed identity systems as possible within 60 days of the publication date (March 28, 2022). There are several advantages to consolidating identity platform:
 
 * Centralize management of identity lifecycle, policy enforcement, and auditable controls
 * Uniform capability and parity of enforcement 
