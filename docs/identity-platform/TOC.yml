@@ -201,12 +201,10 @@
                   href: scenario-spa-call-api.md
         - name: Native authentication
           items:
-            - name: SPA that signs in users
-              items:
-                - name: Set up CORS in test
-                  href: how-to-native-authentication-cors-solution-test-environment.md
-                - name: Set up CORS in production
-                  href: how-to-native-authentication-cors-solution-production-environment.md
+            - name: Set up CORS in test
+              href: how-to-native-authentication-cors-solution-test-environment.md
+            - name: Set up CORS in production
+              href: how-to-native-authentication-cors-solution-production-environment.md
 - name: Web app
   items:
     - name: Web app authentication
