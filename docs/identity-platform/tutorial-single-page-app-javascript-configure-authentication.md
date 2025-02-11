@@ -14,7 +14,7 @@ ms.date: 02/11/2024
 
 # Tutorial: Handle authentication flows in a Vanilla JavaScript SPA
 
-This tutorial is part 3 of a series that demonstrates building a Vanilla JavaScript (JS) single-page application (SPA) and preparing it for authentication. In [part 2 of this series](tutorial-single-page-app-vanillajs-prepare-app.md), you created a Vanilla JS SPA and prepared it for authentication with your external tenant. In this tutorial, you learn how to handle authentication flows in your app by adding Microsoft Authentication Library (MSAL) components.
+This tutorial is part 3 of a series that demonstrates building a Vanilla JavaScript (JS) single-page application (SPA) and preparing it for authentication. In [part 2 of this series](tutorial-single-page-app-javascript-prepare-app.md), you created a Vanilla JS SPA and prepared it for authentication with your external tenant. In this tutorial, you learn how to handle authentication flows in your app by adding Microsoft Authentication Library (MSAL) components.
 
 In this tutorial;
 
@@ -25,7 +25,7 @@ In this tutorial;
 
 ## Prerequisites
 
-* [Tutorial: Create a Vanilla JavaScript SPA for authentication in an external tenant](tutorial-single-page-app-vanillajs-prepare-app.md).
+* [Tutorial: Create a Vanilla JavaScript SPA for authentication in an external tenant](tutorial-single-page-app-javascript-prepare-app.md).
 
 ## Edit the authentication configuration file
 
@@ -277,4 +277,4 @@ The application uses *authPopup.js* to handle the authentication flow when the u
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Part 4: Sign in and sign out of the Vanilla JS SPA](./tutorial-single-page-app-vanillajs-sign-in-sign-out.md)
+> [Part 4: Sign in and sign out of the Vanilla JS SPA](./tutorial-single-page-app-javascript-sign-in-sign-out.md)

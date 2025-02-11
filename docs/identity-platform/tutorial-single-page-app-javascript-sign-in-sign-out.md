@@ -14,7 +14,7 @@ ms.date: 02/11/2024
 
 # Tutorial: Add sign-in and sign-out to a Vanilla JavaScript SPA for an external tenant
 
-This tutorial is the final part of a series that demonstrates building a Vanilla JS single-page application (SPA) and preparing it for authentication using the Microsoft Entra admin center. In [part 3 of this series](tutorial-single-page-app-vanillajs-configure-authentication.md), you created a Vanilla JS in Visual Studio Code and configured it for authentication. This final step shows you how to add sign-in and sign-out functionality to the app.
+This tutorial is the final part of a series that demonstrates building a Vanilla JS single-page application (SPA) and preparing it for authentication using the Microsoft Entra admin center. In [part 3 of this series](tutorial-single-page-app-javascript-configure-authentication.md), you created a Vanilla JS in Visual Studio Code and configured it for authentication. This final step shows you how to add sign-in and sign-out functionality to the app.
 
 In this tutorial, you'll;
 
@@ -25,7 +25,7 @@ In this tutorial, you'll;
 
 ## Prerequisites
 
-* [Tutorial: Prepare your external tenant to authenticate users in a Vanilla JavaScript SPA](tutorial-single-page-app-vanillajs-prepare-app.md).
+* [Tutorial: Prepare your external tenant to authenticate users in a Vanilla JavaScript SPA](tutorial-single-page-app-javascript-prepare-app.md).
 
 ## Add code to the *index.html* file
 

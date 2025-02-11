@@ -119,4 +119,4 @@ In this code, the **app** variable is initialized with the **express** module an
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Part 3: Handle authentication flows in a Vanilla JavaScript SPA](tutorial-single-page-app-vanillajs-configure-authentication.md)
+> [Part 3: Handle authentication flows in a Vanilla JavaScript SPA](tutorial-single-page-app-javascript-configure-authentication.md)
