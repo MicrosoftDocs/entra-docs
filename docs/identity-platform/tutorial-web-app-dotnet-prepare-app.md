@@ -70,12 +70,11 @@ In this tutorial:
 In this section, you'll create an ASP.NET Core project in Visual Studio Code.
 
 1. Open Visual Studio Code, select **File > Open Folder...**. Navigate to and select the location in which to create your project.
-1. Create a new folder using the **New Folder...** icon in the **Explorer** pane. Provide a name similar to the one registered previously, for example, *NewWebAppLocal*.
+1. Create a new folder using the **New Folder...** icon in the **Explorer** pane. Provide a name similar to the application registered in the Microsoft Entra admin center, such as *identity-client-web-app*.
 1. Open a new terminal by selecting **Terminal > New Terminal**.
-1. To create an ASP.NET Core web app template, run the following commands in the terminal to change into the directory and create the project:
+1. To create an ASP.NET Core web app template, run the following command in the terminal to change into the directory and create the project:
 
     ```console
-    cd NewWebAppLocal
     dotnet new webapp
     ```
 
@@ -83,7 +82,7 @@ In this section, you'll create an ASP.NET Core project in Visual Studio Code.
 
 Identity related NuGet packages must be installed in the project to authenticate users.
 
-Enter the following command to install the relevant NuGet package:
+Enter the following commands to install the relevant NuGet packages:
 
 ```console
 dotnet add package Microsoft.Identity.Web.UI
@@ -119,6 +118,13 @@ In your IDE, open *appsettings.json* and replace the file contents with the foll
     ],
     "CallbackPath": "/signin-oidc",
     "SignedOutCallbackPath": "/signout-callback-oidc"
+  },
+  "DownstreamApi": {
+    "BaseUrl": "https://graph.microsoft.com/v1.0/",
+    "RelativePath": "me",
+    "Scopes": [ 
+      "user.read" 
+    ]
   },
   "Logging": {
     "LogLevel": {

@@ -36,7 +36,7 @@ This section demonstrates how to test the application by signing in and calling 
 ### [Workforce tenant](#tab/workforce-tenant)
 
 1. Start the application by typing the following in the terminal to launch the `https` profile in the *launchSettings.json* file.
-1. Open a new private browser, and enter the application URI into the browser, in this case `https://localhost:7274`.
+1. Open a new private browser, and enter the application URI into the browser, in this case `https://localhost:5001`.
 1. After the sign-in window appears, select the account in which to sign in with. Ensure the account matches the criteria of the app registration.
 1. Fill in your email, one time-passcode as instructed to complete the sign-in flow. You can choose to stay signed in or not in the **Stay signed in** window.
 1. The application requests permission to maintain access to data you have given it access to, and to sign you in and read your profile. Select **Accept**.

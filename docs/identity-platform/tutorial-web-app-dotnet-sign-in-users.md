@@ -60,11 +60,11 @@ Add the following code to *Program.cs*.
 
 ### Add authentication to the middleware
 
-The middleware needs to be modified to enable the authentication capabilities. 
+The application middleware needs to be modified to enable the authentication capabilities. 
 
 Replace the rest of the code in *Program.cs* with the following snippet:
 
-:::code language="csharp" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/Program.cs" range="28-42" :::
+:::code language="csharp" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/Program.cs" range="28-43" :::
     
 ## View ID token claims
 
