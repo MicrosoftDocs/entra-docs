@@ -33,7 +33,7 @@ In this tutorial:
   * Application Administrator
   * Application Developer
   * Cloud Application Administrator
-* A workforce tenant. Use your **Default Directory** or [set up a new tenant](./quickstart-create-new-tenant.md)
+* A workforce tenant. You can use your **Default Directory** or [set up a new tenant](./quickstart-create-new-tenant.md).
 * An application registered in the Microsoft Entra admin center with the following setup.
   * **Name**: *identity-client-web-app*
   * **Supported account types**: *Accounts in this organizational directory only*
@@ -50,12 +50,12 @@ In this tutorial:
   * Application Developer
   * Cloud Application Administrator
 * An external tenant. If you don't have one, [create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
-* A [self-service sign-up user flow](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md). You can use the same user flow for multiple applications.
+* A [self-service sign-up user flow](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md). This user flow can be used across multiple applications.
 * An application registered in the Microsoft Entra admin center,  Use the following setup for your app.
-  * **Name**: *NewWebAppLocal*
+  * **Name**: *identity-client-web-app*
   * **Supported account types**: *Accounts in this organizational directory only*
-  * **Redirect URI**: `https://localhost:7274/signin-oidc`
-  * **Front channel logout URL**: `https://localhost:7274/signout-oidc`
+  * **Redirect URI**: `https://localhost:5001/signin-oidc`
+  * **Front channel logout URL**: `https://localhost:5001/signout-oidc`
 * For development purposes, [create a self signed certificate](./howto-create-self-signed-certificate.md). Refer to [add credentials](./quickstart-register-app.md#add-credentials) to upload the certificate and record the certificate **Thumbprint**. **Do not use a self signed certificate** for production apps. Use a trusted certificate authority.
 * To use your application in your external tenant; 
   * [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
@@ -97,7 +97,37 @@ The values recorded in your application setup are used to configure the applicat
 
 1. In your IDE, open *appsettings.json* and replace the file contents with the following snippet. Replace the text in quotes with the values that were recorded earlier.
   
+### [Workforce tenant](#tab/workforce-tenant)
+
    :::code language="json" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/appsettings.json":::
+
+### [External tenant](#tab/external-tenant)
+
+    ```json
+    {
+      "AzureAd": {
+        "Authority": "https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/",
+        "ClientId": "Enter_the_Application_Id_Here",
+        "ClientCredentials": [
+          {
+            "SourceType": "ClientSecret",
+            "ClientSecret": "Enter_the_Client_Secret_Here"
+          }
+        ],
+        "CallbackPath": "/signin-oidc",
+        "SignedOutCallbackPath": "/signout-callback-oidc"
+      },
+      "Logging": {
+        "LogLevel": {
+          "Default": "Information",
+          "Microsoft.AspNetCore": "Warning"
+        }
+      },
+      "AllowedHosts": "*"
+    }
+    ```
+
+---
 
     * `Instance` - The authentication endpoint. Check with the different available endpoints in [National clouds](authentication-national-cloud.md#azure-ad-authentication-endpoints).
     * `TenantId` - The identifier of the tenant where the application is registered. Replace the text in quotes with the **Directory (tenant) ID** value that was recorded earlier from the overview page of the registered application.
