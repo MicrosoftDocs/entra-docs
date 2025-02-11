@@ -18,30 +18,46 @@ ms.topic: quickstart
 In this quickstart, you use a sample single-page app (SPA) to show you how to sign in users by using the [authorization code flow](./v2-oauth2-auth-code-flow.md) with Proof Key for Code Exchange (PKCE) and call the Microsoft Graph API. The sample uses the [Microsoft Authentication Library](msal-overview.md) to handle authentication.
 
 ::: zone pivot="workforce"
-
+ 
 ## Prerequisites
 
 #### [JavaScript](#tab/javascript-workforce)
 
 * An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
+  * Application Administrator
+  * Application Developer
+  * Cloud Application Administrator.
 * [Node.js](https://nodejs.org/en/download/).
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
 #### [React](#tab/react-workforce)
 
 * An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
+  * Application Administrator
+  * Application Developer
+  * Cloud Application Administrator.
 * [Node.js](https://nodejs.org/en/download/).
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
 #### [Angular](#tab/angular-workforce)
 
 * An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
+  * Application Administrator
+  * Application Developer
+  * Cloud Application Administrator.
 * [Node.js](https://nodejs.org/en/download/).
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
 #### [Blazor](#tab/blazor-workforce)
 
 * An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
+  * Application Administrator
+  * Application Developer
+  * Cloud Application Administrator.
 * [.NET SDK](https://dotnet.microsoft.com/download/dotnet).
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
@@ -50,7 +66,6 @@ In this quickstart, you use a sample single-page app (SPA) to show you how to si
 ## Register the application and record identifiers
 
 [!INCLUDE [Register a single-page application](./includes/register-app/spa-common/register-application-spa-common.md)]
-
 
 ---
 
@@ -250,27 +265,39 @@ Run the project with a web server by using dotnet:
 
 #### [JavaScript](#tab/javascript-external)
 
-- An external tenant. To create one, choose from the following methods:
-  - Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code. *(Recommended)*
-  - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
-- [Node.js](https://nodejs.org/en/download/).
-- [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
+* An external tenant. To create one, choose from the following methods:
+  * Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code. *(Recommended)*
+  * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
+  * Application Administrator
+  * Application Developer
+  * Cloud Application Administrator.
+* [Node.js](https://nodejs.org/en/download/).
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
 #### [React](#tab/react-external)
 
-- An external tenant. To create one, choose from the following methods:
-  - Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code. *(Recommended)*
-  - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
-- [Node.js](https://nodejs.org/en/download/).
-- [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
+* An external tenant. To create one, choose from the following methods:
+  * Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code. *(Recommended)*
+  * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
+  * Application Administrator
+  * Application Developer
+  * Cloud Application Administrator.
+* [Node.js](https://nodejs.org/en/download/).
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
 #### [Angular](#tab/angular-external)
 
-- An external tenant. To create one, choose from the following methods:
-  - Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code. *(Recommended)*
-  - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
-- [Node.js](https://nodejs.org/en/download/).
-- [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
+* An external tenant. To create one, choose from the following methods:
+  * Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code. *(Recommended)*
+  * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
+  * Application Administrator
+  * Application Developer
+  * Cloud Application Administrator.
+* [Node.js](https://nodejs.org/en/download/).
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
 ---
 

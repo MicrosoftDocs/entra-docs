@@ -1,6 +1,6 @@
 ---
-title: "Tutorial: Create a Vanilla JavaScript SPA for authentication in an external tenant"
-description: Learn how to prepare a Vanilla JavaScript single-page app (SPA) for authentication and authorization with your external tenant.
+title: "Tutorial: Prepare a JavaScript SPA for authentication"
+description: Learn how to prepare a JavaScript single-page app (SPA) for authentication using the Microsoft identity platform.
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
@@ -9,33 +9,47 @@ ms.subservice: external
 ms.custom: devx-track-js
 ms.topic: tutorial
 ms.date: 02/11/2024
-#Customer intent: As a developer, I want to learn how to configure Vanilla JavaScript single-page app (SPA) to sign in and sign out users with my external tenant.
+#Customer intent: As a developer, I want to learn how to configure JavaScript single-page app (SPA) to sign in and sign out users with my external tenant.
 ---
 
-# Tutorial: Create a Vanilla JavaScript SPA for authentication in an external tenant
+# Tutorial: Prepare a JavaScript single-page application for authentication
 
-This tutorial is part 2 of a series that demonstrates building a Vanilla JavaScript (JS) single-page application (SPA) and preparing it for authentication using the Microsoft Entra admin center. This tutorial demonstrates how to create a Vanilla JavaScript SPA using `npm` and create files needed for authentication and authorization.
+In this tutorial you'll build a JavaScript single-page application (SPA) and prepare it for authentication using the Microsoft identity platform. This tutorial demonstrates how to create a JavaScript SPA using `npm` and create files needed for authentication and authorization.
 
-In this tutorial;
+In this tutorial, you'll;
 
 > [!div class="checklist"]
-> - Create a Vanilla JavaScript project in Visual Studio Code
-> - Install required packages
-> - Add code to *server.js* to create a server
+> * Create a new JavaScript project
+> * Install required packages
+> * Add code to *server.js* to create a server
 
 ## Prerequisites
 
-- An external tenant. To create one, choose from the following methods:
-  - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/tutorials/marketplace) to set up an external tenant directly in Visual Studio Code.
-  - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details) in the Microsoft Entra admin center.
-- This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-  - Application Administrator
-  - Application Developer
-  - Cloud Application Administrator.
-- Although any integrated development environment (IDE) that supports Vanilla JavaScript applications can be used, **Visual Studio Code** is recommended for this guide. It can be downloaded from the [Downloads](https://visualstudio.microsoft.com/downloads) page.
-- [Node.js](https://nodejs.org/en/download/).
+### [Workforce tenant](#tab/workforce-tenant)
 
-## Create a new Vanilla JavaScript project and install dependencies
+* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
+  * Application Administrator
+  * Application Developer
+  * Cloud Application Administrator.
+* [Node.js](https://nodejs.org/en/download/).
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
+
+### [External tenant](#tab/external-tenant)
+
+* An external tenant. To create one, choose from the following methods:
+  * (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/tutorials/marketplace) to set up an external tenant directly in Visual Studio Code.
+  * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details) in the Microsoft Entra admin center.
+* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
+  * Application Administrator
+  * Application Developer
+  * Cloud Application Administrator.
+* [Node.js](https://nodejs.org/en/download/).
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
+
+---
+
+## Create a JavaScript project and install dependencies
 
 1. Open Visual Studio Code, select **File** > **Open Folder...**. Navigate to and select the location in which to create your project.
 1. Open a new terminal by selecting **Terminal** > **New Terminal**.
@@ -68,7 +82,7 @@ In this tutorial;
     npm install express morgan @azure/msal-browser
     ```
 
-## Edit the *server.js* file
+## Add code to the server file
 
 **Express** is a web application framework for **Node.js**. It's used to create a server that hosts the application. **Morgan** is the middleware that logs HTTP requests to the console. The server file is used to host these dependencies and contains the routes for the application. Authentication and authorization are handled by the [Microsoft Authentication Library for JavaScript (MSAL.js)](/javascript/api/overview).
 
@@ -116,7 +130,78 @@ In this tutorial;
 
 In this code, the **app** variable is initialized with the **express** module and **express** is used to serve the public assets. **MSAL-browser** is served as a static asset and is used to initiate the authentication flow.
 
+[!INCLUDE [external-id-custom-domain](../external-id/customers/includes/use-custom-domain-url.md)]
+
+## Edit the authentication configuration file
+
+1. Open *public/authConfig.js* and add the following code snippet:
+
+    ```javascript
+    import { LogLevel } from '@azure/msal-browser';
+
+    /**
+    * Configuration object to be passed to MSAL instance on creation. 
+    * For a full list of MSAL.js configuration parameters, visit:
+    * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/configuration.md 
+    */
+
+    export const msalConfig = {
+        auth: {
+            clientId: 'Enter_the_Application_Id_Here', // This is the ONLY mandatory field that you need to supply.
+            authority: 'https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/', // Replace the placeholder with your tenant subdomain 
+            redirectUri: '/', // Points to window.location.origin. You must register this URI on Azure Portal/App Registration.
+            postLogoutRedirectUri: '/', // Indicates the page to navigate after logout.
+            navigateToLoginRequestUrl: false, // If "true", will navigate back to the original request location before processing the auth code response.
+        },
+        cache: {
+            cacheLocation: 'sessionStorage', // Configures cache location. "sessionStorage" is more secure, but "localStorage" gives you SSO between tabs.
+            storeAuthStateInCookie: false, // Set this to "true" if you are having issues on IE11 or Edge
+        },
+        system: {
+            loggerOptions: {
+                loggerCallback: (level, message, containsPii) => {
+                    if (containsPii) {
+                        return;
+                    }
+                    switch (level) {
+                        case LogLevel.Error:
+                            console.error(message);
+                            return;
+                        case LogLevel.Info:
+                            console.info(message);
+                            return;
+                        case LogLevel.Verbose:
+                            console.debug(message);
+                            return;
+                        case LogLevel.Warning:
+                            console.warn(message);
+                            return;
+                        default:
+                            return;
+                    }
+                },
+            },
+        },
+    };
+
+    /**
+    * Scopes you add here will be prompted for user consent during sign-in.
+    * By default, MSAL.js will add OIDC scopes (openid, profile, email) to any login request.
+    * For more information about OIDC scopes, visit: 
+    * https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes
+    */
+    export const loginRequest = {
+        scopes: [],
+    };
+     ```
+
+1. Replace the following values with the values from the Azure portal:
+    - Find the `Enter_the_Application_Id_Here` value and replace it with the **Application ID (clientId)** of the app you registered in the Microsoft Entra admin center.
+      - In **Authority**, find `Enter_the_Tenant_Subdomain_Here` and replace it with the subdomain of your tenant. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+
+2. Save the file.
+
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Part 3: Handle authentication flows in a Vanilla JavaScript SPA](tutorial-single-page-app-javascript-configure-authentication.md)
+> [Handle authentication flows in a JavaScript SPA](tutorial-single-page-app-javascript-configure-authentication.md)
