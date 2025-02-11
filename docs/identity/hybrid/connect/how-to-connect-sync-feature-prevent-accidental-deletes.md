@@ -37,14 +37,14 @@ If there are too many deletes staged to be exported to Microsoft Entra ID, then 
 
 
  
-> | From:         | Microsoft Security <MSSecurity-noreply@microsoft.com>                                                                                                               |
-> |---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-> | Title:        | Export to Microsoft Entra ID was Stopped. Accidental delete threshold was reached.                                                                                  |
-> | Description:  | The export operation to Microsoft Entra ID has failed. There were more objects to be deleted than the configured threshold. As a result, no objects were exported.  |
-> | Raised:       | January 24, 2025 00:00 UTC                                                                                                                                          |
-> | Server:       | \<server name\>                                                                                                                                                       |
-> | Service:      | fabrikamonline.onmicrosoft.com                                                                                                                                      |
-> | Tenant:       | FabrikamOnline.com                                                                                                                                                  |
+| From:         | Microsoft Security <MSSecurity-noreply@microsoft.com>                                                                                                               |
+|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Title:        | Export to Microsoft Entra ID was Stopped. Accidental delete threshold was reached.                                                                                  |
+| Description:  | The export operation to Microsoft Entra ID has failed. There were more objects to be deleted than the configured threshold. As a result, no objects were exported.  |
+| Raised:       | January 24, 2025 00:00 UTC                                                                                                                                          |
+| Server:       | \<server name\>                                                                                                                                                       |
+| Service:      | fabrikamonline.onmicrosoft.com                                                                                                                                      |
+| Tenant:       | FabrikamOnline.com                                                                                                                                                  |
 
 
 
