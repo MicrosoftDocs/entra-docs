@@ -1756,6 +1756,16 @@
       "source_path_from_root": "/docs/external-id/customers/sample-single-page-app-react-sign-in.md",
       "redirect_url": "/entra/identity-platform/quickstart-single-page-app-sign-in?pivots=external&tabs=react-external",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/tutorial-web-app-dotnet-register-app.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-prepare-app?tabs=workforce",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "docs/external-id/customers/tutorial-web-app-dotnet-sign-in-sign-out.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-sign-in-users",
+      "redirect_document_id": false
     }
   ]
 }

@@ -408,6 +408,6 @@ If you want to learn more about sign-out, read the protocol documentation that's
 
 ## Next steps
 
-- Learn more by building an ASP.NET Core web app that signs in users in the following multi-part [tutorial series](tutorial-web-app-dotnet-register-app.md)
+- Learn more by building an ASP.NET Core web app that signs in users in the following multi-part [tutorial series](tutorial-web-app-dotnet-prepare-app.md)
 
 - Explore Microsoft identity platform [web app samples](sample-v2-code.md#web-applications)

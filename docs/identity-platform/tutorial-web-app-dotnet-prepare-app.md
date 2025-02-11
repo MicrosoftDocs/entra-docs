@@ -107,8 +107,7 @@ The values recorded in your application setup are used to configure the applicat
     * `DownstreamApi` - Is an identifier that defines an endpoint for accessing Microsoft Graph. The application URI is combined with the specified scope. To define the configuration for an application owned by the organization, the value of the `Scopes` attribute is slightly different.
 1. Save changes to the file.
 1. In the **Properties** folder, open the *launchSettings.json* file.
-1. Find (and record) the `https` value `applicationURI` within *launchSettings.json*, (and replace the port number with the value specified in the redirect URI) for example `https://localhost:{port}`. (This URL will be used when defining the **Redirect URI**. Do not use the `http` value.) 
-
+1. Find the `https` value `applicationURI` within *launchSettings.json*, and replace the port number with the value specified in the redirect URI, which is `https://localhost:5001` for this tutorial. 
 
 ## Next step
 
