@@ -1,6 +1,6 @@
 ---
-title: "Tutorial: Add sign-in and sign-out to a Vanilla JavaScript SPA for an external tenant"
-description: Learn how to configure a Vanilla JavaScript single-page app (SPA) to sign in and sign out users with your external tenant.
+title: "Tutorial: Sign in and sign out of a JavaScript SPA"
+description: Learn how to test sign-in and sign-out functionality in a JavaScript single-page app (SPA) using the Microsoft identity platform.
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
@@ -9,25 +9,27 @@ ms.subservice: external
 ms.custom: devx-track-js
 ms.topic: tutorial
 ms.date: 02/11/2024
-#Customer intent: As a developer, I want to learn how to configure Vanilla JavaScript single-page app (SPA) to sign in and sign out users with my external tenant.
+#Customer intent: As a developer, I want to learn how to configure JavaScript single-page app (SPA) to sign in and sign out users with my external tenant.
 ---
 
-# Tutorial: Add sign-in and sign-out to a Vanilla JavaScript SPA for an external tenant
+# Tutorial: Sign in and sign out of a JavaScript SPA
 
-This tutorial is the final part of a series that demonstrates building a Vanilla JS single-page application (SPA) and preparing it for authentication using the Microsoft Entra admin center. In [part 3 of this series](tutorial-single-page-app-javascript-configure-authentication.md), you created a Vanilla JS in Visual Studio Code and configured it for authentication. This final step shows you how to add sign-in and sign-out functionality to the app.
+This tutorial is the final part of a series that demonstrates building a JavaScript single-page application (SPA) and preparing it for authentication using the Microsoft identity platform. In [part 2 of this series](tutorial-single-page-app-javascript-configure-authentication.md), you added authentication flows to a JS SPA. This final step shows you how to test sign-in and sign-out functionality in your app.
 
 In this tutorial, you'll;
 
 > [!div class="checklist"]
-> * Add code to the *index.html* file to create the user interface
+> * Add code to the *claimUtils.js* file to create the claims table
 > * Add code to the *signout.html* file to create the sign-out page
 > * Sign in and sign out of the application
 
 ## Prerequisites
 
-* [Tutorial: Prepare your external tenant to authenticate users in a Vanilla JavaScript SPA](tutorial-single-page-app-javascript-prepare-app.md).
+* [# Tutorial: Prepare a JavaScript single-page application for authentication](tutorial-single-page-app-javascript-prepare-app.md).
 
-## Add code to the *claimUtils.js* file
+## Add code to the *claimUtils.js* file (optional)
+
+To add the feature of a table that can display claims returned from the ID token, you can add code to *claimUtils.js* file. This code snippet will populate the claims table with the appropriate description and corresponding value.
 
 1. Open *public/claimUtils.js* and add the following code snippet:
     
@@ -48,7 +50,7 @@ In this tutorial, you'll;
                     populateClaim(
                         key,
                         claims[key],
-                        "Identifies the intended recipient of the token. In ID tokens, the audience is your app's Application ID, assigned to your app in the Azure portal.",
+                        "Identifies the intended recipient of the token. In ID tokens, the audience is your app's Application ID, assigned to your app in the Entra admin center.",
                         index,
                         claimsObj
                     );
@@ -58,7 +60,7 @@ In this tutorial, you'll;
                     populateClaim(
                         key,
                         claims[key],
-                        'Identifies the issuer, or authorization server that constructs and returns the token. It also identifies the Azure AD tenant for which the user was authenticated. If the token was issued by the v2.0 endpoint, the URI will end in /v2.0. The GUID that indicates that the user is a consumer user from a Microsoft account is 9188040d-6c67-4c5b-b112-36a304b66dad.',
+                        'Identifies the issuer, or authorization server that constructs and returns the token. It also identifies the Microsoft Entra tenant for which the user was authenticated. If the token was issued by the v2.0 endpoint, the URI will end in /v2.0. The GUID that indicates that the user is a consumer user from a Microsoft account is 9188040d-6c67-4c5b-b112-36a304b66dad.',
                         index,
                         claimsObj
                     );
@@ -265,9 +267,11 @@ In this tutorial, you'll;
 Now that all the required code snippets have been added, the application can be called and tested in a web browser.
 
 1. Open a new terminal and run the following command to start your express web server.
-    ```powershell
+
+    ```console
     npm start
     ```
+
 1. Open a new private browser, and enter the application URI into the browser, `http://localhost:3000/`.
 1. Select **No account? Create one**, which starts the sign-up flow.
 1. In the **Create account** window, enter the email address registered to your external tenant, which starts the sign-up flow as a user for your application.
@@ -277,7 +281,7 @@ Now that all the required code snippets have been added, the application can be 
 
 1. The SPA will now display a button saying **Request Profile Information**. Select it to display profile data.
 
-    :::image type="content" source="./media/common-spa/react-spa/display-api-call-results-react-spa.png" alt-text="Screenshot of JavaScript App depicting the results of the API call." lightbox="./media/common-spa/react-spa/display-api-call-results-react-spa.png":::
+    :::image type="content" source=".media/tutorial-spa-vanillajs-sign-in-sign-in-out/display-vanillajs-welcome.png" alt-text="Screenshot of JavaScript App depicting the results of the API call." lightbox=".media/tutorial-spa-vanillajs-sign-in-sign-in-out/display-vanillajs-welcome.png":::
 
 ## Sign out of the application
 

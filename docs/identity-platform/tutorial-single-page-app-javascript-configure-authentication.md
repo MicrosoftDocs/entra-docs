@@ -12,9 +12,9 @@ ms.date: 02/11/2024
 #Customer intent: As a developer, I want to learn how to configure  JavaScript single-page app (SPA) to sign in and sign out users with my external tenant.
 ---
 
-# Tutorial: Add authentication flows to a JavaScript SPA
+# Tutorial: Add sign-in and sign-out flows to a JavaScript SPA
 
-In this tutorial you'll preapre a JavaScript (JS) single-page application (SPA) for authenticaiton. In [part 1 of this series](tutorial-single-page-app-javascript-prepare-app.md), you created a JS SPA and prepared it for authentication with your external tenant. In this tutorial, you learn how to add authentication flows in your app by adding Microsoft Authentication Library (MSAL) components.
+In this tutorial you'll configure a JavaScript (JS) single-page application (SPA) for authenticaiton. In [part 1 of this series](tutorial-single-page-app-javascript-prepare-app.md), you created a JS SPA and prepared it for authentication. In this tutorial, you'll learn how to add authentication flows by adding [Microsoft Authentication Library (MSAL)](msal-overview.md) components to your app.
 
 In this tutorial;
 
@@ -25,11 +25,11 @@ In this tutorial;
 
 ## Prerequisites
 
-* [Tutorial: Create a Vanilla JavaScript SPA for authentication in an external tenant](tutorial-single-page-app-javascript-prepare-app.md).
+* [Tutorial: Prepare a JavaScript single-page application for authentication](tutorial-single-page-app-javascript-prepare-app.md).
 
 ## Add code to the redirection file
 
-A redirection file is required to handle the response from the sign-in page. It's used to extract the access token from the URL fragment and use it to call the protected API. It's also used to handle errors that occur during the authentication process.
+A redirection file is required to handle the response from the sign-in page. It's used to extract the access token from the URL fragment and to call the protected API. It's also used to catch errors that occur during the authentication process.
 
 1. Open *public/authRedirect.js* and add the following code snippet:
 
@@ -238,7 +238,7 @@ The main page of the SPA, *index.html*, is the first page that is loaded when th
             </div>
         </nav>
         <br>
-        <h5 id="title-div" class="card-header text-center">Vanilla JavaScript single-page application secured with MSAL.js
+        <h5 id="title-div" class="card-header text-center">JavaScript single-page application secured with MSAL.js
         </h5>
         <h5 id="welcome-div" class="card-header text-center d-none"></h5>
         <br>
@@ -280,37 +280,9 @@ The main page of the SPA, *index.html*, is the first page that is loaded when th
 
 1. Save the file.
 
-## Add code to the *signout.html* file
-
-1. Open *public/signout.html* and add the following code snippet:
-
-    ```html
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Azure AD | Vanilla JavaScript SPA</title>
-        <link rel="SHORTCUT ICON" href="./favicon.svg" type="image/x-icon">
-    
-        <!-- adding Bootstrap 4 for UI components  -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/boot8strap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    </head>
-    <body>
-        <div class="jumbotron" style="margin: 10%">
-            <h1>Goodbye!</h1>
-            <p>You have signed out and your cache has been cleared.</p>
-            <a class="btn btn-primary" href="/" role="button">Take me back</a>
-        </div>
-    </body>
-    </html>
-    ```
-
-1. Save the file.
-
 ## Add code to the *ui.js* file
 
-When authorization has been configured, the user interface can be created to allow users to sign in and sign out when the project is run. To build the user interface (UI) for the application, [Bootstrap](https://getbootstrap.com/) is used to create a responsive UI that contains a **Sign-In** and **Sign-Out** button.
+When authorization has been configured, the user interface can be created to allow users to sign in and sign out when the project is run. To build the user interface (UI) for the application, [Bootstrap](https://getbootstrap.com/) is used to create a responsive UI that contains a **Sign-In** and **Sign-Out** button. The UI also contains a table that displays the claims from the token which will be added later in the tutorial.
 
 1. Open *public/ui.js* and add the following code snippet:
 
@@ -350,7 +322,39 @@ When authorization has been configured, the user interface can be created to all
 
 1. Save the file.
 
-## Add code to the *styles.css* file
+## Add code to the *signout.html* file
+
+The *signout.html* file is used to display a message to the user when they sign out of the application. It's also used to clear the cache when the user signs out.
+
+1. Open *public/signout.html* and add the following code snippet:
+
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScript SPA</title>
+        <link rel="SHORTCUT ICON" href="./favicon.svg" type="image/x-icon">
+    
+        <!-- adding Bootstrap 4 for UI components  -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/boot8strap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="jumbotron" style="margin: 10%">
+            <h1>Goodbye!</h1>
+            <p>You have signed out and your cache has been cleared.</p>
+            <a class="btn btn-primary" href="/" role="button">Take me back</a>
+        </div>
+    </body>
+    </html>
+    ```
+
+1. Save the file.
+
+## Add styles to the app
+
+Finally, add some styles to the application to make it look more appealing. The styles are added to the *styles.css* file and can be customized to suit your needs.
 
 1. Open *public/styles.css* and add the following code snippet:
 

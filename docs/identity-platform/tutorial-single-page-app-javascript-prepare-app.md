@@ -53,7 +53,7 @@ In this tutorial, you'll;
 
 1. Open Visual Studio Code, select **File** > **Open Folder...**. Navigate to and select the location in which to create your project.
 1. Open a new terminal by selecting **Terminal** > **New Terminal**.
-1. Run the following command to create a new Vanilla JavaScript project:
+1. Run the following command to create a new JavaScript project:
 
     ```powershell
     npm init -y
@@ -133,7 +133,7 @@ In this code, the **app** variable is initialized with the **express** module an
 
 ## Adding your tenant details to the authentication configuration
 
-The **authConfig.js** file contains the configuration settings for the authentication flow and is used to configure the **MSAL.js** library with the required settings for authentication.
+The **authConfig.js** file contains the configuration settings for the authentication flow and is used to configure [MSAL.js](/javascript/api/overview/msal-overview) with the required settings for authentication.
 
 1. Open *public/authConfig.js* and add the following code snippet:
 
