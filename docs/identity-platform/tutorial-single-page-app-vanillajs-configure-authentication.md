@@ -8,7 +8,7 @@ ms.service: entra-external-id
 ms.subservice: external
 ms.custom: devx-track-js
 ms.topic: tutorial
-ms.date: 08/17/2023
+ms.date: 02/11/2024
 #Customer intent: As a developer, I want to learn how to configure Vanilla JavaScript single-page app (SPA) to sign in and sign out users with my external tenant.
 ---
 
@@ -25,7 +25,13 @@ In this tutorial;
 
 ## Prerequisites
 
-* [Tutorial: Prepare your external tenant to authenticate users in a Vanilla JavaScript SPA](tutorial-single-page-app-vanillajs-prepare-tenant.md).
+- An external tenant. To create one, choose from the following methods:
+  - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/tutorials/marketplace) to set up an external tenant directly in Visual Studio Code.
+  - [Create a new external tenant](../external-id/customer/../external-id/customer/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+- This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
+  - Application Administrator
+  - Application Developer
+  - Cloud Application Administrator.
 
 ## Edit the authentication configuration file
 
@@ -92,7 +98,7 @@ In this tutorial;
 
 1. Replace the following values with the values from the Azure portal:
     - Find the `Enter_the_Application_Id_Here` value and replace it with the **Application ID (clientId)** of the app you registered in the Microsoft Entra admin center.
-      - In **Authority**, find `Enter_the_Tenant_Subdomain_Here` and replace it with the subdomain of your tenant. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, [learn how to read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+      - In **Authority**, find `Enter_the_Tenant_Subdomain_Here` and replace it with the subdomain of your tenant. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, [learn how to read your tenant details](../external-id/customer/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 2. Save the file.
 
 [!INCLUDE [external-id-custom-domain](../external-id/customers/includes/use-custom-domain-url.md)]
