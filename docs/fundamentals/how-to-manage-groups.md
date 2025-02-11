@@ -16,7 +16,7 @@ ms.topic: how-to
 
 Microsoft Entra groups are used to manage users that all need the same access and permissions to resources, such as potentially restricted apps and services. Instead of adding special permissions to individual users, you create a group that applies the special permissions to every member of that group. 
 
-This article covers basic group scenarios where a single group is added to a single resource and users are added as members to that group. For more complex scenarios like dynamic membership groups and rule creation, see the [Microsoft Entra user management documentation](~/identity/users/index.yml).
+This article covers basic group scenarios where a single group is added to a single resource and users are added as members to that group. For more complex scenarios like dynamic membership groups and rule creation, see the [Microsoft Entra user management documentation](../identity/users/index.yml).
   
 Before adding groups and members, [learn about groups and membership types](concept-learn-about-groups.md) to help you decide which options to use when you create a group.
 
@@ -24,7 +24,7 @@ Before adding groups and members, [learn about groups and membership types](conc
 
 ## Create a basic group and add members
 
-You can create a basic group and add your members at the same time using the Microsoft Entra admin center. You must have at least the **Groups Administrator** or **User Administrator** role assigned to create groups. Review the [appropriate Microsoft Entra roles for managing groups](~/identity/role-based-access-control/delegate-by-task.md#groups-least-privileged-roles)
+You can create a basic group and add your members at the same time using the Microsoft Entra admin center. You must have at least the **Groups Administrator** or **User Administrator** role assigned to create groups. Review the [appropriate Microsoft Entra roles for managing groups](../identity/role-based-access-control/delegate-by-task.md#groups-least-privileged-roles)
 
 To create a basic group and add members:
 
@@ -48,7 +48,7 @@ To create a basic group and add members:
    - You must have at least the **Privileged Role Administrator** role.
    - Enabling this option automatically selects **Assigned** as the Membership type.
    - The ability to add roles while creating the group is added to the process.
-   - [Learn more about role-assignable groups](~/identity/role-based-access-control/groups-create-eligible.md).
+   - [Learn more about role-assignable groups](../identity/role-based-access-control/groups-create-eligible.md).
 1. Select a **Membership type.** For more information on membership types, see the [learn about groups and membership types](concept-learn-about-groups.md) article.
 1. Optionally add **Owners** or **Members**. Members and owners can be added after creating your group.
     1. Select the link under **Owners** or **Members** to populate a list of every user in your directory.

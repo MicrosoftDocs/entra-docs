@@ -65,7 +65,7 @@ items:
     - name: Create a group and add members
       href: ./groups-view-azure-portal.md
     - name: Manage groups
-      href: how-to-manage-groups.yml
+      href: how-to-manage-groups.md
   - name: Licenses
     expanded: false
     items: 
