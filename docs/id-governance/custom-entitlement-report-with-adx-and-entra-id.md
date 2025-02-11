@@ -29,9 +29,9 @@ In this tutorial, you:
 > - Extract data from Microsoft Entra ID Governance.
 > - Create tables and import data from Microsoft Entra ID Governance into Azure Data Explorer.
 > - Build a custom query by using KQL.
-> - Query data by using Azure Monitor.
+> - Query data in Azure Monitor.
 
-By the end of this tutorial, you'll be able to develop customized views of the access rights and permissions of users. These views span multiple applications via Microsoft-supported tools. You can also bring in data from other databases or applications to report on those access rights and permissions.
+By the end of this tutorial, you'll be able to develop customized views of the access rights and permissions of users. These views span multiple applications via Microsoft-supported tools. You can also bring in data from non-Microsoft databases or applications to report on those access rights and permissions.
 
 ## Prerequisites
 
@@ -107,7 +107,7 @@ For this tutorial, you extract Microsoft Entra ID data from these areas:
 
 - User information such as display name, UPN, and job details
 - Group information, including their memberships
-- An application and its role assignments
+- Applications and assignments to application roles
 
 This data set enables you to perform a broad set of queries around who received access to an application, with their application role information and the associated timeframe. Remember that these are sample queries, and your data and specific requirements might vary from what's shown here.
 
@@ -269,7 +269,7 @@ Generate a JSON file of all app role assignments of users in the tenant:
       Get-MgUserAppRoleAssignment -UserId $user.Id | ForEach-Object { 
         # Use the same date formatting approach 
         $createdDateTime = $_.CreatedDateTime -replace "\\/Date\((\d+)\)\\/", '$1' 
-        # Convert the milliseconds time stamp to a readable date format if necessary 
+        # Convert the milliseconds timestamp to a readable date format if necessary 
         $result += [PSCustomObject]@{ 
           AppRoleId      = $_.AppRoleId 
           CreatedDateTime   = $createdDateTime 
@@ -288,9 +288,9 @@ Generate a JSON file of all app role assignments of users in the tenant:
 
 In this section, you import the newly created JSON files for the Microsoft Entra ID services as tables in Azure Data Explorer for further analysis. On the first import via the Azure Data Explorer web UI, you create the tables based on schemas that the web UI suggests from each JSON file.
 
-1. Go to the database that you set up in your Azure Data Explorer cluster or free cluster earlier in this tutorial.
-
 1. Sign in to the [Azure Data Explorer web UI](https://dataexplorer.azure.com/home).
+
+1. Go to the database that you set up in your Azure Data Explorer cluster or free cluster earlier in this tutorial.
 
 1. On the left menu, select **Query**.
 
@@ -338,7 +338,7 @@ For the following steps, you might need to [install Microsoft Graph PowerShell m
      } 
    ```
 
-1. Connect to Microsoft Graph. This section of the tutorial illustrates retrieving data from entitlement management and access reviews, so it requires the `AccessReview.Read.All` and `EntitlementManagement.Read.All` permission scopes. For other reporting use cases, such as for product information management or life-cycle workflows, update the `Scopes` parameter with the necessary permissions. For more information on permissions, see [Microsoft Graph permissions reference](/graph/permissions-reference).
+1. Connect to Microsoft Graph. This section of the tutorial illustrates retrieving data from entitlement management and access reviews, so it requires the `AccessReview.Read.All` and `EntitlementManagement.Read.All` permission scopes. For other reporting use cases, such as for Privileged Identity Management (PIM) or lifecycle workflows, update the `Scopes` parameter with the necessary permissions. For more information on permissions, see [Microsoft Graph permissions reference](/graph/permissions-reference).
 
    ```powershell
      Connect-MgGraph -Scopes "AccessReview.Read.All, EntitlementManagement.Read.All" -ContextScope Process -NoWelcome
@@ -355,7 +355,7 @@ Scenarios for generating reports with this type of data include:
 - Reporting on historical access reviews.
 - Reporting on assignments via entitlement management.
 
-#### Get definition data for access review schedules
+#### Get access review schedule definition data
 
 Generate a JSON file with access review definition names and IDs that are used to create custom views in Azure Data Explorer. The sample includes all access reviews, but you can include additional filtering if necessary. For more information, see [Use the filter query parameter](/graph/api/accessreviewset-list-definitions?view=graph-rest-1.0&tabs=http#use-the-filter-query-parameter&preserve-view=true).
 
@@ -442,9 +442,9 @@ Generate a JSON file with assignments to access packages that are used to create
 
 In this section, you import the newly created JSON files for the Microsoft Entra ID Governance services into Azure Data Explorer for further analysis. These files join the data that you already imported for the Microsoft Entra ID services. On the first import via the Azure Data Explorer web UI, you create tables based on schemas that the web UI suggests from each JSON file.
 
-1. In your Azure Data Explorer cluster or free cluster, go to the database that holds your Microsoft Entra ID data.
-
 1. Sign in to the [Azure Data Explorer web UI](https://dataexplorer.azure.com/home).
+
+1. In your Azure Data Explorer cluster or free cluster, go to the database that holds your Microsoft Entra ID data.
 
 1. On the left menu, select **Query**.
 
@@ -592,9 +592,9 @@ AppRoleAssignments
 | project UserPrincipalName, DisplayName, RoleDisplayName, CreatedDateTime, PrincipalId, Change = "Added" 
 ```
 
-### Example: Get access reviews
+### Example: Various queries that use access reviews
 
-#### Review completion and timeline information
+#### View access review completion and timeline information
 
 After the data is uploaded, use the following Kusto queries to review it:
 
@@ -617,7 +617,7 @@ After the data is uploaded, use the following Kusto queries to review it:
   | extend IsOnSchedule = iff(TimeSinceLastReview <= 90, "Yes", "No") // Assuming quarterly = 90 days
   ```
 
-#### Review participation and engagement
+#### View access review participation and engagement
 
 - Who were the assigned reviewers?
 
@@ -740,7 +740,7 @@ After the data is uploaded, use the following Kusto queries to review it:
   | project AccessReviewDefinitionId, AccessReviewInstanceId, ReviewerUserPrincipalName, ReviewerName, RemindersSent, ReminderSentDate
   ```
 
-#### Review users and access changes
+#### View users and access changes that result from access reviews
 
 - Who lost access to specific resources during the access review?
 
@@ -794,7 +794,7 @@ After the data is uploaded, use the following Kusto queries to review it:
   ) on $left.ReviewInstanceId == $right.AccessReviewInstanceId
   ```
 
-#### Review decision data
+#### Summarize access review decisions
 
 - What decisions did users make: approved, denied, or unchanged?
 
@@ -818,7 +818,7 @@ After the data is uploaded, use the following Kusto queries to review it:
   | summarize count() by ReviewedBy_DisplayName
   ```
 
-#### Review access review quality and compliance checks
+#### Confirm access review quality and check for completeness
 
 - Were access revocations considered for dormant users?
 
