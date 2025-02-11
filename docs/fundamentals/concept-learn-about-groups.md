@@ -1,6 +1,6 @@
 ---
-title: Learn about groups and group membership
-description: Information about Microsoft Entra groups and access rights
+title: Learn about groups, group membership, and access
+description: Learn about Microsoft Entra groups, including how they work, what they can access, and how membership and access is assigned.
 author: shlipsey3
 manager: amycolannino
 
@@ -12,9 +12,9 @@ ms.author: sarahlipsey
 ms.reviewer: krbain
 ---
 
-# Learn about groups and access rights in Microsoft Entra ID
+# Learn about group types, membership types, and access management 
 
-Microsoft Entra ID provides several ways to manage access to resources, applications, and tasks. With Microsoft Entra groups, you can grant access and permissions to a group of users instead of for each individual user. Limiting access to Microsoft Entra resources to only those users who need access is one of the core security principles of [Zero Trust](/security/zero-trust/zero-trust-overview).
+Microsoft Entra ID provides several ways to manage access to resources, applications, and tasks. With Microsoft Entra groups, you can grant access and permissions to a group of users instead of to each individual user. Limiting access to Microsoft Entra resources to only those users who need access is one of the core security principles of [Zero Trust](/security/zero-trust/zero-trust-overview).
 
 This article provides an overview of how groups and access rights can be used together to make managing your Microsoft Entra users easier, while also applying security best practices.
 
@@ -43,7 +43,7 @@ You can manage two types of groups in Microsoft Entra ID:
 Some groups can't be managed in the Microsoft Entra admin center.
 
 - Groups synced from on-premises Active Directory can only be managed in on-premises Active Directory.
-- Distribution lists and mail-enabled security groups are only managed in the Exchange admin center or the Microsoft 365 admin center. You must sign in and have have the appropriate permissions for that admin center to manage these groups.
+- Distribution lists and mail-enabled security groups are only managed in the Exchange admin center or the Microsoft 365 admin center. You must sign in and have have the appropriate permissions for that admin center to manage those groups.
 
 ### Membership types
 
@@ -57,7 +57,7 @@ Some groups can't be managed in the Microsoft Entra admin center.
 ## Access management
 <a name='how-access-management-in-azure-ad-works'></a>
 
-Microsoft Entra ID helps you give access to your organization's resources by providing access rights to a single user or a group. Using groups lets the resource owner or Microsoft Entra directory owner assign a set of access permissions to all members of the group. The resource or directory owner can also give management rights to someone such as a department manager or a help desk administrator, letting that person add and remove members. For more information about how to manage group owners, see the [Manage groups](how-to-manage-groups.yml) article.
+Microsoft Entra ID helps you give access to your organization's resources by providing access rights to a single user or a group. Using groups lets the resource owner or Microsoft Entra directory owner assign a set of access permissions to all members of the group. The resource or directory owner can also grant group management rights to someone such as a department manager or a help desk administrator, which allows that person to add and remove members. For more information about how to manage group owners, see the [Manage groups](how-to-manage-groups.yml) article.
 
 :::image type="content" source="./media/concept-learn-about-groups/access-management-overview.png" alt-text="Screenshot of a diagram of Microsoft Entra ID access management.":::
 
@@ -69,24 +69,9 @@ The resources that Microsoft Entra groups can manage access to can be:
 - SharePoint sites
 - On-premises resources
 
-Microsoft 365 groups specifically give group members access to a shared mailbox, calendar, files, SharePoint sites, and more.
-
-
-
-
-
-
-
-
-
-
 Each application, resource, and service that requires access permissions needs to be managed separately because the permissions for one might not be the same as another. Grant access using the [principle of least privilege](~/identity-platform/secure-least-privileged-access.md) to help reduce the risk of attack or a security breach.
 
-
-
-
-
-### Ways to assign access rights
+### Assignment types
 
 After creating a group, you need to decide how to assign access rights. Explore the ways to assign access rights to determine the best process for your scenario.
 
@@ -100,32 +85,46 @@ After creating a group, you need to decide how to assign access rights. Explore 
 
    :::image type="content" source="./media/concept-learn-about-groups/access-management-process.png" alt-text="Screenshot of a diagram of access management overview.":::
 
-### Can users join groups without being assigned?
+### Allow users to request to join groups
 
-The group owner can let users find their own groups to join, instead of assigning them. The owner can also set up the group to automatically accept all users that join or to require approval.
+The group owner can let users find their own groups to join, instead of assigning them. The owner can configure the group to automatically accept all users that join or to require approval.
 
 After a user requests to join a group, the request is forwarded to the group owner. If required, the owner can approve the request and the user is notified of the group membership. If you have multiple owners and one of them disapproves, the user is notified, but isn't added to the group. For more information and instructions about how to let your users request to join groups, see [Set up Microsoft Entra ID so users can request to join groups](~/identity/users/groups-self-service-management.md).
 
 ## Best practices for managing groups in the cloud
+
 The following are best practices for managing groups in the cloud:  
 
-- **Enable Self-Service Group Management:** Allow users to create and manage their own Microsoft 365 (M365) groups. This empowers teams to organize themselves while reducing the administrative burden on IT. Apply a Group Naming Policy to block the use of restricted words and ensure consistency. Prevent inactive groups from lingering by enabling group expiration policies. This automatically deletes unused groups after a specified period, unless renewed by a group owner.  For more information, see [Set up self-service group management in Microsoft Entra ID](../identity/users/groups-self-service-management.md)
-- **Leverage Sensitivity Labels:** Use sensitivity labels to classify and govern M365 groups based on their security and compliance needs. This provides fine-grained access controls and ensures that sensitive resources are protected. For more information, see [Assign sensitivity labels to Microsoft 365 groups in Microsoft Entra ID](../identity/users/groups-assign-sensitivity-labels.md)
-- **Automate Membership with Dynamic Groups:** Implement dynamic membership rules to automatically add or remove users and devices from groups based on attributes like department, location, or job title. This minimizes manual updates and reduces the risk of lingering access. This feature applies to M365 groups and Security Groups.  
-- **Conduct Periodic Access Reviews:** Use Entra Identity Governance capabilities to schedule regular access reviews. These ensure that membership in assigned groups remains accurate and relevant over time. For more information, see [Create or update a dynamic membership group in Microsoft Entra ID](../identity/users/groups-create-rule.md)
-- **Manage Membership with Access Packages:** Create access packages with Entra Identity Governance to streamline the management of multiple group memberships. Access packages can: 
-     - Include approval workflows for membership 
-     - Define criteria for access expiration 
-     - Provide a centralized way to grant, review, and revoke access across groups and applications 
-For more information, see [Create an access package in entitlement management](../id-governance/entitlement-management-access-package-create.md)   
-- **Assign Multiple Group Owners:** Assign at least two owners to a group to ensure continuity and reduce dependencies on a single individual. For more information, see [Manage Microsoft Entra groups and group membership](how-to-manage-groups.yml)
-- **Use Group Based Licensing:** Group based licensing simplifies user provisioning and ensures consistent license assignments. You can also use dynamic membership groups to automatically manage licensing for users meeting specific criteria. For more information, see [What is group-based licensing in Microsoft Entra ID?](concept-group-based-licensing.md)
-- **Enforce Role Based Access Controls (RBAC):** Assign roles (e.g. Group Admin) to control who can manage groups. RBAC reduces the risk of privilege misuse and simplifies group management. For more information, see [Overview of role-based access control in Microsoft Entra ID](../identity/role-based-access-control/custom-overview.md)
+- **Enable self-service group management:** Allow users to create and manage their own Microsoft 365 groups.
+    - Empowers teams to organize themselves while reducing the administrative burden on IT.
+    - Apply a **group naming policy** to block the use of restricted words and ensure consistency.
+    - Prevent inactive groups from lingering by enabling group expiration policies, which automatically deletes unused groups after a specified period, unless renewed by a group owner.
+    - For more information, see [Set up self-service group management in Microsoft Entra ID](../identity/users/groups-self-service-management.md)
+- **Leverage sensitivity labels:** Use sensitivity labels to classify and govern Microsoft 365 groups based on their security and compliance needs.
+    - Provides fine-grained access controls and ensures that sensitive resources are protected.
+    - For more information, see [Assign sensitivity labels to Microsoft 365 groups in Microsoft Entra ID](../identity/users/groups-assign-sensitivity-labels.md)
+- **Automate membership with dynamic groups:** Implement dynamic membership rules to automatically add or remove users and devices from groups based on attributes like department, location, or job title.
+    - Minimizes manual updates and reduces the risk of lingering access.
+    - This feature applies to Microsoft 365 groups and Security Groups.  
+- **Conduct Periodic Access Reviews:** Use Microsoft Entra Identity Governance capabilities to schedule regular access reviews.
+    - Ensures that membership in assigned groups remains accurate and relevant over time.
+    - For more information, see [Create or update a dynamic membership group in Microsoft Entra ID](../identity/users/groups-create-rule.md)
+- **Manage membership with access packages:** Create access packages with Microsoft Entra Identity Governance to streamline the management of multiple group memberships. Access packages can: 
+    - Include approval workflows for membership 
+    - Define criteria for access expiration 
+    - Provide a centralized way to grant, review, and revoke access across groups and applications 
+    - For more information, see [Create an access package in entitlement management](../id-governance/entitlement-management-access-package-create.md)   
+- **Assign multiple group owners:** Assign at least two owners to a group to ensure continuity and reduce dependencies on a single individual.
+    - For more information, see [Manage Microsoft Entra groups and group membership](how-to-manage-groups.yml)
+- **Use group-based licensing:** Group-based licensing simplifies user provisioning and ensures consistent license assignments.
+    - Use dynamic membership groups to automatically manage licensing for users meeting specific criteria.
+    - For more information, see [What is group-based licensing in Microsoft Entra ID?](concept-group-based-licensing.md)
+- **Enforce Role Based Access Controls (RBAC):** Assign roles to control who can manage groups.
+    - RBAC reduces the risk of privilege misuse and simplifies group management.
+    - For more information, see [Overview of role-based access control in Microsoft Entra ID](../identity/role-based-access-control/custom-overview.md)
 
-## Next steps
+## Related content
 
 - [Create and manage Microsoft Entra groups and group membership](how-to-manage-groups.yml)
-- [Learn about group-based licensing in Microsoft Entra ID](./concept-group-based-licensing.md)
 - [Manage access to SaaS apps using groups](~/identity/users/groups-saasapps.md)
 - [Manage rules for dynamic membership groups](~/identity/users/groups-create-rule.md)
-- Learn about [Privileged Identity Management (PIM) for Microsoft Entra roles](~/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review.md)
