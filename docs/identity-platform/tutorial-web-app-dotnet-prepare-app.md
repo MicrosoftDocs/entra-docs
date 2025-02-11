@@ -95,49 +95,59 @@ dotnet add package Microsoft.Identity.Web.DownstreamApi
 
 The values recorded in your application setup are used to configure the application for authentication. The configuration file, *appsettings.json*, is used to store application settings used during run-time. As the application will also call into a web API, it must also contain a reference to it. 
 
-1. In your IDE, open *appsettings.json* and replace the file contents with the following snippet. Replace the text in quotes with the values that were recorded earlier.
+### Update the configuration file
+
+In your IDE, open *appsettings.json* and replace the file contents with the following snippet. Replace the text in quotes with the values that were recorded earlier.
   
 ### [Workforce tenant](#tab/workforce-tenant)
 
-   :::code language="json" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/appsettings.json":::
+:::code language="json" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/appsettings.json":::
 
 ### [External tenant](#tab/external-tenant)
 
-    ```json
-    {
-      "AzureAd": {
-        "Authority": "https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/",
-        "ClientId": "Enter_the_Application_Id_Here",
-        "ClientCredentials": [
-          {
-            "SourceType": "ClientSecret",
-            "ClientSecret": "Enter_the_Client_Secret_Here"
-          }
-        ],
-        "CallbackPath": "/signin-oidc",
-        "SignedOutCallbackPath": "/signout-callback-oidc"
-      },
-      "Logging": {
-        "LogLevel": {
-          "Default": "Information",
-          "Microsoft.AspNetCore": "Warning"
-        }
-      },
-      "AllowedHosts": "*"
+```json
+{
+  "AzureAd": {
+    "Authority": "https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/",
+    "ClientId": "Enter_the_Application_Id_Here",
+    "ClientCertificates": [
+      {
+        "SourceType": "StoreWithThumbprint",
+        "CertificateStorePath": "CurrentUser/My",
+        "CertificateThumbprint": "Enter the certificate thumbprint obtained the Microsoft Entra admin center"
+      }   
+    ],
+    "CallbackPath": "/signin-oidc",
+    "SignedOutCallbackPath": "/signout-callback-oidc"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
     }
-    ```
-
+  },
+  "AllowedHosts": "*"
+}
+```
 ---
 
-    * `Instance` - The authentication endpoint. Check with the different available endpoints in [National clouds](authentication-national-cloud.md#azure-ad-authentication-endpoints).
-    * `TenantId` - The identifier of the tenant where the application is registered. Replace the text in quotes with the **Directory (tenant) ID** value that was recorded earlier from the overview page of the registered application.
-    * `ClientId` - The identifier of the application, also referred to as the client. Replace the text in quotes with the **Application (client) ID** value that was recorded earlier from the overview page of the registered application.
-    * `ClientCertificates` - A self-signed certificate is used for authentication in the application. Replace the text of the `CertificateThumbprint` with the thumbprint of the certificate that was previously recorded.
-    * `CallbackPath` - Is an identifier to help the server redirect a response to the appropriate application.
-    * `DownstreamApi` - Is an identifier that defines an endpoint for accessing Microsoft Graph. The application URI is combined with the specified scope. To define the configuration for an application owned by the organization, the value of the `Scopes` attribute is slightly different.
-1. Save changes to the file.
+* `Instance` - The authentication endpoint. Check with the different available endpoints in [National clouds](authentication-national-cloud.md#azure-ad-authentication-endpoints).
+* `TenantId` - The identifier of the tenant where the application is registered. Replace the text in quotes with the **Directory (tenant) ID** value that was recorded earlier from the overview page of the registered application.
+* `ClientId` - The identifier of the application, also referred to as the client. Replace the text in quotes with the **Application (client) ID** value that was recorded earlier from the overview page of the registered application.
+* `ClientCertificates` - A self-signed certificate is used for authentication in the application. Replace the text of the `CertificateThumbprint` with the thumbprint of the certificate that was previously recorded.
+* `CallbackPath` - Is an identifier to help the server redirect a response to the appropriate application.
+* `DownstreamApi` - Is an identifier that defines an endpoint for accessing Microsoft Graph. The application URI is combined with the specified scope. To define the configuration for an application owned by the organization, the value of the `Scopes` attribute is slightly different.
+
+### Update the redirect URI
+
+From the [prerequisites](#prerequisites), the redirect URI is set to `https://localhost:5001/signin-oidc`. This needs to be updated in the application launch settings.
+
 1. In the **Properties** folder, open the *launchSettings.json* file.
-1. Find the `https` value `applicationURI` within *launchSettings.json*, and replace the port number with the value specified in the redirect URI, which is `https://localhost:5001` for this tutorial. 
+1. Find the `https` value `applicationURI` within *launchSettings.json*, and replace the port number with the value specified in the redirect URI, which is `https://localhost:5001` for this tutorial. The line should look similar to the following snippet:
+
+    ```json
+    "applicationUrl": "https://localhost:5001;http://localhost:{port}",
+    ```
 
 ## Next step
 
