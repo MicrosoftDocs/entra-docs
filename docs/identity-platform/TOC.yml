@@ -163,13 +163,13 @@
             - name: Native authentication
               items:
                 - name: Sign up
-                  href: tutorial-native-authentication-single-page-app-react-sign-up.md?pivots=workforce
+                  href: tutorial-native-authentication-single-page-app-react-sign-up.md
                 - name: Set up local CORS
-                  href: tutorial-native-authentication-single-page-app-react-set-up-local-cors.md?pivots=workforce
+                  href: tutorial-native-authentication-single-page-app-react-set-up-local-cors.md
                 - name: Sign in
-                  href: tutorial-native-authentication-single-page-app-react-sign-in.md?pivots=workforce
+                  href: tutorial-native-authentication-single-page-app-react-sign-in.md
                 - name: Reset password
-                  href: tutorial-native-authentication-single-page-app-react-reset-password.md?pivots=workforce
+                  href: tutorial-native-authentication-single-page-app-react-reset-password.md
         - name: Angular
           items:
           - name: Register your app
