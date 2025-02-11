@@ -152,7 +152,7 @@
           items:
             - name: Prepare your app
               href: tutorial-single-page-app-javascript-prepare-app.md
-            - name: Get user data from web API
+            - name: Add sign in and sign out
               href: tutorial-single-page-app-javascript-configure-authentication.md
             - name: Sign in users
               href: tutorial-single-page-app-javascript-sign-in-sign-out.md

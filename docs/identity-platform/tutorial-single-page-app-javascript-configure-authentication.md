@@ -204,9 +204,13 @@ The application uses *authPopup.js* to handle the authentication flow when the u
 
 1. Save the file.
 
-## Add code to the *index.html* file
+## Build a user interface (UI) for the application
 
-The main page of the SPA, *index.html*, is the first page that is loaded when the application is started. It's also the page that is loaded when the user selects the **Sign-Out** button. 
+When authorization has been configured, a user interface can be created to interact with application when the project is run. [Bootstrap](https://getbootstrap.com) is used to create a responsive UI that contains a **Sign-In** and **Sign-Out** button. The UI also contains a table that displays the claims from the token, which will be added later in the tutorial.
+
+### Add code to the *index.html* file
+
+The main page of the SPA, *index.html*, is the first page that is loaded when the application is started. It's also the page that is loaded when the user selects the **Sign-Out** button. The page contains a navigation bar, a welcome message with the users email and a table that displays the claims from the token.
 
 1. Open *public/index.html* and add the following code snippet:
 
@@ -280,9 +284,9 @@ The main page of the SPA, *index.html*, is the first page that is loaded when th
 
 1. Save the file.
 
-## Add code to the *ui.js* file
+### Add code to the *ui.js* file
 
-When authorization has been configured, the user interface can be created to allow users to sign in and sign out when the project is run. To build the user interface (UI) for the application, [Bootstrap](https://getbootstrap.com/) is used to create a responsive UI that contains a **Sign-In** and **Sign-Out** button. The UI also contains a table that displays the claims from the token which will be added later in the tutorial.
+To make the application interactive, the *ui.js* file is used to handle the UI elements of the application. The file contains functions that are used to update the user's name when they sign in and to update the table with the claims from the token.
 
 1. Open *public/ui.js* and add the following code snippet:
 
@@ -352,7 +356,7 @@ The *signout.html* file is used to display a message to the user when they sign 
 
 1. Save the file.
 
-## Add styles to the app
+### Add styles to the app
 
 Finally, add some styles to the application to make it look more appealing. The styles are added to the *styles.css* file and can be customized to suit your needs.
 
@@ -375,4 +379,4 @@ Finally, add some styles to the application to make it look more appealing. The 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Sign in and sign out of the JS SPA](./tutorial-single-page-app-javascript-sign-in-sign-out.md)
+> [Sign in and sign out of your JS SPA](./tutorial-single-page-app-javascript-sign-in-sign-out.md)
