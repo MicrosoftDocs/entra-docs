@@ -42,7 +42,7 @@ If there are too many deletes staged to be exported to Microsoft Entra ID, then 
 > | Title:        | Export to Microsoft Entra ID was Stopped. Accidental delete threshold was reached.                                                                                  |
 > | Description:  | The export operation to Microsoft Entra ID has failed. There were more objects to be deleted than the configured threshold. As a result, no objects were exported.  |
 > | Raised:       | January 24, 2025 00:00 UTC                                                                                                                                          |
-> | Server:       | <server name>                                                                                                                                                       |
+> | Server:       | \<server name\>                                                                                                                                                       |
 > | Service:      | fabrikamonline.onmicrosoft.com                                                                                                                                      |
 > | Tenant:       | FabrikamOnline.com                                                                                                                                                  |
 
@@ -63,7 +63,7 @@ Task Category: None
 Level:         Warning
 Keywords:      Classic
 User:          N/A
-Computer:      <SERVERNAME>
+Computer:      <server name>
 Description:   Prevent Accidental Deletes: The number of deletions for this sync cycle (100 pending deletes) has exceeded the current threshold of 50 objects. Deletions will be suppressed for this sync cycle. Please visit http://go.microsoft.com/fwlink/?LinkId=390655 for more information.
 ```
 
