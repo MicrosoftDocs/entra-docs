@@ -6,7 +6,7 @@ ms.author: jayrusso
 ms.service: global-secure-access
 ms.topic: how-to 
 ms.reviewer: teresayao
-ms.date: 02/07/2025
+ms.date: 02/10/2025
 
 
 #customer intent: As a Global Secure Access administrator, I want to create a context aware Transport Layer Security inspection policy and assign the policy to users in my organization.   
@@ -15,7 +15,7 @@ ms.date: 02/07/2025
 # Context aware Transport Layer Security inspection (Preview)
 > [!IMPORTANT]
 > The context aware Transport Layer Security inspection policy feature is currently in PREVIEW.   
-> This information relates to a prerelease product that might be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+> This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 A significant percentage of internet traffic is encrypted. By terminating Transport Layer Security (TLS) at the edge, Global Secure Access can inspect and apply security policies to decrypted traffic, which allows for threat detection, content filtering, and granular access controls.
  
@@ -23,14 +23,20 @@ This article shows how to create a context aware Transport Layer Security inspec
 
 ## Prerequisites
 To test the functionality provided in this preview, you need the following high-level prerequisites: 
-- A Microsoft Entra tenant onboarded to the TLS Inspection Private Preview. We have done this for you already for the tenant you have shared with us.  
-- An Azure Subscription associated with the tenant. This is required to store your root or intermediate CA certificate within an Azure Key Vault.  
-- One or more test devices (or virtual machines) running Windows 10 or 11 that are Entra ID Joined or Entra ID Hybrid Joined to the tenant.  
+- A Microsoft Entra tenant onboarded to the TLS Inspection Private Preview. We've completed this setup for you in the tenant you shared with us.  
+- An Azure Subscription associated with the tenant. The subscription is required to store your root or intermediate Conditional Access (CA) certificate within an Azure Key Vault.  
+- One or more test devices (or virtual machines) running Windows 10 or 11 that are Microsoft Entra ID Joined or Microsoft Entra ID Hybrid Joined to the tenant.  
 - A trial license for Microsoft Entra Internet Access.  
 - [Global Secure Access prerequisites](how-to-configure-web-content-filtering.md). 
 
 ## Create a context aware TLS inspection policy
-[Introduce the procedure: **need some additional into language here**.]
+To create a context aware Transport Layer Security inspection policy and assign the policy to users in your organization, complete the following steps:
+1. [Enable the TLS inspection portal link](#step-1-enable-the-tls-inspection-portal-link)
+1. [Upload a certificate for TLS termination](#step-2-global-secure-access-admin-upload-a-certificate-for-tls-termination)
+1. [Create a TLS inspection policy](#step-3-global-secure-access-admin-create-a-tls-inspection-policy)
+1. [Assign the TLS inspection policy](#step-4-global-secure-access-admin-assign-the-tls-inspection-policy)
+1. [Create a conditional access policy](#step-5-global-secure-access-admin-create-a-conditional-access-policy)
+1. [Test the configuration](#step-6-test-the-configuration)
 
 ### Step 1: Enable the TLS inspection portal link
 The first step in the process is to enable the TLS inspection portal link.
@@ -45,8 +51,8 @@ The next step is to upload a certificate for TLS termination.
         - Key Vault Certificates User   
         - Key Vault Secrets User    
     1. Add Key Vault Certificates Officer role to your administrator account for uploading the certificate   
-1. Upload a test CA certificate. (Don't use a production certificate. The certificate must have a blank password and include the Private Key.) If you have no access to a testing CA, a self-signed certificate can be created for testing purposes using the script in the appendix. Once the certificate is saved in your KeyVault, copy the certificate identifier URL:  Certificates > Import > Add certificate with empty password > Save.   
-1. While on the certificate properties, select “Download in CER format” to download the certificate. You'll need to import this certificate on all your test devices from the Trusted Root Certificates store.   
+1. Upload a test CA certificate. (Don't use a production certificate. The certificate must have a blank password and include the Private Key.) If you have no access to a testing CA certificate, a self-signed certificate can be created for testing purposes using the script in the appendix. Once the certificate is saved in your KeyVault, copy the certificate identifier URL: Certificates > Import > Add certificate with empty password > Save.   
+1. While on the certificate properties, select “Download in CER format” to download the certificate. You need to import this certificate on all your test devices from the Trusted Root Certificates store.   
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](../identity/role-based-access-control/permissions-reference.md#global-secure-access-administrator).   
 1. Navigate to **Global Secure Access** > **Global settings** > **Session management**.   
 1. Switch to the **TLS Inspection** tab and enter a **key vault URL** in the input field.
@@ -118,7 +124,6 @@ For the final step, test the configuration.
     1. As a Global Secure Access admin, check the traffic logs from the Microsoft Entra admin center.
     :::image type="content" source="media/how-to-context-aware-transport-layer-security/traffic-logs.png" alt-text="Screenshot of the traffic logs from the Microsoft Entra admin center."::: 
 
-
 ## Clean up resources
 To disable TLS inspection:
 1. In the [Microsoft Entra admin center](https://entra.microsoft.com/), navigate to **Global Secure Access** > **Security Profiles** and remove the link to the TLS inspection policy.   
@@ -126,7 +131,32 @@ To disable TLS inspection:
 1. Under **Global settings/Session control**, clear the **keyvault URL** value from the **Input** box. 
 1. Select **Save**.   
 
+## Appendix
+### Feedback
+To provide feedback, complete the five-minute [TLS Inspection survey](https://forms.office.com/r/MxHhn67E8X).
+
+## Create a self-signed test CA certificate
+To create a new CA certificate, run the following PowerShell code on a Windows device and export it to C:\temp. Edit the code as required. 
+
+```powershell
+    $params = @{ 
+    Type = 'Custom' 
+    Subject = 'CN=TLSPreviewRootCA' 
+    KeySpec = 'Signature' 
+    KeyExportPolicy = 'Exportable' 
+    KeyUsage = 'CertSign' 
+    KeyUsageProperty = 'Sign' 
+    KeyLength = 2048 
+    HashAlgorithm = 'sha256' 
+    NotAfter = (Get-Date).AddMonths(6) 
+    CertStoreLocation = 'Cert:\CurrentUser\My' 
+    TextExtension = @("2.5.29.19={text}CA=true") 
+    } 
+    $cert = New-SelfSignedCertificate @params 
+    
+    $pwd = New-Object System.Security.SecureString 
+    Export-PfxCertificate -Cert $cert -FilePath C:\temp\ATPPreviewRootCA.pfx -Password $pwd  
+```
+
 ## Related content
-* [Related article title](link.md)
-* [Related article title](link.md)
-* [Related article title](link.md)
+* [Global Secure Access Frequently asked questions](resource-faq.yml)
