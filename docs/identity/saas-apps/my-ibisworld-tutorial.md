@@ -85,7 +85,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
-    Please contact [My IBISWorld support team](mailto:support@ibisworld.freshdesk.com) for Sign-on URL from IBISWorld and set it into the **Sign-on URL** text box.
+    Please contact your IBISWorld Client Relationship Manager for Sign-on URL from IBISWorld and set it into the **Sign-on URL** text box.
 
 1. Click **Save**.
 
