@@ -1,6 +1,6 @@
 ---
 author: kengaderdus
-ms.service: identity-platform 
+ms.service: entra-external-id 
 ms.subservice: external
 ms.topic: include
 ms.date: 03/12/2024

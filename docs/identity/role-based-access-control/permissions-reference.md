@@ -85,6 +85,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Lifecycle Workflows Administrator](#lifecycle-workflows-administrator) | Create and manage all aspects of workflows and tasks associated with Lifecycle Workflows in Microsoft Entra ID.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 59d46f88-662b-457b-bceb-5c3809e5908f |
 > | [Message Center Privacy Reader](#message-center-privacy-reader) | Can read security messages and updates in Office 365 Message Center only. | ac16e43d-7b2d-40e0-ac05-243ff356ab5b |
 > | [Message Center Reader](#message-center-reader) | Can read messages and updates for their organization in Office 365 Message Center only. | 790c1fb9-7f7d-4f88-86a1-ef1f95c05c1b |
+> | [Microsoft 365 Backup Administrator](#microsoft-365-backup-administrator) | Back up and restore content across supported services (SharePoint, OneDrive, and Exchange Online) in Microsoft 365 Backup | 1707125e-0aa2-4d4d-8655-a7c786c76a25 |
 > | [Microsoft 365 Migration Administrator](#microsoft-365-migration-administrator) | Perform all migration functionality to migrate content to Microsoft 365 using Migration Manager. | 8c8b803f-96e1-4129-9349-20738d9f9652 |
 > | [Microsoft Entra Joined Device Local Administrator](#microsoft-entra-joined-device-local-administrator) | Users assigned to this role are added to the local administrators group on Microsoft Entra joined devices. | 9f06204d-73c1-4d4c-880a-6edb90606fd8 |
 > | [Microsoft Hardware Warranty Administrator](#microsoft-hardware-warranty-administrator) | Create and manage all aspects warranty claims and entitlements for Microsoft manufactured hardware, like Surface and HoloLens. | 1501b917-7653-4ff9-a4b5-203eaf33784f |
@@ -409,7 +410,7 @@ This is a [privileged role](privileged-roles-permissions.md). Assign the Attribu
 - Read and write attribute mappings for custom security attributes when provisioning in an application.
 - Read and write provisioning and auditing logs for custom security attributes when provisioning in an application.
 
-Users with this role cannot read audit logs for other events. This role must be used in in conjunction with the Cloud Application Administrator or Application Administrator roles (from least to most privileged) to read provisioning configurations.
+Users with this role cannot read audit logs for other events. This role must be used in conjunction with the Cloud Application Administrator or Application Administrator roles (from least to most privileged) to read provisioning configurations.
 
 > [!IMPORTANT]
 > This role does not have the ability to create custom security attribute sets or to directly assign or update custom security attribute values for the user object. This role can only configure the flow of the custom security attributes in the provisioning app.
@@ -431,7 +432,7 @@ This is a [privileged role](privileged-roles-permissions.md). Assign the Attribu
 - Read the attribute mappings for custom security attributes when provisioning in an application.
 - Read the provisioning and auditing logs for custom security attributes when provisioning in an application.
 
-Users with this role cannot read audit logs for other events. This role must be used in in conjunction with the Cloud Application Administrator or Application Administrator roles (from least to most privileged) to read provisioning configurations.
+Users with this role cannot read audit logs for other events. This role must be used in conjunction with the Cloud Application Administrator or Application Administrator roles (from least to most privileged) to read provisioning configurations.
 
 [Learn more](../app-provisioning/provision-custom-security-attributes.md)
 
@@ -1864,6 +1865,26 @@ Users in this role can monitor notifications and advisory health updates in [Mes
 > | Actions | Description |
 > | --- | --- |
 > | microsoft.office365.messageCenter/messages/read | Read messages in Message Center in the Microsoft 365 admin center, excluding security messages |
+> | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
+
+## Microsoft 365 Backup Administrator
+
+Assign the Microsoft 365 Backup Administrator role to users who need to do the following tasks:
+
+- Manage all aspects of Microsoft 365 Backup
+- Create, edit, and manage backup configuration policies for SharePoint, OneDrive, and Exchange Online
+- Perform restore operations for backed-up SharePoint sites, OneDrive accounts, and Exchange mailboxes
+
+> [!div class="mx-tableFixed"]
+> | Actions | Description |
+> | --- | --- |
+> | microsoft.azure.serviceHealth/allEntities/allTasks | Read and configure Azure Service Health |
+> | microsoft.azure.supportTickets/allEntities/allTasks | Create and manage Azure support tickets |
+> | microsoft.backup/allEntities/allProperties/allTasks | Manage all aspects of Microsoft 365 Backup |
+> | microsoft.office365.network/performance/allProperties/read | Read all network performance properties in the Microsoft 365 admin center |
+> | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
+> | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
+> | microsoft.office365.usageReports/allEntities/allProperties/read | Read Office 365 usage reports |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
 
 ## Microsoft 365 Migration Administrator

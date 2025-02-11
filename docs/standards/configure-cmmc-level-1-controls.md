@@ -22,7 +22,7 @@ In CMMC Level 1, there are three domains that have one or more practices related
 
 Learn more:
 
-* DoD CMMC website - [Office of the Under Secretary of Defense for Acquisition & Sustainment Cybersecurity Maturity Model Certification](https://www.acq.osd.mil/cmmc/index.html)
+* DoD CMMC website - [Cybersecurity Maturity Model Certification Overview](https://dodcio.defense.gov/CMMC/about/)
 * Microsoft Download Center - [Microsoft Product Placemat for CMMC Level 3 (preview)](https://www.microsoft.com/download/details.aspx?id=102536)
 
 The remainder of this content is organized by domain and associated practices. For each domain, there's a table with links to content that provides step-by-step guidance to accomplish the practice.

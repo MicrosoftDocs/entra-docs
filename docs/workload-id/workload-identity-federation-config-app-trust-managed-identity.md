@@ -180,42 +180,42 @@ using Azure.Storage.Blobs;
 
 internal class Program
 {
-    // This example demonstrates how to access an Azure blob storage account by utilizing the manage identity credential.
+  // This example demonstrates how to access an Azure blob storage account by utilizing the manage identity credential.
   static void Main(string[] args)
   {
-        string storageAccountName = "YOUR_STORAGE_ACCOUNT_NAME";
-        string containerName = "CONTAINER_NAME";
+    string storageAccountName = "YOUR_STORAGE_ACCOUNT_NAME";
+    string containerName = "CONTAINER_NAME";
         
-        // The application must be granted access on the target resource
-      string appClientId = "YOUR_APP_CLIENT_ID";
+    // The application must be granted access on the target resource
+    string appClientId = "YOUR_APP_CLIENT_ID";
 
-        // The tenant where the target resource is created, in this example, the storage account tenant
-        // If the resource tenant different from the app tenant, your app needs to be 
-      string resourceTenantId = "YOUR_RESOURCE_TENANT_ID";
+    // The tenant where the target resource is created, in this example, the storage account tenant
+    // If the resource tenant different from the app tenant, your app needs to be 
+    string resourceTenantId = "YOUR_RESOURCE_TENANT_ID";
 
-        // The managed identity which you configured as a Federated Identity Credential (FIC)
-      string miClientId = "YOUR_MANAGED_IDENTITY_CLIENT_ID"; 
+    // The managed identity which you configured as a Federated Identity Credential (FIC)
+    string miClientId = "YOUR_MANAGED_IDENTITY_CLIENT_ID"; 
 
-        // Audience value must be one of the below values depending on the target cloud.
-        // Public cloud: api://AzureADTokenExchange
-        //  Fairfax: api://AzureADTokenExchangeUSGov
-        //  Mooncake: api://AzureADTokenExchangeChina
-        //  USNat: api://AzureADTokenExchangeUSNat
-        //  USSec: api://AzureADTokenExchangeUSSec
-      string audience = "api://AzureADTokenExchange";
+    // Audience value must be one of the below values depending on the target cloud.
+    // Public cloud: api://AzureADTokenExchange
+    // Fairfax: api://AzureADTokenExchangeUSGov
+    // Mooncake: api://AzureADTokenExchangeChina
+    // USNat: api://AzureADTokenExchangeUSNat
+    // USSec: api://AzureADTokenExchangeUSSec
+    string audience = "api://AzureADTokenExchange";
 
-        // 1. Create an assertion with the managed identity access token, so that it can be exchanged an app token
-        var miCredential = new ManagedIdentityCredential(managedIdentityClientId);
-        ClientAssertionCredential assertion = new(
-            tenantId,
-            appClientId,
-            async (token) =>
-            {
-                // fetch Managed Identity token for the specified audience
-                var tokenRequestContext = new Azure.Core.TokenRequestContext(new[] { $"{audience}/.default" });
-                var accessToken = await miCredential.GetTokenAsync(tokenRequestContext).ConfigureAwait(false);
-                return accessToken.Token;
-            });
+    // 1. Create an assertion with the managed identity access token, so that it can be exchanged an app token
+    var miCredential = new ManagedIdentityCredential(managedIdentityClientId);
+    ClientAssertionCredential assertion = new(
+        tenantId,
+        appClientId,
+        async (token) =>
+        {
+            // fetch Managed Identity token for the specified audience
+            var tokenRequestContext = new Azure.Core.TokenRequestContext(new[] { $"{audience}/.default" });
+            var accessToken = await miCredential.GetTokenAsync(tokenRequestContext).ConfigureAwait(false);
+            return accessToken.Token;
+        });
 
         // 2. The assertion can be used to obtain an App token (taken care of by the SDK)
         var containerClient  = new BlobContainerClient(new Uri($"https://{storageAccountName}.blob.core.windows.net/{containerName}"), assertion);
@@ -226,7 +226,7 @@ internal class Program
             BlobClient blobClient = containerClient.GetBlobClient(blob.Name);
             Console.WriteLine($"Blob name: {blobClent.Name}, uri: {blobClient.Uri}");            
         }
-  }
+    }
 }
 ```
 
@@ -247,7 +247,7 @@ In **Microsoft.Identity.Web**, a web application or web API can replace the clie
         "ManagedIdentityClientId": "YOUR_USER_ASSIGNED_MANAGED_IDENTITY_CLIENT_ID",
         "TokenExchangeUrl":"api://AzureADTokenExchange"
       }
-   ]
+    ]
   }
 }
 ```
@@ -269,8 +269,8 @@ internal class Program
 {
   static async Task Main(string[] args)
   {
-        string storageAccountName = "YOUR_STORAGE_ACCOUNT_NAME";
-        string containerName = "CONTAINER_NAME";
+      string storageAccountName = "YOUR_STORAGE_ACCOUNT_NAME";
+      string containerName = "CONTAINER_NAME";
 
       string appClientId = "YOUR_APP_CLIENT_ID";
       string resourceTenantId = "YOUR_RESOURCE_TENANT_ID";
@@ -299,8 +299,8 @@ internal class Program
         .Build();
 
         // Get the federated app token for the storage account
-      string[] scopes = [$"https://{storageAccountName}.blob.core.windows.net/.default"];
-      AuthenticationResult result = await app.AcquireTokenForClient(scopes).ExecuteAsync().ConfigureAwait(false);
+        string[] scopes = [$"https://{storageAccountName}.blob.core.windows.net/.default"];
+        AuthenticationResult result = await app.AcquireTokenForClient(scopes).ExecuteAsync().ConfigureAwait(false);
 
         TokenCredential tokenCredential = new AccessTokenCredential(result.AccessToken);
         var client = new BlobContainerClient(
@@ -313,7 +313,7 @@ internal class Program
             BlobClient blobClient = containerClient.GetBlobClient(blob.Name);
             Console.WriteLine($"Blob name: {blobClient.Name}, URI: {blobClient.Uri}");
         }
-  }
+    }
 }
 ```
 

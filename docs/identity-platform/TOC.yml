@@ -138,20 +138,38 @@
       href: index-spa.yml
     - name: Quickstart
       items: 
-        - name: Sign in users
-          href: quickstart-single-page-app-sign-in.md?pivots=workforce
+          - name: Browser-delegated authentication
+            items:
+            - name: Sign in users
+              href: quickstart-single-page-app-sign-in.md?pivots=workforce
+          - name: Native authentication
+            items:
+              - name: Sign in users
+                href: quickstart-native-authentication-single-page-app-react-sign-in.md?pivots=workforce
     - name: Tutorials
       items:
         - name: React
           items:
-          - name: Register your app
-            href: tutorial-single-page-app-react-register-app.md
-          - name: Prepare your app
-            href: tutorial-single-page-app-react-prepare-spa.md
-          - name: Sign in users
-            href: tutorial-single-page-app-react-sign-in-users.md
-          - name: Get user data from web API
-            href: tutorial-single-page-app-react-call-api.md
+            - name: Browser-delegated authentication
+              items:
+              - name: Register your app
+                href: tutorial-single-page-app-react-register-app.md
+              - name: Prepare your app
+                href: tutorial-single-page-app-react-prepare-spa.md
+              - name: Sign in users
+                href: tutorial-single-page-app-react-sign-in-users.md
+              - name: Get user data from web API
+                href: tutorial-single-page-app-react-call-api.md
+            - name: Native authentication
+              items:
+                - name: Sign up
+                  href: tutorial-native-authentication-single-page-app-react-sign-up.md
+                - name: Set up local CORS
+                  href: tutorial-native-authentication-single-page-app-react-set-up-local-cors.md
+                - name: Sign in
+                  href: tutorial-native-authentication-single-page-app-react-sign-in.md
+                - name: Reset password
+                  href: tutorial-native-authentication-single-page-app-react-reset-password.md
         - name: Angular
           items:
           - name: Register your app
@@ -167,18 +185,26 @@
       href: sample-v2-code.md#single-page-applications
     - name: How-to
       items:
-        - name: SPA that signs in users and calls web API
+        - name: Browser-delegated authentication
           items:
-            - name: App registration
-              href: scenario-spa-app-registration.md
-            - name: Code configuration
-              href: scenario-spa-app-configuration.md
-            - name: Sign in and sign out
-              href: scenario-spa-sign-in.md
-            - name: Acquire token for an API
-              href: scenario-spa-acquire-token.md
-            - name: Call a web API
-              href: scenario-spa-call-api.md
+            - name: SPA that signs in users and calls web API
+              items:
+                - name: App registration
+                  href: scenario-spa-app-registration.md
+                - name: Code configuration
+                  href: scenario-spa-app-configuration.md
+                - name: Sign in and sign out
+                  href: scenario-spa-sign-in.md
+                - name: Acquire token for an API
+                  href: scenario-spa-acquire-token.md
+                - name: Call a web API
+                  href: scenario-spa-call-api.md
+        - name: Native authentication
+          items:
+            - name: Set up CORS in test environment
+              href: how-to-native-authentication-cors-solution-test-environment.md
+            - name: Set up CORS in production
+              href: how-to-native-authentication-cors-solution-production-environment.md
 - name: Web app
   items:
     - name: Web app authentication
@@ -187,12 +213,12 @@
       items:
         - name: Sign in users
           href: quickstart-web-app-sign-in.md?pivots=workforce
-          displayName: Node, ASP.NET,  ASP.NET Core, Python, Java Spring
+          displayName: Node, ASP.NET,  ASP.NET Core, Python
         - name: Call an API
-          href: quickstart-web-app-node-sign-in-call-api.md?pivots=workforce
+          href: quickstart-web-app-node-sign-in-call-api.md
           displayName: Node.js, Nodejs, Nodejs web app
         - name: Edit profile
-          href: quickstart-web-app-node-sign-in-edit-profile.md?pivots=workforce
+          href: quickstart-web-app-node-sign-in-edit-profile.md
           displayName: Node.js, Nodejs, Nodejs web app
     - name: Tutorials
       items:
@@ -219,13 +245,11 @@
         - name: Node/Express.js
           items:
             - name: Set up Nodejs app
-              href: tutorial-web-app-node-sign-in-prepare-app.md?tabs=workforce-tenant
+              href: tutorial-web-app-node-sign-in-prepare-app.md?pivots=workforce
             - name: Add sign in and sign out
-              href: tutorial-web-app-node-sign-in-sign-out.md?tabs=workforce-tenant
+              href: tutorial-web-app-node-sign-in-sign-out.md?pivots=workforce
             - name: Call Microsoft Graph API
               href: tutorial-web-app-node-call-microsoft-graph-api.md?tabs=workforce-tenant
-        - name: Java Spring
-          href: /azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-active-directory?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
         - name: Secure web app accesses storage and Microsoft Graph
           items:
             - name: Overview
@@ -833,8 +857,6 @@
       href: reference-v2-libraries.md
     - name: AADSTS error code reference
       href: reference-error-codes.md
-    - name: Spring Cloud Azure
-      href: /azure/developer/java/spring-framework/developer-guide-overview?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json   
     - name: Configured permissions limits troubleshooting
       href: troubleshoot-required-resource-access-limits.md
 - name: Resources
