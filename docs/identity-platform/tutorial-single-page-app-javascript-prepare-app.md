@@ -61,7 +61,7 @@ In this tutorial, you'll;
 
 1. Create additional folders and files to achieve the following project structure:
 
-    ```JavaScript
+    ```javascript
     └── public
         └── authConfig.js
         └── authPopup.js
@@ -71,7 +71,7 @@ In this tutorial, you'll;
         └── signout.html
         └── styles.css
         └── ui.js    
-        └── server.js
+    └── server.js
     ```
 
 ## Install app dependencies
@@ -126,36 +126,32 @@ In this tutorial, you'll;
         console.log(`Sample app listening on port ${DEFAULT_PORT}!`);
     });
 
+    module.exports = app;
     ```
 
 In this code, the **app** variable is initialized with the **express** module and **express** is used to serve the public assets. **MSAL-browser** is served as a static asset and is used to initiate the authentication flow.
 
-[!INCLUDE [external-id-custom-domain](../external-id/customers/includes/use-custom-domain-url.md)]
+## Adding your tenant details to the authentication configuration
 
-## Edit the authentication configuration file
+The **authConfig.js** file contains the configuration settings for the authentication flow and is used to configure the **MSAL.js** library with the required settings for authentication.
 
 1. Open *public/authConfig.js* and add the following code snippet:
 
     ```javascript
-    import { LogLevel } from '@azure/msal-browser';
-
-    /**
-    * Configuration object to be passed to MSAL instance on creation. 
-    * For a full list of MSAL.js configuration parameters, visit:
-    * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/configuration.md 
-    */
-
-    export const msalConfig = {
+    const msalConfig = {
         auth: {
-            clientId: 'Enter_the_Application_Id_Here', // This is the ONLY mandatory field that you need to supply.
-            authority: 'https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/', // Replace the placeholder with your tenant subdomain 
-            redirectUri: '/', // Points to window.location.origin. You must register this URI on Azure Portal/App Registration.
-            postLogoutRedirectUri: '/', // Indicates the page to navigate after logout.
-            navigateToLoginRequestUrl: false, // If "true", will navigate back to the original request location before processing the auth code response.
+
+            clientId: "Enter_the_Application_Id_Here", // This is the ONLY mandatory field that you need to supply
+            // WORKFORCE TENANT
+            authority: "https://login.microsoftonline.com/Enter_the_Tenant_Info_Here", //  Replace the placeholder with your tenant info
+            // EXTERNAL TENANT
+            // authority: "https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/", // Replace the placeholder with your tenant subdomain
+            redirectUri: '/', // You must register this URI on App Registration. Defaults to window.location.href e.g. http://localhost:3000/
+            navigateToLoginRequestUrl: true, // If "true", will navigate back to the original request location before processing the auth code response.
         },
         cache: {
-            cacheLocation: 'sessionStorage', // Configures cache location. "sessionStorage" is more secure, but "localStorage" gives you SSO between tabs.
-            storeAuthStateInCookie: false, // Set this to "true" if you are having issues on IE11 or Edge
+            cacheLocation: 'sessionStorage', // Configures cache location. "sessionStorage" is more secure, but "localStorage" gives you SSO.
+            storeAuthStateInCookie: false, // set this to true if you have to support IE
         },
         system: {
             loggerOptions: {
@@ -164,19 +160,17 @@ In this code, the **app** variable is initialized with the **express** module an
                         return;
                     }
                     switch (level) {
-                        case LogLevel.Error:
+                        case msal.LogLevel.Error:
                             console.error(message);
                             return;
-                        case LogLevel.Info:
+                        case msal.LogLevel.Info:
                             console.info(message);
                             return;
-                        case LogLevel.Verbose:
+                        case msal.LogLevel.Verbose:
                             console.debug(message);
                             return;
-                        case LogLevel.Warning:
+                        case msal.LogLevel.Warning:
                             console.warn(message);
-                            return;
-                        default:
                             return;
                     }
                 },
@@ -188,18 +182,32 @@ In this code, the **app** variable is initialized with the **express** module an
     * Scopes you add here will be prompted for user consent during sign-in.
     * By default, MSAL.js will add OIDC scopes (openid, profile, email) to any login request.
     * For more information about OIDC scopes, visit: 
-    * https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes
+    * https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview#openid-connect-scopes
     */
-    export const loginRequest = {
+    const loginRequest = {
         scopes: [],
     };
+
+    /**
+    * An optional silentRequest object can be used to achieve silent SSO
+    * between applications by providing a "login_hint" property.
+    */
+
+    // const silentRequest = {
+    //   scopes: ["openid", "profile"],
+    //   loginHint: "example@domain.net"
+    // };
+
      ```
 
-1. Replace the following values with the values from the Azure portal:
+1. Replace the following values with the values from the Entra admin center:
     - Find the `Enter_the_Application_Id_Here` value and replace it with the **Application ID (clientId)** of the app you registered in the Microsoft Entra admin center.
-      - In **Authority**, find `Enter_the_Tenant_Subdomain_Here` and replace it with the subdomain of your tenant. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+        - For **workforce tenants**, in **Authority**, Replace *Enter_the_Tenant_Info_Here* with the **Directory (tenant) ID** value that was recorded earlier.
+        - For **external tenants**, in **Authority**, find `Enter_the_Tenant_Subdomain_Here` and replace it with the subdomain of your tenant. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, [learn how to read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 2. Save the file.
+
+[!INCLUDE [external-id-custom-domain](../external-id/customers/includes/use-custom-domain-url.md)]
 
 ## Next step
 
