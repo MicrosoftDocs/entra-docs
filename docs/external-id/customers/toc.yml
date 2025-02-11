@@ -98,14 +98,12 @@ items:
           items:
             - name: JavaScript 
               items:
-                  - name: Prepare tenant
-                    href: tutorial-single-page-app-vanillajs-prepare-tenant.md
                   - name: Create JavaScript app
-                    href: tutorial-single-page-app-vanillajs-prepare-app.md
+                    href: /entra/identity-platform/tutorial-single-page-app-vanillajs-prepare-app.md
                   - name: Configure app for authentication
-                    href: tutorial-single-page-app-vanillajs-configure-authentication.md
+                    href: /entra/identity-platform/tutorial-single-page-app-vanillajs-configure-authentication.md
                   - name: Sign in and sign out
-                    href: tutorial-single-page-app-vanillajs-sign-in-sign-out.md
+                    href: /entra/identity-platform/tutorial-single-page-app-vanillajs-sign-in-sign-out.md
             - name: React
               items:
                   - name: Prepare tenant
