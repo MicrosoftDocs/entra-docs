@@ -9,7 +9,7 @@ ms.service: entra-external-id
 ms.subservice: external
 ms.topic: quickstart
 ms.date: 02/07/2025
-#Customer intent: As a developer, devops, I want to 
+#Customer intent: As a developer, I want to configure a sample React single-page application using native authentication so that I can authenticate users, including sign-up, sign-in, sign-out, and password reset flows.
 ---
 
 # Quickstart: Sign in users in a sample React single-page application by using native authentication (preview)
