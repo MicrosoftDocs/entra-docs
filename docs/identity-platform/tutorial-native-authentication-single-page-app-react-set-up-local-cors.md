@@ -14,6 +14,8 @@ ms.date: 02/07/2025
 
 # Tutorial: Set up CORS proxy server to manage CORS headers for native authentication (preview)
 
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
 In this tutorial, you learn how to set up the CORS proxy server to manage CORS headers while interacting with native authentication API from a React single-page app (SPA). The CORS proxy server is a solution to the native authentication API's inability to support [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/docs/Web/HTTP/CORS).
 
 In this tutorial, you learn how to:
@@ -101,9 +103,9 @@ In this tutorial, you learn how to:
         module.exports = config;
     ```
 
-    - Find the placeholder `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant subdomain, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+    - Find the placeholder `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant subdomain, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
-    - `tenantId` and replace it with the Directory (tenant) ID. If you don't have your tenant ID, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+    - `tenantId` and replace it with the Directory (tenant) ID. If you don't have your tenant ID, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 1. Open *package.json* file, then add the following command in the *scripts* object:
 
