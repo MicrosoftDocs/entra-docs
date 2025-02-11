@@ -31,11 +31,9 @@ In this tutorial:
 
 ## Add authentication and authorization elements
 
-The *Program.cs* file needs to be modified to add authorization and authentication to the web app and to authorize the user.
+The *Program.cs* file needs to be modified to add authorization and authentication to the web app and to authorize the user. This section guides you through how to add the capability to sign in users with the Microsoft identity platform, update the application middleware and enable authentication by default. 
 
 ### Add authentication elements
-
-The *Program.cs* file is where we add authentication and authorization to the web app itself. You need to add the correct namespaces and add the capability to sign in users with the Microsoft identity platform. 
 
 1. Open *Program.cs* and add the following namespaces to the top of the file:
 
@@ -49,18 +47,13 @@ The *Program.cs* file is where we add authentication and authorization to the we
 
     :::code language="csharp" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/Program.cs" range="12-15" :::
 
-
 ### Enable authentication by default
 
-To enable authentication by default, add a controller to *Program.cs*, requiring authenticated users and add the Microsoft Identity UI, providing default pages for sign-in and sign-out.
-
-Add the following code to *Program.cs*.
+Add the following code to *Program.cs* to provide the default pages for sign-in and sign-out:
 
 :::code language="csharp" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/Program.cs" range="19-25" :::
 
 ### Add authentication to the middleware
-
-The application middleware needs to be modified to enable the authentication capabilities. 
 
 Replace the rest of the code in *Program.cs* with the following snippet:
 
