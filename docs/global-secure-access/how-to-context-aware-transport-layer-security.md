@@ -74,13 +74,13 @@ With this method, the baseline profile policy is evaluated last and applies to a
 1. In the Microsoft Entra admin center, navigate to **Secure** > **Security Profiles**.
 1. Select **Edit Baseline profile**.
 1. In the **Link policies** view, link the TLS policy and assign a desired priority to the security profile.
-:::image type="content" source="media/how-to-context-aware-transport-layer-security/baseline-profile.png" alt-text="Screenshot of the Link policies view showing a list of policy names and their priorities.":::   
+:::image type="content" source="media/how-to-context-aware-transport-layer-security/baseline-profile.png" alt-text="Screenshot of the Edit Baseline profile screen showing a list of policy names and their priorities.":::   
 
 #### Option 2: Selective TLS inspection for users/groups
 1. In the Microsoft Entra admin center, navigate to **Secure** > **Security Profiles**.
 1. Select **Edit User Profile**.
 1. In the **Link policies** view, link the TLS policy and assign a desired priority to the security profile.
-:::image type="content" source="media/how-to-context-aware-transport-layer-security/user-profile.png" alt-text="Screenshot of the Link policies view showing a list of policy names and their priorities.":::   
+:::image type="content" source="media/how-to-context-aware-transport-layer-security/user-profile.png" alt-text="Screenshot of the Edit User Profile screen showing a list of policy names and their priorities.":::   
 
 ### Step 5: Global Secure Access admin: create a conditional access policy
 In this step, create a conditional access policy for a specific user, group, or other conditional access context condition and assign the Global Secure Access security profile.   
@@ -107,9 +107,8 @@ For the final step, test the configuration.
 |151.206.32.19    |San Jose, CA United States (West)    |
 |151.206.35.20    |Singapore, Singapore    |
 
-    -  Open C:\Windows\System32\drivers\etc\hosts in admin mode and append:    
-    <IP address> <tenantid>.internet.client.globalsecureaccess.microsoft.com   
-    Note: the <tenantid> should be the same Tenant ID provided for preview onboarding.
+    - In admin mode, open C:\Windows\System32\drivers\etc\hosts.
+    - Append: <IP address> <tenantid>.internet.client.globalsecureaccess.microsoft.com. Note: the <tenantid> should be the same Tenant ID provided for preview onboarding.
 
 3. Open a browser on a client device and visit the example websites for testing. See the [Test cases](#test-cases) section for examples. 
 
