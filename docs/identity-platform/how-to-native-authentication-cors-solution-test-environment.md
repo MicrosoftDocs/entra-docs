@@ -13,7 +13,9 @@ ms.date: 02/07/2025
 
 # Set up a reverse proxy for a single-page app that calls native authentication API by using Azure Function App (preview)
 
-In this article, you learn how to set up a reverse proxy by using Azure Functions App to manage CORS headers in a test environment for a single-page app (SPA) that uses [native authentication API](/entra/identity-platform/reference-native-authentication-api?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json&tabs=emailOtp).
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
+In this article, you learn how to set up a reverse proxy by using Azure Functions App to manage CORS headers in a test environment for a single-page app (SPA) that uses [native authentication API](/entra/identity-platform/reference-native-authentication-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json).
 
 The native authentication API doesn't support Cross-Origin Resource Sharing (CORS). Therefore, a single-page app (SPA) that uses this API for user authentication can't make successful requests from front-end JavaScript code. To resolve this, you need to add a proxy server between the SPA and the native authentication API. This proxy server injects the appropriate CORS headers into the response.
 
@@ -72,7 +74,7 @@ This solution is for testing purposes and should **NOT be used in a production e
     - `Enter_Location_Name_Here` with the geographical region where the resource group is created.
     - `Enter_The_SPA_URL_Here` with the SPA app URL you recorded earlier.
 
-1. Open */API/CORSTestEnviroment/ReverseProxy/index.js* file, then replace the placeholder `Enter_the_Tenant_Subdomain_Here` with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+1. Open */API/CORSTestEnviroment/ReverseProxy/index.js* file, then replace the placeholder `Enter_the_Tenant_Subdomain_Here` with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
     The name of the directory, such as *ReverseProxy*, need to match the value, such as *ReverseProxy/{\*path}*, of the `route` key in the *function.json* file. If you change the name of the directory to *TriggerFunc*, then the value of the `route` key needs to be *TriggerFunc/{\*path}*.
 

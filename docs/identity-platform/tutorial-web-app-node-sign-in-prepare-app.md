@@ -28,7 +28,7 @@ In this tutorial you'll;
 
 ## Prerequisites
 
-- [Quickstart: Sign in users in a sample web app](quickstart-web-app-sign-in.md?pivots=external&tabs=node-external)
+- If you've not already done so, complete the steps in [Quickstart: Sign in users in a sample web app](quickstart-web-app-sign-in.md?pivots=external&tabs=node-external). In the quickstart, you don't have to clone and run the the code sample.
 - [Node.js](https://nodejs.org).
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
