@@ -25,7 +25,7 @@ In this tutorial, you'll;
 
 ## Prerequisites
 
-* [Tutorial: Prepare your external tenant to authenticate users in a Vanilla JavaScript SPA](tutorial-single-page-app-vanillajs-prepare-tenant.md).
+* [Tutorial: Prepare your external tenant to authenticate users in a Vanilla JavaScript SPA](tutorial-single-page-app-vanillajs-prepare-app.md).
 
 ## Add code to the *index.html* file
 
@@ -441,7 +441,7 @@ Now that all the required code snippets have been added, the application can be 
 
 1. The SPA will now display a button saying **Request Profile Information**. Select it to display profile data.
 
-    :::image type="content" source="media/how-to-spa-vanillajs-sign-in-sign-in-out/display-vanillajs-welcome.png" alt-text="Screenshot of sign in into a Vanilla JS SPA." lightbox="media/how-to-spa-vanillajs-sign-in-sign-in-out/display-vanillajs-welcome.png":::
+    :::image type="content" source="media/tutorial-spa-vanillajs-sign-in-sign-in-out/display-vanillajs-welcome.png" alt-text="Screenshot of sign in into a Vanilla JS SPA." lightbox="media/tutorial-spa-vanillajs-sign-in-sign-in-out/display-vanillajs-welcome.png":::
 
 ## Sign out of the application
 
@@ -449,6 +449,6 @@ Now that all the required code snippets have been added, the application can be 
 1. A window appears asking which account to sign out of.
 1. Upon successful sign out, a final window appears advising you to close all browser windows.
 
-## See also
+## Related content
 
-- [Enable self-service password reset](./how-to-enable-password-reset-customers.md) 
+- [Enable self-service password reset](../external-id/customers/how-to-enable-password-reset-customers.md) 

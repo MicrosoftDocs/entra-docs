@@ -14,7 +14,7 @@ ms.date: 02/11/2024
 
 # Tutorial: Create a Vanilla JavaScript SPA for authentication in an external tenant
 
-This tutorial is part 2 of a series that demonstrates building a Vanilla JavaScript (JS) single-page application (SPA) and preparing it for authentication using the Microsoft Entra admin center. In [Part 1 of this series](tutorial-single-page-app-vanillajs-prepare-tenant.md), you registered an application and configured user flows in your external tenant. This tutorial demonstrates how to create a Vanilla JavaScript SPA using `npm` and create files needed for authentication and authorization.
+This tutorial is part 2 of a series that demonstrates building a Vanilla JavaScript (JS) single-page application (SPA) and preparing it for authentication using the Microsoft Entra admin center. This tutorial demonstrates how to create a Vanilla JavaScript SPA using `npm` and create files needed for authentication and authorization.
 
 In this tutorial;
 
@@ -25,11 +25,15 @@ In this tutorial;
 
 ## Prerequisites
 
-- [Tutorial: Prepare your external tenant to authenticate users in a Vanilla JavaScript SPA](tutorial-single-page-app-vanillajs-prepare-tenant.md).
+- An external tenant. To create one, choose from the following methods:
+  - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/tutorials/marketplace) to set up an external tenant directly in Visual Studio Code.
+  - [Create a new external tenant](../external-id/customer/../external-id/customer/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+- This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
+  - Application Administrator
+  - Application Developer
+  - Cloud Application Administrator.
 - Although any integrated development environment (IDE) that supports Vanilla JavaScript applications can be used, **Visual Studio Code** is recommended for this guide. It can be downloaded from the [Downloads](https://visualstudio.microsoft.com/downloads) page.
 - [Node.js](https://nodejs.org/en/download/).
-
-<a name='create-a-new-vanilla-js-project-and-install-dependencies'></a>
 
 ## Create a new Vanilla JavaScript project and install dependencies
 
@@ -43,16 +47,16 @@ In this tutorial;
 
 1. Create additional folders and files to achieve the following project structure:
 
-    ```
-        └── public
-            └── authConfig.js
-            └── authPopup.js
-            └── authRedirect.js
-            └── claimUtils.js
-            └── index.html
-            └── signout.html
-            └── styles.css
-            └── ui.js    
+    ```JavaScript
+    └── public
+        └── authConfig.js
+        └── authPopup.js
+        └── authRedirect.js
+        └── claimUtils.js
+        └── index.html
+        └── signout.html
+        └── styles.css
+        └── ui.js    
         └── server.js
     ```
 
