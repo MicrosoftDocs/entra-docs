@@ -48,7 +48,7 @@ This section demonstrates how to test the application by signing in and calling 
 ### [External tenant](#tab/external-tenant)
 
 1. Start the application by typing the following in the terminal to launch the `https` profile in the *launchSettings.json* file.
-1. Open a new private browser, and enter the application URI into the browser, in this case `https://localhost:7274`.
+1. Open a new private browser, and enter the application URI into the browser, in this case `https://localhost:5001`.
 1. To test the sign-up user flow you configured earlier, select **No account? Create one**.
 1. In the **Create account** window, enter the email address registered to your external tenant, which will start the sign-up flow as a user for your application.
 1. Fill in your email, one time-passcode, new password as instructed to complete the sign-up flow. You can choose to stay signed in or not in the **Stay signed in** window.
@@ -69,7 +69,11 @@ Now that you've tested the application and called the Microsoft Graph API, you s
 
 ## Clean up resources
 
-Navigate to the Microsoft Entra admin center and delete the application registration. This will remove the application from your tenant and prevent any further access to the application.
+You should delete the application registration if you don't plan on using it further. You can also delete your local application and self signed certificate.
+
+1. Navigate to your application's **Overview** page in the Microsoft Entra admin center, and select the **Delete** icon at the top of the page. Check the box in the side panel and select **Delete**.
+1. Find your local application and delete it using either your IDE or the terminal. 
+1. Check that your certificate isn't being used by another test application, then repeat the process with your self signed certificate.
 
 ## See also
 

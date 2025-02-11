@@ -39,7 +39,7 @@ In this tutorial:
   * **Supported account types**: *Accounts in this organizational directory only*
   * **Redirect URI**: `https://localhost:5001/signin-oidc`
   * **Front channel logout URL**: `https://localhost:5001/signout-oidc`
-* For development purposes, [add a certificate](./quickstart-register-app.md#add-credentials), and ensure you record the certificate **Thumbprint**. **Do not use a self signed certificate** for production apps.
+* For development purposes, [create a self signed certificate](./howto-create-self-signed-certificate.md). Refer to [add credentials](./quickstart-register-app.md#add-credentials) to upload the certificate and record the certificate **Thumbprint**. **Do not use a self signed certificate** for production apps. Use a trusted certificate authority.
 * Although any integrated development environment (IDE) that supports ASP.NET Core applications can be used, this tutorial uses **Visual Studio Code**. You can download it [here](https://visualstudio.microsoft.com/downloads/).
 * A minimum requirement of [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet).
 
@@ -56,7 +56,7 @@ In this tutorial:
   * **Supported account types**: *Accounts in this organizational directory only*
   * **Redirect URI**: `https://localhost:7274/signin-oidc`
   * **Front channel logout URL**: `https://localhost:7274/signout-oidc`
-* For development purposes, [add a certificate](./quickstart-register-app.md#add-credentials), and ensure you record the certificate **Thumbprint**. **Do not use a self signed certificate** for production apps.
+* For development purposes, [create a self signed certificate](./howto-create-self-signed-certificate.md). Refer to [add credentials](./quickstart-register-app.md#add-credentials) to upload the certificate and record the certificate **Thumbprint**. **Do not use a self signed certificate** for production apps. Use a trusted certificate authority.
 * To use your application in your external tenant; 
   * [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
   * [Grant admin consent for your tenant](./quickstart-register-app.md#grant-admin-consent-external-tenants-only).
@@ -83,12 +83,13 @@ In this section, you'll create an ASP.NET Core project in Visual Studio Code.
 
 Identity related NuGet packages must be installed in the project to authenticate users.
 
-1. Enter the following commands to change into the *dotnetcore_webapp* folder and install the relevant NuGet package:
+Enter the following command to install the relevant NuGet package:
 
-    ```console
-    cd dotnetcore_webapp
-    dotnet add package Microsoft.Identity.Web.UI
-    ```
+```console
+dotnet add package Microsoft.Identity.Web.UI
+dotnet add package Microsoft.Identity.Web
+dotnet add package Microsoft.Identity.Web.DownstreamApi
+```
 
 ## Configure the application for authentication
 
@@ -106,7 +107,7 @@ The values recorded in your application setup are used to configure the applicat
     * `DownstreamApi` - Is an identifier that defines an endpoint for accessing Microsoft Graph. The application URI is combined with the specified scope. To define the configuration for an application owned by the organization, the value of the `Scopes` attribute is slightly different.
 1. Save changes to the file.
 1. In the **Properties** folder, open the *launchSettings.json* file.
-1. Find and record the `https` value `applicationURI` within *launchSettings.json*, for example `https://localhost:{port}`. This URL will be used when defining the **Redirect URI**. Do not use the `http` value. 
+1. Find (and record) the `https` value `applicationURI` within *launchSettings.json*, (and replace the port number with the value specified in the redirect URI) for example `https://localhost:{port}`. (This URL will be used when defining the **Redirect URI**. Do not use the `http` value.) 
 
 
 ## Next step
