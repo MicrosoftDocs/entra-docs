@@ -85,7 +85,7 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
     - **Fully qualified domain name** (including wildcard FQDNs):
         - Domain name that specifies the exact location of a computer or a host in the Domain Name System (DNS).
         - Provide the ports to include.
-        - NetBIOS isn't supported. For example, use `contoso.local/app1` instead of `contoso/app1`.
+        - Wildcard FQDNs must be specified in the format `*.contoso.com`.
     - **IP address range (CIDR)**:
         - Classless Inter-Domain Routing (CIDR) represents a range of IP addresses. An IP address is followed by a suffix indicating the number of network bits in the subnet mask.
         - For example, 192.168.2.0/24 indicates that the first 24 bits of the IP address represent the network address, while the remaining 8 bits represents the host address.

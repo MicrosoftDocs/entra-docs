@@ -1765,6 +1765,40 @@
     {
       "source_path_from_root": "docs/external-id/customers/tutorial-web-app-dotnet-sign-in-sign-out.md",
       "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-sign-in-users",
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/how-to-native-authentication-cors-solution-production-environment.md",
+      "redirect_url": "/entra/identity-platform/how-to-native-authentication-cors-solution-production-environment", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/how-to-native-authentication-cors-solution-test-environment.md",
+      "redirect_url": "/entra/identity-platform/how-to-native-authentication-cors-solution-test-environment", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/quickstart-native-authentication-single-page-app-react-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-native-authentication-single-page-app-react-sign-in", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-single-page-app-react-reset-password.md",
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-single-page-app-react-reset-password", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-single-page-app-react-set-up-local-cors.md",
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-single-page-app-react-set-up-local-cors", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-single-page-app-react-sign-in.md",
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-single-page-app-react-sign-in", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-single-page-app-react-sign-up.md",
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-single-page-app-react-sign-up", 
       "redirect_document_id": false
     }
   ]

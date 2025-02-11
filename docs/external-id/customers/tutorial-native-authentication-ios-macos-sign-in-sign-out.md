@@ -58,25 +58,28 @@ To sign in a user, you need to:
             return
         }
 
-        nativeAuth.signIn(username: email, delegate: self)
+        let parameters = MSALNativeAuthSignInParameters(username: email)
+        nativeAuth.signIn(parameters: parameters, delegate: self)
     }
     ```
 
     To sign in a user using **Email one-time passcode** flow, we use the following code snippet:
 
     ```swift
-    nativeAuth.signIn(username: email, delegate: self)
+    nativeAuth.signIn(parameters: parameters, delegate: self)
     ```
 
-    The `signIn(username:delegate)` method, which responds asynchronously by calling one of the methods on the passed delegate object, must implement the `SignInStartDelegate` protocol. We pass the email address that the user provides in the email submission form and pass `self` as the delegate.
+    The `signIn(parameters:delegate)` method, which responds asynchronously by calling one of the methods on the passed delegate object, must implement the `SignInStartDelegate` protocol. We pass an instance of `MSALNativeAuthSignInParameters` which contains the email address that the user provides in the email submission form and pass `self` as the delegate.
 
     To sign in a user using **Email with password** flow, we use the following code snippet:
 
     ```swift
-    nativeAuth.signIn(username: email, password: password, delegate: self)
+    let parameters = MSALNativeAuthSignInParameters(username: email)
+    parameters.password = password
+    nativeAuth.signIn(parameters: parameters, delegate: self)
     ```
     
-    In the `signIn(username:password:delegate)` method, you pass in the email address that the user supplied us with, their password, and pass the delegate object that conforms to the `SignInStartDelegate` protocol. For this example, we pass `self`.
+    In the `signIn(parameters:delegate)` method, you pass an instance of `MSALNativeAuthSignInParameters` which contains the email address that the user supplied us with and their password, alongside with the delegate object that conforms to the `SignInStartDelegate` protocol. For this example, we pass `self`.
 
 1. To implement `SignInStartDelegate` protocol when you use **Email one-time passcode** flow, use the following code snippet:
 
@@ -97,7 +100,7 @@ To sign in a user, you need to:
     }
     ```
 
-    The `signIn(username:delegate)` results in a call to delegate methods. In the most common scenario, `onSignInCodeRequired(newState:sentTo:channelTargetType:codeLength)` is called to indicate that a code has been sent to verify the user's email address. Along with some details of where the code has been sent, and how many digits it contains, this delegate method also has a `newState` parameter of type `SignInCodeRequiredState`, which gives us access to the following two new methods: 
+    The `signIn(parameters:delegate)` results in a call to delegate methods. In the most common scenario, `onSignInCodeRequired(newState:sentTo:channelTargetType:codeLength)` is called to indicate that a code has been sent to verify the user's email address. Along with some details of where the code has been sent, and how many digits it contains, this delegate method also has a `newState` parameter of type `SignInCodeRequiredState`, which gives us access to the following two new methods: 
 
     - `submitCode(code:delegate)`
     - `resendCode(delegate)`
@@ -120,14 +123,15 @@ To sign in a user, you need to:
     
         func onSignInCompleted(result: MSALNativeAuthUserAccountResult) {
             resultTextView.text = "Signed in successfully."
-            result.getAccessToken(delegate: self)
+            let parameters = MSALNativeAuthGetAccessTokenParameters()
+            result.getAccessToken(parameters: parameters, delegate: self)
         }
     }
     ```
 
     In the most common scenario, we receive a call to `onSignInCompleted(result)` indicating that the user has signed in. The result can be used to retrieve the `access token`.
 
-    The `getAccessToken(delegate)` accepts a delegate parameter and we must implement the required methods in the `CredentialsDelegate` protocol.
+    The `getAccessToken(parameters:delegate)` accepts a `MSALNativeAuthGetAccessTokenParameters` instance and a delegate parameter and we must implement the required methods in the `CredentialsDelegate` protocol.
 
     In the most common scenario, we receive a call to `onAccessTokenRetrieveCompleted(result)` indicating that the user obtained an `access token`.
 
@@ -158,7 +162,7 @@ To sign in a user, you need to:
 
     In the most common scenario, we receive a call to `onSignInCompleted(result)` indicating that the user has signed in. The result can be used to retrieve the `access token`.
 
-    The `getAccessToken(delegate)` accepts a delegate parameter and we must implement the required methods in the `CredentialsDelegate` protocol.
+    The `getAccessToken(parameters:delegate)` accepts a `MSALNativeAuthGetAccessTokenParameters` instance and a delegate parameter and we must implement the required methods in the `CredentialsDelegate` protocol.
 
     In the most common scenario, we receive a call to `onAccessTokenRetrieveCompleted(result)` indicating that the user obtained an `access token`.
 
@@ -179,7 +183,7 @@ To sign in a user, you need to:
 
 During sign in, not every action succeeds. For example, the user might try to sign in with an email address that doesn't exist, or submit an invalid code.
 
-1. To handle errors in the `signIn(username)` or `signIn(username, password)` method, use the following code snippet:
+1. To handle errors in the `signIn(parameters:delegate)` method, use the following code snippet:
 
     ```swift
     func onSignInStartError(error: MSAL.SignInStartError) {

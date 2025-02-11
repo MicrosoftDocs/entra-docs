@@ -14,6 +14,8 @@ ms.date: 02/07/2025
 
 # Tutorial: Reset password in a React single-page app by using native authentication (preview)
 
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
 In this tutorial, you learn how to reset password in a React single-page app (SPA) by using native authentication.
 
 In this tutorial, you:
@@ -310,4 +312,4 @@ Use the steps in [Run and test your app](tutorial-native-authentication-single-p
 
 - [Set up a reverse proxy for a single-page app that uses native authentication API by using Azure Function App](how-to-native-authentication-cors-solution-test-environment.md).
 - [Use Azure Front Door as a reverse proxy in production environment for a single-page app that uses native authentication](how-to-native-authentication-cors-solution-production-environment.md).
-- [Native authentication API reference](/entra/identity-platform/reference-native-authentication-api?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json&tabs=emailOtp).
+- [Native authentication API reference](/entra/identity-platform/reference-native-authentication-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json).
