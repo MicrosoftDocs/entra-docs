@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 01/30/2025
+ms.date: 02/11/2025
 ms.author: mimart
 ms.custom: it-pro, seo-july-2024
 
@@ -66,6 +66,7 @@ Custom authentication extensions allow you to customize the Microsoft Entra auth
 | **TokenIssuanceStart**    |  [Add claims from external systems](~/identity-platform/custom-extension-overview.md).    |   [Add claims from external systems](./concept-custom-extensions.md).    |  
 | **OnAttributeCollectionStart**|Not available| Occurs at the beginning of the sign-up's attribute collection step, before the attribute collection page renders. You can add actions such as prefilling values and displaying a blocking error. [Learn more](~/identity-platform/custom-extension-attribute-collection.md?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json&tabs=start-continue%2Csubmit-continue) |
 | **OnAttributeCollectionSubmit**|Not available| Occurs during the sign-up flow, after the user enters and submits attributes. You can add actions such as validating or modifying the user's entries. [Learn more](~/identity-platform/custom-extension-attribute-collection.md?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json&tabs=start-continue%2Csubmit-continue)|
+| **OnOtpSend**|Not available| Configure a custom email provider for one time passcode send events. [Learn more](~/identity-platform/custom-extension-email-otp-get-started?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json&tabs=azure-communication-services%2Cazure-portal)|
 
 ## Identity providers and authentication methods
 
