@@ -1,10 +1,8 @@
 ---
 title: Tutorial - Handle authentication flows in a Vanilla JavaScript single-page app
 description: Learn how to configure authentication for a Vanilla JavaScript single-page app (SPA) with your external tenant.
-
 author: OwenRichards1
 manager: CelesteDG
-
 ms.author: owenrichards
 ms.service: entra-external-id
 ms.subservice: external
@@ -97,7 +95,7 @@ In this tutorial;
       - In **Authority**, find `Enter_the_Tenant_Subdomain_Here` and replace it with the subdomain of your tenant. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, [learn how to read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 2. Save the file.
 
-[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url.md)]
+[!INCLUDE [external-id-custom-domain](../external-id/customers/includes/use-custom-domain-url.md)]
 
 ## Adding code to the redirection file
 

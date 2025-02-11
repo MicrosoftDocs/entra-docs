@@ -1,10 +1,8 @@
 ---
 title: "Tutorial: Create a Vanilla JavaScript SPA for authentication in an external tenant"
 description: Learn how to prepare a Vanilla JavaScript single-page app (SPA) for authentication and authorization with your external tenant.
-
 author: OwenRichards1
 manager: CelesteDG
-
 ms.author: owenrichards
 ms.service: entra-external-id
 ms.subservice: external

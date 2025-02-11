@@ -1,8 +1,7 @@
 ---
 title: "Tutorial: Add sign-in and sign-out to a Vanilla JavaScript SPA for an external tenant"
 description: Learn how to configure a Vanilla JavaScript single-page app (SPA) to sign in and sign out users with your external tenant.
- 
-author: OwenRichards1
+ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.service: entra-external-id
