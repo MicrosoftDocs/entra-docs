@@ -187,7 +187,7 @@
       items:
         - name: Sign in users
           href: quickstart-web-app-sign-in.md?pivots=workforce
-          displayName: Node, ASP.NET,  ASP.NET Core, Python, Java Spring
+          displayName: Node, ASP.NET,  ASP.NET Core, Python
         - name: Call an API
           href: quickstart-web-app-node-sign-in-call-api.md?pivots=workforce
           displayName: Node.js, Nodejs, Nodejs web app
@@ -224,8 +224,6 @@
               href: tutorial-web-app-node-sign-in-sign-out.md?tabs=workforce-tenant
             - name: Call Microsoft Graph API
               href: tutorial-web-app-node-call-microsoft-graph-api.md?tabs=workforce-tenant
-        - name: Java Spring
-          href: /azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-active-directory?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
         - name: Secure web app accesses storage and Microsoft Graph
           items:
             - name: Overview
@@ -833,8 +831,6 @@
       href: reference-v2-libraries.md
     - name: AADSTS error code reference
       href: reference-error-codes.md
-    - name: Spring Cloud Azure
-      href: /azure/developer/java/spring-framework/developer-guide-overview?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json   
     - name: Configured permissions limits troubleshooting
       href: troubleshoot-required-resource-access-limits.md
 - name: Resources
