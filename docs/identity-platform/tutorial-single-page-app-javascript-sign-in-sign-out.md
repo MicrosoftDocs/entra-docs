@@ -281,7 +281,7 @@ Now that all the required code snippets have been added, the application can be 
 
 1. The SPA will now display a button saying **Request Profile Information**. Select it to display profile data.
 
-    :::image type="content" source=".media/tutorial-spa-vanillajs-sign-in-sign-in-out/display-vanillajs-welcome.png" alt-text="Screenshot of JavaScript App depicting the results of the API call." lightbox=".media/tutorial-spa-vanillajs-sign-in-sign-in-out/display-vanillajs-welcome.png":::
+    :::image type="content" source="./media/tutorial-spa-vanillajs-sign-in-sign-in-out/display-vanillajs-welcome.png" alt-text="Screenshot of JavaScript App depicting the results of the API call." lightbox="./media/tutorial-spa-vanillajs-sign-in-sign-in-out/display-vanillajs-welcome.png":::
 
 ## Sign out of the application
 
