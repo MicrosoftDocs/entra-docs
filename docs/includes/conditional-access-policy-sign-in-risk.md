@@ -38,14 +38,15 @@ For organizations that adopt [passwordless authentication methods](/entra/identi
 #### Update your passwordless sign-in risk policy
 
 1. Under **Users**:
-   1. **Include**, select **Users and groups** and target all users. Make sure all users can satisfy multifactor authentication.
+   1. **Include**, select **Users and groups** and target your passwordless users.
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts.
    1. Select **Done**.
+1. Under **Cloud apps or actions** > **Include**, select **All resources** (formerly 'All cloud apps').
 1. Under **Conditions** > **Sign-in risk**, set **Configure** to **Yes**.
     1. Under **Select the sign-in risk level this policy will apply to**, select **High** and **Medium**. For more information on risk levels, see [Choosing acceptable risk levels](../id-protection/howto-identity-protection-configure-risk-policies.md#choosing-acceptable-risk-levels).
     1. Select **Done**.
 1. Under **Access controls** > **Grant**, select **Grant access**.
-    1. Select **Require authentication strength**, then select the built-in **Multifactor authentication** or your desired authentication strength from the list.
+    1. Select **Require authentication strength**, then select the built-in **Passwordless MFA** or **Phishing-resistant MFA** based on which method the targeted users have.
     1. Select **Select**.
 1. Under **Session**:
     1. Select **Sign-in frequency**.
