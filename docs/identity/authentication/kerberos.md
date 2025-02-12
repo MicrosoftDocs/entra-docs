@@ -39,9 +39,8 @@ In a hybrid scenario, where accounts exist on-premises Active Directory Domain S
 
 ## How Microsoft Entra Kerberos Works
 
-Microsoft Entra Kerberos works by effectively establishing your Microsoft Entra ID instance as a parellale kerberos realm to your on-premises Active Directory Kerberos realm. When a user signs into a Windows device that is Microsoft Entra ID joined, or hybrid joined, the device performs standard Microsoft Entra ID authentication to get an Entra primary refresh token (PRT)
+Microsoft Entra Kerberos works by effectively establishing your Microsoft Entra ID instance as a parellalel kerberos realm to your on-premises Active Directory Kerberos realm. When a user signs into a Windows device that is Microsoft Entra ID joined, or hybrid joined, the device performs standard Microsoft Entra ID authentication to get an [Entra primary refresh token (PRT)](../devices/concept-primary-refresh-token.md). Along with the PRT, Microsoft Entra ID can issue a Cloud ticket granting ticket (TGT) which later allows the user to request tickets from Microsoft Entra ID operating as a KDC.
 
-While traditional Kerberos requires network connectivity to on-premises domain controllers, **Microsoft Entra Kerberos** operates over the internet with Microsoft Entra ID.
 
 ### Authentication flow
 
@@ -138,3 +137,4 @@ Administrators benefit from streamlined management, enhanced security features, 
 
 -	[Create the trusted domain object](/azure/storage/files/storage-files-identity-auth-hybrid-cloud-trust?tabs=azure-portal#create-the-trusted-domain-object)
 -	[Configure a client to retrieve kerberos tickets](https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable?tabs=azure-portal%2Cintune#configure-the-clients-to-retrieve-kerberos-tickets)
+
