@@ -1491,6 +1491,31 @@
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/services-id-authentication-support.md",
       "redirect_url": "/entra/identity/managed-identities-azure-resources/managed-identities-status",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/license-users-groups.yml",
+      "redirect_url": "/removed/docs/fundamentals/license-users-groups",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/users/licensing-groups-assign.md",
+      "redirect_url": "/removed/docs/identity/users/licensing-groups-assign",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/users/licensing-groups-change-licenses.md",
+      "redirect_url": "/removed/docs/identity/users/licensing-groups-change-licenses",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/users/licensing-groups-migrate-users.md",
+      "redirect_url": "/removed/docs/identity/users/licensing-groups-migrate-users",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/users/licensing-groups-resolve-problems.md",
+      "redirect_url": "/removed/docs/identity/users/licensing-groups-resolve-problems",
+      "redirect_document_id": false
     }
   ]
 }
