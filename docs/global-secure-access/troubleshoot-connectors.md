@@ -12,7 +12,7 @@ ms.reviewer: ashishj
 
 # Troubleshoot problems installing the private network connector
 
-Microsoft Entra private network connector is an internal domain component that uses outbound connections to establish the connectivity from the cloud available endpoint to the internal domain. The connector is used by both Microsoft Entra Private Access and Microsoft Entra application proxy.
+Microsoft Entra private network connector is an internal domain component that uses outbound connections to establish the connectivity from the cloud available endpoint to the internal domain. The connector is used by both Microsoft Entra Private Access and Microsoft Entra application proxy. This article describes how to troubleshoot issues with connector installation and subsequent functionality.
 
 ## General problem areas with connector installation
 
@@ -140,6 +140,28 @@ This flowchart walks you through the steps for debugging some of the more common
 |8 | Check internal network connectivity | There's a connectivity issue in your internal network that this debugging flow is unable to diagnose. The application must be accessible internally for the connectors to work. You can enable and view connector event logs as described in [private network connectors](concept-connectors.md#under-the-hood). |
 |9 | Lengthen the time-out value on the back end | In the **Additional Settings** for your application, change the **Backend Application Timeout** setting to **Long**. See [Add an on-premises app to Microsoft Entra ID](../identity/app-proxy/application-proxy-add-on-premises-application.md). |
 |10 | If issues persist, debug applications. | [Debug application proxy application issues](../identity/app-proxy/application-proxy-debug-apps.md). |
+
+## Troubleshooting connector functionality
+If connector installation and registration is successful but you are unable to access private resources, the connector may be having issues connecting to the resource. This can be true even when the Microsoft Entra admin center indicates the connector is Active because the Active state confirms the connector is connected to the Global Secure Access service, not that it is connected to the associated Global Secure Access application. The connector requires line of sight connectivity to the resource and cannot function if there is a proxy server between the connector and the resource. To confirm, test connectivity from the connector to the resource you've defined in your Global Secure Access application, such as file share or RDP server, to ensure the connector can access the resource. If you cannot connect to the resource from the connector server, you will need to resolve the network connectivity issue between the connector and the resource which may include relocating the connector to a network location with line of sight access to the resource.
+
+### Enable advanced connector logging
+If you can connect to the resource from the server but not from the Global Secure Access client, there may be other issues with the connector. To investigate, enable advanced connector logging. To do this, edit the file MicrosoftEntraPrivateNetworkConnectorService.exe.config located in the connector installation folder (by default, C:\Program Files\Microsoft Entra private network connector). Locate the below section in the file, remove the comment line indicators that lead and trail this section, and confirm that the referenced folder exists. 
+
+![Screenshot showing the configuration file before required edits.](media/troubleshoot-connectors/connector-logging-config.png)
+
+The file contents should look as follows:
+
+![Screenshot showing an example of the expected final configuration file.](media/troubleshoot-connectors/connector-logging-config-final-example)
+
+After you have enabled logging, attempt to access the resource from the Global Secure Access client in order to reproduce the error. Then, review the log file for errors.
+
+#### Failed to validate chain of certificate error
+This error appears in the connector advanced logging when the certificate chain for a Global Secure Access service certificate such as *.msappproxy.net fails to be validated. Often this occurs when there is a proxy server configured on MicrosoftEntraPrivateNetworkConnectorService.exe.config but there is not also a system proxy server configured. You can set the system proxy using:
+
+netsh winhttp set proxy address:port
+
+### TLS inspection
+TLS inspection is not supported on Private Network connector traffic. Attempting to performing TLS inspection on this traffic interferes with the connector's ability to connect to the Global Secure Access service and therefore interferes with its ability to service Private Access requests. Ensure the network devices allowing Internet access to your private network connector don't perform TLS inspection.
 
 ## Frequently asked questions
 **Why is my connector still using an older version and not auto-upgraded to latest version?**
