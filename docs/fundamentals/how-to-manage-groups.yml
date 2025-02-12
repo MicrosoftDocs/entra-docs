@@ -157,7 +157,7 @@ procedureSection:
   - title: |
       Add a group to another group
     summary: |
-      For the security group type, you can add an existing group to another group (also known as nested groups). Depending on the group membership types, you can add a group as a member of another group. Entra doesn't apply assigned membership to shared resources and applications to the nested groups. 
+      For the security group type, you can add an existing group to another group (also known as nested groups). Depending on the group membership types, you can add a group as a member of another group. Nested groups can be used for membership and Conditional Access scopes. Nested groups don't gain access to shared resources and applications that are assigned to the parent group. 
 
       We currently don't support:
         - Adding groups to a group synced with on-premises Active Directory.
