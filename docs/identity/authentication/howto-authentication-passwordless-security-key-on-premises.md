@@ -128,6 +128,8 @@ To then **set** the desired cloud environment, run the following:
 _(Example: For US Government Cloud)_
 
 `Set-AzureADKerberosServerEndpoint -TargetEndpoint 2`
+   > [!Tip]
+   > For Additional information comparing Azure commercial and soverign clouds, See: [Differences between Azure Commercial and Azure Soverign clouds](https://aka.ms/SovCC). 
 
 ### Example 1 prompt for all credentials
 

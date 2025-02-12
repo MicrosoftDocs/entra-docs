@@ -2,14 +2,14 @@
 title: 'Tutorial: Configure OfficeSpace Software for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to OfficeSpace Software.
 
-author: thomasakelo
+author: ZollnerdMSFT
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 03/25/2024
-ms.author: thomasakelo
+ms.author: zollnerd
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to OfficeSpace Software so that I can streamline the user management process and ensure that users have the appropriate access to OfficeSpace Software.
 ---
@@ -41,21 +41,31 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 * It is recommended that a single Microsoft Entra user is assigned to OfficeSpace Software to test the automatic user provisioning configuration. Additional users and/or groups may be assigned later.
 
-* When assigning a user to OfficeSpace Software, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
+* When assigning a user to OfficeSpace Software, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role in Azure are excluded from provisioning.
 
 ## Set up OfficeSpace Software for provisioning
 
-1. Sign in to your [OfficeSpace Software Admin Console](https://support.officespacesoftware.com/s/). Navigate to **Settings > Connectors**.
+1. Sign in to your OfficeSpace Software account with appropriate permissions.
 
-	![OfficeSpace Software Admin Console](media/officespace-software-provisioning-tutorial/settings.png)
+	2. Under the Admin accordion menu in the hamburger menu, select **Connectors**.
 
-2.	Navigate to **Directory Synchronization > SCIM**.
+![01 Connectors Highlighted](https://github.com/user-attachments/assets/dd66208e-1197-40b6-944c-7e204f579147)
 
-	![OfficeSpace Software Add SCIM](media/officespace-software-provisioning-tutorial/scim.png)
+
+3. Navigate to **Directory Synchronization > SCIM**.
+
+![01 Entra AUP - OSS - Directory Sync - SCIM](https://github.com/user-attachments/assets/a1bf3bed-ac11-4ca1-9def-a5b16e10e40f)
+
+
+4. Under SCIM, copy the **SCIM Authentication Key**. This value will be entered in the Secret Token field in the Provisioning tab of your OfficeSpace Software application in Microsoft Entra ID.
+
+
+
+![02 Entra AUP - OSS - Directory Sync - SCIM Authorization Key](https://github.com/user-attachments/assets/6242be54-5223-4fab-9749-18ee3dee29a7)
+
+5. Check the **SCIM for Authentication** checkbox.
 
 3.	Copy the **SCIM Authentication Token**. This value will be entered in the Secret Token field in the Provisioning tab of your OfficeSpace Software application.
-
-	![OfficeSpace Software Create Token](media/officespace-software-provisioning-tutorial/token.png)
 
 ## Add OfficeSpace Software from the gallery
 
