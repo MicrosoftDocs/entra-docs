@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: quickstart
-ms.date: 02/11/2025
+ms.date: 02/12/2025
 ms.author: barclayn
 ms.reviewer: krbain
 ---
@@ -27,7 +27,6 @@ Before you begin, you need:
 ## Create a new group
 
 Create a new group, named *MDM policy - West*. For more information about creating a group, see [How to create a basic group and add members](./how-to-manage-groups.yml).
-
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Groups** > **All groups**.
