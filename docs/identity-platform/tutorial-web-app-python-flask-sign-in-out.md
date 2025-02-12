@@ -29,30 +29,25 @@ In this tutorial, you'll;
 
 ## Prerequisites
 
-- [Python 3+](https://www.python.org/).
-- [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/). This account must have permissions to manage applications. Use any of the following roles needed to register the application:
-    - Application Administrator
-    - Application Developer
-    - Cloud Application Administrator
-
 #### [Workforce tenant](#tab/workforce-tenant)
 
 - Ensure you have already [registered an application](./quickstart-register-app.md) in your tenant. Make sure you have the following from your app registration details:
     - The *Application (client) ID* of the client web app that you registered.
     - The *Directory (tenant) id* where you registered your web app.
-    - The *Client secret* value for the web app you created. In this tutorial, we use secrets for demonstration purposes. In production, use more secure approaches such as [certificates or federated identity credentials](./quickstart-register-app.md#add-credentials). 
+    - The *Client secret* value for the web app you created.
 
 #### [External tenant](#tab/external-tenant)
 
 - Ensure you have already [registered an application](./quickstart-register-app.md) in your tenant. Make sure you have the following from your app registration details:
     - The *Application (client) ID* of the client web app that you registered.
-    - The *Directory (tenant) subdomain* where you registered your web app. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
-    - The *Client secret* value for the web app you created. In this tutorial, we use secrets for demonstration purposes. In production, use more secure approaches such as [certificates or federated identity credentials](./quickstart-register-app.md#add-credentials). 
+    - The *Directory (tenant) subdomain* where you registered your web app. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+    - The *Client secret* value for the web app you created.
 - Ensure you [add your application to a user flow during registration](../external-id/customers/how-to-user-flow-add-application.md).
-- Ensure you [grant admin consent on behalf of users in your tenant](./quickstart-register-app.md#grant-admin-consent-external-tenants-only).
 
 ---
+
+- [Python 3+](https://www.python.org/).
+- [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
 ## Create a Flask project
 
@@ -133,7 +128,7 @@ pip freeze > requirements.txt
     Replace the placeholders with the following values:
     
     - Replace `<Enter_your_client_id>` with the *Application (client) ID* of the client web app that you registered.
-    - The *Directory (tenant) subdomain* where you registered your web app. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details). 
+    - Replace `<Enter_your_subdomain>` with the *Directory (tenant) subdomain* where you registered your web app.
     - Replace `<Enter_your_client_secret>` with the *Client secret* value for the web app you created. In this tutorial, we use secrets for demonstration purposes. In production, use more secure approaches such as [certificates or federated identity credentials](./quickstart-register-app.md#add-credentials).
     - Replace `<Enter_redirect_uri>` with the redirect URI that you registered earlier. This tutorial sets the redirect URI path to `http://localhost:3000/getAToken`.
     
@@ -247,9 +242,9 @@ Use a custom URL domain to fully brand the authentication URL. From a user persp
 
 Use the following steps to use a custom URL domain:
 
-1. Use the steps in [Enable custom URL domains for apps in external tenants](../how-to-custom-url-domain.md) to enable custom URL domain for your external tenant.
+1. Use the steps in [Enable custom URL domains for apps in external tenants](../external-id/customers/how-to-custom-url-domain.md) to enable custom URL domain for your external tenant.
 
-1. In your *.env* file, add the variable `OIDC_AUTHORITY` variable and delete the `AUTHORITY` variable. Set its value to *https://Enter_the_Custom_Domain_Here/Enter_the_Tenant_ID_Here/v2.0*. Replace `Enter_the_Custom_Domain_Here` with your custom URL domain and `Enter_the_Tenant_ID_Here` with your tenant ID. If you don't have your tenant ID, learn how to [read your tenant details](../how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+1. In your *.env* file, add the variable `OIDC_AUTHORITY` variable and delete the `AUTHORITY` variable. Set its value to *https://Enter_the_Custom_Domain_Here/Enter_the_Tenant_ID_Here/v2.0*. Replace `Enter_the_Custom_Domain_Here` with your custom URL domain and `Enter_the_Tenant_ID_Here` with your tenant ID. If you don't have your tenant ID, learn how to [read your tenant details]((../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details)).
 
 1. In your *app_config.py* file add the following code to read the `OIDC_AUTHORITY` environment variable. You can delete the `AUTHORITY` variable.
 

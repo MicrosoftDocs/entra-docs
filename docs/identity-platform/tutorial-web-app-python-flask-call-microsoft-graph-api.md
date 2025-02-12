@@ -28,11 +28,11 @@ In this tutorial, you:
 
 ## Prerequisites
 
-Complete the steps in [Tutorial: Add add sign-in to a Node/Express.js web app by using Microsoft identity platform](tutorial-web-app-node-sign-in-sign-out.md). 
+Complete the steps in [Tutorial: Add add sign-in to a Python Flask web app by using Microsoft identity platform](tutorial-web-app-node-sign-in-sign-out.md). 
 
 ## Define scopes and API endpoint
 
-In this example, we call the Microsoft Graph API to get the signed-in user's profile information. On sign-in, the user consents to the scopes required by the app to access the Microsoft Graph API. The app then uses the access token to call the API and display the results.
+In this example, we call the Microsoft Graph API to get the signed-in user's profile information. If your app is in a workforce tenant, on sign-in, the user consents to the scopes required by the app to access the Microsoft Graph API. If your app is in an external tenant, ensure you [grant admin consent on behalf of users in your tenant](./quickstart-register-app.md#grant-admin-consent-external-tenants-only). The app then uses the access token to call the API and display the results.
 
 In your *.env* file, add the endpoint we are calling and the scopes required to call the Microsoft Graph API:
 
