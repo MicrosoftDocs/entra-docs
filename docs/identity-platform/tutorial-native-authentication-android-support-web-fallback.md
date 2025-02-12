@@ -16,6 +16,8 @@ ms.custom: developer
 ---
 
 # Tutorial: Support web fallback in Android app 
+
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
  
 This tutorial demonstrates how `isBrowserRequired()` error happens and how you can resolve it. The utility method `isBrowserRequired()` checks the need for a fallback mechanism for various scenarios where native authentication isn't sufficient to complete the authentication flow in functional and safe manner. 
  

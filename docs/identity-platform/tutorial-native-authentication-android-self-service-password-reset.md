@@ -15,7 +15,9 @@ ms.custom: developer
 #Customer intent: As a dev, devops, I want add self-service password reset (SSPR) to my Android app using native authentication so that users can reset their own password with no administrator or help desk involvement.
 ---
 
-# Tutorial: Add self-service password reset  
+# Tutorial: Add self-service password reset
+
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
  
 This tutorial demonstrates how to enable users to change or reset their password, with no administrator or help desk involvement.
   

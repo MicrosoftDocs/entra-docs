@@ -16,6 +16,8 @@ ms.custom: developer
 ---
 
 # Tutorial: Sign in user automatically after sign-up in an Android app
+
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
  
 This tutorial demonstrates how to sign in user automatically after sign-up in an Android app by using native authentication. 
  

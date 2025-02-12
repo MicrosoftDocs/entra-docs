@@ -18,6 +18,8 @@ ms.custom: developer
 
 # Tutorial: Add sign-up in an Android mobile app using native authentication
 
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
 This tutorial demonstrates how to sign up a user using email one-time passcode or username (email) and password, and collect user attributes in your Android mobile app using native authentication. 
 
 In this tutorial, you learn how to: 
