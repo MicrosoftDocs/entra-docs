@@ -22,7 +22,7 @@ This article provides an overview of how groups and access rights can be used to
 > **Some groups can't be managed in the Azure portal or Microsoft Entra admin center.**
 > 
 > - Groups synced from on-premises Active Directory can only be managed on-premises.
-> - Distribution lists and mail-enabled security groups can only managed in the [Exchange admin center](https://admin.cloud.microsoft/exchange#/groups) or the [Microsoft 365 admin center](https://admin.microsoft.com/Adminportal/Home?#/groups). You must sign in and have have the appropriate permissions for that admin center to manage those groups.
+> - Distribution lists and mail-enabled security groups can only be managed in the [Exchange admin center](https://admin.cloud.microsoft/exchange#/groups) or the [Microsoft 365 admin center](https://admin.microsoft.com/Adminportal/Home?#/groups). You must sign in and have the appropriate permissions for that admin center to manage those groups.
 
 
 ## Microsoft Entra groups overview
