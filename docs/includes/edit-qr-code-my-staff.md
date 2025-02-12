@@ -1,3 +1,11 @@
+---
+ author: justinha
+ ms.service: entra-id
+ ms.topic: include
+ ms.date: 02/12/2025
+ ms.author: justinha
+ ms.custom: include file
+---
 - To edit the expiration date for a standard QR code, click **Edit**. Edit the expiration date and save the changes.
 
   :::image type="content" border="true" source="media/edit-qr-code-my-staff/edit-qr-code-my-staff.png" alt-text="Screenshot that shows how to edit a QR code in My Staff.":::

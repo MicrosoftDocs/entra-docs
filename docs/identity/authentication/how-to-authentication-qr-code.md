@@ -513,7 +513,7 @@ Users need to [download Teams](https://aka.ms/teamsmobiledownload):
 
 ## Add security with QR code authentication using Conditional Access policies
 
-Restrict the QR code authentication method to only frontline workers and shared devices.This section covers how to create policies that restrict QR code authentication method to only frontline workers and shared devices.
+Restrict the QR code authentication method to only frontline workers and shared devices. This section covers how to create policies that restrict QR code authentication method to only frontline workers and shared devices.
 
 ### Restrict a QR + PIN to frontline workers  
 

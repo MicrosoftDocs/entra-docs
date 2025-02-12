@@ -27,7 +27,7 @@ The QR code serves as an identifier and is unique to the user.
 It can be downloaded and printed from the Microsoft Entra admin center, MyStaff, or MSGraph API. 
 For convenience, the QR code can be attached to a badge or any other wearable item. 
 
-Authentication Administrators provide a temporary PIN to users, who then change it during sign-in. Only user will know the PIN.
+Authentication Administrators provide a temporary PIN to users, who then change it during sign-in. Only the user knows the PIN.
 It's exclusively bound to the QR code only. 
 It can't be used with other user identifiers, such as username or phone number.
 QR code authentication is a single-factor method in which PIN (something you know) is a credential.
@@ -108,13 +108,10 @@ Users can sign in to their organization with a QR code, or they can directly sig
 ### Mobile web sign-in experience
 You can use Microsoft's web browser login experience (login.microsoft.com) to sign in users. Users can click **Sign in options** > **Sign in to an organization** > **Sign in with a QR code**.
 
-
-
-
 ### Mobile native app sign-in experience 
 You can optimize sign-in for your apps by using Microsoft Authentication Library (MSAL) to add a QR code sign-in option to your apps sign-in page. This option eliminates two clicks to scan the QR code. For example, you can add QR code sign-in to the Teams app. This optimized user experience will be available in Microsoft Intune Managed Home Screen (MHS), BlueFletch, and Jamf app lauchers in March 2025.
 
-For more information about how to enable the optimized experience, see in Android, see [Set up QR code authentication in an Android app](https://review.learn.microsoft.com/en-us/entra/identity-platform/msal-android-qr-code-pin-authentication?branch=pr-en-us-6810) and [Set up QR code authentication in an iOS app](https://review.learn.microsoft.com/en-us/entra/identity-platform/msal-ios-qr-code-pin-authentication?branch=pr-en-us-6810).
+For more information about how to enable the optimized experience, see in Android, see [Set up QR code authentication in an Android app](https://review.learn.microsoft.com/entra/identity-platform/msal-android-qr-code-pin-authentication?branch=pr-en-us-6810) and [Set up QR code authentication in an iOS app](https://review.learn.microsoft.com/entra/identity-platform/msal-ios-qr-code-pin-authentication?branch=pr-en-us-6810).
 
 :::image type="content" source="media/concept-authentication-qr-code/sign-in-app.png" alt-text="Screenshot that shows how to sign in to mobile native apps.":::
 

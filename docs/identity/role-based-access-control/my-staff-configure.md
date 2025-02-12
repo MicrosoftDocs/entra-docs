@@ -7,7 +7,7 @@ manager: amycolannino
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: role-based-access-control
-ms.date: 02/07/2025
+ms.date: 02/12/2025
 ms.author: rolyon
 ms.reviewer: lenalepa
 ms.custom: oldportal;it-pro;
@@ -126,7 +126,7 @@ You can use **My Staff** to manage the QR code authentication method for users.
 
 [!Include [Edit QR code](../../includes/edit-qr-code-my-staff.md)]
 
-### Delete the QR code authentication method for a user in in My Staff
+### Delete the QR code authentication method for a user in My Staff
 
 [!Include [Delete QR authentication method](../../includes/delete-qr-code-authentication-method-my-staff.md)]
 
