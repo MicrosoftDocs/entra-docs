@@ -94,10 +94,9 @@ Create a file called *display.html* in the *templates* folder. This page display
 
 [!INCLUDE [python-flask-web-app-run-app](./includes/python-web-app/flask-web-app-tutorial.md)]
 
-## Sign out of the app
+1. Select the **Call an API** link on the home page. The app calls the Microsoft Graph API to get the signed-in user's profile information. The app displays the result of the call to the API.
 
-1. Select **Logout** to sign out of the app.
-1. You're prompted to pick an account to sign out from. Select the account you used to sign in.
+1. Select **Logout** to sign out of the app. You're prompted to pick an account to sign out from. Select the account you used to sign in.
 
 ## Reference material
 

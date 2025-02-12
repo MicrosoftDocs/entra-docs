@@ -22,13 +22,11 @@ ms.manager: mwongerapk
 
 1. Follow the steps and enter the necessary details to sign in with your Microsoft account. You're requested to provide an email address and password to sign in.
 
-1. If there are any scopes needed by the application, a consent screen is presented. The application requests permission to maintain access to data you allow access to, and to sign you in and then read your profile, as shown in the screenshot. Select **Accept**.
+1. If there are any scopes needed by the application, a consent screen is presented. The application requests permission to maintain access to data you allow access to and to sign you in. Select **Accept**. This screen will not appear if no scopes are defined.
 
 1. After you sign in or sign up, you're redirected back to the web app. You'll see a page that looks similar to the following screenshot:
 
     :::image type="content" source="../../media/includes/python-web-app/flask-home-page.png" alt-text="Screenshot of flask web app sample after successful authentication.":::
-
-1. Select **Logout** to sign the user out of the web app.
 
 #### [External tenant](#tab/external-tenant)
 
@@ -51,5 +49,3 @@ ms.manager: mwongerapk
 1. After you sign in or sign up, you're redirected back to the web app. You'll see a page that looks similar to the following screenshot:
 
     :::image type="content" source="../../media/includes/python-web-app/flask-home-page.png" alt-text="Screenshot of flask web app sample after successful authentication.":::
-
-1. Select **Logout** to sign the user out of the web app.

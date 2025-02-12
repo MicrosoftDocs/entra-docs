@@ -214,6 +214,7 @@ Create a folder called *templates* in your root folder. In the templates folder,
 
     <ul>
     {% if api_endpoint %}
+        <!-- If an API endpoint is declared and scopes defined, this link will show. We set this in the call an API tutorial. For this tutporial, we do not define this endpoint. -->
         <li><a href='/call_api'>Call an API</a></li>
     {% endif %}
 
@@ -229,6 +230,8 @@ Create a folder called *templates* in your root folder. In the templates folder,
 ## Run and test the sample web app
 
 [!INCLUDE [python-flask-web-app-run-app](./includes/python-web-app/flask-web-app-tutorial.md)]
+
+1. Select **Logout** to sign out of the app. You're prompted to pick an account to sign out from. Select the account you used to sign in.
 
 ## Use custom URL domain (Optional)
 
