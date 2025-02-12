@@ -190,7 +190,7 @@ You've completed all the necessary steps to successfully sign in a user on your 
 
 ## Read ID token claims
 
-[!INCLUDE [read-od-token-claims](./includes/native-auth/read-id-token-claims-android-kotlin.md)]
+[!INCLUDE [read-od-token-claims](../external-id/customers/includes/native-auth/read-id-token-claims-android-kotlin.md)]
 
 ## Sign out a user 
 

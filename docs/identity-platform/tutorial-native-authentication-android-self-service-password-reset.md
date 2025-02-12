@@ -214,7 +214,7 @@ To automatically sign in users after a password reset, use the following code sn
     }
    ```
 
-To retrieve ID token claims after sign-in, use the steps in [Read ID token claims](tutorial-native-authentication-android-sign-in-user-with-username-password.md#read-id-token-claims).
+To retrieve ID token claims after sign-in, use the steps in [Read ID token claims](../external-id/customers/tutorial-native-authentication-android-sign-in-user-with-username-password.md#read-id-token-claims).
 
 ## Handle password reset errors 
 

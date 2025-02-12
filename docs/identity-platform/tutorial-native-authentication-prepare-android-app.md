@@ -29,7 +29,7 @@ In this tutorial, you learn how to:
  
 ## Prerequisites  
  
-- If you haven't already, follow the instructions in [Sign in users in sample Android (Kotlin) mobile app by using native authentication](how-to-run-native-authentication-sample-android-app.md) and register an app in your external tenant. Make sure you complete the following steps:
+- If you haven't already, follow the instructions in [Sign in users in sample Android (Kotlin) mobile app by using native authentication](../external-id/customers/how-to-run-native-authentication-sample-android-app.md) and register an app in your external tenant. Make sure you complete the following steps:
     - Register an application.
     - Enable public client and native authentication flows.
     - Grant API permissions.
@@ -98,7 +98,7 @@ Use these steps to create configuration file:
 1. Replace the following placeholders with your tenant values that you obtained from the Microsoft Entra admin center:  
 
    - Replace the `Enter_the_Application_Id_Here` placeholder with the application (client) ID of the app you registered earlier.   
-   - Replace the `Enter_the_Tenant_Subdomain_Here` with the directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
+   - Replace the `Enter_the_Tenant_Subdomain_Here` with the directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
 
     The challenge types are a list of values, which the app uses to notify Microsoft Entra about the authentication method that it supports. 
     
