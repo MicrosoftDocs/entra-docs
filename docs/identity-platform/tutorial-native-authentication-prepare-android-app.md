@@ -17,6 +17,8 @@ ms.custom: developer
 
 # Tutorial: Prepare your Android mobile app for native authentication  
 
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
 This tutorial demonstrates how to add Microsoft Authentication Library (MSAL) native authentication SDK to an Android mobile app.   
  
 In this tutorial, you learn how to: 
