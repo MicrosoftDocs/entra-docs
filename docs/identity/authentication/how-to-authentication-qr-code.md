@@ -480,29 +480,24 @@ Microsoft Teams accelerates sign in with a QR code. An Authentication Policy Adm
 | iOS      | preferred_auth_config | qrpin | Device management profile, which configures a single sign-on (SSO) extension |
 | Android  | preferred_auth_config | qrpin | Microsoft Authenticator |
 
-### Sign-in with a QR code to Teams 
+### QR code authentication Teams sign-in experience 
 
 Users need to [download Teams](https://aka.ms/teamsmobiledownload):
 
 - For iOS and iPad, you need Teams version 1.0.0.77.2024132501 or later 
 - For Android, you need Teams version 1.0.0.2024143204 or later 
 
+<insert Teams sign-in experience>
+   
 1. Click **Sign-in with QR code** in Microsoft Teams.
-    
-   :::image type="content" border="true" source="media/how-to-authentication-qr-code/sign-in.png" alt-text="Screenshot that shows how to sign in to Teams with a QR code and PIN.":::
-
 1. Scan the QR code. Give consent if asked for camera permission.
 1. Enter your PIN.
 1. When you first sign-in, you need to update your PIN.
 1. You're now signed in to the app.
-
-   :::image type="content" border="true" source="media/how-to-authentication-qr-code/sign-in-qr-code.png" alt-text="Screenshot that shows a successful sign-in to Teams with a QR code and PIN.":::
-
 1. If you sign in with a temporary PIN, you need to change it. 
+< insert PIN change image>
 
-   :::image type="content" border="true" source="media/how-to-authentication-qr-code/sign-in.png" alt-text="Screenshot that shows how to sign in to Teams with a QR code and PIN.":::
-
-## Sign-in with a QR code to login.microsoftonline.com
+## QR code authentication web sign-in experience (login.microsoftonline.com)
 
 1. Click **More sign-in options** > **Sign in to an organization** > **Sign in with QR code**.
 
@@ -512,9 +507,9 @@ Users need to [download Teams](https://aka.ms/teamsmobiledownload):
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/enter-pin.png" alt-text="Screenshot that shows how to enter your PIN.":::
 
-## Restrict the QR code authentication method to only frontline workers and shared devices 
+## Add security with QR code authentication using Conditional Access policies
 
-This section covers how to create policies that restrict QR code authentication method to only frontline workers and shared devices.
+Restrict the QR code authentication method to only frontline workers and shared devices.This section covers how to create policies that restrict QR code authentication method to only frontline workers and shared devices.
 
 ### Restrict a QR + PIN to frontline workers  
 
