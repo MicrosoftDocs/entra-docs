@@ -275,7 +275,7 @@ Now that all the required code snippets have been added, the application can be 
 1. Sign-in with an account registered to the tenant.
 1. The following screenshot appears, indicating that you have signed in to the application and have accessed your profile details from the Microsoft Graph API.
 
-    :::image type="content" source="./media/common-spa/react-spa/display-api-call-results-react-spa.png" alt-text="Screenshot of JavaScript App depicting the results of the API call." lightbox="./media/common-spa/react-spa/display-api-call-results-react-spa.png":::
+    :::image type="content" source="./media/tutorial-spa-vanillajs-sign-in-sign-in-out/display-vanillajs-welcome.png" alt-text="Screenshot of JavaScript App depicting the results of the API call." lightbox="./media/tutorial-spa-vanillajs-sign-in-sign-in-out/display-vanillajs-welcome.png":::
 
 ## Sign out from the application
 
