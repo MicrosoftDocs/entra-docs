@@ -86,9 +86,6 @@ In this tutorial, you'll:
         └── ui.js    
     └── server.js
     ```
-
-## Install app dependencies
-
 1. In the **Terminal**, run the following command to install the required dependencies for the project:
 
     ```powershell
@@ -99,7 +96,7 @@ In this tutorial, you'll:
 
 **Express** is a web application framework for **Node.js**. It's used to create a server that hosts the application. **Morgan** is the middleware that logs HTTP requests to the console. The server file is used to host these dependencies and contains the routes for the application. Authentication and authorization are handled by the [Microsoft Authentication Library for JavaScript (MSAL.js)](/javascript/api/overview).
 
-1. Add the following code snippet to the *server.js* file:
+1. Add the following code to the *server.js* file:
 
     ```javascript
     const express = require('express');
@@ -150,7 +147,7 @@ The **authConfig.js** file contains the configuration settings for the authentic
 
 ### [Workforce tenant](#tab/workforce-tenant)
 
-1. Open *public/authConfig.js* and add the following code snippet:
+1. Open *public/authConfig.js* and add the following code:
 
     ```javascript
     const msalConfig = {
