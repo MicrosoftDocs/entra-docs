@@ -52,7 +52,7 @@ If you can't use connected organizations in entitlement management, create a Mic
 Learn more:
 
 * [What is entitlement management?](~/id-governance/entitlement-management-overview.md)
-* [Manage Microsoft Entra groups and group membership](~/fundamentals/how-to-manage-groups.yml)
+* [Manage Microsoft Entra groups and group membership](/entra/fundamentals/how-to-manage-groups)
 * [Overview of Microsoft 365 Groups for administrators](/microsoft-365/admin/create-groups/office-365-groups?view=o365-worldwide&preserve-view=true)
 
 ### Conditional Access policy creation

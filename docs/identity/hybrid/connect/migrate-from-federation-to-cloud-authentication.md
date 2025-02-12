@@ -160,7 +160,7 @@ This section includes prework before you switch your sign-in method and convert 
 
 Create groups for staged rollout and also for Conditional Access policies if you decide to add them.
 
-We recommend you use a group mastered in Microsoft Entra ID, also known as a cloud-only group. You can use Microsoft Entra security groups or Microsoft 365 Groups for both moving users to MFA and for Conditional Access policies. For more information, see [creating a Microsoft Entra security group](~/fundamentals/how-to-manage-groups.yml), and this [overview of Microsoft 365 Groups for administrators](/microsoft-365/admin/create-groups/office-365-groups).
+We recommend you use a group mastered in Microsoft Entra ID, also known as a cloud-only group. You can use Microsoft Entra security groups or Microsoft 365 Groups for both moving users to MFA and for Conditional Access policies. For more information, see [creating a Microsoft Entra security group](/entra/fundamentals/how-to-manage-groups), and this [overview of Microsoft 365 Groups for administrators](/microsoft-365/admin/create-groups/office-365-groups).
 
 The members in a group are automatically enabled for staged rollout. Nested and dynamic membership groups aren't supported for staged rollout.
 
