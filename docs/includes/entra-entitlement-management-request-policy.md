@@ -223,6 +223,11 @@ In this example, the duration of the request is 14 days. The request duration re
 
 Also, requests can't be forwarded on the last day of the request duration. So in the example, the latest the request can be forwarded is day 13.
 
+## Email Notifications (Preview)
+
+1. You are able to disable assignment emails notifying you of assignment requests that are delivered, expired, or near expiration.
+    :::image type="content" source="media/entitlement-management-request-policy/email-notifications.png" alt-text="Screenshot of the email notifications selection in creating an access package.":::
+
 ## Enable requests
 
 1. If you want the access package to be made immediately available for users in the request policy to request, move the **Enable new requests and assignments** toggle to **Yes**.
