@@ -1,0 +1,280 @@
+---
+title: 'Tutorial: Sign-in users to a Python Flask web app by using Microsoft identity platform'
+description: Learn how to sign-in users to a Python Flask web app by using Microsoft identity platform
+author: SHERMANOUKO
+manager: mwongerapk
+
+ms.author: shermanouko
+ms.service: identity-platform
+ms.topic: tutorial
+ms.date: 02/12/2025
+
+#Customer intent: As a dev, devops, I want to learn about how to sign-in users to a Python Flask web app by using Microsoft identity platform
+---
+
+# Tutorial: Sign-in users to a Python Flask web app by using Microsoft identity platform
+
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
+
+This tutorial is part of a tutorial series that guides you on securing a Python Flask Web app.
+
+In this tutorial, you'll;
+
+> [!div class="checklist"]
+>
+> - Create a Python Flask project
+> - Install the required dependencies
+> - Configure your Flask web app to use Microsoft identity platform for authentication
+> - Test the sign-in and sign-out experience in your Flask web app
+
+## Prerequisites
+
+- [Python 3+](https://www.python.org/).
+- [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
+- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/). This account must have permissions to manage applications. Use any of the following roles needed to register the application:
+    - Application Administrator
+    - Application Developer
+    - Cloud Application Administrator
+
+#### [Workforce tenant](#tab/workforce-tenant)
+
+- Ensure you have already [registered an application](./quickstart-register-app.md) in your tenant. Make sure you have the following from your app registration details:
+    - The *Application (client) ID* of the client web app that you registered.
+    - The *Directory (tenant) id* where you registered your web app.
+    - The *Client secret* value for the web app you created. In this tutorial, we use secrets for demonstration purposes. In production, use more secure approaches such as [certificates or federated identity credentials](./quickstart-register-app.md#add-credentials). 
+
+#### [External tenant](#tab/external-tenant)
+
+- Ensure you have already [registered an application](./quickstart-register-app.md) in your tenant. Make sure you have the following from your app registration details:
+    - The *Application (client) ID* of the client web app that you registered.
+    - The *Directory (tenant) subdomain* where you registered your web app. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+    - The *Client secret* value for the web app you created. In this tutorial, we use secrets for demonstration purposes. In production, use more secure approaches such as [certificates or federated identity credentials](./quickstart-register-app.md#add-credentials). 
+- Ensure you [add your application to a user flow during registration](../external-id/customers/how-to-user-flow-add-application.md).
+- Ensure you [grant admin consent on behalf of users in your tenant](./quickstart-register-app.md#grant-admin-consent-external-tenants-only).
+
+---
+
+## Create a Flask project
+
+1. In a location of choice in your computer, create a folder to host your Flask application, such as *flask-web-app*.
+
+1. Open a console window, and change to the directory to your Flask web app folder using the command 
+
+    ```bash
+    cd flask-web-app
+    ```
+
+1. Set up virtual environment
+
+    Depending on your operating system, run the following commands to set up your virtual environment and activate it:
+
+    For windows operating system:
+    
+    ```bash
+    py -m venv .venv
+    .venv\scripts\activate
+    ```
+    
+    For macOS or Linux operating system:
+    
+    ```Bash
+    python3 -m venv .venv
+    source .venv/bin/activate
+    ```
+
+## Install app dependencies
+
+To install app dependencies, run the following commands:
+
+```console
+pip install flask
+pip install python-dotenv
+pip install requests
+pip install "ms_identity_python[flask] @ git+https://github.com/azure-samples/ms-identity-python@0.9"
+```
+
+The *ms_identity_python* library that you install automatically installs Microsoft Authentication Library (MSAL) for Python as its dependency. MSAL Python is the library that enables you to authenticate users and manage their access tokens.
+
+After installing the required libraries, update your requirements file by running the following command:
+
+```console
+pip freeze > requirements.txt
+```
+
+## Add your configurations
+
+1. Create an .env* file in your root folder to safely store your app's configuration. Your *.env* file should contain the following environment variables:
+
+    #### [Workforce tenant](#tab/workforce-tenant)
+
+    ```env
+    CLIENT_ID="<Enter_your_client_id>"
+    CLIENT_SECRET="<Enter_your_client_secret>"
+    AUTHORITY="https://login.microsoftonline.com/<Enter_tenant_id>"
+    REDIRECT_URI="<Enter_redirect_uri>"
+    ```
+    
+    Replace the placeholders with the following values:
+    
+    - Replace `<Enter_your_client_id>` with the *Application (client) ID* of the client web app that you registered.
+    - Replace `<Enter_tenant_id>` with the *Directory (Tenant) ID* where you registered your web app.
+    - Replace `<Enter_your_client_secret>` with the *Client secret* value for the web app you created. In this tutorial, we use secrets for demonstration purposes. In production, use more secure approaches such as [certificates or federated identity credentials](./quickstart-register-app.md#add-credentials).
+    - Replace `<Enter_redirect_uri>` with the redirect URI that you registered earlier. This tutorial sets the redirect URI path to `http://localhost:3000/getAToken`.
+    
+    #### [External tenant](#tab/external-tenant) 
+
+    ```env
+    CLIENT_ID="<Enter_your_client_id>"
+    CLIENT_SECRET="<Enter_your_client_secret>"
+    AUTHORITY=https://<Enter_your_subdomain>.ciamlogin.com/<Enter_your_subdomain>.onmicrosoft.com
+    REDIRECT_URI="<Enter_redirect_uri>"
+    ```
+    
+    Replace the placeholders with the following values:
+    
+    - Replace `<Enter_your_client_id>` with the *Application (client) ID* of the client web app that you registered.
+    - The *Directory (tenant) subdomain* where you registered your web app. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details). 
+    - Replace `<Enter_your_client_secret>` with the *Client secret* value for the web app you created. In this tutorial, we use secrets for demonstration purposes. In production, use more secure approaches such as [certificates or federated identity credentials](./quickstart-register-app.md#add-credentials).
+    - Replace `<Enter_redirect_uri>` with the redirect URI that you registered earlier. This tutorial sets the redirect URI path to `http://localhost:3000/getAToken`.
+    
+    ---
+    
+1. Create an *app_config.py* file to read the environment variables and add other configs that you need.
+
+    ```python
+    import os
+
+    AUTHORITY = os.getenv("AUTHORITY")
+    CLIENT_ID = os.getenv("CLIENT_ID")
+    CLIENT_SECRET = os.getenv("CLIENT_SECRET")
+    REDIRECT_URI = os.getenv("REDIRECT_URI")
+    ```
+
+## Configure app endpoints
+
+At this stage, you create your web app endpoints and add the business logic to your application.
+
+1. Create a file called *app.py* in your root folder.
+
+1. Add the following code at the top of the 8app.py8 file to import required dependencies.
+
+    ```python
+    import os
+    import requests
+    from flask import Flask, render_template
+    from identity.flask import Auth
+    import app_config
+    ```
+
+1. Initialize your Flask app and configure it to use the session storage type you specified in your *app_config.py* file.
+
+    ```python
+    app = Flask(__name__)
+    app.config.from_object(app_config)
+    ```
+
+1. Add the following code to initialize client. A Flask web app is a confidential client. We pass the client secret because confidential clients can safely store it. Under the hood, the identity library calls the `ConfidentialClientApplication` class of the MSAL library.
+
+    ```python
+    auth = Auth(
+        app,
+        authority=app.config["AUTHORITY"],
+        client_id=app.config["CLIENT_ID"],
+        client_credential=app.config["CLIENT_SECRET"],
+        redirect_uri=app.config["REDIRECT_URI"]
+    )
+    ```
+
+1. Add the required endpoints to your Flask app. The web app uses the authorization code flow to sign in the user. The *ms_identity_python* MSAL warapper library helps with interacting with the MSAL library hence making it easier to add sign in and sign out to your app. We add an index page and protect it using the `login_required` decorator provided by the *ms_identity_python* library. The `login_required` decorator ensures that only authenticated users can access the index page.
+
+    ```python
+    @app.route("/")
+    @auth.login_required
+    def index(*, context):
+        return render_template(
+            'index.html',
+            user=context['user'],
+            title=f"Flask Web App Sample v{__version__}",
+        )
+    ```
+
+    User is guaranteed to be present because we decorated this view with @login_required.
+
+## Create the app templates
+
+Create a folder called *templates* in your root folder. In the templates folder, create a file called *index.html*. This is the app's homepage. Add the following code to the *index.html* file:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <h2>Welcome {{ user.get("name") }}!</h2>
+
+    <img src="https://github.com/Azure-Samples/ms-identity-python-webapp-django/raw/main/static/topology.png" alt="Topology">
+
+    <ul>
+    {% if api_endpoint %}
+        <li><a href='/call_api'>Call an API</a></li>
+    {% endif %}
+
+    <li><a href="{{ url_for('identity.logout') }}">Logout</a></li>
+    </ul>
+
+    <hr>
+    <footer style="text-align: right">{{ title }}</footer>
+</body>
+</html>
+```
+
+## Run and test the sample web app
+
+[!INCLUDE [python-flask-web-app-run-app](./includes/python-web-app/flask-web-app-tutorial.md)]
+
+## Use custom URL domain (Optional)
+
+#### [Workforce tenant](#tab/workforce-tenant)
+
+Workforce tenants don't support custom URL domains.
+
+#### [External tenant](#tab/external-tenant)
+
+Use a custom URL domain to fully brand the authentication URL. From a user perspective, users remain on your domain during the authentication process, rather than being redirected to *ciamlogin.com* domain name.
+
+Use the following steps to use a custom URL domain:
+
+1. Use the steps in [Enable custom URL domains for apps in external tenants](../how-to-custom-url-domain.md) to enable custom URL domain for your external tenant.
+
+1. In your *.env* file, add the variable `OIDC_AUTHORITY` variable and delete the `AUTHORITY` variable. Set its value to *https://Enter_the_Custom_Domain_Here/Enter_the_Tenant_ID_Here/v2.0*. Replace `Enter_the_Custom_Domain_Here` with your custom URL domain and `Enter_the_Tenant_ID_Here` with your tenant ID. If you don't have your tenant ID, learn how to [read your tenant details](../how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+
+1. In your *app_config.py* file add the following code to read the `OIDC_AUTHORITY` environment variable. You can delete the `AUTHORITY` variable.
+
+    ```python
+    # other configs go here
+    OIDC_AUTHORITY = os.getenv("OIDC_AUTHORITY")
+    ```
+
+1. In your *app.py* file, update the auth object to use *oidc_authority* argument instead of *authority*.
+
+    ```python
+    auth = Auth(
+        app,
+        oidc_authority=app.config["OIDC_AUTHORITY"],
+        client_id=app.config["CLIENT_ID"],
+        client_credential=app.config["CLIENT_SECRET"],
+        redirect_uri=app.config["REDIRECT_URI"]
+    )
+    ```
+
+## Reference material
+
+Whereas the [ms_identity_python](https://github.com/azure-samples/ms-identity-python) abstracts the details of the MSAL library, you can refer to the [MSAL Python documentation](/entra/msal/python/) for more information on the MSAL library. This reference material helps you understand how you initialize an app and acquire tokens using MSAL Python.
+
+## Next step
+
+> [!div class="nextstepaction"]
+> [Tutorial: Call Microsoft Graph API from your Python Flask web app](tutorial-web-app-python-flask-call-microsoft-graph-api.md).
