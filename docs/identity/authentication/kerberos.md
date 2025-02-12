@@ -14,30 +14,32 @@ ms.reviewer:
 # Microsoft Entra Kerberos overview
 
 
-**Microsoft Entra Kerberos** enhances traditional Kerberos authentication by enabling Microsoft Entra ID to act as the Key Distribution Center (KDC) in the cloud. This feature enables hybrid identities from on-premises Active Directory Domain Services (AD DS) to authenticate to Azure services using Microsoft Entra Kerberos, enhancing security, and simplifying management. By using Microsoft Entra ID as the KDC, organizations can provide secure access to Azure resources while benefiting from modern authentication methods.
+**Microsoft Entra Kerberos** is an authentication capability that brings the Kerberops protocol to Microsoft Entra ID. In a sense, it turns Microsoft Entra ID into a cloud based Key Distribution Center (KDC) for Kerberos authentication. This allows Microsoft Entra ID to issue kerberos tickets for users, extending traditional Kerberos authentication beyond on-premises Active Directory. Microsoft Entra Kerberos was introduced in 2021 to help bridge the gap between legacy, on-premises authentication protocols and modern cloud identity. 
+
+In a hybrid scenario, where accounts exist on-premises Active Directory Domain Services (AD-DS) and those users are synchronized to Microsoft Entra ID, Microsoft Entra Kerberos plays a crucial role. It enables these hybrid users to authenticate to cloud and on-premises resources using Kerberos without needing direct line of sight to domain controllers. For example, if Microsoft Entra ID joined windows client accesses a file share or application over the internet, Microsoft Entra ID can issue the necessary Kerberos tickets on behalf of the on-premises Active Directory environment. 
+
+
+>[!IMPORTANT]
+> At this time, Microsoft Entra Kerberos only works with hybrid identities.
+
 
 > [!NOTE]
 > For information on Kerberos in Windows, review [Kerberos authentication overview](/windows-server/security/kerberos/kerberos-authentication-overview)
 
-## Key Features
+## Key Features and Benefits
 - **Cloud-Based KDC**: Uses Microsoft Entra ID as the Key Distribution Center, reducing the need for connectivity to domain controllers.
 - **Hybrid Identity Support**: Authenticates users from on-premises Active Directory, easing the move to cloud services.
 - **Modern Authentication**: Supports multifactor authentication (MFA), passwordless options, and conditional access policies.
-- **Simplified Infrastructure**: Reduces reliance on on-premises infrastructure, making management easier.
-- **Azure Integration**: Works seamlessly with Azure services, requiring minimal configuration.
-- **Scalability and Reliability**: Uses Azure's infrastructure for scalable and reliable authentication.
-## Benefits
 - **Seamless Access**: Authenticate to Azure services without VPN or direct on-premises connections.
-- **Modern Authentication**: Includes MFA, passwordless options like FIDO2 security keys, and conditional access policies.
-- **Simplified Management**: Less need for on-premises authentication servers.
+- **Simplified Infrastructure and Management**: Reduces reliance on on-premises infrastructure, making management easier with fewer authentication servers required.
 - **Enhanced Security**: Centralized authentication with advanced security features like [single sign-on (SSO)](https://learn.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on), [MFA](https://learn.microsoft.com/azure/active-directory/authentication/concept-mfa-howitworks), [conditional access](https://learn.microsoft.com/azure/active-directory/conditional-access/overview), and [Windows Hello for Business (WHfB) cloud trust](https://learn.microsoft.com/windows/security/identity-protection/hello-for-business/hello-hybrid-cloud-trust).
-- **Scalability**: Supports large-scale deployments with ease.
+- **Azure Integration**: Works seamlessly with Azure services, requiring minimal configuration.
+- **Scalability and Reliability**: Uses Azure's infrastructure for authentication at scale, supporting large-scale deployments with ease.
 - **Interoperability**: Compatible with various operating systems and devices.
-
-
 
 ## How Microsoft Entra Kerberos Works
 
+Microsoft Entra Kerberos works by effectively establishing your Microsoft Entra ID instance as a parellale kerberos realm to your on-premises Active Directory Kerberos realm. When a user signs into a Windows device that is Microsoft Entra ID joined, or hybrid joined, the device performs standard Microsoft Entra ID authentication to get an Entra primary refresh token (PRT)
 
 While traditional Kerberos requires network connectivity to on-premises domain controllers, **Microsoft Entra Kerberos** operates over the internet with Microsoft Entra ID.
 
