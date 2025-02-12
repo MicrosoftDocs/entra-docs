@@ -4,8 +4,7 @@ description: Learn how to prepare a JavaScript single-page app (SPA) for authent
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.service: entra-external-id
-ms.subservice: external
+ms.service: identity-platform
 ms.custom: devx-track-js
 ms.topic: tutorial
 ms.date: 02/11/2024
@@ -14,14 +13,17 @@ ms.date: 02/11/2024
 
 # Tutorial: Prepare a JavaScript single-page application for authentication
 
-In this tutorial you'll build a JavaScript single-page application (SPA) and prepare it for authentication using the Microsoft identity platform. This tutorial demonstrates how to create a JavaScript SPA using `npm`, create files needed for authentication and authorization and add your tenant details to the authentication configuration.
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
+
+In this tutorial you'll build a JavaScript single-page application (SPA) and prepare it for authentication using the Microsoft identity platform. This tutorial demonstrates how to create a JavaScript SPA using `npm`, create files needed for authentication and authorization and add your tenant details to the authentication configuration. Depending on your tenant type, the application can be used to sing-in employees into a workforce tenant or for customers using an external tenant.
 
 In this tutorial, you'll
 
 > [!div class="checklist"]
 > * Create a new JavaScript project
-> * Install required packages
-> * Add code to *server.js* to create a server
+> * Install packages required for authentication
+> * Create your file structure and add code to the server file
+> * Add your tenant details to the authentication configuration
 
 ## Prerequisites
 
@@ -30,12 +32,9 @@ In this tutorial, you'll
   * Application Administrator
   * Application Developer
   * Cloud Application Administrator.
-* [Node.js](https://nodejs.org/en/download/).
-* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-
 ### [Workforce tenant](#tab/workforce-tenant)
 
-* A workforce tenant. You can use your [Default Directory](quickstart-create-new-tenant) or set up a new tenant.
+* A workforce tenant. You can use your [Default Directory](quickstart-create-new-tenant.md) or set up a new tenant.
 
 ### [External tenant](#tab/external-tenant)
 
@@ -43,6 +42,9 @@ In this tutorial, you'll
   * (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/tutorials/marketplace) to set up an external tenant directly in Visual Studio Code.
   * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details) in the Microsoft Entra admin center.
 ---
+* [Node.js](https://nodejs.org/en/download/).
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
+
 
 ## Create a JavaScript project and install dependencies
 
