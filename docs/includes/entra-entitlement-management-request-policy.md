@@ -225,7 +225,7 @@ Also, requests can't be forwarded on the last day of the request duration. So in
 
 ## Email Notifications (Preview)
 
-1. You are able to disable assignment emails notifying you of assignment requests that are delivered, expired, or near expiration.
+1. You're able to disable assignment emails notifying you of assignment requests that are delivered, expired, or near expiration.
     :::image type="content" source="media/entitlement-management-request-policy/email-notifications.png" alt-text="Screenshot of the email notifications selection in creating an access package.":::
 
 You can always either enable, or disable, email notifications ing the future after you finish creating the access package.    
