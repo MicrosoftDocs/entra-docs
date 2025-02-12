@@ -454,7 +454,7 @@ In this tutorial, you'll:
     }
    ```
 
-1. Open *MainActivity.java* and replace the code with following code snippet to manage the UI.
+1. To manage the UI (add UI components), open *MainActivity.java* and replace the code with following code snippet:
 
    ```java
     package com.azuresamples.msalandroidapp;

@@ -21,7 +21,7 @@ ms.custom: developer
 [!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
 
 
-In this tutorial you how to add Microsoft Authentication Library (MSAL) for Android to your Android app. MSAL enables Android applications to authenticate users with Microsoft Entra.
+In this tutorial you how to add Microsoft Authentication Library (MSAL) for Android to your Android app. MSAL enables Android applications to authenticate users with Microsoft Entra. 
 
 In this tutorial you'll;
 
@@ -33,7 +33,7 @@ In this tutorial you'll;
 
 ## Prerequisites
 
-- [Quickstart: Sign in users in a sample mobile app](quickstart-mobile-app-sign-in.md?pivots=external&tabs=java-external).
+- If you haven't already, [Register an app in the Microsoft Entra admin center](quickstart-mobile-app-sign-in.md?pivots=external) by following the registration steps. For External tenants, register the app, add the platform redirect URL, enable public client flows, and grant admin consent. For Workforce tenants, complete the steps in the "Register the application" section.
 - An Android project. If you don't have an Android project, create it.
 
 ## Add MSAL dependency and relevant libraries to your project
@@ -179,8 +179,8 @@ b) Update AndroidManifest.xml. In the app go to **app** > **src** > **main** > *
     
     Find the placeholder:
     
-    - *ENTER_YOUR_PROJECT_PACKAGE_NAME_HERE* and replace it with your Android's project package name.
-    - *ENTER_YOUR_SIGNATURE_HASH_HERE* and replace it with the Signature Hash that you generated earlier when you added the platform redirect URL.
+    - `ENTER_YOUR_PROJECT_PACKAGE_NAME_HERE` and replace it with your Android's project package name.
+    - `ENTER_YOUR_SIGNATURE_HASH_HERE` and replace it with the Signature Hash that you generated earlier when you added the platform redirect URL.
 
 [!INCLUDE [external-id-custom-domain](../external-id/customers/includes/use-custom-domain-url-android.md)]
 
