@@ -19,7 +19,7 @@ Use the following information and examples to gain a more advanced understanding
 
 
 
-[!INCLUDE [Microsoft 365 licensing](../includes/licensing-microsoft-365.md)]
+[!INCLUDE [Microsoft 365 licensing](../../includes/licensing-microsoft-365.md)]
 
 
 ## Usage location
