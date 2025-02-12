@@ -86,10 +86,6 @@ Only one Microsoft Entra group can currently be enabled for SSPR using the Micro
 
 Also review troubleshooting steps to make sure that the administrator performing the configuration options has a license assigned. To assign a license to the administrator account in question, follow the steps to [Assign, verify, and resolve problems with licenses](~/identity/users/licensing-groups-assign.md#step-1-assign-the-required-licenses).
 
-### There's an error processing the request
-
-Generic SSPR registration errors can be caused by many issues, but generally this error is caused by either a service outage or a configuration issue. If you continue to see this generic error when you retry the SSPR registration process, [contact Microsoft support](#contact-microsoft-support) for help.
-
 ## SSPR usage
 
 To help resolve problems with SSPR, review these steps.
