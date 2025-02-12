@@ -36,7 +36,7 @@ If there are too many deletes staged to be exported to Microsoft Entra ID, then 
 ![Prevent Accidental deletes email](./media/how-to-connect-sync-feature-prevent-accidental-deletes/email.png)
 
 
- 
+
 | From:         | Microsoft Security <MSSecurity-noreply@microsoft.com>                                                                                                               |
 |---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Title:        | Export to Microsoft Entra ID was Stopped. Accidental delete threshold was reached.                                                                                  |
@@ -111,7 +111,7 @@ If all the objects pending deletion are supposed to be deleted in Microsoft Entr
 
 If a higher number of expected deletions are frequent in your organization, it's advisable to increase the deletion threshold rather than disabling this protection, as this could allow undesired deletions causing loss of critical data and disruption of services. Evaluate your specific desired number of deletions and use the following PowerShell cmdlet to set a new limit, for instance, to set a deletion threshold of 1000, use: `Enable-ADSyncExportDeletionThreshold -DeletionThreshold 1000 -AADUserName "<UserPrincipalName>"`
 
-To confirm the current deletion threshold, run: `Get-ADSyncExportDeletionThreshold`
+To confirm the current deletion threshold, run: `Get-ADSyncExportDeletionThreshold -AADUserName "<UserPrincipalName>"`
 
 ## Next steps
 **Overview topics**
