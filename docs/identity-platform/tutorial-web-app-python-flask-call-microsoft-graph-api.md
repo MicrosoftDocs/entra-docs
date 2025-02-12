@@ -17,8 +17,6 @@ ms.topic: tutorial
 
 In this tutorial, you call Microsoft Graph API from a Python Flask web app. In the [previous tutorial](tutorial-web-app-python-flask-sign-in-out.md), you added the sign-in and sign-out experiences to the application. Once a user signs in, the app acquires an access token to call Microsoft Graph API.
 
-This tutorial is part 3 of the 3-part tutorial series.
-
 In this tutorial, you:
 
 > [!div class="checklist"]
@@ -34,14 +32,14 @@ Complete the steps in [Tutorial: Add add sign-in to a Python Flask web app by us
 
 In this example, we call the Microsoft Graph API to get the signed-in user's profile information. If your app is in a workforce tenant, on sign-in, the user consents to the scopes required by the app to access the Microsoft Graph API. If your app is in an external tenant, ensure you [grant admin consent on behalf of users in your tenant](./quickstart-register-app.md#grant-admin-consent-external-tenants-only). The app then uses the access token to call the API and display the results.
 
-In your *.env* file, add the endpoint we are calling and the scopes required to call the Microsoft Graph API:
+In your *.env* file, add the endpoint we're calling and the scopes required to call the Microsoft Graph API:
 
 ```
 SCOPE=User.Read
 ENDPOINT=https://graph.microsoft.com/v1.0/me
 ```
 
-Read the new configs in your app by updating the *app_config.py* file to read the environment variables.
+Read the new configs in your app by updating the *app_config.py* file.
 
 ```python
 # other configs go here
@@ -49,11 +47,11 @@ SCOPE = os.getenv("SCOPE")
 ENDPOINT = os.getenv("ENDPOINT")
 ```
 
-## Add code to call a protected API
+## Call a protected API
 
-We pass the list of scopes that our app will need to use. If scopes are present, the context will also contain an access token. The access token is used to call the downstream API.
+We pass the list of scopes that our app needs to use. If scopes are present, the context contains an access token. The access token is used to call the downstream API.
 
-Add the following endpoint to your *app.py* file to call the protected API:
+Call the protected Microsoft Graph API as shown in the following code snippet. Add this code to the *app.py* file:
 
 ```python
 @app.route("/call_api")
@@ -71,7 +69,7 @@ If the app successfully obtains an access token, it makes an HTTP request to the
 
 A successful request to the downstream API (Microsoft Graph API) returns a JSON response stored in an `api_result` variable and passed to the `display.html` template for rendering. 
 
-## Add template to display API results
+## Display API results
 
 Create a file called *display.html* in the *templates* folder. This page displays the result of the call to the Microsoft Graph endpoint. Add the following code to the *display.html* file:
 
@@ -100,4 +98,4 @@ Create a file called *display.html* in the *templates* folder. This page display
 
 ## Reference material
 
-Whereas the [ms_identity_python](https://github.com/azure-samples/ms-identity-python) abstracts the details of the MSAL library, you can refer to the [MSAL Python documentation](/entra/msal/python/) for more information on the MSAL library. This reference material helps you understand how you initialize an app and acquire tokens using MSAL Python.
+The [ms_identity_python](https://github.com/azure-samples/ms-identity-python) abstracts the details of the MSAL library. For more information, see [MSAL Python documentation](/entra/msal/python/). This reference material helps you understand how you initialize an app and acquire tokens using MSAL Python.

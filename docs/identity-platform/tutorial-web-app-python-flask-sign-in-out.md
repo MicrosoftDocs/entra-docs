@@ -31,14 +31,14 @@ In this tutorial, you'll;
 
 #### [Workforce tenant](#tab/workforce-tenant)
 
-- Ensure you have already [registered an application](./quickstart-register-app.md) in your tenant. Make sure you have the following from your app registration details:
+- Ensure you have [an app registration](./quickstart-register-app.md) in your tenant. Make sure you have the following from your app registration details:
     - The *Application (client) ID* of the client web app that you registered.
-    - The *Directory (tenant) id* where you registered your web app.
+    - The *Directory (tenant) ID* where you registered your web app.
     - The *Client secret* value for the web app you created.
 
 #### [External tenant](#tab/external-tenant)
 
-- Ensure you have already [registered an application](./quickstart-register-app.md) in your tenant. Make sure you have the following from your app registration details:
+- Ensure you have [an app registration](./quickstart-register-app.md) in your tenant. Make sure you have the following from your app registration details:
     - The *Application (client) ID* of the client web app that you registered.
     - The *Directory (tenant) subdomain* where you registered your web app. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
     - The *Client secret* value for the web app you created.
@@ -51,7 +51,7 @@ In this tutorial, you'll;
 
 ## Create a Flask project
 
-1. In a location of choice in your computer, create a folder to host your Flask application, such as *flask-web-app*.
+1. Create a folder to host your Flask application, such as *flask-web-app*.
 
 1. Open a console window, and change to the directory to your Flask web app folder using the command 
 
@@ -151,7 +151,7 @@ At this stage, you create your web app endpoints and add the business logic to y
 
 1. Create a file called *app.py* in your root folder.
 
-1. Add the following code at the top of the 8app.py8 file to import required dependencies.
+1. Import required dependencies at the top of the *app.py* file.
 
     ```python
     import os
@@ -168,7 +168,7 @@ At this stage, you create your web app endpoints and add the business logic to y
     app.config.from_object(app_config)
     ```
 
-1. Add the following code to initialize client. A Flask web app is a confidential client. We pass the client secret because confidential clients can safely store it. Under the hood, the identity library calls the `ConfidentialClientApplication` class of the MSAL library.
+1. Initialize client the app client. A Flask web app is a confidential client. We pass the client secret because confidential clients can safely store it. Under the hood, the identity library calls the `ConfidentialClientApplication` class of the MSAL library.
 
     ```python
     auth = Auth(
@@ -180,7 +180,7 @@ At this stage, you create your web app endpoints and add the business logic to y
     )
     ```
 
-1. Add the required endpoints to your Flask app. The web app uses the authorization code flow to sign in the user. The *ms_identity_python* MSAL warapper library helps with interacting with the MSAL library hence making it easier to add sign in and sign out to your app. We add an index page and protect it using the `login_required` decorator provided by the *ms_identity_python* library. The `login_required` decorator ensures that only authenticated users can access the index page.
+1. Add the required endpoints to your Flask app. The web app uses the authorization code flow to sign in the user. The *ms_identity_python* MSAL wrapper library helps with interacting with the MSAL library hence making it easier to add sign in and sign out to your app. We add an index page and protect it using the `login_required` decorator provided by the *ms_identity_python* library. The `login_required` decorator ensures that only authenticated users can access the index page.
 
     ```python
     @app.route("/")
@@ -249,7 +249,7 @@ Use the following steps to use a custom URL domain:
 
 1. In your *.env* file, add the variable `OIDC_AUTHORITY` variable and delete the `AUTHORITY` variable. Set its value to *https://Enter_the_Custom_Domain_Here/Enter_the_Tenant_ID_Here/v2.0*. Replace `Enter_the_Custom_Domain_Here` with your custom URL domain and `Enter_the_Tenant_ID_Here` with your tenant ID. If you don't have your tenant ID, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
-1. In your *app_config.py* file add the following code to read the `OIDC_AUTHORITY` environment variable. You can delete the `AUTHORITY` variable.
+1. In your app_config.py file, add the following code to read the `OIDC_AUTHORITY` environment variable. You can delete the `AUTHORITY` variable.
 
     ```python
     # other configs go here
@@ -270,7 +270,7 @@ Use the following steps to use a custom URL domain:
 
 ## Reference material
 
-Whereas the [ms_identity_python](https://github.com/azure-samples/ms-identity-python) abstracts the details of the MSAL library, you can refer to the [MSAL Python documentation](/entra/msal/python/) for more information on the MSAL library. This reference material helps you understand how you initialize an app and acquire tokens using MSAL Python.
+The [ms_identity_python](https://github.com/azure-samples/ms-identity-python) abstracts the details of the MSAL library. For more information, see [MSAL Python documentation](/entra/msal/python/). This reference material helps you understand how you initialize an app and acquire tokens using MSAL Python.
 
 ## Next step
 
