@@ -273,7 +273,7 @@ Now that all the required code snippets have been added, the application can be 
     ```
 1. Copy the `https` URL that appears in the terminal, for example, `https://localhost:3000`, and paste it into a browser. We recommend using a private or incognito browser session.
 1. Sign-in with an account registered to the tenant.
-1. The following screenshot appears, indicating that you have signed in to the application and have accessed your profile details from the Microsoft Graph API.
+1. An interface similar to the following screenshot appears, indicating that you have signed in to the application. If you have added the claims table, you can view the claims returned from the ID token.
 
     :::image type="content" source="./media/tutorial-spa-vanillajs-sign-in-sign-in-out/display-vanillajs-welcome.png" alt-text="Screenshot of JavaScript App depicting the results of the API call." lightbox="./media/tutorial-spa-vanillajs-sign-in-sign-in-out/display-vanillajs-welcome.png":::
 

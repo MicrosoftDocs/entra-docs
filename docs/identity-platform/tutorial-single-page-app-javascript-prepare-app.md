@@ -35,7 +35,7 @@ In this tutorial, you'll:
   * Application Developer
   * Cloud Application Administrator.
 * A workforce tenant. You can use your [Default Directory](quickstart-create-new-tenant.md) or set up a new tenant.
-* An application registered in the Microsoft Entra admin center with the following setup. For more information, see [Register an application](quickstart-register-app.md).
+* An application registered in the Microsoft Entra admin center with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
     * **Name**: identity-client-spa
     * **Supported account types**: *Accounts in this organizational directory only (Single tenant).*
     * **Platform configuration**: Single-page application (SPA).
@@ -53,7 +53,7 @@ In this tutorial, you'll:
 * An external tenant. To create one, choose from the following methods:
   * (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/tutorials/marketplace) to set up an external tenant directly in Visual Studio Code.
   * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details) in the Microsoft Entra admin center.
-* An application registered in the Microsoft Entra admin center with the following setup. For more information, see [Register an application](quickstart-register-app.md).
+* An application registered in the Microsoft Entra admin center with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
     * **Name**: identity-client-spa
     * **Supported account types**: *Accounts in this organizational directory only (Single tenant).*
     * **Platform configuration**: Single-page application (SPA).
@@ -144,7 +144,7 @@ In this tutorial, you'll:
 
 In this code, the **app** variable is initialized with the **express** module is used to serve the public assets. [MSAL-browser](/javascript/api/@azure/msal-browser) is served as a static asset and is used to initiate the authentication flow.
 
-## Adding your tenant details to the authentication configuration
+## Adding your tenant details to the MSAL configuration
 
 The **authConfig.js** file contains the configuration settings for the authentication flow and is used to configure **MSAL.js** with the required settings for authentication.
 
@@ -215,6 +215,7 @@ The **authConfig.js** file contains the configuration settings for the authentic
 1. Replace the following values with the values from the Entra admin center:
     * Find the `Enter_the_Application_Id_Here` value and replace it with the **Application ID (clientId)** of the app you registered in the Microsoft Entra admin center.
     * Find the `Enter_the_Tenant_Info_Here` value and replace it with the **Tenant ID** of the workforce tenant you created in the Microsoft Entra admin center.
+1. Save the file.
 
 ### [External tenant](#tab/external-tenant)
 
@@ -283,11 +284,11 @@ The **authConfig.js** file contains the configuration settings for the authentic
 1. Replace the following values with the values from the Entra admin center:
      * `Enter_the_Application_Id_Here` and replace it with the Application (client) ID in the Microsoft Entra admin center.
      * `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+1. Save the file.
 
 [!INCLUDE [external-id-custom-domain](../external-id/customers/includes/use-custom-domain-url.md)]
 
 ---
-2. Save the file.
 
 ## Next step
 
