@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Prepare a JavaScript SPA for authentication"
+title: "Tutorial: Prepare a JavaScript single-page application for authentication"
 description: Learn how to prepare a JavaScript single-page app (SPA) for authentication using the Microsoft identity platform.
 author: OwenRichards1
 manager: CelesteDG
@@ -14,9 +14,9 @@ ms.date: 02/11/2024
 
 # Tutorial: Prepare a JavaScript single-page application for authentication
 
-In this tutorial you'll build a JavaScript single-page application (SPA) and prepare it for authentication using the Microsoft identity platform. This tutorial demonstrates how to create a JavaScript SPA using `npm` and create files needed for authentication and authorization.
+In this tutorial you'll build a JavaScript single-page application (SPA) and prepare it for authentication using the Microsoft identity platform. This tutorial demonstrates how to create a JavaScript SPA using `npm`, create files needed for authentication and authorization and add your tenant details to the authentication configuration.
 
-In this tutorial, you'll;
+In this tutorial, you'll
 
 > [!div class="checklist"]
 > * Create a new JavaScript project
@@ -24,8 +24,6 @@ In this tutorial, you'll;
 > * Add code to *server.js* to create a server
 
 ## Prerequisites
-
-### [Workforce tenant](#tab/workforce-tenant)
 
 * An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
@@ -35,18 +33,15 @@ In this tutorial, you'll;
 * [Node.js](https://nodejs.org/en/download/).
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
+### [Workforce tenant](#tab/workforce-tenant)
+
+* A workforce tenant. You can use your [Default Directory](quickstart-create-new-tenant) or set up a new tenant.
+
 ### [External tenant](#tab/external-tenant)
 
 * An external tenant. To create one, choose from the following methods:
   * (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/tutorials/marketplace) to set up an external tenant directly in Visual Studio Code.
   * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details) in the Microsoft Entra admin center.
-* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-  * Application Administrator
-  * Application Developer
-  * Cloud Application Administrator.
-* [Node.js](https://nodejs.org/en/download/).
-* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-
 ---
 
 ## Create a JavaScript project and install dependencies
