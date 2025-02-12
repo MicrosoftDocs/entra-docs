@@ -114,7 +114,7 @@ You can use Microsoft's web browser login experience (login.microsoft.com) to si
 ### Mobile native app sign-in experience 
 You can optimize sign-in for your apps by using Microsoft Authentication Library (MSAL) to add a QR code sign-in option to your apps sign-in page. This option eliminates two clicks to scan the QR code. For example, you can add QR code sign-in to the Teams app. This optimized user experience will be available in Microsoft Intune Managed Home Screen (MHS), BlueFletch and Jamf app lauchers in March 2025.
 
-
+Learn more how to enable the optimized experience in Android (https://review.learn.microsoft.com/en-us/entra/identity-platform/msal-android-qr-code-pin-authentication?branch=pr-en-us-6810) and iOS app (https://review.learn.microsoft.com/en-us/entra/identity-platform/msal-ios-qr-code-pin-authentication?branch=pr-en-us-6810)
 
 ## Unsupported user scenarios in current release
 
