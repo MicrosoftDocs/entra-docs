@@ -1494,27 +1494,27 @@
     },
     {
       "source_path_from_root": "/docs/fundamentals/license-users-groups.yml",
-      "redirect_url": "/removed/docs/fundamentals/license-users-groups",
+      "redirect_url": "/docs/fundamentals/licensing.md",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity/users/licensing-groups-assign.md",
-      "redirect_url": "/removed/docs/identity/users/licensing-groups-assign",
+      "redirect_url": "/docs/fundamentals/licensing.md",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity/users/licensing-groups-change-licenses.md",
-      "redirect_url": "/removed/docs/identity/users/licensing-groups-change-licenses",
+      "redirect_url": "/docs/fundamentals/licensing.md",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity/users/licensing-groups-migrate-users.md",
-      "redirect_url": "/removed/docs/identity/users/licensing-groups-migrate-users",
+      "redirect_url": "/docs/fundamentals/licensing.md",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity/users/licensing-groups-resolve-problems.md",
-      "redirect_url": "/removed/docs/identity/users/licensing-groups-resolve-problems",
+      "redirect_url": "/docs/fundamentals/licensing.md",
       "redirect_document_id": false
     }
   ]
