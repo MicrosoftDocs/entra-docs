@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Add authentication flows to a JavaScript SPA"
+title: "Tutorial: Add sign-in and sign-out flows to a JavaScript SPA"
 description: Learn how to add authentication to a JavaScript single-page app (SPA) using the Microsoft identity platform.
 author: OwenRichards1
 manager: CelesteDG
@@ -14,14 +14,14 @@ ms.date: 02/11/2024
 
 # Tutorial: Add sign-in and sign-out flows to a JavaScript SPA
 
-In this tutorial you'll configure a JavaScript (JS) single-page application (SPA) for authenticaiton. In [part 1 of this series](tutorial-single-page-app-javascript-prepare-app.md), you created a JS SPA and prepared it for authentication. In this tutorial, you'll learn how to add authentication flows by adding [Microsoft Authentication Library (MSAL)](msal-overview.md) components to your app.
+In this tutorial you'll configure a JavaScript single-page application (SPA) for authenticaiton. In [part 1 of this series](tutorial-single-page-app-javascript-prepare-app.md), you created a JavaScript SPA and prepared it for authentication. In this tutorial, you'll learn how to add authentication flows by adding [Microsoft Authentication Library (MSAL)](msal-overview.md) components to your app and build a responsive user interface (UI) for your app.
 
 In this tutorial;
 
 > [!div class="checklist"]
-> * Configure the settings for the application
 > * Add code to *authRedirect.js* to handle the authentication flow
 > * Add code to *authPopup.js* to handle the authentication flow
+> * Build a user interface for the application
 
 ## Prerequisites
 
@@ -31,7 +31,7 @@ In this tutorial;
 
 A redirection file is required to handle the response from the sign-in page. It's used to extract the access token from the URL fragment and to call the protected API. It's also used to catch errors that occur during the authentication process.
 
-1. Open *public/authRedirect.js* and add the following code snippet:
+1. Open *public/authRedirect.js* and add the following code:
 
     ```javascript
     // Create the main myMSALObj instance
@@ -123,7 +123,7 @@ A redirection file is required to handle the response from the sign-in page. It'
 
 The application uses *authPopup.js* to handle the authentication flow when the user signs in using the pop-up window. The pop-up window is used when the user is already signed in and the application needs to get an access token for a different resource.
 
-1. Open *public/authPopup.js* and add the following code snippet:
+1. Open *public/authPopup.js* and add the following code:
 
     ```javascript
     // Create the main myMSALObj instance
@@ -204,9 +204,9 @@ The application uses *authPopup.js* to handle the authentication flow when the u
 
 1. Save the file.
 
-## Build a user interface (UI) for the application
+## Build a user interface for the application
 
-When authorization has been configured, a user interface can be created to interact with application when the project is run. [Bootstrap](https://getbootstrap.com) is used to create a responsive UI that contains a **Sign-In** and **Sign-Out** button. The UI also contains a table that displays the claims from the token, which will be added later in the tutorial.
+When authorization has been configured, a UI can be created to interact with application when the project is run. [Bootstrap](https://getbootstrap.com) is used to create a responsive UI that contains a **Sign-In** and **Sign-Out** button. The UI also contains a table that displays the claims from the token, which will be added later in the tutorial.
 
 ### Add code to the *index.html* file
 
@@ -286,7 +286,7 @@ The main page of the SPA, *index.html*, is the first page that is loaded when th
 
 ### Add code to the *ui.js* file
 
-To make the application interactive, the *ui.js* file is used to handle the UI elements of the application. The file contains functions that are used to update the user's name when they sign in and to update the table with the claims from the token.
+To make your application interactive, the *ui.js* file is used to handle UI elements of the application. The file contains functions that are used to update the user's name when they sign in and to update the table with the claims from the token.
 
 1. Open *public/ui.js* and add the following code snippet:
 
@@ -328,7 +328,7 @@ To make the application interactive, the *ui.js* file is used to handle the UI e
 
 ## Add code to the *signout.html* file
 
-The *signout.html* file is used to display a message to the user when they sign out of the application. It's also used to clear the cache when the user signs out.
+The *signout.html* file is used to display a message to the user when they sign out of the application.
 
 1. Open *public/signout.html* and add the following code snippet:
 

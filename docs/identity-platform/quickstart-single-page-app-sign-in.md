@@ -413,7 +413,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
     ```
 
 1. Copy the `https` URL that appears in the terminal, for example, `https://localhost:3000`, and paste it into a browser. We recommend using a private or incognito browser session.
-1. Sign-in with an account registered to the external tenant.
+1. Sign-in with an account registered to the tenant.
 1. The following screenshot appears, indicating that you have signed in to the application and have accessed your profile details from the Microsoft Graph API.
 
     :::image type="content" source="./media/common-spa/react-spa/display-api-call-results-react-spa.png" alt-text="Screenshot of JavaScript App depicting the results of the API call." lightbox="./media/common-spa/react-spa/display-api-call-results-react-spa.png":::

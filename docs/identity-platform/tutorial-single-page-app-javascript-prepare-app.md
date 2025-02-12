@@ -157,7 +157,6 @@ The **authConfig.js** file contains the configuration settings for the authentic
         auth: {
 
             clientId: "Enter_the_Application_Id_Here", // This is the ONLY mandatory field that you need to supply
-            // WORKFORCE TENANT
             authority: "https://login.microsoftonline.com/Enter_the_Tenant_Info_Here", //  Replace the placeholder with your tenant info
             redirectUri: '/', // You must register this URI on App Registration. Defaults to window.location.href e.g. http://localhost:3000/
             navigateToLoginRequestUrl: true, // If "true", will navigate back to the original request location before processing the auth code response.
@@ -293,4 +292,4 @@ The **authConfig.js** file contains the configuration settings for the authentic
 ## Next step
 
 > [!div class="nextstepaction"]
-> * [Handle authentication flows in a JavaScript SPA](tutorial-single-page-app-javascript-configure-authentication.md)
+> [Handle authentication flows in a JavaScript SPA](tutorial-single-page-app-javascript-configure-authentication.md)

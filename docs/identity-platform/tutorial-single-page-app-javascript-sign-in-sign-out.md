@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Sign in and sign out of a JavaScript SPA"
-description: Learn how to test sign-in and sign-out functionality in a JavaScript single-page app (SPA) using the Microsoft identity platform.
+description: Learn how to test sign-in and sign-out in a JavaScript single-page app (SPA) using the Microsoft identity platform.
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
@@ -9,12 +9,12 @@ ms.subservice: external
 ms.custom: devx-track-js
 ms.topic: tutorial
 ms.date: 02/11/2024
-#Customer intent: As a developer, I want to learn how to configure JavaScript single-page app (SPA) to sign in and sign out users with my external tenant.
+#Customer intent: As a developer, I want to learn how to configure JavaScript single-page app (SPA) to sign in and sign out using the Microsoft identity platform.
 ---
 
 # Tutorial: Sign in and sign out of a JavaScript SPA
 
-This tutorial is the final part of a series that demonstrates building a JavaScript single-page application (SPA) and preparing it for authentication using the Microsoft identity platform. In [part 2 of this series](tutorial-single-page-app-javascript-configure-authentication.md), you added authentication flows to a JS SPA and built a responsive UI. This final step shows you how to test sign-in and sign-out functionality in your app.
+This tutorial is the final part of a series that demonstrates building a JavaScript single-page application (SPA) and preparing it for authentication using the Microsoft identity platform. In [part 2 of this series](tutorial-single-page-app-javascript-configure-authentication.md), you added authentication flows to a JavaScript SPA and built a responsive UI. This final step shows you how to test sign-in and sign-out functionality in your app.
 
 In this tutorial, you'll;
 
@@ -34,7 +34,7 @@ To add the feature of a table that can display claims returned from the ID token
 1. Open *public/claimUtils.js* and add the following code snippet:
     
     ```javascript
-        /**
+     /**
      * Populate claims table with appropriate description
      * @param {Object} claims ID token claims
      * @returns claimsObject
@@ -271,24 +271,23 @@ Now that all the required code snippets have been added, the application can be 
     ```console
     npm start
     ```
+1. Copy the `https` URL that appears in the terminal, for example, `https://localhost:3000`, and paste it into a browser. We recommend using a private or incognito browser session.
+1. Sign-in with an account registered to the tenant.
+1. The following screenshot appears, indicating that you have signed in to the application and have accessed your profile details from the Microsoft Graph API.
 
-1. Open a new private browser, and enter the application URI into the browser, `http://localhost:3000/`.
-1. Select **No account? Create one**, which starts the sign-up flow.
-1. In the **Create account** window, enter the email address registered to your external tenant, which starts the sign-up flow as a user for your application.
-1. After entering a one-time passcode from the external tenant, enter a new password and more account details, this sign-up flow is completed.
+    :::image type="content" source="./media/common-spa/react-spa/display-api-call-results-react-spa.png" alt-text="Screenshot of JavaScript App depicting the results of the API call." lightbox="./media/common-spa/react-spa/display-api-call-results-react-spa.png":::
 
-    1. If a window appears prompting you to **Stay signed in**, choose either **Yes** or **No**.
+## Sign out from the application
 
-1. The SPA will now display a button saying **Request Profile Information**. Select it to display profile data.
+1. Find the **Sign out** button on the page, and select it.
+1. You'll be prompted to pick an account to sign out from. Select the account you used to sign in.
 
-    :::image type="content" source="./media/tutorial-spa-vanillajs-sign-in-sign-in-out/display-vanillajs-welcome.png" alt-text="Screenshot of JavaScript App depicting the results of the API call." lightbox="./media/tutorial-spa-vanillajs-sign-in-sign-in-out/display-vanillajs-welcome.png":::
-
-## Sign out of the application
-
-1. To sign out of the application, select **Sign out** in the navigation bar.
-1. A window appears asking which account to sign out of.
-1. Upon successful sign out, a final window appears advising you to close all browser windows.
+A message appears indicating that you have signed out. You can now close the browser window.
 
 ## Related content
 
-- [Enable self-service password reset](../external-id/customers/how-to-enable-password-reset-customers.md) 
+- [Quickstart: Protect an ASP.NET Core web API with the Microsoft identity platform](./quickstart-web-api-aspnet-core-protect-api.md).
+- [Learn more by building a React SPA that signs in users in the following multi-part tutorial series](./tutorial-single-page-app-react-register-app.md).
+- [Enable password reset](../external-id/customers/how-to-enable-password-reset-customers.md).
+- [Customize the default branding](../external-id/customers/how-to-customize-branding-customers.md).
+- [Configure sign-in with Google](../external-id/customers/how-to-google-federation-customers.md).
