@@ -181,7 +181,7 @@ In this section, you enable Microsoft Entra single sign-on in the LoginRadius Ad
 
 3. Select **Add Team Member** in the side menu to open the form. 
 
-4. In the **Add Team Member** form, you create a user called Britta Simon in your LoginRadius site by providing the user's details and assigning the permissions you want the user to have. To know more about the permissions based on roles, see the [Role Access Permissions](https://www.loginradius.com/docs/api/v2/admin-console/team-management/manage-team-members#roleaccesspermissions0) section of the LoginRadius [Manage Team Members](https://www.loginradius.com/docs/api/v2/admin-console/team-management/manage-team-members#roleaccesspermissions0) document. Users must be created and activated before you use single sign-on.
+4. In the **Add Team Member** form, you create a user called Britta Simon in your LoginRadius site by providing the user's details and assigning the permissions you want the user to have. To know more about the permissions based on roles, see the [Role Access Permissions](https://www.loginradius.com/docs/) section of the LoginRadius [Manage Team Members](https://www.loginradius.com/docs/) document. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 

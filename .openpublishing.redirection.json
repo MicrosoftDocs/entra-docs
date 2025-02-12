@@ -1668,6 +1668,7 @@
       "redirect_document_id": false
     },
     {
+<<<<<<< HEAD
       "source_path_from_root": "/docs/identity-platform/quickstart-web-app-dotnet-core-sign-in.md",
       "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=workforce",
       "redirect_document_id": false
@@ -1775,6 +1776,11 @@
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-single-page-app-react-sign-up.md",
       "redirect_url": "/entra/identity-platform/tutorial-native-authentication-single-page-app-react-sign-up", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/services-id-authentication-support.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/managed-identities-status",
       "redirect_document_id": false
     }
   ]
