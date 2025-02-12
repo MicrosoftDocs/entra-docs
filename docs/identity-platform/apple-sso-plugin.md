@@ -200,6 +200,9 @@ To *disable* SSO for Safari or Safari View Service, you must explicitly do so by
 - iOS: `com.apple.mobilesafari`, `com.apple.SafariViewService`
 - macOS: `com.apple.Safari`
 
+>[!NOTE]
+> SSO cannot be disabled for apps that use a Microsoft Authentication Library using this setting.
+
 #### Enable SSO through cookies for a specific application
 
 Some iOS apps that have advanced network settings might experience unexpected issues when they're enabled for SSO. For example, you might see an error indicating that a network request was canceled or interrupted.
@@ -219,6 +222,9 @@ If your users have problems signing in to an application even after you've enabl
 Try this configuration only for applications that have unexpected sign-in failures. This key is to be used only for iOS apps and not for macOS apps.
 
 #### Summary of keys
+
+>[!NOTE]
+> Keys described in this section only apply to apps that are not using a Microsoft Authentication Library.
 
 | Key | Type | Value |
 |--|--|--|
@@ -449,6 +455,25 @@ This isn't an exhaustive list and we do advise both consumers and vendors of app
 #### Registered/Enrolled Device Conditional Access Policy Support in Chrome
 To support device Conditional Access policies in Google Chrome with Secure Enclave based storage enabled, you'll need to have the [Microsoft Single Sign On](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension installed and enabled.
 
+## Important update on macOS 15.3 and iOS 18.1.1 impacting Enterprise SSO
+
+### Overview
+A recent update to macOS 15.3 and iOS 18.1.1 prevents the Enterprise SSO extension framework from functioning correctly, leading to unexpected authentication failures across all apps integrated with Entra ID. Impacted users may also encounter an error tagged as '4s8qh'.
+
+### Root cause
+The root cause of this issue is a potential regression in the underlying PluginKit layer, which prevents the Microsoft Enterprise SSO Extension from being launched by the operating system. Apple is investigating the issue and working with us on a resolution.
+
+### Identifying impacted users
+To determine if your users are affected, you can collect a sysdiagnose and look for the following error information:
+
+'Error Domain=PlugInKit Code=16 other version in use'
+
+Here's a sample how this error would look like:
+
+`Request for extension <EXConcreteExtension: 0x60000112d080> {id = com.microsoft.CompanyPortalMac.ssoextension} failed with error Error Domain=PlugInKit Code=16 "other version in use: <id<PKPlugIn>: 0x1526066c0; core = <[...] [com.microsoft.CompanyPortalMac.ssoextension(5.2412.0)],[...] [/Applications/Company Portal.app/Contents/PlugIns/Mac SSO Extension.appex]>, instance = [(null)], state = 1, useCount = 1>" UserInfo={NSLocalizedDescription=other version in use: <id<PKPlugIn>: 0x1526066c0; core = <[...] [com.microsoft.CompanyPortalMac.ssoextension(5.2412.0)],[...] [/Applications/Company Portal.app/Contents/PlugIns/Mac SSO Extension.appex]>, instance = [(null)], state = 1, useCount = 1>}`
+
+### Recovery Steps
+If your users are impacted by this issue, they can reboot their device to recover. 
 
 ## See also
 

@@ -175,7 +175,7 @@ After enabling AD FS audit logs, you should be able to check the AD FS audit log
 2. Go to **Windows Logs**, and then select **Security**.
 3. In the right pane, select **Filter Current Logs**.
 4. For **Event sources**, select **AD FS Auditing**.
-5. You can get a complete list of AD FS events [here](https://adfshelp.microsoft.com/AdfsEventViewer/GetAdfsEventList).
+
 
 For more information about audit logs, see [Operations questions](./reference-connect-health-faq.yml).
 
@@ -195,7 +195,7 @@ The following tables provide a list of common events that correspond to audit le
 |1202|FreshCredentialSuccessAudit|The Federation Service validated a new credential.|
 |1203|FreshCredentialFailureAudit|The Federation Service failed to validate a new credential.|
 
-For more information see the  complete list of AD FS events [here](https://adfshelp.microsoft.com/AdfsEventViewer/GetAdfsEventList).
+
 
 ##### Verbose audit level events
 
@@ -209,7 +209,6 @@ For more information see the  complete list of AD FS events [here](https://adfsh
 |500|IssuedIdentityClaims|More information for the event entry with Instance ID %1. There may be more events with the same Instance ID with more information.|
 |501|CallerIdentityClaims|More information for the event entry with Instance ID %1. There may be more events with the same Instance ID with more information.|
 
-For more information, see the complete list of AD FS events [here](https://adfshelp.microsoft.com/AdfsEventViewer/GetAdfsEventList).
 
 ## Test connectivity to the Microsoft Entra Connect Health service
 
