@@ -5,7 +5,7 @@ description: Learn about using QR code authentication method in Microsoft Entra 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/10/2025
+ms.date: 02/11/2025
 
 ms.author: justinha
 author: aanjusingh
@@ -17,11 +17,11 @@ manager: amycolannino
 
 # Authentication methods in Microsoft Entra ID - QR code authentication method (Preview)
 
-QR code authentication method enables frontline workers to sign in efficiently in apps on shared devices. Users will be able to use unique QR code provided to them and enter their PIN to sign in, eliminating the need to enter intricate usernames and passwords. QR code authentication is supported on mobilde device (iOS, Android, and iPad).
+QR code authentication method enables frontline workers to sign in efficiently in apps on shared devices. Users will be able to use unique QR code provided to them and enter their PIN to sign in, eliminating the need to enter intricate usernames and passwords. QR code authentication is supported on mobile device (iOS, Android, and iPad).
 
 ## What is QR code authentication?
 
-QR code authentication is a simple authentication method primarly designed for frontline workers. 
+QR code authentication is a simple authentication method primarily designed for frontline workers. 
 It consists of a unique QR code and numeric PIN. 
 The QR code serves as an identifier and is unique to the user. 
 It can be downloaded and printed from the Microsoft Entra admin center, MyStaff, or MSGraph API. 
@@ -53,9 +53,9 @@ PIN complexity     | Should be enforced to avoid repetition and common sequences
 
 We recommend the following measures when you enable QR code authentication method as it is a single factor authentication (something you know).  
 
-- QR code authentication is primarily for frontline workers and not for IW workers. We recommend MFA or Phishing resistant auth methods for IW workers.
-- Combine QR code authentication with Conditional Access policies to add another security layer. Recommended policies are compliant devices, access within network, allow for certain applications, and shared device mode. 
-- Enforce phishing-resistant or multifactor authentication when users access resources from outside of the store or workplace network.
+- QR code authentication is primarily for frontline workers (FLW) and not for information workers (IW). We recommend phishing-resistant MFA or MFA for IW workers.
+- Combine QR code authentication with Conditional Access policies as another security layer. We recommended policies such as compliant devices, access within network, allow for certain applications, and shared device mode. 
+- Enforce phishing-resistant MFA or MFA when users access resources from outside of the store or workplace network.
 - Replace QR codes that are lost or stolen.
 
 ## QR code configurations in the Authentication method policy
@@ -71,7 +71,7 @@ In the Authentication method policy for QR code, you can configure:
   For every user in that tenant, the default expiration of a standard QR code is 30 days. 
   An admin can change the default lifetime of the standard QR code for a specific user.
 
-In this screenshot, the PIN length is set to the default of 8 digits. The lifetime for the standard QR code is reduced to 200 days.
+In this screenshot, the PIN length is set to the default of eight digits. The lifetime for the standard QR code is reduced to 200 days.
 
 :::image type="content" source="media/concept-authentication-qr-code/qr-code-settings.png" alt-text="Screenshot that shows QR code settings.":::
 
@@ -105,13 +105,13 @@ For more information about how to manage QR codes, see [How to enable the QR cod
 
 Users can sign in to their organization with a QR code, or they can directly sign in to native apps.
 
-### Mobile web sign-in expereince
+### Mobile web sign-in experience
 You can use Microsoft's web browser login experience (login.microsoft.com) to sign in users. Users can click **Sign in options** > **Sign in to an organization** > **Sign in with a QR code**.
 
 :::image type="content" source="media/concept-authentication-qr-code/sign-in-web.png" alt-text="Screenshot that shows how to sign in to web apps on a mobile device.":::
 
 
-### Mobile native app sign-in expereince 
+### Mobile native app sign-in experience 
 You can optimize sign-in for your apps by using Microsoft Authentication Library (MSAL) to add a QR code sign-in option to your apps sign-in page. This option eliminates two clicks to scan the QR code. For example, you can add QR code sign-in to the Teams app.
 
 :::image type="content" source="media/concept-authentication-qr-code/sign-in-app.png" alt-text="Screenshot that shows how to sign in to mobile native apps.":::

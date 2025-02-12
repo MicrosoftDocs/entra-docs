@@ -21,8 +21,8 @@ This topic covers how to enable the QR code authentication method in the Authent
 
 ## Prerequisites to enable the QR code authentication method
 
-- Microsoft Entra ID tenant with at least an F1, F3 or P1 license. 
-- Android, iOS or iPadOS (iOS/iPadOS version 15.0 or later) shared devices. 
+- Microsoft Entra ID tenant with at least an F1, F3, or P1 license. 
+- Android, iOS, or iPadOS (iOS/iPadOS version 15.0 or later) shared devices. 
 - Shared device mode enabled on the shared devices (optional but highly recommended). 
 - A printer to print 2" x 2" QR codes. 
 - Teams app installed on the shared device (Android version 1.0.0.2024143204 or later, and iOS version 1.0.0.77.2024132501 or later).
@@ -46,7 +46,7 @@ You can enable the QR code authentication method by using the Microsoft Entra ad
 
    :::image type="content" border="true" source="media/concept-authentication-qr-code/qr-code-settings.png" alt-text="Screenshot that shows how to updates QR code settings.":::
 
-1. When you are done, click **Save**.
+1. When you're done, click **Save**.
 
 ### Enable QR code authentication method in Microsoft Graph API
 
@@ -96,11 +96,11 @@ You can add a QR code authentication method for a user by using the Microsoft En
 
 1. Save the PIN, and click **Download image** to download and print the QR code. The QR code image download has the smallest optimal print size. If you reduce the size of the QR code, it may impact QR code scan performance.
 
-   You can't regenerate the same QR code because it has a unique secret. If the QR code can’t work for some reason, delete it. Create a new QR code for the user.
+   You can't regenerate the same QR code because it has a unique secret. If the QR code can't work for some reason, delete it. Create a new QR code for the user.
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/download-qr-code.png" alt-text="Screenshot that shows how to download the QR code image for a user.":::
 
-1. After you add the QR code authentication method, it appeara as a usable authentication method for the user.
+1. After you add the QR code authentication method, it appears as a usable authentication method for the user.
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/usable-authentication-methods.png" alt-text="Screenshot that shows the QR code authentication method listed in usable authentication methods for a user.":::
 
@@ -235,7 +235,7 @@ You can edit QR code authentication method for a user by using the Microsoft Ent
   :::image type="content" border="true" source="media/how-to-authentication-qr-code/reset-pin.png" alt-text="Screenshot that shows how to reset a PIN.":::
 
 - Add or delete a temporary QR code. A temporary QR code reduces admin overhead of provisioning and deprovisioning the QR code on a badge if a user didn't bring their badge to work. It also reduces the stress of retaining the QR code after their shift. A temporary QR code has a lifetime of 1-12 hours and can be activated instantly or later. 
-To deprovision the QR code, you can delete the temporary QR code or let it expire as it is unusable after expiry.
+To deprovision the QR code, you can delete the temporary QR code or let it expire as it's unusable after expiry.
 
   :::image type="content" border="true" source="media/how-to-authentication-qr-code/add-temporary-qr-code.png" alt-text="Screenshot that shows how to add a temporary QR code.":::
 
@@ -445,7 +445,7 @@ If a QR code authentication method is deleted for a user, they can no longer sig
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator).
 
 1. Go to **Users**, select a user, and click **Authentication methods**.
-1. Under **Usable authentication methods**, click the elipsis on the right side of the QR code, and click Delete.
+1. Under **Usable authentication methods**, click the ellipsis on the right side of the QR code, and click **Delete**.
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/delete-qr-code-method-admin-center.png" alt-text="Screenshot that shows how to delete the QR code authentication method for a user in the Microsoft Entra admin center.":::
 
@@ -471,7 +471,7 @@ This example shows how to delete a standard QR code for a user.
 
 ## Sign in to Microsoft Teams with a QR code
 
-Microsoft Teams accelerates sign in with a QR code. An Authentication Policy Administrator neeeds to configure Intune or another MDM solution to enable the QR code authentication method for mobile devices. 
+Microsoft Teams accelerates sign in with a QR code. An Authentication Policy Administrator needs to configure Intune or another mobile device management (MDM) solution to enable the QR code authentication method for mobile devices. 
 
 ### Enable sign-in with a QR code in Teams
 
@@ -493,8 +493,8 @@ Users need to [download Teams](https://aka.ms/teamsmobiledownload):
 
 1. Scan the QR code. Give consent if asked for camera permission.
 1. Enter your PIN.
-1. If this is your first sign-in, update your PIN.
-1. You're now signed in to the app
+1. When you first sign-in, you need to update your PIN.
+1. You're now signed in to the app.
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/sign-in-qr-code.png" alt-text="Screenshot that shows a successful sign-in to Teams with a QR code and PIN.":::
 
@@ -531,7 +531,7 @@ This section covers how to create policies that restrict QR code authentication 
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/new-authentication-strength.png" alt-text="Screenshot that shows how to create a new authentication strength.":::
 
-1. Create a custom authentication strength Conditional Access policy, select all authentication combinations except **QR code (Preview)**.  
+1. Create a custom authentication strength Conditional Access policy. Select all authentication combinations except **QR code (Preview)**.  
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/configure-authentication-strength.png" alt-text="Screenshot that shows the Microsoft Entra admin center that shows how to select method combinations for an authentication strength.":::
 
@@ -552,7 +552,7 @@ This section covers how to create policies that restrict QR code authentication 
    1. Under **Grant** > **Grant access** > select **Require authentication strength**, and click **Select**.  
    1. Click **Create**.
 
-1. Create a Conditional Access policy that requires shared devices be marked as compliant with policies from Intune or other mobile device management (MDM) solution. This policy makes sure that frontline workers can access only specific resources from a compliant, shared device by using a QR code + PIN, or another registered authentication method. 
+1. Create a Conditional Access policy that requires shared devices be marked as compliant with policies from Intune or other MDM solution. This policy makes sure that frontline workers can access only specific resources from a compliant, shared device by using a QR code + PIN, or another registered authentication method. 
    1. Under **Users or workload identities** > **Include** > select **Users and groups**, and choose your **Frontline workers** frontline worker group. 
    1. Under **Target resources** > **Include** > select specific resources that frontline workers can access.
    1. Under **Conditions**, click **Filter for devices**, set **Configure** to **Yes**.
