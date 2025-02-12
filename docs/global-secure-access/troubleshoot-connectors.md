@@ -151,7 +151,7 @@ If you can connect to the resource from the server but not from the Global Secur
 
 The file contents should look as follows:
 
-![Screenshot showing an example of the expected final configuration file.](media/troubleshoot-connectors/connector-logging-config-final-example)
+![Screenshot showing an example of the expected final configuration file.](media/troubleshoot-connectors/connector-logging-config-final-example.png)
 
 After you have enabled logging, attempt to access the resource from the Global Secure Access client in order to reproduce the error. Then, review the log file for errors.
 
