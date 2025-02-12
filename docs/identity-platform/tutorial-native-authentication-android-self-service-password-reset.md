@@ -31,8 +31,8 @@ In this tutorial, you learn how to:
  
 ## Prerequisites  
  
-- Complete the steps in [Sign in users in a sample native Android mobile application](how-to-run-native-authentication-sample-android-app.md). This article shows you how to run a sample Android that you configure by using your tenant settings.  
-- [Enable self-service password reset](how-to-enable-password-reset-customers.md). This article enables you to enable the email one-time passcode authentication method for all users in your tenant, which is a requirement for SSPR. 
+- Complete the steps in [Sign in users in a sample native Android mobile application](../external-id/customers/how-to-run-native-authentication-sample-android-app.md). This article shows you how to run a sample Android that you configure by using your tenant settings.  
+- [Enable self-service password reset](../external-id/customers/how-to-enable-password-reset-customers.md). This article enables you to enable the email one-time passcode authentication method for all users in your tenant, which is a requirement for SSPR. 
 - [Tutorial: Prepare your Android app for native authentication](tutorial-native-authentication-android-sign-up.md). 
  
 ## Add self-service password reset flow

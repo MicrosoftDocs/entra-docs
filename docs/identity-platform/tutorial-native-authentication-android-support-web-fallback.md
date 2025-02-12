@@ -30,7 +30,7 @@ In this tutorial, you learn how to:
  
 ## Prerequisites 
 
-- Complete the steps in [Sign in users in a sample native Android mobile application](how-to-run-native-authentication-sample-android-app.md). This article shows you how to run a sample Android that you configure by using your tenant settings.  
+- Complete the steps in [Sign in users in a sample native Android mobile application](../external-id/customers/how-to-run-native-authentication-sample-android-app.md). This article shows you how to run a sample Android that you configure by using your tenant settings.  
 - Complete the steps in [Tutorial: Add sign in and sign out with email one-time passcode](tutorial-native-authentication-android-sign-in-sign-out.md).  
  
 ## Web fallback
@@ -128,6 +128,6 @@ Security tokens, that's ID token, access token and refresh token, you get throug
 
 ## Related content 
 
-- Learn [How to run the iOS sample app](how-to-run-native-authentication-sample-ios-app.md)
+- Learn [How to run the iOS sample app](../external-id/customers/how-to-run-native-authentication-sample-ios-app.md)
 - Explore [Native authentication API reference with email one-time passcode](../../identity-platform/reference-native-authentication-email-otp.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
 - Learn about [challenge types](concept-native-authentication-challenge-types.md).

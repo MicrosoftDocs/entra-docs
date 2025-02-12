@@ -30,7 +30,7 @@ In this tutorial, you learn how to:
  
 ## Prerequisites  
  
-- Complete the steps [Sign in users in a sample native Android mobile application](how-to-run-native-authentication-sample-android-app.md). This article shows you how to run a sample Android that you configure by using your tenant settings.  
+- Complete the steps [Sign in users in a sample native Android mobile application](../external-id/customers/how-to-run-native-authentication-sample-android-app.md). This article shows you how to run a sample Android that you configure by using your tenant settings.  
 - [Tutorial: Add sign-up in an Android mobile app using native authentication](tutorial-native-authentication-android-sign-up.md). The steps in this tutorial should work whether you sign up with email and password or email one-time passcode.
  
 ## Sign in after sign-up
@@ -76,7 +76,7 @@ CoroutineScope(Dispatchers.Main).launch {
 }
 ``` 
 
-To retrieve ID token claims after sign-in, use the steps in [Read ID token claims](tutorial-native-authentication-android-sign-in-user-with-username-password.md#read-id-token-claims).
+To retrieve ID token claims after sign-in, use the steps in [Read ID token claims](../external-id/customers/tutorial-native-authentication-android-sign-in-user-with-username-password.md#read-id-token-claims).
  
 ## Handle sign-in errors 
 
