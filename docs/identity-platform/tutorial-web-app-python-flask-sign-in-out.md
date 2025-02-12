@@ -247,7 +247,7 @@ Use the following steps to use a custom URL domain:
 
 1. Use the steps in [Enable custom URL domains for apps in external tenants](../external-id/customers/how-to-custom-url-domain.md) to enable custom URL domain for your external tenant.
 
-1. In your *.env* file, add the variable `OIDC_AUTHORITY` variable and delete the `AUTHORITY` variable. Set its value to *https://Enter_the_Custom_Domain_Here/Enter_the_Tenant_ID_Here/v2.0*. Replace `Enter_the_Custom_Domain_Here` with your custom URL domain and `Enter_the_Tenant_ID_Here` with your tenant ID. If you don't have your tenant ID, learn how to [read your tenant details]((../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details)).
+1. In your *.env* file, add the variable `OIDC_AUTHORITY` variable and delete the `AUTHORITY` variable. Set its value to *https://Enter_the_Custom_Domain_Here/Enter_the_Tenant_ID_Here/v2.0*. Replace `Enter_the_Custom_Domain_Here` with your custom URL domain and `Enter_the_Tenant_ID_Here` with your tenant ID. If you don't have your tenant ID, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
 1. In your *app_config.py* file add the following code to read the `OIDC_AUTHORITY` environment variable. You can delete the `AUTHORITY` variable.
 
