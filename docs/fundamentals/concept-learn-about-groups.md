@@ -62,8 +62,6 @@ You can manage two types of groups in the Microsoft Entra admin center:
 
 Microsoft Entra ID helps you give access to your organization's resources by providing access rights to a single user or a group. Using groups lets the resource owner or Microsoft Entra directory owner assign a set of access permissions to all members of the group. The resource or directory owner can also grant group management rights to someone such as a department manager or a help desk administrator, which allows that person to add and remove members. For more information about how to manage group owners, see the [Manage groups](how-to-manage-groups.yml) article.
 
-:::image type="content" source="media/concept-learn-about-groups/access-management-overview.png" alt-text="Screenshot of a diagram of Microsoft Entra ID access management.":::
-
 The resources that Microsoft Entra groups can manage access to can be:
 
 - Part of your Microsoft Entra organization, such as permissions to manage users, applications, billing, and other objects.
@@ -85,8 +83,6 @@ After creating a group, you need to decide how to manage its access.
 - **Rule-based assignment.** The resource owner creates a group and uses a rule to define which users are assigned to a specific resource. The rule is based on attributes that are assigned to individual users. The resource owner manages the rule, determining which attributes and values are required to allow access the resource. For more information, see [Create a dynamic group](..//identity/users/groups-create-rule.md).
 
 - **External authority assignment.** Access comes from an external source, such as an on-premises directory or a SaaS app. In this situation, the resource owner assigns a group to provide access to the resource and then the external source manages the group members.
-
-   :::image type="content" source="./media/concept-learn-about-groups/access-management-process.png" alt-text="Screenshot of a diagram of access management overview.":::
 
 ## Best practices for managing groups in the cloud
 
