@@ -458,10 +458,10 @@ To support device Conditional Access policies in Google Chrome with Secure Encla
 ## Important update on macOS 15.3 and iOS 18.1.1 impacting Enterprise SSO
 
 ### Overview
-A recent update to macOS 15.3 and iOS 18.1.1 has introduced a regression affecting a small number of users. This issue prevents the Enterprise SSO extension framework from functioning correctly, leading to unexpected authentication failures across all apps integrated with Entra ID. Impacted users may also encounter an error tagged as '4s8qh'.
+A recent update to macOS 15.3 and iOS 18.1.1 prevents the Enterprise SSO extension framework from functioning correctly, leading to unexpected authentication failures across all apps integrated with Entra ID. Impacted users may also encounter an error tagged as '4s8qh'.
 
 ### Root cause
-The root cause of this issue is a regression in the underlying PluginKit layer, which prevents the Microsoft Enterprise SSO Extension from being launched by the operating system. Apple has acknowledged this issue.
+The root cause of this issue is a potential regression in the underlying PluginKit layer, which prevents the Microsoft Enterprise SSO Extension from being launched by the operating system. Apple is investigating the issue and working with us on a resolution.
 
 ### Identifying impacted users
 To determine if your users are affected, you can collect a sysdiagnose and look for the following error information:
