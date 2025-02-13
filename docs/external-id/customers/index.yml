@@ -87,7 +87,7 @@ landingContent:
       - linkListType: tutorial
         links:
           - text: Vanilla JS SPA
-            url: tutorial-single-page-app-vanillajs-prepare-tenant.md
+            url: /entra/identity-platform/tutorial-single-page-app-javascript-prepare-app
           - text: React SPA
             url: tutorial-single-page-app-react-sign-in-prepare-tenant.md
           - text: Node.js web app
@@ -104,5 +104,5 @@ landingContent:
         links:
           - text: Code sample guides by app type
             url: samples-ciam-all.md?tabs=apptype
-          - text: Code sample guides by language
+          - text: nCode sample guides by language
             url: samples-ciam-all.md?tabs=language

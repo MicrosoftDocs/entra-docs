@@ -148,6 +148,14 @@
                 href: quickstart-native-authentication-single-page-app-react-sign-in.md?pivots=workforce
     - name: Tutorials
       items:
+        - name: JavaScript
+          items:
+            - name: Prepare your app
+              href: tutorial-single-page-app-javascript-prepare-app.md
+            - name: Add sign in and sign out
+              href: tutorial-single-page-app-javascript-configure-authentication.md
+            - name: Sign in users
+              href: tutorial-single-page-app-javascript-sign-in-sign-out.md
         - name: React
           items:
             - name: Browser-delegated authentication
@@ -156,7 +164,7 @@
                 href: tutorial-single-page-app-react-register-app.md
               - name: Prepare your app
                 href: tutorial-single-page-app-react-prepare-spa.md
-              - name: Sign in users
+              - name: Add sign in and sign out
                 href: tutorial-single-page-app-react-sign-in-users.md
               - name: Get user data from web API
                 href: tutorial-single-page-app-react-call-api.md

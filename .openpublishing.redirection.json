@@ -1846,6 +1846,26 @@
       "source_path_from_root": "/docs/identity/users/licensing-groups-resolve-problems.md",
       "redirect_url": "/docs/fundamentals/licensing",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-single-page-app-vanillajs-prepare-tenant.md",
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-app-javascript-prepare-app", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-single-page-app-vanillajs-configure-authentication.md",
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-app-javascript-configure-authentication", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-single-page-app-vanillajs-prepare-app.md",
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-app-javascript-prepare-app", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-single-page-app-vanillajs-sign-in-sign-out.md",
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-app-javascript-sign-in-sign-out",
+      "redirect_document_id": false
     }
   ]
 }
