@@ -16,7 +16,7 @@ ms.reviewer: ashishj
 [Cross-origin resource sharing (CORS)](https://www.w3.org/TR/cors/) can present challenges for the apps and APIs you publish through Microsoft Entra application proxy. This article discusses Microsoft Entra application proxy CORS issues and solutions.
 
 > [!TIP]
-> Asynchronous JavaScript and eXtemsible Markup Language is known as (AJAX). AJAX contains an acronym within an acronym in that eXtensible Markup Language (XML) makes up the last `X` in AJAX. AJAX stands for Asynchronous JavaScript and XML and XML stands for eXtensible Markup Language.
+> Asynchronous JavaScript and eXtensible Markup Language is known as (AJAX). AJAX contains an acronym within an acronym in that eXtensible Markup Language (XML) makes up the last `X` in AJAX. AJAX stands for Asynchronous JavaScript and XML and XML stands for eXtensible Markup Language.
 
 Browser security usually prevents a web page from making requests to another domain. This restriction is called the *same-origin policy*, and prevents a malicious site from reading sensitive data from another site. However, sometimes you might want to let other sites call your web API. CORS is a W3C standard that lets a server relax the same-origin policy and allow some cross-origin requests while rejecting others.
 
