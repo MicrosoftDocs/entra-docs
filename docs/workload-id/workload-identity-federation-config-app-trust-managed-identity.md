@@ -47,13 +47,12 @@ When you configure a federated identity credential, there are several important 
     > [!IMPORTANT]
     > You can only use User-Assigned Managed Identities in this feature.
     
-- *audiences list the audiences that can appear in the external token (Required). You must add a single audience value, which has a limit of 600 characters. The value must be one of the following and must match the value of the `aud` claim in the Managed Identity token.
-    - **Public cloud**: `api://AzureADTokenExchange`
-    - **Fairfax**: `api://AzureADTokenExchangeUSGov`
-    - **Mooncake**: `api://AzureADTokenExchangeChina`
-    - **USNat**: `api://AzureADTokenExchangeUSNat`
-    - **USSec**: `api://AzureADTokenExchangeUSSec`
+- *audiences* list the audiences that can appear in the external token (Required). You must add a single audience value, which has a limit of 600 characters. The value must be one of the following and must match the value of the `aud` claim in the Managed Identity token.
+    - **Microsoft Entra ID global service**: `api://AzureADTokenExchange`
+    - **Microsoft Entra ID for US Government**: `api://AzureADTokenExchangeUSGov`
+    - **Microsoft Entra China operated by 21Vianet**: `api://AzureADTokenExchangeChina`
 
+    
   > [!IMPORTANT]
   > If you accidentally add  incorrect information in the *issuer*, *subject* or *audience* setting the federated identity credential is created successfully without error.  The error does not become apparent until the token exchange fails.
     
@@ -92,7 +91,7 @@ In this section, you'll configure a federated identity credential on an existing
     | Subject identifier | The `Principal ID` GUID of the Managed Identity. | `aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb` |
     | Name | A unique descriptive name for the credential. | *msi-webapp1* |
     | Description (Optional) | A user-provided description of the federated identity credential. | *Trust the workloads UAMI to impersonate the App* |
-    | Audience | The audience value that must appear in the external token.  | &#8226; **Public cloud**: *api://AzureADTokenExchange* <br/>&#8226; **Fairfax**: *api://AzureADTokenExchangeUSGov* <br/>&#8226; **Mooncake**: *api://AzureADTokenExchangeChina* <br/>&#8226; **USNat**: *api://AzureADTokenExchangeUSNat* <br/>&#8226; **USSec**: *api://AzureADTokenExchangeUSSec* |
+    | Audience | The audience value that must appear in the external token.  | &#8226; **Entra ID Global Service**: *api://AzureADTokenExchange* <br/>&#8226; **Entra ID for US Government**: *api://AzureADTokenExchangeUSGov* <br/>&#8226; **Entra ID China operated by 21Vianet**: *api://AzureADTokenExchangeChina* <br/> |
 
     :::image type="content" source=".\media\workload-identity-federation-config-app-trust-managed-identity\add-credential.png" alt-text="Screenshot of the credential window in the Microsoft Entra admin center." ::: 
 
@@ -197,11 +196,9 @@ internal class Program
     string miClientId = "YOUR_MANAGED_IDENTITY_CLIENT_ID"; 
 
     // Audience value must be one of the below values depending on the target cloud.
-    // Public cloud: api://AzureADTokenExchange
-    // Fairfax: api://AzureADTokenExchangeUSGov
-    // Mooncake: api://AzureADTokenExchangeChina
-    // USNat: api://AzureADTokenExchangeUSNat
-    // USSec: api://AzureADTokenExchangeUSSec
+    // Entra ID Global cloud: api://AzureADTokenExchange
+    // Entra ID US Government: api://AzureADTokenExchangeUSGov
+    // Entra ID China operated by 21Vianet: api://AzureADTokenExchangeChina
     string audience = "api://AzureADTokenExchange";
 
     // 1. Create an assertion with the managed identity access token, so that it can be exchanged an app token
