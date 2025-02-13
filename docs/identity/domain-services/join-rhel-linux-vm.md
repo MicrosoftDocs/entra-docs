@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: domain-services
 ms.custom: devx-track-linux, linux-related-content
 ms.topic: how-to
-ms.date: 02/05/2025
+ms.date: 02/13/2025
 ms.author: justinha
 ---
 # Join a Red Hat Enterprise Linux virtual machine to a Microsoft Entra Domain Services managed domain
