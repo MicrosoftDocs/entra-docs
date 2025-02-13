@@ -48,6 +48,14 @@ A user's sign-in experience depends on whether the partner's domain is Microsoft
 
 <!-- Is this correct, that federation takes precedence for SSSU but not for invitations in both tenant types? -->
 
+### Domainless federation
+
+If a user's email address doesn't match the predefined domain associated with the federated IdP, they can still sign up or sign in with that email address by selecting the **Sign up with** or **Sign in with** option.
+
+### Just-in-time (JIT) registration
+
+Users with email addresses that match predefined domains associated with the federated IdP can sign in by entering their email address. They will then be redirected to sign in with the IdP linked to that domain. If the user already has an account, they'll be signed in. If not, they'll be redirected to sign up and may be prompted to provide more information before their account is created and they're signed in.
+
 ### How federation affects current external users
 
 If an external user already redeemed an invitation or used self-service sign-up, their authentication method doesn't change when you set up federation. They continue using their original authentication method (for example, one-time passcode). Even if a user from a nonverified domain uses federation, and their organization later moves to Microsoft Entra, they continue using federation.
@@ -66,7 +74,7 @@ SAML/WS-Fed IdP federation users can also use application endpoints that include
 
 You can also give users a direct link to an application or resource by including your tenant information, for example `https://myapps.microsoft.com/signin/X/<application ID?tenantId=<your tenant ID>`.
 
-## Considerations for setting up federation
+## Key considerations for SAML/WS-Fed federation
 
 ### Partner IdP requirements
 
@@ -82,17 +90,17 @@ If you specify the metadata URL in the IdP settings, Microsoft Entra ID automati
 
 If the Microsoft Entra session expires or becomes invalid, and the federated IdP has SSO enabled, the user experiences SSO. If the federated user's session is valid, the user isn't prompted to sign in again. Otherwise, the user is redirected to their IdP for sign-in.
 
-### Other considerations
+### Partially synced tenancy
 
-The following are other considerations when federating with a SAML/WS-Fed identity provider.
+Federation doesn't resolve sign-in issues caused by a partially synced tenancy, where a partner’s on-premises user identities aren't fully synced to Microsoft Entra in the cloud. These users can’t sign in with a B2B invitation, so they need to use the [email one-time passcode](one-time-passcode.md) feature instead. The SAML/WS-Fed IdP federation feature is for partners with their own IdP-managed organizational accounts but no Microsoft Entra presence.
 
-- You can associate more than one domain with a single federation configuration. 
+### B2B guest accounts
 
-- Federation doesn't resolve sign-in issues caused by a partially synced tenancy, where a partner’s on-premises user identities aren't fully synced to Microsoft Entra in the cloud. These users can’t sign in with a B2B invitation, so they need to use the [email one-time passcode](one-time-passcode.md) feature instead. The SAML/WS-Fed IdP federation feature is for partners with their own IdP-managed organizational accounts but no Microsoft Entra presence.
+Federation doesn't replace the need for B2B guest accounts in your directory. With B2B collaboration, a guest account is created for the user in your workforce tenant directory regardless of the authentication or federation method used. This user object allows you to grant access to applications, assign roles, and define membership in security groups.  
 
-- Federation doesn't replace the need for B2B guest accounts in your directory. With B2B collaboration, a guest account is created for the user in your workforce tenant directory regardless of the authentication or federation method used. This user object allows you to grant access to applications, assign roles, and define membership in security groups.  
+### Signed authentication tokens
 
-- Currently, the Microsoft Entra SAML/WS-Fed federation feature doesn't support sending a signed authentication token to the SAML identity provider.  
+Currently, the Microsoft Entra SAML/WS-Fed federation feature doesn't support sending a signed authentication token to the SAML identity provider.  
 
 ## Next steps
 
