@@ -85,6 +85,15 @@ By setting up federation with Apple, you can allow invited users to sign in to y
 The following screenshots show the sign-in with Apple experience. In the sign-in page, users select **Sign-in with Apple**. Then the user is redirected to the Apple identity provider to complete the sign-in.
 Learn how to [add Apple as an identity provider](how-to-apple-federation-customers.md).
 
+## SAML/WS-Fed identity providers (preview)
+
+Your Microsoft Entra tenant can be directly federated with external organizations that use a SAML or WS-Fed identity provider (IdP). Users from the external organization can then use their IdP-managed account to sign in to your tenant, without having to create new Microsoft Entra credentials. The user is redirected to their IdP when signing up or signing in to your app, and then returned to Microsoft Entra once they successfully sign in.
+
+> [!NOTE]
+> This feature is currently in preview for external tenants and is generally available for workforce tenants.
+
+For detailed setup steps, see Federate with a SAML/WS-Fed identity provider.
+
 ## Custom OIDC identity provider (preview)
 
 You can set up a custom OpenID Connect (OIDC) identity provider to enable customers to sign up and sign in to your applications with their own accounts. When a customer signs up for your app using their custom OIDC identity provider, the identity provider creates, maintains, and manages identity information while providing authentication services to applications.
