@@ -40,8 +40,6 @@ items:
   items:
   - name: Create or delete users
     href: how-to-create-delete-users.yml
-  - name: Apply licenses to users
-    href: license-users-groups.yml
   - name: Users
     expanded: false
     items: 
