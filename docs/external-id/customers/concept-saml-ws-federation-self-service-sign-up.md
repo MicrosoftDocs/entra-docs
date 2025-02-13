@@ -36,7 +36,7 @@ Once you've configured federation with a SAML or WS-Fed identity provider by fol
 
 1. Select the user flow where you want to add the identity provider.
 
-   ![Picture of selecting the user flow.](media/concept-saml-ws-federation-self-service-sign-up/select-user-flow.png)
+   :::image type="content" source="media/saml-ws-federation-self-service-sign-up/select-user-flow.png" alt-text="Screenshot showing where to select the user flow.":::
 
 1. In a workforce tenant, options appear for selecting the **Preview** or **Recommended** versions of sign-up and sign-in user flows. Select **Preview**.
 
@@ -44,7 +44,7 @@ Once you've configured federation with a SAML or WS-Fed identity provider by fol
 
 1. Under **Other Identity Providers**, select the identity provider.
 
-   ![Picture of the New SAML WS-Fed page.](media/concept-saml-ws-federation-self-service-sign-up/select-identity-provider.png)
+   :::image type="content" source="media/saml-ws-federation-self-service-sign-up/select-identity-provider.png" alt-text="Screenshot showing how to select the identity provider on the SAML WS-Fed page.":::
 
 1. Select **Save**.
 
