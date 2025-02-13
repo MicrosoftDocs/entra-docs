@@ -15,7 +15,9 @@ ms.custom: developer
 #Customer intent: As a dev, devops, I want add self-service password reset (SSPR) to my Android app using native authentication so that users can reset their own password with no administrator or help desk involvement.
 ---
 
-# Tutorial: Add self-service password reset  
+# Tutorial: Add self-service password reset
+
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
  
 This tutorial demonstrates how to enable users to change or reset their password, with no administrator or help desk involvement.
   
@@ -29,8 +31,8 @@ In this tutorial, you learn how to:
  
 ## Prerequisites  
  
-- Complete the steps in [Sign in users in a sample native Android mobile application](how-to-run-native-authentication-sample-android-app.md). This article shows you how to run a sample Android that you configure by using your tenant settings.  
-- [Enable self-service password reset](how-to-enable-password-reset-customers.md). This article enables you to enable the email one-time passcode authentication method for all users in your tenant, which is a requirement for SSPR. 
+- Complete the steps in [Sign in users in a sample native Android mobile application](../external-id/customers/how-to-run-native-authentication-sample-android-app.md). This article shows you how to run a sample Android that you configure by using your tenant settings.  
+- [Enable self-service password reset](../external-id/customers/how-to-enable-password-reset-customers.md). This article enables you to enable the email one-time passcode authentication method for all users in your tenant, which is a requirement for SSPR. 
 - [Tutorial: Prepare your Android app for native authentication](tutorial-native-authentication-android-sign-up.md). 
  
 ## Add self-service password reset flow
@@ -212,7 +214,7 @@ To automatically sign in users after a password reset, use the following code sn
     }
    ```
 
-To retrieve ID token claims after sign-in, use the steps in [Read ID token claims](tutorial-native-authentication-android-sign-in-user-with-username-password.md#read-id-token-claims).
+To retrieve ID token claims after sign-in, use the steps in [Read ID token claims](../external-id/customers/tutorial-native-authentication-android-sign-in-user-with-username-password.md#read-id-token-claims).
 
 ## Handle password reset errors 
 

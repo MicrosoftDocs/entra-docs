@@ -121,6 +121,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/fundamentals/groups-view-azure-portal.md",
+      "redirect_url": "/entra/fundamentals/quickstart-create-group-add-members",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/fundamentals/licensing-preview-terms.md",
       "redirect_url": "/entra/fundamentals/licensing-preview-info",
       "redirect_document_id": false
@@ -1773,6 +1778,41 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-prepare-android-app.md",
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-prepare-android-app", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-up.md",
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-android-sign-up", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-in-sign-out.md",
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-android-sign-in-sign-out", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-in-after-sign-up.md",
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-android-sign-in-after-sign-up", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-self-service-password-reset.md",
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-android-self-service-password-reset", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-support-web-fallback.md",
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-android-support-web-fallback", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-in-call-api.md",
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-android-sign-in-call-api", 
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-single-page-app-react-sign-up.md",
       "redirect_url": "/entra/identity-platform/tutorial-native-authentication-single-page-app-react-sign-up", 
       "redirect_document_id": false
@@ -1780,6 +1820,31 @@
     {
       "source_path_from_root": "/docs/identity/managed-identities-azure-resources/services-id-authentication-support.md",
       "redirect_url": "/entra/identity/managed-identities-azure-resources/managed-identities-status",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/license-users-groups.yml",
+      "redirect_url": "/docs/fundamentals/licensing",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/users/licensing-groups-assign.md",
+      "redirect_url": "/docs/fundamentals/licensing",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/users/licensing-groups-change-licenses.md",
+      "redirect_url": "/docs/fundamentals/licensing",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/users/licensing-groups-migrate-users.md",
+      "redirect_url": "/docs/fundamentals/licensing",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/users/licensing-groups-resolve-problems.md",
+      "redirect_url": "/docs/fundamentals/licensing",
       "redirect_document_id": false
     },
     {
@@ -1799,7 +1864,7 @@
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-single-page-app-vanillajs-sign-in-sign-out.md",
-      "redirect_url": "/entra/identity-platform/tutorial-single-page-app-javascript-sign-in-sign-out", 
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-app-javascript-sign-in-sign-out",
       "redirect_document_id": false
     }
   ]

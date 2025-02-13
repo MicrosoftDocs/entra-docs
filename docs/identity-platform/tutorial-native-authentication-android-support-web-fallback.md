@@ -16,6 +16,8 @@ ms.custom: developer
 ---
 
 # Tutorial: Support web fallback in Android app 
+
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
  
 This tutorial demonstrates how `isBrowserRequired()` error happens and how you can resolve it. The utility method `isBrowserRequired()` checks the need for a fallback mechanism for various scenarios where native authentication isn't sufficient to complete the authentication flow in functional and safe manner. 
  
@@ -28,7 +30,7 @@ In this tutorial, you learn how to:
  
 ## Prerequisites 
 
-- Complete the steps in [Sign in users in a sample native Android mobile application](how-to-run-native-authentication-sample-android-app.md). This article shows you how to run a sample Android that you configure by using your tenant settings.  
+- Complete the steps in [Sign in users in a sample native Android mobile application](../external-id/customers/how-to-run-native-authentication-sample-android-app.md). This article shows you how to run a sample Android that you configure by using your tenant settings.  
 - Complete the steps in [Tutorial: Add sign in and sign out with email one-time passcode](tutorial-native-authentication-android-sign-in-sign-out.md).  
  
 ## Web fallback
@@ -74,7 +76,7 @@ Let's look at an example flow that returns `isBrowserRequired()`, and how you ca
     } 
     ``` 
  
-1. In the Microsoft Entra admin center, [configure your user flow](how-to-user-flow-sign-up-sign-in-customers.md) to use **Email with password** as the authentication method.    
+1. In the Microsoft Entra admin center, [configure your user flow](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) to use **Email with password** as the authentication method.    
  
 2. Start a sign-up flow by using the SDK's `signUp(parameters)` method. You get a `SignUpError` that passes the `isBrowserRequired()` check as Microsoft Entra expects *password* and *oob* challenge type, but you configured your SDK with only *oob*.  
 
@@ -99,9 +101,10 @@ To do so, use the following steps:
 
 <!--We'll update these instructions once we author the Android tutorials for the browser-delegated authentication flow --> 
 
-1. To add a redirect URI to the app that you registered earlier, use the steps in [Add a platform redirect URL](sample-mobile-app-android-kotlin-sign-in.md#add-a-platform-redirect-url).
+1. To add a redirect URI to the app that you registered earlier, use the steps in [Add a platform redirect URL](../external-id/customers/sample-mobile-app-android-kotlin-sign-in.md#add-a-platform-redirect-url).
 
-1. To update your client app's configuration file, use the steps in [Configure the redirect URI in SDK's configuration](sample-mobile-app-android-kotlin-sign-in.md#configure-the-sample-android-mobile-application).
+1. To update your client app's configuration file, use the steps in [Configure the redir
+1. ect URI in SDK's configuration](../external-id/customers/sample-mobile-app-android-kotlin-sign-in.md#configure-the-sample-android-mobile-application).
   
 1. Use the following code snippet to acquire a token by using the `acquireToken()` method:
 
@@ -126,6 +129,6 @@ Security tokens, that's ID token, access token and refresh token, you get throug
 
 ## Related content 
 
-- Learn [How to run the iOS sample app](how-to-run-native-authentication-sample-ios-app.md)
-- Explore [Native authentication API reference with email one-time passcode](../../identity-platform/reference-native-authentication-email-otp.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
+- Learn [How to run the iOS sample app](../external-id/customers/how-to-run-native-authentication-sample-ios-app.md)
+- Explore [Native authentication API reference with email one-time passcode](reference-native-authentication-email-otp.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json).
 - Learn about [challenge types](concept-native-authentication-challenge-types.md).

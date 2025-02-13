@@ -18,6 +18,8 @@ ms.custom: developer
 
 # Tutorial: Add sign-up in an Android mobile app using native authentication
 
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
 This tutorial demonstrates how to sign up a user using email one-time passcode or username (email) and password, and collect user attributes in your Android mobile app using native authentication. 
 
 In this tutorial, you learn how to: 
@@ -32,7 +34,7 @@ In this tutorial, you learn how to:
 ## Prerequisites
  
 - Complete the steps in [Tutorial: Prepare your Android app for native authentication](tutorial-native-authentication-prepare-android-app.md) article.
-- If you want to collect user attributes during sign-up, configure the user attributes when you [create your sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
+- If you want to collect user attributes during sign-up, configure the user attributes when you [create your sign-up and sign-in user flow](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md).
  
 ## Sign up a user
 
@@ -107,7 +109,7 @@ Whether you sign up a user using email one-time passcode or username (email) and
         .build()   
     ```
     
-    The method names in the `UserAttribute.Builder` class are same as the programmable names of the user attributes that they build. Learn more about [Android SDK attribute builder](concept-native-authentication-user-attribute-builder.md?tabs=android-kotlin).
+    The method names in the `UserAttribute.Builder` class are same as the programmable names of the user attributes that they build. Learn more about [Android SDK attribute builder](../external-id/customers/concept-native-authentication-user-attribute-builder.md?tabs=android-kotlin).
 
 - The `signUp(parameters)` method can return `SignUpResult.AttributesRequired` to indicate that the app needs to submit one or more required attributes before Microsoft Entra creates an account. These attributes are configured by the administrator as mandatory in the Microsoft Entra admin center. Microsoft Entra doesn't explicitly request for optional user attributes. 
 
@@ -164,10 +166,10 @@ To handle errors for the `signUp()` method, use the following code snippet:
    - If  `actionResult is SignUpError`, MSAL Android SDK provides utility methods to enable you to analyze the specific errors further:
         - The  method `isUserAlreadyExists()` checks whether the username has already been used to create an account.  
         - `isInvalidAttributes()` checks whether one or more attributes that the app submitted failed validation, such as wrong data type. It contains an `invalidAttributes` parameter,  which is a list of all attributes that the apps submitted, but failed validation. 
-        - `isInvalidPassword()` check the password is invalid, such as when the password doesn't meet all password complexity requirements. [Learn more about Microsoft Entra's password policies](../../identity/authentication/concept-password-ban-bad-combined-policy.md)  
+        - `isInvalidPassword()` check the password is invalid, such as when the password doesn't meet all password complexity requirements. [Learn more about Microsoft Entra's password policies](../identity/authentication/concept-password-ban-bad-combined-policy.md)  
         - `isInvalidUsername()` check the username is invalid, such as when the user email is invalid.
         - `isBrowserRequired()` checks the need for a browser (web fallback), to complete authentication flow. This scenario happens when native authentication isn't sufficient to complete the authentication flow. For examples, an admin configures email and password as the authentication method, but the app fails to send *password* as a challenge type or simply doesn't support it. Use the steps in [Support web fallback in Android app](tutorial-native-authentication-android-support-web-fallback.md) to handle scenario when it happens.
-        - `isAuthNotSupported()` checks whether the app sends a challenge type that Microsoft Entra doesn't support, that's a challenge type value other than *oob* or *password*. Learn more about [challenge types](concept-native-authentication-challenge-types.md).
+        - `isAuthNotSupported()` checks whether the app sends a challenge type that Microsoft Entra doesn't support, that's a challenge type value other than *oob* or *password*. Learn more about [challenge types](../external-id/customers/concept-native-authentication-challenge-types.md).
    
         Notify the user that the email is already in use or some attributes are invalid by using a friendly message in the app's UI. 
   
