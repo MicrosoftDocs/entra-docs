@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 11/04/2024
+ms.date: 02/13/2025
 ms.author: sarahlipsey
 ms.reviewer: deawari
 
@@ -37,14 +37,19 @@ This recommendation improves your user's productivity and minimizes the sign-in 
 
 ## Action plan
 
-1. Confirm that there's an existing Conditional Access policy with an MFA requirement. Ensure that you're covering all resources and users you would like to secure with MFA.
-    - Review your Conditional Access policies.
-
-2. Require MFA using a Conditional Access policy.
+1. Require MFA using a Conditional Access policy.
     - [Secure user sign-in events with Microsoft Entra multifactor authentication](../authentication/tutorial-enable-azure-mfa.md).
+    - Ensure that you're covering all resources and users you would like to secure with MFA.
+1. Ensure that the per-user MFA configuration is turned off.
+    1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+    1. Browse to **Users** > **All users** and select the **Per-user MFA** button.
 
-3. Ensure that the per-user MFA configuration is turned off. 
+    :::image type="content" source="media/recommendation-turn-off-per-user-mfa/disable-per-user-mfa.png" alt-text="Screenshot of the per-user MFA button in Microsoft Entra admin center." lightbox="media/media/recommendation-turn-off-per-user-mfa/disable-per-user-mfa-expanded.png":::
 
+    1. Select **Disable MFA** for all users who had this option enabled.
+
+    :::image type="content" source="media/recommendation-turn-off-per-user-mfa/per-user-mfa-details.png" alt-text="Screenshot of the per-user MFA button in Microsoft Entra admin center.":::
+    
 After all users are migrated to Conditional Access MFA accounts, the recommendation status automatically updates the next time the service runs. Continue to review your Conditional Access policies.
 
 ## Related content
