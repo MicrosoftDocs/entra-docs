@@ -44,7 +44,7 @@ When you add a new application from the gallery and configure a SAML-based sign-
 You can also download an active or inactive certificate by selecting the **SAML Signing Certificate** heading's **Edit** icon (a pencil), which displays the **SAML Signing Certificate** page. Select the ellipsis (**...**) next to the certificate you want to download, and then choose which certificate format you want. You have the other option to download the certificate in privacy-enhanced mail (PEM) format. This format is identical to Base64 but with a **.pem** file name extension, which isn't recognized in Windows as a certificate format.
 
 
-## Customize the expiration date for your federation certificate
+## Customize the expiration date for your federation certificate and roll it over to a new certificate
 
 By default, Azure configures a certificate to expire after three years when you create it automatically during SAML single sign-on configuration. Because you can't change the date of a certificate after you save it, you have to:
 
