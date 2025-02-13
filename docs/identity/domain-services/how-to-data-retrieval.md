@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: conceptual
-ms.date: 12/02/2024
+ms.date: 02/05/2025
 ms.author: justinha
 ms.reviewer: manthanm
 ---
