@@ -19,6 +19,7 @@ This article discusses licensing options for the Microsoft Entra product family.
 
 [!INCLUDE [Entra offerings](../includes/definitions/entra-offerings.md)]
 
+[!INCLUDE [Entra offerings](../includes/licensing-microsoft-365.md)]
 
 ## App provisioning
 

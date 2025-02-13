@@ -17,6 +17,8 @@ ms.custom: developer
 
 # Tutorial: Add sign-in in Android app by using native authentication
 
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
 This tutorial demonstrates how to sign-in and sign-out a user with email one-time passcode or username and password in your Android mobile app by using native authentication. 
 
 In this tutorial, you learn how to: 
@@ -188,7 +190,7 @@ You've completed all the necessary steps to successfully sign in a user on your 
 
 ## Read ID token claims
 
-[!INCLUDE [read-od-token-claims](./includes/native-auth/read-id-token-claims-android-kotlin.md)]
+[!INCLUDE [read-od-token-claims](../external-id/customers/includes/native-auth/read-id-token-claims-android-kotlin.md)]
 
 ## Sign out a user 
 
@@ -231,10 +233,10 @@ Make sure you include the import statements. Android Studio should include the i
 
 You have completed all the necessary steps to successfully sign out a user on your app. Build and run your application. If all good, you should be able to select sign out button to successfully sign out. 
 
-[!INCLUDE [Custom claims provider](../customers/includes/native-auth/support-custom-claims-provider.md)]
+[!INCLUDE [Custom claims provider](../external-id/customers/includes/native-auth/support-custom-claims-provider.md)]
 
 ## Related content
 
-- [Tutorial: Sign up user with username and user attributes](tutorial-native-authentication-android-sign-up-user-with-username-user-attributes.md). 
+- [Tutorial: Sign up user with username and user attributes](../external-id/customers/tutorial-native-authentication-android-sign-up-user-with-username-user-attributes.md). 
 - [Configure a custom claims provider](/entra/identity-platform/custom-extension-tokenissuancestart-configuration?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json).
-- [Add user attributes as token claims](how-to-add-attributes-to-token.md).
+- [Add user attributes as token claims](../external-id/customers/how-to-add-attributes-to-token.md).

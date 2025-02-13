@@ -15,6 +15,8 @@ ms.custom: developer
 
 # Tutorial: Call an API in Android app by using native authentication
 
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
 In this tutorial, you learn how to acquire an access token and call an API in your Android mobile app. Microsoft Authentication Library (MSAL) native authentication SDK for Android allows you to acquire multiple access tokens with a single sign-in. This capability allows you to acquire one or more access tokens without requiring a user to reauthenticate. 
 
 In this tutorial, you learn how to: 
@@ -167,10 +169,10 @@ To make an API call, use the access token you acquired in [Acquire an access tok
     }
     ```
 
-[!INCLUDE [Custom claims provider](../customers/includes/native-auth/support-custom-claims-provider.md)]
+[!INCLUDE [Custom claims provider](../external-id/customers/includes/native-auth/support-custom-claims-provider.md)]
 
 ## Related content
 
 - [Explore native authentication API reference](/entra/identity-platform/reference-native-authentication-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json).
 - [Configure a custom claim provider](/entra/identity-platform/custom-extension-tokenissuancestart-configuration?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json).
-- [Customize the look and feel of the authentication experience for the external tenant](concept-branding-customers.md).
+- [Customize the look and feel of the authentication experience for the external tenant](../external-id/customers/concept-branding-customers.md).

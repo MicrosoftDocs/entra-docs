@@ -1,13 +1,12 @@
 ---
-title: Quickstart - Create a group with members and view all groups and members
+title: Create a group with members and view all groups and members
 description: Instructions about how to search for and view your organization's groups and their assigned members.
 author: barclayn
 manager: amycolannino
 ms.service: entra
 ms.subservice: fundamentals
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: quickstart
-ms.date: 12/19/2024
+ms.date: 02/12/2025
 ms.author: barclayn
 ms.reviewer: krbain
 ---
@@ -23,24 +22,23 @@ You can view your organization's existing groups and group members using the Mic
 Before you begin, you need:
 
 - An Azure subscription. If you don't have one, create a [free account](https://azure.microsoft.com/free/).
-- Access to a Microsoft Entra tenant. For more information, see [Access the portal and create a new tenant](./create-new-tenant.md).
+- Access to a Microsoft Entra tenant. For more information, see [Create a new tenant](./create-new-tenant.md).
 
 ## Create a new group
 
 Create a new group, named *MDM policy - West*. For more information about creating a group, see [How to create a basic group and add members](./how-to-manage-groups.yml).
 
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Groups** > **All groups**.
 
-   :::image type="content" source="media/groups-view-azure-portal/create-new-group.png" alt-text="Screenshot of the All Groups page." lightbox="media/groups-view-azure-portal/create-new-group.png":::
+   :::image type="content" source="media/groups-view-azure-portal/create-new-group.png" alt-text="Screenshot of the All Groups page in the admin center." lightbox="media/groups-view-azure-portal/create-new-group.png":::
 
 1. Select **New group**.
 1. Complete the options in the **Group** page:
    - **Group name:** Type *MDM policy - West*
    - **Membership type:** Select *Assigned*.
 
-   :::image type="content" source="media/groups-view-azure-portal/new-group-page.png" alt-text="Screenshot of the New group page.":::
+   :::image type="content" source="media/groups-view-azure-portal/new-group-page.png" alt-text="Screenshot of the New group page in the admin center.":::
 
 1. Select **Create**.
 
@@ -51,7 +49,7 @@ A user must exist before being added as a group member, so you need to create a 
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select **New user** > **Create new user**.
 
-   :::image type="content" source="media/groups-view-azure-portal/create-new-user-menu.png" alt-text="Screenshot of the New user page.":::
+   :::image type="content" source="media/groups-view-azure-portal/create-new-user-menu.png" alt-text="Screenshot of the New user page in the admin center.":::
 
 1. Complete the **User** page:
 
