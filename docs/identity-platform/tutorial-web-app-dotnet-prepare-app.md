@@ -34,7 +34,7 @@ In this tutorial:
   * Application Developer
   * Cloud Application Administrator
 * A workforce tenant. You can use your **Default Directory** or [set up a new tenant](./quickstart-create-new-tenant.md).
-* An application registered in the Microsoft Entra admin center with the following setup.
+* An application registered in the Microsoft Entra admin center. Use the following setup for the purposes of this tutorial series:
   * **Name**: *identity-client-web-app*
   * **Supported account types**: *Accounts in this organizational directory only*
   * **Redirect URI**: `https://localhost:5001/signin-oidc`
@@ -146,10 +146,10 @@ In your IDE, open *appsettings.json* and replace the file contents with the foll
 
 ### Update the redirect URI
 
-From the [prerequisites](#prerequisites), the redirect URI is set to `https://localhost:5001/signin-oidc`. This needs to be updated in the application launch settings.
+From the [prerequisites](#prerequisites), the redirect URI is set to `https://localhost:5001/signin-oidc`. This needs to be updated in the application launch settings. You can use the redirect URI that is created during the local application setup, or any other available port number, provided it matches the redirect URI in the application registration.
 
 1. In the **Properties** folder, open the *launchSettings.json* file.
-1. Find the `https` value `applicationURI` within *launchSettings.json*, and replace the port number with the value specified in the redirect URI, which is `https://localhost:5001` for this tutorial. The line should look similar to the following snippet:
+1. Find the `https` object, and update the value of `applicationURI` with the correct port number, in this case, `5001`. The line should look similar to the following snippet:
 
     ```json
     "applicationUrl": "https://localhost:5001;http://localhost:{port}",

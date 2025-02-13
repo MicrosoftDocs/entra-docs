@@ -151,11 +151,11 @@ items:
         - name: ASP.NET Core
           items:
               - name: Prepare your app
-                href: /entra/identity-platform/tutorial-web-app-dotnet-prepare-app.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                href: /entra/identity-platform/tutorial-web-app-dotnet-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
               - name: Add authentication elements
-                href: /entra/identity-platform/tutorial-web-app-dotnet-sign-in-users.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                href: /entra/identity-platform/tutorial-web-app-dotnet-sign-in-users?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
               - name: Test your application
-                href: /entra/identity-platform/tutorial-web-app-dotnet-call-api.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                href: /entra/identity-platform/tutorial-web-app-dotnet-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
         - name: Python Flask
           items:
               - name: Prepare tenant

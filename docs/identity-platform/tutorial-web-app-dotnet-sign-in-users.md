@@ -35,7 +35,7 @@ The *Program.cs* file needs to be modified to add authorization and authenticati
 
 ### Add authentication elements
 
-1. Open *Program.cs* and add the following namespaces to the top of the file:
+1. Open *Program.cs* and remove the existing code. Add the following namespaces to the file:
 
     :::code language="csharp" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/Program.cs" range="2-5" :::
 
@@ -55,13 +55,13 @@ Add the following code to *Program.cs* to provide the default pages for sign-in 
 
 ### Add authentication to the middleware
 
-Replace the rest of the code in *Program.cs* with the following snippet:
+Add the following snippet, which builds the web app and configures the application middleware:
 
 :::code language="csharp" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/Program.cs" range="28-43" :::
     
-## View ID token claims
+## View Microsoft Graph API data
 
-To display claims from the ID token, you need to modify the UI to display the claims extracted by the API.
+To display data from the Microsoft Graph API call, you need to modify the UI to display it.
 
 Open *Pages/Index.cshtml* and add the following code to the end of the file. 
 
@@ -69,24 +69,32 @@ Open *Pages/Index.cshtml* and add the following code to the end of the file.
 
 ## Add the sign in and sign out experience
 
-Now that the code has authentication and authorization elements, we need to configure the UI to enable the sign-in and sign-out experiences on the condition that the user is authenticated.
+The UI needs to be updates to provide a more user-friendly experience for sign-in and sign-out. This section shows how to create a new file that displays navigation items based on the user's authentication status.
 
 1. Create a new file in *Pages/Shared* and give it the name *_LoginPartial.cshtml*.
 1. Open the file and add the following code for adding the sign in and sign out experience:
 
    :::code language="csharp" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/Pages/Shared/_LoginPartial.cshtml" :::
 
-1. In the same directory, open *_Layout.cshtml* and add a reference to `_LoginPartial` created in the previous step. This single line should be placed between `</ul>` and `</div>`, while still within the `nav` class:
+1. Open *Pages/Shared_Layout.cshtml* and add a reference to `_LoginPartial` created in the previous step. Place this near the end of the `navbar-nav` class as shown in the following snippet:
 
-   :::code language="csharp" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/Pages/Shared/_Layout.cshtml" range="29-33" :::
+    ```csharp
+    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+        <ul class="navbar-nav flex-grow-1">
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+            </li>
+        </ul>
+        <partial name="_LoginPartial" />
+    </div>
+    ```
 
-### Use custom URL domain (Optional)
+## Use custom URL domain (Optional)
 
-#### [Workforce tenant](#tab/workforce-tenant)
-
-Custom URL domains are not supported in workforce tenants.
-
-#### [External tenant](#tab/external-tenant)
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-external-only.md)]
 
 Use a custom domain to fully brand the authentication URL. From a user perspective, users remain on your domain during the authentication process, rather than being redirected to the *ciamlogin.com* domain name.
 
@@ -118,7 +126,6 @@ After you make the changes to your *appsettings.json* file, if your custom URL d
     "KnownAuthorities": ["login.contoso.com"]
     ...
 ```
----
 
 ## Next step
 

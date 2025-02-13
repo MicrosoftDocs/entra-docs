@@ -36,6 +36,11 @@ This section demonstrates how to test the application by signing in and calling 
 ### [Workforce tenant](#tab/workforce-tenant)
 
 1. Start the application by typing the following in the terminal to launch the `https` profile in the *launchSettings.json* file.
+
+    ```bash
+    dotnet run --launch-profile https
+    ```
+
 1. Open a new private browser, and enter the application URI into the browser, in this case `https://localhost:5001`.
 1. After the sign-in window appears, select the account in which to sign in with. Ensure the account matches the criteria of the app registration.
 1. Fill in your email, one time-passcode as instructed to complete the sign-in flow. You can choose to stay signed in or not in the **Stay signed in** window.
@@ -48,6 +53,11 @@ This section demonstrates how to test the application by signing in and calling 
 ### [External tenant](#tab/external-tenant)
 
 1. Start the application by typing the following in the terminal to launch the `https` profile in the *launchSettings.json* file.
+
+    ```bash
+    dotnet run --launch-profile https
+    ```
+
 1. Open a new private browser, and enter the application URI into the browser, in this case `https://localhost:5001`.
 1. To test the sign-up user flow you configured earlier, select **No account? Create one**.
 1. In the **Create account** window, enter the email address registered to your external tenant, which will start the sign-up flow as a user for your application.
