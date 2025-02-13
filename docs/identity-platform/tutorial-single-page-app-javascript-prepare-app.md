@@ -56,7 +56,6 @@ In this tutorial, you'll:
     * **Redirect URI**: `http://localhost:3000/`.
 * Associate your app with a user flow in the Microsoft Entra admin center. For more information, see [Associate a user flow with an application](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md#associate-a-user-flow-with-an-application.md) and [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
 
-[!INCLUDE [external-id-custom-domain](../external-id/customers/includes/use-custom-domain-url.md)]
 ---
 
 ## Create a JavaScript project and install dependencies
