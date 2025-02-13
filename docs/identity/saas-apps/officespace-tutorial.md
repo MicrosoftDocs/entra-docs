@@ -17,39 +17,12 @@ ms.author: jeedes
 
 # Tutorial: Microsoft Entra single sign-on (SSO) integration with OfficeSpace Software
 
-In this tutorial, you'll learn how to integrate OfficeSpace Software with Microsoft Entra ID. When you integrate OfficeSpace Software with Microsoft Entra ID, you can:
-
-* Control in Microsoft Entra ID who has access to OfficeSpace Software.
-* Enable your users to be automatically signed-in to OfficeSpace Software with their Microsoft Entra accounts.
-* Manage your accounts in one central location.
-
 ## Prerequisites
 
 To get started, you need the following items:
 
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * OfficeSpace Software single sign-on (SSO) enabled subscription.
-
-## Scenario description
-
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
-
-* OfficeSpace Software supports **SP** initiated SSO.
-* OfficeSpace Software supports [**automated user provisioning and deprovisioning**](officespace-software-provisioning-tutorial.md) (recommended).
-* OfficeSpace Software supports **Just In Time** user provisioning.
-
-## Add OfficeSpace Software from the gallery
-
-To configure the integration of OfficeSpace Software into Microsoft Entra ID, you need to add OfficeSpace Software from the gallery to your list of managed SaaS apps.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
-1. In the **Add from the gallery** section, type **OfficeSpace Software** in the search box.
-1. Select **OfficeSpace Software** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
-
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
-
-<a name='configure-and-test-azure-ad-sso-for-officespace-software'></a>
 
 ## Configure and test Microsoft Entra SSO for OfficeSpace Software
 
@@ -61,8 +34,6 @@ To configure and test Microsoft Entra SSO with OfficeSpace Software, perform the
     1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure OfficeSpace Software SSO](#configure-officespace-software-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create OfficeSpace Software test user](#create-officespace-software-test-user)** - to have a counterpart of B.Simon in OfficeSpace Software that is linked to the Microsoft Entra representation of user.
-1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
 
@@ -86,13 +57,13 @@ Follow these steps to enable Microsoft Entra SSO.
     `<company name>.officespacesoftware.com`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Sign on URL and Identifier. Contact [OfficeSpace Software Client support team](mailto:support@officespacesoftware.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are not real. Update these values with the actual Sign on URL and Identifier. Contact the [OfficeSpace Software Client support team](mailto:support@officespacesoftware.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. OfficeSpace Software application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**. OfficeSpace Software application expects **nameidentifier** to be mapped with **user.mail**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
 
 	![image](common/edit-attribute.png)
 
-1. In addition to above, OfficeSpace Software application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirement.
+1. In addition to above, OfficeSpace Software application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre-populated but you can review them as per your requirement.
 
 	| Name | Source Attribute|
 	| ---------------| --------------- |
@@ -105,11 +76,11 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![Edit SAML Signing Certificate](common/edit-certificate.png)
 
-1. In the **SAML Signing Certificate** section, copy the **Thumbprint Value** and save it on your computer.
+1. In the **SAML Signing Certificate Section**, download the PEM certificate.
 
-    ![Copy Thumbprint value](common/copy-thumbprint.png)
+    ![PEM](https://github.com/user-attachments/assets/9c0e4fa7-1c4a-4a62-aa1b-a45bc06b1afd)
 
-1. On the **Set up OfficeSpace Software** section, copy the appropriate URL(s) based on your requirement.
+1. In the **Set up OfficeSpace Software** section, copy the appropriate URL(s) based on your requirement.
 
 	![Copy configuration URLs](common/copy-configuration-urls.png)
 
@@ -142,30 +113,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
    1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
    1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
    1. In the **Add Assignment** dialog, click the **Assign** button.
-
-## Configure OfficeSpace Software SSO
-
-1. In a different web browser window, sign in to your OfficeSpace Software tenant as an administrator.
-
-2. Go to **Settings** and click **Connectors**.
-
-	![Screenshot that shows the "Settings" drop-down with "Connectors" selected.](./media/officespace-tutorial/settings.png)
-
-3. Click **SAML Authentication**.
-
-	![Screenshot that shows the "Authentication" section with the "S A M L Authentication" action selected.](./media/officespace-tutorial/authentication.png)
-
-4. In the **SAML Authentication** section, perform the following steps:
-
-	![Configure Single Sign-On On App Side](./media/officespace-tutorial/configuration.png)
-
-	a. In the **Logout provider url** textbox, paste the value of **Logout URL**..
-
-	b. In the **Client idp target url** textbox, paste the value of **Login URL**..
-
-	c. Paste the **Thumbprint** value., into the **Client IDP certificate fingerprint** textbox. 
-
-	d. Click **Save Settings**.
 
 ### Create OfficeSpace Software test user
 
