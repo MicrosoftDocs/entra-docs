@@ -213,7 +213,7 @@ By default, users can only sign in to a VM using SSH public key-based authentica
     ```
 
 
-# [RHEL 7](#tab/rhel7) 
+# [RHEL 7/ RHEL 8/ RHEL 9](#tab/rhel7) 
 
 ## Install required packages
 
