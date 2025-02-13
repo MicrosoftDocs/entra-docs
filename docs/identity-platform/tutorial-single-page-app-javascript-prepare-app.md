@@ -27,29 +27,25 @@ In this tutorial, you'll:
 
 ## Prerequisites
 
-### [Workforce tenant](#tab/workforce-tenant)
-
 * An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   * Application Administrator
   * Application Developer
   * Cloud Application Administrator.
+* [Node.js](https://nodejs.org/en/download/).
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
+
+### [Workforce tenant](#tab/workforce-tenant)
+
 * A workforce tenant. You can use your [Default Directory](quickstart-create-new-tenant.md) or set up a new tenant.
 * Register a new app in the Microsoft Entra admin center with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
     * **Name**: identity-client-spa
     * **Supported account types**: *Accounts in this organizational directory only (Single tenant).*
     * **Platform configuration**: Single-page application (SPA).
     * **Redirect URI**: `http://localhost:3000/`.
-* [Node.js](https://nodejs.org/en/download/).
-* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
 ### [External tenant](#tab/external-tenant)
 
-* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-  * Application Administrator
-  * Application Developer
-  * Cloud Application Administrator.
 * An external tenant. To create one, choose from the following methods:
   * (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/tutorials/marketplace) to set up an external tenant directly in Visual Studio Code.
   * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details) in the Microsoft Entra admin center.
@@ -58,8 +54,6 @@ In this tutorial, you'll:
     * **Supported account types**: *Accounts in this organizational directory only (Single tenant).*
     * **Platform configuration**: Single-page application (SPA).
     * **Redirect URI**: `http://localhost:3000/`.
-* [Node.js](https://nodejs.org/en/download/).
-* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 ---
 
 ## Create a JavaScript project and install dependencies
