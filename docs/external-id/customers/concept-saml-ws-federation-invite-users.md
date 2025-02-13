@@ -15,21 +15,21 @@ ms.collection: M365-identity-device-management
 
 # Invite users to sign in using a federated SAML/WS-Fed identity provider
 
-[!INCLUDE [applies-to-external-only](./includes/applies-to-external-only.md)]
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
 This article explains how to invite users from a federated organization to sign in to your Microsoft Entra tenant using their own SAML 2.0 or WS-Fed identity provider (IdP). Once federation is set up, new invited users can use their existing IdP-managed accounts to sign in, without needing a separate Microsoft Entra account.
 
 ## Prerequisites
 
-- An [external tenant](customers/how-to-create-external-tenant-portal.md).
+- An [external tenant](how-to-create-external-tenant-portal.md).
 - A registered application in the tenant.
-- A [federated SAML or WS-Fed identity provider](direct-federation.md).
+- A [federated SAML or WS-Fed identity provider](../direct-federation.md).
 
 ## Invite a user to your external tenant
 
 To invite a user from the federated partner organization to your external tenant, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **Users** > **All users**.
 1. Select **New user** > **Invite external user (Preview)**.
@@ -37,12 +37,13 @@ To invite a user from the federated partner organization to your external tenant
 
    - **Email**. *Required*. The email address of the user you would like to invite.
    - **Display name**. The first and last name of the new user. For example, *Mary Parker*.
-   - Under **Invitation message**:
-      - Select the **Send invite message** checkbox if you want to send the invitation email to the user. Otherwise, clear the checkbox.
-      - In **Message**, add a personal message to include in the invite email.
-      - To send a copy of the invitation email to someone, add their email address in the **Cc recipient** text box.
-      - The **Invite redirect URL** defaults to MyApplications, which is where the user is redirected when they redeem the invitation. You can change it to a different URL.
-   
+
+1. Under **Invitation message**:
+   - Select the **Send invite message** checkbox if you want to send the invitation email to the user. Otherwise, clear the checkbox.
+   - In **Message**, add a personal message to include in the invite email.
+   - To send a copy of the invitation email to someone, add their email address in the **Cc recipient** text box.
+   - The **Invite redirect URL** defaults to MyApplications, which is where the user is redirected when they redeem the invitation. You can change it to a different URL.
+
 1. Select the **Assignments** tab, and use the following steps to assign a role to the user. (Adding a group is optional).
 
    - Select **+ Add role**.
@@ -52,7 +53,3 @@ To invite a user from the federated partner organization to your external tenant
 1. Select the **Review + invite** button.
 
 An invitation email is sent to the user. The user needs to accept the invitation to be able to sign in.
-
-## Next steps
-
-Learn how to onboard users with  more about the [invitation redemption experience](redemption-experience.md) when external users sign in with various identity providers.

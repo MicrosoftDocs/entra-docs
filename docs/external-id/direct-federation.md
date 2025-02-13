@@ -235,5 +235,5 @@ You can also remove federation using the Microsoft Graph API [samlOrWsFedExterna
 
 ## Next steps
 
-- [Invite users to sign in using a federated SAML/WS-Fed identity provider](customers/saml-ws-federation-invite-users.md)
-- [Prerequisites](customers/saml-ws-federation-self-service-sign-up.md)
+- [Invite users to sign in using a federated SAML/WS-Fed identity provider](customers/concept-saml-ws-federation-invite-users.md)
+- [Prerequisites](customers/concept-saml-ws-federation-self-service-sign-up.md)

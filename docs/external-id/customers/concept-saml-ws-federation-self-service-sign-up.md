@@ -15,20 +15,20 @@ ms.collection: M365-identity-device-management
 
 # Add the SAML/WS-Fed identity provider to a user flow
 
-[!INCLUDE [applies-to-external-only](./includes/applies-to-external-only.md)]
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-Once you've configured federation with a SAML or WS-Fed identity provider by following the steps in [Add federation with SAML/WS-Fed identity providers](direct-federation.md), the identity provider is set up in your external tenant, but it's not yet available in any of the sign-in pages. 
+Once you've configured federation with a SAML or WS-Fed identity provider by following the steps in [Add federation with SAML/WS-Fed identity providers](../direct-federation.md), the identity provider is set up in your external tenant, but it's not yet available in any of the sign-in pages. 
 
 ## Prerequisites
 
-- An [external tenant](customers/how-to-create-external-tenant-portal.md).
+- An [external tenant](how-to-create-external-tenant-portal.md).
 - A registered application in the tenant.
-- A [federated SAML or WS-Fed identity provider](direct-federation.md).
+- A [federated SAML or WS-Fed identity provider](../direct-federation.md).
 - A sign-up and sign-in user flow.
 
 ## Add the identity provider to a user flow
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External ID User Flow Administrator](https://learn.microsoft.com/entra/identity/role-based-access-control/permissions-reference#external-id-user-flow-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External ID User Flow Administrator](~/identity/role-based-access-control/permissions-reference.md#external-id-user-flow-administrator).
 
 1. Switch to your *external* tenant: Select the **Settings** icon in the top menu, and then switch to your external tenant.
 
@@ -36,7 +36,7 @@ Once you've configured federation with a SAML or WS-Fed identity provider by fol
 
 1. Select the user flow where you want to add the identity provider.
 
-   ![Picture of selecting the user flow.](media/saml-ws-federation-self-service-sign-up/select-user-flow.png)
+   ![Picture of selecting the user flow.](media/concept-saml-ws-federation-self-service-sign-up/select-user-flow.png)
 
 1. In a workforce tenant, options appear for selecting the **Preview** or **Recommended** versions of sign-up and sign-in user flows. Select **Preview**.
 
@@ -44,10 +44,10 @@ Once you've configured federation with a SAML or WS-Fed identity provider by fol
 
 1. Under **Other Identity Providers**, select the identity provider.
 
-   ![Picture of the New SAML WS-Fed page.](media/saml-ws-federation-self-service-sign-up/select-identity-provider.png)
+   ![Picture of the New SAML WS-Fed page.](media/concept-saml-ws-federation-self-service-sign-up/select-identity-provider.png)
 
 1. Select **Save**.
 
 ## Next steps
 
-Follow the steps in [Test your sign-up and sign-in user flow](customers/how-to-test-user-flows.md)[Test your sign-up and sign-in user flow] to simulate a user’s sign-up or sign-in experience with your app.
+Follow the steps in [Test your sign-up and sign-in user flow](how-to-test-user-flows.md)[Test your sign-up and sign-in user flow] to simulate a user’s sign-up or sign-in experience with your app.
