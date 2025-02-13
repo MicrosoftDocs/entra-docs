@@ -35,7 +35,7 @@ In this tutorial, you'll:
   * Application Developer
   * Cloud Application Administrator.
 * A workforce tenant. You can use your [Default Directory](quickstart-create-new-tenant.md) or set up a new tenant.
-* An application registered in the Microsoft Entra admin center with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
+* Register a new app in the Microsoft Entra admin center with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
     * **Name**: identity-client-spa
     * **Supported account types**: *Accounts in this organizational directory only (Single tenant).*
     * **Platform configuration**: Single-page application (SPA).
@@ -53,7 +53,7 @@ In this tutorial, you'll:
 * An external tenant. To create one, choose from the following methods:
   * (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/tutorials/marketplace) to set up an external tenant directly in Visual Studio Code.
   * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details) in the Microsoft Entra admin center.
-* An application registered in the Microsoft Entra admin center with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
+* Register a new app in the Microsoft Entra admin center with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
     * **Name**: identity-client-spa
     * **Supported account types**: *Accounts in this organizational directory only (Single tenant).*
     * **Platform configuration**: Single-page application (SPA).
@@ -85,7 +85,9 @@ In this tutorial, you'll:
         └── styles.css
         └── ui.js    
     └── server.js
+    └── package.json
     ```
+
 1. In the **Terminal**, run the following command to install the required dependencies for the project:
 
     ```powershell

@@ -119,7 +119,7 @@ A redirection file is required to handle the response from the sign-in page. It'
 
 1. Save the file.
 
-### Add code to the *authPopup.js* file
+## Add code to the *authPopup.js* file
 
 The application uses *authPopup.js* to handle the authentication flow when the user signs in using the pop-up window. The pop-up window is used when the user is already signed in and the application needs to get an access token for a different resource.
 

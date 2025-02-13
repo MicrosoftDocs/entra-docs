@@ -99,11 +99,11 @@ items:
             - name: JavaScript 
               items:
                   - name: Create JavaScript app
-                    href: /entra/identity-platform/tutorial-single-page-app-javascript-prepare-app.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                    href: /entra/identity-platform/tutorial-single-page-app-javascript-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
                   - name: Configure app for authentication
-                    href: /entra/identity-platform/tutorial-single-page-app-javascript-configure-authentication.md
+                    href: /entra/identity-platform/tutorial-single-page-app-configure-authentication
                   - name: Sign in and sign out
-                    href: /entra/identity-platform/tutorial-single-page-app-javascript-sign-in-sign-out.md
+                    href: /entra/identity-platform/tutorial-single-page-app-javascript-sign-in-sign-out
             - name: React
               items:
                   - name: Prepare tenant
