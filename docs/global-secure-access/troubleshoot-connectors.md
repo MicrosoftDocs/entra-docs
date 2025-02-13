@@ -101,7 +101,8 @@ Connect to `https://login.microsoftonline.com` and use the same credentials. Mak
 
 Select your user account, then **Directory Role** in the resulting menu. Verify that the selected role is **Application Administrator**. If you're unable to access any of the pages along these steps, you don't have the required role.
 
-Note: You should be prompted for your administrator credentials during connector installation via a pop-up. If you don't receive a pop-up, ensure that your browser settings enable pop-ups and Javascript is enabled. During the next installation attempt, you'll be prompted to add sites to Trusted sites. After the sites are added to Trusted sites, re-run installation.
+>[!NOTE]
+>You should be prompted for your administrator credentials during connector installation via a pop-up. If you don't receive a pop-up, ensure that your browser settings enable pop-ups and Javascript is enabled. During the next installation attempt, you'll be prompted to add sites to Trusted sites. After the sites are added to Trusted sites, re-run installation.
 
 ## Connector errors
 
