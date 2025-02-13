@@ -14,7 +14,7 @@ ms.date: 02/11/2024
 
 # Tutorial: Add sign-in and sign-out flows to a JavaScript SPA
 
-In this tutorial you'll configure a JavaScript single-page application (SPA) for authenticaiton. In [part 1 of this series](tutorial-single-page-app-javascript-prepare-app.md), you created a JavaScript SPA and prepared it for authentication. In this tutorial, you'll learn how to add authentication flows by adding [Microsoft Authentication Library (MSAL)](msal-overview.md) components to your app and build a responsive user interface (UI) for your app.
+In this tutorial you'll configure a JavaScript single-page application (SPA) for authentication. In [part 1 of this series](tutorial-single-page-app-javascript-prepare-app.md), you created a JavaScript SPA and prepared it for authentication. In this tutorial, you'll learn how to add authentication flows by adding [Microsoft Authentication Library (MSAL)](msal-overview.md) components to your app and build a responsive user interface (UI) for your app.
 
 In this tutorial;
 
