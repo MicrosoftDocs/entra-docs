@@ -1,4 +1,4 @@
----
+![image](https://github.com/user-attachments/assets/b75a164e-1c59-43fb-a8c0-19c7b67d095e)---
 title: Include file for application integration partners
 description: Include file for application integration partners for identity and access management (IAM), and for identity governance and administration (IGA), using the System for Cross Domain Identity Management (SCIM) protocol to reach more systems. These systems include Enterprise Resource Planning (ERP), Electronic Health Record (EHR), and Human Capital Management (HCM) applications. Partners also have integrations with applications that use the Lightweight Directory Access Protocol (LDAP), or that require integration with software development kits (SDKs).
 author: markwahl-msft
@@ -74,6 +74,24 @@ Furthermore, KloudIdentity provides a Software Development Kit (SDK) to customiz
 
 #### Popular applications supported
 KloudIdentity provides a universal connector platform; Hence any LOB application can be integrated with REST or SOAP APIs, PowerShell scripts, and SDK approach.
+
+### Quorum Systems Identity DNA
+#### Description
+
+Identity DNA is Quorum’s purpose built platform designed to complement and enhance native Entra Identity Governance capabilities, the service acts as a System for Cross-domain Identity Management (SCIM) gateway. The service is deployed in customers Azure environments and managed via CICD pipelines.
+
+The Identity DNA platform is designed to handle complex integration scenarios whilst allowing customers to enhance end to end identity flow, achieving better user experience and addressing key business and technical challenges.
+
+Identity DNA platform is able to connect to any application through a number of pre defined connections (REST API, SOAP API, Database, PowerShell or CSV) to data sources either in the cloud or on-premises. 
+
+Identity DNA then converts that data to a System for Cross-domain Identity Management (SCIM) payload and delivers that to the Entra provisioning service. The Identity DNA platform allows for data between applications to be synced bidirectionally ensuring disparate systems identities are kept up to date with ease.
+
+#### Contact information
+* Company website: https://quorumsystems.com.au/
+* AppSource Listing: Entra User ID Provisioning https://appsource.microsoft.com/en-us/marketplace/consulting-services/quorumsystemsptyltd1587621343059.entrauseridprovisioning
+
+#### Popular applications supported
+Identity DNA can be integrated with any line of business application that has REST or SOAP API's, Databases, PowerShell scripts or even other directory services such as LDAP.
 
 ### Traxion SCIM Gateway
 #### Description
