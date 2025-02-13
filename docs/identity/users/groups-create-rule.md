@@ -119,7 +119,7 @@ If an error occurs while processing the membership rule for a specific group, an
 The following articles provide additional information on how to use groups in Microsoft Entra ID.
 
 - [See existing groups](~/fundamentals/groups-view-azure-portal.md)
-- [Create a new group and adding members](~/fundamentals/how-to-manage-groups.yml)
-- [Manage settings of a group](~/fundamentals/how-to-manage-groups.yml)
-- [Manage memberships of a group](~/fundamentals/how-to-manage-groups.yml)
+- [Create a new group and adding members](/entra/fundamentals/how-to-manage-groups)
+- [Manage settings of a group](/entra/fundamentals/how-to-manage-groups)
+- [Manage memberships of a group](/entra/fundamentals/how-to-manage-groups)
 - [Manage rules for dynamic membership groups for users](groups-dynamic-membership.md)
