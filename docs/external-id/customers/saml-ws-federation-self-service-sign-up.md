@@ -1,6 +1,6 @@
 ---
-title: SAML/WS-Fed federation for invitations 
-description: Set up direct federation with SAML 2.0 or WS-Fed identity providers (IdP) and invite guests, who can sign in with their own work accounts.
+title: SAML/WS-Fed federation for self-service sign-up 
+description: Set up direct federation with SAML 2.0 or WS-Fed identity providers (IdP) and enable self-service sign-up for external users, who can sign in with their own work accounts.
  
 ms.service: entra-external-id
 ms.topic: how-to
@@ -13,15 +13,15 @@ ms.collection: M365-identity-device-management
 #customer intent: As an IT admin setting up federation with an external organizaton's SAML/WS-Fed identity provider, I want to invite users from that organization to sign in to my Microsoft Entra tenant with their work account.
 ---
 
-- # Add the SAML/WS-Fed identity provider to a user flow
+# Add the SAML/WS-Fed identity provider to a user flow
 
 [!INCLUDE [applies-to-external-only](./includes/applies-to-external-only.md)]
 
-If you've followed the steps in [Configure federation with a SAML/WS-Fed identity provider](1-prereq-configure-saml-wsfed.md), the identity provider is set up in your external tenant, but it's not yet available in any of the sign-in pages. 
+Once you've configured federation with a SAML or WS-Fed identity provider by following the steps in [Add federation with SAML/WS-Fed identity providers](direct-federation.md), the identity provider is set up in your external tenant, but it's not yet available in any of the sign-in pages. 
 
 ## Prerequisites
 
-- An [external tenant](how-to-create-external-tenant-portal.md).
+- An [external tenant](customers/how-to-create-external-tenant-portal.md).
 - A registered application in the tenant.
 - A [federated SAML or WS-Fed identity provider](direct-federation.md).
 - A sign-up and sign-in user flow.
@@ -48,6 +48,6 @@ If you've followed the steps in [Configure federation with a SAML/WS-Fed identit
 
 1. Select **Save**.
 
-## Test the user flow
+## Next steps
 
-Follow the steps in [Test your sign-up and sign-in user flow](https://learn.microsoft.com/en-us/entra/external-id/customers/how-to-test-user-flows) to simulate a user’s sign-up or sign-in experience with your app.
+Follow the steps in [Test your sign-up and sign-in user flow](customers/how-to-test-user-flows.md)[Test your sign-up and sign-in user flow] to simulate a user’s sign-up or sign-in experience with your app.

@@ -21,7 +21,7 @@ This article explains how to invite users from a federated organization to sign 
 
 ## Prerequisites
 
-- An [external tenant](how-to-create-external-tenant-portal.md).
+- An [external tenant](customers/how-to-create-external-tenant-portal.md).
 - A registered application in the tenant.
 - A [federated SAML or WS-Fed identity provider](direct-federation.md).
 

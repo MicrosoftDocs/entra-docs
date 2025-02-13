@@ -26,7 +26,7 @@ Your Microsoft Entra tenant can be directly federated with external organization
 ## Prerequisites
 
 - Review the configuration considerations in [SAML/WS-Fed identity providers](direct-federation-overview.md).
-- A workforce tenant or an [external tenant](how-to-create-external-tenant-portal.md).
+- A workforce tenant or an [external tenant](customers/how-to-create-external-tenant-portal.md).
 - (For an external tenants) A registered application in the tenant.
 - (For self-service sign-up) A sign-up and sign-in user flow.
 
@@ -213,7 +213,7 @@ On the **All identity providers** page, you can view the list of SAML/WS-Fed ide
    :::image type="content" source="media/direct-federation/edit-domains.png" alt-text="Screenshot of the domain configuration page.":::
 
    > [!NOTE]
-   > To remove federation with a partner, first delete all domains except one, and then follow the steps in the [next section](#how-do-i-remove-federation).
+   > To remove federation with a partner, first delete all domains except one, and then follow the steps in the [next section](#how-to-remove-federation).
 
 ## How to remove federation
 
@@ -235,5 +235,5 @@ You can also remove federation using the Microsoft Graph API [samlOrWsFedExterna
 
 ## Next steps
 
-- [Invite users to sign in using a federated SAML/WS-Fed identity provider](saml-ws-federation-invite-users.md)
-- [Prerequisites](saml-ws-federation-self-service-sign-up.md)
+- [Invite users to sign in using a federated SAML/WS-Fed identity provider](customers/saml-ws-federation-invite-users.md)
+- [Prerequisites](customers/saml-ws-federation-self-service-sign-up.md)
