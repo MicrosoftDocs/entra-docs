@@ -17,7 +17,9 @@ ms.custom: mode-other, enterprise-apps
 
 # Enable single sign-on for an enterprise application with a relying party STS
 
-In this article, you use the Microsoft Entra admin center to enable single sign-on (SSO) for an enterprise application which supports SAML through leveraging a relying party security token service (STS). After you configure SSO, your users can sign in by using their Microsoft Entra credentials.
+In this article, you use the Microsoft Entra admin center to enable single sign-on (SSO) for an enterprise application which supports SAML through leveraging a relying party security token service (STS). After you configure SSO, your users can sign in to the application by using their Microsoft Entra credentials.
+
+:::image type="content" source="media/add-application-portal-setup-sso-rpsts/saml-topology.png" alt-text="Diagram showing the trust relationship between an application, a relying party STS, and Microsoft Entra ID as an identity provider.":::
 
 We recommend that you use a nonproduction environment to test the steps in this article, before configuring an application in a production tenant.
 
@@ -31,12 +33,12 @@ To configure SSO, you need:
 
 ## Document the entity identifier and Reply URL of your relying party STS
 
-1. You will need to obtain the entity identifier (entity ID) of the relying party STS. This must be unique across all relying party STS configured in a Microsoft Entra tenant. If AD FS is the relying party STS, then the identifier may be a URL of the form `http://{hostname.domain}/adfs/services/trust`.
-1. You will also need to obtain the assertion consumer service reply URL of the relying party STS. This will be a `HTTPS` URL to securely transfer SAML tokens from Microsoft Entra to the relying party STS as part of single sign on to an application. If AD FS is the relying party STS, then the URL may be of the form `https://{hostname.domain}/adfs/ls/`.
+1. You'll need to obtain the entity identifier (entity ID) of the relying party STS. This must be unique across all relying party STS configured in a Microsoft Entra tenant. If AD FS is the relying party STS, then the identifier may be a URL of the form `http://{hostname.domain}/adfs/services/trust`.
+1. You'l also need to obtain the assertion consumer service reply URL of the relying party STS. This will be a `HTTPS` URL to securely transfer SAML tokens from Microsoft Entra to the relying party STS as part of single sign-on to an application. If AD FS is the relying party STS, then the URL may be of the form `https://{hostname.domain}/adfs/ls/`.
 
 ## Create an application in Microsoft Entra
 
-First, you will create an application in Microsoft Entra, which will enable Microsoft Entra to generate SAML tokens for the relying party STS.
+First, create an enterprise application in Microsoft Entra, which will enable Microsoft Entra to generate SAML tokens for the relying party STS.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
@@ -52,7 +54,7 @@ First, you will create an application in Microsoft Entra, which will enable Micr
 1. In the **Basic SAML configuration** box, select **Edit**.
 1. In the Basic SAML configuration, under **Identifier (Entity ID)**, if there is no identifier listed, select **Add identifier**. Type the identifier for the application as provided by the relying party STS. For example, the identifier may be a URL of the form `http://{hostname.domain}/adfs/services/trust`.
 1. In the Basic SAML configuration, under **Reply URL (Assertion Consumer Service URL)**, select **Add reply URL**. Type the HTTPS URL of the relying party STS' Assertion Consumer Service. For example, the URL may be of the form `https://{hostname.domain}/adfs/ls/`.
-1. Optionally, add sign on, relay state, or logout URLs.
+1. Optionally, configure the **sign on**, **relay state**, or **logout** URLs, if required by the relying party STS.
 1. Select **Save**.
 
 ## Download metadata and certificates from Microsoft Entra
@@ -75,7 +77,7 @@ By default, only a few attributes from Microsoft Entra users are included in the
 
 ## Configure who can sign-in to the application
 
-When testing the configuration, you will wish to assign a user to the application in Microsoft Entra, to validate that the user is able to sign on to the application via Microsoft Entra and the relying party STS.
+When testing the configuration, you should assign a designated test user to the application in Microsoft Entra, to validate that the user is able to sign on to the application via Microsoft Entra and the relying party STS.
 
 1. In the **Manage** section of the left menu, select **Properties**.
 1. Confirm that the value of **Enabled for users to sign-in?** is set to **Yes**.
@@ -91,7 +93,7 @@ After configuration is complete, you can use other features such as dynamic grou
 
 ## Configure Microsoft Entra as an identity provider in your relying party STS
 
-Next, you will import the federation metadata into your relying party STS. The following steps are shown using AD FS, but another relying party STS could be used instead.
+Next, import the federation metadata into your relying party STS. The following steps are shown using AD FS, but another relying party STS could be used instead.
 
 1. In the claims provider trust list of your relying party STS, select **Add Claims Provider Trust**, and select **Start**.
 1. Depending on whether you downloaded the federation metadata from Microsoft Entra, select **Import data about the the claims provider published online or on a local network**, or **Import data about the claims provider from a file**.
@@ -105,7 +107,7 @@ Next, you will import the federation metadata into your relying party STS. The f
 
 ## Configure claims rules in your relying party STS
 
-Once the claims that Microsoft Entra will send as the identity provider are known to the relying party STS, you will need to map or transform those claims into the claims required by your application. The following steps are shown using AD FS, but another relying party STS could be used instead.
+Once the claims that Microsoft Entra will send as the identity provider are known to the relying party STS, you'll need to map or transform those claims into the claims required by your application. The following steps are shown using AD FS, but another relying party STS could be used instead.
 
 1. In the claims provider trust list of your relying party STS, select the claims provider trust for Microsoft Entra, and select **Edit Claims Rules**.
 1. For each claim provided by Microsoft Entra and required by your application, select **Add Rule**. In each rule, select **Pass through or Filter an Incoming Claim**, or **Transform an Incoming Claim**, based on the requirements of your application.
@@ -116,15 +118,16 @@ After the application is configured in Microsoft Entra and your relying party ST
 
 This tutorial illustrates testing the sign-in flow using a web-based application which implements the relying party initiated single sign-on pattern.
 
-1. In a web browser private browsing session, connect to the application and initiate the login process.
-1. The application will redirect the web browser to the relying party STS to select an identity provider.
+:::image type="content" source="media/add-application-portal-setup-sso-rpsts/saml-redirects.png" alt-text="Diagram showing the web browser redirects between an application, a relying party STS, and Microsoft Entra ID as an identity provider.":::
+
+1. In a web browser private browsing session, connect to the application and initiate the login process. The application will redirect the web browser to the relying party STS, and the relying party STS will determine the identity providers which can provide appropriate claims.
 1. Select the Microsoft Entra identity provider. The relying party STS will redirect the web browser to the Microsoft Entra login endpoint, `https://login.microsoftonline.com`.
-1. Sign in to Microsoft Entra using the identity of the test user, previously configured in the step [configure who can sign into the application](#configure-who-can-sign-in-to-the-application). Microsoft Entra will then redirect the web browser to the relying party STS reply URL endpoint, with the web browser transporting the SAML token. The relying party STS will then transform the claims of the SAML token, and redirect the web browser to the application.
-1. Confirm that your application has received the required claims from Microsoft Entra.
+1. Sign in to Microsoft Entra using the identity of the test user, previously configured in the step [configure who can sign into the application](#configure-who-can-sign-in-to-the-application). Microsoft Entra will then locate the enterprise application, and redirect the web browser to the relying party STS reply URL endpoint, with the web browser transporting the SAML token.
+1. The relying party STS will validate the SAML token was issued by Microsoft Entra, then extract and transform the claims from the SAML token, and redirect the web browser to the application. Confirm that your application has received the required claims from Microsoft Entra via this process.
 
 ## Plan to maintain the certificate in your relying party STS configuration
 
-You will need to ensure that your relying party STS stays up to date as new certificates are added to Microsoft Entra. Some relying party STS may have a built in process to monitor the federation metadata of the identity provider.
+After configuration, you'll need to ensure that your relying party STS stays up to date as new certificates are added to Microsoft Entra. Some relying party STS may have a built-in process to monitor the federation metadata of the identity provider.
 
 ## Next steps
 
