@@ -119,6 +119,8 @@ Microsoft Entra Kerberos works by effectively establishing your Microsoft Entra 
 
 3. **Client Configuration**:
     - Ensure Windows clients are up to date and [configured](https://learn.microsoft.com/azure/azure-sql/managed-instance/winauth-azuread-setup-incoming-trust-based-flow?view=azuresql#configure-the-group-policy-object-gpo) to authenticate using Microsoft Entra Kerberos.
+    
+
 
 4. **Manage Service Principals**:
     - Monitor and rotate service principal passwords as required.
