@@ -44,7 +44,7 @@ items:
     expanded: false
     items: 
     - name: Assign roles to users
-      href: users-assign-role-azure-portal.yml
+      href: how-to-assign-roles-to-users.yml
     - name: Manage 'Stay signed in?' prompt
       href: how-to-manage-stay-signed-in-prompt.yml
     - name: Manage user profile info
