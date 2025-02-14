@@ -1618,6 +1618,26 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-dotnet-sign-in-prepare-tenant.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-register-app?tabs=external-tenant",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-dotnet-sign-in-prepare-app.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-prepare-app?tabs=external-tenant",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-dotnet-sign-in-sign-in-sign-out.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-sign-in-users?tabs=external-tenant",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/users/groups-write-back-portal.md",
+      "redirect_url": "/entra/identity/hybrid/group-writeback-cloud-sync",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity/saas-apps/omnissa-identity-service-provisioning-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/tutorial-list",
       "redirect_document_id": false
@@ -1718,11 +1738,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/identity/users/groups-write-back-portal.md",
-      "redirect_url": "/entra/identity/hybrid/group-writeback-cloud-sync",
-      "redirect_document_id": false
-    },
-    {
       "source_path_from_root": "/docs/identity/saas-apps/vmware-identity-service-provisioning-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/tutorial-list",
       "redirect_document_id": false
@@ -1745,6 +1760,16 @@
     {
       "source_path_from_root": "/docs/external-id/customers/sample-single-page-app-react-sign-in.md",
       "redirect_url": "/entra/identity-platform/quickstart-single-page-app-sign-in?pivots=external&tabs=react-external",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/tutorial-web-app-dotnet-register-app.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-prepare-app?tabs=workforce",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-dotnet-sign-in-sign-out.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-sign-in-users",
       "redirect_document_id": false
     },
     {

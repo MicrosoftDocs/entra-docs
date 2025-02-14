@@ -134,7 +134,7 @@ authority: process.env.AUTHORITY || `https://${TENANT_SUBDOMAIN}.ciamlogin.com/`
 
 #### [Workforce tenant](#tab/workforce-tenant)
 
-Workforce tenant doesn't support custom URL domains.
+Custom URL domains are not supported in workforce tenants.
 
 #### [External tenant](#tab/external-tenant)
 

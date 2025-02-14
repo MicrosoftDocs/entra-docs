@@ -369,7 +369,7 @@ The post-logout URI enables applications to participate in the global sign-out.
 
 # [ASP.NET Core](#tab/aspnetcore)
 
-The ASP.NET Core OpenID Connect middleware enables your app to intercept the call to the Microsoft identity platform `logout` endpoint by providing an OpenID Connect event named `OnRedirectToIdentityProviderForSignOut`. This is handled automatically by Microsoft.Identity.Web (which clears accounts in the case where your web app calls web apis)
+The ASP.NET Core OpenID Connect middleware enables your app to intercept the call to the Microsoft identity platform `logout` endpoint by providing an OpenID Connect event named `OnRedirectToIdentityProviderForSignOut`. This is handled automatically by Microsoft.Identity.Web (which clears accounts in the case where your web app calls web APIs).
 
 # [ASP.NET](#tab/aspnet)
 
@@ -408,6 +408,6 @@ If you want to learn more about sign-out, read the protocol documentation that's
 
 ## Next steps
 
-- Learn more by building an ASP.NET Core web app that signs in users in the following multi-part [tutorial series](tutorial-web-app-dotnet-register-app.md)
+- Learn more by building an ASP.NET Core web app that signs in users in the following multi-part [tutorial series](tutorial-web-app-dotnet-prepare-app.md)
 
 - Explore Microsoft identity platform [web app samples](sample-v2-code.md#web-applications)

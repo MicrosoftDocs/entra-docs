@@ -159,4 +159,4 @@ ms.topic: quickstart
 > For a complete step-by-step guide on building applications and new features, including a full explanation of this quickstart, try out the ASP.NET tutorial.
 > 
 > > [!div class="nextstepaction"]
-> > [Add sign-in to an ASP.NET web app](tutorial-web-app-dotnet-register-app.md)
+> > [Add sign-in to an ASP.NET web app](tutorial-web-app-dotnet-prepare-app.md)
