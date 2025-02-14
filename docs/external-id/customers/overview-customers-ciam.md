@@ -111,9 +111,7 @@ Learn more about the [application user activity dashboards](how-to-user-insights
 
 ## About Azure AD B2C
 
-If you're a new customer, you might be wondering which solution is a better fit, [Azure AD B2C](/azure/active-directory-b2c/) or Microsoft Entra External ID. You should opt for the next generation Microsoft Entra External ID platform if the features and capabilities meet your business needs.
-
-Keep in mind that Microsoft Entra External ID represents the future of CIAM for Microsoft, and rapid innovation, new features and capabilities will be focused on this platform. By choosing the next generation platform from the start, you will receive the benefits of rapid innovation and a future-proof architecture. Learn more in our [FAQ](faq-customers.md#azure-ad-b2c-and-azure-ad-external-identities).
+If you're a new customer, you might be wondering which solution is a better fit, [Azure AD B2C](/azure/active-directory-b2c/) or Microsoft Entra External ID. Effective May 1, 2025, Azure AD B2C will no longer be available to purchase for new customers (learn more in our [FAQ](faq-customers.md#azure-ad-b2c-and-azure-ad-external-identities)). Microsoft Entra External ID represents the future of CIAM for Microsoft, and new features and capabilities will be focused on this platform. By choosing the next generation platform from the start, you will receive the benefits of rapid innovation and a future-proof architecture.
 
 ## Next steps
 
