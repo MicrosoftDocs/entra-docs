@@ -1823,6 +1823,31 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-mobile-app-ios-swift-prepare-tenant.md",
+      "redirect_url": "/entra/identity-platform/tutorial-mobile-app-ios-swift-prepare-tenant", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-mobile-app-ios-swift-prepare-app.md",
+      "redirect_url": "/entra/identity-platform/tutorial-mobile-app-ios-swift-prepare-app", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-mobile-app-ios-swift-sign-in.md",
+      "redirect_url": "/entra/identity-platform/tutorial-mobile-app-ios-swift-sign-in", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-mobile-app-ios-swift-sign-in-call-api.md",
+      "redirect_url": "/entra/identity-platform/tutorial-mobile-app-ios-swift-sign-in-call-api", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/tutorial-v2-ios.md",
+      "redirect_url": "/entra/identity-platform/tutorial-mobile-app-ios-swift-prepare-tenant",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/fundamentals/license-users-groups.yml",
       "redirect_url": "/docs/fundamentals/licensing",
       "redirect_document_id": false
