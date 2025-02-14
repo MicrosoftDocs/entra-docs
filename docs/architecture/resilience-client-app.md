@@ -99,6 +99,8 @@ If you don't use MSAL, use resilient patterns for token handling. The MSAL libra
 
 Generally, applications using modern authentication call an endpoint to retrieve tokens that authenticate the user, or authorize the application to call protected APIs. MSAL handles authentication and implements patterns to improve resilience. If you don't use MSAL, use the guidance in this section for best practices. Otherwise, MSAL implements best practices automatically.
 
+The [Microsoft Entra ID backup authentication system](backup-authentication-system.md) provides resilience to applications that use supported protocols and flows. For more information on the application requirements to benefit from backup authentication, see [application requirements for the backup authentication system](backup-authentication-system-apps.md).
+
 ### Cache tokens
 
 Ensure apps cache tokens accurately from the Microsoft identity platform. After your app receives tokens, the HTTP response with tokens has an `expires_in` property that indicates the duration to cache, and when to reuse it. Confirm application don't attempt to decode an API access token.
