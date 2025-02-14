@@ -123,7 +123,7 @@ After the *CloudPasswordPolicyForPasswordSyncedUsersEnabled* feature is enabled,
 >[!TIP]
 >It's recommended to enable *CloudPasswordPolicyForPasswordSyncedUsersEnabled* prior to enabling password hash sync, so that the initial sync of password hashes doesn't add the `DisablePasswordExpiration` value to the PasswordPolicies attribute for the users.
 
-The default Microsoft Entra password policy doesn't require users to change their passwords. If your policy in on-premises Active Directory is different, you can update the Microsoft Entra password policy to match by using the Update-MgDomain PowerShell command.
+The default Microsoft Entra password policy doesn't require users to change their passwords. If the policy in your on-premises Active Directory is different, you can update the Microsoft Entra password policy to match by using the Update-MgDomain PowerShell command.
 
 Microsoft Entra ID supports a separate password expiration policy per registered domain.
 
