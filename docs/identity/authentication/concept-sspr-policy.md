@@ -29,7 +29,7 @@ The following table outlines the username policies that apply to both on-premise
 
 | Property | UserPrincipalName requirements |
 | --- | --- |
-| Characters allowed |A – Z<br>a - z<br>0 – 9<br>' \. - \_ ! \# ^ \~ |
+| Characters allowed |A-Z<br>a-z<br>0-9<br>' \. - \_ ! \# ^ \~ |
 | Characters not allowed |Any "\@\" character that's not separating the username from the domain.<br>Can't contain a period character "." immediately preceding the "\@\" symbol |
 | Length constraints |The total length must not exceed 113 characters<br>There can be up to 64 characters before the "\@\" symbol<br>There can be up to 48 characters after the "\@\" symbol |
 
@@ -45,10 +45,10 @@ The following Microsoft Entra password policy options are defined. Unless noted,
 
 | Property | Requirements |
 | --- | --- |
-| Characters allowed |A – Z<br>a - z<br>0 – 9<br>@ # $ % ^ & * - _ ! + = [ ] { } &#124; \ : ' , . ? / \` ~ " ( ) ; < ><br>Blank space |
+| Characters allowed |A-Z<br>a-z<br>0-9<br>@ # $ % ^ & * - _ ! + = [ ] { } &#124; \ : ' , . ? / \` ~ " ( ) ; < ><br>Blank space |
 | Characters not allowed | Unicode characters |
 | Password restrictions |A minimum of 8 characters and a maximum of 256 characters.<br>Requires three out of four of the following types of characters:<br>- Lowercase characters<br>- Uppercase characters<br>- Numbers (0-9)<br>- Symbols (see the previous password restrictions) |
-| Password expiry duration (Maximum password age) |Default value: **90** days. If the tenant was created after 2021, it has no default expiration value. You can check current policy with [Get-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomain).<br>The value is configurable by using the [Update-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdomain) cmdlet from the Microsoft Graph module for PowerShell.|
+| Password expiry duration (Maximum password age) |Default value: **No expiration**. If the tenant was created before 2021, it has a **90** day expiration value by default. You can check current policy with [Get-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdomain).<br>The value is configurable by using the [Update-MgDomain](/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdomain) cmdlet from the Microsoft Graph module for PowerShell.|
 | Password expiry (Let passwords never expire) |Default value: **false** (indicates that passwords have an expiration date).<br>The value can be configured for individual user accounts by using the [Update-MgUser](/powershell/module/microsoft.graph.users/update-mguser) cmdlet. |
 | Password change history | The last password *can't* be used again when the user changes a password. |
 | Password reset history | The last password *can* be used again when the user resets a forgotten password. |
