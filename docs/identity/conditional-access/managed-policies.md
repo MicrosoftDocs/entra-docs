@@ -32,13 +32,40 @@ Administrators have the ability to **Edit** the **State** (On, Off, or Report-on
 Microsoft will enable these policies after no less than 90 days after they're introduced in your tenant if they're left in the **Report-only** state. Administrators might choose to turn these policies **On** sooner, or opt out by setting the policy state to **Off**. Customers are notified via emails and [Message center](/microsoft-365/admin/manage/message-center) posts 28 days before the policies are enabled. 
 
 > [!NOTE]
-> In some cases, policies may be enabled faster than 90 days. If this is applicable to your tenant, it will be noted in emails and M365 message center posts you receive about Microsoft Managed Policies. It will also be mentioned in the policy's details in the Microsoft Admin Center.
+> In some cases, policies might be enabled faster than 90 days. If this change is applicable to your tenant:
+> 
+> - We mention it in emails and Microsoft 365 message center posts you receive about Microsoft Managed Policies. 
+> - We mention it in the policy details in the Microsoft Entra admin center.
 
 ## Policies
 
 These Microsoft-managed policies allow administrators to make simple modifications like excluding users or turning them from report-only mode to on or off. Organizations can't rename or delete any Microsoft-managed policies. As Administrators get more comfortable with Conditional Access policy, they might choose to duplicate the policy to make custom versions.
 
 As threats evolve over time, Microsoft might change these policies in the future to take advantage of new features, functionality, or to improve their function.
+
+### Block legacy authentication
+
+This policy blocks sign-in attempts using legacy authentication and legacy authentication protocols. These authentications might come from older clients like Office 2010, or clients that use protocols like IMAP, SMTP, or POP3. 
+
+Based on Microsoft's analysis more than 99 percent of password spray attacks use these legacy authentication protocols. These attacks would stop with basic authentication disabled or blocked.
+
+### Block device code flow
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### Multifactor authentication for admins accessing Microsoft Admin Portals
 
@@ -68,9 +95,10 @@ To apply this policy to more users, duplicate it and change the assignments.
 
 This policy covers all users and requires MFA and reauthentication when we detect high-risk sign-ins. High-risk in this case means something about the way the user signed in is out of the ordinary. These high-risk sign-ins might include: travel that is highly abnormal, password spray attacks, or token replay attacks. For more information about these risk definitions, see the article [What are risk detections](/entra/id-protection/concept-identity-protection-risks#sign-in-risk-detections).
 
-This policy targets Microsoft Entra ID P2 tenants where security defaults aren't enabled. 
--	If P2 licenses equal or exceed total MFA-registered active users, the policy covers All Users. 
--	If MFA-registered active users exceed P2 licenses, we'll create and assign the policy to a capped security group based on available P2 licenses. You can modify membership of the policy’s security group. 
+This policy targets Microsoft Entra ID P2 tenants where security defaults aren't enabled.
+
+- If P2 licenses equal or exceed total MFA-registered active users, the policy covers All Users. 
+- If MFA-registered active users exceed P2 licenses, we create and assign the policy to a capped security group based on available P2 licenses. You can modify membership of the policy’s security group. 
 
 To prevent attackers from taking over accounts, Microsoft doesn't allow risky users to register for MFA.
 
@@ -101,7 +129,11 @@ When trying to access any of these resources, the user is required to complete M
 
 ### Require multifactor authentication for admins
 
-This policy covers any user with one of [14 admin roles](#what-administrator-roles-are-covered-by-these-policies) we consider to be highly privileged. Because of the power these highly privileged accounts have, they're required to MFA whenever they sign into any application. 
+This policy covers any user with one of admin roles we consider to be highly privileged:
+
+[!INCLUDE [conditional-access-admin-roles](../../includes/conditional-access-admin-roles.md)]
+
+Because of the power these highly privileged accounts have, they're required to MFA whenever they sign into any application. 
 
 ### Require multifactor authentication for all users
 
@@ -155,11 +187,12 @@ When multifactor authentication is completed via a federated identity provider (
 ### What if I use Certificate-Based Authentication?
 
 Depending on your tenant’s configuration of Certificate-Based Authentication (CBA), it can function as either single-factor or multifactor.
-* If your organization has CBA configured as single-factor, users will need to use a second authentication method to satisfy MFA. For more information on the allowed combinations of authentication methods to MFA with single-factor CBA, see [MFA with single factor certificate-based authentication](/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#mfa-with-single-factor-certificate-based-authentication).
+
+* If your organization has CBA configured as single-factor, users must use a second authentication method to satisfy MFA. For more information on the allowed combinations of authentication methods to MFA with single-factor CBA, see [MFA with single factor certificate-based authentication](/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#mfa-with-single-factor-certificate-based-authentication).
 * If your organization has CBA configured as multifactor, users can complete MFA with their CBA authentication method.
 
 > [!NOTE]
-> CBA is considered an MFA-capable method in Microsoft Entra ID so users in scope of CBA authentication method will be required to use MFA to register new authentication methods. To register MFA for single-factor CBA users without other registered authentication methods, please see [Options to get MFA capability with single factor certificates](/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#options-to-get-mfa-capability-with-single-factor-certificates).
+> CBA is considered an MFA-capable method in Microsoft Entra ID so users in scope of CBA authentication method will be required to use MFA to register new authentication methods. To register MFA for single-factor CBA users without other registered authentication methods, see [Options to get MFA capability with single factor certificates](/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#options-to-get-mfa-capability-with-single-factor-certificates).
 
 ### What if I use custom controls?
 
