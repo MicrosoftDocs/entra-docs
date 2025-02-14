@@ -205,5 +205,14 @@ After you make the changes to your *appsettings.json* file, if your custom URL d
 
 ## Next step
 
+### [Workforce tenant](#tab/workforce-tenant)
+
 > [!div class="nextstepaction"]
 > [Test your ASP.NET Core web app](./tutorial-web-app-dotnet-call-api.md)
+
+### [External tenant](#tab/external-tenant)
+
+> [!div class="nextstepaction"]
+> [Test your ASP.NET Core web app](./tutorial-web-app-dotnet-call-api.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant)
+
+---

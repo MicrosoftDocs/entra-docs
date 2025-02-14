@@ -67,7 +67,7 @@ In this section, you'll create an ASP.NET Core project in Visual Studio Code.
 1. Open Visual Studio Code, select **File > Open Folder...**. Navigate to and select the location in which to create your project.
 1. Open a new terminal by selecting **Terminal > New Terminal**.
 1. Enter the following command to make a Model View Controller (MVC) ASP.NET Core project.
-1. 
+
     ```console
     dotnet new mvc -n identity-client-web-app
     ```
@@ -179,5 +179,14 @@ From the [prerequisites](#prerequisites), the redirect URI is set to `https://lo
 
 ## Next step
 
+### [Workforce tenant](#tab/workforce-tenant)
+
 > [!div class="nextstepaction"]
 > [Configure an ASP.NET Core web app for authorization and authentication](./tutorial-web-app-dotnet-sign-in-users.md)
+
+### [External tenant](#tab/external-tenant)
+
+> [!div class="nextstepaction"]
+> [Configure an ASP.NET Core web app for authorization and authentication](./tutorial-web-app-dotnet-sign-in-users.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json)
+
+---
