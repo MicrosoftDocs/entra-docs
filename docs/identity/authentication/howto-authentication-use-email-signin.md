@@ -4,9 +4,9 @@ description: Learn how to enable users to sign in to Microsoft Entra ID with the
 
 ms.service: entra-id
 ms.subservice: authentication
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: no-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 01/08/2025
+ms.date: 02/14/2025
 
 ms.author: justinha
 author: calui
@@ -392,8 +392,6 @@ Within a tenant, a cloud-only user's UPN may take on the same value as another u
 
 1. [!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)]
 
-   Sign in to your Microsoft Entra tenant using the [Connect-AzureAD][Connect-AzureAD] cmdlet:
-
     ```powershell
     Connect-MgGraph -Scopes "User.Read.All"
     ```
@@ -464,8 +462,4 @@ For more information on hybrid identity operations, see [how password hash sync]
 
 <!-- EXTERNAL LINKS -->
 [Install-Module]: /powershell/module/powershellget/install-module
-[Connect-AzureAD]: /powershell/module/azuread/connect-azuread
-[Get-AzureADPolicy]: /powershell/module/azuread/get-azureadpolicy
-[New-AzureADPolicy]: /powershell/module/azuread/new-azureadpolicy
-[Set-AzureADPolicy]: /powershell/module/azuread/set-azureadpolicy
 [my-profile]: https://myprofile.microsoft.com

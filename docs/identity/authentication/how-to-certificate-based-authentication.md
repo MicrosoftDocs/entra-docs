@@ -288,7 +288,7 @@ The authentication binding policy helps determine the strength of authentication
 The default affinity binding at the tenant level is **Low**. An Authentication Policy Administrator can change the default value from single-factor to multifactor and if changes, all the certificates on the tenant will be considered of strength **Multi-factor authentication**. Similarly, the affinity binding at the tenant level can be set to **High** which means all the certificates will be validated using only high affinity attributes.
 
 >[!IMPORTANT]
->Admin should set the tenant default to a value that is applicable for most certificates and create custom rules only for specific certificates that needs different protection level and/or affinity binding than tenant default. All the authentication methods configuration go into the same policy file so creating multiple redundant rules can hit the policy file limit of 64KB.
+>Admin should set the tenant default to a value that is applicable for most certificates and create custom rules only for specific certificates that needs different protection level and/or affinity binding than tenant default. All the authentication methods configuration go into the same policy file so creating multiple redundant rules can hit the policy file limit.
 
 Authentication binding rules map certificate attributes, such as Issuer, or Policy Object ID (OID), or Issuer and Policy OID, to a value and select default protection level as well as affinity binding for that rule. 
 To modify tenant default settings and create custom rules in the Microsoft Entra admin center, complete the following steps:
