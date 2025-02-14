@@ -90,7 +90,7 @@ Learn more about building mobile apps that call protected web APIs in our multi-
 > [Scenario: Mobile application that calls web APIs](scenario-mobile-app-registration.md)
 
 
-::: end-zone
+::: zone-end
 
 ::: zone pivot="external"
 
@@ -174,5 +174,5 @@ Upon completion, it checks for any errors during the request. If an error occurs
 - [Tutorial: Prepare your iOS/macOS app for native authentication](../external-id/customers/tutorial-native-authentication-prepare-ios-macos-app.md)
 
 
-::: end-zone
+::: zone-end
 
