@@ -187,6 +187,6 @@ From the [prerequisites](#prerequisites), the redirect URI is set to `https://lo
 ### [External tenant](#tab/external-tenant)
 
 > [!div class="nextstepaction"]
-> [Configure an ASP.NET Core web app for authorization and authentication](./tutorial-web-app-dotnet-sign-in-users.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json)
+> [Configure an ASP.NET Core web app for authorization and authentication](./tutorial-web-app-dotnet-sign-in-users.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant)
 
 ---
