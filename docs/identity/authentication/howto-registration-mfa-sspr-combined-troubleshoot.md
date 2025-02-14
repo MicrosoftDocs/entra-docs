@@ -4,7 +4,7 @@ description: Troubleshoot Microsoft Entra multifactor authentication and self-se
 
 ms.service: entra-id
 ms.subservice: authentication
-ms.custom: has-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref
 ms.topic: troubleshooting
 ms.date: 02/13/2025
 
