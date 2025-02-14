@@ -4,7 +4,7 @@ description: Learn how to enable users to sign in to Microsoft Entra ID with the
 
 ms.service: entra-id
 ms.subservice: authentication
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: no-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 01/08/2025
 
