@@ -31,52 +31,128 @@ In this tutorial:
 
 ## Add authentication and authorization elements
 
-The *Program.cs* file needs to be modified to add authorization and authentication to the web app and to authorize the user. This section guides you through how to add the capability to sign in users with the Microsoft identity platform, update the application middleware and enable authentication by default. 
+The *HomeController.cs* and *Program.cs* files need to be modified to add the authentication and authorization elements to the ASP.NET Core web app. This includes managing the home page, adding correct namespaces and configuring sign-in.
 
-### Add authentication elements
+### Add authorization to *HomeController.cs*
 
-1. Open *Program.cs* and remove the existing code. Add the following namespaces to the file:
+The home page of the application needs to have the capability to authorize the user. The `Microsoft.AspNetCore.Authorization` namespace provides the classes and interfaces to implement authorization to the web app. The `[Authorize]` attribute is used to specify that only authenticated users can use the web app.
 
-    :::code language="csharp" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/Program.cs" range="2-5" :::
+1. In your web app, open *Controllers/HomeController.cs*, and add the following snippet to the top of the file:
 
-1. Add the `WebApplicationBuilder` and retrieve the initial scopes for the downstream API calls.
+    ```csharp
+    using System.Diagnostics;
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Mvc;
+    using dotnetcore_webapp.Models;
+    ```
 
-    :::code language="csharp" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/Program.cs" range="9-10" :::
+1. Add the `[Authorize]` attribute above the `HomeController` class definition, as shown in the following snippet:
 
-1. Next, add the Microsoft Identity Web app authentication, which configures the app to use Microsoft Identity for authentication, specifically, the `AzureAd` section in *appsettings.json*.
+    ```csharp
+    [Authorize]
+    public class HomeController : Controller
+    {
+    ...
+    ```
 
-    :::code language="csharp" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/Program.cs" range="12-15" :::
+### Add authentication and authorization elements to *Program.cs*
 
-### Enable authentication by default
+The `Program.cs` file is the entry point of the application, and needs to be modified to add authentication and authorization to the web app. Services need to be added to allow the app to use the settings defined in *appsettings.json* for authentication.
 
-Add the following code to *Program.cs* to provide the default pages for sign-in and sign-out:
+1. Add the following namespaces to the top of the file.
 
-:::code language="csharp" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/Program.cs" range="19-25" :::
+    ```csharp
+    using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Mvc.Authorization;
+    using Microsoft.Identity.Web;
+    using Microsoft.Identity.Web.UI;
+    using System.IdentityModel.Tokens.Jwt;
+    ```
 
-### Add authentication to the middleware
+1. Next, add the Microsoft Identity Web app authentication service, which configures the app to use Microsoft Identity for authentication.  
 
-Add the following snippet, which builds the web app and configures the application middleware:
-
-:::code language="csharp" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/Program.cs" range="28-43" :::
+    ```csharp
+    // Add services to the container.
+    builder.Services.AddControllersWithViews();
     
-## View Microsoft Graph API data
+    // This is required to be instantiated before the OpenIdConnectOptions starts getting configured.
+    // By default, the claims mapping will map claim names in the old format to accommodate older SAML applications.
+    // This flag ensures that the ClaimsIdentity claims collection will be built from the claims in the token
+    JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
+    
+    // Sign-in users with the Microsoft identity platform
+    builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
+        .AddMicrosoftIdentityWebApp(builder.Configuration)
+        .EnableTokenAcquisitionToCallDownstreamApi()
+        .AddInMemoryTokenCaches();
+    
+    builder.Services.AddControllersWithViews(options =>
+    {
+        var policy = new AuthorizationPolicyBuilder()
+            .RequireAuthenticatedUser()
+            .Build();
+        options.Filters.Add(new AuthorizeFilter(policy));
+    }).AddMicrosoftIdentityUI();
 
-To display data from the Microsoft Graph API call, you need to modify the UI to display it.
+    ```
 
-Open *Pages/Index.cshtml* and add the following code to the end of the file. 
+1. Next, the middleware needs to be configured to enable the authentication capabilities. Replace the rest of the code with the following snippet.
 
-:::code language="csharp" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/Pages/Index.cshtml" range="13-17" :::
+    ```csharp
+    var app = builder.Build();
+
+    // Configure the HTTP request pipeline.
+    if (!app.Environment.IsDevelopment())
+    {
+        app.UseExceptionHandler("/Home/Error");
+        // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+        app.UseHsts();
+    }
+    
+    app.UseHttpsRedirection();
+    app.UseStaticFiles();
+    
+    app.UseRouting();
+    app.UseAuthorization();
+    
+    app.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+    
+    app.Run();
+    ```
 
 ## Add the sign in and sign out experience
 
-The UI needs to be updates to provide a more user-friendly experience for sign-in and sign-out. This section shows how to create a new file that displays navigation items based on the user's authentication status.
+The UI needs to be updates to provide a more user-friendly experience for sign-in and sign-out. This section shows how to create a new file that displays navigation items based on the user's authentication status. The code reads the ID token claims to check that the user is authenticated and uses `User.Claims` to extract ID token claims.
 
 1. Create a new file in *Pages/Shared* and give it the name *_LoginPartial.cshtml*.
 1. Open the file and add the following code for adding the sign in and sign out experience:
 
-   :::code language="csharp" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/Pages/Shared/_LoginPartial.cshtml" :::
+    ```csharp
+    @using System.Security.Principal
 
-1. Open *Pages/Shared_Layout.cshtml* and add a reference to `_LoginPartial` created in the previous step. Place this near the end of the `navbar-nav` class as shown in the following snippet:
+    <ul class="navbar-nav">
+    @if (User.Identity is not null && User.Identity.IsAuthenticated)
+    {
+            <li class="nav-item">
+                <span class="nav-link text-dark">Hello @User.Claims.First(c => c.Type == "preferred_username").Value!</span>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="SignOut">Sign out</a>
+            </li>
+    }
+    else
+    {
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="SignIn">Sign in</a>
+            </li>
+    }
+    </ul>
+    ```
+
+1. Open *Pages/Shared/_Layout.cshtml* and add a reference to `_LoginPartial` created in the previous step. Place this near the end of the `navbar-nav` class as shown in the following snippet:
 
     ```csharp
     <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">

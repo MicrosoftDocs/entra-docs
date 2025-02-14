@@ -27,12 +27,15 @@ In this tutorial:
 
 ## Prerequisites
 
-### [Workforce tenant](#tab/workforce-tenant)
-
 * An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/). This account must have permissions to manage applications. Use any of the following roles needed to register the application:
   * Application Administrator
   * Application Developer
   * Cloud Application Administrator
+* Although any integrated development environment (IDE) that supports ASP.NET Core applications can be used, this tutorial uses **Visual Studio Code**. You can download it [here](https://visualstudio.microsoft.com/downloads/).
+* A minimum requirement of [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet).
+
+### [Workforce tenant](#tab/workforce-tenant)
+
 * A workforce tenant. You can use your **Default Directory** or [set up a new tenant](./quickstart-create-new-tenant.md).
 * An application registered in the Microsoft Entra admin center. Use the following setup for the purposes of this tutorial series:
   * **Name**: *identity-client-web-app*
@@ -40,15 +43,9 @@ In this tutorial:
   * **Redirect URI**: `https://localhost:5001/signin-oidc`
   * **Front channel logout URL**: `https://localhost:5001/signout-oidc`
 * For development purposes, [create a self signed certificate](./howto-create-self-signed-certificate.md). Refer to [add credentials](./quickstart-register-app.md#add-credentials) to upload the certificate and record the certificate **Thumbprint**. **Do not use a self signed certificate** for production apps. Use a trusted certificate authority.
-* Although any integrated development environment (IDE) that supports ASP.NET Core applications can be used, this tutorial uses **Visual Studio Code**. You can download it [here](https://visualstudio.microsoft.com/downloads/).
-* A minimum requirement of [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet).
 
 ### [External tenant](#tab/external-tenant)
 
-* An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/). This account must have permissions to manage applications. Use any of the following roles needed to register the application:
-  * Application Administrator
-  * Application Developer
-  * Cloud Application Administrator
 * An external tenant. If you don't have one, [create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
 * A [self-service sign-up user flow](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md). This user flow can be used across multiple applications.
 * An application registered in the Microsoft Entra admin center,  Use the following setup for your app.
@@ -60,8 +57,6 @@ In this tutorial:
 * To use your application in your external tenant; 
   * [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
   * [Grant admin consent for your tenant](./quickstart-register-app.md#grant-admin-consent-external-tenants-only).
-* Although any integrated development environment (IDE) that supports ASP.NET Core applications can be used, this tutorial uses **Visual Studio Code**. You can download it [here](https://visualstudio.microsoft.com/downloads/).
-* A minimum requirement of [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet).
 
 ---
 
@@ -70,24 +65,21 @@ In this tutorial:
 In this section, you'll create an ASP.NET Core project in Visual Studio Code.
 
 1. Open Visual Studio Code, select **File > Open Folder...**. Navigate to and select the location in which to create your project.
-1. Create a new folder using the **New Folder...** icon in the **Explorer** pane. Provide a name similar to the application registered in the Microsoft Entra admin center, such as *identity-client-web-app*.
 1. Open a new terminal by selecting **Terminal > New Terminal**.
-1. To create an ASP.NET Core web app template, run the following command in the terminal to change into the directory and create the project:
-
+1. Enter the following command to make a Model View Controller (MVC) ASP.NET Core project.
+1. 
     ```console
-    dotnet new webapp
+    dotnet new mvc -n identity-client-web-app
     ```
 
 ## Install identity packages
 
-Identity related NuGet packages must be installed in the project to authenticate users.
+This application uses [Microsoft.Identity.Web](/entra/msal/dotnet/microsoft-identity-web/) and the related NuGet package must be installed.
 
-Enter the following commands to install the relevant NuGet packages:
+Use the following snippet to change into the new *identity-client-web-app* folder and install the relevant NuGet package:
 
 ```console
 dotnet add package Microsoft.Identity.Web.UI
-dotnet add package Microsoft.Identity.Web
-dotnet add package Microsoft.Identity.Web.DownstreamApi
 ```
 
 ## Configure the application for authentication
@@ -140,7 +132,7 @@ In your IDE, open *appsettings.json* and replace the file contents with the foll
 * `Instance` - The authentication endpoint. Check with the different available endpoints in [National clouds](authentication-national-cloud.md#azure-ad-authentication-endpoints).
 * `TenantId` - The identifier of the tenant where the application is registered. Replace the text in quotes with the **Directory (tenant) ID** value that was recorded earlier from the overview page of the registered application.
 * `ClientId` - The identifier of the application, also referred to as the client. Replace the text in quotes with the **Application (client) ID** value that was recorded earlier from the overview page of the registered application.
-* `ClientCertificates` - A self-signed certificate is used for authentication in the application. Replace the text of the `CertificateThumbprint` with the thumbprint of the certificate that was previously recorded.
+* `ClientCertificates` - A self-signed certificate is used for authentication in the application. Replace the text of the `CertificateThumbprint` with the thumbprint of the certificate that was previously recorded. Do not use a self signed certificate for production apps. 
 * `CallbackPath` - Is an identifier to help the server redirect a response to the appropriate application.
 * `DownstreamApi` - Is an identifier that defines an endpoint for accessing Microsoft Graph. The application URI is combined with the specified scope. To define the configuration for an application owned by the organization, the value of the `Scopes` attribute is slightly different.
 
