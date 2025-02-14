@@ -108,7 +108,9 @@ Under each sign-in log, go to the **Authentication Details** tab and explore **S
 
 To configure or review the **Show option to remain signed in** option:
 
-1. [!INCLUDE [Privileged role](../../includes/privileged-role-include.md)]
+[!INCLUDE [least-privilege-note](../../includes/definitions/least-privilege-note.md)]
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
 1. Browse to **Identity** > **Company Branding**. Then, for each locale, select **Show option to remain signed in**.
 1. Select **Yes**, and then select **Save**.
 

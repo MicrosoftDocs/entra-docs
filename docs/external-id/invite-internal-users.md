@@ -49,7 +49,6 @@ You can use the Microsoft Entra admin center, PowerShell, or the invitation API 
 
 ## Use the Microsoft Entra admin center to send a B2B invitation
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. Browse to **Identity** > **Users** > **All users**.

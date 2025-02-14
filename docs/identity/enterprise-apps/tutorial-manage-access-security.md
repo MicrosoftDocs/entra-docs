@@ -34,7 +34,6 @@ Using the information in this tutorial, an administrator learns how to:
 
 ## Grant tenant wide admin consent
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 For the application that the administrator added to their tenant, they want to set it up so that all users in the organization can use it and not have to individually request consent to use it. To avoid the need for user consent, they can grant consent for the application on behalf of all users in the organization. For more information, see [Consent and permissions overview](./user-admin-consent-overview.md).
 

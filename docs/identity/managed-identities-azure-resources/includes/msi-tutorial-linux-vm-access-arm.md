@@ -12,7 +12,6 @@ ms.custom:
 
 ## Use a Linux VM user-assigned managed identity to access a resource group in Resource Manager
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 This tutorial explains how to create a user-assigned identity, assign it to a Linux Virtual Machine (VM), and then use that identity to access the [Azure Resource Manager](/azure/azure-resource-manager/management/overview) API. Managed Service Identities are automatically managed by Azure. They enable authentication to services that support Microsoft Entra authentication, without needing to embed credentials into your code.
 
@@ -86,7 +85,6 @@ The response contains details for the role assignment created, similar to the fo
 
 ## Get an access token using the VM's identity and use it to call Resource Manager 
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 For the remainder of the tutorial, you work from the VM you created earlier.
 

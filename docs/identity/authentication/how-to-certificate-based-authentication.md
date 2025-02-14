@@ -49,7 +49,7 @@ Make sure that the following prerequisites are in place:
 
 Some configuration steps need to be done before you enable Microsoft Entra CBA. First, an admin must configure the trusted CAs that issue user certificates. As seen in the following diagram, we use role-based access control to make sure only least-privileged administrators are needed to make changes. 
 
-[!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)]
+[!INCLUDE [least-privilege-note](../../includes/definitions/least-privilege-note.md)]
 
 Optionally, you can also configure authentication bindings to map certificates to single-factor or multifactor authentication, and configure username bindings to map the certificate field to an attribute of the user object. [Authentication Policy Administrators](../role-based-access-control/permissions-reference.md#authentication-policy-administrator) can configure user-related settings. Once all the configurations are complete, enable Microsoft Entra CBA on the tenant. 
 
@@ -66,7 +66,7 @@ The PKI-based trust store has higher limits for the number of CAs and the size o
 
 An admin must configure the trusted CAs that issue user certificates. 
 Only least-privileged administrators are needed to make changes. 
-A PKI-based trust store has RBAC roles [Privilege Authentication Administrator](../role-based-access-control/permissions-reference.md#privileged-authentication-administrator) and [Authentication Administrator](../role-based-access-control/permissions-reference.md#authentication-administrator).
+A PKI-based trust store has RBAC role [Privilege Authentication Administrator](../role-based-access-control/permissions-reference.md#privileged-authentication-administrator).
 
 Upload PKI feature of the PKI-based trust store is available only with  Microsoft Entra ID P1 or P2 license. However, with free license as well, admins can upload all the CAs individually instead of the PKI file and configure the PKI-based trust store.
 
@@ -74,7 +74,7 @@ Upload PKI feature of the PKI-based trust store is available only with  Microsof
 
 #### Create a PKI container object
 1.	Create a PKI container object.
-   1. Sign in to the Microsoft Entra admin center as an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+   1. Sign in to the Microsoft Entra admin center as an [Privilege Authentication Administrator](../role-based-access-control/permissions-reference.md#privileged-authentication-administrator).
    1. Browse to **Protection** > **Show more** > **Security Center** (or **Identity Secure Score**) > **Public key infrastructure (Preview)**.
    1. Click **+ Create PKI**.
    1. Enter **Display Name**.

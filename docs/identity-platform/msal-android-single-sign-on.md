@@ -91,7 +91,6 @@ If Microsoft Authenticator, Intune Company Portal, or Link to Windows is uninsta
 
 #### Generate a redirect URI for a broker
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 You must register a redirect URI that is compatible with the broker. The redirect URI for the broker should include your app's package name and the Base64-encoded representation of your app's signature.
 

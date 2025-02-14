@@ -97,10 +97,10 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 ### Release status
 
-01/15/2025: Released for download
+01/15/2025: Released for download and autoupgrade
 
 ### Added Features
- - Auditing administrator events in Microsoft Entra Connect Sync enabled for logging any admin changes made on Entra Connect Sync. This includes changes made using the UI and the PowerShell scripts. For more information see [Auditing administrator events in Microsoft Entra Connect Sync (Public Preview)](admin-audit-logging.md)
+- Auditing administrator events in Microsoft Entra Connect Sync enabled for logging any admin changes made on Entra Connect Sync. This includes changes made using the UI and the PowerShell scripts. For more information see [Auditing administrator events in Microsoft Entra Connect Sync (Public Preview)](admin-audit-logging.md)
 
 ### Bug fixes
 - Fixed the removal of the SSPR configuration when changes are made on the Azure AD Connector and saved in the Sync Service manager UI
@@ -117,7 +117,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 11/14/2024: Released for download
 
 ### Updated Features
- - SQL related drivers shipped with Microsoft Entra Connect have been updated to OLE DB [version 18.7.4](/sql/connect/oledb/release-notes-for-oledb-driver-for-sql-server?view=sql-server-ver16#1874)
+- SQL related drivers shipped with Microsoft Entra Connect have been updated to OLE DB [version 18.7.4](/sql/connect/oledb/release-notes-for-oledb-driver-for-sql-server?view=sql-server-ver16#1874)
 
 ### Bug fixes
 - Fixed an issue with Privileged Identity Management (PIM), Microsoft Entra roles, and PIM for Groups to verify that PIM is enabled and that the user has the Hybrid Identity Administrator role enabled.
@@ -152,7 +152,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
   - where the user information around the same user is spread across different forests
   - and if the user is disabled in one of the forests adding this rule allows the sync to pick the **onPremisesObjectIdentifier** attribute from the user who is enabled. 
 - This registry key change allows you to set the precedence number for custom rules to be more than 100 if needed. The precedence of the first standard rule can be set using the key **HLKM:\SOFTWARE\Microsoft\Azure AD Connect\FirstStandardRulePrecedence** to allow for more custom rules. If no value is set, 100 is the default.
-- Cmdlets in the ADSync PowerShell module that modify Microsoft Entra ID settings now require Microsoft Entra ID login.
+- Cmdlets in the ADSync PowerShell module that communicate with Microsoft Entra ID now require Microsoft Entra ID login.
 
 ### Deprecated features
 - The feature that used to validate object against schema has been deprecated and is no longer available in the Synchronization Service Manager.
@@ -333,7 +333,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
  - We added new cmdlets “Get-ADSyncToolsDuplicateUsersSourceAnchor and Set-ADSyncToolsDuplicateUsersSourceAnchor“ to fix bulk "source anchor has changed" errors. When a new forest is added to Microsoft Entra Connect with duplicate user objects, the objects are running into bulk "source anchor has changed" errors. This is happening due to the mismatch between msDsConsistencyGuid & ImmutableId. More information about this module and the new cmdlets can be found in [this article](./reference-connect-adsynctools.md).
 
 ### Bug fixes
- - We fixed a bug that prevented localDB upgrades in some Locales.
+- We fixed a bug that prevented localDB upgrades in some Locales.
  - We fixed a bug to prevent database corruption when using localDB.
  - We added time out and size limit errors to the connection log.
  - We fixed a bug where, if child domain has a user with same name as parent domain user that happens to be an enterprise admin, the group membership failed.

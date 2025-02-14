@@ -34,7 +34,6 @@ The `<extensions-app-id>` is specific to your tenant. To find this identifier, n
 
 ## Create a custom attribute
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **External Identities** > **Overview**.

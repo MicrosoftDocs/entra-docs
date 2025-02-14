@@ -27,7 +27,6 @@ Choose password-based SSO when:
 
 The configuration page for password-based SSO is simple. It includes only the URL of the sign-on page that the application uses. This string must be the page that includes the username input field.
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ## Prerequisites
 
@@ -72,6 +71,8 @@ For password-based SSO, the end user’s browsers can be:
 - Internet Explorer 8, 9, 10, 11--on Windows 7 or later (limited support)
 - Microsoft Edge on Windows 10 Anniversary Edition or later
 - Chrome--on Windows 7 or later, and on macOS X or later
+
+Users may only have a maximum of [48 credentials](~/identity/users/directory-service-limits-restrictions.md) configured for applications utilizing password-based single sign-on. 
 
 ## Next steps
 

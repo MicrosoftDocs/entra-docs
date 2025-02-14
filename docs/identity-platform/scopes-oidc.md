@@ -84,7 +84,7 @@ For a complete list of the `profile` claims available in the `id_tokens` paramet
 
 The [`offline_access` scope](https://openid.net/specs/openid-connect-core-1_0.html#OfflineAccess) gives your app access to resources on behalf of the user for an extended time. On the consent page, this scope appears as the **Maintain access to data you have given it access to** permission.
 
-When a user approves the `offline_access` scope, your app can receive refresh tokens from the Microsoft identity platform token endpoint. Refresh tokens are long-lived. Your app can get new access tokens as older ones expire.
+If any of the requested delegated permissions from the `scope` parameter (excluding `openid`, `profile`, `email`) are granted, this is sufficient for the app to request a refresh token using `offline_access`. For example, if `User.Read` for Microsoft is granted, the app will only recieve an access token. That said, if the app were to subsequently request a refresh token, the fact that `User.Read` had been granted is sufficient for a refresh token to be provided. Refresh tokens are long-lived. Your app can get new access tokens as older ones expire.
 
 > [!NOTE]
 > This permission currently appears on all consent pages, even for flows that don't provide a refresh token (such as the [implicit flow](v2-oauth2-implicit-grant-flow.md)). This setup addresses scenarios where a client can begin within the implicit flow and then move to the code flow where a refresh token is expected.
@@ -93,7 +93,7 @@ On the Microsoft identity platform (requests made to the v2.0 endpoint), your ap
 
 The access token is valid for around one hour. At that point, your app needs to redirect the user back to the `/authorize` endpoint to request a new authorization code. During this redirect and depending on app type, the user may need to enter their credentials again or consent to permissions again.
 
-The refresh token has a longer expiry than the access token and is valid for a day. For more information about how to get and use refresh tokens, see the [Microsoft identity platform protocol reference](./v2-protocols.md).
+The refresh token has a longer expiry than the access token and is typically valid for 90 days. For more information about how to get and use refresh tokens, see the [Microsoft identity platform protocol reference](./v2-protocols.md).
 
 The inclusion of the refresh token in the response can depend on several factors, including the specific configuration of your application and the scopes requested during the authorization process. If you expect to receive a refresh token in the response but fail to, consider the following factors:
 

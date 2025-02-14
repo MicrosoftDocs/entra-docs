@@ -36,7 +36,6 @@ If you don't have an Azure subscription, [create a free account](https://azure.m
 
 ## Turn on user creation for groups
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Browse to **Identity** > **Groups** > **All groups** and then select **General**.

@@ -121,6 +121,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/fundamentals/groups-view-azure-portal.md",
+      "redirect_url": "/entra/fundamentals/quickstart-create-group-add-members",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/fundamentals/licensing-preview-terms.md",
       "redirect_url": "/entra/fundamentals/licensing-preview-info",
       "redirect_document_id": false
@@ -400,6 +405,11 @@
       "redirect_url": "/entra/identity/saas-apps/pexip-service-mmv-legacy-app",
       "redirect_document_id": false
     },
+    {
+    "source_path_from_root": "/docs/identity/saas-apps/axiad-cloud-connector-tutorial.md",
+    "redirect_url": "/entra/identity/saas-apps/axiad-conductor-tutorial",
+    "redirect_document_id": false
+    }, 
     {
       "source_path_from_root": "/docs/identity/saas-apps/karlsgate-identity-exchange-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/karlsgate-identity-exchange-kie-sso-add-on-tutorial",
@@ -1444,7 +1454,7 @@
     },
     {
       "source_path_from_root": "/docs/identity/enterprise-apps/one-click-sso-tutorial.md",
-      "redirect_url": "/docs/identity/enterprise-apps/what-is-application-management",
+      "redirect_url": "/entra/identity/enterprise-apps/what-is-application-management",
       "redirect_document_id": false
     },
     {
@@ -1470,6 +1480,46 @@
     {
       "source_path_from_root": "/docs/identity/saas-apps/work-com-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/kallidus-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/veritas-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/services-id-authentication-support.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/managed-identities-status",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/license-users-groups.yml",
+      "redirect_url": "/docs/fundamentals/licensing",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/users/licensing-groups-assign.md",
+      "redirect_url": "/docs/fundamentals/licensing",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/users/licensing-groups-change-licenses.md",
+      "redirect_url": "/docs/fundamentals/licensing",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/users/licensing-groups-migrate-users.md",
+      "redirect_url": "/docs/fundamentals/licensing",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/users/licensing-groups-resolve-problems.md",
+      "redirect_url": "/docs/fundamentals/licensing",
       "redirect_document_id": false
     }
   ]

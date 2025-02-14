@@ -44,7 +44,6 @@ For more information, see [License requirements](entitlement-management-overview
 
 ## Step 1: Set up users and group
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 A resource directory has one or more resources to share. In this step, you create a group named **Marketing resources** in the Woodgrove Bank directory that is the target resource for entitlement management. You also set up an internal requestor.
 
@@ -61,7 +60,7 @@ A resource directory has one or more resources to share. In this step, you creat
     | **Admin1** | At least an Identity Governance Administrator. This user can be the user you're currently signed in. |
     | **Requestor1** | User |
 
-4. [Create a Microsoft Entra security group](~/fundamentals/how-to-manage-groups.yml) named **Marketing resources** with a membership type of **Assigned**. This group is the target resource for entitlement management. The group should be empty of members to start.
+4. [Create a Microsoft Entra security group](/entra/fundamentals/how-to-manage-groups) named **Marketing resources** with a membership type of **Assigned**. This group is the target resource for entitlement management. The group should be empty of members to start.
 
 
 ## Step 2: Create an access package

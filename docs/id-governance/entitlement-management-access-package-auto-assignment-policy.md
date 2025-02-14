@@ -29,7 +29,6 @@ You need to have attributes populated on the users who will be in scope for bein
 
 ## Create an automatic assignment policy
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 To create a policy for an access package, you need to start from the access package's policy tab. Follow these steps to create a new automatic assignment policy for an access package.
 

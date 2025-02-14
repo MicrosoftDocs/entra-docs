@@ -1,6 +1,6 @@
 ---
 title: Regional telecom restrictions
-description: To protect customers, some regions require a support ticket to request to opt in to receive MFA telephony verification Microsoft Entra ID and Micorsoft Azure B2C
+description: To protect customers, some regions require a support ticket to request to opt in to receive MFA telephony verification Microsoft Entra ID and Microsoft Azure B2C
 
 ms.service: entra-id
 ms.subservice: authentication
@@ -21,7 +21,7 @@ As a protection for our customers, Microsoft doesn't automatically support telep
 
 In today's digital world, telecommunication services have become ingrained into our lives. But, advancements come with a risk of fraudulent activities. International Revenue Share Fraud (IRSF) is a threat with severe financial implications that also makes using services more difficult. Let's look at IRSF fraud more in-depth.  
 
-IRSF is a type of telephony fraud where criminals exploit the billing system of telecommunication services providers to make profit for themselves. Bad actors gain unauthorized access to a telecommunication network and divert traffic to those networks to skim profit for every transaction that is sent to that network. To divert traffic, bad actors steal existing usernames and passwords, create new usernames and passwords, or try a host of other things to send text message messages and voice calls through their telecommunication network. Bad actors take advantage of multifactor authentication screens, which require a text message or voice call before a user can access their account. This activity causes exorbitant charges and makes services unreliable for our customers, causing downtime, and system errors.  
+IRSF is a type of telephony fraud where criminals exploit the billing system of telecommunication services providers to make profit for themselves. Bad actors gain unauthorized access to a telecommunication network and divert traffic to those networks to skim profit for every transaction that is sent to that network. To divert traffic, bad actors steal existing usernames and passwords, create new usernames and passwords, or try a host of other things to send text messages and voice calls through their telecommunication network. Bad actors take advantage of multifactor authentication screens, which require a text message or voice call before a user can access their account. This activity causes exorbitant charges and makes services unreliable for our customers, causing downtime, and system errors.  
 
 Here's how an IRSF attack may happen:  
 
@@ -37,32 +37,165 @@ IRSF poses a significant threat to online businesses and can cause reputational 
 
 For SMS verification, the following region codes require an opt-in. This means that if you'd like to use telecom in these regions, you'll have to reach out to support. 
 
-| Region Code | Region Name                                    |
-|:----------- |:---------------------------------------------- |
-| 222         |  Mauritania                                    |
-| 998         |  Uzbek                                         |
-| 63 | Philippines | 
-| 20 | Egypt | 
-| 967 | Yemen | 
-| 84 | Vietnam | 
-| 62 | Indonesia | 
-| 234 | Nigeria | 
-| 972 | Israel | 
-| 233 | Ghana | 
-| 92 | Pakistan | 
-| 966 | Saudi Arabia | 
-| 971 | United Arab Emriates | 
-| 94 | Sri Lanka | 
-| 258 | Mozambique | 
-| 502 | Guatemala | 
-| 974 | Qatar | 
-| 591 | Bolivia | 
-| 254 | Kenya | 
-| 255 | Tanzania | 
-| 7 | Russia / Kazakhstan | 
-| 380 | Ukraine | 
-| 216 | Tunisia | 
-| 212 | Morocco | 
+| Region Code | Region Name |
+|------------|------------|
+| 7          | Russia |
+| 20         | Egypt |
+| 53         | Cuba |
+| 58         | Venezuela |
+| 62         | Indonesia |
+| 63         | Philippines |
+| 84         | Vietnam |
+| 92         | Pakistan |
+| 93         | Afghanistan |
+| 94         | Sri Lanka |
+| 95         | Myanmar |
+| 98         | Iran |
+| 211        | South Sudan |
+| 212        | Morocco |
+| 213        | Algeria |
+| 216        | Tunisia |
+| 218        | Libya |
+| 220        | Gambia |
+| 221        | Senegal |
+| 222        | Mauritania |
+| 223        | Mali |
+| 224        | Guinea |
+| 225        | Cote d'Ivoire |
+| 226        | Burkina Faso |
+| 227        | Niger |
+| 228        | Togo |
+| 229        | Benin |
+| 231        | Liberia |
+| 232        | Sierra Leone |
+| 233        | Ghana |
+| 234        | Nigeria |
+| 235        | Chad |
+| 236        | Central African Republic |
+| 237        | Cameroon |
+| 238        | Cabo Verde |
+| 239        | São Tomé and Príncipe |
+| 240        | Equatorial Guinea |
+| 241        | Gabon |
+| 242        | Congo |
+| 243        | Congo |
+| 244        | Angola |
+| 245        | Guinea-Bissau |
+| 246        | British Indian Ocean Territory |
+| 247        | Ascension Island |
+| 248        | Seychelles |
+| 249        | Sudan |
+| 250        | Rwanda |
+| 251        | Ethiopia |
+| 252        | Somalia |
+| 253        | Djibouti |
+| 254        | Kenya |
+| 255        | Tanzania |
+| 256        | Uganda |
+| 257        | Burundi |
+| 258        | Mozambique |
+| 260        | Zambia |
+| 261        | Madagascar |
+| 262        | Mayotte |
+| 263        | Zimbabwe |
+| 265        | Malawi |
+| 266        | Lesotho |
+| 267        | Botswana |
+| 268        | Antigua and Barbuda |
+| 269        | Comoros |
+| 290        | Saint Helena, Ascension, and Tristan da Cunha |
+| 291        | Eritrea |
+| 297        | Aruba |
+| 299        | Greenland |
+| 350        | Gibraltar |
+| 355        | Albania |
+| 356        | Malta |
+| 359        | Bulgaria |
+| 370        | Lithuania |
+| 371        | Latvia |
+| 372        | Estonia |
+| 373        | Moldova |
+| 374        | Armenia |
+| 375        | Belarus |
+| 376        | Andorra |
+| 377        | Monaco |
+| 380        | Ukraine |
+| 381        | Serbia |
+| 382        | Montenegro |
+| 383        | Kosovo |
+| 385        | Croatia |
+| 386        | Slovenia |
+| 387        | Bosnia and Herzegovina |
+| 389        | North Macedonia |
+| 500        | Falkland Islands |
+| 501        | Belize |
+| 502        | Guatemala |
+| 503        | El Salvador |
+| 504        | Honduras |
+| 505        | Nicaragua |
+| 507        | Panama |
+| 508        | Saint Pierre and Miquelon |
+| 509        | Haiti |
+| 591        | Bolivia |
+| 592        | Guyana |
+| 593        | Ecuador |
+| 594        | French Guiana |
+| 597        | Suriname |
+| 598        | Uruguay |
+| 670        | Timor-Leste |
+| 672        | Antarctica |
+| 674        | Nauru |
+| 675        | Papua New Guinea |
+| 676        | Tonga |
+| 677        | Solomon Islands |
+| 678        | Vanuatu |
+| 681        | Wallis and Futuna |
+| 682        | Cook Islands |
+| 683        | Niue |
+| 685        | Samoa |
+| 686        | Kiribati |
+| 687        | New Caledonia |
+| 689        | French Polynesia |
+| 690        | Tokelau |
+| 691        | Micronesia |
+| 692        | Marshall Islands |
+| 856        | Laos |
+| 960        | Maldives |
+| 961        | Lebanon |
+| 962        | Jordan |
+| 963        | Syria |
+| 964        | Iraq |
+| 966        | Saudi Arabia |
+| 967        | Yemen |
+| 968        | Oman |
+| 971        | United Arab Emirates |
+| 972        | Israel |
+| 973        | Bahrain |
+| 974        | Qatar |
+| 975        | Bhutan |
+| 976        | Mongolia |
+| 977        | Nepal |
+| 992        | Tajikistan |
+| 993        | Turkmenistan |
+| 994        | Azerbaijan |
+| 995        | Georgia |
+| 996        | Kyrgyzstan |
+| 998        | Uzbekistan |
+| 1242       | Bahamas |
+| 1264       | Anguilla |
+| 1268       | Antigua and Barbuda |
+| 1284       | British Virgin Islands |
+| 1345       | Cayman Islands |
+| 1473       | Grenada |
+| 1649       | Turks and Caicos Islands |
+| 1664       | Montserrat |
+| 1721       | Sint Maarten |
+| 1758       | Saint Lucia |
+| 1809       | Dominica |
+| 1829       | Dominican Republic |
+| 1849       | Dominican Republic |
+| 1869       | Saint Kitts and Nevis |
+| 1876       | Jamaica |
 
 ## Voice verification
 For voice verification, the following region codes require an opt-in.
