@@ -65,7 +65,7 @@ To find the last sign-in time for a user, you can look at your user list in the 
 
 ### Investigate a single user
 
-If you need to view the latest sign-in activity for a user, you can view the user's sign-in details in Microsoft Entra ID. You can also use the Microsoft Graph **users by name** scenario described in the [previous section](#how-to-find-inactive-user-accounts).
+If you need to view the latest sign-in activity for a user, you can view the user's sign-in details in Microsoft Entra ID. You can also use the Microsoft Graph API described in the [Users by name section](#users-by-name).
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Users** > **All users**.
@@ -161,8 +161,11 @@ After you've identified inactive users, start by asking the following questions:
 
 How you address inactive users depends on your scenario, but cleaning up unused accounts or over-privileged accounts should be your priority to reduce security risks. The following features and options are a great place to start, but note that some of these features might require additional licensing.
 
-- Consider dynamic group membership to automatically add or remove users based on their user properties
-- Use Microsoft Entra ID Governance Access Reviews to audit your users' access
+- Consider dynamic membership group to automatically add or remove users from groups based on their user properties.
+    - [Create a dynamic membership group](../users/groups-create-rule.md)
+- Use Microsoft Entra ID Governance access reviews to audit your users' access.
+    - [What are access reviews?](../../id-governance/access-reviews-overview.md)
+    - [Review recommendations for access reviews](../../id-governance/review-recommendations-access-reviews.md)
 
 ## Related content
 
