@@ -84,7 +84,7 @@ dotnet add package Microsoft.Identity.Web.UI
 
 ## Configure the application for authentication
 
-The values recorded in your application setup are used to configure the application for authentication. The configuration file, *appsettings.json*, is used to store application settings used during run-time. As the application will also call into a web API, it must also contain a reference to it. 
+The values recorded in your application setup are used to configure the application for authentication. The configuration file, *appsettings.json*, is used to store application settings used during run-time.
 
 ### Update the configuration file
 
@@ -92,7 +92,37 @@ In your IDE, open *appsettings.json* and replace the file contents with the foll
   
 ### [Workforce tenant](#tab/workforce-tenant)
 
-:::code language="json" source="~/../ms-identity-docs-code-dotnet/web-app-aspnet/appsettings.json":::
+```json
+{
+  "AzureAd": {
+    "Instance": "https://login.microsoftonline.com/",
+    "TenantId": "Enter_the_Tenant_Id_Here",
+    "ClientId": "Enter_the_Application_Id_Here",
+    "ClientCertificates": [
+      {
+        "SourceType": "StoreWithThumbprint",
+        "CertificateStorePath": "CurrentUser/My",
+        "CertificateThumbprint": "Enter the certificate thumbprint obtained the Microsoft Entra admin center"
+      }   
+    ],
+    "CallbackPath": "/signin-oidc"
+  },
+    "DownstreamApi": {
+      "BaseUrl": "https://graph.microsoft.com/v1.0/",
+      "RelativePath": "me",
+      "Scopes": [ 
+        "user.read" 
+      ]
+    },
+    "Logging": {
+      "LogLevel": {
+        "Default": "Information",
+        "Microsoft.AspNetCore": "Warning"
+      }
+    },
+    "AllowedHosts": "*"
+  }
+```
 
 ### [External tenant](#tab/external-tenant)
 
