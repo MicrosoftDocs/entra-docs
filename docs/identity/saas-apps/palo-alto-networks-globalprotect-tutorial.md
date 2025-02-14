@@ -25,7 +25,7 @@ In this tutorial, you'll learn how to integrate Palo Alto Networks - GlobalProte
 
 ## Prerequisites
 
-To integrate Microsoft Entra ID with Bugcrowd, you need:
+To integrate Microsoft Entra ID with Palo Alto Networks - GlobalProtect, you need:
 
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * Palo Alto Networks - GlobalProtect single sign-on (SSO) enabled subscription.
