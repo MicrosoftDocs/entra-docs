@@ -102,7 +102,7 @@ Connect to `https://login.microsoftonline.com` and use the same credentials. Mak
 Select your user account, then **Directory Role** in the resulting menu. Verify that the selected role is **Application Administrator**. If you're unable to access any of the pages along these steps, you don't have the required role.
 
 >[!NOTE]
->You should be prompted for your administrator credentials during connector installation via a pop-up. If you don't receive a pop-up, ensure that your browser settings enable pop-ups and Javascript is enabled. During the next installation attempt, you'll be prompted to add sites to Trusted sites. After the sites are added to Trusted sites, re-run installation.
+>You should be prompted for your administrator credentials during connector installation via a pop-up. If you don't receive a pop-up, ensure that your browser settings enable pop-ups and JavaScript is enabled. During the next installation attempt, you'll be prompted to add sites to Trusted sites. After the sites are added to Trusted sites, re-run installation.
 
 ## Connector errors
 
@@ -145,9 +145,9 @@ This flowchart walks you through the steps for debugging some of the more common
 |10 | If issues persist, debug applications. | [Debug application proxy application issues](../identity/app-proxy/application-proxy-debug-apps.md). |
 
 ## Troubleshooting connector functionality
-If connector installation and registration is successful but you are unable to access private resources, check the following.
+If connector installation and registration are successful but you are unable to access private resources, check the following.
 
-- **Cloud Service connectivity failures**: Your connector might be having problems connecting to the Entra Private Access cloud service. While the connector's status on the Entra Portal might show as Active, the connector might still have problems connecting to the cloud service endpoints. Check with your networking team to see if there are failed connectivity attempts from the connector IP.
+- **Cloud Service connectivity failures**: Your connector might be having problems connecting to the Entra Private Access cloud service. While the connector's status on the Microsoft Entra admin center might show as Active, the connector might still have problems connecting to the cloud service endpoints. Check with your networking team to see if there are failed connectivity attempts from the connector IP.
 - **Failed to validate chain of certificate error**: This error appears in the connector advanced logging when the certificate chain for a Global Secure Access service certificate such as *.msappproxy.net fails to be validated. Often this occurs when there is a proxy server configured on MicrosoftEntraPrivateNetworkConnectorService.exe.config but there is not also a system proxy server configured. You can set the system proxy using netsh winhttp set proxy address:port.
 - **TLS inspection is configured**: TLS inspection is not supported on Private Network connector traffic. Attempting to perform TLS inspection on this traffic interferes with the connector's ability to connect to the Global Secure Access service and therefore interferes with its ability to service Private Access requests. Ensure the network devices allowing Internet access to your private network connector don't perform TLS inspection.
 - **Proxy server exists between connector and resource**: The connector requires line of sight connectivity to the resource and cannot function if there is a proxy server between the connector and the resource. To confirm, test connectivity from the connector to the resource you've defined in your Global Secure Access application, such as file share or RDP server, to ensure the connector can access the resource. If you cannot connect to the resource from the connector server, you will need to resolve the network connectivity issue between the connector and the resource which may include relocating the connector to a network location with line of sight access to the resource.
@@ -225,7 +225,7 @@ The connector isn't required to be on the same subnet. However, it needs name re
     
 **Why is the connector still showing in Microsoft Entra admin center after I uninstalled the connector from the Server?**
 
-When a connector is running, it remains active as it connects to the service. Uninstalled or unused connectors are tagged as inactive and are removed after 10 days of inactivity from the portal. There is no way to remove the Inactive connector manually from the Microsoft Entra admin center.
+When a connector is running, it remains active as it connects to the service. Uninstalled or unused connectors are tagged as inactive and are removed after 10 days of inactivity from the Microsoft Entra admin center. There is no way to remove the Inactive connector manually from the Microsoft Entra admin center.
 
 ## Next steps
 - [Understand Microsoft Entra private network connectors](concept-connectors.md)
