@@ -155,3 +155,13 @@ Find the field for this and fill in you email.
 
 1. Wait for about 40 minutes.
 1. Make sure that users and groups are created in Infobric Equipment.
+
+## Step 11: Connect Entra groups to Equipment admins rights, teams and departments
+
+1. Return to the Microsoft Entra user provisioning settings via Admin > Settings and click **Manage Entra groups**.
+
+   ![Screenshot of Start provisioning.](./media/infobric-equipment-provisioning-tutorial/manage-entra-groups-button.png)
+
+2. Choose admin level, department and team for each group, if applicable.
+
+   ![Screenshot of Start provisioning.](./media/infobric-equipment-provisioning-tutorial/manage-entra-groups.png)
