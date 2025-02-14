@@ -8,7 +8,7 @@ ms.assetid: 05f16c3e-9d23-45dc-afca-3d0fa9dbf501
 ms.service: entra-id
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 12/19/2024
+ms.date: 02/13/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 search.appverid:
@@ -123,7 +123,7 @@ After the *CloudPasswordPolicyForPasswordSyncedUsersEnabled* feature is enabled,
 >[!TIP]
 >It's recommended to enable *CloudPasswordPolicyForPasswordSyncedUsersEnabled* prior to enabling password hash sync, so that the initial sync of password hashes doesn't add the `DisablePasswordExpiration` value to the PasswordPolicies attribute for the users.
 
-The default Microsoft Entra password policy requires users to change their passwords every 90 days. If your policy in AD is also 90 days, the two policies should match. However, if the AD policy isn't 90 days, you can update the Microsoft Entra password policy to match by using the Update-MgDomain PowerShell command.
+The default Microsoft Entra password policy doesn't require users to change their passwords. If the policy in your on-premises Active Directory is different, you can update the Microsoft Entra password policy to match by using the Update-MgDomain PowerShell command.
 
 Microsoft Entra ID supports a separate password expiration policy per registered domain.
 
