@@ -32,7 +32,7 @@ This article outlines the best practices for protecting frontline workers across
 
 There are three main device types used by frontline workers in most scenarios:
 
-- **Shared devices:** These are devices company-owned devices that are shared between employees across tasks, shifts, or locations. 
+- **Shared devices:** These are company-owned devices that are shared between employees across tasks, shifts, or locations. 
 
 - **Bring Your Own Device(BYOD):** Some organizations use a bring-your-own-device model where frontline workers use their personal devices to access business apps.
 
