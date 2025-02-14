@@ -5,7 +5,7 @@ description: Microsoft-managed policies take action to require multifactor authe
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 12/05/2024
+ms.date: 02/14/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -51,21 +51,9 @@ Based on Microsoft's analysis more than 99 percent of password spray attacks use
 
 ### Block device code flow
 
+This policy blocks device code flow, where a user initiates authentication on one device, completes on another, and their token is sent back to the original device. This type of authentication is common where users have limited ability to enter their credentials, like smart TVs, Microsoft Teams Room devices, IoT devices, or printers.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Device code flow is infrequently used by customers, but is frequently used by attackers. Enabling this Microsoft managed policy for your organization helps remove this attack vector.
 
 ### Multifactor authentication for admins accessing Microsoft Admin Portals
 
@@ -182,7 +170,7 @@ Administrators might choose to make further changes to these policies by duplica
 
 Multifactor authentication completed using [external authentication methods](/entra/identity/authentication/how-to-authentication-external-method-manage) satisfies the MFA requirements of the Microsoft-managed policies.
 
-When multifactor authentication is completed via a federated identity provider (IdP) it might satisfy Microsoft Entra ID MFA requirements depending on your configuration. For more information, see [Satisfy Microsoft Entra ID multifactor authentication (MFA) controls with MFA claims from a federated IdP](/entra/identity/authentication/how-to-mfa-expected-inbound-assertions).
+When multifactor authentication is completed via a federated identity provider (IdP), it might satisfy Microsoft Entra ID MFA requirements depending on your configuration. For more information, see [Satisfy Microsoft Entra ID multifactor authentication (MFA) controls with MFA claims from a federated IdP](/entra/identity/authentication/how-to-mfa-expected-inbound-assertions).
 
 ### What if I use Certificate-Based Authentication?
 
