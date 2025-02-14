@@ -54,9 +54,11 @@ First, create an enterprise application in Microsoft Entra, which enables Micros
 
 1. In the **Manage** section of the left menu, select **Single sign-on** to open the **Single sign-on** pane for editing.
 1. Select **SAML** to open the SSO configuration page.
-1. In the **Basic SAML configuration** box, select **Edit**.
-1. In the Basic SAML configuration, under **Identifier (Entity ID)**, if there's no identifier listed, select **Add identifier**. Type the identifier for the application as provided by the relying party STS. For example, the identifier may be a URL of the form `http://{hostname.domain}/adfs/services/trust`.
-1. In the Basic SAML configuration, under **Reply URL (Assertion Consumer Service URL)**, select **Add reply URL**. Type the HTTPS URL of the relying party STS Assertion Consumer Service. For example, the URL may be of the form `https://{hostname.domain}/adfs/ls/`.
+1. In the **Basic SAML configuration** box, select **Edit**. The identifier and reply URL must be set before further SAML configuration changes can be made.
+    :::image type="content" source="media/add-application-portal-setup-sso-rpsts/basic-saml-configuration.png" alt-text="Screenshot showing the required basic SAML configuration for single sign-on for an enterprise application.":::
+
+1. In the Basic SAML configuration page, under **Identifier (Entity ID)**, if there's no identifier listed, select **Add identifier**. Type the identifier for the application as provided by the relying party STS. For example, the identifier may be a URL of the form `http://{hostname.domain}/adfs/services/trust`.
+1. In the Basic SAML configuration page, under **Reply URL (Assertion Consumer Service URL)**, select **Add reply URL**. Type the HTTPS URL of the relying party STS Assertion Consumer Service. For example, the URL may be of the form `https://{hostname.domain}/adfs/ls/`.
 1. Optionally, configure the **sign on**, **relay state**, or **logout** URLs, if required by the relying party STS.
 1. Select **Save**.
 
@@ -64,9 +66,13 @@ First, create an enterprise application in Microsoft Entra, which enables Micros
 
 Your relying party STS may require the federation metadata from Microsoft Entra as the identity provider in order to complete the configuration. The federation metadata and associated certificates are provided in the **SAML Certificates** section of the **Basic SAML configuration** page. For more information, see [federation metadata](~/identity-platform/federation-metadata.md).
 
+:::image type="content" source="media/add-application-portal-setup-sso-rpsts/saml-certificates.png" alt-text="Screenshot showing the SAML signing certificates and federation metadata download options for an enterprise application.":::
+
 - If your relying party STS can download federation metadata from an Internet endpoint, then copy the value next to the **App Federation Metadata Url**.
 - If your relying party STS requires a local XML file containing the federation metadata, then select **Download** next to **Federation Metadata XML**.
 - If your relying party STS requires the certificate of the identity provider, then select **Download** next to either the **Certificate (Base64)** or **Certificate (Raw)**.
+- If your relying party STS does not support federation metadata, then copy the **Login URL** and **MIcrosoft Entra Identifier** to configure your relying party STS.
+  :::image type="content" source="media/add-application-portal-setup-sso-rpsts/saml-identifiers.png" alt-text="Screenshot showing the Microsoft Entra Login URL and identifier for an enterprise application.":::
 
 ## Configure claims issued by Microsoft Entra
 
