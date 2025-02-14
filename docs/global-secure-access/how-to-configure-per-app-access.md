@@ -130,7 +130,7 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
 > [!NOTE]
 > You can add up to 500 application segments to your app.
 >
-> Do not overlap FQDNs, IP addresses, and IP ranges between your Quick Access app and any Private Access apps.
+> Do not overlap FQDNs, IP addresses, and IP ranges between any Private Access apps.
 
 ## Assign users and groups
 
