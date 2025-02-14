@@ -21,6 +21,8 @@ In this article, you use the Microsoft Entra admin center to enable single sign-
 
 :::image type="content" source="media/add-application-portal-setup-sso-rpsts/saml-topology.png" alt-text="Diagram showing the trust relationship between an application, a relying party STS, and Microsoft Entra ID as an identity provider.":::
 
+If your application will integrate directly with Microsoft Entra for single sign-on, and does not require a relying party Security Token Service (STS), then see the article [Enable single sign-on for an enterprise application](add-application-portal-setup-sso.md).
+
 We recommend that you use a nonproduction environment to test the steps in this article, before configuring an application in a production tenant.
 
 ## Prerequisites
@@ -72,7 +74,7 @@ By default, only a few attributes from Microsoft Entra users are included in the
 
 1. In the **Attributes & Claims** box, select **Edit**.
 1. To change which Entra ID attribute is sent as the value of the Name identifier, select the row **Unique User Identifier (Name ID)**. You can change the source attribute to another Microsoft Entra built-in or extension attribute. Then select **Save**.
-1. To change which Entra ID attribute is sent as the value of a claim already configured, select the row in the **Additional claims** section.  
+1. To change which Entra ID attribute is sent as the value of a claim already configured, select the row in the **Additional claims** section.
 1. To add a new claim, select **Add new claim**.
 1. When complete, select **SAML-based Sign-on** to close this screen.
 
