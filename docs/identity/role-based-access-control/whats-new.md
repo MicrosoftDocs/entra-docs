@@ -31,9 +31,9 @@ This article provides information about new features and documentation improveme
 | October 2024 | Roles | Several updates to least privileged roles. See [Least privileged roles by task in Microsoft Entra ID](delegate-by-task.md). |
 | October 2024 | Microsoft Graph API | Recommendation to use the [unified RBAC APIs](/graph/api/rbacapplication-post-roleassignments) instead of the [directory role APIs](/graph/api/directoryrole-post-members). See [Assign Microsoft Entra roles](manage-roles-portal.md?tabs=ms-graph). |
 | September 2024 | Roles | Updated permissions for multiple roles. See [Microsoft Entra built-in roles](permissions-reference.md). |
-| August 2024 | Roles | Update guidance and permission for [Directory Synchronization Accounts](permissions-reference.md#directory-synchronization-accounts) role. |
+| August 2024 | Roles | Updated guidance and permission for [Directory Synchronization Accounts](permissions-reference.md#directory-synchronization-accounts) role. |
 | July 2024 | Microsoft Graph API | Deprecated the `Directory.Write.Restricted` permission. |
-| July 2024 | Administrative units | Updated [permissions to crete a new group](/graph/api/administrativeunit-post-members#permissions-to-create-a-new-group). |
+| July 2024 | Administrative units | Updated permissions to create a new group in an administrative unit. See [Permissions to create a new group](/graph/api/administrativeunit-post-members#permissions-to-create-a-new-group). |
 | June 2024 | Roles | New [User Experience Success Manager](permissions-reference.md#user-experience-success-manager) role. |
 | May 2024 | Roles | New [SharePoint Embedded Administrator](permissions-reference.md#sharepoint-administrator) role. |
 | May 2024 | Roles | New [Teams Telephony Administrator](permissions-reference.md#teams-telephony-administrator) role. |
