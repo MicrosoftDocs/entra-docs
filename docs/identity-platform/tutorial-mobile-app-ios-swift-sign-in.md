@@ -406,7 +406,7 @@ Next, also inside the `ViewController` class, replace the `viewDidLoad()` method
 > [!div class="nextstepaction"] 
 > [Tutorial: Call a protected web API in iOS (Swift) app](tutorial-mobile-app-ios-swift-sign-in-call-api.md).
 
-:::end-zone
+::: end-zone
 
 
 ::: zone pivot="external"
@@ -670,4 +670,4 @@ The code verifies the existence of the `applicationContext`, `currentAccount`, a
 > [!div class="nextstepaction"] 
 > [Tutorial: Call a protected web API in iOS (Swift) app](tutorial-mobile-app-ios-swift-sign-in-call-api.md).
 
-:::end-zone
+::: end-zone
