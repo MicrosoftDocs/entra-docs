@@ -16,6 +16,13 @@ ms.reviewer: lhuangnorth
 
 Block or limit access to SharePoint, OneDrive, and Exchange content from unmanaged devices.
 
+1. This policy is needed to block or limit access to a specific SharePoint site or OneDrive.
+[Block or limit access to a specific SharePoint site or OneDrive](https://learn.microsoft.com/en-us/sharepoint/control-access-from-unmanaged-devices#block-or-limit-access-to-a-specific-sharepoint-site-or-onedrive)
+1. This policy is needed to limit access to email attachments in Outlook on the web and the new Outlook for Windows.
+[Limit access to email attachments in Outlook on the web and the new Outlook for Windows](https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-identity-device-access-policies-exchange?view=o365-worldwide#limit-access-to-exchange-online-from-outlook-on-the-web)
+1. This policy is needed to enforce idle session timeout only on unmanaged devices.
+[Idle session timeout on unmanaged devices](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/idle-session-timeout-web-apps?view=o365-worldwide#idle-session-timeout-on-unmanaged-devices)
+
 ## User exclusions
 [!INCLUDE [active-directory-policy-exclusions](~/includes/entra-policy-exclude-user.md)]
 
