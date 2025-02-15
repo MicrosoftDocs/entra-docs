@@ -29,13 +29,13 @@ prerequisites:
     - [Learn about role based access control](/azure/role-based-access-control/rbac-and-directory-admin-roles)
     - [Explore the Azure built-in roles](~/identity/role-based-access-control/permissions-reference.md)
 
-    To use Privileged Identity Management, you must have a Microsoft Entra ID P2 or Microsoft Entra ID Governance license. For more information on licensing, see [Microsoft Entra ID Governance licensing fundamentals](../../id-governance/licensing-fundamentals.md).
+    To use Privileged Identity Management, you must have a Microsoft Entra ID P2 or Microsoft Entra ID Governance license. For more information on licensing, see [Microsoft Entra ID Governance licensing fundamentals](../id-governance/licensing-fundamentals.md).
 
 procedureSection:
   - title: |
       Assign roles
     summary: |
-      If you need to assign a role directly to a user, you select the user, choose the role, and adjust the settings. While it might be necessary for one-off scenarios, we recommend using groups to manage role assignments at scale. For more information, see [Use group to manage role assignments](../identity/role-based-access-control/groups-concept.md)
+      If you need to assign a role directly to a user, you select the user, choose the role, and adjust the settings. While assigning roles directly to users might be necessary for one-off scenarios, consider using groups to manage role assignments at scale. For more information, see [Use group to manage role assignments](../identity/role-based-access-control/groups-concept.md)
       
       Eligible roles are assigned to a user but must be elevated Just-In-Time by the user through Privileged Identity Management (PIM). For more information about how to use PIM, see [Privileged Identity Management](~/id-governance/privileged-identity-management/index.yml).
     steps: 
