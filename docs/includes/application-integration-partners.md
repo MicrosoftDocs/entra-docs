@@ -1,4 +1,3 @@
-![image](https://github.com/user-attachments/assets/b75a164e-1c59-43fb-a8c0-19c7b67d095e)---
 title: Include file for application integration partners
 description: Include file for application integration partners for identity and access management (IAM), and for identity governance and administration (IGA), using the System for Cross Domain Identity Management (SCIM) protocol to reach more systems. These systems include Enterprise Resource Planning (ERP), Electronic Health Record (EHR), and Human Capital Management (HCM) applications. Partners also have integrations with applications that use the Lightweight Directory Access Protocol (LDAP), or that require integration with software development kits (SDKs).
 author: markwahl-msft
