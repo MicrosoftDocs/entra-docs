@@ -22,5 +22,5 @@ The following articles have guidance for client and service applications for a s
 - [Increase the resilience of authentication and authorization in daemon applications you develop](resilience-daemon-app.md)
 - [Build resilience in your identity and access management infrastructure](resilience-in-infrastructure.md)
 - [Build resilience in your customer identity and access management with Azure AD B2C](resilience-b2c.md)
-- [Building application support for the backup authentication system](backup-authentication-service-apps.md)
+- [Building application support for the backup authentication system](backup-authentication-system-apps.md)
 - [Build services that are resilient to Microsoft Entra ID OpenID Connect metadata refresh](~/identity-platform/howto-build-services-resilient-to-metadata-refresh.md)
