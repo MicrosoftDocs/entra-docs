@@ -27,7 +27,7 @@ This article provides information about new features and documentation improveme
 | January 2025 | Role assignments | Updated instructions for how to list, add, and remove role assignments. See [List Microsoft Entra role assignments](view-assignments.md), [Assign Microsoft Entra roles](manage-roles-portal.md), and [Remove Microsoft Entra role assignments](groups-remove-assignment.md). |
 | January 2025 | Custom roles | Updated instructions for how to create custom roles. See [Create a custom role in Microsoft Entra ID](custom-create.md). |
 | January 2025 | Roles | Updated per-user multifactor authentication (MFA) in comparison table. See [Compare authentication roles](privileged-roles-permissions.md#compare-authentication-roles). |
-| January 2025 | My Staff | Updated limit for My Staff and administrative units. See [](my-staff-configure.md#limitations). |
+| January 2025 | My Staff | Updated limit for My Staff and administrative units. See [Manage your users with My Staff](my-staff-configure.md#limitations). |
 
 ## 2024
 
