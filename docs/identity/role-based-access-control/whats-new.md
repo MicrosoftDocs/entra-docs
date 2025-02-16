@@ -16,7 +16,7 @@ ms.author: rolyon
 
 This article provides information about new features and documentation improvements in Microsoft Entra role-based access control (RBAC).
 
-## Changes
+## 2025
 
 | Date | Area | Description |
 | --- | --- | --- |
@@ -26,6 +26,13 @@ This article provides information about new features and documentation improveme
 | January 2025 | Roles | Updated permissions for multiple roles. See [Microsoft Entra built-in roles](permissions-reference.md). |
 | January 2025 | Role assignments | Updated instructions for how to list, add, and remove role assignments. See [List Microsoft Entra role assignments](view-assignments.md), [Assign Microsoft Entra roles](manage-roles-portal.md), and [Remove Microsoft Entra role assignments](groups-remove-assignment.md). |
 | January 2025 | Custom roles | Updated instructions for how to create custom roles. See [Create a custom role in Microsoft Entra ID](custom-create.md). |
+| January 2025 | Roles | Updated per-user multifactor authentication (MFA) in comparison table. See [Compare authentication roles](privileged-roles-permissions.md#compare-authentication-roles). |
+| January 2025 | My Staff | Updated limit for My Staff and administrative units. See [Manage your users with My Staff](my-staff-configure.md#limitations). |
+
+## 2024
+
+| Date | Area | Description |
+| --- | --- | --- |
 | November 2024 | Roles | New [AI Administrator](permissions-reference.md#ai-administrator) role. |
 | October 2024 | Administrative units | General availability of dynamic administrative units. See [Manage users or devices for an administrative unit with rules for dynamic membership groups](admin-units-members-dynamic.md). |
 | October 2024 | Roles | Several updates to least privileged roles. See [Least privileged roles by task in Microsoft Entra ID](delegate-by-task.md). |
