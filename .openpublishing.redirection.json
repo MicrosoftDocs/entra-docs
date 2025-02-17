@@ -725,8 +725,7 @@
       "redirect_url": "/entra/identity-platform/tutorial-web-app-python-flask-sign-in-out?tabs=workforce-tenant",
       "redirect_document_id": false
     },
-    {
-      "source_path_from_root": "/docs/external-id/customers/reference-native-authentication-email-password.md",
+    {"source_path_from_root": "/docs/identity-platform/reference-native-authentication-email-password.md",
       "redirect_url": "/entra/identity-platform/reference-native-authentication-api",
       "redirect_document_id": false
     },
