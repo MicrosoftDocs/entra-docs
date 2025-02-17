@@ -2,7 +2,7 @@
 title: 'Tutorial: Microsoft Entra SSO integration with Agile Provisioning'
 description: Learn how to configure single sign-on between Microsoft Entra ID and Agile Provisioning.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id

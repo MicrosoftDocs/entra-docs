@@ -2,7 +2,7 @@
 title: 'Tutorial: Configure DocuSign for automatic user provisioning with Microsoft Entra ID| Microsoft Docs'
 description: Learn how to configure single sign-on between Microsoft Entra ID and DocuSign.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps

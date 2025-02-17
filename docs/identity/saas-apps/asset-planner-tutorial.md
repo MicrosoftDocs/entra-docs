@@ -2,7 +2,7 @@
 title: 'Tutorial: Microsoft Entra SSO integration with Asset Planner'
 description: Learn how to configure single sign-on between Microsoft Entra ID and Asset Planner.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
@@ -10,7 +10,7 @@ ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Asset Planner so that I can control who has access to Asset Planner, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
