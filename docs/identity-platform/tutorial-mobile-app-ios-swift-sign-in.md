@@ -404,7 +404,7 @@ Next, also inside the `ViewController` class, replace the `viewDidLoad()` method
 ## Next steps
 
 > [!div class="nextstepaction"] 
-> [Tutorial: Call a protected web API in iOS (Swift) app](tutorial-mobile-app-ios-swift-sign-in-call-api.md).
+> [Tutorial: Call a protected web API in iOS (Swift) app](tutorial-mobile-app-ios-swift-sign-in-call-api.md)
 
 ::: zone-end
 
@@ -526,7 +526,7 @@ You have two main options for signing in users using Microsoft Authentication Li
             }
             
             // If testing with Microsoft's shared device mode, see the account that has been signed out from another app. More details here:
-            // https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-ios-shared-devices
+            // https://docs.microsoft.com/azure/active-directory/develop/msal-ios-shared-devices
             if let previousAccount = previousAccount {
                 
                 self.updateLogging(text: "The account with username \(String(describing: previousAccount.username)) has been signed out.")
@@ -639,7 +639,7 @@ To sign out a user from your iOS (Swift) app using MSAL for iOS, use the followi
             let signoutParameters = MSALSignoutParameters(webviewParameters: webViewParamaters)
             
             // If testing with Microsoft's shared device mode, trigger signout from browser. More details here:
-            // https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-ios-shared-devices
+            // https://docs.microsoft.com/azure/active-directory/develop/msal-ios-shared-devices
             
             if (self.currentDeviceMode == .shared) {
                 signoutParameters.signoutFromBrowser = true
@@ -668,6 +668,6 @@ The code verifies the existence of the `applicationContext`, `currentAccount`, a
 ## Next steps
 
 > [!div class="nextstepaction"] 
-> [Tutorial: Call a protected web API in iOS (Swift) app](tutorial-mobile-app-ios-swift-sign-in-call-api.md).
+> [Tutorial: Call a protected web API in iOS (Swift) app](tutorial-mobile-app-ios-swift-sign-in-call-api.md)
 
 ::: zone-end

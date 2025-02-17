@@ -59,7 +59,7 @@ To specify your app type to your app registration, follow these steps:
 ## Next steps
 
 > [!div class="nextstepaction"] 
-> [Tutorial: Prepare your iOS app for authentication](tutorial-mobile-app-ios-swift-prepare-app.md).
+> [Tutorial: Prepare your iOS app for authentication](tutorial-mobile-app-ios-swift-prepare-app.md)
 
 ::: zone-end
 
@@ -105,6 +105,6 @@ In this tutorial, you:
 ## Next steps
 
 > [!div class="nextstepaction"] 
-> [Tutorial: Prepare your iOS app for authentication](tutorial-mobile-app-ios-swift-prepare-app.md).
+> [Tutorial: Prepare your iOS app for authentication](tutorial-mobile-app-ios-swift-prepare-app.md)
 
 ::: zone-end

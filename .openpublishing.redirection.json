@@ -1844,7 +1844,7 @@
     },
     {
       "source_path_from_root": "/docs/identity-platform/tutorial-v2-ios.md",
-      "redirect_url": "/entra/identity-platform/tutorial-mobile-app-ios-swift-prepare-tenant&pivots=workforce",
+      "redirect_url": "/entra/identity-platform/tutorial-mobile-app-ios-swift-prepare-tenant?&pivots=workforce",
       "redirect_document_id": false
     },
     {
