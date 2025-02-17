@@ -26,7 +26,7 @@ In this tutorial:
 
 ## Prerequisites
 
-* Completion of the prerequisites and steps in [Tutorial: Prepare an application for authentication](tutorial-single-page-app-react-prepare-spa.md).
+* Completion of the prerequisites and steps in [Tutorial: Prepare an application for authentication](tutorial-single-page-app-react-prepare-app.md).
 
 ### Add the page layout component
 

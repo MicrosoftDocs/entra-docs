@@ -163,7 +163,7 @@
               - name: Register your app
                 href: tutorial-single-page-app-react-register-app.md
               - name: Prepare your app
-                href: tutorial-single-page-app-react-prepare-spa.md
+                href: tutorial-single-page-app-react-prepare-app.md
               - name: Add sign in and sign out
                 href: tutorial-single-page-app-react-sign-in-users.md
               - name: Get user data from web API
