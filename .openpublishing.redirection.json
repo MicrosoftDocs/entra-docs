@@ -691,7 +691,7 @@
       "redirect_document_id": false
     }, 
     {
-      "source_path_from_root": "/docs/identity-platform/reference-native-authentication-email-password.md",
+      "source_path_from_root": "/docs/identity-platform/tutorial-web-app-python-call-api.md",
       "redirect_url": "/entra/identity-platform/tutorial-web-app-python-flask-call-microsoft-graph-api?tabs=workforce-tenant",
       "redirect_document_id": false
     },
@@ -711,7 +711,7 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "docs/external-id/customers/tutorial-web-app-python-flask-sign-in-sign-out.md",
+      "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-python-flask-sign-in-sign-out.md",
       "redirect_url": "/entra/identity-platform/tutorial-web-app-python-flask-sign-in-out?tabs=external-tenant",
       "redirect_document_id": false
     },
