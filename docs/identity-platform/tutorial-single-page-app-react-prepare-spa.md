@@ -1,10 +1,10 @@
 ---
-title: "Tutorial: Prepare an application for authentication"
-description: Register a tenant application and configure it for a React SPA.
+title: "Tutorial: Prepare a React single-page application for authentication"
+description: Learn how to prepare a React single-page app (SPA) for authentication using the Microsoft identity platform.
 author: OwenRichards1
 manager: CelesteDG
-ms.author: owenrichards
-ms.date: 01/31/2024
+ms.author:owenrichards
+ms.date: 02/17/2025
 ms.service: identity-platform
 
 ms.topic: tutorial
@@ -13,23 +13,48 @@ ms.topic: tutorial
 
 # Tutorial: Create a React single-page application and prepare it for authentication
 
-After registration is complete, a React project can be created using an integrated development environment (IDE). This tutorial demonstrates how to create a single-page React application using `npm` and create files needed for authentication and authorization.
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
 
-In this tutorial:
+In this tutorial you'll build a React single-page application (SPA) and prepare it for authentication using the Microsoft identity platform. This tutorial demonstrates how to create a React SPA using `npm`, create files needed for authentication and authorization and add your tenant details to the source code. The application can be used for employees in a workforce tenant or for customers using an external tenant.
+
+In this tutorial, you'll:
 
 > [!div class="checklist"]
 > * Create a new React project
-> * Configure the settings for the application
-> * Install identity and bootstrap packages
-> * Add authentication code to the application
+> * Install packages required for authentication
+> * Create your file structure and add code to the server file
+> * Add your tenant details to the authentication configuration file
 
 ## Prerequisites
 
-* Completion of the prerequisites and steps in [Tutorial: Register an application](tutorial-single-page-app-react-register-app.md).
-* Although any IDE that supports React applications can be used, the following Visual Studio IDEs are used for this tutorial. They can be downloaded from the [Downloads](https://visualstudio.microsoft.com/downloads) page. For macOS users, it's recommended to use Visual Studio Code.
-  - Visual Studio 2022
-  - Visual Studio Code
+* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
+  * Application Administrator
+  * Application Developer
+  * Cloud Application Administrator.
 * [Node.js](https://nodejs.org/en/download/).
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
+
+### [Workforce tenant](#tab/workforce-tenant)
+
+* A workforce tenant. You can use your [Default Directory](quickstart-create-new-tenant.md) or set up a new tenant.
+* Register a new app in the Microsoft Entra admin center with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
+    * **Name**: identity-client-spa
+    * **Supported account types**: *Accounts in this organizational directory only (Single tenant).*
+    * **Platform configuration**: Single-page application (SPA).
+    * **Redirect URI**: `http://localhost:3000/`.
+
+### [External tenant](#tab/external-tenant)
+
+* An external tenant. To create one, choose from the following methods:
+  * (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/tutorials/marketplace) to set up an external tenant directly in Visual Studio Code.
+  * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details) in the Microsoft Entra admin center.
+* Register a new app in the Microsoft Entra admin center with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
+    * **Name**: identity-client-spa
+    * **Supported account types**: *Accounts in this organizational directory only (Single tenant).*
+    * **Platform configuration**: Single-page application (SPA).
+    * **Redirect URI**: `http://localhost:3000/`.
+* Associate your app with a user flow in the Microsoft Entra admin center. For more information, see [Create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) and [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
 
 ## Create a new React project
 
