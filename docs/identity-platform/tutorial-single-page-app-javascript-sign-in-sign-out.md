@@ -287,7 +287,7 @@ A message appears indicating that you have signed out. You can now close the bro
 ## Related content
 
 - [Quickstart: Protect an ASP.NET Core web API with the Microsoft identity platform](./quickstart-web-api-aspnet-core-protect-api.md).
-- [Learn more by building a React SPA that signs in users in the following multi-part tutorial series](./tutorial-single-page-app-react-register-app.md).
+- [Learn more by building a React SPA that signs in users in the following multi-part tutorial series](./tutorial-single-page-app-react-prepare-app.md).
 - [Enable password reset](../external-id/customers/how-to-enable-password-reset-customers.md).
 - [Customize the default branding](../external-id/customers/how-to-customize-branding-customers.md).
 - [Configure sign-in with Google](../external-id/customers/how-to-google-federation-customers.md).
