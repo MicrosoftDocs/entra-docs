@@ -689,11 +689,7 @@
       "source_path_from_root": "/docs/identity-platform/reference-native-authentication-email-otp.md",
       "redirect_url": "/entra/identity-platform/reference-native-authentication-api",
       "redirect_document_id": false
-    },
-    tutorial-mobile-app-ios-swift-prepare-tenant?&pivots=workforce
-    https://review.learn.microsoft.com/en-us/entra/identity-platform/?branch=pr-en-us-6908
-    https://review.learn.microsoft.com/en-us/entra/identity-platform/?branch=pr-en-us-6908
-    https://review.learn.microsoft.com/en-us/entra/identity-platform/tutorial-web-app-python-register-app?branch=pr-en-us-6908
+    }, 
     {
       "source_path_from_root": "/docs/identity-platform/tutorial-web-app-python-call-api.md",
       "redirect_url": "/entra/identity-platform/tutorial-web-app-python-flask-call-microsoft-graph-api?tabs=workforce-tenant",
