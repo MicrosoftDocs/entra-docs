@@ -229,13 +229,13 @@ items:
             - name: iOS
               items:
                 - name: Prepare tenant
-                  href: tutorial-mobile-app-ios-swift-prepare-tenant.md
+                  href: /entra/identity-platform/tutorial-mobile-app-ios-swift-prepare-tenant?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
                 - name: Prepare app
-                  href: tutorial-mobile-app-ios-swift-prepare-app.md
+                  href: /entra/identity-platform/tutorial-mobile-app-ios-swift-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
                 - name: Sign in users
-                  href: tutorial-mobile-app-ios-swift-sign-in.md
+                  href: /entra/identity-platform/tutorial-mobile-app-ios-swift-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
                 - name: Call an API
-                  href: tutorial-mobile-app-ios-swift-sign-in-call-api.md
+                  href: /entra/identity-platform/tutorial-mobile-app-ios-swift-sign-in-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
         - name: Native authentication
           items:
             - name: Android (Kotlin)
