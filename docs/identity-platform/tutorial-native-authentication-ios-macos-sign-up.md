@@ -17,7 +17,9 @@ ms.custom: developer
 
 # Tutorial: Add sign-up in an iOS/macOS app using native authentication
 
-[!INCLUDE [applies-to-ios-macOS](../includes/applies-to-ios-macos.md)]
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
+[!INCLUDE [applies-to-ios-macOS](../external-id/includes/applies-to-ios-macos.md)]
 
 This tutorial demonstrates how to sign up a user using email one-time passcode or username (email) and password, and collects user attributes in your iOS/macOS app using native authentication.
 
@@ -30,7 +32,7 @@ This tutorial demonstrates how to sign up a user using email one-time passcode o
 ## Prerequisites 
 
 - [Tutorial: Prepare your iOS/macOS app for native authentication](tutorial-native-authentication-prepare-ios-macos-app.md).
-- If you want to collect user attributes during sign-up, configure the user attributes when you [create your sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
+- If you want to collect user attributes during sign-up, configure the user attributes when you [create your sign-up and sign-in user flow](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md).
 
 ## Sign up a user
 

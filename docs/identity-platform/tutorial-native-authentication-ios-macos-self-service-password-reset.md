@@ -17,7 +17,9 @@ ms.custom: developer
 
 # Tutorial: Self-service password reset in iOS/macOS app
 
-[!INCLUDE [applies-to-ios-macOS](../includes/applies-to-ios-macos.md)]
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
+[!INCLUDE [applies-to-ios-macOS](../external-id/includes/applies-to-ios-macos.md)]
 
 This tutorial demonstrates how to give users the ability to change or reset their password, with no administrator or help desk involvement. 
 
@@ -30,7 +32,7 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-- [Enable self-service password reset](how-to-enable-password-reset-customers.md) 
+- [Enable self-service password reset](../external-id/customers/how-to-enable-password-reset-customers.md) 
 
 ## Reset password 
 

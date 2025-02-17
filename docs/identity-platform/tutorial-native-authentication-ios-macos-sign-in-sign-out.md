@@ -17,7 +17,9 @@ ms.custom: developer
 
 # Tutorial: Add sign-in and sign-out in iOS/macOS app by using native authentication
 
-[!INCLUDE [applies-to-ios-macOS](../includes/applies-to-ios-macos.md)]
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
+[!INCLUDE [applies-to-ios-macOS](../external-id/includes/applies-to-ios-macos.md)]
 
 This tutorial demonstrates how to sign-in and sign-out a user with email one-time passcode or username and password in your iOS/macOS app by using native authentication. 
 
@@ -32,7 +34,7 @@ In this tutorial, you learn how to:
 ## Prerequisites 
 
 - [Tutorial: Prepare your iOS/macOS app for native authentication](tutorial-native-authentication-prepare-ios-macos-app.md).
-- If you want to sign in using **Email with password**, configure your user flow to use **Email with password** when you [create your sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
+- If you want to sign in using **Email with password**, configure your user flow to use **Email with password** when you [create your sign-up and sign-in user flow](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md).
 
 ## Sign in user
 
@@ -224,7 +226,7 @@ func onSignInCompleted(result: MSAL.MSALNativeAuthUserAccountResult) {
 
 The key you use to access the claim value is the name that you specify when you add the user attribute as a token claim.
 
-Learn how to add built-in and custom attributes as token claims in the [Add user attributes to token claims](how-to-add-attributes-to-token.md) article.
+Learn how to add built-in and custom attributes as token claims in the [Add user attributes to token claims](../external-id/customers/how-to-add-attributes-to-token.md) article.
 
 ## Sign out user 
 
@@ -266,7 +268,7 @@ To sign out a user, use the reference to the `MSALNativeAuthUserAccountResult` t
 You have successfully completed all the necessary steps to sign out a user on your app. Build and run your application. If all good, you should be able to select sign out button to successfully sign out. 
 
 
-[!INCLUDE [Custom claims provider](../customers/includes/native-auth/support-custom-claims-provider.md)]
+[!INCLUDE [Custom claims provider](../external-id/customers/includes/native-auth/support-custom-claims-provider.md)]
 
 ## Related content
 
