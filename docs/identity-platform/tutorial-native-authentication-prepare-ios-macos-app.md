@@ -19,8 +19,6 @@ ms.custom: developer
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-[!INCLUDE [applies-to-ios-macOS](../external-id/includes/applies-to-ios-macos.md)]
-
 This tutorial demonstrates how to add Microsoft Authentication Library (MSAL) native authentication SDK framework to your iOS/macOS Swift app.
 
 In this tutorial, you learn how to:

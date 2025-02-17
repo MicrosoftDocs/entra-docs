@@ -19,8 +19,6 @@ ms.custom: developer
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-[!INCLUDE [applies-to-ios-macOS](../external-id/includes/applies-to-ios-macos.md)]
-
 This tutorial demonstrates how to acquire a token through a browser where native authentication isn't sufficient to complete the user flow. 
 
 In this tutorial, you learn how to:

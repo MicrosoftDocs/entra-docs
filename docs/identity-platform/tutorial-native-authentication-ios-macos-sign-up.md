@@ -19,8 +19,6 @@ ms.custom: developer
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-[!INCLUDE [applies-to-ios-macOS](../external-id/includes/applies-to-ios-macos.md)]
-
 This tutorial demonstrates how to sign up a user using email one-time passcode or username (email) and password, and collects user attributes in your iOS/macOS app using native authentication.
 
 > [!div class="checklist"]

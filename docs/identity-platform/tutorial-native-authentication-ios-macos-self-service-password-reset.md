@@ -19,8 +19,6 @@ ms.custom: developer
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-[!INCLUDE [applies-to-ios-macOS](../external-id/includes/applies-to-ios-macos.md)]
-
 This tutorial demonstrates how to give users the ability to change or reset their password, with no administrator or help desk involvement. 
 
 In this tutorial, you learn how to: 
