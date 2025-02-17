@@ -2,7 +2,7 @@
 title: 'Tutorial: Microsoft Entra SSO integration with FortiWeb Web Application Firewall'
 description: Learn how to configure single sign-on between Microsoft Entra ID and FortiWeb Web Application Firewall.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
@@ -10,7 +10,7 @@ ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and FortiWeb Web Application Firewall so that I can control who has access to FortiWeb Web Application Firewall, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
