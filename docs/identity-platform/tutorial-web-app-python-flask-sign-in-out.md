@@ -7,7 +7,7 @@ manager: mwongerapk
 ms.author: shermanouko
 ms.service: identity-platform
 ms.topic: tutorial
-ms.date: 02/12/2025
+ms.date: 02/17/2025
 
 #Customer intent: As a dev, devops, I want to learn about how to sign-in users to a Python Flask web app by using Microsoft identity platform
 ---
@@ -16,7 +16,7 @@ ms.date: 02/12/2025
 
 [!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
 
-This tutorial is part of a tutorial series that guides you on securing a Python Flask Web app.
+This tutorial guides you on securing a Python Flask Web app.
 
 In this tutorial, you'll;
 
@@ -41,6 +41,7 @@ In this tutorial, you'll;
 - Ensure you have [an app registration](./quickstart-register-app.md) in your tenant. Make sure you have the following from your app registration details:
     - The *Application (client) ID* of the client web app that you registered.
     - The *Directory (tenant) subdomain* where you registered your web app. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+    - The *Directory (tenant) ID* where you registered your web app.
     - The *Client secret* value for the web app you created.
 - Ensure you [add your application to a user flow during registration](../external-id/customers/how-to-user-flow-add-application.md).
 

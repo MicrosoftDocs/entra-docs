@@ -140,10 +140,10 @@ items:
                 href: tutorial-web-app-dotnet-sign-in-sign-out.md
         - name: Python Flask
           items:
-              - name: Prepare tenant
-                href: tutorial-web-app-python-flask-prepare-tenant.md
-              - name: Sign in and sign out 
-                href: tutorial-web-app-python-flask-sign-in-sign-out.md
+              - name: Add sign in and sign out
+                href: /entra/identity-platform/tutorial-web-app-python-flask-sign-in-out?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+              - name: Call Microsoft Graph API
+                href: /entra/identity-platform/tutorial-web-app-python-flask-call-microsoft-graph-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
     - name: Web API
       items: 
         - name: Protect ASP.NET Core API
