@@ -61,8 +61,8 @@ During installation of Microsoft Entra Connect, an application is registered whe
 
 ![Schema extension app](./media/how-to-connect-sync-feature-directory-extensions/extension3new.png)
 
->[!NOTE]
-> The **Tenant Schema Extension App** is a system-only application that can't be deleted and attribute extension definitions can't be removed.
+> [!NOTE]
+> The **Tenant Schema Extension App** is a system-only application that can't be deleted.
 
 Make sure you select **All applications** to see this app.
 
@@ -87,21 +87,21 @@ One of the more useful scenarios is to use these attributes in dynamic security 
 1. Create a new group in Microsoft Entra ID. Give it a good name and make sure the **Membership type** is **Dynamic User**.
 
    ![Screenshot with a new group](./media/how-to-connect-sync-feature-directory-extensions/dynamicgroup1.png)
-
-2. Select to **Add dynamic query**. If you look at the properties, then you will not see these extended attributes. You need to add them first. Click **Get custom extension properties**, enter the Application ID, and click **Refresh properties**.
+   
+1. Select to **Add dynamic query**. If you look at the properties, then you will not see these extended attributes. You need to add them first. Click **Get custom extension properties**, enter the Application ID, and click **Refresh properties**.
 
    ![Screenshot where directory extensions have been added](./media/how-to-connect-sync-feature-directory-extensions/dynamicgroup2.png) 
-
-3. Open the property drop-down and note that the attributes you added are now visible.
+   
+1. Open the property drop-down and note that the attributes you added are now visible.
 
    ![Screenshot with new attributes showing up in the UI](./media/how-to-connect-sync-feature-directory-extensions/dynamicgroup3.png)
+   
+      Complete the expression to suit your requirements. In our example, the rule is set to **(user.extension_9d98ed114c4840d298fad781915f27e4_division -eq "Sales and marketing")**.
 
-   Complete the expression to suit your requirements. In our example, the rule is set to **(user.extension_9d98ed114c4840d298fad781915f27e4_division -eq "Sales and marketing")**.
-
-4. After the group has been created, give Microsoft Entra some time to populate the members and then review the members.
+1. After the group has been created, give Microsoft Entra some time to populate the members and then review the members.
 
    ![Screenshot with members in the dynamic group](./media/how-to-connect-sync-feature-directory-extensions/dynamicgroup4.png)  
-
+   
 ## Next steps
 Learn more about the [Microsoft Entra Connect Sync](how-to-connect-sync-whatis.md) configuration.
 
