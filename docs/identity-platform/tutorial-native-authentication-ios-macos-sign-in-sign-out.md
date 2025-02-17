@@ -232,7 +232,7 @@ Learn how to add built-in and custom attributes as token claims in the [Add user
 
 To sign out a user, use the reference to the `MSALNativeAuthUserAccountResult` that you received in the `onSignInCompleted` callback, or use `getNativeAuthUserAccount()` to get any signed in account from the cache and store a reference in the `accountResult` member variable. 
  
-1. Configure the keychain group for your project as described [here](../../identity-platform/tutorial-v2-ios.md#configure-xcode-project-settings). 
+1. Configure the keychain group for your project as described [here](tutorial-mobile-app-ios-swift-prepare-app.md?pivots=workforce#configure-xcode-project-settings). 
 
 1. Add a new member variable to your `ViewController` class: `var accountResult: MSALNativeAuthUserAccountResult?`. 
 

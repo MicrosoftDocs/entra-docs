@@ -81,8 +81,8 @@ When we call the `signUp(parameters:delegate)` method from the SDK instance, we 
 
 To handle this kind of error, we need to launch a browser and let the user perform the authentication flow there. This can be done by calling `acquireToken()` method. In order to use this method, a few additional configurations need to be done: 
 
-- [Configure URL schemes in our Xcode project](tutorial-mobile-app-ios-swift-prepare-app?pivots=workforce#for-ios-only-configure-url-schemes)
-- [Configure the redirect URI in Microsoft Entra admin center](tutorial-mobile-app-ios-swift-prepare-tenant.md#register-your-quickstart-app)
+- [Configure URL schemes in our Xcode project](tutorial-mobile-app-ios-swift-prepare-app.md?pivots=workforce#for-ios-only-configure-url-schemes)
+- [Configure the redirect URI in Microsoft Entra admin center](tutorial-mobile-app-ios-swift-prepare-tenant.md#add-a-platform-redirect-url)
 
 Now we can get a token and an account interactively. Here's an example of how to do it: 
 

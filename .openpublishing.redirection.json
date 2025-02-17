@@ -1933,7 +1933,7 @@
       "redirect_document_id": false
     },
         {
-      "source_path_from_root": "/docs/external-id/customers/htutorial-native-authentication-ios-macos-self-service-password-reset.md",
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-macos-self-service-password-reset.md",
       "redirect_url": "/entra/identity-platform/tutorial-native-authentication-ios-macos-self-service-password-reset?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external",
       "redirect_document_id": false
     },
