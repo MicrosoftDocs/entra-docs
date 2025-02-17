@@ -89,7 +89,7 @@ landingContent:
           - text: Vanilla JS SPA
             url: /entra/identity-platform/tutorial-single-page-app-javascript-prepare-app
           - text: React SPA
-            url: tutorial-single-page-app-react-sign-in-prepare-tenant.md
+            url: /entra/identity-platform/tutorial-single-page-app-react-prepare-app
           - text: Node.js web app
             url: tutorial-web-app-node-sign-in-prepare-tenant.md
           - text: ASP.NET web app

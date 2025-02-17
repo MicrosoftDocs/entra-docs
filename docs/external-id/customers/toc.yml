@@ -106,10 +106,8 @@ items:
                     href: /entra/identity-platform/tutorial-single-page-app-javascript-sign-in-sign-out
             - name: React
               items:
-                  - name: Prepare tenant
-                    href: tutorial-single-page-app-react-sign-in-prepare-tenant.md
                   - name: Create React app
-                    href: tutorial-single-page-app-react-sign-in-prepare-app.md
+                    href: /entra/identity-platform/tutorial-single-page-app-react-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
                   - name: Configure app for authentication
                     href: tutorial-single-page-app-react-sign-in-configure-authentication.md
                   - name: Sign in and sign out

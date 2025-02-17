@@ -162,7 +162,7 @@ These samples and how-to guides demonstrate how to write a daemon application th
 > |Mobile: Native authentication | &#8226; iOS (Swift) [Sign in users](how-to-run-native-authentication-sample-ios-app.md)<br/> &#8226; iOS (Swift) [Sign in users and call an API](sample-native-authentication-ios-sample-app-call-web-api.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-macos-app.md)|
 > |Desktop: Native authentication | &#8226; macOS (Swift) [Sign in users](how-to-run-native-authentication-sample-macos-app.md)| &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-macos-app.md)|
 
-### JavaScript, Vanilla
+### JavaScript
 
 > [!div class="mx-tdCol2BreakAll"]
 > | App type | Code sample guide | Build and integrate guide  |
@@ -181,7 +181,7 @@ These samples and how-to guides demonstrate how to write a daemon application th
 > [!div class="mx-tdCol2BreakAll"]
 > | App type | Code sample guide | Build and integrate guide  |
 > | ------- | -------- | ------------- |
-> | Single-page application| &#8226; [Sign in users](./sample-single-page-app-react-sign-in.md) | &#8226; [Sign in users](./tutorial-single-page-app-react-sign-in-prepare-tenant.md)   |
+> | Single-page application| &#8226; [Sign in users](./sample-single-page-app-react-sign-in.md) | &#8226; [Sign in users](../../identity-platform/tutorial-single-page-app-react-prepare-app.md) |
 
 ### JavaScript, Node
 
