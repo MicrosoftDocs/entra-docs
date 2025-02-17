@@ -443,13 +443,13 @@
             - name: Browser-delegated authentication
               items:
                 - name: Prepare tenant
-                  href: tutorial-mobile-app-ios-swift-prepare-tenant.md?tabs=workforce-tenant
+                  href: tutorial-mobile-app-ios-swift-prepare-tenant.md?pivots=workforce-tenant
                 - name: Prepare app
-                  href: tutorial-mobile-app-ios-swift-prepare-app.md?tabs=workforce-tenant
+                  href: tutorial-mobile-app-ios-swift-prepare-app.md?pivots=workforce-tenant
                 - name: Sign in users
-                  href: tutorial-mobile-app-ios-swift-sign-in.md?tabs=workforce-tenant
+                  href: tutorial-mobile-app-ios-swift-sign-in.md?pivots=workforce-tenant
                 - name: Call an API
-                  href: tutorial-mobile-app-ios-swift-sign-in-call-api.md?tabs=workforce-tenant
+                  href: tutorial-mobile-app-ios-swift-sign-in-call-api.md?pivots=workforce-tenant
 
     - name: Samples
       displayName: code samples, example code, code snippets

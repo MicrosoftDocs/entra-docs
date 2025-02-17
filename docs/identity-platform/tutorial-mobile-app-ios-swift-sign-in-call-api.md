@@ -21,7 +21,7 @@ zone_pivot_groups: entra-tenants
 
 This is the fourth tutorial in the tutorial series that guides you on signing in users and calling a protected web API using Microsoft Entra ID.
 
-In this tutorial, you'll:
+In this tutorial, you:
 
 > [!div class="checklist"]
 >
@@ -96,7 +96,7 @@ Learn more about building mobile apps that call protected web APIs in our multi-
 
 This is the fourth tutorial in the tutorial series that guides you on signing in users and calling a protected web API using Microsoft Entra External ID.
 
-In this tutorial, you'll:
+In this tutorial, you:
 
 > [!div class="checklist"]
 >

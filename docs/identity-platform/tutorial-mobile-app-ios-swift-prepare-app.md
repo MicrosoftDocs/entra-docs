@@ -22,7 +22,7 @@ This is the second tutorial in the tutorial series that demonstrates how to add 
 
 [!INCLUDE [select-tenant-type-statement](./includes/select-tenant-type-statement.md)]
 
-In this tutorial, you'll;
+In this tutorial, you:
 
 > [!div class="checklist"]
 >
@@ -203,7 +203,7 @@ This is the second tutorial in the tutorial series that demonstrates how to add 
 
 [!INCLUDE [select-tenant-type-statement](./includes/select-tenant-type-statement.md)]
 
-In this tutorial, you'll;
+In this tutorial, you;
 
 > [!div class="checklist"]
 >

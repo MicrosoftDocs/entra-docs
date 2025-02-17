@@ -23,7 +23,7 @@ This is the third tutorial in the tutorial series that guides you on signing in 
 
 [!INCLUDE [select-tenant-type-statement](./includes/select-tenant-type-statement.md)]
 
-In this tutorial, you'll:
+In this tutorial, you:
 
 > [!div class="checklist"]
 >
@@ -415,7 +415,7 @@ This is the third tutorial in the tutorial series that guides you on signing in 
 
 [!INCLUDE [select-tenant-type-statement](./includes/select-tenant-type-statement.md)]
 
-In this tutorial, you'll:
+In this tutorial, you:
 
 > [!div class="checklist"]
 >

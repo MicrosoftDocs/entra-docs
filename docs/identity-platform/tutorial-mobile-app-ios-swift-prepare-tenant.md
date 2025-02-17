@@ -19,13 +19,13 @@ zone_pivot_groups: entra-tenants
 
 ::: zone pivot="workforce"
 
-In this tutorial, you build an iOS or macOS app that integrates with the Microsoft identity platform to sign users and get an access token to call the Microsoft Graph API.
+This tutorial series demonstrates how to build an iOS or macOS app that integrates with the Microsoft identity platform to sign users and get an access token to call the Microsoft Graph API.
 
 When you've completed the tutorial, your application accepts sign-ins of personal Microsoft accounts (including outlook.com, live.com, and others) and work or school accounts from any company or organization that uses Microsoft Entra ID. This tutorial is applicable to both iOS and macOS apps. Some steps are different between the two platforms.
 
 [!INCLUDE [select-tenant-type-statement](./includes/select-tenant-type-statement.md)]
 
-In this tutorial, you'll;
+In this tutorial, you:
 
 > [!div class="checklist"]
 >
@@ -70,7 +70,7 @@ This tutorial series demonstrates how to build an iOS (Swift) mobile app that au
 
 [!INCLUDE [select-tenant-type-statement](./includes/select-tenant-type-statement.md)]
 
-In this tutorial, you'll;
+In this tutorial, you:
 
 > [!div class="checklist"]
 >
