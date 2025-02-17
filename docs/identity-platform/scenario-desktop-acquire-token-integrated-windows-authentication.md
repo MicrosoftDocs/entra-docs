@@ -14,6 +14,8 @@ ms.topic: how-to
 
 # Desktop app that calls web APIs: Acquire a token using integrated Windows authentication
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 To sign in a domain user on a domain or Microsoft Entra joined machine, use integrated Windows authentication (IWA).
 
 ## Constraints

@@ -5,7 +5,7 @@ description: This article describes how to use the Microsoft Entra admin center 
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 04/22/2024
+ms.date: 02/11/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -105,7 +105,7 @@ To view or copy BitLocker keys, you need to be the owner of the device or have o
 - [Security Reader](../role-based-access-control/permissions-reference.md#security-reader)
   
 > [!NOTE]
-> When devices that utilize [Windows Autopilot](/mem/autopilot/windows-autopilot) are reused, **and there is a new device owner**, that new device owner must contact an administrator to acquire the BitLocker recovery key for that device. Custom role or administrative unit scoped administrators will lose access to BitLocker recovery keys for those devices that have undergone device ownership changes. These scoped administrators will need to contact a non-scoped administrator for the recovery keys. For more information, see the article [Find the primary user of an Intune device](/mem/intune/remote-actions/find-primary-user#change-a-devices-primary-user).
+> When devices that utilize [Windows Autopilot](/mem/autopilot/windows-autopilot) are reused, **and there is a new device owner**, that new device owner must contact an administrator to acquire the BitLocker recovery key for that device. Custom role or administrative unit scoped administrators will continue to have access to BitLocker recovery keys for those devices that have undergone device ownership changes, unless the new device owner belongs to a custom role or adminstrative unit scope. In such an instance, the user will need to contact other scoped administrator for the recovery keys. For more information, see the article [Find the primary user of an Intune device](/mem/intune/remote-actions/find-primary-user#change-a-devices-primary-user).
 
 ## View and filter your devices
 

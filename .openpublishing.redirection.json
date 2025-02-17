@@ -121,6 +121,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/fundamentals/groups-view-azure-portal.md",
+      "redirect_url": "/entra/fundamentals/quickstart-create-group-add-members",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/fundamentals/licensing-preview-terms.md",
       "redirect_url": "/entra/fundamentals/licensing-preview-info",
       "redirect_document_id": false
@@ -1563,21 +1568,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/identity-platform/quickstart-web-app-dotnet-core-sign-in.md",
-      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=workforce",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/identity-platform/quickstart-web-app-nodejs-sign-in.md",
-      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=workforce",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/identity-platform/quickstart-web-app-java-sign-in.md",
-      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=workforce",
-      "redirect_document_id": false
-    },
-    {
       "source_path_from_root": "/docs/identity-platform/quickstart-web-app-python-flask.md",
       "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=workforce",
       "redirect_document_id": false
@@ -1590,16 +1580,6 @@
     {
       "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-edit-profile-prepare-tenant.md",
       "redirect_url": "/entra/external-id/customers/how-to-web-app-node-edit-profile-prepare-app",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/external-id/customers/sample-web-app-node-sign-in-edit-profile.md",
-      "redirect_url": "/entra/identity-platform/quickstart-web-app-node-sign-in-edit-profile",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/external-id/customers/sample-web-app-python-django-sign-in.md",
-      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=external",
       "redirect_document_id": false
     },
     {
@@ -1617,16 +1597,6 @@
       "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=external",
       "redirect_document_id": false
     },
-    {
-      "source_path_from_root": "/docs/external-id/customers/sample-web-app-dotnet-sign-in.md",
-      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=external&tab=asp-dot-net-core-workforce",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/identity/enterprise-apps/configure-user-consent-groups.md",
-      "redirect_url": "/microsoftteams/platform/graph-api/rsc/grant-resource-specific-consent",
-      "redirect_document_id": false
-    }, 
     {
       "source_path_from_root": "/docs/identity/saas-apps/bluejeans-provisioning-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/tutorial-list",
@@ -1661,25 +1631,10 @@
       "source_path_from_root": "/docs/external-id/customers/sample-cli-app-node-sign-in-users.md",
       "redirect_url": "/entra/identity-platform/quickstart-cli-app-node-sign-in-users",
       "redirect_document_id": false
-    },    
-    {
-      "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-node-sign-in-prepare-tenant.md", 
-      "redirect_url": "/entra/identity-platform/tutorial-web-app-node-sign-in-prepare-app?tabs=external-tenant",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-node-sign-in-prepare-app.md", 
-      "redirect_url": "/entra/identity-platform/tutorial-web-app-node-sign-in-prepare-app?tabs=external-tenant",
-      "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-node-sign-in-sign-out.md",
       "redirect_url": "/entra/identity-platform/tutorial-web-app-node-sign-in-sign-out?tabs=external-tenant",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/identity/users/groups-write-back-portal.md",
-      "redirect_url": "/entra/identity/hybrid/group-writeback-cloud-sync",
       "redirect_document_id": false
     },
     {
@@ -1688,18 +1643,28 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/identity/saas-apps/vmware-identity-service-provisioning-tutorial.md",
-      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/identity/saas-apps/fidelitynetbenefits-tutorial.md",
-      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
-      "redirect_document_id": false
-    },
-    {
       "source_path_from_root": "/docs/identity/enterprise-apps/one-click-sso-tutorial.md",
       "redirect_url": "/entra/identity/enterprise-apps/what-is-application-management",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-dotnet-sign-in-prepare-tenant.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-register-app?tabs=external-tenant",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-dotnet-sign-in-prepare-app.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-prepare-app?tabs=external-tenant",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-dotnet-sign-in-sign-in-sign-out.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-sign-in-users?tabs=external-tenant",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/users/groups-write-back-portal.md",
+      "redirect_url": "/entra/identity/hybrid/group-writeback-cloud-sync",
       "redirect_document_id": false
     },
     {
@@ -1723,16 +1688,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/identity/saas-apps/work-com-tutorial.md",
-      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/identity-platform/quickstart-single-page-app-javascript-sign-in.md",
-      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-sign-in?pivots=workforce&tabs=javascript-workforce",
-      "redirect_document_id": false
-    },
-    {
       "source_path_from_root": "/docs/identity-platform/quickstart-single-page-app-blazor-wasm-sign-in.md",
       "redirect_url": "/entra/identity-platform/quickstart-single-page-app-sign-in?pivots=workforce&tabs=blazor-workforce",
       "redirect_document_id": false
@@ -1753,11 +1708,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/external-id/customers/sample-single-page-app-react-sign-in.md",
-      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-sign-in?pivots=external&tabs=react-external",
-      "redirect_document_id": false
-    },
-    {
       "source_path_from_root": "/docs/external-id/customers/sample-single-page-app-angular-sign-in.md",
       "redirect_url": "/entra/identity-platform/quickstart-single-page-app-sign-in?pivots=external&tabs=angular-external",
       "redirect_document_id": false
@@ -1765,6 +1715,236 @@
     {
       "source_path_from_root": "/docs/identity/saas-apps/kallidus-tutorial.md",
       "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/veritas-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/quickstart-web-app-dotnet-core-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=workforce",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/quickstart-web-app-nodejs-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=workforce",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/quickstart-web-app-java-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=workforce",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/sample-web-app-node-sign-in-edit-profile.md",
+      "redirect_url": "/entra/identity-platform/quickstart-web-app-node-sign-in-edit-profile",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/sample-web-app-python-django-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=external",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/sample-web-app-dotnet-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-web-app-sign-in?pivots=external&tab= asp-dot-net-core-workforce",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/enterprise-apps/configure-user-consent-groups.md",
+      "redirect_url": "/microsoftteams/platform/graph-api/rsc/grant-resource-specific-consent",
+      "redirect_document_id": false
+    },  
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-node-sign-in-prepare-tenant.md", 
+      "redirect_url": "/entra/identity-platform/tutorial-web-app-node-sign-in-prepare-app?tabs=external-tenant",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-node-sign-in-prepare-app.md", 
+      "redirect_url": "/entra/identity-platform/tutorial-web-app-node-sign-in-prepare-app?tabs=external-tenant",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/vmware-identity-service-provisioning-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/fidelitynetbenefits-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/saas-apps/work-com-tutorial.md",
+      "redirect_url": "/entra/identity/saas-apps/tutorial-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/quickstart-single-page-app-javascript-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-sign-in?pivots=workforce&tabs=javascript-workforce",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/sample-single-page-app-react-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-single-page-app-sign-in?pivots=external&tabs=react-external",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/tutorial-web-app-dotnet-register-app.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-prepare-app?tabs=workforce",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-dotnet-sign-in-sign-out.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-app-dotnet-sign-in-users",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/how-to-native-authentication-cors-solution-production-environment.md",
+      "redirect_url": "/entra/identity-platform/how-to-native-authentication-cors-solution-production-environment", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/how-to-native-authentication-cors-solution-test-environment.md",
+      "redirect_url": "/entra/identity-platform/how-to-native-authentication-cors-solution-test-environment", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/quickstart-native-authentication-single-page-app-react-sign-in.md",
+      "redirect_url": "/entra/identity-platform/quickstart-native-authentication-single-page-app-react-sign-in", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-single-page-app-react-reset-password.md",
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-single-page-app-react-reset-password", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-single-page-app-react-set-up-local-cors.md",
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-single-page-app-react-set-up-local-cors", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-single-page-app-react-sign-in.md",
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-single-page-app-react-sign-in", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-prepare-android-app.md",
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-prepare-android-app", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-up.md",
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-android-sign-up", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-in-sign-out.md",
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-android-sign-in-sign-out", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-in-after-sign-up.md",
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-android-sign-in-after-sign-up", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-self-service-password-reset.md",
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-android-self-service-password-reset", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-support-web-fallback.md",
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-android-support-web-fallback", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-android-sign-in-call-api.md",
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-android-sign-in-call-api", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-single-page-app-react-sign-up.md",
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-single-page-app-react-sign-up", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/managed-identities-azure-resources/services-id-authentication-support.md",
+      "redirect_url": "/entra/identity/managed-identities-azure-resources/managed-identities-status",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-mobile-app-ios-swift-prepare-tenant.md",
+      "redirect_url": "/entra/identity-platform/tutorial-mobile-app-ios-swift-prepare-tenant", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-mobile-app-ios-swift-prepare-app.md",
+      "redirect_url": "/entra/identity-platform/tutorial-mobile-app-ios-swift-prepare-app", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-mobile-app-ios-swift-sign-in.md",
+      "redirect_url": "/entra/identity-platform/tutorial-mobile-app-ios-swift-sign-in", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-mobile-app-ios-swift-sign-in-call-api.md",
+      "redirect_url": "/entra/identity-platform/tutorial-mobile-app-ios-swift-sign-in-call-api", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/tutorial-v2-ios.md",
+      "redirect_url": "/entra/identity-platform/tutorial-mobile-app-ios-swift-prepare-tenant?&pivots=workforce",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/license-users-groups.yml",
+      "redirect_url": "/docs/fundamentals/licensing",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/users/licensing-groups-assign.md",
+      "redirect_url": "/docs/fundamentals/licensing",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/users/licensing-groups-change-licenses.md",
+      "redirect_url": "/docs/fundamentals/licensing",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/users/licensing-groups-migrate-users.md",
+      "redirect_url": "/docs/fundamentals/licensing",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity/users/licensing-groups-resolve-problems.md",
+      "redirect_url": "/docs/fundamentals/licensing",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-single-page-app-vanillajs-prepare-tenant.md",
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-app-javascript-prepare-app", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-single-page-app-vanillajs-configure-authentication.md",
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-app-javascript-configure-authentication", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-single-page-app-vanillajs-prepare-app.md",
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-app-javascript-prepare-app", 
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-single-page-app-vanillajs-sign-in-sign-out.md",
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-app-javascript-sign-in-sign-out",
       "redirect_document_id": false
     }
   ]

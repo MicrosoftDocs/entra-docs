@@ -14,6 +14,8 @@ ms.topic: how-to
 
 # Desktop app that calls web APIs: Acquire a token interactively
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 The following example shows minimal code to get a token interactively for reading the user's profile with Microsoft Graph.
 
 # [.NET](#tab/dotnet)

@@ -23,10 +23,14 @@ items:
     href: samples-ciam-all.md
   - name: Single-page app
     items:
-      - name: JavaScript
+      - name: Browser-delegated authentication
         items:
           - name: Sign in users
             href: /entra/identity-platform/quickstart-single-page-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
+      - name: Native authentication
+        items:
+          - name: Sign in users
+            href: /entra/identity-platform/quickstart-native-authentication-single-page-app-react-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
   - name: Web app
     items:
       - name: Sign in users
@@ -90,36 +94,48 @@ items:
   items: 
     - name: Single-page app (SPA)
       items: 
-        - name: JavaScript 
+        - name: Browser-delegated authentication
           items:
-              - name: Prepare tenant
-                href: tutorial-single-page-app-vanillajs-prepare-tenant.md
-              - name: Create JavaScript app
-                href: tutorial-single-page-app-vanillajs-prepare-app.md
-              - name: Configure app for authentication
-                href: tutorial-single-page-app-vanillajs-configure-authentication.md
-              - name: Sign in and sign out
-                href: tutorial-single-page-app-vanillajs-sign-in-sign-out.md
-        - name: React
+            - name: JavaScript 
+              items:
+                  - name: Create JavaScript app
+                    href: /entra/identity-platform/tutorial-single-page-app-javascript-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                  - name: Configure app for authentication
+                    href: /entra/identity-platform/tutorial-single-page-app-configure-authentication
+                  - name: Sign in and sign out
+                    href: /entra/identity-platform/tutorial-single-page-app-javascript-sign-in-sign-out
+            - name: React
+              items:
+                  - name: Prepare tenant
+                    href: tutorial-single-page-app-react-sign-in-prepare-tenant.md
+                  - name: Create React app
+                    href: tutorial-single-page-app-react-sign-in-prepare-app.md
+                  - name: Configure app for authentication
+                    href: tutorial-single-page-app-react-sign-in-configure-authentication.md
+                  - name: Sign in and sign out
+                    href: tutorial-single-page-app-react-sign-in-sign-out.md
+            - name: Angular
+              items:
+                  - name: Prepare tenant
+                    href: tutorial-single-page-app-angular-sign-in-prepare-tenant.md
+                  - name: Create Angular app
+                    href: tutorial-single-page-app-angular-sign-in-prepare-app.md
+                  - name: Configure app for authentication
+                    href: tutorial-single-page-app-angular-sign-in-configure-authentication.md
+                  - name: Sign in and sign out
+                    href: tutorial-single-page-app-angular-sign-in-sign-out.md
+        - name: Native authentication
           items:
-              - name: Prepare tenant
-                href: tutorial-single-page-app-react-sign-in-prepare-tenant.md
-              - name: Create React app
-                href: tutorial-single-page-app-react-sign-in-prepare-app.md
-              - name: Configure app for authentication
-                href: tutorial-single-page-app-react-sign-in-configure-authentication.md
-              - name: Sign in and sign out
-                href: tutorial-single-page-app-react-sign-in-sign-out.md
-        - name: Angular
-          items:
-              - name: Prepare tenant
-                href: tutorial-single-page-app-angular-sign-in-prepare-tenant.md
-              - name: Create Angular app
-                href: tutorial-single-page-app-angular-sign-in-prepare-app.md
-              - name: Configure app for authentication
-                href: tutorial-single-page-app-angular-sign-in-configure-authentication.md
-              - name: Sign in and sign out
-                href: tutorial-single-page-app-angular-sign-in-sign-out.md
+            - name: React
+              items:
+                - name: Sign up
+                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                - name: Set up local CORS
+                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-set-up-local-cors?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                - name: Sign in
+                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                - name: Reset password
+                  href: /entra/identity-platform/tutorial-native-authentication-single-page-app-react-reset-password?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
     - name: Web app
       items: 
         - name: Node/Express.js
@@ -132,12 +148,12 @@ items:
               href: /entra/identity-platform/tutorial-web-app-node-call-microsoft-graph-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
         - name: ASP.NET Core
           items:
-              - name: Prepare tenant
-                href: tutorial-web-app-dotnet-sign-in-prepare-tenant.md
-              - name: Create ASP.NET Core app
-                href: tutorial-web-app-dotnet-sign-in-prepare-app.md
-              - name: Sign in and sign out
-                href: tutorial-web-app-dotnet-sign-in-sign-out.md
+              - name: Prepare your app
+                href: /entra/identity-platform/tutorial-web-app-dotnet-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+              - name: Add authentication elements
+                href: /entra/identity-platform/tutorial-web-app-dotnet-sign-in-users?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+              - name: Test your application
+                href: /entra/identity-platform/tutorial-web-app-dotnet-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
         - name: Python Flask
           items:
               - name: Add sign in and sign out
@@ -213,33 +229,33 @@ items:
             - name: iOS
               items:
                 - name: Prepare tenant
-                  href: tutorial-mobile-app-ios-swift-prepare-tenant.md
+                  href: /entra/identity-platform/tutorial-mobile-app-ios-swift-prepare-tenant?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
                 - name: Prepare app
-                  href: tutorial-mobile-app-ios-swift-prepare-app.md
+                  href: /entra/identity-platform/tutorial-mobile-app-ios-swift-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
                 - name: Sign in users
-                  href: tutorial-mobile-app-ios-swift-sign-in.md
+                  href: /entra/identity-platform/tutorial-mobile-app-ios-swift-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
                 - name: Call an API
-                  href: tutorial-mobile-app-ios-swift-sign-in-call-api.md
+                  href: /entra/identity-platform/tutorial-mobile-app-ios-swift-sign-in-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
         - name: Native authentication
           items:
             - name: Android (Kotlin)
               items:
                 - name: Prepare Android app
-                  href: tutorial-native-authentication-prepare-android-app.md
+                  href: /entra/identity-platform/tutorial-native-authentication-prepare-android-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Sign up
-                  href: tutorial-native-authentication-android-sign-up.md
+                  href: /entra/identity-platform/tutorial-native-authentication-android-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                   displayName: email OTP, email one-time passcode, email and password
                 - name: Sign in and sign out
-                  href: tutorial-native-authentication-android-sign-in-sign-out.md
+                  href: /entra/identity-platform/tutorial-native-authentication-android-sign-in-sign-out?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                   displayName: email OTP, email one-time passcode, email and password
                 - name: Auto-sign in after sign-up
-                  href: tutorial-native-authentication-android-sign-in-after-sign-up.md
+                  href: /entra/identity-platform/tutorial-native-authentication-android-sign-in-after-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Self-service password reset
-                  href: tutorial-native-authentication-android-self-service-password-reset.md
+                  href: /entra/identity-platform/tutorial-native-authentication-android-self-service-password-reset?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Support web fallback
-                  href: tutorial-native-authentication-android-support-web-fallback.md
+                  href: /entra/identity-platform/tutorial-native-authentication-android-support-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Call an API
-                  href: tutorial-native-authentication-android-sign-in-call-api.md
+                  href: /entra/identity-platform/tutorial-native-authentication-android-sign-in-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                   displayName: multiple access token 
             - name: iOS/macOS (Swift)
               items:
@@ -314,8 +330,6 @@ items:
         href: how-to-create-external-tenant-portal.md
       - name: Register an app
         href: /entra/identity-platform/quickstart-register-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
-      - name: Register a SAML app
-        href: how-to-register-saml-app.md
       - name: Add a sign-up and sign-in flow
         href: how-to-user-flow-sign-up-sign-in-customers.md
         displayName: disable sign-up, disable sign up 
@@ -339,6 +353,8 @@ items:
                 href: how-to-custom-oidc-federation-customers.md
               - name: B2C federation
                 href: how-to-b2c-federation-customers.md
+          - name: SAML/WS-Fed IdP federation
+            href: ../direct-federation.md
         displayName: rbac, roles claim, groups claim
       - name: Integrate apps 
         items:
@@ -369,6 +385,12 @@ items:
                   - name: Use role-based access control
                     href: how-to-web-app-role-based-access-control.md 
                     displayName: rbac, roles, roles claim, groups claim
+          - name: Native authentication
+            items:
+              - name: Set up CORS in test
+                href: /entra/identity-platform/how-to-native-authentication-cors-solution-test-environment?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+              - name: Set up CORS in production
+                href: /entra/identity-platform/how-to-native-authentication-cors-solution-production-environment?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
       - name: Delete an external tenant
         href: how-to-delete-external-tenant-portal.md
     - name: Customize

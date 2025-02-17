@@ -3,7 +3,7 @@ title: Global Secure Access Client for Windows Release Notes
 description: This article tracks the changes in each released version of the Global Secure Access client for Windows.
 ms.service: global-secure-access
 ms.topic: reference
-ms.date: 11/25/2024
+ms.date: 02/10/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -22,18 +22,35 @@ The current version of the Global Secure Access client is available to download 
 1. Select **Download Client**.
 :::image type="content" source="media/reference-windows-client-release-history/client-download-screen.png" alt-text="Screenshot of the Client download screen with the Download Client button highlighted.":::
 
+## Version 2.14.80
+Released for download on February 11, 2025.
+### Functional changes
+- Support for long-lived User Datagram Protocol (UDP) connections.
+- Support for routing connections directly to the network when there's no successful tunnel established to the Global Secure Access cloud service.
+- Adds performance counters to Performance Monitor:
+    - Flow count
+    - Tunnel count
+- Support for Microsoft Cloud for Sovereignty environments.
+- Bug fix: Global Secure Access doesn't preserve the Disable Private Access status after a restart.
+### Other changes
+- Sends device name to the Global Secure Access cloud service.
+- Bug fix: time sync fails when Internet Access is enabled.
+- Adds telemetry for connections that fail to tunnel and fall back to hardening action.
+- Verifies client certificate validity before using the certificate to establish a mutual Transport Layer Security (mTLS) connection.
+- Improvements and bug fixes for Advanced diagnostics.
+- Miscellaneous bug fixes and improvements.
 
 ## Version 2.8.45
 Released for download on November 26, 2024.
 ### Functional changes
-- Support for mutual Transport Layer Security (mTLS) connections to Global Secure Access. 
+- Support for mTLS connections to Global Secure Access. 
 > [!NOTE]
-> The mTLS connection will have a gradual rollout to customers through the service in the cloud; customers will continue to use the TLS connection until they recieve mTLS.
+> The mTLS connection will have a gradual rollout to customers through the service in the cloud; customers will continue to use the Transport Layer Security (TLS) connection until they receive mTLS.
 - Support for restricting nonprivileged users from disabling and enabling the Global Secure Access client on their device.
 - Show health check tests when loading a log zip file to advanced diagnostics.
 - Support for the Hyper-V internal switch: the Global Secure Access client installed on the host bypasses network traffic from Hyper-V guest machines. If needed, the Global Secure Access client can be installed on the guest machine, on the host machine, or both. 
 > [!NOTE]
-> Host machines that have the Hyper-V external virtual switch do not support this version of the Global Secure Access client.
+> The Global Secure Access client doesn't support host machines that have a Hyper-V external virtual switch.
 - The forwarding profile update is triggered when a user signs in to Windows.
 - Global Secure Access client's driver events are written to the Event Viewer under:    
 `Applications and Services Logs > Microsoft > Windows > Global Secure Access > Kernel`
@@ -80,3 +97,6 @@ Released for download on July 30, 2024.
 Released for download on July 11, 2024.
 ### Functional changes
 - First GA version.
+
+## Related content
+- [Global Secure Access client for Microsoft Windows](how-to-install-windows-client.md)

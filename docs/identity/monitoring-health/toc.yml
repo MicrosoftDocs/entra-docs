@@ -73,6 +73,8 @@ items:
     href: howto-customize-filter-logs.md
   - name: Download logs
     href: howto-download-logs.md
+  - name: Find inactive user accounts in Microsoft Entra ID
+    href: howto-manage-inactive-user-accounts.md
   - name: Diagnostic settings and Log Analytics 
     expanded: true
     items:
@@ -86,7 +88,7 @@ items:
       href: howto-integrate-activity-logs-with-azure-monitor-logs.yml  
     - name: Analyze activity logs in Log Analytics
       href: howto-analyze-activity-logs-log-analytics.md
-  - name: Microsoft Entra Health 
+  - name: Microsoft Entra Health Monitoring
     expanded: false
     items:
     - name: How to configure Microsoft Entra Health email notifications
@@ -155,8 +157,6 @@ items:
   items:
   - name: Common user sign-in errors
     href: howto-troubleshoot-sign-in-errors.md
-  - name: Manage inactive user accounts in Microsoft Entra ID
-    href: howto-manage-inactive-user-accounts.md
   - name: Sign-in diagnostics
     href: howto-use-sign-in-diagnostics.md
   - name: Sign-in diagnostics scenarios
