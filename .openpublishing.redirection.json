@@ -702,11 +702,6 @@
     },
     {
       "source_path_from_root": "/docs/identity-platform/tutorial-web-app-python-prepare-app.md",
-      "redirect_url": "/entra/identity-platform/tutorial-web-app-python-flask-sign-in-out?tabs=workforce-tenant",
-      "redirect_document_id": false
-    },
-    {
-      "source_path_from_root": "/docs/identity-platform/tutorial-web-app-python-prepare-app.md",
       "redirect_url": "/entra/identity-platform/quickstart-register-app",
       "redirect_document_id": false
     },
