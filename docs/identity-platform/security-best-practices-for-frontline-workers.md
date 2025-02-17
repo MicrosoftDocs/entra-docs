@@ -8,10 +8,9 @@ ms.custom: template-concept
 ms.date: 02/14/2025
 ms.reviewer: akgoel, henrymbugua
 ms.service: identity-platform
-
 ms.topic: concept-article
 
-#Customer intent: As an IT administrator, I want to implement best practices for protecting frontline workers' access to corporate resources so that I can ensure their work and personal data remain secure while optimizing their productivity across various devices and access scenarios.
+#Customer intent: As an IT administrator, I want to implement the best practices for protecting frontline workers' access to corporate resources so that I can ensure their work and personal data remain secure while optimizing their productivity across various devices and access scenarios.
 ---
 
 # Best practices to protect frontline workers
@@ -24,7 +23,7 @@ For their information workers, many organizations want to empower their users to
 
 - **Work access (on-shift)**: While at work, a frontline worker could require access to sensitive applications. 
 
-- **Home access (off-shift)**: While at home or away from the worksite, most frontline workers aren't expected to perform work duties and mostly requires access to non-sensitive work applications for off-shift communication, signing up for shifts, or reviewing basic training material. In some cases, they could also require access to sensitive personal resources like paystub or W2.   
+- **Home access (off-shift)**: While at home or away from the worksite, most frontline workers aren't expected to perform work duties. However, they might require access to non-sensitive work applications for off-shift communication, signing up for shifts, or reviewing training material. In some cases, they could also require access to sensitive personal resources such as paystub or W2.   
 
 This article outlines the best practices for protecting frontline workers across various home or work access scenarios. To fully grasp these security tips, it's important to first understand the various types of devices frontline workers use in different settings. 
 
@@ -34,7 +33,7 @@ There are three main device types used by frontline workers in most scenarios:
 
 - **Shared devices:** These are company-owned devices that are shared between employees across tasks, shifts, or locations. 
 
-- **Bring Your Own Device(BYOD):** Some organizations use a bring-your-own-device model where frontline workers use their personal devices to access business apps.
+- **Bring Your Own Device (BYOD):** Some organizations use a bring-your-own-device model where frontline workers use their personal devices to access business apps.
 
 - **Company-owned single user devices:** These devices are assigned to a specific employee for work purposes only, not for personal use. Although this device model is less frequent, we recommend that organizations using it for their frontline workers to follow the anywhere/anytime/any-device best practices as described in [Microsoft’s Zero Trust best practices](https://www.microsoft.com/security/business/zero-trust). 
 
@@ -45,10 +44,10 @@ The following security controls are recommended to secure frontline workers acro
 | **Security Controls**     | **Description**             |
 |---------------------------|-----------------------------|
 | **Mobile Device Management (MDM) Managed** | To secure devices and the data they access, admins are recommended to manage them using an MDM like Microsoft [Intune](/mem/intune/fundamentals/manage-devices).                                   |
-| **Shared Device Mode (SDM) enabled**       | [Shared device mode](msal-shared-devices.md) is a feature that allows organizations to configure an iOS, iPadOS, or Android device so that multiple employees can share it. Employees can pick a device from the pool and sign in to make it theirs during their shift. They sign in once and get single-signed on to all SDM supported apps. At the end of their shift, they sign out globally on the device from all supported apps, with all their personal and company information removed so they can return it to the device pool and prevent other users from seeing their information. <br/>  We recommend enabling SDM on your shared devices. In addition to Microsoft Intune, check out other [third-party MDMs that support Microsoft Entra shared device mode](msal-android-shared-devices.md#third-party-mdms-that-support-shared-device-mode).|
+| **Shared Device Mode (SDM) enabled**       | [Shared device mode](msal-shared-devices.md) is a feature that allows organizations to configure an iOS, iPadOS, or Android device for multiple employees to share. Employees can pick a device from the shared pool, sign in once, and they automatically gain access to all SDM-supported apps through single sign-on (SSO). When their shift ends, they sign out globally on the device, which removes their personal and company information from all SDM-supported applications. They can then return their device to the pool, while ensuring a secure handoff to the next worker as other users can't see or access their information. <br/>  We recommend enabling SDM on your shared devices. In addition to Microsoft Intune, check out other [third-party MDMs that support Microsoft Entra shared device mode](msal-android-shared-devices.md#third-party-mdms-that-support-shared-device-mode).|
 | **Application protection policies**       | Intune [App Protection Policies (APP)](/mem/intune/apps/app-protection-policy) ensure organizational data remains safe within managed apps. For enhanced security, set up [Microsoft Entra Conditional Access policies](/entra/identity/conditional-access/howto-policy-approved-app-or-app-protection#require-approved-client-apps-or-app-protection-policy-with-mobile-devices) to ensure your apps are secured with an app protection policy before granting access to users.                                |
-| **Inactivity screen lock**                | Configure inactivity screen lock and auto sign-out functionalities using launcher apps like [Managed Home Screen](/mem/intune/apps/app-configuration-managed-home-screen-app), to prevent local attacks by a malicious coworker who has physical access to corporate shared devices.<br/>  On BYOD, configure screen lockout capabilities on [iOS](https://support.apple.com/guide/iphone/keep-the-iphone-display-on-longer-iph7117338a8/ios#:~:text=Change%20when%20iPhone%20automatically%20locks,choose%20a%20length%20of%20time.) and [Android](https://support.google.com/android/answer/9079129?hl=en) to prevent local attacks.  | 
-| **Device compliance**   | Deploying Microsoft Intune or a supported third-party MDM helps organizations to determine whether devices meet various compliance requirements such as requiring devices run a minimum OS version, not being jail-broken or rooted, and others as set by the admins.  <br/>  When configured, policy compliance information from the MDM is sent to Microsoft Entra ID, which is used by Device Compliance Conditional Access policy to decide to grant or block access to resources, therefore restricting a user from accessing resources only from compliant devices.|
+| **Inactivity screen lock**                | Configure inactivity screen lock and auto sign-out functionalities using launcher apps like [Managed Home Screen](/mem/intune/apps/app-configuration-managed-home-screen-app) to protect shared corporate devices from unauthorized access by malicious coworkers with physical access.<br/>  On BYOD, configure screen lockout capabilities on [iOS](https://support.apple.com/guide/iphone/keep-the-iphone-display-on-longer-iph7117338a8/ios#:~:text=Change%20when%20iPhone%20automatically%20locks,choose%20a%20length%20of%20time.) and [Android](https://support.google.com/android/answer/9079129?hl=en) to prevent local attacks.  | 
+| **Device compliance**   | Deploying Microsoft Intune or a supported third-party MDM enables organizations to enforce compliance requirements for devices. Administrators can set policies to ensure devices meet security standards such as requiring a minimum OS version, preventing use of jailbroken or rooted devices, and more.  <br/>  When configured, the MDM sends policy compliance information to Microsoft Entra ID. This data is used by Device Compliance Conditional Access policy to determine whether to grant or block access to resources, ensuring that only users with compliant devices can access organizational resources.|
 | **Interactive user authentication**       | Interactive user authentication ensures that only authorized users can access resources when they sign in to a device, application, or service. Admins should choose the [Microsoft Entra ID authentication methods](/entra/identity/authentication/concept-authentication-methods) that meet or exceed their organization's security, usability, and availability standards.|   
 
 ### Access scenarios for frontline workers
@@ -65,11 +64,11 @@ The recommended best practice is to allow access only through MDM managed and co
 
 #### Home access (off-shift) 
 
-At home, frontline workers should be restricted to just accessing non-sensitive business applications that might be required for limited off-shift communication or reviewing basic training material. Some organizations might also allow access to sensitive personal data like paystubs. For these scenarios, the recommended security best practices include:
+At home, frontline workers should have restricted access to non-sensitive business applications needed for limited off-shift communication or reviewing basic training material. Some organizations might also allow access to sensitive personal data like paystubs. For these scenarios, we recommend the following security best practices:
 
 - Enable interactive multifactor authentication 
 - Apply inactivity screen lock and [App Protection Policies](/mem/intune/apps/app-protection-policy). 
-- In scenarios where an organization needs to provide access to sensitive applications to their frontline workers while off-shift, we recommend following anywhere/anytime/any-device best practices as described in [Microsoft's Zero Trust best practices](https://www.microsoft.com/security/business/zero-trust).
+- Follow the anywhere/anytime/any-device best practices as described in [Microsoft's Zero Trust best practices](https://www.microsoft.com/security/business/zero-trust) in scenarios where your organization needs to provide access to sensitive applications to frontline workers while off-shift.
 
 > [!NOTE] 
 > Although many organizations follow the frontline workers home or work access model, some organizations might have internal policies that enable employees to access any device from anywhere and at any time. Such organizations need to apply the same policies on frontline workers as information workers and would thus follow anywhere/anytime/any-device best practices as described in [Microsoft's Zero Trust best practices](https://www.microsoft.com/security/business/zero-trust). 
@@ -97,5 +96,5 @@ To apply the best practices for your FLWs, take the following steps
 
 ## Related content
  - [Overview of Microsoft Entra Shared device mode](msal-shared-devices.md)
- -  [Microsoft’s Zero Trust best practices](https://www.microsoft.com/security/business/zero-trust)
+ - [Microsoft’s Zero Trust best practices](https://www.microsoft.com/security/business/zero-trust)
  - [Microsoft Entra Conditional Access policies](/entra/identity/conditional-access/)
