@@ -2,7 +2,7 @@
 title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Palo Alto Networks - GlobalProtect'
 description: Learn how to configure single sign-on between Microsoft Entra ID and Palo Alto Networks - GlobalProtect.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
@@ -10,7 +10,7 @@ ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
 ms.date: 04/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Palo Alto Networks - GlobalProtect so that I can control who has access to Palo Alto Networks - GlobalProtect, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
@@ -25,7 +25,7 @@ In this tutorial, you'll learn how to integrate Palo Alto Networks - GlobalProte
 
 ## Prerequisites
 
-To integrate Microsoft Entra ID with Bugcrowd, you need:
+To integrate Microsoft Entra ID with Palo Alto Networks - GlobalProtect, you need:
 
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * Palo Alto Networks - GlobalProtect single sign-on (SSO) enabled subscription.

@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with GitHub Enterprise Managed User'
 description: Learn how to configure single sign-on between Microsoft Entra ID and GitHub Enterprise Managed User.
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
@@ -9,7 +9,7 @@ ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 05/22/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and GitHub Enterprise Managed User so that I can control who has access to GitHub Enterprise Managed User, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.

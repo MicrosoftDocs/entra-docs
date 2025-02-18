@@ -2,7 +2,7 @@
 title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with WebSphere Liberty'
 description: Learn how to configure single sign-on between Microsoft Entra and WebSphere Liberty.
 services: active-directory
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
@@ -10,7 +10,7 @@ ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/02/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and WebSphere Liberty so that I can control who has access to WebSphere Liberty, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---

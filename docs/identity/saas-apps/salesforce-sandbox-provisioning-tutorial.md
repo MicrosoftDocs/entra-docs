@@ -2,7 +2,7 @@
 title: 'Tutorial: Configure Salesforce Sandbox for automatic user provisioning with Microsoft Entra ID| Microsoft Docs'
 description: Learn the steps you need to perform in Salesforce Sandbox and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Salesforce Sandbox.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
