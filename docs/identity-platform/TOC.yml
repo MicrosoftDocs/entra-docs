@@ -180,8 +180,6 @@
                   href: tutorial-native-authentication-single-page-app-react-reset-password.md
         - name: Angular
           items:
-          - name: Register your app
-            href: tutorial-single-page-apps-angular-register-app.md
           - name: Prepare your app
             href: tutorial-single-page-apps-angular-prepare-app.md
           - name: Sign in users

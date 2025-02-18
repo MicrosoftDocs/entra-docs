@@ -1,25 +1,25 @@
 ---
 title: "Tutorial: Extract user data with an Angular SPA"
 description: Learn how extract user data using an Angular single-page app (SPA).
-author: henrymbuguakiarie
-manager: mwongerapk
-ms.author: henrymbugua
-ms.date: 01/20/2025
-ms.reviewer: ejahjaloo
+author: garrodonnell
+manager: celested
+ms.author: godonnell
+ms.date: 02/20/2025
 ms.service: identity-platform
-
 ms.topic: tutorial
 #Customer intent: As an Angular developer, I want to know how to call an API from an Angular single-page app in a Microsoft Entra tenant.
 ---
 
 # Tutorial: Extract user data with an Angular SPA
 
-This tutorial is the final part of a series that demonstrates building an Angular single-page application (SPA) and preparing it for authentication using the Microsoft identity platform. In [Part 2 of this series](tutorial-single-page-apps-angular-sign-in-users-app.md), you created an Angular SPA and prepared it for authentication with your workforce tenant. 
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
+
+This tutorial is the final part of a series that demonstrates building an Angular single-page application (SPA) and adding authentication using the Microsoft identity platform. In [Part 2 of this series](tutorial-single-page-apps-angular-sign-in-users-app.md), you created an Angular SPA and prepared it for authentication with your workforce tenant. 
 
 In this tutorial:
 
 > [!div class="checklist"]
-> * Add data extraction functionality to your Angular application.
+> * Add data processing to your Angular application.
 > * Test the application and extract user data.
 
 ## Prerequisites

@@ -1,20 +1,20 @@
 ---
 title: "Tutorial: Sign in user in Angular Single-page Application"
 description: Sign in user in an Angular Single-page Application in a Microsoft Entra tenant to manage authentication and secure user access.
-author: henrymbuguakiarie
-manager: mwongerapk
-ms.author: henrymbugua
-ms.date: 11/11/2024
-ms.reviewer: ejahjaloo
+author: garrodonnell
+manager: celested
+ms.author: godonnell
+ms.date: 02/20/2025
 ms.service: identity-platform
-
 ms.topic: tutorial
 #Customer intent: As an Angular developer, I want to know how to use functional components to add sign in and sign out experiences in my Angular application.
 ---
 
 # Tutorial: Add sign in and sign out in your Angular single-page application
 
-This tutorial is part 2 of a series that demonstrates building an Angular single-page application (SPA) and preparing it for authentication. In [Part 1 of this series](tutorial-single-page-apps-angular-prepare-app.md), you created an Angular SPA and added initial configurations. 
+[!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
+
+This tutorial is part 2 of a series that demonstrates building an Angular single-page application (SPA) and adding authentication using the Microsoft identity platform.  In [Part 1 of this series](tutorial-single-page-apps-angular-prepare-app.md), you created an Angular SPA and added initial configurations. 
 
 In this tutorial:
 
