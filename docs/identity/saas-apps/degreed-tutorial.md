@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Degreed'
+title: Microsoft Entra integration with Degreed
 description: Learn how to configure single sign-on between Microsoft Entra ID and Degreed.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Degreed so that I can control who has access to Degreed, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Degreed
+# Microsoft Entra integration with Degreed
 
 In this tutorial, you'll learn how to integrate Degreed with Microsoft Entra ID. When you integrate Degreed with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Headspace'
+title: Microsoft Entra SSO integration with Headspace
 description: Learn how to configure single sign-on between Microsoft Entra ID and Headspace.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Headspace so that I can control who has access to Headspace, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Headspace
+# Microsoft Entra SSO integration with Headspace
 
 In this tutorial, you'll learn how to integrate Headspace with Microsoft Entra ID. When you integrate Headspace with Microsoft Entra ID, you can:
 

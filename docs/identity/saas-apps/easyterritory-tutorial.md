@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with EasyTerritory'
+title: Microsoft Entra integration with EasyTerritory
 description: Learn how to configure single sign-on between Microsoft Entra ID and EasyTerritory.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and EasyTerritory so that I can control who has access to EasyTerritory, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with EasyTerritory
+# Microsoft Entra integration with EasyTerritory
 
 In this tutorial, you learn how to integrate EasyTerritory with Microsoft Entra ID.
 Integrating EasyTerritory with Microsoft Entra ID provides you with the following benefits:

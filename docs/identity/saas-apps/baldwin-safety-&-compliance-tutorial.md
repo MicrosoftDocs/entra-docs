@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Baldwin Safety and Compliance'
+title: Microsoft Entra single sign-on (SSO) integration with Baldwin Safety and Compliance
 description: Learn how to configure single sign-on between Microsoft Entra ID and Baldwin Safety and Compliance.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Baldwin Safety and Compliance so that I can control who has access to Baldwin Safety and Compliance, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Baldwin Safety and Compliance
+# Microsoft Entra single sign-on (SSO) integration with Baldwin Safety and Compliance
 
 In this tutorial, you'll learn how to integrate Baldwin Safety and Compliance with Microsoft Entra ID. When you integrate Baldwin Safety and Compliance with Microsoft Entra ID, you can:
 

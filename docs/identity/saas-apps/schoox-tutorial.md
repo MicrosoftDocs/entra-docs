@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Schoox'
+title: Microsoft Entra integration with Schoox
 description: Learn how to configure single sign-on between Microsoft Entra ID and Schoox.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Schoox so that I can control who has access to Schoox, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Schoox
+# Microsoft Entra integration with Schoox
 
 In this tutorial, you'll learn how to integrate Schoox with Microsoft Entra ID. When you integrate Schoox with Microsoft Entra ID, you can:
 

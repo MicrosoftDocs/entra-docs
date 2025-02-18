@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Helper Helper'
+title: Microsoft Entra SSO integration with Helper Helper
 description: Learn how to configure single sign-on between Microsoft Entra ID and Helper Helper.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Helper Helper so that I can control who has access to Helper Helper, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Helper Helper
+# Microsoft Entra SSO integration with Helper Helper
 
 In this tutorial, you'll learn how to integrate Helper Helper with Microsoft Entra ID. When you integrate Helper Helper with Microsoft Entra ID, you can:
 

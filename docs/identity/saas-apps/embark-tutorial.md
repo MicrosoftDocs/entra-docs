@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Embark'
+title: Microsoft Entra SSO integration with Embark
 description: Learn how to configure single sign-on between Microsoft Entra ID and Embark.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Embark so that I can control who has access to Embark, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Embark
+# Microsoft Entra SSO integration with Embark
 
 In this tutorial, you'll learn how to integrate Embark with Microsoft Entra ID. When you integrate Embark with Microsoft Entra ID, you can:
 

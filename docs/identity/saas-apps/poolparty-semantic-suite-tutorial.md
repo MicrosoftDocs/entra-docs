@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with PoolParty Semantic Suite'
+title: Microsoft Entra single sign-on (SSO) integration with PoolParty Semantic Suite
 description: Learn how to configure single sign-on between Microsoft Entra ID and PoolParty Semantic Suite.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and PoolParty Semantic Suite so that I can control who has access to PoolParty Semantic Suite, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with PoolParty Semantic Suite
+# Microsoft Entra single sign-on (SSO) integration with PoolParty Semantic Suite
 
 In this tutorial, you'll learn how to integrate PoolParty Semantic Suite with Microsoft Entra ID. When you integrate PoolParty Semantic Suite with Microsoft Entra ID, you can:
 

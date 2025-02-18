@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with CS Stars'
+title: Microsoft Entra integration with CS Stars
 description: Learn how to configure single sign-on between Microsoft Entra ID and CS Stars.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and CS Stars so that I can control who has access to CS Stars, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with CS Stars
+# Microsoft Entra integration with CS Stars
 
 In this tutorial, you learn how to integrate CS Stars with Microsoft Entra ID.
 Integrating CS Stars with Microsoft Entra ID provides you with the following benefits:

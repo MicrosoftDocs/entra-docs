@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Nulab Pass (Backlog, Cacoo, and Typetalk)'
+title: Microsoft Entra single sign-on (SSO) integration with Nulab Pass (Backlog, Cacoo, and Typetalk)
 description: Learn how to configure single sign-on between Microsoft Entra ID and Nulab Pass (Backlog, Cacoo, and Typetalk).
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Nulab Pass (Backlog, Cacoo, and Typetalk) so that I can control who has access to Nulab Pass (Backlog, Cacoo, and Typetalk), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Nulab Pass (Backlog, Cacoo, and Typetalk)
+# Microsoft Entra single sign-on (SSO) integration with Nulab Pass (Backlog, Cacoo, and Typetalk)
 
 In this tutorial, you'll learn how to integrate Nulab Pass (Backlog, Cacoo, and Typetalk) with Microsoft Entra ID. By integrating, you can:
 

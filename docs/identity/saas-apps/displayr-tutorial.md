@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Displayr'
+title: Microsoft Entra integration with Displayr
 description: Learn how to configure single sign-on between Microsoft Entra ID and Displayr.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Displayr so that I can control who has access to Displayr, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Integrate Displayr with Microsoft Entra ID
+# Integrate Displayr with Microsoft Entra ID
 
 In this tutorial, you learn how to integrate Displayr with Microsoft Entra ID. When you integrate Displayr with Microsoft Entra ID, you can:
 

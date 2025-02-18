@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Virtual Risk Manager - USA'
+title: Microsoft Entra SSO integration with Virtual Risk Manager - USA
 description: Learn how to configure single sign-on between Microsoft Entra ID and Virtual Risk Manager - USA.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Virtual Risk Manager - USA so that I can control who has access to Virtual Risk Manager - USA, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Virtual Risk Manager - USA
+# Microsoft Entra SSO integration with Virtual Risk Manager - USA
 
 In this tutorial, you'll learn how to integrate Virtual Risk Manager - USA with Microsoft Entra ID. When you integrate Virtual Risk Manager - USA with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with TextExpander'
+title: Microsoft Entra single sign-on (SSO) integration with TextExpander
 description: Learn how to configure single sign-on between Microsoft Entra ID and TextExpander.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and TextExpander so that I can control who has access to TextExpander, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with TextExpander
+# Microsoft Entra single sign-on (SSO) integration with TextExpander
 
 In this tutorial, you'll learn how to integrate TextExpander with Microsoft Entra ID. When you integrate TextExpander with Microsoft Entra ID, you can:
 

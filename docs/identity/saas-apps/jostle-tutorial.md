@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Jostle'
+title: Microsoft Entra integration with Jostle
 description: Learn how to configure single sign-on between Microsoft Entra ID and Jostle.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Jostle so that I can control who has access to Jostle, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Jostle
+# Microsoft Entra integration with Jostle
 
 In this tutorial, you'll learn how to integrate Jostle with Microsoft Entra ID. When you integrate Jostle with Microsoft Entra ID, you can:
 

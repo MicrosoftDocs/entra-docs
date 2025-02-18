@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with iPoint Service Provider'
+title: Microsoft Entra SSO integration with iPoint Service Provider
 description: Learn how to configure single sign-on between Microsoft Entra ID and iPoint Service Provider.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and iPoint Service Provider so that I can control who has access to iPoint Service Provider, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with iPoint Service Provider
+# Microsoft Entra SSO integration with iPoint Service Provider
 
 In this tutorial, you'll learn how to integrate iPoint Service Provider with Microsoft Entra ID. When you integrate iPoint Service Provider with Microsoft Entra ID, you can:
 

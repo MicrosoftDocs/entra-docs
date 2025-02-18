@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with SuccessFactors'
+title: Microsoft Entra single sign-on (SSO) integration with SuccessFactors
 description: Learn how to configure single sign-on between Microsoft Entra ID and SuccessFactors.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SuccessFactors so that I can control who has access to SuccessFactors, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with SuccessFactors
+# Microsoft Entra single sign-on (SSO) integration with SuccessFactors
 
 In this tutorial, you'll learn how to integrate SuccessFactors with Microsoft Entra ID. When you integrate SuccessFactors with Microsoft Entra ID, you can:
 

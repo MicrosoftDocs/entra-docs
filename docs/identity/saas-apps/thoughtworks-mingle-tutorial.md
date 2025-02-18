@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Thoughtworks Mingle'
+title: Microsoft Entra SSO integration with Thoughtworks Mingle
 description: Learn how to configure single sign-on between Microsoft Entra ID and Thoughtworks Mingle.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Thoughtworks Mingle so that I can control who has access to Thoughtworks Mingle, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Thoughtworks Mingle
+# Microsoft Entra SSO integration with Thoughtworks Mingle
 
 In this tutorial, you'll learn how to integrate Thoughtworks Mingle with Microsoft Entra ID. When you integrate Thoughtworks Mingle with Microsoft Entra ID, you can:
 

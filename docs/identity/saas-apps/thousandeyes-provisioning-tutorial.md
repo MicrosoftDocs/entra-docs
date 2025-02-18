@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: User provisioning for ThousandEyes'
+title: User provisioning for ThousandEyes
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to ThousandEyes.
 
 author: thomasakelo
@@ -14,7 +14,7 @@ ms.author: arvinh
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to ThousandEyes so that I can streamline the user management process and ensure that users have the appropriate access to ThousandEyes.
 ---
 
-# Tutorial: Configure ThousandEyes for automatic user provisioning
+# Configure ThousandEyes for automatic user provisioning
 
 The objective of this tutorial is to show you the steps you need to perform in ThousandEyes and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to ThousandEyes. 
 

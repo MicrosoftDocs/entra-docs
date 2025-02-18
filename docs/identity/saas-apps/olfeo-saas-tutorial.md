@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Olfeo SAAS'
+title: Microsoft Entra single sign-on (SSO) integration with Olfeo SAAS
 description: Learn how to configure single sign-on between Microsoft Entra ID and Olfeo SAAS.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Olfeo SAAS so that I can control who has access to Olfeo SAAS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Olfeo SAAS
+# Microsoft Entra single sign-on (SSO) integration with Olfeo SAAS
 
 In this tutorial, you'll learn how to integrate Olfeo SAAS with Microsoft Entra ID. When you integrate Olfeo SAAS with Microsoft Entra ID, you can:
 

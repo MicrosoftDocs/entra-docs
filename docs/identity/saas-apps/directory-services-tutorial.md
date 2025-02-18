@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Directory Services'
+title: Microsoft Entra SSO integration with Directory Services
 description: Learn how to configure single sign-on between Microsoft Entra ID and Directory Services.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Directory Services so that I can control who has access to Directory Services, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Directory Services
+# Microsoft Entra SSO integration with Directory Services
 
 In this tutorial, you'll learn how to integrate Directory Services with Microsoft Entra ID. When you integrate Directory Services with Microsoft Entra ID, you can:
 

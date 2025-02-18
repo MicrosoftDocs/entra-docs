@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with dmarcian'
+title: Microsoft Entra integration with dmarcian
 description: Learn how to configure single sign-on between Microsoft Entra ID and dmarcian.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and dmarcian so that I can control who has access to dmarcian, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Integrate dmarcian with Microsoft Entra ID
+# Integrate dmarcian with Microsoft Entra ID
 
 In this tutorial, you'll learn how to integrate dmarcian with Microsoft Entra ID. When you integrate dmarcian with Microsoft Entra ID, you can:
 

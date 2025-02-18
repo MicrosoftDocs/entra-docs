@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with RSA Archer Suite'
+title: Microsoft Entra SSO integration with RSA Archer Suite
 description: Learn how to configure single sign-on between Microsoft Entra ID and RSA Archer Suite.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and RSA Archer Suite so that I can control who has access to RSA Archer Suite, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with RSA Archer Suite
+# Microsoft Entra SSO integration with RSA Archer Suite
 
 In this tutorial, you'll learn how to integrate RSA Archer Suite with Microsoft Entra ID. When you integrate RSA Archer Suite with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Agile Provisioning'
+title: Microsoft Entra SSO integration with Agile Provisioning
 description: Learn how to configure single sign-on between Microsoft Entra ID and Agile Provisioning.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: thomasakelo
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Agile Provisioning so that I can control who has access to Agile Provisioning, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Agile Provisioning
+# Microsoft Entra SSO integration with Agile Provisioning
 
 In this tutorial, you'll learn how to integrate Agile Provisioning with Microsoft Entra ID. When you integrate Agile Provisioning with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Microsoft Entra SSO integration with AppNeta Performance Manager"
+title: Microsoft Entra SSO integration with AppNeta Performance Manager
 description: Learn how to configure single sign-on between Microsoft Entra ID and AppNeta Performance Manager.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and AppNeta Performance Monitor so that I can control who has access to AppNeta Performance Monitor, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with AppNeta Performance Manager
+# Microsoft Entra SSO integration with AppNeta Performance Manager
 
 In this tutorial, you'll learn how to integrate AppNeta Performance Manager with Microsoft Entra ID. When you integrate AppNeta Performance Manager with Microsoft Entra ID, you can:
 

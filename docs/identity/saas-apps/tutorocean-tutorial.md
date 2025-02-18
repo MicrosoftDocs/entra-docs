@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with TutorOcean'
+title: Microsoft Entra single sign-on (SSO) integration with TutorOcean
 description: Learn how to configure single sign-on between Microsoft Entra ID and TutorOcean.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and TutorOcean so that I can control who has access to TutorOcean, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with TutorOcean
+# Microsoft Entra single sign-on (SSO) integration with TutorOcean
 
 In this tutorial, you'll learn how to integrate TutorOcean with Microsoft Entra ID. When you integrate TutorOcean with Microsoft Entra ID, you can:
 

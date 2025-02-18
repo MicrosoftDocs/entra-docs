@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Mixpanel'
+title: Microsoft Entra integration with Mixpanel
 description: Learn how to configure single sign-on between Microsoft Entra ID and Mixpanel.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Mixpanel so that I can control who has access to Mixpanel, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Mixpanel
+# Microsoft Entra integration with Mixpanel
 
 In this tutorial, you'll learn how to integrate Mixpanel with Microsoft Entra ID. When you integrate Mixpanel with Microsoft Entra ID, you can:
 

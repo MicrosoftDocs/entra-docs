@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Verme'
+title: Microsoft Entra SSO integration with Verme
 description: Learn how to configure single sign-on between Microsoft Entra ID and Verme.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Verme so that I can control who has access to Verme, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Verme
+# Microsoft Entra SSO integration with Verme
 
 In this tutorial, you'll learn how to integrate Verme with Microsoft Entra ID. When you integrate Verme with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Coupa Risk Assess'
+title: Microsoft Entra single sign-on (SSO) integration with Coupa Risk Assess
 description: Learn how to configure single sign-on between Microsoft Entra ID and Coupa Risk Assess.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Coupa Risk Assess so that I can control who has access to Coupa Risk Assess, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Coupa Risk Assess
+# Microsoft Entra single sign-on (SSO) integration with Coupa Risk Assess
 
 In this tutorial, you'll learn how to integrate Coupa Risk Assess with Microsoft Entra ID. When you integrate Coupa Risk Assess with Microsoft Entra ID, you can:
 

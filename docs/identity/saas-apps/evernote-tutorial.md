@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Evernote'
+title: Microsoft Entra single sign-on (SSO) integration with Evernote
 description: Learn how to configure single sign-on between Microsoft Entra ID and Evernote.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Evernote so that I can control who has access to Evernote, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Evernote
+# Microsoft Entra single sign-on (SSO) integration with Evernote
 
 In this tutorial, you'll learn how to integrate Evernote with Microsoft Entra ID. When you integrate Evernote with Microsoft Entra ID, you can:
 

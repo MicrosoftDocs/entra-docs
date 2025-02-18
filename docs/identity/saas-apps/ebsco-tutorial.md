@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with EBSCO'
+title: Microsoft Entra single sign-on (SSO) integration with EBSCO
 description: Learn how to configure single sign-on between Microsoft Entra ID and EBSCO.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and EBSCO so that I can control who has access to EBSCO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with EBSCO
+# Microsoft Entra single sign-on (SSO) integration with EBSCO
 
 In this tutorial, you'll learn how to integrate EBSCO with Microsoft Entra ID. When you integrate EBSCO with Microsoft Entra ID, you can:
 

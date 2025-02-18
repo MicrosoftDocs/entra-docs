@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Bizagi for Digital Process Automation'
+title: Microsoft Entra single sign-on (SSO) integration with Bizagi for Digital Process Automation
 description: Learn how to configure single sign-on between Microsoft Entra ID and Bizagi for Digital Process Automation.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Bizagi Studio for Digital Process Automation so that I can control who has access to Bizagi Studio for Digital Process Automation, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Bizagi for Digital Process Automation
+# Microsoft Entra single sign-on (SSO) integration with Bizagi for Digital Process Automation
 
 In this tutorial, you'll learn how to integrate Bizagi for Digital Process Automation Services or Server with Microsoft Entra ID. When you integrate Bizagi for Digital Process Automation with Microsoft Entra ID, you can:
 

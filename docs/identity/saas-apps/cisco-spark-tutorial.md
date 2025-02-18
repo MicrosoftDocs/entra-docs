@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Cisco Webex'
+title: Microsoft Entra SSO integration with Cisco Webex
 description: Learn how to configure single sign-on between Microsoft Entra ID and Cisco Webex.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Cisco Webex so that I can control who has access to Cisco Webex, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Cisco Webex
+# Microsoft Entra SSO integration with Cisco Webex
 
 In this tutorial, you'll learn how to integrate Cisco Webex with Microsoft Entra ID. When you integrate Cisco Webex with Microsoft Entra ID, you can:
 

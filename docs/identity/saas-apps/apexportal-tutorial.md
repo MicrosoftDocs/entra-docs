@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Apex Portal'
+title: Microsoft Entra single sign-on (SSO) integration with Apex Portal
 description: Learn how to configure single sign-on between Microsoft Entra ID and Apex Portal.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Apex Portal so that I can control who has access to Apex Portal, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Apex Portal
+# Microsoft Entra single sign-on (SSO) integration with Apex Portal
 
 In this tutorial, you'll learn how to integrate Apex Portal with Microsoft Entra ID. When you integrate Apex Portal with Microsoft Entra ID, you can:
 

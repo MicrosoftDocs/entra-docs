@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with BMIS - Battery Management Information System'
+title: Microsoft Entra SSO integration with BMIS - Battery Management Information System
 description: Learn how to configure single sign-on between Microsoft Entra ID and BMIS - Battery Management Information System.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and BMIS - Battery Management Information System so that I can control who has access to BMIS - Battery Management Information System, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with BMIS - Battery Management Information System
+# Microsoft Entra SSO integration with BMIS - Battery Management Information System
 
 In this tutorial, you'll learn how to integrate BMIS - Battery Management Information System with Microsoft Entra ID. When you integrate BMIS - Battery Management Information System with Microsoft Entra ID, you can:
 

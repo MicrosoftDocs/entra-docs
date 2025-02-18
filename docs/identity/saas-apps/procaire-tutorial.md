@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Procaire'
+title: Microsoft Entra single sign-on (SSO) integration with Procaire
 description: Learn how to configure single sign-on between Microsoft Entra ID and Procaire.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Procaire so that I can control who has access to Procaire, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Procaire
+# Microsoft Entra single sign-on (SSO) integration with Procaire
 
 In this tutorial, you'll learn how to integrate Procaire with Microsoft Entra ID. When you integrate Procaire with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with WhosOffice'
+title: Microsoft Entra single sign-on (SSO) integration with WhosOffice
 description: Learn how to configure single sign-on between Microsoft Entra ID and WhosOffice.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and WhosOffice so that I can control who has access to WhosOffice, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with WhosOffice
+# Microsoft Entra single sign-on (SSO) integration with WhosOffice
 
 In this tutorial, you'll learn how to integrate WhosOffice with Microsoft Entra ID. When you integrate WhosOffice with Microsoft Entra ID, you can:
 

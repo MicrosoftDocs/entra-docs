@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Skills Workflow'
+title: Microsoft Entra SSO integration with Skills Workflow
 description: Learn how to configure single sign-on between Microsoft Entra ID and Skills Workflow.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Skills Workflow so that I can control who has access to Skills Workflow, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Skills Workflow
+# Microsoft Entra SSO integration with Skills Workflow
 
 In this tutorial, you'll learn how to integrate Skills Workflow with Microsoft Entra ID. When you integrate Skills Workflow with Microsoft Entra ID, you can:
 

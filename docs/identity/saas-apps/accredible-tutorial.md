@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Accredible'
+title: Microsoft Entra integration with Accredible
 description: Learn how to configure single sign-on between Microsoft Entra ID and Accredible.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Accredible so that I can control who has access to Accredible, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Accredible
+# Microsoft Entra integration with Accredible
 
 In this tutorial, you learn how to integrate Accredible with Microsoft Entra ID.
 Integrating Accredible with Microsoft Entra ID provides you with the following benefits:

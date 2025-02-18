@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Ceridian Dayforce HCM'
+title: Microsoft Entra integration with Ceridian Dayforce HCM
 description: Learn how to configure single sign-on between Microsoft Entra ID and Ceridian Dayforce HCM.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Ceridian Dayforce HCM so that I can control who has access to Ceridian Dayforce HCM, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Ceridian Dayforce HCM
+# Microsoft Entra integration with Ceridian Dayforce HCM
 
 In this tutorial, you'll learn how to integrate Ceridian Dayforce HCM with Microsoft Entra ID. When you integrate Ceridian Dayforce HCM with Microsoft Entra ID, you can:
 

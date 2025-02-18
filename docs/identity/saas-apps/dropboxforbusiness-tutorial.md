@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Dropbox Business'
+title: Microsoft Entra integration with Dropbox Business
 description: Learn how to configure single sign-on between Microsoft Entra ID and Dropbox Business.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Dropbox Business so that I can control who has access to Dropbox Business, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Integrate Dropbox Business with Microsoft Entra ID
+# Integrate Dropbox Business with Microsoft Entra ID
 
 In this tutorial, you'll learn how to integrate Dropbox Business with Microsoft Entra ID. When you integrate Dropbox Business with Microsoft Entra ID, you can:
 

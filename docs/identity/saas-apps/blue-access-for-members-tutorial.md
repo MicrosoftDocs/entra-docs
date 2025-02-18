@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Blue Access for Members (BAM)'
+title: Microsoft Entra SSO integration with Blue Access for Members (BAM)
 description: Learn how to configure single sign-on between Microsoft Entra ID and Blue Access for Members (BAM).
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Blue Access for Members (BAM) so that I can control who has access to Blue Access for Members (BAM), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Blue Access for Members (BAM)
+# Microsoft Entra SSO integration with Blue Access for Members (BAM)
 
 In this tutorial, you'll learn how to integrate Blue Access for Members (BAM) with Microsoft Entra ID. When you integrate Blue Access for Members (BAM) with Microsoft Entra ID, you can:
 

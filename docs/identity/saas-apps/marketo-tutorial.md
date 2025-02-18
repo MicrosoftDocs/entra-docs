@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Marketo'
+title: Microsoft Entra SSO integration with Marketo
 description: Learn how to configure single sign-on between Microsoft Entra ID and Marketo.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Marketo so that I can control who has access to Marketo, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Marketo
+# Microsoft Entra SSO integration with Marketo
 
 In this tutorial, you learn how to integrate Marketo with Microsoft Entra ID.
 Integrating Marketo with Microsoft Entra ID provides you with the following benefits:

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with ExpenseIn'
+title: Microsoft Entra SSO integration with ExpenseIn
 description: Learn how to configure single sign-on between Microsoft Entra ID and ExpenseIn.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ExpenseIn so that I can control who has access to ExpenseIn, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with ExpenseIn
+# Microsoft Entra SSO integration with ExpenseIn
 
 In this tutorial, you'll learn how to integrate ExpenseIn with Microsoft Entra ID. When you integrate ExpenseIn with Microsoft Entra ID, you can:
 

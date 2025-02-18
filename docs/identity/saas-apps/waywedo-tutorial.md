@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Way We Do'
+title: Microsoft Entra SSO integration with Way We Do
 description: Learn how to configure single sign-on between Microsoft Entra ID and Way We Do.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Way We Do so that I can control who has access to Way We Do, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Way We Do
+# Microsoft Entra SSO integration with Way We Do
 
 In this tutorial, you'll learn how to integrate Way We Do with Microsoft Entra ID. When you integrate Way We Do with Microsoft Entra ID, you can:
 

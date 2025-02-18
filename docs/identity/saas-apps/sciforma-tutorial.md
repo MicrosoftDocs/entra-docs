@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Sciforma'
+title: Microsoft Entra integration with Sciforma
 description: Learn how to configure single sign-on between Microsoft Entra ID and Sciforma.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Sciforma so that I can control who has access to Sciforma, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Sciforma
+# Microsoft Entra integration with Sciforma
 
 In this tutorial, you'll learn how to integrate Sciforma with Microsoft Entra ID. When you integrate Sciforma with Microsoft Entra ID, you can:
 

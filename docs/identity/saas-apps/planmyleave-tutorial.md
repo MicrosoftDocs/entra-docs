@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with PlanMyLeave'
+title: Microsoft Entra integration with PlanMyLeave
 description: Learn how to configure single sign-on between Microsoft Entra ID and PlanMyLeave.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and PlanMyLeave so that I can control who has access to PlanMyLeave, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with PlanMyLeave
+# Microsoft Entra integration with PlanMyLeave
 
 In this tutorial, you learn how to integrate PlanMyLeave with Microsoft Entra ID.
 Integrating PlanMyLeave with Microsoft Entra ID provides you with the following benefits:

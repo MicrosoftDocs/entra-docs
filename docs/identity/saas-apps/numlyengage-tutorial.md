@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with NumlyEngage™'
+title: Microsoft Entra single sign-on (SSO) integration with NumlyEngage™
 description: Learn how to configure single sign-on between Microsoft Entra ID and NumlyEngage™.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and NumlyEngageâ„¢ so that I can control who has access to NumlyEngageâ„¢, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with NumlyEngage™
+# Microsoft Entra single sign-on (SSO) integration with NumlyEngage™
 
 In this tutorial, you'll learn how to integrate NumlyEngage™ with Microsoft Entra ID. When you integrate NumlyEngage™ with Microsoft Entra ID, you can:
 

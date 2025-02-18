@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Proxyclick'
+title: Microsoft Entra integration with Proxyclick
 description: In this tutorial, you'll learn how to configure single sign-on between Microsoft Entra ID and Proxyclick.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Proxyclick so that I can control who has access to Proxyclick, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Proxyclick
+# Microsoft Entra integration with Proxyclick
 
 In this tutorial, you'll learn how to integrate Proxyclick with Microsoft Entra ID. When you integrate Proxyclick with Microsoft Entra ID, you can:
 

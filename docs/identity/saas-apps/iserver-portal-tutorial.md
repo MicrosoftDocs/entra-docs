@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with iServer Portal'
+title: Microsoft Entra SSO integration with iServer Portal
 description: Learn how to configure single sign-on between Microsoft Entra ID and iServer Portal.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and iServer Portal so that I can control who has access to iServer Portal, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with iServer Portal
+# Microsoft Entra SSO integration with iServer Portal
 
 In this tutorial, you'll learn how to integrate iServer Portal with Microsoft Entra ID. When you integrate iServer Portal with Microsoft Entra ID, you can:
 

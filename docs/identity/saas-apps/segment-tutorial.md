@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Segment'
+title: Microsoft Entra single sign-on (SSO) integration with Segment
 description: Learn how to configure single sign-on between Microsoft Entra ID and Segment.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Segment so that I can control who has access to Segment, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Segment
+# Microsoft Entra single sign-on (SSO) integration with Segment
 
 In this tutorial, you'll learn how to integrate Segment with Microsoft Entra ID. When you integrate Segment with Microsoft Entra ID, you can:
 

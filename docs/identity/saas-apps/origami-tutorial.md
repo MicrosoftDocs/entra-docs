@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Origami'
+title: Microsoft Entra integration with Origami
 description: Learn how to configure single sign-on between Microsoft Entra ID and Origami.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Origami so that I can control who has access to Origami, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Origami
+# Microsoft Entra integration with Origami
 
 In this tutorial, you'll learn how to integrate Origami with Microsoft Entra ID. When you integrate Origami with Microsoft Entra ID, you can:
 

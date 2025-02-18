@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with itslearning'
+title: Microsoft Entra integration with itslearning
 description: Learn how to configure single sign-on between Microsoft Entra ID and itslearning.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and itslearning so that I can control who has access to itslearning, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with itslearning
+# Microsoft Entra integration with itslearning
 
 In this tutorial, you'll learn how to integrate itslearning with Microsoft Entra ID. When you integrate itslearning with Microsoft Entra ID, you can:
 

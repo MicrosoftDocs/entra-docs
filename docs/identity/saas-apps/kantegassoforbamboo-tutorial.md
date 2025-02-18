@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Kantega SSO for Bamboo'
+title: Microsoft Entra SSO integration with Kantega SSO for Bamboo
 description: Learn how to configure single sign-on between Microsoft Entra ID and Kantega SSO for Bamboo.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Kantega SSO for Bamboo so that I can control who has access to Kantega SSO for Bamboo, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Kantega SSO for Bamboo
+# Microsoft Entra SSO integration with Kantega SSO for Bamboo
 
 In this tutorial, you'll learn how to integrate Kantega SSO for Bamboo with Microsoft Entra ID. When you integrate Kantega SSO for Bamboo with Microsoft Entra ID, you can:
 

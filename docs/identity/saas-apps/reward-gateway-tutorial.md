@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Reward Gateway'
+title: Microsoft Entra integration with Reward Gateway
 description: Learn how to configure single sign-on between Microsoft Entra ID and Reward Gateway.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Reward Gateway so that I can control who has access to Reward Gateway, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Reward Gateway
+# Microsoft Entra integration with Reward Gateway
 
 In this tutorial, you'll learn how to integrate Reward Gateway with Microsoft Entra ID. When you integrate Reward Gateway with Microsoft Entra ID, you can:
 

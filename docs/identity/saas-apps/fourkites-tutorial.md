@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with FourKites SAML2.0 SSO for Tracking'
+title: Microsoft Entra SSO integration with FourKites SAML2.0 SSO for Tracking
 description: Learn how to configure single sign-on between Microsoft Entra ID and FourKites SAML2.0 SSO for Tracking.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and FourKites SAML2.0 SSO for Tracking so that I can control who has access to FourKites SAML2.0 SSO for Tracking, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with FourKites SAML2.0 SSO for Tracking
+# Microsoft Entra SSO integration with FourKites SAML2.0 SSO for Tracking
 
 In this tutorial, you'll learn how to integrate FourKites SAML2.0 SSO for Tracking with Microsoft Entra ID. When you integrate FourKites SAML2.0 SSO for Tracking with Microsoft Entra ID, you can:
 

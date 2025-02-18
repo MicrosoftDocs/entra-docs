@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with GTNexus SSO System'
+title: Microsoft Entra integration with GTNexus SSO System
 description: Learn how to configure single sign-on between Microsoft Entra ID and GTNexus SSO System.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and GT Nexus Prod System so that I can control who has access to GT Nexus Prod System, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with GTNexus SSO System
+# Microsoft Entra integration with GTNexus SSO System
 
 In this tutorial, you learn how to integrate GTNexus SSO System with Microsoft Entra ID.
 Integrating GTNexus SSO System with Microsoft Entra ID provides you with the following benefits:

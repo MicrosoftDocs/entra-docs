@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with In Case of Crisis - Mobile'
+title: Microsoft Entra SSO integration with In Case of Crisis - Mobile
 description: Learn how to configure single sign-on between Microsoft Entra ID and In Case of Crisis - Mobile.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and In Case of Crisis - Mobile so that I can control who has access to In Case of Crisis - Mobile, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with In Case of Crisis - Mobile
+# Microsoft Entra SSO integration with In Case of Crisis - Mobile
 
 In this tutorial, you'll learn how to integrate In Case of Crisis - Mobile with Microsoft Entra ID. When you integrate In Case of Crisis - Mobile with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Configure Meta Networks Connector for automatic user provisioning with Microsoft Entra ID'
+title: Configure Meta Networks Connector for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Meta Networks Connector.
 
 author: thomasakelo
@@ -14,7 +14,7 @@ ms.author: thomasakelo
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Meta Networks Connector so that I can streamline the user management process and ensure that users have the appropriate access to Meta Networks Connector.
 ---
 
-# Tutorial: Configure Meta Networks Connector for automatic user provisioning
+# Configure Meta Networks Connector for automatic user provisioning
 
 The objective of this tutorial is to demonstrate the steps to be performed in Meta Networks Connector and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Meta Networks Connector.
 

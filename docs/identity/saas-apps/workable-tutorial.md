@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Workable'
+title: Microsoft Entra SSO integration with Workable
 description: Learn how to configure single sign-on between Microsoft Entra ID and Workable.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Workable so that I can control who has access to Workable, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Workable
+# Microsoft Entra SSO integration with Workable
 
 In this tutorial, you'll learn how to integrate Workable with Microsoft Entra ID. When you integrate Workable with Microsoft Entra ID, you can:
 

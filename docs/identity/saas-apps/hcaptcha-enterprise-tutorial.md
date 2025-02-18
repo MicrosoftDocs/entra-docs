@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with hCaptcha Enterprise'
+title: Microsoft Entra single sign-on (SSO) integration with hCaptcha Enterprise
 description: Learn how to configure single sign-on between Microsoft Entra ID and hCaptcha Enterprise.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and hCaptcha Enterprise so that I can control who has access to hCaptcha Enterprise, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with hCaptcha Enterprise
+# Microsoft Entra single sign-on (SSO) integration with hCaptcha Enterprise
 
 In this tutorial, you'll learn how to integrate hCaptcha Enterprise with Microsoft Entra ID. When you integrate hCaptcha Enterprise with Microsoft Entra ID, you can:
 

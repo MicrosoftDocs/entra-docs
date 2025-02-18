@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Certain Admin SSO'
+title: Microsoft Entra SSO integration with Certain Admin SSO
 description: Learn how to configure single sign-on between Microsoft Entra ID and Certain Admin SSO.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Certain Admin SSO so that I can control who has access to Certain Admin SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Certain Admin SSO
+# Microsoft Entra integration with Certain Admin SSO
 
 In this tutorial, you'll learn how to integrate Certain Admin SSO with Microsoft Entra ID. When you integrate Certain Admin SSO with Microsoft Entra ID, you can:
 

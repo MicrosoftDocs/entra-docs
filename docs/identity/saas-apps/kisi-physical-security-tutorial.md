@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Kisi Physical Security'
+title: Microsoft Entra single sign-on (SSO) integration with Kisi Physical Security
 description: Learn how to configure single sign-on between Microsoft Entra ID and Kisi Physical Security.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Kisi Physical Security so that I can control who has access to Kisi Physical Security, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Kisi Physical Security
+# Microsoft Entra single sign-on (SSO) integration with Kisi Physical Security
 
 In this tutorial, you'll learn how to integrate Kisi Physical Security with Microsoft Entra ID. When you integrate Kisi Physical Security with Microsoft Entra ID, you can:
 

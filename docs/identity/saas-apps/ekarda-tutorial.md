@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with ekarda'
+title: Microsoft Entra single sign-on (SSO) integration with ekarda
 description: Learn how to configure single sign-on between Microsoft Entra ID and ekarda.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Ekarda so that I can control who has access to Ekarda, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with ekarda
+# Microsoft Entra single sign-on (SSO) integration with ekarda
 
 In this tutorial, you'll learn how to integrate ekarda with Microsoft Entra ID. When you integrate ekarda with Microsoft Entra ID, you can:
 

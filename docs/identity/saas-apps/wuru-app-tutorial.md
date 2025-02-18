@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Wúru App'
+title: Microsoft Entra single sign-on (SSO) integration with Wúru App
 description: Learn how to configure single sign-on between Microsoft Entra ID and Wúru App.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and WÃºru App so that I can control who has access to WÃºru App, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Wúru App
+# Microsoft Entra single sign-on (SSO) integration with Wúru App
 
 In this tutorial, you'll learn how to integrate Wúru App with Microsoft Entra ID. When you integrate Wúru App with Microsoft Entra ID, you can:
 

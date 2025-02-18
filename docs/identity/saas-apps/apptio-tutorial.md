@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Microsoft Entra single sign-on (SSO) integration with Apptio"
+title: Microsoft Entra single sign-on (SSO) integration with Apptio
 description: Learn how to configure single sign-on between Microsoft Entra ID and Apptio.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Apptio so that I can control who has access to Apptio, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Apptio
+# Microsoft Entra single sign-on (SSO) integration with Apptio
 
 In this tutorial, you'll learn how to integrate Apptio with Microsoft Entra ID. When you integrate Apptio with Microsoft Entra ID, you can:
 

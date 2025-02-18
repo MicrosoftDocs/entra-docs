@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Bealink'
+title: Microsoft Entra SSO integration with Bealink
 description: Learn how to configure single sign-on between Microsoft Entra ID and Bealink.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Bealink so that I can control who has access to Bealink, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Bealink
+# Microsoft Entra SSO integration with Bealink
 
 In this tutorial, you'll learn how to integrate Bealink with Microsoft Entra ID. When you integrate Bealink with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Jamf Pro'
+title: Microsoft Entra single sign-on (SSO) integration with Jamf Pro
 description: Learn how to configure single sign-on between Microsoft Entra ID and Jamf Pro.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Jamf Pro so that I can control who has access to Jamf Pro, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Jamf Pro
+# Microsoft Entra SSO integration with Jamf Pro
 
 In this tutorial, you'll learn how to integrate Jamf Pro with Microsoft Entra ID. When you integrate Jamf Pro with Microsoft Entra ID, you can:
 

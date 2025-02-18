@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Perimeter 81'
+title: Microsoft Entra single sign-on (SSO) integration with Perimeter 81
 description: Learn how to configure single sign-on between Microsoft Entra ID and Perimeter 81.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Perimeter 81 so that I can control who has access to Perimeter 81, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Perimeter 81
+# Microsoft Entra single sign-on (SSO) integration with Perimeter 81
 
 In this tutorial, you'll learn how to integrate Perimeter 81 with Microsoft Entra ID. When you integrate Perimeter 81 with Microsoft Entra ID, you can:
 

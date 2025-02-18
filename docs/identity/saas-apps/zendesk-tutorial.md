@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Zendesk'
+title: Microsoft Entra SSO integration with Zendesk
 description: Learn how to configure single sign-on between Microsoft Entra ID and Zendesk.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Zendesk so that I can control who has access to Zendesk, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Zendesk
+# Microsoft Entra SSO integration with Zendesk
 
 In this tutorial, you'll learn how to integrate Zendesk with Microsoft Entra ID. When you integrate Zendesk with Microsoft Entra ID, you can:
 

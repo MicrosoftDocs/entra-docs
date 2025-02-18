@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Costpoint'
+title: Microsoft Entra integration with Costpoint
 description: Learn how to configure single sign-on between Microsoft Entra ID and Costpoint.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Costpoint so that I can control who has access to Costpoint, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Integrate Costpoint with Microsoft Entra ID
+# Integrate Costpoint with Microsoft Entra ID
 
 In this tutorial, you'll learn how to integrate Costpoint with Microsoft Entra ID. When you integrate Costpoint with Microsoft Entra ID, you can:
 

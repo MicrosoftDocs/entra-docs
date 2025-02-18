@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with SilkRoad Life Suite'
+title: Microsoft Entra integration with SilkRoad Life Suite
 description: Learn how to configure single sign-on between Microsoft Entra ID and SilkRoad Life Suite.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SilkRoad Life Suite so that I can control who has access to SilkRoad Life Suite, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with SilkRoad Life Suite
+# Microsoft Entra integration with SilkRoad Life Suite
 
 In this tutorial, you'll learn how to integrate SilkRoad Life Suite with Microsoft Entra ID. When you integrate SilkRoad Life Suite with Microsoft Entra ID, you can:
 

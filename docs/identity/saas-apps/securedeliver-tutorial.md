@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with SECURE DELIVER'
+title: Microsoft Entra SSO integration with SECURE DELIVER
 description: Learn how to configure single sign-on between Microsoft Entra ID and SECURE DELIVER.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SECURE DELIVER so that I can control who has access to SECURE DELIVER, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with SECURE DELIVER
+# Microsoft Entra SSO integration with SECURE DELIVER
 
 In this tutorial, you'll learn how to integrate SECURE DELIVER with Microsoft Entra ID. When you integrate SECURE DELIVER with Microsoft Entra ID, you can:
 

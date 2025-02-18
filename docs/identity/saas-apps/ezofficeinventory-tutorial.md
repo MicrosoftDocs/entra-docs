@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with EZOfficeInventory'
+title: Microsoft Entra single sign-on (SSO) integration with EZOfficeInventory
 description: Learn how to configure single sign-on between Microsoft Entra ID and EZOfficeInventory.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and EZOfficeInventory so that I can control who has access to EZOfficeInventory, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with EZOfficeInventory
+# Microsoft Entra single sign-on (SSO) integration with EZOfficeInventory
 
 In this tutorial, you'll learn how to integrate EZOfficeInventory with Microsoft Entra ID. When you integrate EZOfficeInventory with Microsoft Entra ID, you can:
 

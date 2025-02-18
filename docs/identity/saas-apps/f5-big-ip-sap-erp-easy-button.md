@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and F5 BIG-IP Easy Button for SSO to SAP ERP using Microsoft Entra ID so that I can control who has access to F5 BIG-IP Easy Button for SSO to SAP ERP using Microsoft Entra ID, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Configure F5’s BIG-IP Easy Button for SSO to SAP ERP using Microsoft Entra ID
+# Configure F5’s BIG-IP Easy Button for SSO to SAP ERP using Microsoft Entra ID
 
 In this article, learn to secure SAP ERP using Microsoft Entra ID, through F5’s BIG-IP Easy Button guided configuration.
 

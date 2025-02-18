@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Palo Alto Networks - Aperture'
+title: Microsoft Entra integration with Palo Alto Networks - Aperture
 description: Learn how to configure single sign-on between Microsoft Entra ID and Palo Alto Networks - Aperture.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Palo Alto Networks - Aperture so that I can control who has access to Palo Alto Networks - Aperture, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Palo Alto Networks - Aperture
+# Microsoft Entra integration with Palo Alto Networks - Aperture
 
 In this tutorial, you'll learn how to integrate Palo Alto Networks - Aperture with Microsoft Entra ID. When you integrate Palo Alto Networks - Aperture with Microsoft Entra ID, you can:
 

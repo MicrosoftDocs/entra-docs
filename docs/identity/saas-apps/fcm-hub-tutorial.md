@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with FCM HUB'
+title: Microsoft Entra SSO integration with FCM HUB
 description: Learn how to configure single sign-on between Microsoft Entra ID and FCM HUB.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and FCM HUB so that I can control who has access to FCM HUB, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with FCM HUB
+# Microsoft Entra SSO integration with FCM HUB
 
 In this tutorial, you learn how to integrate FCM HUB with Microsoft Entra ID. When you integrate FCM HUB with Microsoft Entra ID, you can:
 

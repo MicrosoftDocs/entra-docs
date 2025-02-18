@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with mindWireless'
+title: Microsoft Entra single sign-on (SSO) integration with mindWireless
 description: Learn how to configure single sign-on between Microsoft Entra ID and mindWireless.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and mindWireless so that I can control who has access to mindWireless, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with mindWireless
+# Microsoft Entra single sign-on (SSO) integration with mindWireless
 
 In this tutorial, you'll learn how to integrate mindWireless with Microsoft Entra ID. When you integrate mindWireless with Microsoft Entra ID, you can:
 

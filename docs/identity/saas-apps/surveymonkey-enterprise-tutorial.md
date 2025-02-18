@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with SurveyMonkey Enterprise'
+title: Microsoft Entra SSO integration with SurveyMonkey Enterprise
 description: Learn how to configure single sign-on between Microsoft Entra ID and SurveyMonkey Enterprise.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SurveyMonkey Enterprise so that I can control who has access to SurveyMonkey Enterprise, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with SurveyMonkey Enterprise
+# Microsoft Entra SSO integration with SurveyMonkey Enterprise
 
 In this tutorial, you'll learn how to integrate SurveyMonkey Enterprise with Microsoft Entra ID. When you integrate SurveyMonkey Enterprise with Microsoft Entra ID, you can:
 

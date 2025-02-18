@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with CloudSign'
+title: Microsoft Entra SSO integration with CloudSign
 description: Learn how to configure single sign-on between Microsoft Entra ID and CloudSign.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and CloudSign so that I can control who has access to CloudSign, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with CloudSign
+# Microsoft Entra SSO integration with CloudSign
 
 In this tutorial, you'll learn how to integrate CloudSign with Microsoft Entra ID. When you integrate CloudSign with Microsoft Entra ID, you can:
 

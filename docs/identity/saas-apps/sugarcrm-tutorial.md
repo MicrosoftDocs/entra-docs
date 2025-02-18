@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Sugar CRM'
+title: Microsoft Entra single sign-on (SSO) integration with Sugar CRM
 description: Learn how to configure single sign-on between Microsoft Entra ID and Sugar CRM.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Sugar CRM so that I can control who has access to Sugar CRM, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Sugar CRM
+# Microsoft Entra single sign-on (SSO) integration with Sugar CRM
 
 In this tutorial, you'll learn how to integrate Sugar CRM with Microsoft Entra ID. When you integrate Sugar CRM with Microsoft Entra ID, you can:
 

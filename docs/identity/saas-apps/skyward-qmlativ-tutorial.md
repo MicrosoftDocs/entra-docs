@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Skyward Qmlativ'
+title: Microsoft Entra integration with Skyward Qmlativ
 description: Learn how to configure single sign-on between Microsoft Entra ID and Skyward Qmlativ.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Skyward Qmlativ so that I can control who has access to Skyward Qmlativ, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Skyward Qmlativ
+# Microsoft Entra integration with Skyward Qmlativ
 
 In this tutorial, you'll learn how to integrate Skyward Qmlativ with Microsoft Entra ID. When you integrate Skyward Qmlativ with Microsoft Entra ID, you can:
 

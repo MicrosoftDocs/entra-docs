@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with WireWheel'
+title: Microsoft Entra single sign-on (SSO) integration with WireWheel
 description: Learn how to configure single sign-on between Microsoft Entra ID and WireWheel.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and WireWheel so that I can control who has access to WireWheel, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with WireWheel
+# Microsoft Entra single sign-on (SSO) integration with WireWheel
 
 In this tutorial, you'll learn how to integrate WireWheel with Microsoft Entra ID. When you integrate WireWheel with Microsoft Entra ID, you can:
 

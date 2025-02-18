@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with AWS ClientVPN'
+title: Microsoft Entra single sign-on (SSO) integration with AWS ClientVPN
 description: Learn how to configure single sign-on between Microsoft Entra ID and AWS ClientVPN.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and AWS ClientVPN so that I can control who has access to AWS ClientVPN, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with AWS ClientVPN
+# Microsoft Entra single sign-on (SSO) integration with AWS ClientVPN
 
 In this tutorial, you'll learn how to integrate AWS ClientVPN with Microsoft Entra ID. When you integrate AWS ClientVPN with Microsoft Entra ID, you can:
 

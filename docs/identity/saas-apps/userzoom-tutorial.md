@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with UserZoom'
+title: Microsoft Entra SSO integration with UserZoom
 description: Learn how to configure single sign-on between Microsoft Entra ID and UserZoom.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and UserZoom so that I can control who has access to UserZoom, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with UserZoom
+# Microsoft Entra SSO integration with UserZoom
 
 In this tutorial, you'll learn how to integrate UserZoom with Microsoft Entra ID. When you integrate UserZoom with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with SharePoint on-premises'
+title: Microsoft Entra integration with SharePoint on-premises
 description: Learn how to implement federated authentication between Microsoft Entra ID and SharePoint on-premises.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SharePoint on-premises so that I can control who has access to SharePoint on-premises, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Implement federated authentication between Microsoft Entra ID and SharePoint on-premises
+# Implement federated authentication between Microsoft Entra ID and SharePoint on-premises
 
 ## Scenario description
 

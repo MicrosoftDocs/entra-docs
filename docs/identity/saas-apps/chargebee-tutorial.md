@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Chargebee'
+title: Microsoft Entra SSO integration with Chargebee
 description: Learn how to configure single sign-on between Microsoft Entra ID and Chargebee.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Chargebee so that I can control who has access to Chargebee, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Chargebee
+# Microsoft Entra SSO integration with Chargebee
 
 In this tutorial, you'll learn how to integrate Chargebee with Microsoft Entra ID. When you integrate Chargebee with Microsoft Entra ID, you can:
 

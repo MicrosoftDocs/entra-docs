@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with LifeBalance Program'
+title: Microsoft Entra single sign-on (SSO) integration with LifeBalance Program
 description: Learn how to configure single sign-on between Microsoft Entra and LifeBalance Program.
 services: active-directory
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and LifeBalance Program so that I can control who has access to LifeBalance Program, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with LifeBalance Program
+# Microsoft Entra single sign-on (SSO) integration with LifeBalance Program
 
 In this tutorial, you'll learn how to integrate LifeBalance Program with Microsoft Entra ID. When you integrate LifeBalance Program with Microsoft Entra ID, you can:
 

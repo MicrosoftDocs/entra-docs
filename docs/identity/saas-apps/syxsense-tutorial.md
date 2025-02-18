@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Syxsense'
+title: Microsoft Entra single sign-on (SSO) integration with Syxsense
 description: Learn how to configure single sign-on between Microsoft Entra ID and Syxsense.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Syxsense so that I can control who has access to Syxsense, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Syxsense
+# Microsoft Entra single sign-on (SSO) integration with Syxsense
 
 In this tutorial, you'll learn how to integrate Syxsense with Microsoft Entra ID. When you integrate Syxsense with Microsoft Entra ID, you can:
 

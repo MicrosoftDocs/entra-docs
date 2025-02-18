@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Postman'
+title: Microsoft Entra SSO integration with Postman
 description: Learn how to configure single sign-on between Microsoft Entra ID and Postman.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Postman so that I can control who has access to Postman, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Postman
+# Microsoft Entra SSO integration with Postman
 
 In this tutorial, you'll learn how to integrate Postman with Microsoft Entra ID. When you integrate Postman with Microsoft Entra ID, you can:
 

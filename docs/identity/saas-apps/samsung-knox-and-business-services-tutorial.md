@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Samsung Knox and Business Services'
+title: Microsoft Entra single sign-on (SSO) integration with Samsung Knox and Business Services
 description: Learn how to configure single sign-on between Microsoft Entra ID and Samsung Knox and Business Services.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Samsung Knox and Business Services so that I can control who has access to Samsung Knox and Business Services, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Samsung Knox and Business Services
+# Microsoft Entra single sign-on (SSO) integration with Samsung Knox and Business Services
 
 In this tutorial, you'll learn how to integrate Samsung Knox and Business Services with Microsoft Entra ID. When you integrate Samsung Knox and Business Services with Microsoft Entra ID, you can:
 

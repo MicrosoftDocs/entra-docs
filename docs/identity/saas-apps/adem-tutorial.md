@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with ADEM'
+title: Microsoft Entra SSO integration with ADEM
 description: Learn how to configure single sign-on between Microsoft Entra ID and ADEM.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ADEM so that I can control who has access to ADEM, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with ADEM
+# Microsoft Entra SSO integration with ADEM
 
 In this tutorial, you'll learn how to integrate ADEM with Microsoft Entra ID. When you integrate ADEM with Microsoft Entra ID, you can:
 

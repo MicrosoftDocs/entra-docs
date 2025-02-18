@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with CyberSolutions MAILBASEΣ\CMSS'
+title: Microsoft Entra single sign-on (SSO) integration with CyberSolutions MAILBASEΣ\CMSS
 description: Learn how to configure single sign-on between Microsoft Entra ID and CyberSolutions MAILBASEΣ\CMSS.
 
 author: nguhiu
@@ -13,7 +13,7 @@ ms.date: 03/25/2024
 ms.author: gideonkiratu
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with CyberSolutions MAILBASEΣ\CMSS
+# Microsoft Entra single sign-on (SSO) integration with CyberSolutions MAILBASEΣ\CMSS
 
 In this tutorial, you'll learn how to integrate CyberSolutions MAILBASEΣ\CMSS with Microsoft Entra ID. When you integrate CyberSolutions MAILBASEΣ\CMSS with Microsoft Entra ID, you can:
 

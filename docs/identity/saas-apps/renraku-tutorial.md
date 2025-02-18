@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with PHONE APPLI PEOPLE'
+title: Microsoft Entra SSO integration with PHONE APPLI PEOPLE
 description: Learn how to configure single sign-on between Microsoft Entra ID and PHONE APPLI PEOPLE.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and PHONE APPLI PEOPLE so that I can control who has access to PHONE APPLI PEOPLE, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with PHONE APPLI PEOPLE
+# Microsoft Entra SSO integration with PHONE APPLI PEOPLE
 
 In this tutorial, you'll learn how to integrate PHONE APPLI PEOPLE with Microsoft Entra ID. When you integrate PHONE APPLI PEOPLE with Microsoft Entra ID, you can:
 

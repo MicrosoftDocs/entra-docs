@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with TOPdesk - Secure'
+title: Microsoft Entra SSO integration with TOPdesk - Secure
 description: Learn how to configure single sign-on between Microsoft Entra ID and TOPdesk - Secure.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and TOPdesk - Secure so that I can control who has access to TOPdesk - Secure, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with TOPdesk - Secure
+# Microsoft Entra SSO integration with TOPdesk - Secure
 
 In this tutorial, you'll learn how to integrate TOPdesk - Secure with Microsoft Entra ID. When you integrate TOPdesk - Secure with Microsoft Entra ID, you can:
 

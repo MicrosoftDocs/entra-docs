@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with EAB Implementation'
+title: Microsoft Entra single sign-on (SSO) integration with EAB Implementation
 description: Learn how to configure single sign-on between Microsoft Entra ID and EAB Implementation.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and EAB Implementation so that I can control who has access to EAB Implementation, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with EAB Implementation
+# Microsoft Entra single sign-on (SSO) integration with EAB Implementation
 
 In this tutorial, you'll learn how to integrate EAB Implementation with Microsoft Entra ID. When you integrate EAB Implementation with Microsoft Entra ID, you can:
 

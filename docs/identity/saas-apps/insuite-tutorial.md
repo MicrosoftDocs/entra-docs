@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with insuite'
+title: Microsoft Entra single sign-on (SSO) integration with insuite
 description: Learn how to configure single sign-on between Microsoft Entra ID and insuite.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and insuite so that I can control who has access to insuite, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with insuite
+# Microsoft Entra single sign-on (SSO) integration with insuite
 
 In this tutorial, you'll learn how to integrate insuite with Microsoft Entra ID. When you integrate insuite with Microsoft Entra ID, you can:
 

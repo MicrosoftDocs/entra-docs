@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Phraseanet'
+title: Microsoft Entra integration with Phraseanet
 description: Learn how to configure single sign-on between Microsoft Entra ID and Phraseanet.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Phraseanet so that I can control who has access to Phraseanet, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Phraseanet
+# Microsoft Entra integration with Phraseanet
 
 In this tutorial, you learn how to integrate Phraseanet with Microsoft Entra ID.
 Integrating Phraseanet with Microsoft Entra ID provides you with the following benefits:

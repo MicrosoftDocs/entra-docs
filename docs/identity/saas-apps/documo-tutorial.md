@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Documo'
+title: Microsoft Entra single sign-on (SSO) integration with Documo
 description: Learn how to configure single sign-on between Microsoft Entra ID and Documo.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Documo so that I can control who has access to Documo, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Documo
+# Microsoft Entra single sign-on (SSO) integration with Documo
 
 In this tutorial, you'll learn how to integrate Documo with Microsoft Entra ID. When you integrate Documo with Microsoft Entra ID, you can:
 

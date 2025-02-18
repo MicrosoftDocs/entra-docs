@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with PandaDoc'
+title: Microsoft Entra single sign-on (SSO) integration with PandaDoc
 description: Learn how to configure single sign-on between Microsoft Entra ID and PandaDoc.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and PandaDoc so that I can control who has access to PandaDoc, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with PandaDoc
+# Microsoft Entra single sign-on (SSO) integration with PandaDoc
 
 In this tutorial, you'll learn how to integrate PandaDoc with Microsoft Entra ID. When you integrate PandaDoc with Microsoft Entra ID, you can:
 

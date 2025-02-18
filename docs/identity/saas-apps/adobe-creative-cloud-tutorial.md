@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Adobe Creative Cloud'
+title: Microsoft Entra single sign-on (SSO) integration with Adobe Creative Cloud
 description: Learn how to configure single sign-on between Microsoft Entra ID and Adobe Creative Cloud.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Adobe Creative Cloud so that I can control who has access to Adobe Creative Cloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Adobe Creative Cloud
+# Microsoft Entra single sign-on (SSO) integration with Adobe Creative Cloud
 
 In this tutorial, you'll learn how to integrate Adobe Creative Cloud with Microsoft Entra ID. When you integrate Adobe Creative Cloud with Microsoft Entra ID, you can:
 

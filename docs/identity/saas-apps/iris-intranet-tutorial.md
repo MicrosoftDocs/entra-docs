@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Iris Intranet'
+title: Microsoft Entra integration with Iris Intranet
 description: Learn how to configure single sign-on between Microsoft Entra ID and Iris Intranet.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Iris Intranet so that I can control who has access to Iris Intranet, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Iris Intranet
+# Microsoft Entra integration with Iris Intranet
 
 In this tutorial, you'll learn how to integrate Iris Intranet with Microsoft Entra ID. When you integrate Iris Intranet with Microsoft Entra ID, you can:
 

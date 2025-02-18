@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Forcepoint Cloud Security Gateway - User Authentication'
+title: Microsoft Entra SSO integration with Forcepoint Cloud Security Gateway - User Authentication
 description: Learn how to configure single sign-on between Microsoft Entra ID and Forcepoint Cloud Security Gateway - User Authentication.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Forcepoint Cloud Security Gateway - User Authentication so that I can control who has access to Forcepoint Cloud Security Gateway - User Authentication, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Forcepoint Cloud Security Gateway - User Authentication
+# Microsoft Entra SSO integration with Forcepoint Cloud Security Gateway - User Authentication
 
 In this tutorial, you'll learn how to integrate Forcepoint Cloud Security Gateway - User Authentication with Microsoft Entra ID. When you integrate Forcepoint Cloud Security Gateway - User Authentication with Microsoft Entra ID, you can:
 

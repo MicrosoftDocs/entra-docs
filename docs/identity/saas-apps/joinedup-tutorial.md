@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with JoinedUp'
+title: Microsoft Entra SSO integration with JoinedUp
 description: Learn how to configure single sign-on between Microsoft Entra ID and JoinedUp.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and JoinedUp so that I can control who has access to JoinedUp, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with JoinedUp
+# Microsoft Entra SSO integration with JoinedUp
 
 In this tutorial, you'll learn how to integrate JoinedUp with Microsoft Entra ID. When you integrate JoinedUp with Microsoft Entra ID, you can:
 

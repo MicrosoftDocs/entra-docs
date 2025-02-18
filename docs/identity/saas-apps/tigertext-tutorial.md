@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with TigerConnect Secure Messenger'
+title: Microsoft Entra integration with TigerConnect Secure Messenger
 description: Learn how to configure single sign-on between Microsoft Entra ID and TigerConnect Secure Messenger.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and TigerConnect Secure Messenger so that I can control who has access to TigerConnect Secure Messenger, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra integration with TigerConnect Secure Messenger
+# Microsoft Entra integration with TigerConnect Secure Messenger
 
 In this tutorial, you'll learn how to integrate TigerConnect Secure Messenger with Microsoft Entra ID. When you integrate TigerConnect Secure Messenger with Microsoft Entra ID, you can:
 

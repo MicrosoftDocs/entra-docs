@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Altamira HRM'
+title: Microsoft Entra SSO integration with Altamira HRM
 description: Learn how to configure single sign-on between Microsoft Entra ID and Altamira HRM.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Altamira HRM so that I can control who has access to Altamira HRM, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Altamira HRM
+# Microsoft Entra SSO integration with Altamira HRM
 
 In this tutorial, you'll learn how to integrate Altamira HRM with Microsoft Entra ID. When you integrate Altamira HRM with Microsoft Entra ID, you can:
 

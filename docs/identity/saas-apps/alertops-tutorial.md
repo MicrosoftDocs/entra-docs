@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with AlertOps'
+title: Microsoft Entra SSO integration with AlertOps
 description: Learn how to configure single sign-on between Microsoft Entra ID and AlertOps.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and AlertOps so that I can control who has access to AlertOps, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with AlertOps
+# Microsoft Entra SSO integration with AlertOps
 
 In this tutorial, you'll learn how to integrate AlertOps with Microsoft Entra ID. When you integrate AlertOps with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Automate User provisioning into SAP S/4HANA with Microsoft Entra ID'
+title: Automate User provisioning into SAP S/4HANA with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAP S/4HANA using SAP Cloud Identity Services.
 
 author: ZollnerdMSFT
@@ -14,7 +14,7 @@ ms.author: zollnerd
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAP S/4HANA.
 ---
 
-# Tutorial: Configure Microsoft Entra ID and SAP Cloud Identity Services for automatic user provisioning into SAP S/4HANA
+# Configure Microsoft Entra ID and SAP Cloud Identity Services for automatic user provisioning into SAP S/4HANA
 
 This tutorial describes the steps you need to perform in SAP Cloud Identity Services and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users to SAP S/4HANA using the Microsoft Entra provisioning service and SAP Cloud Identity Services. For important details on what Microsoft Entra provisioning does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 

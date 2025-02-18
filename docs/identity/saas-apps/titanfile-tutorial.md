@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Titanfile'
+title: Microsoft Entra single sign-on (SSO) integration with Titanfile
 description: Learn how to configure single sign-on between Microsoft Entra ID and Titanfile.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Titanfile so that I can control who has access to Titanfile, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Titanfile
+# Microsoft Entra single sign-on (SSO) integration with Titanfile
 
 In this tutorial, you'll learn how to integrate Titanfile with Microsoft Entra ID. When you integrate Titanfile with Microsoft Entra ID, you can:
 

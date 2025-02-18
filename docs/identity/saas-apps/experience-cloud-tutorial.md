@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Experience Cloud'
+title: Microsoft Entra SSO integration with Experience Cloud
 description: Learn how to configure single sign-on between Microsoft Entra ID and Experience Cloud.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Experience Cloud so that I can control who has access to Experience Cloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Experience Cloud
+# Microsoft Entra SSO integration with Experience Cloud
 
 In this tutorial, you'll learn how to integrate Experience Cloud with Microsoft Entra ID. When you integrate Experience Cloud with Microsoft Entra ID, you can:
 

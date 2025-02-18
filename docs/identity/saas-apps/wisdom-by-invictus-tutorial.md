@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Wisdom by Invictus'
+title: Microsoft Entra SSO integration with Wisdom by Invictus
 description: Learn how to configure single sign-on between Microsoft Entra ID and Wisdom by Invictus.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Wisdom by Invictus so that I can control who has access to Wisdom by Invictus, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Wisdom by Invictus
+# Microsoft Entra SSO integration with Wisdom by Invictus
 
 In this tutorial, you'll learn how to integrate Wisdom by Invictus with Microsoft Entra ID. When you integrate Wisdom by Invictus with Microsoft Entra ID, you can:
 

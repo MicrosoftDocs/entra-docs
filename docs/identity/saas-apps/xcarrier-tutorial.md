@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with xCarrier®'
+title: Microsoft Entra SSO integration with xCarrier®
 description: Learn how to configure single sign-on between Microsoft Entra ID and xCarrier®.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and xCarrierÂ® so that I can control who has access to xCarrierÂ®, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with xCarrier®
+# Microsoft Entra SSO integration with xCarrier®
 
 In this tutorial, you'll learn how to integrate xCarrier® with Microsoft Entra ID. When you integrate xCarrier® with Microsoft Entra ID, you can:
 

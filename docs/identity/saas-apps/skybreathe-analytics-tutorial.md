@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Skybreathe® Analytics'
+title: Microsoft Entra SSO integration with Skybreathe® Analytics
 description: Learn how to configure single sign-on between Microsoft Entra ID and Skybreathe® Analytics.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SkybreatheÂ® Analytics so that I can control who has access to SkybreatheÂ® Analytics, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Skybreathe® Analytics
+# Microsoft Entra SSO integration with Skybreathe® Analytics
 
 In this tutorial, you'll learn how to integrate Skybreathe® Analytics with Microsoft Entra ID. When you integrate Skybreathe® Analytics with Microsoft Entra ID, you can:
 

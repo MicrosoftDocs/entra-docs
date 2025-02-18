@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Notion'
+title: Microsoft Entra single sign-on (SSO) integration with Notion
 description: Learn how to configure single sign-on between Microsoft Entra ID and Notion.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Notion so that I can control who has access to Notion, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Notion
+# Microsoft Entra single sign-on (SSO) integration with Notion
 
 In this tutorial, you'll learn how to integrate Notion with Microsoft Entra ID. When you integrate Notion with Microsoft Entra ID, you can:
 

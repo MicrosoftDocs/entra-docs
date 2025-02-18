@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Yokoy'
+title: Microsoft Entra SSO integration with Yokoy
 description: Learn how to configure single sign-on between Microsoft Entra ID and Yokoy.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Yokoy so that I can control who has access to Yokoy, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Yokoy
+# Microsoft Entra SSO integration with Yokoy
 
 In this tutorial, you learn how to integrate Yokoy with Microsoft Entra ID. When you integrate Yokoy with Microsoft Entra ID, you can:
 

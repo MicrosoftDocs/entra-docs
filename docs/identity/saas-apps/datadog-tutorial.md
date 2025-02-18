@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Datadog'
+title: Microsoft Entra single sign-on (SSO) integration with Datadog
 description: Learn how to configure single sign-on between Microsoft Entra ID and Datadog.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Datadog so that I can control who has access to Datadog, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Datadog
+# Microsoft Entra single sign-on (SSO) integration with Datadog
 
 In this tutorial, you'll learn how to integrate Datadog with Microsoft Entra ID. When you integrate Datadog with Microsoft Entra ID, you can:
 

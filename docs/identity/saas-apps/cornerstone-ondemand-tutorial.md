@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra Single sign-on (SSO) integration with Cornerstone'
+title: Microsoft Entra Single sign-on (SSO) integration with Cornerstone
 description: Learn how to configure single sign-on between Microsoft Entra ID and Cornerstone Single Sign-On.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Cornerstone Single Sign-On so that I can control who has access to Cornerstone Single Sign-On, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra Single sign-on (SSO) integration with Cornerstone
+# Microsoft Entra Single sign-on (SSO) integration with Cornerstone
 
 In this tutorial, you'll learn how to set up the single sign-on integration between Cornerstone and Microsoft Entra ID. When you integrate Cornerstone with Microsoft Entra ID, you can:
 

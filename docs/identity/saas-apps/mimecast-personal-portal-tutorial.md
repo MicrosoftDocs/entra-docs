@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Mimecast'
+title: Microsoft Entra SSO integration with Mimecast
 description: Learn how to configure single sign-on between Microsoft Entra ID and Mimecast.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Mimecast so that I can control who has access to Mimecast, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Mimecast
+# Microsoft Entra SSO integration with Mimecast
 
 In this tutorial, you'll learn how to integrate Mimecast with Microsoft Entra ID. When you integrate Mimecast with Microsoft Entra ID, you can:
 

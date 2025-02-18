@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with The Cloud Security Fabric'
+title: Microsoft Entra SSO integration with The Cloud Security Fabric
 description: Learn how to configure single sign-on between Microsoft Entra ID and The Cloud Security Fabric.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and The Cloud Security Fabric so that I can control who has access to The Cloud Security Fabric, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with The Cloud Security Fabric
+# Microsoft Entra SSO integration with The Cloud Security Fabric
 
 In this tutorial, you'll learn how to integrate The Cloud Security Fabric with Microsoft Entra ID. When you integrate The Cloud Security Fabric with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with ContractWorks'
+title: Microsoft Entra single sign-on (SSO) integration with ContractWorks
 description: Learn how to configure single sign-on between Microsoft Entra ID and ContractWorks.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ContractWorks so that I can control who has access to ContractWorks, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with ContractWorks
+# Microsoft Entra single sign-on (SSO) integration with ContractWorks
 
 In this tutorial, you'll learn how to integrate ContractWorks with Microsoft Entra ID. When you integrate ContractWorks with Microsoft Entra ID, you can:
 

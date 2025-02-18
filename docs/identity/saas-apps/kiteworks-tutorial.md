@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Kiteworks'
+title: Microsoft Entra integration with Kiteworks
 description: Learn how to configure single sign-on between Microsoft Entra ID and Kiteworks.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Kiteworks so that I can control who has access to Kiteworks, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Integrate Kiteworks with Microsoft Entra ID
+# Integrate Kiteworks with Microsoft Entra ID
 
 In this tutorial, you'll learn how to integrate Kiteworks with Microsoft Entra ID. When you integrate Kiteworks with Microsoft Entra ID, you can:
 

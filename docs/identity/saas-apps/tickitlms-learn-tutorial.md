@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Microsoft Entra single sign-on (SSO) integration with TickitLMS Learn"
+title: Microsoft Entra single sign-on (SSO) integration with TickitLMS Learn
 description: Learn how to configure single sign-on between Microsoft Entra ID and TickitLMS Learn.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and TickitLMS Learn so that I can control who has access to TickitLMS Learn, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with TickitLMS Learn
+# Microsoft Entra single sign-on (SSO) integration with TickitLMS Learn
 
 In this tutorial, you'll learn how to integrate TickitLMS Learn with Microsoft Entra ID. When you integrate TickitLMS Learn with Microsoft Entra ID, you can:
 

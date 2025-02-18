@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with IntSights'
+title: Microsoft Entra SSO integration with IntSights
 description: Learn how to configure single sign-on between Microsoft Entra ID and IntSights.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and IntSights so that I can control who has access to IntSights, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with IntSights
+# Microsoft Entra SSO integration with IntSights
 
 In this tutorial, you'll learn how to integrate IntSights with Microsoft Entra ID. When you integrate IntSights with Microsoft Entra ID, you can:
 

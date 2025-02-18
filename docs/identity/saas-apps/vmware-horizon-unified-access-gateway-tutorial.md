@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with VMware Horizon - Unified Access Gateway'
+title: Microsoft Entra single sign-on (SSO) integration with VMware Horizon - Unified Access Gateway
 description: Learn how to configure single sign-on between Microsoft Entra ID and VMware Horizon - Unified Access Gateway.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and VMware Horizon - Unified Access Gateway so that I can control who has access to VMware Horizon - Unified Access Gateway, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with VMware Horizon - Unified Access Gateway
+# Microsoft Entra single sign-on (SSO) integration with VMware Horizon - Unified Access Gateway
 
 In this tutorial, you'll learn how to integrate VMware Horizon - Unified Access Gateway with Microsoft Entra ID. When you integrate VMware Horizon - Unified Access Gateway with Microsoft Entra ID, you can:
 

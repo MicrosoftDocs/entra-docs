@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Cobalt'
+title: Microsoft Entra SSO integration with Cobalt
 description: Learn how to configure single sign-on between Microsoft Entra ID and Cobalt.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Cobalt so that I can control who has access to Cobalt, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Cobalt
+# Microsoft Entra SSO integration with Cobalt
 
 In this tutorial, you'll learn how to integrate Cobalt with Microsoft Entra ID. When you integrate Cobalt with Microsoft Entra ID, you can:
 

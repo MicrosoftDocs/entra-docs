@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with NetDocuments'
+title: Microsoft Entra single sign-on (SSO) integration with NetDocuments
 description: Learn how to configure single sign-on between Microsoft Entra ID and NetDocuments.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and NetDocuments so that I can control who has access to NetDocuments, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with NetDocuments
+# Microsoft Entra single sign-on (SSO) integration with NetDocuments
 
 In this tutorial, you'll learn how to integrate NetDocuments with Microsoft Entra ID. When you integrate NetDocuments with Microsoft Entra ID, you can:
 

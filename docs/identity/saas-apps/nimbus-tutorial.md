@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Nimbus'
+title: Microsoft Entra single sign-on (SSO) integration with Nimbus
 description: Learn how to configure single sign-on between Microsoft Entra ID and Nimbus.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Nimbus so that I can control who has access to Nimbus, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Nimbus
+# Microsoft Entra single sign-on (SSO) integration with Nimbus
 
 In this tutorial, you'll learn how to integrate Nimbus with Microsoft Entra ID. When you integrate Nimbus with Microsoft Entra ID, you can:
 

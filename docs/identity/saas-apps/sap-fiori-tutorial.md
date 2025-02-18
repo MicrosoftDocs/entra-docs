@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with SAP Fiori'
+title: Microsoft Entra single sign-on (SSO) integration with SAP Fiori
 description: Learn how to configure single sign-on between Microsoft Entra ID and SAP Fiori.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SAP Fiori so that I can control who has access to SAP Fiori, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with SAP Fiori
+# Microsoft Entra single sign-on (SSO) integration with SAP Fiori
 
 In this tutorial, you'll learn how to integrate SAP Fiori with Microsoft Entra ID. When you integrate SAP Fiori with Microsoft Entra ID, you can:
 

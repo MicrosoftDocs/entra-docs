@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with vonage'
+title: Microsoft Entra single sign-on (SSO) integration with vonage
 description: Learn how to configure single sign-on between Microsoft Entra ID and vonage.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and vonage so that I can control who has access to vonage, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with vonage
+# Microsoft Entra single sign-on (SSO) integration with vonage
 
 In this tutorial, you'll learn how to integrate vonage with Microsoft Entra ID. When you integrate vonage with Microsoft Entra ID, you can:
 

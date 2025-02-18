@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with iPass SmartConnect'
+title: Microsoft Entra SSO integration with iPass SmartConnect
 description: Learn how to configure single sign-on between Microsoft Entra ID and iPass SmartConnect.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and iPass SmartConnect so that I can control who has access to iPass SmartConnect, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with iPass SmartConnect
+# Microsoft Entra SSO integration with iPass SmartConnect
 
 In this tutorial, you'll learn how to integrate iPass SmartConnect with Microsoft Entra ID. When you integrate iPass SmartConnect with Microsoft Entra ID, you can:
 

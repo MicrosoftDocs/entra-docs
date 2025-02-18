@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Configure Box for automatic user provisioning with Microsoft Entra ID'
+title: Configure Box for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Box .
 
 author: nguhiu
@@ -13,7 +13,7 @@ ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Box so that I can streamline the user management process and ensure that users have the appropriate access to Box.
 ---
-# Tutorial: Configure Box for automatic user provisioning
+# Configure Box for automatic user provisioning
 
 The objective of this tutorial is to show the steps you need to perform in Box and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Box.
 

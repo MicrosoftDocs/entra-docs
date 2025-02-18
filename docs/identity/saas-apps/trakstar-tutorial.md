@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Trakstar'
+title: Microsoft Entra integration with Trakstar
 description: Learn how to configure single sign-on between Microsoft Entra ID and Trakstar.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Trakstar so that I can control who has access to Trakstar, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Trakstar
+# Microsoft Entra integration with Trakstar
 
 In this tutorial, you'll learn how to integrate Trakstar with Microsoft Entra ID. When you integrate Trakstar with Microsoft Entra ID, you can:
 

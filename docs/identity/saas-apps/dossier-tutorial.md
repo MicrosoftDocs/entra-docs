@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Dossier'
+title: Microsoft Entra SSO integration with Dossier
 description: Learn how to configure single sign-on between Microsoft Entra ID and Dossier.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Dossier so that I can control who has access to Dossier, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Dossier
+# Microsoft Entra SSO integration with Dossier
 
 In this tutorial, you'll learn how to integrate Dossier with Microsoft Entra ID. When you integrate Dossier with Microsoft Entra ID, you can:
 

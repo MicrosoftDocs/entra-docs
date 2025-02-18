@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with A Cloud Guru'
+title: Microsoft Entra single sign-on (SSO) integration with A Cloud Guru
 description: Learn how to configure single sign-on between Microsoft Entra ID and A Cloud Guru.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and A Cloud Guru so that I can control who has access to A Cloud Guru, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with A Cloud Guru
+# Microsoft Entra single sign-on (SSO) integration with A Cloud Guru
 
 In this tutorial, you'll learn how to integrate A Cloud Guru with Microsoft Entra ID. When you integrate A Cloud Guru with Microsoft Entra ID, you can:
 

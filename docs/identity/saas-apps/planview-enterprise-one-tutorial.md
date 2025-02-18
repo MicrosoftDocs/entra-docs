@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Planview Enterprise One'
+title: Microsoft Entra single sign-on (SSO) integration with Planview Enterprise One
 description: Learn how to configure single sign-on between Microsoft Entra ID and Planview Enterprise One.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Planview Enterprise One so that I can control who has access to Planview Enterprise One, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Planview Enterprise One
+# Microsoft Entra single sign-on (SSO) integration with Planview Enterprise One
 
 In this tutorial, you'll learn how to integrate Planview Enterprise One with Microsoft Entra ID. When you integrate Planview Enterprise One with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with AnswerHub'
+title: Microsoft Entra SSO integration with AnswerHub
 description: Learn how to configure single sign-on between Microsoft Entra ID and AnswerHub.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and AnswerHub so that I can control who has access to AnswerHub, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with AnswerHub
+# Microsoft Entra SSO integration with AnswerHub
 
 In this tutorial, you'll learn how to integrate AnswerHub with Microsoft Entra ID. When you integrate AnswerHub with Microsoft Entra ID, you can:
 
