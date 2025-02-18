@@ -17,7 +17,7 @@ ms.custom: developer
 
 # Tutorial: Support web fallback 
 
-[!INCLUDE [applies-to-ios-macOS](../includes/applies-to-ios-macos.md)]
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
 This tutorial demonstrates how to acquire a token through a browser where native authentication isn't sufficient to complete the user flow. 
 
@@ -30,8 +30,8 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-- If you’re using iOS, follow the steps in [Sign in users in a sample native iOS mobile application](how-to-run-native-authentication-sample-ios-app.md).
-- If you’re using macOS, follow the steps in [Sign in users in sample macOS (Swift) app by using native authentication](how-to-run-native-authentication-sample-macos-app.md).
+- If you’re using iOS, follow the steps in [Sign in users in a sample native iOS mobile application](quickstart-native-authentication-ios-sign-in.md).
+- If you’re using macOS, follow the steps in [Sign in users in sample macOS (Swift) app by using native authentication](quickstart-native-authentication-macos-sign-in.md).
 
 ## Browser required 
 
@@ -79,8 +79,8 @@ When we call the `signUp(parameters:delegate)` method from the SDK instance, we 
 
 To handle this kind of error, we need to launch a browser and let the user perform the authentication flow there. This can be done by calling `acquireToken()` method. In order to use this method, a few additional configurations need to be done: 
 
-- [Configure URL schemes in our Xcode project](../../identity-platform/tutorial-v2-ios.md#for-ios-only-configure-url-schemes)
-- [Configure the redirect URI in Microsoft Entra admin center](../../identity-platform/quickstart-mobile-app-ios-sign-in.md#register-your-quickstart-app)
+- [Configure URL schemes in our Xcode project](tutorial-mobile-app-ios-swift-prepare-app.md?pivots=workforce#for-ios-only-configure-url-schemes)
+- [Configure the redirect URI in Microsoft Entra admin center](tutorial-mobile-app-ios-swift-prepare-tenant.md#add-a-platform-redirect-url)
 
 Now we can get a token and an account interactively. Here's an example of how to do it: 
 
@@ -101,5 +101,5 @@ The tokens and account that are returned are identical to the ones that would be
 
 ## Related content
 
-- [How to run the Android sample app](how-to-run-native-authentication-sample-android-app.md).
-- [Overview of native authentication API reference](../../identity-platform/reference-native-authentication-overview.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json) 
+- [How to run the Android sample app](quickstart-native-authentication-android-sign-in.md).
+- [Overview of native authentication API reference](reference-native-authentication-api.md?bc=/entra/external-id/customers/breadcrumb/toc.json&toc=/entra/external-id/customers/toc.json) 

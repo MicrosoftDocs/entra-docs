@@ -4,9 +4,9 @@ metadata:
   description: Frequently asked questions and answers related to Microsoft Entra certificate-based authentication (CBA). 
   ms.service: entra-id
   ms.subservice: authentication
-  ms.custom: has-azure-ad-ps-ref
+  ms.custom: no-azure-ad-ps-ref
   ms.topic: faq
-  ms.date: 01/03/2024
+  ms.date: 02/17/2025
   ms.author: justinha
   author: justinha
   manager: amycolannino
@@ -83,19 +83,11 @@ sections:
           This PowerShell cmdlet will review the Microsoft Entra tenant certificate authority configuration and surface errors/warnings for common mis-configuration issues. 
           
       - question: |
-          How do I turn certificate revocation checking on or off for a particular CA?
+          Can I turn certificate revocation checking on or off for a particular CA?
         answer: |
           We highly recommend against disabling certificate revocation list (CRL) checking as you won't be able to revoke certificates. 
-          However, if you need to investigate issues with CRL checking, you can update a trusted CA and set the crlDistributionPoint attribute to """.
+          However, if you need to investigate issues with CRL checking, you can update a trusted CA and set the crlDistributionPoint attribute to "".
           
-          Use the [Set-AzureADTrustedCertificateAuthority](/powershell/module/azuread/set-azureadtrustedcertificateauthority) cmdlet:
-          
-          ```PowerShell
-          $c=Get-AzureADTrustedCertificateAuthority
-          $c[0]. crlDistributionPoint=""
-          Set-AzureADTrustedCertificateAuthority -CertificateAuthorityInformation $c[0]
-          ```
-
       - question: |
           Is there a limit for CRL size?
         answer: |
@@ -154,9 +146,9 @@ sections:
       - question: |
           CertificateUserIds update fails with value already there. How can an admin query all the user objects with the same value?
         answer: |
-          Tenant admins can run MS Graph queries to find all the users with a given certificateUserId value. More information can be found at [CertificateUserIds graph queries](concept-certificate-based-authentication-certificateuserids.md#update-certificateuserids-using-microsoft-graph-queries)
+          Tenant admins can run Microsoft Graph queries to find all the users with a given certificateUserId value. For more information, see [CertificateUserIds graph queries](concept-certificate-based-authentication-certificateuserids.md#update-certificateuserids-using-microsoft-graph-queries).
           
-          GET all user objects that have the value 'bob@contoso.com' value in certificateUserIds:
+          This command returns all user objects that have the value 'bob@contoso.com' value in certificateUserIds:
 
            ```http
            GET  https://graph.microsoft.com/v1.0/users?$filter=certificateUserIds/any(x:x eq 'bob@contoso.com')

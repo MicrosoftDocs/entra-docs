@@ -4,6 +4,8 @@
   items:
   - name: What is Microsoft Entra RBAC?
     href: custom-overview.md
+  - name: What's new in docs
+    href: whats-new.md
 - name: Concepts
   items:
   - name: Understand Microsoft Entra roles

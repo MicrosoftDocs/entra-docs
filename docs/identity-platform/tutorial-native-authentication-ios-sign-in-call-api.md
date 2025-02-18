@@ -15,7 +15,7 @@ ms.custom: developer
 
 # Tutorial: Call multiple APIs in iOS/macOS app by using native authentication
 
-[!INCLUDE [applies-to-ios-macOS](../includes/applies-to-ios-macos.md)]
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
 In this tutorial, you learn how to acquire an access token and call an API in your iOS/macOS app. Microsoft Authentication Library (MSAL) native authentication SDK for iOS/macOS allows you to acquire multiple access tokens with a single sign-in. This capability allows you to acquire one or more access tokens without requiring a user to reauthenticate. 
 
@@ -28,7 +28,7 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-- Complete the steps in [Sign in users and call an API in sample iOS mobile app by using native authentication](sample-native-authentication-ios-sample-app-call-web-api.md).
+- Complete the steps in [Sign in users and call an API in sample iOS mobile app by using native authentication](quickstart-native-authentication-ios-call-api.md).
 - Complete the steps in [Tutorial: Add sign-in and sign-out in iOS/macOS app by using native authentication](tutorial-native-authentication-ios-macos-sign-in-sign-out.md). This tutorial shows you how to sign in users in your iOS/macOS app by using native authentication.
 
 
@@ -211,4 +211,4 @@ The `accessProtectedAPI` method sends a GET request to the specified API endpoin
 ## Related content
 
 - [Explore native authentication API reference](/entra/identity-platform/reference-native-authentication-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json).
-- [Customize the look and feel of the authentication experience for the external tenant](concept-branding-customers.md).
+- [Customize the look and feel of the authentication experience for the external tenant](../external-id/customers/concept-branding-customers.md).

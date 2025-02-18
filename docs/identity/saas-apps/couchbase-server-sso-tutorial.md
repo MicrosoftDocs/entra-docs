@@ -2,7 +2,7 @@
 title: Microsoft Entra SSO integration with Couchbase Server - SSO
 description: Learn how to configure single sign-on between Microsoft Entra ID and Couchbase Server - SSO.
 services: active-directory
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
@@ -10,7 +10,7 @@ ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
 ms.date: 04/22/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Directory Services so that I can control who has access to Directory Services, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
