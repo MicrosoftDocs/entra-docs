@@ -107,13 +107,16 @@ Users can sign in to their organization with a QR code, or they can directly sig
 
 ### Mobile web sign-in experience
 You can use Microsoft's web browser login experience (login.microsoft.com) to sign in users. Users can click **Sign in options** > **Sign in to an organization** > **Sign in with a QR code**.
+![image](https://github.com/user-attachments/assets/480c4b74-6927-47e5-9a54-5fafa2c159cd)
 
-### Mobile native app sign-in experience 
-You can optimize sign-in for your apps by using Microsoft Authentication Library (MSAL) to add a QR code sign-in option to your apps sign-in page. This option eliminates two clicks to scan the QR code. For example, you can add QR code sign-in to the Teams app. This optimized user experience will be available in Microsoft Intune Managed Home Screen (MHS), BlueFletch, and Jamf app lauchers in March 2025.
+
+### Mobile app sign-in experience 
+This is an another entry point to sign with QR code. If you are using Microsoft web sign-in expereince for your app, you will be able to use above illustrated QR code entry point. 
+You can optimize sign-in for your apps by using Microsoft Authentication Library (MSAL) to add a QR code sign-in option to your apps sign-in page. This option eliminates two clicks to scan the QR code. For example, you can add QR code sign-in similar to the Teams or Managed Home Screen (MHS) apps. This optimized user experience will be available in BlueFletch, and Jamf app lauchers in March 2025.
+![image](https://github.com/user-attachments/assets/dbbbeba8-5123-48ad-812f-6ac898f19549)
+
 
 For more information about how to enable the optimized experience, see in Android, see [Set up QR code authentication in an Android app](https://review.learn.microsoft.com/entra/identity-platform/msal-android-qr-code-pin-authentication?branch=pr-en-us-6810) and [Set up QR code authentication in an iOS app](https://review.learn.microsoft.com/entra/identity-platform/msal-ios-qr-code-pin-authentication?branch=pr-en-us-6810).
-
-:::image type="content" source="media/concept-authentication-qr-code/sign-in-app.png" alt-text="Screenshot that shows how to sign in to mobile native apps.":::
 
 
 ## Unsupported user scenarios in current release
