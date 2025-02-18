@@ -26,14 +26,6 @@ In this tutorial, you'll:
 
 ## Prerequisites
 
-* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-  * Application Administrator
-  * Application Developer
-  * Cloud Application Administrator.
-* [Node.js](https://nodejs.org/en/download/).
-* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-
 ### [Workforce tenant](#tab/workforce-tenant)
 
 * A workforce tenant. You can use your [Default Directory](quickstart-create-new-tenant.md) or set up a new tenant.
@@ -57,6 +49,10 @@ In this tutorial, you'll:
 
 ---
 
+* [Node.js](https://nodejs.org/en/download/).
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
+
+
 ## Create a new React project
 
 Use the following tabs to create a React project within the IDE.
@@ -71,7 +67,7 @@ Use the following tabs to create a React project within the IDE.
 1. From the toolbar, select **Start Without Debugging** to launch the application. A web browser will open with the address `http://localhost:3000/` by default. The browser remains open and re-renders for every saved change.
 1. Create additional folders and files to achieve the following folder structure:
 
-    ```console
+    ```javascript
     ├─── public
     │   └─── index.html
     └───src
@@ -88,14 +84,13 @@ Use the following tabs to create a React project within the IDE.
         └── index.js
     ```
 
-
 ### [Visual Studio Code](#tab/visual-studio-code)
 
 1. Open Visual Studio Code, select **File** > **Open Folder...**. Navigate to and select the location in which to create your project.
 1. Open a new terminal by selecting **Terminal** > **New Terminal**.
 1. Run the following commands to create a new React project with the name *reactspalocal*, change to the new directory and start the React project. A web browser will open with the address `http://localhost:3000/` by default. The browser remains open and re-renders for every saved change.
 
-    ```powershell
+    ```console
     npx create-react-app reactspalocal
     cd reactspalocal
     npm start
@@ -103,7 +98,7 @@ Use the following tabs to create a React project within the IDE.
 
 1. Create additional folders and files to achieve the following folder structure:
 
-    ```console
+    ```javascript
     ├─── public
     │   └─── index.html
     └───src
@@ -137,7 +132,7 @@ Identity related **npm** packages must be installed in the project to enable use
 1. In the **Terminal** bar, select the **+** icon to create a new terminal. A separate terminal window will open with the previous node terminal continuing to run in the background.
 1. Ensure that the correct directory is selected (*reactspalocal*) then enter the following into the terminal to install the relevant `msal` and `bootstrap` packages.
 
-    ```powershell
+    ```console
     npm install @azure/msal-browser @azure/msal-react
     npm install react-bootstrap bootstrap
     ```
@@ -145,7 +140,21 @@ Identity related **npm** packages must be installed in the project to enable use
 
 To learn more about these packages refer to the documentation in [`msal-browser`](/javascript/api/@azure/msal-browser) and [`msal-react`](/javascript/api/@azure/msal-react).
 
-## Creating the authentication configuration file
+## Modify *index.js* to include the authentication provider
+
+All parts of the app that require authentication must be wrapped in the [`MsalProvider`](/javascript/api/@azure/msal-react/#@azure-msal-react-msalprovider) component. You instantiate a [PublicClientApplication](/javascript/api/@azure/msal-browser/publicclientapplication) then pass it to `MsalProvider`.
+
+1. In the *src* folder, open *index.js* and replace the contents of the file with the following code snippet to use the `msal` packages and bootstrap styling:
+
+    :::code language="javascript" source="~/../ms-identity-docs-code-javascript/react-spa/src/index.js" :::
+
+1. Save the file.
+
+## Adding your tenant details to the MSAL configuration
+
+The **authConfig.js** file contains the configuration settings for the authentication flow and is used to configure **MSAL.js** with the required settings for authentication.
+
+### [Workforce tenant](#tab/workforce-tenant)
 
 1. In the *src* folder, open *authConfig.js* and add the following code snippet:
 
@@ -158,15 +167,89 @@ To learn more about these packages refer to the documentation in [`msal-browser`
         - The *Tenant ID* is the identifier of the tenant where the application is registered. Replace *Enter_the_Tenant_Info_Here* with the **Directory (tenant) ID** value that was recorded earlier from the overview page of the registered application.
 1. Save the file.
 
-## Modify *index.js* to include the authentication provider
+### [External tenant](#tab/external-tenant)
 
-All parts of the app that require authentication must be wrapped in the [`MsalProvider`](/javascript/api/@azure/msal-react/#@azure-msal-react-msalprovider) component. You instantiate a [PublicClientApplication](/javascript/api/@azure/msal-browser/publicclientapplication) then pass it to `MsalProvider`.
+1. In the *src* folder, open *authConfig.js* and add the following code snippet:
 
-1. In the *src* folder, open *index.js* and replace the contents of the file with the following code snippet to use the `msal` packages and bootstrap styling:
+    ```javascript
+    /*
+     * Copyright (c) Microsoft Corporation. All rights reserved.
+     * Licensed under the MIT License.
+     */
 
-    :::code language="javascript" source="~/../ms-identity-docs-code-javascript/react-spa/src/index.js" :::
+    import { LogLevel } from '@azure/msal-browser';
 
+    /**
+     * Configuration object to be passed to MSAL instance on creation.
+     * For a full list of MSAL.js configuration parameters, visit:
+     * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/configuration.md 
+     */
+
+    export const msalConfig = {
+        auth: {
+            clientId: 'Enter_the_Application_Id_Here', // This is the ONLY mandatory field that you need to supply.
+            authority: 'https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/', // Replace the placeholder with your tenant subdomain 
+            redirectUri: '/', // Points to window.location.origin. You must register this URI on Azure Portal/App Registration.
+            postLogoutRedirectUri: '/', // Indicates the page to navigate after logout.
+            navigateToLoginRequestUrl: false, // If "true", will navigate back to the original request location before processing the auth code response.
+        },
+        cache: {
+            cacheLocation: 'sessionStorage', // Configures cache location. "sessionStorage" is more secure, but "localStorage" gives you SSO between tabs.
+            storeAuthStateInCookie: false, // Set this to "true" if you are having issues on IE11 or Edge
+        },
+        system: {
+            loggerOptions: {
+                loggerCallback: (level, message, containsPii) => {
+                    if (containsPii) {
+                        return;
+                    }
+                    switch (level) {
+                        case LogLevel.Error:
+                            console.error(message);
+                            return;
+                        case LogLevel.Info:
+                            console.info(message);
+                            return;
+                        case LogLevel.Verbose:
+                            console.debug(message);
+                            return;
+                        case LogLevel.Warning:
+                            console.warn(message);
+                            return;
+                        default:
+                            return;
+                    }
+                },
+            },
+        },
+    };
+
+    /**
+     * Scopes you add here will be prompted for user consent during sign-in.
+     * By default, MSAL.js will add OIDC scopes (openid, profile, email) to any login request.
+     * For more information about OIDC scopes, visit:
+     * https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes
+     */
+    export const loginRequest = {
+        scopes: [],
+    };
+
+    /**
+     * An optional silentRequest object can be used to achieve silent SSO
+     * between applications by providing a "login_hint" property.
+     */
+    // export const silentRequest = {
+    //     scopes: ["openid", "profile"],
+    //     loginHint: "example@domain.net"
+    // };
+    ```
+
+1. Replace the following values with the values from the Azure portal:
+    - Find the `Enter_the_Application_Id_Here` value and replace it with the **Application ID (clientId)** of the app you registered in the Microsoft Entra admin center.
+    - In **Authority**, find `Enter_the_Tenant_Subdomain_Here` and replace it with the subdomain of your tenant. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, [learn how to read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 1. Save the file.
+
+[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url.md)]
 
 ## Next steps
 
