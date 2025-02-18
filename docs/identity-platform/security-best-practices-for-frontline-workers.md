@@ -77,7 +77,7 @@ At home, frontline workers should have restricted access to non-sensitive busine
 
 The following image provides a summary of the recommended best practices for securing frontline workers in across the various home or work access scenarios described in the previous sections.
 
-:::image type="content" source="./media/security-practices-for-frontline-workers/front-line-workers-scenarios.png" alt-text="Screenshot that shows possible scenarios when working with frontline workers.":::
+:::image type="content" source="./media/security-practices-for-frontline-workers/frontline-workers-scenarios.png" alt-text="Screenshot that shows possible scenarios when working with frontline workers." lightbox="./media/security-practices-for-frontline-workers/frontline-workers-scenarios-expanded.png":::
 
 ## Get started with the best practices for securing frontline workers
 
