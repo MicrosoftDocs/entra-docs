@@ -46,7 +46,7 @@ procedureSection:
       - |
         Browse to **Identity** > **Users** > **All users**.
 
-        :::image type="content" source="media/how-to-manage-user-profile-info/All-users.png" alt-text="Screenshot of the All users page in Microsoft Entra ID.":::
+        :::image type="content" source="media/how-to-manage-user-profile-info/all-users.png" alt-text="Screenshot of the All users page in Microsoft Entra ID.":::
       - |
         Select a user.
       - |
