@@ -107,21 +107,18 @@ Users can sign in to their organization with a QR code, or they can directly sig
 
 ### Mobile web sign-in experience
 You can use Microsoft's web browser login experience (login.microsoft.com) to sign in users. Users can click **Sign in options** > **Sign in to an organization** > **Sign in with a QR code**.
-![image](https://github.com/user-attachments/assets/480c4b74-6927-47e5-9a54-5fafa2c159cd)
+
+:::image type="content" source="media/concept-authentication-qr-code/web-sign-in.png" alt-text="Screenshot that shows mobile sign-in experience.":::
 
 
 ### Mobile app sign-in experience 
 This is an another entry point to sign with QR code. If you are using Microsoft web sign-in expereince for your app, you will be able to use above illustrated QR code entry point. 
 You can optimize sign-in for your apps by using Microsoft Authentication Library (MSAL) to add a QR code sign-in option to your apps sign-in page. This option eliminates two clicks to scan the QR code. For example, you can add QR code sign-in similar to the Teams or Managed Home Screen (MHS) apps. This optimized user experience will be available in BlueFletch, and Jamf app lauchers in March 2025.
-![image](https://github.com/user-attachments/assets/dbbbeba8-5123-48ad-812f-6ac898f19549)
-<Teams QR code entry point>
 
-![image](https://github.com/user-attachments/assets/efaf60da-dffb-49a6-9a21-96ea92dd1ed6)
-<MHS QR code entry point>
+:::image type="content" source="media/concept-authentication-qr-code/teams.png" alt-text="Screenshot that shows Teams sign-in experience.":::
 
+:::image type="content" source="media/concept-authentication-qr-code/managed-home-screen.png" alt-text="Screenshot that shows Managed Home Screen sign-in experience.":::
 
-
-For more information about how to enable the optimized experience, see in Android, see [Set up QR code authentication in an Android app](https://review.learn.microsoft.com/entra/identity-platform/msal-android-qr-code-pin-authentication?branch=pr-en-us-6810) and [Set up QR code authentication in an iOS app](https://review.learn.microsoft.com/entra/identity-platform/msal-ios-qr-code-pin-authentication?branch=pr-en-us-6810).
 
 
 ## Unsupported user scenarios in current release
