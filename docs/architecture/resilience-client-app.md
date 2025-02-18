@@ -124,7 +124,7 @@ Ensure persistent token storage has access control and encryption, in relation t
 
 ### Acquire tokens silently
 
-Authenticating a user or retrieving authorization to call an API entails multiple steps in Microsoft identity platform. For example, users signing in for the first time enter credentials and perform a multi-factor authentication. Each step affects the resource that provides the service. The best user experience with the least dependencies is silent token acquisition.
+Authenticating a user or retrieving authorization to call an API entails multiple steps in Microsoft identity platform. For example, users signing in for the first time enter credentials and perform a multifactor authentication. Each step affects the resource that provides the service. The best user experience with the least dependencies is silent token acquisition.
 
   ![Diagram of Microsoft identity platform services that help complete user authentication or authorization.](media/resilience-client-app/external-dependencies.png)
 
