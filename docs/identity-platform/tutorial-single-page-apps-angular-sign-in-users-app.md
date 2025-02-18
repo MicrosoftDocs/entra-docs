@@ -14,13 +14,13 @@ ms.topic: tutorial
 
 # Tutorial: Add sign in and sign out in your Angular single-page application
 
-This tutorial is part 3 of a series that demonstrates building an Angular single-page app (SPA), which uses the Microsoft identity platform for authentication. In this tutorial, you'll add sign in and sign out experiences to your Angular SPA. 
+This tutorial is part 2 of a series that demonstrates building an Angular single-page application (SPA) and preparing it for authentication. In [Part 1 of this series](tutorial-single-page-apps-angular-prepare-app.md), you created an Angular SPA and added initial configurations. 
 
 In this tutorial:
 
 > [!div class="checklist"]
 >
-> * Add sign-in and sign-out functionality to your app.
+> * Add sign-in and sign-out
 
 ## Prerequisites
 
@@ -28,11 +28,14 @@ In this tutorial:
 
 ## Add sign-in and sign-out functionality to your app
 
+In this section we will add components to support sign-in and sign-out functionality in your Angular application. These components will enable users to authenticate and manage their sessions. We will also add routing to the application to direct users to the appropriate components based on their authentication status.
+
 ### [Workforce tenant](#tab/workforce-tenant)
 
 To enable sign-in and sign-out functionality in your Angular application, follow these steps:
 
-1. Open the `src/app/app.component.html` file and replace the contents with the following code.
+1. Open the `src/app/app.component.html` file and replace the contents with the following code. 
+
     ```html
     <a class="navbar navbar-dark bg-primary" variant="dark" href="/">
         <a class="navbar-brand"> Microsoft Identity Platform </a>
@@ -251,6 +254,7 @@ To enable sign-in and sign-out functionality in your Angular application, follow
           </mat-toolbar>
         </footer>
     ```
+    This code snippet adds a navigation bar to the Angular application. The navigation bar includes a title and **Login** and **Logout** buttons which enable users to sign in and out of the application.
 
 1. Open *src/app/app.component.css* and replace the code with the following snippet.
 
@@ -278,6 +282,7 @@ To enable sign-in and sign-out functionality in your Angular application, follow
       flex: 1 1 auto;
     }
     ```
+    This code snippet styles the navigation bar and footer of the Angular application. It sets the color of the title to white, aligns the footer text to the center, and adjusts the size of the footer text. 
 
 1. Open *src/app/app-routing.module.ts* and replace the entire contents of the file with the following snippet. This will add routes to the `home` and `guarded` components.
 
@@ -330,6 +335,7 @@ To enable sign-in and sign-out functionality in your Angular application, follow
     html, body { height: 100%; }
     body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     ```
+    This code snippet imports the Angular Material prebuilt theme and sets the height of the HTML and body elements. It removes the default margin and sets the font family.
 
 1. Open *src/app/home/home.component.ts* and replace the existing code with the following code snippet.
 
@@ -413,6 +419,8 @@ To enable sign-in and sign-out functionality in your Angular application, follow
     }
     ```
 
+    This code snippet defines the `HomeComponent` class, which is responsible for managing the home page of the Angular application. The component subscribes to the `inProgress$` observable from `MsalBroadcastService` to monitor the authentication status of the application. When the authentication status changes, the component updates the login display and retrieves the claims from the active account's ID token. The `signUp()` method is called when the user clicks the **Sign up** button, initiating the authentication process.
+
 1. Open *src/app/home/home.component.html* and replace the existing code with the following code snippet. This code defines the HTML elements of the home page of the application.
 
     ```html
@@ -451,6 +459,7 @@ To enable sign-in and sign-out functionality in your Angular application, follow
       </table>
     </div>
     ```
+    This code snippet defines the HTML elements of the home page of the Angular application. It includes a card section with a **Sign up** button for users to authenticate with Microsoft Entra External ID. 
 
 1. Open *src/app/home/home.component.css*. Replace any existing code with the following code snippet.
 
@@ -482,8 +491,9 @@ To enable sign-in and sign-out functionality in your Angular application, follow
       padding: 5%;
     }
     ```
+    This code snippet styles the HTML elements of the home page of the Angular application. It sets the height and overflow properties of the table container, adjusts the margin and width of the table, and aligns the text in the paragraph element.
 ---
-
+    
 ## Next steps
 
 > [!div class="nextstepaction"]

@@ -16,7 +16,7 @@ ms.topic: tutorial
 
 [!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
 
-In this tutorial you'll build a Angular single-page application (SPA) and prepare it for authentication using the Microsoft identity platform. This tutorial demonstrates how to create a single-page Angular application using the Angular CLI and create files needed for authentication and authorization. 
+This tutorial is part 1 of a series that demonstrates building an Angular single-page application (SPA) and preparing it for authentication using the Microsoft Entra admin center. 
 
 In this tutorial: 
 
@@ -38,6 +38,8 @@ In this tutorial:
 * (External Only) A user flow which has been associated with your app registration. For more information, see [Create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) and [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
 
 ## Create a new Angular project
+
+In this section, you'll create a new Angular project using the Angular CLI in Visual Studio Code. Choose the appropriate tab based on your tenant type.
 
 ### [Workforce tenant](#tab/workforce-tenant)
 
@@ -130,8 +132,6 @@ After you complete these steps, the project structure should look like:
 
 ### [External tenant](#tab/external-tenant)
 
-In this section we will create a new Angular project using the Angular CLI in Visual Studio Code.
-
 1. Open Visual Studio Code, select **File** > **Open Folder...**. Navigate to and select the location in which you want to create your project.
 1. Open a new terminal by selecting **Terminal** > **New Terminal**.
 1. Run the following commands to create a new Angular project with the name `angularspalocal`, install Angular Material component libraries, MSAL Browser, MSAL Angular and generate home and guarded components.
@@ -148,6 +148,8 @@ In this section we will create a new Angular project using the Angular CLI in Vi
 --- 
 
 ## Configure application settings
+
+In this section, you'll configure the application settings for authentication. We'll use the values recorded during the app registration to configure the application for authentication. Choose the appropriate tab based on your tenant type.
 
 ### [Workforce tenant](#tab/workforce-tenant)
 
@@ -426,14 +428,14 @@ We'll use the values recorded during the app registration to configure the appli
     })
     export class AppModule { }
     ```
-
+    This code initializes the MSAL instance and sets the default interaction type for MSALGuard. It also provides the necessary services and components for authentication.
 ---
 
 ## Add authentication code to the application
 
-### [Workforce tenant](#tab/workforce-tenant)
+In this section, you'll add authentication code to the application to handle user authentication and session management. Choose the appropriate tab based on your tenant type.
 
-To handle user authentication and session management using [MSAL Angular](/javascript/api/%40azure/msal-angular/), you'll need to update `src/app/app.component.ts`.
+### [Workforce tenant](#tab/workforce-tenant)
 
 1. Open `src/app/app.component.ts` file and replace the contents with the following code:
 
@@ -666,6 +668,7 @@ To handle user authentication and session management using [MSAL Angular](/javas
         }
       }
     ```
+    This code listens for sign-in status changes, displays the sign-in state, and provides methods to log users in or out based on Microsoft Entra configuration.
 ---
 
 

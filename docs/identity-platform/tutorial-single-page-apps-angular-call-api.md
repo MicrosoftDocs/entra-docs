@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Get user data with an Angular SPA"
+title: "Tutorial: Extract user data with an Angular SPA"
 description: Learn how extract user data using an Angular single-page app (SPA).
 author: henrymbuguakiarie
 manager: mwongerapk
@@ -12,15 +12,15 @@ ms.topic: tutorial
 #Customer intent: As an Angular developer, I want to know how to call an API from an Angular single-page app in a Microsoft Entra tenant.
 ---
 
-# Tutorial: Add functionality to your Angular application
+# Tutorial: Extract user data with an Angular SPA
 
-This tutorial is part 4 of a series that demonstrates building an Angular single-page app (SPA), which uses the Microsoft identity platform for authentication. In this tutorial, you call Microsoft Graph API from your Angular SPA.
+This tutorial is the final part of a series that demonstrates building an Angular single-page application (SPA) and preparing it for authentication using the Microsoft identity platform. In [Part 2 of this series](tutorial-single-page-apps-angular-sign-in-users-app.md), you created an Angular SPA and prepared it for authentication with your workforce tenant. 
 
 In this tutorial:
 
 > [!div class="checklist"]
-> * Create the API call to Microsoft Graph
-> * Test the application
+> * Add data extraction functionality to your Angular application.
+> * Test the application and extract user data.
 
 ## Prerequisites
 
@@ -350,6 +350,8 @@ To configure your Angular application to interact with the Microsoft Graph API, 
 ---
 
 ## Test the application
+
+For the application to work, you need to run the Angular application and sign in to authenticate with your Microsoft Entra tenant and extract user data.
 
 ### [Workforce tenant](#tab/workforce-tenant)
 
