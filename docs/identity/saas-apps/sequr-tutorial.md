@@ -179,6 +179,6 @@ You can also use Microsoft My Apps to test the application in any mode. When you
 	2.	Unique Group Names: Genea doesn’t support duplicate user group names. Ensure that each Microsoft Entra instance uses distinct group names to avoid any potential errors.
 	3.	Moving to single Microsoft Entra Instances: If you plan to transition from multiple Microsoft Entra instances to a single one, it’s essential to have a clear migration plan. You can either manage this transition internally or collaborate with Genea to ensure a smooth migration without service disruptions.
 
-## Next steps
+## Related content
 
 Once you configure Genea Access Control you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

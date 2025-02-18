@@ -24,7 +24,7 @@ The following video provides a quick overview of the steps involved when plannin
 
 [!INCLUDE [governance-workday-to-entra.md](~/includes/governance/governance-workday-to-entra.md)]
 
-## Next steps
+## Related content
 
 * [Learn more about Microsoft Entra ID and Workday integration scenarios and web service calls](~/identity/app-provisioning/workday-integration-reference.md)
 * [Learn more about supported Workday Attributes for inbound provisioning](~/identity/app-provisioning/workday-attribute-reference.md)

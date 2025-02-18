@@ -138,6 +138,6 @@ In this section, you'll take the information provided from Microsoft Entra ID ab
 1. Please save (download, print, or copy) the recovery codes in a secure place.
 1. At this point, only accounts with SSO are able to log into your Enterprise. Follow the instructions in the document below on provisioning in order to provision accounts backed by SSO.
 
-## Next steps
+## Related content
 
 GitHub Enterprise Managed User **requires** all accounts to be created through automatic user provisioning, you can find more details [here](./github-enterprise-managed-user-provisioning-tutorial.md) on how to configure automatic user provisioning.

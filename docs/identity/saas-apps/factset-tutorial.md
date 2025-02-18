@@ -138,6 +138,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * FactSet only supports SP-initiated SAML. You may test SSO by visiting any authenticated FactSet URL such as [Issue Tracker](https://issuetracker.factset.com) or [FactSet-Web](https://my.factset.com), click on **Single Sign-On (SSO)** on the logon portal and supply your email address in the subsequent page. Please see supplied [documentation](https://download.factset.com/documents/web/FactSet_Single_Sign-On.pdf) for additional information and usage.  
 
-## Next steps
+## Related content
 
 Once you configure FactSet you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

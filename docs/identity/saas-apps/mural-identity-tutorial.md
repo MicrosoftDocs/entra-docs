@@ -188,6 +188,6 @@ You can also use Microsoft My Apps to test the application in any mode. When you
 
 * 03/21/2022 - Application Name updated.
 
-## Next steps
+## Related content
 
 Once you configure Mural Identity you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

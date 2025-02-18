@@ -140,6 +140,6 @@ Once you've configured provisioning, use the following resources to monitor your
 * [Chaos Corporate Sign In](https://docs.chaosgroup.com/display/KB/Corporate+Sign+In)
 * [Configuring Chaos Corporate Sign In with Azure](https://docs.chaosgroup.com/display/KB/Configuring+Corporate+Sign+In+with+Azure)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

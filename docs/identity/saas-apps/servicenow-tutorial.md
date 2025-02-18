@@ -500,6 +500,6 @@ When you select the ServiceNow tile in the Access Panel, you should be automatic
 
 		![Screenshot of the application home page](./media/servicenow-tutorial/mobile-landing-page.png)
 
-## Next Steps
+## Related content
 
 Once you configure ServiceNow you can enforce session controls, which protect exfiltration and infiltration of your organization’s sensitive data in real time. Session controls extend from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

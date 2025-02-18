@@ -84,7 +84,7 @@ The following video provides an overview of on-premises provisioning.
   Microsoft Entra ID offers open-source [reference code](https://github.com/AzureAD/SCIMReferenceCode/wiki) that developers can use to bootstrap their SCIM implementation.
 * Support the /schemas endpoint to reduce configuration required. 
 
-## Next steps
+## Related content
 
 * [App provisioning](~/identity/app-provisioning/user-provisioning.md)
 * [Generic SQL connector](~/identity/app-provisioning/on-premises-sql-connector-configure.md)

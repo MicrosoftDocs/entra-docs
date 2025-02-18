@@ -193,6 +193,6 @@ You can also use the **Validate** button in the **Rackspace SSO** Single sign-on
 
    ![Screenshot shows the SSO Validate Button.](common/sso-validate-sign-on.png "Validate")
 
-## Next steps
+## Related content
 
 Once you configure Rackspace SSO you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

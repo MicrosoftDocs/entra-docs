@@ -176,6 +176,6 @@ In this section, a user called Britta Simon is created in **Palo Alto Networks C
 
 To Test the **Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service** SSO, open the **Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service** console and click **Test Connection** button and authenticate using the test account which you have created in the **Create a Microsoft Entra test user** section.
 
-## Next Steps
+## Related content
 
 Once you configure **Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service** you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

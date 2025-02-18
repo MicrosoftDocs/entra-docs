@@ -230,6 +230,6 @@ For details, see [Traffic Forwarding Using PAC Files](https://docs.trendmicro.co
 
 1. In the Microsoft Entra sign-in window, enter your Microsoft Entra account credentials. You should now be signed in to TMWS.
 
-## Next steps
+## Related content
 
 Once you configure TMWS you can enforce session control, which protects exfiltration and infiltration of your organization's sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
