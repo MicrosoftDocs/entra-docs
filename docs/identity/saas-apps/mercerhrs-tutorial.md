@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Mercer BenefitsCentral (MBC)'
+title: Microsoft Entra integration with Mercer BenefitsCentral (MBC)
 description: Learn how to configure single sign-on between Microsoft Entra ID and Mercer BenefitsCentral (MBC).
 
 author: nguhiu
@@ -8,13 +8,13 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Mercer BenefitsCentral (MBC) so that I can control who has access to Mercer BenefitsCentral (MBC), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Mercer BenefitsCentral (MBC)
+# Microsoft Entra integration with Mercer BenefitsCentral (MBC)
 
 In this tutorial, you learn how to integrate Mercer BenefitsCentral (MBC) with Microsoft Entra ID.
 Integrating Mercer BenefitsCentral (MBC) with Microsoft Entra ID provides you with the following benefits:

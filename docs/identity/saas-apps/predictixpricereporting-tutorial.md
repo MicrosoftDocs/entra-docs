@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Predictix Price Reporting'
+title: Microsoft Entra SSO integration with Predictix Price Reporting
 description: In this tutorial, you'll learn how to configure single sign-on between Microsoft Entra ID and Predictix Price Reporting.
 
 author: nguhiu
@@ -8,13 +8,13 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Predictix Price Reporting so that I can control who has access to Predictix Price Reporting, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Predictix Price Reporting
+# Microsoft Entra SSO integration with Predictix Price Reporting
 
 In this tutorial, you'll learn how to integrate Predictix Price Reporting with Microsoft Entra ID. When you integrate Predictix Price Reporting with Microsoft Entra ID, you can:
 

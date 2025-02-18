@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Oracle Fusion ERP'
+title: Microsoft Entra SSO integration with Oracle Fusion ERP
 description: Learn how to configure single sign-on between Microsoft Entra ID and Oracle Fusion ERP.
 
 author: nguhiu
@@ -8,14 +8,14 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Oracle Fusion ERP so that I can control who has access to Oracle Fusion ERP, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Oracle Fusion ERP
+# Microsoft Entra SSO integration with Oracle Fusion ERP
 
 In this tutorial, you learn how to integrate Oracle Fusion ERP with Microsoft Entra ID. When you integrate Oracle Fusion ERP with Microsoft Entra ID, you can:
 

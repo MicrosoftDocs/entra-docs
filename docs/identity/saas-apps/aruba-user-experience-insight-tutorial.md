@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Aruba User Experience Insight'
+title: Microsoft Entra single sign-on (SSO) integration with Aruba User Experience Insight
 description: Learn how to configure single sign-on between Microsoft Entra ID and Aruba User Experience Insight.
 
 author: nguhiu
@@ -8,7 +8,7 @@ ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Aruba User Experience Insight so that I can control who has access to Aruba User Experience Insight, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Aruba User Experience Insight
+# Microsoft Entra single sign-on (SSO) integration with Aruba User Experience Insight
 
 In this tutorial, you'll learn how to integrate Aruba User Experience Insight with Microsoft Entra ID. When you integrate Aruba User Experience Insight with Microsoft Entra ID, you can:
 

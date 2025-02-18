@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Wdesk'
+title: Microsoft Entra integration with Wdesk
 description: Learn how to configure single sign-on between Microsoft Entra ID and Wdesk.
 
 author: nguhiu
@@ -8,13 +8,13 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Wdesk so that I can control who has access to Wdesk, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Wdesk
+# Microsoft Entra single sign-on (SSO) integration with Wdesk
 
 In this tutorial, you'll learn how to integrate Wdesk with Microsoft Entra ID. When you integrate Wdesk with Microsoft Entra ID, you can:
 

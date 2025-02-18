@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Configure Dropbox for Business for automatic user provisioning with Microsoft Entra ID'
+title: Configure Dropbox for Business for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Dropbox for Business.
 
 author: thomasakelo
@@ -7,14 +7,14 @@ manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Dropbox Business so that I can streamline the user management process and ensure that users have the appropriate access to Dropbox Business.
 ---
 
-# Tutorial: Configure Dropbox for Business for automatic user provisioning
+# Configure Dropbox for Business for automatic user provisioning
 
 The objective of this tutorial is to demonstrate the steps to be performed in Dropbox for Business and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Dropbox for Business.
 

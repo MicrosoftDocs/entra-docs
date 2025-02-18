@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with NS1 SSO for Azure'
+title: Microsoft Entra SSO integration with NS1 SSO for Azure
 description: Learn how to configure single sign-on between Microsoft Entra ID and NS1 SSO for Azure.
 
 author: nguhiu
@@ -8,14 +8,14 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and NS1 SSO for Azure so that I can control who has access to NS1 SSO for Azure, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with NS1 SSO for Azure
+# Microsoft Entra SSO integration with NS1 SSO for Azure
 
 In this tutorial, you'll learn how to integrate NS1 SSO for Azure with Microsoft Entra ID. When you integrate NS1 SSO for Azure with Microsoft Entra ID, you can:
 

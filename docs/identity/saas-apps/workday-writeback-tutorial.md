@@ -1,19 +1,19 @@
 ---
-title: 'Tutorial: Configure Workday writeback in Microsoft Entra ID'
+title: Configure Workday writeback in Microsoft Entra ID
 description: Learn how to configure attribute writeback from Microsoft Entra ID to Workday
 
 author: cmmdesai
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
-ms.topic: tutorial
+ms.topic: how-to
 
 ms.date: 05/06/2024
 ms.author: chmutali
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Workday Writeback so that I can streamline the user management process and ensure that users have the appropriate access to Workday Writeback.
 ---
-# Tutorial: Configure attribute writeback from Microsoft Entra ID to Workday
+# Configure attribute writeback from Microsoft Entra ID to Workday
 The objective of this tutorial is to show the steps you need to perform to writeback attributes from Microsoft Entra ID to Workday. The Workday writeback provisioning app supports assigning values to the following Workday attributes:
 * Work Email 
 * Workday username

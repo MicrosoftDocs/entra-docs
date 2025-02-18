@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Kronos'
+title: Microsoft Entra single sign-on (SSO) integration with Kronos
 description: Learn how to configure single sign-on between Microsoft Entra ID and Kronos.
 
 author: nguhiu
@@ -8,14 +8,14 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Kronos so that I can control who has access to Kronos, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Kronos
+# Microsoft Entra single sign-on (SSO) integration with Kronos
 
 In this tutorial, you'll learn how to integrate Kronos with Microsoft Entra ID. When you integrate Kronos with Microsoft Entra ID, you can:
 

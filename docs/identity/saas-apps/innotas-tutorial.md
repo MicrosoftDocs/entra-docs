@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Innotas'
+title: Microsoft Entra SSO integration with Innotas
 description: Learn how to configure single sign-on between Microsoft Entra ID and Innotas.
 
 author: nguhiu
@@ -8,13 +8,13 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Innotas so that I can control who has access to Innotas, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Innotas
+# Microsoft Entra SSO integration with Innotas
 
 In this tutorial, you'll learn how to integrate Innotas with Microsoft Entra ID. When you integrate Innotas with Microsoft Entra ID, you can:
 

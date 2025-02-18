@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Workspot Control'
+title: Microsoft Entra integration with Workspot Control
 description: Learn how to configure single sign-on for Microsoft Entra ID and Workspot Control.
 
 author: nguhiu
@@ -8,13 +8,13 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Workspot Control so that I can control who has access to Workspot Control, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Workspot Control
+# Microsoft Entra integration with Workspot Control
 
 In this tutorial, you'll learn how to integrate Workspot Control with Microsoft Entra ID. When you integrate Workspot Control with Microsoft Entra ID, you can:
 

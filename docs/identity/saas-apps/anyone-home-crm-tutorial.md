@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Anyone Home CRM'
+title: Microsoft Entra SSO integration with Anyone Home CRM
 description: Learn how to configure single sign-on between Microsoft Entra ID and Anyone Home CRM.
 
 author: nguhiu
@@ -8,14 +8,14 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Anyone Home CRM so that I can control who has access to Anyone Home CRM, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Anyone Home CRM
+# Microsoft Entra SSO integration with Anyone Home CRM
 
 In this tutorial, you'll learn how to integrate Anyone Home CRM with Microsoft Entra ID. When you integrate Anyone Home CRM with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Elium'
+title: Microsoft Entra single sign-on (SSO) integration with Elium
 description: Learn how to configure single sign-on between Microsoft Entra ID and Elium.
 
 author: nguhiu
@@ -8,14 +8,14 @@ ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Elium so that I can control who has access to Elium, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Elium
+# Microsoft Entra single sign-on (SSO) integration with Elium
 
 In this tutorial, you'll learn how to integrate Elium with Microsoft Entra ID. When you integrate Elium with Microsoft Entra ID, you can:
 

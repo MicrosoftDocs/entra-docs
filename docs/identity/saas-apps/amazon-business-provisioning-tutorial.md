@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Configure Amazon Business for automatic user provisioning with Microsoft Entra ID'
+title: Configure Amazon Business for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Amazon Business.
 
 author: thomasakelo
@@ -7,7 +7,7 @@ manager: jeedes
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: thomasakelo
 
@@ -15,7 +15,7 @@ ms.author: thomasakelo
 
 ---
 
-# Tutorial: Configure Amazon Business for automatic user provisioning
+# Configure Amazon Business for automatic user provisioning
 
 This tutorial describes the steps you need to perform in both Amazon Business and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [Amazon Business](https://www.amazon.com/b2b/info/amazon-business?layout=landing) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 

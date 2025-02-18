@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with ATP SpotLight and ChronicX'
+title: Microsoft Entra SSO integration with ATP SpotLight and ChronicX
 description: Learn how to configure single sign-on between Microsoft Entra ID and ATP SpotLight and ChronicX.
 
 author: nguhiu
@@ -8,7 +8,7 @@ ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ATP SpotLight and ChronicX so that I can control who has access to ATP SpotLight and ChronicX, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with ATP SpotLight and ChronicX
+# Microsoft Entra SSO integration with ATP SpotLight and ChronicX
 
 In this tutorial, you'll learn how to integrate ATP SpotLight and ChronicX with Microsoft Entra ID. When you integrate ATP SpotLight and ChronicX with Microsoft Entra ID, you can:
 

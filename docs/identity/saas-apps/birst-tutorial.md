@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Birst Agile Business Analytics'
+title: Microsoft Entra SSO integration with Birst Agile Business Analytics
 description: Learn how to configure single sign-on between Microsoft Entra ID and Birst Agile Business Analytics.
 
 author: nguhiu
@@ -8,13 +8,13 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Birst Agile Business Analytics so that I can control who has access to Birst Agile Business Analytics, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Birst Agile Business Analytics
+# Microsoft Entra SSO integration with Birst Agile Business Analytics
 
 In this tutorial, you'll learn how to integrate Birst Agile Business Analytics with Microsoft Entra ID. When you integrate Birst Agile Business Analytics with Microsoft Entra ID, you can:
 

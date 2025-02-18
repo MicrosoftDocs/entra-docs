@@ -5,7 +5,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
-ms.topic: tutorial
+ms.topic: how-to
 
 ms.date: 12/30/2024
 ms.author: billmath

@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and WebCE so that I can control who has access to WebCE, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with WebCE
+# Microsoft Entra SSO integration with WebCE
 
 In this article, you'll learn how to integrate WebCE with Microsoft Entra ID. WebCE offers self-study online continuing education and pre-license training courses for a variety of professional licenses and designations. When you integrate WebCE with Microsoft Entra ID, you can:
 

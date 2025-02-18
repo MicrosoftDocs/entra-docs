@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Software AG Cloud'
+title: Microsoft Entra SSO integration with Software AG Cloud
 description: Learn how to configure single sign-on between Microsoft Entra ID and Software AG Cloud.
 author: nguhiu
 manager: CelesteDG
@@ -7,14 +7,14 @@ ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Software AG Cloud so that I can control who has access to Software AG Cloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Software AG Cloud
+# Microsoft Entra SSO integration with Software AG Cloud
 
 In this tutorial, you'll learn how to integrate Software AG Cloud with Microsoft Entra ID. When you integrate Software AG Cloud with Microsoft Entra ID, you can:
 

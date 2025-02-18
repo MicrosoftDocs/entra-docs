@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with EasySSO for Confluence'
+title: Microsoft Entra single sign-on (SSO) integration with EasySSO for Confluence
 description: Learn how to configure single sign-on between Microsoft Entra ID and EasySSO for Confluence.
 
 author: nguhiu
@@ -8,14 +8,14 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and EasySSO for Confluence so that I can control who has access to EasySSO for Confluence, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with EasySSO for Confluence
+# Microsoft Entra single sign-on (SSO) integration with EasySSO for Confluence
 
 In this tutorial, you'll learn how to integrate EasySSO for Confluence with Microsoft Entra ID. When you integrate EasySSO for Confluence with Microsoft Entra ID, you can:
 

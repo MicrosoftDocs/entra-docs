@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Lenses.io'
+title: Microsoft Entra single sign-on (SSO) integration with Lenses.io
 description: In this tutorial, you'll learn how to configure single sign-on between Microsoft Entra ID and Lenses.io.
 
 author: nguhiu
@@ -8,14 +8,14 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Lenses.io so that I can control who has access to Lenses.io, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with the Lenses.io DataOps portal
+# Microsoft Entra single sign-on (SSO) integration with the Lenses.io DataOps portal
 
 In this tutorial, you'll learn how to integrate the [Lenses.io](https://lenses.io/) DataOps portal with Microsoft Entra ID. After you integrate Lenses.io with Microsoft Entra ID, you can:
 

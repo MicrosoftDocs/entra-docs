@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Contentkalender'
+title: Microsoft Entra SSO integration with Contentkalender
 description: Learn how to configure single sign-on between Microsoft Entra ID and Contentkalender.
 
 author: nguhiu
@@ -8,7 +8,7 @@ ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 08/20/2024
 ms.author: gideonkiratu
 
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Contentkalender so that I can control who has access to Contentkalender, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Contentkalender
+# Microsoft Entra SSO integration with Contentkalender
 
 In this tutorial, you learn how to integrate Contentkalender with Microsoft Entra ID. When you integrate Contentkalender with Microsoft Entra ID, you can:
 

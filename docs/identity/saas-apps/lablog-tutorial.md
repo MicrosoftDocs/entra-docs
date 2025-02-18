@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with LabLog'
+title: Microsoft Entra single sign-on (SSO) integration with LabLog
 description: Learn how to configure single sign-on between Microsoft Entra ID and LabLog.
 
 author: nguhiu
@@ -8,7 +8,7 @@ ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and LabLog so that I can control who has access to LabLog, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with LabLog
+# Microsoft Entra single sign-on (SSO) integration with LabLog
 
 In this tutorial, you'll learn how to integrate LabLog with Microsoft Entra ID. When you integrate LabLog with Microsoft Entra ID, you can:
 

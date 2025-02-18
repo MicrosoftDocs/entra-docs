@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with PetroVue'
+title: Microsoft Entra single sign-on (SSO) integration with PetroVue
 description: Learn how to configure single sign-on between Microsoft Entra ID and PetroVue.
 
 author: nguhiu
@@ -8,7 +8,7 @@ ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and PetroVue so that I can control who has access to PetroVue, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with PetroVue
+# Microsoft Entra single sign-on (SSO) integration with PetroVue
 
 In this tutorial, you'll learn how to integrate PetroVue with Microsoft Entra ID. When you integrate PetroVue with Microsoft Entra ID, you can:
 

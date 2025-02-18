@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Configure 15Five for automatic user provisioning with Microsoft Entra ID'
+title: Configure 15Five for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to 15Five.
 
 author: thomasakelo
@@ -7,7 +7,7 @@ manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: thomasakelo
 
@@ -15,7 +15,7 @@ ms.author: thomasakelo
 
 ---
 
-# Tutorial: Configure 15Five for automatic user provisioning
+# Configure 15Five for automatic user provisioning
 
 The objective of this tutorial is to demonstrate the steps to be performed in 15Five and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to [15Five](https://www.15five.com/pricing/). For important details on what this service does, how it works, and frequently asked questions, see Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID.
 

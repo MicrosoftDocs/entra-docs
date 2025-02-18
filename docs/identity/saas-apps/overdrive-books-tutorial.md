@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Overdrive'
+title: Microsoft Entra integration with Overdrive
 description: Learn how to configure single sign-on between Microsoft Entra ID and Overdrive.
 
 author: nguhiu
@@ -8,13 +8,13 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Overdrive so that I can control who has access to Overdrive, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Overdrive
+# Microsoft Entra integration with Overdrive
 
 In this tutorial, you'll learn how to integrate Overdrive with Microsoft Entra ID. When you integrate Overdrive with Microsoft Entra ID, you can:
 

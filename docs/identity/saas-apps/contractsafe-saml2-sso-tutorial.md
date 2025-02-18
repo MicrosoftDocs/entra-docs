@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with ContractSafe Saml2 SSO'
+title: Microsoft Entra SSO integration with ContractSafe Saml2 SSO
 description: Learn how to configure single sign-on between Microsoft Entra ID and ContractSafe Saml2 SSO.
 
 author: nguhiu
@@ -8,14 +8,14 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ContractSafe Saml2 SSO so that I can control who has access to ContractSafe Saml2 SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Integrate Microsoft Entra SSO with ContractSafe Saml2 SSO
+# Integrate Microsoft Entra SSO with ContractSafe Saml2 SSO
 
 In this tutorial, you'll learn how to integrate ContractSafe Saml2 SSO with Microsoft Entra ID. When you integrate ContractSafe Saml2 SSO with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Communifire'
+title: Microsoft Entra SSO integration with Communifire
 description: Learn how to configure single sign-on between Microsoft Entra ID and Communifire.
 
 author: nguhiu
@@ -8,13 +8,13 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Communifire so that I can control who has access to Communifire, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Communifire
+# Microsoft Entra SSO integration with Communifire
 
 In this tutorial, you'll learn how to integrate Communifire with Microsoft Entra ID. When you integrate Communifire with Microsoft Entra ID, you can:
 

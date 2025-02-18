@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with deBroome Brand Portal'
+title: Microsoft Entra SSO integration with deBroome Brand Portal
 description: Learn how to configure single sign-on between Microsoft Entra ID and deBroome Brand Portal.
 
 author: nguhiu
@@ -8,14 +8,14 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and deBroome Brand Portal so that I can control who has access to deBroome Brand Portal, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with deBroome Brand Portal
+# Microsoft Entra SSO integration with deBroome Brand Portal
 
 In this tutorial, you'll learn how to integrate deBroome Brand Portal with Microsoft Entra ID. When you integrate deBroome Brand Portal with Microsoft Entra ID, you can:
 

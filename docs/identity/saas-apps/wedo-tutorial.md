@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with WEDO'
+title: Microsoft Entra single sign-on (SSO) integration with WEDO
 description: Learn how to configure single sign-on between Microsoft Entra ID and WEDO.
 
 author: nguhiu
@@ -8,14 +8,14 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Wedo so that I can control who has access to Wedo, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with WEDO
+# Microsoft Entra single sign-on (SSO) integration with WEDO
 
 In this tutorial, you'll learn how to integrate WEDO with Microsoft Entra ID. When you integrate WEDO with Microsoft Entra ID, you can:
 

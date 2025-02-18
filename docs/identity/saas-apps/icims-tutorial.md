@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with ICIMS'
+title: Microsoft Entra integration with ICIMS
 description: Learn how to configure single sign-on between Microsoft Entra ID and ICIMS.
 
 author: nguhiu
@@ -8,14 +8,14 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 08/29/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and the ICIMS Talent Cloud so that I can control who has access to ICIMS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with ICIMS
+# Microsoft Entra single sign-on (SSO) integration with ICIMS
 
 In this tutorial, you'll learn how to integrate ICIMS with Microsoft Entra ID. When you integrate ICIMS with Microsoft Entra ID, you can:
 

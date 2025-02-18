@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Greenlight Enterprise Business Controls Platform'
+title: Microsoft Entra SSO integration with Greenlight Enterprise Business Controls Platform
 description: Learn how to configure single sign-on between Microsoft Entra ID and Greenlight Enterprise Business Controls Platform.
 
 author: nguhiu
@@ -8,14 +8,14 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Greenlight Enterprise Business Controls Platform so that I can control who has access to Greenlight Enterprise Business Controls Platform, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Greenlight Enterprise Business Controls Platform
+# Microsoft Entra SSO integration with Greenlight Enterprise Business Controls Platform
 
 In this tutorial, you'll learn how to integrate Greenlight Enterprise Business Controls Platform with Microsoft Entra ID. When you integrate Greenlight Enterprise Business Controls Platform with Microsoft Entra ID, you can:
 

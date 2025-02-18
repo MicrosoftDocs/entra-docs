@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with ExpenseMe Pro (by Inlogik)'
+title: Microsoft Entra SSO integration with ExpenseMe Pro (by Inlogik)
 description: Learn how to configure single sign-on between Microsoft Entra ID and ExpenseMe Pro (by Inlogik).
 
 author: nguhiu
@@ -8,13 +8,13 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 05/03/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ProMaster (by Inlogik) so that I can control who has access to ProMaster (by Inlogik), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with ExpenseMe Pro (by Inlogik)
+# Microsoft Entra SSO integration with ExpenseMe Pro (by Inlogik)
 
 In this tutorial, you'll learn how to integrate ExpenseMe Pro (by Inlogik) with Microsoft Entra ID. When you integrate ExpenseMe Pro (by Inlogik) with Microsoft Entra ID, you can:
 

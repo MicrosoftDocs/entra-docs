@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Grammarly'
+title: Microsoft Entra single sign-on (SSO) integration with Grammarly
 description: Learn how to configure single sign-on between Microsoft Entra ID and Grammarly.
 
 author: nguhiu
@@ -8,14 +8,14 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Grammarly so that I can control who has access to Grammarly, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Grammarly
+# Microsoft Entra single sign-on (SSO) integration with Grammarly
 
 In this tutorial, you'll learn how to integrate Grammarly with Microsoft Entra ID. When you integrate Grammarly with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Configuring Velpic for automatic user provisioning with Microsoft Entra ID'
+title: Configuring Velpic for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Velpic.
 
 author: zhchia
@@ -7,14 +7,14 @@ manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Velpic so that I can streamline the user management process and ensure that users have the appropriate access to Velpic.
 ---
 
-# Tutorial: Configuring Velpic for Automatic User Provisioning
+# Configuring Velpic for Automatic User Provisioning
 
 The objective of this tutorial is to show you the steps you need to perform in Velpic and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Velpic.
 

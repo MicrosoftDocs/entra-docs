@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Shopify Plus'
+title: Microsoft Entra single sign-on (SSO) integration with Shopify Plus
 description: Learn how to configure single sign-on between Microsoft Entra ID and Shopify Plus.
 
 author: nguhiu
@@ -8,14 +8,14 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Shopify Plus so that I can control who has access to Shopify Plus, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Shopify Plus
+# Microsoft Entra single sign-on (SSO) integration with Shopify Plus
 
 In this tutorial, you'll learn how to integrate Shopify Plus with Microsoft Entra ID. When you integrate Shopify Plus with Microsoft Entra ID, you can:
 

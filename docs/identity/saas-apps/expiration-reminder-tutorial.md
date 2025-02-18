@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Expiration Reminder'
+title: Microsoft Entra integration with Expiration Reminder
 description: Learn how to configure single sign-on between Microsoft Entra ID and Expiration Reminder.
 
 author: nguhiu
@@ -8,13 +8,13 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Expiration Reminder so that I can control who has access to Expiration Reminder, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Expiration Reminder
+# Microsoft Entra integration with Expiration Reminder
 
 In this tutorial, you'll learn how to integrate Expiration Reminder with Microsoft Entra ID. When you integrate Expiration Reminder with Microsoft Entra ID, you can:
 

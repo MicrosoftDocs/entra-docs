@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with MS Azure SSO Access for Ethidex Compliance Office™'
+title: Microsoft Entra single sign-on (SSO) integration with MS Azure SSO Access for Ethidex Compliance Office™
 description: Learn how to configure single sign-on between Microsoft Entra ID and MS Azure SSO Access for Ethidex Compliance Office™.
 
 author: nguhiu
@@ -8,14 +8,14 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and MS Azure SSO Access for Ethidex Compliance Officeâ„¢ so that I can control who has access to MS Azure SSO Access for Ethidex Compliance Officeâ„¢, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with MS Azure SSO Access for Ethidex Compliance Office™
+# Microsoft Entra single sign-on (SSO) integration with MS Azure SSO Access for Ethidex Compliance Office™
 
 In this tutorial, you'll learn how to integrate MS Azure SSO Access for Ethidex Compliance Office™ with Microsoft Entra ID. When you integrate MS Azure SSO Access for Ethidex Compliance Office™ with Microsoft Entra ID, you can:
 

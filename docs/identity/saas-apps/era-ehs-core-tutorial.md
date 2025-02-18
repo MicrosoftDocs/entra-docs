@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with ERA_EHS_CORE'
+title: Microsoft Entra SSO integration with ERA_EHS_CORE
 description: Learn how to configure single sign-on between Microsoft Entra ID and ERA_EHS_CORE.
 
 author: nguhiu
@@ -8,7 +8,7 @@ ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ERA_EHS_CORE so that I can control who has access to ERA_EHS_CORE, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with ERA_EHS_CORE
+# Microsoft Entra SSO integration with ERA_EHS_CORE
 
 In this tutorial, you'll learn how to integrate ERA_EHS_CORE with Microsoft Entra ID. When you integrate ERA_EHS_CORE with Microsoft Entra ID, you can:
 

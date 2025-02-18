@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Kintone'
+title: Microsoft Entra SSO integration with Kintone
 description: Learn how to configure single sign-on between Microsoft Entra ID and Kintone.
 
 author: nguhiu
@@ -8,13 +8,13 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Kintone so that I can control who has access to Kintone, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Kintone
+# Microsoft Entra SSO integration with Kintone
 
 In this tutorial, you'll learn how to integrate Kintone with Microsoft Entra ID. When you integrate Kintone with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Kantega SSO for Bitbucket'
+title: Microsoft Entra SSO integration with Kantega SSO for Bitbucket
 description: Learn how to configure single sign-on between Microsoft Entra ID and Kantega SSO for Bitbucket.
 
 author: nguhiu
@@ -8,13 +8,13 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Kantega SSO for Bitbucket so that I can control who has access to Kantega SSO for Bitbucket, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Kantega SSO for Bitbucket
+# Microsoft Entra SSO integration with Kantega SSO for Bitbucket
 
 In this tutorial, you'll learn how to integrate Kantega SSO for Bitbucket with Microsoft Entra ID. When you integrate Kantega SSO for Bitbucket with Microsoft Entra ID, you can:
 

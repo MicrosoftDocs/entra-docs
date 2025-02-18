@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on integration with Citrix ADC (header-based authentication)'
+title: Microsoft Entra single sign-on integration with Citrix ADC (header-based authentication)
 description: Learn how to configure single sign-on (SSO) between Microsoft Entra ID and Citrix ADC by using header-based authentication.
 
 author: nguhiu
@@ -8,12 +8,12 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 ---
 
-# Tutorial: Microsoft Entra single sign-on integration with Citrix ADC (header-based authentication)
+# Microsoft Entra single sign-on integration with Citrix ADC (header-based authentication)
 
 In this tutorial, you'll learn how to integrate Citrix ADC with Microsoft Entra ID. When you integrate Citrix ADC with Microsoft Entra ID, you can:
 

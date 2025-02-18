@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Pulse Secure Virtual Traffic Manager'
+title: Microsoft Entra single sign-on (SSO) integration with Pulse Secure Virtual Traffic Manager
 description: Learn how to configure single sign-on between Microsoft Entra ID and Pulse Secure Virtual Traffic Manager.
 
 author: nguhiu
@@ -8,7 +8,7 @@ ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Pulse Secure Virtual Traffic Manager so that I can control who has access to Pulse Secure Virtual Traffic Manager, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Pulse Secure Virtual Traffic Manager
+# Microsoft Entra single sign-on (SSO) integration with Pulse Secure Virtual Traffic Manager
 
 In this tutorial, you'll learn how to integrate Pulse Secure Virtual Traffic Manager with Microsoft Entra ID. When you integrate Pulse Secure Virtual Traffic Manager with Microsoft Entra ID, you can:
 

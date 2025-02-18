@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with RFPIO'
+title: Microsoft Entra SSO integration with RFPIO
 description: Learn how to configure single sign-on between Microsoft Entra ID and RFPIO.
 
 author: nguhiu
@@ -8,13 +8,13 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and RFPIO so that I can control who has access to RFPIO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with RFPIO
+# Microsoft Entra SSO integration with RFPIO
 
 In this tutorial, you'll learn how to integrate RFPIO with Microsoft Entra ID. When you integrate RFPIO with Microsoft Entra ID, you can:
 

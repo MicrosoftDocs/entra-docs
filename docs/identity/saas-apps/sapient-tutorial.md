@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Sapient'
+title: Microsoft Entra single sign-on (SSO) integration with Sapient
 description: Learn how to configure single sign-on between Microsoft Entra ID and Sapient.
 
 author: nguhiu
@@ -8,7 +8,7 @@ ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Sapient so that I can control who has access to Sapient, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Sapient
+# Microsoft Entra single sign-on (SSO) integration with Sapient
 
 In this tutorial, you'll learn how to integrate Sapient with Microsoft Entra ID. When you integrate Sapient with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with PostBeyond'
+title: Microsoft Entra SSO integration with PostBeyond
 description: Learn how to configure single sign-on between Microsoft Entra ID and PostBeyond.
 
 author: nguhiu
@@ -8,13 +8,13 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and PostBeyond so that I can control who has access to PostBeyond, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with PostBeyond
+# Microsoft Entra SSO integration with PostBeyond
 
 In this tutorial, you'll learn how to integrate PostBeyond with Microsoft Entra ID. When you integrate PostBeyond with Microsoft Entra ID, you can:
 

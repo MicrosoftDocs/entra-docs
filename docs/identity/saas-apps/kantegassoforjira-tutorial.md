@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Integrate Microsoft Entra ID with Kantega SSO for JIRA'
+title: Integrate Microsoft Entra ID with Kantega SSO for JIRA
 description: Learn how to configure single sign-on between Microsoft Entra ID and Jira using Kantega SSO.
 
 author: nguhiu
@@ -8,13 +8,13 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Kantega SSO for JIRA so that I can control who has access to Kantega SSO for JIRA, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Integrate Microsoft Entra ID with Kantega SSO for JIRA
+# Integrate Microsoft Entra ID with Kantega SSO for JIRA
 
 This tutorial will walk you through the steps of configuring single sign-on for your Microsoft Entra users in Jira. To achieve this, we will be using the Kantega SSO app. Using this configuration, you will be able to:
 

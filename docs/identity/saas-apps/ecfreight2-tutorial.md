@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with ecFreight2'
+title: Microsoft Entra single sign-on (SSO) integration with ecFreight2
 description: Learn how to configure single sign-on between Microsoft Entra and ecFreight2.
 services: active-directory
 author: nguhiu
@@ -8,14 +8,14 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 08/16/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ecFreight2 so that I can control who has access to ecFreight2, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with ecFreight2
+# Microsoft Entra single sign-on (SSO) integration with ecFreight2
 
 In this tutorial, you'll learn how to integrate ecFreight2 with Microsoft Entra ID. When you integrate ecFreight2 with Microsoft Entra ID, you can:
 

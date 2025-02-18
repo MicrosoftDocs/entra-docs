@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Configure Connecter for automatic user provisioning with Microsoft Entra ID'
+title: Configure Connecter for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Connecter.
 
 author: thomasakelo
@@ -7,14 +7,14 @@ manager: jeedes
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Connecter so that I can streamline the user management process and ensure that users have the appropriate access to Connecter.
 ---
 
-# Tutorial: Configure Connecter for automatic user provisioning
+# Configure Connecter for automatic user provisioning
 
 This tutorial describes the steps you need to perform in both Connecter and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users to [Connecter](https://www.designconnected.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 

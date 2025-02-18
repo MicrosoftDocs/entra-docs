@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Drift'
+title: Microsoft Entra single sign-on (SSO) integration with Drift
 description: Learn how to configure single sign-on between Microsoft Entra ID and Drift.
 
 author: nguhiu
@@ -8,14 +8,14 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Drift so that I can control who has access to Drift, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Drift
+# Microsoft Entra single sign-on (SSO) integration with Drift
 
 In this tutorial, you'll learn how to integrate Drift with Microsoft Entra ID. When you integrate Drift with Microsoft Entra ID, you can:
 

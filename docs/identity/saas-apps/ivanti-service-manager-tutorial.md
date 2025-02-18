@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Ivanti Service Manager (ISM)'
+title: Microsoft Entra integration with Ivanti Service Manager (ISM)
 description: Learn how to configure single sign-on between Microsoft Entra ID and Ivanti Service Manager (ISM).
 
 author: nguhiu
@@ -8,13 +8,13 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Ivanti Service Manager (ISM) so that I can control who has access to Ivanti Service Manager (ISM), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Ivanti Service Manager (ISM)
+# Microsoft Entra integration with Ivanti Service Manager (ISM)
 
 In this tutorial, you'll learn how to integrate Ivanti Service Manager (ISM) with Microsoft Entra ID. When you integrate Ivanti Service Manager (ISM) with Microsoft Entra ID, you can:
 

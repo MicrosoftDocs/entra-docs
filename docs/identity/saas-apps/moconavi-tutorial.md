@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with moconavi'
+title: Microsoft Entra SSO integration with moconavi
 description: Learn how to configure single sign-on between Microsoft Entra ID and moconavi.
 
 author: nguhiu
@@ -8,13 +8,13 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and moconavi so that I can control who has access to moconavi, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with moconavi
+# Microsoft Entra SSO integration with moconavi
 
 In this tutorial, you'll learn how to integrate moconavi with Microsoft Entra ID. When you integrate moconavi with Microsoft Entra ID, you can:
 
