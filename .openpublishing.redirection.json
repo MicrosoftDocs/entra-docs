@@ -1923,8 +1923,13 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/identity-platform/tutorial-single-page-app-react-register-app.md",
-      "redirect_url": "/entra/identity-platform/tutorial-single-page-app-react-prepare-app",
+      "source_path_from_root": "/docs/identity-platform/tutorial-single-page-app-react-sign-in-users.md",
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-app-react-configure-authentication",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/tutorial-single-page-app-react-call-api.md",
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-app-sign-in-sign-out",
       "redirect_document_id": false
     }
   ]

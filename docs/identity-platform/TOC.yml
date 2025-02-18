@@ -167,7 +167,7 @@
               - name: Add sign in and sign out
                 href: tutorial-single-page-app-react-configure-authentication.md
               - name: Get user data from web API
-                href: tutorial-single-page-app-sign-in-sign-out.md
+                href: tutorial-single-page-app-react-sign-in-sign-out.md
             - name: Native authentication
               items:
                 - name: Sign up
