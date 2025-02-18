@@ -530,28 +530,10 @@ Restrict the QR code authentication method to only frontline workers and shared 
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/new-authentication-strength.png" alt-text="Screenshot that shows how to create a new authentication strength.":::
 
-1. Create a custom authentication strength Conditional Access policy. Select all authentication combinations except **QR code (Preview)**.  
+1. Create a custom authentication strength Conditional Access policy. Select authentication **QR code (Preview)**.  
 
-   :::image type="content" border="true" source="media/how-to-authentication-qr-code/configure-authentication-strength.png" alt-text="Screenshot that shows the Microsoft Entra admin center that shows how to select method combinations for an authentication strength.":::
-
-1. Click **Next**, and click **Create**.
-
-1. Click **Conditional Access** > **Create new policy**. This new Conditional Access policy enforces the authentication strength policy, and restricts usage of QR code from any device type except shared devices. 
-   1. Enter a name for the policy.
-   1. Under **Users or workload identities**, select **All Users**.  
-   1. Under **Target resources** > **Include** > select **All resources (formerly 'All cloud apps')**.
-   1. Under **Conditions**, click **Filter for devices**, set **Configure** to **Yes**.
-   1. Click **Exclude filtered devices from policy**.
-   1. For **Property**, select **profileType**.
-   1. For **Operator**, select **Equals**.
-   1. For **Value**, select **Shared**. 
-
-      :::image type="content" border="true" source="media/how-to-authentication-qr-code/filter-devices.png" alt-text="Screenshot that shows how to filter devices for an authentication strength.":::
-
-   1. Under **Grant** > **Grant access** > select **Require authentication strength**, and click **Select**.  
-   1. Click **Create**.
-
-1. Create a Conditional Access policy that requires shared devices be marked as compliant with policies from Intune or other MDM solution. This policy makes sure that frontline workers can access only specific resources from a compliant, shared device by using a QR code + PIN, or another registered authentication method. 
+1. Create a Conditional Access policy that requires shared devices be marked as compliant with policies from Intune or other MDM solution. This policy makes sure that frontline workers can access only specific resources from a compliant, shared device by using QR code auth
+   
    1. Under **Users or workload identities** > **Include** > select **Users and groups**, and choose your **Frontline workers** frontline worker group. 
    1. Under **Target resources** > **Include** > select specific resources that frontline workers can access.
    1. Under **Conditions**, click **Filter for devices**, set **Configure** to **Yes**.
