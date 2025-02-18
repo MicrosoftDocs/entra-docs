@@ -163,6 +163,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 Assuming that the Microsoft Azure is configured as a provider in Software AG Cloud, navigate to `www.softwareag.cloud` and click on Login button and enter the environment name. In the next screen, click on "Log in with \<IDP NAME\>" link and enter the credentials. Once authenticated, you will be logged in and taken to the Software AG Cloud home page.
 
-## Next steps
+## Related content
 
 Once you configure Software AG Cloud you can enforce session control, which protects exfiltration and infiltration of your organization's sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

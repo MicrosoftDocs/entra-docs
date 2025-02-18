@@ -220,7 +220,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 * You can use Microsoft My Apps. When you click the SAP HANA tile in the My Apps, you should be automatically signed in to the SAP HANA for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 
-## Next steps
+## Related content
 
 Provisioning from SAP Cloud Identity Services to SAP HANA is a beta feature available on SAP Business Technology Platform. For more information, see how to configure provisioning of users [from Microsoft Entra ID to SAP Cloud Identity Services](sap-cloud-platform-identity-authentication-provisioning-tutorial.md), and how to configure provisioning of users [from SAP Cloud Identity Services to SAP HANA Database (Beta)](https://help.sap.com/docs/cloud-identity-services/cloud-identity-services/sap-hana-database-beta).
 

@@ -321,7 +321,7 @@ Once the Workday provisioning app configurations are complete, you can turn on t
 * When the Writeback app is configured to update secondary phone numbers, it doesn't replace the existing secondary phone number in Workday. It adds one more secondary phone number to the worker record. There's no workaround to this behavior. 
 
 
-## Next steps
+## Related content
 
 * [Learn more about Microsoft Entra ID and Workday integration scenarios and web service calls](~/identity/app-provisioning/workday-integration-reference.md)
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

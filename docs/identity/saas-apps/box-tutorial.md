@@ -172,6 +172,6 @@ You can push an Azure group to Box and sync that group. Azure pushes groups to B
 > [!NOTE]
 > If you need to create a user manually, contact [Box support team](https://support.box.com).
 
-## Next steps
+## Related content
 
 Once you configure Box you can enforce Session Control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session Control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

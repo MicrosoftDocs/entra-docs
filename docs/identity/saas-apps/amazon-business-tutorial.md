@@ -340,7 +340,7 @@ You can also use Microsoft My Apps to test the application in any mode. When you
    1. Monitor Authentication Logs
       Keep an eye on the Microsoft Entra ID sign-in logs to monitor for any authentication issues and address them promptly.
 
-## Next steps
+## Related content
 
 Once you configure Amazon Business you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
 

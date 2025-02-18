@@ -189,6 +189,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 * Once iCIMS support has setup the SSO integration they will provide a test url.
 * The url will be in the format, https://iam-federated-testing-bff.production.env.icims.tools/login/hs-#####-azure. The digits in the url are your unique icims ATS customer ID.
 
-## Next steps
+## Related content
 
 Once you configure ICIMS, you can enforce that specific user groups must use SSO. Feel free to ask for help at https://community.icims.com.

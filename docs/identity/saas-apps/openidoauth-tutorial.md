@@ -147,6 +147,6 @@ The *prompt=admin_consent* parameter can also be used by applications that reque
 
 Imagine that an application requires admin consent, and an admin signs in without the *prompt=admin_consent* parameter being sent. When the admin successfully consents to the application, it applies only for their user account. Regular users will still be unable to sign in or consent to the application. This feature is useful if you want to give the tenant administrator the ability to explore your application before allowing other users' access.
 
-## Next steps
+## Related content
 
 [Set up OIDC-based single sign-on (SSO) for an application in your Microsoft Entra tenant](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md)

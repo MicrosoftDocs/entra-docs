@@ -53,6 +53,6 @@ In this step, the IT admin can monitor the actions performed by Rippling and rev
 
 Using the above steps, once employee data from Rippling is available in Microsoft Entra ID, the IT admin can configure Microsoft Entra ID Governance Lifecycle Workflows to automate the Joiner-Mover-Leaver business processes. 
 
-## Next steps
+## Related content
 - [Govern access for applications in your environment](../../id-governance/identity-governance-applications-prepare.md)
 - [Connected applications](../../id-governance/apps.md)

@@ -319,7 +319,7 @@ Once the SuccessFactors provisioning app configurations are complete, you can tu
    > ![Provisioning progress bar](./media/sap-successfactors-inbound-provisioning/prov-progress-bar-stats.png)
 
 
-## Next steps
+## Related content
 
 * [Deep dive into Microsoft Entra ID and SAP SuccessFactors integration reference](~/identity/app-provisioning/sap-successfactors-integration-reference.md)
 * [Learn how to configure single sign-on between SuccessFactors and Microsoft Entra ID](successfactors-tutorial.md)

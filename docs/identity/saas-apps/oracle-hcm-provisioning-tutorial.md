@@ -527,7 +527,7 @@ We thank the following partners for their help reviewing and contributing to thi
 - Nick Herbert, Vice President of Sales at Oxford Computer Group
 - Steve Brugger, CEO at Oxford Computer Group
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)
 
