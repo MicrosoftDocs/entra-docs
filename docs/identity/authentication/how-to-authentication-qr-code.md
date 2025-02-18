@@ -504,12 +504,9 @@ Users need to [download Teams](https://aka.ms/teamsmobiledownload):
 ## QR code authentication web sign-in experience (login.microsoftonline.com)
 
 1. Click **More sign-in options** > **Sign in to an organization** > **Sign in with QR code**.
-
-   :::image type="content" border="true" source="media/how-to-authentication-qr-code/sign-in-qr-code.png" alt-text="Screenshot that shows how to sign in to Microsoft with a QR code and PIN.":::
-
 1. Allow the camera when prompted > scan the QR code > enter your PIN > you're successfully signed in.
 
-   :::image type="content" border="true" source="media/how-to-authentication-qr-code/enter-pin.png" alt-text="Screenshot that shows how to enter your PIN.":::
+   :::image type="content" source="media/concept-authentication-qr-code/web-sign-in.png" alt-text="Screenshot that shows mobile sign-in experience.":::
 
 ## Add security with QR code authentication using Conditional Access policies
 
