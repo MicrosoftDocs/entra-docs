@@ -57,8 +57,8 @@ To configure and test Microsoft Entra SSO with Inkling / Echolink, perform the f
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
     1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
-1. **[Configure Inkling / Echolink SSO](#configure-Inkling / echolink-sso)** - to configure the single sign-on settings on application side.
-    1. **[Create Inkling / Echolink test user](#create-Inkling / echolink-test-user)** - to have a counterpart of B.Simon in Inkling / Echolink that is linked to the Microsoft Entra representation of user.
+1. **[Configure Inkling/Echolink SSO](#configure-inkling/echolink-sso)** - to configure the single sign-on settings on application side.
+    1. **[Create Inkling/Echolink test user](#create-inkling/echolink-test-user)** - to have a counterpart of B.Simon in Inkling / Echolink that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
 <a name='configure-azure-ad-sso'></a>
@@ -122,11 +122,15 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
    1. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
    1. In the **Added Assignment** dialog, select the **Assign** button.
 
-## Configure Inkling / Echolink SSO
+<a name='configure-inkling/echolink-sso'></a>
+
+## Configure Inkling/Echolink SSO
 
 To configure single sign-on on **Inkling / Echolink** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [Inkling / Echolink support team](mailto:press@inkling.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
-### Create Inkling / Echolink test user
+<a name='create-inkling/echolink-test-user'></a>
+
+### Create Inkling/Echolink test user
 
 In this section, you create a user called Britta Simon in Inkling / Echolink. Work with [Inkling / Echolink support team](mailto:press@inkling.com) to add the users in the Inkling / Echolink platform. Users must be created and activated before you use single sign-on.
 
