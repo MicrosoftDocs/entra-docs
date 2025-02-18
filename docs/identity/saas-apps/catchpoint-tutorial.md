@@ -191,6 +191,6 @@ You can also use Microsoft My Apps to test the application in any mode. When you
 >
 > ![Catchpoint configuration](./media/catchpoint-tutorial/loginimage.png)
 
-## Next steps
+## Related content
 
 After you configure Catchpoint, you can enforce session control. This precaution protects against exfiltration and infiltration of your organization's sensitive data in real time. Session control is an extension of Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

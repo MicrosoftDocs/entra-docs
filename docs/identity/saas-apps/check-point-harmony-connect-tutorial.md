@@ -177,6 +177,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 To test the Check Point Harmony Connect, go to their Authentication service and authenticate using test account which you have created in the **Create a Microsoft Entra test user** section.
 
-## Next steps
+## Related content
 
 Once you configure Check Point Harmony Connect you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

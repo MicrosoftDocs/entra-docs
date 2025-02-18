@@ -102,6 +102,6 @@ In the previous [Create and assign Microsoft Entra test user](#create-and-assign
 * [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 * [HashiCorp Cloud Platform (HCP) | Microsoft Entra SAML SSO Configuration](https://developer.hashicorp.com/hcp/docs/hcp/security/sso/sso-aad).
 
-## Next steps
+## Related content
 
 Once you configure HashiCorp Cloud Platform (HCP) you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

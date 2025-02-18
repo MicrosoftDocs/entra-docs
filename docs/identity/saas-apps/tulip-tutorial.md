@@ -137,7 +137,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	f. Click **Save SAML Configuration**.
 
-## Next steps
+## Related content
 
 Once you configure Tulip you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
 

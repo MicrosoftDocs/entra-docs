@@ -205,6 +205,6 @@ Whenever you need to make changes to the SSO, you need to check the **SAML Signi
 
 If you are using the Syncplicity Mobile app, please contact the Syncplicity Customer Support (support@syncplicity.com) for assistance.
 
-## Next steps
+## Related content
 
 Once you configure Syncplicity you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

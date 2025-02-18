@@ -201,6 +201,6 @@ You can also use Microsoft My Apps to test the application in any mode. When you
 
 
 
-## Next steps
+## Related content
 
 Once you configure Greenhouse you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

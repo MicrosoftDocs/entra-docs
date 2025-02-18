@@ -45,6 +45,6 @@ To find more tutorials, use the table of contents on the left.
 | ![logo-Salesforce](./media/tutorial-list/entra-saas-salesforce-tutorial.png)| [Salesforce](salesforce-tutorial.md)| [Salesforce - User Provisioning](salesforce-provisioning-tutorial.md) |
 | ![logo-SAP Cloud Identity Services](./media/tutorial-list/entra-saas-sapboc-tutorial.png)| [SAP Cloud Identity Services](sap-hana-cloud-platform-identity-authentication-tutorial.md)|[SAP Cloud Identity Services - Provisioning](./sap-cloud-platform-identity-authentication-provisioning-tutorial.md) |
 
-## Next steps
+## Related content
 
 To learn more about application management, see [What is application management](~/identity/enterprise-apps/what-is-application-management.md).

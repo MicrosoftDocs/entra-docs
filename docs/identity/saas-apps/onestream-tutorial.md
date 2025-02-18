@@ -182,6 +182,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 * Go to OneStream Sign-on URL directly and initiate the login flow from there.
 
-## Next steps
+## Related content
 
 Once you configure OneStream you can enforce session control, which protects exfiltration and infiltration of your organization's sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

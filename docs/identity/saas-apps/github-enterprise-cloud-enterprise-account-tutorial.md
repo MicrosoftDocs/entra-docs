@@ -160,6 +160,6 @@ To test GitHub organization access under the Enterprise Account with the `B.Simo
 1. Sign in to Microsoft Entra ID using the `B.Simon` user account.
 1. Go to the GitHub organization. The user should be prompted to authenticate via SAML. After successful SAML authentication, `B.Simon` should be able to access organization resources. 
 
-## Next steps
+## Related content
 
 Once you configure GitHub Enterprise Cloud - Enterprise Account you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

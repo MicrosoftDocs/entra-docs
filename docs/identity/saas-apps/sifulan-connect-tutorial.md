@@ -147,6 +147,6 @@ In this section, you test your Microsoft Entra single sign-on configuration usin
 * Click on **Test this application** in Microsoft Entra admin center. This will redirect to SIFULAN Connect Sign on URL where you can initiate the login flow.  
 * Go to SIFULAN Connect Sign-on URL directly and initiate the login flow from there.
 
-## Next steps
+## Related content
 
 Once you configure SIFULAN Connect you can enforce session control, which protects exfiltration and infiltration of your organization's sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

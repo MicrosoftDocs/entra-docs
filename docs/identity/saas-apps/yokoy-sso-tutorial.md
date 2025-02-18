@@ -149,6 +149,6 @@ support guide for instructions on how to embed a Yokoy course with support for M
 
 You'll need to create a course, share it with your organization, and publish it in order to test course embedding. 
 
-## Next steps
+## Related content
 
 Once you configure Yokoy you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

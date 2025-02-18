@@ -398,7 +398,7 @@ You can also use Microsoft My Apps to test the application in any mode. When you
 
 * 01/12/2020 - Increased role length limit from 119 characters to 239 characters.
 
-## Next steps
+## Related content
 
 Once you configure AWS Single-Account Access you can enforce Session Control, which protects exfiltration and infiltration of your organization's sensitive data in real time. Session Control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
 

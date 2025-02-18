@@ -170,6 +170,6 @@ Once you've configured provisioning, use the following resources to monitor your
 * [Akamai Enterprise Application Access - Getting Started](https://techdocs.akamai.com/eaa/docs/welcome-guide)
 * [Configuring Custom Attributes in EAA](https://techdocs.akamai.com/eaa/docs/scim-provisioning-with-azure#step-7-optional-add-a-custom-attribute-in--and-map-it-to-the-scim-attribute-in-your--scim-directory)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

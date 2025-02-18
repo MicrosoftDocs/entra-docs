@@ -367,6 +367,6 @@ If you have Microsoft Entra ID Governance, you can automate changes to the appli
 * [Govern access for applications in your environment](~/id-governance/identity-governance-applications-prepare.md)
 
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

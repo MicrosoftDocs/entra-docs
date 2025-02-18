@@ -172,6 +172,6 @@ Now, you’ll test your Microsoft Entra SSO configuration using one of the follo
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the Nulab Pass tile in My Apps, you’ll be redirected to the application sign on page for initiating the login flow if it was configured in SP mode. If configured in IDP mode, you’ll be automatically signed in to SSO-enabled Nulab Pass. [Learn more about My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 With Nulab Pass configured, you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

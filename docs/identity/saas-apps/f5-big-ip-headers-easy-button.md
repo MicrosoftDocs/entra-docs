@@ -312,7 +312,7 @@ This last step provides a breakdown of your configurations. Select **Deploy** to
 
 Your application should now be published and accessible via SHA, either directly via its URL or through Microsoft’s application portals. 
 
-## Next steps
+## Related content
 
 From a browser, **connect** to the application’s external URL or select the **application’s icon** in the [Microsoft MyApps portal](https://myapplications.microsoft.com/). After authenticating against Microsoft Entra ID, you’ll be redirected to the BIG-IP virtual server for the application and automatically signed in through SSO.
 
