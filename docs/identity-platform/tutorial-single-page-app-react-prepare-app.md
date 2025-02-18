@@ -256,4 +256,4 @@ The **authConfig.js** file contains the configuration settings for the authentic
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial: Create components for sign in and sign out in a React single-page app](tutorial-single-page-app-react-sign-in-users.md)
+> [Tutorial: Create components for sign in and sign out in a React single-page app](tutorial-single-page-app-react-configure-authentication.md)
