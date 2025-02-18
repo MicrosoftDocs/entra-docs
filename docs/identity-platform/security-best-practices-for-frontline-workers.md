@@ -56,7 +56,7 @@ The following security controls are recommended to secure frontline workers acro
 
 While at work, a frontline worker could be given access to sensitive applications from a secured or public location or network. Such a scenario requires stricter controls on all device types, including shared, BYOD, and company owned single user devices. 
 
-The recommended best practice is to allow access only through MDM managed and compliant devices. This allows the identity system to silently verify the first key dimension of device compliance, and then follow it up with user validation through interactive authentication such as MFA before granting access. Other recommendations to secure users and prevent data-loss scenarios include:
+The recommended best practice is to allow access only from MDM-managed and compliant devices. This enables the identity system to silently verify the first key aspect of device compliance before proceeding with interactive user authentication, preferably MFA, to enhance security before granting access. Other recommendations to secure users and prevent data-loss scenarios include:
 
  - Integrate with the [Intune App SDK](/mem/intune/developer/app-sdk) and setup [Microsoft Entra Conditional Access policy](/entra/identity/conditional-access/howto-policy-approved-app-or-app-protection#require-approved-client-apps-or-app-protection-policy-with-mobile-devices). Additionally, enable Intune's [selective wipe](/mem/intune/developer/app-sdk-android-phase5#selective-wipe) capabilities and [deregister the user on iOS](/mem/intune/developer/app-sdk-ios#deregister-user-accounts) during a sign-out.
  - Configure inactivity screen lock or auto sign-out on shared devices using launcher apps like [Managed Home Screen](/mem/intune/apps/app-configuration-managed-home-screen-app). In a BYOD scenario, use screen lockout capabilities on [iOS](https://support.apple.com/guide/iphone/keep-the-iphone-display-on-longer-iph7117338a8/ios#:~:text=Change%20when%20iPhone%20automatically%20locks,choose%20a%20length%20of%20time.) and [Android](https://support.google.com/android/answer/9079129?hl=en). 
@@ -79,18 +79,18 @@ The following image provides a summary of the recommended best practices for sec
 
 :::image type="content" source="./media/security-practices-for-frontline-workers/front-line-workers-scenarios.png" alt-text="Screenshot that shows possible scenarios when working with frontline workers.":::
 
-## Get started with the best practices to secure frontline workers
+## Get started with the best practices for securing frontline workers
 
-To apply the best practices for your FLWs, take the following steps
+To apply the best practices for your frontline workers, take the following steps
 
 1. **Map your frontline worker scenario** to one of the scenarios listed in this article.
 1. **Review the applicable security controls**:
    - Device management using an MDM like [Microsoft Intune](/mem/intune/fundamentals/manage-devices).
-   - Implement Shared Device Mode.
-   - Enforce application protection policies and Microsoft Entra Conditional Access policies
+   - Implement [Shared Device Mode](msal-shared-devices.md).
+   - Enforce application protection policies and [Microsoft Entra Conditional Access](/entra/identity/conditional-access/) policies.
    - Take advantage of inactivity screen lock capabilities offered by launcher apps like Managed Home Screen and by operating systems - iOS and Android.
-   - Check whether devices comply with security requirements as per Device Compliance Conditional Access policies.
-   - Enable interactive user authentication using Microsoft Entra ID.
+   - Check whether devices comply with security requirements as per [Device Compliance Conditional Access](/entra/identity/conditional-access/howto-conditional-access-policy-compliant-device).
+   - Enable interactive user [authentication using Microsoft Entra ID](/entra/identity/authentication/concept-authentication-methods).
    
 1. **Apply the controls** as per the best practices recommended for your scenario.
 
