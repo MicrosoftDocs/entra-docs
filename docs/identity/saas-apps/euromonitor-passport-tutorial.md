@@ -165,9 +165,9 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 #### SP initiated:
 
-* Select on **Test this application**, this will redirect to Euromonitor International Sign on URL where you can initiate the sign in flow.  
+* Select on **Test this application**, this will redirect to Euromonitor International Sign on URL where you can initiate the sign-in flow.  
 
-* Go to Euromonitor International Sign-on URL directly and initiate the sign in flow from there.
+* Go to Euromonitor International Sign-on URL directly and initiate the sign-in flow from there.
 
 #### IDP initiated:
 
