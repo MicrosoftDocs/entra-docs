@@ -114,6 +114,11 @@ You can use Microsoft's web browser login experience (login.microsoft.com) to si
 This is an another entry point to sign with QR code. If you are using Microsoft web sign-in expereince for your app, you will be able to use above illustrated QR code entry point. 
 You can optimize sign-in for your apps by using Microsoft Authentication Library (MSAL) to add a QR code sign-in option to your apps sign-in page. This option eliminates two clicks to scan the QR code. For example, you can add QR code sign-in similar to the Teams or Managed Home Screen (MHS) apps. This optimized user experience will be available in BlueFletch, and Jamf app lauchers in March 2025.
 ![image](https://github.com/user-attachments/assets/dbbbeba8-5123-48ad-812f-6ac898f19549)
+<Teams QR code entry point>
+
+![image](https://github.com/user-attachments/assets/efaf60da-dffb-49a6-9a21-96ea92dd1ed6)
+<MHS QR code entry point>
+
 
 
 For more information about how to enable the optimized experience, see in Android, see [Set up QR code authentication in an Android app](https://review.learn.microsoft.com/entra/identity-platform/msal-android-qr-code-pin-authentication?branch=pr-en-us-6810) and [Set up QR code authentication in an iOS app](https://review.learn.microsoft.com/entra/identity-platform/msal-ios-qr-code-pin-authentication?branch=pr-en-us-6810).
