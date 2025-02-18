@@ -150,7 +150,7 @@ All parts of the app that require authentication must be wrapped in the [`MsalPr
 
 1. Save the file.
 
-## Adding your tenant details to the MSAL configuration
+## Add your tenant details to the MSAL configuration
 
 The **authConfig.js** file contains the configuration settings for the authentication flow and is used to configure **MSAL.js** with the required settings for authentication.
 
@@ -250,6 +250,8 @@ The **authConfig.js** file contains the configuration settings for the authentic
 1. Save the file.
 
 [!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url.md)]
+
+--- 
 
 ## Next steps
 
