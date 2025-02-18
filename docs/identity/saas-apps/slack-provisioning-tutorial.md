@@ -36,7 +36,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md).
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
-* A Slack tenant with the [Plus plan](https://slack.com/pricing) or better enabled.
+* A Slack tenant with the [Business+ plan](https://slack.com/pricing) only. Enteprise Grid customers should follow [Slack's instructions](https://api.slack.com/admins/scim#enterprise-grid) instead.
 * A user account in Slack with Team Admin permissions.
 
 > [!NOTE]
