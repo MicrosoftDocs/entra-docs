@@ -51,7 +51,7 @@ Based on Microsoft's analysis more than 99 percent of password spray attacks use
 
 ### Block device code flow
 
-This policy blocks device code flow, where a user initiates authentication on one device, completes on another, and their token is sent back to the original device. This type of authentication is common where users have limited ability to enter their credentials, like smart TVs, Microsoft Teams Room devices, IoT devices, or printers.
+This policy blocks device code flow, where a user initiates authentication on one device, completes on another, and their token is sent back to the original device. This type of authentication is common where users can't enter their credentials, like smart TVs, Microsoft Teams Room devices, IoT devices, or printers.
 
 Device code flow is infrequently used by customers, but is frequently used by attackers. Enabling this Microsoft managed policy for your organization helps remove this attack vector.
 
@@ -174,13 +174,10 @@ When multifactor authentication is completed via a federated identity provider (
 
 ### What if I use Certificate-Based Authentication?
 
-Depending on your tenant’s configuration of Certificate-Based Authentication (CBA), it can function as either single-factor or multifactor.
+Depending on your configuration of Certificate-Based Authentication (CBA), it can function as either [single or multifactor authentication](/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#options-to-get-mfa-capability-with-single-factor-certificates).
 
 * If your organization has CBA configured as single-factor, users must use a second authentication method to satisfy MFA. For more information on the allowed combinations of authentication methods to MFA with single-factor CBA, see [MFA with single factor certificate-based authentication](/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#mfa-with-single-factor-certificate-based-authentication).
 * If your organization has CBA configured as multifactor, users can complete MFA with their CBA authentication method.
-
-> [!NOTE]
-> CBA is considered an MFA-capable method in Microsoft Entra ID so users in scope of CBA authentication method will be required to use MFA to register new authentication methods. To register MFA for single-factor CBA users without other registered authentication methods, see [Options to get MFA capability with single factor certificates](/entra/identity/authentication/concept-certificate-based-authentication-technical-deep-dive#options-to-get-mfa-capability-with-single-factor-certificates).
 
 ### What if I use custom controls?
 
