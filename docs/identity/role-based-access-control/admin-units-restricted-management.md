@@ -1,5 +1,5 @@
 ---
-title: Restricted management administrative units in Microsoft Entra ID (Preview)
+title: Restricted management administrative units in Microsoft Entra ID
 description: Use restricted management administrative units for more sensitive resources in Microsoft Entra ID.
 
 author: rolyon
@@ -12,11 +12,7 @@ ms.author: rolyon
 ms.custom: oldportal;it-pro;
 ---
 
-# Restricted management administrative units in Microsoft Entra ID (Preview)
-
-> [!IMPORTANT]
-> Restricted management administrative units are currently in PREVIEW.
-> See the [Product Terms](https://aka.ms/EntraPreviewsTermsOfUse) for legal terms that apply to features that are in beta, preview, or otherwise not yet released into general availability.
+# Restricted management administrative units in Microsoft Entra ID
 
 Restricted management administrative units allow you to protect specific objects in your tenant from modification by anyone other than a specific set of administrators that you designate. This allows you to meet security or compliance requirements without having to remove tenant-level role assignments from your administrators.
 
@@ -28,8 +24,12 @@ Here are some reasons why you might use restricted management administrative uni
 - You're implementing a compliance control to ensure that certain resources can only be managed by administrators in a specific country/region. You can add those resources in a restricted management administrative unit and assign local administrators to manage those objects. Even Global Administrators won't be allowed to modify the objects unless they assign themselves explicitly to a role scoped to the restricted management administrative unit (which is an auditable event).
 - You're using security groups to control access to sensitive applications in your organization, and you don't want to allow your tenant-scoped administrators who can modify groups to be able to control who can access the applications. You can add those security groups to a restricted management administrative unit and then be sure that only the specific administrators you assign can manage them.
 
+The following diagram shows an example executive restricted management administrative unit with objects that can only be modified by the executive administrator.
+
+:::image type="content" source="./media/admin-units-restricted-management/admin-unit-restricted.png" alt-text="Diagram of an example executive restricted management administrative unit with objects that can only be modified by the executive administrator." lightbox="./media/admin-units-restricted-management/admin-unit-restricted.png":::
+
 > [!NOTE]
-> Placing objects in restricted management administrative units severely restricts who can make changes to the objects. This restriction can cause existing workflows to break.
+> Placing objects in a restricted management administrative unit severely restricts who can make changes to the objects. This restriction can cause existing workflows to break.
 
 ## What objects can be members?
 
@@ -95,5 +95,5 @@ Restricted management administrative units require a Microsoft Entra ID P1 licen
 ## Next steps
 
 - [Create, update, or delete administrative units](admin-units-manage.md)
-- [Add users or groups to an administrative unit](admin-units-members-add.md)
-- [Assign Microsoft Entra roles with administrative unit scope](manage-roles-portal.md)
+- [Assign Microsoft Entra roles with administrative unit scope](manage-roles-portal.md#assign-roles-with-administrative-unit-scope)
+- [Microsoft Entra administrative units: Troubleshooting and FAQ](admin-units-faq-troubleshoot.yml#restricted-management-administrative-units)
