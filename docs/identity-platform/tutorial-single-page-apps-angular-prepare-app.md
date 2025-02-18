@@ -128,7 +128,28 @@ After you complete these steps, the project structure should look like:
   └── tsconfig.json
   ```
 
-## Configure the settings for the application
+### [External tenant](#tab/external-tenant)
+
+In this section we will create a new Angular project using the Angular CLI in Visual Studio Code.
+
+1. Open Visual Studio Code, select **File** > **Open Folder...**. Navigate to and select the location in which you want to create your project.
+1. Open a new terminal by selecting **Terminal** > **New Terminal**.
+1. Run the following commands to create a new Angular project with the name `angularspalocal`, install Angular Material component libraries, MSAL Browser, MSAL Angular and generate home and guarded components.
+
+    ```powershell
+    npm install -g @angular/cli@14.2.0
+    ng new angularspalocal --routing=true --style=css --strict=false
+    cd angularspalocal
+    npm install @angular/material@13.0.0 @angular/cdk@13.0.0
+    npm install @azure/msal-browser@2.37.0 @azure/msal-angular@2.5.7
+    ng generate component home
+    ng generate component guarded
+    ```
+--- 
+
+## Configure application settings
+
+### [Workforce tenant](#tab/workforce-tenant)
 
 We'll use the values recorded during the app registration to configure the application for authentication. Follow these steps:
 
@@ -241,7 +262,176 @@ We'll use the values recorded during the app registration to configure the appli
 
 1. Save the file.
 
+### [External tenant](#tab/external-tenant)
+
+1. Create a new file called *auth-config.ts* in the folder *src/app/* and add the following code snippet. This file contains authentication parameters. These parameters are used to initialize Angular and MSAL Angular configurations.
+
+    ```javascript
+
+    /**
+     * This file contains authentication parameters. Contents of this file
+     * is roughly the same across other MSAL.js libraries. These parameters
+     * are used to initialize Angular and MSAL Angular configurations in
+     * in app.module.ts file.
+     */
+
+    import {
+      LogLevel,
+      Configuration,
+      BrowserCacheLocation,
+    } from '@azure/msal-browser';
+
+    /**
+     * Configuration object to be passed to MSAL instance on creation.
+     * For a full list of MSAL.js configuration parameters, visit:
+     * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/configuration.md
+     */
+    export const msalConfig: Configuration = {
+      auth: {
+        clientId: 'Enter_the_Application_Id_Here', // This is the ONLY mandatory field that you need to supply.
+        authority: 'https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/', // Replace the placeholder with your tenant subdomain
+        redirectUri: '/', // Points to window.location.origin by default. You must register this URI on Azure portal/App Registration.
+        postLogoutRedirectUri: '/', // Points to window.location.origin by default.
+      },
+      cache: {
+        cacheLocation: BrowserCacheLocation.LocalStorage, // Configures cache location. "sessionStorage" is more secure, but "localStorage" gives you SSO between tabs.
+      },
+      system: {
+        loggerOptions: {
+          loggerCallback(logLevel: LogLevel, message: string) {
+            console.log(message);
+          },
+          logLevel: LogLevel.Verbose,
+          piiLoggingEnabled: false,
+        },
+      },
+    };
+
+    /**
+     * Scopes you add here will be prompted for user consent during sign-in.
+     * By default, MSAL.js will add OIDC scopes (openid, profile, email) to any login request.
+     * For more information about OIDC scopes, visit:
+     * https://learn.microsoft.com/entra/identity-platform/permissions-consent-overview#openid-connect-scopes
+     */
+    export const loginRequest = {
+      scopes: [],
+    };
+    ```
+
+1. Replace the following values with the values from the Microsoft Entra admin center:
+    - Find the `Enter_the_Application_Id_Here` value and replace it with the **Application ID (clientId)** of the app you registered in the Microsoft Entra admin center.
+    - In **authority**, find `Enter_the_Tenant_Subdomain_Here` and replace it with the subdomain of your tenant. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, [learn how to read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+1. Save the file.
+
+1. Open *src/app/app.module.ts* and add the following code snippet.
+
+    ```javascript
+    import { NgModule } from '@angular/core';
+    import { BrowserModule } from '@angular/platform-browser';
+    import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+
+    import { MatToolbarModule } from "@angular/material/toolbar";
+    import { MatButtonModule } from '@angular/material/button';
+    import { MatCardModule } from '@angular/material/card';
+    import { MatTableModule } from '@angular/material/table';
+    import { MatMenuModule } from '@angular/material/menu';
+    import { MatDialogModule } from '@angular/material/dialog';
+    import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+    import { MatIconModule } from '@angular/material/icon';
+
+    import { AppRoutingModule } from './app-routing.module';
+    import { AppComponent } from './app.component';
+    import { HomeComponent } from './home/home.component';
+    import { GuardedComponent } from './guarded/guarded.component';
+
+    import {
+        IPublicClientApplication,
+        PublicClientApplication,
+        InteractionType,
+    } from '@azure/msal-browser';
+
+    import {
+        MSAL_INSTANCE,
+        MsalGuardConfiguration,
+        MSAL_GUARD_CONFIG,
+        MsalService,
+        MsalBroadcastService,
+        MsalGuard,
+        MsalRedirectComponent,
+        MsalInterceptor,
+        MsalModule,
+    } from '@azure/msal-angular';
+
+    import { msalConfig, loginRequest } from './auth-config';
+
+    /**
+     * Here we pass the configuration parameters to create an MSAL instance.
+        * For more info, visit: https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular/docs/v2-docs/configuration.md
+        */
+    export function MSALInstanceFactory(): IPublicClientApplication {
+        return new PublicClientApplication(msalConfig);
+    }
+
+    /**
+     * Set your default interaction type for MSALGuard here. If you have any
+        * additional scopes you want the user to consent upon login, add them here as well.
+        */
+    export function MsalGuardConfigurationFactory(): MsalGuardConfiguration {
+        return {
+        interactionType: InteractionType.Redirect,
+        authRequest: loginRequest
+        };
+    }
+
+    @NgModule({
+        declarations: [
+        AppComponent,
+        HomeComponent,
+        GuardedComponent,
+        ],
+        imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatCardModule,
+        MatTableModule,
+        MatMenuModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatDialogModule,
+        MatIconModule,
+        MsalModule,
+        ],
+        providers: [
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: MsalInterceptor,
+            multi: true,
+        },
+        {
+            provide: MSAL_INSTANCE,
+            useFactory: MSALInstanceFactory,
+        },
+        {
+            provide: MSAL_GUARD_CONFIG,
+            useFactory: MsalGuardConfigurationFactory,
+        },
+        MsalService,
+        MsalBroadcastService,
+        MsalGuard,
+        ],
+        bootstrap: [AppComponent, MsalRedirectComponent],
+    })
+    export class AppModule { }
+    ```
+
+---
+
 ## Add authentication code to the application
+
+### [Workforce tenant](#tab/workforce-tenant)
 
 To handle user authentication and session management using [MSAL Angular](/javascript/api/%40azure/msal-angular/), you'll need to update `src/app/app.component.ts`.
 
@@ -323,485 +513,161 @@ To handle user authentication and session management using [MSAL Angular](/javas
 
 1. Save the file.
 
-###
+## [External tenant](#tab/external-tenant)
 
-## Create an Angular project
+1. Open *src/app/app.component.ts* and replace the code with the following to sign in a user using a point of presence (POP)-up. This code uses the MSAL Angular library to sign in a user.
 
-In this section we will create a new Angular project using the Angular CLI in Visual Studio Code.
+    ```javascript	
+      import { Component, OnInit, Inject, OnDestroy } from '@angular/core';
+      import {
+        MsalService,
+        MsalBroadcastService,
+        MSAL_GUARD_CONFIG,
+        MsalGuardConfiguration,
+      } from '@azure/msal-angular';
+      import {
+        AuthenticationResult,
+        InteractionStatus,
+        InteractionType,
+        PopupRequest,
+        RedirectRequest,
+        EventMessage,
+        EventType
+      } from '@azure/msal-browser';
+      import { Subject } from 'rxjs';
+      import { filter, takeUntil } from 'rxjs/operators';
 
-1. Open Visual Studio Code, select **File** > **Open Folder...**. Navigate to and select the location in which you want to create your project.
-1. Open a new terminal by selecting **Terminal** > **New Terminal**.
-1. Run the following commands to create a new Angular project with the name `angularspalocal`, install Angular Material component libraries, MSAL Browser, MSAL Angular and generate home and guarded components.
+      @Component({
+        selector: 'app-root',
+        templateUrl: './app.component.html',
+        styleUrls: ['./app.component.css'],
+      })
+      export class AppComponent implements OnInit, OnDestroy {
+        title = 'Microsoft identity platform';
+        loginDisplay = false;
+        isIframe = false;
 
-    ```powershell
-    npm install -g @angular/cli@14.2.0
-    ng new angularspalocal --routing=true --style=css --strict=false
-    cd angularspalocal
-    npm install @angular/material@13.0.0 @angular/cdk@13.0.0
-    npm install @azure/msal-browser@2.37.0 @azure/msal-angular@2.5.7
-    ng generate component home
-    ng generate component guarded
-    ```
+        private readonly _destroying$ = new Subject<void>();
 
-## Configure UI elements
+        constructor(
+          @Inject(MSAL_GUARD_CONFIG) private msalGuardConfig: MsalGuardConfiguration,
+          private authService: MsalService,
+          private msalBroadcastService: MsalBroadcastService,
+        ) { }
 
-The following steps configure the UI elements of the application. CSS styling is added to the application to define the colors and fonts. The application header and footer are defined in the HTML file and CSS styling is added to the home page of the application.
+        ngOnInit(): void {
+          this.isIframe = window !== window.parent && !window.opener;
+          this.setLoginDisplay();
+          this.authService.instance.enableAccountStorageEvents(); // Optional - This will enable ACCOUNT_ADDED and ACCOUNT_REMOVED events emitted when a user logs in or out of another tab or window
 
-1. Open *src/styles.css* and replace the existing code with the following code snippet.
-
-    ```css
-    @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
-    html, body { height: 100%; }
-    body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-    ```
-
-1. Open *src/app/app.component.html* and replace the existing code with the following code snippet.
-
-    ```html
-      <mat-toolbar color="primary">
-          <a class="title" href="/">{{ title }}</a>
-          <div class="toolbar-spacer"></div>
-          <a mat-button [routerLink]="['guarded']">Guarded Component</a>
-          <button mat-raised-button *ngIf="!loginDisplay" (click)="login()">Login</button>
-          <button mat-raised-button color="accent" *ngIf="loginDisplay" (click)="logout()">Logout</button>
-        </mat-toolbar>
-        <div class="container">
-          <!--This is to avoid reload during acquireTokenSilent() because of hidden iframe -->
-          <router-outlet *ngIf="!isIframe"></router-outlet>
-        </div>
-        <footer *ngIf="loginDisplay">
-          <mat-toolbar>
-            <div class="footer-text"> How did we do? <a
-                href="https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR_ivMYEeUKlEq8CxnMPgdNZUNDlUTTk2NVNYQkZSSjdaTk5KT1o4V1VVNS4u"
-                target="_blank"> Share your experience with us!</a>
-            </div>
-          </mat-toolbar>
-        </footer>
-    ```
-
-1. Open *src/app/app.component.css* and replace the code with the following snippet.
-
-    ```css
-    .toolbar-spacer {
-      flex: 1 1 auto;
-    }
-
-    a.title {
-      color: white;
-    }
-
-    footer {
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      color: white;
-      text-align: center;
-    }
-
-    .footer-text {
-      font-size: small;
-      text-align: center;
-      flex: 1 1 auto;
-    }
-    ```
-
-## Configure application components
-
-In this section you'll configure the home and guarded components of the application. The home component is the landing page of the application and the guarded component is the page that is only accessible to authenticated users.
-
-1. Open *src/app/home/home.component.ts* and replace the existing code with the following code snippet.
-
-    ```javascript
-    import { Component, Inject, OnInit } from '@angular/core';
-    import { Subject } from 'rxjs';
-    import { filter } from 'rxjs/operators';
-
-    import { MsalBroadcastService, MsalGuardConfiguration, MsalService, MSAL_GUARD_CONFIG } from '@azure/msal-angular';
-    import { AuthenticationResult, InteractionStatus, InteractionType } from '@azure/msal-browser';
-
-    import { createClaimsTable } from '../claim-utils';
-
-    @Component({
-      selector: 'app-home',
-      templateUrl: './home.component.html',
-      styleUrls: ['./home.component.css'],
-    })
-    export class HomeComponent implements OnInit {
-      loginDisplay = false;
-      dataSource: any = [];
-      displayedColumns: string[] = ['claim', 'value', 'description'];
-
-      private readonly _destroying$ = new Subject<void>();
-
-      constructor(
-        @Inject(MSAL_GUARD_CONFIG)
-        private msalGuardConfig: MsalGuardConfiguration,
-        private authService: MsalService,
-        private msalBroadcastService: MsalBroadcastService
-      ) { }
-
-      ngOnInit(): void {
-
-        this.msalBroadcastService.inProgress$
-          .pipe(
-            filter((status: InteractionStatus) => status === InteractionStatus.None)
-          )
-          .subscribe(() => {
-            this.setLoginDisplay();
-            this.getClaims(
-              this.authService.instance.getActiveAccount()?.idTokenClaims
-            );
-          });
-      }
-
-      setLoginDisplay() {
-        this.loginDisplay = this.authService.instance.getAllAccounts().length > 0;
-      }
-
-      getClaims(claims: any) {
-        if (claims) {
-          const claimsTable = createClaimsTable(claims);
-          this.dataSource = [...claimsTable];
-        }
-      }
-
-      signUp() {
-        if (this.msalGuardConfig.interactionType === InteractionType.Popup) {
-          this.authService.loginPopup({
-            scopes: [],
-            prompt: 'create',
-          })
-            .subscribe((response: AuthenticationResult) => {
-              this.authService.instance.setActiveAccount(response.account);
+          /**
+           * You can subscribe to MSAL events as shown below. For more info,
+           * visit: https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular/docs/v2-docs/events.md
+           */
+          this.msalBroadcastService.inProgress$
+            .pipe(
+              filter(
+                (status: InteractionStatus) => status === InteractionStatus.None
+              ),
+              takeUntil(this._destroying$)
+            )
+            .subscribe(() => {
+              this.setLoginDisplay();
+              this.checkAndSetActiveAccount();
             });
-        } else {
-          this.authService.loginRedirect({
-            scopes: [],
-            prompt: 'create',
-          });
+
+          this.msalBroadcastService.msalSubject$
+            .pipe(
+              filter(
+                (msg: EventMessage) => msg.eventType === EventType.LOGOUT_SUCCESS
+              ),
+              takeUntil(this._destroying$)
+            )
+            .subscribe((result: EventMessage) => {
+              this.setLoginDisplay();
+              this.checkAndSetActiveAccount();
+            });
+
+          this.msalBroadcastService.msalSubject$
+            .pipe(
+              filter(
+                (msg: EventMessage) => msg.eventType === EventType.LOGIN_SUCCESS
+              ),
+              takeUntil(this._destroying$)
+            )
+            .subscribe((result: EventMessage) => {
+              const payload = result.payload as AuthenticationResult;
+              this.authService.instance.setActiveAccount(payload.account);
+            });
         }
 
-      }
-
-      // unsubscribe to events when component is destroyed
-      ngOnDestroy(): void {
-        this._destroying$.next(undefined);
-        this._destroying$.complete();
-      }
-    }
-    ```
-
-1. Open *src/app/home/home.component.html* and replace the existing code with the following code snippet. This code defines the HTML elements of the home page of the application.
-
-    ```html
-    <mat-card class="card-section" *ngIf="!loginDisplay">
-      <mat-card-title>Angular single-page application built with MSAL Angular</mat-card-title>
-      <mat-card-subtitle>Sign in with Microsoft Entra External ID</mat-card-subtitle>
-      <mat-card-content>This sample demonstrates how to configure MSAL Angular to sign up, sign in and sign out with Microsoft Entra External ID</mat-card-content>
-      <button mat-raised-button color="primary" (click)="signUp()">Sign up</button>
-    </mat-card>
-    <br>
-    <p class="text-center" *ngIf="loginDisplay"> See below the claims in your <strong> ID token </strong>. For more
-      information, visit: <span>
-        <a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/id-tokens#claims-in-an-id-token">
-          docs.microsoft.com </a>
-      </span>
-    </p>
-    <div id="table-container">
-      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="loginDisplay">
-        <!-- Claim Column -->
-        <ng-container matColumnDef="claim">
-          <th mat-header-cell *matHeaderCellDef> Claim </th>
-          <td mat-cell *matCellDef="let element"> {{element.claim}} </td>
-        </ng-container>
-        <!-- Value Column -->
-        <ng-container matColumnDef="value">
-          <th mat-header-cell *matHeaderCellDef> Value </th>
-          <td mat-cell *matCellDef="let element"> {{element.value}} </td>
-        </ng-container>
-        <!-- Value Column -->
-        <ng-container matColumnDef="description">
-          <th mat-header-cell *matHeaderCellDef> Description </th>
-          <td mat-cell *matCellDef="let element"> {{element.description}} </td>
-        </ng-container>
-        <tr mat-header-row *matHeaderRowDef="displayedColumns sticky: true"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      </table>
-    </div>
-    ```
-
-1. Open *src/app/home/home.component.css*. Replace any existing code with the following code snippet.
-
-    ```css
-    #table-container {
-      height: '100vh';
-      overflow: auto;
-    }
-
-    table {
-      margin: 3% auto 1% auto;
-      width: 70%;
-    }
-
-    .mat-row {
-      height: auto;
-    }
-
-    .mat-cell {
-      padding: 8px 8px 8px 0;
-    }
-
-    p {
-      text-align: center;
-    }
-
-    .card-section {
-      margin: 10%;
-      padding: 5%;
-    }
-    ```
-
-1. Open *src/app/guarded/guarded.component.ts* and replace the existing code with the following code snippet.
-
-    ```javascript
-    import { Component, OnInit } from '@angular/core';
-
-    @Component({
-      selector: 'app-guarded',
-      templateUrl: './guarded.component.html',
-      styleUrls: ['./guarded.component.css']
-    })
-    export class GuardedComponent implements OnInit {
-
-      constructor() { }
-
-      ngOnInit(): void {
-      }
-
-    }
-    ```
-
-1. Create a file called *claim-utils.ts* in the *src/app/* folder and paste the following code snippet into it.
-
-    ```javascript
-    /**
-     * Populate claims table with appropriate description
-     * @param {Record} claims ID token claims
-     * @returns claimsTable
-     */
-    export const createClaimsTable = (claims: Record<string, string>): any[] => {
-      const claimsTable: any[] = [];
-
-      Object.keys(claims).map((key) => {
-        switch (key) {
-          case 'aud':
-            populateClaim(
-              key,
-              claims[key],
-              "Identifies the intended recipient of the token. In ID tokens, the audience is your app's Application ID, assigned to your app in the Azure portal.",
-              claimsTable
-            );
-            break;
-          case 'iss':
-            populateClaim(
-              key,
-              claims[key],
-              'Identifies the issuer, or authorization server that constructs and returns the token. It also identifies the Azure AD tenant for which the user was authenticated. If the token was issued by the v2.0 endpoint, the URI will end in /v2.0.',
-              claimsTable
-            );
-            break;
-          case 'iat':
-            populateClaim(
-              key,
-              changeDateFormat(+claims[key]),
-              '"Issued At" indicates the timestamp (UNIX timestamp) when the authentication for this user occurred.',
-              claimsTable
-            );
-            break;
-          case 'nbf':
-            populateClaim(
-              key,
-              changeDateFormat(+claims[key]),
-              'The nbf (not before) claim dictates the time (as UNIX timestamp) before which the JWT must not be accepted for processing.',
-              claimsTable
-            );
-            break;
-          case 'exp':
-            populateClaim(
-              key,
-              changeDateFormat(+claims[key]),
-              "The exp (expiration time) claim dictates the expiration time (as UNIX timestamp) on or after which the JWT must not be accepted for processing. It's important to note that in certain circumstances, a resource may reject the token before this time. For example, if a change in authentication is required or a token revocation has been detected.",
-              claimsTable
-            );
-            break;
-          case 'name':
-            populateClaim(
-              key,
-              claims[key],
-              "The name claim provides a human-readable value that identifies the subject of the token. The value isn't guaranteed to be unique, it can be changed, and it's designed to be used only for display purposes. The 'profile' scope is required to receive this claim.",
-              claimsTable
-            );
-            break;
-          case 'preferred_username':
-            populateClaim(
-              key,
-              claims[key],
-              'The primary username that represents the user. It could be an email address, phone number, or a generic username without a specified format. Its value is mutable and might change over time. Since it is mutable, this value must not be used to make authorization decisions. It can be used for username hints, however, and in human-readable UI as a username. The profile scope is required in order to receive this claim.',
-              claimsTable
-            );
-            break;
-          case 'nonce':
-            populateClaim(
-              key,
-              claims[key],
-              'The nonce matches the parameter included in the original /authorize request to the IDP.',
-              claimsTable
-            );
-            break;
-          case 'oid':
-            populateClaim(
-              key,
-              claims[key],
-              'The oid (user object id) is the only claim that should be used to uniquely identify a user in an Azure AD tenant.',
-              claimsTable
-            );
-            break;
-          case 'tid':
-            populateClaim(
-              key,
-              claims[key],
-              'The id of the tenant where this application resides. You can use this claim to ensure that only users from the current Azure AD tenant can access this app.',
-              claimsTable
-            );
-            break;
-          case 'upn':
-            populateClaim(
-              key,
-              claims[key],
-              'upn (user principal name) might be unique amongst the active set of users in a tenant but tend to get reassigned to new employees as employees leave the organization and others take their place or might change to reflect a personal change like marriage.',
-              claimsTable
-            );
-            break;
-          case 'email':
-            populateClaim(
-              key,
-              claims[key],
-              'Email might be unique amongst the active set of users in a tenant but tend to get reassigned to new employees as employees leave the organization and others take their place.',
-              claimsTable
-            );
-            break;
-          case 'acct':
-            populateClaim(
-              key,
-              claims[key],
-              'Available as an optional claim, it lets you know what the type of user (homed, guest) is. For example, for an individual's access to their data you might not care for this claim, but you would use this along with tenant id (tid) to control access to say a company-wide dashboard to just employees (homed users) and not contractors (guest users).',
-              claimsTable
-            );
-            break;
-          case 'sid':
-            populateClaim(
-              key,
-              claims[key],
-              'Session ID, used for per-session user sign-out.',
-              claimsTable
-            );
-            break;
-          case 'sub':
-            populateClaim(
-              key,
-              claims[key],
-              'The sub claim is a pairwise identifier - it is unique to a particular application ID. If a single user signs into two different apps using two different client IDs, those apps will receive two different values for the subject claim.',
-              claimsTable
-            );
-            break;
-          case 'ver':
-            populateClaim(
-              key,
-              claims[key],
-              'Version of the token issued by the Microsoft identity platform',
-              claimsTable
-            );
-            break;
-          case 'login_hint':
-            populateClaim(
-              key,
-              claims[key],
-              'An opaque, reliable login hint claim. This claim is the best value to use for the login_hint OAuth parameter in all flows to get SSO.',
-              claimsTable
-            );
-            break;
-          case 'idtyp':
-            populateClaim(
-              key,
-              claims[key],
-              'Value is app when the token is an app-only token. This is the most accurate way for an API to determine if a token is an app token or an app+user token',
-              claimsTable
-            );
-            break;
-          case 'uti':
-          case 'rh':
-            break;
-          default:
-            populateClaim(key, claims[key], '', claimsTable);
+        setLoginDisplay() {
+          this.loginDisplay = this.authService.instance.getAllAccounts().length > 0;
         }
-      });
 
-      return claimsTable;
-    };
+        checkAndSetActiveAccount() {
+          /**
+           * If no active account set but there are accounts signed in, sets first account to active account
+           * To use active account set here, subscribe to inProgress$ first in your component
+           * Note: Basic usage demonstrated. Your app may require more complicated account selection logic
+           */
+          let activeAccount = this.authService.instance.getActiveAccount();
 
-    /**
-     * Populates claim, description, and value into an claimsObject
-     * @param {String} claim
-     * @param {String} value
-     * @param {String} description
-     * @param {Array} claimsObject
-     */
-    const populateClaim = (
-      claim: string,
-      value: string,
-      description: string,
-      claimsTable: any[]
-    ): void => {
-      claimsTable.push({
-        claim: claim,
-        value: value,
-        description: description,
-      });
-    };
+          if (!activeAccount && this.authService.instance.getAllAccounts().length > 0) {
+            let accounts = this.authService.instance.getAllAccounts();
+            // add your code for handling multiple accounts here
+            this.authService.instance.setActiveAccount(accounts[0]);
+          }
+        }
 
-    /**
-     * Transforms Unix timestamp to date and returns a string value of that date
-     * @param {number} date Unix timestamp
-     * @returns
-     */
-    const changeDateFormat = (date: number) => {
-      let dateObj = new Date(date * 1000);
-      return `${date} - [${dateObj.toString()}]`;
-    };
+        login() {
+          if (this.msalGuardConfig.interactionType === InteractionType.Popup) {
+            if (this.msalGuardConfig.authRequest) {
+              this.authService.loginPopup({
+                ...this.msalGuardConfig.authRequest,
+              } as PopupRequest)
+                .subscribe((response: AuthenticationResult) => {
+                  this.authService.instance.setActiveAccount(response.account);
+                });
+            } else {
+              this.authService.loginPopup()
+                .subscribe((response: AuthenticationResult) => {
+                  this.authService.instance.setActiveAccount(response.account);
+                });
+            }
+          } else {
+            if (this.msalGuardConfig.authRequest) {
+              this.authService.loginRedirect({
+                ...this.msalGuardConfig.authRequest,
+              } as RedirectRequest);
+            } else {
+              this.authService.loginRedirect();
+            }
+          }
+        }
+
+        logout() {
+
+          if (this.msalGuardConfig.interactionType === InteractionType.Popup) {
+            this.authService.logoutPopup({
+              account: this.authService.instance.getActiveAccount(),
+            });
+          } else {
+            this.authService.logoutRedirect({
+              account: this.authService.instance.getActiveAccount(),
+            });
+          }
+        }
+
+        // unsubscribe to events when component is destroyed
+        ngOnDestroy(): void {
+          this._destroying$.next(undefined);
+          this._destroying$.complete();
+        }
+      }
     ```
+---
 
-1. Open *src/index.html* and replace the code with the following snippet.
-
-    ```html
-    <!doctype html>
-    <html lang="en">
-    <head>
-      <meta charset="utf-8">
-      <title>Microsoft identity platform</title>
-      <base href="/">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="icon" type="image/x-icon" href="favicon.svg">
-      <link rel="preconnect" href="https://fonts.gstatic.com">
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    </head>
-    <body class="mat-typography">
-      <app-root></app-root>
-      <app-redirect></app-redirect>
-    </body>
-    </html>
-    ```
 
 ## Next steps
 

@@ -28,6 +28,8 @@ In this tutorial:
 
 ## Add sign-in and sign-out functionality to your app
 
+### [Workforce tenant](#tab/workforce-tenant)
+
 To enable sign-in and sign-out functionality in your Angular application, follow these steps:
 
 1. Open the `src/app/app.component.html` file and replace the contents with the following code.
@@ -223,6 +225,264 @@ To enable sign-in and sign-out functionality in your Angular application, follow
     ```
 
     The CSS code styles the webpage by setting the body font to a modern sans-serif stack, removing default margins, and applying font smoothing for enhanced readability. It centers text and adds padding to the `.app`, `.title`, and `.profile` classes, while the `.profileButton` class uses flexbox to center its elements.
+
+### [External tenant](#tab/external-tenant)
+
+1. Open *src/app/app.component.html* and replace the existing code with the following code snippet.
+
+    ```html
+      <mat-toolbar color="primary">
+          <a class="title" href="/">{{ title }}</a>
+          <div class="toolbar-spacer"></div>
+          <a mat-button [routerLink]="['guarded']">Guarded Component</a>
+          <button mat-raised-button *ngIf="!loginDisplay" (click)="login()">Login</button>
+          <button mat-raised-button color="accent" *ngIf="loginDisplay" (click)="logout()">Logout</button>
+        </mat-toolbar>
+        <div class="container">
+          <!--This is to avoid reload during acquireTokenSilent() because of hidden iframe -->
+          <router-outlet *ngIf="!isIframe"></router-outlet>
+        </div>
+        <footer *ngIf="loginDisplay">
+          <mat-toolbar>
+            <div class="footer-text"> How did we do? <a
+                href="https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR_ivMYEeUKlEq8CxnMPgdNZUNDlUTTk2NVNYQkZSSjdaTk5KT1o4V1VVNS4u"
+                target="_blank"> Share your experience with us!</a>
+            </div>
+          </mat-toolbar>
+        </footer>
+    ```
+
+1. Open *src/app/app.component.css* and replace the code with the following snippet.
+
+    ```css
+    .toolbar-spacer {
+      flex: 1 1 auto;
+    }
+
+    a.title {
+      color: white;
+    }
+
+    footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      color: white;
+      text-align: center;
+    }
+
+    .footer-text {
+      font-size: small;
+      text-align: center;
+      flex: 1 1 auto;
+    }
+    ```
+
+1. Open *src/app/app-routing.module.ts* and replace the entire contents of the file with the following snippet. This will add routes to the `home` and `guarded` components.
+
+    ```javascript	
+    import { NgModule } from '@angular/core';
+    import { RouterModule, Routes } from '@angular/router';
+    import { BrowserUtils } from '@azure/msal-browser';
+    import { MsalGuard } from '@azure/msal-angular';
+
+    import { HomeComponent } from './home/home.component';
+    import { GuardedComponent } from './guarded/guarded.component';
+
+    /**
+     * MSAL Angular can protect routes in your application
+        * using MsalGuard. For more info, visit:
+        * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular/docs/v2-docs/initialization.md#secure-the-routes-in-your-application
+        */
+    const routes: Routes = [
+        {
+        path: 'guarded',
+        component: GuardedComponent,
+        canActivate: [
+            MsalGuard
+        ]
+        },
+        {
+        path: '',
+        component: HomeComponent,
+        },
+    ];
+
+    @NgModule({
+        imports: [
+        RouterModule.forRoot(routes, {
+            // Don't perform initial navigation in iframes or popups
+            initialNavigation:
+            !BrowserUtils.isInIframe() && !BrowserUtils.isInPopup()
+                ? 'enabledNonBlocking'
+                : 'disabled', // Set to enabledBlocking to use Angular Universal
+        }),
+        ],
+        exports: [RouterModule],
+    })
+    export class AppRoutingModule { }
+    ```
+1. Open *src/styles.css* and replace the existing code with the following code snippet.
+
+    ```css
+    @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+    html, body { height: 100%; }
+    body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+    ```
+
+1. Open *src/app/home/home.component.ts* and replace the existing code with the following code snippet.
+
+    ```javascript
+    import { Component, Inject, OnInit } from '@angular/core';
+    import { Subject } from 'rxjs';
+    import { filter } from 'rxjs/operators';
+
+    import { MsalBroadcastService, MsalGuardConfiguration, MsalService, MSAL_GUARD_CONFIG } from '@azure/msal-angular';
+    import { AuthenticationResult, InteractionStatus, InteractionType } from '@azure/msal-browser';
+
+    import { createClaimsTable } from '../claim-utils';
+
+    @Component({
+      selector: 'app-home',
+      templateUrl: './home.component.html',
+      styleUrls: ['./home.component.css'],
+    })
+    export class HomeComponent implements OnInit {
+      loginDisplay = false;
+      dataSource: any = [];
+      displayedColumns: string[] = ['claim', 'value', 'description'];
+
+      private readonly _destroying$ = new Subject<void>();
+
+      constructor(
+        @Inject(MSAL_GUARD_CONFIG)
+        private msalGuardConfig: MsalGuardConfiguration,
+        private authService: MsalService,
+        private msalBroadcastService: MsalBroadcastService
+      ) { }
+
+      ngOnInit(): void {
+
+        this.msalBroadcastService.inProgress$
+          .pipe(
+            filter((status: InteractionStatus) => status === InteractionStatus.None)
+          )
+          .subscribe(() => {
+            this.setLoginDisplay();
+            this.getClaims(
+              this.authService.instance.getActiveAccount()?.idTokenClaims
+            );
+          });
+      }
+
+      setLoginDisplay() {
+        this.loginDisplay = this.authService.instance.getAllAccounts().length > 0;
+      }
+
+      getClaims(claims: any) {
+        if (claims) {
+          const claimsTable = createClaimsTable(claims);
+          this.dataSource = [...claimsTable];
+        }
+      }
+
+      signUp() {
+        if (this.msalGuardConfig.interactionType === InteractionType.Popup) {
+          this.authService.loginPopup({
+            scopes: [],
+            prompt: 'create',
+          })
+            .subscribe((response: AuthenticationResult) => {
+              this.authService.instance.setActiveAccount(response.account);
+            });
+        } else {
+          this.authService.loginRedirect({
+            scopes: [],
+            prompt: 'create',
+          });
+        }
+
+      }
+
+      // unsubscribe to events when component is destroyed
+      ngOnDestroy(): void {
+        this._destroying$.next(undefined);
+        this._destroying$.complete();
+      }
+    }
+    ```
+
+1. Open *src/app/home/home.component.html* and replace the existing code with the following code snippet. This code defines the HTML elements of the home page of the application.
+
+    ```html
+    <mat-card class="card-section" *ngIf="!loginDisplay">
+      <mat-card-title>Angular single-page application built with MSAL Angular</mat-card-title>
+      <mat-card-subtitle>Sign in with Microsoft Entra External ID</mat-card-subtitle>
+      <mat-card-content>This sample demonstrates how to configure MSAL Angular to sign up, sign in and sign out with Microsoft Entra External ID</mat-card-content>
+      <button mat-raised-button color="primary" (click)="signUp()">Sign up</button>
+    </mat-card>
+    <br>
+    <p class="text-center" *ngIf="loginDisplay"> See below the claims in your <strong> ID token </strong>. For more
+      information, visit: <span>
+        <a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/id-tokens#claims-in-an-id-token">
+          docs.microsoft.com </a>
+      </span>
+    </p>
+    <div id="table-container">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="loginDisplay">
+        <!-- Claim Column -->
+        <ng-container matColumnDef="claim">
+          <th mat-header-cell *matHeaderCellDef> Claim </th>
+          <td mat-cell *matCellDef="let element"> {{element.claim}} </td>
+        </ng-container>
+        <!-- Value Column -->
+        <ng-container matColumnDef="value">
+          <th mat-header-cell *matHeaderCellDef> Value </th>
+          <td mat-cell *matCellDef="let element"> {{element.value}} </td>
+        </ng-container>
+        <!-- Value Column -->
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef> Description </th>
+          <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+    ```
+
+1. Open *src/app/home/home.component.css*. Replace any existing code with the following code snippet.
+
+    ```css
+    #table-container {
+      height: '100vh';
+      overflow: auto;
+    }
+
+    table {
+      margin: 3% auto 1% auto;
+      width: 70%;
+    }
+
+    .mat-row {
+      height: auto;
+    }
+
+    .mat-cell {
+      padding: 8px 8px 8px 0;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    .card-section {
+      margin: 10%;
+      padding: 5%;
+    }
+    ```
+---
 
 ## Next steps
 
