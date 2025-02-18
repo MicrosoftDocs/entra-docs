@@ -6,7 +6,7 @@ author: cmmdesai
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: saas-apps
-ms.topic: tutorial
+ms.topic: how-to
 
 ms.date: 05/06/2024
 ms.author: chmutali

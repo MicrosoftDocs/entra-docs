@@ -8,7 +8,7 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 08/22/2024
 ms.author: gideonkiratu
 ---

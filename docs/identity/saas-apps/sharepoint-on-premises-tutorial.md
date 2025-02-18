@@ -10,7 +10,7 @@ ms.subservice: saas-apps
 ms.custom:
  - has-azure-ad-ps-ref
  - azure-ad-ref-level-one-done
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 

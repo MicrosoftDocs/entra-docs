@@ -7,7 +7,7 @@ manager: jeedes
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 04/15/2024
 ms.author: thomasakelo
 
