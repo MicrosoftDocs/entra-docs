@@ -1918,6 +1918,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity-platform/tutorial-single-page-app-react-register-app.md",
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-app-react-prepare-app",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity-platform/tutorial-single-page-app-react-prepare-spa.md",
       "redirect_url": "/entra/identity-platform/tutorial-single-page-app-react-prepare-app",
       "redirect_document_id": false
