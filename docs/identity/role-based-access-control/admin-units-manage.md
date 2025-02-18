@@ -15,10 +15,6 @@ ms.custom: oldportal, it-pro, has-azure-ad-ps-ref
 
 # Create or delete administrative units
 
-> [!IMPORTANT]
-> Restricted management administrative units are currently in PREVIEW.
-> See the [Product Terms](https://aka.ms/EntraPreviewsTermsOfUse) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
-
 Administrative units let you subdivide your organization into any unit that you want, and then assign specific administrators that can manage only the members of that unit. For example, you could use administrative units to delegate permissions to administrators of each school at a large university, so they could control access, manage users, and set policies only in the School of Engineering.
 
 This article describes how to create or delete administrative units to restrict the scope of role permissions in Microsoft Entra ID.
@@ -64,13 +60,13 @@ You can create a new administrative unit by using either the Microsoft Entra adm
 
 # [PowerShell](#tab/ms-powershell)
 
-Use the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands?branch=main#using-connect-mggraph) command to sign in to your tenant and consent to the required permissions.
+Use the [Connect-MgGraph](/powershell/microsoftgraph/authentication-commands#using-connect-mggraph) command to sign in to your tenant and consent to the required permissions.
 
 ```powershell
 Connect-MgGraph -Scopes "AdministrativeUnit.ReadWrite.All"
 ```
 
-Use the [New-MgDirectoryAdministrativeUnit](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdirectoryadministrativeunit?branch=main) command to create a new administrative unit.
+Use the [New-MgDirectoryAdministrativeUnit](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdirectoryadministrativeunit) command to create a new administrative unit.
 
 ```powershell
 $params = @{
@@ -81,7 +77,7 @@ $params = @{
 $adminUnitObj = New-MgDirectoryAdministrativeUnit -BodyParameter $params
 ```
 
-Use the [New-MgBetaDirectoryAdministrativeUnit](/powershell/module/microsoft.graph.beta.identity.directorymanagement/new-mgbetadirectoryadministrativeunit) command to create a new restricted management administrative unit. Set the `IsMemberManagementRestricted` property to `$true`.
+Use the [New-MgDirectoryAdministrativeUnit](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdirectoryadministrativeunit) command to create a new restricted management administrative unit. Set the `IsMemberManagementRestricted` property to `$true`.
 
 ```powershell
 $params = @{
@@ -90,12 +86,12 @@ $params = @{
     Visibility = "HiddenMembership"
     IsMemberManagementRestricted = $true
 }
-$restrictedAU = New-MgBetaDirectoryAdministrativeUnit -BodyParameter $params
+$restrictedAU = New-MgDirectoryAdministrativeUnit -BodyParameter $params
 ```
 
 # [Graph API](#tab/ms-graph)
 
-Use the [Create administrativeUnit](/graph/api/directory-post-administrativeunits?branch=main) API to create a new administrative unit.
+Use the [Create administrativeUnit](/graph/api/directory-post-administrativeunits) API to create a new administrative unit.
 
 Request
 
@@ -112,7 +108,7 @@ Body
 }
 ```
 
-Use the [Create administrativeUnit (beta)](/graph/api/directory-post-administrativeunits?view=graph-rest-beta&preserve-view=true&branch=main) API to create a new restricted management administrative unit. Set the `isMemberManagementRestricted` property to `true`.
+Use the [Create administrativeUnit](/graph/api/directory-post-administrativeunits) API to create a new restricted management administrative unit. Set the `isMemberManagementRestricted` property to `true`.
 
 Request
 
@@ -160,7 +156,7 @@ In Microsoft Entra ID, you can delete an administrative unit that you no longer 
 
 # [PowerShell](#tab/ms-powershell)
 
-Use the [Remove-MgDirectoryAdministrativeUnit](/powershell/module/microsoft.graph.identity.directorymanagement/remove-mgdirectoryadministrativeunit?branch=main) command to delete an administrative unit.
+Use the [Remove-MgDirectoryAdministrativeUnit](/powershell/module/microsoft.graph.identity.directorymanagement/remove-mgdirectoryadministrativeunit) command to delete an administrative unit.
 
 ```powershell
 $adminUnitObj = Get-MgDirectoryAdministrativeUnit -Filter "DisplayName eq 'Seattle District Technical Schools'"
