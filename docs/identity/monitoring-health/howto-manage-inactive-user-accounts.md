@@ -23,7 +23,7 @@ This article explains a method to handle obsolete user accounts in Microsoft Ent
 
 ## Prerequisites
 
-To access the `lastSignInDateTime` property using Microsoft Graph:
+To access the `lastSuccessfulSignInDateTime` property using Microsoft Graph:
 
 - You need a Microsoft Entra ID P1 or P2 license.
 
