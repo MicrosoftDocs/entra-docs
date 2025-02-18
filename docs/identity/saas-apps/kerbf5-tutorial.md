@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on integration with F5'
+title: Microsoft Entra single sign-on integration with F5
 description: Learn how to configure single sign-on (SSO) between Microsoft Entra ID and F5.
 
 author: nguhiu
@@ -8,12 +8,12 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 ---
 
-# Tutorial: Microsoft Entra single sign-on integration with F5
+# Microsoft Entra single sign-on integration with F5
 
 In this tutorial, you'll learn how to integrate F5 with Microsoft Entra ID. When you integrate F5 with Microsoft Entra ID, you can:
 

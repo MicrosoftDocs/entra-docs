@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Integrate Microsoft Entra single sign-on (SSO) with Splan Visitor'
+title: Integrate Microsoft Entra single sign-on (SSO) with Splan Visitor
 description: Learn how to configure single sign-on between Microsoft Entra ID and Splan Visitor.
 
 author: nguhiu
@@ -8,7 +8,7 @@ ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Splan Visitor so that I can control who has access to Splan Visitor, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Integrate Microsoft Entra single sign-on (SSO) with Splan Visitor
+# Integrate Microsoft Entra single sign-on (SSO) with Splan Visitor
 
 In this tutorial, you'll learn how to integrate Splan Visitor with Microsoft Entra ID. When you integrate Splan Visitor with Microsoft Entra ID, you can:
 
@@ -132,6 +132,6 @@ Test your Microsoft Entra single sign-on configuration with one of the following
 * **Azure portal**: Select **Test this application** to automatically sign in to the Splan Visitor for which you set up SSO.
 * **Microsoft My Apps portal**: Select the **Splan Visitor** tile to automatically sign in to the Splan Visitor for which you set up SSO. For more information about the My Apps portal, see [Sign in and start apps from the My Apps portal](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 After you configure Splan Visitor, you can [learn how to enforce session controls in Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app). Session controls help protect exfiltration and infiltration of your organization's sensitive data in real time. Session controls extend from Conditional Access.

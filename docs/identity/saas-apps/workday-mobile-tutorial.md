@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Workday Mobile Application'
+title: Microsoft Entra single sign-on (SSO) integration with Workday Mobile Application
 description: Learn how to configure single sign-on between Microsoft Entra ID and Workday Mobile Application.
 
 author: nguhiu
@@ -8,12 +8,12 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Workday Mobile Application
+# Microsoft Entra single sign-on (SSO) integration with Workday Mobile Application
 
 In this tutorial, you’ll learn how to integrate Microsoft Entra ID, Conditional Access, and Intune with Workday Mobile Application. When you integrate Workday Mobile Application with Microsoft, you can:
 

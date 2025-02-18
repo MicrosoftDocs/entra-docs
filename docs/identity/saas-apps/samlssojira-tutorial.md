@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with SAML SSO for Jira by Resolution GmbH'
+title: Microsoft Entra integration with SAML SSO for Jira by Resolution GmbH
 description: Learn how to configure single sign-on between Microsoft Entra ID and SAML SSO for Jira by resolution GmbH.
 
 author: nguhiu
@@ -8,13 +8,13 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SAML SSO for Jira by resolution GmbH so that I can control who has access to SAML SSO for Jira by resolution GmbH, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with SAML SSO for Jira by resolution GmbH
+# Microsoft Entra integration with SAML SSO for Jira by resolution GmbH
 
 In this tutorial, you'll learn how to integrate SAML SSO for Jira by resolution GmbH with Microsoft Entra ID. When you integrate SAML SSO for Jira by resolution GmbH with Microsoft Entra ID, you can:
 
@@ -269,6 +269,6 @@ To activate SSO redirect, do the following in **your Jira instance**:
 
 After activating the option, you can still reach the username/password prompt if the **Enable nosso** option is ticked by navigating to `https://<server-base-url>/login.jsp?nosso`. As always, substitute **\<server-base-url>** with your base URL.
 
-## Next steps
+## Related content
 
 Once you configure SAML SSO for Jira by resolution GmbH you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

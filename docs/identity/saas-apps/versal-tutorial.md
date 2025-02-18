@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Versal'
+title: Microsoft Entra SSO integration with Versal
 description: Learn how to configure single sign-on between Microsoft Entra ID and Versal.
 
 author: nguhiu
@@ -8,14 +8,14 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Versal so that I can control who has access to Versal, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Versal
+# Microsoft Entra SSO integration with Versal
 
 In this tutorial, you'll learn how to integrate Versal with Microsoft Entra ID. When you integrate Versal with Microsoft Entra ID, you can:
 
@@ -149,6 +149,6 @@ support guide for instructions on how to embed a Versal course with support for 
 
 You will need to create a course, share it with your organization, and publish it in order to test course embedding. 
 
-## Next steps
+## Related content
 
 Once you configure Versal you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

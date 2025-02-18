@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Mozy Enterprise'
+title: Microsoft Entra integration with Mozy Enterprise
 description: Learn how to configure single sign-on between Microsoft Entra ID and Mozy Enterprise.
 
 author: nguhiu
@@ -8,13 +8,13 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Mozy Enterprise so that I can control who has access to Mozy Enterprise, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Mozy Enterprise
+# Microsoft Entra integration with Mozy Enterprise
 
 In this tutorial, you learn how to integrate Mozy Enterprise with Microsoft Entra ID.
 Integrating Mozy Enterprise with Microsoft Entra ID provides you with the following benefits:

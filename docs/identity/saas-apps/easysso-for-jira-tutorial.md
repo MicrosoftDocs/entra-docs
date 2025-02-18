@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with EasySSO for Jira'
+title: Microsoft Entra single sign-on (SSO) integration with EasySSO for Jira
 description: Learn how to configure single sign-on between Microsoft Entra ID and EasySSO for Jira.
 
 author: nguhiu
@@ -8,7 +8,7 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with EasySSO for Jira
+# Microsoft Entra single sign-on (SSO) integration with EasySSO for Jira
 
 In this tutorial, you'll learn how to integrate EasySSO for Jira with Microsoft Entra ID. When you integrate EasySSO for Jira with Microsoft Entra ID, you can:
 
@@ -218,6 +218,6 @@ In this case you have to follow the [instructions on this page](https://techtime
 
 Should you have any issues digesting the log messages, please contact [EasySSO support team](mailto:support@techtime.co.nz).
 
-## Next steps
+## Related content
 
 Once you configure EasySSO for Jira you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

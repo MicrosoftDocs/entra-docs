@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with EBSCO'
+title: Microsoft Entra single sign-on (SSO) integration with EBSCO
 description: Learn how to configure single sign-on between Microsoft Entra ID and EBSCO.
 
 author: nguhiu
@@ -8,14 +8,14 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and EBSCO so that I can control who has access to EBSCO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with EBSCO
+# Microsoft Entra single sign-on (SSO) integration with EBSCO
 
 In this tutorial, you'll learn how to integrate EBSCO with Microsoft Entra ID. When you integrate EBSCO with Microsoft Entra ID, you can:
 
@@ -183,6 +183,6 @@ For more information about My Apps, see [Introduction to My Apps](https://suppor
 
 1. After completing the above setup, clear cookies/cache and login again. You won’t have to manually sign in again and the personalization settings are remembered.
 
-## Next steps
+## Related content
 
 Once you configure EBSCO you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

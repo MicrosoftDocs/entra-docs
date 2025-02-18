@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Check Point Harmony Connect'
+title: Microsoft Entra single sign-on (SSO) integration with Check Point Harmony Connect
 description: Learn how to configure single sign-on between Microsoft Entra ID and Check Point Harmony Connect.
 
 author: nguhiu
@@ -8,7 +8,7 @@ ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Check Point Harmony Connect so that I can control who has access to Check Point Harmony Connect, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Check Point Harmony Connect
+# Microsoft Entra single sign-on (SSO) integration with Check Point Harmony Connect
 
 In this tutorial, you'll learn how to integrate Check Point Harmony Connect with Microsoft Entra ID. When you integrate Check Point Harmony Connect with Microsoft Entra ID, you can:
 
@@ -177,6 +177,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 To test the Check Point Harmony Connect, go to their Authentication service and authenticate using test account which you have created in the **Create a Microsoft Entra test user** section.
 
-## Next steps
+## Related content
 
 Once you configure Check Point Harmony Connect you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Lucidchart'
+title: Microsoft Entra integration with Lucidchart
 description: Learn how to configure single sign-on between Microsoft Entra ID and Lucidchart.
 
 author: nguhiu
@@ -8,14 +8,14 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Lucidchart so that I can control who has access to Lucidchart, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Lucidchart
+# Microsoft Entra single sign-on (SSO) integration with Lucidchart
 
 In this tutorial, you'll learn how to integrate Lucidchart with Microsoft Entra ID. When you integrate Lucidchart with Microsoft Entra ID, you can:
 
@@ -168,6 +168,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Lucidchart tile in the My Apps, you should be automatically signed in to the Lucidchart for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
  Once you configure the Lucidchart you can enforce session controls, which protect exfiltration and infiltration of your organization’s sensitive data in real-time. Session controls extend from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

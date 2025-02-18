@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Kion (formerly cloudtamer.io)'
+title: Microsoft Entra SSO integration with Kion (formerly cloudtamer.io)
 description: Learn how to configure single sign-on between Microsoft Entra ID and Kion (formerly cloudtamer.io).
 
 author: nguhiu
@@ -8,7 +8,7 @@ ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Kion so that I can control who has access to Kion, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Kion (formerly cloudtamer.io)
+# Microsoft Entra SSO integration with Kion (formerly cloudtamer.io)
 
 In this tutorial, you'll learn how to integrate Kion with Microsoft Entra ID. When you integrate Kion with Microsoft Entra ID, you can:
 
@@ -212,6 +212,6 @@ To easily manage Kion user permissions by using existing Microsoft Entra groups,
       1. Select the **Update on Login** checkbox.
    1. Select **Add** to add the group association.
 
-## Next steps
+## Related content
 
 Once you configure Kion you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

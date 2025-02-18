@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with SignalFx'
+title: Microsoft Entra single sign-on (SSO) integration with SignalFx
 description: Learn how to configure single sign-on between Microsoft Entra ID and SignalFx.
 
 author: nguhiu
@@ -8,14 +8,14 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SignalFx so that I can control who has access to SignalFx, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with SignalFx
+# Microsoft Entra single sign-on (SSO) integration with SignalFx
 
 In this tutorial, you'll learn how to integrate SignalFx with Microsoft Entra ID. When you integrate SignalFx with Microsoft Entra ID, you can:
 
@@ -160,6 +160,6 @@ Review the following information regarding how to test SSO, as well as expectati
 
 * SignalFx supports **Just In Time** user creation, which means that if a user does not exist in SignalFx, then the user's account will be created upon first login attempt.
 
-## Next steps
+## Related content
 
 Once you configure SignalFx you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

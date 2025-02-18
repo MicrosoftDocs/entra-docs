@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Maxient Conduct Manager Software'
+title: Microsoft Entra SSO integration with Maxient Conduct Manager Software
 description: Learn how to configure single sign-on between Microsoft Entra ID and Maxient Conduct Manager Software.
 
 author: nguhiu
@@ -8,14 +8,14 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Maxient Conduct Manager Software so that I can control who has access to Maxient Conduct Manager Software, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Maxient Conduct Manager Software
+# Microsoft Entra SSO integration with Maxient Conduct Manager Software
 
 In this tutorial, you'll learn how to integrate Maxient Conduct Manager Software with Microsoft Entra ID. When you integrate Maxient Conduct Manager Software with Microsoft Entra ID, you can:
 
@@ -102,6 +102,6 @@ It is important to note that this step is **REQUIRED** for Maxient to function p
 
 If a support ticket has not already been opened with a Maxient Implementation/Support representative, send an email to [support@maxient.com](mailto:support@maxient.com) with the subject "Campus Based Authentication/Azure Setup - \<\<School Name\>\>". In the body of the email, provide the **App Federation Metadata Url**. Maxient staff will respond with a test link to verify the proper attributes are being released.  
 	
-## Next steps
+## Related content
 
 Once you configure Maxient Conduct Manager Software you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

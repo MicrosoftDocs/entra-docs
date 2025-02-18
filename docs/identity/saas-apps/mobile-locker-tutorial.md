@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Mobile Locker'
+title: Microsoft Entra single sign-on (SSO) integration with Mobile Locker
 description: Learn how to configure single sign-on between Microsoft Entra ID and Mobile Locker.
 
 author: nguhiu
@@ -8,13 +8,13 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Mobile Locker
+# Microsoft Entra single sign-on (SSO) integration with Mobile Locker
 
 In this tutorial, you'll learn how to integrate Mobile Locker with Microsoft Entra ID. When you integrate Mobile Locker with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Alibaba Cloud Service (Role-based SSO)'
+title: Microsoft Entra single sign-on (SSO) integration with Alibaba Cloud Service (Role-based SSO)
 description: Learn how to configure single sign-on between Microsoft Entra ID and Alibaba Cloud Service (Role-based SSO).
 
 author: nguhiu
@@ -8,14 +8,14 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Alibaba Cloud Service (Role-based SSO) so that I can control who has access to Alibaba Cloud Service (Role-based SSO), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Alibaba Cloud Service (Role-based SSO)
+# Microsoft Entra single sign-on (SSO) integration with Alibaba Cloud Service (Role-based SSO)
 
 In this tutorial, you'll learn how to integrate Alibaba Cloud Service (Role-based SSO) with Microsoft Entra ID. When you integrate Alibaba Cloud Service (Role-based SSO) with Microsoft Entra ID, you can:
 
@@ -256,6 +256,6 @@ After the preceding configurations are completed, test Alibaba Cloud Service (Ro
 
     ![Test config4](./media/alibaba-cloud-service-role-based-sso-tutorial/test06.png)
 
-## Next steps
+## Related content
 
 Once you configure Alibaba Cloud Service (Role-based SSO) you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

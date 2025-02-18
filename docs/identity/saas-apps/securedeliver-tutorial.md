@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with SECURE DELIVER'
+title: Microsoft Entra SSO integration with SECURE DELIVER
 description: Learn how to configure single sign-on between Microsoft Entra ID and SECURE DELIVER.
 
 author: nguhiu
@@ -8,14 +8,14 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 04/17/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SECURE DELIVER so that I can control who has access to SECURE DELIVER, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with SECURE DELIVER
+# Microsoft Entra SSO integration with SECURE DELIVER
 
 In this tutorial, you'll learn how to integrate SECURE DELIVER with Microsoft Entra ID. When you integrate SECURE DELIVER with Microsoft Entra ID, you can:
 
@@ -140,6 +140,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the SECURE DELIVER tile in the My Apps, this will redirect to SECURE DELIVER Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure SECURE DELIVER you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

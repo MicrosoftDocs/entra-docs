@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Smartcat'
+title: Microsoft Entra single sign-on (SSO) integration with Smartcat
 description: Learn how to configure single sign-on between Microsoft Entra and Smartcat.
 services: active-directory
 author: nguhiu
@@ -8,14 +8,14 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 08/02/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Smartcat  so that I can control who has access to Smartcat, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Smartcat
+# Microsoft Entra single sign-on (SSO) integration with Smartcat
 
 In this tutorial, you learn how to integrate Smartcat with Microsoft Entra ID. When you integrate Smartcat  with Microsoft Entra ID, you can:
 

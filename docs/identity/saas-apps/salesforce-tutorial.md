@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Salesforce'
+title: Microsoft Entra single sign-on (SSO) integration with Salesforce
 description: Learn how to configure the single sign-on between Microsoft Entra ID and Salesforce.
 
 author: nguhiu
@@ -8,14 +8,14 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Salesforce so that I can control who has access to Salesforce, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Salesforce
+# Microsoft Entra single sign-on (SSO) integration with Salesforce
 
 In this tutorial, you'll learn how to integrate Salesforce with Microsoft Entra ID. When you integrate Salesforce with Microsoft Entra ID, you can:
 
@@ -243,7 +243,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 Once you've validated that SSO works and rolled it out in your organization, disable application access using [local credentials](https://help.salesforce.com/s/articleView?id=sf.sso_enforce_sso_login.htm&type=5). This ensures that your conditional access policies, MFA, etc. will be in place to protect sign-ins to Salesforce. 
 
 
-## Next steps
+## Related content
 
 If you have Enterprise Mobility + Security E5 or another license for Microsoft Defender for Cloud Apps, then you can collect an audit trail of application activities in that product, which can be used when investigating alerts.  In Defender for Cloud Apps, alerts can be triggered when user, admin, or sign-in activities don't comply with your policies.  By [connecting Microsoft Defender for Cloud Apps to Salesforce](/defender-cloud-apps/protect-salesforce#how-to-connect-defender-for-cloud-apps-to-salesforce) , Salesforce sign-in events are collected by Defender for Cloud Apps.
 

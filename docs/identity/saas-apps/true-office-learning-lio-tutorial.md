@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with True Office Learning - LIO'
+title: Microsoft Entra single sign-on (SSO) integration with True Office Learning - LIO
 description: Learn how to configure single sign-on between Microsoft Entra ID and True Office Learning - LIO.
 
 author: nguhiu
@@ -8,7 +8,7 @@ ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and True Office Learning - LIO so that I can control who has access to True Office Learning - LIO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with True Office Learning - LIO
+# Microsoft Entra single sign-on (SSO) integration with True Office Learning - LIO
 
 In this tutorial, you'll learn how to integrate True Office Learning - LIO with Microsoft Entra ID. When you integrate True Office Learning - LIO with Microsoft Entra ID, you can:
 
@@ -145,6 +145,6 @@ In this section, you test your Microsoft Entra single sign-on configuration by u
 * Go to the True Office Learning - LIO Sign-on URL directly, and initiate the login flow from that site.
 * You can use Microsoft My Apps. When you select the True Office Learning - LIO tile in My Apps, you're redirected to the True Office Learning - LIO Sign-on URL. For more information about My Apps, see [Introduction to My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 After you configure True Office Learning - LIO you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

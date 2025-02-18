@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Genea Access Control'
+title: Microsoft Entra integration with Genea Access Control
 description: Learn how to configure single sign-on between Microsoft Entra ID and Genea Access Control.
 
 author: nguhiu
@@ -8,13 +8,13 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Genea Access Control so that I can control who has access to Genea Access Control, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Genea Access Control
+# Microsoft Entra integration with Genea Access Control
 
 In this tutorial, you learn how to integrate Genea Access Control with Microsoft Entra ID. When you integrate Genea Access Control with Microsoft Entra ID, you can:
 
@@ -179,6 +179,6 @@ You can also use Microsoft My Apps to test the application in any mode. When you
 	2.	Unique Group Names: Genea doesn’t support duplicate user group names. Ensure that each Microsoft Entra instance uses distinct group names to avoid any potential errors.
 	3.	Moving to single Microsoft Entra Instances: If you plan to transition from multiple Microsoft Entra instances to a single one, it’s essential to have a clear migration plan. You can either manage this transition internally or collaborate with Genea to ensure a smooth migration without service disruptions.
 
-## Next steps
+## Related content
 
 Once you configure Genea Access Control you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

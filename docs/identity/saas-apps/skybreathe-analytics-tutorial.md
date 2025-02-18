@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Skybreathe® Analytics'
+title: Microsoft Entra SSO integration with Skybreathe® Analytics
 description: Learn how to configure single sign-on between Microsoft Entra ID and Skybreathe® Analytics.
 
 author: nguhiu
@@ -8,7 +8,7 @@ ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SkybreatheÂ® Analytics so that I can control who has access to SkybreatheÂ® Analytics, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Skybreathe® Analytics
+# Microsoft Entra SSO integration with Skybreathe® Analytics
 
 In this tutorial, you'll learn how to integrate Skybreathe® Analytics with Microsoft Entra ID. When you integrate Skybreathe® Analytics with Microsoft Entra ID, you can:
 
@@ -168,6 +168,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the Skybreathe® Analytics tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Skybreathe® Analytics for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Skybreathe® Analytics you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

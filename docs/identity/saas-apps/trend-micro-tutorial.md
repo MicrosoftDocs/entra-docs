@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Trend Micro Web Security (TMWS)'
+title: Microsoft Entra SSO integration with Trend Micro Web Security (TMWS)
 description: Learn how to configure single sign-on between Microsoft Entra ID and Trend Micro Web Security (TMWS).
 
 author: nguhiu
@@ -8,14 +8,14 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Trend Micro Web Security(TMWS) so that I can control who has access to Trend Micro Web Security(TMWS), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Trend Micro Web Security (TMWS)
+# Microsoft Entra single sign-on (SSO) integration with Trend Micro Web Security (TMWS)
 
 In this tutorial, you'll learn how to integrate Trend Micro Web Security (TMWS) with Microsoft Entra ID. When you integrate TMWS with Microsoft Entra ID, you can:
 
@@ -230,6 +230,6 @@ For details, see [Traffic Forwarding Using PAC Files](https://docs.trendmicro.co
 
 1. In the Microsoft Entra sign-in window, enter your Microsoft Entra account credentials. You should now be signed in to TMWS.
 
-## Next steps
+## Related content
 
 Once you configure TMWS you can enforce session control, which protects exfiltration and infiltration of your organization's sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

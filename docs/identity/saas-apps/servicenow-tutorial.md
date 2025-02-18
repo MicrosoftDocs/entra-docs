@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with ServiceNow | Microsoft Docs'
+title: Microsoft Entra single sign-on (SSO) integration with ServiceNow | Microsoft Docs
 description: Learn how to configure single sign-on between Microsoft Entra ID and ServiceNow.
 
 author: nguhiu
@@ -8,14 +8,14 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ServiceNow so that I can control who has access to ServiceNow, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with ServiceNow
+# Microsoft Entra single sign-on (SSO) integration with ServiceNow
 
 In this tutorial, you'll learn how to integrate ServiceNow with Microsoft Entra ID. When you integrate ServiceNow with Microsoft Entra ID, you can:
 
@@ -500,6 +500,6 @@ When you select the ServiceNow tile in the Access Panel, you should be automatic
 
 		![Screenshot of the application home page](./media/servicenow-tutorial/mobile-landing-page.png)
 
-## Next Steps
+## Related content
 
 Once you configure ServiceNow you can enforce session controls, which protect exfiltration and infiltration of your organization’s sensitive data in real time. Session controls extend from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
