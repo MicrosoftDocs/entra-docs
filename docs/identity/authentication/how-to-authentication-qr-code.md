@@ -469,16 +469,19 @@ This example shows how to delete a standard QR code for a user.
   HTTP/1.1 204 No Content
   ```
 
-## Sign in to Microsoft Teams with a QR code
+## Sign in to Microsoft Teams or Managed Home Screen (MHS) with QR code
 
-Microsoft Teams accelerates sign in with a QR code. An Authentication Policy Administrator needs to configure Intune or another mobile device management (MDM) solution to enable the QR code authentication method for mobile devices. 
+Microsoft Teams and Managed Home Screen (MHS) apps  have optimized QR code sign-in experience. An Authentication Policy Administrator needs to configure Intune or another mobile device management (MDM) solution to enable the QR code authentication method for mobile devices. 
 
-### Enable sign-in with a QR code in Teams
+### Enable sign-in with a QR code in Teams or MHS
+When configuring with Intune, assign Microsoft Authenticator as a Required apps for all devices you want to add QR code authentication for.
 
 | Platform | MDM app config key    | Value | Configuration location |
 |----------|-----------------------|-------|------------------------|
 | iOS      | preferred_auth_config | qrpin | Device management profile, which configures a single sign-on (SSO) extension |
 | Android  | preferred_auth_config | qrpin | Microsoft Authenticator |
+
+Note: Managed Home Screen is only available on Android devices.
 
 ### QR code authentication Teams sign-in experience 
 
@@ -515,7 +518,7 @@ Users need to [download Teams](https://aka.ms/teamsmobiledownload):
 
 Restrict the QR code authentication method to only frontline workers and shared devices. This section covers how to create policies that restrict QR code authentication method to only frontline workers and shared devices.
 
-### Restrict a QR + PIN to frontline workers  
+### Restrict QR code authentication to frontline workers  
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **QR code** > **Enable and target**.
@@ -523,7 +526,7 @@ Restrict the QR code authentication method to only frontline workers and shared 
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/add-groups-and-roles.png" alt-text="Screenshot that shows the Microsoft Entra admin center that shows how to add groups to the QR code settings.":::
 
-### Restrict a QR + PIN to shared devices 
+### Restrict QR code authentication to shared devices 
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator). 
 1. Click **Conditional Access** > **Authentication strengths** > **New authentication strength**.
