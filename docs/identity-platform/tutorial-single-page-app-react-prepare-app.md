@@ -249,7 +249,7 @@ The **authConfig.js** file contains the configuration settings for the authentic
     - In **Authority**, find `Enter_the_Tenant_Subdomain_Here` and replace it with the subdomain of your tenant. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, [learn how to read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 1. Save the file.
 
-[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url.md)]
+[!INCLUDE [external-id-custom-domain](../external-id/customers/includes/use-custom-domain-url.md)]
 
 --- 
 
