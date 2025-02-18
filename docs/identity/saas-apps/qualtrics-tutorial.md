@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Qualtrics'
+title: Microsoft Entra integration with Qualtrics
 description: Learn how to configure single sign-on between Microsoft Entra ID and Qualtrics.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Qualtrics so that I can control who has access to Qualtrics, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Qualtrics
+# Microsoft Entra single sign-on (SSO) integration with Qualtrics
 
 In this tutorial, you'll learn how to integrate Qualtrics with Microsoft Entra ID. When you integrate Qualtrics with Microsoft Entra ID, you can:
 

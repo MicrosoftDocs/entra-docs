@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with BenefitHub'
+title: Microsoft Entra SSO integration with BenefitHub
 description: Learn how to configure single sign-on between Microsoft Entra ID and BenefitHub.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and BenefitHub so that I can control who has access to BenefitHub, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with BenefitHub
+# Microsoft Entra SSO integration with BenefitHub
 
 In this tutorial, you'll learn how to integrate BenefitHub with Microsoft Entra ID. When you integrate BenefitHub with Microsoft Entra ID, you can:
 

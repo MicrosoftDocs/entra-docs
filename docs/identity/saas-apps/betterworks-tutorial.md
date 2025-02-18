@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Betterworks'
+title: Microsoft Entra SSO integration with Betterworks
 description: Learn how to configure single sign-on between Microsoft Entra ID and Betterworks.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and BetterWorks so that I can control who has access to BetterWorks, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Betterworks
+# Microsoft Entra SSO integration with Betterworks
 
 In this tutorial, you'll learn how to integrate Betterworks with Microsoft Entra ID. When you integrate Betterworks with Microsoft Entra ID, you can:
 

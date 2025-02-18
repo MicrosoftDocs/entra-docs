@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with CloudCords'
+title: Microsoft Entra SSO integration with CloudCords
 description: Learn how to configure single sign-on between Microsoft Entra ID and CloudCords.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and CloudCords so that I can control who has access to CloudCords, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with CloudCords
+# Microsoft Entra SSO integration with CloudCords
 
 In this tutorial, you'll learn how to integrate CloudCords with Microsoft Entra ID. When you integrate CloudCords with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with TrackVia'
+title: Microsoft Entra SSO integration with TrackVia
 description: Learn how to configure single sign-on between Microsoft Entra ID and TrackVia.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and TrackVia so that I can control who has access to TrackVia, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with TrackVia
+# Microsoft Entra SSO integration with TrackVia
 
 In this tutorial, you'll learn how to integrate TrackVia with Microsoft Entra ID. When you integrate TrackVia with Microsoft Entra ID, you can:
 

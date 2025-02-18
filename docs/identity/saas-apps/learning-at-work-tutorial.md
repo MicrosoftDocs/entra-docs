@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Learning at Work'
+title: Microsoft Entra integration with Learning at Work
 description: Learn how to configure single sign-on between Microsoft Entra ID and Learning at Work.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Learning at Work so that I can control who has access to Learning at Work, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Integrate Learning at Work with Microsoft Entra ID
+# Integrate Learning at Work with Microsoft Entra ID
 
 In this tutorial, you'll learn how to integrate Learning at Work with Microsoft Entra ID. When you integrate Learning at Work with Microsoft Entra ID, you can:
 

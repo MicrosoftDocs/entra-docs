@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Businessmap'
+title: Microsoft Entra SSO integration with Businessmap
 description: Learn how to configure single sign-on between Microsoft Entra ID and Businessmap.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Businessmap so that I can control who has access to Businessmap, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Businessmap
+# Microsoft Entra SSO integration with Businessmap
 
 In this tutorial, you'll learn how to integrate Businessmap with Microsoft Entra ID. When you integrate Businessmap with Microsoft Entra ID, you can:
 

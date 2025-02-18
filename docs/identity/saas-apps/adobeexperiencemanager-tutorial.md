@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Adobe Experience Manager'
+title: Microsoft Entra integration with Adobe Experience Manager
 description: Learn how to configure single sign-on between Microsoft Entra ID and Adobe Experience Manager.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Adobe Experience Manager so that I can control who has access to Adobe Experience Manager, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Adobe Experience Manager
+# Microsoft Entra integration with Adobe Experience Manager
 
 In this tutorial, you'll learn how to integrate Adobe Experience Manager with Microsoft Entra ID. When you integrate Adobe Experience Manager with Microsoft Entra ID, you can:
 

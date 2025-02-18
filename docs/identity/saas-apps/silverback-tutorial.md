@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Silverback'
+title: Microsoft Entra SSO integration with Silverback
 description: Learn how to configure single sign-on between Microsoft Entra ID and Silverback.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Silverback so that I can control who has access to Silverback, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Silverback
+# Microsoft Entra SSO integration with Silverback
 
 In this tutorial, you'll learn how to integrate Silverback with Microsoft Entra ID. When you integrate Silverback with Microsoft Entra ID, you can:
 

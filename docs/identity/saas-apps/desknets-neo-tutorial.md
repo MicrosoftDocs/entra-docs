@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with desknets NEO'
+title: Microsoft Entra single sign-on (SSO) integration with desknets NEO
 description: Learn how to configure single sign-on between Microsoft Entra ID and desknets NEO.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and desknet's NEO so that I can control who has access to desknet's NEO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with desknet's NEO
+# Microsoft Entra single sign-on (SSO) integration with desknet's NEO
 
 In this tutorial, you'll learn how to integrate desknet's NEO with Microsoft Entra ID. When you integrate desknet's NEO with Microsoft Entra ID, you can:
 

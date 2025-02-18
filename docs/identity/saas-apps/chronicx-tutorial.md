@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with ChronicX®'
+title: Microsoft Entra SSO integration with ChronicX®
 description: Learn how to configure single sign-on between Microsoft Entra ID and ChronicX®.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ChronicXÃ‚Â® so that I can control who has access to ChronicXÃ‚Â®, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with ChronicX®
+# Microsoft Entra SSO integration with ChronicX®
 
 In this tutorial, you'll learn how to integrate ChronicX® with Microsoft Entra ID. When you integrate ChronicX® with Microsoft Entra ID, you can:
 

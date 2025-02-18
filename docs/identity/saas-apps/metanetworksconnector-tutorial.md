@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Meta Networks Connector'
+title: Microsoft Entra integration with Meta Networks Connector
 description: Learn how to configure single sign-on between Microsoft Entra ID and Meta Networks Connector.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Meta Networks Connector so that I can control who has access to Meta Networks Connector, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Meta Networks Connector
+# Microsoft Entra integration with Meta Networks Connector
 
 In this tutorial, you'll learn how to integrate Meta Networks Connector with Microsoft Entra ID. When you integrate Meta Networks Connector with Microsoft Entra ID, you can:
 

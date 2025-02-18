@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Inkling / Echolink / Echolink'
+title: Microsoft Entra SSO integration with Inkling / Echolink / Echolink
 description: Learn how to configure single sign-on between Microsoft Entra ID and Inkling / Echolink / Echolink.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Inkling / Echolink / Echolink so that I can control who has access to Inkling / Echolink / Echolink, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Inkling / Echolink / Echolink
+# Microsoft Entra integration with Inkling / Echolink / Echolink
 
 In this tutorial, you learn how to integrate Inkling / Echolink / Echolink with Microsoft Entra ID. When you integrate Inkling / Echolink / Echolink with Microsoft Entra ID, you can:
 

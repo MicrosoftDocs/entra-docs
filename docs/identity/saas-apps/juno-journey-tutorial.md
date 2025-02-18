@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Juno Journey'
+title: Microsoft Entra SSO integration with Juno Journey
 description: Learn how to configure single sign-on between Microsoft Entra ID and Juno Journey.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Juno Journey so that I can control who has access to Juno Journey, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Juno Journey
+# Microsoft Entra SSO integration with Juno Journey
 
 In this tutorial, you'll learn how to integrate Juno Journey with Microsoft Entra ID. When you integrate Juno Journey with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Appraisd'
+title: Microsoft Entra integration with Appraisd
 description: Learn how to configure single sign-on between Microsoft Entra ID and Appraisd.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Appraisd so that I can control who has access to Appraisd, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Integrate Appraisd with Microsoft Entra ID
+# Integrate Appraisd with Microsoft Entra ID
 
 In this tutorial, you'll learn how to integrate Appraisd with Microsoft Entra ID. When you integrate Appraisd with Microsoft Entra ID, you can:
 

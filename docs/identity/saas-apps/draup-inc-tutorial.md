@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Draup, Inc'
+title: Microsoft Entra single sign-on (SSO) integration with Draup, Inc
 description: Learn how to configure single sign-on between Microsoft Entra ID and Draup, Inc.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Draup, Inc so that I can control who has access to Draup, Inc, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Draup, Inc
+# Microsoft Entra single sign-on (SSO) integration with Draup, Inc
 
 In this tutorial, you'll learn how to integrate Draup, Inc with Microsoft Entra ID. When you integrate Draup, Inc with Microsoft Entra ID, you can:
 

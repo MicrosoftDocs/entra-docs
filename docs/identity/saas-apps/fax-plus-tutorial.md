@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with FAX.PLUS'
+title: Microsoft Entra single sign-on (SSO) integration with FAX.PLUS
 description: Learn how to configure single sign-on between Microsoft Entra ID and FAX.PLUS.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and FAX.PLUS so that I can control who has access to FAX.PLUS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with FAX.PLUS
+# Microsoft Entra single sign-on (SSO) integration with FAX.PLUS
 
 In this tutorial, you'll learn how to integrate FAX.PLUS with Microsoft Entra ID. When you integrate FAX.PLUS with Microsoft Entra ID, you can:
 

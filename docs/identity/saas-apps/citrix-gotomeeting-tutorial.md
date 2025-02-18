@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with GoToMeeting'
+title: Microsoft Entra integration with GoToMeeting
 description: Learn the steps you need to perform to integrate GoToMeeting with Microsoft Entra ID.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and GoToMeeting so that I can control who has access to GoToMeeting, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with GoToMeeting
+# Microsoft Entra single sign-on (SSO) integration with GoToMeeting
 
 In this tutorial, you'll learn how to integrate GoToMeeting with Microsoft Entra ID. When you integrate GoToMeeting with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Qualaroo'
+title: Microsoft Entra SSO integration with Qualaroo
 description: Learn how to configure single sign-on between Microsoft Entra ID and Qualaroo.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Qualaroo so that I can control who has access to Qualaroo, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Qualaroo
+# Microsoft Entra SSO integration with Qualaroo
 
 In this tutorial, you'll learn how to integrate Qualaroo with Microsoft Entra ID. When you integrate Qualaroo with Microsoft Entra ID, you can:
 

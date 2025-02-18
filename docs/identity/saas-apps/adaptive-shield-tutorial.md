@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Adaptive Shield'
+title: Microsoft Entra SSO integration with Adaptive Shield
 description: Learn how to configure single sign-on between Microsoft Entra ID and Adaptive Shield.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Adaptive Shield so that I can control who has access to Adaptive Shield, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Adaptive Shield
+# Microsoft Entra SSO integration with Adaptive Shield
 
 In this tutorial, you'll learn how to integrate Adaptive Shield with Microsoft Entra ID. When you integrate Adaptive Shield with Microsoft Entra ID, you can:
 

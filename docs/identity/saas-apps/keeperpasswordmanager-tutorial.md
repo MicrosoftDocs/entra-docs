@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Keeper Password Manager'
+title: Microsoft Entra SSO integration with Keeper Password Manager
 description: Learn how to configure single sign-on between Microsoft Entra ID and Keeper Password Manager.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Keeper Password Manager so that I can control who has access to Keeper Password Manager, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Keeper Password Manager
+# Microsoft Entra SSO integration with Keeper Password Manager
 
 In this tutorial, you'll learn how to integrate Keeper Password Manager with Microsoft Entra ID. When you integrate Keeper Password Manager with Microsoft Entra ID, you can:
 

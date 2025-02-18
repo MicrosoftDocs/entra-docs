@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with ZDiscovery'
+title: Microsoft Entra SSO integration with ZDiscovery
 description: Learn how to configure single sign-on between Microsoft Entra ID and ZDiscovery.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ZDiscovery so that I can control who has access to ZDiscovery, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with ZDiscovery
+# Microsoft Entra SSO integration with ZDiscovery
 
 In this tutorial, you'll learn how to integrate ZDiscovery with Microsoft Entra ID. When you integrate ZDiscovery with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with JobScore'
+title: Microsoft Entra SSO integration with JobScore
 description: Learn how to configure single sign-on between Microsoft Entra ID and JobScore.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and JobScore so that I can control who has access to JobScore, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with JobScore
+# Microsoft Entra SSO integration with JobScore
 
 In this tutorial, you'll learn how to integrate JobScore with Microsoft Entra ID. When you integrate JobScore with Microsoft Entra ID, you can:
 

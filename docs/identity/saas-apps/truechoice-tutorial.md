@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with TrueChoice'
+title: Microsoft Entra single sign-on (SSO) integration with TrueChoice
 description: Learn how to configure single sign-on between Microsoft Entra ID and TrueChoice.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and TrueChoice so that I can control who has access to TrueChoice, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with TrueChoice
+# Microsoft Entra single sign-on (SSO) integration with TrueChoice
 
 In this tutorial, you'll learn how to integrate TrueChoice with Microsoft Entra ID. When you integrate TrueChoice with Microsoft Entra ID, you can:
 

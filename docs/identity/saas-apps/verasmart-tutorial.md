@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with VeraSMART'
+title: Microsoft Entra single sign-on (SSO) integration with VeraSMART
 description: Learn how to configure single sign-on between Microsoft Entra ID and VeraSMART.
 
 author: nguhiu
@@ -13,7 +13,7 @@ ms.date: 03/25/2024
 ms.author: gideonkiratu
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with VeraSMART
+# Microsoft Entra single sign-on (SSO) integration with VeraSMART
 
 In this tutorial, you'll learn how to integrate VeraSMART with Microsoft Entra ID. When you integrate VeraSMART with Microsoft Entra ID, you can:
 

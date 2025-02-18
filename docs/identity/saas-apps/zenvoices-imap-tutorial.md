@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Zenvoices IMAP'
+title: Microsoft Entra single sign-on (SSO) integration with Zenvoices IMAP
 description: Learn how to configure single sign-on between Microsoft Entra and Zenvoices IMAP.
 services: active-directory
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Zenvoices IMAP so that I can control who has access to Zenvoices IMAP, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Zenvoices IMAP
+# Microsoft Entra single sign-on (SSO) integration with Zenvoices IMAP
 
 In this tutorial, you learn how to integrate Zenvoices IMAP with Microsoft Entra ID. When you integrate Zenvoices IMAP with Microsoft Entra ID, you can:
 

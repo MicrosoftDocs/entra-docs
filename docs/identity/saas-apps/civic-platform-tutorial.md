@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Civic Platform'
+title: Microsoft Entra SSO integration with Civic Platform
 description: Learn how to configure single sign-on between Microsoft Entra ID and Civic Platform.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Civic Platform so that I can control who has access to Civic Platform, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Civic Platform
+# Microsoft Entra SSO integration with Civic Platform
 
 In this tutorial, you'll learn how to integrate Civic Platform with Microsoft Entra ID. When you integrate Civic Platform with Microsoft Entra ID, you can:
 

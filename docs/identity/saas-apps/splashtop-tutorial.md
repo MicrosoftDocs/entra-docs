@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Splashtop'
+title: Microsoft Entra single sign-on (SSO) integration with Splashtop
 description: Learn how to configure single sign-on between Microsoft Entra ID and Splashtop.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Splashtop so that I can control who has access to Splashtop, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Splashtop
+# Microsoft Entra single sign-on (SSO) integration with Splashtop
 
 In this tutorial, you'll learn how to integrate Splashtop with Microsoft Entra ID. When you integrate Splashtop with Microsoft Entra ID, you can:
 

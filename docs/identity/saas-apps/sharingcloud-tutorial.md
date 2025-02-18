@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with SharingCloud |'
+title: Microsoft Entra SSO integration with SharingCloud |
 description: Learn how to configure single sign-on between Microsoft Entra ID and Instant Suite.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SharingCloud so that I can control who has access to SharingCloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with SharingCloud
+# Microsoft Entra SSO integration with SharingCloud
 
 In this tutorial, you'll learn how to integrate SharingCloud with Microsoft Entra ID. When you integrate SharingCloud with Microsoft Entra ID, you can:
 

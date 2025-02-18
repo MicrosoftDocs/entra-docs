@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Ardoq'
+title: Microsoft Entra single sign-on (SSO) integration with Ardoq
 description: Learn how to configure single sign-on between Microsoft Entra ID and Ardoq.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Ardoq so that I can control who has access to Ardoq, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Ardoq
+# Microsoft Entra single sign-on (SSO) integration with Ardoq
 
 In this tutorial, you learn how to integrate Ardoq with Microsoft Entra ID. When you integrate Ardoq with Microsoft Entra ID, you can:
 

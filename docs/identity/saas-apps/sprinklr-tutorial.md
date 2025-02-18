@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Sprinklr'
+title: Microsoft Entra integration with Sprinklr
 description: Learn how to configure single sign-on between Microsoft Entra ID and Sprinklr.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Sprinklr so that I can control who has access to Sprinklr, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Sprinklr
+# Microsoft Entra integration with Sprinklr
 
 In this tutorial, you'll learn how to integrate Sprinklr with Microsoft Entra ID. When you integrate Sprinklr with Microsoft Entra ID, you can:
 

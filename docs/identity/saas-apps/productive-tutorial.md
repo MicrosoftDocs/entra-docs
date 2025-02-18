@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Productive'
+title: Microsoft Entra single sign-on (SSO) integration with Productive
 description: Learn how to configure single sign-on between Microsoft Entra ID and Productive.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Productive so that I can control who has access to Productive, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Productive
+# Microsoft Entra single sign-on (SSO) integration with Productive
 
 In this tutorial, you'll learn how to integrate Productive with Microsoft Entra ID. When you integrate Productive with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Explanation-Based Auditing System'
+title: Microsoft Entra integration with Explanation-Based Auditing System
 description: Learn how to configure single sign-on between Microsoft Entra ID and Explanation-Based Auditing System.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Explanation-Based Auditing System so that I can control who has access to Explanation-Based Auditing System, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Explanation-Based Auditing System
+# Microsoft Entra integration with Explanation-Based Auditing System
 
 In this tutorial, you learn how to integrate Explanation-Based Auditing System with Microsoft Entra ID.
 Integrating Explanation-Based Auditing System with Microsoft Entra ID provides you with the following benefits:

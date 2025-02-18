@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Microsoft Entra integration with Shmoop For Schools"
+title: Microsoft Entra integration with Shmoop For Schools
 description: Learn how to configure single sign-on between Microsoft Entra ID and Shmoop For Schools.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Shmoop For Schools so that I can control who has access to Shmoop For Schools, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Integrate Shmoop For Schools with Microsoft Entra ID
+# Integrate Shmoop For Schools with Microsoft Entra ID
 
 In this tutorial, you'll learn how to integrate Shmoop For Schools with Microsoft Entra ID. When you integrate Shmoop For Schools with Microsoft Entra ID, you can:
 

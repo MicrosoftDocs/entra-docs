@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Visit.org'
+title: Microsoft Entra SSO integration with Visit.org
 description: Learn how to configure single sign-on between Microsoft Entra ID and Visit.org.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Visit.org so that I can control who has access to Visit.org, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Visit.org
+# Microsoft Entra SSO integration with Visit.org
 
 In this tutorial, you'll learn how to integrate Visit.org with Microsoft Entra ID. When you integrate Visit.org with Microsoft Entra ID, you can:
 

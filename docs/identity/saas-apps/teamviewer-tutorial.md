@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with TeamViewer'
+title: Microsoft Entra single sign-on (SSO) integration with TeamViewer
 description: Learn how to configure single sign-on between Microsoft Entra ID and TeamViewer.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and TeamViewer so that I can control who has access to TeamViewer, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with TeamViewer
+# Microsoft Entra single sign-on (SSO) integration with TeamViewer
 
 In this tutorial, you'll learn how to integrate TeamViewer with Microsoft Entra ID. When you integrate TeamViewer with Microsoft Entra ID, you can:
 

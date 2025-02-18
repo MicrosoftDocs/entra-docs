@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with TINFOIL SECURITY'
+title: Microsoft Entra SSO integration with TINFOIL SECURITY
 description: Learn how to configure single sign-on between Microsoft Entra ID and TINFOIL SECURITY.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and TINFOIL SECURITY so that I can control who has access to TINFOIL SECURITY, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with TINFOIL SECURITY
+# Microsoft Entra SSO integration with TINFOIL SECURITY
 
 In this tutorial, you'll learn how to integrate TINFOIL SECURITY with Microsoft Entra ID. When you integrate TINFOIL SECURITY with Microsoft Entra ID, you can:
 

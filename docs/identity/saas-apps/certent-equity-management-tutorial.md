@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Microsoft Entra single sign-on (SSO) integration with Certent Equity Management"
+title: Microsoft Entra single sign-on (SSO) integration with Certent Equity Management
 description: Learn how to configure single sign-on between Microsoft Entra ID and Certent Equity Management.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Certent Equity Management so that I can control who has access to Certent Equity Management, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Certent Equity Management
+# Microsoft Entra single sign-on (SSO) integration with Certent Equity Management
 
 In this tutorial, you'll learn how to integrate Certent Equity Management with Microsoft Entra ID. When you integrate Certent Equity Management with Microsoft Entra ID, you can:
 

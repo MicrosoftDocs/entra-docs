@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Learning Pool LMS'
+title: Microsoft Entra integration with Learning Pool LMS
 description: Learn how to configure single sign-on between Microsoft Entra ID and Learning Pool LMS.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Learning Pool LMS so that I can control who has access to Learning Pool LMS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Learning Pool LMS
+# Microsoft Entra integration with Learning Pool LMS
 
 In this tutorial, you'll learn how to integrate Learning Pool LMS with Microsoft Entra ID. When you integrate Learning Pool LMS with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Box'
+title: Microsoft Entra single sign-on (SSO) integration with Box
 description: Learn how to configure single sign-on between Microsoft Entra ID and Box.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Box so that I can control who has access to Box, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Box
+# Microsoft Entra single sign-on (SSO) integration with Box
 
 In this tutorial, you'll learn how to integrate Box with Microsoft Entra ID. When you integrate Box with Microsoft Entra ID, you can:
 

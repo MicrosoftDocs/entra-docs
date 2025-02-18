@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with NAVEX One'
+title: Microsoft Entra SSO integration with NAVEX One
 description: Learn how to configure single sign-on between Microsoft Entra ID and NAVEX One.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and NAVEX One so that I can control who has access to NAVEX One, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with NAVEX One
+# Microsoft Entra SSO integration with NAVEX One
 
 In this tutorial, you'll learn how to integrate NAVEX One with Microsoft Entra ID. When you integrate NAVEX One with Microsoft Entra ID, you can:
 

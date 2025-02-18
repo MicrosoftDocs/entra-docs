@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Greenhouse'
+title: Microsoft Entra integration with Greenhouse
 description: Learn how to configure single sign-on between Microsoft Entra ID and Greenhouse.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Greenhouse so that I can control who has access to Greenhouse, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Greenhouse
+# Microsoft Entra integration with Greenhouse
 
 In this tutorial, you'll learn how to integrate Greenhouse with Microsoft Entra ID. When you integrate Greenhouse with Microsoft Entra ID, you can:
 

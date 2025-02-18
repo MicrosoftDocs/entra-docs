@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Concur'
+title: Microsoft Entra single sign-on (SSO) integration with Concur
 description: Learn how to configure SSO between Microsoft Entra ID and Concur.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Concur so that I can control who has access to Concur, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Concur
+# Microsoft Entra single sign-on (SSO) integration with Concur
 
 In this tutorial, you'll learn how to integrate Concur with Microsoft Entra ID. When you integrate Concur with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Banyan Security Zero Trust Remote Access Platform'
+title: Microsoft Entra single sign-on (SSO) integration with Banyan Security Zero Trust Remote Access Platform
 description: Learn how to configure single sign-on between Microsoft Entra ID and Banyan Security Zero Trust Remote Access Platform.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Banyan Security Zero Trust Remote Access Platform so that I can control who has access to Banyan Security Zero Trust Remote Access Platform, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Banyan Security Zero Trust Remote Access Platform
+# Microsoft Entra single sign-on (SSO) integration with Banyan Security Zero Trust Remote Access Platform
 
 In this tutorial, you'll learn how to integrate Banyan Security Zero Trust Remote Access Platform with Microsoft Entra ID. When you integrate Banyan Security Zero Trust Remote Access Platform with Microsoft Entra ID, you can:
 

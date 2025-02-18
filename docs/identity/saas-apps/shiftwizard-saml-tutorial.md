@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with ShiftWizard SAML'
+title: Microsoft Entra single sign-on (SSO) integration with ShiftWizard SAML
 description: Learn how to configure single sign-on between Microsoft Entra ID and ShiftWizard SAML.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ShiftWizard SAML so that I can control who has access to ShiftWizard SAML, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with ShiftWizard SAML
+# Microsoft Entra single sign-on (SSO) integration with ShiftWizard SAML
 
 In this tutorial, you'll learn how to integrate ShiftWizard SAML with Microsoft Entra ID. When you integrate ShiftWizard SAML with Microsoft Entra ID, you can:
 

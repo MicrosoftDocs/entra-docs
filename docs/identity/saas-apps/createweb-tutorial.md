@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Create!Webフロー '
+title: Microsoft Entra SSO integration with Create!Webフロー 
 description: Learn how to configure single sign-on between Microsoft Entra ID and Create!Webフロー.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Create!Webãƒ•ãƒ­ãƒ¼ so that I can control who has access to Create!Webãƒ•ãƒ­ãƒ¼, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Create!Webフロー
+# Microsoft Entra SSO integration with Create!Webフロー
 
 In this tutorial, you'll learn how to integrate Create!Webフロー with Microsoft Entra ID. When you integrate Create!Webフロー with Microsoft Entra ID, you can:
 

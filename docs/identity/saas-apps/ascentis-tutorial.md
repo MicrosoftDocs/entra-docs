@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Ascentis'
+title: Microsoft Entra integration with Ascentis
 description: Learn how to configure single sign-on between Microsoft Entra ID and Ascentis.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Ascentis so that I can control who has access to Ascentis, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Integrate Ascentis with Microsoft Entra ID
+# Integrate Ascentis with Microsoft Entra ID
 
 In this tutorial, you'll learn how to integrate Ascentis with Microsoft Entra ID. When you integrate Ascentis with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Veza'
+title: Microsoft Entra SSO integration with Veza
 description: Learn how to configure single sign-on between Microsoft Entra ID and Veza.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Veza so that I can control who has access to Veza, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Veza
+# Microsoft Entra SSO integration with Veza
 
 In this tutorial, you'll learn how to integrate Veza with Microsoft Entra ID. When you integrate Veza with Microsoft Entra ID, you can:
 

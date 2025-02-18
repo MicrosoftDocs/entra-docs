@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Small Improvements'
+title: Microsoft Entra SSO integration with Small Improvements
 description: Learn how to configure single sign-on between Microsoft Entra ID and Small Improvements.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Small Improvements so that I can control who has access to Small Improvements, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Small Improvements
+# Microsoft Entra SSO integration with Small Improvements
 
 In this tutorial, you'll learn how to integrate Small Improvements with Microsoft Entra ID. When you integrate Small Improvements with Microsoft Entra ID, you can:
 

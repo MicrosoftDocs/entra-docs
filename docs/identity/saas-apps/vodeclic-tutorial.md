@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Vodeclic'
+title: Microsoft Entra integration with Vodeclic
 description: Learn how to configure single sign-on between Microsoft Entra ID and Vodeclic.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Vodeclic so that I can control who has access to Vodeclic, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Vodeclic
+# Microsoft Entra integration with Vodeclic
 
 In this tutorial, you learn how to integrate Vodeclic with Microsoft Entra ID.
 Integrating Vodeclic with Microsoft Entra ID provides you with the following benefits:

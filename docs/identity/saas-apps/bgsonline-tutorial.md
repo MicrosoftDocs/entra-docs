@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with BGS Online'
+title: Microsoft Entra integration with BGS Online
 description: Learn how to configure single sign-on between Microsoft Entra ID and BGS Online.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and BGS Online so that I can control who has access to BGS Online, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with BGS Online
+# Microsoft Entra integration with BGS Online
 
 In this tutorial, you learn how to integrate BGS Online with Microsoft Entra ID.
 Integrating BGS Online with Microsoft Entra ID provides you with the following benefits:

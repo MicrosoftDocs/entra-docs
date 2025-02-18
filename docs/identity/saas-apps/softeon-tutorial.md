@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Softeon WMS'
+title: Microsoft Entra SSO integration with Softeon WMS
 description: Learn how to configure single sign-on between Microsoft Entra ID and Softeon WMS.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Softeon WMS so that I can control who has access to Softeon WMS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Softeon WMS
+# Microsoft Entra SSO integration with Softeon WMS
 
 In this tutorial, you'll learn how to integrate Softeon WMS with Microsoft Entra ID. When you integrate Softeon WMS with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with FirmPlay - Employee Advocacy for Recruiting'
+title: Microsoft Entra SSO integration with FirmPlay - Employee Advocacy for Recruiting
 description: Learn how to configure single sign-on between Microsoft Entra ID and FirmPlay - Employee Advocacy for Recruiting.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and FirmPlay - Employee Advocacy for Recruiting so that I can control who has access to FirmPlay - Employee Advocacy for Recruiting, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with FirmPlay - Employee Advocacy for Recruiting
+# Microsoft Entra SSO integration with FirmPlay - Employee Advocacy for Recruiting
 
 In this tutorial, you'll learn how to integrate FirmPlay - Employee Advocacy for Recruiting with Microsoft Entra ID. When you integrate FirmPlay - Employee Advocacy for Recruiting with Microsoft Entra ID, you can:
 

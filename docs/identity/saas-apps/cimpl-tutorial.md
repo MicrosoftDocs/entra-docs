@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Cimpl'
+title: Microsoft Entra SSO integration with Cimpl
 description: Learn how to configure single sign-on between Microsoft Entra ID and Cimpl.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Cimpl so that I can control who has access to Cimpl, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Cimpl
+# Microsoft Entra SSO integration with Cimpl
 
 In this tutorial, you'll learn how to integrate Cimpl with Microsoft Entra ID. When you integrate Cimpl with Microsoft Entra ID, you can:
 

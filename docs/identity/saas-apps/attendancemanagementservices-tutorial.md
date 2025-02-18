@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Attendance Management Services'
+title: Microsoft Entra integration with Attendance Management Services
 description: Learn how to configure single sign-on between Microsoft Entra ID and Attendance Management Services.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Attendance Management Services so that I can control who has access to Attendance Management Services, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Attendance Management Services
+# Microsoft Entra integration with Attendance Management Services
 
 In this tutorial, you'll learn how to integrate Attendance Management Services with Microsoft Entra ID. When you integrate Attendance Management Services with Microsoft Entra ID, you can:
 

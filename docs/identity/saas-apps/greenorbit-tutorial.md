@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with GreenOrbit'
+title: Microsoft Entra SSO integration with GreenOrbit
 description: Learn how to configure single sign-on between Microsoft Entra ID and GreenOrbit.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and GreenOrbit so that I can control who has access to GreenOrbit, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with GreenOrbit
+# Microsoft Entra SSO integration with GreenOrbit
 
 In this tutorial, you'll learn how to integrate GreenOrbit with Microsoft Entra ID. When you integrate GreenOrbit with Microsoft Entra ID, you can:
 

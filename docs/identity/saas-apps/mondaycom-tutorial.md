@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with monday.com'
+title: Microsoft Entra SSO integration with monday.com
 description: Learn how to configure single sign-on between Microsoft Entra ID and monday.com.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and monday.com so that I can control who has access to monday.com, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with monday.com
+# Microsoft Entra SSO integration with monday.com
 
 In this tutorial, you'll learn how to integrate monday.com with Microsoft Entra ID. When you integrate monday.com with Microsoft Entra ID, you can:
 

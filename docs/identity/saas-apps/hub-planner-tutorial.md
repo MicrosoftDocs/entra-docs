@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Hub Planner'
+title: Microsoft Entra SSO integration with Hub Planner
 description: Learn how to configure single sign-on between Microsoft Entra ID and Hub Planner.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Hub Planner so that I can control who has access to Hub Planner, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Hub Planner
+# Microsoft Entra SSO integration with Hub Planner
 
 In this tutorial, you'll learn how to integrate Hub Planner with Microsoft Entra ID. When you integrate Hub Planner with Microsoft Entra ID, you can:
 

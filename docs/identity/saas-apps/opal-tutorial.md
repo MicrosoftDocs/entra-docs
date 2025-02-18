@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Opal'
+title: Microsoft Entra SSO integration with Opal
 description: Learn how to configure single sign-on between Microsoft Entra ID and Opal.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Opal so that I can control who has access to Opal, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Opal
+# Microsoft Entra SSO integration with Opal
 
 In this tutorial, you'll learn how to integrate Opal with Microsoft Entra ID. When you integrate Opal with Microsoft Entra ID, you can:
 

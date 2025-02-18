@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Altoura'
+title: Microsoft Entra SSO integration with Altoura
 description: Learn how to configure single sign-on between Microsoft Entra ID and Altoura.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Altoura so that I can control who has access to Altoura, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Altoura
+# Microsoft Entra SSO integration with Altoura
 
 In this tutorial, you'll learn how to integrate Altoura with Microsoft Entra ID. When you integrate Altoura with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with ARES for Enterprise'
+title: Microsoft Entra integration with ARES for Enterprise
 description: Learn how to configure single sign-on between Microsoft Entra ID and ARES for Enterprise.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ARES for Enterprise so that I can control who has access to ARES for Enterprise, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with ARES for Enterprise
+# Microsoft Entra integration with ARES for Enterprise
 
 In this tutorial, you'll learn how to integrate ARES for Enterprise with Microsoft Entra ID. When you integrate ARES for Enterprise with Microsoft Entra ID, you can:
 

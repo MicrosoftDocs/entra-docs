@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Freedcamp'
+title: Microsoft Entra integration with Freedcamp
 description: Learn how to configure single sign-on between Microsoft Entra ID and Freedcamp.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Freedcamp so that I can control who has access to Freedcamp, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Integrate Freedcamp with Microsoft Entra ID
+# Integrate Freedcamp with Microsoft Entra ID
 
 In this tutorial, you'll learn how to integrate Freedcamp with Microsoft Entra ID. When you integrate Freedcamp with Microsoft Entra ID, you can:
 

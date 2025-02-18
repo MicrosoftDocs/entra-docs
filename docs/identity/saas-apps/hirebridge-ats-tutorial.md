@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Hirebridge ATS'
+title: Microsoft Entra single sign-on (SSO) integration with Hirebridge ATS
 description: Learn how to configure single sign-on between Microsoft Entra ID and Hirebridge ATS.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Hirebridge ATS so that I can control who has access to Hirebridge ATS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Hirebridge ATS
+# Microsoft Entra single sign-on (SSO) integration with Hirebridge ATS
 
 In this tutorial, you'll learn how to integrate Hirebridge ATS with Microsoft Entra ID. When you integrate Hirebridge ATS with Microsoft Entra ID, you can:
 

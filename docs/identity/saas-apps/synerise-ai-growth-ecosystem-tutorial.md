@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Synerise AI Growth Operating System'
+title: Microsoft Entra single sign-on (SSO) integration with Synerise AI Growth Operating System
 description: Learn how to configure single sign-on between Microsoft Entra ID and Synerise AI Growth Operating System.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Synerise AI Growth Operating System so that I can control who has access to Synerise AI Growth Operating System, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Synerise AI Growth Operating System
+# Microsoft Entra single sign-on (SSO) integration with Synerise AI Growth Operating System
 
 In this tutorial, you'll learn how to integrate Synerise with Microsoft Entra ID. When you integrate Synerise with Microsoft Entra ID, you can:
 

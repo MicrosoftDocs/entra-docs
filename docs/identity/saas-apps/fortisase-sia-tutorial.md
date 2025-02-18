@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with FortiSASE'
+title: Microsoft Entra SSO integration with FortiSASE
 description: Learn how to configure single sign-on between Microsoft Entra ID and FortiSASE.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and FortiSASE so that I can control who has access to FortiSASE, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with FortiSASE
+# Microsoft Entra SSO integration with FortiSASE
 
 In this tutorial, you'll learn how to integrate FortiSASE with Microsoft Entra ID. When you integrate FortiSASE with Microsoft Entra ID, you can:
 

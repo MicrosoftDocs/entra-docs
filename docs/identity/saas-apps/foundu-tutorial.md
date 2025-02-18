@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with foundU'
+title: Microsoft Entra single sign-on (SSO) integration with foundU
 description: Learn how to configure single sign-on between Microsoft Entra ID and foundU.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and foundU so that I can control who has access to foundU, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with foundU
+# Microsoft Entra single sign-on (SSO) integration with foundU
 
 In this tutorial, you'll learn how to integrate foundU with Microsoft Entra ID. When you integrate foundU with Microsoft Entra ID, you can:
 

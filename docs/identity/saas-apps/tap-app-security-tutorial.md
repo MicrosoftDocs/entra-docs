@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with TAP App Security'
+title: Microsoft Entra single sign-on (SSO) integration with TAP App Security
 description: Learn how to configure single sign-on between Microsoft Entra ID and TAP App Security.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and TAP App Security so that I can control who has access to TAP App Security, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with TAP App Security
+# Microsoft Entra single sign-on (SSO) integration with TAP App Security
 
 In this tutorial, you'll learn how to integrate TAP App Security with Microsoft Entra ID. When you integrate TAP App Security with Microsoft Entra ID, you can:
 

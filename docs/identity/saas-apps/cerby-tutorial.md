@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Cerby'
+title: Microsoft Entra single sign-on (SSO) integration with Cerby
 description: Learn how to configure single sign-on between Microsoft Entra ID and Cerby.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Cerby so that I can control who has access to Cerby, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Cerby
+# Microsoft Entra single sign-on (SSO) integration with Cerby
 
 In this tutorial, you'll learn how to integrate Cerby with Microsoft Entra ID. When you integrate Cerby with Microsoft Entra ID, you can:
 

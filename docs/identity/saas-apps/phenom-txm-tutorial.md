@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Phenom TXM'
+title: Microsoft Entra SSO integration with Phenom TXM
 description: Learn how to configure single sign-on between Microsoft Entra ID and Phenom TXM.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Phenom TXM so that I can control who has access to Phenom TXM, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Phenom TXM
+# Microsoft Entra SSO integration with Phenom TXM
 
 In this tutorial, you will learn how to integrate Phenom TXM with Microsoft Entra ID. When you integrate Phenom TXM with Microsoft Entra ID, you can:
 

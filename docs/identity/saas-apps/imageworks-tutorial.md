@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with IMAGE WORKS'
+title: Microsoft Entra integration with IMAGE WORKS
 description: Learn how to configure single sign-on between Microsoft Entra ID and IMAGE WORKS.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and IMAGE WORKS so that I can control who has access to IMAGE WORKS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with IMAGE WORKS
+# Microsoft Entra integration with IMAGE WORKS
 
 In this tutorial, you learn how to integrate IMAGE WORKS with Microsoft Entra ID.
 Integrating IMAGE WORKS with Microsoft Entra ID provides you with the following benefits:

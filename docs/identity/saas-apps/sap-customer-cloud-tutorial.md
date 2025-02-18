@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with SAP Cloud for Customer'
+title: Microsoft Entra SSO integration with SAP Cloud for Customer
 description: Learn how to configure single sign-on between Microsoft Entra ID and SAP Cloud for Customer.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SAP Cloud for Customer so that I can control who has access to SAP Cloud for Customer, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with SAP Cloud for Customer
+# Microsoft Entra SSO integration with SAP Cloud for Customer
 
 In this tutorial, you learn how to integrate SAP Cloud for Customer with Microsoft Entra ID. When you integrate SAP Cloud for Customer with Microsoft Entra ID, you can:
 

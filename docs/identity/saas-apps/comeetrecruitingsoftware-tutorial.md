@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Comeet Recruiting Software'
+title: Microsoft Entra integration with Comeet Recruiting Software
 description: Learn how to configure single sign-on between Microsoft Entra ID and Comeet Recruiting Software.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Comeet Recruiting Software so that I can control who has access to Comeet Recruiting Software, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Comeet Recruiting Software
+# Microsoft Entra integration with Comeet Recruiting Software
 
 In this tutorial, you'll learn how to integrate Comeet Recruiting Software with Microsoft Entra ID. When you integrate Comeet Recruiting Software with Microsoft Entra ID, you can:
 

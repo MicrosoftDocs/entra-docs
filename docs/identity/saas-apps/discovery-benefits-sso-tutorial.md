@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Discovery Benefits SSO'
+title: Microsoft Entra single sign-on (SSO) integration with Discovery Benefits SSO
 description: Learn how to configure single sign-on between Microsoft Entra ID and Discovery Benefits SSO.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Discovery Benefits SSO so that I can control who has access to Discovery Benefits SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Discovery Benefits SSO
+# Microsoft Entra single sign-on (SSO) integration with Discovery Benefits SSO
 
 In this tutorial, you'll learn how to integrate Discovery Benefits SSO with Microsoft Entra ID. When you integrate Discovery Benefits SSO with Microsoft Entra ID, you can:
 

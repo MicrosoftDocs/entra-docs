@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Euromonitor International'
+title: Microsoft Entra SSO integration with Euromonitor International
 description: Learn how to configure single sign-on between Microsoft Entra ID and Euromonitor International.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Euromonitor International so that I can control who has access to Euromonitor International, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Euromonitor International
+# Microsoft Entra SSO integration with Euromonitor International
 
 In this tutorial, you learn how to integrate Euromonitor International with Microsoft Entra ID. When you integrate Euromonitor International with Microsoft Entra ID, you can:
 

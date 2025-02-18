@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with RedVector'
+title: Microsoft Entra SSO integration with RedVector
 description: Learn how to configure single sign-on between Microsoft Entra ID and RedVector.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and RedVector so that I can control who has access to RedVector, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with RedVector
+# Microsoft Entra SSO integration with RedVector
 
 In this tutorial, you'll learn how to integrate RedVector with Microsoft Entra ID. When you integrate RedVector with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with MiHCM'
+title: Microsoft Entra SSO integration with MiHCM
 description: Learn how to configure single sign-on between Microsoft Entra ID and MiHCM.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and MiHCM so that I can control who has access to MiHCM, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with MiHCM
+# Microsoft Entra SSO integration with MiHCM
 
 In this tutorial, you'll learn how to integrate MiHCM with Microsoft Entra ID. When you integrate MiHCM with Microsoft Entra ID, you can:
 

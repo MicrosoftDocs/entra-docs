@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with ClearCompany'
+title: Microsoft Entra integration with ClearCompany
 description: Learn how to configure single sign-on between Microsoft Entra ID and ClearCompany.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ClearCompany so that I can control who has access to ClearCompany, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with ClearCompany
+# Microsoft Entra integration with ClearCompany
 
 In this tutorial, you'll learn how to integrate ClearCompany with Microsoft Entra ID. When you integrate ClearCompany with Microsoft Entra ID, you can:
 

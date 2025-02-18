@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with SynchroNet CLICK'
+title: Microsoft Entra SSO integration with SynchroNet CLICK
 description: Learn how to configure single sign-on between Microsoft Entra ID and SynchroNet CLICK.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SynchroNet CLICK so that I can control who has access to SynchroNet CLICK, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with SynchroNet CLICK
+# Microsoft Entra SSO integration with SynchroNet CLICK
 
 In this tutorial, you'll learn how to integrate SynchroNet CLICK with Microsoft Entra ID. When you integrate SynchroNet CLICK with Microsoft Entra ID, you can:
 

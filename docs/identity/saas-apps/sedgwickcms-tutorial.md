@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Sedgwick CMS'
+title: Microsoft Entra SSO integration with Sedgwick CMS
 description: Learn how to configure single sign-on between Microsoft Entra ID and Sedgwick CMS.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Sedgwick CMS so that I can control who has access to Sedgwick CMS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Sedgwick CMS
+# Microsoft Entra SSO integration with Sedgwick CMS
 
 In this tutorial, you'll learn how to integrate Sedgwick CMS with Microsoft Entra ID. When you integrate Sedgwick CMS with Microsoft Entra ID, you can:
 

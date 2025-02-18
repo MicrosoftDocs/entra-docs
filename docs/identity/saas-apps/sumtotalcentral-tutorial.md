@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with SumTotalCentral'
+title: Microsoft Entra SSO integration with SumTotalCentral
 description: Learn how to configure single sign-on between Microsoft Entra ID and SumTotalCentral.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SumTotalCentral so that I can control who has access to SumTotalCentral, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with SumTotalCentral
+# Microsoft Entra integration with SumTotalCentral
 
 In this tutorial, you'll learn how to integrate SumTotalCentral with Microsoft Entra ID. When you integrate SumTotalCentral with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with JIRA SAML SSO by Microsoft (V5.2)'
+title: Microsoft Entra SSO integration with JIRA SAML SSO by Microsoft (V5.2)
 description: Learn how to configure single sign-on between Microsoft Entra ID and JIRA SAML SSO by Microsoft (V5.2).
 
 author: dhivyagana
@@ -14,7 +14,7 @@ ms.author: dhivyag
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and JIRA SAML SSO by Microsoft (V5.2) so that I can control who has access to JIRA SAML SSO by Microsoft (V5.2), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with JIRA SAML SSO by Microsoft (V5.2)
+# Microsoft Entra SSO integration with JIRA SAML SSO by Microsoft (V5.2)
 
 In this tutorial, you'll learn how to integrate JIRA SAML SSO by Microsoft (V5.2) with Microsoft Entra ID. When you integrate JIRA SAML SSO by Microsoft (V5.2) with Microsoft Entra ID, you can:
 

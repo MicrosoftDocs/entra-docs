@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Confluence SAML SSO by Microsoft'
+title: Microsoft Entra SSO integration with Confluence SAML SSO by Microsoft
 description: Learn how to configure single sign-on between Microsoft Entra ID and Confluence SAML SSO by Microsoft.
 
 author: dhivyagana
@@ -15,7 +15,7 @@ ms.author: dhivyag
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Confluence SAML SSO by Microsoft so that I can control who has access to Confluence SAML SSO by Microsoft, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Confluence SAML SSO by Microsoft
+# Microsoft Entra SSO integration with Confluence SAML SSO by Microsoft
 
 In this tutorial, you'll learn how to integrate Confluence SAML SSO by Microsoft with Microsoft Entra ID. When you integrate Confluence SAML SSO by Microsoft with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with BlogIn'
+title: Microsoft Entra single sign-on (SSO) integration with BlogIn
 description: Learn how to configure single sign-on between Microsoft Entra ID and BlogIn.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and BlogIn so that I can control who has access to BlogIn, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with BlogIn
+# Microsoft Entra single sign-on (SSO) integration with BlogIn
 
 In this tutorial, you'll learn how to integrate BlogIn with Microsoft Entra ID. When you integrate BlogIn with Microsoft Entra ID, you can:
 

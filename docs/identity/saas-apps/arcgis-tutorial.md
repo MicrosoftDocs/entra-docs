@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with ArcGIS Online'
+title: Microsoft Entra integration with ArcGIS Online
 description: Learn how to configure single sign-on between Microsoft Entra ID and ArcGIS Online.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ArcGIS Online so that I can control who has access to ArcGIS Online, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with ArcGIS Online
+# Microsoft Entra integration with ArcGIS Online
 
 In this tutorial, you'll learn how to integrate ArcGIS Online with Microsoft Entra ID. When you integrate ArcGIS Online with Microsoft Entra ID, you can:
 

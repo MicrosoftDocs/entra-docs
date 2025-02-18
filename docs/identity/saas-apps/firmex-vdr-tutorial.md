@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Firmex VDR'
+title: Microsoft Entra SSO integration with Firmex VDR
 description: Learn how to configure single sign-on between Microsoft Entra ID and Firmex VDR.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Firmex VDR so that I can control who has access to Firmex VDR, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Firmex VDR
+# Microsoft Entra SSO integration with Firmex VDR
 
 In this tutorial, you'll learn how to integrate Firmex VDR with Microsoft Entra ID. When you integrate Firmex VDR with Microsoft Entra ID, you can:
 

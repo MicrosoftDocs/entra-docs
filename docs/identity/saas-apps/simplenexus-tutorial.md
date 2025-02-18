@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with SimpleNexus'
+title: Microsoft Entra integration with SimpleNexus
 description: Learn how to configure single sign-on between Microsoft Entra ID and SimpleNexus.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SimpleNexus so that I can control who has access to SimpleNexus, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with SimpleNexus
+# Microsoft Entra integration with SimpleNexus
 
 In this tutorial, you'll learn how to integrate SimpleNexus with Microsoft Entra ID. When you integrate SimpleNexus with Microsoft Entra ID, you can:
 

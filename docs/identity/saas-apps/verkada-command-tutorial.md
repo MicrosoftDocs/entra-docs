@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Verkada Command'
+title: Microsoft Entra single sign-on (SSO) integration with Verkada Command
 description: Learn how to configure single sign-on between Microsoft Entra ID and Verkada Command.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Verkada Command so that I can control who has access to Verkada Command, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Verkada Command
+# Microsoft Entra single sign-on (SSO) integration with Verkada Command
 
 In this tutorial, you'll learn how to integrate Verkada Command with Microsoft Entra ID. When you integrate Verkada Command with Microsoft Entra ID, you can:
 

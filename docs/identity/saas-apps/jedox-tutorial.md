@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Jedox'
+title: Microsoft Entra single sign-on (SSO) integration with Jedox
 description: Learn how to configure single sign-on between Microsoft Entra ID and Jedox.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Jedox so that I can control who has access to Jedox, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Jedox
+# Microsoft Entra single sign-on (SSO) integration with Jedox
 
 In this tutorial, you'll learn how to integrate Jedox with Microsoft Entra ID. When you integrate Jedox with Microsoft Entra ID, you can:
 

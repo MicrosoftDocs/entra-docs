@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Syndio'
+title: Microsoft Entra single sign-on (SSO) integration with Syndio
 description: Learn how to configure single sign-on between Microsoft Entra ID and Syndio.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Syndio so that I can control who has access to Syndio, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Syndio
+# Microsoft Entra single sign-on (SSO) integration with Syndio
 
 In this tutorial, you'll learn how to integrate Syndio with Microsoft Entra ID. When you integrate Syndio with Microsoft Entra ID, you can:
 

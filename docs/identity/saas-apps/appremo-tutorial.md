@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with AppRemo'
+title: Microsoft Entra SSO integration with AppRemo
 description: Learn how to configure single sign-on between Microsoft Entra ID and AppRemo.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and AppRemo so that I can control who has access to AppRemo, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with AppRemo
+# Microsoft Entra SSO integration with AppRemo
 
 In this tutorial, you'll learn how to integrate AppRemo with Microsoft Entra ID. When you integrate AppRemo with Microsoft Entra ID, you can:
 

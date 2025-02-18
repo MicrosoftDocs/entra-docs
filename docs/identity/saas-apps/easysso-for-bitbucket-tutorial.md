@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with EasySSO for BitBucket'
+title: Microsoft Entra single sign-on (SSO) integration with EasySSO for BitBucket
 description: Learn how to configure single sign-on between Microsoft Entra ID and EasySSO for BitBucket.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and EasySSO for BitBucket so that I can control who has access to EasySSO for BitBucket, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with EasySSO for BitBucket
+# Microsoft Entra single sign-on (SSO) integration with EasySSO for BitBucket
 
 In this tutorial, you'll learn how to integrate EasySSO for BitBucket with Microsoft Entra ID. When you integrate EasySSO for BitBucket with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Codility'
+title: Microsoft Entra single sign-on (SSO) integration with Codility
 description: Learn how to configure single sign-on between Microsoft Entra ID and Codility.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Codility
+# Microsoft Entra single sign-on (SSO) integration with Codility
 
 In this tutorial, you'll learn how to integrate Codility with Microsoft Entra ID. When you integrate Codility with Microsoft Entra ID, you can:
 

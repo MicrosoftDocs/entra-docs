@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Canvas'
+title: Microsoft Entra SSO integration with Canvas
 description: Learn how to configure single sign-on between Microsoft Entra ID and Canvas.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Canvas Lms so that I can control who has access to Canvas Lms, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Canvas
+# Microsoft Entra SSO integration with Canvas
 
 In this tutorial, you'll learn how to integrate Canvas with Microsoft Entra ID. When you integrate Canvas with Microsoft Entra ID, you can:
 

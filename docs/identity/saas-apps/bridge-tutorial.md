@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Bridge'
+title: Microsoft Entra integration with Bridge
 description: Learn how to configure single sign-on between Microsoft Entra ID and Bridge.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Bridge so that I can control who has access to Bridge, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Bridge
+# Microsoft Entra integration with Bridge
 
 In this tutorial, you'll learn how to integrate Bridge with Microsoft Entra ID. When you integrate Bridge with Microsoft Entra ID, you can:
 

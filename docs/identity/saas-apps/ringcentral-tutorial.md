@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with RingCentral'
+title: Microsoft Entra integration with RingCentral
 description: Learn how to configure single sign-on between Microsoft Entra ID and RingCentral.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and RingCentral so that I can control who has access to RingCentral, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Integrate RingCentral with Microsoft Entra ID
+# Integrate RingCentral with Microsoft Entra ID
 
 In this tutorial, you'll learn how to integrate RingCentral with Microsoft Entra ID. When you integrate RingCentral with Microsoft Entra ID, you can:
 

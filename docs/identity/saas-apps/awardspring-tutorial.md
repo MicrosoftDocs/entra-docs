@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with AwardSpring'
+title: Microsoft Entra SSO integration with AwardSpring
 description: Learn how to configure single sign-on between Microsoft Entra ID and AwardSpring.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and AwardSpring so that I can control who has access to AwardSpring, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with AwardSpring
+# Microsoft Entra SSO integration with AwardSpring
 
 In this tutorial, you'll learn how to integrate AwardSpring with Microsoft Entra ID. When you integrate AwardSpring with Microsoft Entra ID, you can:
 

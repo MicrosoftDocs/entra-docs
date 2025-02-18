@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Taskize Connect'
+title: Microsoft Entra SSO integration with Taskize Connect
 description: Learn how to configure single sign-on between Microsoft Entra ID and Taskize Connect.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Taskize Connect so that I can control who has access to Taskize Connect, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Taskize Connect
+# Microsoft Entra SSO integration with Taskize Connect
 
 In this tutorial, you'll learn how to integrate Taskize Connect with Microsoft Entra ID. When you integrate Taskize Connect with Microsoft Entra ID, you can:
 

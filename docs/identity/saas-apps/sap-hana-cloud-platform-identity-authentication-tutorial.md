@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with SAP Cloud Identity Services'
+title: Microsoft Entra single sign-on (SSO) integration with SAP Cloud Identity Services
 description: Learn how to configure single sign-on between Microsoft Entra ID and SAP Cloud Identity Services.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SAP Cloud Identity Services so that I can control who has access to SAP Cloud Identity Services, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with SAP Cloud Identity Services
+# Microsoft Entra single sign-on (SSO) integration with SAP Cloud Identity Services
 
 In this tutorial, you'll learn how to integrate SAP Cloud Identity Services with Microsoft Entra ID. When you integrate SAP Cloud Identity Services with Microsoft Entra ID, you can:
 

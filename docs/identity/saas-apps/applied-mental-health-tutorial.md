@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Applied Mental Health'
+title: Microsoft Entra single sign-on (SSO) integration with Applied Mental Health
 description: Learn how to configure single sign-on between Microsoft Entra ID and Applied Mental Health.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Applied Mental Health so that I can control who has access to Applied Mental Health, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Applied Mental Health
+# Microsoft Entra single sign-on (SSO) integration with Applied Mental Health
 
 In this tutorial, you'll learn how to integrate Applied Mental Health with Microsoft Entra ID. When you integrate Applied Mental Health with Microsoft Entra ID, you can:
 

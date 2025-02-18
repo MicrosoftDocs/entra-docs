@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Health Support System'
+title: Microsoft Entra SSO integration with Health Support System
 description: Learn how to configure single sign-on between Microsoft Entra ID and Health Support System.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Health Support System so that I can control who has access to Health Support System, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Health Support System
+# Microsoft Entra SSO integration with Health Support System
 
 In this tutorial, you'll learn how to integrate Health Support System with Microsoft Entra ID. When you integrate Health Support System with Microsoft Entra ID, you can:
 

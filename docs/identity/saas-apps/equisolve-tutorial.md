@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Equisolve'
+title: Microsoft Entra single sign-on (SSO) integration with Equisolve
 description: Learn how to configure single sign-on between Microsoft Entra ID and Equisolve.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Equisolve so that I can control who has access to Equisolve, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Equisolve
+# Microsoft Entra single sign-on (SSO) integration with Equisolve
 
 In this tutorial, you'll learn how to integrate Equisolve with Microsoft Entra ID. When you integrate Equisolve with Microsoft Entra ID, you can:
 

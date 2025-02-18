@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Jitbit Helpdesk'
+title: Microsoft Entra integration with Jitbit Helpdesk
 description: Learn how to configure single sign-on between Microsoft Entra ID and Jitbit Helpdesk.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Jitbit Helpdesk so that I can control who has access to Jitbit Helpdesk, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Jitbit Helpdesk
+# Microsoft Entra integration with Jitbit Helpdesk
 
 In this tutorial, you'll learn how to integrate Jitbit Helpdesk with Microsoft Entra ID. When you integrate Jitbit Helpdesk with Microsoft Entra ID, you can:
 

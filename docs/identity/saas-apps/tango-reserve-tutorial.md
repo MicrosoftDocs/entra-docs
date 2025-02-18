@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Tango Reserve by AgilQuest (EU Instance)'
+title: Microsoft Entra SSO integration with Tango Reserve by AgilQuest (EU Instance)
 description: Learn how to configure single sign-on between Microsoft Entra ID and Tango Reserve by AgilQuest (EU Instance).
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Tango Reserve by AgilQuest (EU Instance) so that I can control who has access to Tango Reserve by AgilQuest (EU Instance), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Tango Reserve by AgilQuest (EU Instance)
+# Microsoft Entra SSO integration with Tango Reserve by AgilQuest (EU Instance)
 
 In this tutorial, you'll learn how to integrate Tango Reserve by AgilQuest (EU Instance) with Microsoft Entra ID. When you integrate Tango Reserve by AgilQuest (EU Instance) with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with myAOS'
+title: Microsoft Entra SSO integration with myAOS
 description: Learn how to configure single sign-on between Microsoft Entra ID and myAOS.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and myAOS so that I can control who has access to myAOS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with myAOS
+# Microsoft Entra SSO integration with myAOS
 
 In this tutorial, you'll learn how to integrate myAOS with Microsoft Entra ID. When you integrate myAOS with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Configure SuccessFactors inbound provisioning in Microsoft Entra ID'
+title: Configure SuccessFactors inbound provisioning in Microsoft Entra ID
 description: Learn how to configure inbound provisioning from SuccessFactors to Microsoft Entra ID
 
 author: cmmdesai
@@ -13,7 +13,7 @@ ms.author: chmutali
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAP SuccessFactors to Microsoft Entra ID so that I can streamline the user management process and ensure that users have the appropriate access to SAP SuccessFactors to Microsoft Entra ID.
 ---
-# Tutorial: Configure SAP SuccessFactors to Microsoft Entra user provisioning
+# Configure SAP SuccessFactors to Microsoft Entra user provisioning
 The objective of this tutorial is to show the steps you need to perform to provision worker data from SuccessFactors Employee Central into Microsoft Entra ID, with optional write-back of email address to SuccessFactors. 
 
 >[!NOTE]

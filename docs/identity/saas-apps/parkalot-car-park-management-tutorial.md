@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Parkalot - Car park management'
+title: Microsoft Entra single sign-on (SSO) integration with Parkalot - Car park management
 description: Learn how to configure single sign-on between Microsoft Entra ID and Parkalot - Car park management.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Parkalot - Car park management so that I can control who has access to Parkalot - Car park management, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Parkalot - Car park management
+# Microsoft Entra single sign-on (SSO) integration with Parkalot - Car park management
 
 In this tutorial, you'll learn how to integrate Parkalot - Car park management with Microsoft Entra ID. When you integrate Parkalot - Car park management with Microsoft Entra ID, you can:
 

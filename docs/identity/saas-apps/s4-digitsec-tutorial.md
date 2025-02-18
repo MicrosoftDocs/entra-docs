@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with S4 - Digitsec'
+title: Microsoft Entra SSO integration with S4 - Digitsec
 description: Learn how to configure single sign-on between Microsoft Entra ID and S4 - Digitsec.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and S4 - Digitsec so that I can control who has access to S4 - Digitsec, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with S4 - Digitsec
+# Microsoft Entra SSO integration with S4 - Digitsec
 
 In this tutorial, you'll learn how to integrate S4 - Digitsec with Microsoft Entra ID. When you integrate S4 - Digitsec with Microsoft Entra ID, you can:
 

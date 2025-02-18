@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with TimeLive'
+title: Microsoft Entra SSO integration with TimeLive
 description: Learn how to configure single sign-on between Microsoft Entra ID and TimeLive.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and TimeLive so that I can control who has access to TimeLive, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with TimeLive
+# Microsoft Entra SSO integration with TimeLive
 
 In this tutorial, you'll learn how to integrate TimeLive with Microsoft Entra ID. When you integrate TimeLive with Microsoft Entra ID, you can:
 

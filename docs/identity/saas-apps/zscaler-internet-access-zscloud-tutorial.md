@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Microsoft Entra integration with Zscaler Internet Access ZSCloud"
+title: Microsoft Entra integration with Zscaler Internet Access ZSCloud
 description: Learn how to configure single sign-on between Microsoft Entra ID and Zscaler Internet Access ZSCloud.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Zscaler Internet Access ZSCloud so that I can control who has access to Zscaler Internet Access ZSCloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra integration with Zscaler Internet Access ZSCloud
+# Microsoft Entra integration with Zscaler Internet Access ZSCloud
 
 In this tutorial, you'll learn how to integrate Zscaler Internet Access ZSCloud with Microsoft Entra ID. When you integrate Zscaler Internet Access ZSCloud with Microsoft Entra ID, you can:
 

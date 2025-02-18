@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Astra Schedule'
+title: Microsoft Entra single sign-on (SSO) integration with Astra Schedule
 description: Learn how to configure single sign-on between Microsoft Entra ID and Astra Schedule.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Astra Schedule so that I can control who has access to Astra Schedule, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Astra Schedule
+# Microsoft Entra single sign-on (SSO) integration with Astra Schedule
 
 In this tutorial, you'll learn how to integrate Astra Schedule with Microsoft Entra ID. When you integrate Astra Schedule with Microsoft Entra ID, you can:
 

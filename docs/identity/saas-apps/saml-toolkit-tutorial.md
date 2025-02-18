@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Microsoft Entra SAML Toolkit'
+title: Microsoft Entra SSO integration with Microsoft Entra SAML Toolkit
 description: Learn how to configure single sign-on between Microsoft Entra ID and Microsoft Entra SAML Toolkit.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Microsoft Entra SAML Toolkit so that I can control who has access to Microsoft Entra SAML Toolkit, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Microsoft Entra SAML Toolkit
+# Microsoft Entra SSO integration with Microsoft Entra SAML Toolkit
 
 In this tutorial, you'll learn how to integrate Microsoft Entra SAML Toolkit with Microsoft Entra ID. When you integrate Microsoft Entra SAML Toolkit with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Athena Systems Login Platform'
+title: Microsoft Entra SSO integration with Athena Systems Login Platform
 description: Learn how to configure single sign-on between Microsoft Entra ID and Athena Systems Login Platform.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Athena Systems Login Platform so that I can control who has access to Athena Systems Login Platform, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Athena Systems Login Platform
+# Microsoft Entra SSO integration with Athena Systems Login Platform
 
 In this tutorial, you'll learn how to integrate Athena Systems Login Platform with Microsoft Entra ID. When you integrate Athena Systems Login Platform with Microsoft Entra ID, you can:
 

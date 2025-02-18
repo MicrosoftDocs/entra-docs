@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with NegometrixPortal Single Sign On (SSO)'
+title: Microsoft Entra SSO integration with NegometrixPortal Single Sign On (SSO)
 description: Learn how to configure single sign-on between Microsoft Entra ID and NegometrixPortal Single Sign On (SSO).
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and NegometrixPortal Single Sign On (SSO) so that I can control who has access to NegometrixPortal Single Sign On (SSO), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with NegometrixPortal Single Sign On (SSO)
+# Microsoft Entra SSO integration with NegometrixPortal Single Sign On (SSO)
 
 In this tutorial, you'll learn how to integrate NegometrixPortal Single Sign On (SSO) with Microsoft Entra ID. When you integrate NegometrixPortal Single Sign On (SSO) with Microsoft Entra ID, you can:
 

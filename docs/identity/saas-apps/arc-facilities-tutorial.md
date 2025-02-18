@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with ARC Facilities'
+title: Microsoft Entra single sign-on (SSO) integration with ARC Facilities
 description: Learn how to configure single sign-on between Microsoft Entra ID and ARC Facilities.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ARC Facilities so that I can control who has access to ARC Facilities, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with ARC Facilities
+# Microsoft Entra single sign-on (SSO) integration with ARC Facilities
 
 In this tutorial, you'll learn how to integrate ARC Facilities with Microsoft Entra ID. When you integrate ARC Facilities with Microsoft Entra ID, you can:
 

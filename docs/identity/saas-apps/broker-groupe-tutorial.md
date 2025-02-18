@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Broker groupe Achat Solutions'
+title: Microsoft Entra SSO integration with Broker groupe Achat Solutions
 description: Learn how to configure single sign-on between Microsoft Entra ID and Broker groupe Achat Solutions.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Broker groupe Achat Solutions so that I can control who has access to Broker groupe Achat Solutions, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Broker groupe Achat Solutions
+# Microsoft Entra SSO integration with Broker groupe Achat Solutions
 
 In this tutorial, you'll learn how to integrate Broker groupe Achat Solutions with Microsoft Entra ID. When you integrate Broker groupe Achat Solutions with Microsoft Entra ID, you can:
 

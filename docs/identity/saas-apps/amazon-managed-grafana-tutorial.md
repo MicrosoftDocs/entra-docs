@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Amazon Managed Grafana'
+title: Microsoft Entra single sign-on (SSO) integration with Amazon Managed Grafana
 description: Learn how to configure single sign-on between Microsoft Entra ID and Amazon Managed Grafana.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Amazon Managed Grafana so that I can control who has access to Amazon Managed Grafana, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Amazon Managed Grafana
+# Microsoft Entra single sign-on (SSO) integration with Amazon Managed Grafana
 
 In this tutorial, you'll learn how to integrate Amazon Managed Grafana with Microsoft Entra ID. When you integrate Amazon Managed Grafana with Microsoft Entra ID, you can:
 

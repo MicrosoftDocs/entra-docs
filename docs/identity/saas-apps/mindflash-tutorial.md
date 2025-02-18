@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Trakstar Learn'
+title: Microsoft Entra SSO integration with Trakstar Learn
 description: Learn how to configure single sign-on between Microsoft Entra ID and Trakstar Learn (Mindflash).
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Trakstar Learn so that I can control who has access to Trakstar Learn, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Trakstar Learn
+# Microsoft Entra SSO integration with Trakstar Learn
 
 In this tutorial, you'll learn how to integrate Trakstar Learn (Mindflash) with Microsoft Entra ID. When you integrate Learn with Microsoft Entra ID, you can:
 

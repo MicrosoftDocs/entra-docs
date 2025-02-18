@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Mail Luck!'
+title: Microsoft Entra SSO integration with Mail Luck!
 description: Learn how to configure single sign-on between Microsoft Entra ID and Mail Luck!.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Mail Luck! so that I can control who has access to Mail Luck!, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Mail Luck!
+# Microsoft Entra SSO integration with Mail Luck!
 
 In this tutorial, you'll learn how to integrate Mail Luck! with Microsoft Entra ID. When you integrate Mail Luck! with Microsoft Entra ID, you can:
 

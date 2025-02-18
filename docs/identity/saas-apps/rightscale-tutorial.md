@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Rightscale'
+title: Microsoft Entra SSO integration with Rightscale
 description: Learn how to configure single sign-on between Microsoft Entra ID and Rightscale.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Rightscale so that I can control who has access to Rightscale, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Rightscale
+# Microsoft Entra SSO integration with Rightscale
 
 In this tutorial, you'll learn how to integrate Rightscale with Microsoft Entra ID. When you integrate Rightscale with Microsoft Entra ID, you can:
 

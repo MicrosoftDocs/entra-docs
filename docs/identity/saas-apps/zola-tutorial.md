@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Zola'
+title: Microsoft Entra SSO integration with Zola
 description: Learn how to configure single sign-on between Microsoft Entra ID and Zola.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Zola so that I can control who has access to Zola, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Zola
+# Microsoft Entra SSO integration with Zola
 
 In this tutorial, you'll learn how to integrate Zola with Microsoft Entra ID. When you integrate Zola with Microsoft Entra ID, you can:
 

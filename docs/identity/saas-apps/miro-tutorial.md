@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Miro'
+title: Microsoft Entra integration with Miro
 description: Learn how to configure single sign-on between Microsoft Entra ID and Miro.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Miro so that I can control who has access to Miro, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Integrate Miro with Microsoft Entra ID
+# Integrate Miro with Microsoft Entra ID
 
 In this tutorial, you'll learn how to integrate Miro with Microsoft Entra ID. Another version of this tutorial can be found at help.miro.com. When you integrate Miro with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Cloud Academy'
+title: Microsoft Entra SSO integration with Cloud Academy
 description: In this tutorial, you learn how to configure single sign-on between Microsoft Entra ID and Cloud Academy.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Cloud Academy so that I can control who has access to Cloud Academy, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Cloud Academy
+# Microsoft Entra SSO integration with Cloud Academy
 
 In this tutorial, you learn how to integrate Cloud Academy with Microsoft Entra ID. When you integrate Cloud Academy with Microsoft Entra ID, you can:
 

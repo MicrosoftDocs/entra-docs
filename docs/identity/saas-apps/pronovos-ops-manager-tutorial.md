@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with ProNovos Ops Manager'
+title: Microsoft Entra SSO integration with ProNovos Ops Manager
 description: Learn how to configure single sign-on between Microsoft Entra ID and ProNovos Ops Manager.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ProNovos Ops Manager so that I can control who has access to ProNovos Ops Manager, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with ProNovos Ops Manager
+# Microsoft Entra SSO integration with ProNovos Ops Manager
 
 In this tutorial, you'll learn how to integrate ProNovos Ops Manager with Microsoft Entra ID. When you integrate ProNovos Ops Manager with Microsoft Entra ID, you can:
 

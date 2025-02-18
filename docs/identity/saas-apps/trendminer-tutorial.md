@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with TrendMiner'
+title: Microsoft Entra single sign-on (SSO) integration with TrendMiner
 description: Learn how to configure single sign-on between Microsoft Entra ID and TrendMiner.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and TrendMiner so that I can control who has access to TrendMiner, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with TrendMiner
+# Microsoft Entra single sign-on (SSO) integration with TrendMiner
 
 In this tutorial, you'll learn how to integrate TrendMiner with Microsoft Entra ID. When you integrate TrendMiner with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Imagineer WebVision'
+title: Microsoft Entra integration with Imagineer WebVision
 description: Learn how to configure single sign-on between Microsoft Entra ID and Imagineer WebVision.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Imagineer WebVision so that I can control who has access to Imagineer WebVision, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Imagineer WebVision
+# Microsoft Entra integration with Imagineer WebVision
 
 In this tutorial, you learn how to integrate Imagineer WebVision with Microsoft Entra ID.
 Integrating Imagineer WebVision with Microsoft Entra ID provides you with the following benefits:

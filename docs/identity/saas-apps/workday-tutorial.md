@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Workday'
+title: Microsoft Entra single sign-on (SSO) integration with Workday
 description: Learn how to configure single sign-on between Microsoft Entra ID and Workday.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Workday so that I can control who has access to Workday, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Workday
+# Microsoft Entra single sign-on (SSO) integration with Workday
 
 In this tutorial, you'll learn how to integrate Workday with Microsoft Entra ID. When you integrate Workday with Microsoft Entra ID, you can:
 

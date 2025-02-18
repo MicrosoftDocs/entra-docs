@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Central Desktop'
+title: Microsoft Entra integration with Central Desktop
 description: Learn how to configure single sign-on between Microsoft Entra ID and Central Desktop.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Central Desktop so that I can control who has access to Central Desktop, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Central Desktop
+# Microsoft Entra integration with Central Desktop
 
 In this tutorial, you'll learn how to integrate Central Desktop with Microsoft Entra ID. When you integrate Central Desktop with Microsoft Entra ID, you can:
 

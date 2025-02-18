@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Slack'
+title: Microsoft Entra SSO integration with Slack
 description: Learn how to configure single sign-on between Microsoft Entra ID and Slack.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Slack so that I can control who has access to Slack, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Slack
+# Microsoft Entra SSO integration with Slack
 
 In this tutorial, you'll learn how to integrate Slack with Microsoft Entra ID. When you integrate Slack with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with SolarWinds Service Desk (previously Samanage)'
+title: Microsoft Entra integration with SolarWinds Service Desk (previously Samanage)
 description: Learn how to configure single sign-on between Microsoft Entra ID and SolarWinds Service Desk (previously Samanage).
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SolarWinds Service Desk so that I can control who has access to SolarWinds Service Desk, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with SolarWinds Service Desk (previously Samanage)
+# Microsoft Entra integration with SolarWinds Service Desk (previously Samanage)
 
 In this tutorial, you'll learn how to integrate SolarWinds with Microsoft Entra ID. When you integrate SolarWinds with Microsoft Entra ID, you can:
 

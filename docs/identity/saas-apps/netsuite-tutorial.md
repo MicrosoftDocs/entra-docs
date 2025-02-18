@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with NetSuite'
+title: Microsoft Entra single sign-on (SSO) integration with NetSuite
 description: Learn how to configure single sign-on between Microsoft Entra ID and NetSuite.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Netsuite so that I can control who has access to Netsuite, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Integrate Microsoft Entra single sign-on (SSO) with NetSuite
+# Integrate Microsoft Entra single sign-on (SSO) with NetSuite
 
 In this tutorial, you'll learn how to integrate NetSuite with Microsoft Entra ID. When you integrate NetSuite with Microsoft Entra ID, you can:
 

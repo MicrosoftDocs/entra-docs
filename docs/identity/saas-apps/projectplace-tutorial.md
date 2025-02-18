@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with ProjectPlace'
+title: Microsoft Entra SSO integration with ProjectPlace
 description: Learn how to configure single sign-on between Microsoft Entra ID and ProjectPlace.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ProjectPlace so that I can control who has access to ProjectPlace, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with ProjectPlace
+# Microsoft Entra SSO integration with ProjectPlace
 
 In this tutorial, you'll learn how to integrate ProjectPlace with Microsoft Entra ID. When you integrate ProjectPlace with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Timeclock 365 SAML'
+title: Microsoft Entra SSO integration with Timeclock 365 SAML
 description: Learn how to configure single sign-on between Microsoft Entra ID and Timeclock 365 SAML.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Timeclock 365 SAML so that I can control who has access to Timeclock 365 SAML, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Timeclock 365 SAML
+# Microsoft Entra SSO integration with Timeclock 365 SAML
 
 In this tutorial, you'll learn how to integrate Timeclock 365 SAML with Microsoft Entra ID. When you integrate Timeclock 365 SAML with Microsoft Entra ID, you can:
 

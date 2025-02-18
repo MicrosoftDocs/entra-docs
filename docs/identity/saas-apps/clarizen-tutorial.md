@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Clarizen One'
+title: Microsoft Entra SSO integration with Clarizen One
 description: Learn how to configure single sign-on between Microsoft Entra ID and Clarizen One.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Clarizen One so that I can control who has access to Clarizen One, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Clarizen One
+# Microsoft Entra SSO integration with Clarizen One
 
 In this tutorial, you'll learn how to integrate Clarizen One with Microsoft Entra ID. When you integrate Clarizen One with Microsoft Entra ID, you can:
 

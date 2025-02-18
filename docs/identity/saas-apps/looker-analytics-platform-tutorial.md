@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Looker Analytics Platform'
+title: Microsoft Entra SSO integration with Looker Analytics Platform
 description: Learn how to configure single sign-on between Microsoft Entra ID and Looker Analytics Platform.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Looker Analytics Platform so that I can control who has access to Looker Analytics Platform, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Looker Analytics Platform
+# Microsoft Entra SSO integration with Looker Analytics Platform
 
 In this tutorial, you'll learn how to integrate Looker Analytics Platform with Microsoft Entra ID. When you integrate Looker Analytics Platform with Microsoft Entra ID, you can:
 

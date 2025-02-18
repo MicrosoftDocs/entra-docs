@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with CyberSolutions CYBERMAILΣ'
+title: Microsoft Entra SSO integration with CyberSolutions CYBERMAILΣ
 description: Learn how to configure single sign-on between Microsoft Entra ID and CyberSolutions CYBERMAILΣ.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and CyberSolutions CYBERMAILÎ£ so that I can control who has access to CyberSolutions CYBERMAILÎ£, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with CyberSolutions CYBERMAILΣ
+# Microsoft Entra SSO integration with CyberSolutions CYBERMAILΣ
 
 In this tutorial, you'll learn how to integrate CyberSolutions CYBERMAILΣ with Microsoft Entra ID. When you integrate CyberSolutions CYBERMAILΣ with Microsoft Entra ID, you can:
 

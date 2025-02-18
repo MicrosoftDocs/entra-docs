@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with ExactCare SSO'
+title: Microsoft Entra single sign-on (SSO) integration with ExactCare SSO
 description: Learn how to configure single sign-on between Microsoft Entra ID and ExactCare SSO.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ExactCare SSO so that I can control who has access to ExactCare SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with ExactCare SSO
+# Microsoft Entra single sign-on (SSO) integration with ExactCare SSO
 
 In this tutorial, you'll learn how to integrate ExactCare SSO with Microsoft Entra ID. When you integrate ExactCare SSO with Microsoft Entra ID, you can:
 

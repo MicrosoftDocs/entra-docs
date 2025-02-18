@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with raum]für[raum'
+title: Microsoft Entra single sign-on (SSO) integration with raum]für[raum
 description: Learn how to configure single sign-on between Microsoft Entra ID and raum]für[raum.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and raum]fÃ¼r[raum so that I can control who has access to raum]fÃ¼r[raum, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with raum]für[raum
+# Microsoft Entra single sign-on (SSO) integration with raum]für[raum
 
 In this tutorial, you'll learn how to integrate raum]für[raum with Microsoft Entra ID. When you integrate raum]für[raum with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with EduBrite LMS'
+title: Microsoft Entra SSO integration with EduBrite LMS
 description: Learn how to configure single sign-on between Microsoft Entra ID and EduBrite LMS.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and EduBrite LMS so that I can control who has access to EduBrite LMS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with EduBrite LMS
+# Microsoft Entra SSO integration with EduBrite LMS
 
 In this tutorial, you'll learn how to integrate EduBrite LMS with Microsoft Entra ID. When you integrate EduBrite LMS with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with CrowdStrike Falcon Platform'
+title: Microsoft Entra SSO integration with CrowdStrike Falcon Platform
 description: Learn how to configure single sign-on between Microsoft Entra ID and CrowdStrike Falcon Platform.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and CrowdStrike Falcon Platform so that I can control who has access to CrowdStrike Falcon Platform, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with CrowdStrike Falcon Platform
+# Microsoft Entra SSO integration with CrowdStrike Falcon Platform
 
 In this tutorial, you'll learn how to integrate CrowdStrike Falcon Platform with Microsoft Entra ID. When you integrate CrowdStrike Falcon Platform with Microsoft Entra ID, you can:
 

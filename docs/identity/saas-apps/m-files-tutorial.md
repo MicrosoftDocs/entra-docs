@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with M-Files'
+title: Microsoft Entra integration with M-Files
 description: Learn how to configure single sign-on between Microsoft Entra ID and M-Files.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and M-Files so that I can control who has access to M-Files, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with M-Files
+# Microsoft Entra integration with M-Files
 
 In this tutorial, you'll learn how to integrate M-Files with Microsoft Entra ID. When you integrate M-Files with Microsoft Entra ID, you can:
 

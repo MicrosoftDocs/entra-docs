@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Configure Airstack for automatic user provisioning with Microsoft Entra ID'
+title: Configure Airstack for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Airstack.
 
 author: thomasakelo
@@ -15,7 +15,7 @@ ms.author: thomasakelo
 
 ---
 
-# Tutorial: Configure Airstack for automatic user provisioning
+# Configure Airstack for automatic user provisioning
 
 The objective of this tutorial is to demonstrate the steps to be performed in Airstack and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Airstack.
 

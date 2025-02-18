@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Oktopost SAML'
+title: Microsoft Entra single sign-on (SSO) integration with Oktopost SAML
 description: Learn how to configure single sign-on between Microsoft Entra ID and Oktopost SAML.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Oktopost SAML so that I can control who has access to Oktopost SAML, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Oktopost SAML
+# Microsoft Entra single sign-on (SSO) integration with Oktopost SAML
 
 In this tutorial, you'll learn how to integrate Oktopost SAML with Microsoft Entra ID. When you integrate Oktopost SAML with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Edcor'
+title: Microsoft Entra SSO integration with Edcor
 description: Learn how to configure single sign-on between Microsoft Entra ID and Edcor.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Edcor so that I can control who has access to Edcor, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Edcor
+# Microsoft Entra SSO integration with Edcor
 
 In this tutorial, you'll learn how to integrate Edcor with Microsoft Entra ID. When you integrate Edcor with Microsoft Entra ID, you can:
 

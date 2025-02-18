@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with IWT Procurement Suite'
+title: Microsoft Entra single sign-on (SSO) integration with IWT Procurement Suite
 description: Learn how to configure single sign-on between Microsoft Entra ID and IWT Procurement Suite.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and IWT Procurement Suite so that I can control who has access to IWT Procurement Suite, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with IWT Procurement Suite
+# Microsoft Entra single sign-on (SSO) integration with IWT Procurement Suite
 
 In this tutorial, you'll learn how to integrate IWT Procurement Suite with Microsoft Entra ID. When you integrate IWT Procurement Suite with Microsoft Entra ID, you can:
 

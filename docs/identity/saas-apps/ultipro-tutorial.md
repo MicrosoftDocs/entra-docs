@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with UKG Pro'
+title: Microsoft Entra SSO integration with UKG Pro
 description: Learn how to configure single sign-on between Microsoft Entra ID and UKG Pro.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and UKG Pro so that I can control who has access to UKG Pro, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with UKG Pro
+# Microsoft Entra SSO integration with UKG Pro
 
 In this tutorial, you'll learn how to integrate UKG Pro with Microsoft Entra ID. When you integrate UKG Pro with Microsoft Entra ID, you can:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Yonyx Interactive Guides'
+title: Microsoft Entra SSO integration with Yonyx Interactive Guides
 description: Learn how to configure single sign-on between Microsoft Entra ID and Yonyx Interactive Guides.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Yonyx Interactive Guides so that I can control who has access to Yonyx Interactive Guides, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Yonyx Interactive Guides
+# Microsoft Entra SSO integration with Yonyx Interactive Guides
 
 In this tutorial, you'll learn how to integrate Yonyx Interactive Guides with Microsoft Entra ID. When you integrate Yonyx Interactive Guides with Microsoft Entra ID, you can:
 

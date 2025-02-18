@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Image Relay'
+title: Microsoft Entra integration with Image Relay
 description: Learn how to configure single sign-on between Microsoft Entra ID and Image Relay.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Image Relay so that I can control who has access to Image Relay, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Image Relay
+# Microsoft Entra integration with Image Relay
 
 In this tutorial, you'll learn how to integrate Image Relay with Microsoft Entra ID. When you integrate Image Relay with Microsoft Entra ID, you can:
 

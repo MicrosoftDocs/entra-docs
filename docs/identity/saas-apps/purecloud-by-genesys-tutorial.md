@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Genesys Cloud for Azure'
+title: Microsoft Entra single sign-on (SSO) integration with Genesys Cloud for Azure
 description: Learn how to configure single sign-on between Microsoft Entra ID and Genesys Cloud for Azure.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Genesys Cloud for Azure so that I can control who has access to Genesys Cloud for Azure, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Genesys Cloud for Azure
+# Microsoft Entra single sign-on (SSO) integration with Genesys Cloud for Azure
 
 In this tutorial, you'll learn how to integrate Genesys Cloud for Azure with Microsoft Entra ID. When you integrate Genesys Cloud for Azure with Microsoft Entra ID, you can:
 

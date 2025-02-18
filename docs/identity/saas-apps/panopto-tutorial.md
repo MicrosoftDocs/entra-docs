@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Panopto'
+title: Microsoft Entra integration with Panopto
 description: Learn how to configure single sign-on between Microsoft Entra ID and Panopto.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Panopto so that I can control who has access to Panopto, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Panopto
+# Microsoft Entra integration with Panopto
 
 In this tutorial, you'll learn how to integrate Panopto with Microsoft Entra ID. When you integrate Panopto with Microsoft Entra ID, you can:
 

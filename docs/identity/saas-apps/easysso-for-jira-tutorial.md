@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with EasySSO for Jira'
+title: Microsoft Entra single sign-on (SSO) integration with EasySSO for Jira
 description: Learn how to configure single sign-on between Microsoft Entra ID and EasySSO for Jira.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with EasySSO for Jira
+# Microsoft Entra single sign-on (SSO) integration with EasySSO for Jira
 
 In this tutorial, you'll learn how to integrate EasySSO for Jira with Microsoft Entra ID. When you integrate EasySSO for Jira with Microsoft Entra ID, you can:
 

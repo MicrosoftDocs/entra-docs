@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Moxtra'
+title: Microsoft Entra SSO integration with Moxtra
 description: Learn how to configure single sign-on between Microsoft Entra ID and Moxtra.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Moxtra so that I can control who has access to Moxtra, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Moxtra
+# Microsoft Entra SSO integration with Moxtra
 
 In this tutorial, you'll learn how to integrate Moxtra with Microsoft Entra ID. When you integrate Moxtra with Microsoft Entra ID, you can:
 

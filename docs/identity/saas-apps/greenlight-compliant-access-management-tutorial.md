@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Greenlight Compliant Access Management'
+title: Microsoft Entra single sign-on (SSO) integration with Greenlight Compliant Access Management
 description: Learn how to configure single sign-on between Microsoft Entra ID and Greenlight Compliant Access Management.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Greenlight Compliant Access Management so that I can control who has access to Greenlight Compliant Access Management, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Greenlight Compliant Access Management
+# Microsoft Entra single sign-on (SSO) integration with Greenlight Compliant Access Management
 
 In this tutorial, you'll learn how to integrate Greenlight Compliant Access Management with Microsoft Entra ID. When you integrate Greenlight Compliant Access Management with Microsoft Entra ID, you can:
 

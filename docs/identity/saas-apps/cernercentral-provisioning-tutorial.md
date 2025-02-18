@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: User provisioning for Cerner Central'
+title: User provisioning for Cerner Central
 description: Learn how to configure Microsoft Entra ID to automatically provision users to a roster in Cerner Central.
 
 author: ArvindHarinder1
@@ -14,7 +14,7 @@ ms.author: arvinh
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Cerner Central so that I can streamline the user management process and ensure that users have the appropriate access to Cerner Central.
 ---
 
-# Tutorial: Configure Cerner Central for automatic user provisioning
+# Configure Cerner Central for automatic user provisioning
 
 The objective of this tutorial is to show you the steps you need to perform in Cerner Central and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to a user roster in Cerner Central.
 

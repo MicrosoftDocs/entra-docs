@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with productboard'
+title: Microsoft Entra integration with productboard
 description: Learn how to configure single sign-on between Microsoft Entra ID and productboard.
 
 author: nguhiu
@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and productboard so that I can control who has access to productboard, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Integrate productboard with Microsoft Entra ID
+# Integrate productboard with Microsoft Entra ID
 
 In this tutorial, you'll learn how to integrate productboard with Microsoft Entra ID. When you integrate productboard with Microsoft Entra ID, you can:
 

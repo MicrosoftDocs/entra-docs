@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Framer'
+title: Microsoft Entra SSO integration with Framer
 description: Learn how to configure single sign-on between Microsoft Entra ID and Framer.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Framer so that I can control who has access to Framer, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Framer
+# Microsoft Entra SSO integration with Framer
 
 In this tutorial, you'll learn how to integrate Framer with Microsoft Entra ID. When you integrate Framer with Microsoft Entra ID, you can:
 

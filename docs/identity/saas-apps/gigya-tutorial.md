@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Gigya'
+title: Microsoft Entra integration with Gigya
 description: Learn how to configure single sign-on between Microsoft Entra ID and Gigya.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Gigya so that I can control who has access to Gigya, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Gigya
+# Microsoft Entra integration with Gigya
 
 In this tutorial, you'll learn how to integrate Gigya with Microsoft Entra ID. When you integrate Gigya with Microsoft Entra ID, you can:
 

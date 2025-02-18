@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Palo Alto Networks - Admin UI'
+title: Microsoft Entra SSO integration with Palo Alto Networks - Admin UI
 description: Learn how to configure single sign-on between Microsoft Entra ID and Palo Alto Networks - Admin UI.
 
 author: nguhiu
@@ -14,7 +14,7 @@ ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Palo Alto Networks - Admin UI so that I can control who has access to Palo Alto Networks - Admin UI, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Palo Alto Networks - Admin UI
+# Microsoft Entra SSO integration with Palo Alto Networks - Admin UI
 
 In this tutorial, you'll learn how to integrate Palo Alto Networks - Admin UI with Microsoft Entra ID. When you integrate Palo Alto Networks - Admin UI with Microsoft Entra ID, you can:
 

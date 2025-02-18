@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with WAN-Sign'
+title: Microsoft Entra SSO integration with WAN-Sign
 description: Learn how to configure single sign-on between Microsoft Entra ID and WAN-Sign.
 
 author: nguhiu
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and WAN-Sign so that I can control who has access to WAN-Sign, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with WAN-Sign
+# Microsoft Entra SSO integration with WAN-Sign
 
 In this tutorial, you'll learn how to integrate WAN-Sign with Microsoft Entra ID. When you integrate WAN-Sign with Microsoft Entra ID, you can:
 
