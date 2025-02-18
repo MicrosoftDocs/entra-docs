@@ -2,7 +2,7 @@
 title: 'Tutorial: Microsoft Entra SSO integration with Axiad Conductor for Entra ID'
 description: Learn how to configure single sign-on between Microsoft Entra ID and Axiad Conductor for Entra ID.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
@@ -10,7 +10,7 @@ ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Axiad Conductor for Entra ID so that I can control who has access to Axiad Conductor for Entra ID, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
@@ -34,7 +34,7 @@ To get started, you need the following items:
 
 In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
 
-* Axiad Conductor for Entra ID supports **SP** initiated SSO.
+* Axiad Conductor for Entra ID supports **SP** and **IDP** initiated SSO.
 * Axiad Conductor for Entra ID supports [Automated user provisioning](axiad-cloud-provisioning-tutorial.md).
 
 ## Add Axiad Conductor for Entra ID from the gallery
@@ -79,13 +79,21 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Basic SAML Configuration** section, perform the following steps: 
 
     a. In the **Identifier (Entity ID)** text box, type a URL using the following pattern:
-    `https://access-<INSTANCE_NAME>.axiadids.net/<CUSTOM_URL>`
+    `https://access-<tenantName>.<platform>.axiadids.net/auth/realms/master`
 
-    b. In the **Reply URL** textbox, type a URL using the following pattern:
-    `https://access-<INSTANCE_NAME>.axiadids.net/<CUSTOM_URL>`
+    b. In the **Reply URL** textbox, type one of the following URLs:
 
-    c. In the **Sign on URL** text box, type a URL using the following pattern:
-    `https://portal-<INSTANCE_NAME>.axiadids.net`
+    | Reply URL |
+    |----|
+    | `https://access-user-<tenantName>.<platform>.axiadids.net/auth/realms/master/broker/saml/endpoint` |
+    | `https://access-<tenantName>.<platform>.axiadids.net/auth/realms/master/broker/saml/endpoint` |
+
+    c. In the **Sign on URL** text box, type one of the following URLs:  
+
+    | Sign on URL |
+    |----|
+    | `https://portal-<tenantName>.<platform>.axiadids.net/user` |
+    | `https://portal-<tenantName>.<platform>.axiadids.net/operator` |
 
 	> [!NOTE]
 	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Axiad Conductor for Entra ID support team](mailto:support@axiad.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.

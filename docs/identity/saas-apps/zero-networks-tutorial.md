@@ -2,7 +2,7 @@
 title: 'Tutorial: Microsoft Entra SSO integration with Zero Networks'
 description: Learn how to configure single sign-on between Microsoft Entra ID and Zero Networks.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
@@ -10,7 +10,7 @@ ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Zero Networks so that I can control who has access to Zero Networks, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -35,7 +35,7 @@ To get started, you need the following items:
 
 In this tutorial, you configure Microsoft Entra SSO for the Zero Networks Admin Portal and Access Portal.
 
-* Zero Networks supports **SP** initiated SSO.
+* Zero Networks supports **SP** and **IDP** initiated SSO.
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
@@ -68,13 +68,13 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Basic SAML Configuration** section, perform the following step.
 
 	a. In the **Identifier (Entity ID)** text box, type the URL:
-    `https://portal.zeronetworks.com/api/v1/sso/azure/metadata`
+    `https://<customerUrl>.zeronetworks.com/api/v1/sso/azure/metadata`
      
 	b. In the **Reply URL (Assertion Consumer Service URL)** text box, type the URL:
-    `https://portal.zeronetworks.com/api/v1/sso/azure/acs`
+    `https://<customerUrl>.zeronetworks.com/api/v1/sso/azure/acs`
 	
 	c. In the **Sign on URL** text box, type the URL:
-    `https://portal.zeronetworks.com/#/login`      	
+    `https://<customerUrl>.zeronetworks.com/#/login`      	
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Certificates** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 

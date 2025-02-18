@@ -2,14 +2,14 @@
 title: 'Tutorial: Microsoft Entra SSO integration with Printix'
 description: Learn how to configure single sign-on between Microsoft Entra ID and Printix.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Printix so that I can control who has access to Printix, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---

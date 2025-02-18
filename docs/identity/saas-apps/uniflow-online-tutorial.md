@@ -2,7 +2,7 @@
 title: 'Tutorial: Microsoft Entra SSO integration with uniFLOW Online'
 description: Learn how to configure single sign-on between Microsoft Entra ID and uniFLOW Online.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
@@ -10,14 +10,14 @@ ms.subservice: saas-apps
 
 ms.topic: tutorial
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and uniFLOW Online so that I can control who has access to uniFLOW Online, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Tutorial: Microsoft Entra SSO integration with uniFLOW Online
 
-In this tutorial, you'll learn how to integrate uniFLOW Online with Microsoft Entra ID. When you integrate uniFLOW Online with Microsoft Entra ID, you can:
+In this tutorial, you learn how to integrate uniFLOW Online with Microsoft Entra ID. When you integrate uniFLOW Online with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to uniFLOW Online.
 * Enable your users to sign in to uniFLOW Online with their Microsoft Entra accounts.
@@ -46,7 +46,7 @@ To configure the integration of uniFLOW Online into Microsoft Entra ID, you need
 1. In the **Add from the gallery** section, type **uniFLOW Online** in the search box.
 1. Select **uniFLOW Online** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 <a name='configure-and-test-azure-ad-sso-for-uniflow-online'></a>
 
@@ -72,7 +72,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **uniFLOW Online** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
@@ -88,7 +88,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	| `https://<tenant_domain_name>.sg.uniflowonline.com` |
 	| `https://<tenant_domain_name>.jp.uniflowonline.com` |
 	| `https://<tenant_domain_name>.au.uniflowonline.com` |
-	
+	| `https://<tenant_domain_name>.ca.uniflowonline.com` |
 
 	b. In the **Sign on URL** text box, type a URL using one of the following patterns:
 
@@ -100,9 +100,10 @@ Follow these steps to enable Microsoft Entra SSO.
 	| `https://<tenant_domain_name>.sg.uniflowonline.com` |
 	| `https://<tenant_domain_name>.jp.uniflowonline.com` |
 	| `https://<tenant_domain_name>.au.uniflowonline.com` |
+    | `https://<tenant_domain_name>.ca.uniflowonline.com` |
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier and Sign on URL. Contact [uniFLOW Online Client support team](mailto:support@nt-ware.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Azure portal or refer to the reply URL displayed in your uniFLOW Online tenant.
+	> These values aren't real. Update these values with the actual Identifier and Sign on URL. Contact [uniFLOW Online Client support team](mailto:support@nt-ware.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Azure portal or refer to the reply URL displayed in your uniFLOW Online tenant.
 
 1. uniFLOW Online application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**. uniFLOW Online application expects **nameidentifier** to be mapped with **user.objectid**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
 
@@ -112,13 +113,13 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	| Name |  Source Attribute|
 	| -----------| --------------- |
-	| displayname | user.displayname |
+	| display name | user.displayname |
 	| nickname | user.onpremisessamaccountname |
 
    > [!NOTE]
-   > The `user.onpremisessamaccountname` attribute will contain a value only if your Microsoft Entra users are synced from a local Windows Active Directory.
+   > The `user.onpremisessamaccountname` attribute contains a value only if your Microsoft Entra users are synced from a local Windows Active Directory.
 
-1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
 	![The Certificate download link](common/copy-metadataurl.png)
 
@@ -126,7 +127,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 ### Create a Microsoft Entra test user
 
-In this section, you'll create a test user called B.Simon.
+In this section, you create a test user called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
@@ -142,15 +143,15 @@ In this section, you'll create a test user called B.Simon.
 
 ### Assign the Microsoft Entra test user
 
-In this section, you'll enable B.Simon to use single sign-on by granting access to uniFLOW Online.
+In this section, you enable B.Simon to use single sign-on by granting access to uniFLOW Online.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **uniFLOW Online**.
 1. In the app's overview page, select **Users and groups**.
-1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
-   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-   1. In the **Add Assignment** dialog, click the **Assign** button.
+1. Select **Add user/group**, then select **Users and groups** in the **Added Assignment** dialog.
+   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then select the **Select** button at the bottom of the screen.
+   1. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
+   1. In the **Added Assignment** dialog, select the **Assign** button.
 
 > [!NOTE]
 > To allow all users to access the application without manual assignment, go to the **Manage** section and select **Properties**. Then, change the **User assignment required** parameter to **NO**.
@@ -164,15 +165,15 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 	![Screenshot shows Extension selected from the uniFLOW Online site.](./media/uniflow-online-tutorial/extensions.png)
 
 
-1. Click **Identity Providers**.
+1. Select **Identity Providers**.
 
 	![Screenshot shows Identity Providers selected.](./media/uniflow-online-tutorial/identity-providers.png)
 	
-1. Click **Configure identity providers**
+1. Select **Configure identity providers**
 
 	![Screenshot shows box to configure identity providers](./media/uniflow-online-tutorial/configure-identity-providers.png)
 
-1. Click on **Add identity provider**.
+1. Select on **Add identity provider**.
 
 	![Screenshot shows Add identity provider selected.](./media/uniflow-online-tutorial/add-identity-providers.png)
 
@@ -188,7 +189,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	c. For **WS-Federation type**, select **Microsoft Entra ID** option from the dropdown.
 
-	d. Click **Save**.
+	d. Select **Save**.
 
 1. On the **General** tab, perform the following steps:
 
@@ -205,10 +206,10 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	e. Select **Automatic user registration** as **Activated**.
 
-	f. Click **Save**.
+	f. Select **Save**.
 	
 > [!NOTE]
-> **Reply URL** is automatically pre-filled and cannot be changed.	
+> **Reply URL** is automatically prefilled and can't be changed.	
 
 ### Sign in to uniFLOW Online using the created test user
 
@@ -222,11 +223,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options. 
 
-* Click on **Test this application**, this will redirect to uniFLOW Online Sign-on URL where you can initiate the login flow. 
+* Select on **Test this application**, this will redirect to uniFLOW Online Sign-on URL where you can initiate the sign in flow. 
 
-* Go to uniFLOW Online Sign-on URL directly and initiate the login flow from there.
+* Go to uniFLOW Online Sign-on URL directly and initiate the sign in flow from there.
 
-* You can use Microsoft My Apps. When you click the uniFLOW Online tile in the My Apps, this will redirect to uniFLOW Online Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* You can use Microsoft My Apps. When you select the uniFLOW Online tile in the My Apps, this will redirect to uniFLOW Online Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 ## Next steps
 

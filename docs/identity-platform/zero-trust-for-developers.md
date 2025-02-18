@@ -57,7 +57,7 @@ The Microsoft identity platform application registration portal is the primary e
 Consider the following actions prevent breaches in security:
 
 - Properly define the redirect URIs for the application. Don't use the same application registration for multiple applications.
-- Verify redirect URIs used in the application registration for ownership and to avoid domain takeovers. Don't create the application as a multitenant unless it's intended to be. |
+- Verify redirect URIs used in the application registration for ownership and to avoid domain takeovers. Don't create the application as a multitenant unless it's intended to be.
 - Make sure application and service principal owners are always defined and maintained for the applications registered in the tenant.
 
 ## See also

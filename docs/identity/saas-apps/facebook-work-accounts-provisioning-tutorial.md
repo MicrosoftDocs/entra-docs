@@ -2,7 +2,7 @@
 title: 'Tutorial: Configure Meta Work Accounts for automatic user provisioning with Microsoft Entra ID'
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Meta Work Accounts.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.author: thomasakelo
 ms.reviewer: CelesteDG

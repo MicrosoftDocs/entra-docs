@@ -66,7 +66,7 @@ The PKI-based trust store has higher limits for the number of CAs and the size o
 
 An admin must configure the trusted CAs that issue user certificates. 
 Only least-privileged administrators are needed to make changes. 
-A PKI-based trust store has RBAC roles [Privilege Authentication Administrator](../role-based-access-control/permissions-reference.md#privileged-authentication-administrator) and [Authentication Administrator](../role-based-access-control/permissions-reference.md#authentication-administrator).
+A PKI-based trust store has RBAC role [Privilege Authentication Administrator](../role-based-access-control/permissions-reference.md#privileged-authentication-administrator).
 
 Upload PKI feature of the PKI-based trust store is available only with  Microsoft Entra ID P1 or P2 license. However, with free license as well, admins can upload all the CAs individually instead of the PKI file and configure the PKI-based trust store.
 
@@ -74,7 +74,7 @@ Upload PKI feature of the PKI-based trust store is available only with  Microsof
 
 #### Create a PKI container object
 1.	Create a PKI container object.
-   1. Sign in to the Microsoft Entra admin center as an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+   1. Sign in to the Microsoft Entra admin center as an [Privilege Authentication Administrator](../role-based-access-control/permissions-reference.md#privileged-authentication-administrator).
    1. Browse to **Protection** > **Show more** > **Security Center** (or **Identity Secure Score**) > **Public key infrastructure (Preview)**.
    1. Click **+ Create PKI**.
    1. Enter **Display Name**.
@@ -284,11 +284,14 @@ Once certificate-based authentication is enabled on the tenant, all users in the
 
 ## Step 3: Configure authentication binding policy
 
-The authentication binding policy helps determine the strength of authentication to either a single factor or multifactor. The default protection level for the certificates on the tenant is **single-factor authentication**.
+The authentication binding policy helps determine the strength of authentication to either a single factor or multifactor. The default protection level for all the certificates on the tenant is **Single-factor authentication**.
+The default affinity binding at the tenant level is **Low**. An Authentication Policy Administrator can change the default value from single-factor to multifactor and if changes, all the certificates on the tenant will be considered of strength **Multi-factor authentication**. Similarly, the affinity binding at the tenant level can be set to **High** which means all the certificates will be validated using only high affinity attributes.
 
-An Authentication Policy Administrator can change the default value from single-factor to multifactor and configure custom policy rules. Authentication binding rules map certificate attributes, such as Issuer, or Policy Object ID (OID), or Issuer and Policy OID, to a value and select default protection level for that rule. You can create multiple rules.
+>[!IMPORTANT]
+>Admin should set the tenant default to a value that is applicable for most certificates and create custom rules only for specific certificates that needs different protection level and/or affinity binding than tenant default. All the authentication methods configuration go into the same policy file so creating multiple redundant rules can hit the policy file limit.
 
-To modify tenant default settings in the Microsoft Entra admin center, complete the following steps:
+Authentication binding rules map certificate attributes, such as Issuer, or Policy Object ID (OID), or Issuer and Policy OID, to a value and select default protection level as well as affinity binding for that rule. 
+To modify tenant default settings and create custom rules in the Microsoft Entra admin center, complete the following steps:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Protection** > **Authentication methods** > **Policies**.
@@ -304,9 +307,9 @@ To modify tenant default settings in the Microsoft Entra admin center, complete 
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/change-default.png" alt-text="Screenshot of how to change the default policy to MFA.":::
 
-1. You can also set up custom authentication binding rules to help determine the protection level for client certificates. It can be configured using either the issuer Subject or Policy OID fields in the certificate.
+1. You can also set up custom authentication binding rules to help determine the protection level for client certificates that need different values for protection level or affinity binding than tenant default. The rules can be configured using either the issuer Subject or Policy OID or both fields in the certificate.
 
-   Authentication binding rules map the certificate attributes (issuer or Policy OID) to a value, and select default protection level for that rule. Multiple rules can be created.
+   Authentication binding rules map the certificate attributes (issuer or Policy OID) to a value, and select default protection level for that rule. Multiple rules can be created. For the config below let us assume the tenant default is **Multifactor authentication** and **Low** affinity binding.
 
    To add custom rules, select **Add rule**.
 
@@ -315,14 +318,14 @@ To modify tenant default settings in the Microsoft Entra admin center, complete 
    To create a rule by certificate issuer, select **Certificate issuer**.
 
    1. Select a **Certificate issuer identifier** from the list box.
-   1. Select **Multifactor authentication**, **Low** affinity binding, and then click **Add**. When prompted, click **I acknowledge** to finish adding the rule. 
+   1. Select **Multifactor authentication** but **High** affinity binding, and then click **Add**. When prompted, click **I acknowledge** to finish adding the rule. 
 
       :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/multifactor-issuer.png" alt-text="Screenshot of multifactor authentication policy.":::
 
    To create a rule by Policy OID, select **Policy OID**.
 
    1. Enter a value for **Policy OID**.
-   1. Select **Multifactor authentication**, **Low** affinity binding, and then click **Add**. When prompted, click **I acknowledge** to finish adding the rule. 
+   1. Select **Single-factor authentication**, **Low** affinity binding, and then click **Add**. When prompted, click **I acknowledge** to finish adding the rule. 
 
       :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/multifactor-policy-oid.png" alt-text="Screenshot of mapping to Policy OID.":::
 
@@ -330,8 +333,8 @@ To modify tenant default settings in the Microsoft Entra admin center, complete 
 
    1. Select **Certificate Issuer** and **Policy OID**.
    1. Select an issuer and enter the policy OID.
-   1. For Authentication strength, select **Single-factor authentication** or **Multifactor authentication**.
-   1. For Affinity binding, select **Low**.
+   1. For Authentication strength, select **Multifactor authentication**.
+   1. For Affinity binding, select **High**.
  
       :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/issuer-and-policy-oid.png" alt-text="Screenshot of how to select a low affinity binding.":::
 
