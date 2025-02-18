@@ -2,14 +2,14 @@
 title: App Integration Tutorials for use with Microsoft Entra ID
 description: Configure Microsoft Entra single sign-on integration with a variety of third-party software as a service application.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: landing-page
 
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 ms.reviewer: celested
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Directions on Microsoft so that I can control who has access to Directions on Microsoft, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
