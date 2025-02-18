@@ -17,7 +17,7 @@ ms.custom: developer
 
 # Tutorial: Prepare your iOS/macOS app for native authentication
 
-[!INCLUDE [applies-to-ios-macOS](../includes/applies-to-ios-macos.md)]
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
 This tutorial demonstrates how to add Microsoft Authentication Library (MSAL) native authentication SDK framework to your iOS/macOS Swift app.
 
@@ -31,7 +31,7 @@ In this tutorial, you learn how to:
 ## Prerequisites
 
 - <a href="https://developer.apple.com/xcode/resources/" target="_blank">Xcode</a>
-- If you haven't already, follow the instructions in [Sign in users in sample iOS (Swift) mobile app by using native authentication](how-to-run-native-authentication-sample-ios-app.md) and register an app in your external tenant. Make sure you complete the following steps:
+- If you haven't already, follow the instructions in [Sign in users in sample iOS (Swift) mobile app by using native authentication](../external-id/customers/how-to-run-native-authentication-sample-ios-app.md) and register an app in your external tenant. Make sure you complete the following steps:
     - Register an application.
     - Enable public client and native authentication flows.
     - Grant API permissions.
@@ -76,7 +76,7 @@ For more information and other mechanisms to add MSAL to your project, see the [
 
 1. Replace the following values with the values from the Microsoft Entra admin center:
    1. Find the `Enter_the_Application_Id_Here` value and replace it with the **Application (client) ID** of the app you registered earlier.
-   1. Find the `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your Directory (tenant) subdomain, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+   1. Find the `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your Directory (tenant) subdomain, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
    
       The challenge types are a list of values, which the app uses to notify Microsoft Entra about the authentication method that it supports. 
     
