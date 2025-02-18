@@ -108,7 +108,7 @@ Users can sign in to their organization with a QR code, or they can directly sig
 ### Mobile web sign-in experience
 You can use Microsoft's web browser login experience (login.microsoft.com) to sign in users. Users can click **Sign in options** > **Sign in to an organization** > **Sign in with a QR code**.
 
-:::image type="content" source="media/concept-authentication-qr-code/web-sign-in.png" alt-text="Screenshot that shows mobile sign-in experience.":::
+:::image type="content" source="media/concept-authentication-qr-code/web-sign-in.png" alt-text="Screenshot that shows web sign-in experience.":::
 
 
 ### Mobile app sign-in experience 
