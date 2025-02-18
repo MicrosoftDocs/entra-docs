@@ -7,7 +7,7 @@ manager: TeeEarls
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 10/01/2024
 ms.author: zollnerd
 
