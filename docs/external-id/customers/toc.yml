@@ -105,7 +105,7 @@ items:
                   - name: Sign in and sign out
                     href: /entra/identity-platform/tutorial-single-page-app-javascript-sign-in-sign-out
             - name: Angular 
-            items:
+              items:
                   - name: Create Angular app
                     href: /entra/identity-platform/tutorial-single-page-apps-angular-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
                   - name: Configure app for authentication
