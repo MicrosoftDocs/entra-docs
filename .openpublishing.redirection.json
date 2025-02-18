@@ -1914,37 +1914,37 @@
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-prepare-ios-macos-app.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-prepare-ios-macos-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external",
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-prepare-ios-macos-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-macos-sign-up.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-ios-macos-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external",
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-ios-macos-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
       "redirect_document_id": false
     },
         {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-macos-sign-in-sign-out.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-ios-macos-sign-in-sign-out?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external",
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-ios-macos-sign-in-sign-out?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
       "redirect_document_id": false
     },
         {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-macos-sign-in-user-after-sign-up.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-ios-macos-sign-in-user-after-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external",
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-ios-macos-sign-in-user-after-sign-up?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
       "redirect_document_id": false
     },
         {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-macos-self-service-password-reset.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-ios-macos-self-service-password-reset?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external",
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-ios-macos-self-service-password-reset?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
       "redirect_document_id": false
     },
         {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-macos-support-web-fallback.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-ios-macos-support-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external",
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-ios-macos-support-web-fallback?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
       "redirect_document_id": false
     },
         {
       "source_path_from_root": "/docs/external-id/customers/tutorial-native-authentication-ios-sign-in-call-api.md",
-      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-ios-sign-in-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external",
+      "redirect_url": "/entra/identity-platform/tutorial-native-authentication-ios-sign-in-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
       "redirect_document_id": false
     },
     {
