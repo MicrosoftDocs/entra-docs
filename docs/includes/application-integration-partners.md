@@ -61,19 +61,29 @@ Leading provider of Mainframe, Healthcare and ERP integrations. More can be foun
 
 ### KloudIdentity
 #### Description
+KloudIdentity is a solution designed to streamline enterprise Identity Governance and Administration (IGA) operations by simplifying the onboarding process for non-SCIM on-premises and cloud-based Line-of-Business (LOB) applications into Microsoft Entra ID. Serving as a SCIM gateway, KloudIdentity enables seamless inbound and outbound user provisioning between non-SCIM business applications and Entra ID.
 
-KloudIdentity streamlines enterprise operations by simplifying the onboarding process of on-premises Line of Business (LOB) applications and facilitating outbound provisioning of users and groups through Microsoft Entra ID. It serves as a SCIM gateway, enabling non-SCIM compliant LOB applications to seamlessly integrate with Microsoft Entra ID. This application is founded upon a unique design paradigm known as the universal connector space, which offers a standardized platform for creating connectors for various LOB applications through a template-driven approach. This methodology significantly reduces lead time and costs associated with onboarding non-SCIM compliant LOB applications to Microsoft Entra ID for outbound provisioning.
+At the core of KloudIdentity is a unique design paradigm known as the **Universal Connector Space**. This standardized platform facilitates the creation of connectors for various LOB applications through a template-driven approach, significantly reducing lead times and operational costs compared to traditional onboarding methods such as ECMA connectors or custom connector-based solutions.
 
-Integration with LOB applications is primarily achieved through REST APIs, with support also extended to SOAP APIs and PowerShell scripts. Administrators can easily configure attribute mapping templates using a user-friendly web portal. Beyond graphical UI-driven attribute mapping, KloudIdentity offers a customizable policies-based approach, allowing for the configuration of highly tailored sequences of attribute mapping and payload generation.
+KloudIdentity integrates with LOB applications primarily through REST APIs and SQL-based database integration methods. It offers strong attribute mapping mechanisms via a user-friendly web portal, simplifying the configuration process. Administrators can configure attribute mappings through a graphical user interface (UI) or opt for a more advanced, customizable, policies-based approach. This allows for highly tailored sequences of attribute mapping and payload generation. In addition, KloudIdentity supports outbound user provisioning with integrations for IBM i (AS400) and Linux servers.
 
-Furthermore, KloudIdentity provides a Software Development Kit (SDK) to customize the standard connector platform, addressing complex and advanced integration scenarios. This SDK empowers users to make code modifications within the KloudIdentity framework safely and efficiently, enabling seamless integration of LOB applications for users and groups provisioning. The SCIM gateway can be deployed either as a cloud-based solution or within on-premises data centers, supporting a range of deployment options from conventional Internet Information Services (IIS) setups to Kubernetes orchestrated environments
+Another notable feature is the automated application role import capability. KloudIdentity enables application administrators to synchronize application roles with Entra ID, either through automated jobs or on-demand imports via REST APIs. This feature further simplifies role management within the platform.
+
+The solution also includes an insights dashboard that provides essential data analytics for conducting access reviews for all application users onboarded to Entra ID via KloudIdentity. This tool offers valuable insights into user activities and access levels, helping to ensure compliance and security.
+
+To address more complex integration scenarios, KloudIdentity provides a Software Development Kit (SDK). This SDK allows users to customize the standard connector platform, enabling modifications within the KloudIdentity framework in a secure and efficient manner. This ensures that organizations can address unique integration requirements for user and group provisioning with LOB applications.
+
+Finally, KloudIdentity offers deployment flexibility. It can be deployed as a cloud-based solution or on-premises, supporting a range of deployment options, from traditional Internet Information Services (IIS) setups to Kubernetes-orchestrated environments. This flexibility ensures that organizations can deploy KloudIdentity in a way that best fits their infrastructure needs.
+
+In summary, KloudIdentity simplifies the user provisioning and role synchronization process between non-SCIM applications and Microsoft Entra ID. Its unique approach reduces complexity, lead time, and costs associated with traditional integration methods, offering a more efficient and scalable solution for enterprise identity management.
 
 #### Contact information
 * Company website: https://www.kloudynet.com/
+* Product website: https://kloudidentity.kloudynet.com/
 * Azure Marketplace Listing: https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/kloudynettechnologiessdnbhd1588004273044.identity_implementation
 
 #### Popular applications supported
-KloudIdentity provides a universal connector platform; Hence any LOB application can be integrated with REST or SOAP APIs, PowerShell scripts, and SDK approach.
+KloudIdentity provides a universal connector platform; Hence any LOB application can be integrated with REST, SQL based databases, AS400, Linux servers, and SDK approach.
 
 ### Traxion SCIM Gateway
 #### Description
