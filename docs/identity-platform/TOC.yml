@@ -185,7 +185,7 @@
           - name: Sign in users
             href: tutorial-single-page-apps-angular-sign-in-users-app.md
           - name: Get user data from web API
-            href: tutorial-single-page-apps-angular-call-api.md
+            href: tutorial-single-page-apps-angular-extract-user-data.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#single-page-applications
