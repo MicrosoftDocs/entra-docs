@@ -37,9 +37,9 @@ In this tutorial:
     * **Redirect URI**: `http://localhost:3000/`.
 * (External Only) A user flow which has been associated with your app registration. For more information, see [Create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) and [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
 
-### [Workforce tenant](#tab/workforce-tenant)
-
 ## Create a new Angular project
+
+### [Workforce tenant](#tab/workforce-tenant)
 
 To build the Angular project from scratch, follow these steps:
 
