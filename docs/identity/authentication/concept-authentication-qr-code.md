@@ -5,7 +5,7 @@ description: Learn about using QR code authentication method in Microsoft Entra 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/18/2025
+ms.date: 02/19/2025
 
 ms.author: justinha
 author: aanjusingh
@@ -51,7 +51,7 @@ PIN complexity     | Should be enforced to avoid repetition and common sequences
 
 ## Best security practices to implement with QR code authentication 
 
-We recommend the following measures when you enable QR code authentication method as it is a single factor authentication (something you know).  
+We recommend the following measures when you enable QR code authentication method as it's a single-factor authentication (something you know).  
 
 - QR code authentication is primarily for frontline workers (FLW) and not for information workers (IW). We recommend phishing-resistant auth or MFA for IW.
 - Combine QR code authentication with Conditional Access policies as another security layer. We recommended policies such as compliant devices, access within network, allow for certain applications, and shared device mode. 
@@ -60,7 +60,7 @@ We recommend the following measures when you enable QR code authentication metho
 
 ## QR code configurations in the Authentication method policy
 
-Authentication policy administrators can enable QR code in Authentication methods in the Microsoft Entra admin center. QR code authentication is disabled by default.
+Authentication Policy Administrators can enable QR code in Authentication methods in the Microsoft Entra admin center. QR code authentication is disabled by default.
 
 In the Authentication method policy for QR code, you can configure:
 
@@ -77,11 +77,13 @@ In this screenshot, the PIN length is set to the default of eight digits. The li
 
 ## Functional details of QR code authentication method
 
-When an Authentication policy administrator adds a QR code authentication method for a user, it generates a standard QR code and PIN.
-To create a temporary QR code, they need to edit a QR code authentication method. Temporay QR code has shorter lifetime upto 12 hours. It is to reduce cost overhead if user didn't bring their badge with standard QR code. When a QR code authentication method is deleted for the user, they can't sign-in with their existing QR codes and PIN.
+When an Authentication Policy Administrator adds the QR code authentication method for a user, it generates a standard QR code and PIN.
+To create a temporary QR code, they need to edit the QR code authentication method. 
+
+A temporary QR code helps when a user forgets to bring their badge with standard QR code. It has a shorter lifetime, up to 12 hours. When a QR code authentication method is deleted for the user, they can't sign-in with their existing QR codes and PIN.
 
 A PIN works with both standard and temporary QR codes because PIN is valid for the QR code authentication method.
-An Authentication policy administrator can provide a custom PIN or generate a PIN when they create a QR code authentication method. Admins can copy a temporary PIN only when generated. The PIN is masked after it's added to prevent exposure.
+An Authentication Policy Administrator can provide a custom PIN or generate a PIN when they create a QR code authentication method. They can copy a temporary PIN only when they generate it. The PIN is then masked to prevent exposure.
 
 The usability states for a standard QR code, a temporary QR code, and the PIN for a QR code authentication method aren't related to each other. 
 For example, an active QR code authentication method can have a deleted or expired standard QR code, and an active temporary QR code. 
@@ -103,22 +105,21 @@ For more information about how to manage QR codes, see [How to enable the QR cod
 
 ## User sign-in experience with QR code authentication
 
-Users can sign with QR code via web sign-in experience or optimized app sign-in experience.  
+Users can sign with a QR code by using the web sign-in experience or an optimized app sign-in experience.  
 
 ### Mobile web sign-in experience
-You can use Microsoft's web browser login experience (login.microsoft.com) to sign in users. Users can click **Sign in options** > **Sign in to an organization** > **Sign in with a QR code**.
+You can use Microsoft's web browser sign-in experience (login.microsoft.com) to authenticate users. Users can click **Sign in options** > **Sign in to an organization** > **Sign in with a QR code**.
 
 :::image type="content" source="media/concept-authentication-qr-code/sign-in-web.png" alt-text="Screenshot that shows web sign-in experience.":::
 
 
 ### Mobile app sign-in experience 
-This is an another user entry point to sign with QR code. If you are using Microsoft web sign-in expereince for your app, you will be able to use above illustrated QR code entry point. 
-You can optimize sign-in for your apps by using Microsoft Authentication Library (MSAL) to add a QR code sign-in option to your apps sign-in page. This option eliminates two clicks to be able to scan the QR code. For example, you can add QR code sign-in similar to the Teams or Managed Home Screen (MHS) apps. This optimized user experience will be available in BlueFletch, and Jamf app lauchers in March 2025.
+
+You can optimize sign-in for your apps by using Microsoft Authentication Library (MSAL) to add QR code as an option on the sign-in page. For example, you can add QR code sign-in just like Teams or Managed Home Screen (MHS). Then users can scan the QR code with two fewer clicks. This optimized sign-in experience is coming in BlueFletch and Jamf app launchers in March, 2025.
 
 :::image type="content" source="media/concept-authentication-qr-code/teams.png" alt-text="Screenshot that shows Teams sign-in experience.":::
 
 :::image type="content" source="media/concept-authentication-qr-code/managed-home-screen.png" alt-text="Screenshot that shows Managed Home Screen sign-in experience.":::
-
 
 
 ## Unsupported user scenarios in current release
