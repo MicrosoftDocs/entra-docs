@@ -1,37 +1,51 @@
 ---
-title: Ciphers used for Microsoft Entra Private Access  
-description: Learn about the Ciphers used for Microsoft Entra Private Access
+title: Ciphers for Microsoft Entra Private Access  
+description: Learn about the supported cryptographic algorithms, or ciphers, used for Microsoft Entra Private Access.
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
 ms.topic: reference
-ms.date: 02/05/2025
+ms.date: 02/18/2025
 ms.service: global-secure-access
-ms.reviewer: 
+ms.reviewer: sumeetmittal
 
 
 ---
 
-# Ciphers used for Microsoft Entra Private Access
+# Ciphers for Microsoft Entra Private Access
 Microsoft Entra private network connector supports Transport Layer Security (TLS) 1.2, TLS 1.3, and higher, according to the TLS version the customer chooses to enforce. 
 
 ## Cipher suites
-A cipher suite is a set of cryptographic algorithms. Based on the TLS version that the customer chooses to enforce, the proxy chooses a given set of cipher suites. TLS 1.2 and TLS 1.3 use the default Windows ciphers.
+A cipher suite is a set of cryptographic algorithms used to create a secure connection. TLS 1.2 and TLS 1.3 use the default Windows ciphers. 
 
-For a full list of supported ciphers, see the [SSL Server Test (Powered by Qualys SSL Labs)](https://www.ssllabs.com/ssltest/analyze.html?d=testtls13-hipcanary.msappproxy.net).   
-:::image type="content" source="media/reference-ciphers/cipher-suites.png" alt-text="Screenshot of the list of cipher suites as part of the SSL report.":::   
+The full list of supported ciphers are:   
+<span style="color:#009DE5"># TLS 1.3 (suites in server-preferred order)</span>   
+- <span style="color:#008000">TLS_AES_256_GCM_SHA384 (0x1302)</span> $\;\;\;$ ECDH secp384r1 (eq. 7680 bits RSA) $\;\;\;$ FS    
+- <span style="color:#008000">TLS_AES_128_GCM_SHA256 (0x1301)</span> $\;\;\;$ ECDH secp256r1 (eq. 3072 bits RSA) $\;\;\;$ FS    
+
+<span style="color:#009DE5"># TLS 1.2 (suites in server-preferred order)</span>      
+- <span style="color:#008000">TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (0xc030)</span> $\;\;\;$ ECDH secp384r1 (eq. 7680 bits RSA) $\;\;\;$ FS	
+- <span style="color:#008000">TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (0xc02f)</span> $\;\;\;$ ECDH secp256r1 (eq. 3072 bits RSA) $\;\;\;$ FS	
+- <span style="color:#F88017">TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384 (0xc028)</span> $\;\;\;$ ECDH secp384r1 (eq. 7680 bits RSA) $\;\;\;$ FS $\;\;\;$ <span style="color:#F88017">**WEAK**</span>   
+- <span style="color:#F88017">TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256 (0xc027)</span> $\;\;\;$ ECDH secp256r1 (eq. 3072 bits RSA) $\;\;\;$ FS $\;\;\;$ <span style="color:#F88017">**WEAK**</span>   
+- <span style="color:#F88017">TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (0xc014)</span> $\;\;\;$ ECDH secp384r1 (eq. 7680 bits RSA) $\;\;\;$ FS $\;\;\;$ <span style="color:#F88017">**WEAK**</span>   
+- <span style="color:#F88017">TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (0xc013)</span> $\;\;\;$ ECDH secp256r1 (eq. 3072 bits RSA) $\;\;\;$ FS $\;\;\;$ <span style="color:#F88017">**WEAK**</span>   
+- <span style="color:#F88017">TLS_RSA_WITH_AES_256_GCM_SHA384 (0x9d) $\;\;\;$ **WEAK**</span>   
+- <span style="color:#F88017">TLS_RSA_WITH_AES_128_GCM_SHA256 (0x9c) $\;\;\;$ **WEAK**</span>   
+- <span style="color:#F88017">TLS_RSA_WITH_AES_256_CBC_SHA256 (0x3d) $\;\;\;$ **WEAK**</span>   
+- <span style="color:#F88017">TLS_RSA_WITH_AES_128_CBC_SHA256 (0x3c) $\;\;\;$ **WEAK**</span>   
+- <span style="color:#F88017">TLS_RSA_WITH_AES_256_CBC_SHA (0x35) $\;\;\;$ **WEAK**</span>	  
+- <span style="color:#F88017">TLS_RSA_WITH_AES_128_CBC_SHA (0x2f) $\;\;\;$ **WEAK**</span>        
 
 ## Filter ciphers
-The connector operating system (OS) determines which ciphers to use and which to filter out of the default list of ciphers for TLS 1.2 and TLS 1.3.  
+To determine which of the default TLS 1.2 and TLS 1.3 ciphers to use and which to filter out, consider factors such as:
+- The connector operating system.
+- The TLS library.
+- The application configuration.
 
-To filter by OS and see the list of ciphers, you can use a protocol analyzer such as Wireshark to view specific requests to the connector. 
+To view the list of ciphers:
+1. Use a protocol analyzer such as Wireshark to view specific requests to the connector. 
+1. Expand the **Client Hello** message.
 
 ## Related content
 [Understand the Microsoft Entra private network connector](concept-connectors.md)
-
-
-
-
-
-
-
