@@ -22,20 +22,20 @@ QR code authentication method enables frontline workers to sign in efficiently i
 ## What is QR code authentication?
 
 QR code authentication is a simple authentication method primarily designed for frontline workers. 
-It consists of a unique QR code and numeric PIN. 
+It consists of a unique QR code and a numeric PIN. 
 The QR code serves as an identifier and is unique to the user. 
-It can be downloaded and printed from the Microsoft Entra admin center, MyStaff, or MSGraph API. 
+It can be downloaded and printed by using the Microsoft Entra admin center, My Staff, or Microsoft Graph. 
 For convenience, the QR code can be attached to a badge or any other wearable item. 
 
 Authentication Administrators provide a temporary PIN to users, who then change it during sign-in. Only the user knows the PIN.
 It's exclusively bound to the QR code only. 
-It can't be used with other user identifiers, such as username or phone number.
-QR code authentication is a single-factor method in which PIN (something you know) is a credential.
+It can't be used with other user identifiers, such as a username or phone number.
+QR code authentication is a single-factor method in which the PIN (something you know) is a credential.
 
 ## Benefits of QR code authentication
 Benefit | Description
 --------|------------
-Easier and faster sign-in | Frontline workers don't have to enter complex usernames and complex passwords to sign in multiple times into shared devices through their shift
+Easier and faster sign-in | Frontline workers don't have to enter complex usernames or passwords to sign in multiple times into shared devices throughout their shift.
 Inexpensive | Printing a QR code costs less than a hardware key, which can be cost prohibitive for organizations with temporary frontline workers.
 
 ### PIN properties
@@ -53,9 +53,9 @@ PIN complexity     | Should be enforced to avoid repetition and common sequences
 
 We recommend the following measures when you enable QR code authentication method as it's a single-factor authentication (something you know).  
 
-- QR code authentication is primarily for frontline workers (FLW) and not for information workers (IW). We recommend phishing-resistant auth or MFA for IW.
+- QR code authentication is primarily for frontline workers (FLW) and not for information workers (IW). We recommend phishing-resistant authentication or MFA for IW.
 - Combine QR code authentication with Conditional Access policies as another security layer. We recommended policies such as compliant devices, access within network, allow for certain applications, and shared device mode. 
-- Enforce phishing-resistant auth or MFA when users access resources from outside of the store or workplace network.
+- Enforce phishing-resistant authentication or MFA when users access resources from outside of the store or workplace network.
 - Replace QR codes that are lost or stolen.
 
 ## QR code configurations in the Authentication method policy
