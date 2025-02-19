@@ -132,6 +132,6 @@ You can optimize sign-in for your apps by using Microsoft Authentication Library
 ## Related content
 
 - [How to enable the QR code authentication method in Microsoft Entra ID (Preview)](how-to-authentication-qr-code.md)
-- [Best practices to protect frontline workers](/docs/identity-platform/security-best-practices-for-frontline-workers)
+- [Best practices to protect frontline workers](~/identity-platform/security-best-practices-for-frontline-workers.md)
 - [Manage your users with My Staff](~/identity/role-based-access-control/my-staff-configure.md)
 - [What authentication and verification methods are available in Microsoft Entra ID?](concept-authentication-methods.md)
