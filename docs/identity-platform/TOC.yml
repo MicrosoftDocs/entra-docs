@@ -160,8 +160,6 @@
           items:
             - name: Browser-delegated authentication
               items:
-              - name: Register your app
-                href: tutorial-single-page-app-react-prepare-app.md
               - name: Prepare your app
                 href: tutorial-single-page-app-react-prepare-app.md
               - name: Add sign in and sign out
