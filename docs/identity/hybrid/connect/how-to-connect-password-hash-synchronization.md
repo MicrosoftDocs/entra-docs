@@ -184,7 +184,11 @@ With password hash synchronization enabled, this AD password hash is synced with
 >
 > Previously, when SCRIL was re-enabled and a new randomized AD password was generated, the user was still able to use their old password to authenticate to Microsoft Entra ID. Now, Connect Sync has been updated so that new randomized AD password is synced to Microsoft Entra ID and the old password cannot be used once smart card login is enabled. 
 >
-> We recommend that admins perform a full sync if you have users with a SCRIL bit in your AD domain. If you do perform a full sync, there’s a chance that end users will be asked to re-login with the updated password if certificate-based authentication is not used. 
+> We recommend that admins person any of the below actions if they have users with a SCRIL bit in their AD Domain
+> 1.	Perform a full PHS sync as per [this guide](tshoot-connect-password-hash-synchronization.md) to ensure password of SCRIL users is scrambled
+> 2.	Scramble the password of each user by toggling SCRIL settings or directly changing the user's passwords
+> 3.	Periodically rotate the passwords for SCRIL users. Eventually all such users will have their passwords scrambled
+
 
 ### Overwrite synchronized passwords
 
