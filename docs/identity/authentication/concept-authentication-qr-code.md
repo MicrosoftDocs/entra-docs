@@ -49,18 +49,18 @@ Unallowed characters | - Characters (A-Z, a-z)<br>- Symbols (- @ # $ % ^ & * - _
 Minimum PIN length |  8-20 digits 
 PIN complexity     | Should be enforced to avoid repetition and common sequences. The following patterns are checked:<br>- Don't contain 0123456789 or 9876543210.<br>- Don't repeat a sequence of 2-3 digits in the PIN, like 121212, or 123123 or 342342.<br>An **Invalid PIN** error appears if the PIN has unallowed characters or is less than the minimum PIN length. 
 
-## Best security practices to apply with QR code authentication 
+## Best security practices to implement with QR code authentication 
 
 We recommend the following measures when you enable QR code authentication method as it is a single factor authentication (something you know).  
 
-- QR code authentication is primarily for frontline workers (FLW) and not for information workers (IW). We recommend phishing-resistant MFA or MFA for IW.
+- QR code authentication is primarily for frontline workers (FLW) and not for information workers (IW). We recommend phishing-resistant auth or MFA for IW.
 - Combine QR code authentication with Conditional Access policies as another security layer. We recommended policies such as compliant devices, access within network, allow for certain applications, and shared device mode. 
-- Enforce phishing-resistant MFA or MFA when users access resources from outside of the store or workplace network.
+- Enforce phishing-resistant auth or MFA when users access resources from outside of the store or workplace network.
 - Replace QR codes that are lost or stolen.
 
 ## QR code configurations in the Authentication method policy
 
-Authentication Policy Administrators can enable QR code in Authentication methods in the Microsoft Entra admin center. QR code authentication is disabled by default.
+Authentication policy administrators can enable QR code in Authentication methods in the Microsoft Entra admin center. QR code authentication is disabled by default.
 
 In the Authentication method policy for QR code, you can configure:
 
@@ -77,13 +77,13 @@ In this screenshot, the PIN length is set to the default of eight digits. The li
 
 ## Functional details of QR code authentication method
 
-When an Authentication Policy Administrator adds a QR code authentication method for a user, they can add only a standard QR code and PIN.
-To create a temporary QR code, they need to edit a QR code authentication method. Only one QR code authentication method can be active at a time for a user. When a QR code authentication method is deleted for the user, they can't sign-in with their existing QR code and PIN.
+When an Authentication policy administrator adds a QR code authentication method for a user, it generates a standard QR code and PIN.
+To create a temporary QR code, they need to edit a QR code authentication method. Temporay QR code has shorter lifetime upto 12 hours. It is to reduce cost overhead if user didn't bring their badge with standard QR code. When a QR code authentication method is deleted for the user, they can't sign-in with their existing QR codes and PIN.
 
 A PIN works with both standard and temporary QR codes because PIN is valid for the QR code authentication method.
-An Authentication Policy Administrator can provide a custom PIN or generate a PIN when they create a QR code authentication method. Admins can copy a temporary PIN only when generated. The PIN is masked after it's added to prevent exposure.
+An Authentication policy administrator can provide a custom PIN or generate a PIN when they create a QR code authentication method. Admins can copy a temporary PIN only when generated. The PIN is masked after it's added to prevent exposure.
 
-The states for a standard QR code, a temporary QR code, and the PIN for a QR code authentication method aren't related to each other. 
+The usability states for a standard QR code, a temporary QR code, and the PIN for a QR code authentication method aren't related to each other. 
 For example, an active QR code authentication method can have a deleted or expired standard QR code, and an active temporary QR code. 
 At any given point of time, there can be only a single active standard QR code and a single active temporary QR code.
 
@@ -103,7 +103,7 @@ For more information about how to manage QR codes, see [How to enable the QR cod
 
 ## User sign-in experience with QR code authentication
 
-Users can sign in to their organization with a QR code, or they can directly sign in to native apps.
+Users can sign with QR code via web sign-in experience or optimized app sign-in experience.  
 
 ### Mobile web sign-in experience
 You can use Microsoft's web browser login experience (login.microsoft.com) to sign in users. Users can click **Sign in options** > **Sign in to an organization** > **Sign in with a QR code**.
@@ -112,8 +112,8 @@ You can use Microsoft's web browser login experience (login.microsoft.com) to si
 
 
 ### Mobile app sign-in experience 
-This is an another entry point to sign with QR code. If you are using Microsoft web sign-in expereince for your app, you will be able to use above illustrated QR code entry point. 
-You can optimize sign-in for your apps by using Microsoft Authentication Library (MSAL) to add a QR code sign-in option to your apps sign-in page. This option eliminates two clicks to scan the QR code. For example, you can add QR code sign-in similar to the Teams or Managed Home Screen (MHS) apps. This optimized user experience will be available in BlueFletch, and Jamf app lauchers in March 2025.
+This is an another user entry point to sign with QR code. If you are using Microsoft web sign-in expereince for your app, you will be able to use above illustrated QR code entry point. 
+You can optimize sign-in for your apps by using Microsoft Authentication Library (MSAL) to add a QR code sign-in option to your apps sign-in page. This option eliminates two clicks to be able to scan the QR code. For example, you can add QR code sign-in similar to the Teams or Managed Home Screen (MHS) apps. This optimized user experience will be available in BlueFletch, and Jamf app lauchers in March 2025.
 
 :::image type="content" source="media/concept-authentication-qr-code/teams.png" alt-text="Screenshot that shows Teams sign-in experience.":::
 
