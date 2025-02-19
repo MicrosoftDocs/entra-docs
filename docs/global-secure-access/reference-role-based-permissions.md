@@ -5,13 +5,13 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: reference
-ms.date: 07/05/2024
+ms.date: 002/19/2025
 ms.service: global-secure-access
 ---
 
 # Microsoft Global Secure Access built-in roles
 
-Global Secure Access uses Role-Based Access Control (RBAC) to effectively manage administrative access. By default, Microsoft Entra ID requires specific administrator roles for accessing Global Secure Access.
+Global Secure Access (GSA) uses Role-Based Access Control (RBAC) to effectively manage administrative access. By default, Microsoft Entra ID requires specific administrator roles for accessing Global Secure Access.
 
 This article details the built-in Microsoft Entra roles you can assign for managing Global Secure Access.
 
@@ -41,9 +41,13 @@ This article details the built-in Microsoft Entra roles you can assign for manag
 
 **Private Access configuration**: This role can configure Private Access, including Quick Access, private network connectors, application segments, and enterprise applications.
 
+### Global Secure Access Log Reader
+
+**Read-only access**: This role is primarily intended for security and network personnel who need read-only visibility into traffic logs and related insights to effectively monitor and analyze network activity without the ability to make changes to the environment. Users with this role can view detailed GSA traffic logs, including session, connection, and transaction data, as well as access and review alerts and reports in the GSA portal.
+
 ### Security Reader and Global Reader
 
-**Read-Only access**: These roles have full read-only access to all aspects of Global Secure Access, except traffic logs. They can't change any settings or perform any actions.
+**Read-only access**: These roles have full read-only access to all aspects of Global Secure Access, except traffic logs. They can't change any settings or perform any actions.
 
 ## Role-based permissions
 

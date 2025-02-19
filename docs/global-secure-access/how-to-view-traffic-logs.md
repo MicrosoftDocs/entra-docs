@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: how-to
-ms.date: 03/06/2024
+ms.date: 02/19/2025
 ms.service: global-secure-access
 
 #Customer intent: As an IT admin, I want to understand what information the Global Secure Access traffic logs (preview) capture so I can better monitor traffic and connections to our services.
@@ -21,6 +21,7 @@ This article describes how to use the traffic logs for Global Secure Access.
 ## Prerequisites 
 
 - A **Global Secure Access Administrator** role in Microsoft Entra ID.
+- A **Global Secure Access Log Reader** role in Microsoft Entra ID.
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ## How the traffic logs work
