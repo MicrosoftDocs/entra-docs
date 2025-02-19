@@ -34,7 +34,7 @@ Microsoft will enable these policies after no less than 90 days after they're in
 > [!NOTE]
 > In some cases, policies might be enabled faster than 90 days. If this change is applicable to your tenant:
 > 
-> - We mention it in emails and Microsoft 365 message center posts you receive about Microsoft Managed Policies. 
+> - We mention it in emails and Microsoft 365 message center posts you receive about Microsoft-managed Policies. 
 > - We mention it in the policy details in the Microsoft Entra admin center.
 
 ## Policies
@@ -53,7 +53,7 @@ Based on Microsoft's analysis more than 99 percent of password spray attacks use
 
 This policy blocks device code flow, where a user initiates authentication on one device, completes on another, and their token is sent back to the original device. This type of authentication is common where users can't enter their credentials, like smart TVs, Microsoft Teams Room devices, IoT devices, or printers.
 
-Device code flow is infrequently used by customers, but is frequently used by attackers. Enabling this Microsoft managed policy for your organization helps remove this attack vector.
+Device code flow is infrequently used by customers, but is frequently used by attackers. Enabling this Microsoft-managed policy for your organization helps remove this attack vector.
 
 ### Multifactor authentication for admins accessing Microsoft Admin Portals
 
