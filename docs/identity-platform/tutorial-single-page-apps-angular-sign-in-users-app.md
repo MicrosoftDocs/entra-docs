@@ -497,4 +497,4 @@ To enable sign-in and sign-out functionality in your Angular application, follow
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial: Call an API from an Angular single-page app](tutorial-single-page-apps-angular-extract-user-data.md)
+> [Tutorial: Tutorial: Extract user data with an Angular SPA](tutorial-single-page-apps-angular-extract-user-data.md)

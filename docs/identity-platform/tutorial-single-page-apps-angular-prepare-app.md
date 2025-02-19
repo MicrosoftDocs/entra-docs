@@ -14,7 +14,7 @@ ms.topic: tutorial
 
 [!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
 
-This tutorial is the final part of a series that demonstrates building an Angular single-page application (SPA) and adding authentication using the Microsoft identity platform. 
+This tutorial is the first part of a series that demonstrates building an Angular single-page application (SPA), adding authentication and extracting user data using Microsoft identity platform.
 
 In this tutorial: 
 
