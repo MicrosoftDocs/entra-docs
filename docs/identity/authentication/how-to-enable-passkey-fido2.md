@@ -114,13 +114,13 @@ To configure the policy using Graph Explorer:
 1. Retrieve the Authentication methods policy: 
 
    ```json
-   GET https://graph.microsoft.com/beta/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
+   GET https://graph.microsoft.com/v1.0/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
    ```
 
 1. To disable attestation enforcement and enforce key restrictions to only allow the AAGUID for RSA DS100 for example, perform a PATCH operation using the following request body:
 
    ```json
-   PATCH https://graph.microsoft.com/beta/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
+   PATCH https://graph.microsoft.com/v1.0/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
    
    Request Body:
    {
@@ -141,7 +141,7 @@ To configure the policy using Graph Explorer:
 1. Make sure that the passkey (FIDO2) policy is updated properly.
 
    ```json
-   GET https://graph.microsoft.com/beta/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
+   GET https://graph.microsoft.com/v1.0/authenticationMethodsPolicy/authenticationMethodConfigurations/FIDO2
    ```
 
 

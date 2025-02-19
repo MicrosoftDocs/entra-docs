@@ -4,11 +4,11 @@ description: Learn how to troubleshoot common issues with Microsoft Entra B2B co
  
 ms.service: entra-external-id
 ms.topic: troubleshooting
-ms.date: 10/21/2024
+ms.date: 02/19/2025
 tags: active-directory
 ms.author: cmulligan
 author: csmulligan
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, no-azure-ad-ps-ref
 ms.collection: M365-identity-device-management
 
 # Customer intent: As an IT admin troubleshooting Microsoft Entra B2B collaboration, I want to find remedies for common problems, so that I can resolve issues and ensure smooth collaboration between organizations.
@@ -172,12 +172,6 @@ To resolve this problem, you must take over the abandoned tenant. Refer to [Take
 ## A guest user with a just-in-time or "viral" tenant is unable to reset their password
 
 If the identity tenant is a just-in-time (JIT) or viral tenant (meaning it's a separate, unmanaged Azure tenant), only the guest user can reset their password. Sometimes an organization will [take over management of viral tenants](~/identity/users/domains-admin-takeover.md) that are created when employees use their work email addresses to sign up for services. After the organization takes over a viral tenant, only an administrator in that organization can reset the user's password or enable SSPR. If necessary, as the inviting organization, you can remove the guest user account from your directory and resend an invitation.
-
-## A guest user is unable to use the Azure AD PowerShell V1 module
-
-[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
-
-As of November 18, 2019, guest users in your directory (defined as user accounts where the **userType** property equals **Guest**) are blocked from using the Azure AD PowerShell V1 module. Going forward, a user will need to either be a member user (where **userType** equals **Member**) or use the Azure AD PowerShell V2 module.
 
 ## In an Azure US Government tenant, I can't invite a B2B collaboration guest user
 

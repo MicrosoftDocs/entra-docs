@@ -1,21 +1,21 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Amazon Business'
+title: Microsoft Entra integration with Amazon Business
 description: Learn how to configure single sign-on between Microsoft Entra ID and Amazon Business.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Amazon Business so that I can control who has access to Amazon Business, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Integrate Amazon Business with Microsoft Entra ID
+# Integrate Amazon Business with Microsoft Entra ID
 
 In this tutorial, you learn how to integrate Amazon Business with Microsoft Entra ID. When you integrate Amazon Business with Microsoft Entra ID, you can:
 
@@ -340,7 +340,7 @@ You can also use Microsoft My Apps to test the application in any mode. When you
    1. Monitor Authentication Logs
       Keep an eye on the Microsoft Entra ID sign-in logs to monitor for any authentication issues and address them promptly.
 
-## Next steps
+## Related content
 
 Once you configure Amazon Business you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
 

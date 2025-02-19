@@ -1,21 +1,21 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with FortiGate SSL VPN'
+title: Microsoft Entra SSO integration with FortiGate SSL VPN
 description: Learn the steps you need to perform to integrate FortiGate SSL VPN with Microsoft Entra ID.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and FortiGate SSL VPN so that I can control who has access to FortiGate SSL VPN, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with FortiGate SSL VPN
+# Microsoft Entra SSO integration with FortiGate SSL VPN
 
 In this tutorial, you learn how to integrate FortiGate SSL VPN with Microsoft Entra ID. When you integrate FortiGate SSL VPN with Microsoft Entra ID, you can:
 
@@ -276,6 +276,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you select the FortiGate VPN tile in the My Apps, this will redirect to FortiGate VPN Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure FortiGate VPN you can enforce Session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

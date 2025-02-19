@@ -1,16 +1,16 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with E Sales Manager Remix'
+title: Microsoft Entra integration with E Sales Manager Remix
 description: Learn how to configure single sign-on between Microsoft Entra ID and E Sales Manager Remix.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 ---
 # Integrate Microsoft Entra ID with E Sales Manager Remix
 

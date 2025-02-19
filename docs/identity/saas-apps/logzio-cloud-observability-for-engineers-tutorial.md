@@ -1,21 +1,21 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Logz.io'
+title: Microsoft Entra single sign-on (SSO) integration with Logz.io
 description: Learn how to configure single sign-on between Microsoft Entra ID and Logz.io - Microsoft Entra Integration.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Logz.io - Microsoft Entra Integration so that I can control who has access to Logz.io - Microsoft Entra Integration, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) set up for Logz.io
+# Microsoft Entra single sign-on (SSO) set up for Logz.io
 
 ## Single sign-on (SSO) for the Logz.io - Azure portal integration
 
@@ -268,6 +268,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Logz.io Microsoft Entra Integration tile in the My Apps, you should be automatically signed in to the Logz.io Microsoft Entra Integration for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-### Next steps
+### Related content
 
 Once you configure Logz.io Microsoft Entra Integration you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

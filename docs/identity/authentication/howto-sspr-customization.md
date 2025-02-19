@@ -64,6 +64,8 @@ The graphics you choose are shown in the following circumstances:
    * By passing the `whr` parameter to the password reset page, like `https://login.microsoftonline.com/?whr=contoso.com`
    * By passing the `username` parameter to the password reset page, like `https://login.microsoftonline.com/?username=admin@contoso.com`
 
+SSPR will honor browser language settings. When there is a customization for browser language, the page will display in the browser language customization. Otherwise, it falls to the default locale customization.
+
 ### Directory name
 
 To make things look more user-friendly, you can change organization name in the portal and in the automated communications. 
