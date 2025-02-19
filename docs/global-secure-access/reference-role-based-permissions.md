@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: amycolannino
 ms.topic: reference
-ms.date: 002/19/2025
+ms.date: 02/19/2025
 ms.service: global-secure-access
 ---
 
