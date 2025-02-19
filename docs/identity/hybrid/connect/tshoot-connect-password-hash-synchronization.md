@@ -431,19 +431,41 @@ Write-Host
 
 You can trigger a full sync of all passwords by using the following script:
 
-```powershell
-$adConnector = "<CASE SENSITIVE AD CONNECTOR NAME>"
-$aadConnector = "<CASE SENSITIVE AAD CONNECTOR NAME>"
-Import-Module adsync
-$c = Get-ADSyncConnector -Name $adConnector
-$p = New-Object Microsoft.IdentityManagement.PowerShell.ObjectModel.ConfigurationParameter "Microsoft.Synchronize.ForceFullPasswordSync", String, ConnectorGlobal, $null, $null, $null
-$p.Value = 1
-$c.GlobalParameters.Remove($p.Name)
-$c.GlobalParameters.Add($p)
-$c = Add-ADSyncConnector -Connector $c
-Set-ADSyncAADPasswordSyncConfiguration -SourceConnector $adConnector -TargetConnector $aadConnector -Enable $false
-Set-ADSyncAADPasswordSyncConfiguration -SourceConnector $adConnector -TargetConnector $aadConnector -Enable $true
-```
+1. Assign the local Active Directory *$adConnector* value
+   
+    ```$adConnector = "<CASE SENSITIVE AD CONNECTOR NAME>"```
+
+2. Assign the AzureAD *$aadConnector* value
+   
+    ```$aadConnector = "<CASE SENSITIVE AAD CONNECTOR NAME>"```
+
+3. Install the AzureAD Sync Module
+   
+   ```Import-Module adsync```
+
+4. Create a new Force Full Password Sync configuration oarameter object
+   
+    ```$c = Get-ADSyncConnector -Name $adConnector```
+
+5. Update the existing connector with the following new configurations. Run each line separately
+   
+    ```$p = New-Object Microsoft.IdentityManagement.PowerShell.ObjectModel.ConfigurationParameter "Microsoft.Synchronize.ForceFullPasswordSync", String, ConnectorGlobal, $null,   $null, $null```
+
+    ```$p.Value = 1```
+  
+    ```$c.GlobalParameters.Remove($p.Name)```
+
+    ```$c.GlobalParameters.Add($p)```
+
+    ```$c = Add-ADSyncConnector -Connector $c```
+
+6. Disable Entra ID Connect
+    
+    ```Set-ADSyncAADPasswordSyncConfiguration -SourceConnector $adConnector -TargetConnector $aadConnector -Enable $false```
+
+7. Enable Entra ID Connect to force full password synchronization
+
+     ```Set-ADSyncAADPasswordSyncConfiguration -SourceConnector $adConnector -TargetConnector $aadConnector -Enable $true```
 
 ## Next steps
 
