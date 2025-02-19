@@ -18,24 +18,27 @@ Microsoft Entra private network connector supports Transport Layer Security (TLS
 ## Cipher suites
 A cipher suite is a set of cryptographic algorithms used to create a secure connection. TLS 1.2 and TLS 1.3 use the default Windows ciphers. 
 
-The full list of supported ciphers are:   
-<span style="color:#009DE5"># TLS 1.3 (suites in server-preferred order)</span>   
-- <span style="color:#008000">TLS_AES_256_GCM_SHA384 (0x1302)</span> $\;\;\;$ ECDH secp384r1 (eq. 7680 bits RSA) $\;\;\;$ FS    
-- <span style="color:#008000">TLS_AES_128_GCM_SHA256 (0x1301)</span> $\;\;\;$ ECDH secp256r1 (eq. 3072 bits RSA) $\;\;\;$ FS    
+The full list of supported ciphers are:    
 
-<span style="color:#009DE5"># TLS 1.2 (suites in server-preferred order)</span>      
-- <span style="color:#008000">TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (0xc030)</span> $\;\;\;$ ECDH secp384r1 (eq. 7680 bits RSA) $\;\;\;$ FS	
-- <span style="color:#008000">TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (0xc02f)</span> $\;\;\;$ ECDH secp256r1 (eq. 3072 bits RSA) $\;\;\;$ FS	
-- <span style="color:#F88017">TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384 (0xc028)</span> $\;\;\;$ ECDH secp384r1 (eq. 7680 bits RSA) $\;\;\;$ FS $\;\;\;$ <span style="color:#F88017">**WEAK**</span>   
-- <span style="color:#F88017">TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256 (0xc027)</span> $\;\;\;$ ECDH secp256r1 (eq. 3072 bits RSA) $\;\;\;$ FS $\;\;\;$ <span style="color:#F88017">**WEAK**</span>   
-- <span style="color:#F88017">TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (0xc014)</span> $\;\;\;$ ECDH secp384r1 (eq. 7680 bits RSA) $\;\;\;$ FS $\;\;\;$ <span style="color:#F88017">**WEAK**</span>   
-- <span style="color:#F88017">TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (0xc013)</span> $\;\;\;$ ECDH secp256r1 (eq. 3072 bits RSA) $\;\;\;$ FS $\;\;\;$ <span style="color:#F88017">**WEAK**</span>   
-- <span style="color:#F88017">TLS_RSA_WITH_AES_256_GCM_SHA384 (0x9d) $\;\;\;$ **WEAK**</span>   
-- <span style="color:#F88017">TLS_RSA_WITH_AES_128_GCM_SHA256 (0x9c) $\;\;\;$ **WEAK**</span>   
-- <span style="color:#F88017">TLS_RSA_WITH_AES_256_CBC_SHA256 (0x3d) $\;\;\;$ **WEAK**</span>   
-- <span style="color:#F88017">TLS_RSA_WITH_AES_128_CBC_SHA256 (0x3c) $\;\;\;$ **WEAK**</span>   
-- <span style="color:#F88017">TLS_RSA_WITH_AES_256_CBC_SHA (0x35) $\;\;\;$ **WEAK**</span>	  
-- <span style="color:#F88017">TLS_RSA_WITH_AES_128_CBC_SHA (0x2f) $\;\;\;$ **WEAK**</span>        
+|# TLS 1.3 (suites in server-preferred order)   |   |   |   |
+|---------|---------|---------|---------|
+|TLS_AES_256_GCM_SHA384 (0x1302)   |ECDH secp384r1 (eq. 7680 bits RSA)   |FS   |   |
+|TLS_AES_128_GCM_SHA256 (0x1301)   |ECDH secp256r1 (eq. 3072 bits RSA)   |FS   |   | 
+
+|# TLS 1.3 (suites in server-preferred order)   |   |   |   |
+|---------|---------|---------|---------|
+|TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (0xc030)   |ECDH secp384r1 (eq. 7680 bits RSA)   |FS   |   |
+|TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (0xc02f)   |ECDH secp256r1 (eq. 3072 bits RSA)   |FS   |   |  
+|TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384 (0xc028)   |ECDH secp384r1 (eq. 7680 bits RSA)   |FS   |**WEAK**   |
+|TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256 (0xc027)   |ECDH secp256r1 (eq. 3072 bits RSA)   |FS   |**WEAK**   |
+|TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (0xc014)   |ECDH secp384r1 (eq. 7680 bits RSA)   |FS   |**WEAK**   |
+|TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (0xc013)   |ECDH secp256r1 (eq. 3072 bits RSA)   |FS   |**WEAK**   |
+|TLS_RSA_WITH_AES_256_GCM_SHA384 (0x9d)   |   |   |**WEAK**   |
+|TLS_RSA_WITH_AES_128_GCM_SHA256 (0x9c)   |   |   |**WEAK**   |
+|TLS_RSA_WITH_AES_256_CBC_SHA256 (0x3d)   |   |   |**WEAK**   |
+|TLS_RSA_WITH_AES_128_CBC_SHA256 (0x3c)   |   |   |**WEAK**   |
+|TLS_RSA_WITH_AES_256_CBC_SHA (0x35)   |   |   |**WEAK**   |
+|TLS_RSA_WITH_AES_128_CBC_SHA (0x2f)   |   |   |**WEAK**   |
 
 ## Filter ciphers
 To determine which of the default TLS 1.2 and TLS 1.3 ciphers to use and which to filter out, consider factors such as:
