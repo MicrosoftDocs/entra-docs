@@ -17,7 +17,7 @@ manager: amycolannino
 
 # Authentication methods in Microsoft Entra ID - QR code authentication method (Preview)
 
-QR code authentication method enables frontline workers to sign in efficiently in apps on shared devices. Users will be able to use unique QR code provided to them and enter their PIN to sign in, eliminating the need to enter intricate usernames and passwords. Currently, QR code authentication is supported on mobile devices only (iOS, Android, and iPad).
+QR code authentication method enables frontline workers to sign in efficiently into apps on shared devices. Users will be able to use unique QR code provided to them and enter their PIN to sign in, eliminating the need to enter intricate usernames and passwords. Currently, QR code authentication is supported on mobile devices only (iOS, Android, and iPad).
 
 ## What is QR code authentication?
 
