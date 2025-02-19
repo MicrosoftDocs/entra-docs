@@ -7,7 +7,7 @@ keywords:
 author: rwike77
 ms.author: ryanwi
 manager: celestedg
-ms.date: 01/10/2025
+ms.date: 02/19/2025
 ms.topic: conceptual
 ms.service: entra
 ms.custom: microsoft-copilot
@@ -22,27 +22,20 @@ Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at
 
 Launch Security Copilot from the **Copilot** button in the Microsoft Entra admin center.  Use natural language questions or prompts to:
 
-- Create a lifecycle workflow
-- Run a lifecycle workflow
+- Get step-by-step guidance for creating a lifecycle workflow
 - Explore available workflow configurations
 - Analyze the active workflow list
 - Troubleshoot the processing results of workflows
 
 :::image type="content" source="./media/copilot-entra-lifecycle-workflow/security-copilot-button.png" alt-text="Screenshot that shows the Copilot in the Microsoft Entra admin center.":::
 
-## Create a new lifecycle workflow
+## Create step-by-step guidance for a new lifecycle workflow
 
-Security Copilot can give you the steps for creating a new lifecycle workflow. Provide a prompt with actions to take when the workflow is triggered and conditions that define which users (scope) this workflow should run against, and when (trigger) the workflow should run.  For example:
+Security Copilot can give you the steps to guide you in creating a new lifecycle workflow. Provide a prompt with actions to take when the workflow is triggered and conditions that define which users (scope) this workflow should run against, and when (trigger) the workflow should run.  For example:
 
 *Create a lifecycle workflow for new hires in the Marketing department that sends a welcome email and a TAP and adds them to the "All Users in My Tenant" group.  Also, provide the option to enable the schedule of the workflow.*
 
-Review the returned results to see what the workflow includes and then [create a new workflow](/entra/id-governance/create-lifecycle-workflow) in the Microsoft Entra admin center. After the workflow is created, you can perform verification testing before enabling the schedule.
-
-## Run a lifecycle workflow on demand
-
-Security Copilot can also provide steps for running a workflow on demand or on a schedule.  Provide a prompt with information on a specific workflow to run, when it should run, and which users to run it for. For example:
-
-Review the returned steps to see what the workflow includes then run the workflow. 
+Review the returned results to see what the workflow includes and then follow the steps to [create a new workflow](/entra/id-governance/create-lifecycle-workflow) in the Microsoft Entra admin center. After the workflow is created, you can perform verification testing before enabling the schedule.
 
 ## Explore available workflow configurations
 
