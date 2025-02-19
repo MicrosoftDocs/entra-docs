@@ -1,21 +1,21 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Oracle Cloud Infrastructure Console'
+title: Microsoft Entra SSO integration with Oracle Cloud Infrastructure Console
 description: Learn how to configure single sign-on between Microsoft Entra ID and Oracle Cloud Infrastructure Console.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Oracle Cloud Infrastructure Console so that I can control who has access to Oracle Cloud Infrastructure Console, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Oracle Cloud Infrastructure Console
+# Microsoft Entra SSO integration with Oracle Cloud Infrastructure Console
 
 In this tutorial, you'll learn how to integrate Oracle Cloud Infrastructure Console with Microsoft Entra ID. When you integrate Oracle Cloud Infrastructure Console with Microsoft Entra ID, you can:
 
@@ -213,6 +213,6 @@ When you select the Oracle Cloud Infrastructure Console tile in the My Apps, you
 
 ![Screenshot showing Configuration](./media/oracle-cloud-tutorial/tenant.png)
 
-## Next steps
+## Related content
 
 Once you configure the Oracle Cloud Infrastructure Console you can enforce session controls, which protect exfiltration and infiltration of your organization’s sensitive data in real time. Session controls extend from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

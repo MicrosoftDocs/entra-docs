@@ -1,21 +1,21 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Foko Retail'
+title: Microsoft Entra SSO integration with Foko Retail
 description: Learn how to configure single sign-on between Microsoft Entra ID and Foko Retail.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Foko Retail so that I can control who has access to Foko Retail, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Foko Retail
+# Microsoft Entra SSO integration with Foko Retail
 
 In this tutorial, you'll learn how to integrate Foko Retail with Microsoft Entra ID. When you integrate Foko Retail with Microsoft Entra ID, you can:
 
@@ -142,6 +142,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Foko Retail tile in the My Apps, this will redirect to Foko Retail Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Foko Retail you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

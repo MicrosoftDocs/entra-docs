@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 01/30/2025
+ms.date: 02/11/2025
 ms.author: mimart
 ms.custom: it-pro, seo-july-2024
 
@@ -35,7 +35,7 @@ The following table compares the general features and capabilities available in 
 |---------|---------|---------|
 | **External identities scenario** | Allow business partners and other external users to collaborate with your workforce. Guests can securely access your business applications through invitations or self-service sign-up.  | Use External ID to secure your applications. Consumers and business customers can securely access your consumer apps through self-service sign-up. Invitations are also supported.  |
 | **Local accounts** | Local accounts are supported for *internal* members of your organization only.    | Local accounts are supported for:</br>- External users (consumers, business customers) who use self-service sign-up.</br>- Accounts created by admins. |
-| **Groups** | [Groups](~/fundamentals/how-to-manage-groups.yml) can be used to manage administrative and user accounts.| Groups can be used to manage administrative accounts. Support for Microsoft Entra groups and [application roles](how-to-use-app-roles-customers.md) is being phased into customer tenants. For the latest updates, see [Groups and application roles support](reference-group-app-roles-support.md). |
+| **Groups** | [Groups](/entra/fundamentals/how-to-manage-groups) can be used to manage administrative and user accounts.| Groups can be used to manage administrative accounts. Support for Microsoft Entra groups and [application roles](how-to-use-app-roles-customers.md) is being phased into customer tenants. For the latest updates, see [Groups and application roles support](reference-group-app-roles-support.md). |
 | **Roles and administrators**| [Roles and administrators](~/fundamentals/how-subscriptions-associated-directory.yml) are fully supported for administrative and user accounts. | Roles aren't supported with customer accounts. Customer accounts don't have access to tenant resources.|
 | **ID Protection**    |   Provides ongoing risk detection for your Microsoft Entra tenant. It allows organizations to discover, investigate, and remediate identity-based risks.    |   A subset of the Microsoft Entra ID Protection risk detections is available. [Learn more](how-to-identity-protection-customers.md).    |
 | **ID Governance**    |   Enables organizations to govern identity and access lifecycles, and secure privileged access. [Learn more](~/id-governance/identity-governance-overview.md).    |   Not available    |
@@ -66,6 +66,7 @@ Custom authentication extensions allow you to customize the Microsoft Entra auth
 | **TokenIssuanceStart**    |  [Add claims from external systems](~/identity-platform/custom-extension-overview.md).    |   [Add claims from external systems](./concept-custom-extensions.md).    |  
 | **OnAttributeCollectionStart**|Not available| Occurs at the beginning of the sign-up's attribute collection step, before the attribute collection page renders. You can add actions such as prefilling values and displaying a blocking error. [Learn more](~/identity-platform/custom-extension-attribute-collection.md?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json&tabs=start-continue%2Csubmit-continue) |
 | **OnAttributeCollectionSubmit**|Not available| Occurs during the sign-up flow, after the user enters and submits attributes. You can add actions such as validating or modifying the user's entries. [Learn more](~/identity-platform/custom-extension-attribute-collection.md?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json&tabs=start-continue%2Csubmit-continue)|
+| **OnOtpSend**|Not available| Configure a custom email provider for one time passcode send events. [Learn more](~/identity-platform/custom-extension-email-otp-get-started.md?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json&tabs=azure-communication-services%2Cazure-portal)|
 
 ## Identity providers and authentication methods
 

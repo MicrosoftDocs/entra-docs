@@ -1,20 +1,20 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with LoginRadius'
+title: Microsoft Entra integration with LoginRadius
 description: Learn how to configure single sign-on between Microsoft Entra ID and LoginRadius.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and LoginRadius so that I can control who has access to LoginRadius, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with LoginRadius
+# Microsoft Entra integration with LoginRadius
 
 In this tutorial, you'll learn how to integrate LoginRadius with Microsoft Entra ID. When you integrate LoginRadius with Microsoft Entra ID, you can:
 
@@ -181,7 +181,7 @@ In this section, you enable Microsoft Entra single sign-on in the LoginRadius Ad
 
 3. Select **Add Team Member** in the side menu to open the form. 
 
-4. In the **Add Team Member** form, you create a user called Britta Simon in your LoginRadius site by providing the user's details and assigning the permissions you want the user to have. To know more about the permissions based on roles, see the [Role Access Permissions](https://www.loginradius.com/docs/api/v2/admin-console/team-management/manage-team-members#roleaccesspermissions0) section of the LoginRadius [Manage Team Members](https://www.loginradius.com/docs/api/v2/admin-console/team-management/manage-team-members#roleaccesspermissions0) document. Users must be created and activated before you use single sign-on.
+4. In the **Add Team Member** form, you create a user called Britta Simon in your LoginRadius site by providing the user's details and assigning the permissions you want the user to have. To know more about the permissions based on roles, see the [Role Access Permissions](https://www.loginradius.com/docs/) section of the LoginRadius [Manage Team Members](https://www.loginradius.com/docs/) document. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 
@@ -192,6 +192,6 @@ In this section, you test your Microsoft Entra single sign-on configuration usin
 3. It should open a pop-up for asking you to sign in to your Microsoft Entra account.
 4. After the authentication, your pop-up will close and you will be logged in to the LoginRadius Admin Console.
 
-## Next steps
+## Related content
 
 Once you configure LoginRadius you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

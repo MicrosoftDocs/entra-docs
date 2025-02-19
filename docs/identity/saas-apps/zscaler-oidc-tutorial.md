@@ -1,19 +1,19 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Zscaler'
+title: Microsoft Entra single sign-on (SSO) integration with Zscaler
 description: Learn how to configure single sign-on between Microsoft Entra and Zscaler.
 services: active-directory
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 05/06/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Zscaler
+# Microsoft Entra single sign-on (SSO) integration with Zscaler
 
 In this tutorial, you'll learn how to integrate Zscaler with Microsoft Entra ID. When you integrate Zscaler with Microsoft Entra ID, you can:
 

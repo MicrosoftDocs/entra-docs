@@ -1,21 +1,21 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with GitHub Enterprise Managed User'
+title: Microsoft Entra single sign-on (SSO) integration with GitHub Enterprise Managed User
 description: Learn how to configure single sign-on between Microsoft Entra ID and GitHub Enterprise Managed User.
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 05/22/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and GitHub Enterprise Managed User so that I can control who has access to GitHub Enterprise Managed User, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with GitHub Enterprise Managed User
+# Microsoft Entra single sign-on (SSO) integration with GitHub Enterprise Managed User
 
 In this tutorial, you'll learn how to integrate GitHub Enterprise Managed User (EMU) with Microsoft Entra ID. When you integrate GitHub Enterprise Managed User with Microsoft Entra ID, you can:
 
@@ -133,12 +133,11 @@ In this section, you'll take the information provided from Microsoft Entra ID ab
 1. Enter the Sign-on URL. This URL is the Login URL that you copied from Microsoft Entra ID above.
 1. Enter the Issuer. This URL is the Microsoft Entra Identifier that you copied from Microsoft Entra ID above.
 1. Enter the Public Certificate. Please open the base64 certificate that you downloaded above and paste the text contents of that file into this dialog.
-1. Click on **Test SAML configuration**. This will open up a dialog for you to log in with your Microsoft Entra credentials to validate that SAML SSO is configured correctly. Log in with your Microsoft Entra credentials. you will receive a message **Passed: Successfully authenticated your SAML SSO identity** upon successful validation.
+1. Click on **Test SAML configuration**. This will open up a dialog for you to log in with your Microsoft Entra credentials to validate that SAML SSO is configured correctly. Log in with your Microsoft Entra credentials. You may need to clear your browser's cache when testing to ensure you're logging in to the correct tenant. You will receive a message **Passed: Successfully authenticated your SAML SSO identity** upon successful validation.
 1. Click **Save** to persist these settings.
 1. Please save (download, print, or copy) the recovery codes in a secure place.
-1. Click on **Enable SAML authentication**.
 1. At this point, only accounts with SSO are able to log into your Enterprise. Follow the instructions in the document below on provisioning in order to provision accounts backed by SSO.
 
-## Next steps
+## Related content
 
 GitHub Enterprise Managed User **requires** all accounts to be created through automatic user provisioning, you can find more details [here](./github-enterprise-managed-user-provisioning-tutorial.md) on how to configure automatic user provisioning.

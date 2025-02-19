@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with SAP NetWeaver'
+title: Microsoft Entra single sign-on (SSO) integration with SAP NetWeaver
 description: Learn how to configure single sign-on between Microsoft Entra ID and SAP NetWeaver.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SAP NetWeaver so that I can control who has access to SAP NetWeaver, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with SAP NetWeaver
+# Microsoft Entra single sign-on (SSO) integration with SAP NetWeaver
 
 In this tutorial, you'll learn how to integrate SAP NetWeaver with Microsoft Entra ID. When you integrate SAP NetWeaver with Microsoft Entra ID, you can:
 
@@ -469,7 +469,7 @@ To request an access token from the SAP system using Azure Active Directory (Azu
      Authorization: Bearer {access_token}
      ```
 
-## Next Steps
+## Related content
 
 - Configure Microsoft Entra SAP NetWeaver to enforce Session Control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session Control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
 - Configure SAP Principal Propagation (OAuth2) using Azure API Management to govern and secure access to SAP systems from client apps in Azure, Power Platform, Microsoft 365 and others. [Learn more about SAP Principal Propagation with Azure API Management](https://community.powerplatform.com/blogs/post/?postid=c6a609ab-3556-ef11-a317-6045bda95bf0).

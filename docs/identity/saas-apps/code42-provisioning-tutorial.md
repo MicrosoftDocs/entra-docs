@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Configure Code42 for automatic user provisioning with Microsoft Entra ID'
+title: Configure Code42 for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Code42.
 
 
@@ -10,14 +10,14 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Code42 so that I can streamline the user management process and ensure that users have the appropriate access to Code42.
 ---
 
-# Tutorial: Configure Code42 for automatic user provisioning
+# Configure Code42 for automatic user provisioning
 
 This tutorial describes the steps you need to perform in both Code42 and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Code42](https://www.code42.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
@@ -171,6 +171,6 @@ Once you've configured provisioning, use the following resources to monitor your
 * [Configure organization assignments based on SCIM groups in Code42](https://support.code42.com/hc/en-us/articles/14827670461207-How-to-provision-users-to-Code42-from-Azure-AD#step-6-map-users-to-organizations-and-roles-using-scim-groups-0-18)
 * [Configure role assignments based on SCIM groups in Code42](https://support.code42.com/hc/en-us/articles/14827670461207-How-to-provision-users-to-Code42-from-Azure-AD#apply-organization-and-role-mappings-0-21)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

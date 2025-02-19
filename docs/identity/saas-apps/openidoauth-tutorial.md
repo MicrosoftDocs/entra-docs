@@ -2,15 +2,15 @@
 title: 'Configure an OpenID Connect OAuth application from Microsoft Entra app gallery'
 description: Steps to Configure an OpenID Connect OAuth application from Microsoft Entra app gallery.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 ms.custom: 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and OpenID Connect OAuth so that I can control who has access to OpenID Connect OAuth, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -147,6 +147,6 @@ The *prompt=admin_consent* parameter can also be used by applications that reque
 
 Imagine that an application requires admin consent, and an admin signs in without the *prompt=admin_consent* parameter being sent. When the admin successfully consents to the application, it applies only for their user account. Regular users will still be unable to sign in or consent to the application. This feature is useful if you want to give the tenant administrator the ability to explore your application before allowing other users' access.
 
-## Next steps
+## Related content
 
 [Set up OIDC-based single sign-on (SSO) for an application in your Microsoft Entra tenant](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md)

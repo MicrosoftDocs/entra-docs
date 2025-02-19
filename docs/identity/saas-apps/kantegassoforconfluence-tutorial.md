@@ -1,20 +1,20 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Kantega SSO for Confluence'
+title: Microsoft Entra SSO integration with Kantega SSO for Confluence
 description: Learn how to configure single sign-on between Microsoft Entra ID and Kantega SSO for Confluence.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Kantega SSO for Confluence so that I can control who has access to Kantega SSO for Confluence, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Kantega SSO for Confluence
+# Microsoft Entra SSO integration with Kantega SSO for Confluence
 
 In this tutorial, you'll learn how to integrate Kantega SSO for Confluence with Microsoft Entra ID. When you integrate Kantega SSO for Confluence with Microsoft Entra ID, you can:
 
@@ -252,6 +252,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the Kantega SSO for Confluence tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Kantega SSO for Confluence for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Kantega SSO for Confluence you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
