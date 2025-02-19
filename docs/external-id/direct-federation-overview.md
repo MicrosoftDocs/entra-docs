@@ -103,4 +103,4 @@ Currently, the Microsoft Entra SAML/WS-Fed federation feature doesn't support se
 
 ## Next steps
 
-- [Add federation with a SAML/WS-Fed identity provider](direct-federation.md)
+[Add federation with a SAML/WS-Fed identity provider](direct-federation.md)

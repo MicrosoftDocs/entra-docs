@@ -48,4 +48,4 @@ Once you've configured federation with a SAML or WS-Fed identity provider by fol
 
 ## Next steps
 
-Follow the steps in [Test your sign-up and sign-in user flow](how-to-test-user-flows.md)[Test your sign-up and sign-in user flow] to simulate a user’s sign-up or sign-in experience with your app.
+Follow the steps in [Test your sign-up and sign-in user flow](how-to-test-user-flows.md) to simulate a user’s sign-up or sign-in experience with your app.

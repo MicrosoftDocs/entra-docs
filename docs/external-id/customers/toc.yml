@@ -390,8 +390,6 @@ items:
             items:
               - name: Configure SAML/WS-Fed IdP federation
                 href: ../direct-federation.md
-              - name: Invite federated users
-                href: how-to-saml-ws-federation-invite-users.md
               - name: Self-service sign-up for federated users
                 href: how-to-saml-ws-federation-self-service-sign-up.md
         displayName: rbac, roles claim, groups claim

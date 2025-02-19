@@ -26,9 +26,9 @@ This article describes the identity providers that are available for primary aut
 
 ## Email and password sign-in
 
-Email sign-up is enabled by default in your local account identity provider settings. With the email option, customers can sign up and sign in with their email address and a password.
+Email sign-up is enabled by default in your local account identity provider settings. With the email option, users can sign up and sign in with their email address and a password.
 
-- **Sign-up**: Customers are prompted for an email address, which is verified at sign-up with a one-time passcode. The customer then enters any other information requested on the sign-up page, for example, display name, given name, and surname. Then they select Continue to create an account.
+- **Sign-up**: Users are prompted for an email address, which is verified at sign-up with a one-time passcode. The customer then enters any other information requested on the sign-up page, for example, display name, given name, and surname. Then they select Continue to create an account.
 
 - **Sign-in**: After the customer signs up and creates an account, they can sign in by entering their email address and password.
 
@@ -42,7 +42,7 @@ When you [create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-
 
 Email with one-time passcode is an option in your local account identity provider settings. With this option, the customer signs in with a temporary passcode instead of a stored password each time they sign in.
 
-- **Sign-up**: Customers can sign up with their email address and request a temporary code, which is sent to their email address. Then they enter this code to continue signing in.
+- **Sign-up**: Users can sign up with their email address and request a temporary code, which is sent to their email address. Then they enter this code to continue signing in.
 
 - **Sign-in**: After the customer signs up and creates an account, each time they sign in they'll enter their email address and receive a temporary passcode.
 
@@ -54,13 +54,13 @@ When you [create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-
 
 ## Social identity providers: Facebook, Google and Apple
 
-For an optimal sign-in experience, federate with social identity providers whenever possible so you can give your customers a seamless sign-up and sign-in experience. In an external tenant, you can allow a customer to sign up and sign in using their own Facebook, Google, or Apple account. When a customer signs up for your app using their social account, the social identity provider creates, maintains, and manages identity information while providing authentication services to applications.
+For an optimal sign-in experience, federate with social identity providers whenever possible so you can give your users a seamless sign-up and sign-in experience. In an external tenant, you can allow a customer to sign up and sign in using their own Facebook, Google, or Apple account. When a customer signs up for your app using their social account, the social identity provider creates, maintains, and manages identity information while providing authentication services to applications.
 
-When you enable social identity providers, customers can select from the social identity providers options you make available on the sign-up page. To set up social identity providers in your external tenant, you create an application at the identity provider and configure credentials. You obtain a client or app ID and a client or app secret, which you can then add to your external tenant.
+When you enable social identity providers, users can select from the social identity providers options you make available on the sign-up page. To set up social identity providers in your external tenant, you create an application at the identity provider and configure credentials. You obtain a client or app ID and a client or app secret, which you can then add to your external tenant.
 
 ### Google sign-in (preview)
 
-By setting up federation with Google, you can allow customers to sign in to your applications with their own Gmail accounts. After you add Google as one of your application's sign-in options, on the sign-in page, users can sign in to Microsoft Entra External ID with a Google account.
+By setting up federation with Google, you can allow users to sign in to your applications with their own Gmail accounts. After you add Google as one of your application's sign-in options, on the sign-in page, users can sign in to Microsoft Entra External ID with a Google account.
 
 The following screenshots show the sign-in with Google experience. In the sign-in page, users select **Sign-in with Google**. At that point, the user is redirected to the Google identity provider to complete the sign-in.
 
@@ -70,7 +70,7 @@ Learn how to [add Google as an identity provider](how-to-google-federation-custo
 
 ### Facebook sign-in (preview)
 
-By setting up federation with Facebook, you can allow invited users to sign in to your applications with their own Facebook accounts. After you add Facebook as one of your application's sign-in options, on the sign-in page, users can sign-in to Microsoft Entra External ID with a Facebook account.
+By setting up federation with Facebook, you can allow users to sign in to your applications with their own Facebook accounts. After you add Facebook as one of your application's sign-in options, on the sign-in page, users can sign-in to Microsoft Entra External ID with a Facebook account.
 
 The following screenshots show the sign-in with Facebook experience. In the sign-in page, users select **Sign-in with Facebook**. Then the user is redirected to the Facebook identity provider to complete the sign-in.
 
@@ -80,26 +80,26 @@ Learn how to [add Facebook as an identity provider](how-to-facebook-federation-c
 
 ### Apple sign-in (preview)
 
-By setting up federation with Apple, you can allow invited users to sign in to your applications with their own Apple accounts. After you add Apple as one of your application's sign-in options, on the sign-in page, users can sign-in to Microsoft Entra External ID with an Apple account.
+By setting up federation with Apple, you can allow users to sign in to your applications with their own Apple accounts. After you add Apple as one of your application's sign-in options, on the sign-in page, users can sign-in to Microsoft Entra External ID with an Apple account.
 
 The following screenshots show the sign-in with Apple experience. In the sign-in page, users select **Sign-in with Apple**. Then the user is redirected to the Apple identity provider to complete the sign-in.
 Learn how to [add Apple as an identity provider](how-to-apple-federation-customers.md).
 
 ## Custom SAML/WS-Fed identity providers (preview)
 
-You can set up a SAML or WS-Fed identity provider to allow users to sign up and sign in to your applications using their own account with the identity provider. Users with email addresses that match predefined domains associated with the federated IdP can sign in by entering their email address. They're redirected to the identity provider, and then returned to Microsoft Entra once they successfully sign in. In external tenants, the following scenarios are supported:
+You can set up a SAML or WS-Fed identity provider to allow users to sign up and sign in to your applications using their own account with the identity provider. The user can sign up or sign in by selecting the **Sign up with** or **Sign in with** option. They're redirected to the identity provider, and then returned to Microsoft Entra once they successfully sign in. 
+For external tenants, a user's sign-in email doesn't need to match the predefined domains set up during SAML federation.
 
-- A user's sign-in email doesn't need to match the predefined domains set up during SAML federation. As long as it matches the user's identity already established with the identity provider, the user can sign up or sign in by selecting the **Sign up with** or **Sign in with** option.
-- If the user doesn't already have an account with the identity provider, they're redirected to the sign-up process, and they might be prompted for more information before their account is created.
+If a user doesn't have an account in the external tenant, and on the sign-in page they enter an email address matching a domain that's predefined in the IdP federation, they're redirected to authenticate with the IdP.
+
+For detailed setup steps, see [Add federation with SAML/WS-Fed identity providers](../direct-federation.md).
 
 > [!NOTE]
 > SAML/WS-Fed federation is generally available for workforce tenants.
 
-For detailed setup steps, see [Add federation with SAML/WS-Fed identity providers](../direct-federation.md).
-
 ## Custom OIDC identity provider (preview)
 
-You can set up a custom OpenID Connect (OIDC) identity provider to enable customers to sign up and sign in to your applications with their own accounts. When a customer signs up for your app using their custom OIDC identity provider, the identity provider creates, maintains, and manages identity information while providing authentication services to applications.
+You can set up a custom OpenID Connect (OIDC) identity provider to allow users to sign up and sign in to your applications with their own accounts. When a customer signs up for your app using their custom OIDC identity provider, the identity provider creates, maintains, and manages identity information while providing authentication services to applications.
 
 You can also federate your sign-in and sign-up flows with an Azure AD B2C tenant using the OIDC protocol.
 
@@ -124,3 +124,5 @@ The following Microsoft Graph API operations are supported for managing identity
 - [Add Facebook as an identity provider](how-to-facebook-federation-customers.md)
 - [Add Google as an identity provider](how-to-google-federation-customers.md)
 - [Add Apple as an identity provider](how-to-apple-federation-customers.md)
+- [Add federation with SAML/WS-Fed identity providers](../direct-federation.md)
+- [Add OpenID Connect as an external identity provider](how-to-custom-oidc-federation-customers.md)
