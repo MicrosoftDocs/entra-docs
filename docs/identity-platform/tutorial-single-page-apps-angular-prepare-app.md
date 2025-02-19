@@ -32,7 +32,7 @@ In this tutorial:
     * **Name**: identity-client-spa
     * **Supported account types**: *Accounts in this organizational directory only (Single tenant).*
     * **Platform configuration**: Single-page application (SPA).
-    * **Redirect URI**: `http://localhost:3000/`.
+    * **Redirect URI**: `http://localhost:4200/`.
 * (External Only) A user flow which has been associated with your app registration. For more information, see [Create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) and [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
 
 ## Create a new Angular project
