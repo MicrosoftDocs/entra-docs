@@ -48,7 +48,7 @@ The following Linux distributions are currently supported for deployments in a s
 | SUSE Linux Enterprise Server (SLES) | SLES 12, SLES 15.1-15.5*, SLES 15.6+ |
 | Ubuntu | Ubuntu 16.04 to Ubuntu 24.04 |
 
-\* SUSE made a breling change with 15.6 which made it incompatible with the older 15 versions. The VM extension always installs the latest package, which makes it incomatible with the older SUSE versions, but the aadsshlogin packages still exist in packages.microsoft.com. After adding the repo, one can manually install them with this command:
+\* SUSE made a breaking change with 15.6 which made it incompatible with the older 15.x versions. The VM extension always installs the latest package, which makes it incomatible with the older SUSE versions, but the aadsshlogin packages still exist in packages.microsoft.com. After adding the repo, one can manually install them with this command:
 `sudo zypper install aadsshlogin=1.0.027980001`.
 
 The following Azure regions are currently supported for this feature:
