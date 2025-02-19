@@ -37,7 +37,7 @@ There are different roles, permissions, and license requirements to view health 
 - The [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role is required to *view and modify Conditional Access policies*.
 - The `HealthMonitoringAlert.Read.All` permission is required to *view the alerts using the Microsoft Graph API*.
 - The `HealthMonitoringAlert.ReadWrite.All` permission is required to *view and modify the alerts using the Microsoft Graph API*.
-- For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs).
+- For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#microsoft-entra-health-least-privileged-roles).
 
 ## Investigate the alert and signal
 
@@ -101,6 +101,9 @@ To remediate issues affecting a large number of users:
         - **Add conditional access policy**
         - **Delete conditional access policy**
         - **Update conditional access policy**
+
+    ![Screenshot of the audit logs with the Conditional Access policies highlighted.](media/scenario-health-conditional-access-block-policy/conditional-access-audit-logs-filter.png)
+
     - You can also use the following Microsoft Graph API queries:
         - GET `https://graph.microsoft.com/beta/auditLogs/directoryAudits?$filter=loggedByService eq 'Conditional Access'`
         - GET `https://graph.microsoft.com/beta/auditLogs/directoryAudits?$filter=loggedByService eq 'Conditional Access' and operationType eq 'Update'`
