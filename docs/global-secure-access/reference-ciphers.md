@@ -18,14 +18,14 @@ Microsoft Entra private network connector supports Transport Layer Security (TLS
 ## Cipher suites
 A cipher suite is a set of cryptographic algorithms used to create a secure connection. TLS 1.2 and TLS 1.3 use the default Windows ciphers. 
 
-The full list of supported ciphers are:    
+The following tables list the supported cipher suites for TLS 1.3 and TLS 1.2.    
 
 |# TLS 1.3 (suites in server-preferred order)   |:::no-loc text="":::   |:::no-loc text="":::   |:::no-loc text="":::   |
 |---------|---------|---------|---------|
 |TLS_AES_256_GCM_SHA384 (0x1302)   |ECDH secp384r1 (eq. 7680 bits RSA)   |FS   |   |
 |TLS_AES_128_GCM_SHA256 (0x1301)   |ECDH secp256r1 (eq. 3072 bits RSA)   |FS   |   | 
 
-|# TLS 1.3 (suites in server-preferred order)   |:::no-loc text="":::   |:::no-loc text="":::   |:::no-loc text="":::   |
+|# TLS 1.2 (suites in server-preferred order)   |:::no-loc text="":::   |:::no-loc text="":::   |:::no-loc text="":::   |
 |---------|---------|---------|---------|
 |TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (0xc030)   |ECDH secp384r1 (eq. 7680 bits RSA)   |FS   |   |
 |TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (0xc02f)   |ECDH secp256r1 (eq. 3072 bits RSA)   |FS   |   |  
