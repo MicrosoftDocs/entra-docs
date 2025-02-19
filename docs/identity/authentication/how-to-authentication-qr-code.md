@@ -225,12 +225,10 @@ You can edit QR code authentication method for a user by using the Microsoft Ent
   
   You need to print and distribute the new QR code to the user. 
   The user can continue to use their existing PIN. 
-  
-  If you want the user to update their PIN, generate a temporary one and distribute it to the user. The user will be required to change the temporary PIN at the next sign-in.
 
   :::image type="content" border="true" source="media/how-to-authentication-qr-code/replace-qr-code.png" alt-text="Screenshot that shows how to replace a lost or stolen QR code.":::
 
-- Reset a PIN. Click the pencil icon after the masked PIN. Click **Generate new PIN** to create a new temporary PIN. Click **OK** to confirm that the user is forced to change the temporary PIN when they next sign in. Copy the temporary PIN and share it with the user. 
+- Reset a PIN. If you to reset user PIN, generate a temporary one and distribute it to the user. The user will be required to change the temporary PIN at the next sign-in. Click the pencil icon after the masked PIN. Click **Generate new PIN** to create a new temporary PIN. Click **OK** to confirm that the user is forced to change the temporary PIN when they next sign in. Copy the temporary PIN and share it with the user. 
 
   :::image type="content" border="true" source="media/how-to-authentication-qr-code/reset-pin.png" alt-text="Screenshot that shows how to reset a PIN.":::
 
@@ -494,12 +492,11 @@ Users need to [download Teams](https://aka.ms/teamsmobiledownload):
 1. Click **Sign-in with QR code** in Microsoft Teams.
 1. Scan the QR code. Give consent if asked for camera permission.
 1. Enter your PIN.
+1. You're now signed in to the app.
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/enter-pin.png" alt-text="Screenshot that shows how to enter a PIN.":::
 
-1. When you first sign-in, you need to update your PIN.
-1. You're now signed in to the app.
-1. If you sign in with a temporary PIN, you need to change it. 
+1. When you sign-in with a temporary PIN, you need to change it. 
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/change-pin.png" alt-text="Screenshot that shows how to change a PIN.":::
 
@@ -513,7 +510,7 @@ Users need to [download Teams](https://aka.ms/teamsmobiledownload):
 
 ## Add security with QR code authentication using Conditional Access policies
 
-Restrict the QR code authentication method to only frontline workers and shared devices. This section covers how to create policies that restrict QR code authentication method to only frontline workers and shared devices.
+Restrict the QR code authentication method to only frontline workers, compliant, and shared devices. This section covers how to create policies that restrict QR code authentication method to only frontline workers and shared devices.
 
 ### Restrict QR code authentication to frontline workers  
 
