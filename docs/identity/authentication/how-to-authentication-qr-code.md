@@ -17,7 +17,7 @@ manager: amycolannino
 
 # How to enable the QR code authentication method in Microsoft Entra ID (Preview)
 
-This topic covers how to enable the QR code authentication method in the Authentication methods policy in Microsoft Entra ID. It also covers how to manage QR code authentication method for users, and how they can sign in with a QR code and PIN. 
+This topic covers how to enable the QR code authentication method in the Authentication methods policy in Microsoft Entra ID. It also covers how to manage the QR code authentication method for users, and how they can sign in with a QR code and PIN. 
 
 ## Prerequisites to enable the QR code authentication method
 
