@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: domain-services
 ms.custom: devx-track-arm-template, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: sample
-ms.date: 10/15/2024
+ms.date: 02/19/2025
 ms.author: justinha
 ---
 

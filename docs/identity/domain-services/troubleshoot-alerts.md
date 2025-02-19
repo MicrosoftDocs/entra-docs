@@ -8,7 +8,7 @@ ms.assetid: 54319292-6aa0-4a08-846b-e3c53ecca483
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: troubleshooting
-ms.date: 12/03/2024
+ms.date: 02/19/2025
 ms.author: justinha
 ---
 # Known issues: Common alerts and resolutions in Microsoft Entra Domain Services
