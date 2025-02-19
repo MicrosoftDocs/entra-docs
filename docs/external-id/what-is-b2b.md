@@ -129,4 +129,4 @@ You can [enable integration with SharePoint and OneDrive](/sharepoint/sharepoint
 
 ## Related content
 
-To learn more about B2B collaboration users, see the following article: [Add B2B collaboration guest users in the admin center](add-users-administrator.yml). To learn more about how to establish mutual trust relationships for seamless collaboration using Microsoft Teams shared channels, see the following article: [B2B direct connect](b2b-direct-connect-overview.md).
+To learn more about B2B collaboration users, see the following article: [Add B2B collaboration guest users in the admin center](add-users-administrator.yml). To learn more about how to establish mutual trust relationships between organizations for seamless collaboration using Microsoft Teams shared channels, see the following article:  [B2B direct connect](b2b-direct-connect-overview.md).
