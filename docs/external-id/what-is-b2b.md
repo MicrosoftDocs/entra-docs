@@ -4,7 +4,7 @@ description: Learn about B2B collaboration for sharing apps with external identi
 
 ms.service: entra-external-id
 ms.topic: overview
-ms.date: 10/29/2024
+ms.date: 02/19/2025
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
@@ -104,7 +104,7 @@ You can use authentication and authorization policies to protect your corporate 
 You can delegate guest user management to application owners. This allows them to add guest users directly to any application they want to share, whether it's a Microsoft application or not.
 
 - Administrators set up self-service app and group management.
-- Non-administrators use their [Access Panel](https://myapps.microsoft.com) to add guest users to applications or groups.
+- Nonadministrators use their [Access Panel](https://myapps.microsoft.com) to add guest users to applications or groups.
 
 :::image type="content" source="media/what-is-b2b/access-panel-manage-app.png" alt-text="Screenshot showing the Access panel for a guest user."  lightbox="media/what-is-b2b/access-panel-manage-app.png":::
 
@@ -127,8 +127,6 @@ You can [enable integration with SharePoint and OneDrive](/sharepoint/sharepoint
 
 :::image type="content" source="media/what-is-b2b/enable-email-otp-options.png" alt-text="Screenshot of the email one-time-passcode setting.":::
 
-## Next steps
+## Related content
 
-- [Invitation email](invitation-email-elements.md)
-- [Add B2B collaboration guest users in the admin center](add-users-administrator.yml)
-- [B2B direct connect](b2b-direct-connect-overview.md)
+To learn more about B2B collaboration users, see the following article: [Add B2B collaboration guest users in the admin center](add-users-administrator.yml). To learn more about how to establish mutual trust relationships for seamless collaboration using Microsoft Teams shared channels, see the following article: [B2B direct connect](b2b-direct-connect-overview.md).
