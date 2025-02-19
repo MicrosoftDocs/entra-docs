@@ -13,11 +13,13 @@ ms.collection: M365-identity-device-management
 #customer intent: As an IT admin setting up federation with an external organizaton's SAML/WS-Fed identity provider, I want to invite users from that organization to sign in to my Microsoft Entra tenant with their work account.
 ---
 
-# Invite users to sign in using a federated SAML/WS-Fed identity provider
+# Invite admins to sign in using a federated SAML/WS-Fed identity provider (preview)
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-This article explains how to invite users from a federated organization to sign in to your Microsoft Entra tenant using their own SAML 2.0 or WS-Fed identity provider (IdP). Once federation is set up, new invited users can use their existing IdP-managed accounts to sign in, without needing a separate Microsoft Entra account.
+Once you set up SAML 2.0 or WS-Fed identity provider (IdP) federation, you can invite users from the federated organization to sign in to your external tenant apps using their own accounts. Newly invited users can use their existing IdP-managed accounts to sign in without needing a separate Microsoft Entra account. 
+
+In an external tenant, the invitation process is intended for inviting users who will have an administrator role in your tenant. You assign the administrator role at the same time you create the invitation, as described in this article. 
 
 ## Prerequisites
 
@@ -50,6 +52,7 @@ To invite a user from the federated partner organization to your external tenant
    - From the menu that appears, choose up to 20 roles from the list. You can assign the user to one or more of the [administrator roles](/entra/identity/role-based-access-control/permissions-reference) in Microsoft Entra ID.
    - Select the **Select** button.
 
-1. Select the **Review + invite** button.
+1. Select the **Review + invite** button. An invitation email is sent to the user. The user needs to accept the invitation to be able to sign in.
 
-An invitation email is sent to the user. The user needs to accept the invitation to be able to sign in.
+> [!NOTE]
+> The default URL redirects to MyApplications, which is only available if the user has been assigned an administrator role.

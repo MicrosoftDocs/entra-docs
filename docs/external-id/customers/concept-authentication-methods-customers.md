@@ -85,14 +85,17 @@ By setting up federation with Apple, you can allow invited users to sign in to y
 The following screenshots show the sign-in with Apple experience. In the sign-in page, users select **Sign-in with Apple**. Then the user is redirected to the Apple identity provider to complete the sign-in.
 Learn how to [add Apple as an identity provider](how-to-apple-federation-customers.md).
 
-## SAML/WS-Fed identity providers (preview)
+## Custom SAML/WS-Fed identity providers (preview)
 
-Your Microsoft Entra tenant can be directly federated with external organizations that use a SAML or WS-Fed identity provider (IdP). Users from the external organization can then use their IdP-managed account to sign in to your tenant, without having to create new Microsoft Entra credentials. The user is redirected to their IdP when signing up or signing in to your app, and then returned to Microsoft Entra once they successfully sign in.
+You can set up a SAML or WS-Fed identity provider to allow users to sign up and sign in to your applications using their own account with the identity provider. Users with email addresses that match predefined domains associated with the federated IdP can sign in by entering their email address. They're redirected to the identity provider, and then returned to Microsoft Entra once they successfully sign in. In external tenants, the following scenarios are supported:
+
+- A user's sign-in email doesn't need to match the predefined domains set up during SAML federation. As long as it matches the user's identity already established with the identity provider, the user can sign up or sign in by selecting the **Sign up with** or **Sign in with** option.
+- If the user doesn't already have an account with the identity provider, they're redirected to the sign-up process, and they might be prompted for more information before their account is created.
 
 > [!NOTE]
-> This feature is currently in preview for external tenants and is generally available for workforce tenants.
+> SAML/WS-Fed federation is generally available for workforce tenants.
 
-For detailed setup steps, see Federate with a SAML/WS-Fed identity provider.
+For detailed setup steps, see [Add federation with SAML/WS-Fed identity providers](../direct-federation.md).
 
 ## Custom OIDC identity provider (preview)
 

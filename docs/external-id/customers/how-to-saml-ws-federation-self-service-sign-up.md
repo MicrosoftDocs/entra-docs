@@ -13,7 +13,7 @@ ms.collection: M365-identity-device-management
 #customer intent: As an IT admin setting up federation with an external organizaton's SAML/WS-Fed identity provider, I want to invite users from that organization to sign in to my Microsoft Entra tenant with their work account.
 ---
 
-# Add the SAML/WS-Fed identity provider to a user flow
+# Add the SAML/WS-Fed identity provider to a user flow (preview)
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
@@ -37,8 +37,6 @@ Once you've configured federation with a SAML or WS-Fed identity provider by fol
 1. Select the user flow where you want to add the identity provider.
 
    :::image type="content" source="media/saml-ws-federation-self-service-sign-up/select-user-flow.png" alt-text="Screenshot showing where to select the user flow.":::
-
-1. In a workforce tenant, options appear for selecting the **Preview** or **Recommended** versions of sign-up and sign-in user flows. Select **Preview**.
 
 1. Under **Settings**, select **Identity providers.**
 

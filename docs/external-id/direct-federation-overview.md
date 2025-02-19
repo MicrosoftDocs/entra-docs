@@ -20,7 +20,7 @@ ms.collection: M365-identity-device-management
 
 In Microsoft Entra workforce and external tenants, you can set up federation with other organizations that use a SAML or WS-Fed identity provider (IdP). Users from the external organization can then use their own IdP-managed accounts to sign in to your apps or resources, either during invitiation redemption or self-service sign-up, without having to create new Microsoft Entra credentials. The user is redirected to their IdP when signing up or signing in to your app, and then returned to Microsoft Entra once they successfully sign in.
 
-You can associate multiple domains with a single federation configuration. The partner's domain can be either Microsoft Entra verified or nonverified.
+You can associate multiple domains with a single federation configuration. The partner's domain can be either Microsoft Entra verified or unverified.
 
 Setting up SAML/WS-Fed IdP federation requires configuration both in your tenant and in the external organization's IdP. In some cases, the partner needs to update their DNS text records. They also need to update their IdP with the required claims and relying party trusts.
 
@@ -33,9 +33,16 @@ Setting up SAML/WS-Fed IdP federation requires configuration both in your tenant
 
 Once you set up federation with a partner's SAML/WS-Fed IdP, the identity provider becomes available as a sign-in option for users when they redeem your invitations. You can also add the identity provider to your self-service sign-up user flows, allowing users to sign up for your customer-facing apps using their own organizational accounts.
 
+Users with email addresses that match predefined domains associated with the federated IdP can sign in by entering their email address. They're redirected to the identity provider, and then returned to Microsoft Entra once they successfully sign in. The following scenarios are supported for external tenants:
+
+- A user's sign-in email doesn't need to match the predefined domains set up during SAML federation. As long as it matches the user's identity already established with the identity provider, the user can sign up or sign in by selecting the **Sign up with** or **Sign in with** option.
+- If the user doesn't already have an account with the identity provider, they're redirected to the sign-up process, and they might be prompted for more information before their account is created.
+
+### Verified and unverified domains
+
 A user's sign-in experience depends on whether the partner's domain is Microsoft Entra verified.
 
-- **Nonverified domains** are domains that aren’t DNS-verified in Microsoft Entra ID. After federation, users can sign in using their credentials from the nonverified domain.
+- **Unverified domains** are domains that aren’t DNS-verified in Microsoft Entra ID. After federation, users can sign in using their credentials from the unverified domain.
 
 - **Unmanaged (email-verified or “viral”) tenants** are created when a user redeems an invitation or performs self-service sign-up for Microsoft Entra ID using a domain that doesn’t currently exist. After federation, users can sign in using their credentials from the unmanaged tenant.
 
@@ -48,17 +55,9 @@ A user's sign-in experience depends on whether the partner's domain is Microsoft
 
 <!-- Is this correct, that federation takes precedence for SSSU but not for invitations in both tenant types? -->
 
-### Domainless federation
-
-If a user's email address doesn't match the predefined domain associated with the federated IdP, they can still sign up or sign in with that email address by selecting the **Sign up with** or **Sign in with** option.
-
-### Just-in-time (JIT) registration
-
-Users with email addresses that match predefined domains associated with the federated IdP can sign in by entering their email address. They will then be redirected to sign in with the IdP linked to that domain. If the user already has an account, they'll be signed in. If not, they'll be redirected to sign up and may be prompted to provide more information before their account is created and they're signed in.
-
 ### How federation affects current external users
 
-If an external user already redeemed an invitation or used self-service sign-up, their authentication method doesn't change when you set up federation. They continue using their original authentication method (for example, one-time passcode). Even if a user from a nonverified domain uses federation, and their organization later moves to Microsoft Entra, they continue using federation.
+If an external user already redeemed an invitation or used self-service sign-up, their authentication method doesn't change when you set up federation. They continue using their original authentication method (for example, one-time passcode). Even if a user from an unverified domain uses federation, and their organization later moves to Microsoft Entra, they continue using federation.
 
 You don't need to send new invitations to existing users because they continue using their current sign-in method. But for B2B collaboration in a workforce tenant, you can [reset a user's redemption status](reset-redemption-status.md). The next time the user accesses your app, they repeat the redemption steps and switch to federation. 
 
