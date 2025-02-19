@@ -122,16 +122,6 @@ items:
                     href: tutorial-single-page-app-react-sign-in-configure-authentication.md
                   - name: Sign in and sign out
                     href: tutorial-single-page-app-react-sign-in-sign-out.md
-            - name: Angular
-              items:
-                  - name: Prepare tenant
-                    href: tutorial-single-page-app-angular-sign-in-prepare-tenant.md
-                  - name: Create Angular app
-                    href: tutorial-single-page-app-angular-sign-in-prepare-app.md
-                  - name: Configure app for authentication
-                    href: tutorial-single-page-app-angular-sign-in-configure-authentication.md
-                  - name: Sign in and sign out
-                    href: tutorial-single-page-app-angular-sign-in-sign-out.md
         - name: Native authentication
           items:
             - name: React

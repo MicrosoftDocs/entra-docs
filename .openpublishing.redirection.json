@@ -1952,5 +1952,35 @@
       "redirect_url": "/entra/identity-platform/tutorial-single-page-app-javascript-sign-in-sign-out",
       "redirect_document_id": false
     }
+    {
+      "source_path_from_root": "docs/external-id/customers/tutorial-single-page-app-angular-sign-in-configure-authentication.md",
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-apps-angular-prepare-app",
+      "redirect_document_id": false
+    }
+    {
+      "source_path_from_root": "docs/external-id/customers/tutorial-single-page-app-angular-sign-in-prepare-app.md",
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-apps-angular-prepare-app",
+      "redirect_document_id": false
+    }
+    {
+      "source_path_from_root": "docs/external-id/customers/tutorial-single-page-app-angular-sign-in-prepare-tenant.md",
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-apps-angular-prepare-app",
+      "redirect_document_id": false
+    }
+    {
+      "source_path_from_root": "docs/external-id/customers/tutorial-single-page-app-angular-sign-in-sign-out.md",
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-apps-angular-prepare-app",
+      "redirect_document_id": false
+    }
+    {
+      "source_path_from_root": "docs/identity-platform/tutorial-single-page-apps-angular-call-api.md",
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-apps-angular-prepare-app",
+      "redirect_document_id": false
+    }
+    {
+      "source_path_from_root": "docs/identity-platform/tutorial-single-page-apps-angular-register-app.md",
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-apps-angular-prepare-app",
+      "redirect_document_id": false
+    }
   ]
 }

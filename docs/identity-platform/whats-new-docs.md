@@ -29,9 +29,7 @@ No updates available.
 ### New articles
 
 - [Configure a custom email provider for one time passcode send events (preview)](custom-extension-email-otp-get-started.md)
-- [Tutorial: Call an API from an Angular single-page app](tutorial-single-page-apps-angular-call-api.md)
 - [Tutorial: Create an Angular application and prepare it for authentication](tutorial-single-page-apps-angular-prepare-app.md)
-- [Tutorial: Register an Angular application in a Microsoft Entra ID tenant](tutorial-single-page-apps-angular-register-app.md)
 - [Tutorial: Add sign in and sign out in your Angular single-page application](tutorial-single-page-apps-angular-sign-in-users-app.md)
 
 ### Updated articles
