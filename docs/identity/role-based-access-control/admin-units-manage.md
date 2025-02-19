@@ -113,7 +113,7 @@ Use the [Create administrativeUnit](/graph/api/directory-post-administrativeunit
 Request
 
 ```http
-POST https://graph.microsoft.com/beta/administrativeUnits
+POST https://graph.microsoft.com/v1.0/directory/administrativeUnits
 ```
 
 Body
