@@ -17,7 +17,7 @@ manager: amycolannino
 
 # Authentication methods in Microsoft Entra ID - QR code authentication method (Preview)
 
-QR code authentication method enables frontline workers to sign in efficiently into apps on shared devices. Users will be able to use unique QR code provided to them and enter their PIN to sign in, eliminating the need to enter intricate usernames and passwords. Currently, QR code authentication is supported on mobile devices only (iOS, Android, and iPad).
+QR code authentication method enables frontline workers to sign in efficiently into apps on shared devices. Users will be able to scan unique QR code provided to them and enter their PIN to sign in, eliminating the need to enter intricate usernames and passwords. Currently, QR code authentication is supported on mobile devices only (iOS, Android, and iPad).
 
 ## What is QR code authentication?
 
@@ -27,7 +27,7 @@ The QR code serves as an identifier and is unique to the user.
 It can be downloaded and printed from the Microsoft Entra admin center, MyStaff, or MSGraph API. 
 For convenience, the QR code can be attached to a badge or any other wearable item. 
 
-Authentication Administrators provide a temporary PIN to users, who then change it during sign-in. Only the user knows the PIN.
+Authentication administrators provide a temporary PIN to users, who then change it during sign-in. The changed PIN is only known to the user.
 It's exclusively bound to the QR code only. 
 It can't be used with other user identifiers, such as username or phone number.
 QR code authentication is a single-factor method in which PIN (something you know) is a credential.
@@ -35,12 +35,12 @@ QR code authentication is a single-factor method in which PIN (something you kno
 ## Benefits of QR code authentication
 Benefit | Description
 --------|------------
-Easier and faster sign-in | Frontline workers don't have to enter complex usernames and complex passwords to sign in multiple times into shared devices through their shift
+Easier and faster sign-in | Frontline workers can now sign in to shared device apps without complex usernames and passwords.
 Inexpensive | Printing a QR code costs less than a hardware key, which can be cost prohibitive for organizations with temporary frontline workers.
 
 ### PIN properties
 
-The following policies are applied when an Authentication Policy Administrator creates or resets a PIN. 
+The following policies are applied when an Authentication policy administrator creates or resets a PIN. 
 
 Policy | Values 
 -------|--------
