@@ -84,42 +84,38 @@ The following common issues could cause the Conditional Access block policy aler
 
 This alert can trigger if there’s an increase in the "You can’t get there from here" error message during sign-in. This message appears if the application the user is trying to access can only be accessed from devices or client applications that meet the organization’s mobile device management policy.
 
-- A spike in the number of users receiving this alert could indicate a change to the organization’s mobile device management policy.
-- This alert can be triggered if one user receives this error message after attempting to sign-in many times, which could indicate an issue with their specific device.
+- A spike in a large number of users receiving this alert could indicate a change to the organization’s mobile device management policy.
+- A spike for a small number of users could indicate an issue with their specific device.
 
 To investigate:
 
 Go to the **Affected entities** section of the selected scenario and select **View** for users.
 
+- If the issue is affecting a larger number of users, there might be a change to the mobile device management policy that you need to address.
 - If the issue is affecting a small number of users, it could be related to their specific device. They might need to join their devices to the organization's network. Select a user to navigate directly to their profile.
 
-- If the issue is affecting a larger number of users, there might be a change to the mobile device management policy that you need to address.
+To remediate issues affecting a large number of users:
 
-To remediate:
+1. Review the audit logs to see what changes were made to your Conditional Access policies.
+    - Filter to **Category: Policy** and look for the following events:
+        - **Add conditional access policy**
+        - **Delete conditional access policy**
+        - **Update conditional access policy**
+    - You can also use the following Microsoft Graph API queries:
+        - GET `https://graph.microsoft.com/beta/auditLogs/directoryAudits?$filter=loggedByService eq 'Conditional Access'`
+        - GET `https://graph.microsoft.com/beta/auditLogs/directoryAudits?$filter=loggedByService eq 'Conditional Access' and operationType eq 'Update'`
+        - GET `https://graph.microsoft.com/beta/auditLogs/directoryAudits?$filter=loggedByService eq 'Conditional Access' and operationType eq ‘Add’`
+        - GET `https://graph.microsoft.com/beta/auditLogs/directoryAudits?$filter=loggedByService eq 'Conditional Access' and operationType eq 'Delete'`
+        - GET `https://graph.microsoft.com/beta/auditLogs/directoryAudits?$filter=loggedByService eq 'Conditional Access' and activityDateTime ge 2024-12-04T22:03:57.2013763Z`
 
-If the issue is related to a specific user, they should:
+1. Review your mobile device management policies to ensure they are configured correctly. Sign in to the [Microsoft Intune admin center](https://intune.microsoft.com/) as an [Intune Administrator](../role-based-access-control/permissions-reference.md#intune-administrator) and browse to **Devices** > **Configuration** to review your policies.
+
+To remediate issues affecting specific users:
 
 - Join their work-owned device to the organization's network.
 - Register their personal device with the organization's network.
 
-If the issue is related to a change in the mobile device management policy, you should:
+## Related content
 
-
-
-
-
-
-
-
-- Review the audit logs to see what changes were made to the policy.
-- Filter the audit logs to **Category: Policy** and look for **Add conditional access policy** or **Update conditional access policy** events.
-
-
-
-- For Microsoft Graph API queries, try the following examples:
-    - `GET https://graph.microsoft.com/beta/auditLogs/signIns?$filter=conditionalAccessStatus eq 'failure'`
-    - `GET https://graph.microsoft.com/beta/auditLogs/signIns?$filter=conditionalAccessStatus eq 'failure' and createdDateTime ge 2024-12-04T22:03:57.2013763Z` 
-
-## Next steps
-
-- 
+- [Learn about Conditional Access and Intune](/mem/intune/protect/conditional-access)
+- [How to investigate health scenario alerts](howto-investigate-health-scenario-alerts.md)
