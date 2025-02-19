@@ -226,7 +226,7 @@ You can edit QR code authentication method for a user by using the Microsoft Ent
   You need to print and distribute the new QR code to the user. 
   The user can continue to use their existing PIN. 
   
-  If you want the user to update the PIN, you can delete the QR code authentication method for the user, and add it back again to generate a new standard QR code and temporary PIN. The user needs to use the new QR code and update the PIN on when they first sign in. 
+  If you want the user to update their PIN, generate a temporary one and distribute it to the user. The user will be required to change the temporary PIN at the next sign-in.
 
   :::image type="content" border="true" source="media/how-to-authentication-qr-code/replace-qr-code.png" alt-text="Screenshot that shows how to replace a lost or stolen QR code.":::
 
