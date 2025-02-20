@@ -207,6 +207,18 @@ items:
           href: gsa-poc-private-access.md
         - name: Configure Microsoft Entra Internet Access
           href: gsa-poc-internet-access.md
+  - name: Microsoft Entra ID Governance deployment guide
+    items:
+    - name: Introduction
+      href: governance-deployment-intro.md
+    - name: Microsoft Entra ID Governance deployment guide for employee lifecycle automation
+      href: governance-deployment-employee-lifecycle.md
+    - name: Microsoft Entra ID Governance deployment guide to assign employee access
+      href: governance-deployment-employee-access.md
+    - name: Microsoft Entra ID Governance deployment guide to govern guest and partner access
+      href: governance-deployment-guest-access.md
+    - name: Microsoft Entra ID Governance deployment guide to govern privileged identities
+      href: governance-deployment-privileged-identities.md
   - name: Migration best practices
     items:
     - name: Migration best practices
