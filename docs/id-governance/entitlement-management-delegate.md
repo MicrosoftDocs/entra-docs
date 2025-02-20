@@ -7,7 +7,7 @@ editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: conceptual
-ms.date: 07/15/2024
+ms.date: 02/20/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
 #Customer intent: As an administrator, I want to delegate access governance from IT administrators to department managers and project managers so that they can manage access themselves.
@@ -75,7 +75,7 @@ Entitlement management has the following roles, with permissions for administeri
 | Entitlement management role | Role definition ID | Description |
 | --- | --- | -- |
 | Catalog creator | `ba92d953-d8e0-4e39-a797-0cbedb0a89e8` | Create and manage catalogs. Typically an IT administrator who isn't a Global Administrator, or a resource owner for a collection of resources. The person that creates a catalog automatically becomes the catalog's first catalog owner, and can add more catalog owners. A catalog creator can’t manage or see catalogs that they don’t own and can’t add resources they don’t own to a catalog. If the catalog creator needs to manage another catalog or add resources they don’t own, they can request to be a co-owner of that catalog or resource. |
-| Connected organization administrator | `ba92d953-d8e0-4e39-a797-0cbedb0a89e8` | Create and manage connected organizations. |
+| Connected Organization Administrator | `ba92d953-d8e0-4e39-a797-0cbedb0a89e8` | Create and manage connected organizations. |
 
 Entitlement management has the following roles that are defined for each particular catalog, for administering access packages and other configuration within a catalog. An administrator or a catalog owner can add users, groups of users, or service principals to these roles.
 
@@ -95,7 +95,7 @@ Also, the chosen approver and a requestor of an access package have rights, alth
 
 The following table lists the tasks that the entitlement management roles can do within entitlement management.
 
-| Task |  Identity Governance Administrator | Connected Organizations Administrator | Catalog creator | Catalog owner | Access package manager | Access package assignment manager |
+| Task |  Identity Governance Administrator | Connected Organization Administrator | Catalog creator | Catalog owner | Access package manager | Access package assignment manager |
 | --- | :---: | :---: | :---: | :---: | :---: | :---: |
 | [Delegate to a catalog creator](entitlement-management-delegate-catalog.md) | :heavy_check_mark: |  |  |  |  |  |
 | [Add a connected organization](entitlement-management-organization.md) | :heavy_check_mark: | :heavy_check_mark: |  |  |  |  |
