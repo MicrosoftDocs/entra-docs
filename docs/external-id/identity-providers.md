@@ -40,7 +40,7 @@ External ID offers various identity providers.
 
 - **Facebook**: When building an app, you can configure self-service sign-up and enable Facebook federation so that users can sign up for your app using their own Facebook accounts. Facebook can only be used for self-service sign-up user flows and isn't available as a sign-in option when users are redeeming  invitations from you. See how to [add Facebook as an identity provider](facebook-federation.md).
 
-- **SAML/WS-Fed identity provider federation**: You can also set up federation with any external IdP that supports the SAML or WS-Fed protocols. SAML/WS-Fed IdP federation allows external users to redeem invitations from you by signing in to your apps with their existing social or enterprise accounts. See how to [set up SAML/WS-Fed IdP federation](direct-federation.md).
+- **SAML/WS-Fed identity provider federation**: You can also set up federation with any external IdP that supports the SAML or WS-Fed protocols. SAML/WS-Fed IdP federation allows external users to redeem invitations from you by signing in to your apps with their existing social or enterprise accounts. See how to [set up SAML/WS-Fed IdP federation](direct-federation.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json).
    > [!NOTE]
    > Federated SAML/WS-Fed IdPs can't be used in your self-service sign-up user flows.
 

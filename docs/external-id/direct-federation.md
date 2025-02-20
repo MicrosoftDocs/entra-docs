@@ -118,7 +118,7 @@ Refer to the following tables for the required values.
 
 ### Step 3: Configure SAML/WS-Fed IdP federation in Microsoft Entra External ID
 
-Next, configure federation with the IdP configured in step 1 in Microsoft Entra External ID. You can use either the Microsoft Entra admin center or the [Microsoft Graph API](/graph/api/resources/samlorwsfedexternaldomainfederation?view=graph-rest-1.0). It might take 5-10 minutes before the federation policy takes effect. During this time, don't attempt to complete self-service sign-up or redeem an invitation for the federation domain. The following attributes are required:
+Next, configure federation with the IdP configured in step 1 in Microsoft Entra External ID. You can use either the Microsoft Entra admin center or the [Microsoft Graph API](/graph/api/resources/samlorwsfedexternaldomainfederation). It might take 5-10 minutes before the federation policy takes effect. During this time, don't attempt to complete self-service sign-up or redeem an invitation for the federation domain. The following attributes are required:
 
 - Issuer URI of the partner's IdP
 - Passive authentication endpoint of partner IdP (only https is supported)
