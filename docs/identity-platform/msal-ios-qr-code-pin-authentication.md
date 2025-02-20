@@ -17,7 +17,7 @@ ms.reviewer: amgusain, akgoel, dmwendia
 
 QR code authentication method enables frontline workers to sign in quickly and easily in apps on shared device. Users are able to use unique QR code provided by their admins and enter their PIN to sign in, eliminating the need to enter usernames and passwords.
 
-You can use QR code web sign-in experience available at login.microsoft.com, this user entry point doesn't require any developer changes. User will select **Sign in options** > **Sign in to an organization** > **Sign in with a QR code**. You can optimize QR code sign-in experience by providing the entry point at your login page, eliminating two user clicks. To take advantage of QR code authentication method, app developers and [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference) work together:
+You can use QR code web sign-in experience available at *login.microsoft.com*. This user entry point doesn't require any developer changes. User select **Sign in options** > **Sign in to an organization** > **Sign in with a QR code**. You can optimize QR code sign-in experience by providing the entry point at your sign in page, eliminating two user clicks. To take advantage of QR code authentication method, app developers and [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference) work together:
 
 - App developers integrate QR code authentication's optimized entry point in their app using the Microsoft Authentication Library (MSAL) for iOS and macOS.
 - Authentication Policy Administrator configures the [authentication method](/entra/identity/authentication/how-to-authentication-qr-code) in Microsoft Entra ID.
@@ -32,7 +32,7 @@ To configure your app to use QR code authentication, you can call the `getDevice
 
 ```
 
-`MSALPreferredAuthMethod` is an enumeration that describes the different authentication methods available. The `configuredPreferredAuthMethod` property allows you to retrieve the preferred authentication method for the application.. Currently, QR code is private enum value of 1. When released to general availability (GA), it's `MSALPreferredAuthMethodQRPIN`.
+`MSALPreferredAuthMethod` is an enumeration that describes the different authentication methods available. The `configuredPreferredAuthMethod` property allows you to retrieve the preferred authentication method for the application. Currently, QR code is private enum value of 1. When released to general availability (GA), it's `MSALPreferredAuthMethodQRPIN`.
 
 `MSALInteractiveTokenParameters` also define a new, optional parameter of type `MSALPreferredAuthMethod: preferredAuthMethod`. When this parameter is set for QR code authentication, the resulting interactive sign-in UI takes the user directly to the QR code authentication entry page. The following code snippet shows how to configure your app to use QR code authentication:
 
