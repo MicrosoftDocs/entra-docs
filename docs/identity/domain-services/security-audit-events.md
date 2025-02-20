@@ -14,7 +14,7 @@ ms.custom: devx-track-azurepowershell
 ---
 # Enable security and DNS audits for Microsoft Entra Domain Services
 
-Microsoft Entra Domain Services security and DNS audits let Azure stream events to targeted resources. These resources include Azure Storage, Azure Log Analytics workspaces, or Azure Event Hub. After you enable security audit events, Domain Services sends all the audited events for the selected category to the targeted resource.
+Microsoft Entra Domain Services security and DNS audits let Azure stream events to targeted resources. These resources include Azure Storage, Azure Log Analytics workspaces, or Azure Event Hubs. After you enable security audit events, Domain Services sends all the audited events for the selected category to the targeted resource.
 
 You can archive events into Azure storage and stream events into security information and event management (SIEM) software (or equivalent) using Azure Event Hubs, or do your own analysis and using Azure Log Analytics workspaces from the Microsoft Entra admin center.
 

@@ -275,7 +275,7 @@ Upon successful onboarding, Domain Services back fills synchronized users and gr
 The following common reasons cause synchronization to stop in a managed domain:
 
 * Required network connectivity is blocked. To learn more about how to check the Azure virtual network for problems and what's required, see [troubleshoot network security groups](alert-nsg.md) and the [network requirements for Domain Services](network-considerations.md).
-*  Password synchronization wasn't set up or successfully completed when the managed domain was deployed. You can set up password synchronization for [cloud-only users](tutorial-create-instance.md#enable-user-accounts-for-azure-ad-ds) or [hybrid users from on-prem](tutorial-configure-password-hash-sync.md).
+*  Password synchronization wasn't set up or successfully completed when the managed domain was deployed. You can set up password synchronization for [cloud-only users](tutorial-create-instance.md#enable-user-accounts-for-azure-ad-ds) or [hybrid users from on-premises](tutorial-configure-password-hash-sync.md).
 
 ## AADDS501: A backup has not been taken in a while
 

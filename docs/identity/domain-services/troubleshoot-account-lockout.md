@@ -44,7 +44,7 @@ The most common reasons for an account to be locked out, without any malicious i
     * If an account is used by applications or services, those resources may repeatedly try to sign in using an old password. This behavior causes the account to be locked out.
     * Try to minimize account use across multiple different applications or services, and record where credentials are used. If an account password is changed, update the associated applications or services accordingly.
 * **Password has been changed in a different environment and the new password hasn't synchronized yet.**
-    * If an account password is changed outside of the managed domain, such as in an on-prem AD DS environment, it can take a few minutes for the password change to synchronize through Microsoft Entra ID and into the managed domain.
+    * If an account password is changed outside of the managed domain, such as in an on-premises AD DS environment, it can take a few minutes for the password change to synchronize through Microsoft Entra ID and into the managed domain.
     * A user that tries to sign in to a resource in the managed domain before that password synchronization process has completed causes their account to be locked out.
 
 ## Troubleshoot account lockouts with security audits

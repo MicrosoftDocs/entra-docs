@@ -22,7 +22,7 @@ You can create a forest trust between Microsoft Entra Domain Services and on-pre
 - Environments where you can't synchronize password hashes, or where users exclusively sign in using smart cards and don't know their password.
 - Hybrid scenarios that require access to on-premises domains.
 
-You can choose from three possible directions when you create a forest trust, depending on how users need to access resources. Domain Services only supports forest trusts. An external trust to a child domian on-premises isn't supported. 
+You can choose from three possible directions when you create a forest trust, depending on how users need to access resources. Domain Services only supports forest trusts. An external trust to a child domain on-premises isn't supported. 
 
 Trust direction | User access
 ----------------|------------
