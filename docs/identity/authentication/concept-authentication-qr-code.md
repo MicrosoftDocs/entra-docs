@@ -105,7 +105,7 @@ For more information about how to manage QR codes, see [How to enable the QR cod
 
 ## User sign-in experience with QR code authentication
 
-Users can sign with a QR code by using the web sign-in experience or an optimized app sign-in experience.  
+Users can sign in with a QR code by using the web sign-in experience or an optimized app sign-in experience.  
 
 ### Mobile web sign-in experience
 You can use Microsoft's web browser sign-in experience (login.microsoft.com) to authenticate users. Users can click **Sign in options** > **Sign in to an organization** > **Sign in with a QR code**.

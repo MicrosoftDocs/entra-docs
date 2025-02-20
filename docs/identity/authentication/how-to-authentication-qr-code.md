@@ -5,7 +5,7 @@ description: Learn about how to enable QR code authentication method in Microsof
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/18/2025
+ms.date: 02/19/2025
 
 ms.author: justinha
 author: aanjusingh
@@ -228,7 +228,7 @@ You can edit QR code authentication method for a user by using the Microsoft Ent
 
   :::image type="content" border="true" source="media/how-to-authentication-qr-code/replace-qr-code.png" alt-text="Screenshot that shows how to replace a lost or stolen QR code.":::
 
-- Reset a PIN. If you to reset user PIN, generate a temporary one and distribute it to the user. The user will be required to change the temporary PIN at the next sign-in. Click the pencil icon after the masked PIN. Click **Generate new PIN** to create a new temporary PIN. Click **OK** to confirm that the user is forced to change the temporary PIN when they next sign in. Copy the temporary PIN and share it with the user. 
+- Reset a PIN. If you need to reset a user PIN, generate a temporary one and distribute it to the user. The user will be required to change the temporary PIN at the next sign-in. Click the pencil icon after the masked PIN. Click **Generate new PIN** to create a new temporary PIN. Click **OK** to confirm that the user is forced to change the temporary PIN when they next sign in. Copy the temporary PIN and share it with the user. 
 
   :::image type="content" border="true" source="media/how-to-authentication-qr-code/reset-pin.png" alt-text="Screenshot that shows how to reset a PIN.":::
 
@@ -469,17 +469,18 @@ This example shows how to delete a standard QR code for a user.
 
 ## Sign in to Microsoft Teams or Managed Home Screen (MHS) with QR code
 
-Microsoft Teams and Managed Home Screen (MHS) apps  have optimized QR code sign-in experience. An Authentication Policy Administrator needs to configure Intune or another mobile device management (MDM) solution to enable the QR code authentication method for mobile devices. 
+Microsoft Teams and Managed Home Screen (MHS) have an optimized QR code sign-in experience. An Authentication Policy Administrator needs to configure Intune or another mobile device management (MDM) solution to enable the QR code authentication method for mobile devices. 
 
 ### Enable sign-in with a QR code in Teams or MHS
-When configuring with Intune, assign Microsoft Authenticator as a Required apps for all devices you want to add QR code authentication for.
+When configuring with Intune, assign Microsoft Authenticator as a required app for all devices you want to add QR code authentication for.
 
 | Platform | MDM app config key    | Value | Configuration location |
 |----------|-----------------------|-------|------------------------|
 | iOS      | preferred_auth_config | qrpin | Device management profile, which configures a single sign-on (SSO) extension |
 | Android  | preferred_auth_config | qrpin | Microsoft Authenticator |
 
-Note: Managed Home Screen is only available on Android devices.
+> [!Note] 
+> MHS is only available on Android devices.
 
 ### QR code authentication Teams sign-in experience 
 
@@ -529,7 +530,7 @@ Restrict the QR code authentication method to only frontline workers, compliant,
 
 1. Create a custom authentication strength Conditional Access policy. Select authentication **QR code (Preview)**.  
 
-1. Create a Conditional Access policy that requires shared devices be marked as compliant with policies from Intune or other MDM solution. This policy makes sure that frontline workers can access only specific resources from a compliant, shared device by using QR code auth
+1. Create a Conditional Access policy that requires shared devices be marked as compliant with policies from Intune or another MDM solution. This policy makes sure that frontline workers can access only specific resources from a compliant, shared device that they signed into with a QR code.
    
    1. Under **Users or workload identities** > **Include** > select **Users and groups**, and choose your **Frontline workers** frontline worker group. 
    1. Under **Target resources** > **Include** > select specific resources that frontline workers can access.

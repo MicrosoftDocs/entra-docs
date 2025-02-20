@@ -16,7 +16,7 @@
 
 - To add a new standard QR code, click **Add new** next to the standard QR code.
 
-  :::image type="content" border="true" source="media/edit-qr-code-my-staff/add-new-qr-code-my-staff.png" alt-text="Screenshot that shows how to add a new a QR code in My Staff.":::
+  :::image type="content" border="true" source="media/edit-qr-code-my-staff/add-new-qr-code-my-staff.png" alt-text="Screenshot that shows how to add a new QR code in My Staff.":::
 
   Select the activation time and expiration date for the QR code, and click **Add**. 
 
