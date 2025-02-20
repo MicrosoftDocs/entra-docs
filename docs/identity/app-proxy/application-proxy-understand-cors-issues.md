@@ -16,7 +16,7 @@ ms.reviewer: ashishj
 [Cross-origin resource sharing (CORS)](https://www.w3.org/TR/cors/) can present challenges for the apps and APIs you publish through Microsoft Entra application proxy. This article discusses Microsoft Entra application proxy CORS issues and solutions.
 
 > [!TIP]
-> Asynchronous JavaScript and eXtemsible Markup Language is known as (AJAX). AJAX contains an acronym within an acronym in that eXtensible Markup Language (XML) makes up the last `X` in AJAX. AJAX stands for Asynchronous JavaScript and XML and XML stands for eXtensible Markup Language.
+> Asynchronous JavaScript and eXtensible Markup Language is known as (AJAX). AJAX contains an acronym within an acronym in that eXtensible Markup Language (XML) makes up the last `X` in AJAX. AJAX stands for Asynchronous JavaScript and XML and XML stands for eXtensible Markup Language.
 
 Browser security usually prevents a web page from making requests to another domain. This restriction is called the *same-origin policy*, and prevents a malicious site from reading sensitive data from another site. However, sometimes you might want to let other sites call your web API. CORS is a W3C standard that lets a server relax the same-origin policy and allow some cross-origin requests while rejecting others.
 
@@ -111,6 +111,10 @@ You can change your application to support CORS by adding the Access-Control-All
 ### Option 5: Extend the lifetime of the access token
 
 Some CORS issues can't be resolved. For example, your application redirects to `login.microsoftonline.com` to authenticate, and the access token expires. The CORS call then fails. A workaround for this scenario is to extend the lifetime of the access token, to prevent it from expiring during a user’s session. For more information, see [Configurable token lifetimes in Microsoft Entra ID](~/identity-platform/configurable-token-lifetimes.md).
+
+### Option 6: Complex application
+
+For applications composed of multiple individual web applications where preflight (OPTIONS) requests are used, you can publish them using the complex application feature. For more information, see [Understand complex applications in Microsoft Entra application proxy](application-proxy-configure-complex-application.md).
 
 ## See also
 - [Tutorial: Add an on-premises application for remote access through application proxy in Microsoft Entra ID](~/identity/app-proxy/application-proxy-add-on-premises-application.md) 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Configure Funnel Leasing for automatic user provisioning with Microsoft Entra ID'
+title: Configure Funnel Leasing for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Funnel Leasing.
 
 author: thomasakelo
@@ -7,14 +7,14 @@ manager: jeedes
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Funnel Leasing so that I can streamline the user management process and ensure that users have the appropriate access to Funnel Leasing.
 ---
 
-# Tutorial: Configure Funnel Leasing for automatic user provisioning
+# Configure Funnel Leasing for automatic user provisioning
 
 This tutorial describes the steps you need to perform in both Funnel Leasing and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users to [Funnel Leasing](https://funnelleasing.com) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
@@ -164,6 +164,6 @@ To associate an Azure user to a Funnel role, or an Azure user to a Funnel employ
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

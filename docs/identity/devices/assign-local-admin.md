@@ -34,10 +34,10 @@ By adding users to the Microsoft Entra Joined Device Local Administrator role, y
 
 ## Manage administrator roles
 
-To view and update the membership of an [administrator role](~/identity/role-based-access-control/permissions-reference.md) role, see:
+To view and update the membership of an [administrator role](../role-based-access-control/permissions-reference.md) role, see:
 
-- [View all members of an administrator role in Microsoft Entra ID](~/identity/role-based-access-control/manage-roles-portal.yml)
-- [Assign a user to administrator roles in Microsoft Entra ID](~/fundamentals/how-subscriptions-associated-directory.yml)
+- [View all members of an administrator role in Microsoft Entra ID](../role-based-access-control/view-assignments.md)
+- [Assign a user to administrator roles in Microsoft Entra ID](../role-based-access-control/manage-roles-portal.md)
 
 ## Manage the Microsoft Entra Joined Device Local Administrator role
 
@@ -64,8 +64,9 @@ Users aren't directly listed in the local administrator group, their permissions
 > The above actions are not applicable to users who have not signed in to the relevant device previously. In this case, the administrator privileges are applied immediately after their first sign in to the device.
 
 <a name='manage-administrator-privileges-using-azure-ad-groups-preview'></a>
+<a name='manage-administrator-privileges-using-microsoft-entra-groups-preview'></a>
 
-## Manage administrator privileges using Microsoft Entra groups (preview)
+## Manage administrator privileges using Microsoft Entra groups
 
 You can use Microsoft Entra groups to manage administrator privileges on Microsoft Entra joined devices with the [Local Users and Groups](/windows/client-management/mdm/policy-csp-localusersandgroups) mobile device management (MDM) policy. This policy allows you to assign individual users or Microsoft Entra groups to the local administrators group on a Microsoft Entra joined device, providing you with the granularity to configure distinct administrators for different groups of devices.
 

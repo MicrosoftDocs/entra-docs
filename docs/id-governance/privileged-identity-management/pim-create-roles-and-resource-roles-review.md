@@ -35,7 +35,6 @@ Using Access Reviews for **Service Principals** requires a Microsoft Entra Workl
 
 ## Create access reviews
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a user that is assigned to one of the prerequisite roles.
 

@@ -1,21 +1,21 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Deskradar'
+title: Microsoft Entra single sign-on (SSO) integration with Deskradar
 description: Learn how to configure single sign-on between Microsoft Entra ID and Deskradar.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Deskradar so that I can control who has access to Deskradar, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Deskradar
+# Microsoft Entra single sign-on (SSO) integration with Deskradar
 
 In this tutorial, you'll learn how to integrate Deskradar with Microsoft Entra ID. When you integrate Deskradar with Microsoft Entra ID, you can:
 
@@ -144,18 +144,16 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Deskradar SSO
 
-
-
-
 1. In a different web browser window, sign in to your Deskradar company site as an administrator
 
 1. Open **Team** panel by clicking the icon in the Sidebar.
 
 1. Switch to **Authentication** tab.
 
-1. On the **SAML 2.0** tab, perform the following steps:
+1. On the **SAML 2.0** tab, enter the **Login URL** and **Microsoft Entra Identifier** values, which you copied previously into the following fields:
 
-    ![Screenshot that shows the "S A M L 2.0" tab with arrows pointing to the "S A M L S S D U R L" and "Identifier Provider Issuer" fields.](./media/deskradar-tutorial/14-paste-urls.jpg)
+    - **SAML SSO URL**: The **Login URL** value that you copied previously.
+    - **Identity Provider Issuer**: The **Microsoft Entra Identifier** value that you copied previously.
 
 	a. Enable **SAML** authentication method.
 
@@ -164,8 +162,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 	c. In the **Identity Provider Issuer** textbox, enter the **Microsoft Entra Identifier** value, which you copied previously.
 
 1. Open the downloaded **Certificate (Base64)** file with a text editor and copy and paste its content into **Public Certificate** field in Deskradar.
-
-	![Deskradar Configuration](./media/deskradar-tutorial/15-paste-certificate.jpg)
 
 ### Create Deskradar test user
 
@@ -187,6 +183,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the Deskradar tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Deskradar for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Deskradar you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with WAN-Sign'
+title: Microsoft Entra SSO integration with WAN-Sign
 description: Learn how to configure single sign-on between Microsoft Entra ID and WAN-Sign.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and WAN-Sign so that I can control who has access to WAN-Sign, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with WAN-Sign
+# Microsoft Entra SSO integration with WAN-Sign
 
 In this tutorial, you'll learn how to integrate WAN-Sign with Microsoft Entra ID. When you integrate WAN-Sign with Microsoft Entra ID, you can:
 
@@ -154,6 +154,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the WAN-Sign tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the WAN-Sign for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure WAN-Sign you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

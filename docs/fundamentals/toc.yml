@@ -40,8 +40,6 @@ items:
   items:
   - name: Create or delete users
     href: how-to-create-delete-users.yml
-  - name: Apply licenses to users
-    href: license-users-groups.yml
   - name: Users
     expanded: false
     items: 
@@ -62,10 +60,10 @@ items:
     items:
     - name: Learn about groups
       href: concept-learn-about-groups.md
-    - name: Create a group and add members
-      href: ./groups-view-azure-portal.md
     - name: Manage groups
       href: how-to-manage-groups.yml
+    - name: Quickstart - Create a group and add members
+      href: groups-view-azure-portal.md
   - name: Licenses
     expanded: false
     items: 
@@ -83,15 +81,20 @@ items:
     href: copilot-security-entra.md  
   - name: Respond to identity threats using risky user summarization
     href: copilot-entra-risky-user-summarization.md  
+  - name: Manage lifecycle workflows using Microsoft Security Copilot
+    href: copilot-entra-lifecycle-workflow.md
   - name: Investigate incidents using Microsoft Security Copilot
     href: copilot-security-entra-investigate-incident.md 
-  - name: Investigate app risk using Microsoft Copilot for Security
+  - name: Investigate app risk using Microsoft Security Copilot
     href: copilot-security-entra-investigate-risky-apps.md
   - name: Responsible AI FAQ for Security Copilot in Microsoft Entra
     href: copilot-security-entra-responsible-ai-faq.md
 - name: Quick security wins
   expanded: false
   items:
+  - name: Configure security recommendations
+
+    href: configure-security.md
   - name: Enable MFA
     href: ~/identity/authentication/concept-mfa-licensing.md?toc=/entra/identity/fundamentals/toc.json&bc=/entra/fundamentals/breadcrumb/toc.json
   - name: Identity secure score

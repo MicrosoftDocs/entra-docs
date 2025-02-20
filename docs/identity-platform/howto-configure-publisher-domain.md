@@ -1,9 +1,9 @@
 ---
 title: Configure an app's publisher domain
 description: Learn how to configure an app's publisher domain to let users know where their information is being sent.
-author: OwenRichards1
 manager: CelesteDG
-ms.author: owenrichards
+author: garrodonnell
+ms.author: godonnell
 ms.custom:
 ms.date: 04/27/2023
 ms.reviewer:
@@ -66,7 +66,6 @@ If your app was registered *before May 21, 2019*, your app's consent prompt show
 
 ## Set a publisher domain in the Microsoft Entra admin center
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To set a publisher domain for your app by using the Microsoft Entra admin center:
 

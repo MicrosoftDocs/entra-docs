@@ -45,7 +45,6 @@ For examples of syntax, supported properties, operators, and values for a member
 
 ## To create a rule for a dynamic membership group
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Groups Administrator](~/identity/role-based-access-control/permissions-reference.md#groups-administrator).
 1. Select Microsoft Entra ID.> **Groups**.
@@ -120,7 +119,7 @@ If an error occurs while processing the membership rule for a specific group, an
 The following articles provide additional information on how to use groups in Microsoft Entra ID.
 
 - [See existing groups](~/fundamentals/groups-view-azure-portal.md)
-- [Create a new group and adding members](~/fundamentals/how-to-manage-groups.yml)
-- [Manage settings of a group](~/fundamentals/how-to-manage-groups.yml)
-- [Manage memberships of a group](~/fundamentals/how-to-manage-groups.yml)
+- [Create a new group and adding members](/entra/fundamentals/how-to-manage-groups)
+- [Manage settings of a group](/entra/fundamentals/how-to-manage-groups)
+- [Manage memberships of a group](/entra/fundamentals/how-to-manage-groups)
 - [Manage rules for dynamic membership groups for users](groups-dynamic-membership.md)

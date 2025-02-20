@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Sentry'
+title: Microsoft Entra single sign-on (SSO) integration with Sentry
 description: Learn how to configure single sign-on between Microsoft Entra ID and Sentry.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Sentry so that I can control who has access to Sentry, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Sentry
+# Microsoft Entra single sign-on (SSO) integration with Sentry
 
 In this tutorial, you'll learn how to integrate Sentry with Microsoft Entra ID. When you integrate Sentry with Microsoft Entra ID, you can:
 
@@ -154,6 +154,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can use the My Apps portal to test the application in any mode. When you click the Sentry tile in the My Apps portal, if configured in SP mode, you are redirected to the application sign-on page to initiate the sign-in flow. If configured in IDP mode, you should be automatically signed in to the Sentry application for which you set up the SSO. For more information about the My Apps portal, see [Sign in and start apps from the My Apps portal](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Sentry you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 08/20/2024
+ms.date: 01/14/2025
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -26,10 +26,10 @@ Sensitivity labels can be applied to groups across apps and services such as Out
 
 To apply published labels to groups, you must first enable the feature. These steps enable the feature in Microsoft Entra ID. The Microsoft Graph PowerShell SDK comes in two modules, `Microsoft.Graph` and `Microsoft.Graph.Beta`.
 
-All Microsoft operated regions should choose Microsoft. All other regions should choose their operator if listed below.
+All Microsoft operated regions should choose Microsoft. All other regions should choose their operator if one is listed.
 
 #### [Microsoft](#tab/microsoft)
-1. Open a PowerShell prompt on your computer and run the following commands to prepare to run the cmdlets.
+1. Open a PowerShell prompt on your computer and install the Graph modules required to run the cmdlets.
 
     ```powershell
     Install-Module Microsoft.Graph -Scope CurrentUser
@@ -86,17 +86,17 @@ You also need to synchronize your sensitivity labels to Microsoft Entra ID. For 
 
 #### [21Vianet](#tab/21Vianet)
 
-If you are performing these M365 operations from 21Vianet:
+If you are performing these Microsoft 365 operations from 21Vianet:
 
 1. Register a Microsoft Entra ID application in Microsoft Entra ID.
-1. Grant your application  API permissions to access Microsoft Graph including ```Directory.ReadWriteAll``` and ```Group.ReadWriteAll```, you may need to get tenant admin's explicit consent to grant the application access to Microsft Graph.
-1. Generate a client secret and copy it. You will need the client secret to connect to MS Graph;
+1. Grant your application  API permissions to access Microsoft Graph including ```Directory.ReadWriteAll``` and ```Group.ReadWriteAll```, you may need to get tenant admin's explicit consent to grant the application access to Microsoft Graph.
+1. Generate a client secret and copy it. You need the client secret to connect to MS Graph;
 1. Run PowerShell as administrator:
 
     ```PowerShell
     $ClientSecretCredential = Get-Credential -Credential
     ```
-     After commands run, you will be prompted to enter a password. The password is the new client secret you copied in earlier step.
+     After commands run, you'll be prompted to enter a password. The password is the new client secret you copied in earlier step.
 
 1. Run the following command to get access to MS Graph:
 
@@ -235,5 +235,5 @@ If you must make a change, use a [PowerShell script](https://github.com/microsof
 
 - [Use sensitivity labels to protect content in Microsoft Teams, Microsoft 365 groups, and SharePoint sites](/purview/sensitivity-labels-teams-groups-sites)
 - [Update groups after label policy change manually with Azure AD PowerShell script](https://github.com/microsoftgraph/powershell-aad-samples/blob/master/ReassignSensitivityLabelToO365Groups.ps1)
-- [Edit your group settings](~/fundamentals/how-to-manage-groups.yml)
+- [Edit your group settings](/entra/fundamentals/how-to-manage-groups)
 - [Manage groups using PowerShell commands](~/identity/users/groups-settings-v2-cmdlets.md)

@@ -30,7 +30,6 @@ The following sections describe each step in additional detail.
 
 ## Switch redirect URIs to SPA platform
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 If you'd like to continue using your existing app registration for your applications, use the Microsoft Entra admin center to update the registration's redirect URIs to the SPA platform. Doing so enables the authorization code flow with PKCE and CORS support for apps that use the registration (you still need to update your application's code to MSAL.js v2.x).
 

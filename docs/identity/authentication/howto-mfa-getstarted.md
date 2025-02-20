@@ -3,9 +3,9 @@ title: Deployment considerations for Microsoft Entra multifactor authentication
 description: Learn about deployment considerations and strategy for successful implementation of Microsoft Entra multifactor authentication
 ms.service: entra-id
 ms.subservice: authentication
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: no-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 11/15/2024
+ms.date: 02/14/2025
 ms.author: justinha
 author: justinha
 manager: amycolannino
@@ -53,8 +53,6 @@ To learn more about the strength and security of these methods and how they work
 
 - [What authentication and verification methods are available in Microsoft Entra ID?](concept-authentication-methods.md)
 - [Video: Choose the right authentication methods to keep your organization safe](https://youtu.be/LB2yj4HSptc)
-
-You can use this [PowerShell script](https://github.com/Azure-Samples/azure-mfa-authentication-method-analysis) to analyze users' MFA configurations and suggest the appropriate MFA authentication method. 
 
 For the best flexibility and usability, use the Microsoft Authenticator app. This authentication method provides the best user experience and multiple modes, such as passwordless, MFA push notifications, and OATH codes. The Microsoft Authenticator app also meets the National Institute of Standards and Technology (NIST) [Authenticator Assurance Level 2 requirements](~/standards/nist-authenticator-assurance-level-2.md).
 
@@ -218,11 +216,11 @@ Microsoft Entra ID has reports that provide technical and business insights, fol
 
 You can monitor authentication method registration and usage across your organization using the [Authentication Methods Activity dashboard](howto-authentication-methods-activity.md). This helps you understand what methods are being registered and how they're being used.
 
-#### Sign-in report to review MFA events
+#### Use sign-in logs to review MFA events
 
-The Microsoft Entra sign-in reports include authentication details for events when a user is prompted for MFA, and if any Conditional Access policies were in use. You can also use PowerShell for reporting on users registered for Microsoft Entra multifactor authentication. 
+The Microsoft Entra sign-in logs include authentication details for events when a user is prompted for MFA, and if any Conditional Access policies were in use. 
 
-NPS extension and AD FS logs for cloud MFA activity are now included in the [Sign-in logs](~/identity/monitoring-health/concept-sign-ins.md), and no longer published to the **Activity report**.
+NPS extension and AD FS logs for cloud MFA activity are now included in the [sign-in logs](~/identity/monitoring-health/concept-sign-ins.md), and no longer published to the **Activity report**.
 
 For more information, and additional Microsoft Entra multifactor authentication reports, see [Review Microsoft Entra multifactor authentication events](howto-mfa-reporting.md#view-the-azure-ad-sign-ins-report).
 

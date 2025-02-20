@@ -36,7 +36,7 @@ With Microsoft Entra Cloud Sync, provisioning from AD to Microsoft Entra ID is o
 ## Microsoft Entra Cloud Sync video
 The following short video provides an excellent overview of Microsoft Entra Cloud Sync:
 
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWJ8l5]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=2b0047aa-84ba-430d-8ce9-39cfdc55276d]
 
 ## Choose the right sync client
 To determine if cloud sync is right for your organization, use the following link. It takes you to a tool that helps you evaluate your synchronization needs. For more information, evaluate your options using the [Wizard to evaluate sync options](https://aka.ms/EvaluateSyncOptions)

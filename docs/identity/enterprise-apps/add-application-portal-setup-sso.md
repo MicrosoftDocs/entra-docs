@@ -21,6 +21,8 @@ In this article, you use the Microsoft Entra admin center to enable single sign-
 
 Microsoft Entra ID has a gallery that contains thousands of preintegrated applications that use SSO. This article uses an enterprise application named **Microsoft Entra SAML Toolkit 1** as an example, but the concepts apply for most preconfigured enterprise applications in the Microsoft Entra application gallery.
 
+If your application will not integrate directly with Microsoft Entra for single sign-on, and instead tokens are provided to the application by a relying party Security Token Service (STS), then see the article [Enable single sign-on for an enterprise application with a relying party security token service](add-application-portal-setup-sso-rpsts.md).
+
 We recommend that you use a nonproduction environment to test the steps in this article.
 
 ## Prerequisites
@@ -33,7 +35,6 @@ To configure SSO, you need:
 
 ## Enable single sign-on
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To enable SSO for an application:
 

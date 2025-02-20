@@ -22,7 +22,6 @@ This article describes how to create one or more access reviews for PIM for Grou
 
 ## Create a PIM for Groups access review
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 ### Scope
 

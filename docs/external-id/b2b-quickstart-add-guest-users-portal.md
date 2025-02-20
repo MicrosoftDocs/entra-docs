@@ -5,7 +5,7 @@ description: Use this quickstart to learn how Microsoft Entra admins can add B2B
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
-ms.date: 04/02/2024
+ms.date: 01/07/2025
 ms.topic: quickstart
 ms.service: entra-external-id
 ms.custom: it-pro, mode-ui
@@ -35,7 +35,6 @@ To complete the scenario in this quickstart, you need:
 
 ## Invite an external guest user
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 
@@ -55,7 +54,7 @@ In this section, you're inviting the guest to your tenant using *their email add
 
 - **Display name**: Provide the display name.
 
--  **Invitation message**: Select the **Send invite message** checkbox to send an invitation message. When enabling this checkbox, you can also set up the customized short message and additional CC recipient.
+-  **Invitation message**: Select the **Send invite message** checkbox to send an invitation message. When enabling this checkbox, you can also set up the customized short message and another CC recipient.
 
 :::image type="content" source="media/quickstart-add-users-portal/invite-external-user-basics-tab.png" alt-text="Screenshot of the invite external user Basics tab.":::
 

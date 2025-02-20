@@ -43,8 +43,6 @@ procedureSection:
   - title: |
       Configure default settings
     summary: |
-      [!INCLUDE [portal updates](~/includes/portal-update.md)]
-
       Default cross-tenant access settings apply to all external organizations for which you haven't created organization-specific customized settings.  If you want to modify the Microsoft Entra ID-provided default settings, follow these steps.
     steps:
       - |
@@ -317,9 +315,9 @@ procedureSection:
 
       2. Select **External Identities** > **Cross-tenant access settings**.
 
-      3. Under **Organizational settings**, select the link in the **Inbound access** column and the **B2B collaboration** tab.
+      3. On the **Default settings** tab, under **Inbound access settings**, select **Edit inbound defaults**.
 
-      4. Select the **Redemption order** tab.
+      4. On the **B2B collaboration** tab, select the **Redemption order** tab.
 
       5. Under **Fallback identity providers** disable Microsoft service account (MSA).
 

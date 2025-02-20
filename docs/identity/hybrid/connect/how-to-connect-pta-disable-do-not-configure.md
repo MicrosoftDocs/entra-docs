@@ -18,7 +18,6 @@ In this article, you learn how to disable pass-through authentication by using M
 
 ## Prerequisites
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Before you begin, ensure that you have the following prerequisite.
 

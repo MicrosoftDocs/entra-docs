@@ -27,7 +27,6 @@ To use an [API connector](api-connectors-overview.md), you first create the API 
 
 ## Create an API connector
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **External Identities** > **Overview**.

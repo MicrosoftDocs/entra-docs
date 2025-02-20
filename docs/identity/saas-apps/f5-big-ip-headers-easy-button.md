@@ -1,21 +1,21 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with F5’s BIG-IP Easy Button for header-based SSO'
+title: Microsoft Entra SSO integration with F5’s BIG-IP Easy Button for header-based SSO
 description: Learn how to Configure SSO between Microsoft Entra ID and F5’s BIG-IP Easy Button for header-based SSO.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and F5 BIG-IP Easy Button for header-based SSO so that I can control who has access to F5 BIG-IP Easy Button for header-based SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Configure SSO between Microsoft Entra ID and F5’s BIG-IP Easy Button for header-based SSO
+# Configure SSO between Microsoft Entra ID and F5’s BIG-IP Easy Button for header-based SSO
 
 In this tutorial, you'll learn how to integrate F5 with Microsoft Entra ID. When you integrate F5 with Microsoft Entra ID, you can:
 
@@ -312,13 +312,9 @@ This last step provides a breakdown of your configurations. Select **Deploy** to
 
 Your application should now be published and accessible via SHA, either directly via its URL or through Microsoft’s application portals. 
 
-## Next steps
+## Related content
 
 From a browser, **connect** to the application’s external URL or select the **application’s icon** in the [Microsoft MyApps portal](https://myapplications.microsoft.com/). After authenticating against Microsoft Entra ID, you’ll be redirected to the BIG-IP virtual server for the application and automatically signed in through SSO.
-
-This shows the output of the injected headers displayed by our headers-based application.
-
-   ![Screenshot for App views.](./media/f5-big-ip-headers-easy-button/app-view.png)
 
 For increased security, organizations using this pattern could also consider blocking all direct access to the application, thereby forcing a strict path through the BIG-IP.
 

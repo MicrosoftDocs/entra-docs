@@ -1,21 +1,21 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Michigan Data Hub Single Sign-On'
+title: Microsoft Entra single sign-on (SSO) integration with Michigan Data Hub Single Sign-On
 description: Learn how to configure single sign-on between Microsoft Entra ID and Michigan Data Hub Single Sign-On.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Michigan Data Hub Single Sign-On so that I can control who has access to Michigan Data Hub Single Sign-On, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Michigan Data Hub Single Sign-On
+# Microsoft Entra single sign-on (SSO) integration with Michigan Data Hub Single Sign-On
 
 In this tutorial, you'll learn how to integrate Michigan Data Hub Single Sign-On with Microsoft Entra ID. When you integrate Michigan Data Hub Single Sign-On with Microsoft Entra ID, you can:
 
@@ -138,6 +138,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Michigan Data Hub Single Sign-On tile in the My Apps, this will redirect to Michigan Data Hub Single Sign-On Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Michigan Data Hub Single Sign-On you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

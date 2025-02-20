@@ -1309,7 +1309,6 @@ Check with your application provider, or your application provider's documentati
 
 ### Getting started
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Applications that support the SCIM profile described in this article can be connected to Microsoft Entra ID using the "non-gallery application" feature in the Microsoft Entra application gallery. Once connected, Microsoft Entra ID runs a synchronization process. The process runs every 40 minutes. The process queries the application's SCIM endpoint for assigned users and groups, and creates or modifies them according to the assignment details.
 

@@ -1,21 +1,21 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with C3M Cloud Control'
+title: Microsoft Entra single sign-on (SSO) integration with C3M Cloud Control
 description: Learn how to configure single sign-on between Microsoft Entra ID and C3M Cloud Control.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and C3M Cloud Control so that I can control who has access to C3M Cloud Control, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with C3M Cloud Control
+# Microsoft Entra single sign-on (SSO) integration with C3M Cloud Control
 
 In this tutorial, you'll learn how to integrate C3M Cloud Control with Microsoft Entra ID. When you integrate C3M Cloud Control with Microsoft Entra ID, you can:
 
@@ -146,6 +146,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the C3M Cloud Control tile in the My Apps, this will redirect to C3M Cloud Control Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure C3M Cloud Control you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

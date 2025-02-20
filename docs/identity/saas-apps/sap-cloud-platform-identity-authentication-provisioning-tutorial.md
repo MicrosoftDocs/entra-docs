@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Configure SAP Cloud Identity Services for automatic user provisioning with Microsoft Entra ID'
+title: Configure SAP Cloud Identity Services for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to SAP Cloud Identity Services.
 
 author: thomasakelo
@@ -7,14 +7,14 @@ manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/27/2024
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAP Cloud Identity Services so that I can streamline the user management process and ensure that users have the appropriate access to SAP Cloud Identity Services.
 ---
 
-# Tutorial: Configure SAP Cloud Identity Services for automatic user provisioning
+# Configure SAP Cloud Identity Services for automatic user provisioning
 
 This tutorial demonstrates the steps for configuring provisioning from Microsoft Entra ID to SAP Cloud Identity Services. The goal is to set up Microsoft Entra ID to automatically provision and deprovision users to SAP Cloud Identity Services, so that those users can authenticate to SAP Cloud Identity Services and have access to other SAP workloads. SAP Cloud Identity Services supports provisioning from its local identity directory to other SAP applications as [target systems](https://help.sap.com/docs/identity-provisioning/identity-provisioning/target-systems).
 
@@ -256,7 +256,7 @@ Now that you have a list of all the users obtained from SAP Cloud Identity Servi
 Before enabling automatic user provisioning, you must decide which users in Microsoft Entra ID need access to SAP Cloud Identity Services, and then you need to check to make sure that those users have the necessary attributes in Microsoft Entra ID, and those attributes are mapped to the expected schema of SAP Cloud Identity Services.
 
 * By default, the value of the Microsoft Entra user `userPrincipalName` attribute is mapped to both the `userName` and `emails[type eq "work"].value` attributes of SAP Cloud Identity Services. If user's email addresses are different from their user principal names, then you may need to change this mapping.
-* SAP Cloud Identity Services may ignore values of the `postalCode` attribute if the format of Company ZIP/postal code does not match company country.
+* SAP Cloud Identity Services may ignore values of the `postalCode` attribute if the format of Company ZIP/postal code does not match the company country or region.
 * By default, the Microsoft Entra attribute `department` is mapped to the SAP Cloud Identity Services `urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department` attribute. If Microsoft Entra users have values of the `department` attribute, those values must match those departments already configured in SAP Cloud Identity Services, otherwise creation, or update, of the user will fail. If the `department` values in your Microsoft Entra users are not consistent with those in your SAP environment, then remove the mapping prior to assigning users.
 * SAP Cloud Identity Services's SCIM endpoint requires certain attributes to be of specific format. You can know more about these attributes and their specific format [here](https://help.sap.com/viewer/6d6d63354d1242d185ab4830fc04feb1/Cloud/en-US/b10fc6a9a37c488a82ce7489b1fab64c.html#).
 
@@ -367,6 +367,6 @@ If you have Microsoft Entra ID Governance, you can automate changes to the appli
 * [Govern access for applications in your environment](~/id-governance/identity-governance-applications-prepare.md)
 
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

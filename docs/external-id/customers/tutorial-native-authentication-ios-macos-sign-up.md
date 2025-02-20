@@ -55,40 +55,43 @@ To sign up a user, you need to:
             resultTextView.text = "Email or password not set"
             return
         }
-
-        nativeAuth.signUp(username: email, delegate: self)
+    
+        let parameters = MSALNativeAuthSignUpParameters(username: email)
+        nativeAuth.signUp(parameters: parameters, delegate: self)
     }
     ```
 
-    - To sign up a user using **Email one-time-passcode**, we use the library's `signUp(username:delegate)` method, which responds asynchronously by calling one of the methods on the passed delegate object, which must implement the `SignUpStartDelegate` protocol. The following line of code initiates the user sign-up process:
+    - To sign up a user using **Email one-time-passcode**, we use the library's `signUp(parameters:delegate)` method, which responds asynchronously by calling one of the methods on the passed delegate object, which must implement the `SignUpStartDelegate` protocol. The following line of code initiates the user sign-up process:
     
         ```swift
-        nativeAuth.signUp(username: email, delegate: self)
+        nativeAuth.signUp(parameters: parameters, delegate: self)
         ```
     
-       In the `signUp(username:delegate)` method, we pass the user's email address from the submission form and the delegate (a class that implements the `SignUpStartDelegate` protocol).
+       In the `signUp(parameters:delegate)` method, we pass a `MSALNativeAuthSignUpParameters` instance containing the user's email address from the submission form alongside the delegate (a class that implements the `SignUpStartDelegate` protocol).
     
     - To sign up a user using **Email with password**, use the following code snippets:
 
         ```swift
         @IBAction func signUpPressed(_: Any) {
             guard let email = emailTextField.text, let password = passwordTextField.text else {
-                resultTextView.text = "Email or password not set"
-                return
+               resultTextView.text = "Email or password not set"
+               return
             }
     
-            nativeAuth.signUp(username: email,password: password,delegate: self)
+            let parameters = MSALNativeAuthSignUpParameters(username: email)
+            parameters.password = password
+            nativeAuth.signUp(parameters: parameters, delegate: self)
         }
         ```
         
-        we use the library's `signUp(username:password:delegate)` method, which responds asynchronously by calling one of the methods on the passed delegate object, which must implement the `SignUpStartDelegate` protocol. The following line of code initiates the user sign-up process:
+        we use the library's `signUp(parameters:delegate)` method, which responds asynchronously by calling one of the methods on the passed delegate object, which must implement the `SignUpStartDelegate` protocol. The following line of code initiates the user sign-up process:
         
 
         ```swift
-        nativeAuth.signUp(username: email, password: password, delegate: self)
+        nativeAuth.signUp(parameters: parameters, delegate: self)
         ```
     
-        In the `signUp(username:password:delegate)` method, we pass the user's email address, their password, and the delegate (a class that implements the `SignUpStartDelegate` protocol).
+        In the `signUp(parameters:delegate)` method, we pass a `MSALNativeAuthSignUpParameters` instance containing the user's email address and their password alongside the delegate (a class that implements the `SignUpStartDelegate` protocol).
 
     - To implement `SignUpStartDelegate` protocol as an extension to our class, use:
 
@@ -109,7 +112,7 @@ To sign up a user, you need to:
         }
         ```
 
-        The call to `signUp(username:password:delegate)` or `signUp(username:delegate)` results in a call to either `onSignUpCodeRequired()` or `onSignUpStartError()` delegate methods. The `onSignUpCodeRequired(newState:sentTo:channelTargetType:codeLength)` is called to indicate that a code has been sent to verify the user's email address. Along with some details of where the code has been sent, and how many digits it contains, this delegate method also has a `newState` parameter of type `SignUpCodeRequiredState`, which gives us access to two new methods: 
+        The call to `signUp(parameters:delegate)`results in a call to either `onSignUpCodeRequired()` or `onSignUpStartError()` delegate methods. The `onSignUpCodeRequired(newState:sentTo:channelTargetType:codeLength)` is called to indicate that a code has been sent to verify the user's email address. Along with some details of where the code has been sent, and how many digits it contains, this delegate method also has a `newState` parameter of type `SignUpCodeRequiredState`, which gives us access to two new methods: 
 
         - `submitCode(code:delegate)`
         - `resendCode(delegate)`
@@ -138,7 +141,7 @@ To sign up a user, you need to:
 
 ## Collect user attributes during sign-up
 
-Whether you sign up a user using email one-time passcode or username (email) and password, you can collect user attributes before a user's account is created.  The `signUp(username:attributes:delegate)` method, accepts attributes as a parameter.
+Whether you sign up a user using email one-time passcode or username (email) and password, you can collect user attributes before a user's account is created.  The `signUp(parameters:delegate)` method can be called using a `MSALNativeAuthSignUpParameters` which has an attributes property.
 
 1. To collect user attributes, use the following code snippet:
 
@@ -148,10 +151,13 @@ Whether you sign up a user using email one-time passcode or username (email) and
         "city": "Redmond"
     ]
     
-    nativeAuth.signUp(username: email, attributes: attributes, delegate: self)
+    let parameters = MSALNativeAuthSignUpParameters(username: email)
+    parameters.password = password
+    parameters.attributes = attributes
+    nativeAuth.signUp(parameters: parameters, delegate: self)
     ```
 
-    The `signUp(username:attributes:delegate)` or `ignUp(username:password:attributes:delegate)` results in a call to either `onSignUpCodeRequired()` or `onSignUpStartError()` delegate methods, or in a call to `onSignUpAttributesInvalid(attributeNames: [String])` if it's implemented in the delegate.
+    The `signUp(parameters:delegate)`results in a call to either `onSignUpCodeRequired()` or `onSignUpStartError()` delegate methods, or in a call to `onSignUpAttributesInvalid(attributeNames: [String])` if it's implemented in the delegate.
 
 1. To implement the `SignUpStartDelegate` protocol as an extension to our class, use the following code snippet:
     
@@ -185,7 +191,7 @@ Whether you sign up a user using email one-time passcode or username (email) and
 
 To spread the attributes across one or more pages, we must set the attributes we intend to collect across different pages as mandatory in the customer identity and access management (CIAM) tenant configuration. 
 
-We call `signUp(username:password:delegate)` without passing any attributes. The next step will be to call `newState.submitCode(code: userSuppliedCode, delegate: self)` to verify user's email. 
+We call `signUp(parameters:delegate)` without passing any attributes in the `MSALNativeAuthSignUpParameters` instance. The next step will be to call `newState.submitCode(code: userSuppliedCode, delegate: self)` to verify user's email. 
 
 We implement the `SignUpVerifyCodeDelegate` protocol as an extension to our class as before, but this time we must implement the optional method `onSignUpAttributesRequired(attributes:newState)` in addition to the  required methods:
 

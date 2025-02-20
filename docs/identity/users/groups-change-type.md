@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 08/23/2024
+ms.date: 01/14/2025
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -18,7 +18,7 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 You can change a group's membership from static to dynamic (or vice-versa) In Microsoft Entra ID, part of Microsoft Entra. Microsoft Entra ID keeps the same group name and ID in the system, so all existing references to the group are still valid. If you create a new group instead, you would need to update those references. Creating dynamic membership groups eliminates management overhead adding and removing users. This article tells you how to convert existing groups from static to dynamic membership groups using either the portal or PowerShell cmdlets. In Microsoft Entra, a single tenant can have a maximum of 15,000 dynamic membership groups.
 
 > [!WARNING]
-> When changing an existing static group to a dynamic group, all existing members are removed from the group, and then the membership rule is processed to add new members. If the group is used to control access to apps or resources, be aware that the original members might lose access until the membership rule is fully processed.
+> When changing an existing static group to a dynamic group, all existing members are removed from the group, and then the membership rule is processed to add new members. If the group is used to control access to apps or resources, the original members might lose access until the membership rule is fully processed.
 >
 > We recommend that you test the new membership rule beforehand to make sure that the new membership in the group is as expected. If you encounter errors during your test, see [Resolve group license problems](licensing-groups-resolve-problems.md).
 
@@ -47,12 +47,12 @@ The following steps are an example of changing a group from static to dynamic me
 4. Select **Save** on the **Properties** page for the group to save your changes. The **Membership type** of the group is immediately updated in the group list.
 
 > [!TIP]
-> Group conversion might fail if the membership rule you entered was incorrect. A notification is displayed in the upper-right hand corner of the portal that it contains an explanation of why the rule can't be accepted by the system. Read it carefully to understand how you can adjust the rule to make it valid. For examples of rule syntax and a complete list of the supported properties, operators, and values for a membership rule, see [Manage rules for dynamic membership groups in Microsoft Entra ID](groups-dynamic-membership.md).
+> Group conversion might fail if the membership rule you entered was incorrect. A notification is displayed in the upper-right hand corner of the portal that includes an explanation of why the rule can't be accepted. Read it carefully to understand how you can adjust the rule to make it valid. For examples of rule syntax and a complete list of the supported properties, operators, and values for a membership rule, see [Manage rules for dynamic membership groups in Microsoft Entra ID](groups-dynamic-membership.md).
 
 ## Change membership type for a group (PowerShell)
 
 > [!NOTE]
-> To change dynamic group properties you will need to use cmdlets from the Microsoft Graph PowerShell module. for more information, see [Install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation).
+> To change dynamic group properties, you need to use cmdlets from the Microsoft Graph PowerShell module. For more information, see [Install the Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/installation).
 
 Here is an example of functions that switch membership management on an existing group. In this example, care is taken to correctly manipulate the GroupTypes property and preserve any values that are unrelated to dynamic membership groups.
 
@@ -116,7 +116,7 @@ ConvertStaticGroupToDynamic "a58913b2-eee4-44f9-beb2-e381c375058f" "user.display
 These articles provide additional information on groups in Microsoft Entra ID.
 
 * [See existing groups](~/fundamentals/groups-view-azure-portal.md)
-* [Create a new group and adding members](~/fundamentals/how-to-manage-groups.yml)
-* [Manage settings of a group](~/fundamentals/how-to-manage-groups.yml)
-* [Manage memberships of a group](~/fundamentals/how-to-manage-groups.yml)
+* [Create a new group and adding members](/entra/fundamentals/how-to-manage-groups)
+* [Manage settings of a group](/entra/fundamentals/how-to-manage-groups)
+* [Manage memberships of a group](/entra/fundamentals/how-to-manage-groups)
 * [Manage rules for dynamic membership groups](groups-dynamic-membership.md)

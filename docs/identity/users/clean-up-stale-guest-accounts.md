@@ -5,7 +5,7 @@ description: Monitor and clean up stale guest accounts using access reviews
 author: billmath
 ms.author: billmath
 manager: amycolannino
-ms.date: 06/29/2023
+ms.date: 12/30/2024
 ms.reviewer: gasinh
 ms.topic: how-to
 ms.service: entra-id
@@ -34,7 +34,6 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
 
 ## Monitor guest accounts at scale with inactive guest insights
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Identity governance** > **Dashboard**

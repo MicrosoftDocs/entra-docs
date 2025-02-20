@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Configure Oracle Cloud Infrastructure Console for automatic user provisioning with Microsoft Entra ID'
+title: Configure Oracle Cloud Infrastructure Console for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Oracle Cloud Infrastructure Console.
 
 author: thomasakelo
@@ -7,14 +7,14 @@ manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Oracle Cloud Infrastructure Console so that I can streamline the user management process and ensure that users have the appropriate access to Oracle Cloud Infrastructure Console.
 ---
 
-# Tutorial: Configure Oracle Cloud Infrastructure Console for automatic user provisioning
+# Configure Oracle Cloud Infrastructure Console for automatic user provisioning
 
 > [!NOTE]
 > Integrating with Oracle Cloud Infrastructure Console or Oracle IDCS with a custom / BYOA application is not supported. Using the gallery application as described in this tutorial is supported. The gallery application has been customized to work with the Oracle SCIM server. 
@@ -56,9 +56,6 @@ The scenario outlined in this tutorial assumes that you already have the followi
 	![Screenshot shows the Oracle Admin.](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/identity.png "Admin")
 
 2. Click on the URL displayed on the page beside Oracle Identity Cloud Service Console.
-
-	![Screenshot shows the Oracle URL.](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/url.png "URL")
-
 3. Click on **Add Identity Provider** to create a new identity provider. Save the IdP ID to be used as a part of tenant URL. Select the plus icon beside the **Applications** tab to create an OAuth Client and Grant IDCS Identity Domain Administrator AppRole.
 
 	![Screenshot shows the Oracle Cloud Icon.](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/add.png "Icon")
@@ -203,6 +200,6 @@ Once you've configured provisioning, use the following resources to monitor your
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

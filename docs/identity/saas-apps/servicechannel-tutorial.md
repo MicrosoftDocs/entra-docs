@@ -1,21 +1,21 @@
 ---
-title: "Tutorial: Microsoft Entra single sign-on (SSO) integration with ServiceChannel"
+title: Microsoft Entra single sign-on (SSO) integration with ServiceChannel
 description: Learn how to configure single sign-on between Microsoft Entra ID and ServiceChannel.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ServiceChannel so that I can control who has access to ServiceChannel, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with ServiceChannel
+# Microsoft Entra single sign-on (SSO) integration with ServiceChannel
 
 In this tutorial, you'll learn how to integrate ServiceChannel with Microsoft Entra ID. When you integrate ServiceChannel with Microsoft Entra ID, you can:
 
@@ -87,7 +87,7 @@ Follow these steps to enable Microsoft Entra SSO.
    > [!NOTE]
    > These values are not real. Update these values with the actual Identifier and Reply URL. Here we suggest you to use the unique value of string in the Identifier. Contact [ServiceChannel Client support team](https://servicechannel.zendesk.com/hc/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. The role claim is pre-configured so you don't have to configure it but you still need to create them in Microsoft Entra ID using this [article](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui). You can refer ServiceChannel guide [here](https://servicechannel.zendesk.com/hc/articles/217514326-Azure-AD-Configuration-Example) for more guidance on claims.
+1. The role claim is pre-configured so you don't have to configure it but you still need to create them in Microsoft Entra ID using this [article](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui). You can refer ServiceChannel guide [here](https://servicechannel.zendesk.com/hc/en-us) for more guidance on claims.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
@@ -143,6 +143,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 - You can use Microsoft My Apps. When you click the ServiceChannel tile in the My Apps, you should be automatically signed in to the ServiceChannel for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure ServiceChannel you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
