@@ -86,7 +86,19 @@ Follow these steps to enable Microsoft Entra SSO.
     b. In the **Reply URL** text box, type a URL using the following pattern:
     `https://<SUBDOMAIN>.freshworks.com/sp/SAML/CUSTOM_URL`
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+2. Your Freshworks application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows an example for this.
+
+	![image](common/default-attributes.png)
+
+3. In addition to above, Freshworks application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
+	
+	| Name |  Source Attribute|
+	| -------------- | --------- |
+	| First_Name | user.givenname |
+	| Last_Name | user.surname |
+	| memberOf | user.groups |
+
+4. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
 	In the **Sign-on URL** text box, type a URL using the following pattern:
     `https://<SUBDOMAIN>.freshworks.com/login`
@@ -94,17 +106,17 @@ Follow these steps to enable Microsoft Entra SSO.
 	> [!NOTE]
 	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Freshworks Client support team](mailto:support@freshworks.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
+5. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
 	![The Certificate download link](common/certificatebase64.png)
 
-1. To modify the **Signing** options as per your requirement, click **Edit** button to open **SAML Signing Certificate** dialog.
+6. To modify the **Signing** options as per your requirement, click **Edit** button to open **SAML Signing Certificate** dialog.
 
      ![image](common/edit-certificate.png)
 
-1. In the **SAML Signing Certificate** dialog, for **Signing Option**, select **Sign SAML response**. Then select **Save**.
+7. In the **SAML Signing Certificate** dialog, for **Signing Option**, select **Sign SAML response**. Then select **Save**.
 
-1. On the **Set up Freshworks** section, copy the appropriate URL(s) based on your requirement.
+8. On the **Set up Freshworks** section, copy the appropriate URL(s) based on your requirement.
 
 	![Copy configuration URLs](common/copy-configuration-urls.png)
 

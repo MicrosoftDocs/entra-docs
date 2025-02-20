@@ -77,20 +77,15 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Basic SAML Configuration** section, the user does not have to perform any steps as the app is already pre-integrated with Azure.
 
-1. Click **Set additional URLs** and perform the following steps if you wish to configure the application in **SP** initiated mode:
-
-	a. In the **Sign-on URL** text box, type the URL:
-    `https://authentication.gotoinc.com/login?service=https%3A%2F%2Fmyaccount.gotoinc.com`
-
-1. Your GoTo application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **Unique User Identifier** is mapped with **user.userprincipalname**. GoTo application expects **Unique User Identifier** to be mapped with **user.mail**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
+2. Your GoTo application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **Unique User Identifier** is mapped with **user.userprincipalname**. GoTo application expects **Unique User Identifier** to be mapped with **user.mail**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
 
 	![image](common/default-attributes.png)
 
-1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+3. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 
 	![The Certificate download link](common/copy-metadataurl.png)
 
-6. On the **Set up GoTo** section, copy the appropriate URL(s) as per your requirement.
+4. On the **Set up GoTo** section, copy the appropriate URL(s) as per your requirement.
 
 	![Copy configuration URLs](common/copy-configuration-urls.png)
 

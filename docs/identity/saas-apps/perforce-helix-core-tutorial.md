@@ -90,7 +90,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<HELIX-AUTH-SERVICE>.<CUSTOMER_HOSTNAME>.com/`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Perforce Helix Core - Helix Authentication Service Client support team](mailto:support@perforce.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Perforce Helix Core - Helix Authentication Service Client support team](mailto:support-helix-core@perforce.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 
@@ -128,11 +128,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Perforce Helix Core - Helix Authentication Service SSO
 
-To configure single sign-on on **Perforce Helix Core - Helix Authentication Service** side, you need to send the **App Federation Metadata Url** to [Perforce Helix Core - Helix Authentication Service support team](mailto:support@perforce.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Perforce Helix Core - Helix Authentication Service** side, you need to send the **App Federation Metadata Url** to [Perforce Helix Core - Helix Authentication Service support team](mailto:support-helix-core@perforce.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Perforce Helix Core - Helix Authentication Service test user
 
-In this section, you create a user called Britta Simon in Perforce Helix Core - Helix Authentication Service. Work with [Perforce Helix Core - Helix Authentication Service support team](mailto:support@perforce.com) to add the users in the Perforce Helix Core - Helix Authentication Service platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in Perforce Helix Core - Helix Authentication Service. Work with [Perforce Helix Core - Helix Authentication Service support team](mailto:support-helix-core@perforce.com) to add the users in the Perforce Helix Core - Helix Authentication Service platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 
