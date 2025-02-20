@@ -14,7 +14,7 @@ ms.date: 02/14/2025
 
 One scenario that many organizations [building for resilience](resilience-overview.md) in their identity and access management architecture need to accommodate is continuity of application access during temporary site disconnection. The organization may have one or more physical sites at which their applications are deployed. Some of their users are colocated at those sites and need to be able to access the applications. For example, employees at a factory or at a store may need to be able to sign-in to in-house-developed business applications managing operations at that site.
 
-Historically, organizations could use Active Directory Domain Services, deploy [domain controllers at each site](/windows-server/identity/ad-ds/plan/planning-domain-controller-placement), so that users could authenticate to a local domain controller. Authenticating users through Microsoft Entra and connecting applications to Microsoft Entra ID via federation protocols such as SAML brings benefits, including multifactor authentication and risk based conditional access. When applications are federated to Microsoft Entra, the users authenticate themselves to Microsoft Entra, and Microsoft Entra then provides tokens that carries claims and indicate their authentication status to the applications. However, if the users and applications are unable to access Microsoft Entra cloud endpoints, which can occur if there is a break in the network connectivity between the site and the Internet, then no more tokens can be issued to applications via that route until the break is repaired. Users already authenticated to the application may be able to continue to use the application until the application requires the user to reauthenticate, but will not be able to get a new access token from Microsoft Entra, and any user who hadn't previously connected to the application may find themselves unable to use the application as well.
+Historically, organizations could use Active Directory Domain Services, deploy [domain controllers at each site](/windows-server/identity/ad-ds/plan/planning-domain-controller-placement), so that users could authenticate to a local domain controller. Authenticating users through Microsoft Entra and connecting applications to Microsoft Entra ID via federation protocols such as SAML brings benefits, including multifactor authentication and risk based conditional access. When applications are federated to Microsoft Entra, the users authenticate themselves to Microsoft Entra, and Microsoft Entra then provides tokens that carry claims and indicate their authentication status to the applications. However, if the users and applications are unable to access Microsoft Entra cloud endpoints, which can occur if there is a break in the network connectivity between the site and the Internet, then no more tokens can be issued to applications via that route until the break is repaired. Users already authenticated to the application may be able to continue to use the application until the application requires the user to reauthenticate, but won't be able to get a new access token from Microsoft Entra, and any user who hadn't previously connected to the application may find themselves unable to use the application as well.
 
 One approach to solving this problem and ensuring tokens can be issued to federated applications even during temporary site disconnection is:
 
@@ -53,7 +53,7 @@ Applications may have other requirements beyond these, such as log retention, DN
 
 ## Ensure consistent user identities and attributes across Windows Server AD and Microsoft Entra ID
 
-For the applications to receive the same claims for the same users in a federation token as expected from Microsoft Entra ID, even when Microsoft Entra ID is unreachable, there must be a source of user identities and their attributes local to the site that can be used to generate the claims. AD FS supports Windows Server AD as a identity source and its attributes as a claims source.
+For the applications to receive the same claims for the same users in a federation token as expected from Microsoft Entra ID, even when Microsoft Entra ID is unreachable, there must be a source of user identities and their attributes local to the site that can be used to generate the claims. AD FS supports Windows Server AD as an identity source and AD attributes as a claims source.
 
 One way to maintain consistency is to define an identity management process that creates and updates users in Windows Server AD, and then synchronizes those users from AD to Microsoft Entra. Check that your Windows Server AD environment and associated Microsoft Entra agents are ready to transport users into and out of Windows Server AD with the necessary schema for your applications. If you already have users being synchronized from Active Directory to Microsoft Entra, then continue at the next section.
 
@@ -91,7 +91,7 @@ If users will be interacting with applications from devices which support Window
 
 ## Deploy a relying party STS and configure Microsoft Entra as an identity provider
 
-If you have not already done so, deploy AD FS or a similar identity technology on a Windows Server at a site. This AD FS will be configured to operate a a relying party STS, so cannot be the same as any AD FS configured to provide claims to Microsoft Entra.
+If you have not already done so, deploy AD FS or a similar identity technology on a Windows Server at a site. This AD FS will be configured to operate as a relying party STS, so can't be the same installation as another AD FS configured as an identity provider to provide claims to Microsoft Entra.
 
 Then, perform the steps in the [Enable single sign-on for an enterprise application with a relying party security token service](~/identity/enterprise-apps/add-application-portal-setup-sso-rpsts.md) tutorial. In that tutorial, you create a representation of application in Microsoft Entra, configure single sign-on for that application from Microsoft Entra to the relying party STS, and configure single sign-on from the relying party STS to the application. This will validate that, during normal operations, tokens with claims can flow from Microsoft Entra through the relying party STS to the application.
 
@@ -104,7 +104,7 @@ Next, configure in the relying party STS that Active Directory is also a claims 
 1. Ensure that there are two claims providers, `Microsoft Entra` and `Active Directory`, and that both are enabled.
 1. Select `Active Directory` and select `Edit Claim Rules`.
 1. Confirm that there are rules for LDAP attributes needed by the application.
-1. In the `AD FS` menu, select `Relying Party Trusts`. 
+1. In the `AD FS` menu, select `Relying Party Trusts`.
 1. Select the target application and select `Edit Claim Issuance Policy`.
 1. Confirm the rules for the claims sent to the application. For more information, see  [Pass through or Filter an Incoming Claim](/windows-server/identity/ad-fs/operations/create-a-rule-to-pass-through-or-filter-an-incoming-claim).
 
@@ -131,29 +131,42 @@ When testing the configuration, you should assign a designated test user that wa
 1. Select **Any cloud app**, and select the enterprise application.
 1. Select **What if**. Validate that any policies that will apply allow the user to sign into the application.
 
-## Validate changing the identity providers applicable to the application in the relying party STS configuration
+## Set the claims provider for the application to Microsoft Entra
 
-After the application is configured in Microsoft Entra and your relying party STS, users can sign into it by authenticating to Microsoft Entra, and having a token provided by Microsoft Entra transformed by your relying party STS, such as AD FS, into the form and claims required by your application. In addition, users will be able to sign into it by authenticating to Windows Server AD, and having a token provided by AD FS with similar claims.
+After the application is configured in Microsoft Entra and your relying party STS, users can sign into it by authenticating to Microsoft Entra, and having a token provided by Microsoft Entra transformed by your relying party STS, such as AD FS, into the format and claims required by your application. In addition, users will be able to sign into it by authenticating to Windows Server AD, and having a token provided by AD FS with similar claims.
 
-In this step, you'll validate that when you switch the identity provider for the relying party from Microsoft Entra to AD DS, users can still authenticate and sign-in to the application. The following steps are shown using AD FS, but another relying party STS could be used instead.
+In this section, you'll configure the relying party STS to offer Microsoft Entra as the identity provider for the application during normal operations. The following steps are shown using AD FS, but another relying party STS could be used instead.
 
 1. Launch PowerShell on the Windows Server where AD FS is installed.
-1. Obtain the list of applications, using the command `Get-AdfsRelyingPartyTrust | ft Name,ClaimsProviderName`. 
+1. Obtain the list of applications, using the command `Get-AdfsRelyingPartyTrust | ft Name,ClaimsProviderName`.
 1. Obtain the list of claims providers, using the command `Get-AdfsClaimsProviderTrust | ft Name`. There should be two names, one for Active Directory and the other for Microsoft Entra.
 1. Configure that Microsoft Entra is the sole claims provider for the application, using the command `Set-AdfsRelyingPartyTrust`. For example, if the application is named `appname`, then type `Set-AdfsRelyingPartyTrust -TargetName "appname" -ClaimsProviderName "Microsoft Entra"`. For more information, see [Configure an identity provider list per relying party](/windows-server/identity/ad-fs/operations/home-realm-discovery-customization#configure-an-identity-provider-list-per-relying-party).
-1. In a web browser private browsing session, connect to the application and initiate the login process. The application redirects the web browser to the relying party STS AD FS, and AD FS determines the identity providers which can provide appropriate claims.
-1. Based on the previous configuration, AD FS will select the Microsoft Entra identity provider. AD FS redirects the web browser to the Microsoft Entra login endpoint, `https://login.microsoftonline.com` if using the Microsoft Entra ID global service.
-1. Sign in to Microsoft Entra using the identity of the test user, previously configured in the step [configure who can sign-in to the application](#configure-who-can-sign-in-to-the-application). Microsoft Entra then locates the enterprise application based on the entity identifier, and redirects the web browser to AD FS at its reply URL endpoint, with the web browser transporting the SAML token.
-1. The AD FS validates the SAML token was issued by Microsoft Entra, then extract and transform the claims from the SAML token, and redirects the web browser to the application. Confirm that your application has received the required claims from Microsoft Entra via this process.
-1. In Powershell, configure that Active Directory is now the sole claims provider for the application, replacing Microsoft Entra, using the command `Set-AdfsRelyingPartyTrust`. For example, if the application is named `appname`, then type `Set-AdfsRelyingPartyTrust -TargetName "appname" -ClaimsProviderName "Active Directory"`. For more information, see [Configure an identity provider list per relying party](/windows-server/identity/ad-fs/operations/home-realm-discovery-customization#configure-an-identity-provider-list-per-relying-party).
-1. Close the web browser private browsing session, to clear any state.
-1. In a web browser private browsing session, connect to the application and initiate the login process. The application redirects the web browser to AD FS, and AD FS determines the identity providers which can provide appropriate claims.
-1. Based on the previous configuration, AD FS will select Active Directory.
-1. Sign in to AD FS using the Active Directory identity of the test user.
-1. AD FS transform the LDAP attributes of the user into claims, and redirects the web browser to the application. Confirm that your application has received the required claims from Active Directory via this process.
-1. In PowerShell, configure that Microsoft Entra is again the claims provider for the application, using the command `Set-AdfsRelyingPartyTrust`.
 
-<!-- XXX :::image type="content" source="media/add-application-portal-setup-sso-rpsts/saml-redirects.png" alt-text="Diagram showing the web browser redirects between an application, a relying party STS, and Microsoft Entra ID as an identity provider."::: --> 
+## Validate single sign-on during normal operations
+
+In this section, you'll validate that users can seamlessly authenticate to Microsoft Entra and sign-in to the application during normal operations.
+
+:::image type="content" source="~/identity/enterprise-apps/media/add-application-portal-setup-sso-rpsts/saml-redirects.png" alt-text="Diagram showing the web browser redirects between an application, a relying party STS, and Microsoft Entra ID as an identity provider.":::
+
+1. In a web browser private browsing session, connect to the application and initiate the login process. The application redirects the web browser to the relying party STS AD FS, and AD FS determines the identity providers which can provide appropriate claims.
+1. Based on the configuration in the previous section, AD FS will select the Microsoft Entra identity provider. AD FS redirects the web browser to the Microsoft Entra login endpoint, `https://login.microsoftonline.com` if using the Microsoft Entra ID global service.
+1. Sign in to Microsoft Entra using the identity of the test user, previously configured in the section [configure who can sign-in to the application](#configure-who-can-sign-in-to-the-application). Microsoft Entra then locates the enterprise application based on the entity identifier, and redirects the web browser to AD FS at its reply URL endpoint, with the web browser transporting the SAML token.
+1. The AD FS validates the SAML token was issued by Microsoft Entra, then extracts and transforms the claims from the SAML token, and redirects the web browser to the application. Confirm that your application has received the required claims from Microsoft Entra via this process.
+
+## Validate single sign-on after changing the claims provider trusted by the application to Active Directory
+
+In this section, you'll validate that when you switch the identity provider for the application from Microsoft Entra to Active Directory, users can still authenticate and sign-in to the application.
+
+:::image type="content" source="media/resilience-for-federated-applications-with-colocated-users/saml-redirects-without-microsoft-entra.png" alt-text="Diagram showing the the web browser redirects when Microsoft Entra ID is not configured as an identity provider for an application.":::
+
+1. Launch PowerShell on the Windows Server where AD FS is installed.
+1. In the PowerShell session, configure that Active Directory is now the sole claims provider for the application, replacing Microsoft Entra, using the command `Set-AdfsRelyingPartyTrust`. For example, if the application is named `appname`, then type `Set-AdfsRelyingPartyTrust -TargetName "appname" -ClaimsProviderName "Active Directory"`.
+1. Close any previously-opened web browser private browsing session, to clear any sign-in state.
+1. In a new web browser private browsing session, connect to the application and initiate the login process. The application redirects the web browser to AD FS, and AD FS determines the identity providers which can provide appropriate claims.
+1. Based on the configuration in step 2, AD FS will select Active Directory.
+1. Sign in to AD FS using the Active Directory identity of the test user. AD FS will authenticate the user in Active Directory.
+1. AD FS transforms the LDAP attributes of the user into claims, and redirects the web browser to the application. Confirm that your application has received the required claims from Active Directory via this process.
+1. In the PowerShell session, configure that Microsoft Entra is again the claims provider for the application, using the command `Set-AdfsRelyingPartyTrust`.
 
 ## Configure who can sign-in to the application
 
@@ -161,7 +174,7 @@ You'll next need to configure who can sign-in to the application. AD FS and Micr
 
 ## Configure automatic failover to AD
 
-You'll also need to configure a monitor for connectivity from the site, that will trigger an automatic switch of the identity provider in AD FS from `Microsoft Entra` to `Active Directory` when a disconnect is detected. <!-- XXX -->
+You'll next need to configure a monitor for connectivity from the site. This monitor will trigger an automatic switch of the identity provider for an application in AD FS from `Microsoft Entra` to `Active Directory` when a disconnect is detected. Optionally, you may wish to configure a monitor to reset the AD FS configuration to `Microsoft Entra` when connectivity is restored. <!-- XXX -->
 
 ## Complete configuration
 
