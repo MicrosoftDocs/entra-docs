@@ -67,5 +67,5 @@ It's advised to call the `getDeviceInformationWithParameters` API in MSAL to fin
 
 ## Related content
 
-- [Set up QR code authentication in Android app](msal-android-qr-code-pin-authentication.md)
+- [Set up QR code authentication in Android app](android-qr-code-pin-authentication.md)
 - [Authentication methods in Microsoft Entra ID - QR code authentication method (Preview)](/entra/identity/authentication/how-to-authentication-qr-code)
