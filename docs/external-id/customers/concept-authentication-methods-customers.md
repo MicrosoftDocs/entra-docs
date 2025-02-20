@@ -20,7 +20,7 @@ ms.custom: it-pro, seo-july-2024
 > [!TIP]
 > This article applies to External ID in external tenants. For information about workforce tenants, see [Identity providers for External ID in workforce tenants](../identity-providers.md).
 
-With Microsoft Entra External ID, you can create secure, customized sign-in experiences for your consumer- and business customer-facing apps. In an external tenant, there are several ways for users to sign up for your app. They can create an account using their email and either a password or a one-time passcode. Or, if you enable sign-in with Facebook, Google, Apple or a custom OIDC identity provider, they can sign in with their own account.
+With Microsoft Entra External ID, you can create secure, customized sign-in experiences for your consumer- and business customer-facing apps. In an external tenant, there are several ways for users to sign up for your app. They can create an account using their email and either a password or a one-time passcode. Or, if you enable sign-in with Facebook, Google, Apple or a custom OIDC or SAML/WS-Fed identity provider, users can sign in using their credentials in the external identity provider. A user object is created for them in your directory with the identity information collected during sign-up.
 
 This article describes the identity providers that are available for primary authentication when signing up and signing in to apps in external tenants. You can also enhance security by enforcing a multifactor authentication (MFA) policy that requires a second form of verification each time a user signs in ([learn more](concept-multifactor-authentication-customers.md)).
 
@@ -28,11 +28,11 @@ This article describes the identity providers that are available for primary aut
 
 Email sign-up is enabled by default in your local account identity provider settings. With the email option, users can sign up and sign in with their email address and a password.
 
-- **Sign-up**: Users are prompted for an email address, which is verified at sign-up with a one-time passcode. The customer then enters any other information requested on the sign-up page, for example, display name, given name, and surname. Then they select Continue to create an account.
+- **Sign-up**: Users are prompted for an email address, which is verified at sign-up with a one-time passcode. The user then enters any other information requested on the sign-up page, for example, display name, given name, and surname. Then they select Continue to create an account.
 
-- **Sign-in**: After the customer signs up and creates an account, they can sign in by entering their email address and password.
+- **Sign-in**: After the user signs up and creates an account, they can sign in by entering their email address and password.
 
-- **Password reset**: If you enable email and password sign-in, a password reset link appears on the password page. If the customer forgets their password, selecting this link sends a one-time passcode to their email address. After verification, the customer can choose a new password.
+- **Password reset**: If you enable email and password sign-in, a password reset link appears on the password page. If the user forgets their password, selecting this link sends a one-time passcode to their email address. After verification, the user can choose a new password.
 
    :::image type="content" source="media/concept-authentication-methods-customers/email-password-sign-in.png" alt-text="Screenshots of the email with password sign-in screens." border="false":::
 
@@ -40,11 +40,11 @@ When you [create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-
 
 ## Email with one-time passcode sign-in
 
-Email with one-time passcode is an option in your local account identity provider settings. With this option, the customer signs in with a temporary passcode instead of a stored password each time they sign in.
+Email with one-time passcode is an option in your local account identity provider settings. With this option, the user signs in with a temporary passcode instead of a stored password each time they sign in.
 
 - **Sign-up**: Users can sign up with their email address and request a temporary code, which is sent to their email address. Then they enter this code to continue signing in.
 
-- **Sign-in**: After the customer signs up and creates an account, each time they sign in they'll enter their email address and receive a temporary passcode.
+- **Sign-in**: After the user signs up and creates an account, each time they sign in they'll enter their email address and receive a temporary passcode.
 
    :::image type="content" source="media/concept-authentication-methods-customers/email-passcode-sign-in.png" alt-text="Screenshots of the email with one-time passcode sign-in screens." border="false":::
 
@@ -54,9 +54,9 @@ When you [create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-
 
 ## Social identity providers: Facebook, Google and Apple
 
-For an optimal sign-in experience, federate with social identity providers whenever possible so you can give your users a seamless sign-up and sign-in experience. In an external tenant, you can allow a customer to sign up and sign in using their own Facebook, Google, or Apple account. When a customer signs up for your app using their social account, the social identity provider creates, maintains, and manages identity information while providing authentication services to applications.
+For an optimal sign-in experience, federate with social identity providers whenever possible so you can give your users a seamless sign-up and sign-in experience. In an external tenant, you can allow a user to sign up and sign in using their own Facebook, Google, or Apple account.
 
-When you enable social identity providers, users can select from the social identity providers options you make available on the sign-up page. To set up social identity providers in your external tenant, you create an application at the identity provider and configure credentials. You obtain a client or app ID and a client or app secret, which you can then add to your external tenant.
+When you enable social identity providers, users can select from the social identity providers options you make available on the sign-up page. To set up social identity providers in your external tenant, you create an application at the identity provider and configure credentials. You obtain a client or app ID, a client or app secret, or a certificate, which you can then use to configure your external tenant.
 
 ### Google sign-in (preview)
 
@@ -87,10 +87,9 @@ Learn how to [add Apple as an identity provider](how-to-apple-federation-custome
 
 ## Custom SAML/WS-Fed identity providers (preview)
 
-You can set up a SAML or WS-Fed identity provider to allow users to sign up and sign in to your applications using their own account with the identity provider. The user can sign up or sign in by selecting the **Sign up with** or **Sign in with** option. They're redirected to the identity provider, and then returned to Microsoft Entra once they successfully sign in. 
-For external tenants, a user's sign-in email doesn't need to match the predefined domains set up during SAML federation.
+You can set up a SAML or WS-Fed identity provider to allow users to sign up and sign in to your applications using their own account with the identity provider. The user can sign up or sign in by selecting the **Sign up with** or **Sign in with** option. They're redirected to the identity provider, and then returned to Microsoft Entra once they successfully sign in. For external tenants, a user's sign-in email doesn't need to match the predefined domains set up during SAML federation.
 
-If a user doesn't have an account in the external tenant, and on the sign-in page they enter an email address matching a domain that's predefined in the IdP federation, they're redirected to authenticate with the IdP.
+If a user doesn't have an account in your external tenant and enters an email address on the sign-in page that matches a predefined domain in any of the external identity providers, they're redirected to authenticate with that identity provider.
 
 For detailed setup steps, see [Add federation with SAML/WS-Fed identity providers](../direct-federation.md).
 
@@ -99,9 +98,7 @@ For detailed setup steps, see [Add federation with SAML/WS-Fed identity provider
 
 ## Custom OIDC identity provider (preview)
 
-You can set up a custom OpenID Connect (OIDC) identity provider to allow users to sign up and sign in to your applications with their own accounts. When a customer signs up for your app using their custom OIDC identity provider, the identity provider creates, maintains, and manages identity information while providing authentication services to applications.
-
-You can also federate your sign-in and sign-up flows with an Azure AD B2C tenant using the OIDC protocol.
+You can set up a custom OpenID Connect (OIDC) identity provider to allow users to sign up and sign in to your applications using their credentials in the external identity provider. You can also federate your sign-in and sign-up flows with an Azure AD B2C tenant using the OIDC protocol.
 
 Learn how to [set up a custom OIDC identity provider](how-to-custom-oidc-federation-customers.md).
 

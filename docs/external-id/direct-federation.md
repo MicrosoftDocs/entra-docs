@@ -18,7 +18,7 @@ ms.collection: M365-identity-device-management
 
 [!INCLUDE [applies-to-workforce-external](./includes/applies-to-workforce-external.md)]
 
-Your Microsoft Entra tenant can be directly federated with external organizations that use a SAML or WS-Fed identity provider (IdP). Users from the external organization can then use their own IdP-managed accounts to sign in to your apps or resources, either during invitiation redemption or self-service sign-up, without having to create new Microsoft Entra credentials. The user is redirected to their IdP when signing up or signing in to your app, and then returned to Microsoft Entra once they successfully sign in. 
+Your Microsoft Entra tenant can be directly federated with external organizations that use a SAML or WS-Fed identity provider (IdP). Users from the external organization can then use their own IdP-managed accounts to sign in to your apps or resources, either during invitation redemption or self-service sign-up, without having to create new Microsoft Entra credentials. The user is redirected to their IdP when signing up or signing in to your app, and then returned to Microsoft Entra once they successfully sign in. 
 <!-- Do we need to break down the preview status further by tenant type and invitation vs. SSSU? -->
 > [!NOTE]
 > SAML/WS-Fed federation is currently in preview for external tenants and is generally available for workforce tenants.
@@ -27,8 +27,8 @@ Your Microsoft Entra tenant can be directly federated with external organization
 
 - Review the configuration considerations in [SAML/WS-Fed identity providers](direct-federation-overview.md).
 - A workforce tenant or an [external tenant](customers/how-to-create-external-tenant-portal.md).
-- (For an external tenants) A registered application in the tenant.
-- (For self-service sign-up) A sign-up and sign-in user flow.
+- (For an external tenant) A registered application in the tenant.
+- (For self-service sign-up) Create a user flow for self-service sign-up and sign-in.
 
 ## How to configure SAML/WS-Fed IdP federation
 
@@ -88,7 +88,7 @@ Microsoft Entra External ID requires the WS-Fed message from the external IdP to
 - Manually entering the values
 
 > [!NOTE]
-> Currently, the two WS-Fed providers that have been tested for compatibility with Microsoft Entra ID are AD FS and Shibboleth. For more information about establishing a relying party trust between a WS-Fed compliant provider with Microsoft Entra ID, see the "STS Integration Paper using WS Protocols" available in the [Microsoft Entra identity Provider Compatibility Docs](https://www.microsoft.com/download/details.aspx?id=56843).
+> Currently, the two WS-Fed providers that have been tested for compatibility with Microsoft Entra ID are AD FS and Shibboleth.
 
 ##### Required WS-Fed attributes and claims
 
@@ -118,7 +118,7 @@ Refer to the following tables for the required values.
 
 ### Step 3: Configure SAML/WS-Fed IdP federation in Microsoft Entra External ID
 
-Next, configure federation with the IdP configured in step 1 in Microsoft Entra External ID. You can use either the Microsoft Entra admin center or the [Microsoft Graph API](/graph/api/resources/samlorwsfedexternaldomainfederation?view=graph-rest-beta&preserve-view=true). It might take 5-10 minutes before the federation policy takes effect. During this time, don't attempt to complete self-service sign-up or redeem an invitation for the federation domain. The following attributes are required:
+Next, configure federation with the IdP configured in step 1 in Microsoft Entra External ID. You can use either the Microsoft Entra admin center or the [Microsoft Graph API](/graph/api/resources/samlorwsfedexternaldomainfederation?view=graph-rest-1.0). It might take 5-10 minutes before the federation policy takes effect. During this time, don't attempt to complete self-service sign-up or redeem an invitation for the federation domain. The following attributes are required:
 
 - Issuer URI of the partner's IdP
 - Passive authentication endpoint of partner IdP (only https is supported)

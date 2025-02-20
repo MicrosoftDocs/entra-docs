@@ -31,12 +31,9 @@ Setting up SAML/WS-Fed IdP federation requires configuration both in your tenant
 
 ## User authentication with SAML/WS-Fed IdP federation
 
-Once you set up federation with a partner's SAML/WS-Fed IdP, the identity provider becomes available as a sign-in option for users when they redeem your invitations. You can also add the identity provider to your self-service sign-up user flows, allowing users to sign up for your customer-facing apps using their own organizational accounts.
+Once you set up federation with a partner's SAML/WS-Fed IdP, users can sign up or sign in by selecting the **Sign up with** or **Sign in with** option. They're redirected to the identity provider, and then returned to Microsoft Entra once they successfully sign in.
 
-Users with email addresses that match predefined domains associated with the federated IdP can sign in by entering their email address. They're redirected to the identity provider, and then returned to Microsoft Entra once they successfully sign in. The following scenarios are supported for external tenants:
-
-- A user's sign-in email doesn't need to match the predefined domains set up during SAML federation. As long as it matches the user's identity already established with the identity provider, the user can sign up or sign in by selecting the **Sign up with** or **Sign in with** option.
-- If the user doesn't already have an account with the identity provider, they're redirected to the sign-up process, and they might be prompted for more information before their account is created.
+For external tenants, a user's sign-in email doesn't need to match the predefined domains set up during SAML federation. If a user doesn't have an account in your external tenant and enters an email address on the sign-in page that matches a predefined domain in any of the external identity providers, they're redirected to authenticate with that identity provider.
 
 ### Verified and unverified domains
 
