@@ -33,7 +33,7 @@ The Microsoft Entra private network connector requires a server running Windows 
 * For more information, see [Determine which .NET framework versions are installed](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed).
 
 > [!IMPORTANT]
-> Disable HTTP 2.0 when using the Microsoft Entra private network connector with Microsoft Entra application proxy on Windows Server 2019 or later.
+> Note that when using Kerberos Single Sign On (SSO) with Microsoft Application Proxy Service, Disable HTTP 2.0 on Entra private network connector for Windows Server 2019 or later. No need to disable when using Entra Private network connector with Private Access.
 >
 >  Disable the `HTTP2` protocol support in the `WinHttp` component for *Kerberos Constrained Delegation* to properly work. This is disabled by default in earlier versions of supported operating systems. Adding the following registry key and restarting the server disables it on Windows Server 2019 and later. This is a machine-wide registry key.
 >
