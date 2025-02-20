@@ -44,6 +44,8 @@
       href: concept-authentication-oath-tokens.md
     - name: Phone options
       href: concept-authentication-phone-options.md
+    - name: QR code
+      href: concept-authentication-qr-code.md
     - name: Text
       href: howto-authentication-sms-signin.md
     - name: Email
@@ -123,6 +125,8 @@
     href: how-to-authentication-methods-manage.md
   - name: Temporary Access Pass
     href: howto-authentication-temporary-access-pass.md
+  - name: Enable QR code auth method
+    href: how-to-authentication-qr-code.md
   - name: Passwordless
     items:
     - name: Plan phishing-resistant passwordless authentication
