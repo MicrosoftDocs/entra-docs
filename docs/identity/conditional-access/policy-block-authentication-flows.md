@@ -45,7 +45,7 @@ After administrators confirm the settings using [report-only mode](howto-conditi
 
 ## Authentication transfer policies 
 
-The ability to control [authentication transfer](concept-authentication-transfer.md) is in preview, use the **Authentication flows** condition in Conditional Access to manage the feature. You might want to block authentication transfer if you don’t want users to transfer authentication from their PC to a mobile device. For example, if you don’t allow Outlook to be used on personal devices by certain groups. Blocking authentication transfer can be done with the following Conditional Access policy:   
+Use the **Authentication flows** condition in Conditional Access to manage the feature. You might want to block [authentication transfer](concept-authentication-transfer.md) if you don’t want users to transfer authentication from their PC to a mobile device. For example, if you don’t allow Outlook to be used on personal devices by certain groups. Blocking authentication transfer can be done with the following Conditional Access policy:   
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator). 
 1. Browse to **Protection** > **Conditional Access**. 

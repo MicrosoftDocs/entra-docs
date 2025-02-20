@@ -77,6 +77,7 @@ $folderPath = "C:\Program Files\Microsoft Entra private network connector\Module
 # Check if the Module exists
 if (Test-Path -Path $folderPath) {
     Write-Host "The Module is successfully made available at path: $folderPath"
+}
    
 # Set the prompt path to C:\Program Files\Microsoft Entra private network connector\Modules\MicrosoftEntraPrivateNetworkConnectorPSModule
 cd "C:\Program Files\Microsoft Entra private network connector\Modules\MicrosoftEntraPrivateNetworkConnectorPSModule"
