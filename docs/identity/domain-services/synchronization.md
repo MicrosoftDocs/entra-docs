@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: domain-services
 ms.custom: has-azure-ad-ps-ref
 ms.topic: conceptual
-ms.date: 09/21/2023
+ms.date: 02/19/2025
 ms.author: justinha
 ---
 # How objects and credentials are synchronized in a Microsoft Entra Domain Services managed domain

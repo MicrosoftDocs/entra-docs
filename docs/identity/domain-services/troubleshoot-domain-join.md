@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: troubleshooting
-ms.date: 12/03/2024
+ms.date: 02/19/2025
 ms.author: justinha
 #Customer intent: As a directory administrator, I want to troubleshoot why VMs can't join a Microsoft Entra Domain Services managed domain.
 ---
