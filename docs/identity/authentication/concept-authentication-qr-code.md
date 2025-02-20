@@ -5,7 +5,7 @@ description: Learn about using QR code authentication method in Microsoft Entra 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/19/2025
+ms.date: 02/20/2025
 
 ms.author: justinha
 author: aanjusingh
@@ -115,7 +115,7 @@ You can use Microsoft's web browser sign-in experience (login.microsoft.com) to 
 
 ### Mobile app sign-in experience 
 
-You can optimize sign-in for your apps by using Microsoft Authentication Library (MSAL) to add QR code as an option on the sign-in page. For example, you can add QR code sign-in just like Teams or Managed Home Screen (MHS). Then users can scan the QR code with two fewer clicks. This optimized sign-in experience is coming in BlueFletch and Jamf app launchers in March, 2025.
+You can optimize sign-in for your apps by using Microsoft Authentication Library (MSAL) to add QR code as an option on the sign-in page. For example, you can add QR code sign-in just like Teams or Managed Home Screen (MHS). Then users can scan the QR code with two fewer clicks. This optimized sign-in experience is available in BlueFletch and Jamf app launchers.
 
 :::image type="content" source="media/concept-authentication-qr-code/teams.png" alt-text="Screenshot that shows Teams sign-in experience.":::
 
