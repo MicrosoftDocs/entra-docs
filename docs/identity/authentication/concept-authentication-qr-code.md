@@ -121,6 +121,8 @@ You can optimize sign-in for your apps by using Microsoft Authentication Library
 
 :::image type="content" source="media/concept-authentication-qr-code/managed-home-screen.png" alt-text="Screenshot that shows Managed Home Screen sign-in experience.":::
 
+For more information about how to optimize the sign-in experience, see [Set up optimized QR code authentication experience in Android app](~/identity-platform/android-qr-code-pin-authentication.md) and [Set up optimized QR code authentication experience in iOS app](~/identity-platform/ios-qr-code-pin-authentication.md).
+
 
 ## Unsupported user scenarios in current release
 
