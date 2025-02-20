@@ -117,9 +117,9 @@ We recommend the following practices to govern external access with entitlement 
   - [View, add, and remove assignments for an access package in entitlement management](~/id-governance/entitlement-management-access-package-assignments.md)
   - [Create a new access package in entitlement management](~/id-governance/entitlement-management-access-package-create.md)
 
-### Identity Governance - Settings
+### ### Identity Governance - Control Configurations 
 
-Use **Identity Governance - Settings** to remove users from your directory when their access packages expire. The following settings apply to users onboarded with entitlement management.
+Select the **Lifecycle of external users setting in Control Configurations** to remove users from your directory when their access packages expire. The following settings apply to users onboarded with entitlement management. 
 
    ![Screenshot of settings and entries for Manage the lifecycle of external users.](media/secure-external-access/6-manage-external-lifecycle.png)
 
