@@ -86,7 +86,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://federatedid-na1.services.adobe.com/federated/saml/metadata/alias/<CUSTOM_ID>`
 
 	> [!NOTE]
-	> The Identifier value is not real. Update the value with the actual Identifier. Contact [Adobe Identity Management (SAML) Client support team](mailto:identity@adobe.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The Identifier value is not real. Update the value with the actual Identifier, which is obtained from the Adobe Admin Console during the federated directory setup wizard.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
