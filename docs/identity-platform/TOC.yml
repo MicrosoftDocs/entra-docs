@@ -383,7 +383,7 @@
                     - name: Shared device mode for Android devices
                       href: msal-android-shared-devices.md
                     - name: QR code authentication
-                      href: msal-android-qr-code-pin-authentication.md
+                      href: android-qr-code-pin-authentication.md
                 - name: iOS
                   items:
                     - name: Microsoft Enterprise SSO plug-in for Apple devices
@@ -391,7 +391,7 @@
                     - name: Shared device mode for iOS devices
                       href: msal-ios-shared-devices.md
                     - name: QR code authentication
-                      href: msal-ios-qr-code-pin-authentication.md
+                      href: ios-qr-code-pin-authentication.md
             - name: Acquire token
               href: scenario-mobile-acquire-token.md
             - name: Acquire token with broker
