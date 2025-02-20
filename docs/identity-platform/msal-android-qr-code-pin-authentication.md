@@ -10,16 +10,16 @@ ms.topic: concept-article
 ms.date: 02/05/2025
 ms.reviewer: amgusain, akgoel, dmwendia
 
-#Customer intent: As a developer, I want to uLearn how to configure your Android app to use QR code and PIN authentication using the Microsoft Authentication Library for Android.
+#Customer intent: As a developer, I want to learn how to configure your Android app to have optimized QR code authentication experience using the Microsoft Authentication Library for Android 
 ---
 
-# Set up QR code authentication in Android app
+# Set up optimized QR code authentication experience in Android app
 
 QR code authentication method enables frontline workers to sign in quickly and easily in apps on shared device. Users are able to use unique QR code provided by their admins and enter their PIN to sign in, eliminating the need to enter usernames and passwords.
 
-To take advantage of QR code and PIN authentication method, app developers and [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference) work together:
+You can use QR code web sign-in experience available at login.microsoft.com, this user entry point doesn't require any developer changes. User will select **Sign in options** > **Sign in to an organization** > **Sign in with a QR code**. You can optimize QR code sign-in experience by providing the entry point at your login page, eliminating two user clicks. To take advantage of QR code and PIN authentication method, app developers and [Authentication Policy Administrator](/entra/identity/role-based-access-control/permissions-reference) work together:
 
-- App developers integrate the QR code and PIN authentication method in their app using the Microsoft Authentication Library for Android (MSAL).
+- App developers integrate QR code authentication's optimized entry point in their app using the Microsoft Authentication Library for Android (MSAL).
 - Authentication Policy Administrator configures the [authentication method](/entra/identity/authentication/how-to-authentication-qr-code) in Microsoft Entra ID.
 
 ## Configure your app to use QR code authentication
@@ -39,7 +39,7 @@ final AcquireTokenParameters acquireTokenParameters =
 ```
 
 
-The `PreferredAuthMethod` is set to `PreferredAuthMethod.QR`, which specifies that the QR code authentication method should be used. This method allows users to authenticate by scanning a QR code, and entering their pin.
+The `PreferredAuthMethod` is set to `PreferredAuthMethod.QR`, which specifies that the QR code authentication method should be used. This method allows users to authenticate by scanning a QR code and entering their pin.
 
 Once you have configured the `AcquireTokenParameters` object, you can call the `acquireToken` method to start the authentication process. The following code snippet shows how to acquire a token using the `AcquireTokenParameters` object:
 
