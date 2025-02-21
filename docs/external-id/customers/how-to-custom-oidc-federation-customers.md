@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: how-to
-ms.date: 11/27/2024
+ms.date: 02/20/2025
 ms.author: cmulligan
 ms.reviewer: brozbab
 ms.custom: it-pro
@@ -50,18 +50,18 @@ To configure OpenID connect federation with your identity provider in Microsoft 
 
 - **Well-known endpoint**
 - **Issuer URI**
-- **Client ID** 
+- **Client ID**
 - **Client Authentication Method**
 - **Client Secret**
-- **Scope** 
+- **Scope**
 - **Response Type**
-- **Claims mapping** (optional)
+- **Claims mapping**
   - Sub
   - Name
   - Given name
   - Family name
-  - Email
-  - Email_verified
+  - Email (required)
+  - Email_verified (required)
   - Phone number
   - Phone_number_verified
   - Street address
