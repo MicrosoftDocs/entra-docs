@@ -52,7 +52,7 @@ Create a POST request to the AD FS endpoint using SOAP envelope to fetch the SAM
 
 | Key | Value |
 | --- | ----- |
-| SOAPAction | http://schema.xlmsoap.org/ws/2005/02/trust/RST/Issue |
+| SOAPAction | `http://schema.xlmsoap.org/ws/2005/02/trust/RST/Issue` |
 | Content-Type | application/soap+xml |
 | client-request-id | CLIENT_ID |
 | return-client-request-id | true |
