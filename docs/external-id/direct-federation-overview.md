@@ -4,7 +4,7 @@ description: Learn about federation with an external organization's SAML/WS-Fed 
  
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 02/12/2025
+ms.date: 02/21/2025
 
 ms.author: mimart
 author: msmimart
