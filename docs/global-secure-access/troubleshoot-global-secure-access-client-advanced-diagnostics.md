@@ -144,7 +144,7 @@ The following files are collected:
 |systemWideProxy.txt|Output of netsh winhttp show proxy|
 |userConfiguredProxy|Output of proxy settings in the registry|
 |userSessions.txt|User session list|
-|DNSClient.etl|DNS client logs. These logs are useful for diagnosomg DNS resolution issues. Open with Event Log viewer, or filter to the specific names of interest with PowerShell: Get-WinEvent -Path .\DNSClient.etl -Oldest | where Message -Match replace with name/FQDN | Out-GridView|
+|DNSClient.etl|DNS client logs. These logs are useful for diagnosomg DNS resolution issues. Open with Event Log viewer, or filter to the specific names of interest with PowerShell: `Get-WinEvent -Path .\DNSClient.etl -Oldest | where Message -Match replace with name/FQDN | Out-GridView`|
 |InternetDebug.etl|Logs collected using "netsh trace start scenario=internetClient_dbg capture=yes persistent=yes"|
 |NetworkTrace.etl|Net capture taken with pktmon|
 |NetworkTrace.pcap|Network capture including traffic inside the tunnel|

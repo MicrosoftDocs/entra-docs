@@ -7,7 +7,7 @@ ms.reviewer: ashishj
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/27/2024
+ms.date: 02/21/2025
 ms.custom: template-how-to
 ---
 
