@@ -108,10 +108,10 @@ items:
               items:
                   - name: Create Angular app
                     href: /entra/identity-platform/tutorial-single-page-apps-angular-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
-                  - name: Configure app for authentication
-                    href: /entra/identity-platform/tutorial-single-page-apps-sign-in-users-app.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
-                  - name: Sign in and sign out
-                    href: /entra/identity-platform/tutorial-single-page-apps-angular-extract-user-data.md?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                  - name: Sign in users
+                    href: /entra/identity-platform/tutorial-single-page-apps-sign-in-users-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                  - name: Extract user data and test app
+                    href: /entra/identity-platform/tutorial-single-page-apps-angular-extract-user-data?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
             - name: React
               items:
                   - name: Prepare tenant

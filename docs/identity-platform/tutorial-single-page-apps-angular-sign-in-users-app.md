@@ -24,11 +24,11 @@ In this tutorial:
 
 ## Prerequisites
 
-- [Tutorial: Create an Angular single-page application](tutorial-single-page-apps-angular-prepare-app.md)
+- Completion of the prerequisites and steps in [Tutorial: Create an Angular single-page application](tutorial-single-page-apps-angular-prepare-app.md)
 
 ## Add sign-in and sign-out functionality to your app
 
-In this section we will add components to support sign-in and sign-out functionality in your Angular application. These components will enable users to authenticate and manage their sessions. We will also add routing to the application to direct users to the appropriate components based on their authentication status.
+In this section you'll add components to support sign-in and sign-out functionality in your Angular application. These components enable users to authenticate and manage their sessions. You'll add routing to the application to direct users to the appropriate components based on their authentication status.
 
 ### [Workforce tenant](#tab/workforce-tenant)
 
@@ -494,7 +494,7 @@ To enable sign-in and sign-out functionality in your Angular application, follow
     This code snippet styles the HTML elements of the home page of the Angular application. It sets the height and overflow properties of the table container, adjusts the margin and width of the table, and aligns the text in the paragraph element.
 ---
     
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Tutorial: Tutorial: Extract user data with an Angular SPA](tutorial-single-page-apps-angular-extract-user-data.md)
