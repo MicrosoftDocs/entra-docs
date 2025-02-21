@@ -107,6 +107,8 @@ To configure your Angular application to interact with the Microsoft Graph API, 
 
 ### [External tenant](#tab/external-tenant)
 
+You will configure your Angular app to display the claims in your ID token upon signing in. 
+
 1. Create a file called *claim-utils.ts* in the *src/app/* folder and paste the following code snippet into it.
 
     ```javascript
