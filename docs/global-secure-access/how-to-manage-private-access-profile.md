@@ -3,7 +3,7 @@ title: How to Manage the Private Access Profile
 description: Learn how to manage the Private Access traffic forwarding profile for Microsoft Entra Private Access.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.topic: how-to
 ms.date: 12/23/2024
 ms.service: global-secure-access

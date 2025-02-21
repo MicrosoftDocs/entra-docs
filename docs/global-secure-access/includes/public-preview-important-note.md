@@ -1,7 +1,7 @@
 ---
 ms.author: kenwith
 author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.service: global-secure-access
 ms.topic: include
 ms.date: 04/12/2024

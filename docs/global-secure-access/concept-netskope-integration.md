@@ -3,7 +3,7 @@ title: Learn about integrations between Microsoft and Netskope.
 description: A comprehensive guide for configuring and testing the integration between Microsoft's and Netskope's Secure Access Service Edge (SASE) solutions.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.topic: concept-article
 ms.date: 11/18/2024
 ms.service: global-secure-access

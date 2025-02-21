@@ -3,7 +3,7 @@ title: Understand Microsoft Entra private network connector groups
 description: Learn how Microsoft Entra private network connector groups work and how they are used by Microsoft Entra Private Access and application proxy.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.topic: conceptual
 ms.date: 04/15/2024
 ms.service: global-secure-access

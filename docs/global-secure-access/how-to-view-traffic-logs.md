@@ -3,7 +3,7 @@ title: Global Secure Access network traffic logs
 description: Learn how to use Global Secure Access traffic logs (preview) to monitor connections to the service, the type of traffic, and who's connecting.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.topic: how-to
 ms.date: 03/06/2024
 ms.service: global-secure-access

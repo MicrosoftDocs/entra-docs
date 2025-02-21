@@ -3,7 +3,7 @@ title: How to Assign a Remote Network to a Traffic Forwarding Profile for Global
 description: Learn how to assign a remote network to a traffic forwarding profile for Global Secure Access.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.topic: how-to
 ms.date: 12/23/2024
 ms.service: global-secure-access

@@ -3,7 +3,7 @@ title: How to use enriched Microsoft 365 logs
 description: Learn how to use enriched Microsoft 365 logs for Global Secure Access.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.topic: how-to
 ms.date: 11/27/2024
 ms.service: global-secure-access

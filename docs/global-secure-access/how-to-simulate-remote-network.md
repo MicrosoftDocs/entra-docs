@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 10/04/2024
 ms.author: kenwith
 author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.reviewer: absinh
 
 # Customer intent: As an IT administrator, I want to configure Global Secure Access with an Azure virtual network so I can better understand how the service can be implemented in my organization.

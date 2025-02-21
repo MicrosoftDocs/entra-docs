@@ -3,7 +3,7 @@ title: How to configure routers for remote networks
 description: Learn how to configure the connectivity between your customer premises equipment and the Global Secure Access network.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.topic: how-to
 ms.date: 03/22/2024
 ms.service: global-secure-access

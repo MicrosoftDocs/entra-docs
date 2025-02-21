@@ -3,7 +3,7 @@ title: Learn about the Global Secure Access dashboard
 description: Monitor the health and status of your network traffic with the Global Secure Access dashboard.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.topic: conceptual
 ms.date: 06/18/2024
 ms.service: global-secure-access

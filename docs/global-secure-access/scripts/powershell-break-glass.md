@@ -2,7 +2,7 @@
 title: PowerShell sample - Disable traffic forwarding and disable Conditional Access policies using the compliant network condition in a break glass scenario
 description: PowerShell examples for use in a Microsoft Entra Internet Access break glass scenario. 
 author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.service: global-secure-access
 ms.topic: sample
 ms.date: 06/27/2024

@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 12/05/2024
 ms.author: kenwith
 author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.reviewer: alexpav
 ---
 # Apply Conditional Access policies to Global Secure Access traffic

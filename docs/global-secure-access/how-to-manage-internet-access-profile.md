@@ -3,7 +3,7 @@ title: How to manage the Internet Access profile
 description: Learn how to manage the Internet Access traffic forwarding profile for Microsoft Entra Internet Access.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.topic: how-to
 ms.date: 07/03/2024
 ms.service: global-secure-access

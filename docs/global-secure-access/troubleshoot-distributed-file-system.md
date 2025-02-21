@@ -3,7 +3,7 @@ title: Learn how to solve an issue where Global Secure Access fails with a Distr
 description: A troubleshooting article that includes a workaround for a case where a Distributed File System (DFS) doesn't operate correctly with Global Secure Access.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.topic: troubleshooting
 ms.date: 12/13/2024
 ms.service: global-secure-access

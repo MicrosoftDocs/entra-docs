@@ -3,7 +3,7 @@ title: Understand the Microsoft Entra private network connector
 description: Learn how Microsoft Entra private network connectors work and how they're used by Microsoft Entra Private Access and application proxy.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.topic: conceptual
 ms.date: 07/02/2024
 ms.service: global-secure-access
