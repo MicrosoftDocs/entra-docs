@@ -116,8 +116,6 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
 
 > [!NOTE]
 > You can add up to 500 application segments to your Quick Access app.
->
-> Do not overlap FQDNs, IP addresses, and IP ranges between your Quick Access app and any Private Access apps.
 
 ### Add private DNS suffixes
 Private DNS support for Microsoft Entra Private Access lets you query your own internal DNS servers to resolve IP addresses for internal domain names. Let’s look at an example. Let’s say you have an internal IP range of `10.8.0.0` to `10.8.255.255`. You configure this range in your Quick Access application definition. You want users to access a web application responding on IP `10.8.0.5` when they type

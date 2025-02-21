@@ -62,10 +62,10 @@ Required permissions | For permissions required to apply an update, see [Microso
 
 |Version|End of support date|
 |-----|-----|
-|[2.3.2.0](#2320)|21 Feb 2025(12 months after release of 2.3.6.0)|
-|[2.3.6.0](#2360)|1 Apr 2025 (12 months after release of 2.3.8.0)|
-|[2.3.8.0](#2380)|25 Jul 2025 (12 months after release of 2.3.20.0)|
-|[2.3.20.0](#23200)|7 Oct 2025 (12 months after release of 2.4.18.0)|
+|[2.3.2.0](#2320)|31 Mar 2025 (To align with the security change released in version 2.4.18.0)|
+|[2.3.6.0](#2360)|31 Mar 2025 (To align with the security change released in version 2.4.18.0)|
+|[2.3.8.0](#2380)|31 Mar 2025 (To align with the security change released in version 2.4.18.0)|
+|[2.3.20.0](#23200)|31 Mar 2025 (To align with the security change released in version 2.4.18.0)|
 |[2.4.18.0](#24180)|9 Oct 2025 (12 months after release of 2.4.21.0)|
 |[2.4.21.0](#24210)|15 Nov 2025 (12 months after release of 2.4.27.0)|
 |[2.4.27.0](#24270)|15 Jan 2026 (12 months after release of 2.4.129.0)|
