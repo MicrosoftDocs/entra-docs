@@ -69,6 +69,21 @@ items:
       href: licensing.md
     - name: Sign up for Microsoft Entra ID P1 or P2
       href: get-started-premium.md
+- name: Fundamental security settings
+  expanded: false
+  items:
+  - name: Configure security recommendations
+    href: configure-security.md
+  - name: Identity secure score
+    href: ~/identity/monitoring-health/concept-identity-secure-score.md
+  - name: Improve your security posture
+    href: concept-secure-remote-workers.md
+  - name: Integrate your apps with Microsoft Entra ID
+    href: five-steps-to-full-application-integration.md
+  - name: Security defaults
+    href: security-defaults.md
+  - name: Manage 'Stay signed in?' prompt
+    href: how-to-manage-stay-signed-in-prompt.yml
 - name: Microsoft Security Copilot + Microsoft Entra
   items:
   - name: Overview
@@ -83,23 +98,6 @@ items:
     href: copilot-security-entra-investigate-risky-apps.md
   - name: Responsible AI FAQ for Security Copilot in Microsoft Entra
     href: copilot-security-entra-responsible-ai-faq.md
-- name: Global security settings
-  expanded: false
-  items:
-  - name: Configure security recommendations
-    href: configure-security.md
-  - name: Identity secure score
-    href: ~/identity/monitoring-health/concept-identity-secure-score.md
-  - name: Improve your security posture
-    href: concept-secure-remote-workers.md
-  - name: Integrate your apps with Microsoft Entra ID
-    href: five-steps-to-full-application-integration.md
-  - name: Security defaults
-    href: security-defaults.md
-  - name: Block less secure authentications
-    href: ~/identity/conditional-access/policy-block-legacy-authentication.md?toc=/entra/fundamentals/toc.json&bc=/entra/fundamentals/breadcrumb/toc.json
-  - name: Manage 'Stay signed in?' prompt
-    href: how-to-manage-stay-signed-in-prompt.yml
 - name: Support and help
   expanded: false
   items:
