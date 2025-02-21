@@ -19,7 +19,7 @@ In large environments, user accounts aren't always deleted when employees leave 
 This article explains a method to handle obsolete user accounts in Microsoft Entra ID.
 
 > [!NOTE]
-> This article applies only to finding inactive user accounts in Microsoft Entra ID. It does not apply to finding inactive accounts in [Azure AD B2C](/azure/active-directory-b2c/overview).
+> This article applies only to finding inactive user accounts in Microsoft Entra ID. It doesn't apply to finding inactive accounts in [Azure AD B2C](/azure/active-directory-b2c/overview).
 
 ## Prerequisites
 
@@ -91,7 +91,7 @@ Generate a report of the last sign-in date of *all users*. The response provides
 
 ### Last successful sign-in date and time
 
-This query is similar to adding the last sign-in date to the users list and filtering by a specific date in the Microsoft Entra admin center. You can request a list of users with a `lastSuccessfulSignInDateTime` or `lastSignInDateTime` *before* a specified date. The response for this query provides the user's details, but doesn't provide the users's sign-in activity. To see those details, try the query in the **Users by name** scenario.
+This query is similar to adding the last sign-in date to the user list and filtering by a specific date in the Microsoft Entra admin center. You can request a list of users with a `lastSuccessfulSignInDateTime` or `lastSignInDateTime` *before* a specified date. The response for this query provides the user's details, but doesn't provide the user's sign-in activity. To see those details, try the query in the **Users by name** scenario.
 
   - `https://graph.microsoft.com/v1.0/users?$filter=signInActivity/lastSuccessfulSignInDateTime le 2024-06-01T00:00:00Z`
   - `https://graph.microsoft.com/v1.0/users?$filter=signInActivity/lastSignInDateTime le 2024-06-01T00:00:00Z`
@@ -126,12 +126,12 @@ GET `https://graph.microsoft.com/v1.0/users?$filter=startswith(displayName,'Isab
     ]
 }
 ```
-  - `lastSignInDateTime`: The date and time of the last interactive sign-in attempt, including sign-in failures. In the case where the last sign-in attempt was successful, the date and time of this property will be the same as the `lastSuccessfulSignInDateTime`.
+  - `lastSignInDateTime`: The date and time of the last interactive sign-in attempt, including sign-in failures. In the case where the last sign-in attempt was successful, the date and time of this property are the same as the `lastSuccessfulSignInDateTime`.
   - `lastNonInteractiveSignInDateTime`: The date and time of the last non-interactive sign-in attempt.
   - `lastSuccessfulSignInDateTime`: The date and time of the last successful interactive sign-in.
 
 > [!NOTE]
-> The `signInActivity` property supports `$filter` (`eq`, `ne`, `not`, `ge`, `le`) *but not with any other filterable properties*. You must specify `$select=signInActivity` or `$filter=signInActivity` while [listing users](/graph/api/user-list?view=graph-rest-beta&preserve-view=true), as the signInActivity property is not returned by default.
+> The `signInActivity` property supports `$filter` (`eq`, `ne`, `not`, `ge`, `le`) *but not with any other filterable properties*. You must specify `$select=signInActivity` or `$filter=signInActivity` while [listing users](/graph/api/user-list?view=graph-rest-beta&preserve-view=true), as the signInActivity property isn't returned by default.
 
 ### Considerations for the lastSignInDateTime property
 
@@ -153,7 +153,7 @@ The following details relate to the `lastSignInDateTime` property.
 
 ## How to address inactive users
 
-After you've identified inactive users, start by asking the following questions:
+After identifying inactive users, start by asking the following questions:
 
 - Is the user still employed by the organization?
 - Does the user still need access to the resources they have access to?
@@ -161,6 +161,7 @@ After you've identified inactive users, start by asking the following questions:
 
 How you address inactive users depends on your scenario, but cleaning up unused accounts or over-privileged accounts should be your priority to reduce security risks. The following features and options are a great place to start, but note that some of these features might require additional licensing.
 
+- [Clean up stale guest accounts](../users/clean-up-stale-guest-accounts.md)
 - Consider dynamic membership group to automatically add or remove users from groups based on their user properties.
     - [Create a dynamic membership group](../users/groups-create-rule.md)
 - Use Microsoft Entra ID Governance access reviews to audit your users' access.
@@ -169,6 +170,5 @@ How you address inactive users depends on your scenario, but cleaning up unused 
 
 ## Related content
 
-- [Get data using the Microsoft Entra reporting API with certificates](./howto-configure-prerequisites-for-reporting-api.md)
 - [Audit API reference](/graph/api/resources/directoryaudit)
 - [Sign-in activity report API reference](/graph/api/resources/signin)
