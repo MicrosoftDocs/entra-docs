@@ -83,14 +83,14 @@ We recognize the large investments in building and managing custom policies. We 
 
 ### Why does my Azure AD B2C bill show phone charges named "Microsoft Entra External ID?"
 
-The name of the meter for phone MFA has changed, but the billing is the same. Previously, Phone MFA was billed as "Azure Active Directory B2C - Basic 1 Multi-Factor Authentication". Now you’ll see the following names based on your [country or region pricing tier](https://aka.ms/B2CSMSCountries):
+Following the new [billing model](https://azure.microsoft.com/en-us/pricing/details/active-directory-b2c/?msockid=22b7032d53a066c7018d1786529d6743) for Azure AD External Identities SMS Phone Authentication, you may notice a new name on your bill. Previously, Phone MFA was billed as "Azure Active Directory B2C - Basic 1 Multi-Factor Authentication". Now you’ll see the following names based on your [country or region pricing tier](https://aka.ms/B2CSMSCountries):
 
 - Microsoft Entra External ID - Phone Authentication Low Cost 1 Transaction
 - Microsoft Entra External ID - Phone Authentication Mid Low Cost 1 Transaction
 - Microsoft Entra External ID - Phone Authentication Mid High Cost 1 Transaction
 - Microsoft Entra External ID - Phone Authentication High Cost 1 Transaction
 
-Although the new bill mentions Microsoft Entra External ID, you’re still billed for Azure AD B2C based on your core MAU count. 
+Although the new bill mentions Microsoft Entra External ID, **you’re still billed for Azure AD B2C based on your core MAU count**. 
 
 ## Product Features
 
