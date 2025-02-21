@@ -111,7 +111,7 @@ In the body of the request, replace client_id, client_secret, and assertion (the
 | client_id     | CLIENTID                                             | Your application's client ID          |
 | client_secret | CLIENTSECRET                                         | Your application's client secret      |
 | assertion     | ASSERTION                                            | The base64 encoded SAML assertion     |
-| scope         | openid https://graph.microsoft.com/.default          | The scopes for which the token is valid|
+| scope         | openid `https://graph.microsoft.com/.default`        | The scopes for which the token is valid|
 
 Upon successful request, you'll receive an access token from Microsoft Entra ID.
 
