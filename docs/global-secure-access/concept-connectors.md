@@ -121,7 +121,7 @@ Each connector, configured with the above specifications, can support up to 1.5 
 **Additional Details:**  
 - Sizing recommendations made above are based on performance testing done on a test tenant using iPerf3 tool with TCP data streams. Actual performance can vary under different testing environments. More details on specific test cases will be published as part of this documentation in coming months. 
 - Once a connector is enrolled, it establishes outbound TLS tunnels to the Private Access cloud infrastructure. These tunnels handle all data path traffic. In addition, we have some control plane channel, driving keep-alive heartbeat, health reporting, connector upgrades and so on utilizing minimal bandwidth.
-- You can deploy additional connectors within the same connector group to increase overall throughput, provided adequate network and internet connectivity is available. It is recommended to maintain a minimum of two healthy connectors to ensure resiliency and consistent availability. For best practices regarding high availability, refer to the guidance [here](https://learn.microsoft.com/entra/identity/app-proxy/application-proxy-high-availability-load-balancing#best-practices-for-high-availability-of-connectors).
+- You can deploy additional connectors within the same connector group to increase overall throughput, provided adequate network and internet connectivity is available. It is recommended to maintain a minimum of two healthy connectors to ensure resiliency and consistent availability. For best practices regarding high availability, refer to the guidance [here](../identity/app-proxy/application-proxy-high-availability-load-balancing#best-practices-for-high-availability-of-connectors).
 
 ## Domain joining
 
