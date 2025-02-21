@@ -2,7 +2,7 @@
 title: Understand and solve Microsoft Entra application proxy cross-origin resource sharing (CORS) issues.
 description: Provides an understanding of cross-origin resource sharing (CORS) in Microsoft Entra application proxy. Learn how to identify and solve CORS issues.
 author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: troubleshooting

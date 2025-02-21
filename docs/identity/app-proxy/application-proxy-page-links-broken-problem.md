@@ -2,7 +2,7 @@
 title: Links on the page don't work for a Microsoft Entra application proxy application
 description:  Troubleshoot issues with broken links on application proxy applications integrated with Microsoft Entra ID.
 author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: troubleshooting
