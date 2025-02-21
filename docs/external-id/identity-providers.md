@@ -1,5 +1,5 @@
 ---
-title: Identity providers for External ID
+title: Identity providers for workforce tenants
 description: Learn how to use Microsoft Entra ID as your default identity provider for sharing with external users.
  
 ms.service: entra-external-id
@@ -21,7 +21,7 @@ ms.collection: M365-identity-device-management
 > [!TIP]
 > This article applies to B2B collaboration in workforce tenants. For information about external tenants, see [Authentication methods and identity providers in external tenants](customers/concept-authentication-methods-customers.md).
 
-An *identity provider* creates, maintains, and manages identity information while providing authentication services to applications. When you share your apps and resources with external users, Microsoft Entra ID is the default identity provider for sharing. If you invite an external user who already has a Microsoft Entra account or Microsoft account, they can automatically sign in without further configuration on your part.
+An *identity provider* (IdP) creates, maintains, and manages identity information while providing authentication services to applications. When you share your apps and resources with external users, Microsoft Entra ID is the default identity provider for sharing. If you invite an external user who already has a Microsoft Entra account or Microsoft account, they can automatically sign in without further configuration on your part.
 
 External ID offers various identity providers.
 

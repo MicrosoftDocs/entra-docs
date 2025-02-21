@@ -1,7 +1,7 @@
 ---
-title: Identity Providers
-description: Learn about sign-in and MFA options for customer identity and access management (CIAM) in external tenants, including email, one-time passcodes, Google, Facebook, Apple and custom OIDC.  
- 
+title: Identity providers for external tenants
+description: Learn sign-in and MFA options for customer identity and access management (CIAM), including email, one-time passcodes, social providers, SAML/WS-Fed, and OIDC.
+
 author: msmimart
 manager: celestedg
 ms.service: entra-external-id
@@ -11,6 +11,7 @@ ms.topic: concept-article
 ms.date: 08/09/2024
 ms.author: mimart
 ms.custom: it-pro, seo-july-2024
+#customer intent: As an External ID administrator, I want to configure and enable multiple identity providers (such as email one-time passcode, Google, Facebook, Apple, SAML/WS-Fed, and custom OIDC) for external users, so that they can easily sign in and access our apps and resources.
 ---
 
 # Identity providers for external tenants
@@ -20,7 +21,7 @@ ms.custom: it-pro, seo-july-2024
 > [!TIP]
 > This article applies to External ID in external tenants. For information about workforce tenants, see [Identity providers for External ID in workforce tenants](../identity-providers.md).
 
-With Microsoft Entra External ID, you can create secure, customized sign-in experiences for your consumer- and business customer-facing apps. In an external tenant, there are several ways for users to sign up for your app. They can create an account using their email and either a password or a one-time passcode. Or, if you enable sign-in with Facebook, Google, Apple or a custom OIDC or SAML/WS-Fed identity provider, users can sign in using their credentials in the external identity provider. A user object is created for them in your directory with the identity information collected during sign-up.
+With Microsoft Entra External ID, you can create secure, customized sign-in experiences for your consumer- and business customer-facing apps. In an external tenant, there are several ways for users to sign up for your app. They can create an account using their email and either a password or a one-time passcode. Or, if you enable sign-in with Facebook, Google, Apple or a custom OIDC or SAML/WS-Fed identity provider (IdP), users can sign in using their credentials in the external identity provider. A user object is created for them in your directory with the identity information collected during sign-up.
 
 This article describes the identity providers that are available for primary authentication when signing up and signing in to apps in external tenants. You can also enhance security by enforcing a multifactor authentication (MFA) policy that requires a second form of verification each time a user signs in ([learn more](concept-multifactor-authentication-customers.md)).
 

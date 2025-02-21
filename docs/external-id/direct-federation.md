@@ -1,5 +1,5 @@
 ---
-title: SAML/WS-Fed Federation
+title: Add a SAML/WS-Fed identity provider
 description: Set up direct federation with SAML 2.0 or WS-Fed identity providers so users can sign in with work accounts. Understand attributes and claims for federation.
 
 ms.service: entra-external-id

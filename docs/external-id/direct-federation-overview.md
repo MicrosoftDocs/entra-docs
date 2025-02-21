@@ -1,5 +1,5 @@
 ---
-title: SAML/WS-Fed identity provider
+title: About SAML/WS-Fed identity provider federation
 description: Learn about federation with an external organization's SAML/WS-Fed identity provider (IdP) for external user self-service sign-up and invitation redemption.
  
 ms.service: entra-external-id
