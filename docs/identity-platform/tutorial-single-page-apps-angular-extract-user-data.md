@@ -26,7 +26,7 @@ In this tutorial:
 
 - [Tutorial: Add sign in and sign out in your Angular single-page application](tutorial-single-page-apps-angular-sign-in-users-app.md)
 
-## Create the API call to Microsoft Graph
+## Extract data to view in the application UI
 
 ### [Workforce tenant](#tab/workforce-tenant)
 
