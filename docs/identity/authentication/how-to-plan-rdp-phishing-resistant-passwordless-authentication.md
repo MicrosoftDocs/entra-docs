@@ -20,16 +20,18 @@ ms.collection: M365-identity-device-management
 
 Organizations deploying phishing-resistant passwordless typically have a need for some of their personas to use remote desktop technology to facilitate productivity, security, or administration. The two basic use cases are:
 
-1. Authenticating an RDP session from a local client to a remote machine using phishing-resistant passwordless credentials
+1. Initializing and authenticating an RDP session from a local client to a remote machine using phishing-resistant passwordless credentials
 1. Utilizing phishing-resistant passwordless credentials inside of an established RDP session
 
 Review the specific considerations for each use case.
 
-# [RDP Session Authentication](#tab/rdp-session-auth)
+# [Passwordless RDP Session Initiation](#tab/rdp-session-auth)
 
 ## RDP Components
 
 Windows remote desktop protocol involves three primary components, all of which need to properly support phishing-resistant passwordless credentials for initiating an RDP session using these credentials. If any of these components isn't able to properly function or lacks support for certain passwordless credentials, then one or both scenarios outlined won't function. This guide focuses on passkey/FIDO2 support and Cert-Based Authentication (CBA) support.
+
+:::image type="content" border="true" source="media/how-to-plan-rdp-phishing-resistant-passwordless-authentication/RDP Session Establishment.png" alt-text="Swimlane diagram showing how phishing-resistant passwordless credentials are used when connecting via RDP" lightbox="media/how-to-plan-rdp-phishing-resistant-passwordless-authentication/RDP Session Establishment.png":::
 
 Step through the following sections to determine if support for phishing-resistant passwordless is expected across all three components you're utilizing. Repeat this process if you have multiple scenarios that require evaluation.
 
@@ -93,13 +95,15 @@ Client platform support for phishing-resistant authentication alone isn't suffic
 | Windows App for iOS                          | Yes                                                   | Yes                                                |
 | Windows App for Android                      | Yes                                                   | Yes                                                |
 | Windows 365 Web App                          | No                                                    | No                                                 |
-| Third Party RDP Client                         | Maybe                                                 | Maybe                                              |
+| Third Party RDP Client                       | Maybe                                                 | Maybe                                              |
 
 # [In-Session Passwordless Authentication](#tab/rdp-auth-in-session)
 
 ## RDP Components
 
 Windows remote desktop protocol involves three primary components, all of which need to properly support phishing-resistant passwordless credentials and redirection to the local client to support in-session usage of these credentials. If any of these components isn't able to properly function or lacks support for certain passwordless credentials, then one or both scenarios outlined won't function. This guide focuses on passkey/FIDO2 support and Cert-Based Authentication (CBA) support.
+
+:::image type="content" border="true" source="media/how-to-plan-rdp-phishing-resistant-passwordless-authentication/RDP In-Session Auth.png" alt-text="Swimlane diagram showing how phishing-resistant passwordless credentials are used inside of RDP sessions" lightbox="media/how-to-plan-rdp-phishing-resistant-passwordless-authentication/RDP In-Session Auth.png":::
 
 Step through the following sections to determine if phishing-resistant passwordless support is expected across all three components you're utilizing. Repeat this process if you have multiple scenarios that require evaluation.
 
