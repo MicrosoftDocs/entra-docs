@@ -124,7 +124,7 @@ The following files are collected:
 | - | - |
 |Application-Crash.evtx|Application log filtered by event ID 1001. This log is useful when services are crashing.|
 |BindingNetworkDrivers.txt|Result of "Get-NetAdapterBinding -AllBindings -IncludeHidden" showing all the modules bound to network adapters. This output is useful to identify if non-Microsoft drivers are bound to the network stack|
-|ClientChecker.log|Results of the Global Secure Access client health checks. These results are easier to analyze if you load the zip file in the Global Secure Access client (see [Analyze Global Secure Access client logs on a dfferent device than where they were collected](troubleshoot-global-secure-access-client-advanced-diagnostics.md#Analyze Global Secure Access client logs on a dfferent device than where they were collected)|
+|ClientChecker.log|Results of the Global Secure Access client health checks. These results are easier to analyze if you load the zip file in the Global Secure Access client, see [Analyze Global Secure Access client logs on a different device than where they were collected](troubleshoot-global-secure-access-client-advanced-diagnostics.md#analyze-global-secure-access-client-logs-on-a-different-device-than-where-they-were-collected)|
 |DeviceInformation.log|Environment variables including OS version and Global Secure Access client version.|
 |dsregcmd.txt|Output of dsregcmd /status showing device state including Microsoft Entra Joined, Hybrid Joined, PRT details, and Windows Hello for Business details|
 |filterDriver.txt|Windows Filtering Platform filters|

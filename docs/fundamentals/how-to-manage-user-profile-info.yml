@@ -193,7 +193,7 @@ procedureSection:
       - |
         Select the users you want to edit (note: you can edit up to 60 users at a time)
 
-        Select **Edit properties** from the top of the page.
+        Select **Edit** from the top of the page.
 
         :::image type="content" source="media/how-to-manage-user-profile-info/multiple-user-settings.png" alt-text="Screenshot of the multiple user settings options in Microsoft Entra admin center.":::
         

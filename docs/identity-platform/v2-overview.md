@@ -39,6 +39,16 @@ There are several components that make up the Microsoft identity platform:
 For developers, the Microsoft identity platform offers integration of modern innovations in the identity and security space like passwordless authentication, step-up authentication, and Conditional Access. You don't need to implement such functionality yourself. Applications integrated with the Microsoft identity platform natively take advantage of such innovations.
 
 With the Microsoft identity platform, you can write code once and reach any user. You can build an app once and have it work across many platforms, or build an app that functions as both a client and a resource application (API).
+ 
+## Tenant configurations
+
+A tenant is a dedicated and trusted instance of Microsoft Entra ID that contains an organization's resources such as registered apps and a directory of users. Microsoft identity platform offers two different tenant configurations: workforce and external. The tenant configuration you choose depends on the type of users you want to authenticate and authorize in your application.
+
+* A **workforce** configuration is for your employees, internal business apps, and other organizational resources. You can invite external business partners and guests to your workforce tenant but the primary focus is on internal users. A workforce tenant is the default configuration for Microsoft Entra tenants.
+
+* An **external** configuration is used exclusively for External ID scenarios where you want to publish apps to consumers or business customers who are not part of your organization. With an external tenant, you can create a customized sign-in and sign-up experiences for your customers, manage their identities and access to your apps.
+
+Workforce and external tenants have different capabilities and limitations. Choosing the right tenant configuration will help you build the right identity and access management solution for your application. For a more detailed comparison of features in both configurations, see [Supported features in workforce and external tenants](../external-id/customers/concept-supported-features-customers.md).
 
 ## Getting started
 
@@ -77,9 +87,7 @@ Learn how core authentication and Microsoft Entra concepts apply to the Microsof
 
 [Azure AD B2C](/azure/active-directory-b2c/overview) - Build customer-facing applications your users can sign in to using their social accounts like Facebook or Google, or by using an email address and password.
 
-[Microsoft Entra B2B](~/external-id/what-is-b2b.md) - Invite external users into your Microsoft Entra tenant as "guest" users, and assign permissions for authorization while they use their existing credentials for authentication.
-
-[Microsoft Entra External ID](~/external-id/customers/overview-customers-ciam.md) - A customer identity and access management (CIAM) solution that lets you create secure, customized sign-in experiences for your customer-facing apps and services.
+[Microsoft Entra External ID in workforce tenants](../external-id/what-is-b2b.md) - Invite external users into your Microsoft Entra tenant as "guest" users, and assign permissions for authorization while they use their existing credentials for authentication.
 
 ## Next steps
 
