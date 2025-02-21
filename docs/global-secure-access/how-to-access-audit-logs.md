@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: rkarlin
 ms.topic: how-to
-ms.date: 04/15/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
 
 #Customer intent: As an IT admin, I need to view the logs specific to network access so I can better manage the solution.

@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: rkarlin
 ms.topic: how-to
-ms.date: 03/06/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
 
 #Customer intent: As an IT admin, I want to understand what information the Global Secure Access traffic logs (preview) capture so I can better monitor traffic and connections to our services.

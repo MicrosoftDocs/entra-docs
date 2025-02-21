@@ -4,7 +4,7 @@ description: Learn how to apply Conditional Access policies to the Global Secure
 ms.service: global-secure-access
 ms.subservice: entra-internet-access
 ms.topic: how-to
-ms.date: 12/05/2024
+ms.date: 02/21/2025
 ms.author: kenwith
 author: kenwith
 manager: rkarlin

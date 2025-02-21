@@ -6,7 +6,7 @@ manager: rkarlin
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: conceptual
-ms.date: 07/16/2024
+ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: katabish
 ---

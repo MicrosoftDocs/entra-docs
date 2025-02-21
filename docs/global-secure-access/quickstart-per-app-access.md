@@ -6,7 +6,7 @@ ms.author: kenwith
 manager: rkarlin
 ms.service: global-secure-access
 ms.topic: quickstart
-ms.date: 07/22/2024
+ms.date: 02/21/2025
 
 #customer intent: As an administrator, I want learn how to configure per-app access so that my users can access private resources in Global Secure Access.
 

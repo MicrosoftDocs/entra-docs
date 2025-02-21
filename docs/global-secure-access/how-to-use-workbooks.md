@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: rkarlin
 ms.topic: how-to
-ms.date: 08/20/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
 
 #Customer intent: As an IT admin, I need to learn how to use workbooks with Global Secure Access so I can better manage the solution.

@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: rkarlin
 ms.topic: how-to
-ms.date: 03/22/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
 
 # Customer Intent: As a Global Secure Access Administrator, I need to know how to configure the connection between my customer premises equipment and Microsoft's network so that I can create a tunnel from my remote network to the Global Secure Access network.

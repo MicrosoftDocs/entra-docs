@@ -5,7 +5,7 @@ author: kenwith
 manager: rkarlin
 ms.service: global-secure-access
 ms.topic: sample
-ms.date: 07/11/2024
+ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: sumi
 ---

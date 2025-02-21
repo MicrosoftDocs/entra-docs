@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: rkarlin
 ms.topic: how-to
-ms.date: 12/23/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
 ---
 # Manage remote networks

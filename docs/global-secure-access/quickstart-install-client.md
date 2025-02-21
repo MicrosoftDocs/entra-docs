@@ -6,7 +6,7 @@ ms.author: kenwith
 manager: rkarlin
 ms.service: global-secure-access
 ms.topic: quickstart
-ms.date: 07/22/2024
+ms.date: 02/21/2025
 
 #customer intent: As an administrator, I want learn how to install the client so that I can begin acquiring Microsoft traffic in Global Secure Access.
 

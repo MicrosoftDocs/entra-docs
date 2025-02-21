@@ -6,7 +6,7 @@ ms.author: kenwith
 manager: rkarlin
 ms.service: global-secure-access
 ms.topic: quickstart
-ms.date: 07/22/2024
+ms.date: 02/21/2025
 
 #customer intent: As a decision maker, I want learn how to access the Global Secure Access area of the Microsoft Entra admin center so that I can understand how to configure and use the product.
 
