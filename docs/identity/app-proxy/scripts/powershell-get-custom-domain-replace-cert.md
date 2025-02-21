@@ -2,12 +2,12 @@
 title: PowerShell sample - Replace certificate in Microsoft Entra application proxy apps
 description: PowerShell example that bulk replaces a certificate across Microsoft Entra application proxy applications.
 author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.custom: 
 ms.topic: sample
-ms.date: 02/27/2024
+ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
