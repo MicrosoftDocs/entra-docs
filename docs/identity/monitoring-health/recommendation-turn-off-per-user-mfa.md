@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 02/13/2025
+ms.date: 02/21/2025
 ms.author: sarahlipsey
 ms.reviewer: deawari
 
@@ -41,7 +41,7 @@ This recommendation improves your user's productivity and minimizes the sign-in 
     - [Enable Microsoft Entra multifactor authentication with Conditional Access](../authentication/tutorial-enable-azure-mfa.md).
     - Ensure that you're covering all resources and users you would like to secure with MFA.
 1. Ensure that the per-user MFA configuration is turned off.
-    1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
+    1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
     1. Browse to **Users** > **All users** and select the **Per-user MFA** button.
 
     :::image type="content" source="media/recommendation-turn-off-per-user-mfa/disable-per-user-mfa.png" alt-text="Screenshot of the per-user MFA button in Microsoft Entra admin center." lightbox="media/recommendation-turn-off-per-user-mfa/disable-per-user-mfa-expanded.png":::
