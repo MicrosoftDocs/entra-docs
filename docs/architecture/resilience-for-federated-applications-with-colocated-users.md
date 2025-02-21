@@ -51,7 +51,7 @@ You will need to ensure that at each site there is sufficient infrastructure to 
 
 Applications may have other requirements beyond these, such as log retention, DNS/DHCP, or other network and infrastructure services, which are beyond the scope of this tutorial.
 
-## Ensure consistent user identities and attributes across Windows Server AD and Microsoft Entra ID
+### Ensure consistent user identities and attributes across Windows Server AD and Microsoft Entra ID
 
 For the applications to receive the same claims for the same users in a federation token as expected from Microsoft Entra ID, even when Microsoft Entra ID is unreachable, there must be a source of user identities and their attributes local to the site that can be used to generate the claims. AD FS supports Windows Server AD as an identity source and AD attributes as a claims source.
 
@@ -63,9 +63,9 @@ If you already have configured users to be synchronized from Active Directory to
 
 1. **Enable the Active Directory Recycle Bin**. The recycle bin feature is needed for the Microsoft Entra lifecycle workflows to be able to delete users from AD. For more information, see [Enabling and Managing the Active Directory Recycle Bin Using Active Directory Administrative Center](/windows-server/identity/ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-#enabling-and-managing-the-active-directory-recycle-bin-using-active-directory-administrative-center).
 
-1. **Extend the Windows Server AD schema, if needed.** For each user attribute required by Microsoft Entra and your applications that isn't already part of the Windows Server AD user schema, you need to select a built-in Windows Server AD user extension attribute. Or you need to extend the Windows Server AD schema to have a place for Windows Server AD to hold that attribute. This requirement also includes attributes used for automation, such as a worker's join date and leave date.
+1. **Extend the Windows Server AD schema, if needed.** For each user attribute required by Microsoft Entra and your applications that isn't already part of the Windows Server AD user schema, you need to select a built-in Windows Server AD user extension attribute. Or you need to [extend the Windows Server AD schema](/windows/win32/ad/how-to-extend-the-schema) to have a place for Windows Server AD to hold that attribute. This requirement also includes attributes used for automation, such as a worker's join date and leave date.
 
-   For example, some organizations might use the attributes `extensionAttribute1` and `extensionAttribute2` to hold these properties. If you choose to use the built-in extension attributes, ensure that those attributes aren't already in use by any other LDAP-based applications of Windows Server AD, or by applications integrated with Microsoft Entra ID. Other organizations create new Windows Server AD attributes with names specific to their requirements, such as `contosoWorkerId`.
+   For example, some organizations might use the attributes `extensionAttribute1` and `extensionAttribute2` to hold these properties. If you choose to use the built-in extension attributes, ensure that those attributes aren't already in use by any other LDAP-based applications of Windows Server AD, or by other applications integrated with Microsoft Entra ID. Some organizations have created new Windows Server AD attributes with names specific to their requirements, such as `contosoWorkerId`. However, extending the schema with new attributes has significant implications on Windows Server AD management. For more information, see [extending the schem](/windows/win32/ad/extending-the-schema).
 
 1. **Bring in users with their attributes from authoritative sources**. If you have not already done so, configure Microsoft Entra to provision workers from [Workday](~/identity/saas-apps/workday-inbound-tutorial.md), [SuccessFactors](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md), or [other HR sources](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md) as users in Windows Server AD. You can map the properties of worker records to the user attributes in the AD schema.
 
@@ -85,13 +85,13 @@ If you already have configured users to be synchronized from Active Directory to
 
 For more information on setting up HR inbound flows for applications with multiple attributes, see [Plan deploying Microsoft Entra for user provisioning](~/identity/app-provisioning/plan-sap-user-source-and-target.md).
 
-## Provide a user authentication option for Windows Server AD
+### Provide a user authentication option for Windows Server AD
 
 When you're configuring inbound provisioning to Windows Server AD, Microsoft Entra creates users in Windows Server AD, both for existing workers who didn't previously have Windows Server AD user accounts and any new workers. Those users will need to be able to authenticate to Windows Server AD while they are disconnected, and also be able to authenticate to Microsoft Entra ID during normal operations. You will need to plan to issue Windows Server AD credentials for workers who need application access and didn't have Windows Server AD user accounts previously.
 
-One way to have consistent authentication is to turn on [password hash synchronization](~/identity/hybrid/connect/whatis-phs.md) for hybrid accounts that are synchronized from Windows Server AD to Microsoft Entra. Ensure users have passwords set in AD and they know their password in AD. While they may have additional multifactor authentication requirements during normal operations, during a disconnected network event they would be able to authenticate to the Active Directory domain with their passwords.
+* One way to have consistent authentication is to turn on [password hash synchronization](~/identity/hybrid/connect/whatis-phs.md) for hybrid accounts that are synchronized from Windows Server AD to Microsoft Entra. Ensure users have passwords set in AD and they know their password in AD. While they may have additional multifactor authentication requirements during normal operations, during a disconnected network event they would be able to authenticate to the Active Directory domain with their passwords.
 
-If users will be interacting with applications from devices which support Windows Hello for Business, then also consider having users enroll in [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/) for stronger authentication than just a password.
+* Another option is to use [Microsoft Entra certificate-based authentication(CBA)](~/identity/authentication/concept-certificate-based-authentication.md), which enables Microsoft Entra to authenticate users using X.509 certificates issued by an Enterprise Public Key Infrastructure (PKI). Windows Server AD also supports certificate authentication, and some organizations have historically issued smartcards, virtual smartcards or software certificates to their users. If users will be interacting with applications from devices which support Windows Hello for Business, then also consider having users enroll in [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/) for stronger authentication.
 
 ## Deploy a relying party STS and configure Microsoft Entra as an identity provider
 
@@ -144,7 +144,7 @@ In this section, you'll configure the relying party STS to offer Microsoft Entra
 1. Launch PowerShell on the Windows Server where AD FS is installed.
 1. Obtain the list of applications, using the command `Get-AdfsRelyingPartyTrust | ft Name,ClaimsProviderName`.
 1. Obtain the list of claims providers, using the command `Get-AdfsClaimsProviderTrust | ft Name`. There should be two names, one for Active Directory and the other for Microsoft Entra.
-1. Configure that Microsoft Entra is the sole claims provider for the application, using the command `Set-AdfsRelyingPartyTrust`. For example, if the application is named `appname`, then type `Set-AdfsRelyingPartyTrust -TargetName "appname" -ClaimsProviderName "Microsoft Entra"`. For more information, see [Configure an identity provider list per relying party](/windows-server/identity/ad-fs/operations/home-realm-discovery-customization#configure-an-identity-provider-list-per-relying-party).
+1. Configure that Microsoft Entra is the sole claims provider for the application, using the [Set-AdfsRelyingPartyTrust](/powershell/module/adfs/set-adfsrelyingpartytrust) command. For example, if the application is named `appname`, then type `Set-AdfsRelyingPartyTrust -TargetName "appname" -ClaimsProviderName "Microsoft Entra"`. For more information, see [Configure an identity provider list per relying party](/windows-server/identity/ad-fs/operations/home-realm-discovery-customization#configure-an-identity-provider-list-per-relying-party).
 
 ## Validate single sign-on during normal operations
 
@@ -170,15 +170,26 @@ In this section, you'll validate that when you switch the identity provider for 
 1. Based on the configuration in step 2, AD FS will select Active Directory.
 1. Sign in to AD FS using the Active Directory identity of the test user. AD FS will authenticate the user in Active Directory.
 1. AD FS transforms the LDAP attributes of the user into claims, and redirects the web browser to the application. Confirm that your application has received the required claims from Active Directory via this process.
-1. In the PowerShell session, configure that Microsoft Entra is again the claims provider for the application, using the command `Set-AdfsRelyingPartyTrust`.
+1. In the PowerShell session, configure that Microsoft Entra is again the claims provider for the application, using the command `Set-AdfsRelyingPartyTrust`. You can also allow all claims providers with a command like `Set-AdfsRelyingPartyTrust -TargetName "appname" -ClaimsProviderName @()`
 
 ## Configure who can sign-in to the application
 
 You'll next need to configure who can sign-in to the application. AD FS and Microsoft Entra have different mechanisms for scoping token issuance in their policies. In Microsoft Entra, you can use features like dynamic groups or entitlement management to assign users to an application role. You could also configure group writeback for a group from Microsoft Entra to Windows Server AD. <!-- more details TBA -->
 
-## Configure automatic failover to AD
+## Configure a scheduled task to perform automatic failover to AD
 
-You'll next need to configure a monitor for connectivity from the site. This monitor will trigger an automatic switch of the identity provider for an application in AD FS from `Microsoft Entra` to `Active Directory` when a disconnect is detected, by invoking the `Set-AdfsRelyingPartyTrust` command. Optionally, you may wish to configure a monitor to reset the AD FS configuration back to `Microsoft Entra` when connectivity is restored. <!-- more details TBA -->
+You'll next need to configure a monitor for connectivity from the site. This monitor will trigger an automatic switch of the identity provider for an application in AD FS from `Microsoft Entra` to `Active Directory` when a disconnect is detected, by invoking the `Set-AdfsRelyingPartyTrust` command. Optionally, you may wish to configure a monitor to reset the AD FS configuration back to `Microsoft Entra` when connectivity is restored.
+
+1. Launch PowerShell on the Windows Server where AD FS is installed.
+1. Register a source so the script can write to the Application event log. For example, if the script is named `AD FS changeover script`, then type the command `New-EventLog -LogName Application -Source "AD FS changeover script"`.
+1. Create a script. <!-- more details TBA -->
+1. Launch **Task Scheduler**.
+1. In the Task Scheduler Library, if you do not already have a folder for your tasks, create a folder.
+1. Select the folder for your tasks, then select **Create task**.
+1. Fill out the **General** tab settings for the task.
+1. Change to the **Triggers** tab. Select **New** and provide a recurrence schedule for your task, in alignment with your organization's risk and network guidance.
+1. Change to the **Actions** tab. Select **New** and select an action to **Start a program**. Specify `powershell.exe` as the program, and include arguments needed to invoke the PowerShell script. For example, `-NonInteractive -WindowStyle Hidden -File c:\\scripts\ad_fs_changeover_script.ps1`. Then Select **OK** to close the action window and **OK** to close the task window. For more information, see [about powershell.exe](/powershell/module/microsoft.powershell.core/about/about_powershell_exe).
+1. Select **Run**, wait one minute, then select **Refresh**. Ensure that the script started and completed successfully.
 
 ## Complete configuration
 
