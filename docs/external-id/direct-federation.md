@@ -66,19 +66,19 @@ Refer to the following tables for the required values.
 
 **Table 1. Required attributes for the SAML 2.0 response from the IdP.**
 
-|Attribute  |Value  |
-|---------|---------|
-|AssertionConsumerService     |`https://login.microsoftonline.com/login.srf`         |
-|Audience     |`https://login.microsoftonline.com/<tenant ID>/` (Recommended) Replace `<tenant ID>` with the tenant ID of the Microsoft Entra tenant you're setting up federation with.<br></br> In the SAML request sent by Microsoft Entra ID for external federations, the Issuer URL is a tenanted endpoint (for example, `https://login.microsoftonline.com/<tenant ID>/`). For any new federations, we recommend that all our partners set the audience of the SAML or WS-Fed based IdP to a tenanted endpoint. Any existing federations configured with the global endpoint (for example, `urn:federation:MicrosoftOnline`) continue to work, but new federations stop working if your external IdP is expecting a global issuer URL in the SAML request sent by Microsoft Entra ID.|
-|Issuer     |The issuer URI of the partner's IdP, for example `http://www.example.com/exk10l6w90DHM0yi...`         |
+|Attribute                |Value for a workforce tenant                   |Value for an external tenant                |
+|-------------------------|-----------------------------------------------|--------------------------------------------|
+|AssertionConsumerService |`https://login.microsoftonline.com/login.srf`  |   `https://<tenant-ID>.ciamlogin.com`      |
+|Audience                 |`https://login.microsoftonline.com/<tenant ID>/` (Recommended) Replace `<tenant ID>` with the tenant ID of the Microsoft Entra tenant you're setting up federation with.<br></br> In the SAML request sent by Microsoft Entra ID for external federations, the Issuer URL is a tenanted endpoint (for example, `https://login.microsoftonline.com/<tenant ID>/`). For any new federations, we recommend that all our partners set the audience of the SAML or WS-Fed based IdP to a tenanted endpoint. Any existing federations configured with the global endpoint (for example, `urn:federation:MicrosoftOnline`) continue to work, but new federations stop working if your external IdP is expecting a global issuer URL in the SAML request sent by Microsoft Entra ID.      |`https://<tenant-ID>.login.microsoft.online.com/<tenant ID>/` <br>Replace `<tenant ID>` with the tenant ID of the Microsoft Entra tenant you're setting up federation with.      |
+|Issuer                   |The issuer URI of the partner's IdP, git stfor example `http://www.example.com/exk10l6w90DHM0yi...`    |The issuer URI of the partner's IdP, for example `http://www.example.com/exk10l6w90DHM0yi...` |
 
 
 **Table 2. Required claims for the SAML 2.0 token issued by the IdP.**
 
-|Attribute Name |Value  |
-|---------|---------|
-|NameID Format     |`urn:oasis:names:tc:SAML:2.0:nameid-format:persistent`         |
-|`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`      | emailaddress |
+|Attribute Name                                                        |Value         |
+|----------------------------------------------------------------------|--------------|
+|NameID Format                                                         |`urn:oasis:names:tc:SAML:2.0:nameid-format:persistent` |
+|`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`  | emailaddress |
 
 #### To configure a WS-Fed identity provider
 
@@ -101,11 +101,11 @@ Refer to the following tables for the required values.
 
 **Table 3. Required attributes in the WS-Fed message from the IdP.**
  
-|Attribute  |Value  |
-|---------|---------|
-|PassiveRequestorEndpoint     |`https://login.microsoftonline.com/login.srf`         |
-|Audience     |`https://login.microsoftonline.com/<tenant ID>/` (Recommended) Replace `<tenant ID>` with the tenant ID of the Microsoft Entra tenant you're setting up federation with.<br></br> In the SAML request sent by Microsoft Entra ID for external federations, the Issuer URL is a tenanted endpoint (for example, `https://login.microsoftonline.com/<tenant ID>/`). For any new federations, we recommend that all our partners set the audience of the SAML or WS-Fed based IdP to a tenanted endpoint. Any existing federations configured with the global endpoint (for example, `urn:federation:MicrosoftOnline`) continue to work, but new federations stop working if your external IdP is expecting a global issuer URL in the SAML request sent by Microsoft Entra ID.          |
-|Issuer     |The issuer URI of the partner's IdP, for example `http://www.example.com/exk10l6w90DHM0yi...`         |
+|Attribute                |Value for a workforce tenant                   |Value for an external tenant         |
+|-------------------------|-----------------------------------------------|-------------------------------------|
+|PassiveRequestorEndpoint |`https://login.microsoftonline.com/login.srf`  |`https://<tenant-ID>.ciamlogin.com`  |
+|Audience                 |`https://login.microsoftonline.com/<tenant ID>/` (Recommended) Replace `<tenant ID>` with the tenant ID of the Microsoft Entra tenant you're setting up federation with.<br></br> In the SAML request sent by Microsoft Entra ID for external federations, the Issuer URL is a tenanted endpoint (for example, `https://login.microsoftonline.com/<tenant ID>/`). For any new federations, we recommend that all our partners set the audience of the SAML or WS-Fed based IdP to a tenanted endpoint. Any existing federations configured with the global endpoint (for example, `urn:federation:MicrosoftOnline`) continue to work, but new federations stop working if your external IdP is expecting a global issuer URL in the SAML request sent by Microsoft Entra ID.          |`https://<tenant-ID>.login.microsoft.online.com/<tenant ID>/` <br>Replace `<tenant ID>` with the tenant ID of the Microsoft Entra tenant you're setting up federation with. |
+|Issuer                   |The issuer URI of the partner's IdP, for example `http://www.example.com/exk10l6w90DHM0yi...`   |The issuer URI of the partner's IdP, for example `http://www.example.com/exk10l6w90DHM0yi...` |
 
 **Table 4. Required claims for the WS-Fed token issued by the IdP.**
 

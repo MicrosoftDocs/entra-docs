@@ -87,7 +87,7 @@ Learn how to [add Apple as an identity provider](how-to-apple-federation-custome
 
 ## Custom SAML/WS-Fed identity providers (preview)
 
-You can set up a SAML or WS-Fed identity provider to allow users to sign up and sign in to your applications using their own account with the identity provider. The user can sign up or sign in by selecting the **Sign up with** or **Sign in with** option. They're redirected to the identity provider, and then returned to Microsoft Entra once they successfully sign in. For external tenants, a user's sign-in email doesn't need to match the predefined domains set up during SAML federation.
+You can set up a SAML or WS-Fed identity provider to allow users to sign up and sign in to your applications using their own account with the identity provider. The user can sign up or sign in by selecting the **Sign up with** or **Sign in with** option. They're redirected to the identity provider, and then returned to Microsoft Entra once they successfully sign in. For external tenants, a user's sign-in email doesn't need to match the predefined domains set up during SAML federation. As a result, updating the federation setup by adding, changing, or removing domains won't affect the experience for existing users.
 
 If a user doesn't have an account in your external tenant and enters an email address on the sign-in page that matches a predefined domain in any of the external identity providers, they're redirected to authenticate with that identity provider.
 
@@ -106,7 +106,7 @@ Learn how to [set up a custom OIDC identity provider](how-to-custom-oidc-federat
 
 At any time, you can update the sign-in options for an app. For example, you can add social identity providers or change the local account sign-in method.
 
-When you change sign-in methods, the change affects only new users. Existing users continue to sign in using their original method. For example, suppose you start out with the email and password sign-in method, and then change to email with one-time passcode. New users sign in using a one-time passcode, but any users who already signed up with an email and password continue to be prompted for their email and password.
+When you change sign-in methods, the change affects only new users. Existing users continue to sign in using their original method. For example, suppose you start out with the email and password sign-in method, and then change to email with one-time passcode. New users sign in using a one-time passcode, but any users who already signed up with an email and password continue to be prompted for their email and password. 
 
 ## Microsoft Graph APIs
 

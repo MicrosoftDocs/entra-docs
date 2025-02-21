@@ -56,7 +56,7 @@ A user's sign-in experience depends on whether the partner's domain is Microsoft
 
 If an external user already redeemed an invitation or used self-service sign-up, their authentication method doesn't change when you set up federation. They continue using their original authentication method (for example, one-time passcode). Even if a user from an unverified domain uses federation, and their organization later moves to Microsoft Entra, they continue using federation.
 
-You don't need to send new invitations to existing users because they continue using their current sign-in method. But for B2B collaboration in a workforce tenant, you can [reset a user's redemption status](reset-redemption-status.md). The next time the user accesses your app, they repeat the redemption steps and switch to federation. 
+For B2B collaboration in a workforce tenant, you don't need to send new invitations to existing users because they continue using their current sign-in method. But you can [reset a user's redemption status](reset-redemption-status.md). The next time the user accesses your app, they will repeat the redemption steps and can switch to federation. 
 
 ### Sign-in endpoints in workforce tenants
 
