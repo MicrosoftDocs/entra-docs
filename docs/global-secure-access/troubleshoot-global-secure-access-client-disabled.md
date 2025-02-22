@@ -3,7 +3,7 @@ title: "Troubleshoot the Global Secure Access Client: Disabled by Your Organizat
 description: Troubleshoot the Global Secure Access client using the health check tab in the advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 02/20/2025
+ms.date: 02/21/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -26,13 +26,16 @@ The message can also appear right after installing the client if the Global Secu
 To view the Global Secure Access traffic profile configuration:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Navigate to **Global Secure Access** > **Connect** > **Traffic forwarding**.   
+:::image type="content" source="media/troubleshoot-global-secure-access-client-disabled/traffic-forwarding.png" alt-text="Screenshot of the Traffic forwarding profiles screen." lightbox="media/troubleshoot-global-secure-access-client-disabled/traffic-forwarding-expanded.png":::
 
 ## Troubleshooting steps    
-1. Verify that all traffic forwarding profiles are disabled (Microsoft Entra admin center > Global Secure Access > Connect > Traffic Forwarding). At least one traffic forwarding profile needs to be enabled, and the users signed into the device getting the error should be assigned to the Global Secure Access traffic profile that is enabled. 
+1. View the available traffic forwarding profiles. At least one traffic forwarding profile must be enabled. Verify that the user is assigned to the enabled traffic forwarding profile. 
 
-1. Ensure the user authentication is successful and the Global Secure Access Client can't get an authentication token on-behalf of the user. 
+1. Ensure the user authentication is successful and the Global Secure Access Client can't get an authentication token on behalf of the user. 
 
-1. Check if the user is blocked by a conditional access policy either from a network blocked by CA or unmanaged or noncompliant device or ToU (Terms of Usage) can't be fulfilled. Note: the Global Secure Access client uses silent authorization (non-interactive). 
+1. Check if a conditional access policy is blocking the user. Network blocks can arise from conditional access settings, an unmanaged or noncompliant device, or unfulfilled terms of use (ToU) policies. 
+> [!NOTE]
+> The Global Secure Access client uses non-interactive, silent authorization. 
 
 1. You might also face an issue if the user has NO PRT (Primary Refresh Token) and ALL user assignment is turned off on the enabled forwarding profiles ("Assign to all users" is set to NO) and the user is assigned directly (or part of the assigned group). Note: run "Dsregcmd /status cmd on the client device and validate the `AzureAdPrt` value is `Yes`. 
 
@@ -40,14 +43,14 @@ To view the Global Secure Access traffic profile configuration:
 
 1. Check if the user is assigned all necessary Global Secure Access licenses: navigate to **Global Secure Access** > **Licensing**.
 
-1. Check if there's a network communication issue when the client tries to communicate with the policy endpoint.  
+1. Check if there's a network communication issue when the Global Secure Access client attempts to communicate with the policy endpoint.  
 
 
 
 
 |Icon    |Message    |Description    |
 |---------|---------|---------|
-|:::image type="icon" source="media/troubleshoot-global-secure-access-client-disabled/global-secure-access-client-icon-warning.png":::	|Global Secure Access - Disabled by your organization	|Your organization disabled the client (that is, all traffic forwarding profiles are disabled).    |
+|:::image type="icon" source="media/troubleshoot-global-secure-access-client-disabled/global-secure-access-client-icon-warning.png":::	|Global Secure Access - disabled by your organization	|Your organization disabled the client (that is, all traffic forwarding profiles are disabled).    |
 
 
 
