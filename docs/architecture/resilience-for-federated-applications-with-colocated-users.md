@@ -93,6 +93,13 @@ When you're configuring inbound provisioning to Windows Server AD, Microsoft Ent
 
 If you haven't already done so, [deploy AD FS](/windows-server/identity/ad-fs/ad-fs-deployment) or a similar identity technology on a Windows Server at a site. This AD FS will be configured to operate as a relying party STS, so can't be the same installation as another AD FS configured as an identity provider to provide claims to Microsoft Entra.
 
+   > [!NOTE]
+   > If you are using AD FS as an identity provider for Microsoft Entra, then this relying party STS should be a distinct installation on a separate domain joined server.
+
+   :::image type="content" source="media/resilience-for-federated-applications-with-colocated-users/topology-trust-with-identity-provider-and-relying-party-sts.png" alt-text="Diagram showing the topology of having separate identity provider and relying party security token service connected to the same Active Directory.":::
+
+If you are using certificate based authentication, then you will also need to configure AD FS to authenticate users with certificates. For more information, see [Configure AD FS support for user certificate authentication](/windows-server/identity/ad-fs/operations/configure-user-certificate-authentication).
+
 Then, perform the steps in the [Enable single sign-on for an enterprise application with a relying party security token service](~/identity/enterprise-apps/add-application-portal-setup-sso-rpsts.md) tutorial. In that tutorial, you create a representation of application in Microsoft Entra, configure single sign-on for that application from Microsoft Entra to the relying party STS, and configure single sign-on from the relying party STS to the application. This will validate that, during normal operations, tokens with claims can flow from Microsoft Entra through the relying party STS to the application.
 
 ## Configure AD as an LDAP source in the relying party STS
