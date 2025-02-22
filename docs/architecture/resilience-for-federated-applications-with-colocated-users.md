@@ -43,7 +43,7 @@ We recommend that you use a nonproduction environment to test the steps in this 
 
 This tutorial relies upon both a Microsoft Entra tenant and an Active Directory domain. Before you begin, ensure you have one of the following roles in Microsoft Entra: `Cloud Application Administrator`, `Application Administrator`.
 
-You will need to ensure that at each site there is sufficient infrastructure to support your applications without relying upon connections to the Internet or other sites. This tutorial illustrates configuration for:
+You will need to ensure that at each site there are sufficient infrastructure components to support your applications without relying upon connections to the Internet or other sites. This tutorial illustrates configuration for:
 
 * An application which implements a federation protocol such as SAML with the relying party initiated sign-on pattern. For more information, see [Single sign-on SAML protocol](~/identity-platform/single-sign-on-saml-protocol.md).
 * An identity component which can be configured to operate as a relying party STS, such as Active Directory Federation Services. This tutorial assumes Windows Server 2025.
@@ -65,19 +65,15 @@ If you already have configured users to be synchronized from Active Directory to
 
 1. **Extend the Windows Server AD schema, if needed.** For each user attribute required by Microsoft Entra and your applications that isn't already part of the Windows Server AD user schema, you need to select a built-in Windows Server AD user extension attribute. Or you need to [extend the Windows Server AD schema](/windows/win32/ad/how-to-extend-the-schema) to have a place for Windows Server AD to hold that attribute. This requirement also includes attributes used for automation, such as a worker's join date and leave date.
 
-   For example, some organizations might use the attributes `extensionAttribute1` and `extensionAttribute2` to hold these properties. If you choose to use the built-in extension attributes, ensure that those attributes aren't already in use by any other LDAP-based applications of Windows Server AD, or by other applications integrated with Microsoft Entra ID. Some organizations have created new Windows Server AD attributes with names specific to their requirements, such as `contosoWorkerId`. However, extending the schema with new attributes has significant implications on Windows Server AD management. For more information, see [extending the schem](/windows/win32/ad/extending-the-schema).
+   For example, some organizations might use the attributes `extensionAttribute1` and `extensionAttribute2` to hold these properties. If you choose to use the built-in extension attributes, ensure that those attributes aren't already in use by any other LDAP-based applications of Windows Server AD, or by other applications integrated with Microsoft Entra ID. Some organizations have created new Windows Server AD attributes with names specific to their requirements, such as `contosoWorkerId`. However, extending the schema with new attributes has significant implications on Windows Server AD management. For more information, see [extending the schema](/windows/win32/ad/extending-the-schema).
 
-1. **Bring in users with their attributes from authoritative sources**. If you have not already done so, configure Microsoft Entra to provision workers from [Workday](~/identity/saas-apps/workday-inbound-tutorial.md), [SuccessFactors](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md), or [other HR sources](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md) as users in Windows Server AD. You can map the properties of worker records to the user attributes in the AD schema.
+1. **Bring in users with their attributes from authoritative sources**. If you haven't already done so, configure Microsoft Entra to provision workers from [Workday](~/identity/saas-apps/workday-inbound-tutorial.md), [SuccessFactors](~/identity/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md), or [other HR sources](~/identity/app-provisioning/inbound-provisioning-api-configure-app.md) as users in Windows Server AD. You can map the properties of worker records to the user attributes in the AD schema.
 
 1. **Set up synchronization between Microsoft Entra and Windows Server AD**. Configure Microsoft Entra Connect sync or [Microsoft Entra cloud sync](~/identity/hybrid/cloud-sync/tutorial-single-forest.md) to synchronize those users from AD to Microsoft Entra. Also deploy the provisioning agent, in order to perform [lifecycle workflow user account tasks](~/id-governance/lifecycle-workflow-on-premises.md#user-account-tasks), such as deleting users from Windows Server AD.
 
 1. **Extend the Microsoft Entra ID schema and configure the mappings from the Windows Server AD schema to the Microsoft Entra ID user schema.** If you're using Microsoft Entra Connect Sync, perform the steps in [Microsoft Entra Connect Sync: Directory extensions](~/identity/hybrid/connect/how-to-connect-sync-feature-directory-extensions.md) to extend the Microsoft Entra ID user schema with attributes. Configure the Microsoft Entra Connect Sync mappings for the attributes of Windows Server AD to those attributes.
 
    If you're using Microsoft Entra Cloud Sync, perform the steps in [Microsoft Entra Cloud Sync directory extensions and custom attribute mapping](~/identity/hybrid/cloud-sync/custom-attribute-mapping.md) to extend the Microsoft Entra ID user schema with any other necessary attributes. Configure the Microsoft Entra Cloud Sync mappings for the attributes of Windows Server AD to those attributes. Ensure that you're synchronizing the [attributes required by Lifecycle Workflows](~/id-governance/how-to-lifecycle-workflow-sync-attributes.md).
-
-1. **Wait for synchronization from Windows Server AD to Microsoft Entra ID to finish.** If you made changes to the mappings to provision more attributes from Windows Server AD, wait until those changes for the users make their way from Windows Server AD to Microsoft Entra ID so that the Microsoft Entra ID representation of the users has the complete set of attributes from Windows Server AD.
-
-   If you're using Microsoft Entra Cloud Sync, you can monitor the `steadyStateLastAchievedTime` property of the synchronization status by retrieving the [synchronization job](/graph/api/synchronization-synchronization-list-jobs?view=graph-rest-1.0&preserve-view=true&tabs=powershell#example) of the service principal that represents Microsoft Entra Cloud Sync. If you don't have the service principal ID, see [View the synchronization schema](~/identity/hybrid/cloud-sync/concept-attributes.md#view-the-synchronization-schema).
 
 1. **Create a leaver workflow that blocks sign-ins.** In Microsoft Entra Lifecycle Workflows, configure a leaver workflow with a `Disable user account` task that blocks users from sign-in to on-premises. This workflow can run on-demand. If you didn't configure inbound provisioning from the sources of record to block workers from signing in after their scheduled leave date, configure a leaver workflow with that task to run on those workers' scheduled leave dates. For more information, see [Manage users synchronized from on-premises](~/id-governance/manage-workflow-on-premises.md).
 
@@ -91,11 +87,11 @@ When you're configuring inbound provisioning to Windows Server AD, Microsoft Ent
 
 * One way to have consistent authentication is to turn on [password hash synchronization](~/identity/hybrid/connect/whatis-phs.md) for hybrid accounts that are synchronized from Windows Server AD to Microsoft Entra. Ensure users have passwords set in AD and they know their password in AD. While they may have additional multifactor authentication requirements during normal operations, during a disconnected network event they would be able to authenticate to the Active Directory domain with their passwords.
 
-* Another option is to use [Microsoft Entra certificate-based authentication(CBA)](~/identity/authentication/concept-certificate-based-authentication.md), which enables Microsoft Entra to authenticate users using X.509 certificates issued by an Enterprise Public Key Infrastructure (PKI). Windows Server AD also supports certificate authentication, and some organizations have historically issued smartcards, virtual smartcards or software certificates to their users. If users will be interacting with applications from devices which support Windows Hello for Business, then also consider having users enroll in [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/) for stronger authentication.
+* Another option is to use [Microsoft Entra certificate-based authentication(CBA)](~/identity/authentication/concept-certificate-based-authentication.md), which enables Microsoft Entra to authenticate users using X.509 certificates issued by an Enterprise Public Key Infrastructure (PKI). Windows Server AD also supports certificate authentication, and some organizations have historically issued smartcards, virtual smartcards, or software certificates to their users. If users will be interacting with applications from devices which support Windows Hello for Business, then also consider having users enroll in [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/) for stronger authentication.
 
 ## Deploy a relying party STS and configure Microsoft Entra as an identity provider
 
-If you have not already done so, deploy AD FS or a similar identity technology on a Windows Server at a site. This AD FS will be configured to operate as a relying party STS, so can't be the same installation as another AD FS configured as an identity provider to provide claims to Microsoft Entra.
+If you haven't already done so, [deploy AD FS](/windows-server/identity/ad-fs/ad-fs-deployment) or a similar identity technology on a Windows Server at a site. This AD FS will be configured to operate as a relying party STS, so can't be the same installation as another AD FS configured as an identity provider to provide claims to Microsoft Entra.
 
 Then, perform the steps in the [Enable single sign-on for an enterprise application with a relying party security token service](~/identity/enterprise-apps/add-application-portal-setup-sso-rpsts.md) tutorial. In that tutorial, you create a representation of application in Microsoft Entra, configure single sign-on for that application from Microsoft Entra to the relying party STS, and configure single sign-on from the relying party STS to the application. This will validate that, during normal operations, tokens with claims can flow from Microsoft Entra through the relying party STS to the application.
 
@@ -116,7 +112,11 @@ Next, configure in the relying party STS that Active Directory is a claims sourc
 
 When testing the configuration, you should assign a designated test user that was created in Active Directory to the application in Microsoft Entra, to validate that the user is able to sign on to the application via Microsoft Entra and the relying party STS.
 
-1. Identify a test user in Active Directory. Ensure that the user has been synchronized to Microsoft Entra, you know the password of that user, and can authenticate as that user to both Active Directory and Microsoft Entra.
+1. Identify a test user in Active Directory. Ensure that you know the password of that user, so that you can authenticate as that user to both Active Directory and Microsoft Entra.
+1. If you recently created the user in AD, wait for synchronization from Windows Server AD to Microsoft Entra ID to finish.
+
+   If you're using Microsoft Entra Cloud Sync, you can monitor the `steadyStateLastAchievedTime` property of the synchronization status by retrieving the [synchronization job](/graph/api/synchronization-synchronization-list-jobs?view=graph-rest-1.0&preserve-view=true&tabs=powershell#example) of the service principal that represents Microsoft Entra Cloud Sync. If you don't have the service principal ID, see [View the synchronization schema](~/identity/hybrid/cloud-sync/concept-attributes.md#view-the-synchronization-schema).
+
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Enter the name of the existing application in the search box, and select the application from the search results.
@@ -154,27 +154,31 @@ In this section, you'll validate that users can seamlessly authenticate to Micro
 
 1. In a web browser private browsing session, connect to the application and initiate the login process. The application redirects the web browser to the relying party STS AD FS, and AD FS determines the identity providers which can provide appropriate claims.
 1. Based on the configuration in the previous section, AD FS will select the Microsoft Entra identity provider. AD FS redirects the web browser to the Microsoft Entra login endpoint, `https://login.microsoftonline.com` if using the Microsoft Entra ID global service.
-1. Sign in to Microsoft Entra using the identity of the test user, previously configured in the section [configure who can sign-in to the application](#configure-who-can-sign-in-to-the-application). Microsoft Entra then locates the enterprise application based on the entity identifier, and redirects the web browser to AD FS at its reply URL endpoint, with the web browser transporting the SAML token.
+1. Sign in to Microsoft Entra using the identity of the test user, previously configured in the section [prepare an AD test user to be ready to sign-in to the application](#prepare-an-ad-test-user-to-be-ready-to-sign-in-to-the-application-via-microsoft-entra). Microsoft Entra then locates the enterprise application based on the entity identifier, and redirects the web browser to AD FS at its reply URL endpoint, with the web browser transporting the SAML token.
 1. AD FS validates the SAML token was issued by Microsoft Entra, then extracts and transforms the claims from the SAML token, and redirects the web browser to the application. Confirm that your application has received the required claims from Microsoft Entra via this process.
 
 ## Validate single sign-on after changing the claims provider trusted by the application to Active Directory
 
 In this section, you'll validate that when you switch the identity provider for the application from Microsoft Entra to Active Directory, users can still authenticate and sign-in to the application.
 
-:::image type="content" source="media/resilience-for-federated-applications-with-colocated-users/saml-redirects-without-microsoft-entra.png" alt-text="Diagram showing the the web browser redirects when Microsoft Entra ID is not configured as an identity provider for an application.":::
+:::image type="content" source="media/resilience-for-federated-applications-with-colocated-users/saml-redirects-without-microsoft-entra.png" alt-text="Diagram showing the web browser redirects when Microsoft Entra ID is not configured as an identity provider for an application.":::
 
 1. Launch PowerShell on the Windows Server where AD FS is installed.
 1. In the PowerShell session, configure that Active Directory is now the sole claims provider for the application, replacing Microsoft Entra, using the command `Set-AdfsRelyingPartyTrust`. For example, if the application is named `appname`, then type `Set-AdfsRelyingPartyTrust -TargetName "appname" -ClaimsProviderName "Active Directory"`.
-1. Close any previously-opened web browser private browsing session, to clear any sign-in state.
+1. To clear any sign-in state in the browser, close any previously opened web browser private browsing session.
 1. In a new web browser private browsing session, connect to the application and initiate the login process. The application redirects the web browser to AD FS, and AD FS determines the identity providers which can provide appropriate claims.
 1. Based on the configuration in step 2, AD FS will select Active Directory.
 1. Sign in to AD FS using the Active Directory identity of the test user. AD FS will authenticate the user in Active Directory.
 1. AD FS transforms the LDAP attributes of the user into claims, and redirects the web browser to the application. Confirm that your application has received the required claims from Active Directory via this process.
-1. In the PowerShell session, configure that Microsoft Entra is again the claims provider for the application, using the command `Set-AdfsRelyingPartyTrust`. You can also allow all claims providers with a command like `Set-AdfsRelyingPartyTrust -TargetName "appname" -ClaimsProviderName @()`
+1. In the PowerShell session, configure that Microsoft Entra is again the claims provider for the application, using the command `Set-AdfsRelyingPartyTrust`. You can also allow all claims providers with a command like `Set-AdfsRelyingPartyTrust -TargetName "appname" -ClaimsProviderName @()`.
 
 ## Configure who can sign-in to the application
 
-You'll next need to configure who can sign-in to the application. AD FS and Microsoft Entra have different mechanisms for scoping token issuance in their policies. In Microsoft Entra, you can use features like dynamic groups or entitlement management to assign users to an application role. You could also configure group writeback for a group from Microsoft Entra to Windows Server AD. <!-- more details TBA -->
+You'll next need to configure who can sign-in to the application. AD FS and Microsoft Entra have different mechanisms for scoping token issuance in their policies, so you may need to make changes in both.
+
+1. Previously you assigned a test user in Microsoft Entra to the application role, you may wish to remove that test user's role assignment now.
+1. In Microsoft Entra, you can use features like dynamic groups or entitlement management to assign users to an application role. If the user has a role membership on the application role, then the user will be able to receive a token from Microsoft Entra.
+1. In addition, AD FS also applies access control policies that are assigned to the application. Any policy you select for the application needs to abele to be evaluated by AD FS for both tokens from Microsoft Entra and for users which authenticate to Windows Server AD. As tokens from Microsoft Entra do not pass through Active Directory, you are not able to use the **Permit specific group** access control policy. For more information on access control policies, see [Access Control Policies in AD FS](/windows-server/identity/ad-fs/operations/access-control-policies-in-ad-fs). <!-- more details TBA -->
 
 ## Configure a scheduled task to perform automatic failover to AD
 
@@ -183,8 +187,8 @@ You'll next need to configure a monitor for connectivity from the site. This mon
 1. Launch PowerShell on the Windows Server where AD FS is installed.
 1. Register a source so the script can write to the Application event log. For example, if the script is named `AD FS changeover script`, then type the command `New-EventLog -LogName Application -Source "AD FS changeover script"`.
 1. Create a script. <!-- more details TBA -->
-1. Launch **Task Scheduler**.
-1. In the Task Scheduler Library, if you do not already have a folder for your tasks, create a folder.
+1. Launch **Task Scheduler** and view the Task Scheduler Library.
+1. If you don't already have a folder for your tasks, create a folder.
 1. Select the folder for your tasks, then select **Create task**.
 1. Fill out the **General** tab settings for the task.
 1. Change to the **Triggers** tab. Select **New** and provide a recurrence schedule for your task, in alignment with your organization's risk and network guidance.
