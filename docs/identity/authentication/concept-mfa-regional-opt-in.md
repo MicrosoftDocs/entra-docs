@@ -196,6 +196,16 @@ For SMS verification, the following region codes require an opt-in. This means t
 | 1849       | Dominican Republic |
 | 1869       | Saint Kitts and Nevis |
 | 1876       | Jamaica |
+| 1767       | Dominica |
+| 970        | Palestine |
+| 880        | Bangladesh |
+| 1868       | Trinidad and Tobago |
+| 1441       | Bermuda |
+| 423        | Liechtenstein |
+| 965        | Kuwait |
+| 855        | Cambodia |
+
+
 
 ## Voice verification
 For voice verification, the following region codes require an opt-in.

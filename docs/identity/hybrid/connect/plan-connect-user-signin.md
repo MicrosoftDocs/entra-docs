@@ -90,7 +90,7 @@ For more information, see [Configuring SSO with AD FS](how-to-connect-install-cu
 ### Federation with PingFederate
 With federated sign-in, your users can sign in to Microsoft Entra ID-based services with their on-premises passwords. While they're on the corporate network, they don't even have to enter their passwords.
 
-For more information on configuring PingFederate for use with Microsoft Entra ID, see [PingFederate integration with Microsoft Entra ID and Microsoft 365](https://docs.pingidentity.com/access/sources/dita/topic?category=integrationdoc&resourceid=pingfederate_azuread_office365_integration).
+For more information on configuring PingFederate for use with Microsoft Entra ID, see [Ping Identity Support](https://support.pingidentity.com/s/).
 
 For information on setting up Microsoft Entra Connect using PingFederate, see [Microsoft Entra Connect custom installation](how-to-connect-install-custom.md#configuring-federation-with-pingfederate)
 
