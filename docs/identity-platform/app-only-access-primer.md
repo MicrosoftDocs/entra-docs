@@ -71,6 +71,10 @@ Alice wants to notify a team by email every time the division reporting folder t
 
 The script runs without any user interaction, therefore the authorization system only checks the application authorization. Exchange Online checks whether the client making the call has been granted the application permission (app role), `Mail.Send` by the administrator. If `Mail.Send` isn’t granted to the app, then Exchange Online fails the request.
 
+## Application-only calls to their own API
+
+During an application-only authentication request where the same application acts as the client and resource application, all consent workflows, including user and admin consents, are skipped.
+
 | POST /users/{id}/{userPrincipalName}/sendMail | Client app granted Mail.Send | Client app not granted Mail.Send |
 | ----- | ----- | ----- |
 | The script uses Alice’s mailbox to send emails. | 200 – Access granted. Admin allowed the app to send mail as any user. |403 - Unauthorized. Admin hasn’t allowed this client to send emails. |
