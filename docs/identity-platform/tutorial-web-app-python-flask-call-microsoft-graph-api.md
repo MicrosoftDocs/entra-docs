@@ -49,7 +49,7 @@ ENDPOINT = os.getenv("ENDPOINT")
 
 ## Call a protected API
 
-1. Pass the api endpoint to the homepage. This enables you to call your endpoint. Update the `/` route to look like shown in the following code snippet:
+1. Pass the API endpoint to the homepage. This enables you to call your endpoint. Update the `/` route to look like shown in the following code snippet:
 
     ```python
     @app.route("/")
