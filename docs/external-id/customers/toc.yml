@@ -322,6 +322,8 @@ items:
       href: concept-user-attributes.md
     - name: Identity providers
       href: concept-authentication-methods-customers.md
+    - name: SAML/WS-Fed federation
+      href: ../direct-federation-overview.md
     - name: Multifactor authentication (MFA)
       href: concept-multifactor-authentication-customers.md
     - name: Custom authentication extensions
@@ -385,7 +387,11 @@ items:
               - name: B2C federation
                 href: how-to-b2c-federation-customers.md
           - name: SAML/WS-Fed IdP federation
-            href: ../direct-federation.md
+            items:
+              - name: Configure SAML/WS-Fed IdP federation
+                href: ../direct-federation.md
+              - name: Self-service sign-up for federated users
+                href: how-to-saml-ws-federation-self-service-sign-up.md
         displayName: rbac, roles claim, groups claim
       - name: Integrate apps 
         items:
