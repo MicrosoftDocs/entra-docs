@@ -52,7 +52,6 @@ In this tutorial, you'll:
 * [Node.js](https://nodejs.org/en/download/).
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
-
 ## Create a new React project
 
 Use the following tabs to create a React project within the IDE.
@@ -102,16 +101,17 @@ Use the following tabs to create a React project within the IDE.
     ├─── public
     │   └─── index.html
     └───src
+        └─── styles
+        │   └─── App.css
+        │   └─── index.css
+        ├─── utils
+        │   └─── claimUtils.js
         ├─── components
+        │   └─── DataDisplay.jsx
+        │   └─── NavigationBar.jsx
         │   └─── PageLayout.jsx
-        │   └─── ProfileData.jsx
-        │   └─── SignInButton.jsx
-        │   └─── SignOutButton.jsx
-        └── App.css
         └── App.jsx
         └── authConfig.js
-        └── graph.js
-        └── index.css
         └── index.js
     ```
 ---
@@ -138,18 +138,6 @@ Identity related **npm** packages must be installed in the project to enable use
     ```
 ---
 
-To learn more about these packages refer to the documentation in [`msal-browser`](/javascript/api/@azure/msal-browser) and [`msal-react`](/javascript/api/@azure/msal-react).
-
-## Modify *index.js* to include the authentication provider
-
-All parts of the app that require authentication must be wrapped in the [`MsalProvider`](/javascript/api/@azure/msal-react/#@azure-msal-react-msalprovider) component. You instantiate a [PublicClientApplication](/javascript/api/@azure/msal-browser/publicclientapplication) then pass it to `MsalProvider`.
-
-1. In the *src* folder, open *index.js* and replace the contents of the file with the following code snippet to use the `msal` packages and bootstrap styling:
-
-    :::code language="javascript" source="~/../ms-identity-docs-code-javascript/react-spa/src/index.js" :::
-
-1. Save the file.
-
 ## Add your tenant details to the MSAL configuration
 
 The **authConfig.js** file contains the configuration settings for the authentication flow and is used to configure **MSAL.js** with the required settings for authentication.
@@ -158,7 +146,74 @@ The **authConfig.js** file contains the configuration settings for the authentic
 
 1. In the *src* folder, open *authConfig.js* and add the following code snippet:
 
-   :::code language="javascript" source="~/../ms-identity-docs-code-javascript/react-spa/src/authConfig.js" :::
+   ```javascript
+
+    import { LogLevel } from '@azure/msal-browser';
+
+    /**
+    * Configuration object to be passed to MSAL instance on creation. 
+    * For a full list of MSAL.js configuration parameters, visit:
+    * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/configuration.md 
+    */
+
+    export const msalConfig = {
+        auth: {
+            clientId: 'Enter_the_Application_Id_Here', // This is the ONLY mandatory field that you need to supply.
+            authority: 'https://login.microsoftonline.com/Enter_the_Tenant_Info_Here', // Replace the placeholder with your tenant info
+            redirectUri: 'http://localhost:3000/redirect', // Points to window.location.origin. You must register this URI on Microsoft Entra admin center/App Registration.
+            postLogoutRedirectUri: '/', // Indicates the page to navigate after logout.
+            navigateToLoginRequestUrl: false, // If "true", will navigate back to the original request location before processing the auth code response.
+        },
+        cache: {
+            cacheLocation: 'sessionStorage', // Configures cache location. "sessionStorage" is more secure, but "localStorage" gives you SSO between tabs.
+            storeAuthStateInCookie: false, // Set this to "true" if you are having issues on IE11 or Edge
+        },
+        system: {
+            loggerOptions: {
+                loggerCallback: (level, message, containsPii) => {
+                    if (containsPii) {
+                        return;
+                    }
+                    switch (level) {
+                        case LogLevel.Error:
+                            console.error(message);
+                            return;
+                        case LogLevel.Info:
+                            console.info(message);
+                            return;
+                        case LogLevel.Verbose:
+                            console.debug(message);
+                            return;
+                        case LogLevel.Warning:
+                            console.warn(message);
+                            return;
+                        default:
+                            return;
+                    }
+                },
+            },
+        },
+    };
+
+    /**
+    * Scopes you add here will be prompted for user consent during sign-in.
+    * By default, MSAL.js will add OIDC scopes (openid, profile, email) to any login request.
+    * For more information about OIDC scopes, visit: 
+    * https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes
+    */
+    export const loginRequest = {
+        scopes: [],
+    };
+
+    /**
+    * An optional silentRequest object can be used to achieve silent SSO
+    * between applications by providing a "login_hint" property.
+    */
+    // export const silentRequest = {
+    //     scopes: ["openid", "profile"],
+    //     loginHint: "example@domain.net"
+    // };
+    ```
 
 1. Replace the following values with the values from the Microsoft Entra admin center.
     - `clientId` - The identifier of the application, also referred to as the client. Replace `Enter_the_Application_Id_Here` with the **Application (client) ID** value that was recorded earlier from the overview page of the registered application.
@@ -172,11 +227,6 @@ The **authConfig.js** file contains the configuration settings for the authentic
 1. In the *src* folder, open *authConfig.js* and add the following code snippet:
 
     ```javascript
-    /*
-     * Copyright (c) Microsoft Corporation. All rights reserved.
-     * Licensed under the MIT License.
-     */
-
     import { LogLevel } from '@azure/msal-browser';
 
     /**
@@ -251,7 +301,132 @@ The **authConfig.js** file contains the configuration settings for the authentic
 
 [!INCLUDE [external-id-custom-domain](../external-id/customers/includes/use-custom-domain-url.md)]
 
---- 
+---
+
+## Add the authentication provider
+
+The `msal` packages are used to provide authentication in the application. The `msal-browser` package is used to handle the authentication flow and the `msal-react` package is used to integrate `msal-browser` with React. `addEventCallback` is used to listen for events that occur during the authentication process, such as when a user successfully logs in. The `setActiveAccount` method is used to set the active account for the application, which is used to determine which user's information to display.
+
+1. In the *src* folder, open *index.js* and replace the contents of the file with the following code snippet to use the `msal` packages and bootstrap styling:
+
+    ```javascript
+    import React from 'react';
+    import { createRoot } from 'react-dom/client';
+    import App from './App';
+    import { PublicClientApplication, EventType } from '@azure/msal-browser';
+    import { msalConfig } from './authConfig';
+
+    import 'bootstrap/dist/css/bootstrap.min.css';
+    import './styles/index.css';
+
+    /**
+    * MSAL should be instantiated outside of the component tree to prevent it from being re-instantiated on re-renders.
+    * For more, visit: https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-react/docs/getting-started.md
+    */
+    const msalInstance = new PublicClientApplication(msalConfig);
+
+    // Default to using the first account if no account is active on page load
+    if (!msalInstance.getActiveAccount() && msalInstance.getAllAccounts().length > 0) {
+        // Account selection logic is app dependent. Adjust as needed for different use cases.
+        msalInstance.setActiveAccount(msalInstance.getActiveAccount()[0]);
+    }
+
+    // Listen for sign-in event and set active account
+    msalInstance.addEventCallback((event) => {
+        if (event.eventType === EventType.LOGIN_SUCCESS && event.payload.account) {
+            const account = event.payload.account;
+            msalInstance.setActiveAccount(account);
+        }
+    });
+
+    const root = createRoot(document.getElementById('root'));
+    root.render(
+        <App instance={msalInstance}/>
+    );
+    ```
+
+1. Save the file.
+
+To learn more about these packages refer to the documentation in [`msal-browser`](/javascript/api/@azure/msal-browser) and [`msal-react`](/javascript/api/@azure/msal-react).
+
+## Add the main application component
+
+All parts of the app that require authentication must be wrapped in the [`MsalProvider`](/javascript/api/@azure/msal-react/#@azure-msal-react-msalprovider) component. You set a an `instance` variable that calls the `useMsal` hook to get the [`PublicClientApplication`](/javascript/api/@azure/msal-browser/publicclientapplication) instance, and then pass it to `MsalProvider`. The `MsalProvider` component makes the `PublicClientApplication` instance available throughout your app via React's Context API. All components underneath `MsalProvider` will have access to the `PublicClientApplication` instance via context as well as all hooks and components provided by `msal-react`.
+
+1. In the *src* folder, open *App.jsx* and replace the contents of the file with the following code snippet:
+
+    ```javascript
+    import { MsalProvider, AuthenticatedTemplate, useMsal, UnauthenticatedTemplate } from '@azure/msal-react';
+    import { Container, Button } from 'react-bootstrap';
+    import { PageLayout } from './components/PageLayout';
+    import { IdTokenData } from './components/DataDisplay';
+    import { loginRequest } from './authConfig';
+
+    import './styles/App.css';
+
+    /**
+    * Most applications will need to conditionally render certain components based on whether a user is signed in or not. 
+    * msal-react provides 2 easy ways to do this. AuthenticatedTemplate and UnauthenticatedTemplate components will 
+    * only render their children if a user is authenticated or unauthenticated, respectively. For more, visit:
+    * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-react/docs/getting-started.md
+    */
+    const MainContent = () => {
+        /**
+        * useMsal is hook that returns the PublicClientApplication instance,
+        * that tells you what msal is currently doing. For more, visit:
+        * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-react/docs/hooks.md
+        */
+        const { instance } = useMsal();
+        const activeAccount = instance.getActiveAccount();
+
+        const handleRedirect = () => {
+            instance
+                .loginRedirect({
+                    ...loginRequest,
+                    prompt: 'create',
+                })
+                .catch((error) => console.log(error));
+        };
+        return (
+            <div className="App">
+                <AuthenticatedTemplate>
+                    {activeAccount ? (
+                        <Container>
+                            <IdTokenData idTokenClaims={activeAccount.idTokenClaims} />
+                        </Container>
+                    ) : null}
+                </AuthenticatedTemplate>
+                <UnauthenticatedTemplate>
+                    <Button className="signInButton" onClick={handleRedirect} variant="primary">
+                        Sign up
+                    </Button>
+                </UnauthenticatedTemplate>
+            </div>
+        );
+    };
+
+
+    /**
+    * msal-react is built on the React context API and all parts of your app that require authentication must be 
+    * wrapped in the MsalProvider component. You will first need to initialize an instance of PublicClientApplication 
+    * then pass this to MsalProvider as a prop. All components underneath MsalProvider will have access to the 
+    * PublicClientApplication instance via context as well as all hooks and components provided by msal-react. For more, visit:
+    * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-react/docs/getting-started.md
+    */
+    const App = ({ instance }) => {
+        return (
+            <MsalProvider instance={instance}>
+                <PageLayout>
+                    <MainContent />
+                </PageLayout>
+            </MsalProvider>
+        );
+    };
+
+    export default App;
+    ```
+
+1. Save the file.
 
 ## Next steps
 
