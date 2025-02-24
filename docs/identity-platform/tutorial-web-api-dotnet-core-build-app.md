@@ -27,7 +27,6 @@ In this tutorial, you'll:
 >- Protect your web API endpoints
 >- Run the web API to ensure it's listening to HTTP requests
 
-
 ## Prerequisites
 
 - If you haven't already, complete the steps in [Quickstart: Sign in users in a sample web app](quickstart-web-app-sign-in.md?pivots=external&tabs=node-external). In the quickstart, you don't have to clone and run the the code sample.
@@ -118,22 +117,106 @@ We specify these permissions in the *appsettings.json* file. In this tutorial, w
 }
 ```
 
-## Implement authentication in the API
+## Implement authentication and authorization in the API
 
+Open the `program.cs` file and configure authentication and authorization:
 
-## 
+```cs
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Identity.Web;
 
-## 
+var builder = WebApplication.CreateBuilder(args);
 
-## 
+// Configure authentication
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddMicrosoftIdentityWebApi(options =>
+    {
+        builder.Configuration.Bind("AzureAd", options);
+        options.TokenValidationParameters.NameClaimType = "name";
+    }, options => { builder.Configuration.Bind("AzureAd", options); });
 
-## 
+// Configure authorization
+builder.Services.AddAuthorization(config =>
+{
+config.AddPolicy("AuthZPolicy", policy =>
+    policy.RequireRole("Forecast.Read"));
+});
 
-## 
+// Add services to the container
+builder.Services.AddControllers();
+builder.Services.AddOpenApi();
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline
+if (app.Environment.IsDevelopment())
+{
+    app.MapOpenApi();
+}
+
+app.UseHttpsRedirection();
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapControllers();
+
+var summaries = new[]
+{
+    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+};
+
+app.MapGet("/weatherforecast", () =>
+{
+    var forecast =  Enumerable.Range(1, 5).Select(index =>
+        new WeatherForecast
+        (
+            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
+            Random.Shared.Next(-20, 55),
+    
+        summaries[Random.Shared.Next(summaries.Length)]
+        ))
+        .ToArray();
+    return forecast;
+})
+.WithName("weatherForecast")
+.RequireAuthorization("AuthZPolicy"); // Protect this endpoint with the AuthZPolicy
+
+app.Run();
+
+record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
+{
+    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+}
+```
 
 ## Run your API
 
+Run your API to ensure that it's running well without any errors using the command `dotnet run`. If you intend to use HTTPS protocol even during testing, you need to [trust .NET's development certificate](/aspnet/core/tutorials/first-web-api#test-the-project).
 
-## Next Steps
+1. Start the application by typing the following in the terminal:
 
-Test your protected ASP.NET web API
+    ```powershell
+    dotnet run
+    ```
+1. A similar output to the following should be displayed in the terminal. This confirms that the application is running on `http://localhost:{port}` and listening for requests.
+
+    ```powershell
+    Building...
+    info: Microsoft.Hosting.Lifetime[0]
+        Now listening on: http://localhost:{port}
+    info: Microsoft.Hosting.Lifetime[0]
+        Application started. Press Ctrl+C to shut down.
+    ...
+    ```
+
+The web page `http://localhost:{host}` displays an output similar to the following image. This is because the API is being called without authentication. In order to make an authorized call, refer to [Next steps](#next-steps) for how-to guides on how to access a protected web API.
+
+:::image type="content" source="./media/web-api-tutorial-03-protect-endpoint/display-web-page-401.png" alt-text="Screenshot that shows the 401 error when the web page is launched.":::
+
+
+For a full example of this API code, see the [samples file](https://github.com/Azure-Samples/ms-identity-ciam-dotnet-tutorial/tree/main/2-Authorization/3-call-own-api-dotnet-core-daemon/ToDoListAPI).
+
+## Next steps
+
+> [!div class="nextstepaction"]
+> [Part 2: Test your protected ASP.NET Core web API](tutorial-web-api-dotnet-core-test-protected-api.md)

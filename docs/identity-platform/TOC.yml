@@ -311,12 +311,10 @@
       items:
         - name: ASP.NET Core
           items: 
-          - name: Register the API
-            href: tutorial-web-api-dotnet-register-app.md
-          - name: Create and configure project 
-            href: tutorial-web-api-dotnet-prepare-app.md
-          - name: Protect API endpoint
-            href: tutorial-web-api-dotnet-protect-endpoint.md
+          - name: Create a web API and protect its endpoints
+            href: tutorial-web-api-dotnet-core-build-app.md
+          - name: Test a protected web API
+            href: tutorial-web-api-dotnet-core-test-protected-api.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#web-api

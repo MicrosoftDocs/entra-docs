@@ -18,10 +18,8 @@ ms.topic: tutorial
 
 In this tutorial, you'll:
 
-
-
-
 ## Prerequisites
+
 
 # Test your protected API
 
