@@ -90,7 +90,7 @@ Following the new [billing model](https://azure.microsoft.com/pricing/details/ac
 - Microsoft Entra External ID - Phone Authentication Mid High Cost 1 Transaction
 - Microsoft Entra External ID - Phone Authentication High Cost 1 Transaction
 
-Although the new bill mentions Microsoft Entra External ID, **you’re still billed for Azure AD B2B based on your core MAU count**. 
+Although the new bill mentions Microsoft Entra External ID, if you're an Azure AD External Identities customer, **you’re still billed for Azure AD B2B based on your core MAU count**. 
 
 ## Product Features
 
