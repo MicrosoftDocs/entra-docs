@@ -691,12 +691,12 @@
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/external-id/customers/tutorial-daemon-dotnet-call-api-build-app",
+      "source_path_from_root": "/docs/external-id/customers/tutorial-daemon-dotnet-call-api-build-app.md",
       "redirect_url": "/entra/identity-platform/tutorial-dotnet-daemon-call-api",
       "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/external-id/customers/tutorial-daemon-dotnet-call-api-prepare-tenant",
+      "source_path_from_root": "/docs/external-id/customers/tutorial-daemon-dotnet-call-api-prepare-tenant.md",
       "redirect_url": "/entra/identity-platform/quickstart-register-app",
       "redirect_document_id": false
     },

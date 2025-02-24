@@ -5,10 +5,11 @@ author: SHERMANOUKO
 manager: mwongerapk
 
 ms.author: shermanouko
-ms.service: ms.service: identity-platform
+ms.service: identity-platform
 ms.custom: devx-track-dotnet
 ms.topic: tutorial
 ms.date: 02/24/2025
+
 #customer intent: As an application developer, I want to call a protected web API from my daemon app using the Microsoft identity platform.
 ---
 
