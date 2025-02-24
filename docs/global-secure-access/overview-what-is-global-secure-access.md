@@ -56,7 +56,7 @@ Remote users connect to private apps across hybrid and multicloud environments, 
 
 ### Key features
 
-- Zero Trust based access to a range of IP addresses and/or Fully Qualified Domain Names (FQDNs) without requiring a legacy VPN. This feature is known as Quick Access.
+- Zero Trust-based access to a range of IP addresses and/or Fully Qualified Domain Names (FQDNs) without requiring a legacy VPN. This feature is known as Quick Access.
 - Per-app access for Transmission Control Protocol (TCP) and User Datagram Protocol (UDP) applications.
 - Modernize legacy app authentication with deep Conditional Access integration.
 - Provide a seamless end-user experience by acquiring network traffic from the desktop client and deploying side-by-side with your existing non-Microsoft SSE solutions.
@@ -73,11 +73,21 @@ Prerequisite to use Microsoft Entra Private Access and Microsoft Entra Internet 
 To learn more about licensing costs and the Microsoft Entra Suite, see [Microsoft Entra Plans & Pricing](https://www.microsoft.com/security/business/microsoft-entra-pricing). To learn more about purchasing individual license, see the Microsoft Entra Suite standalone products tab of the licensing page.
 
 > [!IMPORTANT]
-> Licensing enforcement for Microsoft Entra Private Access and Microsoft Entra Internet Access will begin to roll out on October 1, 2024. This is following a 90-day trial period that began with General Availability on July 1st, 2024.
+> Licensing enforcement for Microsoft Entra Private Access and Microsoft Entra Internet Access will begin to roll out on October 1, 2024. Enforcement follows a 90-day trial period that began with General Availability on July 1, 2024.
 
 **Remote Network licensing**
 
 The remote network (branch connectivity) feature is included in both the Microsoft Entra ID P1 license for Microsoft traffic, and the Microsoft Entra Internet Access license for Internet Traffic (coming soon). You must have a combined total of at least 50 licenses from Microsoft Entra ID P1 and Microsoft Entra Internet Access to enable remote network connectivity. For details on how much bandwidth is allocated, see [Understand remote network connectivity](concept-remote-network-connectivity.md#how-much-bandwidth-will-be-allocated-per-tenant). To learn more about remote networks, see [How to create a remote network with Global Secure Access](how-to-create-remote-networks.md).
+
+## Global Secure Access certifications
+[Introduction text, such as, "To help you meet your own compliance obligations..."]
+
+### Global Secure Access audit scope
+Microsoft retains independent, third-party auditing firms to conduct audits of Microsoft cloud services. The resulting compliance assurances are applicable to both Azure and Azure Government cloud environments. Compliance offerings are grouped into four segments: globally applicable, US government, industry specific, and country/region specific. Azure compliance certificates and audit reports state clearly which cloud services are in scope for independent third-party audits. Different audits might have different cloud services in audit scope.   
+
+### Supported certifications
+Global Secure Access is included in many Azure compliance audits such as SOC, ISO, PCI, and others. For the latest insight into Global Secure Access compliance audit scope, see [Cloud services in audit scope](/azure/compliance/offerings/cloud-services-in-audit-scope).
+
 
 ## Next steps
 
