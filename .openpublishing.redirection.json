@@ -711,6 +711,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity-platform/tutorial-web-app-python-register-app.md",
+      "redirect_url": "/entra/identity-platform/quickstart-register-app",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-python-flask-prepare-tenant.md",
       "redirect_url": "/entra/identity-platform/quickstart-register-app",
       "redirect_document_id": false

@@ -5,7 +5,7 @@ author: SHERMANOUKO
 manager: CelesteDG
 
 ms.author: shermanouko
-ms.date: 02/12/2025
+ms.date: 02/24/2025
 ms.service: identity-platform
 ms.topic: tutorial
 #Customer intent: As an application developer, I want to use my Python Flask web app to call Microsoft Graph API so that I can read a signed-in user's profile information.
@@ -49,25 +49,37 @@ ENDPOINT = os.getenv("ENDPOINT")
 
 ## Call a protected API
 
-We pass the list of scopes that our app needs to use. If scopes are present, the context contains an access token. The access token is used to call the downstream API.
+1. Pass the api endpoint to the homepage. This enables you to call your endpoint. Update the `/` route to look like shown in the following code snippet:
 
-Call the protected Microsoft Graph API as shown in the following code snippet. Add this code to the *app.py* file:
+    ```python
+    @app.route("/")
+    @auth.login_required
+    def index(*, context):
+        return render_template(
+            'index.html',
+            user=context['user'],
+            title="Flask Web App Sample",
+            api_endpoint=os.getenv("ENDPOINT") # added this line
+        )
+    ```
 
-```python
-@app.route("/call_api")
-@auth.login_required(scopes=os.getenv("SCOPE", "").split())
-def call_downstream_api(*, context):
-    api_result = requests.get(  # Use access token to call a web api
-        os.getenv("ENDPOINT"),
-        headers={'Authorization': 'Bearer ' + context['access_token']},
-        timeout=30,
-    ).json() if context.get('access_token') else "Did you forget to set the SCOPE environment variable?"
-    return render_template('display.html', title="API Response", result=api_result)
-``` 
+1. Call the protected Microsoft Graph API as shown in the following code snippet. We pass the list of scopes that our app needs to use. If scopes are present, the context contains an access token. The access token is used to call the downstream API. Add this code to the *app.py* file:
 
-If the app successfully obtains an access token, it makes an HTTP request to the downstream API using the `requests.get(...)` method. In the request, our downstream API URL is specified in `app_config.ENDPOINT` and the access token passed in the `Authorization` field of the request header. 
+    ```python
+    @app.route("/call_api")
+    @auth.login_required(scopes=os.getenv("SCOPE", "").split())
+    def call_downstream_api(*, context):
+        api_result = requests.get(  # Use access token to call a web api
+            os.getenv("ENDPOINT"),
+            headers={'Authorization': 'Bearer ' + context['access_token']},
+            timeout=30,
+        ).json() if context.get('access_token') else "Did you forget to set the SCOPE environment variable?"
+        return render_template('display.html', title="API Response", result=api_result)
+    ``` 
 
-A successful request to the downstream API (Microsoft Graph API) returns a JSON response stored in an `api_result` variable and passed to the `display.html` template for rendering. 
+    If the app successfully obtains an access token, it makes an HTTP request to the downstream API using the `requests.get(...)` method. In the request, our downstream API URL is specified in `app_config.ENDPOINT` and the access token passed in the `Authorization` field of the request header. 
+    
+    A successful request to the downstream API (Microsoft Graph API) returns a JSON response stored in an `api_result` variable and passed to the `display.html` template for rendering. 
 
 ## Display API results
 
@@ -91,6 +103,8 @@ Create a file called *display.html* in the *templates* folder. This page display
 ## Run and test the sample web app
 
 [!INCLUDE [python-flask-web-app-run-app](./includes/python-web-app/flask-web-app-tutorial.md)]
+
+## Call API
 
 1. Select the **Call an API** link on the home page. The app calls the Microsoft Graph API to get the signed-in user's profile information. The app displays the result of the call to the API.
 

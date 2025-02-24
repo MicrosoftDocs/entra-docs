@@ -7,7 +7,7 @@ manager: mwongerapk
 ms.author: shermanouko
 ms.service: identity-platform
 ms.topic: tutorial
-ms.date: 02/17/2025
+ms.date: 02/24/2025
 
 #Customer intent: As a dev, devops, I want to learn about how to sign-in users to a Python Flask web app by using Microsoft identity platform
 ---
@@ -144,6 +144,7 @@ pip freeze > requirements.txt
     CLIENT_ID = os.getenv("CLIENT_ID")
     CLIENT_SECRET = os.getenv("CLIENT_SECRET")
     REDIRECT_URI = os.getenv("REDIRECT_URI")
+    SESSION_TYPE = "filesystem" # Tells the Flask-session extension to store sessions in the filesystem. Don't use in production apps.
     ```
 
 ## Configure app endpoints
@@ -190,11 +191,11 @@ At this stage, you create your web app endpoints and add the business logic to y
         return render_template(
             'index.html',
             user=context['user'],
-            title=f"Flask Web App Sample v{__version__}",
+            title="Flask Web App Sample",
         )
     ```
 
-    User is guaranteed to be present because we decorated this view with @login_required.
+    User is guaranteed to be present because we decorated this view with `@login_required`.
 
 ## Create the app templates
 
@@ -215,7 +216,7 @@ Create a folder called *templates* in your root folder. In the templates folder,
 
     <ul>
     {% if api_endpoint %}
-        <!-- If an API endpoint is declared and scopes defined, this link will show. We set this in the call an API tutorial. For this tutporial, we do not define this endpoint. -->
+        <!-- If an API endpoint is declared and scopes defined, this link will show. We set this in the call an API tutorial. For this tutorial, we do not define this endpoint. -->
         <li><a href='/call_api'>Call an API</a></li>
     {% endif %}
 
@@ -232,7 +233,7 @@ Create a folder called *templates* in your root folder. In the templates folder,
 
 [!INCLUDE [python-flask-web-app-run-app](./includes/python-web-app/flask-web-app-tutorial.md)]
 
-1. Select **Logout** to sign out of the app. You're prompted to pick an account to sign out from. Select the account you used to sign in.
+Select **Logout** to sign out of the app. You're prompted to pick an account to sign out from. Select the account you used to sign in.
 
 ## Use custom URL domain (Optional)
 

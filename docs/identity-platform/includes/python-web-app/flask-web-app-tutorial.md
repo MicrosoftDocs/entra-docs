@@ -1,7 +1,6 @@
 ---
 author: SHERMANOUKO
-ms.service: entra-external-id
-ms.subservice: external
+ms.service: identity-platform
 ms.topic: include
 ms.date: 02/12/2025
 ms.author: shermanouko
@@ -42,7 +41,7 @@ ms.manager: mwongerapk
 
 1. On the sign-in page, type your **Email address**, select **Next**, type your **Password**, then select **Sign in**. If you don't have an account, select **No account? Create one** link, which starts the sign-up flow.
 
-1. If you choose the sign-up option, you go through the sign-uo flow. To complete the whole sign-up flow, fill in your email, one-time passcode, new password and more account details.
+1. If you choose the sign-up option, you go through the sign-up flow. To complete the whole sign-up flow, fill in your email, one-time passcode, new password and more account details.
 
 1. If there are any scopes needed by the application, a consent screen is presented. The application requests permission to maintain access to data you allow access to, and to sign you in and then read your profile, as shown in the screenshot. Select **Accept**.
 
