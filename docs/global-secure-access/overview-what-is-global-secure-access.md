@@ -5,10 +5,12 @@ author: kenwith
 ms.author: kenwith
 manager: rkarlin
 ms.topic: overview
-ms.date: 02/21/2025
+ms.date: 02/24/2025
 ms.service: global-secure-access
 ms.custom: references_regions
 ai-usage: ai-assisted
+
+# Customer intent: As a customer, I want to learn how Microsoft's Security Service Edge (SSE) solution, Global Secure Access, provides network access control and visibility to users and devices inside and outside a traditional office.
 ---
 
 # What is Global Secure Access?
@@ -33,7 +35,7 @@ Microsoft Entra Internet Access secures access to all internet and SaaS apps and
 
 - Acquire network traffic using the user aware internet traffic forwarding profile, either from the desktop client or from a remote network, such as a branch location. 
 - Detailed network traffic logs for internet traffic (including enforced policy details). Dashboards such as relationship maps between users, devices and endpoints, cross tenant access, and top network destination in use.
-- Leverage rich context awareness (user, device, location, risk, and compliance policy) while applying network security policies through integration with Conditional Access. Protect user access to the public internet while using Microsoft's cloud-delivered, identity-aware SWG solution.
+- Use rich context awareness (user, device, location, risk, and compliance policy) while applying network security policies through integration with Conditional Access. Protect user access to the public internet while using Microsoft's cloud-delivered, identity-aware SWG solution.
 - Enable web content filtering to regulate access to internet destinations based on their web-content categories and/or FQDN-domain names.
 - Apply universal Conditional Access policies for all internet destinations, even if not federated with Microsoft Entra ID, through integration with Conditional Access session controls.
 
