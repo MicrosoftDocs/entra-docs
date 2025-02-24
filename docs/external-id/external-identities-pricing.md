@@ -113,5 +113,5 @@ You can’t change ownership of a subscription to a Microsoft Entra external ten
 ## Next steps
 
 - See [Frequently asked questions](customers/faq-customers.md) about external tenants.
-- For the latest pricing information, see [Microsoft Entra pricing](https://www.microsoft.com/security/business/identity-access-management/azure-ad-pricing).
+- For the latest pricing information, see [Microsoft Entra External ID pricing](https://aka.ms/ExternalIDPricing).
 - For details about Azure Active Directory B2C billing, see [Billing model for Azure Active Directory B2C](/azure/active-directory-b2c/billing).
