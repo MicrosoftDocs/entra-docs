@@ -18,7 +18,7 @@ ms.collection: M365-identity-device-management
 
 [!INCLUDE [applies-to-workforce-external](./includes/applies-to-workforce-external.md)]
 
-In Microsoft Entra workforce and external tenants, you can set up federation with other organizations that use a SAML or WS-Fed identity provider (IdP). Users from the external organization can then use their own IdP-managed accounts to sign in to your apps or resources, either during invitiation redemption or self-service sign-up, without having to create new Microsoft Entra credentials. The user is redirected to their IdP when signing up or signing in to your app, and then returned to Microsoft Entra once they successfully sign in.
+In Microsoft Entra workforce and external tenants, you can set up federation with other organizations that use a SAML or WS-Fed identity provider (IdP). Users from the external organization can then use their own IdP-managed accounts to sign in to your apps or resources, either during invitation redemption or self-service sign-up, without having to create new Microsoft Entra credentials. The user is redirected to their IdP when signing up or signing in to your app, and then returned to Microsoft Entra once they successfully sign in.
 
 You can associate multiple domains with a single federation configuration. The partner's domain can be either Microsoft Entra verified or unverified.
 
@@ -72,7 +72,7 @@ You can also give users a direct link to an application or resource by including
 
 Setting up SAML/WS-Fed IdP federation requires configuration both in your tenant and in the external organization's IdP. Depending on the partner's IdP, the partner might need to update their DNS records to enable federation with you. See [Step 1: Determine if the partner needs to update their DNS text records](direct-federation.md#step-1-determine-if-the-partner-needs-to-update-their-dns-text-records).
 
-The partner must update their IdP with the required claims and relying party trusts.The Issuer URL in the SAML request sent by Microsoft Entra ID for external federations is now a tenanted endpoint, whereas previously it was a global endpoint. Existing federations with the global endpoint continue to work. But for new federations, set the audience of the external SAML or WS-Fed IdP to a tenanted endpoint. See the [SAML 2.0 section](direct-federation.md#to-configure-a-saml-20-identity-provider) and the [WS-Fed section](direct-federation.md#to-configure-a-ws-fed-identity-provider) for required attributes and claims.
+The partner must update their IdP with the required claims and relying party trusts. The Issuer URL in the SAML request sent by Microsoft Entra ID for external federations is now a tenanted endpoint, whereas previously it was a global endpoint. Existing federations with the global endpoint continue to work. But for new federations, set the audience of the external SAML or WS-Fed IdP to a tenanted endpoint. See the [SAML 2.0 section](direct-federation.md#to-configure-a-saml-20-identity-provider) and the [WS-Fed section](direct-federation.md#to-configure-a-ws-fed-identity-provider) for required attributes and claims.
 
 ### Signing certificate expiration
 
