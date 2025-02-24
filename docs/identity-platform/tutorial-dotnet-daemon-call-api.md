@@ -29,7 +29,7 @@ In this tutorial;
 
 - [.NET](https://dotnet.microsoft.com/download). In this tutorial, we use .NET 9.0.
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-- Ensure you have [an app registration](./quickstart-register-app.md) in your tenant. Make sure you have the following from your app registration details:
+- [An app registration](./quickstart-register-app.md) in your tenant. Make sure you have the following from your app registration details:
     - The *Application (client) ID* of the client web app that you registered.
     - The *Directory (tenant) ID* where you registered your web app.
     - The *Client secret* value for the web app you created.
@@ -135,8 +135,11 @@ dotnet add package Microsoft.Identity.Web.DownstreamApi
     
     tokenAcquirerFactory.Services.AddDownstreamApi(ServiceName,
         tokenAcquirerFactory.Configuration.GetSection("DownstreamApi"));
+    ```
 
-1. Build the token acquirer. This composes all the services you have added to Services and returns a service provider. Use this service provider to get access to the API resource you have added. In this case, you added only one API resource as a downstream service that you want access to.
+    The downstream API you call is Microsoft Graph. In this tutorial, we use the `DownstreamApi` service. You can also use Microsoft Graph SDK.
+
+1. Build the token acquirer. This composes all the services you add and returns a service provider. Use this service provider to get access to the API resource you add. In this case, you add only one API resource as a downstream service that you want access to.
 
     Add the following code snippet to the *program.cs* file:
 
@@ -182,9 +185,9 @@ Navigate to the root folder of the daemon app and run the following command:
 dotnet run
 ```
 
-If everything is okay, you should see *Response status code: OK* in your terminal. If there are users, the users will be listed in the terminal, otherwise you'll see the message *There are no users to display*.
+If everything is okay, you should see *Response status code: OK* in your terminal. If there are users, the users are listed in the terminal, otherwise you see the message *There are no users to display*.
 
-In case of any errors, you'll see an error message in the terminal.
+If any errors occur, you see an error message in the terminal.
 
 ### Troubleshoot
 
