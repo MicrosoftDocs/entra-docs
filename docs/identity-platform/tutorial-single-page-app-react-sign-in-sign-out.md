@@ -14,162 +14,258 @@ ms.topic: tutorial
 
 Before being able to interact with the single-page app (SPA), we need to initiate an API call to Microsoft Graph and create the user interface (UI) for the application. After this is added, we can sign in to the application and get profile data information from the Microsoft Graph API.
 
-In this tutorial:
+In this tutorial, you'll;
 
 > [!div class="checklist"]
-> * Create the API call to Microsoft Graph
-> * Create a UI for the application
-> * Import and use components in the application
-> * Create a component that renders the user's profile information
-> * Call the API from the application
+> * Add code to the *claimUtils.js* file to create the claims table
+> * Sign in and sign out of the application
+> * View the claims returned from the ID token
 
 ## Prerequisites
 
 * Completion of the prerequisites and steps in [Tutorial: Create components for sign in and sign out in a React single-page app](tutorial-single-page-app-react-configure-authentication.md).
 
-## Create the API call to Microsoft Graph
+## Add code to the *claimUtils.js* file (optional)
 
-To allow the SPA to request access to Microsoft Graph, a reference to the `graphConfig` object needs to be added. This contains the Graph REST API endpoint defined in *authConfig.js* file.
+To add the feature of a table that can display claims returned from the ID token, you can add code to *claimUtils.js* file. This code snippet will populate the claims table with the appropriate description and corresponding value.
 
-- In the *src* folder, open *graph.js* and replace the contents of the file with the following code snippet to request access to Microsoft Graph.
+1. Open *utils/claimUtils.js* and add the following code snippet:
 
-   :::code language="javascript" source="~/../ms-identity-docs-code-javascript/react-spa/src/graph.js" :::
+```javascript
+/**
+ * Populate claims table with appropriate description
+ * @param {Object} claims ID token claims
+ * @returns claimsObject
+ */
+export const createClaimsTable = (claims) => {
+    let claimsObj = {};
+    let index = 0;
 
-## Update imports to use components in the application
-
-The following code snippet imports the UI components that were created previously to the application. It also imports the required components from the `@azure/msal-react` package. These components will be used to render the user interface and call the API.
-
-- In the *src* folder, open *App.jsx* and replace the contents of the file with the following code snippet to request access.
-
-   ```javascript
-    import React, { useState } from 'react';
-    
-    import { PageLayout } from './components/PageLayout';
-    import { loginRequest } from './authConfig';
-    import { callMsGraph } from './graph';
-    import { ProfileData } from './components/ProfileData';
-    
-    import { AuthenticatedTemplate, UnauthenticatedTemplate, useMsal } from '@azure/msal-react';
-    
-    import './App.css';
-    
-    import Button from 'react-bootstrap/Button';
-   ```
-
-### Add the `ProfileContent` function
-
-The `ProfileContent` function is used to render the user's profile information after the user has signed in. This function will be called when the user selects the **Request Profile Information** button.
-
-- In the *App.jsx* file, add the following code below your imports:
-
-    ```JavaScript
-    /**
-    * Renders information about the signed-in user or a button to retrieve data about the user
-    */
-    const ProfileContent = () => {
-        const { instance, accounts } = useMsal();
-        const [graphData, setGraphData] = useState(null);
-            
-        function RequestProfileData() {
-            // Silently acquires an access token which is then attached to a request for MS Graph data
-            instance
-                .acquireTokenSilent({
-                    ...loginRequest,
-                    account: accounts[0],
-                })
-                .then((response) => {
-                    callMsGraph(response.accessToken).then((response) => setGraphData(response));
-                });
+    Object.keys(claims).forEach((key) => {
+        if (typeof claims[key] !== 'string' && typeof claims[key] !== 'number') return;
+        switch (key) {
+            case 'aud':
+                populateClaim(
+                    key,
+                    claims[key],
+                    "Identifies the intended recipient of the token. In ID tokens, the audience is your app's Application ID, assigned to your app in the Microsoft Entra admin center.",
+                    index,
+                    claimsObj
+                );
+                index++;
+                break;
+            case 'iss':
+                populateClaim(
+                    key,
+                    claims[key],
+                    'Identifies the issuer, or authorization server that constructs and returns the token. It also identifies the external tenant for which the user was authenticated. If the token was issued by the v2.0 endpoint, the URI will end in /v2.0. The GUID that indicates that the user is a consumer user from a Microsoft account is 9188040d-6c67-4c5b-b112-36a304b66dad.',
+                    index,
+                    claimsObj
+                );
+                index++;
+                break;
+            case 'iat':
+                populateClaim(
+                    key,
+                    changeDateFormat(claims[key]),
+                    'Issued At indicates when the authentication for this token occurred.',
+                    index,
+                    claimsObj
+                );
+                index++;
+                break;
+            case 'nbf':
+                populateClaim(
+                    key,
+                    changeDateFormat(claims[key]),
+                    'The nbf (not before) claim identifies the time (as UNIX timestamp) before which the JWT must not be accepted for processing.',
+                    index,
+                    claimsObj
+                );
+                index++;
+                break;
+            case 'exp':
+                populateClaim(
+                    key,
+                    changeDateFormat(claims[key]),
+                    "The exp (expiration time) claim identifies the expiration time (as UNIX timestamp) on or after which the JWT must not be accepted for processing. It's important to note that in certain circumstances, a resource may reject the token before this time. For example, if a change in authentication is required or a token revocation has been detected.",
+                    index,
+                    claimsObj
+                );
+                index++;
+                break;
+            case 'name':
+                populateClaim(
+                    key,
+                    claims[key],
+                    "The name claim provides a human-readable value that identifies the subject of the token. The value isn't guaranteed to be unique, it can be changed, and it's designed to be used only for display purposes. The profile scope is required to receive this claim.",
+                    index,
+                    claimsObj
+                );
+                index++;
+                break;
+            case 'preferred_username':
+                populateClaim(
+                    key,
+                    claims[key],
+                    'The primary username that represents the user. It could be an email address, phone number, or a generic username without a specified format. Its value is mutable and might change over time. Since it is mutable, this value must not be used to make authorization decisions. It can be used for username hints, however, and in human-readable UI as a username. The profile scope is required in order to receive this claim.',
+                    index,
+                    claimsObj
+                );
+                index++;
+                break;
+            case 'nonce':
+                populateClaim(
+                    key,
+                    claims[key],
+                    'The nonce matches the parameter included in the original /authorize request to the IDP. If it does not match, your application should reject the token.',
+                    index,
+                    claimsObj
+                );
+                index++;
+                break;
+            case 'oid':
+                populateClaim(
+                    key,
+                    claims[key],
+                    'The oid (user’s object id) is the only claim that should be used to uniquely identify a user in an external tenant. The token might have one or more of the following claim, that might seem like a unique identifier, but is not and should not be used as such.',
+                    index,
+                    claimsObj
+                );
+                index++;
+                break;
+            case 'tid':
+                populateClaim(
+                    key,
+                    claims[key],
+                    'The tenant ID. You will use this claim to ensure that only users from the current external tenant can access this app.',
+                    index,
+                    claimsObj
+                );
+                index++;
+                break;
+            case 'upn':
+                populateClaim(
+                    key,
+                    claims[key],
+                    '(user principal name) – might be unique amongst the active set of users in a tenant but tend to get reassigned to new employees as employees leave the organization and others take their place or might change to reflect a personal change like marriage.',
+                    index,
+                    claimsObj
+                );
+                index++;
+                break;
+            case 'email':
+                populateClaim(
+                    key,
+                    claims[key],
+                    'Email might be unique amongst the active set of users in a tenant but tend to get reassigned to new employees as employees leave the organization and others take their place.',
+                    index,
+                    claimsObj
+                );
+                index++;
+                break;
+            case 'acct':
+                populateClaim(
+                    key,
+                    claims[key],
+                    'Available as an optional claim, it lets you know what the type of user (homed, guest) is. For example, for an individual’s access to their data you might not care for this claim, but you would use this along with tenant id (tid) to control access to say a company-wide dashboard to just employees (homed users) and not contractors (guest users).',
+                    index,
+                    claimsObj
+                );
+                index++;
+                break;
+            case 'sid':
+                populateClaim(key, claims[key], 'Session ID, used for per-session user sign-out.', index, claimsObj);
+                index++;
+                break;
+            case 'sub':
+                populateClaim(
+                    key,
+                    claims[key],
+                    'The sub claim is a pairwise identifier - it is unique to a particular application ID. If a single user signs into two different apps using two different client IDs, those apps will receive two different values for the subject claim.',
+                    index,
+                    claimsObj
+                );
+                index++;
+                break;
+            case 'ver':
+                populateClaim(
+                    key,
+                    claims[key],
+                    'Version of the token issued by the Microsoft identity platform',
+                    index,
+                    claimsObj
+                );
+                index++;
+                break;
+            case 'uti':
+            case 'rh':
+                index++;
+                break;
+            case '_claim_names':
+            case '_claim_sources':
+            default:
+                populateClaim(key, claims[key], '', index, claimsObj);
+                index++;
         }
-            
-        return (
-            <>
-                <h5 className="card-title">Welcome {accounts[0].name}</h5>
-                <br/>
-                {graphData ? (
-                    <ProfileData graphData={graphData} />
-                ) : (
-                    <Button variant="secondary" onClick={RequestProfileData}>
-                        Request Profile Information
-                    </Button>
-                )}
-            </>
-        );
-    };
+    });
+
+    return claimsObj;
+};
+
+/**
+ * Populates claim, description, and value into an claimsObject
+ * @param {String} claim
+ * @param {String} value
+ * @param {String} description
+ * @param {Number} index
+ * @param {Object} claimsObject
+ */
+const populateClaim = (claim, value, description, index, claimsObject) => {
+    let claimsArray = [];
+    claimsArray[0] = claim;
+    claimsArray[1] = value;
+    claimsArray[2] = description;
+    claimsObject[index] = claimsArray;
+};
+
+/**
+ * Transforms Unix timestamp to date and returns a string value of that date
+ * @param {String} date Unix timestamp
+ * @returns
+ */
+const changeDateFormat = (date) => {
+    let dateObj = new Date(date * 1000);
+    return `${date} - [${dateObj.toString()}]`;
+};
+```
+
+## Run your project and sign in
+
+Now that all the required code snippets have been added, the application can be called and tested in a web browser.
+
+1. Open a new terminal and run the following command to start your express web server.
+
+    ```console
+    npm start
     ```
+1. Copy the `https` URL that appears in the terminal, for example, `https://localhost:3000`, and paste it into a browser. We recommend using a private or incognito browser session.
+1. Sign-in with an account registered to the tenant.
+1. An interface similar to the following screenshot appears, indicating that you have signed in to the application. If you have added the claims table, you can view the claims returned from the ID token.
 
-### Add the `MainContent` function
+    :::image type="content" source="./media/common-spa/react-spa/display-api-call-results-react-spa.png" alt-text="Screenshot of JavaScript App depicting the results of the API call." lightbox="./media/common-spa/react-spa/display-api-call-results-react-spa.png":::
 
-The `MainContent` function is used to render the user's profile information after the user has signed in. This function will be called when the user selects the **Request Profile Information** button.
+## Sign out from the application
 
-- In the *App.jsx* file, replace the `App()` function with the following code:
+1. Find the **Sign out** button on the page, and select it.
+1. You'll be prompted to pick an account to sign out from. Select the account you used to sign in.
 
-    ```JavaScript
-    /**
-    * If a user is authenticated the ProfileContent component above is rendered. Otherwise a message indicating a user is not authenticated is rendered.
-    */
-    const MainContent = () => {
-        return (
-            <div className="App">
-                <AuthenticatedTemplate>
-                    <ProfileContent />
-                </AuthenticatedTemplate>
-            
-                <UnauthenticatedTemplate>
-                    <h5>
-                        <center>
-                            Please sign-in to see your profile information.
-                        </center>
-                    </h5>
-                </UnauthenticatedTemplate>
-            </div>
-        );
-    };
-            
-    export default function App() {
-        return (
-            <PageLayout>
-                <center>
-                    <MainContent />
-                </center>
-            </PageLayout>
-        );
-    }
-    ```
+A message appears indicating that you have signed out. You can now close the browser window.
 
-## Call the Microsoft Graph API from the application
+## Related content
 
-All the required code snippets have been added, so the application can now be called and tested in a web browser.
-
-1. Navigate to the browser previously opened in [Tutorial: Prepare an application for authentication](./tutorial-single-page-app-react-prepare-app.md). If your browser is closed, open a new window with the address `http://localhost:3000/`.
-
-1. Select the **Sign In** button. For the purposes of this tutorial, choose the **Sign in using Popup** option.
-
-    :::image type="content" source="./media/single-page-app-tutorial-04-call-api/sign-in-window.png" alt-text="Screenshot of React App sign-in window.":::
-
-1. After the popup window appears with the sign-in options, select the account with which to sign-in.
-
-    :::image type="content" source="./media/single-page-app-tutorial-04-call-api/pick-account.png" alt-text="Screenshot requesting user to choose Microsoft account to sign into.":::
-
-1. A second window may appear indicating that a code will be sent to your email address. If this happens, select **Send code**. Open the email from the sender **Microsoft account team**, and enter the 7-digit single-use code. Once entered, select **Sign in**.
-
-    :::image type="content" source="./media/single-page-app-tutorial-04-call-api/enter-code.png" alt-text="Screenshot prompting user to enter verification code to sign-in.":::
-
-1. For **Stay signed in**, you can select either **No** or **Yes**.
-
-    :::image type="content" source="./media/single-page-app-tutorial-04-call-api/stay-signed-in.png" alt-text="Screenshot prompting user to decide whether to stay signed in or not.":::
-
-1. The app will now ask for permission to sign-in and access data. Select **Accept** to continue.
-
-    :::image type="content" source="./media/single-page-app-tutorial-04-call-api/permissions-requested.png" alt-text="Screenshot prompting user to allow the application to access permissions.":::
-
-1. The SPA will now display a button saying **Request Profile Information**. Select it to display the Microsoft Graph profile data acquired from the Microsoft Graph API.
-
-    :::image type="content" source="./media/single-page-app-tutorial-04-call-api/display-api-call-results.png" alt-text="Screenshot of React App depicting the results of the API call.":::
-
-## Next steps
-
-Learn how to use the Microsoft identity platform by trying out the following tutorial series on how to build a web API.
-
-> [!div class="nextstepaction"]
-> [Tutorial: Register a web API with the Microsoft identity platform](web-api-tutorial-01-register-app.md)
+- [Quickstart: Protect an ASP.NET Core web API with the Microsoft identity platform](./quickstart-web-api-aspnet-core-protect-api.md).
+- [Learn more by building a React SPA that signs in users in the following multi-part tutorial series](./tutorial-single-page-app-react-prepare-app.md).
+- [Enable password reset](../external-id/customers/how-to-enable-password-reset-customers.md).
+- [Customize the default branding](../external-id/customers/how-to-customize-branding-customers.md).
+- [Configure sign-in with Google](../external-id/customers/how-to-google-federation-customers.md).

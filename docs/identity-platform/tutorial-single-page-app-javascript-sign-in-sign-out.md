@@ -20,8 +20,8 @@ In this tutorial, you'll;
 
 > [!div class="checklist"]
 > * Add code to the *claimUtils.js* file to create the claims table
-> * Add code to the *signout.html* file to create the sign-out page
 > * Sign in and sign out of the application
+> * View the claims returned from the ID token
 
 ## Prerequisites
 

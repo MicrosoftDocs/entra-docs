@@ -12,7 +12,7 @@ ms.topic: tutorial
 
 # Tutorial: Add sign in and sign out functional components in a React single page app
 
-In this tutorial you'll configure a React single-page application (SPA) for authentication. In [part 1 of this series](tutorial-single-page-app-react-prepare-app.md), you created a React SPA and prepared it for authentication. In this tutorial, you'll learn how to add authentication flows by adding [Microsoft Authentication Library (MSAL)](msal-overview.md) components to your app and build a responsive user interface (UI) for your app.
+In this tutorial you'll configure a React single-page application (SPA) for authentication. In [part 1 of this series](tutorial-single-page-app-react-prepare-app.md), you created a React SPA and prepared it for authentication. In this tutorial, you'll learn how to add authentication flows by adding [Microsoft Authentication Library (MSAL)](msal-overview.md) functional components to your app and build a responsive user interface (UI) for your app.
 
 In this tutorial:
 
@@ -68,62 +68,11 @@ In this tutorial:
 
 ## Add functional components to the application
 
-Functional components are the building blocks of React apps, and are used to build the sign-in and sign-out experiences in your React SPA.
-
-### Add the DataDisplay component
-
-1. Open *src/components/DataDisplay.jsx* and add the following code snippet
-
-    ```jsx
-    import { Table } from 'react-bootstrap';
-    import { createClaimsTable } from '../utils/claimUtils';
-
-    import '../styles/App.css';
-
-    export const IdTokenData = (props) => {
-        const tokenClaims = createClaimsTable(props.idTokenClaims);
-
-        const tableRow = Object.keys(tokenClaims).map((key, index) => {
-            return (
-                <tr key={key}>
-                    {tokenClaims[key].map((claimItem) => (
-                        <td key={claimItem}>{claimItem}</td>
-                    ))}
-                </tr>
-            );
-        });
-        return (
-            <>
-                <div className="data-area-div">
-                    <p>
-                        See below the claims in your <strong> ID token </strong>. For more information, visit:{' '}
-                        <span>
-                            <a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/id-tokens#claims-in-an-id-token">
-                                docs.microsoft.com
-                            </a>
-                        </span>
-                    </p>
-                    <div className="data-area-div">
-                        <Table responsive striped bordered hover>
-                            <thead>
-                                <tr>
-                                    <th>Claim</th>
-                                    <th>Value</th>
-                                    <th>Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>{tableRow}</tbody>
-                        </Table>
-                    </div>
-                </div>
-            </>
-        );
-    };
-    ```
-
-1. Save the file.
+Functional components are the building blocks of React apps, and are used to build the sign-in and sign-out experiences in your application. 
 
 ### Add the NavigationBar component
+
+The navigation bar will provide the sign-in and sign-out experience for the app. The instance variable previously set in the *index.js* file will be used to call the sign-in and sign-out methods, which will redirect the user to the back to the sign-in page. 
 
 1. Open *src/components/NavigationBar.jsx* and add the following code snippet
 
@@ -176,6 +125,8 @@ Functional components are the building blocks of React apps, and are used to bui
 
 ### Add the PageLayout component
 
+The PageLayout component will be used to display the main content of the app and can be customized to include any additional content you want to display on every page of your app. The user's profile information will is displayed by passing the information via props.
+
 1. Open *src/components/PageLayout.jsx* and add the following code snippet
 
     ```jsx
@@ -217,6 +168,61 @@ Functional components are the building blocks of React apps, and are used to bui
             </>
         );
     }
+    ```
+
+1. Save the file.
+
+### Add the DataDisplay component
+
+The `DataDisplay` component will be used to display the user's profile information and a table of claims, which will be created in the next section of the tutorial. The `IdTokenData` component will be used to display the claims in the ID token.
+
+1. Open *src/components/DataDisplay.jsx* and add the following code snippet
+
+    ```jsx
+    import { Table } from 'react-bootstrap';
+    import { createClaimsTable } from '../utils/claimUtils';
+
+    import '../styles/App.css';
+
+    export const IdTokenData = (props) => {
+        const tokenClaims = createClaimsTable(props.idTokenClaims);
+
+        const tableRow = Object.keys(tokenClaims).map((key, index) => {
+            return (
+                <tr key={key}>
+                    {tokenClaims[key].map((claimItem) => (
+                        <td key={claimItem}>{claimItem}</td>
+                    ))}
+                </tr>
+            );
+        });
+        return (
+            <>
+                <div className="data-area-div">
+                    <p>
+                        See below the claims in your <strong> ID token </strong>. For more information, visit:{' '}
+                        <span>
+                            <a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/id-tokens#claims-in-an-id-token">
+                                docs.microsoft.com
+                            </a>
+                        </span>
+                    </p>
+                    <div className="data-area-div">
+                        <Table responsive striped bordered hover>
+                            <thead>
+                                <tr>
+                                    <th>Claim</th>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>{tableRow}</tbody>
+                        </Table>
+                    </div>
+                </div>
+            </>
+        );
+    };
     ```
 
 1. Save the file.
