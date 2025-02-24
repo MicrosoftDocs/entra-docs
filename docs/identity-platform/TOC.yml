@@ -518,8 +518,8 @@
       href: quickstart-daemon-app-call-api.md?pivots=workforce
     - name: Tutorials
       items:
-        - name: .NET
-          href: tutorial-v2-aspnet-daemon-web-app.md
+        - name: .NET acquire token and call API
+          href: tutorial-dotnet-daemon-call-api.md
         - name: Node.js
           href: tutorial-v2-nodejs-console.md
     - name: Samples

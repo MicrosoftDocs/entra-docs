@@ -177,12 +177,8 @@ items:
               displayName: client credentials flow 
             - name: Acquire access token and call API
               href: tutorial-daemon-node-call-api-build-app.md
-        - name: .NET
-          items:
-            - name: Prepare tenant
-              href: tutorial-daemon-dotnet-call-api-prepare-tenant.md
-            - name: Acquire access token and call API
-              href: tutorial-daemon-dotnet-call-api-build-app.md 
+        - name: .NET acquire access token and call API
+          href: /entra/identity-platform/tutorial-dotnet-daemon-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Desktop app
       items:
         - name: .NET MAUI
