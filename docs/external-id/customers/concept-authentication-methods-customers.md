@@ -92,7 +92,7 @@ You can set up a SAML or WS-Fed identity provider to allow users to sign up and 
 
 If a user doesn't have an account in your external tenant and enters an email address on the sign-in page that matches a predefined domain in any of the external identity providers, they're redirected to authenticate with that identity provider.
 
-For detailed setup steps, see [Add federation with SAML/WS-Fed identity providers](../direct-federation.md).
+For more information, see [SAML/WS-Fed identity providers](../direct-federation-overview.md). For detailed setup steps, see [Add federation with SAML/WS-Fed identity providers](../direct-federation.md).
 
 > [!NOTE]
 > SAML/WS-Fed federation is generally available for workforce tenants.

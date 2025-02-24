@@ -24,8 +24,6 @@ You can associate multiple domains with a single federation configuration. The p
 
 Setting up SAML/WS-Fed IdP federation requires configuration both in your tenant and in the external organization's IdP. In some cases, the partner needs to update their DNS text records. They also need to update their IdP with the required claims and relying party trusts.
 
-<!-- Do we need to break down the preview status further by tenant type and invitation vs. SSSU? -->
-
 > [!NOTE]
 > SAML/WS-Fed federation is currently in preview for external tenants and is generally available for workforce tenants.
 
@@ -49,8 +47,6 @@ A user's sign-in experience depends on whether the partner's domain is Microsoft
 
    > [!NOTE]
    > Changing the redemption order isn't currently supported in external tenants or across clouds.
-
-<!-- Is this correct, that federation takes precedence for SSSU but not for invitations in both tenant types? -->
 
 ### How federation affects current external users
 
