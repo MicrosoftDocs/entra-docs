@@ -1,20 +1,20 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with OU Campus'
+title: Microsoft Entra integration with OU Campus
 description: Learn how to configure single sign-on between Microsoft Entra ID and OU Campus.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and OU Campus so that I can control who has access to OU Campus, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with OU Campus
+# Microsoft Entra integration with OU Campus
 
 In this tutorial, you learn how to integrate OU Campus with Microsoft Entra ID.
 Integrating OU Campus with Microsoft Entra ID provides you with the following benefits:

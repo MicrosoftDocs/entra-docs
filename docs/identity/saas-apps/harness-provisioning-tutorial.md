@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Configure Harness for automatic user provisioning with Microsoft Entra ID'
+title: Configure Harness for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to Harness.
 
 author: thomasakelo
@@ -7,14 +7,14 @@ manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Harness so that I can streamline the user management process and ensure that users have the appropriate access to Harness.
 ---
 
-# Tutorial: Configure Harness for automatic user provisioning
+# Configure Harness for automatic user provisioning
 
 In this article, you learn how to configure Microsoft Entra ID to automatically provision and deprovision users or groups to Harness.
 
@@ -168,6 +168,6 @@ For more information about how to read the Microsoft Entra provisioning logs, se
 * [Manage user account provisioning for enterprise apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

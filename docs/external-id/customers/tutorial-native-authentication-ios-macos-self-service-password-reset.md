@@ -36,10 +36,11 @@ In this tutorial, you learn how to:
 
 To reset the password of an existing user, we need to validate the email address using a one-time-passcode (OTP). 
 
-1. To validate the email, we call the `resetPassword(username:delegate)` method from the SDK instance using the following code snippet: 
+1. To validate the email, we call the `resetPassword(parameters:delegate)` method from the SDK instance using the following code snippet: 
 
    ```swift
-   nativeAuth.resetPassword(username: email, delegate: self)
+   let parameters = MSALNativeAuthResetPasswordParameters(username: email)
+   nativeAuth.resetPassword(parameters: parameters, delegate: self)
    ```
 
 1. To implement the `ResetPasswordStartDelegate` protocol as an extension to our class, use the following code snippet: 
@@ -61,7 +62,7 @@ To reset the password of an existing user, we need to validate the email address
    }
    ```
 
-   The call to `resetPassword(username:delegate)` results in a call to either `onResetPasswordCodeRequired()` or `onResetPasswordStartError()` delegate methods. 
+   The call to `resetPassword(parameters:delegate)` results in a call to either `onResetPasswordCodeRequired()` or `onResetPasswordStartError()` delegate methods. 
 
    In the most common scenario `onResetPasswordCodeRequired(newState:sentTo:channelTargetType:codeLength)` will be called to indicate that a code has been sent to verify the user's email address. Along with some details of where the code has been sent, and how many digits it contains, this delegate method also has a `newState` parameter of type `ResetPasswordCodeRequiredState`, which gives us access to two new methods: 
 
@@ -183,7 +184,7 @@ func onResetPasswordRequiredError(
 
 The SDK provides developers the ability to sign in a user after resetting their password without having to supply the username, or to verify the email address through a one-time passcode. 
 
-To sign in a user after successful password reset use the `signIn(delegate)` method from the new state `SignInAfterResetPasswordState` returned in the `onResetPasswordCompleted(newState)` function: 
+To sign in a user after successful password reset use the `signIn(parameters:delegate)` method from the new state `SignInAfterResetPasswordState` returned in the `onResetPasswordCompleted(newState)` function: 
 
 ```swift
 extension ViewController: ResetPasswordRequiredDelegate {
@@ -197,12 +198,13 @@ extension ViewController: ResetPasswordRequiredDelegate {
 
     func onResetPasswordCompleted() {
         resultTextView.text = "Password reset completed"
-        newState.signIn(delegate: self)
+        let parameters = MSALNativeAuthSignInAfterResetPasswordParameters()
+        newState.signIn(parameters: parameters, delegate: self)
     }
 }
 ```
 
-The `signIn(delegate)` accepts a delegate parameter and we must implement the required methods in the `SignInAfterResetPasswordDelegate` protocol. 
+The `signIn(parameters:delegate)` accepts a delegate parameter and we must implement the required methods in the `SignInAfterResetPasswordDelegate` protocol. 
 
 In the most common scenario, we receive a call to `onSignInCompleted(result)` indicating that the user has signed in. The result can be used to retrieve the `access token`.
 
@@ -214,12 +216,13 @@ extension ViewController: SignInAfterSignUpDelegate {
 
     func onSignInCompleted(result: MSAL.MSALNativeAuthUserAccountResult) {
         // User successfully signed in
-        result.getAccessToken(delegate: self)
+        let parameters = MSALNativeAuthGetAccessTokenParameters()
+        result.getAccessToken(parameters: parameters, delegate: self)
     }
 }
 ```
 
-The `getAccessToken(delegate)` accepts a delegate parameter and we must implement the required methods in the `CredentialsDelegate` protocol.
+The `getAccessToken(parameters:delegate)` accepts a delegate parameter and we must implement the required methods in the `CredentialsDelegate` protocol.
 
 In the most common scenario, we receive a call to `onAccessTokenRetrieveCompleted(result)` indicating that the user obtained an `access token`.
 

@@ -191,7 +191,6 @@ Now that you have our Active Directory environment, you need to create a test ac
 
 ## Create a Microsoft Entra tenant
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Now you need to create a Microsoft Entra tenant so that you can synchronize our users to the cloud. To create a new Microsoft Entra tenant, do the following.
 

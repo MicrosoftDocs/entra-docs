@@ -37,7 +37,7 @@ To complete the rest of the tutorial, you need to create a Python Flask web app 
 To build the Python Flask web app from scratch, follow these steps:
 
 1. Create a folder to host your application and name it *flask-web-app*.
-1. Navigate to your project directory and create three files named *app.py*, *app.config.py*, and *requirements.txt*.
+1. Navigate to your project directory and create three files named *app.py*, *app_config.py*, and *requirements.txt*.
 1. Create an .env file in the root folder of the project.
 1. Create a folder named *templates* in your project root directory. Flask looks for rendering templates in this subdirectory. 
 
@@ -51,7 +51,7 @@ python-webapp/
 │     ├── login.html
 ├── .env.sample
 ├── app.py
-├── app.config.py
+├── app_config.py
 │── requirements.txt
 ```
 

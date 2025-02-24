@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Configure Zscaler Private Access (ZPA) for automatic user provisioning with Microsoft Entra ID'
+title: Configure Zscaler Private Access (ZPA) for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Zscaler Private Access (ZPA).
 
 author: thomasakelo
@@ -7,14 +7,14 @@ manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zscaler Private Access so that I can streamline the user management process and ensure that users have the appropriate access to Zscaler Private Access.
 ---
 
-# Tutorial: Configure Zscaler Private Access (ZPA) for automatic user provisioning
+# Configure Zscaler Private Access (ZPA) for automatic user provisioning
 
 The objective of this tutorial is to demonstrate the steps to be performed in Zscaler Private Access (ZPA) and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Zscaler Private Access (ZPA).
 
@@ -182,6 +182,6 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

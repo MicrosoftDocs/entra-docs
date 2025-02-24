@@ -32,7 +32,6 @@ The quickstart applies to both iOS and macOS apps. Some steps are needed only fo
 
 ## Register your quickstart app
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To register your application and add the app's registration information to your solution manually, follow these steps:
 

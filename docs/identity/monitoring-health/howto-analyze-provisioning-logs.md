@@ -24,7 +24,7 @@ This article describes the options for downloading the provisioning logs from th
 
 - A working Microsoft Entra tenant with a Microsoft Entra ID P1 or P2 license associated with it.
 - [Reports Reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader) is the least privileged role required to access the provisioning logs.
-    - For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs).
+    - For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs-least-privileged-roles).
 
 ## How to view the provisioning logs
 
@@ -36,7 +36,6 @@ There are several ways to view or analyze the Provisioning logs:
 - Access logs programmatically through the [Microsoft Graph API](/graph/api/resources/provisioningobjectsummary).
 - [Download the logs](howto-download-logs.md) as a CSV or JSON file.
 
-[!INCLUDE [portal update](../../includes/portal-update.md)]
 
 To access the logs in the Microsoft Entra admin center:
 

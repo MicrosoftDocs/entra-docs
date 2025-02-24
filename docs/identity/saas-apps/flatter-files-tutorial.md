@@ -1,20 +1,20 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Flatter Files'
+title: Microsoft Entra integration with Flatter Files
 description: Learn how to configure single sign-on between Microsoft Entra ID and Flatter Files.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Flatter Files so that I can control who has access to Flatter Files, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Flatter Files
+# Microsoft Entra integration with Flatter Files
 
 In this tutorial, you learn how to integrate Flatter Files with Microsoft Entra ID.
 Integrating Flatter Files with Microsoft Entra ID provides you with the following benefits:

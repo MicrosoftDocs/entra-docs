@@ -1,19 +1,19 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Jobscience'
+title: Microsoft Entra integration with Jobscience
 description: Learn how to configure single sign-on between Microsoft Entra ID and Jobscience.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Jobscience so that I can control who has access to Jobscience, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Jobscience
+# Microsoft Entra integration with Jobscience
 
 In this tutorial, you learn how to integrate Jobscience with Microsoft Entra ID.
 

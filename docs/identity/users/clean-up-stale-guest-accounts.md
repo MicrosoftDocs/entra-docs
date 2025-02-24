@@ -34,7 +34,6 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
 
 ## Monitor guest accounts at scale with inactive guest insights
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Identity governance** > **Dashboard**

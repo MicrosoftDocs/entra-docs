@@ -28,17 +28,16 @@ In this tutorial, you'll;
 ## Prerequisites
 
 - [Tutorial: Register and configure .NET MAUI mobile app in an external tenant](./tutorial-mobile-app-maui-sign-in-prepare-tenant.md)
-- [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0)
+- [.NET SDK](https://dotnet.microsoft.com/download/dotnet/latest)
 - [Visual Studio 2022](https://aka.ms/vsdownloads) with the MAUI workload installed:
-  - [Instructions for Windows](/dotnet/maui/get-started/installation?tabs=vswin)
-  - [Instructions for macOS](/dotnet/maui/get-started/installation?tabs=vsmac)
+  - [Instructions for Visual Studio Setup](/dotnet/maui/get-started/installation?tabs=visual-studio)
 
 ## Create .NET MAUI shell app
 
 1. In the start window of Visual Studio 2022, select **Create a new project**.
 1. In the **Create a new project** window, select **MAUI** in the All project types dropdown list, select the **.NET MAUI App** template, and select **Next**.
 1. In the **Configure your new project** window, **Project name** must be set to *SignInMaui*. Update the **Solution name**  to *sign-in-maui* and select **Next**.
-1. In the **Additional information** window, choose **.NET 7.0** and select **Create**.
+1. In the **Additional information** window, choose latest **.NET SDK** and select **Create**.
 
 Wait for the project to be created and its dependencies to be restored.
 

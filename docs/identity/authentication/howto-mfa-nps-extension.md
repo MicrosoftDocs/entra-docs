@@ -6,7 +6,7 @@ description: Learn how to use Microsoft Entra multifactor authentication capabil
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 12/05/2024
+ms.date: 01/08/2025
 
 ms.author: justinha
 author: justinha
@@ -258,15 +258,13 @@ To provide load-balancing capabilities or for redundancy, repeat these steps on 
    `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
 
    > [!IMPORTANT]
-   > For customers that use the Azure for US Government or Azure operated by 21Vianet clouds, first edit the *AzureMfaNpsExtnConfigSetup.ps1* script to include the *AzureEnvironment* parameters for the required cloud. For example, specify *-AzureEnvironment USGovernment* or *-AzureEnvironment AzureChinaCloud*.
+   > For customers that use the Azure for US Government or Azure operated by 21Vianet clouds, first edit the *AzureMfaNpsExtnConfigSetup.ps1* script to include the *Environment* parameters for the required cloud. For example, specify *-Environment USGov* or *-Environment China*.  Environment options: USGov, USGovDoD, Germany, China, Global.   Example: Connect-MgGraph -Scopes Application.ReadWrite.All -Environment USGov -NoWelcome -Verbose -ErrorAction Stop.
    
    ```powershell
    .\AzureMfaNpsExtnConfigSetup.ps1
    ```
 
-1. When prompted, sign in to Microsoft Entra ID. 
-
-   [!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)] 
+1. When prompted, sign in to Microsoft Entra ID. A [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) is needed to manage this feature.
 
 1. PowerShell prompts for your tenant ID. Use the *Tenant ID* GUID that you copied in the prerequisites section.
 1. A success message is shown when the script is finished.  

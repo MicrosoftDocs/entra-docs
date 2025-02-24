@@ -106,7 +106,7 @@ items:
         href: tenant-restrictions-migration.md
     - name: Configure B2B direct connect 
       href: cross-tenant-access-settings-b2b-direct-connect.md
-    - name: Select identity providers
+    - name: Configure identity providers
       items:
       - name: Microsoft Entra ID
         href: default-account.md

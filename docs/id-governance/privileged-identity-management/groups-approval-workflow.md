@@ -24,7 +24,6 @@ Follow the steps in this article to approve or deny requests for group membershi
 
 ## View pending requests
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 As a delegated approver, you receive an email notification when an Azure resource role request is pending your approval. You can view pending requests in Privileged Identity Management.
 

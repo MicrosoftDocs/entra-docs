@@ -1,21 +1,21 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with gr8 People'
+title: Microsoft Entra single sign-on (SSO) integration with gr8 People
 description: Learn how to configure single sign-on between Microsoft Entra ID and gr8 People.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and gr8 People so that I can control who has access to gr8 People, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with gr8 People
+# Microsoft Entra single sign-on (SSO) integration with gr8 People
 
 In this tutorial, you'll learn how to integrate gr8 People with Microsoft Entra ID. When you integrate gr8 People with Microsoft Entra ID, you can:
 

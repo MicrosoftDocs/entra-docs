@@ -118,8 +118,6 @@ Use the DCMC one-click integration to help you complete Microsoft Entra configur
 
 Configuration on the management console is complete. You're prompted to deploy DAP with your application. Make a note of the deployment Docker Compose file. The file includes the DAP image, `PROVISIONING_KEY`, and `PROVISIONING_SECRET`. DAP uses this information to pull the latest configuration and policies from DCMC.
 
-   ![Screenshot of Docker information.](./media/datawiza-sso-mfa-oracle-ebs/docker-information.png)
-
 ### SSL configuration
 
 1. For certificate configuration, select the **Advanced** tab on your application page. Then select **SSL** > **Edit**.
@@ -145,7 +143,6 @@ Configuration on the management console is complete. You're prompted to deploy D
 
 ### Optional: Enable multifactor authentication on Microsoft Entra ID
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To provide more security for sign-ins, you can enable multifactor authentication in the Microsoft Entra admin center:
 

@@ -5,7 +5,7 @@ description: Create an Azure Logic App that monitors Microsoft Entra audit logs 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
-ms.date: 12/02/2024
+ms.date: 01/16/2025
 
 author: camilasinelli
 ms.author: justinha

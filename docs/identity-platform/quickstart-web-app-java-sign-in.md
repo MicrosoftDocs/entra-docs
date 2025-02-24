@@ -28,7 +28,6 @@ To run this sample, you need:
 
 ## Register and download your quickstart app
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 There are two ways to start your quickstart application: express (option 1) and manual (option 2).
 

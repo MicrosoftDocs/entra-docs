@@ -52,8 +52,6 @@ By the end of this article, you'll be able to:
 
 ## Step 2: Enable user synchronization in the target tenant
 
-[!INCLUDE [portal updates](../../includes/portal-update.md)]
-
 ![Icon for the target tenant.](../../media/common/icons/entra-id.png)<br/>**Target tenant**
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) of the target tenant.

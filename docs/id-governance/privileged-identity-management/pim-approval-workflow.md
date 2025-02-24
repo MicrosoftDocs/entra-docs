@@ -21,7 +21,6 @@ Privileged Identity Management (PIM) in Microsoft Entra ID allows you to configu
 
 ## View pending requests
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 As a delegated approver, you receive an email notification when a Microsoft Entra role request is pending your approval. You can view these pending requests in Privileged Identity Management.
 
@@ -92,7 +91,7 @@ GET https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignmentSche
 ## Approve requests
 
 >[!NOTE]
->Approvers are not able to approve their own role activation requests.
+>Approvers are not able to approve their own role activation requests. Additionally, service principals are not allowed to approve requests.
 
  1. Find and select the request that you want to approve. An approve or deny page appears.
  2. In the **Justification** box, enter the business justification.

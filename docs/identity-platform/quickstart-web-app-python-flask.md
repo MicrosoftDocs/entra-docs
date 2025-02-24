@@ -22,7 +22,6 @@ In this quickstart, you download and run a Python Flask web app sample that demo
 
 ## Step 1: Register your application
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Follow these steps to register your application in the Microsoft Entra admin center:
 

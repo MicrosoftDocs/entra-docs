@@ -27,7 +27,7 @@ The sync service consists of two components, the on-premises **Microsoft Entra C
 >
 > To find out if you are already eligible for cloud sync, please verify your requirements in [this wizard](https://admin.microsoft.com/adminportal/home?Q=setupguidance#/modernonboarding/identitywizard).
 >
-> To learn more about cloud sync, please read [this article](/azure/active-directory/cloud-sync/what-is-cloud-sync), or watch this [short video](https://www.microsoft.com/videoplayer/embed/RWJ8l5).
+> To learn more about cloud sync, please read [this article](/azure/active-directory/cloud-sync/what-is-cloud-sync), or watch this [short video](https://learn-video.azurefd.net/vod/player?id=2b0047aa-84ba-430d-8ce9-39cfdc55276d).
 >
 
 

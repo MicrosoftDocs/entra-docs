@@ -40,7 +40,6 @@ To configure user consent, you need:
 
 :::zone pivot="portal"
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To configure user consent settings through the Microsoft Entra admin center:
 

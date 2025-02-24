@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Configure Bustle B2B Transport Systems for automatic user provisioning with Microsoft Entra ID'
+title: Configure Bustle B2B Transport Systems for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Bustle B2B Transport Systems.
 
 author: thomasakelo
@@ -7,14 +7,14 @@ manager: jeedes
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Bustle B2B Transport Systems so that I can streamline the user management process and ensure that users have the appropriate access to Bustle B2B Transport Systems.
 ---
 
-# Tutorial: Configure Bustle B2B Transport Systems for automatic user provisioning
+# Configure Bustle B2B Transport Systems for automatic user provisioning
 
 This tutorial describes the steps you need to perform in both Bustle B2B Transport Systems and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users to [Bustle B2B Transport Systems](https://app.bustle.tech) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
@@ -132,6 +132,6 @@ Once you've configured provisioning, use the following resources to monitor your
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

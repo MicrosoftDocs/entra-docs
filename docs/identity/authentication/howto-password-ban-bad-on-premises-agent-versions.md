@@ -5,7 +5,7 @@ description: Documents version release and behavior change history
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: article
-ms.date: 11/27/2024
+ms.date: 01/14/2025
 
 ms.author: justinha
 author: justinha

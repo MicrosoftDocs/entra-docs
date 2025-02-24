@@ -233,7 +233,6 @@ On Android and iOS, brokers like Authenticator enable:
 Learn more:
 
 * [Microsoft Entra Conditional Access documentation](~/identity/conditional-access/index.yml)
-* [Use Authenticator or Intune Company Portal on Xamarin applications](~/identity-platform/msal-net-use-brokers-with-xamarin-apps.md).
 
 **Known issues: user prompts**
 

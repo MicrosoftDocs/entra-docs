@@ -65,7 +65,6 @@ If you're using the  [Basic AD and Azure environment](tutorial-basic-ad-azure.md
 
 ## Configure Microsoft Entra Cloud Sync
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Use the following steps to configure provisioning:
 

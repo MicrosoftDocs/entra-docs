@@ -31,7 +31,6 @@ You can use the following link to bootstrap the creation of your web application
 
 ## Register an app by using the Azure portal
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 > [!NOTE]
 > The portal to use is different depending on whether your application runs in the Microsoft Azure public cloud or in a national or sovereign cloud. For more information, see [National clouds](./authentication-national-cloud.md#app-registration-endpoints).

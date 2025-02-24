@@ -2,7 +2,7 @@
 title: Microsoft Entra SSO integration with Pure Storage SSO
 description: Learn how to configure single sign-on between Microsoft Entra ID and Pure Storage SSO.
 services: active-directory
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
@@ -10,14 +10,14 @@ ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
 ms.date: 08/29/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Directory Services so that I can control who has access to Directory Services, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Microsoft Entra SSO integration with Pure Storage SSO
 
-In this tutorial, you'll learn how to integrate Pure Storage SSO with Microsoft Entra ID. When you integrate Pure Storage SSO with Microsoft Entra ID, you can:
+In this tutorial, you learn how to integrate Pure Storage SSO with Microsoft Entra ID. When you integrate Pure Storage SSO with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Pure Storage SSO.
 * Enable your users to be automatically signed-in to Pure Storage SSO with their Microsoft Entra accounts.
@@ -30,7 +30,7 @@ To integrate Microsoft Entra ID with Pure Storage SSO, you need:
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * Pure Storage SSO single sign-on (SSO) enabled subscription.
 
-* **[Optional]** If you intend to use Signing Certificate & Encrypting Assertion features, you should import your certificate & private key into Pure Storage FlashArray using **purecert create --certificate --key "cert-name"**. Use preferred mode of certificate creation, for self signed cert please contact [Pure Storage SSO support team](mailto:security-solutions-support@purestorage.com) for more details.
+* **[Optional]** If you intend to use Signing Certificate & Encrypting Assertion features, you should import your certificate & private key into Pure Storage FlashArray using **precept create--certificate --key "cert-name"**. Use preferred mode of certificate creation, for self signed cert please contact [Pure Storage SSO support team](mailto:security-solutions-support@purestorage.com) for more details.
 
 ## Scenario description
 
@@ -68,7 +68,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Pure Storage SSO** > **Single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.
-1. On the **Set up single sign-on with SAML** page, click the pencil icon for **Basic SAML Configuration** to edit the settings.
+1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
@@ -86,7 +86,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     `https://<ARRAY-NAME>.purestorage.com/login/saml2/sso/<FQDN_of_Array_Name>`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Pure Storage SSO support team](mailto:security-solutions-support@purestorage.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> These values aren't real. Update these values with the actual Identifier, Reply URL and Sign on URL. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. Pure Storage SSO application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -99,19 +99,19 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	| purity_roles | user.assignedroles |
 
     > [!NOTE]
-    > Edit default roles in the Entra app and update their values as **"storage_admin", "ops_admin", "readonly", "array_admin"** respectively. Please refer **"App roles UI - section for updating values"** and **"Assign users and groups to Microsoft Entra roles - section for role assignment" [here](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui)** for more details.
+    > Edit default roles in the Microsoft Entra app and update their values as **"storage_admin", "ops_admin", "readonly", "array_admin"** respectively. Refer **"App roles UI - section for updating values"** and **"Assign users and groups to Microsoft Entra roles - section for role assignment" [here](~/identity-platform/howto-add-app-roles-in-apps.md#app-roles-ui)** for more details.
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select copy button to copy **App Federation Metadata Url** and save it on your computer.
 
 	![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
-1. On the **Set up Pure Storage SSO** section, copy the appropriate URL(s) based on your requirement.
+1. On the **Set up Pure Storage SSO** section, copy one or more appropriate URLs based on your requirement.
 
 	![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png "Metadata")
 
 ### Create a Microsoft Entra ID test user
 
-In this section, you'll create a test user in the Microsoft Entra admin center called B.Simon.
+In this section, you create a test user in the Microsoft Entra admin center called B.Simon.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Browse to **Identity** > **Users** > **All users**.
@@ -125,21 +125,21 @@ In this section, you'll create a test user in the Microsoft Entra admin center c
 
 ### Assign the Microsoft Entra ID test user
 
-In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by granting access to Pure Storage SSO.
+In this section, you enable B.Simon to use Microsoft Entra single sign-on by granting access to Pure Storage SSO.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Pure Storage SSO**.
 1. In the app's overview page, select **Users and groups**.
-1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
-   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. Should select any role out of **"storage_admin_role", "ops_admin_role", "readonly_role", "array_admin_role"**.
-   1. In the **Add Assignment** dialog, click the **Assign** button.
+1. Select **Add user/group**, then select **Users and groups** in the **Added Assignment** dialog.
+   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then select the **Select** button at the bottom of the screen.
+   1. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. Should select any role out of **"storage_admin_role", "ops_admin_role", "readonly_role", "array_admin_role"**.
+   1. In the **Added Assignment** dialog, select the **Assign** button.
 
 ## Configure Pure Storage SSO
 
-1. Log in to Pure Storage SSO company site as an administrator.
+1. Sign in to Pure Storage SSO company site as an administrator.
 
-1. Go to **Settings** > **Access** > **SAML2 SSO** section and click **+** button on the right top corner of the page to add your SSO configuration.
+1. Go to **Settings** > **Access** > **SAML2 SSO** section and select **+** button on the right top corner of the page to add your SSO configuration.
 
     ![Screenshot shows account setting for the configuration.](./media/pure-storage-sso-tutorial/value.png "Security")
 
@@ -161,12 +161,12 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
     1. **[Optional]** Fill in **Signing Credential** and **Decryption Credential** with **cert-name** imported into Pure Storage FlashArray. Toggle and enable **Sign Request** and **Encrypt Assertion**.
 
-    1. Get verification certificate from Entra app and update in FlashArray SSO Configuration for **Verification Certificate** field. You can follow the steps shown in the [document](~/identity/enterprise-apps/tutorial-manage-certificates-for-federated-single-sign-on.md) to get a relevant certificate.
+    1. Get verification certificate from Microsoft Entra app and update in FlashArray SSO Configuration for **Verification Certificate** field. You can follow the steps shown in the [document](~/identity/enterprise-apps/tutorial-manage-certificates-for-federated-single-sign-on.md) to get a relevant certificate.
 
-    1. Click **Save**.
+    1. Select **Save**.
 
         > [!NOTE]
-        > Perform this on Entra app side, only if you intend to enable Encrypt Assertions. Import certificates and enable **Token Encryption** by following this [link](~/identity/enterprise-apps/howto-saml-token-encryption.md).
+        > Perform this on Microsoft Entra app side, only if you intend to enable Encrypt Assertions. Import certificates and enable **Token Encryption** by following this [link](~/identity/enterprise-apps/howto-saml-token-encryption.md).
 
 ## Test SSO 
 
@@ -174,16 +174,16 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 #### SP initiated:
  
-* Click on **Test this application** in Microsoft Entra admin center. This will redirect to Pure Storage SSO Sign-on URL where you can initiate the login flow.  
+* Select on **Test this application** in Microsoft Entra admin center. This will redirect to Pure Storage SSO Sign-on URL where you can initiate the sign in flow.  
  
-* Go to Pure Storage SSO Sign-on URL directly and initiate the login flow from there.
+* Go to Pure Storage SSO Sign-on URL directly and initiate the sign in flow from there.
  
 #### IDP initiated:
  
-* Click on **Test this application** in Microsoft Entra admin center and you should be automatically signed in to the Pure Storage SSO for which you set up the SSO.
+* Select on **Test this application** in Microsoft Entra admin center and you should be automatically signed in to the Pure Storage SSO for which you set up the SSO.
  
-You can also use Microsoft My Apps to test the application in any mode. When you click the Pure Storage SSO tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Pure Storage SSO for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+You can also use Microsoft My Apps to test the application in any mode. When you select the Pure Storage SSO tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the sign in flow and if configured in IDP mode, you should be automatically signed in to the Pure Storage SSO for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Pure Storage SSO you can enforce session control, which protects exfiltration and infiltration of your organization's sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

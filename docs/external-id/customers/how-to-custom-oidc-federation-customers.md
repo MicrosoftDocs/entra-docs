@@ -6,7 +6,7 @@ author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
 ms.date: 11/27/2024
 ms.author: cmulligan
@@ -89,7 +89,7 @@ After you configured your identity provider, in this step you'll configure a new
    > [!NOTE]
    > Configuring other Microsoft Entra tenants as an external identity provider is currently not supported. Consequently, the `microsoftonline.com` domain in the issuer URI is not accepted.
 
-   - **Client ID** and **Client Secret** are the identifiers your identity provider uses to identify the registered application service. Client secret needs to be provided if client_secret authentication is selected. If private_key_jwt is selected, private key needs to be provided.
+   - **Client ID** and **Client Secret** are the identifiers your identity provider uses to identify the registered application service. Client secret needs to be provided if client_secret authentication is selected. If private_key_jwt is selected, private key needs to be provided in the OpenID provider metadata (well-known endpoint), retrievable via the property jwks_uri.
    - **Client Authentication** is the type of client authentication method to be used to authenticate with your identity provider using the token endpoint. `client_secret_post`, `client_secret_jwt` and `private_key_jwt` authentication methods are supported.
    > [!NOTE]
    > Due to possible security issues, client_secret_basic client authentication method is not supported.

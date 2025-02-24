@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Configure SAP Cloud Identity Services for automatic user provisioning with Microsoft Entra ID'
+title: Configure SAP Cloud Identity Services for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and deprovision user accounts to SAP Cloud Identity Services.
 
 author: thomasakelo
@@ -7,14 +7,14 @@ manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/27/2024
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAP Cloud Identity Services so that I can streamline the user management process and ensure that users have the appropriate access to SAP Cloud Identity Services.
 ---
 
-# Tutorial: Configure SAP Cloud Identity Services for automatic user provisioning
+# Configure SAP Cloud Identity Services for automatic user provisioning
 
 This tutorial demonstrates the steps for configuring provisioning from Microsoft Entra ID to SAP Cloud Identity Services. The goal is to set up Microsoft Entra ID to automatically provision and deprovision users to SAP Cloud Identity Services, so that those users can authenticate to SAP Cloud Identity Services and have access to other SAP workloads. SAP Cloud Identity Services supports provisioning from its local identity directory to other SAP applications as [target systems](https://help.sap.com/docs/identity-provisioning/identity-provisioning/target-systems).
 
@@ -367,6 +367,6 @@ If you have Microsoft Entra ID Governance, you can automate changes to the appli
 * [Govern access for applications in your environment](~/id-governance/identity-governance-applications-prepare.md)
 
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

@@ -107,7 +107,6 @@ Application access can be blocked due to a problem with a user that is assigned 
 
 - [Assign a user a license](#assign-a-user-a-license)
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 <a name='check-if-a-user-account-exists-in-azure-active-directory'></a>
 

@@ -1,21 +1,21 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with CyberSolutions CYBERMAILΣ'
+title: Microsoft Entra SSO integration with CyberSolutions CYBERMAILΣ
 description: Learn how to configure single sign-on between Microsoft Entra ID and CyberSolutions CYBERMAILΣ.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and CyberSolutions CYBERMAILÎ£ so that I can control who has access to CyberSolutions CYBERMAILÎ£, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with CyberSolutions CYBERMAILΣ
+# Microsoft Entra SSO integration with CyberSolutions CYBERMAILΣ
 
 In this tutorial, you'll learn how to integrate CyberSolutions CYBERMAILΣ with Microsoft Entra ID. When you integrate CyberSolutions CYBERMAILΣ with Microsoft Entra ID, you can:
 
@@ -153,6 +153,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the CyberSolutions CYBERMAILΣ tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the CyberSolutions CYBERMAILΣ for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure CyberSolutions CYBERMAILΣ you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

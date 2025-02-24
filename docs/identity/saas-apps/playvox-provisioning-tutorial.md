@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Configure Playvox for automatic user provisioning by using Microsoft Entra ID'
+title: Configure Playvox for automatic user provisioning by using Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Playvox.
 
 author: thomasakelo
@@ -7,14 +7,14 @@ manager: jeedes
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Playvox so that I can streamline the user management process and ensure that users have the appropriate access to Playvox.
 ---
 
-# Tutorial: Configure Playvox for automatic user provisioning
+# Configure Playvox for automatic user provisioning
 
 This tutorial describes the steps to follow in both Playvox and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users or groups to [Playvox](https://www.playvox.com) by using the Microsoft Entra provisioning service. For important details on what this service does and how it works, and for frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
@@ -159,6 +159,6 @@ After you've configured provisioning, use the following resources to monitor you
 * [Managing user account provisioning for enterprise apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

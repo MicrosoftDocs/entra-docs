@@ -1,18 +1,18 @@
 ---
-title: 'Tutorial: Configure Workday inbound provisioning in Microsoft Entra ID'
+title: Configure Workday inbound provisioning in Microsoft Entra ID
 description: Learn how to configure inbound provisioning from Workday to Microsoft Entra ID
 
 author: cmmdesai
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: saas-apps
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 05/06/2024
 ms.author: chmutali
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Workday to Microsoft Entra ID so that I can streamline the user management process and ensure that users have the appropriate access to Workday to Microsoft Entra ID.
 ---
-# Tutorial: Configure Workday to Microsoft Entra user provisioning
+# Configure Workday to Microsoft Entra user provisioning
 The objective of this tutorial is to show the steps you need to perform to provision worker data from Workday into Microsoft Entra ID. 
 
 >[!NOTE]
@@ -24,7 +24,7 @@ The following video provides a quick overview of the steps involved when plannin
 
 [!INCLUDE [governance-workday-to-entra.md](~/includes/governance/governance-workday-to-entra.md)]
 
-## Next steps
+## Related content
 
 * [Learn more about Microsoft Entra ID and Workday integration scenarios and web service calls](~/identity/app-provisioning/workday-integration-reference.md)
 * [Learn more about supported Workday Attributes for inbound provisioning](~/identity/app-provisioning/workday-attribute-reference.md)

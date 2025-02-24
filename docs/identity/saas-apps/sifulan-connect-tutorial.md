@@ -2,7 +2,7 @@
 title: Microsoft Entra SSO integration with SIFULAN Connect
 description: Learn how to configure single sign-on between Microsoft Entra ID and SIFULAN Connect.
 services: active-directory
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
@@ -10,7 +10,7 @@ ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
 ms.date: 08/14/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Directory Services so that I can control who has access to Directory Services, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
@@ -147,6 +147,6 @@ In this section, you test your Microsoft Entra single sign-on configuration usin
 * Click on **Test this application** in Microsoft Entra admin center. This will redirect to SIFULAN Connect Sign on URL where you can initiate the login flow.  
 * Go to SIFULAN Connect Sign-on URL directly and initiate the login flow from there.
 
-## Next steps
+## Related content
 
 Once you configure SIFULAN Connect you can enforce session control, which protects exfiltration and infiltration of your organization's sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

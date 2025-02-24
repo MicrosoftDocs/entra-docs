@@ -2,20 +2,20 @@
 title: Configure F5 BIG-IP Easy Button for SSO to Oracle Enterprise Business Suite
 description: Learn to implement SHA with header-based SSO to Oracle Enterprise Business Suite using F5's BIG-IP Easy Button guided configuration
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and F5 BIG-IP Easy Button for SSO to Oracle EBS so that I can control who has access to F5 BIG-IP Easy Button for SSO to Oracle EBS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Configure F5's BIG-IP Easy Button for SSO to Oracle Enterprise Business Suite
+# Configure F5's BIG-IP Easy Button for SSO to Oracle Enterprise Business Suite
 
 In this article, learn to secure Oracle Enterprise Business Suite (EBS) using Microsoft Entra ID, through F5's BIG-IP Easy Button guided configuration.
 
@@ -344,7 +344,7 @@ If making a change to the app is a no go, then consider having the BIG-IP listen
 
 This last step provides a breakdown of your configurations. Select **Deploy** to commit all settings and verify that the application now exists in your tenants list of 'Enterprise applications.
 
-## Next steps
+## Related content
 
 From a browser, connect to the **Oracle EBS application's external URL** or select the application's icon in the [Microsoft MyApps portal](https://myapps.microsoft.com/). After authenticating to Microsoft Entra ID, you'll be redirected to the BIG-IP virtual server for the application and automatically signed in through SSO.
 

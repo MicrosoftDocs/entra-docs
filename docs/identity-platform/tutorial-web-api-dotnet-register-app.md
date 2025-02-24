@@ -30,7 +30,6 @@ In this tutorial, you learn how to register a web API in a Microsoft Entra ID te
 
 ## Register the application and record identifiers
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To complete registration, provide the application a name and specify the supported account types. Once registered, the application **Overview** page will display the identifiers needed in the application source code.
 

@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 08/23/2024
+ms.date: 01/14/2025
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -290,7 +290,7 @@ For more information on Microsoft Entra groups, see:
 
 - [Existing groups](~/fundamentals/groups-view-azure-portal.md)
 - [Expiration policy for Microsoft 365 groups](groups-lifecycle.md)
-- [Manage settings of a group](~/fundamentals/how-to-manage-groups.yml)
-- [Manage members of a group](~/fundamentals/how-to-manage-groups.yml)
-- [Manage memberships of a group](~/fundamentals/how-to-manage-groups.yml)
+- [Manage settings of a group](/entra/fundamentals/how-to-manage-groups)
+- [Manage members of a group](/entra/fundamentals/how-to-manage-groups)
+- [Manage memberships of a group](/entra/fundamentals/how-to-manage-groups)
 - [Manage rules for dynamic membership groups](groups-dynamic-membership.md)

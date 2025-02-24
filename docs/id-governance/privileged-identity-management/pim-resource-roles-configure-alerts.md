@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
-ms.date: 12/16/2024
+ms.date: 01/31/2025
 ms.author: barclayn
 ms.reviewer: rianakarim
 ms.custom: pim
@@ -19,7 +19,7 @@ ms.custom: pim
 Privileged Identity Management (PIM) generates alerts when there's suspicious or unsafe activity in your organization in Microsoft Entra ID. When an alert is triggered, it shows up on the Alerts page.
 
 >[!NOTE]
->One event in Privileged Identity Management can generate email notifications to multiple recipients – assignees, approvers, or administrators. The maximum number of notifications sent per one event is 1000. If the number of recipients exceeds 1000 – only the first 1000 recipients will receive an email notification. This does not prevent other assignees, administrators, or approvers from using their permissions in Microsoft Entra ID and Privileged Identity Management.
+>One event in Privileged Identity Management can generate email notifications to multiple recipients – assignees, approvers, or administrators. The maximum number of notifications sent per one event is 1000. If the number of recipients exceeds 1000 – only the first 1,000 recipients receive an email notification. This limit doesn't prevent other assignees, administrators, or approvers from using their permissions in Microsoft Entra ID and Privileged Identity Management.
 
 :::image type="content" source="media/pim-resource-roles-configure-alerts/rbac-alerts-page.png" alt-text="Screenshot of the alerts page listing alert, risk level, and count.":::
 
@@ -49,7 +49,6 @@ Alert | Severity | Trigger | Recommendation
 
 ## Configure security alert settings
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Follow these steps to configure security alerts for Azure roles in Privileged Identity Management:
 
@@ -64,7 +63,7 @@ Follow these steps to configure security alerts for Azure roles in Privileged Id
     :::image type="content" source="media/pim-resource-roles-configure-alerts/rbac-alert-settings.png" alt-text="Screenshot of the alert setting.":::
 
 >[!NOTE]
->"Roles are being assigned outside of Privileged Identity Management" alert is triggered for role assignments created for Azure subscriptions and is not triggered for role assignments on Management Groups, Resource Groups or Resource scope."
+>"Roles are being assigned outside of Privileged Identity Management" alert is triggered for role assignments created for Azure subscriptions and isn't triggered for role assignments on Management Groups, Resource Groups, or Resource scope."
 
 ## Next steps
 

@@ -1,21 +1,21 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with New Relic'
+title: Microsoft Entra SSO integration with New Relic
 description: Learn how to configure single sign-on between Microsoft Entra ID and New Relic.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and New Relic (By Organization) so that I can control who has access to New Relic (By Organization), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with New Relic
+# Microsoft Entra SSO integration with New Relic
 
 In this tutorial, you'll learn how to integrate New Relic with Microsoft Entra ID. When you integrate New Relic with Microsoft Entra ID, you can:
 
@@ -183,7 +183,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the New Relic tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the New Relic for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once done, you can verify that your users have been added in New Relic by going to the [**User management** UI](https://docs.newrelic.com/docs/accounts/accounts-billing/new-relic-one-user-management/add-manage-users-groups-roles/#where) and seeing if they're there. 
 

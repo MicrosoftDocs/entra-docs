@@ -25,7 +25,6 @@ Watch the following video to learn how to view what resources users have access 
 
 ## View users assigned to an access package
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 This report enables you to list all of the users who are assigned to an access package.
 
@@ -123,7 +122,7 @@ When the user's access package assignment expires, is canceled by the user, or r
 
 ## Identify users who have or will have incompatible access with separation of duties
 
-With the separation of duties settings on an access package, you can configure that a user who is a member of a security group or who already has an assignment to one access package can't request another access package, by marking those as incompatible. You can then [view access packages that are configured as incompatible](entitlement-management-access-package-incompatible.md#view-other-access-packages-that-are-configured-as-incompatible-with-this-one), and [list users who will have incompatible access to another access package](entitlement-management-access-package-incompatible.md#identifying-users-who-will-have-incompatible-access-to-another-access-package). You can also [list users who already have incompatible access to another access package](entitlement-management-access-package-incompatible.md#identifying-users-who-already-have-incompatible-access-to-another-access-package-preview) in the Microsoft Entra Admin Center, [using Microsoft Graph](entitlement-management-access-package-incompatible.md#identifying-users-who-already-have-incompatible-access-programmatically), or [using PowerShell](entitlement-management-access-package-incompatible.md#identifying-users-who-already-have-incompatible-access-using-powershell).
+With the separation of duties settings on an access package, you can configure that a user who is a member of a security group or who already has an assignment to one access package can't request another access package, by marking those as incompatible. You can then [view access packages that are configured as incompatible](entitlement-management-access-package-incompatible.md#view-other-access-packages-that-are-configured-as-incompatible-with-this-one), and [list users who will have incompatible access to another access package](entitlement-management-access-package-incompatible.md#identifying-users-who-will-have-incompatible-access-to-another-access-package). You can also [list users who already have incompatible access to another access package](entitlement-management-access-package-incompatible.md#identifying-users-who-already-have-incompatible-access-to-another-access-package) in the Microsoft Entra Admin Center, [using Microsoft Graph](entitlement-management-access-package-incompatible.md#identifying-users-who-already-have-incompatible-access-programmatically), or [using PowerShell](entitlement-management-access-package-incompatible.md#identifying-users-who-already-have-incompatible-access-using-powershell).
 
 ## View events for an access package  
 

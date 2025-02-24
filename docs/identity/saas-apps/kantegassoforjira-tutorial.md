@@ -1,20 +1,20 @@
 ---
-title: 'Tutorial: Integrate Microsoft Entra ID with Kantega SSO for JIRA'
+title: Integrate Microsoft Entra ID with Kantega SSO for JIRA
 description: Learn how to configure single sign-on between Microsoft Entra ID and Jira using Kantega SSO.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Kantega SSO for JIRA so that I can control who has access to Kantega SSO for JIRA, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Integrate Microsoft Entra ID with Kantega SSO for JIRA
+# Integrate Microsoft Entra ID with Kantega SSO for JIRA
 
 This tutorial will walk you through the steps of configuring single sign-on for your Microsoft Entra users in Jira. To achieve this, we will be using the Kantega SSO app. Using this configuration, you will be able to:
 
@@ -161,6 +161,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the Kantega SSO for JIRA tile in the My Apps, you will be redirected to the application sign-on page for initiating the login flow if configured in SP mode. If configured in IDP mode, you should be automatically signed in to the Kantega SSO for JIRA, for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Kantega SSO for JIRA, you can enforce session control, which protects the exfiltration and infiltration of your organization's sensitive data in real-time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

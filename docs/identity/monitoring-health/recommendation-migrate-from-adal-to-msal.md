@@ -85,7 +85,7 @@ You can run the following set of commands in Windows PowerShell. These commands 
 1. Open Windows PowerShell as an administrator.
 
 1. Connect to Microsoft Graph:
-    - `Connect-MgGraph-Tenant <YOUR_TENANT_ID>`
+    - `Connect-MgGraph -Tenant <YOUR_TENANT_ID>`
 
 1. Select your profile:
     - `Select-MgProfile beta`

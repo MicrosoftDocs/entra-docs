@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Check Point Remote Secure Access VPN'
+title: Microsoft Entra single sign-on (SSO) integration with Check Point Remote Secure Access VPN
 description: Learn how to configure single sign-on between Microsoft Entra ID and Check Point Remote Secure Access VPN.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Check Point Remote Access VPN so that I can control who has access to Check Point Remote Access VPN, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Check Point Remote Secure Access VPN
+# Microsoft Entra single sign-on (SSO) integration with Check Point Remote Secure Access VPN
 
 In this tutorial, you'll learn how to integrate Check Point Remote Secure Access VPN with Microsoft Entra ID. When you integrate Check Point Remote Secure Access VPN with Microsoft Entra ID, you can:
 
@@ -359,6 +359,6 @@ In this section, you create a user called Britta Simon in Check Point Remote Sec
 
 1. In Microsoft Entra login pop up, sign in using Microsoft Entra credentials which you have created in the **Create a Microsoft Entra test user** section.
 
-## Next steps
+## Related content
 
 Once you configure Check Point Remote Secure Access VPN you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

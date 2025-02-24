@@ -103,7 +103,7 @@ In most cases, the **incremental cycle** completes in 30 minutes. However, when 
 4. Add scoping filters to further limit the number of users and groups in scope for provisioning.
 
 ## Audit changes to your provisioning configuration
-Provisioning configuration changes are logged in the audit logs. Users with the necessary permissions, such as application administrator and reports reader, can access logs through the audit logs UI, API, and through PowerShell. You can use the activity filter in the audit logs to identify the following actions.
+Provisioning configuration changes are logged in the audit logs. Users with the necessary permissions, such as Application Administrator and Reports Reader, can access logs through the audit logs UI, API, and through PowerShell. You can use the activity filter in the audit logs to identify the following actions.
 
 > [!Note]
 > For actions that the provisioning service performs such as creating users, updating users, and deleting users we recommend using the [provisioning logs](~/identity/monitoring-health/howto-analyze-provisioning-logs.md). For monitoring changes to your provisioning configuration, we recommend using the [audit logs](~/identity/monitoring-health/concept-audit-logs.md). 

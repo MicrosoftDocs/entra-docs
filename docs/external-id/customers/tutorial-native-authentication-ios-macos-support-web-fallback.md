@@ -63,7 +63,8 @@ nativeAuth = try MSALNativeAuthPublicClientApplication(
 In this case we're specifying only the challenge type OOB. Suppose that in the Microsoft Entra admin center, the application is configured with an **Email with password** user flow. 
 
 ```swift
-nativeAuth.signUp(username: email, delegate: self)
+let parameters = MSALNativeAuthSignUpParameters(username: email)
+nativeAuth.signUp(parameters: parameters, delegate: self)
 
 func onSignUpStartError(error: MSAL.SignUpStartError) {
     if error.isBrowserRequired {
@@ -72,7 +73,7 @@ func onSignUpStartError(error: MSAL.SignUpStartError) {
 }
 ```
 
-When we call the `signUp(username:delegate)` method from the SDK instance, we get a `BrowserRequired` error, because Microsoft Entra requires a different challenge type (password in this case) than the one configured in the SDK. 
+When we call the `signUp(parameters:delegate)` method from the SDK instance, we get a `BrowserRequired` error, because Microsoft Entra requires a different challenge type (password in this case) than the one configured in the SDK. 
 
 ## Handle BrowserRequired error 
 

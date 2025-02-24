@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Citrix Cloud SAML SSO'
+title: Microsoft Entra single sign-on (SSO) integration with Citrix Cloud SAML SSO
 description: Learn how to configure single sign-on between Microsoft Entra ID and Citrix Cloud SAML SSO.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Citrix Cloud SAML SSO so that I can control who has access to Citrix Cloud SAML SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Citrix Cloud SAML SSO
+# Microsoft Entra single sign-on (SSO) integration with Citrix Cloud SAML SSO
 
 In this tutorial, you'll learn how to integrate Citrix Cloud SAML SSO with Microsoft Entra ID. When you integrate Citrix Cloud SAML SSO with Microsoft Entra ID, you can:
 
@@ -182,6 +182,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * Log in with your AD-Synced Active Directory user into your Citrix Workspace to complete the test.
 
-## Next steps
+## Related content
 
 Once you configure Citrix Cloud SAML SSO you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

@@ -21,7 +21,6 @@ This article outlines how to use Azure Monitor for audit log retention. To retai
 
 ## Configure Microsoft Entra ID to use Azure Monitor
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Before you use the Azure Monitor workbooks, you must configure Microsoft Entra ID to send a copy of its audit logs to Azure Monitor.
 

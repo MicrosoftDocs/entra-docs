@@ -115,7 +115,8 @@ If this test fails, make sure you're using the most updated forwarding profile o
 Break-glass mode prevents the Global Secure Access client from tunneling network traffic to the Global Secure Access cloud service. In Break-glass mode, all traffic profiles in the Global Secure Access portal are unchecked and the Global Secure Access client isn't expected to tunnel any traffic. 
 
 To set the client to acquire traffic and tunnel that traffic to the Global Secure Access service:
-1. Sign in to the Microsoft Entra admin center as a tenant administrator.
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/entra/identity/role-based-access-control/permissions-reference#global-secure-access-administrator).
 1. Navigate to Global Secure **Access** > **Connect** > **Traffic forwarding**.
 1. Enable at least one of the traffic profiles that match your organization's needs.
 

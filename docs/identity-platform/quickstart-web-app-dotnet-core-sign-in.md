@@ -1,11 +1,11 @@
 ---
-title: "Quickstart: Sign in to a web app & call an API - ASP.NET Core"
+title: Sign in to a web app & call an API using ASP.NET Core
 description: Learn how an ASP.NET Core web app uses Microsoft.Identity.Web to implement Microsoft sign-in using OpenID Connect and call Microsoft Graph
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: "devx-track-csharp,  scenarios:getting-started, languages:aspnet-core"
-ms.date: 01/18/2024
+ms.date: 01/30/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
@@ -15,13 +15,13 @@ ms.topic: quickstart
 
 # Quickstart: Sign in users and call the Microsoft Graph API from an ASP.NET Core web app
 
-This quickstart uses a sample ASP.NET Core web app to show you how to sign in users by using the [authorization code flow](./v2-oauth2-auth-code-flow.md) and call the Microsoft Graph API. The sample uses [Microsoft Authentication Library for .NET](/entra/msal/dotnet/) and [Microsoft Identity Web](/entra/msal/dotnet/microsoft-identity-web/) to handle authentication.
+In this quickstart, you use a sample ASP.NET Core web app to sign in users using the [authorization code flow](./v2-oauth2-auth-code-flow.md) and call the Microsoft Graph API. The sample uses [Microsoft Authentication Library for .NET](/entra/msal/dotnet/) and [Microsoft Identity Web](/entra/msal/dotnet/microsoft-identity-web/) to handle authentication.
 
 ## Prerequisites
 
 * An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet)
-* [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/)
+* A minimum requirement of [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet)
+* [Visual Studio Code](https://code.visualstudio.com/)
 
 ## Register the application and record identifiers
 
@@ -44,6 +44,11 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 * [Download the .zip file](https://github.com/Azure-Samples/ms-identity-docs-code-dotnet/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
 
 ## Create and upload a self-signed certificate
+
+To secure your application, you add a certificate to your application. This section shows you how to create a self-signed certificate and upload it to the application registration in the Microsoft Entra admin center. 
+
+> [!NOTE]
+> Self-signed certificates should only be used in development. In production, you should use a certificate from a trusted certificate authority.
 
 1. Using your terminal, use the following commands to navigate to create a self-signed certificate in the project directory.
 

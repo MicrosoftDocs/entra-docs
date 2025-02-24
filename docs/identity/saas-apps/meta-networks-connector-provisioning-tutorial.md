@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Configure Meta Networks Connector for automatic user provisioning with Microsoft Entra ID'
+title: Configure Meta Networks Connector for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Meta Networks Connector.
 
 author: thomasakelo
@@ -7,14 +7,14 @@ manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Meta Networks Connector so that I can streamline the user management process and ensure that users have the appropriate access to Meta Networks Connector.
 ---
 
-# Tutorial: Configure Meta Networks Connector for automatic user provisioning
+# Configure Meta Networks Connector for automatic user provisioning
 
 The objective of this tutorial is to demonstrate the steps to be performed in Meta Networks Connector and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Meta Networks Connector.
 
@@ -56,9 +56,6 @@ Before configuring and enabling automatic user provisioning, you should decide w
 	![Meta Networks Connector Admin Console](media/meta-networks-connector-provisioning-tutorial/apikey.png)
 
 1. Click on the plus sign on the upper right side of the screen to create a new **API Key**.
-
-	![Meta Networks Connector plus icon](media/meta-networks-connector-provisioning-tutorial/plusicon.png)
-
 1. Set the **API Key Name** and **API Key Description**.
 
 	:::image type="content" source="media/meta-networks-connector-provisioning-tutorial/keyname.png" alt-text="Screenshot of the Meta Networks Connector Admin Console with highlighted A P I key name and A P I key description values of Microsoft Entra ID and A P I key." border="false":::
@@ -86,8 +83,6 @@ Before configuring and enabling automatic user provisioning, you should decide w
 	![Meta Networks Connector configure SCIM](media/meta-networks-connector-provisioning-tutorial/configure.png)
 
 1. Navigate to **Administration > Settings > IdP tab**. Click on the name of the IdP configuration created in the previous steps to view the **IdP ID**. This **ID** is added to the end of **Tenant URL** while entering the value in **Tenant URL** field in the Provisioning tab of your Meta Networks Connector application.
-
-	![Meta Networks Connector IdP ID](media/meta-networks-connector-provisioning-tutorial/idpid.png)
 
 <a name='step-3-add-meta-networks-connector-from-the-azure-ad-application-gallery'></a>
 
@@ -200,6 +195,6 @@ Once you've configured provisioning, use the following resources to monitor your
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

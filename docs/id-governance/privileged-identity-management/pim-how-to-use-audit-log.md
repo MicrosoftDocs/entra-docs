@@ -20,7 +20,6 @@ Follow these steps to view the audit history for Microsoft Entra roles.
 
 ## View resource audit history
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Resource audit gives you a view of all activity associated with your Microsoft Entra roles.
 

@@ -13,8 +13,8 @@ ms.author: billmath
 
 ### In the Microsoft Entra admin center
 
-1. Create a cloud-only Global Administrator account on your Microsoft Entra tenant. This way, you can manage the configuration of your tenant should your on-premises services fail or become unavailable. Learn about [adding a cloud-only Global Administrator account](~/fundamentals/add-users.md). Completing this step is critical to ensure that you don't get locked out of your tenant.
-2. Add one or more [custom domain names](~/fundamentals/add-custom-domain.yml) to your Microsoft Entra tenant. Your users can sign in with one of these domain names.
+- [!INCLUDE [emergency-access-accounts](../definitions/emergency-access-accounts.md)]
+- Add one or more [custom domain names](~/fundamentals/add-custom-domain.yml) to your Microsoft Entra tenant. Your users can sign in with one of these domain names.
 
 ### In your on-premises environment
 
@@ -50,7 +50,6 @@ If you're using the  [Basic AD and Azure environment](~/identity/hybrid/cloud-sy
 
 ## Configure Microsoft Entra Cloud Sync
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Use the following steps to configure and start the provisioning:
 

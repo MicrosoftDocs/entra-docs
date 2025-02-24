@@ -6,7 +6,7 @@ description: Learn how to manage an external authentication method (EAM) for Mic
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 05/03/2024
+ms.date: 01/06/2025
 
 ms.author: justinha
 author: gregkmsft
@@ -33,6 +33,9 @@ To create an EAM, you need the following information from your external authenti
  
    >[!NOTE]
    >See [Configure a new external authentication provider with Microsoft Entra ID](concept-authentication-external-method-provider.md#configure-a-new-external-authentication-provider-with-microsoft-entra-id) to set up the App registration.
+   
+   >[!IMPORTANT]
+   > Ensure that the kid (Key ID) property is base64-encoded in both the JWT header of the id_token and in the JSON Web Key Set (JWKS) retrieved from the provider’s jwks_uri. This encoding alignment is essential for the seamless validation of token signatures during authentication processes. Misalignment can result in issues with key matching or signature validation.
 
 ## Manage an EAM in the Microsoft Entra admin center
 

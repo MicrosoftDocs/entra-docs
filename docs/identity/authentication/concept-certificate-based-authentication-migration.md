@@ -33,7 +33,6 @@ Watch this quick video demonstrating the migration from ADFS certificate-based a
 
 ## Enable Staged Rollout for certificate-based authentication on your tenant
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To configure Staged Rollout, follow these steps:
 

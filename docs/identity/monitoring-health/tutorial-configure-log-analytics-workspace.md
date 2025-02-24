@@ -57,8 +57,6 @@ Familiarize yourself with these articles:
 
 ## Configure Log Analytics
 
-[!INCLUDE [portal updates](../../includes/portal-update.md)]
-
 This procedure outlines how to configure a Log Analytics workspace for your audit and sign-in logs.
 To configure a Log Analytics workspace, you need to **create the workspace** and then **configure diagnostic settings**.
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Automate User provisioning into SAP HANA with Microsoft Entra ID'
+title: Automate User provisioning into SAP HANA with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAP HANA using SAP Cloud Identity Services.
 
 author: ZollnerdMSFT
@@ -7,14 +7,14 @@ manager: TeeEarls
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 10/01/2024
 ms.author: zollnerd
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAP HANA.
 ---
 
-# Tutorial: Configure Microsoft Entra ID and SAP Cloud Identity Services for automatic user provisioning into SAP HANA
+# Configure Microsoft Entra ID and SAP Cloud Identity Services for automatic user provisioning into SAP HANA
 
 This tutorial describes the steps you need to perform in SAP Cloud Identity Services and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users to SAP HANA using the Microsoft Entra provisioning service and SAP Cloud Identity Services. For important details on what Microsoft Entra provisioning does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
@@ -69,6 +69,6 @@ After you configure provisioning for users into your SAP applications, you shoul
 
 For more information on how to configure single sign-on to SAP SaaS and modern apps, see [enable SSO](~/id-governance/sap.md#enable-sso).
 
-## Next steps
+## Related content
 
 * [Configure SAP Cloud Identity Services for automatic user provisioning with Microsoft Entra ID](sap-cloud-platform-identity-authentication-provisioning-tutorial.md)

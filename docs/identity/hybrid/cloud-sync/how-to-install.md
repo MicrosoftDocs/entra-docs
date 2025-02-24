@@ -24,7 +24,7 @@ This article walks you through the installation process for the Microsoft Entra 
 
 For more information and an example, view the following video:
 
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWK5mR]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=f28ee688-8834-4d0b-a3e0-bc99a167e0ef]
 
 ## Group Managed Service Accounts
 A group Managed Service Account (gMSA) is a managed domain account that provides automatic password management, simplified service principal name (SPN) management, and the ability to delegate the management to other administrators. A gMSA also extends this functionality over multiple servers. Microsoft Entra Cloud Sync supports and recommends the use of a gMSA for running the agent. For more information, see [Group Managed Service Accounts](how-to-prerequisites.md#group-managed-service-accounts).

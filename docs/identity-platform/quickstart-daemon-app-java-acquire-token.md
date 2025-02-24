@@ -28,7 +28,6 @@ To run this sample, you need:
 
 ## Register and download your quickstart app
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ### Step 1: Register the application
 

@@ -27,7 +27,6 @@ When guest access is restricted, guests can view only their own user profile. Pe
 
 ## Update in the Microsoft Entra admin center
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 We’ve made changes to the existing Azure portal controls for guest user permissions.
 

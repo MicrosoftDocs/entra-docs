@@ -35,29 +35,35 @@ In this tutorial, you learn how to:
  
 After a successful sign-up flow, you can automatically sign in your users without initiating a fresh sign-in flow. 
  
-The `SignUpResult.Complete` returns `SignInContinuationState` object. The `SignInContinuationState` object provides access to `signIn()` method.  
+The `SignUpResult.Complete` returns `SignInContinuationState` object. The `SignInContinuationState` object provides access to `signIn(parameters)` method.  
  
 To sign up a user with email and password, then automatically sign them in, use the following code snippet:  
  
 ```kotlin 
-CoroutineScope(Dispatchers.Main).launch { 
-    val signUpActionResult = authClient.signUp( 
-        username = emailAddress, 
-        password = password 
-    ) 
+CoroutineScope(Dispatchers.Main).launch {
+    val parameters = NativeAuthSignUpParameters(username = email)
+    parameters.password = password
+    val actionResult: SignUpResult = authClient.signUp(parameters)
+
     if (SignUpActionResult is SignUpResult.CodeRequired) { 
         val nextState = signUpActionResult.nextState 
         val submitCodeActionResult = nextState.submitCode( 
             code = code 
         ) 
-        if (submitCodeActionResult is SignUpResult.Complete) { 
+        if (submitCodeActionResult is SignUpResult.Complete) {
             // Handle sign up success 
             val signInContinuationState = actionResult.nextState 
-            val signInActionResult = signInContinuationState.signIn() 
+
+            val parameters = NativeAuthSignInContinuationParameters()
+            val signInActionResult = signInContinuationState.signIn(parameters)
+
             if (signInActionResult is SignInResult.Complete) { 
                 // Handle sign in success
                 val accountState = signInActionResult.resultValue
-                val accessTokenResult = accountState.getAccessToken()
+
+                val getAccessTokenParameters = NativeAuthGetAccessTokenParameters()
+                val accessTokenResult = accountState.getAccessToken(getAccessTokenParameters)
+
                 if (accessTokenResult is GetAccessTokenResult.Complete) {
                     val accessToken = accessTokenResult.resultValue.accessToken
                     val idToken = accountState.getIdToken()
@@ -72,13 +78,13 @@ To retrieve ID token claims after sign-in, use the steps in [Read ID token claim
  
 ## Handle sign-in errors 
 
-The `SignInContinuationState.signIn()` method returns `SignInResult.Complete` after a successful sign-in. It can also return an error. 
+The `SignInContinuationState.signIn(parameters)` method returns `SignInResult.Complete` after a successful sign-in. It can also return an error. 
  
-To handle errors in `SignInContinuationState.signIn()`, use the following code snippet:  
+To handle errors in `SignInContinuationState.signIn(parameters)`, use the following code snippet:  
  
-```kotlin 
-val signInContinuationState = actionResult.nextState 
-val signInActionResult = signInContinuationState.signIn() 
+```kotlin
+val parameters = NativeAuthSignInContinuationParameters()
+val signInActionResult = signInContinuationState.signIn(parameters)
 
 when (signInActionResult) {
     is SignInResult.Complete -> {
@@ -95,7 +101,8 @@ when (signInActionResult) {
 
 private fun displayAccount(accountState: AccountState) {
     CoroutineScope(Dispatchers.Main).launch {
-        val accessTokenResult = accountState.getAccessToken()
+        val getAccessTokenParameters = NativeAuthGetAccessTokenParameters()
+        val accessTokenResult = accountState.getAccessToken(getAccessTokenParameters)
         if (accessTokenResult is GetAccessTokenResult.Complete) {
             val accessToken = accessTokenResult.resultValue.accessToken
             val idToken = accountState.getIdToken()

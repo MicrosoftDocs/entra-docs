@@ -58,14 +58,6 @@ Start the application by selecting **Start without debugging**.
     dotnet run --launch-profile https
     ```
 
-### [Visual Studio for Mac](#tab/visual-studio-for-mac)
-
-Start the application by selecting the **Play** icon.
-
->[!NOTE]
-> Visual Studio for Mac is scheduled for retirement by August 31, 2024 in accordance with Microsoft’s [Modern Lifecycle Policy](/lifecycle/policies/modern). Visual Studio for Mac 17.6 will continue to be supported until August 31, 2024, with servicing updates for security issues and updated platforms from Apple.
-> Refer to [What's happening to Visual Studio for Mac](/visualstudio/mac/what-happened-to-vs-for-mac) for more information.
-
 ---
 
 1. Depending on your IDE, you may need to enter the application URI into the browser, for example `https://localhost:7100`. After the sign-in window appears, select the account in which to sign in with. Ensure the account matches the criteria of the app registration.

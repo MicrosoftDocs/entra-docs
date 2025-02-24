@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 12/11/2024
+ms.date: 01/31/2025
 ms.author: barclayn
 ms.reviewer: krbain
 # Customer intent: As an IT admin, I want to understand group-based licensing, so I can effectively assign licenses to users in my organization.

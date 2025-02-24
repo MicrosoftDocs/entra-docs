@@ -3,9 +3,9 @@ title: Microsoft Global Secure Access built-in roles
 description: Learn about the built-in administrator roles you can assign to manage Global Secure Access permissions.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.topic: reference
-ms.date: 07/05/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
 ---
 
@@ -31,7 +31,7 @@ This article details the built-in Microsoft Entra roles you can assign for manag
 **Limited access**: This role grants permissions to perform specific tasks, such as configuring remote networks, setting up security profiles, managing traffic forwarding profiles, and viewing traffic logs and alerts. However, Global Secure Access admins can't configure Private Access, create or manage Conditional Access policies, manage user and group assignments, or configure Office 365 logging.
 
 > [!NOTE]
-> To perform additional Microsoft Entra tasks, such as editing Conditional Access policies, you need to be both a GSA administrator and have at least one other administrator role assigned to you. Consult the Role-based permissions table above.
+> To perform additional Microsoft Entra tasks, such as editing Conditional Access policies, you need to be both a Global Secure Access Administrator and have at least one other administrator role assigned to you. Consult the Role-based permissions table above.
 
 ### Conditional Access Administrator 
 

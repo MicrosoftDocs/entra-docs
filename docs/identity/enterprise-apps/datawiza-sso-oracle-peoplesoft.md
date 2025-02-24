@@ -84,9 +84,6 @@ To integrate Oracle PeopleSoft with Microsoft Entra ID:
 9. For **Public Domain**, for example use `https://ps-external.example.com`. For testing, you can use localhost DNS. If you aren't deploying DAP behind a load balancer, use the Public Domain port.
 10. For **Listen Port**, select the port that DAP listens on.
 11. For **Upstream Servers**, select the Oracle PeopleSoft implementation URL and port to be protected. 
-
-   ![Screenshot of entries under Add Application.](./media/datawiza-sso-oracle-peoplesoft/add-application.png)
-   
 12. Select **Next**.
 13. On the **Configure IdP** dialog, enter information.
 
@@ -99,8 +96,6 @@ To integrate Oracle PeopleSoft with Microsoft Entra ID:
 
 15. The DAP deployment page appears.
 16. Make a note of the deployment Docker Compose file. The file includes the DAP image, the Provisioning Key and Provision Secret, which pulls the latest configuration and policies from DCMC.
-
-   ![Screenshot of three sets of Docker information.](./media/datawiza-sso-oracle-peoplesoft/docker-compose-file.png)
 
 ## SSO and HTTP headers
 
@@ -147,7 +142,6 @@ The Oracle PeopleSoft application needs to recognize the user. Using a name, the
 
 ## Enable Microsoft Entra multifactor authentication
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To provide more security for sign-ins, you can enforce Microsoft Entra multifactor authentication. 
 
@@ -164,9 +158,6 @@ Learn more: [Tutorial: Secure user sign-in events with Microsoft Entra multifact
 To enable SSO in the Oracle PeopleSoft environment:
 
 1. Sign in to the PeopleSoft Console `http://{your-peoplesoft-fqdn}:8000/psp/ps/?cmd=start` using Admin credentials, for example, PS/PS.
-
-   ![Screenshot that shows Oracle PeopleSoft console.](./media/datawiza-sso-oracle-peoplesoft/peoplesoft-console.png)
-
 2. Add a default public access user to PeopleSoft.
 3. From the main menu, navigate to **PeopleTools > Security > User Profiles > User Profiles > Add a New Value**.
 4. Select **Add a new value**.

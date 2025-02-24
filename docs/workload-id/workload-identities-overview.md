@@ -5,7 +5,7 @@ author: rwike77
 manager: CelesteDG
 ms.service: entra-workload-id
 
-ms.topic: concept-article
+ms.topic: overview
 ms.date: 01/10/2024
 ms.author: ryanwi
 ms.reviewer: arluca, ilanas, naha

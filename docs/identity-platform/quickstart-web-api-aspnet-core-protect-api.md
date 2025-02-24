@@ -1,11 +1,11 @@
 ---
 title: "Quickstart: Protect an ASP.NET Core web API with the Microsoft identity platform"
-description: In this quickstart, you download and modify a code sample that demonstrates how to protect an ASP.NET Core web API by using the Microsoft identity platform for authorization.
+description: In this quickstart, you download and modify a code sample that demonstrates how to protect an ASP.NET Core web API by using the Microsoft identity platform.
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: devx-track-csharp, scenarios:getting-started, "languages:aspnet-core", mode-api, 
-ms.date: 01/31/2024
+ms.date: 02/14/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
@@ -26,7 +26,6 @@ This quickstart uses an ASP.NET Core web API code sample to demonstrate how to r
 
 ## Register the application and record identifiers
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To complete registration, provide the application a name and specify the supported account types. Once registered, the application **Overview** page displays the identifiers needed in the application source code.
 

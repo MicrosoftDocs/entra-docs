@@ -22,7 +22,6 @@ For the external user from another tenant to use the My Access portal link to re
 
 ## Share link to request an access package
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Identity Governance Administrator](../identity/role-based-access-control/permissions-reference.md#identity-governance-administrator).
     > [!TIP]

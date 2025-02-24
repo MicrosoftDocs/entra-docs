@@ -66,7 +66,6 @@ Scoping filters are configured as part of the attribute mappings for each Micros
 
 ### Create a scoping filter
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 

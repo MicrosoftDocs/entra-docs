@@ -33,8 +33,6 @@ procedureSection:
   - title: |
       Activate a role
     summary: |
-      [!INCLUDE [portal updates](~/includes/portal-update.md)]
-
       When you need to take on an Azure resource role, you can request activation by using the **My roles** navigation option in Privileged Identity Management.
 
       >[!NOTE]

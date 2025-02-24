@@ -1,7 +1,7 @@
 ---
 title: What's new in Microsoft Entra External ID
 description: New and updated documentation for the Microsoft Entra External ID.
-ms.date: 11/04/2024
+ms.date: 01/10/2025
 ms.service: entra-external-id
 ms.topic: whats-new
 
@@ -14,6 +14,13 @@ manager: CelesteDG
 # What's new in docs: External ID in workforce tenants
 
 Welcome to what's new in documentation for Microsoft Entra External ID in workforce tenants. This article lists new docs that were added and docs that were significantly updated in the last three months. To learn what's new with the Microsoft Entra ID service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
+
+## December 2024
+
+### Updated articles
+
+- [Leave an organization where you have a guest account](leave-the-organization.md) - Added additional support options
+- [Pricing structure and billing model for Microsoft Entra External ID](external-identities-pricing.md) - Updated pricing information
 
 ## October 2024
 
@@ -30,10 +37,3 @@ Welcome to what's new in documentation for Microsoft Entra External ID in workfo
 
 - [Configure cross-tenant access settings for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.yml) - Microsoft SharePoint dependency update
 - [Leave an organization where you have a guest account](leave-the-organization.md) - Editorial updates
-
-## August 2024
-
-### Updated articles
-
-- [Quickstart: Add a guest user with PowerShell](b2b-quickstart-invite-powershell.md) - PowerShell script updates
-- [Introduction to Microsoft Entra External ID](external-identities-overview.md) - Conditional access updates

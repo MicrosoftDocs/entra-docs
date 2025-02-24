@@ -1,20 +1,20 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Nomadic'
+title: Microsoft Entra integration with Nomadic
 description: Learn how to configure single sign-on between Microsoft Entra ID and Nomadic.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Nomadic so that I can control who has access to Nomadic, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Nomadic
+# Microsoft Entra integration with Nomadic
 
 In this tutorial, you learn how to integrate Nomadic with Microsoft Entra ID.
 Integrating Nomadic with Microsoft Entra ID provides you with the following benefits:

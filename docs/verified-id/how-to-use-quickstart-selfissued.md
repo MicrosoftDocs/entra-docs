@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-verified-id
 ms.topic: how-to
 
-ms.date: 11/11/2024
+ms.date: 01/17/2025
 ms.author: barclayn
 
 #Customer intent: As a verifiable credentials administrator, I want to create a verifiable credential for self-asserted claims scenario. 

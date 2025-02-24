@@ -15,7 +15,7 @@ ms.author: jfields
 This article describes how to onboard a Google Cloud Platform (GCP) project in Microsoft Entra Permissions Management.
 
 > [!NOTE]
-> You must be a [Permissions Management Administrator](../identity/role-based-access-control/delegate-by-task.md#permissions-management) to perform the tasks in this article.
+> You must be a [Permissions Management Administrator](../identity/role-based-access-control/permissions-reference.md#permissions-management-administrator) to perform the tasks in this article.
 
 ## Explanation
 
