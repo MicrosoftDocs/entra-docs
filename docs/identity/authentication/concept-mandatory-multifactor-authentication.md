@@ -120,6 +120,9 @@ If you're using a federated Identity Provider (IdP), such as Active Directory Fe
 
 ## Request more time to prepare for enforcement 
 
+> [!NOTE]
+> The date when Global Administrators can select the start date of enforcement has changed from Feb. 24, 2025 to Mar. 3, 2025.
+
 We understand that some customers may need more time to prepare for this MFA requirement. Microsoft is allowing customers with complex environments or technical barriers to postpone the enforcement for their tenants until September 30, 2025. 
 
 Starting on March 3, 2025, Global Administrators can go to the [Azure portal](https://aka.ms/managemfaforazure) to select the start date of enforcement for their tenant for admin portals in Phase 1. Global Administrators must [elevate access](https://aka.ms/enableelevatedaccess) before they can postpone the start date of MFA enforcement.  
