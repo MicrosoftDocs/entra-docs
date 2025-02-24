@@ -1,6 +1,6 @@
 ---
-title: What is Conditional Access report-only mode?
-description: How can report-only mode help with Conditional Access policy deployment?
+title: Analyzing Conditional Access policy impact
+description: Use available tools like report-only mode to analyze Conditional Access policy.
 
 ms.service: entra-id
 ms.subservice: conditional-access
@@ -12,11 +12,11 @@ author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: kvenkit
 ---
-# What is Conditional Access report-only mode?
+# Conditional Access report-only mode and policy impact
 
-Conditional Access is widely used by our customers to stay secure by applying the right access controls in the right circumstances. However one of the challenges with deploying a Conditional Access policy in your organization is determining the impact to end users. It can be difficult to anticipate the number and names of users impacted by common security initiatives. These initiatives might include: blocking legacy authentication, requiring multifactor authentication for a population of users, or implementing sign-in risk policies. 
+Conditional Access helps organizations stay secure by applying the right security access controls under the right circumstances. One of the challenges organization have is understanding why existing policies behave in a way that you or your users might not expect. This challenge also appears when you deploy new policies and attempt to forcast their impact on users. Why did a policy apply to one user but not to another? Why did one get blocked and another not? 
 
-Report-only mode is a new Conditional Access policy state that allows administrators to evaluate the impact of Conditional Access policies before enabling them in their environment.
+There are several options availalbe to administrators based on report-only mode. Report-only mode is a policy state allowing administrators to test most Conditional Access policies before enabling them.
 
 - Conditional Access policies can be evaluated in report-only mode except for items included in the "User Actions" scope.
 - During sign-in, policies in report-only mode are evaluated but not enforced.
@@ -26,13 +26,13 @@ Report-only mode is a new Conditional Access policy state that allows administra
 > [!VIDEO https://www.youtube.com/embed/NZbPYfhb5Kc]
 
 > [!WARNING]
-> Policies in report-only mode that require compliant devices may prompt users on Mac, iOS, and Android to select a device certificate during policy evaluation, even though device compliance is not enforced. These prompts may repeat until the device is made compliant. To prevent end users from receiving prompts during sign-in, exclude device platforms Mac, iOS and Android from report-only policies that perform device compliance checks. Note that report-only mode is not applicable for Conditional Access policies with "User Actions" scope.
+> Policies in report-only mode that require a compliant device might prompt users on macOS, iOS, and Android devices to select a device certificate during policy evaluation, even though device compliance isn't enforced. These prompts might repeat until the device is made compliant. To prevent end users from receiving prompts during sign-in, exclude device platforms Mac, iOS, and Android from report-only policies that perform device compliance checks.
 
-![Screenshot showing the report-only tab in a sign-in log.](./media/concept-conditional-access-report-only/report-only-detail-in-sign-in-log.png)
+<a name='policy-results'></a>
 
-## Policy results
+## Results
 
-When a policy in report-only mode is evaluated for a given sign-in, there are four new possible result values:
+When a policy in report-only mode is evaluated for a given sign-in, there are four possible results:
 
 | Result | Description |
 | --- | --- |
@@ -41,10 +41,37 @@ When a policy in report-only mode is evaluated for a given sign-in, there are fo
 | Report-only: User action required | All configured policy conditions were satisfied but user action would be required to satisfy the required grant controls or session controls. With report-only mode, the user isn't prompted to satisfy the required controls. For example, users aren't prompted for multifactor authentication challenges or terms of use.   |
 | Report-only: Not applied | Not all configured policy conditions were satisfied. For example, the user is excluded from the policy or the policy only applies to certain trusted named locations. |
 
-## Conditional Access Insights workbook
+## Reviewing results
 
-Administrators have the capability to create multiple policies in report-only mode, so it's necessary to understand both the individual impact of each policy and the combined impact of multiple policies evaluated together. The new Conditional Access Insights workbook enables administrators to visualize Conditional Access queries and monitor the impact of a policy for a given time range, set of applications, and users. 
- 
+There are several options administrators might use to review the potential results of policies in their environment:
+
+- Workbooks
+- Sign-in logs
+- Policy impact (Preview)
+
+### Policy impact (Preview)
+
+The polcy impact view of Conditional Access allows those with at least the Security Reader role the ability to see a snapshot of information about the potential or existing impacts of policies in your organization. This functionality allows you to explore impact over a period of the past 24 hours, 7 days, or 1 month. In addition you can see and link to a sampling of sign-in events you can drill into.
+
+:::image type="content" source="media/concept-conditional-access-report-only/policy-impact-example-report-only.png" alt-text="Screenshot of" lightbox="media/concept-conditional-access-report-only/policy-impact-example-report-only.png":::
+
+<a name='conditional-access-insights-workbook'></a>
+
+### Workbooks
+
+Administrators have the capability to create multiple policies in report-only mode, so it's necessary to understand both the individual impact of each policy and the combined impact of multiple policies evaluated together. The [Conditional Access Insights and Reporting workbook](howto-conditional-access-insights-reporting) enables administrators to visualize Conditional Access queries and monitor the impact of a policy for a given time range, set of applications, and users. Administrators can customize workbooks to suit their speicfic needs.
+
+### Sign-in logs
+
+For much deeper evaluation of Conditional Access policies and their application at a specific sign-in, administrators might choose to investigate individual sign-in events. Each of these events includes details of what Conditional Access policies were enabled versus were in report-only mode, and applied or did not apply. 
+
+![Screenshot showing the report-only tab in a sign-in log.](./media/concept-conditional-access-report-only/report-only-detail-in-sign-in-log.png)
+
+## Using these options
+
+
+After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
+
 ## Related content
 
 - [Configure report-only mode on a Conditional Access policy](howto-conditional-access-insights-reporting.md)
