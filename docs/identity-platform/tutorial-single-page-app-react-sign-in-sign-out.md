@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Sign in and sign out of a React single-page app"
-description: description: Learn how to test sign-in and sign-out in a React single-page app (SPA) using the Microsoft identity platform.
+description: Learn how to test sign-in and sign-out in a React single-page app (SPA) using the Microsoft identity platform.
 author: OwenRichards1
 ms.author: owenrichards
 ms.date: 09/25/2023
