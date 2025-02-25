@@ -6,7 +6,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: include
 # Purpose:
-# This is used to include the content for creating and assigning a user to application into SaaS apps tutorials
+# This is used to include the content for prerequisites in SaaS apps articles
 ---
 
 - A Microsoft Entra user account with an active subscription. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
