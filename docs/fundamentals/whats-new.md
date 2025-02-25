@@ -70,9 +70,11 @@ The feature has a ‘preview’ tag until it's generally available. For more inf
 **Service category:** B2C - Consumer Identity Management    
 **Product capability:** B2B/B2C    
 
-By setting up federation with a custom-configured SAML/WS-Fed identity provider that supports the SAML 2.0 or WS-Fed protocol, you enable your users to sign up and sign in to your applications using their existing accounts from the federated external provider.
+By setting up federation with a custom-configured identity provider that supports the SAML 2.0 or WS-Fed protocol, you enable your users to sign up and sign in to your applications using their existing accounts from the federated external provider.
 
-This feature also includes domain-based federation, so a user who enters an email address on the sign-in page that matches a predefined domain in any of the external identity providers will be redirected to authenticate with that identity provider. If they have been invited, any pending invitation will be redeemed. If they do not have an account, they will be prompted to create one. For more information, see: [Custom SAML/WS-Fed identity providers (preview)](../external-id/customers/concept-authentication-methods-customers.md#custom-samlws-fed-identity-providers-preview).
+This feature also includes domain-based federation, so a user who enters an email address on the sign-in page that matches a predefined domain in any of the external identity providers will be redirected to authenticate with that identity provider.
+
+For more information, see: [Custom SAML/WS-Fed identity providers (preview)](../external-id/customers/concept-authentication-methods-customers.md#custom-samlws-fed-identity-providers-preview).
 
 ---
 
