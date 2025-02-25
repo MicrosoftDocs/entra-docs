@@ -133,7 +133,7 @@ Follow these steps to enable Microsoft Entra SSO.
     ![Configure Single Sign-On Edit](./media/salesforce-tutorial/sf-admin-sso-edit.png)
 
     > [!NOTE]
-    > If you're unable to enable Single Sign-On settings for your Salesforce account, you may need to contact [Salesforce Client support team](https://help.salesforce.com/support).
+    > If you're unable to enable single sign-on settings for your Salesforce account, you may need to contact [Salesforce Client support team](https://help.salesforce.com/support).
 
 1. Select **SAML Enabled**, and then select **Save**.
 
