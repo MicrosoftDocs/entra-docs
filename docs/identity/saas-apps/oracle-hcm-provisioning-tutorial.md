@@ -319,7 +319,7 @@ To configure writeback, you need to use the Oracle HCM SCIM APIs. The [Oracle HC
 
 To set up writeback, you need to configure an outbound provisioning job to your Oracle HCM tenant. To configure writeback, you need the following info: 
 
-- **Admin username and password:** You need the details of the admin account that has access to Oracle HCM and can invoke the HCM [User update API](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdocs.oracle.com%2Fen%2Fcloud%2Fsaas%2Fapplications-common%2F24a%2Ffarca%2FExternal_IDM_as_Source_For_Email.html&data=05%7C02%7Crahunair%40microsoft.com%7Ca7d5bec5410a484e4d6208dcbcc93506%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C638592819627654667%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=F094mAefz1hjtSJY0nX4K%2FHCLIRD%2F1WeHMX7KuqG350%3D&reserved=0).
+- **Admin username and password:** You need the details of the admin account that has access to Oracle HCM and can invoke the HCM [User update API](https://docs.oracle.com/en/cloud/saas/applications-common/25a/farca/index.html).
 
 
 Follow these steps to configure the writeback job to Oracle HCM using the Oracle Fusion ERP connector: 
@@ -328,7 +328,7 @@ Follow these steps to configure the writeback job to Oracle HCM using the Oracle
 
 1.  Refer to [Oracle Fusion ERP](https://go.microsoft.com/fwlink/?linkid=2286440) to configure writeback using the Oracle Fusion ERP app.
 
-1.  When you're prompted to enter a URL and admin username and password, use the URL specified in the instructions and enter the admin username and password of the account that has access to Oracle HCM and can invoke HCM [User update API](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdocs.oracle.com%2Fen%2Fcloud%2Fsaas%2Fapplications-common%2F24a%2Ffarca%2FExternal_IDM_as_Source_For_Email.html&data=05%7C02%7Crahunair%40microsoft.com%7Ca7d5bec5410a484e4d6208dcbcc93506%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C638592819627654667%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C0%7C%7C%7C&sdata=F094mAefz1hjtSJY0nX4K%2FHCLIRD%2F1WeHMX7KuqG350%3D&reserved=0).
+1.  When you're prompted to enter a URL and admin username and password, use the URL specified in the instructions and enter the admin username and password of the account that has access to Oracle HCM and can invoke HCM [User update API](https://docs.oracle.com/en/cloud/saas/applications-common/25a/farca/index.html).
 
 1.  Follow the guidance in the Oracle Fusion ERP tutorial to edit attribute mappings and provision specific users back to Oracle HCM.
 
