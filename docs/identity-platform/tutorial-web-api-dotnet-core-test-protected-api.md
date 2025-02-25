@@ -32,15 +32,15 @@ In this tutorial, you learn how to:
 
 ## Register the daemon app
 
-[!INCLUDE [Register daemon app](../external-id/includes/register-app/register-daemon-app.md)]
+[!INCLUDE [Register daemon app](../external-id/customers/includes/register-app/register-daemon-app.md)]
 
-[!INCLUDE [Add app client secret](../external-id/includes/register-app/add-app-client-secret.md)]
+[!INCLUDE [Add app client secret](../external-id/customers/includes/register-app/add-app-client-secret.md)]
 
 ## Assign app role to your daemon app
 
 Apps authenticating by themselves require app permissions.
 
-[!INCLUDE [Add app client secret](../external-id/includes/register-app/grant-api-permissions-app-permissions.md)]
+[!INCLUDE [Add app client secret](../external-id/customers/includes/register-app/grant-api-permissions-app-permissions.md)]
 
 ## Write code
 
@@ -110,4 +110,4 @@ Apps authenticating by themselves require app permissions.
 ## Related content
 
 - [How to call a protected Web API with cURL](howto-call-a-web-api-with-curl.md)
-- [How to call a protected web API with Insomnia](howto-call-a-web-api-with-insomnia.md)
+- [How to call a protected web API with Insomnia](howto-call-a-web-api-with-rest-client.md)
