@@ -21,7 +21,7 @@ The Global Secure Access client runs in the background and routes relevant netwo
 
 ## Launch the advanced diagnostics tool
 To launch the advanced diagnostics tool:
-1. Right-select the **Global Secure Access client** icon in the system tray.
+1. Right-click the **Global Secure Access client** icon in the system tray.
 1. Select **Advanced Diagnostics**. If enabled, User Account Control (UAC) prompts for elevation of privileges.
 
 ## Overview tab
@@ -155,5 +155,5 @@ The following files are collected:
 In some instances, you need to investigate traffic within the Global Secure Access service tunnel. By default, a network capture only shows encrypted traffic. Instead, analyze the network capture created by Global Secure Access advanced log collection in a network traffic analyzer. 
 
 ### Analyze Global Secure Access client logs on a different device than where they were collected
-In many cases, you need to analyze the data your users collect using your own device. To accomplish this, open the Global Secure Access client on your device, open Advanced Diagnostic tool, and then select the folder icon to the far right of the menu bar. From here, you can navigate to the zip file or the GlobalSecureAccess-Trace.etl file. Loading the zip file also loads information including tenant ID, device ID, client version, health check, and forwarding profile rules as if you were troubleshooting locally on the device used for data collection.
+In many cases, you might need to analyze the data your users collect using your own device. To accomplish this, open the Global Secure Access client on your device, open Advanced Diagnostic tool, and then select the folder icon to the far right of the menu bar. From here, you can navigate to the zip file or the GlobalSecureAccess-Trace.etl file. Loading the zip file also loads information including tenant ID, device ID, client version, health check, and forwarding profile rules as if you were troubleshooting locally on the device used for data collection.
 
