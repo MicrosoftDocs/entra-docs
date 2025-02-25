@@ -5,7 +5,7 @@ description: Create a custom Conditional Access policy to require all users do m
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: how-to
-ms.date: 02/03/2025
+ms.date: 02/24/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -48,7 +48,10 @@ The following steps help create a Conditional Access policy to require all users
 1. Give your policy a name. We recommend that organizations create a meaningful standard for the names of their policies.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**
-   1. Under **Exclude** select **Users and groups** and choose your organization's emergency access or break-glass accounts.
+   1. Under **Exclude**: 
+      1. Select **Users and groups** 
+         1. Choose your organization's emergency access or break-glass accounts.
+         1. If you use hybrid identity solutions like Microsoft Entra Connect or Microsoft Entra Connect Cloud Sync, select **Directory roles**, then select **Directory Synchronization Accounts**
       1. You might choose to exclude your guest users if you're targeting them with a [guest user specific policy](policy-guests-mfa-strength.md). 
 1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include**, select **All resources (formerly 'All cloud apps')**.
 
