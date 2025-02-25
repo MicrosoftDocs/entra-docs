@@ -51,15 +51,15 @@ SAP Cloud Identity Services acts as a Proxy Identity Provider to other SAP appli
 
 The following diagram illustrates the trust relationship:
 
-![Diagram of the architecture of trust relationships between SAP applications, SAP Cloud Identity Services and Microsoft Entra](./media/sap-hana-cloud-platform-identity-authentication-tutorial/architecture-01.png)
+![Diagram of the architecture of trust relationships between SAP applications, SAP Cloud Identity Services and Microsoft Entra.](./media/sap-hana-cloud-platform-identity-authentication-tutorial/architecture-01.png)
 
 With this setup, your SAP Cloud Identity Services is configured as one or more applications in Microsoft Entra ID. Microsoft Entra is configured as a **Corporate Identity Provider** in your SAP Cloud Identity Services.
 
 All SAP applications and services that you want to provide single sign-in for this way are subsequently configured as applications in SAP Cloud Identity Services.
 
-![Diagram of the architecture of SSO and provisioning flow between SAP applications, SAP Cloud Identity Services and Microsoft Entra](./media/sap-hana-cloud-platform-identity-authentication-tutorial/architecture-02.png)
+![Diagram of the architecture of SSO and provisioning flow between SAP applications, SAP Cloud Identity Services and Microsoft Entra.](./media/sap-hana-cloud-platform-identity-authentication-tutorial/architecture-02.png)
 
-User assignment to a SAP Cloud Identity Services application role in Microsoft Entra controls Microsoft Entra token issuance to SAP Cloud Identity Services. The authorization for granting access to specific SAP applications and services, and role assignments for those SAP applications, takes place in SAP Cloud Identity Services and the applications themselves. This authorization can be based on user and groups provisioned from Microsoft Entra ID.
+User assignment to an SAP Cloud Identity Services application role in Microsoft Entra controls Microsoft Entra token issuance to SAP Cloud Identity Services. The authorization for granting access to specific SAP applications and services, and role assignments for those SAP applications, takes place in SAP Cloud Identity Services and the applications themselves. This authorization can be based on user and groups provisioned from Microsoft Entra ID.
 
 > [!NOTE]
 > Currently only Web SSO has been tested by both parties. The flows that are necessary for App-to-API or API-to-API communication should work but have not been tested yet. They will be tested during subsequent activities.
