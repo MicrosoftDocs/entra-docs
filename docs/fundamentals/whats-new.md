@@ -39,15 +39,6 @@ The authentication methods migration guide in the Microsoft Entra Admin Center l
 
 ---
 
-### Public Preview - Conditional Access What If API
-
-**Type:** New feature    
-**Service category:** Conditional Access    
-**Product capability:** Access Control    
-
-The Conditional access What If API can be used to programmatically test the impact of conditional access policies on user and workload identity sign-ins.
-
----
 
 ### Public Preview - Enhanced user management in Admin Center UX
 
