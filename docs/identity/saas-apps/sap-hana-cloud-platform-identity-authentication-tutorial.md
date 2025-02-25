@@ -40,21 +40,21 @@ In this tutorial, you configure and test Microsoft Entra single sign-on in a tes
 * SAP Cloud Identity Services supports **SP** and **IDP** initiated SSO.
 * SAP Cloud Identity Services supports [Automated user provisioning](sap-cloud-platform-identity-authentication-provisioning-tutorial.md).
 
-Before you dive into the technical details, it's vital to understand the concepts you're going to look at. The SAP Cloud Identity Services and Active Directory Federation Services enable you to implement SSO across applications or services that are protected by Microsoft Entra ID (as an IdP) with SAP applications and services that are protected by SAP Cloud Identity Services.
+Before you dive into the technical details, it's vital to understand the concepts you're going to look at. SAP Cloud Identity Services enable you to implement SSO across SAP applications and services, with the same SSO experience as non-SAP applications integrated directly with Microsoft Entra ID as an Identity Provider.
 
-Currently, SAP Cloud Identity Services acts as a Proxy Identity Provider to SAP applications. Microsoft Entra ID in turn acts as the leading Identity Provider in this setup. 
+SAP Cloud Identity Services acts as a Proxy Identity Provider to SAP applications. Microsoft Entra ID in turn acts as the leading Identity Provider in this setup.
 
-The following diagram illustrates this relationship:
+The following diagram illustrates the trust relationship:
 
-![Creating a Microsoft Entra test user](./media/sap-hana-cloud-platform-identity-authentication-tutorial/architecture-01.png)
+![Diagram of the architecture of trust relationships between SAP applications, SAP Cloud Identity Services and Microsoft Entra](./media/sap-hana-cloud-platform-identity-authentication-tutorial/architecture-01.png)
 
-With this setup, your SAP Cloud Identity Services tenant is configured as a trusted application in Microsoft Entra ID.
+With this setup, your SAP Cloud Identity Services is configured as an application in Microsoft Entra ID.
 
-All SAP applications and services that you want to protect this way are subsequently configured in the SAP Cloud Identity Services management console.
+All SAP applications and services that you want to provide single sign-in for this way are subsequently configured in the SAP Cloud Identity Services admin page as applications in SAP Cloud Identity Services.
+
+![Diagram of the architecture of SSO and provisioning flow between SAP applications, SAP Cloud Identity Services and Microsoft Entra](./media/sap-hana-cloud-platform-identity-authentication-tutorial/architecture-02.png)
 
 Therefore, the authorization for granting access to SAP applications and services needs to take place in SAP Cloud Identity Services (as opposed to Microsoft Entra ID).
-
-By configuring SAP Cloud Identity Services as an application through the Microsoft Entra Marketplace, you don't need to configure individual claims or SAML assertions.
 
 > [!NOTE]
 > Currently only Web SSO has been tested by both parties. The flows that are necessary for App-to-API or API-to-API communication should work but have not been tested yet. They will be tested during subsequent activities.
