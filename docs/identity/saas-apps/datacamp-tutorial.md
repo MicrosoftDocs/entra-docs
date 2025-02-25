@@ -79,15 +79,15 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Basic SAML Configuration** section, if you wish to configure the application in **IDP** initiated mode, perform the following steps:
 
     a. In the **Identifier** text box, type a URL using the following pattern:
-    `https://www.datacamp.com/groups/<group-identifier>/sso/saml`
+    `https://www.datacamp.com/groups/<group-slug>/sso/saml`
 
     b. In the **Reply URL** text box, type a URL using the following pattern:
-    `https://www.datacamp.com/groups/<group-identifier>/sso/saml/consume`
+    `https://auth.datacamp.com/realms/datacamp-users/broker/b2b-sso-group-<group-identifier>/endpoint/clients/datacamp-saml-login`
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+1. Click **Set additional URLs** and perform the following step:
 
     In the **Sign-on URL** text box, type the URL:
-    `https://www.datacamp.com/users/sign_in`
+    `https://auth.datacamp.com/realms/datacamp-users/broker/b2b-sso-group-<group-identifier>/endpoint`
 
 	> [!NOTE]
 	> These values are not real. Update these values with the actual Identifier and Reply URL. Contact [DataCamp Client support team](https://support.datacamp.com/hc/en-us) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
@@ -95,13 +95,6 @@ Follow these steps to enable Microsoft Entra SSO.
 1. DataCamp application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
 	![image](common/default-attributes.png)
-
-1. In addition to above, DataCamp application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
-
-	| Name | Source Attribute|
-	| ------------| --------- |
-	| first_name | user.givenname |
-	| last_name | user.surname |
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Raw)** and select **Download** to download the certificate and save it on your computer.
 
