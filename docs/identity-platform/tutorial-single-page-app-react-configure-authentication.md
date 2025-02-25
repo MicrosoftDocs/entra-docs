@@ -26,46 +26,6 @@ In this tutorial:
 
 * Completion of the prerequisites and steps in [Tutorial: Prepare an application for authentication](tutorial-single-page-app-react-prepare-app.md).
 
-## Add a landing page to the application
-
-`Index.html` is the entry point for your React app. This page will render when the app is loaded in the browser. The content of this page is static, but the content of the app itself will be dynamic and change based on the user's authentication state.
-
-1. Open *public/index.html* and replace the existing code with the following code snippet
-
-    ```html
-    <!DOCTYPE html>
-    <html lang="en">
-      <head>
-        <meta charset="utf-8" />
-        <link rel="icon" href="%PUBLIC_URL%/favicon.svg" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
-        <meta
-          name="description"
-          content="Web site created using create-react-app"
-        />
-        <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-        <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-
-        <title>MSAL React Sample | Microsoft Entra External ID</title>
-      </head>
-      <body>
-        <noscript>You need to enable JavaScript to run this app.</noscript>
-        <div id="root"></div>
-        <!--
-          This HTML file is a template.
-          If you open it directly in the browser, you will see an empty page.
-
-          You can add webfonts, meta tags, or analytics to this file.
-          The build step will place the bundled scripts into the <body> tag.
-
-          To begin the development, run `npm start` or `yarn start`.
-          To create a production bundle, use `npm run build` or `yarn build`.
-        -->
-      </body>
-    </html>
-    ```
-
 ## Add functional components to the application
 
 Functional components are the building blocks of React apps, and are used to build the sign-in and sign-out experiences in your application. 
@@ -230,7 +190,7 @@ The `DataDisplay` component will be used to display the user's profile informati
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Tutorial: Call an API from a React single-page app](tutorial-single-page-app-react-sign-in-sign-out.md)
+> [Tutorial: Sign in and sign out of a React SPA](tutorial-single-page-app-react-sign-in-sign-out.md)
 
 
 

@@ -271,7 +271,8 @@ Now that all the required code snippets have been added, the application can be 
     ```console
     npm start
     ```
-1. Copy the `https` URL that appears in the terminal, for example, `https://localhost:3000`, and paste it into a browser. We recommend using a private or incognito browser session.
+
+1. Copy the `http` URL that appears in the terminal, for example, `http://localhost:3000`, and paste it into a browser. We recommend using a private or incognito browser session.
 1. Sign-in with an account registered to the tenant.
 1. An interface similar to the following screenshot appears, indicating that you have signed in to the application. If you have added the claims table, you can view the claims returned from the ID token.
 

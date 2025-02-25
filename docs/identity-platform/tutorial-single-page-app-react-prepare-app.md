@@ -54,37 +54,6 @@ In this tutorial, you'll:
 
 ## Create a new React project
 
-Use the following tabs to create a React project within the IDE.
-
-### [Visual Studio](#tab/visual-studio)
-
-1. Open Visual Studio, and then select **Create a new project**.
-1. Search for and choose the **Standalone JavaScript React Project** template, and then select **Next**.
-1. Enter a name for the project, such as *reactspalocal*.
-1. Choose a location for the project or accept the default option, and then select **Next**.
-1. In **Additional information**, select **Create**.
-1. From the toolbar, select **Start Without Debugging** to launch the application. A web browser will open with the address `http://localhost:3000/` by default. The browser remains open and re-renders for every saved change.
-1. Create additional folders and files to achieve the following folder structure:
-
-    ```javascript
-    ├─── public
-    │   └─── index.html
-    └───src
-        ├─── components
-        │   └─── PageLayout.jsx
-        │   └─── ProfileData.jsx
-        │   └─── SignInButton.jsx
-        │   └─── SignOutButton.jsx
-        └── App.css
-        └── App.jsx
-        └── authConfig.js
-        └── graph.js
-        └── index.css
-        └── index.js
-    ```
-
-### [Visual Studio Code](#tab/visual-studio-code)
-
 1. Open Visual Studio Code, select **File** > **Open Folder...**. Navigate to and select the location in which to create your project.
 1. Open a new terminal by selecting **Terminal** > **New Terminal**.
 1. Run the following commands to create a new React project with the name *reactspalocal*, change to the new directory and start the React project. A web browser will open with the address `http://localhost:3000/` by default. The browser remains open and re-renders for every saved change.
@@ -119,13 +88,6 @@ Use the following tabs to create a React project within the IDE.
 ## Install identity and bootstrap packages
 
 Identity related **npm** packages must be installed in the project to enable user authentication. For project styling, **Bootstrap** will be used.
-
-### [Visual Studio](#tab/visual-studio)
-
-1. In the **Solution Explorer**, right-click the **npm** option and select **Install new npm packages**.
-1. Search for **@azure/MSAL-browser**, then select **Install Package**. Repeat for **@azure/MSAL-react**.
-1. Search for and install **react-bootstrap**.
-1. Select **Close**.
 
 ### [Visual Studio Code](#tab/visual-studio-code)
 

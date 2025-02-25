@@ -1,6 +1,6 @@
 ---
-title: "Tutorial: Call an API from a React single-page app"
-description: Call an API from a React single-page app.
+title: "Tutorial: Sign in and sign out of a React single-page app"
+description: description: Learn how to test sign-in and sign-out in a React single-page app (SPA) using the Microsoft identity platform.
 author: OwenRichards1
 ms.author: owenrichards
 ms.date: 09/25/2023
@@ -10,9 +10,9 @@ ms.topic: tutorial
 #Customer intent: As a React developer, I want to know how to create a user interface and access the Microsoft Graph API
 ---
 
-# Tutorial: Call the Microsoft Graph API from a React single-page app
+# Tutorial: Sign in and sign out of a React SPA
 
-Before being able to interact with the single-page app (SPA), we need to initiate an API call to Microsoft Graph and create the user interface (UI) for the application. After this is added, we can sign in to the application and get profile data information from the Microsoft Graph API.
+This tutorial is the final part of a series that demonstrates building a React single-page application (SPA) and preparing it for authentication using the Microsoft identity platform. In [part 2 of this series](tutorial-single-page-app-react-configure-authentication.md), you added functional components to a React SPA and built a responsive UI. This final step shows you how to test sign-in and sign-out functionality in your app.
 
 In this tutorial, you'll;
 
@@ -32,11 +32,6 @@ To add the feature of a table that can display claims returned from the ID token
 1. Open *utils/claimUtils.js* and add the following code snippet:
 
 ```javascript
-/**
- * Populate claims table with appropriate description
- * @param {Object} claims ID token claims
- * @returns claimsObject
- */
 export const createClaimsTable = (claims) => {
     let claimsObj = {};
     let index = 0;
@@ -249,7 +244,8 @@ Now that all the required code snippets have been added, the application can be 
     ```console
     npm start
     ```
-1. Copy the `https` URL that appears in the terminal, for example, `https://localhost:3000`, and paste it into a browser. We recommend using a private or incognito browser session.
+
+1. Copy the `http` URL that appears in the terminal, for example, `http://localhost:3000`, and paste it into a browser. We recommend using a private or incognito browser session.
 1. Sign-in with an account registered to the tenant.
 1. An interface similar to the following screenshot appears, indicating that you have signed in to the application. If you have added the claims table, you can view the claims returned from the ID token.
 
