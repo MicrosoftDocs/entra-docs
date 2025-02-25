@@ -197,7 +197,7 @@ For SMS verification, the following region codes require an opt-in. This means t
 | 1869       | Saint Kitts and Nevis |
 | 1876       | Jamaica |
 | 1767       | Dominica |
-| 970        | Palestine |
+| 970        | Palestinian Authority |
 | 880        | Bangladesh |
 | 1868       | Trinidad and Tobago |
 | 1441       | Bermuda |
