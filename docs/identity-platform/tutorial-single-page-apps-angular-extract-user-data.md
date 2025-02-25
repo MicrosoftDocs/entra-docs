@@ -222,7 +222,7 @@ You will configure your Angular app to display the claims in your ID token upon 
             populateClaim(
               key,
               claims[key],
-              'Available as an optional claim, it lets you know what the type of user (homed, guest) is. For example, for an individual's access to their data you might not care for this claim, but you would use this along with tenant id (tid) to control access to say a company-wide dashboard to just employees (homed users) and not contractors (guest users).',
+              'Available as an optional claim, it lets you know what the type of user (homed, guest) is. For example, for an individuals access to their data you might not care for this claim, but you would use this along with tenant id (tid) to control access to say a company-wide dashboard to just employees (homed users) and not contractors (guest users).',
               claimsTable
             );
             break;
