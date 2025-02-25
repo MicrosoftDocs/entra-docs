@@ -24,8 +24,7 @@ With access reviews, you can easily ensure that users or guests have appropriate
 [!INCLUDE [Microsoft Entra ID Governance license](../includes/entra-entra-governance-license.md)]
  
 ## Create and perform an access review for users
-First, you must be assigned one of the following roles:
-- Global Administrator
+First, you must be assigned as at least one of the following roles:
 - User Administrator
 - Identity Governance Administrator 
 - Privileged Role Administrator (for reviews of role-assignable groups only)
