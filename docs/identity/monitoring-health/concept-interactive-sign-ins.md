@@ -32,14 +32,20 @@ Interactive sign-ins are performed *by* a user. They provide an authentication f
 - A user provides a biometric gesture to unlock their Windows PC with Windows Hello for Business.
 - A user is federated to Microsoft Entra ID with an AD FS SAML assertion.
 
-In addition to the default fields, the interactive sign-in log also shows:
+In addition to the default fields, the interactive sign-in logs also show:
 
 - The sign-in location
 - Whether Conditional Access was applied
+- Cross-tenant access details, such as home and resource tenant IDs
 
 > [!NOTE]
 > Entries in the sign-in logs are system generated and can't be changed or deleted.
+
 ## Special considerations
+
+### Partner access to downstream tenant resources
+
+The interactive sign-in logs now include details about when a partner accesses a downstream tenant's resources. By looking at the **Cross tenant access type**, **Home tenant ID**, and **Resource tenant ID** columns, which are now visible by default, you can see when a partner logs into a downstream tenant resource.
 
 ### Non-interactive sign-ins on the interactive sign-in logs
 
