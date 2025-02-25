@@ -33,7 +33,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 > [!NOTE]
 > This integration is also available to use from the Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from the public cloud environment.
 
-![Diagram of the architecture of SSO and provisioning flow between SAP applications, SAP Cloud Identity Services and Microsoft Entra](./media/sap-cloud-platform-identity-provisioning-tutorial/architecture.png)
+![Diagram of the architecture of SSO and provisioning flow between SAP applications, SAP Cloud Identity Services and Microsoft Entra](./media/sap-cloud-platform-identity-authentication-provisioning-tutorial/architecture.png)
 
 If you do not yet have users in Microsoft Entra ID, then start with the tutorial [plan deploying Microsoft Entra for user provisioning with SAP source and target apps](~/identity/app-provisioning/plan-sap-user-source-and-target.md). That tutorial illustrates how to connect Microsoft Entra with authoritative sources for the list of workers in an organization, such as SAP SuccessFactors. It also shows you how to use Microsoft Entra to set up identities for those workers, so they can sign in to one or more SAP applications, such as SAP ECC or SAP S/4HANA.
 
