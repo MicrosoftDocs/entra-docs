@@ -9,14 +9,14 @@ ms.service: identity-platform
 
 ms.topic: tutorial
 
-#Customer intent: As an application developer I want to protect the endpoint of my API and run it to ensure it is listening for HTTP requests
+#Customer intent: As an application developer I want to build an ASP.NET web API, protect its endpoints, and run it to ensure it's listening for HTTP requests
 ---
 
 # Tutorial: Build and secure an ASP.NET Core web API with the Microsoft identity platform
 
 [!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
 
-This tutorial series demonstrates how to protect an ASP.NET Core web API with the Microsoft identity platform to limit it's access to only authorized users and client apps.The web API you build publishes both delegated permissions (scopes) and application permissions (app roles).
+This tutorial series demonstrates how to protect an ASP.NET Core web API with the Microsoft identity platform to limit it's access to only authorized users and client apps.The web API you build uses both delegated permissions (scopes) and application permissions (app roles).
 
 In this tutorial, you'll:
 
@@ -37,7 +37,7 @@ In this tutorial, you'll:
 
 To create a minimal ASP.NET Core web API, follow these steps:
 
-1. Open your terminal on Visual Studio Code or any other code editor and navigate to the directory where you want your project to live.
+1. Open your terminal on Visual Studio Code or any other code editor and navigate to the directory where you want to create your project.
 1. Run the following commands on the .NET CLI or any other command line tool.
 
     ```dotnetcli
@@ -52,7 +52,7 @@ To create a minimal ASP.NET Core web API, follow these steps:
 
 ## Install required packages
 
-To protect an ASP.NET Core web API, you need the `Microsoft.Identity.Web` package - a set of ASP.NET Core libraries that simplify adding authentication and authorization support to web apps and web APIs integrating with the Microsoft identity platform.
+To protect an ASP.NET Core web API, you need the `Microsoft.Identity.Web` package - a set of ASP.NET Core libraries that simplify adding authentication and authorization support to web apps and web APIs that integrate with the Microsoft identity platform.
 
 To install the package, use:
 
@@ -61,7 +61,7 @@ dotnet add package Microsoft.Identity.
 ```
 ## Configure app registration details
 
-Open the *appsettings.json* file in your app folder and add in the app registration details you recorded after registering your web API.
+Open the *appsettings.json* file in your app folder and add the app registration details you recorded after registering the web API.
 
 ```json
 {
@@ -95,9 +95,9 @@ Custom URL domains are not supported in workforce tenants.
 
 ## Add app role and scope
 
-All APIs must publish a minimum of one scope, also called delegated permission, for the client apps to obtain an access token for a user successfully. APIs should also publish a minimum of one app role for applications, also called application permission, for the client apps to obtain an access token as themselves, that is, when they aren't signing-in a user.
+All APIs must publish a minimum of one scope, also called delegated permission, for the client apps to obtain an access token for a user successfully. APIs should also publish a minimum of one app role, also called application permissions, for the client apps to obtain an access token as themselves, that is, when they aren't signing-in a user.
 
-We specify these permissions in the *appsettings.json* file. In this tutorial, we have registered XXX permissions. *ToDoList.ReadWrite* and *ToDoList.Read* as the delegated permissions, and *ToDoList.ReadWrite.All* and *ToDoList.Read.All* as the application permissions.
+We specify these permissions in the *appsettings.json* file. In this tutorial, you've registered both delegated and application permissions with the scopes "Forecast.Read". This means that only users or client applications that call the API with an access token containing the scope "Forecast.Read" will be authorized to access the protected endpoint.
 
 ```json
 {
@@ -209,7 +209,7 @@ Run your API to ensure that it's running well without any errors using the comma
     ...
     ```
 
-The web page `http://localhost:{host}` displays an output similar to the following image. This is because the API is being called without authentication. In order to make an authorized call, refer to [Next steps](#next-steps) for how-to guides on how to access a protected web API.
+The web page `http://localhost:{host}` displays an output similar to the following image. This is because the API is being called without authentication. In order to make an authorized call, refer to [Next steps](#next-steps) for guidance on how to access a protected web API.
 
 :::image type="content" source="./media/web-api-tutorial-03-protect-endpoint/display-web-page-401.png" alt-text="Screenshot that shows the 401 error when the web page is launched.":::
 

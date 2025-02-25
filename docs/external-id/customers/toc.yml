@@ -165,9 +165,9 @@ items:
         - name: Protect ASP.NET Core API
           items:
             - name: Build a protected API 
-              href: tutorial-protect-web-api-dotnet-core-build-app.md
+              href: /entra/identity-platform/tutorial-web-api-dotnet-core-build-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
             - name: Test protected API 
-              href: tutorial-protect-web-api-dotnet-core-test-api.md
+              href: /entra/identity-platform/tutorial-web-api-dotnet-core-test-protected-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
     - name: Daemon, service
       items: 
         - name: Node.js

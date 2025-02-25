@@ -15,21 +15,16 @@ ms.topic: tutorial
 
 [!INCLUDE [applies-to-workforce-external](../external-id/includes/applies-to-workforce-external.md)]
 
-
-In this tutorial, you'll:
-
-## Prerequisites
-
-
-# Test your protected API
-
-This tutorial is the final part of a series that demonstrates building and testing a protected web API that is registered in an external tenant. In [Part 1 of this series](./tutorial-protect-web-api-dotnet-core-build-app.md), you created an ASP.NET Core web API and protected its endpoints. In this final step, you'll create a lightweight daemon app, register it in the  and test your API.
+This tutorial is the final part of a series that demonstrates building and testing a protected web API registered in a Microsoft Entra tenant. In [Part 1 of this series](tutorial-web-api-dotnet-core-build-app.md), you created an ASP.NET Core web API and protected its endpoints. You'll now create a lightweight daemon app, register it in your tenant, and use the daemon app to test the web API you built.
 
 In this tutorial, you learn how to:
 
 > [!div class="checklist"]
 >
-> - Test a protected web API using a lightweight daemon app that calls the web API
+> - Register the daemon app
+> - Assign an app role to your daemon app
+> - Create the daemon app
+> - Run your daemon app to call the protected web API
 
 ## Prerequisites
 
@@ -37,15 +32,15 @@ In this tutorial, you learn how to:
 
 ## Register the daemon app
 
-[!INCLUDE [Register daemon app](./includes/register-app/register-daemon-app.md)]
+[!INCLUDE [Register daemon app](../external-id/includes/register-app/register-daemon-app.md)]
 
-[!INCLUDE [Add app client secret](./includes/register-app/add-app-client-secret.md)]
+[!INCLUDE [Add app client secret](../external-id/includes/register-app/add-app-client-secret.md)]
 
 ## Assign app role to your daemon app
 
 Apps authenticating by themselves require app permissions.
 
-[!INCLUDE [Add app client secret](./includes/register-app/grant-api-permissions-app-permissions.md)]
+[!INCLUDE [Add app client secret](../external-id/includes/register-app/grant-api-permissions-app-permissions.md)]
 
 ## Write code
 
@@ -72,7 +67,7 @@ Apps authenticating by themselves require app permissions.
 
     HttpClient client = new HttpClient();
 
-    var response = await client.GetAsync("https://localhost:<your-api-port>/api/todolist");
+    var response = await client.GetAsync("http://localhost:<your-api-port>/weatherforecast");
     Console.WriteLine("Your response is: " + response.StatusCode);
     ```
 
@@ -99,13 +94,20 @@ Apps authenticating by themselves require app permissions.
         .WithClientSecret(clientSecret)
         .Build();
 
-    var result = await app.AcquireTokenForClient(scopes).ExecuteAsync();
-
+    var result = await app.AcquireTokenForClient(new string[] { scopes }).ExecuteAsync();
+    Console.WriteLine($"Access Token: {result.AccessToken}");
+    
     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", result.AccessToken);
-    var response = await client.GetAsync("https://localhost:44351/api/todolist");
+    var response = await client.GetAsync("http://localhost:5000/weatherforecast");
+    var content = await response.Content.ReadAsStringAsync();
+    
     Console.WriteLine("Your response is: " + response.StatusCode);
+    Console.WriteLine(content);
     ```
 
     Navigate to the daemon app root directory and run app using the command `dotnet run`. This code sends a request with a valid access token. You should see the string: *Your response is: OK* printed in your console.
 
-## See also
+## Related content
+
+- [How to call a protected Web API with cURL](howto-call-a-web-api-with-curl.md)
+- [How to call a protected web API with Insomnia](howto-call-a-web-api-with-insomnia.md)

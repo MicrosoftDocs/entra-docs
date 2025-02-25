@@ -1951,6 +1951,31 @@
       "source_path_from_root": "/docs/external-id/customers/tutorial-single-page-app-vanillajs-sign-in-sign-out.md",
       "redirect_url": "/entra/identity-platform/tutorial-single-page-app-javascript-sign-in-sign-out",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-protect-web-api-dotnet-core-build-app.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-api-dotnet-core-build-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-protect-web-api-dotnet-core-test-api.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-api-dotnet-core-test-protected-api.md",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/tutorial-web-api-dotnet-prepare-app.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-api-dotnet-core-build-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs//identity-platform/tutorial-web-api-dotnet-protect-endpoint.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-api-dotnet-core-build-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/tutorial-web-api-dotnet-register-app.md",
+      "redirect_url": "/entra/identity-platform/quickstart-web-api-aspnet-core-protect-api",
+      "redirect_document_id": false
     }
   ]
 }
