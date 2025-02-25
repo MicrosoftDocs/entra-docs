@@ -85,7 +85,7 @@ Double-click the Global Secure Access icon to open the client status notificatio
 |:::image type="icon" source="media/how-to-install-windows-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access - Some channels are unreachable	|The client is partially connected to Global Secure Access (that is, the connection to at least one channel failed: Microsoft Entra, Microsoft 365, Private Access, Internet Access).    |
 |:::image type="icon" source="media/how-to-install-windows-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access - Disabled by your organization	|Your organization disabled the client (that is, all traffic forwarding profiles are disabled).    |
 |:::image type="icon" source="media/how-to-install-windows-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access - Private Access is disabled	 |The user disabled Private Access on this device.    |
-|:::image type="icon" source="media/how-to-install-windows-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access - could not connect to the Internet	|The client couldn't detect an internet connection. The device is either connected to a network that doesn't have an Internet connection or a network that requires captive portal sign in.    |
+|:::image type="icon" source="media/how-to-install-windows-client/global-secure-access-client-icon-warning.png":::	|Global Secure Access - couldn't connect to the Internet	|The client couldn't detect an internet connection. The device is either connected to a network that doesn't have an Internet connection or a network that requires captive portal sign in.    |
 
 ## Known limitations
 
@@ -104,7 +104,7 @@ For more detailed information on troubleshooting the Global Secure Access client
 ## Client registry keys
 The Global Secure Access client uses specific registry keys to enable or disable different functionalities. Administrators can use a Mobile Device Management (MDM) solutions, such as Microsoft Intune or Group Policy to control the registry values.
 > [!CAUTION] 
-> Do not change other registry values unless instructed by Microsoft Support.
+> Don't change other registry values unless instructed by Microsoft Support.
 
 ### Restrict nonprivileged users
 The administrator can prevent nonprivileged users on the Windows device from disabling or enabling the client by setting the following registry key:   
@@ -122,7 +122,7 @@ This registry value controls whether Private Access is enabled or disabled for t
 Users can disable and enable Private Access through the system tray menu.
 
 > [!TIP]
-> This option is available on the menu only if it is not hidden (see [Hide or unhide system tray menu buttons](#hide-or-unhide-system-tray-menu-buttons)) and Private Access is enabled for this tenant.
+> This option is available on the menu only if it isn't hidden (see [Hide or unhide system tray menu buttons](#hide-or-unhide-system-tray-menu-buttons)) and Private Access is enabled for this tenant.
 
 Administrators can disable or enable Private Access for the user by setting the registry key:   
 `Computer\HKEY_CURRENT_USER\Software\Microsoft\Global Secure Access Client`
