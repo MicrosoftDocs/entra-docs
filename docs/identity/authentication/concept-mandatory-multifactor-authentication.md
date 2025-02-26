@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/24/2025
+ms.date: 02/26/2025
 ms.author: justinha
 author: najshahid
 manager: amycolannino
@@ -58,7 +58,7 @@ Workload identities, such as managed identities and service principals, aren't i
 
 The OAuth 2.0 Resource Owner Password Credentials (ROPC) token grant flow is incompatible with MFA. Once MFA is enabled in your Microsoft Entra tenant, ROPC-based APIs used in your applications will begin throwing exceptions. Guidance for migrating away from ROPC-based APIs in [Microsoft Authentication Libraries (MSAL)](/entra/msal/) is provided at [How to migrate away from ROPC](/entra/identity-platform/v2-oauth-ropc#how-to-migrate-away-from-ropc).
 
-The same general MSAL guidance applies to the Azure Identity libraries for [.NET](/dotnet/api/overview/azure/identity-readme), [Java](/java/api/overview/azure/identity-readme), [JavaScript](/javascript/api/overview/azure/identity-readme), and [Python](/python/api/overview/azure/identity-readme). The `UsernamePasswordCredential` class provided in those languages' libraries uses MSAL ROPC-based APIs. Changes are required if you're doing one of the following things in your application:
+The same general MSAL guidance applies to the Azure Identity libraries for [.NET](/dotnet/api/overview/azure/identity-readme), [Go](https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/azidentity), [Java](/java/api/overview/azure/identity-readme), [JavaScript](/javascript/api/overview/azure/identity-readme), and [Python](/python/api/overview/azure/identity-readme). The `UsernamePasswordCredential` class provided in those languages' libraries uses MSAL ROPC-based APIs. Changes are required if you're doing one of the following things in your application:
 
 - Using `DefaultAzureCredential` or `EnvironmentCredential` with the following two environment variables set:
     - `AZURE_USERNAME`
