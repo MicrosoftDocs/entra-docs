@@ -31,11 +31,11 @@ To test the functionality provided in this preview, you need the following high-
 
 ## Create a context aware TLS inspection policy
 To create a context aware Transport Layer Security inspection policy and assign the policy to users in your organization, complete the following steps:
-1. [Upload a certificate for TLS termination](#step-2-global-secure-access-admin-upload-a-certificate-for-tls-termination)
-1. [Create a TLS inspection policy](#step-3-global-secure-access-admin-create-a-tls-inspection-policy)
-1. [Assign the TLS inspection policy](#step-4-global-secure-access-admin-assign-the-tls-inspection-policy)
-1. [Create a conditional access policy](#step-5-global-secure-access-admin-create-a-conditional-access-policy)
-1. [Test the configuration](#step-6-test-the-configuration)
+1. [Upload a certificate for TLS termination](#step-1-global-secure-access-admin-upload-a-certificate-for-tls-termination)
+1. [Create a TLS inspection policy](#step-2-global-secure-access-admin-create-a-tls-inspection-policy)
+1. [Assign the TLS inspection policy](#step-3-global-secure-access-admin-assign-the-tls-inspection-policy)
+1. [Create a conditional access policy](#step-4-global-secure-access-admin-create-a-conditional-access-policy)
+1. [Test the configuration](#step-5-test-the-configuration)
 
 ### Step 1: Global Secure Access admin: upload a certificate for TLS termination
 The next step is to upload a certificate for TLS termination.
@@ -82,7 +82,7 @@ With this method, the baseline profile policy is evaluated last and applies to a
 :::image type="content" source="media/how-to-transport-layer-security/user-profile.png" alt-text="Screenshot of the Edit User Profile screen showing a list of policy names and their priorities.":::   
 
 ### Step 4: Global Secure Access admin: create a conditional access policy
-In this step, [create a conditional access policy](how-to-configure-web-content-filtering#create-and-link-conditional-access-policy) for a specific user, group, or other conditional access context condition and assign the Global Secure Access security profile.  
+In this step, [create a conditional access policy](../global-secure-access/how-to-configure-web-content-filtering#create-and-link-conditional-access-policy) for a specific user, group, or other conditional access context condition and assign the Global Secure Access security profile.   
 
 ### Step 5: Test the configuration
 For the final step, test the configuration.
@@ -91,10 +91,7 @@ For the final step, test the configuration.
     - Disable Secure DNS and built-in DNS.   
     - Block QUIC traffic from your device. QUIC isn't supported yet in Microsoft Entra Internet Access. Most websites support fallback to TCP when QUIC can't be established. For improved user experience, you can deploy a Windows Firewall rule that blocks outbound UDP 443: @New-NetFirewallRule -DisplayName "Block QUIC" -Direction Outbound -Action Block -Protocol UDP -RemotePort 443.   
     - Ensure Internet Access Traffic Forwarding is enabled.   
-1. Open a browser on a client device and visit the example websites for testing. See the [Test cases](#test-cases) section for examples. 
-
-## Validate the Global Secure Access certificate
-As an end user, inspect the certificate information and confirm the Global Secure Access certificate.
+1. As an end user, open a browser on a client device and test various websites. Inspect the certificate information and confirm the Global Secure Access certificate.
 :::image type="content" source="media/how-to-transport-layer-security/certificate-viewer.png" alt-text="Screenshot of the Certificate Viewer with the Global Secure Access certificate highlighted.":::    
 
 ## Disable TLS inspection
