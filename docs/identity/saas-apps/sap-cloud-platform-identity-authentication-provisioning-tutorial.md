@@ -39,6 +39,10 @@ If you are configuring provisioning into SAP Cloud Identity Services in a produc
 
 ## Set up SAP Cloud Identity Services for provisioning
 
+In this tutorial, you will add an admin system in SAP Cloud Identity Services and then configure Microsoft Entra.
+
+![Diagram of the architecture of SSO and provisioning flow between SAP applications, SAP Cloud Identity Services and Microsoft Entra.](./media/sap-cloud-platform-identity-authentication-provisioning-tutorial/architecture.png)
+
 1. Sign in to your SAP Cloud Identity Services Admin Console, `https://<tenantID>.accounts.ondemand.com/admin` or `https://<tenantID>.trial-accounts.ondemand.com/admin` if a trial. Navigate to **Users & Authorizations > Administrators**.
 
 	![Screenshot of the SAP Cloud Identity Services Admin Console.](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/adminconsole.png)
