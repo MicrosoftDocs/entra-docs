@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: how-to
-ms.date: 02/20/2025
+ms.date: 02/26/2025
 ms.author: cmulligan
 ms.reviewer: brozbab
 ms.custom: it-pro
@@ -61,7 +61,7 @@ To configure OpenID connect federation with your identity provider in Microsoft 
   - Given name
   - Family name
   - Email (required)
-  - Email_verified (required)
+  - Email_verified
   - Phone number
   - Phone_number_verified
   - Street address
