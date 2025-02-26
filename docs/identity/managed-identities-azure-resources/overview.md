@@ -34,7 +34,7 @@ Here are some of the benefits of using managed identities:
 - You can use managed identities to authenticate to any resource that supports [Microsoft Entra authentication](../authentication/overview-authentication.md), including your own applications.
 - Managed identities can be used at no extra cost.
 
-## Types of managed identities
+## Managed identity types
 
 There are two types of managed identities:
 
