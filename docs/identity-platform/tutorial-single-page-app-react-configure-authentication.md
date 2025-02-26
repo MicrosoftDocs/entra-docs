@@ -4,7 +4,7 @@ description: Learn how to add authentication to a React single-page app (SPA) us
 author: OwenRichards1
 ms.author: owenrichards
 ms.custom: devx-track-js
-ms.date: 09/26/2023
+ms.date: 02/25/2025
 ms.service: identity-platform
 ms.topic: tutorial
 #Customer intent: As a React developer, I want to know how to use functional components to add sign in and sign out experiences in my React application.
@@ -34,7 +34,7 @@ Functional components are the building blocks of React apps, and are used to bui
 
 The navigation bar will provide the sign-in and sign-out experience for the app. The instance variable previously set in the *index.js* file will be used to call the sign-in and sign-out methods, which will redirect the user to the back to the sign-in page. 
 
-1. Open *src/components/NavigationBar.jsx* and add the following code snippet
+1. Open *src/components/NavigationBar.jsx* and add the following code snippet;
 
     ```jsx
     import { AuthenticatedTemplate, UnauthenticatedTemplate, useMsal } from '@azure/msal-react';
@@ -87,7 +87,7 @@ The navigation bar will provide the sign-in and sign-out experience for the app.
 
 The PageLayout component will be used to display the main content of the app and can be customized to include any additional content you want to display on every page of your app. The user's profile information will is displayed by passing the information via props.
 
-1. Open *src/components/PageLayout.jsx* and add the following code snippet
+1. Open *src/components/PageLayout.jsx* and add the following code snippet;
 
     ```jsx
     import { AuthenticatedTemplate } from '@azure/msal-react';
@@ -136,7 +136,7 @@ The PageLayout component will be used to display the main content of the app and
 
 The `DataDisplay` component will be used to display the user's profile information and a table of claims, which will be created in the next section of the tutorial. The `IdTokenData` component will be used to display the claims in the ID token.
 
-1. Open *src/components/DataDisplay.jsx* and add the following code snippet
+1. Open *src/components/DataDisplay.jsx* and add the following code snippet;
 
     ```jsx
     import { Table } from 'react-bootstrap';

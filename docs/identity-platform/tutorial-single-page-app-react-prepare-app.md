@@ -4,7 +4,7 @@ description: Learn how to prepare a React single-page app (SPA) for authenticati
 author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
-ms.date: 02/17/2025
+ms.date: 02/25/2025
 ms.service: identity-platform
 ms.topic: tutorial
 #Customer intent: As a React developer, I want to know how to create a new React project in an IDE and add authentication.
@@ -89,8 +89,6 @@ In this tutorial, you'll:
 
 Identity related **npm** packages must be installed in the project to enable user authentication. For project styling, **Bootstrap** will be used.
 
-### [Visual Studio Code](#tab/visual-studio-code)
-
 1. In the **Terminal** bar, select the **+** icon to create a new terminal. A separate terminal window will open with the previous node terminal continuing to run in the background.
 1. Ensure that the correct directory is selected (*reactspalocal*) then enter the following into the terminal to install the relevant `msal` and `bootstrap` packages.
 
@@ -102,7 +100,7 @@ Identity related **npm** packages must be installed in the project to enable use
 
 ## Add your tenant details to the MSAL configuration
 
-The **authConfig.js** file contains the configuration settings for the authentication flow and is used to configure **MSAL.js** with the required settings for authentication.
+The *authConfig.js* file contains the configuration settings for the authentication flow and is used to configure **MSAL.js** with the required settings for authentication.
 
 ### [Workforce tenant](#tab/workforce-tenant)
 
