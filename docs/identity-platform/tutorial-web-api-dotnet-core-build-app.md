@@ -85,7 +85,7 @@ Replace the following placeholders as shown:
 
 - Replace `Enter_the_Application_Id_Here` with your application (client) ID.
 - Replace `Enter_the_Tenant_Id_Here` with your Directory (tenant) ID.
-- Replace `Enter_the_Authority_URL_Here` with your Authority URL, as explained in the following section.
+- Replace `Enter_the_Authority_URL_Here` with your Authority URL, as explained in the next section.
 
 ###  Authority URL for your app
 
@@ -185,9 +185,9 @@ The `AddPolicy` method creates a named policy (`AuthZPolicy`) that checks for th
 
 In this tutorial, we use a minimal API without controllers as the focus is more on protecting the API. We configure the API middleware pipeline by adding the following: 
 
-- **HTTPS Redirection**: Enforce secure communication by redirecting HTTP requests to HTTPS.
-- **Authentication Middleware**: Validates incoming tokens before processing requests.
-- **Authorization Middleware**: Applies policies after authentication, ensuring only authorized clients can access protected endpoints. 
+- **HTTPS redirection**: Enforce secure communication by redirecting HTTP requests to HTTPS.
+- **Authentication middleware**: Validates incoming tokens before processing requests.
+- **Authorization middleware**: Applies policies after authentication, ensuring only authorized clients can access protected endpoints. 
 
 ```csharp
 var app = builder.Build();
