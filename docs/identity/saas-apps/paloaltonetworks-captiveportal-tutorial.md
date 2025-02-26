@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Palo Alto Networks Captive Portal
 
-In this tutorial, you learn how to integrate Palo Alto Networks Captive Portal with Microsoft Entra ID.
+In this article,  you learn how to integrate Palo Alto Networks Captive Portal with Microsoft Entra ID.
 Integrating Palo Alto Networks Captive Portal with Microsoft Entra ID provides you with the following benefits:
 
 * You can control in Microsoft Entra ID who has access to Palo Alto Networks Captive Portal.
@@ -32,7 +32,7 @@ To integrate Microsoft Entra ID with Palo Alto Networks Captive Portal, you need
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Palo Alto Networks Captive Portal supports **IDP** initiated SSO
 * Palo Alto Networks Captive Portal supports **Just In Time** user provisioning

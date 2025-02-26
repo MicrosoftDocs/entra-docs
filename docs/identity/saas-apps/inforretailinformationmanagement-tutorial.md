@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Infor Retail – Information Management
 
-In this tutorial, you'll learn how to integrate Infor Retail – Information Management with Microsoft Entra ID. When you integrate Infor Retail – Information Management with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Infor Retail – Information Management with Microsoft Entra ID. When you integrate Infor Retail – Information Management with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Infor Retail – Information Management.
 * Enable your users to be automatically signed-in to Infor Retail – Information Management with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with Infor Retail – Information Manag
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Infor Retail – Information Management supports **SP and IDP** initiated SSO.
 

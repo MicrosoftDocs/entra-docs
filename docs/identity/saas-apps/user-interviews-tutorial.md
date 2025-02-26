@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with User Interviews
 
-In this tutorial, you'll learn how to integrate User Interviews with Microsoft Entra ID. When you integrate User Interviews with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate User Interviews with Microsoft Entra ID. When you integrate User Interviews with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to User Interviews.
 * Enable your users to be automatically signed-in to User Interviews with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To integrate Microsoft Entra ID with User Interviews, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * User Interviews supports both **SP and IDP** initiated SSO.
 * User Interviews supports **Just In Time** user provisioning.

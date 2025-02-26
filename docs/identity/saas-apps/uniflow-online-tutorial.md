@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with uniFLOW Online
 
-In this tutorial, you learn how to integrate uniFLOW Online with Microsoft Entra ID. When you integrate uniFLOW Online with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate uniFLOW Online with Microsoft Entra ID. When you integrate uniFLOW Online with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to uniFLOW Online.
 * Enable your users to sign in to uniFLOW Online with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * uniFLOW Online supports **SP** initiated SSO.
 * uniFLOW Online supports [Automated user provisioning](uniflow-online-provisioning-tutorial.md).

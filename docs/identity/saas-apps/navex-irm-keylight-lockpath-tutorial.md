@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with NAVEX IRM (Lockpath/Keylight)
 
-In this tutorial, you'll learn how to integrate NAVEX IRM (Lockpath/Keylight) with Microsoft Entra ID. When you integrate NAVEX IRM (Lockpath/Keylight) with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate NAVEX IRM (Lockpath/Keylight) with Microsoft Entra ID. When you integrate NAVEX IRM (Lockpath/Keylight) with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to NAVEX IRM (Lockpath/Keylight).
 * Enable your users to be automatically signed-in to NAVEX IRM (Lockpath/Keylight) with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with NAVEX IRM (Lockpath/Keylight), you
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * NAVEX IRM (Lockpath/Keylight) supports **SP** initiated SSO.
 * NAVEX IRM (Lockpath/Keylight) supports **Just In Time** user provisioning.

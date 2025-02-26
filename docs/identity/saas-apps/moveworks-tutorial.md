@@ -19,7 +19,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Moveworks
 
-In this tutorial, you'll learn how to integrate Moveworks with Microsoft Entra ID. When you integrate Moveworks with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Moveworks with Microsoft Entra ID. When you integrate Moveworks with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Moveworks.
 * Enable your users to be automatically signed-in to Moveworks with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ To integrate Microsoft Entra ID with Moveworks, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Moveworks supports both **SP and IDP** initiated SSO.
 * Moveworks supports **Just In Time** user provisioning.

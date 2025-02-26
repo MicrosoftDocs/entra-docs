@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with MobileIron
 
- In this tutorial, you'll learn how to integrate MobileIron with Microsoft Entra ID. When you integrate MobileIron with Microsoft Entra ID, you can:
+ In this article,  you'll learn how to integrate MobileIron with Microsoft Entra ID. When you integrate MobileIron with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to MobileIron.
 * Enable your users to be automatically signed in to MobileIron with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * MobileIron supports **SP and IDP** initiated SSO.
 
@@ -88,7 +88,7 @@ In this section, you enable Microsoft Entra SSO.
     `https://<host>.MobileIron.com/user/login.html`
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier, Reply URL, and Sign-On URL. You will get the values of key and host from the ​administrative​ ​portal of MobileIron which is explained later in the tutorial.
+    > These values are not real. Update these values with the actual Identifier, Reply URL, and Sign-On URL. You will get the values of key and host from the ​administrative​ ​portal of MobileIron which is explained later in the article.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 

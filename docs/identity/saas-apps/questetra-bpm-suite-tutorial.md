@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Questetra BPM Suite
 
-In this tutorial, you'll learn how to integrate Questetra BPM Suite with Microsoft Entra ID. When you integrate Questetra BPM Suite with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Questetra BPM Suite with Microsoft Entra ID. When you integrate Questetra BPM Suite with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Questetra BPM Suite.
 * Enable your users to be automatically signed-in to Questetra BPM Suite with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Questetra BPM Suite supports **SP** initiated SSO.
 
@@ -83,7 +83,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<subdomain>.questetra.net/saml/SSO/alias/bpm`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier and Sign on URL. You can get these values from **SP Information** section on your **Questetra BPM Suite** company site, which is explained later in the tutorial or contact [Questetra BPM Suite Client support team](https://support.questetra.com/support-service/). You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are not real. Update these values with the actual Identifier and Sign on URL. You can get these values from **SP Information** section on your **Questetra BPM Suite** company site, which is explained later in the article or contact [Questetra BPM Suite Client support team](https://support.questetra.com/support-service/). You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 

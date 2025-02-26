@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Serenity Connect
 
-In this tutorial, you learn how to integrate Serenity Connect with Microsoft Entra ID. When you integrate Serenity Connect with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Serenity Connect with Microsoft Entra ID. When you integrate Serenity Connect with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Serenity Connect.
 * Enable your users to be automatically signed-in to Serenity Connect with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To integrate Microsoft Entra ID with Serenity Connect, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Serenity Connect supports **SP** initiated SSO.
 

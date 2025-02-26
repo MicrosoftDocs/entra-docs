@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Astro
 
-In this tutorial, you'll learn how to integrate Astro with Microsoft Entra ID. When you integrate Astro with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Astro with Microsoft Entra ID. When you integrate Astro with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Astro.
 * Enable your users to be automatically signed-in to Astro with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To integrate Microsoft Entra ID with Astro, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Astro supports both **SP and IDP** initiated SSO.
 * Astro supports **Just In Time** user provisioning.

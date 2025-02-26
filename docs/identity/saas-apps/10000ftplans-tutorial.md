@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with 10,000ft Plans
 
-In this tutorial, you'll learn how to integrate 10,000ft Plans with Microsoft Entra ID. When you integrate 10,000ft Plans with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate 10,000ft Plans with Microsoft Entra ID. When you integrate 10,000ft Plans with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to 10,000ft Plans.
 * Enable your users to be automatically signed-in to 10,000ft Plans with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with 10,000ft Plans, you need the follo
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * 10,000ft Plans support **SP** initiated SSO.
 * 10,000ft Plans support **Just In Time** user provisioning.

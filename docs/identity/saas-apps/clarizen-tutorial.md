@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Clarizen One
 
-In this tutorial, you'll learn how to integrate Clarizen One with Microsoft Entra ID. When you integrate Clarizen One with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Clarizen One with Microsoft Entra ID. When you integrate Clarizen One with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Clarizen One.
 * Enable your users to be automatically signed-in to Clarizen One with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Clarizen One supports **IDP** initiated SSO.
 * Clarizen One supports [**automated** user provisioning and deprovisioning](clarizen-one-provisioning-tutorial.md) (recommended).

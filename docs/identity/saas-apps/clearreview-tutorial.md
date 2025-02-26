@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Clear Review
 
-In this tutorial, you'll learn how to integrate Clear Review with Microsoft Entra ID. When you integrate Clear Review with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Clear Review with Microsoft Entra ID. When you integrate Clear Review with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Clear Review.
 * Enable your users to be automatically signed-in to Clear Review with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ To configure Microsoft Entra integration with Clear Review, you need the followi
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Clear Review supports **SP and IDP** initiated SSO.
 

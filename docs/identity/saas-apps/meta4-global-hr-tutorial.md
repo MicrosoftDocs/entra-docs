@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Meta4 Global HR
 
-In this tutorial, you'll learn how to integrate Meta4 Global HR with Microsoft Entra ID. When you integrate Meta4 Global HR with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Meta4 Global HR with Microsoft Entra ID. When you integrate Meta4 Global HR with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Meta4 Global HR.
 * Enable your users to be automatically signed-in to Meta4 Global HR with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with Meta4 Global HR, you need the foll
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Meta4 Global HR supports **SP and IDP** initiated SSO.
 

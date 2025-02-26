@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Boomi
 
-In this tutorial, you'll learn how to integrate Boomi with Microsoft Entra ID. When you integrate Boomi with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Boomi with Microsoft Entra ID. When you integrate Boomi with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Boomi.
 * Enable your users to be automatically signed-in to Boomi with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Boomi supports **IDP** initiated SSO.
 
@@ -91,7 +91,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	d. Enter the **Sign-on URL**, such as `https://platform.boomi.com/AtomSphere.html#build;accountId={your-accountId}`.
 
 	> [!Note]
-	> You will get the **Service Provider metadata file** from the **Configure Boomi SSO** section, which is explained later in the tutorial. If the **Identifier** and **Reply URL** values do not get auto populated, then fill in the values manually according to your requirement.
+	> You will get the **Service Provider metadata file** from the **Configure Boomi SSO** section, which is explained later in the article. If the **Identifier** and **Reply URL** values do not get auto populated, then fill in the values manually according to your requirement.
 
 1. Boomi application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 

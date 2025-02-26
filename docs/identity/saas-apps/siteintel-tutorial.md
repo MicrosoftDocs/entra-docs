@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with SiteIntel
 
-In this tutorial, you'll learn how to integrate SiteIntel with Microsoft Entra ID. When you integrate SiteIntel with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate SiteIntel with Microsoft Entra ID. When you integrate SiteIntel with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to SiteIntel.
 * Enable your users to be automatically signed in to SiteIntel with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * SiteIntel supports SP-initiated and IdP-initiated SSO.
 * After you configure SiteIntel, you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
@@ -158,7 +158,7 @@ When you select the **SiteIntel** tile in the Access Panel, you should be automa
 
 ## Additional resources
 
-- [List of tutorials about how to integrate SaaS apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles about how to integrate SaaS apps with Microsoft Entra ID](./tutorial-list.md)
 - [What are application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 - [What is Conditional Access in Microsoft Entra ID?](~/identity/conditional-access/overview.md)
 - [What is session control in Microsoft Defender for Cloud Apps?](/cloud-app-security/proxy-intro-aad)

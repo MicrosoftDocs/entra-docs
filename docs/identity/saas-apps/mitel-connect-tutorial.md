@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integrations with Mitel MiCloud Connect or CloudLink Platform
 
-In this tutorial, you'll learn how to use the Mitel Connect app to integrate Microsoft Entra ID with Mitel MiCloud Connect or CloudLink Platform. The Mitel Connect app is available in the Azure Gallery. Integrating Microsoft Entra ID with MiCloud Connect or CloudLink Platform provides you with the following benefits:
+In this article,  you'll learn how to use the Mitel Connect app to integrate Microsoft Entra ID with Mitel MiCloud Connect or CloudLink Platform. The Mitel Connect app is available in the Azure Gallery. Integrating Microsoft Entra ID with MiCloud Connect or CloudLink Platform provides you with the following benefits:
 
 * You can control users' access to MiCloud Connect apps and to CloudLink apps in Microsoft Entra ID by using their enterprise credentials.
 * You can enable users on your account to be automatically signed in to MiCloud Connect or CloudLink (single sign-on) by using their Microsoft Entra accounts.
@@ -30,7 +30,7 @@ To configure Microsoft Entra integration with MiCloud Connect, you need the foll
 
 ## Scenario description
 
-In this tutorial, you'll configure and test Microsoft Entra single sign-on (SSO).
+In this article,  you'll configure and test Microsoft Entra single sign-on (SSO).
 
 * Mitel Connect supports **SP** initiated SSO.
 

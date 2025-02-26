@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Nintex Promapp
 
-In this tutorial, you'll learn how to integrate Nintex Promapp with Microsoft Entra ID. When you integrate Nintex Promapp with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Nintex Promapp with Microsoft Entra ID. When you integrate Nintex Promapp with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Nintex Promapp.
 * Enable your users to be automatically signed-in to Nintex Promapp with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Nintex Promapp supports **SP and IDP** initiated SSO.
 * Nintex Promapp supports **Just In Time** user provisioning.

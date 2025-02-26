@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra integration with Zscaler Beta
 
-In this tutorial, you learn how to integrate Zscaler Beta with Microsoft Entra ID.
+In this article,  you learn how to integrate Zscaler Beta with Microsoft Entra ID.
 When you integrate Zscaler Beta with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Zscaler Beta.
@@ -33,7 +33,7 @@ To configure Microsoft Entra integration with Zscaler Beta, you need the followi
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Zscaler Beta supports **SP** initiated SSO.
 * Zscaler Beta supports **Just In Time** user provisioning.

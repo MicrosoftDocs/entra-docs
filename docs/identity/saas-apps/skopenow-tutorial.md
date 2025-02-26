@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Skopenow
 
-In this tutorial, you'll learn how to integrate Skopenow with Microsoft Entra ID. When you integrate Skopenow with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Skopenow with Microsoft Entra ID. When you integrate Skopenow with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Skopenow.
 * Enable your users to be automatically signed-in to Skopenow with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Skopenow supports **SP and IDP** initiated SSO.
 * Skopenow supports **Just In Time** user provisioning.

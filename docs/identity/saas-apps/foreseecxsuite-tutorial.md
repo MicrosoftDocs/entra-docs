@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with ForeSee CX Suite
 
-In this tutorial, you'll learn how to integrate ForeSee CX Suite with Microsoft Entra ID. When you integrate ForeSee CX Suite with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate ForeSee CX Suite with Microsoft Entra ID. When you integrate ForeSee CX Suite with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to ForeSee CX Suite.
 * Enable your users to be automatically signed-in to ForeSee CX Suite with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To configure Microsoft Entra integration with ForeSee CX Suite, you need the fol
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * ForeSee CX Suite supports **SP** initiated SSO.
 

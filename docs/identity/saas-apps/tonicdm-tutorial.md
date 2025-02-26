@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with TonicDM
 
-In this tutorial, you'll learn how to integrate TonicDM with Microsoft Entra ID. When you integrate TonicDM with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate TonicDM with Microsoft Entra ID. When you integrate TonicDM with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to TonicDM.
 * Enable your users to be automatically signed-in to TonicDM with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with TonicDM, you need the following it
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * TonicDM supports **SP** and **IDP** initiated SSO.
 

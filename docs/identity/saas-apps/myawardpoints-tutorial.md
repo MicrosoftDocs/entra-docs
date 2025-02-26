@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with My Award Points Top Sub/Top Team
 
-In this tutorial, you'll learn how to integrate My Award Points Top Sub/Top Team with Microsoft Entra ID. When you integrate My Award Points Top Sub/Top Team with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate My Award Points Top Sub/Top Team with Microsoft Entra ID. When you integrate My Award Points Top Sub/Top Team with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to My Award Points Top Sub/Top Team.
 * Enable your users to be automatically signed-in to My Award Points Top Sub/Top Team with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * My Award Points Top Sub/Top Team supports **SP** initiated SSO.
 
@@ -83,7 +83,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://microsoftrr.performnet.com/biwv1auth/Shibboleth.sso/Login?providerId=<Azure AD Identifier>`
 
 	> [!NOTE]
-	> The value is not real. You will get the `<Azure AD Identifier>` value in the later steps in this tutorial.
+	> The value is not real. You will get the `<Azure AD Identifier>` value in the later steps in this article.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
