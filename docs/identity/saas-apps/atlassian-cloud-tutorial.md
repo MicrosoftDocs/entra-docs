@@ -126,7 +126,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
       ![attributes and claims](./media/atlassian-cloud-tutorial/user-attributes-and-claims.png)
       
-      b. Atlassian Cloud expects the **nameidentifier** (**Unique User Identifier**) to be mapped to the user's email (**user.email**). Edit the **Source attribute** and change it to **user.mail**. Save the changes to the claim.
+      b. Atlassian Cloud expects the **nameidentifier** (**Unique User Identifier**) to be mapped to the user's email (**user.mail**). Edit the **Source attribute** and change it to **user.mail**. Save the changes to the claim.
 
       ![unique user ID](./media/atlassian-cloud-tutorial/unique-user-identifier.png)
       
