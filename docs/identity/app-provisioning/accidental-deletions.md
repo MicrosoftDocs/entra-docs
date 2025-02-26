@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 11/27/2024
+ms.date: 02/26/2025
 ms.author: kenwith
 ms.reviewer: arvinh
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
@@ -92,7 +92,7 @@ It's evaluated each cycle. If the number of deletions doesn't exceed the thresho
 
 ### How are these deletion events logged?
 You can find users that should be disabled / deleted but haven’t due to the deletion threshold. 
-Navigation to **Provisioning logs** and then filter **Action** with *StagedAction* or *StagedDelete*.
+Navigation to **Provisioning logs** and then filter **Action** with *StagedAction* or *StagedDelete*. The **Audit logs** will also contain a log indicating that the provisioning job is in quarantine due to the accidental deletions threshold.
 
 
 ## Next steps 
