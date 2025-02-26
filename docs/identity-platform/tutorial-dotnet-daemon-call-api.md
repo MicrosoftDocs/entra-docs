@@ -64,7 +64,7 @@ dotnet add package Microsoft.Identity.Web.DownstreamApi
     ```json
     {
         "AzureAd": {
-            // "Authority": "https://login.microsoftonline.com/64376ee2-9871-401c-a9ab-1ce83eb7c486",
+            // "Authority": "", you can use this for customer tenants in place of Instance and TenantId values
             "Instance": "https://login.microsoftonline.com/",
             "TenantId": "Enter_the_Tenant_ID_Here",
             "ClientId": "Enter_the_Application_ID_Here",
@@ -95,7 +95,9 @@ dotnet add package Microsoft.Identity.Web.DownstreamApi
     |*Enter_the_Tenant_ID_Here*| The tenant ID of the directory / tenant where the app is registered.|
 
     > [!Note]
-    > For apps registered in external tenant, you can use *Authority* and remove both *Instance* and *TenantId*: "Authority": "https://<Enter_the_Tenant_Subdomain_Here>.ciamlogin.com/". Where *Enter_the_Tenant_Subdomain_Here* is the subdomain of the tenant.
+    > For apps registered in external tenant, you can use *Authority* and remove both *Instance* and *TenantId*. 
+    >
+    >`"Authority": "https://<Enter_the_Tenant_Subdomain_Here>.ciamlogin.com/"`. Where *Enter_the_Tenant_Subdomain_Here* is the subdomain of the tenant.
 
 1. Add the *appsettings.json* file to the project file. The project file is a *.csproj* file in your project. This is because the file needs to be copied to the output directory.
 
