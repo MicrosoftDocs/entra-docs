@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Integrate MVISION Cloud Microsoft Entra SSO Configuration with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate MVISION Cloud Microsoft Entra SSO Configuration with Microsoft Entra ID. When you integrate MVISION Cloud Microsoft Entra SSO Configuration with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate MVISION Cloud Microsoft Entra SSO Configuration with Microsoft Entra ID. When you integrate MVISION Cloud Microsoft Entra SSO Configuration with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to MVISION Cloud Microsoft Entra SSO Configuration.
 * Enable your users to be automatically signed-in to MVISION Cloud Microsoft Entra SSO Configuration with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * MVISION Cloud Microsoft Entra SSO Configuration supports **SP and IDP** initiated SSO.
 

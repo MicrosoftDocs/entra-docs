@@ -1,6 +1,6 @@
 ---
 title: Microsoft Entra integration with Predictix Assortment Planning
-description: In this tutorial, you'll learn how to configure single sign-on between Microsoft Entra ID and Predictix Assortment Planning.
+description: In this article,  you'll learn how to configure single sign-on between Microsoft Entra ID and Predictix Assortment Planning.
 
 author: nguhiu
 manager: CelesteDG
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Predictix Assortment Planning
 
-In this tutorial, you'll learn how to integrate Predictix Assortment Planning with Microsoft Entra ID.
+In this article,  you'll learn how to integrate Predictix Assortment Planning with Microsoft Entra ID.
 This integration provides these benefits:
 
 * You can use Microsoft Entra ID to control who has access to Predictix Assortment Planning.
@@ -36,7 +36,7 @@ To configure Microsoft Entra integration with Predictix Assortment Planning, you
 
 ## Scenario description
 
-In this tutorial, you'll configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you'll configure and test Microsoft Entra single sign-on in a test environment.
 
 * Predictix Assortment Planning supports SP-initiated SSO.
 

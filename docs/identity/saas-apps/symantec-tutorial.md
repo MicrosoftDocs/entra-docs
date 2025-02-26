@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Symantec Web Security Service (WSS)
 
-In this tutorial, you will learn how to integrate your Symantec Web Security Service (WSS) account with your Microsoft Entra account so that WSS can authenticate an end user provisioned in the Microsoft Entra ID using SAML authentication and enforce user or group level policy rules.
+In this article,  you will learn how to integrate your Symantec Web Security Service (WSS) account with your Microsoft Entra account so that WSS can authenticate an end user provisioned in the Microsoft Entra ID using SAML authentication and enforce user or group level policy rules.
 
 Integrating Symantec Web Security Service (WSS) with Microsoft Entra ID provides you with the following benefits:
 
@@ -38,7 +38,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Symantec Web Security Service (WSS) supports **IDP** initiated SSO.
 

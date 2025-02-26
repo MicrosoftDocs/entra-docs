@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Docker Business
 
-In this tutorial, you'll learn how to integrate Docker Business with Microsoft Entra ID. When you integrate Docker Business with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Docker Business with Microsoft Entra ID. When you integrate Docker Business with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Docker Business.
 * Enable your users to be automatically signed-in to Docker Business with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To integrate Microsoft Entra ID with Docker Business, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Docker Business supports only **SP** initiated SSO.
 * Docker Business supports **Just In Time** user provisioning.

@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Workspot Control
 
-In this tutorial, you'll learn how to integrate Workspot Control with Microsoft Entra ID. When you integrate Workspot Control with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Workspot Control with Microsoft Entra ID. When you integrate Workspot Control with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Workspot Control.
 * Enable your users to be automatically signed-in to Workspot Control with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To configure Microsoft Entra integration with Workspot Control, you need the fol
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Workspot Control supports SP-initiated and IDP-initiated SSO.
 

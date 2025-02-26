@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Absorb LMS
 
-In this tutorial, you'll learn how to integrate Absorb LMS with Microsoft Entra ID. When you integrate Absorb LMS with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Absorb LMS with Microsoft Entra ID. When you integrate Absorb LMS with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Absorb LMS.
 * Enable your users to be automatically signed-in to Absorb LMS with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ To configure Microsoft Entra integration with Absorb LMS, you need the following
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Absorb LMS supports **IDP** initiated SSO
 

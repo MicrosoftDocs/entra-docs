@@ -15,7 +15,7 @@ ms.author: thomasakelo
 
 # Configure LawVu for automatic user provisioning
 
-This tutorial describes the steps you need to perform in both LawVu and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users to [LawVu](https://lawvu.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This article describes the steps you need to perform in both LawVu and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users to [LawVu](https://lawvu.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 ## Capabilities supported
 > [!div class="checklist"]
@@ -26,7 +26,7 @@ This tutorial describes the steps you need to perform in both LawVu and Microsof
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md). 
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
@@ -112,7 +112,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 	>[!NOTE]
 	>LawVu app support **Schema Discovery**. The `/schemas` request will be made by the Microsoft Entra provisioning service every time someone saves the provisioning configuration in the Azure portal or every time a user lands on the edit provisioning page. Other attributes discovered will be surfaced to customers in the attribute mappings under the target attribute list. Schema discovery only leads to more target attributes being added. It will not result in attributes being removed.
 	
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for LawVu, change the **Provisioning Status** to **On** in the **Settings** section.
 

@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Netskope User Authentication
 
-In this tutorial, you'll learn how to integrate Netskope User Authentication with Microsoft Entra ID. When you integrate Netskope User Authentication with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Netskope User Authentication with Microsoft Entra ID. When you integrate Netskope User Authentication with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Netskope User Authentication.
 * Enable your users to be automatically signed-in to Netskope User Authentication with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Netskope User Authentication supports **SP and IDP** initiated SSO.
 
@@ -84,7 +84,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<tenantname>.goskope.com/nsauth/saml2/http-post/<customer entered string>`
 
     > [!NOTE]
-	> These values are not real. Update these values with the actual Identifier and Reply URL. You will get these values explained later in the tutorial.
+	> These values are not real. Update these values with the actual Identifier and Reply URL. You will get these values explained later in the article.
 
 1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 

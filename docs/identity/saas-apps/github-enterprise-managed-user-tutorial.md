@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with GitHub Enterprise Managed User
 
-In this tutorial, you'll learn how to integrate GitHub Enterprise Managed User (EMU) with Microsoft Entra ID. When you integrate GitHub Enterprise Managed User with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate GitHub Enterprise Managed User (EMU) with Microsoft Entra ID. When you integrate GitHub Enterprise Managed User with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to GitHub Enterprise Managed User.
 * Enable your users to be automatically signed-in to GitHub Enterprise Managed User with their Microsoft Entra accounts.
@@ -35,7 +35,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * GitHub Enterprise Managed User supports both **SP and IDP** initiated SSO.
 * GitHub Enterprise Managed User requires [**Automated** user provisioning](./github-enterprise-managed-user-provisioning-tutorial.md).
@@ -110,7 +110,7 @@ In this section, you'll assign your account to GitHub Enterprise Managed User in
 1. In the app's overview page, find the **Manage** section and select **Users and groups**.
 1. Select **Add user**, then select **Users and groups** in the **Add Assignment** dialog.
 1. In the **Users and groups** dialog, select your account from the Users list, then click the **Select** button at the bottom of the screen.
-1. In the **Select a role** dialog, select the **Enterprise Owner** role, then click the **Select** button at the bottom of the screen. Your account is assigned as an Enterprise Owner for your GitHub instance when you provision your account in the next tutorial. 
+1. In the **Select a role** dialog, select the **Enterprise Owner** role, then click the **Select** button at the bottom of the screen. Your account is assigned as an Enterprise Owner for your GitHub instance when you provision your account in the next article. 
 1. In the **Add Assignment** dialog, click the **Assign** button.
 
 ## Configure GitHub Enterprise Managed User SSO

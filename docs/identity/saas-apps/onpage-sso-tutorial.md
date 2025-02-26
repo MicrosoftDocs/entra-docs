@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with OnPage (SSO)
 
-In this tutorial, you'll learn how to integrate OnPage (SSO) with Microsoft Entra ID. When you integrate OnPage (SSO) with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate OnPage (SSO) with Microsoft Entra ID. When you integrate OnPage (SSO) with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to OnPage (SSO).
 * Enable your users to be automatically signed-in to OnPage (SSO) with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To integrate Microsoft Entra ID with OnPage (SSO), you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * OnPage (SSO) supports **SP** initiated SSO.
 

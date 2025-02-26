@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Euromonitor International
 
-In this tutorial, you learn how to integrate Euromonitor International with Microsoft Entra ID. When you integrate Euromonitor International with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Euromonitor International with Microsoft Entra ID. When you integrate Euromonitor International with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Euromonitor International.
 * Enable your users to be automatically signed-in to Euromonitor International with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Euromonitor International supports **SP** initiated SSO.
 

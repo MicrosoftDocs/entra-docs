@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Atomic Learning
 
-In this tutorial, you'll learn how to integrate Atomic Learning with Microsoft Entra ID. When you integrate Atomic Learning with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Atomic Learning with Microsoft Entra ID. When you integrate Atomic Learning with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Atomic Learning.
 * Enable your users to be automatically signed-in to Atomic Learning with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with Atomic Learning, you need the foll
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Atomic Learning supports **SP** initiated SSO.
 * Atomic Learning supports **Just In Time** user provisioning.

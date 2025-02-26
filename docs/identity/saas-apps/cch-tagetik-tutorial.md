@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with CCH Tagetik
 
-In this tutorial, you'll learn how to integrate CCH Tagetik with Microsoft Entra ID. When you integrate CCH Tagetik with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate CCH Tagetik with Microsoft Entra ID. When you integrate CCH Tagetik with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to CCH Tagetik.
 * Enable your users to be automatically signed-in to CCH Tagetik with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * CCH Tagetik supports **SP and IDP** initiated SSO.
 * CCH Tagetik supports **Just In Time** user provisioning.

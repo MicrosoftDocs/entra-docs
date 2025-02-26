@@ -16,11 +16,11 @@ ms.author: arvinh
 
 # Configure Cerner Central for automatic user provisioning
 
-The objective of this tutorial is to show you the steps you need to perform in Cerner Central and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to a user roster in Cerner Central.
+The objective of this article is to show you the steps you need to perform in Cerner Central and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to a user roster in Cerner Central.
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following items:
+The scenario outlined in this article assumes that you already have the following items:
 
 * A Microsoft Entra tenant
 * A Cerner Central tenant
@@ -49,7 +49,7 @@ Before configuring and enabling the provisioning service, you should decide what
 This section guides you through connecting your Microsoft Entra ID to Cerner Central’s User Roster using Cerner's SCIM user account provisioning API, and configuring the provisioning service to create, update, and disable assigned user accounts in Cerner Central based on user and group assignment in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Cerner Central, following the instructions provided in the [Azure portal](https://portal.azure.com). Single sign-on can be configured independently of automatic provisioning, though these two features complement each other. For more information, see the [Cerner Central single sign-on tutorial](cernercentral-tutorial.md).
+> You may also choose to enable SAML-based single sign-on for Cerner Central, following the instructions provided in the [Azure portal](https://portal.azure.com). Single sign-on can be configured independently of automatic provisioning, though these two features complement each other. For more information, see the [Cerner Central single sign-on  article](cernercentral-tutorial.md).
 
 <a name='to-configure-automatic-user-account-provisioning-to-cerner-central-in-azure-ad'></a>
 

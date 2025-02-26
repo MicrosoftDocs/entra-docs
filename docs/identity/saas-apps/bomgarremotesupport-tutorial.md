@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with BeyondTrust Remote Support
 
-In this tutorial, you'll learn how to integrate BeyondTrust Remote Support with Microsoft Entra ID. When you integrate BeyondTrust Remote Support with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate BeyondTrust Remote Support with Microsoft Entra ID. When you integrate BeyondTrust Remote Support with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to BeyondTrust Remote Support.
 * Enable your users to be automatically signed-in to BeyondTrust Remote Support with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * BeyondTrust Remote Support supports **SP** initiated SSO
 * BeyondTrust Remote Support supports **Just In Time** user provisioning
@@ -88,7 +88,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<HOSTNAME>.bomgar.com/saml`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-On URL. You will get these values explained later in the tutorial.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-On URL. You will get these values explained later in the article.
 
 1. BeyondTrust Remote Support application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 

@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with SevOne Network Monitoring System (NMS)
 
-In this tutorial, you'll learn how to integrate SevOne Network Monitoring System (NMS) with Microsoft Entra ID. When you integrate SevOne Network Monitoring System (NMS) with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate SevOne Network Monitoring System (NMS) with Microsoft Entra ID. When you integrate SevOne Network Monitoring System (NMS) with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to SevOne Network Monitoring System (NMS).
 * Enable your users to be automatically signed-in to SevOne Network Monitoring System (NMS) with their Microsoft Entra accounts.
@@ -35,7 +35,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * SevOne Network Monitoring System (NMS) supports **SP** initiated SSO.
 

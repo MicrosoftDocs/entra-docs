@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Bonos
 
-In this tutorial, you'll learn how to integrate Bonos with Microsoft Entra ID. When you integrate Bonos with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Bonos with Microsoft Entra ID. When you integrate Bonos with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Bonos.
 * Enable your users to be automatically signed-in to Bonos with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Bonos supports **SP and IDP** initiated SSO.
 > [!NOTE]

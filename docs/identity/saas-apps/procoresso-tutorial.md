@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Procore SSO
 
-In this tutorial, you'll learn how to integrate Procore SSO with Microsoft Entra ID. When you integrate Procore SSO with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Procore SSO with Microsoft Entra ID. When you integrate Procore SSO with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Procore SSO.
 * Enable your users to be automatically signed-in to Procore SSO with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ To configure Microsoft Entra integration with Procore SSO, you need the followin
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Procore SSO supports **IDP** initiated SSO.
 

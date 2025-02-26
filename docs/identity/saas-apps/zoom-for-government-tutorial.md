@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Zoom for Government
 
-In this tutorial, you'll learn how to integrate Zoom for Government with Microsoft Entra ID. When you integrate Zoom for Government with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Zoom for Government with Microsoft Entra ID. When you integrate Zoom for Government with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Zoom for Government.
 * Enable your users to be automatically signed-in to Zoom for Government with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To integrate Microsoft Entra ID with Zoom for Government, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Zoom for Government supports only **SP** initiated SSO.
 * Zoom for Government supports **Just In Time** user provisioning.

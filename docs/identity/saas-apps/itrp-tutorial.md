@@ -1,6 +1,6 @@
 ---
 title: Microsoft Entra SSO integration with ITRP
-description: In this tutorial, you'll learn how to configure single sign-on between Microsoft Entra ID and ITRP.
+description: In this article,  you'll learn how to configure single sign-on between Microsoft Entra ID and ITRP.
 
 author: nguhiu
 manager: CelesteDG
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with ITRP
 
-In this tutorial, you'll learn how to integrate ITRP with Microsoft Entra ID. When you integrate ITRP with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate ITRP with Microsoft Entra ID. When you integrate ITRP with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to ITRP.
 * Enable your users to be automatically signed-in to ITRP with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with ITRP, you need to have:
 
 ## Scenario description
 
-In this tutorial, you'll configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you'll configure and test Microsoft Entra single sign-on in a test environment.
 
 * ITRP supports SP-initiated SSO.
 

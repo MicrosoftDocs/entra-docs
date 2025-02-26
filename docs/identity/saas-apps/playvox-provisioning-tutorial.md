@@ -16,7 +16,7 @@ ms.author: thomasakelo
 
 # Configure Playvox for automatic user provisioning
 
-This tutorial describes the steps to follow in both Playvox and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users or groups to [Playvox](https://www.playvox.com) by using the Microsoft Entra provisioning service. For important details on what this service does and how it works, and for frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+This article describes the steps to follow in both Playvox and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users or groups to [Playvox](https://www.playvox.com) by using the Microsoft Entra provisioning service. For important details on what this service does and how it works, and for frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
 ## Capabilities supported
 > [!div class="checklist"]
@@ -26,7 +26,7 @@ This tutorial describes the steps to follow in both Playvox and Microsoft Entra 
 
 ## Prerequisites
 
-The scenario in this tutorial assumes that you already have the following prerequisites:
+The scenario in this article assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md).
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
@@ -130,7 +130,7 @@ To configure automatic user provisioning for Playvox in Microsoft Entra ID:
    |name.formatted|String|
    |externalId|String|
 
-10. To configure scoping filters, see the instructions in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+10. To configure scoping filters, see the instructions in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 11. To enable the Microsoft Entra provisioning service for Playvox, change the **Provisioning Status** to **On** in the **Settings** section.
 

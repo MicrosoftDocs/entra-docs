@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Cerner Central
 
-In this tutorial, you'll learn how to integrate Cerner Central with Microsoft Entra ID. When you integrate Cerner Central with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Cerner Central with Microsoft Entra ID. When you integrate Cerner Central with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Cerner Central.
 * Enable your users to be automatically signed-in to Cerner Central with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with Cerner Central, you need the follo
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Cerner Central supports **IDP** initiated SSO.
 * Cerner Central supports [**Automated** user provisioning](cernercentral-provisioning-tutorial.md).

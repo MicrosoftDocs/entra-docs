@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with LearnUpon
 
-In this tutorial, you'll learn how to integrate LearnUpon with Microsoft Entra ID. When you integrate LearnUpon with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate LearnUpon with Microsoft Entra ID. When you integrate LearnUpon with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to LearnUpon.
 * Enable your users to be automatically signed-in to LearnUpon with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with LearnUpon, you need the following 
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * LearnUpon supports **IDP** initiated SSO.
 
