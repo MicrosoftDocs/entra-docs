@@ -235,7 +235,7 @@ Create a folder called *templates* in your root folder. In the templates folder,
 
 After you sign in or sign up, you're redirected back to the web app. You see a page that looks similar to the following screenshot:
 
-:::image type="content" source="../media/tutorial-web-app-python-flask-sign-in-out/flask-home-page.png" alt-text="Screenshot of flask web app sample after successful authentication.":::
+:::image type="content" source="./media/tutorial-web-app-python-flask-sign-in-out/flask-home-page.png" alt-text="Screenshot of flask web app sample after successful authentication.":::
 
 Select **Logout** to sign out of the app. You're prompted to pick an account to sign out from. Select the account you used to sign in.
 
