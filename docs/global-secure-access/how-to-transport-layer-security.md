@@ -82,7 +82,7 @@ With this method, the baseline profile policy is evaluated last and applies to a
 :::image type="content" source="media/how-to-transport-layer-security/user-profile.png" alt-text="Screenshot of the Edit User Profile screen showing a list of policy names and their priorities.":::   
 
 ### Step 4: Global Secure Access admin: create a conditional access policy
-In this step, [create a conditional access policy](../global-secure-access/how-to-configure-web-content-filtering#create-and-link-conditional-access-policy) for a specific user, group, or other conditional access context condition and assign the Global Secure Access security profile.   
+In this step, [create a conditional access policy](how-to-configure-web-content-filtering.md#create-and-link-conditional-access-policy) for a specific user, group, or other conditional access context condition and assign the Global Secure Access security profile.   
 
 ### Step 5: Test the configuration
 For the final step, test the configuration.
