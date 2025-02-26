@@ -100,7 +100,7 @@ For example, you can use an Azure Virtual Machine (VM) as Azure Compute. You can
 
 ### Use managed identity as a Federated Identity Credential (FIC) on an Entra ID app
 
-Workload Identity Federation enables using a managed identity as a credential, just like certificate or password, on Entra ID Applications. Whenever an Entra ID app is required, this is the recommended way to be credential-free.
+Workload Identity Federation enables using a managed identity as a credential, just like certificate or password, on Entra ID Applications. Whenever an Entra ID app is required, this is the recommended way to be credential-free. There's a limit of 20 FICs when using managed identities as FIC on an Entra ID App.
 
 A workload acting in the capacity of Entra ID application can be hosted on any Azure compute which has a managed identity. The workload uses the managed identity to acquire a token to be exchanged for an Entra ID Application token, via workload identity federation. This feature is also referred to as managed identity as FIC (Federated Identity Credentials).
 
