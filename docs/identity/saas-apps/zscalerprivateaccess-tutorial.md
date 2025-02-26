@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Integrate Zscaler Private Access (ZPA) with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate Zscaler Private Access (ZPA) with Microsoft Entra ID. When you integrate Zscaler Private Access (ZPA) with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Zscaler Private Access (ZPA) with Microsoft Entra ID. When you integrate Zscaler Private Access (ZPA) with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Zscaler Private Access (ZPA).
 * Enable your users to be automatically signed-in to Zscaler Private Access (ZPA) with their Microsoft Entra accounts.
@@ -35,7 +35,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment. 
+In this article,  you configure and test Microsoft Entra SSO in a test environment. 
 
 * Zscaler Private Access (ZPA) supports **SP** initiated SSO.
 * Zscaler Private Access (ZPA) supports [**Automated** user provisioning](zscaler-private-access-provisioning-tutorial.md).

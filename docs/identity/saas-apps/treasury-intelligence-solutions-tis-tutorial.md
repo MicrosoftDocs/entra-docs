@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Treasury Intelligence Solutions (TIS)
 
-In this tutorial, you'll learn how to integrate Treasury Intelligence Solutions (TIS) with Microsoft Entra ID. When you integrate Treasury Intelligence Solutions (TIS) with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Treasury Intelligence Solutions (TIS) with Microsoft Entra ID. When you integrate Treasury Intelligence Solutions (TIS) with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Treasury Intelligence Solutions (TIS).
 * Enable your users to be automatically signed-in to Treasury Intelligence Solutions (TIS) with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To integrate Microsoft Entra ID with Treasury Intelligence Solutions (TIS), you 
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Treasury Intelligence Solutions (TIS) supports both **SP and IDP** initiated SSO.
 

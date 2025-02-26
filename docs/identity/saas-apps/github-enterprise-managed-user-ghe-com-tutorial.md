@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with GitHub Enterprise Managed User
 
-In this tutorial, you learn how to integrate GitHub Enterprise Managed User with Microsoft Entra ID. When you integrate GitHub Enterprise Managed User with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate GitHub Enterprise Managed User with Microsoft Entra ID. When you integrate GitHub Enterprise Managed User with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to GitHub Enterprise Managed User.
 * Enable your users to be automatically signed-in to GitHub Enterprise Managed User with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To integrate Microsoft Entra ID with GitHub Enterprise Managed User, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * GitHub Enterprise Managed User supports both **SP and IDP** initiated SSO.
 

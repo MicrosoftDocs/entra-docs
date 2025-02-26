@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Sage Intacct
 
-In this tutorial, you'll learn how to integrate Sage Intacct with Microsoft Entra ID. When you integrate Sage Intacct with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Sage Intacct with Microsoft Entra ID. When you integrate Sage Intacct with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Sage Intacct.
 * Enable your users to be automatically signed-in to Sage Intacct with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Sage Intacct supports **IDP** initiated SSO.
 
@@ -110,7 +110,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	| name | `<User ID>`|
 
     > [!NOTE]
-    > Enter the `<User ID>` value should be same as the Sage Intacct **User ID**, which you enter in the **[Set up individual users in Intacct](#set-up-individual-users-in-intacct)**, which is explained later in the tutorial. Usually, this is the prefix of the email address. In this case, you can set the source as a transformation and use ExtractMailPrefix() on user.mail parameter.
+    > Enter the `<User ID>` value should be same as the Sage Intacct **User ID**, which you enter in the **[Set up individual users in Intacct](#set-up-individual-users-in-intacct)**, which is explained later in the article. Usually, this is the prefix of the email address. In this case, you can set the source as a transformation and use ExtractMailPrefix() on user.mail parameter.
 
 	c. Click **Add new claim** to open the **Manage user claims** dialog.
 

@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Flock Safety
 
-In this tutorial, you learn how to integrate Flock Safety with Microsoft Entra ID. When you integrate Flock Safety with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Flock Safety with Microsoft Entra ID. When you integrate Flock Safety with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Flock Safety.
 * Enable your users to be automatically signed-in to Flock Safety with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To integrate Microsoft Entra ID with Flock Safety, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Flock Safety supports **SP** initiated SSO.
 * Flock Safety supports **Just In Time** user provisioning.

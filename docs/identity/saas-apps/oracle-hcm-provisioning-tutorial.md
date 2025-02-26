@@ -18,7 +18,7 @@ The Inbound Provisioning API is a capability that allows you to create, update, 
 
 You can use [Microsoft Entra ID Governance](~/id-governance/identity-governance-overview.md) to automatically ensure that the right people have the right access to the right resources. This access includes identity and access process automation, delegation to business groups, and increased visibility.
 
-In this tutorial, we guide you through the steps and best practices for integrating Oracle HCM with Microsoft Entra ID via API-driven provisioning, You'll learn how to:
+In this article,  we guide you through the steps and best practices for integrating Oracle HCM with Microsoft Entra ID via API-driven provisioning, You'll learn how to:
 
 - Prepare your environment and configure the API settings
 - Export your worker data from Oracle HCM in CSV format and transform it to the system for cross-domain identity management (SCIM) format using Microsoft scripts
@@ -28,7 +28,7 @@ In this tutorial, we guide you through the steps and best practices for integrat
 
 ## Terminology
 
-- [Oracle HCM Fusion Cloud (oracle.com)](https://go.oracle.com/LP=139597?src1=:ad:pas:bi:dg:a_nas:l5:RC_MSFT220512P00060C01584:MainAd&gclid=9c09cb5c768b188a186aaea4b3735c3e&gclsrc=3p.ds&msclkid=9c09cb5c768b188a186aaea4b3735c3e): This guide focuses specifically on how to integrate from Oracle HCM Fusion Cloud to Microsoft Entra ID. Other Oracle offerings, such as PeopleSoft and Taleo, aren't in scope for this tutorial.
+- [Oracle HCM Fusion Cloud (oracle.com)](https://go.oracle.com/LP=139597?src1=:ad:pas:bi:dg:a_nas:l5:RC_MSFT220512P00060C01584:MainAd&gclid=9c09cb5c768b188a186aaea4b3735c3e&gclsrc=3p.ds&msclkid=9c09cb5c768b188a186aaea4b3735c3e): This guide focuses specifically on how to integrate from Oracle HCM Fusion Cloud to Microsoft Entra ID. Other Oracle offerings, such as PeopleSoft and Taleo, aren't in scope for this article.
 
 - Licensing:
 
@@ -45,7 +45,7 @@ Before you start integrating Oracle HCM with Microsoft Entra ID using the Inboun
 - An Oracle HCM (oracle.com) account with privileges to:
 
   - View and export HCM data.
-  - Access the Oracle HCM REST APIs. For this tutorial, we referenced [Human Resources 24A (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/rest-endpoints.html).
+  - Access the Oracle HCM REST APIs. For this article,  we referenced [Human Resources 24A (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/rest-endpoints.html).
         and [Applications Common 24A (oracle.com)](https://docs.oracle.com/en/cloud/saas/applications-common/24a/farca/rest-endpoints.html).
 
 - A Microsoft Entra ID tenant with a minimum P1 license (or EMS E3 / Microsoft 365 E3):
@@ -165,7 +165,7 @@ The Oracle ATOM feed APIs provide real-time notifications of worker changes in O
 If you intend to use the ATOM feeds integration, make sure to turn on ATOM feeds immediately after your initial sync. A delay in this step can lead to loss of changes.
 
 To get started with Oracle's ATOM feeds, reference the
-[Oracle documentation (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/Working_with_Atom.html) and [tutorial (oracle.com)](https://docs.oracle.com/en/applications/fusion-apps/fusion-human-capital-management/hcmintegration/index.html#background). We recommend subscribing to the [Employee workspace (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/Employee_Atom_Feeds.html) and applying these Atom Feed collections: newhire, empassignment, empupdate, termination, cancelworkrelship, and workrelshipupdate. 
+[Oracle documentation (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/Working_with_Atom.html) and [article (oracle.com)](https://docs.oracle.com/en/applications/fusion-apps/fusion-human-capital-management/hcmintegration/index.html#background). We recommend subscribing to the [Employee workspace (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/Employee_Atom_Feeds.html) and applying these Atom Feed collections: newhire, empassignment, empupdate, termination, cancelworkrelship, and workrelshipupdate. 
 
 Once you've configured ATOM feeds in your HCM tenant, you need to create a custom module that reads the output of the ATOM feed API and sends the data to Microsoft Entra ID in a SCIM payload format using the Inbound Provisioning API.
 
@@ -330,7 +330,7 @@ Follow these steps to configure the writeback job to Oracle HCM using the Oracle
 
 1.  When you're prompted to enter a URL and admin username and password, use the URL specified in the instructions and enter the admin username and password of the account that has access to Oracle HCM and can invoke HCM [User update API](https://docs.oracle.com/en/cloud/saas/applications-common/25a/farca/index.html).
 
-1.  Follow the guidance in the Oracle Fusion ERP tutorial to edit attribute mappings and provision specific users back to Oracle HCM.
+1.  Follow the guidance in the Oracle Fusion ERP article to edit attribute mappings and provision specific users back to Oracle HCM.
 
 1.  In the edit Attribute Mapping section, select only the **Update** operation under **target object actions**.  
 
@@ -517,7 +517,7 @@ The table in this section represents the set of attributes that Microsoft Entra 
 
 ## Acknowledgements
 
-We thank the following partners for their help reviewing and contributing to this tutorial:
+We thank the following partners for their help reviewing and contributing to this article:
 
 - Michael Starkweather, Director at PwC
 - Rob Allen, Director of Architecture and Technology at ActiveIdM
@@ -532,4 +532,4 @@ We thank the following partners for their help reviewing and contributing to thi
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)
 
 
-[inboundProvisioningCurlTutorial]: ~identity/app-provisioning/inbound-provisioning-api-curl-tutorial
+[inboundProvisioningCurl article]: ~identity/app-provisioning/inbound-provisioning-api-curl-tutorial

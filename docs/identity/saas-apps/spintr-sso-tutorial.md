@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Spintr SSO
 
-In this tutorial, you'll learn how to integrate Spintr SSO with Microsoft Entra ID. When you integrate Spintr SSO with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Spintr SSO with Microsoft Entra ID. When you integrate Spintr SSO with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Spintr SSO.
 * Enable your users to be automatically signed-in to Spintr SSO with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Spintr SSO supports **SP** initiated SSO
 * Spintr SSO supports **Just In Time** user provisioning
@@ -141,7 +141,7 @@ When you click the Spintr SSO tile in the Access Panel, you should be automatica
 
 ## Additional resources
 
-- [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 

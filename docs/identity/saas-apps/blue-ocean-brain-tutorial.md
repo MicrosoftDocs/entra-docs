@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Blue Ocean Brain
 
-In this tutorial, you'll learn how to integrate Blue Ocean Brain with Microsoft Entra ID. When you integrate Blue Ocean Brain with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Blue Ocean Brain with Microsoft Entra ID. When you integrate Blue Ocean Brain with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Blue Ocean Brain.
 * Enable your users to be automatically signed-in to Blue Ocean Brain with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Blue Ocean Brain supports **SP and IDP** initiated SSO.
 * Blue Ocean Brain supports **Just In Time** user provisioning.

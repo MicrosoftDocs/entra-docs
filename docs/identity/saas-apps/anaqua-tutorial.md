@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Integrate ANAQUA with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate ANAQUA with Microsoft Entra ID. When you integrate ANAQUA with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate ANAQUA with Microsoft Entra ID. When you integrate ANAQUA with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to ANAQUA.
 * Enable your users to be automatically signed-in to ANAQUA with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * ANAQUA supports **SP and IDP** initiated SSO.
 * ANAQUA supports **Just In Time** user provisioning.

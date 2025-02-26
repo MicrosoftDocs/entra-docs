@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Peakon
 
-In this tutorial, you'll learn how to integrate Peakon with Microsoft Entra ID. When you integrate Peakon with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Peakon with Microsoft Entra ID. When you integrate Peakon with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Peakon.
 * Enable your users to be automatically signed-in to Peakon with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Peakon supports **SP** and **IDP** initiated SSO.
 * Peakon supports [**automated** user provisioning and deprovisioning](peakon-provisioning-tutorial.md) (recommended).
@@ -92,7 +92,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://app.peakon.com/login`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier and Reply URL which is explained later in the tutorial. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are not real. Update these values with the actual Identifier and Reply URL which is explained later in the article. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 6. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Raw)** from the given options as per your requirement and save it on your computer.
 

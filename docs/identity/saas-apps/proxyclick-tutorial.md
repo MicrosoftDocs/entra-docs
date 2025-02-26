@@ -1,6 +1,6 @@
 ---
 title: Microsoft Entra integration with Proxyclick
-description: In this tutorial, you'll learn how to configure single sign-on between Microsoft Entra ID and Proxyclick.
+description: In this article,  you'll learn how to configure single sign-on between Microsoft Entra ID and Proxyclick.
 
 author: nguhiu
 manager: CelesteDG
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Proxyclick
 
-In this tutorial, you'll learn how to integrate Proxyclick with Microsoft Entra ID. When you integrate Proxyclick with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Proxyclick with Microsoft Entra ID. When you integrate Proxyclick with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Proxyclick.
 * Enable your users to be automatically signed-in to Proxyclick with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you'll configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you'll configure and test Microsoft Entra single sign-on in a test environment.
 
 * Proxyclick supports SP-initiated and IdP-initiated SSO.
 
@@ -89,7 +89,7 @@ Follow these steps to enable Microsoft Entra SSO.
    `https://saml.proxyclick.com/init/<COMPANY_ID>`
 
 	> [!NOTE]
-	> These values are placeholders. You need to use the actual Identifier,Reply URL and Sign on URL. Steps for getting these values are described later in this tutorial.
+	> These values are placeholders. You need to use the actual Identifier,Reply URL and Sign on URL. Steps for getting these values are described later in this article.
 
 6. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select the **Download** link next to **Certificate (Base64)**, per your requirements, and save the certificate on your computer:
 

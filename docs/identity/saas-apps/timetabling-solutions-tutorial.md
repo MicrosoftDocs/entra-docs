@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Timetabling Solutions
 
-In this tutorial, you'll learn how to integrate Timetabling Solutions with Microsoft Entra ID. When you integrate Timetabling Solutions with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Timetabling Solutions with Microsoft Entra ID. When you integrate Timetabling Solutions with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Timetabling Solutions.
 * Enable your users to be automatically signed-in to Timetabling Solutions with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Timetabling Solutions supports **SP** initiated SSO.
 

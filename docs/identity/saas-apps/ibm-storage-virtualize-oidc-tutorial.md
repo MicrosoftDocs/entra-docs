@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with IBM Storage Virtualize
 
-In this tutorial, you'll learn how to integrate IBM Storage Virtualize with Microsoft Entra ID. When you integrate IBM Storage Virtualize with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate IBM Storage Virtualize with Microsoft Entra ID. When you integrate IBM Storage Virtualize with Microsoft Entra ID, you can:
 
 Use Microsoft Entra ID to control who can access IBM Storage Virtualize.
 Enable your users to be automatically signed in to IBM Storage Virtualize with their Microsoft Entra accounts.

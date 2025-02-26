@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with PoliteMail - SSO
 
-In this tutorial, you'll learn how to integrate PoliteMail - SSO with Microsoft Entra ID. When you integrate PoliteMail - SSO with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate PoliteMail - SSO with Microsoft Entra ID. When you integrate PoliteMail - SSO with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to PoliteMail - SSO.
 * Enable your users to be automatically signed-in to PoliteMail - SSO with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To integrate Microsoft Entra ID with PoliteMail - SSO, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * PoliteMail - SSO supports **SP** initiated SSO.
 * PoliteMail - SSO supports **Just In Time** user provisioning.

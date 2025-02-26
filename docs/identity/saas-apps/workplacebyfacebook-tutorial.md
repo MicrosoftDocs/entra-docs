@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Workplace by Meta
 
-In this tutorial, you'll learn how to integrate Workplace by Meta with Microsoft Entra ID. When you integrate Workplace by Meta with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Workplace by Meta with Microsoft Entra ID. When you integrate Workplace by Meta with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Workplace by Meta.
 * Enable your users to be automatically signed-in to Workplace by Meta with their Microsoft Entra accounts.
@@ -36,12 +36,12 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Workplace by Meta supports **SP** initiated SSO.
 * Workplace by Meta supports **just-in-time provisioning**.
 * Workplace by Meta supports **[automatic User Provisioning](workplace-by-facebook-provisioning-tutorial.md)**.
-* Workplace by Meta Mobile application can now be configured with Microsoft Entra ID for enabling SSO. In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+* Workplace by Meta Mobile application can now be configured with Microsoft Entra ID for enabling SSO. In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 
 ## Adding Workplace by Meta from the gallery
@@ -95,7 +95,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://.workplace.com/work/saml.php`
 
     > [!NOTE]
-    > These values are not the real. Update these values with the actual Sign-On URL, Identifier and Reply URL. See the Authentication page of the Workplace Company Dashboard for the correct values for your Workplace community, this is explained later in the tutorial.
+    > These values are not the real. Update these values with the actual Sign-On URL, Identifier and Reply URL. See the Authentication page of the Workplace Company Dashboard for the correct values for your Workplace community, this is explained later in the article.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 

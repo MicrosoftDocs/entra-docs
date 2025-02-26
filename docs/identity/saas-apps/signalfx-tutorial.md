@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with SignalFx
 
-In this tutorial, you'll learn how to integrate SignalFx with Microsoft Entra ID. When you integrate SignalFx with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate SignalFx with Microsoft Entra ID. When you integrate SignalFx with Microsoft Entra ID, you can:
 
 * Control from Microsoft Entra ID who has access to SignalFx.
 * Enable your users to be automatically signed-in to SignalFx with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you'll configure and test Microsoft Entra SSO in a test environment.
+In this article,  you'll configure and test Microsoft Entra SSO in a test environment.
 
 * SignalFx supports **IDP** initiated SSO.
 * SignalFx supports **Just In Time** user provisioning.

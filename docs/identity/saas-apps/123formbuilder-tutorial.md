@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with 123FormBuilder SSO
 
-In this tutorial, you'll learn how to integrate 123FormBuilder SSO with Microsoft Entra ID. When you integrate 123FormBuilder SSO with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate 123FormBuilder SSO with Microsoft Entra ID. When you integrate 123FormBuilder SSO with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to 123FormBuilder SSO.
 * Enable your users to be automatically signed in to 123FormBuilder SSO with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * 123FormBuilder SSO supports **SP and IDP** initiated SSO.
 * 123FormBuilder SSO supports **Just In Time** user provisioning.
@@ -88,7 +88,7 @@ Follow these steps to enable Microsoft Entra SSO.
     In the **Sign-on URL** text box, type a URL using the following pattern: `https://www.123formbuilder.com/saml/azure_ad/<TENANT_ID>/sso`
 
 	> [!NOTE]
-	> These values are not real. You'll need to update these value from actual URLs and Identifier which is explained later in the tutorial.
+	> These values are not real. You'll need to update these value from actual URLs and Identifier which is explained later in the article.
 
 1. On the **Setup single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 

@@ -1,7 +1,7 @@
   items:
-  - name: Application tutorials
+  - name: Application articles
     href: tutorial-list.md
-  - name: Single sign-on tutorials
+  - name: Single sign-on articles
     expanded: true
     items:
     - name: 0 - 9
@@ -3271,7 +3271,7 @@
         href: zwayam-tutorial.md
       - name: Zylo
         href: zylo-tutorial.md  
-  - name: User provisioning tutorials
+  - name: User provisioning articles
     expanded: true
     items:
     - name: 0 - 9

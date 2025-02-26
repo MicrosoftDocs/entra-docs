@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Smart Global Governance
 
-In this tutorial, you'll learn how to integrate Smart Global Governance with Microsoft Entra ID. When you integrate Smart Global Governance with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Smart Global Governance with Microsoft Entra ID. When you integrate Smart Global Governance with Microsoft Entra ID, you can:
 
 * Use Microsoft Entra ID to control who can access Smart Global Governance.
 * Enable your users to be automatically signed in to Smart Global Governance with their Microsoft Entra accounts.
@@ -32,9 +32,9 @@ To get started, you need the following items:
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * A Smart Global Governance subscription with single sign-on (SSO) enabled.
 
-## Tutorial description
+## Article description
 
-In this tutorial, you'll configure and test Microsoft Entra SSO in a test environment.
+In this article,  you'll configure and test Microsoft Entra SSO in a test environment.
 
 Smart Global Governance supports SP-initiated and IDP-initiated SSO.
 

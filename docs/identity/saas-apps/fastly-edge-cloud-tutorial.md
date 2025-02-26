@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Fastly Edge Cloud
 
-In this tutorial, you'll learn how to integrate Fastly Edge Cloud with Microsoft Entra ID. When you integrate Fastly Edge Cloud with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Fastly Edge Cloud with Microsoft Entra ID. When you integrate Fastly Edge Cloud with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Fastly Edge Cloud.
 * Enable your users to be automatically signed-in to Fastly Edge Cloud with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Fastly Edge Cloud supports **IDP** initiated SSO.
 
