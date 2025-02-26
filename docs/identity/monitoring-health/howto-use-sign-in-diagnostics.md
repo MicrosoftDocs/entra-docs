@@ -22,10 +22,9 @@ This article gives you an overview of what the Sign-in diagnostic is and how you
 
 ## Prerequisites
 
-- The least privileged role to use the sign-in diagnostic *from a support request** or **Diagnose and solve problems is [Billing Administrator](../role-based-access-control/permissions-reference.md#billing-administrator).
-- To use the sign-in diagnostic *from the sign-in logs* you also need [Reports reader](../role-based-access-control/permissions-reference.md#reports-reader).
+- The least privileged role to use the sign-in diagnostic *from a support request* or *Diagnose and solve problems* is [Billing Administrator](../role-based-access-control/permissions-reference.md#billing-administrator).
+- To use the sign-in diagnostic *from the sign-in logs* you ALSO need [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 - For a full list of roles, see [Least privileged role by task](../role-based-access-control/delegate-by-task.md#monitoring-and-health---audit-and-sign-in-logs-least-privileged-roles).
-- Some sign-in log information might require other roles, such as [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 - Flagged sign-in events can also be reviewed from the Sign-in diagnostic.
   - Flagged sign-in events are captured *after* a user enabled flagging during their sign-in experience.
   - For more information, see [flagged sign-ins](overview-flagged-sign-ins.md).
