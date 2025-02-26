@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with 8x8
 
-In this tutorial, you'll learn how to integrate 8x8 with Microsoft Entra ID. When you integrate 8x8 with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate 8x8 with Microsoft Entra ID. When you integrate 8x8 with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to 8x8.
 * Enable your users to be automatically signed-in to 8x8 with their Microsoft Entra accounts.
@@ -35,7 +35,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * 8x8 supports both **SP and IDP** initiated SSO.
 * 8x8 supports [**Automated** user provisioning and deprovisioning](8x8-provisioning-tutorial.md) (recommended).
@@ -89,11 +89,11 @@ Follow these steps to enable Microsoft Entra SSO.
     In the **Sign on URL** text box, type the URL:
     `https://sso.8x8.com`
 
-1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer. You will use the certificate later in the tutorial in the **Configure 8x8 SSO** section.
+1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer. You will use the certificate later in the article in the **Configure 8x8 SSO** section.
 
 	![The Certificate download link](common/certificatebase64.png)
 
-1. On the **Set up 8x8** section, copy the URL(s) and you will use these URL values later in the tutorial: login URL, identifier, and logout URL.
+1. On the **Set up 8x8** section, copy the URL(s) and you will use these URL values later in the article: login URL, identifier, and logout URL.
 
 ### Create a Microsoft Entra test user
 

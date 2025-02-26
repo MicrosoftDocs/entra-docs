@@ -16,15 +16,15 @@ ms.author: thomasakelo
 
 # Configure Workteam  for automatic user provisioning
 
-The objective of this tutorial is to demonstrate the steps to be performed in Workteam  and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Workteam.
+The objective of this article is to demonstrate the steps to be performed in Workteam  and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Workteam.
 
 > [!NOTE]
-> This tutorial describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This article describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
 * A Microsoft Entra tenant.
 * [A Workteam tenant](https://workte.am/pricing.html)
@@ -77,7 +77,7 @@ To configure Workteam  for automatic user provisioning with Microsoft Entra ID, 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Workteam  based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Workteam, following the instructions provided in the [Workteam Single sign-on tutorial](workteam-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other
+> You may also choose to enable SAML-based single sign-on for Workteam, following the instructions provided in the [Workteam Single sign-on  article](workteam-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other
 
 <a name='to-configure-automatic-user-provisioning-for-workteam--in-azure-ad'></a>
 
@@ -116,7 +116,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Workteam  User Attributes](media/workteam-provisioning-tutorial/userattribute.png)
 
-11. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+11. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 12. To enable the Microsoft Entra provisioning service for Workteam, change the **Provisioning Status** to **On** in the **Settings** section.
 

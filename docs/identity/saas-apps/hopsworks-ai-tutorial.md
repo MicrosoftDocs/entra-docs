@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Hopsworks.ai
 
-In this tutorial, you'll learn how to integrate Hopsworks.ai with Microsoft Entra ID. When you integrate Hopsworks.ai with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Hopsworks.ai with Microsoft Entra ID. When you integrate Hopsworks.ai with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Hopsworks.ai.
 * Enable your users to be automatically signed-in to Hopsworks.ai with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Hopsworks.ai supports **SP** initiated SSO.
 * Hopsworks.ai supports **Just In Time** user provisioning.

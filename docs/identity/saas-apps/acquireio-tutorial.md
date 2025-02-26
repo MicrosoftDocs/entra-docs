@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with AcquireIO
 
-In this tutorial, you'll learn how to integrate AcquireIO with Microsoft Entra ID. When you integrate AcquireIO with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate AcquireIO with Microsoft Entra ID. When you integrate AcquireIO with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to AcquireIO.
 * Enable your users to be automatically signed-in to AcquireIO with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * AcquireIO supports **IDP** initiated SSO.
 
@@ -84,7 +84,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://app.acquire.io/ad/<acquire_account_uid>`
 
     > [!NOTE]
-    > The value is not real. You will get the actual Reply URL which is explained later in the **Configure AcquireIO** section of the tutorial. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > The value is not real. You will get the actual Reply URL which is explained later in the **Configure AcquireIO** section of the article. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 

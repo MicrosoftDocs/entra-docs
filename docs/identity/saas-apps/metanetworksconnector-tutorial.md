@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Meta Networks Connector
 
-In this tutorial, you'll learn how to integrate Meta Networks Connector with Microsoft Entra ID. When you integrate Meta Networks Connector with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Meta Networks Connector with Microsoft Entra ID. When you integrate Meta Networks Connector with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Meta Networks Connector.
 * Enable your users to be automatically signed-in to Meta Networks Connector with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Meta Networks Connector supports **SP** and **IDP** initiated SSO.
  
@@ -94,7 +94,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	b. In the **Relay State** textbox, type a URL using the following pattern: `https://<ORGANIZATION-SHORT-NAME>.metanetworks.com/#/`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL, and Sign-On URL are explained later in the tutorial.
+	> These values are not real. Update these values with the actual Identifier, Reply URL, and Sign-On URL are explained later in the article.
 
 6. Meta Networks Connector application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes. Click **Edit** icon to open **User Attributes** dialog.
 

@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Mend.io
 
-In this tutorial, you learn how to integrate Mend.io with Microsoft Entra ID. When you integrate Mend.io with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Mend.io with Microsoft Entra ID. When you integrate Mend.io with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Mend.io.
 * Enable your users to be automatically signed-in to Mend.io with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Mend.io supports **SP** initiated SSO.
 

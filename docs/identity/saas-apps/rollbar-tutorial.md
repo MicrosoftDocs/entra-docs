@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Rollbar
 
-In this tutorial, you'll learn how to integrate Rollbar with Microsoft Entra ID. When you integrate Rollbar with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Rollbar with Microsoft Entra ID. When you integrate Rollbar with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Rollbar.
 * Enable your users to be automatically signed-in to Rollbar with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with Rollbar, you need the following it
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Rollbar supports **SP and IDP** initiated SSO.
 * Rollbar supports [Automated user provisioning](rollbar-provisioning-tutorial.md).

@@ -1,6 +1,6 @@
 ---
 title: Microsoft Entra SSO integration with Pega Systems
-description: In this tutorial, you'll learn how to configure single sign-on between Microsoft Entra ID and Pega Systems.
+description: In this article,  you'll learn how to configure single sign-on between Microsoft Entra ID and Pega Systems.
 
 author: nguhiu
 manager: CelesteDG
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Pega Systems
 
-In this tutorial, you'll learn how to integrate Pega Systems with Microsoft Entra ID. When you integrate Pega Systems with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Pega Systems with Microsoft Entra ID. When you integrate Pega Systems with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Pega Systems.
 * Enable your users to be automatically signed-in to Pega Systems with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you'll configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you'll configure and test Microsoft Entra single sign-on in a test environment.
 
 * Pega Systems supports SP-initiated and IdP-initiated SSO.
 
@@ -92,7 +92,7 @@ Follow these steps to enable Microsoft Entra SSO.
        `https://<customername>.pegacloud.io/prweb/sso`
 
 	> [!NOTE]
-	> The values provided here are placeholders. You need to use the actual Identifier, Reply URL, Sign on URL and Relay state URL. You can get the identifier and reply URL values from a Pega application, as explained later in this tutorial. To get the relay state value, contact the [Pega Systems support team](https://www.pega.com/contact-us). You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The values provided here are placeholders. You need to use the actual Identifier, Reply URL, Sign on URL and Relay state URL. You can get the identifier and reply URL values from a Pega application, as explained later in this article. To get the relay state value, contact the [Pega Systems support team](https://www.pega.com/contact-us). You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 6. The Pega Systems application needs the SAML assertions to be in a specific format. To get them in the correct format, you need to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the default attributes. Select the **Edit** icon to open the **User Attributes** dialog box:
 

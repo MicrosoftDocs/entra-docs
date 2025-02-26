@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with SpaceIQ
 
-In this tutorial, you'll learn how to integrate SpaceIQ with Microsoft Entra ID. When you integrate SpaceIQ with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate SpaceIQ with Microsoft Entra ID. When you integrate SpaceIQ with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to SpaceIQ.
 * Enable your users to be automatically signed-in to SpaceIQ with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with SpaceIQ, you need the following it
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * SpaceIQ supports **IDP** initiated SSO.
 * SpaceIQ supports [Automated user provisioning](spaceiq-provisioning-tutorial.md).
@@ -87,7 +87,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://api.spaceiq.com/saml/<INSTANCE_ID>/callback`
 
 	> [!NOTE]
-	> Update these values with the actual Reply URL and identifier which is explained later in the tutorial.
+	> Update these values with the actual Reply URL and identifier which is explained later in the article.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 

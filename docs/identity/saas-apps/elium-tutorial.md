@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Elium
 
-In this tutorial, you'll learn how to integrate Elium with Microsoft Entra ID. When you integrate Elium with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Elium with Microsoft Entra ID. When you integrate Elium with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Elium.
 * Enable your users to be automatically signed-in to Elium with their Microsoft Entra accounts.
@@ -35,7 +35,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Elium supports **SP and IDP** initiated SSO.
 * Elium supports **Just In Time** user provisioning.
@@ -94,7 +94,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<platform-domain>.elium.com/login/saml2/login`
 
 	> [!NOTE]
-	> These values are not real. You will get these values from the **SP metadata file** downloadable at `https://<platform-domain>.elium.com/login/saml2/metadata`, which is explained later in this tutorial.
+	> These values are not real. You will get these values from the **SP metadata file** downloadable at `https://<platform-domain>.elium.com/login/saml2/metadata`, which is explained later in this article.
 
 1. Elium application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 

@@ -1,6 +1,6 @@
 ---
 title: Microsoft Entra SSO integration with Percolate
-description: In this tutorial, you'll learn how to configure single sign-on between Microsoft Entra ID and Percolate.
+description: In this article,  you'll learn how to configure single sign-on between Microsoft Entra ID and Percolate.
 
 author: nguhiu
 manager: CelesteDG
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Percolate
 
-In this tutorial, you'll learn how to integrate Percolate with Microsoft Entra ID. When you integrate Percolate with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Percolate with Microsoft Entra ID. When you integrate Percolate with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Percolate.
 * Enable your users to be automatically signed-in to Percolate with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with Percolate, you need to have:
 
 ## Scenario description
 
-In this tutorial, you'll configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you'll configure and test Microsoft Entra single sign-on in a test environment.
 
 * Percolate supports SP-initiated and IdP-initiated SSO.
 

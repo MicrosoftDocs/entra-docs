@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra integration with Andromeda
 
-In this tutorial, you'll learn how to integrate Andromeda with Microsoft Entra ID. When you integrate Andromeda with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Andromeda with Microsoft Entra ID. When you integrate Andromeda with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Andromeda.
 * Enable your users to be automatically signed-in to Andromeda with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To configure Microsoft Entra integration with Andromeda, you need the following 
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Andromeda supports **SP and IDP** initiated SSO.
 * Andromeda supports **Just In Time** user provisioning.
@@ -90,7 +90,7 @@ Follow these steps to enable Microsoft Entra SSO.
    `https://<tenantURL>.ngcxpress.com/SAMLLogon.aspx`
 
    > [!NOTE]
-   > These values are not real. You will update the value with the actual Identifier, Reply URL, and Sign-On URL which is explained later in the tutorial.
+   > These values are not real. You will update the value with the actual Identifier, Reply URL, and Sign-On URL which is explained later in the article.
 
 1. Andromeda application expects the SAML assertions in a specific format. Configure the following claims for this application. You can manage the values of these attributes from the **User Attributes** section on application integration page. On the **Set up Single Sign-On with SAML** page, click **Edit** button to open **User Attributes** dialog.
 

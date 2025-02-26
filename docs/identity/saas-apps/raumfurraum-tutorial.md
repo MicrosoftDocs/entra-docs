@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with raum]für[raum
 
-In this tutorial, you'll learn how to integrate raum]für[raum with Microsoft Entra ID. When you integrate raum]für[raum with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate raum]für[raum with Microsoft Entra ID. When you integrate raum]für[raum with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to raum]für[raum.
 * Enable your users to be automatically signed-in to raum]für[raum with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * raum]für[raum supports **SP and IDP** initiated SSO.
 * raum]für[raum supports **Just In Time** user provisioning.

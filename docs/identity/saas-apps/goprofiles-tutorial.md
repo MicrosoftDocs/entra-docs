@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with GoProfiles
 
-In this tutorial, you'll learn how to integrate GoProfiles with Microsoft Entra ID. When you integrate GoProfiles with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate GoProfiles with Microsoft Entra ID. When you integrate GoProfiles with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to GoProfiles.
 * Enable your users to be automatically signed-in to GoProfiles with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To integrate Microsoft Entra ID with GoProfiles, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * GoProfiles supports both **SP and IDP** initiated SSO.
 * GoProfiles supports **Just In Time** user provisioning.

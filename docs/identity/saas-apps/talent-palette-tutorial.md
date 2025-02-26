@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Talent Palette
 
-In this tutorial, you'll learn how to integrate Talent Palette with Microsoft Entra ID. When you integrate Talent Palette with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Talent Palette with Microsoft Entra ID. When you integrate Talent Palette with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Talent Palette.
 * Enable your users to be automatically signed-in to Talent Palette with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Folloze supports **IDP** initiated SSO.
 * Folloze supports **Just In Time** user provisioning.
