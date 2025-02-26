@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 11/08/2024
+ms.date: 02/26/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg
 
@@ -86,8 +86,7 @@ The basic steps for configuring diagnostics settings are as follows:
 1. To create a new diagnostic setting, select **Add diagnostic setting**.
 1. Provide a name.
 1. Select the logs you want to include.
-1. Select the destination.
-1. Select the subscription and the destination from the dropdown menus that appear.
+1. Select the destination and subscription from the dropdown menus that appear.
 1. Select the **Save** button.
 
     ![Screenshot of the create diagnostic settings page, with several logs selected to go to a Log Analytics workspace.](media/howto-configure-diagnostic-settings/diagnostic-settings-save.png)

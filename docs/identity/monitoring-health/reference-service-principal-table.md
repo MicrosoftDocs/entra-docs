@@ -15,7 +15,9 @@ ms.reviewer: dhanyahk
 
 The Microsoft service principal sign-in logs capture authentication events for Microsoft services. It can be helpful to understand what's happening with some service-to-service authentication events in your tenant. While not necessary for security investigations, the information can be useful for understanding how your services are interacting with each other.
 
-This article provides a table that maps the application IDs from the logs to the application name. A description of the authentication even is also provided.
+This article provides a table that maps the application IDs from the logs to the application name and a brief description of the application.
+
+Some application display names might include acronyms or abbreviations from the original application name. 
 
 ## How to access the logs
 
@@ -25,7 +27,9 @@ These logs are only available by configuring diagnostic settings in Microsoft En
 1. Browse to **Identity** > **Monitoring & health** > **Diagnostics**.
 1. Adjust the filters accordingly.
 1. Select **+ Add diagnostic setting**.
-1. 
+1. Select the **NEW LOG NAME**. 
+1. Select the destination and subscription from the dropdown menus that appear.
+1. Select the **Save** button.
 
 ## Microsoft service principal sign-in logs
 
@@ -47,6 +51,13 @@ These logs are only available by configuring diagnostic settings in Microsoft En
 | Fabric Identity Management | c0be6b4c-212d-4ca9-8a35-fd260fe22342 | Creates and manages Fabric Workspace Identities. |
 | MDATPNetworkScanAgent | 04687a56-4fc2-4e36-b274-b862fb649733 | Creates non-Microsoft apps within the customer tenant for each NetworkScan agent registered at customer sites. |
 | Microsoft Rights Management Services | 00000012-0000-0000-c000-000000000000 | Also known as the Azure Rights Management Service, this app applies encryption via Purview labels and other encryption related tasks. |
-|
+| Microsoft Volume Licensing | 3ab9b3bc-762f-4d62-82f7-7e1d653ce29f | Commerce platform that supports the Microsoft Product and Servcies Agreement (MPSA), which is a transactional licensing agreement for commercial, government, and academic organizations with 250 or more users/devices. |
+| Office 365 SharePoint Online | 00000003-0000-0ff1-ce00-000000000000 | This app represents the first-party instance of OneDrive and SharePoint apps. |
+| Partner Customer Delegated Admin Migration | 39d63e7-7fa3-4b2b-94ea-ee256fdb8c2f | Granular Delegated Admin Privileges (GDAP) uses Extended Tools and Production (XTAP) to grant a partner's access to a customer tenant. |
+| Power Virtual Agents Service<br/>9d8f559b-5984-46a4-902a-ad4271e83efa | 9d8f559b-5984-46a4-902a-ad4271e83efa<br/>9d8f559b-5984-46a4-902a-ad4271e83efa | Both instances of this app allow Power Virtual Agents (formerly Microsoft Copilot Studio) to manage the applications and service principals created for each agent. |
+| Storage Resource Provider | a6aa9161-5291-40bb-8c5c-923b567bee3b | Enables customers to manage storage accounts and keys programmatically. |
+| SubstrateActionService | 06dd8193-75af-46d0-84bb-9b9bcaa89e8b | Assists non-Microsoft app developers to build customized MessageExtension apps like Poll and Survey for use in Microsoft Teams. |
+| ZTNA Network Access Control Plane | 9d4afbbc-06a4-49e0-8005-4e5afd1d4fec | A feature of Global Secure Access, this app aAllows admins to control their network change's effect and try new features without affecting their onboarded environments. |
+
 
 
