@@ -1,6 +1,6 @@
 ---
-title: "Tutorial: Test a  ASP.NET Core web API"
-description:  Learn how to test a protected web API protected 
+title: "Tutorial: Test an ASP.NET Core web API"
+description:  Learn how to test a web API whose endpoints are protected using the Microsoft identity platform 
 author: Dickson-Mwendia
 manager: CelesteDG
 ms.author: dmwendia
@@ -8,7 +8,7 @@ ms.date: 2/21/2025
 ms.service: identity-platform
 
 ms.topic: tutorial
-#Customer intent: As an application developer I want to protect the endpoint of my API and run it to ensure it is listening for HTTP requests
+#Customer intent: As an application developer I want to test the security and functionality of my ASP.NET Core web API endpoints to ensure they're properly protected and responsive to HTTP requests.
 ---
 
 # Test a protected ASP.NET Core web API
@@ -42,16 +42,16 @@ Apps authenticating by themselves require app permissions.
 
 [!INCLUDE [Add app client secret](../external-id/customers/includes/register-app/grant-api-permissions-app-permissions.md)]
 
-## Write code
+## Build a daemon app
 
-1. Initialize a .NET console app and navigate to its root folder
+1. Initialize a .NET console app and navigate to its root folder:
 
     ```dotnetcli
     dotnet new console -o MyTestApp
     cd MyTestApp
     ```
 
-1. Install MSAL to help you with handling authentication by running the following command:
+1. Install MSAL.NET to help with handling authentication by running the following command:
 
     ```dotnetcli
     dotnet add package Microsoft.Identity.Client
@@ -72,7 +72,7 @@ Apps authenticating by themselves require app permissions.
     ```
 
     Navigate to the daemon app root directory and run app using the command `dotnet run`. This code sends a request without an access token. You should see the string: *Your response is: Unauthorized* printed in your console.
-1. Remove the code in step 4 and replace with the following to test your API by sending a request with a valid access token.
+1. Remove the code in step 4 and replace with the following to test your API by sending a request with a valid access token. This daemon app uses the client credentials flow to acquire an access token as it authenticates without user interaction. 
 
     ```csharp
     using Microsoft.Identity.Client;
@@ -86,7 +86,7 @@ Apps authenticating by themselves require app permissions.
     var clientSecret = "<your-daemon-app-secret>";
     var scopes = new[] {"api://<your-web-api-application-id>/.default"};
     var tenantName= "<your-tenant-name>";
-    var authority = $"https://{tenantName}.ciamlogin.com/";
+    var authority = $"https://{tenantName}.ciamlogin.com/"; 
 
     var app = ConfidentialClientApplicationBuilder
         .Create(clientId)
@@ -98,14 +98,14 @@ Apps authenticating by themselves require app permissions.
     Console.WriteLine($"Access Token: {result.AccessToken}");
     
     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", result.AccessToken);
-    var response = await client.GetAsync("http://localhost:5000/weatherforecast");
+    var response = await client.GetAsync("http://localhost:/<your-api-port>/weatherforecast");
     var content = await response.Content.ReadAsStringAsync();
     
     Console.WriteLine("Your response is: " + response.StatusCode);
     Console.WriteLine(content);
     ```
 
-    Navigate to the daemon app root directory and run app using the command `dotnet run`. This code sends a request with a valid access token. You should see the string: *Your response is: OK* printed in your console.
+    Navigate to the daemon app root directory and run app using the command `dotnet run`. This code sends a request with a valid access token. You should see the string: *Your response is: OK* printed in your console alongside some dummy weather forecast data from our minimal API.
 
 ## Related content
 
