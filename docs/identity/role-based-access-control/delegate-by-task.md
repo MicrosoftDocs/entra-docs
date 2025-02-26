@@ -272,7 +272,7 @@ Here are the least privileged roles you should use when performing tasks for aud
 
 ## Monitoring and health - Provisioning logs least privileged roles
 
-Here are the least privileged roles you should use when performing tasks for [Microsoft Entra provisioning logs](../monitoring-health/concept-provisioning-logs.md.md).
+Here are the least privileged roles you should use when performing tasks for [Microsoft Entra provisioning logs](../monitoring-health/concept-provisioning-logs.md).
 
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
@@ -296,7 +296,7 @@ Here are the least privileged roles you should use when running the sign-in diag
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged roles | Additional roles |
 > | ---- | --------------------- | ---------------- |
-> | Use sign-in diagnostic | [Reports Reader](permissions-reference.md#reports-reader)<br/>[Billing Administrator](permissions-reference.md#billing-administrator)<br/>[Customer LockBox Access Approver](permissions-reference.md#customer-lockbox-access-approver)<br/>[Groups Administrator](permissions-reference.md#groups-administrator)<br>[License Administrator](permissions-reference.md#license-administrator)<br/> | [Application Administrator](permissions-reference.md#application-administrator)<br/>[Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Cloud Device Administrator](permissions-reference.md#cloud-device-administrator)<br/>[Conditional Access Administrator](permissions-reference.md#conditional-access-administrator)[Global Reader](permissions-reference.md#global-reader)<br/>[Helpdesk Administrator](permissions-reference.md#helpdesk-administrator)<br/>[Privileged Role Administrator](permissions-reference.md#privileged-role-administrator)<br/>[Security Administrator](permissions-reference.md#security-administrator)<br/>[User Administrator](permissions-reference.md#user-administrator) |
+> | Use sign-in diagnostic | [Reports Reader](permissions-reference.md#reports-reader)<br/>[Billing Administrator](permissions-reference.md#billing-administrator)<br/>[Customer LockBox Access Approver](permissions-reference.md#customer-lockbox-access-approver)<br/>[Groups Administrator](permissions-reference.md#groups-administrator)<br>[License Administrator](permissions-reference.md#license-administrator)<br/> | [Application Administrator](permissions-reference.md#application-administrator)<br/>[Cloud Application Administrator](permissions-reference.md#cloud-application-administrator)<br/>[Cloud Device Administrator](permissions-reference.md#cloud-device-administrator)<br/>[Conditional Access Administrator](permissions-reference.md#conditional-access-administrator)<br/>[Global Reader](permissions-reference.md#global-reader)<br/>[Helpdesk Administrator](permissions-reference.md#helpdesk-administrator)<br/>[Privileged Role Administrator](permissions-reference.md#privileged-role-administrator)<br/>[Security Administrator](permissions-reference.md#security-administrator)<br/>[User Administrator](permissions-reference.md#user-administrator) |
 
 ## Multifactor authentication least privileged roles
 
