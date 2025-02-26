@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with iLOGON_MHA
 
-In this tutorial, you'll learn how to integrate iLOGON_MHA with Microsoft Entra ID. When you integrate iLOGON_MHA with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate iLOGON_MHA with Microsoft Entra ID. When you integrate iLOGON_MHA with Microsoft Entra ID, you can:
 
 Use Microsoft Entra ID to control who can access iLOGON_MHA.
 Enable your users to be automatically signed in to iLOGON_MHA with their Microsoft Entra accounts.

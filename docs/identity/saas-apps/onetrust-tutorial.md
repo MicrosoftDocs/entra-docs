@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with OneTrust Privacy Management Software
 
-In this tutorial, you'll learn how to integrate OneTrust Privacy Management Software with Microsoft Entra ID. When you integrate OneTrust Privacy Management Software with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate OneTrust Privacy Management Software with Microsoft Entra ID. When you integrate OneTrust Privacy Management Software with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to OneTrust Privacy Management Software.
 * Enable your users to be automatically signed in to OneTrust Privacy Management Software with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with OneTrust Privacy Management Softwa
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * OneTrust Privacy Management Software supports **SP** and **IDP** initiated SSO.
 

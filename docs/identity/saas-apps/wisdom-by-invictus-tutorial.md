@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Wisdom by Invictus
 
-In this tutorial, you'll learn how to integrate Wisdom by Invictus with Microsoft Entra ID. When you integrate Wisdom by Invictus with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Wisdom by Invictus with Microsoft Entra ID. When you integrate Wisdom by Invictus with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Wisdom by Invictus.
 * Enable your users to be automatically signed-in to Wisdom by Invictus with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Wisdom by Invictus supports **SP and IDP** initiated SSO.
 

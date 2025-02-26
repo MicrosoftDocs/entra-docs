@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Zenvoices IMAP
 
-In this tutorial, you learn how to integrate Zenvoices IMAP with Microsoft Entra ID. When you integrate Zenvoices IMAP with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Zenvoices IMAP with Microsoft Entra ID. When you integrate Zenvoices IMAP with Microsoft Entra ID, you can:
 
 Use Microsoft Entra ID to control who can access Zenvoices IMAP.
 Enable your users to be automatically signed in to Zenvoices IMAP with their Microsoft Entra accounts.

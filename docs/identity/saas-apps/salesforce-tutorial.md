@@ -40,7 +40,7 @@ In this article, you configure and test Microsoft Entra SSO in a test environmen
 
 * Salesforce supports **Just In Time** user provisioning.
 
-* Salesforce Mobile application can now be configured with Microsoft Entra ID for enabling SSO. In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+* Salesforce Mobile application can now be configured with Microsoft Entra ID for enabling SSO. In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 ## Add Salesforce from the gallery
 

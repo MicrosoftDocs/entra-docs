@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with EPHOTO DAM
 
-In this tutorial, you'll learn how to integrate EPHOTO DAM with Microsoft Entra ID. When you integrate EPHOTO DAM with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate EPHOTO DAM with Microsoft Entra ID. When you integrate EPHOTO DAM with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to EPHOTO DAM.
 * Enable your users to be automatically signed-in to EPHOTO DAM with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * EPHOTO DAM supports **SP and IDP** initiated SSO
 

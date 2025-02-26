@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with LifeBalance Program
 
-In this tutorial, you'll learn how to integrate LifeBalance Program with Microsoft Entra ID. When you integrate LifeBalance Program with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate LifeBalance Program with Microsoft Entra ID. When you integrate LifeBalance Program with Microsoft Entra ID, you can:
 
 Use Microsoft Entra ID to control who can access LifeBalance Program.
 Enable your users to be automatically signed in to LifeBalance Program with their Microsoft Entra accounts.

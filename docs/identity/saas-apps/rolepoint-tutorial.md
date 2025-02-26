@@ -1,6 +1,6 @@
 ---
 title: Microsoft Entra SSO integration with RolePoint
-description: In this tutorial, you'll learn how to configure single sign-on between Microsoft Entra ID and RolePoint.
+description: In this article,  you'll learn how to configure single sign-on between Microsoft Entra ID and RolePoint.
 
 author: nguhiu
 manager: CelesteDG
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with RolePoint
 
-In this tutorial, you'll learn how to integrate RolePoint with Microsoft Entra ID. When you integrate RolePoint with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate RolePoint with Microsoft Entra ID. When you integrate RolePoint with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to RolePoint.
 * Enable your users to be automatically signed-in to RolePoint with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with RolePoint, you need to have:
 
 ## Scenario description
 
-In this tutorial, you'll configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you'll configure and test Microsoft Entra single sign-on in a test environment.
 
 * RolePoint supports SP-initiated SSO.
 

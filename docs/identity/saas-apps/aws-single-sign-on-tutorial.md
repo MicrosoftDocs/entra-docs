@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with AWS IAM Identity Center
 
-In this tutorial, you will learn how to integrate AWS IAM Identity Center (successor to AWS Single Sign-On) with Microsoft Entra ID. When you integrate AWS IAM Identity Center with Microsoft Entra ID, you can:
+In this article,  you will learn how to integrate AWS IAM Identity Center (successor to AWS Single Sign-On) with Microsoft Entra ID. When you integrate AWS IAM Identity Center with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to AWS IAM Identity Center.
 * Enable your users to be automatically signed-in to AWS IAM Identity Center with their Microsoft Entra accounts.
@@ -36,7 +36,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 **Note:** Ensure you delegated another account as the Identity Center Administration account and enabled IAM Identity Center on it before proceeding with the following steps.
 

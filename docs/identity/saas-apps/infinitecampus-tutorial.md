@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Infinite Campus
 
-In this tutorial, you learn how to integrate Infinite Campus with Microsoft Entra ID. When you integrate Infinite Campus with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Infinite Campus with Microsoft Entra ID. When you integrate Infinite Campus with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Infinite Campus.
 * Enable your users to be automatically signed-in to Infinite Campus with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To configure Microsoft Entra integration with Infinite Campus, you need the foll
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Infinite Campus supports **SP** initiated SSO.
 

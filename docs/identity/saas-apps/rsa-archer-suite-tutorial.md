@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with RSA Archer Suite
 
-In this tutorial, you'll learn how to integrate RSA Archer Suite with Microsoft Entra ID. When you integrate RSA Archer Suite with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate RSA Archer Suite with Microsoft Entra ID. When you integrate RSA Archer Suite with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to RSA Archer Suite.
 * Enable your users to be automatically signed-in to RSA Archer Suite with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * RSA Archer Suite supports **SP** initiated SSO.
 * RSA Archer Suite supports **Just In Time** user provisioning.

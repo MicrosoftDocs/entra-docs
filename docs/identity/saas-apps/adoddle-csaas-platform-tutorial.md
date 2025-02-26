@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Adoddle cSaas Platform
 
-In this tutorial, you'll learn how to integrate Adoddle cSaas Platform with Microsoft Entra ID. When you integrate Adoddle cSaas Platform with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Adoddle cSaas Platform with Microsoft Entra ID. When you integrate Adoddle cSaas Platform with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Adoddle cSaas Platform.
 * Enable your users to be automatically signed-in to Adoddle cSaas Platform with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Adoddle cSaas Platform supports **IDP** initiated SSO.
 

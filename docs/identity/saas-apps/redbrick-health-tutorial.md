@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with RedBrick Health
 
-In this tutorial, you'll learn how to integrate RedBrick Health with Microsoft Entra ID. When you integrate RedBrick Health with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate RedBrick Health with Microsoft Entra ID. When you integrate RedBrick Health with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to RedBrick Health.
 * Enable your users to be automatically signed-in to RedBrick Health with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * RedBrick Health supports **IDP** initiated SSO.
 

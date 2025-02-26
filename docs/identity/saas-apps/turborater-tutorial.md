@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with TurboRater
 
-In this tutorial, you learn how to integrate TurboRater with Microsoft Entra ID.
+In this article,  you learn how to integrate TurboRater with Microsoft Entra ID.
 
 Integrating TurboRater with Microsoft Entra ID provides you with the following benefits:
 
@@ -35,7 +35,7 @@ To configure Microsoft Entra integration with TurboRater, you need the following
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 TurboRater supports IDP-initiated single sign-on (SSO).
 
@@ -174,7 +174,7 @@ When you select **TurboRater** in the My Apps portal, you should be automaticall
 
 ## Additional resources
 
-* [List of tutorials for integrating SaaS applications with Microsoft Entra ID](./tutorial-list.md)
+* [List of articles for integrating SaaS applications with Microsoft Entra ID](./tutorial-list.md)
 
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 

@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with InfinityQS ProFicient on Demand
 
-In this tutorial, you'll learn how to integrate InfinityQS ProFicient on Demand with Microsoft Entra ID. When you integrate InfinityQS ProFicient on Demand with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate InfinityQS ProFicient on Demand with Microsoft Entra ID. When you integrate InfinityQS ProFicient on Demand with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to InfinityQS ProFicient on Demand.
 * Enable your users to be automatically signed-in to InfinityQS ProFicient on Demand with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * InfinityQS ProFicient on Demand supports **IDP** initiated SSO.
 

@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Integrate SecureW2 JoinNow Connector with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate SecureW2 JoinNow Connector with Microsoft Entra ID. When you integrate SecureW2 JoinNow Connector with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate SecureW2 JoinNow Connector with Microsoft Entra ID. When you integrate SecureW2 JoinNow Connector with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to SecureW2 JoinNow Connector.
 * Enable your users to be automatically signed-in to SecureW2 JoinNow Connector with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * SecureW2 JoinNow Connector supports **SP** initiated SSO.
 

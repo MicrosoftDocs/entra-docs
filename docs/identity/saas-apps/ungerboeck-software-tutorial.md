@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Integrate Ungerboeck Software with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate Ungerboeck Software with Microsoft Entra ID. When you integrate Ungerboeck Software with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Ungerboeck Software with Microsoft Entra ID. When you integrate Ungerboeck Software with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Ungerboeck Software.
 * Enable your users to be automatically signed-in to Ungerboeck Software with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Ungerboeck Software supports **SP** initiated SSO.
 
@@ -95,7 +95,7 @@ Follow these steps to enable Microsoft Entra SSO.
      - `https://<SUBDOMAIN>.ungerboeck.io/test`
 
    > [!NOTE]
-   > These values are not real. Update these values with the actual Sign on URL and Identifier which is explained later in the **Configure Ungerboeck Software Single Sign-On** section of the tutorial.
+   > These values are not real. Update these values with the actual Sign on URL and Identifier which is explained later in the **Configure Ungerboeck Software Single Sign-On** section of the article.
 
 1. In the **SAML Signing Certificate** section, click **Edit** button to open **SAML Signing Certificate** dialog.
 

@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with SmartDraw
 
-In this tutorial, you'll learn how to integrate SmartDraw with Microsoft Entra ID. When you integrate SmartDraw with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate SmartDraw with Microsoft Entra ID. When you integrate SmartDraw with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to SmartDraw.
 * Enable your users to be automatically signed-in to SmartDraw with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * SmartDraw supports **SP and IDP** initiated SSO.
 * SmartDraw supports **Just In Time** user provisioning.
@@ -84,7 +84,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://cloud.smartdraw.com/sso/saml/login/<DOMAIN>`
 
     > [!NOTE]
-	> The Sign-on URL value is not real. You will update the Sign-on URL value with the actual Sign-on URL, which is explained later in the tutorial. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The Sign-on URL value is not real. You will update the Sign-on URL value with the actual Sign-on URL, which is explained later in the article. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Click **Save**.
 

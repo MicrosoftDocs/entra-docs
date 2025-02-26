@@ -16,14 +16,14 @@ ms.author: thomasakelo
 
 # Configure Bonusly for automatic user provisioning
 
-The objective of this tutorial is to demonstrate the steps to be performed in Bonusly and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Bonusly.
+The objective of this article is to demonstrate the steps to be performed in Bonusly and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Bonusly.
 
 > [!NOTE]
-> This tutorial describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This article describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following:
+The scenario outlined in this article assumes that you already have the following:
 
 * A Microsoft Entra tenant
 * A [Bonusly tenant](https://bonus.ly/pricing)
@@ -63,7 +63,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Bonusly based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Bonusly, following the instructions provided in the [Bonusly single sign-on tutorial](bonus-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
+> You may also choose to enable SAML-based single sign-on for Bonusly, following the instructions provided in the [Bonusly single sign-on  article](bonus-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
 
 <a name='to-configure-automatic-user-provisioning-for-bonusly-in-azure-ad'></a>
 
@@ -120,7 +120,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	:::image type="content" source="./media/bonusly-provisioning-tutorial/UserAttributeMapping.png" alt-text="Screenshot of the Attribute Mappings page. A table lists Microsoft Entra attributes, corresponding Bonusly attributes, and the matching status." border="false":::
 
-13. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+13. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 14. To enable the Microsoft Entra provisioning service for Bonusly, change the **Provisioning Status** to **On** in the **Settings** section.
 

@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Cisco Webex Meetings
 
-In this tutorial, you'll learn how to integrate Cisco Webex Meetings with Microsoft Entra ID. When you integrate Cisco Webex Meetings with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Cisco Webex Meetings with Microsoft Entra ID. When you integrate Cisco Webex Meetings with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Cisco Webex Meetings.
 * Enable your users to be automatically signed-in to Cisco Webex Meetings with their Microsoft Entra accounts.
@@ -38,7 +38,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Cisco Webex Meetings supports **SP and IDP** initiated SSO.
 * Cisco Webex Meetings supports [**Automated** user provisioning and deprovisioning](cisco-webex-provisioning-tutorial.md) (recommended).
@@ -85,7 +85,7 @@ Follow these steps to enable Microsoft Entra SSO.
    1. After successful completion of uploading Service Provider metadata file the **Identifier** and **Reply URL** values get auto populated in **Basic SAML Configuration** section.
    
       > [!Note]
-      > You will get the Service Provider Metadata file from **Configure Cisco Webex Meetings SSO** section, which is explained later in the tutorial. 
+      > You will get the Service Provider Metadata file from **Configure Cisco Webex Meetings SSO** section, which is explained later in the article. 
 
 1. If you wish to configure the application in **SP** initiated mode, perform the following steps:	
    1. On the **Basic SAML Configuration** section, click the pencil icon.

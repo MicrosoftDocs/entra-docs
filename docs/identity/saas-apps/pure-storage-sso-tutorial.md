@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Pure Storage SSO
 
-In this tutorial, you learn how to integrate Pure Storage SSO with Microsoft Entra ID. When you integrate Pure Storage SSO with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Pure Storage SSO with Microsoft Entra ID. When you integrate Pure Storage SSO with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Pure Storage SSO.
 * Enable your users to be automatically signed-in to Pure Storage SSO with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ To integrate Microsoft Entra ID with Pure Storage SSO, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Pure Storage SSO supports both **SP and IDP** initiated SSO.
 

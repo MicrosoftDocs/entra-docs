@@ -25,7 +25,7 @@ This article shows you how to configure Microsoft Entra ID in Foodee and Microso
 
 ## Prerequisites
 
-This tutorial assumes that you've met the following prerequisites:
+This article assumes that you've met the following prerequisites:
 
 * A Microsoft Entra tenant
 * [A Foodee tenant](https://www.food.ee/about/)
@@ -85,7 +85,7 @@ To add Foodee from the Microsoft Entra application gallery, do the following:
 In this section, you configure the Microsoft Entra provisioning service to create, update, and disable users or groups in Foodee based on user or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You can also enable SAML-based single sign-on for Foodee by following the instructions in the [Foodee single sign-on tutorial](Foodee-tutorial.md). You can configure single sign-on independent of automatic user provisioning, though these two features complement each other.
+> You can also enable SAML-based single sign-on for Foodee by following the instructions in the [Foodee single sign-on  article](Foodee-tutorial.md). You can configure single sign-on independent of automatic user provisioning, though these two features complement each other.
 
 Configure automatic user provisioning for Foodee in Microsoft Entra ID by doing the following:
 
@@ -136,7 +136,7 @@ Configure automatic user provisioning for Foodee in Microsoft Entra ID by doing 
 	:::image type="content" source="media/Foodee-provisioning-tutorial/groupattribute.png" alt-text="Screenshot of the Attribute Mappings page. A table lists Microsoft Entra attributes, Foodee attributes, and the matching precedence." border="false":::
 
 1. To commit your changes, select **Save**.
-1. Configure the scoping filters. To learn how, refer to the instructions in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. Configure the scoping filters. To learn how, refer to the instructions in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for Foodee, in the **Settings** section, change the **Provisioning Status** to **On**.
 

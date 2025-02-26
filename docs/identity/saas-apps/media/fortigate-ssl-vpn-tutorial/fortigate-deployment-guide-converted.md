@@ -213,4 +213,4 @@ Multi-homed Azure VMs have all network interfaces on the same virtual network (b
 
 ## Configure FortiGate SSL VPN
 
-Follow the steps outlined in [Tutorial: Microsoft Entra single sign-on (SSO) integration with FortiGate SSL VPN](../../fortigate-ssl-vpn-tutorial.md)
+Follow the steps outlined in [Microsoft Entra single sign-on (SSO) integration with FortiGate SSL VPN](../../fortigate-ssl-vpn-tutorial.md)

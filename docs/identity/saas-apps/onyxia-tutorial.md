@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Onyxia
 
-In this tutorial, you'll learn how to integrate Onyxia with Microsoft Entra ID. When you integrate Onyxia with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Onyxia with Microsoft Entra ID. When you integrate Onyxia with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Onyxia.
 * Enable your users to be automatically signed-in to Onyxia with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To integrate Microsoft Entra ID with Onyxia, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Onyxia supports both **SP and IDP** initiated SSO.
 * Onyxia supports **Just In Time** user provisioning.

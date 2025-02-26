@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Help Scout
 
-In this tutorial, you'll learn how to integrate Help Scout with Microsoft Entra ID. When you integrate Help Scout with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Help Scout with Microsoft Entra ID. When you integrate Help Scout with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Help Scout.
 * Enable your users to be automatically signed-in to Help Scout with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with Help Scout, you need the following
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Help Scout supports **SP and IDP** initiated SSO.
 * Help Scout supports **Just In Time** user provisioning.
@@ -82,7 +82,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	b. **Reply URL** is the **Post-back URL (Assertion Consumer Service URL)** from Help Scout, starts with `https://` 
 
 	> [!NOTE]
-	> The values in these URLs are for demonstration only. You need to update these values from actual Reply URL and Identifier. You get these values from the **Single Sign-On** tab under Authentication section, which is explained later in the tutorial.
+	> The values in these URLs are for demonstration only. You need to update these values from actual Reply URL and Identifier. You get these values from the **Single Sign-On** tab under Authentication section, which is explained later in the article.
 
 1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
