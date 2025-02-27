@@ -23,7 +23,7 @@ In this tutorial;
 
 > [!div class="checklist"]
 >
-> - Configure a daemon app to use it's app registration details.
+> - Configure a daemon app to use it's app registration details. Ensure you grant the app the *User.Read.All* permission on Microsoft Graph API.
 > - Build a daemon app that acquires a token on its own behalf and calls a protected web API.
 
 ## Prerequisites
