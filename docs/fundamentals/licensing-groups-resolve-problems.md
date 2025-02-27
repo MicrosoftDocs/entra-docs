@@ -267,14 +267,6 @@ If you encounter any licensing errors, they're recorded on the user object and r
 
 For example, consider a group that has Office 365 E3/E5 assigned with a Skype for Business service plan enabled. Also imagine that a few members of the group have Audio Conferencing licenses assigned directly. When the group is deleted, group-based licensing tries to remove Office 365 E3/E5 from all users. Because Audio Conferencing is dependent on Skype for Business, for any users with Audio Conferencing assigned, group-based licensing converts the Office 365 E3/E5 licenses to direct license assignment.
 
-## Manage licenses for products with prerequisites
-
-Some Microsoft Online products you might own are *add-ons*. Add-ons require a prerequisite service plan to be enabled for a user or a group before they can be assigned a license. With group-based licensing, the system requires that both the prerequisite and add-on service plans be present in the same group. This requirement exists to ensure that any users who are added to the group can receive the fully working product. Let's consider the following example:
-
-Microsoft Workplace Analytics is an add-on product. It contains a single service plan with the same name. You can only assign this service plan to a user, or group, when one of the following prerequisites is also assigned:
-
-- Exchange Online (Plan 1)
-- Exchange Online (Plan 2)
 
 **Problem:** If you try to assign this product on its own to a group, the portal returns a notification message. If you select the item details, it shows the following error message:
 
@@ -291,15 +283,6 @@ From now on, any users added to this group consume one license of the E3 product
 
 > [!TIP]
 > You can create multiple groups for each prerequisite service plan. For example, if you use both Office 365 Enterprise E1 and Office 365 Enterprise E3 for your users, you can create two groups to license Microsoft Workplace Analytics: one that uses E1 as a prerequisite and the other that uses E3. This approach lets you distribute the add-on to E1 and E3 users without consuming other licenses.
-
-## License removal of dynamic membership groups with rules based on licenses with an initial static group 
-
-This error occurs because users are added and removed from another batch of dynamic membership groups. The cascading setup of dynamic membership groups, with rules based on licenses in an initial static group, creates this issue. This error can affect multiple dynamic membership groups and demands extensive reprocessing to restore access. 
-
-.[!WARNING]
-> When you change an existing static group to a dynamic group, all existing members are removed from the group, and then the membership rule is processed to add new members. If the group is used to control access to apps or resources, the original members might lose access until the membership rule is fully processed.
-
-We recommend that you test the new membership rule beforehand to make sure that the new membership in the group is as expected. 
 
 ## Microsoft Entra ID Mail and ProxyAddresses attribute change 
 
