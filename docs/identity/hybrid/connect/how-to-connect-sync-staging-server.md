@@ -36,7 +36,7 @@ During installation, you can select the server to be in **staging mode**. This a
 
 You can still force an export by using the synchronization service manager.
 
-A server in staging mode continues to receive changes from Active Directory and Microsoft Entra ID and can quickly take over the responsibilities of another server in the event of a failure. If you make configuration changes to your primary server, it's your responsibility to make the same changes to the server in staging mode.
+A server in staging mode continues to receive changes from Active Directory and Microsoft Entra ID and can quickly take over the responsibilities of another server in the event of a failure.
 
 For those of you with knowledge of older sync technologies, the staging mode is different since the server has its own SQL database. This architecture allows the staging mode server to be located in a different datacenter.
 
@@ -58,7 +58,7 @@ To apply this method, follow these steps:
 
 #### Configuration
 
-If you made custom changes to the primary server and want to compare the configuration with the staging server, then use [Microsoft Entra Connect configuration documenter](https://github.com/Microsoft/AADConnectConfigDocumenter).
+ If you make configuration changes to your primary server, it's your responsibility to make the same changes to the server in staging mode.
 
 #### Import and Synchronize
 
