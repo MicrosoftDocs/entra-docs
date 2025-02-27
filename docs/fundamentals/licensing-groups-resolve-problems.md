@@ -34,7 +34,7 @@ Some example issues include but are not limited to:
 
 ## Find license assignment errors
 
-When you're using group-based licensing, the same errors can occur, but they happen in the background while the Microsoft Entra service is assigning licenses. For this reason, the errors can't be communicated to you immediately. Instead, they're recorded on the user object and then reported via the administrative portal. The original intent to license the user is never lost, but is recorded in an error state for future investigation and resolution. You can also [use audit logs to monitor group activity](/azure/security/fundamentals/log-audit.md).
+When you're using group-based licensing, the same errors can occur, but they happen in the background while the Microsoft Entra service is assigning licenses. For this reason, the errors can't be communicated to you immediately. Instead, they're recorded on the user object and then reported via the administrative portal. The original intent to license the user is never lost, but is recorded in an error state for future investigation and resolution. You can also [use audit logs to monitor group activity](/azure/security/fundamentals/log-audit).
 
 
 ### To find users in an error state in a group
@@ -172,7 +172,7 @@ Audit log License Assignment Error Records can be identified by the following de
 For example, after you resolve a dependency violation error for an affected user, you need to trigger the reprocessing of the user. To reprocess a user, navigate back to the **M365 Admin Portal > Billing > Licenses**.  Select the license and navigate to the group where the affected user(s) shows in error, select the user(s) and then click the **Reprocess** button on the toolbar. 
 
  
-Alternatively, you can use Graph for PowerShell [Invoke-MgLicenseUser](powershell/module/microsoft.graph.users.actions/invoke-mglicenseuser) to reprocess users.
+Alternatively, you can use Graph for PowerShell [Invoke-MgLicenseUser](/powershell/module/microsoft.graph.users.actions/invoke-mglicenseuser) to reprocess users.
 
 ## More than one product license assigned to a group 
 
@@ -260,13 +260,6 @@ This error occurs because users are added and removed from another batch of dyna
 
 After you resolve any proxy address problems for the affected users, make sure to force license processing on the group to make sure that the licenses can now be applied.
 
-<a name='azure-ad-mail-and-proxyaddresses-attribute-change'></a>
-
-## Microsoft Entra ID Mail and ProxyAddresses attribute change
-
-**Problem:** While updating license assignment on a user or a group, you might see that the Microsoft Entra ID Mail and ProxyAddresses attribute of some users are changed.
-
-Updating license assignment on a user causes the proxy address calculation to be triggered, which can change user attributes. To understand the exact reason of the change and solve the problem, see this article on [how the proxyAddresses attribute is populated in Microsoft Entra ID](https://support.microsoft.com/help/3190357/how-the-proxyaddresses-attribute-is-populated-in-azure-ad).
 
 ## LicenseAssignmentAttributeConcurrencyException in audit logs
 
