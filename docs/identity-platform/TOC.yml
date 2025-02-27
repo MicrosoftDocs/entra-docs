@@ -244,7 +244,7 @@
           items:
           - name: Add sign-in and sign-out
             href: tutorial-web-app-python-flask-sign-in-out.md
-          - name: Get user data from web API
+          - name: Call Microsoft Graph API
             href: tutorial-web-app-python-flask-call-microsoft-graph-api.md
         - name: Node/Express.js
           items:
