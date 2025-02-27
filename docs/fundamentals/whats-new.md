@@ -108,16 +108,6 @@ For more information, see: [Microsoft Graph permissions reference](/graph/permis
 
 ---
 
-### Public Preview - Detect Azure elevate access events using Microsoft Sentinel
-
-**Type:** New feature    
-**Service category:** RBAC    
-**Product capability:** Monitoring & Reporting    
-
-This feature allows administrators to take advantage of an out-of-the-box Microsoft Sentinel Analytics rule for Elevate Access events, providing real-time alerts on who elevated access, and when within their tenant. By using Microsoft Sentinel, a security information and event management (SIEM) platform, customers gain enhanced detection and awareness of elevate access activities. This helps ensure that only authorized admins are elevating access, reducing the risk of fraudulent activities. For more information on this feature, see: [Detect elevate access events using Microsoft Sentinel](/azure/role-based-access-control/elevate-access-global-admin?tabs=azure-portal%2Centra-audit-logs#detect-elevate-access-events-using-microsoft-sentinel).
-
----
-
 
 ## January 2025
 
