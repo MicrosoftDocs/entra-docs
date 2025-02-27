@@ -36,7 +36,7 @@ During installation, you can select the server to be in **staging mode**. This a
 
 You can still force an export by using the synchronization service manager.
 
-A server in staging mode continues to receive changes from Active Directory and Microsoft Entra ID and can quickly take over the responsibilities of another server in the event of a failure. If you make configuration changes to your primary server, it's your responsibility to make the same changes to the server in staging mode.
+A server in staging mode continues to receive changes from Active Directory and Microsoft Entra ID and can quickly take over the responsibilities of another server in the event of a failure.
 
 For those of you with knowledge of older sync technologies, the staging mode is different since the server has its own SQL database. This architecture allows the staging mode server to be located in a different datacenter.
 
@@ -58,13 +58,14 @@ To apply this method, follow these steps:
 
 #### Configuration
 
-If you made custom changes to the primary server and want to compare the configuration with the staging server, then use [Microsoft Entra Connect configuration documenter](https://github.com/Microsoft/AADConnectConfigDocumenter).
+ If you make configuration changes to your primary server, it's your responsibility to make the same changes to the server in staging mode.
 
 #### Import and Synchronize
 
 1. Select **Connectors**, and select the first Connector with the type **Active Directory Domain Services**. Select **Run**, select **Full import**, and **OK**. Do these steps for all Connectors of this type.
 2. Select the Connector with type **Microsoft Entra ID (Microsoft)**. Select **Run**, select **Full import**, and **OK**.
-3. Make sure the tab Connectors is still selected. For each Connector with type **Active Directory Domain Services**, select **Run**, select **Delta Synchronization**, and **OK**.
+1. Make sure the tab Connectors is still selected. For each Connector with type **Active Directory Domain Services**, select **Run**, select **Delta Synchronization**, and **OK**. Do these steps for all Connectors of this type.
+
 4. Select the Connector with type **Microsoft Entra ID (Microsoft)**. Select **Run**, select **Delta Synchronization**, and **OK**.
 
 You've now staged export changes to Microsoft Entra ID and on-premises AD (if you're using Exchange hybrid deployment). The next steps allow you to inspect what is about to change before you actually start the export to the directories.
@@ -89,8 +90,8 @@ Most of the file is self-explanatory. Some abbreviations to understand the conte
 The export.csv file contains all changes that are about to be exported. Each row corresponds to a change for an object in the connector space and the object is identified by the DN attribute. The DN attribute is a unique identifier assigned to an object in the connector space. When you have many rows/changes in the export.csv to analyze, it may be difficult for you to figure out which objects the changes are for based on the DN attribute alone. To simplify the process of analyzing the changes, use the `csanalyzer.ps1` PowerShell script. The script retrieves common identifiers (for example, displayName, userPrincipalName) of the objects. To use the script:
 1. Copy the PowerShell script from the section [CSAnalyzer](#appendix-csanalyzer) to a file named `csanalyzer.ps1`.
 2. Open a PowerShell window and browse to the folder where you created the PowerShell script.
-3. Run: `.\csanalyzer.ps1 -xmltoimport %temp%\export.xml`.
-4. You now have a file named **processedusers1.csv** that can be examined in Microsoft Excel. Note that the file provides a mapping from the DN attribute to common identifiers (for example, displayName and userPrincipalName). It currently doesn't include the actual attribute changes that are about to be exported.
+1. Run: `.\csanalyzer.ps1 -Path %temp%\export.xml`.
+1. You now have a file or multiple files named `processedbatch[n].csv` (where `[n]` is the number of the batch, for example `processedbatch1.csv`) that can be examined in Microsoft Excel. Note that the file provides a mapping from the DN attribute to common identifiers (for example, displayName and userPrincipalName). It currently doesn't include the actual attribute changes that are about to be exported.
 
 #### Switch active server
 
@@ -199,8 +200,8 @@ We can now move our Staging Sync Server to Active mode and actively sync changes
 > [!div class="mx-imgBorder"]
 > ![Screenshot shows Confirmation screen in the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-confirmation.png)
 
-5. You can confirm that this process is working by opening the Sync Service Console and checking if Export jobs are running:
- 
+1. You can confirm that this process is working by opening the Sync Service Console and checking if Export steps are running:
+
 > [!div class="mx-imgBorder"]
 > ![Screenshot shows Sync Service console on the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-sync-server-mgmr.png)
 
@@ -225,6 +226,8 @@ If you don't use the built-in SQL Express database, then you should also review 
 A viable strategy is to plan for a server rebuild when needed. Usually, installing the sync engine and do the initial import and sync can be completed within a few hours. If there isn’t a spare server available, it's possible to temporarily use a domain controller to host the sync engine.
 
 The sync engine server doesn't store any state about the objects so the database can be rebuilt from the data in Active Directory and Microsoft Entra ID. The **sourceAnchor** attribute is used to join the objects from on-premises and the cloud. If you rebuild the server with existing objects on-premises and the cloud, then the sync engine matches those objects together again on reinstallation. The things you need to document and save are the configuration changes made to the server, such as filtering and synchronization rules. These custom configurations must be reapplied before you start synchronizing.
+
+You can also rebuild a server using the [Import and export Microsoft Entra Connect configuration](/entra/identity/hybrid/connect/how-to-connect-import-export-config) method, so make sure you have a backup of an up-to-date export of the server configuration.
 
 ### Have a spare standby server - staging mode
 
@@ -360,8 +363,8 @@ if($result)
    Write-Host Hit the maximum users processed without completion... -ForegroundColor Yellow
 
    #export the collection of users as a CSV
-   Write-Host Writing processedusers${outputfilecount}.csv -ForegroundColor Yellow
-   $objOutputUsers | Export-Csv -path processedusers${outputfilecount}.csv -NoTypeInformation
+   Write-Host Writing processedbatch${outputfilecount}.csv -ForegroundColor Yellow
+   $objOutputUsers | Export-Csv -path processedbatch${outputfilecount}.csv -NoTypeInformation
 
    #increment the output file counter
    $outputfilecount+=1
@@ -383,8 +386,8 @@ if($result)
 
  #need to write out any users that didn't get picked up in a batch of 1000
  #export the collection of users as CSV
- Write-Host Writing processedusers${outputfilecount}.csv -ForegroundColor Yellow
- $objOutputUsers | Export-Csv -path processedusers${outputfilecount}.csv -NoTypeInformation
+ Write-Host Writing processedbatch${outputfilecount}.csv -ForegroundColor Yellow
+ $objOutputUsers | Export-Csv -path processedbatch${outputfilecount}.csv -NoTypeInformation
 }
 else
 {
