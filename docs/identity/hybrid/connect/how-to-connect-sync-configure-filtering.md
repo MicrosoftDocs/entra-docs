@@ -59,7 +59,7 @@ To disable the built-in scheduler that triggers a synchronization cycle every 30
 1. Open Windows Powershell, import the ADSync module and disable the scheduler using the following commands
 
 ```Powershell
-import-module ADSync
+Import-Module ADSync
 Set-ADSyncScheduler -SyncCycleEnabled $False
 ```
 
