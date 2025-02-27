@@ -34,7 +34,7 @@ Some example issues include but are not limited to:
 
 ## Find license assignment errors
 
-When you're using group-based licensing, the same errors can occur, but they happen in the background while the Microsoft Entra service is assigning licenses. For this reason, the errors can't be communicated to you immediately. Instead, they're recorded on the user object and then reported via the administrative portal. The original intent to license the user is never lost, but is recorded in an error state for future investigation and resolution. You can also [use audit logs to monitor group-based licensing activity](licensing-group-advanced.md#use-audit-logs-to-monitor-group-based-licensing-activity).
+When you're using group-based licensing, the same errors can occur, but they happen in the background while the Microsoft Entra service is assigning licenses. For this reason, the errors can't be communicated to you immediately. Instead, they're recorded on the user object and then reported via the administrative portal. The original intent to license the user is never lost, but is recorded in an error state for future investigation and resolution. You can also [use audit logs to monitor group activity](log-audit.md).
 
 
 ### To find users in an error state in a group
@@ -43,15 +43,15 @@ When you're using group-based licensing, the same errors can occur, but they hap
 1. Browse to **Billing** > **Licenses** to open a page where you can see and manage all license products in the organization.
 1. Select the affected license and navigate to the group selection option to view the status of each group assigned to the selected license. 
 
-   :::image type="content" source="./media/licensing-groups-resolve-problems/group-error-notification.png" alt-text="Screenshot of group and error notifications messages.":::
+   :::image type="content" source="./media/licensing-groups-resolve-problems/licenses.png" alt-text="Screenshot of group and error notifications messages.":::
 
-1. A notification appears if there are any users of the group in an error state.  Status of license assignment for each group would be one of the following: 
-    - **All license Assigned** – no issues 
-    - **In progress** – pending assignment of license to users 
+1. A notification appears if there are any users of the group in an error state. The status of license assignment for each group would be one of the following: 
+    - **All licenses Assigned** – no issues 
+    - **In progress** – pending assignment of licenses to users 
     - **Errors and issues** – need to investigate 
 
  
-   :::image type="content" source="./media/licensing-groups-resolve-problems/list-of-users-with-errors.png" alt-text="Screenshot of list of users in group licensing error state.":::
+   :::image type="content" source="./media/licensing-groups-resolve-problems/errors-issues.png" alt-text="Screenshot of list of users in group licensing error state.":::
 
 1. Click on the **group name** to review errors for the affected users in the group. 
 1. You can also filter the errors using the **Filter** option on the top right** if you have a large number of affected users. 
