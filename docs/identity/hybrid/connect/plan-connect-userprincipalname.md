@@ -54,11 +54,16 @@ To enable Alternate login ID with Microsoft Entra ID, no additional configuratio
 
 For more information, see [Configure Alternate login ID](/windows-server/identity/ad-fs/operations/configuring-alternate-login-id) and [Microsoft Entra login configuration](how-to-connect-install-custom.md#azure-ad-sign-in-configuration).
 
-## Nonverified UPN Suffix
-If the on-premises UserPrincipalName attribute/Alternate login ID suffix is not verified with Microsoft Entra tenant, then the Microsoft Entra UserPrincipalName attribute value is set to MOERA. Microsoft Entra ID calculates the MOERA from the Microsoft Entra MailNickName attribute and Microsoft Entra initial domain as &lt;MailNickName&gt;&#64;&lt;initial domain&gt;.
+## Unverified UPN Suffix
+
+If the on-premises UserPrincipalName attribute/Alternate login ID suffix is not verified with Microsoft Entra tenant, then the Microsoft Entra UserPrincipalName attribute value can't have this domain suffix. Microsoft Entra ID calculates a new UPN based on the Microsoft Entra MailNickName attribute value as the prefix, and the Microsoft Entra initial domain as the domain suffix (&lt;MailNickName&gt;&#64;&lt;initial domain&gt;.
 
 ## Verified UPN suffix
+
 If the on-premises UserPrincipalName attribute/Alternate login ID suffix is verified with the Microsoft Entra tenant, then the Microsoft Entra UserPrincipalName attribute value is going to be the same as the on-premises UserPrincipalName attribute/Alternate login ID value.
+
+> [!WARNING]
+> Any invalid characters (e.g., white space, line break, etc.) present in the on-premises UserPrincipalName will invalidate the synchronized UPN value. In such cases, Microsoft Entra ID calculates a new UPN, similar to the scenario where the domain suffix is not verified with the Microsoft Entra tenant.
 
 <a name='azure-ad-mailnickname-attribute-value-calculation'></a>
 
