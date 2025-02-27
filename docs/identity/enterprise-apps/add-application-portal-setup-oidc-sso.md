@@ -6,9 +6,9 @@ author: omondiatieno
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: enterprise-apps
-ms.topic: concept-article
+ms.topic: how-to
 
-ms.date: 05/22/2024
+ms.date: 02/27/2025
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps
@@ -18,7 +18,7 @@ ms.custom: enterprise-apps
 
 # Add an OpenID Connect-based single sign-on application
 
-Add an application that supports [OpenID Connect (OIDC)](~/identity-platform/v2-protocols.md) based single sign-on (SSO) to your Microsoft Entra tenant.
+In this article, you use the Microsoft Entra admin center to add an enterprise application that uses the [OpenID Connect OIDC](~/identity-platform/v2-protocols.md) standard for SSO. After you configure SSO, your users can sign in by using their Microsoft Entra credentials.
 
 We recommend you use a nonproduction environment to test the steps in this page.
 
@@ -28,9 +28,12 @@ We recommend you use a nonproduction environment to test the steps in this page.
 To configure OIDC-based SSO, you need:
 
 - A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Cloud Application Administrator, Application Administrator, or owner of the service principal.
+- One of the following roles:
+  - Cloud Application Administrator
+  - Application Administrator
+  - owner of the service principal
 
-## Add the application
+## Add the application from the Microsoft Entra app Gallery
 
 When you add an enterprise application that uses the OIDC standard for SSO, you select a setup button. When you select the button, you complete the sign-up process for the application.
 
@@ -46,8 +49,8 @@ To configure OIDC-based SSO for an application:
 
 1. Select **Consent on behalf of your organization** and then select **Accept**. The application is added to your tenant and the application home page appears. To learn more about user and admin consent, see [Understand user and admin consent](~/identity-platform/howto-convert-app-to-be-multi-tenant.md#understand-user-and-admin-consent-and-make-appropriate-code-changes).
 
-## Next steps
+## Related content
 
-Learn more about planning a single sign-on deployment.
-> [!div class="nextstepaction"]
-> [Plan single sign-on deployment](plan-sso-deployment.md)
+- [Configure linked single sign-on](configure-linked-sign-on.md)
+- [Configure password single sign-on](configure-password-single-sign-on-non-gallery-applications.md)
+- [Configure SAML-based single sign-on](add-application-portal-setup-sso.md)
