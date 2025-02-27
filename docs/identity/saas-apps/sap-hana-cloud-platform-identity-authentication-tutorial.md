@@ -244,7 +244,9 @@ For more information about how to enable or disable Identity Federation with SAP
 
 ## Test SSO 
 
-In this section, you test your Microsoft Entra single sign-on configuration with following options.
+In this section, you test your Microsoft Entra single sign-on configuration with following options, **SP initiated** and **IDP initiated**.
+
+If you encounter errors from signing into SAP Cloud Identity Services, with a correlation ID, then in the SAP Cloud Identity Services administration console you can [search the troubleshooting logs](https://help.sap.com/docs/cloud-identity-services/cloud-identity-services/view-troubleshooting-logs) for that correlation ID. For more information, see [SAP knowledge base article 2698571](https://userapps.support.sap.com/sap/support/knowledge/en/2698571) and [SAP knowledge base article 3201824](https://userapps.support.sap.com/sap/support/knowledge/en/3201824).
 
 #### SP initiated:
 
@@ -258,7 +260,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the SAP Cloud Identity Services tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the SAP Cloud Identity Services for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-If you encounter errors from signing into SAP Cloud Identity Services, with a correlation ID, then you can [search the troubleshooting logs](https://help.sap.com/docs/cloud-identity-services/cloud-identity-services/view-troubleshooting-logs) in the SAP Cloud Identity Services administration console for that correlation ID. For more information, see [SAP knowledge base article 2698571](https://userapps.support.sap.com/sap/support/knowledge/en/2698571) and [SAP knowledge base article 3201824](https://userapps.support.sap.com/sap/support/knowledge/en/3201824).
+
 
 ## Related content
 
