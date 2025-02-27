@@ -25,7 +25,7 @@ Staging mode can be used for several scenarios, including:
 
 * High availability.
 * Test and deploy new configuration changes.
-* Introduce a new server and decommission the old.
+# Introduce a new server and decommission the old.
 
 During installation, you can select the server to be in **staging mode**. This action makes the server active for import and synchronization, but it doesn't run any exports. A server in staging mode isn't running password sync or password writeback, even if you selected these features during installation. When you disable staging mode, the server starts exporting, enables password sync, and enables password writeback.
 
@@ -90,8 +90,8 @@ Most of the file is self-explanatory. Some abbreviations to understand the conte
 The export.csv file contains all changes that are about to be exported. Each row corresponds to a change for an object in the connector space and the object is identified by the DN attribute. The DN attribute is a unique identifier assigned to an object in the connector space. When you have many rows/changes in the export.csv to analyze, it may be difficult for you to figure out which objects the changes are for based on the DN attribute alone. To simplify the process of analyzing the changes, use the `csanalyzer.ps1` PowerShell script. The script retrieves common identifiers (for example, displayName, userPrincipalName) of the objects. To use the script:
 1. Copy the PowerShell script from the section [CSAnalyzer](#appendix-csanalyzer) to a file named `csanalyzer.ps1`.
 2. Open a PowerShell window and browse to the folder where you created the PowerShell script.
-3. Run: `.\csanalyzer.ps1 -xmltoimport %temp%\export.xml`.
-4. You now have a file named **processedusers1.csv** that can be examined in Microsoft Excel. Note that the file provides a mapping from the DN attribute to common identifiers (for example, displayName and userPrincipalName). It currently doesn't include the actual attribute changes that are about to be exported.
+1. Run: `.\csanalyzer.ps1 -Path %temp%\export.xml`.
+1. You now have a file or multiple files named `processedbatch[n].csv` (where `[n]` is the number of the batch, for example `processedbatch1.csv`) that can be examined in Microsoft Excel. Note that the file provides a mapping from the DN attribute to common identifiers (for example, displayName and userPrincipalName). It currently doesn't include the actual attribute changes that are about to be exported.
 
 #### Switch active server
 
@@ -363,8 +363,8 @@ if($result)
    Write-Host Hit the maximum users processed without completion... -ForegroundColor Yellow
 
    #export the collection of users as a CSV
-   Write-Host Writing processedusers${outputfilecount}.csv -ForegroundColor Yellow
-   $objOutputUsers | Export-Csv -path processedusers${outputfilecount}.csv -NoTypeInformation
+   Write-Host Writing processedbatch${outputfilecount}.csv -ForegroundColor Yellow
+   $objOutputUsers | Export-Csv -path processedbatch${outputfilecount}.csv -NoTypeInformation
 
    #increment the output file counter
    $outputfilecount+=1
@@ -386,8 +386,8 @@ if($result)
 
  #need to write out any users that didn't get picked up in a batch of 1000
  #export the collection of users as CSV
- Write-Host Writing processedusers${outputfilecount}.csv -ForegroundColor Yellow
- $objOutputUsers | Export-Csv -path processedusers${outputfilecount}.csv -NoTypeInformation
+ Write-Host Writing processedbatch${outputfilecount}.csv -ForegroundColor Yellow
+ $objOutputUsers | Export-Csv -path processedbatch${outputfilecount}.csv -NoTypeInformation
 }
 else
 {
