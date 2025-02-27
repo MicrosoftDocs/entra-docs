@@ -64,7 +64,8 @@ To apply this method, follow these steps:
 
 1. Select **Connectors**, and select the first Connector with the type **Active Directory Domain Services**. Select **Run**, select **Full import**, and **OK**. Do these steps for all Connectors of this type.
 2. Select the Connector with type **Microsoft Entra ID (Microsoft)**. Select **Run**, select **Full import**, and **OK**.
-3. Make sure the tab Connectors is still selected. For each Connector with type **Active Directory Domain Services**, select **Run**, select **Delta Synchronization**, and **OK**.
+1. Make sure the tab Connectors is still selected. For each Connector with type **Active Directory Domain Services**, select **Run**, select **Delta Synchronization**, and **OK**. Do these steps for all Connectors of this type.
+
 4. Select the Connector with type **Microsoft Entra ID (Microsoft)**. Select **Run**, select **Delta Synchronization**, and **OK**.
 
 You've now staged export changes to Microsoft Entra ID and on-premises AD (if you're using Exchange hybrid deployment). The next steps allow you to inspect what is about to change before you actually start the export to the directories.
