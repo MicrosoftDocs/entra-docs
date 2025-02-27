@@ -200,8 +200,8 @@ We can now move our Staging Sync Server to Active mode and actively sync changes
 > [!div class="mx-imgBorder"]
 > ![Screenshot shows Confirmation screen in the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-confirmation.png)
 
-5. You can confirm that this process is working by opening the Sync Service Console and checking if Export jobs are running:
- 
+1. You can confirm that this process is working by opening the Sync Service Console and checking if Export steps are running:
+
 > [!div class="mx-imgBorder"]
 > ![Screenshot shows Sync Service console on the Staging Microsoft Entra Connect dialog box.](media/how-to-connect-sync-staging-server/staging-server-sync-server-mgmr.png)
 
@@ -226,6 +226,8 @@ If you don't use the built-in SQL Express database, then you should also review 
 A viable strategy is to plan for a server rebuild when needed. Usually, installing the sync engine and do the initial import and sync can be completed within a few hours. If there isn’t a spare server available, it's possible to temporarily use a domain controller to host the sync engine.
 
 The sync engine server doesn't store any state about the objects so the database can be rebuilt from the data in Active Directory and Microsoft Entra ID. The **sourceAnchor** attribute is used to join the objects from on-premises and the cloud. If you rebuild the server with existing objects on-premises and the cloud, then the sync engine matches those objects together again on reinstallation. The things you need to document and save are the configuration changes made to the server, such as filtering and synchronization rules. These custom configurations must be reapplied before you start synchronizing.
+
+You can also rebuild a server using the [Import and export Microsoft Entra Connect configuration](/entra/identity/hybrid/connect/how-to-connect-import-export-config) method, so make sure you have a backup of an up-to-date export of the server configuration.
 
 ### Have a spare standby server - staging mode
 
