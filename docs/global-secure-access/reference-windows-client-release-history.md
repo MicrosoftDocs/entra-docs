@@ -23,7 +23,7 @@ The current version of the Global Secure Access client is available to download 
 :::image type="content" source="media/reference-windows-client-release-history/client-download-screen.png" alt-text="Screenshot of the Client download screen with the Download Client button highlighted.":::
 
 ## Version 2.14.80
-Released for download on February 11, 2025.
+Released for download on February 26, 2025.
 ### Functional changes
 - Support for long-lived User Datagram Protocol (UDP) connections.
 - Support for routing connections directly to the network when there's no successful tunnel established to the Global Secure Access cloud service.
