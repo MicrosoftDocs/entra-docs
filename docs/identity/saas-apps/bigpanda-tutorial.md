@@ -95,7 +95,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 ## Configure BigPanda SSO
 
-To configure single sign-on on **BigPanda** side, please follow the instructions from [BigPanda documentation](https://docs.bigpanda.io/docs/azure-ad-active-directory). 
+To configure single sign-on on **BigPanda** side, please follow the instructions from [BigPanda documentation](https://docs.bigpanda.io/en/microsoft-entra-id--formerly-azure-ad-).
 
 ## Test SSO 
 
