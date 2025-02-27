@@ -246,21 +246,6 @@ This error occurs because users are added and removed from another batch of dyna
 > We recommend that you test the new membership rule beforehand to make sure that the new membership in the group is as expected. If you encounter errors during your test, see [Use audit logs to monitor group-based licensing activity](licensing-group-advanced.md#use-audit-logs-to-monitor-group-based-licensing-activity).
 
 
-## Duplicate proxy addresses
-
-**Problem:** If you use Exchange Online, some users in your organization might be incorrectly configured with the same proxy address value. When group-based licensing tries to assign a license to such a user, it fails and shows  “Proxy address is already being used”.
-
-> [!TIP]
-> To see if there's a duplicate proxy address, execute the following PowerShell cmdlet against Exchange Online:
-> ```
-> Get-Recipient -Filter "EmailAddresses -eq 'user@contoso.onmicrosoft.com'" | fl DisplayName, RecipientType,Emailaddresses
-> ```
-> For more information about this problem, see ["Proxy address 
-> is already being used" error message in Exchange Online](https://support.microsoft.com/help/3042584/-proxy-address-address-is-already-being-used-error-message-in-exchange-online). The article also includes information on [how to connect to Exchange Online by using remote PowerShell](/powershell/exchange/connect-to-exchange-online-powershell).
-
-After you resolve any proxy address problems for the affected users, make sure to force license processing on the group to make sure that the licenses can now be applied.
-
-
 ## LicenseAssignmentAttributeConcurrencyException in audit logs
 
 **Problem:** User has `LicenseAssignmentAttributeConcurrencyException` for license assignment in audit logs.
