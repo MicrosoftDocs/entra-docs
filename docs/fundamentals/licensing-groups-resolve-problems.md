@@ -9,7 +9,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 01/14/2025
+ms.date: 02/27/2025
 ms.author: barclayn
 ms.reviewer: sumitp
 ms.custom: it-pro
@@ -310,25 +310,24 @@ From now on, any users added to this group consume one license of the E3 product
 > [!TIP]
 > You can create multiple groups for each prerequisite service plan. For example, if you use both Office 365 Enterprise E1 and Office 365 Enterprise E3 for your users, you can create two groups to license Microsoft Workplace Analytics: one that uses E1 as a prerequisite and the other that uses E3. This approach lets you distribute the add-on to E1 and E3 users without consuming other licenses.
 
-## Force group license processing to resolve errors
+## License removal of dynamic membership groups with rules based on licenses with an initial static group 
 
-**Problem:** Depending on what steps you took to resolve the errors, it might be necessary to manually trigger the processing of a group to update the user state.
+This error occurs because users are added and removed from another batch of dynamic membership groups. The cascading setup of dynamic membership groups, with rules based on licenses in an initial static group, creates this issue. This error can affect multiple dynamic membership groups and demands extensive reprocessing to restore access. 
 
-For example, if you free up some licenses by removing direct license assignments from users, you need to trigger the processing of groups that previously failed to fully license all user members. To reprocess a group, go to the group pane, open **Licenses**, and then select the **Reprocess** button on the toolbar.
+.[!WARNING]
+> When you change an existing static group to a dynamic group, all existing members are removed from the group, and then the membership rule is processed to add new members. If the group is used to control access to apps or resources, the original members might lose access until the membership rule is fully processed.
 
-## Force user license processing to resolve errors
+We recommend that you test the new membership rule beforehand to make sure that the new membership in the group is as expected. 
 
-**Problem:** Depending on what steps you took to resolve the errors, it might be necessary to manually trigger the processing of a user to update the users state.
+## Microsoft Entra ID Mail and ProxyAddresses attribute change 
 
-For example, after you resolve duplicate proxy address problem for an affected user, you need to trigger the processing of the user. To reprocess a user, go to the user pane, open **Licenses**, and then select the **Reprocess** button on the toolbar.
+**Problem:** While updating license assignment on a user or a group, you might see that the Mail and ProxyAddresses attribute of some users are changed. 
+
+Updating license assignment on a user causes the proxy address calculation to be triggered, which can change user attributes. To understand the exact reason of the change and solve the problem, see this article on [how the proxyAddresses attribute is populated in Microsoft Entra ID](https://support.microsoft.com/help/3190357/how-the-proxyaddresses-attribute-is-populated-in-azure-ad). 
 
 ## Next steps
 
 To learn more about other scenarios for license management through groups, see the following:
 
 * [What is group-based licensing in Microsoft Entra ID?](~/fundamentals/concept-group-based-licensing.md)
-* [Assigning licenses to a group in Microsoft Entra ID](./licensing-groups-assign.md)
-* [How to migrate individual licensed users to group-based licensing in Microsoft Entra ID](licensing-groups-migrate-users.md)
-* [How to migrate users between product licenses using group-based licensing in Microsoft Entra ID](licensing-groups-change-licenses.md)
-* [Scenarios, limitations, and known issues using groups to manage licensing in Microsoft Entra ID](./licensing-group-advanced.md)
-* [PowerShell examples for group-based licensing in Microsoft Entra ID](licensing-ps-examples.md)
+
