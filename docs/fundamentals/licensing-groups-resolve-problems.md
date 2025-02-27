@@ -160,10 +160,8 @@ Audit log License Assignment Error Records can be identified by the following de
 **Status**:  failure 
 
 **Initiated by** (actor) 
-
-    **Type**:  Application 
-
-    **Display Name**:  Microsoft Azure AD Group-Based Licensing 
+ - **Type**:  Application 
+ - **Display Name**:  Microsoft Azure AD Group-Based Licensing 
 
 ## Force user license processing to resolve errors 
 
