@@ -34,7 +34,7 @@ Some example issues include but are not limited to:
 
 ## Find license assignment errors
 
-When you're using group-based licensing, the same errors can occur, but they happen in the background while the Microsoft Entra service is assigning licenses. For this reason, the errors can't be communicated to you immediately. Instead, they're recorded on the user object and then reported via the administrative portal. The original intent to license the user is never lost, but is recorded in an error state for future investigation and resolution. You can also [use audit logs to monitor group activity](log-audit.md).
+When you're using group-based licensing, the same errors can occur, but they happen in the background while the Microsoft Entra service is assigning licenses. For this reason, the errors can't be communicated to you immediately. Instead, they're recorded on the user object and then reported via the administrative portal. The original intent to license the user is never lost, but is recorded in an error state for future investigation and resolution. You can also [use audit logs to monitor group activity](/azure/security/fundamentals/log-audit.md).
 
 
 ### To find users in an error state in a group
@@ -56,7 +56,7 @@ When you're using group-based licensing, the same errors can occur, but they hap
 1. Click on the **group name** to review errors for the affected users in the group. 
 1. You can also filter the errors using the **Filter** option on the top right** if you have a large number of affected users. 
 
-   :::image type="content" source="./media/licensing-groups-resolve-problems/group-errors-widget.png" alt-text="Screenshot of information about groups in error state.":::
+   :::image type="content" source="./media/licensing-groups-resolve-problems/action-needed.png" alt-text="Screenshot of information about groups in error state.":::
 
 
 The following sections give a description of each potential problem and ways to try resolving it.
@@ -70,6 +70,8 @@ The following sections give a description of each potential problem and ways to 
 To see how many licenses are available, go to the **Entra Admin Portal** > **Billing** > **Licenses** > **All products**.
 
 To see which users and groups are consuming licenses, navigate to the **M365 Admin portal** under **Billing** > **Licenses** and select a product. Under **Users**, you see a list of all users who have licenses assigned directly or via one or more groups. Under **Groups**, you see all groups that have that product assigned.
+
+:::image type="content" source="./media/licensing-groups-resolve-problems/license-count.png" alt-text="Screenshot of list of users in group licensing error state.":::
 
 **PowerShell:** PowerShell cmdlets report this error as *CountViolation*.
 
@@ -119,14 +121,15 @@ To solve this problem, remove users from unsupported locations from the licensed
 
 **PowerShell:** PowerShell cmdlets report this error as *ProhibitedInUsageLocationViolation*. 
 
->[!NOTE] 
+> [!NOTE] 
 > When Microsoft Entra ID assigns group licenses, any users without a specified usage location inherit the location of the directory. Microsoft recommends that administrators set the correct usage location values on users before using group-based licensing to comply with local laws and regulations. - The attributes of First name, Last name, Other email address, and User type aren't mandatory for license assignment.
 
 ## Duplicate proxy addresses 
 
 **Problem:** If you use Exchange Online, some users in your organization might be incorrectly configured with the same proxy address value. When group-based licensing tries to assign a license to such a user, it fails and shows “Proxy address is already being used”. 
 
->[!TIP] To see if there's a duplicate proxy address, execute the following PowerShell cmdlet against Exchange Online: 
+> [!TIP] 
+> To see if there's a duplicate proxy address, execute the following PowerShell cmdlet against Exchange Online: 
 
 ```powershell
 Get-Recipient -Filter "EmailAddresses -eq 'user@contoso.onmicrosoft.com'" | fl DisplayName, RecipientType,Emailaddresses 
@@ -140,7 +143,9 @@ After you resolve any proxy address problems for the affected users, make sure t
 
 ## Other
 
-Other errors are generally indicative of error for another license assigned by the same group.   
+**Other** errors are generally indicative of error for another license assigned by the same group.   
+
+:::image type="content" source="./media/licensing-groups-resolve-problems/other.png" alt-text="Screenshot of information about groups in error state.":::
  
 To identify the other licensing assigned to the affected user from the same group you can review the user licenses from the Entra Admin Portal. 
  
@@ -195,7 +200,7 @@ Microsoft Workplace Analytics is an add-on product. It contains a single service
 
 - Exchange Online (Plan 2) 
 
-Problem: If you try to assign this product on its own to a group, the portal returns a notification message.  
+Problem: If you try to assign this product on its own to a group, the portal returns a notification message.  
 
 To assign this add-on license to a group, you must ensure that the group contains the prerequisite service plan.  
 
@@ -207,7 +212,8 @@ Microsoft Workplace Analytics
 
 From now on, any users added to this group consume one license of the E3 product and one license of the Workplace Analytics product. At the same time, those users can be members of another group that gives them the full E3 product, and they still consume only one license for that product. 
 
-[!TIP] You can create multiple groups for each prerequisite service plan. For example, if you use both Office 365 Enterprise E1 and Office 365 Enterprise E3 for your users, you can create two groups to license Microsoft Workplace Analytics: one that uses E1 as a prerequisite and the other that uses E3. This approach lets you distribute the add-on to E1 and E3 users without consuming other licenses 
+> [!TIP] 
+> You can create multiple groups for each prerequisite service plan. For example, if you use both Office 365 Enterprise E1 and Office 365 Enterprise E3 for your users, you can create two groups to license Microsoft Workplace Analytics: one that uses E1 as a prerequisite and the other that uses E3. This approach lets you distribute the add-on to E1 and E3 users without consuming other licenses 
 
 **Problem:** One of the products specified in the group contains a service plan that must be enabled for another service plan, in another product, to function. This error occurs when Microsoft Entra ID attempts to remove the underlying service plan. For example, this problem can happen when you remove the user from the group.
 
