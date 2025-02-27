@@ -21,11 +21,11 @@ The following terminology is used in this article:
 
 |Term|Description|
 |-----|-----|
-|Initial domain|The default domain (onmicrosoft.com) in the Microsoft Entra tenant. For example, contoso.onmicrosoft.com.|
-|Microsoft Online Email Routing Address (MOERA)|Microsoft Entra ID calculates the MOERA from Microsoft Entra MailNickName attribute and Microsoft Entra initial domain as &lt;MailNickName&gt;&#64;&lt;initial domain&gt;.|
+|Initial domain|The default domain (onmicrosoft.com) in the Microsoft Entra tenant. For example, "contoso.onmicrosoft.com".|
+|Microsoft Online Email Routing Address (MOERA)|Microsoft Entra ID calculates the MOERA from Microsoft Entra MailNickName attribute and Microsoft Entra initial domain as "&lt;MailNickName&gt;&#64;&lt;initial domain&gt;".|
 |On-premises mailNickName attribute|An attribute in Active Directory, the value of which represents the alias of a user in an Exchange organization.|
 |On-premises mail attribute|An attribute in Active Directory, the value of which represents the email address of a user|
-|Primary SMTP Address|The primary email address of an Exchange recipient object. For example, SMTP:user\@contoso.com.|
+|Primary SMTP Address|The primary email address of an Exchange recipient object. For example, "SMTP:user\@contoso.com".|
 |Alternate login ID|An on-premises attribute other than UserPrincipalName, such as mail attribute, used for login.|
 
 ## What is UserPrincipalName?
@@ -48,7 +48,7 @@ In some environments, end users may only be aware of their email address and not
 
 Alternate login ID allows you to configure a login experience where users can log in with an attribute other than their UPN, such as mail.
 
-To enable Alternate login ID with Microsoft Entra ID, no additional configurations steps are needed when using Microsoft Entra Connect. Alternate ID can be configured directly from the wizard. See Microsoft Entra login configuration for your users under the section Sync. Under the **User Principal Name** drop-down, select the attribute for Alternate login ID.
+To enable Alternate login ID with Microsoft Entra ID, no extra configurations steps are needed when using Microsoft Entra Connect. Alternate ID can be configured directly from the wizard. See Microsoft Entra login configuration for your users under the section Sync. Under the **User Principal Name** drop-down, select the attribute for Alternate login ID.
 
 ![Screenshot that highlights User Principal Name list where you select the Alternate login ID attribute.](./media/plan-connect-userprincipalname/altloginid.png)  
 
@@ -56,19 +56,19 @@ For more information, see [Configure Alternate login ID](/windows-server/identit
 
 ## Nonverified UPN Suffix
 
-If the on-premises UserPrincipalName attribute/Alternate login ID suffix is not verified with Microsoft Entra tenant, then the Microsoft Entra UserPrincipalName attribute value can't have this domain suffix. Microsoft Entra ID calculates a new UPN based on the Microsoft Entra MailNickName attribute value as the prefix, and the Microsoft Entra initial domain as the domain suffix (&lt;MailNickName&gt;&#64;&lt;initial domain&gt;.
+If the on-premises UserPrincipalName attribute/Alternate login ID suffix isn't verified with Microsoft Entra tenant, then the Microsoft Entra UserPrincipalName attribute value can't have this domain suffix. Microsoft Entra ID calculates a new UPN based on the Microsoft Entra MailNickName attribute value as the prefix, and the Microsoft Entra initial domain as the domain suffix (&lt;MailNickName&gt;&#64;&lt;initial domain&gt;.
 
 ## Verified UPN suffix
 
 If the on-premises UserPrincipalName attribute/Alternate login ID suffix is verified with the Microsoft Entra tenant, then the Microsoft Entra UserPrincipalName attribute value is going to be the same as the on-premises UserPrincipalName attribute/Alternate login ID value.
 
 > [!WARNING]
-> Any invalid characters (e.g., white space, line break, etc.) present in the on-premises UserPrincipalName will invalidate the synchronized UPN value. In such cases, Microsoft Entra ID calculates a new UPN, similar to the scenario where the domain suffix is not verified with the Microsoft Entra tenant.
+> Any invalid characters (for example, white space, line break, etc.) present in the on-premises UserPrincipalName invalidates the synchronized UPN value. In such cases, Microsoft Entra ID calculates a new UPN, similar to the scenario where the domain suffix isn't verified with the Microsoft Entra tenant.
 
 <a name='azure-ad-mailnickname-attribute-value-calculation'></a>
 
 ## Microsoft Entra MailNickName attribute value calculation
-Because the Microsoft Entra UserPrincipalName attribute value can be re-calculated to `<MailNickName>@<initial domain>`, it's important to understand how the Microsoft Entra MailNickName attribute value, which becomes the UPN prefix, is calculated.
+Because the Microsoft Entra UserPrincipalName attribute value can be recalculated to `<MailNickName>@<initial domain>`, it's important to understand how the Microsoft Entra MailNickName attribute value, which becomes the UPN prefix, is calculated.
 
 When a user object is synchronized to a Microsoft Entra tenant for the first time, Microsoft Entra ID checks the following items in the given order and sets the MailNickName attribute value to the first existing one:
 
@@ -85,7 +85,7 @@ When the updates to a user object are synchronized to the Microsoft Entra tenant
 > 
 > Whenever Microsoft Entra ID recalculates the UserPrincipalName attribute and the user has an Exchange license assigned, the new UserPrincipalName value is also added as a secondary smtp proxy address. 
 > 
-> In case of verified domain change, Microsoft Entra ID also recalculates the UserPrincipalName attribute. For more information, see [Troubleshoot: Audit data on verified domain change](~/identity/monitoring-health/troubleshoot-audit-data-verified-domain.md)
+> In case of a verified domain change operation (for example, adding a new verified domain or removing an existent domain), Microsoft Entra ID also recalculates the UserPrincipalName attribute for all the users on the tenant. For more information, see [Troubleshoot: Audit data on verified domain change](~/identity/monitoring-health/troubleshoot-audit-data-verified-domain.md)
 
 ## UPN scenarios
 The following are example scenarios of how the UPN is calculated based on the given scenario.
