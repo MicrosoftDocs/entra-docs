@@ -56,7 +56,7 @@ When you're using group-based licensing, the same errors can occur, but they hap
 1. Click on the **group name** to review errors for the affected users in the group. 
 1. You can also filter the errors using the **Filter** option on the top right** if you have a large number of affected users. 
 
-   :::image type="content" source="./media/licensing-groups-resolve-problems/action-needed.png" alt-text="Screenshot of information about groups in error state.":::
+   :::image type="content" source="./media/licensing-groups-resolve-problems/action-needed.png" alt-text="Screenshot of entries that require administration intervention.":::
 
 
 The following sections give a description of each potential problem and ways to try resolving it.
@@ -71,7 +71,7 @@ To see how many licenses are available, go to the **Entra Admin Portal** > **Bil
 
 To see which users and groups are consuming licenses, navigate to the **M365 Admin portal** under **Billing** > **Licenses** and select a product. Under **Users**, you see a list of all users who have licenses assigned directly or via one or more groups. Under **Groups**, you see all groups that have that product assigned.
 
-:::image type="content" source="./media/licensing-groups-resolve-problems/license-count.png" alt-text="Screenshot of list of users in group licensing error state.":::
+:::image type="content" source="./media/licensing-groups-resolve-problems/license-count.png" alt-text="Screenshot of available licenses.":::
 
 **PowerShell:** PowerShell cmdlets report this error as *CountViolation*.
 
@@ -145,7 +145,7 @@ After you resolve any proxy address problems for the affected users, make sure t
 
 **Other** errors are generally indicative of error for another license assigned by the same group.   
 
-:::image type="content" source="./media/licensing-groups-resolve-problems/other.png" alt-text="Screenshot of information about groups in error state.":::
+:::image type="content" source="./media/licensing-groups-resolve-problems/other.png" alt-text="Screenshot of **other** type errors.":::
  
 To identify the other licensing assigned to the affected user from the same group you can review the user licenses from the Entra Admin Portal. 
  
@@ -172,7 +172,7 @@ Audit log License Assignment Error Records can be identified by the following de
 For example, after you resolve a dependency violation error for an affected user, you need to trigger the reprocessing of the user. To reprocess a user, navigate back to the **M365 Admin Portal > Billing > Licenses**.  Select the license and navigate to the group where the affected user(s) shows in error, select the user(s) and then click the **Reprocess** button on the toolbar. 
 
  
-Alternatively, you can use Graph for PowerShell [Invoke-MgLicenseUser](powershell/module/microsoft.graph.users.actions/invoke-mglicenseuser?view=graph-powershell-1.0) to reprocess users.
+Alternatively, you can use Graph for PowerShell [Invoke-MgLicenseUser](powershell/module/microsoft.graph.users.actions/invoke-mglicenseuser) to reprocess users.
 
 ## More than one product license assigned to a group 
 
