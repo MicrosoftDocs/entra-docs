@@ -25,8 +25,7 @@ Staging mode can be used for several scenarios, including:
 
 * High availability.
 * Test and deploy new configuration changes.
-
-# Introduce a new server and decommission the old.
+* Introduce a new server and decommission the old.
 
 During installation, you can select the server to be in **staging mode**. This action makes the server active for import and synchronization, but it doesn't run any exports. A server in staging mode isn't running password sync or password writeback, even if you selected these features during installation. When you disable staging mode, the server starts exporting, enables password sync, and enables password writeback.
 
