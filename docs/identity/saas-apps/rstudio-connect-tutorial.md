@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with RStudio Connect SAML Authentication'
+title: Microsoft Entra SSO integration with RStudio Connect SAML Authentication
 description: Learn how to configure single sign-on between Microsoft Entra ID and RStudio Connect SAML Authentication.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and RStudio Connect SAML Authentication so that I can control who has access to RStudio Connect SAML Authentication, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with RStudio Connect SAML Authentication
+# Microsoft Entra SSO integration with RStudio Connect SAML Authentication
 
-In this tutorial, you'll learn how to integrate RStudio Connect SAML Authentication with Microsoft Entra ID. When you integrate RStudio Connect SAML Authentication with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate RStudio Connect SAML Authentication with Microsoft Entra ID. When you integrate RStudio Connect SAML Authentication with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to RStudio Connect SAML Authentication.
 * Enable your users to be automatically signed-in to RStudio Connect SAML Authentication with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with RStudio Connect SAML Authenticatio
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * RStudio Connect SAML Authentication supports **SP and IDP** initiated SSO.
 
@@ -92,7 +92,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	> [!NOTE]
 	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. They are determined from the RStudio Connect SAML Authentication Server Address (`https://example.com` in the examples above). Contact the [RStudio Connect SAML Authentication support team](mailto:support@rstudio.com) if you have trouble. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-6. Your RStudio Connect SAML Authentication application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, where as **nameidentifier** is mapped with **user.userprincipalname**. RStudio Connect SAML Authentication application expects **nameidentifier** to be mapped with **user.mail**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
+6. Your RStudio Connect SAML Authentication application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**. RStudio Connect SAML Authentication application expects **nameidentifier** to be mapped with **user.mail**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
 
 	![image](common/edit-attribute.png)
 
@@ -200,6 +200,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the RStudio Connect SAML Authentication tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the RStudio Connect SAML Authentication for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure RStudio Connect SAML Authentication you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

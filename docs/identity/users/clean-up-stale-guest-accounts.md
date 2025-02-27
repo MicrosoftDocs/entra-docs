@@ -5,7 +5,7 @@ description: Monitor and clean up stale guest accounts using access reviews
 author: billmath
 ms.author: billmath
 manager: amycolannino
-ms.date: 06/29/2023
+ms.date: 12/30/2024
 ms.reviewer: gasinh
 ms.topic: how-to
 ms.service: entra-id
@@ -34,7 +34,6 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
 
 ## Monitor guest accounts at scale with inactive guest insights
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 1. Browse to **Identity governance** > **Dashboard**
@@ -47,10 +46,10 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
    - Guest inactivity overview (Guest inactivity guidance to configure inactivity threshold)
    - Guest accounts summary (An exportable tabular view with details of all guest accounts with insights into their activity state. The Activity state could be active or inactive based on the configured inactivity threshold)
 
-1. The inactive days are calculated based on last sign in date if the user has signed in atleast once. For users who have never signed in, the inactive days are calculated based on creation date.
+1. The inactive days are calculated based on last sign in date if the user has signed in at least once. For users who have never signed in, the inactive days are calculated based on creation date.
 
 > [!NOTE]
-> The report with guest insights can be downloaded using "Download all data". Each action to download may take some time depending on the count of guest users and enables the download for upto 1 Million guest users.
+> The report with guest insights can be downloaded using "Download all data". Each action to download may take some time depending on the count of guest users and enables the download for up to 1 Million guest users.
 
 ## Create a multi-stage review for guests to self-attest continued access
 
@@ -58,8 +57,7 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
 
    `(user.userType -eq "Guest") and (user.mail -contains "@contoso.com") and (user.accountEnabled -eq true)`
 
-2. To [create an Access Review](~/id-governance/create-access-review.md)
-    for the dynamic group, navigate to **Microsoft Entra ID > Identity Governance > Access Reviews**.
+2. To [create an Access Review](~/id-governance/create-access-review.md) for the dynamic group, navigate to **Microsoft Entra ID > Identity Governance > Access Reviews**.
 
 3. Select **New access review**.
 
@@ -184,7 +182,7 @@ Use the following instructions to learn how to enhance monitoring of inactive gu
 
 11. Select **Create**.
 
-Guest users who don't sign into the tenant for the number of days you
-configured are disabled for 30 days, then deleted. After deletion, you
-can restore guests for up to 30 days, after which a new invitation is
-needed.
+Guest users who don't sign into the tenant for the number of days you configured are disabled for 30 days, then deleted. After deletion, you can restore guests for up to 30 days, after which a new invitation is needed.
+
+> [!NOTE]
+> If the access review decisions are not yet applied , the API [accessReviewInstance: stopApplyDecisions](/graph/api/accessreviewinstance-stopapplydecisions) can be used to stop active applying decisions.

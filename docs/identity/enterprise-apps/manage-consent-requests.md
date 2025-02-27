@@ -1,6 +1,6 @@
 ---
 title: Manage consent to applications and evaluate consent requests
-description: Learn how to manage consent requests when user consent is restricted, and how to evaluate a request for tenant-wide admin consent to an application in Microsoft Entra ID.
+description: Learn how to manage consent requests when user consent is restricted, and evaluate a request for tenant-wide admin consent to an app in Microsoft Entra ID.
 
 author: omondiatieno
 manager: CelesteDG
@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: concept-article
-ms.date: 06/14/2023
+ms.date: 06/27/2024
 ms.author: jomondi
 ms.reviewer: phsignor
 ms.custom: enterprise-apps
@@ -20,7 +20,7 @@ ms.custom: enterprise-apps
 
 Microsoft recommends that you [restrict user consent](~/identity/enterprise-apps/configure-user-consent.md) to allow users to consent only for apps from verified publishers, and only for permissions that you select. For apps that don't meet these criteria, the decision-making process is centralized with your organization's security and identity administrator team.
 
-After you've disabled or restricted user consent, you have several important steps to take to help keep your organization secure as you continue to allow business-critical applications to be used. These steps are crucial to minimize impact on your organization's support team and IT administrators, and to help prevent the use of unmanaged accounts in third-party applications.
+After disabling or restricting user consent, you have several important steps to take to help keep your organization secure as you continue to allow business-critical applications to be used. These steps are crucial to minimize impact on your organization's support team and IT administrators, and to help prevent the use of unmanaged accounts in non-Microsoft applications.
 
 This article provides guidance on managing consent to applications and evaluating consent requests in Microsoft's recommendations, including restricting user consent to verified publishers and selected permissions. It covers concepts such as process changes, education for administrators, auditing and monitoring, and managing tenant-wide admin consent.
 
@@ -30,7 +30,7 @@ This article provides guidance on managing consent to applications and evaluatin
 
  - Ensure that all administrators understand the:
    - [Permissions and consent framework](~/identity-platform/permissions-consent-overview.md)
-   - How the [consent consent experience and prompts](~/identity-platform/application-consent-experience.md) work.
+   - How the [consent experience and prompts](~/identity-platform/application-consent-experience.md) work.
    - How to [evaluate a request for tenant-wide admin consent](#evaluate-a-request-for-tenant-wide-admin-consent).
 
  - Review your organization's existing processes for users to request administrator approval for an application, and update them if necessary. If processes are changed:
@@ -39,7 +39,7 @@ This article provides guidance on managing consent to applications and evaluatin
 
 ## Auditing and monitoring
 
-- [Audit apps and granted permissions](/azure/security/fundamentals/steps-secure-identity#audit-apps-and-consented-permissions) in your organization to ensure that no unwarranted or suspicious applications have previously been granted access to data.
+- [Audit apps and granted permissions](/azure/security/fundamentals/steps-secure-identity#audit-apps-and-consented-permissions) in your organization to ensure that no unwarranted or suspicious applications are already granted access to data.
 
 - Review the [Detect and Remediate Illicit Consent Grants in Office 365](/microsoft-365/security/office-365-security/detect-and-remediate-illicit-consent-grants) article for more best practices and safeguards against suspicious applications that request OAuth consent.
 
@@ -62,9 +62,9 @@ To minimize impact on trusted, business-critical applications that are already i
 
 ## Evaluate a request for tenant-wide admin consent
 
-Granting tenant-wide admin consent is a sensitive operation.  Permissions are granted on behalf of the entire organization, and they can include permissions to attempt highly privileged operations. Examples of such operations are role management, full access to all mailboxes or all sites, and full user impersonation.
+Granting tenant-wide admin consent is a sensitive operation. Permissions are granted on behalf of the entire organization, and they can include permissions to attempt highly privileged operations. Examples of such operations are role management, full access to all mailboxes or all sites, and full user impersonation.
 
-Before you grant tenant-wide admin consent, it's important to ensure that you trust the application, and the application publisher for the level of access you're granting. If you aren't confident that you understand who controls the application and why the application is requesting the permissions, do *not* grant consent.
+Before you grant tenant-wide admin consent, it's important to ensure that you trust the application, and the application publisher for the level of access you're granting. If you aren't confident that you understand who controls the application and why the application is requesting the permissions, don't grant consent.
 
 When you're evaluating a request to grant admin consent, here are some recommendations to consider:
 
@@ -78,19 +78,19 @@ When you're evaluating a request to grant admin consent, here are some recommend
 
    The permissions requested by the application are listed in the [consent prompt](~/identity-platform/application-consent-experience.md). Expanding the permission title displays the permission’s description. The description for application permissions generally ends in "without a signed-in user." The description for delegated permissions generally end with "on behalf of the signed-in user." Permissions for the Microsoft Graph API are described in [Microsoft Graph Permissions Reference](/graph/permissions-reference). Refer to the documentation for other APIs to understand the permissions they expose.
 
-   If you don't understand a permission that's being requested, do *not* grant consent.
+   If you don't understand a permission that's being requested, don't grant consent.
 
 - Understand which application is requesting permissions and who published the application.
 
    Be wary of malicious applications that try to look like other applications.
 
-   If you doubt the legitimacy of an application or its publisher, do *not* grant consent. Instead, seek confirmation (for example, directly from the application publisher).
+   If you doubt the legitimacy of an application or its publisher, don't grant consent. Instead, seek confirmation (for example, directly from the application publisher).
 
 - Ensure that the requested permissions are aligned with the features you expect from the application.
 
    For example, an application that offers SharePoint site management might require delegated access to read all site collections, but it wouldn't necessarily need full access to all mailboxes, or full impersonation privileges in the directory.
 
-   If you suspect that the application is requesting more permissions than it needs, do *not* grant consent. Contact the application publisher to obtain more details.
+   If you suspect that the application is requesting more permissions than it needs, don't grant consent. Contact the application publisher to obtain more details.
 
 ## Grant tenant-wide admin consent
 
@@ -106,7 +106,7 @@ Instead of granting consent for the entire organization, an administrator can al
 
 ## Limit user access to applications
 
-User access to applications can still be limited even when tenant-wide admin consent has been granted. To limit user access, require user assignment to an application. For more information, see [Methods for assigning users and groups](./assign-user-or-group-access-portal.md). Administrators can also limit user access to applications by disabling all future user consent operations to any application.
+User access to applications can still be limited even when tenant-wide admin consent is granted. To limit user access, require user assignment to an application. For more information, see [Methods for assigning users and groups](./assign-user-or-group-access-portal.md). Administrators can also limit user access to applications by disabling all future user consent operations to any application.
 
 For a broader overview, including how to handle more complex scenarios, see [Use Microsoft Entra ID for application access management](what-is-access-management.md).
 

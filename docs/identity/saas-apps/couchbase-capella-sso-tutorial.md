@@ -2,15 +2,15 @@
 title: Microsoft Entra SSO integration with Couchbase Capella - SSO
 description: Learn how to configure single sign-on between Microsoft Entra ID and Couchbase Capella - SSO.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 07/11/2023
-ms.author: jeedes
+ms.date: 03/25/2024
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Couchbase Capella - SSO so that I can control who has access to Couchbase Capella - SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -31,7 +31,7 @@ You'll configure and test Microsoft Entra single sign-on for Couchbase Capella -
 To integrate Microsoft Entra ID with Couchbase Capella - SSO, you need:
 
 * A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * Couchbase Capella - SSO single sign-on (SSO) enabled subscription.
 
@@ -126,6 +126,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 * [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 
-## Next steps
+## Related content
 
 Once you configure Couchbase Capella - SSO you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

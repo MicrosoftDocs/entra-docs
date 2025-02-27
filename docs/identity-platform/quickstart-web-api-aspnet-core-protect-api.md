@@ -1,11 +1,11 @@
 ---
 title: "Quickstart: Protect an ASP.NET Core web API with the Microsoft identity platform"
-description: In this quickstart, you download and modify a code sample that demonstrates how to protect an ASP.NET Core web API by using the Microsoft identity platform for authorization.
+description: In this quickstart, you download and modify a code sample that demonstrates how to protect an ASP.NET Core web API by using the Microsoft identity platform.
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: devx-track-csharp, scenarios:getting-started, "languages:aspnet-core", mode-api, 
-ms.date: 01/31/2024
+ms.date: 02/14/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
@@ -21,12 +21,11 @@ This quickstart uses an ASP.NET Core web API code sample to demonstrate how to r
 ## Prerequisites
 
 - Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- A minimum requirement of [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet)
+- A minimum requirement of [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet)
 - [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/)
 
 ## Register the application and record identifiers
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To complete registration, provide the application a name and specify the supported account types. Once registered, the application **Overview** page displays the identifiers needed in the application source code.
 
@@ -42,7 +41,7 @@ To complete registration, provide the application a name and specify the support
 
 1. The application's **Overview** pane is displayed when registration is complete. Record the **Directory (tenant) ID** and the **Application (client) ID** to be used in your application source code.
 
-    :::image type="content" source="./media/web-api-tutorial-01-register-app/record-identifiers.png" alt-text="Screenshot that shows the identifier values on the overview page.":::
+    :::image type="content" source="./media/web-api-tutorial-01-register-app/app-identifiers.png" alt-text="Screenshot that shows the identifier values on the overview page.":::
 
 >[!NOTE]
 > The **Supported account types** can be changed by referring to [Modify the accounts supported by an application](howto-modify-supported-accounts.md).
@@ -65,7 +64,7 @@ Once the API is registered, you can configure its permission by defining the sco
 
 ## Clone or download the sample application
 
-To obtain the sample application, you can either clone it from GitHub or download it as a _.zip_ file.
+To obtain the sample application, you can either clone it from GitHub or download it as a *.zip* file.
 
 - To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
@@ -77,7 +76,7 @@ To obtain the sample application, you can either clone it from GitHub or downloa
 
 ## Configure the ASP.NET Core sample application
 
-1. In your IDE, open the project folder, _ms-identity-docs-code-dotnet/web-api_, containing the sample.
+1. In your IDE, open the project folder, *ms-identity-docs-code-dotnet/web-api*, containing the sample.
 1. Open `appsettings.json` file, which contains the following code snippet:
 
     :::code language="json" source="~/../ms-identity-docs-code-dotnet/web-api/appsettings.json" :::
@@ -100,13 +99,13 @@ To obtain the sample application, you can either clone it from GitHub or downloa
    ```bash
    ...
    info: Microsoft.Hosting.Lifetime[14]
-         Now listening on: https://localhost:{port}
+         Now listening on: http://localhost:{port}
    ...
    ```
 
-   Record the port number in the `https://localhost:{port}` URL.
+   Record the port number in the `http://localhost:{port}` URL.
 
-1. To verify the endpoint is protected, use the following cURL command in Bash to send an unauthenticated HTTP GET request in Bash:
+1. To verify the endpoint is protected, update the base URL in the following cURL command to match the one you received in the previous step, and then run the command:
 
    ```bash
    curl -X GET https://localhost:5001/weatherforecast -ki
@@ -123,7 +122,9 @@ To obtain the sample application, you can either clone it from GitHub or downloa
    content-length: 0
    ```
 
-## Related content
+## Next steps
 
-- [How-to: Call an ASP.NET Core web API with cURL](howto-call-a-web-api-with-curl.md)
-- Learn more by building this Web API from scratch with the following series - [Tutorial: Register a web API with the Microsoft identity platform](./web-app-tutorial-01-register-application.md)
+Proceed to the next article to learn how to call the protected web API using cURL.
+
+> [!div class="nextstepaction"]
+> [How-to: Call an ASP.NET Core web API with cURL](howto-call-a-web-api-with-curl.md)

@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-verified-id
 
 ms.topic: conceptual
-ms.date: 04/06/2023
+ms.date: 12/13/2024
 ms.author: barclayn
 ---
 
@@ -48,8 +48,8 @@ You first select who can request issuance of a Verified ID by selecting all user
 
 An enterprise can set up Microsoft Entra Verified ID integration by either:
 
-1. Adding it as an inline process like a `Get Verified` button in the Service desk webapp, follow the steps to add a Presentation request to verify VerifedID with Face Check. Steps are mentioned in the link [https://aka.ms/verifiedidfacecheck](https://aka.ms/verifiedidfacecheck)
-1. Setting up a dedicated web application that could accept Microsoft Entra Verified ID `VerifiedEmployee` with [Face Check](using-facecheck.md). Use the GitHub [sample](https://github.com/Azure-Samples/active-directory-verifiable-credentials-dotnet/tree/main/6-woodgrove-helpdesk) to deploy the custom webapp. Click `Deploy to Azure` to deploy the [ARM template](/azure/azure-resource-manager/templates/) that uses Managed Identity.
+1. Adding it as an inline process like a `Get Verified` button in the Service desk webapp, follow the steps to add a Presentation request to verify Verified ID with Face Check. Steps are mentioned in the link [https://aka.ms/verifiedidfacecheck](https://aka.ms/verifiedidfacecheck)
+1. Setting up a dedicated web application that could accept Microsoft Entra Verified ID `VerifiedEmployee` with [Face Check](using-facecheck.md). Use the GitHub [sample](https://github.com/Azure-Samples/active-directory-verifiable-credentials-dotnet/tree/main/6-woodgrove-helpdesk) to deploy the custom webapp. Select `Deploy to Azure` to deploy the [ARM template](/azure/azure-resource-manager/templates/) that uses Managed Identity.
 
 :::image type="content" source="media/helpdesk-with-verified-id/deploy-to-azure.png" alt-text="Screenshot of Deploy to Azure using ARM template.":::
 
@@ -64,7 +64,7 @@ If you are a **Managed Services provider (MSP)** or **Cloud Solutions Provider (
 "requestedCredentials": [ 
   { 
     "type": "VerifiedEmployee", 
-    "acceptedIssuers": [ "<authirity1>", "<authority2>", "..." ], 
+    "acceptedIssuers": [ "<authority1>", "<authority2>", "..." ], 
     "configuration": { 
       "validation": { 
         "allowRevoked": false, 

@@ -105,7 +105,7 @@ To register devices as Microsoft Entra hybrid join to respective tenants, organi
 
 - Microsoft Entra hybrid join is supported for Federal Information Processing Standard (FIPS)-compliant TPM 2.0 and not supported for TPM 1.2. If your devices have FIPS-compliant TPM 1.2, you must disable them before proceeding with Microsoft Entra hybrid join. Microsoft doesn't provide any tools for disabling FIPS mode for TPMs as it is dependent on the TPM manufacturer. Contact your hardware OEM for support.
 
-- Starting from Windows 10 1903 release, TPMs 1.2 aren't used with Microsoft Entra hybrid join and devices with those TPMs are treated as if they don't have a TPM.
+- Starting from Windows 10 1903 release, TPM version 1.2 isn't used with Microsoft Entra hybrid join and devices with those TPMs are treated as if they don't have a TPM.
 
 - UPN changes are only supported starting Windows 10 2004 update. For devices before the Windows 10 2004 update, users could have SSO and Conditional Access issues on their devices. To resolve this issue, you need to unjoin the device from Microsoft Entra ID (run "dsregcmd /leave" with elevated privileges) and rejoin (happens automatically). However, users signing in with Windows Hello for Business don't face this issue.
 
@@ -120,7 +120,7 @@ Organizations might want to do a targeted rollout of Microsoft Entra hybrid join
 
 ## Select your scenario based on your identity infrastructure
 
-Microsoft Entra hybrid join works with both, managed and federated environments depending on whether the UPN is routable or non-routable. See bottom of the page for table on supported scenarios.
+Microsoft Entra hybrid join works with both, managed and federated environments depending on whether the UPN is routable or nonroutable. See bottom of the page for table on supported scenarios.
 
 ### Managed environment
 
@@ -135,7 +135,7 @@ These scenarios don't require you to configure a federation server for authentic
 
 A federated environment should have an identity provider that supports the following requirements. If you have a federated environment using Active Directory Federation Services (AD FS), then the below requirements are already supported.
 
-**WS-Trust protocol:** This protocol is required to authenticate Windows current Microsoft Entra hybrid joined devices with Microsoft Entra ID.
+**WS-Trust protocol:** This protocol is required to authenticate Microsoft Entra hybrid joined Windows devices with Microsoft Entra ID.
 When you're using AD FS, you need to enable the following WS-Trust endpoints:
 
   `/adfs/services/trust/2005/windowstransport`
@@ -156,10 +156,8 @@ Beginning with version 1.1.819.0, Microsoft Entra Connect provides you with a wi
 
 ## Review on-premises Microsoft Windows Server Active Directory users UPN support for Microsoft Entra hybrid join
 
-Sometimes, on-premises Microsoft Windows Server Active Directory users UPNs are different from your Microsoft Entra UPNs. In these cases, Windows 10 or newer Microsoft Entra hybrid join provides limited support for on-premises Microsoft Windows Server Active Directory UPNs based on the [authentication method](~/identity/hybrid/connect/choose-ad-authn.md), domain type, and Windows version. There are two types of on-premises Microsoft Windows Server Active Directory UPNs that can exist in your environment:
-
-- Routable users UPN: A routable UPN has a valid verified domain that is registered with a domain registrar. For example, if contoso.com is the primary domain in Microsoft Entra ID, contoso.org is the primary domain in on-premises Microsoft Windows Server Active Directory owned by Contoso and [verified in Microsoft Entra ID](~/fundamentals/add-custom-domain.md).
-- Non-routable users UPN: A non-routable UPN doesn't have a verified domain and is applicable only within your organization's private network. For example, if contoso.com is the primary domain in Microsoft Entra ID and contoso.local is the primary domain in on-premises Microsoft Windows Server Active Directory but isn't a verifiable domain in the internet and only used within Contoso's network.
+- Routable users UPN: A routable UPN has a valid verified domain that is registered with a domain registrar. For example, if contoso.com is the primary domain in Microsoft Entra ID, contoso.org is the primary domain in on-premises AD owned by Contoso and [verified in Microsoft Entra ID](~/fundamentals/add-custom-domain.yml).
+- Nonroutable users UPN: A nonroutable UPN doesn't have a verified domain and is applicable only within your organization's private network. For example, if contoso.com is the primary domain in Microsoft Entra ID and contoso.local is the primary domain in on-premises AD but isn't a verifiable domain in the internet and only used within Contoso's network.
 
 > [!NOTE]
 > The information in this section applies only to an on-premises users UPN. It isn't applicable to an on-premises computer domain suffix (example: computer1.contoso.local).
@@ -169,9 +167,9 @@ The following table provides details on support for these on-premises Microsoft 
 | Type of on-premises Microsoft Windows Server Active Directory UPN | Domain type | Windows 10 version | Description |
 | ----- | ----- | ----- | ----- |
 | Routable | Federated | From 1703 release | Generally available |
-| Non-routable | Federated | From 1803 release | Generally available |
+| Nonroutable | Federated | From 1803 release | Generally available |
 | Routable | Managed | From 1803 release | Generally available, Microsoft Entra SSPR on Windows lock screen isn't supported in environments where the on-premises UPN is different from the Microsoft Entra UPN. The on-premises UPN must be synced to the `onPremisesUserPrincipalName` attribute in Microsoft Entra ID |
-| Non-routable | Managed | Not supported | |
+| Nonroutable | Managed | Not supported | |
 
 ## Next step
 

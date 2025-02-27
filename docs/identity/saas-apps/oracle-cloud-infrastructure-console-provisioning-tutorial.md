@@ -1,26 +1,25 @@
 ---
-title: 'Tutorial: Configure Oracle Cloud Infrastructure Console for automatic user provisioning with Microsoft Entra ID'
+title: Configure Oracle Cloud Infrastructure Console for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Oracle Cloud Infrastructure Console.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 02/02/2024
-ms.author: thwimmer
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Oracle Cloud Infrastructure Console so that I can streamline the user management process and ensure that users have the appropriate access to Oracle Cloud Infrastructure Console.
 ---
 
-# Tutorial: Configure Oracle Cloud Infrastructure Console for automatic user provisioning
+# Configure Oracle Cloud Infrastructure Console for automatic user provisioning
 
 > [!NOTE]
-> Integrating with Oracle Cloud Infrastructure Console or Oracle IDCS with a custom / BYOA application is not supported. Using the gallery application as described in this tutorial is supported. The gallery application has been customized to work with the Oracle SCIM server. 
+> Integrating with Oracle Cloud Infrastructure Console or Oracle IDCS with a custom / BYOA application is not supported. Using the gallery application as described in this article is supported. The gallery application has been customized to work with the Oracle SCIM server. 
 
-This tutorial describes the steps you need to perform in both Oracle Cloud Infrastructure Console and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [Oracle Cloud Infrastructure Console](https://www.oracle.com/cloud/free/?source=:ow:o:p:nav:0916BCButton&intcmp=:ow:o:p:nav:0916BCButton) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This article describes the steps you need to perform in both Oracle Cloud Infrastructure Console and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [Oracle Cloud Infrastructure Console](https://www.oracle.com/cloud/free/?source=:ow:o:p:nav:0916BCButton&intcmp=:ow:o:p:nav:0916BCButton) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
 ## Capabilities supported
@@ -33,10 +32,10 @@ This tutorial describes the steps you need to perform in both Oracle Cloud Infra
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator). 
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
 * An Oracle Cloud Infrastructure Console [tenant](https://www.oracle.com/cloud/sign-in.html?intcmp=OcomFreeTier&source=:ow:o:p:nav:0916BCButton).
 * A user account in Oracle Cloud Infrastructure Console with Admin permissions.
 
@@ -57,9 +56,6 @@ The scenario outlined in this tutorial assumes that you already have the followi
 	![Screenshot shows the Oracle Admin.](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/identity.png "Admin")
 
 2. Click on the URL displayed on the page beside Oracle Identity Cloud Service Console.
-
-	![Screenshot shows the Oracle URL.](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/url.png "URL")
-
 3. Click on **Add Identity Provider** to create a new identity provider. Save the IdP ID to be used as a part of tenant URL. Select the plus icon beside the **Applications** tab to create an OAuth Client and Grant IDCS Identity Domain Administrator AppRole.
 
 	![Screenshot shows the Oracle Cloud Icon.](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/add.png "Icon")
@@ -156,7 +152,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
     |urn:ietf:params:scim:schemas:oracle:idcs:extension:user:User:isFederatedUser|Boolean|
 
     > [!NOTE]
-    > Oracle Cloud Infrastructure Console's SCIM endpoint expects `addresses[type eq "work"].country` MUST be in ISO 3166-1 "alpha-2" code format (for example US,UK etc).
+    > Oracle Cloud Infrastructure Console's SCIM endpoint expects `addresses[type eq "work"].country` MUST be in ISO 3166-1 "alpha-2" code format (for example US,UK, and so on).
     > Before starting provisioning please check to make sure that all users have their respective "Country or region" field value set in the expected format or else that particular user provisioning will fail.
     ![Screenshot shows the contact information.](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/contact.png "Contact")
 
@@ -173,7 +169,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
     | externalId | String |
     | members | Reference |
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for Oracle Cloud Infrastructure Console, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -204,6 +200,6 @@ Once you've configured provisioning, use the following resources to monitor your
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

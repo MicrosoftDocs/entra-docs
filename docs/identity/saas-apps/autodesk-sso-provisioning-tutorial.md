@@ -1,25 +1,23 @@
 ---
-title: 'Tutorial: Configure Autodesk SSO for automatic user provisioning with Microsoft Entra ID'
+title: Configure Autodesk SSO for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Autodesk SSO.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: jeedes
 
-ms.assetid: 07782ca6-955c-441e-b28c-5e7f3c3775ac
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: thwimmer
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Autodesk SSO so that I can streamline the user management process and ensure that users have the appropriate access to Autodesk SSO.
 ---
 
-# Tutorial: Configure Autodesk SSO for automatic user provisioning
+# Configure Autodesk SSO for automatic user provisioning
 
-This tutorial describes the steps you need to do in both Autodesk SSO and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Autodesk SSO](https://autodesk.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This article describes the steps you need to do in both Autodesk SSO and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Autodesk SSO](https://autodesk.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
 ## Capabilities Supported
@@ -32,10 +30,10 @@ This tutorial describes the steps you need to do in both Autodesk SSO and Micros
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md). 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator). 
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
 * A user account with either Primary admin or SSO admin role to access [Autodesk management portal](https://manage.autodesk.com/).
 
 ## Step 1: Plan your provisioning deployment
@@ -130,7 +128,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |---|---|---|---|
       |displayName|String|&check;|&check;      
       |members|Reference|||
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for Autodesk SSO, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -158,6 +156,6 @@ Once you've configured provisioning, use the following resources to monitor your
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

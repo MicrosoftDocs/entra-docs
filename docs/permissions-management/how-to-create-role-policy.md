@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 03/15/2024
+ms.date: 08/27/2024
 ms.author: jfields
 ---
 
@@ -68,7 +68,7 @@ This article describes how you can use the **Remediation** dashboard in Microsof
 1. The [**Permissions Management Tasks**](ui-tasks.md) pane appears on the right.
     - The **Active** tab displays a list of the policies Permissions Management is currently processing.
     - The **Completed** tab displays a list of the policies Permissions Management has completed.
-1. Refresh the **Role/Policies** tab to see the policy you created.
+1. Once data collection for the specified authorization system is complete, the newly created policy information is reflected.
 
 
 
@@ -98,7 +98,7 @@ This article describes how you can use the **Remediation** dashboard in Microsof
     - To add a whole category, select a category.
     - To add individual items from a category, select the down arrow on the left of the category name, and then select individual items.
 1. Select **Next**.
-
+1. (Optional) An Admin can copy the Resource Groups scope string to use as the scope. In Azure, select **Resource group** > **Monitoring** > **Properties**, then copy the **Resource ID**. 
 1. On the **Preview** page, review:
     - The list of selected **Actions** and **Not Actions**.
     - The **JSON** or **Script** to confirm it's what you want.
@@ -113,7 +113,7 @@ This article describes how you can use the **Remediation** dashboard in Microsof
 1. The [**Permissions Management Tasks**](ui-tasks.md) pane appears on the right.
     - The **Active** tab displays a list of the policies Permissions Management is currently processing.
     - The **Completed** tab displays a list of the policies Permissions Management has completed.
-1. Refresh the **Role/Policies** tab to see the role you created.
+1. Once data collection for the specified authorization system is complete, the newly created role information is reflected.
 
 ## Create a role for GCP
 
@@ -152,11 +152,11 @@ This article describes how you can use the **Remediation** dashboard in Microsof
 
     - The **Active** tab displays a list of the policies Permissions Management is currently processing.
     - The **Completed** tab displays a list of the policies Permissions Management has completed.
-1. Refresh the **Role/Policies** tab to see the role you created.
+1. Once data collection for the specified authorization system is complete, the newly created role information is reflected.
 
 
 ## Next steps
 
 - For information on how to view existing roles/policies, requests, and permissions, see [View roles/policies, requests, and permission in the Remediation dashboard](ui-remediation.md).
-- To view information about roles/policies, see [View information about roles/policies](how-to-view-role-policy.md).
+- For information on how to modify a role/policy, see [Modify a role/policy](how-to-modify-role-policy.md).
 

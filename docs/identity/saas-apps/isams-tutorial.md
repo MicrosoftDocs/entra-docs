@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with iSAMS'
+title: Microsoft Entra single sign-on (SSO) integration with iSAMS
 description: Learn how to configure single sign-on between Microsoft Entra ID and iSAMS.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and iSAMS so that I can control who has access to iSAMS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with iSAMS
+# Microsoft Entra single sign-on (SSO) integration with iSAMS
 
-In this tutorial, you'll learn how to integrate iSAMS with Microsoft Entra ID. When you integrate iSAMS with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate iSAMS with Microsoft Entra ID. When you integrate iSAMS with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to iSAMS.
 * Enable your users to be automatically signed-in to iSAMS with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * iSAMS supports **SP and IDP** initiated SSO.
 
@@ -158,10 +158,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 1. Log in to iSAMS as an Administrator.
 
 2.  Go to the **Control Panel Home** -> **Security & Permissions** -> **User Accounts** -> **User Options & Tasks** -> **Modify User Properties**.
-
-    ![Screenshot shows the User Accounts page with Modify User Properties selected.](./media/isams-tutorial/modify-user-properties.png)
-
-
 3. In the resulting pop-up window, select the **Account Details** tab, and change the **Authorization** to that of your newly created Identity Provider.
 
     ![Screenshot shows Account Details with a value for Authorization.](./media/isams-tutorial/account-details.png)
@@ -184,6 +180,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the iSAMS tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the iSAMS for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure iSAMS you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

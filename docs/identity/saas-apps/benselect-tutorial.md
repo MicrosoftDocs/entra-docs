@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with BenSelect'
+title: Microsoft Entra SSO integration with BenSelect
 description: Learn how to configure single sign-on between Microsoft Entra ID and BenSelect.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and BenSelect so that I can control who has access to BenSelect, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with BenSelect
+# Microsoft Entra SSO integration with BenSelect
 
-In this tutorial, you'll learn how to integrate BenSelect with Microsoft Entra ID. When you integrate BenSelect with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate BenSelect with Microsoft Entra ID. When you integrate BenSelect with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to BenSelect.
 * Enable your users to be automatically signed-in to BenSelect with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * BenSelect supports **IDP** initiated SSO.
 
@@ -149,7 +149,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 To configure single sign-on on **BenSelect** side, you need to send the downloaded **Certificate (Raw)** and appropriate copied URLs from the application configuration to [BenSelect support team](mailto:support@selerix.com). They set this setting to have the SAML SSO connection set properly on both sides.
 
 > [!NOTE]
-> You need to mention that this integration requires the SHA256 algorithm (SHA1 is not supported) to set the SSO on the appropriate server like app2101 etc.
+> You need to mention that this integration requires the SHA256 algorithm (SHA1 is not supported) to set the SSO on the appropriate server like app2101, and so on.
 
 ### Create BenSelect test user
 
@@ -163,6 +163,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the BenSelect tile in the My Apps, you should be automatically signed in to the BenSelect for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure BenSelect you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

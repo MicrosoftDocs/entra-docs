@@ -1,15 +1,15 @@
 ---
 title: Test a user flow
-description: Learn how to use the Run user flow feature to test your sign-up and sign-in user flow for your customer-facing app.
+description: Learn how to use the Run user flow feature to test your sign-up and sign-in user flow for your consumer and business customer apps.
  
 author: msmimart
 manager: celestedg
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 
 ms.topic: how-to
-ms.date: 02/15/2024
+ms.date: 01/22/2025
 ms.author: mimart
 ms.custom: it-pro
 
@@ -18,13 +18,18 @@ ms.custom: it-pro
 
 # Test your sign-up and sign-in user flow  
 
+[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+
 The **Run user flow** feature allows you to test your user flows by simulating a user’s sign-up or sign-in experience with your application. You can use this feature to verify that your user flow is working as expected. To use this feature, you select the user flow associated with your application, run the user flow, and enter the requested sign-up or sign-in information.
 
-This feature obtains most of the values it needs to run from the application registration. You can select the application you want to test and specify the browser language for the user interface, but you can generally leave the other fields at their default values.
+This feature obtains most of the values it needs to run from the application registration. You can select the application you want to test and specify the browser language for the user interface, but you can generally leave the other fields at their default values. 
+
+> [!NOTE]
+> This feature doesn't support SAML apps. However, you can still test the end-user experience by running your SAML app.
 
 ## Prerequisites
 
-- A **Microsoft Entra customer tenant**: You can set up a <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">free trial</a>, or you can create a new customer tenant in Microsoft Entra ID.
+- A **Microsoft Entra external tenant**: You can set up a <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">free trial</a>, or you can create a new external tenant in Microsoft Entra ID.
 - A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
 - Your application, which is [registered with Microsoft Entra](how-to-register-ciam-app.md), has a Redirect URI specified, and is [associated with your user flow](how-to-user-flow-add-application.md).
 
@@ -51,8 +56,8 @@ Follow these steps to use the **Run user flow** feature to test your user flow.
 
    |Field    |Description  |
    |---------|---------|
-   |**Open Id Configuration URL**     | This value is retrieved from the application registration. It's the publicly accessible URL that was assigned to your application when you registered it with Microsoft Entra ID. This URL points to the OpenID configuration document used by client applications to find authentication URLs and public signing keys. The format is: `https://{tenant}.ciamlogin.com/{tenant}.onmicrosoft.com/v2.0/.well-known/openid-configuration?appid=00000000-1111-2222-3333-444444444444`        |
-   |**Application**     | This menu lists the applications that are associated with this user flow. At least one application is required. If there are multiple applications, select the one you want to test.       |
+   |**Open Id Configuration URL**     | This value is retrieved from the application registration. It's the publicly accessible URL that was assigned to your application when you registered it with Microsoft Entra ID. This URL points to the OpenID configuration document used by client applications to find authentication URLs and public signing keys. The format is: `https://{tenant}.ciamlogin.com/{tenant}.onmicrosoft.com/v2.0/.well-known/openid-configuration?appid=00001111-aaaa-2222-bbbb-3333cccc4444`        |
+   |**Application**     | This menu lists the applications that are associated with this user flow. At least one application is required. If there are multiple applications, select the one you want to test. Note that the **Run user flow** feature doesn't support SAML applications.      |
    |**Reply URL** / **Redirect URI**   | This value is retrieved from the application registration, and is required for the Run user flow feature to work. Keep the current setting, which is the reply URL or redirect URI (depending on the protocol) that is configured for your application. [Learn more](how-to-register-ciam-app.md?tabs=spa#about-redirect-uri)       |
    |**Resource**     | This value is retrieved from the application registration for a protected web API and applies to access tokens. The **Resource** is the globally unique **Application ID URI** that was assigned to the API when it was exposed during app registration ([learn more](~/identity-platform/quickstart-configure-app-expose-web-apis.md)). The access token must contain both the **Resource** and **Scopes** values to allow secure access to the web API.  |
    |**Scopes**     | This value is retrieved from the application registration for a protected web API and applies to access tokens. The **Scopes** are the permissions needed by an application to access the data and functionality in the API. These values are defined when you expose the API during app registration ([learn more](~/identity-platform/quickstart-configure-app-expose-web-apis.md)). The access token must contain both the **Resource** and **Scopes** values to allow secure access to the web API. |

@@ -30,11 +30,11 @@ Use Microsoft authentication methods to meet required NIST authenticator types.
 | Microsoft Entra authentication methods| NIST authenticator type |
 | - | -|
 | **Recommended methods**|    |
-| Hardware protected certificate (smartcard/security key/TPM) <br> FIDO 2 security key<br>Windows Hello for Business with hardware TPM| Multi-factor cryptographic hardware |
+|  Multi-factor hardware protected certificate <br> FIDO 2 security key <br> Platform SSO for macOS (Secure Enclave) <br> Windows Hello for Business with hardware TPM <br> Passkey in Microsoft Authenticator<sup>1</sup>| Multi-factor cryptographic hardware |
 | **Additional methods**||
-|Password<br>**AND**<br>- Microsoft Entra joined with hardware TPM <br>- **OR**<br>- Microsoft Entra hybrid joined with hardware TPM|Memorized secret <br>**AND**<br>Single-factor cryptographic hardware|
-|Password<br>**AND**<br>OATH hardware tokens (Preview) <br>**AND**<br>- Single-factor software certificate<br>- **OR**<br>- Microsoft Entra hybrid joined or compliant device with software TPM |Memorized secret<br>**AND**<br>Single-factor OTP hardware <br>**AND**<br>Single-factor cryptographic software|
+|Password **OR** QR Code (PIN) <br>**AND**<br>Single-factor hardware protected certificate|Memorized secret <br>**AND**<br>Single-factor cryptographic hardware|
 
+<sup>1</sup> Passkey in Microsoft Authenticator is overall considered partial AAL3 and can qualify as AAL3 on platforms with FIPS 140 Level 2 Overall (or higher) and FIPS 140 level 3 physical security (or higher). For additional information on FIPS 140 compliance for Microsoft Authenticator (iOS/Android) See [FIPS 140 compliant for Microsoft Entra authentication](~/identity/authentication/concept-authentication-authenticator-app.md#fips-140-compliant-for-microsoft-entra-authentication)
 ### Recommendations
 
 For AAL3, we recommend using a multi-factor cryptographic hardware authenticator that provides passwordless authentication eliminating the greatest attack surface, the password.
@@ -59,7 +59,7 @@ Authenticators are required to be:
 
 * FIPS 140 Level 3 Physical Security, or higher
 
-Microsoft Entra joined and Microsoft Entra hybrid joined devices meet this requirement when:
+Single-factor hardware protected certificate used with Windows device meet this requirement when:
 
 * You run [Windows in a FIPS-140 approved mode](/windows/security/security-foundations/certification/fips-140-validation)
 
@@ -79,7 +79,7 @@ Authenticators are required to be:
 
 FIDO 2 security keys, smart cards, and Windows Hello for Business can help you meet these requirements.
 
-* FIDO2 key providers are in FIPS certification. We recommend you review the list of [supported FIDO2 key vendors](~/identity/authentication/concept-authentication-passwordless.md#fido2-security-key-providers). Consult with your provider for current FIPS validation status.
+* Multiple FIDO2 security key providers meet FIPS requirements. We recommend you review the list of [supported FIDO2 key vendors](~/identity/authentication/concept-fido2-hardware-vendor.md). Consult with your provider for current FIPS validation status.
 
 * Smart cards are a proven technology. Multiple vendor products meet FIPS requirements.
 
@@ -97,17 +97,25 @@ FIPS 140 requires the cryptographic boundary, including software, firmware, and 
 
 To determine the TPMs that meet current standards, go to [NIST Computer Security Resource Center Cryptographic Module Validation Program](https://csrc.nist.gov/Projects/cryptographic-module-validation-program/validated-modules/Search). In the **Module Name** box, enter **Trusted Platform Module** for a list of hardware TPMs that meet standards.
 
+**MacOS Platform SSO**
+
+Apple macOS 13 (and above) are FIPS 140 Level 2 Overall, with most devices also FIPS 140 Level 3 Physical Security. We recommend referring to the [Apple Platform Certifications](https://support.apple.com/guide/certifications/apc3a7433eb89/web). 
+
+#### Passkey in Microsoft Authenticator
+
+For additional information on FIPS 140 compliance for Microsoft Authenticator (iOS/Android) See [FIPS 140 compliant for Microsoft Entra authentication](~/identity/authentication/concept-authentication-authenticator-app.md#fips-140-compliant-for-microsoft-entra-authentication)
+
 ## Reauthentication
 
-For AAL3, NIST requirements are reauthentication every 12 hours, regardless of user activity. Reauthentication is required after a period of inactivity 15 minutes or longer. Presenting both factors is required.
+For AAL3, NIST requirements are reauthentication every 12 hours, regardless of user activity. Reauthentication is recommended after a period of inactivity 15 minutes or longer. Presenting both factors is required.
 
 To meet the requirement for reauthentication, regardless of user activity, Microsoft recommends configuring [user sign-in frequency](~/identity/conditional-access/howto-conditional-access-session-lifetime.md) to 12 hours.
 
 NIST allows for compensating controls to confirm subscriber presence:
 
-* Set a session inactivity time out of 15 minutes: Lock the device at the OS level by using Microsoft Configuration Manager, Group Policy Object (GPO), or Intune. For the subscriber to unlock it, require local authentication.
-
 * Set timeout, regardless of activity, by running a scheduled task using Configuration Manager, GPO, or Intune. Lock the machine after 12 hours, regardless of activity.
+  
+* For the recommended inactivity time out, you can set a session inactivity time out of 15 minutes: Lock the device at the OS level by using Microsoft Configuration Manager, Group Policy Object (GPO), or Intune. For the subscriber to unlock it, require local authentication.
 
 ## Man-in-the-middle resistance
 

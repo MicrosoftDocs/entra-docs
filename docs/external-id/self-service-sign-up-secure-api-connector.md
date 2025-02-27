@@ -17,6 +17,8 @@ ms.collection: M365-identity-device-management
 
 # Secure your API used an API connector in Microsoft Entra External ID self-service sign-up user flows
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 When integrating a REST API within a Microsoft Entra External ID self-service sign-up user flow, you must protect your REST API endpoint with authentication. The REST API authentication ensures that only services that have proper credentials, such as Microsoft Entra ID, can make calls to your endpoint. This article explores how to secure REST API. 
 
 ## Prerequisites
@@ -26,7 +28,6 @@ You can protect your API endpoint by using either HTTP basic authentication or H
 
 ## HTTP basic authentication
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 HTTP basic authentication is defined in [RFC 2617](https://tools.ietf.org/html/rfc2617). Basic authentication works as follows: Microsoft Entra ID sends an HTTP request with the client credentials (`username` and `password`) in the `Authorization` header. The credentials are formatted as the base64-encoded string `username:password`. Your API then is responsible for checking these values to perform other authorization decisions.
 

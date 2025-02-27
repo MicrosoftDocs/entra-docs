@@ -5,7 +5,7 @@ description: What is least privilege and how to navigate using Microsoft Entra d
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: how-to
-ms.date: 11/27/2023
+ms.date: 04/15/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -26,11 +26,11 @@ As your organization begins to manage Microsoft Entra, our documentation guides 
 
 You see this concept surfaced in the first step of content called out like the following example with a link to the least privileged role definition:
 
-- Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) **as at least a [Security Administrator](/entra/identity/role-based-access-control/permissions-reference#security-administrator)**.
+- Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) **as at least a [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator)**.
 
 :::image type="content" source="media/how-to-navigate/least-privilge-steps.png" alt-text="Sreenshot of a document showing how to complete a step using the principle of least privilege.":::
 
-There's still a need for the highly privileged Global Administrator role in certain edge cases and we call them out as such.
+There's still a need for the highly privileged [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) role in certain edge cases and we call them out as such.
 
 Microsoft doesn't recommend that administrators work day to day with an active privileged role assignment. To combat these bad habits, organizations can use features like:
 

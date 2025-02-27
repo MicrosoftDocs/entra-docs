@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Pingboard'
+title: Microsoft Entra integration with Pingboard
 description: Learn how to configure single sign-on between Microsoft Entra ID and Pingboard.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Pingboard so that I can control who has access to Pingboard, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Pingboard
+# Microsoft Entra integration with Pingboard
 
-In this tutorial, you'll learn how to integrate Pingboard with Microsoft Entra ID. When you integrate Pingboard with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Pingboard with Microsoft Entra ID. When you integrate Pingboard with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Pingboard.
 * Enable your users to be automatically signed-in to Pingboard with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Pingboard supports **SP** and **IDP** initiated SSO.
 
@@ -93,7 +93,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<SUBDOMAIN>.pingboard.com/sign_in`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Reply URL and Sign-on URL. Contact [Pingboard Client support team](https://support.pingboard.com/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are not real. Update these values with the actual Reply URL and Sign-on URL. Contact [Pingboard Client support team](https://help.workleap.com/en//) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 6. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
@@ -143,11 +143,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 3. On the **Integrations** page, find the **Microsoft Entra ID** tile, and click it.
 
-	![Pingboard Single Sign-On Integration](./media/pingboard-tutorial/directory.png)
-
-4. In the modal that follows click **"Configure"**
-
-	![Pingboard configuration button](./media/pingboard-tutorial/configure.png)
+4. In the dialog that appears, select **"Configure"**.
 
 5. On the following page, you notice that "Azure SSO Integration is enabled". Open the downloaded Metadata XML file in a notepad and paste the content in **IDP Metadata**.
 
@@ -204,6 +200,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the Pingboard tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Pingboard for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Pingboard you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

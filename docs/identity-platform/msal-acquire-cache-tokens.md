@@ -34,7 +34,7 @@ When your application needs to request an access token with specific permissions
 Some example scope values for different resources:
 
 - Microsoft Graph API: `https://graph.microsoft.com/User.Read`
-- Custom web API: `api://11111111-1111-1111-1111-111111111111/api.read`
+- Custom web API: `api://00001111-aaaa-2222-bbbb-3333cccc4444/api.read`
 
 The format of the scope value varies depending on the resource (the API) receiving the access token and the `aud` claim values it accepts.
 
@@ -45,7 +45,7 @@ Certain web APIs such as the Azure Resource Manager API (`https://management.cor
 Other APIs might require that *no scheme or host* is included in the scope value, and expect only the app ID (a GUID) and the scope name, for example:
 
 ```json
-11111111-1111-1111-1111-111111111111/api.read
+00001111-aaaa-2222-bbbb-3333cccc4444/api.read
 ```
 
 > [!TIP]
@@ -81,6 +81,7 @@ For web applications that use the [OpenID Connect authorization code flow](v2-pr
 
 The method of acquiring a token depends on whether it's a public client or confidential client application.
 
+
 ### Public client applications
 
 In public client applications (desktop and mobile), you can:
@@ -112,6 +113,10 @@ When your client requests an access token, Microsoft Entra ID also returns an au
 ## (Advanced) Accessing the user's cached tokens in background apps and services
 
 [!INCLUDE [advanced-token-caching](~/includes/advanced-token-cache.md)]
+
+
+> [!NOTE]
+> When acquiring tokens interactivelly using [authentication broker](msal-net-use-brokers-with-xamarin-apps.md), the authentication broker will do cache-lookup first and return cached token if available ([GitHub issue - acquireToken uses caching](https://github.com/AzureAD/microsoft-authentication-library-for-android/issues/2197#issuecomment-2447771586)).
 
 ## See also
 

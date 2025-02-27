@@ -1,27 +1,25 @@
 ---
-title: 'Tutorial: Configure Bizagi Studio for Digital Process Automation for automatic user provisioning with Microsoft Entra ID'
+title: Configure Bizagi Studio for Digital Process Automation for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Bizagi Studio for Digital Process Automation.
 
-documentationcenter: ''
-author: twimmers
-writer: twimmers
+
+author: thomasakelo
 manager: jeedes
 
-ms.assetid: 2fbff65a-5345-4c08-a6c7-60b80d867a3e
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.tgt_pltfrm: na
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: thwimmer
+
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Bizagi Studio for Digital Process Automation so that I can streamline the user management process and ensure that users have the appropriate access to Bizagi Studio for Digital Process Automation.
 ---
 
-# Tutorial: Configure Bizagi Studio for Digital Process Automation for automatic user provisioning
+# Configure Bizagi Studio for Digital Process Automation for automatic user provisioning
 
-This tutorial describes the steps you need to perform in both Bizagi Studio for Digital Process Automation and Microsoft Entra ID to configure automatic user provisioning. When configured to do so, Microsoft Entra ID automatically provisions and deprovisions users and groups to [Bizagi Studio for Digital Process Automation](https://www.bizagi.com/) by using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This article describes the steps you need to perform in both Bizagi Studio for Digital Process Automation and Microsoft Entra ID to configure automatic user provisioning. When configured to do so, Microsoft Entra ID automatically provisions and deprovisions users and groups to [Bizagi Studio for Digital Process Automation](https://www.bizagi.com/) by using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
 ## Capabilities supported
@@ -33,10 +31,10 @@ This tutorial describes the steps you need to perform in both Bizagi Studio for 
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following:
+The scenario outlined in this article assumes that you already have the following:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md). 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning. Examples include application administrator, cloud application administrator, application owner, or global administrator. 
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * Bizagi Studio for Digital Process Automation version 11.2.4.2X or later.
 
 ## Plan your provisioning deployment
@@ -143,9 +141,9 @@ This section guides you through the steps to configure the Microsoft Entra provi
    More information on how to add custom attributes can be found in [Customize Application Attributes](~/identity/app-provisioning/customize-application-attributes.md).
 
 > [!NOTE]
-> Only basic type properties are supported (for example, String, Integer, Boolean, DateTime, etc). The properties linked to parametric tables or multiple types are not supported yet.
+> Only basic type properties are supported (for example, String, Integer, Boolean, DateTime, and so on). The properties linked to parametric tables or multiple types are not supported yet.
 
-10. To configure scoping filters, see the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+10. To configure scoping filters, see the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 11. To enable the Microsoft Entra provisioning service for Bizagi Studio for Digital Process Automation, in the **Settings** section, change the **Provisioning Status** to **On**.
 
@@ -173,6 +171,6 @@ After you've configured provisioning, use the following resources to monitor you
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

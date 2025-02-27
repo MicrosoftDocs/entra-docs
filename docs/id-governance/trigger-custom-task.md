@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: conceptual
-ms.date: 06/22/2023
+ms.date: 12/10/2024
 ms.custom: template-howto
 ---
 
@@ -26,7 +26,6 @@ For more information about Lifecycle Workflows extensibility, see: [Workflow Ext
 
 ## Create a custom task extension using the Microsoft Entra admin center
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 To use a custom task extension in your workflow, first a custom task extension must be created to be linked with an Azure Logic App. You're able to create a Logic App at the same time you're creating a custom task extension. To do this, you complete these steps:
 

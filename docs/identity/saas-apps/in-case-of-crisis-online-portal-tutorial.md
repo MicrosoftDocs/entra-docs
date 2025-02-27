@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with In Case of Crisis - Online Portal'
+title: Microsoft Entra single sign-on (SSO) integration with In Case of Crisis - Online Portal
 description: Learn how to configure single sign-on between Microsoft Entra ID and In Case of Crisis - Online Portal.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and In Case of Crisis - Online Portal so that I can control who has access to In Case of Crisis - Online Portal, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with In Case of Crisis - Online Portal
+# Microsoft Entra single sign-on (SSO) integration with In Case of Crisis - Online Portal
 
-In this tutorial, you'll learn how to integrate In Case of Crisis - Online Portal with Microsoft Entra ID. When you integrate In Case of Crisis - Online Portal with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate In Case of Crisis - Online Portal with Microsoft Entra ID. When you integrate In Case of Crisis - Online Portal with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to In Case of Crisis - Online Portal.
 * Enable your users to be automatically signed-in to In Case of Crisis - Online Portal with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * In Case of Crisis - Online Portal supports **IDP** initiated SSO
 * Once you configure the In Case of Crisis - Online Portal you can enforce session controls, which protect exfiltration and infiltration of your organization’s sensitive data in real-time. Session controls extend from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
@@ -49,7 +49,6 @@ To configure the integration of In Case of Crisis - Online Portal into Microsoft
 1. Select **In Case of Crisis - Online Portal** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
  Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
-
 
 <a name='configure-and-test-azure-ad-single-sign-on-for-in-case-of-crisis---online-portal'></a>
 
@@ -77,19 +76,20 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Select a single sign-on method** page, select **SAML**.
 1. On the **Set up single sign-on with SAML** page, click the edit/pen icon for **Basic SAML Configuration** to edit the settings.
 
-   ![Edit Basic SAML Configuration](common/edit-urls.png)
+   ![Screenshot shows to edit Basic SAML Configuration.](common/edit-urls.png)
 
 1. On the **Basic SAML Configuration** section, the application is pre-configured and the necessary URLs are already pre-populated with Azure. The user needs to save the configuration by clicking the **Save** button.
 
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
-	![The Certificate download link](common/certificatebase64.png)
+	![Screenshot shows the Certificate download link.](common/certificatebase64.png "Certificate")
 
 1. On the **Set up In Case of Crisis - Online Portal** section, copy the appropriate URL(s) based on your requirement.
 
-	![Copy configuration URLs](common/copy-configuration-urls.png)
-
+   > [!NOTE]
+   > On the Properties page, please send us the User Access URL. This will be used in the In Case of Crisis portal.
+   
 <a name='create-an-azure-ad-test-user'></a>
 
 ### Create a Microsoft Entra test user
@@ -116,11 +116,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **In Case of Crisis - Online Portal**.
 1. In the app's overview page, find the **Manage** section and select **Users and groups**.
 
-   ![The "Users and groups" link](common/users-groups-blade.png)
+   ![Screenshot shows the "Users and groups" link.](common/users-groups-blade.png)
 
 1. Select **Add user**, then select **Users and groups** in the **Add Assignment** dialog.
 
-	![The Add User link](common/add-assign-user.png)
+	![Screenshot shows the Add User link.](common/add-assign-user.png)
 
 1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
 1. If you're expecting any role value in the SAML assertion, in the **Select Role** dialog, select the appropriate role for the user from the list and then click the **Select** button at the bottom of the screen.
@@ -142,7 +142,7 @@ When you click the In Case of Crisis - Online Portal tile in the Access Panel, y
 
 ## Additional resources
 
-- [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 

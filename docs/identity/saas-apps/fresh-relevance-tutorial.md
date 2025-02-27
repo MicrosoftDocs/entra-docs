@@ -1,24 +1,24 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Fresh Relevance'
+title: Microsoft Entra SSO integration with Fresh Relevance
 description: Learn how to configure single sign-on between Microsoft Entra ID and Fresh Relevance.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Fresh Relevance so that I can control who has access to Fresh Relevance, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Fresh Relevance
+# Microsoft Entra SSO integration with Fresh Relevance
 
-In this tutorial, you'll learn how to integrate Fresh Relevance with Microsoft Entra ID. When you integrate Fresh Relevance with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Fresh Relevance with Microsoft Entra ID. When you integrate Fresh Relevance with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Fresh Relevance.
 * Enable your users to be automatically signed-in to Fresh Relevance with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Fresh Relevance supports **IDP** initiated SSO.
 
@@ -132,14 +132,9 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Fresh Relevance SSO
 
-
-
-
-1. In a different web browser window, sign in to your Fresh Relevance company site as an administrator
+1. In a different web browser window, sign in to your Fresh Relevance company site as an administrator.
 
 1. Go to **Settings** > **All Settings** > **Security and Privacy** and click **SAML/Azure AD Single Sign-On**.
-
-    ![Screenshot shows settings of SAML account.](./media/fresh-relevance-tutorial/settings.png "Account")
 
 1. In the **SAML/Single Sign-On Configuration** page, **Enable SAML SSO for this account** checkbox and click **Create new IdP Configuration** button. 
 
@@ -182,6 +177,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Fresh Relevance tile in the My Apps, you should be automatically signed in to the Fresh Relevance for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Fresh Relevance you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

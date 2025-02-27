@@ -2,11 +2,11 @@
 title: Single sign-on to apps with Microsoft Entra application proxy
 description: Turn on single sign-on for your published on-premises applications with Microsoft Entra application proxy in the Microsoft Entra admin center.
 author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/26/2024
+ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -23,7 +23,7 @@ This article requires that an app is published and tested with application proxy
 
 ## Set up password vaulting for your application
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. From the list, select the app that you want to set up with SSO.  
 1. Select **application proxy**. 

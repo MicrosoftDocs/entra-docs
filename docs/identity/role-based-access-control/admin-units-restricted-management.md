@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: role-based-access-control
-ms.date: 01/02/2024
+ms.date: 06/13/2024
 ms.author: rolyon
 ms.custom: oldportal;it-pro;
 ---
@@ -16,7 +16,7 @@ ms.custom: oldportal;it-pro;
 
 > [!IMPORTANT]
 > Restricted management administrative units are currently in PREVIEW.
-> See the [Product Terms](https://aka.ms/EntraPreviewsTermsOfUse) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+> See the [Product Terms](https://aka.ms/EntraPreviewsTermsOfUse) for legal terms that apply to features that are in beta, preview, or otherwise not yet released into general availability.
 
 Restricted management administrative units allow you to protect specific objects in your tenant from modification by anyone other than a specific set of administrators that you designate. This allows you to meet security or compliance requirements without having to remove tenant-level role assignments from your administrators.
 
@@ -25,7 +25,7 @@ Restricted management administrative units allow you to protect specific objects
 Here are some reasons why you might use restricted management administrative units to help manage access in your tenant.
 
 - You want to protect your C-level executive accounts and their devices from Helpdesk Administrators who would otherwise be able to reset their passwords or access BitLocker recovery keys. You can add your C-level user accounts in a restricted management administrative unit and enable a specific trusted set of administrators who can reset their passwords and access BitLocker recovery keys when needed.
-- You're implementing a compliance control to ensure that certain resources can only be managed by administrators in a specific country. You can add those resources in a restricted management administrative unit and assign local administrators to manage those objects. Even Global Administrators won't be allowed to modify the objects unless they assign themselves explicitly to a role scoped to the restricted management administrative unit (which is an auditable event).
+- You're implementing a compliance control to ensure that certain resources can only be managed by administrators in a specific country/region. You can add those resources in a restricted management administrative unit and assign local administrators to manage those objects. Even Global Administrators won't be allowed to modify the objects unless they assign themselves explicitly to a role scoped to the restricted management administrative unit (which is an auditable event).
 - You're using security groups to control access to sensitive applications in your organization, and you don't want to allow your tenant-scoped administrators who can modify groups to be able to control who can access the applications. You can add those security groups to a restricted management administrative unit and then be sure that only the specific administrators you assign can manage them.
 
 > [!NOTE]
@@ -86,7 +86,7 @@ Here are some of the limits and constraints for restricted management administra
 
 ## Programmability
 
-Applications can't modify objects in restricted management administrative units by default. To grant an application access to manage objects in a restricted management administrative unit, you must assign the *Directory.Write.Restricted* [permission in Microsoft Graph](/graph/permissions-reference?branch=main#directory-permissions).
+Applications can't modify objects in restricted management administrative units by default. To grant an application access to manage objects in a restricted management administrative unit, you must assign a Microsoft Entra role to the application at the scope of the restricted management administrative unit. If you assign [Microsoft Graph application permissions](/graph/permissions-reference) to the application, those permissions won't apply because it's restricted.
 
 ## License requirements
 
@@ -96,4 +96,4 @@ Restricted management administrative units require a Microsoft Entra ID P1 licen
 
 - [Create, update, or delete administrative units](admin-units-manage.md)
 - [Add users or groups to an administrative unit](admin-units-members-add.md)
-- [Assign Microsoft Entra roles with administrative unit scope](admin-units-assign-roles.md)
+- [Assign Microsoft Entra roles with administrative unit scope](manage-roles-portal.md)

@@ -30,7 +30,6 @@ The following sections describe each step in additional detail.
 
 ## Switch redirect URIs to SPA platform
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 If you'd like to continue using your existing app registration for your applications, use the Microsoft Entra admin center to update the registration's redirect URIs to the SPA platform. Doing so enables the authorization code flow with PKCE and CORS support for apps that use the registration (you still need to update your application's code to MSAL.js v2.x).
 
@@ -70,8 +69,6 @@ import * as msal from "@azure/msal-browser";
 
 const msalInstance = new msal.PublicClientApplication(config);
 ```
-
-For a full walk-through of adding MSAL 2.x to your application, see [Tutorial: Sign in users and call the Microsoft Graph API from a JavaScript single-page app (SPA) using auth code flow](tutorial-v2-javascript-auth-code.md).
 
 For additional changes you might need to make to your code, see the [migration guide](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/v1-migration.md) on GitHub.
 

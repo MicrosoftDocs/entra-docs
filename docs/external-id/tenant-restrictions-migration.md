@@ -17,6 +17,8 @@ ms.custom: enterprise-apps-article
 
 # Plan a tenant restrictions v1 migration to tenant restrictions v2
 
+[!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
+
 Administrators use [tenant restrictions v1](~/identity/enterprise-apps/tenant-restrictions.md) to control user access to external tenants on their network. However, [tenant restrictions v2](tenant-restrictions-v2.md) with cross tenant access settings adds tenant-level restrictions and more granularity such as individual user, group, and application controls. Tenant restrictions v2 moves policy management from network proxies to a cloud-based portal. Organizations no longer hit a maximum number of targeted tenants due to proxy header size limitations.
 
 Migration from tenant restrictions v1 to tenant restrictions v2 is a one-time process with no other licensing requirements. As you plan the migration, include stakeholders from networking and identity teams. 
@@ -64,12 +66,12 @@ When you configure cross-tenant access outbound settings, the policy takes effec
 
 Allow internal identities, such as employees, to access specific external tenants on your managed network. Block access to nonallow listed tenants for internal identities. Block external identities, such as contractors and vendors, from accessing all external tenants. 
 
-1. In **Cross-tenant access settings**, [add each domain/tenant as an organization under Organizational settings](cross-tenant-access-settings-b2b-collaboration.md#add-an-organization).
-2. To allow all users and groups and allow all applications, for each added organization, [configure outbound access for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.md#modify-outbound-access-settings). 
+1. In **Cross-tenant access settings**, [add each domain/tenant as an organization under Organizational settings](cross-tenant-access-settings-b2b-collaboration.yml#add-an-organization).
+2. To allow all users and groups and allow all applications, for each added organization, [configure outbound access for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.yml#modify-outbound-access-settings). 
 
    [ ![Screenshot of the Organizationsl settings tab under cross-tenant access settings.](media/tenant-restrictions-migration/organizational-settings.png)](media/tenant-restrictions-migration/organizational-settings.png#lightbox)
 
-3. To block all users and groups and all applications for B2B collaboration, [configure the default cross-tenant access outbound settings](cross-tenant-access-settings-b2b-collaboration.md#configure-default-settings). This action applies only to tenants not added in [step 1](#allow-only-internal-identities-access-to-specific-external-tenants).
+3. To block all users and groups and all applications for B2B collaboration, [configure the default cross-tenant access outbound settings](cross-tenant-access-settings-b2b-collaboration.yml#configure-default-settings). This action applies only to tenants not added in [step 1](#allow-only-internal-identities-access-to-specific-external-tenants).
 
    [ ![Screenshot of the Default settings tab under cross-tenant access settings.](media/tenant-restrictions-migration/default-settings.png)](media/tenant-restrictions-migration/default-settings.png#lightbox)
 
@@ -81,13 +83,13 @@ Allow internal identities, such as employees, to access specific external tenant
 
 Allow internal identities such as employees, and external identities such as contractors and vendors to access specific external tenants on your managed network. Block access to nonallow listed tenants for all identities.  
 
-1. In **Cross-tenant access settings**, [add each domain/tenant ID as an organization under Organizational settings](cross-tenant-access-settings-b2b-collaboration.md#add-an-organization).
-2. For each added organization to enable internal identities, [configure Outbound access for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.md#modify-outbound-access-settings) to allow all users, groups, and applications.
+1. In **Cross-tenant access settings**, [add each domain/tenant ID as an organization under Organizational settings](cross-tenant-access-settings-b2b-collaboration.yml#add-an-organization).
+2. For each added organization to enable internal identities, [configure Outbound access for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.yml#modify-outbound-access-settings) to allow all users, groups, and applications.
 3. For each added organization to enable external identities, [configure the organization tenant restrictions](tenant-restrictions-v2.md#step-2-configure-tenant-restrictions-v2-for-specific-partners) to allow all users, groups, and applications.  
 
    [ ![Screenshot of Outbound access and Tenant restrictions details under Organizational settings.](media/tenant-restrictions-migration/organizational-settings-outbound.png)](media/tenant-restrictions-migration/organizational-settings-outbound.png#lightbox)
 
-4. To block all users, groups, and applications for B2B collaboration, [configure the default Cross Tenant Access outbound access settings](cross-tenant-access-settings-b2b-collaboration.md#configure-default-settings). This action applies only to tenants not added in [step 1](#allow-internal-and-external-identities-to-access-specific-external-tenants).
+4. To block all users, groups, and applications for B2B collaboration, [configure the default Cross Tenant Access outbound access settings](cross-tenant-access-settings-b2b-collaboration.yml#configure-default-settings). This action applies only to tenants not added in [step 1](#allow-internal-and-external-identities-to-access-specific-external-tenants).
 
    [ ![Screenshot of Outbound access settings under Default settings.](media/tenant-restrictions-migration/default-settings-outbound.png)](media/tenant-restrictions-migration/default-settings-outbound.png#lightbox)
 
@@ -128,5 +130,5 @@ When tenant restrictions v2 and cross-tenant access outbound settings are deploy
 
 ## Next steps
 
-* [Configure inbound cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.md)
+* [Configure inbound cross-tenant access settings](cross-tenant-access-settings-b2b-collaboration.yml)
 * [Configure universal tenant restrictions](~/global-secure-access/how-to-universal-tenant-restrictions.md)

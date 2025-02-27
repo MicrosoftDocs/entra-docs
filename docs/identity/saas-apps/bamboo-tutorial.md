@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with SAML SSO for Bamboo by resolution GmbH'
+title: Microsoft Entra integration with SAML SSO for Bamboo by resolution GmbH
 description: Learn how to configure single sign-on between Microsoft Entra ID and SAML SSO for Bamboo by resolution GmbH.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SAML SSO for Bamboo by resolution GmbH so that I can control who has access to SAML SSO for Bamboo by resolution GmbH, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with SAML SSO for Bamboo by resolution GmbH
+# Microsoft Entra integration with SAML SSO for Bamboo by resolution GmbH
 
-In this tutorial, you'll learn how to integrate SAML SSO for Bamboo by resolution GmbH with Microsoft Entra ID. When you integrate SAML SSO for Bamboo by resolution GmbH with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate SAML SSO for Bamboo by resolution GmbH with Microsoft Entra ID. When you integrate SAML SSO for Bamboo by resolution GmbH with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to SAML SSO for  Bamboo by resolution GmbH.
 * Enable your users to be automatically signed in to SAML SSO for Bamboo by resolution GmbH with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with SAML SSO for Bamboo by resolution 
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * SAML SSO for Bamboo by resolution GmbH supports **SP and IDP** initiated SSO.
 * SAML SSO for Bamboo by resolution GmbH supports **Just In Time** user provisioning.
@@ -141,15 +141,11 @@ In this section, you enable B.Simon to use Azure single sign-on by granting acce
 
 	![The Samlsingle](./media/bamboo-tutorial/single-sign-on.png)
 
-1. On the **SAML SIngleSignOn Plugin Configuration page**, click **Add idp**.
+1. On the **SAML SIngleSignOn Plugin Configuration** page, click **Add IdP**.
 
-	![The Add idp](./media/bamboo-tutorial/configuration.png)
+1. On the **Choose your SAML Identity Provider** page, perform the following steps:
 
-1. On the **Choose your SAML Identity Provider** Page, perform the following steps:
-
-	![The identity provider](./media/bamboo-tutorial/identity-provider.png)
-
-	a. Select **Idp Type** as **Microsoft Entra ID**.
+	a. Select **IdP Type** as **Microsoft Entra ID**.
 
 	b. In the **Name** textbox, type the name.
 
@@ -159,11 +155,7 @@ In this section, you enable B.Simon to use Azure single sign-on by granting acce
 
 1. On the **Identity provider configuration** page click **Next**.
 
-	![The identity config](./media/bamboo-tutorial/identity-configuration.png)
-
-1. On the **Import SAML Idp Metadata** Page, click **Load File** to upload the **METADATA XML** file which you have downloaded previously.
-
-	![The idpmetadata](./media/bamboo-tutorial/metadata.png)
+1. On the **Import SAML IdP Metadata** Page, click **Load File** to upload the **METADATA XML** file which you have downloaded previously.
 
 1. Click **Next**.
 
@@ -189,6 +181,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the SAML SSO for Bamboo by resolution GmbH tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the SAML SSO for  Bamboo by resolution GmbH for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure SAML SSO for Bamboo by resolution GmbH you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

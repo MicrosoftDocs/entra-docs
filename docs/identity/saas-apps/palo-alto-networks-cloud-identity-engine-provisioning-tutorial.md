@@ -1,27 +1,21 @@
 ---
-title: 'Tutorial: Configure Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service for automatic user provisioning with Microsoft Entra ID'
+title: Configure Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service.
 
-documentationcenter: ''
-author: twimmers
-writer: Thwimmer
+author: thomasakelo
 manager: jeedes
-
-ms.assetid: 48afc8f5-a030-42da-9ffa-14fe5f80e333
 ms.service: entra-id
 ms.subservice: saas-apps
-
-
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: Thwimmer
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service so that I can streamline the user management process and ensure that users have the appropriate access to Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service.
 ---
 
-# Tutorial: Configure Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service for automatic user provisioning
+# Configure Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service for automatic user provisioning
 
-This tutorial describes the steps you need to perform in both Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service](https://www.paloaltonetworks.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This article describes the steps you need to perform in both Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service](https://www.paloaltonetworks.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
 ## Capabilities supported
@@ -34,10 +28,10 @@ This tutorial describes the steps you need to perform in both Palo Alto Networks
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md). 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator). 
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
 * A user account in Palo Alto Networks with Admin rights.
 
 
@@ -152,7 +146,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
     |displayName|String|&check;|&check;
     |members|Reference||    
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -181,6 +175,6 @@ Once you've configured provisioning, use the following resources to monitor your
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

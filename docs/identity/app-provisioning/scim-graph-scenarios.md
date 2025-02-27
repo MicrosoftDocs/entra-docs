@@ -102,8 +102,7 @@ I need to be able to track changes to Teams and Outlook messages and react to th
 **Recommendation:** The Microsoft Graph provides [change notifications](/graph/webhooks) and [change tracking](/graph/delta-query-overview) for various resources. Note the following limitations of change notifications:
 - If an event receiver acknowledges an event, but fails to act on it for any reason, the event may be lost.
 - The order in which changes are received are not guaranteed to be chronological.
-- Change notifications don't always contain the [resource data](/graph/webhooks-with-resource-data)
-For the reasons above, developers often use change notifications along with change tracking for synchronization scenarios. 
+- Change notifications don't always contain the [resource data](/graph/webhooks-with-resource-data) For the reasons above, developers often use change notifications along with change tracking for synchronization scenarios. 
 
 <a name='scenario-6-provision-users-and-groups-in-azure-ad'></a>
 

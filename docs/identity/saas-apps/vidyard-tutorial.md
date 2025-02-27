@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Vidyard'
+title: Microsoft Entra integration with Vidyard
 description: Learn how to configure single sign-on between Microsoft Entra ID and Vidyard.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Vidyard so that I can control who has access to Vidyard, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Vidyard
+# Microsoft Entra integration with Vidyard
 
-In this tutorial, you learn how to integrate Vidyard with Microsoft Entra ID.
+In this article,  you learn how to integrate Vidyard with Microsoft Entra ID.
 Integrating Vidyard with Microsoft Entra ID provides you with the following benefits:
 
 * You can control in Microsoft Entra ID who has access to Vidyard.
@@ -35,7 +35,7 @@ To configure Microsoft Entra integration with Vidyard, you need the following it
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Vidyard supports **SP** and **IDP** initiated SSO
 
@@ -108,7 +108,7 @@ To configure Microsoft Entra single sign-on with Vidyard, perform the following 
     `https://secure.vidyard.com/sso/saml/<unique id>/login`
 
 	> [!NOTE]
-	> These values are not real. You will update these values with the actual Identifier, Reply URL, and Sign-On URL, which is explained later in the tutorial. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are not real. You will update these values with the actual Identifier, Reply URL, and Sign-On URL, which is explained later in the article. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 6. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
@@ -140,7 +140,7 @@ To configure Microsoft Entra single sign-on with Vidyard, perform the following 
 
 	![Screenshot shows the SAML Configuration section where you can enter the values described.](./media/vidyard-tutorial/configure3.png)
 
-	a. Please enter general profile name in the **Profile Name** textbox.
+	a. Enter general profile name in the **Profile Name** textbox.
 
 	b. Copy **SSO User Login Page** value and paste it into **Sign on URL** textbox in **Basic SAML Configuration** section.
 
@@ -154,20 +154,14 @@ To configure Microsoft Entra single sign-on with Vidyard, perform the following 
 
 	g. Click **Confirm**.
 
-5. From the Single Sign On tab, select **Assign** next to an existing profile
-
-	![Screenshot shows the Assign button for the Microsoft Entra S S O profile.](./media/vidyard-tutorial/configure4.png)
+5. From the Single Sign On tab, select **Assign** next to an existing profile.
 
 	> [!NOTE]
 	> Once you have created an SSO profile, assign it to any group(s) for which users will require access through Azure. If the user does not exist within the group to which they were assigned, Vidyard will automatically create a user account and assign their role in real-time.
 
-6. Select your organization group, which is visible in the **Groups Available to Assign**.
-
-	![Screenshot shows Assign SAML Configuration to Organizations section where you can select your group.](./media/vidyard-tutorial/configure5.png)
+6. Under **Assign SAML Configuration to Organizations**, select your organization group, which is visible in the **Groups Available to Assign**.
 
 7. You can see the assigned groups under the **Groups Currently Assigned**. Select a role for the group as per your organization and click **Confirm**.
-
-	![Screenshot shows Assign SAML Configuration to Organizations section where you can select a role.](./media/vidyard-tutorial/configure6.png)
 
 	> [!NOTE]
 	> For more information, refer to [this doc](https://knowledge.vidyard.com/hc/articles/360009990033-SAML-based-Single-Sign-On-SSO-in-Vidyard).
@@ -224,7 +218,7 @@ When you click the Vidyard tile in the Access Panel, you should be automatically
 
 ## Additional Resources
 
-- [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 

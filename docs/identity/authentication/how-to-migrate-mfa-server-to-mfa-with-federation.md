@@ -239,14 +239,14 @@ Content-Type: application/json
   "id": "6601d14b-d113-8f64-fda2-9b5ddda18ecc",
    "issuerUri": "http://contoso.com/adfs/services/trust",
    "metadataExchangeUri": "https://sts.contoso.com/adfs/services/trust/mex",
-   "signingCertificate": "MIIE3jCCAsagAwIBAgIQQcyDaZz3MI",
+   "signingCertificate": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
    "passiveSignInUri": "https://sts.contoso.com/adfs/ls",
    "preferredAuthenticationProtocol": "wsFed",
    "activeSignInUri": "https://sts.contoso.com/adfs/services/trust/2005/usernamemixed",
    "signOutUri": "https://sts.contoso.com/adfs/ls",
    "promptLoginBehavior": "nativeSupport",
    "isSignedAuthenticationRequestRequired": true,
-   "nextSigningCertificate": "MIIE3jCCAsagAwIBAgIQQcyDaZz3MI",
+   "nextSigningCertificate": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
    "signingCertificateUpdateStatus": {
         "certificateUpdateResult": "Success",
         "lastRunDateTime": "2021-08-25T07:44:46.2616778Z"
@@ -284,7 +284,7 @@ We recommend having your users register for combined security information, which
 Microsoft provides communication templates that you can provide to your users to guide them through the combined registration process. 
 These include templates for email, posters, table tents, and various other assets. Users register their information at `https://aka.ms/mysecurityinfo`, which takes them to the combined security registration screen. 
 
-We recommend that you [secure the security registration process with Conditional Access](~/identity/conditional-access/howto-conditional-access-policy-registration.md) that requires the registration to occur from a trusted device or location. For information on tracking registration statuses, see [Authentication method activity for Microsoft Entra ID](howto-authentication-methods-activity.md).
+We recommend that you [secure the security registration process with Conditional Access](~/identity/conditional-access/policy-all-users-security-info-registration.md) that requires the registration to occur from a trusted device or location. For information on tracking registration statuses, see [Authentication method activity for Microsoft Entra ID](howto-authentication-methods-activity.md).
 
    > [!NOTE]
    > Users who must register their combined security information from a non-trusted location or device can be issued a Temporary Access Pass or alternatively, temporarily excluded from the policy.

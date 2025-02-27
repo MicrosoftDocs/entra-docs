@@ -40,7 +40,6 @@ The code sample can be obtained in two ways:
 
 ## Register the web API (TodoListService)
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Register your web API in **App registrations** in the Azure portal.
 

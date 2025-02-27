@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with ADP (OIDC)'
+title: Microsoft Entra single sign-on (SSO) integration with ADP (OIDC)
 description: Learn how to configure single sign-on between Microsoft Entra and ADP (OIDC).
 services: active-directory
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
-ms.topic: tutorial
-ms.date: 03/07/2024
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ADP (OIDC) so that I can control who has access to ADP (OIDC), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with ADP (OIDC)
+# Microsoft Entra single sign-on (SSO) integration with ADP (OIDC)
 
-In this tutorial, you'll learn how to integrate ADP (OIDC) with Microsoft Entra ID. When you integrate ADP (OIDC) with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate ADP (OIDC) with Microsoft Entra ID. When you integrate ADP (OIDC) with Microsoft Entra ID, you can:
 
 Use Microsoft Entra ID to control who can access ADP (OIDC).
 Enable your users to be automatically signed in to ADP (OIDC) with their Microsoft Entra accounts.
@@ -69,6 +69,8 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     1. In the **Redirect URIs** textbox, paste the **Relying Party Redirect URI** value, which you have copied from ADP (OIDC) side.
 
         [![Screenshot of showing the redirect values.](common/redirect.png)](common/redirect.png#lightbox)
+
+    1. Click **Configure** button.
 
 1. Navigate to **Certificates & secrets** on the left menu and perform the following steps:
 

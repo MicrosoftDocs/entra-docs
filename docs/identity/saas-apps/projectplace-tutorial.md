@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with ProjectPlace'
+title: Microsoft Entra SSO integration with ProjectPlace
 description: Learn how to configure single sign-on between Microsoft Entra ID and ProjectPlace.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ProjectPlace so that I can control who has access to ProjectPlace, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with ProjectPlace
+# Microsoft Entra SSO integration with ProjectPlace
 
-In this tutorial, you'll learn how to integrate ProjectPlace with Microsoft Entra ID. When you integrate ProjectPlace with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate ProjectPlace with Microsoft Entra ID. When you integrate ProjectPlace with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to ProjectPlace.
 * Enable your users to be automatically signed-in to ProjectPlace with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * ProjectPlace supports **SP and IDP** initiated SSO and supports **Just In Time** user provisioning.
 
@@ -131,7 +131,7 @@ To configure single sign-on on the **ProjectPlace** side, you need to send the c
 ### Create ProjectPlace test user
 
 >[!NOTE]
->You can skip this step if you have provisioning enabled in ProjectPlace. You can ask the [ProjectPlace support team](https://success.planview.com/Projectplace/Support) to enable provisoning, once done users will be created in ProjectPlace during the first login.
+>You can skip this step if you have provisioning enabled in ProjectPlace. You can ask the [ProjectPlace support team](https://success.planview.com/Projectplace/Support) to enable provisioning, once done users will be created in ProjectPlace during the first login.
 
 To enable Microsoft Entra users to sign in to ProjectPlace, you need to add them to ProjectPlace. You need to add them manually.
 
@@ -176,6 +176,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the ProjectPlace tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the ProjectPlace for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure ProjectPlace you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

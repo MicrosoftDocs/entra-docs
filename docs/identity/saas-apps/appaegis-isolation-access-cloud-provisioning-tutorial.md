@@ -1,24 +1,22 @@
 ---
-title: 'Tutorial: Configure Appaegis Isolation Access Cloud for automatic user provisioning with Microsoft Entra ID'
+title: Configure Appaegis Isolation Access Cloud for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Appaegis Isolation Access Cloud.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: jeedes
-ms.assetid: c845e98a-6fcd-4285-94b7-a72a2175ca7e
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: thwimmer
+ms.topic: how-to
+ms.date: 02/27/2025
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Appaegis Isolation Access Cloud so that I can streamline the user management process and ensure that users have the appropriate access to Appaegis Isolation Access Cloud.
 ---
 
-# Tutorial: Configure Appaegis Isolation Access Cloud for automatic user provisioning
+# Configure Appaegis Isolation Access Cloud for automatic user provisioning
 
-This tutorial describes the steps you need to do in both Appaegis Isolation Access Cloud and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Appaegis Isolation Access Cloud](https://www.appaegis.com) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This article describes the steps you need to do in both Appaegis Isolation Access Cloud and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to Appaegis Isolation Access Cloud using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
 ## Supported capabilities
@@ -30,12 +28,12 @@ This tutorial describes the steps you need to do in both Appaegis Isolation Acce
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator).
-* An [Appaegis Cloud](https://www.appaegis.com) account with Professional level of subscription. 
-* An Appaegis Cloud user account with **Global Administrator** permissions.
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
+* An Appaegis Cloud account with Professional level of subscription. 
+* An Appaegis Cloud user account with administrator permissions.
 
 
 ## Step 1: Plan your provisioning deployment
@@ -106,11 +104,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
     |Attribute|Type|Supported for filtering|
     |---|---|---|
-    |userName|String|&check;
-    |active|Boolean|
-    |displayName|String|
-    |name.givenName|String|
-    |name.familyName|String|
+    |userName|String|&check;|
+    |active|Boolean||
+    |displayName|String||
+    |name.givenName|String||
+    |name.familyName|String||
 
 10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Contoso**.
 
@@ -121,7 +119,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |displayName|String|&check;
       |members|Reference|
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 13. To enable the Microsoft Entra provisioning service for Appaegis Isolation Access Cloud, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -149,6 +147,6 @@ Once you've configured provisioning, use the following resources to monitor your
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

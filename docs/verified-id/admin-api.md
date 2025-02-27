@@ -8,7 +8,7 @@ manager: amycolannino
 ms.service: entra-verified-id
 ms.topic: reference
 
-ms.date: 07/28/2022
+ms.date: 01/30/2025
 ms.author: barclayn
 
 #Customer intent: As an administrator, I am trying to learn how to use the Admin API and automate my tenant.
@@ -31,7 +31,7 @@ The API is protected through Microsoft Entra ID and uses OAuth2 bearer tokens. T
 
 ### User bearer tokens
 
-The app registration needs to have the API Permission for `Verifiable Credentials Service Admin` and then when acquiring the access token the app should use scope `6a8b4b39-c021-437c-b060-5a14a3fd65f3/full_access`. The access token must be for a user with the [global administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) or the [authentication policy administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) role. A user with role [global reader](~/identity/role-based-access-control/permissions-reference.md#global-reader) can perform read-only API calls.
+The app registration needs to have the API Permission for `Verifiable Credentials Service Admin` and then when acquiring the access token the app should use scope `6a8b4b39-c021-437c-b060-5a14a3fd65f3/full_access`. The access token must be for a user with the [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) role. The [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) role also has these permissions but should only be used if no other role combination meets your needs. A user with role [global reader](~/identity/role-based-access-control/permissions-reference.md#global-reader) can perform read-only API calls.
 
 ### Application bearer tokens
 
@@ -39,25 +39,25 @@ The `Verifiable Credentials Service Admin` service supports the following applic
 
 | Permission | Description |
 | ---------- | ----------- |
-| VerifiableCredential.Authority.ReadWrite | Permission to read/write authority object(s) |
-| VerifiableCredential.Contract.ReadWrite | Permission to read/write contract object(s) |
+| VerifiableCredential.Authority.ReadWrite | Permission to read/write authority objects |
+| VerifiableCredential.Contract.ReadWrite | Permission to read/write contract objects |
 | VerifiableCredential.Credential.Search | Permission to search for a credential to revoke |
 | VerifiableCredential.Credential.Revoke | Permission to [revoke a previously issued credential](how-to-issuer-revoke.md) |
 | VerifiableCredential.Network.Read | Permission to read entries from the [Verified ID Network](vc-network-api.md) |
 
-The app registration needs to have the API Permission for `Verifiable Credentials Service Admin` and permissions required from the above table. When acquiring the access token, via the [client credentials flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md), the app should use scope `6a8b4b39-c021-437c-b060-5a14a3fd65f3/.default`.
+The app registration needs to have the API Permission for `Verifiable Credentials Service Admin` and permissions required from the table. When an app acquires an access token, via the [client credentials flow](~/identity-platform/v2-oauth2-client-creds-grant-flow.md), the app should use scope `6a8b4b39-c021-437c-b060-5a14a3fd65f3/.default`.
 
-If the app intends to create a new authority, it needs two things. First, the app registration needs the `VerifiableCredential.Authority.ReadWrite` permission. Second, the app needs have `Create Key` permission in Key Vaults Access Policies. If the app only read/writes existing authorities, it does not need the Key Vault permission.
+If the app intends to create a new authority, it needs two things. First, the app registration needs the `VerifiableCredential.Authority.ReadWrite` permission. Second, the app needs have `Create Key` permission in Key Vaults Access Policies. If the app only read/writes existing authorities, it doesn't need the Key Vault permission.
 
 ## Onboarding
 
-This API is to help create a new environment so new authorities can be set up. This can be triggered manually by navigating to the Verifiable Credential page in the Azure portal as well. You only need to call this API once and only if you want to set up a brand new environment just with the API.
+This API is to help create a new environment so new authorities can be set up. This process can be triggered manually by navigating to the Verifiable Credential page in the Azure portal as well. You only need to call this API once and only if you want to set up a brand new environment just with the API.
 
 #### HTTP request
 
 `POST /v1.0/verifiableCredentials/onboard`
 
-Use this endpoint to finish provisioning of the Verifiable Credential service in your tenant. The system creates the rest of the service principals if these aren't provisioned yet.
+Use this endpoint to finish provisioning of the Verifiable Credential service in your tenant. The system creates the rest of the service principals if they aren't provisioned yet.
 
 #### Request headers
 
@@ -78,9 +78,9 @@ Content-type: application/json
 
 {
     "id": "f5bf2fc6-7135-4d94-a6fe-c26e4543bc5a",
-    "verifiableCredentialServicePrincipalId": "90e10a26-94cd-49d6-8cd7-cacb10f00686",
-    "verifiableCredentialRequestServicePrincipalId": "870e10a26-94cd-49d6-8cd7-cacb10f00fe",
-    "verifiableCredentialAdminServicePrincipalId": "760e10a26-94cd-49d6-8cd7-cacb10f00ab",
+    "verifiableCredentialServicePrincipalId": "aaaaaaaa-bbbb-cccc-1111-222222222222",
+    "verifiableCredentialRequestServicePrincipalId": "bbbbbbbb-cccc-dddd-2222-333333333333",
+    "verifiableCredentialAdminServicePrincipalId": "cccccccc-dddd-eeee-3333-444444444444",
     "status": "Enabled"
 }
 ```
@@ -101,11 +101,12 @@ This endpoint can be used to create or update a Verifiable Credential service in
 | [Create Authority](#create-authority) | Authority | Create a new authority |
 | [Update authority](#update-authority) | Authority | Update authority |
 | [Delete authority](#delete-authority) | Authority | Delete authority |
-| [Generate Well known DID Configuration](#well-known-did-configuration) | | |
 | [Generate DID Document](#generate-did-document) | | |
-| [Validate Well-known DID config](#validate-well-known-did-configuration) | | |
 | [Rotate Signing Key](#rotate-signing-key) | Authority | Rotate signing key |
+| [Create Signing Key](#create-signing-key) | Authority | Create signing key |
 | [Synchronize with DID Document](#synchronize-with-did-document) | Authority | Synchronize DID document with new signing key |
+| [Generate Well known DID Configuration](#well-known-did-configuration) | | |
+| [Validate Well-known DID config](#validate-well-known-did-configuration) | | |
 
 
 ### Get authority
@@ -136,13 +137,13 @@ HTTP/1.1 200 OK
 Content-type: application/json
 
 {
-    "id": "ffea7eb3-0000-1111-2222-000000000000",
+    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "name": "ExampleAuthorityName",
     "status": "Enabled",
     "didModel": {
         "did": "did:web:verifiedid.contoso.com",
         "signingKeys": [
-            "https://vccontosokv.vault.azure.net/keys/vcSigningKey-ffea7eb3-0000-1111-2222-000000000000/5257c49db8164e198b4c5997e8a31ad4"
+            "https://vccontosokv.vault.azure.net/keys/vcSigningKey-00aa00aa-bb11-cc22-dd33-44ee44ee44ee/5257c49db8164e198b4c5997e8a31ad4"
         ],
         "recoveryKeys": [],
         "updateKeys": [],
@@ -153,7 +154,7 @@ Content-type: application/json
         "didDocumentStatus": "published"
     },
     "keyVaultMetadata": {
-        "subscriptionId": "b593ade1-e353-43ab-9fb8-cccf669478d0",
+        "subscriptionId": "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
         "resourceGroup": "verifiablecredentials",
         "resourceName": "vccontosokv",
         "resourceUrl": "https://vccontosokv.vault.azure.net/"
@@ -170,7 +171,7 @@ The response contains the following properties.
 | -------- | -------- | -------- |
 | `Id`     | string | An autogenerated unique ID, which can be used to retrieve or update the specific instance of the verifiable credential service     |
 | `name` | string | The friendly name of this instance of the verifiable credential service |
-| `status` | string | status of the service, this value will always be `enabled` |
+| `status` | string | status of the service, this value is always `enabled` |
 | [didModel](#didmodel-type) | didModel | Information about the DID and keys |
 | [keyVaultMetadata](#keyvaultmetadata-type) | keyVaultMeta data | Information about the used Key Vault  |
 
@@ -220,6 +221,7 @@ Don't supply a request body for this method.
 #### Response message
 
 Response message is an array of [Authorities](#authority-type)
+
 Example:
 ```
 HTTP/1.1 200 OK
@@ -229,13 +231,13 @@ Content-type: application/json
 
     [
         {
-            "id": "ffea7eb3-0000-1111-2222-000000000000",
+            "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
             "name": "AuthorityName",
             "status": "Enabled",
             "didModel": {
                 "did": "did:web:verifiedid.contoso.com",
                 "signingKeys": [
-                    "https://vccontosokv.vault.azure.net/keys/vcSigningKey-ffea7eb3-0000-1111-2222-000000000000/5257c49db8164e198b4c5997e8a31ad4"
+                    "https://vccontosokv.vault.azure.net/keys/vcSigningKey-00aa00aa-bb11-cc22-dd33-44ee44ee44ee/5257c49db8164e198b4c5997e8a31ad4"
                 ],
                 "recoveryKeys": [],
                 "updateKeys": [],
@@ -246,21 +248,21 @@ Content-type: application/json
                 "didDocumentStatus": "published"
             },
             "keyVaultMetadata": {
-                "subscriptionId": "b593ade1-e353-43ab-9fb8-cccf669478d0",
+                "subscriptionId": "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
                 "resourceGroup": "verifiablecredentials",
                 "resourceName": "vccontosokv",
                 "resourceUrl": "https://vccontosokv.vault.azure.net/"
             }
         },
         {
-            "id": "cc55ba22-0000-1111-2222-000000000000",
+            "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
             "name": "AuthorityName2",
             "keyVaultUrl": "https://vccontosokv.vault.azure.net/",
             "status": "Enabled",
             "didModel": {
                 "did": "did:web:verifiedid2.contoso.com",
                 "signingKeys": [
-                    "https://vccontosokv.vault.azure.net/keys/vcSigningKey-cc55ba22-0000-1111-2222-000000000000/f8f149eaee194beb83dfca14714ef62a"
+                    "https://vccontosokv.vault.azure.net/keys/vcSigningKey-00aa00aa-bb11-cc22-dd33-44ee44ee44ee/f8f149eaee194beb83dfca14714ef62a"
                 ],
                 "recoveryKeys": [],
                 "updateKeys": [],
@@ -271,7 +273,7 @@ Content-type: application/json
                 "didDocumentStatus": "published"
             },
             "keyVaultMetadata": {
-                "subscriptionId": "b593ade1-e353-43ab-9fb8-cccf669478d0",
+                "subscriptionId": "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
                 "resourceGroup": "verifiablecredentials",
                 "resourceName": "vccontosokv",
                 "resourceUrl": "https://vccontosokv.vault.azure.net/"
@@ -283,7 +285,7 @@ Content-type: application/json
 
 ### Create authority
 
-This call creates a new **private key**, recovery key and update key, stores these keys in the specified Azure Key Vault and sets the permissions to this Key Vault for the verifiable credential service and a create new **DID** with corresponding DID Document.
+This call creates a new **private key** and stores the key in the specified Azure Key Vault and sets the permissions to this Key Vault for the verifiable credential service and creates new **DID** with corresponding DID Document.
 
 #### HTTP request
 
@@ -315,7 +317,7 @@ Example message:
   "didMethod": "web",
   "keyVaultMetadata":
   {
-    "subscriptionId":"b593ade1-e353-43ab-9fb8-cccf669478d0",
+    "subscriptionId":"aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
     "resourceGroup":"verifiablecredentials",
     "resourceName":"vccontosokv",
     "resourceUrl": "https://vccontosokv.vault.azure.net/"
@@ -330,13 +332,13 @@ When successful the response message contains the name of the [authority](#autho
 Example message for did:web:
 ```
 {
-    "id": "bacf5333-d68c-01c5-152b-8c9039fbd88d",
+    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "name": "APItesta",
     "status": "Enabled",
     "didModel": {
         "did": "did:web:verifiedid.contoso.com",
         "signingKeys": [
-            "https://vcwingtipskv.vault.azure.net/keys/vcSigningKey-bacf5333-d68c-01c5-152b-8c9039fbd88d/5255b9f2d9b94dc19a369ff0d36e3407"
+            "https://vcwingtipskv.vault.azure.net/keys/vcSigningKey-00aa00aa-bb11-cc22-dd33-44ee44ee44ee/5255b9f2d9b94dc19a369ff0d36e3407"
         ],
         "recoveryKeys": [],
         "updateKeys": [],
@@ -347,7 +349,7 @@ Example message for did:web:
         "didDocumentStatus": "published"
     },
     "keyVaultMetadata": {
-        "subscriptionId": "1853e356-bc86-4e54-8bb8-6db4e5eacdbd",
+        "subscriptionId": "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
         "resourceGroup": "verifiablecredentials",
         "resourceName": "vcwingtipskv",
         "resourceUrl": "https://vcwingtipskv.vault.azure.net/"
@@ -364,13 +366,13 @@ HTTP/1.1 201 Created
 Content-type: application/json
 
 {
-    "id": "cc55ba22-0000-1111-2222-000000000000",
+    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "name": "APItest6",
     "status": "Enabled",
     "didModel": {
         "did": "did:web:verifiedid.contoso.com",
         "signingKeys": [
-            "https://vccontosokv.vault.azure.net/keys/vcSigningKey-cc55ba22-0000-1111-2222-000000000000/f8f149eaee194beb83dfca14714ef62a"
+            "https://vccontosokv.vault.azure.net/keys/vcSigningKey-00aa00aa-bb11-cc22-dd33-44ee44ee44ee/f8f149eaee194beb83dfca14714ef62a"
         ],
         "recoveryKeys": [],
         "updateKeys": [],
@@ -381,7 +383,7 @@ Content-type: application/json
         "didDocumentStatus": "submitted"
     },
     "keyVaultMetadata": {
-        "subscriptionId": "b593ade1-e353-43ab-9fb8-cccf669478d0",
+        "subscriptionId": "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
         "resourceGroup": "verifiablecredentials",
         "resourceName": "vccontosokv",
         "resourceUrl": "https://vccontosokv.vault.azure.net/"
@@ -428,7 +430,7 @@ Example message
 
 ### Delete authority
 
-This method can be used to delete an authority. Currently only `did:ion` authorities can be deleted. When you delete an authority, any issued Verified ID credentials becomes invalid and cannot be verified anymore as the issuing authority is gone.
+This method can be used to delete an authority. Currently only `did:ion` authorities can be deleted. When you delete an authority, any issued Verified ID credentials become invalid and can't be verified anymore as the issuing authority is gone.
 
 #### HTTP request
 
@@ -457,7 +459,7 @@ Successful delete authority response.
 HTTP/1.1 200 OK
 ```
 
-If delete of authority was successful but cleanup of Azure Key Vault keys had failed, you get the below response.
+If the deletion of an authority was successful but cleanup of Azure Key Vault keys fails, you get this response.
 
 ```
 HTTP/1.1 400 Bad Request
@@ -549,7 +551,7 @@ For example:
 
 ### Generate DID document
 
-This call generates the DID Document used for DID:WEB identifiers. After generating this DID Document, the administrator has to place the file at the https://domain/.well-known/did.json location.
+This call generates the DID Document used for DID:WEB identifiers. After the service generates the DID Document, the administrator has to place the file at the https://domain/.well-known/did.json location.
 
 #### HTTP request
 
@@ -628,7 +630,7 @@ Requires the caller to have the KEY List permissions on the target key vault.
 
 ### Validate well-known DID configuration
 
-This call checks your DID setup. It downloads the well known DID configuration and validates if the correct DID is used and the signature is correct.
+This call checks your DID setup. It downloads the well known DID configuration and validates the DID, and the signature.
 
 #### HTTP request
 
@@ -655,7 +657,7 @@ Content-type: application/json
 
 ### Rotate signing key
 
-The rotate signing key creates a new private key for the did:web authority. The DID document should be re-registered to reflect the update. When this is done, the [synchronizeWithDidDocument](#synchronize-with-did-document) tells the system to start using the new key for signing.
+The **Rotate** signing key creates a new private key for the did:web authority. The DID document should be re-registered to reflect the update. When reregistration completes, the [synchronizeWithDidDocument](#synchronize-with-did-document) tells the system to start using the new key for signing.
 
 #### HTTP request
 
@@ -674,20 +676,20 @@ Don't supply a request body for this method.
 
 #### Response message
 
-The `didDocumentStatus` will change to `outOfSync`.
+The `didDocumentStatus` changes to `outOfSync`.
 
 ```
 HTTP/1.1 200 OK
 Content-type: application/json
 
 {
-    "id": "bacf5333-d68c-01c5-152b-8c9039fbd88d",
+    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "name": "APItesta",
     "status": "Enabled",
     "didModel": {
         "did": "did:web:verifiedid.contoso.com",
         "signingKeys": [
-            "https://vcwingtipskv.vault.azure.net/keys/vcSigningKey-bacf5333-d68c-01c5-152b-8c9039fbd88d/5255b9f2d9b94dc19a369ff0d36e3407"
+            "https://vcwingtipskv.vault.azure.net/keys/vcSigningKey-00aa00aa-bb11-cc22-dd33-44ee44ee44ee/5255b9f2d9b94dc19a369ff0d36e3407"
         ],
         "recoveryKeys": [],
         "updateKeys": [],
@@ -698,7 +700,7 @@ Content-type: application/json
         "didDocumentStatus": "outOfSync"
     },
     "keyVaultMetadata": {
-        "subscriptionId": "1853e356-bc86-4e54-8bb8-6db4e5eacdbd",
+        "subscriptionId": "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
         "resourceGroup": "verifiablecredentials",
         "resourceName": "vcwingtipskv",
         "resourceUrl": "https://vcwingtipskv.vault.azure.net/"
@@ -707,9 +709,45 @@ Content-type: application/json
 }
 ```
 
+### Create signing key
+
+The **Create** signing key creates a new private key in the already existing Key Vault for the did:web authority. The DID document should be re-registered to reflect the update as the `didDocumentStatus` of the authority is changed to `outOfSync`. When the DID document is re-registered, call [synchronizeWithDidDocument](#synchronize-with-did-document) tell the system to start using the new key for signing.
+
+#### HTTP request
+
+`POST /v1.0/verifiableCredentials/authorities/:authorityId/didInfo/signingKeys`
+
+#### Request headers
+
+| Header | Value |
+| -------- | -------- |
+| Authorization | Bearer (token). Required |
+| Content-Type | application/json |
+
+#### Request Body
+
+```JSON
+{
+	"signingKeyCurve": "P-256"
+}
+```
+
+#### Response message
+
+```JSON
+HTTP/1.1 200 OK
+Content-type: application/json
+
+{
+	"id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
+	"keyUrl": "https://vcwingtipskv.vault.azure.net/keys/vcSigningKey-00aa00aa-bb11-cc22-dd33-44ee44ee44ee/5255b9f2d9b94dc19a369ff0d36e3407",
+	"curve": "P-256"
+}
+```
+
 ### Synchronize with DID Document
 
-After [rotating](#rotate-signing-key) the signing key, the DID document should be [re-registered](how-to-register-didwebsite.md#how-do-i-register-my-decentralized-id) to reflect the update. When this is done, the synchronizeWithDidDocument tells the system to start using the new key for signing.
+After [rotating](#rotate-signing-key) the signing key, the DID document should be [re-registered](how-to-register-didwebsite.md#how-do-i-register-my-decentralized-id) to reflect the update. When the process completes, the synchronizeWithDidDocument tells the system to start using the new key for signing.
 
 #### HTTP request
 
@@ -728,20 +766,20 @@ Don't supply a request body for this method.
 
 #### Response message
 
-The `didDocumentStatus` will change from `outOfSync` to `published` on a successful call.
+The `didDocumentStatus` changes from `outOfSync` to `published` on a successful call.
 
 ```
 HTTP/1.1 200 OK
 Content-type: application/json
 
 {
-    "id": "bacf5333-d68c-01c5-152b-8c9039fbd88d",
+    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "name": "APItesta",
     "status": "Enabled",
     "didModel": {
         "did": "did:web:verifiedid.contoso.com",
         "signingKeys": [
-            "https://vcwingtipskv.vault.azure.net/keys/vcSigningKey-bacf5333-d68c-01c5-152b-8c9039fbd88d/5255b9f2d9b94dc19a369ff0d36e3407"
+            "https://vcwingtipskv.vault.azure.net/keys/vcSigningKey-00aa00aa-bb11-cc22-dd33-44ee44ee44ee/5255b9f2d9b94dc19a369ff0d36e3407"
         ],
         "recoveryKeys": [],
         "updateKeys": [],
@@ -752,7 +790,7 @@ Content-type: application/json
         "didDocumentStatus": "published"
     },
     "keyVaultMetadata": {
-        "subscriptionId": "1853e356-bc86-4e54-8bb8-6db4e5eacdbd",
+        "subscriptionId": "aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e",
         "resourceGroup": "verifiablecredentials",
         "resourceName": "vcwingtipskv",
         "resourceUrl": "https://vcwingtipskv.vault.azure.net/"
@@ -766,7 +804,7 @@ Content-type: application/json
 This endpoint allows you to create new contracts, and update existing contracts. Contracts consist of two parts represented by two JSON definitions. Information on how to design and create a contract manually can be found [here](credential-design.md).
 
 - The display definition is used by administrators to control the appearance of a verifiable credential, for example background color, logo and title of the verifiable credential. This file also contains the claims that need to be stored inside the verifiable credential. 
-- The rules definition contains the information on how to gather and collect attestations like self-attested claims, another verifiable credential as input or perhaps an ID Token received after a user has signed in to an OIDC compatible identity provider.
+- The rules definition contains the information on how to gather and collect attestations like self-attested claims, another verifiable credential as input or an ID Token received after a user signs in to an OIDC compatible identity provider.
 
 ### Methods
 
@@ -800,13 +838,13 @@ Don't supply a request body for this method.
 
 #### Response message
 
-example message:
+Example message:
 ```
 HTTP/1.1 200 OK
 Content-type: application/json
 
 {
-    "id": "ZjViZjJmYzYtNzEzNS00ZDk0LWE2ZmUtYzI2ZTQ1NDNiYzVhPHNjcmlwdD5hbGVydCgneWF5IScpOzwvc2NyaXB0Pg",
+    "id": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
     "name": "contractname",
     "status": "Enabled",
     "issueNotificationEnabled": false,
@@ -829,8 +867,8 @@ The response contains the following properties
 | `name` | string | The friendly name of this contract |
 | `status` | string | Always `Enabled` |
 | `manifestUrl` | string | URL to the contract used in the issuance request |
-| `issueNotificationEnabled` | boolean | set to true if users will be notified this VC is ready for them to get issued |
-| `issueNotificationAllowedToGroupOids` | array of groupId strings | array of group IDs this credential will be offered to |
+| `issueNotificationEnabled` | boolean | set to true for users be notified this VC is ready for them to get issued |
+| `issueNotificationAllowedToGroupOids` | array of groupId strings | array of group IDs this credential is available to |
 | `availableInVcDirectory` | boolean | Is this contract published in the Verifiable Credential Network |
 | [rules](#rulesmodel-type) | rulesModel | rules definition |
 | [displays](#displaymodel-type) | displayModel array| display definitions |
@@ -847,7 +885,7 @@ The response contains the following properties
 
 If the property `customStatusEndpoint` property isn't specified, then the `anonymous` status endpoint is used.
 
-#### attestations type
+#### Attestations type
 
 | Property | Type | Description |
 | -------- | -------- | -------- |
@@ -907,7 +945,7 @@ If the property `customStatusEndpoint` property isn't specified, then the `anony
 | -------- | -------- | -------- |
 | `inputClaim` | string | the name of the claim to use from the input |
 | `outputClaim` | string | the name of the claim in the verifiable credential |
-| `indexed` | boolean (default false) | indicating whether the value of this claim is used for searching; only one clientMapping object is allowed to be indexed for a given contract |
+| `indexed` | boolean (default false) | indicating whether the value of this claim is used for searching; only one clientMapping object can be indexed per given contract |
 | `required` | boolean (default false) | indicating whether this mapping is required or not |
 | `type` | string (optional) | type of claim |
 
@@ -918,14 +956,14 @@ If the property `customStatusEndpoint` property isn't specified, then the `anony
 | `url` | string (url)| the url of the custom status endpoint |
 | `type` | string | the type of the endpoint |
 
-example:
+Example:
 
 ```
 "rules": {
     "attestations": {
         "idTokens": [
             {
-                "clientId": "2f670d73-624a-41fe-a139-6f1f8f2d2e47",
+                "clientId": "00001111-aaaa-2222-bbbb-3333cccc4444",
                 "configuration": "https://bankofwoodgrove.b2clogin.com/bankofwoodgrove.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_si",
                 "redirectUri": "vcclient://openid/",
                 "scope": "openid",
@@ -980,7 +1018,7 @@ example:
 
 | Property | Type | Description |
 | -------- | -------- | -------- |
-|`uri`| string (uri) | uri of the logo. If this is a URL, it must be reachable over the public internet anonymously. |
+|`uri`| string (uri) | uri of the logo. If the value is a URL, it must be reachable over the public internet anonymously. |
 |`description` | string | the description of the logo |
 
 #### displayConsent type
@@ -1000,7 +1038,7 @@ example:
 |`type`| string | the type of the claim |
 |`description` | string (optional) | the description of the claim |
 
-example:
+Example:
 ```
 {
   "displays": [
@@ -1014,7 +1052,7 @@ example:
                 "title": "BankofWoodgroveIdentity",
                 "logo": {
                     "description": "Defaultbankofwoodgrovelogo",
-                    "uri": "https://didcustomerplayground.blob.core.windows.net/public/VerifiedCredentialExpert_icon.png"
+                    "uri": "https://didcustomerplayground.z13.web.core.windows.net/VerifiedCredentialExpert_icon.png"
                 }
             },
             "consent": {
@@ -1059,16 +1097,16 @@ Don't supply a request body for this method.
 
 #### Response message
 
-example message:
+Example message:
 
 ```json
 {
     "value":
     [
         {
-            "id": "ZjViZjJmYzYtNzEzNS00ZDk0LWE2ZmUtYzI2ZTQ1NDNiYzVhPHNjcmlwdD5hbGVydCgneWF5IScpOzwvc2NyaXB0Pg",
+            "id": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
             "name": "test1",
-            "authorityId": "ffea7eb3-0000-1111-2222-000000000000",
+            "authorityId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
             "status": "Enabled",
             "issueNotificationEnabled": false,
             "manifestUrl" : "https://...",
@@ -1076,9 +1114,9 @@ example message:
             "displays": [{<display JSON}]
         },
         {
-            "id": "ZjViZjJmYzYtNzEzNS00ZDk0LWE2ZmUtYzI2ZTQ1NDNiYzVhdGVzdDI",
+            "id": "C2dE3fH4iJ5kL6mN7oP8qR9sT0uV1w",
             "name": "test2",
-            "authorityId": "cc55ba22-0000-1111-2222-000000000000",
+            "authorityId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
             "status": "Enabled",
             "issueNotificationEnabled": false,
             "manifestUrl" : "https://...",
@@ -1091,8 +1129,8 @@ example message:
 
 ### Create contract
 
-When creating a contract the name has to be unique in the tenant. In case you have created multiple authorities, the contract name has to be unique across all authorities.
-The name of the contract will be part of the contract URL, which is used in the issuance requests.
+When you create a contract, the name you use has to be unique in the tenant. In case you create multiple authorities, the contract name has to be unique across all authorities.
+The name of the contract is part of the contract URL used in issuance requests.
 
 #### HTTP request
 
@@ -1130,7 +1168,7 @@ Content-type: application/json
 {
     "id": "GUID",
     "name": "ExampleContractName1",
-    "issuerId": "cc55ba22-0000-1111-2222-000000000000",
+    "issuerId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
     "status": "Enabled",
     "issueNotificationEnabled": false,
     "rules": "<rules JSON>",
@@ -1166,7 +1204,7 @@ HTTP/1.1 200 OK
 Content-type: application/json
 
 {
-    "id": "ZjViZjJmYzYtNzEzNS00ZDk0LWE2ZmUtYzI2ZTQ1NDNiYzVhPHNjcmlwdD5hbGVydCgneWF5IScpOzwvc2NyaXB0Pg",
+    "id": "A1bC2dE3fH4iJ5kL6mN7oP8qR9sT0u",
     "name": "contractname",
     "status": "Enabled",
     "issueNotificationEnabled": false,
@@ -1236,7 +1274,7 @@ You are able to [search](how-to-issuer-revoke.md) for verifiable credentials wit
   }
 ```
 
-The following request shows how to add the calculated value to the filter parameter of the request. At this moment only the filter=indexclaimhash eq format is supported.
+The following request shows how to add the calculated value to the filter parameter of the request. 
 
 ### HTTP request
 
@@ -1302,10 +1340,10 @@ Content-type: application/json
 
 ## Opt-out
 
-This method will completely remove all instances of the verifiable credential service in this tenant. It removes all configured contracts. Every issued verifiable credential can't be checked for revocation. This action can't be undone.
+This method removes all instances of the verifiable credential service in this tenant. It removes all configured contracts. Every issued verifiable credential can't be checked for revocation. This action can't be undone.
 
 >[!WARNING]
-> This action cannot be undone and will invalidate all issued verifiable credentials and created contracts.
+> This action can't be undone and invalidates all issued verifiable credentials and created contracts.
  
 #### HTTP Request
 `POST /v1.0/verifiableCredentials/optout`
@@ -1335,7 +1373,7 @@ OK
 #### Remark
 
 >[!NOTE]
-> If you don't have delete permissions on Key Vault we will return an error message and still opt-out
+> If you don't have delete permissions on Key Vault we return an error message and still opt-out
 
 ## Next steps
 

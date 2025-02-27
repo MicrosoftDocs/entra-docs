@@ -2,15 +2,15 @@
 title: Microsoft Entra SSO integration with Onyxia
 description: Learn how to configure single sign-on between Microsoft Entra ID and Onyxia.
 services: active-directory
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
-ms.date: 02/28/2024
-ms.author: jeedes
+ms.date: 03/27/2024
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Onyxia so that I can control who has access to Onyxia, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -18,7 +18,7 @@ ms.author: jeedes
 
 # Microsoft Entra SSO integration with Onyxia
 
-In this tutorial, you'll learn how to integrate Onyxia with Microsoft Entra ID. When you integrate Onyxia with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Onyxia with Microsoft Entra ID. When you integrate Onyxia with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Onyxia.
 * Enable your users to be automatically signed-in to Onyxia with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To integrate Microsoft Entra ID with Onyxia, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Onyxia supports both **SP and IDP** initiated SSO.
 * Onyxia supports **Just In Time** user provisioning.
@@ -123,7 +123,31 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 ## Configure Onyxia SSO
 
-To configure single sign-on on **Onyxia** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from Microsoft Entra admin center to [Onyxia support team](mailto:support@onyxia.io). They set this setting to have the SAML SSO connection set properly on both sides.
+1. Log in to Onyxia company site as an administrator.
+
+1. Go to **Settings** and click **Account Settings**.
+
+    ![Screenshot shows navigation to the settings.](./media/onyxia-tutorial/navigate.png "Settings")
+
+1. Navigate to **SSO** section and click **+ Add New Connection**.
+
+    ![Screenshot shows to add new connection.](./media/onyxia-tutorial/connection.png "Add")
+
+1. In the **SSO Configuration** section, perform the following steps:
+
+    ![Screenshot shows the configuration.](./media/onyxia-tutorial/configure.png "Configure")
+
+    1. In the **Domain Name** text box, enter a valid Domain name.
+
+    1. In the **SSO URL** textbox, paste the **Login URL** which you have copied from the Microsoft Entra admin center.
+
+    1. Open the downloaded **Certificate (Base64)** into Notepad and paste the content into the **Public Certificate** textbox.
+
+    1. Copy the **ACS URL** and paste it in the **Reply URL** textbox in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+
+    1. Copy the **SP Entity ID** and paste it in the **Identifier (Entity ID)** textbox in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+
+    1. Click **+ Create**.
 
 ### Create Onyxia test user
 
@@ -145,6 +169,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 You can also use Microsoft My Apps to test the application in any mode. When you click the Onyxia tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Onyxia for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Onyxia you can enforce session control, which protects exfiltration and infiltration of your organization's sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

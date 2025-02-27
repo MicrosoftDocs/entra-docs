@@ -61,7 +61,6 @@ Microsoft has many products and services that enable you to customize your IT en
 
 * Windows operating systems
 
-  * [Windows 10 and Windows Server 2016 security auditing and monitoring reference](https://www.microsoft.com/download/details.aspx?id=52630)
   * [Security baseline (FINAL) for Windows 10 v1909 and Windows Server v1909](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-final-for-windows-10-v1909-and-windows-server/ba-p/1023093)
   * [Security baseline for Windows 11](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/windows-11-security-baseline/ba-p/2810772)
   * [Security baseline for Windows Server 2022](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/windows-server-2022-security-baseline/ba-p/2724685)
@@ -109,13 +108,13 @@ From the Azure portal, you can view the Microsoft Entra audit logs. Download log
 
 * **[Microsoft Defender for Cloud Apps](/cloud-app-security/what-is-cloud-app-security)** - Enables you to discover and manage apps, govern across apps and resources, and check the compliance of your cloud apps.
 
-* **[Securing workload identities with Identity Protection Preview](~/id-protection/concept-workload-identity-risk.md)** - Used to detect risk on workload identities across sign-in behavior and offline indicators of compromise.
+* **[Securing workload identities with Microsoft Entra ID Protection](~/id-protection/concept-workload-identity-risk.md)** - Used to detect risk on workload identities across sign-in behavior and offline indicators of compromise.
 
 Much of what you will monitor and alert on are the effects of your Conditional Access policies. You can use the Conditional Access insights and reporting workbook to examine the effects of one or more Conditional Access policies on your sign-ins and the results of policies, including device state. This workbook enables you to view an impact summary, and identify the impact over a specific time period. You can also use the workbook to investigate the sign-ins of a specific user. For more information, see [Conditional Access insights and reporting](~/identity/conditional-access/howto-conditional-access-insights-reporting.md).
 
 The remainder of this article describes what to monitor and alert on. Where there are specific pre-built solutions we link to them or provide samples following the table. Otherwise, you can build alerts using the preceding tools.
 
-* **[Identity Protection](~/id-protection/overview-identity-protection.md)** generates three key reports that you can use to help with your investigation:
+* **[ID Protection](~/id-protection/overview-identity-protection.md)** generates three key reports that you can use to help with your investigation:
 
 * **Risky users** contains information about which users are at risk, details about detections, history of all risky sign-ins, and risk history.
 
@@ -123,7 +122,7 @@ The remainder of this article describes what to monitor and alert on. Where ther
 
 * **Risk detections** contains information on risk signals detected by Microsoft Entra ID Protection that informs sign-in and user risk. For more information, see the [Microsoft Entra security operations guide for user accounts](security-operations-user-accounts.md).
 
-For more information, see [What is Identity Protection](~/id-protection/overview-identity-protection.md).
+For more information, see [What is Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md).
 
 ### Data sources for domain controller monitoring
 
@@ -155,7 +154,7 @@ As part of an Azure hybrid environment, the following items should be baselined 
 
 * **Password writeback Agent** - Password writeback is a feature enabled with [Microsoft Entra Connect](~/identity/hybrid/whatis-hybrid-identity.md) that allows password changes in the cloud to be written back to an existing on-premises directory in real time. For more information on this feature, see [How does self-service password reset writeback work in Microsoft Entra ID](~/identity/authentication/concept-sspr-writeback.md).
 
-* **Microsoft Entra application proxy Connector** - Lightweight agents that sit on-premises and facilitate the outbound connection to the Application Proxy service. For more information, see [Understand Microsoft Entra application proxy connectors](~/identity/app-proxy/application-proxy-connectors.md).
+* **Microsoft Entra private network connector** - Lightweight agents that sit on-premises and facilitate the outbound connection to the Application Proxy service. For more information, see [Understand Microsoft Entra private network connectors](~/identity/app-proxy/application-proxy-connectors.md).
 
 ## Components of cloud-based authentication
 
@@ -173,7 +172,7 @@ As part of an Azure cloud-based environment, the following items should be basel
 
 * **Conditional Access** - Conditional Access is the tool used by Microsoft Entra ID to bring signals together, to make decisions, and enforce organizational policies. Conditional Access is at the heart of the new identity driven control plane. For more information, see [What is Conditional Access](~/identity/conditional-access/overview.md).
 
-* **Identity Protection** - A tool that enables organizations to automate the detection and remediation of identity-based risks, investigate risks using data in the portal, and export risk detection data to your SIEM. For more information, see [What is Identity Protection](~/id-protection/overview-identity-protection.md).
+* **Microsoft Entra ID Protection** - A tool that enables organizations to automate the detection and remediation of identity-based risks, investigate risks using data in the portal, and export risk detection data to your SIEM. For more information, see [What is Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md).
 
 * **Group-based licensing** - Licenses can be assigned to groups rather than directly to users. Microsoft Entra ID stores information about license assignment states for users.
 

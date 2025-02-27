@@ -2,15 +2,15 @@
 title: Microsoft Entra SSO integration with OneStream
 description: Learn how to configure single sign-on between Microsoft Entra ID and OneStream.
 services: active-directory
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
-ms.date: 03/19/2024
-ms.author: jeedes
+ms.date: 04/19/2024
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and OneStream so that I can control who has access to OneStream, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -18,7 +18,7 @@ ms.author: jeedes
 
 # Microsoft Entra SSO integration with OneStream
 
-In this tutorial, you'll learn how to integrate OneStream with Microsoft Entra ID. When you integrate OneStream with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate OneStream with Microsoft Entra ID. When you integrate OneStream with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to OneStream.
 * Enable your users to be automatically signed-in to OneStream with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To integrate Microsoft Entra ID with OneStream, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * OneStream supports only **SP** initiated SSO.
 
@@ -84,7 +84,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     `https://<CustomerDomain>.onestreamcloud.com/OneStreamIS/federation/<Scheme>/signin-saml`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [OneStream support team](mailto:support@onestreamsoftware.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Create a new SAML provider in the **OneStream Identity and Access Management Portal** to obtain these values which will be explained later in [Configure OneStream SSO](#configure-onestream-sso) section. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. OneStream application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -130,11 +130,49 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 ## Configure OneStream SSO
 
-To configure single sign-on on **OneStream** side, you need to send the **App Federation Metadata Url** to [OneStream support team](mailto:support@onestreamsoftware.com). They set this setting to have the SAML SSO connection set properly on both sides.
+1. Log in to OneStream company site as an administrator.
+
+1. Go to **Identity and Access Management** and select **Manage Identity Providers** tile.
+
+    ![Screenshot shows Settings for the configuration.](./media/onestream-tutorial/settings.png "Settings")
+
+1. On the **Manage Identity Providers** page, click **+Add SAML Provider**.
+
+    ![Screenshot shows how to Manage Identity Providers.](./media/onestream-tutorial/provider.png "Identity")
+
+1. Perform the following steps in the below page:
+
+    ![Screenshot shows the configuration page.](./media/onestream-tutorial/meta.png "Add Page")
+
+    1. Enter a unique name of your identity provider in the **Name** textbox.
+
+    1. Select **Metadata URL** as SAML Configuration Mode.
+
+    1. In the **Metadata URL** textbox, paste the **App Federation Metadata Url**, which you have copied from Microsoft Entra admin center.
+
+    1. Click **SAVE** button.
+
+> [!NOTE]
+> Please refer [OneStream Documentation Site](https://docs.onestream.com/) under **System Guides** > **Identity and Access Management** for more details.
 
 ### Create OneStream test user
 
-In this section, you create a user called B.Simon in OneStream. Work with [OneStream support team](mailto:support@onestreamsoftware.com) to add the users in the OneStream platform. Users must be created and activated before you use single sign-on.
+1. In a different web browser window, sign in to your OneStream company site as an administrator.
+
+1. Go to **System** > **Security** > click **Create User** and perform the following steps:
+
+    ![Screenshot shows the users page.](./media/onestream-tutorial/system.png "Add Users")
+
+    1. Enter a valid username in the **Name** field.
+
+    1. Enter **User Type** based on your requirements.
+
+    1. Select **External Authentication Provider** from the drop-down.
+
+    1. Enter the Microsoft Entra ID **User principal name** in the **External Provider User Name** field.
+
+> [!NOTE]
+> Please refer [OneStream Documentation Site](https://docs.onestream.com/) and navigate to **Design and Reference** > **About Managing Users and Groups** > **Creating and Managing Users** for more information.
 
 ## Test SSO 
 
@@ -143,9 +181,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 * Click on **Test this application** in Microsoft Entra admin center. This will redirect to OneStream Sign-on URL where you can initiate the login flow.
  
 * Go to OneStream Sign-on URL directly and initiate the login flow from there.
- 
-* You can use Microsoft My Apps. When you click the OneStream tile in the My Apps, this will redirect to OneStream Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure OneStream you can enforce session control, which protects exfiltration and infiltration of your organization's sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

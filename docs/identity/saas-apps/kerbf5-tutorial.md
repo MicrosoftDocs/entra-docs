@@ -1,21 +1,21 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on integration with F5'
+title: Microsoft Entra single sign-on integration with F5
 description: Learn how to configure single sign-on (SSO) between Microsoft Entra ID and F5.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: gideonkiratu
 ---
 
-# Tutorial: Microsoft Entra single sign-on integration with F5
+# Microsoft Entra single sign-on integration with F5
 
-In this tutorial, you'll learn how to integrate F5 with Microsoft Entra ID. When you integrate F5 with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate F5 with Microsoft Entra ID. When you integrate F5 with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to F5.
 * Enable your users to be automatically signed-in to F5 with their Microsoft Entra accounts.
@@ -50,7 +50,7 @@ To get started, you need the following items:
 
 * Although optional, it is highly recommended to Deploy the F5 systems in a [sync/failover device group](https://techdocs.f5.com/content/techdocs/en-us/bigip-14-1-0/big-ip-device-service-clustering-administration-14-1-0.html) (S/F DG), which includes the active standby pair, with a floating IP address for high availability (HA). Further interface redundancy can be achieved using the Link Aggregation Control Protocol (LACP). LACP manages the connected physical interfaces as a single virtual interface (aggregate group) and detects any interface failures within the group.
 
-* For Kerberos applications, an on-premises AD service account for constrained delegation.  Refer to [F5 Documentation](https://support.f5.com/csp/article/K43063049) for creating a AD delegation account.
+* For Kerberos applications, an on-premises AD service account for constrained delegation.  Refer to [F5 Documentation](https://support.f5.com/csp/article/K43063049) for creating an AD delegation account.
 
 ## Access guided configuration
 
@@ -79,7 +79,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * F5 supports **SP and IDP** initiated SSO
 * F5 SSO can be configured in three different ways.
@@ -92,7 +92,7 @@ In this tutorial, you configure and test Microsoft Entra SSO in a test environme
 
 ### Key Authentication Scenarios
 
-Apart from Microsoft Entra native integration support for modern authentication protocols like OpenID Connect, SAML and WS-Fed, F5 extends secure access for legacy-based authentication apps for both internal and external access with Microsoft Entra ID, enabling modern scenarios (e.g. password-less access) to these applications. This include:
+Apart from Microsoft Entra native integration support for modern authentication protocols like OpenID Connect, SAML and WS-Fed, F5 extends secure access for legacy-based authentication apps for both internal and external access with Microsoft Entra ID, enabling modern scenarios (such as password-less access) to these applications. This include:
 
 * Header-based authentication apps
 
@@ -204,7 +204,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 1. In the **Add Assignment** dialog, click the **Assign** button.
 1. Click on **Conditional Access** .
 1. Click on **New Policy**.
-1. You can now see your F5 App as a resource for Conditional Access policy and apply any Conditional Access including Multifactor Auth, Device based access control or Identity Protection Policy.
+1. You can now see your F5 App as a resource for Conditional Access policy and apply any Conditional Access including multifactor authentication, device based access, or Microsoft Entra ID Protection risk.
 
 ## Configure F5 SSO
 
@@ -256,13 +256,14 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
  
     ![Screenshot that shows the "Pool Properties" page with the "IP Address/Node Name" and "Port" text boxes highlighted and the "Save & Next" button selected.](./media/kerbf5-tutorial/configure08.png)
 
-1. On the Single Sign-On Settings screen, select **Enable Single Sign-On**. Under **Selected Single Sign-On Type** choose **Kerberos**. Replace **session.saml.last.Identity**  with **session.saml.last.attr.name.Identity** under **Username Source** (this variable it set using claims mapping in the Microsoft Entra ID). Select **Show Advanced Setting**. Under **Kerberos Realm** type the Domain Name. Under **Account Name/ Account Password** Specify the APM Delegation Account and Password. Specify the Domain Controller IP in the **KDC** Field. Click **Save & Next**.
-
-    ![Screenshot that shows the "Single Sign-On Settings" with text boxes highlighted and the "Save & Next" button selected.](./media/kerbf5-tutorial/configure09.png)   
-
-1. For purposes of this guidance, we will skip endpoint checks.  Refer to F5 documentation for details.  On  screen select **Save & Next**.
-
-    ![Screenshot that show the "Endpoint Checks Properties" page and the "Save & Next" button selected.](./media/kerbf5-tutorial/configure10.png) 
+1. On the Single Sign-On Settings screen, select **Enable Single Sign-On**. 
+1. Under **Selected Single Sign-On Type** choose **Kerberos**. Replace **session.saml.last.Identity**  with **session.saml.last.attr.name.Identity** under **Username Source** (this variable it set using claims mapping in the Microsoft Entra ID
+1. Select **Show Advanced Setting**
+1. Under **Kerberos Realm** type the Domain Name. 
+1. Under **Account Name/ Account Password**, Specify the APM Delegation Account and Password. 
+1. Specify the Domain Controller IP in the **KDC** Field. 
+1. Click **Save & Next**.
+1. For purposes of this guidance, we will skip endpoint checks.  Refer to F5 documentation for details.  On screen select **Save & Next**.
 
 1. Accept the defaults and click **Save & Next**. Consult F5 documentation for details regarding SAML session management settings.
 
@@ -327,7 +328,7 @@ You configure an Active Directory AAA server in Access Policy Manager (APM) to s
 15. Click **Finished**. The new server displays on the list. 
 This adds the new Active Directory server to the Active Directory Servers list.
 
-    ![Screenshot that shows the "General Properties" and "Configuration" sections.](./media/kerbf5-tutorial/configure17.png)
+    ![Screenshot that shows the "General Properties" and "Configuration" sections.](./media/kerbf5-tutorial/configure-17.png)
 
 ### SAML Configuration
 
@@ -474,7 +475,9 @@ This adds the new Active Directory server to the Active Directory Servers list.
     * setspn –A **host/big-ipuser.superdemo.live** big-ipuser
 
 * **Step 3:** SPN Delegation (for the App Service Account)
-    Setup the appropriate Delegation for the F5 Delegation Account.
+
+    Set up the appropriate Delegation for the F5 Delegation Account.
+
     In the example below, APM Delegation account is being configured for KCD for FRP-App1.superdemo. live app.
 
     ![F5 (Kerberos) configuration](./media/kerbf5-tutorial/configure43.png)
@@ -493,7 +496,7 @@ When you click the F5 tile in the Access Panel, you should be automatically sign
 
 ## Additional resources
 
-- [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
@@ -507,6 +510,6 @@ When you click the F5 tile in the Access Panel, you should be automatically sign
 
 - [F5 BIG-IP APM and Microsoft Entra integration for secure hybrid access](~/identity/enterprise-apps/f5-integration.md)
 
-- [Tutorial to deploy F5 BIG-IP Virtual Edition VM in Azure IaaS for secure hybrid access](~/identity/enterprise-apps/f5-bigip-deployment-guide.md)
+- [Article to deploy F5 BIG-IP Virtual Edition VM in Azure IaaS for secure hybrid access](~/identity/enterprise-apps/f5-bigip-deployment-guide.md)
 
-- [Tutorial for Microsoft Entra single sign-on integration with F5 BIG-IP for Password-less VPN](~/identity/enterprise-apps/f5-passwordless-vpn.md)
+- [Article for Microsoft Entra single sign-on integration with F5 BIG-IP for Password-less VPN](~/identity/enterprise-apps/f5-passwordless-vpn.md)

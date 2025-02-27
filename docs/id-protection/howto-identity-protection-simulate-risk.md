@@ -42,7 +42,7 @@ Completing the following procedure requires you to use:
 1. Using the [Tor Browser](https://www.torproject.org/projects/torbrowser.html.en), navigate to [https://myapps.microsoft.com](https://myapps.microsoft.com).   
 2. Enter the credentials of the account you want to appear in the **Sign-ins from anonymous IP addresses** report.
 
-The sign-in shows up on the Identity Protection dashboard within 10 - 15 minutes. 
+The sign-in shows up on the report within 10 - 15 minutes. 
 
 ## Unfamiliar sign-in properties
 
@@ -63,7 +63,7 @@ Completing the following procedure requires you to use a user account that has:
 1. Using your new VPN, navigate to [https://myapps.microsoft.com](https://myapps.microsoft.com) and enter the credentials of your test account.
 2. When signing in with your test account, fail the multifactor authentication challenge by not passing the MFA challenge.
 
-The sign-in shows up on the Identity Protection dashboard within 10 - 15 minutes.
+The sign-in shows up on the report within 10 - 15 minutes.
 
 ## Atypical travel
 
@@ -77,7 +77,7 @@ Simulating the atypical travel condition is difficult. The algorithm uses machin
 1. Change your IP address. You can change your IP address by using a VPN, a Tor add-on, or creating a new virtual machine in Azure in a different data center.
 1. Sign-in to [https://myapps.microsoft.com](https://myapps.microsoft.com) using the same credentials as before and within a few minutes after the previous sign-in.
 
-The sign-in shows up in the Identity Protection dashboard within 2-4 hours.
+The sign-in shows up in the report within 2-4 hours.
 
 ## Leaked Credentials for Workload Identities
 

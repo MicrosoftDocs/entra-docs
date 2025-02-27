@@ -1,27 +1,25 @@
 ---
-title: 'Tutorial: Configure AWS IAM Identity Center(successor to AWS single sign-On) for automatic user provisioning with Microsoft Entra ID'
+title: Configure AWS IAM Identity Center(successor to AWS single sign-On) for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to AWS IAM Identity Center.
 
-documentationcenter: ''
-author: twimmers
-writer: twimmers
+
+author: thomasakelo
 manager: jeedes
 
-ms.assetid: 54a9f704-7877-4ade-81af-b8d3f7fb9255
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.tgt_pltfrm: na
-ms.topic: tutorial
-ms.date: 02/23/2024
-ms.author: thwimmer
+
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to AWS IAM Identity Center so that I can streamline the user management process and ensure that users have the appropriate access to AWS IAM Identity Center.
 ---
 
-# Tutorial: Configure AWS IAM Identity Center for automatic user provisioning
+# Configure AWS IAM Identity Center for automatic user provisioning
 
-This tutorial describes the steps you need to perform in both AWS IAM Identity Center(successor to AWS single sign-On) and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [AWS IAM Identity Center](https://console.aws.amazon.com/singlesignon) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This article describes the steps you need to perform in both AWS IAM Identity Center(successor to AWS single sign-On) and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [AWS IAM Identity Center](https://console.aws.amazon.com/singlesignon) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
 ## Capabilities Supported
@@ -34,10 +32,10 @@ This tutorial describes the steps you need to perform in both AWS IAM Identity C
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator). 
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
 * A SAML connection from your Microsoft Entra account to AWS IAM Identity Center, as described in Tutorial
 
 ## Step 1: Plan your provisioning deployment
@@ -152,7 +150,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |externalId|String|
       |members|Reference|
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 13. To enable the Microsoft Entra provisioning service for AWS IAM Identity Center, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -179,7 +177,7 @@ Once you configure provisioning, use the following resources to monitor your dep
 With PIM for Groups, you can provide just-in-time access to groups in Amazon Web Services and reduce the number of users that have permanent access to privileged groups in AWS. 
 
 **Configure your enterprise application for SSO and provisioning**
-1. Add AWS IAM Identity Center to your tenant, configure it for provisioning as described in the tutorial above, and start provisioning. 
+1. Add AWS IAM Identity Center to your tenant, configure it for provisioning as described in the article above, and start provisioning. 
 1. Configure [single sign-on](aws-single-sign-on-provisioning-tutorial.md) for AWS IAM Identity Center.
 1. Create a [group](/azure/active-directory/fundamentals/how-to-manage-groups) that will provide all users access to the application.
 1. Assign the group to the AWS Identity Center application.
@@ -250,6 +248,6 @@ You can also check the AWS IAM Identity Center  troubleshooting tips [here](http
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and IAM Identity Center with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with SAML SSO for Jira by Resolution GmbH'
+title: Microsoft Entra integration with SAML SSO for Jira by Resolution GmbH
 description: Learn how to configure single sign-on between Microsoft Entra ID and SAML SSO for Jira by resolution GmbH.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SAML SSO for Jira by resolution GmbH so that I can control who has access to SAML SSO for Jira by resolution GmbH, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with SAML SSO for Jira by resolution GmbH
+# Microsoft Entra integration with SAML SSO for Jira by resolution GmbH
 
-In this tutorial, you'll learn how to integrate SAML SSO for Jira by resolution GmbH with Microsoft Entra ID. When you integrate SAML SSO for Jira by resolution GmbH with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate SAML SSO for Jira by resolution GmbH with Microsoft Entra ID. When you integrate SAML SSO for Jira by resolution GmbH with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to SAML SSO for Jira by resolution GmbH.
 * Enable your users to be automatically signed-in to SAML SSO for Jira by resolution GmbH with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * SAML SSO for Jira by resolution GmbH supports **SP** and **IDP** initiated SSO.
 
@@ -151,8 +151,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 6. Then, click **Manage**.
 
-	![Screenshot that shows the "S A M L Single Sign On (S S O) Jira, S A M L/S S O" app with the "Manage" button selected.](./media/samlssojira-tutorial/store-4.png)
-    
 7. Afterwards, click **Configure** to configure the just installed plugin.
 
 	![Screenshot that shows the "Manage apps" page, with the "Configure" button selected for the "S A M L SingleSignOn for Jira" app.](./media/samlssojira-tutorial/store-5.png)
@@ -167,15 +165,13 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
  
 	a. Set **Microsoft Entra ID** as the IdP type.
 	
-	b. Add the **Name** of the Identity Provider (e.g Microsoft Entra ID).
+	b. Add the **Name** of the Identity Provider (such as Microsoft Entra ID).
 	
-	c. Add an (optional) **Description** of the Identity Provider (e.g Microsoft Entra ID).
+	c. Add an (optional) **Description** of the Identity Provider (such as Microsoft Entra ID).
 	
 	d. Click **Next**.
 	
 10. On the **Identity provider configuration** page, click **Next**.
- 
-	![Screenshot that shows the "Identity provider configuration" page.](./media/samlssojira-tutorial/configuration.png)
 
 11. On **Import SAML IdP Metadata** page, perform the following steps:
 
@@ -207,7 +203,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ### Create SAML SSO for Jira by resolution GmbH test user
 
-To enable Microsoft Entra users to sign in to SAML SSO for Jira by resolution GmbH, they must be provisioned into SAML SSO for Jira by resolution GmbH. For the case of this tutorial, you have to do the provisioning by hand. However, there are also other provisioning models available for the SAML SSO plugin by resolution, for example **Just In Time** provisioning. Refer to their documentation at [SAML SSO by resolution GmbH](https://wiki.resolution.de/doc/saml-sso/latest/all). If you have a question about it, contact support at [resolution support](https://www.resolution.de/go/support).
+To enable Microsoft Entra users to sign in to SAML SSO for Jira by resolution GmbH, they must be provisioned into SAML SSO for Jira by resolution GmbH. For the case of this article,  you have to do the provisioning by hand. However, there are also other provisioning models available for the SAML SSO plugin by resolution, for example **Just In Time** provisioning. Refer to their documentation at [SAML SSO by resolution GmbH](https://wiki.resolution.de/doc/saml-sso/latest/all). If you have a question about it, contact support at [resolution support](https://www.resolution.de/go/support).
 
 **To manually provision a user account, perform the following steps:**
 
@@ -265,9 +261,6 @@ To activate SSO redirect, do the following in **your Jira instance**:
 
 1. Access the configuration page of the SAML SSO plugin in Jira.
 1. Click on **Redirection** in the left panel.
-
-   ![Partial screenshot of the Jira SAML SingleSignOn Plugin Configuration page highlighting the Redirection link in the left navigation.](./media/samlssojira-tutorial/configure-1.png)
-
 1. Tick **Enable SSO Redirect**.
 
    ![Partial screenshot of the Jira SAML SingleSignOn Plugin Configuration page highlighting the selected "Enable SSO Redirect" check box.](./media/samlssojira-tutorial/configure-2.png) 
@@ -276,6 +269,6 @@ To activate SSO redirect, do the following in **your Jira instance**:
 
 After activating the option, you can still reach the username/password prompt if the **Enable nosso** option is ticked by navigating to `https://<server-base-url>/login.jsp?nosso`. As always, substitute **\<server-base-url>** with your base URL.
 
-## Next steps
+## Related content
 
 Once you configure SAML SSO for Jira by resolution GmbH you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

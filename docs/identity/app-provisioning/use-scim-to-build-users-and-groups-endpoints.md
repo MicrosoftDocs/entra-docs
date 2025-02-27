@@ -7,14 +7,14 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: conceptual
-ms.date: 09/15/2023
+ms.date: 07/30/2024
 ms.author: kenwith
 ms.reviewer: arvinh
 ---
 
 # Tutorial: Develop a sample SCIM endpoint in Microsoft Entra ID
 
-This tutorial describes how to deploy the SCIM [reference code](https://aka.ms/scimreferencecode) with  [Azure App Service](/azure/app-service/). Then, test the code by using Postman or by integrating with the Microsoft Entra provisioning service. The tutorial is intended for developers who want to get started with SCIM, or anyone interested in testing a [SCIM endpoint](./use-scim-to-provision-users-and-groups.md). 
+This tutorial describes how to deploy the SCIM [reference code](https://aka.ms/scimreferencecode) with  [Azure App Service](/azure/app-service/). Then, test the code by using a tool like cURL or by integrating with the Microsoft Entra provisioning service. The tutorial is intended for developers who want to get started with SCIM, or anyone interested in testing a [SCIM endpoint](./use-scim-to-provision-users-and-groups.md). 
 
 In this tutorial, you learn how to:
 
@@ -91,7 +91,7 @@ Go to the [reference code](https://github.com/AzureAD/SCIMReferenceCode) from Gi
 
 ### Configure the App Service
 
-Go to the application in **Azure App Service** > **Configuration** and select **New application setting** to add the *Token__TokenIssuer* setting with the value `https://sts.windows.net/<tenant_id>/`. Replace `<tenant_id>` with your Microsoft Entra tenant ID. If you want to test the SCIM endpoint by using [Postman](https://github.com/AzureAD/SCIMReferenceCode/wiki/Test-Your-SCIM-Endpoint), add an *ASPNETCORE_ENVIRONMENT* setting with the value `Development`.
+Go to the application in **Azure App Service** > **Configuration** and select **New application setting** to add the *Token__TokenIssuer* setting with the value `https://sts.windows.net/<tenant_id>/`. Replace `<tenant_id>` with your Microsoft Entra tenant ID.
 
 ![Screenshot that shows the Application settings window.](media/use-scim-to-build-users-and-groups-endpoints/app-service-settings.png)
 

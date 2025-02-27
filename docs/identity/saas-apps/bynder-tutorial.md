@@ -2,22 +2,22 @@
 title: Microsoft Entra SSO integration with Bynder.
 description: Learn how to configure single sign-on between Microsoft Entra ID and Bynder.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 09/28/2023
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 04/05/2024
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Bynder so that I can control who has access to Bynder, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Integrate Bynder with Microsoft Entra ID
+# Integrate Bynder with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate Bynder with Microsoft Entra ID. When you integrate Bynder with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Bynder with Microsoft Entra ID. When you integrate Bynder with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Bynder.
 * Enable your users to be automatically signed-in to Bynder with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Bynder supports **SP and IDP** initiated SSO.
 * Bynder supports **Just In Time** user provisioning.
@@ -81,9 +81,9 @@ Follow these steps to enable Microsoft Entra SSO.
    > [!NOTE]
 	> For BYNDER_CONFIG_ID use an identifier value you got from **Сreate New Bynder Configuration** section.
 
-1. On the **Basic SAML Configuration** section, if you wish to configure the application in **IDP** initiated mode, enter the values for the following fields:
+1. On the **Basic SAML Configuration** section, perform the following steps:
 
-   a. In the **Identifier** text box, type a URL using the following pattern:
+   a. In the **Identifier** text box, type a URL using one of the following patterns:
     
    For a Default Domain: 
    `https://<COMPANY_NAME>.bynder.com/v7/idp/sso/saml/<BYNDER_CONFIG_ID>/metadata`
@@ -91,7 +91,7 @@ Follow these steps to enable Microsoft Entra SSO.
    For a Custom Domain: 
    `https://<SUBDOMAIN>.<DOMAIN>.com/v7/idp/sso/saml/<BYNDER_CONFIG_ID>/metadata`
 
-   b. In the **Reply URL** text box, type a URL using the following pattern:
+   b. In the **Reply URL** text box, type a URL using one of the following patterns:
     
    For a Default Domain: 
    `https://<COMPANY_NAME>.bynder.com/v7/idp/sso/saml/<BYNDER_CONFIG_ID>/acs`
@@ -99,21 +99,21 @@ Follow these steps to enable Microsoft Entra SSO.
    For a Custom Domain: 
    `https://<SUBDOMAIN>.<DOMAIN>.com/v7/idp/sso/saml/<BYNDER_CONFIG_ID>/acs`
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
-   In the **Sign-on URL** text box, type a URL using the following pattern:
+   In the **Sign-on URL** text box, type a URL using one of the following patterns:
     
    For a Default Domain: 
-   `https://<COMPANY_NAME>.bynder.com/v7/idp/sso/saml/<BYNDER_CONFIG_ID>/acs`
+   `https://<COMPANY_NAME>.bynder.com/v7/idp/sso/saml/<BYNDER_CONFIG_ID>/initialize`
     
    For a Custom Domain: 
-   `https://<SUBDOMAIN>.<DOMAIN>.com/v7/idp/sso/saml/<BYNDER_CONFIG_ID>/acs`
+   `https://<SUBDOMAIN>.<DOMAIN>.com/v7/idp/sso/saml/<BYNDER_CONFIG_ID>/initialize`
 
-1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section,  find **Metadata XML** and select **Download** to download the certificate and save it on your computer.
+1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, find **Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
 	![Screenshot shows the Certificate download link.](common/metadataxml.png "Certificate")
 
-1. On the **Set up Bynder** section, copy the appropriate URL(s) based on your requirement.
+1. On the **Set up Bynder** section, copy the appropriate URLs based on your requirement.
 
 	![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png "Metadata")
 
@@ -174,6 +174,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the Bynder tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Bynder for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Bynder you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

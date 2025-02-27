@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 12/10/2024
 ms.author: jfields
 ---
 
@@ -79,7 +79,7 @@ The **Permissions** subtab provides the following settings that you can use to a
 - **Authorization System**: Displays a list of authorization systems accounts you can access.
 - **Search For**: A dropdown from which you can select **Group**, **User**, or **Role**.
 - **User Status**: A dropdown from which you can select **Any**, **Active**, or **Inactive**.
-- **Privilege Creep Index** (PCI): A dropdown from which you can select a PCI rating of **Any**, **High**, **Medium**, or **Low**.
+- **Privilege Creep Index (PCI)**: A dropdown from which you can select a PCI rating of **Any**, **High**, **Medium**, or **Low**.
 - **Task Usage**: A dropdown from which you can select **Any**, **Granted**, **Used**, or **Unused**.
 - **Enter a Username**: A dropdown from which you can select a username.
 - **Enter a Group Name**: A dropdown from which you can select a group name.

@@ -17,9 +17,9 @@ ms.reviewer: chmutali
 
 **Applies to:**
 * Workday to on-premises Active Directory user provisioning
-* Workday to Microsoft Entra ID user provisioning
+* Workday to Microsoft Entra user provisioning
 * SAP SuccessFactors to on-premises Active Directory user provisioning
-* SAP SuccessFactors to Microsoft Entra ID user provisioning
+* SAP SuccessFactors to Microsoft Entra user provisioning
 
 | Troubleshooting | Details |
 |-- | -- |

@@ -66,7 +66,6 @@ POST https://your-api.com/endpoint
                 "market": "en-us"
             },
             "protocol": "OAUTH2.0",
-            "requestType": "SignIn",
             "clientServicePrincipal": {
                 "id": "<Your Test Applications servicePrincipal objectId>",
                 "appId": "<Your Test Application App Id>",
@@ -80,7 +79,7 @@ POST https://your-api.com/endpoint
                 "displayName": "My Test application"
             },
             "user": {
-                "companyName": "Casey Jensen"
+                "companyName": "Casey Jensen",
                 "createdDateTime": "2016-03-01T15:23:40Z",
                 "displayName": "Casey Jensen",
                 "givenName": "Casey",
@@ -128,7 +127,7 @@ When a B2B user from Fabrikam organization authenticates to Contoso's organizati
     "companyName": "Fabrikam",
     "createdDateTime": "2022-07-15T00:00:00Z",
     "displayName": "John Wright",
-    "id": "12345678-0000-0000-0000-000000000000",
+    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
     "mail": "johnwright@fabrikam.com",
     "preferredDataLocation": "EUR",
     "userPrincipalName": "johnwright_fabrikam.com#EXT#@contoso.onmicrosoft.com",
@@ -146,6 +145,10 @@ The following table shows the data types supported by Custom claims providers fo
 | String array | True      |
 | Boolean      | False     |
 | JSON         | False     |
+
+### Claim size limitations
+
+The maximum claim size that a claims provider can return is limited to 3KB. This is the sum of all the key and value pairs returned by the REST API.
 
 ### Claims mapping policy
 

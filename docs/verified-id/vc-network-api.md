@@ -8,7 +8,7 @@ manager: amycolannino
 ms.service: entra-verified-id
 ms.topic: reference
 
-ms.date: 07/29/2022
+ms.date: 01/30/2025
 ms.author: barclayn
 
 #Customer intent: As a verifiable credentials developer, I want to configure verifying credentials from another party 
@@ -32,7 +32,7 @@ The API is protected through Microsoft Entra ID and uses OAuth2 bearer tokens. T
 
 ## Searching for issuers
 
-This API is used to search for issuers available in the Microsoft Entra Verified ID Network. You can search for issuers by their **linked domain** name. The value supplied for the `filter` parameter will be used to find issuers that have onboarded to Microsoft Entra Verified ID and have a verified linked domain. Currently you can only filter by `linkeddomainurls` and with operator `like`. There will be a maximum of 15 issuers in the response.
+This API is used to search for issuers available in the Microsoft Entra Verified ID Network. You can search for issuers by their **linked domain** name. The value supplied for the `filter` parameter is used to find issuers that onboarded to Microsoft Entra Verified ID and have a verified linked domain. Currently you can only filter by `linkeddomainurls` and with operator `like`. There's a maximum of 15 issuers in the response.
 
 #### HTTP request
 
@@ -60,8 +60,8 @@ Content-type: application/json
 
 [
   {
-    "id": "0459a193-1111-2222-3333-444455556666",
-    "tenantId": "55eafede-1111-2222-3333-444455556666",
+    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
+    "tenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
     "did": "did:web:bank.woodgrove.com...<SNIP>...",
     "name": "WoodgroveBank",
     "linkedDomainUrls": [
@@ -69,8 +69,8 @@ Content-type: application/json
     ]
   },
   {
-    "id": "6e0e41cb-1111-2222-3333-444455556666",
-    "tenantId": "7f448f57-1111-2222-3333-444455556666",
+    "id": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
+    "tenantId": "bbbbcccc-1111-dddd-2222-eeee3333ffff",
     "did": "did:web:woodgrove.com...<SNIP>...",
     "name": "Woodgrove",
     "linkedDomainUrls": [
@@ -82,7 +82,7 @@ Content-type: application/json
 
 ## Searching for published credential types by an issuer
 
-This API is used search for published credential types for a specific issuer. You need to know the issuers `tenantId` and `issuerId`. The return message is a collection of published credential types and their respective claims. There will be a maximum of 100 credential types in the response.
+This API is used to search for published credential types for a specific issuer. You need to know the issuers `tenantId` and `issuerId`. The return message is a collection of published credential types and their respective claims. There  a maximum of 100 credential types in the response.
 
 #### HTTP request
 

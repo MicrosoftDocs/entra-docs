@@ -46,7 +46,7 @@ To get started, you need:
 
 * An Azure subscription
   * If you don't have one, you can get an [Azure free account](https://azure.microsoft.com/free/)
-* An [Microsoft Entra tenant](~/fundamentals/create-new-tenant.md) linked to the Azure subscription
+* A [Microsoft Entra tenant](~/fundamentals/create-new-tenant.md) linked to the Azure subscription
 * [Docker](https://docs.docker.com/get-docker/) and [docker-compose](https://docs.docker.com/compose/install/) are required to run DAP
   * Your applications can run on platforms, such as a virtual machine (VM) or bare metal
 * An on-premises or cloud-hosted application to transition from a legacy identity system to Microsoft Entra ID
@@ -56,7 +56,7 @@ To get started, you need:
 
 ## Configure Datawiza Cloud Management Console
 
-1. Sign in to [Datawiza Cloud Management Console](https://console.datawiza.com/) (DCMC).
+1. Sign in to [Datawiza Cloud Management Console (DCMC)](https://console.datawiza.com/).
 2. Create an application on DCMC and generate a key pair for the app: `PROVISIONING_KEY` and `PROVISIONING_SECRET`. 
 3. To create the app and generate the key pair, follow the instructions in [Datawiza Cloud Management Console](https://docs.datawiza.com/step-by-step/step2.html).
 4. Register your application in Microsoft Entra ID with [One Click Integration With Microsoft Entra ID](https://docs.datawiza.com/tutorial/web-app-azure-one-click.html).

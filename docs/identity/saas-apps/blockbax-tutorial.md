@@ -1,24 +1,24 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Blockbax'
+title: Microsoft Entra SSO integration with Blockbax
 description: Learn how to configure single sign-on between Microsoft Entra ID and Blockbax.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Blockbax so that I can control who has access to Blockbax, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Blockbax
+# Microsoft Entra SSO integration with Blockbax
 
-In this tutorial, you'll learn how to integrate Blockbax with Microsoft Entra ID. When you integrate Blockbax with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Blockbax with Microsoft Entra ID. When you integrate Blockbax with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Blockbax.
 * Enable your users to be automatically signed-in to Blockbax with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Blockbax supports **SP** and **IDP** initiated SSO.
 
@@ -158,6 +158,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the Blockbax tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Blockbax for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Blockbax you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

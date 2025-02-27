@@ -1,23 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with
-ExcelityGlobal'
+title: Microsoft Entra SSO integration with ExcelityGlobal
 description: Learn how to configure single sign-on between Microsoft Entra ID and ExcelityGlobal.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ExcelityGlobal so that I can control who has access to ExcelityGlobal, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with ExcelityGlobal
+# Microsoft Entra SSO integration with ExcelityGlobal
 
-In this tutorial, you'll learn how to integrate ExcelityGlobal with Microsoft Entra ID. When you integrate ExcelityGlobal with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate ExcelityGlobal with Microsoft Entra ID. When you integrate ExcelityGlobal with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to ExcelityGlobal.
 * Enable your users to be automatically signed-in to ExcelityGlobal with their Microsoft Entra accounts.
@@ -34,7 +33,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * ExcelityGlobal supports **IDP** initiated SSO.
 
@@ -82,8 +81,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Basic SAML Configuration** page, perform the following steps:
 
-    a. In the **Identifier** text box, type one of the
-     following URLs:
+    a. In the **Identifier** text box, type one of the following URLs:
 
     | **Identifier** |
     |------|
@@ -145,11 +143,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure ExcelityGlobal SSO
 
-To configure single sign-on on **ExcelityGlobal** side, you need to send the **Thumbprint value** and appropriate copied URLs from the application configuration to [ExcelityGlobal support team](https://www.excelityglobal.com/contact-us). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **ExcelityGlobal** side, you need to send the **Thumbprint value** and appropriate copied URLs from the application configuration to [ExcelityGlobal support team](https://www.dayforce.com/contact). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create ExcelityGlobal test user
 
-In this section, you create a user called Britta Simon in ExcelityGlobal. Work with [ExcelityGlobal support team](https://www.excelityglobal.com/contact-us) to add the users in the ExcelityGlobal platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in ExcelityGlobal. Work with [ExcelityGlobal support team](https://www.dayforce.com/contact) to add the users in the ExcelityGlobal platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 
@@ -159,6 +157,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the ExcelityGlobal tile in the My Apps, you should be automatically signed in to the ExcelityGlobal for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure ExcelityGlobal you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

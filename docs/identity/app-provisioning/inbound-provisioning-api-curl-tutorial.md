@@ -1,18 +1,18 @@
 ---
-title: Quickstart API-driven inbound provisioning with cURL
-description: Learn how to get started with API-driven inbound provisioning using cURL.
+title: Quickstart for API-driven inbound provisioning with cURL
+description: This tutorial provides step-by-step instructions so you can get started with API-driven inbound provisioning using cURL.
 
 author: jenniferf-skc
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 02/28/2024
+ms.date: 01/29/2025
 ms.author: jfields
 ms.reviewer: cmmdesai
 ---
 
-# Quickstart API-driven inbound provisioning with cURL
+# Quickstart: Get started with API-driven inbound provisioning using cURL
 
 ## Introduction
 
@@ -71,7 +71,7 @@ The bulk request shown below uses the SCIM standard Core User and Enterprise Use
     "Operations": [
     {
         "method": "POST",
-        "bulkId": "897401c2-2de4-4b87-a97f-c02de3bcfc61",
+        "bulkId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
         "path": "/Users",
         "data": {
             "schemas": ["urn:ietf:params:scim:schemas:core:2.0:User",
@@ -134,7 +134,7 @@ The bulk request shown below uses the SCIM standard Core User and Enterprise Use
     },
     {
         "method": "POST",
-        "bulkId": "897401c2-2de4-4b87-a97f-c02de3bcfc61",
+        "bulkId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
         "path": "/Users",
         "data": {
             "schemas": ["urn:ietf:params:scim:schemas:core:2.0:User",

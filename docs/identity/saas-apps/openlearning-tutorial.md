@@ -1,24 +1,24 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with OpenLearning'
+title: Microsoft Entra SSO integration with OpenLearning
 description: Learn how to configure single sign-on between Microsoft Entra ID and OpenLearning.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and OpenLearning so that I can control who has access to OpenLearning, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with OpenLearning
+# Microsoft Entra SSO integration with OpenLearning
 
-In this tutorial, you'll learn how to integrate OpenLearning with Microsoft Entra ID. When you integrate OpenLearning with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate OpenLearning with Microsoft Entra ID. When you integrate OpenLearning with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to OpenLearning.
 * Enable your users to be automatically signed-in to OpenLearning with their Microsoft Entra accounts.
@@ -36,7 +36,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * OpenLearning supports **SP** initiated SSO.
 
@@ -121,8 +121,6 @@ Follow these steps to enable Microsoft Entra SSO.
 	
 1. OpenLearning application expects to enable token encryption in order to make SSO work. To activate token encryption, Browse to **Identity** > **Applications** > **Enterprise applications** > select your application > **Token encryption**. For more information see the article [Configure Microsoft Entra SAML token encryption](~/identity/enterprise-apps/howto-saml-token-encryption.md).
 
-    ![Screenshot shows the activation of Token Encryption.](./media/openlearning-tutorial/token.png "Token Encryption")
-
 <a name='create-an-azure-ad-test-user'></a>
 
 ### Create a Microsoft Entra test user
@@ -191,6 +189,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the OpenLearning tile in the My Apps, this will redirect to OpenLearning Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure OpenLearning you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

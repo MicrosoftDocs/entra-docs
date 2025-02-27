@@ -1,76 +1,59 @@
 ---
-title: "What's new in Microsoft Entra ID for customers"
-description: "New and updated documentation for the Microsoft Entra ID for customers documentation."
-ms.date: 03/01/2024
+title: "What's new in Microsoft Entra External ID in external tenants"
+description: "New and updated documentation for Microsoft Entra External ID in external tenants."
+ms.date: 02/04/2025
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.topic: whats-new
  
 ms.author: cmulligan
 author: csmulligan
 manager: CelesteDG
+# Customer intent: As a Microsoft Entra External ID user, I want to stay updated on the new documentation and significant updates, so that I can stay informed about the changes and improvements in the service.
 ---
 
-# Microsoft Entra ID for customers: What's new
+# What's new in docs: External ID in external tenants
 
-Welcome to what's new in Microsoft Entra ID for customers documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. 
+Welcome to what's new in documentation for Microsoft Entra External ID in external tenants. This article lists new docs that were added and docs that were significantly updated in the last three months.
 
-## February 2024
-
-### New articles
-
-- [Test your sign-up and sign-in user flow](how-to-test-user-flows.md) - Describes the Run user flow feature
-- [Get started with the Microsoft Entra External ID extension for Visual Studio Code](visual-studio-code-extension.md)
-
-### Updated articles
-
-- [Supported features in Microsoft Entra ID for customers (preview)](concept-supported-features-customers.md) - OpenID Connect and OAuth2 updates
-- [Create a customer identity and access management (CIAM) tenant (preview)](how-to-create-customer-tenant-portal.md) - Built-in role update
-
-
-## January 2024
-
-### Updated articles
-
-- [Tutorial: Prepare your customer tenant to authenticate users in a .NET browserless app](tutorial-browserless-app-dotnet-sign-in-prepare-tenant.md) - Minor updates
-- [Tutorial: Prepare your customer tenant to sign in user in .NET WPF application](tutorial-desktop-wpf-dotnet-sign-in-prepare-tenant.md) - Minor updates
-- [Tutorial: Prepare an ASP.NET Core web app for authentication in a customer tenant](tutorial-web-app-dotnet-sign-in-prepare-app.md) - Minor updates
-- [Tutorial: Add sign-in and sign-out to an ASP.NET Core web application for a customer tenant](tutorial-web-app-dotnet-sign-in-sign-out.md) - Minor updates
-- [Security and governance in Microsoft Entra ID for customers](concept-security-customers.md) - Added intro to Conditional Access
-- [Using role-based access control for applications](how-to-use-app-roles-customers.md) - Added link to the Woodgrove live demo
-- [Overview of the Woodgrove Groceries demo](overview-solutions-customers.md) - Added link to the Woodgrove live demo
-- [Call a web API in a Node.js web application](how-to-web-app-node-sign-in-call-api-call-api.md) - Rewrote the call an API section
-- [Create a Node.js web app to call an API](how-to-web-app-node-sign-in-call-api-prepare-app.md) - Rewrote the call an API section
-- [Prepare customer tenant for calling an API in a Node.js web application](how-to-web-app-node-sign-in-call-api-prepare-tenant.md) - Rewrote the call an API section
-- [Acquire an access token in your Node.js web app](how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md) - Rewrote the call an API section
-- [Tutorial: Prepare a Node.js CLI application for authentication](tutorial-cli-app-node-sign-in-prepare-app.md) - Minor tutorial clarifications
-- [Tutorial: Prepare your customer tenant to sign in users in a Node.js CLI app](tutorial-cli-app-node-sign-in-prepare-tenant.md) - Minor tutorial clarifications
-- [Tutorial: Call a protected web API from your .NET daemon app](tutorial-daemon-dotnet-call-api-build-app.md) - Minor tutorial clarifications
-- [Tutorial: Prepare your customer tenant to authorize a .NET daemon application](tutorial-daemon-dotnet-call-api-prepare-tenant.md) - Minor tutorial clarifications
-- [Tutorial: Call a web API from your Node.js daemon application](tutorial-daemon-node-call-api-build-app.md) - Minor tutorial clarifications
-- [Tutorial: Prepare your customer tenant to authenticate users in a React SPA](tutorial-single-page-app-react-sign-in-prepare-tenant.md) - Minor tutorial clarifications
-- [Tutorial: Add sign-in and sign-out to a React SPA for a customer tenant](tutorial-single-page-app-react-sign-in-sign-out.md) - Minor tutorial clarifications
-
-## December 2023
-
-### Updated articles
-
-- [Collect user attributes during sign-up](how-to-define-custom-attributes.md) - Updated the examples
-- [Quickstart: Get started with Microsoft Entra ID for customers (preview)](quickstart-trial-setup.md) - Added subscription options
-
-## November 2023
+## January 2025
 
 ### New articles
 
-- [Gain insights into your app users’ activity](how-to-user-insights.md)
-- [Tutorial: Handle authentication flows in an Angular single-page app](tutorial-single-page-app-angular-sign-in-configure-authentication.md)
-- [Tutorial: Prepare an Angular single-page app for authentication in a customer tenant](tutorial-single-page-app-angular-sign-in-prepare-app.md)
-- [Tutorial: Prepare your customer tenant to authenticate users in an Angular single-page app](tutorial-single-page-app-angular-sign-in-prepare-tenant.md)
-- [Tutorial: Add sign-in and sign-out to an Angular single-page app (SPA) for a customer tenant](tutorial-single-page-app-angular-sign-in-sign-out.md)
+- [Use Azure Front Door as a reverse proxy in production environment for a single-page app that uses native authentication (preview)](how-to-native-authentication-cors-solution-production-environment.md)
+- [Set up a reverse proxy for a single-page app that calls native authentication API by using Azure Function App (preview)](how-to-native-authentication-cors-solution-test-environment.md)
+- [Quickstart: Sign in users in a sample React single-page application by using native authentication (preview)](quickstart-native-authentication-single-page-app-react-sign-in.md)
+- [Tutorial: Reset password in a React single-page app by using native authentication (preview)](tutorial-native-authentication-single-page-app-react-reset-password.md)
+- [Tutorial: Set up CORS proxy server to manage CORS headers for native authentication (preview)](tutorial-native-authentication-single-page-app-react-set-up-local-cors.md)
+- [Tutorial: Sign in users into a React single-page app by using native authentication (preview)](tutorial-native-authentication-single-page-app-react-sign-in.md)
+- [Tutorial: Sign up users into a React single-page app by using native authentication (preview)](tutorial-native-authentication-single-page-app-react-sign-up.md)
+- [Register a SAML app in your external tenant (preview)](how-to-register-saml-app.md)
+- [Configure Microsoft Entra External ID with Azure Web Application Firewall](tutorial-configure-external-id-web-app-firewall.md)
+- [Register a SAML app in your external tenant (preview)](tutorial-web-app-node-sign-in-sign-out.md)
+- [Tutorial: Add add sign-in to a Node/Express.js web app by using Microsoft identity platform](how-to-register-saml-app.md)
 
 ### Updated articles
 
-- [Collect user attributes during sign-up](how-to-define-custom-attributes.md) - Editorial updates
-- [Tutorial: Handle authentication flows in a React single-page app](tutorial-single-page-app-react-sign-in-configure-authentication.md) - Fixed the React SPA tutorial
-- [Sign in users in a sample Node.js web application](sample-web-app-node-sign-in.md) - Updated Platform Redirect URI
-- [Create a sign-up and sign-in user flow for customers](how-to-user-flow-sign-up-sign-in-customers.md) - Improved MS Graph API call formatting
+- [Add Azure AD B2C tenant as an OpenID Connect identity provider (preview)](how-to-b2c-federation-customers.md) - Editorial updates
+
+## December 2024
+
+### Updated articles
+
+- [Supported features in workforce and external tenants](concept-supported-features-customers.md) - Added pricing and ID Governance details
+
+## November 2024
+
+### New articles
+
+- [Add Apple as an identity provider (preview)](how-to-apple-federation-customers.md)
+- [Add OpenID Connect as an external identity provider (preview)](how-to-custom-oidc-federation-customers.md)
+- [Add Azure AD B2C tenant as an OpenID Connect identity provider (preview)](how-to-b2c-federation-customers.md)
+- [OpenID Connect claims mapping (preview)](reference-oidc-claims-mapping-customers.md)
+- [Regions requiring opt-in for SMS verification (preview)](how-to-region-code-opt-in.md)
+
+### Updated articles
+
+- [Gain insights into your app users’ activity](how-to-user-insights.md) - Added MFA Usage dashboard details
+- [Multifactor authentication in external tenants](concept-multifactor-authentication-customers.md) - Opt-in telephony regions update
+- [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md) - Opt-in telephony regions update

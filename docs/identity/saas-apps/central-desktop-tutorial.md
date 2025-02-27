@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Central Desktop'
+title: Microsoft Entra integration with Central Desktop
 description: Learn how to configure single sign-on between Microsoft Entra ID and Central Desktop.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 06/19/2024
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Central Desktop so that I can control who has access to Central Desktop, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Central Desktop
+# Microsoft Entra integration with Central Desktop
 
-In this tutorial, you'll learn how to integrate Central Desktop with Microsoft Entra ID. When you integrate Central Desktop with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Central Desktop with Microsoft Entra ID. When you integrate Central Desktop with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Central Desktop.
 * Enable your users to be automatically signed-in to Central Desktop with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Central Desktop supports **SP** initiated SSO.
 
@@ -90,7 +90,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<companyname>.centraldesktop.com`
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier,Reply URL and Sign on URL. Contact [Central Desktop Client support team](https://imeetcentral.com/contact-us) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > These values are not real. Update these values with the actual Identifier,Reply URL and Sign on URL. Contact [Central Desktop support team](https://www.centraldesktop.com/contact) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Raw)** from the given options as per your requirement and save it on your computer.
 
@@ -200,6 +200,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Central Desktop tile in the My Apps, this will redirect to Central Desktop Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Central Desktop you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

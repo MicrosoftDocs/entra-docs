@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Slack'
+title: Microsoft Entra SSO integration with Slack
 description: Learn how to configure single sign-on between Microsoft Entra ID and Slack.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 02/02/2024
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 04/18/2024
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Slack so that I can control who has access to Slack, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Slack
+# Microsoft Entra SSO integration with Slack
 
-In this tutorial, you'll learn how to integrate Slack with Microsoft Entra ID. When you integrate Slack with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Slack with Microsoft Entra ID. When you integrate Slack with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Slack.
 * Enable your users to be automatically signed-in to Slack with their Microsoft Entra accounts.
@@ -38,7 +38,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Slack supports **SP (service provider)** initiated SSO.
 * Slack supports **Just In Time** user provisioning.
@@ -173,8 +173,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 4. On the **Configure SAML authentication for Azure** dialog, perform the below steps:
 
-    ![Screenshot of Configure single sign-on On SAML Authentication Settings.](./media/slack-tutorial/tutorial-slack-save-authentication.png)
-
     a. In the top right, toggle **Test** mode on.
     
     b.  In the **SAML SSO URL** textbox, paste the value of **Login URL**.
@@ -195,6 +193,9 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
    > [!NOTE]
    > In order to set up the service provider (SP) configuration, you must click on **Expand** next to **Advanced Options** in the SAML configuration page. In the **Service Provider Issuer** box, enter the workspace URL. The default is slack.com. 
+
+   > [!NOTE]
+   > Set the **AuthnContextClassRef** to **Don't send this value** to resolve the error message, "Error - AADSTS75011 Authentication method by which the user authenticated with the service doesn't match requested authentication method AuthnContextClassRef".
 
 1. Under **Settings**, decide if members can edit their profile information (like their email or display name) after SSO is enabled. You can also choose whether SSO is required, partially required or optional.
 
@@ -225,6 +226,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Slack tile in the My Apps, this will redirect to Slack Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Slack you can enforce Session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

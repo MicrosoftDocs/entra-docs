@@ -1,27 +1,25 @@
 ---
-title: 'Tutorial: Configure directprint.io for automatic user provisioning with Microsoft Entra ID'
+title: Configure directprint.io for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to directprint.io.
 
-documentationcenter: ''
-author: twimmers
-writer: Thwimmer
+
+author: thomasakelo
 manager: jeedes
 
-ms.assetid: 0a79e880-bbdf-45e4-ae1e-2c74aec9f51e
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.tgt_pltfrm: na
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: Thwimmer
+
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to directprint.io so that I can streamline the user management process and ensure that users have the appropriate access to directprint.io.
 ---
 
-# Tutorial: Configure directprint.io for automatic user provisioning
+# Configure directprint.io for automatic user provisioning
 
-This tutorial describes the steps you need to perform in both directprint.io and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [directprint.io](https://directprint.io) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This article describes the steps you need to perform in both directprint.io and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [directprint.io](https://directprint.io) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
 ## Capabilities supported
@@ -34,10 +32,10 @@ This tutorial describes the steps you need to perform in both directprint.io and
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md). 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application administrator, Cloud Application administrator, Application Owner, or Global administrator). 
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
 * Single sign-on with Microsoft Entra ID is completed.
 * A licensed or 30 days free trial account with directprint.io.
 
@@ -53,10 +51,6 @@ The scenario outlined in this tutorial assumes that you already have the followi
 1. log into your [directprint.io account](https://directprint.io/login/).
 1. Navigate to the Microsoft Entra SSO and Provisioning screen.
 1. Save the Tenant URL and secret toke for future reference. You will need it in **Step 5**.
-
-  ![Provisioning Tenant URL and Provision secret](media/directprint/sso-provisioning-screen.png)
-
-<a name='step-3-add-directprintio-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add directprint.io from the Microsoft Entra application gallery
 
@@ -126,7 +120,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |externalId|String|
       |members|Reference|
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for directprint.io, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -154,6 +148,6 @@ Once you've configured provisioning, use the following resources to monitor your
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

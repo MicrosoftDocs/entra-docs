@@ -1,36 +1,34 @@
 ---
-title: 'Tutorial: Configure Airstack for automatic user provisioning with Microsoft Entra ID'
+title: Configure Airstack for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Airstack.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: thwimmer
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Airstack so that I can streamline the user management process and ensure that users have the appropriate access to Airstack.
 
-# Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Airstack so that I can streamline the user management process and ensure that users have the appropriate access to Airstack.
 ---
 
-# Tutorial: Configure Airstack for automatic user provisioning
+# Configure Airstack for automatic user provisioning
 
-The objective of this tutorial is to demonstrate the steps to be performed in Airstack and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Airstack.
+The objective of this article is to demonstrate the steps to be performed in Airstack and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Airstack.
 
 > [!NOTE]
-> This tutorial describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This article describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
 * A Microsoft Entra tenant
-* [An Airstack tenant](https://airstack.com/pricing/)
+* An Airstack tenant.
 * A user account in Airstack with Admin permissions.
 
 ## Assigning users to Airstack
@@ -48,7 +46,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 ## Setup Airstack for provisioning
 
-1. Sign in to your [Airstack Admin Console](https://airstack-qa.lenovosoftware.com/). Navigate to **Settings**.
+1. Sign in to your Airstack Admin Console. Navigate to **Settings**.
 
 	![Airstack Admin Console](media/airstack-provisioning-tutorial/airstackadminmenu.png)
 
@@ -77,7 +75,7 @@ Before configuring Airstack for automatic user provisioning with Microsoft Entra
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Airstack based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Airstack, following the instructions provided in the [Airstack Single sign-on tutorial](./airstack-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features compliment each other
+> You may also choose to enable SAML-based single sign-on for Airstack, following the instructions provided in the [Airstack Single sign-on  article](./airstack-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other
 
 <a name='to-configure-automatic-user-provisioning-for-airstack-in-azure-ad'></a>
 
@@ -112,13 +110,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Airstack**.
 
-	![Airstack User Mappings](media/airstack-provisioning-tutorial/mappings.png)
-
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Airstack in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Airstack for update operations. Select the **Save** button to commit any changes.
 
 	![Airstack User Attributes](media/airstack-provisioning-tutorial/attributes.png)
 
-10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 11. To enable the Microsoft Entra provisioning service for Airstack, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -141,6 +137,6 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

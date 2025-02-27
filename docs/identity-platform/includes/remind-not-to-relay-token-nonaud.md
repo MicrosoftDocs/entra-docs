@@ -16,7 +16,7 @@ ms.custom:
 ---
 
 > [!WARNING]
-> **DO NOT** send access tokens that were issued to the middle tier to anywhere except the intended audience for the token. Access tokens issued to the middle tier are intended for use _only_ by that middle tier to communicate with the intended audience endpoint.
+> **DO NOT** send access tokens that were issued to the middle tier to anywhere except the intended audience for the token. Access tokens issued to the middle tier are intended for use *only* by that middle tier to communicate with the intended audience endpoint.
 >
 > Security risks of relaying access tokens from a middle-tier resource to a client (instead of the client getting the access tokens themselves) include:
 >

@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Versal'
+title: Microsoft Entra SSO integration with Versal
 description: Learn how to configure single sign-on between Microsoft Entra ID and Versal.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Versal so that I can control who has access to Versal, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Versal
+# Microsoft Entra SSO integration with Versal
 
-In this tutorial, you'll learn how to integrate Versal with Microsoft Entra ID. When you integrate Versal with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Versal with Microsoft Entra ID. When you integrate Versal with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Versal.
 * Enable your users to be automatically signed-in to Versal with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Versal supports **IDP** initiated SSO.
 
@@ -91,7 +91,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	> [!NOTE]
 	> The Reply URL value is not real. Update this value with the actual Reply URL. Contact Versal Client support team to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. Versal application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, where as **nameidentifier** is mapped with **user.userprincipalname**. Versal application expects **nameidentifier** to be mapped with **user.mail**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
+1. Versal application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**. Versal application expects **nameidentifier** to be mapped with **user.mail**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
 
 	![Screenshot shows the image of Versal application.](common/edit-attribute.png "Attributes")
 
@@ -149,6 +149,6 @@ support guide for instructions on how to embed a Versal course with support for 
 
 You will need to create a course, share it with your organization, and publish it in order to test course embedding. 
 
-## Next steps
+## Related content
 
 Once you configure Versal you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

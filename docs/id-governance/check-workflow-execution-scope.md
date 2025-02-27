@@ -6,19 +6,17 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 05/31/2023
+ms.date: 12/10/2024
 ms.author: owinfrey
 ms.reviewer: krbain
 ---
 
-# Check execution user scope of a workflow 
-
+# Check execution user scope of a workflow
 
 Workflow scheduling will automatically process the workflow for users meeting the workflows execution conditions. This article walks you through the steps to check the users who fall into the execution scope of a workflow. For more information about execution conditions, see: [workflow basics](../id-governance/understanding-lifecycle-workflows.md#workflow-basics).
 
 ## Check execution user scope of a workflow using the Microsoft Entra admin center
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 To check the users who fall under the execution scope of a workflow, you'd follow these steps:
 
@@ -40,7 +38,7 @@ To check the users who fall under the execution scope of a workflow, you'd follo
 
 ## Check execution user scope of a workflow using Microsoft Graph
 
-To check execution user scope of a workflow using API via Microsoft Graph, see: [List executionScope](/graph/api/workflow-list-executionscope). 
+To check execution user scope of a workflow using API via Microsoft Graph, see: [List executionScope](/graph/api/workflow-list-executionscope).
 
 ## Next steps
 

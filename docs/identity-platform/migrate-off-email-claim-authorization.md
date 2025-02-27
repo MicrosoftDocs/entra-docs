@@ -46,7 +46,7 @@ By setting `removeUnverifiedEmailClaim` to `false`, your application will receiv
 
 ## Identifying insecure configurations and performing database migration 
 
-You should never use mutable claims (such as `email`, `preferred_username`, etc.) as identifiers to perform authorization checks or index users in a database. These values are reusable and could expose your application to privilege escalation attacks.
+You should never use mutable claims (such as `email`, `preferred_username`, and so on) as identifiers to perform authorization checks or index users in a database. These values are reusable and could expose your application to privilege escalation attacks.
 
 The following pseudocode sample helps illustrate the insecure pattern of user identification / authorization:
 

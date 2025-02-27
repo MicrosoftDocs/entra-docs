@@ -1,30 +1,29 @@
 ---
-title: 'Tutorial: Configure MerchLogix for automatic user provisioning with Microsoft Entra ID'
+title: Configure MerchLogix for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to MerchLogix.
 
 author: zhchia
-writer: zhchia
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: thwimmer
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Merchlogix so that I can streamline the user management process and ensure that users have the appropriate access to Merchlogix.
 ---
 
-# Tutorial: Configure MerchLogix for automatic user provisioning
+# Configure MerchLogix for automatic user provisioning
 
-The objective of this tutorial is to demonstrate the steps to be performed in MerchLogix and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to MerchLogix.
+The objective of this article is to demonstrate the steps to be performed in MerchLogix and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to MerchLogix.
 
 > [!NOTE]
-> This tutorial describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This article describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
 * A Microsoft Entra tenant
 * A MerchLogix tenant
@@ -60,7 +59,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in MerchLogix based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for MerchLogix, following the instructions provided in the [MerchLogix single sign-on tutorial](merchlogix-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features compliment each other.
+> You may also choose to enable SAML-based single sign-on for MerchLogix, following the instructions provided in the [MerchLogix single sign-on  article](merchlogix-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
 
 <a name='to-configure-automatic-user-provisioning-for-merchlogix-in-azure-ad'></a>
 
@@ -75,7 +74,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 4. Set the **Provisioning Mode** to **Automatic**.
 
-	![Screenshot of the MerchLogix - Prisioning section with the Provisioning option called out, the Provisioning Mode set to Automatic, and the Test Connection option called out.](./media/merchlogix-provisioning-tutorial/Merchlogix1.png)
+	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
 5. Under the **Admin Credentials** section:
 
@@ -110,6 +109,6 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

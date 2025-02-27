@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: conceptual
-ms.date: 11/21/2023
+ms.date: 12/16/2024
 ms.author: barclayn
 ms.reviewer: kexia
 ms.custom: it-pro
@@ -29,4 +29,4 @@ You can tell if the sign-in page your organization uses supports Microsoft accou
 
 ## Next steps
 
-[Customize your sign-in branding](~/fundamentals/add-custom-domain.md)
+[Customize your sign-in branding](~/fundamentals/add-custom-domain.yml)

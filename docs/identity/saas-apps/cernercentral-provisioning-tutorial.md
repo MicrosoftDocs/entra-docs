@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: User provisioning for Cerner Central'
+title: User provisioning for Cerner Central
 description: Learn how to configure Microsoft Entra ID to automatically provision users to a roster in Cerner Central.
 
 author: ArvindHarinder1
@@ -7,20 +7,20 @@ manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
+ms.topic: how-to
+ms.date: 03/25/2024
 ms.author: arvinh
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Cerner Central so that I can streamline the user management process and ensure that users have the appropriate access to Cerner Central.
 ---
 
-# Tutorial: Configure Cerner Central for automatic user provisioning
+# Configure Cerner Central for automatic user provisioning
 
-The objective of this tutorial is to show you the steps you need to perform in Cerner Central and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to a user roster in Cerner Central.
+The objective of this article is to show you the steps you need to perform in Cerner Central and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to a user roster in Cerner Central.
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following items:
+The scenario outlined in this article assumes that you already have the following items:
 
 * A Microsoft Entra tenant
 * A Cerner Central tenant
@@ -49,7 +49,7 @@ Before configuring and enabling the provisioning service, you should decide what
 This section guides you through connecting your Microsoft Entra ID to Cerner Central’s User Roster using Cerner's SCIM user account provisioning API, and configuring the provisioning service to create, update, and disable assigned user accounts in Cerner Central based on user and group assignment in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Cerner Central, following the instructions provided in the [Azure portal](https://portal.azure.com). Single sign-on can be configured independently of automatic provisioning, though these two features complement each other. For more information, see the [Cerner Central single sign-on tutorial](cernercentral-tutorial.md).
+> You may also choose to enable SAML-based single sign-on for Cerner Central, following the instructions provided in the [Azure portal](https://portal.azure.com). Single sign-on can be configured independently of automatic provisioning, though these two features complement each other. For more information, see the [Cerner Central single sign-on  article](cernercentral-tutorial.md).
 
 <a name='to-configure-automatic-user-account-provisioning-to-cerner-central-in-azure-ad'></a>
 
@@ -90,7 +90,7 @@ In order to provision user accounts to Cerner Central, you’ll need to request 
 
 1. Set the **Provisioning Mode** to **Automatic**.
 
-   ![Cerner Central Provisioning](./media/cernercentral-provisioning-tutorial/Cerner.PNG)
+	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
 
 1. Fill in the following fields under **Admin Credentials**:
 
@@ -127,6 +127,6 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md).

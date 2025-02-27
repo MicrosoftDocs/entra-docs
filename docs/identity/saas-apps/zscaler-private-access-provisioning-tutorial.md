@@ -1,31 +1,30 @@
 ---
-title: 'Tutorial: Configure Zscaler Private Access (ZPA) for automatic user provisioning with Microsoft Entra ID'
+title: Configure Zscaler Private Access (ZPA) for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Zscaler Private Access (ZPA).
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: thwimmer
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Zscaler Private Access so that I can streamline the user management process and ensure that users have the appropriate access to Zscaler Private Access.
 ---
 
-# Tutorial: Configure Zscaler Private Access (ZPA) for automatic user provisioning
+# Configure Zscaler Private Access (ZPA) for automatic user provisioning
 
-The objective of this tutorial is to demonstrate the steps to be performed in Zscaler Private Access (ZPA) and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Zscaler Private Access (ZPA).
+The objective of this article is to demonstrate the steps to be performed in Zscaler Private Access (ZPA) and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Zscaler Private Access (ZPA).
 
 > [!NOTE]
-> This tutorial describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This article describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
 * A Microsoft Entra tenant
 * [A Zscaler Private Access (ZPA) tenant](https://www.zscaler.com/pricing-and-plans#contact-us)
@@ -50,11 +49,11 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 	![Zscaler Private Access (ZPA) Admin Console](media/zscaler-private-access-provisioning-tutorial/idpconfig.png)
 
-2.	Verify to make sure that an IdP for **Single sign-on** is configured. If no IdP is setup, then add one by clicking the plus icon at the top right corner of the screen.
+2.	Verify to make sure that an IdP for **Single sign-on** is configured. If no IdP is set up, then add one by clicking the plus icon at the top right corner of the screen.
 
 	![Zscaler Private Access (ZPA) Add SCIM](media/zscaler-private-access-provisioning-tutorial/plusicon.png)
 
-3. Follow through the **Add IdP Configuration** wizard to add an IdP. Leave the **Single sign-on** field set to **User**. Provide a **Name** and select the **Domains** from the drop down list. Click on **Next** to navigate to the next window.
+3. Follow through the **Add IdP Configuration** wizard to add an IdP. Leave the **Single sign-on** field set to **User**. Provide a **Name** and select the **Domains** from the drop-down list. Click on **Next** to navigate to the next window.
 
 	![Zscaler Private Access (ZPA) Add IdP](media/zscaler-private-access-provisioning-tutorial/addidp.png)
 
@@ -100,7 +99,7 @@ Before configuring Zscaler Private Access (ZPA) for automatic user provisioning 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Zscaler Private Access (ZPA) based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Zscaler Private Access (ZPA) by following the instructions provided in the [Zscaler Private Access (ZPA) Single sign-on tutorial](./zscalerprivateaccess-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, although these two features complement each other.
+> You may also choose to enable SAML-based single sign-on for Zscaler Private Access (ZPA) by following the instructions provided in the [Zscaler Private Access (ZPA) Single sign-on  article](./zscalerprivateaccess-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, although these two features complement each other.
 
 > [!NOTE]
 > When users and groups are provisioned or de-provisioned we recommend to periodically restart provisioning to ensure that group memberships are properly updated. Doing a restart will force our service to re-evaluate all the groups and update the memberships.  
@@ -137,21 +136,30 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Zscaler Private Access (ZPA)**.
 
-	![Zscaler Private Access (ZPA) User Mappings](media/zscaler-private-access-provisioning-tutorial/usermappings.png)
-
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Zscaler Private Access (ZPA) in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Zscaler Private Access (ZPA) for update operations. Select the **Save** button to commit any changes.
 
-	![Zscaler Private Access (ZPA) User Attributes](media/zscaler-private-access-provisioning-tutorial/userattributes.png)
+   |Attribute|Type|Supported for filtering|Required by Zscaler Private Access|
+   |---|---|---|---|
+   |userName|String|&check;|&check;
+   |externalId|String||
+   |active|Boolean||
+   |emails[type eq "work"].value|String||  
+   |name.givenName|String||
+   |name.familyName|String||
+   |displayName|String||
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String||
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Zscaler Private Access (ZPA)**.
 
-	![Zscaler Private Access (ZPA) Group Mappings](media/zscaler-private-access-provisioning-tutorial/groupmappings.png)
-
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Zscaler Private Access (ZPA) in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the groups in Zscaler Private Access (ZPA) for update operations. Select the **Save** button to commit any changes.
 
-	![Zscaler Private Access (ZPA) Group Attributes](media/zscaler-private-access-provisioning-tutorial/groupattributes.png)
+   |Attribute|Type|Supported for filtering|Required by Zscaler Private Access|
+   |---|---|---|---|
+   |displayName|String|&check;|&check;
+   |members|Reference||
+   |externalId|String||
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for Zscaler Private Access (ZPA), change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -174,6 +182,6 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with GTNexus SSO System'
+title: Microsoft Entra integration with GTNexus SSO System
 description: Learn how to configure single sign-on between Microsoft Entra ID and GTNexus SSO System.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and GT Nexus Prod System so that I can control who has access to GT Nexus Prod System, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with GTNexus SSO System
+# Microsoft Entra integration with GTNexus SSO System
 
-In this tutorial, you learn how to integrate GTNexus SSO System with Microsoft Entra ID.
+In this article,  you learn how to integrate GTNexus SSO System with Microsoft Entra ID.
 Integrating GTNexus SSO System with Microsoft Entra ID provides you with the following benefits:
 
 * You can control in Microsoft Entra ID who has access to GTNexus SSO System.
@@ -35,7 +35,7 @@ To configure Microsoft Entra integration with GTNexus SSO System, you need the f
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * GTNexus SSO System supports **IDP** initiated SSO
 
@@ -103,7 +103,7 @@ To configure Microsoft Entra single sign-on with GTNexus SSO System, perform the
 	![image](common/idp-intiated.png)
 
 	> [!Note]
-	> If the **Identifier** and **Reply URL** values are not getting auto polulated, then fill in the values manually according to your requirement.
+	> If the **Identifier** and **Reply URL** values are not getting auto populated, then fill in the values manually according to your requirement.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
@@ -162,7 +162,7 @@ When you click the GTNexus SSO System tile in the Access Panel, you should be au
 
 ## Additional Resources
 
-- [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 

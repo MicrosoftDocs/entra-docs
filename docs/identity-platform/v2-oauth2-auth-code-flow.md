@@ -5,7 +5,7 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom:
-ms.date: 04/17/2023
+ms.date: 04/08/2024
 ms.reviewer: ludwignick
 ms.service: identity-platform
 
@@ -15,7 +15,7 @@ ms.topic: concept-article
 
 # Microsoft identity platform and OAuth 2.0 authorization code flow
 
-The OAuth 2.0 authorization code grant type, or _auth code flow_, enables a client application to obtain authorized access to protected resources like web APIs. The auth code flow requires a user-agent that supports redirection from the authorization server (the Microsoft identity platform) back to your application. For example, a web browser, desktop, or mobile application operated by a user to sign in to your app and access their data.
+The OAuth 2.0 authorization code grant type, or *auth code flow*, enables a client application to obtain authorized access to protected resources like web APIs. The auth code flow requires a user-agent that supports redirection from the authorization server (the Microsoft identity platform) back to your application. For example, a web browser, desktop, or mobile application operated by a user to sign in to your app and access their data.
 
 This article describes low-level protocol details required only when manually crafting and issuing raw HTTP requests to execute the flow, which we do **not** recommend. Instead, use a [Microsoft-built and supported authentication library](reference-v2-libraries.md) to get security tokens and call protected web APIs in your apps.
 
@@ -42,7 +42,7 @@ Redirect URIs for SPAs that use the auth code flow require special configuration
 - **Add a redirect URI** that supports auth code flow with PKCE and cross-origin resource sharing (CORS): Follow the steps in [Redirect URI: MSAL.js 2.0 with auth code flow](scenario-spa-app-registration.md#redirect-uri-msaljs-20-with-auth-code-flow).
 - **Update a redirect URI**: Set the redirect URI's `type` to `spa` by using the [application manifest editor](reference-app-manifest.md) in the Microsoft Entra admin center.
 
-The `spa` redirect type is backward-compatible with the implicit flow. Apps currently using the implicit flow to get tokens can move to the `spa` redirect URI type without issues and continue using the implicit flow.
+The `spa` redirect type is backward-compatible with the implicit flow. Apps currently using the implicit flow to get tokens can move to the `spa` redirect URI type without issues and continue using the implicit flow. Despite this backward compatibility, we recommend that you use the auth code flow with PKCE for SPAs.
 
 If you attempt to use the authorization code flow without setting up CORS for your redirect URI, you'll see this error in the console:
 
@@ -56,7 +56,7 @@ Applications can't use a `spa` redirect URI with non-SPA flows, for example, nat
 
 ## Request an authorization code
 
-The authorization code flow begins with the client directing the user to the `/authorize` endpoint. In this request, the client requests the `openid`, `offline_access`, and `https://graph.microsoft.com/mail.read` permissions from the user.
+The authorization code flow begins with the client directing the user to the `/authorize` endpoint. In this example request, the client requests the `openid`, `offline_access`, and `https://graph.microsoft.com/mail.read` permissions from the user.
 
 Some permissions are admin-restricted, for example, writing data to an organization's directory by using `Directory.ReadWrite.All`. If your application requests access to one of these permissions from an organizational user, the user receives an error message that says they're not authorized to consent to your app's permissions. To request access to admin-restricted scopes, you should request them directly from a Global Administrator. For more information, see [Admin-restricted permissions](./scopes-oidc.md#admin-restricted-permissions).
 
@@ -66,7 +66,7 @@ Unless specified otherwise, there are no default values for optional parameters.
 // Line breaks for legibility only
 
 https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
-client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &response_type=code
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 &response_mode=query
@@ -81,7 +81,7 @@ client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 | `tenant`     | required    | The `{tenant}` value in the path of the request can be used to control who can sign into the application. Valid values are `common`, `organizations`, `consumers`, and tenant identifiers. For guest scenarios where you sign a user from one tenant into another tenant, you *must* provide the tenant identifier to sign them into the resource tenant. For more information, see [Endpoints](./v2-protocols.md#endpoints). |
 | `client_id`  | required    | The **Application (client) ID** that the [Microsoft Entra admin center – App registrations](https://go.microsoft.com/fwlink/?linkid=2083908) experience assigned to your app.  |
 | `response_type` | required    | Must include `code` for the authorization code flow. Can also include `id_token` or `token` if using the [hybrid flow](#request-an-id-token-as-well-or-hybrid-flow). |
-| `redirect_uri` | required | The `redirect_uri` of your app, where authentication responses can be sent and received by your app. It must exactly match one of the redirect URIs you registered in the portal, except it must be URL-encoded. For native and mobile apps, use one of the recommended values: `https://login.microsoftonline.com/common/oauth2/nativeclient` for apps using embedded browsers or `http://localhost` for apps that use system browsers. |
+| `redirect_uri` | required | The `redirect_uri` of your app, where authentication responses can be sent and received by your app. It must exactly match one of the redirect URIs you registered in the Microsoft Entra admin center, except it must be URL-encoded. For native and mobile apps, use one of the recommended values: `https://login.microsoftonline.com/common/oauth2/nativeclient` for apps using embedded browsers or `http://localhost` for apps that use system browsers. |
 | `scope`  | required    | A space-separated list of [scopes](./permissions-consent-overview.md) that you want the user to consent to.  For the `/authorize` leg of the request, this parameter can cover multiple resources. This value allows your app to get consent for multiple web APIs you want to call. |
 | `response_mode`   | recommended | Specifies how the identity platform should return the requested token to your app. <br/><br/>Supported values:<br/><br/>- `query`: Default when requesting an access token. Provides the code as a query string parameter on your redirect URI. The `query` parameter isn't supported when requesting an ID token by using the implicit flow. <br/>- `fragment`: Default when requesting an ID token by using the implicit flow. Also supported if requesting *only* a code.<br/>- `form_post`: Executes a POST containing the code to your redirect URI. Supported when requesting a code.<br/><br/> |
 | `state`  | recommended | A value included in the request that is also returned in the token response. It can be a string of any content that you wish. A randomly generated unique value is typically used for [preventing cross-site request forgery attacks](https://tools.ietf.org/html/rfc6749#section-10.12). The value can also encode information about the user's state in the app before the authentication request occurred. For instance, it could encode the page or view they were on. |
@@ -125,7 +125,7 @@ error=access_denied
 | Parameter | Description  |
 |----------|------------------|
 | `error`  | An error code string that can be used to classify types of errors, and to react to errors. This part of the error is provided so that the app can react appropriately to the error, but doesn't explain in depth why an error occurred.  |
-| `error_description` | A specific error message that can help a developer identify the cause of an authentication error. This part of the error contains most of the useful information about _why_ the error occurred. |
+| `error_description` | A specific error message that can help a developer identify the cause of an authentication error. This part of the error contains most of the useful information about *why* the error occurred. |
 
 #### Error codes for authorization endpoint errors
 
@@ -155,7 +155,7 @@ The hybrid flow is the same as the authorization code flow described earlier but
 // Line breaks for legibility only
 
 https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
-client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &response_type=code%20id_token
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 &response_mode=fragment
@@ -209,7 +209,7 @@ POST /{tenant}/oauth2/v2.0/token HTTP/1.1
 Host: https://login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=204196ef-b7fd-461f-89b7-f778e1568c41
+client_id=11112222-bbbb-3333-cccc-4444dddd5555
 &scope=https%3A%2F%2Fgraph.microsoft.com%2Fmail.read
 &code=OAAABAAAAiL9Kn2Z27UubvWFPbm0gLWQJVzCTE9UkP3pSx1aXxUjq3n8b2JRLk4OxVXr...
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
@@ -232,11 +232,12 @@ client_id=204196ef-b7fd-461f-89b7-f778e1568c41
 ### Request an access token with a certificate credential
 
 ```http
-POST /{tenant}/oauth2/v2.0/token HTTP/1.1               // Line breaks for clarity
+// Line breaks for legibility only
+POST /{tenant}/oauth2/v2.0/token HTTP/1.1
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &scope=https%3A%2F%2Fgraph.microsoft.com%2Fmail.read
 &code=OAAABAAAAiL9Kn2Z27UubvWFPbm0gLWQJVzCTE9UkP3pSx1aXxUjq3n8b2JRLk4OxVXr...
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
@@ -271,7 +272,7 @@ This example shows a successful token response:
     "expires_in": 3599,
     "scope": "https%3A%2F%2Fgraph.microsoft.com%2Fmail.read",
     "refresh_token": "AwABAAAAvPM1KaPlrEqdFSBzjqfTGAMxZGUTdM0t4B4...",
-    "id_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIyZDRkMTFhMi1mODE0LTQ2YTctOD...",
+    "id_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIyZDRkMTFhMi1mODE0LTQ2YTctOD..."
 }
 ```
 
@@ -291,13 +292,13 @@ This example is an Error response:
 ```json
 {
   "error": "invalid_scope",
-  "error_description": "AADSTS70011: The provided value for the input parameter 'scope' is not valid. The scope https://foo.microsoft.com/mail.read is not valid.\r\nTrace ID: 255d1aef-8c98-452f-ac51-23d051240864\r\nCorrelation ID: fb3d2015-bc17-4bb9-bb85-30c5cf1aaaa7\r\nTimestamp: 2016-01-09 02:02:12Z",
+  "error_description": "AADSTS70011: The provided value for the input parameter 'scope' is not valid. The scope https://foo.microsoft.com/mail.read is not valid.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: 2016-01-09 02:02:12Z",
   "error_codes": [
     70011
   ],
   "timestamp": "2016-01-09 02:02:12Z",
-  "trace_id": "255d1aef-8c98-452f-ac51-23d051240864",
-  "correlation_id": "fb3d2015-bc17-4bb9-bb85-30c5cf1aaaa7"
+  "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333",
+  "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
 }
 ```
 
@@ -356,7 +357,7 @@ POST /{tenant}/oauth2/v2.0/token HTTP/1.1
 Host: https://login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded
 
-client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
+client_id=00001111-aaaa-2222-bbbb-3333cccc4444
 &scope=https%3A%2F%2Fgraph.microsoft.com%2Fmail.read
 &refresh_token=OAAABAAAAiL9Kn2Z27UubvWFPbm0gLWQJVzCTE9UkP3pSx1aXxUjq...
 &grant_type=refresh_token
@@ -383,7 +384,7 @@ This example shows a successful token response:
     "expires_in": 3599,
     "scope": "https%3A%2F%2Fgraph.microsoft.com%2Fmail.read",
     "refresh_token": "AwABAAAAvPM1KaPlrEqdFSBzjqfTGAMxZGUTdM0t4B4...",
-    "id_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIyZDRkMTFhMi1mODE0LTQ2YTctOD...",
+    "id_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiIyZDRkMTFhMi1mODE0LTQ2YTctOD..."
 }
 ```
 
@@ -403,13 +404,13 @@ This example shows a successful token response:
 ```json
 {
   "error": "invalid_scope",
-  "error_description": "AADSTS70011: The provided value for the input parameter 'scope' is not valid. The scope https://foo.microsoft.com/mail.read is not valid.\r\nTrace ID: 255d1aef-8c98-452f-ac51-23d051240864\r\nCorrelation ID: fb3d2015-bc17-4bb9-bb85-30c5cf1aaaa7\r\nTimestamp: 2016-01-09 02:02:12Z",
+  "error_description": "AADSTS70011: The provided value for the input parameter 'scope' is not valid. The scope https://foo.microsoft.com/mail.read is not valid.\r\nTrace ID: 0000aaaa-11bb-cccc-dd22-eeeeee333333\r\nCorrelation ID: aaaa0000-bb11-2222-33cc-444444dddddd\r\nTimestamp: 2016-01-09 02:02:12Z",
   "error_codes": [
     70011
   ],
   "timestamp": "2016-01-09 02:02:12Z",
-  "trace_id": "255d1aef-8c98-452f-ac51-23d051240864",
-  "correlation_id": "fb3d2015-bc17-4bb9-bb85-30c5cf1aaaa7"
+  "trace_id": "0000aaaa-11bb-cccc-dd22-eeeeee333333",
+  "correlation_id": "aaaa0000-bb11-2222-33cc-444444dddddd"
 }
 ```
 

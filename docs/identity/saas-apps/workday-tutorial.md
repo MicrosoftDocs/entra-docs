@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Workday'
+title: Microsoft Entra single sign-on (SSO) integration with Workday
 description: Learn how to configure single sign-on between Microsoft Entra ID and Workday.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 04/18/2023
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 04/19/2024
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Workday so that I can control who has access to Workday, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Workday
+# Microsoft Entra single sign-on (SSO) integration with Workday
 
-In this tutorial, you'll learn how to integrate Workday with Microsoft Entra ID. When you integrate Workday with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Workday with Microsoft Entra ID. When you integrate Workday with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Workday.
 * Enable your users to be automatically signed-in to Workday with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Workday supports **SP** initiated SSO.
 
@@ -93,14 +93,14 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	> [!NOTE]
 	> These values are not the real. Update these values with the actual Sign-on URL, Reply URL and Logout URL. Your reply URL must have a subdomain for example: www, wd2, wd3, wd3-impl, wd5, wd5-impl).
-    > Using something like `http://www.myworkday.com` works but `http://myworkday.com` does not. Contact [Workday Client support team](https://www.workday.com/en-us/partners-services/services/support.html) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > Using something like `http://www.myworkday.com` works but `http://myworkday.com` does not. Contact [Workday Client support team](https://www.workday.com/en-us/customer-experience/support.html) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. Your Workday application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**. Workday application expects **nameidentifier** to be mapped with **user.mail**, **UPN**, etc., so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
+1. Your Workday application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**. Workday application expects **nameidentifier** to be mapped with **user.mail**, **UPN**, and so on. so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
 
 	![Screenshot shows User Attributes with the Edit icon selected.](common/edit-attribute.png)
 
 	> [!NOTE]
-    > Here we have mapped the Name ID with UPN (user.userprincipalname) as default. You need to map the Name ID with actual User ID in your Workday account (your email, UPN, etc.) for successful working of SSO.
+    > Here we have mapped the Name ID with UPN (user.userprincipalname) as default. You need to map the Name ID with actual User ID in your Workday account (your email, UPN, and so on) for successful working of SSO.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -111,8 +111,6 @@ Follow these steps to enable Microsoft Entra SSO.
 	![Screenshot showing Certificate.](common/edit-certificate.png) 
 
 	a. Select **Sign SAML response and assertion** for **Signing Option**.
-
-    ![Screenshot showing SAML Signing Certificate.](./media/workday-tutorial/signing-option.png)
 
 	b. Click **Save**
 
@@ -212,12 +210,12 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1.  In the **Find Workers** page, select the user from the results.
 
-1. In the following page,select **Job > Worker Security** and the **Workday account** has to match with the Microsoft Entra ID as the **Name ID** value.
+1. In the following page, select **Job > Worker Security** and the **Workday account** has to match with the Microsoft Entra ID as the **Name ID** value.
 
     ![Screenshot showing Worker Security.](./media/workday-tutorial/worker-security.png)
 
 > [!NOTE]
-> For more information on how to create a workday test user, please contact [Workday Client support team](https://www.workday.com/en-us/partners-services/services/support.html).
+> For more information on how to create a workday test user, please contact [Workday Client support team](https://www.workday.com/en-us/customer-experience/support.html).
 
 ## Test SSO
 
@@ -229,6 +227,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Workday tile in the My Apps, you should be automatically signed in to the Workday for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Workday you can enforce Session Control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session Control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

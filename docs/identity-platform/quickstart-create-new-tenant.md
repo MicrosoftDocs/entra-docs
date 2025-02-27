@@ -5,7 +5,7 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: ryanwi
 ms.custom: fasttrack-edit, mode-other
-ms.date: 01/10/2024
+ms.date: 10/01/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
@@ -41,7 +41,6 @@ To build an environment for either work and school accounts or personal Microsof
 
 ### Use an existing Microsoft Entra tenant
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Many developers already have tenants through services or subscriptions that are tied to Microsoft Entra tenants, such as Microsoft 365 or Azure subscriptions.
 
@@ -77,7 +76,7 @@ You'll provide the following information to create your new tenant:
 
 ## Social and local accounts
 
-To begin building external facing applications that sign in social and local accounts, create a tenant with customer configurations. To begin, see [Create a tenant with customer configuration (preview)](../external-id/customers/quickstart-tenant-setup.md).
+To begin building external facing applications that sign in social and local accounts, create a tenant with external configurations. To begin, see [Create a tenant with external configuration](../external-id/customers/quickstart-tenant-setup.md).
 
 ## Next steps
 

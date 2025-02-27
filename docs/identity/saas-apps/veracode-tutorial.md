@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Veracode'
+title: Microsoft Entra single sign-on (SSO) integration with Veracode
 description: Learn how to configure single sign-on between Microsoft Entra ID and Veracode.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 05/23/2023
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Veracode so that I can control who has access to Veracode, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Veracode
+# Microsoft Entra single sign-on (SSO) integration with Veracode
 
-In this tutorial, you'll learn how to integrate Veracode with Microsoft Entra ID. When you integrate Veracode with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Veracode with Microsoft Entra ID. When you integrate Veracode with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Veracode.
 * Enable your users to be automatically signed-in to Veracode with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment. Veracode supports identity provider initiated SSO and just-in-time user provisioning.
+In this article,  you configure and test Microsoft Entra SSO in a test environment. Veracode supports identity provider initiated SSO and just-in-time user provisioning.
 
 ## Add Veracode from the gallery
 
@@ -70,7 +70,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. Again under the **Manage** tab, click on **Single sign-on**, then select **SAML**.
 1. On the **Set up single sign-on with SAML** page, select the pencil icon for **Basic SAML Configuration** to edit the settings.
 
-   ![Edit Basic SAML Configuration](common/edit-urls.png)
+   ![Screenshot shows to edit Basic SAML Configuration.](common/edit-urls.png)
 
 1. The Relay state field should be autopopulated with `https://web.analysiscenter.veracode.com/login/#/saml`. The rest of these fields will populate after setting up SAML within the Veracode Platform.
 
@@ -145,13 +145,11 @@ Notes:
 
     a.  For **Issuer**, paste the value of the **Microsoft Entra Identifier** that you've copied.
     
-    b. For **IdP Server URL**, paste the value of the **Logout URL** that you've copied.
+    b. For **Assertion Signing Certificate**, select **Choose File** to upload your downloaded certificate.
 
-    c. For **Assertion Signing Certificate**, select **Choose File** to upload your downloaded certificate.
+    c. Note the values of the three URLs (**SAML Assertion URL**, **SAML Audience URL**, **Relay state URL**).
 
-    d. Note the values of the three URLs (**SAML Assertion URL**, **SAML Audience URL**, **Relay state URL**).
-
-    e. Click **Save**. 
+    d. Click **Save**. 
     
 1. Take the values of the **SAML Assertion URL**, **SAML Audience URL** and **Relay state URL** and update them in the Microsoft Entra settings for the Veracode integration (follow the table below for proper conversions) NOTE: **Relay State** is NOT optional.
 
@@ -196,6 +194,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Veracode tile in the My Apps, you should be automatically signed in to the Veracode for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Veracode you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

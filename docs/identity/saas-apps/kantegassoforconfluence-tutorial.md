@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Kantega SSO for Confluence'
+title: Microsoft Entra SSO integration with Kantega SSO for Confluence
 description: Learn how to configure single sign-on between Microsoft Entra ID and Kantega SSO for Confluence.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Kantega SSO for Confluence so that I can control who has access to Kantega SSO for Confluence, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Kantega SSO for Confluence
+# Microsoft Entra SSO integration with Kantega SSO for Confluence
 
-In this tutorial, you'll learn how to integrate Kantega SSO for Confluence with Microsoft Entra ID. When you integrate Kantega SSO for Confluence with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Kantega SSO for Confluence with Microsoft Entra ID. When you integrate Kantega SSO for Confluence with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Kantega SSO for Confluence.
 * Enable your users to be automatically signed-in to Kantega SSO for Confluence with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with Kantega SSO for Confluence, you ne
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Kantega SSO for Confluence supports **SP and IDP** initiated SSO.
 
@@ -88,7 +88,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<server-base-url>/plugins/servlet/no.kantega.saml/sp/<uniqueid>/login`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-On URL. These values are received during the configuration of Confluence plugin, which is explained later in the tutorial.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-On URL. These values are received during the configuration of Confluence plugin, which is explained later in the article.
 
 6. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
@@ -152,9 +152,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	![Screenshot that shows the "Installed and ready to go" screen with the "Close" action selected.](./media/kantegassoforconfluence-tutorial/installation.png)
 
-1. Click **Manage**.
-
-	![Screenshot that shows the "Kantega Single Sign-on with Kerberos and S A M L" plugin with the "Manage" button selected.](./media/kantegassoforconfluence-tutorial/integration.png)
+1. In the **Kantega SSO for Confluence SAML Kerberos** page, select **Manage**.
 
 1. Click **Configure** to configure the new plugin.
 
@@ -164,13 +162,9 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	![Screenshot that shows the "USERS & SECURITY" tab with the "Kantega Single Sign-on" action selected.](./media/kantegassoforconfluence-tutorial/security.png)
 
-1. In the **SAML** section. Select **Microsoft Entra ID** from the **Add identity provider** dropdown.
+1. In the **SAML** section, select **Microsoft Entra ID** from the **Add identity provider** dropdown.
 
-	![Screenshot that shows the "S A M L" section with "Add Identity provider" and "Microsoft Entra ID" selected.](./media/kantegassoforconfluence-tutorial/azure.png)
-
-1. Select subscription level as **Basic**.
-
-	![Screenshot that shows the "Preparing Microsoft Entra ID" page with "Basic" selected.](./media/kantegassoforconfluence-tutorial/subscription.png)
+1. In the **Kantega Single Sign-on** page, select **Basic**.
 
 1. On the **App properties** section, perform following steps:
 
@@ -180,19 +174,15 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	b. Click **Next**.
 
-1. On the **Metadata import** section, perform following steps: 
+1. On the **Metadata import** section, select **Metadata file on my computer**.
 
-	![Screenshot that shows the "Metadata import" section with "Metadata file on my computer" selected.](./media/kantegassoforconfluence-tutorial/metadata.png)
-
-	a. Select **Metadata file on my computer**, and upload metadata file, which you have downloaded previously.
-
-	b. Click **Next**.
+1. Select **Browse file** to upload the metadata file that you previously downloaded, then select **Next**.
 
 1. On the **Name and SSO location** section, perform following steps:
 
 	![Screenshot that shows the "Name and S S O location" with the "Identity provider name" textbox highlighted, and the "Next" button selected.](./media/kantegassoforconfluence-tutorial/location.png)
 
-	a. Add Name of the Identity Provider in **Identity provider name** textbox (e.g Microsoft Entra ID).
+	a. Add Name of the Identity Provider in **Identity provider name** textbox (such as Microsoft Entra ID).
 
 	b. Click **Next**.
 
@@ -210,11 +200,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Click **Finish**.
 
-	![Screenshot of the "Summary" page with the "Finish" button selected.](./media/kantegassoforconfluence-tutorial/summary.png)
-
 1. On the **Known domains for Microsoft Entra ID** section, perform following steps: 
-
-	![Screenshot that shows the "Known domains for Microsoft Entra ID" page with the "Known domains" textbox highlighted and the "Save" button selected.](./media/kantegassoforconfluence-tutorial/domain.png)
 
 	a. Select **Known domains** from the left panel of the page.
 
@@ -266,6 +252,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the Kantega SSO for Confluence tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Kantega SSO for Confluence for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Kantega SSO for Confluence you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

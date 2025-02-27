@@ -6,7 +6,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 12/17/2024
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 
@@ -24,7 +24,7 @@ This article walks you through the installation process for the Microsoft Entra 
 
 For more information and an example, view the following video:
 
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWK5mR]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=f28ee688-8834-4d0b-a3e0-bc99a167e0ef]
 
 ## Group Managed Service Accounts
 A group Managed Service Account (gMSA) is a managed domain account that provides automatic password management, simplified service principal name (SPN) management, and the ability to delegate the management to other administrators. A gMSA also extends this functionality over multiple servers. Microsoft Entra Cloud Sync supports and recommends the use of a gMSA for running the agent. For more information, see [Group Managed Service Accounts](how-to-prerequisites.md#group-managed-service-accounts).
@@ -62,14 +62,14 @@ To use *password writeback* and enable the self-service password reset (SSPR) se
 
 ### Using PowerShell
 
-To use *password writeback* and enable the self-service password reset (SSPR) service to detect the cloud sync agent, use the `Set-AADCloudSyncPasswordWritebackConfiguration` cmdlet and the tenant’s global administrator credentials: 
+To use *password writeback* and enable the self-service password reset (SSPR) service to detect the cloud sync agent, use the `Set-AADCloudSyncPasswordWritebackConfiguration` cmdlet and the tenant’s Global Administrator credentials: 
 
   ```   
    Import-Module "C:\\Program Files\\Microsoft Azure AD Connect Provisioning Agent\\Microsoft.CloudSync.Powershell.dll" 
    Set-AADCloudSyncPasswordWritebackConfiguration -Enable $true -Credential $(Get-Credential)
   ```
 
-For more information about using password writeback with Microsoft Entra Cloud Sync, see [Tutorial: Enable cloud sync self-service password reset writeback to an on-premises environment (preview)](~/identity/authentication/tutorial-enable-cloud-sync-sspr-writeback.md).
+For more information about using password writeback with Microsoft Entra Cloud Sync, see [Tutorial: Enable cloud sync self-service password reset writeback to an on-premises environment ](~/identity/authentication/tutorial-enable-cloud-sync-sspr-writeback.md).
 
 ## Install an agent in the US government cloud
 

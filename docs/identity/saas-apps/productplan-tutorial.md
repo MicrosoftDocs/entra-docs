@@ -2,15 +2,15 @@
 title: Microsoft Entra SSO integration with ProductPlan
 description: Learn how to configure single sign-on between Microsoft Entra ID and ProductPlan.
 services: active-directory
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
-ms.date: 02/26/2024
-ms.author: jeedes
+ms.date: 05/31/2024
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ProductPlan so that I can control who has access to ProductPlan, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -18,7 +18,7 @@ ms.author: jeedes
 
 # Microsoft Entra SSO integration with ProductPlan
 
-In this tutorial, you'll learn how to integrate ProductPlan with Microsoft Entra ID. When you integrate ProductPlan with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate ProductPlan with Microsoft Entra ID. When you integrate ProductPlan with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to ProductPlan.
 * Enable your users to be automatically signed-in to ProductPlan with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To integrate Microsoft Entra ID with ProductPlan, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * ProductPlan supports only **SP and IDP** initiated SSO.
 * ProductPlan supports **Just In Time** user provisioning.
@@ -73,21 +73,25 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
    ![Screenshot shows how to edit Basic SAML Configuration.](common/edit-urls.png "Basic Configuration")
 
-1. On the **Basic SAML Configuration** section, perform the following steps:
+1. On the **Basic SAML Configuration** section, if you have **Service Provider metadata file**, perform the following steps:
 
-    a. In the **Identifier** text box, type a URL using the following pattern:
-    `https://app.productplan.com/users/auth/saml/metadata?sso_account_id=<ID>`
+	a. Click **Upload metadata file**.
 
-    b. In the **Reply URL** text box, type a URL using the following pattern:
-    `https://app.productplan.com/users/auth/saml/callback?sso_account_id=<ID>`
+    ![Screenshot shows how to upload metadata file.](common/upload-metadata.png "Upload Metadata")
+
+	b. Click on **folder logo** to select the metadata file and click **Upload**.
+
+	![Screenshot shows how to choose metadata file.](common/browse-upload-metadata.png "File")
+
+	c. After the metadata file is successfully uploaded, the values get auto populated in **Basic SAML Configuration** section.
+
+	> [!Note]
+	> If the values are not auto populated, then please fill in the values manually according to your requirement. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
     In the **Sign-on URL** text box, type the URL:
     `https://app.productplan.com`
-
-	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier and Reply URL. Contact [ProductPlan support team](mailto:sales@productplan.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. ProductPlan application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -140,7 +144,16 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 ## Configure ProductPlan SSO
 
-To configure single sign-on on **ProductPlan** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from Microsoft Entra admin center to [ProductPlan support team](mailto:sales@productplan.com). They set this setting to have the SAML SSO connection set properly on both sides.
+1. Log in to ProductPlan company site as an administrator.
+
+1. Go to **Account** > **Security** and perform the following steps:
+![Screenshot shows account setting for the configuration.](./media/productplan-tutorial/settings.png "Security")
+
+    1. Download **Federation Metadata XML** from Microsoft Entra admin center and paste the XML content into **IDP Metadata** textbox.
+
+    1. Download service provider metadata and upload the file in the **Basic SAML Configuration** section in Microsoft Entra admin center.
+    
+    1. Click **Save**.
 
 ### Create ProductPlan test user
 
@@ -162,6 +175,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 You can also use Microsoft My Apps to test the application in any mode. When you click the ProductPlan tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the ProductPlan for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure ProductPlan you can enforce session control, which protects exfiltration and infiltration of your organization's sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with DocuSign'
+title: Microsoft Entra SSO integration with DocuSign
 description: Learn how to configure single sign-on (SSO) between Microsoft Entra ID and DocuSign.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and DocuSign so that I can control who has access to DocuSign, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with DocuSign
+# Microsoft Entra SSO integration with DocuSign
 
-In this tutorial, you'll learn how to integrate DocuSign with Microsoft Entra ID. When you integrate DocuSign with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate DocuSign with Microsoft Entra ID. When you integrate DocuSign with Microsoft Entra ID, you can:
 
 * Use Microsoft Entra ID to control who has access to DocuSign.
 * Enable automatic sign-in to DocuSign for your users through their Microsoft Entra accounts.
@@ -36,7 +36,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you'll configure and test Microsoft Entra SSO in a test environment to verify that:
+In this article,  you'll configure and test Microsoft Entra SSO in a test environment to verify that:
 
 * DocuSign supports service provider **SP** initiated SSO.
 
@@ -52,8 +52,6 @@ To configure the integration of DocuSign into Microsoft Entra ID, you must add D
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
 1. In the **Add from the gallery** section, type **DocuSign** in the search box.
 1. Select **DocuSign** from the results panel and then add the app. Wait a few seconds while the app is added to your tenant.
-
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
 
 Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, as well as walk through the SSO configuration as well. You can learn more about O365 wizards [here](/microsoft-365/admin/misc/azure-ad-setup-guides?view=o365-worldwide&preserve-view=true).
 
@@ -95,10 +93,10 @@ To enable Microsoft Entra SSO in the Azure portal, follow these steps:
     
     | Reply URL |
     |-------------|
-    | Production : |
+    | Production: |
     | `https://<subdomain>.docusign.com/organizations/<OrganizationID>/saml2/login/<IDPID>` |
     | `https://<subdomain>.docusign.net/SAML/` |
-    | QA Instance :|
+    | QA Instance:|
     | `https://<SUBDOMAIN>.docusign.com/organizations/saml2` |
 
     c. In the **Sign on URL** textbox, type a URL using the following pattern:
@@ -106,7 +104,7 @@ To enable Microsoft Entra SSO in the Azure portal, follow these steps:
     `https://<subdomain>.docusign.com/organizations/<OrganizationID>/saml2/login/sp/<IDPID>`
 
 	> [!NOTE]
-	> These bracketed values are placeholders. Replace them with the values in the actual Identifier, Reply URL and Sign on URL. These details are explained in the "View SAML 2.0 Endpoints" section later in this tutorial.
+	> These bracketed values are placeholders. Replace them with the values in the actual Identifier, Reply URL and Sign on URL. These details are explained in the "View SAML 2.0 Endpoints" section later in this article.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)**. Select **Download** to download the certificate and save it on your computer.
 
@@ -178,20 +176,22 @@ In this section, you'll grant B.Simon access to DocuSign so that this user can u
 10. Configure your DNS provider with the **TXT Token** by following these steps:
 
 	a. Navigate to your domain's DNS record management page.
+
 	b. Add a new TXT record.
-	c. Name: @ or *
+
+	c. Name: @ or *.
+
 	d. Text: paste the **TXT Token** value, which you copied from the earlier step.
-	e. TTL: Default or 1 hour / 3600 seconds
 
+	e. TTL: Default or 1 hour / 3,600 seconds.
 
-11. On the domain solutions page, select **Identity Providers**.
+11. In the left navigation, click **Identity Providers** in **ACCESS MANAGEMENT**.
   
     ![Screenshot of Identity Providers option.](media/docusign-tutorial/identity-providers.png)
 
 12. In the **Identity Providers** section, select **ADD IDENTITY PROVIDER**.
 
     ![Screenshot of Add Identity Provider option.](media/docusign-tutorial/add-identity-provider-option.png)
-
 
 13. On the **Identity Provider Settings** page, follow these steps:
 
@@ -263,6 +263,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the DocuSign tile in the My Apps, you should be automatically signed in to the DocuSign for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure DocuSign you can enforce Session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

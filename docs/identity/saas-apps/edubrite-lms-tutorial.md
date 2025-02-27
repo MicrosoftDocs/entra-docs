@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with EduBrite LMS'
+title: Microsoft Entra SSO integration with EduBrite LMS
 description: Learn how to configure single sign-on between Microsoft Entra ID and EduBrite LMS.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and EduBrite LMS so that I can control who has access to EduBrite LMS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with EduBrite LMS
+# Microsoft Entra SSO integration with EduBrite LMS
 
-In this tutorial, you'll learn how to integrate EduBrite LMS with Microsoft Entra ID. When you integrate EduBrite LMS with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate EduBrite LMS with Microsoft Entra ID. When you integrate EduBrite LMS with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to EduBrite LMS.
 * Enable your users to be automatically signed-in to EduBrite LMS with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with EduBrite LMS, you need the followi
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * EduBrite LMS supports **SP and IDP** initiated SSO.
 
@@ -154,6 +154,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the EduBrite LMS tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the EduBrite LMS for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure EduBrite LMS you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

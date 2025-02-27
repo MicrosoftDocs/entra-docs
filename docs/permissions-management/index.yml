@@ -26,7 +26,9 @@ landingContent:
             url: overview.md
           - text: What's new
             url: whats-new-in-permissions-management.md
-  # Card
+          - text: Customer case study - Infosys
+            url: https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/Microsoft-Entra-Permissions-Management-Infosys-Case-Study.pdf?culture=en-us&country=us
+            # Card
   - title: Learn
     linkLists:
       - linkListType: tutorial
@@ -99,8 +101,8 @@ landingContent:
             url: faqs.md
           - text: Glossary  
             url: multi-cloud-glossary.md
-          - text: Operations reference  
-            url: ../architecture/permissions-manage-ops-guide-intro.md
+          - text: 2024 State of Multicloud Security Report
+            url: https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/2024-State-of-Multicloud-Security-Risk-Report.pdf
 # Card
   - title: Troubleshoot
     linkLists:

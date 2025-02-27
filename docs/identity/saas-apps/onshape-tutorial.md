@@ -1,24 +1,24 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Onshape'
+title: Microsoft Entra single sign-on (SSO) integration with Onshape
 description: Learn how to configure single sign-on between Microsoft Entra ID and Onshape.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Onshape so that I can control who has access to Onshape, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Onshape
+# Microsoft Entra single sign-on (SSO) integration with Onshape
 
-In this tutorial, you'll learn how to integrate Onshape with Microsoft Entra ID. When you integrate Onshape with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Onshape with Microsoft Entra ID. When you integrate Onshape with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Onshape.
 * Enable your users to be automatically signed-in to Onshape with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Onshape supports **SP and IDP** initiated SSO
 * Onshape supports **Just In Time** user provisioning
@@ -91,7 +91,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	| companyName | <COMPANY_NAME> |
 
     > [!NOTE]
-    > You _must_ change the value of the **companyName** attribute to the *domain prefix* of your Onshape enterprise. For example, if you access the Onshape application by using a URL like `https://acme.onshape.com`, your domain prefix is *acme*. The attribute value must be only the prefix, not the entire DNS name.
+    > You *must* change the value of the **companyName** attribute to the *domain prefix* of your Onshape enterprise. For example, if you access the Onshape application by using a URL like `https://acme.onshape.com`, your domain prefix is *acme*. The attribute value must be only the prefix, not the entire DNS name.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -155,6 +155,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 You can also use Microsoft My Apps to test the application in any mode. When you click the Onshape tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Onshape for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 
-## Next steps
+## Related content
 
 Once you configure Onshape you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

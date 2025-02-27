@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Useall'
+title: Microsoft Entra integration with Useall
 description: Learn how to configure single sign-on between Microsoft Entra ID and Useall.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Useall so that I can control who has access to Useall, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Useall
+# Microsoft Entra integration with Useall
 
-In this tutorial, you learn how to integrate Useall with Microsoft Entra ID.
+In this article,  you learn how to integrate Useall with Microsoft Entra ID.
 Integrating Useall with Microsoft Entra ID provides you with the following benefits:
 
 * You can control in Microsoft Entra ID who has access to Useall.
@@ -35,7 +35,7 @@ To configure Microsoft Entra integration with Useall, you need the following ite
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Useall supports **SP** initiated SSO
 
@@ -158,7 +158,7 @@ When you click the Useall tile in the Access Panel, you should be automatically 
 
 ## Additional Resources
 
-- [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 

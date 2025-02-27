@@ -1,7 +1,7 @@
 ---
 title: What's new in Microsoft Entra External ID
 description: New and updated documentation for the Microsoft Entra External ID.
-ms.date: 03/01/2024
+ms.date: 01/10/2025
 ms.service: entra-external-id
 ms.topic: whats-new
 
@@ -11,27 +11,29 @@ manager: CelesteDG
 # Customer intent: As a Microsoft Entra External ID user, I want to stay updated on the new documentation and significant updates, so that I can stay informed about the changes and improvements in the service.
 ---
 
-# Microsoft Entra External ID: What's new
+# What's new in docs: External ID in workforce tenants
 
-Welcome to what's new in Microsoft Entra External ID documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. To learn what's new with the Microsoft Entra ID service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
+Welcome to what's new in documentation for Microsoft Entra External ID in workforce tenants. This article lists new docs that were added and docs that were significantly updated in the last three months. To learn what's new with the Microsoft Entra ID service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
 
-## February 2024
-
-### Updated article
-
-- [Add Facebook as an identity provider for External Identities](facebook-federation.md) - Microsoft Graph PowerShell updates
-- [Microsoft Entra B2B collaboration code and PowerShell samples](code-samples.md) - Microsoft Graph PowerShell updates
-
-## January 2024
-
-### Updated article
-
-- [B2B collaboration overview](what-is-b2b.md) - Editorial updates
-
-## December 2023
+## December 2024
 
 ### Updated articles
 
-- [Add Google as an identity provider for B2B guest users](google-federation.md) - Microsoft Graph PowerShell updates
-- [B2B collaboration overview](what-is-b2b.md) - Screenshot updates
-- [B2B direct connect overview](b2b-direct-connect-overview.md) - Editorial updates
+- [Leave an organization where you have a guest account](leave-the-organization.md) - Added additional support options
+- [Pricing structure and billing model for Microsoft Entra External ID](external-identities-pricing.md) - Updated pricing information
+
+## October 2024
+
+### Updated articles
+
+- [B2B collaboration invitation redemption](redemption-experience.md) - Guest and contact object conflicts update
+- [Troubleshoot common issues with Microsoft Entra B2B collaboration](troubleshoot.md) - Guest and contact object conflicts update
+- [Microsoft Entra B2B in government and national clouds](b2b-government-national-clouds.md) - MSA support update
+- [Microsoft Entra B2B best practices](b2b-fundamentals.md) - Security considerations updates
+
+## September 2024
+
+### Updated articles
+
+- [Configure cross-tenant access settings for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.yml) - Microsoft SharePoint dependency update
+- [Leave an organization where you have a guest account](leave-the-organization.md) - Editorial updates

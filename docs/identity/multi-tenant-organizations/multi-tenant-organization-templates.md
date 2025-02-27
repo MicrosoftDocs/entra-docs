@@ -1,22 +1,18 @@
 ---
-title: Multitenant organization templates (Preview)
-description: Learn about multitenant organization templates in Microsoft Entra ID.
+title: Multitenant organization optional policy templates
+description: Learn about multitenant organization optional policy templates in Microsoft Entra ID.
 author: rolyon
 manager: amycolannino
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: conceptual
-ms.date: 08/22/2023
+ms.date: 04/23/2024
 ms.author: rolyon
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 
-# Multitenant organization templates (Preview)
-
-> [!IMPORTANT]
-> Multitenant organization is currently in PREVIEW.
-> See the [Product Terms](https://aka.ms/EntraPreviewsTermsOfUse) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+# Multitenant organization optional policy templates
 
 Administrators staying in control of their resources is a guiding principle for multitenant organization collaboration. Cross-tenant access settings are required for each tenant-to-tenant relationship. Tenant administrators explicitly configure cross-tenant access partner configurations and identity synchronization settings for partner tenants inside the multitenant organization.
 
@@ -24,29 +20,29 @@ To help apply homogenous cross-tenant access settings to partner tenants in the 
 
 ## Autogeneration of cross-tenant access settings
 
-Within a multitenant organization, each pair of tenants must have bi-directional [cross-tenant access settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.md), for both, partner configuration and identity synchronization. These settings provide the underlying policy framework for enabling trust and for sharing users and applications.
+Within a multitenant organization, each pair of tenants must have bidirectional [cross-tenant access settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml), for both, partner configuration and identity synchronization. These settings provide the underlying policy framework for enabling trust and for sharing users and applications.
 
-When your tenant joins a new multitenant organization, or when a partner tenant joins your existing multitenant organization, cross-tenant access settings to other partner tenants in the enlarged multitenant organization, if they don't already exist, are automatically generated in an unconfigured state. In an unconfigured state, these cross-tenant access settings pass through the [default settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.md#configure-default-settings).
+When your tenant joins a new multitenant organization, or when a partner tenant joins your existing multitenant organization, cross-tenant access settings to other partner tenants in the enlarged multitenant organization, if they don't already exist, are automatically generated in an unconfigured state. In an unconfigured state, these cross-tenant access settings pass through the [default settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml#configure-default-settings).
 
-Default cross-tenant access settings apply to all external tenants for which you haven't created organization-specific customized settings. Typically, these settings are configured to be nontrusting. For example, cross-tenant trusts for multi-factor authentication and compliant device claims might be disabled and user and group sharing in B2B direct connect or B2B collaboration might be disallowed.
+Default cross-tenant access settings apply to all external tenants for which you haven't created organization-specific customized settings. Typically, these settings are configured to be nontrusting. For example, cross-tenant trusts for multifactor authentication and compliant device claims might be disabled and user and group sharing in B2B direct connect or B2B collaboration might be disallowed.
 
-In multitenant organizations, on the other hand, cross-tenant access settings are typically expected to be trusting. For example, cross-tenant trusts for multi-factor authentication and compliant device claims might be enabled and user and group sharing in B2B direct connect or B2B collaboration might be allowed.
+In multitenant organizations, on the other hand, cross-tenant access settings are typically expected to be trusting. For example, cross-tenant trusts for multifactor authentication and compliant device claims might be enabled and user and group sharing in B2B direct connect or B2B collaboration might be allowed.
 
 While the autogeneration of cross-tenant access settings for multitenant organization partner tenants in and of itself doesn't change any authentication or authorization policy behavior, it allows your organization to easily customize the cross-tenant access settings for partner tenants in the multitenant organization on a per-tenant basis.
 
 ## Policy templates at multitenant organization formation
 
-As previously described, in multitenant organizations, cross-tenant access settings are typically expected to be trusting. For example, cross-tenant trusts for multi-factor authentication and compliant device claims might be enabled and user and group sharing in B2B direct connect or B2B collaboration might be allowed.
+As previously described, in multitenant organizations, cross-tenant access settings are typically expected to be trusting. For example, cross-tenant trusts for multifactor authentication and compliant device claims might be enabled and user and group sharing in B2B direct connect or B2B collaboration might be allowed.
 
 While autogeneration of cross-tenant access settings, per previous section, guarantees the existence of cross-tenant access settings for every multitenant organization partner tenant, further maintenance of the cross-tenant access settings for multitenant organization partner tenants is conducted individually, on a per-tenant basis.
 
 To reduce the workload for administrators at the time of multitenant organization formation, you can optionally use policy templates for preemptive configuration of cross-tenant access settings. These template settings are applied at the time of your tenant joins a multitenant organization to all external multitenant organization partner tenants as well as at the time of any partner tenant joins your existing multitenant organization to such new partner tenant.
 
-[Enablement or configuration of the optional policy templates](multi-tenant-organization-configure-templates.md), at the time of a partner tenant joins a multitenant organization, preemptively amend the corresponding [cross-tenant access settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.md), for both partner configuration and identity synchronization.
+[Enablement or configuration of the optional policy templates](multi-tenant-organization-configure-templates.md), at the time of a partner tenant joins a multitenant organization, preemptively amend the corresponding [cross-tenant access settings](~/external-id/cross-tenant-access-settings-b2b-collaboration.yml), for both partner configuration and identity synchronization.
 
 As an example, consider the actions of the administrators for an anticipated multitenant organization with three tenants, A, B, and C.
 
-- The administrators of all three tenants enable and configure their respective optional policy templates to enable cross-tenant trusts for multi-factor authentication and compliant device claims and to allow user and group sharing in B2B direct connect and B2B collaboration.
+- The administrators of all three tenants enable and configure their respective optional policy templates to enable cross-tenant trusts for multifactor authentication and compliant device claims and to allow user and group sharing in B2B direct connect and B2B collaboration.
 - Administrator A creates the multitenant organization and adds tenants B and C as pending tenants to the multitenant organization.
 - Administrator B joins the multitenant organization. Cross-tenant access settings in tenant A for partner tenant B are amended, according to tenant A policy template settings. Vice versa, cross-tenant access settings in tenant B for partner tenant A are amended, according to tenant B policy template settings.
 - Administrator C joins the multitenant organization. Cross-tenant access settings in tenants A (and B) for partner tenant C are amended, according to tenant A (and B) policy template settings. Similarly, cross-tenant access settings in tenant C for partner tenants A and B are amended, according to tenant C policy template settings.
@@ -93,10 +89,10 @@ For more information, see [Join or leave a multitenant organization in Microsoft
 
 ## Cross-tenant access settings at time of multitenant organization disassembly
 
-Currently, there's no equivalent policy template feature supporting the disassembly of a multitenant organization. When a partner tenant leaves the multitenant organization, each tenant administrator must re-examine and amend accordingly the cross-tenant access settings for the partner tenant that left the multitenant organization.
+Currently, there's no equivalent policy template feature supporting the disassembly of a multitenant organization. When a partner tenant leaves the multitenant organization, each tenant administrator must reexamine and amend accordingly the cross-tenant access settings for the partner tenant that left the multitenant organization.
 
-The partner tenant that left the multitenant organization must re-examine and amend accordingly the cross-tenant access settings for all former multitenant organization partner tenants as well as consider resetting the two policy templates for cross-tenant access settings.
+The partner tenant that left the multitenant organization must reexamine and amend accordingly the cross-tenant access settings for all former multitenant organization partner tenants as well as consider resetting the two policy templates for cross-tenant access settings.
 
 ## Next steps
 
-- [Configure multitenant organization templates using the Microsoft Graph API (Preview)](./multi-tenant-organization-configure-templates.md)
+- [Configure multitenant organization templates using the Microsoft Graph API](./multi-tenant-organization-configure-templates.md)

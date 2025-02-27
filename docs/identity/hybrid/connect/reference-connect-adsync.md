@@ -19,36 +19,36 @@ The following documentation provides reference information for the `ADSync.psm1`
 
 ## Add-ADSyncADDSConnectorAccount
 
- ### SYNOPSIS
+### SYNOPSIS
  This cmdlet resets the password for the service account and updates it both in Microsoft Entra ID and in the sync engine.
 
- ### SYNTAX
+### SYNTAX
 
-  #### byIdentifier
+#### byIdentifier
   ```powershell
      Add-ADSyncADDSConnectorAccount [-Identifier] <Guid> [-EACredential <PSCredential>] [<CommonParameters>]
   ```
 
- #### byName
+#### byName
  ```powershell
      Add-ADSyncADDSConnectorAccount [-Name] <String> [-EACredential <PSCredential>] [<CommonParameters>]
  ```
 
- ### DESCRIPTION
+### DESCRIPTION
  This cmdlet resets the password for the service account and updates it both in Microsoft Entra ID and in the sync engine.
 
- ### EXAMPLES
+### EXAMPLES
 
- #### Example 1
+#### Example 1
    ```powershell
      PS C:\> Add-ADSyncADDSConnectorAccount -Name contoso.com -EACredential $EAcredentials
    ```
 
  Resets the password for the service account connected to contoso.com.
 
- ### PARAMETERS
+### PARAMETERS
 
-   #### -EACredential
+#### -EACredential
    Credentials for an Enterprise Administrator account in the Active Directory.
 
    ```yaml
@@ -63,7 +63,7 @@ The following documentation provides reference information for the `ADSync.psm1`
      Accept wildcard characters: False
    ```
 
-  #### -Identifier
+#### -Identifier
   Identifier of the connector whose service account's password needs to be reset.
 
    ```yaml
@@ -78,7 +78,7 @@ The following documentation provides reference information for the `ADSync.psm1`
      Accept wildcard characters: False
    ```
 
-  #### -Name
+#### -Name
   Name of the connector.
 
    ```yaml
@@ -93,48 +93,48 @@ The following documentation provides reference information for the `ADSync.psm1`
      Accept wildcard characters: False
    ```
 
-  #### CommonParameters
+#### CommonParameters
   This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
- ### INPUTS
+### INPUTS
 
-  #### System.Guid
+#### System.Guid
 
-  #### System.String
+#### System.String
 
- ### OUTPUTS
+### OUTPUTS
 
-  #### System.Object
+#### System.Object
 
 
 
 ## Disable-ADSyncExportDeletionThreshold
 
- ### SYNOPSIS
+### SYNOPSIS
  Disables feature for deletion threshold at Export stage.
 
- ### SYNTAX
+### SYNTAX
    
  ```powershell
     Disable-ADSyncExportDeletionThreshold [[-AADCredential] <PSCredential>] [-WhatIf] [-Confirm]
      [<CommonParameters>]
  ```
 
- ### DESCRIPTION
+### DESCRIPTION
  Disables feature for deletion threshold at Export stage.
 
- ### EXAMPLES
+### EXAMPLES
 
- #### Example 1
+#### Example 1
  ```powershell
      PS C:\> Disable-ADSyncExportDeletionThreshold -AADCredential $aadCreds
  ```
 
  Uses the provided Microsoft Entra Credentials to disable the feature for export deletion threshold.
 
- ### PARAMETERS
+### PARAMETERS
 
-  #### -AADCredential
+#### -AADCredential
   The Microsoft Entra credential.
 
   ```yaml
@@ -149,7 +149,7 @@ The following documentation provides reference information for the `ADSync.psm1`
      Accept wildcard characters: False
   ```
 
-  #### -Confirm
+#### -Confirm
   Parameter switch for prompting for confirmation.
 
  ```yaml
@@ -164,7 +164,7 @@ The following documentation provides reference information for the `ADSync.psm1`
      Accept wildcard characters: False
  ```
 
-  #### -WhatIf
+#### -WhatIf
   Shows what would happen if the cmdlet runs.
   The cmdlet is not run.
 
@@ -180,44 +180,44 @@ The following documentation provides reference information for the `ADSync.psm1`
      Accept wildcard characters: False
  ```
 
- #### CommonParameters
+#### CommonParameters
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
- ### INPUTS
+### INPUTS
 
-  #### System.Management.Automation.PSCredential
+#### System.Management.Automation.PSCredential
 
- ### OUTPUTS
+### OUTPUTS
 
-  #### System.Object
+#### System.Object
 
 ## Enable-ADSyncExportDeletionThreshold
 
- ### SYNOPSIS
+### SYNOPSIS
  Enables Export Deletion threshold feature and sets a value for the threshold.
 
- ### SYNTAX
+### SYNTAX
 
  ```powershell
  Enable-ADSyncExportDeletionThreshold [-DeletionThreshold] <UInt32> [[-AADCredential] <PSCredential>] [-WhatIf]
  [-Confirm] [<CommonParameters>]
  ```
 
- ### DESCRIPTION
+### DESCRIPTION
  Enables Export Deletion threshold feature and sets a value for the threshold.
 
- ### EXAMPLES
+### EXAMPLES
 
- #### Example 1
+#### Example 1
  ```powershell
  PS C:\> Enable-ADSyncExportDeletionThreshold -DeletionThreshold 777 -AADCredential $aadCreds
  ```
 
  Enables export deletion threshold feature and sets the deletion threshold to 777.
 
- ### PARAMETERS
+### PARAMETERS
 
- #### -AADCredential
+#### -AADCredential
  The Microsoft Entra credential.
 
  ```yaml
@@ -232,7 +232,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -Confirm
+#### -Confirm
  Prompts you for confirmation before running the cmdlet.
 
  ```yaml
@@ -247,7 +247,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -DeletionThreshold
+#### -DeletionThreshold
  The deletion threshold.
 
  ```yaml
@@ -262,7 +262,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -WhatIf
+#### -WhatIf
  Shows what would happen if the cmdlet runs.
  The cmdlet is not run.
 
@@ -278,46 +278,46 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### CommonParameters
+#### CommonParameters
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
- ### INPUTS
+### INPUTS
 
- #### System.UInt32
+#### System.UInt32
  
- #### System.Management.Automation.PSCredential
+#### System.Management.Automation.PSCredential
 
- ### OUTPUTS
+### OUTPUTS
 
- #### System.Object
+#### System.Object
 
 
 ## Get-ADSyncAutoUpgrade
 
- ### SYNOPSIS
+### SYNOPSIS
  Gets the status of AutoUpgrade on your installation.
 
- ### SYNTAX
+### SYNTAX
 
  ```powershell
  Get-ADSyncAutoUpgrade [-Detail] [<CommonParameters>]
  ``` 
 
- ### DESCRIPTION
+### DESCRIPTION
  Gets the status of AutoUpgrade on your installation.
 
- ### EXAMPLES
+### EXAMPLES
 
- #### Example 1
+#### Example 1
  ```powershell
  PS C:\> Get-ADSyncAutoUpgrade -Detail
  ```
 
  Returns the AutoUpgrade status of the installation and shows the suspension reason if AutoUpgrade is suspended.
 
- ### PARAMETERS
+### PARAMETERS
 
- #### -Detail
+#### -Detail
  If the AutoUpgrade state is suspended, using this parameter shows the suspension reason.
 
  ```yaml
@@ -332,68 +332,68 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### CommonParameters
+#### CommonParameters
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
- ### INPUTS
+### INPUTS
 
- #### None
+#### None
 
- ### OUTPUTS
+### OUTPUTS
 
- #### System.Object
+#### System.Object
 
 ## Get-ADSyncCSObject
 
- ### SYNOPSIS
+### SYNOPSIS
  Gets the specified Connector Space object.
 
- ### SYNTAX
+### SYNTAX
  
- #### SearchByIdentifier
+#### SearchByIdentifier
  ```powershell
  Get-ADSyncCSObject [-Identifier] <Guid> [<CommonParameters>]
  ```
  
- #### SearchByConnectorIdentifierDistinguishedName
+#### SearchByConnectorIdentifierDistinguishedName
  ```powershell
  Get-ADSyncCSObject [-ConnectorIdentifier] <Guid> [-DistinguishedName] <String> [-SkipDNValidation] [-Transient]
  [<CommonParameters>]
  ```
 
- #### SearchByConnectorIdentifier
+#### SearchByConnectorIdentifier
  ```powershell
  Get-ADSyncCSObject [-ConnectorIdentifier] <Guid> [-Transient] [-StartIndex <Int32>] [-MaxResultCount <Int32>]
  [<CommonParameters>]
  ```
 
- #### SearchByConnectorNameDistinguishedName
+#### SearchByConnectorNameDistinguishedName
  ```powershell
  Get-ADSyncCSObject [-ConnectorName] <String> [-DistinguishedName] <String> [-SkipDNValidation] [-Transient]
  [<CommonParameters>]
  ```
 
- #### SearchByConnectorName
+#### SearchByConnectorName
  ```powershell
  Get-ADSyncCSObject [-ConnectorName] <String> [-Transient] [-StartIndex <Int32>] [-MaxResultCount <Int32>]
  [<CommonParameters>]
  ```
 
- ### DESCRIPTION
+### DESCRIPTION
  Gets the specified Connector Space object.
 
- ### EXAMPLES
+### EXAMPLES
 
- #### Example 1
+#### Example 1
  ```powershell
  PS C:\> Get-ADSyncCSObject -ConnectorName "contoso.com" -DistinguishedName "CN=fabrikam,CN=Users,DC=contoso,DC=com"
  ```
 
  Gets the CS object for the user fabrikam in the contoso.com domain.
 
- ### PARAMETERS
+### PARAMETERS
 
- #### -ConnectorIdentifier
+#### -ConnectorIdentifier
  The identifier of the connector.
 
  ```yaml
@@ -408,7 +408,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -ConnectorName
+#### -ConnectorName
  The name of the connector.
 
  ```yaml
@@ -423,7 +423,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -DistinguishedName
+#### -DistinguishedName
  The distinguished name of the connector space object.
 
  ```yaml
@@ -438,7 +438,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -Identifier
+#### -Identifier
  The identifier of the connector space object.
 
  ```yaml
@@ -453,7 +453,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -MaxResultCount
+#### -MaxResultCount
  The max count of the result set.
 
  ```yaml
@@ -468,7 +468,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -SkipDNValidation
+#### -SkipDNValidation
  Parameter Switch to Skip DN validation.
 
  ```yaml
@@ -483,7 +483,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -StartIndex
+#### -StartIndex
  The start index to return the count from.
 
  ```yaml
@@ -498,7 +498,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -Transient
+#### -Transient
  Parameter Switch to get Transient CS objects.
 
  ```yaml
@@ -513,43 +513,43 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### CommonParameters
+#### CommonParameters
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
- ### INPUTS
+### INPUTS
 
- #### None
+#### None
 
- ### OUTPUTS
+### OUTPUTS
 
- #### System.Object
+#### System.Object
 
 ## Get-ADSyncCSObjectLog
 
- ### SYNOPSIS
+### SYNOPSIS
  Gets connector space object log entries.
 
- ### SYNTAX
+### SYNTAX
 
  ```powershell
  Get-ADSyncCSObjectLog [-Identifier] <Guid> [-Count] <UInt32> [<CommonParameters>]
  ```
  
- ### DESCRIPTION
+### DESCRIPTION
  Gets connector space object log entries.
 
- ### EXAMPLES
+### EXAMPLES
 
- #### Example 1
+#### Example 1
  ```powershell
  PS C:\> Get-ADSyncCSObjectLog -Identifier "00000000-0000-0000-0000-000000000000" -Count 1
  ```
 
  Returns one object with the specified identifier.
 
- ### PARAMETERS
+### PARAMETERS
 
- #### -Count
+#### -Count
  Expected maximum number of connector space object log entries to retrieve.
 
  ```yaml
@@ -564,7 +564,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -Identifier
+#### -Identifier
  The connector space object identifier.
 
  ```yaml
@@ -579,80 +579,80 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### CommonParameters
+#### CommonParameters
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
- ### INPUTS
+### INPUTS
 
- #### None
+#### None
 
- ### OUTPUTS
+### OUTPUTS
 
- #### System.Object
+#### System.Object
 
 ## Get-ADSyncDatabaseConfiguration
 
- ### SYNOPSIS
+### SYNOPSIS
  Gets the configuration of the ADSync Database.
  
- ### SYNTAX
+### SYNTAX
 
  ```powershell
  Get-ADSyncDatabaseConfiguration [<CommonParameters>]
  ```
  
- ### DESCRIPTION
+### DESCRIPTION
  Gets the configuration of the ADSync Database.
 
- ### EXAMPLES
+### EXAMPLES
 
- #### Example 1
+#### Example 1
  ```powershell
  PS C:\> Get-ADSyncDatabaseConfiguration
  ```
 
  Gets the configuration of the ADSync Database.
 
- ### PARAMETERS
+### PARAMETERS
 
- #### CommonParameters
+#### CommonParameters
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
- ### INPUTS
+### INPUTS
 
- #### None
+#### None
 
- ### OUTPUTS
+### OUTPUTS
 
- #### System.Object
+#### System.Object
 
 
 ## Get-ADSyncExportDeletionThreshold
 
- ### SYNOPSIS
+### SYNOPSIS
  Gets the export deletion threshold from Microsoft Entra ID.
 
- ### SYNTAX
+### SYNTAX
 
  ```powershell
  Get-ADSyncExportDeletionThreshold [[-AADCredential] <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
  ```
 
- ### DESCRIPTION
+### DESCRIPTION
  Gets the export deletion threshold from Microsoft Entra ID.
 
- ### EXAMPLES
+### EXAMPLES
 
- #### Example 1
+#### Example 1
  ```powershell
  PS C:\> Get-ADSyncExportDeletionThreshold -AADCredential $aadCreds
  ```
 
  Gets the export deletion threshold from Microsoft Entra ID using the specified Microsoft Entra credentials.
 
- ### PARAMETERS
+### PARAMETERS
 
- #### -AADCredential
+#### -AADCredential
  The Microsoft Entra credential.
 
  ```yaml
@@ -667,7 +667,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -Confirm
+#### -Confirm
  Prompts you for confirmation before running the cmdlet.
 
  ```yaml
@@ -682,7 +682,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -WhatIf
+#### -WhatIf
  Shows what would happen if the cmdlet runs.
  The cmdlet is not run.
 
@@ -698,44 +698,44 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### CommonParameters
+#### CommonParameters
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
- ### INPUTS
+### INPUTS
 
- #### System.Management.Automation.PSCredential
+#### System.Management.Automation.PSCredential
 
- ### OUTPUTS
+### OUTPUTS
 
- #### System.Object
+#### System.Object
 
 
 ## Get-ADSyncMVObject
 
- ### SYNOPSIS
+### SYNOPSIS
  Gets a metaverse object.
 
- ### SYNTAX
+### SYNTAX
 
  ```powershell
  Get-ADSyncMVObject -Identifier <Guid> [<CommonParameters>]
  ```
 
- ### DESCRIPTION
+### DESCRIPTION
  Gets a metaverse object.
 
- ### EXAMPLES
+### EXAMPLES
 
- #### Example 1
+#### Example 1
  ```powershell
  PS C:\> Get-ADSyncMVObject -Identifier "00000000-0000-0000-0000-000000000000"
  ```
 
  Gets metaverse object with the specified identifier.
 
- ### PARAMETERS
+### PARAMETERS
 
- #### -Identifier
+#### -Identifier
  The identifier of the metaverse object.
 
  ```yaml
@@ -750,23 +750,23 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### CommonParameters
+#### CommonParameters
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
- ### INPUTS
+### INPUTS
 
- #### None
+#### None
 
- ### OUTPUTS
+### OUTPUTS
 
- #### System.Object
+#### System.Object
 
 ## Get-ADSyncRunProfileResult
 
- ### SYNOPSIS
+### SYNOPSIS
  Processes the inputs from the client and retrieves the run profile result(s).
 
- ### SYNTAX
+### SYNTAX
 
  ```powershell
  Get-ADSyncRunProfileResult [-RunHistoryId <Guid>] [-ConnectorId <Guid>] [-RunProfileId <Guid>]
@@ -774,21 +774,21 @@ The following documentation provides reference information for the `ADSync.psm1`
  [<CommonParameters>]
  ```
 
- ### DESCRIPTION
+### DESCRIPTION
  Processes the inputs from the client and retrieves the run profile result(s).
 
- ### EXAMPLES
+### EXAMPLES
 
- #### Example 1
+#### Example 1
  ```powershell
  PS C:\> Get-ADSyncRunProfileResult -ConnectorId "00000000-0000-0000-0000-000000000000"
  ```
 
  Retrieves all sync run profile results for the specified connector.
 
- ### PARAMETERS
+### PARAMETERS
 
- #### -Confirm
+#### -Confirm
  Prompts you for confirmation before running the cmdlet.
 
  ```yaml
@@ -803,7 +803,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -ConnectorId
+#### -ConnectorId
  The connector identifier.
 
  ```yaml
@@ -818,7 +818,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -NumberRequested
+#### -NumberRequested
  The maximum number of returns.
 
  ```yaml
@@ -833,7 +833,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -RunHistoryId
+#### -RunHistoryId
  The identifier of a specific run.
 
  ```yaml
@@ -848,7 +848,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -RunNumber
+#### -RunNumber
  The run number of a specific run.
 
  ```yaml
@@ -863,7 +863,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -RunProfileId
+#### -RunProfileId
  The run profile identifier of a specific run.
 
  ```yaml
@@ -878,7 +878,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -RunStepDetails
+#### -RunStepDetails
  Parameter switch for Run Step Details.
 
  ```yaml
@@ -893,7 +893,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -StepNumber
+#### -StepNumber
  Filters by step number.
 
  ```yaml
@@ -908,7 +908,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -WhatIf
+#### -WhatIf
  Shows what would happen if the cmdlet runs.
  The cmdlet is not run.
 
@@ -924,45 +924,45 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### CommonParameters
+#### CommonParameters
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
- ### INPUTS
+### INPUTS
 
- #### None
+#### None
 
- ### OUTPUTS
+### OUTPUTS
 
- #### System.Object
+#### System.Object
 
 
 ## Get-ADSyncRunStepResult
 
- ### SYNOPSIS
+### SYNOPSIS
  Gets the AD Sync Run Step Result.
 
- ### SYNTAX
+### SYNTAX
 
  ```powershell
  Get-ADSyncRunStepResult [-RunHistoryId <Guid>] [-StepHistoryId <Guid>] [-First] [-StepNumber <Int32>] [-WhatIf]
  [-Confirm] [<CommonParameters>]
  ```
 
- ### DESCRIPTION
+### DESCRIPTION
  Gets the AD Sync Run Step Result.
 
- ### EXAMPLES
+### EXAMPLES
 
- #### Example 1
+#### Example 1
  ```powershell
  PS C:\> Get-ADSyncRunStepResult -RunHistoryId "00000000-0000-0000-0000-000000000000"
  ```
 
  Gets the AD Sync Run Step Result of the specified run.
 
- ### PARAMETERS
+### PARAMETERS
 
- #### -Confirm
+#### -Confirm
  Prompts you for confirmation before running the cmdlet.
 
  ```yaml
@@ -977,7 +977,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -First
+#### -First
  Parameter switch for getting only the first object.
 
  ```yaml
@@ -992,7 +992,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -RunHistoryId
+#### -RunHistoryId
  The ID of a specific run.
 
  ```yaml
@@ -1007,7 +1007,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -StepHistoryId
+#### -StepHistoryId
  The ID of a specific run step.
 
  ```yaml
@@ -1022,7 +1022,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -StepNumber
+#### -StepNumber
  The step number.
 
  ```yaml
@@ -1037,7 +1037,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -WhatIf
+#### -WhatIf
  Shows what would happen if the cmdlet runs.
  The cmdlet is not run.
 
@@ -1053,89 +1053,89 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### CommonParameters
+#### CommonParameters
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
- ### INPUTS
+### INPUTS
 
- #### None
+#### None
 
- ### OUTPUTS
+### OUTPUTS
 
- #### System.Object
+#### System.Object
 
 
 
 ## Get-ADSyncScheduler
 
- ### SYNOPSIS
+### SYNOPSIS
  Gets the current synchronization cycle settings for the sync scheduler.
 
- ### SYNTAX
+### SYNTAX
 
  ```powershell
  Get-ADSyncScheduler [<CommonParameters>]
  ```
 
- ### DESCRIPTION
+### DESCRIPTION
  Gets the current synchronization cycle settings for the sync scheduler.
 
- ### EXAMPLES
+### EXAMPLES
 
- #### Example 1
+#### Example 1
  ```powershell
  PS C:\> Get-ADSyncScheduler
  ```
 
  Gets the current synchronization cycle settings for the sync scheduler.
 
- ### PARAMETERS
+### PARAMETERS
 
- #### CommonParameters
+#### CommonParameters
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
- ### INPUTS
+### INPUTS
 
- #### None
+#### None
 
- ### OUTPUTS
+### OUTPUTS
 
- #### System.Object
+#### System.Object
 
 ## Get-ADSyncSchedulerConnectorOverride
 
- ### SYNOPSIS
+### SYNOPSIS
  Gets the AD Sync Scheduler override values for the specified connector(s).
 
- ### SYNTAX
+### SYNTAX
 
  ```powershell
  Get-ADSyncSchedulerConnectorOverride [-ConnectorIdentifier <Guid>] [-ConnectorName <String>]
  [<CommonParameters>]
  ```
 
- ### DESCRIPTION
+### DESCRIPTION
  Gets the AD Sync Scheduler override values for the specified connector(s).
 
- ### EXAMPLES
+### EXAMPLES
 
- #### Example 1 
+#### Example 1 
  ```powershell
  PS C:\> Get-ADSyncSchedulerConnectorOverride -ConnectorName "contoso.com"
  ```
 
  Gets the AD Sync Scheduler override values for the 'contoso.com' connector.
 
- #### Example 2
+#### Example 2
  ```powershell
  PS C:\> Get-ADSyncSchedulerConnectorOverride
  ```
 
  Gets all AD Sync Scheduler override values.
 
- ### PARAMETERS
+### PARAMETERS
 
- #### -ConnectorIdentifier
+#### -ConnectorIdentifier
  The connector identifier.
 
  ```yaml
@@ -1150,7 +1150,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -ConnectorName
+#### -ConnectorName
  The connector name.
 
  ```yaml
@@ -1165,56 +1165,56 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### CommonParameters
+#### CommonParameters
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
- ### INPUTS
+### INPUTS
 
- #### None
+#### None
 
- ### OUTPUTS
+### OUTPUTS
 
- #### System.Object
+#### System.Object
 
 
 ## Invoke-ADSyncCSObjectPasswordHashSync
 
- ### SYNOPSIS
+### SYNOPSIS
  Synchronize password hash for the given AD connector space object.
 
- ### SYNTAX
+### SYNTAX
 
- #### SearchByDistinguishedName
+#### SearchByDistinguishedName
  ```powershell
  Invoke-ADSyncCSObjectPasswordHashSync [-ConnectorName] <String> [-DistinguishedName] <String>
  [<CommonParameters>]
  ```
 
- #### SearchByIdentifier
+#### SearchByIdentifier
  ```powershell
  Invoke-ADSyncCSObjectPasswordHashSync [-Identifier] <Guid> [<CommonParameters>]
  ```
 
- #### CSObject
+#### CSObject
  ```powershell
  Invoke-ADSyncCSObjectPasswordHashSync [-CsObject] <CsObject> [<CommonParameters>]
  ```
 
- ### DESCRIPTION
+### DESCRIPTION
  Synchronize password hash for the given AD connector space object.
 
- ### EXAMPLES
+### EXAMPLES
 
- #### Example 1
+#### Example 1
  ```powershell
  PS C:\> Invoke-ADSyncCSObjectPasswordHashSync -ConnectorName "contoso.com" -DistinguishedName "CN=fabrikam,CN=Users,DN=contoso,DN=com"
  ```
 
  Synchronizes password hash for the specified object.
 
- ### PARAMETERS
+### PARAMETERS
 
- #### -ConnectorName
+#### -ConnectorName
  The name of the connector.
 
  ```yaml
@@ -1229,7 +1229,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -CsObject
+#### -CsObject
  Connector space object.
 
  ```yaml
@@ -1244,7 +1244,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -DistinguishedName
+#### -DistinguishedName
  Distinguished Name of the connector space object.
 
  ```yaml
@@ -1259,7 +1259,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -Identifier
+#### -Identifier
  The identifier of the connector space object.
 
  ```yaml
@@ -1274,50 +1274,50 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### CommonParameters
+#### CommonParameters
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
- ### INPUTS
+### INPUTS
 
- #### None
+#### None
 
- ### OUTPUTS
+### OUTPUTS
 
- #### System.Object
+#### System.Object
 
 
 ## Invoke-ADSyncRunProfile
 
- ### SYNOPSIS
+### SYNOPSIS
  Invokes a specific run profile.
 
- ### SYNTAX
+### SYNTAX
 
- #### ConnectorName
+#### ConnectorName
  ```powershell
  Invoke-ADSyncRunProfile -ConnectorName <String> -RunProfileName <String> [-Resume] [<CommonParameters>]
  ```
 
- #### ConnectorIdentifier
+#### ConnectorIdentifier
  ```powershell
  Invoke-ADSyncRunProfile -ConnectorIdentifier <Guid> -RunProfileName <String> [-Resume] [<CommonParameters>]
  ```
 
- ### DESCRIPTION
+### DESCRIPTION
  Invokes a specific run profile.
 
- ### EXAMPLES
+### EXAMPLES
 
- #### Example 1
+#### Example 1
  ```powershell
  PS C:\> Invoke-ADSyncRunProfile -ConnectorName "contoso.com" -RunProfileName Export
  ```
 
  Invokes an export on the 'contoso.com' connector.
 
- ### PARAMETERS
+### PARAMETERS
 
- #### -ConnectorIdentifier
+#### -ConnectorIdentifier
  Identifier of the Connector.
 
  ```yaml
@@ -1332,7 +1332,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -ConnectorName
+#### -ConnectorName
  Name of the Connector.
 
  ```yaml
@@ -1347,7 +1347,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -Resume
+#### -Resume
  Parameter switch to attempt to resume a previously stalled/half-finished RunProfile.
 
  ```yaml
@@ -1362,7 +1362,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -RunProfileName
+#### -RunProfileName
  Name of the run profile to invoke on the selected Connector.
 
  ```yaml
@@ -1377,53 +1377,53 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### CommonParameters
+#### CommonParameters
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
- ### INPUTS
+### INPUTS
 
- #### System.String
+#### System.String
 
- #### System.Guid
+#### System.Guid
 
- ### OUTPUTS
+### OUTPUTS
 
- #### System.Object
+#### System.Object
 
 
 ## Remove-ADSyncAADServiceAccount
 
- ### SYNOPSIS
+### SYNOPSIS
  Deletes an/all existing Microsoft Entra service account(s) in the Microsoft Entra tenant (associated with the specified credentials).
 
- ### SYNTAX
+### SYNTAX
 
- #### ServiceAccount
+#### ServiceAccount
  ```powershell
  Remove-ADSyncAADServiceAccount [-AADCredential] <PSCredential> [-Name] <String> [-WhatIf] [-Confirm]
  [<CommonParameters>]
  ```
 
- #### ServicePrincipal
+#### ServicePrincipal
  ```powershell
  Remove-ADSyncAADServiceAccount [-ServicePrincipal] [-WhatIf] [-Confirm] [<CommonParameters>]
  ```
 
- ### DESCRIPTION
+### DESCRIPTION
  Deletes an/all existing Microsoft Entra service account(s) in the Microsoft Entra tenant (associated with the specified credentials).
 
- ### EXAMPLES
+### EXAMPLES
 
- #### Example 1
+#### Example 1
  ```powershell
  PS C:\> Remove-ADSyncAADServiceAccount -AADCredential $aadcreds -Name contoso.com
  ```
 
  Deletes all existing Microsoft Entra service accounts in contoso.com.
 
- ### PARAMETERS
+### PARAMETERS
 
- #### -AADCredential
+#### -AADCredential
  The Microsoft Entra credential.
 
  ```yaml
@@ -1438,7 +1438,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -Confirm
+#### -Confirm
  Prompts you for confirmation before running the cmdlet.
 
  ```yaml
@@ -1453,7 +1453,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -Name
+#### -Name
  The name of the account.
 
  ```yaml
@@ -1468,7 +1468,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -ServicePrincipal
+#### -ServicePrincipal
  The service principal of the account.
 
  ```yaml
@@ -1483,7 +1483,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -WhatIf
+#### -WhatIf
  Shows what would happen if the cmdlet runs.
  The cmdlet is not run.
 
@@ -1499,49 +1499,49 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### CommonParameters
+#### CommonParameters
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
- ### INPUTS
+### INPUTS
 
- #### System.Management.Automation.PSCredential
+#### System.Management.Automation.PSCredential
 
- #### System.String
+#### System.String
 
- #### System.Management.Automation.SwitchParameter
+#### System.Management.Automation.SwitchParameter
 
- ### OUTPUTS
+### OUTPUTS
 
- #### System.Object
+#### System.Object
 
 
 ## Set-ADSyncAutoUpgrade
 
- ### SYNOPSIS
+### SYNOPSIS
  Changes the AutoUpgrade state on your installation between Enabled and Disabled.
 
- ### SYNTAX
+### SYNTAX
 
  ```powershell
  Set-ADSyncAutoUpgrade [-AutoUpgradeState] <AutoUpgradeConfigurationState> [[-SuspensionReason] <String>]
  [<CommonParameters>]
  ```
 
- ### DESCRIPTION
+### DESCRIPTION
  Sets the AutoUpgrade state on your installation. This  cmdlet should only be used to change AutoUpgrade state between Enabled and Disabled. Only the system should set the state to Suspended.
 
- ### EXAMPLES
+### EXAMPLES
 
- #### Example 1
+#### Example 1
  ```powershell
  PS C:\> Set-ADSyncAutoUpgrade -AutoUpgradeState Enabled
  ```
 
  Sets the AutoUpgrade state to Enabled.
 
- ### PARAMETERS
+### PARAMETERS
 
- #### -AutoUpgradeState
+#### -AutoUpgradeState
  The AtuoUpgrade state. Accepted values: Suspended, Enabled, Disabled.
 
  ```yaml
@@ -1557,7 +1557,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -SuspensionReason
+#### -SuspensionReason
  The suspension reason. Only the system should set the AutoUpgrade state to suspended.
 
  ```yaml
@@ -1572,24 +1572,24 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### CommonParameters
+#### CommonParameters
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
- ### INPUTS
+### INPUTS
 
- #### None
+#### None
 
- ### OUTPUTS
+### OUTPUTS
 
- #### System.Object
+#### System.Object
 
 
 ## Set-ADSyncScheduler
 
- ### SYNOPSIS
+### SYNOPSIS
  Sets the current synchronization cycle settings for the sync scheduler.
 
- ### SYNTAX
+### SYNTAX
 
  ```powershell
  Set-ADSyncScheduler [[-CustomizedSyncCycleInterval] <TimeSpan>] [[-SyncCycleEnabled] <Boolean>]
@@ -1597,21 +1597,21 @@ The following documentation provides reference information for the `ADSync.psm1`
  [[-MaintenanceEnabled] <Boolean>] [[-SchedulerSuspended] <Boolean>] [-Force] [<CommonParameters>]
  ```
 
- ### DESCRIPTION
+### DESCRIPTION
  Sets the current synchronization cycle settings for the sync scheduler.
 
- ### EXAMPLES
+### EXAMPLES
 
- #### Example 1
+#### Example 1
  ```powershell
  PS C:\> Set-ADSyncScheduler -SyncCycleEnabled $true
  ```
 
  Sets the current synchronization cycle setting for SyncCycleEnabled to True.
  
- ### PARAMETERS
+### PARAMETERS
 
- #### -CustomizedSyncCycleInterval
+#### -CustomizedSyncCycleInterval
  Please specify the timespan value for custom sync interval you want to set.
  If you want to run on lowest allowed setting, please set this parameter to null.
 
@@ -1627,7 +1627,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -Force
+#### -Force
  Parameter switch for forcing the setting of a value.
 
  ```yaml
@@ -1642,7 +1642,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -MaintenanceEnabled
+#### -MaintenanceEnabled
  Parameter for setting MaintenanceEnabled.
 
  ```yaml
@@ -1657,7 +1657,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -NextSyncCyclePolicyType
+#### -NextSyncCyclePolicyType
  Parameter for setting NextSyncCyclePolicyType. Accepted values: Unspecified, Delta, Initial.
 
  ```yaml
@@ -1673,7 +1673,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -PurgeRunHistoryInterval
+#### -PurgeRunHistoryInterval
  Parameter for setting PurgeRunHistoryInterval.
 
  ```yaml
@@ -1688,7 +1688,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -SchedulerSuspended
+#### -SchedulerSuspended
  Parameter for setting SchedulerSuspended.
 
  ```yaml
@@ -1703,7 +1703,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -SyncCycleEnabled
+#### -SyncCycleEnabled
  Parameter for setting SyncCycleEnabled.
 
  ```yaml
@@ -1718,49 +1718,49 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### CommonParameters
+#### CommonParameters
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
- ### INPUTS
+### INPUTS
 
- #### System.Nullable`1[[System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+#### System.Nullable`1[[System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
 
- #### System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+#### System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
 
- #### System.Nullable`1[[Microsoft.IdentityManagement.PowerShell.ObjectModel.SynchronizationPolicyType, Microsoft.IdentityManagement.PowerShell.ObjectModel, Version=1.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35]]
+#### System.Nullable`1[[Microsoft.IdentityManagement.PowerShell.ObjectModel.SynchronizationPolicyType, Microsoft.IdentityManagement.PowerShell.ObjectModel, Version=1.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35]]
 
- #### System.Management.Automation.SwitchParameter
+#### System.Management.Automation.SwitchParameter
 
- ### OUTPUTS
+### OUTPUTS
 
- #### System.Object
+#### System.Object
 
 
 ## Set-ADSyncSchedulerConnectorOverride
 
- ### SYNOPSIS
+### SYNOPSIS
  Sets the current synchronization cycle settings for the sync scheduler.
 
- ### SYNTAX
+### SYNTAX
 
- #### ConnectorIdentifier
+#### ConnectorIdentifier
  ```powershell
  Set-ADSyncSchedulerConnectorOverride -ConnectorIdentifier <Guid> [-FullImportRequired <Boolean>]
  [-FullSyncRequired <Boolean>] [<CommonParameters>]
  ```
 
- #### ConnectorName
+#### ConnectorName
  ```powershell
  Set-ADSyncSchedulerConnectorOverride -ConnectorName <String> [-FullImportRequired <Boolean>]
  [-FullSyncRequired <Boolean>] [<CommonParameters>]
  ```
 
- ### DESCRIPTION
+### DESCRIPTION
  Sets the current synchronization cycle settings for the sync scheduler.
 
- ### EXAMPLES
+### EXAMPLES
 
- #### Example 1
+#### Example 1
  ```powershell
  PS C:\> Set-ADSyncSchedulerConnectorOverride -Connectorname "contoso.com" -FullImportRequired $true
  -FullSyncRequired $false
@@ -1768,9 +1768,9 @@ The following documentation provides reference information for the `ADSync.psm1`
 
  Sets the synchronization cycle settings for the 'contoso.com' connector to require full import and to not require full sync.
 
- ### PARAMETERS
+### PARAMETERS
 
- #### -ConnectorIdentifier
+#### -ConnectorIdentifier
  The connector identifier.
 
  ```yaml
@@ -1785,7 +1785,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -ConnectorName
+#### -ConnectorName
  The connector name.
 
  ```yaml
@@ -1800,7 +1800,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -FullImportRequired
+#### -FullImportRequired
  Set as true to require full import on the next cycle.
 
  ```yaml
@@ -1815,7 +1815,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -FullSyncRequired
+#### -FullSyncRequired
  Set as true to require full sync on the next cycle.
 
  ```yaml
@@ -1830,54 +1830,54 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### CommonParameters
+#### CommonParameters
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
- ### INPUTS
+### INPUTS
 
- #### System.Guid
+#### System.Guid
 
- #### System.String
+#### System.String
 
- #### System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+#### System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
 
- ### OUTPUTS
+### OUTPUTS
 
- #### System.Object
+#### System.Object
 
 
 ## Start-ADSyncPurgeRunHistory
 
- ### SYNOPSIS
+### SYNOPSIS
  Cmdlet to purge run history older than specified timespan.
 
- ### SYNTAX
+### SYNTAX
 
- #### online
+#### online
  ```powershell
  Start-ADSyncPurgeRunHistory [[-PurgeRunHistoryInterval]  <TimeSpan>] [<CommonParameters>]
  ```
 
- #### offline
+#### offline
  ```powershell
  Start-ADSyncPurgeRunHistory [-Offline] [<CommonParameters>]
  ```
 
- ### DESCRIPTION
+### DESCRIPTION
  Cmdlet to purge run history older than specified timespan.
 
- ### EXAMPLES
+### EXAMPLES
 
- #### Example 1
+#### Example 1
  ```powershell
  PS C:\> Start-ADSyncPurgeRunHistory -PurgeRunHistoryInterval (New-Timespan -Hours 5)
  ```
 
  Purges all run history older than 5 hours.
 
- ### PARAMETERS
+### PARAMETERS
 
- #### -Offline
+#### -Offline
  Purges all run history from the database while the service is offline.
 
  ```yaml
@@ -1892,7 +1892,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -PurgeRunHistoryInterval
+#### -PurgeRunHistoryInterval
  Interval for which history to preserve.
 
  ```yaml
@@ -1907,44 +1907,44 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### CommonParameters
+#### CommonParameters
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
- ### INPUTS
+### INPUTS
 
- #### System.TimeSpan
+#### System.TimeSpan
 
- ### OUTPUTS
+### OUTPUTS
 
- #### System.Object
+#### System.Object
 
 ## Start-ADSyncSyncCycle
 
- ### SYNOPSIS
+### SYNOPSIS
  Triggers a synchronization cycle.
 
- ### SYNTAX
+### SYNTAX
 
  ```powershell
  Start-ADSyncSyncCycle [[-PolicyType] <SynchronizationPolicyType>] [[-InteractiveMode] <Boolean>]
  [<CommonParameters>]
  ```
 
- ### DESCRIPTION
+### DESCRIPTION
  Triggers a synchronization cycle.
 
- ### EXAMPLES
+### EXAMPLES
 
- #### Example 1
+#### Example 1
  ```powershell
  PS C:\> Start-ADSyncSyncCycle -PolicyType Initial
  ```
 
  Triggers a synchronization cycle with an Initial policy type.
 
- ### PARAMETERS
+### PARAMETERS
 
- #### -InteractiveMode
+#### -InteractiveMode
  Differentiates between interactive (command line) mode and script/code mode (calls from other code).
 
  ```yaml
@@ -1959,7 +1959,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -PolicyType
+#### -PolicyType
  The policy type to run. Accepted values: Unspecified, Delta, Initial.
 
  ```yaml
@@ -1975,46 +1975,46 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### CommonParameters
+#### CommonParameters
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
- ### INPUTS
+### INPUTS
 
- #### System.Nullable`1[[Microsoft.IdentityManagement.PowerShell.ObjectModel.SynchronizationPolicyType, Microsoft.IdentityManagement.PowerShell.ObjectModel, Version=1.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35]]
+#### System.Nullable`1[[Microsoft.IdentityManagement.PowerShell.ObjectModel.SynchronizationPolicyType, Microsoft.IdentityManagement.PowerShell.ObjectModel, Version=1.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35]]
 
- #### System.Boolean
+#### System.Boolean
 
- ### OUTPUTS
+### OUTPUTS
 
- #### System.Object
+#### System.Object
 
 
 ## Stop-ADSyncRunProfile
 
- ### SYNOPSIS
+### SYNOPSIS
  Finds and stops all or specified busy connectors.
 
- ### SYNTAX
+### SYNTAX
 
  ```powershell
  Stop-ADSyncRunProfile [[-ConnectorName] <String>] [<CommonParameters>]
  ```
 
- ### DESCRIPTION
+### DESCRIPTION
  Finds and stops all or specified busy connectors.
 
- ### EXAMPLES
+### EXAMPLES
 
- #### Example 1
+#### Example 1
  ```powershell
  PS C:\> Stop-ADSyncRunProfile -ConnectorName "contoso.com"
  ```
 
  Stops any running synchronization on 'contoso.com'.
 
- ### PARAMETERS
+### PARAMETERS
 
- #### -ConnectorName
+#### -ConnectorName
  Name of the Connector.
  If this is not given, then all busy connectors will be stopped.
 
@@ -2030,92 +2030,92 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### CommonParameters
+#### CommonParameters
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
- ### INPUTS
+### INPUTS
 
- #### None
+#### None
 
- ### OUTPUTS
+### OUTPUTS
 
- #### System.Object
+#### System.Object
 
 
 ## Stop-ADSyncSyncCycle
 
- ### SYNOPSIS
+### SYNOPSIS
  Signals the server to stop the currently running sync cycle.
 
- ### SYNTAX
+### SYNTAX
 
  ```powershell
  Stop-ADSyncSyncCycle [<CommonParameters>]
  ```
 
- ### DESCRIPTION
+### DESCRIPTION
  Signals the server to stop the currently running sync cycle.
 
- ### EXAMPLES
+### EXAMPLES
 
- #### Example 1
+#### Example 1
  ```powershell
  PS C:\> Stop-ADSyncSyncCycle
  ```
 
  Signals the server to stop the currently running sync cycle.
 
- ### PARAMETERS
+### PARAMETERS
 
- #### CommonParameters
+#### CommonParameters
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
- ### INPUTS
+### INPUTS
 
- #### None
+#### None
 
- ### OUTPUTS
+### OUTPUTS
 
- #### System.Object
+#### System.Object
 
 
 ## Sync-ADSyncCSObject
 
- ### SYNOPSIS
+### SYNOPSIS
  Runs sync preview on connector space object.
 
- ### SYNTAX
+### SYNTAX
 
- #### ConnectorName_ObjectDN
+#### ConnectorName_ObjectDN
  ```powershell
  Sync-ADSyncCSObject -ConnectorName <String> -DistinguishedName <String> [-Commit] [<CommonParameters>]
  ```
 
- #### ConnectorIdentifier_ObjectDN
+#### ConnectorIdentifier_ObjectDN
  ```powershell
  Sync-ADSyncCSObject -ConnectorIdentifier <Guid> -DistinguishedName <String> [-Commit] [<CommonParameters>]
  ```
 
- #### ObjectIdentifier
+#### ObjectIdentifier
  ```powershell
  Sync-ADSyncCSObject -Identifier <Guid> [-Commit] [<CommonParameters>]
  ```
 
- ### DESCRIPTION
+### DESCRIPTION
  Runs sync preview on connector space object.
 
- ### EXAMPLES
+### EXAMPLES
 
- #### Example 1
+#### Example 1
  ```powershell
  PS C:\> Sync-ADSyncCSObject -ConnectorName "contoso.com" -DistinguishedName "CN=fabrikam,CN=Users,DC=contoso,DC=com"
  ```
 
  Returns a sync preview for the specified object.
 
- ### PARAMETERS
+### PARAMETERS
 
- #### -Commit
+#### -Commit
  Parameter Switch for commit.
 
  ```yaml
@@ -2130,7 +2130,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -ConnectorIdentifier
+#### -ConnectorIdentifier
  The identifier of the connector.
 
  ```yaml
@@ -2145,7 +2145,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -ConnectorName
+#### -ConnectorName
  The name of the connector.
 
  ```yaml
@@ -2160,7 +2160,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -DistinguishedName
+#### -DistinguishedName
  Distinguished Name of the connector space object.
 
  ```yaml
@@ -2175,7 +2175,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -Identifier
+#### -Identifier
  The identifier of the connector space object.
 
  ```yaml
@@ -2190,52 +2190,52 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### CommonParameters
+#### CommonParameters
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
- ### INPUTS
+### INPUTS
 
- #### None
+#### None
 
- ### OUTPUTS
+### OUTPUTS
 
- #### System.Object
+#### System.Object
 
 
 ## Test-AdSyncAzureServiceConnectivity
 
- ### SYNOPSIS
+### SYNOPSIS
  Investigates and identifies connectivity issues to Microsoft Entra ID.
 
- ### SYNTAX
+### SYNTAX
 
- #### ByEnvironment
+#### ByEnvironment
  ```powershell
  Test-AdSyncAzureServiceConnectivity [-AzureEnvironment] <Identifier> [[-Service] <AzureService>] [-CurrentUser]
  [<CommonParameters>]
  ```
 
- #### ByTenantName
+#### ByTenantName
  ```powershell
  Test-AdSyncAzureServiceConnectivity [-Domain] <String> [[-Service] <AzureService>] [-CurrentUser]
  [<CommonParameters>]
  ```
 
- ### DESCRIPTION
+### DESCRIPTION
  Investigates and identifies connectivity issues to Microsoft Entra ID.
 
- ### EXAMPLES
+### EXAMPLES
 
- #### Example 1
+#### Example 1
  ```powershell
  PS C:\> Test-AdSyncAzureServiceConnectivity -AzureEnvironment Worldwide -Service SecurityTokenService -CurrentUser
  ```
 
  Returns "True" if there are no connectivity issues.
 
- ### PARAMETERS
+### PARAMETERS
 
- #### -AzureEnvironment
+#### -AzureEnvironment
  Azure environment to test. Accepted values: Worldwide, China, UsGov, Germany, AzureUSGovernmentCloud, AzureUSGovernmentCloud2, AzureUSGovernmentCloud3, PreProduction, OneBox, Default.
 
  ```yaml
@@ -2251,7 +2251,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -CurrentUser
+#### -CurrentUser
  The user running the cmdlet.
 
  ```yaml
@@ -2266,7 +2266,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -Domain
+#### -Domain
  The domain whose connectivity is being tested.
 
  ```yaml
@@ -2281,7 +2281,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -Service
+#### -Service
  The service whose connectivity is being tested.
 
  ```yaml
@@ -2297,30 +2297,30 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### CommonParameters
+#### CommonParameters
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
- ### INPUTS
+### INPUTS
 
- #### Microsoft.Online.Deployment.Client.Framework.MicrosoftOnlineInstance+Identifier
+#### Microsoft.Online.Deployment.Client.Framework.MicrosoftOnlineInstance+Identifier
 
- #### System.String
+#### System.String
 
- #### System.Nullable`1[[Microsoft.Online.Deployment.Client.Framework.AzureService, Microsoft.Online.Deployment.Client.Framework, Version=1.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35]]
+#### System.Nullable`1[[Microsoft.Online.Deployment.Client.Framework.AzureService, Microsoft.Online.Deployment.Client.Framework, Version=1.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35]]
 
- #### System.Management.Automation.SwitchParameter
+#### System.Management.Automation.SwitchParameter
 
- ### OUTPUTS
+### OUTPUTS
 
- #### System.Object
+#### System.Object
 
 
 ## Test-AdSyncUserHasPermissions
 
- ### SYNOPSIS
+### SYNOPSIS
  Cmdlet to check if ADMA user has required permissions.
 
- ### SYNTAX
+### SYNTAX
 
  ```powershell
  Test-AdSyncUserHasPermissions [-ForestFqdn] <String> [-AdConnectorId] <Guid>
@@ -2328,12 +2328,12 @@ The following documentation provides reference information for the `ADSync.psm1`
  [-WhatIf] [-Confirm] [<CommonParameters>]
  ```
 
- ### DESCRIPTION
+### DESCRIPTION
  Cmdlet to check if ADMA user has required permissions.
 
- ### EXAMPLES
+### EXAMPLES
 
- #### Example 1
+#### Example 1
  ```powershell
  PS C:\> Test-AdSyncUserHasPermissions -ForestFqdn "contoso.com" -AdConnectorId "00000000-0000-0000-000000000000"
  -AdConnectorCredential $connectorAcctCreds -BaseDn "CN=fabrikam,CN=Users,DC=contoso,DC=com" -PropertyType "Allowed-Attributes" -PropertyValue "name"
@@ -2341,9 +2341,9 @@ The following documentation provides reference information for the `ADSync.psm1`
 
  Checks if ADMA user has permissions to access the 'name' property of the user 'fabrikam'.
 
- ### PARAMETERS
+### PARAMETERS
 
- #### -AdConnectorCredential
+#### -AdConnectorCredential
  AD Connector account credentials.
 
  ```yaml
@@ -2358,7 +2358,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -AdConnectorId
+#### -AdConnectorId
  AD Connector ID.
 
  ```yaml
@@ -2373,7 +2373,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -BaseDn
+#### -BaseDn
  Base DN of the object to check.
 
  ```yaml
@@ -2388,7 +2388,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -Confirm
+#### -Confirm
  Prompts you for confirmation before running the cmdlet.
 
  ```yaml
@@ -2403,7 +2403,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -ForestFqdn
+#### -ForestFqdn
  Name of the forest.
 
  ```yaml
@@ -2418,7 +2418,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -PropertyType
+#### -PropertyType
  Permission type you are looking for. Accepted values: Allowed-Attributes, Allowed-Attributes-Effective, Allowed-Child-Classes, Allowed-Child-Classes-Effective.
 
  ```yaml
@@ -2433,7 +2433,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -PropertyValue
+#### -PropertyValue
  The value you are looking for in PropertyType attribute.
 
  ```yaml
@@ -2448,7 +2448,7 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### -WhatIf
+#### -WhatIf
  Shows what would happen if the cmdlet runs.
  The cmdlet is not run.
 
@@ -2464,18 +2464,18 @@ The following documentation provides reference information for the `ADSync.psm1`
  Accept wildcard characters: False
  ```
 
- #### CommonParameters
+#### CommonParameters
  This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
 
- ### INPUTS
+### INPUTS
 
- #### System.String
+#### System.String
 
- #### System.Guid
+#### System.Guid
 
- ### OUTPUTS
+### OUTPUTS
 
- #### System.Object
+#### System.Object
 
 ## Next Steps
 

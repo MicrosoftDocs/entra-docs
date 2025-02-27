@@ -1,23 +1,23 @@
 ---
-title: "Tutorial: Microsoft Entra integration with Zscaler Beta"
+title: Microsoft Entra integration with Zscaler Beta
 description: Learn how to configure single sign-on between Microsoft Entra ID and Zscaler Beta.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Zscaler Beta so that I can control who has access to Zscaler Beta, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra integration with Zscaler Beta
+# Microsoft Entra integration with Zscaler Beta
 
-In this tutorial, you learn how to integrate Zscaler Beta with Microsoft Entra ID.
+In this article,  you learn how to integrate Zscaler Beta with Microsoft Entra ID.
 When you integrate Zscaler Beta with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Zscaler Beta.
@@ -33,7 +33,7 @@ To configure Microsoft Entra integration with Zscaler Beta, you need the followi
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Zscaler Beta supports **SP** initiated SSO.
 * Zscaler Beta supports **Just In Time** user provisioning.
@@ -249,6 +249,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Zscaler Beta tile in the My Apps, this will redirect to Zscaler Beta Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Zscaler Beta you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

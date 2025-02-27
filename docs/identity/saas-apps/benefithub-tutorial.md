@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with BenefitHub'
+title: Microsoft Entra SSO integration with BenefitHub
 description: Learn how to configure single sign-on between Microsoft Entra ID and BenefitHub.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and BenefitHub so that I can control who has access to BenefitHub, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with BenefitHub
+# Microsoft Entra SSO integration with BenefitHub
 
-In this tutorial, you'll learn how to integrate BenefitHub with Microsoft Entra ID. When you integrate BenefitHub with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate BenefitHub with Microsoft Entra ID. When you integrate BenefitHub with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to BenefitHub.
 * Enable your users to be automatically signed-in to BenefitHub with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * BenefitHub supports **IDP** initiated SSO.
 
@@ -156,6 +156,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the BenefitHub tile in the My Apps, you should be automatically signed in to the BenefitHub for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure BenefitHub you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

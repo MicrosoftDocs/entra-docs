@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Kantega SSO for Bamboo'
+title: Microsoft Entra SSO integration with Kantega SSO for Bamboo
 description: Learn how to configure single sign-on between Microsoft Entra ID and Kantega SSO for Bamboo.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Kantega SSO for Bamboo so that I can control who has access to Kantega SSO for Bamboo, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Kantega SSO for Bamboo
+# Microsoft Entra SSO integration with Kantega SSO for Bamboo
 
-In this tutorial, you'll learn how to integrate Kantega SSO for Bamboo with Microsoft Entra ID. When you integrate Kantega SSO for Bamboo with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Kantega SSO for Bamboo with Microsoft Entra ID. When you integrate Kantega SSO for Bamboo with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Kantega SSO for Bamboo.
 * Enable your users to be automatically signed-in to Kantega SSO for Bamboo with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with Kantega SSO for Bamboo, you need t
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Kantega SSO for Bamboo supports **SP and IDP** initiated SSO.
 
@@ -88,7 +88,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<server-base-url>/plugins/servlet/no.kantega.saml/sp/<uniqueid>/login`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-On URL. These values are received during the configuration of Bamboo plugin which is explained later in the tutorial.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-On URL. These values are received during the configuration of Bamboo plugin which is explained later in the article.
 
 6. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
@@ -144,25 +144,19 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	![Screenshot shows Installing progress for Kantega S S O for Bamboo.](./media/kantegassoforbamboo-tutorial/settings.png)
 
-1. Once the installation is complete. Click **Close**.
+1. Once the installation is complete, select **Close**.
 
 	![Screenshot shows the Close button.](./media/kantegassoforbamboo-tutorial/installation.png)
 
-1. Click **Manage**.
-
-	![Screenshot shows the Manage button.](./media/kantegassoforbamboo-tutorial/integration.png)
+1. In the **Kantega SSO for Bamboo** page, select **Manage**.
 
 1. Click **Configure** to configure the new plugin.
 
 	![Screenshot shows User-installed add-ons with Configure selected.](./media/kantegassoforbamboo-tutorial/license.png)
 
-1. In the **SAML** section. Select **Microsoft Entra ID** from the **Add identity provider** dropdown.
+1. In the **SAML** section, select **Microsoft Entra ID** from the **Add identity provider** dropdown.
 
-	![Screenshot shows Kantega Single Sign-On with Microsoft Entra ID selected as the identity provider.](./media/kantegassoforbamboo-tutorial/azure.png)
-
-1. Select subscription level as **Basic**.
-
-	![Screenshot shows Prepare Microsoft Entra ID with Basic selected.](./media/kantegassoforbamboo-tutorial/subscription.png)
+1. In the **Kantega Single Sign-on** page, select **Basic**.
 
 1. On the **App properties** section, perform following steps:
 
@@ -172,19 +166,15 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	b. Click **Next**.
 
-1. On the **Metadata import** section, perform following steps:
+1. On the **Metadata import** section, select **Metadata file on my computer**.
 
-	![Screenshot shows the Metadata import section where you can browse to a metadata file.](./media/kantegassoforbamboo-tutorial/metadata.png)
-
-	a. Select **Metadata file on my computer**, and upload metadata file, which you have downloaded previously.
-
-	b. Click **Next**.
+1. Select **Browse file** to upload the metadata file that you previously downloaded, then select **Next**.
 
 1. On the **Name and SSO location** section, perform following steps:
 
 	![Screenshot shows the Name and S S O location where Microsoft Entra ID is the identity provider name.](./media/kantegassoforbamboo-tutorial/location.png)
 
-	a. Add Name of the Identity Provider in **Identity provider name** textbox (e.g Microsoft Entra ID).
+	a. Add Name of the Identity Provider in **Identity provider name** textbox (such as Microsoft Entra ID).
 
 	b. Click **Next**.
 
@@ -202,11 +192,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Click **Finish**.
 
-	![Screenshot shows the Summary page.](./media/kantegassoforbamboo-tutorial/users.png)
-
 1. On the **Known domains for Microsoft Entra ID** section, perform following steps:
-
-	![Screenshot shows the Known domains for Microsoft Entra ID where you can perform these steps.](./media/kantegassoforbamboo-tutorial/domain.png)
 
 	a. Select **Known domains** from the left panel of the page.
 
@@ -258,6 +244,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the Kantega SSO for Bamboo tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Kantega SSO for Bamboo for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Kantega SSO for Bamboo you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

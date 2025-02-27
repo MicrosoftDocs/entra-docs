@@ -1,11 +1,10 @@
 ---
 title: "What's new in Microsoft Entra application management"
-description: "New and updated documentation for the Microsoft Entra application management."
-ms.date: 03/05/2024
+description: "This article shows the new and updated documentation for the Microsoft Entra application management."
+ms.date: 02/05/2025
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: whats-new
-
 ms.author: jomondi
 author: omondiatieno
 manager: CelesteDG
@@ -15,41 +14,34 @@ manager: CelesteDG
 
 # Microsoft Entra application management: What's new
 
-Welcome to what's new in Microsoft Entra application management documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. To learn what's new with the application management service, see [What's new in Azure AD](~/fundamentals/whats-new.md).
+Welcome to what's new in Microsoft Entra application management documentation. This article lists new docs and those articles that had significant updates in the last three months. To learn what's new with the application management service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
 
-## February 2024
+## January 2025
 
-### Updated articles
+No new or updated articles in this period.
 
-- [Manage certificates for federated single sign-on](tutorial-manage-certificates-for-federated-single-sign-on.md) - Update to enhance the article's technical accuracy
-- [Troubleshoot SAML-based single sign-on](troubleshoot-saml-based-sso.md) - Update to enhance the article's technical accuracy
+## December 2024
 
-## January 2024
+### New articles
 
-### Updated articles
-
-- [Configure Datawiza Access Proxy for Microsoft Entra single sign-on and multifactor authentication for Outlook Web Access](datawiza-sso-mfa-to-owa.md) - Update to enhance the article's technical accuracy
-- [Enable self-service application assignment](manage-self-service-access.md) - Update to enhance the article's technical accuracy
-- [Home Realm Discovery for an application](home-realm-discovery-policy.md) - Add updated domain confirmation information
-
-## December 2023
+- [Migrate applications away from secret-based authentication](migrate-applications-from-secrets.md)
 
 ### Updated articles
 
-- [Configure permission classifications](configure-permission-classifications.md) - Add least privilege role for PowerShell and Microsoft Graph content
-- [Configure group and team owner consent to applications](configure-user-consent-groups.md) - Add least privilege role for PowerShell and Microsoft Graph content
-- [Manage custom security attributes for an application](custom-security-attributes-apps.md) - Add least privilege role for PowerShell and Microsoft Graph content
-- [Delete an enterprise application](delete-application-portal.md) - Add least privilege role for PowerShell and Microsoft Graph content
-- [Disable user sign-in for an application](disable-user-sign-in-portal.md) - Add least privilege role for PowerShell and Microsoft Graph content
-- [Restore an enterprise application in Microsoft Entra ID](restore-application.md) - Add least privilege role for PowerShell and Microsoft Graph content
-- [Grant consent on behalf of a single user by using PowerShell](grant-consent-single-user.md) - Update to enhance the article's technical accuracy
-- [Grant tenant-wide admin consent to an application](grant-admin-consent.md) - Update to enhance the article's technical accuracy
-- [Represent AD FS security policies in Microsoft Entra ID: Mappings and examples](migrate-adfs-represent-security-policies.md) - Update to enhance the article's technical accuracy
-- [Plan application migration to Microsoft Entra ID](migrate-adfs-apps-phases-overview.md) - Update to enhance the article's technical accuracy
-- [Phase 2: Classify apps and plan pilot](migrate-adfs-classify-apps-plan-pilot.md) - Update to enhance the article's technical accuracy
-- [What is application management in Microsoft Entra ID?](what-is-application-management.md) - Update to enhance the article's technical accuracy
-- [Restrict access to a tenant](tenant-restrictions.md) - Update to enhance the article's technical accuracy
-- [Manage users and groups assignment to an application](assign-user-or-group-access-portal.md) - Update to enhance the article's technical accuracy
-- [Overview of admin consent workflow](admin-consent-workflow-overview.md) - Update to enhance the article's technical accuracy
-- [Overview of the Microsoft Entra application gallery](overview-application-gallery.md) - Update to enhance the article's technical accuracy
-- [Protect against consent phishing](protect-against-consent-phishing.md) - Update to enhance the article's technical accuracy
+Reviewed the following articles for technical accuracy and clarity:
+
+- [Integrating Microsoft Entra ID with applications getting started guide](plan-an-application-integration.md)
+- [Migrate applications from Okta to Microsoft Entra ID](migrate-applications-from-okta.md)
+- [Migrate Okta federation to Microsoft Entra authentication](migrate-okta-federation.md)
+- [Tutorial: Migrate Okta sync provisioning to Microsoft Entra Connect synchronization](migrate-okta-sync-provisioning.md)
+- [Unexpected error when performing consent to an application](application-sign-in-unexpected-user-consent-error.md)
+
+
+## November 2024
+
+### Updated articles
+
+- [Configure sign-in behavior using Home Realm Discovery](configure-authentication-for-federated-users-portal.md) - Replace legacy PowerShell with Microsoft Graph PowerShell cmdlets
+- [Disable auto-acceleration sign-in](prevent-domain-hints-with-home-realm-discovery.md) - Rewrite content for clarity and accuracy
+- [Home Realm Discovery for an application](home-realm-discovery-policy.md) - Replace legacy PowerShell with Microsoft Graph PowerShell cmdlets
+- [Overview of admin consent workflow](admin-consent-workflow-overview.md) - Review and update content for accuracy and clarity

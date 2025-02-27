@@ -1,26 +1,25 @@
 ---
-title: 'Tutorial: Configure G Suite for automatic user provisioning with Microsoft Entra ID'
+title: Configure G Suite for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to G Suite.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 02/23/2024
-ms.author: thwimmer
+ms.topic: how-to
+ms.date: 07/19/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Google Cloud / G Suite Connector by Microsoft so that I can streamline the user management process and ensure that users have the appropriate access to Google Cloud / G Suite Connector by Microsoft.
 ---
 
-# Tutorial: Configure G Suite for automatic user provisioning
+# Configure G Suite for automatic user provisioning
 
-This tutorial describes the steps you need to perform in both G Suite and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [G Suite](https://gsuite.google.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This article describes the steps you need to perform in both G Suite and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [G Suite](https://gsuite.google.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 > [!NOTE]
-> This tutorial describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This article describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
 ## Capabilities supported
 > [!div class="checklist"]
@@ -32,10 +31,10 @@ This tutorial describes the steps you need to perform in both G Suite and Micros
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
-* A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (for example, Application Administrator, Cloud Application administrator, Application Owner, or Global Administrator). 
+* One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
 * [A G Suite tenant](https://gsuite.google.com/pricing.html)
 * A user account on a G Suite with Admin permissions.
 
@@ -61,7 +60,7 @@ Before configuring G Suite for automatic user provisioning with Microsoft Entra 
     ![G Suite API](./media/g-suite-provisioning-tutorial/api-control.png)
 
     > [!IMPORTANT]
-    > For every user that you intend to provision to G Suite, their user name in Microsoft Entra ID **must** be tied to a custom domain. For example, user names that look like bob@contoso.onmicrosoft.com are not accepted by G Suite. On the other hand, bob@contoso.com is accepted. You can change an existing user's domain by following the instructions [here](~/fundamentals/add-custom-domain.md).
+    > For every user that you intend to provision to G Suite, their user name in Microsoft Entra ID **must** be tied to a custom domain. For example, user names that look like bob@contoso.onmicrosoft.com are not accepted by G Suite. On the other hand, bob@contoso.com is accepted. You can change an existing user's domain by following the instructions [here](~/fundamentals/add-custom-domain.yml).
 
 1. Once you add and verify your desired custom domains with Microsoft Entra ID, you must verify them again with G Suite. To verify domains in G Suite, refer to the following steps:
 
@@ -129,9 +128,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 1. Select the **Provisioning** tab. Click on **Get started**.
 
 	![Screenshot of the Manage options with the Provisioning option called out.](common/provisioning.png)
-
-      ![Get started blade](./media/g-suite-provisioning-tutorial/get-started.png)
-
+    
 1. Set the **Provisioning Mode** to **Automatic**.
 
 	![Screenshot of the Provisioning Mode dropdown list with the Automatic option called out.](common/provisioning-automatic.png)
@@ -245,7 +242,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |name|String|
       |description|String|
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for G Suite, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -278,7 +275,7 @@ Once you configure provisioning, use the following resources to monitor your dep
 With PIM for Groups, you can provide just-in-time access to groups in Google Cloud / Google Workspace and reduce the number of users that have permanent access to privileged groups in Google Cloud / Google Workspace. 
 
 **Configure your enterprise application for SSO and provisioning**
-1. Add Google Cloud / Google Workspace to your tenant, configure it for provisioning as described in this tutorial, and start provisioning. 
+1. Add Google Cloud / Google Workspace to your tenant, configure it for provisioning as described in this article,  and start provisioning. 
 1. Configure [single sign-on](google-apps-tutorial.md) for Google Cloud / Google Workspace.
 1. Create a [group](/azure/active-directory/fundamentals/how-to-manage-groups) that provides all users access to the application.
 1. Assign the group to the Google Cloud / Google Workspace application.
@@ -292,7 +289,8 @@ With PIM for Groups, you can provide just-in-time access to groups in Google Clo
 1. Use on-demand provisioning to create the group in Google Cloud / Google Workspace.
 1. Sign-in to Google Cloud / Google Workspace and assign the second group the necessary permissions to perform admin tasks.  
 
-Now any end user that was made eligible for the group in PIM can get JIT access to the group in Google Cloud / Google Workspace by [activating their group membership](/azure/active-directory/privileged-identity-management/groups-activate-roles#activate-a-role). 
+Now any end user that was made eligible for the group in PIM can get JIT access to the group in Google Cloud / Google Workspace by [activating their group membership](/azure/active-directory/privileged-identity-management/groups-activate-roles#activate-a-role). When their assignment expires, the user is removed from the group in Google Cloud / Google Workspace. During the next incremental cycle, the provisioning service attempts to remove the user from the group again. This may result in an error in the provisioning logs. This error is expected because the group membership 
+was already removed. The error message can be ignored. 
 
 * How long does it take to have a user provisioned to the application? 
   * When a user is added to a group in Microsoft Entra ID outside of activating their group membership using Microsoft Entra ID Privileged Identity Management (PIM):
@@ -315,6 +313,6 @@ Now any end user that was made eligible for the group in PIM can get JIT access 
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

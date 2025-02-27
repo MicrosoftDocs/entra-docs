@@ -2,7 +2,7 @@
 title: Microsoft Entra SSO integration with Alation Data Catalog
 description: Learn how to configure single sign-on between Microsoft Entra ID and Alation Data Catalog.
 services: active-directory
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
@@ -10,8 +10,8 @@ ms.subservice: saas-apps
 
 ms.workload: identity
 ms.topic: how-to
-ms.date: 02/15/2024
-ms.author: jeedes
+ms.date: 06/21/2024
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Alation Data Catalog so that I can control who has access to Alation Data Catalog, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -19,7 +19,7 @@ ms.author: jeedes
 
 # Microsoft Entra SSO integration with Alation Data Catalog
 
-In this tutorial, you'll learn how to integrate Alation Data Catalog with Microsoft Entra ID. When you integrate Alation Data Catalog with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Alation Data Catalog with Microsoft Entra ID. When you integrate Alation Data Catalog with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Alation Data Catalog.
 * Enable your users to be automatically signed-in to Alation Data Catalog with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ To integrate Microsoft Entra ID with Alation Data Catalog, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Alation Data Catalog supports both **SP and IDP** initiated SSO.
 * Alation Data Catalog supports **Just In Time** user provisioning.
@@ -98,7 +98,8 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	![Screenshot shows the image of attributes configuration.](common/default-attributes.png "Image")
 
     > [!NOTE]
-    > In the **Attributes &  Claims** section, click **Edit** button in  the right corner of Step 2  and click on Unique User Identifier (Name ID) claim and choose **Name identifier format** as **Persistent** from the drop-down menu under **Manage claim** section and click **Save**.
+    > For **Unique User Identifier (Name ID)** claim, choose **Name identifier format** as **Persistent** from the drop-down under **Manage claim** section and click **Save**.
+    ![Screenshot shows the images of Unique User Identifier.](media/alation-data-catalog-tutorial/name.png "Claim")
  
 1. In addition to above, Alation Data Catalog application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
 	
@@ -109,6 +110,10 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	| urn:oid:0.9.2342.19200300.100.1.3 | user.mail |
 	| urn:oid:0.9.2342.19200300.100.1.1 | user.userprincipalname |
     | urn:oid:2.5.4.12 | user.jobtitle |
+
+    > [!NOTE]
+    > For all the above Required Claims, choose **Name identifier format** as **URI** from the drop-down under **Manage claim** section and click **Save**.
+    ![Screenshot shows the images of Required Claims.](media/alation-data-catalog-tutorial/source.png "Default Claims")
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -168,6 +173,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 You can also use Microsoft My Apps to test the application in any mode. When you click the Alation Data Catalog tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Alation Data Catalog for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Alation Data Catalog you can enforce session control, which protects exfiltration and infiltration of your organization's sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

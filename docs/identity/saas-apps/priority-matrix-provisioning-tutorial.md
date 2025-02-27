@@ -1,31 +1,30 @@
 ---
-title: 'Tutorial: Configure Priority Matrix for automatic user provisioning with Microsoft Entra ID'
+title: Configure Priority Matrix for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Priority Matrix.
 
-author: twimmers
-writer: twimmers
+author: thomasakelo
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: thwimmer
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Priority Matrix so that I can streamline the user management process and ensure that users have the appropriate access to Priority Matrix.
 ---
 
-# Tutorial: Configure Priority Matrix for automatic user provisioning
+# Configure Priority Matrix for automatic user provisioning
 
-The objective of this tutorial is to demonstrate the steps to be performed in Priority Matrix and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Priority Matrix.
+The objective of this article is to demonstrate the steps to be performed in Priority Matrix and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Priority Matrix.
 
 > [!NOTE]
-> This tutorial describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This article describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
 * A Microsoft Entra tenant
 * [A Priority Matrix tenant](https://appfluence.com/pricing/)
@@ -58,9 +57,7 @@ Before configuring Priority Matrix for automatic user provisioning with Microsof
 
 	![Priority Matrix Add SCIM](media/priority-matrix-provisioning-tutorial/oauthlogin.png)
 
-4. Click the **GET NEW TOKEN** button. Copy the **Token String**. This value will be entered in the **Secret Token** field in the Provisioning tab of your Priority Matrix application. 
-
-	![Priority Matrix Create Token](media/priority-matrix-provisioning-tutorial/token.png)
+4. Click the **GET NEW TOKEN** button. Copy the **Token String**. This value will be entered in the **Secret Token** field in the Provisioning tab of your Priority Matrix application.
 
 ## Add Priority Matrix from the gallery
 
@@ -76,13 +73,12 @@ To configure Priority Matrix for automatic user provisioning with Microsoft Entr
 
 	![Priority Matrix OIDC Add](media/priority-matrix-provisioning-tutorial/signup.png)
 
-6. As Priority Matrix is an OpenIDConnect app, choose to login to Priority Matrix using your Microsoft work account.
+6. As Priority Matrix is an OpenIDConnect app, choose to log in to Priority Matrix using your Microsoft work account.
 
 	![Priority Matrix OIDC login](media/priority-matrix-provisioning-tutorial/msftsignin.png)
 
 7. After a successful authentication, accept the consent prompt for the consent page. The application will then be automatically added to your tenant and you will be redirected to your Priority Matrix account.
 
-	![Priority Matrix OIDc Consent](media/priority-matrix-provisioning-tutorial/consent.png)
 
 ## Configure automatic user provisioning to Priority Matrix 
 
@@ -124,13 +120,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Priority Matrix**.
 
-	![Priority Matrix User Mappings](media/priority-matrix-provisioning-tutorial/usermappings.png)
-
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Priority Matrix in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Priority Matrix for update operations. Select the **Save** button to commit any changes.
 
 	![Priority Matrix User Attributes](media/priority-matrix-provisioning-tutorial/userattributes.png)
 
-10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 11. To enable the Microsoft Entra provisioning service for Priority Matrix, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -153,6 +147,6 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

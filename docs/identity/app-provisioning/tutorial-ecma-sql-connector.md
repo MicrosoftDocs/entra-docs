@@ -6,7 +6,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.topic: tutorial
-ms.date: 02/13/2024
+ms.date: 12/16/2024
 ms.subservice: hybrid
 ms.author: billmath
 ms.reviewer: arvinh

@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 02/28/2024
+ms.date: 08/07/2024
 ms.author: jfields
 ms.reviewer: cmmdesai
 ---
@@ -72,7 +72,7 @@ The Logic Apps deployment template published in the [Microsoft Entra inbound pro
 ## Step 1: Create an Azure Storage account to host the CSV file
 The steps documented in this section are optional. If you already have an existing storage account or would like to read the CSV file from another source like SharePoint site or Blob storage, update the Logic App to use your connector of choice.
 
-1. Sign in to the [Azure portal](https://portal.azure.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Azure portal](https://portal.azure.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Search for "Storage accounts" and create a new storage account. 
      :::image type="content" source="media/inbound-provisioning-api-logic-apps/storage-accounts.png" alt-text="Screenshot of creating new storage account." lightbox="media/inbound-provisioning-api-logic-apps/storage-accounts.png"::: 
 1. Assign a resource group and give it a name. 
@@ -98,12 +98,31 @@ The steps documented in this section are optional. If you already have an existi
 1. Ensure that the deployment of the Azure Function as an App Service is successful. 
 1. Go to the resource group and open the WebApp configuration. Ensure it is in "Running" state. Copy the default domain name associated with the Web App.
      :::image type="content" source="media/inbound-provisioning-api-logic-apps/web-app-domain-name.png" alt-text="Screenshot of Azure Function Web App domain name." lightbox="media/inbound-provisioning-api-logic-apps/web-app-domain-name.png":::  
-1. Open Postman client to test if the CSVtoJSON endpoint works as expected. Paste the domain name copied from the previous step. Use Content-Type of "text/csv" and post a sample CSV file in the request body to the endpoint: `https://[your-domain-name]/csvtojson`
-     :::image type="content" source="media/inbound-provisioning-api-logic-apps/postman-call-to-azure-function.png" alt-text="Screenshot of Postman client calling the Azure Function." lightbox="media/inbound-provisioning-api-logic-apps/postman-call-to-azure-function.png":::  
-1. If the Azure Function deployment is successful, then in the response you'll get a JSON version of the CSV file with status 200 OK.
+1. Run the following PowerShell script to test if the CSVtoJSON endpoint works as expected. Set the correct values for the variables `$csvFilePath` and `$uri` in the script. 
+     
+     ```powershell
+     # Step 1: Read the CSV file 
+     $csvFilePath = "C:\Path-to-CSV-file\hr-user-data.csv" 
+     $csvContent = Get-Content -Path $csvFilePath 
 
-     :::image type="content" source="media/inbound-provisioning-api-logic-apps/azure-function-response.png" alt-text="Screenshot of Azure Function response." lightbox="media/inbound-provisioning-api-logic-apps/azure-function-response.png":::  
-1. To allow Logic Apps to invoke this Azure Function, in the CORS setting for the WebApp enter asterisk (*) and "Save" the configuration.
+     # Step 2: Set up the request 
+     $uri = "https://az-function-webapp-your-domain/csvtojson" 
+     $headers = @{ 
+          "Content-Type" = "text/csv" 
+     } 
+     $body = $csvContent -join "`n"  # Join the CSV lines into a single string 
+
+     # Step 3: Send the POST request 
+     $response = Invoke-WebRequest -Uri $uri -Method POST -Headers $headers -Body $body 
+
+     # Output and format the JSON response 
+     $response.Content | ConvertFrom-JSON | ConvertTo-JSON 
+     ```
+
+7. If the Azure Function deployment is successful, then the last line of the script outputs the JSON version of the CSV file.
+
+     :::image type="content" source="media/inbound-provisioning-api-logic-apps/azure-function-response.png" alt-text="Screenshot of Azure Function response." lightbox="media/inbound-provisioning-api-logic-apps/azure-function-response.png":::. 
+8. To allow Logic Apps to invoke this Azure Function, in the CORS setting for the WebApp enter asterisk (*) and "Save" the configuration.
      :::image type="content" source="media/inbound-provisioning-api-logic-apps/azure-function-cors-setting.png" alt-text="Screenshot of Azure Function CORS setting." lightbox="media/inbound-provisioning-api-logic-apps/azure-function-cors-setting.png":::  
 
 ## Step 3: Configure API-driven inbound user provisioning
@@ -142,7 +161,7 @@ The steps documented in this section are optional. If you already have an existi
 1. Update the connection if required. 
 1. Make sure your "Convert CSV to JSON" step is pointing to the right Azure Function Web App instance.
      :::image type="content" source="media/inbound-provisioning-api-logic-apps/convert-file-format.png" alt-text="Screenshot of Azure Function call invocation to convert from CSV to JSON." lightbox="media/inbound-provisioning-api-logic-apps/convert-file-format.png":::  
-1. If your CSV file content / headers is different, then update the "Parse JSON" step with the JSON output that you can retrieve from your API call to the Azure Function. Use Postman output from Step 2. 
+1. If your CSV file content / headers is different, then update the "Parse JSON" step with the JSON output that you can retrieve from your API call to the Azure Function. Use PowerShell output from Step 2. 
      :::image type="content" source="media/inbound-provisioning-api-logic-apps/parse-json-step.png" alt-text="Screenshot of Parse JSON step." lightbox="media/inbound-provisioning-api-logic-apps/parse-json-step.png":::  
 1. In the step "Construct SCIMUser", ensure that the CSV fields map correctly to the SCIM attributes that will be used for processing.
 

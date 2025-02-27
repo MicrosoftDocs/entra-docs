@@ -1,6 +1,6 @@
 ---
-title: 'Tutorial: Prepare your customer tenant to sign in users in a Node.js web app'
-description: Learn how to prepare your Microsoft Entra ID for customers tenant to sign in users in your Node.js web application.
+title: 'Tutorial: Prepare your external tenant to sign in users in a Node.js web app'
+description: Learn how to prepare your external tenant to sign in users in your Node.js web application.
  
 author: kengaderdus
 manager: mwongerapk
@@ -8,16 +8,16 @@ manager: mwongerapk
 ms.author: kengaderdus
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: tutorial
-ms.date: 07/27/2023
+ms.date: 08/27/2024
 ms.custom: developer, devx-track-js
-#Customer intent: As a dev, devops, I want to learn about how to enable authentication in my own Node.js web app with Microsoft Entra ID for customers tenant
+#Customer intent: As a developer, IT admin or devops, I want to learn about how to enable authentication in my own Node.js web app with an external tenant
 ---
 
-# Tutorial: Prepare your customer tenant to sign in users in a Node.js web app
+# Tutorial: Prepare your external tenant to sign in users in a Node.js web app
 
-This tutorial series demonstrates how to build a Node.js web app and prepare it for authentication using the Microsoft Entra admin center. You'll use the [Microsoft Authentication Library for JavaScript](/javascript/api/overview/msal-overview) library to authenticate your app with your Microsoft Entra ID for customers tenant. Finally, you'll run the application and test the sign-in and sign-out experiences. demonstrates how to prepare your Microsoft Entra ID for customers tenant to sign in users in a Node.js web application.
+This tutorial series demonstrates how to build a Node.js web app and prepare it for authentication using the Microsoft Entra admin center. You'll use the [Microsoft Authentication Library for JavaScript](/javascript/api/overview/msal-overview) library to authenticate your app with your external tenant. Finally, you'll run the application and test the sign-in and sign-out experiences. demonstrates how to prepare your external tenant to sign in users in a Node.js web application.
 
 
 In this tutorial, you'll;
@@ -33,11 +33,13 @@ If you've already registered a web application in the Microsoft Entra admin cent
 
 ## Prerequisites
 
-* A Microsoft Entra ID for customers tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
-* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-    * Application Administrator
-    * Application Developer
-    * Cloud Application Administrator
+- An external tenant. To create one, choose from the following methods:
+  - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/tutorials/marketplace) to set up an external tenant directly in Visual Studio Code.
+  - [Create a new external tenant](how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+- This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
+  - Application Administrator
+  - Application Developer
+  - Cloud Application Administrator
 
 ## Register the web app
 
@@ -48,7 +50,7 @@ If you've already registered a web application in the Microsoft Entra admin cent
 
 [!INCLUDE [active-directory-b2c-add-client-secret](./includes/register-app/add-app-client-secret.md)] 
 
-## Grant API permissions
+## Grant admin consent
 
 [!INCLUDE [active-directory-b2c-grant-delegated-permissions](./includes/register-app/grant-api-permission-sign-in.md)] 
 
@@ -65,10 +67,10 @@ If you've already registered a web application in the Microsoft Entra admin cent
 Make sure you record the following details for use is later steps:
 
 - The *Application (client) ID* of the client web app that you registered.
-- The *Directory (tenant) subdomain* where you registered your web app. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details). 
+- The *Directory (tenant) subdomain* where you registered your web app. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details). 
 - The *Client secret* value for the web app you created.
 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Part 2: Prepare a Node.js web application for authentication in a customer tenant](tutorial-web-app-node-sign-in-prepare-app.md)
+> [Part 2: Prepare a Node.js web application for authentication in an external tenant](tutorial-web-app-node-sign-in-prepare-app.md)

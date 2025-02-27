@@ -5,8 +5,7 @@ description: Ban weak passwords in on-premises Active Directory Domain Services 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/12/2024
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.date: 01/06/2025
 ms.author: justinha
 author: justinha
 manager: amycolannino

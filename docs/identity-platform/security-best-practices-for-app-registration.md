@@ -18,7 +18,7 @@ ms.topic: concept-article
 
 Security is an important concept when registering an application in Microsoft Entra ID and is a critical part of its business use in the organization. Any misconfiguration of an application can result in downtime or compromise. Depending on the permissions added to an application, there can be organization-wide effects.
 
-Because secure applications are essential to the organization, any downtime to them because of security issues can affect the business or some critical service that the business depends upon. So, it's important to allocate time and resources to ensure applications always stay in a healthy and secure state. Conduct a periodic security and health assessment of applications, much like a Security Threat Model assessment for code. For a broader perspective on security for organizations, see the [security development lifecycle](https://www.microsoft.com/securityengineering/sdl) (SDL).
+Because secure applications are essential to the organization, any downtime to them because of security issues can affect the business or some critical service that the business depends upon. So, it's important to allocate time and resources to ensure applications always stay in a healthy and secure state. Conduct a periodic security and health assessment of applications, much like a Security Threat Model assessment for code. For a broader perspective on security for organizations, see the [security development lifecycle (SDL)](https://www.microsoft.com/securityengineering/sdl).
 
 This article describes security best practices for the following application properties:
 
@@ -69,16 +69,19 @@ Consider the following guidance related to certificates and secrets:
 - Monitor your production pipelines to prevent credentials of any kind from being committed into code repositories.
 - [Credential Scanner](/previous-versions/azure/security/develop/security-code-analysis-overview#credential-scanner) is a static analysis tool that can be used to detect credentials (and other sensitive content) in source code and build output.
 
-## Application ID URI
+## Application ID URI (also known as Identifier URI)
 
-The **Application ID URI** property of the application specifies the globally unique URI used to identify the web API. It's the prefix for scopes and in access tokens, it's also the value of the audience claim and it must use a verified customer owned domain. For multi-tenant applications, the value must also be globally unique. It's also referred to as an identifier URI. Under **Expose an API** for the application in the Azure portal, the **Application ID URI** property can be defined.
+The **Application ID URI** property of the application specifies the globally unique URI used to identify the web API. It's the prefix for the scope value in requests to Microsoft Entra. It's also the value of the audience (`aud`) claim in v1.0 access tokens. For multi-tenant applications, the value must also be globally unique. It's also referred to as an **Identifier URI**. Under **Expose an API** for the application in the Azure portal, the **Application ID URI** property can be defined.
 
 :::image type="content" source="./media/application-registration-best-practices/app-id-uri.png" alt-text="Screenshot that shows where the Application I D U R I is located.":::
 
-Consider the following guidance related to defining the Application ID URI:
+Best practices for defining the Application ID URI change depending on if the app is issued v1.0 or v2.0 access tokens. If you're unsure whether an app is issued v1.0 access tokens, check the `requestedAccessTokenVersion` of the [app manifest](reference-microsoft-graph-app-manifest.md).  A value of `null` or `1` indicates that the app receives v1.0 access tokens.  A value of `2` indicates that the app receives v2.0 access tokens.
 
-- The api or https URI schemes are recommended. Set the property in the supported formats to avoid URI collisions in your organization. Don't use wildcards.
-- Use a verified domain in Line of Business (LoB) applications.
+For applications that are issued v1.0 access tokens, only the default URIs should be used.  The default URIs are `api://<appId>` and `api://<tenantId>/<appId>`. 
+
+For applications that are issued v2.0 access tokens, use the following guidelines when defining the App ID URI: 
+- The `api` or `https` URI schemes are recommended. Set the property in the supported formats to avoid URI collisions in your organization. Don't use wildcards.
+- Use a verified domain of your organization.
 - Keep an inventory of the URIs in your organization to help maintain security.
 - Use the Application ID URI to expose the WebApi in the organization. Don't use the Application ID URI to identify the application, and instead use the Application (client) ID property.
 

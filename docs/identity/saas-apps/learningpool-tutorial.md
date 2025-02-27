@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Learning Pool LMS'
+title: Microsoft Entra integration with Learning Pool LMS
 description: Learn how to configure single sign-on between Microsoft Entra ID and Learning Pool LMS.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Learning Pool LMS so that I can control who has access to Learning Pool LMS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Learning Pool LMS
+# Microsoft Entra integration with Learning Pool LMS
 
-In this tutorial, you'll learn how to integrate Learning Pool LMS with Microsoft Entra ID. When you integrate Learning Pool LMS with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Learning Pool LMS with Microsoft Entra ID. When you integrate Learning Pool LMS with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Learning Pool LMS.
 * Enable your users to be automatically signed-in to Learning Pool LMS with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Learning Pool LMS supports **SP** initiated SSO.
 
@@ -91,7 +91,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://parliament.preview.Learningpool.com/auth/shibboleth/index.php`
 
 	> [!Note]
-	> If the **Identifier** value does not get auto polulated, then please fill in the value manually according to your requirement.
+	> If the **Identifier** value does not get auto populated, then please fill in the value manually according to your requirement.
 
 5. You must send over at least one attribute which is used to match your Azure Users with the users on Learning Pool LMS. Normally, the default attributes are enough, but in some cases you may need to send over some custom attributes. The following screenshot shows the list of default attributes. Click the **Edit** icon to open the User Attributes dialog and add more attributes if required.
 
@@ -143,6 +143,6 @@ The Learning Pool Delivery team will use the **App Federation Metadata Url** to 
 
 You will be guided through the testing process by the Learning Pool Delivery team.
 
-## Next steps
+## Related content
 
 Once you configure Learning Pool LMS you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

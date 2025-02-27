@@ -5,7 +5,7 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom: scenarios:getting-started, "languages:UWP", mode-api
-ms.date: 05/19/2022
+ms.date: 05/19/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
@@ -24,6 +24,9 @@ See [How the sample works](#how-the-sample-works) for an illustration.
 * An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * [Visual Studio](https://visualstudio.microsoft.com/vs/)
 
+> [!NOTE]
+> MSAL.NET versions 4.61.0 and above do not provide support for Universal Windows Platform (UWP), Xamarin Android, and Xamarin iOS. We recommend you migrate your UWP applications to modern frameworks like WINUI. Read more about the deprecation in [Announcing the Upcoming Deprecation of MSAL.NET for Xamarin and UWP](https://devblogs.microsoft.com/identity/uwp-xamarin-msal-net-deprecation/).
+
 ## Register and download your quickstart app
 
 You have two options to start your quickstart application:
@@ -40,7 +43,6 @@ You have two options to start your quickstart application:
 
 #### Step 1: Register your application
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To register your application and add the app's registration information to your solution, follow these steps:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).

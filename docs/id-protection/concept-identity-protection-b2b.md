@@ -45,7 +45,7 @@ If password reset isn't an option for you, you can choose to manually dismiss us
 
 To dismiss user risk, go to the [Risky users report](https://portal.azure.com/#blade/Microsoft_AAD_IAM/SecurityMenuBlade/RiskyUsers) in the Microsoft Entra Security menu. Search for the impacted user using the 'User' filter and select the user. Select the "dismiss user risk" option from the top toolbar. This action might take a few minutes to complete and update the user risk state in the report.
 
-To learn more about Microsoft Entra ID Protection, see [What is Identity Protection](overview-identity-protection.md).
+To learn more about Microsoft Entra ID Protection, see [What is ID Protection](overview-identity-protection.md).
 
 ## How does ID Protection work for B2B users?
 

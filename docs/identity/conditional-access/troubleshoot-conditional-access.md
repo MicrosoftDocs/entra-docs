@@ -22,14 +22,14 @@ The Conditional Access framework provides you with a great configuration flexibi
 
 Organizations should avoid the following configurations:
 
-**For all users, all cloud apps:**
+**For all users, all resources:**
 
 - **Block access** - This configuration blocks your entire organization.
 - **Require device to be marked as compliant** - For users that haven't enrolled their devices yet, this policy blocks all access including access to the Intune portal. If you're an administrator without an enrolled device, this policy blocks you from getting back in to change the policy.
 - **Require Hybrid Microsoft Entra domain joined device** - This policy block access has also the potential to block access for all users in your organization if they don't have a Microsoft Entra hybrid joined device.
 - **Require app protection policy** - This policy block access has also the potential to block access for all users in your organization if you don't have an Intune policy. If you're an administrator without a client application that has an Intune app protection policy, this policy blocks you from getting back into portals such as Intune and Azure.
 
-**For all users, all cloud apps, all device platforms:**
+**For all users, all resources, all device platforms:**
 
 - **Block access** - This configuration blocks your entire organization.
 
@@ -53,7 +53,7 @@ More information can be found about the problem by clicking **More Details** in 
 
 To find out which Conditional Access policy or policies applied and why do the following.
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](~/identity/role-based-access-control/permissions-reference.md#conditional-access-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
 1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
 1. Find the event for the sign-in to review. Add or remove filters and columns to filter out unnecessary information.
    1. Narrow the scope by adding filters like:
@@ -73,7 +73,7 @@ To find out which Conditional Access policy or policies applied and why do the f
 
 Selecting the ellipsis on the right side of the policy in a sign-in event brings up policy details. This option gives administrators additional information about why a policy was successfully applied or not.
 
-:::image type="content" source="media/troubleshoot-conditional-access/activity-details-sign-ins.png" alt-text="Screenshot showing Conditional Access Policy details to see why policy applied or not." lightbox="media/troubleshoot-conditional-access/policy-details.png":::
+:::image type="content" source="media/troubleshoot-conditional-access/activity-details-sign-ins.png" alt-text="Screenshot showing Conditional Access Policy details to see why policy applied or not." lightbox="media/troubleshoot-conditional-access/activity-details-sign-ins.png":::
 
 The left side provides details collected at sign-in and the right side provides details of whether those details satisfy the requirements of the applied Conditional Access policies. Conditional Access policies only apply when all conditions are satisfied or not configured.
 

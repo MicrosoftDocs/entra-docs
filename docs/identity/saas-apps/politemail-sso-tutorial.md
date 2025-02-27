@@ -2,15 +2,15 @@
 title: Microsoft Entra SSO integration with PoliteMail - SSO
 description: Learn how to configure single sign-on between Microsoft Entra ID and PoliteMail - SSO.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 10/25/2023
-ms.author: jeedes
+ms.date: 06/11/2024
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and PoliteMail - SSO so that I can control who has access to PoliteMail - SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -18,7 +18,7 @@ ms.author: jeedes
 
 # Microsoft Entra SSO integration with PoliteMail - SSO
 
-In this tutorial, you'll learn how to integrate PoliteMail - SSO with Microsoft Entra ID. When you integrate PoliteMail - SSO with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate PoliteMail - SSO with Microsoft Entra ID. When you integrate PoliteMail - SSO with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to PoliteMail - SSO.
 * Enable your users to be automatically signed-in to PoliteMail - SSO with their Microsoft Entra accounts.
@@ -33,9 +33,9 @@ To integrate Microsoft Entra ID with PoliteMail - SSO, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
-* PoliteMail - SSO supports **IDP** initiated SSO.
+* PoliteMail - SSO supports **SP** initiated SSO.
 * PoliteMail - SSO supports **Just In Time** user provisioning.
 
 ## Add PoliteMail - SSO from the gallery
@@ -85,8 +85,11 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
     | `https://<YOUR_POLITEMAIL_HOSTNAME>/api/Saml2/Acs` |
     | `https://<YOUR_POLITEMAIL_HOSTNAME>/ssv3/Saml2/Acs` |
 
+    c. In the **Sign-on URL** text box, type a URL using the following pattern:
+    `https://<YOUR_POLITEMAIL_HOSTNAME>`
+
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier and Reply URL. Contact [PoliteMail - SSO support team](mailto:serversupport@politemail.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on url. Contact [PoliteMail - SSO support team](mailto:serversupport@politemail.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Microsoft Entra admin center.
 
 1. PoliteMail - SSO application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -155,10 +158,12 @@ In this section, a user called B.Simon is created in PoliteMail - SSO. PoliteMai
 
 In this section, you test your Microsoft Entra single sign-on configuration with following options.
  
-* Click on Test this application in Microsoft Entra admin center and you should be automatically signed in to the PoliteMail - SSO for which you set up the SSO.
+* Click on **Test this application** in Microsoft Entra admin center. This will redirect to PoliteMail - SSO Sign-on URL where you can initiate the login flow.
  
-* You can use Microsoft My Apps. When you click the PoliteMail - SSO tile in the My Apps, you should be automatically signed in to the PoliteMail - SSO for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
+* Go to PoliteMail - SSO Sign-on URL directly and initiate the login flow from there.
+ 
+* You can use Microsoft My Apps. When you click the PoliteMail - SSO tile in the My Apps, this will redirect to PoliteMail - SSO Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure PoliteMail - SSO you can enforce session control, which protects exfiltration and infiltration of your organization's sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

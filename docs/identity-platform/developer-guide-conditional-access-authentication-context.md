@@ -272,7 +272,7 @@ The table below will show all corner cases where ACRS is added to the token's cl
 
 ## Next steps
 
-- [Granular Conditional Access for sensitive data and actions (Blog)](https://techcommunity.microsoft.com/t5/azure-active-directory-identity/granular-conditional-access-for-sensitive-data-and-actions/ba-p/1751775)
+- [Granular Conditional Access for sensitive data and actions (Blog)](https://techcommunity.microsoft.com/blog/identity/granular-conditional-access-for-sensitive-data-and-actions/1751775)
 - [Zero trust with the Microsoft identity platform](/security/zero-trust/develop/identity)
 - [Building Zero Trust ready apps with the Microsoft identity platform](/security/zero-trust/develop/identity)
 - [Conditional Access authentication context](~/identity/conditional-access/concept-conditional-access-cloud-apps.md#authentication-context)

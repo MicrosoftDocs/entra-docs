@@ -1,6 +1,6 @@
 ---
-title: 'Configure enterprise application properties'
-description: Configure the properties of an enterprise application in Microsoft Entra ID.
+title: Configure enterprise application properties
+description: Learn how to configure the properties of an enterprise to how users access and interact with the application.
 
 author: omondiatieno
 manager: CelesteDG
@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
 
-ms.date: 02/20/2024
+ms.date: 02/27/2025
 ms.author: jomondi
 ms.reviewer: ergreenl
 zone_pivot_groups: enterprise-apps-minus-former-powershell
@@ -26,11 +26,11 @@ This article shows you where you can configure the properties of an enterprise a
 To configure the properties of an enterprise application, you need:
 
 - A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Global Administrator, Cloud Application Administrator, Application Administrator, or owner of the service principal.
+- One of the following roles: 
+    - Cloud Application Administrator
+    - Application Administrator, or owner of the service principal.
 
 ## Configure application properties
-
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Application properties control how the application is represented and how the application is accessed.
 
@@ -48,7 +48,7 @@ To configure the application properties:
    - App visibility to users
    - Set available URL options
    - Choose whether app assignment is required
-1. After you've configured the properties according to your apps needs, select **Save**.
+1. After you configure the properties according to your apps needs, select **Save**.
    
 :::zone-end
 
@@ -98,7 +98,7 @@ You need to consent to the `Application.ReadWrite.All` permission.
 Run the following Microsoft Graph query to configure basic application properties.
 
 ```http
-PATCH https://graph.microsoft.com/v1.0/applications/0d0021e2-eaab-4b9f-a5ad-38c55337d63e/
+PATCH https://graph.microsoft.com/v1.0/applications/00001111-aaaa-2222-bbbb-3333cccc4444/
 Content-type: application/json
 
 {
@@ -128,10 +128,8 @@ Content-type: application/json
 
 ## Use Microsoft Graph to configure application properties
 
-You can also configure other advanced properties of both app registrations and enterprise applications (service principals) through Microsoft Graph. These include properties such as permissions, and role assignments. For more information, see [Create and manage a Microsoft Entra application using Microsoft Graph](/graph/tutorial-applications-basics#configure-other-basic-properties-for-your-app).
+You can also configure other advanced properties of both app registrations and enterprise applications (service principals) through Microsoft Graph. These properties include permissions and role assignments. For more information, see [Create and manage a Microsoft Entra application using Microsoft Graph](/graph/tutorial-applications-basics#configure-other-basic-properties-for-your-app).
 
-## Next steps
+## Related content
 
-Learn more about how to manage enterprise applications.
-> [!div class="nextstepaction"]
-> [What is application management in Microsoft Entra ID?](what-is-application-management.md)
+- [What is application management in Microsoft Entra ID?](what-is-application-management.md)

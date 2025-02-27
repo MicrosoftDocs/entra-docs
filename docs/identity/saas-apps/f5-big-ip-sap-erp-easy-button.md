@@ -2,20 +2,20 @@
 title: Configure F5 BIG-IP Easy Button for SSO to SAP ERP using Microsoft Entra ID
 description: Learn to secure SAP ERP using Microsoft Entra ID, through F5’s BIG-IP Easy Button guided configuration.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 11/21/2022
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/25/2024
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and F5 BIG-IP Easy Button for SSO to SAP ERP using Microsoft Entra ID so that I can control who has access to F5 BIG-IP Easy Button for SSO to SAP ERP using Microsoft Entra ID, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Configure F5’s BIG-IP Easy Button for SSO to SAP ERP using Microsoft Entra ID
+# Configure F5’s BIG-IP Easy Button for SSO to SAP ERP using Microsoft Entra ID
 
 In this article, learn to secure SAP ERP using Microsoft Entra ID, through F5’s BIG-IP Easy Button guided configuration.
 
@@ -80,7 +80,7 @@ Prior BIG-IP experience isn’t necessary, but you will need:
 
 * User identities [synchronized](~/identity/hybrid/connect/how-to-connect-sync-whatis.md) from an on-premises directory to Microsoft Entra ID, or created directly within Microsoft Entra ID and flowed back to your on-premises directory
 
-* An account with Microsoft Entra Application admin [permissions](/azure/active-directory/users-groups-roles/directory-assign-admin-roles#application-administrator)
+* An account with Microsoft Entra Application Administrator [permissions](/azure/active-directory/users-groups-roles/directory-assign-admin-roles#application-administrator)
 
 * An [SSL Web certificate](~/identity/enterprise-apps/f5-bigip-deployment-guide.md#ssl-profile) for publishing services over HTTPS, or use default BIG-IP certs while testing
 
@@ -88,7 +88,7 @@ Prior BIG-IP experience isn’t necessary, but you will need:
 
 ## BIG-IP configuration methods
 
-There are many methods to configure BIG-IP for this scenario, including two template-based options and an advanced configuration. This tutorial covers the latest Guided Configuration 16.1 offering an Easy button template. 
+There are many methods to configure BIG-IP for this scenario, including two template-based options and an advanced configuration. This article covers the latest Guided Configuration 16.1 offering an Easy button template. 
 
 With the Easy Button, admins no longer go back and forth between Microsoft Entra ID and a BIG-IP to enable services for SHA. The deployment and policy management is handled directly between the APM’s Guided Configuration wizard and Microsoft Graph. This rich integration between BIG-IP APM and Microsoft Entra ID ensures that applications can quickly, easily support identity federation, SSO, and Microsoft Entra Conditional Access, reducing administrative overhead.
 
@@ -140,16 +140,10 @@ Initiate the APM's **Guided Configuration** to launch the **Easy Button** Templa
 
 2. Navigate to **Access > Guided Configuration > Microsoft Integration** and select **Microsoft Entra Application**.
 
-   ![Screenshot for Configure Easy Button- Install the template](./media/f5-big-ip-easy-button-sap-erp/easy-button-template.png)
+3. Under **Configuring the solution using the below steps will create the required objects**, review the list of configuration steps and select **Next**.
 
-3. Review the list of configuration steps and select **Next**
+4. Under **Guided Configuration**, follow the sequence of steps required to publish your application.
 
-   ![Screenshot for Configure Easy Button - List configuration steps](./media/f5-big-ip-easy-button-sap-erp/config-steps.png)
-
-4. Follow the sequence of steps required to publish your application.
-
-   ![Configuration steps flow](./media/f5-big-ip-easy-button-sap-erp/config-steps-flow.png#lightbox)
-   
 ### Configuration Properties
 
 These are general and service account properties. The **Configuration Properties** tab creates a BIG-IP application config and SSO object. Consider the **Azure Service Account Details** section to represent the client you registered in your Microsoft Entra tenant earlier, as an application. These settings allow a BIG-IP's OAuth client to individually register a SAML SP directly in your tenant, along with the SSO properties you would normally configure manually. Easy Button does this for every BIG-IP service being published and enabled for SHA.
@@ -202,9 +196,9 @@ The Service Provider settings define the properties for the SAML SP instance of 
 
 This section defines all properties that you would normally use to manually configure a new BIG-IP SAML application within your Microsoft Entra tenant. 
 
-Easy Button provides a set of pre-defined application templates for Oracle PeopleSoft, Oracle E-business Suite, Oracle JD Edwards, SAP ERP as well as generic SHA template for any other apps. For this scenario, select **SAP ERP Central Component > Add** to start the Azure configurations.
+Easy Button provides a set of pre-defined application templates for Oracle PeopleSoft, Oracle E-business Suite, Oracle JD Edwards, SAP ERP as well as generic SHA template for any other apps. 
 
-   ![Screenshot for Azure configuration add BIG-IP application](./media/f5-big-ip-easy-button-sap-erp/azure-config-add-app.png)
+For this scenario, in the **Azure Configuration** page, select **SAP ERP Central Component** > **Add** to start the Azure configurations.
 
 #### Azure Configuration
 
@@ -230,7 +224,7 @@ Easy Button provides a set of pre-defined application templates for Oracle Peopl
 
 When a user successfully authenticates to Microsoft Entra ID, it issues a SAML token with a default set of claims and attributes uniquely identifying the user. The **User Attributes & Claims tab** shows the default claims to issue for the new application. It also lets you configure more claims.
 
-As our example AD infrastructure is based on a .com domain suffix used both, internally and externally, we don’t require any additional attributes to achieve a functional KCD SSO implementation. See the [advanced tutorial](~/identity/enterprise-apps/f5-big-ip-kerberos-advanced.md) for cases where you have multiple domains or user’s log-in using an alternate suffix. 
+As our example AD infrastructure is based on a .com domain suffix used both, internally and externally, we don’t require any additional attributes to achieve a functional KCD SSO implementation. See the [advanced  article](~/identity/enterprise-apps/f5-big-ip-kerberos-advanced.md) for cases where you have multiple domains or user’s log-in using an alternate suffix. 
 
    ![Screenshot for user attributes and claims](./media/f5-big-ip-easy-button-sap-erp/user-attributes-claims.png)
    
@@ -238,7 +232,7 @@ You can include additional Microsoft Entra attributes, if necessary, but for thi
 
 #### Additional User Attributes
 
-The **Additional User Attributes** tab can support a variety of distributed systems requiring attributes stored in other directories, for session augmentation. Attributes fetched from an LDAP source can then be injected as additional SSO headers to further control access based on roles, Partner IDs, etc.
+The **Additional User Attributes** tab can support a variety of distributed systems requiring attributes stored in other directories, for session augmentation. Attributes fetched from an LDAP source can then be injected as additional SSO headers to further control access based on roles, Partner IDs, and so on.
 
    ![Screenshot for additional user attributes](./media/f5-big-ip-easy-button-sap-erp/additional-user-attributes.png)
 
@@ -251,7 +245,7 @@ Conditional Access policies are enforced post Microsoft Entra pre-authentication
 
 The **Available Policies** view, by default, will list all Conditional Access policies that do not include user based actions.
 
-The **Selected Policies** view, by default, displays all policies targeting All cloud apps. These policies cannot be deselected or moved to the Available Policies list as they are enforced at a tenant level.
+The **Selected Policies** view, by default, displays all policies targeting All resources. These policies cannot be deselected or moved to the Available Policies list as they are enforced at a tenant level.
 
 To select a policy to be applied to the application being published:
 
@@ -326,7 +320,7 @@ During deployment, the SAML federation metadata for the published application is
 
 This last step provides a breakdown of your configurations. Select **Deploy** to commit all settings and verify that the application now exists in your tenants list of Enterprise applications.
 
-## Next steps
+## Related content
 
 From a browser, **connect** to the application’s external URL or select the **application’s icon** in the [Microsoft MyApps portal](https://myapps.microsoft.com/). After authenticating to Microsoft Entra ID, you’ll be redirected to the BIG-IP virtual server for the application and automatically signed in through SSO.
 
