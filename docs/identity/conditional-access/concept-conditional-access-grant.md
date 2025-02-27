@@ -201,6 +201,16 @@ The following restrictions apply when you configure a policy by using the passwo
 
 If your organization created terms of use, other options might be visible under grant controls. These options allow administrators to require acknowledgment of terms of use as a condition of accessing the resources that the policy protects. You can find more information about terms of use in [Microsoft Entra terms of use](terms-of-use.md).
 
+## Multiple grant controls
+
+When multiple grant controls are applied to a user, it's important to understand that Conditional Access policies follow a specific validation order by design. For example, if a user has two policies requiring multifactor authentication (MFA) and Terms of Use (ToU), Conditional Access first validates the user's MFA claim and then the ToU.
+ 
+- If a valid MFA claim isn't present in the token, you see an "interrupt" (pending MFA) and a failure for ToU in the logs, even if the ToU was already accepted in a previous sign-in.
+- Once multifactor authentication is completed, a second log entry appears, validating the ToU. If the user already accepted the ToU, you see success for both MFA and ToU. 
+- If a valid MFA claim is present in the token, a single log shows success for both MFA and ToU.
+ 
+If multiple policies are applied to a user requiring MFA, Device State, and ToU, the process is similar. The validation order is MFA, Device State, and then ToU.
+
 ### Custom controls (preview)
 
 Custom controls are a preview capability of Microsoft Entra ID. When you use custom controls, your users are redirected to a compatible service to satisfy authentication requirements that are separate from Microsoft Entra ID. For more information, check out the [Custom controls](controls.md) article.
