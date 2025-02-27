@@ -18,7 +18,7 @@ ms.custom: enterprise-apps
 
 # Add an OpenID Connect-based single sign-on application
 
-In this article, you use the Microsoft Entra admin center to add an enterprise application that uses the [OpenID Connect (OIDC)](~/identity-platform/v2-protocols.md) standard for SSO. After you configure SSO, your users can sign in by using their Microsoft Entra credentials.
+In this article, you use the Microsoft Entra admin center to add an enterprise application that uses the [OpenID Connect (OIDC)](~/identity-platform/v2-protocols.md) standard for Single sign-on (SSO). After you configure SSO, your users can sign in by using their Microsoft Entra credentials.
 
 We recommend you use a nonproduction environment to test the steps in this page.
 
