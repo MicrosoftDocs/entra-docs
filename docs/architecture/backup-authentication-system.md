@@ -87,8 +87,8 @@ The backup authentication system is supported in all cloud environments except M
 | --- | --- | --- | --- |
 | Azure Commercial | Commercial and M365 Government | Users and managed identities | ```https://login.microsoftonline.com``` |
 | Azure Government | M365 GCC High and DoD | Users and managed identities | ```https://login.microsoftonline.us``` |
-| Azure Government Secret | Not available | Managed identities | Not available |
-| Azure Government Top Secret | Not available | Managed identities | Not available |
+| Azure Government Secret | M365 Government Secret | Managed identities | Not available |
+| Azure Government Top Secret | M365 Government Top Secret | Managed identities | Not available |
 | Azure operated by 21Vianet | Not available | Managed identities | ```https://login.partner.microsoftonline.cn``` | 
 
 ## Appendix
