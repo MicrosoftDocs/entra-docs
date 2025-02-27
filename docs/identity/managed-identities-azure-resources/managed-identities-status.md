@@ -4,7 +4,7 @@ description: List of services supporting managed identities
 
 author: rwike77
 ms.author: ryanwi
-ms.date: 03/14/2024
+ms.date: 02/27/2025
 ms.topic: conceptual
 ms.service: entra-id
 ms.subservice: managed-identities
@@ -37,11 +37,13 @@ The following Azure services support managed identities for Azure resources:
 | Azure Batch                     | [Configure customer-managed keys for your Azure Batch account with Azure Key Vault and Managed Identity](/azure/batch/batch-customer-managed-key)  </BR> [Configure managed identities in Batch pools](/azure/batch/managed-identity-pools)          |
 | Azure Blueprints                | [Stages of a blueprint deployment](/azure/governance/blueprints/concepts/deployment-stages)                              |
 | Azure Cache for Redis           | [Managed identity for storage accounts with Azure Cache for Redis](/azure/azure-cache-for-redis/cache-managed-identity) |
+| Azure Chaos Studio              | [Permissions and security in Azure Chaos Studio](/azure/chaos-studio/chaos-studio-permissions-security#user-assigned-managed-identity)        |
 | Azure Communications Gateway    | [Deploy Azure Communications Gateway](/azure/communications-gateway/deploy) |
 | Azure Communication Services    | [How to use Managed Identity with Azure Communication Services](/azure/communication-services/how-tos/managed-identity)
 | Azure Container Apps            | [Managed identities in Azure Container Apps](/azure/container-apps/managed-identity) |
 | Azure Container Instance        | [How to use managed identities with Azure Container Instances](/azure/container-instances/container-instances-managed-identity)                                                                                          |
 | Azure Container Registry        | [Use an Azure-managed identity in ACR Tasks](/azure/container-registry/container-registry-tasks-authentication-managed-identity)                                                                       |
+| Azure CycleCloud                | [Using Managed Identities](/azure/cyclecloud/how-to/managed-identities?view=cyclecloud-8)    |
 | Azure AI services        | [Configure customer-managed keys with Azure Key Vault for Azure AI services](/azure/ai-services/encryption/cognitive-services-encryption-keys-portal)                                                                          |
 | Azure Data Box                  | [Use customer-managed keys in Azure Key Vault for Azure Data Box](/azure/databox/data-box-customer-managed-encryption-key-portal)                                                                                             |
 | Azure Data Explorer             | [Configure managed identities for your Azure Data Explorer cluster](/azure/data-explorer/configure-managed-identities-cluster?tabs=portal)                                                                                                     |
@@ -67,6 +69,7 @@ The following Azure services support managed identities for Azure resources:
 | Azure Monitor                   | [Azure Monitor customer-managed key](/azure/azure-monitor/logs/customer-managed-keys?tabs=portal)                                                                                              |
 | Azure Policy                    | [Remediate non-compliant resources with Azure Policy](/azure/governance/policy/how-to/remediate-resources)      |
 | Microsoft Purview                   | [Credentials for source authentication in Microsoft Purview](/purview/manage-credentials) |
+| Azure Quantum                   | [Authenticate using a managed identity](/azure/quantum/optimization-authenticate-managed-identity)        |
 | Azure Resource Mover            | [Move resources across regions (from resource group)](/azure/resource-mover/move-region-within-resource-group)|
 | Azure Site Recovery             | [Replicate machines with private endpoints](/azure/site-recovery/azure-to-azure-how-to-enable-replication-private-endpoints#enable-the-managed-identity-for-the-vault)                                  |
 | Azure Search                    | [Set up an indexer connection to a data source using a managed identity](/azure/search/search-howto-managed-identities-data-sources)                                                                                            |
