@@ -148,7 +148,7 @@ To enable sign-in and sign-out functionality in your Angular application, follow
     ```html
     <div class="title">
         <h5>
-            Welcome to the Microsoft Authentication Library For Javascript - Angular SPA
+            Welcome to the Microsoft Authentication Library For JavaScript - Angular SPA
         </h5>
         <p >View your data from Microsoft Graph by clicking the "View Profile" link above.</p>
     </div>
@@ -176,7 +176,7 @@ To enable sign-in and sign-out functionality in your Angular application, follow
     <html lang="en">
       <head>
         <meta charset="utf-8">
-        <title>MSAL For Javascript - Angular SPA</title>
+        <title>MSAL For JavaScript - Angular SPA</title>
       </head>
       <body>
         <app-root></app-root>
@@ -185,7 +185,7 @@ To enable sign-in and sign-out functionality in your Angular application, follow
     </html>
     ```
 
-    The code snippet defines an HTML5 document with English as the language and UTF-8 character encoding. It sets the title to "MSAL For Javascript - Angular SPA." The body includes the `<app-root>` component as the main entry point and the `<app-redirect>` component for redirection functionalities.
+    The code snippet defines an HTML5 document with English as the language and UTF-8 character encoding. It sets the title to "MSAL For JavaScript - Angular SPA." The body includes the `<app-root>` component as the main entry point and the `<app-redirect>` component for redirection functionalities.
 
 1. Open the `src/styles.css` file and replace the contents with the following code.
 
