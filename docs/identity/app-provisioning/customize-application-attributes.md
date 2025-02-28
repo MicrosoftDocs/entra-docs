@@ -146,12 +146,12 @@ When you're editing the list of supported attributes, the following properties a
 
 The SCIM Request for Comments (RFC) defines a core user and group schema, while also allowing for extensions to the schema to meet your application's needs. To add a custom attribute to a SCIM application:
   1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
-  2. Browse to **Identity** > **Applications** > **Enterprise applications**.
-  3. Select your application, and then select **Provisioning**.
-  4. Under **Mappings**, select the object (user or group) for which you'd like to add a custom attribute.
-  5. At the bottom of the page, select **Show advanced options**.
-  6. Select **Edit attribute list for AppName**.
-  7. At the bottom of the attribute list, enter information about the custom attribute in the fields provided. Then select **Add Attribute**.
+  1. Browse to **Identity** > **Applications** > **Enterprise applications**.
+  1. Select your application, and then select **Provisioning**.
+  1. Under **Mappings**, select the object (user or group) for which you'd like to add a custom attribute.
+  1. At the bottom of the page, select **Show advanced options**.
+  1. Select **Edit attribute list for AppName**.
+  1. At the bottom of the attribute list, enter information about the custom attribute in the fields provided. Then select **Add Attribute**.
 
 For SCIM applications, the attribute name must follow the pattern shown in the example. The "CustomExtensionName" and "CustomAttribute" can be customized per your application's requirements, for example: urn:ietf:params:scim:schemas:extension:CustomExtensionName:2.0:User:CustomAttribute 
 
