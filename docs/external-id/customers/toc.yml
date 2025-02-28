@@ -104,6 +104,14 @@ items:
                     href: /entra/identity-platform/tutorial-single-page-app-javascript-configure-authentication
                   - name: Sign in and sign out
                     href: /entra/identity-platform/tutorial-single-page-app-javascript-sign-in-sign-out
+            - name: Angular 
+              items:
+                  - name: Prepare your app
+                    href: /entra/identity-platform/tutorial-single-page-apps-angular-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                  - name: Sign in users
+                    href: /entra/identity-platform/tutorial-single-page-apps-sign-in-users-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+                  - name: Extract user data and test app
+                    href: /entra/identity-platform/tutorial-single-page-apps-angular-extract-user-data?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
             - name: React
               items:
                   - name: Create React app
@@ -111,17 +119,7 @@ items:
                   - name: Configure app for authentication
                     href: /entra/identity-platform/tutorial-single-page-app-react-configure-authentication
                   - name: Sign in and sign out
-                    href: /entra/identity-platform/tutorial-single-page-app-react-sign-in-sign-out
-            - name: Angular
-              items:
-                  - name: Prepare tenant
-                    href: tutorial-single-page-app-angular-sign-in-prepare-tenant.md
-                  - name: Create Angular app
-                    href: tutorial-single-page-app-angular-sign-in-prepare-app.md
-                  - name: Configure app for authentication
-                    href: tutorial-single-page-app-angular-sign-in-configure-authentication.md
-                  - name: Sign in and sign out
-                    href: tutorial-single-page-app-angular-sign-in-sign-out.md
+                    href: /entra/identity-platform/tutorial-single-page-app-react-sign-iign-out
         - name: Native authentication
           items:
             - name: React

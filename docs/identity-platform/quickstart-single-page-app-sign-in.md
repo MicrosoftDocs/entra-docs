@@ -323,7 +323,7 @@ Run the project with a web server by using dotnet:
 
 ## Grant admin consent
 
-[!INCLUDE [Grant admin consent](../external-id/customers/includes/configure-user-flow/create-sign-in-sign-out-user-flow.md)]
+[!INCLUDE [Grant admin consent](../external-id/customers/includes/register-app/grant-api-permission-sign-in.md)]
 
 ## Create a user flow
 
