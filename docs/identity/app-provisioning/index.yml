@@ -28,7 +28,7 @@ landingContent:
         links:
           - text: SAP Cloud Platform Identity Authentication provisioning
             url: ~/identity/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md?context=/azure/active-directory/app-provisioning/context/app-provisioning-context
-          - text: Oracle Fusion ERP provisioning
+          - text: Oracle Fusion Enterprise Resource Planning (ERP) provisioning
             url: ~/identity/saas-apps/oracle-fusion-erp-provisioning-tutorial.md?context=/azure/active-directory/app-provisioning/context/app-provisioning-context
           - text: Atlassian Cloud provisioning
             url: ~/identity/saas-apps/atlassian-cloud-provisioning-tutorial.md?context=/azure/active-directory/app-provisioning/context/app-provisioning-context
@@ -40,7 +40,7 @@ landingContent:
             url: customize-application-attributes.md
           - text: Use scoping filters
             url: define-conditional-rules-for-provisioning-user-accounts.md
-  - title: Develop an app using SCIM for provisioning
+  - title: Develop an app using System for Cross-domain Identity Management (SCIM) for provisioning
     linkLists:
       - linkListType: overview
         links:
