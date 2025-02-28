@@ -271,6 +271,7 @@ The request formats in the PATCH and POST differ. To ensure that POST and PATCH 
 **AppRoleAssignmentsComplex**
 
 **When to use:** Use the AppRoleAssignmentsComplex expression to provision multiple roles for a user. 
+
 **How to configure:** Edit the list of supported attributes as described to include a new attribute for roles:
 
 ![Add roles](./media/customize-application-attributes/add-roles.png)<br>
