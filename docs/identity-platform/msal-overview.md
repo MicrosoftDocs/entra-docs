@@ -30,7 +30,7 @@ MSAL provides multiple ways to get security tokens, with a consistent API for ma
 
 | Application types and scenarios | Tutorials |
 | --- | --- |
-| Single-page apps (JavaScript) | [Tutorial: Sign-in users to a React Single-page application (SPA)](tutorial-single-page-app-react-register-app.md) |
+| Single-page apps (JavaScript) | [Tutorial: Sign-in users to a React Single-page application (SPA)](tutorial-single-page-app-react-prepare-app.md) |
 | Web applications | [Tutorial: Sign-in users to a ASP.NET Core Web application](tutorial-web-app-dotnet-prepare-app.md) |
 | Web APIs | [Tutorial: Implement a protected endpoint a ASP.NET Core API](tutorial-web-api-dotnet-register-app.md) |
 | Mobile and native applications | [Mobile application calling a web API on behalf of the user who's signed-in interactively](scenario-mobile-app-registration.md). |

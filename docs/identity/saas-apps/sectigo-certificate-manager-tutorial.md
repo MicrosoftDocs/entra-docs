@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Sectigo Certificate Manager'
+title: Microsoft Entra integration with Sectigo Certificate Manager
 description: Learn how to configure single sign-on between Microsoft Entra ID and Sectigo Certificate Manager.
 
 author: nguhiu
@@ -8,15 +8,15 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Sectigo Certificate Manager so that I can control who has access to Sectigo Certificate Manager, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Sectigo Certificate Manager
+# Microsoft Entra integration with Sectigo Certificate Manager
 
-In this tutorial, you'll learn how to integrate Sectigo Certificate Manager with Microsoft Entra ID. When you integrate Sectigo Certificate Manager with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Sectigo Certificate Manager with Microsoft Entra ID. When you integrate Sectigo Certificate Manager with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Sectigo Certificate Manager.
 * Enable your users to be automatically signed-in to Sectigo Certificate Manager with their Microsoft Entra accounts.
@@ -30,11 +30,11 @@ To configure Microsoft Entra integration with Sectigo Certificate Manager, you n
 * Sectigo Certificate Manager account.
 
 > [!NOTE]
-> Sectigo runs multiple instances of Sectigo Certificate Manager. The main instance of Sectigo Certificate Manager is  **https:\//cert-manager.com**, and this URL is used in this tutorial.  If your account is on a different instance, you must adjust the URLs accordingly.
+> Sectigo runs multiple instances of Sectigo Certificate Manager. The main instance of Sectigo Certificate Manager is  **https:\//cert-manager.com**, and this URL is used in this article.  If your account is on a different instance, you must adjust the URLs accordingly.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment and integrate Sectigo Certificate Manager with Microsoft Entra ID.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment and integrate Sectigo Certificate Manager with Microsoft Entra ID.
 
 Sectigo Certificate Manager supports the following features:
 
@@ -171,6 +171,6 @@ In the **Sectigo Certificate Manager** application integration pane, select **Si
 
 Select **Sectigo Certificate Manager** in the My Apps portal.  If configured correctly you will be automatically signed in to Sectigo Certificate Manager. For more information about the My Apps portal, see [Access and use apps in the My Apps portal](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Sectigo Certificate Manager you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

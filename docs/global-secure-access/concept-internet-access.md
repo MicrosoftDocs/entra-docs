@@ -3,9 +3,9 @@ title: Learn about Microsoft Entra Internet Access
 description: Learn about how Microsoft Entra Internet Access secures access to the Internet.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.topic: conceptual
-ms.date: 12/23/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.subservice: entra-internet-access 
 ms.reviewer: frankgomulka

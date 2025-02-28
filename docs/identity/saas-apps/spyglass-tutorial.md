@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Spyglass'
+title: Microsoft Entra single sign-on (SSO) integration with Spyglass
 description: Learn how to configure single sign-on between Microsoft Entra and Spyglass.
 services: active-directory
 author: nguhiu
@@ -8,14 +8,14 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 05/07/2024
 ms.author: gideonkiratu
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Spyglass
+# Microsoft Entra single sign-on (SSO) integration with Spyglass
 
-In this tutorial, you'll learn how to integrate Spyglass with Microsoft Entra ID. When you integrate Spyglass with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Spyglass with Microsoft Entra ID. When you integrate Spyglass with Microsoft Entra ID, you can:
 
 Use Microsoft Entra ID to control who can access Spyglass.
 Enable your users to be automatically signed in to Spyglass with their Microsoft Entra accounts.

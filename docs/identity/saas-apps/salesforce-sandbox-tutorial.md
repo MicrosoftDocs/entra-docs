@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Salesforce Sandbox'
+title: Microsoft Entra integration with Salesforce Sandbox
 description: Learn how to configure single sign-on between Microsoft Entra ID and Salesforce Sandbox.
 
 author: nguhiu
@@ -8,16 +8,16 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Salesforce Sandbox so that I can control who has access to Salesforce Sandbox, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Salesforce Sandbox
+# Microsoft Entra single sign-on (SSO) integration with Salesforce Sandbox
 
-In this tutorial, you'll learn how to integrate Salesforce Sandbox with Microsoft Entra ID. When you integrate Salesforce Sandbox with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Salesforce Sandbox with Microsoft Entra ID. When you integrate Salesforce Sandbox with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Salesforce Sandbox.
 * Enable your users to be automatically signed-in to Salesforce Sandbox with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Salesforce Sandbox supports **SP and IDP** initiated SSO
 * Salesforce Sandbox supports **Just In Time** user provisioning
@@ -89,7 +89,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	![choose metadata file](common/browse-upload-metadata.png)
 
 	> [!NOTE]
-    > You will get the service provider metadata file from the Salesforce Sandbox admin portal which is explained later in the tutorial.
+    > You will get the service provider metadata file from the Salesforce Sandbox admin portal which is explained later in the article.
 
 	c. After the metadata file is successfully uploaded, the **Reply URL** value will get auto populated in **Reply URL** textbox.
 
@@ -176,7 +176,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     a. You should have a verified domain.
 
-    b. You need to configure and enable your domain on Salesforce Sandbox, steps for this are explained later in this tutorial.
+    b. You need to configure and enable your domain on Salesforce Sandbox, steps for this are explained later in this article.
 
     c. In the Azure portal, on the **Basic SAML Configuration** section, click **Set additional URLs** and perform the following step:
   
@@ -258,6 +258,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the Salesforce Sandbox tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Salesforce Sandbox for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure the Salesforce Sandbox you can enforce session controls, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session controls extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

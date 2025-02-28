@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with FirmPlay - Employee Advocacy for Recruiting'
+title: Microsoft Entra SSO integration with FirmPlay - Employee Advocacy for Recruiting
 description: Learn how to configure single sign-on between Microsoft Entra ID and FirmPlay - Employee Advocacy for Recruiting.
 
 author: nguhiu
@@ -8,15 +8,15 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and FirmPlay - Employee Advocacy for Recruiting so that I can control who has access to FirmPlay - Employee Advocacy for Recruiting, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with FirmPlay - Employee Advocacy for Recruiting
+# Microsoft Entra SSO integration with FirmPlay - Employee Advocacy for Recruiting
 
-In this tutorial, you'll learn how to integrate FirmPlay - Employee Advocacy for Recruiting with Microsoft Entra ID. When you integrate FirmPlay - Employee Advocacy for Recruiting with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate FirmPlay - Employee Advocacy for Recruiting with Microsoft Entra ID. When you integrate FirmPlay - Employee Advocacy for Recruiting with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to FirmPlay - Employee Advocacy for Recruiting.
 * Enable your users to be automatically signed-in to FirmPlay - Employee Advocacy for Recruiting with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with FirmPlay - Employee Advocacy for R
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * FirmPlay - Employee Advocacy for Recruiting supports **SP** initiated SSO.
 
@@ -139,6 +139,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the FirmPlay - Employee Advocacy for Recruiting tile in the My Apps, this will redirect to FirmPlay - Employee Advocacy for Recruiting Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure FirmPlay - Employee Advocacy for Recruiting you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

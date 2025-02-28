@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Employee Advocacy by Sprout Social'
+title: Microsoft Entra SSO integration with Employee Advocacy by Sprout Social
 description: Learn how to configure single sign-on between Microsoft Entra ID and Employee Advocacy by Sprout Social.
 
 author: nguhiu
@@ -8,15 +8,15 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Employee Advocacy by Sprout Social so that I can control who has access to Employee Advocacy by Sprout Social, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Employee Advocacy by Sprout Social
+# Microsoft Entra SSO integration with Employee Advocacy by Sprout Social
 
-In this tutorial, you'll learn how to integrate Employee Advocacy by Sprout Social with Microsoft Entra ID. When you integrate Employee Advocacy by Sprout Social with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Employee Advocacy by Sprout Social with Microsoft Entra ID. When you integrate Employee Advocacy by Sprout Social with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Employee Advocacy by Sprout Social.
 * Enable your users to be automatically signed-in to Employee Advocacy by Sprout Social with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Employee Advocacy by Sprout Social supports **SP** and **IDP** initiated SSO.
 * Employee Advocacy by Sprout Social supports **Just In Time** user provisioning.
@@ -163,6 +163,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the Employee Advocacy by Sprout Social tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Employee Advocacy by Sprout Social for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Employee Advocacy by Sprout Social you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

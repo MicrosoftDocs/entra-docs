@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with LaunchDarkly'
+title: Microsoft Entra integration with LaunchDarkly
 description: Learn how to configure single sign-on between Microsoft Entra ID and LaunchDarkly.
 
 author: nguhiu
@@ -8,15 +8,15 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and LaunchDarkly so that I can control who has access to LaunchDarkly, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with LaunchDarkly
+# Microsoft Entra integration with LaunchDarkly
 
-In this tutorial, you'll learn how to integrate LaunchDarkly with Microsoft Entra ID. When you integrate LaunchDarkly with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate LaunchDarkly with Microsoft Entra ID. When you integrate LaunchDarkly with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to LaunchDarkly.
 * Enable your users to be automatically signed-in to LaunchDarkly with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * LaunchDarkly supports **IDP** initiated SSO.
 * LaunchDarkly supports **Just In Time** user provisioning.
@@ -90,7 +90,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://app.launchdarkly.com/trust/saml2/acs/<customers-unique-id>`
 
 	> [!NOTE]
-	> The Reply URL value is not real. You will update the value with the actual Reply URL, which is explained later in the tutorial. LaunchDarkly currently supports **IDP** initiated SSO. To use this application in **IDP** mode, you need to leave the **Sign on URL** field blank, otherwise you will not be able to initiate the login from the **IDP**. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The Reply URL value is not real. You will update the value with the actual Reply URL, which is explained later in the article. LaunchDarkly currently supports **IDP** initiated SSO. To use this application in **IDP** mode, you need to leave the **Sign on URL** field blank, otherwise you will not be able to initiate the login from the **IDP**. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 6. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
@@ -170,6 +170,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the LaunchDarkly tile in the My Apps, you should be automatically signed in to the LaunchDarkly for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure LaunchDarkly you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

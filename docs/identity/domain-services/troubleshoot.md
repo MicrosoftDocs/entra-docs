@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: domain-services
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: troubleshooting
-ms.date: 12/03/2024
+ms.date: 02/19/2025
 ms.author: justinha
 ---
 # Common errors and troubleshooting steps for Microsoft Entra Domain Services

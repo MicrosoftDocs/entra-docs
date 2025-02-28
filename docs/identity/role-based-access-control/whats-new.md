@@ -1,5 +1,5 @@
 ---
-title: What's new in Microsoft Entra RBAC
+title: What's new in Microsoft Entra RBAC documentation
 description: Learn about the new features and documentation improvements in Microsoft Entra role-based access control (RBAC).
 
 author: rolyon
@@ -12,7 +12,7 @@ ms.author: rolyon
 
 ---
 
-# What's new in Microsoft Entra RBAC
+# What's new in Microsoft Entra RBAC documentation
 
 This article provides information about new features and documentation improvements in Microsoft Entra role-based access control (RBAC).
 

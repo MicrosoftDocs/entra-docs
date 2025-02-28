@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Signagelive'
+title: Microsoft Entra integration with Signagelive
 description: Learn how to configure single sign-on between Microsoft Entra ID and Signagelive.
 
 author: nguhiu
@@ -8,15 +8,15 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Signagelive so that I can control who has access to Signagelive, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Signagelive
+# Microsoft Entra integration with Signagelive
 
-In this tutorial, you'll learn how to integrate Signagelive with Microsoft Entra ID. When you integrate Signagelive with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Signagelive with Microsoft Entra ID. When you integrate Signagelive with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Signagelive.
 * Enable your users to be automatically signed-in to Signagelive with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Signagelive supports SP-initiated SSO.
 * Signagelive supports [Automated user provisioning](signagelive-provisioning-tutorial.md).
@@ -141,6 +141,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Signagelive tile in the My Apps, this will redirect to Signagelive Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Signagelive you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

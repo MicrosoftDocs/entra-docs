@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Wrike'
+title: Microsoft Entra integration with Wrike
 description: Learn how to configure single sign-on between Microsoft Entra ID and Wrike.
 
 author: nguhiu
@@ -8,15 +8,15 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Wrike so that I can control who has access to Wrike, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Wrike
+# Microsoft Entra integration with Wrike
 
-In this tutorial, you'll learn how to integrate Wrike with Microsoft Entra ID. When you integrate Wrike with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Wrike with Microsoft Entra ID. When you integrate Wrike with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Wrike.
 * Enable your users to be automatically signed-in to Wrike with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with Wrike, you need the following item
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Wrike supports **SP** and **IDP** initiated SSO.
 * Wrike supports [**automated** user provisioning and deprovisioning](wrike-provisioning-tutorial.md) (recommended).
@@ -151,6 +151,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the Wrike tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Wrike for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Wrike you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

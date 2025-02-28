@@ -480,7 +480,7 @@ This script executes those functions on each user in the organization, using the
 $skuId = "contoso:EMS"
 
 #find all users that have the SKU license assigned
-Get-MgUser -All | where {$_.isLicensed -eq $true -and $_.Licenses.AccountSKUID -eq $skuId} | select `
+Get-MgUser -All -Property LicenseAssignmentStates | Where-Object { $_.LicenseAssignmentStates.SkuId -contains $skuId }  | select `
     Id, `
     @{Name="SkuId";Expression={$skuId}}, `
     @{Name="AssignedDirectly";Expression={(UserHasLicenseAssignedDirectly $_ $skuId)}}, `

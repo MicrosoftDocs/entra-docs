@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with E Sales Manager Remix'
+title: Microsoft Entra integration with E Sales Manager Remix
 description: Learn how to configure single sign-on between Microsoft Entra ID and E Sales Manager Remix.
 
 author: nguhiu
@@ -8,13 +8,13 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 ---
 # Integrate Microsoft Entra ID with E Sales Manager Remix
 
-In this tutorial, you learn how to integrate Microsoft Entra ID with E Sales Manager Remix.
+In this article,  you learn how to integrate Microsoft Entra ID with E Sales Manager Remix.
 
 By integrating Microsoft Entra ID with E Sales Manager Remix, you get the following benefits:
 
@@ -32,17 +32,17 @@ To configure Microsoft Entra integration with E Sales Manager Remix, you need th
 - An E Sales Manager Remix SSO-enabled subscription
 
 > [!NOTE]
-> When you test the steps in this tutorial, we recommend that you do *not* use a production environment.
+> When you test the steps in this article,  we recommend that you do *not* use a production environment.
 
-To test the steps in this tutorial, follow these recommendations:
+To test the steps in this article,  follow these recommendations:
 
 - Do not use your production environment, unless it is necessary.
 - If you don't have a Microsoft Entra trial environment, you can [get a one-month trial](https://azure.microsoft.com/pricing/free-trial/).
 
 ## Scenario description
-In this tutorial, you test Microsoft Entra single sign-on in a test environment. 
+In this article,  you test Microsoft Entra single sign-on in a test environment. 
 
-The scenario outlined in this tutorial consists of two main building blocks:
+The scenario outlined in this article consists of two main building blocks:
 
 * Adding E Sales Manager Remix from the gallery
 * Configuring and testing Microsoft Entra single sign-on
@@ -91,7 +91,7 @@ Enable Microsoft Entra single sign-on in the Azure portal and configure single s
 
 	b. In the **Identifier** box, type a URL in the following format: *https://\<Server-Based-URL>/\<sub-domain>/*.
 
-	c. Note the **Identifier** value for later use in this tutorial.
+	c. Note the **Identifier** value for later use in this article.
 	
 	> [!NOTE] 
 	> The preceding values are not real. Update them with the actual sign-in URL and identifier. To obtain the values, contact [E Sales Manager Remix Client support team](mailto:esupport@softbrain.co.jp).
@@ -104,7 +104,7 @@ Enable Microsoft Entra single sign-on in the Azure portal and configure single s
 
     The **Edit Attribute** window opens.
 
-1. Copy the **Namespace** and **Name** values. Generate the value in the pattern *\<Namespace>/\<Name>*, and save it for later use in this tutorial.
+1. Copy the **Namespace** and **Name** values. Generate the value in the pattern *\<Namespace>/\<Name>*, and save it for later use in this article.
 
 	![The Edit Attribute window](./media/esalesmanagerremix-tutorial/configure2.png)
 
@@ -239,7 +239,7 @@ For more information about the Access Panel, see [Introduction to the Access 
 
 ## Additional resources
 
-* [List of tutorials about integrating SaaS apps with Microsoft Entra ID](tutorial-list.md)
+* [List of articles about integrating SaaS apps with Microsoft Entra ID](tutorial-list.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
 <!--Image references-->

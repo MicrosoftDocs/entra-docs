@@ -121,6 +121,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/fundamentals/users-assign-role-azure-portal.yml",
+      "redirect_url": "/entra/fundamentals/how-to-assign-roles-to-users",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/fundamentals/groups-view-azure-portal.md",
       "redirect_url": "/entra/fundamentals/quickstart-create-group-add-members",
       "redirect_document_id": false
@@ -686,6 +691,21 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/identity-platform/tutorial-v2-aspnet-daemon-web-app.md",
+      "redirect_url": "/entra/identity-platform/tutorial-dotnet-daemon-call-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-daemon-dotnet-call-api-build-app.md",
+      "redirect_url": "/entra/identity-platform/tutorial-dotnet-daemon-call-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-daemon-dotnet-call-api-prepare-tenant.md",
+      "redirect_url": "/entra/identity-platform/quickstart-register-app",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/identity-platform/reference-native-authentication-overview.md",
       "redirect_url": "/entra/identity-platform/reference-native-authentication-api",
       "redirect_document_id": false
@@ -694,9 +714,43 @@
       "source_path_from_root": "/docs/identity-platform/reference-native-authentication-email-otp.md",
       "redirect_url": "/entra/identity-platform/reference-native-authentication-api",
       "redirect_document_id": false
+    }, 
+    {
+      "source_path_from_root": "/docs/identity-platform/tutorial-web-app-python-call-api.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-app-python-flask-call-microsoft-graph-api?tabs=workforce-tenant",
+      "redirect_document_id": false
     },
     {
-      "source_path_from_root": "/docs/identity-platform/reference-native-authentication-email-password.md",
+      "source_path_from_root": "/docs/identity-platform/tutorial-web-app-python-sign-in-users.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-app-python-flask-sign-in-out?tabs=workforce-tenant",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/tutorial-web-app-python-prepare-app.md",
+      "redirect_url": "/entra/identity-platform/quickstart-register-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/tutorial-web-app-python-register-app.md",
+      "redirect_url": "/entra/identity-platform/quickstart-register-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-python-flask-prepare-tenant.md",
+      "redirect_url": "/entra/identity-platform/quickstart-register-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-web-app-python-flask-sign-in-sign-out.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-app-python-flask-sign-in-out?tabs=external-tenant",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/tutorial-web-app-python-flask-sign-in-sign-out.md",
+      "redirect_url": "/entra/identity-platform/tutorial-web-app-python-flask-sign-in-out?tabs=workforce-tenant",
+      "redirect_document_id": false
+    },
+    {"source_path_from_root": "/docs/identity-platform/reference-native-authentication-email-password.md",
       "redirect_url": "/entra/identity-platform/reference-native-authentication-api",
       "redirect_document_id": false
     },
@@ -1874,27 +1928,27 @@
     },
     {
       "source_path_from_root": "/docs/fundamentals/license-users-groups.yml",
-      "redirect_url": "/docs/fundamentals/licensing",
+      "redirect_url": "/entra/fundamentals/licensing",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity/users/licensing-groups-assign.md",
-      "redirect_url": "/docs/fundamentals/licensing",
+      "redirect_url": "/entra/fundamentals/licensing",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity/users/licensing-groups-change-licenses.md",
-      "redirect_url": "/docs/fundamentals/licensing",
+      "redirect_url": "/entra/fundamentals/licensing",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity/users/licensing-groups-migrate-users.md",
-      "redirect_url": "/docs/fundamentals/licensing",
+      "redirect_url": "/entra/fundamentals/licensing",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/identity/users/licensing-groups-resolve-problems.md",
-      "redirect_url": "/docs/fundamentals/licensing",
+      "redirect_url": "/entra/fundamentals/licensing",
       "redirect_document_id": false
     },
     {
@@ -1980,6 +2034,46 @@
     {
       "source_path_from_root": "/docs/identity-platform/tutorial-single-page-apps-angular-register-app.md",
       "redirect_url": "/entra/identity-platform/tutorial-single-page-apps-angular-prepare-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-single-page-app-react-sign-in-prepare-tenant.md",
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-app-react-prepare-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-single-page-app-react-sign-in-prepare-app.md",
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-app-react-prepare-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-single-page-app-react-sign-in-configure-authentication.md",
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-app-react-configure-authentication",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/tutorial-single-page-app-react-sign-in-sign-out.md",
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-app-react-sign-in-sign-out",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/tutorial-single-page-app-react-register-app.md",
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-app-react-prepare-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/tutorial-single-page-app-react-prepare-spa.md",
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-app-react-prepare-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/tutorial-single-page-app-react-sign-in-users.md",
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-app-react-configure-authentication",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/identity-platform/tutorial-single-page-app-react-call-api.md",
+      "redirect_url": "/entra/identity-platform/tutorial-single-page-app-react-sign-in-sign-out",
       "redirect_document_id": false
     }
   ]

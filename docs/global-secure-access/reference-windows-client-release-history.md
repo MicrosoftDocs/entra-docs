@@ -3,10 +3,10 @@ title: Global Secure Access Client for Windows Release Notes
 description: This article tracks the changes in each released version of the Global Secure Access client for Windows.
 ms.service: global-secure-access
 ms.topic: reference
-ms.date: 02/10/2025
+ms.date: 02/27/2025
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: amycolannino
+manager: femila
 ms.reviewer: lirazbarak
 
 
@@ -23,7 +23,7 @@ The current version of the Global Secure Access client is available to download 
 :::image type="content" source="media/reference-windows-client-release-history/client-download-screen.png" alt-text="Screenshot of the Client download screen with the Download Client button highlighted.":::
 
 ## Version 2.14.80
-Released for download on February 11, 2025.
+Released for download on February 26, 2025.
 ### Functional changes
 - Support for long-lived User Datagram Protocol (UDP) connections.
 - Support for routing connections directly to the network when there's no successful tunnel established to the Global Secure Access cloud service.
@@ -45,7 +45,7 @@ Released for download on November 26, 2024.
 ### Functional changes
 - Support for mTLS connections to Global Secure Access. 
 > [!NOTE]
-> The mTLS connection will have a gradual rollout to customers through the service in the cloud; customers will continue to use the Transport Layer Security (TLS) connection until they receive mTLS.
+> The mTLS connection uses a gradual rollout to customers through the service in the cloud; customers continue to use the Transport Layer Security (TLS) connection until they receive mTLS.
 - Support for restricting nonprivileged users from disabling and enabling the Global Secure Access client on their device.
 - Show health check tests when loading a log zip file to advanced diagnostics.
 - Support for the Hyper-V internal switch: the Global Secure Access client installed on the host bypasses network traffic from Hyper-V guest machines. If needed, the Global Secure Access client can be installed on the guest machine, on the host machine, or both. 

@@ -1,6 +1,6 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with InsideView'
-description: In this tutorial, you'll learn how to configure single sign-on between Microsoft Entra ID and InsideView.
+title: Microsoft Entra integration with InsideView
+description: In this article,  you'll learn how to configure single sign-on between Microsoft Entra ID and InsideView.
 
 author: nguhiu
 manager: CelesteDG
@@ -8,15 +8,15 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and InsideView so that I can control who has access to InsideView, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with InsideView
+# Microsoft Entra integration with InsideView
 
-In this tutorial, you'll learn how to integrate InsideView with Microsoft Entra ID.
+In this article,  you'll learn how to integrate InsideView with Microsoft Entra ID.
 This integration provides these benefits:
 
 * You can use Microsoft Entra ID to control who has access to InsideView.
@@ -36,7 +36,7 @@ To configure Microsoft Entra integration with InsideView, you need to have:
 
 ## Scenario description
 
-In this tutorial, you'll configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you'll configure and test Microsoft Entra single sign-on in a test environment.
 
 * InsideView supports IdP-initiated SSO.
 

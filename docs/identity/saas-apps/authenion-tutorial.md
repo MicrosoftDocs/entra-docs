@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Authenion'
+title: Microsoft Entra single sign-on (SSO) integration with Authenion
 description: Learn how to configure single sign-on between Microsoft Entra and Authenion.
 services: active-directory
 author: nguhiu
@@ -8,16 +8,16 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 08/02/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Authenion  so that I can control who has access to Authenion, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Authenion
+# Microsoft Entra single sign-on (SSO) integration with Authenion
 
-In this tutorial, you learn how to integrate Authenion with Microsoft Entra ID. When you integrate Authenion  with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Authenion with Microsoft Entra ID. When you integrate Authenion  with Microsoft Entra ID, you can:
 
 - Use Microsoft Entra ID to control who can access Authenion.
 - Enable your users to be automatically signed in to Authenion  with their Microsoft Entra accounts.

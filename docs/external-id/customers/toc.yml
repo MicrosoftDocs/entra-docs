@@ -101,7 +101,7 @@ items:
                   - name: Create JavaScript app
                     href: /entra/identity-platform/tutorial-single-page-app-javascript-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
                   - name: Configure app for authentication
-                    href: /entra/identity-platform/tutorial-single-page-app-configure-authentication
+                    href: /entra/identity-platform/tutorial-single-page-app-javascript-configure-authentication
                   - name: Sign in and sign out
                     href: /entra/identity-platform/tutorial-single-page-app-javascript-sign-in-sign-out
             - name: Angular 
@@ -114,14 +114,23 @@ items:
                     href: /entra/identity-platform/tutorial-single-page-apps-angular-extract-user-data?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
             - name: React
               items:
-                  - name: Prepare tenant
-                    href: tutorial-single-page-app-react-sign-in-prepare-tenant.md
                   - name: Create React app
-                    href: tutorial-single-page-app-react-sign-in-prepare-app.md
+                    href: /entra/identity-platform/tutorial-single-page-app-react-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
                   - name: Configure app for authentication
-                    href: tutorial-single-page-app-react-sign-in-configure-authentication.md
+                    href: /entra/identity-platform/tutorial-single-page-app-react-configure-authentication
                   - name: Sign in and sign out
                     href: tutorial-single-page-app-react-sign-in-sign-out.md
+                    href: /entra/identity-platform/tutorial-single-page-app-react-sign-in-sign-out
+            - name: Angular
+              items:
+                  - name: Prepare tenant
+                    href: tutorial-single-page-app-angular-sign-in-prepare-tenant.md
+                  - name: Create Angular app
+                    href: tutorial-single-page-app-angular-sign-in-prepare-app.md
+                  - name: Configure app for authentication
+                    href: tutorial-single-page-app-angular-sign-in-configure-authentication.md
+                  - name: Sign in and sign out
+                    href: tutorial-single-page-app-angular-sign-in-sign-out.md
         - name: Native authentication
           items:
             - name: React
@@ -154,10 +163,10 @@ items:
                 href: /entra/identity-platform/tutorial-web-app-dotnet-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
         - name: Python Flask
           items:
-              - name: Prepare tenant
-                href: tutorial-web-app-python-flask-prepare-tenant.md
-              - name: Sign in and sign out 
-                href: tutorial-web-app-python-flask-sign-in-sign-out.md
+              - name: Add sign in and sign out
+                href: /entra/identity-platform/tutorial-web-app-python-flask-sign-in-out?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
+              - name: Call Microsoft Graph API
+                href: /entra/identity-platform/tutorial-web-app-python-flask-call-microsoft-graph-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&tabs=external-tenant
     - name: Web API
       items: 
         - name: Protect ASP.NET Core API
@@ -175,12 +184,8 @@ items:
               displayName: client credentials flow 
             - name: Acquire access token and call API
               href: tutorial-daemon-node-call-api-build-app.md
-        - name: .NET
-          items:
-            - name: Prepare tenant
-              href: tutorial-daemon-dotnet-call-api-prepare-tenant.md
-            - name: Acquire access token and call API
-              href: tutorial-daemon-dotnet-call-api-build-app.md 
+        - name: .NET acquire access token and call API
+          href: /entra/identity-platform/tutorial-dotnet-daemon-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
     - name: Desktop app
       items:
         - name: .NET MAUI
@@ -291,6 +296,8 @@ items:
       href: concept-user-attributes.md
     - name: Identity providers
       href: concept-authentication-methods-customers.md
+    - name: SAML/WS-Fed federation
+      href: ../direct-federation-overview.md
     - name: Multifactor authentication (MFA)
       href: concept-multifactor-authentication-customers.md
     - name: Custom authentication extensions
@@ -352,7 +359,11 @@ items:
               - name: B2C federation
                 href: how-to-b2c-federation-customers.md
           - name: SAML/WS-Fed IdP federation
-            href: ../direct-federation.md
+            items:
+              - name: Configure SAML/WS-Fed IdP federation
+                href: ../direct-federation.md
+              - name: Self-service sign-up for federated users
+                href: how-to-saml-ws-federation-self-service-sign-up.md
         displayName: rbac, roles claim, groups claim
       - name: Integrate apps 
         items:

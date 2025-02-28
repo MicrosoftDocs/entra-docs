@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Honestly'
+title: Microsoft Entra single sign-on (SSO) integration with Honestly
 description: Learn how to configure single sign-on between Microsoft Entra ID and Honestly.
 
 author: nguhiu
@@ -8,16 +8,16 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Honestly so that I can control who has access to Honestly, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Honestly
+# Microsoft Entra single sign-on (SSO) integration with Honestly
 
-In this tutorial, you'll learn how to integrate Honestly with Microsoft Entra ID. When you integrate Honestly with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Honestly with Microsoft Entra ID. When you integrate Honestly with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Honestly.
 * Enable your users to be automatically signed-in to Honestly with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Honestly supports **SP and IDP** initiated SSO
 * Once you configure Honestly you can enforce session control, which protect exfiltration and infiltration of your organization’s sensitive data in real-time. Session control extend from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
@@ -154,7 +154,7 @@ When you click the Honestly tile in the Access Panel, you should be automaticall
 
 ## Additional resources
 
-- [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 

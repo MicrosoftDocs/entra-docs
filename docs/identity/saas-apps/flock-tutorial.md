@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Flock'
+title: Microsoft Entra integration with Flock
 description: Learn how to configure single sign-on between Microsoft Entra ID and Flock.
 
 author: nguhiu
@@ -8,15 +8,15 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Flock so that I can control who has access to Flock, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Flock
+# Microsoft Entra integration with Flock
 
-In this tutorial, you'll learn how to integrate Flock with Microsoft Entra ID. When you integrate Flock with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Flock with Microsoft Entra ID. When you integrate Flock with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Flock.
 * Enable your users to be automatically signed-in to Flock with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Flock supports **SP** initiated SSO.
 * Flock supports [Automated user provisioning](flock-provisioning-tutorial.md).
@@ -179,6 +179,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 * You can use Microsoft My Apps. When you click the Flock tile in the My Apps, this will redirect to Flock Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 
-## Next steps
+## Related content
 
 Once you configure Flock you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

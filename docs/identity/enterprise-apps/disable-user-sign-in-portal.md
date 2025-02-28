@@ -1,6 +1,6 @@
 ---
 title: Disable user sign-in for application
-description: How to disable an enterprise application so that no users can sign in to it in Microsoft Entra ID.
+description: Learn how to prevent users from signing in to an application in Microsoft Entra ID and prevent tokens from being issued.
 
 author: omondiatieno
 manager: CelesteDG
@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: how-to
-ms.date: 2/14/2024
+ms.date: 02/27/2025
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: it-pro, enterprise-apps, has-azure-ad-ps-ref
@@ -50,7 +50,7 @@ To disable user sign-in, you need:
 
 You might know the AppId of an app that doesn't appear on the Enterprise apps list. For example, if you delete the app or the service principal isn't yet created because Microsoft preauthorizes it. You can manually create the service principal for the app and then disable it by using the following Azure AD PowerShell cmdlet.
 
-Ensure you've installed the Azure AD PowerShell module (use the command `Install-Module -Name AzureAD`). In case you're prompted to install a NuGet module or the new Azure AD PowerShell V2 module, type Y and press ENTER. You need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+Ensure you install the Azure AD PowerShell module (use the command `Install-Module -Name AzureAD`). In case you're prompted to install a NuGet module or the new Azure AD PowerShell V2 module, type Y and press ENTER. You need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
 ```PowerShell
 # Connect to Azure AD PowerShell
@@ -122,6 +122,6 @@ Content-type: application/json
 
 :::zone-end
 
-## Next steps
+## Related content
 
 - [Remove a user or group assignment from an enterprise app](./assign-user-or-group-access-portal.md)
