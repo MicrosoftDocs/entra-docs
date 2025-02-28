@@ -348,7 +348,7 @@ Then use the AppRoleAssignmentsComplex expression to map to the custom role attr
 
 **When to use:** Use the AssertiveAppRoleAssignmentsComplex to enable PATCH Replace functionality. For SCIM applications that support multiple roles, this ensures that roles removed in Microsoft Entra ID are also removed in the target application. The replace functionality will also remove any additional roles the user has that are not reflected in Entra ID 
 
-The difference between the AppRoleAssignmentsComplex and AssertiveAppRoleAssignmentsComplex is the mode of the patch call and the effect on the target systen. The former does PATCH add only and therefore does not remove any existing roles on the target. The latter does PATCH replace which removes roles in the target system if they have not been assigned to the user on Entra ID. 
+The difference between the AppRoleAssignmentsComplex and AssertiveAppRoleAssignmentsComplex is the mode of the patch call and the effect on the target system. The former does PATCH add only and therefore does not remove any existing roles on the target. The latter does PATCH replace which removes roles in the target system if they have not been assigned to the user on Entra ID. 
 
 **How to configure:** Edit the list of supported attributes as described to include a new attribute for roles: 
 
