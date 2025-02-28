@@ -21,9 +21,9 @@ In this tutorial, you learn how to:
 
 > [!div class="checklist"]
 >
-> - Register the daemon app
+> - Register a daemon app
 > - Assign an app role to your daemon app
-> - Create the daemon app
+> - Build your daemon app
 > - Run your daemon app to call the protected web API
 
 ## Prerequisites
