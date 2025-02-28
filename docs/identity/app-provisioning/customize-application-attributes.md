@@ -469,10 +469,10 @@ Selecting this option forces a resynchronization of all users while the provisio
 - A recommended best practice is to keep the number of consecutive changes to your attribute-mappings at a minimum.
 - Adding a photo attribute to be provisioned to an app isn't supported today as you can't specify the format to sync the photo. You can request the feature on [User Voice](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789).
 - The attribute `IsSoftDeleted` is often part of the default mappings for an application and can be true in one of four scenarios:
-  1. The user is out of scope due to being unassigned from the application. 
-  2. The user is out of scope due to not meeting a scoping filter. 
-  3. The user is soft deleted in Microsoft Entra ID. 
-  4. The property `AccountEnabled` is set to false on the user. Try to keep the `IsSoftDeleted` attribute in your attribute mappings.
+  - The user is out of scope due to being unassigned from the application. 
+  - The user is out of scope due to not meeting a scoping filter. 
+  - The user is soft deleted in Microsoft Entra ID. 
+  - The property `AccountEnabled` is set to false on the user. Try to keep the `IsSoftDeleted` attribute in your attribute mappings.
 - The Microsoft Entra provisioning service doesn't support provisioning null values.
 - They primary key, typically `ID`, shouldn't be included as a target attribute in your attribute mappings. 
 - The role attribute typically needs to be mapped using an expression, rather than a direct mapping. For more information about role mapping, see [Provisioning a role to a SCIM app](#provisioning-a-role-to-a-scim-app). 
