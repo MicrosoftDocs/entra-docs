@@ -23,7 +23,7 @@ Group-based licensing (GBL) in Microsoft 365 Admin Portal, introduces the concep
 
 When you assign licenses directly to individual users or using group-based licensing (or both), the assignment operation might fail for reasons that are related to business logic.  
  
-Some example issues include but are not limited to: 
+Some example issues include but aren't limited to: 
 
 - An insufficient number of licenses  
 
@@ -52,7 +52,7 @@ When you're using group-based licensing, these errors happen in the background w
  
    :::image type="content" source="./media/licensing-groups-resolve-problems/errors-issues.png" alt-text="Screenshot of list of users in group licensing error state.":::
 
-1. Click on the **group name** to review errors for the affected users in the group. 
+1. Select on the **group name** to review errors for the affected users in the group. 
 1. You can also filter the errors using the **Filter** option on the top right if you have a large number of affected users. 
 
    :::image type="content" source="./media/licensing-groups-resolve-problems/action-needed.png" alt-text="Screenshot of entries that require administration intervention.":::
@@ -73,15 +73,17 @@ To see which users and groups are consuming licenses, navigate to the **M365 Adm
 :::image type="content" source="./media/licensing-groups-resolve-problems/license-count.png" alt-text="Screenshot of available licenses.":::
 
 > [!NOTE] 
-> If the license is in a disabled state you will not be able to manage that license within the M365 Admin Portal. If you need to manage a license which has been disabled you will need to use Microsoft Graph.
+> If the license is in a disabled state, you won't be able to manage that license within the Microsoft 365 Admin Portal. If you need to manage a license which has been disabled, you'll need to use Microsoft Graph.
 
 **PowerShell:** PowerShell cmdlets report this error as *CountViolation*.
 
 **Audit log Details:**   
 Licensing Error Message 
 
+```
 Not enough licenses are available to complete this operation. Purchase more licenses or remove unneeded licenses from users and groups for SKU [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx]. Licenses being added: [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx] 
 
+```
 ## Conflicting service plans
 
 **Problem:** One of the products specified in the group contains a service plan that conflicts with another service plan already assigned to the user via a different product. Some service plans are configured in a way that they can't be assigned to the same user as another related service plan.
@@ -92,9 +94,9 @@ The decision about how to resolve conflicting product licenses always belongs to
  
 **Audit log Details:**   
 Licensing Error Message 
-
+```
 License assignment failed because service plans [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx], [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx] are mutually exclusive.   
-
+```
 ## Missing dependent service plans 
 
 **Problem:** One of the products specified in the group contains a service plan that must be enabled for another service plan, in another product, to function. This error occurs when Microsoft Entra ID attempts to remove the underlying service plan. For example, this problem can happen when you remove the user from the group. 
@@ -105,10 +107,10 @@ To solve this problem, you need to make sure that the required plan is still ass
  
 **Audit log Details:**   
 Licensing Error Message 
-
+```
 License assignment failed because service plan [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx] depends on 
 the service plan(s) [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx], [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx].  
-
+```
 ## Usage location not specified 
 
 **Problem:** Some Microsoft services aren't available in all locations because of local laws and regulations. Before you can assign a license to a user, you must specify the Usage location property for the user. You can specify the location under the User > Profile > Edit section in the portal. 
@@ -144,13 +146,13 @@ After you resolve any proxy address problems for the affected users, make sure t
 
 :::image type="content" source="./media/licensing-groups-resolve-problems/other.png" alt-text="Screenshot of **other** type errors.":::
  
-To identify the other licensing assigned to the affected user from the same group you can review the user licenses from the Entra Admin Portal. 
+To identify the other licensing assigned to the affected user from the same group you can review the user licenses from the Microsoft Entra Admin Portal. 
  
 In the **Entra Admin Portal**, navigate to **Users – All Users** – locate the affected user and then review their **Licenses**. 
  
-You can review the Audit logs for the user to locate more information about the error as long as the error was presented within the last 30 days in most cases (depending on the number of days Audit logs available in the tenant, some may have only 7 days) 
+You can review the Audit logs for the user to locate more information about the error as long as the error was presented within the last 30 days in most cases (depending on the number of days Audit logs available in the tenant, some may have only seven days) 
  
-Audit log License Assignment Error Records can be identified by the following details: 
+Audit log License Assignment Error Records can be identified using the following details: 
  
 **Activity Type**:  Change user license 
 
@@ -158,13 +160,13 @@ Audit log License Assignment Error Records can be identified by the following de
 
 **Initiated by** (actor) 
  - **Type**:  Application 
- - **Display Name**:  Microsoft Azure AD Group-Based Licensing 
+ - **Display Name**:  Microsoft Entra ID Group-Based Licensing 
 
 ## Force user license processing to resolve errors 
 
 **Problem:** Depending on what steps you took to resolve the errors, it might be necessary to manually trigger the processing of a user to update the users state. 
 
-For example, after you resolve a dependency violation error for an affected user, you need to trigger the reprocessing of the user. To reprocess a user, navigate back to the **M365 Admin Portal > Billing > Licenses**.  Select the license and navigate to the group where the affected user(s) shows in error, select the user(s) and then click the **Reprocess** button on the toolbar. 
+For example, after you resolve a dependency violation error for an affected user, you need to trigger the reprocessing of the user. To reprocess a user, navigate back to the **M365 Admin Portal > Billing > Licenses**.  Select the license and navigate to the group where the affected user(s) shows in error, select the user(s) and then select the **Reprocess** button on the toolbar. 
 
 Alternately, you can use Graph for PowerShell [Invoke-MgLicenseUser](/powershell/module/microsoft.graph.users.actions/invoke-mglicenseuser) to reprocess users.
 
@@ -192,13 +194,13 @@ For more details on managing these scenarios, see [Microsoft Graph PowerShell gr
 
 **Problem:** You must remove all licenses assigned to a group before you can delete the group. However, removing licenses from all the users in the group may take time. While removing license assignments from a group, there can be failures if user has a dependent license assigned or if there's a proxy address conflict issue that prevents the license removal. 
 
-If a user has a license that is dependent on a license which is being removed due to group deletion, all licenses assigned by the deleted group will enter an error state on the affected user and will not be able to be removed until the dependency is resolved.
+If a user has a license that is dependent on a license which is being removed due to group deletion, all licenses assigned by the deleted group enter an error state on the affected user and won't be able to be removed until the dependency is resolved.
 
-Once the dependency is resolved you will need to reprocess the user licensing using Graph for PowerShell.
+Once the dependency is resolved, you need to reprocess the user licensing using Graph for PowerShell.
 
 ## Manage licenses for products with prerequisites
 
-**Problem:** Some Microsoft Online products you might own have prerequisites. These include add-ons and other service plans which may require a prerequisite service plan to be enabled on a user or a group before the dependent service plans can be added to the user or group.
+**Problem:** Some Microsoft Online products you might own have prerequisites. Prerequisites can include add-ons and other service plans which may require a prerequisite service plan to be enabled on a user or a group before the dependent service plans can be added to the user or group.
 
 With group-based licensing, the system requires that both the prerequisite and add-on service plans or other dependent service plans be present in the same group. This requirement exists to ensure that any users who are added to the group can receive the fully working product. Let's consider the following example:
 
