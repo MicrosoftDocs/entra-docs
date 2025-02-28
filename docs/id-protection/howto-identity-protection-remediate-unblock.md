@@ -5,7 +5,7 @@ description: Learn about the options you have close active risk detections.
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 05/02/2024
+ms.date: 02/28/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -14,7 +14,7 @@ ms.reviewer: chuqiaoshi
 ---
 # Remediate risks and unblock users
 
-After completing your [investigation](howto-identity-protection-investigate-risk.md), you need to take action to remediate the risky users or unblock them. Organizations can enable automated remediation by setting up [risk-based policies](howto-identity-protection-configure-risk-policies.md). Organizations should try to investigate and remediate all risky users in a time period that your organization is comfortable with. Microsoft recommends acting quickly, because time matters when working with risks.
+After completing your [investigation](howto-identity-protection-investigate-risk.md), take action to remediate the risky users or unblock them. Organizations can enable automated remediation by setting up [risk-based policies](howto-identity-protection-configure-risk-policies.md). Organizations should investigate and remediate all risky users within a comfortable time period. Microsoft recommends acting quickly because time matters when working with risks.
 
 ## Risk remediation
 
@@ -22,7 +22,7 @@ All active risk detections contribute to the calculation of the user's risk leve
 
 Microsoft Entra ID Protection marks some risk detections and the corresponding risky sign-ins as dismissed with risk state **Dismissed** and risk detail **Microsoft Entra ID Protection assessed sign-in safe**. It takes this action, because those events were no longer determined to be risky.
 
-Administrators have the following options to remediate:
+Administrators can remediate using the following options:
 
 - Set up risk-based policies to allow users to self-remediate their risks.
 - Manually reset their password.
@@ -41,7 +41,7 @@ The prerequisites for users before risk-based policies can be applied to allow s
    -  The user must be registered for Microsoft Entra multifactor authentication.
    -  For hybrid users that are synced from on-premises to cloud, password writeback must be enabled.
 
-If a risk-based policy is applied to a user during sign-in before the above prerequisites are met, then the user is blocked. This block action is because they aren't able to perform the required access control, and admin intervention is required to unblock the user.
+If a risk-based policy applies to a user during sign-in before the prerequisites are met, the user is blocked. This block occurs because they can't perform the required access control, and admin intervention is required to unblock the user.
 
 Risk-based policies are configured based on risk levels and only apply if the risk level of the sign-in or user matches the configured level. Some detections might not raise risk to the level where the policy applies, and administrators need to handle those risky users manually. Administrators can determine that extra measures are necessary like [blocking access from locations](~/identity/conditional-access/policy-block-by-location.md) or lowering the acceptable risk in their policies.
 
@@ -95,11 +95,11 @@ To configure this setting
 
 ### Dismiss user risk
 
-If after investigation and confirming that the user account isn't at risk of being compromised, then you can choose to dismiss the risky user.
+If after investigation you confirm that the user account isn't at risk of being compromised, you can choose to dismiss the risky user.
 
 To Dismiss user risk as at least a [Security Operator](~/identity/role-based-access-control/permissions-reference.md#security-operator) in the [Microsoft Entra admin center](https://entra.microsoft.com), browse to **Protection** > **Identity Protection** > **Risky users**, select the affected user, and select **Dismiss user(s) risk**.
 
-When you select **Dismiss user risk**, the user is no longer at risk, and all the risky sign-ins of this user and corresponding risk detections are dismissed as well.
+When you select **Dismiss user risk**, the user is no longer at risk, and all the risky sign-ins and corresponding risk detections are dismissed.
 
 Because this method doesn't affect the user's existing password, it doesn't bring their identity back into a safe state.
 
@@ -128,11 +128,11 @@ For more information about what happens when confirming compromise, see the sect
 
 ### Deleted users
 
-It isn't possible for administrators to dismiss risk for users deleted from the directory. To remove deleted users, open a Microsoft support case.
+Administrators can't dismiss risk for users deleted from the directory. To remove deleted users, open a Microsoft support case.
 
 ## Unblocking users
 
-An administrator can choose to block a sign-in based on their risk policy or investigations. A block can occur based on either sign-in or user risk.
+An administrator can block a sign-in based on their risk policy or investigations. A block can occur based on either sign-in or user risk.
 
 ### Unblocking based on user risk
 
@@ -155,7 +155,7 @@ To unblock an account based on sign-in risk, administrators have the following o
 
 Microsoft Entra ID Protection automatically blocks sign-ins that have a very high confidence of being risky. This block most commonly occurs on sign-ins performed via legacy authentication protocols, and displaying properties of a malicious attempt.
 
-When a user is blocked with this mechanism they will receive a 50053 authentication error. Investigation of the sign-in logs will display the following block reason: "Sign-in was blocked by built-in protections due to high confidence of risk."
+When a user is blocked with this mechanism, they'll receive a 50053 authentication error. Investigation of the sign-in logs displays the following block reason: "Sign-in was blocked by built-in protections due to high confidence of risk."
 
 To unblock an account based on high confidence sign-in risk, administrators have the following options:
 
@@ -166,7 +166,7 @@ To unblock an account based on high confidence sign-in risk, administrators have
 
 With a recent update to our detection architecture, we no longer autoremediate sessions with MFA claims when a token theft related or the Microsoft Threat Intelligence Center (MSTIC) Nation State IP detection triggers during sign-in. 
 
-The following ID Protection detections that identify suspicious token activity or the MSTIC Nation State IP detection are no longer autoremediated: 
+The following ID Protection detections that identify suspicious token activity or the MSTIC Nation State IP detection are no longer auto-remediated: 
 
 - Microsoft Entra threat intelligence  
 - Anomalous token
@@ -174,7 +174,7 @@ The following ID Protection detections that identify suspicious token activity o
 - MSTIC Nation State IP
 - Token issuer anomaly  
 
-ID Protection now surfaces session details in the Risk Detection Details pane for detections that emit sign-in data. This change ensures we don't close sessions containing detections where there's MFA-related risk. Providing session details with user level risk details provides valuable information to assist with investigation. This information includes:
+ID Protection now surfaces session details in the Risk Detection Details pane for detections that emit sign-in data. This change ensures we don't close sessions containing detections where there's MFA-related risk. Providing session details with user-level risk details provides valuable information to assist with investigation. This information includes:
 
 - Token Issuer type
 - Sign-in time
