@@ -293,29 +293,29 @@ Then use the AppRoleAssignmentsComplex expression to map to the custom role attr
 
 ```json
 {
-    "schemas": [
-        "urn:ietf:params:scim:schemas:core:2.0:User"
+  "schemas": [
+    "urn:ietf:params:scim:schemas:core:2.0:User"
   ],
   "externalId": "alias",
   "userName": "alias@contoso.OnMicrosoft.com",
   "active": true,
   "displayName": "First Name Last Name",
   "meta": {
-        "resourceType": "User"
+    "resourceType": "User"
   },
   "roles": [
-      {
-            "primary": false,
-            "type": "WindowsAzureActiveDirectoryRole",
-            "displayName": "Admin",
-            "value": "Admin"
-      },
-      {
-            "primary": false,
-            "type": "WindowsAzureActiveDirectoryRole",
-            "displayName": "User",
-          "value": "User"
-      }
+    {
+      "primary": false,
+      "type": "WindowsAzureActiveDirectoryRole",
+      "displayName": "Admin",
+      "value": "Admin"
+    },
+    {
+      "primary": false,
+      "type": "WindowsAzureActiveDirectoryRole",
+      "displayName": "User",
+      "value": "User"
+    }
   ]
 }
 ```
@@ -365,75 +365,62 @@ Then use the AssertiveAppRoleAssignmentsComplex expression to map to the custom 
 **Limitations** 
 
 - AssertiveAppRoleAssignmentsComplex isn't compatible with setting scope to "Sync All users and groups."
-    
+
 **Example Request (POST)**
-  
+
 ```json
-{"schemas":["urn:ietf:params:scim:schemas:core:2.0:User"], 
-
-"externalId":"contoso", 
-
-"userName":"contoso@alias.onmicrosoft.com", 
-
-"active":true, 
-
-"roles":[{ 
-
-  "primary":false, 
-
-  "type":"WindowsAzureActiveDirectoryRole", 
-
-  "display":"User", 
-
-  "value":"User"}, 
-
-  {"primary":false, 
-
-  "type":"WindowsAzureActiveDirectoryRole", 
-
-  "display":"Test", 
-
-  "value":"Test"}], 
-
+{
+  "schemas": [
+    "urn:ietf:params:scim:schemas:core:2.0:User"
+  ],
+  "externalId": "contoso",
+  "userName": "contoso@alias.onmicrosoft.com",
+  "active": true,
+  "roles": [
+    {
+      "primary": false,
+      "type": "WindowsAzureActiveDirectoryRole",
+      "display": "User",
+      "value": "User"
+    },
+    {
+      "primary": false,
+      "type": "WindowsAzureActiveDirectoryRole",
+      "display": "Test",
+      "value": "Test"
+    }
+  ]
 }
 ```
 
 **Example output (PATCH)** 
 
 ```json
-{"schemas":["urn:ietf:params:scim:api:messages:2.0:PatchOp"], 
-
-"Operations":[{ 
-
-    "op":"replace", 
-
-    "path":"roles", 
-
-    "value":[{ 
-
-        "primary":false, 
-
-        "type":"WindowsAzureActiveDirectoryRole", 
-
-        "display":"User", 
-
-        "value":"User"}, 
-
-        {"primary":false, 
-
-        "type":"WindowsAzureActiveDirectoryRole", 
-
-        "display":"Test", 
-
-        "value":"Test"} 
-
-        ] 
-
-        } 
-
-        ] 
-
-    } 
+{
+  "schemas": [
+    "urn:ietf:params:scim:api:messages:2.0:PatchOp"
+  ],
+  "Operations": [
+    {
+      "op": "replace",
+      "path": "roles",
+      "value": [
+        {
+          "primary": false,
+          "type": "WindowsAzureActiveDirectoryRole",
+          "display": "User",
+          "value": "User"
+        },
+        {
+          "primary": false,
+          "type": "WindowsAzureActiveDirectoryRole",
+          "display": "Test",
+          "value": "Test"
+        }
+      ]
+    }
+  ]
+}
 ```
 
 ## Provisioning a multi-value attribute
@@ -444,22 +431,27 @@ Certain attributes such as phoneNumbers and emails are multi-value attributes wh
 * `phoneNumbers[type eq "mobile"].value`
 * `phoneNumbers[type eq "fax"].value`
 
-  ```json
+```json
+{
+  "schemas": [
+    "urn:ietf:params:scim:schemas:core:2.0:User"
+  ],
   "phoneNumbers": [
-     {
-        "value": "555-555-5555",
-        "type": "work"
-     },
-     {
-        "value": "555-555-5555",
-        "type": "mobile"
-     },
-     {
-        "value": "555-555-5555",
-        "type": "fax"
-     }
+    {
+      "value": "555-555-5555",
+      "type": "work"
+    },
+    {
+      "value": "555-555-5555",
+      "type": "mobile"
+    },
+    {
+      "value": "555-555-5555",
+      "type": "fax"
+    }
   ]
-  ```
+}
+```
 
 ## Restoring the default attributes and attribute-mappings
 
