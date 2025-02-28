@@ -105,7 +105,7 @@ Custom URL domains aren't supported in workforce tenants.
 
 #### [External tenant](#tab/external-tenant)
 
-[!INCLUDE [external-id-custom-domain](../external-id/includes/use-custom-domain-url-dot-net-core.md)] 
+[!INCLUDE [external-id-custom-domain](../external-id/customers/includes/use-custom-domain-url-dot-net-core.md)] 
 
 ---
 
