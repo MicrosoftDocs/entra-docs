@@ -363,7 +363,7 @@ To use the front channel logout feature for a set of applications, you must comp
 
 The front channel logout URL should be a URL that is capable of receiving and responding to HTTP GET requests and should be able to clear any session that identifies the user. Examples of a front channel logout URL could be, but aren't limited to, the following:
 
-* `https://example.com/frontchannel_loout`
+* `https://example.com/frontchannel_logout`
 * `https://example.com/signout`
 * `https://example.com/logout`
 
