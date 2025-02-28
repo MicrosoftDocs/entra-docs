@@ -271,8 +271,8 @@ The request formats in the PATCH and POST differ. To ensure that POST and PATCH 
 **AppRoleAssignmentsComplex**
 
 **When to use:** Use the AppRoleAssignmentsComplex expression to provision multiple roles for a user. 
-**How to configure:** Edit the list of supported attributes as described to include a new attribute for roles: 
-  
+**How to configure:** Edit the list of supported attributes as described to include a new attribute for roles:
+
 ![Add roles](./media/customize-application-attributes/add-roles.png)<br>
 
 Then use the AppRoleAssignmentsComplex expression to map to the custom role attribute as shown in the image:
@@ -283,14 +283,14 @@ Then use the AppRoleAssignmentsComplex expression to map to the custom role attr
 
 - All roles are provisioned as primary = false.
 - The `id` attribute isn't required in SCIM roles. Use the `value` attribute instead. For example, if the `value` attribute contains the name or identifier for the role, use it to provision the role. You can use the feature flag [here](./application-provisioning-config-problem-scim-compatibility.md#flags-to-alter-the-scim-behavior) to fix the id attribute issue. However, relying solely on the value attribute isn't always sufficient; for example, if there are multiple roles with the same name or identifier. In certain cases, it's necessary to use the id attribute to properly provision the role
- 
-    
+
+
 **Limitations** 
 
 - AppRoleAssignmentsComplex isn't compatible with setting scope to "Sync All users and groups."
-    
+
 **Example Request (POST)**
-  
+
 ```json
 {
     "schemas": [
@@ -346,7 +346,7 @@ Then use the AppRoleAssignmentsComplex expression to map to the custom role attr
 The difference between the AppRoleAssignmentsComplex and AssertiveAppRoleAssignmentsComplex is the mode of the patch call and the effect on the target systen. The former does PATCH add only and therefore does not remove any existing roles on the target. The latter does PATCH replace which removes roles in the target system if they have not been assigned to the user on Entra ID. 
 
 **How to configure:** Edit the list of supported attributes as described to include a new attribute for roles: 
-  
+
 ![Add roles](./media/customize-application-attributes/add-roles.png)<br>
 
 Then use the AssertiveAppRoleAssignmentsComplex expression to map to the custom role attribute as shown in the image:
@@ -356,7 +356,7 @@ Then use the AssertiveAppRoleAssignmentsComplex expression to map to the custom 
 **Things to consider**
 - All roles are provisioned as primary = false.
 - The `id` attribute isn't required in SCIM roles. Use the `value` attribute instead. For example, if the `value` attribute contains the name or identifier for the role, use it to provision the role. You can use the feature flag [here](./application-provisioning-config-problem-scim-compatibility.md#flags-to-alter-the-scim-behavior) to fix the id attribute issue. However, relying solely on the value attribute isn't always sufficient; for example, if there are multiple roles with the same name or identifier. In certain cases, it's necessary to use the id attribute to properly provision the role
-  
+
 **Limitations** 
 
 - AssertiveAppRoleAssignmentsComplex isn't compatible with setting scope to "Sync All users and groups."
