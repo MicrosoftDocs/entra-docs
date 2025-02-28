@@ -59,15 +59,6 @@ dotnet add package Microsoft.Identity.Web
 ```
 ## Configure app registration details
 
-#### [Workforce tenant](#tab/workforce-tenant)
-
-Custom URL domains aren't supported in workforce tenants.
-
-#### [External tenant](#tab/external-tenant)
-
-[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url.md)] 
----
-
 Open the *appsettings.json* file in your app folder and add the app registration details you recorded after registering the web API.
 
 ```json
@@ -114,7 +105,7 @@ Custom URL domains aren't supported in workforce tenants.
 
 #### [External tenant](#tab/external-tenant)
 
-[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url-dot-net-core.md)] 
+[!INCLUDE [external-id-custom-domain](../external-id/includes/use-custom-domain-url-dot-net-core.md)] 
 
 ---
 
