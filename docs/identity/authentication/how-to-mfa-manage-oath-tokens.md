@@ -343,3 +343,5 @@ To identify and remove the legacy token.
 ## Related content
 
 Learn more about [OATH tokens](concept-authentication-oath-tokens.md).
+Create one or multiple hardwareOathTokenAuthenticationMethodDevice
+https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-mfa-manage-oath-tokens
