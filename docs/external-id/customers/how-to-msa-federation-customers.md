@@ -16,18 +16,23 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-<!--Update this section! START-->
 By setting up federation with Microsoft account (live.com) using OpenID Connect (OIDC) identity provider, you enable users to sign up and sign in to your applications using their existing Microsoft accounts (MSA).
-When you add live.com identity provider to your user flow's sign-in options, users can sign up and sign in to the registered applications defined in that user flow using their Microsoft accounts.
+After you add the MSA (live.com) as one of your user flow's sign-in options, customers can sign up and sign in to your application with their Microsoft account.
 
 > [!TIP]
 > [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=MSA)
 >
 > To try out this feature, go to the Woodgrove Groceries demo and start the “Microsoft personal account (live.com)” use case.
 
+## Prerequisites
+
+- An [external tenant](how-to-create-external-tenant-portal.md).
+- A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
+- A Microsoft account (live.com). If you don't already have one, sign up at https://www.live.com/.
+
 ## Create a Microsoft account application
 
-To enable sign-in for users with a Microsoft account in Microsoft Entra External ID, you need to create an application in a Microsoft Entra ID tenant. The resource tenant for the application can be any Microsoft Entra ID tenant, like your workforce or external tenant. For more information, see [Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app). If you don't already have a Microsoft account, sign up at https://www.live.com/.
+To enable sign-in for users with a Microsoft account, you need to create an application in a Microsoft Entra ID tenant. The resource tenant for the application can be any Microsoft Entra ID tenant, like your workforce or external tenant.  
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **App registrations** then select **New registration**.
@@ -38,18 +43,18 @@ To enable sign-in for users with a Microsoft account in Microsoft Entra External
 
 When registration finishes, the Microsoft Entra admin center displays the app registration's **Overview** pane. You see the **Application (client) ID**. Record this value, as you need it later.
 
-1. Under **Manage** browse to **Certificate & secrets** then select **New client secret**.
-1. Name the secret, for example *Key 1* and select **Add**.
-1. Record the **Value** of the secret, as you need it later. Make sure to save the secret when created before leaving the page. Client secret values cannot be viewed, except for immediately after creation.
+7. Under **Manage** browse to **Certificate & secrets** then select **New client secret**.
+8. Name the secret, for example *Key 1* and select **Add**.
+9. Record the **Value** of the secret, as you need it later. Make sure to save the secret before leaving the page. Client secret values cannot be viewed, except for immediately after creation.
 
 ### Configure optional claims
 
-You can also configure optional claims to be provided for your application
+You can also configure optional claims to be provided for your application such as *family_name* and *given_name*.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Browse to **Identity** > **Applications** > **App registrations**.
-1. Under **Manage**, select **Token configuration**.
 1. Select your MSA application that you created earlier.
+1. Under **Manage**, select **Token configuration**.
 1. Select **Add optional claim**.
 1. Select the token type you want to configure, such as *ID*.
 1. Select the optional claims to add.
@@ -57,7 +62,7 @@ You can also configure optional claims to be provided for your application
 
 ## Configure the Microsoft account (live.com) as an OpenID connect identity provider
 
-After you configured Microsoft account (live.com) as an application, you can now configure it as an OpenID Connect identity provider in your Microsoft Entra External ID tenant.
+Once you have configured your Microsoft account (live.com) as an application, you can proceed to set it up as an OIDC identity provider in your external tenant.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
@@ -74,9 +79,9 @@ After you configured Microsoft account (live.com) as an application, you can now
    - **Client Authentication**:  Select **client_secret** and add	`openid profile email` to **Scope**.
    - **Response type**: Select **code**.
 
-   :::image type="content" source="how-to-msa-federation-customers\MSA setup.png" alt-text="Screenshot of the MSA provider setup.":::
-
 1. You can select **Next: Claims mapping** to configure [claims mapping](reference-oidc-claims-mapping-customers.md) or **Review + create** to add your identity provider.
+
+   :::image type="content" source="how-to-msa-federation-customers/MSA-setup.png" alt-text="Screenshot of the MSA provider setup.":::
 
 > [!NOTE]
 > Microsoft recommends you do *not* use the [implicit grant flow](/entra/identity-platform/v2-oauth2-implicit-grant-flow#security-concerns-with-implicit-grant-flow) or the [ROPC flow](/entra/identity-platform/v2-oauth-ropc). Therefore, OpenID connect external identity provider configuration does not support these flows. The recommended way of supporting SPAs is [OAuth 2.0 Authorization code flow (with PKCE)](/entra/identity-platform/v2-oauth2-auth-code-flow#applications-that-support-the-auth-code-flow) which is supported by OIDC federation configuration.
@@ -90,7 +95,7 @@ At this point, the Microsoft account identity provider has been set up in your M
 1. Under Settings, select **Identity providers.**
 1. Under **Other Identity Providers**, select **Microsoft account identity provider**.
 
-   :::image type="content" source="media/how-to-msa-federation-customers/MSA in the IdP list.png" alt-text="Screenshot of the MSA provider in the IdP list.":::
+   :::image type="content" source="media/how-to-msa-federation-customers/MSA-IdP-list.png" alt-text="Screenshot of the MSA provider in the IdP list.":::
 
 1. Select **Save**.
 
