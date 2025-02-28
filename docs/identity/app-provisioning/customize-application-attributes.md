@@ -436,7 +436,7 @@ Then use the AssertiveAppRoleAssignmentsComplex expression to map to the custom 
 Certain attributes such as phoneNumbers and emails are multi-value attributes where you need to specify different types of phone numbers or emails. Use the expression for multi-value attributes. It allows you to specify the attribute type and map that to the corresponding Microsoft Entra user attribute for the value. 
 
 * `phoneNumbers[type eq "work"].value`
-* `phoneNumbers[type eq "mobile"]`.value
+* `phoneNumbers[type eq "mobile"].value`
 * `phoneNumbers[type eq "fax"].value`
 
   ```json
