@@ -119,8 +119,7 @@ items:
                   - name: Configure app for authentication
                     href: /entra/identity-platform/tutorial-single-page-app-react-configure-authentication
                   - name: Sign in and sign out
-                    href: tutorial-single-page-app-react-sign-in-sign-out.md
-                    href: /entra/identity-platform/tutorial-single-page-app-react-sign-in-sign-out
+                    href: /entra/identity-platform/tutorial-single-page-app-react-sign-iign-out
             - name: Angular
               items:
                   - name: Prepare tenant
