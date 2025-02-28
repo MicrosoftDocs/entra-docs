@@ -320,24 +320,29 @@ Then use the AppRoleAssignmentsComplex expression to map to the custom role attr
 }
 ```
 
- **Example output (PATCH)** 
+**Example output (PATCH)** 
 
 ```json
-"Operations": [
-  {
-    "op": "Add",
-    "path": "roles",
-    "value": [
-      {
-        "value": "{"id":"06b07648-ecfe-589f-9d2f-6325724a46ee","value":"Admin","displayName":"Admin"}
-      },
 {
-        "value": "{"id":"06b07648-ecfe-599f-9d2f-6325724a46ee","value":"User","displayName":"User"}
-      }
-    ]
-  }
-]
- ```
+  "schemas": [
+    "urn:ietf:params:scim:api:messages:2.0:PatchOp"
+  ],
+  "Operations": [
+    {
+      "op": "Add",
+      "path": "roles",
+      "value": [
+        {
+          "value": "{\"id\":\"06b07648-ecfe-589f-9d2f-6325724a46ee\",\"value\":\"Admin\",\"displayName\":\"Admin\"}"
+        },
+        {
+          "value": "{\"id\":\"06b07648-ecfe-599f-9d2f-6325724a46ee\",\"value\":\"User\",\"displayName\":\"User\"}"
+        }
+      ]
+    }
+  ]
+}
+```
 
 **AssertiveAppRoleAssignmentsComplex**   (Recommended for complex roles)
 
