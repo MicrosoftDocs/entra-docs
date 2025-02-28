@@ -26,7 +26,7 @@ In this tutorial:
 
 - [Tutorial: Add sign in and sign out in your Angular single-page application](tutorial-single-page-apps-angular-sign-in-users-app.md)
 
-## Create the API call to Microsoft Graph
+## Extract data to view in the application UI
 
 ### [Workforce tenant](#tab/workforce-tenant)
 
@@ -106,6 +106,8 @@ To configure your Angular application to interact with the Microsoft Graph API, 
     This code defines an HTML template that displays user profile information, using Angular's interpolation syntax to bind properties from the `profile` object (For example., `businessPhones`, `displayName`, `jobTitle`). It also shows the `tokenExpiration` value and includes a note stating that refreshing the page will use the cached access token until it nears expiration, after which a new token will be requested.
 
 ### [External tenant](#tab/external-tenant)
+
+You will configure your Angular app to display the claims in your ID token upon signing in. 
 
 1. Create a file called *claim-utils.ts* in the *src/app/* folder and paste the following code snippet into it.
 
@@ -220,7 +222,7 @@ To configure your Angular application to interact with the Microsoft Graph API, 
             populateClaim(
               key,
               claims[key],
-              'Available as an optional claim, it lets you know what the type of user (homed, guest) is. For example, for an individual's access to their data you might not care for this claim, but you would use this along with tenant id (tid) to control access to say a company-wide dashboard to just employees (homed users) and not contractors (guest users).',
+              'Available as an optional claim, it lets you know what the type of user (homed, guest) is. For example, for an individuals access to their data you might not care for this claim, but you would use this along with tenant id (tid) to control access to say a company-wide dashboard to just employees (homed users) and not contractors (guest users).',
               claimsTable
             );
             break;
