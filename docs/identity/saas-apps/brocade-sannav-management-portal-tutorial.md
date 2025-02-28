@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Brocade SANnav Management Portal
 
-In this tutorial, you'll learn how to integrate Brocade SANnav Management Portal with Microsoft Entra ID. When you integrate Brocade SANnav Management Portal with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Brocade SANnav Management Portal with Microsoft Entra ID. When you integrate Brocade SANnav Management Portal with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Brocade SANnav Management Portal.
 * Enable your users to be automatically signed-in to Brocade SANnav Management Portal with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To integrate Microsoft Entra ID with Brocade SANnav Management Portal, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Brocade SANnav Management Portal supports both **SP and IDP** initiated SSO.
 
@@ -83,7 +83,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	c. After the metadata file is successfully uploaded, the **Identifier** and **Reply URL** values get auto populated in **Basic SAML Configuration** section.
 
 	> [!Note]
-	> You will get the **Service Provider metadata file** from the **Configure Brocade SANnav Management Portal SSO** section, which is explained later in the tutorial. If the **Identifier** and **Reply URL** values do not get auto populated, then fill in the values manually according to your requirement.
+	> You will get the **Service Provider metadata file** from the **Configure Brocade SANnav Management Portal SSO** section, which is explained later in the article. If the **Identifier** and **Reply URL** values do not get auto populated, then fill in the values manually according to your requirement.
 
 1. Brocade SANnav Management Portal application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 

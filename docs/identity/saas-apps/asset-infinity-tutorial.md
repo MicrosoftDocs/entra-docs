@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Asset Infinity
 
-In this tutorial, you'll learn how to integrate Asset Infinity with Microsoft Entra ID. When you integrate Asset Infinity with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Asset Infinity with Microsoft Entra ID. When you integrate Asset Infinity with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Asset Infinity.
 * Enable your users to be automatically signed-in to Asset Infinity with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To integrate Microsoft Entra ID with Asset Infinity, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Asset Infinity supports only **SP** initiated SSO.
 

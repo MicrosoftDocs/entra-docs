@@ -8,7 +8,7 @@ ms.assetid: 95e1d8da-60c7-4fc1-987d-f48fde56a8cb
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 12/03/2024
+ms.date: 02/19/2025
 ms.author: justinha
 ---
 # Understand the health states and resolve suspended domains in Microsoft Entra Domain Services

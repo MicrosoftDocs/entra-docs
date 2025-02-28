@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Salesforce Sandbox
 
-In this tutorial, you'll learn how to integrate Salesforce Sandbox with Microsoft Entra ID. When you integrate Salesforce Sandbox with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Salesforce Sandbox with Microsoft Entra ID. When you integrate Salesforce Sandbox with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Salesforce Sandbox.
 * Enable your users to be automatically signed-in to Salesforce Sandbox with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Salesforce Sandbox supports **SP and IDP** initiated SSO
 * Salesforce Sandbox supports **Just In Time** user provisioning
@@ -89,7 +89,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	![choose metadata file](common/browse-upload-metadata.png)
 
 	> [!NOTE]
-    > You will get the service provider metadata file from the Salesforce Sandbox admin portal which is explained later in the tutorial.
+    > You will get the service provider metadata file from the Salesforce Sandbox admin portal which is explained later in the article.
 
 	c. After the metadata file is successfully uploaded, the **Reply URL** value will get auto populated in **Reply URL** textbox.
 
@@ -176,7 +176,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     a. You should have a verified domain.
 
-    b. You need to configure and enable your domain on Salesforce Sandbox, steps for this are explained later in this tutorial.
+    b. You need to configure and enable your domain on Salesforce Sandbox, steps for this are explained later in this article.
 
     c. In the Azure portal, on the **Basic SAML Configuration** section, click **Set additional URLs** and perform the following step:
   

@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Integrate Microsoft Entra single sign-on (SSO) with NetSuite
 
-In this tutorial, you'll learn how to integrate NetSuite with Microsoft Entra ID. When you integrate NetSuite with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate NetSuite with Microsoft Entra ID. When you integrate NetSuite with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to NetSuite.
 * Enable your users to be automatically signed in to NetSuite with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment. 
+In this article,  you configure and test Microsoft Entra SSO in a test environment. 
 
 NetSuite supports:
 
@@ -95,7 +95,7 @@ To enable Microsoft Entra SSO in the Azure portal, do the following:
 	| account  | `account id` |
 
 	> [!NOTE]
-	> The value of the account attribute is not real. You'll update this value, as explained later in this tutorial.The account id is not necessary unless you explicitly want to block the functionality of jumping from Production to the Sandbox in Netsuite within the navigation control.
+	> The value of the account attribute is not real. You'll update this value, as explained later in this article.The account id is not necessary unless you explicitly want to block the functionality of jumping from Production to the Sandbox in Netsuite within the navigation control.
 
 1. On the Set up single sign-on with SAML page, in the SAML Signing Certificate section, find Federation Metadata XML and select Download to download the certificate and save it on your computer.
 

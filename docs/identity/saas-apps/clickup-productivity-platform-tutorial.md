@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with ClickUp Productivity Platform
 
-In this tutorial, you'll learn how to integrate ClickUp Productivity Platform with Microsoft Entra ID. When you integrate ClickUp Productivity Platform with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate ClickUp Productivity Platform with Microsoft Entra ID. When you integrate ClickUp Productivity Platform with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to ClickUp Productivity Platform.
 * Enable your users to be automatically signed-in to ClickUp Productivity Platform with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * ClickUp Productivity Platform supports **SP** initiated SSO.
 
@@ -83,7 +83,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://api.clickup.com/v1/team/<team_id>/microsoft`
 
     > [!NOTE]
-    > The Identifier value is not real. Update this value with the actual Identifier, which is explained later in this tutorial.
+    > The Identifier value is not real. Update this value with the actual Identifier, which is explained later in this article.
 
 1. On the **Set up Single Sign-On with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 

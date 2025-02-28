@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with GovWin IQ
 
-In this tutorial, you'll learn how to integrate GovWin IQ with Microsoft Entra ID. GovWin IQ by Deltek is the industry-leading platform providing the most comprehensive market intelligence for U.S. federal, state and local, and Canadian governments. When you integrate GovWin IQ with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate GovWin IQ with Microsoft Entra ID. GovWin IQ by Deltek is the industry-leading platform providing the most comprehensive market intelligence for U.S. federal, state and local, and Canadian governments. When you integrate GovWin IQ with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to GovWin IQ.
 * Enable your users to be automatically signed-in to GovWin IQ with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ To integrate Microsoft Entra ID with GovWin IQ, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * GovWin IQ supports only **SP** initiated SSO.
 

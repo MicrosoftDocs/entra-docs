@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with SilkRoad Life Suite
 
-In this tutorial, you'll learn how to integrate SilkRoad Life Suite with Microsoft Entra ID. When you integrate SilkRoad Life Suite with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate SilkRoad Life Suite with Microsoft Entra ID. When you integrate SilkRoad Life Suite with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to SilkRoad Life Suite.
 * Enable your users to be automatically signed-in to SilkRoad Life Suite with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with SilkRoad Life Suite, you need the 
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * SilkRoad Life Suite supports **SP** initiated SSO.
 
@@ -77,7 +77,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Basic SAML Configuration** section, if you have **Service Provider metadata file**, perform the following steps:
 
     > [!NOTE]
-    > You will get the **Service Provider metadata file** explained later in this tutorial.
+    > You will get the **Service Provider metadata file** explained later in this article.
 
 	a. Click **Upload metadata file**.
 

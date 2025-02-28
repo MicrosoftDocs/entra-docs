@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Integrate Miro with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate Miro with Microsoft Entra ID. Another version of this tutorial can be found at help.miro.com. When you integrate Miro with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Miro with Microsoft Entra ID. Another version of this article can be found at help.miro.com. When you integrate Miro with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Miro.
 * Enable your users to be automatically signed-in to Miro with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment. 
+In this article,  you configure and test Microsoft Entra SSO in a test environment. 
 * Miro supports **SP and IDP** initiated SSO and supports **Just In Time** user provisioning.
 * Miro supports [**Automated** user provisioning and deprovisioning](miro-provisioning-tutorial.md) (recommended).
 

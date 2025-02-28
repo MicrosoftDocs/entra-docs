@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra single sign-on (SSO) integration with StatusPage
 
-In this tutorial, you'll learn how to integrate StatusPage with Microsoft Entra ID. When you integrate StatusPage with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate StatusPage with Microsoft Entra ID. When you integrate StatusPage with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to StatusPage.
 * Enable your users to be automatically signed-in to StatusPage with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with StatusPage, you need the following
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * StatusPage supports **IDP** initiated SSO.
 

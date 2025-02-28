@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with FactSet
 
-In this tutorial, you'll learn how to integrate FactSet with Microsoft Entra ID. When you integrate FactSet with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate FactSet with Microsoft Entra ID. When you integrate FactSet with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to FactSet URLs via the Federation.
 * Enable your users to be automatically signed-in to FactSet with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * FactSet supports **SP** initiated SSO.
 

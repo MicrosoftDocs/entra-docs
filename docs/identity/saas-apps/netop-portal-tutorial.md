@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Netop Portal
 
-In this tutorial, you'll learn how to integrate Netop Portal with Microsoft Entra ID. When you integrate Netop Portal with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Netop Portal with Microsoft Entra ID. When you integrate Netop Portal with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Netop Portal.
 * Enable your users to be automatically signed-in to Netop Portal with their Microsoft Entra accounts.
@@ -35,7 +35,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Netop Portal supports **IDP** initiated SSO.
 
@@ -139,7 +139,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Netop Portal SSO
 
-To configure single sign-on on **Netop Portal** side, you need to the downloaded **Federation Metadata XML** and the Login URL from Azure portal. Follow the instructions in Step 3 of the documentation [here](https://kb.netop.com/article/netop-remote-control-portal-adfs-and-azure-ad-integration-456.html) to configure NetOp Portal for Microsoft Entra authentication.
+To configure single sign-on on **Netop Portal** side, you need to the downloaded **Federation Metadata XML** and the Login URL from Azure portal. Follow the instructions in Step 3 of the documentation [here](https://support.netop.com/hc/en-us/articles/35623530508435-ADFS-and-Azure-AD-Integration) to configure NetOp Portal for Microsoft Entra authentication.
 
 ### Create Netop Portal test user
 

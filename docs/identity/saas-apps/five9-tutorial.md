@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Five9 Plus Adapter (CTI, Contact Center Agents)
 
-In this tutorial, you'll learn how to integrate Five9 Plus Adapter (CTI, Contact Center Agents) with Microsoft Entra ID. When you integrate Five9 Plus Adapter (CTI, Contact Center Agents) with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Five9 Plus Adapter (CTI, Contact Center Agents) with Microsoft Entra ID. When you integrate Five9 Plus Adapter (CTI, Contact Center Agents) with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Five9 Plus Adapter (CTI, Contact Center Agents).
 * Enable your users to be automatically signed-in to Five9 Plus Adapter (CTI, Contact Center Agents) with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with Five9 Plus Adapter (CTI, Contact C
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Five9 Plus Adapter (CTI, Contact Center Agents) supports **IDP** initiated SSO.
 

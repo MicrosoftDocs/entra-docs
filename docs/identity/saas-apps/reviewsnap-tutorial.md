@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Reviewsnap
 
-In this tutorial, you'll learn how to integrate Reviewsnap with Microsoft Entra ID. When you integrate Reviewsnap with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Reviewsnap with Microsoft Entra ID. When you integrate Reviewsnap with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Reviewsnap.
 * Enable your users to be automatically signed-in to Reviewsnap with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with Reviewsnap, you need the following
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Reviewsnap supports **SP and IDP** initiated SSO.
 

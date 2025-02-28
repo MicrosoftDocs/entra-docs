@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Segment
 
-In this tutorial, you'll learn how to integrate Segment with Microsoft Entra ID. When you integrate Segment with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Segment with Microsoft Entra ID. When you integrate Segment with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Segment.
 * Enable your users to be automatically signed-in to Segment with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Segment supports **SP and IDP** initiated SSO.
 * Segment supports **Just In Time** user provisioning.
@@ -91,7 +91,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://app.segment.com`
 
 	> [!NOTE]
-	> These values are placeholders. You need to use the actual Identifier and Reply URL. Steps for getting these values are described later in this tutorial.
+	> These values are placeholders. You need to use the actual Identifier and Reply URL. Steps for getting these values are described later in this article.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 

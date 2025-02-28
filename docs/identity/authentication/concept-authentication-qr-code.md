@@ -5,7 +5,7 @@ description: Learn about using QR code authentication method in Microsoft Entra 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/19/2025
+ms.date: 02/20/2025
 
 ms.author: justinha
 author: aanjusingh
@@ -47,7 +47,7 @@ Policy | Values
 Allowed characters | Numbers (0-9) 
 Unallowed characters | - Characters (A-Z, a-z)<br>- Symbols (- @ # $ % ^ & * - _ ! + = [ ] { } \| \ : ' , . ? / ` ~ " ( ) ; < >)<br>- Unicode characters<br>- Blank space 
 Minimum PIN length |  8-20 digits 
-PIN complexity     | Should be enforced to avoid repetition and common sequences. The following patterns are checked:<br>- Don't contain 0123456789 or 9876543210.<br>- Don't repeat a sequence of 2-3 digits in the PIN, like 121212, or 123123 or 342342.<br>An **Invalid PIN** error appears if the PIN includes unallowed characters or is less than the minimum PIN length. 
+PIN complexity     | Enforced to avoid repetition and common sequences. The following patterns are checked:<br>- Don't contain 0123456789 or 9876543210.<br>- Don't repeat a sequence of 2-3 digits in the PIN, like 121212, or 123123 or 342342.<br>An **Invalid PIN** error appears if the PIN includes unallowed characters or is less than the minimum PIN length. 
 
 ## Best security practices to implement with QR code authentication 
 
@@ -115,11 +115,17 @@ You can use Microsoft's web browser sign-in experience (login.microsoft.com) to 
 
 ### Mobile app sign-in experience 
 
-You can optimize sign-in for your apps by using Microsoft Authentication Library (MSAL) to add QR code as an option on the sign-in page. For example, you can add QR code sign-in just like Teams or Managed Home Screen (MHS). Then users can scan the QR code with two fewer clicks. This optimized sign-in experience is coming in BlueFletch and Jamf app launchers in March, 2025.
+You can optimize sign-in for your apps by using Microsoft Authentication Library (MSAL) to add QR code as an option on the sign-in page. For example, you can add QR code sign-in just like Teams or Managed Home Screen (MHS). Then users can scan the QR code with two fewer clicks. This optimized sign-in experience is available in BlueFletch and Jamf app launchers.
+
+For more information about how to optimize the sign-in experience, see: 
+
+- [Set up optimized QR code authentication experience in Android app](~/identity-platform/android-qr-code-pin-authentication.md) 
+- [Set up optimized QR code authentication experience in iOS app](~/identity-platform/ios-qr-code-pin-authentication.md)
 
 :::image type="content" source="media/concept-authentication-qr-code/teams.png" alt-text="Screenshot that shows Teams sign-in experience.":::
 
 :::image type="content" source="media/concept-authentication-qr-code/managed-home-screen.png" alt-text="Screenshot that shows Managed Home Screen sign-in experience.":::
+
 
 
 ## Unsupported user scenarios in current release

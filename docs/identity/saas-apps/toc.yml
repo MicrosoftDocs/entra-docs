@@ -1,7 +1,7 @@
   items:
-  - name: Application tutorials
+  - name: Application articles
     href: tutorial-list.md
-  - name: Single sign-on tutorials
+  - name: Single sign-on articles
     expanded: true
     items:
     - name: 0 - 9
@@ -2431,24 +2431,24 @@
         href: samsung-knox-and-business-services-tutorial.md
       - name: Sansan
         href: sansan-tutorial.md
-      - name: SAP Business ByDesign
-        href: sapbusinessbydesign-tutorial.md
       - name: SAP Analytics Cloud
         href: sapboc-tutorial.md
-      - name: SAP Cloud for Customer
-        href: sap-customer-cloud-tutorial.md
+      - name: SAP Business ByDesign
+        href: sapbusinessbydesign-tutorial.md
       - name: SAP Business Technology Platform
         href: sap-hana-cloud-platform-tutorial.md
+      - name: SAP Cloud for Customer
+        href: sap-customer-cloud-tutorial.md
       - name: SAP Cloud Identity Services
         href: sap-hana-cloud-platform-identity-authentication-tutorial.md
       - name: SAP Fiori
         href: sap-fiori-tutorial.md
       - name: SAP HANA
         href: saphana-tutorial.md
-      - name: Sapient
-        href: sapient-tutorial.md
       - name: SAP NetWeaver
         href: sap-netweaver-tutorial.md
+      - name: Sapient
+        href: sapient-tutorial.md
       - name: SAS Viya SSO
         href: sas-viya-sso-tutorial.md
       - name: Sauce Labs
@@ -3271,7 +3271,7 @@
         href: zwayam-tutorial.md
       - name: Zylo
         href: zylo-tutorial.md  
-  - name: User provisioning tutorials
+  - name: User provisioning articles
     expanded: true
     items:
     - name: 0 - 9

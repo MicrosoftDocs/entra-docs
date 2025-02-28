@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Amplitude
 
-In this tutorial, you'll learn how to integrate Amplitude with Microsoft Entra ID. When you integrate Amplitude with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Amplitude with Microsoft Entra ID. When you integrate Amplitude with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Amplitude.
 * Enable your users to be automatically signed-in to Amplitude with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Amplitude supports **SP and IDP** initiated SSO.
 * Amplitude supports **Just In Time** user provisioning.
@@ -88,7 +88,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://analytics.amplitude.com/saml/sso/<UNIQUE_ID>`
 
     > [!NOTE]
-	> The Reply URL value is not real. You will get the Reply URL value later in this tutorial.
+	> The Reply URL value is not real. You will get the Reply URL value later in this article.
 
 1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 

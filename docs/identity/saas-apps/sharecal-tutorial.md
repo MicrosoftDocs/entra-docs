@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with ShareCal
 
-In this tutorial, you'll learn how to integrate ShareCal with Microsoft Entra ID. When you integrate ShareCal with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate ShareCal with Microsoft Entra ID. When you integrate ShareCal with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to ShareCal.
 * Enable your users to be automatically signed-in to ShareCal with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To integrate Microsoft Entra ID with ShareCal, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * ShareCal supports only **SP** initiated SSO.
 * ShareCal supports **Just In Time** user provisioning.
