@@ -76,7 +76,7 @@ Changes are required if you're using the [microsoft-authentication-library-for-g
 
 Changes are required if you're using the [msal4j](https://central.sonatype.com/artifact/com.microsoft.azure/msal4j) package and using the following API in your application:
 
-- [PublicClientApplication.acquireToken(UserNamePasswordParameters parameters)](/java/api/com.microsoft.aad.msal4j.publicclientapplication#com-microsoft-aad-msal4j-publicclientapplication-acquiretoken(com-microsoft-aad-msal4j-usernamepasswordparameters))
+[PublicClientApplication.acquireToken(UserNamePasswordParameters parameters)](/java/api/com.microsoft.aad.msal4j.publicclientapplication#com-microsoft-aad-msal4j-publicclientapplication-acquiretoken(com-microsoft-aad-msal4j-usernamepasswordparameters))
 
 ### [Node.js](#tab/js)
 
@@ -90,7 +90,7 @@ Changes are required if you're using the [@azure/msal-node](https://www.npmjs.co
 
 Changes are required if you're using the [msal](https://pypi.org/project/msal/) package and using the following API in your application:
 
-- [ClientApplication.acquire_token_by_username_password](/python/api/msal/msal.application.clientapplication#msal-application-clientapplication-acquire-token-by-username-password)
+[ClientApplication.acquire_token_by_username_password](/python/api/msal/msal.application.clientapplication#msal-application-clientapplication-acquire-token-by-username-password)
 
 ---
 
