@@ -1,5 +1,5 @@
 ---
-title: 'Delete an enterprise application'
+title: Delete an enterprise application
 description: Delete an enterprise application in Microsoft Entra ID.
 
 author: omondiatieno
@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
 
-ms.date: 03/19/2024
+ms.date: 02/28/2025
 ms.author: jomondi
 ms.reviewer: sureshja
 zone_pivot_groups: enterprise-apps-all
@@ -35,7 +35,6 @@ To delete an enterprise application, you need:
 
 ## Delete an enterprise application using Microsoft Entra admin center
 
-
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **All applications**.
 1. Enter the name of the existing application in the search box, and then select the application from the search results. In this article, we use the **Microsoft Entra SAML Toolkit 1** as an example.
@@ -46,36 +45,18 @@ To delete an enterprise application, you need:
 
 :::zone-end
 
-:::zone pivot="aad-powershell"
+:::zone pivot="entra-powershell"
 
-## Delete an enterprise application using Azure AD PowerShell
+## Delete an enterprise application using Microsoft Entra PowerShell
 
-Make sure you're using the Azure AD PowerShell module. This is important if you've installed both the [Azure AD PowerShell module](/powershell/module/azuread/?preserve-view=true&view=azureadps-2.0) and the AzureADPreview module.
+Make sure you're using the [Microsoft Entra PowerShell](powershell/entra-powershell/?view=entra-powershell) module.
 
-1. Run the following commands:
-
-    ```powershell
-    Remove-Module AzureADPreview
-    Import-Module AzureAD
-    ```
-
-1. Connect to Azure AD PowerShell and sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator):
+1. Connect to Microsoft Entra PowerShell and sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Get the application you want to delete by filtering by the application name, then delete the application.
 
    ```powershell
-   Connect-AzureAD
-   ```
-
-1. Get the list of enterprise applications in your tenant.
-
-   ```powershell
-   Get-AzureADServicePrincipal
-   ```
-
-1. Record the object ID of the enterprise app you want to delete.
-1. Delete the enterprise application.
-
-   ```powershell
-   Remove-AzureADServicePrincipal -ObjectId 'aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb'
+   Connect-Entra -Scopes 'Application.ReadWrite.All'
+   Get-EntraServicePrincipal -Filter "displayName eq 'Test-app1'" | Remove-EntraServicePrincipal
    ```
 
 :::zone-end

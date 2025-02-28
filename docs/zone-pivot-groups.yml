@@ -84,8 +84,8 @@ groups:
   pivots:
   - id: portal
     title: Microsoft Entra admin center
-  - id: aad-powershell
-    title: Azure AD PowerShell
+  - id: entra-powershell
+    title: Microsoft Entra PowerShell
   - id: ms-powershell
     title: Microsoft Graph PowerShell
   - id: ms-graph
@@ -95,8 +95,8 @@ groups:
   title: Manage Enterprise apps
   prompt: Choose an option
   pivots:
-  - id: aad-powershell
-    title: Azure AD PowerShell
+  - id: entra-powershell
+    title: Microsoft Entra PowerShell
   - id: ms-powershell
     title: Microsoft Graph PowerShell
   - id: ms-graph
