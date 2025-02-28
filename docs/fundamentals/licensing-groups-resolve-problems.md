@@ -188,7 +188,7 @@ One potential work-around is to use [dynamic membership groups](~/identity/users
 
 For more details on managing these scenarios, see [Microsoft Graph PowerShell group-based licensing examples](~/identity/users/licensing-powershell-graph-examples.md).
 
-## Licensed group deletion and dependencies
+## When a licensed group is deleted
 
 **Problem:** You must remove all licenses assigned to a group before you can delete the group. However, removing licenses from all the users in the group may take time. While removing license assignments from a group, there can be failures if user has a dependent license assigned or if there's a proxy address conflict issue that prevents the license removal. 
 
@@ -196,7 +196,7 @@ If a user has a license that is dependent on a license which is being removed du
 
 Once the dependency is resolved you will need to reprocess the user licensing using Graph for PowerShell.
 
-## Prerequisites for add-on products
+## Manage licenses for products with prerequisites
 
 **Problem:** Some Microsoft Online products you might own have prerequisites. These include add-ons and other service plans which may require a prerequisite service plan to be enabled on a user or a group before the dependent service plans can be added to the user or group.
 
@@ -206,7 +206,7 @@ Microsoft Workplace Analytics is an add-on product. It contains a single service
 - Exchange Online (Plan 1)
 - Exchange Online (Plan 2)
 
-If you try to assign this product on its own to a group, the portal returns a notification message: "License operation failed. Make sure that the group has necessary services before adding or removing a dependent service."
+**Problem:** If you try to assign this product on its own to a group, the portal returns a notification message: "License operation failed. Make sure that the group has necessary services before adding or removing a dependent service."
 
 To assign this add-on license to a group, you must ensure that the group contains the prerequisite service plan.
 
@@ -219,7 +219,8 @@ From now on, any users added to this group consume one license of the E3 product
 > [!TIP] 
 > You can create multiple groups for each prerequisite service plan. For example, if you use both Office 365 Enterprise E1 and Office 365 Enterprise E3 for your users, you can create two groups to license Microsoft Workplace Analytics: one that uses E1 as a prerequisite and the other that uses E3. This approach lets you distribute the add-on to E1 and E3 users without consuming other licenses.
 
-## License removal of dynamic membership groups
+## License removal of dynamic membership groups with rules based on licenses with an initial static group
+
 
 **Problem:** This error occurs when users are added and removed from another batch of dynamic membership groups. The cascading setup of dynamic membership groups, with rules based on licenses in an initial static group, creates this issue. This error can affect multiple dynamic membership groups and demands extensive reprocessing to restore access.
 
