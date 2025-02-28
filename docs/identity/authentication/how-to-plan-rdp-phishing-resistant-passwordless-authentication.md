@@ -31,6 +31,8 @@ Review the specific considerations for each use case.
 
 Windows remote desktop protocol involves three primary components, all of which need to properly support phishing-resistant passwordless credentials for initiating an RDP session using these credentials. If any of these components isn't able to properly function or lacks support for certain passwordless credentials, then one or both scenarios outlined won't function. This guide focuses on passkey/FIDO2 support and Cert-Based Authentication (CBA) support.
 
+:::image type="content" border="true" source="media/how-to-plan-rdp-phishing-resistant-passwordless-authentication/RDP Session Auth.gif" alt-text="GIF showing the user experience when using Windows Hello for Business to establish an RDP session." lightbox="media/how-to-plan-rdp-phishing-resistant-passwordless-authentication/RDP Session Auth.gif":::
+
 :::image type="content" border="true" source="media/how-to-plan-rdp-phishing-resistant-passwordless-authentication/RDP Session Establishment.png" alt-text="Swimlane diagram showing how phishing-resistant passwordless credentials are used when connecting via RDP" lightbox="media/how-to-plan-rdp-phishing-resistant-passwordless-authentication/RDP Session Establishment.png":::
 
 Step through the following sections to determine if support for phishing-resistant passwordless is expected across all three components you're utilizing. Repeat this process if you have multiple scenarios that require evaluation.
@@ -102,6 +104,8 @@ Client platform support for phishing-resistant authentication alone isn't suffic
 ## RDP Components
 
 Windows remote desktop protocol involves three primary components, all of which need to properly support phishing-resistant passwordless credentials and redirection to the local client to support in-session usage of these credentials. If any of these components isn't able to properly function or lacks support for certain passwordless credentials, then one or both scenarios outlined won't function. This guide focuses on passkey/FIDO2 support and Cert-Based Authentication (CBA) support.
+
+:::image type="content" border="true" source="media/how-to-plan-rdp-phishing-resistant-passwordless-authentication/RDP In-Session Auth.gif" alt-text="GIF showing the user experience when using Windows Hello for Business to authenticate inside an RDP session." lightbox="media/how-to-plan-rdp-phishing-resistant-passwordless-authentication/RDP In-Session Auth.gif":::
 
 :::image type="content" border="true" source="media/how-to-plan-rdp-phishing-resistant-passwordless-authentication/RDP In-Session Auth.png" alt-text="Swimlane diagram showing how phishing-resistant passwordless credentials are used inside of RDP sessions" lightbox="media/how-to-plan-rdp-phishing-resistant-passwordless-authentication/RDP In-Session Auth.png":::
 
