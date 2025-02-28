@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Integrate Vtiger CRM (SAML) with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate Vtiger CRM (SAML) with Microsoft Entra ID. When you integrate Vtiger CRM (SAML) with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Vtiger CRM (SAML) with Microsoft Entra ID. When you integrate Vtiger CRM (SAML) with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Vtiger CRM (SAML).
 * Enable your users to be automatically signed-in to Vtiger CRM (SAML) with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment. 
+In this article,  you configure and test Microsoft Entra SSO in a test environment. 
 
 * Vtiger CRM (SAML) supports **SP** initiated SSO.
 * Vtiger CRM (SAML) supports **Just In Time** user provisioning.

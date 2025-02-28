@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Cisco Webex
 
-In this tutorial, you'll learn how to integrate Cisco Webex with Microsoft Entra ID. When you integrate Cisco Webex with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Cisco Webex with Microsoft Entra ID. When you integrate Cisco Webex with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Cisco Webex.
 * Enable your users to be automatically signed-in to Cisco Webex with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Cisco Webex supports **SP** initiated SSO.
 * Cisco Webex supports [**Automated user provisioning**](./cisco-webex-provisioning-tutorial.md).
@@ -83,7 +83,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Basic SAML Configuration** section, upload the downloaded **Service Provider metadata** file and configure the application by performing the following steps:
 
 	>[!Note]
-	>You will get the Service Provider Metadata file from the **Configure Cisco Webex** section, which is explained later in the tutorial. 
+	>You will get the Service Provider Metadata file from the **Configure Cisco Webex** section, which is explained later in the article. 
 
 	a. Click **Upload metadata file**.
 

@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with XM Fax and XM SendSecure
 
-In this tutorial, you'll learn how to integrate XM Fax and XM SendSecure with Microsoft Entra ID. When you integrate XM Fax and XM SendSecure with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate XM Fax and XM SendSecure with Microsoft Entra ID. When you integrate XM Fax and XM SendSecure with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to XM Fax and XM SendSecure.
 * Enable your users to be automatically signed-in to XM Fax and XM SendSecure with their Microsoft Entra accounts.
@@ -36,7 +36,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * XM Fax and XM SendSecure supports **SP-initiated** SSO.
 * XM Fax and XM SendSecure supports [Automated user provisioning](xm-fax-and-xm-send-secure-provisioning-tutorial.md).

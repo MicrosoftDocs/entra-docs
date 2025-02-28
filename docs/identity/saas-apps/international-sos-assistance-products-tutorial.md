@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with International SOS Assistance Products
 
-In this tutorial, you'll learn how to integrate International SOS Assistance Products with Microsoft Entra ID. When you integrate International SOS Assistance Products with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate International SOS Assistance Products with Microsoft Entra ID. When you integrate International SOS Assistance Products with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to International SOS Assistance Products.
 * Enable your users to be automatically signed-in to International SOS Assistance Products with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * International SOS Assistance Products supports **SP** initiated SSO
 

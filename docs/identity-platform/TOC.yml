@@ -162,14 +162,12 @@
           items:
             - name: Browser-delegated authentication
               items:
-              - name: Register your app
-                href: tutorial-single-page-app-react-register-app.md
               - name: Prepare your app
-                href: tutorial-single-page-app-react-prepare-spa.md
+                href: tutorial-single-page-app-react-prepare-app.md
               - name: Add sign in and sign out
-                href: tutorial-single-page-app-react-sign-in-users.md
-              - name: Get user data from web API
-                href: tutorial-single-page-app-react-call-api.md
+                href: tutorial-single-page-app-react-configure-authentication.md
+              - name: Sign in users
+                href: tutorial-single-page-app-react-sign-in-sign-out.md
             - name: Native authentication
               items:
                 - name: Sign up
@@ -242,14 +240,10 @@
             href: tutorial-web-app-dotnet-call-api.md?tabs=workforce-tenant
         - name: Python Flask
           items:
-          - name: Register your app
-            href: tutorial-web-app-python-register-app.md
-          - name: Prepare your app
-            href: tutorial-web-app-python-prepare-app.md
-          - name: Sign in users
-            href: tutorial-web-app-python-sign-in-users.md
-          - name: Get user data from web API
-            href: tutorial-web-app-python-call-api.md
+          - name: Add sign-in and sign-out
+            href: tutorial-web-app-python-flask-sign-in-out.md
+          - name: Call Microsoft Graph API
+            href: tutorial-web-app-python-flask-call-microsoft-graph-api.md
         - name: Node/Express.js
           items:
             - name: Set up Nodejs app
@@ -516,8 +510,8 @@
       href: quickstart-daemon-app-call-api.md?pivots=workforce
     - name: Tutorials
       items:
-        - name: .NET
-          href: tutorial-v2-aspnet-daemon-web-app.md
+        - name: .NET acquire token and call API
+          href: tutorial-dotnet-daemon-call-api.md
         - name: Node.js
           href: tutorial-v2-nodejs-console.md
     - name: Samples

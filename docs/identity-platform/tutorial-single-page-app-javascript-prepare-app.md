@@ -27,14 +27,6 @@ In this tutorial, you'll:
 
 ## Prerequisites
 
-* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-  * Application Administrator
-  * Application Developer
-  * Cloud Application Administrator.
-* [Node.js](https://nodejs.org/en/download/).
-* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-
 ### [Workforce tenant](#tab/workforce-tenant)
 
 * A workforce tenant. You can use your [Default Directory](quickstart-create-new-tenant.md) or set up a new tenant.
@@ -57,6 +49,9 @@ In this tutorial, you'll:
 * Associate your app with a user flow in the Microsoft Entra admin center. For more information, see [Create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) and [Add your application to the user flow](../external-id/customers/how-to-user-flow-add-application.md).
 
 ---
+
+* [Node.js](https://nodejs.org/en/download/).
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 
 ## Create a JavaScript project and install dependencies
 

@@ -3,7 +3,7 @@ title: "Troubleshoot the Global Secure Access client: diagnostics"
 description: Troubleshoot the Global Secure Access client using the health check tab in the advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 11/12/2024
+ms.date: 02/25/2025
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: amycolannino
@@ -51,7 +51,7 @@ The **Forwarding profile** tab shows the list of current, active rules that are 
 
 The rules section shows the list of rules grouped by each workload (**M365 rules**, **Private access rules**, **Internet access rules**). This list only includes rules for the workloads activated in your tenant.
 > [!TIP]
-> If a rule contains several destinations, such as a fully qualified domain name (FQDN) or an IP range, the rule will span several rows, with one row for each destination.
+> If a rule contains several destinations, such as a fully qualified domain name (FQDN) or an IP range, the rule spans several rows, with one row for each destination.
 
 For each rule, the available columns include:
 - **Priority**: The priority of the rule. Rules with higher priority (smaller numerical value) take precedence over rules with lower priority.
@@ -111,12 +111,12 @@ For each connection, the available columns include:
 
 ## Advanced log collection tab
 The advanced log collection tab allows for the collection of verbose logs of the client, the operating systems, and the network traffic during a specific period. The logs are archived to a ZIP file that can be sent to the administrator or Microsoft Support for investigation.
-- **Start recording**: Select to begin recording the verbose logs. You need to reproduce the issue while recording. If you cannot reproduce the issue at will, instruct users to collect logs for as long as needed until the issue reappears. The log collection will include several hours of Global Secure Access activity.
+- **Start recording**: Select to begin recording the verbose logs. You need to reproduce the issue while recording. If you can't reproduce the issue, instruct users to collect logs for as long as needed until the issue reappears. The log collection includes several hours of Global Secure Access activity.
 - **Stop recording**: After reproducing the issue, select this button to stop the recording and save the collected logs to a ZIP file. Share the ZIP file with support for troubleshooting assistance.
 
 :::image type="content" source="media/troubleshoot-global-secure-access-client-advanced-diagnostics/global-secure-access-client-advanced-advanced-log-collection-tab.png" alt-text="Screenshot showing the Global Secure Access Client - Advanced diagnostics dialog box on the Advanced log collection tab.":::
 
-When you stop advanced log collection, the folder that contains the log files opens. By default, this folder is C:\Program Files\Global Secure Access Client\Logs. The folder contains a zip file as well as two event trace log (ETL) files. If needed, you can remove the zip files after issues are resolved, however it is best to leave the ETL files. These are circular logs and removing them can create issues with future log collection. 
+When you stop advanced log collection, the folder that contains the log files opens. By default, this folder is C:\Program Files\Global Secure Access Client\Logs. The folder contains a zip file and two event trace log (ETL) files. If needed, you can remove the zip files after issues are resolved, however it's best to leave the ETL files. These are circular logs and removing them can create issues with future log collection. 
 
 The following files are collected:
 
@@ -136,7 +136,7 @@ The following files are collected:
 |installedPrograms.txt|Windows installed apps, which can by useful to understand what might be causing issues|
 |ipconfig.txt|Ipconfig /all output including IP address and DNS servers that have been assigned to the device|
 |Kerberos_info.txt|Output of klist, klist tgt, and klist cloud_debug. This output is useful for troubleshooting kerberos issues, and SSO with Windows Hello for Business|
-|LogsCollectorLog.log and LogsCollectorLog.log.x|Logs for the log collector process itself. These logs are useful if you are having issues with Global Secure Access log collection|
+|LogsCollectorLog.log and LogsCollectorLog.log.x|Logs for the log collector process itself. These logs are useful if you're having issues with Global Secure Access log collection|
 |Multiple .evtx|Exports of multiple Windows event logs|
 |NetworkInformation.log|Output of route print, Name Resolution Policy Table (NRPT) table, and latency results for Global Secure Access connectivity test. This output is useful to troubleshoot NRPT issues.|
 |RunningProcesses.log|Running processes|
@@ -144,7 +144,7 @@ The following files are collected:
 |systemWideProxy.txt|Output of netsh winhttp show proxy|
 |userConfiguredProxy|Output of proxy settings in the registry|
 |userSessions.txt|User session list|
-|DNSClient.etl|DNS client logs. These logs are useful for diagnosomg DNS resolution issues. Open with Event Log viewer, or filter to the specific names of interest with PowerShell: Get-WinEvent -Path .\DNSClient.etl -Oldest | where Message -Match replace with name/FQDN | Out-GridView|
+|DNSClient.etl|DNS client logs. These logs are useful for diagnosomg DNS resolution issues. Open with Event Log viewer, or filter to the specific names of interest with PowerShell: `Get-WinEvent -Path .\DNSClient.etl -Oldest | where Message -Match replace with name/FQDN | Out-GridView`|
 |InternetDebug.etl|Logs collected using "netsh trace start scenario=internetClient_dbg capture=yes persistent=yes"|
 |NetworkTrace.etl|Net capture taken with pktmon|
 |NetworkTrace.pcap|Network capture including traffic inside the tunnel|
@@ -152,8 +152,8 @@ The following files are collected:
 |wfplog.cab|Windows Filtering Platform logs|
 
 ### Useful Network Traffic Analyzer filters
-In some instances, you may need to investigate traffic within the Global Secure Access service tunnel. By default, a network capture will only show encrypted traffic. Instead, analyze the network capture created by Global Secure Access advanced log collection in a network traffic analyzer. 
+In some instances, you need to investigate traffic within the Global Secure Access service tunnel. By default, a network capture only shows encrypted traffic. Instead, analyze the network capture created by Global Secure Access advanced log collection in a network traffic analyzer. 
 
 ### Analyze Global Secure Access client logs on a different device than where they were collected
-In many cases, you may need to analyze the data your users collect using your own device. To accomplish this, open the Global Secure Access client on your device, open Advanced Diagnostic tool, and then click the folder icon to the far right of the menu bar. From here, you can navigate to the zip file or the GlobalSecureAccess-Trace.etl file. Loading the zip file also loads information including tenant ID, device ID, client version, health check, and forwarding profile rules as if you were troubleshooting locally on the device used for data collection.
+In many cases, you might need to analyze the data your users collect using your own device. To accomplish this, open the Global Secure Access client on your device, open Advanced Diagnostic tool, and then select the folder icon to the far right of the menu bar. From here, you can navigate to the zip file or the GlobalSecureAccess-Trace.etl file. Loading the zip file also loads information including tenant ID, device ID, client version, health check, and forwarding profile rules as if you were troubleshooting locally on the device used for data collection.
 

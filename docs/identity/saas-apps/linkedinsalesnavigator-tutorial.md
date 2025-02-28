@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with LinkedIn Sales Navigator
 
-In this tutorial, you'll learn how to integrate LinkedIn Sales Navigator with Microsoft Entra ID. When you integrate LinkedIn Sales Navigator with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate LinkedIn Sales Navigator with Microsoft Entra ID. When you integrate LinkedIn Sales Navigator with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to LinkedIn Sales Navigator.
 * Enable your users to be automatically signed-in to LinkedIn Sales Navigator with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * LinkedIn Sales Navigator supports **SP and IDP** initiated SSO.
 * LinkedIn Sales Navigator supports **Just In Time** user provisioning.
@@ -82,9 +82,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Basic SAML Configuration** section, if you wish to configure the application in **IDP** initiated mode, perform the following steps:
 
-    a. In the **Identifier** text box, enter the **Entity ID** value, you will copy Entity ID value from the Linkedin Portal explained later in this tutorial.
+    a. In the **Identifier** text box, enter the **Entity ID** value, you will copy Entity ID value from the Linkedin Portal explained later in this article.
 
-    b. In the **Reply URL** text box, enter the **Assertion Consumer Access (ACS) Url** value, you will copy Assertion Consumer Access (ACS) URL value from the Linkedin Portal explained later in this tutorial.
+    b. In the **Reply URL** text box, enter the **Assertion Consumer Access (ACS) Url** value, you will copy Assertion Consumer Access (ACS) URL value from the Linkedin Portal explained later in this article.
 
 1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 

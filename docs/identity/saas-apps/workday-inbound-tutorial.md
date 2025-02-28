@@ -14,12 +14,12 @@ ms.author: chmutali
 ---
 # Configure Workday for automatic user provisioning
 
-The objective of this tutorial is to show the steps you need to perform to provision worker profiles from Workday into on-premises Active Directory (AD).
+The objective of this article is to show the steps you need to perform to provision worker profiles from Workday into on-premises Active Directory (AD).
 
 >[!NOTE]
->Use this tutorial, if the users you want to provision from Workday need an on-premises AD account and a Microsoft Entra account. 
->* If the users from Workday only need Microsoft Entra account (cloud-only users), then please refer to the tutorial on [configure Workday to Microsoft Entra ID](workday-inbound-cloud-only-tutorial.md) user provisioning. 
->* To configure writeback of attributes such as email address, username and phone number from Microsoft Entra ID to Workday, please refer to the tutorial on [configure Workday writeback](workday-writeback-tutorial.md).
+>Use this article,  if the users you want to provision from Workday need an on-premises AD account and a Microsoft Entra account. 
+>* If the users from Workday only need Microsoft Entra account (cloud-only users), then please refer to the article on [configure Workday to Microsoft Entra ID](workday-inbound-cloud-only-tutorial.md) user provisioning. 
+>* To configure writeback of attributes such as email address, username and phone number from Microsoft Entra ID to Workday, please refer to the article on [configure Workday writeback](workday-writeback-tutorial.md).
 
 The following video provides a quick overview of the steps involved when planning your provisioning integration with Workday. 
 

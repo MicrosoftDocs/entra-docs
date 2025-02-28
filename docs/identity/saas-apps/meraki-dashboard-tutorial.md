@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Meraki Dashboard
 
-In this tutorial, you'll learn how to integrate Meraki Dashboard with Microsoft Entra ID. When you integrate Meraki Dashboard with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Meraki Dashboard with Microsoft Entra ID. When you integrate Meraki Dashboard with Microsoft Entra ID, you can:
 
 - Control in Microsoft Entra ID who has access to Meraki Dashboard.
 - Enable your users to be automatically signed-in to Meraki Dashboard with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 - Meraki Dashboard supports **IDP** initiated SSO.
 
@@ -84,7 +84,7 @@ Follow these steps to enable Microsoft Entra SSO.
    `https://n27.meraki.com/saml/login/m9ZEgb/< UNIQUE ID >`
 
    > [!NOTE]
-   > The Reply URL value is not real. Update this value with the actual Reply URL value, which is explained later in the tutorial.
+   > The Reply URL value is not real. Update this value with the actual Reply URL value, which is explained later in the article.
 
 1. Click the **Save** button.
 

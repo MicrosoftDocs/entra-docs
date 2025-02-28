@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Integrate Appraisd with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate Appraisd with Microsoft Entra ID. When you integrate Appraisd with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Appraisd with Microsoft Entra ID. When you integrate Appraisd with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Appraisd.
 * Enable your users to be automatically signed-in to Appraisd with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment. 
+In this article,  you configure and test Microsoft Entra SSO in a test environment. 
 
 * Appraisd supports **SP and IDP** initiated SSO.
 
@@ -85,7 +85,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://app.appraisd.com/saml/<TENANTCODE>`
 
     > [!NOTE]
-	> You get the actual Sign-on URL and Relay State value on the Appraisd SSO Configuration page which is explained later in the tutorial.
+	> You get the actual Sign-on URL and Relay State value on the Appraisd SSO Configuration page which is explained later in the article.
 
 1. Appraisd application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**. Appraisd application expects **nameidentifier** to be mapped with **user.mail**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
 

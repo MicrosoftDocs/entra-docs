@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Genea Access Control
 
-In this tutorial, you learn how to integrate Genea Access Control with Microsoft Entra ID. When you integrate Genea Access Control with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Genea Access Control with Microsoft Entra ID. When you integrate Genea Access Control with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Genea Access Control.
 * Enable your users to be automatically signed-in to Genea Access Control with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with Genea Access Control, you need the
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Genea Access Control supports **SP and IDP** initiated SSO.
 > [!NOTE]
@@ -86,7 +86,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     a. In the **Sign-on URL** text box, type the URL: `https://login.sequr.io`
 
-	b. In the **Relay State** textbox, you'll get this value, which is explained later in the tutorial.
+	b. In the **Relay State** textbox, you'll get this value, which is explained later in the article.
 
 6. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 

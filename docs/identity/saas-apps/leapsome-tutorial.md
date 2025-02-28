@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Leapsome
 
-In this tutorial, you'll learn how to integrate Leapsome with Microsoft Entra ID. When you integrate Leapsome with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Leapsome with Microsoft Entra ID. When you integrate Leapsome with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Leapsome.
 * Enable your users to be automatically signed-in to Leapsome with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Leapsome supports **SP and IDP** initiated SSO.
 * Leapsome supports [Automated user provisioning](leapsome-provisioning-tutorial.md).
@@ -91,7 +91,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://www.leapsome.com/api/users/auth/saml/<CLIENTID>/login`
 
 	> [!NOTE]
-	> The preceding Reply URL and Sign-on URL value is not real value. You will update these with the actual values, which is explained later in the tutorial.
+	> The preceding Reply URL and Sign-on URL value is not real value. You will update these with the actual values, which is explained later in the article.
 
 1. Leapsome application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 

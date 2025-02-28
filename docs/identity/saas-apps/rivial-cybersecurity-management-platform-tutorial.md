@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Rivial Cybersecurity Management Platform
 
-In this tutorial, you'll learn how to integrate Rivial Cybersecurity Management Platform with Microsoft Entra ID. When you integrate Rivial Cybersecurity Management Platform with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Rivial Cybersecurity Management Platform with Microsoft Entra ID. When you integrate Rivial Cybersecurity Management Platform with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Rivial Cybersecurity Management Platform.
 * Enable your users to be automatically signed-in to Rivial Cybersecurity Management Platform with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To integrate Microsoft Entra ID with Rivial Cybersecurity Management Platform, y
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Rivial Cybersecurity Management Platform supports only **SP** initiated SSO.
 

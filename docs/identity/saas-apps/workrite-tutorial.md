@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Workrite
 
-In this tutorial, you'll learn how to integrate Workrite with Microsoft Entra ID. When you integrate Workrite with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Workrite with Microsoft Entra ID. When you integrate Workrite with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Workrite.
 * Enable your users to be automatically signed-in to Workrite with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with Workrite, you need the following i
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Workrite supports **SP** initiated SSO.
 

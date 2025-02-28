@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with TransPerfect GlobalLink Dashboard
 
-In this tutorial, you'll learn how to integrate TransPerfect GlobalLink Dashboard with Microsoft Entra ID. When you integrate TransPerfect GlobalLink Dashboard with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate TransPerfect GlobalLink Dashboard with Microsoft Entra ID. When you integrate TransPerfect GlobalLink Dashboard with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to TransPerfect GlobalLink Dashboard.
 * Enable your users to be automatically signed-in to TransPerfect GlobalLink Dashboard with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * TransPerfect GlobalLink Dashboard supports **SP and IDP** initiated SSO.
 * TransPerfect GlobalLink Dashboard supports **Just In Time** user provisioning.

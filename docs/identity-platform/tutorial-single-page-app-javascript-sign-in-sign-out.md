@@ -20,8 +20,8 @@ In this tutorial, you'll;
 
 > [!div class="checklist"]
 > * Add code to the *claimUtils.js* file to create the claims table
-> * Add code to the *signout.html* file to create the sign-out page
 > * Sign in and sign out of the application
+> * View the claims returned from the ID token
 
 ## Prerequisites
 
@@ -271,7 +271,8 @@ Now that all the required code snippets have been added, the application can be 
     ```console
     npm start
     ```
-1. Copy the `https` URL that appears in the terminal, for example, `https://localhost:3000`, and paste it into a browser. We recommend using a private or incognito browser session.
+
+1. Copy the `http` URL that appears in the terminal, for example, `http://localhost:3000`, and paste it into a browser. We recommend using a private or incognito browser session.
 1. Sign-in with an account registered to the tenant.
 1. An interface similar to the following screenshot appears, indicating that you have signed in to the application. If you have added the claims table, you can view the claims returned from the ID token.
 
@@ -287,7 +288,7 @@ A message appears indicating that you have signed out. You can now close the bro
 ## Related content
 
 - [Quickstart: Protect an ASP.NET Core web API with the Microsoft identity platform](./quickstart-web-api-aspnet-core-protect-api.md).
-- [Learn more by building a React SPA that signs in users in the following multi-part tutorial series](./tutorial-single-page-app-react-register-app.md).
+- [Learn more by building a React SPA that signs in users in the following multi-part tutorial series](./tutorial-single-page-app-react-prepare-app.md).
 - [Enable password reset](../external-id/customers/how-to-enable-password-reset-customers.md).
 - [Customize the default branding](../external-id/customers/how-to-customize-branding-customers.md).
 - [Configure sign-in with Google](../external-id/customers/how-to-google-federation-customers.md).

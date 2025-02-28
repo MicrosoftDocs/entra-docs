@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with CoLab
 
-In this tutorial, you learn how to integrate CoLab with Microsoft Entra ID. When you integrate CoLab with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate CoLab with Microsoft Entra ID. When you integrate CoLab with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to CoLab.
 * Enable your users to be automatically signed-in to CoLab with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To integrate Microsoft Entra ID with CoLab, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * CoLab supports **SP and IDP** initiated SSO.
 * CoLab supports **Just In Time** user provisioning.

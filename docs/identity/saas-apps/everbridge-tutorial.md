@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with EverBridge
 
-In this tutorial, you learn how to integrate EverBridge with Microsoft Entra ID.
+In this article,  you learn how to integrate EverBridge with Microsoft Entra ID.
 When you integrate EverBridge with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to EverBridge.
@@ -32,7 +32,7 @@ To configure Microsoft Entra integration with EverBridge, you need the following
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * EverBridge supports IDP-initiated SSO.
 

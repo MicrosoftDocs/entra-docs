@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Oracle Fusion ERP
 
-In this tutorial, you learn how to integrate Oracle Fusion ERP with Microsoft Entra ID. When you integrate Oracle Fusion ERP with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Oracle Fusion ERP with Microsoft Entra ID. When you integrate Oracle Fusion ERP with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Oracle Fusion ERP.
 * Enable your users to be automatically signed-in to Oracle Fusion ERP with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Oracle Fusion ERP supports **SP and IDP** initiated SSO.
 * Oracle Fusion ERP supports [**Automated** user provisioning and deprovisioning](oracle-fusion-erp-provisioning-tutorial.md) (recommended).
