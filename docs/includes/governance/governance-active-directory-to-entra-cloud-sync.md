@@ -58,7 +58,7 @@ Use the following steps to configure and start the provisioning:
  4. On the configuration screen, enter a **Notification email**, move the selector to **Enable** and select **Save**.
  5. The configuration status should now be **Healthy**.
 
-For more inforamtion on configuring Microsoft Entra Cloud Sync, see [Provision Active Directory to Microsoft Entra ID](/entra/identity/hybrid/cloud-sync/how-to-configure).
+For more information on configuring Microsoft Entra Cloud Sync, see [Provision Active Directory to Microsoft Entra ID](/entra/identity/hybrid/cloud-sync/how-to-configure).
 
 ## Verify users are created and synchronization is occurring
 
