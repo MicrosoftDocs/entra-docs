@@ -20,7 +20,7 @@ The current version of the Global Secure Access client is available to download 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Secure Access Administrator](/azure/active-directory/roles/permissions-reference#global-secure-access-administrator).
 1. Browse to **Global Secure Access** > **Connect** > **Client download**.
 1. Select **Download Client**.
-:::image type="content" source="media/reference-windows-client-release-history/client-download-screen.png" alt-text="Screenshot of the Client download screen with the Download Client button highlighted.":::
+:::image type="content" source="media/reference-macos-client-release-history/macos-client-download-screen.png" alt-text="Screenshot of the Client download screen with the Download Client button highlighted.":::
 
 ## Version 1.1.584
 Released for download on November 18, 2024.
