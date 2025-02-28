@@ -111,7 +111,7 @@ To configure group claims for a gallery or non-gallery SAML application via sing
 
    - To emit only groups assigned to the application, select **Groups assigned to the application**.
 
-     ![Screenshot that shows the Group Claims window, with the option for groups assigned to the application selected.](media/how-to-connect-fed-group-claims/group-claims-ui-4-1.png)
+     ![Screenshot that shows the Group Claims window, with the option for groups assigned to the application selected.](media/how-to-connect-fed-group-claims/group-claims-ui-4-1.pn
 
      Groups assigned to the application will be included in the token. Other groups that the user is a member of will be omitted. With this option, nested groups are not included and the user must be a direct member of the group assigned to the application.
 
@@ -133,11 +133,12 @@ You can configure group claim to include the group display name for the cloud-on
 
 4. To emit group display name just for cloud groups, in the **Source attribute** dropdown select the **Cloud-only group display names**:
 
-   ![Screenshot that shows the Group Claims source attribute dropdown, with the option for configuring cloud only group names selected.](media/how-to-connect-fed-group-claims/group-claims-ui-8.png)
+  ![Screenshot that shows the Group Claims window, with the option for groups assigned to the application selected](https://github.com/user-attachments/assets/a3ded401-a3fa-4c7b-b821-c8e83e9615cd)
 
 5. For a hybrid setup, to emit on-premises group attribute for synced groups and display name for cloud groups, you can select the desired on-premises sources attribute and check the checkbox **Emit group name for cloud-only groups**:
 
-   ![Screenshot that shows the configuration to emit on-premises group attribute for synced groups and display name for cloud groups.](media/how-to-connect-fed-group-claims/group-claims-ui-9.png)
+ ![Screenshot that shows the configuration to emit on-premises group attribute for synced groups and display name for cloud groups](https://github.com/user-attachments/assets/e7a91a65-19ef-4dbf-86a6-0f5b107c3839)
+
 
 > [!Note]
 > You can only add cloud-group names of assigned groups to an application. The restriction to `groups assigned to the application` is because a group name is not unique, and display names can only be emitted for groups explicitly assigned to the application to reduce the security risks. Otherwise, any user could create a group with duplicate name and gain access in the application side.
