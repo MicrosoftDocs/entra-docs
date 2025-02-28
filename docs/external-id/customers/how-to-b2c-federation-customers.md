@@ -84,7 +84,7 @@ To create an application:
 13. Record the secret's **Value**. You need this value when you configure the identity provider in the next section.
 
 
-## Configure your Azure AD B2C tenant as an identity provider.
+## Configure your Azure AD B2C tenant as an identity provider in your Entra External ID tenant.
 
 Construct your OpenID Connect `well-known` endpoint: replace `<your-B2C-tenant-name>` with the name of your Azure AD B2C tenant. 
 
