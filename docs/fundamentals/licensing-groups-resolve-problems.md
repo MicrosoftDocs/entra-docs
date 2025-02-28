@@ -172,13 +172,6 @@ For example, after you resolve a dependency violation error for an affected user
  
 Alternatively, you can use Graph for PowerShell [Invoke-MgLicenseUser](/powershell/module/microsoft.graph.users.actions/invoke-mglicenseuser) to reprocess users.
 
-## More than one product license assigned to a group 
-
-You can assign more than one product license to a group. For example, you can assign Office 365 Enterprise E3 and Enterprise Mobility + Security to a group to easily enable all included services for users. 
-
-**Problem**: Group Based Licensing processing attempts to assign all specified licenses in the group to each user within the group. However, if the processing of the licenses encounters issues such as insufficient licenses or conflicts with other services enabled, it doesn't assign other licenses in the group either. You need to check which users have license assignment failures and which products are affected. 
-
-If a problem occurs during license assignment, the process may not complete. For example, issues like insufficient licenses or service plans that can't be assigned at the same time, would prevent the process from finishing. 
 
 ## When a licensed group is deleted  
 
