@@ -163,17 +163,17 @@ Custom attributes can't be referential attributes, multi-value, or complex-typed
 
 ```json
 {
-  "schemas":[
+  "schemas": [
     "urn:ietf:params:scim:schemas:core:2.0:User",
-      "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"
+    "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"
   ],
-  "userName":"bjensen",
+  "userName": "bjensen",
   "id": "48af03ac28ad4fb88478",
-  "externalId":"bjensen",
-  "name":{
-    "formatted":"Ms. Barbara J Jensen III",
-    "familyName":"Jensen",
-    "givenName":"Barbara"
+  "externalId": "bjensen",
+  "name": {
+    "formatted": "Ms. Barbara J Jensen III",
+    "familyName": "Jensen",
+    "givenName": "Barbara"
   },
   "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User": {
     "employeeNumber": "701984",
@@ -225,36 +225,45 @@ Use the steps in the example to provision application roles for a user to your a
 
 ```json
 {
-    "schemas": [
+  "schemas": [
     "urn:ietf:params:scim:schemas:core:2.0:User"
-      ],
-    "externalId": "alias",
-    "userName": "alias@contoso.OnMicrosoft.com",
-    "active": true,
-    "displayName": "First Name Last Name",
-    "meta": {
-        "resourceType": "User"
-    },
-    "roles": [{
-        "primary": true,
-        "type": "WindowsAzureActiveDirectoryRole",
-        "value": "Admin"
-        }
-]}
- ```
+  ],
+  "externalId": "alias",
+  "userName": "alias@contoso.OnMicrosoft.com",
+  "active": true,
+  "displayName": "First Name Last Name",
+  "meta": {
+    "resourceType": "User"
+  },
+  "roles": [
+    {
+      "primary": true,
+      "type": "WindowsAzureActiveDirectoryRole",
+      "value": "Admin"
+    }
+  ]
+}
+```
 
 **Example output (PATCH)** 
 
 ```json
-"Operations": [
 {
-    "op": "Add",
-    "path": "roles",
-    "value": [{
-        "value": "{\"id\":\"06b07648-ecfe-589f-9d2f-6325724a46ee\",\"value\":\"25\",\"displayName\":\"Role1234\"}"
+  "schemas": [
+    "urn:ietf:params:scim:api:messages:2.0:PatchOp"
+  ],
+  "Operations": [
+    {
+      "op": "Add",
+      "path": "roles",
+      "value": [
+        {
+          "value": "{\"id\":\"06b07648-ecfe-589f-9d2f-6325724a46ee\",\"value\":\"25\",\"displayName\":\"Role1234\"}"
         }
-    ]
-}]
+      ]
+    }
+  ]
+}
 ```
 
 The request formats in the PATCH and POST differ. To ensure that POST and PATCH are sent in the same format, you can use the feature flag described [here](./application-provisioning-config-problem-scim-compatibility.md#flags-to-alter-the-scim-behavior). 
