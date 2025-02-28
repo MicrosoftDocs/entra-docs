@@ -468,7 +468,7 @@ Selecting this option forces a resynchronization of all users while the provisio
 - Updating attribute-mappings affects the performance of a synchronization cycle. An update to the attribute-mapping configuration requires all managed objects to be reevaluated.
 - A recommended best practice is to keep the number of consecutive changes to your attribute-mappings at a minimum.
 - Adding a photo attribute to be provisioned to an app isn't supported today as you can't specify the format to sync the photo. You can request the feature on [User Voice](https://feedback.azure.com/d365community/forum/22920db1-ad25-ec11-b6e6-000d3a4f0789).
-- The attribute `IsSoftDeleted` is often part of the default mappings for an application. `IsSoftdeleted` can be true in one of four scenarios:
+- The attribute `IsSoftDeleted` is often part of the default mappings for an application and can be true in one of four scenarios:
   1. The user is out of scope due to being unassigned from the application. 
   2. The user is out of scope due to not meeting a scoping filter. 
   3. The user is soft deleted in Microsoft Entra ID. 
