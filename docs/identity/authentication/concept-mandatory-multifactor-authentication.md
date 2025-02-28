@@ -56,7 +56,43 @@ Workload identities, such as managed identities and service principals, aren't i
 
 ### Client libraries
 
-The OAuth 2.0 Resource Owner Password Credentials (ROPC) token grant flow is incompatible with MFA. Once MFA is enabled in your Microsoft Entra tenant, ROPC-based APIs used in your applications will begin throwing exceptions. Guidance for migrating away from ROPC-based APIs in [Microsoft Authentication Libraries (MSAL)](/entra/msal/) is provided at [How to migrate away from ROPC](/entra/identity-platform/v2-oauth-ropc#how-to-migrate-away-from-ropc).
+The OAuth 2.0 Resource Owner Password Credentials (ROPC) token grant flow is incompatible with MFA. Once MFA is enabled in your Microsoft Entra tenant, ROPC-based APIs used in your applications will begin throwing exceptions. Guidance for migrating away from ROPC-based APIs in [Microsoft Authentication Libraries (MSAL)](/entra/msal/) is provided at [How to migrate away from ROPC](/entra/identity-platform/v2-oauth-ropc#how-to-migrate-away-from-ropc). For language-specific MSAL guidance, see the following tabs.
+
+### [.NET](#tab/dotnet)
+
+Changes are required if you're using the [Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client) package and using one of the following APIs in your application:
+
+- [IByUsernameAndPassword.AcquireTokenByUsernamePassword](/dotnet/api/microsoft.identity.client.ibyusernameandpassword.acquiretokenbyusernamepassword) (confidential client API)
+- [PublicClientApplication.AcquireTokenByUsernamePassword](/dotnet/api/microsoft.identity.client.publicclientapplication.acquiretokenbyusernamepassword) (public client API)
+
+### [Go](#tab/go)
+
+Changes are required if you're using the [microsoft-authentication-library-for-go](https://pkg.go.dev/github.com/AzureAD/microsoft-authentication-library-for-go) module and using one of the following APIs in your application:
+
+- [Client.AcquireTokenByUsernamePassword](https://pkg.go.dev/github.com/AzureAD/microsoft-authentication-library-for-go@v1.4.0/apps/confidential#Client.AcquireTokenByUsernamePassword) (confidential client API)
+- [Client.AcquireTokenByUsernamePassword](https://pkg.go.dev/github.com/AzureAD/microsoft-authentication-library-for-go@v1.4.0/apps/public#Client.AcquireTokenByUsernamePassword) (public client API)
+
+### [Java](#tab/java)
+
+Changes are required if you're using the [msal4j](https://central.sonatype.com/artifact/com.microsoft.azure/msal4j) package and using the following API in your application:
+
+- [PublicClientApplication.acquireToken(UserNamePasswordParameters parameters)](/java/api/com.microsoft.aad.msal4j.publicclientapplication#com-microsoft-aad-msal4j-publicclientapplication-acquiretoken(com-microsoft-aad-msal4j-usernamepasswordparameters))
+
+### [Node.js](#tab/js)
+
+Changes are required if you're using the [@azure/msal-node](https://www.npmjs.com/package/@azure/msal-node) package and using one of the following APIs in your application:
+
+- [ClientApplication.acquireTokenByUsernamePassword](/javascript/api/@azure/msal-node/clientapplication#@azure-msal-node-clientapplication-acquiretokenbyusernamepassword)
+- [IConfidentialClientApplication.acquireTokenByUsernamePassword](/javascript/api/@azure/msal-node/iconfidentialclientapplication#@azure-msal-node-iconfidentialclientapplication-acquiretokenbyusernamepassword)
+- [IPublicClientApplication.acquireTokenByUsernamePassword](/javascript/api/@azure/msal-node/ipublicclientapplication#@azure-msal-node-ipublicclientapplication-acquiretokenbyusernamepassword)
+
+### [Python](#tab/python)
+
+Changes are required if you're using the [msal](https://pypi.org/project/msal/) package and using the following API in your application:
+
+- [ClientApplication.acquire_token_by_username_password](/python/api/msal/msal.application.clientapplication#msal-application-clientapplication-acquire-token-by-username-password)
+
+---
 
 The same general MSAL guidance applies to the Azure Identity libraries. The `UsernamePasswordCredential` class provided in those libraries uses MSAL ROPC-based APIs. For language-specific guidance, see the following tabs.
 
@@ -87,7 +123,7 @@ Changes are required if you're using the [azure-identity](https://central.sonaty
     - `AZURE_PASSWORD`
 - Using [UsernamePasswordCredential](/java/api/com.azure.identity.usernamepasswordcredential)
 
-### [JavaScript](#tab/js)
+### [Node.js](#tab/js)
 
 Changes are required if you're using the [@azure/identity](https://www.npmjs.com/package/@azure/identity) package and doing one of the following things in your application:
 
