@@ -22,7 +22,7 @@ If you’re already familiar with the Microsoft Entra identity model and want to
 
 * [Password hash synchronization](#password-hash-synchronization) with [Seamless Single Sign-on (SSO)](how-to-connect-sso.md)
 * [Pass-through authentication](how-to-connect-pta.md) with [Seamless Single Sign-on (SSO)](how-to-connect-sso.md)
-* [Federated SSO (with Active Directory Federation Services (AD FS))](#federation-that-uses-a-new-or-existing-farm-with-ad-fs-in-windows-server-2012-r2)
+* [Federated SSO (with Active Directory Federation Services (AD FS))](#federation-that-uses-a-new-or-existing-farm-with-ad-fs-in-windows-server)
 * [Federation with PingFederate](#federation-with-pingfederate)
 
 > [!NOTE] 
