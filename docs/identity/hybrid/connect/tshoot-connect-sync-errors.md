@@ -65,7 +65,7 @@ An InvalidHardMatch error occurs during synchronization when there’s an attemp
 
 We advise customers to enable *BlockCloudObjectTakeoverThroughHardMatchEnabled* unless they need it to take over existent accounts in Microsoft Entra ID.
 
-If you need to clear an **InvalidHardtMatch** error and match the account successfully, you can enable hard match again as descripted in [Hard-match vs Soft-match](./how-to-connect-install-existing-tenant.md#hard-match-vs-soft-match).
+If you need to clear an **InvalidHardMatch** error and match the account successfully, you can enable hard match again as described in [Hard-match vs Soft-match](./how-to-connect-install-existing-tenant.md#hard-match-vs-soft-match).
 
 ### InvalidSoftMatch
 
