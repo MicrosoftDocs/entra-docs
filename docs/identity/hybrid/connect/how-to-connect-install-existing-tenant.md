@@ -27,7 +27,7 @@ There are some extra concerns you need to consider when you started to manage us
 ## Sync with existing users in Microsoft Entra ID
 When you start synchronizing with Microsoft Entra Connect, the Microsoft Entra service API checks every new incoming object and tries to find an existing object to match. There are three attributes used for this process: **userPrincipalName**, **proxyAddresses**, and **sourceAnchor**/**immutableID**. A match on **userPrincipalName** or **proxyAddresses** is known as a "**soft-match**." A match on **sourceAnchor** is known as "**hard-match**." For the **proxyAddresses** attribute, only the value with **SMTP:**, that is the primary email address, is used for the evaluation.
 
-The match is only evaluated for new objects coming from onpremises AD. If you change an existing object so it matches any of these attributes, then you see an error instead.
+The match is only evaluated for new objects coming from on-premises AD. If you change an existing object so it matches any of these attributes, then you see an error instead.
 
 If Microsoft Entra ID finds an object where the attribute values are the same as the new incoming object from Microsoft Entra Connect, then it takes over the object in Microsoft Entra ID and the previously cloud-managed object is converted to on-premises managed. All attributes in Microsoft Entra ID with a value in on-premises AD are overwritten with the respective on-premises value.
 
@@ -42,14 +42,14 @@ The previous section and warning must be considered in your planning. If you mad
 If you matched your objects with a soft-match, then the **sourceAnchor** is added to the object in Microsoft Entra ID so a hard match can be used later.
 
 >[!IMPORTANT]
-> Microsoft strongly recommends against synchronizing on-premises accounts with pre-existing administrative accounts in Microsoft Entra ID.
+> Microsoft strongly recommends against synchronizing on-premises accounts with preexisting administrative accounts in Microsoft Entra ID.
 
-### Hard-match vs Soft-match
+### Hard-match vs soft-match
 By default, the SourceAnchor value of an object, for example "abcdefghijklmnopqrstuv==", is the Base64 string representation of the mS-Ds-ConsistencyGUID attribute (or ObjectGUID depending on the configuration) from the on-premises Active Directory object. This value is set as the corresponding ImmutableId in Microsoft Entra ID.
 
 
-When Microsoft Entra Connect or Cloud Sync adds new objects, the Microsoft Entra ID service tries to match the incoming object by using the sourceAnchor value corresponding to the ImmutableId attribute of existent objects in Microsoft Entra ID. If there's a match, Microsoft Entra Connect takes over the source or authority (SoA) of that object and updates it with the properties of the incoming on-premises Active Directory object in what is known as *”hard-match.”*
-When Microsoft Entra ID can't find any object with an ImmutableId that matches the SouceAnchor value, it tries to use the incoming object's userPrincipalName or primary SMTP address to find a match in what it’s known as a ”*soft-match*.” 
+When Microsoft Entra Connect or Cloud Sync adds new objects, the Microsoft Entra ID service tries to match the incoming object by using the sourceAnchor value corresponding to the ImmutableId attribute of existent objects in Microsoft Entra ID. If there's a match, Microsoft Entra Connect takes over the source or authority (SoA) of that object and updates it with the properties of the incoming on-premises Active Directory object in what is known as *"hard-match."*
+When Microsoft Entra ID can't find any object with an ImmutableId that matches the SouceAnchor value, it tries to use the incoming object's userPrincipalName or primary SMTP address to find a match in what it's known as a "*soft-match*." 
 
 Both, the hard-match and soft-match, tries to match objects already present and managed in Microsoft Entra ID with the new incoming objects being added that represent the same on-premises entity. If Microsoft Entra ID isn't able to find a *hard-match* or *soft-match* for the incoming object, it provisions a new object in Microsoft Entra ID directory.
 
