@@ -34,7 +34,7 @@ You can also use PowerShell to disable audit logging of administrator events. Us
  ```powershell
  #Declare variables
  $registryPath = 'HKLM:\SOFTWARE\Microsoft\Azure AD Connect'
- $valueName = 'AuditEventLoggging'
+ $valueName = 'AuditEventLogging'
  $newValue = '0'
 
  #Create the AuditEventLogging key if it doesn't exist

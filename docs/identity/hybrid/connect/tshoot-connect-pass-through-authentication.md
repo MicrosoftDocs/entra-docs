@@ -28,9 +28,9 @@ This article helps you find troubleshooting information about common issues rega
 
 Ensure that the Pass-through Authentication feature is still **Enabled** on your tenant and the status of Authentication Agents shows **Active**, and not **Inactive**. You can check status by going to the **Microsoft Entra Connect** blade on the [Microsoft Entra admin center](https://entra.microsoft.com/).
 
-![Screnshot shows Microsoft Entra admin center - Microsoft Entra Connect blade.](./media/tshoot-connect-pass-through-authentication/azure-ad-connect-blade.png)
+![Screenshot shows Microsoft Entra admin center - Microsoft Entra Connect blade.](./media/tshoot-connect-pass-through-authentication/azure-ad-connect-blade.png)
 
-![Screenhot shows Microsoft Entra admin center - Pass-through Authentication blade.](./media/tshoot-connect-pass-through-authentication/pta-server-list.png)
+![Screenshot shows Microsoft Entra admin center - Pass-through Authentication blade.](./media/tshoot-connect-pass-through-authentication/pta-server-list.png)
 
 ### User-facing sign-in error messages
 
