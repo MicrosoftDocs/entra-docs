@@ -1,6 +1,6 @@
 This article lists the versions and features of Microsoft Entra provisioning agent that have been released. The Microsoft Entra team regularly updates the Provisioning Agent with new features and functionality. 
 > [!NOTE]
-> All new Provisioning Agent releases are made available through auto upgrade for existing installations and can be downloaded for new installations.
+> All new Provisioning Agent releases are made available for download through the Entra portal and only specific releases are pushed for auto upgrade.
 
 >[!NOTE]
 > Microsoft Entra provisioning agent follows the [Modern Lifecycle Policy](/lifecycle/policies/modern). Changes for products and services  under the Modern Lifecycle Policy may be more frequent and require customers to be alert for forthcoming modifications to their product or service.
@@ -16,7 +16,7 @@ Get notified about when to revisit this page for updates by copying and pasting 
 
 ## 1.1.1586.0
 
-Release date: May 13th, 2024
+May 13th, 2024: released for download only
 
 ### Fixed issues
  
@@ -27,7 +27,7 @@ Release date: May 13th, 2024
 
 ## 1.1.1373.0
 
-Release date: January 19th, 2024
+January 19th, 2024: released for download and auto upgrade
 
 ### Fixed issues
 Fixed an issue with case-sensitive comparison of domain names and enhanced the error handling.
@@ -47,7 +47,7 @@ Release date: October 16th, 2023
 
 ## 1.1.1365.0
 
-Release date: September 8th, 2023
+September 8th, 2023: released for download only
 
 ### New or changed functionality
 
@@ -74,7 +74,7 @@ Release date: September 8th, 2023
 
 ## 1.1.1107.0
 
-Release date: December 16, 2022
+December 16, 2022: released for download only
 
 ### New or changed functionality
 -	We added support for [on-premises application provisioning](/azure/active-directory/app-provisioning/on-premises-application-provisioning-architecture) (SCIM, SQL, LDAP) 
@@ -93,7 +93,7 @@ Release date: September 23, 2022
 
 ## 1.1.972.0
 
-Release date: August 8, 2022
+August 8, 2022: released for download only
 
 ### New or changed functionality
 
@@ -119,7 +119,7 @@ Release date: August 8, 2022
 
 ## 1.1.818.0
 
-April 18, 2022 - released for download
+April 18, 2022: released for download only
 
 New features and improvements
 
@@ -128,7 +128,7 @@ New features and improvements
 
 ## 1.1.587.0
 
-November 2, 2021 - released for download
+November 2, 2021: released for download only
 
 New features and improvements
 
@@ -137,7 +137,7 @@ New features and improvements
 
 ## 1.1.584.0 
 
-August 20, 2021 - released for download
+August 20, 2021: released for download only
 
 ### Fixed issues
 
@@ -145,7 +145,7 @@ August 20, 2021 - released for download
 
 ## 1.1.582.0
 
-August 8, 2021 - released for download
+August 8, 2021: released for download only
 
 >[!NOTE] 
 >This is a security update release of Azure AD Connect. 
@@ -165,7 +165,7 @@ August 8, 2021 - released for download
 
 ## 1.1.354.0
 
-January 20, 2021: Released for download
+January 20, 2021: released for download only
 
 ### New features and improvements
 - Improvement to GMSA experience including support for pre-custom created GMSA Account
@@ -189,7 +189,7 @@ January 20, 2021: Released for download
 
 ### Release status
 
-November 23, 2020: Released for download
+November 23, 2020: released for download only
 
 ### New features and improvements
 
@@ -211,7 +211,7 @@ November 23, 2020: Released for download
 
 ### Release status
 
-December 4, 2019: Released for download
+December 4, 2019: released for download only
 
 ### New features and improvements
 
