@@ -108,7 +108,7 @@ The backup authentication system is supported in all cloud environments except M
 | Atlassian Cloud | Yes \* | Protected |
 | Blackboard Learn | No | SAML SP-initiated |
 | Box | No | SAML SP-initiated |
-| Brightspace by Desire2Leam | No | SAML SP-initiated |
+| Brightspace by Desire2Learn | No | SAML SP-initiated |
 | Canvas | No | SAML SP-initiated |
 | Ceridian Dayforce HCM | No | SAML SP-initiated |
 | Cisco AnyConnect | No | SAML SP-initiated |

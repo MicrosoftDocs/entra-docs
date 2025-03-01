@@ -239,7 +239,7 @@ Where **ExternalUserUPN** is the calculated **UserPrincipalName.**
 
 For example:
 
-`Set-MailUser externaluser1_contoso.com#EXT#@fabricam.onmicrosoft.com\ -HiddenFromAddressListsEnabled:\$false`
+`Set-MailUser externaluser1_contoso.com#EXT#@fabrikam.onmicrosoft.com\ -HiddenFromAddressListsEnabled:\$false`
 
 External users might be unhidden in the Microsoft 365 admin center.
 

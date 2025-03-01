@@ -73,7 +73,7 @@ To create MSAL instance in your project, follow these steps:
     
     ```swift
     var applicationContext : MSALPublicClientApplication?
-    var webViewParamaters : MSALWebviewParameters?
+    var webViewParameters : MSALWebviewParameters?
     ```
 
     The code declares two variables: `applicationContext`, which stores an instance of `MSALPublicClientApplication`, and `webViewParameters`, which stores an instance of `MSALWebviewParameters`. `MSALPublicClientApplication` is a class provided by the MSAL for handling public client applications. The `MSALWebviewParameters` is a class provided by MSAL that defines parameters for configuring the web view used during the authentication process.
