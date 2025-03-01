@@ -71,7 +71,7 @@ Microsoft Entra Connect Sync synchronizes changes occurring in your on-premises 
 3. Run `Set-ADSyncScheduler -SyncCycleEnabled $false`.
 
 > [!NOTE]
-> If you are running your own custom scheduler for Microsoft Entra Connect Sync, then disable the custom scheduler.
+> If you are running your own custom scheduler for Microsoft Entra Connect Sync, then disable the custom sync scheduler.
 
 ## Create custom user inbound rule
 In the Microsoft Entra Connect Synchronization Rules editor, you need to create an inbound sync rule that filters out users in the OU you identified previously. The inbound sync rule is a join rule with a target attribute of cloudNoFlow. This rule tells Microsoft Entra Connect not to synchronize attributes for these users. For more information, see [Migrating to cloud sync](migrate-azure-ad-connect-to-cloud-sync.md) documentation before attempting to migrate your production environment.
@@ -195,7 +195,7 @@ Microsoft Entra Connect Sync synchronizes changes occurring in your on-premises 
 3. Run `Start-ADSyncSyncCycle`, then press <kbd>Enter</kbd>.
 
 > [!NOTE]
-> If you are running your own custom scheduler for Microsoft Entra Connect Sync, then please enable the scheduler.
+> If you are running your own custom scheduler for Microsoft Entra Connect Sync, then re-enable the custom sync scheduler.
 
 Once the scheduler is enabled, Microsoft Entra Connect stops exporting any changes on objects with `cloudNoFlow=true` in the metaverse, unless any reference attribute (such as `manager`) is being updated. In case there's any reference attribute update on the object, Microsoft Entra Connect ignores the `cloudNoFlow` signal and export all updates on the object.
 
