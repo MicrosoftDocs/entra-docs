@@ -10,7 +10,7 @@ This article lists the versions and features of Microsoft Entra provisioning age
 > For products and services governed by the Modern Lifecycle Policy, Microsoft's policy is to provide a minimum 30 days' notification when customers are required to take action in order to avoid significant degradation to the normal use of the product or service.
 
 ## Download link
-Go to the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted), click on "Cloud Sync" and go to "Agents" to download the "Provisioning Agent".
+Go to the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted), click on "Cloud Sync" and go to "Agents" to download the "Provisioning Agent."
 
 Get notified about when to revisit this page for updates by copying and pasting this URL: `https://aka.ms/cloudsyncrss` into your ![RSS feed reader icon](media/cloud-sync-version-history/feed-icon-16-x-16.png) feed reader.
 
@@ -62,12 +62,12 @@ September 8, 2023: released for download only
 ### New or changed functionality
 
 - Added support for Applications Kerberos Key synchronization to Provisioning Agent
-- Added support for Web Service, Windows PowerShell and custom ECMA2 connectors
+- Added support for Web Service, Windows PowerShell, and custom ECMA2 connectors
 - **Query attribute** of ECMA2Host is no longer in use and removed from the ECMA2 Configuration wizard
 - Update AADCloudSyncTools module with function to disable DirSyncConfiguration Accidental Deletion Prevention
 
 ### Fixed issues
-- Fixed an issue with jobs going into quarantine if an OR name attribute value points to a non-existent object
+- Fixed an issue with jobs going into quarantine if an OR name attribute value points to a nonexistent object
 - Fixed an issue that caused customizations to AADConnectProvisioningAgent.exe.config to reset when the agent is updated
 - Fixed provisioning agent incorrect creds if NTLM traffic is set to 'Deny-All'
 - Fixed incorrect file path to trace log
@@ -86,7 +86,7 @@ September 8, 2023: released for download only
 December 16, 2022: released for download only
 
 ### New or changed functionality
--	We added support for [on-premises application provisioning](/azure/active-directory/app-provisioning/on-premises-application-provisioning-architecture) (SCIM, SQL, LDAP) 
+-	Added support for [on-premises application provisioning](/azure/active-directory/app-provisioning/on-premises-application-provisioning-architecture) (SCIM, SQL, LDAP) 
 
 
 
@@ -96,12 +96,12 @@ December 16, 2022: released for download only
 September 23, 2022: released for download only
 
 ### New or changed functionality
- - We added support for [cloud sync Self Service Password Reset](../identity/authentication/tutorial-enable-cloud-sync-sspr-writeback.md) General Availability.
- - We added support for password writeback in disconnected forests.
+ - Added support for [cloud sync Self Service Password Reset](../identity/authentication/tutorial-enable-cloud-sync-sspr-writeback.md) General Availability.
+ - Added support for password writeback in disconnected forests.
  
 ### Fixed issues
 
- - We fixed various bug fixes to support SSPR with cloud sync
+ - Fixed various bug fixes to support SSPR with cloud sync
 
 
 
@@ -112,25 +112,25 @@ August 8, 2022: released for download only
 
 ### New or changed functionality
 
- - We added a new cmdlet to enable and disable writeback of passwords. For more information about this cmdlet and its use, see [Enable password writeback in Microsoft Entra Connect cloud sync](../identity/authentication/tutorial-enable-cloud-sync-sspr-writeback.md#enable-password-writeback-in-sspr).
- - We now return more info in the 'Get-AADCloudSyncDomains' cmdlet. 
- - We updated new cmdlets of CloudSync PowerShell module in the unattended agent install script. 
- - We have added support for the installation of the provisioning agent using the commandline. 
- - We added support for EX and RX environments.
+ - Added a new cmdlet to enable and disable writeback of passwords. For more information about this cmdlet and its use, see [Enable password writeback in Microsoft Entra Connect cloud sync](../identity/authentication/tutorial-enable-cloud-sync-sspr-writeback.md#enable-password-writeback-in-sspr).
+ - More info is now returned from 'Get-AADCloudSyncDomains' cmdlet
+ - Updated new cmdlets of CloudSync PowerShell module in the unattended agent install script. 
+ - Added support for the installation of the provisioning agent using the commandline. 
+ - Added support for EX and RX environments.
   
 ### Fixed issues
 
- - After the Newtonsoft.Json upgrade, AADConnectProvisioningAgent.exe.config isn't updated after install, which results in a failure of sync. We now remove the app.config file on upgrade of the agent.
- - We fixed an issue with DC affinity after an OU is renamed.
- - We fixed several issues in the PowerShell module.
- - We fixed a memory leak due to not disposing HTTP client.
- - We fixed a bug in the code for granting the "logon as a service" right to the GMSA.
- - We refined the permissions on the GMSA for CloudHR.
- - We now uninstall the cloud sync agent when the bundle is uninstalled.
- - We fixed a bug that prevents deletion of the Service Principal if not all Jobs are deleted.
- - We fixed an issue with updating of the password of a user with 'User must change password at next logon'.
- - We fixed an issue with the agent GMSA folder permissions.
- - We fixed an issue where group membership updates aren't always correct.
+ - Remove the app.config file on upgrade of the agent. After the Newtonsoft.Json upgrade, AADConnectProvisioningAgent.exe.config isn't updated after install, which results in a failure of sync.
+ - Fixed an issue with DC affinity after an OU is renamed.
+ - Fixed several issues in the PowerShell module.
+ - Fixed a memory leak due to not disposing HTTP client.
+ - Fixed a bug in the code for granting the "logon as a service" right to the GMSA.
+ - Refined the permissions on the GMSA for CloudHR.
+ - Cloud sync agent is now uninstalled, when the bundle is uninstalled.
+ - Fixed a bug that prevents deletion of the Service Principal if not all Jobs are deleted.
+ - Fixed an issue with updating of the password of a user with 'User must change password at next logon'.
+ - Fixed an issue with the agent GMSA folder permissions.
+ - Fixed an issue where group membership updates aren't always correct.
 
 
 
@@ -153,7 +153,7 @@ November 2, 2021: released for download only
 
 New features and improvements
 
-- We added a cmdlet to configure Password Writeback
+- Added a cmdlet to configure Password Writeback
 
 
 
@@ -165,7 +165,7 @@ August 20, 2021: released for download only
 
 ### Fixed issues
 
-- We fixed a bug where, when a domain is renamed, Password Hash Sync would fail with an error indicating "a specified cast is not valid" in the Event log. This error is a regression from earlier builds.
+- Fixed a bug where, when a domain is renamed, Password Hash Sync would fail with an error indicating "a specified cast is not valid" in the Event log. This error is a regression from earlier builds.
 
 
 
@@ -210,8 +210,8 @@ January 20, 2021: released for download only
 
 
 ### Fixed issues
--	 Prevent quarantine when scoping group is out of scope
--	when scoping filters are configured - PHS job now only operates for in-scope users
+-	Prevent quarantine when scoping group is out of scope
+-	PHS job now only operates for in-scope users, when scoping filters are configured
 -	Agent would sometime stop responding during upgrade
 -	Initial Sync for objects in nested OUs when using OU scoping
 -	Make the Repair-AADCloudSyncToolsAccount more robust
