@@ -40,7 +40,7 @@ Before you try this tutorial, consider the following items:
    > [!NOTE]
    > Microsoft Entra Connect Sync does not populate *ms-ds-consistencyGUID* by default for group objects.
 
- 5. This configuration is for advanced scenarios. Ensure that you follow the steps documented in this tutorial precisely.
+5. This configuration is for advanced scenarios. Ensure that you follow the steps documented in this tutorial precisely.
 
 ## Prerequisites
 
@@ -70,23 +70,23 @@ Microsoft Entra Connect Sync synchronizes changes occurring in your on-premises 
 2. Run `Stop-ADSyncSyncCycle`.  Hit Enter.
 3. Run `Set-ADSyncScheduler -SyncCycleEnabled $false`.
 
->[!NOTE]
->If you are running your own custom scheduler for Microsoft Entra Connect Sync, then please disable the scheduler.
+> [!NOTE]
+> If you are running your own custom scheduler for Microsoft Entra Connect Sync, then disable the custom scheduler.
 
 ## Create custom user inbound rule
 In the Microsoft Entra Connect Synchronization Rules editor, you need to create an inbound sync rule that filters out users in the OU you identified previously. The inbound sync rule is a join rule with a target attribute of cloudNoFlow. This rule tells Microsoft Entra Connect not to synchronize attributes for these users. For more information, see [Migrating to cloud sync](migrate-azure-ad-connect-to-cloud-sync.md) documentation before attempting to migrate your production environment.
 
- 1. Launch the synchronization editor from the application menu in desktop as shown:
- 
-     ![Screenshot of the synchronization rule editor menu.](media/tutorial-migrate-aadc-aadccp/user-8.png)
+1. Launch the synchronization editor from the application menu in desktop as shown:
 
- 2. Select **Inbound** from the drop-down list for Direction and select **Add new rule**.
+    ![Screenshot of the synchronization rule editor menu.](media/tutorial-migrate-aadc-aadccp/user-8.png)
+   
+1. Select **Inbound** from the drop-down list for Direction and select **Add new rule**.
 
-     ![Screenshot that shows the "View and manage your synchronization rules" window with "Inbound" and the "Add new rule" button selected.](media/tutorial-migrate-aadc-aadccp/user-1.png)
+    ![Screenshot that shows the "View and manage your synchronization rules" window with "Inbound" and the "Add new rule" button selected.](media/tutorial-migrate-aadc-aadccp/user-1.png)
+   
+1. On the **Description** page, enter the following and select **Next**:
 
- 3. On the **Description** page, enter the following and select **Next**:
-
-    - **Name:** Give the rule a meaningful name
+- **Name:** Give the rule a meaningful name
     - **Description:** Add a meaningful description
     - **Connected System:** Choose the AD connector that you're writing the custom sync rule for
     - **Connected System Object Type:** User
@@ -95,34 +95,34 @@ In the Microsoft Entra Connect Synchronization Rules editor, you need to create 
     - **Precedence:** Provide a value that is unique in the system
     - **Tag:** Leave this empty
 
-    ![Screenshot that shows the "Create inbound synchronization rule - Description" page with values entered.](media/tutorial-migrate-aadc-aadccp/user-2.png)
+   ![Screenshot that shows the "Create inbound synchronization rule - Description" page with values entered.](media/tutorial-migrate-aadc-aadccp/user-2.png)
+   
+1. On the **Scoping filter** page, enter the OU or security group that you want the pilot based off. To filter on OU, add the OU portion of the distinguished name. This rule is applied to all users who are in that OU. So, if DN ends with "OU=CPUsers,DC=contoso,DC=com, you would add this filter. Then select **Next**.
 
- 4. On the **Scoping filter** page, enter the OU or security group that you want the pilot based off. To filter on OU, add the OU portion of the distinguished name. This rule is applied to all users who are in that OU. So, if DN ends with "OU=CPUsers,DC=contoso,DC=com, you would add this filter. Then select **Next**.
+|Rule|Attribute|Operator|Value|
+|-----|----|----|-----|
+|Scoping OU|DN|ENDSWITH|Distinguished name of the OU.|
+|Scoping group||ISMEMBEROF|Distinguished name of the security group.|
 
-    |Rule|Attribute|Operator|Value|
-    |-----|----|----|-----|
-    |Scoping OU|DN|ENDSWITH|Distinguished name of the OU.|
-    |Scoping group||ISMEMBEROF|Distinguished name of the security group.|
-
-    ![Screenshot that shows the **Create inbound synchronization rule - Scoping filter** page with a scoping filter value entered.](media/tutorial-migrate-aadc-aadccp/user-3.png)
-
+   ![Screenshot that shows the ](media/tutorial-migrate-aadc-aadccp/user-3.png)
+   
  5. On the **Join** rules page, select **Next**.
- 6. On the **Transformations** page, add a Constant transformation: flow True to cloudNoFlow attribute. Select **Add**.
+1. On the **Transformations** page, add a Constant transformation: flow True to cloudNoFlow attribute. Select **Add**.
 
-     ![Screenshot that shows the **Create inbound synchronization rule - Transformations** page with a **Constant transformation** flow added.](media/tutorial-migrate-aadc-aadccp/user-4.png)
-
+    ![Screenshot that shows the ](media/tutorial-migrate-aadc-aadccp/user-4.png)
+   
 Same steps need to be followed for all object types (user, group, and contact). Repeat steps per configured AD Connector / per AD forest.
 
 ## Create custom user outbound rule
 You'll need an outbound sync rule with a link type of JoinNoFlow and the scoping filter that has the cloudNoFlow attribute set to True. This rule tells Microsoft Entra Connect not to synchronize attributes for these users. For more information, see [Migrating to cloud sync](migrate-azure-ad-connect-to-cloud-sync.md) documentation before attempting to migrate your production environment.
 
- 1. Select **Outbound** from the drop-down list for Direction and select **Add rule**.
+1. Select **Outbound** from the drop-down list for Direction and select **Add rule**.
 
-     ![Screenshot that shows the **Outbound** Direction selected and the **Add new rule** button highlighted.](media/tutorial-migrate-aadc-aadccp/user-5.png)
+    ![Screenshot that shows the ](media/tutorial-migrate-aadc-aadccp/user-5.png)
+   
+1. On the **Description** page, enter the following and select **Next**:
 
- 2. On the **Description** page, enter the following and select **Next**:
-
-    - **Name:** Give the rule a meaningful name
+- **Name:** Give the rule a meaningful name
     - **Description:** Add a meaningful description
     - **Connected System:** Choose the Microsoft Entra connector that you're writing the custom sync rule for
     - **Connected System Object Type:** User
@@ -131,12 +131,12 @@ You'll need an outbound sync rule with a link type of JoinNoFlow and the scoping
     - **Precedence:** Provide a value that is unique in the system<br>
     - **Tag:** Leave this empty
 
-    ![Screenshot that shows the **Description** page with properties entered.](media/tutorial-migrate-aadc-aadccp/user-6.png)
+   ![Screenshot that shows the ](media/tutorial-migrate-aadc-aadccp/user-6.png)
+   
+1. On the **Scoping filter** page, choose **cloudNoFlow** equal **True**. Then select **Next**.
 
- 3. On the **Scoping filter** page, choose **cloudNoFlow** equal **True**. Then select **Next**.
-
-     ![Screenshot that shows a custom rule.](media/tutorial-migrate-aadc-aadccp/user-7.png)
-
+    ![Screenshot that shows a custom rule.](media/tutorial-migrate-aadc-aadccp/user-7.png)
+   
  4. On the **Join** rules page, select **Next**.
  5. On the **Transformations** page, select **Add**.
 
@@ -167,7 +167,7 @@ Use the following steps to configure provisioning:
  
  :::image type="content" source="media/how-to-configure/new-ux-configure-2.png" alt-text="Screenshot of a new configuration." lightbox="media/how-to-configure/new-ux-configure-2.png":::
 
- 5.  The **Get started** screen opens.  
+5.  The **Get started** screen opens.  
 
  6.  On the **Get started** screen, select either **Add scoping filters** next to the **Add scoping filters** icon or on the select **Scoping filters** on the left under **Manage**.
 
@@ -179,7 +179,7 @@ Use the following steps to configure provisioning:
  
    :::image type="content" source="media/tutorial-migrate-aadc-aadccp/configure-1.png" alt-text="Screenshot of the scoping filter." lightbox="media/tutorial-migrate-aadc-aadccp/configure-1.png":::
  
- 9.  Select **Add**. Select **Save**.
+9.  Select **Add**. Select **Save**.
 
 
 
