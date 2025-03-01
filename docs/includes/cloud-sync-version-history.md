@@ -1,4 +1,5 @@
-This article lists the versions and features of Microsoft Entra provisioning agent that have been released. The Microsoft Entra team regularly updates the Provisioning Agent with new features and functionality. 
+This article lists the versions and features of Microsoft Entra provisioning agent releases. The Microsoft Entra team regularly updates the Provisioning Agent with new features and functionality. 
+
 > [!NOTE]
 > All new Provisioning Agent releases are made available for download through the Entra portal and only specific releases are pushed for auto upgrade.
 
@@ -10,7 +11,8 @@ This article lists the versions and features of Microsoft Entra provisioning age
 > For products and services governed by the Modern Lifecycle Policy, Microsoft's policy is to provide a minimum 30 days' notification when customers are required to take action in order to avoid significant degradation to the normal use of the product or service.
 
 ## Download link
-Go to the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted), click on "Cloud Sync" and go to "Agents" to download the "Provisioning Agent."
+
+From the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_Connect_Provisioning/AADConnectMenuBlade/~/GetStarted), select "Cloud Sync" and go to "Agents" to download the "Provisioning Agent."
 
 Get notified about when to revisit this page for updates by copying and pasting this URL: `https://aka.ms/cloudsyncrss` into your ![RSS feed reader icon](media/cloud-sync-version-history/feed-icon-16-x-16.png) feed reader.
 
@@ -128,7 +130,7 @@ August 8, 2022: released for download only
  - Refined the permissions on the GMSA for CloudHR.
  - Cloud sync agent is now uninstalled, when the bundle is uninstalled.
  - Fixed a bug that prevents deletion of the Service Principal if not all Jobs are deleted.
- - Fixed an issue with updating of the password of a user with 'User must change password at next logon'.
+ - Fixed an issue with updating of the password of a user with "User must change password at next logon."
  - Fixed an issue with the agent GMSA folder permissions.
  - Fixed an issue where group membership updates aren't always correct.
 
@@ -187,11 +189,11 @@ August 8, 2021: released for download only
 - GMSA Cmdlets to set/reset permission
 
 ### Fixed issues
-- GMSA folder permission bug fix (originally, the issue resulted in bootstrap issues)
-- Bug fix for handling multiple changes to a single value reference attribute (for example, manager)
-- Bug fix for failure in Initial Enumeration, plus enhanced tracing of the failure
-- Optimize group membership updates to a Scoping Group. With this update, customers now can sync a group of up to 50 K members using group scoping filter. 
-- Support retrieving a single object by DN with Scoping used by Provisioning On Demand to obey Scoping logic
+- Fixed GMSA folder permissions (originally, the issue resulted in bootstrap issues)
+- Fixed the handling of multiple changes to a single value reference attribute (for example, manager)
+- Fixed the failure in Initial Enumeration, plus enhanced tracing of the failure
+- Optimized group membership updates to a Scoping Group. With this update, customers now can sync a group of up to 50 K members using group scoping filter
+- Added support to retrieve a single object by DN with Scoping used by Provisioning On Demand to obey Scoping logic
 
 
 
@@ -203,10 +205,10 @@ January 20, 2021: released for download only
 
 ### New features and improvements
 - Improvement to GMSA experience including support for pre-custom created GMSA Account
-- [PowerShell cmdlets](../identity/hybrid/cloud-sync/how-to-gmsa-cmdlets.md) support for GMSA setup
-- [CLI support](../identity/hybrid/cloud-sync/how-to-install-pshell.md) for agent install (silent installation)
-- More diagnostics for agent source quarantine issues
-- Bug fixes that include reducing of memory usage of OU scoping filters, running PHS only for in-scope users, handling of nested objects in OU when using OU scoping etc. 
+- Added support for GMSA setup with [PowerShell cmdlets](../identity/hybrid/cloud-sync/how-to-gmsa-cmdlets.md)
+- Added support for [CLI](../identity/hybrid/cloud-sync/how-to-install-pshell.md) agent install (silent installation)
+- Added more diagnostics for agent source quarantine issues
+- Reduced memory usage of OU scoping filters, running PHS only for in-scope users, handling of nested objects in OU when using OU scoping etc. 
 
 
 ### Fixed issues
@@ -217,7 +219,7 @@ January 20, 2021: released for download only
 -	Make the Repair-AADCloudSyncToolsAccount more robust
 -	Reduce large memory usage of OU scoping filters
 -	Admin role check fails if the role members contain a security group
--	Fix GMSA folder permission issue, which prevents Agent Cert renewal
+-	Fixed GMSA folder permission issue, which prevents Agent Cert renewal
 
 
 
@@ -231,18 +233,18 @@ November 23, 2020: released for download only
 
 ### New features and improvements
 
-* Support for [gMSA](../identity/hybrid/cloud-sync/how-to-prerequisites.md#group-managed-service-accounts)
-* Support for groups up to size less than 1500 members during incremental or delta sync cycle. This change is applicable when using group scoping filter
-* Support for large groups with member size up to 15 K
-* Initial sync improvements
-* Advanced verbose logging
-* Introduction of [AADCloudSyncTools PowerShell module](../identity/hybrid/cloud-sync/reference-powershell.md)
+* Added support for [gMSA](../identity/hybrid/cloud-sync/how-to-prerequisites.md#group-managed-service-accounts)
+* Added support for groups up to size less than 1500 members during incremental or delta sync cycle. This change is applicable when using group scoping filter
+* Added support for large groups with member size up to 15 K
+* Added Initial sync improvements
+* Added advanced verbose logging
+* Added a new [AADCloudSyncTools PowerShell module](../identity/hybrid/cloud-sync/reference-powershell.md)
 * Fixed limitations to allow agent to be installed in non-English server
-* Support for PHS filtering only for objects in scope (Originally, we were syncing password hashes for all objects)
-* Fixed the memory leak issue in the agent
-* Improved provisioning logs
-* Support for configuring [LDAP connection timeout](../identity/hybrid/cloud-sync/how-to-manage-registry-options.md#configure-ldap-connection-timeout) 
-* Support for configuring [referral chasing](../identity/hybrid/cloud-sync/how-to-manage-registry-options.md#configure-referral-chasing) 
+* Added support for PHS filtering only for objects in scope (Originally, we were syncing password hashes for all objects)
+* Fixed a memory leak issue in the agent
+* Added improvents in provisioning logs
+* Added support for configuring [LDAP connection timeout](../identity/hybrid/cloud-sync/how-to-manage-registry-options.md#configure-ldap-connection-timeout) 
+* Added support for configuring [referral chasing](../identity/hybrid/cloud-sync/how-to-manage-registry-options.md#configure-referral-chasing) 
 
 
 
@@ -256,7 +258,7 @@ December 4, 2019: released for download only
 
 ### New features and improvements
 
-* Includes support for [Azure AD Connect cloud sync](../identity/hybrid/cloud-sync/what-is-cloud-sync.md) to synchronize user, contact and group data from on-premises Active Directory to Azure AD
+* Added support for [Azure AD Connect cloud sync](../identity/hybrid/cloud-sync/what-is-cloud-sync.md) to synchronize user, contact and group data from on-premises Active Directory to Azure AD
 
 
 
@@ -269,8 +271,8 @@ September 9, 2019: Released for auto update
 
 ### New features and improvements
 
-* Ability to configure more tracing and logging for debugging Provisioning Agent issues
-* Ability to fetch only those Azure AD attributes that are configured in the mapping to improve performance of sync
+* Added ability to configure more tracing and logging for debugging Provisioning Agent issues
+* Added ability to fetch only those Azure AD attributes that are configured in the mapping to improve performance of sync
 
 ### Fixed issues
 
