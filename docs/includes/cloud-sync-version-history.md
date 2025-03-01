@@ -1,7 +1,7 @@
 This article lists the versions and features of Microsoft Entra provisioning agent releases. The Microsoft Entra team regularly updates the Provisioning Agent with new features and functionality. 
 
 > [!NOTE]
-> All new Provisioning Agent releases are made available for download through the Entra portal and only specific releases are pushed for auto upgrade.
+> All new Provisioning Agent releases are made available for download through the Microsoft Entra admin center and only specific releases are pushed for auto upgrade.
 
 >[!NOTE]
 > Microsoft Entra provisioning agent follows the [Modern Lifecycle Policy](/lifecycle/policies/modern). Changes for products and services  under the Modern Lifecycle Policy may be more frequent and require customers to be alert for forthcoming modifications to their product or service.
@@ -76,7 +76,7 @@ September 8, 2023: released for download only
 - Fixed an issue that caused Provisioning Agent installer crashing from duplicate schema objects
 - Update Windows Server Version check as per documented prerequisites
 - Fixed for install page links visibility in 'high contrast black' mode
-- Fixed case sensitive comparison and add logging for UPN / role id checks
+- Fixed case sensitive comparison and add logging for UPN / role ID checks
 - Accessibility fixes for ECMA2 Configuration wizard
 
 
