@@ -143,7 +143,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 4. Perform the following steps in the following page.
 
-    ![Screenshot shows the Employess Access tab where you can enter user data.](./media/whosonlocation-tutorial/user.png "Data Management")
+    ![Screenshot shows the Employee Access tab where you can enter user data.](./media/whosonlocation-tutorial/user.png "Data Management")
 
     a. Change **Single sign-on with SAML** to **Yes**.
 

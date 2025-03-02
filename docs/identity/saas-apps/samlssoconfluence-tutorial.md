@@ -140,7 +140,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 4. Under **ATLASSIAN MARKETPLACE** tab, click **Find new add-ons**. 
 
-	![Screenshot that shows the "Attlassian Marketplace" tab with "Find new add-ons" selected.](./media/saml-sso-confluence-tutorial/add-on.png)
+	![Screenshot that shows the "Atlassian Marketplace" tab with "Find new add-ons" selected.](./media/saml-sso-confluence-tutorial/add-on.png)
 
 5. Search **SAML Single Sign On (SSO) for Confluence** and click **Install** button to install the new SAML plugin.
 

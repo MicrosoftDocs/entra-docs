@@ -93,7 +93,7 @@ Follow these steps to enable Microsoft Entra SSO.
     | Reply URL |
     | ---------- |
     | `https://go.floqast.com/api/sso/saml/azure` |
-    | ` ttps://eu.floqast.app/api/sso/saml/azure` |
+    | `https://eu.floqast.app/api/sso/saml/azure` |
     |
 
 

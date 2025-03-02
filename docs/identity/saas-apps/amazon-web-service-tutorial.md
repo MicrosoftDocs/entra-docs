@@ -325,7 +325,7 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
 
 
 > [!NOTE]
-> AWS has a set of permissions/limts are required to configure AWS SSO. To know more information on AWS limits, please refer [this](https://docs.aws.amazon.com/singlesignon/latest/userguide/limits.html) page.
+> AWS has a set of permissions/limits are required to configure AWS SSO. To know more information on AWS limits, please refer [this](https://docs.aws.amazon.com/singlesignon/latest/userguide/limits.html) page.
 
 ### How to configure role provisioning in AWS Single-Account Access
 
