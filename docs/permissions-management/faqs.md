@@ -113,7 +113,7 @@ For information about permissions usage reports, see [Generate and download the 
 
 ## Does Permissions Management integrate with third-party ITSM (Information Technology Service Management) tools?
 
-Integration with ITMS tools, such as ServiceNow, is in the future roadmap.
+Integration with ITSM tools, such as ServiceNow, is in the future roadmap.
 
 ## How is Permissions Management being deployed?
 
