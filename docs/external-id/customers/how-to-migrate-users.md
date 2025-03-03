@@ -44,10 +44,12 @@ Use the seamless migration flow if plaintext passwords in the old identity provi
 - The password is stored in a one-way encrypted format, such as with a hash function. 
 - The password is stored by the legacy identity provider in a way that you can't access. For example, when the identity provider validates credentials by calling a web service. 
 
-### Phase 1: Pre migration 
+### Phase 1: Pre-migration 
 
 1. Your migration application reads the user accounts from the old identity provider, including Azure AD B2C. 
+
 1. The migration application creates the corresponding user accounts in your Entra External Id directory, with random passwords that you generate. 
+
 1. The migration application adds an extension attribute to the user account which flags the account for migration. 
 
 ### Phase 2: Credentials
@@ -56,5 +58,59 @@ Use the seamless migration flow if plaintext passwords in the old identity provi
 
 1. If the legacy IdP determines the password is incorrect, return a friendly error to the user. 
 
-1. If the legacy IdP determines the password is correct, use the REST API to write the password to the Entra External Id account and change the extension attribute to False. git 
+1. If the legacy IdP determines the password is correct, use the REST API to write the password to the Entra External Id account and change the extension attribute to False. 
 
+The below diagrams illustrates the high level design:
+
+Stage 1 – Harvest credentials from the legacy identity provider and update corresponding accounts in Microsoft Entra External Id.
+
+:::image type="content" source="media/how-to-migrate-users/pre-migration-stage1.png" alt-text="A diagram showing the high level design for stage 1 of credential migration." lightbox="media/how-to-migrate-users/pre-migration-stage1.png":::
+
+Stage 2 – Stop harvesting credentials and migrate applications to authenticate with Microsoft Entra External Id. Decommission the legacy identity provider.
+
+:::image type="content" source="media/how-to-migrate-users/pre-migration-stage1.png" alt-text="A diagram showing the high level design for stage 2 of credential migration." lightbox="media/how-to-migrate-users/pre-migration-stage2.png":::
+
+After a sufficient number of users have logged in during Stage 1, applications can be migrated to authenticate directly with Entra External Id, and the majority of users can continue to use their existing credentials. Users who do not login during Stage 1, would require to reset their password after moving to Stage 2.
+
+To see an example of an Azure AD B2C custom policy and REST API adaptor which follows this design, see the [seamless user migration](https://github.com/azure-ad-b2c/samples/tree/master/policies/migrate-to-entra-external-id-for-customers) sample on GitHub.
+
+## Security
+
+The seamless migration approach uses your own custom REST API to validate a user's credentials against the legacy identity provider.
+
+You must protect your REST API against brute-force attacks. An attacker can submit several passwords in the hope of eventually guessing a user's credentials. To help defeat such attacks, stop serving requests to your REST API when the number of sign-in attempts passes a certain threshold. 
+
+## User attributes
+
+Not all information in the legacy identity provider should be migrated to your Entra External Id directory. Identify the appropriate set of user attributes to store in Entra External Id before migrating.
+
+**DO** store in Entra External Id:
+
+- Username, password, email addresses, phone numbers, membership numbers/identifiers.
+- Consent markers for privacy policy and end-user license agreements.
+
+**DON'T** store in Entra External Id:
+
+- Sensitive data like credit card numbers, social security numbers (SSN), medical records, or other data regulated by government or industry compliance bodies.
+
+- Marketing or communication preferences, user behaviors, and insights.
+
+## Directory cleanup
+
+Before you start the migration process, take the opportunity to clean up your directory.
+
+- Identify the set of user attributes to be stored in Entra External Id, and migrate only what you need. If necessary, you can create custom attributes to store more data about a user.
+
+- If you're migrating from an environment with multiple authentication sources (for example, each application has its own user directory), migrate to a unified account in Entra External Id.
+
+- If multiple applications have different usernames, you can store all of them in an Entra External Id user account by using the identities collection. About the password, let the user choose one and set it in the directory. For example, with the seamless migration, only the chosen password should be stored in the Entra External Id account.
+
+- Remove unused user accounts, or don't migrate stale accounts.
+
+## Password policy
+
+If the accounts you're migrating have weaker password strength than the [strong password strength](https://learn.microsoft.com/en-us/azure/active-directory/authentication/concept-sspr-policy) enforced by Entra External Id, you can disable the strong password requirement. For more information, see [Password policy property](https://learn.microsoft.com/en-us/azure/active-directory-b2c/user-profile-attributes#password-policy-attribute).
+
+# Related content
+
+If you are migrating from Azure AD B2C, the [seamless user migration sample](https://github.com/azure-ad-b2c/samples/tree/master/policies/migrate-to-entra-external-id-for-customers) repository on GitHub contains a seamless migration custom policy example and REST API code sample.
