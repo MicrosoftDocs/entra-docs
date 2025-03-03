@@ -1013,7 +1013,9 @@ This role does not provide any permissions for other Dynamics 365 products.
 
 ## Edge Administrator
 
-Users in this role can create and manage the enterprise site list required for Internet Explorer mode on Microsoft Edge. This role grants permissions to create, edit, and publish the site list and additionally allows access to manage support tickets. [Learn more](https://go.microsoft.com/fwlink/?linkid=2165707)
+Users in this role can create and manage the enterprise site list required for Internet Explorer mode on Microsoft Edge. This role grants permissions to create, edit, and publish the site list and additionally allows access to manage support tickets.
+
+[Learn more](https://go.microsoft.com/fwlink/?linkid=2165707)
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -1458,7 +1460,7 @@ Users with this role **cannot** do the following:
 
 - Cannot manage enterprise applications, application registrations, Conditional Access, or application proxy settings
 
-[Learn more](../../global-secure-access/overview-what-is-global-secure-access.md)
+[Learn more](../../global-secure-access/reference-role-based-permissions.md)
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -1493,7 +1495,7 @@ Assign the Global Secure Access Log Reader role to users who need to do the foll
 - Filter logs based on criteria such as IP address and domain
 - Use APIs to read logs such as aggregations
 
-[Learn more](../../global-secure-access/overview-what-is-global-secure-access.md)
+[Learn more](../../global-secure-access/reference-role-based-permissions.md)
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
