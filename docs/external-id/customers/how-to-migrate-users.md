@@ -64,11 +64,11 @@ The below diagrams illustrates the high level design:
 
 Stage 1 – Harvest credentials from the legacy identity provider and update corresponding accounts in Microsoft Entra External Id.
 
-:::image type="content" source="media/how-to-migrate-users/pre-migration-stage1.png" alt-text="A diagram showing the high level design for stage 1 of credential migration." lightbox="media/how-to-migrate-users/pre-migration-stage1.png":::
+:::image type="content" source="media/how-to-migrate-users/pre-migration-stage1.png" alt-text="A diagram showing the high level design for stage 1 of credential migration.":::
 
 Stage 2 – Stop harvesting credentials and migrate applications to authenticate with Microsoft Entra External Id. Decommission the legacy identity provider.
 
-:::image type="content" source="media/how-to-migrate-users/pre-migration-stage1.png" alt-text="A diagram showing the high level design for stage 2 of credential migration." lightbox="media/how-to-migrate-users/pre-migration-stage2.png":::
+:::image type="content" source="media/how-to-migrate-users/pre-migration-stage1.png" alt-text="A diagram showing the high level design for stage 2 of credential migration.":::
 
 After a sufficient number of users have logged in during Stage 1, applications can be migrated to authenticate directly with Entra External Id, and the majority of users can continue to use their existing credentials. Users who do not login during Stage 1, would require to reset their password after moving to Stage 2.
 
