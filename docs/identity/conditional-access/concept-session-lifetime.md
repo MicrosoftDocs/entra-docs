@@ -102,14 +102,12 @@ There are scenarios where customers might want to require a fresh authenticati
 * Protecting risky users and risky sign-ins​ identified by Microsoft Entra ID Protection.
 * Securing sensitive user actions like Microsoft Intune enrollment.
 
-Sign-in frequency set to **every time** works best when the resource has the logic of when a client should get a new token. These resources redirect the user back to Microsoft Entra only once the session expires.
+When administrators select **Every time**, it requires full reauthentication when the session is evaluated. For example, if the user closed and opened their browser during the session lifetime, they aren't prompted for reauthentication. Sign-in frequency set to every time works best when the resource has the logic to identify when a client should get a new token. These resources redirect the user back to Microsoft Entra only once the session expires.
 
-Administrators should limit the number of applications they enforce a policy requiring users to reauthenticate every time with. Triggering reauthentication too frequently can increase security friction to a point that it causes users to experience MFA fatigue and open the door to phishing attempts. Web applications usually provide a less disruptive experience than their desktop counterparts when require reauthentication every time is enabled. We factor for five minutes of clock skew when every time is selected in policy, so that we don’t prompt users more often than once every five minutes.
+Administrators should limit the number of applications they enforce a policy requiring users to reauthenticate every time with. Triggering reauthentication too frequently can increase security friction to a point that it causes users to experience MFA fatigue and open the door to phishing. Web applications usually provide a less disruptive experience than their desktop counterparts when require reauthentication every time is enabled. We factor for five minutes of clock skew when every time is selected in policy, so that we don’t prompt users more often than once every five minutes.
 
 * For applications in the Microsoft 365 stack, we recommend using [time-based user sign-in frequency](#user-sign-in-frequency) for a better user experience.
 * For the Azure portal and the Microsoft Entra admin center, we recommend either using [time-bassed user sign-in frequency](#user-sign-in-frequency) or to [require reauthentication on PIM activation](../../id-governance/privileged-identity-management/pim-how-to-change-default-settings.md#on-activation-require-microsoft-entra-conditional-access-authentication-context) using authentication context for a better user experience.
-
-When administrators select **Every time**, it requires full reauthentication when the session is evaluated.
 
 ## Persistence of browsing sessions
 
