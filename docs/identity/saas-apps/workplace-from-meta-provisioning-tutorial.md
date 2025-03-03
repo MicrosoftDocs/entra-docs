@@ -13,7 +13,7 @@ ms.author: thomasakelo
 
 # Configure Workplace from Meta for automatic user provisioning
 
-This tutorial describes the steps you need to do in both Workplace from Meta and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users to [Workplace from Meta](https://work.workplace.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+This article describes the steps you need to do in both Workplace from Meta and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users to [Workplace from Meta](https://work.workplace.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
 ## Capabilities supported
 > [!div class="checklist"]
@@ -26,19 +26,19 @@ This tutorial describes the steps you need to do in both Workplace from Meta and
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
 * A Workplace from Meta single-sign on enabled subscription
 
 > [!NOTE]
-> To test the steps in this tutorial, we do not recommend using a production environment.
+> To test the steps in this article,  we do not recommend using a production environment.
 
 > [!NOTE]
 > This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
-To test the steps in this tutorial, you should follow these recommendations:
+To test the steps in this article,  you should follow these recommendations:
 
 - Don't use your production environment, unless it's necessary.
 - If you don't have a Microsoft Entra trial environment, you can get a one-month trial [here](https://azure.microsoft.com/pricing/free-trial/).
@@ -143,7 +143,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |urn:scim:schemas:extension:facebook:starttermdates:1.0.startDate|Integer|
 
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for Workplace from Meta, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -238,6 +238,6 @@ In December 2021, Facebook released a SCIM 2.0 connector. Completing the steps b
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

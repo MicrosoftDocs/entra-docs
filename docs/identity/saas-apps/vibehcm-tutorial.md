@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Vibe HCM
 
-In this tutorial, you'll learn how to integrate Vibe HCM with Microsoft Entra ID. When you integrate Vibe HCM with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Vibe HCM with Microsoft Entra ID. When you integrate Vibe HCM with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Vibe HCM.
 * Enable your users to be automatically signed-in to Vibe HCM with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with Vibe HCM, you need the following i
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Vibe HCM supports **SP** and **IDP** initiated SSO.
 
@@ -142,6 +142,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the Vibe HCM tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Vibe HCM for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Vibe HCM you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

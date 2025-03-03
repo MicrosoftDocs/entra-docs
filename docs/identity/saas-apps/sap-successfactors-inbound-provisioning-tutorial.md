@@ -13,10 +13,10 @@ ms.author: chmutali
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAP SuccessFactors to Active Directory so that I can streamline the user management process and ensure that users have the appropriate access to SAP SuccessFactors to Active Directory.
 ---
 # Configure SAP SuccessFactors to Active Directory user provisioning 
-The objective of this tutorial is to show the steps you need to perform to provision users from SuccessFactors Employee Central into Active Directory (AD) and Microsoft Entra ID, with optional write-back of email address to SuccessFactors. 
+The objective of this article is to show the steps you need to perform to provision users from SuccessFactors Employee Central into Active Directory (AD) and Microsoft Entra ID, with optional write-back of email address to SuccessFactors. 
 
 >[!NOTE]
->Use this tutorial if the users you want to provision from SuccessFactors need an on-premises AD account and optionally a Microsoft Entra account. If the users from SuccessFactors only need Microsoft Entra account (cloud-only users), then please refer to the tutorial on [configure SAP SuccessFactors to Microsoft Entra ID](sap-successfactors-inbound-provisioning-cloud-only-tutorial.md) user provisioning. 
+>Use this article if the users you want to provision from SuccessFactors need an on-premises AD account and optionally a Microsoft Entra account. If the users from SuccessFactors only need Microsoft Entra account (cloud-only users), then please refer to the article on [configure SAP SuccessFactors to Microsoft Entra ID](sap-successfactors-inbound-provisioning-cloud-only-tutorial.md) user provisioning. 
 
 The following video provides a quick overview of the steps involved when planning your provisioning integration with SAP SuccessFactors. 
 
@@ -293,7 +293,7 @@ Once the SuccessFactors provisioning app configurations are complete and you hav
    > [!div class="mx-imgBorder"]
    > ![Provisioning progress bar](./media/sap-successfactors-inbound-provisioning/prov-progress-bar-stats.png)
 
-## Next steps
+## Related content
 
 * [Learn more about supported SuccessFactors Attributes for inbound provisioning](~/identity/app-provisioning/sap-successfactors-attribute-reference.md)
 * [Learn how to configure email writeback to SuccessFactors](sap-successfactors-writeback-tutorial.md)

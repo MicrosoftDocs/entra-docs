@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Folloze
 
-In this tutorial, you'll learn how to integrate Folloze with Microsoft Entra ID. When you integrate Folloze with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Folloze with Microsoft Entra ID. When you integrate Folloze with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Folloze.
 * Enable your users to be automatically signed-in to Folloze with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Folloze supports **IDP** initiated SSO.
 
@@ -149,6 +149,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Folloze tile in the My Apps, you should be automatically signed in to the Folloze for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Folloze you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Smart360
 
-In this tutorial, you'll learn how to integrate Smart360 with Microsoft Entra ID. When you integrate Smart360 with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Smart360 with Microsoft Entra ID. When you integrate Smart360 with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Smart360.
 * Enable your users to be automatically signed-in to Smart360 with their Microsoft Entra accounts.
@@ -35,7 +35,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Smart360 supports **SP** initiated SSO.
 * Smart360 supports **Just In Time** user provisioning.
@@ -158,6 +158,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Smart360 tile in the My Apps, this will redirect to Smart360 Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Smart360 you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

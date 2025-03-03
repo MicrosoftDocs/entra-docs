@@ -1,6 +1,6 @@
 ---
 title: Microsoft Entra SSO integration with Cloud Academy
-description: In this tutorial, you learn how to configure single sign-on between Microsoft Entra ID and Cloud Academy.
+description: In this article,  you learn how to configure single sign-on between Microsoft Entra ID and Cloud Academy.
 
 author: nguhiu
 manager: CelesteDG
@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Cloud Academy
 
-In this tutorial, you learn how to integrate Cloud Academy with Microsoft Entra ID. When you integrate Cloud Academy with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Cloud Academy with Microsoft Entra ID. When you integrate Cloud Academy with Microsoft Entra ID, you can:
 
 * Use Microsoft Entra ID to control who can access Cloud Academy.
 * Enable your users to be automatically signed in to Cloud Academy with their Microsoft Entra accounts.
@@ -30,9 +30,9 @@ To get started, you need the following items:
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * A Cloud Academy subscription with single sign-on (SSO) enabled.
 
-## Tutorial description
+## Article description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Cloud Academy supports **SP** initiated SSO.
 * Cloud Academy supports **Just In Time** user provisioning.
@@ -206,7 +206,7 @@ In this section, you enable B.Simon to use Azure single sign-on by granting that
 
 In this section, a user called B.Simon is created in Cloud Academy. Cloud Academy supports just-in-time user provisioning, which is enabled by default. There's no action item for you in this section. If a user doesn't already exist in Cloud Academy, a new one is created after authentication.
 
-Cloud Academy also supports automatic user provisioning. For more information, see the [Cloud Academy SSO provisioning tutorial](./cloud-academy-sso-provisioning-tutorial.md).
+Cloud Academy also supports automatic user provisioning. For more information, see the [Cloud Academy SSO provisioning  article](./cloud-academy-sso-provisioning-tutorial.md).
 
 ## Test SSO
 
@@ -218,6 +218,6 @@ In this section, you test your Microsoft Entra SSO configuration by using one of
 
 * You can use Microsoft My Apps. When you click the Cloud Academy tile in the My Apps portal, this will redirect to Cloud Academy sign-on URL. For more information about the My Apps portal, see [Introduction to My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 After you configure Cloud Academy, you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

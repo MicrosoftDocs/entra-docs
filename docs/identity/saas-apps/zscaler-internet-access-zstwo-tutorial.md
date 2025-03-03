@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra integration with Zscaler Internet Access ZSTwo
 
-In this tutorial, you'll learn how to integrate Zscaler Internet Access ZSTwo with Microsoft Entra ID. When you integrate Zscaler Internet Access ZSTwo with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Zscaler Internet Access ZSTwo with Microsoft Entra ID. When you integrate Zscaler Internet Access ZSTwo with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Zscaler Internet Access ZSTwo.
 * Enable your users to be automatically signed-in to Zscaler Internet Access ZSTwo with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To configure Microsoft Entra integration with Zscaler Internet Access ZSTwo, you
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Zscaler Internet Access ZSTwo supports **SP** initiated SSO.
 
@@ -249,6 +249,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Zscaler Internet Access ZSTwo tile in the My Apps, this will redirect to Zscaler Internet Access ZSTwo Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Zscaler Internet Access ZSTwo you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

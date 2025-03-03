@@ -13,10 +13,10 @@ ms.author: chmutali
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Workday to Microsoft Entra ID so that I can streamline the user management process and ensure that users have the appropriate access to Workday to Microsoft Entra ID.
 ---
 # Configure Workday to Microsoft Entra user provisioning
-The objective of this tutorial is to show the steps you need to perform to provision worker data from Workday into Microsoft Entra ID. 
+The objective of this article is to show the steps you need to perform to provision worker data from Workday into Microsoft Entra ID. 
 
 >[!NOTE]
->Use this tutorial if the users you want to provision from Workday are cloud-only users who don't need an on-premises AD account. If the users require only on-premises AD account or both AD and Microsoft Entra account, then please refer to the tutorial on [configure Workday to Active Directory](workday-inbound-tutorial.md) user provisioning. 
+>Use this article if the users you want to provision from Workday are cloud-only users who don't need an on-premises AD account. If the users require only on-premises AD account or both AD and Microsoft Entra account, then please refer to the article on [configure Workday to Active Directory](workday-inbound-tutorial.md) user provisioning. 
 
 The following video provides a quick overview of the steps involved when planning your provisioning integration with Workday. 
 
@@ -24,7 +24,7 @@ The following video provides a quick overview of the steps involved when plannin
 
 [!INCLUDE [governance-workday-to-entra.md](~/includes/governance/governance-workday-to-entra.md)]
 
-## Next steps
+## Related content
 
 * [Learn more about Microsoft Entra ID and Workday integration scenarios and web service calls](~/identity/app-provisioning/workday-integration-reference.md)
 * [Learn more about supported Workday Attributes for inbound provisioning](~/identity/app-provisioning/workday-attribute-reference.md)

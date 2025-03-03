@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Integrate Syncplicity with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate Syncplicity with Microsoft Entra ID. When you integrate Syncplicity with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Syncplicity with Microsoft Entra ID. When you integrate Syncplicity with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Syncplicity.
 * Enable your users to be automatically signed-in to Syncplicity with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment. 
+In this article,  you configure and test Microsoft Entra SSO in a test environment. 
 * Syncplicity supports **SP** initiated SSO.
 
 ## Add Syncplicity from the gallery
@@ -205,6 +205,6 @@ Whenever you need to make changes to the SSO, you need to check the **SAML Signi
 
 If you are using the Syncplicity Mobile app, please contact the Syncplicity Customer Support (support@syncplicity.com) for assistance.
 
-## Next steps
+## Related content
 
 Once you configure Syncplicity you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

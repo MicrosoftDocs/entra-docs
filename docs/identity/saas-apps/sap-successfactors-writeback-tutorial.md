@@ -14,7 +14,7 @@ ms.author: chmutali
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAP SuccessFactors Writeback so that I can streamline the user management process and ensure that users have the appropriate access to SAP SuccessFactors Writeback.
 ---
 # Configure attribute write-back from Microsoft Entra ID to SAP SuccessFactors
-The objective of this tutorial is to show the steps to write-back attributes from Microsoft Entra ID to SAP SuccessFactors Employee Central. 
+The objective of this article is to show the steps to write-back attributes from Microsoft Entra ID to SAP SuccessFactors Employee Central. 
 
 ## Overview
 
@@ -319,7 +319,7 @@ Once the SuccessFactors provisioning app configurations are complete, you can tu
    > ![Provisioning progress bar](./media/sap-successfactors-inbound-provisioning/prov-progress-bar-stats.png)
 
 
-## Next steps
+## Related content
 
 * [Deep dive into Microsoft Entra ID and SAP SuccessFactors integration reference](~/identity/app-provisioning/sap-successfactors-integration-reference.md)
 * [Learn how to configure single sign-on between SuccessFactors and Microsoft Entra ID](successfactors-tutorial.md)

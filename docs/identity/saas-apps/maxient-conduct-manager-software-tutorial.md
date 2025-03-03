@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Maxient Conduct Manager Software
 
-In this tutorial, you'll learn how to integrate Maxient Conduct Manager Software with Microsoft Entra ID. When you integrate Maxient Conduct Manager Software with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Maxient Conduct Manager Software with Microsoft Entra ID. When you integrate Maxient Conduct Manager Software with Microsoft Entra ID, you can:
 
 * Utilize Microsoft Entra ID to authenticate your users for the Maxient Conduct Manager Software.
 * Enable your users to be automatically signed-in to Maxient Conduct Manager Software with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you will configure your Microsoft Entra ID for use with Maxient Conduct Manager Software.
+In this article,  you will configure your Microsoft Entra ID for use with Maxient Conduct Manager Software.
 
 * Maxient Conduct Manager Software supports **SP and IDP** initiated SSO.
 
@@ -102,6 +102,6 @@ It is important to note that this step is **REQUIRED** for Maxient to function p
 
 If a support ticket has not already been opened with a Maxient Implementation/Support representative, send an email to [support@maxient.com](mailto:support@maxient.com) with the subject "Campus Based Authentication/Azure Setup - \<\<School Name\>\>". In the body of the email, provide the **App Federation Metadata Url**. Maxient staff will respond with a test link to verify the proper attributes are being released.  
 	
-## Next steps
+## Related content
 
 Once you configure Maxient Conduct Manager Software you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

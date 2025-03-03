@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with SAP Business Technology Platform
 
-In this tutorial, you'll learn how to integrate SAP Business Technology Platform with Microsoft Entra ID. When you integrate SAP Business Technology Platform with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate SAP Business Technology Platform with Microsoft Entra ID. When you integrate SAP Business Technology Platform with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to SAP Business Technology Platform.
 * Enable your users to be automatically signed-in to SAP Business Technology Platform with their Microsoft Entra accounts.
@@ -30,12 +30,12 @@ To get started, you need the following items:
 * SAP Business Technology Platform single sign-on (SSO) enabled subscription.
 
 >[!IMPORTANT]
->You need to deploy your own application or subscribe to an application on your SAP Business Technology Platform account to test single sign on. In this tutorial, an application is deployed in the account.
+>You need to deploy your own application or subscribe to an application on your SAP Business Technology Platform account to test single sign on. In this article,  an application is deployed in the account.
 > 
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * SAP Business Technology Platform supports **SP** initiated SSO.
 
@@ -113,7 +113,7 @@ Follow these steps to enable Microsoft Entra SSO.
     | `https://<subdomain>.hana.ondemand.com/<instancename>` |
 
 	> [!NOTE] 
-	> These values are not real. Update these values with the actual Identifier,Reply URL and Sign on URL. Contact [SAP Business Technology Platform Client support team](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/5dd739823b824b539eee47b7860a00be.html) to get Sign-On URL and Identifier. Reply URL you can get from trust management section which is explained later in the tutorial.
+	> These values are not real. Update these values with the actual Identifier,Reply URL and Sign on URL. Contact [SAP Business Technology Platform Client support team](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/5dd739823b824b539eee47b7860a00be.html) to get Sign-On URL and Identifier. Reply URL you can get from trust management section which is explained later in the article.
 	> 
 4. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
@@ -266,7 +266,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the SAP Business Technology Platform tile in the My Apps, you should be automatically signed in to the SAP Business Technology Platform for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 * Once you configure SAP Business Technology Platform you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
 * [Manage access to SAP BTP apps via groups](https://community.sap.com/t5/technology-blogs-by-members/identity-and-access-management-with-microsoft-entra-part-i-managing-access/ba-p/13873276)

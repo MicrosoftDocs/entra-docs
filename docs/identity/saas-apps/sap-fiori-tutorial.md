@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with SAP Fiori
 
-In this tutorial, you'll learn how to integrate SAP Fiori with Microsoft Entra ID. When you integrate SAP Fiori with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate SAP Fiori with Microsoft Entra ID. When you integrate SAP Fiori with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to SAP Fiori.
 * Enable your users to be automatically signed-in to SAP Fiori with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * SAP Fiori supports **SP** initiated SSO
 
@@ -325,6 +325,6 @@ In this section, you create a user named Britta Simon in SAP Fiori. Work with yo
 
     `https://<sap-url>/sap/bc/webdynpro/sap/sec_diag_tool?sap-client=122&sap-language=EN#`.
 
-## Next steps
+## Related content
 
 Once you configure SAP Fiori you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

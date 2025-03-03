@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra integration with Zscaler Beta
 
-In this tutorial, you learn how to integrate Zscaler Beta with Microsoft Entra ID.
+In this article,  you learn how to integrate Zscaler Beta with Microsoft Entra ID.
 When you integrate Zscaler Beta with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Zscaler Beta.
@@ -33,7 +33,7 @@ To configure Microsoft Entra integration with Zscaler Beta, you need the followi
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Zscaler Beta supports **SP** initiated SSO.
 * Zscaler Beta supports **Just In Time** user provisioning.
@@ -249,6 +249,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Zscaler Beta tile in the My Apps, this will redirect to Zscaler Beta Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Zscaler Beta you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

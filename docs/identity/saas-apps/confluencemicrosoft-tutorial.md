@@ -17,7 +17,7 @@ ms.author: dhivyag
 
 # Microsoft Entra SSO integration with Confluence SAML SSO by Microsoft
 
-In this tutorial, you'll learn how to integrate Confluence SAML SSO by Microsoft with Microsoft Entra ID. When you integrate Confluence SAML SSO by Microsoft with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Confluence SAML SSO by Microsoft with Microsoft Entra ID. When you integrate Confluence SAML SSO by Microsoft with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Confluence SAML SSO by Microsoft.
 * Enable your users to be automatically signed-in to Confluence SAML SSO by Microsoft with their Microsoft Entra accounts.
@@ -42,7 +42,7 @@ To configure Microsoft Entra integration with Confluence SAML SSO by Microsoft, 
 - Test user created in the Confluence server application.
 
 > [!NOTE]
-> To test the steps in this tutorial, we do not recommend using a production environment of Confluence. Test the integration first in development or staging environment of the application and then use the production environment.
+> To test the steps in this article,  we do not recommend using a production environment of Confluence. Test the integration first in development or staging environment of the application and then use the production environment.
 
 > [!NOTE]
 > This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
@@ -54,7 +54,7 @@ To get started, you need the following items:
 * Confluence SAML SSO by Microsoft single sign-on (SSO) enabled subscription.
 
 > [!NOTE]
-> For the information on application proxy configuration for Confluence, please refer [this](confluence-app-proxy-tutorial.md) tutorial.
+> For the information on application proxy configuration for Confluence, please refer [this](confluence-app-proxy-tutorial.md) article.
 
 ## Supported versions of Confluence
 
@@ -69,7 +69,7 @@ As of now, following versions of Confluence are supported:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Confluence SAML SSO by Microsoft supports **SP** initiated SSO.
 
@@ -124,7 +124,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<DOMAIN:PORT>/plugins/servlet/saml/auth`
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier, Reply URL, and Sign-on URL. Port is optional in case it’s a named URL. These values are received during the configuration of Confluence plugin, which is explained later in the tutorial.
+    > These values are not real. Update these values with the actual Identifier, Reply URL, and Sign-on URL. Port is optional in case it’s a named URL. These values are received during the configuration of Confluence plugin, which is explained later in the article.
 
 1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 
@@ -272,6 +272,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Confluence SAML SSO by Microsoft tile in the My Apps, this will redirect to Confluence SAML SSO by Microsoft Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Confluence SAML SSO by Microsoft you can enforce Session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

@@ -3,7 +3,7 @@ author: joflore
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: include
-ms.date: 09/17/2024
+ms.date: 02/21/2025
 ms.author: joflore
 ---
 
@@ -52,8 +52,3 @@ For organizations that adopt [passwordless authentication methods](/entra/identi
     1. Select **Sign-in frequency**.
     1. Ensure **Every time** is selected.
     1. Select **Select**.
-
-#### Remediate and unblock passwordless sign-in risk
-
-1. Require administrator [investigation and remediation](/entra/id-protection/howto-identity-protection-investigate-risk) of any risk.
-1. Unblock the user.

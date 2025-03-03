@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with AppRemo
 
-In this tutorial, you'll learn how to integrate AppRemo with Microsoft Entra ID. When you integrate AppRemo with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate AppRemo with Microsoft Entra ID. When you integrate AppRemo with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to AppRemo.
 * Enable your users to be automatically signed-in to AppRemo with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * AppRemo supports **SP** initiated SSO.
 
@@ -161,6 +161,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 * You can use Microsoft My Apps. When you click the AppRemo tile in the My Apps, this will redirect to AppRemo Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
 
-## Next steps
+## Related content
 
 Once you configure AppRemo you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

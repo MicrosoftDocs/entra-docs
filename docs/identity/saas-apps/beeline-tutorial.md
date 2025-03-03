@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Beeline Enterprise
 
-In this tutorial, you'll learn how to integrate Beeline Enterprise with Microsoft Entra ID. When you integrate Beeline Enterprise with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Beeline Enterprise with Microsoft Entra ID. When you integrate Beeline Enterprise with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Beeline Enterprise.
 * Enable your users to be automatically signed-in to Beeline Enterprise with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Beeline Enterprise supports **SP** and **IDP** initiated SSO.
 
@@ -137,7 +137,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Beeline Enterprise SSO
 
-To configure single sign-on on **Beeline Enterprise** side, you need to send the following items that you gathered from a step earlier in this tutorial to the [Beeline Enterprise support team](mailto:support@beeline.com). They will configure single sign-on on the **Beeline Enterprise** side.
+To configure single sign-on on **Beeline Enterprise** side, you need to send the following items that you gathered from a step earlier in this article to the [Beeline Enterprise support team](mailto:support@beeline.com). They will configure single sign-on on the **Beeline Enterprise** side.
 
 * **Certificate (Base64)**
 * **Login URL**
@@ -155,6 +155,6 @@ In this section, you have two different ways to test your Microsoft Entra single
 
 * You can use Microsoft My Apps. When you click the **Beeline Enterprise** tile in **My Apps**, you should be automatically signed in to the Beeline Enterprise site for which you set up the SSO. For more information about the My Apps portal, see [Introduction to the My Apps portal](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Beeline Enterprise you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

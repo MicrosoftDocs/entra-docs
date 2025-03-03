@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with BitaBIZ
 
-In this tutorial, you'll learn how to integrate BitaBIZ with Microsoft Entra ID. When you integrate BitaBIZ with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate BitaBIZ with Microsoft Entra ID. When you integrate BitaBIZ with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to BitaBIZ.
 * Enable your users to be automatically signed-in to BitaBIZ with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with BitaBIZ, you need the following it
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * BitaBIZ supports **SP and IDP** initiated SSO.
 * BitaBIZ supports [Automated user provisioning](bitabiz-provisioning-tutorial.md).
@@ -82,7 +82,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://www.bitabiz.com/<INSTANCE_ID>`
 
     > [!NOTE]
-    > The value in the above URL is for demonstration only. Update the value with the actual identifier, which is explained later in the tutorial.
+    > The value in the above URL is for demonstration only. Update the value with the actual identifier, which is explained later in the article.
 
 1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
@@ -214,6 +214,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the BitaBIZ tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the BitaBIZ for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure BitaBIZ you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

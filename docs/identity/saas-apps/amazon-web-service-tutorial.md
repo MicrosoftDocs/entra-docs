@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with AWS Single-Account Access
 
-In this tutorial, you learn how to integrate AWS Single-Account Access with Microsoft Entra ID. When you integrate AWS Single-Account Access with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate AWS Single-Account Access with Microsoft Entra ID. When you integrate AWS Single-Account Access with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to AWS Single-Account Access.
 * Enable your users to be automatically signed-in to AWS Single-Account Access with their Microsoft Entra accounts.
@@ -80,7 +80,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * AWS Single-Account Access supports **SP and IDP** initiated SSO.
 
@@ -398,7 +398,7 @@ You can also use Microsoft My Apps to test the application in any mode. When you
 
 * 01/12/2020 - Increased role length limit from 119 characters to 239 characters.
 
-## Next steps
+## Related content
 
 Once you configure AWS Single-Account Access you can enforce Session Control, which protects exfiltration and infiltration of your organization's sensitive data in real time. Session Control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
 

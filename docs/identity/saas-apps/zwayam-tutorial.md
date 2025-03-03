@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Zwayam
 
-In this tutorial, you'll learn how to integrate Zwayam with Microsoft Entra ID. When you integrate Zwayam with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Zwayam with Microsoft Entra ID. When you integrate Zwayam with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Zwayam.
 * Enable your users to be automatically signed-in to Zwayam with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with Zwayam, you need the following ite
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Zwayam supports **SP** initiated SSO.
 
@@ -86,7 +86,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://sso.zwayam.com/zwayam-saml/zwayam-saml/saml/login?idp=<SAML Entity ID>`
 
 	> [!NOTE]
-	> The **Sign on URL** value is not real. Update the value with the actual Sign on URL. `<SAML Entity ID>` is the Microsoft Entra Identifier value which is explained later in the tutorial.
+	> The **Sign on URL** value is not real. Update the value with the actual Sign on URL. `<SAML Entity ID>` is the Microsoft Entra Identifier value which is explained later in the article.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
@@ -144,6 +144,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Zwayam tile in the My Apps, this will redirect to Zwayam Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Zwayam you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

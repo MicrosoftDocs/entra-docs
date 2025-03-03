@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Genea Access Control
 
-In this tutorial, you learn how to integrate Genea Access Control with Microsoft Entra ID. When you integrate Genea Access Control with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Genea Access Control with Microsoft Entra ID. When you integrate Genea Access Control with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Genea Access Control.
 * Enable your users to be automatically signed-in to Genea Access Control with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with Genea Access Control, you need the
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Genea Access Control supports **SP and IDP** initiated SSO.
 > [!NOTE]
@@ -86,7 +86,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     a. In the **Sign-on URL** text box, type the URL: `https://login.sequr.io`
 
-	b. In the **Relay State** textbox, you'll get this value, which is explained later in the tutorial.
+	b. In the **Relay State** textbox, you'll get this value, which is explained later in the article.
 
 6. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
@@ -179,6 +179,6 @@ You can also use Microsoft My Apps to test the application in any mode. When you
 	2.	Unique Group Names: Genea doesn’t support duplicate user group names. Ensure that each Microsoft Entra instance uses distinct group names to avoid any potential errors.
 	3.	Moving to single Microsoft Entra Instances: If you plan to transition from multiple Microsoft Entra instances to a single one, it’s essential to have a clear migration plan. You can either manage this transition internally or collaborate with Genea to ensure a smooth migration without service disruptions.
 
-## Next steps
+## Related content
 
 Once you configure Genea Access Control you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

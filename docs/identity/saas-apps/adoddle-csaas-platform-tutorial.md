@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Adoddle cSaas Platform
 
-In this tutorial, you'll learn how to integrate Adoddle cSaas Platform with Microsoft Entra ID. When you integrate Adoddle cSaas Platform with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Adoddle cSaas Platform with Microsoft Entra ID. When you integrate Adoddle cSaas Platform with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Adoddle cSaas Platform.
 * Enable your users to be automatically signed-in to Adoddle cSaas Platform with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Adoddle cSaas Platform supports **IDP** initiated SSO.
 
@@ -132,6 +132,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Adoddle cSaas Platform tile in the My Apps, you should be automatically signed in to the Adoddle cSaas Platform for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Adoddle cSaas Platform you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

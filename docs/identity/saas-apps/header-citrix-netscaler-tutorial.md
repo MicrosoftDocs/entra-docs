@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on integration with Citrix ADC (header-based authentication)
 
-In this tutorial, you'll learn how to integrate Citrix ADC with Microsoft Entra ID. When you integrate Citrix ADC with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Citrix ADC with Microsoft Entra ID. When you integrate Citrix ADC with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Citrix ADC.
 * Enable your users to be automatically signed-in to Citrix ADC with their Microsoft Entra accounts.
@@ -30,7 +30,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment. The tutorial includes these scenarios:
+In this article,  you configure and test Microsoft Entra SSO in a test environment. The article includes these scenarios:
 
 * **SP-initiated** SSO for Citrix ADC
 
@@ -433,6 +433,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 * You can use Microsoft My Apps. When you click the Citrix ADC tile in the My Apps, this will redirect to Citrix ADC Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 
-## Next steps
+## Related content
 
 Once you configure Citrix ADC you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

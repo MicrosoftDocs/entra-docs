@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Learning Pool LMS
 
-In this tutorial, you'll learn how to integrate Learning Pool LMS with Microsoft Entra ID. When you integrate Learning Pool LMS with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Learning Pool LMS with Microsoft Entra ID. When you integrate Learning Pool LMS with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Learning Pool LMS.
 * Enable your users to be automatically signed-in to Learning Pool LMS with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Learning Pool LMS supports **SP** initiated SSO.
 
@@ -143,6 +143,6 @@ The Learning Pool Delivery team will use the **App Federation Metadata Url** to 
 
 You will be guided through the testing process by the Learning Pool Delivery team.
 
-## Next steps
+## Related content
 
 Once you configure Learning Pool LMS you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

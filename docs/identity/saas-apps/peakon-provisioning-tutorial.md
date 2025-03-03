@@ -16,16 +16,16 @@ ms.author: thomasakelo
 
 # Configure Peakon for automatic user provisioning
 
-The objective of this tutorial is to demonstrate the steps to be performed in Peakon  and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Peakon.
+The objective of this article is to demonstrate the steps to be performed in Peakon  and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Peakon.
 
 > [!NOTE]
->  This tutorial describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+>  This article describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 > This connector is currently in Preview. For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites
+The scenario outlined in this article assumes that you already have the following prerequisites
 
 * A Microsoft Entra tenant.
 * [A Peakon tenant](https://www.workday.com/en-us/products/employee-voice/overview.html).
@@ -81,7 +81,7 @@ To configuring Peakon  for automatic user provisioning with Microsoft Entra ID, 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Peakon  based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Peakon, following the instructions provided in the [Peakon Single sign-on tutorial](peakon-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
+> You may also choose to enable SAML-based single sign-on for Peakon, following the instructions provided in the [Peakon Single sign-on  article](peakon-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
 
 <a name='to-configure-automatic-user-provisioning-for-peakon--in-azure-ad'></a>
 
@@ -120,7 +120,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Peakon User Attributes](media/Peakon-provisioning-tutorial/Peakon-user-attributes.png)
 
-12. To configure scoping filters, refer to the following instructions provided in the 		[Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+12. To configure scoping filters, refer to the following instructions provided in the 		[Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 	
 	![Provisioning Scope](common/provisioning-scope.png)
 
@@ -140,6 +140,6 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

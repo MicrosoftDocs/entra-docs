@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with HashiCorp Boundary
 
-In this tutorial, you'll learn how to integrate HashiCorp Boundary with Microsoft Entra ID. When you integrate HashiCorp Boundary with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate HashiCorp Boundary with Microsoft Entra ID. When you integrate HashiCorp Boundary with Microsoft Entra ID, you can:
 
 Use Microsoft Entra ID to control who can access HashiCorp Boundary.
 Enable your users to be automatically signed in to HashiCorp Boundary with their Microsoft Entra accounts.

@@ -16,15 +16,15 @@ ms.author: thomasakelo
 
 # Configure SmartFile for automatic user provisioning
 
-The objective of this tutorial is to demonstrate the steps to be performed in SmartFile and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to SmartFile.
+The objective of this article is to demonstrate the steps to be performed in SmartFile and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to SmartFile.
 
 > [!NOTE]
-> This tutorial describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This article describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
 * A Microsoft Entra tenant.
 * [A SmartFile tenant](https://www.SmartFile.com/pricing/).
@@ -78,7 +78,7 @@ To configure SmartFile for automatic user provisioning with Microsoft Entra ID, 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in SmartFile based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for SmartFile, following the instructions provided in the [SmartFile Single sign-on tutorial](SmartFile-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other
+> You may also choose to enable SAML-based single sign-on for SmartFile, following the instructions provided in the [SmartFile Single sign-on  article](SmartFile-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other
 
 <a name='to-configure-automatic-user-provisioning-for-smartfile-in-azure-ad'></a>
 
@@ -123,7 +123,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![SmartFile Group Attributes](media/smartfile-provisioning-tutorial/groupattribute.png)
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 13. To enable the Microsoft Entra provisioning service for SmartFile, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -150,6 +150,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
  [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

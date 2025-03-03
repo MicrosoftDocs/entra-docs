@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Mobile Xpense
 
-In this tutorial, you'll learn how to integrate Mobile Xpense with Microsoft Entra ID. When you integrate Mobile Xpense with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Mobile Xpense with Microsoft Entra ID. When you integrate Mobile Xpense with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Mobile Xpense.
 * Enable your users to be automatically signed-in to Mobile Xpense with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Mobile Xpense supports **SP** and **IDP** initiated SSO.
 
@@ -157,6 +157,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the Mobile Xpense tile in the My Apps, if configured in SP mode you would be redirected to the application Sign-On page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Mobile Xpense for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Mobile Xpense you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

@@ -16,15 +16,15 @@ ms.author: thomasakelo
 
 # Configure Wrike for automatic user provisioning
 
-The objective of this tutorial is to demonstrate the steps you perform in Wrike and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and deprovision users or groups to Wrike.
+The objective of this article is to demonstrate the steps you perform in Wrike and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and deprovision users or groups to Wrike.
 
 > [!NOTE]
-> This tutorial describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to software-as-a-service (SaaS) applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This article describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to software-as-a-service (SaaS) applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
 * A Microsoft Entra tenant
 * [A Wrike tenant](https://www.wrike.com/price/)
@@ -87,7 +87,7 @@ To add Wrike from the Microsoft Entra application gallery, follow these steps.
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users or groups in Wrike based on user or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> To enable SAML-based single sign-on for Wrike, follow the instructions in the [Wrike single sign-on tutorial](wrike-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, although these two features complement each other.
+> To enable SAML-based single sign-on for Wrike, follow the instructions in the [Wrike single sign-on  article](wrike-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, although these two features complement each other.
 
 <a name='configure-automatic-user-provisioning-for-wrike-in-azure-ad'></a>
 
@@ -122,7 +122,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 	![Wrike user attributes](media/Wrike-provisioning-tutorial/Wrike-user-attributes.png)
 
-1. To configure scoping filters, follow the instructions in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, follow the instructions in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for Wrike, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -145,6 +145,6 @@ You can use the **Current Status** section to monitor progress and follow links 
 * [Manage user account provisioning for enterprise apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

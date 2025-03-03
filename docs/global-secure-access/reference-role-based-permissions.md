@@ -3,9 +3,9 @@ title: Microsoft Global Secure Access built-in roles
 description: Learn about the built-in administrator roles you can assign to manage Global Secure Access permissions.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: femila
 ms.topic: reference
-ms.date: 07/05/2024
+ms.date: 02/26/2025
 ms.service: global-secure-access
 ---
 
@@ -20,15 +20,15 @@ This article details the built-in Microsoft Entra roles you can assign for manag
 **Full access**: This role grants administrators full permissions within Global Secure Access. They can manage policies, configure settings, and view logs; including Conditional Access scenarios, configurations for Private Access, write operations on application segments, and management of user assignments for traffic profiles.
 
 > [!IMPORTANT]
-> It's highly recommended to use a least privilege approach for security reasons. The Global Administrator role is only required to configure Office 365 logging as outlined in the table. For all other scnearios, use the least priveledge role required to administer the service. To learn more about least priveledge, see [Least privileged roles by task in Microsoft Entra ID](../identity/role-based-access-control/delegate-by-task.md). To learn more about least privilege in Microsoft Entra ID Governance, see [The principle of least privilege with Microsoft Entra ID Governance](../id-governance/scenarios/least-privileged.md).
+> It's highly recommended to use a least privilege approach for security reasons. The Global Administrator role is only required to configure enriched Microsoft 365 logs as outlined in the table. For all other scnearios, use the least priveledge role required to administer the service. To learn more about least priveledge, see [Least privileged roles by task in Microsoft Entra ID](../identity/role-based-access-control/delegate-by-task.md). To learn more about least privilege in Microsoft Entra ID Governance, see [The principle of least privilege with Microsoft Entra ID Governance](../id-governance/scenarios/least-privileged.md).
 
 ### Security Administrator 
 
-**Limited access**: This role grants permissions to perform specific tasks, such as configuring remote networks, setting up security profiles, managing traffic forwarding profiles, and viewing traffic logs and alerts. However, security admins can't configure Private Access or enable Office 365 logging.
+**Limited access**: This role grants permissions to perform specific tasks, such as configuring remote networks, setting up security profiles, managing traffic forwarding profiles, and viewing traffic logs and alerts. However, security admins can't configure Private Access or enable enriched Microsoft 365 logs.
 
 ### Global Secure Access Administrator
 
-**Limited access**: This role grants permissions to perform specific tasks, such as configuring remote networks, setting up security profiles, managing traffic forwarding profiles, and viewing traffic logs and alerts. However, Global Secure Access admins can't configure Private Access, create or manage Conditional Access policies, manage user and group assignments, or configure Office 365 logging.
+**Limited access**: This role grants permissions to perform specific tasks, such as configuring remote networks, setting up security profiles, managing traffic forwarding profiles, and viewing traffic logs and alerts. However, Global Secure Access admins can't configure Private Access, create or manage Conditional Access policies, manage user and group assignments, or configure enriched Microsoft 365 logs.
 
 > [!NOTE]
 > To perform additional Microsoft Entra tasks, such as editing Conditional Access policies, you need to be both a Global Secure Access Administrator and have at least one other administrator role assigned to you. Consult the Role-based permissions table above.
@@ -60,7 +60,7 @@ The following Microsoft Entra ID admin roles have access to Global Secure Access
 | View traffic logs and alerts | ✅ | ✅ | ✅ |  |  |  |  |
 | View all other logs | ✅ | ✅ | ✅ |  |  | ✅ | ✅ |
 | Configure universal tenant restrictions and Global Secure Access signaling for Conditional Access | ✅ | ✅ | ✅ |  |  |  |  |
-| Configure Office 365 logging | ✅ |  |  |  |  |  |  |
+| Configure enriched Microsoft 365 logs | ✅ |  |  |  |  |  |  |
 | Read-only access to product settings | ✅ | ✅ | ✅ |  |  | ✅ | ✅ |
 
 ## Next steps

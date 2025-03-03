@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Recognize
 
-In this tutorial, you'll learn how to integrate Recognize with Microsoft Entra ID. When you integrate Recognize with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Recognize with Microsoft Entra ID. When you integrate Recognize with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Recognize.
 * Enable your users to be automatically signed-in to Recognize with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Recognize supports **SP** initiated SSO.
 
@@ -77,7 +77,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Basic SAML Configuration** section, if you have **Service Provider metadata file**, perform the following steps:
 
 	>[!NOTE]
-	>You will get the **Service Provider metadata file** from the **Configure Recognize Single Sign-On** section of the tutorial.
+	>You will get the **Service Provider metadata file** from the **Configure Recognize Single Sign-On** section of the article.
 
 	a. Click **Upload metadata file**.
 
@@ -93,7 +93,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://recognizeapp.com/<YOUR_DOMAIN>/saml/sso`
 
     > [!Note]
-	> If the **Identifier** value do not get auto populated, you will get the Identifier value by opening the Service Provider Metadata URL from the SSO Settings section that is explained later in the **Configure Recognize Single Sign-On** section of the tutorial. The Sign-on URL value is not real. Update the value with the actual Sign-on URL. Contact [Recognize Client support team](mailto:support@recognizeapp.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> If the **Identifier** value do not get auto populated, you will get the Identifier value by opening the Service Provider Metadata URL from the SSO Settings section that is explained later in the **Configure Recognize Single Sign-On** section of the article. The Sign-on URL value is not real. Update the value with the actual Sign-on URL. Contact [Recognize Client support team](mailto:support@recognizeapp.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 
@@ -203,6 +203,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Recognize tile in the My Apps, this will redirect to Recognize Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Recognize you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

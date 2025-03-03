@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Infinite Campus
 
-In this tutorial, you learn how to integrate Infinite Campus with Microsoft Entra ID. When you integrate Infinite Campus with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Infinite Campus with Microsoft Entra ID. When you integrate Infinite Campus with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Infinite Campus.
 * Enable your users to be automatically signed-in to Infinite Campus with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To configure Microsoft Entra integration with Infinite Campus, you need the foll
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Infinite Campus supports **SP** initiated SSO.
 
@@ -159,6 +159,6 @@ These are the steps to take to replace an expiring SAML certificate:
 
 This completes the process of replacing an expiring certificate. For more information, see Infinite Campus [documentation](https://kb.infinitecampus.com/help/sso-service-provider-configuration#SSOServiceProviderConfiguration-CertificateExpirationWarnings).
 
-## Next steps
+## Related content
 
 Once you configure Infinite Campus you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

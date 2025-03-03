@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with AppNeta Performance Manager
 
-In this tutorial, you'll learn how to integrate AppNeta Performance Manager with Microsoft Entra ID. When you integrate AppNeta Performance Manager with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate AppNeta Performance Manager with Microsoft Entra ID. When you integrate AppNeta Performance Manager with Microsoft Entra ID, you can:
 
 - Control in Microsoft Entra ID who has access to AppNeta Performance Manager.
 - Enable your users to be automatically signed-in to AppNeta Performance Manager with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 - AppNeta Performance Manager supports **SP** initiated SSO.
 - AppNeta Performance Manager supports **Just In Time** user provisioning.
@@ -186,6 +186,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 - You can use Microsoft My Apps. When you click the AppNeta Performance Manager tile in the My Apps portal, this will redirect to AppNeta Performance Manager Sign-on URL. For more information about the My Apps portal, see [Introduction to My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 After you configure AppNeta Performance Manager, you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

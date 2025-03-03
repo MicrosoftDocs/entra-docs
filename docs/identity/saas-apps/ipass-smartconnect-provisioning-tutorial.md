@@ -16,15 +16,15 @@ ms.author: thomasakelo
 
 # Configure iPass SmartConnect for automatic user provisioning
 
-The objective of this tutorial is to demonstrate the steps to be performed in iPass SmartConnect and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to iPass SmartConnect.
+The objective of this article is to demonstrate the steps to be performed in iPass SmartConnect and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to iPass SmartConnect.
 
 > [!NOTE]
-> This tutorial describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This article describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
 * A Microsoft Entra tenant.
 * [An iPass SmartConnect tenant](https://www.ipass.com/).
@@ -71,7 +71,7 @@ To configure iPass SmartConnect for automatic user provisioning with Microsoft E
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in iPass SmartConnect based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
->  You may also choose to enable SAML-based single sign-on for iPass SmartConnect, following the instructions provided in the [iPass SmartConnect Single sign-on tutorial](ipasssmartconnect-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
+>  You may also choose to enable SAML-based single sign-on for iPass SmartConnect, following the instructions provided in the [iPass SmartConnect Single sign-on  article](ipasssmartconnect-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other.
 
 <a name='to-configure-automatic-user-provisioning-for-ipass-smartconnect-in-azure-ad'></a>
 
@@ -111,7 +111,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 	:::image type="content" source="media/ipass-smartconnect-provisioning-tutorial/userattribute.png" alt-text="Screenshot of the Attribute Mappings page. A table lists Microsoft Entra ID and iPass SmartConnect attributes and the matching precedence." border="false":::
 
 
-10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 11. To enable the Microsoft Entra provisioning service for iPass SmartConnect, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -138,6 +138,6 @@ For more information on how to read the Microsoft Entra provisioning logs, see [
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

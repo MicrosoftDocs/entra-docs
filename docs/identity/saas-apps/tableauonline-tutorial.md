@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Tableau Cloud
 
-In this tutorial, you'll learn how to integrate Tableau Cloud with Microsoft Entra ID. When you integrate Tableau Cloud with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Tableau Cloud with Microsoft Entra ID. When you integrate Tableau Cloud with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Tableau Cloud.
 * Enable your users to be automatically signed-in to Tableau Cloud with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Tableau Cloud supports **SP** initiated SSO.
 * Tableau Cloud supports [**automated user provisioning and deprovisioning**](tableau-online-provisioning-tutorial.md) (recommended).
@@ -91,7 +91,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://sso.online.tableau.com`
 
     > [!NOTE]
-    > You will get the `<entityid>` value from the **Set up Tableau Cloud** section in this tutorial. The entity ID value will be **Microsoft Entra identifier** value in **Set up Tableau Cloud** section.
+    > You will get the `<entityid>` value from the **Set up Tableau Cloud** section in this article. The entity ID value will be **Microsoft Entra identifier** value in **Set up Tableau Cloud** section.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
@@ -203,6 +203,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Tableau Cloud tile in the My Apps, this will redirect to Tableau Cloud Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Tableau Cloud you can enforce Session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
