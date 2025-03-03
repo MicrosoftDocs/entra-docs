@@ -84,7 +84,7 @@ The **MFA Usage** dashboard gives you a summary of monthly MFA authentication pe
 
 - Users registered for MFA
 - Types of MFA usage with a summary of success vs failure count over a period of 12 months
-- CAPTHA triggers and activity in the last 30 days
+- CAPTCHA triggers and activity in the last 30 days
 
     :::image type="content" source="media/how-to-user-insights/mfa-dashboard.png" alt-text="Screenshot of the MFA Usage dashboard.":::
 

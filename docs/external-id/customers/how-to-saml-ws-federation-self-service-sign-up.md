@@ -10,7 +10,7 @@ author: msmimart
 manager: celestedg
 ms.custom: it-pro, 
 ms.collection: M365-identity-device-management
-#customer intent: As an IT admin setting up federation with an external organizaton's SAML/WS-Fed identity provider, I want to invite users from that organization to sign in to my Microsoft Entra tenant with their work account.
+#customer intent: As an IT admin setting up federation with an external organization's SAML/WS-Fed identity provider, I want to invite users from that organization to sign in to my Microsoft Entra tenant with their work account.
 ---
 
 # Add the SAML/WS-Fed identity provider to a user flow (preview)

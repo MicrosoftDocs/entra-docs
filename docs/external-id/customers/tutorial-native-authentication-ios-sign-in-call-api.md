@@ -34,7 +34,7 @@ In this tutorial, you learn how to:
 
 ## Acquire one or multiple access tokens
 
-MSAL native authentication SDK can store multiple access tokens. After signing in, you can obtain an access token by using the `getAccessToken(parametres:)` function and specifying the scopes for the new access token you wish to grant.
+MSAL native authentication SDK can store multiple access tokens. After signing in, you can obtain an access token by using the `getAccessToken(parameters:)` function and specifying the scopes for the new access token you wish to grant.
 
 1. Declare and set values for a set of API scopes by using the following code snippet:
 

@@ -47,7 +47,7 @@ In a location of choice in your computer, run the following commands to create a
 Create a file called *src/config.js*, then add the following code:
 
 ```typescript
-// App Id obatained from the Microsoft Entra portal 
+// App Id obtained from the Microsoft Entra portal 
 export const CLIENT_ID = "Enter_the_Application_Id_Here";
 
 // URL of the CORS proxy server

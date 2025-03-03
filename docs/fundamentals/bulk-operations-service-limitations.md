@@ -182,7 +182,7 @@ foreach ($group in $groups) {
         DisplayName = $group.displayName 
         Mail = $group.mail 
         GroupType = $groupType 
-        MemebershipType = $membershipType 
+        MembershipType = $membershipType 
     }   
     $groupData += $groupObject 
 } 
