@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with OpsGenie
 
-In this tutorial, you'll learn how to integrate OpsGenie with Microsoft Entra ID. When you integrate OpsGenie with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate OpsGenie with Microsoft Entra ID. When you integrate OpsGenie with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to OpsGenie.
 * Enable your users to be automatically signed-in to OpsGenie with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * OpsGenie supports **IDP** initiated SSO
 
@@ -84,7 +84,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://app.opsginie.com/auth/saml?id=<UNIQUEID>`
 
     > [!NOTE]
-	> These values are not real. Update these values with the actual Identifier and Reply URL, which is explained later in this tutorial.
+	> These values are not real. Update these values with the actual Identifier and Reply URL, which is explained later in this article.
 
 1. On the **Set up Single Sign-On with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 

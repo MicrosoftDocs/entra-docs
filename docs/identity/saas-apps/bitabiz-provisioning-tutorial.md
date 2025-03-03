@@ -16,15 +16,15 @@ ms.author: thomasakelo
 
 # Configure BitaBIZ for automatic user provisioning
 
-The objective of this tutorial is to demonstrate the steps to be performed in BitaBIZ and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to BitaBIZ.
+The objective of this article is to demonstrate the steps to be performed in BitaBIZ and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to BitaBIZ.
 
 > [!NOTE]
-> This tutorial describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This article describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
 * A Microsoft Entra tenant.
 * [A BitaBIZ tenant](https://bitabiz.dk/en/price/).
@@ -77,7 +77,7 @@ To configure BitaBIZ for automatic user provisioning with Microsoft Entra ID, yo
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in BitaBIZ based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for BitaBIZ, following the instructions provided in the [BitaBIZ Single sign-on tutorial](BitaBIZ-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other
+> You may also choose to enable SAML-based single sign-on for BitaBIZ, following the instructions provided in the [BitaBIZ Single sign-on  article](BitaBIZ-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other
 
 <a name='to-configure-automatic-user-provisioning-for-bitabiz-in-azure-ad'></a>
 
@@ -117,7 +117,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 	![BitaBIZ User Attributes](media/bitabiz-provisioning-tutorial/user-attribute.png)
 
 
-10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 11. To enable the Microsoft Entra provisioning service for BitaBIZ, change the **Provisioning Status** to **On** in the **Settings** section.
 

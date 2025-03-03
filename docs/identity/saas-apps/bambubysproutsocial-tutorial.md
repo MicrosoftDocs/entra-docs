@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Employee Advocacy by Sprout Social
 
-In this tutorial, you'll learn how to integrate Employee Advocacy by Sprout Social with Microsoft Entra ID. When you integrate Employee Advocacy by Sprout Social with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Employee Advocacy by Sprout Social with Microsoft Entra ID. When you integrate Employee Advocacy by Sprout Social with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Employee Advocacy by Sprout Social.
 * Enable your users to be automatically signed-in to Employee Advocacy by Sprout Social with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Employee Advocacy by Sprout Social supports **SP** and **IDP** initiated SSO.
 * Employee Advocacy by Sprout Social supports **Just In Time** user provisioning.

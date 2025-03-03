@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Integrate Soloinsight-CloudGate SSO with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate Soloinsight-CloudGate SSO with Microsoft Entra ID. When you integrate Soloinsight-CloudGate SSO with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Soloinsight-CloudGate SSO with Microsoft Entra ID. When you integrate Soloinsight-CloudGate SSO with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Soloinsight-CloudGate SSO.
 * Enable your users to be automatically signed-in to Soloinsight-CloudGate SSO with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Soloinsight-CloudGate SSO supports **SP** initiated SSO.
 * Soloinsight-CloudGate SSO supports [Automated user provisioning](soloinsight-cloudgate-sso-provisioning-tutorial.md).
@@ -85,7 +85,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<SUBDOMAIN>.sigateway.com/process/sso`
 
    > [!NOTE]
-   > These values are not real. Update these values with the actual Sign on URL and Identifier which is explained later in the **Configure Soloinsight-CloudGate SSO Single Sign-On** section of the tutorial.
+   > These values are not real. Update these values with the actual Sign on URL and Identifier which is explained later in the **Configure Soloinsight-CloudGate SSO Single Sign-On** section of the article.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 

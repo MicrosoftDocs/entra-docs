@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Adobe Identity Management (SAML)
 
-In this tutorial, you'll learn how to integrate Adobe Identity Management (SAML) with Microsoft Entra ID. When you integrate Adobe Identity Management (SAML) with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Adobe Identity Management (SAML) with Microsoft Entra ID. When you integrate Adobe Identity Management (SAML) with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Adobe Identity Management (SAML).
 * Enable your users to be automatically signed-in to Adobe Identity Management (SAML) with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Adobe Identity Management (SAML) supports **SP** initiated SSO.
 * Adobe Identity Management (SAML) supports [**automated** user provisioning and deprovisioning](adobe-identity-management-provisioning-tutorial.md) (recommended).
@@ -86,7 +86,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://federatedid-na1.services.adobe.com/federated/saml/metadata/alias/<CUSTOM_ID>`
 
 	> [!NOTE]
-	> The Identifier value is not real. Update the value with the actual Identifier. Contact [Adobe Identity Management (SAML) Client support team](mailto:identity@adobe.com) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The Identifier value is not real. Update the value with the actual Identifier, which is obtained from the Adobe Admin Console during the federated directory setup wizard.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 

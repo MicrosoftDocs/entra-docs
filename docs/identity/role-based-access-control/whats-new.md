@@ -20,6 +20,7 @@ This article provides information about new features and documentation improveme
 
 | Date | Area | Description |
 | --- | --- | --- |
+| February 2025 | Roles | New [Global Secure Access Log Reader](permissions-reference.md#global-secure-access-log-reader) role. |
 | February 2025 | Security | Updated guidance for emergency access accounts. See [Manage emergency access accounts in Microsoft Entra ID](security-emergency-access.md). |
 | February 2025 | Roles | New [Microsoft 365 Backup Administrator](permissions-reference.md#microsoft-365-backup-administrator) role. |
 | January 2025 | Protected actions | Protect against hard deletions of some soft-deleted directory objects. See [Deletion of directory objects](protected-actions-overview.md#deletion-of-directory-objects). |

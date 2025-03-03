@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Integrate Knowledge Anywhere LMS with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate Knowledge Anywhere LMS with Microsoft Entra ID. When you integrate Knowledge Anywhere LMS with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Knowledge Anywhere LMS with Microsoft Entra ID. When you integrate Knowledge Anywhere LMS with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Knowledge Anywhere LMS.
 * Enable your users to be automatically signed-in to Knowledge Anywhere LMS with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment. 
+In this article,  you configure and test Microsoft Entra SSO in a test environment. 
 * Knowledge Anywhere LMS supports **SP** initiated SSO.
 * Knowledge Anywhere LMS supports **Just In Time** user provisioning.
 
@@ -84,7 +84,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<CLIENT_NAME>.knowledgeanywhere.com/SSO/SAML/Response.aspx?<IDP_NAME>`
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier and Reply URL which is explained later in the tutorial.
+    > These values are not real. Update these values with the actual Identifier and Reply URL which is explained later in the article.
 
 1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 

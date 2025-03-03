@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Asset Planner
 
-In this tutorial, you'll learn how to integrate Asset Planner with Microsoft Entra ID. When you integrate Asset Planner with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Asset Planner with Microsoft Entra ID. When you integrate Asset Planner with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Asset Planner.
 * Enable your users to be automatically signed-in to Asset Planner with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Asset Planner supports **SP** initiated SSO.
 

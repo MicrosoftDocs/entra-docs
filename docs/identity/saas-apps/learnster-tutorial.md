@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Learnster
 
-In this tutorial, you'll learn how to integrate Learnster with Microsoft Entra ID. When you integrate Learnster with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Learnster with Microsoft Entra ID. When you integrate Learnster with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Learnster.
 * Enable your users to be automatically signed-in to Learnster with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Learnster supports **SP** initiated SSO
 
@@ -147,7 +147,7 @@ When you click the Learnster tile in the Access Panel, you should be automatical
 
 ## Additional resources
 
-- [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 

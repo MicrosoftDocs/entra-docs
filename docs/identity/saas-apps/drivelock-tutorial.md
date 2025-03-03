@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with DriveLock
 
-In this tutorial, you learn how to integrate DriveLock with Microsoft Entra ID. When you integrate DriveLock with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate DriveLock with Microsoft Entra ID. When you integrate DriveLock with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to DriveLock.
 * Enable your users to be automatically signed-in to DriveLock with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To integrate Microsoft Entra ID with DriveLock, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 
 

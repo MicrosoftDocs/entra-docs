@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 03/21/2024
+ms.date: 02/25/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 
@@ -121,7 +121,7 @@ If Conditional Access (CA) policies are in use in your tenant, you can see if th
 
 ### Report-only
 
-Because Conditional Access (CA) policies can change the sign-in experience for your users and potentially disrupt their processes, it's a good idea to be sure your policy is configured correctly. With **Report-only** mode, you can configure a policy and evaluate its potential effect before enabling the policy.
+Conditional Access (CA) policies can change the sign-in experience for your users and potentially disrupt their processes. We recommend configuring CA policies in **Report-only** mode for a period of time to make sure your policy is configured correctly. With **Report-only** mode, you can configure a policy and evaluate its potential effect before enabling the policy.
 
 This tab of the sign-in logs displays the results of sign-in attempts that were in scope for the policy. For more information, see the [What is Conditional Access report-only mode?](~/identity/conditional-access/concept-conditional-access-report-only.md) article.
 

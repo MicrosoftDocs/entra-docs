@@ -38,7 +38,7 @@ ms.custom: include file
  :::image type="content" source="media/entra-cloud-sync-how-to-install/new-ux-5.png" alt-text="Screenshot of the select extensions screen." lightbox="media/entra-cloud-sync-how-to-install/new-ux-5.png":::
 
  >[!NOTE]
- >If you are installing the provisioning agent for use with [on-premsise app provisioning](~/identity/app-provisioning/on-premises-application-provisioning-architecture.md) then select On-premises application provisioning (Microsoft Entra ID to application).
+ >If you are installing the provisioning agent for use with [Microsoft Entra on-premises application provisioning](~/identity/app-provisioning/on-premises-application-provisioning-architecture.md), then select On-premises application provisioning (Microsoft Entra ID to application).
 
  10. Sign in with an account with at least the [Hybrid Identity Administrator](/entra/identity/role-based-access-control/permissions-reference#hybrid-identity-administrator) role. If you have Internet Explorer enhanced security enabled, it blocks the sign-in. If so, close the installation, [disable Internet Explorer enhanced security](/troubleshoot/developer/browsers/security-privacy/enhanced-security-configuration-faq), and restart the **Microsoft Entra Connect Provisioning Agent Package**  installation.
 

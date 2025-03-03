@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Britive
 
-In this tutorial, you'll learn how to integrate Britive with Microsoft Entra ID. When you integrate Britive with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Britive with Microsoft Entra ID. When you integrate Britive with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Britive.
 * Enable your users to be automatically signed-in to Britive with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Britive supports **SP** initiated SSO.
 * Britive supports [Automated user provisioning](britive-provisioning-tutorial.md).
@@ -85,7 +85,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `urn:amazon:cognito:sp:<UNIQUE_ID>`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Sign on URL and Identifier, which are explained later in this tutorial. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are not real. Update these values with the actual Sign on URL and Identifier, which are explained later in this article. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 

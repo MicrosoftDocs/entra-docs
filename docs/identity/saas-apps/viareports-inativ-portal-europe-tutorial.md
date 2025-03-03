@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Integrate Viareport (Europe) with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate Viareport (Europe) with Microsoft Entra ID. When you integrate Viareport (Europe) with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Viareport (Europe) with Microsoft Entra ID. When you integrate Viareport (Europe) with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Viareport (Europe).
 * Enable your users to be automatically signed-in to Viareport (Europe) with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Viareport (Europe) supports **SP and IDP** initiated SSO
 
@@ -146,7 +146,7 @@ When you click the Viareport (Europe) tile in the Access Panel, you should be au
 
 ## Additional Resources
 
-- [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 

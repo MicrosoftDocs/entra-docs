@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with ArcGIS Enterprise
 
-In this tutorial, you'll learn how to integrate ArcGIS Enterprise with Microsoft Entra ID. When you integrate ArcGIS Enterprise with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate ArcGIS Enterprise with Microsoft Entra ID. When you integrate ArcGIS Enterprise with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to ArcGIS Enterprise.
 * Enable your users to be automatically signed-in to ArcGIS Enterprise with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * ArcGIS Enterprise supports **SP and IDP** initiated SSO.
 * ArcGIS Enterprise supports **Just In Time** user provisioning.
@@ -92,7 +92,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<EXTERNAL_DNS_NAME>/portal/sharing/rest/oauth2/saml/signin`
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [ArcGIS Enterprise Client support team](mailto:support@esri.com) to get these values. You will get the Identifier value from **Set Identity Provider section**, which is explained later in this tutorial.
+    > These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [ArcGIS Enterprise Client support team](mailto:support@esri.com) to get these values. You will get the Identifier value from **Set Identity Provider section**, which is explained later in this article.
 
 1. On the **Set up Single Sign-On with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 

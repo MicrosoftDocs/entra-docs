@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Directory Services
 
-In this tutorial, you'll learn how to integrate Directory Services with Microsoft Entra ID. When you integrate Directory Services with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Directory Services with Microsoft Entra ID. When you integrate Directory Services with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Directory Services.
 * Enable your users to be automatically signed-in to Directory Services with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Directory Services supports **SP and IDP** initiated SSO.
 * Directory Services supports **Just In Time** user provisioning.

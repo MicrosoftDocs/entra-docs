@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Thomson Reuters Account
 
-In this tutorial, you'll learn how to integrate Thomson Reuters Account with Microsoft Entra ID. When you integrate Thomson Reuters Account with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Thomson Reuters Account with Microsoft Entra ID. When you integrate Thomson Reuters Account with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Thomson Reuters Account.
 * Enable your users to be automatically signed-in to Thomson Reuters Account with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To integrate Microsoft Entra ID with Thomson Reuters Account, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Thomson Reuters Account supports **SP** initiated SSO.
 

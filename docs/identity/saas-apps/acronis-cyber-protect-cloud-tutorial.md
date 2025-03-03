@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Acronis Cyber Protect Cloud
 
-In this tutorial, you'll learn how to integrate Acronis Cyber Protect Cloud with Microsoft Entra ID. When you integrate Acronis Cyber Protect Cloud with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Acronis Cyber Protect Cloud with Microsoft Entra ID. When you integrate Acronis Cyber Protect Cloud with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Acronis Cyber Protect Cloud.
 * Enable your users to be automatically signed-in to Acronis Cyber Protect Cloud with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To integrate Microsoft Entra ID with Acronis Cyber Protect Cloud, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Acronis Cyber Protect Cloud supports only **IDP** initiated SSO.
 

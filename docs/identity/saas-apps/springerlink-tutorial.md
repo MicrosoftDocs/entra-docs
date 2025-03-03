@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra single sign-on (SSO) integration with Springer Link
 
-In this tutorial, you'll learn how to integrate Springer Link with Microsoft Entra ID. When you integrate Springer Link with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Springer Link with Microsoft Entra ID. When you integrate Springer Link with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Springer Link.
 * Enable your users to be automatically signed-in to Springer Link with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Springer Link supports **SP and IDP** initiated SSO
 
@@ -92,7 +92,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://fsso.springer.com/saml/login?idp=<entityID>&targetUrl=https://link.springer.com`
 
     > [!NOTE]
-    > The Sign-on URL value is not real. Update the value with the actual Sign-On URL. `<entityID>` is the Microsoft Entra Identifier copied from the **Set up Springer Link** section, described later in tutorial. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > The Sign-on URL value is not real. Update the value with the actual Sign-On URL. `<entityID>` is the Microsoft Entra Identifier copied from the **Set up Springer Link** section, described later in article. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 6. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click the copy icon to copy **App Federation Metadata Url** and save it on your computer.
 
