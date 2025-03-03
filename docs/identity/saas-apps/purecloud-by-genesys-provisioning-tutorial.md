@@ -116,7 +116,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 	 |phoneNumbers[type eq "mobile"].value|String|
 	 |phoneNumbers[type eq "work"].value|String|
 	 |phoneNumbers[type eq "work2"].value|String|
-	 |phoneNumberss[type eq "work3"].value|String|
+	 |phoneNumbers[type eq "work3"].value|String|
 	 |phoneNumbers[type eq "work4"].value|String|
 	 |phoneNumbers[type eq "home"].value|String|
 	 |phoneNumbers[type eq "microsoftteams"].value|String|

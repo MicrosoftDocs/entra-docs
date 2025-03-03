@@ -142,7 +142,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Search **Kantega SSO for Crucible** and click **Install** button to install the new SAML plugin.
 
-	![Screenshot that shows the "Attlasian Marketplace for FishEye" page with "Kantega S S O for Crucible" in the search box and the "Install" button selected.](./media/kantegassoforfisheyecrucible-tutorial/install.png)
+	![Screenshot that shows the "Atlassian Marketplace for FishEye" page with "Kantega S S O for Crucible" in the search box and the "Install" button selected.](./media/kantegassoforfisheyecrucible-tutorial/install.png)
 
 1. The plugin installation starts. 
 
