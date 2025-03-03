@@ -81,19 +81,16 @@ Once you have configured your Microsoft account (live.com) as an application, yo
 
 1. You can select **Next: Claims mapping** to configure [claims mapping](reference-oidc-claims-mapping-customers.md) or **Review + create** to add your identity provider.
 
-   :::image type="content" source="how-to-msa-federation-customers/MSA-setup.png" alt-text="Screenshot of the MSA provider setup.":::
-
-> [!NOTE]
-> Microsoft recommends you do *not* use the [implicit grant flow](/entra/identity-platform/v2-oauth2-implicit-grant-flow#security-concerns-with-implicit-grant-flow) or the [ROPC flow](/entra/identity-platform/v2-oauth-ropc). Therefore, OpenID connect external identity provider configuration does not support these flows. The recommended way of supporting SPAs is [OAuth 2.0 Authorization code flow (with PKCE)](/entra/identity-platform/v2-oauth2-auth-code-flow#applications-that-support-the-auth-code-flow) which is supported by OIDC federation configuration.
+   :::image type="content" source="media/how-to-msa-federation-customers/MSA-setup.png" alt-text="Screenshot of the MSA provider setup.":::
 
 ## Add OIDC identity provider to a user flow
 
-At this point, the Microsoft account identity provider has been set up in your Microsoft Entra ID, but it's not yet available in any of the sign-in pages. To add the OIDC identity provider to a user flow:
+At this point, the MSA identity provider has been set up in your Microsoft Entra ID, but it's not yet available in any of the sign-in pages. To add the OIDC identity provider to a user flow:
 
 1. In your external tenant, browse to **Identity** > **External Identities** > **User flows**.
 1. Select the user flow where you want to add the OIDC identity provider.
 1. Under Settings, select **Identity providers.**
-1. Under **Other Identity Providers**, select **Microsoft account identity provider**.
+1. Under **Other Identity Providers**, select **Microsoft Account**.
 
    :::image type="content" source="media/how-to-msa-federation-customers/MSA-IdP-list.png" alt-text="Screenshot of the MSA provider in the IdP list.":::
 
