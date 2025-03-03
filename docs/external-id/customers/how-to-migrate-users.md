@@ -28,13 +28,13 @@ Use the pre migration flow in any of these situations:
 - The credentials are encrypted, but you can decrypt them. 
 - You do not have access to the user’s plaintext credentials, and will force users to reset their password on next logon. 
 
-For information about programmatically creating user accounts, see [Manage Consumer user accounts with Microsoft Graph](https://learn.microsoft.com/en-us/graph/api/user-post-users?view=graph-rest-1.0&tabs=http#example-2-create-a-user-with-social-and-local-account-identities-in-azure-ad-b2c).   
+For information about programmatically creating user accounts, see [Manage Consumer user accounts with Microsoft Graph](/graph/api/user-post-users?view=graph-rest-1.0&tabs=http#example-2-create-a-user-with-social-and-local-account-identities-in-azure-ad-b2c).   
 
 When following this approach to migrate from Azure AD B2C to Microsoft Entra External ID, users will be required to reset their passwords on first log-on to an application that is protected by External ID.
 
 You may consider using External ID's password-less capabilities which would allow users to continue using applications without having to reset their password.  
 
-When migrating users from Azure AD B2C, you can register the verified email address as a multi factor authentication method by adding the email authentication method to the user object. This can be added to the user object through the Microsoft Graph API [create emailMethod](https://learn.microsoft.com/en-us/graph/api/resources/emailauthenticationmethod?view=graph-rest-1.0) operation.  
+When migrating users from Azure AD B2C, you can register the verified email address as a multi factor authentication method by adding the email authentication method to the user object. This can be added to the user object through the Microsoft Graph API [create emailMethod](/graph/api/resources/emailauthenticationmethod) operation.  
 
 ## Seamless migration
 
@@ -109,8 +109,8 @@ Before you start the migration process, take the opportunity to clean up your di
 
 ## Password policy
 
-If the accounts you're migrating have weaker password strength than the [strong password strength](https://learn.microsoft.com/en-us/azure/active-directory/authentication/concept-sspr-policy) enforced by Entra External Id, you can disable the strong password requirement. For more information, see [Password policy property](https://learn.microsoft.com/en-us/azure/active-directory-b2c/user-profile-attributes#password-policy-attribute).
+If the accounts you're migrating have weaker password strength than the [strong password strength](/azure/active-directory/authentication/concept-sspr-policy) enforced by Entra External Id, you can disable the strong password requirement. For more information, see [Password policy property](/azure/active-directory-b2c/user-profile-attributes#password-policy-attribute).
 
-# Related content
+## Related content
 
 If you are migrating from Azure AD B2C, the [seamless user migration sample](https://github.com/azure-ad-b2c/samples/tree/master/policies/migrate-to-entra-external-id-for-customers) repository on GitHub contains a seamless migration custom policy example and REST API code sample.
