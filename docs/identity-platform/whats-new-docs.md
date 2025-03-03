@@ -28,6 +28,8 @@ Welcome to what's new in the Microsoft identity platform documentation. This art
 
 ## January 2025
 
+### Updated articles
+
 - [Set up your application's Microsoft Entra test environment](test-setup-environment.md) - Added clarity to the content
 
 ## December 2024
