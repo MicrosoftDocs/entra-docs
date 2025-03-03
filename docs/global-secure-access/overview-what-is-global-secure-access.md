@@ -3,9 +3,9 @@ title: What is Global Secure Access?
 description: Learn how Microsoft's Security Service Edge (SSE) solution, Global Secure Access, provides network access control and visibility to users and devices inside and outside a traditional office.
 author: kenwith
 ms.author: kenwith
-manager: rkarlin
+manager: femila
 ms.topic: overview
-ms.date: 02/24/2025
+ms.date: 03/03/2025
 ms.service: global-secure-access
 ms.custom: references_regions
 ai-usage: ai-assisted
@@ -80,16 +80,6 @@ To learn more about licensing costs and the Microsoft Entra Suite, see [Microsof
 **Remote Network licensing**
 
 The remote network (branch connectivity) feature is included in both the Microsoft Entra ID P1 license for Microsoft traffic, and the Microsoft Entra Internet Access license for Internet Traffic (coming soon). You must have a combined total of at least 50 licenses from Microsoft Entra ID P1 and Microsoft Entra Internet Access to enable remote network connectivity. For details on how much bandwidth is allocated, see [Understand remote network connectivity](concept-remote-network-connectivity.md#how-much-bandwidth-will-be-allocated-per-tenant). To learn more about remote networks, see [How to create a remote network with Global Secure Access](how-to-create-remote-networks.md).
-
-## Global Secure Access certifications
-[Introduction text, such as, "To help you meet your own compliance obligations..."]
-
-### Global Secure Access audit scope
-Microsoft retains independent, third-party auditing firms to conduct audits of Microsoft cloud services. The resulting compliance assurances are applicable to both Azure and Azure Government cloud environments. Compliance offerings are grouped into four segments: globally applicable, US government, industry specific, and country/region specific. Azure compliance certificates and audit reports state clearly which cloud services are in scope for independent third-party audits. Different audits might have different cloud services in audit scope.   
-
-### Supported certifications
-Global Secure Access is included in many Azure compliance audits such as SOC, ISO, PCI, and others. For the latest insight into Global Secure Access compliance audit scope, see [Cloud services in audit scope](/azure/compliance/offerings/cloud-services-in-audit-scope).
-
 
 ## Next steps
 
