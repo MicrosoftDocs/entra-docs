@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Smartcat
 
-In this tutorial, you learn how to integrate Smartcat with Microsoft Entra ID. When you integrate Smartcat  with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Smartcat with Microsoft Entra ID. When you integrate Smartcat  with Microsoft Entra ID, you can:
 
 - Use Microsoft Entra ID to control who can access Smartcat.
 - Enable your users to be automatically signed in to Smartcat  with their Microsoft Entra accounts.

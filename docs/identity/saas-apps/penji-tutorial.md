@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Penji
 
-In this tutorial, you'll learn how to integrate Penji with Microsoft Entra ID. When you integrate Penji with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Penji with Microsoft Entra ID. When you integrate Penji with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Penji.
 * Enable your users to be automatically signed-in to Penji with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Penji supports **SP** initiated SSO
 

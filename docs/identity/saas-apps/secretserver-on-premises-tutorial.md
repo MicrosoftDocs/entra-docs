@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Integrate Secret Server (on-premises) with Microsoft Entra ID
 
-In this tutorial, you learn how to integrate Secret Server (on-premises) with Microsoft Entra ID. When you integrate Secret Server (on-premises) with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Secret Server (on-premises) with Microsoft Entra ID. When you integrate Secret Server (on-premises) with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Secret Server (on-premises).
 * Enable your users to be automatically signed-in to Secret Server (on-premises) with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Secret Server (on-premises) supports **SP and IDP** initiated SSO.
 

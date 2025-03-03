@@ -28,6 +28,9 @@ introduction: |
   >
   >Application may provide access based on the role the user has. In some situations, application access may not immediately reflect the fact that user got role assigned or removed. If application previously cached the fact that user does not have a role – when user tries to access application again, access may not be provided. Similarly, if application previously cached the fact that user has a role – when role is deactivated, user may still get access. Specific situation depends on the application’s architecture. For some applications, signing out and signing back in may help get access added or removed.
 
+  >[!IMPORTANT]
+  >If a user activating an administrative role is signed in to Microsoft Teams on a mobile device, they will receive a notification from the Teams app saying "Open Teams to continue receiving notifications for *&lt;email address&gt;*", or "*&lt;email address&gt;* needs to sign in to see notifications". The user will need to open the Teams app to continue receiving notifications. This behavior is by design.
+
 procedureSection:
   - title: |
       Activate a role

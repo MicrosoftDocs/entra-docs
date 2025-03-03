@@ -16,7 +16,7 @@ ms.author: thomasakelo
 
 # Configure BenQ IAM for automatic user provisioning
 
-This tutorial describes the steps you need to perform in both BenQ IAM and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [BenQ IAM](https://service-portal.benq.com/login) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This article describes the steps you need to perform in both BenQ IAM and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [BenQ IAM](https://service-portal.benq.com/login) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
 ## Supported capabilities
@@ -28,7 +28,7 @@ This tutorial describes the steps you need to perform in both BenQ IAM and Micro
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
 * A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (like [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications)).
@@ -50,7 +50,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 2. Select **SSO by SAML** as SSO Setting in the pop up and click Next. 
 	![sso-with-saml](media/benq-iam-provisioning-tutorial/sso-by-saml.png)
 
-3. Follow [the tutorial for Microsoft Entra SSO integration with BenQ IAM](benq-iam-tutorial.md) to complete the required settings.
+3. Follow [the article for Microsoft Entra SSO integration with BenQ IAM](benq-iam-tutorial.md) to complete the required settings.
 
 4. After finishing the settings for SSO by SAML, you will see a success message as shown in the image below. Click on **Create Token** in the Automated User Provisioning section.
 	![created-token](media/benq-iam-provisioning-tutorial/create-token.png)
@@ -119,7 +119,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |active|Boolean|
    |displayName|String|
 
-10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 11. To enable the Microsoft Entra provisioning service for BenQ IAM, change the **Provisioning Status** to **On** in the **Settings** section.
 

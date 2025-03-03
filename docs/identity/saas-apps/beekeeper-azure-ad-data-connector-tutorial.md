@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Beekeeper Microsoft Entra SSO
 
-In this tutorial, you'll learn how to integrate Beekeeper Microsoft Entra SSO with Microsoft Entra ID. When you integrate Beekeeper Microsoft Entra SSO with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Beekeeper Microsoft Entra SSO with Microsoft Entra ID. When you integrate Beekeeper Microsoft Entra SSO with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Beekeeper Microsoft Entra SSO.
 * Enable your users to be automatically signed-in to Beekeeper Microsoft Entra SSO with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Beekeeper Microsoft Entra SSO supports **SP and IDP** initiated SSO.
 * Beekeeper Microsoft Entra SSO supports **Just In Time** user provisioning.

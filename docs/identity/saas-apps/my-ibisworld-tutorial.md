@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with My IBISWorld
 
-In this tutorial, you learn how to integrate My IBISWorld with Microsoft Entra ID. When you integrate My IBISWorld with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate My IBISWorld with Microsoft Entra ID. When you integrate My IBISWorld with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to My IBISWorld.
 * Enable your users to be automatically signed-in to My IBISWorld with their Microsoft Entra accounts.
@@ -35,7 +35,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * My IBISWorld supports **SP and IDP** initiated SSO.
 * My IBISWorld supports **Just In Time** user provisioning.

@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Integrate OutSystems Microsoft Entra ID with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate OutSystems Microsoft Entra ID with Microsoft Entra ID. When you integrate OutSystems Microsoft Entra ID with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate OutSystems Microsoft Entra ID with Microsoft Entra ID. When you integrate OutSystems Microsoft Entra ID with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to OutSystems Microsoft Entra ID.
 * Enable your users to be automatically signed-in to OutSystems Microsoft Entra ID with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * OutSystems Microsoft Entra ID supports **SP and IDP** initiated SSO and supports **Just In Time** user provisioning.
 

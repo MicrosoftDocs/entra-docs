@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Kantega SSO for FishEye/Crucible
 
-In this tutorial, you'll learn how to integrate Kantega SSO for FishEye/Crucible with Microsoft Entra ID. When you integrate Kantega SSO for FishEye/Crucible with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Kantega SSO for FishEye/Crucible with Microsoft Entra ID. When you integrate Kantega SSO for FishEye/Crucible with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Kantega SSO for FishEye/Crucible.
 * Enable your users to be automatically signed-in to Kantega SSO for FishEye/Crucible with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with Kantega SSO for FishEye/Crucible, 
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Kantega SSO for FishEye/Crucible supports **SP and IDP** initiated SSO.
 
@@ -88,7 +88,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<server-base-url>/plugins/servlet/no.kantega.saml/sp/<uniqueid>/login`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. These values are received during the configuration of FishEye/Crucible plugin which is explained later in the tutorial.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. These values are received during the configuration of FishEye/Crucible plugin which is explained later in the article.
 
 6. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
@@ -142,7 +142,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Search **Kantega SSO for Crucible** and click **Install** button to install the new SAML plugin.
 
-	![Screenshot that shows the "Attlasian Marketplace for FishEye" page with "Kantega S S O for Crucible" in the search box and the "Install" button selected.](./media/kantegassoforfisheyecrucible-tutorial/install.png)
+	![Screenshot that shows the "Atlassian Marketplace for FishEye" page with "Kantega S S O for Crucible" in the search box and the "Install" button selected.](./media/kantegassoforfisheyecrucible-tutorial/install.png)
 
 1. The plugin installation starts. 
 

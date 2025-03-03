@@ -20,7 +20,7 @@ ms.author: gideonkiratu
 
 ## Scenario description
 
-In this tutorial, you configure a federated authentication between Microsoft Entra ID and SharePoint on-premises. The goal is to allow users to sign in on Microsoft Entra ID and use their identity to access the SharePoint on-premises sites.
+In this article,  you configure a federated authentication between Microsoft Entra ID and SharePoint on-premises. The goal is to allow users to sign in on Microsoft Entra ID and use their identity to access the SharePoint on-premises sites.
 
 ## Prerequisites
 
@@ -48,7 +48,7 @@ To configure the federation in Microsoft Entra ID, you need to create a dedicate
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **New application**.
 1. In the search box, enter **SharePoint on-premises**. Select **SharePoint on-premises** from the result pane.
-1. Specify a name for your application (in this tutorial, it is `SharePoint corporate farm`), and click **Create** to add the application.
+1. Specify a name for your application (in this article,  it is `SharePoint corporate farm`), and click **Create** to add the application.
 1. In the new enterprise application, select **Properties**, and check the value for **User assignment required?**. For this scenario, set its value to **No** and click **Save**.
 
 ### Configure the enterprise application

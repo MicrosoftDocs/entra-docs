@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with SKYSITE
 
-In this tutorial, you'll learn how to integrate SKYSITE with Microsoft Entra ID. When you integrate SKYSITE with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate SKYSITE with Microsoft Entra ID. When you integrate SKYSITE with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to SKYSITE.
 * Enable your users to be automatically signed-in to SKYSITE with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * SKYSITE supports **IDP** initiated SSO.
 
@@ -75,7 +75,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![Screenshot shows Single sign-on properties.](./media/skysite-tutorial/property.png)
 
-	* Copy the **User access URL** and you have to paste it in **Configure SKYSITE SSO section**, which is explained later in the tutorial.
+	* Copy the **User access URL** and you have to paste it in **Configure SKYSITE SSO section**, which is explained later in the article.
 
 1. On the **SKYSITE** application integration page, navigate to **single sign-on**.
 1. On the **Select a single sign-on method** page, select **SAML**.

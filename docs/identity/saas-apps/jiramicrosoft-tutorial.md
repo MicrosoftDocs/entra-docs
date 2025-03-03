@@ -17,7 +17,7 @@ ms.author: dhivyag
 
 # Microsoft Entra SSO integration with JIRA SAML SSO by Microsoft
 
-In this tutorial, you'll learn how to integrate JIRA SAML SSO by Microsoft with Microsoft Entra ID. When you integrate JIRA SAML SSO by Microsoft with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate JIRA SAML SSO by Microsoft with Microsoft Entra ID. When you integrate JIRA SAML SSO by Microsoft with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to JIRA SAML SSO by Microsoft.
 * Enable your users to be automatically signed-in to JIRA SAML SSO by Microsoft with their Microsoft Entra accounts.
@@ -41,7 +41,7 @@ To configure Microsoft Entra integration with JIRA SAML SSO by Microsoft, you ne
 - Test user created in the JIRA server application.
 
 > [!NOTE]
-> To test the steps in this tutorial, we do not recommend using a production environment of JIRA. Test the integration first in development or staging environment of the application and then use the production environment.
+> To test the steps in this article,  we do not recommend using a production environment of JIRA. Test the integration first in development or staging environment of the application and then use the production environment.
 
 To get started, you need the following items:
 
@@ -69,7 +69,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * JIRA SAML SSO by Microsoft supports **SP** initiated SSO.
 
@@ -124,7 +124,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<domain:port>/plugins/servlet/saml/auth`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL, and Sign-on URL. Port is optional in case it’s a named URL. These values are received during the configuration of Jira plugin, which is explained later in the tutorial.
+	> These values are not real. Update these values with the actual Identifier, Reply URL, and Sign-on URL. Port is optional in case it’s a named URL. These values are received during the configuration of Jira plugin, which is explained later in the article.
 
 1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 

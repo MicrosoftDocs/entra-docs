@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Zoho One
 
-In this tutorial, you'll learn how to integrate Zoho One with Microsoft Entra ID. When you integrate Zoho One with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Zoho One with Microsoft Entra ID. When you integrate Zoho One with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Zoho One.
 * Enable your users to be automatically signed-in to Zoho One with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with Zoho One, you need the following i
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Zoho One supports **SP** and **IDP** initiated SSO.
 
@@ -86,7 +86,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://accounts.zoho.com/samlresponse/<saml-identifier>`
 
 	> [!NOTE]
-	> The preceding **Reply URL** value is not real. You will get the `<saml-identifier>` value from #step4 of **Configure Zoho One Single Sign-On** section, which is explained later in the tutorial.
+	> The preceding **Reply URL** value is not real. You will get the `<saml-identifier>` value from #step4 of **Configure Zoho One Single Sign-On** section, which is explained later in the article.
 
 	c. Click **Set additional URLs**.
 
@@ -99,7 +99,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://accounts.zoho.com/samlauthrequest/<domain_name>?serviceurl=https://one.zoho.com` 
 
     > [!NOTE] 
-	> The preceding **Sign-on URL** value is not real. You will update the value with the actual Sign-On URL from the **Configure Zoho One Single Sign-On** section, which is explained later in the tutorial. 
+	> The preceding **Sign-on URL** value is not real. You will update the value with the actual Sign-On URL from the **Configure Zoho One Single Sign-On** section, which is explained later in the article. 
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 

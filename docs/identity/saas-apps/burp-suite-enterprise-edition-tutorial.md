@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Burp Suite Enterprise Edition
 
-In this tutorial, you'll learn how to integrate Burp Suite Enterprise Edition with Microsoft Entra ID. When you integrate Burp Suite Enterprise Edition with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Burp Suite Enterprise Edition with Microsoft Entra ID. When you integrate Burp Suite Enterprise Edition with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Burp Suite Enterprise Edition.
 * Enable your users to be automatically signed-in to Burp Suite Enterprise Edition with their Microsoft Entra accounts.
@@ -36,7 +36,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Burp Suite Enterprise Edition supports **IDP** initiated SSO.
 

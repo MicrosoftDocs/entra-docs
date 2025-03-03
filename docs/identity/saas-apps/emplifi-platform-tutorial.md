@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Emplifi platform
 
-In this tutorial, you'll learn how to integrate Emplifi platform with Microsoft Entra ID. When you integrate Emplifi platform with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Emplifi platform with Microsoft Entra ID. When you integrate Emplifi platform with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Emplifi platform.
 * Enable your users to be automatically signed-in to Emplifi platform with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Emplifi platform supports **SP and IDP** initiated SSO.
 

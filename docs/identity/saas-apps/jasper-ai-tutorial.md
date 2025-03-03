@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Jasper AI
 
-In this tutorial, you'll learn how to integrate Jasper AI with Microsoft Entra ID. When you integrate Jasper AI with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Jasper AI with Microsoft Entra ID. When you integrate Jasper AI with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Jasper AI.
 * Enable your users to be automatically signed-in to Jasper AI with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To integrate Microsoft Entra ID with Jasper AI, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Jasper AI supports both **SP and IDP** initiated SSO.
 

@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with LINE WORKS
 
-In this tutorial, you learn how to integrate LINE WORKS with Microsoft Entra ID.
+In this article,  you learn how to integrate LINE WORKS with Microsoft Entra ID.
 Integrating LINE WORKS with Microsoft Entra ID provides you with the following benefits:
 
 * You can control in Microsoft Entra ID who has access to LINE WORKS.
@@ -32,7 +32,7 @@ To configure Microsoft Entra integration with LINE WORKS, you need the following
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * LINE WORKS supports **SP** initiated SSO
 
