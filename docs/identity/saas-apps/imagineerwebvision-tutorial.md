@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Imagineer WebVision
 
-In this tutorial, you learn how to integrate Imagineer WebVision with Microsoft Entra ID.
+In this article,  you learn how to integrate Imagineer WebVision with Microsoft Entra ID.
 Integrating Imagineer WebVision with Microsoft Entra ID provides you with the following benefits:
 
 * You can control in Microsoft Entra ID who has access to Imagineer WebVision.
@@ -35,7 +35,7 @@ To configure Microsoft Entra integration with Imagineer WebVision, you need the 
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Imagineer WebVision supports **SP** initiated SSO
 
@@ -158,7 +158,7 @@ When you click the Imagineer WebVision tile in the Access Panel, you should be a
 
 ## Additional Resources
 
-- [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 

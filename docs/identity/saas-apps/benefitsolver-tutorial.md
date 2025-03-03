@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Benefitsolver
 
-In this tutorial, you learn how to integrate Benefitsolver with Microsoft Entra ID. When you integrate Benefitsolver with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Benefitsolver with Microsoft Entra ID. When you integrate Benefitsolver with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Benefitsolver.
 * Enable your users to be automatically signed-in to Benefitsolver with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Benefitsolver supports **SP** initiated SSO.
 

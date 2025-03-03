@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator
 
-In this tutorial, you'll learn how to integrate HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator with Microsoft Entra ID. When you integrate HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator with Microsoft Entra ID. When you integrate HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator.
 * Enable your users to be automatically signed-in to HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ To integrate Microsoft Entra ID with HPE Aruba Networking EdgeConnect Global Ent
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * HPE Aruba Networking EdgeConnect Global Enterprise Orchestrator supports **SP and IDP** initiated SSO.
 

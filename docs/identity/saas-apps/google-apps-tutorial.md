@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Google Cloud / G Suite Connector by Microsoft
 
-In this tutorial, you learn how to integrate Google Cloud / G Suite Connector by Microsoft with Microsoft Entra ID. When you integrate Google Cloud / G Suite Connector by Microsoft with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Google Cloud / G Suite Connector by Microsoft with Microsoft Entra ID. When you integrate Google Cloud / G Suite Connector by Microsoft with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Google Cloud / G Suite Connector by Microsoft.
 * Enable your users to be automatically signed-in to Google Cloud / G Suite Connector by Microsoft with their Microsoft Entra accounts.
@@ -32,9 +32,9 @@ To get started, you need the following items:
 * A Google Apps subscription or Google Cloud Platform subscription.
 
 > [!NOTE]
-> To test the steps in this tutorial, we do not recommend using a production environment. This document was created using the new user Single-Sign-on experience. If you are still using the old one, the setup will look different. You can enable the new experience in the Single Sign-on settings of G-Suite application. Go to **Microsoft Entra ID** > **Enterprise applications**, select **Google Cloud / G Suite Connector by Microsoft**, select **Single Sign-on** and then click on **Try out our new experience**.
+> To test the steps in this article,  we do not recommend using a production environment. This document was created using the new user Single-Sign-on experience. If you are still using the old one, the setup will look different. You can enable the new experience in the Single Sign-on settings of G-Suite application. Go to **Microsoft Entra ID** > **Enterprise applications**, select **Google Cloud / G Suite Connector by Microsoft**, select **Single Sign-on** and then click on **Try out our new experience**.
 
-To test the steps in this tutorial, you should follow these recommendations:
+To test the steps in this article,  you should follow these recommendations:
 
 * Don't use your production environment, unless it's necessary.
 * If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
@@ -66,7 +66,7 @@ Recent updates from Google now allow the addition of user groups to Third-Party 
 
 5. **Q: If a user is signed in through Windows, are they automatically authenticate to Google Cloud / G Suite Connector by Microsoft without getting prompted for a password?**
 
-    A: There are two options for enabling this scenario. First, users could sign into Windows 10 devices via [Microsoft Entra join](~/identity/devices/overview.md). Alternatively, users could sign into Windows devices that are domain-joined to an on-premises Active Directory that has been enabled for single sign-on to Microsoft Entra ID via an [Active Directory Federation Services (AD FS)](~/identity/hybrid/connect/plan-connect-user-signin.md) deployment. Both options require you to perform the steps in the following tutorial to enable single sign-on between Microsoft Entra ID and Google Cloud / G Suite Connector by Microsoft.
+    A: There are two options for enabling this scenario. First, users could sign into Windows 10 devices via [Microsoft Entra join](~/identity/devices/overview.md). Alternatively, users could sign into Windows devices that are domain-joined to an on-premises Active Directory that has been enabled for single sign-on to Microsoft Entra ID via an [Active Directory Federation Services (AD FS)](~/identity/hybrid/connect/plan-connect-user-signin.md) deployment. Both options require you to perform the steps in the following article to enable single sign-on between Microsoft Entra ID and Google Cloud / G Suite Connector by Microsoft.
 
 6. **Q: What should I do when I get an "invalid email" error message?**
 
@@ -80,7 +80,7 @@ Recent updates from Google now allow the addition of user groups to Third-Party 
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Google Cloud / G Suite Connector by Microsoft supports **SP** initiated SSO.
 
@@ -168,7 +168,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://www.google.com/a/<yourdomain.com>/ServiceLogin?continue=https://console.cloud.google.com`
 
     > [!NOTE]
-	> These values are not real. Update these values with the actual Identifier,Reply URL and Sign on URL. Google Cloud / G Suite Connector by Microsoft doesn't provide Entity ID/Identifier value on Single Sign On configuration so when you uncheck the **domain specific issuer** option the Identifier value will be `google.com`. If you check the **domain specific issuer** option it will be `google.com/a/<yourdomainname.com>`. To check/uncheck the **domain specific issuer** option you need to go to the **Configure Google Cloud / G Suite Connector by Microsoft SSO** section which is explained later in the tutorial. For more information contact [Google Cloud / G Suite Connector by Microsoft Client support team](https://www.google.com/contact/).
+	> These values are not real. Update these values with the actual Identifier,Reply URL and Sign on URL. Google Cloud / G Suite Connector by Microsoft doesn't provide Entity ID/Identifier value on Single Sign On configuration so when you uncheck the **domain specific issuer** option the Identifier value will be `google.com`. If you check the **domain specific issuer** option it will be `google.com/a/<yourdomainname.com>`. To check/uncheck the **domain specific issuer** option you need to go to the **Configure Google Cloud / G Suite Connector by Microsoft SSO** section which is explained later in the article. For more information contact [Google Cloud / G Suite Connector by Microsoft Client support team](https://www.google.com/contact/).
 
 1. Your Google Cloud / G Suite Connector by Microsoft application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows an example for this. The default value of **Unique User Identifier** is **user.userprincipalname** but Google Cloud / G Suite Connector by Microsoft expects this to be mapped with the user's email address. For that you can use **user.mail** attribute from the list or use the appropriate attribute value based on your organization configuration.
 

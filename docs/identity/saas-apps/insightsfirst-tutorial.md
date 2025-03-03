@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Insightsfirst
 
-In this tutorial, you learn how to integrate Insightsfirst with Microsoft Entra ID. When you integrate Insightsfirst with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Insightsfirst with Microsoft Entra ID. When you integrate Insightsfirst with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Insightsfirst.
 * Enable your users to be automatically signed-in to Insightsfirst with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To integrate Microsoft Entra ID with Insightsfirst, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Insightsfirst supports **SP** initiated SSO.
 * Insightsfirst supports **Just In Time** user provisioning.

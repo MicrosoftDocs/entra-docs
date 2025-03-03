@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Check Point CloudGuard Posture Management
 
-In this tutorial, you'll learn how to integrate Check Point CloudGuard Posture Management with Microsoft Entra ID. When you integrate Check Point CloudGuard Posture Management with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Check Point CloudGuard Posture Management with Microsoft Entra ID. When you integrate Check Point CloudGuard Posture Management with Microsoft Entra ID, you can:
 
 - Control in Microsoft Entra ID who has access to Check Point CloudGuard Posture Management.
 - Enable your users to be automatically signed-in to Check Point CloudGuard Posture Management with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Check Point CloudGuard Posture Management supports **SP and IDP** initiated SSO.
 
@@ -89,7 +89,7 @@ Follow these steps to enable Microsoft Entra SSO.
    `https://secure.dome9.com/sso/saml/<YOURCOMPANYNAME>`
 
    > [!NOTE]
-   > These values are not real. Update these values with the actual Reply URL and Sign-on URL. You will get the `<company name>` value from the **Configure Check Point CloudGuard Posture Management SSO** section, which is explained later in the tutorial. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+   > These values are not real. Update these values with the actual Reply URL and Sign-on URL. You will get the `<company name>` value from the **Configure Check Point CloudGuard Posture Management SSO** section, which is explained later in the article. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Check Point CloudGuard Posture Management application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 

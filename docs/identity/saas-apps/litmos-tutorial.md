@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with SAP Litmos
 
-In this tutorial, you'll learn how to integrate SAP Litmos with Microsoft Entra ID. When you integrate SAP Litmos with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate SAP Litmos with Microsoft Entra ID. When you integrate SAP Litmos with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to SAP Litmos.
 * Enable your users to be automatically signed-in to SAP Litmos with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * SAP Litmos supports **SP** and **IDP** initiated SSO.
 * SAP Litmos supports **Just In Time** user provisioning.
@@ -135,7 +135,7 @@ Follow these steps to enable Microsoft Entra SSO.
     | `https://<CompanyName>.litmos.com/integration/splogin?RelayState=https://<CustomerName>.litmos.com/LearningPath/12345` |
 
     > [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL, Sign on URL and Relay State URL which are explained later in tutorial or contact [SAP Litmos Client support team](https://www.litmos.com/contact-us) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are not real. Update these values with the actual Identifier, Reply URL, Sign on URL and Relay State URL which are explained later in article or contact [SAP Litmos Client support team](https://www.litmos.com/contact-us) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 

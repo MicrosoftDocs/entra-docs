@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Chatwork
 
-In this tutorial, you'll learn how to integrate Chatwork with Microsoft Entra ID. When you integrate Chatwork with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Chatwork with Microsoft Entra ID. When you integrate Chatwork with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Chatwork.
 * Enable your users to be automatically signed-in to Chatwork with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Chatwork supports **SP** initiated SSO.
 * Chatwork supports [Automated user provisioning](chatwork-provisioning-tutorial.md).

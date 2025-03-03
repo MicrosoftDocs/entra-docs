@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Aventri
 
-In this tutorial, you'll learn how to integrate Aventri with Microsoft Entra ID. When you integrate Aventri with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Aventri with Microsoft Entra ID. When you integrate Aventri with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Aventri.
 * Enable your users to be automatically signed-in to Aventri with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Aventri supports **SP** initiated SSO
 * Once you configure Aventri you can enforce Session Control, which protect exfiltration and infiltration of your organization’s sensitive data in real-time. Session Control extend from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
@@ -89,7 +89,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://na-admin.eventscloud.com/saml/accounts/sso/<ACCOUNTID>`
 
     > [!NOTE] 
-    > These values are not real. You update the value with the actual Sign on URL and Identifier, which is explained later in the tutorial.
+    > These values are not real. You update the value with the actual Sign on URL and Identifier, which is explained later in the article.
 
 1. Aventri application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -181,7 +181,7 @@ When you click the Aventri tile in the Access Panel, you should be automatically
 
 ## Additional resources
 
-- [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 

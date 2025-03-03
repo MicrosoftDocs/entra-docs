@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with LaunchDarkly
 
-In this tutorial, you'll learn how to integrate LaunchDarkly with Microsoft Entra ID. When you integrate LaunchDarkly with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate LaunchDarkly with Microsoft Entra ID. When you integrate LaunchDarkly with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to LaunchDarkly.
 * Enable your users to be automatically signed-in to LaunchDarkly with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * LaunchDarkly supports **IDP** initiated SSO.
 * LaunchDarkly supports **Just In Time** user provisioning.
@@ -90,7 +90,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://app.launchdarkly.com/trust/saml2/acs/<customers-unique-id>`
 
 	> [!NOTE]
-	> The Reply URL value is not real. You will update the value with the actual Reply URL, which is explained later in the tutorial. LaunchDarkly currently supports **IDP** initiated SSO. To use this application in **IDP** mode, you need to leave the **Sign on URL** field blank, otherwise you will not be able to initiate the login from the **IDP**. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The Reply URL value is not real. You will update the value with the actual Reply URL, which is explained later in the article. LaunchDarkly currently supports **IDP** initiated SSO. To use this application in **IDP** mode, you need to leave the **Sign on URL** field blank, otherwise you will not be able to initiate the login from the **IDP**. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 6. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 

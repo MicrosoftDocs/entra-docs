@@ -51,7 +51,7 @@ As of now, following versions of Confluence are supported:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO for on-premises confluence setup using application proxy mode.
+In this article,  you configure and test Microsoft Entra SSO for on-premises confluence setup using application proxy mode.
 1. Download and Install Microsoft Entra private network connector.
 1. Add Application Proxy in Microsoft Entra ID.
 1. Add a Confluence SAML SSO app in Microsoft Entra ID.
@@ -150,4 +150,4 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 1. Verify the application proxy setup by checking if the configured test user is able to SSO using the external URL mentioned in the on-premises application.
 
 > [!NOTE]
-> Complete the setup of the JIRA SAML SSO by Microsoft application by following [this](./jiramicrosoft-tutorial.md) tutorial.
+> Complete the setup of the JIRA SAML SSO by Microsoft application by following [this](./jiramicrosoft-tutorial.md) article.

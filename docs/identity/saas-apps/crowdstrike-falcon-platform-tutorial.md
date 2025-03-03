@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with CrowdStrike Falcon Platform
 
-In this tutorial, you'll learn how to integrate CrowdStrike Falcon Platform with Microsoft Entra ID. When you integrate CrowdStrike Falcon Platform with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate CrowdStrike Falcon Platform with Microsoft Entra ID. When you integrate CrowdStrike Falcon Platform with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to CrowdStrike Falcon Platform.
 * Enable your users to be automatically signed-in to CrowdStrike Falcon Platform with their Microsoft Entra accounts.
@@ -38,7 +38,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * CrowdStrike Falcon Platform supports **SP and IDP** initiated SSO.
 

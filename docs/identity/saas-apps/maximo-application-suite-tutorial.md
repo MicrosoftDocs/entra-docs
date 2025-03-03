@@ -84,7 +84,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://<workspace_id>.<mas_application>.<mas_domain>`
 
 	> [!Note]
-	> You will get the **Service Provider metadata file** from the **Configure Maximo Application Suite SSO** section, which is explained later in the tutorial. If the **Identifier** and **Reply URL** values do not get auto populated, then fill the values manually according to your requirement. Contact [Maximo Application Suite Client support](https://www.ibm.com/mysupport/) to get these values.
+	> You will get the **Service Provider metadata file** from the **Configure Maximo Application Suite SSO** section, which is explained later in the article. If the **Identifier** and **Reply URL** values do not get auto populated, then fill the values manually according to your requirement. Contact [Maximo Application Suite Client support](https://www.ibm.com/mysupport/) to get these values.
 
 1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 

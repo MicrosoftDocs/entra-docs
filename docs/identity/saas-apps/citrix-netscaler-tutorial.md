@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on integration with Citrix ADC SAML Connector for Microsoft Entra ID (Kerberos-based authentication)
 
-In this tutorial, you'll learn how to integrate Citrix ADC SAML Connector for Microsoft Entra ID with Microsoft Entra ID. When you integrate Citrix ADC SAML Connector for Microsoft Entra ID with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Citrix ADC SAML Connector for Microsoft Entra ID with Microsoft Entra ID. When you integrate Citrix ADC SAML Connector for Microsoft Entra ID with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Citrix ADC SAML Connector for Microsoft Entra ID.
 * Enable your users to be automatically signed in to Citrix ADC SAML Connector for Microsoft Entra ID with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment. The tutorial includes these scenarios:
+In this article,  you configure and test Microsoft Entra SSO in a test environment. The article includes these scenarios:
 
 * **SP-initiated** SSO for Citrix ADC SAML Connector for Microsoft Entra ID.
 

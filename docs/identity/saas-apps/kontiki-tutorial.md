@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Kontiki
 
-In this tutorial, you'll learn how to integrate Kontiki with Microsoft Entra ID. When you integrate Kontiki with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Kontiki with Microsoft Entra ID. When you integrate Kontiki with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Kontiki.
 * Enable your users to be automatically signed-in to Kontiki with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with Kontiki, you need the following it
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment and integrate Kontiki with Microsoft Entra ID.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment and integrate Kontiki with Microsoft Entra ID.
 
 Kontiki supports the following features:
 

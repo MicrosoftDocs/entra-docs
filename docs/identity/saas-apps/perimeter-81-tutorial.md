@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Perimeter 81
 
-In this tutorial, you'll learn how to integrate Perimeter 81 with Microsoft Entra ID. When you integrate Perimeter 81 with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Perimeter 81 with Microsoft Entra ID. When you integrate Perimeter 81 with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Perimeter 81.
 * Enable your users to be automatically signed-in to Perimeter 81 with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Perimeter 81 supports **SP and IDP** initiated SSO
 * Perimeter 81 supports **Just In Time** user provisioning

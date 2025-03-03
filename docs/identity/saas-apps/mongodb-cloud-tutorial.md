@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with MongoDB Atlas - SSO
 
-In this tutorial, you'll learn how to integrate MongoDB Atlas - SSO with Microsoft Entra ID. When you integrate MongoDB Atlas - SSO with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate MongoDB Atlas - SSO with Microsoft Entra ID. When you integrate MongoDB Atlas - SSO with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to MongoDB Atlas, the MongoDB community, MongoDB University, and MongoDB Support.
 * Enable your users to be automatically signed in to MongoDB Atlas - SSO with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * MongoDB Atlas - SSO supports **SP** and **IDP** initiated SSO.
 * MongoDB Atlas - SSO supports **Just In Time** user provisioning.
@@ -153,7 +153,7 @@ In this section, you'll enable B.Simon or Group 1 to use Azure single sign-on by
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **MongoDB Atlas - SSO**.
 1. In the app's overview page, find the **Manage** section and select **Users and groups**.
 1. Select **Add user**, then select **Users and groups** in the **Add Assignment** dialog.
-1. In the **Users and groups** dialog, select **B.Simon** from the Users list or if you are using MongoDB Atla role mappings, select  **Group 1** from the Groups list; then click the **Select** button at the bottom of the screen.
+1. In the **Users and groups** dialog, select **B.Simon** from the Users list or if you are using MongoDB Atlas role mappings, select  **Group 1** from the Groups list; then click the **Select** button at the bottom of the screen.
 1. In the **Add Assignment** dialog, click the **Assign** button.
 
 ## Configure MongoDB Atlas SSO

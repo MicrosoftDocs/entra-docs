@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Zscaler
 
-In this tutorial, you'll learn how to integrate Zscaler with Microsoft Entra ID. When you integrate Zscaler with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Zscaler with Microsoft Entra ID. When you integrate Zscaler with Microsoft Entra ID, you can:
 
 Use Microsoft Entra ID to control who can access Zscaler.
 Enable your users to be automatically signed in to Zscaler with their Microsoft Entra accounts.

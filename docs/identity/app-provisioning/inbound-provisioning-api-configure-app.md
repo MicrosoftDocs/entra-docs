@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 10/23/2024
+ms.date: 03/03/2025
 ms.author: jfields
 ms.reviewer: cmmdesai
 ---

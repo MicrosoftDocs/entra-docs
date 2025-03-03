@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Integrate productboard with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate productboard with Microsoft Entra ID. When you integrate productboard with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate productboard with Microsoft Entra ID. When you integrate productboard with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to productboard.
 * Enable your users to be automatically signed-in to productboard with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * productboard supports **SP and IDP** initiated SSO.
 * productboard supports **Just In Time** user provisioning.
