@@ -11,7 +11,7 @@ ms.reviewer: absinh
 
 
 ---
-# Global Secure Access certifications
+# Global Secure Access certification
 To support your compliance needs across various regulated industries and global markets, Global Secure Access is actively pursuing certifications across numerous compliance offerings. This article lists the current certifications and is updated as new certifications are completed.
 
 ## Supported certifications
