@@ -82,8 +82,10 @@ The decision about how to resolve conflicting product licenses always belongs to
 **PowerShell**: PowerShell cmdlets report this error as ***MutuallyExclusiveViolation***.
 **Audit log Details**:
 
-```Licensing Error Message
-License assignment failed because service plans [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx], [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx] are mutually exclusive.  ```
+```
+Licensing Error Message
+License assignment failed because service plans [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx], [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx] are mutually exclusive.  
+```
 
 ## Missing dependent service plans
 
@@ -93,7 +95,8 @@ To solve this problem, you need to make sure that the required plan is still ass
 **PowerShell:** PowerShell cmdlets report this error as DependencyViolation.
 
 **Audit log Details:**  
-```Licensing Error Message
+```
+Licensing Error Message
 
 License assignment failed because service plan [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx] depends on
 the service plan(s) [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx], [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx].
@@ -108,7 +111,8 @@ To solve this problem, you need to make sure that the required plan is still ass
 
 **Audit log Details**:
   
-```Licensing Error Message
+```
+Licensing Error Message
 
 License assignment failed because service plan [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx] depends on
 the service plan(s) [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx], [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx]. 
@@ -123,12 +127,11 @@ To solve this problem, remove users from unsupported locations from the licensed
 **PowerShell:** PowerShell cmdlets report this error as ProhibitedInUsageLocationViolation.
 
 >[!NOTE]
-> - When Microsoft Entra ID assigns group licenses, any users without a specified usage location inherit the location of the directory. Microsoft recommends that administrators set the correct usage location values on users before using group-based licensing to comply with local laws and regulations. - The attributes of First name, Last name, Other email address, and User type aren't mandatory for license assignment.
+> When Microsoft Entra ID assigns group licenses, any users without a specified usage location inherit the location of the directory. Microsoft recommends that administrators set the correct usage location values on users before using group-based licensing to comply with local laws and regulations. - The attributes of First name, Last name, Other email address, and User type aren't mandatory for license assignment.
 
 ## Duplicate proxy addresses
 
 **Problem**: If you use Exchange Online, some users in your organization might be incorrectly configured with the same proxy address value. When group-based licensing tries to assign a license to such a user, it fails and shows “Proxy address is already being used”.
-
 
 
 >[!TIP] 
