@@ -86,7 +86,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	c. After getting the URI-encoded value combine it with the **Reply URL** as mentioned below-
 
-	`https://perception.kanjoya.com/sso?idp=<URI encooded entity_id>`
+	`https://perception.kanjoya.com/sso?idp=<URI encoded entity_id>`
 	
 	d. Paste the above value in the **Reply URL** textbox.
 

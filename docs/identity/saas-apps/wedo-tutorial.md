@@ -98,7 +98,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	| ------------ | --------- |
 	| email | user.email |
 	| firstName | user.firstName |
-    | lastName | user.lasttName |
+    | lastName | user.lastName |
 	| userName | user.userName |
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.

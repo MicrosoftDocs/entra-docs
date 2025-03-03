@@ -121,7 +121,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |addresses[type eq "work"].postalCode|String||
    |addresses[type eq "work"].country|String||
    |phoneNumbers[type eq "mobile"].value|String||
-   |pphoneNumbers[type eq "fax"].value|String||
+   |phoneNumbers[type eq "fax"].value|String||
    |phoneNumbers[type eq "work"].value|String||
    |externalId|String||
 
