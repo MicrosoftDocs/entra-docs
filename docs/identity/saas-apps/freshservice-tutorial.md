@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/03/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Freshservice so that I can control who has access to Freshservice, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -133,18 +133,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Freshservice SSO
 
-
-
-
 1. In a different web browser window, sign in to your Freshservice company site as an administrator
 
 1. In the menu on the left, click **Admin** and select **Helpdesk Security** in the **General Settings**.
 
-    ![Admin](./media/freshservice-tutorial/configure-1.png "Admin")
-
 1. In the **Security**, click on **Go to  Freshservice 360 Security**.
-
-    ![Security](./media/freshservice-tutorial/configure-2.png "Security")
 
 1. In the **Security** section, perform the following steps:
 
