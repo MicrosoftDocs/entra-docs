@@ -102,22 +102,6 @@ License assignment failed because service plan [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx] 
 the service plan(s) [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx], [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx].
 ``` 
 
-## Missing dependent service plans
-
-**Problem**: One of the products specified in the group contains a service plan that must be enabled for another service plan, in another product, to function. This error occurs when Microsoft Entra ID attempts to remove the underlying service plan. For example, this problem can happen when you remove the user from the group.
-To solve this problem, you need to make sure that the required plan is still assigned to users through some other method or that the dependent services are disabled for those users. After doing that, you can properly remove the group license from those users.
-
-**PowerShell**: PowerShell cmdlets report this error as DependencyViolation.
-
-**Audit log Details**:
-  
-```
-Licensing Error Message
-
-License assignment failed because service plan [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx] depends on
-the service plan(s) [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx], [xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx]. 
-```
-
 ## Usage location not specified
 
 **Problem:** Some Microsoft services aren't available in all locations because of local laws and regulations. Before you can assign a license to a user, you must specify the Usage location property for the user. You can specify the location under the User > Profile > Edit section in the portal.
