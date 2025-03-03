@@ -221,7 +221,7 @@ internal class Program
         {
             // TODO: perform operations with the blobs
             BlobClient blobClient = containerClient.GetBlobClient(blob.Name);
-            Console.WriteLine($"Blob name: {blobClent.Name}, uri: {blobClient.Uri}");            
+            Console.WriteLine($"Blob name: {blobClient.Name}, uri: {blobClient.Uri}");            
         }
     }
 }
