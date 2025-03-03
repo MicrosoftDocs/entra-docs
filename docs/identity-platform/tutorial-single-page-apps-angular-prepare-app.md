@@ -26,7 +26,7 @@ In this tutorial:
 ## Prerequisites
 
 * Completion of the prerequisites and steps in [Tutorial: Register an application](tutorial-single-page-apps-angular-register-app.md).
-* [Install Agular CLI](https://v17.angular.io/cli#installing-angular-cli)
+* [Install Angular CLI](https://v17.angular.io/cli#installing-angular-cli)
 * [Install Node.js](https://nodejs.org/en/download/).
 * [Visual Studio Code](https://code.visualstudio.com/)
 
