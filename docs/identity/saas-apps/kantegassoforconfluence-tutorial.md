@@ -138,7 +138,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Under **ATLASSIAN MARKETPLACE** tab, click **Find new add-ons**.
 
-	![Screenshot that shows the "ATTLASSIAN MARKETPLACE" tab with "Find new add-ons" selected.](./media/kantegassoforconfluence-tutorial/admin.png)
+	![Screenshot that shows the "ATLASSIAN MARKETPLACE" tab with "Find new add-ons" selected.](./media/kantegassoforconfluence-tutorial/admin.png)
 
 1. Search **Kantega SSO for Confluence SAML Kerberos** and click **Install** button to install the new SAML plugin.
 

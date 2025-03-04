@@ -141,7 +141,7 @@ In this section, you enable Microsoft Entra single sign-on in the Azure portal a
 
     e. As **SAML Identity Type**, select **Assertion contains the Federation ID from the User object**.
 
-    f. As **SAML Identity Location**, select **Identity is in the NameIdentfier element of the Subject statement**.
+    f. As **SAML Identity Location**, select **Identity is in the NameIdentifier element of the Subject statement**.
 
     g. In **Identity Provider Login URL** textbox, paste the value of **SAML Single Sign-On Service URL**.
 
