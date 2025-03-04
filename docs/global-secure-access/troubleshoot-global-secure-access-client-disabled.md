@@ -3,10 +3,10 @@ title: "Troubleshoot the Global Secure Access Client: Disabled by Your Organizat
 description: Troubleshoot the Global Secure Access client using the health check tab in the advanced diagnostics utility.
 ms.service: global-secure-access
 ms.topic: troubleshooting
-ms.date: 02/24/2025
+ms.date: 03/03/2025
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: amycolannino
+manager: femila
 ms.reviewer: lirazbarak
 
 
@@ -39,21 +39,16 @@ To view the Global Secure Access traffic profile configuration:
 
 1. Check if a conditional access policy is blocking the user. Network blocks can arise from conditional access settings, an unmanaged or noncompliant device, or unfulfilled terms of use (ToU) policies. 
 > [!NOTE]
-> The Global Secure Access client uses non-interactive, silent authorization. 
+> To get the policy, the Global Secure Access client uses a non-interactive, silent authentication. 
 
-4. Check if the user has no Primary Refresh Token (NO PRT).
+1. If the traffic forwarding profile is assigned to specific users and groups, ensure that the user who is signed in to Windows is either assigned to the profile or is a direct member of a group assigned to the profile.   
+:::image type="content" source="media/troubleshoot-global-secure-access-client-disabled/user-group-assignments.png" alt-text="Screenshot of the User and group assignments screen.":::
 
-1. Check if **Assign to all users** is set to `NO` on the enabled forwarding profiles.
-
-1. Check if the user (or part of the assigned group) is assigned directly. Run the command `Dsregcmd /status` on the client device and validate the **AzureAdPrt** value is `Yes`. 
-
-1. Check if **Direct assignment** is configured on the enabled forwarding profiles, but the user logged into the device isn't assigned (or isn't part of the assigned group). 
 > [!NOTE]
-> Traffic profiles are fetched on behalf of the Microsoft Entra user logged into the device, not the user logged into the client. Multiple users logging into the same device simultaneously isn't supported. Nested group memberships aren't supported. Each user must be a direct member of the group assigned to the profile. 
+> Traffic profiles are fetched on behalf of the Microsoft Entra user logged into Windows, not the user logged into the client. Multiple users logging into the same device simultaneously isn't supported. Nested group memberships aren't supported. Each user must be a direct member of the group assigned to the profile. 
 
-8. Check if the user is assigned all necessary Global Secure Access licenses: navigate to **Global Secure Access** > **Licensing**.
-
-1. Check if there's a network communication issue when the Global Secure Access client attempts to communicate with the policy endpoint.  
+8. Ensure the Global Secure Access client can reach the policy service in the cloud by checking that the **Policy service hostname resolved by DNS** and the **Policy server is reachable** health check tests pass.
+:::image type="content" source="media/troubleshoot-global-secure-access-client-disabled/hostname-resolved.png" alt-text="Screenshot of the Advanced diagnotics Health check tab, with Policy service hostname resolved and Policy server is reachable tests highlighted.":::  
 
 ## Related content
 - [How to assign users and groups to traffic forwarding profiles](how-to-manage-users-groups-assignment.md)   
