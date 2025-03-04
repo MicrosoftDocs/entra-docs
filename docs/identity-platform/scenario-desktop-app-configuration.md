@@ -15,6 +15,8 @@ ms.topic: how-to
 
 # Desktop app that calls web APIs: Code configuration
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 Now that you've created your application, you'll learn how to configure the code with the application's coordinates.
 
 ## Microsoft libraries supporting desktop apps
