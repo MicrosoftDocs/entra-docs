@@ -82,7 +82,7 @@ Identity DNA is Quorum’s purpose built platform designed to complement and enh
 
 The Identity DNA platform is designed to handle complex integration scenarios while allowing customers to enhance end to end identity flow, achieving a better user experience and addressing key business and technical challenges.
 
-The Identity DNA platform is able to connect to any application through a number of pre defined connections (REST API, SOAP API, Database, PowerShell or CSV) to data sources either in the cloud or on-premises. 
+The Identity DNA platform is able to connect to any application through a number of pre defined connections (REST API, SOAP API, Database, PowerShell, or CSV) to data sources either in the cloud or on-premises. 
 
 Identity DNA then converts that data to a System for Cross-domain Identity Management (SCIM) payload and delivers that to the Entra provisioning service. The Identity DNA platform allows for data between applications to be synced bidirectionally ensuring disparate systems identities are kept up to date with ease.
 
@@ -91,7 +91,7 @@ Identity DNA then converts that data to a System for Cross-domain Identity Manag
 * AppSource Listing: Entra User ID Provisioning https://appsource.microsoft.com/en-us/marketplace/consulting-services/quorumsystemsptyltd1587621343059.entrauseridprovisioning
 
 #### Popular applications supported
-Identity DNA can be integrated with any line of business application that has REST or SOAP API's, Databases, PowerShell scripts or even other directory services such as LDAP.
+Identity DNA can be integrated with any line of business application that has REST or SOAP API's, Databases, PowerShell scripts, or even other directory services such as LDAP.
 
 ### Traxion SCIM Gateway
 #### Description
