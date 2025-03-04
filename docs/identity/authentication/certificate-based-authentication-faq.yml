@@ -6,7 +6,7 @@ metadata:
   ms.subservice: authentication
   ms.custom: no-azure-ad-ps-ref
   ms.topic: faq
-  ms.date: 02/18/2025
+  ms.date: 03/04/2025
   ms.author: justinha
   author: justinha
   manager: amycolannino
@@ -36,8 +36,8 @@ sections:
         answer: |        
           1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator).
           2. Browse to **Protection** > **Authentication methods** > **Policies**.
-          3. Select policy: **Certificate-based Authentication**.
-          4. On the **Enable and Target** tab, select the **Enable** toggle to enable certificate-based authentication.
+          3. Select the **Certificate-based Authentication** policy.
+          4. On the **Enable and Target** tab, select **Enable**.
 
       - question: |
           Is Microsoft Entra CBA a free feature?
@@ -167,9 +167,10 @@ sections:
           This is commonly seen when a firewall rule setting blocks access to the CRL endpoint. 
 
       - question: |
-           Can Microsoft Entra CBA be used on SurfaceHub?
+           Can Microsoft Entra CBA be used on Surface Hub?
         answer: |
-           Yes. This works out of the box for most smart card / smart card reader combinations. If the smart card / smart card reader combination requires additional drivers these must be installed before using the smart card / smart card reader combination on the surface hub.
+           Yes. CBA works out-of-the-box for most smart card and smart card reader combinations. 
+           If the smart card and smart card reader combination requires other drivers, they must be installed before you can using the smart card and smart card reader combination on the Surface Hub.
       
 additionalContent: |
   ## Next steps
