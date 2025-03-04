@@ -85,8 +85,12 @@ This policy covers all users and requires MFA and reauthentication when we detec
 
 This policy targets Microsoft Entra ID P2 tenants where security defaults aren't enabled.
 
-- If P2 licenses equal or exceed total MFA-registered active users, the policy covers All Users. 
-- If MFA-registered active users exceed P2 licenses, we create and assign the policy to a capped security group based on available P2 licenses. You can modify membership of the policy’s security group. 
+- If P2 licenses equal or exceed total MFA-registered active users, the policy covers All Users.
+    - All Users could include break glass accounts, so you might want to exclude them.
+- If MFA-registered active users exceed P2 licenses, we create and assign the policy to a security group that is capped to available P2 licenses.
+    - You can modify membership of this security group.
+    - Users with a directly assigned P2 license are added to this group.
+    - If there are still licenses available at this point, enabled, member accounts that had activity in the last 60 days, and have at least one MFA method registered are added to this group.
 
 To prevent attackers from taking over accounts, Microsoft doesn't allow risky users to register for MFA.
 
