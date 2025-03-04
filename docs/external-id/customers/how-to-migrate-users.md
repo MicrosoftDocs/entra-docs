@@ -13,7 +13,7 @@ ms.author: godonnell
 
 # Migrating users to Microsoft Entra External ID
 
-In this article, you'll learn how to migrate users and credentials from another identity provider, including Azure AD B2C, to Microsoft Entra External ID. This guide will cover two migration methods: pre-migration and seamless migration. With either approach, you'll need to write an application or script that uses the [Microsoft Graph API](https://learn.microsoft.com/en-us/graph/api/resources/identity-network-access-overview) to create user accounts in Azure AD B2C.
+In this article, you'll learn how to migrate users and credentials from another identity provider, including Azure AD B2C, to Microsoft Entra External ID. This guide will cover two migration methods: pre-migration and seamless migration. With either approach, you'll need to write an application or script that uses the [Microsoft Graph API](/graph/api/resources/identity-network-access-overview) to create user accounts in Azure AD B2C.
 
 ## Pre-requisites
 
