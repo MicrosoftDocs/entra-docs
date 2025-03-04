@@ -28,7 +28,7 @@ Use the pre migration flow in any of these situations:
 - The credentials are encrypted, but you can decrypt them. 
 - You do not have access to the user’s plaintext credentials, and will force users to reset their password on next logon. 
 
-For information about programmatically creating user accounts, see [Manage Consumer user accounts with Microsoft Graph](/graph/api/user-post-users?view=graph-rest-1.0&tabs=http#example-2-create-a-user-with-social-and-local-account-identities-in-azure-ad-b2c).   
+For information about programmatically creating user accounts, see [Manage Consumer user accounts with Microsoft Graph](/graph/api/user-post-users?view=graph-rest-1.0&tabs=http#example-2-create-a-user-with-social-and-local-account-identities-in-azure-ad-b2c&preserve-view=true).   
 
 When following this approach to migrate from Azure AD B2C to Microsoft Entra External ID, users will be required to reset their passwords on first log-on to an application that is protected by External ID.
 
