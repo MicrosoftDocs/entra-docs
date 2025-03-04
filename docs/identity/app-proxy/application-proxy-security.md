@@ -23,7 +23,7 @@ The following diagram shows how Microsoft Entra ID enables secure remote access 
 
 Microsoft Entra application proxy offers many security benefits. The list of benefits are:
 - Authenticated access
-- Conditional access
+- Conditional Access
 - Traffic termination
 - All outbound access
 - Cloud scale analytics and machine learning

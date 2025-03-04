@@ -108,7 +108,7 @@ You're the IT admin at a bustling tech company, Contoso, and often face the chal
 Some of your key requirements include, 
 
  - Diverse guest onboarding needs with different departments requiring unique levels of access. 
- - Ensuring that guest users have the least privilege necessary to perform their tasks is critical and needs robust conditional access policies and multifactor authentication to protect sensitive data. 
+ - Ensuring that guest users have the least privilege necessary to perform their tasks is critical and needs robust Conditional Access policies and multifactor authentication to protect sensitive data. 
  - A seamless and user friendly onboarding process for both you as an IT admin, and your external users. External users should be able to quickly and easily access the resources they require without unnecessary delays. 
  - Integration with existing collaboration tools like Microsoft Teams and SharePoint, along with the option for Self-Service Sign-Up (SSSU) 
  - Capability to govern guest by regularly monitoring guest user activity, set an expiration on access and periodic access reviews ensure that guest access remains appropriate over time. For more information, see [Govern the employee and guest lifecycle with Microsoft Entra ID Governance](govern-the-employee-lifecycle.md) and [Discover the current state of external collaboration in your organization](../../architecture/2-secure-access-current-state.md)
