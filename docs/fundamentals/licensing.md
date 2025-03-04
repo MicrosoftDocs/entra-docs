@@ -47,7 +47,7 @@ This article discusses licensing options for the Microsoft Entra product family.
 
 ## Microsoft Entra Conditional Access
 
-[!INCLUDE [Microsoft Entra Conditional access](../includes/licensing-conditional-access.md)]
+[!INCLUDE [Microsoft Entra Conditional Access](../includes/licensing-conditional-access.md)]
 
 ## Microsoft Entra Domain services
 

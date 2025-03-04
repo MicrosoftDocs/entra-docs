@@ -376,7 +376,7 @@ To test:
 :::image type="content" source="media/how-to-create-remote-network-vwan/access-blocked-troubleshooting-details-without-highlight.png" alt-text="Screenshot of the 'Access is blocked' message.":::
 
 ### Test source IP restoration
-Before testing, enable conditional access.
+Before testing, enable Conditional Access.
 1. In Microsoft Entra admin center, navigate to **Global Secure Access** > **Settings** > **Session management**.
 1. Select the **Adaptive Access** tab.
 1. Set the **Enable Global Secure Access signaling in Conditional Access** toggle to on.

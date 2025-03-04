@@ -3,11 +3,11 @@ title: Preparing for Microsoft Entra provisioning to Active Directory Lightweigh
 description: This document describes how to configure Microsoft Entra ID to provision users into Active Directory Lightweight Directory Services as an example of an LDAP directory.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 12/13/2024
+ms.date: 03/04/2025
 ms.author: billmath
 ms.reviewer: arvinh
 ---
