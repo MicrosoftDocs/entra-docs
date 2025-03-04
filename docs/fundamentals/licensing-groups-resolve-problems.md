@@ -68,9 +68,9 @@ The following sections give a description of each potential problem and ways to 
 
 To see how many licenses are available, go to the **Entra Admin Portal** > **Billing** > **Licenses** > **All products**.
 
-To see which users and groups are consuming licenses, navigate to the **M365 Admin portal** under **Billing** > **Licenses** and select a product. Under **Users**, you see a list of all users who have licenses assigned directly or via one or more groups. Under **Groups**, you see all groups that have that product assigned.
-
 :::image type="content" source="./media/licensing-groups-resolve-problems/license-count.png" alt-text="Screenshot of available licenses.":::
+
+To see which users and groups are consuming licenses, navigate to the **M365 Admin portal** under **Billing** > **Licenses** and select a product. Under **Users**, you see a list of all users who have licenses assigned directly or via one or more groups. Under **Groups**, you see all groups that have that product assigned.
 
 > [!NOTE] 
 > If the license is in a disabled state, you can't manage that license in the Microsoft 365 Admin Portal. If you need to manage a disabled license, you need to use Microsoft Graph.
@@ -166,7 +166,7 @@ If a problem occurs during license assignment, the process may not complete. For
 
 ## When a licensed group is deleted
 
-**Problem**: You must remove all licenses assigned to a group before you can delete the group. However, removing licenses from all the users in the group may take time. While removing license assignments from a group, there can be failures if user has a dependent license assigned or if there's a proxy address conflict issue that prevents the license removal. If a user has a license that is dependent on a license which is being removed due to group deletion, all licenses assigned by the deleted group enter an error state on the affected user and it can't be removed until the dependency is resolved.
+**Problem**: You must remove all licenses assigned to a group before you can delete the group. However, removing licenses from all the users in the group may take time. When an administrator removes license assignments from a group, there can be failures if user has a dependent license assigned or if there's a proxy address conflict issue that prevents the license removal. If a user has a license assigned dependent on a license being removed due to group deletion, all licenses assigned by the deleted group enter an error state on the affected user and it can't be removed until the dependency is resolved.
 Once the dependency is resolved, you need to reprocess the user licensing using Graph for PowerShell.
 
 ## Manage licenses for products with prerequisites
