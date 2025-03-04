@@ -15,7 +15,7 @@ ms.reviewer: sumitp
 ms.custom: it-pro
 ---
 
-# Identify and resolve license assignment problems for a group in Microsoft Entra ID
+# Identify and resolve license assignment problems for a group in the Microsoft 365 Admin Portal
 
 [!INCLUDE [licensing updates](~/includes/licensing-change.md)]
 
@@ -38,13 +38,13 @@ When you're using group-based licensing, these errors happen in the background w
 
 ### To find Users in an error state within a group
 
-1. Sign in to the [Microsoft 365 Admin Portal](https://entra.microsoft.com) as at least a [License Administrator](~/identity/role-based-access-control/permissions-reference.md#license-administrator).
+1. Sign in to the [Microsoft 365 Admin Portal](http://admin.microsoft.com) as at least a [License Administrator](~/identity/role-based-access-control/permissions-reference.md#license-administrator).
 1. Browse to **Billing** > **Licenses** to open a page where you can see and manage all license products in the organization.
-1. Select the affected license and navigate to the group selection option to view the status of each group assigned to the selected license. 
+1. Select the affected license and to view the status of each group assigned to the selected license navigate to the group selection option. 
 
    :::image type="content" source="./media/licensing-groups-resolve-problems/licenses.png" alt-text="Screenshot of group and error notifications messages.":::
 
-1. A notification appears if there are any users of the group in an error state. The status of license assignment for each group would be one of the following: 
+1. A notification appears if there are any users of the group in an error state. The status of license assignment for each group would be one of the following values: 
     - **All licenses Assigned** – no issues 
     - **In progress** – pending assignment of licenses to users 
     - **Errors and issues** – need to investigate 
@@ -73,7 +73,7 @@ To see which users and groups are consuming licenses, navigate to the **M365 Adm
 :::image type="content" source="./media/licensing-groups-resolve-problems/license-count.png" alt-text="Screenshot of available licenses.":::
 
 > [!NOTE] 
-> If the license is in a disabled state, you won't be able to manage that license within the Microsoft 365 Admin Portal. If you need to manage a license which has been disabled, you'll need to use Microsoft Graph.
+> If the license is in a disabled state, you can't manage that license in the Microsoft 365 Admin Portal. If you need to manage a disabled license, you need to use Microsoft Graph.
 
 ## Conflicting service plans
 
@@ -129,15 +129,15 @@ For more information about this problem, see [Proxy address is already being use
 
 ## Other
 
-**Other** errors are generally indicative of error for another license assigned by the same group.   
+**Other** errors are typically the result of an error with another license assigned by the same group.   
 
 :::image type="content" source="./media/licensing-groups-resolve-problems/other.png" alt-text="Screenshot of **other** type errors.":::
  
-To identify the other licensing assigned to the affected user from the same group you can review the user licenses from the Microsoft Entra Admin Portal. 
+To identify the other licensing assigned to the affected user from the same group, you can review the user licenses from the Microsoft Entra Admin Portal. 
  
 In the **Entra Admin Portal**, navigate to **Users – All Users** – locate the affected user and then review their **Licenses**. 
  
-You can review the Audit logs for the user to locate more information about the error as long as the error was presented within the last 30 days in most cases (depending on the number of days Audit logs available in the tenant, some may have only seven days) 
+You can review the user's audit logs for more information about the error as long as the error occurred in the last 30 days in most cases (depending on the number of days Audit logs available in the tenant, some may have only seven days) 
  
 Audit log License Assignment Error Records can be identified using the following details: 
  
@@ -153,7 +153,7 @@ Audit log License Assignment Error Records can be identified using the following
 
 **Problem:** Depending on what steps you took to resolve the errors, it might be necessary to manually trigger the processing of a user to update the users state. 
 
-For example, after you resolve a dependency violation error for an affected user, you need to trigger the reprocessing of the user. To reprocess a user, navigate back to the **M365 Admin Portal > Billing > Licenses**.  Select the license and navigate to the group where the affected user(s) shows in error, select the user(s) and then select the **Reprocess** button on the toolbar. 
+For example, after you resolve a dependency violation error for an affected user, you need to trigger the reprocessing of the user. To reprocess a user, navigate back to the **M365 Admin Portal > Billing > Licenses**.  Select the license and navigate to the group where one or more affected users show in error, select the user(s) and then select the **Reprocess** button on the toolbar. 
 
 Alternately, you can use Graph for PowerShell [Invoke-MgLicenseUser](/powershell/module/microsoft.graph.users.actions/invoke-mglicenseuser) to reprocess users.
 
@@ -166,8 +166,8 @@ If a problem occurs during license assignment, the process may not complete. For
 
 ## When a licensed group is deleted
 
-**Problem**: You must remove all licenses assigned to a group before you can delete the group. However, removing licenses from all the users in the group may take time. While removing license assignments from a group, there can be failures if user has a dependent license assigned or if there's a proxy address conflict issue that prevents the license removal. If a user has a license that is dependent on a license which is being removed due to group deletion, all licenses assigned by the deleted group will enter an error state on the affected user and will not be able to be removed until the dependency is resolved.
-Once the dependency is resolved you will need to reprocess the user licensing using Graph for PowerShell.
+**Problem**: You must remove all licenses assigned to a group before you can delete the group. However, removing licenses from all the users in the group may take time. While removing license assignments from a group, there can be failures if user has a dependent license assigned or if there's a proxy address conflict issue that prevents the license removal. If a user has a license that is dependent on a license which is being removed due to group deletion, all licenses assigned by the deleted group enter an error state on the affected user and it can't be removed until the dependency is resolved.
+Once the dependency is resolved, you need to reprocess the user licensing using Graph for PowerShell.
 
 ## Manage licenses for products with prerequisites
 
