@@ -2,11 +2,11 @@
 title: Plan deploying Microsoft Entra for user provisioning with SAP source and target apps
 description: Learn how to bring identities from SAP SuccessFactors and other sources into Microsoft Entra ID and give them access to SAP ECC, SAP S/4HANA, and other apps.
 author: markwahl-msft
-manager: amycolannino
+manager: femila
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.topic: how-to
-ms.date: 04/30/2024
+ms.date: 03/04/2025
 ms.author: mwahl
 ms.reviewer: mwahl
 ---
