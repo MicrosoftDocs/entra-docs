@@ -488,7 +488,7 @@ Users need to [download Teams](https://aka.ms/teamsmobiledownload). The followin
 
 Mobile OS | Release date | Teams version 
 ----------|--------------|--------------
-iOS and iPadOS | July 21, 2024 | 6.13.1 (100772024132501)	
+iOS and iPadOS | July 21, 2024 | 6.13.1 (1.0.0.77.2024132501)	
 Android | August 08, 2024 | 1416/1.0.0.2024143204 (2024143204)	
 
 Users can follow these steps to sign in with a QR code in Teams:
