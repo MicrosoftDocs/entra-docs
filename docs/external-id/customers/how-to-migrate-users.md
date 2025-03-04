@@ -17,7 +17,7 @@ In this article, you'll learn how to migrate users and credentials from another 
 
 ## Pre-requisites
 
-Before you start migrating users to Microsoft Entra External ID, ensure you have the following:
+Before you start migrating users to External ID, ensure you have the following:
 
 - An external tenant. To create one, choose from the following methods:
   - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
@@ -28,7 +28,7 @@ Before you start migrating users to Microsoft Entra External ID, ensure you have
 In the pre migration flow, your migration application performs these steps for each user account: 
 
 1. Read the user account from the old identity provider, including its current credentials (username and password). 
-1. Create a corresponding account in your Microsoft Entra External ID directory with the current credentials. 
+1. Create a corresponding account in your External ID directory with the current credentials. 
 
 Use the pre migration flow in any of these situations: 
 
@@ -38,9 +38,9 @@ Use the pre migration flow in any of these situations:
 
 For information about programmatically creating user accounts, see [Manage Consumer user accounts with Microsoft Graph](/graph/api/user-post-users?view=graph-rest-1.0&tabs=http#example-2-create-a-user-with-social-and-local-account-identities-in-azure-ad-b2c&preserve-view=true).   
 
-When following this approach to migrate from Azure AD B2C to Microsoft Entra External ID, users will be required to reset their passwords on first log-on to an application that is protected by Microsoft Entra External ID.
+When following this approach to migrate from Azure AD B2C to External ID, users will be required to reset their passwords on first log-on to an application that is protected by External ID.
 
-You may consider using Microsoft Entra External ID's password-less capabilities which would allow users to continue using applications without having to reset their password.  
+You may consider using External ID's password-less capabilities which would allow users to continue using applications without having to reset their password.  
 
 When migrating users from Azure AD B2C, you can register the verified email address as a multifactor authentication method by adding the email authentication method to the user object. This can be added to the user object through the Microsoft Graph API [create emailMethod](/graph/api/resources/emailauthenticationmethod) operation.  
 
@@ -58,7 +58,7 @@ In phase 1 of the seamless migration flow, your migration application performs t
 
 1. Read the user accounts from the old identity provider, including Azure AD B2C. 
 
-1. Create the corresponding user accounts in your Microsoft Entra External ID directory, with random passwords that you generate. 
+1. Create the corresponding user accounts in your External ID directory, with random passwords that you generate. 
 
 1. Add an extension attribute to the user account which flags the account for migration. 
 
@@ -66,21 +66,21 @@ In phase 1 of the seamless migration flow, your migration application performs t
 
 In phase 2 of the seamless migration flow, your migration application performs these steps for each user account:
 
-1. Read the Microsoft Entra External ID user account corresponding to the email address entered, and continue if the user requires migration. 
+1. Read the External ID user account corresponding to the email address entered, and continue if the user requires migration. 
 
 1. If the legacy IdP determines the password is incorrect, return a friendly error to the user. 
 
-1. If the legacy IdP determines the password is correct, use the REST API to write the password to the Microsoft Entra External ID account and change the extension attribute to False. 
+1. If the legacy IdP determines the password is correct, use the REST API to write the password to the External ID account and change the extension attribute to False. 
 
-Credential migration happens over two stages. Legacy credentials are harvested and stored in Microsoft Entra External ID during Stage 1. After a sufficient number of users have logged in during Stage 1, applications can be migrated to authenticate directly with Microsoft Entra External ID, and the majority of users can continue to use their existing credentials. Users who do not login during Stage 1, would require to reset their password after moving to Stage 2.
+Credential migration happens over two stages. Legacy credentials are harvested and stored in External ID during Stage 1. After a sufficient number of users have logged in during Stage 1, applications can be migrated to authenticate directly with External ID, and the majority of users can continue to use their existing credentials. Users who do not login during Stage 1, would require to reset their password after moving to Stage 2.
 
 The below diagrams illustrates the high level design:
 
-Stage 1 – Harvest credentials from the legacy identity provider and update corresponding accounts in Microsoft Entra External ID.
+Stage 1 – Harvest credentials from the legacy identity provider and update corresponding accounts in External ID.
 
 :::image type="content" source="media/how-to-migrate-users/pre-migration-stage1.png" alt-text="A diagram showing the high level design for stage 1 of credential migration.":::
 
-Stage 2 – Stop harvesting credentials and migrate applications to authenticate with Microsoft Entra External ID. Decommission the legacy identity provider.
+Stage 2 – Stop harvesting credentials and migrate applications to authenticate with External ID. Decommission the legacy identity provider.
 
 :::image type="content" source="media/how-to-migrate-users/pre-migration-stage1.png" alt-text="A diagram showing the high level design for stage 2 of credential migration.":::
 
@@ -94,15 +94,15 @@ You must protect your REST API against brute-force attacks. An attacker can subm
 
 ## User attributes
 
-Not all information in the legacy identity provider should be migrated to your Microsoft Entra External ID directory. Identify the appropriate set of user attributes to store in Microsoft Entra External ID before migrating.
+Not all information in the legacy identity provider should be migrated to your External ID directory. Identify the appropriate set of user attributes to store in External ID before migrating.
 
-**DO** store in Microsoft Entra External ID:
+**DO** store in External ID:
 
 - Username, password, email addresses, phone numbers, membership numbers/identifiers.
 
 - Consent markers for privacy policy and end-user license agreements.
 
-**DO NOT** store in Microsoft Entra External ID:
+**DO NOT** store in External ID:
 
 - Sensitive data like credit card numbers, social security numbers (SSN), medical records, or other data regulated by government or industry compliance bodies.
 
@@ -112,17 +112,17 @@ Not all information in the legacy identity provider should be migrated to your M
 
 Before you start the migration process, take the opportunity to clean up your directory.
 
-- Identify the set of user attributes to be stored in Microsoft Entra External ID, and migrate only what you need. If necessary, you can create custom attributes to store more data about a user.
+- Identify the set of user attributes to be stored in External ID, and migrate only what you need. If necessary, you can create custom attributes to store more data about a user.
 
-- If you're migrating from an environment with multiple authentication sources (for example, each application has its own user directory), migrate to a unified account in Microsoft Entra External ID.
+- If you're migrating from an environment with multiple authentication sources (for example, each application has its own user directory), migrate to a unified account in External ID.
 
-- If multiple applications have different usernames, you can store all of them in an Microsoft Entra External ID user account by using the identities collection. About the password, let the user choose one and set it in the directory. For example, with the seamless migration, only the chosen password should be stored in the Microsoft Entra External ID account.
+- If multiple applications have different usernames, you can store all of them in an External ID user account by using the identities collection. About the password, let the user choose one and set it in the directory. For example, with the seamless migration, only the chosen password should be stored in the External ID account.
 
 - Remove unused user accounts, or don't migrate stale accounts.
 
 ## Password policy
 
-If the accounts you're migrating have weaker password strength than the [strong password strength](/azure/active-directory/authentication/concept-sspr-policy) enforced by Microsoft Entra External ID, you can disable the strong password requirement. For more information, see [Password policy property](/azure/active-directory-b2c/user-profile-attributes#password-policy-attribute).
+If the accounts you're migrating have weaker password strength than the [strong password strength](/azure/active-directory/authentication/concept-sspr-policy) enforced by External ID, you can disable the strong password requirement. For more information, see [Password policy property](/azure/active-directory-b2c/user-profile-attributes#password-policy-attribute).
 
 ## Related content
 
