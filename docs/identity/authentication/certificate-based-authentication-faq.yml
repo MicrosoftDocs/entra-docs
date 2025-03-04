@@ -6,7 +6,7 @@ metadata:
   ms.subservice: authentication
   ms.custom: no-azure-ad-ps-ref
   ms.topic: faq
-  ms.date: 02/17/2025
+  ms.date: 02/18/2025
   ms.author: justinha
   author: justinha
   manager: amycolannino
@@ -83,10 +83,11 @@ sections:
           This PowerShell cmdlet will review the Microsoft Entra tenant certificate authority configuration and surface errors/warnings for common mis-configuration issues. 
           
       - question: |
-          Can I turn certificate revocation checking on or off for a particular CA?
+          How can I turn certificate revocation checking on or off for a particular CA?
         answer: |
           We highly recommend against disabling certificate revocation list (CRL) checking as you won't be able to revoke certificates. 
-          However, if you need to investigate issues with CRL checking, you can update a trusted CA and set the crlDistributionPoint attribute to "".
+          However, if you need to investigate issues with CRL checking, you can exempt a CA from CRL checking in the Microsoft Entra admin center. 
+          In the CBA Authentication methods policy, click **Configure** and then click **Add exemption**. Choose the CA that you want to exempt, and click **Add**. 
           
       - question: |
           Is there a limit for CRL size?
