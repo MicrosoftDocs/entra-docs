@@ -62,7 +62,7 @@ The following Microsoft Entra ID admin roles have access to Global Secure Access
 | User and group assignments | ✅ |  |  |  | ✅ |  |  |
 | Configure remote networks | ✅ | ✅ | ✅ |  |  |  |  |
 | Security profiles | ✅ | ✅ | ✅ |  |  |  |  |
-| View traffic logs and alerts | ✅ | ✅ | ✅ |  |  |  |✅ |
+| View traffic logs and alerts | ✅ | ✅ | ✅ |  |  |  |  | ✅ |
 | View all other logs | ✅ | ✅ | ✅ |  |  | ✅ | ✅ | ✅ |
 | Configure universal tenant restrictions and Global Secure Access signaling for Conditional Access | ✅ | ✅ | ✅ |  |  |  |  |
 | Configure enriched Microsoft 365 logs | ✅ |  |  |  |  |  |  |
