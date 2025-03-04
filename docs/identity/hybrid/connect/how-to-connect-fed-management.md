@@ -279,7 +279,7 @@ With this rule, you're simply checking the temporary flag `idflag`. You decide w
 
 ### SSO with a subdomain UPN
 
-You can add more than one domain to be federated by using Microsoft Entra Connect, as described in [Add a new federated domain](#addadfsserver). Microsoft Entra Connect versions 1.1.553.0 and later create the correct claim rule for `issuerID` automatically. If you can't use Microsoft Entra Connect version 1.1.553.0 or later, we recommend that you use the [Microsoft Entra RPT Claim Rules](https://aka.ms/aadrptclaimrules) tool to generate and set correct claim rules for the Microsoft Entra ID relying party trust.
+You can add more than one domain to be federated by using Microsoft Entra Connect, as described in [Add a new federated domain](#addadfsserver). Microsoft Entra Connect versions 1.1.553.0 and later create the correct claim rule for `issuerID` automatically.
 
 ## Next steps
 
