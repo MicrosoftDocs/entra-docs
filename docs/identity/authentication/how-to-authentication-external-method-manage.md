@@ -117,7 +117,7 @@ If the user has no other methods enabled, they can just choose the EAM. They're 
 In the preview, all users in an include group for the EAM are considered MFA capable and can use the external authentication method for satisfying MFA.  Users that are MFA-capable due to being an include target for an EAM are not included in reports on authentication method registration.
 
 >[!NOTE]
->We're actively working on adding registration capability for EAMs.  Once registration is added, users that were previously using an EAM will need to have the EAM registered with Entra ID before they will be prompted to use the it to satisfy MFA.
+>We're actively working on adding registration capability for EAMs.  Once registration is added, users that were previously using an EAM will need to have the EAM registered with Entra ID before they will be prompted to use it to satisfy MFA.
 
 ## Using EAM and Conditional Access custom controls in parallel
 
