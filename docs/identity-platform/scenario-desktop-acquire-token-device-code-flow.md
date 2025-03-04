@@ -14,6 +14,8 @@ ms.topic: how-to
 
 # Desktop app that calls web APIs: Acquire a token using Device Code flow 
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 If you're writing a command-line tool that doesn't have web controls, and you can't or don't want to use the previous flows, use the device code flow.
 
 ## Device code flow
