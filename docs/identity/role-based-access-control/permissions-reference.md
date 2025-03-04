@@ -1493,7 +1493,6 @@ Assign the Global Secure Access Log Reader role to users who need to do the foll
 - Read network traffic logs in Microsoft Entra Internet Access and Microsoft Entra Private Access for analysis by designated security personnel
 - View log details such as session, connection, and transaction
 - Filter logs based on criteria such as IP address and domain
-- Use APIs to read logs such as aggregations
 
 [Learn more](../../global-secure-access/reference-role-based-permissions.md)
 
