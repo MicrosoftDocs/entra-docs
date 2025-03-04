@@ -61,7 +61,7 @@ For Android, add to your app's build.gradle to add Wallet Library as a dependenc
 
 ```kotlin
 dependencies {
-    implementation 'com.microsoft.entra.verifiedid:walletlibrary:1.0.1'
+    implementation 'com.microsoft.entra.verifiedid:walletlibrary:1.0.0'
 }
 ```
 
