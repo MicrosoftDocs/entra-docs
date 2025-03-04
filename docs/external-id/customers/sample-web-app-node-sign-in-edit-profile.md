@@ -69,11 +69,11 @@ You've assigned the **EditProfileService.ReadWrite* permissions correctly. Howev
 
 1. Select **Refresh**, then verify that **Granted for \<your tenant name\>** appears under **Status** for both scopes.
 
-## Create CA MFA policy
+## Create Conditional Access MFA policy
 
 Your EditProfileService app that you registered earlier is the resource that you protect with MFA. 
 
-To create an MFA CA policy, use the steps in [Add multifactor authentication to an app](how-to-multifactor-authentication-customers.md). Use the following settings when you create your policy:
+To create an MFA Conditional Access policy, use the steps in [Add multifactor authentication to an app](how-to-multifactor-authentication-customers.md). Use the following settings when you create your policy:
 - For the **Name**, use *MFA policy*.
 - For the Target resources, select the EditProfileService app that you registered earlier, such as *edit-profile-service*.
 

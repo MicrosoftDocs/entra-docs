@@ -92,7 +92,7 @@ The **MFA Usage** dashboard gives you a summary of monthly MFA authentication pe
 
 To better understand MFA performance, we have added new metrics to the MFA Usage dashboard. These metrics provide actionable insights into SMS-based MFA usage.
 
-- **Conditional Access (CA) policies requiring MFA**: This metric helps you identify which CA policies require MFA, allowing you to pinpoint any security gaps.
+- **Conditional Access policies requiring MFA**: This metric helps you identify which Conditional Access policies require MFA, allowing you to pinpoint any security gaps.
 - **Number of users registered for MFA**: This metric tracks how many users are registered for MFA and which methods they use. This information helps you evaluate the level of MFA adoption.
 
 We have added several new metrics to help you detect potential telecom fraud. Microsoft Entra External ID uses CAPTCHA for SMS MFA to help to prevent automated attacks by distinguishing human users from bots. If a risky user is detected, we block the user from signing in or ask the user to complete a CAPTCHA before sending an SMS verification code. To help you visualize the effectiveness of this method, we have added the following metrics to the dashboard:
