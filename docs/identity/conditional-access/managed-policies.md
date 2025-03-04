@@ -29,9 +29,9 @@ As part this work we're making Microsoft-managed policies available in Microsoft
 
 Administrators with at least the [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator) role assigned find these policies in the [Microsoft Entra admin center](https://entra.microsoft.com) under **Protection** > **Conditional Access** > **Policies**.
 
-Administrators can edit the state of a policy and what identities the policy should exclude. We recommend excluding your [break-glass or emergency access accounts](../role-based-access-control/security-emergency-access.md) from managed policies just like other Conditional Access policies. Consider duplicating these policies if you need to make more changes than what's allowed in the Microsoft-managed policies.
+You can edit the state of a policy and what identities the policy should exclude. We recommend excluding your [break-glass or emergency access accounts](../role-based-access-control/security-emergency-access.md) from managed policies just like other Conditional Access policies. Consider duplicating these policies if you need to make more changes than what's allowed in the Microsoft-managed policies.
 
-Microsoft enables these policies after no less than 90 days after they're introduced in your tenant if they're left in the **Report-only** state. Administrators can turn these policies on sooner, or opt out by setting the policy state to **Off**. Customers are notified via emails and [Message center](/microsoft-365/admin/manage/message-center) posts 28 days before the policies are enabled. 
+Microsoft enables these policies after no less than 90 days after they're introduced in your tenant if they're left in the **Report-only** state. You can turn these policies on sooner, or opt out by setting the policy state to **Off**. Customers are notified via emails and [Message center](/microsoft-365/admin/manage/message-center) posts 28 days before the policies are enabled. 
 
 > [!NOTE]
 > In some cases, policies might be enabled faster than 90 days. If this change is applicable to your tenant:
@@ -146,13 +146,13 @@ This policy covers all users in your organization and requires them to use multi
 
 ## Monitor and review
 
-The managed policy and the sign-in logs are the two places where administrators can see the impact of these policies on their organization.
+The managed policy and the sign-in logs are the two places where you can see the effect of these policies on your organization.
 
 Review the **Policy impact on sign-ins** section of the managed policy to see a summary of the effect of the policy in your environment.
 
-:::image type="content" source="media/managed-policies/microsoft-managed-policy-impact-on-sign-in.png" alt-text="Screenshot showing the impact of a policy on the organization.":::
+:::image type="content" source="media/managed-policies/microsoft-managed-policy-impact-on-sign-in.png" alt-text="Screenshot showing the effect of a policy on the organization.":::
 
-Analyze the **Microsoft Entra sign-in logs** to see specific details about how the policies effect real sign-in activity.
+Analyze the **Microsoft Entra sign-in logs** to see specific details about how the policies affect real sign-in activity.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
