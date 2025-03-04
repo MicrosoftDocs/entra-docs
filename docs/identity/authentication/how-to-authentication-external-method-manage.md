@@ -104,9 +104,6 @@ To manage the Authentication methods policy by using Microsoft Graph, you need t
 
 Users who are enabled for the EAM can use it when they sign-in and multifactor authentication is required. 
 
->[!NOTE]
->We're actively working to support system-preferred MFA with EAMs.
-
 If the user has other ways to sign in and [system-preferred MFA](/entra/identity/authentication/concept-system-preferred-multifactor-authentication) is enabled, those other methods appear by default order. The user can choose to use a different method, and then select the EAM. For example, if the user has Authenticator enabled as another method, they get prompted for [number matching](/entra/identity/authentication/how-to-mfa-number-match).
 
 :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/system-preferred.png" alt-text="Screenshot of how to choose an EAM when system-preferred MFA is enabled.":::
