@@ -3,11 +3,13 @@ title: Rotate signing keys
 description: Learn how to rotate Microsoft Entra Verified ID signing keys.
 documentationCenter: ''
 author: barclayn
-manager: femila
+manager: amycolannino
 ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 01/31/2025
 ms.author: barclayn
+
+#Customer intent: As an administrator, I'm looking for information on how to rotate signing keys.
 ---
 
 # Rotate signing keys

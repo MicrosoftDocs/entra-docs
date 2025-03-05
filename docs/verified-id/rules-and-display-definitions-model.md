@@ -3,11 +3,13 @@ title: Rules and Display Definition Reference
 description: Rules and Display Definition Reference
 documentationCenter: ''
 author: barclayn
-manager: femila
+manager: amycolannino
 ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 01/31/2025
 ms.author: barclayn
+
+#Customer intent: As an administrator, I am looking for information to help me disable 
 ---
 
 # Rules and Display Definition Reference

@@ -3,11 +3,13 @@ title: How to add did:web:path support
 description: Learn how to enable support for did:web:path
 documentationCenter: ''
 author: barclayn
-manager: femila
+manager: amycolannino
 ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 01/21/2025
 ms.author: barclayn
+
+#Customer intent: As an administrator, I'm looking for information to help me add support for did:web:path.
 ---
 
 # Enable support for did:web:path

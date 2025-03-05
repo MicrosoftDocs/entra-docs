@@ -1,9 +1,9 @@
 ---
-title: Plan your Microsoft Entra Verified ID verification solution
+title: Plan your Microsoft Entra Verified ID verification solution 
 description: Learn foundational information to plan and design your verification solution.
 documentationCenter: ''
 author: barclayn
-manager: femila
+manager: martinco
 ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 12/16/2024

@@ -1,13 +1,13 @@
 ---
-title: Configure Verified ID by IDEMIA as your identity verification partner
-description: This article shows you the steps you need to follow to configure IDEMIA
-  as your identity verification partner
+title: Configure Verified ID by IDEMIA as your identity verification partner 
+description: This article shows you the steps you need to follow to configure IDEMIA as your identity verification partner
 author: barclayn
-manager: femila
+manager: amycolannino
 ms.service: entra-verified-id
 ms.topic: how-to
 ms.date: 12/17/2024
 ms.author: barclayn
+# Customer intent: As a developer, I'm looking for information about the open standards that are supported by Microsoft Entra Verified ID.
 ---
 
 # Configure Verified ID by IDEMIA as your identity verification partner

@@ -4,11 +4,13 @@ titleSuffix: Microsoft Entra Verified ID
 description: Learn how to start a presentation request in Verifiable Credentials
 documentationCenter: ''
 author: barclayn
-manager: femila
+manager: amycolannino
 ms.service: entra-verified-id
 ms.topic: reference
 ms.date: 01/30/2025
 ms.author: barclayn
+
+#Customer intent: As an administrator, I am trying to learn how to use the Request Service API and integrate it into my business application.
 ---
 
 # Request Service REST API presentation specification
