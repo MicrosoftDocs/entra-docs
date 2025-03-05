@@ -83,13 +83,26 @@
           href: how-applications-are-added.md
         - name: Single-tenant and multitenant apps
           href: single-and-multi-tenant-apps.md
-    - name: Custom Authentication Extensions
-      displayName: Custom Authentication Extensions
+    
+    - name: Customization and extensibility
       items:
-        - name: Overview
-          href: custom-extension-overview.md
-        - name: Custom claims provider
-          href: custom-claims-provider-overview.md
+      - name: Custom Authentication Extensions
+        displayName: Custom Authentication Extensions
+        items:
+          - name: Overview
+            href: custom-extension-overview.md
+          - name: Custom claims provider
+            href: custom-claims-provider-overview.md
+      - name: Native authentication
+        items:
+          - name: Native authentication
+            href: concept-native-authentication.md
+          - name: Native authentication challenge types
+            href: concept-native-authentication-challenge-types.md
+          - name: Native authentication web fallback
+            href: concept-native-authentication-web-fallback.md
+          - name: Native authentication user attribute builder
+            href: concept-native-authentication-user-attribute-builder.md
     - name: Security
       displayName: least privilege, secure app configuration, Conditional Access
       items:
@@ -117,6 +130,8 @@
               href: claims-validation.md
         - name: Zero Trust
           href: zero-trust-for-developers.md
+        - name: Best practices to protect frontline workers
+          href: security-best-practices-for-frontline-workers.md
     - name: Identity platform best practices
       href: identity-platform-integration-checklist.md
 - name: Single-page app (SPA)
@@ -125,87 +140,116 @@
       href: index-spa.yml
     - name: Quickstart
       items: 
-        - name: React
-          href: quickstart-single-page-app-react-sign-in.md
-        - name: Angular
-          href: quickstart-single-page-app-angular-sign-in.md
-        - name: JavaScript
-          href: quickstart-single-page-app-javascript-sign-in.md
-        - name: Blazor WebAssembly
-          href: quickstart-single-page-app-blazor-wasm-sign-in.md
+          - name: Browser-delegated authentication
+            items:
+            - name: Sign in users
+              href: quickstart-single-page-app-sign-in.md?pivots=workforce
+          - name: Native authentication
+            items:
+              - name: Sign in users
+                href: quickstart-native-authentication-single-page-app-react-sign-in.md?pivots=workforce
     - name: Tutorials
       items:
+        - name: JavaScript
+          items:
+            - name: Prepare your app
+              href: tutorial-single-page-app-javascript-prepare-app.md
+            - name: Add sign in and sign out
+              href: tutorial-single-page-app-javascript-configure-authentication.md
+            - name: Sign in users
+              href: tutorial-single-page-app-javascript-sign-in-sign-out.md
         - name: React
           items:
-          - name: Register your app
-            href: tutorial-single-page-app-react-register-app.md
-          - name: Prepare your app
-            href: tutorial-single-page-app-react-prepare-spa.md
-          - name: Sign in users
-            href: tutorial-single-page-app-react-sign-in-users.md
-          - name: Get user data from web API
-            href: tutorial-single-page-app-react-call-api.md
+            - name: Browser-delegated authentication
+              items:
+              - name: Prepare your app
+                href: tutorial-single-page-app-react-prepare-app.md
+              - name: Add sign in and sign out
+                href: tutorial-single-page-app-react-configure-authentication.md
+              - name: Sign in users
+                href: tutorial-single-page-app-react-sign-in-sign-out.md
+            - name: Native authentication
+              items:
+                - name: Sign up
+                  href: tutorial-native-authentication-single-page-app-react-sign-up.md
+                - name: Set up local CORS
+                  href: tutorial-native-authentication-single-page-app-react-set-up-local-cors.md
+                - name: Sign in
+                  href: tutorial-native-authentication-single-page-app-react-sign-in.md
+                - name: Reset password
+                  href: tutorial-native-authentication-single-page-app-react-reset-password.md
         - name: Angular
-          href: tutorial-v2-angular-auth-code.md
+          items:
+          - name: Prepare your app
+            href: tutorial-single-page-apps-angular-prepare-app.md
+          - name: Sign in users
+            href: tutorial-single-page-apps-angular-sign-in-users-app.md
+          - name: Extract user data and test app
+            href: tutorial-single-page-apps-angular-extract-user-data.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#single-page-applications
     - name: How-to
       items:
-        - name: SPA that signs in users and calls web API
+        - name: Browser-delegated authentication
           items:
-            - name: App registration
-              href: scenario-spa-app-registration.md
-            - name: Code configuration
-              href: scenario-spa-app-configuration.md
-            - name: Sign in and sign out
-              href: scenario-spa-sign-in.md
-            - name: Acquire token for an API
-              href: scenario-spa-acquire-token.md
-            - name: Call a web API
-              href: scenario-spa-call-api.md
+            - name: SPA that signs in users and calls web API
+              items:
+                - name: App registration
+                  href: scenario-spa-app-registration.md
+                - name: Code configuration
+                  href: scenario-spa-app-configuration.md
+                - name: Sign in and sign out
+                  href: scenario-spa-sign-in.md
+                - name: Acquire token for an API
+                  href: scenario-spa-acquire-token.md
+                - name: Call a web API
+                  href: scenario-spa-call-api.md
+        - name: Native authentication
+          items:
+            - name: Set up CORS in test environment
+              href: how-to-native-authentication-cors-solution-test-environment.md
+            - name: Set up CORS in production
+              href: how-to-native-authentication-cors-solution-production-environment.md
 - name: Web app
   items:
     - name: Web app authentication
       href: index-web-app.yml
-    - name: Quickstart
-      items: 
-        - name: ASP.NET 
-          href: quickstart-web-app-aspnet-sign-in.md
-        - name: ASP.NET Core
-          href: quickstart-web-app-dotnet-core-sign-in.md
-        - name: Node.js
-          href: quickstart-web-app-nodejs-msal-sign-in.md
-        - name: Java
-          href: quickstart-web-app-java-sign-in.md
-        - name: Python Flask
-          href: quickstart-web-app-python-flask.md
+    - name: Quickstarts
+      items:
+        - name: Sign in users
+          href: quickstart-web-app-sign-in.md?pivots=workforce
+          displayName: Node, ASP.NET,  ASP.NET Core, Python
+        - name: Call an API
+          href: quickstart-web-app-node-sign-in-call-api.md
+          displayName: Node.js, Nodejs, Nodejs web app
+        - name: Edit profile
+          href: quickstart-web-app-node-sign-in-edit-profile.md
+          displayName: Node.js, Nodejs, Nodejs web app
     - name: Tutorials
       items:
         - name: ASP.NET Core
           items:
-          - name: Register your app
-            href: tutorial-web-app-dotnet-register-app.md
           - name: Prepare your app
-            href: tutorial-web-app-dotnet-prepare-app.md
-          - name: Sign in users
-            href: tutorial-web-app-dotnet-sign-in-users.md
-          - name: Get user data from web API
-            href: tutorial-web-app-dotnet-call-api.md
+            href: tutorial-web-app-dotnet-prepare-app.md?tabs=workforce-tenant
+          - name: Add authentication elements
+            href: tutorial-web-app-dotnet-sign-in-users.md?tabs=workforce-tenant
+          - name: Test your app
+            href: tutorial-web-app-dotnet-call-api.md?tabs=workforce-tenant
         - name: Python Flask
           items:
-          - name: Register your app
-            href: tutorial-web-app-python-register-app.md
-          - name: Prepare your app
-            href: tutorial-web-app-python-prepare-app.md
-          - name: Sign in users
-            href: tutorial-web-app-python-sign-in-users.md
-          - name: Get user data from web API
-            href: tutorial-web-app-python-call-api.md
-        - name: Node.js
-          href: tutorial-v2-nodejs-webapp-msal.md
-        - name: Java Spring
-          href: /azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-active-directory?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json
+          - name: Add sign-in and sign-out
+            href: tutorial-web-app-python-flask-sign-in-out.md
+          - name: Call Microsoft Graph API
+            href: tutorial-web-app-python-flask-call-microsoft-graph-api.md
+        - name: Node/Express.js
+          items:
+            - name: Set up Nodejs app
+              href: tutorial-web-app-node-sign-in-prepare-app.md?pivots=workforce
+            - name: Add sign in and sign out
+              href: tutorial-web-app-node-sign-in-sign-out.md?pivots=workforce
+            - name: Call Microsoft Graph API
+              href: tutorial-web-app-node-call-microsoft-graph-api.md?tabs=workforce-tenant
         - name: Secure web app accesses storage and Microsoft Graph
           items:
             - name: Overview
@@ -253,20 +297,16 @@
       href: index-web-api.yml
     - name: Quickstart
       items:
-        - name: ASP.NET
-          href: quickstart-web-api-aspnet-protect-api.md
-        - name: ASP.NET Core
-          href: quickstart-web-api-aspnet-core-protect-api.md
+        - name: Sign in users
+          href: quickstart-web-api-aspnet-sign-in.md
     - name: Tutorials
       items:
         - name: ASP.NET Core
           items: 
-          - name: Register the API
-            href: tutorial-web-api-dotnet-register-app.md
-          - name: Create and configure project 
-            href: tutorial-web-api-dotnet-prepare-app.md
-          - name: Protect API endpoint
-            href: tutorial-web-api-dotnet-protect-endpoint.md
+          - name: Create a web API and protect its endpoints
+            href: tutorial-web-api-dotnet-core-build-app.md
+          - name: Test a protected web API
+            href: tutorial-web-api-dotnet-core-test-protected-api.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#web-api
@@ -298,20 +338,12 @@
   items:
     - name: Desktop app authentication
       href: index-desktop.yml
-    - name: Quickstart
-      items:
-        - name: Node.js Electron
-          href: quickstart-desktop-app-nodejs-electron-sign-in.md
-        - name: Universal Windows Platform (UWP)
-          href: quickstart-desktop-app-uwp-sign-in.md
-        - name: Windows Presentation Foundation (WPF)
-          href: quickstart-desktop-app-wpf-sign-in.md
+    - name: Quickstarts
+      href: quickstart-desktop-app-sign-in.md?pivots=workforce
     - name: Tutorials
       items:
         - name: Node.js Electron
           href: tutorial-v2-nodejs-desktop.md
-        - name: Universal Windows Platform (UWP)
-          href: tutorial-v2-windows-uwp.md
         - name: Windows Presentation Foundation (WPF)
           href: tutorial-v2-windows-desktop.md
     - name: Samples
@@ -345,18 +377,93 @@
       href: index-mobile.yml
     - name: Quickstart
       items: 
-        - name: Android
-          href: quickstart-mobile-app-android-sign-in.md
-        - name: iOS and macOS
-          href: quickstart-mobile-app-ios-sign-in.md
+        - name: Browser-delegated authentication
+          items: 
+            - name: Sign in users
+              href: quickstart-mobile-app-sign-in.md?pivots=workforce
+            - name: Call a web API
+              href: quickstart-mobile-app-call-api.md
+        - name: Native authentication
+          items:
+            - name: Android (Kotlin)
+              items:
+                - name: Sign in users
+                  href: quickstart-native-authentication-android-sign-in.md
+                - name: Sign in users and call an API
+                  href: quickstart-native-authentication-android-call-api.md
+            - name: macOS (Swift)
+              items:
+                - name: Sign in users
+                  href: quickstart-native-authentication-macos-sign-in.md
+            - name: iOS (Swift)
+              items:
+                - name: Sign in users
+                  href: quickstart-native-authentication-ios-sign-in.md
+                - name: Sign in users and call an API
+                  href: quickstart-native-authentication-ios-call-api.md
     - name: Tutorials
       items:
         - name: Android
-          href: tutorial-v2-android.md
-        - name: Android - Shared-device mode
-          href: tutorial-v2-shared-device-mode.md
+          items:
+            - name: Browser-delegated authentication
+              items:
+                - name: Prepare your app
+                  href: tutorial-mobile-app-android-prepare-app.md?tabs=workforce-tenant
+                - name: Add sign in and sign out
+                  href: tutorial-mobile-app-android-sign-in-sign-out.md?tabs=workforce-tenant
+                - name: Call web API
+                  href: tutorial-mobile-app-android-call-web-api.md?tabs=workforce-tenant
+            - name: Native authentication
+              items:
+                - name: Prepare Android app
+                  href: tutorial-native-authentication-prepare-android-app.md
+                - name: Sign up
+                  href: tutorial-native-authentication-android-sign-up.md
+                  displayName: email OTP, email one-time passcode, email and password
+                - name: Sign in and sign out
+                  href: tutorial-native-authentication-android-sign-in-sign-out.md
+                  displayName: email OTP, email one-time passcode, email and password
+                - name: Auto-sign in after sign-up
+                  href: tutorial-native-authentication-android-sign-in-after-sign-up.md
+                - name: Self-service password reset
+                  href: tutorial-native-authentication-android-self-service-password-reset.md
+                - name: Support web fallback
+                  href: tutorial-native-authentication-android-support-web-fallback.md
+                - name: Call an API
+                  href: tutorial-native-authentication-android-sign-in-call-api.md
+                  displayName: multiple access token
+            - name: Enable Shared Device Mode in your app using MSAL
+              href: tutorial-v2-shared-device-mode.md
+            - name: Set up an Android device in Shared Device Mode
+              href: tutorial-mobile-android-device-shared-mode.md
         - name: iOS and macOS
-          href: tutorial-v2-ios.md
+          items:
+            - name: Browser-delegated authentication
+              items:
+                - name: Prepare tenant
+                  href: tutorial-mobile-app-ios-swift-prepare-tenant.md?pivots=workforce-tenant
+                - name: Prepare app
+                  href: tutorial-mobile-app-ios-swift-prepare-app.md?pivots=workforce-tenant
+                - name: Sign in users
+                  href: tutorial-mobile-app-ios-swift-sign-in.md?pivots=workforce-tenant
+                - name: Call an API
+                  href: tutorial-mobile-app-ios-swift-sign-in-call-api.md?pivots=workforce-tenant
+            - name: Native authentication
+              items:
+                - name: Prepare iOS/macOS app
+                  href: tutorial-native-authentication-prepare-ios-macos-app.md
+                - name: Sign up
+                  href: tutorial-native-authentication-ios-macos-sign-up.md
+                - name: Sign in and sign out
+                  href: tutorial-native-authentication-ios-macos-sign-in-sign-out.md
+                - name: Auto-sign in after sign-up
+                  href: tutorial-native-authentication-ios-macos-sign-in-user-after-sign-up.md
+                - name: Self-service password reset
+                  href: tutorial-native-authentication-ios-macos-self-service-password-reset.md
+                - name: Support web fallback
+                  href: tutorial-native-authentication-ios-macos-support-web-fallback.md
+                - name: Call an API
+                  href: tutorial-native-authentication-ios-sign-in-call-api.md
     - name: Samples
       displayName: code samples, example code, code snippets
       href: sample-v2-code.md#mobile
@@ -376,12 +483,16 @@
                       href: msal-net-system-browser-android-considerations.md
                     - name: Shared device mode for Android devices
                       href: msal-android-shared-devices.md
+                    - name: QR code authentication
+                      href: android-qr-code-pin-authentication.md
                 - name: iOS
                   items:
                     - name: Microsoft Enterprise SSO plug-in for Apple devices
                       href: apple-sso-plugin.md
                     - name: Shared device mode for iOS devices
                       href: msal-ios-shared-devices.md
+                    - name: QR code authentication
+                      href: ios-qr-code-pin-authentication.md
             - name: Acquire token
               href: scenario-mobile-acquire-token.md
             - name: Acquire token with broker
@@ -393,20 +504,12 @@
   items:
     - name: Service/daemon authentication
       href: index-service.yml
-    - name: Quickstart
-      items:
-        - name: .NET
-          href: quickstart-daemon-dotnet-acquire-token.md
-        - name: Java
-          href: quickstart-daemon-app-java-acquire-token.md
-        - name: Node.js
-          href: quickstart-console-app-nodejs-acquire-token.md
-        - name: Python
-          href: quickstart-daemon-app-python-acquire-token.md
+    - name: Quickstarts
+      href: quickstart-daemon-app-call-api.md?pivots=workforce
     - name: Tutorials
       items:
-        - name: .NET
-          href: tutorial-v2-aspnet-daemon-web-app.md
+        - name: .NET acquire token and call API
+          href: tutorial-dotnet-daemon-call-api.md
         - name: Node.js
           href: tutorial-v2-nodejs-console.md
     - name: Samples
@@ -423,6 +526,10 @@
               href: scenario-daemon-acquire-token.md
             - name: Call a web API
               href: scenario-daemon-call-api.md
+- name: Command-line interface (CLI) app
+  items:
+    - name: Quickstarts 
+      href: quickstart-cli-app-node-sign-in-users.md?pivots=workforce
 - name: Scenarios
   items:
     - name: Build
@@ -481,7 +588,7 @@
               href: configure-token-lifetimes.yml    
             - name: Configure app multi-instancing
               href: configure-app-multi-instancing.md
-        - name: Custom claims provider
+        - name: Custom authentication extensions
           items:
             - name: Token issuance start event
               items:
@@ -491,12 +598,20 @@
                   href: custom-extension-tokenissuancestart-configuration.md
                 - name: Configure a SAML app to call a custom claims provider
                   href: custom-extension-configure-saml-app.md
-                - name: Troubleshoot your custom claims provider API
-                  href: custom-extension-troubleshoot.md
-        - name: Attribute collection custom extensions
-          items:
-            - name: Create attribute collection start and submit events
-              href: custom-extension-attribute-collection.md
+                - name: Custom claims provider reference
+                  href: custom-claims-provider-reference.md
+            - name: Attribute collection
+              items: 
+                - name: Create attribute collection start and submit events
+                  href: custom-extension-attribute-collection.md
+                - name: Attribute collection start custom extension reference
+                  href: custom-extension-OnAttributeCollectionStart-reference.md
+                - name: Attribute collection submit custom extension reference
+                  href: custom-extension-OnAttributeCollectionSubmit-reference.md
+            - name: Configure a custom email provider for one time code send events
+              href: custom-extension-email-otp-get-started.md
+            - name: Troubleshoot your custom authentication extension
+              href: custom-extension-troubleshoot.md
         - name: Handle browser cookie restrictions
           items:
             - name: How to handle third-party cookie blocking in browsers
@@ -709,6 +824,9 @@
           href: /entra/msal/python/
     - name: Protocol reference (OAuth, OIDC, SAML)
       items:
+        - name: OAuth 2.0 application types
+          displayName: App types, OAuth
+          href: v2-app-types.md
         - name: OAuth 2.0 and OpenID Connect (OIDC)
           items:
             - name: Token grant flows
@@ -729,9 +847,6 @@
                   href: v2-oauth-ropc.md
                 - name: OpenID Connect
                   href: v2-protocols-oidc.md
-            - name: OAuth 2.0 application types
-              displayName: App types, OAuth
-              href: v2-app-types.md
             - name: Certificate credentials
               href: certificate-credentials.md
             - name: Signing key rollover
@@ -773,6 +888,8 @@
           href: custom-extension-OnAttributeCollectionStart-reference.md
         - name: Attribute collection submit custom extension reference
           href: custom-extension-OnAttributeCollectionSubmit-reference.md
+    - name: Native authentication API reference
+      href: reference-native-authentication-api.md
     - name: Endpoint reference
       items: 
         - name: Admin consent URI
@@ -793,8 +910,6 @@
       href: reference-v2-libraries.md
     - name: AADSTS error code reference
       href: reference-error-codes.md
-    - name: Spring Cloud Azure
-      href: /azure/developer/java/spring-framework/developer-guide-overview?toc=/entra/identity-platform/toc.json&bc=/entra/identity-platform/breadcrumb/toc.json   
     - name: Configured permissions limits troubleshooting
       href: troubleshoot-required-resource-access-limits.md
 - name: Resources

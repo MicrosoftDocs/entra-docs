@@ -16,8 +16,10 @@
     href: scenarios/least-privileged.md 
   - name: Govern the employee and guest lifecycle
     items:
-    - name: Govern the employee and guest lifecycle
+    - name: Govern the employee lifecycle
       href: scenarios/govern-the-employee-lifecycle.md
+    - name: Plan new governance scenarios for business partners and external users
+      href: scenarios/govern-guest-lifecycle-new-project.md
     - name: Identity lifecycle management provisioning
       href: what-is-provisioning.md
       items: 
@@ -95,6 +97,8 @@
         href: identity-governance-applications-not-provisioned-users.md
       - name: Manage access to SAP applications
         href: sap.md
+      - name: Using Entra Private Access with Entitlement Management  
+        href: scenarios/entitlement-management-private-access.md    
   - name: Migrations
     items:
     - name: Transform your cloud posture
@@ -109,8 +113,6 @@
       items:
       - name: Migrate IAM scenarios to Microsoft Entra ID
         href: /microsoft-identity-manager/migrate-entra-id
-      - name: Migrate from the FIM connector
-        href: /microsoft-identity-manager/migrate-from-the-fim-connector-for-azure-active-directory
     - name: Migrate from SAP IDM
       items:
       - name: Migrate from SAP IDM
@@ -140,6 +142,7 @@
         href: entitlement-management-custom-teams-extension.md      
       - name: Customized entitlement reports in Azure Data Explorer
         href: custom-entitlement-report-with-adx-and-entra-id.md      
+ 
     - name: Access Reviews
       items:
       - name: Review access to Microsoft 365 groups - Microsoft Graph
@@ -268,6 +271,8 @@
         href: entitlement-management-access-package-requests.md
       - name: Reprocess requests
         href: entitlement-management-reprocess-access-package-requests.md
+      - name: Request on behalf of users (Preview)
+        href: entitlement-management-request-behalf.md  
       - name: View, add, and remove assignments
         href: entitlement-management-access-package-assignments.md
       - name: Convert users to governed
@@ -277,7 +282,9 @@
       - name: Hide or delete
         href: entitlement-management-access-package-edit.md
       - name: Assign Microsoft Entra Roles (Preview)
-        href: entitlement-management-roles.md  
+        href: entitlement-management-roles.md
+      - name: Suggested access packages in MyAccess (Preview)
+        href: entitlement-management-suggested-access-packages.md   
     - name: Approvers
       items:
       - name: Approve requests
@@ -379,6 +386,8 @@
     href: licensing-fundamentals.md
   - name: Services and integration partners
     href: services-and-integration-partners.md
+  - name: Best practices for securing ID Governance
+    href: best-practices-secure-id-governance.md 
   - name: Securing custom extension extensibility to Azure Logic Apps
     href: custom-extension-security.md  
   - name: Identity Governance - PowerShell

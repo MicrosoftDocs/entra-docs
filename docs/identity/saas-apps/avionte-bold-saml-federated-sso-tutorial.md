@@ -2,7 +2,7 @@
 title: Microsoft Entra SSO integration with Avionte Bold SAML Federated SSO
 description: Learn how to configure single sign-on between Microsoft Entra ID and Avionte Bold SAML Federated SSO.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
@@ -10,7 +10,7 @@ ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Avionte Bold SAML Federated SSO so that I can control who has access to Avionte Bold SAML Federated SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -106,6 +106,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Avionte Bold SAML Federated SSO tile in the My Apps, this will redirect to Avionte Bold SAML Federated SSO Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Avionte Bold SAML Federated SSO you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

@@ -20,7 +20,6 @@ ms.custom: enterprise-apps
 
 If you encounter a problem when configuring an application, verify you followed all the steps in the tutorial for the application. In the application’s configuration, you have inline documentation on how to configure the application. Also, you can access the [List of tutorials on how to integrate SaaS apps with Microsoft Entra ID](~/identity/saas-apps/tutorial-list.md) for a detail step-by-step guidance.
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ## Can’t add another instance of the application
 

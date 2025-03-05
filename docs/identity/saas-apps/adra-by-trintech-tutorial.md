@@ -1,24 +1,24 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Adra by Trintech'
+title: Microsoft Entra SSO integration with Adra by Trintech
 description: Learn how to configure single sign-on between Microsoft Entra ID and Adra by Trintech.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Adra by Trintech so that I can control who has access to Adra by Trintech, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Adra by Trintech
+# Microsoft Entra SSO integration with Adra by Trintech
 
-In this tutorial, you'll learn how to integrate Adra by Trintech with Microsoft Entra ID. When you integrate Adra by Trintech with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Adra by Trintech with Microsoft Entra ID. When you integrate Adra by Trintech with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Adra by Trintech.
 * Enable your users to be automatically signed-in to Adra by Trintech with their Microsoft Entra accounts.
@@ -35,7 +35,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Adra by Trintech supports **SP** and **IDP** initiated SSO.
 
@@ -100,7 +100,7 @@ Follow these steps to enable Microsoft Entra SSO.
       `https://login.adra.com/Saml/SLOServiceSP`
 
    > [!Note]
-	> You will get the **Service Provider metadata file** from the **Configure Adra by Trintech SSO** section, which is explained later in the tutorial. If the **Identifier** and **Reply URL** values do not get auto populated, then fill in the values manually according to your requirement.
+	> You will get the **Service Provider metadata file** from the **Configure Adra by Trintech SSO** section, which is explained later in the article. If the **Identifier** and **Reply URL** values do not get auto populated, then fill in the values manually according to your requirement.
 
 1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 
@@ -146,9 +146,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
    [ ![Screenshot that shows the Configuration Settings.](./media/adra-by-trintech-tutorial/settings.png "Configuration")](./media/adra-by-trintech-tutorial/settings.png#lightbox)
 
-1. Click on the **Add a new federated identity provider** button and perform the following steps:
-
-   [ ![Screenshot that shows the Organization Algorithm.](./media/adra-by-trintech-tutorial/certificate.png "Organization")](./media/adra-by-trintech-tutorial/certificate.png#lightbox)
+1. Click on the **Add a new federated identity provider** button and enter the details for the required fields accordingly.
 
    a. Enter a valid **Name** and **Description** values in the textbox.
 
@@ -176,6 +174,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the Adra by Trintech tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Adra by Trintech for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Adra by Trintech you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

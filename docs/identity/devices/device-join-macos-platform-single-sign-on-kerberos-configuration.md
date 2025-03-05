@@ -26,6 +26,7 @@ This tutorial shows you how to configure Platform SSO to support Kerberos-based 
 - [Microsoft Intune Company Portal](/mem/intune/apps/apps-company-portal-macos) version 5.2408.0 or later
 - A Mac device enrolled in mobile device management (MDM).
 - A configured SSO extension MDM payload with Platform SSO settings by an administrator, already deployed to the device. Refer to the [Platform SSO documentation](./macos-psso.md) or [Intune deployment guide](/mem/intune/configuration/platform-sso-macos) if Intune is your MDM.
+- Deploy Microsoft Entra Kerberos, which is required for some Kerberos capabilities in on-premises Active Directory. Refer to the [Cloud Kerberos trust deployment guide for Windows Hello for Business](/windows/security/identity-protection/hello-for-business/deploy/hybrid-cloud-kerberos-trust) for more details or refer directly to the [Cloud Kerberos trust configuration instructions](/entra/identity/authentication/howto-authentication-passwordless-security-key-on-premises#install-the-azureadhybridauthenticationmanagement-module) to begin the setup. If you have already deployed Windows Hello for Business with Cloud Kerberos trust or passwordless security key sign-in for Windows, then this step has already been completed.
 
 ## Set up your macOS device
 
@@ -61,7 +62,7 @@ You must configure a Kerberos SSO MDM profile. Use the following settings, ensur
                 <key>pwReqComplexity</key>
                 <true/>
                 <key>syncLocalPassword</key>
-                <true/>
+                <false/>
                 <key>usePlatformSSOTGT</key>
                 <true/>
                 <key>preferredKDCs</key>                         
@@ -170,6 +171,30 @@ Validate your configuration is working by testing with appropriate Kerberos-capa
 
 1. Test on-premises Active Directory functionality by accessing an on-premises AD-integrated file server using Finder or a web application using Safari. The user should be able to access the file share without being challenged for interactive credentials.
 2. Test Microsoft Entra ID Kerberos functionality by accessing an Azure Files share enabled for Microsoft Entra ID cloud kerberos. The user should be able to access the file share without being challenged for interactive credentials. Refer to [this guide](/azure/storage/files/storage-files-identity-auth-hybrid-identities-enable) if you need to configure a cloud file share in Azure Files.
+
+## Known Issues
+
+### Kerberos SSO extension menu extra
+
+When deploying support for Kerberos SSO with Platform SSO, the standard Kerberos SSO extension capabilities of macOS are still leveraged. Like with a deployment of the native [Kerberos SSO extension](https://support.apple.com/guide/deployment/kerberos-sso-extension-depe6a1cda64/web) without Platform SSO, the Kerberos SSO extension menu extra will appear in the macOS menu bar:
+
+:::image type="content" source="media/device-registration-macos-platform-single-sign-on/platform-sso-kerberos-menu-bar-applet.png" alt-text="Screenshot of the macOS Kerberos SSO extension menu extra.":::
+
+When deploying Kerberos support with Platform SSO, users do not need to interact with the Kerberos SSO extension menu extra to have Kerberos functionality work. Kerberos SSO functionality will still operate if the user does not sign into the menu bar extra and the menu bar extra reports "Not signed in". You may instruct users to ignore the menu bar extra when deploying with Platform SSO, per this article. Instead, make sure that you validate that kerberos functionality works as expected without interaction with the menu bar extra, as outlined in the [Testing Kerberos SSO](#testing-kerberos-sso) section of this article.
+
+### Browser Support for Kerberos SSO
+
+Some browsers require additional configuration to enable Kerberos SSO support, including if you are using Platform SSO to enable Kerberos on your macOS devices. When deploying Kerberos support on macOS, deploy the appropriate settings for each of the browsers you utilize to ensure they can interact with the macOS Kerberos SSO features:
+
+- Safari: supports Kerberos SSO by default
+- Microsoft Edge:
+    - Configure the **AuthNegotiateDelegateAllowlist** setting to include your on-premises Active Directory forest information: [AuthNegotiateDelegateAllowlist](/DeployEdge/microsoft-edge-policies#authnegotiatedelegateallowlist)
+    - Configure the **AuthServerAllowlist** setting to include your on-premises Active Directory forest information: [AuthServerAllowlist](/DeployEdge/microsoft-edge-policies#authserverallowlist)
+- Google Chrome
+    - Configure the **AuthNegotiateDelegateAllowlist** setting to include your on-premises Active Directory forest information: [AuthNegotiateDelegateAllowlist](https://chromeenterprise.google/policies/#AuthNegotiateDelegateAllowlist)
+    - Configure the **AuthServerAllowlist** setting to include your on-premises Active Directory forest information: [AuthServerAllowlist](https://chromeenterprise.google/policies/#AuthServerAllowlist)
+- Mozilla Firefox
+    - Configure the Mozilla Firefox **network.negotiate-auth.trusted-uris** and **network.automatic-ntlm-auth.trusted-uris** settings to enable Kerberos SSO support
 
 ## See also
 

@@ -1,21 +1,21 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with F5'
+title: Microsoft Entra single sign-on (SSO) integration with F5
 description: In this article, learn the steps you need to perform to integrate F5 with Microsoft Entra ID.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with F5
+# Microsoft Entra single sign-on (SSO) integration with F5
 
-In this tutorial, you'll learn how to integrate F5 with Microsoft Entra ID. When you integrate F5 with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate F5 with Microsoft Entra ID. When you integrate F5 with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to F5.
 * Enable your users to be automatically signed-in to F5 with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 F5 supports **SP and IDP** initiated SSO.
 
@@ -208,7 +208,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     ![Screenshot that shows the SSO/Auth Domains tab.](./media/advance-kerbf5-tutorial/configure13.png)
 
-    ![Screenshot that shows the Access Policy tab.](./media/advance-kerbf5-tutorial/configure14.png)
+    Select the **Access Policy** tab to view **General Properties** and **AAA Servers**. For **Visual Policy Editor**, select a policy for a profile to edit, in this example, **KerbApp200**.
 
     ![Screenshot that shows the Properties tab on the Access Policy.](./media/advance-kerbf5-tutorial/configure15.png)
 
@@ -218,11 +218,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     * session.ad.lastactualdomain  TEXT superdemo.live
 
-    ![Screenshot that shows the AD Query properties.](./media/advance-kerbf5-tutorial/configure17.png)
+      Edit the query properties to specify the server *superdemo.live* and **SearchFilter** value **(userPrincipalName=%{session.logon.last.usernameUPN})**.
 
     * (userPrincipalName=%{session.logon.last.usernameUPN})
 
-    ![Screenshot that shows the Branch Rules tab and the Check Account rule.](./media/advance-kerbf5-tutorial/configure18.png)
+      Select **Branch Rules** to add a branch rule and **Properties** to view properties.
 
     ![Screenshot that shows the custom variable and custom expression text boxes.](./media/advance-kerbf5-tutorial/configure19.png)
 
@@ -273,10 +273,10 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 * **Step 3: SPN Delegation ( for the App Service Account)**
 
-    * Setup the appropriate Delegation for the F5 Delegation Account.
+    * Set up the appropriate Delegation for the F5 Delegation Account.
     * In the example below, APM Delegation account is being configured for KCD for FRP-App1.superdemo.live app.
 
-        ![Screenshot that shows the APM Delegatio Account Properties > Delegation tab.](./media/advance-kerbf5-tutorial/configure25.png)
+        ![Screenshot that shows the APM Delegation Account Properties > Delegation tab.](./media/advance-kerbf5-tutorial/configure25.png)
 
 1. Provide the details as mentioned in the above reference document under [this](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-11-5-0/2.html)
 
@@ -336,7 +336,7 @@ When you click the F5 tile in the Access Panel, you should be automatically sign
 
 ## Additional resources
 
-- [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
@@ -350,6 +350,6 @@ When you click the F5 tile in the Access Panel, you should be automatically sign
 
 - [F5 BIG-IP APM and Microsoft Entra integration for secure hybrid access](~/identity/enterprise-apps/f5-integration.md)
 
-- [Tutorial to deploy F5 BIG-IP Virtual Edition VM in Azure IaaS for secure hybrid access](~/identity/enterprise-apps/f5-bigip-deployment-guide.md)
+- [Article to deploy F5 BIG-IP Virtual Edition VM in Azure IaaS for secure hybrid access](~/identity/enterprise-apps/f5-bigip-deployment-guide.md)
 
-- [Tutorial for Microsoft Entra single sign-on integration with F5 BIG-IP for Password-less VPN](~/identity/enterprise-apps/f5-passwordless-vpn.md)
+- [Article for Microsoft Entra single sign-on integration with F5 BIG-IP for Password-less VPN](~/identity/enterprise-apps/f5-passwordless-vpn.md)

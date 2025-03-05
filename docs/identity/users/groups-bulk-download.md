@@ -6,7 +6,7 @@ description: Download group properties in bulk in the Azure admin center in Micr
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
-ms.date: 07/01/2024
+ms.date: 12/19/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
@@ -20,7 +20,6 @@ You can download a list of all the groups in your organization to a comma-separa
 
 ## Download a list of groups
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 The columns downloaded are predefined.
 

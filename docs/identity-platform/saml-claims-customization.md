@@ -60,7 +60,6 @@ Transient `nameID` is also supported, but isn't available in the dropdown and ca
 
 ### Attributes
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Select the desired source for the `NameIdentifier` (or `nameID`) claim. You can select from the options in the following table.
 

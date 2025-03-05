@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: how-to
-ms.date: 05/31/2023
+ms.date: 12/10/2024
 ms.author: owinfrey
 ms.reviewer: krbain
 ---
@@ -17,7 +17,6 @@ Workflow scheduling will automatically process the workflow for users meeting th
 
 ## Check execution user scope of a workflow using the Microsoft Entra admin center
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 To check the users who fall under the execution scope of a workflow, you'd follow these steps:
 

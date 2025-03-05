@@ -5,7 +5,7 @@ description: Learn how to move your organization away from less secure authentic
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/05/2024
+ms.date: 01/07/2025
 
 ms.author: justinha
 author: mjsantani

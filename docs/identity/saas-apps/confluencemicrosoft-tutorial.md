@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Confluence SAML SSO by Microsoft'
+title: Microsoft Entra SSO integration with Confluence SAML SSO by Microsoft
 description: Learn how to configure single sign-on between Microsoft Entra ID and Confluence SAML SSO by Microsoft.
 
 author: dhivyagana
@@ -8,16 +8,16 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: dhivyag
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Confluence SAML SSO by Microsoft so that I can control who has access to Confluence SAML SSO by Microsoft, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Confluence SAML SSO by Microsoft
+# Microsoft Entra SSO integration with Confluence SAML SSO by Microsoft
 
-In this tutorial, you'll learn how to integrate Confluence SAML SSO by Microsoft with Microsoft Entra ID. When you integrate Confluence SAML SSO by Microsoft with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Confluence SAML SSO by Microsoft with Microsoft Entra ID. When you integrate Confluence SAML SSO by Microsoft with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Confluence SAML SSO by Microsoft.
 * Enable your users to be automatically signed-in to Confluence SAML SSO by Microsoft with their Microsoft Entra accounts.
@@ -42,7 +42,7 @@ To configure Microsoft Entra integration with Confluence SAML SSO by Microsoft, 
 - Test user created in the Confluence server application.
 
 > [!NOTE]
-> To test the steps in this tutorial, we do not recommend using a production environment of Confluence. Test the integration first in development or staging environment of the application and then use the production environment.
+> To test the steps in this article,  we do not recommend using a production environment of Confluence. Test the integration first in development or staging environment of the application and then use the production environment.
 
 > [!NOTE]
 > This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
@@ -54,7 +54,7 @@ To get started, you need the following items:
 * Confluence SAML SSO by Microsoft single sign-on (SSO) enabled subscription.
 
 > [!NOTE]
-> For the information on application proxy configuration for Confluence, please refer [this](confluence-app-proxy-tutorial.md) tutorial.
+> For the information on application proxy configuration for Confluence, please refer [this](confluence-app-proxy-tutorial.md) article.
 
 ## Supported versions of Confluence
 
@@ -62,14 +62,14 @@ As of now, following versions of Confluence are supported:
 
 - Confluence: 5.0 to 5.10
 - Confluence: 6.0.1 to 6.15.9
-- Confluence: 7.0.1 to 8.5.1
+- Confluence: 7.0.1 to 9.0.3
 
 > [!NOTE]
 > Please note that our Confluence Plugin also works on Ubuntu Version 16.04
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Confluence SAML SSO by Microsoft supports **SP** initiated SSO.
 
@@ -124,7 +124,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<DOMAIN:PORT>/plugins/servlet/saml/auth`
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier, Reply URL, and Sign-on URL. Port is optional in case it’s a named URL. These values are received during the configuration of Confluence plugin, which is explained later in the tutorial.
+    > These values are not real. Update these values with the actual Identifier, Reply URL, and Sign-on URL. Port is optional in case it’s a named URL. These values are received during the configuration of Confluence plugin, which is explained later in the article.
 
 1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 
@@ -189,14 +189,12 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Once the plugin is installed, it appears in **User Installed** add-ons section of **Manage Add-on** section. Click **Configure** to configure the new plugin.
 
-    ![Screenshot that shows the "User Installed" section with the "Configure" button highlighted.](./media/confluencemicrosoft-tutorial/add-on-15.png)
-
 1. Perform following steps on configuration page:
-
-    ![Screenshot that shows the single sign-on configuration page.](./media/confluencemicrosoft-tutorial/confluence-configure-addon.png)
 
     > [!TIP]
     > Ensure that there is only one certificate mapped against the app so that there is no error in resolving the metadata. If there are multiple certificates, admin gets an error upon resolving the metadata.
+
+    ![Screenshot that shows the single sign-on configuration page.](./media/confluencemicrosoft-tutorial/sso-plugin-configuration-page.png)
 
     1. In the **Metadata URL** textbox, paste **App Federation Metadata Url** value which you have copied and click the **Resolve** button. It reads the IdP metadata URL and populates all the fields information.
 
@@ -205,6 +203,10 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
     1. In **Login Button Name** type the name of button your organization wants the users to see on login screen.
 
     1. In **Login Button Description** type the description of button your organization wants the users to see on login screen.
+  
+    1. In **Default Group** Select your organization Default Group to assign to new users (Default groups facilitate organized access rights to new user account).
+  
+    1. In **Auto-create User** feature (JIT User Provisioning): It automates user account creation in authorized web applications, without the need for manual provisioning. This reduces administrative workload and increases productivity. Because JIT relies on the login response from Azure AD, enter the SAML-response attribute values, which include the user's email address, last name, and first name.
 
     1. In **SAML User ID Locations**, select either **User ID is in the NameIdentifier element of the Subject statement** or **User ID is in an Attribute element**.  This ID has to be the Confluence user ID. If the user ID is not matched, then system will not allow users to sign in. 
 
@@ -270,6 +272,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Confluence SAML SSO by Microsoft tile in the My Apps, this will redirect to Confluence SAML SSO by Microsoft Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Confluence SAML SSO by Microsoft you can enforce Session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.subservice: privileged-identity-management
 ms.topic: overview
-ms.date: 02/27/2024
+ms.date: 02/24/2025
 ms.author: barclayn
 ms.custom: pim
 
@@ -46,7 +46,7 @@ Microsoft Entra role-assignable group feature is not part of Microsoft Entra Pri
 
 ## Relationship between role-assignable groups and PIM for Groups
 
-Groups in Microsoft Entra ID can be classified as either role-assignable or non-role-assignable. Additionally, any group can be enabled or not enabled for use with Microsoft Entra Privileged Identity Management (PIM) for Groups. These are independent properties of the group. Any Microsoft Entra security group and any Microsoft 365 group (except dynamic groups and groups synchronized from on-premises environment) can be enabled in PIM for Groups. The group doesn't have to be role-assignable group to be enabled in PIM for Groups.
+Groups in Microsoft Entra ID can be classified as either role-assignable or non-role-assignable. Additionally, any group can be enabled or not enabled for use with Microsoft Entra Privileged Identity Management (PIM) for Groups. These are independent properties of the group. Any Microsoft Entra security group and any Microsoft 365 group (except dynamic membership groups and groups synchronized from on-premises environment) can be enabled in PIM for Groups. The group doesn't have to be role-assignable group to be enabled in PIM for Groups.
 
 If you want to assign a Microsoft Entra role to a group, it has to be role-assignable. Even if you don't intend to assign a Microsoft Entra role to the group but the group provides access to sensitive resources, it is still recommended to consider creating the group as role-assignable. This is because of extra protections role-assignable groups have – see [“What are Microsoft Entra role-assignable groups?”](#what-are-entra-id-role-assignable-groups) in the section above.
 
@@ -62,7 +62,9 @@ There are two ways to make a group of users eligible for Microsoft Entra role:
 1. Make active assignments of users to the group, and then assign the group to a role as eligible for activation.
 2. Make active assignment of a role to a group and assign users to be eligible to group membership.
 
-To provide a group of users with just-in-time access to Microsoft Entra roles with permissions in SharePoint, Exchange, or Security & Microsoft Purview compliance portal (for example, Exchange Administrator role), be sure to make active assignments of users to the group, and then assign the group to a role as eligible for activation (Option #1 above). If you choose to make active assignment of a group to a role and assign users to be eligible to group membership instead, it may take significant time to have all permissions of the role activated and ready to use.
+To provide a group of users with just-in-time access to Microsoft Entra roles with permissions in SharePoint, Exchange, or Microsoft Purview compliance portal (for example, Exchange Administrator role), be sure to make active assignments of users to the group, and then assign the group to a role as eligible for activation (Option #1 above). If you choose to make active assignment of a group to a role and assign users to be eligible to group membership instead, it may take significant time to have all permissions of the role activated and ready to use.
+
+In other words, to avoid activation delays, use [PIM for Microsoft Entra roles](pim-how-to-add-role-to-user.md) instead of PIM for Groups to provide just-in-time access to SharePoint, Exchange, or Microsoft Purview compliance portal. For more information, see [Error when accessing SharePoint or OneDrive after role activation in PIM](/sharepoint/troubleshoot/administration/access-denied-to-pim-user-accounts).
 
 ## Privileged Identity Management and group nesting
 

@@ -1,20 +1,20 @@
 ---
-title: 'Tutorial: Configure Preciate for automatic user provisioning with Microsoft Entra ID'
+title: Configure Preciate for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to Preciate.
 author: thomasakelo
 manager: jeedes
 ms.service: entra-id
 ms.subservice: saas-apps
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Preciate so that I can streamline the user management process and ensure that users have the appropriate access to Preciate.
 ---
 
-# Tutorial: Configure Preciate for automatic user provisioning
+# Configure Preciate for automatic user provisioning
 
-This tutorial describes the steps you need to perform in both Preciate and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Preciate](https://preciate.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This article describes the steps you need to perform in both Preciate and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [Preciate](https://preciate.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
 ## Capabilities supported
@@ -25,7 +25,7 @@ This tutorial describes the steps you need to perform in both Preciate and Micro
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
@@ -52,7 +52,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 3.  A new **Secret Key** will appear. Copy and save the **Secret Key**. Also make a note that Tenant URL is `https://preciate.com/api/v1/scim`. These values will be entered in the **Secret Token** and **Tenant URL** field in the Provisioning tab of your Preciate's application.
  
 > [!NOTE]
->Every time you click the Generate button a new secret key is created. This will immediately invalidate the current one. If an integration is already actively using the current key, generating the new one will cause the integration to stop functioning until the Secret Token is updated in Preciate's application in the Azure porta.
+>Every time you click the Generate button a new secret key is created. This will immediately invalidate the current one. If an integration is already actively using the current key, generating the new one will cause the integration to stop functioning until the Secret Token is updated in Preciate's application in the Azure portal.
 
 
 <a name='step-3-add-preciate-from-the-azure-ad-application-gallery'></a>
@@ -121,7 +121,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |externalId|String|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|String|
 
-10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 11. To enable the Microsoft Entra provisioning service for Preciate, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -149,6 +149,6 @@ Once you've configured provisioning, use the following resources to monitor your
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

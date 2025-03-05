@@ -1,21 +1,21 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Continuity Software Platform'
+title: Microsoft Entra single sign-on (SSO) integration with Continuity Software Platform
 description: Learn how to configure single sign-on between Microsoft Entra and Continuity Software Platform.
 services: active-directory
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 05/07/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Continuity Software Platform
+# Microsoft Entra single sign-on (SSO) integration with Continuity Software Platform
 
-In this tutorial, you'll learn how to integrate Continuity Software Platform with Microsoft Entra ID. When you integrate Continuity Software Platform with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Continuity Software Platform with Microsoft Entra ID. When you integrate Continuity Software Platform with Microsoft Entra ID, you can:
 
 Use Microsoft Entra ID to control who can access Continuity Software Platform.
 Enable your users to be automatically signed in to Continuity Software Platform with their Microsoft Entra accounts.
@@ -54,9 +54,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
         ![Screenshot of showing the identity configuration.](common/go-to-application.png)
 
-    1. Copy **Application (client) ID** and **Directory (tenant) ID** and use it later in the Continuity Software Platform side configuration.
-
-        ![Screenshot of application client values.](./media/continuity-software-platform-tutorial/application-id.png)
+    1. Under **Endpoints**, copy **Application (client) ID** and **Directory (tenant) ID**. Use them later in the Continuity Software Platform side configuration.
 
 1. Navigate to **Authentication** tab on the left menu and perform the following steps:
 
@@ -117,9 +115,6 @@ Below are the configuration steps to complete the OAuth/OIDC federation setup:
 3. Click **+**.
 
 4. The **Add Identity provider** window is displayed.
-
-
-    ![Screenshot of showing oidc setup at new auth method.](./media/continuity-software-platform-tutorial/configuration.png)
 
     a. In the **Name** field, enter the name for identification.
 

@@ -39,7 +39,7 @@ Because a stale device is defined as a registered device that hasn't been used t
 
 The evaluation of the activity timestamp is triggered by an authentication attempt of a device. Microsoft Entra ID evaluates the activity timestamp when:
 
-- A Conditional Access policies requiring [managed devices](~/identity/conditional-access/concept-conditional-access-grant.md) or [approved client apps](~/identity/conditional-access/howto-policy-approved-app-or-app-protection.yml) has been triggered.
+- A Conditional Access policies requiring [managed devices](~/identity/conditional-access/concept-conditional-access-grant.md) or [approved client apps](~/identity/conditional-access/policy-all-users-device-compliance.md) has been triggered.
 - Windows 10 or newer devices that are either Microsoft Entra joined or Microsoft Entra hybrid joined are active on the network. 
 - Intune managed devices have checked in to the service.
 

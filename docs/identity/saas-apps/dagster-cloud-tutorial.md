@@ -1,24 +1,24 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Dagster Cloud'
+title: Microsoft Entra SSO integration with Dagster Cloud
 description: Learn how to configure single sign-on between Microsoft Entra ID and Dagster Cloud.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 09/05/2024
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Dagster Cloud so that I can control who has access to Dagster Cloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Dagster Cloud
+# Microsoft Entra SSO integration with Dagster Cloud
 
-In this tutorial, you'll learn how to integrate Dagster Cloud with Microsoft Entra ID. When you integrate Dagster Cloud with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Dagster Cloud with Microsoft Entra ID. When you integrate Dagster Cloud with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Dagster Cloud.
 * Enable your users to be automatically signed-in to Dagster Cloud with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Dagster Cloud supports **SP and IDP** initiated SSO.
 * Dagster Cloud supports **Just In Time** user provisioning.
@@ -81,18 +81,18 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Basic SAML Configuration** section, if you wish to configure the application in **IDP** initiated mode, perform the following steps:
 
     a. In the **Identifier** text box, type a URL using the following pattern:
-    `https://<CustomerName>.dagster.cloud/auth/saml/consume`
+    `https://<ORGANIZATION_NAME>.dagster.cloud/auth/saml/consume`
 
     b. In the **Reply URL** text box, type a URL using the following pattern:
-    `https://<CustomerName>.dagster.cloud/auth/saml/consume`
+    `https://<ORGANIZATION_NAME>.dagster.cloud/auth/saml/consume`
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+1. Perform the following step, if you wish to configure the application in **SP** initiated mode:
 
-    In the **Sign-on URL** text box, type a URL using the following pattern:
-    `https://<CustomerName>.dagster.cloud/auth/saml/login`
+    In the **Sign on URL** text box, type a URL using the following pattern:
+    `https://<ORGANIZATION_NAME>.dagster.cloud/auth/saml/login`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [Dagster Cloud Client support team](mailto:support@elementl.com) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. You can refer to the patterns shown in the **Basic SAML Configuration** section. [See Dagster Cloud's documentation](https://docs.dagster.io/dagster-plus/account/authentication/setting-up-azure-ad-saml-sso#step-2-configure-sso-in-azure-ad) for more information.
 
 1. Dagster Cloud application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
@@ -146,7 +146,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Dagster Cloud SSO
 
-To configure single sign-on on **Dagster Cloud** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [Dagster Cloud support team](mailto:support@elementl.com). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on the **Dagster Cloud** side, you need to upload the **Federation Metadata XML** file to **Dagster Cloud** using [the dagster-cloud CLI](https://docs.dagster.io/dagster-plus/account/authentication/setting-up-azure-ad-saml-sso#step-3-upload-the-saml-metadata-to-dagster).
 
 ### Create Dagster Cloud test user
 
@@ -168,6 +168,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the Dagster Cloud tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Dagster Cloud for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Dagster Cloud you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

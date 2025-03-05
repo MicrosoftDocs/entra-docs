@@ -47,7 +47,6 @@ To configure SAML request signature verification, you need:
 - A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - One of the following roles: Cloud Application Administrator, Application Administrator, or owner of the service principal.
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ## Configure SAML Request Signature Verification
 

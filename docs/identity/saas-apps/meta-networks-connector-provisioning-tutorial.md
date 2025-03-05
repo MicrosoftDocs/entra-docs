@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Configure Meta Networks Connector for automatic user provisioning with Microsoft Entra ID'
+title: Configure Meta Networks Connector for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Meta Networks Connector.
 
 author: thomasakelo
@@ -7,24 +7,24 @@ manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Meta Networks Connector so that I can streamline the user management process and ensure that users have the appropriate access to Meta Networks Connector.
 ---
 
-# Tutorial: Configure Meta Networks Connector for automatic user provisioning
+# Configure Meta Networks Connector for automatic user provisioning
 
-The objective of this tutorial is to demonstrate the steps to be performed in Meta Networks Connector and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Meta Networks Connector.
+The objective of this article is to demonstrate the steps to be performed in Meta Networks Connector and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Meta Networks Connector.
 
 > [!NOTE]
-> This tutorial describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This article describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
 * A Microsoft Entra tenant
 * [A Meta Networks Connector tenant](https://www.metanetworks.com/)
@@ -56,9 +56,6 @@ Before configuring and enabling automatic user provisioning, you should decide w
 	![Meta Networks Connector Admin Console](media/meta-networks-connector-provisioning-tutorial/apikey.png)
 
 1. Click on the plus sign on the upper right side of the screen to create a new **API Key**.
-
-	![Meta Networks Connector plus icon](media/meta-networks-connector-provisioning-tutorial/plusicon.png)
-
 1. Set the **API Key Name** and **API Key Description**.
 
 	:::image type="content" source="media/meta-networks-connector-provisioning-tutorial/keyname.png" alt-text="Screenshot of the Meta Networks Connector Admin Console with highlighted A P I key name and A P I key description values of Microsoft Entra ID and A P I key." border="false":::
@@ -87,8 +84,6 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 1. Navigate to **Administration > Settings > IdP tab**. Click on the name of the IdP configuration created in the previous steps to view the **IdP ID**. This **ID** is added to the end of **Tenant URL** while entering the value in **Tenant URL** field in the Provisioning tab of your Meta Networks Connector application.
 
-	![Meta Networks Connector IdP ID](media/meta-networks-connector-provisioning-tutorial/idpid.png)
-
 <a name='step-3-add-meta-networks-connector-from-the-azure-ad-application-gallery'></a>
 
 ## Step 3: Add Meta Networks Connector from the Microsoft Entra application gallery
@@ -112,7 +107,7 @@ The Microsoft Entra provisioning service allows you to scope who will be provisi
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Meta Networks Connector based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Meta Networks Connector, following the instructions provided in the [Meta Networks Connector Single sign-on tutorial](./metanetworksconnector-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other
+> You may also choose to enable SAML-based single sign-on for Meta Networks Connector, following the instructions provided in the [Meta Networks Connector Single sign-on  article](./metanetworksconnector-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other
 
 <a name='to-configure-automatic-user-provisioning-for-meta-networks-connector-in-azure-ad'></a>
 
@@ -147,8 +142,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Meta Networks Connector**.
 
-	![Meta Networks Connector User Mappings](media/meta-networks-connector-provisioning-tutorial/usermappings.png)
-
 1. Review the user attributes that are synchronized from Microsoft Entra ID to Meta Networks Connector in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Meta Networks Connector for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Meta Networks Connector API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
     |Attribute|Type|Supported for filtering|Required by Meta Networks Connector|
@@ -164,8 +157,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 1. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to Meta Networks Connector**.
 
-	![Meta Networks Connector Group Mappings](media/meta-networks-connector-provisioning-tutorial/groupmappings.png)
-
 1. Review the group attributes that are synchronized from Microsoft Entra ID to Meta Networks Connector in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Meta Networks Connector for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the Meta Networks Connector API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
     |Attribute|Type|Supported for filtering|Required by Meta Networks Connector|
@@ -173,7 +164,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
     |displayName|String|&check;|&check;
     |members|Reference||
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for Meta Networks Connector, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -204,6 +195,6 @@ Once you've configured provisioning, use the following resources to monitor your
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

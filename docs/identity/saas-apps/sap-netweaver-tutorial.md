@@ -1,24 +1,24 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with SAP NetWeaver'
+title: Microsoft Entra single sign-on (SSO) integration with SAP NetWeaver
 description: Learn how to configure single sign-on between Microsoft Entra ID and SAP NetWeaver.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SAP NetWeaver so that I can control who has access to SAP NetWeaver, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with SAP NetWeaver
+# Microsoft Entra single sign-on (SSO) integration with SAP NetWeaver
 
-In this tutorial, you'll learn how to integrate SAP NetWeaver with Microsoft Entra ID. When you integrate SAP NetWeaver with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate SAP NetWeaver with Microsoft Entra ID. When you integrate SAP NetWeaver with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to SAP NetWeaver.
 * Enable your users to be automatically signed-in to SAP NetWeaver with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-* SAP NetWeaver supports both **SAML** (**SP initiated SSO**) and **OAuth**. In this tutorial, you configure and test Microsoft Entra SSO in a test environment. 
+* SAP NetWeaver supports both **SAML** (**SP initiated SSO**) and **OAuth**. In this article,  you configure and test Microsoft Entra SSO in a test environment. 
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
@@ -436,6 +436,10 @@ To request an access token from the SAP system using Azure Active Directory (Azu
    - Set the token endpoint and other relevant OAuth2 parameters.
 
 ### Step 4: Request Access Token
+
+> [!TIP]
+> Consider using Azure API Management to streamline the SAP Principal Propagation process for all client apps in Azure, Power Platform, M365 and more, in a single place including smart token caching, secure token handling and governance options like request throttling. [Learn more about SAP Principal Propagation with Azure API Management](https://community.powerplatform.com/blogs/post/?postid=c6a609ab-3556-ef11-a317-6045bda95bf0). In case SAP Business Technology Platform is preferred, see [this article](https://community.sap.com/t5/enterprise-resource-planning-blogs-by-members/integrating-low-code-solutions-with-microsoft-using-sap-integration-suite/ba-p/13789298).
+
 1. **Prepare the token request**:
    - Construct a token request using the following details:
      - **Token Endpoint**: This is typically `https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token`.
@@ -465,6 +469,7 @@ To request an access token from the SAP system using Azure Active Directory (Azu
      Authorization: Bearer {access_token}
      ```
 
-## Next Steps
+## Related content
 
-Once you configure Microsoft Entra SAP NetWeaver you can enforce Session Control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session Control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
+- Configure Microsoft Entra SAP NetWeaver to enforce Session Control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session Control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
+- Configure SAP Principal Propagation (OAuth2) using Azure API Management to govern and secure access to SAP systems from client apps in Azure, Power Platform, Microsoft 365 and others. [Learn more about SAP Principal Propagation with Azure API Management](https://community.powerplatform.com/blogs/post/?postid=c6a609ab-3556-ef11-a317-6045bda95bf0).

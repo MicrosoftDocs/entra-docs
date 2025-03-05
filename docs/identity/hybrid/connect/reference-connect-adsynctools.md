@@ -23,14 +23,13 @@ To install the ADSyncTools PowerShell module do the following:
 1.  Open Windows PowerShell with administrative privileges
 2.  Type or copy and paste the following: 
     ``` powershell
-        [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-        Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
-        Import-module -Name "C:\Program Files\Microsoft Azure Active Directory Connect\Tools\AdSyncTools"
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+    Install-Module -Name ADSyncTools
     ```
 3.  Hit enter.
 4.  To verify the module was installed, enter or copy and paste the following"
     ```powershell
-    Get-module AdSyncTools
+    Get-module ADSyncTools
     ```
 5.  You should now see information about the module.
 
@@ -206,7 +205,7 @@ Convert Base64 ImmutableId (SourceAnchor) to GUID value
 ConvertFrom-ADSyncToolsImmutableID [-Value] <String> [<CommonParameters>]
 ```
 ### DESCRIPTION
-Converts value of the ImmutableID from Base64 string and returns a GUID value In case Base64 string cannot be converted to GUID, returns a Byte Array.
+Converts value of the ImmutableID from Base64 string and returns a GUID value In case Base64 string can't be converted to GUID, returns a Byte Array.
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -380,8 +379,8 @@ Export-ADSyncToolsAadPublicFolders [-Credential] <PSCredential> [-Path] <Object>
 ### DESCRIPTION
 This function exports to a CSV file all the synchronized Mail-Enabled Public Folders (MEPF) present in Microsoft Entra ID.
 It can be used in conjunction with Remove-ADSyncToolsAadPublicFolders to identify and remove orphaned Mail-Enabled Public Folders in Microsoft Entra ID.
-This function requires the credentials of a Global Administrator in Microsoft Entra ID and authentication with MFA is not supported.
-NOTE: If DirSync has been disabled on the tenant, you will need to temporarily re-enabled DirSync in order to remove orphaned Mail Enabled Public Folders from Microsoft Entra ID.
+This function requires the credentials of a Global Administrator in Microsoft Entra ID and authentication with MFA isn't supported.
+NOTE: If DirSync has been disabled on the tenant, you'll need to temporarily re-enabled DirSync in order to remove orphaned Mail Enabled Public Folders from Microsoft Entra ID.
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -432,7 +431,7 @@ Export-ADSyncToolsHybridAadJoinReport [-DN] <String> [[-Filename] <String>] [<Co
 Export-ADSyncToolsHybridAadJoinReport [-OU] <String> [[-Filename] <String>] [<CommonParameters>]
 ```
 ### DESCRIPTION
-This tool checks for all certificates present in UserCertificate property of a Computer object in AD and, for each non-expired certificate present, validates if the certificate was issued for the Microsoft Entra hybrid join feature (that is, Subject Name is CN={ObjectGUID}). Before version 1.4, Microsoft Entra Connect would synchronize to Microsoft Entra any Computer that contained at least one certificate but in Microsoft Entra Connect version 1.4 and later, ADSync engine can identify Microsoft Entra hybrid join certificates and will "cloudfilter" (exclude) the computer object from synchronizing to Microsoft Entra ID unless there's a valid Microsoft Entra hybrid join certificate present. Microsoft Entra Device objects that were already synchronized to AD but do not have a valid Microsoft Entra hybrid join certificate will be deleted from Microsoft Entra ID (CloudFiltered=TRUE) by Microsoft Entra Connect.
+This tool checks for all certificates present in UserCertificate property of a Computer object in AD and, for each non-expired certificate present, validates if the certificate was issued for the Microsoft Entra hybrid join feature (that is, Subject Name is CN={ObjectGUID}). Before version 1.4, Microsoft Entra Connect would synchronize to Microsoft Entra any Computer that contained at least one certificate but in Microsoft Entra Connect version 1.4 and later, ADSync engine can identify Microsoft Entra hybrid join certificates and will "cloudfilter" (exclude) the computer object from synchronizing to Microsoft Entra ID unless there's a valid Microsoft Entra hybrid join certificate present. Microsoft Entra Device objects that were already synchronized to AD but don't have a valid Microsoft Entra hybrid join certificate will be deleted from Microsoft Entra ID (CloudFiltered=TRUE) by Microsoft Entra Connect.
 
 ### EXAMPLES
 #### EXAMPLE 1
@@ -1153,7 +1152,7 @@ Accept wildcard characters: False
 ```
 #### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+The cmdlet isn't run.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
@@ -1181,13 +1180,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### INPUTS
 InputCsvFilename must point to a CSV file with at least 2 columns: SourceAnchor, SyncObjectType
 ### OUTPUTS
-Shows results from ExportDeletions operation DISCLAIMER: Other than User objects that have a Recycle Bin, any other object types DELETED with this function cannot be RECOVERED!
+Shows results from ExportDeletions operation DISCLAIMER: Other than User objects that have a Recycle Bin, any other object types DELETED with this function can't be RECOVERED!
 
 ## Remove-ADSyncToolsAadPublicFolders
 ### SYNOPSIS
 Removes synchronized Mail-Enabled Public Folders (MEPF) present from Microsoft Entra ID.
 You can specify one SourceAnchor/ImmutableID for the target MEPF object to delete, or provide a CSV list with a batch of objects to delete when used in conjunction with Export-ADSyncToolsAadPublicFolders.
-This function requires the credentials of a Global Administrator in Microsoft Entra ID and authentication with MFA is not supported.
+This function requires the credentials of a Global Administrator in Microsoft Entra ID and authentication with MFA isn't supported.
 NOTE: If DirSync has been disabled on the tenant, you'll need to temporary re-enabled DirSync in order to remove orphaned Mail Enabled Public Folders from Microsoft Entra ID.
 ### SYNTAX
 ```
@@ -1196,8 +1195,8 @@ Export-ADSyncToolsAadPublicFolders [-Credential] <PSCredential> [-Path] <Object>
 ### DESCRIPTION
 This function exports to a CSV file all the synchronized Mail-Enabled Public Folders (MEPF) present in Microsoft Entra ID.
 It can be used in conjunction with Remove-ADSyncToolsAadPublicFolders to identify and remove orphaned Mail-Enabled Public Folders in Microsoft Entra ID.
-This function requires the credentials of a Global Administrator in Microsoft Entra ID and authentication with MFA is not supported.
-NOTE: If DirSync has been disabled on the tenant, you will need to temporarily re-enabled DirSync in order to remove orphaned Mail Enabled Public Folders from Microsoft Entra ID.
+This function requires the credentials of a Global Administrator in Microsoft Entra ID and authentication with MFA isn't supported.
+NOTE: If DirSync has been disabled on the tenant, you'll need to temporarily re-enabled DirSync in order to remove orphaned Mail Enabled Public Folders from Microsoft Entra ID.
 ### EXAMPLES
 #### EXAMPLE 1
 ```
@@ -1288,7 +1287,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 #### -BackupOnly
-BackupOnly will not delete any certificates from AD
+BackupOnly won't delete any certificates from AD
 ```yaml
 Type: Boolean
 Parameter Sets: (All)
@@ -1819,7 +1818,7 @@ Accept wildcard characters: False
 ```
 #### -WhatIf
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+The cmdlet isn't run.
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
@@ -1886,7 +1885,7 @@ et-ADSyncToolsDuplicateUsersSourceAnchor [-DuplicateUserSourceAnchorInfo] <Dupli
 ```
 ### DESCRIPTION
 This cmdlet takes in the list of objects from Get-ADSyncToolsDuplicateUsersSourceAnchor as pipeline input. It then fixes the sync errors by updating the msDS-ConsistencyGuid attribute with the sourceAnchor/immutableID of the original object. 
-The cmdlet has an optional parameter - "Override prompt", which is False by default. If it is set to True, then the user will not be prompted when updating the msDS-ConsistencyGuid attribute.
+The cmdlet has an optional parameter - "Override prompt", which is False by default. If it is set to True, then the user won't be prompted when updating the msDS-ConsistencyGuid attribute.
 
 ### EXAMPLES
 #### EXAMPLE 1

@@ -3,9 +3,9 @@ title: Global Secure Access points of presence and IP addresses
 description: Global Secure Access points of presence and IP addresses for Microsoft Entra Internet Access and Microsoft Entra Private Access.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.topic: reference
-ms.date: 07/22/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.custom: references_regions
 ---
@@ -24,6 +24,7 @@ The table lists the deployment status for the APAC region.
 
 |Location                    | Global Secure Access service deployed | Remote network connectivity gateways | 
 | ---                        | --- | --- | 
+|Auckland, New Zealand       | ✅ |    |
 |Busan, South Korea          | ✅ | ✅ |
 |Chennai, India              | ✅ | ✅ |
 |Melbourne, Australia        | ✅ | ✅ |

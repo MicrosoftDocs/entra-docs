@@ -7,7 +7,7 @@ manager: travisgr
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 03/08/2023
+ms.date: 08/25/2024
 ms.subservice: hybrid-connect
 ms.author: martinco
 
@@ -148,10 +148,10 @@ Before your users can self-discover applications from their access panel, you ne
 
 Assigning users to applications is best mapped when using groups, because they allow great flexibility and ability to manage at scale:
 
-* Attribute-based using dynamic group membership
+* Dynamic membership groups
 * Delegation to app owners
 
-Microsoft Entra ID provides the ability to manage access to resources using security groups and Microsoft 365 groups. These groups are managed by a group owner who can approve or deny membership requests and delegate control of group membership. The [self-service group management](~/identity/users/groups-self-service-management.md) feature, saves time by allowing group owners who aren't assigned an administrative role to create and manage groups without having to rely on administrators to handle their requests.
+Microsoft Entra ID provides the ability to manage access to resources using security groups and Microsoft 365 groups. These groups are managed by a group owner who can approve or deny membership requests and delegate control of attribute-based dynamic membership groups. The [self-service group management](~/identity/users/groups-self-service-management.md) feature, saves time by allowing group owners who aren't assigned an administrative role to create and manage groups without having to rely on administrators to handle their requests.
 
 ## Step 4 - Operationalize your insights
 

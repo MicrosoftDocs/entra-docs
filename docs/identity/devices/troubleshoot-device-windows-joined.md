@@ -5,7 +5,7 @@ description: This article helps you troubleshoot Microsoft Entra hybrid joined W
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: troubleshooting
-ms.date: 05/29/2024
+ms.date: 11/25/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -31,7 +31,6 @@ The troubleshooter will review the contents of the file you uploaded and provide
 
 - [Troubleshoot devices by using the dsregcmd command](troubleshoot-device-dsregcmd.md)
 - [Troubleshoot Microsoft Entra hybrid joined devices](troubleshoot-hybrid-join-windows-current.md)
-- [Troubleshooting Microsoft Entra hybrid joined down-level devices](troubleshoot-hybrid-join-windows-legacy.md)
 - [Troubleshoot pending device state](/troubleshoot/azure/active-directory/pending-devices)
 - [MDM enrollment of Windows 10-based devices](/windows/client-management/mdm-enrollment-of-windows-devices)
 - [Troubleshooting Windows device enrollment errors in Intune](/troubleshoot/mem/intune/device-enrollment/troubleshoot-windows-enrollment-errors)

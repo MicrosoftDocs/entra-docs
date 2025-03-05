@@ -42,7 +42,7 @@ After administrators confirm the settings using [report-only mode](howto-conditi
 Repeat the previous steps on all of your policies that use the approved client app grant. 
 
 > [!WARNING] 
-> Not all applications that are supported as approved applications or support application protection policies. For a list of some common client apps, see [App protection policy requirement](concept-conditional-access-grant.md#require-app-protection-policy). If your application is not listed there, contact the application developer. 
+> Not all applications that are supported as approved applications are supported by application protection policies. For a list of some common client apps, see [App protection policy requirement](concept-conditional-access-grant.md#require-app-protection-policy). If your application is not listed there, contact the application developer. 
 
 ## Create a Conditional Access policy
 
@@ -59,7 +59,7 @@ Organizations can choose to deploy this policy using the following steps.
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select **All users**.
    1. Under **Exclude**, select **Users and groups** and exclude at least one account to prevent yourself from being locked out. If you don't exclude any accounts, you can't create the policy.
-1. Under **Target resources** > **Cloud apps** > **Include**, select **All cloud apps**
+1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include**, select **All resources (formerly 'All cloud apps')**
 1. Under **Conditions** > **Device platforms**, set **Configure** to **Yes**.
    1. Under **Include**, **Select device platforms**.
    1. Choose **Android** and **iOS**

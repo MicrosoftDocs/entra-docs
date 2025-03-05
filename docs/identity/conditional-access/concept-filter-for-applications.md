@@ -32,7 +32,7 @@ Custom security attributes are security sensitive and can only be managed by del
 | [Attribute Definition Administrator](../role-based-access-control/permissions-reference.md#attribute-definition-administrator) | Define and manage the definition of custom security attributes. |
 | [Attribute Definition Reader](../role-based-access-control/permissions-reference.md#attribute-definition-reader) | Read the definition of custom security attributes. |
 
-Assign the appropriate role to the users who manage or report on these attributes at the directory scope. For detailed steps, see [Assign a role](../role-based-access-control/manage-roles-portal.yml#assign-a-role).
+Assign the appropriate role to the users who manage or report on these attributes at the directory scope. For detailed steps, see [Assign Microsoft Entra roles](../role-based-access-control/manage-roles-portal.md#assign-roles-with-tenant-scope).
 
 [!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
 
@@ -68,7 +68,7 @@ Follow the instructions in the article, [Add or deactivate custom security attri
    1. Select **Done**.
 1. Under **Target resources**, select the following options:
    1. Select what this policy applies to **Cloud apps**.
-   1. Include **Select apps**.
+   1. Include **Select resources**.
    1. Select **Edit filter**.
    1. Set **Configure** to **Yes**.
    1. Select the **Attribute** we created earlier called *policyRequirement*.

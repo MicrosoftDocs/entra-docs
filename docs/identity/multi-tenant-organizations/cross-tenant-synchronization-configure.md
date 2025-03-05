@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: how-to
-ms.date: 03/11/2024
+ms.date: 10/09/2024
 ms.author: rolyon
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
@@ -51,8 +51,6 @@ By the end of this article, you'll be able to:
 1. Determine what data to [map between tenants](../app-provisioning/customize-application-attributes.md).
 
 ## Step 2: Enable user synchronization in the target tenant
-
-[!INCLUDE [portal updates](../../includes/portal-update.md)]
 
 ![Icon for the target tenant.](../../media/common/icons/entra-id.png)<br/>**Target tenant**
 
@@ -129,6 +127,12 @@ In this step, you automatically redeem invitations in the source tenant.
 ![Icon for the source tenant.](../../media/common/icons/entra-id-purple.png)<br/>**Source tenant**
 
 1. In the source tenant, browse to **Identity** > **External Identities** > **Cross-tenant synchronization**.
+
+    :::image type="content" source="./media/cross-tenant-synchronization-configure/navigation-cross-tenant-sync-entra.png" alt-text="Screenshot that shows the Cross-tenant synchronization navigation in the Microsoft Entra admin center." lightbox="./media/cross-tenant-synchronization-configure/navigation-cross-tenant-sync-entra.png":::
+
+    If you are using the Azure portal, browse to **Microsoft Entra ID** > **Manage** > **Cross-tenant synchronization**.
+
+    :::image type="content" source="./media/cross-tenant-synchronization-configure/navigation-cross-tenant-sync-azure.png" alt-text="Screenshot that shows the Cross-tenant synchronization navigation in the Azure portal." lightbox="./media/cross-tenant-synchronization-configure/navigation-cross-tenant-sync-azure.png":::
 
 1. Select **Configurations**.
 
@@ -498,7 +502,7 @@ $userId = "objectid_of_the_user_in_Entra_ID"
 
 $smssignin = Get-MgUserAuthenticationPhoneMethod -UserId $userId
 
-{
+
     if($smssignin.SmsSignInState -eq "ready"){   
       #### Disable Sms Sign-In for the user is set to ready
 
@@ -509,7 +513,7 @@ $smssignin = Get-MgUserAuthenticationPhoneMethod -UserId $userId
     Write-Host "SMS sign-in status not set or found for the user " -ForegroundColor Yellow
     }
 
-}
+
 
 ##### End the script
 ```
@@ -528,15 +532,15 @@ This error indicates the Guest invite settings in the target tenant are configur
 
 Change the Guest invite settings in the target tenant to a less restrictive setting. For more information, see [Configure external collaboration settings](../../external-id/external-collaboration-settings-configure.md).
 
-#### Symptom - User Principal Name does not update for existing B2B users in pending acceptance state
+#### Symptom - UserPrincipalName does not update for existing B2B users in pending acceptance state
 
-When a user is first invited through manual B2B invitation, the invitation is sent to the source user mail address. As a result the guest user in the target tenant is created with a user principal name (UPN) prefix using the source mail value property. There are environments where the source user object properties, UPN and Mail, have different values, for example Mail == user.mail@domain.com and UPN == user.upn@otherdomain.com. In this case the guest user in the target tenant will be created with the UPN as  *user.mail_domain.com#EXT#@contoso.onmicrosoft.com.*
+When a user is first invited through manual B2B invitation, the invitation is sent to the source user mail address. As a result the guest user in the target tenant is created with a UserPrincipalName (UPN) prefix using the source mail value property. There are environments where the source user object properties, UPN and Mail, have different values, for example Mail == user.mail@domain.com and UPN == user.upn@otherdomain.com. In this case the guest user in the target tenant will be created with the UPN as  *user.mail_domain.com#EXT#@contoso.onmicrosoft.com.*
 
 The issue raises when then the source object is put in scope for cross-tenant sync and the expectation is that besides other properties, the UPN prefix of the target guest user **would be updated to match the UPN of the source user** (using the example above the value would be: *user.upn_otherdomain.com#EXT#@contoso.onmicrosoft.com*). However, that's not happening during incremental sync cycles, and the change is ignored.
 
 **Cause**
 
-This issue happens when the **B2B user which was manually invited into the target tenant didn't accept or redeem the invitation**, so its state is in pending acceptance. When a user is invited through an email, an object is created with a set of attributes that are populated from the mail, one of them is the UPN, which is pointing to the mail value of the source user. If later you decide to add the user to the scope for cross-tenant sync, the system will try to join the source user with a B2B user in target tenant based on the alternativeSecurityIdentifier attribute, but the previously created user does not have an alternativeSecurityIdentifier property populated because the invitation was not redeemed. So, the system won't consider this to be a new user object and will not update the UPN value. The user principal name is not updated in the following scenarios:
+This issue happens when the **B2B user which was manually invited into the target tenant didn't accept or redeem the invitation**, so its state is in pending acceptance. When a user is invited through an email, an object is created with a set of attributes that are populated from the mail, one of them is the UPN, which is pointing to the mail value of the source user. If later you decide to add the user to the scope for cross-tenant sync, the system will try to join the source user with a B2B user in target tenant based on the alternativeSecurityIdentifier attribute, but the previously created user does not have an alternativeSecurityIdentifier property populated because the invitation was not redeemed. So, the system won't consider this to be a new user object and will not update the UPN value. The UserPrincipalName is not updated in the following scenarios:
 
 1. The UPN and mail are different for a user when was manually invited.
 1. The user was invited prior to enabling cross-tenant sync.

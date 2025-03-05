@@ -135,7 +135,7 @@ When no longer needed, you can delete the test user accounts in the directory. R
 
 For example: `Remove-MgUser -UserId "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"`
 
-## Next steps
+## Related content
 
 In this tutorial, you sent bulk invitations to guest users outside of your organization. Next, learn how to bulk invite guest users on the portal and how to enforce MFA for them.
 

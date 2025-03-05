@@ -187,13 +187,11 @@ Assisted users and groups configuration supports the following configurations fr
 
 These are the users and groups you can view on the configuration wizard. This is a read-only view, you can't make any changes to this section.
 
-:::image type="content" source="media/migrate-ad-fs-application-howto/user-group-settings-application-migration-wizard.png" alt-text="Screenshot of the AD FS application migration users and groups tab.":::
-
 ### SAML configurations tab
 
 This tab shows the basic SAML properties that are used for the Single sign-on settings of the Microsoft Entra application. Currently, only required properties are mapped which are Identifier and Reply URL only.
 
-These settings are directly implemented from your AD FS relying party application and can't be modified from this tab. However, after configuring application, you can modify these from the Microsoft Entra admin center's Single sing-on pane of your enterprise application.
+These settings are directly implemented from your AD FS relying party application and can't be modified from this tab. However, after configuring application, you can modify these from the Microsoft Entra admin center's Single sign-on pane of your enterprise application.
 
 :::image type="content" source="media/migrate-ad-fs-application-howto/saml-configurations-on-premises.png" alt-text="Screenshot of the AD FS SAML configurations pane.":::
 

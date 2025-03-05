@@ -3,9 +3,9 @@ title: Global Secure Access network traffic logs
 description: Learn how to use Global Secure Access traffic logs (preview) to monitor connections to the service, the type of traffic, and who's connecting.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.topic: how-to
-ms.date: 03/06/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
 
 #Customer intent: As an IT admin, I want to understand what information the Global Secure Access traffic logs (preview) capture so I can better monitor traffic and connections to our services.
@@ -21,6 +21,7 @@ This article describes how to use the traffic logs for Global Secure Access.
 ## Prerequisites 
 
 - A **Global Secure Access Administrator** role in Microsoft Entra ID.
+- A **Global Secure Access Log Reader** role in Microsoft Entra ID.
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ## How the traffic logs work
@@ -56,8 +57,6 @@ Select any log from the list to view the details. These details provide valuable
 The traffic logs can provide many details, so to start only some columns are visible. Enable and disable the columns based on the analysis or troubleshooting tasks you're performing, as the logs could be difficult to view with too many columns selected. The column and filter options align with each item in the Activity details.
 
 Select **Columns** from the top of the page to change the columns that are displayed. 
-
-![Screenshot of the traffic logs with the columns button highlighted.](media/how-to-view-traffic-logs/traffic-logs-columns-button.png)
 
 To filter the traffic logs to a specific detail, select the **Add filter** button and then enter the detail you want to filter by.
 

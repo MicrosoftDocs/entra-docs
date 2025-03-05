@@ -6,9 +6,9 @@ author: msmimart
 manager: celestedg
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
-ms.date: 05/15/2024
+ms.date: 10/21/2024
 ms.author: mimart
 ms.reviewer: kengaderdus
 ms.custom: it-pro, seo-july-2024
@@ -23,10 +23,12 @@ ms.custom: it-pro, seo-july-2024
 > [!TIP]
 > This article applies to user flows in external tenants. For information about workforce tenants, see [Add a self-service sign-up user flow to an app](../self-service-sign-up-user-flow.yml).
 
-You can create a simple sign-up and sign-in experience for your customers by adding a user flow to your application. The user flow defines the series of sign-up steps customers follow and the sign-in methods they can use (such as email and password, one-time passcodes, or social accounts from [Google](how-to-google-federation-customers.md) or [Facebook](how-to-facebook-federation-customers.md)). You can also collect information from customers during sign-up by selecting from a series of built-in user attributes or adding your own custom attributes.
+You can create a simple sign-up and sign-in experience for your customers by adding a user flow to your application. The user flow defines the series of sign-up steps customers follow and the sign-in methods they can use (such as email and password, one-time passcodes, or social accounts from [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md), [Apple](how-to-apple-federation-customers.md)) or a custom [OIDC federation](how-to-custom-oidc-federation-customers.md). You can also collect information from customers during sign-up by selecting from a series of built-in user attributes or adding your own custom attributes.
 
 You can create multiple user flows if you have multiple applications that you want to offer to customers. Or, you can use the same user flow for many applications. However, an application can have only one user flow.
 
+> [!NOTE]
+> If you're creating local user accounts via Microsoft Graph and only need to support sign-in, you don't need to attach a user flow to your app. Refer to the Microsoft Graph REST API reference for an example of how to [create a customer account in external tenants](/graph/api/user-post-users#example-3-create-a-customer-account-in-external-tenants).
 
 > [!TIP]
 > [![Try it now](./media/common/try-it-now.png)](https://woodgrovedemo.com/#usecase=OnlineRetail)
@@ -39,7 +41,7 @@ You can create multiple user flows if you have multiple applications that you wa
 - **A Microsoft Entra external tenant**: Before you begin, create your Microsoft Entra external tenant. You can set up a <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">free trial</a>, or you can create a new external tenant in Microsoft Entra ID.
 - **Email one-time passcode enabled (optional)**: If you want customers to use their email address and a one-time passcode each time they sign in, make sure Email one-time passcode is enabled at the tenant level (in the [Microsoft Entra admin center](https://entra.microsoft.com/), navigate to **External Identities** > **All Identity Providers** > **Email One-time-passcode**).
 - **Custom attributes defined (optional)**: User attributes are values collected from the user during self-service sign-up. Microsoft Entra ID comes with a built-in set of attributes, but you can [define custom attributes to collect during sign-up](how-to-define-custom-attributes.md). Define custom attributes in advance so they're available when you set up your user flow. Or you can create and add them later.
-- **Identity providers defined (optional)**: You can set up federation with [Google](how-to-google-federation-customers.md) or [Facebook](how-to-facebook-federation-customers.md) in advance, and then select them as sign-in options as you create the user flow.
+- **Identity providers defined (optional)**: You can set up federation with [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md) or an [OIDC identity provider](how-to-custom-oidc-federation-customers.md) in advance, and then select them as sign-in options as you create the user flow.
 
 ## Create and customize a user flow
 
@@ -83,42 +85,6 @@ Follow these steps to create a user flow a customer can use to sign in or sign u
 1. Select **OK**.
 
 1. Select **Create** to create the user flow.
-
-[//]: # (For Disable sign-up in a sign-up and sign-in user flow, ask kengaderdus)
-
-## Disable sign-up in a sign-up and sign-in user flow
-
-If you want your customer users to only sign in and not sign up, you can disable the sign-up experience in your user flow by using the [Update authenticationEventsFlow API in Microsoft Graph](/graph/api/authenticationeventsflow-update), and updating the **onInteractiveAuthFlowStart** property > **isSignUpAllowed** property to `false`. You need to know the ID of the user flow whose sign-up you want to disable. You can't read the user flow ID from the Microsoft Entra admin center, but you can retrieve it via Microsoft Graph API if you know the app associated with it.
-
-1. Read the application ID associated with the user flow:
-    1. Browse to **Identity > External Identities > User flows**.
-    1. From the list, select your user flow.
-    1. In the left menu, under **Use**, select **Applications**.
-    1. From the list, under **Application (client) ID** column, copy the Application (client) ID.
-    
-1. Identify the ID of the user flow whose sign-up you want to disable. To do so, [List the user flow associated with the specific application](/graph/api/identitycontainer-list-authenticationeventsflows#example-4-list-user-flow-associated-with-specific-application-id). This is a Microsoft Graph API, which requires you to know the application ID you obtained from the previous step. 
-
-1. [Update your user flow](/graph/api/authenticationeventsflow-update) to disable sign-up. 
-
-    **Example**:
-    
-   ```http
-   PATCH https://graph.microsoft.com/beta/identity/authenticationEventsFlows/{user-flow-id} 
-   ```   
-
-    **Request body**
-
-    ```json
-        {    
-            "@odata.type": "#microsoft.graph.externalUsersSelfServiceSignUpEventsFlow",    
-            "onInteractiveAuthFlowStart": {    
-                "@odata.type": "#microsoft.graph.onInteractiveAuthFlowStartExternalUsersSelfServiceSignUp",    
-                "isSignUpAllowed": "false"    
-          }    
-        }
-    ```
-
-    Replace `{user-flow-id}` with the user flow ID that you obtained in the previous step. Notice the `isSignUpAllowed` parameter is set to *false*. To re-enable sign-up, make a call to the Microsoft Graph API endpoint, but set the `isSignUpAllowed` parameter to *true*.   
 
 ## Next steps
 

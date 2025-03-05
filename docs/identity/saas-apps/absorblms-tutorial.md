@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Absorb LMS'
+title: Microsoft Entra integration with Absorb LMS
 description: Learn how to configure single sign-on between Microsoft Entra ID and Absorb LMS.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Absorb LMS so that I can control who has access to Absorb LMS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Absorb LMS
+# Microsoft Entra integration with Absorb LMS
 
-In this tutorial, you'll learn how to integrate Absorb LMS with Microsoft Entra ID. When you integrate Absorb LMS with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Absorb LMS with Microsoft Entra ID. When you integrate Absorb LMS with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Absorb LMS.
 * Enable your users to be automatically signed-in to Absorb LMS with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ To configure Microsoft Entra integration with Absorb LMS, you need the following
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Absorb LMS supports **IDP** initiated SSO
 
@@ -149,8 +149,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 2. Select the **Account** button at the top right.
 
-    ![The Account button](./media/absorblms-tutorial/account.png)
-
 3. In the Account pane, select **Portal Settings**.
 
     ![The Portal Settings link](./media/absorblms-tutorial/portal.png)
@@ -161,7 +159,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 5. On the **Manage Single Sign-On Settings** page, do the following:
 
-    ![The single sign-on configuration page](./media/absorblms-tutorial/settings.png)
+   ![Screenshot shows the single sign-on configuration page.](./media/absorblms-tutorial/settings.png)
 
     a. In the **Name** textbox, enter the name like Microsoft Entra Marketplace SSO.
 
@@ -232,6 +230,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Absorb LMS tile in the My Apps, you should be automatically signed in to the Absorb LMS for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Absorb LMS you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
