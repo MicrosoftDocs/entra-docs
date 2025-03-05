@@ -1,20 +1,20 @@
 ---
-title: Support for Global Secure Access for Microsoft Entra China
-description: Learn about how Microsoft is dedicated to supporting Global Secure Access capabilities for Microsoft Entra China.
+title: Global Secure Access Support for Microsoft Azure in China
+description: Learn about how Microsoft is dedicated to supporting Global Secure Access capabilities for Microsoft Azure in China.
 ms.author: jayrusso
 author: HULKsmashGithub
 manager: femila
 ms.topic: reference
-ms.date: 02/27/2025
+ms.date: 03/05/2025
 ms.service: global-secure-access
 ms.reviewer: sumeetmittal
 
 
 ---
 
-# Support statement for Global Secure Access for Microsoft Entra China
+# Global Secure Access Support for Microsoft Azure in China
 Microsoft is dedicated to supporting Global Secure Access capabilities in China, providing secure and compliant connectivity solutions that meet the unique needs of organizations operating in China. There are two scenarios that are applicable to Global Secure Access in China.    
-1. Global Secure Access availability for customer tenants deployed on Microsoft Entra China. **Microsoft currently doesn’t support this scenario**. 
+1. Global Secure Access availability for customer tenants deployed on Microsoft Azure in China. **Microsoft currently doesn’t support this scenario**. 
 1. Global Secure Access availability for tenants outside China. This scenario includes use cases where Global Secure Access customers with a presence in multiple geographies make a temporary visit to China. For example, when an employee of USA-based company Contoso, using Global Secure Access, travels to China. **Microsoft supports this scenario**.    
 
 However, it’s important to recognize the specific connectivity disclaimers that apply to Secure Access Service Edge (SASE) providers operating in China. Due to regulatory restrictions and local infrastructure requirements, SASE providers might encounter:    
