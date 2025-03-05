@@ -2,16 +2,12 @@
 title: What's new for Microsoft Entra Verified ID
 description: Recent updates for Microsoft Entra Verified ID
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
-
 ms.topic: whats-new
 ms.date: 12/16/2024
 ms.custom: references_regions
 ms.author: barclayn
-
-#Customer intent: As a Microsoft Entra Verified ID issuer, verifier or developer, I want to know what's new in the product so that I can make full use of the functionality as it becomes available.
-
 ---
 
 # What's new in Microsoft Entra Verified ID

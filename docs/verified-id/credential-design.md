@@ -1,15 +1,12 @@
 ---
 title: Customize your Microsoft Entra Verified ID
 description: This article shows you how to create your own custom verifiable credential.
-
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
-
 ms.topic: how-to
 ms.date: 12/13/2024
 ms.author: barclayn
-# Customer intent: As a developer, I am looking for information about how to enable my users to control their own information. 
 ---
 
 # Customize your verifiable credentials

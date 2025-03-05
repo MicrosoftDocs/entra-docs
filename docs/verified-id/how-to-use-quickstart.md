@@ -1,16 +1,14 @@
 ---
 title: Create verifiable credentials for an ID token hint
-description: In this article, you learn how to use a quickstart to create a custom verifiable credential for an ID token hint.
+description: In this article, you learn how to use a quickstart to create a custom
+  verifiable credential for an ID token hint.
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: how-to
-
 ms.date: 01/31/2025
 ms.author: barclayn
-
-#Customer intent: As a verifiable credentials administrator, I want to create a verifiable credential for the ID token hint scenario. 
 ---
 
 # Create verifiable credentials for ID token hint

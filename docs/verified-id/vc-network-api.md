@@ -4,14 +4,11 @@ titleSuffix: Microsoft Entra Verified ID
 description: Learn how to use the Microsoft Entra Verified ID Network API
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: reference
-
 ms.date: 01/30/2025
 ms.author: barclayn
-
-#Customer intent: As a verifiable credentials developer, I want to configure verifying credentials from another party 
 ---
 
 # Microsoft Entra Verified ID network API

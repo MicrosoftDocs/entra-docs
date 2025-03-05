@@ -1,15 +1,13 @@
 ---
-title: Configure Verified ID by AU10TIX as your Identity Verification Partner 
-description: This article shows you the steps you need to follow to configure AU10TIX as your identity verification partner
-
+title: Configure Verified ID by AU10TIX as your Identity Verification Partner
+description: This article shows you the steps you need to follow to configure AU10TIX
+  as your identity verification partner
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
-
 ms.topic: how-to
 ms.date: 01/17/2025
 ms.author: barclayn
-# Customer intent: As a developer, I'm looking for information about the open standards that are supported by Microsoft Entra Verified ID.
 ---
 
 # Configure Verified ID by AU10TIX as your Identity Verification Partner

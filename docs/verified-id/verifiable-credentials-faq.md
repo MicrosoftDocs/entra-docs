@@ -2,13 +2,11 @@
 title: Frequently asked questions - Azure Verifiable Credentials
 description: Find answers to common questions about Verifiable Credentials.
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
-
 ms.topic: faq
 ms.date: 12/13/2024
 ms.author: barclayn
-# Customer intent: As a developer I am looking for information on how to enable my users to control their own information 
 ---
 
 # Frequently Asked Questions (FAQ)

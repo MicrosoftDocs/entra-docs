@@ -1,16 +1,14 @@
 ---
-title: Link your domain to your decentralized identifier (DID) - Microsoft Entra Verified ID
+title: Link your domain to your decentralized identifier (DID) - Microsoft Entra Verified
+  ID
 description: Learn how to link your domain to your decentralized identifier (DID).
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: how-to
-
 ms.date: 12/18/2024
 ms.author: barclayn
-
-#Customer intent: As an administrator, I want to link my domain to our decentralized identifier.
 ---
 
 # Verify domain ownership to your decentralized identifier

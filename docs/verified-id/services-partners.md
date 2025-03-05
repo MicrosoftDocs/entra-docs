@@ -2,9 +2,8 @@
 title: Service Partner gallery for Microsoft Entra Verified ID
 description: Learn how to extend and accelerate Verified ID via Service Partners.
 ms.service: entra-verified-id
-
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.topic: how-to
 ms.date: 01/17/2025
 ms.author: barclayn

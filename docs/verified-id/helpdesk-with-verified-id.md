@@ -3,9 +3,8 @@ title: Verified helpdesk with Microsoft Entra Verified ID
 description: A design pattern describing how to verify in helpdesk scenarios
 services: decentralized-identity
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
-
 ms.topic: conceptual
 ms.date: 12/13/2024
 ms.author: barclayn

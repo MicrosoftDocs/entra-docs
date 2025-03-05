@@ -1,14 +1,13 @@
 ---
 title: Introduction to Microsoft Entra Verified ID
 description: An overview Microsoft Entra Verified ID.
-
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: overview
 ms.date: 01/17/2025
 ms.author: barclayn
-ms.reviewer: 
+ms.reviewer: null
 ---
 
 # Introduction to Microsoft Entra Verified ID
