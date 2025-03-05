@@ -109,7 +109,7 @@ When possible, refer to the product documentation rather than duplicate the cont
 
 In Microsoft Entra ID, if another administrator or non-administrator needs to manage Microsoft Entra resources, assign them a Microsoft Entra role with the permissions they need.  
 
-Learn more about [Microsoft Entra built-in roles](/identity/role-based-access-control/permissions-reference).
+Learn more about [Microsoft Entra built-in roles](../identity/role-based-access-control/permissions-reference.md).
 
 While there are no restrictions to the role assignments for users in the external identities directory, it is recommended that the administrative accounts are invited over from the enterprise workforce directory.  
 
@@ -125,7 +125,7 @@ Directory data includes the objects stored in the directory such as users, appli
 
 Some values are created by the directory, during object creation, such as object and application IDs. They can't be duplicated or re-created with the same values. 
 
-You can [restore or permanently remove recently deleted users](/fundamentals/users-restore). 
+You can [restore or permanently remove recently deleted users](../fundamentals/users-restore.md). 
 
 For objects relevant to external identities, such as users, groups and service principals, see [recover from deletions in Microsoft Entra ID](recover-from-deletions.md). 
 
@@ -171,7 +171,7 @@ The following table lists key scenarios and service components for designing sol
 |Scenario|Component|Throttling guidance|
 |---|---|---|
 |Administrative tasks performing create, read, update, delete (CRUD) on Microsoft Entra External ID tenants, such as user flows or objects |Microsoft Graph API |- [Graph throttling guidance](/graph/throttling) </br> - [Graph service throttling limits](/graph/throttling-limits)|
-|Sign up, sign in, and password reset with user flows |Microsoft Entra External ID|[Microsoft Entra External ID service limits](/external-id/customers/reference-service-limits)|
+|Sign up, sign in, and password reset with user flows |Microsoft Entra External ID|[Microsoft Entra External ID service limits](../external-id/customers/reference-service-limits.md)|
 
 Microsoft Graph API has various limit types and associated quotas. The enforcement precedence is highest priority **application + tenant**, and lowest priority **tenant**. Because Microsoft Entra External ID doesn't support multitenant applications, the per application limit does not apply.
 
