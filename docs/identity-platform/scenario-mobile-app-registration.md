@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: 
-ms.date: 08/18/2021
+ms.date: 11/14/2024
 ms.reviewer: brianmel, jmprieur
 ms.service: identity-platform
 
@@ -14,6 +14,8 @@ ms.topic: how-to
 ---
 
 # Register mobile apps that call web APIs
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 This article contains instructions to help you register a mobile application that you're creating.
 
@@ -66,7 +68,6 @@ If you prefer to manually configure the redirect URI, you can do so through the 
 
 ### Username-password authentication
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 If your app uses only username-password authentication, you don't need to register a redirect URI for your application. This flow does a round trip to the Microsoft identity platform. Your application won't be called back on any specific URI.
 

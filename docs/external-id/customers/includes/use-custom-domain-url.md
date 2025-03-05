@@ -1,7 +1,7 @@
 ---
 author: kengaderdus
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.topic: include
 ms.date: 06/27/2024
 ms.author: kengaderdus
@@ -9,6 +9,8 @@ ms.manager: mwongerapk
 ---
 
 ### Use custom URL domain (Optional)
+
+[!INCLUDE [applies-to-external-only](../../includes/applies-to-external-only.md)]
 
 Use a custom domain to fully brand the authentication URL. From a user perspective, users remain on your domain during the authentication process, rather than being redirected to *ciamlogin.com* domain name.
 

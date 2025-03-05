@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra ID integration with Oracle Human Capital Management (HCM)'
+title: Microsoft Entra ID integration with Oracle Human Capital Management (HCM)
 description: Integrating Oracle Human Capital Management (HCM) with Microsoft Entra ID and on-premises Active Directory using the Inbound Provisioning API.
 author: jenniferf-skc
 manager: amycolannino
@@ -7,18 +7,18 @@ ms.reviewer: rahuln3223
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 07/29/2024
+ms.topic: how-to
+ms.date: 09/13/2024
 ms.author: jfields
 ---
 
-# Tutorial: Microsoft Entra ID integration with Oracle HCM
+# Microsoft Entra ID integration with Oracle HCM
 
 The Inbound Provisioning API is a capability that allows you to create, update, and delete users in Microsoft Entra ID and on-premises Active Directory from an external source, such as Oracle Human Capital Management (HCM). This capability enables organizations to improve productivity, strengthen security and more easily meet compliance and regulatory requirements.
 
 You can use [Microsoft Entra ID Governance](~/id-governance/identity-governance-overview.md) to automatically ensure that the right people have the right access to the right resources. This access includes identity and access process automation, delegation to business groups, and increased visibility.
 
-In this tutorial, we guide you through the steps and best practices for integrating Oracle HCM with Microsoft Entra ID via API-driven provisioning. You'll learn how to:
+In this article,  we guide you through the steps and best practices for integrating Oracle HCM with Microsoft Entra ID via API-driven provisioning, You'll learn how to:
 
 - Prepare your environment and configure the API settings
 - Export your worker data from Oracle HCM in CSV format and transform it to the system for cross-domain identity management (SCIM) format using Microsoft scripts
@@ -28,7 +28,7 @@ In this tutorial, we guide you through the steps and best practices for integrat
 
 ## Terminology
 
-- [Oracle HCM Fusion Cloud (oracle.com)](https://go.oracle.com/LP=139597?src1=:ad:pas:bi:dg:a_nas:l5:RC_MSFT220512P00060C01584:MainAd&gclid=9c09cb5c768b188a186aaea4b3735c3e&gclsrc=3p.ds&msclkid=9c09cb5c768b188a186aaea4b3735c3e): This guide focuses specifically on how to integrate from Oracle HCM Fusion Cloud to Microsoft Entra ID. Other Oracle offerings, such as PeopleSoft and Taleo, aren't in scope for this tutorial.
+- [Oracle HCM Fusion Cloud (oracle.com)](https://go.oracle.com/LP=139597?src1=:ad:pas:bi:dg:a_nas:l5:RC_MSFT220512P00060C01584:MainAd&gclid=9c09cb5c768b188a186aaea4b3735c3e&gclsrc=3p.ds&msclkid=9c09cb5c768b188a186aaea4b3735c3e): This guide focuses specifically on how to integrate from Oracle HCM Fusion Cloud to Microsoft Entra ID. Other Oracle offerings, such as PeopleSoft and Taleo, aren't in scope for this article.
 
 - Licensing:
 
@@ -45,14 +45,14 @@ Before you start integrating Oracle HCM with Microsoft Entra ID using the Inboun
 - An Oracle HCM (oracle.com) account with privileges to:
 
   - View and export HCM data.
-  - Access the Oracle HCM REST APIs. For this tutorial, we referenced [Human Resources 24A (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/rest-endpoints.html).
+  - Access the Oracle HCM REST APIs. For this article,  we referenced [Human Resources 24A (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/rest-endpoints.html).
         and [Applications Common 24A (oracle.com)](https://docs.oracle.com/en/cloud/saas/applications-common/24a/farca/rest-endpoints.html).
 
 - A Microsoft Entra ID tenant with a minimum P1 license (or EMS E3 / Microsoft 365 E3):
 
-  - To install the provisioning agent (hybrid users only), you'll need access to the Microsoft Windows server connected to your AD Domain.
+  - To install the provisioning agent (hybrid users only), you need access to the Microsoft Windows server connected to your AD Domain.
 
-  - To create a gallery app and provisioning job, you'll need Microsoft Entra with [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) and [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator) roles.
+  - To create a gallery app and provisioning job, you need Microsoft Entra with [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator) and [Hybrid Identity Administrator](~/identity/role-based-access-control/permissions-reference.md#hybrid-identity-administrator) roles.
 
 ## Integration overview
 
@@ -116,7 +116,7 @@ Before sending your initial sync payload, you need to make sure your data is pre
 
 ## CSV export for initial sync
 
-In this step, you'll export your worker data from Oracle HCM in CSV format and transform it to SCIM format using the Microsoft CSV to SCIM scripts. This step allows you to send your worker data to the Inbound Provisioning API in a standards-based payload that it can understand and process.
+In this step, you export your worker data from Oracle HCM in CSV format and transform it to SCIM format using the Microsoft CSV to SCIM scripts. This step allows you to send your worker data to the Inbound Provisioning API in a standards-based payload that it can understand and process.
 
 Share the list of Oracle HCM worker attributes you wish to export with your Oracle HCM administrator. To export your worker data from Oracle HCM in CSV format, Oracle provides multiple options.
 
@@ -165,9 +165,9 @@ The Oracle ATOM feed APIs provide real-time notifications of worker changes in O
 If you intend to use the ATOM feeds integration, make sure to turn on ATOM feeds immediately after your initial sync. A delay in this step can lead to loss of changes.
 
 To get started with Oracle's ATOM feeds, reference the
-[Oracle documentation (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/Working_with_Atom.html) and [tutorial (oracle.com)](https://docs.oracle.com/en/applications/fusion-apps/fusion-human-capital-management/hcmintegration/index.html#background). We recommend subscribing to the [Employee workspace (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/Employee_Atom_Feeds.html) and applying these Atom Feed collections: newhire, empassignment, empupdate, termination, cancelworkrelship, and workrelshipupdate. 
+[Oracle documentation (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/Working_with_Atom.html) and [article (oracle.com)](https://docs.oracle.com/en/applications/fusion-apps/fusion-human-capital-management/hcmintegration/index.html#background). We recommend subscribing to the [Employee workspace (oracle.com)](https://docs.oracle.com/en/cloud/saas/human-resources/24a/farws/Employee_Atom_Feeds.html) and applying these Atom Feed collections: newhire, empassignment, empupdate, termination, cancelworkrelship, and workrelshipupdate. 
 
-Once you've configured ATOM feeds in your HCM tenant, you'll need to create a custom module that reads the output of the ATOM feed API and sends the data to Microsoft Entra ID in a SCIM payload format using the Inbound Provisioning API.
+Once you've configured ATOM feeds in your HCM tenant, you need to create a custom module that reads the output of the ATOM feed API and sends the data to Microsoft Entra ID in a SCIM payload format using the Inbound Provisioning API.
 
 The logic in the custom module is responsible for handling the following scenarios:
 
@@ -313,41 +313,34 @@ Similar to initial sync, you can also use multiple options to obtain the CSV ext
 
 ## Writeback from Microsoft Entra ID to Oracle HCM
 
-After you've synchronized your worker data from Oracle HCM using the Inbound Provisioning API, you may want to configure writeback from the Microsoft Entra Provisioning Service to Oracle HCM. Writeback is the process of sending user changes that occur in Microsoft Entra ID back to Oracle HCM, such as username, email, and phone numbers. This process ensures that your data is consistent and accurate across both systems.
+After you've synchronized your user data from Oracle HCM to Microsoft Entra ID / on premises Active Directory using the Inbound Provisioning API, you may want to configure writeback from the Microsoft Entra Provisioning Service to Oracle HCM. Writeback is the process of sending user changes that occur in Entra ID back to Oracle HCM, such as username, email, and password. This ensures that your user data is consistent and accurate across both systems.
 
-To configure writeback, you'll need to use the [Oracle HCM SCIM APIs (oracle.com)](https://docs.oracle.com/en/cloud/saas/applications-common/24a/farca/Quick_Start.html). These APIs are RESTful web services that allow you to create, update, and delete users in Oracle HCM from an external source, such as Microsoft Entra. You can use the Microsoft Entra Provisioning Service to connect Microsoft Entra to the Oracle HCM SCIM APIs and map the user attributes that you want to writeback.
+To configure writeback, you need to use the Oracle HCM SCIM APIs. The [Oracle HCM SCIM APIs (oracle.com)](https://docs.oracle.com/en/cloud/saas/applications-common/24a/farca/Quick_Start.html) are RESTful web services that allow you to create, update, and delete users in Oracle HCM from an external source, such as Entra. You can use the existing Oracle Fusion ERP provisioning connector in the Microsoft Entra App Gallery to connect to the Oracle HCM SCIM APIs and map the user attributes that you want to write back.
 
-To set up writeback, you'll need to configure an outbound provisioning job to your Oracle HCM tenant. To configure writeback, you'll need the following info:
+To set up writeback, you need to configure an outbound provisioning job to your Oracle HCM tenant. To configure writeback, you need the following info: 
 
-- **REST server URL**, which is normally the URL of your Oracle Cloud Service. It should look something like this:
-    [https://servername.fa.us2.oraclecloud.com](https://servername.fa.us2.oraclecloud.com/hcmRestApi/scim).
+- **Admin username and password:** You need the details of the admin account that has access to Oracle HCM and can invoke the HCM [User update API](https://docs.oracle.com/en/cloud/saas/applications-common/25a/farca/index.html).
 
-- **Secret token** from HCM environment that provides your HCM tenant with access to other systems, such as Microsoft Entra.
 
-    - Create an OAUTH token in HCM and save it for use in the steps here. You can create an OAUTH token by going to step four in the following [guide (oracle.com)](https://docs.oracle.com/en/cloud/saas/applications-common/24a/farca/Quick_Start.html).
+Follow these steps to configure the writeback job to Oracle HCM using the Oracle Fusion ERP connector: 
 
-Once you have your REST server URL and your secret token, follow the steps here to configure the writeback job in Microsoft Entra:
+1.  In the Microsoft Entra Enterprise App Gallery, search for the app Oracle Fusion ERP.
 
-1.  Create a new Enterprise application.
+1.  Refer to [Oracle Fusion ERP](https://go.microsoft.com/fwlink/?linkid=2286440) to configure writeback using the Oracle Fusion ERP app.
 
-1.  Select the **Provisioning** option and switch the mode to **Automatic**.
+1.  When you're prompted to enter a URL and admin username and password, use the URL specified in the instructions and enter the admin username and password of the account that has access to Oracle HCM and can invoke HCM [User update API](https://docs.oracle.com/en/cloud/saas/applications-common/25a/farca/index.html).
 
-1.  Enter the endpoint URL of your Oracle HCM tenant and the authentication token in the **REST server URL** and **Secret token** fields.
+1.  Follow the guidance in the Oracle Fusion ERP article to edit attribute mappings and provision specific users back to Oracle HCM.
 
-1.  Test the connection, then save the settings.
+1.  In the edit Attribute Mapping section, select only the **Update** operation under **target object actions**.  
 
-1.  Go back to the **Provisioning overview** page for this application and select **Edit provisioning**. Click the arrow under mappings, then select the link of the mapping schema.
+1.  You'll see that HCM attributes are automatically populated in the attribute mappings section. Remove attributes that you don't want to write back.
 
-1.  In the edit **Attribute Mapping** section, select only the **Update**
-    operation under **Target object actions**.
+1.  Save the settings and enable the provisioning status.
 
-1.  You'll notice that HCM attributes are automatically populated in the **Attribute mappings** section. Only remove attributes that you don't want to writeback data.
+1.  Use Entra’s Provision on Demand capability to test and validate the writeback integration.
 
-1.  Save the settings, then enable the provisioning status.
-
-1.  Use Microsoft Entra's [Provision on Demand](~/identity/app-provisioning/provision-on-demand.md) capability to test and validate the writeback integration.
-
-1. Once you've validated the workflow, start the job and keep it running for Microsoft Entra to continuously sync data back to Oracle HCM.
+1.  Once you have validated the workflow, start the job and keep it running for Entra to continuously sync data back to Oracle HCM. 
 
 ## Appendix
 
@@ -524,7 +517,7 @@ The table in this section represents the set of attributes that Microsoft Entra 
 
 ## Acknowledgements
 
-We thank the following partners for their help reviewing and contributing to this tutorial:
+We thank the following partners for their help reviewing and contributing to this article:
 
 - Michael Starkweather, Director at PwC
 - Rob Allen, Director of Architecture and Technology at ActiveIdM
@@ -534,9 +527,9 @@ We thank the following partners for their help reviewing and contributing to thi
 - Nick Herbert, Vice President of Sales at Oxford Computer Group
 - Steve Brugger, CEO at Oxford Computer Group
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)
 
 
-[inboundProvisioningCurlTutorial]: ~identity/app-provisioning/inbound-provisioning-api-curl-tutorial
+[inboundProvisioningCurl article]: ~identity/app-provisioning/inbound-provisioning-api-curl-tutorial

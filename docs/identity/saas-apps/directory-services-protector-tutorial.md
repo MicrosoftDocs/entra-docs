@@ -2,7 +2,7 @@
 title: Microsoft Entra SSO integration with Directory Services Protector
 description: Learn how to configure single sign-on between Microsoft Entra ID and Directory Services Protector.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
@@ -10,7 +10,7 @@ ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Directory Services Protector so that I can control who has access to Directory Services Protector, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -18,7 +18,7 @@ ms.author: jeedes
 
 # Microsoft Entra SSO integration with Directory Services Protector
 
-In this tutorial, you'll learn how to integrate Directory Services Protector with Microsoft Entra ID. When you integrate Directory Services Protector with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Directory Services Protector with Microsoft Entra ID. When you integrate Directory Services Protector with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Directory Services Protector.
 * Enable your users to be automatically signed-in to Directory Services Protector with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To integrate Microsoft Entra ID with Directory Services Protector, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Directory Services Protector supports both **SP and IDP** initiated SSO.
 * Directory Services Protector supports **Just In Time** user provisioning.
@@ -155,11 +155,8 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
 1. Go to **Settings (gear icon)** > **Data Connections** > 
 **SAML Authentication** and toggle on the **Enabled** switch.
-![Screenshot shows the settings of the configuration.](./media/directory-services-protector-tutorial/settings.png "Account")
 
 1. In Step **1 - Identity provider**, select **Microsoft Entra ID** from the drop-down menu and click **SAVE**.
-
-    ![Screenshot shows the admin configuration.](./media/directory-services-protector-tutorial/provider.png "Azure")
 
 1. In Step **2 – Data required by the SAML identity provider**, select **CONFIRM** button and **DOWNLOAD METADATA XML** to **Upload metadata file** in the **Basic SAML Configuration** section in Microsoft Entra admin center and click **SAVE**.
 
@@ -171,17 +168,11 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 
     1. Select **App federation metadata URL** radio button, and paste the **Metadata URL** in the field from Microsoft Entra ID, and then select **IMPORT**.
 
-        ![Screenshot shows settings of the app metadata URL.](./media/directory-services-protector-tutorial/field.png "Application")
-
     1. Select the radio button to use **Import federation metadata XML** and click **IMPORT XML** to upload the **Federation Metadata XML** file from Microsoft Entra admin center.
-        
-        ![Screenshot shows how to import federation file.](./media/directory-services-protector-tutorial/admin.png "Import")
 
     1. Click **SAVE**.
 
 1. At the top of the **SAML Authentication** blade in DSP, it should show **Status** now as **Configured**.
-
-    ![Screenshot shows the status of configuration.](./media/directory-services-protector-tutorial/status.png "Page")
 
 ### Create Directory Services Protector test user
 
@@ -203,6 +194,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the Directory Services Protector tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Directory Services Protector for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next Steps
+## Related content
 
 Once you configure Directory Services Protector you can enforce session control, which protects exfiltration and infiltration of your organization's sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

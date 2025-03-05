@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 12/19/2024
 ms.author: billmath
 ms.custom:
 ms.collection:
@@ -65,7 +65,6 @@ Filter the report by IP address or user name to see an expanded view of sign-ins
 
 ## Accessing the workbook
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To access the workbook:
 

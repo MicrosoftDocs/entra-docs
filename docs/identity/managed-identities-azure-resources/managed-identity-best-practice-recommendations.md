@@ -2,18 +2,16 @@
 title: Best practice recommendations for managed system identities
 description: Recommendations on when to use user-assigned versus system-assigned managed identities
 
-author: barclayn
-manager: amycolannino
+author: rwike77
+manager: CelesteDG
 ms.service: entra-id
 ms.subservice: managed-identities
 ms.topic: conceptual
 ms.date: 11/09/2021
-ms.author: barclayn
+ms.author: ryanwi
 ---
 
 # Managed identity best practice recommendations
-
-[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
 
 ## Choosing system or user-assigned managed identities
 

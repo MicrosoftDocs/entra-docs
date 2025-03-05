@@ -32,7 +32,6 @@ To view applications registered in your Microsoft Entra tenant, you need:
 
 ## View a list of applications
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To view the enterprise applications registered in your tenant:
 

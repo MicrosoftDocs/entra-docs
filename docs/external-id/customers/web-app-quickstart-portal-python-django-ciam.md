@@ -9,7 +9,7 @@ ms.service: entra-external-id
  
 ms.custom: devx-track-python
 ROBOTS: NOINDEX
-ms.subservice: customers
+ms.subservice: external
 ms.topic: concept-article
 ms.date: 04/24/2024
 ---

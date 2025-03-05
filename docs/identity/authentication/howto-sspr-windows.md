@@ -5,7 +5,7 @@ description: Learn how to enable Microsoft Entra self-service password reset at 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 09/14/2023
+ms.date: 01/14/2025
 
 ms.author: justinha
 author: justinha
@@ -31,7 +31,7 @@ The following limitations apply to using SSPR from the Windows sign-in screen:
 - Some third party credential providers are known to cause problems with this feature.
 - Disabling UAC via modification of [EnableLUA registry key](/openspecs/windows_protocols/ms-gpsb/958053ae-5397-4f96-977f-b7700ee461ec) is known to cause issues.
 - This feature doesn't work for networks with 802.1x network authentication deployed and the option "Perform immediately before user logon". For networks with 802.1x network authentication deployed, it's recommended to use machine authentication to enable this feature.
-- Microsoft Entra hybrid joined machines must have network connectivity line of sight to a domain controller to use the new password and update cached credentials. This means that devices must either be on the organization's internal network or on a VPN with network access to an on-premises domain controller.
+- Microsoft Entra hybrid joined machines must have network connectivity line of sight to a domain controller to use the new password and update cached credentials. This means that devices must either be on the organization's internal network or on a VPN with network access to an on-premises domain controller. If SSPR is the only requirement, the network connection line to the domain controller is not required.
 - If using an image, prior to running sysprep ensure that the web cache is cleared for the built-in Administrator prior to performing the CopyProfile step. More information about this step can be found in the support article [Performance poor when using custom default user profile](https://support.microsoft.com/help/4056823/performance-issue-with-custom-default-user-profile).
 - The following settings are known to interfere with the ability to use and reset passwords on Windows 10 devices:
     - If lock screen notifications are turned off, **Reset password** won't work.

@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Hub Planner'
+title: Microsoft Entra SSO integration with Hub Planner
 description: Learn how to configure single sign-on between Microsoft Entra ID and Hub Planner.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Hub Planner so that I can control who has access to Hub Planner, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Hub Planner
+# Microsoft Entra SSO integration with Hub Planner
 
-In this tutorial, you'll learn how to integrate Hub Planner with Microsoft Entra ID. When you integrate Hub Planner with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Hub Planner with Microsoft Entra ID. When you integrate Hub Planner with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Hub Planner.
 * Enable your users to be automatically signed-in to Hub Planner with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Hub Planner supports **SP** initiated SSO.
 
@@ -150,9 +150,10 @@ After the extension is enabled, you must enable SSO for your account.
 1. Go to **Settings**.
 1. In the side menu, select **Authentication**.
 1. Select **SSO (Single Sign-On)**.
-1. Enter additional authentication information as shown in the following image, and then select **Save**.
-
-![Screenshot of SSO settings](media/hub-planner-tutorial/sso-settings.png)
+1. For **SAML 2.0 Endpoint URL(HTTP)**, enter your **Login URL**.
+1. For **Identity Provider Issuer**, enter your Microsoft Entra identifier.
+1. For **X.509 certificate**, enter your certificate.
+1. Select **Save**.
 
 ### Create Hub Planner test user
 
@@ -168,6 +169,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Hub Planner tile in the My Apps, this will redirect to Hub Planner Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Hub Planner you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

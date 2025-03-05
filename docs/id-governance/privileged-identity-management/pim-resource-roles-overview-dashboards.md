@@ -8,7 +8,7 @@ editor: markwahl-msft
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
-ms.date: 09/13/2023
+ms.date: 12/17/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
 ms.custom: pim

@@ -65,7 +65,6 @@ The following conceptual and how-to articles provide information about Microsoft
 - [B2B best practices](~/external-id/b2b-fundamentals.md) features recommendations for providing the smoothest experience for users and administrators.
 - [B2B and Office 365 external sharing](~/external-id/what-is-b2b.md) explains the similarities and differences among sharing resources through B2B, Office 365, and SharePoint/OneDrive.
 - [Properties on a Microsoft Entra B2B collaboration user](~/external-id/user-properties.md) describes the properties and states of the external user object in Microsoft Entra ID. The description provides details before and after invitation redemption.
-- [B2B user tokens](~/external-id/user-token.md) provides examples of the bearer tokens for B2B for an external user.
 - [Conditional Access for B2B](~/external-id/authentication-conditional-access.md) describes how Conditional Access and multifactor authentication work for external users.
 - [Cross-tenant access settings](~/external-id/cross-tenant-access-overview.md) provides granular control over how external Microsoft Entra organizations collaborate with you (inbound access) and how your users collaborate with external Microsoft Entra organizations (outbound access).
 - [Cross-tenant synchronization overview](~/identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md) explains how to automate creating, updating, and deleting Microsoft Entra B2B collaboration users across tenants in an organization.

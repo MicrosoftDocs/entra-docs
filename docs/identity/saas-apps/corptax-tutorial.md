@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Corptax'
+title: Microsoft Entra integration with Corptax
 description: Learn how to configure single sign-on between Microsoft Entra ID and Corptax.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and CorpTax so that I can control who has access to CorpTax, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Corptax
+# Microsoft Entra integration with Corptax
 
-In this tutorial, you learn how to integrate Corptax with Microsoft Entra ID.
+In this article,  you learn how to integrate Corptax with Microsoft Entra ID.
 Integrating Corptax with Microsoft Entra ID provides you with the following benefits:
 
 * You can control in Microsoft Entra ID who has access to Corptax.
@@ -35,7 +35,7 @@ To configure Microsoft Entra integration with Corptax, you need the following it
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Corptax supports **SP** initiated SSO
 
@@ -80,8 +80,6 @@ To configure Microsoft Entra single sign-on with Corptax, perform the following 
     ![Configure single sign-on link](common/select_sso.png)
 
 1. On the **Select a Single sign-on method** dialog, select **SAML/WS-Fed** mode to enable single sign-on.
-
-    ![Single sign-on select mode](common/select_saml_option.png)
 
 1. On the **Set up Single Sign-On with SAML** page, click **Edit** icon to open **Basic SAML Configuration** dialog.
 
@@ -162,7 +160,7 @@ In **Environment** text box, type your appropriate environment, you should be au
 
 ## Additional Resources
 
-- [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 

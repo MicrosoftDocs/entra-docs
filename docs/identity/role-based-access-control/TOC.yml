@@ -1,9 +1,11 @@
-- name: Microsoft Entra roles documentation
+- name: Microsoft Entra RBAC documentation
   href: index.yml
 - name: Overview
   items:
   - name: What is Microsoft Entra RBAC?
     href: custom-overview.md
+  - name: What's new in docs
+    href: whats-new.md
 - name: Concepts
   items:
   - name: Understand Microsoft Entra roles
@@ -41,35 +43,19 @@
   - name: List role definitions
     href: role-definitions-list.md
   - name: List role assignments
-    items: 
-    - name: List role assignments
-      href: view-assignments.md
-    - name: List role assignments for a user
-      href: list-role-assignments-users.md
-    - name: List role assignments for a group
-      href: groups-view-assignments.md
+    href: view-assignments.md
   - name: Assign roles
     items:
-    - name: Assign roles to users
-      href: manage-roles-portal.yml
-    - name: Assign roles to a user at different scopes
-      href: assign-roles-different-scopes.md
+    - name: Assign roles
+      href: manage-roles-portal.md
     - name: Create a role-assignable group
       href: groups-create-eligible.md
-    - name: Assign roles to groups
-      href: groups-assign-role.md
-    - name: Assign roles with scope using PowerShell
-      href: custom-assign-powershell.md
-    - name: Assign roles using Microsoft Graph
-      href: custom-assign-graph.md
   - name: Remove role assignments
-    items: 
-    - name: Remove role assignments from groups
-      href: groups-remove-assignment.md
+    href: groups-remove-assignment.md
   - name: Create custom roles
     items: 
     - name: Create a custom role
-      href: custom-create.yml
+      href: custom-create.md
     - name: Create custom roles for enterprise apps
       href: custom-enterprise-apps.md
     - name: Create unlimited app registrations
@@ -86,8 +72,6 @@
       href: admin-units-members-remove.md
     - name: Manage rules for dynamic membership groups
       href: admin-units-members-dynamic.md
-    - name: Assign roles with scope
-      href: admin-units-assign-roles.md
   - name: Protected actions
     items:
     - name: Add, remove, or test

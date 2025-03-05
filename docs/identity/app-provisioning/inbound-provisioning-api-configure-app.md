@@ -3,11 +3,11 @@ title: Configure API-driven inbound provisioning app
 description: Learn how to configure API-driven inbound provisioning app.
 
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 02/28/2024
+ms.date: 03/04/2025
 ms.author: jfields
 ms.reviewer: cmmdesai
 ---

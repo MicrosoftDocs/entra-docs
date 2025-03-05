@@ -87,7 +87,6 @@ The following instructions are an advanced configuration method, a flexible way 
 
 ## Add F5 BIG-IP from the Microsoft Entra gallery
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To implement SHA, the first step is to set up a SAML federation trust between BIG-IP APM and Microsoft Entra ID. The trust establishes the integration for BIG-IP to hand off preauthentication and Conditional Access to Microsoft Entra ID, before granting access to the published service.
 
@@ -393,8 +392,6 @@ Perform the following test as a user.
 2. Authenticate to Microsoft Entra ID.
 3. A redirection occurs to the BIG-IP virtual server for the app and signed in with SSO.
 4. The injected header output appears by the header-based application.
-
-   ![Screenshot of Server Variables, such as UPN, Employee ID, and Group Authorization.](./media/f5-big-ip-header-advanced/mytravel-example.png)
 
 For increased security, block direct access to the application, enforcing a path through the BIG-IP.
 

@@ -84,7 +84,6 @@ This tutorial covers Guided Configuration 16.1 with an Easy Button template. Wit
 
 ## Register Easy Button
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 [Microsoft identity platform](~/identity-platform/quickstart-register-app.md) trusts a service or client, and then either can access Microsoft Graph. This action creates a tenant app registration to authorize Easy Button access to Graph. Through these permissions, the BIG-IP pushes the configurations to establish a trust between a SAML SP instance for published application, and Microsoft Entra ID as the SAML IdP.
 
@@ -129,9 +128,6 @@ Some settings are global, which can be reused for publishing more applications, 
 1. Provide a unique **Configuration Name**.
 2. Enable **Single Sign-On (SSO) & HTTP Headers**.
 3. Enter the **Tenant ID**, **Client ID**, and **Client Secret** you noted when registering the Easy Button client in your tenant.
-
-    ![Screenshot of Configuration Name, SSO and HTTP Headers, and Azure Service Account Details entries.](./media/f5-big-ip-kerberos-easy-button/azure-configuration-properties.png)
-
 4. Confirm the BIG-IP connects to your tenant.
 5. Select **Next**.
 
