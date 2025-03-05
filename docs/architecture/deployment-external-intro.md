@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 02/27/2025
+ms.date: 03/05/2025
 ms.author: gasinh
 
 #customer intent: I want to documentation to plan, design, implement, and operate Microsoft Entra External ID in my environment.
@@ -21,7 +21,7 @@ What is CIAM?
 
 ## CIAM design
 
-When designing a CIAM solution, there are facets to consider. For instance, your customers rely on mechanisms to help them authenticate to services. A frictionless self-service experience is part of a CIAM solution. It can consistently portray brand through customer-facing touchpoints, including the CIAM solution.  
+When you design a CIAM solution, there are facets to consider. For instance, your customers rely on mechanisms to help them authenticate to services. A frictionless self-service experience is part of a CIAM solution. It can consistently portray brand through customer-facing touchpoints, including the CIAM solution.  
 
 Increasingly, digital identities are used on omnichannel and hybrid scenarios, such as in-store checkouts with phone tap and go. 
 
@@ -47,13 +47,13 @@ In Microsoft Entra External ID, you can customize the user experience of the aut
 * Enable single sign-on (SSO) applications offered to customers
 * Localize content to reach users around the world 
 
-In Microsoft Entra External ID, you can create [user flows](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) to define the structure, experience, and branding of authentication flows. The user flow defines the series of sign-up and sign-in steps customers follow. Sign-in methods include email and password, one-time passcodes (OTP), or social accounts from Google or Facebook. Enable user flows to collect information from customers during sign-up: select from built-in user attributes or add custom attributes. Configure user flows to execute custom workflows or federate with SAML and OpenID Connect IdPs. 
+In Microsoft Entra External ID, you can create [user flows](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) to define the structure, experience, and branding of authentication flows. The user flow defines the series of sign-up and sign-in steps customers follow. Sign-in methods include email and password, one-time passcodes (OTP), or social accounts from Google or Facebook. Enable user flows to collect information from customers during sign-up: select from built-in user attributes or add custom attributes. Configure user flows to execute custom workflows or federate with Security Assertion Markup Language (SAML) and OpenID Connect (OIDC) IdPs. 
 
-Use your branding requirements to configure the look and feel of the screens that users see when authenticating through a user flow. The branding appears universally in all user flows in the Microsoft Entra External ID tenant. There is a near-future goal to add per-application branding. 
+Use your branding requirements to configure the look and feel of the screens that users see when authenticating through a user flow. The branding appears universally in all user flows in the Microsoft Entra External ID tenant. There's a near-future goal to add per-application branding. 
 
-It's recommended you use a custom domain to authenticate users. Use a domain name that matches your brand, such as **login.contoso.com**. By using a domain name that you own, you can improve protection of publicly accessible authentication endpoints. 
+We recommend you use a custom domain to authenticate users. Use a domain name that matches your brand, such as **login.contoso.com**. By using a domain name that you own, you can improve protection of publicly accessible authentication endpoints. 
 
-A Microsoft Entra ID user flow is a container that holds user experience customizations for the authentication flow. Assign it to all, or a subset of, your applications. Create more specialized user flows per application, if needed. It's recommended you enable a consistent experience across your application suite because users become familiar with the flow. 
+A Microsoft Entra ID user flow is a container that holds user experience customizations for the authentication flow. Assign it to all, or a subset of, your applications. Create more specialized user flows per application, if needed. We recommend you enable a consistent experience across your application suite because users become familiar with the flow. 
 
 ### Customize
 
@@ -71,21 +71,21 @@ A CIAM exposes anonymously accessible endpoints to the internet, which authentic
 These endpoints are the front door when authenticating to applications. Therefore, implement multiple layers of security controls to protect the endpoints.
 
 * **Edge protection** - Use [Web Application Firewall](/azure/web-application-firewall/overview) (WAF) to protect endpoints from bot abuse
-* **Sign up fraud prevention** - Integrate fraud prevention techniques such as email verification, SMS verification, captcha controls, and fraud analysis techniques to help ensure bots can't sign up
-* **Account takeover protection** - Integrate risk-based authentication solutions to detect sign-in risk, and prompt a stronger authentication factor, if required. Microsoft has a goal to add an integrated third-party account takeover protection solution.
+* **Sign up fraud prevention** - Integrate fraud prevention techniques such as email verification, short message service (SMS) verification, captcha controls, and fraud analysis techniques to help ensure bots can't sign up
+* **Account takeover protection** - Integrate risk-based authentication solutions to detect sign-in risk, and prompt a stronger authentication factor, if necessary. Microsoft has a goal to add an integrated third-party account takeover protection solution.
 * **Authorization** - Use Microsoft Entra groups and roles to determine which users have access to applications, and what they can access in the applications
 
 ### User directory
 
 A CIAM solution requires a directory store to persist user profiles and attributes. This configuration ensures users are represented in one way across services, with a unique identifier referenced by other systems. For example, hold this data securely and redundantly when building customer relationships and generating insights for your business. 
 
-Microsoft Entra External ID uses Microsoft Entra ID directory technology for scale, resiliency and redundancy. Create a Microsoft Entra External ID tenant for automatic access to the associated user directory. 
+Microsoft Entra External ID uses Microsoft Entra ID directory technology for scale, resiliency, and redundancy. Create a Microsoft Entra External ID tenant for automatic access to the associated user directory. 
 
 ### Alerting and monitoring
 
-The authentication journey is the front door to your services. Monitor it to determine its overall health. This encompasses the authentication journey success rates, multifactor authentication (MFA) rates, throttling, and logging. Use this data to continue to evolve your authentication journeys for a balance between frictionless and security. Present this collected data to the business to determine where the balance lies for your deployment. 
+The authentication journey is the front door to your services. Monitor it to determine its overall health: authentication journey success rates, multifactor authentication (MFA) rates, throttling, and logging. Use this data to evolve your authentication journeys for a balance between frictionless and security. To determine the balance between your deployment, present the collected data to the business. 
 
-Microsoft Entra External ID has a user insights dashboard to generate analytics on users interacting with your authentication journeys. See more detailed authentication logs to analyse using the Microsoft Entra ID sign in and audit logs. Export them with [Microsoft Azure Monitor](/azure/azure-monitor/), or [Microsoft Graph](/graph/overview) API. With Azure Monitor logs are retained in a log analytics workspace for up to two years. Log archival for longer periods is achieved with a storage account. See more in [Auditing and monitoring](deployment-external-audit-monitor.md).
+Microsoft Entra External ID has a user insights dashboard to generate analytics on users interacting with your authentication journeys. See more detailed authentication logs to analyze using the Microsoft Entra ID sign in and audit logs. Export them with [Microsoft Azure Monitor](/azure/azure-monitor/), or [Microsoft Graph](/graph/overview) API. With Azure Monitor, logs are retained in a log analytics workspace for up to two years. Log archival for longer periods is achieved with a storage account. See more in [Auditing and monitoring](deployment-external-audit-monitor.md).
 
 ## Next steps
 
