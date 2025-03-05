@@ -35,7 +35,7 @@ After users complete the flow, a token, an authorization code, or an error goes 
 
 A native experience enables the user flow user in application UI. Developers can use Microsoft Entra native authentication to host app user interface in the client application, instead of delegating authentication to browsers. This scenario can result in a natively integrated authentication experience. Experience the control over the look and feel of the sign-in and sign-up interfaces. 
 
-Use the [native authentication](/external-id/customers/concept-native-authentication) SDK to build native user experiences for iOS and Android mobile applications. 
+Use the [native authentication](../external-id/customers/concept-native-authentication.md) SDK to build native user experiences for iOS and Android mobile applications. 
 
 Microsoft implementation of these authentication APIs is based on the draft standard [OAuth 2.0 Direct Interaction Grants](https://drafts.aaronpk.com/oauth-direct-interaction-grant/draft-parecki-oauth-direct-interaction-grant.html). See a flow in the following diagram.
 
@@ -51,15 +51,15 @@ Native authentication APIs are available for platform native iOS and Android cli
 
 Enable Microsoft Graph API to create, read, update, and delete objects in the Microsoft Entra External ID user directory. For user-facing portals, an application token,  or a delegated token (application + user) processes data using the Microsoft Graph API.  
 
-Learn more about [delegated access](/identity-platform/delegated-access-primer).
+Learn more about [delegated access](../identity-platform/delegated-access-primer.md).
 
 See the following example profile edit in the diagram. 
 
-   [ ![Diagram of a profile edit.](profile-edit.png)](profile-edit-expanded.png#lightbox)
+   [ ![Diagram illustrating a profile edit.](profile-edit.png)](profile-edit-expanded.png#lightbox)
 
 Learn more about [setting up a Node.js web application for profile editing](). 
 
-In a video, learn how to [edit a user profile](/external-id/customers/how-to-web-app-node-edit-profile-prepare-app). Discover how profile edit applications work with middleware API for additional security. The following diagram illustrates middleware API and MFA.  
+In a video, learn how to [edit a user profile](../external-id/customers/how-to-web-app-node-edit-profile-prepare-app.md). Discover how profile edit applications work with middleware API for additional security. The following diagram illustrates middleware API and MFA.  
 
    [ ![Diagram of a profile edit.](middleware-api.png)](middleware-ap-expanded.png#lightbox)
 
