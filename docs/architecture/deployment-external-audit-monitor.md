@@ -21,7 +21,7 @@ Microsoft Entra External ID stores sign-in and audit logs for 30 days. Export th
 
 [Azure Monitor](/external-id/customers/how-to-azure-monitor) is configured as a bridge to export logs. See the following diagram of Microsoft Entra External ID log exports with Azure Monitor.  
 
-   [ ![Diagram of log exports with Azure Monitor.](log-export.png)](log-export-extensions-expanded.png#lightbox)
+   [ ![Diagram of log exports with Azure Monitor.](media/deployment-external/log-export.png)](media/deployment-external/log-export-extensions-expanded.png#lightbox)
 
 This configuration requires projecting an Azure resource group with the resources from the enterprise tenant to the Microsoft Entra External ID tenant. You can enable log exports using Azure Monitor. 
 
@@ -47,7 +47,7 @@ Each experience for request for authentication and identity comes with a unique 
 
 The following diagram illustrates monitoring and alerting setup. 
 
-   [ ![Diagram of alerting and monitoring setup.](alerting-setup.png)](alerting-setup-expanded.png#lightbox)
+   [ ![Diagram of alerting and monitoring setup.](media/deployment-external/alerting-setup.png)](media/deployment-external/alerting-setup-expanded.png#lightbox)
 
 ### Service degradation and failure alerting setup
 
@@ -100,7 +100,7 @@ The following table correlates metric, resource, and description.
 
 The following screenshot shows an example usage and insights dashboard.
 
-   [ ![Screenshot of the usage and insights section in the Microsoft Entra admin center.](usage-insights.png)](usage-insights-expanded.png#lightbox)
+   [ ![Screenshot of the usage and insights section in the Microsoft Entra admin center.](media/deployment-external/usage-insights.png)](media/deployment-external/usage-insights-expanded.png#lightbox)
 
 ## Next steps
 
