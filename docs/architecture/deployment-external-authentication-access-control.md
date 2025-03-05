@@ -47,7 +47,7 @@ See the [custom authentication extensions overview](../identity-platform/custom-
 
 The following diagram shows a custom authentication flow. 
 
-   [ ![Diagram of a custom extension flow.](media/deployment-external/custom-authentication-extension.png)](media/deployment-external/custom-authentication-extensions-expanded.png#lightbox)
+   [ ![Diagram of a custom extension flow.](media/deployment-external/custom-authentication-extension.png)](media/deployment-external/custom-authentication-extension-expanded.png#lightbox)
 
 ### API and event handler considerations
 
