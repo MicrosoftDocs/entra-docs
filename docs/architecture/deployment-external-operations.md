@@ -34,11 +34,11 @@ Attackers constantly change the way they operate; therefore, a defence-in-depth 
 
 ### Edge protection with custom domains
 
-When using a web-based redirect for user flows, consumers see the domain name of the authentication endpoint. By default, this endpoint uses the format **\<tenantprefix>.ciamlogin.com**, where **\<tenantprefix>** is the tenant-name prefix. For example, for **contoso.onmicrosoft.com**, the tenant prefix is **contoso**. 
+When a web-based redirect is used for user flows, consumers see the domain name of the authentication endpoint. By default, this endpoint uses the format **\<tenantprefix>.ciamlogin.com**, where **\<tenantprefix>** is the tenant-name prefix. For example, for **contoso.onmicrosoft.com**, the tenant prefix is **contoso**. 
 
 In Microsoft Entra External ID, you can change the domain name to one that you own, and one that your customer can relate to your service. For example, you might use **login.contoso.com**. 
 
-In addition to branding capabilities, using a custom domain name enables integration of a web application firewall (WAF) solution, which have more protection from bots and malicious actors.  
+In addition to branding capabilities, using a custom domain name enables integration of a web application firewall (WAF) solution, which has more protection from bots and malicious actors.  
 
 Learn more about [custom URL domains in external tenants](../external-id/customers/concept-custom-url-domain.md). 
 
@@ -82,7 +82,7 @@ When sign-in experiences demand less friction, ensure operations allow users to 
 
 You can reduce the user flow attack surface. For example, block access from certain countries or regions, or enforce stringent authentication methods from countries you don't regularly operate in. Achieve this using [Microsoft Entra Conditional Access](../identity/conditional-access/overview.md) policies.
 
-Use Conditional Access policies to enforce strong authentication methods when applications indicate more risk for some transactions. For example, a user tries to purchase a large quantity of items from an ecommerce website. Use Conditional Access and authentication strengths to enable the user to minimise the risk. 
+Use Conditional Access policies to enforce strong authentication methods when applications indicate more risk for some transactions. For example, a user tries to purchase a large quantity of items from an ecommerce website. Use Conditional Access and authentication strengths to enable the user to minimize the risk. 
 
 ## Next steps
 
