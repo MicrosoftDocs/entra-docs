@@ -27,7 +27,7 @@ Increasingly, digital identities are used on omnichannel and hybrid scenarios, s
 
 The key facets are illustrated in the following diagram: 
 
-   [ ![Diagram of CIAM features and options.](ciam-facets.png) ](ciam-facets-expanded.png#lightbox)
+   [ ![Diagram of CIAM features and options.](media/deployment-external/ciam-facets.png) ](media/deployment-external/ciam-facets-expanded.png#lightbox)
 
 Also consider your operational details:
 
@@ -37,7 +37,7 @@ Also consider your operational details:
 * Support
 * Incident response
 
-## Microsfot Entra External ID for customers: user experience
+## Microsoft Entra External ID for customers: user experience
 
 In Microsoft Entra External ID, you can customize the user experience of the authentication flow in multiple ways. To reduce abandonment rates of your authentication journey, improve completion and conversion rates. Create an authentication flow: 
 
