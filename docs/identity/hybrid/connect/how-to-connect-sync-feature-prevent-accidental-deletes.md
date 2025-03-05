@@ -31,10 +31,12 @@ Common scenarios involving many object deletions include:
 
 The default value of 500 objects can be changed with PowerShell using `Enable-ADSyncExportDeletionThreshold`, which is part of the AD Sync module installed with Microsoft Entra Connect. You should configure this value to fit the size of your organization. 
 
+
+## Notifications for preventing accidental deletes
+
 If there are too many deletes staged to be exported to Microsoft Entra ID, then the export stops before deleting any object and you receive an email like this:
 
 ![Prevent Accidental deletes email](./media/how-to-connect-sync-feature-prevent-accidental-deletes/email.png)
-
 
 
 | From:         | Microsoft Security <MSSecurity-noreply@microsoft.com>                                                                                                               |
@@ -47,12 +49,11 @@ If there are too many deletes staged to be exported to Microsoft Entra ID, then 
 | Tenant:       | FabrikamOnline.com                                                                                                                                                  |
 
 
-
-
 From [Microsoft Entra Connect Health](https://portal.azure.com/#blade/Microsoft_Azure_ADHybridHealth/AadHealthMenuBlade) portal, navigate to Sync services, select your tenant, then select your active Entra Connect server and select Alerts to see the list of events where the accidental delete threshold is reported.
 
-From the Application event viewer logs you can see a Warning event ID 116 as the following sample:
+![Microsoft Entra Connect Sync Alerts](./media/how-to-connect-sync-feature-prevent-accidental-deletes/connecthealthalert.png)
 
+From the Application event viewer logs you can see a Warning event ID 116 as the following sample:
 
 ```
 Log Name:      Application
@@ -67,10 +68,12 @@ Computer:      <server name>
 Description:   Prevent Accidental Deletes: The number of deletions for this sync cycle (100 pending deletes) has exceeded the current threshold of 50 objects. Deletions will be suppressed for this sync cycle. Please visit http://go.microsoft.com/fwlink/?LinkId=390655 for more information.
 ```
 
-You can also see the status `stopped-deletion-threshold-exceeded` when you look in the **Synchronization Service Manager** UI for the Export profile.
+## Determine which objects are pending deletion
+
+You can see the run profile status `stopped-deletion-threshold-exceeded` when you look in the **Synchronization Service Manager** UI for the Export step.
 ![Prevent Accidental deletes Sync Service Manager UI](./media/how-to-connect-sync-feature-prevent-accidental-deletes/syncservicemanager.png)
 
-If this error is unexpected, then investigate and take corrective actions. To see which objects are about to be deleted, do the following steps:
+To see which objects are about to be deleted, do the following steps:
 
 1. Start __Synchronization Service__ from the Start Menu.
 
@@ -86,17 +89,16 @@ If this error is unexpected, then investigate and take corrective actions. To se
 
     ![Search Connector Space](./media/how-to-connect-sync-feature-prevent-accidental-deletes/searchcs.png)
 
-## If the deletions are unexpected
+### If the deletions are unexpected
 
 If you aren't sure that all deletes are desired, and wish to go down a safer route, you can use a more detailed method to [Verify](/entra/identity/hybrid/connect/how-to-connect-sync-staging-server) all the objects pending delete from a spreadsheet.
-
 
 Unexpected deletions are usually caused by changes in the OU structure or [Domain/OU scope filtering](/entra/identity/hybrid/connect/how-to-connect-sync-configure-filtering), so make sure the objects pending delete are in sync scope. For example, renaming an OU in Active Directory can cause unexpected mass deletions in Microsoft Entra ID unless you re-select the OU in Microsoft Entra Connect Wizard.
 If you're using attribute scoping filters, adjust the necessary sync rules in the Synchronization Rules Editor to make sure the objects are back in sync scope.
 > [!IMPORTANT]
 > Domain/OU scoping filter and sync rule changes don't take effect until you run a full sync cycle: `Start-ADSyncSyncCycle -PolicyType Initial`
 
-## If all deletions are desired
+### If all deletions are desired
 
 If all the objects pending deletion are supposed to be deleted in Microsoft Entra ID, then using your Entra Global Administrator or Hybrid Identity Administrator credential, do the following steps:
 
