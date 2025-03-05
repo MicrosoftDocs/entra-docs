@@ -6,7 +6,7 @@ description: Learn how to resolve errors when using Microsoft Entra Conditional 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: troubleshooting
-ms.date: 01/16/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: inbarckms
