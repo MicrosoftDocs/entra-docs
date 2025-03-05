@@ -6,7 +6,7 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 04/19/2023
+ms.date: 08/25/2024
 ms.author: jricketts
 ms.custom: it-pro, seodec18, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
@@ -104,7 +104,7 @@ For example, a company acquires a competitor. Each company has a single Microsof
 - Use single sign-on to all provisioned resources.
 - Find each other and resources in a unified GAL.
 - Determine each other's presence and initiate chat.
-- Access applications based on dynamic group membership.
+- Access applications based on dynamic membership groups.
 
 In this scenario, each organization's tenant is the home tenant for its existing employees while being the resource tenant for the other organization's employees.
 
@@ -187,7 +187,7 @@ Considerations that are outside the scope of this article include integration of
 
 This technique only applies for complex organizations that manage all identity in traditional Windows Server-based Active Directory Domain Services (AD DS). The approach uses Microsoft Entra Connect as the synchronization engine as illustrated in the following diagram.
 
-:::image type="complex" source="media/multi-tenant-user-management-scenarios/diagram-Azure-ad-connect-sync-engine-inline.png" alt-text="Diagram illustrates an approach to provisioning accounts that uses Microsoft Entra Connect as the synchronization engine." lightbox="media/multi-tenant-user-management-scenarios/diagram-Azure-ad-connect-sync-engine-expanded.png":::
+:::image type="complex" source="media/multi-tenant-user-management-scenarios/diagram-sync-engine-inline.png" alt-text="Diagram illustrates an approach to provisioning accounts that uses Microsoft Entra Connect as the synchronization engine." lightbox="media/multi-tenant-user-management-scenarios/diagram-sync-engine-expanded.png":::
     Diagram title: Provision accounts with Microsoft Entra Connect. The diagram shows four main components. A box on the left represents the Customer. A cloud shape on the right represents B2B Conversion. At the top center, a box containing a cloud shape represents Microsoft Commercial Cloud. At the bottom center, a box containing a cloud shape represents Microsoft US Government Sovereign Cloud. Inside the Customer box, a Windows Server Active Directory icon connects to two boxes, each with a Microsoft Entra Connect label. The connections are dashed red lines with arrows at both ends and a refresh icon. Inside the Microsoft Commercial Cloud shape is another cloud shape that represents Microsoft Azure Commercial. Inside is another cloud shape that represents Microsoft Entra ID. To the right of the Microsoft Azure Commercial cloud shape is a box that represents Office 365 with a label, Public Multitenant. A solid red line with arrows at both ends connects the Office 365 box with the Microsoft Azure Commercial cloud shape and a label, Hybrid Workloads. Two dashed lines connect from the Office 365 box to the Microsoft Entra cloud shape. One has an arrow on the end that connects to Microsoft Entra ID. The other has arrows on both ends. A dashed line with arrows on both ends connects the Microsoft Entra cloud shape to the top Customer Microsoft Entra Connect box. A dashed line with arrows on both ends connects the Microsoft Commercial Cloud shape to the B2B Conversion cloud shape. Inside the Microsoft US Government Sovereign Cloud box is another cloud shape that represents Microsoft Azure Government. Inside is another cloud shape that represents Microsoft Entra ID. To the right of the Microsoft Azure Commercial cloud shape is a box that represents Office 365 with a label, US Gov GCC-High L4. A solid red line with arrows at both ends connects the Office 365 box with the Microsoft Azure Government cloud shape and a label, Hybrid Workloads. Two dashed lines connect from the Office 365 box to the Microsoft Entra cloud shape. One has an arrow on the end that connects to Microsoft Entra ID. The other has arrows on both ends. A dashed line with arrows on both ends connects the Microsoft Entra cloud shape to the bottom Customer Microsoft Entra Connect box. A dashed line with arrows on both ends connects the Microsoft Commercial Cloud shape to the B2B Conversion cloud shape.
 :::image-end:::
 
@@ -246,7 +246,7 @@ In a mesh topology, every user in each home tenant synchronizes to each of the o
 
 You can use the mesh topology in as few as two tenants, such as in the scenario for a DIB defense contractor straddling a cross-sovereign cloud solution. As with the mesh topology, each user in each home tenant synchronizes to the other tenant, which becomes a resource tenant. In the [Technique 3 section](#technique-3-provision-accounts-with-azure-ad-connect) diagram, the public Commercial tenant internal user synchronizes to the US sovereign GCC High tenant as an external user account. At the same time, the GCC High internal user synchronizes to Commercial as an external user account.
 
-The diagram also illustrates data storage locations. Data categorization and compliance is outside the scope of this article, but you can include entitlements and restrictions to applications and content. Content might include locations where an internal user's user-owned data resides (such as data stored in an Exchange Online mailbox or OneDrive for Business). The content might be in their home tenant and not in the resource tenant. Shared data might reside in either tenant. You can restrict access to the content through access control and Conditional Access policies.
+The diagram also illustrates data storage locations. Data categorization and compliance is outside the scope of this article, but you can include entitlements and restrictions to applications and content. Content might include locations where an internal user's user-owned data resides (such as data stored in an Exchange Online mailbox or OneDrive). The content might be in their home tenant and not in the resource tenant. Shared data might reside in either tenant. You can restrict access to the content through access control and Conditional Access policies.
 
 #### Single resource tenant topology
 
@@ -263,7 +263,7 @@ In a single resource tenant topology, users and their attributes synchronize to 
 
 ### Managing accounts
 
-This solution detects and syncs attribute changes from source tenant users to resource tenant external users. You can use these attributes to make authorization decisions (such as when you're using dynamic groups).
+This solution detects and syncs attribute changes from source tenant users to resource tenant external users. You can use these attributes to make authorization decisions (such as when you're using dynamic membership groups).
 
 ### Deprovisioning accounts
 

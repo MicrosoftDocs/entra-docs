@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Jobbadmin'
+title: Microsoft Entra SSO integration with Jobbadmin
 description: Learn how to configure single sign-on between Microsoft Entra ID and Jobbadmin.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Jobbadmin so that I can control who has access to Jobbadmin, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Jobbadmin
+# Microsoft Entra SSO integration with Jobbadmin
 
-In this tutorial, you'll learn how to integrate Jobbadmin with Microsoft Entra ID. When you integrate Jobbadmin with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Jobbadmin with Microsoft Entra ID. When you integrate Jobbadmin with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Jobbadmin.
 * Enable your users to be automatically signed-in to Jobbadmin with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Jobbadmin supports **SP** initiated SSO.
 
@@ -87,7 +87,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<instancename>.jobbnorge.no/auth/saml2/login.ashx`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Jobbadmin Client support team](https://www.jobbnorge.no/om-oss/kontakt-oss) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Jobbadmin Client support team](https://grade.zammad.com/help) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
@@ -129,11 +129,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Jobbadmin SSO
 
-To configure single sign-on on **Jobbadmin** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [Jobbadmin support team](https://www.jobbnorge.no/om-oss/kontakt-oss). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Jobbadmin** side, you need to send the downloaded **Federation Metadata XML** and appropriate copied URLs from the application configuration to [Jobbadmin support team](https://grade.zammad.com/help). They set this setting to have the SAML SSO connection set properly on both sides.
 
 ### Create Jobbadmin test user
 
-In this section, you create a user called Britta Simon in Jobbadmin. Work with [Jobbadmin support team](https://www.jobbnorge.no/om-oss/kontakt-oss) to add the users in the Jobbadmin platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in Jobbadmin. Work with [Jobbadmin support team](https://grade.zammad.com/help) to add the users in the Jobbadmin platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 
@@ -145,6 +145,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Jobbadmin tile in the My Apps, this will redirect to Jobbadmin Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Jobbadmin you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

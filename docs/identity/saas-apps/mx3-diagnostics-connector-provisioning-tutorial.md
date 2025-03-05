@@ -1,26 +1,22 @@
 ---
-title: 'Tutorial: Configure MX3 Diagnostics Connector for automatic user provisioning with Microsoft Entra ID'
+title: Configure MX3 Diagnostics Connector for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to MX3 Diagnostics Connector.
 
-documentationcenter: ''
 author: thomasakelo
 manager: jeedes
-
-ms.assetid: 6d54ea28-0208-45bc-8e29-c6cf9a912f00
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.tgt_pltfrm: na
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to MX3 Diagnostics so that I can streamline the user management process and ensure that users have the appropriate access to MX3 Diagnostics.
 ---
 
-# Tutorial: Configure MX3 Diagnostics Connector for automatic user provisioning
+# Configure MX3 Diagnostics Connector for automatic user provisioning
 
-This tutorial describes the steps you need to perform in both MX3 Diagnostics Connector and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [MX3 Diagnostics Connector](https://www.mx3diagnostics.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This article describes the steps you need to perform in both MX3 Diagnostics Connector and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [MX3 Diagnostics Connector](https://www.mx3diagnostics.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 
 ## Capabilities supported
@@ -33,7 +29,7 @@ This tutorial describes the steps you need to perform in both MX3 Diagnostics Co
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md). 
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
@@ -49,7 +45,7 @@ The scenario outlined in this tutorial assumes that you already have the followi
 
 ## Step 2: Configure MX3 Diagnostics Connector to support provisioning with Microsoft Entra ID
 
-1. If your MX3 account does not have organization feature enabled, apply for organization feature as described in this [documentation](https://www.mx3diagnostics.com/files/files/MX3_PortalGuide_0321.pdf).
+1. If your MX3 account does not have organization feature enabled, apply for organization feature as described in documentation at `https://www.mx3diagnostics.com/files/files/MX3_PortalGuide_0321.pdf`.Make sure to sign in to MX3 account to be able to access this documentation.
 
 1. If your MX3 account does not have single-sign-on feature enabled, setup Microsoft Entra SSO as described in this documentation.
 
@@ -134,7 +130,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |externalId|String|
       |members|Reference|
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for MX3 Diagnostics Connector, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -162,6 +158,6 @@ Once you've configured provisioning, use the following resources to monitor your
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

@@ -1,23 +1,20 @@
 ---
-title: 'Tutorial: Configure PaperCut Cloud Print Management for automatic user provisioning with Microsoft Entra ID'
+title: Configure PaperCut Cloud Print Management for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to PaperCut Cloud Print Management.
-
 author: thomasakelo
 manager: jeedes
-ms.assetid: 7e65d727-2951-4aec-a7a3-7bde49ed09e2
 ms.service: entra-id
 ms.subservice: saas-apps
-
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to PaperCut Cloud Print Management so that I can streamline the user management process and ensure that users have the appropriate access to PaperCut Cloud Print Management.
 ---
 
-# Tutorial: Configure PaperCut Cloud Print Management for automatic user provisioning
+# Configure PaperCut Cloud Print Management for automatic user provisioning
 
-This tutorial describes the steps you need to perform in both PaperCut Cloud Print Management and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [PaperCut Cloud Print Management](https://www.papercut.com/products/papercut-pocket/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+This article describes the steps you need to perform in both PaperCut Cloud Print Management and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to [PaperCut Cloud Print Management](https://www.papercut.com/products/papercut-pocket/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
 ## Capabilities Supported
 
@@ -28,7 +25,7 @@ This tutorial describes the steps you need to perform in both PaperCut Cloud Pri
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md). 
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications). 
@@ -107,7 +104,6 @@ This section guides you through the steps to configure the Microsoft Entra provi
 7. Select **Save**.
 
 8. Under the **Mappings** section, select **Provision Microsoft Entra users**.
-   ![Microsoft Entra ID Mapping](media/papercut-cloud-print-management-provisioning-tutorial/mapping.png)
 
 9. Review the user attributes that are synchronized from Microsoft Entra ID to PaperCut Cloud Print Management in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in PaperCut Cloud Print Management for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you will need to ensure that the PaperCut Cloud Print Management API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
@@ -117,7 +113,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |displayName|String|
    |emails[type eq "work"].value|String|
 
-10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+10. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 11. To enable the Microsoft Entra provisioning service for PaperCut Cloud Print Management, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -146,6 +142,6 @@ Once you've configured provisioning, use the following resources to monitor your
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

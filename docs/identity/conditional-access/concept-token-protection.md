@@ -26,7 +26,7 @@ With this preview, we're giving you the ability to create a Conditional Access p
 > * **Sign In logs output:** The value of the string used in "enforcedSessionControls" and "sessionControlsNotSatisfied" changed from "Binding" to "SignInTokenProtection" in late June 2023. Queries on Sign In Log data should be updated to reflect this change.
 
 > [!NOTE]
-> We may interchange sign in tokens and refresh tokens in this content. This preview doesn't currently support access tokens or web cookies.
+> We may interchange sign in tokens and refresh tokens in this content. If you want to provide protection for Microsoft 365 access tokens and application session cookies, consider trying [compliant network check enforcement](/entra/global-secure-access/how-to-compliant-network).
 
 :::image type="content" source="media/concept-token-protection/complete-policy-components-session.png" alt-text="Screenshot showing a Conditional Access policy requiring token protection as the session control":::
 
@@ -79,8 +79,6 @@ This process helps to assess your users’ client and app compatibility for toke
 
 Users who perform specialized roles like those described in [Privileged access security levels](/security/privileged-access-workstations/privileged-access-security-levels#specialized) are possible targets for this functionality. We recommend piloting with a small subset to begin. 
 
-:::image type="content" source="media/concept-token-protection/exposed-policy-attributes.png" alt-text="Screenshot of a configured Conditional Access policy and its components." lightbox="media/concept-token-protection/exposed-policy-attributes.png":::
-
 The steps that follow help create a Conditional Access policy to require token protection for Exchange Online and SharePoint Online on Windows devices.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Conditional Access Administrator](../role-based-access-control/permissions-reference.md#conditional-access-administrator).
@@ -90,7 +88,7 @@ The steps that follow help create a Conditional Access policy to require token p
 1. Under **Assignments**, select **Users or workload identities**.
    1. Under **Include**, select the users or groups who are testing this policy.
    1. Under **Exclude**, select **Users and groups** and choose your organization's emergency access or break-glass accounts. 
-1. Under **Target resources** > **Cloud apps** > **Include** > **Select apps**
+1. Under **Target resources** > **Resources (formerly cloud apps)** > **Include** > **Select resources**
    1. Under **Select**, select the following applications supported by the preview:
        1. Office 365 Exchange Online
        1. Office 365 SharePoint Online

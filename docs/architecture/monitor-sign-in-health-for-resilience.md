@@ -38,9 +38,7 @@ During an affecting event, two things might happen:
 
 ## Configure the App sign-in health workbook
 
-To access workbooks in the **Azure portal**, select **Microsoft Entra ID**, select **Workbooks**. The following screenshot shows the Workbooks Gallery in the Azure portal.
-
-:::image type="content" source="./media/monitor-sign-in-health-for-resilience/sign-in-health-workbook.png" alt-text="Screenshot showing the workbooks gallery in the Azure portal.":::
+To access workbooks in the **Azure portal**, select **Microsoft Entra ID**, select **Workbooks**. 
 
 Workbooks appear under **Usage**, **Conditional Access**, and **Troubleshoot**. The App sign in health workbook appears in the **Health** section. After you use a workbook, it might appear in the **Recently modified workbooks** section.
 

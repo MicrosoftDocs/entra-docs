@@ -8,7 +8,7 @@ manager: amycolannino
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
 ms.service: entra-id
 ms.topic: troubleshooting
-ms.date: 11/06/2023
+ms.date: 12/27/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -109,7 +109,7 @@ If troubleshooting didn't help, you can manually reset the feature on your tenan
 
 ### Step 2: Get the list of Active Directory forests on which Seamless SSO has been enabled
 
-1. Run PowerShell as an administrator. In PowerShell, call `New-AzureADSSOAuthenticationContext`. When prompted, enter your tenant's Hybrid Identity Administrator or hybrid identity administrator credentials.
+1. Run PowerShell as an administrator. In PowerShell, call `New-AzureADSSOAuthenticationContext`. When prompted, enter your tenant's Hybrid Identity Administrator credentials.
 2. Call `Get-AzureADSSOStatus`. This command provides you with the list of Active Directory forests (look at the "Domains" list) on which this feature has been enabled.
 
 ### Step 3: Disable Seamless SSO for each Active Directory forest where you've set up the feature

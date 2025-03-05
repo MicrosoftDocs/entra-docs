@@ -3,9 +3,9 @@ title: Understand the Microsoft Entra private network connector
 description: Learn how Microsoft Entra private network connectors work and how they're used by Microsoft Entra Private Access and application proxy.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.topic: conceptual
-ms.date: 04/15/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
 ---
 
@@ -54,9 +54,7 @@ The connectors are stateless and have no configuration data on the machine. The 
 
 Connectors also poll the server to find out whether there's a newer version of the connector. If one is found, the connectors update themselves.
 
-You can monitor your connectors from the machine they're running on, using either the event log and performance counters. For more information, see [Monitor and review logs for on-premises Microsoft Entra](../identity/authentication/howto-password-ban-bad-on-premises-monitor.md).
-
-You can also view their status in the Microsoft Entra admin center. For Microsoft Entra Private Access, navigate to Global Secure Access (preview), Connect, and select Connectors. For application proxy, navigate to Identity, Applications, Enterprise applications, and select the application. On the application page select application proxy.
+You can monitor your connectors from the machine they're running on, using either the event log and performance counters. You can also view their status in the Microsoft Entra admin center. For Microsoft Entra Private Access, navigate to Global Secure Access, Connect, and select Connectors. For application proxy, navigate to Identity, Applications, Enterprise applications, and select the application. On the application page select application proxy.
 
 You don't have to manually delete connectors that are unused. When a connector is running, it remains active as it connects to the service. Unused connectors are tagged as `_inactive_` and are removed after 10 days of inactivity. If you do want to uninstall a connector, though, uninstall both the Connector service and the Updater service from the server. Restart the computer to fully remove the service.
 
@@ -83,26 +81,6 @@ Connector groups make it easier to manage large deployments. They also improve l
 
 To learn more about connector groups, see [Understand Microsoft Entra private network connector groups](concept-connector-groups.md).
 
-## Capacity planning
-
-Plan for enough capacity between connectors to handle the expected traffic volume. At least two connectors in a connector group provide high availability and scale. But three connectors are optimal.
-
-The table provides volume and expected latency for different machine specifications. The data is based on expected Transactions Per Second (TPS) rather than by user because usage patterns vary and can't be used to predict load. There are some differences based on the size of the responses and the backend application response time - larger response sizes and slower response times result in a lower Max TPS. More machines distribute load and provide ample buffer. Extra capacity ensures high availability and resiliency.
-
-|Cores|RAM|Expected Latency (MS)-P99|Max TPS|
-| ----- | ----- | ----- | ----- |
-|2|8|325|586|
-|4|16|320|1150|
-|8|32|270|1190|
-|16|64|245|1200*|
-
-\* The machine used a custom setting to raise some of the default connection limits beyond .NET recommended settings. We recommend running a test with the default settings before contacting support to get this limit changed for your tenant.
-
-> [!NOTE]
-> There's not much difference in the maximum TPS between 4, 8, and 16 core machines. The main difference is the expected latency.
->
-> The table focuses on the expected performance of a connector based on the type of machine it's installed on. This is separate from the service's throttling limits, see [service limits and restrictions](~/identity/users/directory-service-limits-restrictions.md).
-
 ## Security and networking
 
 Connectors can be installed anywhere on the network that allows them to send requests to the Microsoft Entra Private Access and application proxy service. What's important is that the computer running the connector also has access to your apps and resources. You can install connectors inside of your corporate network or on a virtual machine that runs in the cloud. Connectors can run within a perimeter network, also known as a demilitarized zone (DMZ), but it's not necessary because all traffic is outbound so your network stays secure.
@@ -128,6 +106,22 @@ Another factor that affects performance is the quality of the networking between
 - **The domain controllers**: If the connectors perform single sign-on (SSO) using Kerberos Constrained Delegation, they contact the domain controllers before sending the request to the backend. The connectors have a cache of Kerberos tickets, but in a busy environment the responsiveness of the domain controllers can affect performance. This issue is more common for connectors that run in Azure but communicate with domain controllers that are on-premises.
 
 For more information about optimizing your network, see [Network topology considerations when using Microsoft Entra application proxy](../identity/app-proxy/application-proxy-network-topology.md).
+
+## Specifications and Sizing Requirements
+The following specifications are recommended for each Entra Private Network Connector:
+
+- **Memory:** 8 GiB or more
+- **CPU:** 4 CPU cores  or more
+
+Ensure that your connectors are less than 70% for peak memory utilization and peak CPU utilization. If your CPU or memory utilization is above the suggested maximum, you may want to consider adding more connectors to distribute your workloads effectively. 
+
+- **Throughput:** 
+Each connector, configured with the above specifications, can support up to 1.5 Gbps throughput over TCP on an Azure VM. Throughput is measured as the total of both inbound and outbound traffic. Higher throughput can be achieved by running the connector on VMs with increased memory, CPU resources, and enhanced network link speeds.
+
+**Additional Details:**  
+- Sizing recommendations made above are based on performance testing done on a test tenant using iPerf3 tool with TCP data streams. Actual performance can vary under different testing environments. More details on specific test cases will be published as part of this documentation in coming months. 
+- Once a connector is enrolled, it establishes outbound TLS tunnels to the Private Access cloud infrastructure. These tunnels handle all data path traffic. In addition, we have some control plane channel, driving keep-alive heartbeat, health reporting, connector upgrades and so on utilizing minimal bandwidth.
+- You can deploy additional connectors within the same connector group to increase overall throughput, provided adequate network and internet connectivity is available. It is recommended to maintain a minimum of two healthy connectors to ensure resiliency and consistent availability. For best practices regarding high availability, refer to the guidance [here](../identity/app-proxy/application-proxy-high-availability-load-balancing.md#best-practices-for-high-availability-of-connectors).
 
 ## Domain joining
 
@@ -179,7 +173,7 @@ You can examine the state of the service in the Services window. The connector i
 ## Inactive connectors
 A common issue is that connectors appear as inactive in a connector group. A firewall blocking the required ports is a common cause for inactive connectors.
 
-[!INCLUDE [Public preview important note](./includes/public-preview-important-note.md)]
+
 
 ## Next steps
 

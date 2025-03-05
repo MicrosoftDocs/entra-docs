@@ -5,7 +5,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 05/28/2024
+ms.date: 12/16/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 ---
@@ -93,7 +93,7 @@ If the associated forest is hosted in a Windows Server 2016 environment, it incl
 
 ## Using a custom gMSA account
 
-If you're creating a custom gMSA account, the installer will set the the **ALL** permissions on the custom account.
+If you're creating a custom gMSA account, the installer will set the **ALL** permissions on the custom account.
 
 For steps on how to upgrade an existing agent to use a gMSA account see [group Managed Service Accounts](how-to-install.md#group-managed-service-accounts).
 

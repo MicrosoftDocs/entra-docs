@@ -1,20 +1,20 @@
 ---
-title: 'Tutorial: Configure Workday writeback in Microsoft Entra ID'
+title: Configure Workday writeback in Microsoft Entra ID
 description: Learn how to configure attribute writeback from Microsoft Entra ID to Workday
 
 author: cmmdesai
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
-ms.topic: tutorial
+ms.topic: how-to
 
 ms.date: 05/06/2024
 ms.author: chmutali
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Workday Writeback so that I can streamline the user management process and ensure that users have the appropriate access to Workday Writeback.
 ---
-# Tutorial: Configure attribute writeback from Microsoft Entra ID to Workday
-The objective of this tutorial is to show the steps you need to perform to writeback attributes from Microsoft Entra ID to Workday. The Workday writeback provisioning app supports assigning values to the following Workday attributes:
+# Configure attribute writeback from Microsoft Entra ID to Workday
+The objective of this article is to show the steps you need to perform to writeback attributes from Microsoft Entra ID to Workday. The Workday writeback provisioning app supports assigning values to the following Workday attributes:
 * Work Email 
 * Workday username
 * Work landline telephone number (including country code, area code, number and extension)
@@ -82,7 +82,7 @@ In this section, you configure how writeback attributes flow from Microsoft Entr
 4. Typically you map the Microsoft Entra ID *userPrincipalName* attribute to Workday *UserID* attribute and map the Microsoft Entra ID *mail* attribute to the Workday *EmailAddress* attribute. 
 
      >[!div class="mx-imgBorder"]
-     >![Entra admin center](./media/workday-inbound-tutorial/workday-writeback-mapping.png)
+     >![Screenshot of the Microsoft Entra admin center.](~/includes/governance/media/workday-inbound-tutorial/workday-writeback-mapping.png)
 
 5. Use the following guidance to map phone number attribute values from Microsoft Entra ID to Workday. See [Writeback expression mapping examples](#writeback-expression-mapping-examples) to configure the right expression mapping for each attribute. 
 
@@ -150,7 +150,7 @@ For the phone number writeback operation to be successful, it's important to sen
 This example assumes that the phone number value in Microsoft Entra ID for *telephoneNumber* or *mobile* has the format `+<isdCode><space><phoneNumber>`. <br>
 Example: If the phone number value is set to `+1 1112223333` or `+1 (111) 222-3333`, then `1` is the ISD Code and the country code name corresponding to it is `USA`.
 
-Use these regular expression mappings to send the right country code name and country code number to Workday. You can use either *telphoneNumber* or *mobile* as the source attribute. The following examples use *telephoneNumber*. All expressions here use the [Replace](~/identity/app-provisioning/functions-for-customizing-application-data.md#replace) function. 
+Use these regular expression mappings to send the right country code name and country code number to Workday. You can use either *telephoneNumber* or *mobile* as the source attribute. The following examples use *telephoneNumber*. All expressions here use the [Replace](~/identity/app-provisioning/functions-for-customizing-application-data.md#replace) function. 
 
 **Example mapping for *WorkphoneLandlineNumber* or *WorkphoneMobileNumber***
 
@@ -300,7 +300,7 @@ Once the Workday provisioning app configurations are complete, you can turn on t
    > ![Select Writeback scope](./media/sap-successfactors-inbound-provisioning/select-writeback-scope.png)
 
    > [!NOTE]
-   > The Workday Writeback provisioning app doesn't support the option **Sync only assigned users and groups**.
+   > The Workday Writeback provisioning app doesn't support the option **Sync only assigned users and groups** and will always operate as if the "Sync all users and groups" option is selected.
  
 
 2. Click **Save**.
@@ -321,7 +321,7 @@ Once the Workday provisioning app configurations are complete, you can turn on t
 * When the Writeback app is configured to update secondary phone numbers, it doesn't replace the existing secondary phone number in Workday. It adds one more secondary phone number to the worker record. There's no workaround to this behavior. 
 
 
-## Next steps
+## Related content
 
 * [Learn more about Microsoft Entra ID and Workday integration scenarios and web service calls](~/identity/app-provisioning/workday-integration-reference.md)
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

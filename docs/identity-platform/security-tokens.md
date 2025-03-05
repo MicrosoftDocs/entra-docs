@@ -77,8 +77,6 @@ Depending on how your client is built, it can use one or several of the authenti
 | [On-behalf-of flow](v2-oauth2-on-behalf-of-flow.md) | Access token | x | x| x | |
 | [Client credentials](v2-oauth2-client-creds-grant-flow.md) | | | x (App only) | | |
 
-Tokens issued using the implicit flow have a length limitation because they're passed back to the browser using the URL, where `response_mode` is `query` or `fragment`. Some browsers have a limit on the size of the URL that can be put in the browser bar and fail when it's too long. As a result, these tokens don't have `groups` or `wids` claims.
-
 ## See also
 
 * [OAuth 2.0](./v2-protocols.md)

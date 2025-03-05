@@ -188,7 +188,7 @@ You can provision Microsoft Entra joined devices using the following approaches:
 
 - **Self-service in OOBE/Settings** - In the self-service mode, users go through the Microsoft Entra join process either during Windows Out of Box Experience (OOBE) or from Windows Settings. For more information, see [Join your work device to your organization's network](https://support.microsoft.com/account-billing/join-your-work-device-to-your-work-or-school-network-ef4d6adb-5095-4e51-829e-5457430f3973).
 - **Windows Autopilot** - Windows Autopilot enables preconfiguration of devices for a smoother Microsoft Entra join experience in OOBE. For more information, see the [Overview of Windows Autopilot](/windows/deployment/windows-autopilot/windows-10-autopilot).
-- **Bulk enrollment** - Bulk enrollment enables an administrator driven Microsoft Entra join by using a bulk provisioning tool to configure devices. For more information, see [Bulk enrollment for Windows devices](/intune/windows-bulk-enroll).
+- **Bulk enrollment** - Bulk enrollment enables an administrator driven Microsoft Entra join by using a bulk provisioning tool to configure devices. For more information, see [Bulk enrollment for Windows devices](/mem/intune/enrollment/windows-bulk-enroll).
 
 Here's a comparison of these three approaches
 

@@ -16,7 +16,7 @@ ms.author: jfields
 
 In Microsoft Azure and Microsoft Entra Permissions Management role assignments grant users permissions to monitor and take action in multicloud environments.
 
-- **Global Administrator**: Manages all aspects of Microsoft Entra Admin Center and Microsoft services that use Microsoft Entra Admin Center identities. 
+- **Global Administrator**: Manages all aspects of Microsoft Entra admin center and Microsoft services that use Microsoft Entra admin center identities. 
 - **Permissions Management Administrator**: Manages all aspects of Microsoft Entra Permissions Management.
 - **Billing Administrator**: Performs common billing related tasks like updating payment information. 
  
@@ -28,8 +28,8 @@ See [Microsoft Entra built-in roles to learn more.](https://go.microsoft.com/fwl
 
 ## Onboarding your Amazon Web Service (AWS), Microsoft Entra, or Google Cloud Platform (GCP) environments
 
-- To configure data collection, you must be a [Permissions Management Administrator](../identity/role-based-access-control/delegate-by-task.md#permissions-management). 
-- A user with the [Permissions Management Administrator](../identity/role-based-access-control/delegate-by-task.md#permissions-management) role is required for AWS and GCP onboarding.
+- To configure data collection, you must be a [Permissions Management Administrator](../identity/role-based-access-control/permissions-reference.md#permissions-management-administrator). 
+- A user with the [Permissions Management Administrator](../identity/role-based-access-control/permissions-reference.md#permissions-management-administrator) role is required for AWS and GCP onboarding.
 
 ## Notes on permissions and roles in Permissions Management
 
@@ -58,7 +58,7 @@ Alert
 
 Manage users or groups
 - Only the owner of a group can add or remove a user from the group.
-- Managing users and groups is only done in the Microsoft Entra Admin Center.
+- Managing users and groups is only done in the Microsoft Entra admin center.
 
 
 ## Next steps

@@ -8,11 +8,13 @@ ms.custom: has-adal-ref
 ms.date: 01/15/2024
 ms.service: identity-platform
 
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a desktop app that calls web APIs by using the Microsoft identity platform for developers.
 ---
 
 # Desktop app that calls web APIs: Acquire a token interactively
+
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
 
 The following example shows minimal code to get a token interactively for reading the user's profile with Microsoft Graph.
 
@@ -114,7 +116,7 @@ var result = await app.AcquireTokenInteractive(scopes)
 
 #### WithExtraScopeToConsent
 
-This modifier is for advanced scenarios where you want the user to consent to several resources up front and you don't want to use incremental consent. Developers normally use incremental consent with MSAL.NET and the Microsoft identity platform. For more information, see [Have the user consent up front for several resources](scenario-desktop-production.md#have-the-user-consent-upfront-for-several-resources).
+This modifier is for advanced scenarios where you want the user to consent to several resources up front and you don't want to use incremental consent. Developers normally use incremental consent with MSAL.NET and the Microsoft identity platform.
 
 ```csharp
 var result = await app.AcquireTokenInteractive(scopesForCustomerApi)
@@ -340,7 +342,8 @@ if not result:
 ```
 
 ---
-### Next steps
+## Next steps
 
-Move on to the next article in this scenario,
-[Call a web API from the desktop app](scenario-desktop-call-api.md).
+- Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-prepare-app.md).
+
+- Explore Microsoft identity platform [desktop  code samples](sample-v2-code.md) 

@@ -1,11 +1,11 @@
 ---
-title: "Quickstart: Configure an app to access a web API"
-description: In this quickstart, you configure an app registration representing a web API in the Microsoft identity platform to enable scoped resource access (permissions) to client applications.
+title: "Web API app registration and API permissions "
+description: In this quickstart, you learn how to configure app registration and API permissions for a Web API, and how to grant admin consent to these permissions. 
 author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: mode-api
-ms.date: 06/10/2024
+ms.date: 01/27/2025
 ms.reviewer: sureshja
 ms.service: identity-platform
 
@@ -13,7 +13,7 @@ ms.topic: quickstart
 #Customer intent: As an application developer, I want to know how to configure my web API's app registration with permissions client applications can use to obtain scoped access to the API.
 ---
 
-# Quickstart: Configure a client application to access a web API
+# Quickstart: Configure app permissions for a web API
 
 In this quickstart, you provide a client app registered with the Microsoft identity platform with scoped, permissions-based access to your own web API. You also provide the client app access to Microsoft Graph.
 
@@ -27,9 +27,8 @@ By specifying a web API's scopes in your client app's registration, the client a
 
 ## Add permissions to access your web API
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-Access to APIs requires configuration of access scopes and roles. If you want to expose your resource application web APIs to client applications, you can configure access scopes and roles for the API. If you want a client application to access a web API, you configure permissions to access the API in the app registration.
+To enable client applications to access web APIs, you need to add permissions to the client application to access the web API. Similarly, in the web API, you need to configure access scopes and roles for the client application.
 
 To grant a client application to access to your own web API, you need to have two app registrations;
 
@@ -133,6 +132,14 @@ After granting consent, the permissions that required admin consent are shown as
 :::image type="content" source="media/quickstart-configure-app-access-web-apis/portal-04-admin-consent-granted.png" alt-text="Configure permissions table in Azure portal showing admin consent granted for the Files.Read.All permission":::
 
 The **Grant admin consent** button is *disabled* if you aren't an admin or if no permissions have been configured for the application. If you have permissions that have been granted but not yet configured, the admin consent button prompts you to handle these permissions. You can add them to configured permissions or remove them.
+
+### Remove application permissions
+
+It's important not to give an application too many permissions than is necessary. To revoke admin consent for a permission in your application;
+
+1. Navigate to your application and select **API permissions**.
+2. Under **Configured permissions**, select the three dots next to the permission you wish to remove, and select **Remove permission**
+3. In the pop-up that appears, select **Yes, remove** to revoke the admin consent for the permission.
 
 ## Related content
 

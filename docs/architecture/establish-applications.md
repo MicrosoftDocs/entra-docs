@@ -28,7 +28,7 @@ To provide solutions to any customer running Microsoft Entra ID and have a seaml
 
    ![Screenshot of application configuration options in the Microsoft Entra admin center.](media/register-applications/register-an-application.png)
 
-Onboarding a multitenant app to a external tenant can be as simple as running an app and having a user sign into the app. When the tenant allows user consent (users can sign in to apps without an admin previously approving an app), onboarding an app only requires that a user signs into the app. This [Identity workshop for Developers](https://youtu.be/aNyBO5W4uUQ?si=-q5C6LMULMmDT6qg&t=3916) (time code 1:05:20 to 1:08:00) shows an app being onboarded to a tenant as a user signs into an app.
+Onboarding a multitenant app to an external tenant can be as simple as running an app and having a user sign into the app. When the tenant allows user consent (users can sign in to apps without an admin previously approving an app), onboarding an app only requires that a user signs into the app. This [Identity workshop for Developers](https://youtu.be/aNyBO5W4uUQ?si=-q5C6LMULMmDT6qg&t=3916) (time code 1:05:20 to 1:08:00) shows an app being onboarded to a tenant as a user signs into an app.
 
 When you register an app in a Microsoft Entra ID tenant, it receives an Application ID (App ID) that is also known as the client ID for an app. It is like a `userid` for a user in that it uniquely identifies an app. The App ID is globally unique across the Microsoft Entra ID cloud and immutable. All interactions between an app and Microsoft Entra ID include the App ID.
 

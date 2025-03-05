@@ -91,7 +91,7 @@ Continuous access evaluation is also available in Azure Government tenants (GCC 
 
 ### Client-side claim challenge
 
-Before continuous access evaluation, clients would replay the access token from its cache as long as it wasn't expired. With CAE, we introduce a new case where a resource provider can reject a token when it isn't expired. To inform clients to bypass their cache even though the cached tokens haven't expired, we introduce a mechanism called **claim challenge** to indicate that the token was rejected and a new access token need to be issued by Microsoft Entra. CAE requires a client update to understand claim challenge. The latest versions of the following applications support claim challenge:
+Before continuous access evaluation, clients would replay the access token from its cache as long as it wasn't expired. With CAE, we introduce a new case where a resource provider can reject a token when it isn't expired. To inform clients to bypass their cache even though the cached tokens haven't expired, we introduce a mechanism called **claim challenge** to indicate that the token was rejected and a new access token needs to be issued by Microsoft Entra. CAE requires a client update to understand claim challenge. The latest versions of the following applications support claim challenge:
 
 | | Web | Win32 | iOS | Android | Mac |
 | :--- | :---: | :---: | :---: | :---: | :---: |

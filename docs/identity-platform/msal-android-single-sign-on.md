@@ -91,7 +91,6 @@ If Microsoft Authenticator, Intune Company Portal, or Link to Windows is uninsta
 
 #### Generate a redirect URI for a broker
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 You must register a redirect URI that is compatible with the broker. The redirect URI for the broker should include your app's package name and the Base64-encoded representation of your app's signature.
 
@@ -113,7 +112,7 @@ keytool -exportcert -alias androiddebugkey -keystore %HOMEPATH%\.android\debug.k
 
 Once you've generated a signature hash with *keytool*, use the Azure portal to generate the redirect URI:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant containing the app registration from the **Directories + subscriptions** menu.
 1. Browse to **Identity** > **Applications** > **App registrations**.
 1. Select your application, and then select **Authentication** > **Add a platform** > **Android**.
@@ -162,7 +161,7 @@ Android applications have the option to use the `WEBVIEW`, system browser, or Ch
 
 ### Authorization agents
 
-Choosing a specific strategy for authorization agents is important and represents additional functionality apps can customize. We recommend using 'WEBVIEW'. To know more about other confguration values (see [Understand the Android MSAL configuration file](msal-configuration.md).
+Choosing a specific strategy for authorization agents is important and represents additional functionality apps can customize. We recommend using 'WEBVIEW'. To know more about other configuration values (see [Understand the Android MSAL configuration file](msal-configuration.md).
 
 MSAL supports authorization using a `WEBVIEW`, or the system browser. The image below shows how it looks using the `WEBVIEW`, or the system browser with CustomTabs or without CustomTabs:
 
@@ -173,7 +172,7 @@ MSAL supports authorization using a `WEBVIEW`, or the system browser. The image 
 
 If the application uses a `WEBVIEW` strategy without integrating with brokered auth into their app, users won't have a single sign-on experience across the device or between native apps and web apps.
 
-Appplications can be integrated with MSAL to use the `BROWSER` to authorize. Unlike WEBVIEW, `BROWSER` share a cookie jar with the default system browser enabling fewer sign-ins with web or other native apps that have integrated with Custom Tabs.
+Applications can be integrated with MSAL to use the `BROWSER` to authorize. Unlike WEBVIEW, `BROWSER` share a cookie jar with the default system browser enabling fewer sign-ins with web or other native apps that have integrated with Custom Tabs.
 
 If the application uses MSAL with a broker like Microsoft Authenticator, Intune Company Portal, or Link to Windows, then users can have SSO experience across applications if they have an active sign-in with one of the apps.
 

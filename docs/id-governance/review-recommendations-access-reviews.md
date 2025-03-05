@@ -7,7 +7,7 @@ editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: access-reviews
 ms.topic: how-to
-ms.date: 04/09/2024
+ms.date: 07/15/2024
 ms.author: owinfrey
 ms.reviewer: mwahl
 ---
@@ -43,7 +43,7 @@ If the creator of the access review enables the decision helper, reviewers can r
 
 The following image has an example of an organization's reporting structure in a cosmetics company: 
 
-![Screenshot that shows a fictitious hierarchial organization chart for a cosmetics company.](./media/review-recommendations-group-access-reviews/org-chart-example.png)
+:::image type="content" source="media/review-recommendations-group-access-reviews/org-chart-example.png" alt-text="Screenshot of an org example chart for access reviews." lightbox="media/review-recommendations-group-access-reviews/org-chart-example.png":::
 
 Based on the reporting structure in the example image, users who are statistically significant amount of distance away from other users within the group, would get a "*Deny*" recommendation by the system if the User-to-Group Affiliation recommendation was selected by the reviewer for group access reviews. 
 

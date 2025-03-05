@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with SAML SSO for Confluence by resolution GmbH'
+title: Microsoft Entra integration with SAML SSO for Confluence by resolution GmbH
 description: Learn how to configure single sign-on between Microsoft Entra ID and SAML SSO for Confluence by resolution GmbH.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SAML SSO for Confluence by resolution GmbH so that I can control who has access to SAML SSO for Confluence by resolution GmbH, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with SAML SSO for Confluence by resolution GmbH
+# Microsoft Entra integration with SAML SSO for Confluence by resolution GmbH
 
-In this tutorial, you'll learn how to integrate SAML SSO for Confluence by resolution GmbH with Microsoft Entra ID. When you integrate SAML SSO for Confluence by resolution GmbH with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate SAML SSO for Confluence by resolution GmbH with Microsoft Entra ID. When you integrate SAML SSO for Confluence by resolution GmbH with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to SAML SSO for Confluence by resolution GmbH.
 * Enable your users to be automatically signed-in to SAML SSO for Confluence by resolution GmbH with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * SAML SSO for Confluence by resolution GmbH supports **SP and IDP** initiated SSO
 
@@ -140,7 +140,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 4. Under **ATLASSIAN MARKETPLACE** tab, click **Find new add-ons**. 
 
-	![Screenshot that shows the "Attlassian Marketplace" tab with "Find new add-ons" selected.](./media/saml-sso-confluence-tutorial/add-on.png)
+	![Screenshot that shows the "Atlassian Marketplace" tab with "Find new add-ons" selected.](./media/saml-sso-confluence-tutorial/add-on.png)
 
 5. Search **SAML Single Sign On (SSO) for Confluence** and click **Install** button to install the new SAML plugin.
 
@@ -152,10 +152,8 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 	![Screenshot that shows the "Installed and ready to go!" dialog with the "Close" action selected.](./media/saml-sso-confluence-tutorial/add-on-9.png)
 
-7.	Click **Manage**.
+7. Click **Manage**.
 
-	![Screenshot that shows the "S A M L Single Sign On (S S O) for Confluence" app page with the "Manage" button selected.](./media/saml-sso-confluence-tutorial/add-on-10.png)
-    
 8. Click **Configure** to configure the new plugin.
 
 	![Screenshot that shows the "Manage" page with the "Configure" button selected.](./media/saml-sso-confluence-tutorial/add-on-11.png)
@@ -181,8 +179,6 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 	d. Click **Next**.
 	
 12. On **Identity provider configuration** page, click **Next** button.
-
-	![Screenshot that shows the "Identity provider configuration" page with the "Next" button selected.](./media/saml-sso-confluence-tutorial/add-on-5-b.png)
 
 13. On **Import SAML IdP Metadata** page, perform the following steps:
 
@@ -258,6 +254,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the SAML SSO for Confluence by resolution GmbH tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the SAML SSO for Confluence by resolution GmbH for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure SAML SSO for Confluence by resolution GmbH you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

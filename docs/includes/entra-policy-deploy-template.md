@@ -7,4 +7,4 @@ ms.author: joflore
 ---
 ## Template deployment
 
-Organizations can choose to deploy this policy using the steps outlined below or using the [Conditional Access templates](~/identity/conditional-access/concept-conditional-access-policy-common.md#conditional-access-templates).
+Organizations can choose to deploy this policy using the steps outlined below or using the [Conditional Access templates](~/identity/conditional-access/concept-conditional-access-policy-common.md).

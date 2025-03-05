@@ -3,11 +3,11 @@ title: Kerberos-based single sign-on (SSO) in Microsoft Entra ID with applicatio
 description: Covers how to provide single sign-on using Microsoft Entra application proxy.
 
 author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 02/01/2024
+ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -40,7 +40,7 @@ Before you get started with single sign-on for IWA applications, make sure your 
 * Your apps, like SharePoint Web apps, are set to use integrated Windows authentication. For more information, see [Enable Support for Kerberos Authentication](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759186(v=ws.11)), or for SharePoint see [Plan for Kerberos authentication in SharePoint 2013](/SharePoint/security-for-sharepoint-server/kerberos-authentication-planning).
 * All your apps have [Service Principal Names](/windows/win32/ad/service-principal-names).
 * The server running the Connector and the server running the app are domain joined and part of the same domain or trusting domains. For more information on domain join, see [Join a Computer to a Domain](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dd807102(v=ws.11)).
-* The server running the Connector has access to read the TokenGroupsGlobalAndUniversal attribute for users. This default setting might have been impacted by security hardening the environment.
+* The server running the Connector has access to read the TokenGroupsGlobalAndUniversal attribute for users. This default setting might have been impacted by security hardening the environment. Adding the Connector servers to the "Windows Authorization Access Group" will normally do this.
 
 ### Configure Active Directory
 The Active Directory configuration varies, depending on whether your private network connector and the application server are in the same domain or not.

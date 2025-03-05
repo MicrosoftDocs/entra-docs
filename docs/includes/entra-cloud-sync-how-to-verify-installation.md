@@ -33,7 +33,7 @@ To verify that the agent is running, follow these steps:
 
 ### Verify the provisioning agent version
 
-To verify that the version of the agent running, follow these steps:
+To verify the version of the agent that is running, follow these steps:
 
 1.  Navigate to 'C:\Program Files\Microsoft Azure AD Connect Provisioning Agent'
 2.  Right-click on 'AADConnectProvisioningAgent.exe' and select properties.

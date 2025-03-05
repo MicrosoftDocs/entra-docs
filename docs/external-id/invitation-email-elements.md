@@ -1,6 +1,6 @@
 ---
-title: Elements of the B2B invitation email
-description: Microsoft Entra B2B collaboration invitation email template
+title: About B2B Invitations
+description: Learn about the B2B collaboration invitation email you can send to business partners and external guest users who need to authenticate and access your apps.
 
  
 ms.service: entra-external-id
@@ -10,12 +10,12 @@ ms.date: 06/07/2024
 ms.author: cmulligan
 author: csmulligan
 manager: celestedg
-ms.custom: it-pro
+ms.custom: it-pro, seo-july-2024
 ms.collection: M365-identity-device-management
 # Customer intent: As a B2B collaboration user, I want to understand the elements of the invitation email, so that I can effectively invite partners to join my organization and provide them with the necessary information to make an informed decision.
 ---
 
-# The elements of the B2B collaboration invitation email
+# B2B invitation email layout and language settings
 
 [!INCLUDE [applies-to-workforce-only](./includes/applies-to-workforce-only.md)]
 

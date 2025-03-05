@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with SignalFx'
+title: Microsoft Entra single sign-on (SSO) integration with SignalFx
 description: Learn how to configure single sign-on between Microsoft Entra ID and SignalFx.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SignalFx so that I can control who has access to SignalFx, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with SignalFx
+# Microsoft Entra single sign-on (SSO) integration with SignalFx
 
-In this tutorial, you'll learn how to integrate SignalFx with Microsoft Entra ID. When you integrate SignalFx with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate SignalFx with Microsoft Entra ID. When you integrate SignalFx with Microsoft Entra ID, you can:
 
 * Control from Microsoft Entra ID who has access to SignalFx.
 * Enable your users to be automatically signed-in to SignalFx with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you'll configure and test Microsoft Entra SSO in a test environment.
+In this article,  you'll configure and test Microsoft Entra SSO in a test environment.
 
 * SignalFx supports **IDP** initiated SSO.
 * SignalFx supports **Just In Time** user provisioning.
@@ -77,7 +77,7 @@ Use these instructions to enable Microsoft Entra SSO.
 
 1. On the **Set up single sign-on with SAML** page, perform the following steps: 
 
-    a. In **Identifier**, enter the following URL `https://api.<realm>.signalfx.com/v1/saml/metadata` and replace `<realm>` with your SignalFx realm. (except realm US0, the url should be `https://api.signalfx.com/v1/saml/metadata`). 
+    a. In **Identifier**, enter the following URL `https://api.<realm>.signalfx.com/v1/saml/metadata` and replace `<realm>` with your SignalFx realm, as well as `<integration ID>` with the Integration ID you copied earlier from the SignalFx UI. (except realm US0, the url should be `https://api.signalfx.com/v1/saml/metadata`). 
 
     b. In **Reply URL**, enter the following URL `https://api.<realm>.signalfx.com/v1/saml/acs/<integration ID>` and replace `<realm>` with your SignalFx realm, as well as `<integration ID>` with the **Integration ID** you copied earlier from the SignalFx UI. (except US0, the url should be `https://api.signalfx.com/v1/saml/acs/<integration ID>`)
 
@@ -160,6 +160,6 @@ Review the following information regarding how to test SSO, as well as expectati
 
 * SignalFx supports **Just In Time** user creation, which means that if a user does not exist in SignalFx, then the user's account will be created upon first login attempt.
 
-## Next steps
+## Related content
 
 Once you configure SignalFx you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

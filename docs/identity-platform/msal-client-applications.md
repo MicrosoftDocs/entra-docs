@@ -5,7 +5,7 @@ author: OwenRichards1
 manager: CelesteDG
 ms.author: owenrichards
 ms.custom: has-adal-ref
-ms.date: 03/20/2024
+ms.date: 07/24/2024
 ms.reviewer: iambmelt
 ms.service: identity-platform
 
@@ -30,6 +30,17 @@ When examining the public or confidential nature of a given client, we're evalua
 - **Public client applications** run on devices, such as desktop, browserless APIs, mobile or client-side browser apps. They can't be trusted to safely keep application secrets, so they can only access web APIs on behalf of the user. Anytime the source or compiled bytecode of a given app is transmitted anywhere it can be read, disassembled, or otherwise inspected by untrusted parties, it's a public client. As they also only support public client flows and can't hold configuration-time secrets, they can't have client secrets.
 
 - **Confidential client applications** run on servers, such as web apps, web API apps, or service/daemon apps. They're considered difficult to access by users or attackers, and therefore can adequately hold configuration-time secrets to assert proof of its identity. The client ID is exposed through the web browser, but the secret is passed only in the back channel and never directly exposed.
+
+## When should you enable allow a public client flow in your app registration?
+
+After determining the type of client application you're building, you can decide whether to enable the public client flow in your app registration. By default, allow public client flow in your app registration should be disabled unless you or your developer are building a public client application and using the following OAuth authorization protocol or features:
+
+| OAuth Authorization protocol/Feature | Type of public client application | Examples/notes |
+| --- | --- | --- |
+| [Native Authentication](../external-id/customers/concept-native-authentication.md) | Microsoft Entra External ID application that requires full customization of the user interface, including design elements, logo placement, and layout, ensuring a consistent and branded look. | **Note:**  Native Authentication is only available for app registrations in Microsoft Entra External ID tenants. [Learn more here](../external-id/customers/concept-native-authentication.md) |
+| [Device code flow](v2-oauth2-device-code.md) | Applications that run on input-constrained devices such as a smart TV, IoT device, or a printer |  |
+| [Resource owner password credential flow](v2-oauth-ropc.md) | Applications that handles passwords users enter directly, instead of redirecting users to Entra hosted login website and letting Entra handle user password in a secure manner. | **Microsoft recommends you do not use the ROPC flow**. In most scenarios, more secure alternatives, such as the Authorization code flow, are available and recommended. |
+| [Windows Integrated Auth Flow](/entra/msal/dotnet/acquiring-tokens/desktop-mobile/integrated-windows-authentication) | Desktop or mobile applications running on Windows or on a machine connected to a Windows domain (Microsoft Entra ID or Microsoft Entra joined) using Windows Integrated Auth Flow instead of Web account manager | A desktop or mobile application that should be automatically signed in after the user has signed into the windows PC system with a Microsoft Entra credential |
 
 ### Secrets and their importance in proving identity
 

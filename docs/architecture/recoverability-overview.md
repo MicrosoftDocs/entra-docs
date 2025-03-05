@@ -100,6 +100,8 @@ Document the state of your tenant and its objects regularly. Then if a hard dele
 - [Microsoft 365 Desired State Configuration](https://github.com/microsoft/Microsoft365DSC/wiki/What-is-Microsoft365DSC) is a module of the PowerShell Desired State Configuration framework. You can use it to export configurations for reference and application of the prior state of many settings.
 - [Conditional Access APIs](https://github.com/Azure-Samples/azure-ad-conditional-access-apis) can be used to manage your Conditional Access policies as code.
 
+In the rare case that an API is not available for a certain configuration setting, screenshot(s) can be taken to enable manual recovery.
+
 ### Commonly used Microsoft Graph APIs
 
 You can use Microsoft Graph APIs to export the current state of many Microsoft Entra configurations. The APIs cover most scenarios where reference material about the prior state, or the ability to apply that state from an exported copy, could become vital to keeping your business running.
@@ -110,12 +112,12 @@ Microsoft Graph APIs are highly customizable based on your organizational needs.
 
 | Resource types| Reference links |
 | - | - | 
-| Users, groups, and other directory objects| [directoryObject API](/graph/api/resources/directoryobject) |
-| Directory roles| [directoryRole API](/graph/api/resources/directoryrole) |
+| Users, groups, and other directory objects| [directoryObject API](/graph/api/resources/directoryobject) <br/>[user API](/graph/api/resources/user) <br/>[group API](/graph/api/resources/group) <br/>[application API](/graph/api/resources/application) <br/>[servicePrincipal API](/graph/api/resources/serviceprincipal)|
+| Directory roles| [directoryRole API](/graph/api/resources/directoryrole) <br/> [roleManagement API](/graph/api/resources/rolemanagement) |
 | Conditional Access policies| [Conditional Access policy API](/graph/api/resources/conditionalaccesspolicy) |
 | Devices| [devices API](/graph/api/resources/device) |
 | Domains| [domains API](/graph/api/domain-list?tabs=http) |
-| Administrative units| [administrative unit API)](/graph/api/resources/administrativeunit) |
+| Administrative units| [administrative unit API](/graph/api/resources/administrativeunit) |
 | Deleted items*| [deletedItems API](/graph/api/resources/directory) |
 
 *Securely store these configuration exports with access provided to a limited number of admins.
@@ -193,7 +195,7 @@ The [Cross-tenant access activity workbook](~/identity/monitoring-health/workboo
 Preventing unwanted changes is far less difficult than needing to re-create and reconfigure objects. Include the following tasks in your change management processes to minimize accidents:
 
 - Use a least privilege model. Ensure that each member of your team has the least privileges necessary to complete their usual tasks. Require a process to escalate privileges for more unusual tasks.
-- Administrative control of an object enables configuration and deletion. Use less privleged roles, like [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader), for tasks that don't require operations to create, update, or delete (CRUD). When CRUD operations are required, use object-specific roles when possible. For example, User Administrators can delete only users, and Application Administrators can delete only applications. Use these more limited roles whenever possible.
+- Administrative control of an object enables configuration and deletion. Use less privileged roles, like [Security Reader](../identity/role-based-access-control/permissions-reference.md#security-reader), for tasks that don't require operations to create, update, or delete (CRUD). When CRUD operations are required, use object-specific roles when possible. For example, User Administrators can delete only users, and Application Administrators can delete only applications. Use these more limited roles whenever possible.
 - [Use Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md). PIM enables just-in-time escalation of privileges to perform tasks like hard deletion. You can configure PIM to have notifications or approvals for the privilege escalation.
 
 ## Next steps

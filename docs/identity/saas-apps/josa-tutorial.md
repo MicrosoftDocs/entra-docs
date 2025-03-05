@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with JOSA'
+title: Microsoft Entra single sign-on (SSO) integration with JOSA
 description: Learn how to configure single sign-on between Microsoft Entra ID and JOSA.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and JOSA so that I can control who has access to JOSA, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with JOSA
+# Microsoft Entra single sign-on (SSO) integration with JOSA
 
-In this tutorial, you'll learn how to integrate JOSA with Microsoft Entra ID. When you integrate JOSA with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate JOSA with Microsoft Entra ID. When you integrate JOSA with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to JOSA.
 * Enable your users to be automatically signed-in to JOSA with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * JOSA supports **SP** initiated SSO
 
@@ -93,7 +93,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://www.jo-sa.dk/adfslogin.php`
 
 	> [!Note]
-	> If the **Identifier** value does not get auto polulated, then please fill in the value manually according to your requirement. The Sign-on URL value is not real. Update this value with the actual Sign-on URL. Contact [JOSA Client support team](mailto:hr@alldialogue.com) to get this value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> If the **Identifier** value does not get auto populated, then please fill in the value manually according to your requirement. The Sign-on URL value is not real. Update this value with the actual Sign-on URL. Contact [JOSA Client support team](mailto:hr@alldialogue.com) to get this value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 
@@ -151,7 +151,7 @@ When you click the JOSA tile in the Access Panel, you should be automatically si
 
 ## Additional resources
 
-- [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 

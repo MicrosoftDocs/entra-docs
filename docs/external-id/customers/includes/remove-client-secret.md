@@ -1,7 +1,7 @@
 ---
 author: cilwerner
 ms.service: entra-external-id
-ms.subservice: customers
+ms.subservice: external
 ms.topic: include
 ms.date: 08/28/2023
 ms.author: cwerner

@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 04/19/2024
+ms.date: 01/14/2025
 
 ms.author: justinha
 author: justinha
@@ -19,7 +19,7 @@ ms.collection: M365-identity-device-management
 ---
 # Sign in with a passkey (FIDO2)
 
-This article covers how users can sign in to Microsoft Entra ID with a passkey stored on a FIDO2 security key. For how to sign in with a passkey in Microsoft Authenticator, see [Sign in with passkeys in Authenticator for Android and iOS devices](~/identity/authentication/how-to-sign-in-passkey-authenticator.md)
+This article covers how users can sign in to Microsoft Entra ID with a passkey stored on a FIDO2 security key. For how to sign in with a passkey in Microsoft Authenticator, see [Sign in with passkeys in Authenticator for Android and iOS devices](~/identity/authentication/how-to-sign-in-passkey-authenticator.md).
 
 For more information on the availability of Microsoft Entra ID passkey (FIDO2) authentication across native apps, web browsers, and operating systems, see [Support for FIDO2 authentication with Microsoft Entra ID](~/identity/authentication/concept-fido2-compatibility.md).
 
@@ -55,7 +55,7 @@ Depending on how your admin has set up your organization's authentication option
 
 -->
 
-1. Once you're signed in, your device displays a screen similar to this one:
+4. Once you're signed in, your device displays a screen similar to this one:
 
     :::image type="content" border="true" source="media/howto-authenticate-passwordless-passkey-direct/welcome.png" alt-text="Screenshot of Microsoft Welcome page.":::
 

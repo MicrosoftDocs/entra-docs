@@ -39,7 +39,7 @@ Logger.getInstance().setExternalLogger(new ILoggerCallback()
 });
 ```
 
-By default, the MSAL logger won't not capture any personal identifiable information or organizational identifiable information.
+By default, the MSAL logger won't capture any personal identifiable information or organizational identifiable information.
 To enable the logging of personal identifiable information or organizational identifiable information:
 
 ```java

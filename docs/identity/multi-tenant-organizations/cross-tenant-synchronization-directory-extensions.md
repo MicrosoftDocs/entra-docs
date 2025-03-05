@@ -81,13 +81,13 @@ If your directory extension wasn't automatically discovered, you can try the fol
 
 1. Select **Provision Microsoft Entra ID Users** to open the **Attribute Mapping** page.
 
-1. Scroll to the bottom and select the **Show advanced settings** check box.
+1. Scroll to the bottom and select the **Show advanced settings** checkbox.
 
     :::image type="content" source="./media/cross-tenant-synchronization-directory-extensions/provisioning-mappings-advanced-settings.png" alt-text="Screenshot of the Attribute Mapping page with advanced options displayed." lightbox="./media/cross-tenant-synchronization-directory-extensions/provisioning-mappings-advanced-settings.png":::
 
     > [!TIP]
     > If you don't see the **Edit attribute list** links, be sure that you are signed in to the Microsoft Entra admin center using the link in Step 1.
-    
+
 1. If you created a directory extension in the source tenant, select the **Edit attribute list for Microsoft Entra ID** link.
 
 1. If you created an extension in the target tenant, select the **Edit attribute list for Azure Active Directory (target tenant)** link.
@@ -118,7 +118,7 @@ Follow these steps to manually add directory extensions to the schema by using t
 
 1. Select **Provision Microsoft Entra ID Users** to open the **Attribute Mapping** page.
 
-1. Scroll to the bottom and select the **Show advanced settings** check box.
+1. Scroll to the bottom and select the **Show advanced settings** checkbox.
 
     :::image type="content" source="./media/cross-tenant-synchronization-directory-extensions/provisioning-mappings-advanced-settings.png" alt-text="Screenshot of the Attribute Mapping page with link to schema editor." lightbox="./media/cross-tenant-synchronization-directory-extensions/provisioning-mappings-advanced-settings.png":::
 

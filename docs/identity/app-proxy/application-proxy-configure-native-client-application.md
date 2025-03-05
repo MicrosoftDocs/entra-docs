@@ -2,12 +2,12 @@
 title: Publish native client apps
 description: Covers how to enable native client apps to communicate with the Microsoft Entra private network connector to provide secure remote access to your on-premises apps.
 author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.custom: devx-track-dotnet
 ms.topic: how-to
-ms.date: 02/26/2024
+ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -31,7 +31,7 @@ Publish your proxy application as you would any other application and assign use
 ## Step 2: Register your native application
 
 You now need to register your application in Microsoft Entra ID.
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Select your username in the upper-right corner. Verify you're signed in to a directory that uses application proxy. If you need to change directories, select **Switch directory** and choose a directory that uses application proxy.
 1. Browse to **Identity** > **Applications** > **App registrations**. The list of all app registrations appears.
 1. Select **New registration**. The **Register an application** page appears.

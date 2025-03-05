@@ -1,24 +1,25 @@
 ---
-title: 'Understanding least privileged with Microsoft Entra ID Governance'
-description: This article describes the concept of least privileged and how it relates with Microsoft Entra ID Governance.
-services: active-directory
-documentationcenter: ''
+title: 'Understanding least privilege with Microsoft Entra ID Governance'
+description: This article describes the concept of least privilege and how it relates with Microsoft Entra ID Governance.
+ms.service: entra-id-governance
+ms.subservice:
+
 author: billmath
 manager: amycolannino
-editor: ''
-ms.service: active-directory
+
+
 ms.topic: conceptual
-ms.date: 07/28/2023
+ms.date: 12/30/2024
 ms.author: billmath
 ---
 
-# Understanding least privileged with Microsoft Entra ID Governance
+# The principle of least privilege with Microsoft Entra ID Governance
 
-One concept that needs to be addressed before under taking an identity governance strategy is the principle of least privileged (PLOP). Least privileged is a principle in identity governance that involves assigning users and groups only the minimum level of access and permissions necessary to perform their duties. The idea is to restrict access rights so that a user or group can complete their work, but also minimizing unnecessary privileges that could potentially be exploited by attackers or lead to security breaches.
+One concept that needs to be addressed before under taking an identity governance strategy is the principle of least privilege (PLOP). Least privilege is a principle in identity governance that involves assigning users and groups only the minimum level of access and permissions necessary to perform their duties. The idea is to restrict access rights so that a user or group can complete their work, but also minimizing unnecessary privileges that could potentially be exploited by attackers or lead to security breaches.
 
 In regards to Microsoft Entra ID Governance, applying the principle of least privilege helps enhance security and mitigate risks. This approach ensures that users and groups are granted access only to the resources, data, and actions that are relevant to their roles and responsibilities, and nothing beyond that.
 
-## Key concepts of the principle of least privileged
+## Key concepts of the principle of least privilege
 
 - **Access to only required resources:** Users are given access to information and resources only if they have a genuine need for them to perform their tasks. This prevents unauthorized access to sensitive data and minimizes the potential impact of a security breach. Automating user provisioning helps reduce unnecessary granting of access rights. [Lifecycle workflows](../what-are-lifecycle-workflows.md) is an identity governance feature that enables organizations to manage Microsoft Entra users by automating basic lifecycle processes.
 
@@ -40,6 +41,7 @@ It's a best practice to use the least privileged role to perform administrative 
 | ------- | --------------------- |
 | Entitlement management | Identity Governance Administrator |
 | Access reviews | User Administrator (with the exception of access reviews of Azure or Microsoft Entra roles, which require Privileged Role Administrator) |
+| Lifecycle Workflows | Lifecycle Workflows Administrator |
 | Privileged Identity Management | Privileged Role Administrator |
 | Terms of use | Security Administrator or Conditional Access Administrator |
 

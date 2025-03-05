@@ -7,7 +7,7 @@ ms.author: ryanwi
 ms.custom: app-service-web, storage, microsoft-graph
 ms.date: 02/07/2024
 ms.reviewer: stsoneff
-ms.service: app-service
+ms.service: azure-app-service
 ms.subservice: web-apps
 ms.topic: tutorial
 #Customer intent: As an application developer, I want to learn how to secure access to a web app running on Azure App Service.

@@ -1,24 +1,24 @@
 ---
-title: 'Tutorial: Configure Box for automatic user provisioning with Microsoft Entra ID'
+title: Configure Box for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure single sign-on between Microsoft Entra ID and Box .
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Box so that I can streamline the user management process and ensure that users have the appropriate access to Box.
 ---
-# Tutorial: Configure Box for automatic user provisioning
+# Configure Box for automatic user provisioning
 
-The objective of this tutorial is to show the steps you need to perform in Box and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Box.
+The objective of this article is to show the steps you need to perform in Box and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Box.
 
 > [!NOTE]
-> This tutorial describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This article describes a connector built on top of the Microsoft Entra user Provisioning Service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ To configure Microsoft Entra integration with Box, you need the following items:
 - A Box Business plan or better
 
 > [!NOTE]
-> When you test the steps in this tutorial, we recommend that you do *not* use a production environment.
+> When you test the steps in this article,  we recommend that you do *not* use a production environment.
 
 > [!NOTE]
 > Apps need to be enabled in the Box application first.
@@ -36,7 +36,7 @@ To configure Microsoft Entra integration with Box, you need the following items:
 > [!NOTE]
 > This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
 
-To test the steps in this tutorial, follow these recommendations:
+To test the steps in this article,  follow these recommendations:
 
 - Do not use your production environment, unless it is necessary.
 - If you don't have a Microsoft Entra trial environment, you can [get a one-month trial](https://azure.microsoft.com/pricing/free-trial/).
@@ -78,7 +78,7 @@ If automatic provisioning is enabled, then the assigned users and/or groups are 
  * If group objects were configured to be provisioned, then all assigned group objects are provisioned to Box, and all users that are members of those groups. The group and user memberships are preserved upon being written to Box.
 
 > [!TIP] 
-> You may also choose to enabled SAML-based Single Sign-On for Box, following the instructions provided in the [Azure portal](https://portal.azure.com). Single sign-on can be configured independently of automatic provisioning, though these two features compliment each other.
+> You may also choose to enabled SAML-based Single Sign-On for Box, following the instructions provided in the [Azure portal](https://portal.azure.com). Single sign-on can be configured independently of automatic provisioning, though these two features complement each other.
 
 ### To configure automatic user account provisioning:
 
@@ -93,7 +93,7 @@ The objective of this section is to outline how to enable provisioning of Active
 
 4. Set the **Provisioning Mode** to **Automatic**. 
 
-    ![Screenshot of the Provisioning tab for Box in Azure portal. Provisioning Mode is set to Automatic and Authorize is highlighted in Admin Credentials.](./media/box-userprovisioning-tutorial/provisioning.png)
+	![Screenshot of Provisioning tab automatic.](common/provisioning-automatic.png)
 
 5. Under the **Admin Credentials** section, click **Authorize** to open a Box login dialog in a new browser window.
 

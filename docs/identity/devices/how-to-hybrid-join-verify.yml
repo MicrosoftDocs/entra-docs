@@ -7,7 +7,7 @@ metadata:
   ms.author: joflore
   manager: amycolannino
   ms.reviewer: sandeo
-  ms.date: 12/22/2023
+  ms.date: 11/25/2024
   ms.service: entra-id
   ms.subservice: devices
   ms.topic: how-to
@@ -36,8 +36,6 @@ procedureSection:
         Verify that both **AzureAdJoined** and **DomainJoined** are set to **YES**.
       - |
         You can use the **DeviceId** and compare the status on the service using either the Microsoft Entra admin center or PowerShell.
-
-        For downlevel devices, see the article [Troubleshooting Microsoft Entra hybrid joined down-level devices](troubleshoot-hybrid-join-windows-legacy.md#step-1-retrieve-the-registration-status)
 
   - title: |
       Using the Microsoft Entra admin center

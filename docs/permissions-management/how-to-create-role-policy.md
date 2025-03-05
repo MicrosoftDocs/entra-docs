@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 04/15/2024
+ms.date: 08/27/2024
 ms.author: jfields
 ---
 
@@ -68,7 +68,7 @@ This article describes how you can use the **Remediation** dashboard in Microsof
 1. The [**Permissions Management Tasks**](ui-tasks.md) pane appears on the right.
     - The **Active** tab displays a list of the policies Permissions Management is currently processing.
     - The **Completed** tab displays a list of the policies Permissions Management has completed.
-1. Refresh the **Role/Policies** tab to see the policy you created.
+1. Once data collection for the specified authorization system is complete, the newly created policy information is reflected.
 
 
 
@@ -113,7 +113,7 @@ This article describes how you can use the **Remediation** dashboard in Microsof
 1. The [**Permissions Management Tasks**](ui-tasks.md) pane appears on the right.
     - The **Active** tab displays a list of the policies Permissions Management is currently processing.
     - The **Completed** tab displays a list of the policies Permissions Management has completed.
-1. Refresh the **Role/Policies** tab to see the role you created.
+1. Once data collection for the specified authorization system is complete, the newly created role information is reflected.
 
 ## Create a role for GCP
 
@@ -152,7 +152,7 @@ This article describes how you can use the **Remediation** dashboard in Microsof
 
     - The **Active** tab displays a list of the policies Permissions Management is currently processing.
     - The **Completed** tab displays a list of the policies Permissions Management has completed.
-1. Refresh the **Role/Policies** tab to see the role you created.
+1. Once data collection for the specified authorization system is complete, the newly created role information is reflected.
 
 
 ## Next steps

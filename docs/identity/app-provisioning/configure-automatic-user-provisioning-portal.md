@@ -3,11 +3,11 @@ title: User provisioning management for enterprise apps in Microsoft Entra ID
 description: Learn how to manage user account provisioning for enterprise apps using the Microsoft Entra ID.
 
 author: kenwith
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: arvinh
 ---
@@ -21,11 +21,10 @@ This article describes the general steps for managing automatic user account pro
 
 ## Finding your apps in the portal
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Use the Microsoft Entra admin center to view and manage all applications that are configured for single sign-on in a directory. Enterprise apps are apps that are deployed and used within your organization. Follow these steps to view and manage your enterprise applications:
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. A list of all configured apps is shown, including apps that were added from the gallery.
 1. Select any app to load its resource pane, where you can view reports and manage app settings.

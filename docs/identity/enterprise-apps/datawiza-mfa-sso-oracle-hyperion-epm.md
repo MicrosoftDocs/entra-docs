@@ -97,8 +97,6 @@ To integrate Oracle Hyperion EMP with Microsoft Entra ID:
 17. The DAP deployment page appears.
 18. Make a note of the deployment Docker Compose file. The file includes the DAP image, also the Provisioning Key and Provisioning Secret, which pull the latest configuration and policies from DCMC.
 
-    [![Screenshot shows the DAP deployment page.](./media/datawiza-mfa-sso-oracle-hyperion-epm/datawiza-access-proxy-deployment-page.png)](./media/datawiza-mfa-sso-oracle-hyperion-epm/datawiza-access-proxy-deployment-page.png#lightbox)
-
 19. Select **Done**.
 
 ## SSO and HTTP headers
@@ -158,7 +156,7 @@ To provide more security for sign-ins, you can enforce Microsoft Entra multifact
 
 Learn more in the [Tutorial: Secure user sign-in events with Microsoft Entra multifactor authentication](../authentication/tutorial-enable-azure-mfa.md)
 
-1. Sign in to the [Azure portal](https://portal.azure.com) as a [Application Administrator role.](../role-based-access-control/permissions-reference.md)
+1. Sign in to the [Azure portal](https://portal.azure.com) as an [Application Administrator role.](../role-based-access-control/permissions-reference.md)
 2. Select **Microsoft Entra ID** > **Manage** > **Properties**.
 3. Under **Properties** select **Manage security defaults**.
 4. Under **Enable Security Defaults**, select **Yes**.

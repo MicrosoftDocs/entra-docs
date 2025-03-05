@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-verified-id
 
 ms.topic: how-to
-ms.date: 10/12/2023
+ms.date: 12/17/2024
 ms.author: barclayn
 # Customer intent: As a developer, I'm looking for information about the open standards that are supported by Microsoft Entra Verified ID.
 ---
@@ -18,11 +18,11 @@ In this article, we cover the steps needed to integrate Microsoft Entra Verified
 
 ## Prerequisites
 
-Before you can continue with the steps below you need to meet the following requirements: 
+Before you can continue, you need to meet the following requirements: 
 
 - A tenant configured with Verified ID.
    - If you don't have an existing tenant, you can create an Azure account for free. 
-- You need to have completed the onboarding process with IDEMIA. 
+- You need to first complete the onboarding process with IDEMIA. 
    - Register on the IDEMIA Experience Portal where you can create your own Microsoft verifiable credential application with a few steps low code integration. 
 
 >[!IMPORTANT]
@@ -44,12 +44,13 @@ After verification, users are issued a reusable identity credential, which exped
 
 To configure IDEMIA as your identity verification proofing solution, follow these steps:
 
-1. Go to Quickstart in the Azure portal and select **Verified ID**.
-2. Choose select issuer.
-3. Look for IDEMIA in the search/select issuers drop down.
-4. Select VerifiedCredentialExpert as the credential type.
-5. Select **Add** and then select review.
-6. Download the request body and copy/paste the POST API request URL
+1. In the Microsoft Entra admin center, locate **Verified ID** in the left hand menu and select `Overview`.
+1. Select `Explore` and select `Verification request`.
+1. Choose `Select issuer(s)` and select `Select first issuer`.
+1. Look for `IDEMIA` in the search/select issuers drop down.
+1. Select `VerifiedIdentity` as the credential type.
+1. Select **Add** and then select review.
+1. Download the request body and copy/paste the POST API request URL
 
 ## Developer steps
 

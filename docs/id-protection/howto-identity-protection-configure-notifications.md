@@ -5,7 +5,7 @@ description: Learn how notifications support your investigation activities.
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 04/15/2024
+ms.date: 02/28/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -21,11 +21,11 @@ Microsoft Entra ID Protection sends two types of automated notification emails t
 
 This article provides you with an overview of both notification emails.
 
-   > [!Note]
+   > [!NOTE]
    > **We don't support sending emails to users in group-assigned roles.**
 
 > [!IMPORTANT]
-> By default users actively assigned Global Administrator, Security Administrator, or Security Reader roles are automatically added to this list if that user has a valid "Email" or "Alternate email" configured. If a user is enrolled in PIM to elevate to one of these roles on demand, then **they will only receive emails if they are elevated at the time the email is sent**.
+> By default users actively assigned Global Administrator, Security Administrator, or Security Reader roles are automatically added to this list if that user has a valid "Email" or "Alternate email" configured. If a user is enrolled in Privileged Identity Management (PIM) to elevate to one of these roles on demand, then **they will only receive emails if they are elevated at the time the email is sent**.
 
 ## Users at risk detected email
 
@@ -43,7 +43,7 @@ If your organization enabled self-remediation as described in the article, [User
 
 As an administrator, you can set:
 
-- **The user risk level that triggers the generation of this email** - By default, the risk level is set to “High” risk.
+- **The user risk level that triggers the generation of this email** - By default, the risk level is set to "High" risk.
 - **The recipients of this email**
    - Optionally you can **Add custom email here** users defined must have the appropriate permissions to view the linked reports.
 
@@ -56,7 +56,7 @@ It includes:
 
 - New risky users detected
 - New risky sign-ins detected (in real time)
-- Links to the related reports in Identity Protection
+- Links to the related reports in ID Protection
 
 ![A screenshot showing a sample weekly digest email.](./media/howto-identity-protection-configure-notifications/weekly-digest-email.png)
 

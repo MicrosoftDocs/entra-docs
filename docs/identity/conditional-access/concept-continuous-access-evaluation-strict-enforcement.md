@@ -19,13 +19,13 @@ Strictly enforce location policies is a new enforcement mode for continuous acce
 | Location enforcement mode | Recommended network topology | If the IP address detected by the Resource isn't in the allowed list | Benefits | Configuration |
 | --- | --- | --- | --- | --- |
 | Standard (Default) | Suitable for all topologies | A short-lived token is issued only if Microsoft Entra ID detects an allowed IP address. Otherwise, access is blocked | Falls back to the pre-CAE location detection mode in split tunnel network deployments where CAE enforcement would affect productivity. CAE still enforces other events and policies. | None (Default Setting) |
-| Strictly enforced location policies | Egress IP addresses are dedicated and enumerable for both Microsoft Entra ID and all resource provider traffic | Access blocked | Most secure, but requires well understood network paths | 1. Test IP address assumptions with a small population <br><br> 2. Enable “Strictly enforce” under Session controls |
+| Strictly enforced location policies | Egress IP addresses are dedicated and enumerable for both Microsoft Entra ID and all resource provider traffic | Access blocked | Most secure, but requires well understood network paths | 1. Test IP address assumptions with a small population <br><br> 2. Enable "Strictly enforce" under Session controls |
 
 ## Configure strictly enforced location policies
 
 ### Step 1 - Configure a Conditional Access location based policy for your target users
 
-Before administrators create a Conditional Access policy requiring strict location enforcement, they must be comfortable using policies like the one described in [Conditional Access location based policies](howto-conditional-access-policy-location.yml). Policies like this one should be tested with a subset of users before proceeding to the next step. Administrators can avoid discrepancies between the allowed and actual IP addresses seen by Microsoft Entra ID during authentication, by testing before enabling strict enforcement.
+Before administrators create a Conditional Access policy requiring strict location enforcement, they must be comfortable using policies like the one described in [Conditional Access location based policies](policy-block-by-location.md). Policies like this one should be tested with a subset of users before proceeding to the next step. Administrators can avoid discrepancies between the allowed and actual IP addresses seen by Microsoft Entra ID during authentication, by testing before enabling strict enforcement.
 
 ### Step 2 - Test policy on a small subset of users
 
@@ -40,7 +40,7 @@ Before administrators turn on Conditional Access policies requiring strict locat
 - Ensure that all IP addresses from which their users can access Microsoft Entra ID and resource providers are included in their [IP-based named locations](concept-assignment-network.md#ipv4-and-ipv6-address-ranges).
 - Ensure that they aren't sending traffic to non-Microsoft 365 applications through Global Secure Access.
    - [Source IP restoration](../../global-secure-access/how-to-source-ip-restoration.md) isn't supported for these non-Microsoft 365 applications. Enabling strict location enforcement with Global Secure Access blocks access even if the user is in a trusted IP location. 
-- Review their Conditional Access policies to ensure that they don't have any policies that don't support CAE. For more information, see [CAE-supported CA policies](/entra/identity/conditional-access/concept-continuous-access-evaluation#supported-location-policies).
+- Review their Conditional Access policies to ensure that they don't have any policies that don't support CAE. For more information, see [CAE-supported Conditional Access policies](/entra/identity/conditional-access/concept-continuous-access-evaluation#supported-location-policies).
 
 If administrators don't perform this validation, their users might be negatively impacted. If traffic to Microsoft Entra ID or a CAE supported resource is through a shared or undefinable egress IP, don't enable strict location enforcement in your Conditional Access policies.
 

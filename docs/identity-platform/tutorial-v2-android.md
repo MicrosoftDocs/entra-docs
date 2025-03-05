@@ -57,7 +57,6 @@ Follow these steps to create a new project if you don't already have an Android 
 
 ### Register your application with Microsoft Entra ID
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Developer](~/identity/role-based-access-control/permissions-reference.md#application-developer).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to the tenant in which you want to register the application from the **Directories + subscriptions** menu.
@@ -1324,5 +1323,5 @@ To explore more complex scenarios, see a completed [working code sample](https:/
 
 For more information about building mobile apps that call protected web APIs in our multi-part scenario series, see:
 
-- [Scenario: Mobile application that calls web APIs](scenario-mobile-overview.md)
+- [Scenario: Mobile application that calls web APIs](scenario-mobile-app-registration.md)
 - [Code sample for complex scenarios](https://github.com/Azure-Samples/ms-identity-android-java/)

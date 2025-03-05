@@ -1,24 +1,24 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Contentkalender'
+title: Microsoft Entra SSO integration with Contentkalender
 description: Learn how to configure single sign-on between Microsoft Entra ID and Contentkalender.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 08/20/2024
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Contentkalender so that I can control who has access to Contentkalender, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Contentkalender
+# Microsoft Entra SSO integration with Contentkalender
 
-In this tutorial, you learn how to integrate Contentkalender with Microsoft Entra ID. When you integrate Contentkalender with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Contentkalender with Microsoft Entra ID. When you integrate Contentkalender with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Contentkalender.
 * Enable your users to be automatically signed-in to Contentkalender with their Microsoft Entra accounts.
@@ -35,7 +35,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Contentkalender supports **SP** initiated SSO.
 * Contentkalender supports **Just In Time** user provisioning.
@@ -85,13 +85,16 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
    a. In the **Identifier** text box, type the URL:
-    `https://login.contentkalender.nl` 
+    `https://db.contentkalender.app` 
 
    b. In the **Reply URL** text box, type the URL:
-   `https://login.contentkalender.nl/sso/saml/callback`
+   `https://db.contentkalender.app/api:TRiyKmLW:production/sso/callback`
    
-   c. In the **Sign-on URL** text box, type the URL:
-   `https://login.contentkalender.nl/v2/login`
+   c. In the **Sign on URL** text box, type the URL:
+   `https://contentkalender.app`
+
+   d. In the **Logout URL** text box, type the URL:
+   `https://db.contentkalender.app/api:TRiyKmLW:production/sso/logout`
 
 1. Your Contentkalender application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows an example for this. The default value of **Unique User Identifier** is **user.userprincipalname** but Contentkalender expects this to be mapped with the user's email address. For that you can use **user.mail** attribute from the list or use the appropriate attribute value based on your organization configuration.
 
@@ -149,6 +152,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Contentkalender tile in the My Apps, this will redirect to Contentkalender Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Contentkalender you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

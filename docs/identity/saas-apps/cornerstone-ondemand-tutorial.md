@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra Single sign-on (SSO) integration with Cornerstone'
+title: Microsoft Entra Single sign-on (SSO) integration with Cornerstone
 description: Learn how to configure single sign-on between Microsoft Entra ID and Cornerstone Single Sign-On.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Cornerstone Single Sign-On so that I can control who has access to Cornerstone Single Sign-On, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra Single sign-on (SSO) integration with Cornerstone
+# Microsoft Entra Single sign-on (SSO) integration with Cornerstone
 
-In this tutorial, you'll learn how to set up the single sign-on integration between Cornerstone and Microsoft Entra ID. When you integrate Cornerstone with Microsoft Entra ID, you can:
+In this article,  you'll learn how to set up the single sign-on integration between Cornerstone and Microsoft Entra ID. When you integrate Cornerstone with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has SSO access to Cornerstone.
 * Enable your users to be automatically signed-in to Cornerstone with their Microsoft Entra accounts.
@@ -35,7 +35,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Cornerstone supports **SP** initiated SSO.
 
@@ -171,7 +171,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
     a. Go to the **Admin -> Tools -> CORE FUNCTIONS -> Core Preferences -> Authentication Preferences**.
 
-    ![screeenshot for Authentication Preferences mobile appilcation Cornerstone.](./media/cornerstone-ondemand-tutorial/division-mobile.png)
+    ![Screenshot for Authentication Preferences mobile application Cornerstone.](./media/cornerstone-ondemand-tutorial/division-mobile.png)
 
     b. Search the **Division Name** by giving the Division Name in the search box.
 
@@ -179,7 +179,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
     d. From the SAML/IDP server URL dropdown, select the appropriate SAML/IDP server that should be used for user Authentication.
 
-    ![screeenshot for Other credentials validated against client SAML/IDP server.](./media/cornerstone-ondemand-tutorial/other-credentials.png)
+    ![Screenshot for Other credentials validated against client SAML/IDP server.](./media/cornerstone-ondemand-tutorial/other-credentials.png)
 
     e. Click **Save**.
 
@@ -193,20 +193,20 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 2. Open **Cornerstone Learn** mobile application. On the sign in page, enter the portal name.
 
-    ![screeenshot for mobile appilcation Cornerstone.](./media/cornerstone-ondemand-tutorial/welcome-mobile.png)
+    ![Screenshot for mobile application Cornerstone.](./media/cornerstone-ondemand-tutorial/welcome-mobile.png)
 
 3. Click **Alternative Login** and then click **SSO**.
 
-    ![screeenshot for mobile appilcation Alternative Login.](./media/cornerstone-ondemand-tutorial/sso-mobile.png)
+    ![Screenshot for mobile application Alternative Login.](./media/cornerstone-ondemand-tutorial/sso-mobile.png)
 
 4. .  Enter your **Microsoft Entra credentials** to sign into the Cornerstone application and click **Next**.
 
-    ![screeenshot for mobile appilcation Microsoft Entra credentials.](./media/cornerstone-ondemand-tutorial/credentials-mobile.png)
+    ![Screenshot for mobile application Microsoft Entra credentials.](./media/cornerstone-ondemand-tutorial/credentials-mobile.png)
 
 5. Finally after successful sign in, the application homepage will be displayed as shown below.
 
-    ![screeenshot for mobile appilcation home page.](./media/cornerstone-ondemand-tutorial/home-page-mobile.png)
+    ![Screenshot of mobile application home page.](./media/cornerstone-ondemand-tutorial/home-page-mobile.png)
 
-## Next steps
+## Related content
 
 Once you configure Cornerstone Single Sign-On you can enforce Session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

@@ -2,15 +2,15 @@
 title: Microsoft Entra SSO integration with Knowledge Work
 description: Learn how to configure single sign-on between Microsoft Entra ID and Knowledge Work.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.date: 08/13/2024
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Knowledge Work so that I can control who has access to Knowledge Work, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -72,10 +72,10 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://<CustomerName>.kwork.cloud/saml`
 
     b. In the **Reply URL** textbox, type the URL:
-    `https://knowledgework-prd.firebaseapp.com/__/auth/handle`
+    `https://auth.kwork.cloud/_auth/saml/callback`
 
     c. In the **Sign on URL** textbox, type a URL using the following pattern:
-    `https://<CustomerName>.kwork.cloud/login`
+    `https://<CustomerName>.kwork.cloud/redirect`
 
     > [!Note]
     > These values are not real. Update these values with the actual Identifier and Sign-on URL. Contact [Knowledge Work Client support team](mailto:support@knowledgework.com) to get these values. You can also refer to the patterns shown in the Basic SAML Configuration section.
@@ -111,6 +111,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 * [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 
-## Next steps
+## Related content
 
 Once you configure Knowledge Work you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

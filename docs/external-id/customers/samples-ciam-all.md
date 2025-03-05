@@ -1,20 +1,19 @@
 ---
-title: Code samples for external tenants
-description: Find code samples for applications you can run in an external tenant. Find samples by app type or language.
- 
+title: App samples
+description: Learn how to build and integrate apps with external tenants. Use code samples to test authentication scenarios such as sign-up, sign in, and getting an access token to call an API.
 author: msmimart
 manager: celestedg
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: sample
 ms.date: 05/20/2024
 ms.author: mimart
-ms.custom: it-pro
+ms.custom: it-pro, seo-july-2024
 
 ---
 
-# Samples for External ID developers
+# Samples and guides for integrating apps with External ID
 
 Microsoft maintains code samples that demonstrate how to integrate various application types with Microsoft Entra External ID. We provide instructions for downloading and using samples or building your own app based on common authentication and authorization scenarios, development languages, and platforms. Included are instructions for building the project (if applicable) and running the sample application. Within the sample code, comments help you understand how these libraries are used in the application to perform authentication and authorization in an external tenant.
 
@@ -31,9 +30,7 @@ These samples and how-to guides demonstrate how to integrate a single-page appli
 > [!div class="mx-tdCol2BreakAll"]
 > | Language/<br/>Platform | Code sample guide | Build and integrate guide  |
 > | ------- | -------- | ------------- |
-> | JavaScript, Vanilla | &#8226; [Sign in users](./sample-single-page-app-vanillajs-sign-in.md) | &#8226; [Sign in users](tutorial-single-page-app-vanillajs-prepare-tenant.md) |
-> | JavaScript, Angular | &#8226; [Sign in users](./sample-single-page-app-angular-sign-in.md) |  ---  |
-> | JavaScript, React | &#8226; [Sign in users](./sample-single-page-app-react-sign-in.md) | &#8226; [Sign in users](./tutorial-single-page-app-react-sign-in-prepare-tenant.md)   |
+> | JavaScript, Angular, React | &#8226; [Sign in users](../../identity-platform/quickstart-single-page-app-sign-in.md) | &#8226; [Sign in users](../../identity-platform/tutorial-single-page-app-javascript-prepare-app.md) |
 
 ### Web app
 
@@ -68,7 +65,7 @@ These samples and how-to guides demonstrate how to write a desktop application t
 
 ### Mobile: Browser delegated authentication
 
-These samples and how-to guides demonstrate how to write a public client mobile application with browser delegated authentication that integrates with Microsoft Entra External ID.
+These samples and how-to guides show you how to write a public client mobile application with browser-delegated authentication that integrates with Microsoft Entra External ID.
 
 > [!div class="mx-tdCol2BreakAll"]
 > | Language/<br/>Platform | Code sample guide | Build and integrate guide |
@@ -78,6 +75,15 @@ These samples and how-to guides demonstrate how to write a public client mobile 
 > | iOS (Swift) | &#8226; [Sign in users](sample-mobile-app-ios-swift-sign-in.md)<br/> &#8226; [Sign in users and call an API](sample-mobile-app-ios-swift-sign-in-call-api.md) | &#8226; [Sign in users, call an API](tutorial-mobile-app-ios-swift-prepare-tenant.md) |
 
 
+### Desktop: Native authentication
+
+These samples and how-to guides demonstrate how to write a desktop application that integrates with Microsoft Entra External ID.
+
+> [!div class="mx-tdCol2BreakAll"]
+> | Language/<br/>Platform | Code sample guide | Build and integrate guide  |
+> | ------- | -------- | ------------- | 
+> macOS (Swift) | &#8226; [Sign in users](how-to-run-native-authentication-sample-macos-app.md)| &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-macos-app.md)|
+
 ### Mobile: Native authentication
 
 These samples and how-to guides demonstrate how to write a public client mobile application with native authentication that integrates with Microsoft Entra External ID.
@@ -86,7 +92,8 @@ These samples and how-to guides demonstrate how to write a public client mobile 
 > | Language/<br/>Platform | Code sample guide | Build and integrate guide |
 > | ----------- | ----------- |----------- |
 > |Android (Kotlin) | &#8226; [Sign in users](how-to-run-native-authentication-sample-android-app.md)<br/> &#8226; [Sign in users and call an API](sample-native-authentication-android-sample-app-call-web-api.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-android-app.md)|
-> |iOS (Swift) | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md)<br/> &#8226; [Sign in users and call an API](sample-native-authentication-ios-sample-app-call-web-api.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-app.md)|
+> |iOS (Swift) | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md)<br/> &#8226; [Sign in users and call an API](sample-native-authentication-ios-sample-app-call-web-api.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-macos-app.md)|
+
 
 ### Daemon
 
@@ -96,7 +103,7 @@ These samples and how-to guides demonstrate how to write a daemon application th
 > | Language/<br/>Platform | Code sample guide | Build and integrate guide |
 > | ----------- | ----------- |----------- |
 > | Node.js | &#8226; [Call an API](./sample-daemon-node-call-api.md) |  &#8226; [Call an API](tutorial-daemon-node-call-api-prepare-tenant.md)  |
-> | .NET |  &#8226; [Call an API](sample-daemon-dotnet-call-api.md)  |  &#8226; [Call an API](tutorial-daemon-dotnet-call-api-prepare-tenant.md)  |
+> | .NET |  &#8226; [Call an API](sample-daemon-dotnet-call-api.md)  |  &#8226; [Call an API](../../identity-platform/tutorial-dotnet-daemon-call-api.md)  |
 
 
 # [**By language/platform**](#tab/language)
@@ -106,7 +113,7 @@ These samples and how-to guides demonstrate how to write a daemon application th
 > [!div class="mx-tdCol2BreakAll"]
 > | App type | Code sample guide | Build and integrate guide  |
 > | ------- | -------- | ------------- |
-> | Daemon |  &#8226; [Call an API](sample-daemon-dotnet-call-api.md)  | &#8226; [Call an API](tutorial-daemon-dotnet-call-api-prepare-tenant.md)   |
+> | Daemon |  &#8226; [Call an API](sample-daemon-dotnet-call-api.md)  | &#8226; [Call an API](../../identity-platform/tutorial-dotnet-daemon-call-api.md)   |
 
 ### Android (Kotlin)
 
@@ -146,20 +153,21 @@ These samples and how-to guides demonstrate how to write a daemon application th
 > | ------- | -------- | ------------- |
 > | Web app | &#8226; [Sign in users](./sample-web-app-python-flask-sign-in.md) | ---   |
 
-### iOS (Swift)
+### iOS/macOS (Swift)
 
 > [!div class="mx-tdCol2BreakAll"]
 > | App type | Code sample guide | Build and integrate guide |
 > | ----------- | ----------- |----------- |
 > | Mobile: Browser delegated authentication | &#8226; [Sign in users](sample-mobile-app-ios-swift-sign-in.md)<br/> &#8226; [Sign in users and call an API](sample-mobile-app-ios-swift-sign-in-call-api.md) | &#8226; [Sign in users, call an API](tutorial-mobile-app-ios-swift-prepare-tenant.md) |
-> |Mobile: Native authentication | &#8226; [Sign in users](how-to-run-native-authentication-sample-ios-app.md)<br/> &#8226; [Sign in users and call an API](sample-native-authentication-ios-sample-app-call-web-api.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-app.md)|
+> |Mobile: Native authentication | &#8226; iOS (Swift) [Sign in users](how-to-run-native-authentication-sample-ios-app.md)<br/> &#8226; iOS (Swift) [Sign in users and call an API](sample-native-authentication-ios-sample-app-call-web-api.md) | &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-macos-app.md)|
+> |Desktop: Native authentication | &#8226; macOS (Swift) [Sign in users](how-to-run-native-authentication-sample-macos-app.md)| &#8226; [Sign in users](tutorial-native-authentication-prepare-ios-macos-app.md)|
 
-### JavaScript, Vanilla
+### JavaScript
 
 > [!div class="mx-tdCol2BreakAll"]
 > | App type | Code sample guide | Build and integrate guide  |
 > | ------- | -------- | ------------- |
-> | Single-page application | &#8226; [Sign in users](./sample-single-page-app-vanillajs-sign-in.md) | &#8226; [Sign in users](tutorial-single-page-app-vanillajs-prepare-tenant.md) |
+> | Single-page application | &#8226; [Sign in users](../../identity-platform/quickstart-single-page-app-sign-in.md) | &#8226; [Sign in users](../../identity-platform/tutorial-single-page-app-javascript-prepare-app.md) |
 
 ### JavaScript, Angular
 
@@ -173,7 +181,7 @@ These samples and how-to guides demonstrate how to write a daemon application th
 > [!div class="mx-tdCol2BreakAll"]
 > | App type | Code sample guide | Build and integrate guide  |
 > | ------- | -------- | ------------- |
-> | Single-page application| &#8226; [Sign in users](./sample-single-page-app-react-sign-in.md) | &#8226; [Sign in users](./tutorial-single-page-app-react-sign-in-prepare-tenant.md)   |
+> | Single-page application| &#8226; [Sign in users](./sample-single-page-app-react-sign-in.md) | &#8226; [Sign in users](../../identity-platform/tutorial-single-page-app-react-prepare-app.md) |
 
 ### JavaScript, Node
 

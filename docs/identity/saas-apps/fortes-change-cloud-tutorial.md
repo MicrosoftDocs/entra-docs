@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Fortes Change Cloud'
+title: Microsoft Entra single sign-on (SSO) integration with Fortes Change Cloud
 description: Learn how to configure single sign-on between Microsoft Entra ID and Fortes Change Cloud.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Fortes Change Cloud so that I can control who has access to Fortes Change Cloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Fortes Change Cloud
+# Microsoft Entra single sign-on (SSO) integration with Fortes Change Cloud
 
-In this tutorial, you'll learn how to integrate Fortes Change Cloud with Microsoft Entra ID. When you integrate Fortes Change Cloud with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Fortes Change Cloud with Microsoft Entra ID. When you integrate Fortes Change Cloud with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Fortes Change Cloud.
 * Enable your users to be automatically signed-in to Fortes Change Cloud with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Fortes Change Cloud supports **SP and IDP** initiated SSO.
 * Fortes Change Cloud supports [Automated user provisioning](fortes-change-cloud-provisioning-tutorial.md).
@@ -92,7 +92,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	> [!NOTE]
 	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign-on URL. Contact [Fortes Change Cloud Client support team](mailto:support@fortes.nl) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
-1. Fortes Change Cloud application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, where as **nameidentifier** is mapped with **user.userprincipalname**. Fortes Change Cloud application expects **Unique User Identifier** to be mapped with **user.mail**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
+1. Fortes Change Cloud application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes, whereas **nameidentifier** is mapped with **user.userprincipalname**. Fortes Change Cloud application expects **Unique User Identifier** to be mapped with **user.mail**, so you need to edit the attribute mapping by clicking on **Edit** icon and change the attribute mapping.
 
 	![image](common/edit-attribute.png)
 
@@ -156,6 +156,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the Fortes Change Cloud tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Fortes Change Cloud for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Fortes Change Cloud you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

@@ -1,24 +1,24 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with SAP NetWeaver'
+title: Microsoft Entra single sign-on (SSO) integration with SAP NetWeaver
 description: Learn how to configure single sign-on between Microsoft Entra ID and SAP NetWeaver.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SAP NetWeaver so that I can control who has access to SAP NetWeaver, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with SAP NetWeaver
+# Microsoft Entra single sign-on (SSO) integration with SAP NetWeaver
 
-In this tutorial, you'll learn how to integrate SAP NetWeaver with Microsoft Entra ID. When you integrate SAP NetWeaver with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate SAP NetWeaver with Microsoft Entra ID. When you integrate SAP NetWeaver with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to SAP NetWeaver.
 * Enable your users to be automatically signed-in to SAP NetWeaver with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-* SAP NetWeaver supports both **SAML** (**SP initiated SSO**) and **OAuth**. In this tutorial, you configure and test Microsoft Entra SSO in a test environment. 
+* SAP NetWeaver supports both **SAML** (**SP initiated SSO**) and **OAuth**. In this article,  you configure and test Microsoft Entra SSO in a test environment. 
 
 > [!NOTE]
 > Identifier of this application is a fixed string value so only one instance can be configured in one tenant.
@@ -68,6 +68,7 @@ To configure and test Microsoft Entra SSO with SAP NetWeaver, perform the follow
     1. **[Create SAP NetWeaver test user](#create-sap-netweaver-test-user)** to have a counterpart of B.Simon in SAP NetWeaver that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** to verify whether the configuration works.
 1. **[Configure SAP NetWeaver for OAuth​](#configure-sap-netweaver-for-oauth)** to configure the OAuth settings on application side.
+1. **[Request Access Token from Azure AD](#request-access-token-from-azure-ad)** to use Azure AD as the Identity Provider (IdP).
 
 <a name='configure-azure-ad-sso'></a>
 
@@ -401,6 +402,74 @@ In this section, you create a user called B.simon in SAP NetWeaver. Please work 
 
 5. Click **finish**.
 
-## Next Steps
+## Request Access Token from Azure AD
 
-Once you configure Microsoft Entra SAP NetWeaver you can enforce Session Control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session Control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
+To request an access token from the SAP system using Azure Active Directory (Azure AD) as the Identity Provider (IdP), follow these steps:
+
+### Step 1: Register Application in Azure AD
+1. **Log into the Azure portal**: Navigate to the Azure portal at [portal.azure.com](https://portal.azure.com).
+2. **Register a new application**:
+   - Go to "Azure Active Directory".
+   - Select "App registrations" > "New registration".
+   - Fill in the application details such as Name, Redirect URI, etc.
+   - Click "Register".
+3. **Configure API permissions**:
+   - After registration, navigate to "API permissions".
+   - Click "Add a permission" and select "APIs my organization uses".
+   - Search for the SAP system or relevant API and add the necessary permissions.
+   - Grant admin consent for the permissions.
+
+### Step 2: Create Client Secret
+1. **Navigate to the registered application**: Go to "Certificates & secrets".
+2. **Create a new client secret**:
+   - Click on "New client secret".
+   - Provide a description and set an expiry period.
+   - Click "Add" and note down the client secret value as it will be needed for authentication.
+
+### Step 3: Configure SAP System for Azure AD Integration
+1. **Access SAP Cloud Platform**: Log into your SAP Cloud Platform Cockpit.
+2. **Set up trust configuration**:
+   - Go to "Security" > "Trust Configuration".
+   - Add Azure AD as a trusted IdP by importing the federation metadata XML from Azure AD. This can be found in the "Endpoints" section of the Azure AD app registration (under Federation Metadata Document).
+3. **Configure OAuth2 client**:
+   - In the SAP system, configure an OAuth2 client using the client ID and client secret obtained from Azure AD.
+   - Set the token endpoint and other relevant OAuth2 parameters.
+
+### Step 4: Request Access Token
+
+> [!TIP]
+> Consider using Azure API Management to streamline the SAP Principal Propagation process for all client apps in Azure, Power Platform, M365 and more, in a single place including smart token caching, secure token handling and governance options like request throttling. [Learn more about SAP Principal Propagation with Azure API Management](https://community.powerplatform.com/blogs/post/?postid=c6a609ab-3556-ef11-a317-6045bda95bf0). In case SAP Business Technology Platform is preferred, see [this article](https://community.sap.com/t5/enterprise-resource-planning-blogs-by-members/integrating-low-code-solutions-with-microsoft-using-sap-integration-suite/ba-p/13789298).
+
+1. **Prepare the token request**:
+   - Construct a token request using the following details:
+     - **Token Endpoint**: This is typically `https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token`.
+     - **Client ID**: The Application (client) ID from Azure AD.
+     - **Client Secret**: The client secret value from Azure AD.
+     - **Scope**: The required scopes (e.g., `https://your-sap-system.com/.default`).
+     - **Grant Type**: Use `client_credentials` for server-to-server authentication.
+
+2. **Make the token request**:
+   - Use a tool like Postman or a script to send a POST request to the token endpoint.
+   - Example request (in cURL):
+     ```sh
+     curl -X POST \
+       https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token \
+       -H 'Content-Type: application/x-www-form-urlencoded' \
+       -d 'client_id={client_id}&scope=https://your-sap-system.com/.default&client_secret={client_secret}&grant_type=client_credentials'
+     ```
+
+3. **Extract the access token**:
+   - The response will contain an access token if the request is successful. Use this access token to authenticate API requests to the SAP system.
+
+### Step 5: Use the Access Token for API Requests
+1. **Include the access token in API requests**:
+   - For each request to the SAP system, include the access token in the `Authorization` header.
+   - Example header:
+     ```
+     Authorization: Bearer {access_token}
+     ```
+
+## Related content
+
+- Configure Microsoft Entra SAP NetWeaver to enforce Session Control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session Control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
+- Configure SAP Principal Propagation (OAuth2) using Azure API Management to govern and secure access to SAP systems from client apps in Azure, Power Platform, Microsoft 365 and others. [Learn more about SAP Principal Propagation with Azure API Management](https://community.powerplatform.com/blogs/post/?postid=c6a609ab-3556-ef11-a317-6045bda95bf0).

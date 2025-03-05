@@ -1,23 +1,23 @@
 ---
-title: "Tutorial: Microsoft Entra single sign-on (SSO) integration with ProdPad"
+title: Microsoft Entra single sign-on (SSO) integration with ProdPad
 description: Learn how to configure single sign-on between Microsoft Entra ID and ProdPad.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ProdPad so that I can control who has access to ProdPad, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with ProdPad
+# Microsoft Entra single sign-on (SSO) integration with ProdPad
 
-In this tutorial, you'll learn how to integrate ProdPad with Microsoft Entra ID. When you integrate ProdPad with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate ProdPad with Microsoft Entra ID. When you integrate ProdPad with Microsoft Entra ID, you can:
 
 - Control in Microsoft Entra ID who has access to ProdPad.
 - Enable your users to be automatically signed-in to ProdPad with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * ProdPad supports **SP and IDP** initiated SSO.
 * ProdPad supports **Just In Time** user provisioning.
@@ -141,7 +141,27 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure ProdPad SSO
 
-To configure single sign-on on **ProdPad** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to [ProdPad support team](mailto:help@prodpad.com). They set this setting to have the SAML SSO connection set properly on both sides.
+1. Go to Account Settings and select the Security tab.
+1. Now select the SSO/SAML sub-tab.
+1. Click the "Add authentication type" button and select Microsoft Entra from the dropdown.
+1. Click the Next button on the Microsoft Entra modal.
+1. Copy into the field labelled "IdP Entity ID/URL" in ProdPad, the URL from the field "Microsoft Entra Identifier" in Microsoft Entra.
+1. Copy into the field "IdP SAML Single Sign-On URL" in ProdPad, the URL in the field "Login URL" in Microsoft Entra.
+1. Copy into the field "Logout URL" in ProdPad, the URL in the field "Logout URL" in Microsoft Entra.
+1. Paste the text of X.509 certificate (public key generated above) into the X.509 certificate field.
+
+Now you must decide whether you want your users to login by IdP initiated login only or by IdP and SP initiated login. 
+
+1. If you select IdP only, you users must login from the Microsoft Entra dashboard, rather than the ProdPad login page. 
+
+   1. Click save. Your users can now use the ProdPad app link on their Microsoft Entra dashboard.
+
+1. If you opt for IdP & SP initiated login
+   1. you must set up the Domains that your users can login from, more about this [here](https://help.prodpad.com/article/704-domain-verification)
+   1. Once set up and verified, select the domain from the Domains list.
+   1. Hit save.
+
+**Note: for a domain to appear as an option here it must be verified under the Domains tab.**
 
 ### Create ProdPad test user
 
@@ -163,6 +183,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft Access Panel to test the application in any mode. When you click the ProdPad tile in the Access Panel, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the ProdPad for which you set up the SSO. For more information about the Access Panel, see [Introduction to the Access Panel](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure ProdPad you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

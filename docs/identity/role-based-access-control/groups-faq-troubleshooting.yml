@@ -14,7 +14,7 @@ metadata:
   
   
 title: Troubleshoot Microsoft Entra roles assigned to groups
-summary: Here are some common questions and troubleshooting tips for assigning Microsoft Entra roles to Microsoft Entra groups.
+summary: What follows are some common questions and troubleshooting tips for assigning Microsoft Entra roles to Microsoft Entra groups.
 
 sections:
   - name: Ignored
@@ -27,17 +27,17 @@ sections:
       - question: |
           Who can modify the membership of groups that are assigned to Microsoft Entra roles?
         answer: |
-          By default, Privileged Role Administrator manage the membership of a role-assignable group, but you can delegate the management of role-assignable groups by adding group owners.
+          By default, Privileged Role Administrator manages the membership of a role-assignable group, but you can delegate the management of role-assignable groups by adding group owners.
 
       - question: |
           I am a Helpdesk Administrator in my organization but I can't update password of a user who is a Directory Readers. Why does that happen?
         answer: |
-          The user might have gotten Directory Readers by way of a role-assignable group. All members and owners of role-assignable groups are protected. Users with the Privileged Authentication Administrator role can reset credentials for a protected user.
+          The user might have accessed Directory Readers by way of a role-assignable group. All members and owners of role-assignable groups are protected. Users with the Privileged Authentication Administrator role can reset credentials for a protected user.
 
       - question: |
           I can't update password of a user. They don't have any higher privileged role assigned. Why is it happening?
         answer: |
-          The user could be an owner of a role-assignable group. We protect owners of role-assignable groups to avoid elevation of privilege. An example might be if a group Contoso_Security_Admins is assigned to Security Administrator role, where Bob is the group owner and Alice is Password Administrator in the organization. If this protection weren't present, Alice could reset Bob's credentials and take over his identity. After that, Alice could add herself or anyone to the group Contoso_Security_Admins group to become a Security Administrator in the organization. To find out if a user is a group owner, get the list of owned objects of that user and see if any of the groups have isAssignableToRole set to true. If yes, then that user is protected and the behavior is by design. Refer to these documentations for getting owned objects:
+          The user could be an owner of a role-assignable group. We protect owners of role-assignable groups to avoid elevation of privilege. An example might be if a group Contoso_Security_Admins is assigned to Security Administrator role, where Bob is the group owner and Alice is the Password Administrator within the organization. Without this protection, Alice could reset Bob's credentials and take over his identity. Alice could then add herself or anyone to the group Contoso_Security_Admins group to become a Security Administrator in the organization. To find out if a user is a group owner, access the list of owned objects for that user and see if any of the groups have isAssignableToRole set to true. If yes, then that user is protected and the behavior is by design. Refer to the following documentation for accessing owned objects:
           
           - [Get-MgUserOwnedObject](/powershell/module/microsoft.graph.users/get-mguserownedobject)
           - [List ownedObjects](/graph/api/user-list-ownedobjects?tabs=http)
@@ -105,7 +105,7 @@ sections:
       - question: |
           Why do we enforce creating a new group for assigning it to role?  
         answer: |
-          If you assign an existing group to a role, the existing group owner could add other members to this group without the new members realizing that they'll have the role. Because role-assignable groups are powerful, we're putting lots of restrictions to protect them. You don't want changes to the group that would be surprising to the person managing the group.
+          If you assign an existing group to a role, the existing group owner could add other members to this group without the new members realizing that they'll have the role. Because role-assignable groups are powerful, we've established restrictions to protect them. You don't want changes to the group that would be surprising to the person managing the group.
           
 
 additionalContent: |

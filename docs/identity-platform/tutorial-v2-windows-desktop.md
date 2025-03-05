@@ -88,7 +88,6 @@ Create the application using the following steps:
 
 ## Register your application
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To register and configure your application, follow these steps:
 
@@ -367,4 +366,4 @@ In addition to the access token that's used to call the Microsoft Graph API, aft
 Learn more about building desktop apps that call protected web APIs in our multi-part scenario series:
 
 > [!div class="nextstepaction"]
-> [Scenario: Desktop app that calls web APIs](scenario-desktop-overview.md)
+> [Scenario: Desktop app that calls web APIs](scenario-desktop-app-registration.md)

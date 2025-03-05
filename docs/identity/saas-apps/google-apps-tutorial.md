@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Google Cloud / G Suite Connector by Microsoft'
+title: Microsoft Entra SSO integration with Google Cloud / G Suite Connector by Microsoft
 description: Learn how to configure single sign-on between Microsoft Entra ID and Google Cloud / G Suite Connector by Microsoft.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 08/20/2024
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Google Cloud / G Suite Connector so that I can control who has access to Google Cloud / G Suite Connector, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Google Cloud / G Suite Connector by Microsoft
+# Microsoft Entra SSO integration with Google Cloud / G Suite Connector by Microsoft
 
-In this tutorial, you'll learn how to integrate Google Cloud / G Suite Connector by Microsoft with Microsoft Entra ID. When you integrate Google Cloud / G Suite Connector by Microsoft with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Google Cloud / G Suite Connector by Microsoft with Microsoft Entra ID. When you integrate Google Cloud / G Suite Connector by Microsoft with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Google Cloud / G Suite Connector by Microsoft.
 * Enable your users to be automatically signed-in to Google Cloud / G Suite Connector by Microsoft with their Microsoft Entra accounts.
@@ -32,12 +32,15 @@ To get started, you need the following items:
 * A Google Apps subscription or Google Cloud Platform subscription.
 
 > [!NOTE]
-> To test the steps in this tutorial, we do not recommend using a production environment. This document was created using the new user Single-Sign-on experience. If you are still using the old one, the setup will look different. You can enable the new experience in the Single Sign-on settings of G-Suite application. Go to **Microsoft Entra ID** > **Enterprise applications**, select **Google Cloud / G Suite Connector by Microsoft**, select **Single Sign-on** and then click on **Try out our new experience**.
+> To test the steps in this article,  we do not recommend using a production environment. This document was created using the new user Single-Sign-on experience. If you are still using the old one, the setup will look different. You can enable the new experience in the Single Sign-on settings of G-Suite application. Go to **Microsoft Entra ID** > **Enterprise applications**, select **Google Cloud / G Suite Connector by Microsoft**, select **Single Sign-on** and then click on **Try out our new experience**.
 
-To test the steps in this tutorial, you should follow these recommendations:
+To test the steps in this article,  you should follow these recommendations:
 
-* Do not use your production environment, unless it is necessary.
+* Don't use your production environment, unless it's necessary.
 * If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+
+## Recent Changes
+Recent updates from Google now allow the addition of user groups to Third-Party SSO profiles. This enables more granular control over the assignment of SSO settings. You can now create SSO Profile Assignments, allowing you to migrate users in stages rather than moving the entire company at once. In this area, you're given SP details with an Entity ID and ACS URL, which you'll now need to add into Azure Apps for reply and Entity.
 
 ## Frequently Asked Questions
 
@@ -55,21 +58,21 @@ To test the steps in this tutorial, you should follow these recommendations:
 
 4. **Q: Can I enable single sign-on for only a subset of my Google Cloud / G Suite Connector by Microsoft users?**
 
-    A: Yes, the SSO profiles can be selected per User, Organizational Unit or Group in the Google Workspace.
+    A: Yes, the SSO profiles can be selected per User, Organizational Unit, or Group in the Google Workspace.
 
     ![Screenshot for SSO profile assignment.](./media/google-apps-tutorial/profile-assignment.png)
 
-    Select the SSO profile as "none" for the Google Workspace group. This prevents members of this (Google Workspace group) from being redirected to Microsoft Entra ID for logon.
+    Select the SSO profile as "none" for the Google Workspace group. This prevents members of this (Google Workspace group) from being redirected to Microsoft Entra ID for sign-in.
 
 5. **Q: If a user is signed in through Windows, are they automatically authenticate to Google Cloud / G Suite Connector by Microsoft without getting prompted for a password?**
 
-    A: There are two options for enabling this scenario. First, users could sign into Windows 10 devices via [Microsoft Entra join](~/identity/devices/overview.md). Alternatively, users could sign into Windows devices that are domain-joined to an on-premises Active Directory that has been enabled for single sign-on to Microsoft Entra ID via an [Active Directory Federation Services (AD FS)](~/identity/hybrid/connect/plan-connect-user-signin.md) deployment. Both options require you to perform the steps in the following tutorial to enable single sign-on between Microsoft Entra ID and Google Cloud / G Suite Connector by Microsoft.
+    A: There are two options for enabling this scenario. First, users could sign into Windows 10 devices via [Microsoft Entra join](~/identity/devices/overview.md). Alternatively, users could sign into Windows devices that are domain-joined to an on-premises Active Directory that has been enabled for single sign-on to Microsoft Entra ID via an [Active Directory Federation Services (AD FS)](~/identity/hybrid/connect/plan-connect-user-signin.md) deployment. Both options require you to perform the steps in the following article to enable single sign-on between Microsoft Entra ID and Google Cloud / G Suite Connector by Microsoft.
 
 6. **Q: What should I do when I get an "invalid email" error message?**
 
-	A: For this setup, the email attribute is required for the users to be able to sign-in. This attribute cannot be set manually.
+	A: For this setup, the email attribute is required for the users to be able to sign-in. This attribute can't be set manually.
 
-	The email attribute is autopopulated for any user with a valid Exchange license. If user is not email-enabled, this error will be received as the application needs to get this attribute to give access.
+	The email attribute is autopopulated for any user with a valid Exchange license. If user isn't email-enabled, this error will be received as the application needs to get this attribute to give access.
 
 	You can go to portal.office.com with an Admin account, then click in the Admin center, billing, subscriptions, select your Microsoft 365 Subscription and then click on assign to users, select the users you want to check their subscription and in the right pane, click on edit licenses.
 
@@ -77,7 +80,7 @@ To test the steps in this tutorial, you should follow these recommendations:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Google Cloud / G Suite Connector by Microsoft supports **SP** initiated SSO.
 
@@ -165,7 +168,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://www.google.com/a/<yourdomain.com>/ServiceLogin?continue=https://console.cloud.google.com`
 
     > [!NOTE]
-	> These values are not real. Update these values with the actual Identifier,Reply URL and Sign on URL. Google Cloud / G Suite Connector by Microsoft doesn't provide Entity ID/Identifier value on Single Sign On configuration so when you uncheck the **domain specific issuer** option the Identifier value will be `google.com`. If you check the **domain specific issuer** option it will be `google.com/a/<yourdomainname.com>`. To check/uncheck the **domain specific issuer** option you need to go to the **Configure Google Cloud / G Suite Connector by Microsoft SSO** section which is explained later in the tutorial. For more information contact [Google Cloud / G Suite Connector by Microsoft Client support team](https://www.google.com/contact/).
+	> These values are not real. Update these values with the actual Identifier,Reply URL and Sign on URL. Google Cloud / G Suite Connector by Microsoft doesn't provide Entity ID/Identifier value on Single Sign On configuration so when you uncheck the **domain specific issuer** option the Identifier value will be `google.com`. If you check the **domain specific issuer** option it will be `google.com/a/<yourdomainname.com>`. To check/uncheck the **domain specific issuer** option you need to go to the **Configure Google Cloud / G Suite Connector by Microsoft SSO** section which is explained later in the article. For more information contact [Google Cloud / G Suite Connector by Microsoft Client support team](https://www.google.com/contact/).
 
 1. Your Google Cloud / G Suite Connector by Microsoft application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows an example for this. The default value of **Unique User Identifier** is **user.userprincipalname** but Google Cloud / G Suite Connector by Microsoft expects this to be mapped with the user's email address. For that you can use **user.mail** attribute from the list or use the appropriate attribute value based on your organization configuration.
 
@@ -182,9 +185,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png "Metadata")
 
-    ```Logout URL
-    https://login.microsoftonline.com/common/wsfederation?wa=wsignout1.0
-    ```
+    > [!NOTE]
+    > The default logout URL listed in the app is incorrect. The correct URL is: `https://login.microsoftonline.com/common/wsfederation?wa=wsignout1.0`
+
 
 <a name='create-an-azure-ad-test-user'></a>
 
@@ -213,7 +216,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 1. In the app's overview page, select **Users and groups**.
 1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
    1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
+   1. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
    1. In the **Add Assignment** dialog, click the **Assign** button.
 
 ## Configure Google Cloud/G Suite Connector by Microsoft SSO
@@ -238,7 +241,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     e. Check/Uncheck the **Use a domain specific issuer** option as per the note mentioned in the above **Basic SAML Configuration** section in the Microsoft Entra ID.
 
-	f. In the **Change password URL** field in Google Cloud / G Suite Connector by Microsoft, enter the value as `https://account.activedirectory.windowsazure.com/changepassword.aspx`
+	f. In the **Change password URL** field in Google Cloud / G Suite Connector by Microsoft, enter the value as `https://mysignins.microsoft.com/security-info/password/change`
 
     g. Click **Save**.
 
@@ -264,6 +267,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Google Cloud / G Suite Connector by Microsoft tile in the My Apps, this will redirect to Google Cloud / G Suite Connector by Microsoft Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Google Cloud / G Suite Connector by Microsoft you can enforce Session Control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session Control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

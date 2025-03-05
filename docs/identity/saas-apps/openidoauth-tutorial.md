@@ -2,15 +2,15 @@
 title: 'Configure an OpenID Connect OAuth application from Microsoft Entra app gallery'
 description: Steps to Configure an OpenID Connect OAuth application from Microsoft Entra app gallery.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 ms.custom: 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and OpenID Connect OAuth so that I can control who has access to OpenID Connect OAuth, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -48,7 +48,7 @@ ms.custom:
     > You can add only one instance of the application. If you have already added one and tried to provide the consent again, it will not be added again in the tenant. So logically, you can use only one app instance in the tenant.
 
 1. Follow the below video to add an OpenID application from the gallery.
-    >[!VIDEO https://www.microsoft.com/videoplayer/embed/RE4HoNI]
+    >[!VIDEO https://learn-video.azurefd.net/vod/player?id=4454201b-3a5a-4176-a259-dfd32e8ac2b7]
 
 ## Authentication flow using OpenID Connect
 
@@ -110,8 +110,6 @@ The following steps show you how the consent experience works for the applicatio
 
     d. Click On **Microsoft Graph**.
 
-    ![Screenshot that shows the "Request A P I permissions" page with the "Microsoft A P I" tab and "Microsoft Graph" tile selected.](./media/openidoauth-tutorial/microsoft-graph.png)
-
     e. Select required options from **Delegated permissions** and **Application Permissions**.
 
     ![Graph API](./media/openidoauth-tutorial/graphapi.png)
@@ -132,9 +130,7 @@ A regular user can consent to some permissions. Other permissions require a tena
 
 ## Difference between admin consent and user consent
 
-As an administrator, you can also consent to an application's delegated permissions on behalf of all the users in your tenant. Administrative consent prevents the consent dialog box from appearing for every user in the tenant. Users who have the administrator role can provide consent. From the **Settings** page for your application, select **Required Permissions** > **Grant admin consent**.
-
-![Grant Permissions button](./media/openidoauth-tutorial/grantpermission.png)
+As an administrator, you can also consent to an application's delegated permissions on behalf of all the users in your tenant. Administrative consent prevents the consent dialog box from appearing for every user in the tenant. Users who have the administrator role can provide consent. Select **Manage** > **API permissions**. Under **Grant consent**, select **Grant admin consent for**.
 
 > [!NOTE]
 > Granting explicit consent by using the **Grant admin consent** button is now required for single-page applications (SPAs) that use MSAL.js. Otherwise, the application fails when the access token is requested.
@@ -151,6 +147,6 @@ The *prompt=admin_consent* parameter can also be used by applications that reque
 
 Imagine that an application requires admin consent, and an admin signs in without the *prompt=admin_consent* parameter being sent. When the admin successfully consents to the application, it applies only for their user account. Regular users will still be unable to sign in or consent to the application. This feature is useful if you want to give the tenant administrator the ability to explore your application before allowing other users' access.
 
-## Next steps
+## Related content
 
 [Set up OIDC-based single sign-on (SSO) for an application in your Microsoft Entra tenant](~/identity/enterprise-apps/add-application-portal-setup-oidc-sso.md)

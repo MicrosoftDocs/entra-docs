@@ -1,23 +1,23 @@
 ---
-title: "Tutorial: Microsoft Entra single sign-on (SSO) integration with Catchpoint"
+title: Microsoft Entra single sign-on (SSO) integration with Catchpoint
 description: Learn how to configure single sign-on between Microsoft Entra ID and Catchpoint.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Catchpoint so that I can control who has access to Catchpoint, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on integration with Catchpoint
+# Microsoft Entra single sign-on integration with Catchpoint
 
-In this tutorial, you learn how to integrate Catchpoint with Microsoft Entra ID. When you integrate Catchpoint with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Catchpoint with Microsoft Entra ID. When you integrate Catchpoint with Microsoft Entra ID, you can:
 
 - Control user access to Catchpoint from Microsoft Entra ID.
 - Enable automatic Catchpoint sign-in for users with Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 - Catchpoint supports SP-initiated and IDP-initiated SSO.
 - Catchpoint supports just-in-time (JIT) user provisioning.
@@ -52,7 +52,7 @@ To configure the integration of Catchpoint into Microsoft Entra ID, add Catchpoi
 
 ## Configure and test Microsoft Entra SSO for Catchpoint
 
-For SSO to work, you need to link a Microsoft Entra user with a user in Catchpoint. For this tutorial, we'll configure a test user called **B.Simon**.
+For SSO to work, you need to link a Microsoft Entra user with a user in Catchpoint. For this article,  we'll configure a test user called **B.Simon**.
 
 Complete the following sections:
 
@@ -191,6 +191,6 @@ You can also use Microsoft My Apps to test the application in any mode. When you
 >
 > ![Catchpoint configuration](./media/catchpoint-tutorial/loginimage.png)
 
-## Next steps
+## Related content
 
 After you configure Catchpoint, you can enforce session control. This precaution protects against exfiltration and infiltration of your organization's sensitive data in real time. Session control is an extension of Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

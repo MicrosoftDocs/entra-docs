@@ -5,7 +5,7 @@ description: Add users in bulk in Microsoft Entra ID
 author: barclayn
 ms.author: barclayn
 manager: amycolannino
-ms.date: 09/08/2023
+ms.date: 12/19/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
@@ -59,18 +59,16 @@ The rows in a downloaded CSV template are as follows:
 
    :::image type="content" source="./media/users-bulk-add/upload-button.png" alt-text="Screenshot showing how to select a local CSV file in which you list the users you want to add.":::
 
-1. Open the CSV file and add a line for each user you want to create. The only required values are **Name**, **User principal name**, **Initial password** and **Block sign in (Yes/No)**. Then save the file.
+1. Open the CSV file and add a line for each user you want to create. The only required values are **Name**, **User principal name**, **Initial password**, and **Block sign in (Yes/No)**. Then save the file.
 
    :::image type="content" source="./media/users-bulk-add/add-csv-file.png" alt-text="Screenshot showing an example of the CSV file containing the names and IDs of the users to create.":::
 
-1. On the **Bulk create user** page, under Upload your CSV file, browse to the file. When you select the file and click **Submit**, validation of the CSV file starts.
+1. On the **Bulk create user** page, under Upload your CSV file, browse to the file. When you select the file and select **Submit**, validation of the CSV file starts.
 1. After the file contents are validated, you’ll see **File uploaded successfully**. If there are errors, you must fix them before you can submit the job.
 1. When your file passes validation, select **Submit** to start the bulk operation that imports the new users.
-1. When the import operation completes, you'll see a notification of the bulk operation job status.
+1. When the import operation completes, you see a notification of the bulk operation job status.
 
-If there are errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error. The file submission must match the provided template and include the exact column names.
-
-[!INCLUDE [Bulk update warning](~/includes/bulk-export.md)]
+If you experience errors, you can download and view the results file on the **Bulk operation results** page. The file contains the reason for each error. The file submission must match the provided template and include the exact column names. For more information about bulk operations limitations, see [Bulk import service limits](#bulk-import-service-limits).
 
 ## Check status
 
@@ -99,7 +97,7 @@ You should see that the users that you created are listed.
 
 ## Bulk import service limits
 
-Each bulk activity to create users can run for up to one hour. This enables bulk creation of at least 50,000 users.
+[!INCLUDE [Bulk operations limitations](~/includes/bulk-operations-limitations.md)]
 
 ## Next steps
 

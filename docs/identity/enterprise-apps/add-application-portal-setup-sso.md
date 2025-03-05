@@ -1,5 +1,5 @@
 ---
-title: Enable single sign-on for an enterprise application
+title: Enable SAML single sign-on for an enterprise application
 description: Enable single sign-on for an enterprise application in Microsoft Entra ID.
 
 author: omondiatieno
@@ -7,8 +7,7 @@ manager: CelesteDG
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
-
-ms.date: 10/30/2023
+ms.date: 07/02/2024
 ms.author: jomondi
 ms.reviewer: ergleenl
 ms.custom: mode-other, enterprise-apps
@@ -16,13 +15,15 @@ ms.custom: mode-other, enterprise-apps
 #customer intent: As an IT admin, I want to enable single sign-on for an enterprise application in Microsoft Entra, so that my users can sign in using their Microsoft Entra credentials and have a seamless authentication experience.
 ---
 
-# Enable single sign-on for an enterprise application
+# Enable SAML single sign-on for an enterprise application
 
 In this article, you use the Microsoft Entra admin center to enable single sign-on (SSO) for an enterprise application that you added to your Microsoft Entra tenant. After you configure SSO, your users can sign in by using their Microsoft Entra credentials.
 
 Microsoft Entra ID has a gallery that contains thousands of preintegrated applications that use SSO. This article uses an enterprise application named **Microsoft Entra SAML Toolkit 1** as an example, but the concepts apply for most preconfigured enterprise applications in the Microsoft Entra application gallery.
 
-It's recommended that you use a nonproduction environment to test the steps in this article.
+If your application will not integrate directly with Microsoft Entra for single sign-on, and instead tokens are provided to the application by a relying party Security Token Service (STS), then see the article [Enable single sign-on for an enterprise application with a relying party security token service](add-application-portal-setup-sso-rpsts.md).
+
+We recommend that you use a nonproduction environment to test the steps in this article.
 
 ## Prerequisites
 
@@ -34,7 +35,6 @@ To configure SSO, you need:
 
 ## Enable single sign-on
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To enable SSO for an application:
 
@@ -58,6 +58,7 @@ To configure SSO in Microsoft Entra ID:
 1. In the Microsoft Entra admin center, select **Edit** in the **Basic SAML Configuration** section on the **Set up Single Sign-On with SAML** pane.
 1. For **Reply URL (Assertion Consumer Service URL)**, enter `https://samltoolkit.azurewebsites.net/SAML/Consume`.
 1. For **Sign on URL**, enter `https://samltoolkit.azurewebsites.net/`.
+   The **Identifier (Entity ID)** is typically a URL specific to the application you're integrating with. For the **Microsoft Entra SAML Toolkit 1** application in this example, the value is automatically generated once you input the **Sign on** URL and **Reply URL** values. Follow the specific configuration guide for the application you're integrating with to determine the correct value.
 1. Select **Save**.
 1. In the **SAML Certificates** section, select **Download** for **Certificate (Raw)** to download the SAML signing certificate and save it to be used later.
 

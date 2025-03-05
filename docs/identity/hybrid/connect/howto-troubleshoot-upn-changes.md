@@ -12,9 +12,9 @@ ms.reviewer: jsimmons, andresc
 
 ---
 
-# Plan and troubleshoot User Principal Name changes in Microsoft Entra ID
+# Plan and troubleshoot UserPrincipalName changes in Microsoft Entra ID
 
-The User Principal Name (UPN) attribute is an internet communication standard for user accounts. A UPN consists of: 
+The UserPrincipalName (UPN) attribute is an internet communication standard for user accounts. A UPN consists of: 
 
 * **Prefix**: User account name
 * **Suffix**: Domain name server (DNS) domain name 
@@ -67,8 +67,8 @@ Users sign in to Microsoft Entra ID with their userPrincipalName attribute value
 
 When you use Microsoft Entra ID with on-premises Active Directory, user accounts are synchronized with the Microsoft Entra Connect service. The Microsoft Entra Connect wizard uses the userPrincipalName attribute from the on-premises Active Directory as the UPN in Microsoft Entra ID. You can change it to a different attribute in a custom installation.
 
-   >[!NOTE]
-   > Define a process for updating a User Principal Name (UPN) for users and your organization. 
+> [!NOTE]
+> Define a process for updating a UserPrincipalName for users and your organization. 
 
 When you synchronize user accounts from Active Directory to Microsoft Entra ID, ensure the UPNs in Active Directory map to verified domains in Microsoft Entra ID. If the userPrincipalName attribute value doesn't correspond to a verified domain in Microsoft Entra ID, synchronization replaces the suffix with .onmicrosoft.com.
 
@@ -125,13 +125,13 @@ Users might experience SSO issues with applications that depend on Microsoft Ent
 1. Allow time for the UPN change to sync to Microsoft Entra ID.
 2. Verify the new UPN appears in the [Microsoft Entra admin center](https://entra.microsoft.com).
 3. Tell users to select **Other user** to sign in with a new UPN.
-4. Verify with [Get-MgUser](/powershell/module/microsoft.graph.users/get-mguser) in Microsoft Graph PowerShell.
+1. Verify with [Get-MgUser](/powershell/module/microsoft.graph.users/get-mguser) in Microsoft Graph PowerShell.
 
-   >[!NOTE]
+      >[!NOTE]
    > After users sign in with a new UPN, references to the previous UPN might appear on the **Access work or school** Windows setting.
 
    ![Screenshot of User-1 and Other-user domains, on the sign-in screen.](./media/howto-troubleshoot-upn-changes/other-user.png)
-
+   
 <a name='hybrid-azure-ad-joined-devices'></a>
 
 ### Microsoft Entra hybrid joined devices issues
@@ -233,7 +233,6 @@ On Android and iOS, brokers like Authenticator enable:
 Learn more:
 
 * [Microsoft Entra Conditional Access documentation](~/identity/conditional-access/index.yml)
-* [Use Authenticator or Intune Company Portal on Xamarin applications](~/identity-platform/msal-net-use-brokers-with-xamarin-apps.md).
 
 **Known issues: user prompts**
 
@@ -253,7 +252,7 @@ Authenticator registers the device in Microsoft Entra ID, which allows the devic
 
 **Known issues: New account appears**
 
-If you change UPN, a new account with the new UPN appears on the Authenticator. The account with the previous UPN remains. Also, the previous UPN appears on Device Registration in app settings. There's no change in functionality of Device Registration or dependant scenarios.
+If you change UPN, a new account with the new UPN appears on the Authenticator. The account with the previous UPN remains. Also, the previous UPN appears on Device Registration in app settings. There's no change in functionality of Device Registration or dependent scenarios.
 
 **Workaround**
 

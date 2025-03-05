@@ -1,6 +1,6 @@
 ---
-author: barclayn 
-ms.author: barclayn
+author: rwike77 
+ms.author: ryanwi
 ms.date: 06/06/2024 
 ms.topic: include
 ms.service: entra-id
@@ -19,7 +19,6 @@ You'll learn how to:
 
 ## Create a Key Vault  
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 This section shows how to grant your VM access to a secret stored in a Key Vault. When you use managed identities for Azure resources, your code can get access tokens to authenticate to resources that support Microsoft Entra authentication. 
 

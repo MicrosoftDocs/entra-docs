@@ -1,7 +1,7 @@
 ---
 title: What's new in Microsoft Entra External ID
 description: New and updated documentation for the Microsoft Entra External ID.
-ms.date: 06/05/2024
+ms.date: 03/03/2025
 ms.service: entra-external-id
 ms.topic: whats-new
 
@@ -11,49 +11,34 @@ manager: CelesteDG
 # Customer intent: As a Microsoft Entra External ID user, I want to stay updated on the new documentation and significant updates, so that I can stay informed about the changes and improvements in the service.
 ---
 
-# Microsoft Entra External ID: What's new
+# What's new in docs: External ID in workforce tenants
 
-Welcome to what's new in Microsoft Entra External ID documentation. This article lists new docs that have been added and those that have had significant updates in the last three months. To learn what's new with the Microsoft Entra ID service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
+Welcome to what's new in documentation for Microsoft Entra External ID in workforce tenants. This article lists new docs that were added and docs that were significantly updated in the last three months. To learn what's new with the Microsoft Entra ID service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
 
-## May 2024
+## February 2025
 
-This month we’ve added “Applies to” tags to many of our articles to help navigation within the documentation.
+### New articles
 
-- [Sponsors field for B2B users](/entra/external-id/b2b-sponsors) - Added a known issue
-- [Configure Microsoft cloud settings for B2B collaboration](/entra/external-id/cross-cloud-settings) - Highlighted cloud collaboration references
-- [Configure cross-tenant access settings for B2B collaboration](/entra/external-id/cross-tenant-access-settings-b2b-collaboration) - Highlighted cloud collaboration references
-
-## April 2024
-
-This month, we have made updates to our table of contents to make navigation easier for you.
-
-### New article
-
-- [Workforce and external tenant configurations in Microsoft Entra External ID](/entra/external-id/tenant-configurations)
+- [SAML/WS-Fed identity providers](direct-federation-overview.md)
 
 ### Updated articles
 
-- [Overview of Microsoft Entra External ID](/entra/external-id/external-identities-overview) - Updated scenario concepts, terminology, and images
-- [B2B collaboration overview](/entra/external-id/what-is-b2b) - Updated scenario concepts, terminology, and images
-- [Microsoft Entra B2B collaboration FAQs](/entra/external-id/faq) - Conditional Access policy updates
-- [Overview: Cross-tenant access with Microsoft Entra External ID](/entra/external-id/cross-tenant-access-overview) - Email one-time passcode updates
-- [Add a self-service sign-up user flow to an app](/entra/external-id/self-service-sign-up-user-flow) -Editorial updates
+- [Add federation with SAML/WS-Fed identity providers](direct-federation.md) - Editorial updates
+- [Configure external collaboration settings for B2B in Microsoft Entra External ID](external-collaboration-settings-configure.md) - Global Administrator role update
 
-## March 2024
+## December 2024
 
 ### Updated articles
 
-- [Add Facebook as an identity provider for External ID](facebook-federation.md) - App creation steps updated
-- [Troubleshooting Microsoft Entra B2B collaboration](troubleshoot.md) - Microsoft Graph PowerShell updates
-- [B2B direct connect overview](b2b-direct-connect-overview.md) - Updated diagrams
-- [Overview: Cross-tenant access with Microsoft Entra External ID](cross-tenant-access-overview.md) - Updated for configurable redemption order general availability
-- [Configure cross-tenant access settings for B2B collaboration](cross-tenant-access-settings-b2b-collaboration.yml) – Updated for configurable redemption order general availability
-- [Federation with SAML/WS-Fed identity providers for guest users](direct-federation.md) - Updated for configurable redemption order general availability
-- [Overview of Microsoft Entra External ID](external-identities-overview.md) - Updated screenshots
-- [Add Microsoft account (MSA.md) as an identity provider for External ID](microsoft-account.md) - Updated screenshots
-- [Email one-time passcode authentication](one-time-passcode.md) - Updated screenshots that have old references
-- [Microsoft Entra B2B collaboration invitation redemption](redemption-experience.md) - Updated content for configurable redemption order general availability
-- [Set up tenant restrictions v2](tenant-restrictions-v2.md) - Updated screenshots
-- [Language customization in Microsoft Entra External ID](user-flow-customize-language.md) - Updated screenshots
-- [B2B collaboration overview](what-is-b2b.md) - Updated screenshots
+- [Leave an organization where you have a guest account](leave-the-organization.md) - Added additional support options
+- [Pricing structure and billing model for Microsoft Entra External ID](external-identities-pricing.md) - Updated pricing information
+
+## October 2024
+
+### Updated articles
+
+- [B2B collaboration invitation redemption](redemption-experience.md) - Guest and contact object conflicts update
+- [Troubleshoot common issues with Microsoft Entra B2B collaboration](troubleshoot.md) - Guest and contact object conflicts update
+- [Microsoft Entra B2B in government and national clouds](b2b-government-national-clouds.md) - MSA support update
+- [Microsoft Entra B2B best practices](b2b-fundamentals.md) - Security considerations updates
 
