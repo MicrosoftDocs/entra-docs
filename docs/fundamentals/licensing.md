@@ -5,7 +5,7 @@ author: barclayn
 manager: femila
 ms.service: entra
 ms.topic: conceptual
-ms.date: 12/19/2024
+ms.date: 03/05/2025
 ms.subservice: fundamentals
 ms.author: barclayn
 ---

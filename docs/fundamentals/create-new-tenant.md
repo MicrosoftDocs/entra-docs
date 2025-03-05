@@ -7,7 +7,7 @@ manager: femila
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: quickstart
-ms.date: 12/19/2024
+ms.date: 03/05/2025
 ms.author: barclayn
 ms.custom: it-pro, fasttrack-edit, mode-other
 ms.collection: M365-identity-device-management
