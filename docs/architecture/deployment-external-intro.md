@@ -13,13 +13,11 @@ ms.author: gasinh
 
 # Introduction to Microsoft Entra External ID deployment guide
 
-This document is intended for identity architects and engineering leadership in security and identity teams. It assumes readers understand customer identity and access management (CIAM) capabilities and relevant business use cases. Use this guide to help plan, design, implement, and operate [Microsoft Entra External ID](/external-id/) tenants.
+This document is intended for identity architects and engineering leadership in security and identity teams. It assumes readers understand customer identity and access management (CIAM) capabilities and relevant business use cases. Use this guide to help plan, design, implement, and operate [Microsoft Entra External ID](../external-id/) tenants.
 
 What is CIAM? 
 
-[CIAM](/external-id/customers/overview-customers-ciam) is a set of technologies and processes that incorporates security methods like multifactor authentication to ensure only authorized individuals access an organization's sensitive information. 
-
-To learn more, see [CIAM definitions and solutions](/security/business/security-101/what-is-ciam).
+[CIAM](../external-id/customers/overview-customers-ciam.md) is a set of technologies and processes that incorporates security methods like multifactor authentication to ensure only authorized individuals access an organization's sensitive information. 
 
 ## CIAM design
 
@@ -49,7 +47,7 @@ In Microsoft Entra External ID, you can customize the user experience of the aut
 * Enable single sign-on (SSO) applications offered to customers
 * Localize content to reach users around the world 
 
-In Microsoft Entra External ID, you can create [user flows](/external-id/customers/how-to-user-flow-sign-up-sign-in-customers) to define the structure, experience, and branding of authentication flows. The user flow defines the series of sign-up and sign-in steps customers follow. Sign-in methods include email and password, one-time passcodes (OTP), or social accounts from Google or Facebook. Enable user flows to collect information from customers during sign-up: select from built-in user attributes or add custom attributes. Configure user flows to execute custom workflows or federate with SAML and OpenID Connect IdPs. 
+In Microsoft Entra External ID, you can create [user flows](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md) to define the structure, experience, and branding of authentication flows. The user flow defines the series of sign-up and sign-in steps customers follow. Sign-in methods include email and password, one-time passcodes (OTP), or social accounts from Google or Facebook. Enable user flows to collect information from customers during sign-up: select from built-in user attributes or add custom attributes. Configure user flows to execute custom workflows or federate with SAML and OpenID Connect IdPs. 
 
 Use your branding requirements to configure the look and feel of the screens that users see when authenticating through a user flow. The branding appears universally in all user flows in the Microsoft Entra External ID tenant. There is a near-future goal to add per-application branding. 
 
@@ -59,7 +57,7 @@ A Microsoft Entra ID user flow is a container that holds user experience customi
 
 ### Customize
 
-When designing your user flow, you might require more workflows. For example, a trigger might occur when validating a customer loyalty number, or it might send a welcome email. Achieve these scenarios with the [custom authentication extensions](/identity-platform/custom-extension-overview) capability. Run your own custom logic via REST API endpoints that you create. 
+When designing your user flow, you might require more workflows. For example, a trigger might occur when validating a customer loyalty number, or it might send a welcome email. Achieve these scenarios with the [custom authentication extensions](../identity-platform/custom-extension-overview.md) capability. Run your own custom logic via REST API endpoints that you create. 
 
 Take more control of the authentication journey and integrate with your business processes. 
 
