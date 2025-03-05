@@ -298,7 +298,7 @@ Follow these steps to connect the *My Test application* with your custom authent
     }
     ```
 
-1. Record the **id** value of the created listener object, which is used later in this article in place of `{customListenerOjectId}`.
+1. Record the **id** value of the created listener object, which is used later in this article in place of `{customListenerObjectId}`.
 
 ---
 
@@ -418,7 +418,7 @@ To test your custom email provider, follow these steps:
 
 If an error occurs within your extension API, by default Entra ID will not send an OTP to the user. You can instead set the behavior on error to fall back to the Microsoft Provider.
 
-To enable this, run the following request. Replace `{customListenerOjectId}` with the custom authentication listener ID recorded earlier.
+To enable this, run the following request. Replace `{customListenerObjectId}` with the custom authentication listener ID recorded earlier.
 
 - You need the *EventListener.ReadWrite.All* delegated permission.
 

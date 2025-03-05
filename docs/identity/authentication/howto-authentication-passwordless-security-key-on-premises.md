@@ -129,7 +129,7 @@ _(Example: For US Government Cloud)_
 
 `Set-AzureADKerberosServerEndpoint -TargetEndpoint 2`
    > [!Tip]
-   > For Additional information comparing Azure commercial and soverign clouds, See: [Differences between Azure Commercial and Azure Soverign clouds](https://aka.ms/SovCC). 
+   > For Additional information comparing Azure commercial and sovereign clouds, See: [Differences between Azure Commercial and Azure sovereign clouds](https://aka.ms/SovCC). 
 
 ### Example 1 prompt for all credentials
 

@@ -11,7 +11,7 @@ ms.author: cwerner
 author: cilwerner
 manager: CelesteDG
 ms.reviewer: brianmel
-#Customer intent: As a user I want to understand how to set up a Mac device with macOS Platform Single Sign-on (PSSO) during the out of box experience. I want to know the difference betwwen setting up with secure enclave, smart card, or password based authentication methods.
+#Customer intent: As a user I want to understand how to set up a Mac device with macOS Platform Single Sign-on (PSSO) during the out of box experience. I want to know the difference between setting up with secure enclave, smart card, or password based authentication methods.
 ---
 
 # Join a Mac device with Microsoft Entra ID during the out of box experience with macOS PSSO (preview)

@@ -42,7 +42,7 @@ To enable verbose logging:
     1.  On the pop-up window, select **allow** for the **write** row, then click **apply**. 
 3. Right-click on a text editor application such as Notepad or Notepad++, and select **Run as Administrator**.
 4. Open the file `MicrosoftEntraPrivateNetworkConnector.exe.config` to edit. 
-5. From the following section, select the code from ```<system.diagnostics>``` to ```</system.diagnostrics>``` and add it to the `MicrosoftEntraPrivateNetworkConnector.exe.config` file.
+5. From the following section, select the code from ```<system.diagnostics>``` to ```</system.diagnostics>``` and add it to the `MicrosoftEntraPrivateNetworkConnector.exe.config` file.
 
 ```json
 
