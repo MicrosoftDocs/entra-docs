@@ -12,7 +12,7 @@ ms.topic: tutorial
 ms.date: 02/14/2025
 ms.custom: developer
 zone_pivot_groups: entra-tenants
-#Customer intent: As a developer, I want to reigister and configure iOS application in an External ID or tenant.
+#Customer intent: As a developer, I want to register and configure iOS application in an External ID or tenant.
 ---
 
 # Tutorial: Register and configure iOS (Swift) mobile app
