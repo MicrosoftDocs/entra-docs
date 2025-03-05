@@ -17,21 +17,21 @@ Authentication helps verify identity, and access control is a process of authori
 
 ## Authentication protocol and endpoints: customer apps and authentication
 
-Customer-facing applications can authenticate with Microsoft Entra External ID using Open Authorization 2.0 ([OAuth 2](/identity-platform/v2-protocols)) or Security Assertion Markup Language 2.0 ([SAML 2](https://en.wikipedia.org/wiki/SAML_2.0)). 
+Customer-facing applications can authenticate with Microsoft Entra External ID using Open Authorization 2.0 ([OAuth 2](../identity-platform/v2-protocols.md) or Security Assertion Markup Language 2.0 ([SAML 2](https://en.wikipedia.org/wiki/SAML_2.0). 
 
 The following table summarizes the application integration options for OAuth 2 and OpendID Connect (OIDC).  
 
 |Application type|Authentication initiator|Authentication options|
 |---|---|---|
-|Native client: mobile and platform apps|User interacting with the app| - [Native authentication](/external-id/customers/concept-native-authentication) with MSAL </br> - [Authorization code](/identity-platform/v2-oauth2-auth-code-flow) </br> - [Hybrid](/identity-platform/v2-oauth2-auth-code-flow)  |
+|Native client: mobile and platform apps|User interacting with the app| - [Native authentication](../external-id/customers/concept-native-authentication.md) with MSAL </br> - [Authorization code](../identity-platform/v2-oauth2-auth-code-flow.md) </br> - [Hybrid](../identity-platform/v2-oauth2-auth-code-flow.md)  |
 |Web applications running on a server |A user interacting with the application  |Authorization code|
-|Web application running on the browser, a single-page application (SPA) |A user interacting with the application  |- [Native authentication](/external-id/customers/concept-native-authentication) with MSAL </br> - Authorization code </br> - [Hybrid or implicit](/identity-platform/v2-oauth2-auth-code-flow), with proof key for code exchange (PKCE)|
-|Web application running on a server: middleware |An application on behalf of a user |[On behalf of](/identity-platform/v2-oauth2-on-behalf-of-flow)|
-|Web application running on a server |Headless service or application  |[Client credentials](/identity-platform/v2-oauth2-client-creds-grant-flow)|
-|Limited input device|User interacting with the device|[Device code flow](/identity-platform/v2-oauth2-on-behalf-of-flow)|
+|Web application running on the browser, a single-page application (SPA) |A user interacting with the application  |- [Native authentication](../external-id/customers/concept-native-authentication.md) with MSAL </br> - Authorization code </br> - [Hybrid or implicit](../identity-platform/v2-oauth2-auth-code-flow.md), with proof key for code exchange (PKCE)|
+|Web application running on a server: middleware |An application on behalf of a user |[On behalf of](../identity-platform/v2-oauth2-on-behalf-of-flow.md)|
+|Web application running on a server |Headless service or application  |[Client credentials](../identity-platform/v2-oauth2-client-creds-grant-flow.md)|
+|Limited input device|User interacting with the device|[Device code flow](../identity-platform/v2-oauth2-on-behalf-of-flow.md)|
 
    >[!NOTE]
-   >Regarding **on behalf of**, the sub (subject) claim presented to the middleware and the back end differ. See payloads in [access token claims reference](/identity-platform/access-token-claims-reference). The subject is a pairwise identifier unique to an application ID. If a user signs in to two applications using different client IDs, the applications receive two subject claim values. Use if the two values depends on architecture and privacy requirements. Note the OID claim, which remains the same across applications in a tenant.
+   >Regarding **on behalf of**, the sub (subject) claim presented to the middleware and the back end differ. See payloads in [access token claims reference](../identity-platform/access-token-claims-reference.md). The subject is a pairwise identifier unique to an application ID. If a user signs in to two applications using different client IDs, the applications receive two subject claim values. Use if the two values depends on architecture and privacy requirements. Note the OID claim, which remains the same across applications in a tenant.
 
 The following diagram of OAuth 2 and OIDC flows shows OAuth application integration options. 
 
@@ -43,7 +43,7 @@ Application integration options for SAML is based on the service-provider (SP) i
 
 Use custom authentication extensions to customize the Microsoft Entra authentication experience by integrating with external systems. In the following diagram note the progress from sign-up to the returned token. 
 
-See the [custom authentication extensions overview](/identity-platform/custom-extension-overview). 
+See the [custom authentication extensions overview](../identity-platform/custom-extension-overview.md). 
 
 The following diagram shows a custom authentication flow. 
 
@@ -53,7 +53,7 @@ The following diagram shows a custom authentication flow.
 
 Implement the API as a dedicated API, or by using an [API Facade](https://en.wikipedia.org/wiki/Facade_pattern) using a middleware solution like an API manager. Each custom extension has a strictly typed API contract. Give attention to definitions.
 
-Learn more about the [authenticationEventListener resource type](/graph/api/resources/authenticationeventlistener?view=graph-rest-beta). 
+Learn more about the [authenticationEventListener resource type](/graph/api/resources/authenticationeventlistener?view=graph-rest-beta&preserve-view=true). 
 
    >[!NOTE]
    >The list in the previous article will grow as we add more resource types. 
