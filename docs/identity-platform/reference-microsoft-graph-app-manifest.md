@@ -576,10 +576,9 @@ When you upload a previously downloaded app manifest in Azure AD Graph format, y
 This might be due to the migration from Azure AD Graph to Microsoft Graph app manifest. Firstly, you should check if the app manifest is in [Azure AD Graph format](azure-active-directory-graph-app-manifest-deprecation.md#how-do-i-tell-the-format-of-my-app-manifest). If it is, you should [convert the app manifest to Microsoft Graph format](azure-active-directory-graph-app-manifest-deprecation.md#convert-an-app-manifest-in-azure-ad-graph-format-to-microsoft-graph-format).
 
 
-**Failed to update service hooks upd application. Error detail: The application was not found. If the application was just created, wait a few minutes and refresh the page.**
+**I can't find trustedCertificateSubjects attribute**
 
-
-If your application was not just created, you might be getting this error because you have added an invalid attribute to the Microsoft Graph app manifest. Please review [attribute differences between Azure AD Graph and Microsoft Graph formats](azure-active-directory-graph-app-manifest-deprecation.md#attribute-differences-between-azure-ad-graph-and-microsoft-graph-formats) and see if you have added an attribute that is not supported in Microsoft Graph app manifest v1.0 version that is shown in the portal.
+This is a Microsoft internal property. The portal shows v1.0 version of MS Graph app manifest while this property is only present in beta version of MS Graph app manifest. Please continue to edit this property using Azure AD Graph app manifest in Entra portal. We will expose MS Graph app manifest beta version in Entra portal before deprecating Azure AD Graph app manifest.
 
 
 ## Next steps
