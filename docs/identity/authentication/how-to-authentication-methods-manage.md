@@ -5,7 +5,7 @@ description: Learn about how to centrally manage multifactor authentication and 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/19/2025
+ms.date: 03/04/2025
 
 
 ms.author: justinha
