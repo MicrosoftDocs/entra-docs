@@ -21,7 +21,7 @@ Microsoft Entra External ID stores sign-in and audit logs for 30 days. Export th
 
 [Azure Monitor](/azure/azure-monitor/overview) is configured as a bridge to export logs. See the following diagram of Microsoft Entra External ID log exports with Azure Monitor.  
 
-   [ ![Diagram of log exports with Azure Monitor.](media/deployment-external/log-export.png)](media/deployment-external/log-export-extensions-expanded.png#lightbox)
+   [ ![Diagram of log exports with Azure Monitor.](media/deployment-external/log-export.png)](media/deployment-external/log-export-expanded.png#lightbox)
 
 This configuration requires projecting an Azure resource group with the resources from the enterprise tenant to the Microsoft Entra External ID tenant. You can enable log exports using Azure Monitor. 
 
