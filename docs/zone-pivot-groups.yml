@@ -69,14 +69,7 @@ groups:
 ########### BEGIN APPLICATION MANAGEMENT
 # Owner(s):      jomondi, celested
 ## Home realm discovery ##
-- id: home-realm-discovery
-  title: hrd-policy
-  prompt: Choose an option
-  pivots:
-  - id: powershell-hrd
-    title: Azure AD PowerShell
-  - id: graph-hrd
-    title: Microsoft Graph
+
 ## template with all
 - id: enterprise-apps-all
   title: Manage Enterprise apps

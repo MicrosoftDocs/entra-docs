@@ -7,8 +7,8 @@ manager: CelesteDG
 ms.service: entra-id
 ms.subservice: enterprise-apps
 
-ms.topic: concept-article
-ms.date: 08/19/2024
+ms.topic: how-to
+ms.date: 03/05/2025
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.collection: M365-identity-device-management
@@ -176,20 +176,20 @@ To configure token encryption for an application registration, follow these step
     }  
     ```
 
-# [Azure AD PowerShell](#tab/azuread-powershell)
+# [Microsoft Entra PowerShell](#tab/entra-powershell)
 
-1. Use the latest Azure AD PowerShell module to connect to your tenant. You need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
+1. Use the latest [Microsoft Entra PowerShell](https://www.powershellgallery.com/packages/Microsoft.Entra?version=latest) module to connect to your tenant. You need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 
-1. Set the token encryption settings using the **[Set-AzureApplication](/powershell/module/azuread/set-azureadapplication?view=azureadps-2.0-preview&preserve-view=true)** command.
+1. Set the token encryption settings using the **[Set-EntraApplication](/powershell/module/microsoft.entra/set-entraapplication?view=entra-powershell)** command.
 
     ```powershell
-    Set-AzureADApplication -ObjectId <ApplicationObjectId> -KeyCredentials "<KeyCredentialsObject>"  -TokenEncryptionKeyId <keyID>
+    Set-EntraApplication -ObjectId <ApplicationObjectId> -KeyCredentials "<KeyCredentialsObject>"  -TokenEncryptionKeyId <keyID>
     ```
 
 1. Read the token encryption settings using the following commands.
 
     ```powershell
-    $app=Get-AzureADApplication -ObjectId <ApplicationObjectId>
+    $app=Get-EntraApplication -ObjectId <ApplicationObjectId>
     $app.KeyCredentials
     $app.TokenEncryptionKeyId
     ```

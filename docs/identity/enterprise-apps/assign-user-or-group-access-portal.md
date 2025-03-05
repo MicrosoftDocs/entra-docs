@@ -38,6 +38,7 @@ To assign users to an enterprise application, you need:
 - One of the following roles:
   - Cloud Application Administrator
   - Application Administrator
+  - User Administrator
   - Owner of the service principal.
 - Microsoft Entra ID P1 or P2 for group-based assignment. For more licensing requirements for the features discussed in this article, see the [Microsoft Entra pricing page](https://azure.microsoft.com/pricing/details/active-directory).
 
@@ -68,27 +69,27 @@ To assign a user or group account to an enterprise application:
 
 :::zone-end
 
-:::zone pivot="aad-powershell"
+:::zone pivot="entra-powershell"
 
-## Assign users and groups to an application using Azure AD PowerShell
+## Assign users and groups to an application using Microsoft Entra PowerShell
 
-1. Open an elevated Windows PowerShell command prompt.
-1. Run `Connect-AzureAD` and sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Use the following script to assign a user to an application:
 
     ```powershell
+    connect-entra -scopes "Application.ReadWrite.All", "AppRoleAssignment.ReadWrite.All"
     # Assign the values to the variables
     $username = "<Your user's UPN>"
     $app_name = "<Your App's display name>"
     $app_role_name = "<App role display name>"
 
     # Get the user to assign, and the service principal for the app to assign to
-    $user = Get-AzureADUser -ObjectId "$username"
-    $sp = Get-AzureADServicePrincipal -Filter "displayName eq '$app_name'"
+    $user = Get-EntraUser -ObjectId "$username"
+    $sp = Get-EntraServicePrincipal -Filter "displayName eq '$app_name'"
     $appRole = $sp.AppRoles | Where-Object { $_.DisplayName -eq $app_role_name }
 
     # Assign the user to the app role
-    New-AzureADUserAppRoleAssignment -ObjectId $user.ObjectId -PrincipalId $user.ObjectId -ResourceId $sp.ObjectId -Id $appRole.Id
+    New-EntraUserAppRoleAssignment -ObjectId $user.ObjectId -PrincipalId $user.ObjectId -ResourceId $sp.ObjectId -Id $appRole.Id
     ```
 
 ### Example
@@ -98,6 +99,7 @@ This example assigns the user Britta Simon to the Microsoft Workplace Analytics 
 1. In PowerShell, assign the corresponding values to the variables `$username`, `$app_name` and `$app_role_name`.
 
     ```powershell
+    connect-entra -scopes "Application.ReadWrite.All", "AppRoleAssignment.ReadWrite.All"
     $username = "britta.simon@contoso.com"
     $app_name = "Workplace Analytics"
     ```
@@ -105,8 +107,8 @@ This example assigns the user Britta Simon to the Microsoft Workplace Analytics 
 1. In this example, we don't know what is the exact name of the application role we want to assign to Britta Simon. Run the following commands to get the user (`$user`) and the service principal (`$sp`) using the user UPN and the service principal display names.
 
     ```powershell
-    $user = Get-AzureADUser -ObjectId "$username"
-    $sp = Get-AzureADServicePrincipal -Filter "displayName eq '$app_name'"
+    $user = Get-EntraUser -ObjectId "$username"
+    $sp = Get-EntraServicePrincipal -Filter "displayName eq '$app_name'"
     ```
 
 1. Run the following command to find the app roles exposed by the service principal
@@ -116,6 +118,7 @@ This example assigns the user Britta Simon to the Microsoft Workplace Analytics 
     # Display the app roles
     $appRoles | ForEach-Object {
         Write-Output "AppRole: $($_.DisplayName) - ID: $($_.Id)"
+    }
     ```
 
     > [!NOTE]
@@ -131,58 +134,56 @@ This example assigns the user Britta Simon to the Microsoft Workplace Analytics 
 1. Run the following command to assign the user to the app role.
 
     ```powershell
-    New-AzureADUserAppRoleAssignment -ObjectId $user.ObjectId -PrincipalId $user.ObjectId -ResourceId $sp.ObjectId -Id $appRole.Id
+    New-EntraUserAppRoleAssignment -ObjectId $user.ObjectId -PrincipalId $user.ObjectId -ResourceId $sp.ObjectId -Id $appRole.Id
     ```
 
-To assign a group to an enterprise app, replace `Get-AzureADUser` with `Get-AzureADGroup` and replace `New-AzureADUserAppRoleAssignment` with `New-AzureADGroupAppRoleAssignment`.
+To assign a group to an enterprise app, replace `Get-EntraUser` with `Get-EntraGroup` and replace `New-EntraUserAppRoleAssignment` with `New-EntraGroupAppRoleAssignment`.
 
-For more information on how to assign a group to an application role, see the documentation for [New-AzureADGroupAppRoleAssignment](/powershell/module/azuread/new-azureadgroupapproleassignment).
+For more information on how to assign a group to an application role, see the documentation for [New-EntraGroupAppRoleAssignment](/powershell/module/microsoft.entra/new-entragroupapproleassignment).
 
-## Unassign users and groups from an application using Azure AD PowerShell
+## Unassign users and groups from an application using Microsoft Entra PowerShell
 
 1. Open an elevated Windows PowerShell command prompt.
-1. Run `Connect-AzureAD` and sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Use the following script to remove a user and role from an application.
 
     ```powershell
+    connect-entra -scopes "Application.ReadWrite.All", "AppRoleAssignment.ReadWrite.All"
     # Store the proper parameters
-    $user = get-azureaduser -ObjectId <objectId>
-    $spo = Get-AzureADServicePrincipal -ObjectId <objectId>
+    $user = Get-Entrauser -ObjectId "<objectId>"
+    $spo = Get-EntraServicePrincipal -ObjectId "<objectId>"
 
     #Get the ID of role assignment 
-    $assignments = Get-AzureADServiceAppRoleAssignment -ObjectId $spo.ObjectId | Where {$_.PrincipalDisplayName -eq $user.DisplayName}
+    $assignments = Get-EntraServicePrincipalAppRoleAssignedTo -ObjectId $spo.ObjectId | Where {$_.PrincipalDisplayName -eq $user.DisplayName}
 
     #if you run the following, it will show you what is assigned what
     $assignments | Select *
 
     #To remove the App role assignment run the following command.
-    Remove-AzureADServiceAppRoleAssignment -ObjectId $spo.ObjectId -AppRoleAssignmentId $assignments[assignment number].ObjectId
+    Remove-EntraServicePrincipalAppRoleAssignment -ObjectId $spo.ObjectId -AppRoleAssignmentId $assignments.ObjectId
     ```
 
-## Remove all users who are assigned to the application using Azure AD PowerShell
+## Remove all users who are assigned to the application using Microsoft Entra PowerShell
 
 1. Open an elevated Windows PowerShell command prompt.
 
 Use the following script to remove all users and groups assigned to the application.
 
 ```powershell
+connect-entra -scopes "Application.ReadWrite.All", "AppRoleAssignment.ReadWrite.All"
 #Retrieve the service principal object ID.
 $app_name = "<Your App's display name>"
-$sp = Get-AzureADServicePrincipal -Filter "displayName eq '$app_name'"
-$sp.ObjectId
+$sp = Get-EntraServicePrincipal -Filter "displayName eq '$app_name'"
 
-# Get Service Principal using objectId
-$sp = Get-AzureADServicePrincipal -ObjectId "<ServicePrincipal objectID>"
-
-# Get Azure AD App role assignments using objectId of the Service Principal
-$assignments = Get-AzureADServiceAppRoleAssignment -ObjectId $sp.ObjectId -All $true
+# Get Microsoft Entra App role assignments using objectId of the Service Principal
+$assignments = Get-EntraServicePrincipalAppRoleAssignedTo -ObjectId $sp.ObjectId -All
 
 # Remove all users and groups assigned to the application
 $assignments | ForEach-Object {
     if ($_.PrincipalType -eq "User") {
-        Remove-AzureADUserAppRoleAssignment -ObjectId $_.PrincipalId -AppRoleAssignmentId $_.ObjectId
+        Remove-EntraUserAppRoleAssignment -ObjectId $_.PrincipalId -AppRoleAssignmentId $_.ObjectId
     } elseif ($_.PrincipalType -eq "Group") {
-        Remove-AzureADGroupAppRoleAssignment -ObjectId $_.PrincipalId -AppRoleAssignmentId $_.ObjectId
+        Remove-EntraGroupAppRoleAssignment -ObjectId $_.PrincipalId -AppRoleAssignmentId $_.ObjectId
     }
 }
 ```

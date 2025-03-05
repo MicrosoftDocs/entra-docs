@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: how-to
-ms.date: 06/19/2024
+ms.date: 03/04/2025
 ms.author: jomondi
 ms.reviewer: ergreenl, lenalepa
 ms.collection: M365-identity-device-management
@@ -47,19 +47,19 @@ Use the following steps to hide an application from My Apps portal and Microsoft
 > [!NOTE]
 > These instructions apply only to non-first-party Microsoft Enterprise Applications. To learn more about first-party Microsoft applications see [First-party Microsoft applications in sign-in reports](/troubleshoot/azure/entra/entra-id/governance/verify-first-party-apps-sign-in). Administrators also need to keep in mind that hiding the application from the users doesn't prevent them from signing into these applications via methods other than the My Apps portal, such as shared links or service dependencies. 
 
-:::zone pivot="aad-powershell"
+:::zone pivot="entra-powershell"
 
 
-To hide an application from the My Apps portal, using Azure AD PowerShell, you need to connect to Azure AD PowerShell and sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). You can manually add the **HideApp** tag to the service principal for the application. Run the following Azure AD PowerShell commands to set the application's **Visible to Users?** property to **No**.
+To hide an application from the My Apps portal, using Microsoft Entra PowerShell, you need to connect to Microsoft Entra PowerShell and sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). You can manually add the **HideApp** tag to the service principal for the application. Run the following Microsoft Entra PowerShell commands to set the application's **Visible to Users?** property to **No**.
 
 ```PowerShell
-Connect-AzureAD
+Connect-Entra -scopes "Application.ReadWrite.All"
 
 $objectId = "<objectId>"
-$servicePrincipal = Get-AzureADServicePrincipal -ObjectId $objectId
+$servicePrincipal = Get-EntraServicePrincipal -ObjectId $objectId
 $tags = $servicePrincipal.tags
 $tags += "HideApp"
-Set-AzureADServicePrincipal -ObjectId $objectId -Tags $tags
+Set-EntraServicePrincipal -ObjectId $objectId -Tags $tags
 ```
 :::zone-end
 
@@ -68,9 +68,7 @@ Set-AzureADServicePrincipal -ObjectId $objectId -Tags $tags
 To hide an application from the My Apps portal, using Microsoft Graph PowerShell, you need to connect to Microsoft Graph PowerShell and sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). You can manually add the HideApp tag to the service principal for the application. Run the following Microsoft Graph PowerShell commands to set the application's **Visible to Users?** property to **No**.
 
 ```PowerShell
-Connect-MgGraph
-
-$servicePrincipal = Get-MgServicePrincipal -ServicePrincipalId $objectId
+Connect-MgGraph "Application.ReadWrite.All"
 $tags = $servicePrincipal.tags
 $tags += "HideApp"
 Update-MgServicePrincipal -ServicePrincipalID  $objectId -Tags $tags
