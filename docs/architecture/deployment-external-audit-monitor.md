@@ -1,6 +1,6 @@
 ---
 title: Microsoft Entra External ID deployment guide for auditing and monitoring
-description: Learn about audit logs, alerts, monitoring targets, and service degredation in Microsoft Entra External ID.
+description: Learn about audit logs, alerts, monitoring targets, and service degradation in Microsoft Entra External ID.
 author: gargi-sinha
 manager: martinco
 ms.service: entra-external-id
@@ -8,7 +8,7 @@ ms.topic: concept-article
 ms.date: 02/28/2025
 ms.author: gasinh
 
-#customer intent: I need to understand audit logs, alerts, monitoring targets, and service degredation for a deployment of Microsoft Entra External ID.
+#customer intent: I need to understand audit logs, alerts, monitoring targets, and service degradation for a deployment of Microsoft Entra External ID.
 ---
 
 # Microsoft Entra External ID deployment guide for auditing and monitoring
@@ -27,17 +27,17 @@ This configuration requires projecting an Azure resource group with the resource
 
 ### Monitor and alert
 
-Monitoring helps ensure the efficient operation of identity and associated systems. These actions often involve establishing monitoring infrastructure, defining monitoring procedures, setting up dashboards and alerts, and creating a response protocol for handling alerts. 
+Monitoring helps ensure the efficient operation of identity and associated systems. These actions include establishing monitoring infrastructure, defining monitoring procedures, setting up dashboards or alerts, and creating a response protocol to handle alerts. 
 
 **What to monitor**
 
-**Availability** - Sometimes referred to as a heartbeat or health endpoint. Availability indicates if the service is operational. You can set it up on the monitoring system and it can execute frequently for in-use components without significant overhead. For custom extension APIs, we suggest you implement health endpoint monitoring. If you are developing your API using .NET, use [Health checks in ASP.NET Core](/aspnet/core/host-and-deploy/health-checks?view=aspnetcore-8.0&preserve-view=true) to expose health endpoints. While monitoring availability is essential, it might indicate service failures only.  
+**Availability** - Sometimes referred to as a heartbeat or health endpoint. Availability indicates if the service is operational. You can set it up on the monitoring system and it can execute frequently for in-use components without significant overhead. For custom extension APIs, we suggest you implement health endpoint monitoring. If you're developing your API using .NET, use [Health checks in ASP.NET Core](/aspnet/core/host-and-deploy/health-checks?view=aspnetcore-8.0&preserve-view=true) to expose health endpoints. While monitoring availability is essential, it might indicate service failures only.  
 
 **Functionality** - Track functionality with synthetic transactions that mimic end-to-end user or system interactions involving dependencies: UI, API calls, logging. Many monitoring tools have features to automate multistep web experiences, like sign-up, profile edit, and MFA.  
 
-**Performance** - Track performance with synthetic transactions and server-side instrumentation to gather performance-related telemetry. In distributed systems like identity access management (IAM) systems with numerous dependencies, identify and resolve performance issues. Deploy performance probes across customer locations and establish a baseline for identity experiences. Set up triggers and notifications to detect deviations from a baseline. A system that's available, but performs poorly, is not beneficial. 
+**Performance** - Track performance with synthetic transactions and server-side instrumentation to gather performance-related telemetry. In distributed systems like identity access management (IAM) systems with numerous dependencies, identify, and resolve performance issues. Deploy performance probes across customer locations and establish a baseline for identity experiences. Set up triggers and notifications to detect deviations from a baseline. A system that's available, but performs poorly, isn't beneficial. 
 
-Each experience for request for authentication and identity comes with a unique identifier that's a correlation ID for the session. When the identity system calls external custom extensions, this identifier is in the authentication context. Logging this in the custom extension helps you diagnose issues.  
+Each experience for request for authentication and identity comes with a unique identifier that's a correlation ID for the session. When the identity system calls external custom extensions, this identifier is in the authentication context. Log the identifier in the custom extension to help you diagnose issues.  
 
    >[!NOTE]
    >Microsoft has a goal to enable client-side telemetry using analytics tools such as Google Analytics and Adobe Analytics.
@@ -51,14 +51,14 @@ The following diagram illustrates monitoring and alerting setup.
 
 ### Service degradation and failure alerting setup
 
-In a large system, certain levels of transaction fail. Observed as incomplete identity experiences, sometimes called incomplete conversions, these can be caused by events such as distracted users, telco failures, browser crashes, etc. On a large scale, addressing every failure is impractical. Set up a baseline for typical failure events. Also set up monitoring and alerting to detect deviations, like performance monitoring. Use the following job aid to record failure metrics. 
+In a large system, certain levels of transaction fail. Incomplete identity experiences, sometimes called incomplete conversions, can be caused by events such as distracted users, telco failures, browser crashes, etc. On a large scale, addressing every failure is impractical. Set up a baseline for typical failure events. Also set up monitoring and alerting to detect deviations, like performance monitoring. Use the following job aid to record failure metrics. 
 
 |Metric|Baseline|
 |---|---|
 |Authentication failures||
 |Sign-in failures||
 |Sign-up failures||
-|MFA failures by type: email OTP, telephony OTP ||
+|MFA failures by type: email one-time password (OTP), telephony OTP ||
 |Failures by browser type: Chrome, Edge, Firefox, Safari ||
 |Failures by mobile operating system: Android, iOS ||
 
@@ -66,7 +66,7 @@ In a large system, certain levels of transaction fail. Observed as incomplete id
 
 Changes in environments are inevitable. An automated continuous validation environment helps catch issues from changes. You can use the same syntactic monitoring infrastructure to set up this validation automation. 
 
-Synthetic transactions should reference applications and APIs used for token acquisition, validation, and integration components such as API managers and service buses. It’s recommended you maintain versions of supported services, operating systems, and runtime environments in this setup. Each component continuously reports the test success or failure. This ensures identity services availability and early detection of potential failures. 
+Synthetic transactions should reference applications and APIs used for token acquisition, validation, and integration components such as API managers and service buses. We recommend you maintain versions of supported services, operating systems, and runtime environments in this setup. Each component continuously reports the test success or failure. This action ensures identity services availability and early detection of potential failures. 
 
 ### Monitoring usage
 
@@ -74,11 +74,11 @@ Microsoft Entra External ID pricing consists of a core offer and premium add-ons
 
 Core offer billing is based on monthly active users ([MAU](../external-id/external-identities-pricing.md), which is the count of unique external users who authenticate to your tenants in a calendar month. To determine the total MAUs, MAUs from all workforce and external tenants linked to a subscription are combined. 
 
-For additional information on the billing model, see [Microsoft Entra External ID pricing](../external-id/external-identities-pricing.md). 
+For more information on the billing model, see [Microsoft Entra External ID pricing](../external-id/external-identities-pricing.md). 
 
 View incurred costs on the cost analysis area of the subscription/resource group linked to the Microsoft Entra External ID tenant. If the MAU count is below the free tier, the bill is $0. Usage data below the free tier appears in the cost analysis.  
 
-In the [Microsoft Entra admin center](https://entra.microsoft.com), for the Micrsoft External ID tenant, use the usage and insight dashboard to view utilization details, even when usage is below the free tire.  
+In the [Microsoft Entra admin center](https://entra.microsoft.com), for the Microsoft External ID tenant, use the usage and insight dashboard to view utilization details, even when usage is below the free tire.  
 
 Learn how to [list monthly activeUsers, Microsoft Graph](/graph/api/monthlyuserinsightmetricsroot-list-activeusers?view=graph-rest-beta&tabs=http&preserve-view=true). 
 
