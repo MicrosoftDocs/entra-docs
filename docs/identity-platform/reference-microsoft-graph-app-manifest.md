@@ -575,13 +575,12 @@ When you upload a previously downloaded app manifest in Azure AD Graph format, y
 
 This might be due to the migration from Azure AD Graph to Microsoft Graph app manifest. Firstly, you should check if the app manifest is in [Azure AD Graph format](azure-active-directory-graph-app-manifest-deprecation.md#how-do-i-tell-the-format-of-my-app-manifest). If it is, you should [convert the app manifest to Microsoft Graph format](azure-active-directory-graph-app-manifest-deprecation.md#convert-an-app-manifest-in-azure-ad-graph-format-to-microsoft-graph-format).
 
-#### I can't find the trustedCertificateSubjects attribute
 
-**trustedCertificateSubjects** attribute is a Microsoft internal property. The Microsoft Entra admin center shows version 1.0 of the Microsoft Graph app manifest, **trustedCertificateSubjects** attribute is only present in beta version of the app manifest (Microsoft Graph format). Continue to edit this property using the app manifest (Azure AD Graph format) in the Microsoft Entra admin center.
+**Failed to update service hooks upd application. Error detail: The application was not found. If the application was just created, wait a few minutes and refresh the page.**
 
-#### ERROR: The application was not found. If the application was just created, wait a few minutes and refresh the page.**
 
-If your application was not just created, you might be getting this error because you have added an invalid attribute in the Microsoft Graph app manifest. Please review [attribute differences between Azure AD Graph and Microsoft Graph formats](azure-active-directory-graph-app-manifest-deprecation.md#attribute-differences-between-azure-ad-graph-and-microsoft-graph-formats) and see if you have added an attribute that is not supported in Microsoft Graph format v1.0 version that is shown in the portal.
+If your application was not just created, you might be getting this error because you have added an invalid attribute to the Microsoft Graph app manifest. Please review [attribute differences between Azure AD Graph and Microsoft Graph formats](azure-active-directory-graph-app-manifest-deprecation.md#attribute-differences-between-azure-ad-graph-and-microsoft-graph-formats) and see if you have added an attribute that is not supported in Microsoft Graph app manifest v1.0 version that is shown in the portal.
+
 
 ## Next steps
 
