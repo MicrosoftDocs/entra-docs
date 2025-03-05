@@ -5,7 +5,7 @@ description: Enable passwordless sign-in to Microsoft Entra ID using passkeys (F
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 02/25/2025
+ms.date: 03/04/2025
 
 
 ms.author: justinha
@@ -31,10 +31,9 @@ For more information about passkey authentication, see [Support for FIDO2 authen
 
 ## Requirements
 
-- [Microsoft Entra multifactor authentication (MFA)](howto-mfa-getstarted.md) must be enabled. 
-- Users need to register another authentication method before they can register a passkey (FIDO2). 
-- [FIDO2 security keys eligible for attestation with Microsoft Entra ID](/entra/identity/authentication/concept-fido2-hardware-vendor) or Microsoft Authenticator.
-- Devices that support passkey (FIDO2) authentication. For Windows devices that are joined to Microsoft Entra ID, the best experience is on Windows 10 version 1903 or higher. Hybrid-joined devices must run Windows 10 version 2004 or higher.
+- Before a user can register a passkey (FIDO2), they must complete multifactor authentication (MFA) within the past five minutes.
+- Users need a [FIDO2 security keys eligible for attestation with Microsoft Entra ID](/entra/identity/authentication/concept-fido2-hardware-vendor) or Microsoft Authenticator.
+- Devices must support passkey (FIDO2) authentication. For Windows devices that are joined to Microsoft Entra ID, the best experience is on Windows 10 version 1903 or higher. Hybrid-joined devices must run Windows 10 version 2004 or higher.
 
 Passkeys (FIDO2) are supported across major scenarios on Windows, macOS, Android, and iOS. For more information on supported scenarios, see [Support for FIDO2 authentication in Microsoft Entra ID](fido2-compatibility.md).
 
