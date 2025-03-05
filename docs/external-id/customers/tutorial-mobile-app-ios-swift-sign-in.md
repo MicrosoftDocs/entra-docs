@@ -39,7 +39,7 @@ You have two main options for signing in users using Microsoft Authentication Li
     ```swift
     acquireTokenInteractively() {
         guard let applicationContext = self.applicationContext else { return }
-        guard let webViewParameters = self.webViewParameaters else { return }
+        guard let webViewParameters = self.webViewParamaters else { return }
         
         updateLogging(text: "Acquiring token interactively...")
 
