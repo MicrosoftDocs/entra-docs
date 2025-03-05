@@ -6,7 +6,7 @@ description: Learn how to manage an external authentication method (EAM) for Mic
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/06/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: gregkmsft
@@ -104,9 +104,6 @@ To manage the Authentication methods policy by using Microsoft Graph, you need t
 
 Users who are enabled for the EAM can use it when they sign-in and multifactor authentication is required. 
 
->[!NOTE]
->We're actively working to support system-preferred MFA with EAMs.
-
 If the user has other ways to sign in and [system-preferred MFA](/entra/identity/authentication/concept-system-preferred-multifactor-authentication) is enabled, those other methods appear by default order. The user can choose to use a different method, and then select the EAM. For example, if the user has Authenticator enabled as another method, they get prompted for [number matching](/entra/identity/authentication/how-to-mfa-number-match).
 
 :::image type="content" border="true" source="./media/how-to-authentication-external-method-manage/system-preferred.png" alt-text="Screenshot of how to choose an EAM when system-preferred MFA is enabled.":::
@@ -120,7 +117,7 @@ If the user has no other methods enabled, they can just choose the EAM. They're 
 In the preview, all users in an include group for the EAM are considered MFA capable and can use the external authentication method for satisfying MFA.  Users that are MFA-capable due to being an include target for an EAM are not included in reports on authentication method registration.
 
 >[!NOTE]
->We're actively working on adding registration capability for EAMs.  Once registration is added, users that were previously using an EAM will need to have the EAM registered with Entra ID before they will be prompted to use the it to satisfy MFA.
+>We're actively working on adding registration capability for EAMs.  Once registration is added, users that were previously using an EAM will need to have the EAM registered with Entra ID before they will be prompted to use it to satisfy MFA.
 
 ## Using EAM and Conditional Access custom controls in parallel
 

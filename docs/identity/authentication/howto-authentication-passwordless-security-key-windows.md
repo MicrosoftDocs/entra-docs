@@ -5,7 +5,7 @@ description: Learn how to enable passwordless security key sign-in to Windows wi
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/08/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha

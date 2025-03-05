@@ -5,7 +5,7 @@ description: Learn about how to enable QR code authentication method in Microsof
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/19/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: aanjusingh
@@ -484,20 +484,23 @@ When configuring with Intune, assign Microsoft Authenticator as a required app f
 
 ### QR code authentication Teams sign-in experience 
 
-Users need to [download Teams](https://aka.ms/teamsmobiledownload):
+Users need to [download Teams](https://aka.ms/teamsmobiledownload). The following table lists the minimum Teams version for mobile operating systems. For more information about Teams versions, see [Version update history for the new and classic Microsoft Teams app](/officeupdates/teams-app-versioning).
 
-- For iOS and iPad, you need Teams version 1.0.0.77.2024132501 or later 
-- For Android, you need Teams version 1.0.0.2024143204 or later 
+Mobile OS | Release date | Teams version 
+----------|--------------|--------------
+iOS and iPadOS | July 21, 2024 | 6.13.1 (1.0.0.77.2024132501)	
+Android | August 08, 2024 | 1416/1.0.0.2024143204 (2024143204)	
 
-   
-1. Click **Sign-in with QR code** in Microsoft Teams.
-1. Scan the QR code. Give consent if asked for camera permission.
+Users can follow these steps to sign in with a QR code in Teams:
+
+1. Click **Scan QR code** in Microsoft Teams.
+1. Scan the QR code. Give consent if you're asked for camera permission.
 1. Enter your PIN.
 1. You're now signed in to the app.
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/enter-pin.png" alt-text="Screenshot that shows how to enter a PIN.":::
 
-1. When you sign-in with a temporary PIN, you need to change it. 
+1. When you sign in with a temporary PIN, you need to change it. 
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/change-pin.png" alt-text="Screenshot that shows how to change a PIN.":::
 

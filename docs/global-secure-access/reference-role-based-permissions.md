@@ -21,7 +21,7 @@ This article details the built-in Microsoft Entra roles you can assign for manag
 **Full access**: This role grants administrators full permissions within Global Secure Access. They can manage policies, configure settings, and view logs; including Conditional Access scenarios, configurations for Private Access, write operations on application segments, and management of user assignments for traffic profiles.
 
 > [!IMPORTANT]
-> It's highly recommended to use a least privilege approach for security reasons. The Global Administrator role is only required to configure enriched Microsoft 365 logs as outlined in the table. For all other scnearios, use the least priveledge role required to administer the service. To learn more about least priveledge, see [Least privileged roles by task in Microsoft Entra ID](../identity/role-based-access-control/delegate-by-task.md). To learn more about least privilege in Microsoft Entra ID Governance, see [The principle of least privilege with Microsoft Entra ID Governance](../id-governance/scenarios/least-privileged.md).
+> It's highly recommended to use a least privilege approach for security reasons. The Global Administrator role is only required to configure enriched Microsoft 365 logs as outlined in the table. For all other scenarios, use the least privileged role required to administer the service. To learn more about least privileged, see [Least privileged roles by task in Microsoft Entra ID](../identity/role-based-access-control/delegate-by-task.md). To learn more about least privilege in Microsoft Entra ID Governance, see [The principle of least privilege with Microsoft Entra ID Governance](../id-governance/scenarios/least-privileged.md).
 
 ### Security Administrator 
 
@@ -53,6 +53,7 @@ This article details the built-in Microsoft Entra roles you can assign for manag
 ## Role-based permissions
 
 The following Microsoft Entra ID admin roles have access to Global Secure Access:
+
 
 | Permissions | [Global Admin](#global-administrator) | [Security Admin](#security-administrator) | [GSA Admin](#global-secure-access-administrator) | [CA Admin](#conditional-access-administrator) | [Apps Admin](#application-administrator) | [Global Reader](#security-reader-and-global-reader) | [Security Reader](#security-reader-and-global-reader) | [GSA Log Reader](#global-secure-access-log-reader)
 | --- | --- | --- | --- | --- | --- | --- | --- |

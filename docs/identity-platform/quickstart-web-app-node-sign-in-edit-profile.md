@@ -70,7 +70,7 @@ You've assigned the **EditProfileService.ReadWrite* permissions correctly. Howev
 
 1. Select **Refresh**, then verify that **Granted for \<your tenant name\>** appears under **Status** for both scopes.
 
-## Create CA MFA policy
+## Create Conditional Access MFA policy
 
 Your EditProfileService app that you registered earlier is the resource that you protect with MFA. 
 

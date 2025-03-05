@@ -10,13 +10,13 @@ ms.author: kenwith
 ms.reviewer: frankgomulka
 ---
 
-# Disable traffic forwarding and Conditional access policies using the Compliant Network condition in a break glass scenario
+# Disable traffic forwarding and Conditional Access policies using the Compliant Network condition in a break glass scenario
 
 In the event of an outage or connectivity failure to Microsoft Entra Internet Access, your users remain protected. However, you may want to perform a "break glass" operation: Temporarily disabling traffic forwarding profiles and disabling the Compliant Network condition policies can help your users regain access to their Microsoft apps in favor of productivity.
 
 Below you can view a sample script that can help you quickly disable traffic forwarding and switch your Conditional Access policies using the [Compliant Network](../how-to-compliant-network.md) condition into Report-Only mode.
 
-## List and Disable Conditional access policies using the Compliant Network condition in a break glass scenario
+## List and Disable Conditional Access policies using the Compliant Network condition in a break glass scenario
 
 The PowerShell script effectively disables any Conditional Access policies that use the Compliant Network condition. In an emergency situation, this script can be used to temporarily regain access for your users.
 
@@ -64,7 +64,7 @@ foreach ($policy in $allCompliantNetworkCAPolicies)
     $currentTime = Get-Date
     $policyContent = "{0},{1},{2},{3},{4}" -f $policy.displayName, $policy.id, "Current State: $($currentState) at $($currentTime)", $policy.CreatedDateTime, $policy.ModifiedDateTime
     $result += $policyContent
-	Write-Host "CA Policy with ID: $($policy.id) (state: $($current.state)) uses the Compliant Network Condition. Policy name: $($policy.displayName)"
+	Write-Host "Conditional Access Policy with ID: $($policy.id) (state: $($current.state)) uses the Compliant Network Condition. Policy name: $($policy.displayName)"
 }
 $result += " "
 $path = "C:\BreakGlass\ListCompliantNetworkCAPolicies.txt"

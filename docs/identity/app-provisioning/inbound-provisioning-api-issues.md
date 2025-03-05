@@ -2,11 +2,11 @@
 title: Troubleshoot issues with inbound provisioning API
 description: This article provides potential issues and resolutions that guide you in how to troubleshoot issues with the inbound provisioning API.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 03/03/2025
+ms.date: 03/04/2025
 ms.author: jfields
 ms.reviewer: chmutali
 ---

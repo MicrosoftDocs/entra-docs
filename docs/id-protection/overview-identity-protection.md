@@ -85,7 +85,7 @@ ID Protection requires users to be assigned one or more of the following roles.
 
 Currently, the Security Operator role can't access the Risky sign-ins report.
 
-Conditional Access admins can create policies that factor in user or sign-in risk as a condition. Find more information in the article [Conditional Access: Conditions](~/identity/conditional-access/concept-conditional-access-conditions.md#sign-in-risk).
+Conditional Access Administrators can create policies that factor in user or sign-in risk as a condition. Find more information in the article [Conditional Access: Conditions](~/identity/conditional-access/concept-conditional-access-conditions.md#sign-in-risk).
 
 ## License requirements
 

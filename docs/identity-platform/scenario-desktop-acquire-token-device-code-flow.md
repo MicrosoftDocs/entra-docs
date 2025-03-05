@@ -105,7 +105,7 @@ private static async Task<AuthenticationResult> AcquireByDeviceCodeAsync(IPublic
         // Kind of errors you could have (in ex.Message)
 
         // AADSTS50059: No tenant-identifying information found in either the request or implied by any provided credentials.
-        // Mitigation: as explained in the message from Azure AD, the authoriy needs to be tenanted. you have probably created
+        // Mitigation: as explained in the message from Azure AD, the authority needs to be tenanted. you have probably created
         // your public client application with the following authorities:
         // https://login.microsoftonline.com/common or https://login.microsoftonline.com/organizations
 

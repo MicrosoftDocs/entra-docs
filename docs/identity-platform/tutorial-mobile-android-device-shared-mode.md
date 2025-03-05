@@ -44,7 +44,7 @@ Once enrolled, switch on the device to initiate standard Android device setup, w
 
 The following third-party Mobile Device Management (MDM) tools support Microsoft Entra shared device mode
 
-- [VMware Workspace ONE](https://docs.omnissa.com/bundle/UEMSharedDevicesVSaaS/page/UEMSharedDeviceConditionalAccess.html) - VMware supports conditional access capabilities but currently doesn’t support global sign-in and global sign-out with shared device mode.
+- [VMware Workspace ONE](https://docs.omnissa.com/bundle/UEMSharedDevicesVSaaS/page/UEMSharedDeviceConditionalAccess.html) - VMware supports Conditional Access capabilities but currently doesn’t support global sign-in and global sign-out with shared device mode.
 - [SOTI MobiControl](https://soti.net/resources/blog/2023/soti-mobicontrol-supports-microsoft-shared-device-mode/)
 
 > [!NOTE]
