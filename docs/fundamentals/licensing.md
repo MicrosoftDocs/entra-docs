@@ -1,11 +1,11 @@
 ---
-title: 'Microsoft Entra licensing'
+title: Microsoft Entra licensing
 description: This article documents licensing requirements for Microsoft Entra features.
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra
 ms.topic: conceptual
-ms.date: 12/19/2024
+ms.date: 03/05/2025
 ms.subservice: fundamentals
 ms.author: barclayn
 ---
