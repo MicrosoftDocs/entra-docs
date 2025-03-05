@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Configure Flock  for automatic user provisioning with Microsoft Entra ID'
+title: Configure Flock  for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Flock.
 
 author: thomasakelo
@@ -7,24 +7,24 @@ manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Flock so that I can streamline the user management process and ensure that users have the appropriate access to Flock.
 ---
 
-# Tutorial: Configure Flock for automatic user provisioning
+# Configure Flock for automatic user provisioning
 
-The objective of this tutorial is to demonstrate the steps to be performed in Flock  and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Flock.
+The objective of this article is to demonstrate the steps to be performed in Flock  and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to Flock.
 
 > [!NOTE]
-> This tutorial describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This article describes a connector built on top of the Microsoft Entra user provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
 * A Microsoft Entra tenant.
 * [A Flock tenant](https://flock.com/pricing/)
@@ -43,7 +43,7 @@ Before configuring and enabling automatic user provisioning, you should decide w
 
 * When assigning a user to Flock, you must select any valid application-specific role (if available) in the assignment dialog. Users with the **Default Access** role are excluded from provisioning.
 
-## Setup Flock  for provisioning
+## Set up Flock  for provisioning
 
 Before configuring Flock for automatic user provisioning with Microsoft Entra ID, you will need to enable SCIM provisioning on Flock.
 
@@ -77,7 +77,7 @@ To configure Flock  for automatic user provisioning with Microsoft Entra ID, you
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and/or groups in Flock  based on user and/or group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You may also choose to enable SAML-based single sign-on for Flock, following the instructions provided in the [Flock Single sign-on tutorial](Flock-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other
+> You may also choose to enable SAML-based single sign-on for Flock, following the instructions provided in the [Flock Single sign-on  article](Flock-tutorial.md). Single sign-on can be configured independently of automatic user provisioning, though these two features complement each other
 
 <a name='to-configure-automatic-user-provisioning-for-flock--in-azure-ad'></a>
 
@@ -112,13 +112,11 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to Flock**.
 
-	![Flock User Mappings](media/flock-provisioning-tutorial/usermapping.png)
-
 9. Review the user attributes that are synchronized from Microsoft Entra ID to Flock  in the **Attribute Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in Flock  for update operations. Select the **Save** button to commit any changes.
 
 	![Flock  User Attributes](media/flock-provisioning-tutorial/userattribute.png)
 
-11. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+11. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 12. To enable the Microsoft Entra provisioning service for Flock, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -143,6 +141,6 @@ You can use the **Current Status** section to monitor progress and follow links 
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

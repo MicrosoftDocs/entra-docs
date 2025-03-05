@@ -9,7 +9,7 @@ ms.date: 02/01/2024
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
-ms.topic: concept-article
+ms.topic: how-to
 #Customer intent: As an application developer, I want to know how to write a daemon app that can call web APIs by using the Microsoft identity platform.
 ---
 
@@ -129,6 +129,6 @@ For daemon apps, the web APIs that you call need to be preapproved. There's no i
 
 ## Next steps
 
-- Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-register-app.md).
+- Learn more by building a React Single-page application (SPA) that signs in users in the following multi-part [tutorial series](tutorial-single-page-app-react-prepare-app.md).
 
 - Explore Microsoft identity platform [service / daemon  code samples](sample-v2-code.md) 

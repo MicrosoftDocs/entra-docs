@@ -8,7 +8,7 @@ ms.author: barclayn
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 06/27/2024
+ms.date: 12/19/2024
 ms.custom: it-pro, references_regions
 ms.collection: M365-identity-device-management
 ---

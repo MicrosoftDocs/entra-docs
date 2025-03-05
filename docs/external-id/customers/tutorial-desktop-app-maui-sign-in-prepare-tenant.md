@@ -7,7 +7,7 @@ manager: mwongerapk
 ms.author: henrymbugua
 ms.service: entra-external-id
 ms.topic: tutorial
-ms.subservice: customers
+ms.subservice: external
 ms.custom: devx-track-dotnet
 ms.date: 06/05/2023
 ---

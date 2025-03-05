@@ -32,7 +32,6 @@ For more information, see: [Workflow Insights](lifecycle-workflow-insights.md).
 
 ## Check Workflow Insights using the Microsoft Entra admin center
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Lifecycle Workflows Administrator](~/identity/role-based-access-control/permissions-reference.md#lifecycle-workflows-administrator).
 

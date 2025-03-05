@@ -8,7 +8,7 @@ manager: mwongerapk
 ms.author: kengaderdus
 ms.service: entra-external-id
 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: tutorial
 ms.date: 08/27/2024
 ms.custom: developer, devx-track-js

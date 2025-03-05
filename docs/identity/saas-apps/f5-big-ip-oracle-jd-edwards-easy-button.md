@@ -2,20 +2,20 @@
 title: Configure F5 BIG-IP Easy Button for SSO to Oracle JD Edwards using Microsoft Entra ID
 description: Learn to implement SHA with header-based Single Sign-On to Oracle JD Edwards using F5’s BIG-IP Easy Button guided configuration
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and F5 BIG-IP Easy Button for SSO to Oracle JD Edwards using Microsoft Entra ID so that I can control who has access to F5 BIG-IP Easy Button for SSO to Oracle JD Edwards using Microsoft Entra ID, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Configure F5’s BIG-IP Easy Button for SSO to Oracle JD Edwards using Microsoft Entra ID
+# Configure F5’s BIG-IP Easy Button for SSO to Oracle JD Edwards using Microsoft Entra ID
 
 In this article, learn to secure Oracle JD Edwards (JDE) using Microsoft Entra ID, through F5’s BIG-IP Easy Button guided configuration.
 
@@ -88,7 +88,7 @@ Prior BIG-IP experience isn’t necessary, but you need:
 
 ## BIG-IP configuration methods
 
-There are many methods to configure BIG-IP for this scenario, including two template-based options and an advanced configuration. This tutorial covers the latest Guided Configuration 16.1 offering an Easy button template. With the Easy Button, admins no longer go back and forth between Microsoft Entra ID and a BIG-IP to enable services for SHA. The deployment and policy management is handled directly between the APM’s Guided Configuration wizard and Microsoft Graph. This rich integration between BIG-IP APM and Microsoft Entra ID ensures that applications can quickly, easily support identity federation, SSO, and Microsoft Entra Conditional Access, reducing administrative overhead.
+There are many methods to configure BIG-IP for this scenario, including two template-based options and an advanced configuration. This article covers the latest Guided Configuration 16.1 offering an Easy button template. With the Easy Button, admins no longer go back and forth between Microsoft Entra ID and a BIG-IP to enable services for SHA. The deployment and policy management is handled directly between the APM’s Guided Configuration wizard and Microsoft Graph. This rich integration between BIG-IP APM and Microsoft Entra ID ensures that applications can quickly, easily support identity federation, SSO, and Microsoft Entra Conditional Access, reducing administrative overhead.
 
 >[!NOTE] 
 > All example strings or values referenced throughout this guide should be replaced with those for your actual environment.
@@ -136,15 +136,10 @@ Initiate the APM's **Guided Configuration** to launch the **Easy Button** Templa
 
 1. Navigate to **Access > Guided Configuration > Microsoft Integration** and select **Microsoft Entra Application**.
 
-   ![Screenshot for Configure Easy Button- Install the template](./media/f5-big-ip-easy-button-oracle-jde/easy-button-template.png)
+2. Under **Configuring the solution using the below steps will create the required objects**, review the list of configuration steps and select **Next**.
 
-2. Review the list of configuration steps and select **Next**
+3. Under **Guided Configuration**, follow the sequence of steps required to publish your application.
 
-   ![Screenshot for Configure Easy Button - List configuration steps](./media/f5-big-ip-easy-button-oracle-jde/config-steps.png)
-
-3. Follow the sequence of steps required to publish your application.
-
-   ![Configuration steps flow](./media/f5-big-ip-easy-button-oracle-jde/config-steps-flow.png#lightbox)
 
 ### Configuration Properties
 
@@ -196,9 +191,9 @@ The Service Provider settings define the properties for the SAML SP instance of 
 
 ### Microsoft Entra ID
 
-This section defines all properties that you would normally use to manually configure a new BIG-IP SAML application within your Microsoft Entra tenant. Easy Button provides a set of pre-defined application templates for Oracle PeopleSoft, Oracle E-business Suite, Oracle JD Edwards, SAP ERP as well as generic SHA template for any other apps. For this scenario select **JD Edwards Protected by F5 BIG-IP > Add**.
+This section defines all properties that you would normally use to manually configure a new BIG-IP SAML application within your Microsoft Entra tenant. Easy Button provides a set of pre-defined application templates for Oracle PeopleSoft, Oracle E-business Suite, Oracle JD Edwards, SAP ERP as well as generic SHA template for any other apps. 
 
-![Screenshot for Azure configuration add BIG-IP application](./media/f5-big-ip-easy-button-oracle-jde/azure-configuration-add-big-ip-application.png)
+For this scenario, in the **Azure Configuration** page, select **JD Edwards Protected by F5 BIG-IP** > **Add**.
 
 #### Azure Configuration
 
@@ -243,7 +238,7 @@ Conditional Access policies are enforced post Microsoft Entra pre-authentication
 
 The **Available Policies** view, by default, will list all Conditional Access policies that do not include user-based actions.
 
-The **Selected Policies** view, by default, displays all policies targeting All cloud apps. These policies cannot be deselected or moved to the Available Policies list as they are enforced at a tenant level.
+The **Selected Policies** view, by default, displays all policies targeting All resources. These policies cannot be deselected or moved to the Available Policies list as they are enforced at a tenant level.
 
 To select a policy to be applied to the application being published:
 
@@ -312,7 +307,7 @@ If making a change to the app is a no go, then consider having the BIG-IP listen
 
 This last step provides a breakdown of your configurations. Select **Deploy** to commit all settings and verify that the application now exists in your tenants list of Enterprise applications.
 
-## Next steps
+## Related content
 
 From a browser, connect to the **Oracle JDE application’s external URL** or select the application’s icon in the [Microsoft MyApps portal](https://myapps.microsoft.com/). After authenticating to Microsoft Entra ID, you’ll be redirected to the BIG-IP virtual server for the application and automatically signed in through SSO.
 

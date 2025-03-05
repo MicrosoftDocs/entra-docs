@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Greenhouse'
+title: Microsoft Entra integration with Greenhouse
 description: Learn how to configure single sign-on between Microsoft Entra ID and Greenhouse.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Greenhouse so that I can control who has access to Greenhouse, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Greenhouse
+# Microsoft Entra integration with Greenhouse
 
-In this tutorial, you'll learn how to integrate Greenhouse with Microsoft Entra ID. When you integrate Greenhouse with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Greenhouse with Microsoft Entra ID. When you integrate Greenhouse with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Greenhouse.
 * Enable your users to be automatically signed-in to Greenhouse with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Greenhouse supports **SP and IDP** initiated SSO.
 
@@ -78,7 +78,10 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![Edit Basic SAML Configuration](common/edit-urls.png)
 
-1. On the **Basic SAML Configuration** section, if you wish to configure the application in **IDP** initiated mode, enter the values for the following fields:
+> [!NOTE]
+> The [Greenhouse Client support team](https://www.greenhouse.io/contact) recommends configuring Entra ID side application settings for **IDP** initiated mode. Contact the Greenhouse Client support team for more details and to get the correct values mentioned below. 
+
+1. On the **Basic SAML Configuration** section enter the values for the following fields:
 
     a. In the **Identifier** text box, type the value:
     `greenhouse.io`
@@ -86,13 +89,7 @@ Follow these steps to enable Microsoft Entra SSO.
     b. In the **Reply URL** text box, type a URL using the following pattern: 
     `https://<COMPANYNAME>.greenhouse.io/<ENTITY ID>/users/saml/consume`
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
-
-    In the **Sign-on URL** text box, type the URL:
-    `https://app.greenhouse.io`
-
-	> [!NOTE]
-	> The value is not real. Update the value with the actual Reply URL. Contact [Greenhouse Client support team](https://www.greenhouse.io/contact) to get the value. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+1. Leave the **Sign-on URL** text box empty. 
 
 4. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Federation Metadata XML** from the given options as per your requirement and save it on your computer.
 
@@ -204,6 +201,6 @@ You can also use Microsoft My Apps to test the application in any mode. When you
 
 
 
-## Next steps
+## Related content
 
 Once you configure Greenhouse you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

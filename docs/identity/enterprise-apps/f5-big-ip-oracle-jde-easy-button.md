@@ -89,7 +89,6 @@ This tutorial uses Guided Configuration 16.1 with an Easy Button template. With 
 
 ## Register the Easy Button
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Before a client or service accesses Microsoft Graph, the Microsoft identity platform must trust it.
 
@@ -135,7 +134,7 @@ The following instructions help you create a tenant app registration to authoriz
 
 ### Configuration Properties
 
-Use the **Configuration Properties** tab to creat new application configurations and SSO objects. The **Azure Service Account Details** section represents the client you registered in the Microsoft Entra tenant, as an application. Use the settings for BIG-IP OAuth client to register a SAML SP in the tenant, with SSO properties. Easy Button does this action for BIG-IP services published and enabled for SHA.
+Use the **Configuration Properties** tab to create new application configurations and SSO objects. The **Azure Service Account Details** section represents the client you registered in the Microsoft Entra tenant, as an application. Use the settings for BIG-IP OAuth client to register a SAML SP in the tenant, with SSO properties. Easy Button does this action for BIG-IP services published and enabled for SHA.
 
    > [!NOTE]
    > Some of the following settings are global. You can reuse them to publish more applications.
@@ -144,9 +143,7 @@ Use the **Configuration Properties** tab to creat new application configurations
 2. Enter the **Tenant ID, Client ID**, and **Client Secret** you noted.
 4. Confirm the BIG-IP connects to the tenant.
 5. Select **Next**
-
-   ![Screenshot of options and selections for Configuration Properties.](./media/f5-big-ip-easy-button-oracle-jde/configuration-general-and-service-account-properties.png)
-   
+  
 ### Service Provider
 
 The Service Provider settings define the properties for the SAML SP instance of the application protected through SHA.

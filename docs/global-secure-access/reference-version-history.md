@@ -2,10 +2,10 @@
 title: Microsoft Entra private network connector version release notes
 description: This article lists all releases of Microsoft Entra private network connector and describes new features and fixed issues.
 author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.service: global-secure-access
 ms.topic: reference
-ms.date: 05/28/2024
+ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -60,7 +60,7 @@ The new name is now the Microsoft Entra private network connector. The updated b
 
 ### New features and improvements
 
-- Support for User Datagram Protocol (UDP) and Private Domain Name System (DNS) features. *Requires the Early Access Preview. 
+- Support for User Datagram Protocol (UDP) and Private Domain Name System (DNS) features for Private Access flow. *Requires the Early Access Preview. 
 - Support for outbound proxy in connector for Private Access flow. *Requires the Early Access Preview. 
 - Improved resiliency and performance.
 - Improved logging and metrics reporting.

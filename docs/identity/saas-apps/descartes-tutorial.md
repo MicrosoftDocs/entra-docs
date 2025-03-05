@@ -2,7 +2,7 @@
 title: Microsoft Entra SSO integration with Descartes
 description: Learn how to configure single sign-on between Microsoft Entra ID and Descartes.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
@@ -10,7 +10,7 @@ ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Descartes so that I can control who has access to Descartes, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -94,9 +94,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
 
 	![Screenshot shows the Certificate download link.](common/copy-metadataurl.png "Certificate")
 
-1. Compose a list of the Microsoft Entra groups you want the Descartes Application use for the Role-based configuration. A list of User Roles Descartes application modules can be found at https://www.gln.com/docs/Descartes_Application_User_Roles.pdf. You can find the Azure Active Direction Group GUIDs please download the Groups from your Azure portal Groups.
-
-    ![Screenshot shows the Microsoft Entra admin center Groups.](media/descartes-tutorial/copy-groups.png "Groups")
+1. Compose a list of the Microsoft Entra groups you want the Descartes Application use for the Role-based configuration. A list of User Roles Descartes application modules can be found at https://www.gln.com/docs/Descartes_Application_User_Roles.pdf. You can find the Azure group GUIDs. Select **Download groups** from **Groups** in the Microsoft Entra admin center.
 
 You can load this CSV file in Excel. Please select the groups that you want map to the Descartes application roles by list the ID in the first column and associating it with the Descartes Application User Role.
 
@@ -141,6 +139,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 * [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 
-## Next steps
+## Related content
 
 Once you configure Descartes you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

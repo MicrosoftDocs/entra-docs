@@ -33,7 +33,6 @@ You must have the Microsoft Graph PowerShell SDK installed:
 
 ## Graph Explorer
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To manage Microsoft Entra roles using the [Microsoft Graph API](/graph/overview) and [Graph Explorer](/graph/graph-explorer/graph-explorer-overview), you must do the following:
 

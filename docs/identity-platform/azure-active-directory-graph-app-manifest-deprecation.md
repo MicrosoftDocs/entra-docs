@@ -1,13 +1,13 @@
 ---
-title: Azure Active Directory Graph app manifest deprecation
-description: Describes the deprecation of the Azure AD Graph format for application manifests and attribute differences in the new format.
+title: App manifest (Azure AD Graph format) deprecation
+description: Describes the deprecation of the app manifest (Azure AD Graph format) and attribute differences in the new format.
 services: active-directory
 author: rwike77
 manager: CelesteDG
 ms.service: identity-platform
 ms.topic: concept-article
 ms.workload: identity
-ms.date: 06/13/2024
+ms.date: 09/18/2024
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: youazhou
@@ -15,7 +15,7 @@ ms.reviewer: youazhou
 # Customer intent: As an application developer, I want to learn about the new app manifest format, so that I can update the application object and define permissions and roles for the app.
 ---
 
-# Azure Active Directory Graph app manifest deprecation
+# App manifest (Azure AD Graph format) deprecation
 
 Following the Azure AD Graph deprecation, the Azure AD Graph format of application manifests is deprecated and the Microsoft Entra admin center displays app manifests in Microsoft Graph format.  Read this article to learn more about how the app manifest migration impacts your user experience.
 
@@ -24,7 +24,7 @@ Following the Azure AD Graph deprecation, the Azure AD Graph format of applicati
 
 ## Migration date
 
-From June 13 to June 27 2024, the **App registrations** manifest page in the Microsoft Entra admin center launched a new tabbed experience that allows you to view, edit, upload, download the app manifest in both Azure AD Graph format and Microsoft Graph format.
+From June 13 to September 16 2024, the **App registrations** manifest page in the Microsoft Entra admin center launched a new tabbed experience that allows you to view, edit, upload, download the app manifest in both Azure AD Graph format and Microsoft Graph format.
 
 > [!IMPORTANT] 
 > The new tabbed experience is rolling out to Microsoft Entra users in batches to ensure the quality of your experience.  You may not see the new experience immediately.
@@ -35,9 +35,9 @@ Starting January 7 2025, you won't be able to view, save, upload, or download th
 
 If you don't view, edit, or save app manifests, this migration doesn't impact your workflow.
 
-If you view or edit app manifests, you'll notice the [attribute differences between Azure AD Graph format and Microsoft Graph format](#attribute-differences-between-azure-ad-graph-and-microsoft-graph-formats). We recommend that you start viewing and editing app manifests following the [Microsoft Graph format reference](reference-microsoft-graph-app-manifest.md).
+If you view or edit app manifests, you notice the [attribute differences between Azure AD Graph format and Microsoft Graph format](#attribute-differences-between-azure-ad-graph-and-microsoft-graph-formats). We recommend that you start viewing and editing app manifests following the [Microsoft Graph format reference](reference-microsoft-graph-app-manifest.md).
 
-If your workflow requires you to save the manifests in your source repository for use later, you'll need to [convert an app manifest in Azure AD Graph format to Microsoft Graph format](#convert-an-app-manifest-in-azure-ad-graph-format-to-microsoft-graph-format).
+If your workflow requires you to save the manifests in your source repository for use later, you need to [convert an app manifest in Azure AD Graph format to Microsoft Graph format](#convert-an-app-manifest-in-azure-ad-graph-format-to-microsoft-graph-format).
 
 ## Attribute differences between Azure AD Graph and Microsoft Graph formats
 
@@ -60,7 +60,7 @@ Most Azure AD Graph app manifest attributes stay the same. However, the followin
 | `preAuthorizedApplications` | Relocated as `preAuthorizedApplications` property of the `api` attribute |
 | `replyUrlsWithType` | Renamed as property `redirectUris` in multiple attributes: `web` attribute, `spa` attribute, `publicClient` attribute |
 | `signInUrl` | Relocated and renamed as property `homePageUrl` of the `web` attribute |
-| `trustedCertificateSubjects` | This is a Microsoft internal property. The portal shows v1.0 version of MS Graph app manifest while this property is only present in beta version of MS Graph app manifest. Please continue to edit this property using Azure AD Graph app manifest in Entra portal. We will expose MS Graph app manifest beta version in Entra portal before deprecating Azure AD Graph app manifest |
+| `trustedCertificateSubjects` | This is a Microsoft internal property. The portal shows v1.0 version of MS Graph app manifest while this property is only present in beta version of MS Graph app manifest. Continue to edit this property using Azure AD Graph app manifest in Microsoft Entra admin center. We will expose MS Graph app manifest beta version in Microsoft Entra admin center before deprecating Azure AD Graph app manifest |
 
 ## How do I tell the format of my app manifest?
 

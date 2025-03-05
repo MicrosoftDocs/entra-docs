@@ -6,7 +6,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.topic: tutorial
-ms.date: 11/06/2023
+ms.date: 12/17/2024
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 
@@ -65,7 +65,6 @@ If you're using the  [Basic AD and Azure environment](tutorial-basic-ad-azure.md
 
 ## Configure Microsoft Entra Cloud Sync
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Use the following steps to configure provisioning:
 

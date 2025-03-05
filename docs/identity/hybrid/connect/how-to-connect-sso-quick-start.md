@@ -8,7 +8,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 06/14/2024
+ms.date: 12/20/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -53,7 +53,6 @@ Ensure that the following prerequisites are in place:
 
 ## Enable the feature
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Enable Seamless SSO through [Microsoft Entra Connect](../whatis-hybrid-identity.md).
 

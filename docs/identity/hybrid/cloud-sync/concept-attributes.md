@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na
-ms.date: 04/26/2024
+ms.date: 12/16/2024
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 
@@ -79,7 +79,7 @@ To view the cloud sync configuration synchronization schema and verify it, follo
                 "deletedDateTime": null,
                 "accountEnabled": true,
                 "appDisplayName": "Active Directory to Azure Active Directory Provisioning",
-                "appId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
+                "appId": "00001111-aaaa-2222-bbbb-3333cccc4444",
                 "applicationTemplateId": null,
                 "appOwnerOrganizationId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee",
                 "appRoleAssignmentRequired": false,

@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 02/23/2022
+ms.date: 11/21/2024
 ms.author: jfields
 ---
 
@@ -17,7 +17,7 @@ The **Audit** dashboard in Permissions Management provides an overview of querie
 This article provides an overview of the components of the **Audit** dashboard.
 
 ## View information in the Audit dashboard
-
+You can view information in the Audit dashboard to see details about user access. This section explains how to navigate the Audit dashboard and manage queries.
 
 1. In Permissions Management, select the **Audit** tab.
 
@@ -34,6 +34,7 @@ This article provides an overview of the components of the **Audit** dashboard.
 
 
 ## Use a query to view information
+You can use a query to view specific information about user access. This section details the steps to create and use queries in Permissions Management.
 
 1. In Permissions Management, select the **Audit** tab.
 1. The **New query** tab displays the following options:

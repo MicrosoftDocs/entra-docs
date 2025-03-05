@@ -6,7 +6,7 @@ author: msmimart
 manager: celestedg
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
 ms.date: 06/13/2024
 ms.author: mimart
@@ -120,7 +120,8 @@ At this point, the Google identity provider has been set up in your Microsoft En
 
 1. Select **Save**.
 
-## Next steps
+## Related content
 
 - [Add Facebook as an identity provider](how-to-facebook-federation-customers.md)
-- [Customize the branding for customer sign-in experiences](how-to-customize-branding-customers.md)
+- [Add Apple as an identity provider](how-to-apple-federation-customers.md)
+- [Add OpenID Connect as an external identity provider (preview)](how-to-custom-oidc-federation-customers.md)

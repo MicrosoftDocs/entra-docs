@@ -33,7 +33,7 @@
   ],
   "TermFiles": [
     "Dictionary-Onboard.ps1",
-    "Bundle-Standard.txt",
+    "Bundle-EverGreen.txt",
     "Bundle-Cloud.txt"
   ],
   "ApplyPolicies": []

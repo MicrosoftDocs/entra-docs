@@ -8,7 +8,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
-ms.date: 03/25/2024
+ms.date: 12/19/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
 ms.custom: pim
@@ -44,7 +44,7 @@ Severity: **Low**
 
 | | Description |
 | --- | --- |
-| **Why do I get this alert?** | Users that have been assigned privileged roles they don't need increases the chance of an attack. It's also easier for attackers to remain unnoticed in accounts that aren't actively being used. |
+| **Why do I get this alert?** | Users that have assigned privileged roles they don't need increase the chances of an attack. It's also easier for attackers to remain unnoticed in accounts that aren't actively being used. |
 | **How to fix?** | Review the users in the list and remove them from privileged roles that they don't need. |
 | **Prevention** | Assign privileged roles only to users who have a business justification. </br>Schedule regular [access reviews](./pim-create-roles-and-resource-roles-review.md) to verify that users still need their access. |
 | **In-portal mitigation action** | Removes the account from their privileged role. |

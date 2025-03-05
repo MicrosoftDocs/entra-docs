@@ -14,7 +14,7 @@ ms.reviewer: elisolMS
 
 ms.collection: content-health, M365-identity-device-management
 
-#  Customer intent: As a user of Microsoft Entra B2B collaboration, I want to understand the limitations and potential issues with the platform, so that I can effectively manage and troubleshoot any authentication or replication problems that may arise.
+#Customer intent: As a user of Microsoft Entra B2B collaboration, I want to understand the limitations and potential issues with the platform, so that I can effectively manage and troubleshoot any authentication or replication problems that may arise.
 ---
 
 # Limitations of Microsoft Entra B2B collaboration

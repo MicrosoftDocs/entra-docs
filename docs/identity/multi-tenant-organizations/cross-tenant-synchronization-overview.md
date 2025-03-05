@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: overview
-ms.date: 09/17/2024
+ms.date: 12/09/2024
 ms.author: rolyon
 ms.custom: it-pro
 #Customer intent: As a dev, devops, or it admin, I want to
@@ -127,8 +127,8 @@ Which clouds can cross-tenant synchronization be used in?
 
 - Cross-tenant synchronization is supported within the commercial cloud and Azure Government.
 - Cross-tenant synchronization isn't supported within the Microsoft Azure operated by 21Vianet cloud.
-- Synchronization is only supported between two tenants in the same cloud.
-- Cross-cloud (such as public cloud to Azure Government) isn't currently supported.
+- Synchronization is only supported between two tenants in the same Azure cloud. For information about the relationship between the Azure Cloud environments and Microsoft 365 (GCC, GCCH), see [Microsoft 365 integration](/azure/security/fundamentals/feature-availability#microsoft-365-integration). Synchronization between commercial and GCC is supported. 
+- Cross-cloud (such as public cloud to Azure Government) isn't currently supported. 
 
 #### Existing B2B users
 
@@ -243,9 +243,9 @@ Does cross-tenant synchronization enhance any cross-tenant Microsoft 365 app acc
 - Cross-tenant synchronization utilizes a feature that improves the user experience by suppressing the first-time B2B consent prompt and redemption process in each tenant.
 - Synchronized users will have the same cross-tenant Microsoft 365 experiences available to any other B2B collaboration user.
 
-Can cross-tenant synchronization enable people search scenarios where synchronized users appear in the global address list of the target tenant?
+Can cross-tenant synchronization enable people search scenarios in Microsoft 365?
 
-- Yes, but you must set the value for the **showInAddressList** attribute of synchronized users to **True**, which is not set by default. If you want to create a unified address list, you'll need to set up a [mesh peer-to-peer topology](./cross-tenant-synchronization-topology.md). For more information, see [Step 9: Review attribute mappings](./cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings).
+- Yes, cross-tenant synchronization can enable people search in M365. Ensure that the **showInAddressList** attribute is set to **True** on users in the target tenant. The showInAddressList attribute is set to true by default in the cross-tenant synchronization [attribute mappings](./cross-tenant-synchronization-configure.md#step-9-review-attribute-mappings). 
 - Cross-tenant synchronization creates B2B collaboration users and doesn't create contacts.
 
 #### Teams

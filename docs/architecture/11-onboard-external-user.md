@@ -151,7 +151,7 @@ If you use dynamic membership groups, don't add the users to a group with anothe
 
 After the invited external user is provisioned in Microsoft Entra ID, the Microsoft Graph API returns a response with user information such as object ID and email. The LOB application provisions the user to its directory or database. The provisioning varies, depending on the application and internal directory type the application uses.
 
-With the external user provisioned in Microsoft Entra ID and the application, the LOB application notifies the initiating user the process was successful. The invited user gets SSO with their identity without the inviting organization onboarding and issuing extra credentials. Microsoft Entra ID enforces authorization policies with Conditional Access, Microsoft Entra multifactor authentication, and risk-based Identity Protection.
+With the external user provisioned in Microsoft Entra ID and the application, the LOB application notifies the initiating user the process was successful. The invited user gets SSO with their identity without the inviting organization onboarding and issuing extra credentials. Microsoft Entra ID enforces authorization policies with Conditional Access, Microsoft Entra multifactor authentication, and Microsoft Entra ID Protection.
 
 ## Other considerations
 

@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-verified-id
 ms.topic: how-to
 
-ms.date: 12/06/2023
+ms.date: 12/18/2024
 ms.author: barclayn
 
 #Customer intent: As a verifiable credentials administrator, I want to configure verifying credentials from another party.

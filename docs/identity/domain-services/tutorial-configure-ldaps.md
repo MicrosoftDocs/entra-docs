@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: tutorial
-ms.date: 09/15/2023
+ms.date: 02/19/2025
 ms.author: justinha
 ms.reviewer: xyuan
 #Customer intent: As an identity administrator, I want to secure access to a Microsoft Entra Domain Services managed domain using secure Lightweight Directory Access Protocol (LDAPS)

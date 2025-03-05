@@ -6,9 +6,9 @@ manager: martinco
 ms.service: entra
 ms.subservice: architecture
 ms.topic: conceptual
-ms.date: 08/25/2024
+ms.date: 10/08/2024
 ms.author: gasinh
-ms.reviewer: ajburnle, ignite-2022
+ms.reviewer: justinha
 ---
 
 # Secure resource isolation in a single tenant in Microsoft Entra ID
@@ -39,12 +39,12 @@ Use administrative units (AUs) in Microsoft Entra ID for administrative separati
 
 Use AUs to separate [users, groups, and device objects](~/identity/role-based-access-control/administrative-units.md). Assign units with [rules for dynamic membership groups](~/identity/role-based-access-control/admin-units-members-dynamic.md).
 
-With Privileged Identity Management (PIM), select a person to approve requests for highly privileged roles. For example, admins that require Global Administrator access to make tenant-wide changes.
+With Privileged Identity Management (PIM), select a person to approve requests for highly privileged roles. For example, choose admins that require Authentication Administrator access to make user authentication method changes.
 
    >[!NOTE]
    >Use of PIM requires and Microsoft Entra ID P2 license per human.
 
-To confirm  Global Administrators can't manage a resource, isolate the resource in a separate tenant with separate Global Administrators. Use this method for backups. See [multi-user authorization guidance](/azure/backup/multi-user-authorization) for examples.
+To confirm Authentication Administrators can't manage a resource, isolate the resource in a separate tenant with separate Authentication Administrators. Use this method for backups. See [multi-user authorization guidance](/azure/backup/multi-user-authorization) for examples.
 
 ## Common usage
 
@@ -107,7 +107,7 @@ Configuration settings such authentication methods, hybrid configurations, B2B c
    >[!IMPORTANT]
    >The lifecycle of Microsoft SaaS services such as Office 365, Microsoft Dynamics, and Microsoft Exchange are bound to the Microsoft Entra tenant. As a result, multiple instances of these services require multiple Microsoft Entra tenants. 
 
-## Next steps
+## Related content
 
 * [Introduction to delegated administration and isolated environments](secure-introduction.md)
 * [Microsoft Entra fundamentals](./secure-fundamentals.md)

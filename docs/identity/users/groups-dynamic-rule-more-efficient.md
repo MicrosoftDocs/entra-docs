@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: conceptual
-ms.date: 08/25/2024
+ms.date: 01/15/2025
 ms.author: barclayn
 ms.reviewer: jordandahl
 ms.custom: it-pro
@@ -55,7 +55,7 @@ It's better to have a rule like this:
 
 - `user.department -eq "Accounts" -and user.city -in ["Lagos", "Ibadan", "Kaduna", "Abuja", "Port Harcourt"]`
 
-Conversely, identify similar sub criteria with the same property not equal to various values, that are linked with `-and` operators. Then use the `-notin` operator to group them into a single criterion to make the rule easier to understand and evaluate. For example, instead of using a rule like this:
+Conversely, identify similar sub criteria with the same property not equal to various values that are linked with `-and` operators. Then use the `-notin` operator to group them into a single criterion to make the rule easier to understand and evaluate. For example, instead of using a rule like this:
 
 - `(user.city -ne "Lagos") -and (user.city -ne "Ibadan") -and (user.city -ne "Kaduna") -and (user.city -ne "Abuja") -and (user.city -ne "Port Harcourt")`
 

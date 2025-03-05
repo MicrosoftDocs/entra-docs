@@ -2,16 +2,16 @@
 title: View associated resources for a user-assigned managed identity
 description: Step-by-step instructions for viewing the Azure resources that are associated with a user-assigned managed identity
 
-author: barclayn
-manager: amycolannino
+author: rwike77
+manager: CelesteDG
 
 ms.service: entra-id
 ms.subservice: managed-identities
 
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.date: 01/18/2023
-ms.author: barclayn
+ms.date: 02/28/2025
+ms.author: ryanwi
 
 ---
 

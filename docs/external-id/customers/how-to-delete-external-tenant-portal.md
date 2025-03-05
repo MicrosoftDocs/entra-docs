@@ -6,9 +6,9 @@ author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
-ms.date: 04/30/2024
+ms.date: 02/06/2025
 ms.author: cmulligan
 ms.custom: it-pro
 

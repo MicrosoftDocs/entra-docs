@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Configure Salesforce for automatic user provisioning with Microsoft Entra ID| Microsoft Docs'
+title: Configure Salesforce for automatic user provisioning with Microsoft Entra ID| Microsoft Docs
 description: Learn the steps required to perform in Salesforce and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Salesforce.
 
 author: thomasakelo
@@ -7,19 +7,19 @@ manager: jeedes
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Salesforce so that I can streamline the user management process and ensure that users have the appropriate access to Salesforce.
 ---
-# Tutorial: Configure Salesforce for automatic user provisioning
+# Configure Salesforce for automatic user provisioning
 
-The objective of this tutorial is to show the steps required to perform in Salesforce and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Salesforce.
+The objective of this article is to show the steps required to perform in Salesforce and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Salesforce.
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following items:
+The scenario outlined in this article assumes that you already have the following items:
 
 * A Microsoft Entra tenant.
 * A Salesforce.com tenant.
@@ -40,9 +40,9 @@ See also Salesforce [Create or Clone Profiles](https://help.salesforce.com/s/art
 > Roles should not be manually edited in Microsoft Entra ID when doing role imports.
 
 > [!IMPORTANT]
-> If you are using a Salesforce.com trial account, then you will be unable to configure automated user provisioning. Trial accounts do not have the necessary API access enabled until they are purchased. You can get around this limitation by using a free [developer account](https://developer.salesforce.com/signup) to complete this tutorial.
+> If you are using a Salesforce.com trial account, then you will be unable to configure automated user provisioning. Trial accounts do not have the necessary API access enabled until they are purchased. You can get around this limitation by using a free [developer account](https://developer.salesforce.com/signup) to complete this article.
 
-If you are using a Salesforce Sandbox environment, see the [Salesforce Sandbox integration tutorial](./salesforce-sandbox-tutorial.md).
+If you are using a Salesforce Sandbox environment, see the [Salesforce Sandbox integration  article](./salesforce-sandbox-tutorial.md).
 
 ## Assigning users to Salesforce
 
@@ -79,7 +79,7 @@ The objective of this section is to outline how to enable user provisioning of A
 
 4. Set the **Provisioning Mode** to **Automatic**.
 
-    ![Screenshot shows the Salesforce Provisioning page, with Provisioning Mode set to Automatic and other values you can set.](./media/salesforce-provisioning-tutorial/provisioning.png)
+    ![Screenshot shows the Salesforce Provisioning page, with Provisioning Mode set to Automatic and other values you can set.](common/provisioning-automatic.png)
 
 5. Under the **Admin Credentials** section, provide the following configuration settings:
 
@@ -103,7 +103,7 @@ The objective of this section is to outline how to enable user provisioning of A
 
 10. Copy the token, go to your Microsoft Entra window, and paste it into the **Secret Token** field.
 
-11. The **Tenant URL** should be entered if the instance of Salesforce is on the Salesforce Government Cloud. Otherwise, it is optional. Enter the tenant URL using the format of "https://\<your-instance\>.my.salesforce.com," replacing \<your-instance\> with the name of your Salesforce instance.
+11. The **Tenant URL** should be entered if the instance of Salesforce is on the Salesforce Government Cloud. Otherwise, it is optional. Enter the tenant URL using the format of `https://<your-instance>.my.salesforce.com`, replacing `<your-instance>` with the name of your Salesforce instance.
 
 12. Select **Test Connection** to ensure Microsoft Entra ID can connect to your Salesforce app.
 
