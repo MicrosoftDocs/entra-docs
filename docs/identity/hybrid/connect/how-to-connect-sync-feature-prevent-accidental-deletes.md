@@ -84,7 +84,7 @@ If this error is unexpected, then investigate and take corrective actions. To se
 
 1. Select Search to view a list of all objects about to be deleted. By opening each item, you can get additional information about the object. You can also select Column Settings to add more attributes to be visible in the grid, for instance, the onPremisesDistinguishedName.
 
-![Search Connector Space](./media/how-to-connect-sync-feature-prevent-accidental-deletes/searchcs.png)
+    ![Search Connector Space](./media/how-to-connect-sync-feature-prevent-accidental-deletes/searchcs.png)
 
 ## If the deletions are unexpected
 
