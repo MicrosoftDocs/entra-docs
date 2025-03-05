@@ -44,7 +44,7 @@ Learn more about [custom URL domains in external tenants](../external-id/custome
 
 In the following diagram, see the custom domain example. 
 
-   [ ![Diagram of a custom domain example.](custom-domain.png)](custom-domain-expanded.png#lightbox)
+   [ ![Diagram of a custom domain example.](media/deployment-external/custom-domain.png)](media/deployment-external/custom-domain-expanded.png#lightbox)
 
 When using additional WAF protection in your solution, block access to the default **ciamlogin.com** domain name. Without this change, attackers use the domain name and bypass WAF protections. 
 
