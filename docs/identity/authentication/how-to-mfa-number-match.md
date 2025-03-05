@@ -4,7 +4,7 @@ description: Learn how to use number matching in multifactor authentication noti
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/07/2025
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
 # Customer intent: As an identity administrator, I want to explain how number matching in MFA push notifications from Authenticator in Microsoft Entra ID works in different use cases.

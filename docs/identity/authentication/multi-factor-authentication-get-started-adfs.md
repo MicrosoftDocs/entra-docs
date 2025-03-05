@@ -6,7 +6,7 @@ description: This is the Microsoft Entra multifactor authentication page that de
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/14/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
