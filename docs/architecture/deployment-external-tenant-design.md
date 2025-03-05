@@ -19,7 +19,7 @@ ms.author: gasinh
 
 A user model is a logical schema for a user record. The model contains attributes the directory admins and app owners agree to store in the directory. It's the authoritative source for each: collected from users, not queried from an external system. 
 
-Claims needed for authentication can include confidential and sensitive data stored in an external source, such as a customer relationship management (CRM), or an electronic health record (EHR) system. It's not required for this data to be stored in the directory for authentication. Instead, it's dynamically retrieved using a RESTful API call with Microsoft Entra ID custom authentication extensions. It's emitted as claims in the token. 
+Claims needed for authentication can include confidential and sensitive data stored in an external source, such as a customer relationship management (CRM), or an electronic health record (EHR) system. Storing this data in the directory for authentication is not required. Instead, it's retrieved using a RESTful API call with Microsoft Entra ID custom authentication extensions. In the token, it's emitted as claims. 
 
 ### Attribute selection
 
@@ -41,7 +41,7 @@ Microsoft Entra External ID has default attributes for user objects. When the us
 
 To use Microsoft Entra External ID extension attributes, a schema extension is applied to your directory. The extensions are associated with an application object and then can be used as an attribute for all directory user objects, and for all applications. The default application object to extend the schema is the **b2c-extensions-app**, which is provisioned with your directory, by default.
 
-When defining your extension attribute, the name stored in the directory follows the format: **extension_GUID_Name**. The GUID is the Application ID of the application object, which the schema extension is registered against. This value is directory specific. The following screenshot shows the **b2c-extensions-app**, its Application ID, and the attribute name returned by Microsoft Graph API. 
+When you define the extension attribute, the name stored in the directory follows the format: **extension_GUID_Name**. The GUID is the Application ID of the application object, which the schema extension is registered against. This value is directory specific. The following screenshot shows the **b2c-extensions-app**, its Application ID, and the attribute name returned by Microsoft Graph API. 
 
    [ ![Diagram of the B2C extension attributes.](media/deployment-external/b2c-extensions-app.png)](media/deployment-external/b2c-extensions-app-expanded.png#lightbox)
 
@@ -72,7 +72,7 @@ Manage directory extensions through the [Microsoft Entra admin portal](https://e
 
 ### User data migration
 
-When migrating to Microsoft Entra External ID, consider the primary keys, foreign keys (or join keys), or attributes used by identity systems and applications for compatibility. An example is object IDs from legacy identity systems, issued as persistent subject or name identifiers in tokens. Also, an example is other directory attributes used as unique identifiers by integrated systems: email addresses, short logon names, CRM IDs, and order management system IDs. Maintain these values to serve two purposes: 
+When migrating to Microsoft Entra External ID, consider the primary keys, foreign keys (or join keys), or attributes used by identity systems and applications for compatibility. An example is object IDs from legacy identity systems, issued as persistent subject or name identifiers in tokens. Also, an example is other directory attributes used as unique identifiers by integrated systems: email addresses, short logon names, CRM IDs, and order management system IDs. To serve two purposes, maintain these values: 
 
 * **Audit history** - When investigating activities, refer to archived logs from the legacy system. A join key across systems facilitates this scenario. Help meet compliance requirements such as:
   * Payment Card Industry - Data Security Standard ([PCI-DSS](https://www.pcisecuritystandards.org/))
@@ -80,7 +80,7 @@ When migrating to Microsoft Entra External ID, consider the primary keys, foreig
   * System and Organization Controls 2 ([SOC 2](/compliance/regulatory/offering-soc-2))  
 * **Continued function of integrated systems** - Migration might involve consolidation of identity systems that use different primary identifiers. Preserve the identifiers to enable the configuration of application-specific token shapes with the correct subject or name identifiers. Applications function as expected: an order management system shows past purchases for the user, post-migration.
 
-Document this, and similar, information to prevent potential issues later. Establish an attribute dictionary for current and future application developers. In the following table is a sample.  
+Document information to prevent potential issues later. Establish an attribute dictionary for current and future application developers. In the following table is a sample.  
 
 |Attribute name|Type|Data type|Data source or owner|Use|
 |---|---|---|---|---|
@@ -93,7 +93,7 @@ Include information about the source of authority, also who, what, when and how 
 
 ## Design
 
-In this section you'll learn about aspects of design: naming and conventions, reference architecture, integration patterns, and more.
+In this section, learn about aspects of design: naming and conventions, reference architecture, integration patterns, and more.
 
 ### Naming convention
 
@@ -107,14 +107,14 @@ When possible, refer to the product documentation rather than duplicate the cont
 
 ### Administration
 
-In Microsoft Entra ID, if another administrator or non-administrator needs to manage Microsoft Entra resources, assign them a Microsoft Entra role with the permissions they need.  
+In Microsoft Entra ID, if another administrator or nonadministrator needs to manage Microsoft Entra resources, assign them a Microsoft Entra role with the permissions they need.  
 
 Learn more about [Microsoft Entra built-in roles](../identity/role-based-access-control/permissions-reference.md).
 
-While there are no restrictions to the role assignments for users in the external identities directory, it is recommended that the administrative accounts are invited over from the enterprise workforce directory.  
+While there are no restrictions to user role assignments in the external identities directory, we recommend you invite administrative accounts from the enterprise workforce directory.  
 
    >[!NOTE]
-   >There is a future goal to include a privileged identity management feature in Microsoft Entra External ID. 
+   >There's a future goal to include a privileged identity management feature in Microsoft Entra External ID. 
 
 ### Directory data operations
 
@@ -123,7 +123,7 @@ Directory data includes the objects stored in the directory such as users, appli
    >[!NOTE]
    >Microsoft backs up directory data regularly, and it’s available for Microsoft restoration. 
 
-Some values are created by the directory, during object creation, such as object and application IDs. They can't be duplicated or re-created with the same values. 
+The directory creates some values during object creation, such as object and application IDs. They can't be duplicated or re-created with the same values. 
 
 You can [restore or permanently remove recently deleted users](../fundamentals/users-restore.yml). 
 
@@ -148,7 +148,7 @@ Collect compliance requirements and involve legal teams. The following table is 
 |Industry||
 |Regulatory authority||
 
-Use this information to verify the data stored in the directory and its configuration. This might pertain to attributes in the directory. Recognize that certain attribute combinations, such as first name, last name, and city might fall within compliance limits. Also, this scenario can apply to log retention and encryption requirements specified in the configuration. Document specific configuration requirements to help maintain the configuration. The compliance requirements evolve more quickly in response to cyber threats, political, and social change. Use the following job aid.  
+Use this information to verify the data stored in the directory and its configuration. The information might pertain to attributes in the directory. Recognize that certain attribute combinations, such as first name, family name, and city might fall within compliance limits. Also, this scenario can apply to log retention and encryption requirements specified in the configuration. Document specific configuration requirements to help maintain the configuration. The compliance requirements evolve more quickly in response to cyber threats, political, and social change. Use the following job aid.  
 
 |Tenant configuration|Compliance reference|
 |---|---|
@@ -170,16 +170,16 @@ The following table lists key scenarios and service components for designing sol
 
 |Scenario|Component|Throttling guidance|
 |---|---|---|
-|Administrative tasks performing create, read, update, delete (CRUD) on Microsoft Entra External ID tenants, such as user flows or objects |Microsoft Graph API |- [Graph throttling guidance](/graph/throttling) </br> - [Graph service throttling limits](/graph/throttling-limits)|
+|Administrative tasks performing create, read, update, and delete (CRUD) on Microsoft Entra External ID tenants, such as user flows or objects |Microsoft Graph API |- [Graph throttling guidance](/graph/throttling) </br> - [Graph service throttling limits](/graph/throttling-limits)|
 |Sign up, sign in, and password reset with user flows |Microsoft Entra External ID|[Microsoft Entra External ID service limits](../external-id/customers/reference-service-limits.md)|
 
-Microsoft Graph API has various limit types and associated quotas. The enforcement precedence is highest priority **application + tenant**, and lowest priority **tenant**. Because Microsoft Entra External ID doesn't support multitenant applications, the per application limit does not apply.
+Microsoft Graph API has various limit types and associated quotas. The enforcement precedence is highest priority **application + tenant**, and lowest priority **tenant**. Because Microsoft Entra External ID doesn't support multitenant applications, the per application limit doesn't apply.
 
-As an example, an application + tenant hits its quota limit before the tenant quota is reached. This enables other applications to communicate with the tenant.
+As an example, an application + tenant hits its quota limit before the tenant quota is reached. This action enables other applications to communicate with the tenant.
 
 With one-time large volume directory operations such as user migration, increase the throughput by using [batch operations](/graph/throttling) and up to six application registrations to perform Microsoft Graph operations.
 
-This approach can exceed tenant throttling limits. After reaching the limits, applications can't interact with the directory, which can cause other workloads to fail. Use care when multiple applications increase the throughput of one workload.
+This approach can exceed tenant throttling limits. When applications reach limits, they can't interact with the directory, which can cause other workloads to fail. Use care when multiple applications increase the throughput of one workload.
 
    >[!NOTE]
    >Some Microsoft Graph API resource types might have different, stricter throttling limits for security. Open a support ticket with Microsoft Support to plan mitigations on a case-by-case basis. 
