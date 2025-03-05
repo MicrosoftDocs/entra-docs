@@ -49,7 +49,7 @@ Before you try this tutorial, consider the following items:
 The following are prerequisites required for completing this tutorial
 
 - A test environment with Microsoft Entra Connect Sync version 1.4.32.0 or later
-- An OU or group that is in scope of sync and can be used the pilot. We recommend starting with a small set of objects.
+- An OU or group that is in scope of sync and can be used in the pilot. We recommend starting with a small set of objects.
 - A server running Windows Server 2016 or later to host the provisioning agent.
 - Source anchor for Microsoft Entra Connect Sync should be either *objectGuid* or *ms-ds-consistencyGUID*
 
