@@ -61,7 +61,7 @@ Learn more about [setting up a Node.js web application for profile editing]().
 
 In a video, learn how to [edit a user profile](../external-id/customers/how-to-web-app-node-edit-profile-prepare-app.md). Discover how profile edit applications work with middleware API for additional security. The following diagram illustrates middleware API and MFA.  
 
-   [ ![Diagram of a profile edit.](media/deployment-external/middleware-api.png)](media/deployment-external/middleware-ap-expanded.png#lightbox)
+   [ ![Diagram of a profile edit.](media/deployment-external/middleware-api.png)](media/deployment-external/middleware-api-expanded.png#lightbox)
 
 ## Next steps
 
