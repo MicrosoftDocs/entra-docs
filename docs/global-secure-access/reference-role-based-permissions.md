@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: femila
 ms.topic: reference
-ms.date: 03/04/2025
+ms.date: 03/05/2025
 
 ms.service: global-secure-access
 ---
@@ -54,7 +54,7 @@ This article details the built-in Microsoft Entra roles you can assign for manag
 
 The following Microsoft Entra ID admin roles have access to Global Secure Access:
 
-| Permissions | [Global Admin](#global-administrator) | [Security Admin](#security-administrator) | [GSA Admin](#global-secure-access-administrator) | [CA Admin](#conditional-access-administrator) | [Apps Admin](#application-administrator) | [Global Reader](#security-reader-and-global-reader) | [Security Reader](#security-reader-and-global-reader) | [Log Reader](#global-secure-access-log-reader)
+| Permissions | [Global Admin](#global-administrator) | [Security Admin](#security-administrator) | [GSA Admin](#global-secure-access-administrator) | [CA Admin](#conditional-access-administrator) | [Apps Admin](#application-administrator) | [Global Reader](#security-reader-and-global-reader) | [Security Reader](#security-reader-and-global-reader) | [GSA Log Reader](#global-secure-access-log-reader)
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Configure Private Access (Quick Access, private network connectors, application segments, and enterprise apps) | ✅ |  |  |  | ✅ |  |  |
 | Create and interact with Conditional Access policies | ✅ | ✅ |  | ✅ |  |  |  |
@@ -63,7 +63,7 @@ The following Microsoft Entra ID admin roles have access to Global Secure Access
 | Configure remote networks | ✅ | ✅ | ✅ |  |  |  |  |
 | Security profiles | ✅ | ✅ | ✅ |  |  |  |  |
 | View traffic logs and alerts | ✅ | ✅ | ✅ |  |  |  |  | ✅ |
-| View all other logs | ✅ | ✅ | ✅ |  |  | ✅ | ✅ | ✅ |
+| View all other logs and dashboards | ✅ | ✅ | ✅ |  |  | ✅ | ✅ | ✅ |
 | Configure universal tenant restrictions and Global Secure Access signaling for Conditional Access | ✅ | ✅ | ✅ |  |  |  |  |
 | Configure enriched Microsoft 365 logs | ✅ |  |  |  |  |  |  |
 | Read-only access to product settings | ✅ | ✅ | ✅ |  |  | ✅ | ✅ | ✅ |
