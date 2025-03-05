@@ -3,9 +3,9 @@ title: How to use enriched Microsoft 365 logs
 description: Learn how to use enriched Microsoft 365 logs for Global Secure Access.
 author: kenwith
 ms.author: kenwith
-manager: rkarlin
+manager: femila
 ms.topic: how-to
-ms.date: 02/21/2025
+ms.date: 03/06/2025
 ms.service: global-secure-access
 ---
 
@@ -29,6 +29,7 @@ To use the enriched logs, you need the following roles, configurations, and subs
 - **Microsoft 365 Common and Office Online Traffic Policy** - Required for log enrichment. Ensure it's enabled. 
 - **Tenant sending data** - Confirms that traffic, as configured in forwarding profiles, is accurately tunneled to the Global Secure Access service.
 - **Diagnostic Settings Configuration** - Set up Microsoft Entra diagnostic settings to channel the logs to a designated endpoint, like a Log Analytics workspace. The requirements for each endpoint differ and are outlined in the Configure Diagnostic settings section of this article.
+- **Export the OfficeActivity log table** - The OfficeActivity table needs to be export to LogAnalytics, Microsoft Sentinel, or another third-party SIEM or Log system.
 
 ### Subscriptions
 
@@ -55,16 +56,31 @@ Viewing the enriched Microsoft 365 logs is a two-step process. First, you need t
 > [!NOTE]
 > At this time, only SharePoint Online logs are available for log enrichment.
 
-### Enable the log enrichment
+> [!NOTE]
+> MS365 Audit Logs has undergone a feature enhancement. Instead of exporting MS365 Audit Logs you can now export log data to the OfficeActivity and NetworkAccessTraffic tables, then combine the data using a Unique Token Identifier. The updates to this feature include enhancements to the existing MS365 Audit Logs with added device and user data, as well as a new log data type. The new log data type allows you to show the connection between events and removes the need to export a new data stream. Steps to access log data with the update feature are provided below.  
+
+### Enable log data
 
 To enable the Enriched Microsoft 365 logs:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](/azure/active-directory/roles/permissions-reference#global-administrator).
 1. Browse to **Global Secure Access** > **Settings** > **Logging**.
-1. Select the type of Microsoft 365 logs you want to enable.
-1. Select **Save**.
+1. Select the OfficeActivity and NetworkAccessTraffic tables
+1. Create a join of these two tables using the Unique Token Identifier.
 
-The enriched logs take up to 72 hours to fully integrate with the service.
+   Example query:
+
+  ```kusto
+  NetworkAccessTraffic 
+  | where TrafficType == 'microsoft365' | where UniqueTokenId != "" //filter on M365 traffic with available UTI
+  | project UniqueTokenId, SourceIp, DeviceId, DeviceOperatingSystem, DeviceOperatingSystemVersion, InitiatingProcessName, AgentVersion, UserId  //Extract the device enrichment fields, add more as    
+  needed
+  | join kind=inner (
+    OfficeActivity 
+    | extend AppAccessContext.UniqueTokenId
+    | where AppAccessContext.UniqueTokenId != "")
+    on UniqueTokenId 
+  ```
 
 ### Configure Diagnostic settings
 
@@ -109,11 +125,8 @@ The following example is sending the enriched logs to a Log Analytics workspace,
 
 :::image type="content" source="media/how-to-view-enriched-logs/diagnostic-settings-enriched-logs.png" alt-text="Screenshot of the Microsoft Entra diagnostic settings, with the enriched logs and Log Analytics options highlighted." lightbox="media/how-to-view-enriched-logs/diagnostic-settings-enriched-logs.png":::
 
-
-
 ## Next steps
 
 - [Explore the Global Secure Access logs and monitoring options](concept-global-secure-access-logs-monitoring.md)
 - [Learn about Global Secure Access audit logs (preview)](how-to-access-audit-logs.md)
 - [Enriched Microsoft 365 audit logs](reference-event-enrichment-logs.md)
-
