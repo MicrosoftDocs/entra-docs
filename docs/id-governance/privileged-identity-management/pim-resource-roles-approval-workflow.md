@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
-ms.date: 09/14/2023
+ms.date: 12/13/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
 ms.custom: pim
@@ -16,7 +16,7 @@ ms.custom: pim
 
 # Approve or deny requests for Azure resource roles in Privileged Identity Management
 
-Microsoft Entra Privileged Identity Management (PIM) enables you to configure roles so that they require approval for activation, and choose users or groups from your Microsoft Entra organization as delegated approvers. We recommend selecting two or more approvers for each role to reduce workload for the Privileged Role Administrator. Delegated approvers have 24 hours to approve requests. If a request isn't approved within 24 hours, then the eligible user must re-submit a new request. The 24 hour approval time window isn't configurable.
+Microsoft Entra Privileged Identity Management (PIM) enables you to configure roles so that they require approval for activation, and choose users or groups from your Microsoft Entra organization as delegated approvers. We recommend selecting two or more approvers for each role to reduce workload for the Privileged Role Administrator. Delegated approvers have 24 hours to approve requests. If a request isn't approved within 24 hours, then the eligible user must resubmit a new request. The 24 hour approval time window isn't configurable.
 
 Follow the steps in this article to approve or deny requests for Azure resource roles.
 
@@ -30,7 +30,7 @@ As a delegated approver, you receive an email notification when an Azure resourc
 
 1. Browse to **Identity governance** > **Privileged Identity Management** > **Approve requests**.
 
-    :::image type="content" source="./media/pim-resource-roles-approval-workflow/resources-approve-requests.png" alt-text="Screenshot of the Approve requests - Azure resources page showing request to review.":::
+    :::image type="content" source="./media/pim-resource-roles-approval-workflow/resources-approve-requests.png" alt-text="Screenshot of the **Approve requests - Azure resources page** showing request to review.":::
 
     In the **Requests for role activations** section, you see a list of requests pending your approval.
 
@@ -39,10 +39,10 @@ As a delegated approver, you receive an email notification when an Azure resourc
 
  1. Find and select the request that you want to approve. An approve or deny page appears.     
  2. In the **Justification** box, enter the business justification.
- 3. Select **Approve**. You will receive an Azure notification of your approval.
+ 3. Select **Approve**. You receive an Azure notification of your approval.
 
 
-## Approve pending requests using Microsoft ARM API
+## Approve pending requests using Microsoft Azure Resource Manager API
 
 >[!NOTE]
 > Approval for **extend and renew** requests is currently not supported by the Microsoft ARM API

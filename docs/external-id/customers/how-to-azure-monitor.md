@@ -5,7 +5,7 @@ description: Learn how to set up Azure Monitor in external tenants to collect an
 author: csmulligan
 manager: celestedg
 ms.service: entra-external-id 
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to 
 ms.date:  09/16/2024
 ms.author: cmulligan

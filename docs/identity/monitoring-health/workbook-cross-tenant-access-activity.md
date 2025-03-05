@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 09/27/2024
+ms.date: 11/04/2024
 ms.author: sarahlipsey
 
 #Customer intent: As an IT admin, I need to use the cross-tenant access activity workbook to monitor the resources my external users are accessing so I can ensure that my cross-tenant policies are working as expected.
@@ -28,7 +28,7 @@ This article provides you with an overview of the **Cross-tenant access activity
 
 ![Image showing this workbook is found under the Usage category](./media/workbook-cross-tenant-access-activity/workbook-category.png)
 
-Tenant administrators who are making changes to policies governing cross-tenant access can use this workbook to visualize and review existing access activity patterns before making policy changes. For example, you can identify the apps your users are accessing in external organizations so that you don't inadvertently block critical business processes. Understanding how external users access resources in your tenant (inbound access) and how users in your tenant access resources in external tenants (outbound access) helps ensure you have the right cross-tenant policies in place.
+Tenant administrators who are making changes to policies governing cross-tenant access can use this workbook to visualize and review existing access activity patterns before making policy changes. For example, you can identify the applications your users are accessing in external organizations so that you don't inadvertently block critical business processes. Understanding how external users access resources in your tenant (inbound access) and how users in your tenant access resources in external tenants (outbound access) help ensure you have the right cross-tenant policies in place.
 
 For more information, see the [Microsoft Entra External ID documentation](~/external-id/index.yml).
 
@@ -56,7 +56,7 @@ The total number of external tenants that had cross-tenant access activity with 
 
 ![Screenshot of the first section of the workbook.](./media/workbook-cross-tenant-access-activity/cross-tenant-activity-top.png)
 
-The **External Tenant** list shows all the tenants that have had inbound or outbound activity with your tenant. When you select an external tenant in the table, the sections after the table display information about outbound and inbound activity for that tenant.
+The **External Tenant** list shows all the tenants that had inbound or outbound activity with your tenant. When you select an external tenant in the table, the sections after the table display information about outbound and inbound activity for that tenant.
 
 ![Screenshot of the external tenant list.](./media/workbook-cross-tenant-access-activity/cross-tenant-activity-external-tenant-list.png)
 
@@ -91,3 +91,8 @@ Use this workbook to:
 - Identify all inbound sign-ins from external Microsoft Entra organizations
 
 - Identify all outbound sign-ins by your users to external Microsoft Entra organizations
+
+## Related content
+
+- [How to use the identity workbooks](howto-use-workbooks.md)
+- [Introduction to Microsoft Entra External ID](../../external-id/external-identities-overview.md)

@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud'
+title: Microsoft Entra SSO integration with Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud
 description: Learn how to configure single sign-on between Microsoft Entra ID and Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Splunk Enterprise and Splunk Cloud so that I can control who has access to Splunk Enterprise and Splunk Cloud, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud
+# Microsoft Entra SSO integration with Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud
 
-In this tutorial, you'll learn how to integrate Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud with Microsoft Entra ID. When you integrate Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud with Microsoft Entra ID. When you integrate Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud.
 * Enable your users to be automatically signed in to Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud supports **SP** initiated SSO.
 
@@ -121,8 +121,14 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 1. In the app's overview page, select **Users and groups**.
 1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
    1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. If you are expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-   1. In the **Add Assignment** dialog, click the **Assign** button.
+   1. In the Microsoft Entra admin center, navigate to **Identity** > **Groups** > **New group**.
+   1. Enter the group name, such as SplunkUsers.
+   1. Under Group type, select Security.
+   1. Add the test user (e.g., B.Simon) to this group.
+   1. Save the group.
+1. Next, assign the group to the Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud application:
+    1. Navigate to the application's Users and Groups page.
+    1. Click Add user/group, select the group created (e.g., SplunkUsers), and assign it to the application.
 
 <a name='configure-azure-ad-sso-for-splunk-enterprise-and-splunk-cloud-sso'></a>
 
@@ -146,7 +152,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     b. In the **Entity ID** field, enter the **Identifier** value, which you copied previously.
 
-    c. Check the **Verify SAML response** checkbox.This will be a requirement moving forward in Splunk Cloud for security best practices, so please make sure this is checked.
+    c. Check the **Verify SAML response** checkbox if not already selected. Note that this step is now mandatory for all Splunk Cloud integrations to ensure secure communication between Microsoft Entra and Splunk.
 
 1. Scroll down within the configuration dialogue and click on the **Alias** section. Enter the following values in each attribute:
 
@@ -170,7 +176,10 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Click on the green **New Group** button in the upper right hand corner of the SAML Groups configuration screen in Splunk.
 
-1. In the **Create new SAML Group** configuration dialogue, paste in the first Object ID into the **Group Name** field. Then choose one or more **Splunk Roles** that you wish to map to users that are assigned to that group from the **Available Item(s)** box; the items you choose will populate over into the **Selected Item(s)** box. Click the green **Save** button once finished.
+1. In the **Create new SAML Group** configuration dialogue, Paste the Microsoft Entra Group Object ID (not the application or user Object ID) into the Group Name field. To find the Group Object ID:
+    1. Navigate to **Identity** > **Groups** in the Microsoft Entra admin center.
+    1. Select the group created for Splunk (e.g., SplunkUsers).
+    1. Copy the Object ID from the group’s overview page.
 
 <a name='create-azure-ad-sso-for-splunk-enterprise-and-splunk-cloud-test-user'></a>
 
@@ -188,6 +197,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud tile in the My Apps, this will redirect to Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

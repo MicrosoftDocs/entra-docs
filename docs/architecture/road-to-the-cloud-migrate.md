@@ -254,7 +254,7 @@ In the most preferred approach, you undertake projects to migrate from legacy ap
 
 >[!NOTE]
 >* Use Microsoft Entra Domain Services if the dependencies are aligned with [common deployment scenarios for Microsoft Entra Domain Services](/entra/identity/domain-services/scenarios). 
->* To validate if Microsoft Entra Domain Services is a good fit, you might use tools like [Service Map in Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.ServiceMapOMS?tab=Overview) and [automatic dependency mapping with Service Map and Live Maps](https://techcommunity.microsoft.com/t5/system-center-blog/automatic-dependency-mapping-with-service-map-and-live-maps/ba-p/351867).
+>* To validate if Microsoft Entra Domain Services is a good fit, you might use tools like Azure Monitor VM insights [https://learn.microsoft.com/azure/azure-monitor/vm/vminsights-overview]. 
 >* Validate that your SQL Server instantiations can be [migrated to a different domain](https://social.technet.microsoft.com/wiki/contents/articles/24960.migrating-sql-server-to-new-domain.aspx). If your SQL service is running in virtual machines, [use this guidance](/azure/azure-sql/migration-guides/virtual-machines/sql-server-to-sql-on-azure-vm-individual-databases-guide).
 
 #### Approach 2

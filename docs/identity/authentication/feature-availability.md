@@ -6,7 +6,7 @@ description: Learn which Microsoft Entra features are available in Azure Governm
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 04/13/2023
+ms.date: 01/06/2025
 
 
 ms.author: justinha
@@ -68,6 +68,7 @@ This following tables list Microsoft Entra feature availability in Azure Governm
 || Access certifications and reviews | &#x2705; |
 || Entitlement management | &#x2705; |
 || Privileged Identity Management (PIM), just-in-time access |  &#x2705; |
+|| Lifecycle workflows (LCW) |  &#x2705; |
 |**Event logging and reporting**|Basic security and usage reports | &#x2705; |
 || Advanced security and usage reports | &#x2705; |
 || ID Protection: vulnerabilities and risky accounts | &#x2705; |
@@ -109,6 +110,7 @@ This following tables list Microsoft Entra feature availability in Azure Governm
 |Workday Writeback | &#x2705; |
 |SuccessFactors to Microsoft Entra user provisioning | &#x2705; | 
 |SuccessFactors to Writeback | &#x2705; |
+|API-driven inbound provisioning | &#10060; |
 |Provisioning agent configuration and registration with Gov cloud tenant| Works with special undocumented command-line invocation:<br> `AADConnectProvisioningAgent.Installer.exe ENVIRONMENTNAME=AzureUSGovernment` |
 
 ## Other Microsoft Entra products

@@ -10,7 +10,7 @@ ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 12/19/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 

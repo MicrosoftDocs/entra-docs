@@ -49,7 +49,7 @@ Sign-in frequency (SIF) works with third-party SAML applications and apps that i
 
 ### User sign-in frequency and multifactor authentication
 
-Sign-in frequency previously applied to only to the first factor authentication on devices that were Microsoft Entra joined, Microsoft Entra hybrid joined, and Microsoft Entra registered. There was no easy way for our customers to re-enforce multifactor authentication on those devices. Based on customer feedback, sign-in frequency applies for MFA as well.
+Sign-in frequency previously applied only to the first factor authentication on devices that were Microsoft Entra joined, Microsoft Entra hybrid joined, and Microsoft Entra registered. There was no easy way for our customers to re-enforce multifactor authentication on those devices. Based on customer feedback, sign-in frequency applies for MFA as well.
 
 [![A diagram showing how Sign in frequency and MFA work together.](media/howto-conditional-access-session-lifetime/conditional-access-flow-chart.png)](media/howto-conditional-access-session-lifetime/conditional-access-flow-chart.png#lightbox)
 
@@ -107,7 +107,7 @@ Sign-in frequency set to **every time** works best when the resource has the log
 Administrators should limit the number of applications they enforce a policy requiring users to reauthenticate every time with. We factor for five minutes of clock skew when every time is selected in policy, so that we don’t prompt users more often than once every five minutes. Triggering reauthentication too frequently can increase security friction to a point that it causes users to experience MFA fatigue and open the door to phishing attempts. Web applications usually provide a less disruptive experience than their desktop counterparts when require reauthentication every time is enabled.
 
 * For applications in the Microsoft 365 stack, we recommend using [time-based user sign-in frequency](#user-sign-in-frequency) for a better user experience.
-* For the Azure portal and the Microsoft Entra admin center, we recommend either using [time-bassed user sign-in frequency](#user-sign-in-frequency) or to [require reauthentication on PIM activation](../../id-governance/privileged-identity-management/pim-how-to-change-default-settings.md#on-activation-require-microsoft-entra-conditional-access-authentication-context) using authentication context for a better user experience.
+* For the Azure portal and the Microsoft Entra admin center, we recommend either using [time-based user sign-in frequency](#user-sign-in-frequency) or to [require reauthentication on PIM activation](../../id-governance/privileged-identity-management/pim-how-to-change-default-settings.md#on-activation-require-microsoft-entra-conditional-access-authentication-context) using authentication context for a better user experience.
 
 Generally available supported scenarios:
 

@@ -9,18 +9,15 @@ ms.service: identity-platform
 ms.topic: include
 ---
 
-#### [Windows](#tab/windows)
+* For **Windows**, run the following commands:    
 
-```Cmd
+```console
 py -m venv .venv
 .venv\scripts\activate
-```
+```    
+* For **macOS/Linux**, run the following commands:    
 
-#### [macOS/Linux](#tab/mac-linux)
-
-```Bash
+```console
 python3 -m venv .venv
 source .venv/bin/activate
 ```
-
----

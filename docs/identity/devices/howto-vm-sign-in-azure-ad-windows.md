@@ -5,7 +5,7 @@ description: Learn how to sign in to an Azure VM that's running Windows by using
 ms.service: entra-id
 ms.subservice: devices
 ms.topic: how-to
-ms.date: 01/05/2024
+ms.date: 10/21/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -36,7 +36,7 @@ There are many security benefits of using Microsoft Entra ID-based authenticatio
   MDM autoenrollment requires Microsoft Entra ID P1 licenses. Windows Server VMs don't support MDM enrollment.
 
 > [!NOTE]
-> After you enable this capability, your Windows VMs in Azure will be Microsoft Entra joined. You cannot join them to another domain, like on-premises Active Directory or Microsoft Entra Domain Services. If you need to do so, disconnect the VM from Microsoft Entra ID by uninstalling the extension.
+> After you enable this capability, your Windows VMs in Azure will be Microsoft Entra joined. You cannot join them to another domain, like on-premises Active Directory or Microsoft Entra Domain Services. If you need to do so, disconnect the VM from Microsoft Entra ID by uninstalling the extension. In addition, if you deploy a supported golden image, be aware that you can enable Entra ID authentication installing after the deployment the dedicated extension.
 
 ## Requirements
 
@@ -252,8 +252,8 @@ To use passwordless authentication for your Windows VMs in Azure, you need the W
 - Windows 10, version 20H2 or later with [2022-10 Cumulative Updates for Windows 10 (KB5018410)](https://support.microsoft.com/kb/KB5018410) or later installed.
 - Windows Server 2022 with [2022-10 Cumulative Update for Microsoft server operating system (KB5018421)](https://support.microsoft.com/kb/KB5018421) or later installed.
 
-> [!IMPORTANT]
-> The Windows client machine is required to be either Microsoft Entra registered, or Microsoft Entra joined or Microsoft Entra hybrid joined to the *same* directory as the VM. Additionally, to RDP by using Microsoft Entra credentials, users must belong to one of the two Azure roles, Virtual Machine Administrator Login or Virtual Machine User Login. This requirement doesn't exist for [passwordless sign-in](#log-in-using-passwordless-authentication-with-microsoft-entra-id).
+> [!Note]
+> When using the **web account to sign in to the remote computer** option, there is no requirement for the local device to be joined to a domain or Microsoft Entra ID.
 
 To connect to the remote computer:
 
@@ -261,8 +261,8 @@ To connect to the remote computer:
 - Select **Use a web account to sign in to the remote computer** option in the **Advanced** tab. This option is equivalent to the `enablerdsaadauth` RDP property. For more information, see [Supported RDP properties with Remote Desktop Services](/windows-server/remote/remote-desktop-services/clients/rdp-files).
 - Specify the name of the remote computer and select **Connect**.
 
-> [!NOTE]
-> IP address cannot be used when **Use a web account to sign in to the remote computer** option is used.
+> [!IMPORTANT]
+> IP address cannot be used with **Use a web account to sign in to the remote computer** option.
 > The name must match the hostname of the remote device in Microsoft Entra ID and be network addressable, resolving to the IP address of the remote device.
 
 - When prompted for credentials, specify your user name in `user@domain.com` format.
@@ -467,6 +467,21 @@ If the Microsoft Azure Windows Virtual Machine Sign-in application is missing fr
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Remove the filters to see all applications, and search for **VM**. If you don't see **Microsoft Azure Windows Virtual Machine Sign-in** as a result, the service principal is missing from the tenant.
+
+
+Another way to verify it is via Graph PowerShell:
+
+1. [Install the Graph PowerShell SDK](/powershell/microsoftgraph/installation) if you haven't already done so.
+1. Run `Connect-MgGraph -Scopes "ServicePrincipalEndpoint.ReadWrite.All"`, followed by `"Application.ReadWrite.All"`.
+1. Sign in with a Global Administrator account.
+1. Consent to the permission prompt.
+1. Run `Get-MgServicePrincipal -ConsistencyLevel eventual -Search '"DisplayName:Azure Windows VM Sign-In"'`.
+   - If this command results in no output and returns you to the PowerShell prompt, you can create the service principal with the following Graph PowerShell command:
+
+      `New-MgServicePrincipal -AppId 372140e0-b3b7-4226-8ef9-d57986796201`
+   - Successful output shows that the Microsoft Azure Windows Virtual Machine Sign-in app and its ID were created.
+1. Sign out of Graph PowerShell by using the `Disconnect-MgGraph` command.
+
 
 > [!TIP]
 > Some tenants might see the application named Azure Windows VM Sign-in instead of Microsoft Azure Windows Virtual Machine Sign-in. The application will have the same Application ID of 372140e0-b3b7-4226-8ef9-d57986796201.

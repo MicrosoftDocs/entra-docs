@@ -6,7 +6,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.topic: tutorial
-ms.date: 04/26/2024
+ms.date: 12/17/2024
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 
@@ -123,16 +123,24 @@ To create two groups, follow these steps.
 
 > [!TIP]
 > In this scenario we are going to create a custom extension attribute called `WritebackEnabled` to be used in Microsoft Entra Cloud Sync scoping filter, so that only groups with WritebackEnabled set to True are written back to On-premises Active Directory, similarly to the [Writeback enabled flag in Microsoft Entra admin center](../../users/groups-write-back-portal.md).
-1. Get the CloudSyncCustomExtensionsApp application:
+
+1. Get the Tenant ID:
 
    ```powershell
+   $tenantId = (Get-MgOrganization).Id
+   $tenantId
+   ```
+
+1. Get the CloudSyncCustomExtensionsApp application:
+
+      ```powershell
    $cloudSyncCustomExtApp = Get-MgApplication -Filter "identifierUris/any(uri:uri eq 'api://$tenantId/CloudSyncCustomExtensionsApp')"
    ```
 
 1. Now, under the CloudSyncCustomExtensionApp, create the custom extension attribute called "WritebackEnabled" and assign it to Group objects:
 
    ```powershell
-   New-MgApplicationExtensionProperty -Id $cloudSyncCustomExtApp.Id -ApplicationId $cloudSyncCustomExtApp.Id -Name 'WritebackEnabled' -DataType 'Boolean' -TargetObjects 'Group'
+   New-MgApplicationExtensionProperty -ApplicationId $cloudSyncCustomExtApp.Id -Name 'WritebackEnabled' -DataType 'Boolean' -TargetObjects 'Group'
    ```
  
 1. This cmdlet creates an extension attribute that looks like extension_&lt;guid&gt;_WritebackEnabled.
@@ -179,7 +187,20 @@ For this portion, we're going add a value on our newly created property to one o
 
 ### Set the extension property value using Microsoft Graph PowerShell SDK
 
-1. Use the `$cloudSyncCustomExtApp` variable from the previous step to get our extension property:
+1. Get the Tenant ID:
+
+   ```powershell
+   $tenantId = (Get-MgOrganization).Id
+   $tenantId
+   ```
+
+1. Get the CloudSyncCustomExtensionsApp application:
+
+      ```powershell
+   $cloudSyncCustomExtApp = Get-MgApplication -Filter "identifierUris/any(uri:uri eq 'api://$tenantId/CloudSyncCustomExtensionsApp')"
+   ```
+
+1. Get our extension property:
 
    ```powershell
    $gwbEnabledExtAttrib = Get-MgApplicationExtensionProperty -ApplicationId $cloudSyncCustomExtApp.Id | 
@@ -255,3 +276,4 @@ You need to make sure that you have consented to `Group.ReadWrite.All`. You can 
 - [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](govern-on-premises-groups.md)
 
 - [Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync](migrate-group-writeback.md)
+

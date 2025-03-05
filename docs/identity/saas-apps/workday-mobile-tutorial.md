@@ -1,21 +1,21 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Workday Mobile Application'
+title: Microsoft Entra single sign-on (SSO) integration with Workday Mobile Application
 description: Learn how to configure single sign-on between Microsoft Entra ID and Workday Mobile Application.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Workday Mobile Application
+# Microsoft Entra single sign-on (SSO) integration with Workday Mobile Application
 
-In this tutorial, you’ll learn how to integrate Microsoft Entra ID, Conditional Access, and Intune with Workday Mobile Application. When you integrate Workday Mobile Application with Microsoft, you can:
+In this article,  you’ll learn how to integrate Microsoft Entra ID, Conditional Access, and Intune with Workday Mobile Application. When you integrate Workday Mobile Application with Microsoft, you can:
 
 * Ensure that devices are compliant with your policies prior to sign-in.
 * Add controls to Workday Mobile Application to ensure that users are securely accessing corporate data. 
@@ -32,7 +32,7 @@ To get started:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra Conditional Access policies and Intune with Workday Mobile Application.
+In this article,  you configure and test Microsoft Entra Conditional Access policies and Intune with Workday Mobile Application.
 
 For enabling single sign-on (SSO), you can configure Workday Federated application with Microsoft Entra ID. For more information, see [Microsoft Entra single sign-on (SSO) integration with Workday](./workday-tutorial.md).
 
@@ -85,7 +85,7 @@ To set up Workday as a managed device, perform the following steps:
 
     1. Switch **Select what this policy applies to** to **Cloud apps**.
 
-    1. In **Include**, choose **Select apps**.
+    1. In **Include**, choose **Select resources**.
 
     1. From the **Select** list, choose **Workday**.
 
@@ -96,8 +96,6 @@ To set up Workday as a managed device, perform the following steps:
 1. Select **Save**.
 
 For **Grant** access, perform the following steps:
-
-![Screenshot of Managed Devices Only and Grant.](./media/workday-tutorial/managed-devices-only-2.png)
 
 1. Select **Home** > **Microsoft Intune** > **Conditional Access-Policies**. Then select **Managed Devices Only**. 
 

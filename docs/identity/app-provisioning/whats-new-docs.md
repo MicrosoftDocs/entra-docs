@@ -1,7 +1,7 @@
 ---
 title: "What's new in Azure Active Directory application provisioning"
 description: "New and updated documentation for the Azure Active Directory application provisioning."
-ms.date: 09/15/2023
+ms.date: 03/04/2025
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: whats-new

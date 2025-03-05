@@ -83,7 +83,6 @@ This tutorial uses Guided Configuration 16.1 with an Easy Button template. With 
 
 ## Register Easy Button
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Before a client or service accesses Microsoft Graph, the Microsoft identity platform must trust it. 
 
@@ -140,9 +139,7 @@ The **Configuration Properties** tab has service account properties and creates 
 3. For **Tenant ID, Client ID,** and **Client Secret**, enter the Tenant ID, Client ID, and Client Secret you noted during tenant registration.
 4. Select **Test Connection**. This action confirms the BIG-IP connects to your tenant.
 5. Select **Next**.
-
-   ![Screenshot of options and selections for Configuration Properties.](./media/f5-big-ip-easy-button-sap-erp/configuration-general-and-service-account-properties.png)
-   
+  
 ### Service Provider
 
 Use the Service Provider settings to define SAML SP instance properties of the application secured by SHA.

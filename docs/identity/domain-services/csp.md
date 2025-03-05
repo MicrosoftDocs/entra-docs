@@ -7,7 +7,7 @@ ms.assetid: 56ccb219-11b2-4e43-9f07-5a76e3cd8da8
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: conceptual
-ms.date: 09/15/2023
+ms.date: 01/21/2025
 ms.author: justinha
 ---
 # Microsoft Entra Domain Services deployment and management for Azure Cloud Solution Providers
@@ -50,8 +50,9 @@ There are two ways in which you can use Domain Services with an Azure CSP subscr
 
 In this deployment model, Domain Services is enabled within a virtual network that belongs to the Azure CSP subscription. The CSP partner's admin agents have the following privileges:
 
-* *Global Administrator* privileges in the customer's Microsoft Entra tenant.
-* *Subscription owner* privileges on the Azure CSP subscription.
+A [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) is needed to manage this feature.
+
+Subscription owner privileges on the Azure CSP subscription are required for this feature.
 
 ![Direct deployment model](./media/csp/csp_direct_deployment_model.png)
 
@@ -67,7 +68,7 @@ With this deployment, the workloads or applications deployed by the CSP partner 
 
 ![Peered deployment model](./media/csp/csp_peered_deployment_model.png)
 
-This deployment model provides a separation of privileges and enables the CSP partner's helpdesk agents to administer the Azure subscription and deploy and manage resources within it. However, the CSP partner's helpdesk agents don't need to have Global Administrator privileges on the customer's Microsoft Entra directory. The customer's identity administrators can continue to manage identities for their organization.
+This deployment model provides a separation of privileges and enables the CSP partner's helpdesk agents to administer the Azure subscription and deploy and manage resources within it. However, the CSP partner's helpdesk agents don't need a highly privileged role in the customer's Microsoft Entra directory. The customer's identity administrators can continue to manage identities for their organization.
 
 This deployment model may be suited to scenarios where an ISV provides a hosted version of their on-premises application, which also needs to connect to the customer's Microsoft Entra ID.
 

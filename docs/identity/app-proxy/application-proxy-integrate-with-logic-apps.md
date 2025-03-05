@@ -5,7 +5,7 @@ author: kenwith
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
-ms.date: 09/19/2024
+ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: kfriedemann
 ms.custom:
@@ -56,8 +56,6 @@ When a new Enterprise Application is created, a matching App Registration is als
     > If an associated application can't be found, it may have not been automatically created or may have been deleted. A registration can be created using the **New Registration** button.
 
 1. From the *Sample App 1* detail page, record the *Application (client) ID* and *Directory (tenant) ID* fields.
-
-    ![Screenshot of the Microsoft Entra App Registration Detail.](./media/application-proxy-integrate-with-logic-apps/app-registration-detail.png)
 
 1. Select the **API permissions** menu item from the navigation pane.
 

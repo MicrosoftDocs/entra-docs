@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 02/23/2022
+ms.date: 11/21/2024
 ms.author: jfields
 ---
 
@@ -15,6 +15,7 @@ ms.author: jfields
 This article describes the usage of the **Permissions Management Tasks** pane in Permissions Management.
 
 ## Display active and completed tasks
+You can display both active and completed tasks in Permissions Management. This section will show you how to access the Tasks pane, view details about active and completed tasks, and understand the status of each task.
 
 1. In the Permissions Management home page, select **Tasks** (the timer icon).
 

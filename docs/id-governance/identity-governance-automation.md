@@ -5,13 +5,15 @@ author: owinfreyATL
 manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: how-to
-ms.date: 9/20/2022
+ms.date: 11/25/2024
 ms.author: owinfrey
 ms.custom:
 ---
 # Automate Microsoft Entra ID Governance tasks via Azure Automation and Microsoft Graph
 
-[Azure Automation](/azure/automation/overview) is an Azure cloud service that allows you to automate common or repetitive systems management and processes. Microsoft Graph is the Microsoft unified API endpoint for Microsoft Entra features that manage users, groups, access packages, access reviews, and other resources in the directory. You can manage Microsoft Entra ID at scale from the PowerShell command line, using the [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/get-started). You can also include the Microsoft Graph PowerShell cmdlets from a [PowerShell-based runbook in Azure Automation](/azure/automation/automation-intro), so that you can automate Microsoft Entra tasks from a simple script.
+[Azure Automation](/azure/automation/overview) is an Azure cloud service that allows you to automate common or repetitive systems management and processes. Microsoft Graph is the Microsoft unified API endpoint for Microsoft Entra features that manage users, groups, access packages, access reviews, and other resources in the directory. 
+
+You can manage Microsoft Entra ID at scale from the PowerShell command line, using the [Microsoft Graph PowerShell SDK](/powershell/microsoftgraph/get-started). You can also include the Microsoft Graph PowerShell cmdlets from a [PowerShell-based runbook in Azure Automation](/azure/automation/automation-intro), so that you can automate Microsoft Entra tasks from a simple script.
 
 Azure Automation and the PowerShell Graph SDK supports certificate-based authentication and application permissions, so you can have Azure Automation runbooks authenticate to Microsoft Entra ID without needing a user context.
 
@@ -19,7 +21,6 @@ This article shows you how to get started using Azure Automation for Microsoft E
 
 ## Create an Azure Automation account
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 Azure Automation provides a cloud-hosted environment for [runbook execution](/azure/automation/automation-runbook-execution). Those runbooks can start automatically based on a schedule, or be triggered by webhooks or by Logic Apps.
 

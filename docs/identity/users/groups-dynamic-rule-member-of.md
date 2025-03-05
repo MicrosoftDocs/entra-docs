@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: conceptual
-ms.date: 08/20/2024
+ms.date: 12/30/2024
 ms.author: billmath
 ms.reviewer: krbain
 ms.custom: it-pro

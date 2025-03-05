@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with AWS Single-Account Access'
+title: Microsoft Entra SSO integration with AWS Single-Account Access
 description: Learn how to configure single sign-on between Microsoft Entra ID and AWS Single-Account Access.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and AWS Single-Account Access so that I can control who has access to AWS Single-Account Access, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with AWS Single-Account Access
+# Microsoft Entra SSO integration with AWS Single-Account Access
 
-In this tutorial, you learn how to integrate AWS Single-Account Access with Microsoft Entra ID. When you integrate AWS Single-Account Access with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate AWS Single-Account Access with Microsoft Entra ID. When you integrate AWS Single-Account Access with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to AWS Single-Account Access.
 * Enable your users to be automatically signed-in to AWS Single-Account Access with their Microsoft Entra accounts.
@@ -80,7 +80,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * AWS Single-Account Access supports **SP and IDP** initiated SSO.
 
@@ -96,9 +96,7 @@ To configure the integration of AWS Single-Account Access into Microsoft Entra I
 1. In the **Add from the gallery** section, type **AWS Single-Account Access** in the search box.
 1. Select **AWS Single-Account Access** from results panel and then add the app. Wait a few seconds while the app is added to your tenant.
 
- Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. [Learn more about Microsoft 365 wizards.](/microsoft-365/admin/misc/azure-ad-setup-guides)
-
-Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. You can learn more about O365 wizards [here](/microsoft-365/admin/misc/azure-ad-setup-guides?view=o365-worldwide&preserve-view=true).
+ Alternatively, you can also use the [Enterprise App Configuration Wizard](https://portal.office.com/AdminPortal/home?Q=Docs#/azureadappintegration). In this wizard, you can add an application to your tenant, add users/groups to the app, assign roles, and walk through the SSO configuration as well. You can learn more about Microsoft 365 wizards [here](/microsoft-365/admin/misc/azure-ad-setup-guides).
 
 <a name='configure-and-test-azure-ad-sso-for-aws-single-account-access'></a>
 
@@ -154,11 +152,10 @@ Follow these steps to enable Microsoft Entra SSO.
    
     ![Screenshot showing New SAML Certificate.](common/new-saml-certificate.png) 
 
+1. (Optional) You can select **Make certificate active**.
 1. In the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
-    ![Screenshot showing the Certificate download link.](./media/amazon-web-service-tutorial/certificate.png)
-
-1. In the **Set up AWS Single-Account Access** section, copy the appropriate URL(s) based on your requirement.
+ 1. In the **Set up AWS Single-Account Access** section, copy the appropriate URL(s) based on your requirement.
 
     ![Screenshot showing Copy configuration URLs.](common/copy-configuration-urls.png)
 
@@ -328,7 +325,7 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
 
 
 > [!NOTE]
-> AWS has a set of permissions/limts are required to configure AWS SSO. To know more information on AWS limits, please refer [this](https://docs.aws.amazon.com/singlesignon/latest/userguide/limits.html) page.
+> AWS has a set of permissions/limits are required to configure AWS SSO. To know more information on AWS limits, please refer [this](https://docs.aws.amazon.com/singlesignon/latest/userguide/limits.html) page.
 
 ### How to configure role provisioning in AWS Single-Account Access
 
@@ -401,7 +398,7 @@ You can also use Microsoft My Apps to test the application in any mode. When you
 
 * 01/12/2020 - Increased role length limit from 119 characters to 239 characters.
 
-## Next steps
+## Related content
 
 Once you configure AWS Single-Account Access you can enforce Session Control, which protects exfiltration and infiltration of your organization's sensitive data in real time. Session Control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
 

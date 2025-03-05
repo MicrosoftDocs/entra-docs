@@ -44,10 +44,11 @@ To request a user authentication, cloud services send an `AuthnRequest` element 
 | `Version` | Required | This parameter should be set to `2.0`. |
 | `IssueInstant` | Required | This is a DateTime string with a UTC value and [round-trip format ("o")](/dotnet/standard/base-types/standard-date-and-time-format-strings). Microsoft Entra ID expects a DateTime value of this type, but doesn't evaluate or use the value. |
 | `AssertionConsumerServiceURL` | Optional | If provided, this parameter must match the `RedirectUri` of the cloud service in Microsoft Entra ID. |
+| `AssertionConsumerServiceIndex` | Optional | If provided, the Microsoft Entra ID sends a request to the `RedirectUri` with the corresponding index configured under application Basic SAML Configuration. NOTE: per SAML specifications, the `AssertionConsumerServiceURL` and `AssertionConsumerServiceIndex` parameters are mutually exclusive.  |
 | `ForceAuthn` | Optional | This is a boolean value. If true, it means that the user will be forced to reauthenticate, even if they have a valid session with Microsoft Entra ID. |
 | `IsPassive` | Optional | This is a boolean value that specifies whether Microsoft Entra ID should authenticate the user silently, without user interaction, using the session cookie if one exists. If this is true, Microsoft Entra ID attempts to authenticate the user using  the session cookie. |
 
-All other `AuthnRequest` attributes, such as `Consent`, `Destination`, `AssertionConsumerServiceIndex`, `AttributeConsumerServiceIndex`, and `ProviderName` are **ignored**.
+All other `AuthnRequest` attributes, such as `Consent`, `Destination`, and `ProviderName` are **ignored**.
 
 Microsoft Entra ID also ignores the `Conditions` element in `AuthnRequest`.
 
@@ -84,7 +85,28 @@ Microsoft Entra ID ignores the `AllowCreate` attribute.
 
 ### RequestedAuthnContext
 
-The `RequestedAuthnContext` element specifies the desired authentication methods. It's optional in `AuthnRequest` elements sent to Microsoft Entra ID. Microsoft Entra ID supports `AuthnContextClassRef` values such as `urn:oasis:names:tc:SAML:2.0:ac:classes:Password`.
+The `RequestedAuthnContext` element specifies the desired authentication methods. It's optional in `AuthnRequest` elements sent to Microsoft Entra ID. 
+
+> [!NOTE] 
+> If the `RequestedAuthnContext` is included in the SAML request, the `Comparison` element must be set to `exact`. 
+
+Microsoft Entra ID supports following `AuthnContextClassRef` values. 
+
+| Authentication method| Authentication context class URI |
+|---|---|
+|Kerberos|urn:oasis:names:tc:SAML:2.0:ac:classes:Kerberos|
+|User name and password|urn:oasis:names:tc:SAML:2.0:ac:classes:Password|
+|PGP Public Key Infrastructure|urn:oasis:names:tc:SAML:2.0:ac:classes:PGP|
+|Secure Remote Password|urn:oasis:names:tc:SAML:2.0:ac:classes:SecureRemotePassword|
+|XML Digital Signature|urn:oasis:names:tc:SAML:2.0:ac:classes:XMLDSig|
+|Simple public-key infrastructure|urn:oasis:names:tc:SAML:2.0:ac:classes:SPKI|
+|Smartcard|urn:oasis:names:tc:SAML:2.0:ac:classes:Smartcard|
+|Smartcard with enclosed private key and a PIN|urn:oasis:names:tc:SAML:2.0:ac:classes:SmartcardPKI|
+|Transport Layer Security (TLS) client|urn:oasis:names:tc:SAML:2.0:ac:classes:TLSClient|
+|Unspecified|urn:oasis:names:tc:SAML:2.0:ac:classes:Unspecified|
+|X.509 certificate|urn:oasis:names:tc:SAML:2.0:ac:classes:X509|
+|Integrated Windows authentication|urn:federation:authentication:windows|
+
 
 ### Scoping
 

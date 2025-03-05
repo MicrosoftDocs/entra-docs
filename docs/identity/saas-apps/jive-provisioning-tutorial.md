@@ -1,25 +1,25 @@
 ---
-title: 'Tutorial: Configure Jive for automatic user provisioning with Microsoft Entra ID'
+title: Configure Jive for automatic user provisioning with Microsoft Entra ID
 description: Learn the steps you need to perform in Jive and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Jive.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Jive so that I can streamline the user management process and ensure that users have the appropriate access to Jive.
 ---
-# Tutorial: Configure Jive for automatic user provisioning
+# Configure Jive for automatic user provisioning
 
-The objective of this tutorial is to show you the steps you need to perform in Jive and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Jive.
+The objective of this article is to show you the steps you need to perform in Jive and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Jive.
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following items:
+The scenario outlined in this article assumes that you already have the following items:
 
 *   A Microsoft Entra tenant.
 *   A Jive single-sign on enabled subscription.
@@ -59,8 +59,6 @@ As part of this procedure, you are required to provide a user security token you
 1. Select your instance of Jive, then select the **Provisioning** tab.
 
 1. Set the **Provisioning Mode** to **Automatic**. 
-
-    ![Screenshot shows the Jive Provisioning page, with Provisioning Mode set to Automatic and other values you can set.](./media/jive-provisioning-tutorial/provisioning.png)
 
 1. Under the **Admin Credentials** section, provide the following configuration settings:
    

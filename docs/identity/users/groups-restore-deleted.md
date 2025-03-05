@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: quickstart
-ms.date: 08/25/2024
+ms.date: 01/15/2025
 ms.author: barclayn
 ms.reviewer: krbain
 ms.custom: it-pro, mode-other, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
@@ -85,7 +85,7 @@ To verify that you successfully restored a Microsoft 365 group, run the `Get-MgB
 For more information on Microsoft Entra groups:
 
 * [See existing groups](~/fundamentals/groups-view-azure-portal.md)
-* [Manage settings of a group](~/fundamentals/how-to-manage-groups.yml)
-* [Manage members of a group](~/fundamentals/how-to-manage-groups.yml)
-* [Manage memberships of a group](~/fundamentals/how-to-manage-groups.yml)
+* [Manage settings of a group](/entra/fundamentals/how-to-manage-groups)
+* [Manage members of a group](/entra/fundamentals/how-to-manage-groups)
+* [Manage memberships of a group](/entra/fundamentals/how-to-manage-groups)
 * [Manage rules for dynamic membership groups](groups-dynamic-membership.md)

@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: conceptual
 ms.subservice: privileged-identity-management
-ms.date: 09/12/2023
+ms.date: 12/13/2024
 ms.author: barclayn
 ms.reviewer: ilyal
 ms.custom: pim
@@ -24,7 +24,6 @@ Follow the steps in this article to approve or deny requests for group membershi
 
 ## View pending requests
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 As a delegated approver, you receive an email notification when an Azure resource role request is pending your approval. You can view pending requests in Privileged Identity Management.
 

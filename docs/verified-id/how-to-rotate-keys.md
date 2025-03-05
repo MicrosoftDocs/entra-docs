@@ -7,7 +7,7 @@ manager: amycolannino
 ms.service: entra-verified-id
 ms.topic: how-to
 
-ms.date: 12/06/2023
+ms.date: 01/31/2025
 ms.author: barclayn
 
 #Customer intent: As an administrator, I'm looking for information on how to rotate signing keys.

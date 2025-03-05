@@ -1,9 +1,9 @@
 ---
 title: Troubleshoot publisher verification
 description: Describes how to troubleshoot publisher verification for the Microsoft identity platform by calling Microsoft Graph APIs.
-author: rwike77
 manager: CelesteDG
-ms.author: ryanwi
+author: garrodonnell
+ms.author: godonnell
 ms.date: 07/19/2024
 ms.service: identity-platform
 ms.topic: troubleshooting
@@ -48,8 +48,8 @@ Here are some common issues that may occur during the process of publisher verif
 - **I'm getting an error related to multi-factor authentication. What should I do?** 
     Ensure [multifactor authentication](~/identity/authentication/concept-mfa-licensing.md) is enabled and **required** for the user you're signing in with and for this scenario. For example, MFA could be:
     - Always required for the user you're signing in with.
-    - [Required for Azure management](~/identity/conditional-access/howto-conditional-access-policy-azure-management.md).
-    - [Required for the type of administrator](~/identity/conditional-access/howto-conditional-access-policy-admin-mfa.md) you're signing in with.
+    - [Required for Azure management](~/identity/conditional-access/policy-old-require-mfa-azure-mgmt.md).
+    - [Required for the type of administrator](~/identity/conditional-access/policy-old-require-mfa-admin.md) you're signing in with.
 
 ## Making Microsoft Graph API calls 
 
