@@ -6,21 +6,21 @@ ms.service: entra-verified-id
 author: barclayn
 manager: amycolannino
 ms.topic: how-to
-ms.date: 10/29/2024
+ms.date: 01/17/2025
 ms.author: barclayn
 ---
 
 # Microsoft Entra Verified ID Services and solution partners
 
-Our Services and solutions partner network extends and accelerates Microsoft Entra Verified ID adoption. Service partners offer advisory, implementation, integration and managed service capabilities that can help you build seamless end-user experiences using Verified ID.
+Our Services and solutions partner network extends and accelerates Microsoft Entra Verified ID adoption. Service partners offer advisory, implementation, integration, and managed service capabilities that can help you build seamless end-user experiences using Verified ID.
 
 ## Services and solution partner list
 
-You could select a partner from the list and build seamless end-user experiences for onboarding, secure access to critical services, self-service and custom business application scenarios. If you're a Services or solution Partner and would like to be considered into Microsoft Entra Verified ID partner documentation, submit your application [request](https://forms.microsoft.com/r/AGVsXmf4EZ).
+You could select a partner from the list and build seamless end-user experiences for onboarding, secure access to critical services, self-service, and custom business application scenarios. If you're a Services or solution Partner and would like to be considered into Microsoft Entra Verified ID partner documentation, submit your application [request](https://forms.microsoft.com/r/AGVsXmf4EZ).
 
 | Services and solution partner | Website |
 |:-------------------------|:--------------|
-| :::image type="content" source="media/services-partners/affinitiquest.png" alt-text="Screenshot of Affinitiquest logo."::: | [Secure Personally Identifiable Information | AffinitiQuest](https://affinitiquest.io/) |
+| :::image type="content" source="media/services-partners/affinitiquest.png" alt-text="Screenshot of Affinitiquest logo."::: | [Secure personal data | AffinitiQuest](https://affinitiquest.io/) |
 | :::image type="content" source="media/services-partners/avanade.png" alt-text="Screenshot of Avanade logo."::: | [Avanade Microsoft Entra Verified ID Consulting Services](https://appsource.microsoft.com/marketplace/consulting-services/avanadeinc.ava_entra_verified_id_fy23?exp=ubp8) |
 | :::image type="content" source="media/services-partners/binaria.png" alt-text="Screenshot of Binaria logo."::: | [Azure Marketplace offering - Binaria Key](https://azuremarketplace.microsoft.com/marketplace/apps/binariatechnologies1583779526579.binariakey?tab=Overview) |
 | :::image type="content" source="media/services-partners/credivera.png" alt-text="Screenshot of Credivera logo."::: | [Credivera: Digital Identity Solutions | Verifiable Credentials](https://www.credivera.com/) |

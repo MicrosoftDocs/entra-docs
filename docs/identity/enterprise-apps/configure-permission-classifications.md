@@ -35,7 +35,6 @@ To configure permission classifications, you need:
 
 :::zone pivot="portal"
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Follow these steps to classify permissions using the Microsoft Entra admin center:
 

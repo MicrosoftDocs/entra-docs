@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: faq
-ms.date: 10/21/2024
+ms.date: 02/21/2025
 ms.author: mimart
 ms.custom: it-pro
 ---
@@ -39,6 +39,17 @@ Yes, this feature is now available in workforce and [external](concept-multifact
 ### I linked my external tenant to a subscription, but the license status still shows "free"
 
 After you link your external tenant to a subscription, you can view it on your external tenant home page (**Home** > **Billing**). However, the license on your external tenant overview page (**Home** > **Tenant overview** > **Overview**) will still show **Microsoft Entra ID Free**. This is a known issue that we’re working to resolve.
+
+### Why does my Azure AD External Identities bill show phone charges named "Microsoft Entra External ID?"
+
+Following the new [billing model](https://azure.microsoft.com/pricing/details/active-directory-b2c/) for Azure AD External Identities SMS Phone Authentication, you may notice a new name for Phone MFA on your bill. Now you’ll see the following names based on your [country or region pricing tier](https://aka.ms/ExternalIDSMSCountries):
+
+- Microsoft Entra External ID - Phone Authentication Low Cost 1 Transaction
+- Microsoft Entra External ID - Phone Authentication Mid Low Cost 1 Transaction
+- Microsoft Entra External ID - Phone Authentication Mid High Cost 1 Transaction
+- Microsoft Entra External ID - Phone Authentication High Cost 1 Transaction
+
+Although the new bill mentions Microsoft Entra External ID, if you're an Azure AD External Identities customer, **you’re still billed for Azure AD B2B based on your core MAU count**. 
 
 ## About External ID
 
@@ -71,7 +82,7 @@ Get started with securing your consumer and business customer apps by [creating 
 
 ### What's happening to Azure AD B2C and Azure AD External Identities?
 
-Effective May 1, 2025 Azure AD External Identities P1 and P2 will no longer be available to purchase for new customers, but current Azure AD B2C customers can continue using the product. The product experience, including creating new tenants or user flows, will remain unchanged. The operational commitments, including service level agreements (SLAs), security updates, and compliance, will also remain unchanged. We'll continue supporting Azure AD External Identities until at least May  2030. More information, including migration plans will be made available. Contact your account representative for more information and to learn more about Microsoft Entra External ID.
+Effective May 1, 2025 Azure AD External Identities P1 and P2 will no longer be available to purchase for new customers, but current Azure AD B2C customers can continue using the product. The product experience, including creating new tenants or user flows, will remain unchanged. The operational commitments, including service level agreements (SLAs), security updates, and compliance, will also remain unchanged. We'll continue supporting Azure AD B2C until at least May  2030. More information, including migration plans will be made available. Contact your account representative for more information and to learn more about Microsoft Entra External ID.
 
 ### What's happening to Azure AD B2B collaboration and B2B direct connect?
 
@@ -93,7 +104,7 @@ Our next-generation CIAM platform is designed to accommodate equivalent capabili
 
 ### What identity providers does External ID support?
 
- External ID supports various identity providers, including Microsoft Entra accounts (via invite), Facebook, Google, custom OIDC, and SAML/WS-Fed identity provider federation. Identity providers are based on the tenant configuration and whether the external user is invited or uses self-service sign-up. [Learn more about identity providers](../identity-providers.md) in External ID, and refer to our [supported feature comparison](concept-supported-features-customers.md).
+ External ID supports various identity providers, including Microsoft Entra accounts (via invite), Facebook, Google, Apple, custom OIDC, and SAML/WS-Fed identity provider federation. Identity providers are based on the tenant configuration and whether the external user is invited or uses self-service sign-up. [Learn more about identity providers](../identity-providers.md) in External ID, and refer to our [supported feature comparison](concept-supported-features-customers.md).
 
 ### Where can I find a list of External ID features?
 

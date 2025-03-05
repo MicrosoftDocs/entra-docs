@@ -57,7 +57,6 @@ The custom banned password list is limited to a maximum of 1000 terms. It's not 
 
 ## Configure custom banned passwords
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Let's enable the custom banned password list and add some entries. You can add additional entries to the custom banned password list at any time.
 

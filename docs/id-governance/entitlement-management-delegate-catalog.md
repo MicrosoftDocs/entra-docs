@@ -32,7 +32,6 @@ If you have existing catalogs to delegate, then continue at the [create and mana
 
 ## As an IT administrator, delegate to a catalog creator
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 Follow these steps to assign a user to the catalog creator role.
 

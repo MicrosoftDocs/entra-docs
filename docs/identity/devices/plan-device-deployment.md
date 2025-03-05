@@ -100,7 +100,7 @@ iOS and Android devices are only Microsoft Entra registered. The following table
 | --- | :---: | :---: | :---: |
 | **Client operating systems** | | |  |
 | Windows 11 or Windows 10 devices | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) |
-| Linux Desktop - Ubuntu 20.04/22.04 | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | | | 
+| Linux Desktop - Ubuntu 20.04/22.04/24.04, RHEL 8/9 | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | | |
 |**Sign in options** | | |  |
 | End-user local credentials | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | |  |
 | Password | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) |
@@ -135,7 +135,7 @@ Users install the Company portal app to register BYOD and corporate owned mobile
 * [Android](/mem/intune/user-help/enroll-device-android-company-portal)
 * [Windows 10 or newer](/mem/intune/user-help/enroll-windows-10-device)
 * [macOS](/mem/intune/user-help/enroll-your-device-in-intune-macos-cp)
-* [Linux Desktop - Ubuntu 20.04/22.04](/mem/intune/user-help/enroll-device-linux)
+* [Linux Desktop](/mem/intune/user-help/enroll-device-linux)
 
 If registering your devices is the best option for your organization, see the following resources:
 
@@ -234,9 +234,9 @@ Review supported and unsupported platforms for integrated devices:
 
 | Device management tools | Microsoft Entra registered | Microsoft Entra joined | Microsoft Entra hybrid joined |
 | --- | :---: | :---: | :---: |
-| [Mobile Device Management (MDM)](/windows/client-management/azure-active-directory-integration-with-mdm) <br>Example: Microsoft Intune | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | 
-| [Co-management with Microsoft Intune and Microsoft Configuration Manager](/mem/configmgr/comanage/overview) <br>(Windows 10 or newer) | | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | 
-| [Group policy](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831791(v=ws.11))<br>(Windows only) | | | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | 
+| [Mobile Device Management (MDM)](/windows/client-management/azure-active-directory-integration-with-mdm) <br>Example: Microsoft Intune | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) |
+| [Co-management with Microsoft Intune and Microsoft Configuration Manager](/mem/configmgr/comanage/overview) <br>(Windows 10 or newer) | | ![Checkmark for these values.](./media/plan-device-deployment/check.png) | ![Checkmark for these values.](./media/plan-device-deployment/check.png) |
+| [Group policy](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831791(v=ws.11))<br>(Windows only) | | | ![Checkmark for these values.](./media/plan-device-deployment/check.png) |
 
 We recommend that you consider [Microsoft Intune Mobile Application management (MAM)](/mem/intune/apps/app-management) with or without device management for registered iOS or Android devices.
 

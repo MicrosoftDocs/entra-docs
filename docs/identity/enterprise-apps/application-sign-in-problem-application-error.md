@@ -32,7 +32,6 @@ If the error message doesn't clearly identify what's missing from the response, 
 - Use a tool like [Fiddler](https://www.telerik.com/fiddler) to capture the SAML request, response, and token.
 - Send the SAML response to the app vendor and ask them what's missing.
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ## Attributes are missing from the SAML response
 

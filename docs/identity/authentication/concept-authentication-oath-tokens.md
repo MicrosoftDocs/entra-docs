@@ -6,7 +6,7 @@ services: active-directory
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/15/2024
+ms.date: 01/03/2024
 
 ms.author: justinha
 author: justinha
@@ -51,17 +51,16 @@ Microsoft Entra ID adjusts time drift of the tokens during activation and every 
 
 ### Improvements in the preview refresh
 
-This hardware OATH token preview refresh improves flexibility and security for organizations by removing Global Administrator requirements. 
-Organizations can delegate token creation, assignment, and activation to Privileged Authentication Administrators or Authentication Policy Administrators. 
+This hardware OATH token preview refresh improves flexibility and security for organizations by removing Global Administrator requirements. Organizations can delegate token creation, assignment, and activation to Privileged Authentication Administrators or Authentication Policy Administrators. 
 
-The following table compares the administrator role requirements to manage hardware OATH tokens in the preview refresh versus the original preview.
+The following table lists the role requirements to manage hardware OATH tokens in the preview refresh.
 
-| Task    | Original preview role | Preview refresh role |
-|---------|------------------|-----------------|
-| Create a new token in the tenant’s inventory. | Global Administrator | Authentication Policy Administrator |
-| Read a token from the tenant’s inventory; doesn't return the secret. | Global Administrator | Authentication Policy Administrator |
-| Update a token in the tenant. For example, update manufacturer or module; Secret can't be updated. | Global Administrator | Authentication Policy Administrator |
-| Delete a token from the tenant’s inventory. | Global Administrator | Authentication Policy Administrator |
+| Task                                                                                               | Preview refresh role                |
+|----------------------------------------------------------------------------------------------------|-------------------------------------|
+| Create a new token in the tenant’s inventory.                                                      | Authentication Policy Administrator |
+| Read a token from the tenant’s inventory; doesn't return the secret.                               | Authentication Policy Administrator |
+| Update a token in the tenant. For example, update manufacturer or module; Secret can't be updated. | Authentication Policy Administrator |
+| Delete a token from the tenant’s inventory.                                                        | Authentication Policy Administrator |
 
 As part of the preview refresh, end users can also self-assign and activate tokens from their [Security info](https://mysignins.microsoft.com/security-info). In the preview refresh, a token can only be assigned to one user. The following table lists token and role requirements to assign and activate tokens. 
 

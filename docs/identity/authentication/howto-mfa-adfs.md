@@ -6,7 +6,7 @@ description: This is the Microsoft Entra multifactor authentication page that de
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 11/27/2024
+ms.date: 01/08/2025
 
 ms.author: justinha
 author: justinha
@@ -99,7 +99,6 @@ The first thing we need to do is to configure the AD FS claims. Create two claim
 
 ### Configure Microsoft Entra multifactor authentication Trusted IPs with federated users
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Now that the claims are in place, we can configure trusted IPs.
 

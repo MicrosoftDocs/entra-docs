@@ -4,7 +4,7 @@ description: Steps to verify mandatory multifactor authentication for users who 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/22/2024
+ms.date: 01/07/2025
 ms.author: justinha
 author: najshahid
 manager: amycolannino

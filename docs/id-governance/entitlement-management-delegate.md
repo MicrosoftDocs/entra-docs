@@ -27,7 +27,7 @@ By default, users in the Global Administrator role or the Identity Governance Ad
 
 This video provides an overview of how to delegate access governance from IT administrator to users who aren't administrators.
 
-> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE3Lq00]
+> [!VIDEO https://learn-video.azurefd.net/vod/player?id=0915072b-63ec-4c78-b2ca-aa5f54a54219]
 
 ## Delegate example
 
@@ -118,7 +118,7 @@ The following table lists the tasks that the entitlement management roles can do
 | [Hide an access package](entitlement-management-access-package-edit.md#change-the-hidden-setting) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  |
 | [Delete an access package](entitlement-management-access-package-edit.md#delete-an-access-package) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  |
 
-To determine the least privileged role for a task, you can also reference [Administrator roles by admin task in Microsoft Entra ID](~/identity/role-based-access-control/delegate-by-task.md#entitlement-management).
+To determine the least privileged role for a task, you can also reference [Least privileged roles by task in Microsoft Entra ID](../identity/role-based-access-control/delegate-by-task.md#entitlement-management-least-privileged-roles).
 
 > [!NOTE]
 > Users that have been assigned the Access package assignment manager role will no longer be able to bypass approval settings when directly assigning a user if the access package policy requires approval. If you have a scenario in which you need to bypass approval, we recommend creating a second policy on the access package that does not require approval and is scoped only to users who need access.

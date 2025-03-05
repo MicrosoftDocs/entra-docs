@@ -6,7 +6,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 09/10/2024
+ms.date: 12/09/2024
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 
@@ -65,3 +65,8 @@ You might identify Microsoft Graph events that don't correlate to a service prin
 
 Sign-ins that show **Not applied** for Conditional Access can be difficult to interpret. If the sign-in is interrupted, the sign-in appears on the logs but shows **Not applied** for Conditional Access. Another common scenario is signing in to Windows Hello for Business. This sign-in doesn't have Conditional Access applied because the user is signing in to the device, not to cloud resources protected by Conditional Access.
 
+## TimeGenerated field
+
+If you're integrating your sign-in logs with Azure Monitor logs and Log Analytics, you might notice that the `TimeGenerated` field in the logs doesn't match the time the sign-in occurred. This discrepancy is due to the way the logs are ingested into Azure Monitor. The `TimeGenerated` field is the time the entry was received and published by Log Analytics, not the time the sign-in occurred. The `CreatedDateTime` field in the logs shows the time the sign-in occurred.
+
+Similarly, risky sign-in events also display `TimeGenerated` as the time when the risky event was detected, not when the sign-in occurred. To find the actual sign-in time, you can use the `CorrelationId` to find the sign-in event in the logs and locate the sign-in time.

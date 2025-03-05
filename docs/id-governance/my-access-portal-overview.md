@@ -5,7 +5,7 @@ author: owinfreyATL
 ms.author: owinfrey
 ms.service: entra-id-governance
 ms.topic: overview
-ms.date: 10/23/2023
+ms.date: 12/10/2024
 
 
 ---
@@ -27,7 +27,7 @@ Administrators, via the Microsoft Entra admin center, can configure:
 - Access packages that users can request
 - Access reviews for access packages
 - Access reviews for groups and applications
-- An overview page (preview)
+- An overview page
 
 ## License requirements
 

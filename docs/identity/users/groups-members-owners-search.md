@@ -8,7 +8,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 08/23/2024
+ms.date: 01/15/2025
 ms.author: barclayn
 ms.reviewer: jodah
 
@@ -64,9 +64,9 @@ The group **Overview** page provides member counts for groups. You can see the t
 These articles provide additional information on working with groups in Microsoft Entra ID.
 
 - [View your groups and members](~/fundamentals/groups-view-azure-portal.md)
-- [Manage group memberships](~/fundamentals/how-to-manage-groups.yml)
+- [Manage group memberships](/entra/fundamentals/how-to-manage-groups)
 - [Manage rules for dynamic membership groups](groups-create-rule.md)
-- [Edit your group settings](~/fundamentals/how-to-manage-groups.yml)
+- [Edit your group settings](/entra/fundamentals/how-to-manage-groups)
 - [Manage access to resources using groups](~/fundamentals/concept-learn-about-groups.md)
 - [Manage access to SaaS apps using groups](groups-saasapps.md)
 - [Manage groups using PowerShell commands](~/identity/users/groups-settings-v2-cmdlets.md)

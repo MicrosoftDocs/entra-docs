@@ -5,7 +5,7 @@ description: Learn how to customize user display and experience options for Micr
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/04/2024
+ms.date: 01/14/2025
 
 ms.author: justinha
 author: justinha
@@ -64,13 +64,22 @@ The graphics you choose are shown in the following circumstances:
    * By passing the `whr` parameter to the password reset page, like `https://login.microsoftonline.com/?whr=contoso.com`
    * By passing the `username` parameter to the password reset page, like `https://login.microsoftonline.com/?username=admin@contoso.com`
 
+SSPR will honor browser language settings. When there is a customization for browser language, the page will display in the browser language customization. Otherwise, it falls to the default locale customization.
+
 ### Directory name
 
 To make things look more user-friendly, you can change organization name in the portal and in the automated communications. 
 
-[!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)]
+To change the directory name attribute in the Microsoft Entra admin center:
 
-To change the directory name attribute in the Microsoft Entra admin center, browse to **Identity** > **Overview** > **Properties**. This friendly organization name option is the most visible in automated emails, as in the following examples:
+[!INCLUDE [least-privilege-note](../../includes/definitions/least-privilege-note.md)]
+
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Browse to **Identity** > **Overview** > **Properties**. 
+1. Update the **Name**.
+1. Select **Save**.
+
+This friendly organization name option is the most visible in automated emails, as in the following examples:
 
 * The friendly name in the email, for example "*Microsoft on behalf of CONTOSO demo*"
 * The subject line in the email, for example "*CONTOSO demo account email verification code*"

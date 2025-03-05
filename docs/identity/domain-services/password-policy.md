@@ -8,7 +8,7 @@ ms.assetid: 1a14637e-b3d0-4fd9-ba7a-576b8df62ff2
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 12/03/2024
+ms.date: 02/05/2025
 ms.author: justinha
 ---
 # Password and account lockout policies on Microsoft Entra Domain Services managed domains

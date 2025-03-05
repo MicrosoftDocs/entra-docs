@@ -7,7 +7,7 @@ author: barclayn
 manager: amycolannino
 ms.author: barclayn
 ms.topic: tutorial
-ms.date: 10/06/2023
+ms.date: 12/13/2024
 # Customer intent: As an enterprise, we want to enable customers to manage information about themselves by using verifiable credentials.
 
 ---
@@ -28,7 +28,7 @@ Face Check is a premium feature within Verified ID. You need to enable the Face 
 
 ## Setting up Face Check with Microsoft Entra Verified ID
 
-The Face Check Add-on can be enabled in two ways from the Microsoft Entra Admin Center or by using the [Azure Resource Manager (ARM) Rest API](/rest/api/resources) via CLI. If you're going to use Face Check in a tenant with the [Microsoft Entra Suite license](/entra/fundamentals/try-microsoft-entra-suite), Face Check is enabled at the tenant level, and the configuration applies to all authorities within that tenant. For any other licenses you can enable Face Check individually by each authority on your tenant using the Azure Resource Manager (ARM) Rest API. 
+The Face Check Add-on can be enabled in two ways from the Microsoft Entra Admin Center or by using the [Azure Resource Manager (ARM) Rest API](/rest/api/resources) via CLI. If you're going to use Face Check in a tenant with the [Microsoft Entra Suite license](/entra/fundamentals/try-microsoft-entra-suite), Face Check is enabled at the tenant level, and the configuration applies to all authorities within that tenant. For any other licenses, you can enable Face Check individually by each authority on your tenant using the Azure Resource Manager (ARM) Rest API. 
 
 > [!NOTE]
 > The ARM Rest API for Microsoft Entra Verified ID is currently in public preview.
@@ -53,7 +53,7 @@ Now you can start using Face Check in your enterprise applications.
 > [!NOTE]
 > The ARM Rest API for Microsoft Entra Verified ID is currently in public preview.
 
-To set up the Face Check Add-on on a given authority, you must have the [Azure PowerShell tools](/powershell/azure/install-azps-windows) in your machine. The below mechanism wraps the REST call. You can alternatively use the Azure Resource Manager (ARM) Rest API PUT accordingly
+To set up the Face Check Add-on on a given authority, you must have the [Azure PowerShell tools](/powershell/azure/install-azps-windows) in your machine. This mechanism wraps the REST call. You can alternatively use the Azure Resource Manager (ARM) Rest API PUT accordingly
 
 1. Run the following command in PowerShell
 ```http
@@ -65,7 +65,7 @@ To set up the Face Check Add-on on a given authority, you must have the [Azure P
 ```http
   az rest --method PUT --uri /subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.VerifiedId/authorities/<authority-id>?api-version=2024-01-26-preview --body "{'location':'<rp-location>'}"
 ```
-- replace `<subscription-id>` with your subscription id
+- replace `<subscription-id>` with your subscription ID
 - replace `<resource-group-name>` with your resource group name
 - replace `<authority-id>` with your authority ID. You can obtain the `authority-id` using the [GET Authorities](admin-api.md#get-authority) call from the Admin API. 
 - replace `<rp-location>` using one of the following two values:
@@ -83,6 +83,9 @@ You can easily get started using Face Check by using [MyAccount](https://myaccou
 1. Use the [public test app](https://aka.ms/vcempver) to present your `VerifiedEmployee` credential using Face Check.
 
 When the Microsoft Authenticator gets a presentation request including a Face Check, there's an extra item after the credential type the user is asked to share. When the user selects on that item, the actual Face Check is performed and the user can then share the requested credential and the confidence score of the check with the public test app (relying party). You could review the results on the Test app.
+
+>[!NOTE]
+> MyAccount uses the Entra ID user profile photo when issuing the VerifiedEmployee credential. You can retrieve your photo via Microsoft Graph API `https://graph.microsoft.com/v1.0/me/photos/240x240/$value`
 
 ## Get started with Face Check using Request Service API
 
@@ -112,6 +115,9 @@ When setting the actual claim value of the photo, it should be in format `UrlEnc
   "indexed": false 
 } 
 ```
+
+>[!NOTE]
+> When issuing a custom credential with a photo, it is the apps responsibility to provide the JPEG to be used and encode it. 
 
 ### Presentation requests including Face Check
 
@@ -260,7 +266,7 @@ The Verified ID service executes the verification process in the cloud, not on t
 
 ### What are the requirements for the photo in the Verified ID?
 
-The photo should be clear and sharp in quality and no smaller than 200 pixels x 200 pixels. The face should be centered within the image and unobstructed from view. The maximum size of the photo in the credential is  1 MB.
+The photo should be clear and sharp in quality and no smaller than 200 pixels x 200 pixels. The face should be centered within the image and unobstructed from view. The maximum size of the photo in the credential is 1 MB. Note that having a larger image doesn't guarantee a better result. A good smaller photo is better than a large bad one.
 
 More information on how to improve the photo processing accuracy can be found [here](/legal/cognitive-services/face/characteristics-and-limitations?#best-practices-for-improving-accuracy)
 

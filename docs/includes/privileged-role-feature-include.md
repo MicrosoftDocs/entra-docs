@@ -10,4 +10,4 @@ ms.author: justinha
 ms.custom: include file
 ---
 
-A [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) is needed to manage this feature. 
+A [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) is needed to manage this feature.

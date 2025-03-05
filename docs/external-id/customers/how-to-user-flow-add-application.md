@@ -25,7 +25,7 @@ Because you might want the same sign-in experience for all of your apps, you can
 ## Prerequisites
 
 - **A sign-up and sign-in user flow**: Before you begin, [create the user flow](how-to-user-flow-sign-up-sign-in-customers.md) that you want to associate with your application.
-- **Application registration**: In your external tenant, [register your application](how-to-register-ciam-app.md).
+- **Application registration**: In your external tenant, [register your application](/entra/identity-platform/quickstart-register-app).
 
 ## Add the application to the user flow
 
@@ -56,5 +56,5 @@ You can learn more about this app [here](/azure/active-directory-b2c/extensions-
 ## Next steps
 
 - If you selected email with password sign-in, [enable password reset](how-to-enable-password-reset-customers.md).
-- Add [Google](how-to-google-federation-customers.md) or [Facebook](how-to-facebook-federation-customers.md) federation.
+- Add [Google](how-to-google-federation-customers.md), [Facebook](how-to-facebook-federation-customers.md), [Apple](how-to-apple-federation-customers.md) or custom [OIDC federation](how-to-custom-oidc-federation-customers.md) federation.
 - [Add multifactor authentication (MFA) to an app](how-to-multifactor-authentication-customers.md).

@@ -6,7 +6,7 @@ author: billmath
 ms.service: entra-id
 manager: amycolannino
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 12/09/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 

@@ -19,6 +19,9 @@ ms.reviewer: saumadan
 
 This article covers the recommendation to investigate unused applications. This recommendation is called `StaleApps` in the recommendations API in Microsoft Graph. 
 
+> [!NOTE]
+> With [Microsoft Security Copilot](/copilot/security/microsoft-security-copilot), you can use natural language prompts to get insights on unused applications. Learn more about how to [Assess application risks using Microsoft Security Copilot](/entra/fundamentals/copilot-security-entra-investigate-risky-apps#explore-unused-microsoft-entra-applications).
+
 ## Prerequisites
 
 [!INCLUDE [Recommendations roles](../../includes/recommendations-roles.md)]

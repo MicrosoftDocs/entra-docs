@@ -8,7 +8,7 @@ manager: amycolannino
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
-ms.date: 09/13/2023
+ms.date: 12/16/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
 ms.custom: pim ; H1Hack27Feb2017
@@ -25,7 +25,7 @@ Before your organization starts using Privileged Identity Management, all role a
 
 :heavy_check_mark: [!INCLUDE [emergency-access-accounts](../../includes/definitions/emergency-access-accounts.md)]
 
-Also, keep role assignments permanent if a user has a Microsoft account (in other words, an account they use to sign in to Microsoft services like Skype, or Outlook.com). If you require multi-factor authentication for a user with a Microsoft account to activate a role assignment, the user will be locked out.
+Also, keep role assignments permanent if a user has a Microsoft account (in other words, an account they use to sign in to Microsoft services like Skype, or Outlook.com). If you require multifactor authentication for a user with a Microsoft account to activate a role assignment, the user is locked out.
 
 ## Open Discovery and insights (preview)
 

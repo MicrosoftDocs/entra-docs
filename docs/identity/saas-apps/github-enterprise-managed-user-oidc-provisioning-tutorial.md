@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Configure GitHub Enterprise Managed User (OIDC) for automatic user provisioning with Microsoft Entra ID'
+title: Configure GitHub Enterprise Managed User (OIDC) for automatic user provisioning with Microsoft Entra ID
 description: Learn how to automatically provision and de-provision user accounts from Microsoft Entra ID to GitHub Enterprise Managed User (OIDC).
 
 author: thomasakelo
@@ -9,16 +9,16 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to GitHub Enterprise Managed User (OIDC) so that I can streamline the user management process and ensure that users have the appropriate access to GitHub Enterprise Managed User (OIDC).
 ---
 
-# Tutorial: Configure GitHub Enterprise Managed User (OIDC) for automatic user provisioning
+# Configure GitHub Enterprise Managed User (OIDC) for automatic user provisioning
 
-This tutorial describes the steps you need to perform in both GitHub Enterprise Managed User (OIDC) and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to GitHub Enterprise Managed User (OIDC) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+This article describes the steps you need to perform in both GitHub Enterprise Managed User (OIDC) and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and de-provisions users and groups to GitHub Enterprise Managed User (OIDC) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 
 > [!NOTE]
 > [GitHub Enterprise Managed User (EMU)](https://docs.github.com/enterprise-cloud@latest/admin/authentication/managing-your-enterprise-users-with-your-identity-provider/about-enterprise-managed-users) is a different type of [GitHub Enterprise Account](https://docs.github.com/enterprise-cloud@latest/admin/overview/about-enterprise-accounts). If you haven't specifically requested EMU instance, you have a standard GitHub Enterprise Account. In that case, please refer to [the documentation](./github-provisioning-tutorial.md) to configure user provisioning in your non-EMU organisation. User provisioning is not supported for [standard GitHub Enterprise Accounts](https://docs.github.com/enterprise-cloud@latest/admin/overview/about-enterprise-accounts), but is supported for organisations under standard GitHub Enterprise Account.
@@ -33,7 +33,7 @@ This tutorial describes the steps you need to perform in both GitHub Enterprise 
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md)
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
@@ -114,7 +114,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 7. Select **Save**.
 
-8. Under the **Mappings** section, select **Synchronize Microsoft Entra users to GitHub Enterprise Managed User (OIDC)**.
+8. Under the **Mappings** section, select **Provision Microsoft Entra ID Users**.
 
 9. Review the user attributes that are synchronized from Microsoft Entra ID to GitHub Enterprise Managed User (OIDC) in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the user accounts in GitHub Enterprise Managed User (OIDC) for update operations. If you choose to change the [matching target attribute](~/identity/app-provisioning/customize-application-attributes.md), you need to ensure that the GitHub Enterprise Managed User (OIDC) API supports filtering users based on that attribute. Select the **Save** button to commit any changes.
 
@@ -132,7 +132,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
    |emails[type eq "home"].value|String|
    |emails[type eq "other"].value|String|
 
-10. Under the **Mappings** section, select **Synchronize Microsoft Entra groups to GitHub Enterprise Managed User (OIDC)**.
+10. Under the **Mappings** section, select **Provision Microsoft Entra ID Groups**.
 
 11. Review the group attributes that are synchronized from Microsoft Entra ID to GitHub Enterprise Managed User (OIDC) in the **Attribute-Mapping** section. The attributes selected as **Matching** properties are used to match the groups in GitHub Enterprise Managed User (OIDC) for update operations. Select the **Save** button to commit any changes.
 
@@ -142,7 +142,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |displayName|String|
       |members|Reference|
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 13. To enable the Microsoft Entra provisioning service for GitHub Enterprise Managed User (OIDC), change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -170,6 +170,6 @@ Once you've configured provisioning, use the following resources to monitor your
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

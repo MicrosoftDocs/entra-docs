@@ -36,7 +36,7 @@ There are many security benefits of using Microsoft Entra ID-based authenticatio
   MDM autoenrollment requires Microsoft Entra ID P1 licenses. Windows Server VMs don't support MDM enrollment.
 
 > [!NOTE]
-> After you enable this capability, your Windows VMs in Azure will be Microsoft Entra joined. You cannot join them to another domain, like on-premises Active Directory or Microsoft Entra Domain Services. If you need to do so, disconnect the VM from Microsoft Entra ID by uninstalling the extension.
+> After you enable this capability, your Windows VMs in Azure will be Microsoft Entra joined. You cannot join them to another domain, like on-premises Active Directory or Microsoft Entra Domain Services. If you need to do so, disconnect the VM from Microsoft Entra ID by uninstalling the extension. In addition, if you deploy a supported golden image, be aware that you can enable Entra ID authentication installing after the deployment the dedicated extension.
 
 ## Requirements
 
@@ -467,6 +467,21 @@ If the Microsoft Azure Windows Virtual Machine Sign-in application is missing fr
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**.
 1. Remove the filters to see all applications, and search for **VM**. If you don't see **Microsoft Azure Windows Virtual Machine Sign-in** as a result, the service principal is missing from the tenant.
+
+
+Another way to verify it is via Graph PowerShell:
+
+1. [Install the Graph PowerShell SDK](/powershell/microsoftgraph/installation) if you haven't already done so.
+1. Run `Connect-MgGraph -Scopes "ServicePrincipalEndpoint.ReadWrite.All"`, followed by `"Application.ReadWrite.All"`.
+1. Sign in with a Global Administrator account.
+1. Consent to the permission prompt.
+1. Run `Get-MgServicePrincipal -ConsistencyLevel eventual -Search '"DisplayName:Azure Windows VM Sign-In"'`.
+   - If this command results in no output and returns you to the PowerShell prompt, you can create the service principal with the following Graph PowerShell command:
+
+      `New-MgServicePrincipal -AppId 372140e0-b3b7-4226-8ef9-d57986796201`
+   - Successful output shows that the Microsoft Azure Windows Virtual Machine Sign-in app and its ID were created.
+1. Sign out of Graph PowerShell by using the `Disconnect-MgGraph` command.
+
 
 > [!TIP]
 > Some tenants might see the application named Azure Windows VM Sign-in instead of Microsoft Azure Windows Virtual Machine Sign-in. The application will have the same Application ID of 372140e0-b3b7-4226-8ef9-d57986796201.

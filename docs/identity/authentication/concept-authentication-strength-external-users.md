@@ -6,7 +6,7 @@ description: Learn how admins can use authentication strength requirements for e
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/12/2024
+ms.date: 01/03/2024
 
 ms.author: justinha
 author: inbarckms

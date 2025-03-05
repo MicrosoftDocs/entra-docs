@@ -40,7 +40,7 @@ You can retrieve the risk detections by the properties of a risk detection in ID
 Get-MgRiskDetection -Filter "RiskType eq 'anonymizedIPAddress'" | Format-Table UserDisplayName, RiskType, RiskLevel, DetectedDateTime
 
 # List all high risk detections for the user 'User01'
-Get-MgRiskDetection -Filter "UserDisplayName eq 'User01' and Risklevel eq 'high'" | Format-Table UserDisplayName, RiskType, RiskLevel, DetectedDateTime
+Get-MgRiskDetection -Filter "UserDisplayName eq 'User01' and RiskLevel eq 'high'" | Format-Table UserDisplayName, RiskType, RiskLevel, DetectedDateTime
 
 ```
 

@@ -3,11 +3,11 @@ title: Enable automatic user provisioning for multi-tenant applications in Micro
 description: A guide for independent software vendors for enabling automated provisioning in Microsoft Entra ID
 
 author: kenwith
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: reference
-ms.date: 09/15/2023
+ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: zhchia, arvinh
 ---

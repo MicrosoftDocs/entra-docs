@@ -8,7 +8,7 @@ manager: amycolannino
 
 ms.workload: identity
 ms.topic: overview
-ms.date: 02/28/2024
+ms.date: 12/30/2024
 ms.author: billmath
 ---
 

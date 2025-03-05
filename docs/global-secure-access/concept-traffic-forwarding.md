@@ -3,9 +3,9 @@ title: Global Secure Access traffic forwarding profiles
 description: Learn about how traffic forwarding profiles for Global Secure Access streamline how you route traffic through your network.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.topic: conceptual
-ms.date: 05/02/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.reviewer: katabish
 ---
@@ -34,7 +34,7 @@ The Microsoft traffic forwarding profile includes Microsoft Entra ID/ Microsoft 
 
 Microsoft traffic is forwarded to the service through either [remote network connectivity](concept-remote-network-connectivity.md), such as branch office location, or through the [Global Secure Access client](how-to-install-windows-client.md).
 
-[Learn more about the Microsoft traffic profile](concept-microsoft-traffic-profile.md)\
+[Learn more about the Microsoft traffic profile](concept-microsoft-traffic-profile.md)
 
 ### Licensing
 
@@ -66,7 +66,7 @@ Internet access traffic can be forwarded to the service by connecting through th
 
 ### Licensing
 
-Private Access profile requires the following licenses:
+Internet access profile requires the following licenses:
 
 - Microsoft Entra ID P1 or P2 (prerequisite).
 - Microsoft Entra Internet Access or Microsoft Entra Suite.

@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Uberflip'
+title: Microsoft Entra integration with Uberflip
 description: Learn how to configure single sign-on between Microsoft Entra ID and Uberflip.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Uberflip so that I can control who has access to Uberflip, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Uberflip
+# Microsoft Entra integration with Uberflip
 
-In this tutorial, you learn how to integrate Uberflip with Microsoft Entra ID.
+In this article,  you learn how to integrate Uberflip with Microsoft Entra ID.
 
 Integrating Uberflip with Microsoft Entra ID provides you with the following benefits:
 
@@ -35,7 +35,7 @@ To configure Microsoft Entra integration with Uberflip, you need the following i
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 Uberflip supports the following features:
 
@@ -183,7 +183,7 @@ When you select **Uberflip** in the My Apps portal, you should be automatically 
 
 ## Additional resources
 
-* [List of tutorials for integrating SaaS applications with Microsoft Entra ID](./tutorial-list.md)
+* [List of articles for integrating SaaS applications with Microsoft Entra ID](./tutorial-list.md)
 
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 

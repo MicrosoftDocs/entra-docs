@@ -8,7 +8,7 @@ ms.author: barclayn
 ms.service: entra
 ms.subservice: fundamentals
 ms.topic: conceptual
-ms.date: 08/17/2022
+ms.date: 12/17/2024
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ---
@@ -34,5 +34,5 @@ Multifactor authentication stores Identity Customer Data in global datacenters. 
 
 ## Next steps
 
-For more information about any of the features and functionality described above, see these articles:
+For more information about Multifactor authentication see these articles:
 - [What is multifactor authentication?](~/identity/authentication/concept-mfa-howitworks.md)

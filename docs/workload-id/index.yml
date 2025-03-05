@@ -46,7 +46,7 @@ landingContent:
       - linkListType: video
         links:
           - text: Learn why you would use workload identity federation
-            url: https://www.microsoft.com/en-us/videoplayer/embed/RWXamJ
+            url: https://learn-video.azurefd.net/vod/player?id=4b15d772-e6de-4347-b8f6-d943c200667a
       - linkListType: how-to-guide
         links:
           - text: Configure an app to trust an external identity provider

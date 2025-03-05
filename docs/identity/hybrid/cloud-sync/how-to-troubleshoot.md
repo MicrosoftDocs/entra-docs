@@ -4,7 +4,7 @@ description: This article describes how to troubleshoot problems that might aris
 author: billmath
 ms.author: billmath
 manager: amycolannino
-ms.date: 04/26/2024
+ms.date: 12/17/2024
 ms.topic: troubleshooting
 ms.service: entra-id
 ms.subservice: hybrid-cloud-sync
@@ -27,7 +27,6 @@ You can verify these items in the portal and on the local server that's running 
 
 ### Microsoft Entra admin center agent verification
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To verify that Azure detects the agent, and that the agent is healthy, follow these steps:
 

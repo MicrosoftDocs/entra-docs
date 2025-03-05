@@ -75,6 +75,8 @@ items:
         href: self-service-portal.md
     - name: Identity providers for External ID
       href: identity-providers.md
+    - name: SAML/WS-Fed identity providers
+      href: direct-federation-overview.md
     - name: Authentication and Conditional Access
       href: authentication-conditional-access.md
     - name: Azure AD B2C (link to documentation)
@@ -106,7 +108,7 @@ items:
         href: tenant-restrictions-migration.md
     - name: Configure B2B direct connect 
       href: cross-tenant-access-settings-b2b-direct-connect.md
-    - name: Select identity providers
+    - name: Configure identity providers
       items:
       - name: Microsoft Entra ID
         href: default-account.md

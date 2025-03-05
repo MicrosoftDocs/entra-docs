@@ -6,7 +6,7 @@ description: Learn how admins can use Microsoft Entra Conditional Access to dist
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/18/2024
+ms.date: 01/03/2024
 
 ms.author: justinha
 author: inbarckms

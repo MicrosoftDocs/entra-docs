@@ -5,7 +5,7 @@ description: In this tutorial, you learn how to enable Microsoft Entra ID Protec
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
-ms.date: 02/05/2024
+ms.date: 01/16/2025
 
 ms.author: justinha
 author: justinha

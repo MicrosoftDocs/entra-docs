@@ -1,7 +1,7 @@
 ### YamlMime:Hub
 
 ## FRONT MATTER START
-title: Documentation # < 60 chars
+title: Microsoft Entra External ID Documentation # < 60 chars
 summary: >
   Learn how to use Microsoft Entra External ID to manage your external identities scenarios, including guest user access and customer identity and access management (CIAM) for apps. 
 brand: azure

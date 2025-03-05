@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Lenses.io'
-description: In this tutorial, you'll learn how to configure single sign-on between Microsoft Entra ID and Lenses.io.
+title: Microsoft Entra single sign-on (SSO) integration with Lenses.io
+description: In this article,  you'll learn how to configure single sign-on between Microsoft Entra ID and Lenses.io.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Lenses.io so that I can control who has access to Lenses.io, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with the Lenses.io DataOps portal
+# Microsoft Entra single sign-on (SSO) integration with the Lenses.io DataOps portal
 
-In this tutorial, you'll learn how to integrate the [Lenses.io](https://lenses.io/) DataOps portal with Microsoft Entra ID. After you integrate Lenses.io with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate the [Lenses.io](https://lenses.io/) DataOps portal with Microsoft Entra ID. After you integrate Lenses.io with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to the Lenses.io portal.
 * Enable your users to be automatically signed-in to Lenses with their Microsoft Entra accounts.
@@ -36,7 +36,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you'll configure and test Microsoft Entra SSO in a test environment.
+In this article,  you'll configure and test Microsoft Entra SSO in a test environment.
 
 * Lenses.io supports service provider (SP) initiated SSO.
 
@@ -169,6 +169,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Lenses.io tile in the My Apps, this will redirect to Lenses.io Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Lenses.io you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

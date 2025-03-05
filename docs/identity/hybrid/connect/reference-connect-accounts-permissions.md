@@ -275,7 +275,8 @@ Microsoft Entra ID has a limit of 20 sync service accounts.
 
   ```powershell
   $directoryRoleId = Get-MgDirectoryRole | where {$_.DisplayName -eq "Directory Synchronization Accounts"}
-  Get-MgDirectoryRoleMember -DirectoryRoleId $directoryRoleId.Id | Select -ExpandProperty AdditionalProperties
+  Get-MgDirectoryRoleMember -DirectoryRoleId $directoryRoleId.Id | Select-Object Id,@{Name="UserPrincipalName"; Expression={$_.AdditionalProperties.userPrincipalName}}
+
   ```
 
 - To remove unused Microsoft Entra service accounts, run the following command:

@@ -88,7 +88,6 @@ You can update the status of a recommendation and any related resource in the Mi
 
 ### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
 
-[!INCLUDE [portal update](../../includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Overview** > **Recommendations**.

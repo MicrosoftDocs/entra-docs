@@ -6,7 +6,7 @@ description: Learn how to use Microsoft Entra multifactor authentication capabil
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 10/04/2024
+ms.date: 01/08/2025
 
 ms.author: justinha
 author: justinha
@@ -258,15 +258,13 @@ To provide load-balancing capabilities or for redundancy, repeat these steps on 
    `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
 
    > [!IMPORTANT]
-   > For customers that use the Azure for US Government or Azure operated by 21Vianet clouds, first edit the *AzureMfaNpsExtnConfigSetup.ps1* script to include the *AzureEnvironment* parameters for the required cloud. For example, specify *-AzureEnvironment USGovernment* or *-AzureEnvironment AzureChinaCloud*.
+   > For customers that use the Azure for US Government or Azure operated by 21Vianet clouds, first edit the *AzureMfaNpsExtnConfigSetup.ps1* script to include the *Environment* parameters for the required cloud. For example, specify *-Environment USGov* or *-Environment China*.  Environment options: USGov, USGovDoD, Germany, China, Global.   Example: Connect-MgGraph -Scopes Application.ReadWrite.All -Environment USGov -NoWelcome -Verbose -ErrorAction Stop.
    
    ```powershell
    .\AzureMfaNpsExtnConfigSetup.ps1
    ```
 
-1. When prompted, sign in to Microsoft Entra ID. 
-
-   [!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)] 
+1. When prompted, sign in to Microsoft Entra ID. A [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) is needed to manage this feature.
 
 1. PowerShell prompts for your tenant ID. Use the *Tenant ID* GUID that you copied in the prerequisites section.
 1. A success message is shown when the script is finished.  
@@ -274,7 +272,11 @@ To provide load-balancing capabilities or for redundancy, repeat these steps on 
 If your previous computer certificate has expired, and a new certificate has been generated, you should delete any expired certificates. Having expired certificates can cause issues with the NPS Extension starting.
 
 > [!NOTE]
-> If you use your own certificates instead of generating certificates with the PowerShell script, make sure that they align to the NPS naming convention. The subject name must be **CN=\<TenantID\>,OU=Microsoft NPS Extension**.
+> If you use your own certificates instead of generating certificates with the PowerShell script, make sure that they include the Client Authentication purpose and that the private key has **READ** permission granted to the user *NETWORK SERVICE*. 
+>
+> If you use version 1.2.2893.1 or later, the certificate’s thumbprint can be used to identify the certificate. Set HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\AzureMfa\CLIENT_CERT_IDENTIFIER to the thumbprint in **Registry Settings**. There have been issues with subject name lookup for some certificates. Using thumbprint works around this issue.
+>
+> If you use version 1.2.2677.2 or earlier, the certificate must align to the NPS naming convention and the subject name must be **CN=\<TenantID\>,OU=Microsoft NPS Extension**. 
 
 ### Microsoft Azure Government or Microsoft Azure operated by 21Vianet additional steps
 

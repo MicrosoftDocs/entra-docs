@@ -9,7 +9,7 @@ manager: amycolannino
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 01/08/2024
+ms.date: 12/19/2024
 ms.author: barclayn
 ---
 

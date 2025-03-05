@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Configure Salesforce for automatic user provisioning with Microsoft Entra ID| Microsoft Docs'
+title: Configure Salesforce for automatic user provisioning with Microsoft Entra ID| Microsoft Docs
 description: Learn the steps required to perform in Salesforce and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Salesforce.
 
 author: thomasakelo
@@ -7,19 +7,19 @@ manager: jeedes
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Salesforce so that I can streamline the user management process and ensure that users have the appropriate access to Salesforce.
 ---
-# Tutorial: Configure Salesforce for automatic user provisioning
+# Configure Salesforce for automatic user provisioning
 
-The objective of this tutorial is to show the steps required to perform in Salesforce and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Salesforce.
+The objective of this article is to show the steps required to perform in Salesforce and Microsoft Entra ID to automatically provision and de-provision user accounts from Microsoft Entra ID to Salesforce.
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following items:
+The scenario outlined in this article assumes that you already have the following items:
 
 * A Microsoft Entra tenant.
 * A Salesforce.com tenant.
@@ -40,9 +40,9 @@ See also Salesforce [Create or Clone Profiles](https://help.salesforce.com/s/art
 > Roles should not be manually edited in Microsoft Entra ID when doing role imports.
 
 > [!IMPORTANT]
-> If you are using a Salesforce.com trial account, then you will be unable to configure automated user provisioning. Trial accounts do not have the necessary API access enabled until they are purchased. You can get around this limitation by using a free [developer account](https://developer.salesforce.com/signup) to complete this tutorial.
+> If you are using a Salesforce.com trial account, then you will be unable to configure automated user provisioning. Trial accounts do not have the necessary API access enabled until they are purchased. You can get around this limitation by using a free [developer account](https://developer.salesforce.com/signup) to complete this article.
 
-If you are using a Salesforce Sandbox environment, see the [Salesforce Sandbox integration tutorial](./salesforce-sandbox-tutorial.md).
+If you are using a Salesforce Sandbox environment, see the [Salesforce Sandbox integration  article](./salesforce-sandbox-tutorial.md).
 
 ## Assigning users to Salesforce
 

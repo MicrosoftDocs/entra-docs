@@ -23,7 +23,7 @@ Device management permissions can be used in custom role definitions in Microsof
 - Read device registration policies
 - Update device registration policies
 
-This article lists the permissions you can use in your custom roles for different device management scenarios. For information about how to create custom roles, see [Create and assign a custom role in Microsoft Entra ID](custom-create.yml).
+This article lists the permissions you can use in your custom roles for different device management scenarios. For information about how to create custom roles, see [Create a custom role in Microsoft Entra ID](custom-create.md).
 
 ## Enable or disable devices
 
@@ -106,5 +106,5 @@ The following permission is available to update tenant-wide device registration 
 
 ## Next steps
 
-- [Create and assign a custom role in Microsoft Entra ID](custom-create.yml)
+- [Create a custom role in Microsoft Entra ID](custom-create.md)
 - [List Microsoft Entra role assignments](view-assignments.md)
