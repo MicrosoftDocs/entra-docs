@@ -5,7 +5,7 @@ description: Topic that shows how to configure Microsoft Entra certificate-based
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/07/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: vimrang
@@ -271,8 +271,10 @@ To enable CBA in the Microsoft Entra admin center, complete the following steps:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Authentication Policy Administrator](../role-based-access-control/permissions-reference.md#authentication-policy-administrator).
 1. Browse to **Groups** > **All groups** > select **New group** and create a group for CBA users.
 1. Browse to **Protection** > **Authentication methods** > **Certificate-based Authentication**.
-1. Under **Enable and Target**, select **Enable**.
-1. Select **Add groups** to select specific groups like the one you created. Use specific groups rather than **All users**.
+1. Under **Enable and Target**, select **Enable**, and click **I Acknowledge**.
+1. Click **Select groups**, click **Add groups**.
+1. Choose specific groups like the one you created, and click **Select**. Use specific groups rather than **All users**.
+1. When you are done, click **Save**.
 
    :::image type="content" border="true" source="./media/how-to-certificate-based-authentication/enable.png" alt-text="Screenshot of how to enable CBA.":::
  

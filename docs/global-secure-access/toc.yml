@@ -236,5 +236,7 @@ items:
     href: reference-version-history.md
   - name: Windows client version history
     href: reference-windows-client-release-history.md
+  - name: macOS client version history
+    href: reference-macos-client-release-history.md 
   - name: Support for Microsoft Azure in China
     href: reference-china-user-support.md    

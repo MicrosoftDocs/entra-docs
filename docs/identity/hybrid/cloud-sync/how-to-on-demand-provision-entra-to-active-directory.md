@@ -32,7 +32,7 @@ The following is true for on-demand group provisioning:
 To use on-demand provisioning, follow these steps:
 
 >[!NOTE]
->When using on-demand provisioning, members aren't automatically provsisioned. You need to select which members you wish to test on and there's a five member limit.
+>When using on-demand provisioning, members aren't automatically provisioned. You need to select which members you wish to test on and there's a five member limit.
 
  [!INCLUDE [sign in](../../../includes/cloud-sync-sign-in.md)]
 

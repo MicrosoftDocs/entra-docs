@@ -316,7 +316,7 @@ An access profile binds APM elements that manage access to BIG-IP virtual server
 
 2. For the per-session profile you created, select **Edit**. 
 
-    ![Screenshot of Edit option under Per Session Polcy.](./media/f5-big-ip-kerberos-advanced/edit-per-session-profile.png)
+    ![Screenshot of Edit option under Per Session Policy.](./media/f5-big-ip-kerberos-advanced/edit-per-session-profile.png)
 
 3. The visual policy editor opens. Select the **plus sign** next to the fallback.
 

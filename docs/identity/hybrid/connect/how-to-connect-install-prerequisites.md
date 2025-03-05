@@ -104,7 +104,9 @@ We recommend that you harden your Microsoft Entra Connect server to decrease the
   * You must use a case-insensitive SQL collation. These collations are identified with a \_CI_ in their name. Using a case-sensitive collation identified by \_CS_ in their name *isn't supported*.
   * You can have only one sync engine per SQL instance. Sharing a SQL instance with MIM Sync, DirSync, or Azure AD Sync *isn't supported*.
   * Maintain ODBC Driver for SQL Server version 17 and OLE DB Driver for SQL Server version 18 that are bundled with Microsoft Entra Connect. Upgrading ODBC/OLE DB drivers' major or minor versions isn't supported. Microsoft Entra Connect product group team includes new ODBC/OLE DB drivers as these become available and have a requirement to be updated.
-
+    
+  * Microsoft Entra Connect does not support SQL Named Pipes protocol.
+    
 > [!NOTE]
 > If you're installing SQL on the same server as Microsoft Entra Connect, we recommend configuring SQL to limit the maximum memory that it can use from the system.
 > Follow [SQL best practices](/sql/database-engine/configure-windows/server-memory-server-configuration-options?view=sql-server-ver16#recommendations) for memory configuration.

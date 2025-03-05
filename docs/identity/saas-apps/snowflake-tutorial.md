@@ -238,7 +238,7 @@ You can also use Microsoft My Apps to test the application in any mode. When you
 
 ## Prevent application access through local accounts
 
-Once you've validated that SSO works and rolled it out in your organization, we recommend disabling application access using local credentials. This ensures that your conditional access policies, MFA, etc. will be in place to protect sign-ins to Snowflake. Review the Snowflake documentation for [configuring SSO](https://docs.snowflake.com/en/user-guide/admin-security-fed-auth-use), and use the ALTER USER commandlet to remove user passwords.  
+Once you've validated that SSO works and rolled it out in your organization, we recommend disabling application access using local credentials. This ensures that your Conditional Access policies, MFA, etc. will be in place to protect sign-ins to Snowflake. Review the Snowflake documentation for [configuring SSO](https://docs.snowflake.com/en/user-guide/admin-security-fed-auth-use), and use the ALTER USER commandlet to remove user passwords.  
 
 ## Related content
 

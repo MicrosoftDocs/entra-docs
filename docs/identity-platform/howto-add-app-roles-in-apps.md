@@ -57,7 +57,9 @@ To create an app role by using the Microsoft Entra admin center's user interface
 
 1. Select **Apply** to save your changes.
 
-When the app role is set to **Enabled**, any users, applications, or groups who are assigned have the app role included in their tokens. These can be access tokens when your app is the API being called by an app or ID tokens when your app is signing in a user. If set to disabled, it becomes inactive and no longer assignable. Any previous assignees retain the app role included in their tokens, but it has no effect as it is no longer actively assignable. 
+When the app role is set to **Enabled**, any users, applications, or groups who are assigned have the app role included in their tokens. These can be access tokens when your app is the API being called by an app or ID tokens when your app is signing in a user. 
+
+When the app role is set to **Disabled**, it becomes inactive and no longer assignable. However, the current app role assignments to users, groups and applications will remain, and the app role will continue to pass in the token(s). Remove the app role from the user, group or application to ensure the app role is also removed from the token(s).
 
 ## Assign application owner 
 
