@@ -3,7 +3,6 @@ title: Bulk operations
 description: Learn about Microsoft Entra bulk operations related to users, groups,
   and devices in the Microsoft Entra admin portal could time out and fail on large
   tenants.
-keywords: Azure AD licensing
 author: barclayn
 manager: femila
 ms.service: entra
