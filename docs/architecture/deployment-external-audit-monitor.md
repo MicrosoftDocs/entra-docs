@@ -19,7 +19,7 @@ Auditing is actions taken to understand a system, its user activities, and relat
 
 Microsoft Entra External ID stores sign-in and audit logs for 30 days. Export this information to an external storage or tool for retention and analysis. 
 
-[Azure Monitor](../external-id/customers/how-to-azure-monitor) is configured as a bridge to export logs. See the following diagram of Microsoft Entra External ID log exports with Azure Monitor.  
+[Azure Monitor](/azure/azure-monitor/overview) is configured as a bridge to export logs. See the following diagram of Microsoft Entra External ID log exports with Azure Monitor.  
 
    [ ![Diagram of log exports with Azure Monitor.](media/deployment-external/log-export.png)](media/deployment-external/log-export-extensions-expanded.png#lightbox)
 
@@ -72,9 +72,9 @@ Synthetic transactions should reference applications and APIs used for token acq
 
 Microsoft Entra External ID pricing consists of a core offer and premium add-ons.  
 
-Core offer billing is based on monthly active users ([MAU](/external-id/external-identities-pricing)), which is the count of unique external users who authenticate to your tenants in a calendar month. To determine the total MAUs, MAUs from all workforce and external tenants linked to a subscription are combined. 
+Core offer billing is based on monthly active users ([MAU](../external-id/external-identities-pricing.md), which is the count of unique external users who authenticate to your tenants in a calendar month. To determine the total MAUs, MAUs from all workforce and external tenants linked to a subscription are combined. 
 
-For additional information on the billing model, see [Microsoft Entra External ID pricing](/external-id/external-identities-pricing). 
+For additional information on the billing model, see [Microsoft Entra External ID pricing](../external-id/external-identities-pricing.md). 
 
 View incurred costs on the cost analysis area of the subscription/resource group linked to the Microsoft Entra External ID tenant. If the MAU count is below the free tier, the bill is $0. Usage data below the free tier appears in the cost analysis.  
 
