@@ -42,7 +42,7 @@ Before you try this tutorial, consider the following items:
    > [!NOTE]
    > Microsoft Entra Connect Sync does not populate *ms-ds-consistencyGUID* by default for group objects.
 
- 5. This configuration is for advanced scenarios. Ensure that you follow the steps documented in this tutorial precisely.
+5. This configuration is for advanced scenarios. Ensure that you follow the steps documented in this tutorial precisely.
 
 ## Prerequisites
 
@@ -82,35 +82,35 @@ In the Microsoft Entra Connect Synchronization Rules editor, you need to create 
 
     ![Screenshot of the synchronization rule editor menu.](media/tutorial-migrate-aadc-aadccp/user-8.png)
    
-2. Select **Inbound** from the drop-down list for Direction and select **Add new rule**.
+1. Select **Inbound** from the drop-down list for Direction and select **Add new rule**.
 
     ![Screenshot that shows the "View and manage your synchronization rules" window with "Inbound" and the "Add new rule" button selected.](media/tutorial-migrate-aadc-aadccp/user-1.png)
    
 3. On the **Description** page, enter the following and select **Next**:
 
-- **Name:** Give the rule a meaningful name
+    - **Name:** Give the rule a meaningful name
     - **Description:** Add a meaningful description
-    - **Connected System:** Choose the AD connector that you're writing the custom sync rule for
-    - **Connected System Object Type:** User
-    - **Metaverse Object Type:** Person
-    - **Link Type:** Join
-    - **Precedence:** Provide a value that is unique in the system
-    - **Tag:** Leave this empty
+        - **Connected System:** Choose the AD connector that you're writing the custom sync rule for
+        - **Connected System Object Type:** User
+        - **Metaverse Object Type:** Person
+        - **Link Type:** Join
+        - **Precedence:** Provide a value that is unique in the system
+        - **Tag:** Leave this empty
 
-   ![Screenshot that shows the "Create inbound synchronization rule - Description" page with values entered.](media/tutorial-migrate-aadc-aadccp/user-2.png)
-   
+    ![Screenshot that shows the "Create inbound synchronization rule - Description" page with values entered.](media/tutorial-migrate-aadc-aadccp/user-2.png)
+  
 4. On the **Scoping filter** page, enter the OU or security group that you want the pilot based off. To filter on OU, add the OU portion of the distinguished name. This rule is applied to all users who are in that OU. So, if DN ends with "OU=CPUsers,DC=contoso,DC=com, you would add this filter. Then select **Next**.
 
-|Rule|Attribute|Operator|Value|
-|-----|----|----|-----|
-|Scoping OU|DN|ENDSWITH|Distinguished name of the OU.|
-|Scoping group||ISMEMBEROF|Distinguished name of the security group.|
+    |Rule|Attribute|Operator|Value|
+    |-----|----|----|-----|
+    |Scoping OU|DN|ENDSWITH|Distinguished name of the OU.|
+    |Scoping group||ISMEMBEROF|Distinguished name of the security group.|
 
-   ![Screenshot that shows the sync rule scoping filters.](media/tutorial-migrate-aadc-aadccp/user-3.png)
-   
+    ![Screenshot that shows the sync rule scoping filters.](media/tutorial-migrate-aadc-aadccp/user-3.png)
+
 5. On the **Join** rules page, select **Next**.
 
-6. On the **Transformations** page, add a Constant transformation: flow True to cloudNoFlow attribute. Select **Add**.
+1. On the **Transformations** page, add a Constant transformation: flow True to cloudNoFlow attribute. Select **Add**.
 
     ![Screenshot that shows the sync rule transformations.](media/tutorial-migrate-aadc-aadccp/user-4.png)
    
@@ -125,17 +125,17 @@ You'll need an outbound sync rule with a link type of JoinNoFlow and the scoping
    
 2. On the **Description** page, enter the following and select **Next**:
 
-- **Name:** Give the rule a meaningful name
+    - **Name:** Give the rule a meaningful name
     - **Description:** Add a meaningful description
-    - **Connected System:** Choose the Microsoft Entra connector that you're writing the custom sync rule for
-    - **Connected System Object Type:** User
-    - **Metaverse Object Type:** Person
-    - **Link Type:** JoinNoFlow
-    - **Precedence:** Provide a value that is unique in the system<br>
-    - **Tag:** Leave this empty
+        - **Connected System:** Choose the Microsoft Entra connector that you're writing the custom sync rule for
+        - **Connected System Object Type:** User
+        - **Metaverse Object Type:** Person
+        - **Link Type:** JoinNoFlow
+        - **Precedence:** Provide a value that is unique in the system<br>
+        - **Tag:** Leave this empty
 
-   ![Screenshot that shows the sync rule description.](media/tutorial-migrate-aadc-aadccp/user-6.png)
-   
+    ![Screenshot that shows the sync rule description.](media/tutorial-migrate-aadc-aadccp/user-6.png)
+  
 3. On the **Scoping filter** page, choose **cloudNoFlow** equal **True**. Then select **Next**.
 
     ![Screenshot that shows a custom rule.](media/tutorial-migrate-aadc-aadccp/user-7.png)
@@ -150,7 +150,7 @@ Same steps need to be followed for all object types (user, group, and contact).
 
 ## Install the Microsoft Entra provisioning agent
 
-If you're using the  [Basic AD and Azure environment](tutorial-basic-ad-azure.md) tutorial, it would be CP1. To install the agent, follow these steps: 
+If you're using the [Basic AD and Azure environment](tutorial-basic-ad-azure.md) tutorial, it would be CP1. To install the agent, follow these steps: 
 
 [!INCLUDE [active-directory-cloud-sync-how-to-install](~/includes/entra-cloud-sync-how-to-install.md)]
 
@@ -167,21 +167,21 @@ Use the following steps to configure provisioning:
  [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)] 
  
  3. Select **New configuration**.
- :::image type="content" source="media/how-to-configure/new-ux-configure-1.png" alt-text="Screenshot of adding a configuration." lightbox="media/how-to-configure/new-ux-configure-1.png":::
+    :::image type="content" source="media/how-to-configure/new-ux-configure-1.png" alt-text="Screenshot of adding a configuration." lightbox="media/how-to-configure/new-ux-configure-1.png":::
  
  4. On the configuration screen, select your domain and whether to enable password hash sync.  Select **Create**.   
- :::image type="content" source="media/how-to-configure/new-ux-configure-2.png" alt-text="Screenshot of a new configuration." lightbox="media/how-to-configure/new-ux-configure-2.png":::
+    :::image type="content" source="media/how-to-configure/new-ux-configure-2.png" alt-text="Screenshot of a new configuration." lightbox="media/how-to-configure/new-ux-configure-2.png":::
  
- 5.  The **Get started** screen opens.  
+ 5. The **Get started** screen opens.  
  
- 6.  On the **Get started** screen, select either **Add scoping filters** next to the **Add scoping filters** icon or on the select **Scoping filters** on the left under **Manage**.
- :::image type="content" source="media/how-to-configure/new-ux-configure-5.png" alt-text="Screenshot of scoping filters." lightbox="media/how-to-configure/new-ux-configure-5.png":::
+ 6. On the **Get started** screen, select either **Add scoping filters** next to the **Add scoping filters** icon or on the select **Scoping filters** on the left under **Manage**.
+    :::image type="content" source="media/how-to-configure/new-ux-configure-5.png" alt-text="Screenshot of scoping filters." lightbox="media/how-to-configure/new-ux-configure-5.png":::
  
  7. Select the scoping filter. For this tutorial select:
-     - **Selected organizational units**: Scopes the configuration to apply to specific OUs. 
+    - **Selected organizational units**: Scopes the configuration to apply to specific OUs. 
  
  8. In the box, enter "OU=CPUsers,DC=contoso,DC=com".
- :::image type="content" source="media/tutorial-migrate-aadc-aadccp/configure-1.png" alt-text="Screenshot of the scoping filter." lightbox="media/tutorial-migrate-aadc-aadccp/configure-1.png":::
+    :::image type="content" source="media/tutorial-migrate-aadc-aadccp/configure-1.png" alt-text="Screenshot of the scoping filter." lightbox="media/tutorial-migrate-aadc-aadccp/configure-1.png":::
  
  9.  Select **Add**. Select **Save**.
 
