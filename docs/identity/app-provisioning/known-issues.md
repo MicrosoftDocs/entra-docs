@@ -49,7 +49,7 @@ For existing B2B collaboration users, the showInAddressList attribute is updated
 
 Where [GuestUserUPN] is the calculated UserPrincipalName. Example:  
 
-`Set-MailUser guestuser1_contoso.com#EXT#@fabricam.onmicrosoft.com -HiddenFromAddressListsEnabled:$false`
+`Set-MailUser guestuser1_contoso.com#EXT#@fabrikam.onmicrosoft.com -HiddenFromAddressListsEnabled:$false`
 
 For more information, see [About the Exchange Online PowerShell module](/powershell/exchange/exchange-online-powershell-v2).
 

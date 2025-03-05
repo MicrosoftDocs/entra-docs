@@ -435,7 +435,7 @@ You have two main options for signing in users using Microsoft Authentication Li
     ```swift
     acquireTokenInteractively() {
         guard let applicationContext = self.applicationContext else { return }
-        guard let webViewParameters = self.webViewParamaters else { return }
+        guard let webViewParameters = self.webViewParameters else { return }
         
         updateLogging(text: "Acquiring token interactively...")
 
@@ -624,7 +624,7 @@ To sign out a user from your iOS (Swift) app using MSAL for iOS, use the followi
         
         guard let account = self.currentAccount else { return }
         
-        guard let webViewParamaters = self.webViewParamaters else { return }
+        guard let webViewParameters = self.webViewParameters else { return }
         
         updateLogging(text: "Signing out...")
         
@@ -636,7 +636,7 @@ To sign out a user from your iOS (Swift) app using MSAL for iOS, use the followi
              - account:    The account to remove from the cache
              */
             
-            let signoutParameters = MSALSignoutParameters(webviewParameters: webViewParamaters)
+            let signoutParameters = MSALSignoutParameters(webviewParameters: webViewParameters)
             
             // If testing with Microsoft's shared device mode, trigger signout from browser. More details here:
             // https://docs.microsoft.com/azure/active-directory/develop/msal-ios-shared-devices
@@ -663,7 +663,7 @@ To sign out a user from your iOS (Swift) app using MSAL for iOS, use the followi
     }
 ```
 
-The code verifies the existence of the `applicationContext`, `currentAccount`, and `webViewParamaters`. Then, it logs the sign out process. The code removes all tokens from the cache for the provided account. Depending on the current device mode, it determines whether to sign out from the browser. Upon completion, it updates the logging text accordingly. If an error occurs during the sign out process, it logs the error message. Upon successful sign out, it updates the access token to an empty string and clears the current account.
+The code verifies the existence of the `applicationContext`, `currentAccount`, and `webViewParameters`. Then, it logs the sign out process. The code removes all tokens from the cache for the provided account. Depending on the current device mode, it determines whether to sign out from the browser. Upon completion, it updates the logging text accordingly. If an error occurs during the sign out process, it logs the error message. Upon successful sign out, it updates the access token to an empty string and clears the current account.
 
 ## Next steps
 

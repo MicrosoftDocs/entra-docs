@@ -19,7 +19,7 @@ ms.custom: not-enterprise-apps
 
 # Deploy F5 BIG-IP Virtual Edition VM in Azure
 
-In this tutorial, learn to deploy BIG-IP Vitural Edition (VE) in Azure infrastructure as a service (IaaS). At the end of the tutorial you'll have:
+In this tutorial, learn to deploy BIG-IP Virtual Edition (VE) in Azure infrastructure as a service (IaaS). At the end of the tutorial you'll have:
 
 - A prepared BIG-IP virtual machine (VM) to model a secure hybrid access (SHA) proof-of-concept
 - A staging instance to test new BIG-IP system updates and hotfixes
@@ -204,7 +204,7 @@ To resolve your published SHA services to your BIG-IP-VM public IP(s), configure
 4. In the BIG-IP-VMs networking view, from the drop-down IP configuration list, select the first secondary IP.
 5. Select the **NIC Public IP** link.
 
-    ![Scrrenshot of NIC public IP.](./media/f5ve-deployment-plan/networking.png)
+    ![Screenshot of NIC public IP.](./media/f5ve-deployment-plan/networking.png)
 
 4. In the left-hand pane, below the **Settings** section, select **Configuration**. 
 5. The public IP and DNS properties menu appears.
