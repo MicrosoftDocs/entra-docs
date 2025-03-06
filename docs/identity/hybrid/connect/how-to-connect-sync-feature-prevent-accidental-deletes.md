@@ -51,7 +51,7 @@ If there are too many deletes staged to be exported to Microsoft Entra ID, then 
 
 From [Microsoft Entra Connect Health](https://portal.azure.com/#blade/Microsoft_Azure_ADHybridHealth/AadHealthMenuBlade) portal, navigate to Sync services, select your tenant, then select your active Entra Connect server and select Alerts to see the list of events where the accidental delete threshold is reported.
 
-![Screenshot that shows Microsoft Entra Connect Sync Alerts.](./media/how-to-connect-sync-feature-prevent-accidental-deletes/connecthealthalert.png)
+![Screenshot that shows Microsoft Entra Connect Sync Alerts.](./media/how-to-connect-sync-feature-prevent-accidental-deletes/connect-health-alert.png)
 
 From the Application event viewer logs you can see a Warning event ID 116 as the following sample:
 
