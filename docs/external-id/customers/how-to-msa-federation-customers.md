@@ -90,7 +90,7 @@ At this point, the MSA identity provider has been set up in your Microsoft Entra
 1. In your external tenant, browse to **Identity** > **External Identities** > **User flows**.
 1. Select the user flow where you want to add the OIDC identity provider.
 1. Under Settings, select **Identity providers.**
-1. Under **Other Identity Providers**, select **Microsoft Account**.
+1. Under **Other Identity Providers**, select the identity provider you created, which is **Microsoft Account**.
 
    :::image type="content" source="media/how-to-msa-federation-customers/MSA-IdP-list.png" alt-text="Screenshot of the MSA provider in the IdP list.":::
 
