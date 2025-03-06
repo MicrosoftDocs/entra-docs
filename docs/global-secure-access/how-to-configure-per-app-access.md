@@ -3,9 +3,9 @@ title: How to Configure Per-app Access Using Global Secure Access Applications
 description: Learn how to configure per-app access to your private, internal resources using Global Secure Access applications for Microsoft Entra Private Access.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.topic: how-to
-ms.date: 12/23/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access
 ms.reviewer: katabish
@@ -130,7 +130,7 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
 > [!NOTE]
 > You can add up to 500 application segments to your app.
 >
-> Do not overlap FQDNs, IP addresses, and IP ranges between your Quick Access app and any Private Access apps.
+> Do not overlap FQDNs, IP addresses, and IP ranges between any Private Access apps.
 
 ## Assign users and groups
 

@@ -169,8 +169,8 @@ Includes Defender suite, Secure Score, Cloud App Security, and Threat Intelligen
 > | Area | Content |
 > | --- | --- |
 > | Overview | [Universal Print Administrator Roles](/universal-print/fundamentals/universal-print-administrator-roles) |
-> | Management API reference | **Universal Print-specifc roles in Microsoft Entra ID**<br/>[Microsoft Graph v1.0 roleManagement API](/graph/api/resources/rolemanagement)<br/>• Use `directory` provider<br/>• See roles with permissions starting with `microsoft.azure.print` |
-> | Audit and monitoring reference | **Universal Print-specifc roles in Microsoft Entra ID**<br/>[Microsoft Entra activity log overview](/entra/identity/monitoring-health/howto-access-activity-logs)<br/>API access to Microsoft Entra audit logs:<br/>• [Microsoft Graph v1.0 directoryAudit API](/graph/api/resources/directoryaudit)<br/>• Audits with `RoleManagement` category |
+> | Management API reference | **Universal Print-specific roles in Microsoft Entra ID**<br/>[Microsoft Graph v1.0 roleManagement API](/graph/api/resources/rolemanagement)<br/>• Use `directory` provider<br/>• See roles with permissions starting with `microsoft.azure.print` |
+> | Audit and monitoring reference | **Universal Print-specific roles in Microsoft Entra ID**<br/>[Microsoft Entra activity log overview](/entra/identity/monitoring-health/howto-access-activity-logs)<br/>API access to Microsoft Entra audit logs:<br/>• [Microsoft Graph v1.0 directoryAudit API](/graph/api/resources/directoryaudit)<br/>• Audits with `RoleManagement` category |
 
 ### Microsoft 365 Apps suite management
 

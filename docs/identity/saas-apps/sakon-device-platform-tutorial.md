@@ -2,7 +2,7 @@
 title: Microsoft Entra SSO integration with Sakon Device Platform
 description: Learn how to configure single sign-on between Microsoft Entra ID and Sakon Device Platform.
 services: active-directory
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
@@ -10,14 +10,14 @@ ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
 ms.date: 06/04/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Directory Services so that I can control who has access to Directory Services, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Microsoft Entra SSO integration with Sakon Device Platform
 
-In this tutorial, you'll learn how to integrate Sakon Device Platform with Microsoft Entra ID. When you integrate Sakon Device Platform with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Sakon Device Platform with Microsoft Entra ID. When you integrate Sakon Device Platform with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Sakon Device Platform.
 * Enable your users to be automatically signed-in to Sakon Device Platform with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To integrate Microsoft Entra ID with Sakon Device Platform, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Sakon Device Platform supports only **IDP** initiated SSO.
 
@@ -141,6 +141,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510
 ).
 
-## Next steps
+## Related content
 
 Once you configure Sakon Device Platform you can enforce session control, which protects exfiltration and infiltration of your organization's sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

@@ -1,21 +1,21 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on integration with F5'
+title: Microsoft Entra single sign-on integration with F5
 description: Learn how to configure single sign-on (SSO) between Microsoft Entra ID and F5.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 ---
 
-# Tutorial: Microsoft Entra single sign-on integration with F5
+# Microsoft Entra single sign-on integration with F5
 
-In this tutorial, you'll learn how to integrate F5 with Microsoft Entra ID. When you integrate F5 with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate F5 with Microsoft Entra ID. When you integrate F5 with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to F5.
 * Enable your users to be automatically signed-in to F5 with their Microsoft Entra accounts.
@@ -79,7 +79,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * F5 supports **SP and IDP** initiated SSO
 * F5 SSO can be configured in three different ways.
@@ -496,7 +496,7 @@ When you click the F5 tile in the Access Panel, you should be automatically sign
 
 ## Additional resources
 
-- [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
@@ -510,6 +510,6 @@ When you click the F5 tile in the Access Panel, you should be automatically sign
 
 - [F5 BIG-IP APM and Microsoft Entra integration for secure hybrid access](~/identity/enterprise-apps/f5-integration.md)
 
-- [Tutorial to deploy F5 BIG-IP Virtual Edition VM in Azure IaaS for secure hybrid access](~/identity/enterprise-apps/f5-bigip-deployment-guide.md)
+- [Article to deploy F5 BIG-IP Virtual Edition VM in Azure IaaS for secure hybrid access](~/identity/enterprise-apps/f5-bigip-deployment-guide.md)
 
-- [Tutorial for Microsoft Entra single sign-on integration with F5 BIG-IP for Password-less VPN](~/identity/enterprise-apps/f5-passwordless-vpn.md)
+- [Article for Microsoft Entra single sign-on integration with F5 BIG-IP for Password-less VPN](~/identity/enterprise-apps/f5-passwordless-vpn.md)

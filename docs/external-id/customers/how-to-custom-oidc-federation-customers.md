@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: how-to
-ms.date: 11/27/2024
+ms.date: 02/26/2025
 ms.author: cmulligan
 ms.reviewer: brozbab
 ms.custom: it-pro
@@ -26,7 +26,7 @@ When you add an OIDC identity provider to your user flow's sign-in options, user
 ## Prerequisites
 
 - An [external tenant](how-to-create-external-tenant-portal.md).
-- A [registered application](how-to-register-ciam-app.md) in the tenant.
+- A [registered application](/entra/identity-platform/quickstart-register-app) in the tenant.
 - A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
 
 ## Set up your OpenID Connect identity provider
@@ -50,17 +50,17 @@ To configure OpenID connect federation with your identity provider in Microsoft 
 
 - **Well-known endpoint**
 - **Issuer URI**
-- **Client ID** 
+- **Client ID**
 - **Client Authentication Method**
 - **Client Secret**
-- **Scope** 
+- **Scope**
 - **Response Type**
-- **Claims mapping** (optional)
+- **Claims mapping**
   - Sub
   - Name
   - Given name
   - Family name
-  - Email
+  - Email (required)
   - Email_verified
   - Phone number
   - Phone_number_verified

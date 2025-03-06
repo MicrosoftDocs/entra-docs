@@ -8,7 +8,7 @@ ms.assetid: d4bc5583-6537-4cd9-bc4b-7712fdd9272a
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: sample
-ms.date: 1/26/2025
+ms.date: 02/05/2025
 ms.author: justinha
 ms.reviewer: wanjikumugo
 ms.custom: devx-track-azurepowershell, has-azure-ad-ps-ref, azure-ad-ref-level-one-done

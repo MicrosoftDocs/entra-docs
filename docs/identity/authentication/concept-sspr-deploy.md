@@ -5,7 +5,7 @@ description: Learn about deployment considerations and strategy for successful i
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/06/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: gargi-sinha
@@ -141,7 +141,7 @@ When technology projects fail, they typically do so due to mismatched expectatio
 
 We recommend that the initial configuration of SSPR is in a test environment. Start with a pilot group by enabling SSPR for a subset of users in your organization. See [Best practices for a pilot](~/architecture/deployment-plans.md).
 
-To create a group, see how to [create a group and add members in Microsoft Entra ID](~/fundamentals/how-to-manage-groups.yml). 
+To create a group, see how to [create a group and add members in Microsoft Entra ID](/entra/fundamentals/how-to-manage-groups). 
 
 ## Plan configuration
 

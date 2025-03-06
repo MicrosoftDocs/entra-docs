@@ -8,7 +8,7 @@ ms.assetid: 445c60da-e115-447b-841d-96739975bdf6
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: troubleshooting
-ms.date: 12/03/2024
+ms.date: 02/19/2025
 ms.author: justinha
 ---
 # Troubleshoot secure LDAP connectivity issues to a Microsoft Entra Domain Services managed domain

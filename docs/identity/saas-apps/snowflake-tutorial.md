@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Snowflake'
+title: Microsoft Entra SSO integration with Snowflake
 description: Learn how to configure single sign-on between Microsoft Entra ID and Snowflake.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Snowflake so that I can control who has access to Snowflake, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Snowflake
+# Microsoft Entra SSO integration with Snowflake
 
-In this tutorial, you learn how to integrate Snowflake with Microsoft Entra ID. When you integrate Snowflake with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Snowflake with Microsoft Entra ID. When you integrate Snowflake with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Snowflake.
 * Enable your users to be automatically signed-in to Snowflake with their Microsoft Entra accounts.
@@ -36,7 +36,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you'll configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you'll configure and test Microsoft Entra single sign-on in a test environment.
 
 * Snowflake supports **SP and IDP** initiated SSO.
 * Snowflake supports [automated user provisioning and deprovisioning](snowflake-provisioning-tutorial.md) (recommended).
@@ -238,8 +238,8 @@ You can also use Microsoft My Apps to test the application in any mode. When you
 
 ## Prevent application access through local accounts
 
-Once you've validated that SSO works and rolled it out in your organization, we recommend disabling application access using local credentials. This ensures that your conditional access policies, MFA, etc. will be in place to protect sign-ins to Snowflake. Review the Snowflake documentation for [configuring SSO](https://docs.snowflake.com/en/user-guide/admin-security-fed-auth-use), and use the ALTER USER commandlet to remove user passwords.  
+Once you've validated that SSO works and rolled it out in your organization, we recommend disabling application access using local credentials. This ensures that your Conditional Access policies, MFA, etc. will be in place to protect sign-ins to Snowflake. Review the Snowflake documentation for [configuring SSO](https://docs.snowflake.com/en/user-guide/admin-security-fed-auth-use), and use the ALTER USER commandlet to remove user passwords.  
 
-## Next steps
+## Related content
 
 Once you configure Snowflake you can enforce Session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

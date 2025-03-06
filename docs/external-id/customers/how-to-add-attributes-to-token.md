@@ -30,7 +30,7 @@ You can specify which built-in or custom attributes you want to include as claim
 
 ## Prerequisites
 
-- [Register the application](how-to-register-ciam-app.md) with Microsoft Entra ID.
+- [Register the application](/entra/identity-platform/quickstart-register-app) with Microsoft Entra ID.
 - [Create a sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md) and selected the attributes you want to collect during sign-up.
 - [Create the custom attributes](how-to-define-custom-attributes.md) you want to include.
 

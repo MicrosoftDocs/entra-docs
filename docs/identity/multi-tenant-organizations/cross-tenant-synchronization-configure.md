@@ -391,7 +391,7 @@ Once you've started a provisioning job, you can monitor the status.
 
     You can also view audit logs in the target tenant.
 
-1. In the target tenant, select **Users** > **Audit logs** to view logged events for user management.
+1. In the target tenant, select **Users** > **Audit logs** to view logged events for user management.  Cross tenant synchronziation in the target tenant will be logged as the actor being the "Microsoft.Azure.SyncFabric" application.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/audit-logs-users-target.png" alt-text="Screenshot of the Audit logs page in the target tenant that lists the log entries for user management." lightbox="./media/cross-tenant-synchronization-configure/audit-logs-users-target.png":::
 
@@ -532,15 +532,15 @@ This error indicates the Guest invite settings in the target tenant are configur
 
 Change the Guest invite settings in the target tenant to a less restrictive setting. For more information, see [Configure external collaboration settings](../../external-id/external-collaboration-settings-configure.md).
 
-#### Symptom - User Principal Name does not update for existing B2B users in pending acceptance state
+#### Symptom - UserPrincipalName does not update for existing B2B users in pending acceptance state
 
-When a user is first invited through manual B2B invitation, the invitation is sent to the source user mail address. As a result the guest user in the target tenant is created with a user principal name (UPN) prefix using the source mail value property. There are environments where the source user object properties, UPN and Mail, have different values, for example Mail == user.mail@domain.com and UPN == user.upn@otherdomain.com. In this case the guest user in the target tenant will be created with the UPN as  *user.mail_domain.com#EXT#@contoso.onmicrosoft.com.*
+When a user is first invited through manual B2B invitation, the invitation is sent to the source user mail address. As a result the guest user in the target tenant is created with a UserPrincipalName (UPN) prefix using the source mail value property. There are environments where the source user object properties, UPN and Mail, have different values, for example Mail == user.mail@domain.com and UPN == user.upn@otherdomain.com. In this case the guest user in the target tenant will be created with the UPN as  *user.mail_domain.com#EXT#@contoso.onmicrosoft.com.*
 
 The issue raises when then the source object is put in scope for cross-tenant sync and the expectation is that besides other properties, the UPN prefix of the target guest user **would be updated to match the UPN of the source user** (using the example above the value would be: *user.upn_otherdomain.com#EXT#@contoso.onmicrosoft.com*). However, that's not happening during incremental sync cycles, and the change is ignored.
 
 **Cause**
 
-This issue happens when the **B2B user which was manually invited into the target tenant didn't accept or redeem the invitation**, so its state is in pending acceptance. When a user is invited through an email, an object is created with a set of attributes that are populated from the mail, one of them is the UPN, which is pointing to the mail value of the source user. If later you decide to add the user to the scope for cross-tenant sync, the system will try to join the source user with a B2B user in target tenant based on the alternativeSecurityIdentifier attribute, but the previously created user does not have an alternativeSecurityIdentifier property populated because the invitation was not redeemed. So, the system won't consider this to be a new user object and will not update the UPN value. The user principal name is not updated in the following scenarios:
+This issue happens when the **B2B user which was manually invited into the target tenant didn't accept or redeem the invitation**, so its state is in pending acceptance. When a user is invited through an email, an object is created with a set of attributes that are populated from the mail, one of them is the UPN, which is pointing to the mail value of the source user. If later you decide to add the user to the scope for cross-tenant sync, the system will try to join the source user with a B2B user in target tenant based on the alternativeSecurityIdentifier attribute, but the previously created user does not have an alternativeSecurityIdentifier property populated because the invitation was not redeemed. So, the system won't consider this to be a new user object and will not update the UPN value. The UserPrincipalName is not updated in the following scenarios:
 
 1. The UPN and mail are different for a user when was manually invited.
 1. The user was invited prior to enabling cross-tenant sync.
