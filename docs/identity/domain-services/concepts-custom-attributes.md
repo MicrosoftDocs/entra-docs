@@ -67,9 +67,9 @@ Domain Services back fills all synchronized users and groups with the onboarded 
 
 To check the backfilling status, click **Domain Services Health** and verify the **Synchronization with Microsoft Entra ID** monitor has an updated timestamp within an hour since onboarding. Once updated, the backfill is complete. 
 
-## Unallowed Microsoft Entra ID attributes
+## Reserved attributes for Microsoft Entra ID 
 
-This is a list of attributes that customers are reserved for Microsoft Entra ID. They can't be used for Microsoft Entra Domain Services. 
+The following attributes are reserved for Microsoft Entra ID. They can't be used for Microsoft Entra Domain Services. 
 
 Name|Attribute
 ----|---------
