@@ -52,7 +52,7 @@ In this example, we classify the minimum set of permission required for single s
 
 :::zone pivot="entra-powershell"
 
-You can use the latest [Microsoft Entra PowerShell](powershell/entra-powershell/?preserve-view=true&view=entra-powershell) to classify permissions. Permission classifications are configured on the **ServicePrincipal** object of the API that publishes the permissions.
+You can use the latest [Microsoft Entra PowerShell](/powershell/entra-powershell/?preserve-view=true&view=entra-powershell) to classify permissions. Permission classifications are configured on the **ServicePrincipal** object of the API that publishes the permissions.
 
 Run the following command to connect to Microsoft Entra PowerShell. To consent to the required scopes, sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 

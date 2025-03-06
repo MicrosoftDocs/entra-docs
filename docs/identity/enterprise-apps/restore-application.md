@@ -42,7 +42,7 @@ Take the following steps to recover a recently deleted enterprise application. F
 
 ## View restorable enterprise applications using Microsoft Entra PowerShell
 
-Make sure you're using the [Microsoft Entra PowerShell](powershell/entra-powershell/?preserve-view=true&view=entra-powershell) module.
+Make sure you're using the [Microsoft Entra PowerShell](/powershell/entra-powershell/?preserve-view=true&view=entra-powershell) module.
 
 You need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 

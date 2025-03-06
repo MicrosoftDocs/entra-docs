@@ -52,7 +52,7 @@ To delete an enterprise application, you need:
 
 ## Delete an enterprise application using Microsoft Entra PowerShell
 
-Make sure you're using the [Microsoft Entra PowerShell](powershell/entra-powershell/?preserve-view=true&view=entra-powershell) module.
+Make sure you're using the [Microsoft Entra PowerShell](/powershell/entra-powershell/?preserve-view=true&view=entra-powershell) module.
 
 1. Connect to Microsoft Entra PowerShell and sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Get the application you want to delete by filtering by the application name, then delete the application.
