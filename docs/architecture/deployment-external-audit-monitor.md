@@ -27,9 +27,7 @@ This configuration requires projecting an Azure resource group with the resource
 
 ### Monitor and alert
 
-Monitoring helps ensure the efficient operation of identity and associated systems. These actions include establishing monitoring infrastructure, defining monitoring procedures, setting up dashboards or alerts, and creating a response protocol to handle alerts. 
-
-**What to monitor**
+Monitoring helps ensure the efficient operation of identity and associated systems. These actions include establishing monitoring infrastructure, defining monitoring procedures, setting up dashboards or alerts, and creating a response protocol to handle alerts. See the following list of what to monitor:
 
 **Availability** - Sometimes referred to as a heartbeat or health endpoint. Availability indicates if the service is operational. You can set it up on the monitoring system and it can execute frequently for in-use components without significant overhead. For custom extension APIs, we suggest you implement health endpoint monitoring. If you're developing your API using .NET, use [Health checks in ASP.NET Core](/aspnet/core/host-and-deploy/health-checks?view=aspnetcore-8.0&preserve-view=true) to expose health endpoints. While monitoring availability is essential, it might indicate service failures only.  
 
