@@ -24,7 +24,7 @@ Both types of extensions can be configured by using Microsoft Entra Connect for 
 
 >[!Note] 
 >The following types of extensions aren't supported for synchronization:  
->- Custom security attributes in Microsoft Entra ID (Preview)
+>- Custom security attributes in Microsoft Entra ID 
 >- Microsoft Graph schema extensions
 >- Microsoft Graph open extensions
 
