@@ -67,7 +67,7 @@ For step-by-step instructions for granting tenant-wide admin consent from the Mi
 
 ### Grant consent on behalf of a specific user
 
-Instead of granting consent for an entire organization, an admin can also use the [Microsoft Graph API](/graph/use-the-api) to grant consent to delegated permissions on behalf of a single user. For a detailed example that uses Microsoft Graph PowerShell, see [Grant consent on behalf of a single user by using PowerShell](manage-consent-requests.md).
+Instead of granting consent for an entire organization, an admin can also use the [Microsoft Graph API](/graph/use-the-api) to grant consent to delegated permissions on behalf of a single user. For a detailed example that uses Microsoft Graph PowerShell, see [Grant consent on behalf of a single user by using PowerShell](grant-consent-single-user.md).
 
 ### Limit user access to an application
 
