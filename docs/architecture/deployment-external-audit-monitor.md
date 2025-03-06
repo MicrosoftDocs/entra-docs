@@ -70,7 +70,7 @@ Synthetic transactions should reference applications and APIs used for token acq
 
 Microsoft Entra External ID pricing consists of a core offer and premium add-ons.  
 
-Core offer billing is based on monthly active users ([MAU](../external-id/external-identities-pricing.md), which is the count of unique external users who authenticate to your tenants in a calendar month. To determine the total MAUs, MAUs from all workforce and external tenants linked to a subscription are combined. 
+Core offer billing is based on monthly active users ([MAU](../external-id/external-identities-pricing.md)), which is the count of unique external users who authenticate to your tenants in a calendar month. To determine the total MAUs, MAUs from all workforce and external tenants linked to a subscription are combined. 
 
 For more information on the billing model, see [Microsoft Entra External ID pricing](../external-id/external-identities-pricing.md). 
 
@@ -78,7 +78,7 @@ View incurred costs on the cost analysis area of the subscription/resource group
 
 In the [Microsoft Entra admin center](https://entra.microsoft.com), for the Microsoft External ID tenant, use the usage and insight dashboard to view utilization details, even when usage is below the free tire.  
 
-Learn how to [list monthly activeUsers, Microsoft Graph](/graph/api/monthlyuserinsightmetricsroot-list-activeusers?view=graph-rest-beta&tabs=http&preserve-view=true). 
+Learn how to [list monthly activeUsers in Microsoft Graph](/graph/api/monthlyuserinsightmetricsroot-list-activeusers?view=graph-rest-beta&tabs=http&preserve-view=true). 
 
 See the graph resource types in [dailyUserInsigntMetricsRoot resource type](/graph/api/resources/dailyuserinsightmetricsroot?view=graph-rest-beta&preserve-view=true). 
 
