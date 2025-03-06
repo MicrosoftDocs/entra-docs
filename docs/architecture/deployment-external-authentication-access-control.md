@@ -17,7 +17,7 @@ Authentication helps verify identity, and access control is a process of authori
 
 ## Authentication protocol and endpoints: customer apps and authentication
 
-Customer-facing applications can authenticate with Microsoft Entra External ID using Open Authorization 2.0 ([OAuth 2](../identity-platform/v2-protocols.md) or Security Assertion Markup Language 2.0 ([SAML 2](https://en.wikipedia.org/wiki/SAML_2.0). 
+Customer-facing applications can authenticate with Microsoft Entra External ID using Open Authorization 2.0 ([OAuth 2](../identity-platform/v2-protocols.md)) or Security Assertion Markup Language 2.0 ([SAML 2](https://en.wikipedia.org/wiki/SAML_2.0)). 
 
 The following table summarizes the application integration options for OAuth 2 and OpendID Connect (OIDC).  
 
