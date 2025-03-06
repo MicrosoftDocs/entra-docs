@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 03/05/2025
+ms.date: 03/06/2025
 ms.author: gasinh
 
 #customer intent: I need to design a tenant, manage data residency, and know compliance requirements in Microsoft Entra External ID.
@@ -13,7 +13,7 @@ ms.author: gasinh
 
 # Microsoft Entra External ID deployment guide for tenant design
 
- This section outlines considerations when you store user profile data in the user directory. Find design considerations for attributes to store in Microsoft Entra ID, also how to manage data residency, and compliance requirements. 
+This section outlines considerations when you store user profile data in the user directory. Find design considerations for attributes to store in Microsoft Entra ID. Learn how to manage data residency, and compliance requirements. 
 
 ## User directory
 
@@ -47,6 +47,7 @@ When you define the extension attribute, the name stored in the directory follow
 
 **GET**: [Extension properties](https://graph.microsoft.com/v1.0/applications/d29c324a-ede6-48d4-bc6a-e11d7748f1be/extensionProperties)
 
+```Kusto
   "value": [</br> 
         {</br>
             "id": "b7271a2b-a03e-48f7-abf0-54d21427987a",</br> 
@@ -60,7 +61,7 @@ When you define the extension attribute, the name stored in the directory follow
                 "User"</br> 
             ]</br>
         } 
-
+```
 
 The supported data formats include:
 
