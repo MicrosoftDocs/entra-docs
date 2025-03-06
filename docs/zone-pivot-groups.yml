@@ -114,8 +114,8 @@ groups:
     title: Azure AD PowerShell
   - id: ms-powershell
     title: Microsoft Graph PowerShell
-## template without azure AD PowerShell
-- id: enterprise-apps-minus-former-powershell
+## template without legacy PowerShell
+- id: enterprise-apps-minus-legacy-powershell
   title: Manage Enterprise apps
   prompt: Choose an option
   pivots:

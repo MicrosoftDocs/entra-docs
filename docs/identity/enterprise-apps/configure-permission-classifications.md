@@ -52,7 +52,7 @@ In this example, we classify the minimum set of permission required for single s
 
 :::zone pivot="entra-powershell"
 
-You can use the latest [Microsoft Entra PowerShell](powershell/entra-powershell/?view=entra-powershell) to classify permissions. Permission classifications are configured on the **ServicePrincipal** object of the API that publishes the permissions.
+You can use the latest [Microsoft Entra PowerShell](powershell/entra-powershell/?preserve-view=true&view=entra-powershell) to classify permissions. Permission classifications are configured on the **ServicePrincipal** object of the API that publishes the permissions.
 
 Run the following command to connect to Microsoft Entra PowerShell. To consent to the required scopes, sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
@@ -135,7 +135,7 @@ You can use [Microsoft Graph PowerShell](/powershell/microsoftgraph/get-started?
 Run the following command to connect to Microsoft Graph PowerShell. To consent to the required scopes, sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
 ```powershell
-Connect-MgGraph -Scopes "Policy.ReadWrite.PermissionGrant".
+Connect-MgGraph -Scopes "Policy.ReadWrite.PermissionGrant", "Application.Read.All"
 ```
 
 ### List current permission classifications for an API using Microsoft Graph PowerShell
@@ -206,7 +206,7 @@ Remove-MgServicePrincipalDelegatedPermissionClassification -DelegatedPermissionC
 
 To configure permissions classifications for an enterprise application, sign in to [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
-You need to consent to the `Policy.ReadWrite.PermissionGrant` permission.
+You need to consent to the `Policy.ReadWrite.PermissionGrant` and `Application.Read.All` permissions.
 
 Run the following queries on Microsoft Graph explorer to add a delegated permissions classification for an application.
 
@@ -244,7 +244,7 @@ DELETE https://graph.microsoft.com/v1.0/servicePrincipals(appId='00000003-0000-0
 
 :::zone-end
 
-## Next steps
+## Related content
 
 - [Manage app consent policies](manage-app-consent-policies.md)
 - [Permissions and consent in the Microsoft identity platform](~/identity-platform/permissions-consent-overview.md)

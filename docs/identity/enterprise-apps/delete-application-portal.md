@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: how-to
 
-ms.date: 02/28/2025
+ms.date: 03/06/2025
 ms.author: jomondi
 ms.reviewer: sureshja
 zone_pivot_groups: enterprise-apps-all
@@ -28,8 +28,11 @@ When you delete and enterprise application, it remains in a suspended state in t
 To delete an enterprise application, you need:
 
 - A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Cloud Application Administrator, Application Administrator, or owner of the service principal.
-- An [enterprise application added to your tenant](add-application-portal.md)
+   - One of the following roles: 
+   - Cloud Application Administrator
+   - Application Administrator
+   - owner of the service principal
+- An [enterprise application added to your tenant](add-application-portal.md).
 
 :::zone pivot="portal"
 
@@ -49,7 +52,7 @@ To delete an enterprise application, you need:
 
 ## Delete an enterprise application using Microsoft Entra PowerShell
 
-Make sure you're using the [Microsoft Entra PowerShell](powershell/entra-powershell/?view=entra-powershell) module.
+Make sure you're using the [Microsoft Entra PowerShell](powershell/entra-powershell/?preserve-view=true&view=entra-powershell) module.
 
 1. Connect to Microsoft Entra PowerShell and sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 1. Get the application you want to delete by filtering by the application name, then delete the application.
@@ -108,6 +111,6 @@ To delete an enterprise application using [Graph Explorer](https://developer.mic
 
 :::zone-end
 
-## Next steps
+## Related content
 
 - [Restore a deleted enterprise application](restore-application.md)

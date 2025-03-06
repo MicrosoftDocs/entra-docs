@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.date: 03/05/2025
 ms.author: jomondi
 ms.reviewer: rolyon
-zone_pivot_groups: enterprise-apps-all
+zone_pivot_groups: enterprise-apps-minus-legacy-powershell
 ms.custom: not-enterprise-apps
 
 #customer intent: As an IT admin troubleshooting issues with user access to Microsoft applications, I want to understand and troubleshoot errors that occur during the process of consenting to an application, so that I can successfully grant the necessary permissions and access the application.

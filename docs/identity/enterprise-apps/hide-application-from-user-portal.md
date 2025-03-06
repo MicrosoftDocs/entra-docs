@@ -1,5 +1,5 @@
 ---
-title: Hide an Enterprise application
+title: Hide an enterprise application
 description: How to hide an Enterprise application from user's experience in Microsoft Entra ID access portals or Microsoft 365 launchers.
 
 author: omondiatieno
@@ -17,7 +17,7 @@ ms.custom: enterprise-apps, has-azure-ad-ps-ref
 #customer intent: As an administrator, I want to hide an application from the My Apps portal and Microsoft 365 launcher, so that users do not have visibility or access to the application.
 ---
 
-# Hide an Enterprise application
+# Hide an enterprise application
 
 Learn how to hide enterprise applications in Microsoft Entra ID. When an application is hidden, users still have permissions to the application.
 
@@ -25,9 +25,11 @@ Learn how to hide enterprise applications in Microsoft Entra ID. When an applica
 
 To hide an application from the My Apps portal and Microsoft 365 launcher, you need:
 
-- An Azure account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Cloud Application Administrator, Application Administrator.
-- Global Administrator is required to hide all Microsoft 365 applications.
+- A Microsoft Entra account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- One of the following roles:
+  - Cloud Application Administrator
+  - Application Administrator.
+  - Global Administrator is required to hide all Microsoft 365 applications.
 
 ## Hide an application from the end user
 
@@ -79,6 +81,8 @@ Update-MgServicePrincipal -ServicePrincipalID  $objectId -Tags $tags
 
 To hide an enterprise application using [Graph Explorer](https://developer.microsoft.com/graph/graph-explorer), you need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 
+Ensure you consent to the `Application.ReadWrite.All` permission before running the queries.
+
 Run the following queries.
 
 1. Get the application you want to hide.
@@ -124,6 +128,7 @@ Use the following steps to hide all Microsoft 365 applications from the My Apps 
 1. Select **Save**.
 
 :::zone-end
-## Next steps
+
+## Related content
 
 - [Remove a user or group assignment from an enterprise app](./assign-user-or-group-access-portal.md)

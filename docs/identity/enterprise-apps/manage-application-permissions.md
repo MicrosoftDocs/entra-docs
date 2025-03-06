@@ -29,8 +29,10 @@ The steps in this article apply to all applications that were added to your Micr
 To review permissions granted to applications, you need:
 
 - A Microsoft Entra account with an active subscription. [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Cloud Application Administrator, Application Administrator.
-- A Service principal owner who isn't an administrator is able to invalidate refresh tokens.
+- One of the following roles:
+  - Cloud Application Administrator
+  - Application Administrator.
+  - A Service principal owner who isn't an administrator is able to invalidate refresh tokens.
 
 :::zone pivot="portal"
 
@@ -250,13 +252,13 @@ Run the following queries to remove appRoleAssignments of users or groups to the
 :::zone-end
 
 > [!NOTE]
-> Revoking the current granted permission won't stop users from re-consenting to the application's requested permissions. You need to [stop the application from requesting the permissions through dynamic consent](~/identity-platform/howto-update-permissions.md). If you want to block users from consenting altogether, read [Configure how users consent to applications](configure-user-consent.md).
+> Revoking the current granted permission doesn't stop users from re-consenting to the application's requested permissions. You need to [stop the application from requesting the permissions through dynamic consent](~/identity-platform/howto-update-permissions.md). If you want to block users from consenting altogether, read [Configure how users consent to applications](configure-user-consent.md).
 
 ## Other authorization to consider
 
 Delegated and application permissions aren't the only ways to grant applications and users access to protected resources. Admins should be aware of other authorization systems that might grant access to sensitive information. Examples of various authorization systems at Microsoft include [Microsoft Entra built-in roles](/entra/identity/role-based-access-control/permissions-reference), [Exchange RBAC](/exchange/permissions-exo/application-rbac), and [Teams resource-specific consent](/microsoftteams/platform/graph-api/rsc/resource-specific-consent).
 
-## Next steps
+## Related content
 
 - [Configure user consent setting](configure-user-consent.md)
 - [Configure admin consent workflow](configure-admin-consent-workflow.md)

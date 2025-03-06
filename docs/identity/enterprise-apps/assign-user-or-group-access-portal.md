@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 
 ms.topic: how-to
-ms.date: 02/13/2025
+ms.date: 03/03/2025
 ms.author: jomondi
 ms.reviewer: ergreenl
 ms.custom: enterprise-apps, has-azure-ad-ps-ref
@@ -96,7 +96,7 @@ To assign a user or group account to an enterprise application:
 
 This example assigns the user Britta Simon to the Microsoft Workplace Analytics application using PowerShell.
 
-1. In PowerShell, assign the corresponding values to the variables `$username`, `$app_name` and `$app_role_name`.
+1. In PowerShell, assign the corresponding values to the variables `$username`, `$app_name`, and `$app_role_name`.
 
     ```powershell
     connect-entra -scopes "Application.ReadWrite.All", "AppRoleAssignment.ReadWrite.All"
@@ -195,7 +195,7 @@ $assignments | ForEach-Object {
 ## Assign users and groups to an application using Microsoft Graph PowerShell
 
 1. Open an elevated Windows PowerShell command prompt.
-1. Run `Connect-MgGraph -Scopes "Application.ReadWrite.All", "Directory.ReadWrite.All", "AppRoleAssignment.ReadWrite.All"` and sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
+1. Run `Connect-MgGraph -Scopes "Application.ReadWrite.All", "AppRoleAssignment.ReadWrite.All"` and sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
 1. Use the following script to assign a user to an application:
 
     ```powershell
@@ -282,7 +282,7 @@ For more information on how to assign a group to an application role, see the do
 
 1. Open an elevated Windows PowerShell command prompt.
 
-1. Run `Connect-MgGraph -Scopes "Application.ReadWrite.All", "Directory.ReadWrite.All", "AppRoleAssignment.ReadWrite.All"` and sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
+1. Run `Connect-MgGraph -Scopes "Application.ReadWrite.All", "AppRoleAssignment.ReadWrite.All"` and sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
 1. Get the user and the service principal
 
@@ -328,7 +328,7 @@ $assignments | ForEach-Object {
 
     You need to consent to the following permissions:
 
-    `Application.ReadWrite.All`, `Directory.ReadWrite.All`, and `AppRoleAssignment.ReadWrite.All`.
+    `Application.ReadWrite.All`, and `AppRoleAssignment.ReadWrite.All`.
 
     To grant an app role assignment, you need three identifiers:
 
@@ -395,7 +395,7 @@ Microsoft Graph Explorer doesn't support batch deletion of app role assignments 
 
 :::zone-end
 
-## Next steps
+## Related content
 
 - [Assign custom security attributes](custom-security-attributes-apps.md)
 - [Disable user sign-in](disable-user-sign-in-portal.md).
