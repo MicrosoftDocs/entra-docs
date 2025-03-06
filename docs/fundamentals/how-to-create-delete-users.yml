@@ -5,9 +5,9 @@ metadata:
   description: Instructions for IT admins to create new users and delete or update existing users in Microsoft Entra ID.
   author: shlipsey3
   ms.author: sarahlipsey
-  manager: amycolannino
+  manager: femila
   ms.reviewer: adelle.dimitui
-  ms.date: 04/22/2024
+  ms.date: 03/05/2025
   ms.service: entra
   ms.subservice: fundamentals
   ms.topic: how-to

@@ -2,13 +2,13 @@
 title: Support access requests in Microsoft Entra ID
 description: Learn how Microsoft Support engineers can access identity diagnostic information in Microsoft Entra ID.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.author: sarahlipsey
 ms.reviewer: jeffsta
 ms.service: entra
 ms.topic: conceptual
 ms.subservice: fundamentals
-ms.date: 02/20/2024
+ms.date: 03/05/2025
 
 # Customer intent: As an IT admin, I need to understand how Microsoft Support engineers can access diagnostic data in Microsoft Entra ID so that I can manage access to my tenant's data.
 ---
@@ -45,7 +45,7 @@ This cross-tenant scenario is the primary scenario where a support access reques
 
 To manage Microsoft Support access requests, you must be assigned to a role that has full permission to manage Microsoft Entra support tickets for the tenant. This role permission is included in Microsoft Entra built-in roles with the action `microsoft.azure.supportTickets/allEntities/allTasks`. You can see which Microsoft Entra roles have this permission in the [Microsoft Entra built-in roles](~/identity/role-based-access-control/permissions-reference.md) article.
 
-## Next steps
+## Related content
 
 - [Approve and manage Microsoft Support access requests](how-to-manage-support-access-requests.md)
 - [View Microsoft Support access request logs](how-to-view-support-access-request-logs.md)
