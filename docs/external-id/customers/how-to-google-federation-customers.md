@@ -14,7 +14,7 @@ ms.custom: it-pro, has-azure-ad-ps-ref
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 
-# Add Google as an identity provider (preview)
+# Add Google as an identity provider
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
@@ -124,4 +124,4 @@ At this point, the Google identity provider has been set up in your Microsoft En
 
 - [Add Facebook as an identity provider](how-to-facebook-federation-customers.md)
 - [Add Apple as an identity provider](how-to-apple-federation-customers.md)
-- [Add OpenID Connect as an external identity provider (preview)](how-to-custom-oidc-federation-customers.md)
+- [Add OpenID Connect as an external identity provider](how-to-custom-oidc-federation-customers.md)

@@ -14,7 +14,7 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 
-# Add Facebook as an identity provider (preview)
+# Add Facebook as an identity provider
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
@@ -124,6 +124,6 @@ At this point, the Facebook identity provider has been set up in your external t
 
 ## Related content
 
-- [Add Google as an identity provider (preview)](how-to-google-federation-customers.md)
+- [Add Google as an identity provider](how-to-google-federation-customers.md)
 - [Add Apple as an identity provider](how-to-apple-federation-customers.md)
-- [Add OpenID Connect as an external identity provider (preview)](how-to-custom-oidc-federation-customers.md)
+- [Add OpenID Connect as an external identity provider](how-to-custom-oidc-federation-customers.md)
