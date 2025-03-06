@@ -1,16 +1,15 @@
 ---
 title: Discover Azure resources to manage in PIM
-description: Learn how to discover Azure resources to manage in Privileged Identity Management (PIM).
-
+description: Learn how to discover Azure resources to manage in Privileged Identity
+  Management (PIM).
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 01/06/2025
 ms.subservice: privileged-identity-management
 ms.author: barclayn
 ms.reviewer: shaunliu
-
 ---
 
 # Discover Azure resources to manage in Privileged Identity Management

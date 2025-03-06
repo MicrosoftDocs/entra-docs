@@ -391,7 +391,7 @@ Once you've started a provisioning job, you can monitor the status.
 
     You can also view audit logs in the target tenant.
 
-1. In the target tenant, select **Users** > **Audit logs** to view logged events for user management.
+1. In the target tenant, select **Users** > **Audit logs** to view logged events for user management.  Cross tenant synchronziation in the target tenant will be logged as the actor being the "Microsoft.Azure.SyncFabric" application.
 
     :::image type="content" source="./media/cross-tenant-synchronization-configure/audit-logs-users-target.png" alt-text="Screenshot of the Audit logs page in the target tenant that lists the log entries for user management." lightbox="./media/cross-tenant-synchronization-configure/audit-logs-users-target.png":::
 

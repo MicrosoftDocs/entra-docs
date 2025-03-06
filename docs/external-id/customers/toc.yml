@@ -9,7 +9,7 @@ items:
     - name: Get started guide walkthrough
       href: quickstart-get-started-guide.md
     - name: Use the Visual Studio Code extension
-      href: quickstart-get-started-guide.md
+      href: visual-studio-code-extension.md
     - name: Use the Visual Studio Connected Service
       href: visual-studio-connected-service.md
     - name: Use Azure App Service built-in authentication
