@@ -6,7 +6,7 @@ manager: martinco
 ms.service: entra-external-id
 ms.topic: concept-article
 ms.date: 03/05/2025
-ms.author: gasinh
+ms.reviewer: gasinh
 
 #customer intent: I want to documentation to plan, design, implement, and operate Microsoft Entra External ID in my environment.
 ---
