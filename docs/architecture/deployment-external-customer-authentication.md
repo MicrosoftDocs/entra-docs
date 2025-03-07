@@ -47,7 +47,7 @@ Native authentication APIs are available for platform native iOS and Android cli
    >[!NOTE]
    >Microsoft has a goal to add support for single-page applications (SPAs).
 
-### Microsoft Graph API experience
+## Microsoft Graph API experience
 
 Enable Microsoft Graph API to create, read, update, and delete objects in the Microsoft Entra External ID user directory. For user-facing portals, an application token,  or a delegated token (application + user) processes data using the Microsoft Graph API.  
 
@@ -59,7 +59,7 @@ See the following example profile edit in the diagram.
 
 Learn more about [setting up a Node.js web application for profile editing](). 
 
-In a video, learn how to [edit a user profile](../external-id/customers/how-to-web-app-node-edit-profile-prepare-app.md). Discover how profile edit applications work with middleware API for additional security. The following diagram illustrates middleware API and MFA.  
+Learn how to [edit a user profile](../external-id/customers/how-to-web-app-node-edit-profile-prepare-app.md). Discover how profile edit applications work with middleware API for additional security. The following diagram illustrates middleware API and MFA.  
 
    [ ![Diagram of a profile edit.](media/deployment-external/middleware-api.png)](media/deployment-external/middleware-api-expanded.png#lightbox)
 
