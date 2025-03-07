@@ -316,6 +316,7 @@ In this quickstart, you use a sample web app to show you how to sign in users in
     * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
     * **Platform configuration**: Web
     * **Redirect URI**: `http://localhost:3000/auth/redirect`
+* [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
 * [Node.js](https://nodejs.org).
 
 #### [ASP.NET Core](#tab/asp-dot-net-core-external)
@@ -326,6 +327,7 @@ In this quickstart, you use a sample web app to show you how to sign in users in
     * **Platform configuration**: Web
     * **Redirect URI**: `https://localhost:7274/signin-oidc`
     * **Front-channel logout URL**: `https://localhost:7274/signout-callback-oidc`
+* [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
 * A minimum version of [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet).
 
 #### [Python Django](#tab/python-django-external)
@@ -335,6 +337,7 @@ In this quickstart, you use a sample web app to show you how to sign in users in
     * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
     * **Platform configuration**: Web
     * **Redirect URI**: `http://localhost:5000/getAToken`
+* [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
 * [Python 3+](https://www.python.org/).
 
 #### [Python Flask](#tab/python-flask-external)
@@ -344,6 +347,7 @@ In this quickstart, you use a sample web app to show you how to sign in users in
     * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
     * **Platform configuration**: Web
     * **Redirect URI**: `http://localhost:3000/getAToken`
+* [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
 * [Python 3+](https://www.python.org/)
   
 ---

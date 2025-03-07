@@ -260,7 +260,6 @@ Run the project with a web server by using dotnet:
     * **Platform configuration**: Single-page application (SPA)
     * **Redirect URI**: `http://localhost:3000/`.
 * [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
-
 * [Node.js](https://nodejs.org/en/download/).
 
 #### [React](#tab/react-external)
@@ -270,6 +269,7 @@ Run the project with a web server by using dotnet:
     * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
     * **Platform configuration**: Single-page application (SPA)
     * **Redirect URI**: `http://localhost:3000/`.
+* [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
 * [Node.js](https://nodejs.org/en/download/).
 
 #### [Angular](#tab/angular-external)
@@ -279,6 +279,7 @@ Run the project with a web server by using dotnet:
     * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
     * **Platform configuration**: Single-page application (SPA)
     * **Redirect URI**: `http://localhost:4200/`.
+* [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
 * [Node.js](https://nodejs.org/en/download/).
 
 ---
