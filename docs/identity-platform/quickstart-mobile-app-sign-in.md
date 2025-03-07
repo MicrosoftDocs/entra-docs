@@ -425,7 +425,6 @@ You've configured the app and it's ready to run.
 
 ---
 
-
 ## Run and test the sample app
 
 #### [Android](#tab/android-external)
