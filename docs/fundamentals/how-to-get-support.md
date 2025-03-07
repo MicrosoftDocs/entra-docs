@@ -56,7 +56,7 @@ The Microsoft Entra admin center and Azure portal have built-in tools to help tr
 
 Search for or select **Diagnose and solve problems** from the navigation menu.
 
-:::image type="content" source="media/how-to-get-support/diagnose-solve-problems.png" alt-text="Screenshot of the Diagnose and solve problems page." lightbox="edia/how-to-get-support/diagnose-solve-problems-expanded.png":::
+:::image type="content" source="media/how-to-get-support/diagnose-solve-problems.png" alt-text="Screenshot of the Diagnose and solve problems page." lightbox="media/how-to-get-support/diagnose-solve-problems-expanded.png":::
 
 Some of the diagnostic tools require specific roles to use the tool. For example, you need to be at least a **Billing administrator** to use the sign-in diagnostic tool. Contact your local administrator for assistance or to get the necessary permissions.
 
@@ -89,7 +89,7 @@ Online support requests can be created from several places in the admin center:
 - **Diagnostic information might be collected as a part of the support request.**
     - Selecting **Yes** allows support to gather [advanced diagnostic information](https://azure.microsoft.com/support/legal/support-diagnostic-information-collection/) from the subscriptions associated with your request.
     - If you prefer not to share this information, select **No**. For more information about the types of files we might collect, see [Advanced diagnostic information logs](/azure/azure-portal/supportability/how-to-create-azure-support-request#advanced-diagnostic-information-logs).
-    - In some scenarios, an administrator in your tenant might need to approve Microsoft Support access to your Microsoft Entra identity data. For more information, see [Support access requests](concept/support-access-requests.md).
+    - In some scenarios, an administrator in your tenant might need to approve Microsoft Support access to your Microsoft Entra identity data. For more information, see [Support access requests](concept-support-access-requests.md).
 - **Support is available online and by phone for Microsoft paid and trial subscriptions**
     - Support is provided for global technical, presales, billing, and subscription issues.
     - Phone support and online billing support are available in additional languages.
