@@ -3,7 +3,7 @@ title: Tutorial - Quick setup of your tenant for Microsoft Entra Verified ID
 description: In this tutorial, you learn how to quickly configure your tenant to support the Verified ID service. 
 ms.service: entra-verified-id
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.author: barclayn
 ms.topic: tutorial
 ms.date: 12/12/2024

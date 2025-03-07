@@ -2,7 +2,7 @@
 title: What's new for Microsoft Entra Verified ID
 description: Recent updates for Microsoft Entra Verified ID
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: whats-new
 ms.date: 12/16/2024
