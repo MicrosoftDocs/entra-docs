@@ -8,7 +8,7 @@ ms.assetid: 1a14637e-b3d0-4fd9-ba7a-576b8df62ff2
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 03/05/2025
+ms.date: 03/07/2025
 ms.author: justinha
 ---
 # Custom attributes for Microsoft Entra Domain Services
@@ -67,9 +67,9 @@ Domain Services back fills all synchronized users and groups with the onboarded 
 
 To check the backfilling status, click **Domain Services Health** and verify the **Synchronization with Microsoft Entra ID** monitor has an updated timestamp within an hour since onboarding. Once updated, the backfill is complete. 
 
-## Reserved attributes for Microsoft Entra ID 
+## Reserved attributes for Active Directory Domain Services 
 
-The following attributes are reserved for Microsoft Entra ID. They can't be used for Microsoft Entra Domain Services. 
+The following attributes are reserved for Active Directory Domain Services in Windows Server. They can't be used for Microsoft Entra Domain Services. 
 
 Name|Attribute
 ----|---------
