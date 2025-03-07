@@ -50,13 +50,13 @@ The provisioning logs record all the operations performed by the provisioning se
 
 For more information on how to read the provisioning logs in the Microsoft Entra admin center, see [provisioning reporting guide](check-status-user-account-provisioning.md).
 
-## What factors influence provisioning performance?
+## How long will it take to provision users?
 The time to provision a user, group, or group membership varies based on several factors. 
-- The more users, groups, and group memberships in scope for provisioning, the longer that it will take for the sync job to complete. For example, a sync job with 10 groups, each with 20K members, will take longer to provision than a sync job with 1 group of 20K users.
-- The number of changes in the source system impacts the time to process changes during an incremental cycle. This includes changes such as new users created in the tenant, group membership updates, etc. Changes to users or groups that aren't in scope for provisioning can impact performance as the service will need to evaluate the change and skip it.
+- The more users, groups, and group memberships in scope for provisioning, the longer that it will take for the sync job to complete. For example, a sync job with 10 groups, each with 20K members, will take longer to provision than a sync job with 1 group of 20K members.
 - If the sync scope is set to "sync all users and groups," the sync engine will evaluate every user, group in the tenant during the initial cycle. This enables the sync engine to determine which objects are in scope. As a result, the total number of users, groups, and group members present in the source system (ex: Microsoft Entra ID) impacts performance.  
+- The number of changes in the source system impacts the time to provision updates during an incremental cycle. Changes to users or groups that aren't in scope for provisioning (ex: new users created in the tenant or group memberships updated) can impact performance as the service will need to evaluate the change and skip it. This is particularly important when the scope is "sync all users and groups"
 - Some target systems implement request rate limits and throttling, which can impact performance during large sync operations. Under these conditions, an app that receives too many requests too fast might slow its response rate or close the connection. Gallery applications are configured to adhere to the rate limits set by the application developer, with no action required by an administrator configuring provisioning. 
-- Sync jobs for which all users are created for the first time take about *twice as long* as sync jobs for which all users are matched to existing users.
+- Sync jobs for which all users are created for the first time take about twice as long as sync jobs for which all users are matched to existing users.
 - The number of failures that the provisioning service has to retry on a given sync cycle impacts performance. Check the progress bar and [provisioning logs](check-status-user-account-provisioning.md) for any failures and remediate them.
 - Provisioning jobs in quarantine run at a reduced frequency. Review the quarantine reason and remeditate it to restore the typical execution frequency.
 
@@ -67,7 +67,7 @@ For the configuration **Sync assigned user and groups only**, you can use the fo
 
 
 ## Recommendations for reducing the time to provision a user and / or group:
-1. Set the provisioning scope to sync `assigned users and groups`, rather than `sync all users and groups`.
+1. Set the provisioning scope to sync `assigned users and groups` rather than `sync all users and groups`.
 2. Minimize the number of users and groups in scope for provisioning.
 3. Create multiple provisioning jobs targeting the same system. When doing this, each sync job will operate independently, reducing the time to process changes. Please make sure that the scope of users is distinct between these provisioning jobs to avoid changes from one job impacting another. 
 4. Add scoping filters to further limit the number of users and groups in scope for provisioning. If performance becomes an issue, and you're attempting to provision most users and groups in your tenant, then use scoping filters. Scoping filters allow you to fine tune the data that the provisioning service extracts from Microsoft Entra ID by filtering out users based on specific attribute values. For more information on scoping filters, see [Attribute-based application provisioning with scoping filters](define-conditional-rules-for-provisioning-user-accounts.md).
