@@ -1,6 +1,6 @@
 ---
 title: Create verifiable credentials with multiple attestations
-description: Learn how to use a quickstart to create custom credentials with multiple attestations
+description: Learn how to use a quickstart to create custom credentials with multiple attestations.
 documentationCenter: ''
 author: barclayn
 manager: amycolannino
