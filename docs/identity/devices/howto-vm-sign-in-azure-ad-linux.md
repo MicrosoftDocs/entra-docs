@@ -16,7 +16,7 @@ ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, devx-tra
 
 # Sign in to a Linux virtual machine in Azure by using Microsoft Entra ID and OpenSSH
 
-To improve the security of Linux virtual machines (VMs) in Azure, you can integrate with Microsoft Entra authentication. You can now use Microsoft Entra ID as a core authentication platform and a certificate authority to SSH into a Linux VM by using Microsoft Entra ID and OpenSSH certificate-based authentication. This functionality allows organizations to manage access to VMs with Azure role-based access control (RBAC) and Conditional Access policies.
+To improve the security of Azure Linux virtual machines (VMs) or Azure Arc-enabled Linux servers, you can integrate with Microsoft Entra authentication. You can now use Microsoft Entra ID as a core authentication platform and a certificate authority to SSH into a Linux VM by using Microsoft Entra ID and OpenSSH certificate-based authentication. This functionality allows organizations to manage access to VMs with Azure role-based access control (RBAC) and Conditional Access policies.
 
 This article shows you how to create and configure a Linux VM and log in with Microsoft Entra ID by using OpenSSH certificate-based authentication.
 
@@ -178,6 +178,10 @@ It takes a few minutes to create the VM and supporting resources.
 The AADSSHLoginForLinux extension can be installed on an existing (supported distribution) Linux VM with a running VM agent to enable Microsoft Entra authentication. If you're deploying this extension to a previously created VM, the VM must have at least 1 GB of memory allocated or the installation will fail.
 
 The `provisioningState` value of `Succeeded` appears when the extension is successfully installed on the VM. The VM must have a running [VM agent](/azure/virtual-machines/extensions/agent-linux) to install the extension.
+
+## Enable Microsoft Entra login for a Azure Arc-enabled Linux servers
+
+You can find the relevant details on [SSH access to Azure Arc-enabled servers](https://learn.microsoft.com/azure/azure-arc/servers/ssh-arc-overview?tabs=azure-cli)
 
 ## Configure role assignments for the VM
 
