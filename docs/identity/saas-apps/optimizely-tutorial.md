@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Optimizely
 
-In this tutorial, you'll learn how to integrate Optimizely with Microsoft Entra ID. When you integrate Optimizely with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Optimizely with Microsoft Entra ID. When you integrate Optimizely with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Optimizely.
 * Enable your users to be automatically signed-in to Optimizely with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Optimizely supports **SP** initiated SSO.
 
@@ -83,7 +83,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `urn:auth0:optimizely:contoso`
 
 	> [!NOTE]
-	> These values are not real. You will update these values with the actual Sign-on URL and Identifier which is explained later in the tutorial. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are not real. You will update these values with the actual Sign-on URL and Identifier which is explained later in the article. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 5. Your Optimizely application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes. Click **Edit** icon to open **User Attributes** dialog.
 

@@ -90,7 +90,7 @@ Learn how to [add Apple as an identity provider](how-to-apple-federation-custome
 
 You can set up a SAML or WS-Fed identity provider to allow users to sign up and sign in to your applications using their own account with the identity provider. The user can sign up or sign in by selecting the **Sign up with** or **Sign in with** option. They're redirected to the identity provider, and then returned to Microsoft Entra once they successfully sign in. For external tenants, a user's sign-in email doesn't need to match the predefined domains set up during SAML federation. As a result, updating the federation setup by adding, changing, or removing domains won't affect the experience for existing users.
 
-If a user doesn't have an account in your external tenant and enters an email address on the sign-in page that matches a predefined domain in any of the external identity providers, they're redirected to authenticate with that identity provider.
+A user who enters an email address on the sign-in page that matches a predefined domain in any of the external identity providers will be redirected to authenticate with that identity provider. If they don't have an account, they may be prompted for additional details and the account will be created.
 
 For more information, see [SAML/WS-Fed identity providers](../direct-federation-overview.md). For detailed setup steps, see [Add federation with SAML/WS-Fed identity providers](../direct-federation.md).
 

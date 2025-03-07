@@ -1,6 +1,6 @@
 ---
 title: Microsoft Entra SSO integration with ThirdLight
-description: In this tutorial, you'll learn how to configure single sign-on between Microsoft Entra ID and ThirdLight.
+description: In this article,  you'll learn how to configure single sign-on between Microsoft Entra ID and ThirdLight.
 
 author: nguhiu
 manager: CelesteDG
@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with ThirdLight
 
-In this tutorial, you'll learn how to integrate ThirdLight with Microsoft Entra ID. When you integrate ThirdLight with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate ThirdLight with Microsoft Entra ID. When you integrate ThirdLight with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to ThirdLight.
 * Enable your users to be automatically signed-in to ThirdLight with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you'll configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you'll configure and test Microsoft Entra single sign-on in a test environment.
 
 * ThirdLight supports SP-initiated SSO.
 

@@ -5,7 +5,7 @@ description: Learn about the different authentication methods and security featu
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: overview
-ms.date: 01/14/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha

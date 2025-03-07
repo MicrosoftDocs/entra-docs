@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with SAML SSO for Bamboo by resolution GmbH
 
-In this tutorial, you'll learn how to integrate SAML SSO for Bamboo by resolution GmbH with Microsoft Entra ID. When you integrate SAML SSO for Bamboo by resolution GmbH with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate SAML SSO for Bamboo by resolution GmbH with Microsoft Entra ID. When you integrate SAML SSO for Bamboo by resolution GmbH with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to SAML SSO for  Bamboo by resolution GmbH.
 * Enable your users to be automatically signed in to SAML SSO for Bamboo by resolution GmbH with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with SAML SSO for Bamboo by resolution 
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * SAML SSO for Bamboo by resolution GmbH supports **SP and IDP** initiated SSO.
 * SAML SSO for Bamboo by resolution GmbH supports **Just In Time** user provisioning.

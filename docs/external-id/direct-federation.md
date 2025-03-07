@@ -27,8 +27,6 @@ Your Microsoft Entra tenant can be directly federated with external organization
 
 - Review the configuration considerations in [SAML/WS-Fed identity providers](direct-federation-overview.md).
 - A workforce tenant or an [external tenant](customers/how-to-create-external-tenant-portal.md).
-- (For an external tenant) A registered application in the tenant.
-- (For self-service sign-up) Create a user flow for self-service sign-up and sign-in.
 
 ## How to configure SAML/WS-Fed IdP federation
 

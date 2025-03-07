@@ -21,6 +21,7 @@ This article describes how to use the traffic logs for Global Secure Access.
 ## Prerequisites 
 
 - A **Global Secure Access Administrator** role in Microsoft Entra ID.
+- A **Global Secure Access Log Reader** role in Microsoft Entra ID.
 - The product requires licensing. For details, see the licensing section of [What is Global Secure Access](overview-what-is-global-secure-access.md). If needed, you can [purchase licenses or get trial licenses](https://aka.ms/azureadlicense).
 
 ## How the traffic logs work

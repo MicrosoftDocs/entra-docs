@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Trend Micro Web Security (TMWS)
 
-In this tutorial, you'll learn how to integrate Trend Micro Web Security (TMWS) with Microsoft Entra ID. When you integrate TMWS with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Trend Micro Web Security (TMWS) with Microsoft Entra ID. When you integrate TMWS with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to TMWS.
 * Enable your users to be automatically signed in to TMWS with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need:
 
 ## Scenario description
 
-In this tutorial, you'll configure and test Microsoft Entra SSO in a test environment.
+In this article,  you'll configure and test Microsoft Entra SSO in a test environment.
 
 * TMWS supports **SP** initiated SSO.
 

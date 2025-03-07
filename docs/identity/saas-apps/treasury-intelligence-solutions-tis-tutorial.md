@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Treasury Intelligence Solutions (TIS)
 
-In this tutorial, you'll learn how to integrate Treasury Intelligence Solutions (TIS) with Microsoft Entra ID. When you integrate Treasury Intelligence Solutions (TIS) with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Treasury Intelligence Solutions (TIS) with Microsoft Entra ID. When you integrate Treasury Intelligence Solutions (TIS) with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Treasury Intelligence Solutions (TIS).
 * Enable your users to be automatically signed-in to Treasury Intelligence Solutions (TIS) with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To integrate Microsoft Entra ID with Treasury Intelligence Solutions (TIS), you 
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Treasury Intelligence Solutions (TIS) supports both **SP and IDP** initiated SSO.
 
@@ -134,10 +134,10 @@ In this section, you'll enable B.Simon to use Microsoft Entra single sign-on by 
 ## Configure Treasury Intelligence Solutions (TIS) SSO
 
 To configure single sign-on on **Treasury Intelligence Solutions** side:
-1. In TIS, navigate to **Administration** > **Security** > **Single Sign-On Configuration** and select either **IdP-initiated Single Sign-On** or **SP-initiatedd Single Sign-On**
+1. In TIS, navigate to **Administration** > **Security** > **Single Sign-On Configuration** and select either **IdP-initiated Single Sign-On** or **SP-initiated Single Sign-On**
 1. Provide the **Identity Provider (Entity ID)**. This is the value that is provided by Microsoft Entra SSO in the field **Microsoft Entra Identifier**.
 1. For the Certificate, select the **PEM certificate** downloaded on your computer.
-1. For **SP-initiatedd Single Sign-On**, provide the **Identity Provider Login URL** which was shown in the field **Login URL**. For the **IdP-initiated Single Sign-On**, both fields **User Login URL** and **User Logout URL** are optional and can be left blank. 
+1. For **SP-initiated Single Sign-On**, provide the **Identity Provider Login URL** which was shown in the field **Login URL**. For the **IdP-initiated Single Sign-On**, both fields **User Login URL** and **User Logout URL** are optional and can be left blank. 
 
 ### Create Treasury Intelligence Solutions (TIS) test user
 

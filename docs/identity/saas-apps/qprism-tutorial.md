@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with QPrism
 
-In this tutorial, you'll learn how to integrate QPrism with Microsoft Entra ID. When you integrate QPrism with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate QPrism with Microsoft Entra ID. When you integrate QPrism with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to QPrism.
 * Enable your users to be automatically signed-in to QPrism with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with QPrism, you need the following ite
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * QPrism supports **SP** initiated SSO.
 

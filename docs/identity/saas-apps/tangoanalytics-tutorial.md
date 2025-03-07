@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Tango Analytics
 
-In this tutorial, you'll learn how to integrate Tango Analytics with Microsoft Entra ID. When you integrate Tango Analytics with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Tango Analytics with Microsoft Entra ID. When you integrate Tango Analytics with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Tango Analytics.
 * Enable your users to be automatically signed-in to Tango Analytics with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Tango Analytics supports **IDP** initiated SSO.
 

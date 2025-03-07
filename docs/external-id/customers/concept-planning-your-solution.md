@@ -31,7 +31,7 @@ This article describes each of these steps and outlines important planning consi
 | Step  |  How-to guides |
 |---------|---------|
 |**[Step 1: Create an external tenant](#step-1-create-an-external-tenant)**   | &#8226; [Create an external tenant](how-to-create-external-tenant-portal.md)</br>&#8226; <a href="https://aka.ms/ciam-free-trial?wt.mc_id=ciamcustomertenantfreetrial_linkclick_content_cnl" target="_blank">Or start a free trial</a>  |
-|**[Step 2: Register your application](#step-2-register-your-application)**   | &#8226; [Register your application](how-to-register-ciam-app.md)  |
+|**[Step 2: Register your application](#step-2-register-your-application)**   | &#8226; [Register your application](/entra/identity-platform/quickstart-register-app)  |
 |**[Step 3: Integrate a sign-in flow with your app](#step-3-integrate-a-sign-in-flow-with-your-app)**     | &#8226; [Create a user flow](how-to-user-flow-sign-up-sign-in-customers.md) </br>&#8226; [Add your app to the user flow](how-to-user-flow-add-application.md)   |
 |**[Step 4: Customize and secure your sign-in](#step-4-customize-and-secure-your-sign-in)**     |  &#8226; [Customize branding](concept-branding-customers.md) </br>&#8226; [Add identity providers](concept-authentication-methods-customers.md)  </br>&#8226; [Collect attributes during sign-up](how-to-define-custom-attributes.md)</br>&#8226; [Add attributes to the token](how-to-add-attributes-to-token.md) </br>&#8226; [Add multifactor authentication (MFA)](concept-security-customers.md)    |
 
@@ -61,7 +61,7 @@ Customer accounts have a [default set of permissions](reference-user-permissions
 
 :::image type="content" source="media/concept-planning-your-solution/overview-setup-step-2.png" alt-text="Diagram showing step 2 in the setup flow.":::
 
-Before your applications can interact with External ID, you need to register them in your external tenant. Microsoft Entra ID performs identity and access management only for registered applications. [Registering your app](how-to-register-ciam-app.md) establishes a trust relationship and allows you to integrate your app with External ID.
+Before your applications can interact with External ID, you need to register them in your external tenant. Microsoft Entra ID performs identity and access management only for registered applications. [Registering your app](/entra/identity-platform/quickstart-register-app) establishes a trust relationship and allows you to integrate your app with External ID.
 
 Then, to complete the trust relationship between Microsoft Entra ID and your app, you update your application source code with the values assigned during app registration, such as the application (client) ID, directory (tenant) subdomain, and client secret.
 
@@ -71,7 +71,7 @@ We provide code sample guides and in-depth integration guides for several app ty
 
 - Find guidance specific to the application you want to register on our [Samples by app type and language page](samples-ciam-all.md).
 
-- If we don't have a guide specific to your platform or language, refer to the general instructions for [registering an application](how-to-register-ciam-app.md) in an external tenant.
+- If we don't have a guide specific to your platform or language, refer to the general instructions for [registering an application](/entra/identity-platform/quickstart-register-app) in an external tenant.
 
 ## Step 3: Integrate a sign-in flow with your app
 

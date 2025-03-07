@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Muzeek
 
-In this tutorial, you'll learn how to integrate Muzeek with Microsoft Entra ID. When you integrate Muzeek with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Muzeek with Microsoft Entra ID. When you integrate Muzeek with Microsoft Entra ID, you can:
 
 Use Microsoft Entra ID to control who can access Muzeek.
 Enable your users to be automatically signed in to Muzeek with their Microsoft Entra accounts.

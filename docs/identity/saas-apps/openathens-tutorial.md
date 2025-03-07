@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with OpenAthens
 
-In this tutorial, you'll learn how to integrate OpenAthens with Microsoft Entra ID. When you integrate OpenAthens with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate OpenAthens with Microsoft Entra ID. When you integrate OpenAthens with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to OpenAthens.
 * Enable your users to be automatically signed-in to OpenAthens with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * OpenAthens supports **IDP** initiated SSO
 * OpenAthens supports **Just In Time** user provisioning
@@ -76,7 +76,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
    ![Edit Basic SAML Configuration](common/edit-urls.png)
 
-1. On the **Basic SAML Configuration** section, upload the **Service Provider metadata file**, the steps for which are mentioned later in this tutorial.
+1. On the **Basic SAML Configuration** section, upload the **Service Provider metadata file**, the steps for which are mentioned later in this article.
 
 	a. Click **Upload metadata file**.
 

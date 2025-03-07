@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Cirrus Identity Bridge for Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate Cirrus Identity Bridge for Microsoft Entra ID with Microsoft Entra ID using the Microsoft Graph API based integration pattern. When you integrate Cirrus Identity Bridge for Microsoft Entra ID with Microsoft Entra ID in this way, you can:
+In this article,  you'll learn how to integrate Cirrus Identity Bridge for Microsoft Entra ID with Microsoft Entra ID using the Microsoft Graph API based integration pattern. When you integrate Cirrus Identity Bridge for Microsoft Entra ID with Microsoft Entra ID in this way, you can:
 
 * Control who has access to InCommon or other multilateral federation service providers from Microsoft Entra ID.
 * Enable your users to SSO to InCommon or other multilateral federation service providers with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Cirrus Identity Bridge for Microsoft Entra ID supports **SP** and **IDP** initiated SSO.
 

@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Tableau Server
 
-In this tutorial, you'll learn how to integrate Tableau Server with Microsoft Entra ID. When you integrate Tableau Server with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Tableau Server with Microsoft Entra ID. When you integrate Tableau Server with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Tableau Server.
 * Enable your users to be automatically signed-in to Tableau Server with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Tableau Server supports **SP** initiated SSO
 
@@ -88,7 +88,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://azure.<domain name>.link/wg/saml/SSO/index.html`
 
 	> [!NOTE]
-	> The preceding values are not real values. Update the values with the actual Sign-on URL, Identifier and Reply URL from the Tableau Server configuration page which is explained later in the tutorial.
+	> The preceding values are not real values. Update the values with the actual Sign-on URL, Identifier and Reply URL from the Tableau Server configuration page which is explained later in the article.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -160,7 +160,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 	> Customer have to upload A PEM-encoded x509 Certificate file with a .crt extension and a RSA or DSA private key file that has the .key extension, as a Certificate Key file. For more information on Certificate file and Certificate Key file, please refer to [this](https://help.tableau.com/current/server/en-us/saml_requ.htm) document. If you need help configuring SAML on Tableau Server then please refer to this article [Configure Server Wide SAML](https://help.tableau.com/current/server/en-us/config_saml.htm).
 
 	> [!NOTE]
-	> The SAML Certificate and SAML Key files are generated separately and uploaded to the Tableau Server Manager. For example, in the linux shell, use openssl to generate the cert and key like so: `openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout private.key -out saml.crt` then upload the `saml.crt` and `private.key` files via the TSM Configruation GUI (As shown in the screenshot at the start of this step) or via the [command line according to the tableau docs](https://help.tableau.com/current/server-linux/en-us/config_saml.htm). If you are in a production environment, you may want to find a more secure way to handle SAML certs and keys.
+	> The SAML Certificate and SAML Key files are generated separately and uploaded to the Tableau Server Manager. For example, in the linux shell, use openssl to generate the cert and key like so: `openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout private.key -out saml.crt` then upload the `saml.crt` and `private.key` files via the TSM Configuration GUI (As shown in the screenshot at the start of this step) or via the [command line according to the tableau docs](https://help.tableau.com/current/server-linux/en-us/config_saml.htm). If you are in a production environment, you may want to find a more secure way to handle SAML certs and keys.
 
 ### Create Tableau Server test user
 

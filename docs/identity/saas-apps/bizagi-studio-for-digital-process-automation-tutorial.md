@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Bizagi for Digital Process Automation
 
-In this tutorial, you'll learn how to integrate Bizagi for Digital Process Automation Services or Server with Microsoft Entra ID. When you integrate Bizagi for Digital Process Automation with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Bizagi for Digital Process Automation Services or Server with Microsoft Entra ID. When you integrate Bizagi for Digital Process Automation with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to a Bizagi project for Digital Process Automation Services or Server.
 * Enable your users to be automatically signed-in to a project of Bizagi for Digital Process AutomationServices or Server with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a Bizagi project using Automation services or server.
+In this article,  you configure and test Microsoft Entra SSO in a Bizagi project using Automation services or server.
 
 * Bizagi for Digital Process Automation supports **SP** initiated SSO.
 * Bizagi for Digital Process Automation supports [Automated user provisioning](bizagi-studio-for-digital-process-automation-provisioning-tutorial.md).

@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Trevanna Tracks
 
-In this tutorial, you'll learn how to integrate Trevanna Tracks with Microsoft Entra ID. When you integrate Trevanna Tracks with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Trevanna Tracks with Microsoft Entra ID. When you integrate Trevanna Tracks with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Trevanna Tracks.
 * Enable your users to be automatically signed-in to Trevanna Tracks with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To integrate Microsoft Entra ID with Trevanna Tracks, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Trevanna Tracks supports only **SP** initiated SSO.
 

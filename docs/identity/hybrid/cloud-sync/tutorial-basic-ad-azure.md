@@ -127,7 +127,7 @@ Now that you've created and renamed the VM created, and it has a static IP addre
   $DatabasePath = "c:\windows\NTDS"
   $DomainMode = "WinThreshold"
   $DomainName = "contoso.com"
-  $DomaninNetBIOSName = "CONTOSO"
+  $DomainNetBIOSName = "CONTOSO"
   $ForestMode = "WinThreshold"
   $LogPath = "c:\windows\NTDS"
   $SysVolPath = "c:\windows\SYSVOL"

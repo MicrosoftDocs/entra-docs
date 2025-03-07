@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Second Nature AI
 
-In this tutorial, you'll learn how to integrate Second Nature AI with Microsoft Entra ID. When you integrate Second Nature AI with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Second Nature AI with Microsoft Entra ID. When you integrate Second Nature AI with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Second Nature AI.
 * Enable your users to be automatically signed-in to Second Nature AI with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To integrate Microsoft Entra ID with Second Nature AI, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Second Nature AI supports **SP and IDP** initiated SSO.
 * Second Nature AI supports **Just In Time** user provisioning.

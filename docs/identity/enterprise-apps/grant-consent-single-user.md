@@ -50,8 +50,7 @@ For this example, we use [Microsoft Graph PowerShell](/powershell/microsoftgraph
 To grant consent to an application on behalf of one user using Microsoft Graph PowerShell, you need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
 ```powershell
-# The app for which consent is being granted. In this example, we're granting access
-# to Microsoft Graph Explorer, an application published by Microsoft.
+# The app for which consent is being granted.
 $clientAppId = "de8bc8b5-d9f9-48b1-a8ad-b748da725064" # Microsoft Graph Explorer
 
 # The API to which access will be granted. Microsoft Graph Explorer makes API 
