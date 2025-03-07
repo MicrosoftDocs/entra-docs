@@ -71,7 +71,7 @@ The supported data formats include:
 
 Manage directory extensions through the [Microsoft Entra admin portal](https://entra.microsoft.com), or with the Microsoft Graph API. 
 
-### User data migration
+## User data migration
 
 When migrating to Microsoft Entra External ID, consider the primary keys, foreign keys (or join keys), or attributes used by identity systems and applications for compatibility. An example is object IDs from legacy identity systems, issued as persistent subject or name identifiers in tokens. Also, an example is other directory attributes used as unique identifiers by integrated systems: email addresses, short logon names, CRM IDs, and order management system IDs. To serve two purposes, maintain these values: 
 
@@ -132,7 +132,7 @@ For objects relevant to external identities, such as users, groups and service p
 
 We recommend all batch jobs that process directory data, for maintenance or sync tasks, generate activity logs in addition to the system generated audit logs. Inspect them after the batch operation. 
 
-### Compliance
+## Compliance
 
 Gather the compliance requirements the directory is subjected. Base this information on the markets of operations. In some industries, or country-region of operations, these details can change.  
 
@@ -163,7 +163,7 @@ Use this information to verify the data stored in the directory and its configur
    >[!NOTE]
    >When interpreting compliance and configuration requirements, consult with legal and compliance teams for guidance and consensus.
 
-### Service limits
+## Service limits
 
 Microsoft Entra External ID tenant endpoints are subject to **throttling limits**, which curtail concurrent calls and prevent overuse of resources. This helps protect Microsoft products and service delivered to all customers. 
 
