@@ -31,16 +31,16 @@ In this quickstart, you use a sample single-page app (SPA) to show you how to si
 
 #### [JavaScript](#tab/javascript-workforce)
 
-* Register a new app in the Microsoft Entra admin center with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
+* Register a new app in the Microsoft Entra admin center with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
   * **Name**: *identity-client-spa*
-  * **Supported account types**: *Accounts in this organizational directory only (Single tenant).*
-  * **Platform configuration**: Single-page application (SPA).
-  * **Redirect URI**: `http://localhost:3000/`.
-* [Node.js](https://nodejs.org/en/download/).
+  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
+  * **Platform configuration**: Single-page application (SPA)
+  * **Redirect URI**: `http://localhost:3000/`
+* [Node.js](https://nodejs.org/en/download/)
 
 #### [React](#tab/react-workforce)
 
-* Register a new app in the Microsoft Entra admin center with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
+* Register a new app in the Microsoft Entra admin center with the following configuration and record its identifiers from the app **Overview** page and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
   * **Name**: *identity-client-spa*
   * **Supported account types**: *Accounts in this organizational directory only (Single tenant).*
   * **Platform configuration**: Single-page application (SPA).
@@ -49,20 +49,20 @@ In this quickstart, you use a sample single-page app (SPA) to show you how to si
 
 #### [Angular](#tab/angular-workforce)
 
-* Register a new app in the Microsoft Entra admin center with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
+* Register a new app in the Microsoft Entra admin center with the following configuration and record its identifiers from the app **Overview** page and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
   * **Name**: *identity-client-spa*
-  * **Supported account types**: *Accounts in this organizational directory only (Single tenant).*
-  * **Platform configuration**: Single-page application (SPA).
-  * **Redirect URI**: `http://localhost:4200/`.
-* [Node.js](https://nodejs.org/en/download/).
+  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
+  * **Platform configuration**: Single-page application (SPA)
+  * **Redirect URI**: `http://localhost:4200/`
+* [Node.js](https://nodejs.org/en/download/)
 
 #### [Blazor](#tab/blazor-workforce)
 
-* Register a new app in the Microsoft Entra admin center with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
+* Register a new app in the Microsoft Entra admin center with the following configuration and record its identifiers from the app **Overview** page and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
   * **Name**: *identity-client-spa*
-  * **Supported account types**: *Accounts in this organizational directory only (Single tenant).*
-  * **Platform configuration**: Single-page application (SPA).
-  * **Redirect URI**: `http://localhost:5000/authentication/login-callback.`.
+  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
+  * **Platform configuration**: Single-page application (SPA)
+  * **Redirect URI**: `http://localhost:5000/authentication/login-callback.`
 * [.NET SDK](https://dotnet.microsoft.com/download/dotnet).
 
 ---
