@@ -40,7 +40,7 @@ In this quickstart, you use a sample single-page app (SPA) to show you how to si
 
 #### [React](#tab/react-workforce)
 
-* Register a new app in the Microsoft Entra admin center with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
+* Register a new app in the Microsoft Entra admin center with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
   * **Name**: *identity-client-spa*
   * **Supported account types**: *Accounts in this organizational directory only (Single tenant).*
   * **Platform configuration**: Single-page application (SPA).
@@ -49,7 +49,7 @@ In this quickstart, you use a sample single-page app (SPA) to show you how to si
 
 #### [Angular](#tab/angular-workforce)
 
-* Register a new app in the Microsoft Entra admin center with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
+* Register a new app in the Microsoft Entra admin center with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
   * **Name**: *identity-client-spa*
   * **Supported account types**: *Accounts in this organizational directory only (Single tenant).*
   * **Platform configuration**: Single-page application (SPA).
@@ -58,7 +58,7 @@ In this quickstart, you use a sample single-page app (SPA) to show you how to si
 
 #### [Blazor](#tab/blazor-workforce)
 
-* Register a new app in the Microsoft Entra admin center with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
+* Register a new app in the Microsoft Entra admin center with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
   * **Name**: *identity-client-spa*
   * **Supported account types**: *Accounts in this organizational directory only (Single tenant).*
   * **Platform configuration**: Single-page application (SPA).
@@ -254,7 +254,7 @@ Run the project with a web server by using dotnet:
 
 #### [JavaScript](#tab/javascript-external)
 
-* Register a new app in the Microsoft Entra admin center with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
+* Register a new app in the Microsoft Entra admin center with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
     * **Name**: *identity-client-spa*
     * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
     * **Platform configuration**: Single-page application (SPA)
@@ -265,7 +265,7 @@ Run the project with a web server by using dotnet:
 
 #### [React](#tab/react-external)
 
-* Register a new app in the Microsoft Entra admin center with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
+* Register a new app in the Microsoft Entra admin center with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
     * **Name**: *identity-client-spa*
     * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
     * **Platform configuration**: Single-page application (SPA)
@@ -274,7 +274,7 @@ Run the project with a web server by using dotnet:
 
 #### [Angular](#tab/angular-external)
 
-* Register a new app in the Microsoft Entra admin center with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
+* Register a new app in the Microsoft Entra admin center with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
     * **Name**: *identity-client-spa*
     * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
     * **Platform configuration**: Single-page application (SPA)
