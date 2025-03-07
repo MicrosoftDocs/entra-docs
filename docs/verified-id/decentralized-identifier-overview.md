@@ -81,7 +81,7 @@ The scenario we use to explain how verifiable credentials work involves:
 
 - Woodgrove Inc. a company.
 - Proseware, a company that offers Woodgrove employees discounts.
-- Alice, an employee at Woodgrove, Inc. who wants to get a discount from Proseware
+- Alice, an employee at Woodgrove Inc., who wants to get a discount from Proseware
 
 
 
