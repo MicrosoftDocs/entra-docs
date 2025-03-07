@@ -9,7 +9,7 @@ ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: rogoya
 ---
 # Protect user accounts from attacks with Microsoft Entra smart lockout

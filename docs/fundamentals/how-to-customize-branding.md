@@ -2,7 +2,7 @@
 title: Add company branding to your organization's sign-in page
 description: Instructions about how to add your organization's custom branding to the Microsoft Entra sign-in experience.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 
 ms.service: entra
 ms.subservice: fundamentals

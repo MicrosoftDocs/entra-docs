@@ -4,7 +4,7 @@ description: This article lists all releases of Microsoft Entra Connect and Azur
 author: billmath
 ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.service: entra-id
-manager: amycolannino
+manager: femila
 ms.topic: reference
 ms.date: 10/07/2024
 ms.subservice: hybrid-connect

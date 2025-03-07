@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect Sync: Understanding Users, Groups, and Contacts'
 description: Explains users, groups, and contacts in Microsoft Entra Connect Sync.
 
 author: billmath
-manager: amycolannino
+manager: femila
 
 ms.assetid: 8d204647-213a-4519-bd62-49563c421602
 ms.service: entra-id

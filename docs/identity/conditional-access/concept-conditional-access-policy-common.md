@@ -9,7 +9,7 @@ ms.date: 08/28/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: lhuangnorth
 ---
 # Conditional Access policy templates

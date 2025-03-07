@@ -9,7 +9,7 @@ ms.date: 02/28/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: cokoopma
 ---
 # Risk-based access policies

@@ -3,7 +3,7 @@ title: Using Microsoft Entra Connect Health with AD DS
 description: This is the Microsoft Entra Connect Health page that will discuss how to monitor AD DS.
 
 author: billmath
-manager: amycolannino
+manager: femila
 
 ms.assetid: 19e3cf15-f150-46a3-a10c-2990702cd700
 ms.service: entra-id

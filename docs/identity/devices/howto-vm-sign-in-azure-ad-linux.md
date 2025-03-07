@@ -9,7 +9,7 @@ ms.date: 02/26/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: sandeo
 ms.custom: references_regions, devx-track-azurecli, subject-rbac-steps, devx-track-linux, linux-related-content
 ---

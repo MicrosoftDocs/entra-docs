@@ -2,7 +2,7 @@
 title: 'How to synchronize attributes for Lifecycle workflows'
 description: Describes overview of Lifecycle workflow attributes.
 author: owinfreyATL
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.subservice: lifecycle-workflows
 ms.topic: troubleshooting
