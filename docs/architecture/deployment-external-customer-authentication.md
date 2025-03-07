@@ -17,9 +17,9 @@ Customer interface and seamless application integration are a highly visible asp
 
 There are three **self-service user flows**: 
 
-* Web browser redirect-based authentication
-* Embedded or native authentication
-* Microsoft Graph API 
+* [Web browser redirect-based authentication](#web-browser-redirect)
+* [Embedded or native authentication](#native-user-experience)
+* [Microsoft Graph API experience](#microsoft-graph-api-experience)
 
 ## Web browser redirect
 
