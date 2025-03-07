@@ -26,7 +26,7 @@ The deployments typically include production, development, staging, or developme
 |Test|||
 |Quality Assurance|||
 
-### Consumer application security
+## Consumer application security
 
 When designing your consumer-facing authentication experiences, consider how to protect services from abuse. With Microsoft Entra External ID, you control the user flow and balance the user experience with friction. Some security features increase friction, and others are transparent. 
 
