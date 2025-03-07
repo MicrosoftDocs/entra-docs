@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Halosys
 
-In this tutorial, you'll learn how to integrate Halosys with Microsoft Entra ID. When you integrate Halosys with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Halosys with Microsoft Entra ID. When you integrate Halosys with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Halosys.
 * Enable your users to be automatically signed-in to Halosys with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Halosys supports **IDP** initiated SSO.
 

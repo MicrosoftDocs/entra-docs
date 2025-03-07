@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 
 # Integrate Wandera RADAR Admin with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate Wandera RADAR Admin with Microsoft Entra ID. When you integrate Wandera RADAR Admin with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Wandera RADAR Admin with Microsoft Entra ID. When you integrate Wandera RADAR Admin with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Wandera RADAR Admin.
 * Enable your users to be automatically signed-in to Wandera RADAR Admin with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Wandera RADAR Admin supports **IDP** initiated SSO.
 

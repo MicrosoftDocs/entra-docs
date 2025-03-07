@@ -101,7 +101,7 @@ EMSPREMIUM
 ```
 
 > [!NOTE]
-> The data retuned is limited to product (SKU) information. To generate a list of disabled service plans in the license, see [Microsoft Graph PowerShell examples for group licensing](licensing-powershell-graph-examples.md#view-all-disabled-service-plan-licenses-assigned-to-a-group).
+> The data returned is limited to product (SKU) information. To generate a list of disabled service plans in the license, see [Microsoft Graph PowerShell examples for group licensing](licensing-powershell-graph-examples.md#view-all-disabled-service-plan-licenses-assigned-to-a-group).
 
 
 Use the following sample to get the same data from Microsoft Graph.

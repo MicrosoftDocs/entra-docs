@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Beyond Identity Admin Console
 
-In this tutorial, you'll learn how to integrate Beyond Identity Admin Console with Microsoft Entra ID. When you integrate Beyond Identity Admin Console with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Beyond Identity Admin Console with Microsoft Entra ID. When you integrate Beyond Identity Admin Console with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Beyond Identity Admin Console.
 * Enable your users to be automatically signed-in to Beyond Identity Admin Console with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Beyond Identity Admin Console supports **SP** initiated SSO.
 

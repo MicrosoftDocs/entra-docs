@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with senhasegura SAML Authentication
 
-In this tutorial, you'll learn how to integrate senhasegura SAML Authentication with Microsoft Entra ID. When you integrate senhasegura SAML Authentication with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate senhasegura SAML Authentication with Microsoft Entra ID. When you integrate senhasegura SAML Authentication with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to senhasegura SAML Authentication.
 * Enable your users to be automatically signed-in to senhasegura SAML Authentication with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To integrate Microsoft Entra ID with senhasegura SAML Authentication, you need:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * senhasegura SAML Authentication supports **SP and IDP** initiated SSO.
 

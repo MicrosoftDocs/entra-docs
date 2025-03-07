@@ -22,7 +22,7 @@ To make sure that only the user makes changes to their profile, the user needs t
 
 In this guide, you learn how to set up your web app to support profile editing with multifactor authentication (MFA) protection:
 
-- The app uses Conditional Access (CA) policy to enable MFA requirement.
+- The app uses Conditional Access policy to enable MFA requirement.
 - The web app setup contains two web services, the client web app and a middle-tier service app.
 - The client web app signs in the user and reads and displays the user's profile.
 - The middle-tier service app acquires an access token, then edits the profile on behalf of the user.

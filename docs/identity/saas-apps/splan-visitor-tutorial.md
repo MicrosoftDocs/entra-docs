@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Integrate Microsoft Entra single sign-on (SSO) with Splan Visitor
 
-In this tutorial, you'll learn how to integrate Splan Visitor with Microsoft Entra ID. When you integrate Splan Visitor with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Splan Visitor with Microsoft Entra ID. When you integrate Splan Visitor with Microsoft Entra ID, you can:
 
 * Use Microsoft Entra ID to control who has access to Splan Visitor.
 * Enable users to be automatically signed in to Splan Visitor with their Microsoft Entra accounts.
@@ -36,7 +36,7 @@ To get started, you need:
 
 ## Scenario description
 
-In this tutorial, you'll configure and test Microsoft Entra SSO in a test environment.
+In this article,  you'll configure and test Microsoft Entra SSO in a test environment.
 
 * Splan Visitor supports IdP-initiated SSO.
 

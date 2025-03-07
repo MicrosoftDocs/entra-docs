@@ -17,7 +17,7 @@ ms.author: thomasakelo
 
 # Configure 15Five for automatic user provisioning
 
-The objective of this tutorial is to demonstrate the steps to be performed in 15Five and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to [15Five](https://www.15five.com/pricing/). For important details on what this service does, how it works, and frequently asked questions, see Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID.
+The objective of this article is to demonstrate the steps to be performed in 15Five and Microsoft Entra ID to configure Microsoft Entra ID to automatically provision and de-provision users and/or groups to [15Five](https://www.15five.com/pricing/). For important details on what this service does, how it works, and frequently asked questions, see Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID.
 
 ## Capabilities supported
 > [!div class="checklist"]
@@ -29,7 +29,7 @@ The objective of this tutorial is to demonstrate the steps to be performed in 15
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) .
 * A user account in Microsoft Entra ID with [permission](~/identity/role-based-access-control/permissions-reference.md) to configure provisioning (like [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications)).
@@ -144,7 +144,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
       |displayName|String|
       |members|Reference|
 
-12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+12. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 13. To enable the Microsoft Entra provisioning service for 15Five, change the **Provisioning Status** to **On** in the **Settings** section.
 

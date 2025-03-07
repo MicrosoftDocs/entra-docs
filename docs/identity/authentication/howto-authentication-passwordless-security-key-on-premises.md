@@ -5,7 +5,7 @@ description: Learn how to enable passwordless security key sign-in to on-premise
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/08/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
@@ -129,7 +129,7 @@ _(Example: For US Government Cloud)_
 
 `Set-AzureADKerberosServerEndpoint -TargetEndpoint 2`
    > [!Tip]
-   > For Additional information comparing Azure commercial and soverign clouds, See: [Differences between Azure Commercial and Azure Soverign clouds](https://aka.ms/SovCC). 
+   > For Additional information comparing Azure commercial and sovereign clouds, See: [Differences between Azure Commercial and Azure sovereign clouds](https://aka.ms/SovCC). 
 
 ### Example 1 prompt for all credentials
 

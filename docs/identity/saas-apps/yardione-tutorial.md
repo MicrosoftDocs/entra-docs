@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with YardiOne
 
-In this tutorial, you'll learn how to integrate YardiOne with Microsoft Entra ID. When you integrate YardiOne with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate YardiOne with Microsoft Entra ID. When you integrate YardiOne with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to YardiOne.
 * Enable your users to be automatically signed-in to YardiOne with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with YardiOne, you need the following i
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * YardiOne supports **SP** initiated SSO.
 * YardiOne supports **Just In Time** user provisioning.

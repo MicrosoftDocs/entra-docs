@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with U.S. Bank Prepaid
 
-In this tutorial, you'll learn how to integrate U.S. Bank Prepaid with Microsoft Entra ID. When you integrate U.S. Bank Prepaid with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate U.S. Bank Prepaid with Microsoft Entra ID. When you integrate U.S. Bank Prepaid with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to U.S. Bank Prepaid.
 * Enable your users to be automatically signed-in to U.S. Bank Prepaid with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * U.S. Bank Prepaid supports **SP and IDP** initiated SSO.
 

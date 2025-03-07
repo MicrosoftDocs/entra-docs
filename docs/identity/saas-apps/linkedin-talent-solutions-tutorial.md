@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with LinkedIn Talent Solutions
 
-In this tutorial, you'll learn how to integrate LinkedIn Talent Solutions with Microsoft Entra ID. When you integrate LinkedIn Talent Solutions with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate LinkedIn Talent Solutions with Microsoft Entra ID. When you integrate LinkedIn Talent Solutions with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to LinkedIn Talent Solutions.
 * Enable your users to be automatically signed-in to LinkedIn Talent Solutions with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * LinkedIn Talent Solutions supports **SP and IDP** initiated SSO
 * LinkedIn Talent Solutions supports **Just In Time** user provisioning

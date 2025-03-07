@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/10/2025
+ms.date: 03/04/2025
 ms.author: justinha
 author: najshahid
 manager: amycolannino
@@ -56,14 +56,92 @@ Workload identities, such as managed identities and service principals, aren't i
 
 ### Client libraries
 
-The OAuth 2.0 Resource Owner Password Credentials (ROPC) token grant flow is incompatible with MFA. Once MFA is enabled in your Microsoft Entra tenant, ROPC-based APIs used in your applications will begin throwing exceptions. Guidance for migrating away from ROPC-based APIs in [Microsoft Authentication Libraries (MSAL)](/entra/msal/) is provided at [How to migrate away from ROPC](/entra/identity-platform/v2-oauth-ropc#how-to-migrate-away-from-ropc).
+The OAuth 2.0 Resource Owner Password Credentials (ROPC) token grant flow is incompatible with MFA. Once MFA is enabled in your Microsoft Entra tenant, ROPC-based APIs used in your applications will begin throwing exceptions. Guidance for migrating away from ROPC-based APIs in [Microsoft Authentication Libraries (MSAL)](/entra/msal/) is provided at [How to migrate away from ROPC](/entra/identity-platform/v2-oauth-ropc#how-to-migrate-away-from-ropc). For language-specific MSAL guidance, see the following tabs.
 
-The same general MSAL guidance applies to the Azure Identity libraries for [.NET](/dotnet/api/overview/azure/identity-readme), [Java](/java/api/overview/azure/identity-readme), [JavaScript](/javascript/api/overview/azure/identity-readme), and [Python](/python/api/overview/azure/identity-readme). The `UsernamePasswordCredential` class provided in those languages' libraries uses MSAL ROPC-based APIs. Changes are required if you're doing one of the following things in your application:
+### [.NET](#tab/dotnet)
 
-- Using `DefaultAzureCredential` or `EnvironmentCredential` with the following two environment variables set:
+Changes are required if you're using the [Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client) package and using one of the following APIs in your application:
+
+- [IByUsernameAndPassword.AcquireTokenByUsernamePassword](/dotnet/api/microsoft.identity.client.ibyusernameandpassword.acquiretokenbyusernamepassword) (confidential client API)
+- [PublicClientApplication.AcquireTokenByUsernamePassword](/dotnet/api/microsoft.identity.client.publicclientapplication.acquiretokenbyusernamepassword) (public client API)
+
+### [Go](#tab/go)
+
+Changes are required if you're using the [microsoft-authentication-library-for-go](https://pkg.go.dev/github.com/AzureAD/microsoft-authentication-library-for-go) module and using one of the following APIs in your application:
+
+- [Client.AcquireTokenByUsernamePassword](https://pkg.go.dev/github.com/AzureAD/microsoft-authentication-library-for-go@v1.4.0/apps/confidential#Client.AcquireTokenByUsernamePassword) (confidential client API)
+- [Client.AcquireTokenByUsernamePassword](https://pkg.go.dev/github.com/AzureAD/microsoft-authentication-library-for-go@v1.4.0/apps/public#Client.AcquireTokenByUsernamePassword) (public client API)
+
+### [Java](#tab/java)
+
+Changes are required if you're using the [msal4j](https://central.sonatype.com/artifact/com.microsoft.azure/msal4j) package and using the following API in your application:
+
+[PublicClientApplication.acquireToken(UserNamePasswordParameters parameters)](/java/api/com.microsoft.aad.msal4j.publicclientapplication#com-microsoft-aad-msal4j-publicclientapplication-acquiretoken(com-microsoft-aad-msal4j-usernamepasswordparameters))
+
+### [Node.js](#tab/js)
+
+Changes are required if you're using the [@azure/msal-node](https://www.npmjs.com/package/@azure/msal-node) package and using one of the following APIs in your application:
+
+- [ClientApplication.acquireTokenByUsernamePassword](/javascript/api/@azure/msal-node/clientapplication#@azure-msal-node-clientapplication-acquiretokenbyusernamepassword)
+- [IConfidentialClientApplication.acquireTokenByUsernamePassword](/javascript/api/@azure/msal-node/iconfidentialclientapplication#@azure-msal-node-iconfidentialclientapplication-acquiretokenbyusernamepassword)
+- [IPublicClientApplication.acquireTokenByUsernamePassword](/javascript/api/@azure/msal-node/ipublicclientapplication#@azure-msal-node-ipublicclientapplication-acquiretokenbyusernamepassword)
+
+### [Python](#tab/python)
+
+Changes are required if you're using the [msal](https://pypi.org/project/msal/) package and using the following API in your application:
+
+[ClientApplication.acquire_token_by_username_password](/python/api/msal/msal.application.clientapplication#msal-application-clientapplication-acquire-token-by-username-password)
+
+---
+
+The same general MSAL guidance applies to the Azure Identity libraries. The `UsernamePasswordCredential` class provided in those libraries uses MSAL ROPC-based APIs. For language-specific guidance, see the following tabs.
+
+### [.NET](#tab/dotnet)
+
+Changes are required if you're using the [Azure.Identity](https://www.nuget.org/packages/Azure.Identity) package and doing one of the following things in your application:
+
+- Using [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential) or [EnvironmentCredential](/dotnet/api/azure.identity.environmentcredential) with the following two environment variables set:
     - `AZURE_USERNAME`
     - `AZURE_PASSWORD`
-- Using `UsernamePasswordCredential`
+- Using [UsernamePasswordCredential](/dotnet/api/azure.identity.usernamepasswordcredential)
+
+### [Go](#tab/go)
+
+Changes are required if you're using the [azidentity](https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/azidentity) module and doing one of the following things in your application:
+
+- Using [DefaultAzureCredential](https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/azidentity#DefaultAzureCredential) or [EnvironmentCredential](https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/azidentity#EnvironmentCredential) with the following two environment variables set:
+    - `AZURE_USERNAME`
+    - `AZURE_PASSWORD`
+- Using [UsernamePasswordCredential](https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/azidentity#UsernamePasswordCredential)
+
+### [Java](#tab/java)
+
+Changes are required if you're using the [azure-identity](https://central.sonatype.com/artifact/com.azure/azure-identity) package and doing one of the following things in your application:
+
+- Using [DefaultAzureCredential](/java/api/com.azure.identity.defaultazurecredential) or [EnvironmentCredential](/java/api/com.azure.identity.environmentcredential) with the following two environment variables set:
+    - `AZURE_USERNAME`
+    - `AZURE_PASSWORD`
+- Using [UsernamePasswordCredential](/java/api/com.azure.identity.usernamepasswordcredential)
+
+### [Node.js](#tab/js)
+
+Changes are required if you're using the [@azure/identity](https://www.npmjs.com/package/@azure/identity) package and doing one of the following things in your application:
+
+- Using [DefaultAzureCredential](/javascript/api/@azure/identity/defaultazurecredential) or [EnvironmentCredential](/javascript/api/@azure/identity/environmentcredential) with the following two environment variables set:
+    - `AZURE_USERNAME`
+    - `AZURE_PASSWORD`
+- Using [UsernamePasswordCredential](/javascript/api/@azure/identity/usernamepasswordcredential)
+
+### [Python](#tab/python)
+
+Changes are required if you're using the [azure-identity](https://pypi.org/project/azure-identity) package and doing one of the following things in your application:
+
+- Using [DefaultAzureCredential](/python/api/azure-identity/azure.identity.defaultazurecredential) or [EnvironmentCredential](/python/api/azure-identity/azure.identity.environmentcredential) with the following two environment variables set:
+    - `AZURE_USERNAME`
+    - `AZURE_PASSWORD`
+- Using [UsernamePasswordCredential](/python/api/azure-identity/azure.identity.usernamepasswordcredential)
+
+---
 
 ### Migrate user-based service accounts to workload identities
 
@@ -120,9 +198,12 @@ If you're using a federated Identity Provider (IdP), such as Active Directory Fe
 
 ## Request more time to prepare for enforcement 
 
+> [!NOTE]
+> The date when Global Administrators can select the start date of enforcement has changed from Feb. 24, 2025 to Mar. 3, 2025.
+
 We understand that some customers may need more time to prepare for this MFA requirement. Microsoft is allowing customers with complex environments or technical barriers to postpone the enforcement for their tenants until September 30, 2025. 
 
-Starting on 24th February 2025, Global Administrators can go to the [Azure portal](https://aka.ms/managemfaforazure) to select the start date of enforcement for their tenant for admin portals in Phase 1. Global Administrators must [elevate access](https://aka.ms/enableelevatedaccess) before they can postpone the start date of MFA enforcement.  
+Starting on March 3, 2025, Global Administrators can go to the [Azure portal](https://aka.ms/managemfaforazure) to select the start date of enforcement for their tenant for admin portals in Phase 1. Global Administrators must [elevate access](https://aka.ms/enableelevatedaccess) before they can postpone the start date of MFA enforcement.  
 
 Global Administrators must perform this action for every tenant where they want to postpone the start date of enforcement.  
 

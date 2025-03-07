@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with SonarQube
 
-In this tutorial, you learn how to integrate SonarQube with Microsoft Entra ID. When you integrate SonarQube with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate SonarQube with Microsoft Entra ID. When you integrate SonarQube with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to SonarQube.
 * Enable your users to be automatically signed-in to SonarQube with their Microsoft Entra accounts.
@@ -36,7 +36,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * SonarQube supports **SP** initiated SSO.
 
@@ -99,7 +99,7 @@ Follow these steps to enable Microsoft Entra SSO.
 		`https://servicescode-dev.westus.cloudapp.azure.com`
 
 	> [!NOTE]
-	> This value is not real. Update the value with actual Reply URL which are explained later in the tutorial.
+	> This value is not real. Update the value with actual Reply URL which are explained later in the article.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 

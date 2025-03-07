@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with smartvid.io
 
-In this tutorial, you learn how to integrate smartvid.io with Microsoft Entra ID.
+In this article,  you learn how to integrate smartvid.io with Microsoft Entra ID.
 Integrating smartvid.io with Microsoft Entra ID provides you with the following benefits:
 
 * You can control in Microsoft Entra ID who has access to smartvid.io.
@@ -35,7 +35,7 @@ To configure Microsoft Entra integration with smartvid.io, you need the followin
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * smartvid.io supports **IDP** initiated SSO
 
@@ -159,7 +159,7 @@ When you click the smartvid.io tile in the Access Panel, you should be automatic
 
 ## Additional Resources
 
-- [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 

@@ -5,7 +5,7 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 03/04/2025
 ms.author: gasinh
 author: gargi-sinha
 manager: martinco

@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Serraview Space Utilization Software Solutions
 
-In this tutorial, you'll learn how to integrate Serraview Space Utilization Software Solutions with Microsoft Entra ID. When you integrate Serraview Space Utilization Software Solutions with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Serraview Space Utilization Software Solutions with Microsoft Entra ID. When you integrate Serraview Space Utilization Software Solutions with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Serraview Space Utilization Software Solutions.
 * Enable your users to be automatically signed-in to Serraview Space Utilization Software Solutions with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Serraview Space Utilization Software Solutions supports **SP and IDP** initiated SSO.
 

@@ -142,7 +142,7 @@ To get started, you need the following items:
 
 ### Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Logz.io - Microsoft Entra Integration supports **IDP** initiated SSO.
 

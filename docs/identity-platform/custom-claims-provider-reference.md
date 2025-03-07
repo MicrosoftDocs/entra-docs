@@ -83,7 +83,7 @@ POST https://your-api.com/endpoint
                 "createdDateTime": "2016-03-01T15:23:40Z",
                 "displayName": "Casey Jensen",
                 "givenName": "Casey",
-                "id": "90847c2a-e29d-4d2f-9f54-c5b4d3f26471", // Client ID representing the Microsoft Entra authentication events service
+                "id": "90847c2a-e29d-4d2f-9f54-c5b4d3f26471", // The unique identifier for the user. See https://learn.microsoft.com/en-us/graph/api/resources/directoryobject?view=graph-rest-1.0#properties
                 "mail": "casey@contoso.com",
                 "onPremisesSamAccountName": "caseyjensen",
                 "onPremisesSecurityIdentifier": "<Enter Security Identifier>",

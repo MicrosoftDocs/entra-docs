@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with ADP
 
-In this tutorial, you'll learn how to integrate ADP with Microsoft Entra ID. When you integrate ADP with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate ADP with Microsoft Entra ID. When you integrate ADP with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to ADP.
 * Enable your users to be automatically signed-in to ADP with their Microsoft Entra accounts.
@@ -35,7 +35,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * ADP supports **IDP** initiated SSO.
 
@@ -81,7 +81,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     a. Set the **Enabled for users to sign-in** field value to **Yes**.
 
-    b. Copy the **User access URL** and you have to paste it in **Configure Sign-on URL section**, which is explained later in the tutorial.
+    b. Copy the **User access URL** and you have to paste it in **Configure Sign-on URL section**, which is explained later in the article.
 
     c. Set the **User assignment required** field value to **Yes**.
 
@@ -224,7 +224,7 @@ Upon receipt of confirmation from your ADP representative, configure your ADP se
 
     1. Test is successful when users access the ADP service app on the gallery and can access their ADP service.
 
-1. On confirmation of a successful test, assign the federated ADP service to individual users or user groups, which is explained later in the tutorial and roll it out to your employees.
+1. On confirmation of a successful test, assign the federated ADP service to individual users or user groups, which is explained later in the article and roll it out to your employees.
 
 ### Configure ADP to support multiple instances in the same tenant
 

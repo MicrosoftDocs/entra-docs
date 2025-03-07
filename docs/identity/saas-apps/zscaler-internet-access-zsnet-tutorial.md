@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Zscaler Internet Access ZSNet
 
-In this tutorial, you'll learn how to integrate Zscaler Internet Access ZSNet with Microsoft Entra ID. When you integrate Zscaler Internet Access ZSNet with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Zscaler Internet Access ZSNet with Microsoft Entra ID. When you integrate Zscaler Internet Access ZSNet with Microsoft Entra ID, you can:
 
 - Control in Microsoft Entra ID who has access to Zscaler Internet Access ZSNet.
 - Enable your users to be automatically signed-in to Zscaler Internet Access ZSNet with their Microsoft Entra accounts.
@@ -32,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Zscaler Internet Access ZSNet supports **SP** initiated SSO.
 * Zscaler Internet Access ZSNet supports **Just In Time** user provisioning.

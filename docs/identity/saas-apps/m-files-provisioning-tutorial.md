@@ -14,7 +14,7 @@ ms.author: thomasakelo
 
 # Configure M-Files for automatic user provisioning
 
-This tutorial describes the steps you need to perform in both M-Files and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [M-Files](https://www.m-files.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
+This article describes the steps you need to perform in both M-Files and Microsoft Entra ID to configure automatic user provisioning. When configured, Microsoft Entra ID automatically provisions and deprovisions users and groups to [M-Files](https://www.m-files.com/) using the Microsoft Entra provisioning service. For important details on what this service does, how it works, and frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md). 
 
 ## Supported capabilities
 > [!div class="checklist"]
@@ -26,7 +26,7 @@ This tutorial describes the steps you need to perform in both M-Files and Micros
 
 ## Prerequisites
 
-The scenario outlined in this tutorial assumes that you already have the following prerequisites:
+The scenario outlined in this article assumes that you already have the following prerequisites:
 
 * [A Microsoft Entra tenant](~/identity-platform/quickstart-create-new-tenant.md) 
 * One of the following roles: [Application Administrator](/entra/identity/role-based-access-control/permissions-reference#application-administrator), [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator), or [Application Owner](/entra/fundamentals/users-default-permissions#owned-enterprise-applications).
@@ -54,7 +54,7 @@ If you have previously configured user provisioning in M-Files Manage with your 
 1. Enter the necessary information.
    * In **Configuration name**, enter a unique name for the configuration.
    * Select **Default license type** for the provisioned users. All the provisioned users first get this license. You can change a user group's license type to a higher one after user groups have been provisioned. If there are not enough available licenses of the default license type in the subscription, all the users do not get the license.
-1. Click the copy icon (![Sreenshot of the Copy icon.](media/m-files-provisioning-tutorial/icon.png) ) for each piece of data, that M-Files Manage created, and note down the values.
+1. Click the copy icon (![Screenshot of the Copy icon.](media/m-files-provisioning-tutorial/icon.png) ) for each piece of data, that M-Files Manage created, and note down the values.
 
 > [!NOTE]
 > The client secret is not shown anywhere else when you close the dialog.
@@ -123,7 +123,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
   > [!NOTE]
   > It is not recommended to make changes to the default attribute mappings.
 
-1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter tutorial](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, refer to the following instructions provided in the [Scoping filter  article](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for M-Files, change the **Provisioning Status** to **On** in the **Settings** section.
 

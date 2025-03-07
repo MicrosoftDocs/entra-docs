@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Sedgwick CMS
 
-In this tutorial, you'll learn how to integrate Sedgwick CMS with Microsoft Entra ID. When you integrate Sedgwick CMS with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Sedgwick CMS with Microsoft Entra ID. When you integrate Sedgwick CMS with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Sedgwick CMS.
 * Enable your users to be automatically signed-in to Sedgwick CMS with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with Sedgwick CMS, you need the followi
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Sedgwick CMS supports **IDP** initiated SSO.
 
