@@ -61,8 +61,7 @@ Required permissions | For permissions required to apply an update, see [Microso
 > For new installs, always install the latest version. For upgrades, make sure you upgrade to the latest version before the retirement of your current version.
 
 ## Breaking Change on Entra Connect Sync
-> [!IMPORTANT]
-> The MSOnline [deprecation](https://aka.ms/msonlineretirement) on April 7, 2025 will impact Entra Connect Sync service. We recommend that you upgrade your connect sync version to 2.4.18.0 or higher to avoid being impacted by the deprecation. No action is required if you have upgraded your connect sync version. [Learn More](harden-update-ad-fs-pingfederate.md) 
+
 
 |Version|End of support date|
 |-----|-----|
