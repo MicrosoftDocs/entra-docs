@@ -55,7 +55,7 @@ Applications may have other requirements beyond these identity requirements, suc
 
 For the applications to receive the same claims for the same users in a federation token as expected from Microsoft Entra ID, even when Microsoft Entra ID is unreachable, there must be a source of user identities and their attributes local to the site that can be used to generate the claims. AD FS supports Windows Server AD as an identity source and AD attributes as a claims source.
 
-One way to maintain consistency is to define an identity management process that creates and updates users in Windows Server AD, and then synchronizes those users from AD to Microsoft Entra. Check that your Windows Server AD environment and associated Microsoft Entra agents are ready to transport users into and out of Windows Server AD with the necessary schema for your applications. 
+One way to maintain consistency is to define an identity management process that creates and updates users in Windows Server AD, and then synchronizes those users from AD to Microsoft Entra. Check that your Windows Server AD environment and associated Microsoft Entra agents are ready to transport users into and out of Windows Server AD with the necessary schema for your applications.
 
 :::image type="content" source="media/resilience-for-federated-applications-with-colocated-users/active-directory-user-object-data-flow.png" alt-text="Diagram showing the data flow for a user object between Microsoft Entra and Active Directory.":::
 
@@ -185,115 +185,7 @@ You'll next need to configure who can sign-in to the application. AD FS and Micr
 
 1. Previously you assigned a test user in Microsoft Entra to the application role, you may wish to remove that test user's role assignment now.
 1. In Microsoft Entra, you can use features like dynamic groups or entitlement management to assign users to an application role. If the user has a role membership on the application role, then the user will be able to receive a token from Microsoft Entra.
-1. In addition, AD FS also applies access control policies that are assigned to the application. Any policy you select for the application needs to abele to be evaluated by AD FS for both tokens from Microsoft Entra and for users which authenticate to Windows Server AD. As tokens from Microsoft Entra do not pass through Active Directory, you can't use the **Permit specific group** access control policy, as that would deny Microsoft Entra tokens. For more information on access control policies, see [Access Control Policies in AD FS](/windows-server/identity/ad-fs/operations/access-control-policies-in-ad-fs). <!-- more details TBA -->
-
-## Configure a scheduled task to perform automatic failover to AD
-
-You'll next need to configure a monitor for connectivity from the site. This monitor will trigger an automatic switch of the identity provider for an application in AD FS from `Microsoft Entra` to `Active Directory` when a disconnect is detected, by invoking the `Set-AdfsRelyingPartyTrust` command. Optionally, you may wish to configure a monitor to reset the AD FS configuration back to `Microsoft Entra` when connectivity is restored.
-
-You can implement a monitor by using a PowerShell script and the built-in Task Scheduler. An example of a script that you can customize for the needs of your environment:
-
-```powershell
-[CmdletBinding()] param ()
-# Sample PSh script for changing claims provider for a single AD FS application when there is no network connectivity to a specific endpoint, customize for your own use.
-# This sample is provided **AS-IS** without support.
-
-# Ensure that you have already registered the source by using the cmdlet
-# New-EventLog -LogName Application -Source "AD FS changeover script"
-$EventLogSource = "AD FS changeover script"
-$EventLogName = 'Application'
-
-# These should match the list of claims providers in AD FS
-$ClaimsProviderNormal = "Microsoft Entra"
-$ClaimsProviderFailover = "Active Directory"
-
-# This should match the name of the relying party application in AD FS
-$ApplicationName = "sampleapp"
-
-$TargetUri = "https://login.microsoftonline.com"
-
-try {
-    $EAP = $ErrorActionPreference
-    $ErrorActionPreference = 'Stop'
-
-    Write-Debug "locating claims provider $ClaimsProviderNormal"
-    # confirm that the providers are present
-    $p = Get-AdfsClaimsProviderTrust -Name $ClaimsProviderNormal
-    if ($null -eq $p) {
-        throw "Claims provider $ClaimsProviderNormal not found"
-    }
-    write-Debug "locating claims provider $ClaimsProviderFailover"
-    $p = Get-AdfsClaimsProviderTrust -Name $ClaimsProviderFailover
-    if ($null -eq $p) {
-        throw "Claims provider $ClaimsProviderFailover not found"
-    }
-
-    write-Debug "locating application $ApplicationName"
-    # confirm that the relying party trust for the application is present
-    $t = Get-AdfsRelyingPartyTrust -Name $ApplicationName
-    if ($null -eq $t) {
-        throw "Relying party trust $ApplicationName not found"
-    }
-    $CurrentClaimsProviderName = $t.ClaimsProviderName
-    Write-Debug "current claims provider for Application is $CurrentClaimsProviderName"
-    if ($CurrentClaimsProviderName -eq $ClaimsProviderFailover -or $CurrentClaimsProviderName -match $ClaimsProviderFailover) {
-        Write-Debug "current claims provider for Application $ApplicationName is already set to include $ClaimsProviderFailover"
-
-        Write-EventLog -LogName $EventLogName -Source $EventLogSource -EntryType Information -EventId 2 -Message "Relying party trust $ApplicationName claims provider currently set to $CurrentClaimsProviderName"
-        # note that this sample does not perform failback from the failover provider to the normal operations provider
-        
-    } else {
-        try {
-            Write-Debug "about to contact $TargetUri"
-            # -SkipHttpErrorCheck -SkipCertificateCheck are not available in PowerShell 5.1
-            $Result = Invoke-WebRequest -Uri $TargetUri -Method Post 
-            $StatusCode = $Result.StatusCode
-            Write-Debug "HTTP result is $StatusCode"
-            if ($StatusCode -eq 200) {
-                Write-Debug "Successfully reached $TargetUri"
-                # do nothing, the normal claims provider is already set
-            
-            } else {
-                Write-EventLog -LogName $EventLogName -Source $EventLogSource -EntryType Warning -EventId 3 -Message "Received HTTP status code $StatusCode from $TargetUri, but not changing claims provider for $ApplicationName"
-            }
-        } catch {
-            Write-Debug "failed to connect $_"
-            # if a status code is received, assume it is reachable
-            $StatusCode = $_.Exception.Response.StatusCode.value__
-            if ($null -ne $StatusCode) {
-                Write-Debug "HTTP result is $StatusCode"
-                Write-EventLog -LogName $EventLogName -Source $EventLogSource -EntryType Warning -EventId 3 -Message "Received HTTP status code $StatusCode from $TargetUri, but not changing claims provider for $ApplicationName"
-            } else {
-                # if the endpoint is not reachable, set the claims provider to the failover provider
-                Write-EventLog -LogName $EventLogName -Source $EventLogSource -EntryType Information -EventId 4 -Message "Failed to reach $TargetUri due to $_, setting claims provider for $ApplicationName to $ClaimsProviderFailover"
-                Write-Debug "about to set failover claims provider $ClaimsProviderFailover"
-                Set-AdfsRelyingPartyTrust -TargetName $ApplicationName -ClaimsProviderName $ClaimsProviderFailover
-                Write-EventLog -LogName $EventLogName -Source $EventLogSource -EntryType Warning -EventId 5 -Message "Failed to reach $TargetUri, set claims provider for $ApplicationName to $ClaimsProviderFailover"
-            }
-        }
-    }
-
-    Write-Debug "completed"
-
-} catch {
-    Write-Error @_
-    Write-EventLog -LogName $EventLogName -Source $EventLogSource -EntryType Error -EventId 1 -Message $_
-} finally {
-    $ErrorActionPreference = $EAP
-}
-```
-
-1. Copy the script which detects the network connection failure from the site, and invokes `Set-AdfsRelyingPartyTrust`, to the server.
-1. Launch PowerShell on the Windows Server where AD FS is installed.
-1. Register a source so the script can write to the Application event log. For example, if the script is named `AD FS changeover script`, then type the command `New-EventLog -LogName Application -Source "AD FS changeover script"`.
-1. Test the script to ensure it operates correctly from an interactive session.
-1. Launch **Task Scheduler** and view the Task Scheduler Library.
-1. If you don't already have a folder for your tasks, create a folder.
-1. Select the folder for your tasks, then select **Create task**.
-1. Fill out the **General** tab settings for the task.
-1. Change to the **Triggers** tab. Select **New** and provide a recurrence schedule for your task, in alignment with your organization's risk and network guidance.
-1. Change to the **Actions** tab. Select **New** and select an action to **Start a program**. Specify `powershell.exe` as the program, and specify arguments needed to invoke the PowerShell script. For example, `-NonInteractive -WindowStyle Hidden -File c:\scripts\ad_fs_changeover_script.ps1`. Then Select **OK** to close the action window and **OK** to close the task window. For more information, see [about powershell.exe](/powershell/module/microsoft.powershell.core/about/about_powershell_exe).
-1. Select **Run**, wait one minute, then select **Refresh**. Ensure that the script started and completed successfully.
+1. In addition, AD FS also applies access control policies that are assigned to the application. Any policy you select for the application needs to abele to be evaluated by AD FS for both tokens from Microsoft Entra and for users which authenticate to Windows Server AD. As tokens from Microsoft Entra do not pass through Active Directory, you can't use the **Permit specific group** access control policy, as that would deny Microsoft Entra tokens. If you wish to control access in AD FS for token issuance from Windows Server AD, you'll need to use a different policy instead. For more information on access control policies, see [Access Control Policies in AD FS](/windows-server/identity/ad-fs/operations/access-control-policies-in-ad-fs).
 
 ## Complete configuration
 
