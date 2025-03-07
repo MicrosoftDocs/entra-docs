@@ -25,7 +25,7 @@ Microsoft Entra External ID stores sign-in and audit logs for 30 days. Export th
 
 This configuration requires projecting an Azure resource group with the resources from the enterprise tenant to the Microsoft Entra External ID tenant. You can enable log exports using Azure Monitor. 
 
-### Monitor and alert
+## Monitor and alert
 
 Monitoring helps ensure the efficient operation of identity and associated systems. These actions include establishing monitoring infrastructure, defining monitoring procedures, setting up dashboards or alerts, and creating a response protocol to handle alerts. See the following list of what to monitor:
 
@@ -47,7 +47,7 @@ The following diagram illustrates monitoring and alerting setup.
 
    [ ![Diagram of alerting and monitoring setup.](media/deployment-external/alerting-setup.png)](media/deployment-external/alerting-setup-expanded.png#lightbox)
 
-### Service degradation and failure alerting setup
+## Service degradation and failure alerting setup
 
 In a large system, certain levels of transaction fail. Incomplete identity experiences, sometimes called incomplete conversions, can be caused by events such as distracted users, telco failures, browser crashes, etc. On a large scale, addressing every failure is impractical. Set up a baseline for typical failure events. Also set up monitoring and alerting to detect deviations, like performance monitoring. Use the following job aid to record failure metrics. 
 
@@ -66,7 +66,7 @@ Changes in environments are inevitable. An automated continuous validation envir
 
 Synthetic transactions should reference applications and APIs used for token acquisition, validation, and integration components such as API managers and service buses. We recommend you maintain versions of supported services, operating systems, and runtime environments in this setup. Each component continuously reports the test success or failure. This action ensures identity services availability and early detection of potential failures. 
 
-### Monitoring usage
+## Monitoring usage
 
 Microsoft Entra External ID pricing consists of a core offer and premium add-ons.  
 
