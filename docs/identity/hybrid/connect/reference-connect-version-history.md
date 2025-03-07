@@ -6,7 +6,7 @@ ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.service: entra-id
 manager: amycolannino
 ms.topic: reference
-ms.date: 10/07/2024
+ms.date: 03/07/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 ms.custom: has-adal-ref, has-azure-ad-ps-ref
@@ -59,9 +59,6 @@ Required permissions | For permissions required to apply an update, see [Microso
 > This policy went into effect on 15 March 2023.
 > 
 > For new installs, always install the latest version. For upgrades, make sure you upgrade to the latest version before the retirement of your current version.
-
-## Breaking Change on Entra Connect Sync
-
 
 |Version|End of support date|
 |-----|-----|
