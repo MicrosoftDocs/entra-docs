@@ -7,7 +7,7 @@ ms.service: global-secure-access
 ms.topic: troubleshooting
 ms.date: 02/21/2025
 ms.author: kenwith
-ms.reviewer: ashishj
+ms.reviewer: ashishj,dhruvinshah
 ---
 
 # Troubleshoot problems installing the private network connector
