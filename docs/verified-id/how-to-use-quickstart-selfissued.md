@@ -1,6 +1,6 @@
 ---
 title: Create verifiable credentials for self-asserted claims
-description: Learn how to use a quickstart to create custom credentials for self-issued claims
+description: Learn how to use a quickstart to create custom credentials for self-issued claims.
 documentationCenter: ''
 author: barclayn
 manager: amycolannino
