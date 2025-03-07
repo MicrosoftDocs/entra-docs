@@ -65,7 +65,7 @@ To enable the Enriched Microsoft 365 logs:
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](/azure/active-directory/roles/permissions-reference#global-administrator).
 1. Browse to **Global Secure Access** > **Settings** > **Logging**.
 1. Select the NetworkAccessTraffic table.
-1. Use the same endpoint to collect Microsoft 365 Activity Logs (Table: OfficeActivity) as explained [here](https://go.microsoft.com/fwlink/?linkid=2306659).
+1. Use the same endpoint to collect Microsoft 365 Activity Logs (Table: OfficeActivity) as explained [here](/azure/sentinel/data-connectors/microsoft-365).
 1. Create a join of these two tables using the Unique Token Id.
 
    Example query:
