@@ -17,7 +17,7 @@ This document is intended for identity architects and engineering leadership in 
 
 [CIAM](../external-id/customers/overview-customers-ciam.md) is a set of technologies and processes that incorporates security methods like multifactor authentication to ensure only authorized individuals access an organization's sensitive information. 
 
-## CIAM design
+## CIAM design 
 
 When you design a CIAM solution, there are facets to consider. For instance, your customers rely on mechanisms to help them authenticate to services. A frictionless self-service experience is part of a CIAM solution. It can consistently portray brand through customer-facing touchpoints, including the CIAM solution.  
 
