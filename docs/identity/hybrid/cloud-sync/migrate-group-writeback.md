@@ -1,5 +1,5 @@
 ---
-title: 'Migrate Microsoft Entra Connect Sync Group Writeback V2 to Microsoft Entra Cloud Sync'
+title: 'Migrate Microsoft Entra Connect Sync Group Writeback v2 to Microsoft Entra Cloud Sync'
 description: This article describes how to migrate groups that were initially set up for group writeback by using Microsoft Entra Connect Sync to Microsoft Entra Cloud Sync.
 
 author: billmath
@@ -12,20 +12,20 @@ ms.author: billmath
 
 ---
 
-# Migrate Microsoft Entra Connect Sync group writeback V2 to Microsoft Entra Cloud Sync
+# Migrate Microsoft Entra Connect Sync Group Writeback v2 to Microsoft Entra Cloud Sync
 
 [!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
 
-This article describes how to migrate group writeback by using Microsoft Entra Connect Sync (formerly Azure Active Directory Connect) to Microsoft Entra Cloud Sync. This scenario is *only* for customers who are currently using Microsoft Entra Connect group writeback v2. The process outlined in this article pertains only to cloud-created security groups that are written back with a universal scope.
+This article describes how to migrate Group Writeback by using Microsoft Entra Connect Sync (formerly Azure Active Directory Connect) to Microsoft Entra Cloud Sync. This scenario is *only* for customers who are currently using Microsoft Entra Connect Group Writeback v2. The process outlined in this article pertains only to cloud-created security groups that are written back with a universal scope.
 
 > [!IMPORTANT]
-> This scenario is *only* for customers who are currently using Microsoft Entra Connect group writeback v2.
+> This scenario is *only* for customers who are currently using Microsoft Entra Connect Group Writeback v2.
 >
 > Also, this scenario is only supported for:
 > - Cloud created [security groups](../../../fundamentals/concept-learn-about-groups.md#group-types).
 > - Groups written back to Active Directory with the scope of [universal](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope).
 >
-> Mail-enabled groups and DLs written back to Active Directory continue to work with Microsoft Entra Connect group writeback but revert to the behavior of group writeback V1. In this scenario, after you disable group writeback V2, all M365 groups are written back to Active Directory independently of the **Writeback Enabled** setting in the Microsoft Entra admin center. For more information, see [Provision to Active Directory with Microsoft Entra Cloud Sync FAQ](reference-provision-to-active-directory-faq.yml).
+> Mail-enabled groups and DLs written back to Active Directory continue to work with Microsoft Entra Connect Group Writeback but revert to the behavior of Group Writeback v1. In this scenario, after you disable Group Writeback v2, all M365 groups are written back to Active Directory independently of the **Writeback Enabled** setting in the Microsoft Entra admin center. For more information, see [Provision to Active Directory with Microsoft Entra Cloud Sync FAQ](reference-provision-to-active-directory-faq.yml).
 
 ## Prerequisites
 
@@ -47,7 +47,7 @@ By default, Microsoft Entra Connect Sync uses the following format when naming g
 
  - Example: `CN=Group_3a5c3221-c465-48c0-95b8-e9305786a271,OU=WritebackContainer,DC=contoso,DC=com`
 
-To make it easier to find groups being written back from Microsoft Entra ID to Active Directory, Microsoft Entra Connect Sync added an option to write back the group name by using the cloud display name. To use this option, select **Writeback Group Distinguished Name with cloud Display Name** during initial setup of group writeback v2. If this feature is enabled, Microsoft Entra Connect uses the following new format instead of the default format:
+To make it easier to find groups being written back from Microsoft Entra ID to Active Directory, Microsoft Entra Connect Sync added an option to write back the group name by using the cloud display name. To use this option, select **Writeback Group Distinguished Name with cloud Display Name** during initial setup of Group Writeback v2. If this feature is enabled, Microsoft Entra Connect uses the following new format instead of the default format:
 
 - New format: `CN=&lt;display name&gt;_&lt;last 12 digits of object ID&gt;,OU=&lt;container&gt;,DC=&lt;domain component&gt;,DC=\<domain component>`
 
@@ -342,10 +342,10 @@ You also need an outbound sync rule with a link type of `JoinNoFlow` and the sco
    Start-ADSyncSyncCycle -PolicyType Initial
    ``` 
 
-1. Disable the group writeback feature for the tenant.
+1. Disable the Group Writeback feature for the tenant.
 
    > [!WARNING]
-   > This operation is irreversible. After you disable group writeback V2, all Microsoft 365 groups are written back to Active Directory, independently of the **Writeback Enabled** setting in Microsoft Entra admin center.
+   > This operation is irreversible. After you disable Group Writeback v2, all Microsoft 365 groups are written back to Active Directory, independently of the **Writeback Enabled** setting in Microsoft Entra admin center.
    ``` PowerShell 
    Set-ADSyncAADCompanyFeature -GroupWritebackV2 $false 
    ```
