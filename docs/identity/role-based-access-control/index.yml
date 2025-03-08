@@ -11,7 +11,7 @@ metadata:
   ms.subservice: role-based-access-control
   manager: amycolannino
   ms.topic: landing-page
-  ms.date: 01/03/2025
+  ms.date: 02/18/2025
   author: rolyon
   ms.author: rolyon
 
@@ -26,6 +26,8 @@ landingContent:
         links:
           - text: What is Microsoft Entra RBAC?
             url: custom-overview.md
+          - text: "What's new in docs"
+            url: whats-new.md
       - linkListType: concept
         links:
           - text: Understand Microsoft Entra roles

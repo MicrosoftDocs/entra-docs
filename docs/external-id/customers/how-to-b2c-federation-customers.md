@@ -6,9 +6,9 @@ author: csmulligan
 manager: celestedg
 ms.service: entra-external-id
  
-ms.subservice: customers
+ms.subservice: external
 ms.topic: how-to
-ms.date: 01/22/2025
+ms.date: 02/24/2025
 ms.author: cmulligan
 ms.reviewer: brozbab
 ms.custom: it-pro
@@ -107,7 +107,7 @@ OR
   - **Name**: name
   - **Given name**: given_name
   - **Family name**: family_name
-  - **Email**: email
+  - **Email** (required): email
 
 Create the identity provider and attach it to your user flow associated with your application for sign in and sign up.
 

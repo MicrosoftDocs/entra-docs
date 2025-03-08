@@ -5,7 +5,7 @@ description: Learn how to configure external collaboration settings in Microsoft
 ms.service: entra-external-id
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 10/21/2024
+ms.date: 02/18/2025
 
 ms.author: mimart
 author: msmimart
@@ -35,16 +35,14 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
 
 :::image type="content" source="media/external-identities-overview/b2b-comparison.png" alt-text="Screenshots showing a comparison of the branded sign-in experience and the default sign-in experience.":::
 
-> [!NOTE]
-> Depending on the external collaboration settings you want to configure, different admin roles might be required. This article specifies the role required for each type of setting. See also [Least privileged roles by task for External ID/B2C](/entra/identity/role-based-access-control/delegate-by-task#external-identitiesb2c).
-
 ## Configure settings in the portal
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
+> [!NOTE]
+> In the Microsoft Entra admin center, you must be assigned the Global Administrator role to activate the External Collaboration Settings page and update the settings. When using Microsoft Graph, lesser privileged roles might be available for individual settings; see [Configure settings with Microsoft Graph](#configure-settings-with-microsoft-graph) later in this article.
 
 ### To configure guest user access
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
 1. Browse to **Identity** > **External Identities** > **External collaboration settings**.
 
@@ -60,7 +58,7 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
 
 ### To configure guest invite settings
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Guest Inviter](~/identity/role-based-access-control/permissions-reference.md#guest-inviter).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
 1. Browse to **Identity** > **External Identities** > **External collaboration settings**.
 
@@ -75,7 +73,7 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
 
 ### To configure guest self-service sign-up
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
 1. Browse to **Identity** > **External Identities** > **External collaboration settings**.
 
@@ -85,7 +83,7 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
 
 ### To configure external user leave settings
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [External Identity Provider Administrator](~/identity/role-based-access-control/permissions-reference.md#external-identity-provider-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
 1. Browse to **Identity** > **External Identities** > **External collaboration settings**.
 
@@ -103,7 +101,7 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
 
 [!INCLUDE [least-privilege-note](../includes/definitions/least-privilege-note.md)]
 
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator).
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 
 1. Browse to **Identity** > **External Identities** > **External collaboration settings**.
 
@@ -116,7 +114,8 @@ For B2B collaboration end-users who perform cross-tenant sign-ins, their home te
 External collaboration settings can be configured by using the Microsoft Graph API:
 
 - For **Guest user access restrictions** and **Guest invite restrictions**, use the [authorizationPolicy](/graph/api/resources/authorizationpolicy?view=graph-rest-1.0&preserve-view=true) resource type.
-- For the **Enable guest self-service sign up via user flows** setting, use [authenticationFlowsPolicy](/graph/api/resources/authenticationflowspolicy?view=graph-rest-1.0&preserve-view=true) resource type.
+- For the **Enable guest self-service sign up via user flows** setting, use the [authenticationFlowsPolicy](/graph/api/resources/authenticationflowspolicy?view=graph-rest-1.0&preserve-view=true) resource type.
+- For **External user leave settings**, use the [externalidentitiespolicy](/graph/api/resources/externalidentitiespolicy?view=graph-rest-1.0&preserve-view=true) resource type.
 - For email one-time passcode settings (now on the **All identity providers** page in the Microsoft Entra admin center), use the [emailAuthenticationMethodConfiguration](/graph/api/resources/emailAuthenticationMethodConfiguration?view=graph-rest-1.0&preserve-view=true) resource type.
 
 ## Assign the Guest Inviter role to a user

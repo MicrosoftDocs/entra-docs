@@ -5,7 +5,7 @@ description: In this tutorial, you learn how to configure custom banned password
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
-ms.date: 12/02/2024
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
@@ -57,7 +57,6 @@ The custom banned password list is limited to a maximum of 1000 terms. It's not 
 
 ## Configure custom banned passwords
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Let's enable the custom banned password list and add some entries. You can add additional entries to the custom banned password list at any time.
 

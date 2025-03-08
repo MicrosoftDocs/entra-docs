@@ -32,7 +32,6 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 ### Create a custom role
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 

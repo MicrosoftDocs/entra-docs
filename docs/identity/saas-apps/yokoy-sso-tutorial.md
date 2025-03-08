@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Yokoy'
+title: Microsoft Entra SSO integration with Yokoy
 description: Learn how to configure single sign-on between Microsoft Entra ID and Yokoy.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 01/22/2025
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Yokoy so that I can control who has access to Yokoy, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Yokoy
+# Microsoft Entra SSO integration with Yokoy
 
-In this tutorial, you learn how to integrate Yokoy with Microsoft Entra ID. When you integrate Yokoy with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Yokoy with Microsoft Entra ID. When you integrate Yokoy with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Yokoy.
 * Enable your users to be automatically signed-in to Yokoy with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Yokoy supports **IDP** initiated SSO.
 
@@ -149,6 +149,6 @@ support guide for instructions on how to embed a Yokoy course with support for M
 
 You'll need to create a course, share it with your organization, and publish it in order to test course embedding. 
 
-## Next steps
+## Related content
 
 Once you configure Yokoy you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

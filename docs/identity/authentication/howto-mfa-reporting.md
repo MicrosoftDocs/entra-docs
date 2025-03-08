@@ -6,7 +6,7 @@ description: Learn how to view sign-in activity for Microsoft Entra multifactor 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/24/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
@@ -24,7 +24,6 @@ To review and understand Microsoft Entra multifactor authentication events, you 
 
 ## View the Microsoft Entra sign-in logs
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 The sign-in logs provides you with information about the usage of managed applications and user sign-in activities, which includes information about multifactor authentication usage. The MFA data gives you insights into how MFA is working in your organization. It answers questions like:
 

@@ -21,7 +21,7 @@ As an administrator, you [create an access review of groups or applications](cre
 ## Prerequisites
  
 - Microsoft Entra ID P2 or Microsoft Entra ID Governance
-- Global Administrator, User Administrator, or Identity Governance Administrator to manage access of reviews on groups and applications. Users who have the Global Administrator role or the Privileged Role Administrator role can manage reviews of role-assignable groups, see: [Use Microsoft Entra groups to manage role assignments](../identity/role-based-access-control/groups-concept.md)
+- At least the role of User Administrator or Identity Governance Administrator to manage access of reviews on groups and applications. Users who have at least the Privileged Role Administrator role can manage reviews of role-assignable groups, see: [Use Microsoft Entra groups to manage role assignments](../identity/role-based-access-control/groups-concept.md)
 - Security readers have read access.
  
 For more information, see: [License requirements](access-reviews-overview.md#license-requirements).
@@ -29,7 +29,6 @@ For more information, see: [License requirements](access-reviews-overview.md#lic
  
 ## View the status of an access review
  
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 Do the following steps to track the progress of access reviews as they're completed.
  

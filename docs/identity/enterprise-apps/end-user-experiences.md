@@ -70,7 +70,6 @@ When an authorized user selects one of these application-specific links, they fi
 
 These links use the same access control mechanisms as My Apps and Microsoft 365. Only those users or groups who have been assigned to the application in the Microsoft Entra admin center are able to successfully authenticate. However, any user who is unauthorized see's a message explaining that they haven't been granted access. The unauthorized user is given a link to load My Apps to view available applications that they do have access to.
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ## Manage preview settings
 

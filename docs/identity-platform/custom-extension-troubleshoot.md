@@ -34,7 +34,6 @@ In order to troubleshoot issues with your custom claims provider REST API endpoi
 
 ## Microsoft Entra sign-in logs
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 You can also use [Microsoft Entra sign-in logs](~/identity/monitoring-health/concept-sign-ins.md) in addition to your REST API logs, and hosting environment diagnostics solutions. Using Microsoft Entra sign-in logs, you can find errors, which may affect the users' sign-ins. The Microsoft Entra sign-in logs provide  information about the HTTP status, error code, execution duration, and number of retries that occurred the API was called by Microsoft Entra ID.
 
@@ -56,7 +55,7 @@ Use the following table to diagnose an error code.
 |Error code |Error name |Description |
 |----|----|----|
 |1003000 | EventHandlerUnexpectedError | There was an unexpected error when processing an event handler.|
-|1003001 | CustomExtenstionUnexpectedError | There was an unexpected error while calling a custom extension API.|
+|1003001 | CustomExtensionUnexpectedError | There was an unexpected error while calling a custom extension API.|
 |1003002 | CustomExtensionInvalidHTTPStatus | The custom extension API returned an invalid HTTP status code. Check that the API returns an accepted status code defined for that custom extension type.|
 |1003003 | CustomExtensionInvalidResponseBody | There was a problem parsing the custom extension's response body. Check that the API response body is in an acceptable schema for that custom extension type.|
 |1003004 | CustomExtensionThrottlingError | There are too many custom extension requests. This exception is thrown for custom extension API calls when throttling limits are reached.|

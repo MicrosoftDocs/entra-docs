@@ -36,7 +36,6 @@ You must have one of the following roles to restore applications.
 
 ## View your deleted applications
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 You can see all the applications in a soft deleted state.  Only applications deleted less than 30 days ago can be restored.
 

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Configure Elium for automatic user provisioning with Microsoft Entra ID'
+title: Configure Elium for automatic user provisioning with Microsoft Entra ID
 description: Learn how to configure Microsoft Entra ID to automatically provision and de-provision user accounts to Elium.
 
 author: thomasakelo
@@ -7,25 +7,25 @@ manager: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Elium so that I can streamline the user management process and ensure that users have the appropriate access to Elium.
 ---
 
-# Tutorial: Configure Elium for automatic user provisioning
+# Configure Elium for automatic user provisioning
 
-This tutorial shows how to configure Elium and Microsoft Entra ID to automatically provision and de-provision users or groups to Elium.
+This article shows how to configure Elium and Microsoft Entra ID to automatically provision and de-provision users or groups to Elium.
 
 > [!NOTE]
-> This tutorial describes a connector that's built on top of the Microsoft Entra user provisioning service. For important details about what this service does and how it works, and for frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
+> This article describes a connector that's built on top of the Microsoft Entra user provisioning service. For important details about what this service does and how it works, and for frequently asked questions, see [Automate user provisioning and deprovisioning to SaaS applications with Microsoft Entra ID](~/identity/app-provisioning/user-provisioning.md).
 >
 > This connector is currently in preview. For more information about previews, see [Universal License Terms For Online Services](https://www.microsoft.com/licensing/terms/product/ForOnlineServices/all).
 
 ## Prerequisites
 
-This tutorial assumes that you already have the following prerequisites:
+This article assumes that you already have the following prerequisites:
 
 * A Microsoft Entra tenant
 * [An Elium tenant](https://www.elium.com/pricing/)
@@ -84,7 +84,7 @@ To configure Elium for automatic user provisioning with Microsoft Entra ID, you 
 This section guides you through the steps to configure the Microsoft Entra provisioning service to create, update, and disable users and groups in Elium, based on user and group assignments in Microsoft Entra ID.
 
 > [!TIP]
-> You might also choose to enable single sign-on for Elium based on Security Assertion Markup Language (SAML) by following the instructions in the [Elium single sign-on tutorial](Elium-tutorial.md). You can configure single sign-on independently of automatic user provisioning, although the two features complement each other.
+> You might also choose to enable single sign-on for Elium based on Security Assertion Markup Language (SAML) by following the instructions in the [Elium single sign-on  article](Elium-tutorial.md). You can configure single sign-on independently of automatic user provisioning, although the two features complement each other.
 
 To configure automatic user provisioning for Elium in Microsoft Entra ID, follow these steps:
 
@@ -121,7 +121,7 @@ To configure automatic user provisioning for Elium in Microsoft Entra ID, follow
 
     ![Attribute mappings between Microsoft Entra ID and Elium](media/Elium-provisioning-tutorial/userattribute.png)
 
-1. To configure scoping filters, follow the instructions in the [Scoping filter tutorial](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+1. To configure scoping filters, follow the instructions in the [Scoping filter  article](~/identity/app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 1. To enable the Microsoft Entra provisioning service for Elium, change the **Provisioning Status** to **On** in the **Settings** section.
 
@@ -144,6 +144,6 @@ Use the **Current Status** section to monitor progress and follow links to your 
 * [Managing user account provisioning for Enterprise Apps](~/identity/app-provisioning/configure-automatic-user-provisioning-portal.md).
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
-## Next steps
+## Related content
 
 * [Learn how to review logs and get reports on provisioning activity](~/identity/app-provisioning/check-status-user-account-provisioning.md)

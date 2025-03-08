@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.date: 12/06/2024
 ms.author: jomondi
 ms.reviewer: saibandaru
-zone_pivot_groups: enterprise-apps-minus-former-powershell
+zone_pivot_groups: enterprise-apps-minus-legacy-powershell
 ms.custom: enterprise-apps
 
 #Customer intent: As an administrator, I want to assign an owner to an enterprise application in Microsoft Entra, so that the owner can manage the organization-specific configuration of the application and perform tasks such as single sign-on, provisioning, and user assignments.
@@ -27,7 +27,6 @@ To add an enterprise application to your Microsoft Entra tenant, you need:
 
 - A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 - One of the following roles: Cloud Application Administrator, or Application Administrator.
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ## Assign an owner
 

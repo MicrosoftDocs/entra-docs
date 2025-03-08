@@ -59,7 +59,6 @@ When you complete the preceding steps, you're now the Global Administrator of th
 
 ### Adding the domain name to a managed organization in Microsoft Entra ID
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Open the [Microsoft 365 admin center](https://admin.microsoft.com).
 2. Select **Users** tab, and create a new user account with a name like *user\@fourthcoffeexyz.onmicrosoft.com* that doesn't use the custom domain name. 

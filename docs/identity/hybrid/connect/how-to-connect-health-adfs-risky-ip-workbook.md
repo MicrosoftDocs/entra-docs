@@ -65,7 +65,6 @@ Filter the report by IP address or user name to see an expanded view of sign-ins
 
 ## Accessing the workbook
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To access the workbook:
 

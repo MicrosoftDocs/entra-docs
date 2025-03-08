@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Dow Jones Factiva'
+title: Microsoft Entra integration with Dow Jones Factiva
 description: Learn how to configure single sign-on between Microsoft Entra ID and Dow Jones Factiva.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Dow Jones Factiva so that I can control who has access to Dow Jones Factiva, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Dow Jones Factiva
+# Microsoft Entra integration with Dow Jones Factiva
 
-In this tutorial, you learn how to integrate Dow Jones Factiva with Microsoft Entra ID.
+In this article,  you learn how to integrate Dow Jones Factiva with Microsoft Entra ID.
 Integrating Dow Jones Factiva with Microsoft Entra ID provides you with the following benefits:
 
 * You can control in Microsoft Entra ID who has access to Dow Jones Factiva.
@@ -35,7 +35,7 @@ To configure Microsoft Entra integration with Dow Jones Factiva, you need the fo
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Dow Jones Factiva supports **IDP** initiated SSO
 
@@ -159,7 +159,7 @@ When you click the Dow Jones Factiva tile in the Access Panel, you should be aut
 
 ## Additional Resources
 
-- [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 

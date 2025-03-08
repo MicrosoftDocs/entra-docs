@@ -44,7 +44,7 @@ Log Analytics allows organizations to query data using built in queries or custo
 
 :::image type="content" source="media/troubleshoot-policy-changes-audit-log/log-analytics-new-old-value.png" alt-text="Log Analytics query for updates to Conditional Access policies showing new and old value location" lightbox="media/troubleshoot-policy-changes-audit-log/log-analytics-new-old-value.png":::
 
-Once enabled find access to Log Analytics in the **Identity** > **Monitoring & health** > **Log Analytics**. The table of most interest to Conditional Access administrators is **AuditLogs**.
+Once enabled find access to Log Analytics in the **Identity** > **Monitoring & health** > **Log Analytics**. The table of most interest to Conditional Access Administrators is **AuditLogs**.
 
 ```kusto
 AuditLogs 

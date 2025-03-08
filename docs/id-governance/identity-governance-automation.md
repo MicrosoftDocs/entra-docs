@@ -21,7 +21,6 @@ This article shows you how to get started using Azure Automation for Microsoft E
 
 ## Create an Azure Automation account
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 Azure Automation provides a cloud-hosted environment for [runbook execution](/azure/automation/automation-runbook-execution). Those runbooks can start automatically based on a schedule, or be triggered by webhooks or by Logic Apps.
 

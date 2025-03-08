@@ -35,7 +35,6 @@ You need:
 
 ## Gather sign-in details
 
-[!INCLUDE [portal update](../../includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.

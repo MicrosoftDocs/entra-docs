@@ -235,5 +235,5 @@ If you must make a change, use a [PowerShell script](https://github.com/microsof
 
 - [Use sensitivity labels to protect content in Microsoft Teams, Microsoft 365 groups, and SharePoint sites](/purview/sensitivity-labels-teams-groups-sites)
 - [Update groups after label policy change manually with Azure AD PowerShell script](https://github.com/microsoftgraph/powershell-aad-samples/blob/master/ReassignSensitivityLabelToO365Groups.ps1)
-- [Edit your group settings](~/fundamentals/how-to-manage-groups.yml)
+- [Edit your group settings](/entra/fundamentals/how-to-manage-groups)
 - [Manage groups using PowerShell commands](~/identity/users/groups-settings-v2-cmdlets.md)

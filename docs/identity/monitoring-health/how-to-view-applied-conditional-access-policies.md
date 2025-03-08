@@ -76,7 +76,6 @@ You can access the sign-in logs by using the Microsoft Entra admin center, the A
 
 ### [Microsoft Entra admin center](#tab/microsoft-entra-admin-center)
 
-[!INCLUDE [portal update](../../includes/portal-update.md)]
 
 The activity details of sign-in logs contain several tabs. The **Conditional Access** tab lists the Conditional Access policies applied to that sign-in event.
 
@@ -177,7 +176,7 @@ To see when an existing Conditional Access policy was updated:
 1. Browse to **Identity** > **Monitoring & health** > **Audit logs**.
 1. Set **Service** filter to **Conditional Access**.
 1. Set the **Category** filter to **Policy**.
-1. Set the **Activity** filter to **Update conditional access policy**.
+1. Set the **Activity** filter to **Update Conditional Access policy**.
 
 You might need to adjust the date to see the changes you're looking for. The **Target** column shows the name of the Conditional Access policy that was updated.
 

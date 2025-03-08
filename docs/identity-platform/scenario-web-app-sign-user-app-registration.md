@@ -31,7 +31,6 @@ You can use the following link to bootstrap the creation of your web application
 
 ## Register an app by using the Azure portal
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 > [!NOTE]
 > The portal to use is different depending on whether your application runs in the Microsoft Azure public cloud or in a national or sovereign cloud. For more information, see [National clouds](./authentication-national-cloud.md#app-registration-endpoints).
@@ -175,7 +174,7 @@ $webAppServicePrincipal = New-MgServicePrincipal -AppId $currentAppId -Tags {Win
 $owner = Get-MgApplicationOwner -ApplicationId $currentAppObjectId
 if ($owner -eq $null)
 {
-   New-MgApplicationOwnerByRef -ApplicationId $currentAppObjectId  -BodyParameter = @{"@odata.id" = "htps://graph.microsoft.com/v1.0/directoryObjects/$user.ObjectId"}
+   New-MgApplicationOwnerByRef -ApplicationId $currentAppObjectId  -BodyParameter = @{"@odata.id" = "https://graph.microsoft.com/v1.0/directoryObjects/$user.ObjectId"}
    Write-Host "'$($user.UserPrincipalName)' added as an application owner to app '$($webAppServicePrincipal.DisplayName)'"
 }
 Write-Host "Done creating the webApp application (WebApp)"

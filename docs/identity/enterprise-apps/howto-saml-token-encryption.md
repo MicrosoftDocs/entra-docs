@@ -7,8 +7,8 @@ manager: CelesteDG
 ms.service: entra-id
 ms.subservice: enterprise-apps
 
-ms.topic: concept-article
-ms.date: 08/19/2024
+ms.topic: how-to
+ms.date: 03/06/2025
 ms.author: jomondi
 ms.reviewer: alamaral
 ms.collection: M365-identity-device-management
@@ -39,9 +39,11 @@ Microsoft Entra ID uses AES-256 to encrypt the SAML assertion data.
 To configure SAML token encryption, you need:
 
 - A Microsoft Entra user account. If you don't already have one, you can [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- One of the following roles: Cloud Application Administrator, Application Administrator, or owner of the service principal.
+- One of the following roles: 
+  - Cloud Application Administrator
+  - Application Administrator
+  - owner of the service principal
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ## Configure enterprise application SAML token encryption
 
@@ -177,32 +179,13 @@ To configure token encryption for an application registration, follow these step
     }  
     ```
 
-# [Azure AD PowerShell](#tab/azuread-powershell)
-
-1. Use the latest Azure AD PowerShell module to connect to your tenant. You need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator). 
-
-1. Set the token encryption settings using the **[Set-AzureApplication](/powershell/module/azuread/set-azureadapplication?view=azureadps-2.0-preview&preserve-view=true)** command.
-
-    ```powershell
-    Set-AzureADApplication -ObjectId <ApplicationObjectId> -KeyCredentials "<KeyCredentialsObject>"  -TokenEncryptionKeyId <keyID>
-    ```
-
-1. Read the token encryption settings using the following commands.
-
-    ```powershell
-    $app=Get-AzureADApplication -ObjectId <ApplicationObjectId>
-    $app.KeyCredentials
-    $app.TokenEncryptionKeyId
-    ```
-
 # [Microsoft Graph PowerShell](#tab/msgraph-powershell)
 
 1. Use the Microsoft Graph PowerShell module to connect to your tenant. You need to sign in as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
 
 1. Set the token encryption settings using the **[Update-MgApplication](/powershell/module/microsoft.graph.applications/update-mgapplication?view=graph-powershell-1.0&preserve-view=true)** command.
-
     ```powershell
-
+    connect-MgGraph -Scopes "Application.ReadWrite.All"
     Update-MgApplication -ApplicationId <ApplicationObjectId> -KeyCredentials "<KeyCredentialsObject>"  -TokenEncryptionKeyId <keyID>
 
     ```
@@ -220,7 +203,9 @@ To configure token encryption for an application registration, follow these step
     ```
 # [Microsoft Graph](#tab/microsoft-graph)
 
-1. Update the application's `keyCredentials` with an X.509 certificate for encryption. The following example shows a Microsoft Graph JSON payload with a collection of key credentials associated with the application.
+1. Update the application's `keyCredentials` with an X.509 certificate for encryption. The following example shows a Microsoft Graph JSON payload with a collection of key credentials associated with the application. 
+   
+   Ensure you consent to the `Application.ReadWrite.All` permission.
 
     ```HTTP
     PATCH https://graph.microsoft.com/beta/applications/<application objectid>
@@ -248,7 +233,7 @@ To configure token encryption for an application registration, follow these step
 
 ---
 
-## Next steps
+## Related content
 
 - Find out [How Microsoft Entra ID uses the SAML protocol](~/identity-platform/saml-protocol-reference.md)
 - Learn the format, security characteristics, and contents of [SAML tokens in Microsoft Entra ID](~/identity-platform/reference-saml-tokens.md)

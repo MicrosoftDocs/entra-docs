@@ -20,7 +20,6 @@ This video provides an overview of how to change an access package.
 
 ## Check catalog for resources
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 If you need to add resources to an access package, you should check whether the resources you need are available in the access package's catalog. If you're an access package manager, you can't add resources to a catalog, even if you own them. You're restricted to using the resources available in the catalog.
 
@@ -96,7 +95,7 @@ You can have entitlement management automatically add users to a group or a team
 - When a membership of a group or team is a resource role that's part of an access package and a user is assigned to that access package, the user is added as a member to that group or team, if not already present.
 - When a user's access package assignment expires, they're removed from the group or team, unless they currently have an assignment to another access package that includes that same group or team.
 
-You can select any [Microsoft Entra security group or Microsoft 365 Group](~/fundamentals/how-to-manage-groups.yml). Users in an administrator role that can manage groups can add any group to a catalog; catalog owners can add any group to the catalog if they're owner of the group. Keep the following Microsoft Entra constraints in mind when selecting a group:
+You can select any [Microsoft Entra security group or Microsoft 365 Group](/entra/fundamentals/how-to-manage-groups). Users in an administrator role that can manage groups can add any group to a catalog; catalog owners can add any group to the catalog if they're owner of the group. Keep the following Microsoft Entra constraints in mind when selecting a group:
 
 - When a user, including a guest, is added as a member to a group or team, they can see all the other members of that group or team.
 - Microsoft Entra ID can't change the membership of a group that was synchronized from Windows Server Active Directory using Microsoft Entra Connect, or that was created in Exchange Online as a distribution group. If you plan to manage access to applications that use AD security groups, see [how to set up group writeback with entitlement management](entitlement-management-group-writeback.md).
@@ -310,6 +309,6 @@ When you remove a member of a team, they're removed from the Microsoft 365 Group
 
 ## Next steps
 
-- [Create a basic group and add members using Microsoft Entra ID](~/fundamentals/how-to-manage-groups.yml)
+- [Create a basic group and add members using Microsoft Entra ID](/entra/fundamentals/how-to-manage-groups)
 - [How to: Configure the role claim issued in the SAML token for enterprise applications](~/identity-platform/enterprise-app-role-management.md)
 - [Introduction to SharePoint Online](/sharepoint/introduction)

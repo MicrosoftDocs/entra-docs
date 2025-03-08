@@ -70,7 +70,6 @@ For this tutorial, you configure password hash synchronization and seamless SSO.
 
 ## Configure staged rollout features
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Before you test defederating a domain, in Microsoft Entra ID use a cloud authentication staged rollout to test defederating users. 
 

@@ -35,7 +35,6 @@ In most cases, users are going to be provisioned to Microsoft Entra ID either fr
 
 ## Create users in Microsoft Entra ID
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 We use Graph Explorer to quickly create two users needed to execute the Lifecycle Workflows in the tutorials.  One user represents our new employee and the second represents the new employee's manager.
 

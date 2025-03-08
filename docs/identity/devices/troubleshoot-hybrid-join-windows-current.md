@@ -338,7 +338,7 @@ Use Event Viewer logs to locate the phase and error code for the join failures.
 
 ### Step 5: Collect logs and contact Microsoft Support
 
-1. [Download the *Auth.zip* file](https://cesdiagtools.blob.core.windows.net/windows/Auth.zip).
+1. [Download the *Auth.zip* file](https://aka.ms/authscripts).
 
 1. Extract the files to a folder, such as *c:\temp*, and then go to the folder.
 1. From an elevated Azure PowerShell session, run `.\start-auth.ps1 -v -accepteula`.

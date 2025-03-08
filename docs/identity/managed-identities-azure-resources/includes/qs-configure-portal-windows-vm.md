@@ -29,7 +29,6 @@ In the **Identity** section, select the **Enable system assigned managed identit
 
 ### Enable system-assigned managed identity on an existing VM
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 To enable system-assigned managed identity on a VM that was originally provisioned without it, your account needs the [Virtual Machine Contributor](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor) role assignment.  No other Microsoft Entra directory role assignments are required.
 

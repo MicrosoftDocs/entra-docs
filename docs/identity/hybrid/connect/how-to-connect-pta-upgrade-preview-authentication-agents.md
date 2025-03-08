@@ -28,7 +28,6 @@ This article is for customers using Microsoft Entra pass-through authentication 
 
 ### Step 1: Check where your Authentication Agents are installed
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Follow these steps to check where your Authentication Agents are installed:
 

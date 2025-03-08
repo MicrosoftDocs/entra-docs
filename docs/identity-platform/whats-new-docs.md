@@ -5,7 +5,7 @@ author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: has-adal-ref
-ms.date: 12/03/2024
+ms.date: 02/04/2025
 ms.service: identity-platform
 
 ms.topic: whats-new
@@ -16,33 +16,22 @@ ms.topic: whats-new
 
 Welcome to what's new in the Microsoft identity platform documentation. This article lists new articles that were added or had significant updates in the last three months.
 
-## December 2024
-
-No updates available.
-
-## November 2024
+## February 2025
 
 ### New articles
 
-- [Configure a custom email provider for one time passcode send events (preview)](custom-extension-email-otp-get-started.md)
-- [Tutorial: Call an API from an Angular single-page app](tutorial-single-page-apps-angular-call-api.md)
-- [Tutorial: Create an Angular application and prepare it for authentication](tutorial-single-page-apps-angular-prepare-app.md)
-- [Tutorial: Register an Angular application in a Microsoft Entra ID tenant](tutorial-single-page-apps-angular-register-app.md)
-- [Tutorial: Add sign in and sign out in your Angular single-page application](tutorial-single-page-apps-angular-sign-in-users-app.md)
+- [Best practices to protect frontline workers](security-best-practices-for-frontline-workers.md) - Best Practices to Protect Frontline Workers
 
 ### Updated articles
 
-- [How to use Continuous Access Evaluation enabled APIs in your applications](app-resilience-continuous-access-evaluation.md) - CAE page update with code snippets for MSAL libraries
-- [Single sign-on SAML protocol](single-sign-on-saml-protocol.md) - Added clarity to the content
-- [Signing key rollover in the Microsoft identity platform](signing-key-rollover.md) - Added clarity to the content
+- [Microsoft identity platform and OAuth 2.0 Resource Owner Password Credentials](v2-oauth-ropc.md) - Added clarity to the content
 
-## October 2024
+## January 2025
 
 ### Updated articles
 
-- [Microsoft identity platform code samples](sample-v2-code.md) - Code sample page update
-- [Quickstart: Sign in users and call the Microsoft Graph API from a Node.js web app](quickstart-web-app-nodejs-sign-in.md) - Update NodeJS quickstart to new format
-- [Signing key rollover in the Microsoft identity platform](signing-key-rollover.md) - Add a description of the key refresh algorithm in a language neutral way
-- [What's new for authentication?](reference-breaking-changes.md) - Added clarity to the content
+- [Set up your application's Microsoft Entra test environment](test-setup-environment.md) - Added clarity to the content
 
+## December 2024
 
+No updates available.

@@ -290,7 +290,7 @@ For more information on Microsoft Entra groups, see:
 
 - [Existing groups](~/fundamentals/groups-view-azure-portal.md)
 - [Expiration policy for Microsoft 365 groups](groups-lifecycle.md)
-- [Manage settings of a group](~/fundamentals/how-to-manage-groups.yml)
-- [Manage members of a group](~/fundamentals/how-to-manage-groups.yml)
-- [Manage memberships of a group](~/fundamentals/how-to-manage-groups.yml)
+- [Manage settings of a group](/entra/fundamentals/how-to-manage-groups)
+- [Manage members of a group](/entra/fundamentals/how-to-manage-groups)
+- [Manage memberships of a group](/entra/fundamentals/how-to-manage-groups)
 - [Manage rules for dynamic membership groups](groups-dynamic-membership.md)

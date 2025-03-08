@@ -21,7 +21,6 @@ To ensure users have the right access to an access package, custom questions can
 
 ## Open lifecycle settings
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 To change the lifecycle settings for an access package, you need to open the corresponding policy. Follow these steps to open the lifecycle settings for an access package.
 

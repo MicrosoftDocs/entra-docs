@@ -27,7 +27,6 @@ You can create and customize workflows for common scenarios by using templates, 
 
 ## Create a lifecycle workflow by using a template in the Microsoft Entra admin center
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 If you're using the Microsoft Entra admin center to create a workflow, you can customize existing templates to meet your organization's needs. These templates include one for pre-hire common scenarios.
 
