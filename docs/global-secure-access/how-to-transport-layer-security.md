@@ -3,10 +3,11 @@ title: Configure Transport Layer Security Inspection (Preview)
 description: Learn how to configure a Transport Layer Security inspection policy and assign it to users in your organization.
 author: HULKsmashGithub
 ms.author: jayrusso
+manager: femila
 ms.service: global-secure-access
 ms.topic: how-to 
 ms.reviewer: teresayao
-ms.date: 02/25/2025
+ms.date: 03/07/2025
 
 
 #customer intent: As a Global Secure Access administrator, I want to configure a context aware Transport Layer Security inspection policy and assign the policy to users in my organization.   
@@ -102,5 +103,5 @@ To disable TLS inspection:
 1. Select **Save**.   
 
 ## Related content
-* [Learn more about Transport Layer Security Inspection](concept-microsoft-traffic-profile.md)
-* [Transport Layer Security Inspection Frequently asked questions](resource-faq.yml)
+* [Transport Layer Security Inspection Overview](concept-transport-layer-security.md)
+* [Transport Layer Security Inspection Frequently asked questions](<resource-faq.yml>)
