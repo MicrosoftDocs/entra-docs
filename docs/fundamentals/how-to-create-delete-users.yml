@@ -67,9 +67,11 @@ prerequisites:
 procedureSection:
   - title: |
       Create a new user
+
+    
     summary: |
-      [!INCLUDE [portal update](../includes/portal-update.md)]
-    steps: 
+
+    steps:
       - |
         Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](../identity/role-based-access-control/permissions-reference.md#user-administrator).
       - |

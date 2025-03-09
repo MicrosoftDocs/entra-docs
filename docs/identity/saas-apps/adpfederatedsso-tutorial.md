@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with ADP'
+title: Microsoft Entra SSO integration with ADP
 description: Learn how to configure single sign-on between Microsoft Entra ID and ADP.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ADP so that I can control who has access to ADP, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with ADP
+# Microsoft Entra SSO integration with ADP
 
-In this tutorial, you'll learn how to integrate ADP with Microsoft Entra ID. When you integrate ADP with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate ADP with Microsoft Entra ID. When you integrate ADP with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to ADP.
 * Enable your users to be automatically signed-in to ADP with their Microsoft Entra accounts.
@@ -35,7 +35,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * ADP supports **IDP** initiated SSO.
 
@@ -81,7 +81,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
     a. Set the **Enabled for users to sign-in** field value to **Yes**.
 
-    b. Copy the **User access URL** and you have to paste it in **Configure Sign-on URL section**, which is explained later in the tutorial.
+    b. Copy the **User access URL** and you have to paste it in **Configure Sign-on URL section**, which is explained later in the article.
 
     c. Set the **User assignment required** field value to **Yes**.
 
@@ -224,7 +224,7 @@ Upon receipt of confirmation from your ADP representative, configure your ADP se
 
     1. Test is successful when users access the ADP service app on the gallery and can access their ADP service.
 
-1. On confirmation of a successful test, assign the federated ADP service to individual users or user groups, which is explained later in the tutorial and roll it out to your employees.
+1. On confirmation of a successful test, assign the federated ADP service to individual users or user groups, which is explained later in the article and roll it out to your employees.
 
 ### Configure ADP to support multiple instances in the same tenant
 
@@ -267,6 +267,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the ADP tile in the My Apps, you should be automatically signed in to the ADP for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure ADP you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

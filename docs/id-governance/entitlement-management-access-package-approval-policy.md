@@ -40,7 +40,6 @@ For a demonstration of how to add a multi-stage approval to a request policy, wa
 
 ## Change approval settings of an existing access package assignment policy
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 Follow these steps to specify the approval settings for requests for the access package through a policy:
 

@@ -26,7 +26,6 @@ Guest users that already existed in your tenant by being invited are ungoverned.
 
 ## Manage guest user lifecycle in the Microsoft Entra admin center
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 To manage user lifecycle, you'd follow these steps:
 

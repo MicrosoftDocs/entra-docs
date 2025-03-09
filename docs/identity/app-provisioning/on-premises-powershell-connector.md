@@ -3,11 +3,11 @@ title: Microsoft Entra provisioning to applications via PowerShell
 description: This document describes how to configure Microsoft Entra ID to provision users with external systems that offer Windows PowerShell based APIs.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 12/13/2024
+ms.date: 03/04/2025
 ms.author: billmath
 ms.reviewer: arvinh
 ---
@@ -68,7 +68,6 @@ If you've downloaded the provisioning agent and configured it for another on-pre
 
 ## Configure the On-premises ECMA app
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least an [Application Administrator](~/identity/role-based-access-control/permissions-reference.md#application-administrator).
 1. Browse to **Identity** > **Applications** > **Enterprise applications**. 

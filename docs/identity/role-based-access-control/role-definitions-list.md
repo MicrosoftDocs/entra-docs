@@ -31,7 +31,6 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 # [Admin center](#tab/admin-center)
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com).
 

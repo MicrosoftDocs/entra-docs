@@ -25,7 +25,6 @@ You also need a Linux Virtual machine that has system assigned managed identitie
   - If you need to create  a virtual machine for this tutorial, you can follow the article titled [Create a Linux virtual machine with the Azure portal](/azure/virtual-machines/linux/quick-create-portal#create-virtual-machine)
 
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 This section shows how to grant your VM access to a secret stored in a Key Vault. Using managed identities for Azure resources, your code can get access tokens to authenticate to resources that support Microsoft Entra authentication.
 

@@ -46,10 +46,9 @@ The ImmutableID attribute ties synchronized objects to their on-premises counter
 
 You can connect to Microsoft Graph PowerShell and examine the current ImmutableID value. If you haven't used the Microsoft Graph PowerShell module, run:
 
- `Install-Module AzureAD` in an administrative session before you run the following commands:
+ `Install-Module Microsoft.Graph -Scope CurrentUser -Repository PSGallery -Force` in an administrative session before you run the following commands:
  
  ```Powershell
- Import-Module AzureAD
  Connect-MgGraph
  ```
 
@@ -204,7 +203,6 @@ After you disable Okta provisioning, the Microsoft Entra Connect server can sync
 
 ## Enable cloud sync agents
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 After you disable Okta provisioning, the Microsoft Entra Connect cloud sync agent can synchronize objects.
 

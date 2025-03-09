@@ -1,23 +1,20 @@
 ---
-title: Simulating risk detections in Microsoft Entra ID Protection
-description: Learn how to simulate risk detections in ID Protection
+title: Simulate Risk Detections in Microsoft Entra ID Protection for Enhanced Security
+description: Learn how to simulate risk detections in Microsoft Entra ID Protection to enhance security. Test risk-based policies effectively.
 
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 01/16/2024
+ms.date: 02/28/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: amycolannino
 ms.reviewer: chuqiaoshi
 ---
-# Simulating risk detections in Microsoft Entra ID Protection
+# Simulate Risk Detections in Microsoft Entra ID Protection
 
-Administrators might want to simulate risk in their environment in order to accomplish the following items:
-
-- Populate data in the Microsoft Entra ID Protection environment by simulating risk detections and vulnerabilities.
-- Set up risk-based Conditional Access policies and test the effect of these policies.
+Administrators can simulate risk detections in Microsoft Entra ID Protection to populate data and test risk-based Conditional Access policies.
 
 This article provides you with steps for simulating the following risk detection types:
 
@@ -28,9 +25,9 @@ This article provides you with steps for simulating the following risk detection
 
 Other risk detections can't be simulated in a secure manner.
 
-More information about each risk detection can be found in the article, What is risk for [user](concept-identity-protection-risks.md) and [workload identity](concept-workload-identity-risk.md).
+More information about each risk detection can be found in the articles What is risk for [user](concept-identity-protection-risks.md) and [workload identity](concept-workload-identity-risk.md).
 
-## Anonymous IP address
+## Simulate an Anonymous IP Address
 
 Completing the following procedure requires you to use:
 
@@ -44,19 +41,16 @@ Completing the following procedure requires you to use:
 
 The sign-in shows up on the report within 10 - 15 minutes. 
 
-## Unfamiliar sign-in properties
+## Simulate Unfamiliar Sign-In Properties
 
 To simulate unfamiliar locations, you must use a location and device your test account hasn't used before.
 
 The following procedure uses a newly created:
 
-- VPN connection, to simulate new location.
-- Virtual machine, to simulate a new device.
+- A VPN connection, to simulate new location
+- A virtual machine, to simulate a new device
 
-Completing the following procedure requires you to use a user account that has:
-
-- At least a 30-day sign-in history.
-- Microsoft Entra multifactor authentication.
+Completing the following procedure requires you to use a user account that has at least 30-days of sign-in history and usable multifactor authentication methods.
 
 **To simulate a sign-in from an unfamiliar location, perform the following steps**:
 
@@ -65,7 +59,7 @@ Completing the following procedure requires you to use a user account that has:
 
 The sign-in shows up on the report within 10 - 15 minutes.
 
-## Atypical travel
+## Simulate Atypical travel
 
 Simulating the atypical travel condition is difficult. The algorithm uses machine learning to weed out false-positives such as atypical travel from familiar devices, or sign-ins from VPNs that are used by other users in the directory. Additionally, the algorithm requires a sign-in history of 14 days or 10 logins of the user before it begins generating risk detections. Because of the complex machine learning models and above rules, there's a chance that the following steps won't trigger a risk detection. You might want to replicate these steps for multiple Microsoft Entra accounts to simulate this detection.
 
@@ -125,12 +119,9 @@ To test a sign-in risk policy, perform the following steps:
 1. Configure a [sign-in risk policy](howto-identity-protection-configure-risk-policies.md#sign-in-risk-policy-in-conditional-access) targeting the users you plan to test with.
 1. You can now test Sign-in Risk-based Conditional Access by signing in using a risky session (for example, by using the Tor browser). 
 
-## Next steps
+## Related content
 
 - [What is risk?](concept-identity-protection-risks.md)
-
 - [Securing workload identities with Identity](concept-workload-identity-risk.md)
-
 - [How To: Configure and enable risk policies](howto-identity-protection-configure-risk-policies.md)
-
 - [Microsoft Entra ID Protection](overview-identity-protection.md)

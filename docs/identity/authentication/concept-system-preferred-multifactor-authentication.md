@@ -4,7 +4,7 @@ description: Learn how to use system-preferred multifactor authentication
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/06/2025
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
 manager: amycolannino
@@ -108,6 +108,7 @@ When a user signs in, the authentication process checks which authentication met
 1. [Temporary Access Pass](howto-authentication-temporary-access-pass.md)
 1. [Passkey (FIDO2)](concept-authentication-passwordless.md)
 1. [Microsoft Authenticator notifications](concept-authentication-authenticator-app.md)
+1. [External authentication methods](how-to-authentication-external-method-manage.md)
 1. [Time-based one-time password (TOTP)](concept-authentication-oath-tokens.md)<sup>1</sup>
 1. [Telephony](concept-authentication-phone-options.md)<sup>2</sup>
 1. [Certificate-based authentication](concept-certificate-based-authentication.md)

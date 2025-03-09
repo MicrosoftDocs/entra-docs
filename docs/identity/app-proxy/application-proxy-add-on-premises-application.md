@@ -2,11 +2,11 @@
 title:  Add an on-premises application for remote access through application proxy in Microsoft Entra ID.
 description:  Microsoft Entra ID has an application proxy service that enables users to access on-premises applications by signing in with their Microsoft Entra account. This tutorial shows you how to prepare your environment for use with application proxy. Then, it uses the Microsoft Entra admin center to add an on-premises application to your Microsoft Entra tenant.
 author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: tutorial
-ms.date: 04/22/2024
+ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ---

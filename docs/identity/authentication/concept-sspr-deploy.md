@@ -5,7 +5,7 @@ description: Learn about deployment considerations and strategy for successful i
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/06/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: gargi-sinha
@@ -141,7 +141,7 @@ When technology projects fail, they typically do so due to mismatched expectatio
 
 We recommend that the initial configuration of SSPR is in a test environment. Start with a pilot group by enabling SSPR for a subset of users in your organization. See [Best practices for a pilot](~/architecture/deployment-plans.md).
 
-To create a group, see how to [create a group and add members in Microsoft Entra ID](~/fundamentals/how-to-manage-groups.yml). 
+To create a group, see how to [create a group and add members in Microsoft Entra ID](/entra/fundamentals/how-to-manage-groups). 
 
 ## Plan configuration
 
@@ -321,7 +321,7 @@ Audit logs for registration and password reset are available for 30 days. If sec
 
 ![SSPR Reporting screenshot](./media/howto-sspr-deployment/sspr-reporting.png)
 
-### Authentication methods- Usage and Insights
+### Authentication methods - Usage and insights
 
 [Usage and insights](./howto-authentication-methods-activity.md) enable you to understand how authentication methods for features like Microsoft Entra multifactor authentication and SSPR are working in your organization. This reporting capability provides your organization with the means to understand what methods register and how to use them.
 

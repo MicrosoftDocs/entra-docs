@@ -30,7 +30,6 @@ You can customize the role claim in the access token that is received after an a
 
 ## Locate the enterprise application
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Use the following steps to locate the enterprise application:
 

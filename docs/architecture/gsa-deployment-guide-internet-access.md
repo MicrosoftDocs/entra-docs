@@ -63,7 +63,7 @@ At this point, you completed initiate and plan stages of your Secure Access Serv
    - Baseline profile: use Baseline profile feature to group web content filtering policies that apply to all users by default.
    - Security profiles: create security profiles to group web content filtering policies that apply to a subset of users.
 
-1. Create and link [Conditional Access policies](../global-secure-access/how-to-configure-web-content-filtering.md#create-and-link-conditional-access-policy) to apply your security profiles to your pilot group. The default Baseline profile doesn't require a conditional access policy.
+1. Create and link [Conditional Access policies](../global-secure-access/how-to-configure-web-content-filtering.md#create-and-link-conditional-access-policy) to apply your security profiles to your pilot group. The default Baseline profile doesn't require a Conditional Access policy.
 1. Have your pilot users test your configuration.
 1. Confirm activity in the [Global Secure Access Traffic logs](../global-secure-access/how-to-view-traffic-logs.md).
 1. Update your configuration to address any issues and repeat the test. Use roll-back plan if needed.
@@ -90,3 +90,6 @@ After your pilot is complete, you have a repeatable process to understand how to
 - [Microsoft Global Secure Access deployment guide for Microsoft Traffic](gsa-deployment-guide-microsoft-traffic.md)
 - [Simulate remote network connectivity using Azure Virtual Network Gateway - Global Secure Access](../global-secure-access/how-to-simulate-remote-network.md)
 - [Simulate remote network connectivity using Azure vWAN - Global Secure Access](../global-secure-access/how-to-create-remote-network-vwan.md)
+- [Introduction to Global Secure Access Proof of Concept Guidance](gsa-poc-guidance-intro.md)](gsa-poc-guidance-intro.md)
+- [Global Secure Access Proof of Concept Guidance - Configure Microsoft Entra Private Access](gsa-poc-private-access.md)
+- [Global Secure Access Proof of Concept Guidance - Configure Microsoft Entra Internet Access](gsa-poc-internet-access.md)

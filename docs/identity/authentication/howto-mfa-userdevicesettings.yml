@@ -7,7 +7,7 @@ metadata:
   ms.author: justinha
   manager: amycolannino
   ms.reviewer: jupetter
-  ms.date: 01/14/2025
+  ms.date: 01/26/2025
   ms.service: entra-id
   ms.subservice: authentication
   ms.topic: how-to
@@ -32,7 +32,7 @@ introduction: |
 
   > [!NOTE]
   > The screenshots in this topic show how to manage user authentication methods by using an updated experience in the Microsoft Entra admin center. There's also a legacy experience, and admins can toggle between the two using a banner in the admin center. The modern experience has full parity with the legacy experience, and it manages modern methods like Temporary Access Pass, passkeys, and other settings.
-  > The legacy experience in the Microsoft Entra admin center retired on Oct 31, 2024. There's no action required by organizations before the retirement.
+  > The legacy experience in the Microsoft Entra admin center retired on Sept. 30, 2025. There's no action required by organizations before the retirement.
 
 prerequisites:
   summary: |
@@ -43,7 +43,7 @@ procedureSection:
       Add or change authentication methods for a user 
     summary: |
       You can add or change authentication methods for a user by using the Microsoft Entra admin center or Microsoft Graph PowerShell. 
-      In the Microsoft Entra admin center, the leagcy method for managing user authentication methods retired after Oct. 31, 2024. 
+      In the Microsoft Entra admin center, the legacy method for managing user authentication methods retires after Sept. 30, 2025. 
 
       > [!NOTE]
       > For security reasons, public user contact information fields shouldn't be used to perform MFA. Instead, users should populate their authentication method numbers to be used for MFA.  
@@ -95,8 +95,6 @@ procedureSection:
   - title: |
       Manage user authentication options
     summary: |
-      [!INCLUDE [portal updates](~/includes/portal-update.md)]
-
       [Authentication Administrators](~/identity/role-based-access-control/permissions-reference.md#authentication-administrator) can require other users to reset their password, re-register for MFA, or revoke existing MFA sessions from their user object. Users can't update their own user object. To change or reset their own security methods, users can go to [Security info](https://aka.ms/security-info), or go to [self-service password reset](https://aka.ms/sspr) to reset their password. To manage other user's settings, complete the following steps:
     steps:
       - |

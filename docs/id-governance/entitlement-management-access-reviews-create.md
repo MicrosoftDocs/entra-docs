@@ -20,7 +20,6 @@ To reduce the risk of stale access, you should enable periodic reviews of users 
 
 ## Create an access review of an access package
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 You can enable access reviews when [creating a new access package](entitlement-management-access-package-create.md) or [editing an existing access package assignment policy](entitlement-management-access-package-lifecycle-policy.md) policy. If you have multiple policies, for different communities of users to request access, you can have independent access review schedules for each policy. Follow these steps to enable access reviews of an access package's assignments:
 

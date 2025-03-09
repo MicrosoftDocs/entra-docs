@@ -101,7 +101,7 @@ EMSPREMIUM
 ```
 
 > [!NOTE]
-> The data retuned is limited to product (SKU) information. To generate a list of disabled service plans in the license, see [Microsoft Graph PowerShell examples for group licensing](licensing-powershell-graph-examples.md#view-all-disabled-service-plan-licenses-assigned-to-a-group).
+> The data returned is limited to product (SKU) information. To generate a list of disabled service plans in the license, see [Microsoft Graph PowerShell examples for group licensing](licensing-powershell-graph-examples.md#view-all-disabled-service-plan-licenses-assigned-to-a-group).
 
 
 Use the following sample to get the same data from Microsoft Graph.
@@ -480,7 +480,7 @@ This script executes those functions on each user in the organization, using the
 $skuId = "contoso:EMS"
 
 #find all users that have the SKU license assigned
-Get-MgUser -All | where {$_.isLicensed -eq $true -and $_.Licenses.AccountSKUID -eq $skuId} | select `
+Get-MgUser -All -Property LicenseAssignmentStates | Where-Object { $_.LicenseAssignmentStates.SkuId -contains $skuId }  | select `
     Id, `
     @{Name="SkuId";Expression={$skuId}}, `
     @{Name="AssignedDirectly";Expression={(UserHasLicenseAssignedDirectly $_ $skuId)}}, `

@@ -3,18 +3,19 @@ title: How to Enable and Manage the Microsoft Profile
 description: Learn how to enable and manage the Microsoft traffic forwarding profile for Global Secure Access.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: rkarlin
 ms.topic: how-to
-ms.date: 12/23/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
-ms.subservie: entra-internet-access
+ms.subservice: entra-internet-access
 ---
 # How to enable and manage the Microsoft traffic forwarding profile
 
 With the Microsoft profile enabled, Microsoft Entra Internet Access acquires the traffic going to Microsoft services. The **Microsoft** profile manages the following policy groups:
 
 - Exchange Online
-- SharePoint Online and Microsoft OneDrive. 
+- SharePoint Online and Microsoft OneDrive
+- Microsoft Teams
 - Microsoft 365 Common and Office Online
 
 ## Prerequisites

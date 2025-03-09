@@ -4,7 +4,7 @@ description: In this tutorial, you learn how to enable Microsoft Entra self-serv
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: tutorial
-ms.date: 01/16/2025
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
 ms.reviewer: tilarso
@@ -40,7 +40,6 @@ You can enable Microsoft Entra Connect cloud sync provisioning directly in the M
 
 #### Enable password writeback in the Microsoft Entra admin center
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 With password writeback enabled in Microsoft Entra Connect cloud sync, now verify, and configure Microsoft Entra self-service password reset (SSPR) for password writeback. When you enable SSPR to use password writeback, users who change or reset their password have that updated password synchronized back to the on-premises AD DS environment as well. 
 

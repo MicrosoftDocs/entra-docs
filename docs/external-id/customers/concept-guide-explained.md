@@ -8,7 +8,7 @@ ms.service: entra-external-id
 
 ms.subservice: external
 ms.topic: concept-article
-ms.date:  04/24/2024
+ms.date:  02/06/2025
 ms.author: cmulligan
 ms.custom: it-pro
 
@@ -38,7 +38,7 @@ If you don’t have an Azure subscription, you can sign up for a [free trial](qu
 
 To enable your application to sign in with Microsoft Entra External ID, you need to register your app with Microsoft Entra External ID. The get started guide creates this trusted relationship between the sample app and your tenant. It not only registers the app but also creates an endpoint, the redirect URI, and adds basic delegated permissions to the app for you to test the sign-in process.
 
-If you register your app manually, you can also grant API permission if your app needs to call an API. Based on your app type, you have to choose the right registration process. You can find more information on how to register your app [here](how-to-register-ciam-app.md#choose-your-app-type).
+If you register your app manually, you can also grant API permission if your app needs to call an API. Based on your app type, you have to choose the right registration process. You can find more information on how to register your app [here](/entra/identity-platform/quickstart-register-app).
 
 ## User flow
 

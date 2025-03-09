@@ -10,7 +10,7 @@ ms.subservice: managed-identities
 
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.date: 01/18/2023
+ms.date: 02/28/2025
 ms.author: ryanwi
 
 ---

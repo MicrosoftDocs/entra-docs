@@ -228,9 +228,13 @@ items:
     href: reference-web-content-filtering-categories.md
   - name: Microsoft Graph APIs
     href: /graph/api/resources/networkaccess-global-secure-access-api-overview
+  - name: Ciphers for Microsoft Entra Private Access
+    href: reference-ciphers.md
   - name: FAQs
     href: resource-faq.yml
   - name: Connector version history
     href: reference-version-history.md
   - name: Windows client version history
     href: reference-windows-client-release-history.md
+  - name: macOS client version history
+    href: reference-macos-client-release-history.md 

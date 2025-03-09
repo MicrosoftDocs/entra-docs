@@ -68,7 +68,6 @@ To read more about securing your Active Directory environment, see [Best practic
 - Microsoft Entra Connect can't be installed on Small Business Server or Windows Server Essentials before 2019 (Windows Server Essentials 2019 is supported). The server must be using Windows Server standard or better. 
 - The Microsoft Entra Connect server must have a full GUI installed. Installing Microsoft Entra Connect on Windows Server Core isn't supported. 
 - The Microsoft Entra Connect server must not have PowerShell Transcription Group Policy enabled if you use the Microsoft Entra Connect wizard to manage Active Directory Federation Services (AD FS) configuration. You can enable PowerShell transcription if you use the Microsoft Entra Connect wizard to manage sync configuration.
-- Ensure that MSOnline PowerShell (MSOL) isn't blocked at the tenant level.
 - If AD FS is being deployed: 
     - The servers where AD FS or Web Application Proxy are installed must be Windows Server 2012 R2 or later. Windows remote management must be enabled on these servers for remote installation. You might need [a paid support program](/lifecycle/policies/fixed#extended-support) if you require support for Windows Server 2016 and older.
     - You must configure TLS/SSL certificates. For more information, see [Managing SSL/TLS protocols and cipher suites for AD FS](/windows-server/identity/ad-fs/operations/manage-ssl-protocols-in-ad-fs) and [Managing SSL certificates in AD FS](/windows-server/identity/ad-fs/operations/manage-ssl-certificates-ad-fs-wap).
@@ -105,7 +104,9 @@ We recommend that you harden your Microsoft Entra Connect server to decrease the
   * You must use a case-insensitive SQL collation. These collations are identified with a \_CI_ in their name. Using a case-sensitive collation identified by \_CS_ in their name *isn't supported*.
   * You can have only one sync engine per SQL instance. Sharing a SQL instance with MIM Sync, DirSync, or Azure AD Sync *isn't supported*.
   * Maintain ODBC Driver for SQL Server version 17 and OLE DB Driver for SQL Server version 18 that are bundled with Microsoft Entra Connect. Upgrading ODBC/OLE DB drivers' major or minor versions isn't supported. Microsoft Entra Connect product group team includes new ODBC/OLE DB drivers as these become available and have a requirement to be updated.
-
+    
+  * Microsoft Entra Connect does not support SQL Named Pipes protocol.
+    
 > [!NOTE]
 > If you're installing SQL on the same server as Microsoft Entra Connect, we recommend configuring SQL to limit the maximum memory that it can use from the system.
 > Follow [SQL best practices](/sql/database-engine/configure-windows/server-memory-server-configuration-options?view=sql-server-ver16#recommendations) for memory configuration.
