@@ -3,7 +3,7 @@ title: "Quickstart: Install the Windows client to acquire Microsoft traffic"
 description: Learn how to Install the Windows client to acquire Microsoft traffic in Global Secure Access.
 author: kenwith
 ms.author: kenwith
-manager: rkarlin
+manager: femila
 ms.service: global-secure-access
 ms.topic: quickstart
 ms.date: 02/21/2025
