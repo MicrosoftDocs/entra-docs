@@ -181,7 +181,7 @@ The `provisioningState` value of `Succeeded` appears when the extension is succe
 
 ## Enable Microsoft Entra login for a Azure Arc-enabled Linux servers
 
-You can find the relevant details on [SSH access to Azure Arc-enabled servers](https://learn.microsoft.com/azure/azure-arc/servers/ssh-arc-overview?tabs=azure-cli)
+You can find the relevant details on [SSH access to Azure Arc-enabled servers](/azure/azure-arc/servers/ssh-arc-overview)
 
 ## Configure role assignments for the VM
 
