@@ -6,7 +6,7 @@ ms.author: jayrusso
 manager: femila
 ms.service: global-secure-access
 ms.topic: concept-article
-ms.date: 03/07/2025
+ms.date: 03/10/2025
 
 #customer intent: As a Global Secure Access administrator, I want to learn about the Transport Layer Security (TLS) protocol to support the creation of TLS inspection policies.   
 

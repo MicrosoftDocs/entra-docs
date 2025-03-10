@@ -7,7 +7,7 @@ manager: femila
 ms.service: global-secure-access
 ms.topic: how-to 
 ms.reviewer: teresayao
-ms.date: 03/07/2025
+ms.date: 03/10/2025
 
 
 #customer intent: As a Global Secure Access administrator, I want to configure a context aware Transport Layer Security inspection policy and assign the policy to users in my organization.   
