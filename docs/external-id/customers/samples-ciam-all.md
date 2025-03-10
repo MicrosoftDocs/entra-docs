@@ -30,7 +30,7 @@ These samples and how-to guides demonstrate how to integrate a single-page appli
 > [!div class="mx-tdCol2BreakAll"]
 > | Language/<br/>Platform | Code sample guide | Build and integrate guide  |
 > | ------- | -------- | ------------- |
-> | JavaScript, Angular, React | &#8226; [Sign in users](../../identity-platform/quickstart-single-page-app-sign-in.md) | &#8226; [Sign in users](../../identity-platform/tutorial-single-page-app-javascript-prepare-app.md) |
+> | JavaScript, Angular, React | &#8226; [Sign in users](entra/identity-platform/quickstart-single-page-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external) | &#8226; [Sign in users](entra/identity-platform/tutorial-single-page-app-javascript-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external) |
 
 ### Web app
 
@@ -39,8 +39,8 @@ These samples and how-to guides demonstrate how to write a web application that 
 > [!div class="mx-tdCol2BreakAll"]
 > | Language/<br/>Platform | Code sample guide | Build and integrate guide  |
 > | ------- | -------- | ------------- | 
-> | JavaScript, Node.js (Express) | &#8226; [Sign in users](./sample-web-app-node-sign-in.md)<br/> &#8226; [Sign in users and call an API](./sample-web-app-node-sign-in-call-api.md)  |  &#8226; [Sign in users](tutorial-web-app-node-sign-in-prepare-tenant.md)<br/> &#8226; [Sign in users and call an API](how-to-web-app-node-sign-in-call-api-overview.md)  |
-> | ASP.NET Core | &#8226; [Sign in users](./sample-web-app-dotnet-sign-in.md)   | &#8226; [Sign in users](tutorial-web-app-dotnet-sign-in-prepare-tenant.md)   |
+> | JavaScript, Node.js (Express) | &#8226; [Sign in users](entra/identity-platform/quickstart-web-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external&tabs=node-external)<br/> &#8226; [Sign in users and call an API](entra/identity-platform/quickstart-web-app-node-sign-in-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json)  |  &#8226; [Sign in users](entra/identity-platform/tutorial-web-app-node-sign-in-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json)<br/> &#8226; [Sign in users and call an API](how-to-web-app-node-sign-in-call-api-prepare-tenant.md)  |
+> | ASP.NET Core | &#8226; [Sign in users](/entra/identity-platform/quickstart-web-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external&tabs=asp-dot-net-core-external)   | &#8226; [Sign in users](tutorial-web-app-dotnet-sign-in-prepare-tenant.md)   |
 > | Python Django | &#8226; [Sign in users](./sample-web-app-python-django-sign-in.md)   | --- |
 > | Python Flask | &#8226; [Sign in users](./sample-web-app-python-flask-sign-in.md)   | --- |
 
