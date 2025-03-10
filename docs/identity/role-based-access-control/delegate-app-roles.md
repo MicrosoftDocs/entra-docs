@@ -3,7 +3,7 @@ title: Delegate application management administrator permissions
 description: Grant permissions for application access management in Microsoft Entra ID
 
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to

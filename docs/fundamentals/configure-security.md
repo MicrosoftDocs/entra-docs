@@ -9,7 +9,7 @@ ms.date: 02/07/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: 
 ---
 # Configure Microsoft Entra for increased security (Preview)

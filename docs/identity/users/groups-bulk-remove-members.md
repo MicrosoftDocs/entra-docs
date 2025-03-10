@@ -4,7 +4,7 @@ description: Remove group members in bulk operations by using a comma-separated 
 
 author: barclayn
 ms.author: barclayn
-manager: amycolannino
+manager: femila
 ms.date: 12/19/2024
 ms.topic: how-to
 ms.service: entra-id

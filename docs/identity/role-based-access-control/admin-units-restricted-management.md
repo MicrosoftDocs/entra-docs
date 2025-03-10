@@ -3,7 +3,7 @@ title: Restricted management administrative units in Microsoft Entra ID (Preview
 description: Use restricted management administrative units for more sensitive resources in Microsoft Entra ID.
 
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: role-based-access-control
