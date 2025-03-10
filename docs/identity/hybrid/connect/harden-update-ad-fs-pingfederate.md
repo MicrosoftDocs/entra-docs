@@ -10,21 +10,21 @@ ms.subservice: hybrid-connect
 ms.author: billmath
 ---
 
-# Hardening update to Microsoft Entra Connect Sync from Apri 7, 2025 
+# Hardening update to Microsoft Entra Connect Sync from April 7, 2025 
 
 In October 2024, we released new versions (2.4.xx.0) of Microsoft Entra Connect Sync. These versions contain a back-end service change that further hardens our services. **All customers are required to upgrade** to the [minimum versions](#minimum-versions) by **April 7, 2025**. 
 
 
 ## Expected impacts 
 
-If you aren’t upgraded to the minimum required version, you will encounter the following impacts to the Microsoft Entra Connect Sync service when the service change takes effect: 
+If you aren’t upgraded to the minimum required version, you'll encounter the following impacts to the Microsoft Entra Connect Sync service when the service change takes effect: 
 
  - All authentication requests to Entra ID on the Connet Sync wizard will fail. Some of the capabilities that will be impacted include schema refresh, configuration of staging mode and user sign-in changes
- - Configuration of AD FS scenarios through the Connect Sync wizard will not work 
- - Configuration of PingFederate scenarios through the Connect Sync wizard will not work 
+ - Configuration of AD FS scenarios through the Connect Sync wizard won work 
+ - Configuration of PingFederate scenarios through the Connect Sync wizard won't work 
 
 >[!NOTE]
-> If you’re unable to upgrade by the deadline, you can restore the impacted functionalities by upgrading to the [latest version](https://www.microsoft.com/download/details.aspx?id=47594). You will lose the ability to **make changes on the Entra Connect Sync wizard that require user sign in with the Entra ID credentials** during the time period between **April 7, 2025 and when you upgrade**. 
+> If you’re unable to upgrade by the deadline, you can restore the impacted functionalities by upgrading to the [latest version](https://www.microsoft.com/download/details.aspx?id=47594). You'll lose the ability to **make changes on the Entra Connect Sync wizard that require user sign in with the Entra ID credentials** during the time period between **April 7, 2025 and when you upgrade**. 
 
 ### Minimum versions 
 
