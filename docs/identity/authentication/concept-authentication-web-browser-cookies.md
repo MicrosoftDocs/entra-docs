@@ -9,7 +9,7 @@ ms.date: 03/04/2025
 
 ms.author: justinha
 author: custorod
-manager: amycolannino
+manager: femila
 ms.reviewer: sahenry, michmcla
 
 # Customer intent: As a Microsoft Entra administrator, I want to understand which weh browser cookies are used for Microsoft Entra ID.

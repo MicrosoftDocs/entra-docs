@@ -9,7 +9,7 @@ ms.date: 07/25/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: poulomib
 ---
 # Block access for users with insider risk

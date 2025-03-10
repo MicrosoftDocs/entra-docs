@@ -4,7 +4,7 @@ description: This article details the known issues and limitations you might enc
 author: HULKsmashGithub
 ms.topic: reference
 ms.author: jayrusso
-manager: amycolannino
+manager: femila
 ms.date: 12/23/2024
 ms.service: global-secure-access
 

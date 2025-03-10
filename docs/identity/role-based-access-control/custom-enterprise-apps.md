@@ -3,7 +3,7 @@ title: Create custom roles to manage enterprise apps in Microsoft Entra ID
 description: Create and assign custom Microsoft Entra roles for enterprise apps access in Microsoft Entra ID
 
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to
