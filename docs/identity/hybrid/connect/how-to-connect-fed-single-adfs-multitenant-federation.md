@@ -7,7 +7,7 @@ author: billmath
 manager: amycolannino
 ms.service: entra-id
 ms.tgt_pltfrm: na
-ms.custom: has-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 12/19/2024
 ms.subservice: hybrid-connect

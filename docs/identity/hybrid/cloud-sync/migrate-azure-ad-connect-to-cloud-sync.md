@@ -5,7 +5,7 @@ description: Describes steps to migrate Microsoft Entra Connect to Microsoft Ent
 author: billmath
 manager: amycolannino
 ms.service: entra-id
-ms.custom: has-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 12/17/2024
 ms.subservice: hybrid-cloud-sync
@@ -67,12 +67,11 @@ Microsoft Entra Cloud Sync is the future for accomplishing your hybrid identity 
 #
 #
 
-
-Connect-AzureAD -Confirm
+Connect-MgGraph -Scopes "User.Read.All"
 
 #Declare variables
 
-$Users = Get-AzureADUser -All:$true -Filter "DirSyncEnabled eq true"
+$Users = Get-MgUser -ConsistencyLevel eventual -Search '"DirSyncEnabled:true"'
 $OU = "OU=Sales,DC=contoso,DC=com"
 $counter = 0
 

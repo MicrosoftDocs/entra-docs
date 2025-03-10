@@ -4,7 +4,7 @@ description: This article explains how to revoke and update AD FS certificates i
 author: billmath
 manager: amycolannino
 ms.service: entra-id
-ms.custom: has-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 12/18/2024
 ms.subservice: hybrid-connect
@@ -169,7 +169,7 @@ If you've renewed and configure a new token signing or token decryption certific
 If your federation partners can't consume your federation metadata, you must manually send them the public key of your new token-signing / token-decrypting certificate. Send your new certificate public key (.cer file or .p7b if you want to include the entire chain) to all your resource organization or account organization partners (represented in your AD FS by relying party trusts and claims provider trusts). Have the partners implement changes on their side to trust the new certificates.
 
 ## Revoke the refresh tokens via PowerShell
-Now you want to revoke the refresh tokens for users who might have them and force them to log in again and get new tokens. This logs users out of their phones, current webmail sessions, and other places that are using tokens and refresh tokens. For more information, see [Revoke-AzureADUserAllRefreshToken](/powershell/module/azuread/revoke-azureaduserallrefreshtoken?preserve-view=true&view=azureadps-2.0). Also see [Revoke user access in Microsoft Entra ID](~/identity/users/users-revoke-access.md).
+Now you want to revoke the refresh tokens for users who might have them and force them to log in again and get new tokens. This logs users out of their phones, current webmail sessions, and other places that are using tokens and refresh tokens. For more information, see [Revoke-EntraUserAllRefreshToken](/powershell/module/azuread/microsoft.entra/revoke-entrauserallrefreshtoken). Also see [Revoke user access in Microsoft Entra ID](~/identity/users/users-revoke-access.md).
 
 [!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 

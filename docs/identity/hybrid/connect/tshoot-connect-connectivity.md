@@ -13,7 +13,7 @@ ms.subservice: hybrid-connect
 ms.author: billmath
 
 
-ms.custom: has-adal-ref, has-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref
 ---
 # Troubleshoot Microsoft Entra Connect connectivity issues
 
@@ -206,7 +206,7 @@ The MFA challenge was canceled.
 
 ### Connect to MSOnline failed
 
-Authentication was successful, but Azure AD PowerShell has an authentication problem.
+Authentication was successful, but Microsoft Entra PowerShell has an authentication problem.
 
 
 ### Privileged Identity Management enabled
