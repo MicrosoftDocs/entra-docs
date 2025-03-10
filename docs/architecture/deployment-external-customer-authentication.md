@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 02/28/2025
+ms.date: 03/10/2025
 ms.author: gasinh
 
 #customer intent: I need to understand self-service user flows, and other customer authentication experiences in Microsoft Entra External ID.
