@@ -334,16 +334,16 @@ You can test the sample app by running the main method of *ClientCredentialGrant
 * Register a new app in the Microsoft Entra admin center with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
   * **Name**: *ciam-daemon-app*
   * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
+* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
+
 
 #### [Node](#tab/node-external)
 
-* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 * [Node.js](https://nodejs.org).
 * [.NET 7.0](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install) or later. 
 
 #### [.NET](#tab/asp-dot-net-core-external)
 
-* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
 * [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) or later. 
 
 --- 
