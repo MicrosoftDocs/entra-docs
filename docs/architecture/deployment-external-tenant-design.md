@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 03/06/2025
+ms.date: 03/10/2025
 ms.author: gasinh
 
 #customer intent: I need to design a tenant, manage data residency, and know compliance requirements in Microsoft Entra External ID.
@@ -79,7 +79,7 @@ When migrating to Microsoft Entra External ID, consider the primary keys, foreig
   * Payment Card Industry - Data Security Standard ([PCI-DSS](https://www.pcisecuritystandards.org/))
   * Health Insurance Portability and Accountability Act of 1996 ([HIPAA](https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html))
   * System and Organization Controls 2 ([SOC 2](/compliance/regulatory/offering-soc-2))  
-* **Continued function of integrated systems** - Migration might involve consolidation of identity systems that use different primary identifiers. Preserve the identifiers to enable the configuration of application-specific token shapes with the correct subject or name identifiers. Applications function as expected: an order management system shows past purchases for the user, post-migration.
+* **Continued function of integrated systems** - Migration might involve consolidation of identity systems that use different primary identifiers. Preserve the identifiers to enable the configuration of application-specific token shapes with the correct subject or name identifiers. Applications function as expected. **Example**: An order management system shows past purchases for the user, post-migration.
 
 Document information to prevent potential issues later. Establish an attribute dictionary for current and future application developers. In the following table is a sample.  
 
