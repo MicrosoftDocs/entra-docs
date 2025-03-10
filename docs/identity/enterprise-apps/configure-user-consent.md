@@ -12,7 +12,7 @@ ms.date: 09/16/2024
 ms.author: jomondi
 ms.reviewer: phsignor, ergreenl
 ms.custom: enterprise-apps
-zone_pivot_groups: enterprise-apps-minus-former-powershell
+zone_pivot_groups: enterprise-apps-minus-legacy-powershell
 
 
 #customer intent: As an IT admin, I want to configure user consent settings for applications, so that I can control the level of access users have to my organization's data and reduce the risk of malicious applications.
