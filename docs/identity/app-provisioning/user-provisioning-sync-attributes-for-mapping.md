@@ -95,17 +95,22 @@ You can create a custom extension using PowerShell.
 [!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
 
 ```PowerShell
-#Connect to your Azure AD tenant
+#Connect to your Entra tenant
 Connect-AzureAD
+Connect-Entra -Scopes 
 
 #Create an application (you can instead use an existing application if you would like)
 $App = New-AzureADApplication -DisplayName “test app name” -IdentifierUris https://testapp
+$App = New-EntraApplication -DisplayName "test app name" -IdentifierUris https://testapp
 
 #Create a service principal
 New-AzureADServicePrincipal -AppId $App.AppId
+New-EntraServicePrincipal
+
 
 #Create an extension property
 New-AzureADApplicationExtensionProperty -ObjectId $App.ObjectId -Name “TestAttributeName” -DataType “String” -TargetObjects “User”
+New-EntraApplicationExtensionProperty -ApplicationId <String> -Name "TestAttributeName" -DataType "String" -TargetObjects "User"
 ```
 
 Optionally, you can test that you can set the extension property on a cloud only user.
@@ -113,13 +118,15 @@ Optionally, you can test that you can set the extension property on a cloud only
 ```PowerShell
 #List users in your tenant to determine the objectid for your user
 Get-AzureADUser
+Get-EntraUser
 
 #Set a value for the extension property on the user. Replace the objectid with the ID of the user and the extension name with the value from the previous step
 Set-AzureADUserExtension -objectid aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb -ExtensionName “extension_6552753978624005a48638a778921fan3_TestAttributeName”
+Set-EntraUserExtension -UserId
 
 #Verify that the attribute was added correctly.
 Get-AzureADUser -ObjectId bbbbbbbb-1111-2222-3333-cccccccccccc | Select -ExpandProperty ExtensionProperty
-
+Get-EntraUser
 ```
 ## Create an extension attribute using cloud sync
 

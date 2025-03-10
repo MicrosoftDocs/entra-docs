@@ -51,6 +51,7 @@ To see the current cookie settings for the application, use this PowerShell comm
 
 ```powershell
 Get-AzureADApplicationProxyApplication -ObjectId <ObjectId> | fl * 
+Get-EntraBetaApplicationProxyApplication -ObjectId <ObjectId> | fl * 
 ```
 
 ## Set cookie settings - PowerShell
@@ -61,19 +62,25 @@ In the following PowerShell commands, ```<ObjectId>``` is the ObjectId of the ap
 
 ```powershell
 Set-AzureADApplicationProxyApplication -ObjectId <ObjectId> -IsHttpOnlyCookieEnabled $true 
-Set-AzureADApplicationProxyApplication -ObjectId <ObjectId> -IsHttpOnlyCookieEnabled $false 
+Set-AzureADApplicationProxyApplication -ObjectId <ObjectId> -IsHttpOnlyCookieEnabled $false
+Set-EntraBetaApplicationProxyApplication -ObjectId <ObjectId> -IsHttpOnlyCookieEnabled $true 
+Set-EntraBetaApplicationProxyApplication -ObjectId <ObjectId> -IsHttpOnlyCookieEnabled $false
 ```
 
 **Secure Cookie**
 
 ```powershell
 Set-AzureADApplicationProxyApplication -ObjectId <ObjectId> -IsSecureCookieEnabled $true 
-Set-AzureADApplicationProxyApplication -ObjectId <ObjectId> -IsSecureCookieEnabled $false 
+Set-AzureADApplicationProxyApplication -ObjectId <ObjectId> -IsSecureCookieEnabled $false
+Set-EntraBetaApplicationProxyApplication -ObjectId <ObjectId> -IsSecureCookieEnabled $true 
+Set-EntraBetaApplicationProxyApplication -ObjectId <ObjectId> -IsSecureCookieEnabled $false
 ```
 
 **Persistent Cookies**
 
 ```powershell
 Set-AzureADApplicationProxyApplication -ObjectId <ObjectId> -IsPersistentCookieEnabled $true 
-Set-AzureADApplicationProxyApplication -ObjectId <ObjectId> -IsPersistentCookieEnabled $false 
+Set-AzureADApplicationProxyApplication -ObjectId <ObjectId> -IsPersistentCookieEnabled $false
+Set-EntraBetaApplicationProxyApplication -ObjectId <ObjectId> -IsPersistentCookieEnabled $true 
+Set-EntraBetaApplicationProxyApplication -ObjectId <ObjectId> -IsPersistentCookieEnabled $false
 ```
