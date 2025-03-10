@@ -9,7 +9,7 @@ items:
     - name: Get started guide walkthrough
       href: quickstart-get-started-guide.md
     - name: Use the Visual Studio Code extension
-      href: quickstart-get-started-guide.md
+      href: visual-studio-code-extension.md
     - name: Use the Visual Studio Connected Service
       href: visual-studio-connected-service.md
     - name: Use Azure App Service built-in authentication
@@ -72,19 +72,19 @@ items:
             - name: Android (Kotlin)
               items:
                 - name: Sign in users
-                  href: /entra/identity-platform/how-to-run-native-authentication-sample-android-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                  href: /entra/identity-platform/quickstart-native-authentication-android-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Sign in users and call an API
-                  href: /entra/identity-platform/sample-native-authentication-android-sample-app-call-web-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                  href: /entra/identity-platform/quickstart-native-authentication-android-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
             - name: macOS (Swift)
               items:
                 - name: Sign in users
-                  href: /entra/identity-platform/how-to-run-native-authentication-sample-macos-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                  href: /entra/identity-platform/quickstart-native-authentication-macos-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
             - name: iOS (Swift)
               items:
                 - name: Sign in users
-                  href: /entra/identity-platform/how-to-run-native-authentication-sample-ios-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                  href: /entra/identity-platform/quickstart-native-authentication-ios-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Sign in users and call an API
-                  href: /entra/identity-platform/sample-native-authentication-ios-sample-app-call-web-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
+                  href: /entra/identity-platform/quickstart-native-authentication-ios-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
   - name: Command-line interface (CLI) app
     items:
       - name: Node.js - sign in users

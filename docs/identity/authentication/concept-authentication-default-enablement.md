@@ -5,11 +5,11 @@ description: Learn about authentication features that can be enabled by default 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/03/2024
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: ChristianCB83
-manager: amycolannino
+manager: femila
 
 # Customer intent: As an identity administrator, I want to encourage users to understand how default protection can improve our security posture.
 ---

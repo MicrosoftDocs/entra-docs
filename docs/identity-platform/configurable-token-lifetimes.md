@@ -10,7 +10,7 @@ ms.reviewer:
 ms.service: identity-platform
 
 ms.topic: concept-article
-#Customer intent: As an IT admin, I want to configure the lifetime of access, ID, and SAML tokens for different types of applications, so that I can help mitigate the actions of a malicous actor who has obtained a token.
+#Customer intent: As an IT admin, I want to configure the lifetime of access, ID, and SAML tokens for different types of applications, so that I can help mitigate the actions of a malicious actor who has obtained a token.
 ---
 # Configurable token lifetimes in the Microsoft identity platform (preview)
 

@@ -9,7 +9,7 @@ ms.date: 09/27/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: lhuangnorth
 ---
 # Block unknown or unsupported device platform

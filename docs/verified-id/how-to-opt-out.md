@@ -3,10 +3,9 @@ title: Opt out of Microsoft Entra Verified ID
 description: Learn how to opt out of Microsoft Entra Verified ID.
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: how-to
-
 ms.date: 01/21/2025
 ms.author: barclayn
 

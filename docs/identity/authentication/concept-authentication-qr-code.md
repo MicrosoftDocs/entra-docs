@@ -5,12 +5,12 @@ description: Learn about using QR code authentication method in Microsoft Entra 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/20/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: aanjusingh
 ms.reviewer: anjusingh
-manager: amycolannino
+manager: femila
 
 # Customer intent: As an identity administrator, I want to understand how to use QR code authentication in Microsoft Entra ID to improve and secure user sign-in events for frontline workers
 ---
@@ -54,6 +54,7 @@ PIN complexity     | Enforced to avoid repetition and common sequences. The foll
 We recommend the following measures when you enable QR code authentication method as it's a single-factor authentication (something you know).  
 
 - QR code authentication is primarily for frontline workers (FLW) and not for information workers (IW). We recommend phishing-resistant authentication or MFA for IW.
+- Don't enable QR code authentication for all the users in your tenant. Enable only for target users who will be using this auth method, for example, create a group for frontline workers and enable QR code auth only for them in Microsoft Entra Authentication Methods policies.
 - Combine QR code authentication with Conditional Access policies as another security layer. We recommended policies such as compliant devices, access within network, allow for certain applications, and shared device mode. 
 - Enforce phishing-resistant authentication or MFA when users access resources from outside of the store or workplace network.
 - Replace QR codes that are lost or stolen.

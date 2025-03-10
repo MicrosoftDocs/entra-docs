@@ -5,7 +5,7 @@ description: Ensure that your organization's administrative access and administr
 
 keywords:
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.author: rolyon
 ms.date: 11/21/2024
 ms.topic: conceptual

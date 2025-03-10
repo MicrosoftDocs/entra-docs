@@ -4,7 +4,7 @@ description: This page provides PowerShell examples to help you manage your grou
 keywords: Azure AD, Azure Active Directory, PowerShell, Groups, Group management
 
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to

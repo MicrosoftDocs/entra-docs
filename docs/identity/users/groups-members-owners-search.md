@@ -3,7 +3,7 @@ title: Search and filter groups members and owners (preview)
 description: Search and filter groups members and owners in Microsoft Entra.
 
 author: barclayn
-manager: amycolannino
+manager: femila
 
 ms.service: entra-id
 ms.subservice: users

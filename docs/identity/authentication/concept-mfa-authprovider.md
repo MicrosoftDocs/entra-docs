@@ -6,11 +6,11 @@ description: When should you use an authentication provider with Microsoft Entra
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/06/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: jpettere
 ---
 # When to use a Microsoft Entra multifactor authentication provider

@@ -3,7 +3,7 @@ title: Group expiration policy quickstart
 description: Expiration for Microsoft 365 groups
 
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: users
 ms.topic: quickstart

@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect: Get started by using express settings'
 description: Learn how to download, install, and run the setup wizard for Microsoft Entra Connect.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to

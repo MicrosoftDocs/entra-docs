@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect: Accounts and permissions'
 description: Learn about accounts that are used and created and the permissions that are required to install and use Microsoft Entra Connect.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done

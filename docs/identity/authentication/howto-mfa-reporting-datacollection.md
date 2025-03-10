@@ -6,11 +6,11 @@ description: What information is used to help authenticate users by self-service
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/23/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: jpettere
 ---
 # Microsoft Entra user data collection for multifactor authentication and self-service password reset 
