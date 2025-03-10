@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 03/05/2025
+ms.date: 03/10/2025
 ms.author: gasinh
 
 #customer intent: I need to understand authentication protocol endpoints, custom authentication extension design, also API and event handler details in Microsoft Entra External ID.
