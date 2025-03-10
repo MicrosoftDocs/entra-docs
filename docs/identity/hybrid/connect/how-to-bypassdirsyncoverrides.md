@@ -19,9 +19,6 @@ Synchronized users properties cannot be changed from Microsoft Entra ID or Micro
 
 Previously, administrators and synchronized users had the capability to update the values of the  _MobilePhone_ and _AlternateMobilePhones_ attributes in Microsoft Entra ID. This is no longer possible for synchronized users. When this was possible the synchronization API was not honoring updates to these attributes when they originated from on-premises Active Directory. This was commonly known as a “DirSyncOverrides” feature. Administrators noticed this behavior when updates to _mobile_ or _otherMobile_ attributes in Active Directory did not update the corresponding user’s _MobilePhone_ or _AlternateMobilePhones_ in Microsoft Entra ID accordingly, even though the object was successfully synchronized through Microsoft Entra Connect's engine.
 
->[!NOTE]
->Some functions in ADSyncTools PowerShell module uses MS Online module which will be deprecated soon. We are currently working on updates to the module to remove dependency on MS Online PowerShell module.
-
 ## Identifying users with different Mobile values
 
 You can export a list of users with different Mobile values between Active Directory and Microsoft Entra ID using *‘Compare-ADSyncToolsDirSyncOverrides’* from *ADSyncTools* PowerShell module. This will allow you to determine the users and respective values that are different between on-premises Active Directory and Microsoft Entra ID. This is important to know because enabling the BypassDirSyncOverridesEnabled feature will overwrite all the different values in Microsoft Entra ID with the value coming from on-premises Active Directory.
@@ -49,9 +46,7 @@ For example, to import data from the CSV file and extract the values in Microsof
 
 ```powershell
 $upn = '<UserPrincipalName>' 
-$user = Import-Csv 'ADSyncTools-DirSyncOverrides_yyyyMMMdd-HHmmss.csv' | 
-where UserPrincipalName -eq $upn | 
-select UserPrincipalName,MobileInEntra  
+$user = Import-Csv 'ADSyncTools-DirSyncOverrides_yyyyMMMdd-HHmmss.csv' | where UserPrincipalName -eq $upn | select UserPrincipalName,MobileInEntra  
 Set-ADSyncToolsDirSyncOverridesUser -Identity $upn -MobileInAD $user.MobileInEntra
 ```
 
@@ -65,9 +60,8 @@ To enable BypassDirSyncOverridesEnabled feature, use the [Microsoft Graph Powe
 
 ```powershell
 $directorySynchronization = Get-MgDirectoryOnPremiseSynchronization
-$features = @{BypassDirSyncOverridesEnabled=$true}
-
-Update-MgDirectoryOnPremiseSynchronization -OnPremisesDirectorySynchronizationId $directorySynchronization.Id -Features $features
+$directorySynchronization.Features.BypassDirSyncOverridesEnabled = $true
+Update-MgDirectoryOnPremiseSynchronization -OnPremisesDirectorySynchronizationId $directorySynchronization.Id -Features $directorySynchronization.Features
 ```
 
 ### Verify the status of the BypassDirSyncOverridesEnabled feature:
@@ -105,7 +99,7 @@ Get-ADSyncToolsDirSyncOverridesUser 'User1@Contoso.com' -FromAD
 Get-ADSyncToolsDirSyncOverridesUser 'User1@Contoso.com' -FromEntraID
 ```
 
-### Set _Mobile_ properties in on-premises Active Directory:
+### Set _Mobile_ properties in on-premises Active Directory:
 
 ```powershell
 Set-ADSyncToolsDirSyncOverridesUser 'User1@Contoso.com' -MobileInAD '999888777'
