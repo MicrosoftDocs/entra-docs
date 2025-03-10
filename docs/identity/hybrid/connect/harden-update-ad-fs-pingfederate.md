@@ -20,7 +20,7 @@ In October 2024, we released new versions (2.4.xx.0) of Microsoft Entra Connect 
 If you aren’t upgraded to the minimum required version, you'll encounter the following impacts to the Microsoft Entra Connect Sync service when the service change takes effect: 
 
  - All authentication requests to Entra ID on the Connet Sync wizard will fail. Some of the capabilities that will be impacted include schema refresh, configuration of staging mode and user sign-in changes
- - Configuration of AD FS scenarios through the Connect Sync wizard won work 
+ - Configuration of AD FS scenarios through the Connect Sync wizard won't work 
  - Configuration of PingFederate scenarios through the Connect Sync wizard won't work 
 
 >[!NOTE]
