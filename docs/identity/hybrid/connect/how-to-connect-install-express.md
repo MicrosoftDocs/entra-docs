@@ -21,6 +21,16 @@ Before you start installing Microsoft Entra Connect Sync, [download Microsoft En
 
 If the express settings installation doesn't match your topology, see [Related articles](#related-articles) for information about other scenarios.
 
+
+
+## TLS 1.2 enforcement for Microsoft Entra Connect Sync
+
+Transport Layer Security (TLS) protocol version 1.2 is a cryptography protocol that is designed to provide  secure communications. The TLS protocol aims primarily to provide privacy and data integrity. TLS has gone through many iterations, with version 1.2 being defined in [RFC 5246](https://tools.ietf.org/html/rfc5246). The latest version of Microsoft Entra Connect Sync fully supports using only TLS 1.2 for communications with Microsoft Entra ID. Before installing the latest versions of Microsoft Entra Connect Sync, be sure to enable TLS 1.2.  
+
+:::image type="content" source="media/how-to-connect-install-express/connect_sync_10.png" alt-text="Screenshot of TLS warning screen." lightbox="media/how-to-connect-install-express/connect_sync_10.png":::
+
+For more information see [TLS 1.2 enforcement for Microsoft Entra Connect Sync](reference-connect-tls-enforcement.md)
+
 <a name='express-installation-of-azure-ad-connect'></a>
 
 ## Express installation of Microsoft Entra Connect Sync
