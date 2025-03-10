@@ -7,7 +7,7 @@ ms.author: billmath
 ms.date: 12/27/2024
 ms.topic: conceptual
 ms.service: entra-id
-manager: amycolannino
+manager: femila
 
 ---
 

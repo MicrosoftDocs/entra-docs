@@ -2,7 +2,7 @@
 title: Microsoft Entra built-in roles
 description: Describes the Microsoft Entra built-in roles and permissions.
 author: rolyon
-manager: amycolannino
+manager: femila
 search.appverid: MET150
 ms.service: entra-id
 ms.subservice: role-based-access-control

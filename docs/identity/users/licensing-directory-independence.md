@@ -3,7 +3,7 @@ title: Characteristics of multitenant interaction
 description: Understanding the data independence of your Microsoft Entra organizations
 
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: users
 ms.topic: conceptual

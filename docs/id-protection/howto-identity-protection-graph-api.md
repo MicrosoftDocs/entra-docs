@@ -7,9 +7,9 @@ ms.service: entra-id-protection
 ms.topic: how-to
 ms.date: 01/16/2024
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+author: shlipsey3
+ms.author: sarahlipsey
+manager: femila
 ms.reviewer: chuqiaoshi
 ---
 # Microsoft Entra ID Protection and the Microsoft Graph PowerShell 

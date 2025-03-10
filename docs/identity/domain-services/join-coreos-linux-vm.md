@@ -2,7 +2,7 @@
 title: Join a CoreOS VM to Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to configure and join a CoreOS virtual machine to a Microsoft Entra Domain Services managed domain.
 author: justinha
-manager: amycolannino
+manager: femila
 
 ms.assetid: 5db65f30-bf69-4ea3-9ea5-add1db83fdb8
 ms.service: entra-id

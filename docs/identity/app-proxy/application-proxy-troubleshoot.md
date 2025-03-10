@@ -2,7 +2,7 @@
 title: Troubleshoot Microsoft Entra application proxy
 description: Covers how to troubleshoot errors in Microsoft Entra application proxy.
 author: kenwith
-manager: rkarlin
+manager: femila
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: troubleshooting

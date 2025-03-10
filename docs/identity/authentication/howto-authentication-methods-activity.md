@@ -9,7 +9,7 @@ ms.date: 03/04/2025
 
 ms.author: justinha
 author: sopand
-manager: amycolannino
+manager: femila
 ms.reviewer: dawoo
 ---
 # Authentication Methods Activity 

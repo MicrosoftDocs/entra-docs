@@ -8,7 +8,7 @@ ms.date: 02/26/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: joroja
 ---
 # Continuous access evaluation for workload identities

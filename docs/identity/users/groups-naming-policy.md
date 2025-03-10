@@ -3,7 +3,7 @@ title: Enforce a group naming policy in Microsoft Entra ID
 description: Learn how to set up a naming policy for Microsoft 365 groups in Microsoft Entra ID.
 
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
