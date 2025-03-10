@@ -1,6 +1,6 @@
 ---
 title: Microsoft Entra External ID deployment guide for authentication and access control architecture
-description: Learn about authentication protocol endpoints, extension design, event handler details, and more  Microsoft Entra External ID.
+description: Learn about authentication protocol endpoints, extension design, event handler details, and more in Microsoft Entra External ID.
 author: gargi-sinha
 manager: martinco
 ms.service: entra-external-id
@@ -37,7 +37,7 @@ The following diagram of OAuth 2 and OIDC flows shows OAuth application integrat
 
    [ ![Diagram of OAuth 2 and OIDC flow with OAuth app integration options.](media/deployment-external/oauth-flows.png)](media/deployment-external/oauth-flows-expanded.png#lightbox)
 
-Application integration options for SAML is based on the service-provider (SP) initiated flow. The SAML flow is detailed in authentication with Microsoft Entra ID. 
+Application integration options for SAML are based on the service-provider (SP) initiated flow. The SAML flow is detailed in authentication with Microsoft Entra ID. 
 
 ### Custom authentication extension design
 
