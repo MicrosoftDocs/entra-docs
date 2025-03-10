@@ -24,10 +24,10 @@ The **Global Secure Access client - disabled by your organization** error messag
 
 The warning message also appears when the client receives an empty policy (that is, no traffic forwarding profiles from Microsoft, Private Access, or Internet Access).
 The empty policy happens in the following cases:     
-1. All traffic forwarding profiles are disabled in the portal. 
-1. Some traffic forwarding profiles are enabled, but the user isn't assigned to any of them (in the **User and group assignments** section of each profile). 
-1. The user didn't sign in to Windows with a Microsoft Entra user. 
-1. Authentication to get the policy requires user interaction (such as if multifactor authentication (MFA) or terms of use (ToU) are enabled).    
+- All traffic forwarding profiles are disabled in the portal. 
+- Some traffic forwarding profiles are enabled, but the user isn't assigned to any of them (in the **User and group assignments** section of each profile). 
+- The user didn't sign in to Windows with a Microsoft Entra user. 
+- Authentication to get the policy requires user interaction (such as if multifactor authentication (MFA) or terms of use (ToU) are enabled).    
 
 In cases **3** and **4**, only traffic profiles that are assigned to the entire tenant (**Assign to all users** in the user and group assignment section is set to **Yes**) take effect. Traffic profiles assigned to specific users and groups aren't applied since the user identity isn't used to get the policy. In these cases, only the device identity is available to the policy service.   
 
