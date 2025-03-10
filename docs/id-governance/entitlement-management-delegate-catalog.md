@@ -2,7 +2,7 @@
 title: Delegate access governance to catalog creators in entitlement management
 description: Learn how to delegate access governance from IT administrators to catalog creators and project managers so that they can manage access themselves.
 author: owinfreyatl
-manager: amycolannino
+manager: femila
 editor: markwahl-msft
 ms.service: entra-id-governance
 ms.subservice: entitlement-management

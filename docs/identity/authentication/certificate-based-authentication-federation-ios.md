@@ -10,7 +10,7 @@ ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ---
 # Microsoft Entra certificate-based authentication with federation on iOS
 

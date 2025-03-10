@@ -10,7 +10,7 @@ ms.date: 03/04/2025
 
 ms.author: justinha
 author: calui
-manager: amycolannino
+manager: femila
 ms.reviewer: calui
 ---
 # Sign-in to Microsoft Entra ID with email as an alternate login ID (Preview)

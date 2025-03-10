@@ -5,7 +5,7 @@ metadata:
   description: Instructions about how to assign and update user roles with Microsoft Entra ID.
   author: shlipsey3
   ms.author: sarahlipsey
-  manager: amycolannino
+  manager: femila
   ms.reviewer: jeffsta
   ms.date: 02/21/2025
   ms.service: entra

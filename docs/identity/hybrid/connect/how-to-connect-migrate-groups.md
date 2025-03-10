@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect: Migrate groups from one forest to another'
 description: This article describes the steps needed to successfully migrate groups from one forest to another for Microsoft Entra Connect.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 12/19/2024

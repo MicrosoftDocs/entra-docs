@@ -2,7 +2,7 @@
 title: 'Hardening update to Microsoft Entra Connect Sync AD FS and PingFederate configuration'
 description: This article describes security improvements to Microsoft Entra Connect Sync ADFS and PingFederate configuration.
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 12/18/2024

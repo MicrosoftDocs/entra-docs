@@ -2,7 +2,7 @@
 title: Support access requests in Microsoft Entra ID
 description: Learn how Microsoft Support engineers can access identity diagnostic information in Microsoft Entra ID.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.author: sarahlipsey
 ms.reviewer: jeffsta
 ms.service: entra

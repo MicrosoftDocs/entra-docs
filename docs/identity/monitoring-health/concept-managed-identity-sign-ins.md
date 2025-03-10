@@ -2,7 +2,7 @@
 title: Managed identity sign-in logs
 description: Learn about the type of information captured in the managed identity sign-in logs in Microsoft Entra monitoring and health.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health

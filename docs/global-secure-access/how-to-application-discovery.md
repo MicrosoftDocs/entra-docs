@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 12/16/2024
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: amycolannino
+manager: femila
 ms.reviewer: lirazbarak
 
 

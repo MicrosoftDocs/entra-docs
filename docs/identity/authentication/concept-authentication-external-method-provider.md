@@ -10,7 +10,7 @@ ms.date: 03/04/2025
 
 ms.author: justinha
 author: gregkmsft
-manager: amycolannino
+manager: femila
 ms.reviewer: gkinasewitz, gustavosa
 
 # Customer intent: As an external identity provider (IdP) for Microsoft Entra ID, I want to learn how to configure an external authentication method (EAM) for tenants.

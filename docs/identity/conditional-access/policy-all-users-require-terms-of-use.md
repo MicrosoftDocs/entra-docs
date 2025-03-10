@@ -9,7 +9,7 @@ ms.date: 03/11/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: 
 ---
 # Require terms of use to be accepted before accessing Microsoft Admin Portals

@@ -4,7 +4,7 @@ description: This topic recommends the use of AD Recycle Bin feature with Micros
 
 keywords: AD Recycle Bin, accidental deletion, source anchor
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: afec4207-74f7-4cdd-b13a-574af5223a90
 ms.service: entra-id
 ms.tgt_pltfrm: na
