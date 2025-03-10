@@ -23,10 +23,6 @@ We recommend that all of the following controls be implemented where licenses ar
 
 ## Privileged access
 
-### Enable Microsoft Entra ID security defaults for free tenants
-
-[!INCLUDE [21871](../includes/secure-recommendations/21871.md)]
-
 ### Privileged accounts are cloud native identities  
 
 [!INCLUDE [21814](../includes/secure-recommendations/21814.md)]
@@ -104,6 +100,12 @@ We recommend that all of the following controls be implemented where licenses ar
 ### All user sign-in activity uses strong authentication methods 
 
 [!INCLUDE [21800](../includes/secure-recommendations/21800.md)]
+
+## Free security features
+
+### Enable Microsoft Entra ID security defaults
+
+[!INCLUDE [21871](../includes/secure-recommendations/21871.md)]
 
 ## Related content
 
