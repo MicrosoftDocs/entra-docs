@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-external-id
 ms.topic: concept-article
-ms.date: 03/06/2025
+ms.date: 03/10/2025
 ms.author: gasinh
 
 #customer intent: I need to understand audit logs, alerts, monitoring targets, and service degradation for a deployment of Microsoft Entra External ID.
