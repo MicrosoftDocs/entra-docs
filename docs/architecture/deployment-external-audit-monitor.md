@@ -66,7 +66,7 @@ Changes in environments are inevitable. An automated continuous validation envir
 
 Synthetic transactions should reference applications and APIs used for token acquisition, validation, and integration components such as API managers and service buses. We recommend you maintain versions of supported services, operating systems, and runtime environments in this setup. Each component continuously reports the test success or failure. This action ensures identity services availability and early detection of potential failures. 
 
-## Monitoring usage
+## Monitor usage
 
 Microsoft Entra External ID pricing consists of a core offer and premium add-ons.  
 
