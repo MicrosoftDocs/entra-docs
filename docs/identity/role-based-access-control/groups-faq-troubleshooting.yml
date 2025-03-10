@@ -3,7 +3,7 @@ metadata:
   title: Troubleshoot Microsoft Entra roles assigned to groups
   description: Learn some common questions and troubleshooting tips for assigning roles to groups in Microsoft Entra ID.  
   author: rolyon
-  manager: amycolannino
+  manager: femila
   ms.service: entra-id
   ms.subservice: role-based-access-control
   ms.topic: faq

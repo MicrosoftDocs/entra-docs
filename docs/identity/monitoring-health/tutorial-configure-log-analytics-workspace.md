@@ -7,7 +7,7 @@ ms.topic: tutorial
 ms.date: 10/24/2024
 ms.author: sarahlipsey
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.reviewer: sandeo
 
 #Customer intent: As an IT admin, I want to set up a log analytics workspace and create custom workbooks so I can analyze the health of my environment.

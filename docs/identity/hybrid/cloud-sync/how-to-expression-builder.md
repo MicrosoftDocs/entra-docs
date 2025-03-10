@@ -3,7 +3,7 @@ title: 'Use the expression builder with Microsoft Entra Cloud Sync'
 description: This article describes how to use the expression builder with cloud sync.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 12/17/2024

@@ -129,7 +129,7 @@ In this section, you enable Microsoft Entra single sign-on in the LoginRadius Ad
 
 1. Log in to your LoginRadius [Admin Console](https://adminconsole.loginradius.com/login) account.
 
-2. Go to your **Team Management** section in the [LoginRadius Admin Console](https://www.loginradius.com/docs/api/v2/admin-console/overview/).
+2. Go to your **Team Management** section in the [LoginRadius Admin Console](https://www.loginradius.com/legacy/docs/api/v2/admin-console/overview/).
 
 3. Select the **Single Sign-On** tab, and then select **Microsoft Entra ID**:
 

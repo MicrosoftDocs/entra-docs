@@ -3,7 +3,7 @@ title: List users, groups, or devices in an administrative unit
 description: List users, groups, or devices in an administrative unit in Microsoft Entra ID.
 
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: role-based-access-control

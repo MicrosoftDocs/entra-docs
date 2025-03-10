@@ -3,7 +3,7 @@ title: Prerequisites to use PowerShell or Graph Explorer for Microsoft Entra rol
 description: Prerequisites to use PowerShell or Graph Explorer for Microsoft Entra roles.
 
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: role-based-access-control

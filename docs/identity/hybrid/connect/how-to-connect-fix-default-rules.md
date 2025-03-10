@@ -3,7 +3,7 @@ title: 'How to fix modified default rules - Microsoft Entra Connect'
 description: Learn how to fix modified default rules that come with Microsoft Entra Connect.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.reviewer: darora10
 ms.service: entra-id
 ms.topic: how-to
