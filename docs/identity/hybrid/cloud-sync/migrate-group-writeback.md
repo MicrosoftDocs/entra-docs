@@ -16,23 +16,24 @@ ms.author: billmath
 
 [!INCLUDE [deprecation](~/includes/gwb-v2-deprecation.md)]
 
-This article describes how to migrate Group Writeback by using Microsoft Entra Connect Sync (formerly Azure Active Directory Connect) to Microsoft Entra Cloud Sync. This scenario is *only* for customers who are currently using Microsoft Entra Connect Group Writeback v2. The process outlined in this article pertains only to cloud-created security groups that are written back with a universal scope.
+This article describes how to migrate group writeback by using Microsoft Entra Connect Sync (formerly Azure Active Directory Connect) to Microsoft Entra Cloud Sync. This scenario is *only* for customers who are currently using Microsoft Entra Connect Group Writeback v2. The process outlined in this article pertains only to cloud-created security groups that are written back with a universal scope.
 
 > [!IMPORTANT]
 > This scenario is *only* for customers who are currently using Microsoft Entra Connect Group Writeback v2.
 >
 > Also, this scenario is only supported for:
-> - Cloud created [security groups](../../../fundamentals/concept-learn-about-groups.md#group-types).
+> - Cloud-created [security groups](../../../fundamentals/concept-learn-about-groups.md#group-types).
 > - Groups written back to Active Directory with the scope of [universal](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope).
 >
-> Mail-enabled groups and DLs written back to Active Directory continue to work with Microsoft Entra Connect Group Writeback but revert to the behavior of Group Writeback v1. In this scenario, after you disable Group Writeback v2, all M365 groups are written back to Active Directory independently of the **Writeback Enabled** setting in the Microsoft Entra admin center. For more information, see [Provision to Active Directory with Microsoft Entra Cloud Sync FAQ](reference-provision-to-active-directory-faq.yml).
+> Mail-enabled groups and distribution lists written back to Active Directory continue to work with Microsoft Entra Connect group writeback but revert to the behavior of Group Writeback v1. In this scenario, after you disable Group Writeback v2, all Microsoft 365 groups are written back to Active Directory independently of the **Writeback Enabled** setting in the Microsoft Entra admin center. For more information, see [Provision to Active Directory with Microsoft Entra Cloud Sync FAQ](reference-provision-to-active-directory-faq.yml).
 
 ## Prerequisites
 
 The following prerequisites are required to implement this scenario:
 
  - A Microsoft Entra account with at least a [Hybrid Identity administrator](../../role-based-access-control/permissions-reference.md#hybrid-identity-administrator) role.
- - An on-premises Active Directory account with at least domain administrator permissions. Required to access the `adminDescription` attribute and copy it to the `msDS-ExternalDirectoryObjectId` attribute.
+ - An on-premises Active Directory account with at least domain administrator permissions. 
+     - Required to access the `adminDescription` attribute and copy it to the `msDS-ExternalDirectoryObjectId` attribute.
  - On-premises Active Directory Domain Services environment with Windows Server 2016 operating system or later.
      - Required for the Active Directory Schema attribute `msDS-ExternalDirectoryObjectId`.
  - Provisioning agent with build version [1.1.1367.0](reference-version-history.md#) or later.
@@ -41,24 +42,24 @@ The following prerequisites are required to implement this scenario:
 
 ## Naming convention for groups written back
 
-By default, Microsoft Entra Connect Sync uses the following format when naming groups that are written back:
+By default, Microsoft Entra Connect Sync uses the following format when naming groups are written back:
 
-- Default format: `CN=Group_&lt;guid&gt;,OU=&lt;container&gt;,DC=&lt;domain component&gt;,DC=\<domain component>`
+- **Default format:** `CN=Group_&lt;guid&gt;,OU=&lt;container&gt;,DC=&lt;domain component&gt;,DC=\<domain component>`
 
- - Example: `CN=Group_3a5c3221-c465-48c0-95b8-e9305786a271,OU=WritebackContainer,DC=contoso,DC=com`
+- **Example:** `CN=Group_3a5c3221-c465-48c0-95b8-e9305786a271,OU=WritebackContainer,DC=contoso,DC=com`
 
-To make it easier to find groups being written back from Microsoft Entra ID to Active Directory, Microsoft Entra Connect Sync added an option to write back the group name by using the cloud display name. To use this option, select **Writeback Group Distinguished Name with cloud Display Name** during initial setup of Group Writeback v2. If this feature is enabled, Microsoft Entra Connect uses the following new format instead of the default format:
+To make it easier to find groups being written back from Microsoft Entra ID to Active Directory, Microsoft Entra Connect Sync added an option to write back the group name by using the cloud display name. To use this option, select **Writeback Group Distinguished Name with Cloud Display Name** during initial setup of Group Writeback v2. If this feature is enabled, Microsoft Entra Connect uses the following new format instead of the default format:
 
-- New format: `CN=&lt;display name&gt;_&lt;last 12 digits of object ID&gt;,OU=&lt;container&gt;,DC=&lt;domain component&gt;,DC=\<domain component>`
+- **New format:** `CN=&lt;display name&gt;_&lt;last 12 digits of object ID&gt;,OU=&lt;container&gt;,DC=&lt;domain component&gt;,DC=\<domain component>`
 
- - Example: `CN=Sales_e9305786a271,OU=WritebackContainer,DC=contoso,DC=com`
+- **Example:** `CN=Sales_e9305786a271,OU=WritebackContainer,DC=contoso,DC=com`
 
 > [!IMPORTANT]
 > By default, Microsoft Entra Cloud Sync uses the new format, even if the Writeback Group Distinguished Name with Cloud Display Name feature isn't enabled in Microsoft Entra Connect Sync. If you use the default Microsoft Entra Connect Sync naming and then migrate the group so that it's managed by Microsoft Entra Cloud Sync, the group is renamed to the new format. Use the following section to allow Microsoft Entra Cloud Sync to use the default format from Microsoft Entra Connect.
 
 ### Use the default format
 
-If you want Microsoft Entra Cloud Sync to use the same default format as Microsoft Entra Connect Sync, you need to modify the attribute flow expression for the CN attribute. The two possible mappings are:
+If you want Microsoft Entra Cloud Sync to use the same default format as Microsoft Entra Connect Sync, you need to modify the attribute flow expression for the `CN` attribute. The two possible mappings are:
 
 |Expression|Syntax|Description|
 |-----|-----|-----|
@@ -77,7 +78,7 @@ To validate group membership references, Microsoft Entra Cloud Sync must query t
 
    :::image type="content" source="media/migrate-group-writeback/migrate-1.png" alt-text="Screenshot that shows the adminDescription attribute." lightbox="media/migrate-group-writeback/migrate-1.png":::
 
-1. Paste in to the `msDS-ExternalDirectoryObjectID` attribute.
+1. Paste the value in the `msDS-ExternalDirectoryObjectID` attribute.
 
    :::image type="content" source="media/migrate-group-writeback/migrate-2.png" alt-text="Screenshot that shows the msDS-ExternalDirectoryObjectID attribute." lightbox="media/migrate-group-writeback/migrate-2.png":::
 
@@ -102,7 +103,6 @@ foreach ($group in $groups) {
 ```
 
 You can use the following PowerShell script to check the results of the preceding script. You can also confirm that all groups have the `adminDescription` value equal to the `msDS-ExternalDirectoryObjectID` value.
-
 
 ```powershell
 
@@ -142,7 +142,6 @@ $groups | select displayName, adminDescription, 'msDS-ExternalDirectoryObjectID'
    Set-ADSyncScheduler -SyncCycleEnabled $false  
    ``` 
 
-
 ## Step 3 - Create a custom group inbound rule
 
 In the Microsoft Entra Connect Synchronization Rules editor, you create an inbound sync rule that filters out groups that have `NULL` for the mail attribute. The inbound sync rule is a join rule with a target attribute of `cloudNoFlow`. This rule tells Microsoft Entra Connect not to synchronize attributes for these groups. To create this sync rule, you can opt to use the user interface or create it via PowerShell with the provided script.
@@ -159,7 +158,7 @@ In the Microsoft Entra Connect Synchronization Rules editor, you create an inbou
     - **Connected System Object Type**: Select **group**.
     - **Metaverse Object Type**: Select **group**.
     - **Link Type**: Select **Join**.
-    - **Precedence**: Provide a value that's unique in the system. We recommend lower than 100 so that it takes precedence over the default rules.
+    - **Precedence**: Provide a value that's unique in the system. We recommend that you use a value lower than 100 so that it takes precedence over the default rules.
     - **Tag:** Leave the field empty.
 
       :::image type="content" source="media/migrate-group-writeback/migrate-5.png" alt-text="Screenshot that shows the inbound sync rule." lightbox="media/migrate-group-writeback/migrate-5.png":::
@@ -174,10 +173,10 @@ In the Microsoft Entra Connect Synchronization Rules editor, you create an inbou
 
      :::image type="content" source="media/migrate-group-writeback/migrate-6.png" alt-text="Screenshot that shows the scoping filter." lightbox="media/migrate-group-writeback/migrate-6.png":::
 
-1. On the **Join** rules page, select **Next**.
+1. On the **Join rules** page, select **Next**.
 1. On the **Add transformations** page, for **FlowType**, select **Constant**. For **Target Attribute**, select **cloudNoFlow**. For **Source**, select **True**.
 
-     :::image type="content" source="media/migrate-group-writeback/migrate-7.png" alt-text="Screenshot that shows transformation." lightbox="media/migrate-group-writeback/migrate-7.png":::
+     :::image type="content" source="media/migrate-group-writeback/migrate-7.png" alt-text="Screenshot that shows adding transformations." lightbox="media/migrate-group-writeback/migrate-7.png":::
 
 1. Select **Add**.
 
@@ -258,17 +257,17 @@ You also need an outbound sync rule with a link type of `JoinNoFlow` and the sco
     - **Connected System Object Type**: Select **group**.
     - **Metaverse Object Type**: Select **group**.
     - **Link Type**: Select **JoinNoFlow**.
-    - **Precedence**: Provide a value that's unique in the system. We recommend lower than 100 so that it takes precedence over the default rules.
+    - **Precedence**: Provide a value that's unique in the system. We recommend that you use a value lower than 100 so that it takes precedence over the default rules.
     - **Tag**: Leave the field empty.
 
 
     :::image type="content" source="media/migrate-group-writeback/migrate-8.png" alt-text="Screenshot that shows the outbound sync rule." lightbox="media/migrate-group-writeback/migrate-8.png":::
 
-1. On the **Scoping filter** page, for **Attribute**, select **cloudNoFlow**.  For **Operator** select **EQUAL**. For **Value**, select **True**. Then select **Next**.
+1. On the **Scoping filter** page, for **Attribute**, select **cloudNoFlow**. For **Operator** select **EQUAL**. For **Value**, select **True**. Then select **Next**.
 
      :::image type="content" source="media/migrate-group-writeback/migrate-9.png" alt-text="Screenshot that shows the outbound scoping filter." lightbox="media/migrate-group-writeback/migrate-9.png":::
 
-1. On the **Join** rules page, select **Next**.
+1. On the **Join rules** page, select **Next**.
 1. On the **Transformations** page, select **Add**.
 
 ### Create a custom group inbound rule in PowerShell
@@ -285,7 +284,7 @@ You also need an outbound sync rule with a link type of `JoinNoFlow` and the sco
    [int] $outboundSyncRulePrecedence = 89
    ```
 
-1. Get the Active Directory Connector for Group Writeback.
+1. Get the Active Directory Connector for group writeback.
 
    ``` PowerShell 
    $connectorAD = Get-ADSyncConnector -Name "Contoso.com"
@@ -330,7 +329,7 @@ You also need an outbound sync rule with a link type of `JoinNoFlow` and the sco
 ## Step 5 - Use PowerShell to finish configuration
 
 1. On your Microsoft Entra Connect server, open a PowerShell prompt as an administrator.
-1. Import the ADSync module:
+1. Import the `ADSync` module:
 
    ``` PowerShell 
    Import-Module ADSync
@@ -342,10 +341,10 @@ You also need an outbound sync rule with a link type of `JoinNoFlow` and the sco
    Start-ADSyncSyncCycle -PolicyType Initial
    ``` 
 
-1. Disable the Group Writeback feature for the tenant.
+1. Disable the group writeback feature for the tenant.
 
    > [!WARNING]
-   > This operation is irreversible. After you disable Group Writeback v2, all Microsoft 365 groups are written back to Active Directory, independently of the **Writeback Enabled** setting in Microsoft Entra admin center.
+   > This operation is irreversible. After you disable Group Writeback v2, all Microsoft 365 groups are written back to Active Directory, independently of the **Writeback Enabled** setting in the Microsoft Entra admin center.
    ``` PowerShell 
    Set-ADSyncAADCompanyFeature -GroupWritebackV2 $false 
    ```
@@ -376,11 +375,11 @@ You also need an outbound sync rule with a link type of `JoinNoFlow` and the sco
 
 ## Step 7 - Configure Microsoft Entra Cloud Sync
 
-Now that the groups are removed from the synchronization scope of Microsoft Entra Connect Sync, you can set up and configure Microsoft Entra Cloud Sync to take over synchronization of the security groups. See [Provision groups to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md).
+Now that the groups are removed from the synchronization scope of Microsoft Entra Connect Sync, you can set up and configure Microsoft Entra Cloud Sync to take over synchronization of the security groups. For more information, see [Provision groups to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md).
 
 ## Related content
 
-- [Provision groups to Active Directory using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
-- [Govern on-premises Active Directory based apps (Kerberos) using Microsoft Entra ID Governance](govern-on-premises-groups.md)
+- [Provision groups to Active Directory by using Microsoft Entra Cloud Sync](how-to-configure-entra-to-active-directory.md)
+- [Govern on-premises Active Directory-based apps (Kerberos) by using Microsoft Entra ID Governance](govern-on-premises-groups.md)
 - [Provisioning to Active Directory with Microsoft Entra Cloud Sync FAQ](reference-provision-to-active-directory-faq.yml)
 
