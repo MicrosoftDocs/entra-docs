@@ -13,7 +13,7 @@ ms.author: gasinh
 
 # Introduction to Microsoft Entra External ID deployment guide
 
-This document is intended for identity architects and engineering leadership in security and identity teams. It assumes readers understand customer identity and access management (CIAM) capabilities and relevant business use cases. Use this guide to help plan, design, implement, and operate [Microsoft Entra External ID](../external-id/external-identities-overview.md) tenants.
+This document is intended for identity architects and engineering leadership in security and identity teams. It assumes readers understand customer identity and access management (CIAM) capabilities and relevant business use cases. Use this guide to help plan, design, implement, and operate [Microsoft Entra External ID](../external-id/external-identities-overview.md) tenants. 
 
 [CIAM](../external-id/customers/overview-customers-ciam.md) is a set of technologies and processes that incorporates security methods like multifactor authentication to ensure only authorized individuals access an organization's sensitive information. 
 
