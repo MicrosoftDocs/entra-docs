@@ -101,7 +101,7 @@ The AD DS Connector account is created to read and write to Windows Server AD. T
 
 In an express settings installation, the wizard creates some accounts and settings for you.
 
-:::image type="content" source="media/how-to-connect-install-express/express.png" alt-text="Screenshot that shows the Express Settings page in Microsoft Entra Connect.":::
+:::image type="content" source="media/how-to-connect-install-express/connect_sync_4.png" alt-text="Screenshot that shows the Express Settings page in Microsoft Entra Connect Sync." lightbox="media/how-to-connect-install-express/connect_sync_4.png":::
 
 The following table is a summary of the express settings wizard pages, the credentials that are collected, and what they're used for:
 
