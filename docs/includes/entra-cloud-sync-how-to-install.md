@@ -13,12 +13,12 @@ ms.custom: include file
  1. In the Azure portal, select **Microsoft Entra ID**.
  1. On the left pane, select **Microsoft Entra Connect**, and then select **Cloud Sync**.
 
- :::image type="content" source="media/entra-cloud-sync-how-to-install/new-ux-1.png" alt-text="Screenshot that shows the Get started screen." lightbox="media/entra-cloud-sync-how-to-install/new-ux-1.png":::
+    :::image type="content" source="media/entra-cloud-sync-how-to-install/new-ux-1.png" alt-text="Screenshot that shows the Get started screen." lightbox="media/entra-cloud-sync-how-to-install/new-ux-1.png":::
 
  1. On the left pane, select **Agents**.
  1. Select **Download on-premises agent**, and then select **Accept terms & download**.
 
-    :::image type="content" source="media/entra-cloud-sync-how-to-install/new-ux-2.png" alt-text="Screenshot that shows download agent." lightbox="media/entra-cloud-sync-how-to-install/new-ux-2.png":::
+    :::image type="content" source="media/entra-cloud-sync-how-to-install/new-ux-2.png" alt-text="Screenshot that shows downloading the agent." lightbox="media/entra-cloud-sync-how-to-install/new-ux-2.png":::
 
  1. After the Microsoft Entra Connect Provisioning Agent Package downloads, run the *AADConnectProvisioningAgentSetup.exe* installation file from your downloads folder.
 
@@ -33,7 +33,7 @@ ms.custom: include file
 
     :::image type="content" source="media/entra-cloud-sync-how-to-install/new-ux-3.png" alt-text="Screenshot that shows the welcome screen." lightbox="media/entra-cloud-sync-how-to-install/new-ux-3.png":::
 
- 1. On the **Select Extension** screen, select **HR-driven provisioning (Workday and SuccessFactors) / Azure AD Connect Cloud Sync** and select **Next**.
+ 1. On the **Select Extension** screen, select **HR-driven provisioning (Workday and SuccessFactors) / Azure AD Connect Cloud Sync**, and then select **Next**.
 
     :::image type="content" source="media/entra-cloud-sync-how-to-install/new-ux-5.png" alt-text="Screenshot that shows the Select Extension screen." lightbox="media/entra-cloud-sync-how-to-install/new-ux-5.png":::
 
@@ -65,7 +65,7 @@ ms.custom: include file
 
  1. On the **Configuration complete** screen, select **Confirm**. This operation registers and restarts the agent.
 
- 1. After this operation finishes, you see a notification that your agent configuration was successfully verified. Select **Exit**.
+ 1. After the operation finishes, you see a notification that your agent configuration was successfully verified. Select **Exit**.
 
     :::image type="content" source="media/entra-cloud-sync-how-to-install/azure-ad-cloud-sync-confirm-screen.png" alt-text="Screenshot that shows the finish screen." lightbox="media/entra-cloud-sync-how-to-install/azure-ad-cloud-sync-confirm-screen.png":::
 

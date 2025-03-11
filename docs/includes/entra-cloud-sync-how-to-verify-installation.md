@@ -10,7 +10,7 @@ ms.author: billmath
 ms.custom: include file
 ---
 
-Agent verification occurs in the Azure portal and on the local server that's running the agent.
+Agent verification occurs in the Azure portal and on the local server that runs the agent.
 
 ### Verify the agent in the Azure portal
 
@@ -29,7 +29,7 @@ To verify that Microsoft Entra ID registers the agent, follow these steps:
 To verify that the agent is running, follow these steps:
 
 1. Sign in to the server with an administrator account.
-1. Open **Services** either by navigating to it or by going to *Start/Run/Services.msc*.
+1. Go to **Services**. You can also use *Start/Run/Services.msc* to get to it.
 1. Under **Services**, make sure that **Microsoft Entra Connect Agent Updater** and **Microsoft Entra Connect Provisioning Agent** are present and that the status is **Running**.
 
     [![Screenshot that shows the Windows services.](./media/entra-cloud-sync-how-to-verify-installation/windows-services.png)](./media/entra-cloud-sync-how-to-verify-installation/windows-services.png#lightbox)

@@ -20,12 +20,9 @@ This article provides information for a basic migration. Review the [Migrate to 
 
 In this tutorial, you learn how to:
 
-- Update and back up Microsoft Entra Connect.
-- Stop the scheduler.
 - Create custom inbound and outbound rules.
 - Install the provisioning agent and verify the installation.
 - Configure Microsoft Entra Cloud Sync.
-- Start the scheduler.
 
 ![Diagram that shows the Microsoft Entra Cloud Sync flow.](media/tutorial-migrate-aadc-aadccp/diagram-2.png)
 
@@ -83,9 +80,9 @@ Microsoft Entra Connect Sync synchronizes changes that occur in your on-premises
 
 ## Create a custom user inbound rule
 
-In the Microsoft Entra Connect Synchronization Rules editor, you need to create an inbound sync rule that filters out users in the OU that you identified previously. The inbound sync rule is a join rule with a target attribute of `cloudNoFlow`. This rule tells Microsoft Entra Connect not to synchronize attributes for these users. For more information, see [Migrate to cloud sync](migrate-azure-ad-connect-to-cloud-sync.md) before you attempt to migrate your production environment.
+In the Microsoft Entra Connect Synchronization Rules Editor, you need to create an inbound sync rule that filters out users in the OU that you identified previously. The inbound sync rule is a join rule with a target attribute of `cloudNoFlow`. This rule tells Microsoft Entra Connect not to synchronize attributes for these users. For more information, see [Migrate to cloud sync](migrate-azure-ad-connect-to-cloud-sync.md) before you attempt to migrate your production environment.
 
-1. Open the synchronization editor from the application menu on the desktop.
+1. Open the Synchronization Rules Editor from the application menu on the desktop.
 
     ![Screenshot that shows the Synchronization Rules Editor menu.](media/tutorial-migrate-aadc-aadccp/user-8.png)
 
@@ -106,16 +103,16 @@ In the Microsoft Entra Connect Synchronization Rules editor, you need to create 
 
     ![Screenshot that shows the Create inbound synchronization rule - Description page with values entered.](media/tutorial-migrate-aadc-aadccp/user-2.png)
   
-1. On the **Scoping filter** page, enter the OU or security group on which you want to base the pilot. To filter on OU, add the OU portion of the distinguished name. This rule applies to all users who are in that OU. So, if the domain name (DN) ends with `OU=CPUsers,DC=contoso,DC=com`, you add this filter. Then select **Next**.
+1. On the **Scoping filter** page, enter the OU or security group on which you want to base the pilot. To filter on OU, add the OU portion of the distinguished name. This rule applies to all users who are in that OU. So, if the distinguished name (DN) ends with `OU=CPUsers,DC=contoso,DC=com`, you add this filter. Then select **Next**.
 
     |Rule|Attribute|Operator|Value|
     |-----|----|----|-----|
-    |Scoping OU|DN|`ENDSWITH`|Distinguished name of the OU.|
+    |Scoping OU|`DN`|`ENDSWITH`|Distinguished name of the OU.|
     |Scoping group||`ISMEMBEROF`|Distinguished name of the security group.|
 
     ![Screenshot that shows the sync rule scoping filters.](media/tutorial-migrate-aadc-aadccp/user-3.png)
 
-1. On the **Join** rules page, select **Next**.
+1. On the **Join rules** page, select **Next**.
 
 1. On the **Add transformations** page, for **FlowType**, select **Constant**. For **Target Attribute**, select **cloudNoFlow**, and for **Source**, select **True**. Then select **Add**.
 
@@ -148,7 +145,7 @@ You need an outbound sync rule with a link type of `JoinNoFlow` and the scoping 
 
     ![Screenshot that shows a custom rule.](media/tutorial-migrate-aadc-aadccp/user-7.png)
 
-1. On the **Join** rules page, select **Next**.
+1. On the **Join rules** page, select **Next**.
 
 1. On the **Transformations** page, select **Add**.
 
