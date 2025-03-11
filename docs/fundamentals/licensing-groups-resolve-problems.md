@@ -38,7 +38,7 @@ When you're using group-based licensing, these errors happen in the background w
 
 ### To find Users in an error state within a group
 
-1. Sign in to the [Microsoft 365 Admin Portal](http://admin.microsoft.com) as at least a [License Administrator](~/identity/role-based-access-control/permissions-reference.md#license-administrator).
+1. Sign in to the [Microsoft 365 Admin Portal](https://admin.microsoft.com) as at least a [License Administrator](~/identity/role-based-access-control/permissions-reference.md#license-administrator).
 1. Browse to **Billing** > **Licenses** to open a page where you can see and manage all license products in the organization.
 1. Select the affected license and to view the status of each group assigned to the selected license navigate to the group selection option. 
 
