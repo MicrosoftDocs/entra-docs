@@ -12,7 +12,7 @@ ms.custom: include file
 
 
 >[!IMPORTANT]
->The public preview of Group Writeback v2 in Microsoft Entra Connect Sync is longer available as of **June 30, 2024**. This feature was discontinued on this date, and you're no longer supported in Microsoft Entra Connect Sync to provision cloud security groups to Active Directory. The feature continues to operate beyond the discontinuation date; however, it no longer receives support and might cease functioning at any time without notice.
+>The public preview of Group Writeback v2 in Microsoft Entra Connect Sync is no longer available as of **June 30, 2024**. This feature was discontinued on this date, and you're no longer supported in Microsoft Entra Connect Sync to provision cloud security groups to Active Directory. The feature continues to operate beyond the discontinuation date; however, it no longer receives support and might cease functioning at any time without notice.
 >
 >We offer similar functionality in Microsoft Entra Cloud Sync called [Group Provision to Active Directory](~/identity/hybrid/cloud-sync/how-to-configure-entra-to-active-directory.md) that you can use instead of Group Writeback v2 for provisioning cloud security groups to Active Directory. We're working on enhancing this functionality in Microsoft Entra Cloud Sync along with other new features that we're developing in Microsoft Entra Cloud Sync.
 >

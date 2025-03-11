@@ -169,25 +169,26 @@ If you're using the [Basic Active Directory and Azure environment](tutorial-basi
 
 To configure provisioning, follow these steps:
 
- [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
+[!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
 
- 1. Select **New configuration**.
-    :::image type="content" source="media/how-to-configure/new-ux-configure-1.png" alt-text="Screenshot that shows adding a configuration." lightbox="media/how-to-configure/new-ux-configure-1.png":::
+1. Select **New configuration**.
 
- 1. On the configuration screen, select your domain and whether to enable password hash sync. Then select **Create**.
+   :::image type="content" source="media/how-to-configure/new-ux-configure-1.png" alt-text="Screenshot that shows adding a configuration." lightbox="media/how-to-configure/new-ux-configure-1.png":::
 
-    :::image type="content" source="media/how-to-configure/new-ux-configure-2.png" alt-text="Screenshot that shows a new configuration." lightbox="media/how-to-configure/new-ux-configure-2.png":::
+1. On the configuration screen, select your domain and whether to enable password hash sync. Then select **Create**.
 
- 1. On the **Get started** screen, select either **Add scoping filters** next to the **Add scoping filters** icon or on the left pane under **Manage**, select **Scoping filters**.
+   :::image type="content" source="media/how-to-configure/new-ux-configure-2.png" alt-text="Screenshot that shows a new configuration." lightbox="media/how-to-configure/new-ux-configure-2.png":::
 
-    :::image type="content" source="media/how-to-configure/new-ux-configure-5.png" alt-text="Screenshot that shows scoping filters." lightbox="media/how-to-configure/new-ux-configure-5.png":::
+1. On the **Get started** screen, select either **Add scoping filters** next to the **Add scoping filters** icon or on the left pane under **Manage**, select **Scoping filters**.
 
- 1. Select the scoping filter. For this tutorial, select **Selected organizational units**. This filter scopes the configuration to apply to specific OUs.
+   :::image type="content" source="media/how-to-configure/new-ux-configure-5.png" alt-text="Screenshot that shows scoping filters." lightbox="media/how-to-configure/new-ux-configure-5.png":::
 
- 1. In the box, enter **OU=CPUsers,DC=contoso,DC=com**.
-    :::image type="content" source="media/tutorial-migrate-aadc-aadccp/configure-1.png" alt-text="Screenshot that shows the scoping filter." lightbox="media/tutorial-migrate-aadc-aadccp/configure-1.png":::
+1. Select the scoping filter. For this tutorial, select **Selected organizational units**. This filter scopes the configuration to apply to specific OUs.
 
- 1. Select **Add** > **Save**.
+1. In the box, enter **OU=CPUsers,DC=contoso,DC=com**.
+   :::image type="content" source="media/tutorial-migrate-aadc-aadccp/configure-1.png" alt-text="Screenshot that shows the scoping filter." lightbox="media/tutorial-migrate-aadc-aadccp/configure-1.png":::
+
+1. Select **Add** > **Save**.
 
 ## Start the scheduler
 
