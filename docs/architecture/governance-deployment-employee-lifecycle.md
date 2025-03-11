@@ -17,12 +17,12 @@ Deployment scenarios are guidance on how to combine and test Microsoft Security 
 
 The following products and services appear in this guide:
 
-* [Microsoft Entra ID Governance](/id-governance/identity-governance-overview)
-* [Lifecycle workflows](/id-governance/what-are-lifecycle-workflows)
-* [Microsoft Entra](/fundamentals/what-is-entra)
-* [Microsoft Entra ID](/fundamentals/whatis)
-* [Microsoft Entra Connect](/identity/hybrid/connect/whatis-azure-ad-connect)
-* [Microsoft Entra Cloud Sync](/identity/hybrid/cloud-sync/what-is-cloud-sync)
+* [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)
+* [Lifecycle workflows](../id-governance/what-are-lifecycle-workflows.md)
+* [Microsoft Entra](../fundamentals/what-is-entra.yml)
+* [Microsoft Entra ID](../fundamentals/whatis.yml)
+* [Microsoft Entra Connect](../identity/hybrid/connect/whatis-azure-ad-connect.md)
+* [Microsoft Entra Cloud Sync](../identity/hybrid/cloud-sync/what-is-cloud-sync.md)
 * [Azure Logic Apps](/azure/logic-apps/logic-apps-overview)
 * [Microsoft Graph](/graph/overview)
 
@@ -42,9 +42,9 @@ To streamline employee identity management, organizations are adopting modern so
 
 ### Microsoft Entra ID Governance
 
-With the Microsoft Entra ID Governance solution, organizations improve productivity, strengthen security, and meet compliance and regulatory requirements. Use Microsoft Entra ID Governance to ensure the right people have the right access to the right resources at the right time. Learn more about Microsoft Entra ID Governance [use cases](/id-governance/scenarios/identity-governance-use-cases) and [documentation](/id-governance/). 
+With the Microsoft Entra ID Governance solution, organizations improve productivity, strengthen security, and meet compliance and regulatory requirements. Use Microsoft Entra ID Governance to ensure the right people have the right access to the right resources at the right time. Learn more about Microsoft Entra ID Governance [use cases](../id-governance/scenarios/identity-governance-use-cases.md) and [documentation](../id-governance/). 
 
-Learn more about [Microsoft Entra ID](/fundamentals/whatis). 
+Learn more about [Microsoft Entra ID](../fundamentals/whatis.yml). 
 
 ## HR-driven provisioning
 
@@ -111,7 +111,7 @@ You can watch a video to learn to [use API-driven to on-premises AD with Logic A
 
 ## API-driven provisioning
 
-Identity data in Microsoft Entra ID is kept in sync with workforce data managed in systems of record: an HR app, a payroll app, a spreadsheet, SQL tables in a database on-premises, or in the cloud. With application programming interface [(API)-driven inbound provisioning](/identity/app-provisioning/inbound-provisioning-api-concepts), the Microsoft Entra provisioning service supports integration with systems of record. 
+Identity data in Microsoft Entra ID is kept in sync with workforce data managed in systems of record: an HR app, a payroll app, a spreadsheet, SQL tables in a database on-premises, or in the cloud. With application programming interface [(API)-driven inbound provisioning](../identity/app-provisioning/inbound-provisioning-api-concepts.md), the Microsoft Entra provisioning service supports integration with systems of record. 
 
 Learn more:
 
@@ -133,7 +133,7 @@ In a video, learn how to [configure API-driven provisioning to Microsoft Entra I
 
 We recommend noting the differences between the provisioning **/bulkUpload** API and the Microsoft Graph Users API endpoint: Payload format, operation result, and IT administrators retain control. 
 
-In an FAQ, learn how [the new inbound provisioning API differs from Graph Users API](/identity/app-provisioning/inbound-provisioning-api-faqs).
+In an FAQ, learn how [the new inbound provisioning API differs from Graph Users API](../identity/app-provisioning/inbound-provisioning-api-faqs.md).
 
 ## Deploy PoC: API-driven inbound provisioning
 
@@ -155,13 +155,13 @@ To learn more, see the following Quickstart guides about API-driven inbound prov
 
 You can provision to Software-as-a-Service (SaaS) apps, using a System for Cross-Domain Identity Management (SCIM). 
 
-Discover more about [SCIM synchronization with Microsoft Entra ID](/architecture/sync-scim). 
+Discover more about [SCIM synchronization with Microsoft Entra ID](sync-scim.md). 
 
 ### Configure provisioning with a SCIM endpoint
 
 SCIM 2.0 is a standardized definition of two endpoints **/Users** and **/Groups**. 
 
-See more details in the tutorial, [develop and plan provisioning for a SCIM endpoint in Microsoft Entra ID](/identity/app-provisioning/use-scim-to-provision-users-and-groupsa). 
+See more details in the tutorial, [develop and plan provisioning for a SCIM endpoint in Microsoft Entra ID](../identity/app-provisioning/use-scim-to-provision-users-and-groups.md). 
 
 ## Deploy PoC: SaaS sample-app provisioning
 
@@ -202,7 +202,7 @@ In a video, learn about [lifecycle workflows - Mover](https://youtu.be/9bXqioIGi
 
 As part of a workflow, use custom task extensions to call-out external systems with Azure Logic Apps. 
 
-You can learn to [trigger Logic Apps based on custom task extensions](/id-governance/trigger-custom-task).
+You can learn to [trigger Logic Apps based on custom task extensions](../id-governance/trigger-custom-task.md).
 
 ### Leaver
 
@@ -228,7 +228,7 @@ Use custom extensions to create workflows using tools like Azure Logic Apps. For
    > [!NOTE]
    > To create a logic app resource for hosting, select **Consumption** or **Standard**. A consumption logic app has one workflow that runs in multitenant Azure Logic Apps. A standard logic app has one or multiple workflows that run in single-tenant Azure Logic Apps, or an App Service Environment v3 (ASE v3). 
 
-To learn more, see the [App Service Environment overview](/azure/app-service/environment/overview) and [Azure Logic Apps documentation](https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-overview).  
+To learn more, see the [App Service Environment overview](/azure/app-service/environment/overview) and [Azure Logic Apps documentation](/azure/logic-apps/logic-apps-overview).  
 
 ## Deploy PoC: Lifecycle workflows
 
@@ -239,8 +239,8 @@ To learn more, see the [App Service Environment overview](/azure/app-service/env
 5. [Automate post-onboarding](/azure/active-directory/governance/lifecycle-workflow-templates)
 6. [Real-time employee change](/azure/active-directory/governance/lifecycle-workflow-templates)
 7. [Real-time employee termination](/azure/active-directory/governance/tutorial-offboard-custom-workflow-portal)
-8. [Employee group membership changes](/id-governance/lifecycle-workflow-templates)
-9. [Employee job profile change](/id-governance/lifecycle-workflow-templates)
+8. [Employee group membership changes](../id-governance/lifecycle-workflow-templates.md)
+9. [Employee job profile change](../id-governance/lifecycle-workflow-templates.md)
 10. [Automate pre-offboarding](/azure/active-directory/governance/lifecycle-workflow-templates)
 11. [Automate offboarding](/azure/active-directory/governance/tutorial-scheduled-leaver-portal)
 12. [Automate post-affboarding](/azure/active-directory/governance/lifecycle-workflow-templates)
