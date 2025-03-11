@@ -9,7 +9,7 @@ ms.date: 03/04/2025
 
 ms.author: justinha
 author: rhicock
-manager: amycolannino
+manager: femila
 ms.reviewer: dawoo
 ---
 # Two-way SMS unsupported

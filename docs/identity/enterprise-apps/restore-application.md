@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.date: 02/28/2025
 ms.author: jomondi
 ms.reviewer: sureshja
-ms.custom: enterprise-apps, has-azure-ad-ps-ref
+ms.custom: enterprise-apps, no-azure-ad-ps-ref
 zone_pivot_groups: enterprise-apps-minus-portal
 
 #Customer intent: As an IT admin managing enterprise applications in Microsoft Entra ID, I want to restore a soft deleted enterprise application, so that I can recover its previous configurations and policies within the 30-day window after deletion.

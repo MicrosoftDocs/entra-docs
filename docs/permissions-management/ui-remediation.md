@@ -2,7 +2,7 @@
 title: View existing roles/policies and requests for permission in the Remediation dashboard in Permissions Management
 description: How to view existing roles/policies and requests for permission in the Remediation dashboard in Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to

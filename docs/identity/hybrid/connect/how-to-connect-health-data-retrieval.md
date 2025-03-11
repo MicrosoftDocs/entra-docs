@@ -3,7 +3,7 @@ title: Microsoft Entra Connect Health instructions data retrieval
 description: This page describes how to retrieve data from Microsoft Entra Connect Health.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na

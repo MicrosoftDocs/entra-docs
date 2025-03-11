@@ -27,7 +27,7 @@ In this article, you learn how to integrate Salesforce with Microsoft Entra ID. 
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Salesforce single sign-on (SSO) enabled subscription.
 
 ## Scenario description

@@ -9,7 +9,7 @@ ms.date: 11/08/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: lhuangnorth
 ---
 # Protect AI with Conditional Access policy

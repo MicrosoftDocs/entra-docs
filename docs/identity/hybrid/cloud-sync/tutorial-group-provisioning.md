@@ -3,7 +3,7 @@ title: 'Tutorial - Provision groups to Active Directory using Microsoft Entra Cl
 description: This tutorial shows how to setup and configure Microsoft Entra Cloud Sync's Group Provision to AD with cloud sync.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 12/17/2024

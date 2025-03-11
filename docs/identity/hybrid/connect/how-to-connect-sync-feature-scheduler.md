@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect Sync: Scheduler'
 description: This topic describes the built-in scheduler feature in Microsoft Entra Connect Sync.
 
 author: billmath
-manager: amycolannino
+manager: femila
 
 ms.assetid: 6b1a598f-89c0-4244-9b20-f4aaad5233cf
 ms.service: entra-id

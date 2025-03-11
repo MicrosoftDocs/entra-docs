@@ -9,7 +9,7 @@ ms.date: 03/04/2025
 
 ms.author: justinha
 author: tilarso 
-manager: amycolannino
+manager: femila
 ms.reviewer: tilarso
 ---
 # Configure Temporary Access Pass to register passwordless authentication methods

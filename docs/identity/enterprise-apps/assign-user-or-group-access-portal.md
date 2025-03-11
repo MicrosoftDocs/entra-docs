@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.date: 03/03/2025
 ms.author: jomondi
 ms.reviewer: ergreenl
-ms.custom: enterprise-apps, has-azure-ad-ps-ref
+ms.custom: enterprise-apps, no-azure-ad-ps-ref
 zone_pivot_groups: enterprise-apps-all
 
 #customer intent: As an IT admin managing user access to enterprise applications, I want to assign users and groups to an application, so that I can control access and provide easy access to applications for users.

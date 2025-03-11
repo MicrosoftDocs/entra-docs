@@ -9,7 +9,7 @@ ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: aakapo
 ---
 # Deployment frequently asked questions (FAQs) for hybrid FIDO2 security keys in Microsoft Entra ID

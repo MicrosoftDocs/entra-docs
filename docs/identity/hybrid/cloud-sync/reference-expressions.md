@@ -3,7 +3,7 @@ title: Microsoft Entra Cloud Sync expressions and function reference
 description: reference
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: reference
 ms.date: 11/06/2023

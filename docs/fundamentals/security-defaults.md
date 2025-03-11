@@ -9,7 +9,7 @@ ms.date: 04/15/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: sama
 ---
 # Security defaults in Microsoft Entra ID

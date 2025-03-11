@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 03/05/2024
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: anjusingh, ludwignick
 ---
 # Block authentication flows with Conditional Access policy 

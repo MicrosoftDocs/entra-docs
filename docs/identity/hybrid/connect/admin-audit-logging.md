@@ -2,7 +2,7 @@
 title: 'Auditing administrator events in Microsoft Entra Connect Sync'
 description: This article describes security improvements to Microsoft Entra Connect Sync and how to enable logging of administrator activities.
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 01/07/2025

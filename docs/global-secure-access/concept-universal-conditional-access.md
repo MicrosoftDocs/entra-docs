@@ -6,7 +6,7 @@ ms.topic: conceptual
 ms.date: 02/21/2025
 ms.author: kenwith
 author: kenwith
-manager: rkarlin
+manager: femila
 ms.reviewer: smistry
 ---
 # Universal Conditional Access through Global Secure Access
