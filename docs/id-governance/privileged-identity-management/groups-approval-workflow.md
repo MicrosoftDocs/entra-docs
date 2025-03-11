@@ -36,6 +36,9 @@ As a delegated approver, you receive an email notification when an Azure resourc
 
 ## Approve requests
 
+>[!NOTE]
+>Approvers are not able to approve their own role activation requests. Additionally, service principals are not allowed to approve requests.
+
 1. Find and select the request that you want to approve and select **Approve**.
 
 1. In the **Justification** box, enter the business justification.
