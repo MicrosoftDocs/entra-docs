@@ -19,8 +19,8 @@ The following products and services appear in this guide:
 
 * [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)
 * [Lifecycle workflows](../id-governance/what-are-lifecycle-workflows.md)
-* [Microsoft Entra](../fundamentals/what-is-entra.yml)
-* [Microsoft Entra ID](../fundamentals/whatis.yml)
+* [Microsoft Entra](../fundamentals/what-is-entra.md)
+* [Microsoft Entra ID](../fundamentals/whatis.md)
 * [Microsoft Entra Connect](../identity/hybrid/connect/whatis-azure-ad-connect.md)
 * [Microsoft Entra Cloud Sync](../identity/hybrid/cloud-sync/what-is-cloud-sync.md)
 * [Azure Logic Apps](/azure/logic-apps/logic-apps-overview)
@@ -42,9 +42,9 @@ To streamline employee identity management, organizations are adopting modern so
 
 ### Microsoft Entra ID Governance
 
-With the Microsoft Entra ID Governance solution, organizations improve productivity, strengthen security, and meet compliance and regulatory requirements. Use Microsoft Entra ID Governance to ensure the right people have the right access to the right resources at the right time. Learn more about Microsoft Entra ID Governance [use cases](../id-governance/scenarios/identity-governance-use-cases.md) and [documentation](../id-governance/). 
+With the Microsoft Entra ID Governance solution, organizations improve productivity, strengthen security, and meet compliance and regulatory requirements. Use Microsoft Entra ID Governance to ensure the right people have the right access to the right resources at the right time. Learn more about Microsoft Entra ID Governance [use cases](../id-governance/scenarios/identity-governance-use-cases.md) and [documentation](../id-governance). 
 
-Learn more about [Microsoft Entra ID](../fundamentals/whatis.yml). 
+Learn more about [Microsoft Entra ID](../fundamentals/whatis.md). 
 
 ## HR-driven provisioning
 
