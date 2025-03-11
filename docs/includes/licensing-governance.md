@@ -33,7 +33,7 @@ The following table shows what features are available with each license.  Not al
 |[Entitlement management - Mark guest as governed](~/id-governance/entitlement-management-access-package-manage-lifecycle.md)|||| :white_check_mark: | :white_check_mark: |
 |[Entitlement management - Manage the lifecycle of external users](~/id-governance/entitlement-management-external-users.md#manage-the-lifecycle-of-external-users)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
 |[My Access portal](~/id-governance/my-access-portal-overview.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
-|[Entitlement management - Microsoft Entra Roles (Preview)](~/id-governance/entitlement-management-request-behalf.md)|||| :white_check_mark: | :white_check_mark: |
+|[Entitlement management - Microsoft Entra Roles (Preview)](~/id-governance/entitlement-management-roles.md)|||| :white_check_mark: | :white_check_mark: |
 |[Entitlement management - Request access packages on-behalf-of (Preview)](~/id-governance/entitlement-management-roles.md)|||| :white_check_mark: | :white_check_mark: |
 |[Entitlement management - Sponsors Policy](~/id-governance/entitlement-management-access-package-create.md)|||| :white_check_mark: | :white_check_mark: |
 |[Privileged Identity Management (PIM)](~/id-governance/privileged-identity-management/pim-configure.md)||| :white_check_mark: | :white_check_mark: | :white_check_mark: |
