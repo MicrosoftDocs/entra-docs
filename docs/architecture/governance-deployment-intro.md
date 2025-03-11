@@ -228,7 +228,7 @@ The following list shows pre-defined lifecycle workflow tasks. You can enable ot
 * Create the workflow
 * Pilot, run, and test 
 
-Learn how to [plan a lifecycle workflow deployment](/id-governance/lifecycle-workflows-deployment).
+Learn how to [plan a lifecycle workflow deployment](../id-governance/lifecycle-workflows-deployment.md).
 
 ### Provision and onboard apps
 
@@ -236,9 +236,9 @@ Determination of other target systems requires user provisioning, for instance I
 
 |Target system|Approach|Guidance|
 |---|---|---|
-|ITSM|- Automated app user provisioning </br> - Lifecycle workflows custom extensions: APIs, legacy systems </br>|- [Automated app user provisioning](/identity/app-provisioning/user-provisioning) </br> - [Workflow extensibility](/id-governance/lifecycle-workflow-extensibility)|
-|Legacy apps|- Extensible Connectivity Management Agent (ECMA) host </br> - Lifecycle workflows custom extensions </br>|- [Microsoft Entra on-premises app provisioning architecture]()</br> - [Workflow extensibility](/id-governance/lifecycle-workflow-extensibility)|
-|Software-as-a-Service (SaaS) apps integrated with Microsoft Entra ID |Automated app user provisioning|[Automated app user provisioning](/identity/app-provisioning/user-provisioning)|
+|ITSM|- Automated app user provisioning </br> - Lifecycle workflows custom extensions: APIs, legacy systems </br>|- [Automated app user provisioning](/identity/app-provisioning/user-provisioning) </br> - [Workflow extensibility](../id-governance/lifecycle-workflow-extensibility.md)|
+|Legacy apps|- Extensible Connectivity Management Agent (ECMA) host </br> - Lifecycle workflows custom extensions </br>|- [Microsoft Entra on-premises app provisioning architecture]()</br> - [Workflow extensibility](../id-governance/lifecycle-workflow-extensibility.md)|
+|Software-as-a-Service (SaaS) apps integrated with Microsoft Entra ID |Automated app user provisioning|[Automated app user provisioning](../identity/app-provisioning/user-provisioning.md)|
 
 ### Common tasks
 
@@ -248,9 +248,9 @@ Review the common tasks to automate for user onboarding, such as notification em
 
 Define a process for credential provisioning and distribution. Use lifecycle workflows to generate a temporary access pass (TAP) at a trigger time, aligned with security policies.  
 
-For example, on an employee hire date, generate a TAP and send it to the user manager, The manager shares the TAP, and the new-hire can set up passwordless authentication methods, such as FIDO2 and passwordless phone sign-in. You can use [Microsoft Authenticator](/identity/authentication/concept-authentication-authenticator-app) to enable sign-in without a password. 
+For example, on an employee hire date, generate a TAP and send it to the user manager, The manager shares the TAP, and the new-hire can set up passwordless authentication methods, such as FIDO2 and passwordless phone sign-in. You can use [Microsoft Authenticator](../identity/authentication/concept-authentication-authenticator-app.md) to enable sign-in without a password. 
 
-TAP users navigate setup on Windows 10 and 11 for device join and to configure Windows Hello for Business. Use of [TAP](/identity/authentication/howto-authentication-temporary-access-pass) to set up [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/) varies based on device joined state. 
+TAP users navigate setup on Windows 10 and 11 for device join and to configure Windows Hello for Business. Use of [TAP](../identity/authentication/howto-authentication-temporary-access-pass.md) to set up [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/) varies based on device joined state. 
 
 Also, you can create a custom task extension to deliver the initial credentials. Common built-in onboarding tasks: 
 
@@ -279,20 +279,20 @@ Offboarding and ending access are important security tasks you can automate. Use
 * Delete user accounts
 * End access package assignments 
 
-Learn more about [lifecycle workflows tasks and definitions](/id-governance/lifecycle-workflow-tasks).
+Learn more about [lifecycle workflows tasks and definitions](../id-governance/lifecycle-workflow-tasks.md).
 
 ### Ongoing operations
 
 The following list has links to documentation about common operational tasks including maintenance, troubleshooting, and reporting: 
 
-* [Run a workflow on demand](/id-governance/on-demand-workflow)
-* [Customize emails from workflow tasks](/id-governance/customize-workflow-email)
-* [Download workflow history reports](/id-governance/download-workflow-history)
-* [Check lifecycle workflow status](/id-governance/check-status-workflow)
-* [Customize workflow schedules](/entra/id-governance/customize-workflow-schedule)
-* [Manage users synchronized from Active Directory Domain Services (AD DS) with lifecycle workflows](/id-governance/manage-workflow-on-premises)
-* [Check workflow execution with Workflow Insights](/id-governance/manage-workflow-insights)
-* [Use custom security attributes to scope workflows](/id-governance/manage-workflow-custom-security-attribute)
+* [Run a workflow on demand](../id-governance/on-demand-workflow.md)
+* [Customize emails from workflow tasks](../id-governance/customize-workflow-email.md)
+* [Download workflow history reports](../id-governance/download-workflow-history.md)
+* [Check lifecycle workflow status](../id-governance/check-status-workflow.md)
+* [Customize workflow schedules](../id-governance/customize-workflow-schedule.md)
+* [Manage users synchronized from Active Directory Domain Services (AD DS) with lifecycle workflows](../id-governance/manage-workflow-on-premises.md)
+* [Check workflow execution with Workflow Insights](../id-governance/manage-workflow-insights.md)
+* [Use custom security attributes to scope workflows](../id-governance/manage-workflow-custom-security-attribute.md)
 
 ## Best practices and recommendations
 
@@ -300,9 +300,9 @@ A best practice is a method or technique that has demonstrably helped deliver hi
 
 * Follow security protocols and guidelines when you assign resource access
 * Enable group writeback to control access to on-premises AD group applications and resources
-  * [Govern on-premises Active Directory (Kerberos) application access with groups from the cloud](/identity/hybrid/cloud-sync/govern-on-premises-groups)
+  * [Govern on-premises Active Directory (Kerberos) application access with groups from the cloud](../identity/hybrid/cloud-sync/govern-on-premises-groups.md)
 * Use auto-assignment policies to streamline assignments and their removal
-  * Ensure alignment with Microsoft Entra entitlement management rules and governance [service limits](/id-governance/governance-service-limits)
+  * Ensure alignment with Microsoft Entra entitlement management rules and governance [service limits](../id-governance/governance-service-limits.md)
 * To manage permissions, request user access package assignment. For approval processes, select **Enforce policy approval** for administrator direct assignments. 
 * Evaluate and update access packages to reflect user roles changes
   * See [Create an access review of an access package in entitlement management](/id-governance/entitlement-management-access-reviews-create)
