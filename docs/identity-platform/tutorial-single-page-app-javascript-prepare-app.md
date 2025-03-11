@@ -68,8 +68,7 @@ In this tutorial, you'll:
     ```javascript
     └── public
         └── authConfig.js
-        └── authPopup.js
-        └── authRedirect.js
+        └── auth.js
         └── claimUtils.js
         └── index.html
         └── signout.html
@@ -143,10 +142,14 @@ The **authConfig.js** file contains the configuration settings for the authentic
 1. Open *public/authConfig.js* and add the following code:
 
     ```javascript
+    /**
+    * Configuration object to be passed to MSAL instance on creation. 
+    * For a full list of MSAL.js configuration parameters, visit:
+    * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/configuration.md 
+    */
     const msalConfig = {
         auth: {
-
-            clientId: "Enter_the_Application_Id_Here", // This is the ONLY mandatory field that you need to supply
+            // WORKFORCE TENANT
             authority: "https://login.microsoftonline.com/Enter_the_Tenant_Info_Here", //  Replace the placeholder with your tenant info
             redirectUri: '/', // You must register this URI on App Registration. Defaults to window.location.href e.g. http://localhost:3000/
             navigateToLoginRequestUrl: true, // If "true", will navigate back to the original request location before processing the auth code response.
@@ -187,7 +190,7 @@ The **authConfig.js** file contains the configuration settings for the authentic
     * https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview#openid-connect-scopes
     */
     const loginRequest = {
-        scopes: [],
+        scopes: ["User.Read"],
     };
 
     /**
@@ -200,7 +203,18 @@ The **authConfig.js** file contains the configuration settings for the authentic
     //   loginHint: "example@domain.net"
     // };
 
-     ```
+    // exporting config object for jest
+    if (typeof exports !== 'undefined') {
+        module.exports = {
+            msalConfig: msalConfig,
+            loginRequest: loginRequest,
+        };
+        module.exports = {
+            msalConfig: msalConfig,
+            loginRequest: loginRequest,
+        };
+    }
+    ```
 
 1. Replace the following values with the values from the Entra admin center:
     * Find the `Enter_the_Application_Id_Here` value and replace it with the **Application ID (clientId)** of the app you registered in the Microsoft Entra admin center.
@@ -212,10 +226,14 @@ The **authConfig.js** file contains the configuration settings for the authentic
 1. Open *public/authConfig.js* and add the following code snippet:
 
     ```javascript
+    /**
+    * Configuration object to be passed to MSAL instance on creation. 
+    * For a full list of MSAL.js configuration parameters, visit:
+    * https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser/docs/configuration.md 
+    */
     const msalConfig = {
         auth: {
-
-            clientId: "Enter_the_Application_Id_Here", // This is the ONLY mandatory field that you need to supply
+            // EXTERNAL TENANT
             authority: "https://Enter_the_Tenant_Subdomain_Here.ciamlogin.com/", // Replace the placeholder with your tenant subdomain
             redirectUri: '/', // You must register this URI on App Registration. Defaults to window.location.href e.g. http://localhost:3000/
             navigateToLoginRequestUrl: true, // If "true", will navigate back to the original request location before processing the auth code response.
@@ -256,7 +274,7 @@ The **authConfig.js** file contains the configuration settings for the authentic
     * https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview#openid-connect-scopes
     */
     const loginRequest = {
-        scopes: [],
+        scopes: ["User.Read"],
     };
 
     /**
@@ -269,6 +287,17 @@ The **authConfig.js** file contains the configuration settings for the authentic
     //   loginHint: "example@domain.net"
     // };
 
+    // exporting config object for jest
+    if (typeof exports !== 'undefined') {
+        module.exports = {
+            msalConfig: msalConfig,
+            loginRequest: loginRequest,
+        };
+        module.exports = {
+            msalConfig: msalConfig,
+            loginRequest: loginRequest,
+        };
+    }
      ```
 
 1. Replace the following values with the values from the Entra admin center:
