@@ -1,13 +1,13 @@
 ---
-title: App samples
-description: Learn how to build and integrate apps with external tenants. Use code samples to test authentication scenarios such as sign-up, sign in, and getting an access token to call an API.
+title: Samples and guides for integrating apps with External ID
+description: Learn how to build and integrate apps with external tenants with scenarios such as sign-up, sign in, and getting an access token to call an API.
 author: msmimart
 manager: celestedg
 ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: sample
-ms.date: 05/20/2024
+ms.date: 03/11/2025
 ms.author: mimart
 ms.custom: it-pro, seo-july-2024
 
@@ -76,6 +76,7 @@ These samples and how-to guides show you how to write a public client mobile app
 > | ASP.NET Core MAUI | &#8226; [Sign in users](/entra/identity-platform/quickstart-mobile-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external&tabs=android-netmaui-external) | &#8226; [Sign in users](tutorial-mobile-app-maui-sign-in-prepare-tenant.md)|
 > | Android (Kotlin) | &#8226; [Sign in users](/entra/identity-platform/quickstart-mobile-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external&tabs=android-external)<br/> &#8226; [Sign in users and call an API](/entra/identity-platform/quickstart-mobile-app-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external&tabs=android-external) | &#8226; [Sign in users, call an API](tutorial-mobile-app-android-kotlin-prepare-tenant.md) |
 > | iOS (Swift) | &#8226; [Sign in users](/entra/identity-platform/quickstart-mobile-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external&tabs=ios-macos-external)<br/> &#8226; [Sign in users and call an API](sample-mobile-app-ios-swift-sign-in-call-api.md) | &#8226; [Sign in users, call an API](/entra/identity-platform/tutorial-mobile-app-ios-swift-prepare-tenant?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external) |
+
 
 ### Desktop: Native authentication
 
@@ -160,7 +161,7 @@ These samples and how-to guides demonstrate how to write a daemon application th
 > [!div class="mx-tdCol2BreakAll"]
 > | App type | Code sample guide | Build and integrate guide |
 > | ----------- | ----------- |----------- |
-> | Mobile: Browser delegated authentication | &#8226;  &#8226; [Sign in users](/entra/identity-platform/quickstart-mobile-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external&tabs=ios-macos-external)<br/> &#8226; [Sign in users and call an API](sample-mobile-app-ios-swift-sign-in-call-api.md) | &#8226; [Sign in users, call an API](/entra/identity-platform/tutorial-mobile-app-ios-swift-prepare-tenant?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external) |
+> | Mobile: Browser delegated authentication | &#8226; [Sign in users](/entra/identity-platform/quickstart-mobile-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external&tabs=ios-macos-external)<br/> &#8226; [Sign in users and call an API](sample-mobile-app-ios-swift-sign-in-call-api.md) | &#8226; [Sign in users, call an API](/entra/identity-platform/tutorial-mobile-app-ios-swift-prepare-tenant?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external) |
 > |Mobile: Native authentication | &#8226; iOS (Swift)  [Sign in users](/entra/identity-platform/quickstart-native-authentication-ios-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json)<br/> &#8226; [Sign in users and call an API](/entra/identity-platform/quickstart-native-authentication-ios-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json) | &#8226; [Sign in users](/entra/identity-platform/tutorial-native-authentication-prepare-ios-macos-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json)|
 > |Desktop: Native authentication | &#8226; macOS (Swift) [Sign in users](/entra/identity-platform/quickstart-native-authentication-macos-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json)| &#8226; [Sign in users](/entra/identity-platform/tutorial-native-authentication-prepare-ios-macos-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json)|
 
