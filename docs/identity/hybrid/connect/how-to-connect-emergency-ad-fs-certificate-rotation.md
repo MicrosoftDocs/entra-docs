@@ -171,8 +171,6 @@ If your federation partners can't consume your federation metadata, you must man
 ## Revoke the refresh tokens via PowerShell
 Now you want to revoke the refresh tokens for users who might have them and force them to log in again and get new tokens. This logs users out of their phones, current webmail sessions, and other places that are using tokens and refresh tokens. For more information, see [Revoke-EntraUserAllRefreshToken](/powershell/module/azuread/microsoft.entra/revoke-entrauserallrefreshtoken). Also see [Revoke user access in Microsoft Entra ID](~/identity/users/users-revoke-access.md).
 
-[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
-
 ## Next steps
 
 - [Manage SSL certificates in AD FS and WAP in Windows Server 2016](/windows-server/identity/ad-fs/operations/manage-ssl-certificates-ad-fs-wap#replacing-the-ssl-certificate-for-ad-fs)

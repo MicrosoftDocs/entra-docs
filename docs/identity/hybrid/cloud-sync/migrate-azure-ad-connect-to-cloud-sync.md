@@ -71,7 +71,7 @@ Connect-MgGraph -Scopes "User.Read.All"
 
 #Declare variables
 
-$Users = Get-MgUser -ConsistencyLevel eventual -Search '"DirSyncEnabled:true"'
+$Users = Get-EntraUser -All:$true -Filter "DirSyncEnabled eq true"
 $OU = "OU=Sales,DC=contoso,DC=com"
 $counter = 0
 
