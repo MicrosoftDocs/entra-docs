@@ -12,7 +12,7 @@ ms.reviewer: katabish
 ---
 # How to configure per-app access using Global Secure Access applications
 
-Microsoft Entra Private Access provides secure access to your organization's internal resources. You create a Global Secure Access application and specify the internal, private resources that you want to secure. By configuring a Global Secure Access application, you're creating per-app access to your internal resources. Global Secure Access application provides a more detailed ability to manage how the resources are accessed on a per-app basis.
+Microsoft Entra Private Access provides secure access to your organization's internal resources by enabling you to segment access to each application segment. This allows you to provide specific network access based on user needs. To do this, you create a Global Secure Access application and configure the application segment that is used by your internal, private resources that you want to secure. Users with the Global Secure Access client installed that generate a network request to that application segment will be routed to your internal application by the Global Secure Access cloud service without any ability to connect to other resources on your network. By configuring a Global Secure Access application, you're creating per-app access to your internal resources. Global Secure Access application provides a more detailed ability to manage how the resources are accessed on a per-app basis.
 
 This article describes how to configure per-app access using Global Secure Access applications.
 
@@ -82,7 +82,7 @@ To create a new app, you provide a name, select a connector group, and then add 
 
 ### Add application segment
 
-The **Add application segment** process is where you define the FQDNs and IP addresses that you want to include in the traffic for the Global Secure Access app. You can add sites when you create the app and return to add more or edit them later.
+An application segment is defined by 3 fields - destination, port, and protocol. If two or more application segments include the same destination, port, and protocol, they are considered to be overlapping. The **Add application segment** process is where you define the FQDNs and IP addresses that you want the Global Secure Access client to route to your target private application. You can add application segments when you create the app and later you can return to add more or edit them.
 
 You can add fully qualified domain names (FQDN), IP addresses, and IP address ranges. Within each application segment, you can add multiple ports and port ranges.
 
@@ -128,9 +128,7 @@ You can add fully qualified domain names (FQDN), IP addresses, and IP address ra
 1. Select **Save**.
 
 > [!NOTE]
-> You can add up to 500 application segments to your app.
->
-> Do not overlap FQDNs, IP addresses, and IP ranges between any Private Access apps.
+> You can add up to 500 application segments to your app however none of these application segments can have overlapping FQDNs, IP addresses, or IP ranges within or between any Private Access apps. A special exception is allowed for overlapping segments between Private Access apps and Quick Access to allow for VPN replacement. If a segment defined on an Enterprise App (for example 10.1.1.1:3389) overlaps with a segment defined on Quick Access (for example 10.1.1.0/24:3389), then the segment defined on the Enterprise App will be given priority by the GSA service. No traffic from any user to an application segment defined as an Enterprise App will be processed by Quick Access. This means that any user that attempts to RDP to 10.1.1.1 will be evaluated and routed per the Enterprise App configuration, including user assignments and conditional access policies. As a best practice, remove application segments that you define in Enterprise Apps from Quick Access, breaking IP subnets into smaller ranges so that the exclusion is possible.
 
 ## Assign users and groups
 
@@ -143,7 +141,7 @@ You need to grant access to the app you created by assigning users and/or groups
 1. Add users and groups as needed.
 
 > [!NOTE]
-> Users must be directly assigned to the app or to the group assigned to the app. Nested groups are not supported.
+> Users must be directly assigned to the app or to the group assigned to the app. Nested groups are not supported and access assignments are not automatically transferred when you create an Enterprise App, even when there is an existing (overlapping) application segment defined in Quick Access. Allow 15 minutes for your configuration change to be synchronized with your Global Secure Access clients.
 
 ## Update application segments
 
