@@ -177,7 +177,7 @@ items:
       href: deployment-plans.md
     - name: Azure Active Directory B2C deployment plans
       href: b2c-deployment-plans.md
-    - name: External identity deployment architectures
+    - name: Microsoft Entra External ID deployment architectures
       href: external-identity-deployment-architectures.md
     - name: Microsoft Entra deployment scenarios
       items:

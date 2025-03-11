@@ -101,6 +101,12 @@ We recommend that all of the following controls be implemented where licenses ar
 
 [!INCLUDE [21800](../includes/secure-recommendations/21800.md)]
 
+## Free security features
+
+### Enable Microsoft Entra ID security defaults
+
+[!INCLUDE [21871](../includes/secure-recommendations/21871.md)]
+
 ## Related content
 
 - [Microsoft Entra deployment plans](../architecture/deployment-plans.md)
