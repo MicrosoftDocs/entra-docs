@@ -19,15 +19,15 @@ Use this scenario to help determine the need for Microsoft Entra ID Governance t
 
 The following products and services appear in this guide:
 
-* [Microsoft Entra ID Governance](/id-governance/identity-governance-overview)
+* [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)
 * [Microsoft Entra ID](/fundamentals/whatis)
 * [Microsoft Entra](/fundamentals/what-is-entra)
-* [Privileged Identity Management (PIM)](/id-governance/privileged-identity-management/pim-configure)
-* [PIM for Groups](/id-governance/privileged-identity-management/concept-pim-for-groups)
-* [Discovery and insights](/id-governance/privileged-identity-management/pim-security-wizard)
-* [Resource dashboards](/id-governance/privileged-identity-management/pim-resource-roles-overview-dashboards)
-* [Microsoft Entra Conditional Access](/identity/conditional-access/overview)
-* [Access reviews](/id-governance/access-reviews-overview)
+* [Privileged Identity Management (PIM)](../id-governance/privileged-identity-management/pim-configure.md)
+* [PIM for Groups](../id-governance/privileged-identity-management/concept-pim-for-groups.md)
+* [Discovery and insights](../id-governance/privileged-identity-management/pim-security-wizard.md)
+* [Resource dashboards](../id-governance/privileged-identity-management/pim-resource-roles-overview-dashboards.md)
+* [Microsoft Entra Conditional Access](../identity/conditional-access/overview.md)
+* [Access reviews](../id-governance/access-reviews-overview.md)
 * [Microsoft Azure](/azure/?product=popular)
 
 ## PoC timeline
