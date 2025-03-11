@@ -13,7 +13,7 @@ ms.author: gasinh
 
 # Introduction to Microsoft Entra ID Governance deployment guide
 
-[Microsoft Entra ID Governance](/security/business/identity-access/microsoft-entra-id-governance) is an identity governance solution to improve productivity, strengthen security, and meet compliance and regulatory requirements. Ensure the right people have the right access to the right resources. Enable identity and access process automation, delegation to business groups, and increased visibility. Mitigate identity and access risk, protect, monitor, and audit access to your assets. Learn more about Microsoft Entra ID Governance [use cases](/id-governance/scenarios/identity-governance-use-cases) and [documentation](/id-governance/).
+[Microsoft Entra ID Governance](../security/business/identity-access/microsoft-entra-id-governance.md) is an identity governance solution to improve productivity, strengthen security, and meet compliance and regulatory requirements. Ensure the right people have the right access to the right resources. Enable identity and access process automation, delegation to business groups, and increased visibility. Mitigate identity and access risk, protect, monitor, and audit access to your assets. Learn more about Microsoft Entra ID Governance [use cases](../id-governance/scenarios/identity-governance-use-cases.md) and [documentation](../id-governance).
 
 ## Deployment approach
 
@@ -43,9 +43,9 @@ Microsoft Entra ID Governance is a feature in Microsoft Entra ID. To enable the 
   * In the tenant, ensure there’s a license for each governed user (non-guest). Include those that request access to apps, approve access, or review app access.
 * To govern guest access to the application, link the Microsoft Entra tenant to a subscription for monthly active user (MAU) billing 
 
-For more information, see [Microsoft Entra ID Governance licensing fundamentals](/id-governance/licensing-fundamentals).
+For more information, see [Microsoft Entra ID Governance licensing fundamentals](../id-governance/licensing-fundamentals.md).
 
-Learn about [prerequisites before you configure Microsoft Entra ID and Microsoft Entra ID Governance](/id-governance/identity-governance-applications-prepare).
+Learn about [prerequisites before you configure Microsoft Entra ID and Microsoft Entra ID Governance](../id-governance/identity-governance-applications-prepare.md).
 
 ### Participation model
 
@@ -88,7 +88,7 @@ A project is a success when you achieve the expected outcomes within budget and 
 * Dates that affect delivery
 * Dependencies
 
-Learn more with [Microsoft Entra ID Governance documentation](/id-governance/).  
+Learn more with [Microsoft Entra ID Governance documentation](../id-governance).  
 
 In your project schedule:
 
@@ -119,7 +119,7 @@ Assessment and discovery establish an understanding of the current state of iden
 * **Understand the solution** - Study and understand Microsoft Entra ID Governance architecture
 * **Maintain stakeholder alignment** - Identify and align with stakeholders across teams. Ensure agreement on objectives and timelines.
 
-For more information about assessment and discovery, see [best practices for securely deploying Microsoft Entra ID Governance](/id-governance/best-practices-secure-id-governance)
+For more information about assessment and discovery, see [best practices for securely deploying Microsoft Entra ID Governance](../id-governance/best-practices-secure-id-governance.md)
 
 ### Data collection
 
@@ -128,8 +128,8 @@ Collect current identity governance configuration data to establish an accurate 
 * **User provisioning workflows** - Provisioning rules, connectors, business processes, or use cases
 * **Joiner, Mover, Leaver** - Onboarding for joiners, processes for movers, and leaver offboarding
 * **Entitlements and roles** - Current resources, entitlements, roles, their structure, and assignments
-* **[Access reviews](/id-governance/access-reviews-overview)** - Plan access review scenarios for users, groups, and levels for apps, access packages, or groups
-* **[Privileged Identity Management (PIM)](/id-governance/privileged-identity-management/pim-configure)** - Replicate activation rules, approval workflows, and role eligibility
+* **[Access reviews](../id-governance/access-reviews-overview.md)** - Plan access review scenarios for users, groups, and levels for apps, access packages, or groups
+* **[Privileged Identity Management (PIM)](../id-governance/privileged-identity-management/pim-configure.md)** - Replicate activation rules, approval workflows, and role eligibility
 * **Critical apps and integrations** - Apps and systems integrated with the current solution
   * Document migration priorities, based on organizational needs and risks 
 
@@ -151,9 +151,9 @@ Confirm the user provisioning target and a need for writeback to the HR cloud ap
 
 You can use on-premises Active Directory Domain Services (AD DS) connectors and Microsoft Entra ID connectors. Topologies depend on mapping and requirements. 
 
-Learn more about the [Microsoft Entra Connect provisioning agent](/identity/hybrid/cloud-sync/what-is-provisioning-agent). 
+Learn more about the [Microsoft Entra Connect provisioning agent](../identity/hybrid/cloud-sync/what-is-provisioning-agent.md). 
 
-You can [plan cloud HR application to Microsoft Entra user provisioning](/identity/app-provisioning/plan-cloud-hr-provision).
+You can [plan cloud HR application to Microsoft Entra user provisioning](../identity/app-provisioning/plan-cloud-hr-provision.md).
 
 ### Define provisioning
 
@@ -161,7 +161,7 @@ Active Directory topology, if applicable:
 
 * **Evaluate the directory structure** - Understand the organizational units, forests, and domains in your Active Directory environment
 * **Plan for synchronization** - Synchronize specific organizational units, or the directory. Consider scalability, redundancy, and replication latency.
-* **Review hybrid scenarios and ensure Microsoft Entra Connect is optimized** - For foreests with separate trusts, evaluate use of [Microsoft Entra Cloud Sync](/identity/hybrid/cloud-sync/reference-cloud-sync-faq) 
+* **Review hybrid scenarios and ensure Microsoft Entra Connect is optimized** - For foreests with separate trusts, evaluate use of [Microsoft Entra Cloud Sync](../identity/hybrid/cloud-sync/reference-cloud-sync-faq.md) 
 
 ### Pre-provisioning tasks
 
@@ -179,7 +179,7 @@ For provisioning, define the **scope of source objects**. To enhance performance
 
 Plan for **attribute calculation**. Handle long strings, special characters, or choose a unique username. Do calculations with expressions. 
 
-For more information see [writing expressions for attribute mappings in Microsoft Entra app provisioning](/identity/app-provisioning/functions-for-customizing-application-data)
+For more information see [writing expressions for attribute mappings in Microsoft Entra app provisioning](../identity/app-provisioning/functions-for-customizing-application-data.md)
 
 ### Configure provisioning
 
@@ -187,21 +187,21 @@ You can use guidance on cloud HR system integration, such as Workday, SuccessFac
 
 |HR source|Integration guidance|
 |---|---|
-|Workday|[Microsoft Entra ID and Workday integration](/identity/app-provisioning/workday-integration-reference)|
-|SAP SuccessFactors|[Microsoft Entra ID and SAP SuccessFactors integration](/identity/app-provisioning/sap-successfactors-integration-reference)|
-|Oracle HCM|[Microsoft Entra ID integration with Oracle HCM](/identity/saas-apps/oracle-hcm-provisioning-tutorial)|
+|Workday|[Microsoft Entra ID and Workday integration](../identity/app-provisioning/workday-integration-reference.md)|
+|SAP SuccessFactors|[Microsoft Entra ID and SAP SuccessFactors integration](../identity/app-provisioning/sap-successfactors-integration-reference.md)|
+|Oracle HCM|[Microsoft Entra ID integration with Oracle HCM](../identity/saas-apps/oracle-hcm-provisioning-tutorial.md)|
 |Ripppling|[Sync identities from Rippling to Microsoft Entra ID](https://techcommunity.microsoft.com/blog/identity/sync-identities-from-rippling-to-microsoft-entra-id/4279690)|
-|Other API-driven sources|[API-driven inbound provisioning concepts](https://learn.microsoft.com/en-us/entra/identity/app-provisioning/inbound-provisioning-api-concepts)|
+|Other API-driven sources|[API-driven inbound provisioning concepts](../identity/app-provisioning/inbound-provisioning-api-concepts.md)|
 
 **API-driven provisioning**
 
-When planning for API-driven inbound provisioning, consider the use case and one of the following approaches. Learn more in [API-driven provisioning usage guidance](/identity/app-provisioning/inbound-provisioning-api-concepts#api-usage-guidance).
+When planning for API-driven inbound provisioning, consider the use case and one of the following approaches. Learn more in [API-driven provisioning usage guidance](../identity/app-provisioning/inbound-provisioning-api-concepts.md).
 
 **API-driven usage guidance**
 
  The **/bulkUpload** API endpoint expands the number of ways that you can manage users in Microsoft Entra ID. To help you determine if the **/bulkUpload** API endpoint is right for your integration scenario, refer to this table that compares it with other API-based integration options. 
 
-Discover more about the [API-driven inbound learning path](/identity/app-provisioning/inbound-provisioning-api-concepts). 
+Discover more about the [API-driven inbound learning path](../identity/app-provisioning/inbound-provisioning-api-concepts.md). 
 
 ## Joiner, Mover, Leaver workflows
 
@@ -218,7 +218,7 @@ Microsoft Entra ID lifecycle workflows, entitlement management, and access revie
 
 Some workflows trigger on a time value like **employeeHireDate** and **employeeLeaveDateTime**. 
 
-You can [synchronize attributes for lifecycle workflows](/id-governance/how-to-lifecycle-workflow-sync-attributes).
+You can [synchronize attributes for lifecycle workflows](../id-governance/how-to-lifecycle-workflow-sync-attributes.md).
 
 The following list shows pre-defined lifecycle workflow tasks. You can enable others. 
 
