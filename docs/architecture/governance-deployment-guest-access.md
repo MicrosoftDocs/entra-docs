@@ -93,9 +93,9 @@ Decentralized identity solutions enable individuals to control their digital ide
 
 When external users request initial access, they're invited to your directory and assigned access. In entitlement management, use access packages to assign access to multiple resources. Ensure access packages are in a container called a catalog, which has resources you can add to access package.  
 
-* [Govern access for external users in entitlement management](/id-governance/entitlement-management-external-users)
-* [Create an access package in entitlement management](/id-governance/entitlement-management-access-package-create)
-* [View, add, and remove assignments for an access package](/id-governance/entitlement-management-access-package-assignments)
+* [Govern access for external users in entitlement management](../id-governance/entitlement-management-external-users.md)
+* [Create an access package in entitlement management](../id-governance/entitlement-management-access-package-create.md)
+* [View, add, and remove assignments for an access package](../id-governance/entitlement-management-access-package-assignments.md)
 
 ## Deploy PoC: External user access
 
@@ -107,7 +107,7 @@ When external users request initial access, they're invited to your directory an
 6. [Assign users](/azure/active-directory/governance/entitlement-management-access-package-assignments).
 7. [Share a link to request an access package in entitlement management](/azure/active-directory/governance/entitlement-management-access-package-settings).
 
-For more detail, see [Govern access for external users in entitlement management](/id-governance/entitlement-management-external-users).
+For more detail, see [Govern access for external users in entitlement management](../id-governance/entitlement-management-external-users.md).
 
 ### Assign and remove resources
 
@@ -121,7 +121,7 @@ To create and run automated workflows with [Azure Logic Apps](/azure/logic-apps/
 
 In entitlement management, external users have three states: governed, ungoverned, and blank. External users invited to your tenant are ungoverned. The ungoverned can lose their last access package assignment yet remain in the tenant indefinitely. To manage the lifecycle, convert the ungoverned to governed while they have access. 
 
-Learn to [govern access for external users in entitlement management](/id-governance/entitlement-management-external-users). 
+Learn to [govern access for external users in entitlement management](../id-governance/entitlement-management-external-users.md). 
 
 ## Deploy PoC: Guest user lifecycle
 
