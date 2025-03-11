@@ -19,8 +19,7 @@ In this tutorial you'll configure a JavaScript single-page application (SPA) for
 In this tutorial;
 
 > [!div class="checklist"]
-> * Add code to *authRedirect.js* to handle the authentication flow
-> * Add code to *authPopup.js* to handle the authentication flow
+> * Add code to *auth.js* to handle the authentication flow
 > * Build a user interface for the application
 
 ## Prerequisites
@@ -29,7 +28,7 @@ In this tutorial;
 
 ## Add code to the redirection file
 
-An authentication flow is a series of steps that an application takes to authenticate a user. *Auth.js* contains functions that are used to handle the authentication flow, including signing in and signing out of the application using either the redirect or popup method.
+An authentication flow is a series of steps that an application takes to authenticate a user. *Auth.js* contains functions that are used to handle the authentication flow, including signing in and signing out using either the redirect or popup method.
 
 1. Open *public/auth.js* and add the following code:
 
