@@ -72,9 +72,6 @@ To see how many licenses are available, go to the **Entra Admin Portal** > **Bil
 
 To see which users and groups are consuming licenses, navigate to the **M365 Admin portal** under **Billing** > **Licenses** and select a product. Under **Users**, you see a list of all users who have licenses assigned directly or via one or more groups. Under **Groups**, you see all groups that have that product assigned.
 
-> [!NOTE] 
-> If the license is in a disabled state, you can't manage that license in the Microsoft 365 Admin Portal. If you need to manage a disabled license, you need to use Microsoft Graph.
-
 ## Conflicting service plans
 
 **Problem:** One of the products specified in the group contains a service plan that conflicts with another service plan already assigned to the user via a different product. Some service plans are configured in a way that they can't be assigned to the same user as another related service plan.
@@ -204,7 +201,7 @@ We recommend that you test the new membership rule beforehand to make sure that 
 ## Microsoft Entra ID Mail and ProxyAddresses attribute change
 
 **Problem**: While updating license assignment on a user or a group, you might see that the Mail and ProxyAddresses attribute of some users are changed.
-Updating license assignment on a user causes the proxy address calculation to be triggered, which can change user attributes. To understand the exact reason of the change and solve the problem, see this article on how the proxyAddresses attribute is populated in Microsoft Entra ID.
+Updating license assignment on a user causes the proxy address calculation to be triggered, which can change user attributes. To understand the exact reason of the change and solve the problem, see [this article](../identity/hybrid/connect/how-to-connect-syncservice-shadow-attributes.md#proxyaddresses) on how the proxyAddresses attribute is populated in Microsoft Entra ID.
 
 
 ## Next steps
