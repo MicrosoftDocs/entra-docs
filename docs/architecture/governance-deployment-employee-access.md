@@ -1,6 +1,6 @@
 ---
 title: Microsoft Entra ID Governance deployment guide to assign employee access
-description: Learn how to assign employee access to resources in Microsfot Entra ID Governance as a proof of concept.
+description: Learn how to assign employee access to resources in Microsoft Entra ID Governance as a proof of concept.
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id-governance
@@ -51,7 +51,7 @@ In the following screenshot, see the **On-premises resources | Separation of Dut
 
    [ ![Screenshot of the Incompatible groups tab on the Separation of Duties dialog.](media/governance-deployment/separation-of-duties.png)](media/governance-deployment/separation-of-duties-expanded.png#lightbox)
 
-### Create an auto-assignment policy
+### Create an autoassignment policy
 
 In this area of access policy, **birthright assignment** refers to automatically granting resource access based on user properties. Creating assignments works similarly. User properties match, or don’t match, a policy's membership rules. Use rules to determine access package assignment based on user properties, similar to [dynamic groups](../identity/users/groups-create-rule.md). Add or remove assignments, based on rule criteria.  
 
@@ -72,12 +72,12 @@ For more information:
 
 ### Custom workflows with Azure Logic Apps
 
-Create and run automated workflows with [Azure Logic Apps](/azure/logic-apps/), using the visual designer and prebuilt operations. Integrate Logic Apps with entitlement management to extend governance workflows: 
+Create and run automated workflows with [Azure Logic Apps](/azure/logic-apps/), using the visual designer and prebuilt operations. To extend governance workflows, integrate Logic Apps with entitlement management: 
 
-* When an access package request is created or approved
-* When an access package assignment is granted or removed
-* 14 days before an access package assignment auto-expires
-* 1 day before an access package assignment auto-expires 
+* An access package request is created or approved
+* An access package assignment is granted or removed
+* Fourteen days before an access package assignment autoexpires
+* One day before an access package assignment autoexpires 
 
    >[!NOTE]
    >Have [Azure subscription resources](/cli/azure/manage-azure-subscriptions-azure-cli?tabs=bash&preserve-view=true) available for planning.
@@ -87,7 +87,7 @@ Create and run automated workflows with [Azure Logic Apps](/azure/logic-apps/), 
 * Send custom email notifications
 * Send Microsoft Teams notification
 * Get user information from applications
-* Writeback user information to external systems
+* Write back user information to external systems
 * Call an external web API to trigger actions on external systems
 * Create task sets in [Microsoft Planner](/office365/servicedescriptions/project-online-service-description/microsoft-planner-service-description)
 * Generate a temporary access pass (TAP)
@@ -113,17 +113,17 @@ Administrators determine review scope, then create reviews in access reviews, Mi
 
    [ ![Diagram of review creation for administrators.](media/governance-deployment/select-scope.png)](media/governance-deployment/select-scope-expanded.png#lightbox)
 
-The **New access review** dialog, with the **Reivew type** tab, shows options for review type, scope, and other configuration details. 
+The **New access review** dialog, with the **Review type** tab, shows options for review type, scope, and other configuration details. 
 
    [ ![Screenshot of the New access review dialog with the Review type tab.](media/governance-deployment/select-scope.png)](media/governance-deployment/select-scope-expanded.png#lightbox)
 
 ### Reviewers
 
-Administrators assign primary and fallback reviewers during access review creation. Reviewers are notified of pending reviews by email. You can assign users to self-review or assign resource owners to review their resources. For self-reviews, you can remove privileges if the user denies or doesn't respond.
+Administrators assign primary and fallback reviewers during access review creation. An email notifies reviewers of pending reviews. You can assign users to self-review or assign resource owners to review their resources. For self-reviews, you can remove privileges if the user denies or doesn't respond.
 
    [ ![Diagram of reviewer assignment steps for administrators.](media/governance-deployment/select-reviewer.png)](media/governance-deployment/select-reviewer-expanded.png#lightbox)
 
-The My Access dashboard shows a reviwer's pending approvals and recommendations.
+The My Access dashboard shows a reviewer's pending approvals and recommendations.
 
    [ ![Diagram of pending reviewes.](media/governance-deployment/select-reviewer.png)](media/governance-deployment/select-reviewer-expanded.png#lightbox)
 
@@ -139,7 +139,7 @@ Use the **New access review** dialog, and **Reviews** tab to configure review st
 
 ### Automated decision criteria
 
-During access review configuration, you can indicate a variety of decision criteria, including reviewer decision helpers. Other options include: 
+During access review configuration, you can indicate various decision criteria, including reviewer decision helpers. Other options include: 
 
 * Response triggers
 * Account inactivity
@@ -152,7 +152,7 @@ The **New access review** dialog, and **Settings** tab, with decision helper opt
 
 ### Inactive user reviews
 
-Users are considered inactive if they haven't signed in to the tenant within a designated duration. This behavior is adjusted for application assignment reviews, or a user's last activity in an app. To get started, define what inactive means for your organization. 
+If users haven't signed in to the tenant within a designated duration, they're considered intactive. This behavior is adjusted for application assignment reviews, or a user's last activity in an app. To get started, define what inactive means for your organization. 
 
 See a video about [access reviews for inactive users](https://youtu.be/rQxaoMoZRQ0) and an article on how to [detect and investigate inactive user accounts](../identity/monitoring-health/howto-manage-inactive-user-accounts.md). 
 
@@ -165,7 +165,7 @@ The **New access review** dialog, and **Review type** tab, with inactivity optio
 Reviewers can use machine-learning derived [recommendations](../id-governance/review-recommendations-access-reviews.md) to help make access decisions. Recommendations detect User-to-Group Affiliation, based on reporting-structure proximity. Users distant from group members have **low affiliation**. 
 
    > [!NOTE]
-   >User-to-Group Affiliation is available for users in your directory. However, groups of more than 600 users are not supported. Ensure users have a manager attribute.
+   >User-to-Group Affiliation is available for users in your directory. However, groups of more than 600 users aren't supported. Ensure users have a manager attribute.
 
 ## Access review for PIM for Groups
 
