@@ -62,7 +62,7 @@ In the following screenshot see the **Edit policy dialog**, with the **Create au
 For more information:
 
 * See a video about [entitlement management - auto assignment policy](https://www.youtube.com/watch?v=umGvpL3I41U)
-* Learn about [groups and access rights in Microsoft Entra ID](../fundamentals/how-to-manage-groups.md)
+* Learn about [groups and access rights in Microsoft Entra ID](../fundamentals/how-to-manage-groups.yml)
 
 ## Deploy PoC: Access package assignment
 
