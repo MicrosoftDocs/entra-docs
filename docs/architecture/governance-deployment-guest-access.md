@@ -22,7 +22,7 @@ The following products and services appear in this guide:
 * [Microsoft Entra](../fundamentals/what-is-entra.md)
 * [Entitlement management](../id-governance/entitlement-management-overview.md)
 * [Azure Logic Apps](/azure/logic-apps/logic-apps-overview)
-* [PIM for Groups](../id-governance/privileged-identity-management/concept-pim-for-groups.md)
+* Privileged Identity Management [(PIM) for Groups](../id-governance/privileged-identity-management/concept-pim-for-groups.md)
 * [Identity Governance dashboard](../id-governance/governance-dashboard.md)
 
 Use this scenario to help determine the need for [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md) to create and grant access for your organization. Learn how to manage guest users in your environment. 
@@ -69,7 +69,7 @@ Use the following table to ease decision making.
 
 |Entitlement management|Both|Self-service signup|
 |---|---|---|
-|- Requested with My Access portal or link </br> - Access packages </br> - Built-in approval workflows </br> - Scope requests by organization </br> - Lifecycle automation </br> - Supports Security Assertion Markup Language (SAML) and Web Service Federation (WS-Fed) identities|- Request triggered by end user </br> - Collect additional attributes </br> - Trigger custom logic apps and APIs </br> - Available to anyone </br> - Supports: Microsoft Entra ID, email one-time pass (OTP)|- Branded onboarding sign-in page </br> - Users create accounts at the app </br> - Language options </br> - Supports: Google, Microsoft Account (MSA), Facebook |
+|- Requested with My Access portal or link </br> - Access packages </br> - Built-in approval workflows </br> - Scope requests by organization </br> - Lifecycle automation </br> - Supports Security Assertion Markup Language (SAML) and Web Service Federation (WS-Fed) identities|- Request triggered by end user </br> - Collect other attributes </br> - Trigger custom logic apps and APIs </br> - Available to anyone </br> - Supports: Microsoft Entra ID, email one-time pass (OTP)|- Branded onboarding sign-in page </br> - Users create accounts at the app </br> - Language options </br> - Supports: Google, Microsoft Account (MSA), Facebook |
 
 ## Onboarding and discovery
 
@@ -100,7 +100,7 @@ When external users request initial access, they're invited to your directory an
 ## Deploy PoC: External user access
 
 1. [Add connected organization](/azure/active-directory/governance/entitlement-management-organization).
-2. [Settings for external users](/azure/active-directory/governance/entitlement-management-external-users).
+2. [Learn settings for external users](/azure/active-directory/governance/entitlement-management-external-users).
 3. [Create an access package in entitlement management](/azure/active-directory/governance/entitlement-management-access-package-create).
 4. [Change the Hidden setting](/azure/active-directory/governance/entitlement-management-access-package-edit).
 5. [Create an access package with Verified ID requirements](/azure/active-directory/governance/entitlement-management-verified-id-settings).
@@ -149,7 +149,7 @@ The User-to-Group Affiliation feature helps you make access decisions based on m
 
 Access reviews include new groups with guest users and groups with recently added guests. Review recommendations are based on last sign-in details. As an option, denied guests are blocked from sign-in, then the account is deleted.  
 
-Learn more :  
+Learn more:  
 
 * [Guest access in Microsoft Teams](/microsoftteams/guest-access)
 * [Manage guest access in Microsoft 365 Groups](/microsoft-365/admin/create-groups/manage-guest-access-in-groups?view=o365-worldwide&preserve-view=true)
@@ -220,7 +220,7 @@ For PoC deployment instructions, go to [Scenario 2: Assign employee access to re
 14. On **Add dynamic content**, select the **Add dynamic content** link.
 15. Search for Requestor.
 16. Select **DisplayName**.
-17. For **Body**, type **User added as an exception to Condtional Access policy**. 
+17. For **Body**, type **User added as an exception to Conditional Access policy**. 
 
    [ ![Screenshot of the Add dynamic content diaglog and highlighted options.](media/governance-deployment/user-added.png)](media/governance-deployment/user-added-expanded.png#lightbox)
 
