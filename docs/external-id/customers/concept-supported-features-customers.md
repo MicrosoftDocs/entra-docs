@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 03/07/2025
+ms.date: 03/10/2025
 ms.author: mimart
 ms.custom: it-pro, seo-july-2024
 
@@ -34,9 +34,9 @@ The following table compares the general features and capabilities available in 
 |Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
 | **External identities scenario** | Allow business partners and other external users to collaborate with your workforce. Guests can securely access your business applications through invitations or self-service sign-up.  | Use External ID to secure your applications. Consumers and business customers can securely access your consumer apps through self-service sign-up. Invitations are also supported.  |
-| **Local accounts** | Local accounts are supported for *internal* members of your organization only.    | Local accounts are supported for:<ul><li> External users created through self-service sign-up or [by an admin](how-to-manage-customer-accounts.md).</li><li>Internal users, with or without an admin role.</li></ul> **Note:** External users have default permissions and can’t be assigned roles. Internal users have [default permissions](reference-user-permissions.md) unless they’re [assigned an admin role](how-to-manage-admin-accounts.md).  |
+| **Local accounts** | Local accounts are supported for *internal* members of your organization only.    | Local accounts are supported for:<ul><li> External users created through self-service sign-up or [by an admin](how-to-manage-customer-accounts.md).</li><li>Internal users, with or without an admin role.</li></ul> **Note:** All users in an external tenant have [default permissions](reference-user-permissions.md) unless they’re assigned an [admin role](how-to-manage-admin-accounts.md).  |
 | **Groups** | [Groups](/entra/fundamentals/how-to-manage-groups) can be used to manage administrative and user accounts.| Groups can be used to manage administrative accounts. Support for Microsoft Entra groups and [application roles](how-to-use-app-roles-customers.md) is being phased into customer tenants. For the latest updates, see [Groups and application roles support](reference-group-app-roles-support.md). |
-| **Roles and administrators**| [Roles and administrators](~/fundamentals/how-subscriptions-associated-directory.yml) are fully supported for administrative and user accounts. | Roles aren't supported with customer accounts. Customer accounts don't have access to tenant resources.|
+| **Roles and administrators**| [Roles and administrators](~/fundamentals/how-subscriptions-associated-directory.yml) are fully supported for administrative and user accounts. | Roles are supported for all users. All users in an external tenant have [default permissions](reference-user-permissions.md) unless they’re assigned an [admin role](how-to-manage-admin-accounts.md).|
 | **ID Protection**    |   Provides ongoing risk detection for your Microsoft Entra tenant. It allows organizations to discover, investigate, and remediate identity-based risks.    |   A subset of the Microsoft Entra ID Protection risk detections is available. [Learn more](how-to-identity-protection-customers.md).    |
 | **ID Governance**    |   Enables organizations to govern identity and access lifecycles, and secure privileged access. [Learn more](~/id-governance/identity-governance-overview.md).    |   Not available    |
 | **Self-service password reset**    |   Allow users to reset their password using up to two authentication methods (see the next row for available methods).    |   Allow users to reset their password using email with one time passcode. [Learn more](how-to-enable-password-reset-customers.md).     |  
@@ -145,7 +145,7 @@ The following table compares the features available for user management in each 
 
 |Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
-|**Types of accounts** | <ul><li>Internal members, for example employees and admins.</li><li>External users who are [invited](../what-is-b2b.md) or use self-service sign-up.</li></ul> | <ul><li> External users created through self-service sign-up or [by an admin](how-to-manage-customer-accounts.md).</li><li> Internal users, with or without an admin role. </li><li> 	Invited users (preview), with or without an admin role. </li></ul> **Note:** External users have default permissions and can’t be assigned roles. Internal and invited users have [default permissions](reference-user-permissions.md) unless they’re [assigned an admin role](how-to-manage-admin-accounts.md). |
+|**Types of accounts** | <ul><li>Internal members, for example employees and admins.</li><li>External users who are [invited](../what-is-b2b.md) or use self-service sign-up.</li></ul> | <ul><li> External users created through self-service sign-up or [by an admin](how-to-manage-customer-accounts.md).</li><li> Internal users, with or without an admin role. </li><li> 	Invited users (preview), with or without an admin role. </li></ul> **Note:** All users in an external tenant have [default permissions](reference-user-permissions.md) unless they’re assigned an [admin role](how-to-manage-admin-accounts.md). |
 | **Manage user profile info** | Programmatically and by [using the Microsoft Entra admin center](~/fundamentals/how-to-manage-user-profile-info.yml). |Same as workforce.|
 | **Reset a user's password** | Administrators can [reset a user's password](~/fundamentals/users-reset-password-azure-portal.yml) if the password is forgotten, if the user gets locked out of a device, or if the user never received a password. |Same as workforce.|
 |**Restore or remove a recently deleted user**|After you delete a user, the account remains in a suspended state for 30 days. During that 30-day window, the user account can be restored, along with all its properties.|Same as workforce.|

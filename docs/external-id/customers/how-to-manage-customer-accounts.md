@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: how-to
-ms.date: 11/11/2024
+ms.date: 03/10/2025
 ms.author: mimart
 ms.custom: it-pro
 
@@ -17,7 +17,7 @@ ms.custom: it-pro
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-External users are consumers and business customers of the apps registered in your Microsoft Entra external tenant. They have local accounts in your external tenant, but they authenticate externally. External users are limited to [default user permissions](reference-user-permissions.md), and can't be assigned admin roles.
+External users are consumers and business customers of the apps registered in your Microsoft Entra external tenant. They have local accounts in your external tenant, but they authenticate externally. Because external users are generally considered to be end users of the apps registered in your external tenant, you don't typically assign them admin roles, so they retain [default user permissions](reference-user-permissions.md).
 
 Although customer accounts are most commonly created when users sign up to use one of your applications, you can create them programmatically and by using the Microsoft Entra admin center. This article focuses on the Microsoft Entra admin center method of user creation and deletion. To add or delete users, your account must be assigned at least the [User Administrator](/entra/identity/role-based-access-control/permissions-reference#user-administrator) role.
 
