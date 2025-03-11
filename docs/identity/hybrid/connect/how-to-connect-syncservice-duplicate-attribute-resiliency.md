@@ -3,7 +3,7 @@ title: Identity synchronization and duplicate attribute resiliency
 description: New behavior of how to handle objects with UPN or ProxyAddress conflicts during directory sync using Microsoft Entra Connect.
 
 author: billmath
-manager: amycolannino
+manager: femila
 
 ms.assetid: 537a92b7-7a84-4c89-88b0-9bce0eacd931
 ms.service: entra-id

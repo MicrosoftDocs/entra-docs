@@ -3,7 +3,7 @@ title: Microsoft Entra Cloud Sync supported topologies and scenarios
 description: Learn about various on-premises and Microsoft Entra topologies that use Microsoft Entra Cloud Sync.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.date: 12/17/2024

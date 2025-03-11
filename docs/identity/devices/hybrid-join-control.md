@@ -9,7 +9,7 @@ ms.date: 11/25/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: sandeo
 ---
 # Microsoft Entra hybrid join targeted deployment

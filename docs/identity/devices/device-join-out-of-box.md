@@ -9,7 +9,7 @@ ms.date: 04/25/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: 
 ---
 # Microsoft Entra join a new Windows device during the out of box experience

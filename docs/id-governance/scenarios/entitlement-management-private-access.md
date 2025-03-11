@@ -4,7 +4,7 @@ description: Describes how to use Entitlement Management with Private Access
 ms.service: entra-id-governance
 ms.subservice:
 author: billmath
-manager: amycolannino
+manager: femila
 
 ms.workload: identity
 ms.topic: overview

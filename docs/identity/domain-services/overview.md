@@ -2,7 +2,7 @@
 title: Overview of Microsoft Entra Domain Services | Microsoft Docs
 description: In this overview, learn what Microsoft Entra Domain Services provides and how to use it in your organization to provide identity services to applications and services in the cloud.
 author: justinha
-manager: amycolannino
+manager: femila
 
 ms.service: entra-id
 ms.subservice: domain-services

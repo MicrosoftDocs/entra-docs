@@ -2,7 +2,7 @@
 title: Error codes when onboarding Permissions Management
 description: Understand potential error codes that may appear during onboarding of Microsoft Entra Permissions Management
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: reference

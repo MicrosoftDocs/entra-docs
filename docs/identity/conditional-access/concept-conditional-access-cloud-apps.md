@@ -11,7 +11,7 @@ ms.date: 10/28/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: lhuangnorth
 ---
 # Conditional Access: Target resources

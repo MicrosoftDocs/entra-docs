@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.date: 03/03/2025
 ms.author: jomondi
 ms.reviewer: ergreenl
-ms.custom: it-pro, enterprise-apps, has-azure-ad-ps-ref
+ms.custom: it-pro, enterprise-apps, no-azure-ad-ps-ref
 ms.collection: M365-identity-device-management
 zone_pivot_groups: enterprise-apps-all
 
