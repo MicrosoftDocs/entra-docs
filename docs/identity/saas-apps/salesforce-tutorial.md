@@ -27,7 +27,7 @@ In this article, you learn how to integrate Salesforce with Microsoft Entra ID. 
 
 The scenario outlined in this article assumes that you already have the following prerequisites:
 
-* [!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Salesforce single sign-on (SSO) enabled subscription.
 
 ## Scenario description
@@ -211,7 +211,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 
 ## Prevent application access through local accounts
-Once you've validated that SSO works and rolled it out in your organization, disable application access using [local credentials](https://help.salesforce.com/s/articleView?id=sf.sso_enforce_sso_login.htm&type=5). This ensures that your conditional access policies, MFA, etc. is in place to protect sign-ins to Salesforce. 
+Once you've validated that SSO works and rolled it out in your organization, disable application access using [local credentials](https://help.salesforce.com/s/articleView?id=sf.sso_enforce_sso_login.htm&type=5). This ensures that your Conditional Access policies, MFA, etc. is in place to protect sign-ins to Salesforce. 
 
 
 ## Related content

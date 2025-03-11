@@ -9,7 +9,7 @@ ms.date: 11/25/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: jogro
 ---
 # Troubleshooting Windows devices in Microsoft Entra ID

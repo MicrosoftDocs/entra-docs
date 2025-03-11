@@ -3,11 +3,11 @@ title: Export Application Provisioning configuration and roll back to a known go
 description: Learn how to export your Application Provisioning configuration and roll back to a known good state for disaster recovery in Microsoft Entra ID.
 
 author: kenwith
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 11/27/2024
+ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: arvinh
 ---

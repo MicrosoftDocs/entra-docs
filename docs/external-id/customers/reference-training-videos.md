@@ -28,7 +28,7 @@ In the training module, you'll:
 - Create your first Microsoft Entra External ID tenant.
 - Build a branded, seamless, and secure sign-up and sign-in experience for your web application.
 - Evaluate Microsoft Entra External ID identity provider capabilities against consumer and business customer needs.
-- Protect access to your application with conditional access and multifactor authentication.
+- Protect access to your application with Conditional Access and multifactor authentication.
 
 To start the training, go to [Guided project – Build a sample app to evaluate Microsoft Entra External ID](https://aka.ms/eeid/training-module) and follow the units in order.
 

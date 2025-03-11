@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect: Next steps and how to manage Microsoft Entra Co
 description: Learn how to extend the default configuration and operational tasks for Microsoft Entra Connect.
 
 author: billmath
-manager: amycolannino
+manager: femila
 
 ms.assetid: c18bee36-aebf-4281-b8fc-3fe14116f1a5
 ms.service: entra-id

@@ -5,12 +5,12 @@ description: Learn about how to enable QR code authentication method in Microsof
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/19/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: aanjusingh
 ms.reviewer: anjusingh
-manager: amycolannino
+manager: femila
 
 # Customer intent: As an identity administrator, I want to understand how to enable QR code authentication in Microsoft Entra ID to improve and secure user sign-in events for frontline workers
 ---
@@ -25,7 +25,7 @@ This topic covers how to enable the QR code authentication method in the Authent
 - Android, iOS, or iPadOS (iOS/iPadOS version 15.0 or later) shared devices. 
 - Shared device mode enabled on the shared devices (optional but highly recommended). 
 - A printer to print 2" x 2" QR codes. 
-- Teams app installed on the shared device (Android version 1.0.0.2024143204 or later, and iOS version 1.0.0.77.2024132501 or later).
+- To access QR code authentication on Teams, Teams app installed on the shared device would require these versions: Android version 1.0.0.2024143204 or later, and iOS version 1.0.0.77.2024132501 or later.
 - [Enable and setup My Staff portal](~/identity/role-based-access-control/my-staff-configure.md#how-to-enable-my-staff) if you plan for frontline managers to use My Staff to provision, manage, and reset QR code and PINs. 
 
 ## Enable QR code authentication method
@@ -78,7 +78,7 @@ This example enables QR code authentication for a group, with a PIN length of 10
 
 ## Add QR code authentication method for a user
 
-You can add a QR code authentication method for a user by using the Microsoft Entra admin center, My Staff, or Microsoft Graph API. 
+You can add a QR code authentication method for a user by using the Microsoft Entra admin center, My Staff, or Microsoft Graph API. At a time, only one active QR code auth method is allowed. Standard QR code is generated during 'Add authentication method'. You can add Temporary QR code, which is short-lived, if user is not carrying Standard QR code. You can delete Standard/Temporary QR code to add a new Standard/Temporary QR code. A user can have only one Standard and one Temporary QR code active at any point of time. 
 
 ### Add QR code authentication method for a user in the Microsoft Entra admin center
 
@@ -484,20 +484,23 @@ When configuring with Intune, assign Microsoft Authenticator as a required app f
 
 ### QR code authentication Teams sign-in experience 
 
-Users need to [download Teams](https://aka.ms/teamsmobiledownload):
+Users need to [download Teams](https://aka.ms/teamsmobiledownload). The following table lists the minimum Teams version for mobile operating systems. For more information about Teams versions, see [Version update history for the new and classic Microsoft Teams app](/officeupdates/teams-app-versioning).
 
-- For iOS and iPad, you need Teams version 1.0.0.77.2024132501 or later 
-- For Android, you need Teams version 1.0.0.2024143204 or later 
+Mobile OS | Release date | Teams version 
+----------|--------------|--------------
+iOS and iPadOS | July 21, 2024 | 6.13.1 (1.0.0.77.2024132501)	
+Android | August 08, 2024 | 1416/1.0.0.2024143204 (2024143204)	
 
-   
-1. Click **Sign-in with QR code** in Microsoft Teams.
-1. Scan the QR code. Give consent if asked for camera permission.
+Users can follow these steps to sign in with a QR code in Teams:
+
+1. Click **Scan QR code** in Microsoft Teams.
+1. Scan the QR code. Give consent if you're asked for camera permission.
 1. Enter your PIN.
 1. You're now signed in to the app.
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/enter-pin.png" alt-text="Screenshot that shows how to enter a PIN.":::
 
-1. When you sign-in with a temporary PIN, you need to change it. 
+1. When you sign in with a temporary PIN, you need to change it. 
 
    :::image type="content" border="true" source="media/how-to-authentication-qr-code/change-pin.png" alt-text="Screenshot that shows how to change a PIN.":::
 

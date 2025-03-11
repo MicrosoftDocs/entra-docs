@@ -4,10 +4,10 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/26/2025
+ms.date: 03/06/2025
 ms.author: justinha
 author: najshahid
-manager: amycolannino
+manager: femila
 ms.reviewer: nashahid, gkinasewitz
 
 # Customer intent: As an identity administrator, I want to plan for mandatory MFA for users who sign in to Azure portal.
@@ -26,6 +26,9 @@ The scope of enforcement includes which applications plan to enforce MFA, applic
 
 ### Applications
 
+> [!NOTE]
+> The date of enforcement for Phase 2 has changed to summer of 2025.
+
 The following table lists affected apps, app IDs, and URLs for Azure. 
 
 | Application Name | App ID | Enforcement starts |
@@ -33,10 +36,10 @@ The following table lists affected apps, app IDs, and URLs for Azure.
 | [Azure portal](/azure/azure-portal/)     | c44b4083-3bb0-49c1-b47d-974e53cbdf3c  | Second half of 2024 |
 | [Microsoft Entra admin center](https://aka.ms/MSEntraPortal) | c44b4083-3bb0-49c1-b47d-974e53cbdf3c | Second half of 2024 |
 | [Microsoft Intune admin center](https://aka.ms/IntunePortal) | c44b4083-3bb0-49c1-b47d-974e53cbdf3c | Second half of 2024 |
-| [Azure command-line interface (Azure CLI)](/cli/azure/) | 04b07795-8ddb-461a-bbee-02f9e1bf7b46 | Early 2025 |
-| [Azure PowerShell](/powershell/azure/) | 1950a258-227b-4e31-a9cf-717495945fc2 | Early 2025 |
-| [Azure mobile app](/azure/azure-portal/mobile-app/overview)  | 0c1307d4-29d6-4389-a11c-5cbe7f65d7fa | Early 2025 |
-| [Infrastructure as Code (IaC) tools](/devops/deliver/what-is-infrastructure-as-code) | Use Azure CLI or Azure PowerShell IDs | Early 2025 | 
+| [Azure command-line interface (Azure CLI)](/cli/azure/) | 04b07795-8ddb-461a-bbee-02f9e1bf7b46 | Summer 2025 |
+| [Azure PowerShell](/powershell/azure/) | 1950a258-227b-4e31-a9cf-717495945fc2 | Summer 2025 |
+| [Azure mobile app](/azure/azure-portal/mobile-app/overview)  | 0c1307d4-29d6-4389-a11c-5cbe7f65d7fa | Summer 2025 |
+| [Infrastructure as Code (IaC) tools](/devops/deliver/what-is-infrastructure-as-code) | Use Azure CLI or Azure PowerShell IDs | Summer 2025 | 
 
 The following table lists affected apps and URLs for Microsoft 365. 
 
@@ -56,14 +59,92 @@ Workload identities, such as managed identities and service principals, aren't i
 
 ### Client libraries
 
-The OAuth 2.0 Resource Owner Password Credentials (ROPC) token grant flow is incompatible with MFA. Once MFA is enabled in your Microsoft Entra tenant, ROPC-based APIs used in your applications will begin throwing exceptions. Guidance for migrating away from ROPC-based APIs in [Microsoft Authentication Libraries (MSAL)](/entra/msal/) is provided at [How to migrate away from ROPC](/entra/identity-platform/v2-oauth-ropc#how-to-migrate-away-from-ropc).
+The OAuth 2.0 Resource Owner Password Credentials (ROPC) token grant flow is incompatible with MFA. After MFA is enabled in your Microsoft Entra tenant, ROPC-based APIs used in your applications throw exceptions. For more information abot how to migrate from ROPC-based APIs in [Microsoft Authentication Libraries (MSAL)](/entra/msal/), see [How to migrate away from ROPC](/entra/identity-platform/v2-oauth-ropc#how-to-migrate-away-from-ropc). For language-specific MSAL guidance, see the following tabs.
 
-The same general MSAL guidance applies to the Azure Identity libraries for [.NET](/dotnet/api/overview/azure/identity-readme), [Go](https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/azidentity), [Java](/java/api/overview/azure/identity-readme), [JavaScript](/javascript/api/overview/azure/identity-readme), and [Python](/python/api/overview/azure/identity-readme). The `UsernamePasswordCredential` class provided in those languages' libraries uses MSAL ROPC-based APIs. Changes are required if you're doing one of the following things in your application:
+### [.NET](#tab/dotnet)
 
-- Using `DefaultAzureCredential` or `EnvironmentCredential` with the following two environment variables set:
+Changes are required if you use the [Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client) package and one of the following APIs in your application:
+
+- [IByUsernameAndPassword.AcquireTokenByUsernamePassword](/dotnet/api/microsoft.identity.client.ibyusernameandpassword.acquiretokenbyusernamepassword) (confidential client API)
+- [PublicClientApplication.AcquireTokenByUsernamePassword](/dotnet/api/microsoft.identity.client.publicclientapplication.acquiretokenbyusernamepassword) (public client API)
+
+### [Go](#tab/go)
+
+Changes are required if you use the [microsoft-authentication-library-for-go](https://pkg.go.dev/github.com/AzureAD/microsoft-authentication-library-for-go) module and one of the following APIs in your application:
+
+- [Client.AcquireTokenByUsernamePassword](https://pkg.go.dev/github.com/AzureAD/microsoft-authentication-library-for-go@v1.4.0/apps/confidential#Client.AcquireTokenByUsernamePassword) (confidential client API)
+- [Client.AcquireTokenByUsernamePassword](https://pkg.go.dev/github.com/AzureAD/microsoft-authentication-library-for-go@v1.4.0/apps/public#Client.AcquireTokenByUsernamePassword) (public client API)
+
+### [Java](#tab/java)
+
+Changes are required if you use the [msal4j](https://central.sonatype.com/artifact/com.microsoft.azure/msal4j) package and the following API in your application:
+
+[PublicClientApplication.acquireToken(UserNamePasswordParameters parameters)](/java/api/com.microsoft.aad.msal4j.publicclientapplication#com-microsoft-aad-msal4j-publicclientapplication-acquiretoken(com-microsoft-aad-msal4j-usernamepasswordparameters))
+
+### [Node.js](#tab/js)
+
+Changes are required if you use the [@azure/msal-node](https://www.npmjs.com/package/@azure/msal-node) package and one of the following APIs in your application:
+
+- [ClientApplication.acquireTokenByUsernamePassword](/javascript/api/@azure/msal-node/clientapplication#@azure-msal-node-clientapplication-acquiretokenbyusernamepassword)
+- [IConfidentialClientApplication.acquireTokenByUsernamePassword](/javascript/api/@azure/msal-node/iconfidentialclientapplication#@azure-msal-node-iconfidentialclientapplication-acquiretokenbyusernamepassword)
+- [IPublicClientApplication.acquireTokenByUsernamePassword](/javascript/api/@azure/msal-node/ipublicclientapplication#@azure-msal-node-ipublicclientapplication-acquiretokenbyusernamepassword)
+
+### [Python](#tab/python)
+
+Changes are required if you use the [msal](https://pypi.org/project/msal/) package and the following API in your application:
+
+[ClientApplication.acquire_token_by_username_password](/python/api/msal/msal.application.clientapplication#msal-application-clientapplication-acquire-token-by-username-password)
+
+---
+
+The same general MSAL guidance applies to the Azure Identity libraries. The `UsernamePasswordCredential` class provided in those libraries uses MSAL ROPC-based APIs. For language-specific guidance, see the following tabs.
+
+### [.NET](#tab/dotnet)
+
+Changes are required if you use the [Azure.Identity](https://www.nuget.org/packages/Azure.Identity) package and do one of the following things in your application:
+
+- Use [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential) or [EnvironmentCredential](/dotnet/api/azure.identity.environmentcredential) with the following two environment variables set:
     - `AZURE_USERNAME`
     - `AZURE_PASSWORD`
-- Using `UsernamePasswordCredential`
+- Use [UsernamePasswordCredential](/dotnet/api/azure.identity.usernamepasswordcredential)
+
+### [Go](#tab/go)
+
+Changes are required if you use the [azidentity](https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/azidentity) module and do one of the following things in your application:
+
+- Use [DefaultAzureCredential](https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/azidentity#DefaultAzureCredential) or [EnvironmentCredential](https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/azidentity#EnvironmentCredential) with the following two environment variables set:
+    - `AZURE_USERNAME`
+    - `AZURE_PASSWORD`
+- Use [UsernamePasswordCredential](https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/azidentity#UsernamePasswordCredential)
+
+### [Java](#tab/java)
+
+Changes are required if you use the [azure-identity](https://central.sonatype.com/artifact/com.azure/azure-identity) package and do one of the following things in your application:
+
+- Use [DefaultAzureCredential](/java/api/com.azure.identity.defaultazurecredential) or [EnvironmentCredential](/java/api/com.azure.identity.environmentcredential) with the following two environment variables set:
+    - `AZURE_USERNAME`
+    - `AZURE_PASSWORD`
+- Use [UsernamePasswordCredential](/java/api/com.azure.identity.usernamepasswordcredential)
+
+### [Node.js](#tab/js)
+
+Changes are required if you use the [@azure/identity](https://www.npmjs.com/package/@azure/identity) package and do one of the following things in your application:
+
+- Use [DefaultAzureCredential](/javascript/api/@azure/identity/defaultazurecredential) or [EnvironmentCredential](/javascript/api/@azure/identity/environmentcredential) with the following two environment variables set:
+    - `AZURE_USERNAME`
+    - `AZURE_PASSWORD`
+- Use [UsernamePasswordCredential](/javascript/api/@azure/identity/usernamepasswordcredential)
+
+### [Python](#tab/python)
+
+Changes are required if you use the [azure-identity](https://pypi.org/project/azure-identity) package and do one of the following things in your application:
+
+- Use [DefaultAzureCredential](/python/api/azure-identity/azure.identity.defaultazurecredential) or [EnvironmentCredential](/python/api/azure-identity/azure.identity.environmentcredential) with the following two environment variables set:
+    - `AZURE_USERNAME`
+    - `AZURE_PASSWORD`
+- Use [UsernamePasswordCredential](/python/api/azure-identity/azure.identity.usernamepasswordcredential)
+
+---
 
 ### Migrate user-based service accounts to workload identities
 
@@ -82,19 +163,22 @@ Some customers apply Conditional Access policies to user-based service accounts.
 
 ## Implementation
  
-This requirement for MFA at sign-in is implemented for admin portals. Microsoft Entra ID [sign-in logs](~/identity/monitoring-health/concept-sign-ins.md) shows it as the source of the MFA requirement. 
+This requirement for MFA at sign-in is implemented for admin portals and other [applications](#applications). Microsoft Entra ID [sign-in logs](~/identity/monitoring-health/concept-sign-ins.md) shows it as the source of the MFA requirement. 
 
-Mandatory MFA for admin portals isn't configurable. It's implemented separately from any access policies that you configured in your tenant. 
+Mandatory MFA isn't configurable. It's implemented separately from any access policies configured in the tenant. 
 
 For example, if your organization chose to retain Microsoft's [security defaults](~/fundamentals/security-defaults.md), and you currently have security defaults enabled, your users don't see any changes as MFA is already required for Azure management. If your tenant is using [Conditional Access](~/identity/conditional-access/overview.md) policies in Microsoft Entra and you already have a Conditional Access policy through which users sign into Azure with MFA, then your users don't see a change. Similarly, any restrictive Conditional Access policies that target Azure and require stronger authentication, such as phishing-resistant MFA, continue to be enforced. Users don't see any changes.
 
 ## Enforcement phases 
 
+> [!NOTE]
+> The date of enforcement for Phase 2 has changed to the summer of 2025.
+
 The enforcement of MFA rolls out in two phases: 
 
 - **Phase 1**: Starting in October 2024, MFA is required to sign in to the Azure portal, Microsoft Entra admin center, and Microsoft Intune admin center. The enforcement will gradually roll out to all tenants worldwide. Starting in February 2025, MFA enforcement gradually begins for sign in to Microsoft 365 admin center. This phase won't impact other Azure clients such as Azure CLI, Azure PowerShell, Azure mobile app, or IaC tools.  
 
-- **Phase 2**: Later in 2025, MFA enforcement will gradually begin for Azure CLI, Azure PowerShell, Azure mobile app, and IaC tools. Some customers may use a user account in Microsoft Entra ID as a service account. It's recommended to migrate these user-based service accounts to [secure cloud based service accounts](/entra/architecture/secure-service-accounts) with [workload identities](~/workload-id/workload-identities-overview.md). 
+- **Phase 2**: In the summer of 2025, MFA enforcement will gradually begin for Azure CLI, Azure PowerShell, Azure mobile app, and IaC tools. Some customers may use a user account in Microsoft Entra ID as a service account. It's recommended to migrate these user-based service accounts to [secure cloud based service accounts](/entra/architecture/secure-service-accounts) with [workload identities](~/workload-id/workload-identities-overview.md). 
 
 ## Notification channels 
 
@@ -120,12 +204,9 @@ If you're using a federated Identity Provider (IdP), such as Active Directory Fe
 
 ## Request more time to prepare for enforcement 
 
-> [!NOTE]
-> The date when Global Administrators can select the start date of enforcement has changed from Feb. 24, 2025 to Mar. 3, 2025.
-
 We understand that some customers may need more time to prepare for this MFA requirement. Microsoft is allowing customers with complex environments or technical barriers to postpone the enforcement for their tenants until September 30, 2025. 
 
-Starting on March 3, 2025, Global Administrators can go to the [Azure portal](https://aka.ms/managemfaforazure) to select the start date of enforcement for their tenant for admin portals in Phase 1. Global Administrators must [elevate access](https://aka.ms/enableelevatedaccess) before they can postpone the start date of MFA enforcement.  
+Starting on March 3, 2025, Global Administrators can go to the [Azure portal](https://aka.ms/managemfaforazure) to select the start date of enforcement for their tenant for admin portals in Phase 1. Global Administrators must [elevate access](https://aka.ms/enableelevatedaccess) and use MFA before they can postpone the start date of MFA enforcement.  
 
 Global Administrators must perform this action for every tenant where they want to postpone the start date of enforcement.  
 
@@ -157,7 +238,7 @@ By postponing the start date of enforcement, you take extra risk because account
 
 **Answer**: Third-party MFA can be integrated directly with Microsoft Entra ID. For more information, see [Microsoft Entra multifactor authentication external method provider reference](concept-authentication-external-method-provider.md). Microsoft Entra ID can be optionally configured with a federated Identity provider. If so, the identity provider solution needs to be configured properly to send the multipleauthn claim to Microsoft Entra ID. For more information, see [Satisfy Microsoft Entra ID multifactor authentication (MFA) controls with MFA claims from a federated IdP](how-to-mfa-expected-inbound-assertions.md). 
 
-**Question**: Will phase 1 or phase 2 of mandatory MFA impact my ability to sync with Microsoft Entra Connect or Microsoft Entra Cloud Sync?
+**Question**: Will mandatory MFA impact my ability to sync with Microsoft Entra Connect or Microsoft Entra Cloud Sync?
 
 **Answer**: No. The synchronization service account isn't affected by the mandatory MFA requirement. Only [applications](#applications) listed earlier require MFA for sign in. 
 
@@ -165,7 +246,7 @@ By postponing the start date of enforcement, you take extra risk because account
 
 There's no way to opt out. This security motion is critical to all safety and security of the Azure platform and is being repeated across cloud vendors. For example, see [Secure by Design: AWS to enhance MFA requirements in 2024](https://aws.amazon.com/blogs/security/security-by-design-aws-to-enhance-mfa-requirements-in-2024/). 
  
-An option to postpone the enforcement start date is available for customers. Between August 15, 2024 and October 15, 2024, Global Administrators can go to the [Azure portal](https://aka.ms/managemfaforazure) to postpone the start date of enforcement for their tenant to March 15, 2025. Global Administrators must have [elevated access](https://aka.ms/enableelevatedaccess) before they postpone the start date of MFA enforcement on this page. They must perform this action for each tenant that needs postponement.
+An option to postpone the enforcement start date is available for customers. Global Administrators can go to the [Azure portal](https://aka.ms/managemfaforazure) to postpone the start date of enforcement for their tenant. Global Administrators must have [elevated access](https://aka.ms/enableelevatedaccess) before they postpone the start date of MFA enforcement on this page. They must perform this action for each tenant that needs postponement.
  
 **Question**: Can I test MFA before Azure enforces the policy to ensure nothing breaks? 
 

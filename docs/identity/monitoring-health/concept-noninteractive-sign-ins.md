@@ -2,7 +2,7 @@
 title: Non-interactive sign-in logs
 description: Learn about the type of activity captured in the non-interactive sign-in logs in Microsoft Entra monitoring and health.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health

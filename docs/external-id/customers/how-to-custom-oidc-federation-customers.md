@@ -26,7 +26,7 @@ When you add an OIDC identity provider to your user flow's sign-in options, user
 ## Prerequisites
 
 - An [external tenant](how-to-create-external-tenant-portal.md).
-- A [registered application](how-to-register-ciam-app.md) in the tenant.
+- A [registered application](/entra/identity-platform/quickstart-register-app) in the tenant.
 - A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
 
 ## Set up your OpenID Connect identity provider

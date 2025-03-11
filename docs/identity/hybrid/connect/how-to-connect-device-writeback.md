@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect: Enabling device writeback'
 description: This document details how to enable device writeback using Microsoft Entra Connect
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: c0ff679c-7ed5-4d6e-ac6c-b2b6392e7892
 ms.service: entra-id
 ms.tgt_pltfrm: na

@@ -3,7 +3,7 @@ title: What is Global Secure Access?
 description: Learn how Microsoft's Security Service Edge (SSE) solution, Global Secure Access, provides network access control and visibility to users and devices inside and outside a traditional office.
 author: kenwith
 ms.author: kenwith
-manager: rkarlin
+manager: femila
 ms.topic: overview
 ms.date: 02/21/2025
 ms.service: global-secure-access

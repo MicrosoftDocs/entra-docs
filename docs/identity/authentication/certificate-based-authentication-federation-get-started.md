@@ -6,11 +6,11 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.custom: has-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 01/03/2024
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: vraganathan
 ---
 # Get started with certificate-based authentication in Microsoft Entra ID with federation

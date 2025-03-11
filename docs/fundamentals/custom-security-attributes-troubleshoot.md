@@ -2,7 +2,7 @@
 title: Troubleshoot custom security attributes in Microsoft Entra ID
 description: Learn how to troubleshoot custom security attributes in Microsoft Entra ID.
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.author: rolyon
 ms.service: entra
 ms.subservice: fundamentals

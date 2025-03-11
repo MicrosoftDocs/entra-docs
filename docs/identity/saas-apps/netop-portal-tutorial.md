@@ -139,7 +139,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Netop Portal SSO
 
-To configure single sign-on on **Netop Portal** side, you need to the downloaded **Federation Metadata XML** and the Login URL from Azure portal. Follow the instructions in Step 3 of the documentation [here](https://kb.netop.com/article/netop-remote-control-portal-adfs-and-azure-ad-integration-456.html) to configure NetOp Portal for Microsoft Entra authentication.
+To configure single sign-on on **Netop Portal** side, you need to the downloaded **Federation Metadata XML** and the Login URL from Azure portal. Follow the instructions in Step 3 of the documentation [here](https://support.netop.com/hc/en-us/articles/35623530508435-ADFS-and-Azure-AD-Integration) to configure NetOp Portal for Microsoft Entra authentication.
 
 ### Create Netop Portal test user
 

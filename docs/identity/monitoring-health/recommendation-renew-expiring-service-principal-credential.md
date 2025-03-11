@@ -3,7 +3,7 @@ title: Renew expiring service principal credentials recommendation
 description: Learn how the Microsoft Entra recommendation to renew expiring service principal credentials work and why it's important.
 
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health

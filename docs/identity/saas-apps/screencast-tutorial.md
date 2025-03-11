@@ -34,7 +34,7 @@ To get started, you need the following items:
 
 In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
-* ScreenPal supports onlly **SP** initiated SSO.
+* ScreenPal supports only **SP** initiated SSO.
 * ScreenPal supports **Just In Time** user provisioning.
 
 > [!NOTE]
