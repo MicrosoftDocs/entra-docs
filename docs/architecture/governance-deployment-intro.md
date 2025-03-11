@@ -1,6 +1,6 @@
 ---
 title: Introduction to Microsoft Entra ID Governance deployment guide
-description: Learn how to deploy Microsfot Entra ID Governance as a proof of concept.
+description: Learn how to deploy Microsoft Entra ID Governance as a proof of concept.
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id-governance
@@ -19,7 +19,7 @@ ms.author: gasinh
 
 To ensure a comprehensive approach to identity governance, there are phases aligned with the identity lifecycle. **Lifecycle automation** is the automated processes for user onboarding, role transitions, and offboarding. To **assign users to resources** entails allocating the right resources to users, integrating entitlements and roles. **Secure privileged access** helps you protect and manage privileged accounts with access controls and monitoring mechanisms. 
 
-In alignment with the approach, the guide has this introductions and four scenarios. Use the links to see each scenario.
+In alignment with the approach, the guide has this introduction and four scenarios. Use the links to see each scenario.
 
 * Introduction
 * [Scenario 1: Employee lifecycle automation](governance-deployment-employee-lifecycle.md)
@@ -31,7 +31,7 @@ While most services are in General Availability (GA), some features or services 
 
 ## Proof-of-concept
 
-A PoC helps ensure solutions you choose provide the features and experience your organization requires. This entails a detailed understanding of organizational requirements, success criteria, and outcomes. The capabilities that you want can affect the duration of a PoC for Microsoft Entra ID Governance. Refer to the scenario docs for PoC information and time needed to complete. 
+A PoC helps ensure solutions you choose provide the features and experience your organization requires. This process entails a detailed understanding of organizational requirements, success criteria, and outcomes. The capabilities that you want can affect the duration of a PoC for Microsoft Entra ID Governance. Refer to the scenario docs for PoC information and time needed to complete. 
 
 ### Licensing
 
@@ -40,7 +40,7 @@ Microsoft Entra ID Governance is a feature in Microsoft Entra ID. To enable the 
 * To use Microsoft Entra ID to govern app access, have one of the following license combinations in your tenant:  '
   * Microsoft Entra ID Governance and its prerequisite, Microsoft Entra ID P1
   * Microsoft Entra ID Governance Step Up for Microsoft Entra ID P2 and its prerequisite, Microsoft Entra ID P2, or Enterprise Mobility + Security (EMS) E5
-  * In the tenant, ensure there’s a license for each governed user (non-guest). Include those that request access to apps, approve access, or review app access.
+  * In the tenant, ensure there’s a license for each governed user (nonguest). Include the users that request access to apps, approve access, or review app access.
 * To govern guest access to the application, link the Microsoft Entra tenant to a subscription for monthly active user (MAU) billing 
 
 For more information, see [Microsoft Entra ID Governance licensing fundamentals](../id-governance/licensing-fundamentals.md).
@@ -161,7 +161,7 @@ Active Directory topology, if applicable:
 
 * **Evaluate the directory structure** - Understand the organizational units, forests, and domains in your Active Directory environment
 * **Plan for synchronization** - Synchronize specific organizational units, or the directory. Consider scalability, redundancy, and replication latency.
-* **Review hybrid scenarios and ensure Microsoft Entra Connect is optimized** - For foreests with separate trusts, evaluate use of [Microsoft Entra Cloud Sync](../identity/hybrid/cloud-sync/reference-cloud-sync-faq.yml) 
+* **Review hybrid scenarios and ensure Microsoft Entra Connect is optimized** - For forests with separate trusts, evaluate use of [Microsoft Entra Cloud Sync](../identity/hybrid/cloud-sync/reference-cloud-sync-faq.yml) 
 
 ### Pre-provisioning tasks
 
@@ -171,7 +171,7 @@ If an organization has **multiple inbound sources**, identify user data sources:
 * Identity stores
 * In-house identity repositories 
 
-Ensure sources have accurate information. Before migration, you can perform an audit or evaluation to determine if data cleanup is needed.   
+Ensure sources have accurate information. Before migration, you can perform an audit or evaluation to determine if data clean up is needed.   
 
 Choose an attribute that identifies and links user records with corresponding accounts in the target system. The default **matching attribute** is **EmployeeID**, commonly used across organizations. However, you decide what attribute is used.  
 
@@ -179,7 +179,7 @@ For provisioning, define the **scope of source objects**. To enhance performance
 
 Plan for **attribute calculation**. Handle long strings, special characters, or choose a unique username. Do calculations with expressions. 
 
-For more information see [writing expressions for attribute mappings in Microsoft Entra app provisioning](../identity/app-provisioning/functions-for-customizing-application-data.md)
+For more information, see [writing expressions for attribute mappings in Microsoft Entra app provisioning](../identity/app-provisioning/functions-for-customizing-application-data.md)
 
 ### Configure provisioning
 
@@ -226,13 +226,13 @@ The following list shows pre-defined lifecycle workflow tasks. You can enable ot
 * Determine for whom and when
 * Review and add tasks
 * Create the workflow
-* Pilot, run, and test 
+* Conduct a pilot, run, and test 
 
 Learn how to [plan a lifecycle workflow deployment](../id-governance/lifecycle-workflows-deployment.md).
 
 ### Provision and onboard apps
 
-Determination of other target systems requires user provisioning, for instance IT Service Management (ITSM), legacy apps, software-as-a-service (SaaS) apps.  Use the guidance in the following table. 
+Determination of other target systems requires user provisioning, for instance IT Service Management (ITSM), legacy apps, software-as-a-service (SaaS) apps. Use the guidance in the following table. 
 
 |Target system|Approach|Guidance|
 |---|---|---|
@@ -248,7 +248,7 @@ Review the common tasks to automate for user onboarding, such as notification em
 
 Define a process for credential provisioning and distribution. Use lifecycle workflows to generate a temporary access pass (TAP) at a trigger time, aligned with security policies.  
 
-For example, on an employee hire date, generate a TAP and send it to the user manager, The manager shares the TAP, and the new-hire can set up passwordless authentication methods, such as FIDO2 and passwordless phone sign-in. You can use [Microsoft Authenticator](../identity/authentication/concept-authentication-authenticator-app.md) to enable sign-in without a password. 
+For example, on an employee hire date, generate a TAP and send it to the user manager. The manager shares the TAP, and the new-hire can set up passwordless authentication methods, such as FIDO2 and passwordless phone sign-in. You can use [Microsoft Authenticator](../identity/authentication/concept-authentication-authenticator-app.md) to enable sign-in without a password. 
 
 TAP users navigate setup on Windows 10 and 11 for device join and to configure Windows Hello for Business. Use of [TAP](../identity/authentication/howto-authentication-temporary-access-pass.md) to set up [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/) varies based on device joined state. 
 
@@ -296,15 +296,15 @@ The following list has links to documentation about common operational tasks inc
 
 ## Best practices and recommendations
 
-A best practice is a method or technique that has demonstrably helped deliver higher quality results, over time.
+A best practice is a tested method or technique that helps deliver higher quality results, over time.
 
 * Follow security protocols and guidelines when you assign resource access
 * Enable group writeback to control access to on-premises AD group applications and resources
   * [Govern on-premises Active Directory (Kerberos) application access with groups from the cloud](../identity/hybrid/cloud-sync/govern-on-premises-groups.md)
-* Use auto-assignment policies to streamline assignments and their removal
+* Use autoassignment policies to streamline assignments and their removal
   * Ensure alignment with Microsoft Entra entitlement management rules and governance [service limits](../id-governance/governance-service-limits.md)
 * To manage permissions, request user access package assignment. For approval processes, select **Enforce policy approval** for administrator direct assignments. 
-* Evaluate and update access packages to reflect user roles changes
+* To reflect user role changes, evaluate and update access packages
   * See [Create an access review of an access package in entitlement management](../id-governance/entitlement-management-access-reviews-create.md)
 * Automate common tasks for lifecycle workflows: send notification emails, add users to teams.
   * Built-in tasks enhance user onboarding efficiency and accuracy, resource assignment, and authorization processes
@@ -318,7 +318,7 @@ A best practice is a method or technique that has demonstrably helped deliver hi
   Microsoft Entra ID Governance deployment guide:
 
   * Introduction to Microsoft Entra ID Governance deployment guide
-  * [Scenario 1: Employee lifeccycle automation](governance-deployment-employee-lifecycle.md)
+  * [Scenario 1: Employee lifecycle automation](governance-deployment-employee-lifecycle.md)
   * [Scenario 2: Assign employee access to resources](governance-deployment-employee-access.md)
   * [Scenario 3: Govern guest and partner access](governance-deployment-guest-access.md)
   * [Scenario 4: Govern privileged identities and their access](governance-deployment-privileged-identities.md)
