@@ -25,10 +25,8 @@ This article will walk you through the steps of configuring single sign-on for y
 Read more on the official [Kantega SSO documentation](https://kantega-sso.atlassian.net/wiki/spaces/KSE/pages/895844483/Azure+AD).
 
 ## Prerequisites
-
-To follow this article,  you need:
-
-* An active Microsoft Entra subscription. You can set up a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Jira Data Center instance. You can [try it for free](https://www.atlassian.com/software/jira/download/data-center).
 * Kantega SSO app for Jira from Atlassian Marketplace. You can [try it for free](https://marketplace.atlassian.com/apps/1211923/k-sso-saml-kerberos-openid-oidc-oauth-for-jira?tab=overview&hosting=datacenter).
 

@@ -25,10 +25,8 @@ In this article,  you'll learn how to integrate Nulab Pass (Backlog, Cacoo, and 
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need:
-
-* A Microsoft Entra subscription or [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Nulab Pass SSO-enabled subscription.
 
 ## Scenario description
