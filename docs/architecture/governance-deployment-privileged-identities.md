@@ -20,8 +20,8 @@ Use this scenario to help determine the need for Microsoft Entra ID Governance t
 The following products and services appear in this guide:
 
 * [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)
-* [Microsoft Entra ID](/fundamentals/whatis)
-* [Microsoft Entra](/fundamentals/what-is-entra)
+* [Microsoft Entra ID](../fundamentals/whatis.md)
+* [Microsoft Entra](../fundamentals/what-is-entra.md)
 * [Privileged Identity Management (PIM)](../id-governance/privileged-identity-management/pim-configure.md)
 * [PIM for Groups](../id-governance/privileged-identity-management/concept-pim-for-groups.md)
 * [Discovery and insights](../id-governance/privileged-identity-management/pim-security-wizard.md)
@@ -63,7 +63,7 @@ To prepare for the scenario, perform a discovery of current user lifecycle proce
   * Privileged Role Administrator, or 
   * Global Administrator
 
-Learn more about [privileged roles and permissions in Microsoft Entra ID](../identity/role-based-access-control/privileged-roles-permissions?tabs=admin-center&preserve-view=true).
+Learn more about [privileged roles and permissions in Microsoft Entra ID](../identity/role-based-access-control/privileged-roles-permissions.md).
 
 ## Privileged Identity Management
 
@@ -112,7 +112,7 @@ Learn how to [manage Microsoft Entra role assignments with PIM APIs](/graph/api/
 
 Azure resource role settings define role assignment properties. These properties include multifactor authentication and approval requirements for activation, assignment maximum duration, and notification settings. 
 
-Learn to [configure Azure resource role settings in PIM](../id-governance/privileged-identity-management/pim-resource-roles-configure-role-settings.md), then how to [activate them](../id-governance/privileged-identity-management/pim-resource-roles-activate-your-roles.md). 
+Learn to [configure Azure resource role settings in PIM](../id-governance/privileged-identity-management/pim-resource-roles-configure-role-settings.md), then how to [activate them](../id-governance/privileged-identity-management/pim-resource-roles-activate-your-roles.yml). 
 
 ## PIM for Groups
 
