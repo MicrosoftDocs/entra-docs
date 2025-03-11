@@ -1,6 +1,6 @@
 ---
 title: Microsoft Entra ID Governance deployment guide for employee lifecycle automation
-description: Learn how to deploy employee lifecycle automation in Microsfot Entra ID Governance as a proof of concept.
+description: Learn how to deploy employee lifecycle automation in Microsoft Entra ID Governance as a proof of concept.
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id-governance
@@ -61,8 +61,8 @@ Users are created in Microsoft Entra ID, and other SaaS apps that support user p
 1. [Select cloud HR provisioning connector apps](/azure/active-directory/app-provisioning/plan-cloud-hr-provision).
 2. [Design provisioning topology](/azure/active-directory/app-provisioning/plan-cloud-hr-provision).
 3. [Configure integration system user in Workday](/azure/active-directory/saas-apps/workday-inbound-tutorial).
-4. [Workday provisioning connector](/azure/active-directory/saas-apps/workday-inbound-cloud-only-tutorial).
-5. [Workday and Microsoft Entra ID attribute mapping](/azure/active-directory/saas-apps/workday-inbound-cloud-only-tutorial).
+4. [Enable Workday provisioning connector](/azure/active-directory/saas-apps/workday-inbound-cloud-only-tutorial).
+5. [Start Workday and Microsoft Entra ID attribute mapping](/azure/active-directory/saas-apps/workday-inbound-cloud-only-tutorial).
 6. [(**Optional**) Configure Workday writeback in Azure AD](/azure/active-directory/saas-apps/workday-writeback-tutorial).
 7. [Enable and launch provisioning](/azure/active-directory/saas-apps/workday-writeback-tutorial).
 
@@ -161,7 +161,7 @@ Discover more about [SCIM synchronization with Microsoft Entra ID](sync-scim.md)
 
 SCIM 2.0 is a standardized definition of two endpoints **/Users** and **/Groups**. 
 
-See more details in the tutorial, [develop and plan provisioning for a SCIM endpoint in Microsoft Entra ID](../identity/app-provisioning/use-scim-to-provision-users-and-groups.md). 
+See more details in the tutorial, [develop, and plan provisioning for a SCIM endpoint in Microsoft Entra ID](../identity/app-provisioning/use-scim-to-provision-users-and-groups.md). 
 
 ## Deploy PoC: SaaS sample-app provisioning
 
@@ -188,13 +188,13 @@ Learn more in the [overview of lifecycle workflow APIs](/graph/api/resources/ide
 
 ### Joiner
 
-A Joiner is an individual who needs access. When onboarding new employees, use templates and workflows to make processes more efficient and faster.  
+A Joiner is an individual who needs access. When you onboard new employees, use templates and workflows to make processes more efficient and faster.  
 
 Learn more in a video about [lifecycle workflows - Joiner](https://youtu.be/rJv5thoInr8). 
 
 ### Mover
 
-A Mover is an individual moving between boundaries in an organization, for instance the employee goes from a role in Sales to one in Marketing. The movement might require more, or different, access and authorization.  
+A Mover is an individual moving between boundaries in an organization, for instance, the employee goes from a role in Sales to one in Marketing. The movement might require more, or different, access, and authorization.  
 
 In a video, learn about [lifecycle workflows - Mover](https://youtu.be/9bXqioIGiME). 
 
@@ -214,7 +214,7 @@ In a video, learn about [lifecycle workflows - Leaver](https://www.youtube.com/w
 
 Microsoft Entra ID provisioning service keeps source and target systems in sync. Deprovision an account when user access must end.  
 
-1. Unassign the user from the application(s).
+1. Unassign the user from one or more applications.
 2. Delete the account from Microsoft Entra ID.
 3. Set the **AccountEnabled** property to **False**. 
 
@@ -232,16 +232,16 @@ To learn more, see the [App Service Environment overview](/azure/app-service/env
 
 ## Deploy PoC: Lifecycle workflows
 
-1. [Sync attributes](/azure/active-directory/governance/how-to-lifecycle-workflow-sync-attributes)
+1. [Synchronize attributes](/azure/active-directory/governance/how-to-lifecycle-workflow-sync-attributes)
 2. [Prepare user accounts](/azure/active-directory/governance/tutorial-prepare-user-accounts)
-2. [Automate pre-hire tasks for employees](/azure/active-directory/governance/tutorial-onboard-custom-workflow-portal)
+2. [Automate prehire tasks for employees](/azure/active-directory/governance/tutorial-onboard-custom-workflow-portal)
 4. [Automate onboarding new employees](/azure/active-directory/governance/lifecycle-workflow-templates)
 5. [Automate post-onboarding](/azure/active-directory/governance/lifecycle-workflow-templates)
 6. [Real-time employee change](/azure/active-directory/governance/lifecycle-workflow-templates)
 7. [Real-time employee termination](/azure/active-directory/governance/tutorial-offboard-custom-workflow-portal)
 8. [Employee group membership changes](../id-governance/lifecycle-workflow-templates.md)
 9. [Employee job profile change](../id-governance/lifecycle-workflow-templates.md)
-10. [Automate pre-offboarding](/azure/active-directory/governance/lifecycle-workflow-templates)
+10. [Automate preoffboarding](/azure/active-directory/governance/lifecycle-workflow-templates)
 11. [Automate offboarding](/azure/active-directory/governance/tutorial-scheduled-leaver-portal)
 12. [Automate post-affboarding](/azure/active-directory/governance/lifecycle-workflow-templates)
 13. [Trigger Logic Apps with custom extensions](/azure/active-directory/governance/trigger-custom-task)
@@ -278,7 +278,7 @@ The table lists tasks and workflow according to Joiner, Mover, Leaver status.
 ## Next steps
 
   * [Introduction to Microsoft Entra ID Governance deployment guide](governance-deployment-intro.md)
-  * Scenario 1: Employee lifeccycle automation
+  * Scenario 1: Employee lifecycle automation
   * [Scenario 2: Assign employee access to resources](governance-deployment-employee-access.md)
   * [Scenario 3: Govern guest and partner access](governance-deployment-guest-access.md)
   * [Scenario 4: Govern privileged identities and their access](governance-deployment-privileged-identities.md)
