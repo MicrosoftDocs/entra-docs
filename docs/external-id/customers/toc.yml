@@ -210,8 +210,6 @@ items:
                   href: tutorial-mobile-maui-role-based-access-control.md
             - name: Android
               items:
-                - name: Prepare tenant
-                  href: /entra/identity-platform/quickstart-mobile-app-sign-in?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json&pivots=external
                 - name: Prepare app
                   href: /entra/identity-platform/tutorial-mobile-app-android-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Sign in users
