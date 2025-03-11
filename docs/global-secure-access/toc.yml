@@ -189,6 +189,8 @@ items:
       - name: "Troubleshoot the Global Secure Access client: Health check tab"
         href: troubleshoot-global-secure-access-client-diagnostics-health-check.md
       - name: "Troubleshoot the Global Secure Access Client: Disabled by Your Organization"
+      - name: Troubleshoot application access
+        href: troubleshoot-app-access.md
         href: troubleshoot-global-secure-access-client-disabled.md
       - name: "Troubleshoot Distributed File System (DFS) issues"
         href: troubleshoot-distributed-file-system.md
