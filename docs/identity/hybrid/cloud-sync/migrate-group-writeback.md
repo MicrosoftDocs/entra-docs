@@ -25,7 +25,7 @@ This article describes how to migrate group writeback by using Microsoft Entra C
 > - Cloud-created [security groups](../../../fundamentals/concept-learn-about-groups.md#group-types).
 > - Groups written back to Active Directory with the scope of [universal](/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope).
 >
-> Mail-enabled groups and distribution lists written back to Active Directory continue to work with Microsoft Entra Connect group writeback but revert to the behavior of Group Writeback v1. In this scenario, after you disable Group Writeback v2, all Microsoft 365 groups are written back to Active Directory independently of the **Writeback Enabled** setting in the Microsoft Entra admin center. For more information, see [Provision to Active Directory with Microsoft Entra Cloud Sync FAQ](reference-provision-to-active-directory-faq.yml).
+> Mail-enabled groups and distribution lists written back to Active Directory continue to work with Microsoft Entra Connect Group Writeback but revert to the behavior of Group Writeback v1. In this scenario, after you disable Group Writeback v2, all Microsoft 365 groups are written back to Active Directory independently of the **Writeback Enabled** setting in the Microsoft Entra admin center. For more information, see [Provision to Active Directory with Microsoft Entra Cloud Sync FAQ](reference-provision-to-active-directory-faq.yml).
 
 ## Prerequisites
 
@@ -142,11 +142,11 @@ $groups | select displayName, adminDescription, 'msDS-ExternalDirectoryObjectID'
 
 ## Step 3: Create a custom group inbound rule
 
-In the Microsoft Entra Connect Synchronization Rules editor, you create an inbound sync rule that filters out groups that have `NULL` for the mail attribute. The inbound sync rule is a join rule with a target attribute of `cloudNoFlow`. This rule tells Microsoft Entra Connect not to synchronize attributes for these groups. To create this sync rule, you can opt to use the user interface or create it via PowerShell with the provided script.
+In the Microsoft Entra Connect Synchronization Rules Editor, you create an inbound sync rule that filters out groups that have `NULL` for the mail attribute. The inbound sync rule is a join rule with a target attribute of `cloudNoFlow`. This rule tells Microsoft Entra Connect not to synchronize attributes for these groups. To create this sync rule, you can opt to use the user interface or create it via PowerShell with the provided script.
 
 ### Create a custom group inbound rule in the user interface
 
- 1. Start the Microsoft Entra Connect Synchronization Rules editor from the **Start** menu.
+ 1. On the **Start** menu, start the Synchronization Rules Editor.
  1. Under **Direction**, select **Inbound** from the dropdown list, and then select **Add new rule**.
  1. On the **Description** page, enter the following values and select **Next**:
 
@@ -159,7 +159,7 @@ In the Microsoft Entra Connect Synchronization Rules editor, you create an inbou
     - **Precedence**: Provide a value that's unique in the system. We recommend that you use a value lower than 100 so that it takes precedence over the default rules.
     - **Tag:** Leave the field empty.
 
-      :::image type="content" source="media/migrate-group-writeback/migrate-5.png" alt-text="Screenshot that shows the inbound sync rule." lightbox="media/migrate-group-writeback/migrate-5.png":::
+     :::image type="content" source="media/migrate-group-writeback/migrate-5.png" alt-text="Screenshot that shows the inbound sync rule." lightbox="media/migrate-group-writeback/migrate-5.png":::
 
 1. On the **Scoping filter** page, add the following values and then select **Next**:
 
