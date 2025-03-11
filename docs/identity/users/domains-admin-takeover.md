@@ -10,7 +10,7 @@ ms.topic: how-to
 ms.date: 01/06/2025
 ms.author: barclayn
 ms.reviewer: sumitp
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, no-azure-ad-ps-ref
 ---
 # Take over an unmanaged directory as administrator in Microsoft Entra ID
 
