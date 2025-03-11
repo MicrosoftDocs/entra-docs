@@ -13,7 +13,7 @@ ms.author: jomondi
 ms.reviewer: phsignor
 zone_pivot_groups: enterprise-apps-all
 ms.collection: M365-identity-device-management
-ms.custom: enterprise-apps, has-azure-ad-ps-ref
+ms.custom: enterprise-apps, no-azure-ad-ps-ref
 
 #customer intent: As an IT admin, I want to review and revoke permissions granted to applications in my Microsoft Entra tenant, so that I can ensure that only necessary permissions are granted and prevent malicious applications from accessing sensitive data.
 ---
