@@ -25,10 +25,8 @@ In this article,  you'll learn how to integrate SailPoint Identity Security Clou
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * SailPoint Identity Security Cloud active subscription. If you do not have Identity Security Cloud, please contact [SailPoint Identity Security Cloud support team](mailto:support@sailpoint.com).
 
 > [!NOTE]

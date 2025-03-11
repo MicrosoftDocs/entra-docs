@@ -24,10 +24,8 @@ In this article,  you'll learn how to integrate TigerConnect Secure Messenger wi
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with TigerConnect Secure Messenger, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/free/) before you begin.
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A TigerConnect Secure Messenger subscription with single sign-on enabled.
 
 ## Scenario description

@@ -23,10 +23,8 @@ In this article,  you'll learn how to integrate ZenQMS with Microsoft Entra ID. 
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with ZenQMS, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * ZenQMS single sign-on enabled subscription.
 
 ## Scenario description
