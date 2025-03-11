@@ -6,7 +6,7 @@ manager: femila
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 02/26/2025
+ms.date: 03/12/2025
 ms.author: rolyon
 ms.custom: it-pro
 
@@ -510,6 +510,7 @@ Here are the least privileged roles you should use when performing tasks for [us
 > | Revoke license | [License Administrator](permissions-reference.md#license-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
 > | Update all properties except User Principal Name | [User Administrator](permissions-reference.md#user-administrator) |  |
 > | Update On-premises sync enabled property | [Hybrid Identity Administrator](permissions-reference.md#hybrid-identity-administrator) |  |
+> | Update profile photos and people settings | [People Administrator](permissions-reference.md#people-administrator) |  |
 > | Update User Principal Name for limited admins | [User Administrator](permissions-reference.md#user-administrator) |  |
 > | Update User Principal Name property on privileged admins | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator) |  |
 > | Update user settings - Default user role permissions | [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator) |  |
