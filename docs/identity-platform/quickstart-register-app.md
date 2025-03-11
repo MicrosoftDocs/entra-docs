@@ -161,6 +161,6 @@ The Microsoft identity platform offers a variety of code samples tailored for di
 Microsoft Entra External ID enables you to add the application to a user flow for customers to have a streamlined experience. To learn how, refer to;
 
 > [!div class="nextstepaction"]
-> [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
+> [Add your application to a user flow](/entra/external-id/customers/how-to-user-flow-add-application)
 
 ---
