@@ -17,12 +17,12 @@ Deployment scenarios are guidance on how to combine and test Microsoft Security 
 
 The following products and services appear in this guide:
 
-* [Microsoft Entra ID Governance](/id-governance/identity-governance-overview)
-* [Microsoft Entra](/fundamentals/what-is-entra)
-* [Microsoft Entra ID](/fundamentals/whatis)
+* [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)
+* [Microsoft Entra](../fundamentals/what-is-entra.md)
+* [Microsoft Entra ID](../fundamentals/whatis.md)
 * [Azure Logic Apps](/azure/logic-apps/logic-apps-overview)
-* [Access reviews](/id-governance/access-reviews-overview)
-* Privileged Identity Manager [(PIM) for Groups](/id-governance/access-reviews-overview)
+* [Access reviews](../id-governance/access-reviews-overview.md)
+* Privileged Identity Manager [(PIM) for Groups](../id-governance/access-reviews-overview.md)
 
 Use this scenario to help determine the need for Microsoft Entra ID Governance to create and grant access for your organization. Learn how you can simplify the employee experience with automated workflows, access assignments, access reviews, and expiration. 
 
@@ -37,7 +37,7 @@ Timelines show approximate delivery stage duration and are based on scenario com
 
 ### Access requests: workflows and approvals
 
-[Entitlement management](https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-overview) is an identity governance feature to manage employee access to resources. Automate access request workflows, access assignments, access reviews, and expiration. Provide users with self-service resource access requests. To do so, define self-service policy and workflow: 
+[Entitlement management](../id-governance/entitlement-management-overview.md) is an identity governance feature to manage employee access to resources. Automate access request workflows, access assignments, access reviews, and expiration. Provide users with self-service resource access requests. To do so, define self-service policy and workflow: 
 
 * Enable multistage approval workflows, separation of duties enforcement, and recurring access recertification 
 * Use custom workflows for access lifecycles with Azure Logic Apps
@@ -53,20 +53,20 @@ In the following screenshot, see the **On-premises resources | Separation of Dut
 
 ### Create an auto-assignment policy
 
-In this area of access policy, **birthright assignment** refers to automatically granting resource access based on user properties. Creating assignments works similarly. User properties match, or don’t match, a policy's membership rules. Use rules to determine access package assignment based on user properties, similar to [dynamic groups](/identity/users/groups-create-rule). Add or remove assignments, based on rule criteria.  
+In this area of access policy, **birthright assignment** refers to automatically granting resource access based on user properties. Creating assignments works similarly. User properties match, or don’t match, a policy's membership rules. Use rules to determine access package assignment based on user properties, similar to [dynamic groups](../identity/users/groups-create-rule.md). Add or remove assignments, based on rule criteria.  
 
 In the following screenshot see the **Edit policy dialog**, with the **Create auto assignment policy** tab.  
 
-   [ ![Screenshot of the Create auto assignment policy tab on the Edit policy dialog.](media/governance-deployment/edit-policy/.png)](media/governance-deployment/edit-policy-expanded.png#lightbox)
+   [ ![Screenshot of the Create auto assignment policy tab on the Edit policy dialog.](media/governance-deployment/edit-policy.png)](media/governance-deployment/edit-policy-expanded.png#lightbox)
 
 For more information:
 
 * See a video about [entitlement management - auto assignment policy](https://www.youtube.com/watch?v=umGvpL3I41U)
-* Learn about [groups and access rights in Microsoft Entra ID](/fundamentals/how-to-manage-groups)
+* Learn about [groups and access rights in Microsoft Entra ID](../fundamentals/how-to-manage-groups.md)
 
 ## Deploy PoC: Access package assignment
 
-1. Go to [Create an access package in entitlement management](/id-governance/entitlement-management-access-package-create).
+1. Go to [Create an access package in entitlement management](../id-governance/entitlement-management-access-package-create.md).
 2. Use the instructions to create an access package.
 3. Create an automatic assignment policy. 
 
@@ -101,15 +101,15 @@ Create and run automated workflows with [Azure Logic Apps](/azure/logic-apps/), 
 
 ### My Access portal
 
-Administrators use the [My Access portal](/id-governance/my-access-portal-overview) to configure access and for users to review or request access (Requestors) to resources. In the My Access portal, Approvers can modify answers submitted by Requestors. 
+Administrators use the [My Access portal](../id-governance/my-access-portal-overview.md) to configure access and for users to review or request access (Requestors) to resources. In the My Access portal, Approvers can modify answers submitted by Requestors. 
 
-Learn how to [request an access package](/id-governance/entitlement-management-request-access#request-an-access-package).
+Learn how to [request an access package](../id-governance/entitlement-management-request-access.md).
 
 ## Access recertification: Access reviews
 
-For access recertification, you can review access rights with recurring [access reviews](/id-governance/access-reviews-overview). Manage group membership, resource access, and role assignments, also meet compliance requirements.  
+For access recertification, you can review access rights with recurring [access reviews](../id-governance/access-reviews-overview.md). Manage group membership, resource access, and role assignments, also meet compliance requirements.  
 
-Administrators determine review scope, then create reviews in access reviews, Microsoft Entra enterprise apps, [Privileged Identity Management](/id-governance/privileged-identity-management/pim-configure) (PIM), or entitlement management. 
+Administrators determine review scope, then create reviews in access reviews, Microsoft Entra enterprise apps, [Privileged Identity Management](../id-governance/privileged-identity-management/pim-configure.md) (PIM), or entitlement management. 
 
    [ ![Diagram of review creation for administrators.](media/governance-deployment/select-scope.png)](media/governance-deployment/select-scope-expanded.png#lightbox)
 
@@ -129,13 +129,13 @@ The My Access dashboard shows a reviwer's pending approvals and recommendations.
 
 ### Multistage reviews
 
-[Multistage reviews](/id-governance/using-multi-stage-reviews) reduce the burden on individual reviewers and help achieve consensus across reviewers. Fallback reviewers help decide unreviewed decisions. Review stage configuration includes indicating the number of stages.  
+[Multistage reviews](../id-governance/using-multi-stage-reviews.md) reduce the burden on individual reviewers and help achieve consensus across reviewers. Fallback reviewers help decide unreviewed decisions. Review stage configuration includes indicating the number of stages.  
 
    [ ![Diagram of the access funnel.](media/governance-deployment/access-funnel.png)](media/governance-deployment/access-funnel-expanded.png#lightbox)
 
 Use the **New access review** dialog, and **Reviews** tab to configure review stages, reviewers, duration, and more.  
 
-   [ ![Diagram of the access funnel.](media/governance-deployment/new-access-review.png)](media/governance-deployment/new-access-review-expanded.png#lightbox)
+   [ ![Diagram of the New access review dialog.](media/governance-deployment/new-access-review.png)](media/governance-deployment/new-access-review-expanded.png#lightbox)
 
 ### Automated decision criteria
 
@@ -154,7 +154,7 @@ The **New access review** dialog, and **Settings** tab, with decision helper opt
 
 Users are considered inactive if they haven't signed in to the tenant within a designated duration. This behavior is adjusted for application assignment reviews, or a user's last activity in an app. To get started, define what inactive means for your organization. 
 
-See a video about [access reviews for inactive users](https://youtu.be/rQxaoMoZRQ0) and an article on how to [detect and investigate inactive user accounts](/identity/monitoring-health/howto-manage-inactive-user-accounts). 
+See a video about [access reviews for inactive users](https://youtu.be/rQxaoMoZRQ0) and an article on how to [detect and investigate inactive user accounts](../identity/monitoring-health/howto-manage-inactive-user-accounts.md). 
 
 The **New access review** dialog, and **Review type** tab, with inactivity options highlighted. 
 
@@ -162,16 +162,16 @@ The **New access review** dialog, and **Review type** tab, with inactivity optio
 
 ### Review recommendations
 
-Reviewers can use machine-learning derived [recommendations](/id-governance/review-recommendations-access-reviews) to help make access decisions. Recommendations detect User-to-Group Affiliation, based on reporting-structure proximity. Users distant from group members have **low affiliation**. 
+Reviewers can use machine-learning derived [recommendations](../id-governance/review-recommendations-access-reviews.md) to help make access decisions. Recommendations detect User-to-Group Affiliation, based on reporting-structure proximity. Users distant from group members have **low affiliation**. 
 
    > [!NOTE]
    >User-to-Group Affiliation is available for users in your directory. However, groups of more than 600 users are not supported. Ensure users have a manager attribute.
 
 ## Access review for PIM for Groups
 
-You can grant users just-in-time (JIT) membership and group ownership with [Privileged Identity Management (PIM) for Groups](/id-governance/privileged-identity-management/concept-pim-for-groups). Reviews include active group members and eligible members. 
+You can grant users just-in-time (JIT) membership and group ownership with [Privileged Identity Management (PIM) for Groups](../id-governance/privileged-identity-management/concept-pim-for-groups.md). Reviews include active group members and eligible members. 
 
-Learn to [create access reviews for PIM for Groups](/id-governance/create-access-review-pim-for-groups). 
+Learn to [create access reviews for PIM for Groups](../id-governance/create-access-review-pim-for-groups.md). 
 
    > [!NOTE]
    >Access reviews can determine inactivity for up to two years.  
