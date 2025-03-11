@@ -20,9 +20,13 @@ In October 2024, we released new versions (2.4.xx.0) of Microsoft Entra Connect 
 If you aren’t upgraded to the minimum required version, you'll encounter the following impacts to the Microsoft Entra Connect Sync service when the service change takes effect: 
 
  - All authentication requests to Entra ID on the Connet Sync wizard will fail. Some of the capabilities that will be impacted include schema refresh, configuration of staging mode and user sign-in changes
- - Configuration of AD FS scenarios through the Connect Sync wizard won't work 
- - Configuration of PingFederate scenarios through the Connect Sync wizard won't work 
-
+ - Configuration of Active Directory Federation Services (ADFS) scenarios through the Connect Sync wizard won't work 
+ - Configuration of PingFederate scenarios through the Connect Sync wizard won't work
+   
+## What won't be impacted
+ - Your sync service will run as usual, and changes will continue to sync to Entra
+ - The ability to upgrade your Entra Connect Sync instance. You can still perform the upgrade after April 7, 2025
+   
 >[!NOTE]
 > If you’re unable to upgrade by the deadline, you can restore the impacted functionalities by upgrading to the [latest version](https://www.microsoft.com/download/details.aspx?id=47594). You'll lose the ability to **make changes on the Entra Connect Sync wizard that require user sign in with the Entra ID credentials** during the time period between **April 7, 2025 and when you upgrade**. 
 
@@ -30,7 +34,7 @@ If you aren’t upgraded to the minimum required version, you'll encounter the f
 
 To avoid any service impact, customers should be on version by April 7, 2025. 
 - Customers in commercial clouds: [2.4.18.0](reference-connect-version-history.md#24180) or higher.
-- Customers in non-commercial clouds: [2.4.21.0](reference-connect-version-history.md#24210) or higher. 
+- Customers in noncommercial clouds: [2.4.21.0](reference-connect-version-history.md#24210) or higher. 
 
 To upgrade to the latest version.
 > [!div class="nextstepaction"]
@@ -39,7 +43,7 @@ To upgrade to the latest version.
 >[!IMPORTANT]
 > Make sure you familiarize yourself with the [minimum requirements](how-to-connect-install-prerequisites.md) for the versions, including but not limited to: 
 >
->  - [TLS 1. 2](reference-connect-tls-enforcement.md)
+>  - Transport Layer Security,[TLS 1. 2](reference-connect-tls-enforcement.md)
 >  - [.NET 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472#:~:text=Downloads%20for%20building%20and%20running%20applications%20with%20.NET%20Framework%204.7.2)
 
 To assist customers with the upgrade process, we occasionally autoupgrade customers where supported. If you would like to be autoupgraded, ensure you have the [autoupgrade feature](how-to-connect-install-automatic-upgrade.md) configured. For [autoupgrade to work](security-updates-pks.md), you should be on version [2.3.20.0](reference-connect-version-history.md#23200) or higher. 
