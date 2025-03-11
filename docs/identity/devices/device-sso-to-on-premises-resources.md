@@ -9,7 +9,7 @@ ms.date: 05/29/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: 
 ---
 # How SSO to on-premises resources works on Microsoft Entra joined devices

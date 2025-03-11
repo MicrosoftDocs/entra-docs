@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 02/21/2025
+ms.date: 03/06/2025
 ms.author: mimart
 ms.custom: it-pro, seo-july-2024
 #customer intent: As an External ID administrator, I want to configure and enable multiple identity providers (such as email one-time passcode, Google, Facebook, Apple, SAML/WS-Fed, and custom OIDC) for external users, so that they can easily sign in and access our apps and resources.
@@ -59,7 +59,7 @@ For an optimal sign-in experience, federate with social identity providers whene
 
 When you enable social identity providers, users can select from the social identity providers options you make available on the sign-up page. To set up social identity providers in your external tenant, you create an application at the identity provider and configure credentials. You obtain a client or app ID, a client or app secret, or a certificate, which you can then use to configure your external tenant.
 
-### Google sign-in (preview)
+### Google sign-in
 
 By setting up federation with Google, you can allow users to sign in to your applications with their own Gmail accounts. After you add Google as one of your application's sign-in options, on the sign-in page, users can sign in to Microsoft Entra External ID with a Google account.
 
@@ -69,7 +69,7 @@ The following screenshots show the sign-in with Google experience. In the sign-i
 
 Learn how to [add Google as an identity provider](how-to-google-federation-customers.md).
 
-### Facebook sign-in (preview)
+### Facebook sign-in
 
 By setting up federation with Facebook, you can allow users to sign in to your applications with their own Facebook accounts. After you add Facebook as one of your application's sign-in options, on the sign-in page, users can sign-in to Microsoft Entra External ID with a Facebook account.
 

@@ -4,7 +4,7 @@ description: Identifier map to manage Microsoft Entra ID licensing in the Azure 
 
 keywords: Azure Active Directory licensing service plans
 author: Nicholak-MS
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: users
 ms.topic: reference

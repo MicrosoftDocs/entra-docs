@@ -2,7 +2,7 @@
 title: Rippling Human Capital Management (HCM) integration with Microsoft Entra ID/Active Directory
 description: Integrating Rippling Human Capital Management (HCM) with Microsoft Entra ID/Active Directory.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.reviewer: rahuln3223
 ms.service: entra-id
 ms.subservice: saas-apps

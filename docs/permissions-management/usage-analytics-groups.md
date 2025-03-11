@@ -2,7 +2,7 @@
 title: View analytic information about groups in Permissions Management
 description: How to view analytic information about groups in Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to

@@ -3,7 +3,7 @@ title: 'Microsoft Entra Cloud Sync directory extensions and custom attribute map
 description: This article provides information on custom attribute mapping in cloud sync.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: conceptual

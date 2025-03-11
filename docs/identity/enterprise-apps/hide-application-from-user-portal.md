@@ -13,7 +13,7 @@ ms.author: jomondi
 ms.reviewer: ergreenl, lenalepa
 ms.collection: M365-identity-device-management
 zone_pivot_groups: enterprise-apps-all
-ms.custom: enterprise-apps, has-azure-ad-ps-ref
+ms.custom: enterprise-apps, no-azure-ad-ps-ref
 #customer intent: As an administrator, I want to hide an application from the My Apps portal and Microsoft 365 launcher, so that users do not have visibility or access to the application.
 ---
 

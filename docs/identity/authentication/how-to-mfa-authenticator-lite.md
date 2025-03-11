@@ -10,7 +10,7 @@ ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
 ms.reviewer: guptashi
-manager: amycolannino
+manager: femila
 
 # Customer intent: As an identity administrator, I want to encourage users to understand how default protection can improve our security posture.
 ---

@@ -2,7 +2,7 @@
 title: Troubleshoot issues with Permissions Management
 description: Troubleshoot issues with Permissions Management
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: troubleshooting

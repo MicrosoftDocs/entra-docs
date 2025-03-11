@@ -4,9 +4,9 @@ description: Workload identity risk in Microsoft Entra ID Protection
 ms.service: entra-workload-id
 ms.topic: conceptual
 ms.date: 01/16/2024
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+author: shlipsey3
+ms.author: sarahlipsey
+manager: femila
 ms.reviewer: etbasser
 ---
 # Securing workload identities

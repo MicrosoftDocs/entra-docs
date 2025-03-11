@@ -9,7 +9,7 @@ ms.date: 02/14/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: swethar
 ---
 # Microsoft-managed policies

@@ -8,7 +8,11 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: concept-article
+<<<<<<< HEAD
 ms.date: 03/10/2025
+=======
+ms.date: 03/06/2025
+>>>>>>> af8ac90256e8aa189da4ac7ef1dca8fd39a6f93b
 ms.author: mimart
 ms.custom: it-pro, seo-july-2024
 
@@ -74,8 +78,13 @@ The following table compares the [identity providers](../identity-providers.md) 
 
 |Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
+<<<<<<< HEAD
 | **Identity providers for external users (primary authentication)** | **For self-service sign-up guests**<ul><li> Microsoft Entra accounts</li><li> Microsoft accounts</li><li>  Email one-time passcode</li><li> Google federation</li><li> Facebook federation</li></ul>**For invited guests**<ul><li> Microsoft Entra accounts</li><li> Microsoft accounts</li><li> Email one-time passcode</li><li> Google federation</li><li> SAML/WS-Fed federation</li></ul> | **For self-service sign-up users (consumers, business customers)**<ul><li> [Email with password](concept-authentication-methods-customers.md#email-and-password-sign-in)</li><li> [Email one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in)</li><li> [Google federation (preview)](./how-to-google-federation-customers.md)</li><li> [Facebook federation (preview)](./how-to-facebook-federation-customers.md)</li><li> [Apple federation (preview)](./how-to-apple-federation-customers.md)</li><li> [OIDC federation (preview)](./how-to-custom-oidc-federation-customers.md)</li><li> [SAML/WS-Fed federation (preview)](../direct-federation-overview.md)</li></ul>**For invited guests (preview)**</br>Guests invited with a directory role (for example, admins):<ul><li> Microsoft Entra accounts </li><li> Microsoft accounts </li><li> [Email one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in)</li><li> [SAML/WS-Fed federation (preview)](../direct-federation-overview.md) </li></ul>|
 |   **Authentication methods for MFA**  | **For internal users (employees and admins)** <ul><li> [Authentication and verification methods](~/identity/authentication/concept-authentication-methods.md) </li></ul> **For guests (invited or self-service sign-up)** <ul></li> [Authentication methods for guest MFA](../authentication-conditional-access.md#table-1-authentication-strength-mfa-methods-for-external-users)  |  **For self-service sign-up users (consumers, business customers) or invited users (preview)**<ul><li> [Email one-time passcode](concept-multifactor-authentication-customers.md#email-one-time-passcode)</li><li> [SMS-based authentication](concept-multifactor-authentication-customers.md#sms-based-authentication) </li></ul>   |
+=======
+| **Identity providers for external users (primary authentication)** | **For self-service sign-up guests**</br>- Microsoft Entra accounts</br>- Microsoft accounts</br>- Email one-time passcode</br>- Google federation</br>- Facebook federation<br></br>**For invited guests**</br>- Microsoft Entra accounts</br>- Microsoft accounts</br>- Email one-time passcode</br>- Google federation</br>- SAML/WS-Fed federation | **For self-service sign-up users (consumers, business customers)**</br>- [Email with password](concept-authentication-methods-customers.md#email-and-password-sign-in)</br>- [Email one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in)</br>- [Google federation](./how-to-google-federation-customers.md)</br>- [Facebook federation](./how-to-facebook-federation-customers.md)</br>- [Apple federation (preview)](./how-to-apple-federation-customers.md)</br>- [OIDC federation (preview)](./how-to-custom-oidc-federation-customers.md)</br>- [SAML/WS-Fed federation (preview)](../direct-federation-overview.md)<br></br>**For invited guests (preview)**</br>Guests invited with a directory role (for example, admins):</br>- Microsoft Entra accounts </br>- Microsoft accounts </br>- [Email one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in)<br>- [SAML/WS-Fed federation (preview)](../direct-federation-overview.md) |
+|   **Authentication methods for MFA**  | **For internal users (employees and admins)** </br>- [Authentication and verification methods](~/identity/authentication/concept-authentication-methods.md) </br>**For guests (invited or self-service sign-up)** </br>- [Authentication methods for guest MFA](../authentication-conditional-access.md#table-1-authentication-strength-mfa-methods-for-external-users)  |  **For self-service sign-up users (consumers, business customers) or invited users (preview)**</br>- [Email one-time passcode](concept-multifactor-authentication-customers.md#email-one-time-passcode)</br>- [SMS-based authentication](concept-multifactor-authentication-customers.md#sms-based-authentication)    |
+>>>>>>> af8ac90256e8aa189da4ac7ef1dca8fd39a6f93b
 
 ## Application registration
 

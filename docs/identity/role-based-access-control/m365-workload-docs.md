@@ -3,7 +3,7 @@ title: Roles across Microsoft services
 description: Find content, API references, and audit and monitoring references related to role-based access control (RBAC) for Microsoft 365 and other services
 
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference

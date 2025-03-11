@@ -2,7 +2,7 @@
 title: Microsoft Entra Connect - Update the TLS/SSL certificate for an AD FS farm
 description: This document details the steps to update the TLS/SSL certificate of an AD FS farm by using Microsoft Entra Connect.
 
-manager: amycolannino
+manager: femila
 editor: billmath
 ms.assetid: 7c781f61-848a-48ad-9863-eb29da78f53c
 ms.service: entra-id

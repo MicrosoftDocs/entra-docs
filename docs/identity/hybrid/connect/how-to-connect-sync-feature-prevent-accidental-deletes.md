@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect Sync: Prevent accidental deletes'
 description: This topic describes how to prevent accidental deletes in Microsoft Entra Connect.
 
 author: billmath
-manager: amycolannino
+manager: femila
 
 ms.assetid: 6b852cb4-2850-40a1-8280-8724081601f7
 ms.service: entra-id

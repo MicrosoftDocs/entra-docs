@@ -3,7 +3,7 @@ title: Kerberos-based single sign-on (SSO) in Microsoft Entra ID with applicatio
 description: Covers how to provide single sign-on using Microsoft Entra application proxy.
 
 author: kenwith
-manager: rkarlin
+manager: femila
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: how-to
