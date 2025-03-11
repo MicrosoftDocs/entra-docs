@@ -27,10 +27,8 @@ If you want to know more details about SaaS app integration with Microsoft Entra
 If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/free/) before you begin.
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with Mercer BenefitsCentral (MBC), you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get one-month trial [here](https://azure.microsoft.com/pricing/free-trial/)
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Mercer BenefitsCentral (MBC) single sign-on enabled subscription
 
 ## Scenario description
