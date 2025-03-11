@@ -3,7 +3,7 @@ title: Remove users, groups, or devices from an administrative unit
 description: Remove users, groups, or devices from an administrative unit in Microsoft Entra ID
 
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: role-based-access-control

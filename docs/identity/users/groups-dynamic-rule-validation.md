@@ -3,7 +3,7 @@ title: Validate rules for dynamic membership groups membership (Preview)
 description: How to test members against a rule for a dynamic membership groups in Microsoft Entra ID.
 
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to

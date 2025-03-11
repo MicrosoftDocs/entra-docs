@@ -2,7 +2,7 @@
 title: 'Security hardening to the autoupgrade process for Microsoft Entra Connect and Microsoft Entra Connect Health '
 description: This article describes security improvements to improve autoupgrade.
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 12/27/2024

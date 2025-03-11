@@ -25,10 +25,8 @@ In this article,  you learn how to integrate Flock Safety with Microsoft Entra I
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To integrate Microsoft Entra ID with Flock Safety, you need:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Flock Safety single sign-on (SSO) enabled subscription.
 
 ## Scenario description

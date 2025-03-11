@@ -9,7 +9,7 @@ ms.date: 03/12/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: lhuangnorth, jogro
 ---
 # Conditional Access: Grant

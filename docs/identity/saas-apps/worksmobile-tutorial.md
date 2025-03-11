@@ -24,10 +24,8 @@ Integrating LINE WORKS with Microsoft Entra ID provides you with the following b
 * You can manage your accounts in one central location.
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with LINE WORKS, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get a [free account](https://azure.microsoft.com/free/)
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * LINE WORKS single sign-on enabled subscription
 
 ## Scenario description

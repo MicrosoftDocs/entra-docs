@@ -5,11 +5,11 @@ description: Documents version release and behavior change history
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: article
-ms.date: 01/14/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: jsimmons
 ---
 # Microsoft Entra Password Protection agent version history

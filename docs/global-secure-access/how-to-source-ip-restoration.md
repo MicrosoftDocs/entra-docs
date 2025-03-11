@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 02/21/2025
 ms.author: kenwith
 author: kenwith
-manager: rkarlin
+manager: femila
 ms.reviewer: alexpav
 ---
 # Source IP restoration

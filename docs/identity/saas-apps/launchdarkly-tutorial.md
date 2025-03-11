@@ -26,10 +26,8 @@ In this article,  you'll learn how to integrate LaunchDarkly with Microsoft Entr
 	> The LaunchDarkly Microsoft Entra integration is one-way. After you configure the integration, you can use Microsoft Entra ID to manage users, SSO, and accounts in LaunchDarkly, but you **cannot** use LaunchDarkly to manage users, SSO, and accounts in Azure.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * LaunchDarkly single sign-on enabled subscription.
 
 ## Scenario description

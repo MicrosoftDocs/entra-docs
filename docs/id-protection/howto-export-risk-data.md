@@ -7,9 +7,9 @@ ms.service: entra-id-protection
 ms.topic: how-to
 ms.date: 11/18/2024
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+author: shlipsey3
+ms.author: sarahlipsey
+manager: femila
 ms.reviewer: cokoopma
 
 # Customer intent: As an IT admin, I want to know how to export and use Microsoft Entra ID Protection data so that I can investigate using long-term data in Microsoft Entra ID Protection.

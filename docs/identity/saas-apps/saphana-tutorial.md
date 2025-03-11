@@ -23,10 +23,8 @@ In this article,  you'll learn how to integrate SAP HANA with Microsoft Entra ID
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with SAP HANA, you need the following items:
-
-- A Microsoft Entra subscription
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 - A SAP HANA subscription that's single sign-on (SSO) enabled
 - A HANA instance that's running on any public IaaS, on-premises, Azure VM, or SAP large instances in Azure
 - The XSA Administration web interface, as well as HANA Studio installed on the HANA instance

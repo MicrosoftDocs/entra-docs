@@ -22,10 +22,8 @@ In this article,  you'll learn how to use the Mitel Connect app to integrate Mic
 * You can enable users on your account to be automatically signed in to MiCloud Connect or CloudLink (single sign-on) by using their Microsoft Entra accounts.
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with MiCloud Connect, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Mitel MiCloud Connect account or Mitel CloudLink account, depending on the application you want to configure.
 
 ## Scenario description

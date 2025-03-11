@@ -25,10 +25,8 @@ When you integrate Zscaler Beta with Microsoft Entra ID, you can:
 * Manage your accounts in one central location by using the Azure portal.
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with Zscaler Beta, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Zscaler Beta subscription that uses single sign-on.
 
 ## Scenario description

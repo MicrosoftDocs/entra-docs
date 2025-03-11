@@ -5,13 +5,13 @@ description: Learn about how to centrally manage multifactor authentication and 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/19/2025
+ms.date: 03/04/2025
 
 
 ms.author: justinha
 author: justinha
 ms.reviewer: jpettere
-manager: amycolannino
+manager: femila
 # Customer intent: As an identity administrator, I want to understand what authentication options are available in Microsoft Entra ID and how I can manage them.
 ---
 # How to migrate MFA and SSPR policy settings to the Authentication methods policy for Microsoft Entra ID 

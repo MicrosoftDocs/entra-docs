@@ -110,8 +110,8 @@ To register your application and add the app's registration information to your 
 #### [Android](#tab/android-workforce)
 
 1. In Android Studio's project pane, navigate to **app\src\main\res**.
-2. Right-click **res** and choose **New** > **Directory**. Enter `raw` as the new directory name and select **OK**.
-3. In **app** > **src** > **main** > **res** > **raw**, go to JSON file called `auth_config_single_account.json` and paste the MSAL Configuration that you saved earlier.
+1. Right-click **res** and choose **New** > **Directory**. Enter `raw` as the new directory name and select **OK**.
+1. In **app** > **src** > **main** > **res** > **raw**, go to JSON file called `auth_config_single_account.json` and paste the MSAL Configuration that you saved earlier.
 
    Below the redirect URI, paste:
 
@@ -126,7 +126,7 @@ To register your application and add the app's registration information to your 
      "client_id": "00001111-aaaa-bbbb-3333-cccc4444",
      "authorization_user_agent": "WEBVIEW",
      "redirect_uri": "msauth://com.azuresamples.msalandroidapp/00001111%cccc4444%3D",
-     "broker_redirect_uri_registered": true,
+     "broker_redirect_uri_registered": false,
      "account_mode": "SINGLE",
      "authorities": [
        {
@@ -139,6 +139,12 @@ To register your application and add the app's registration information to your 
      ]
    }
    ```
+
+1. Open */app/src/main/AndroidManifest.xml* file.
+1. Find the placeholder:
+
+    - `enter_the_signature_hash` and replace it with the **Signature Hash** that you generated earlier when you added the platform redirect URL.
+
 
    As this tutorial only demonstrates how to configure an app in Single Account mode, see [single vs. multiple account mode](./single-multi-account.md) and [configuring your app](./msal-configuration.md) for more information
 

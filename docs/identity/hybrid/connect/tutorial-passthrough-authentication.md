@@ -3,7 +3,7 @@ title: 'Tutorial: Use pass-through authentication for hybrid identity in a singl
 description: Learn how to set up a hybrid identity environment by using pass-through authentication to integrate a Windows Server Active Directory forest with Microsoft Entra ID.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: tutorial
 ms.date: 12/27/2024

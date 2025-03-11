@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect: TLS 1.2 enforcement for Microsoft Entra Connect
 description: Learn how to force your Microsoft Entra Connect server to use only Transport Layer Security (TLS) 1.2.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: reference
 ms.tgt_pltfrm: na
