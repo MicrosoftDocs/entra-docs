@@ -17,15 +17,15 @@ Deployment scenarios are guidance on how to combine and test Microsoft Security 
 
 The following products and services appear in this guide:
 
-* [Microsoft Entra ID Governance](/id-governance/identity-governance-overview)
-* [Microsoft Entra ID](/fundamentals/whatis)
-* [Microsoft Entra](/fundamentals/what-is-entra)
-* [Entitlement management](/id-governance/entitlement-management-overview)
+* [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)
+* [Microsoft Entra ID](../fundamentals/whatis.yml)
+* [Microsoft Entra](../fundamentals/what-is-entra.yml)
+* [Entitlement management](../id-governance/entitlement-management-overview.md)
 * [Azure Logic Apps](/azure/logic-apps/logic-apps-overview)
-* [PIM for Groups](/id-governance/privileged-identity-management/concept-pim-for-groups)
-* [Identity Governance dashboard](/id-governance/governance-dashboard)
+* [PIM for Groups](../id-governance/privileged-identity-management/concept-pim-for-groups.md)
+* [Identity Governance dashboard](../id-governance/governance-dashboard.md)
 
-Use this scenario to help determine the need for [Microsoft Entra ID Governance](/id-governance/identity-governance-overview) to create and grant access for your organization. Learn how to manage guest users in your environment. 
+Use this scenario to help determine the need for [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md) to create and grant access for your organization. Learn how to manage guest users in your environment. 
 
 ## PoC timeline
 
@@ -41,7 +41,7 @@ Timelines show approximate delivery stage duration and are based on scenario com
 
 To enable the scenario, ensure the following requirements are met: 
 
-* [Microsoft Entra ID](/fundamentals/licensing) P1 or P2 license
+* [Microsoft Entra ID](../fundamentals/licensing.md) P1 or P2 license
 * Microsoft Entra ID Governance SKU
   * Microsoft Logic Apps and auto assignment policies
 * Two tenants, target and source
@@ -57,11 +57,11 @@ To enable the scenario, ensure the following requirements are met:
 
 To collaborate with guest users, you can let them use their preferred identity to sign in to your app or other enterprise apps: SaaS, custom-developed, etc. Typically, B2B collaboration users are in your directory as guest users.  
 
-Learn more in the overview, [B2B collaboration with external guests for your workforce](/external-id/what-is-b2b). 
+Learn more in the overview, [B2B collaboration with external guests for your workforce](../external-id/what-is-b2b.md). 
 
 ## Provision guest users in Microsoft Entra ID
 
-Users can use Microsoft Entra [entitlement management](/id-governance/entitlement-management-overview) self-service features to sign up for access. Learn about [self-service sign-up](/external-id/self-service-sign-up-overview), and how to [manage external access with entitlement management](/architecture/6-secure-access-entitlement-managment).  
+Users can use Microsoft Entra [entitlement management](../id-governance/entitlement-management-overview.md) self-service features to sign up for access. Learn about [self-service sign-up](../external-id/self-service-sign-up-overview.md), and how to [manage external access with entitlement management](../architecture/6-secure-access-entitlement-managment.md).  
 
 ### Entitlement management or self-service signup
 
@@ -73,13 +73,13 @@ Use the following table to ease decision making.
 
 ## Onboarding and discovery
 
-With the [Microsoft Identity Governance dashboard](/id-governance/governance-dashboard), discover usage information about identity features configured in your tenant. See the current state of your environment, determine response actions, and find links to documentation. 
+With the [Microsoft Identity Governance dashboard](../id-governance/governance-dashboard.md), discover usage information about identity features configured in your tenant. See the current state of your environment, determine response actions, and find links to documentation. 
 
 ### External user insights
 
 Over time, external user accounts are created in the Microsoft Entra tenant. When external users, or guests, stop accessing the tenant, the external user account becomes stale. 
 
-You can [monitor and clean up stale guest access accounts using access reviews](/identity/users/clean-up-stale-guest-accounts).
+You can [monitor and clean up stale guest access accounts using access reviews](../identity/users/clean-up-stale-guest-accounts.md).
 
 ### External user attribute management
 
@@ -87,7 +87,7 @@ Approvers allow or deny requests for access packages. To help Approvers make acc
 
 ## Entitlement management
 
-Decentralized identity solutions enable individuals to control their digital identities and manage identity data without reliance on a centralized authority or intermediary. Reduce the need for new employees or business partners to perform self-attestation. Simplify approval processes and simplify your compliance posture. Learn more about [Microsoft Verified ID](/verified-id/decentralized-identifier-overview) in entitlement management. 
+Decentralized identity solutions enable individuals to control their digital identities and manage identity data without reliance on a centralized authority or intermediary. Reduce the need for new employees or business partners to perform self-attestation. Simplify approval processes and simplify your compliance posture. Learn more about [Microsoft Verified ID](../verified-id/decentralized-identifier-overview.md) in entitlement management. 
 
 ### External user assignments and access packages
 
