@@ -13,7 +13,7 @@ ms.author: gasinh
 
 # Introduction to Microsoft Entra ID Governance deployment guide
 
-[Microsoft Entra ID Governance](../security/business/identity-access/microsoft-entra-id-governance.md) is an identity governance solution to improve productivity, strengthen security, and meet compliance and regulatory requirements. Ensure the right people have the right access to the right resources. Enable identity and access process automation, delegation to business groups, and increased visibility. Mitigate identity and access risk, protect, monitor, and audit access to your assets. Learn more about Microsoft Entra ID Governance [use cases](../id-governance/scenarios/identity-governance-use-cases.md) and [documentation](../id-governance).
+[Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md) is an identity governance solution to improve productivity, strengthen security, and meet compliance and regulatory requirements. Ensure the right people have the right access to the right resources. Enable identity and access process automation, delegation to business groups, and increased visibility. Mitigate identity and access risk, protect, monitor, and audit access to your assets. Learn more about Microsoft Entra ID Governance [use cases](../id-governance/scenarios/identity-governance-use-cases.md) and [documentation](../id-governance/identity-governance-overview.md).
 
 ## Deployment approach
 
@@ -88,7 +88,7 @@ A project is a success when you achieve the expected outcomes within budget and 
 * Dates that affect delivery
 * Dependencies
 
-Learn more with [Microsoft Entra ID Governance documentation](../id-governance).  
+Learn more about [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md).  
 
 In your project schedule:
 
@@ -161,7 +161,7 @@ Active Directory topology, if applicable:
 
 * **Evaluate the directory structure** - Understand the organizational units, forests, and domains in your Active Directory environment
 * **Plan for synchronization** - Synchronize specific organizational units, or the directory. Consider scalability, redundancy, and replication latency.
-* **Review hybrid scenarios and ensure Microsoft Entra Connect is optimized** - For foreests with separate trusts, evaluate use of [Microsoft Entra Cloud Sync](../identity/hybrid/cloud-sync/reference-cloud-sync-faq.md) 
+* **Review hybrid scenarios and ensure Microsoft Entra Connect is optimized** - For foreests with separate trusts, evaluate use of [Microsoft Entra Cloud Sync](../identity/hybrid/cloud-sync/reference-cloud-sync-faq.yml) 
 
 ### Pre-provisioning tasks
 
@@ -236,7 +236,7 @@ Determination of other target systems requires user provisioning, for instance I
 
 |Target system|Approach|Guidance|
 |---|---|---|
-|ITSM|- Automated app user provisioning </br> - Lifecycle workflows custom extensions: APIs, legacy systems </br>|- [Automated app user provisioning](/identity/app-provisioning/user-provisioning) </br> - [Workflow extensibility](../id-governance/lifecycle-workflow-extensibility.md)|
+|ITSM|- Automated app user provisioning </br> - Lifecycle workflows custom extensions: APIs, legacy systems </br>|- [Automated app user provisioning](../identity/app-provisioning/user-provisioning.md) </br> - [Workflow extensibility](../id-governance/lifecycle-workflow-extensibility.md)|
 |Legacy apps|- Extensible Connectivity Management Agent (ECMA) host </br> - Lifecycle workflows custom extensions </br>|- [Microsoft Entra on-premises app provisioning architecture]()</br> - [Workflow extensibility](../id-governance/lifecycle-workflow-extensibility.md)|
 |Software-as-a-Service (SaaS) apps integrated with Microsoft Entra ID |Automated app user provisioning|[Automated app user provisioning](../identity/app-provisioning/user-provisioning.md)|
 
@@ -305,7 +305,7 @@ A best practice is a method or technique that has demonstrably helped deliver hi
   * Ensure alignment with Microsoft Entra entitlement management rules and governance [service limits](../id-governance/governance-service-limits.md)
 * To manage permissions, request user access package assignment. For approval processes, select **Enforce policy approval** for administrator direct assignments. 
 * Evaluate and update access packages to reflect user roles changes
-  * See [Create an access review of an access package in entitlement management](/id-governance/entitlement-management-access-reviews-create)
+  * See [Create an access review of an access package in entitlement management](../id-governance/entitlement-management-access-reviews-create.md)
 * Automate common tasks for lifecycle workflows: send notification emails, add users to teams.
   * Built-in tasks enhance user onboarding efficiency and accuracy, resource assignment, and authorization processes
 * Use passwordless credentials when onboarding users
