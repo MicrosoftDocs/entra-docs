@@ -25,10 +25,8 @@ In this article,  you'll learn how to integrate GovWin IQ with Microsoft Entra I
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To integrate Microsoft Entra ID with GovWin IQ, you need:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * An active GovWin IQ Subscription. Single sign-on can be enabled at no cost. Make sure your Customer Success Manager has enabled a user at your organization as a SAML SSO Admin to perform the following steps.
 * All users must have same email address in Azure as provisioned in GovWin IQ.
 

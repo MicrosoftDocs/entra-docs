@@ -24,10 +24,8 @@ In this article,  you learn how to integrate Google Cloud / G Suite Connector by
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription.
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Google Cloud / G Suite Connector by Microsoft single sign-on (SSO) enabled subscription.
 * A Google Apps subscription or Google Cloud Platform subscription.
 

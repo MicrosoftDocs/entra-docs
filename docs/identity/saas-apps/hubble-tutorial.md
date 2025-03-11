@@ -24,10 +24,8 @@ In this article,  you'll learn how to integrate Hubble with Microsoft Entra ID. 
 * Enable your users to be automatically signed-in to Hubble with their Microsoft Entra accounts.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Hubble single sign-on (SSO) enabled subscription.
 
 ## Scenario description

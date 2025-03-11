@@ -23,10 +23,8 @@ In this article,  you'll learn how to integrate Sectigo Certificate Manager with
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with Sectigo Certificate Manager, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a Microsoft Entra subscription, create a [free account](https://azure.microsoft.com/free/) before you begin.
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Sectigo Certificate Manager account.
 
 > [!NOTE]

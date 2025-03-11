@@ -30,10 +30,8 @@ In this article,  you'll learn how to integrate Concur with Microsoft Entra ID. 
 > For these reason you must start out with a custom non-gallery application to set up SSO when using the **Manage Single Sign-On** feature in SAP Concur.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Concur single sign-on (SSO) enabled subscription.
 
 ## Scenario description
