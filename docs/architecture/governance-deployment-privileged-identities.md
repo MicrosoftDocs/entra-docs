@@ -1,6 +1,6 @@
 ---
 title: Microsoft Entra ID Governance deployment guide to govern privileged identities
-description: Learn how to govern privileged identities and their access in Microsfot Entra ID Governance, as a proof of concept.
+description: Learn how to govern privileged identities and their access in Microsoft Entra ID Governance, as a proof of concept.
 author: gargi-sinha
 manager: martinco
 ms.service: entra-id-governance
@@ -57,7 +57,7 @@ To prepare for the scenario, perform a discovery of current user lifecycle proce
 * Collect available architectural diagrams
 * Use a pilot user group
 * Identify PoC-resource technical owners for remediation or investigation
-* On the target tenant, enable an account with:
+* Enable an account on the target tenant with:
   * User Administrator,
   * Identity Governance Administrator,
   * Privileged Role Administrator, or 
@@ -67,7 +67,7 @@ Learn more about [privileged roles and permissions in Microsoft Entra ID](../ide
 
 ## Privileged Identity Management
 
-Use the Privileged Identity Management (PIM) service in Microsoft Entra ID  to manage, control, and monitor access to resources in your organization: Microsoft Entra ID, Microsoft Azure, and other services such as [Microsoft 365](/microsoft-365/security/?view=o365-worldwide&preserve-view=true) or [Microsoft Intune](/mem/intune/). Also, you can manage and audit administrator roles. 
+To manage, control, and monitor access to resources in your organization, use the Privileged Identity Management (PIM) service in Microsoft Entra ID: Microsoft Entra ID, Microsoft Azure, and other services such as [Microsoft 365](/microsoft-365/security/?view=o365-worldwide&preserve-view=true) or [Microsoft Intune](/mem/intune/). Also, you can manage and audit administrator roles. 
 
 * See users assigned to privileged roles
 * Enable on-demand, JIT administrative access
@@ -143,8 +143,8 @@ Read the following details about using PIM for Groups:
 * Role-assignable groups can't nest other groups
 * Groups are a Microsoft Entra ID security group or a Microsoft 365 Group
 * One group can be an eligible member of another group, even if one group is role-assignable
-* If a user is an active member of Group A, which is an eligible member of Group B, users can activate membership in Group B.
-  * This activation is for the user that requested the activation
+* A user is an active member of Group A, which is an eligible member of Group B, therefore users can activate membership in Group B.
+  * Activation is for the user that requested the activation
   * Group A doesn't become a member of Group B 
 
 ### Resource dashboards
@@ -196,11 +196,11 @@ For more information:
 
 ## Deploy PoC: PIM
 
-1. [Discover Azure resources to manage in PIM](/azure/active-directory/privileged-identity-management/pim-resource-roles-discover-resources)
+1. [Discover Azure resources you want to manage in PIM](/azure/active-directory/privileged-identity-management/pim-resource-roles-discover-resources)
 2. [Bring groups into PIM](/azure/active-directory/privileged-identity-management/groups-discover-groups)
-3. [Role settings for Microsoft Entra ID roles](/azure/active-directory/privileged-identity-management/pim-how-to-change-default-settings)
-4. [Role settings for Azure resource roles](/azure/active-directory/privileged-identity-management/pim-resource-roles-configure-role-settings)
-5. [Group settings for PIM](/azure/active-directory/privileged-identity-management/groups-role-settings)
+3. [Learn role settings for Microsoft Entra ID roles](/azure/active-directory/privileged-identity-management/pim-how-to-change-default-settings)
+4. [Learn role settings for Azure resource roles](/azure/active-directory/privileged-identity-management/pim-resource-roles-configure-role-settings)
+5. [Emable roup settings for PIM](/azure/active-directory/privileged-identity-management/groups-role-settings)
 6. [Assign Microsoft Entra ID roles in PIM](/azure/active-directory/privileged-identity-management/pim-how-to-add-role-to-user)
 7. [Assign Azure resources in PIM](/azure/active-directory/privileged-identity-management/pim-resource-roles-assign-roles)
 8. [Assign Groups in PIM](/azure/active-directory/privileged-identity-management/groups-assign-member-owner)
