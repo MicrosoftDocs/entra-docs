@@ -63,7 +63,7 @@ To prepare for the scenario, perform a discovery of current user lifecycle proce
   * Privileged Role Administrator, or 
   * Global Administrator
 
-Learn more about [privileged roles and permissions in Microsoft Entra ID](/identity/role-based-access-control/privileged-roles-permissions?tabs=admin-center&preserve-view=true).
+Learn more about [privileged roles and permissions in Microsoft Entra ID](../identity/role-based-access-control/privileged-roles-permissions?tabs=admin-center&preserve-view=true).
 
 ## Privileged Identity Management
 
@@ -79,7 +79,7 @@ Use the Privileged Identity Management (PIM) service in Microsoft Entra ID  to m
   * **Privileged access groups** - Use PIM for Groups to set up JIT access to members and owners in Microsoft Entra ID security groups, **or** 
   * Use the groups for Microsoft Entra ID role and Azure role assignments, also other permissions 
 
-Learn how to [start using Privileged Identity Management](/id-governance/privileged-identity-management/pim-getting-started). 
+Learn how to [start using Privileged Identity Management](../id-governance/privileged-identity-management/pim-getting-started.md). 
 
 ### PIM assignment types
 
@@ -88,17 +88,17 @@ The two assignment types are eligible and active.
 * **Eligible** - Require members to activate the role before use or perform certain actions before role activation. Actions include multifactor authentication (MFA), business justification, or approval from approvers.
 * **Active** - Don't require members to activate the role before use. Active members have privileges assigned ready to use. Use this assignment type for customers without PIM. 
 
-Learn how to [assign roles in PIM](/id-governance/privileged-identity-management/pim-how-to-add-role-to-user). 
+Learn how to [assign roles in PIM](../id-governance/privileged-identity-management/pim-how-to-add-role-to-user.md). 
 
 ### Plan for PIM deployment
 
 To mitigate risks of excessive, unnecessary, or misused access, use PIM for role activation. 
 
-Learn how to [plan a PIM deployment](/id-governance/privileged-identity-management/pim-deployment-plan). 
+Learn how to [plan a PIM deployment](../id-governance/privileged-identity-management/pim-deployment-plan.md). 
 
 ### Discovery and insights
 
-[Discovery and insights](/id-governance/privileged-identity-management/pim-security-wizard) in PIM are an analysis and action feature that shows privileged role assignments. Use it to change permanent role assignments into JIT assignments. Move users to Eligible status or you can remove them, as needed. Create access reviews for Global Administrators. Configure role settings such as: 
+[Discovery and insights](../id-governance/privileged-identity-management/pim-security-wizard.md) in PIM are an analysis and action feature that shows privileged role assignments. Use it to change permanent role assignments into JIT assignments. Move users to Eligible status or you can remove them, as needed. Create access reviews for Global Administrators. Configure role settings such as: 
 
 * Activation maximum duration
 * MFA on activation
@@ -112,7 +112,7 @@ Learn how to [manage Microsoft Entra role assignments with PIM APIs](/graph/api/
 
 Azure resource role settings define role assignment properties. These properties include multifactor authentication and approval requirements for activation, assignment maximum duration, and notification settings. 
 
-Learn to [configure Azure resource role settings in PIM](/id-governance/privileged-identity-management/pim-resource-roles-configure-role-settings), then how to [activate them](/id-governance/privileged-identity-management/pim-resource-roles-activate-your-roles). 
+Learn to [configure Azure resource role settings in PIM](../id-governance/privileged-identity-management/pim-resource-roles-configure-role-settings.md), then how to [activate them](../id-governance/privileged-identity-management/pim-resource-roles-activate-your-roles.md). 
 
 ## PIM for Groups
 
@@ -155,7 +155,7 @@ Use resource dashboards for access reviews in PIM.
 * Charts with distribution of role assignments by assignment type
 * A data area with new role assignments 
 
-Learn about [using a resource dashboard to perform an access review in PIM](/id-governance/privileged-identity-management/pim-resource-roles-overview-dashboards).  
+Learn about [using a resource dashboard to perform an access review in PIM](../id-governance/privileged-identity-management/pim-resource-roles-overview-dashboards.md).  
 
 ### Access reviews in PIM
 
@@ -190,7 +190,7 @@ You can require eligible users to satisfy Conditional Access policy requirements
 
 For more information: 
 
-* [Developer guide for Conditional Access authentication context](/identity-platform/developer-guide-conditional-access-authentication-context)
+* [Developer guide for Conditional Access authentication context](../identity-platform/developer-guide-conditional-access-authentication-context.md)
 * [Require Conditional Access authentication context](/azure/active-directory/privileged-identity-management/pim-how-to-change-default-settings)
 * [Monitor results of your Intune device-compliance policies](/mem/intune/protect/compliance-policy-monitor)
 
