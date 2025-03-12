@@ -19,13 +19,13 @@ This tutorial walks you through how to migrate to cloud sync for a test Active D
 This article provides information for a basic migration. Review the [Migrate to cloud sync](migrate-azure-ad-connect-to-cloud-sync.md) documentation before you attempt to migrate your production environment.
 
 In this tutorial, you learn how to:
-[!div class="checklist"]
-- Back up your Microsoft Entra Connect configuration.
-- Stop the scheduler.
-- Create custom user inbound and outbound rules.
-- Install the provisioning agent and verify the installation.
-- Configure Microsoft Entra Cloud Sync.
-- Restart the scheduler.
+
+> [!div class="checklist"]
+> - Back up your Microsoft Entra Connect configuration.
+> - Stop and restart the scheduler.
+> - Create custom user inbound and outbound rules.
+> - Install the provisioning agent and verify the installation.
+> - Configure Microsoft Entra Cloud Sync.
 
 ![Diagram that shows the Microsoft Entra Cloud Sync flow.](media/tutorial-migrate-aadc-aadccp/diagram-2.png)
 
