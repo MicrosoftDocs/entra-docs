@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 03/11/2025
+ms.date: 03/12/2025
 ms.author: gasinh
 
 #customer intent: I want to deploy and test Microsoft Entra ID Governance as a proof of concept in my production or test environment.
@@ -197,9 +197,9 @@ You can use guidance on cloud HR system integration, such as Workday, SuccessFac
 
 When planning for API-driven inbound provisioning, consider the use case and one of the following approaches. Learn more in [API-driven provisioning usage guidance](../identity/app-provisioning/inbound-provisioning-api-concepts.md).
 
-**API-driven usage guidance**
+**API endpoint**
 
- The **/bulkUpload** API endpoint expands the number of ways that you can manage users in Microsoft Entra ID. To help you determine if the **/bulkUpload** API endpoint is right for your integration scenario, refer to this table that compares it with other API-based integration options. 
+The **/bulkUpload** API endpoint expands the number of ways that you can manage users in Microsoft Entra ID. Determine if the **/bulkUpload** API endpoint is right for your integration scenario. 
 
 Discover more about the [API-driven inbound learning path](../identity/app-provisioning/inbound-provisioning-api-concepts.md). 
 
