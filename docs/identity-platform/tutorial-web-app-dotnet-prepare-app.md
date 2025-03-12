@@ -33,6 +33,7 @@ In this tutorial:
   * Cloud Application Administrator
 * Although any integrated development environment (IDE) that supports ASP.NET Core applications can be used, this tutorial uses **Visual Studio Code**. You can download it [here](https://visualstudio.microsoft.com/downloads/).
 * A minimum requirement of [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet).
+* An ASP.NET Core developer certificate. Install one using [dotnet dev-certs](/dotnet/core/additional-tools/self-signed-certificates-guide#with-dotnet-dev-certs)
 
 ### [Workforce tenant](#tab/workforce-tenant)
 

@@ -57,7 +57,7 @@ The home page of the application needs to have the capability to authorize the u
 
 ### Add authentication and authorization elements to *Program.cs*
 
-The `Program.cs` file is the entry point of the application, and needs to be modified to add authentication and authorization to the web app. Services need to be added to allow the app to use the settings defined in *appsettings.json* for authentication.
+The *Program.cs* file is the entry point of the application, and needs to be modified to add authentication and authorization to the web app. Services need to be added to allow the app to use the settings defined in *appsettings.json* for authentication.
 
 1. Add the following namespaces to the top of the file.
 
@@ -127,7 +127,7 @@ The `Program.cs` file is the entry point of the application, and needs to be mod
 
 The UI needs to be updates to provide a more user-friendly experience for sign-in and sign-out. This section shows how to create a new file that displays navigation items based on the user's authentication status. The code reads the ID token claims to check that the user is authenticated and uses `User.Claims` to extract ID token claims.
 
-1. Create a new file in *Pages/Shared* and give it the name *_LoginPartial.cshtml*.
+1. Create a new file in *Views/Shared* and give it the name *_LoginPartial.cshtml*.
 1. Open the file and add the following code for adding the sign in and sign out experience:
 
     ```csharp
@@ -152,7 +152,7 @@ The UI needs to be updates to provide a more user-friendly experience for sign-i
     </ul>
     ```
 
-1. Open *Pages/Shared/_Layout.cshtml* and add a reference to `_LoginPartial` created in the previous step. Place this near the end of the `navbar-nav` class as shown in the following snippet:
+1. Open *Views/Shared/_Layout.cshtml* and add a reference to `_LoginPartial` created in the previous step. Place this near the end of the `navbar-nav` class as shown in the following snippet:
 
     ```csharp
     <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
