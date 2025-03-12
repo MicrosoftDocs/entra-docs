@@ -6,7 +6,7 @@ manager: celestedg
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: how-to
-ms.date: 02/27/2025
+ms.date: 03/12/2025
 ms.author: cmulligan
 ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 #Customer intent: As a dev, devops, or it admin, I want to
