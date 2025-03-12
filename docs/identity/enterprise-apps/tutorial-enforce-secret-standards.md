@@ -12,16 +12,16 @@ ms.date: 03/12/2024
 # Customer intent: As an IT administrator, I want to enable secret restrictions using application management policies in Microsoft Entra ID to reduce the risk of unauthorized access to sensitive data.
 ---
 
-# Tutorial: Enforce recommended secret standards using application management policies
+# Tutorial: Enforce secret and certificate standards using application management policies
 
-Ensuring that applications in your organization are using secure secrets is crucial for protecting sensitive data and maintaining the integrity of your systems. Microsoft Entra ID provides a way to enforce secret standards through application management policies, which can help you manage restrictions on what kinds of secrets can be used, the lifecycle of secrets and ensure that they are rotated regularly. To learn more about application management policies, see [Microsoft Entra application management policies API overview](/graph/api/resources/applicationauthenticationmethodpolicy?view=graph-rest-1.0).
+Ensuring that applications in your organization are using secure authentication is crucial for protecting sensitive data and maintaining the integrity of your systems. Microsoft Entra ID provides a way to enforce secret and certificate standards through application management policies. This can help you manage restrictions on what kinds of secrets and keys can be used, their lifecycle and ensure that they are rotated regularly. To learn more about application management policies, see [Microsoft Entra application management policies API overview](/graph/api/resources/applicationauthenticationmethodpolicy?view=graph-rest-1.0).
 
-Policies can be applied to all applications in your organization or to specific applications. In this tutorial, you will learn how to create and apply an application management policy that enforces recommended policies for secrets as a default for all applications in your tenant. This includes:
+Policies can be applied to all applications in your organization or to specific applications. In this tutorial, you will learn how to create and apply an application management policy that enforces restrictions on secrets and certificates for all applications in your tenant. These restrictions include:
 
 > [!div class="checklist"]
 > * Disabling application passwords / client secrets.
 > * Disabling symmetric key usage in applications. 
-> * Restricting assymetric key (certificate) lifetime to 180 days.
+> * Restricting asymmetric key (certificate) lifetime to 180 days.
 
 To learn more about recommended security practices for Microsoft Entra tenants, please see [Configure Microsoft Entra for increased security](https://aka.ms/EntraSecurityRecommendations).
 
@@ -31,7 +31,7 @@ To learn more about recommended security practices for Microsoft Entra tenants, 
 * An API client such as [Graph Explorer](https://aka.ms/ge). 
 * An account with at least the [Cloud Application Administrator](../role-based-access-control/permissions-reference.md#application-administrator) or [Application Administrator](../role-based-access-control/permissions-reference.md#application-administrator) role.
 
-## Best practices for secrets and certificates 
+## Recommended practices for secrets and certificates 
 
 Implementing secure secret standards is essential for protecting sensitive data and maintaining the integrity of your systems. Attacks on applications often target secrets, such as passwords, keys, and certificates, to gain unauthorized access to sensitive data. By enforcing recommended secret standards, you can help mitigate these risks and ensure that your applications remain secure. The following are the recommended secret standards that you can enforce using application management policies:
 

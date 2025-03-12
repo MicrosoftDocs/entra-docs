@@ -57,7 +57,7 @@ Secret scanning for your repository checks for any secrets that may already exis
 
 ### Deploy application authentication policies to enforce secure authentication practices
 
-Application management policies allow IT admins to enforce best practices for how apps in their organizations should be configured. For example, an admin might configure a policy to block the use or limit the lifetime of password secrets. To learn more, see [Microsoft Entra application management policies API overview](/graph/api/resources/applicationauthenticationmethodpolicy).  
+Application management policies allow IT admins to enforce best practices for how apps in their organizations should be configured. For example, an admin might configure a policy to block the use or limit the lifetime of password secrets. To learn more, see [Tutorial: Enforce secret and certificate standards using application management policies](../../identity/enterprise-apps/tutorial-enforce-secret-standards.md) and [Microsoft Entra application management policies API overview](/graph/api/resources/applicationauthenticationmethodpolicy).
 
 > [!IMPORTANT]
 > Premium licenses are required to implement application authentication policy management, for more information, see [Microsoft Entra licensing](../../fundamentals/licensing.md).   
