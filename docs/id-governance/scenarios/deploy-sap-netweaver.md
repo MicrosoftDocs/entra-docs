@@ -4,7 +4,7 @@ description: This article describes how to set up a lab environment with SAP ECC
 ms.service: entra-id-governance
 ms.subservice:
 author: billmath
-manager: amycolannino
+manager: femila
 
 ms.topic: conceptual
 ms.date: 12/30/2024

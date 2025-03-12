@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect Sync: Make a change to the default configuration
 description: Walks you through how to make a change to the configuration in Microsoft Entra Connect Sync.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: 7b9df836-e8a5-4228-97da-2faec9238b31
 ms.service: entra-id
 ms.custom: has-azure-ad-ps-ref

@@ -4,7 +4,7 @@ description: This topic describes how to use Connect when you have an existing M
 author: billmath
 ms.service: entra-id
 ms.custom: has-azure-ad-ps-ref
-manager: amycolannino
+manager: femila
 ms.topic: how-to
 ms.date: 12/19/2024
 ms.subservice: hybrid-connect

@@ -27,10 +27,8 @@ In this article,  you'll learn how to integrate JIRA SAML SSO by Microsoft (V5.2
 Use your Microsoft Entra account with Atlassian JIRA server to enable single sign-on. This way all your organization users can use the Microsoft Entra credentials to sign in into the JIRA application. This plugin uses SAML 2.0 for federation.
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with JIRA SAML SSO by Microsoft (V5.2), you need the following items:
-
-- A Microsoft Entra subscription.
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 - JIRA Core and Software 5.2 should installed and configured on Windows 64-bit version.
 - JIRA server is HTTPS enabled.
 - Note the supported versions for JIRA Plugin are mentioned in below section.

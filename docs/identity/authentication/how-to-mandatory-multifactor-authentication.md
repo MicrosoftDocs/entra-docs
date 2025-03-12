@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.date: 03/04/2025
 ms.author: justinha
 author: najshahid
-manager: amycolannino
+manager: femila
 ms.reviewer: nashahid, gkinasewitz
 
 # Customer intent: As an identity administrator, I want to plan for mandatory MFA for users who sign in to Azure portal.

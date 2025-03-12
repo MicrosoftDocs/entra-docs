@@ -29,10 +29,8 @@ In this article,  you'll learn how to integrate Confluence SAML SSO by Microsoft
 Use your Microsoft Entra account with Atlassian Confluence server to enable single sign-on. This way all your organization users can use the Microsoft Entra credentials to sign in into the Confluence application. This plugin uses SAML 2.0 for federation.
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with Confluence SAML SSO by Microsoft, you need the following items:
-
-- A Microsoft Entra subscription.
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 - Confluence server application installed on a Windows 64-bit server (on-premises or on the cloud IaaS infrastructure).
 - Confluence server is HTTPS enabled.
 - Note the supported versions for Confluence Plugin are mentioned in below section.
@@ -62,7 +60,9 @@ As of now, following versions of Confluence are supported:
 
 - Confluence: 5.0 to 5.10
 - Confluence: 6.0.1 to 6.15.9
-- Confluence: 7.0.1 to 9.0.3
+- Confluence: 7.0.1 to 7.20.3
+- Confluence: 8.0.0 to 8.9.8
+- Confluence: 9.0.1 to 9.3.1
 
 > [!NOTE]
 > Please note that our Confluence Plugin also works on Ubuntu Version 16.04

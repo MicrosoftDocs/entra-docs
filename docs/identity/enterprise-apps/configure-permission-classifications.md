@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.date: 03/03/2025
 ms.author: jomondi
 ms.reviewer: phsignor, jawoods
-ms.custom: has-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref
 zone_pivot_groups: enterprise-apps-all
 #customer intent: As an administrator managing permissions in Microsoft Entra ID, I want to configure permission classifications, so that I can identify the impact of different permissions according to my organization's policies and risk evaluations.
 ---

@@ -4,9 +4,9 @@ description: This article lists all releases of Microsoft Entra Connect and Azur
 author: billmath
 ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.service: entra-id
-manager: amycolannino
+manager: femila
 ms.topic: reference
-ms.date: 10/07/2024
+ms.date: 03/07/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 ms.custom: has-adal-ref, has-azure-ad-ps-ref
@@ -19,6 +19,9 @@ The Microsoft Entra team regularly updates Microsoft Entra Connect with new feat
 
 This article helps you keep track of the versions that have released and the changes in those versions.
 
+### Breaking Change on Entra Connect Sync
+> [!IMPORTANT]
+> The MSOnline [deprecation](https://aka.ms/msonlineretirement) on April 7, 2025 will impact Entra Connect Sync service. We recommend that you upgrade your connect sync version to 2.4.18.0 or higher to avoid being impacted by the deprecation. No action is required if you have upgraded your connect sync version. [Learn More](harden-update-ad-fs-pingfederate.md) 
 
 ## Looking for the latest versions?
 

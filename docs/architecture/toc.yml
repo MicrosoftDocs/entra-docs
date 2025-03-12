@@ -177,7 +177,7 @@ items:
       href: deployment-plans.md
     - name: Azure Active Directory B2C deployment plans
       href: b2c-deployment-plans.md
-    - name: External identity deployment architectures
+    - name: Microsoft Entra External ID deployment architectures
       href: external-identity-deployment-architectures.md
     - name: Microsoft Entra deployment scenarios
       items:
@@ -207,6 +207,20 @@ items:
           href: gsa-poc-private-access.md
         - name: Configure Microsoft Entra Internet Access
           href: gsa-poc-internet-access.md
+    - name: Microsoft Entra External ID deployment guide
+      items:
+      - name: Introduction
+        href: deployment-external-intro.md
+      - name: Tenant design
+        href: deployment-external-tenant-design.md
+      - name: Customer authentication experience
+        href: deployment-external-customer-authentication.md
+      - name: Operations
+        href: deployment-external-operations.md
+      - name: Authentication and access control architecture
+        href: deployment-external-authentication-access-control.md
+      - name: Auditing and monitoring
+        href: deployment-external-audit-monitor.md
   - name: Migration best practices
     items:
     - name: Migration best practices
