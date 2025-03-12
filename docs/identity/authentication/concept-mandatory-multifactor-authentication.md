@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 03/04/2025
+ms.date: 03/12/2025
 ms.author: justinha
 author: najshahid
 manager: amycolannino
@@ -103,7 +103,7 @@ Changes are required if you're using the [Azure.Identity](https://www.nuget.org/
 - Using [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential) or [EnvironmentCredential](/dotnet/api/azure.identity.environmentcredential) with the following two environment variables set:
     - `AZURE_USERNAME`
     - `AZURE_PASSWORD`
-- Using [UsernamePasswordCredential](/dotnet/api/azure.identity.usernamepasswordcredential)
+- Using `UsernamePasswordCredential` (**deprecated** as of the `1.14.0-beta.2` release)
 
 ### [Go](#tab/go)
 
@@ -130,7 +130,7 @@ Changes are required if you're using the [@azure/identity](https://www.npmjs.com
 - Using [DefaultAzureCredential](/javascript/api/@azure/identity/defaultazurecredential) or [EnvironmentCredential](/javascript/api/@azure/identity/environmentcredential) with the following two environment variables set:
     - `AZURE_USERNAME`
     - `AZURE_PASSWORD`
-- Using [UsernamePasswordCredential](/javascript/api/@azure/identity/usernamepasswordcredential)
+- Using [UsernamePasswordCredential](/javascript/api/@azure/identity/usernamepasswordcredential) (**deprecated** as of the `4.8.0` release)
 
 ### [Python](#tab/python)
 
@@ -139,7 +139,7 @@ Changes are required if you're using the [azure-identity](https://pypi.org/proje
 - Using [DefaultAzureCredential](/python/api/azure-identity/azure.identity.defaultazurecredential) or [EnvironmentCredential](/python/api/azure-identity/azure.identity.environmentcredential) with the following two environment variables set:
     - `AZURE_USERNAME`
     - `AZURE_PASSWORD`
-- Using [UsernamePasswordCredential](/python/api/azure-identity/azure.identity.usernamepasswordcredential)
+- Using [UsernamePasswordCredential](/python/api/azure-identity/azure.identity.usernamepasswordcredential) (**deprecated** as of the `1.21.0` release)
 
 ---
 
