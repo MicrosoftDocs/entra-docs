@@ -21,11 +21,12 @@ This article provides information for a basic migration. Review the [Migrate to 
 In this tutorial, you learn how to:
 
 > [!div class="checklist"]
-> - Back up your Microsoft Entra Connect configuration.
-> - Stop and restart the scheduler.
+> - Stop the scheduler.
 > - Create custom user inbound and outbound rules.
-> - Install the provisioning agent and verify the installation.
+> - Install the provisioning agent.
+> - Verify the agent installation.
 > - Configure Microsoft Entra Cloud Sync.
+> - Restart the scheduler.
 
 ![Diagram that shows the Microsoft Entra Cloud Sync flow.](media/tutorial-migrate-aadc-aadccp/diagram-2.png)
 
@@ -174,24 +175,24 @@ To configure provisioning, follow these steps:
 
 [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
 
-1. Select **New configuration**.
+3. Select **New configuration**.
 
     :::image type="content" source="media/how-to-configure/new-ux-configure-1.png" alt-text="Screenshot that shows adding a configuration." lightbox="media/how-to-configure/new-ux-configure-1.png":::
 
-1. On the configuration screen, select your domain and whether to enable password hash sync. Then select **Create**.
+4. On the configuration screen, select your domain and whether to enable password hash sync. Then select **Create**.
 
     :::image type="content" source="media/how-to-configure/new-ux-configure-2.png" alt-text="Screenshot that shows a new configuration." lightbox="media/how-to-configure/new-ux-configure-2.png":::
 
-1. On the **Get started** screen, select either **Add scoping filters** next to the **Add scoping filters** icon or on the left pane under **Manage**, select **Scoping filters**.
+5. On the **Get started** screen, select either **Add scoping filters** next to the **Add scoping filters** icon or on the left pane under **Manage**, select **Scoping filters**.
 
     :::image type="content" source="media/how-to-configure/new-ux-configure-5.png" alt-text="Screenshot that shows the scoping filters." lightbox="media/how-to-configure/new-ux-configure-5.png":::
 
-1. Select the scoping filter. For this tutorial, select **Selected organizational units**. This filter scopes the configuration to apply to specific OUs.
+6. Select the scoping filter. For this tutorial, select **Selected organizational units**. This filter scopes the configuration to apply to specific OUs.
 
-1. In the box, enter **OU=CPUsers,DC=contoso,DC=com**.
+7. In the box, enter **OU=CPUsers,DC=contoso,DC=com**.
     :::image type="content" source="media/tutorial-migrate-aadc-aadccp/configure-1.png" alt-text="Screenshot that shows the scoping filter." lightbox="media/tutorial-migrate-aadc-aadccp/configure-1.png":::
 
-1. Select **Add** > **Save**.
+8. Select **Add** > **Save**.
 
 ## Start the scheduler
 
