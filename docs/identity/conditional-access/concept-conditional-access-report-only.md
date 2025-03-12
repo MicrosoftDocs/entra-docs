@@ -62,7 +62,7 @@ The policy impact view of Conditional Access lets admins with at least the Secur
 
 ### Workbooks
 
-Administrators can create multiple policies in report-only mode, so it's necessary to understand both the individual impact of each policy and the combined impact of multiple policies evaluated together. The [Conditional Access Insights and Reporting workbook](howto-conditional-access-insights-reporting) lets administrators visualize Conditional Access policy, it queries and monitor the impact of a policy for a given time range, set of applications, and users. Administrators can customize workbooks to suit their specific needs.
+Administrators can create multiple policies in report-only mode, so it's necessary to understand both the individual impact of each policy and the combined impact of multiple policies evaluated together. The [Conditional Access Insights and Reporting workbook](howto-conditional-access-insights-reporting.md) lets administrators visualize Conditional Access policy, it queries and monitor the impact of a policy for a given time range, set of applications, and users. Administrators can customize workbooks to suit their specific needs.
 
 ### Sign-in logs
 
