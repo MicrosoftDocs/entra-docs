@@ -48,6 +48,6 @@ After administrators confirm the settings using [report-only mode](howto-conditi
 
 ## Next steps
 
-[Conditional Access templates](concept-conditional-access-policy-common.md)
++ [Conditional Access templates](concept-conditional-access-policy-common.md)
 
-[Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)
++ [Use report-only mode for Conditional Access to determine the results of new policy decisions.](concept-conditional-access-report-only.md)
