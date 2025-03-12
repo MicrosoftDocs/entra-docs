@@ -807,7 +807,7 @@
                 - name: Known issues - IE and Microsoft Edge
                   href: msal-js-known-issues-ie-edge-browsers.md
         - name: MSAL.NET
-          displayName: ASP.NET Core, Xamarin
+          displayName: ASP.NET Core
           href: /entra/msal/dotnet
         - name: Microsoft.Identity.Web (MSAL wrapper)
           displayName: auth, library, .NET, msal
