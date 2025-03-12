@@ -8,14 +8,14 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: how-to
-ms.date: 02/24/2025
+ms.date: 03/12/2025
 ms.author: cmulligan
 ms.reviewer: brozbab
 ms.custom: it-pro
 
 #Customer intent: As a dev, devops, or it admin, I want to learn how to configure an Azure AD B2C tenant as an identity provider for my external tenant.
 ---
-# Add Azure AD B2C tenant as an OpenID Connect identity provider (preview)
+# Add Azure AD B2C tenant as an OpenID Connect identity provider
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
