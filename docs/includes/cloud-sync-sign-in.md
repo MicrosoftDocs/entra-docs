@@ -14,4 +14,4 @@ ms.custom: include file
 
 1. Browse to **Identity** > **Hybrid management** > **Microsoft Entra Connect** > **Cloud Sync**.
 
-   :::image type="content" source="media/cloud-sync-sign-in/sign-in-1.png" alt-text="Screenshot that shows the Microsoft Entra Connect Cloud Sync home page." lightbox="media/cloud-sync-sign-in/sign-in-1.png":::
+    :::image type="content" source="media/cloud-sync-sign-in/sign-in-1.png" alt-text="Screenshot that shows the Microsoft Entra Connect Cloud Sync home page." lightbox="media/cloud-sync-sign-in/sign-in-1.png":::
