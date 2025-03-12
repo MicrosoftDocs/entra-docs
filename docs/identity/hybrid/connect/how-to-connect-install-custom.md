@@ -339,7 +339,7 @@ If you selected **Create a group Managed Service Account** and this feature has 
 > [!NOTE]
 > Microsoft Entra Connect checks whether the AD FS service is already registered as a service principal name (SPN) in the domain.  AD DS doesn't allow duplicate SPNs to be registered at the same time.  If a duplicate SPN is found, you can't proceed further until the SPN is removed.
 
-:::image type="content" source="media/how-to-connect-install-custom/custom-adfs-5.png" alt-text="Screenshot of the AD FS service account
+:::image type="content" source="media/how-to-connect-install-custom/custom-adfs-5.png" alt-text="Screenshot of the AD FS service account." lightbox="media/how-to-connect-install-custom/custom-adfs-5.png":::
 
 <a name='select-the-azure-ad-domain-that-you-want-to-federate'></a>
 
