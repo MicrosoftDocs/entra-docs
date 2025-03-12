@@ -17,11 +17,11 @@ ms.custom: it-pro
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
-Admin accounts are users in your Microsoft Entra external tenant who have been assigned admin roles. You can add an admin account to your tenant by creating or inviting a user via the Microsoft Entra admin center or Microsoft Graph and explicitly assigning them an admin role. Otherwise, they have [default user permissions](reference-user-permissions.md).
+Admin accounts are users in your Microsoft Entra external tenant who have been assigned admin roles. You can add an admin account to your tenant by creating or inviting a user via the Microsoft Entra admin center or Microsoft Graph and assigning them an admin role. If you don't assign an admin role, the user has [default user permissions](reference-user-permissions.md).
 
-An admin account user differs from an *external user* in that external users are generally considered to be consumers and business customers of the apps registered in your external tenant. Typically, you don't assign admin roles to external users, so they retain default user permissions.
+In contrast to admin accounts, you typically don't assign admin roles to consumers and business customers because they're considered end users of your apps. Instead, they retain [default user permissions](reference-user-permissions.md).
 
-This article focuses on the Microsoft Entra admin center method of user creation and deletion. To add or delete users, your account must be assigned at least the [User Administrator](/entra/identity/role-based-access-control/permissions-reference#user-administrator) role.
+This article focuses on managing user accounts in the Microsoft Entra admin center. To add or delete users, your account must be assigned at least the [User Administrator](/entra/identity/role-based-access-control/permissions-reference#user-administrator) role.
 
 ## Prerequisites
 
