@@ -27,7 +27,7 @@ This article focuses on managing user accounts in the Microsoft Entra admin cent
 - Understand user accounts in Microsoft Entra External ID.
 - Understand user roles to control resource access.
 
-## Create a user account
+## Create a customer account
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](/entra/identity/role-based-access-control/permissions-reference#user-administrator).
 1. If you have access to multiple tenants, use the **Settings** icon :::image type="icon" source="media/common/admin-center-settings-icon.png" border="false"::: in the top menu to switch to your external tenant from the **Directories + subscriptions** menu.
