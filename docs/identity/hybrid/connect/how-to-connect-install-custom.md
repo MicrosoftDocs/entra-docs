@@ -8,7 +8,7 @@ manager: femila
 ms.assetid: 6d42fb79-d9cf-48da-8445-f482c4c536af
 ms.service: entra-id
 ms.topic: how-to
-ms.date: 12/19/2024
+ms.date: 03/12/2025
 ms.subservice: hybrid-connect
 ms.author: billmath
 
@@ -26,6 +26,14 @@ Prerequisites:
 
 To set up a custom installation for Microsoft Entra Connect, go through the wizard pages that the following sections describe.
 
+## TLS 1.2 enforcement for Microsoft Entra Connect Sync
+
+Transport Layer Security (TLS) protocol version 1.2 is a cryptography protocol that is designed to provide  secure communications. The TLS protocol aims primarily to provide privacy and data integrity. TLS has gone through many iterations, with version 1.2 being defined in [RFC 5246](https://tools.ietf.org/html/rfc5246). The latest version of Microsoft Entra Connect Sync fully supports using only TLS 1.2 for communications with Microsoft Entra ID. Before installing the latest versions of Microsoft Entra Connect Sync, be sure to enable TLS 1.2.  
+
+:::image type="content" source="media/how-to-connect-install-express/install-10.png" alt-text="Screenshot of TLS warning screen." lightbox="media/how-to-connect-install-express/install-10.png":::
+
+For more information see [TLS 1.2 enforcement for Microsoft Entra Connect Sync](reference-connect-tls-enforcement.md)
+
 ### Express settings
 On the **Express Settings** page, select **Customize** to start a customized-settings installation.  The rest of this article guides you through the custom installation process. Use the following links to quickly go to the information for a particular page:
 
@@ -37,7 +45,7 @@ On the **Express Settings** page, select **Customize** to start a customized-set
 ### Install required components
 When you install the synchronization services, you can leave the optional configuration section unselected. Microsoft Entra Connect sets up everything automatically. It sets up a SQL Server 2019 Express LocalDB instance, creates the appropriate groups, and assign permissions. If you want to change the defaults, select the appropriate boxes.  The following table summarizes these options and provides links to additional information. 
 
-![Screenshot showing optional selections for the required installation components in Microsoft Entra Connect.](./media/how-to-connect-install-custom/requiredcomponents2.png)
+:::image type="content" source="media/how-to-connect-install-custom/custom-1.png" alt-text="Screenshot of required components screen." lightbox="media/how-to-connect-install-custom/custom-1.png":::
 
 | Optional configuration | Description |
 | --- | --- |
