@@ -45,8 +45,6 @@ To work around this constraint, you need to add a different IssuerUri, which can
 
 This parameter makes Microsoft Entra ID configure the IssuerUri so that it's based on the name of the domain. The IssuerUri will be unique across directories in Microsoft Entra ID. Using the parameter allows the PowerShell command to complete successfully.
 
-![Screenshot that shows a successful completion of the PowerShell command.](./media/how-to-connect-install-multiple-domains/convert.png)
-
 `-SupportMultipleDomain` doesn't change the other endpoints, which are still configured to point to the federation service on adfs.bmcontoso.com.
 
 `-SupportMultipleDomain` also ensures that the AD FS system includes the proper Issuer value in tokens issued for Microsoft Entra ID. This value is set by taking the domain portion of the user's UPN and using it as the domain in the IssuerUri, that is, `https://{upn suffix}/adfs/services/trust`.

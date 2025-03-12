@@ -88,16 +88,16 @@ Once connected, to see a general list of attribute provisioning errors in the te
 #### By property type
 To see errors by property type, specify **UserPrincipalName** or **ProxyAddresses**:
 
-`Get-EntraDirectoryObjectOnPremisesProvisioningError | where-Object PropertyCausingError -eq 'UserPrincipalName'`
+`Get-EntraDirectoryObjectOnPremisesProvisioningError | Where-Object PropertyCausingError -eq 'UserPrincipalName'`
 
 Or
 
-`Get-EntraDirectoryObjectOnPremisesProvisioningError | where-Object PropertyCausingError -eq 'ProxyAddresses'`
+`Get-EntraDirectoryObjectOnPremisesProvisioningError | Where-Object PropertyCausingError -eq 'ProxyAddresses'`
 
 #### By conflicting value
 To see errors relating to a specific property add the value:
 
-`Get-EntraDirectoryObjectOnPremisesProvisioningError | where-Object PropertyCausingError -eq 'UserPrincipalName' | where-Object Value -eq 'User@domain.com'`
+`Get-EntraDirectoryObjectOnPremisesProvisioningError | Where-Object PropertyCausingError -eq 'UserPrincipalName' | Where-Object Value -eq 'User@domain.com'`
 
 #### Using a string search
 To do a broad string search:
