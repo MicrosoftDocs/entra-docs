@@ -2,7 +2,7 @@
 title: How to download logs in Microsoft Entra ID
 description: How to download the audit, sign-in, and provisioning log data for manual storage in Microsoft Entra ID.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
@@ -62,7 +62,6 @@ For example, if you're in the **Groups** or **Licenses** section of Microsoft En
 
 ### Audit logs
 
-[!INCLUDE [portal update](../../includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Monitoring & health** > **Audit logs**.

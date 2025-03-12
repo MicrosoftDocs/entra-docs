@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with GitHub Enterprise Managed User'
+title: Microsoft Entra single sign-on (SSO) integration with GitHub Enterprise Managed User
 description: Learn how to configure single sign-on between Microsoft Entra ID and GitHub Enterprise Managed User.
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 05/22/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and GitHub Enterprise Managed User so that I can control who has access to GitHub Enterprise Managed User, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with GitHub Enterprise Managed User
+# Microsoft Entra single sign-on (SSO) integration with GitHub Enterprise Managed User
 
-In this tutorial, you'll learn how to integrate GitHub Enterprise Managed User (EMU) with Microsoft Entra ID. When you integrate GitHub Enterprise Managed User with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate GitHub Enterprise Managed User (EMU) with Microsoft Entra ID. When you integrate GitHub Enterprise Managed User with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to GitHub Enterprise Managed User.
 * Enable your users to be automatically signed-in to GitHub Enterprise Managed User with their Microsoft Entra accounts.
@@ -27,15 +27,13 @@ In this tutorial, you'll learn how to integrate GitHub Enterprise Managed User (
 > [GitHub Enterprise Managed Users](https://docs.github.com/enterprise-cloud@latest/admin/authentication/managing-your-enterprise-users-with-your-identity-provider/about-enterprise-managed-users) is a feature of GitHub Enterprise Cloud which is different from GitHub Enterprise's standard SAML SSO implementation. If you haven't specifically requested EMU instance, you have standard GitHub Enterprise Cloud plan. In that case, please refer to relevant documentation to configure your non-EMU [organisation](./github-tutorial.md) or [enterprise account](./github-enterprise-cloud-enterprise-account-tutorial.md) to authenticate with Microsoft Entra ID.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * GitHub Enterprise Managed User single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * GitHub Enterprise Managed User supports both **SP and IDP** initiated SSO.
 * GitHub Enterprise Managed User requires [**Automated** user provisioning](./github-enterprise-managed-user-provisioning-tutorial.md).
@@ -110,7 +108,7 @@ In this section, you'll assign your account to GitHub Enterprise Managed User in
 1. In the app's overview page, find the **Manage** section and select **Users and groups**.
 1. Select **Add user**, then select **Users and groups** in the **Add Assignment** dialog.
 1. In the **Users and groups** dialog, select your account from the Users list, then click the **Select** button at the bottom of the screen.
-1. In the **Select a role** dialog, select the **Enterprise Owner** role, then click the **Select** button at the bottom of the screen. Your account is assigned as an Enterprise Owner for your GitHub instance when you provision your account in the next tutorial. 
+1. In the **Select a role** dialog, select the **Enterprise Owner** role, then click the **Select** button at the bottom of the screen. Your account is assigned as an Enterprise Owner for your GitHub instance when you provision your account in the next article. 
 1. In the **Add Assignment** dialog, click the **Assign** button.
 
 ## Configure GitHub Enterprise Managed User SSO
@@ -133,12 +131,11 @@ In this section, you'll take the information provided from Microsoft Entra ID ab
 1. Enter the Sign-on URL. This URL is the Login URL that you copied from Microsoft Entra ID above.
 1. Enter the Issuer. This URL is the Microsoft Entra Identifier that you copied from Microsoft Entra ID above.
 1. Enter the Public Certificate. Please open the base64 certificate that you downloaded above and paste the text contents of that file into this dialog.
-1. Click on **Test SAML configuration**. This will open up a dialog for you to log in with your Microsoft Entra credentials to validate that SAML SSO is configured correctly. Log in with your Microsoft Entra credentials. you will receive a message **Passed: Successfully authenticated your SAML SSO identity** upon successful validation.
+1. Click on **Test SAML configuration**. This will open up a dialog for you to log in with your Microsoft Entra credentials to validate that SAML SSO is configured correctly. Log in with your Microsoft Entra credentials. You may need to clear your browser's cache when testing to ensure you're logging in to the correct tenant. You will receive a message **Passed: Successfully authenticated your SAML SSO identity** upon successful validation.
 1. Click **Save** to persist these settings.
 1. Please save (download, print, or copy) the recovery codes in a secure place.
-1. Click on **Enable SAML authentication**.
 1. At this point, only accounts with SSO are able to log into your Enterprise. Follow the instructions in the document below on provisioning in order to provision accounts backed by SSO.
 
-## Next steps
+## Related content
 
 GitHub Enterprise Managed User **requires** all accounts to be created through automatic user provisioning, you can find more details [here](./github-enterprise-managed-user-provisioning-tutorial.md) on how to configure automatic user provisioning.

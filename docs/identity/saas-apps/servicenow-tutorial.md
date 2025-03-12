@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with ServiceNow | Microsoft Docs'
+title: Microsoft Entra single sign-on (SSO) integration with ServiceNow | Microsoft Docs
 description: Learn how to configure single sign-on between Microsoft Entra ID and ServiceNow.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ServiceNow so that I can control who has access to ServiceNow, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with ServiceNow
+# Microsoft Entra single sign-on (SSO) integration with ServiceNow
 
-In this tutorial, you'll learn how to integrate ServiceNow with Microsoft Entra ID. When you integrate ServiceNow with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate ServiceNow with Microsoft Entra ID. When you integrate ServiceNow with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to ServiceNow.
 * Enable your users to be automatically signed-in to ServiceNow with their Microsoft Entra accounts.
@@ -26,10 +26,8 @@ In this tutorial, you'll learn how to integrate ServiceNow with Microsoft Entra 
 > [!VIDEO https://learn-video.azurefd.net/vod/player?id=497330f1-661a-4719-9156-e44708fe9401]
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A ServiceNow single sign-on (SSO) enabled subscription.
 * For ServiceNow, an instance or tenant of ServiceNow supports Calgary, Kingston, London, Madrid, New York, Orlando, Paris and San Diego versions or later.
 * For ServiceNow Express, an instance of ServiceNow Express, Helsinki version or later.
@@ -42,13 +40,13 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment. 
+In this article,  you configure and test Microsoft Entra SSO in a test environment. 
 
 * ServiceNow supports **SP** initiated SSO.
 
 * ServiceNow supports [Automated user provisioning](servicenow-provisioning-tutorial.md).
 
-* You can configure the ServiceNow Agent (Mobile) application with Microsoft Entra ID for enabling SSO. It supports both Android and iOS users. In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+* You can configure the ServiceNow Agent (Mobile) application with Microsoft Entra ID for enabling SSO. It supports both Android and iOS users. In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 ## Add ServiceNow from the gallery
 
@@ -103,7 +101,7 @@ Follow these steps to enable Microsoft Entra SSO.
     |
     
     > [!NOTE]
-    >  Please copy the sys_id value from **Configure ServiceNow** section which is explained later in the tutorial.
+    >  Please copy the sys_id value from **Configure ServiceNow** section which is explained later in the article.
 
     b. In **Identifier (Entity ID)**, enter a URL that uses the following pattern:
     `https://<instance-name>.service-now.com`
@@ -123,13 +121,13 @@ Follow these steps to enable Microsoft Entra SSO.
 	> If "/ " is added in the Identifier value, please remove that manually.
 
 	> [!NOTE]
-	> These values aren't real. You need to update these values with the actual sign-on URL, Reply URL, Logout URL and identifier, which is explained later in the tutorial. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. You need to update these values with the actual sign-on URL, Reply URL, Logout URL and identifier, which is explained later in the article. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)**. 
 
    ![Screenshot of the SAML Signing Certificate section, with Download highlighted](common/certificatebase64.png)
 
-   a. Select the copy button to copy **App Federation Metadata Url**, and paste it into Notepad. This URL will be used later in the tutorial.
+   a. Select the copy button to copy **App Federation Metadata Url**, and paste it into Notepad. This URL will be used later in the article.
 
 	b. Select **Download** to download **Certificate(Base64)**, and then save the certificate file on your computer.
 
@@ -212,7 +210,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 	> If "/ " is added in the Identifier value, please remove that manually.
 
 	> [!NOTE]
-	> These values aren't real. You need to update these values with the actual sign-on URL, Reply URL, Logout URL and identifier, which is explained later in the tutorial. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. You need to update these values with the actual sign-on URL, Reply URL, Logout URL and identifier, which is explained later in the article. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 5. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, select **Download** to download the **Certificate (Base64)** from the specified options, as per your requirement. Save it on your computer.
 
@@ -500,6 +498,6 @@ When you select the ServiceNow tile in the Access Panel, you should be automatic
 
 		![Screenshot of the application home page](./media/servicenow-tutorial/mobile-landing-page.png)
 
-## Next Steps
+## Related content
 
 Once you configure ServiceNow you can enforce session controls, which protect exfiltration and infiltration of your organization’s sensitive data in real time. Session controls extend from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

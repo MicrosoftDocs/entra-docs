@@ -1,37 +1,35 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with N2F - Expense reports'
+title: Microsoft Entra SSO integration with N2F - Expense reports
 description: Learn how to configure single sign-on between Microsoft Entra ID and N2F - Expense reports.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and N2F - Expense reports so that I can control who has access to N2F - Expense reports, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with N2F - Expense reports
+# Microsoft Entra SSO integration with N2F - Expense reports
 
-In this tutorial, you'll learn how to integrate N2F - Expense reports with Microsoft Entra ID. When you integrate N2F - Expense reports with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate N2F - Expense reports with Microsoft Entra ID. When you integrate N2F - Expense reports with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to N2F - Expense reports.
 * Enable your users to be automatically signed-in to N2F - Expense reports with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * N2F - Expense reports single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * N2F - Expense reports supports **SP** and **IDP** initiated SSO.
 
@@ -202,6 +200,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the N2F - Expense reports tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the N2F - Expense reports for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure N2F - Expense reports you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

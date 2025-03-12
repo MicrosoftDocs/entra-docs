@@ -2,7 +2,7 @@
 title: Microsoft Entra SSO integration with Maximo Application Suite
 description: Learn how to configure single sign-on between Microsoft Entra ID and Maximo Application Suite.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
@@ -10,7 +10,7 @@ ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Maximo Application Suite so that I can control who has access to Maximo Application Suite, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -84,7 +84,7 @@ Complete the following steps to enable Microsoft Entra single sign-on.
     `https://<workspace_id>.<mas_application>.<mas_domain>`
 
 	> [!Note]
-	> You will get the **Service Provider metadata file** from the **Configure Maximo Application Suite SSO** section, which is explained later in the tutorial. If the **Identifier** and **Reply URL** values do not get auto populated, then fill the values manually according to your requirement. Contact [Maximo Application Suite Client support](https://www.ibm.com/mysupport/) to get these values.
+	> You will get the **Service Provider metadata file** from the **Configure Maximo Application Suite SSO** section, which is explained later in the article. If the **Identifier** and **Reply URL** values do not get auto populated, then fill the values manually according to your requirement. Contact [Maximo Application Suite Client support](https://www.ibm.com/mysupport/) to get these values.
 
 1. On the **Set-up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
@@ -156,6 +156,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 * [What is single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 * [Plan a single sign-on deployment](~/identity/enterprise-apps/plan-sso-deployment.md).
 
-## Next steps
+## Related content
 
 Once you configure Maximo Application Suite you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

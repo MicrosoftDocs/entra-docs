@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Symantec Web Security Service (WSS)'
+title: Microsoft Entra SSO integration with Symantec Web Security Service (WSS)
 description: Learn how to configure single sign-on between Microsoft Entra ID and Symantec Web Security Service (WSS).
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Symantec Web Security Service (WSS) so that I can control who has access to Symantec Web Security Service (WSS), enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Symantec Web Security Service (WSS)
+# Microsoft Entra SSO integration with Symantec Web Security Service (WSS)
 
-In this tutorial, you will learn how to integrate your Symantec Web Security Service (WSS) account with your Microsoft Entra account so that WSS can authenticate an end user provisioned in the Microsoft Entra ID using SAML authentication and enforce user or group level policy rules.
+In this article,  you will learn how to integrate your Symantec Web Security Service (WSS) account with your Microsoft Entra account so that WSS can authenticate an end user provisioned in the Microsoft Entra ID using SAML authentication and enforce user or group level policy rules.
 
 Integrating Symantec Web Security Service (WSS) with Microsoft Entra ID provides you with the following benefits:
 
@@ -27,10 +27,8 @@ Integrating Symantec Web Security Service (WSS) with Microsoft Entra ID provides
 * Enable the enforcement of user and group level policy rules defined in your WSS account.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Symantec Web Security Service (WSS) single sign-on (SSO) enabled subscription.
 
 > [!NOTE]
@@ -38,7 +36,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Symantec Web Security Service (WSS) supports **IDP** initiated SSO.
 
@@ -148,6 +146,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Symantec Web Security Service (WSS) tile in the My Apps, you should be automatically signed in to the Symantec Web Security Service (WSS) for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Symantec Web Security Service (WSS) you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

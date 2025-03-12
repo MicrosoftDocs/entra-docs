@@ -3,7 +3,7 @@ title: Use a group to manage access to SaaS apps
 description: Learn how to use groups in Microsoft Entra ID to assign access to SaaS applications that are integrated with Microsoft Entra ID.
 
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
@@ -29,7 +29,6 @@ With Microsoft Entra ID, you can save time by managing the membership of the mar
 
 ## Assign access for a user or group to a SaaS application
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
 1. Go to **Applications** > **Enterprise applications** to open **All applications** in the Application Gallery.

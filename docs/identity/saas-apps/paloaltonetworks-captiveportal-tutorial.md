@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Palo Alto Networks Captive Portal'
+title: Microsoft Entra integration with Palo Alto Networks Captive Portal
 description: Learn how to configure single sign-on between Microsoft Entra ID and Palo Alto Networks Captive Portal.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Palo Alto Networks - Captive Portal so that I can control who has access to Palo Alto Networks - Captive Portal, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Palo Alto Networks Captive Portal
+# Microsoft Entra integration with Palo Alto Networks Captive Portal
 
-In this tutorial, you learn how to integrate Palo Alto Networks Captive Portal with Microsoft Entra ID.
+In this article,  you learn how to integrate Palo Alto Networks Captive Portal with Microsoft Entra ID.
 Integrating Palo Alto Networks Captive Portal with Microsoft Entra ID provides you with the following benefits:
 
 * You can control in Microsoft Entra ID who has access to Palo Alto Networks Captive Portal.
@@ -24,15 +24,13 @@ Integrating Palo Alto Networks Captive Portal with Microsoft Entra ID provides y
 * You can manage your accounts in one central location.
 
 ## Prerequisites
-
-To integrate Microsoft Entra ID with Palo Alto Networks Captive Portal, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have Microsoft Entra ID, you can get a [one-month trial](https://azure.microsoft.com/pricing/free-trial/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Palo Alto Networks Captive Portal single sign-on (SSO)-enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Palo Alto Networks Captive Portal supports **IDP** initiated SSO
 * Palo Alto Networks Captive Portal supports **Just In Time** user provisioning
@@ -162,6 +160,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 * You can use Microsoft My Apps. When you click the Palo Alto Networks Captive Portal tile in the My Apps, you should be automatically signed in to the Palo Alto Networks Captive Portal for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 
-## Next steps
+## Related content
 
 Once you configure Palo Alto Networks Captive Portal you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

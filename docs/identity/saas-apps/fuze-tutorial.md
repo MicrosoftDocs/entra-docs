@@ -1,37 +1,35 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Fuze'
+title: Microsoft Entra integration with Fuze
 description: Learn how to configure single sign-on between Microsoft Entra ID and Fuze.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Fuze so that I can control who has access to Fuze, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Fuze
+# Microsoft Entra integration with Fuze
 
-In this tutorial, you'll learn how to integrate Fuze with Microsoft Entra ID. When you integrate Fuze with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Fuze with Microsoft Entra ID. When you integrate Fuze with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Fuze.
 * Enable your users to be automatically signed-in to Fuze with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Fuze single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Fuze supports **SP** initiated SSO.
 
@@ -144,6 +142,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Fuze tile in the My Apps, this will redirect to Fuze Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Fuze you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

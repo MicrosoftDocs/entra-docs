@@ -3,7 +3,7 @@ title: Microsoft Entra Connect Sync service features and configuration
 description: Describes service side features for Microsoft Entra Connect Sync service.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: 213aab20-0a61-434a-9545-c4637628da81
 ms.service: entra-id
 ms.tgt_pltfrm: na
@@ -119,6 +119,10 @@ $SoftBlock = @{ BlockSoftMatchEnabled = "true" }
 Update-MgDirectoryOnPremiseSynchronization -Features $SoftBlock `
    -OnPremisesDirectorySynchronizationId $DirectorySync.Id
 ```
+
+> [!NOTE]
+> When BlockSoftMatch is enabled, new hybrid-joined devices will encounter an InvalidSoftMatch error during a Soft Match attempt. This occurs when the computer object synchronized from on-premises Active Directory (AD) to Entra is merged with the new device registered in the cloud. To resolve this issue, administrators should temporarily disable BlockSoftMatch to allow the hybrid join to proceed.
+> 
 
 ## Synchronize userPrincipalName updates
 

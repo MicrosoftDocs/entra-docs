@@ -1,37 +1,35 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Neota'
+title: Microsoft Entra SSO integration with Neota
 description: Learn how to configure single sign-on between Microsoft Entra ID and Neota.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Neota so that I can control who has access to Neota, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Neota
+# Microsoft Entra SSO integration with Neota
 
-In this tutorial, you'll learn how to integrate Neota with Microsoft Entra ID. When you integrate Neota with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Neota with Microsoft Entra ID. When you integrate Neota with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Neota.
 * Enable your users to be automatically signed-in to Neota with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Neota single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Neota supports both **SP** and **IDP** initiated SSO.
 
@@ -155,6 +153,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Neota tile in the My Apps, this will redirect to Neota Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Neota you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

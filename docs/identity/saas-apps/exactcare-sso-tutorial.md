@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with ExactCare SSO'
+title: Microsoft Entra single sign-on (SSO) integration with ExactCare SSO
 description: Learn how to configure single sign-on between Microsoft Entra ID and ExactCare SSO.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and ExactCare SSO so that I can control who has access to ExactCare SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with ExactCare SSO
+# Microsoft Entra single sign-on (SSO) integration with ExactCare SSO
 
-In this tutorial, you'll learn how to integrate ExactCare SSO with Microsoft Entra ID. When you integrate ExactCare SSO with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate ExactCare SSO with Microsoft Entra ID. When you integrate ExactCare SSO with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to ExactCare SSO.
 * Enable your users to be automatically signed-in to ExactCare SSO with their Microsoft Entra accounts.
@@ -26,15 +26,13 @@ In this tutorial, you'll learn how to integrate ExactCare SSO with Microsoft Ent
 To learn more about SaaS app integration with Microsoft Entra ID, see [What is application access and single sign-on with Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * ExactCare SSO single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * ExactCare SSO supports **SP** initiated SSO
 
@@ -148,7 +146,7 @@ When you click the ExactCare SSO tile in the Access Panel, you should be automat
 
 ## Additional resources
 
-- [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 

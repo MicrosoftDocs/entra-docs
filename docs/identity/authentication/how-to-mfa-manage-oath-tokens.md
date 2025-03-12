@@ -6,12 +6,12 @@ services: active-directory
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/07/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
 ms.reviewer: lvandenende
-manager: amycolannino
+manager: femila
 
 ms.collection: M365-identity-device-management
 
@@ -58,7 +58,7 @@ We recommend that you [migrate to the Authentication methods policy](how-to-auth
 
 ## Scenario: Admin creates, assigns, and activates a hardware OATH token 
 
-This scenario covers how to create, assign, and activate a hardware OATH token as an admin, including the necessary API calls and verification steps.
+This scenario covers how to create, assign, and activate a hardware OATH token as an admin, including the necessary API calls and verification steps. For more information on the permissions required to invoke these APIs and to inspect the request-response samples, see the Microsoft Graph API documentation for [Create hardwareOathTokenAuthenticationMethodDevice](/graph/api/authenticationmethoddevice-post-hardwareoathdevices?view=graph-rest-beta&preserve-view=true) operation.
 
 >[!NOTE]
 >There might be up to a 20-minute delay for the policy propagation. Allow an hour for the policy to update before users can sign in with their hardware OATH token and see it in their [Security info](https://mysignins.microsoft.com/security-info).

@@ -3,7 +3,7 @@ title: 'Change the Microsoft Entra Connector account password'
 description: This topic documents how to restore the Microsoft Entra Connector account.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: 6077043a-27f1-4304-a44b-81dc46620f24
 ms.service: entra-id
 ms.tgt_pltfrm: na

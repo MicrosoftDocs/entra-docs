@@ -1,16 +1,14 @@
 ---
 title: Bring groups into Privileged Identity Management
 description: Learn how to bring groups into Privileged Identity Management.
-
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
 ms.date: 01/06/2025
 ms.author: barclayn
 ms.reviewer: ilyal
-
 ---
 
 # Bring groups into Privileged Identity Management
@@ -19,9 +17,8 @@ In Microsoft Entra ID, you can use Privileged Identity Management (PIM) to manag
 
 ## Identify groups to manage
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
-Before starting, you need a Microsoft Entra Security group or Microsoft 365 group. To learn more about group management in Microsoft Entra ID, see [Manage Microsoft Entra groups and group membership](~/fundamentals/how-to-manage-groups.yml).
+Before starting, you need a Microsoft Entra Security group or Microsoft 365 group. To learn more about group management in Microsoft Entra ID, see [Manage Microsoft Entra groups and group membership](/entra/fundamentals/how-to-manage-groups).
 
 Dynamic groups and groups synchronized from on-premises environment can't be managed in PIM for Groups.
 

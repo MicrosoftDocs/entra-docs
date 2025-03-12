@@ -3,9 +3,9 @@ title: Partner ecosystem overview
 description: Learn about the Microsoft Secure Access Service Edge (SASE) partner ecosystem. Learn about partner integrations and partner coexistence.
 ms.author: kenwith
 author: kenwith
-manager: amycolannino
+manager: femila
 ms.topic: overview
-ms.date: 11/20/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
 ai-usage: ai-assisted
 #customer intent: As a administrator, I want to understand the Microsoft SASE partner ecosystem so that I can decide how partner solutions integrate with Microsoft.

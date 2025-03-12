@@ -3,7 +3,7 @@ title: 'Disable pass-through authentication by using Microsoft Entra Connect or 
 description: This article describes how to disable pass-through authentication by using the Microsoft Entra Connect Do Not Configure feature or by using PowerShell.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 12/20/2024
@@ -18,7 +18,6 @@ In this article, you learn how to disable pass-through authentication by using M
 
 ## Prerequisites
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Before you begin, ensure that you have the following prerequisite.
 

@@ -2,7 +2,7 @@
 title: Approve or deny access requests - entitlement management
 description: Learn how to use the My Access portal to approve or deny requests to an access package in Microsoft Entra entitlement management.
 author: owinfreyatl
-manager: amycolannino
+manager: femila
 editor: mamtakumar
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
@@ -38,6 +38,10 @@ If you don't have the email, you can find the access requests pending your appro
 1. In the left menu, select **Approvals** to see a list of access requests pending approval.
 
 1. On the **Pending** tab, find the request.
+
+
+> [!NOTE]
+> If you dont see an email to approve request, make sure that the access package does not have notifications disabled.
 
 ## View requestor's answers to questions
 

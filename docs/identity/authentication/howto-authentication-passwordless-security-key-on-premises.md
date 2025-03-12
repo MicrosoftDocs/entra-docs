@@ -5,11 +5,11 @@ description: Learn how to enable passwordless security key sign-in to on-premise
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/08/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: calui
 ---
 # Enable passwordless security key sign-in to on-premises resources by using Microsoft Entra ID 
@@ -128,6 +128,8 @@ To then **set** the desired cloud environment, run the following:
 _(Example: For US Government Cloud)_
 
 `Set-AzureADKerberosServerEndpoint -TargetEndpoint 2`
+   > [!Tip]
+   > For Additional information comparing Azure commercial and sovereign clouds, See: [Differences between Azure Commercial and Azure sovereign clouds](https://aka.ms/SovCC). 
 
 ### Example 1 prompt for all credentials
 
@@ -287,7 +289,6 @@ If you encounter issues or want to share feedback about this passwordless securi
 
 ## Passwordless security key sign-in FAQ
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Here are some answers to commonly asked questions about passwordless sign-in:
 

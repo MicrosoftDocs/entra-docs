@@ -168,7 +168,6 @@ Settings for tenant restrictions v2 are located in the Microsoft Entra admin cen
 
 #### To configure default tenant restrictions
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Security Administrator](~/identity/role-based-access-control/permissions-reference.md#security-administrator).
 

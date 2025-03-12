@@ -3,7 +3,7 @@ title: Remove users, groups, or devices from an administrative unit
 description: Remove users, groups, or devices from an administrative unit in Microsoft Entra ID
 
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: role-based-access-control
@@ -33,7 +33,6 @@ You can remove users, groups, or devices from administrative units individually 
 
 ### Remove a single user, group, or device from administrative units
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 

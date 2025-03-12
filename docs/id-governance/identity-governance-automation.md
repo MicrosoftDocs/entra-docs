@@ -2,7 +2,7 @@
 title: Automate Microsoft Entra ID Governance tasks with Azure Automation
 description: Learn how to write PowerShell scripts in Azure Automation to interact with Microsoft Entra entitlement management and other features.
 author: owinfreyATL
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 11/25/2024
@@ -21,7 +21,6 @@ This article shows you how to get started using Azure Automation for Microsoft E
 
 ## Create an Azure Automation account
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 Azure Automation provides a cloud-hosted environment for [runbook execution](/azure/automation/automation-runbook-execution). Those runbooks can start automatically based on a schedule, or be triggered by webhooks or by Logic Apps.
 

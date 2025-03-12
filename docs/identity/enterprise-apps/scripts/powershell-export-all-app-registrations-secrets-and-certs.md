@@ -1,20 +1,21 @@
 ---
-title: PowerShell sample - Export secrets and certificates for app registrations in Microsoft Entra tenant.
+title: 'PowerShell sample: Export secrets and certificates for app registrations'
 description: PowerShell example that exports all secrets and certificates for the specified app registrations in your Microsoft Entra tenant.
 
-author: mifarca
+author: omondiatieno
 manager: CelesteDG
 ms.service: entra-id
 ms.subservice: enterprise-apps
 
-ms.custom:
+ms.custom: 
+ai-usage: ai-assisted
 ms.topic: sample
-ms.date: 01/15/2024
+ms.date: 01/23/2025
 ms.author: jomondi
 ms.reviewer: mifarca
 ---
 
-# Export secrets and certificates for app registrations
+# PowerShell sample: Export secrets and certificates for app registrations
 
 This PowerShell script example exports all secrets and certificates for the specified app registrations from your directory into a CSV file.
 
@@ -162,6 +163,8 @@ foreach ($App in $Applications) {
             'Certificate End Date'   = $EndDate
             'Owner'                  = $Username
             'Owner_ObjectID'         = $OwnerID
+            'Secret Start Date'      = $Null
+            'Secret End Date'        = $Null
         }
     }
 }
@@ -173,7 +176,7 @@ $Logs | Export-Csv $Path -NoTypeInformation -Encoding UTF8
 
 ## Script explanation
 
-The script can be used directly without any modifications. The admin will be asked about the expiration date and whether they would like to see already expired secrets or certificates or not.
+The script can be used directly without any modifications. The admin is asked about the expiration date and whether they would like to see already expired secrets or certificates or not.
 
 The "Add-Member" command is responsible for creating the columns in the CSV file.
 You can modify the "$Path" variable directly in PowerShell, with a CSV file path, in case you'd prefer the export to be non-interactive.

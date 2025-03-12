@@ -3,9 +3,9 @@ title: Learn about Security Service Edge (SSE) coexistence with Microsoft and Ci
 description: Microsoft and Cisco’s Security Service Edge (SSE) coexistence solution guide.
 author: kenwith
 ms.author: kenwith
-manager: amycolannino
+manager: femila
 ms.topic: conceptual
-ms.date: 07/02/2024
+ms.date: 02/21/2025
 ms.service: global-secure-access
 ms.subservice: entra-private-access 
 ms.reviewer: shkhalid

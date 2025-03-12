@@ -2,9 +2,8 @@
 title: What's new for Microsoft Entra Verified ID
 description: Recent updates for Microsoft Entra Verified ID
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
-
 ms.topic: whats-new
 ms.date: 12/16/2024
 ms.custom: references_regions
@@ -17,6 +16,10 @@ ms.author: barclayn
 # What's new in Microsoft Entra Verified ID
 
 This article lists the latest features, improvements, and changes in the Microsoft Entra Verified ID service.
+
+## January 2025
+
+- Instructions for [upgrading signing key](signing-key-upgrade.md) to become FIPS compliant.
 
 ## October 2024
 

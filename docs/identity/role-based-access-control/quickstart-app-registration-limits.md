@@ -3,7 +3,7 @@ title: Create a custom role with permissions to create unlimited app registratio
 description: Assign a custom role to grant unrestricted app registrations in Microsoft Entra ID.
 
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to
@@ -32,7 +32,6 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 ### Create a custom role
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator).
 

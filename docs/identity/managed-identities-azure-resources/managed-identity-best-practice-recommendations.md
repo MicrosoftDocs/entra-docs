@@ -13,8 +13,6 @@ ms.author: ryanwi
 
 # Managed identity best practice recommendations
 
-[!INCLUDE [preview-notice](~/includes/entra-msi-preview-notice.md)]
-
 ## Choosing system or user-assigned managed identities
 
 User-assigned managed identities are more efficient in a broader range of scenarios than system-assigned managed identities. See the table below for some scenarios and the recommendations for user-assigned or system-assigned.

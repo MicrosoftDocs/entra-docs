@@ -3,7 +3,7 @@ title: 'Install the Microsoft Entra Connect cloud provisioning agent using a com
 description: Learn how to install the Microsoft Entra Connect cloud provisioning agent by using PowerShell cmdlets.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 12/17/2024
@@ -30,7 +30,6 @@ The Windows server must have TLS 1.2 enabled before you install the Microsoft En
 
 ## Install the Microsoft Entra provisioning agent by using PowerShell cmdlets 
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 [!INCLUDE [sign in](~/includes/cloud-sync-sign-in.md)]
  3. Select **Manage**.

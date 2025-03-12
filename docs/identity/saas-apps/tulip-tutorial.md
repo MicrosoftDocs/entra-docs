@@ -1,34 +1,32 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Tulip'
+title: Microsoft Entra SSO integration with Tulip
 description: Learn how to configure single sign-on between Microsoft Entra ID and Tulip.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Tulip so that I can control who has access to Tulip, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Tulip
+# Microsoft Entra SSO integration with Tulip
 
-In this tutorial, you'll learn how to integrate Tulip with Microsoft Entra ID. When you integrate Tulip with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Tulip with Microsoft Entra ID. When you integrate Tulip with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Tulip.
 * Enable your users to be automatically signed-in to Tulip with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Tulip single sign-on (SSO) enabled subscription.
 
 > [!NOTE]
@@ -36,7 +34,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Tulip supports **IDP** initiated SSO.
 
@@ -137,7 +135,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	f. Click **Save SAML Configuration**.
 
-## Next steps
+## Related content
 
 Once you configure Tulip you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
 

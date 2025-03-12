@@ -23,7 +23,7 @@ This Deployment Guide helps you to plan and deploy Microsoft Global Secure Acces
 
 ## Perform a Proof of Concept
 
-Perform a [Proof of Concept](https://aka.ms/globalsecureaccesscommunity) (PoC) to ensure that the solution you choose provides the features and connectivity that you require.
+Perform a [Proof of Concept](gsa-poc-guidance-intro.md) (PoC) to ensure that the solution you choose provides the features and connectivity that you require.
 
 Depending on which capabilities you plan to deploy in a PoC for Microsoft Global Secure Access, you need up to seven hours. Ensure you have met the [licensing requirements](../global-secure-access/overview-what-is-global-secure-access.md#licensing-overview).
 
@@ -241,11 +241,9 @@ Repeat wave deployments until you cut over all users to Microsoft Global Secure 
 
 ### Plan for emergency access
 
-When Global Secure Access is down, users can't access resources that the Global Secure Access-compliant network check secures. The `GsaBreakglassEnforcement` script allows enterprise administrators to switch enabled compliant network Conditional Access policies to report-only mode. The script temporarily allows users to access those resources without Global Secure Access.
+When Global Secure Access is down, users can't access resources that the Global Secure Access-compliant network check secures. The `GsaBreakglassEnforcement` [script](../global-secure-access/scripts/powershell-break-glass.md) allows enterprise administrators to switch enabled compliant network Conditional Access policies to report-only mode. The script temporarily allows users to access those resources without Global Secure Access.
 
-After Global Secure Access is back, use the `GsaBreakglassRecovery` script to turn on all affected policies.
-
-At any time, use the `ListGsaCompliantNetworkCaPolicies` script to view all compliant network CA policies and their status.
+After Global Secure Access is back, use the `GsaBreakglassRecovery` [script](../global-secure-access/scripts/powershell-break-glass-recovery.md) to turn on all affected policies.
 
 ### Additional considerations
 
@@ -282,3 +280,6 @@ Congratulations! You completed your Microsoft Global Secure Access deployment. T
 - [Microsoft Global Secure Access Deployment Guide for Microsoft Entra Private Access](gsa-deployment-guide-private-access.md)
 - [Simulate remote network connectivity using Azure Virtual Network Gateway - Global Secure Access](../global-secure-access/how-to-simulate-remote-network.md)
 - [Simulate remote network connectivity using Azure vWAN - Global Secure Access](../global-secure-access/how-to-create-remote-network-vwan.md)
+- [Introduction to Global Secure Access Proof of Concept Guidance](gsa-poc-guidance-intro.md)](gsa-poc-guidance-intro.md)
+- [Global Secure Access Proof of Concept Guidance - Configure Microsoft Entra Private Access](gsa-poc-private-access.md)
+- [Global Secure Access Proof of Concept Guidance - Configure Microsoft Entra Internet Access](gsa-poc-internet-access.md)

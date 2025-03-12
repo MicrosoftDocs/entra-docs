@@ -1,33 +1,31 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with SonarQube'
+title: Microsoft Entra SSO integration with SonarQube
 description: Learn how to configure single sign-on between Microsoft Entra ID and SonarQube.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Sonarqube so that I can control who has access to Sonarqube, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with SonarQube
+# Microsoft Entra SSO integration with SonarQube
 
-In this tutorial, you learn how to integrate SonarQube with Microsoft Entra ID. When you integrate SonarQube with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate SonarQube with Microsoft Entra ID. When you integrate SonarQube with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to SonarQube.
 * Enable your users to be automatically signed-in to SonarQube with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * SonarQube single sign-on (SSO) enabled subscription.
 * Steps to get SonarQube "SAML group attribute" setup correctly to use AzureAD groups for permissions (detailed below).
 
@@ -36,7 +34,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * SonarQube supports **SP** initiated SSO.
 
@@ -99,7 +97,7 @@ Follow these steps to enable Microsoft Entra SSO.
 		`https://servicescode-dev.westus.cloudapp.azure.com`
 
 	> [!NOTE]
-	> This value is not real. Update the value with actual Reply URL which are explained later in the tutorial.
+	> This value is not real. Update the value with actual Reply URL which are explained later in the article.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
@@ -203,6 +201,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you select the SonarQube tile in the My Apps, this will redirect to SonarQube Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 * Once you configure SonarQube, you can enforce session controls, which protect exfiltration and infiltration of your organization’s sensitive data in real time. Session controls extend from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

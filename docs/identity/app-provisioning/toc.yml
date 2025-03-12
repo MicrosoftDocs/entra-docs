@@ -161,6 +161,8 @@ items:
       href: application-provisioning-configuration-api.md
   - name: Reference
     items:
+    - name: Provision a user with Expression Builder
+      href: provision-user-with-expression-builder.md
     - name: Function reference for writing expressions for attribute mappings
       href: functions-for-customizing-application-data.md
     - name: SCIM 2.0 protocol compliance

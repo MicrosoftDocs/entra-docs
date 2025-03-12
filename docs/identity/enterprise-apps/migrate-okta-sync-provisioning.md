@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.date: 12/04/2024
 ms.author: gasinh
 ms.subservice: enterprise-apps
-ms.custom: kr2b-contr-experiment, not-enterprise-apps, has-azure-ad-ps-ref
+ms.custom: kr2b-contr-experiment, not-enterprise-apps, no-azure-ad-ps-ref
 
 #customer intent: I'm an IT admin using Okta for user provisioning. I want to migrate user provisioning to Microsoft Entra Connect synchronization, so I can add users into Microsoft Entra ID and Office 365.
 ---
@@ -46,10 +46,9 @@ The ImmutableID attribute ties synchronized objects to their on-premises counter
 
 You can connect to Microsoft Graph PowerShell and examine the current ImmutableID value. If you haven't used the Microsoft Graph PowerShell module, run:
 
- `Install-Module AzureAD` in an administrative session before you run the following commands:
+ `Install-Module Microsoft.Graph -Scope CurrentUser -Repository PSGallery -Force` in an administrative session before you run the following commands:
  
  ```Powershell
- Import-Module AzureAD
  Connect-MgGraph
  ```
 
@@ -204,7 +203,6 @@ After you disable Okta provisioning, the Microsoft Entra Connect server can sync
 
 ## Enable cloud sync agents
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 After you disable Okta provisioning, the Microsoft Entra Connect cloud sync agent can synchronize objects.
 

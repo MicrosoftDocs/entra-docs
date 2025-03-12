@@ -3,7 +3,7 @@ title: Create custom roles to manage enterprise apps in Microsoft Entra ID
 description: Create and assign custom Microsoft Entra roles for enterprise apps access in Microsoft Entra ID
 
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to
@@ -45,7 +45,6 @@ Granting the update permission is done in two steps:
 
 ### Create a new custom role
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 In the Microsoft Entra Admin Center, you can create and manage custom roles to control access and permissions for enterprise apps.
 

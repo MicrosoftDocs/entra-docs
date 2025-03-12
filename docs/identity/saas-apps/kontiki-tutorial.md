@@ -1,37 +1,35 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Kontiki'
+title: Microsoft Entra SSO integration with Kontiki
 description: Learn how to configure single sign-on between Microsoft Entra ID and Kontiki.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Kontiki so that I can control who has access to Kontiki, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Kontiki
+# Microsoft Entra SSO integration with Kontiki
 
-In this tutorial, you'll learn how to integrate Kontiki with Microsoft Entra ID. When you integrate Kontiki with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Kontiki with Microsoft Entra ID. When you integrate Kontiki with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Kontiki.
 * Enable your users to be automatically signed-in to Kontiki with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with Kontiki, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a Microsoft Entra subscription, create a [free account](https://azure.microsoft.com/free/) before you begin.
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Kontiki subscription with single sign-on enabled.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment and integrate Kontiki with Microsoft Entra ID.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment and integrate Kontiki with Microsoft Entra ID.
 
 Kontiki supports the following features:
 
@@ -144,6 +142,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Kontiki tile in the My Apps, this will redirect to Kontiki Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Kontiki you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

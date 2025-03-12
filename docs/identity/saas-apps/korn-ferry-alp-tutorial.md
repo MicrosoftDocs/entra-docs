@@ -1,37 +1,35 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Korn Ferry ALP'
+title: Microsoft Entra SSO integration with Korn Ferry ALP
 description: Learn how to configure single sign-on between Microsoft Entra ID and Korn Ferry ALP.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Korn Ferry ALP so that I can control who has access to Korn Ferry ALP, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Korn Ferry ALP
+# Microsoft Entra SSO integration with Korn Ferry ALP
 
-In this tutorial, you'll learn how to integrate Korn Ferry ALP with Microsoft Entra ID. When you integrate Korn Ferry ALP with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Korn Ferry ALP with Microsoft Entra ID. When you integrate Korn Ferry ALP with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Korn Ferry ALP.
 * Enable your users to be automatically signed-in to Korn Ferry ALP with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Korn Ferry ALP single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Korn Ferry ALP supports **SP** initiated SSO.
 
@@ -147,6 +145,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the Korn Ferry ALP tile in the My Apps, this will redirect to Korn Ferry ALP Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Korn Ferry ALP you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

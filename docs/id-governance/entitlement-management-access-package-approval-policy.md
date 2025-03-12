@@ -2,7 +2,7 @@
 title: Change approval settings for an access package in entitlement management - Microsoft Entra
 description: Learn how to change approval and requestor information settings for an access package in entitlement management.
 author: owinfreyATL
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.subservice: entitlement-management
 ms.topic: how-to
@@ -40,7 +40,6 @@ For a demonstration of how to add a multi-stage approval to a request policy, wa
 
 ## Change approval settings of an existing access package assignment policy
 
-[!INCLUDE [portal updates](../includes/portal-update.md)]
 
 Follow these steps to specify the approval settings for requests for the access package through a policy:
 

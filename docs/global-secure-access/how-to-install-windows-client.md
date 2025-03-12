@@ -3,10 +3,10 @@ title: The Global Secure Access Client for Windows
 description: The Global Secure Access client secures network traffic at the end-user device. This article describes how to download and install the Windows client.
 ms.service: global-secure-access
 ms.topic: how-to
-ms.date: 01/10/2025
+ms.date: 02/25/2025
 ms.author: jayrusso
 author: HULKsmashGithub
-manager: amycolannino
+manager: femila
 ms.reviewer: lirazbarak
 
 
@@ -104,7 +104,7 @@ For more detailed information on troubleshooting the Global Secure Access client
 ## Client registry keys
 The Global Secure Access client uses specific registry keys to enable or disable different functionalities. Administrators can use a Mobile Device Management (MDM) solutions, such as Microsoft Intune or Group Policy to control the registry values.
 > [!CAUTION] 
-> Do not change other registry values unless instructed by Microsoft Support.
+> Don't change other registry values unless instructed by Microsoft Support.
 
 ### Restrict nonprivileged users
 The administrator can prevent nonprivileged users on the Windows device from disabling or enabling the client by setting the following registry key:   
@@ -122,7 +122,7 @@ This registry value controls whether Private Access is enabled or disabled for t
 Users can disable and enable Private Access through the system tray menu.
 
 > [!TIP]
-> This option is available on the menu only if it is not hidden (see [Hide or unhide system tray menu buttons](#hide-or-unhide-system-tray-menu-buttons)) and Private Access is enabled for this tenant.
+> This option is available on the menu only if it isn't hidden (see [Hide or unhide system tray menu buttons](#hide-or-unhide-system-tray-menu-buttons)) and Private Access is enabled for this tenant.
 
 Administrators can disable or enable Private Access for the user by setting the registry key:   
 `Computer\HKEY_CURRENT_USER\Software\Microsoft\Global Secure Access Client`

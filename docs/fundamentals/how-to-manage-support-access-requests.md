@@ -2,7 +2,7 @@
 title: Approve and manage support access requests (preview)
 description: Learn how to approve and manage the Microsoft Support access requests to Microsoft Entra identity data
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.author: sarahlipsey
 ms.reviewer: jeffsta
 ms.service: entra

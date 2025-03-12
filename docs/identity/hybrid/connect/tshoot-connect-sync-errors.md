@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect: Troubleshoot errors during synchronization'
 description: This article explains how to troubleshoot errors that occur during synchronization with Microsoft Entra Connect.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: 2209d5ce-0a64-447b-be3a-6f06d47995f8
 ms.service: entra-id
 ms.tgt_pltfrm: na

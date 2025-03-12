@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Smart Global Governance'
+title: Microsoft Entra SSO integration with Smart Global Governance
 description: Learn how to configure single sign-on between Microsoft Entra ID and Smart Global Governance.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Smart Global Governance so that I can control who has access to Smart Global Governance, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Smart Global Governance
+# Microsoft Entra single sign-on (SSO) integration with Smart Global Governance
 
-In this tutorial, you'll learn how to integrate Smart Global Governance with Microsoft Entra ID. When you integrate Smart Global Governance with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Smart Global Governance with Microsoft Entra ID. When you integrate Smart Global Governance with Microsoft Entra ID, you can:
 
 * Use Microsoft Entra ID to control who can access Smart Global Governance.
 * Enable your users to be automatically signed in to Smart Global Governance with their Microsoft Entra accounts.
@@ -26,15 +26,13 @@ In this tutorial, you'll learn how to integrate Smart Global Governance with Mic
 To learn more about SaaS app integration with Microsoft Entra ID, see [Single sign-on to applications in Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Smart Global Governance subscription with single sign-on (SSO) enabled.
 
-## Tutorial description
+## Article description
 
-In this tutorial, you'll configure and test Microsoft Entra SSO in a test environment.
+In this article,  you'll configure and test Microsoft Entra SSO in a test environment.
 
 Smart Global Governance supports SP-initiated and IDP-initiated SSO.
 

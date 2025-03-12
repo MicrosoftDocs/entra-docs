@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with SAML SSO for Bitbucket by resolution GmbH'
+title: Microsoft Entra integration with SAML SSO for Bitbucket by resolution GmbH
 description: Learn how to configure single sign-on between Microsoft Entra ID and SAML SSO for Bitbucket by resolution GmbH.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and SAML SSO for Bitbucket by resolution GmbH so that I can control who has access to SAML SSO for Bitbucket by resolution GmbH, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with SAML SSO for Bitbucket by resolution GmbH
+# Microsoft Entra integration with SAML SSO for Bitbucket by resolution GmbH
 
-In this tutorial, you'll learn how to integrate SAML SSO for Bitbucket by resolution GmbH with Microsoft Entra ID. When you integrate SAML SSO for Bitbucket by resolution GmbH with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate SAML SSO for Bitbucket by resolution GmbH with Microsoft Entra ID. When you integrate SAML SSO for Bitbucket by resolution GmbH with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access toSAML SSO for Bitbucket by resolution GmbH.
 * Enable your users to be automatically signed in toSAML SSO for Bitbucket by resolution GmbH with their Microsoft Entra accounts.
@@ -24,15 +24,13 @@ In this tutorial, you'll learn how to integrate SAML SSO for Bitbucket by resolu
 
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with SAML SSO for Bitbucket by resolution GmbH, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get one-month trial [here](https://azure.microsoft.com/pricing/free-trial/)
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * SAML SSO for Bitbucket by resolution GmbH single sign-on enabled subscription
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * SAML SSO for Bitbucket by resolution GmbH supports **SP and IDP** initiated SSO
 * SAML SSO for Bitbucket by resolution GmbH supports **Just In Time** user provisioning
@@ -183,6 +181,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 You can also use Microsoft My Apps to test the application in any mode. When you click the SAML SSO for Bitbucket by resolution GmbH tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the SAML SSO for Bitbucket by resolution GmbH for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 
-## Next steps
+## Related content
 
 Once you configure the SAML SSO for Bitbucket by resolution GmbH you can enforce session controls, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session controls extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

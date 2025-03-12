@@ -15,6 +15,8 @@ ms.topic: how-to
 
 # Desktop app that calls web APIs: App registration
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 This article covers the app registration specifics for a desktop application.
 
 ## Supported account types

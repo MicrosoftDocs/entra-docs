@@ -2,12 +2,12 @@
 title: Join a Windows Server VM to a Microsoft Entra Domain Services managed domain | Microsoft Docs
 description: In this tutorial, learn how to join a Windows Server virtual machine to a Microsoft Entra Domain Services managed domain.
 author: justinha
-manager: amycolannino
+manager: femila
 
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: tutorial
-ms.date: 05/21/2024
+ms.date: 02/05/2025
 ms.author: justinha
 #Customer intent: As a server administrator, I want to learn how to join a Windows Server VM to a Microsoft Entra Domain Services managed domain to provide centralized identity and policy.
 ---

@@ -1,16 +1,15 @@
 ---
 title: Discover Azure resources to manage in PIM
-description: Learn how to discover Azure resources to manage in Privileged Identity Management (PIM).
-
+description: Learn how to discover Azure resources to manage in Privileged Identity
+  Management (PIM).
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 01/06/2025
 ms.subservice: privileged-identity-management
 ms.author: barclayn
 ms.reviewer: shaunliu
-
 ---
 
 # Discover Azure resources to manage in Privileged Identity Management
@@ -27,7 +26,6 @@ When you first set up Privileged Identity Management for Azure resources, you ne
 
 ## Required permissions
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 You can view and manage the management groups or subscriptions to which you have Microsoft.Authorization/roleAssignments/write permissions, such as User Access Administrator or Owner roles. If you aren't a subscription owner, but are a Global Administrator and don't see any Azure subscriptions or management groups to manage, then you can [elevate access to manage your resources](/azure/role-based-access-control/elevate-access-global-admin).
 

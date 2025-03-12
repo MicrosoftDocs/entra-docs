@@ -1,38 +1,36 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with NetSuite'
+title: Microsoft Entra single sign-on (SSO) integration with NetSuite
 description: Learn how to configure single sign-on between Microsoft Entra ID and NetSuite.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Netsuite so that I can control who has access to Netsuite, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Integrate Microsoft Entra single sign-on (SSO) with NetSuite
+# Integrate Microsoft Entra single sign-on (SSO) with NetSuite
 
-In this tutorial, you'll learn how to integrate NetSuite with Microsoft Entra ID. When you integrate NetSuite with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate NetSuite with Microsoft Entra ID. When you integrate NetSuite with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to NetSuite.
 * Enable your users to be automatically signed in to NetSuite with their Microsoft Entra accounts.
 * Manage your accounts in one central location, the Azure portal.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A NetSuite single sign-on (SSO)-enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment. 
+In this article,  you configure and test Microsoft Entra SSO in a test environment. 
 
 NetSuite supports:
 
@@ -95,7 +93,7 @@ To enable Microsoft Entra SSO in the Azure portal, do the following:
 	| account  | `account id` |
 
 	> [!NOTE]
-	> The value of the account attribute is not real. You'll update this value, as explained later in this tutorial.The account id is not necessary unless you explicitly want to block the functionality of jumping from Production to the Sandbox in Netsuite within the navigation control.
+	> The value of the account attribute is not real. You'll update this value, as explained later in this article.The account id is not necessary unless you explicitly want to block the functionality of jumping from Production to the Sandbox in Netsuite within the navigation control.
 
 1. On the Set up single sign-on with SAML page, in the SAML Signing Certificate section, find Federation Metadata XML and select Download to download the certificate and save it on your computer.
 
@@ -244,6 +242,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 - You can use Microsoft My Apps. When you click the NetSuite tile in the My Apps, you should be automatically signed in to the NetSuite for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure the NetSuite you can enforce session controls, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session controls extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

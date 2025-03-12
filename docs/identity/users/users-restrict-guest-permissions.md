@@ -4,7 +4,7 @@ description: Restrict guest user access permissions using the Azure portal, Powe
 
 author: barclayn
 ms.author: barclayn
-manager: amycolannino
+manager: femila
 ms.date: 12/19/2024
 ms.topic: how-to
 ms.service: entra-id
@@ -27,7 +27,6 @@ When guest access is restricted, guests can view only their own user profile. Pe
 
 ## Update in the Microsoft Entra admin center
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 We’ve made changes to the existing Azure portal controls for guest user permissions.
 

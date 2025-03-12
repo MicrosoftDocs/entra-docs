@@ -1,37 +1,35 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Benefitsolver'
+title: Microsoft Entra SSO integration with Benefitsolver
 description: Learn how to configure single sign-on between Microsoft Entra ID and Benefitsolver.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Benefitsolver so that I can control who has access to Benefitsolver, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra SSO integration with Benefitsolver
+# Microsoft Entra SSO integration with Benefitsolver
 
-In this tutorial, you learn how to integrate Benefitsolver with Microsoft Entra ID. When you integrate Benefitsolver with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Benefitsolver with Microsoft Entra ID. When you integrate Benefitsolver with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Benefitsolver.
 * Enable your users to be automatically signed-in to Benefitsolver with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Benefitsolver single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Benefitsolver supports **SP** initiated SSO.
 
@@ -86,7 +84,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `http://<companyname>.benefitsolver.com`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Benefitsolver Client support team](https://www.businessolver.com/contact-us) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values aren't real. Update these values with the actual Identifier, Reply URL and Sign on URL. Contact [Benefitsolver Client support team](https://www.businessolver.com/contact-us/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Benefitsolver application expects the SAML assertions in a specific format. Configure the following claims for this application. You can manage the values of these attributes from the **User Attributes** section on application integration page. On the **Set up Single Sign-On with SAML** page, select **Edit** button to open **User Attributes** dialog.
 
@@ -96,10 +94,10 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	| Name |  Source Attribute|
 	|---------------|----------------|
-	| ClientID | You need to get this value from your [Benefitsolver Client support team](https://www.businessolver.com/contact-us).|
-	| ClientKey | You need to get this value from your [Benefitsolver Client support team](https://www.businessolver.com/contact-us).|
-	| LogoutURL | You need to get this value from your [Benefitsolver Client support team](https://www.businessolver.com/contact-us).|
-	| EmployeeID | You need to get this value from your [Benefitsolver Client support team](https://www.businessolver.com/contact-us).|
+	| ClientID | You need to get this value from your [Benefitsolver Client support team](https://www.businessolver.com/contact-us/).|
+	| ClientKey | You need to get this value from your [Benefitsolver Client support team](https://www.businessolver.com/contact-us/).|
+	| LogoutURL | You need to get this value from your [Benefitsolver Client support team](https://www.businessolver.com/contact-us/).|
+	| EmployeeID | You need to get this value from your [Benefitsolver Client support team](https://www.businessolver.com/contact-us/).|
 	| | |
 
 	a. Select **Add new claim** to open the **Managed user claims** dialog.
@@ -124,7 +122,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	![The Certificate download link](common/metadataxml.png)
 
-1. On the **Set up Benefitsolver** section, copy the appropriate URL(s) as per your requirement.
+1. On the **Set up Benefitsolver** section, copy one or more appropriate URLs as per your requirement.
 
 	![Copy configuration URLs](common/copy-configuration-urls.png)
 
@@ -160,14 +158,14 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
 
 ## Configure Benefitsolver SSO
 
-To configure single sign-on on **Benefitsolver** side, you need to send the downloaded **Metadata XML** and appropriate copied URLs from the application configuration to [Benefitsolver support team](https://www.businessolver.com/contact-us). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **Benefitsolver** side, you need to send the downloaded **Metadata XML** and appropriate copied URLs from the application configuration to [Benefitsolver support team](https://www.businessolver.com/contact-us/). They set this setting to have the SAML SSO connection set properly on both sides.
 
 > [!NOTE]
-> Your Benefitsolver support team has to do the actual SSO configuration. You will get a notification when SSO has been enabled for your subscription.
+> Your Benefitsolver support team has to do the actual SSO configuration. You'll get a notification when SSO has been enabled for your subscription.
 
 ### Create Benefitsolver test user
 
-In this section, you create a user called Britta Simon in Benefitsolver. Work with [Benefitsolver support team](https://www.businessolver.com/contact-us) to add the users in the Benefitsolver platform. Users must be created and activated before you use single sign-on.
+In this section, you create a user called Britta Simon in Benefitsolver. Work with [Benefitsolver support team](https://www.businessolver.com/contact-us/) to add the users in the Benefitsolver platform. Users must be created and activated before you use single sign-on.
 
 ## Test SSO
 
@@ -179,6 +177,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you select the Benefitsolver tile in the My Apps, this will redirect to Benefitsolver Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Benefitsolver you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

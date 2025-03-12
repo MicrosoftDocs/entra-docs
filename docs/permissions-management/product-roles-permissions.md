@@ -3,7 +3,7 @@ title: Microsoft Entra Permissions Management roles and permissions
 description: Review roles and the level of permissions assigned in Microsoft Entra Permissions Management.
 # customerintent: As a cloud administrator, I want to understand Permissions Management role assignments, so that I can effectively assign the correct permissions to users.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
@@ -28,8 +28,8 @@ See [Microsoft Entra built-in roles to learn more.](https://go.microsoft.com/fwl
 
 ## Onboarding your Amazon Web Service (AWS), Microsoft Entra, or Google Cloud Platform (GCP) environments
 
-- To configure data collection, you must be a [Permissions Management Administrator](../identity/role-based-access-control/delegate-by-task.md#permissions-management). 
-- A user with the [Permissions Management Administrator](../identity/role-based-access-control/delegate-by-task.md#permissions-management) role is required for AWS and GCP onboarding.
+- To configure data collection, you must be a [Permissions Management Administrator](../identity/role-based-access-control/permissions-reference.md#permissions-management-administrator). 
+- A user with the [Permissions Management Administrator](../identity/role-based-access-control/permissions-reference.md#permissions-management-administrator) role is required for AWS and GCP onboarding.
 
 ## Notes on permissions and roles in Permissions Management
 

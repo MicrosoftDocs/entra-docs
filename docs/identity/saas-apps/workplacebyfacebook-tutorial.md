@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Workplace by Meta'
+title: Microsoft Entra single sign-on (SSO) integration with Workplace by Meta
 description: Learn how to configure single sign-on between Microsoft Entra ID and Workplace by Meta.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Workplace by Meta so that I can control who has access to Workplace by Meta, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Workplace by Meta
+# Microsoft Entra single sign-on (SSO) integration with Workplace by Meta
 
-In this tutorial, you'll learn how to integrate Workplace by Meta with Microsoft Entra ID. When you integrate Workplace by Meta with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Workplace by Meta with Microsoft Entra ID. When you integrate Workplace by Meta with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Workplace by Meta.
 * Enable your users to be automatically signed-in to Workplace by Meta with their Microsoft Entra accounts.
@@ -25,10 +25,8 @@ In this tutorial, you'll learn how to integrate Workplace by Meta with Microsoft
 
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Workplace by Meta single sign-on (SSO) enabled subscription.
 
 > [!NOTE]
@@ -36,12 +34,12 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Workplace by Meta supports **SP** initiated SSO.
 * Workplace by Meta supports **just-in-time provisioning**.
 * Workplace by Meta supports **[automatic User Provisioning](workplace-by-facebook-provisioning-tutorial.md)**.
-* Workplace by Meta Mobile application can now be configured with Microsoft Entra ID for enabling SSO. In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+* Workplace by Meta Mobile application can now be configured with Microsoft Entra ID for enabling SSO. In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 
 ## Adding Workplace by Meta from the gallery
@@ -95,7 +93,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://.workplace.com/work/saml.php`
 
     > [!NOTE]
-    > These values are not the real. Update these values with the actual Sign-On URL, Identifier and Reply URL. See the Authentication page of the Workplace Company Dashboard for the correct values for your Workplace community, this is explained later in the tutorial.
+    > These values are not the real. Update these values with the actual Sign-On URL, Identifier and Reply URL. See the Authentication page of the Workplace Company Dashboard for the correct values for your Workplace community, this is explained later in the article.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 
@@ -237,6 +235,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
     ![The Home page](./media/workplacebyfacebook-tutorial/test01.png)
 
-## Next steps
+## Related content
 
 Once you configure Workplace by Meta you can enforce Session control, which protects exfiltration and infiltration of your organization's sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

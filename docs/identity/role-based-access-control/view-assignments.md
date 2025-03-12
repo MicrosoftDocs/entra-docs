@@ -3,7 +3,7 @@ title: List Microsoft Entra role assignments
 description: Learn how to list Microsoft Entra role assignments using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API.
 
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to
@@ -37,7 +37,6 @@ For more information, see [Prerequisites to use PowerShell or Graph Explorer](pr
 
 # [Admin center](#tab/admin-center)
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 ### List my role assignments
 

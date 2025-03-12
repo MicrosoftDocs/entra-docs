@@ -1,11 +1,11 @@
 ---
-title: OAuth 2.0 and OpenID Connect protocols on the Microsoft identity platform
-description: A guide to OAuth 2.0 and OpenID Connect protocols as supported by the Microsoft identity platform.
+title: OAuth 2.0 and OpenID Connect protocols 
+description: Learn about OIDC authentication and OAuth 2.0 in the Microsoft identity platform. Understand authentication flows and OIDC endpoints for secure user authentication. 
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
 ms.custom: has-adal-ref
-ms.date: 11/14/2024
+ms.date: 01/27/2025
 ms.reviewer: nickludwig
 ms.service: identity-platform
 
@@ -13,7 +13,7 @@ ms.topic: concept-article
 #Customer intent: As a developer integrating authentication into my app using the Microsoft identity platform, I want to understand the roles and concepts of OAuth 2.0 and OpenID Connect, so that I can effectively use the platform's documentation, authentication libraries, and endpoints to add authentication to my application.
 ---
 
-# OAuth 2.0 and OpenID Connect (OIDC) in the Microsoft identity platform
+# OAuth 2.0 and OIDC authentication flow in the Microsoft identity platform
 
 Knowing about OAuth or OpenID Connect (OIDC) at the protocol level isn't required to use the Microsoft identity platform. However, you'll encounter protocol terms and concepts as you use the identity platform to add authentication to your apps. As you work with the Microsoft Entra admin center, our documentation, and authentication libraries, knowing some fundamentals can assist your integration and overall experience.
 

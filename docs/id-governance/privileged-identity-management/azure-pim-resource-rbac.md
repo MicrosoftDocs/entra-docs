@@ -1,17 +1,16 @@
 ---
-title: View audit report for Azure resource roles in Privileged Identity Management (PIM)
-description: View activity and audit history for Azure resource roles in Privileged Identity Management (PIM).
-
+title: View audit report for Azure resource roles in Privileged Identity Management
+  (PIM)
+description: View activity and audit history for Azure resource roles in Privileged
+  Identity Management (PIM).
 author: barclayn
-manager: amycolannino
-
+manager: femila
 ms.service: entra-id-governance
 ms.subservice: privileged-identity-management
 ms.topic: how-to
 ms.date: 12/13/2024
 ms.author: barclayn
 ms.reviewer: shaunliu
-
 ---
 # View activity and audit history for Azure resource roles in Privileged Identity Management
 
@@ -107,7 +106,6 @@ My audit enables you to view your personal role activity.
 
 ## Get reason, approver, and ticket number for approval events
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Privileged Role Administrator](~/identity/role-based-access-control/permissions-reference.md#privileged-role-administrator).
 

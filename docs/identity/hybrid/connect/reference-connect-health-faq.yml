@@ -3,7 +3,7 @@ metadata:
   title: Microsoft Entra Connect Health FAQ - Azure
   description: This FAQ answers questions about Microsoft Entra Connect Health. This FAQ covers questions about using the service, including the billing model, capabilities, limitations, and support.  
   author: billmath
-  manager: amycolannino
+  manager: femila
   ms.assetid: f1b851aa-54d7-4cb4-8f5c-60680e2ce866
   ms.service: entra-id
   ms.subservice: hybrid-connect
@@ -135,7 +135,7 @@ sections:
       - question: |
           After installing Microsoft Entra Connect Sync, with an account that has the Hybrid Administrator role, why is the Connect Health for Sync Agent disabled in services?
         answer: |
-          In order to install the Connect Health for Sync Agent, you need to be a Global Administrator.  To activate the agent, you need to reinstall the agent using a global administrator account.
+          In order to install the Connect Health for Sync Agent, you need to be a Global Administrator.  To activate the agent, you need to reinstall the agent using a Global Administrator account.
 
   - name: Health Agent registration and data freshness
     questions:

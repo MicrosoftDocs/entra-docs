@@ -15,6 +15,8 @@ ms.topic: how-to
 
 # Configure a mobile app that calls web APIs
 
+[!INCLUDE [applies-to-workforce-only](../external-id/includes/applies-to-workforce-only.md)]
+
 After you create your application, you'll learn how to configure the code by using the app registration parameters. Mobile applications present some complexities related to fitting into their creation framework.
 
 ## Microsoft libraries supporting mobile apps
