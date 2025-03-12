@@ -124,6 +124,8 @@ items:
         href: concept-private-access.md
       - name: Configure connectors
         href: how-to-configure-connectors.md
+      - name: Enable Multi-Geo Capability
+        href: how-to-enable-multi-geo.md
       - name: Register connector - silent Install
         href: how-to-register-connector-powershell.md
       - name: Configure per-app access
