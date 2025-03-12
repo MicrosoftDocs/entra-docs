@@ -56,7 +56,7 @@ Administrators can use several options to review the potential results of polici
 
 The policy impact view of Conditional Access lets admins with at least the Security Reader role see a snapshot of information about the potential or existing impacts of policies on interactive sign-ins in your organization. This functionality lets you explore impact over a period of the past 24 hours, 7 days, or 1 month. Additionally, you can see and link to a sampling of sign-in events for further detail.
 
-:::image type="content" source="media/concept-conditional-access-report-only/policy-impact-example-report-only.png" alt-text="Screenshot of Conditional Access policy impact example" lightbox="media/concept-conditional-access-report-only/policy-impact-example-report-only.png":::
+:::image type="content" source="media/concept-conditional-access-report-only/policy-impact-example-report-only.png" alt-text="Screenshot of Conditional Access policy impact example." lightbox="media/concept-conditional-access-report-only/policy-impact-example-report-only.png":::
 
 <a name='conditional-access-insights-workbook'></a>
 
