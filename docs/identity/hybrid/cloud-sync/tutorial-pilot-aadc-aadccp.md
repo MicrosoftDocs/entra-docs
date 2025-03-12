@@ -19,10 +19,13 @@ This tutorial walks you through how to migrate to cloud sync for a test Active D
 This article provides information for a basic migration. Review the [Migrate to cloud sync](migrate-azure-ad-connect-to-cloud-sync.md) documentation before you attempt to migrate your production environment.
 
 In this tutorial, you learn how to:
-
-- Create custom inbound and outbound rules.
+[!div class="checklist"]
+- Back up your Microsoft Entra Connect configuration.
+- Stop the scheduler.
+- Create custom user inbound and outbound rules.
 - Install the provisioning agent and verify the installation.
 - Configure Microsoft Entra Cloud Sync.
+- Restart the scheduler.
 
 ![Diagram that shows the Microsoft Entra Cloud Sync flow.](media/tutorial-migrate-aadc-aadccp/diagram-2.png)
 
@@ -181,7 +184,7 @@ To configure provisioning, follow these steps:
 
 1. On the **Get started** screen, select either **Add scoping filters** next to the **Add scoping filters** icon or on the left pane under **Manage**, select **Scoping filters**.
 
-   :::image type="content" source="media/how-to-configure/new-ux-configure-5.png" alt-text="Screenshot that shows scoping filters." lightbox="media/how-to-configure/new-ux-configure-5.png":::
+   :::image type="content" source="media/how-to-configure/new-ux-configure-5.png" alt-text="Screenshot that shows the scoping filters." lightbox="media/how-to-configure/new-ux-configure-5.png":::
 
 1. Select the scoping filter. For this tutorial, select **Selected organizational units**. This filter scopes the configuration to apply to specific OUs.
 
