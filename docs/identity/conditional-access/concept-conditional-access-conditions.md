@@ -141,7 +141,7 @@ These browsers support device authentication, allowing the device to be identifi
 >
 > macOS devices using the Enterprise SSO plugin require the [Microsoft Single Sign On](https://chromewebstore.google.com/detail/windows-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) extension to support SSO and device-based Conditional Access in Google Chrome.
 > 
-> macOS devices using the Firefox browser must be running macOS version 10.15 or newer and have the Microsoft Enterprise SSO plug-in installed and [configured appropriately](/entra/identity-platform/apple-sso-plugin#microsoft-intune-configuration).
+> macOS devices using the Firefox browser must be running macOS version 10.15 or newer and have the [Microsoft Enterprise SSO plug-in installed](/mem/intune-service/user-help/enroll-your-device-in-intune-macos-cp) and [configured appropriately](/entra/identity-platform/apple-sso-plugin#microsoft-intune-configuration).
 
 #### Why do I see a certificate prompt in the browser
 
