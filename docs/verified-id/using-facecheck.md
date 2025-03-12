@@ -143,7 +143,7 @@ The claim containing the photo must be named and you might optionally specify yo
 
 #### Successful Face Check presentation_verified callback event
 
-The JSON payload for the `presentation_verified` has more data when a Face Check was successfully during a Verified ID credential presentation. The faceCheck section is added which contains a matchConfidenceScore. Note, that it isn't possible to request and receive the presentation receipt when the request includes faceCheck.
+The JSON payload for the `presentation_verified` has more data in the response when a Face Check was successfully during a Verified ID credential presentation. The faceCheck section is added which contains a matchConfidenceScore. Note, that it isn't possible to request and receive the presentation receipt when the request includes faceCheck.
 
 ```json
   "verifiedCredentialsData": [ 
