@@ -9,10 +9,13 @@ ms.service: entra-external-id
 ms.topic: tutorial
 ms.subservice: external
 ms.custom: devx-track-dotnet
-ms.date: 06/27/2024
+ms.date: 03/12/2025
 ---
 
 # Tutorial: Sign in users in .NET MAUI shell app using an external tenant
+
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
 
 This tutorial is the final part of a series that demonstrates how to create a .NET Multi-platform App UI (.NET MAUI) shell app and prepare it for authentication using the Microsoft Entra admin center. In [Part 2 of this series](./tutorial-mobile-app-maui-sign-in-prepare-app.md) you added a custom Microsoft Authentication Library (MSAL) client helper to initialize the MSAL SDK, install required libraries and include an image resource. This final step demonstrates how to add sign-in and sign-out code in .NET MAUI and run the shell app on the Android platform.
 
@@ -187,7 +190,7 @@ To create `appsettings.json`, follow these steps:
    1. `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
    1. `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the app you registered earlier.
 
-[!INCLUDE [external-id-custom-domain](./includes/use-custom-domain-url-dot-net.md)]
+[!INCLUDE [external-id-custom-domain](../external-id/customers/includes/use-custom-domain-url-dot-net.md)]
 
 ## Run and test .NET MAUI mobile app
 
@@ -215,5 +218,5 @@ Run the app by pressing *F5* or select the *play button* at the top of Visual St
 
 ## See also
 
-- [Customize the default branding](how-to-customize-branding-customers.md).
-- [Configure sign-in with Google](how-to-google-federation-customers.md).
+- [Customize the default branding](../external-id/customers/how-to-customize-branding-customers.md).
+- [Configure sign-in with Google](../external-id/customers/how-to-google-federation-customers.md).

@@ -403,6 +403,18 @@
                   href: quickstart-native-authentication-ios-call-api.md
     - name: Tutorials
       items:
+        - name: .NET MAUI
+          items:
+            - name: Browser-delegated authentication
+              items:
+                - name: Prepare tenant
+                  href: tutorial-mobile-app-maui-sign-in-prepare-tenant.md
+                - name: Prepare your app
+                  href: tutorial-mobile-app-maui-sign-in-prepare-app.md
+                - name: Add sign in and sign out
+                  href: tutorial-mobile-app-maui-sign-in-sign-out.md
+                - name: Use role-based access control
+                  href: tutorial-mobile-maui-role-based-access-control.md
         - name: Android
           items:
             - name: Browser-delegated authentication

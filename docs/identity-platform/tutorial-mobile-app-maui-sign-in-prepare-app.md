@@ -9,10 +9,13 @@ ms.service: entra-external-id
 ms.topic: tutorial
 ms.subservice: external
 ms.custom: devx-track-dotnet
-ms.date: 06/05/2023
+ms.date: 03/12/2025
 ---
 
 # Tutorial: Create a .NET MAUI shell app
+
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
+
 
 This tutorial is part 2 of a series that demonstrates how to create a .NET Multi-platform App UI (.NET MAUI) shell app and prepare it for authentication using the Microsoft Entra admin center. In [Part 1 of this series](./tutorial-mobile-app-maui-sign-in-prepare-tenant.md), you registered an application and configured user flows in your external tenant. In this tutorial, you'll add a custom Microsoft Authentication Library (MSAL) client helper to initialize the MSAL SDK, install required libraries and include an image resource.
 

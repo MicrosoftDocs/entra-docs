@@ -201,13 +201,13 @@ items:
             - name: .NET MAUI
               items:
                 - name: Prepare tenant
-                  href: tutorial-mobile-app-maui-sign-in-prepare-tenant.md
+                  href: /entra/identity-platform/tutorial-mobile-app-maui-sign-in-prepare-tenant?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Create .NET MAUI app
-                  href: tutorial-mobile-app-maui-sign-in-prepare-app.md
+                  href: /entra/identity-platform/tutorial-mobile-app-maui-sign-in-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Sign in and sign out
-                  href: tutorial-mobile-app-maui-sign-in-sign-out.md
+                  href: /entra/identity-platform/tutorial-mobile-app-maui-sign-in-sign-out?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
                 - name: Use role-based access control
-                  href: tutorial-mobile-maui-role-based-access-control.md
+                  href: /entra/identity-platform/tutorial-mobile-maui-role-based-access-control?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json
             - name: Android
               items:
                 - name: Prepare app
