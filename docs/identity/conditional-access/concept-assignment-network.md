@@ -9,7 +9,7 @@ ms.date: 05/22/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: lhuangnorth, inbarc
 ---
 # Conditional Access: Network assignment

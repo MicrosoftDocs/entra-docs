@@ -4,7 +4,7 @@ description: This article describes the Microsoft Entra Connect Health AD FS Ris
 
 ms.reviewer: zhiweiwangmsft
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: hybrid-connect
 ms.tgt_pltfrm: na

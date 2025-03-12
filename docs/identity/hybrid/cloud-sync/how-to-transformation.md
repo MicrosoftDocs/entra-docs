@@ -3,7 +3,7 @@ title: Microsoft Entra Cloud Sync transformations
 description: This article describes how to use transformations to alter the default attribute mappings.
 author: billmath
 ms.author: billmath
-manager: amycolannino
+manager: femila
 ms.date: 12/17/2024
 ms.topic: how-to
 ms.service: entra-id

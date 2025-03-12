@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect Sync: Understand and customize synchronization'
 description: Explains how Microsoft Entra Connect Sync works and how to customize.
 
 author: billmath
-manager: amycolannino
+manager: femila
 
 ms.assetid: ee4bf802-045b-4da0-986e-90aba2de58d6
 ms.service: entra-id

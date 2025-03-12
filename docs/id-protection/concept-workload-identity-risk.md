@@ -4,9 +4,9 @@ description: Workload identity risk in Microsoft Entra ID Protection
 ms.service: entra-workload-id
 ms.topic: conceptual
 ms.date: 01/16/2024
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+author: shlipsey3
+ms.author: sarahlipsey
+manager: femila
 ms.reviewer: etbasser
 ---
 # Securing workload identities
@@ -36,7 +36,7 @@ To make use of workload identity risk reports, including the **Risky workload id
   - Security Operator
   - Security Reader
 
-  Users assigned the Conditional Access administrator role can create policies that use risk as a condition.
+  Users assigned the Conditional Access Administrator role can create policies that use risk as a condition.
 
 To take action on risky workload identities we recommend setting up risk-based Conditional Access policies, which do require [Workload Identities Premium](https://www.microsoft.com/security/business/identity-access/microsoft-entra-workload-identities#office-StandaloneSKU-k3hubfz) licensing: You can view, start a trial, and acquire licenses on the [Workload Identities blade](https://portal.azure.com/#view/Microsoft_Azure_ManagedServiceIdentity/WorkloadIdentitiesBlade).
 

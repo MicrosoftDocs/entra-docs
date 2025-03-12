@@ -26,7 +26,7 @@ This article describes how to enable [custom URL domains](concept-custom-url-dom
 - [Learn how custom URL domains work](concept-custom-url-domain.md) in External ID.
 - If you haven't already created an external tenant, [create one now](how-to-create-external-tenant-portal.md).
 - [Create a user flow](how-to-user-flow-sign-up-sign-in-customers.md) so users can sign up and sign in to your application.
-- [Register a web application](how-to-register-ciam-app.md).
+- [Register a web application](/entra/identity-platform/quickstart-register-app).
 
 ## Step 1: Add a custom domain name to your tenant
 

@@ -9,7 +9,7 @@ ms.date: 02/27/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: lhuangnorth
 ---
 # Use application enforced restrictions for unmanaged devices

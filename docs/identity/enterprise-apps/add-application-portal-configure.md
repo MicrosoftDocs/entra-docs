@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.date: 02/27/2025
 ms.author: jomondi
 ms.reviewer: ergreenl
-zone_pivot_groups: enterprise-apps-minus-former-powershell
+zone_pivot_groups: enterprise-apps-minus-legacy-powershell
 ms.custom: enterprise-apps
 
 #customer intent: As a Microsoft Entra admin, I want to configure the properties of an enterprise application, so that I can control how the application is represented and accessed by users.

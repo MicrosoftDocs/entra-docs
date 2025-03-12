@@ -9,7 +9,7 @@ ms.date: 03/03/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: jploegert
 ---
 # Troubleshoot devices by using the dsregcmd command

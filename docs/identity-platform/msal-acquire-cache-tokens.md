@@ -116,7 +116,7 @@ When your client requests an access token, Microsoft Entra ID also returns an au
 
 
 > [!NOTE]
-> When acquiring tokens interactivelly using [authentication broker](msal-net-use-brokers-with-xamarin-apps.md), the authentication broker will do cache-lookup first and return cached token if available ([GitHub issue - acquireToken uses caching](https://github.com/AzureAD/microsoft-authentication-library-for-android/issues/2197#issuecomment-2447771586)).
+> When acquiring tokens interactively using [authentication broker](msal-net-use-brokers-with-xamarin-apps.md), the authentication broker will do cache-lookup first and return cached token if available ([GitHub issue - acquireToken uses caching](https://github.com/AzureAD/microsoft-authentication-library-for-android/issues/2197#issuecomment-2447771586)).
 
 ## See also
 

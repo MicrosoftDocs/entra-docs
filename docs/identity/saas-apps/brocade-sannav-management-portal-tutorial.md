@@ -25,10 +25,8 @@ In this article,  you'll learn how to integrate Brocade SANnav Management Portal
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To integrate Microsoft Entra ID with Brocade SANnav Management Portal, you need:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * SANnav Management Portal application installed with a valid subscription license.
 
 ## Scenario description

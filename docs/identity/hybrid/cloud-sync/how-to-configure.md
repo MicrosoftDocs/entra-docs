@@ -3,7 +3,7 @@ title: 'Microsoft Entra Cloud Sync new agent configuration'
 description: This article describes how to install cloud sync.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 12/16/2024

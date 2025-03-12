@@ -9,7 +9,7 @@ ms.date: 06/27/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: lhuangnorth, jogro
 ---
 # Require an app protection policy on Windows devices
