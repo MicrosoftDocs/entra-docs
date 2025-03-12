@@ -58,7 +58,7 @@ When you install the synchronization services, you can leave the optional config
 ### User sign-in
 After installing the required components, select your users' single sign-on method. The following table briefly describes the available options. For a full description of the sign-in methods, see [User sign-in](plan-connect-user-signin.md).
 
-![Screenshot that shows the "User Sign-in" page. The "Password Hash Synchronization" option is selected.](./media/how-to-connect-install-custom/usersignin4.png)
+:::image type="content" source="media/how-to-connect-install-custom/custom-2.png" alt-text="Screenshot of the user sign-in screen." lightbox="media/how-to-connect-install-custom/custom-2.png":::
 
 | Single sign-on option | Description |
 | --- | --- |
@@ -78,14 +78,15 @@ You might want to use an account in the default *onmicrosoft.com* domain, which 
  
 >[!NOTE]
 >A best practice is to avoid using on-premises synced accounts for Microsoft Entra role assignments. If the on-premises account is compromised, this can be used to compromise your Microsoft Entra resources as well.  For a complete list of best practices refer to [Best practices for Microsoft Entra roles](~/identity/role-based-access-control/best-practices.md)
- 
-![Screenshot showing the "Connect to Microsoft Entra ID" page.](./media/how-to-connect-install-custom/connectaad.png)
 
-If your Global Administrator account has multifactor authentication enabled, you provide the password again in the sign-in window, and you must complete the multifactor authentication challenge. The challenge could be a verification code or a phone call.  
+:::image type="content" source="media/how-to-connect-install-custom/custom-3.png" alt-text="Screenshot of the connect to Microsoft Entra ID." lightbox="media/how-to-connect-install-custom/custom-3.png":::
 
-![Screenshot showing the "Connect to Microsoft Entra ID" page. A multifactor authentication field prompts the user for a code.](./media/how-to-connect-install-custom/connectaadmfa.png)
+If your Hybrid Identity Administrator account has multifactor authentication enabled, you provide the password again in the sign-in window, and you must complete the multifactor authentication challenge. The challenge could be a verification code or a phone call.  
 
-The Global Administrator account can also have [privileged identity management](~/id-governance/privileged-identity-management/pim-getting-started.md) enabled.
+:::image type="content" source="media/how-to-connect-install-custom/custom-4.png" alt-text="Screenshot of mfa." lightbox="media/how-to-connect-install-custom/custom-4.png":::
+
+
+The Hybrid Identity Administrator account can also have [privileged identity management](~/id-governance/privileged-identity-management/pim-getting-started.md) enabled.
 
 To use authentication support for non-password scenarios such as federated accounts, smartcards and MFA scenarios, you can provide the switch **/InteractiveAuth** when starting the wizard. Using this switch will bypass the Wizard's authentication user interface and use the MSAL library's UI to handle the authentication.
 
@@ -98,7 +99,8 @@ The following sections describe the pages in the **Sync** section.
 ### Connect your directories
 To connect to Active Directory Domain Services (AD DS), Microsoft Entra Connect needs the forest name and credentials of an account that has sufficient permissions.
 
-![Screenshot that shows the "Connect your directories" page.](./media/how-to-connect-install-custom/connectdir01.png)
+:::image type="content" source="media/how-to-connect-install-custom/custom-5.png" alt-text="Screenshot of the connected directories screen." lightbox="media/how-to-connect-install-custom/custom-5.png":::
+
 
 After you enter the forest name and select  **Add Directory**, a window appears. The following table describes your options.
 
@@ -107,7 +109,8 @@ After you enter the forest name and select  **Add Directory**, a window appears.
 | Create new account | Create the AD DS account that Microsoft Entra Connect needs to connect to the Active Directory forest during directory synchronization. After you select this option, enter the username and password for an enterprise admin account.  Microsoft Entra Connect uses the provided enterprise admin account to create the required AD DS account. You can enter the domain part in either NetBIOS format or FQDN format. That is, enter *FABRIKAM\administrator* or *fabrikam.com\administrator*. |
 | Use existing account | Provide an existing AD DS account that Microsoft Entra Connect can use to connect to the Active Directory forest during directory synchronization. You can enter the domain part in either NetBIOS format or FQDN format. That is, enter *FABRIKAM\syncuser* or *fabrikam.com\syncuser*. This account can be a regular user account because it needs only the default read permissions. But depending on your scenario, you might need more permissions. For more information, see [Microsoft Entra Connect accounts and permissions](reference-connect-accounts-permissions.md#create-the-ad-ds-connector-account). |
 
-![Screenshot showing the "Connect Directory" page and the A D forest account window, where you can choose to create a new account or use an existing account.](./media/how-to-connect-install-custom/connectdir02.png)
+:::image type="content" source="media/how-to-connect-install-custom/custom-6.png" alt-text="Screenshot of the connected directories screen for choosing account." lightbox="media/how-to-connect-install-custom/custom-6.png":::
+
 
 >[!NOTE]
 > As of build 1.4.18.0, you can't use an enterprise admin or domain admin account as the AD DS connector account. When you select **Use existing account**, if you try to enter an enterprise admin account or a domain admin account, you see the following error: "Using  an Enterprise or Domain administrator account for your AD forest account is not allowed. Let Microsoft Entra Connect create the account for you or specify a synchronization account with the correct permissions."
