@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect: Design concepts'
 description: This topic details certain implementation design areas
 
 author: billmath
-manager: amycolannino
+manager: femila
 
 ms.assetid: 4114a6c0-f96a-493c-be74-1153666ce6c9
 ms.service: entra-id

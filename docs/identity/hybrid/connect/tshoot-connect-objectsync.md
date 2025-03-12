@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect: Troubleshoot object synchronization'
 description: Learn how to troubleshoot issues with object synchronization by using the troubleshooting task.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting

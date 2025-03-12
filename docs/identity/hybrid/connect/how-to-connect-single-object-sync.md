@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect Single Object Sync '
 description: Learn how to synchronize one object from Active Directory to Microsoft Entra ID for troubleshooting.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 12/20/2024

@@ -5,12 +5,12 @@ description: Learn about how you can set up Authenticator Lite for Outlook mobil
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/07/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
 ms.reviewer: guptashi
-manager: amycolannino
+manager: femila
 
 # Customer intent: As an identity administrator, I want to encourage users to understand how default protection can improve our security posture.
 ---

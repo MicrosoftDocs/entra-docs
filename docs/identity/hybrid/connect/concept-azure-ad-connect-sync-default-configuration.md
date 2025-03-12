@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect Sync: Understanding the default configuration'
 description: This article describes the default configuration in Microsoft Entra Connect Sync.
 
 author: billmath
-manager: amycolannino
+manager: femila
 
 ms.assetid: ed876f22-6892-4b9d-acbe-6a2d112f1cd1
 ms.service: entra-id

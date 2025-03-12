@@ -2,7 +2,7 @@
 title:  Onboard an Amazon Web Services (AWS) account to Permissions Management
 description: How to onboard an Amazon Web Services (AWS) account to Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to

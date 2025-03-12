@@ -23,10 +23,8 @@ In this article,  you'll learn how to integrate Terranova Security Awareness Pla
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To integrate Microsoft Entra ID with Terranova Security Awareness Platform, you need:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Terranova Security Awareness Platform single sign-on (SSO) enabled subscription.
 
 ## Scenario description

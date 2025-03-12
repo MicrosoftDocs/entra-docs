@@ -3,7 +3,7 @@ title: Sign-ins using legacy authentication workbook
 description: Learn how to use the sign-ins using legacy authentication workbook in Microsoft Entra ID to identify apps using legacy methods.
 
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health

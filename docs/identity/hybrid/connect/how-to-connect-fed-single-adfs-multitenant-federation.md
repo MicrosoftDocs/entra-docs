@@ -4,7 +4,7 @@ description: In this document, you'll learn how to federate multiple Microsoft E
 keywords: federate, ADFS, AD FS, multiple tenants, single AD FS, one ADFS, multi-tenant federation, multi-forest adfs, aad connect, federation, cross-tenant federation
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.custom: has-azure-ad-ps-ref

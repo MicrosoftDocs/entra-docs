@@ -25,10 +25,8 @@ In this article,  you'll learn how to integrate JOBHUB with Microsoft Entra ID. 
 To learn more about SaaS app integration with Microsoft Entra ID, see [What is application access and single sign-on with Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get one-month free trial [here](https://azure.microsoft.com/pricing/free-trial/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * JOBHUB single sign-on (SSO) enabled subscription.
 
 ## Scenario description

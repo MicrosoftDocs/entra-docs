@@ -24,10 +24,8 @@ Integrating Palo Alto Networks Captive Portal with Microsoft Entra ID provides y
 * You can manage your accounts in one central location.
 
 ## Prerequisites
-
-To integrate Microsoft Entra ID with Palo Alto Networks Captive Portal, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have Microsoft Entra ID, you can get a [one-month trial](https://azure.microsoft.com/pricing/free-trial/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Palo Alto Networks Captive Portal single sign-on (SSO)-enabled subscription.
 
 ## Scenario description

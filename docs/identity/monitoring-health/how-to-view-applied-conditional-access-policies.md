@@ -2,7 +2,7 @@
 title: Conditional Access and Microsoft Entra activity logs
 description: Learn how to view Conditional Access details in Microsoft Entra activity logs so that you can assess the effect of your policies.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
@@ -176,7 +176,7 @@ To see when an existing Conditional Access policy was updated:
 1. Browse to **Identity** > **Monitoring & health** > **Audit logs**.
 1. Set **Service** filter to **Conditional Access**.
 1. Set the **Category** filter to **Policy**.
-1. Set the **Activity** filter to **Update conditional access policy**.
+1. Set the **Activity** filter to **Update Conditional Access policy**.
 
 You might need to adjust the date to see the changes you're looking for. The **Target** column shows the name of the Conditional Access policy that was updated.
 

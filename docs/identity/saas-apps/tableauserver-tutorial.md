@@ -25,10 +25,8 @@ In this article,  you'll learn how to integrate Tableau Server with Microsoft En
 
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Tableau Server single sign-on (SSO) enabled subscription.
 
 ## Scenario description
@@ -160,7 +158,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 	> Customer have to upload A PEM-encoded x509 Certificate file with a .crt extension and a RSA or DSA private key file that has the .key extension, as a Certificate Key file. For more information on Certificate file and Certificate Key file, please refer to [this](https://help.tableau.com/current/server/en-us/saml_requ.htm) document. If you need help configuring SAML on Tableau Server then please refer to this article [Configure Server Wide SAML](https://help.tableau.com/current/server/en-us/config_saml.htm).
 
 	> [!NOTE]
-	> The SAML Certificate and SAML Key files are generated separately and uploaded to the Tableau Server Manager. For example, in the linux shell, use openssl to generate the cert and key like so: `openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout private.key -out saml.crt` then upload the `saml.crt` and `private.key` files via the TSM Configruation GUI (As shown in the screenshot at the start of this step) or via the [command line according to the tableau docs](https://help.tableau.com/current/server-linux/en-us/config_saml.htm). If you are in a production environment, you may want to find a more secure way to handle SAML certs and keys.
+	> The SAML Certificate and SAML Key files are generated separately and uploaded to the Tableau Server Manager. For example, in the linux shell, use openssl to generate the cert and key like so: `openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout private.key -out saml.crt` then upload the `saml.crt` and `private.key` files via the TSM Configuration GUI (As shown in the screenshot at the start of this step) or via the [command line according to the tableau docs](https://help.tableau.com/current/server-linux/en-us/config_saml.htm). If you are in a production environment, you may want to find a more secure way to handle SAML certs and keys.
 
 ### Create Tableau Server test user
 

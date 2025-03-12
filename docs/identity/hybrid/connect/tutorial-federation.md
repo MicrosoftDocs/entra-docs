@@ -3,7 +3,7 @@ title: 'Tutorial: Use federation for hybrid identity in a single Active Director
 description: Learn how to set up a hybrid identity environment by using federation to integrate a Windows Server Active Directory forest with Microsoft Entra ID.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: tutorial

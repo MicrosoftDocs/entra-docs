@@ -3,11 +3,11 @@ title: Skip deletion of out of scope users in Microsoft Entra Application Provis
 description: Learn how to override the default behavior of deprovisioning out of scope users in Microsoft Entra ID.
 
 author: kenwith
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 11/27/2024
+ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: arvinh
 ---

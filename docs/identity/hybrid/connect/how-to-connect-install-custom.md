@@ -4,7 +4,7 @@ description: This article explains the custom installation options for Microsoft
 
 keywords: what is Azure AD Connect, install Active Directory, required components for Azure AD
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: 6d42fb79-d9cf-48da-8445-f482c4c536af
 ms.service: entra-id
 ms.topic: how-to

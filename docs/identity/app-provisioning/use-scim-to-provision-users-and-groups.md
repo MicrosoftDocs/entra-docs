@@ -3,11 +3,11 @@ title: Tutorial - Develop a SCIM endpoint for user provisioning to apps from Mic
 description: System for Cross-domain Identity Management (SCIM) standardizes automatic user provisioning. In this tutorial, you learn to develop a SCIM endpoint, integrate your SCIM API with Microsoft Entra ID, and start automating provisioning users and groups into your cloud applications.
 
 author: kenwith
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: tutorial
-ms.date: 10/22/2024
+ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: arvinh
 ---
@@ -1344,7 +1344,7 @@ Applications that support the SCIM profile described in this article can be conn
 1. Select **Provision on-demand** in the left panel. Search for a user that is in scope for provisioning and provision them on-demand. Repeat with other users that you would like to test provisioning with.
 1. Once your configuration is complete, select **Overview** in the left panel.
 1. Select **Properties**.
-1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Click **Appy** to save the changes.   
+1. Select the pencil to edit the properties. Enable notification emails and provide an email to receive quarantine emails. Enable accidental deletions prevention. Click **Apply** to save the changes.   
 1. Select **Start provisioning** to start the Microsoft Entra provisioning service. 
 
 

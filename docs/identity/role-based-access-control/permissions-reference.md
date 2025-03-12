@@ -2,7 +2,7 @@
 title: Microsoft Entra built-in roles
 description: Describes the Microsoft Entra built-in roles and permissions.
 author: rolyon
-manager: amycolannino
+manager: femila
 search.appverid: MET150
 ms.service: entra-id
 ms.subservice: role-based-access-control
@@ -69,6 +69,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Global Administrator](#global-administrator) | Can manage all aspects of Microsoft Entra ID and Microsoft services that use Microsoft Entra identities.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 62e90394-69f5-4237-9190-012177145e10 |
 > | [Global Reader](#global-reader) | Can read everything that a Global Administrator can, but not update anything.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | f2ef992c-3afb-46b9-b7cf-a126ee74c451 |
 > | [Global Secure Access Administrator](#global-secure-access-administrator) | Create and manage all aspects of Microsoft Entra Internet Access and Microsoft Entra Private Access, including managing access to public and private endpoints. | ac434307-12b9-4fa1-a708-88bf58caabc1 |
+> | [Global Secure Access Log Reader](#global-secure-access-log-reader) | Provides designated security personnel with read-only access to network traffic logs in Microsoft Entra Internet Access and Microsoft Entra Private Access for detailed analysis. | 843318fb-79a6-4168-9e6f-aa9a07481cc4 |
 > | [Groups Administrator](#groups-administrator) | Members of this role can create/manage groups, create/manage groups settings like naming and expiration policies, and view groups activity and audit reports. | fdd7a751-b60b-444a-984c-02652fe8fa1c |
 > | [Guest Inviter](#guest-inviter) | Can invite guest users independent of the 'members can invite guests' setting. | 95e79109-95c0-4d8e-aee3-d01accf2d47b |
 > | [Helpdesk Administrator](#helpdesk-administrator) | Can reset passwords for non-administrators and Helpdesk Administrators.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 729827e3-9c14-49f7-bb1b-9608f156bbb8 |
@@ -99,6 +100,7 @@ This article lists the Microsoft Entra built-in roles you can assign to allow ma
 > | [Partner Tier1 Support](#partner-tier1-support) | Do not use - not intended for general use.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 4ba39ca4-527c-499a-b93d-d9b492c50246 |
 > | [Partner Tier2 Support](#partner-tier2-support) | Do not use - not intended for general use.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | e00e864a-17c5-4a4b-9c06-f5b95a8d5bd8 |
 > | [Password Administrator](#password-administrator) | Can reset passwords for non-administrators and Password Administrators.<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) | 966707d0-3269-4727-9be2-8c3a10f19b9d |
+> | [People Administrator](#people-administrator) | Manage profile photos of users and people settings for all users in the organization. | 024906de-61e5-49c8-8572-40335f1e0e10 |
 > | [Permissions Management Administrator](#permissions-management-administrator) | Manage all aspects of Microsoft Entra Permissions Management. | af78dc32-cf4d-46f9-ba4e-4428526346b5 |
 > | [Power Platform Administrator](#power-platform-administrator) | Can create and manage all aspects of Microsoft Dynamics 365, Power Apps and Power Automate. | 11648597-926c-4cf3-9c36-bcebb0ba8dcc |
 > | [Printer Administrator](#printer-administrator) | Can manage all aspects of printers and printer connectors. | 644ef478-e28f-4e28-b9dc-3fdde9aa0b1f |
@@ -1012,7 +1014,9 @@ This role does not provide any permissions for other Dynamics 365 products.
 
 ## Edge Administrator
 
-Users in this role can create and manage the enterprise site list required for Internet Explorer mode on Microsoft Edge. This role grants permissions to create, edit, and publish the site list and additionally allows access to manage support tickets. [Learn more](https://go.microsoft.com/fwlink/?linkid=2165707)
+Users in this role can create and manage the enterprise site list required for Internet Explorer mode on Microsoft Edge. This role grants permissions to create, edit, and publish the site list and additionally allows access to manage support tickets.
+
+[Learn more](https://go.microsoft.com/fwlink/?linkid=2165707)
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -1457,7 +1461,7 @@ Users with this role **cannot** do the following:
 
 - Cannot manage enterprise applications, application registrations, Conditional Access, or application proxy settings
 
-[Learn more](../../global-secure-access/overview-what-is-global-secure-access.md)
+[Learn more](../../global-secure-access/reference-role-based-permissions.md)
 
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
@@ -1482,6 +1486,21 @@ Users with this role **cannot** do the following:
 > | microsoft.office365.serviceHealth/allEntities/allTasks | Read and configure Service Health in the Microsoft 365 admin center |
 > | microsoft.office365.supportTickets/allEntities/allTasks | Create and manage Microsoft 365 service requests |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
+
+## Global Secure Access Log Reader
+
+Assign the Global Secure Access Log Reader role to users who need to do the following:
+
+- Read network traffic logs in Microsoft Entra Internet Access and Microsoft Entra Private Access for analysis by designated security personnel
+- View log details such as session, connection, and transaction
+- Filter logs based on criteria such as IP address and domain
+
+[Learn more](../../global-secure-access/reference-role-based-permissions.md)
+
+> [!div class="mx-tableFixed"]
+> | Actions | Description |
+> | --- | --- |
+> | microsoft.networkAccess/trafficLogs/standard/read | Read standard properties of traffic logs such as DeviceId, DestinationIp and PolicyRuleId |
 
 ## Groups Administrator
 
@@ -2185,6 +2204,21 @@ Users with this role **cannot** do the following:
 > | --- | --- |
 > | microsoft.directory/users/password/update | Reset passwords for all users<br/>[![Privileged label icon.](./media/permissions-reference/privileged-label.png)](privileged-roles-permissions.md) |
 > | microsoft.office365.webPortal/allEntities/standard/read | Read basic properties on all resources in the Microsoft 365 admin center |
+
+## People Administrator
+
+Assign the People Administrator role to users who need to do the following tasks:
+
+- Update profile photos for all users including administrators
+- Update people settings for all users, such as pronouns, name pronunciation, and profile card settings
+
+> [!div class="mx-tableFixed"]
+> | Actions | Description |
+> | --- | --- |
+> | microsoft.peopleAdmin/organization/allProperties/read | Read people settings for users, such as pronouns, name pronunciation, and profile card settings |
+> | microsoft.peopleAdmin/organization/allProperties/update | Update people settings for users, such as pronouns, name pronunciation, and profile card settings |
+> | microsoft.people/users/photo/read | Read profile photo of user |
+> | microsoft.people/users/photo/update | Update profile photo of user |
 
 ## Permissions Management Administrator
 

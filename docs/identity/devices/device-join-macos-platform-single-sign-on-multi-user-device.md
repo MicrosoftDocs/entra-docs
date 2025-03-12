@@ -36,7 +36,7 @@ There are three main steps for configuring Platform SSO on a shared device:
 
 Your Platform SSO MDM profile should apply the following configurations to support multi-user devices:
 
-| Configuration Paramter | Value(s) | Note |
+| Configuration Parameter | Value(s) | Note |
 |-|-|-|
 | Screen Locked Behavior | Do Not Handle | Required |
 | Registration Token | {{DEVICEREGISTRATION}} | Recommended for the best registration user experience |

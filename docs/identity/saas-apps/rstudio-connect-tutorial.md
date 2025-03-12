@@ -23,10 +23,8 @@ In this article,  you'll learn how to integrate RStudio Connect SAML Authenticat
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with RStudio Connect SAML Authentication, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * RStudio Connect SAML Authentication. There is a [45 day free evaluation](https://www.rstudio.com/products/connect/).
 
 ## Scenario description

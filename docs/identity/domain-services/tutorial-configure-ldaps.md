@@ -2,7 +2,7 @@
 title: Tutorial - Configure LDAPS for Microsoft Entra Domain Services | Microsoft Docs
 description: In this tutorial, you learn how to configure secure lightweight directory access protocol (LDAPS) for a Microsoft Entra Domain Services managed domain.
 author: justinha
-manager: amycolannino
+manager: femila
 
 ms.service: entra-id
 ms.subservice: domain-services

@@ -2,7 +2,7 @@
 title: Learn about the audit logs in Microsoft Entra ID
 description: Learn about the types of activities and events that are captured in Microsoft Entra audit logs and how you can use the logs for troubleshooting.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health

@@ -3,7 +3,7 @@ title: Configure dynamic membership groups with the memberOf attribute in the Az
 description: Learn how to create a dynamic membership group that can contain members of other groups in Microsoft Entra ID.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: users
 ms.topic: conceptual

@@ -24,10 +24,8 @@ In this article,  you'll learn how to integrate F5 with Microsoft Entra ID. When
 To learn more about SaaS app integration with Microsoft Entra ID, see [What is application access and single sign-on with Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * F5 single sign-on (SSO) enabled subscription.
 
 ## Scenario description
@@ -276,7 +274,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
     * Set up the appropriate Delegation for the F5 Delegation Account.
     * In the example below, APM Delegation account is being configured for KCD for FRP-App1.superdemo.live app.
 
-        ![Screenshot that shows the APM Delegatio Account Properties > Delegation tab.](./media/advance-kerbf5-tutorial/configure25.png)
+        ![Screenshot that shows the APM Delegation Account Properties > Delegation tab.](./media/advance-kerbf5-tutorial/configure25.png)
 
 1. Provide the details as mentioned in the above reference document under [this](https://techdocs.f5.com/kb/en-us/products/big-ip_apm/manuals/product/apm-authentication-single-sign-on-11-5-0/2.html)
 

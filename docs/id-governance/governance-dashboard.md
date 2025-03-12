@@ -2,7 +2,7 @@
 title: 'Identity Governance dashboard'
 description: This article shows how to use the new identity governance dashboard
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 12/30/2024

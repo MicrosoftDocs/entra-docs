@@ -3,7 +3,7 @@ title: Custom role permissions for app registration
 description: Delegate custom administrator role permissions for managing app registrations.
 
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to

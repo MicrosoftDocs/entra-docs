@@ -80,10 +80,8 @@ Akamai EAA Application is set up individually on the Azure portal. Admin can con
 ![Integration Scenario 2](./media/header-akamai-tutorial/scenario-2.png)
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Akamai single sign-on (SSO) enabled subscription.
 
 ## Scenario description

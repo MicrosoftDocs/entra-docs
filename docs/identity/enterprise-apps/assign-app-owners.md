@@ -11,7 +11,7 @@ ms.topic: how-to
 ms.date: 12/06/2024
 ms.author: jomondi
 ms.reviewer: saibandaru
-zone_pivot_groups: enterprise-apps-minus-former-powershell
+zone_pivot_groups: enterprise-apps-minus-legacy-powershell
 ms.custom: enterprise-apps
 
 #Customer intent: As an administrator, I want to assign an owner to an enterprise application in Microsoft Entra, so that the owner can manage the organization-specific configuration of the application and perform tasks such as single sign-on, provisioning, and user assignments.

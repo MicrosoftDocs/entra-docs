@@ -24,10 +24,8 @@ In this article,  you'll learn how to integrate FloQast with Microsoft Entra ID.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * FloQast single sign-on (SSO) enabled subscription.
 
 ## Scenario description
@@ -93,7 +91,7 @@ Follow these steps to enable Microsoft Entra SSO.
     | Reply URL |
     | ---------- |
     | `https://go.floqast.com/api/sso/saml/azure` |
-    | ` ttps://eu.floqast.app/api/sso/saml/azure` |
+    | `https://eu.floqast.app/api/sso/saml/azure` |
     |
 
 

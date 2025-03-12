@@ -9,7 +9,7 @@ ms.date: 02/07/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: 
 ---
 # Configure Microsoft Entra for increased security (Preview)
@@ -100,6 +100,12 @@ We recommend that all of the following controls be implemented where licenses ar
 ### All user sign-in activity uses strong authentication methods 
 
 [!INCLUDE [21800](../includes/secure-recommendations/21800.md)]
+
+## Free security features
+
+### Enable Microsoft Entra ID security defaults
+
+[!INCLUDE [21871](../includes/secure-recommendations/21871.md)]
 
 ## Related content
 

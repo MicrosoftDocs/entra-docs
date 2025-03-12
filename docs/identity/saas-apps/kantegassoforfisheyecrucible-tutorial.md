@@ -23,10 +23,8 @@ In this article,  you'll learn how to integrate Kantega SSO for FishEye/Crucible
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with Kantega SSO for FishEye/Crucible, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Kantega SSO for FishEye/Crucible single sign-on enabled subscription.
 
 ## Scenario description
@@ -142,7 +140,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Search **Kantega SSO for Crucible** and click **Install** button to install the new SAML plugin.
 
-	![Screenshot that shows the "Attlasian Marketplace for FishEye" page with "Kantega S S O for Crucible" in the search box and the "Install" button selected.](./media/kantegassoforfisheyecrucible-tutorial/install.png)
+	![Screenshot that shows the "Atlassian Marketplace for FishEye" page with "Kantega S S O for Crucible" in the search box and the "Install" button selected.](./media/kantegassoforfisheyecrucible-tutorial/install.png)
 
 1. The plugin installation starts. 
 

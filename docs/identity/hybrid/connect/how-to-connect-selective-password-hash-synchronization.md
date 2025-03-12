@@ -3,7 +3,7 @@ title: 'Selective Password Hash Synchronization for Microsoft Entra Connect'
 description: This article describes how to set up and configure selective password hash synchronization to use with Microsoft Entra Connect.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.date: 12/20/2024

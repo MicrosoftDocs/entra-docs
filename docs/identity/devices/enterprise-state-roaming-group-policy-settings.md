@@ -9,7 +9,7 @@ ms.date: 08/01/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: sempofu, micrider
 ---
 # Group Policy and MDM settings
