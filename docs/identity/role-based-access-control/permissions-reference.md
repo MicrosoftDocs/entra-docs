@@ -1788,6 +1788,8 @@ Assign the IoT Device Administrator role to users who need to do the following t
 - Configure certificates used for IoT device authentication
 - Manage the lifecycle of IoT device templates
 
+[Learn more](/graph/api/resources/devicetemplate)
+
 > [!div class="mx-tableFixed"]
 > | Actions | Description |
 > | --- | --- |
