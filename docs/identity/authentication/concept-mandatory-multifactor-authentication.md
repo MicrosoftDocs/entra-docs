@@ -103,7 +103,7 @@ Changes are required if you're using the [Azure.Identity](https://www.nuget.org/
 - Using [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential) or [EnvironmentCredential](/dotnet/api/azure.identity.environmentcredential) with the following two environment variables set:
     - `AZURE_USERNAME`
     - `AZURE_PASSWORD`
-- Using `UsernamePasswordCredential` (**deprecated** as of the `1.14.0-beta.2` release)
+- Using `UsernamePasswordCredential` ([**deprecated** as of the `1.14.0-beta.2` release](https://github.com/Azure/azure-sdk-for-net/blob/main/sdk/identity/Azure.Identity/CHANGELOG.md#1140-beta2-2025-03-11))
 
 ### [Go](#tab/go)
 
@@ -112,7 +112,7 @@ Changes are required if you're using the [azidentity](https://pkg.go.dev/github.
 - Using [DefaultAzureCredential](https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/azidentity#DefaultAzureCredential) or [EnvironmentCredential](https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/azidentity#EnvironmentCredential) with the following two environment variables set:
     - `AZURE_USERNAME`
     - `AZURE_PASSWORD`
-- Using [UsernamePasswordCredential](https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/azidentity#UsernamePasswordCredential)
+- Using [UsernamePasswordCredential](https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/azidentity#UsernamePasswordCredential) ([**deprecated** as of the `1.8.3-beta.1` release](https://github.com/Azure/azure-sdk-for-go/blob/main/sdk/azidentity/CHANGELOG.md#183-beta1-unreleased))
 
 ### [Java](#tab/java)
 
@@ -121,7 +121,7 @@ Changes are required if you're using the [azure-identity](https://central.sonaty
 - Using [DefaultAzureCredential](/java/api/com.azure.identity.defaultazurecredential) or [EnvironmentCredential](/java/api/com.azure.identity.environmentcredential) with the following two environment variables set:
     - `AZURE_USERNAME`
     - `AZURE_PASSWORD`
-- Using [UsernamePasswordCredential](/java/api/com.azure.identity.usernamepasswordcredential)
+- Using [UsernamePasswordCredential](/java/api/com.azure.identity.usernamepasswordcredential) ([**deprecated** as of the `1.16.0-beta.1` release](https://github.com/Azure/azure-sdk-for-java/blob/main/sdk/identity/azure-identity/CHANGELOG.md#1160-beta1-unreleased))
 
 ### [Node.js](#tab/js)
 
@@ -130,7 +130,7 @@ Changes are required if you're using the [@azure/identity](https://www.npmjs.com
 - Using [DefaultAzureCredential](/javascript/api/@azure/identity/defaultazurecredential) or [EnvironmentCredential](/javascript/api/@azure/identity/environmentcredential) with the following two environment variables set:
     - `AZURE_USERNAME`
     - `AZURE_PASSWORD`
-- Using [UsernamePasswordCredential](/javascript/api/@azure/identity/usernamepasswordcredential) (**deprecated** as of the `4.8.0` release)
+- Using [UsernamePasswordCredential](/javascript/api/@azure/identity/usernamepasswordcredential) ([**deprecated** as of the `4.8.0` release](https://github.com/Azure/azure-sdk-for-js/blob/main/sdk/identity/identity/CHANGELOG.md#480-2025-03-11))
 
 ### [Python](#tab/python)
 
@@ -139,7 +139,7 @@ Changes are required if you're using the [azure-identity](https://pypi.org/proje
 - Using [DefaultAzureCredential](/python/api/azure-identity/azure.identity.defaultazurecredential) or [EnvironmentCredential](/python/api/azure-identity/azure.identity.environmentcredential) with the following two environment variables set:
     - `AZURE_USERNAME`
     - `AZURE_PASSWORD`
-- Using [UsernamePasswordCredential](/python/api/azure-identity/azure.identity.usernamepasswordcredential) (**deprecated** as of the `1.21.0` release)
+- Using [UsernamePasswordCredential](/python/api/azure-identity/azure.identity.usernamepasswordcredential) ([**deprecated** as of the `1.21.0` release](https://github.com/Azure/azure-sdk-for-python/blob/main/sdk/identity/azure-identity/CHANGELOG.md#1210-2025-03-11))
 
 ---
 
