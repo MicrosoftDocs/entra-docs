@@ -12,7 +12,7 @@ ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 #Customer intent: As a dev, devops, or it admin, I want to
 ---
 
-# Add Microsoft account (live.com) as an OpenID Connect identity provider (preview)
+# Add Microsoft account (live.com) as an OpenID Connect identity provider
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
@@ -72,12 +72,12 @@ Once you have configured your Microsoft account (live.com) as an application, yo
 
 1.  Enter the following details for your identity provider on the **Basics** tab:
 
-   - **Display name**: Enter a name for your identity provider, for example *Microsoft account* This name is displayed to your users during the sign-in and sign-up flows. For example, *Sign in with Microsoft account* or *Sign up with your Microsoft account*.
-   - **Well-known endpoint**: Enter the endpoint URI as `https://login.microsoftonline.com/consumers/v2.0/.well-known/openid-configuration`, which is the discovery URI of the common authority URL for Microsoft accounts.
-   - **OpenID Issuer URI**: Enter the Issuer URI as `https://login.live.com`.
-   - **Client ID** and **Client Secret**: Enter the **Application (client) ID** and **Value** of the client secret you created earlier.
-   - **Client Authentication**:  Select **client_secret** and add	`openid profile email` to **Scope**.
-   - **Response type**: Select **code**.
+       - **Display name**: Enter a name for your identity provider, for example *Microsoft account* This name is displayed to your users during the sign-in and sign-up flows. For example, *Sign in with Microsoft account* or *Sign up with your Microsoft account*.
+       - **Well-known endpoint**: Enter the endpoint URI as `https://login.microsoftonline.com/consumers/v2.0/.well-known/openid-configuration`, which is the discovery URI of the common authority URL for Microsoft accounts.
+       - **OpenID Issuer URI**: Enter the Issuer URI as `https://login.live.com`.
+       - **Client ID** and **Client Secret**: Enter the **Application (client) ID** and **Value** of the client secret you created earlier.
+       - **Client Authentication**:  Select **client_secret** and add	`openid profile email` to **Scope**.
+       - **Response type**: Select **code**.
 
 1. You can select **Next: Claims mapping** to configure [claims mapping](reference-oidc-claims-mapping-customers.md) or **Review + create** to add your identity provider.
 
@@ -98,5 +98,5 @@ At this point, the MSA identity provider has been set up in your Microsoft Entra
 
 ## Related content
 
-- [Add an Azure AD B2C tenant as an OIDC identity provider (preview)](how-to-b2c-federation-customers.md)
-- [OIDC claims mapping (preview)](reference-oidc-claims-mapping-customers.md)
+- [Add an Azure AD B2C tenant as an OIDC identity provider](how-to-b2c-federation-customers.md)
+- [OIDC claims mapping](reference-oidc-claims-mapping-customers.md)
