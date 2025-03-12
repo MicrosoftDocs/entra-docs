@@ -5,7 +5,7 @@ description: Web browser and native app support for FIDO2 passwordless authentic
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 03/11/2025
+ms.date: 03/12/2025
 
 author: justinha
 ms.author: justinha
@@ -108,7 +108,7 @@ The following table lists Microsoft application support for passkey (FIDO2) with
 | Application    | macOS    | iOS      | Android  |
 |----------------|----------|----------|----------|
 | [Remote Desktop](/azure/virtual-desktop/compare-remote-desktop-clients) | &#x2705; | &#x2705; | &#x2705; |
-| [Windows App](/windows-app/compare-platforms-features)  | &#x2705; | &#x2705; | &#10060; |
+| [Windows App](/windows-app/compare-platforms-features)  | &#x2705; | &#x2705; | &#x2705; |
 | Microsoft 365 Copilot (Office) | N/A | &#x2705; | &#10060; |
 | Word | &#x2705; | &#x2705; | &#10060; |
 | PowerPoint | &#x2705; | &#x2705; | &#10060; |
