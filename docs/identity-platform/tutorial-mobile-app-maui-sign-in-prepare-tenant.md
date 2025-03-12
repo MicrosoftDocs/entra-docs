@@ -29,7 +29,7 @@ In this tutorial, you'll;
 
 ## Prerequisites
 
-- An external tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](./quickstart-tenant-setup.md) before you begin.
+- An external tenant. If you don't have one, [create a trial tenant](https://aka.ms/ciam-free-trial) or a [tenant with a subscription](../external-id/customers/quickstart-tenant-setup.md) before you begin.
 - This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
     - Application Administrator
     - Application Developer
