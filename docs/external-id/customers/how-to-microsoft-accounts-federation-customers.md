@@ -41,7 +41,7 @@ To enable sign-in for users with a Microsoft account, you need to create an appl
 1. Under **Redirect URI**, select **Web** and enter your populated redirect URI explained [here](/entra/external-id/customers/how-to-custom-oidc-federation-customers#set-up-your-openid-connect-identity-provider)
 1. Select **Register**.
 
-When registration finishes, the Microsoft Entra admin center displays the app registration's **Overview** pane. You see the **Application (client) ID**. Record this value, as you need it later.
+   When registration finishes, the Microsoft Entra admin center displays the app registration's **Overview** pane. You see the **Application (client) ID**. Record this value, as you need it later.
 
 7. Under **Manage** browse to **Certificate & secrets** then select **New client secret**.
 8. Name the secret, for example *Key 1* and select **Add**.
@@ -68,20 +68,18 @@ Once you have configured your Microsoft account (live.com) as an application, yo
 1. Browse to **Identity** > **External Identities** > **All identity providers**.
 1. Select the **Custom** tab, and then select **Add new** > **Open ID Connect**.
 
-   :::image type="content" source="media/how-to-custom-oidc-federation-customers/add-new.jpg" alt-text="Screenshot of adding a new custom identity provider.":::
+      :::image type="content" source="media/how-to-custom-oidc-federation-customers/add-new.jpg" alt-text="Screenshot of adding a new custom identity provider.":::
 
-1.  Enter the following details for your identity provider on the **Basics** tab:
-
-       - **Display name**: Enter a name for your identity provider, for example *Microsoft account* This name is displayed to your users during the sign-in and sign-up flows. For example, *Sign in with Microsoft account* or *Sign up with your Microsoft account*.
-       - **Well-known endpoint**: Enter the endpoint URI as `https://login.microsoftonline.com/consumers/v2.0/.well-known/openid-configuration`, which is the discovery URI of the common authority URL for Microsoft accounts.
-       - **OpenID Issuer URI**: Enter the Issuer URI as `https://login.live.com`.
-       - **Client ID** and **Client Secret**: Enter the **Application (client) ID** and **Value** of the client secret you created earlier.
-       - **Client Authentication**:  Select **client_secret** and add	`openid profile email` to **Scope**.
-       - **Response type**: Select **code**.
-
+1. Enter the following details for your identity provider on the **Basics** tab:
+      - **Display name**: Enter a name for your identity provider, for example *Microsoft account* This name is displayed to your users during the sign-in and sign-up flows. For example, *Sign in with Microsoft account* or *Sign up with your Microsoft account*.
+      - **Well-known endpoint**: Enter the endpoint URI as `https://login.microsoftonline.com/consumers/v2.0/.well-known/openid-configuration`, which is the discovery URI of the common authority URL for Microsoft accounts.
+      - **OpenID Issuer URI**: Enter the Issuer URI as `https://login.live.com`.
+      - **Client ID** and **Client Secret**: Enter the **Application (client) ID** and **Value** of the client secret you created earlier.
+      - **Client Authentication**:  Select **client_secret** and add	`openid profile email` to **Scope**.
+      - **Response type**: Select **code**.
 1. You can select **Next: Claims mapping** to configure [claims mapping](reference-oidc-claims-mapping-customers.md) or **Review + create** to add your identity provider.
 
-   :::image type="content" source="media/how-to-msa-federation-customers/MSA-setup.png" alt-text="Screenshot of the MSA provider setup.":::
+   :::image type="content" source="media/how-to-microsoft-accounts-federation-customers/msa-setup.png" alt-text="Screenshot of the MSA provider setup.":::
 
 ## Add OIDC identity provider to a user flow
 
@@ -92,7 +90,7 @@ At this point, the MSA identity provider has been set up in your Microsoft Entra
 1. Under Settings, select **Identity providers.**
 1. Under **Other Identity Providers**, select the identity provider you created, which is **Microsoft Account**.
 
-   :::image type="content" source="media/how-to-msa-federation-customers/MSA-IdP-list.png" alt-text="Screenshot of the MSA provider in the IdP list.":::
+   :::image type="content" source="media/how-to-microsoft-accounts-federation-customers/msa-idp-list.png" alt-text="Screenshot of the MSA provider in the IdP list.":::
 
 1. Select **Save**.
 
