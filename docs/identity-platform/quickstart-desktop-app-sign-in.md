@@ -32,7 +32,7 @@ In this quickstart, you’ll use a sample application to learn how to add authen
 
 #### [Node.js Electron](#tab/node-js-workforce)
 
-* Register a new app in the Microsoft Entra admin center with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
   * **Name**: *msal-node-desktop*
   * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
   * **Platform configuration**: Mobile and desktop applications
@@ -43,8 +43,8 @@ In this quickstart, you’ll use a sample application to learn how to add authen
 
 #### [Windows Presentation Foundation (WPF)](#tab/wpf-workforce)
 
-* Register a new app in the Microsoft Entra admin center with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
-  * **Name**: *msal-node-desktop*
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
+  * **Name**: *msal-wpf-desktop*
   * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
   * **Platform configuration**: Mobile and desktop applications
 * [Visual Studio](https://visualstudio.microsoft.com/vs/) with the [Universal Windows Platform development](/windows/apps/windows-app-sdk/set-up-your-development-environment) workload installed
@@ -77,16 +77,25 @@ To specify the app type and redirect URIs to your app registration, follow these
 
 ### [Node.js Electron](#tab/node-js-workforce)
 
-[Download the code sample](https://github.com/azure-samples/ms-identity-javascript-nodejs-desktop/archive/main.zip)
+- To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
+
+    ```console
+    git clone https://github.com/Azure-Samples/ms-identity-javascript-nodejs-desktop.git
+    ```
+
+- [Download the .zip file](https://github.com/Azure-Samples/ms-identity-javascript-nodejs-desktop/archive/refs/heads/main.zip). Extract it to a file path where the length of the name is fewer than 260 characters.
 
 ### [Windows Presentation Foundation (WPF)](#tab/wpf-workforce)
 
-[Download the WPF sample application](https://github.com/Azure-Samples/active-directory-dotnet-desktop-msgraph-v2/archive/msal3x.zip)
+- To clone the sample, open a command prompt and navigate to where you wish to create the project, and enter the following command:
 
-[!INCLUDE [active-directory-develop-path-length-tip](includes/error-handling-and-tips/path-length-tip.md)]
+    ```console
+    git clone https://github.com/Azure-Samples/active-directory-dotnet-desktop-msgraph-v2.git
+    ```
+
+- [Download the .zip file](https://github.com/Azure-Samples/active-directory-dotnet-desktop-msgraph-v2/archive/refs/heads/msal3x.zip)
 
 ---
-
 
 ## Configure the project
 
@@ -197,7 +206,7 @@ You should see some basic token information and user data obtained from the call
 
 ---
 
-## Next steps
+## Next step
 
 #### [Node.js Electron](#tab/node-js-workforce)
 
@@ -234,12 +243,18 @@ Try out the Windows desktop tutorial for a complete step-by-step guide on buildi
 
 #### [Node.js Electron](#tab/node-js-external)
 
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
+  * **Name**: *ciam-node-desktop*
+  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
 - [Node.js](https://nodejs.org)
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor* 
 - [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
 
 #### [.NET (MAUI)](#tab/wpfdotnet-maui-external)
 
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
+  * **Name**: *msal-dotnet-maui-desktop*
+  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
 - [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0) or later
 - [Visual Studio 2022](https://aka.ms/vsdownloads) with the MAUI workload installed:
   - [Instructions for Windows](/dotnet/maui/get-started/installation?tabs=vswin)
@@ -248,6 +263,9 @@ Try out the Windows desktop tutorial for a complete step-by-step guide on buildi
 
 #### [.NET (MAUI) WPF](#tab/wpfdotnet-wpf-external)
 
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
+  * **Name**: *msal-node-desktop*
+  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
 * [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) or later
 * [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)

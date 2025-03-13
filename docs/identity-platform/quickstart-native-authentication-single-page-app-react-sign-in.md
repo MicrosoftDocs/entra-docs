@@ -31,7 +31,7 @@ In this quickstart, you use a React single-page application (SPA) to demonstrate
 * A user flow. For more information, refer to [create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md). Ensure that the user flow includes the following user attributes:
   * **Given Name**
   * **Surname**
-* Register a new app in the Microsoft Entra admin center with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
     * **Name**: *ciam-client-app*
     * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
 * [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)

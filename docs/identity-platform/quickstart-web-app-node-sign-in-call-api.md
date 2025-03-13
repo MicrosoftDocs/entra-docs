@@ -20,7 +20,7 @@ In this Quickstart, you learn how to sign in users and call a web API from a Nod
 
 ## Prerequisites
 
-- Complete the steps in [Quickstart: Sign in users in a sample web app](quickstart-web-app-sign-in.md?pivots=external&tabs=node-external) article. This article shows you how to sign in users by using a sample Node.js web app. 
+- Complete the steps and prerequisites in [Quickstart: Sign in users in a sample web app](quickstart-web-app-sign-in.md?pivots=external&tabs=node-external) article. This article shows you how to sign in users by using a sample Node.js web app. 
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 - [Node.js](https://nodejs.org).
 - [.NET 7.0](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install) or later.

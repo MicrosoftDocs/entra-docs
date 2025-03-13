@@ -30,7 +30,7 @@ The sample app you use in this quickstart acquires an access token to call Micro
   * Application Developer
   * Cloud Application Administrator
 * A workforce tenant. You can use your Default Directory or [set up a new tenant](./quickstart-create-new-tenant.md).
-* Register a new app in the Microsoft Entra admin center with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
   * **Name**: *identity-client-daemon-app*
   * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
 
@@ -331,7 +331,7 @@ You can test the sample app by running the main method of *ClientCredentialGrant
 * An external tenant. To create one, choose from the following methods:
   - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code.
   - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
-* Register a new app in the Microsoft Entra admin center with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
   * **Name**: *ciam-daemon-app*
   * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
@@ -348,21 +348,21 @@ You can test the sample app by running the main method of *ClientCredentialGrant
 
 --- 
 
-### Create a client secret
+## Create a client secret
 
 [!INCLUDE [add-app-client-secret](../external-id/customers/includes/register-app/add-app-client-secret.md)]
 
 [!INCLUDE [client-credential-advice](./includes/register-app/client-credential-advice.md)]
 
-### Grant API permissions to the daemon app
+## Grant API permissions to the daemon app
 
 [!INCLUDE [grant-api-permissions-app-permissions](../external-id/customers/includes/register-app/grant-api-permissions-app-permissions.md)]
 
-### Configure app roles
+## Configure app roles
 
 [!INCLUDE [add-app-role](../external-id/customers/includes/register-app/add-app-role.md)]
 
-### Configure optional claims
+## Configure optional claims
 
 [!INCLUDE [add-optional-claims-access](../external-id/customers/includes/register-app/add-optional-claims-access.md)]
 
