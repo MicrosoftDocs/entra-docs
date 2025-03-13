@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 03/11/2025
+ms.date: 03/13/2025
 ms.author: gasinh
 
 #customer intent: I want to understand how to deploy Microsoft Entra ID Governance in my test and production environments.
