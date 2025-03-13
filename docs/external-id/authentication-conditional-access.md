@@ -128,7 +128,7 @@ If you configured your inbound trust settings to accept MFA claims from a B2B co
 
 If MFA trust isn't enabled, the user experience is different for B2B collaboration users and B2B direct connect users:
 
-- **B2B collaboration users**: If the resource organization doesn't enable MFA trust with the user's home tenant, the user is presented with an MFA challenge from the resource organization. (The flow is the same as the [MFA flow for non-Microsoft Entra ID external users](#mfa-for-non-azure-ad-external-users).)
+- **B2B collaboration users**: If the resource organization doesn't enable MFA trust with the user's home tenant, the user is presented with an MFA challenge from the resource organization. (The flow is the same as the [MFA flow for non-Microsoft Entra ID external users](#mfa-for-non-microsoft-entra-id-external-users).)
 
 - **B2B direct connect users**: If the resource organization doesn't enable MFA trust with the user's home tenant, the user is blocked from accessing resources. If you want to allow B2B direct connect with an external organization and your Conditional Access policies require MFA, you *must* configure your inbound trust settings to accept MFA claims from the organization.
 
