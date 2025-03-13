@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 03/06/2025
+ms.date: 03/12/2025
 ms.author: mimart
 ms.custom: it-pro, seo-july-2024
 #customer intent: As an External ID administrator, I want to configure and enable multiple identity providers (such as email one-time passcode, Google, Facebook, Apple, SAML/WS-Fed, and custom OIDC) for external users, so that they can easily sign in and access our apps and resources.
@@ -97,7 +97,7 @@ For more information, see [SAML/WS-Fed identity providers](../direct-federation-
 > [!NOTE]
 > SAML/WS-Fed federation is generally available for workforce tenants.
 
-## Custom OIDC identity provider (preview)
+## Custom OIDC identity provider
 
 You can set up a custom OpenID Connect (OIDC) identity provider to allow users to sign up and sign in to your applications using their credentials in the external identity provider. You can also federate your sign-in and sign-up flows with an Azure AD B2C tenant using the OIDC protocol.
 

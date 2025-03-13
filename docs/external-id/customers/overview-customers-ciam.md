@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: overview
-ms.date:  02/13/2025
+ms.date:  03/12/2025
 ms.author: mimart
 ms.custom: it-pro, seo-july-2024
 
@@ -57,7 +57,7 @@ Learn more about managing [customer accounts](how-to-manage-customer-accounts.md
 
 External ID is intended for businesses that want to make applications available to their customers using the Microsoft Entra platform for identity and access.
 
-- **Add sign-up and sign-in pages to your apps.** Quickly add intuitive, user-friendly sign-up and sign-up experiences for your customer apps. With a single identity, a customer can securely access all the applications you want them to use.
+- **Add sign-up and sign-in pages to your apps.** Quickly add intuitive, user-friendly sign-up and sign-in experiences for your customer apps. With a single identity, a customer can securely access all the applications you want them to use.
 
 - **Add single sign-on (SSO) with social and enterprise identities.** Customers can choose a social, enterprise, or managed identity to sign in with a username and password, email, or one-time passcode.
 
