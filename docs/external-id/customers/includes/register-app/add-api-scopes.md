@@ -3,7 +3,7 @@ author: kengaderdus
 ms.service: entra-external-id
 ms.subservice: external
 ms.topic: include
-ms.date: 08/29/2024
+ms.date: 03/10/2025
 ms.author: kengaderdus
 ms.manager: mwongerapk
 ---
@@ -39,7 +39,6 @@ An API needs to publish a minimum of one scope, also called [Delegated Permissio
     | State | **Enabled** |
     
 1. Under **Manage**, select **Manifest** to open the API manifest editor.
-1. Set `accessTokenAcceptedVersion` property to `2`.
-1. Select **Save**.
+1. Make sure the `accessTokenAcceptedVersion` property is set to *2*, and if it's not, update it to *2* the select **Save**.
 
 Learn more about [the principle of least privilege when publishing permissions](/security/zero-trust/develop/protected-api-example) for a web API. 

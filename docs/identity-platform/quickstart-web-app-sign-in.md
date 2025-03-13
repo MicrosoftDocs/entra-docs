@@ -5,7 +5,7 @@ author: kengaderdus
 manager: mwongerapk
 ms.service: identity-platform
 ms.topic: quickstart
-ms.date: 11/20/2024
+ms.date: 03/10/2025
 ms.author: kengaderdus
 zone_pivot_groups: entra-tenants
 
@@ -139,7 +139,7 @@ For you to sign in users with the sample app, you need to update it with your ap
 
 #### [Node](#tab/node-workforce)
 
-In the *ms-identity-node-main* folder, open the *.env* file in the *App* folder. Replace the following placeholders:
+In the *ms-identity-node* folder, open the *App/.env* file, then replace the following placeholders:
 
 | Variable  |  Description | Example(s) |
 |-----------|--------------|------------|
@@ -185,7 +185,7 @@ EXPRESS_SESSION_SECRET=6DP6v09eLiW7f1E65B8k
     ```console
     cd flask-web-app
     ```
-1. Create an *.env* file in the root folder of the project using *.env.sample* as a guide.
+1. Create an *.env* file in the root folder of the project using *.env.sample.entra-id* as a guide.
 
     ```python
     # The following variables are required for the app to run.
@@ -228,9 +228,10 @@ The sample hosts a web server on localhost, port 3000. When a web browser access
 
 #### [ASP.NET Core](#tab/asp-dot-net-core-workforce)
 
-1. In your project directory, use the terminal to enter the following command;
+1. In your project directory, use the terminal to enter the following commands:
 
     ```console
+    cd ms-identity-docs-code-dotnet/web-app-aspnet
     dotnet run
     ```
 
@@ -535,7 +536,7 @@ For you to sign in users with the sample app, you need to update it with your ap
 
 1. Open your project files on Visual Studio Code or the editor you're using.
 
-1. Create an *.env* file in the root folder of the project using *.env.sample* file as a guide.
+1. Create an *.env* file in the root folder of the project using *.env.sample.external-id* file as a guide.
 
 1. In your *.env* file, provide the following environment variables:
 
@@ -549,7 +550,7 @@ For you to sign in users with the sample app, you need to update it with your ap
 
 1. Open your project files on Visual Studio Code or the editor you're using.
 
-1. Create an *.env* file in the root folder of the project using *.env.sample* file as a guide.
+1. Create an *.env* file in the root folder of the project using *.env.sample.external-id* file as a guide.
 
 1. In your *.env* file, provide the following environment variables:
 
