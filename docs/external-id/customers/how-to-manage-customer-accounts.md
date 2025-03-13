@@ -19,7 +19,9 @@ ms.custom: it-pro
 
 User accounts for your consumers and business customers are most commonly created when users sign up for your applications. However, you can also create user accounts in the Microsoft Entra admin center or by using Microsoft Graph. Because consumers and business customers are considered end users, you don't typically assign them admin roles, so they retain [default user permissions](reference-user-permissions.md).
 
-This article focuses on managing user accounts in the Microsoft Entra admin center. To add or delete users, your account must be assigned at least the [User Administrator](/entra/identity/role-based-access-control/permissions-reference#user-administrator) role.
+This article focuses on managing user accounts using the Microsoft Entra admin center. You must have at least [User Administrator](/entra/identity/role-based-access-control/permissions-reference#user-administrator) permissions to add or delete users.
+
+See also [Add and manage admin accounts](how-to-manage-admin-accounts.md) for information about user accounts for your external tenant admins.
 
 ## Prerequisites
 
