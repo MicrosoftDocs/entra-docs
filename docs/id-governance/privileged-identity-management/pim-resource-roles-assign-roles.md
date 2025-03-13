@@ -208,7 +208,7 @@ Follow these steps to update or remove an existing role assignment.
 
     :::image type="content" source="./media/pim-resource-roles-assign-roles/resources-update-remove.png" alt-text="Screenshot demonstrates how to update or remove role assignment." lightbox="./media/pim-resource-roles-assign-roles/resources-update-remove.png":::
 
-1. To add or update a condition to refine Azure resource access, select **Add** or **View/Edit** in the **Condition** column for the role assignment. Currently, the Storage Blob Data Owner, Storage Blob Data Reader, and Storage Blob Data Contributor roles in Microsoft Entra PIM are the only roles that can have conditions added.
+1. To add or update a condition to refine Azure resource access, select **Add** or **View/Edit** in the **Condition** column for the role assignment.
 
 1. Select **Add expression** or **Delete** to update the expression. You can also select **Add condition** to add a new condition to your role.
 
