@@ -53,7 +53,7 @@ Configure and test Microsoft Entra SSO with PressWise using a test user called *
 To configure and test Microsoft Entra SSO with PressWise, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Assign the Microsoft Entra test user](#assign-the-microsoft-entra-id-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure PressWise SSO](#configure-presswise-sso)** - to configure the single sign-on settings on application side.
     1. **[Create PressWise test user](#create-presswise-test-user)** - to have a counterpart of B.Simon in PressWise that is linked to the Microsoft Entra representation of user.

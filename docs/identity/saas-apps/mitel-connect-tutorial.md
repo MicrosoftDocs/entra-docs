@@ -58,8 +58,8 @@ In this section, you'll configure and test Microsoft Entra SSO with MiCloud Conn
 To configure and test Microsoft Entra single sign-on with MiCloud Connect:
 
 1. **[Configure MiCloud Connect for SSO with Microsoft Entra ID](#configure-micloud-connect-for-sso-with-azure-ad)** - to enable your users to use this feature and to configure the SSO settings on the application side.
-2. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with Britta Simon.
-3. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable Britta Simon to use Microsoft Entra single sign-on.
+2. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
+3. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
 4. **[Create a Mitel MiCloud Connect test user](#create-a-mitel-micloud-connect-test-user)** - to have a counterpart of Britta Simon on your MiCloud Connect account that is linked to the Microsoft Entra representation of the user.
 5. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 

@@ -58,8 +58,8 @@ For single sign-on to work, a link relationship between a Microsoft Entra user a
 To configure and test Microsoft Entra SSO with Tableau Cloud, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Tableau Cloud SSO](#configure-tableau-cloud-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Tableau Cloud test user](#create-tableau-cloud-test-user)** - to have a counterpart of B.Simon in Tableau Cloud that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.

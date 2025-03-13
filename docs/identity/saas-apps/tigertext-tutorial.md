@@ -54,8 +54,8 @@ In this section, you configure and test Microsoft Entra single sign-on with Tige
 To configure and test Microsoft Entra single sign-on with TigerConnect Secure Messenger, you need to perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** to test Microsoft Entra single sign-on with Britta Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** to enable Britta Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** to test Microsoft Entra single sign-on with Britta Simon.
+    1. **Assign the Microsoft Entra test user** to enable Britta Simon to use Microsoft Entra single sign-on.
 1. **[Configure TigerConnect Secure Messenger SSO](#configure-tigerconnect-secure-messenger-sso)** to configure the single sign-on settings on the application side.
     1. **[Create a TigerConnect Secure Messenger test user](#create-a-tigerconnect-secure-messenger-test-user)** so that there's a user named Britta Simon in TigerConnect Secure Messenger who's linked to the Microsoft Entra user named Britta Simon.
 1. **[Test SSO](#test-sso)** to verify whether the configuration works.

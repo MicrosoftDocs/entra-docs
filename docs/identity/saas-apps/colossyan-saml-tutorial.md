@@ -51,7 +51,7 @@ Configure and test Microsoft Entra SSO with Colossyan SAML using a test user cal
 To configure and test Microsoft Entra SSO with Colossyan SAML, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Assign the Microsoft Entra test user](#assign-the-microsoft-entra-id-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Colossyan SAML SSO](#configure-colossyan-saml-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Colossyan SAML test user](#create-colossyan-saml-test-user)** - to have a counterpart of B.Simon in Colossyan SAML that is linked to the Microsoft Entra representation of user.

@@ -68,8 +68,8 @@ To configure and test Microsoft Entra single sign-on with InsideView, you need t
 
 1. **[Configure Microsoft Entra single sign-on](#configure-azure-ad-single-sign-on)** to enable the feature for your users.
 2. **[Configure InsideView single sign-on](#configure-insideview-single-sign-on)** on the application side.
-3. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** to test Microsoft Entra single sign-on.
-4. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** to enable Microsoft Entra single sign-on for the user.
+3. **Create a Microsoft Entra test user** to test Microsoft Entra single sign-on.
+4. **Assign the Microsoft Entra test user** to enable Microsoft Entra single sign-on for the user.
 5. **[Create an InsideView test user](#create-an-insideview-test-user)** that's linked to the Microsoft Entra representation of the user.
 6. **[Test single sign-on](#test-single-sign-on)** to verify that the configuration works.
 

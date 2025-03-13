@@ -57,7 +57,7 @@ You'll configure and test Microsoft Entra SSO with FortiGate SSL VPN by using a 
 To configure and test Microsoft Entra SSO with FortiGate SSL VPN, you complete these high-level steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** to enable the feature for your users.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** to test Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** to test Microsoft Entra single sign-on.
     1. **[Grant access to the test user](#grant-access-to-the-test-user)** to enable Microsoft Entra single sign-on for that user.
 1. **[Configure FortiGate SSL VPN SSO](#configure-fortigate-ssl-vpn-sso)** on the application side.
     1. **Create a FortiGate SAML SSO user group** as a counterpart to the Microsoft Entra representation of the user.

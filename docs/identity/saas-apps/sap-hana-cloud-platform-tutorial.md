@@ -57,8 +57,8 @@ Configure and test Microsoft Entra SSO with SAP Business Technology Platform usi
 To configure and test Microsoft Entra SSO with SAP Business Technology Platform, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with Britta Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable Britta Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
+    1. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
 2. **[Configure SAP Business Technology Platform SSO](#configure-sap-business-technology-platform-sso)** - to configure the Single Sign-On settings on application side.
     1. **[Create SAP Business Technology Platform test user](#create-sap-business-technology-platform-test-user)** - to have a counterpart of Britta Simon in SAP Business Technology Platform that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
