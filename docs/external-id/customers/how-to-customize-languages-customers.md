@@ -109,66 +109,65 @@ Language customization in the external tenant lets your user flow accommodate di
 
 The downloaded file is in JSON format and includes both built-in and custom attributes, as well as other page-level and error strings:
 
-```http
-{
-	"AttributeCollection_Description": "Wir benötigen nur ein paar weitere Informationen, um Ihr Konto einzurichten.",
-	"AttributeCollection_Title": "Details hinzufügen",
-	"Attribute_City": "Ort",
-	"Attribute_Country": "Land/Region",
-	"Attribute_DisplayName": "Anzeigename",
-	"Attribute_Email": "E-Mail-Adresse",
-	"Attribute_Generic_ConfirmationLabel": "{0} erneut eingeben",
-	"Attribute_GivenName": "Vorname",
-	"Attribute_JobTitle": "Position",
-	"Attribute_Password": "Kennwort",
-	"Attribute_Password_MismatchErrorString": "Kennwörter stimmen nicht überein.",
-	"Attribute_PostalCode": "Postleitzahl",
-	"Attribute_State": "Bundesland/Kanton",
-	"Attribute_StreetAddress": "Straße",
-	"Attribute_Surname": "Nachname",
-	"SignIn_Description": "Melden Sie sich an, um auf {0} zuzugreifen.",
-	"SignIn_Title": "Anmelden",
-	"SignUp_Description": "Registrieren Sie sich, um auf {0} zuzugreifen.",
-	"SignUp_Title": "Konto erstellen",
-	"SisuOtc_Title": "Code eingeben",
-	"Attribute_extension_a235ca9a0a7c4d33bd69e07bed81c8b1_Shoesize": "Shoe size"
-}  
-```
+   ```http
+   {
+       "AttributeCollection_Description": "Wir benötigen nur ein paar weitere Informationen, um Ihr Konto einzurichten.",
+       "AttributeCollection_Title": "Details hinzufügen",
+       "Attribute_City": "Ort",
+       "Attribute_Country": "Land/Region",
+       "Attribute_DisplayName": "Anzeigename",
+       "Attribute_Email": "E-Mail-Adresse",
+       "Attribute_Generic_ConfirmationLabel": "{0} erneut eingeben",
+       "Attribute_GivenName": "Vorname",
+       "Attribute_JobTitle": "Position",
+       "Attribute_Password": "Kennwort",
+       "Attribute_Password_MismatchErrorString": "Kennwörter stimmen nicht überein.",
+       "Attribute_PostalCode": "Postleitzahl",
+       "Attribute_State": "Bundesland/Kanton",
+       "Attribute_StreetAddress": "Straße",
+       "Attribute_Surname": "Nachname",
+       "SignIn_Description": "Melden Sie sich an, um auf {0} zuzugreifen.",
+       "SignIn_Title": "Anmelden",
+       "SignUp_Description": "Registrieren Sie sich, um auf {0} zuzugreifen.",
+       "SignUp_Title": "Konto erstellen",
+       "SisuOtc_Title": "Code eingeben",
+       "Attribute_extension_a235ca9a0a7c4d33bd69e07bed81c8b1_Shoesize": "Shoe size"
+   }  
+   ```
 
 You can modify any or all of these attributes in the downloaded file. For example, you can modify the built-in attribute, **City** and the custom attribute, **Shoesize**:  
 
-
-```http
-{
-	"AttributeCollection_Description": "Wir benötigen nur ein paar weitere Informationen, um Ihr Konto einzurichten.",
-	"AttributeCollection_Title": "Details hinzufügen",
-	"Attribute_City": "Ort2",
-	"Attribute_Country": "Land/Region",
-	"Attribute_DisplayName": "Anzeigename",
-	"Attribute_Email": "E-Mail-Adresse",
-	"Attribute_Generic_ConfirmationLabel": "{0} erneut eingeben",
-	"Attribute_GivenName": "Vorname",
-	"Attribute_JobTitle": "Position",
-	"Attribute_Password": "Kennwort",
-	"Attribute_Password_MismatchErrorString": "Kennwörter stimmen nicht überein.",
-	"Attribute_PostalCode": "Postleitzahl",
-	"Attribute_State": "Bundesland/Kanton",
-	"Attribute_StreetAddress": "Straße",
-	"Attribute_Surname": "Nachname",
-	"SignIn_Description": "Melden Sie sich an, um auf {0} zuzugreifen.",
-	"SignIn_Title": "Anmelden",
-	"SignUp_Description": "Registrieren Sie sich, um auf {0} zuzugreifen.",
-	"SignUp_Title": "Konto erstellen",
-	"SisuOtc_Title": "Code eingeben",
-	"Attribute_extension_a235ca9a0a7c4d33bd69e07bed81c8b1_Shoesize": "Schuhgröße"
-}  
-```
+   ```http
+   {
+      "AttributeCollection_Description": "Wir benötigen nur ein paar weitere Informationen, um Ihr Konto einzurichten.",
+      "AttributeCollection_Title": "Details hinzufügen",
+      "Attribute_City": "Ort2",
+      "Attribute_Country": "Land/Region",
+      "Attribute_DisplayName": "Anzeigename",
+      "Attribute_Email": "E-Mail-Adresse",
+      "Attribute_Generic_ConfirmationLabel": "{0} erneut eingeben",
+      "Attribute_GivenName": "Vorname",
+      "Attribute_JobTitle": "Position",
+      "Attribute_Password": "Kennwort",
+      "Attribute_Password_MismatchErrorString": "Kennwörter stimmen nicht überein.",
+      "Attribute_PostalCode": "Postleitzahl",
+      "Attribute_State": "Bundesland/Kanton",
+      "Attribute_StreetAddress": "Straße",
+      "Attribute_Surname": "Nachname",
+      "SignIn_Description": "Melden Sie sich an, um auf {0} zuzugreifen.",
+      "SignIn_Title": "Anmelden",
+      "SignUp_Description": "Registrieren Sie sich, um auf {0} zuzugreifen.",
+      "SignUp_Title": "Konto erstellen",
+      "SisuOtc_Title": "Code eingeben",
+      "Attribute_extension_a235ca9a0a7c4d33bd69e07bed81c8b1_Shoesize": "Schuhgröße"
+    }  
+    ```
 
 9. After making the necessary changes, you can upload the new overrides file. The changes are saved to your user flow automatically. The override appears under the **Configured** tab.
 10. To double-check your changes, select the language under the **Configured** tab and expand the **Sign up and sign in** option. You can view your customized language file by selecting **Download overrides**. To remove your customized override file, select **Remove overrides**.
 
    :::image type="content" source="media/how-to-customize-languages-customers/remove-download-override-file.png" alt-text="Screenshot that shows how to remove or download the modified JSON file." lightbox="media/how-to-customize-languages-customers/remove-download-override-file.png":::
-   
+    
 11. Go to the sign-in page of your external tenant. Make sure you have the right locale and market in your URLs, for example: `ui_locales=de-DE` and `mkt=de-DE`. The updated attributes on the sign-up page appear as follows:
 
    :::image type="content" source="media/how-to-customize-languages-customers/customized-attributes.png" alt-text="Screenshot of the modified sign-up page attributes.":::
@@ -180,7 +179,7 @@ You can modify any or all of these attributes in the downloaded file. For exampl
 
 Languages that are read right-to-left, such as Arabic and Hebrew, are displayed in the opposite direction compared to languages that are read left-to-right. The external tenant supports right-to-left functionality and features for languages that work in a right-to-left environment for entering and displaying data. Right-to-left readers can interact in a natural reading manner.
 
-:::image type="content" source="media/how-to-customize-languages-customers/right-to-left-language-support.png" alt-text="Screenshot showing  right-to-left language support." lightbox="media/how-to-customize-languages-customers/right-to-left-language-support.png":::
+   :::image type="content" source="media/how-to-customize-languages-customers/right-to-left-language-support.png" alt-text="Screenshot showing  right-to-left language support." lightbox="media/how-to-customize-languages-customers/right-to-left-language-support.png":::
 
 ## Remove the browser language customization
 
