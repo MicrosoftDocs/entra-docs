@@ -109,81 +109,81 @@ Language customization in the external tenant lets your user flow accommodate di
 
 The downloaded file is in JSON format and includes both built-in and custom attributes, as well as other page-level and error strings:
 
-   ```http
-   {
-       "AttributeCollection_Description": "Wir benötigen nur ein paar weitere Informationen, um Ihr Konto einzurichten.",
-       "AttributeCollection_Title": "Details hinzufügen",
-       "Attribute_City": "Ort",
-       "Attribute_Country": "Land/Region",
-       "Attribute_DisplayName": "Anzeigename",
-       "Attribute_Email": "E-Mail-Adresse",
-       "Attribute_Generic_ConfirmationLabel": "{0} erneut eingeben",
-       "Attribute_GivenName": "Vorname",
-       "Attribute_JobTitle": "Position",
-       "Attribute_Password": "Kennwort",
-       "Attribute_Password_MismatchErrorString": "Kennwörter stimmen nicht überein.",
-       "Attribute_PostalCode": "Postleitzahl",
-       "Attribute_State": "Bundesland/Kanton",
-       "Attribute_StreetAddress": "Straße",
-       "Attribute_Surname": "Nachname",
-       "SignIn_Description": "Melden Sie sich an, um auf {0} zuzugreifen.",
-       "SignIn_Title": "Anmelden",
-       "SignUp_Description": "Registrieren Sie sich, um auf {0} zuzugreifen.",
-       "SignUp_Title": "Konto erstellen",
-       "SisuOtc_Title": "Code eingeben",
-       "Attribute_extension_a235ca9a0a7c4d33bd69e07bed81c8b1_Shoesize": "Shoe size"
-   }  
-   ```
+```http
+{
+	"AttributeCollection_Description": "Wir benötigen nur ein paar weitere Informationen, um Ihr Konto einzurichten.",
+	"AttributeCollection_Title": "Details hinzufügen",
+	"Attribute_City": "Ort",
+	"Attribute_Country": "Land/Region",
+	"Attribute_DisplayName": "Anzeigename",
+	"Attribute_Email": "E-Mail-Adresse",
+	"Attribute_Generic_ConfirmationLabel": "{0} erneut eingeben",
+	"Attribute_GivenName": "Vorname",
+	"Attribute_JobTitle": "Position",
+	"Attribute_Password": "Kennwort",
+	"Attribute_Password_MismatchErrorString": "Kennwörter stimmen nicht überein.",
+	"Attribute_PostalCode": "Postleitzahl",
+	"Attribute_State": "Bundesland/Kanton",
+	"Attribute_StreetAddress": "Straße",
+	"Attribute_Surname": "Nachname",
+	"SignIn_Description": "Melden Sie sich an, um auf {0} zuzugreifen.",
+	"SignIn_Title": "Anmelden",
+	"SignUp_Description": "Registrieren Sie sich, um auf {0} zuzugreifen.",
+	"SignUp_Title": "Konto erstellen",
+	"SisuOtc_Title": "Code eingeben",
+	"Attribute_extension_a235ca9a0a7c4d33bd69e07bed81c8b1_Shoesize": "Shoe size"
+}  
+```
 
 You can modify any or all of these attributes in the downloaded file. For example, you can modify the built-in attribute, **City** and the custom attribute, **Shoesize**:  
 
-   ```http
-   {
-      "AttributeCollection_Description": "Wir benötigen nur ein paar weitere Informationen, um Ihr Konto einzurichten.",
-      "AttributeCollection_Title": "Details hinzufügen",
-      "Attribute_City": "Ort2",
-      "Attribute_Country": "Land/Region",
-      "Attribute_DisplayName": "Anzeigename",
-      "Attribute_Email": "E-Mail-Adresse",
-      "Attribute_Generic_ConfirmationLabel": "{0} erneut eingeben",
-      "Attribute_GivenName": "Vorname",
-      "Attribute_JobTitle": "Position",
-      "Attribute_Password": "Kennwort",
-      "Attribute_Password_MismatchErrorString": "Kennwörter stimmen nicht überein.",
-      "Attribute_PostalCode": "Postleitzahl",
-      "Attribute_State": "Bundesland/Kanton",
-      "Attribute_StreetAddress": "Straße",
-      "Attribute_Surname": "Nachname",
-      "SignIn_Description": "Melden Sie sich an, um auf {0} zuzugreifen.",
-      "SignIn_Title": "Anmelden",
-      "SignUp_Description": "Registrieren Sie sich, um auf {0} zuzugreifen.",
-      "SignUp_Title": "Konto erstellen",
-      "SisuOtc_Title": "Code eingeben",
-      "Attribute_extension_a235ca9a0a7c4d33bd69e07bed81c8b1_Shoesize": "Schuhgröße"
-    }  
-    ```
+```http
+{
+	"AttributeCollection_Description": "Wir benötigen nur ein paar weitere Informationen, um Ihr Konto einzurichten.",
+	"AttributeCollection_Title": "Details hinzufügen",
+	"Attribute_City": "Ort2",
+	"Attribute_Country": "Land/Region",
+	"Attribute_DisplayName": "Anzeigename",
+	"Attribute_Email": "E-Mail-Adresse",
+	"Attribute_Generic_ConfirmationLabel": "{0} erneut eingeben",
+	"Attribute_GivenName": "Vorname",
+	"Attribute_JobTitle": "Position",
+	"Attribute_Password": "Kennwort",
+	"Attribute_Password_MismatchErrorString": "Kennwörter stimmen nicht überein.",
+	"Attribute_PostalCode": "Postleitzahl",
+	"Attribute_State": "Bundesland/Kanton",
+	"Attribute_StreetAddress": "Straße",
+	"Attribute_Surname": "Nachname",
+	"SignIn_Description": "Melden Sie sich an, um auf {0} zuzugreifen.",
+	"SignIn_Title": "Anmelden",
+	"SignUp_Description": "Registrieren Sie sich, um auf {0} zuzugreifen.",
+	"SignUp_Title": "Konto erstellen",
+	"SisuOtc_Title": "Code eingeben",
+	"Attribute_extension_a235ca9a0a7c4d33bd69e07bed81c8b1_Shoesize": "Schuhgröße"
+}  
+```
 
 9. After making the necessary changes, you can upload the new overrides file. The changes are saved to your user flow automatically. The override appears under the **Configured** tab.
 10. To double-check your changes, select the language under the **Configured** tab and expand the **Sign up and sign in** option. You can view your customized language file by selecting **Download overrides**. To remove your customized override file, select **Remove overrides**.
 
    :::image type="content" source="media/how-to-customize-languages-customers/remove-download-override-file.png" alt-text="Screenshot that shows how to remove or download the modified JSON file." lightbox="media/how-to-customize-languages-customers/remove-download-override-file.png":::
-    
+
 11. Go to the sign-in page of your external tenant. Make sure you have the right locale and market in your URLs, for example: `ui_locales=de-DE` and `mkt=de-DE`. The updated attributes on the sign-up page appear as follows:
 
    :::image type="content" source="media/how-to-customize-languages-customers/customized-attributes.png" alt-text="Screenshot of the modified sign-up page attributes.":::
 
-> [!IMPORTANT] 
+> [!IMPORTANT]
 > In the external tenant, we have two options to add custom text to the sign-up and sign-in experience. The function is available under each user flow during language customization and under [Company Branding](./how-to-customize-branding-customers.md). Although we have two ways to customize strings (via Company branding and via User flows), both ways modify the same JSON file. The most recent change made either via User flows or via Company branding always overrides the previous one.
 
 ## Right-to-left language support
 
-Languages that are read right-to-left, such as Arabic and Hebrew, are displayed in the opposite direction compared to languages that are read left-to-right. The external tenant supports right-to-left functionality and features for languages that work in a right-to-left environment for entering and displaying data. Right-to-left readers can interact in a natural reading manner.
+Languages that are read right-to-left, such as Arabic and Hebrew, are displayed in the opposite direction compared to languages that are read left-to-right. The external tenant supports right-to-left functionality and features for languages that work in a right-to-left environment for entering, and displaying data. Right-to-left readers can interact in a natural reading manner.
 
-   :::image type="content" source="media/how-to-customize-languages-customers/right-to-left-language-support.png" alt-text="Screenshot showing  right-to-left language support." lightbox="media/how-to-customize-languages-customers/right-to-left-language-support.png":::
+:::image type="content" source="media/how-to-customize-languages-customers/right-to-left-language-support.png" alt-text="Screenshot showing the right-to-left language support." lightbox="media/how-to-customize-languages-customers/right-to-left-language-support.png":::
 
 ## Remove the browser language customization
 
-When no longer needed, you can remove the language customization from your external tenant in the admin center or with the Microsoft Graph API. 
+When no longer needed, you can remove the language customization from your external tenant in the admin center or with the Microsoft Graph API.
 
 ### Remove the language customization in the admin center
 
@@ -208,4 +208,4 @@ When no longer needed, you can remove the language customization from your exter
 
 ## Next steps
 
-- [Customize the branding and end-user experience](how-to-customize-branding-customers.md) 
+- [Customize the branding and end-user experience](how-to-customize-branding-customers.md)
