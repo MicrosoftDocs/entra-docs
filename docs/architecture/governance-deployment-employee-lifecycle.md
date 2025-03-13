@@ -190,13 +190,9 @@ Learn more in the [overview of lifecycle workflow APIs](/graph/api/resources/ide
 
 A Joiner is an individual who needs access. When you onboard new employees, use templates and workflows to make processes more efficient and faster.  
 
-Learn more in a video about [lifecycle workflows - Joiner](https://youtu.be/rJv5thoInr8). 
-
 ### Mover
 
 A Mover is an individual moving between boundaries in an organization, for instance, the employee goes from a role in Sales to one in Marketing. The movement might require more, or different, access, and authorization.  
-
-In a video, learn about [lifecycle workflows - Mover](https://youtu.be/9bXqioIGiME). 
 
 **Lifecycle workflows custom task extension**
 
@@ -207,8 +203,6 @@ You can learn to [trigger Logic Apps based on custom task extensions](../id-gove
 ### Leaver
 
 The Leaver no longer needs access, such as terminated or retiring employees. Effective Leaver workflows reduce the risk of unauthorized data access, after termination. Therefore, handle Leaver personal information in compliance with regulations and policies. Use customizable workflow templates for timely, reliable, and graceful resource-access removal. 
-
-In a video, learn about [lifecycle workflows - Leaver](https://www.youtube.com/watch?v=iKIWhuZxJ7c&feature=youtu.be). 
 
 **Remove application access**
 
