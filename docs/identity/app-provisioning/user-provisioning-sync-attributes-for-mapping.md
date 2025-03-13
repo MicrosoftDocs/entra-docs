@@ -6,7 +6,7 @@ author: kenwith
 manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
-ms.custom: has-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref
 ms.topic: troubleshooting
 ms.date: 03/04/2025
 ms.author: kenwith
