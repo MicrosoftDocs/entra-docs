@@ -341,7 +341,7 @@ Use Event Viewer logs to locate the phase and error code for the join failures.
 1. [Download the *Auth.zip* file](https://aka.ms/authscripts).
 
 1. Extract the files to a folder, such as *c:\temp*, and then go to the folder.
-1. From an elevated Azure PowerShell session, run `.\start-auth.ps1 -v -accepteula`.
+1. From an elevated Azure PowerShell session, run `.\start-auth.ps1 -vAuth -accepteula`.
 1. Select **Switch Account** to toggle to another session with the problem user.
 1. Reproduce the issue.
 1. Select **Switch Account** to toggle back to the admin session that's running the tracing.
