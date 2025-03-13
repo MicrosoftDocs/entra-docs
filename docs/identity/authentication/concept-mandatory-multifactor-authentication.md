@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 03/12/2025
+ms.date: 03/13/2025
 ms.author: justinha
 author: najshahid
 manager: femila
@@ -124,7 +124,7 @@ Changes are required if you use the [azure-identity](https://central.sonatype.co
 - Use [DefaultAzureCredential](/java/api/com.azure.identity.defaultazurecredential) or [EnvironmentCredential](/java/api/com.azure.identity.environmentcredential) with the following two environment variables set:
     - `AZURE_USERNAME`
     - `AZURE_PASSWORD`
-- Using [UsernamePasswordCredential](/java/api/com.azure.identity.usernamepasswordcredential) ([**deprecated** as of the `1.16.0-beta.1` release](https://github.com/Azure/azure-sdk-for-java/blob/main/sdk/identity/azure-identity/CHANGELOG.md#1160-beta1-unreleased))
+- Using [UsernamePasswordCredential](/java/api/com.azure.identity.usernamepasswordcredential) ([**deprecated** as of the `1.16.0-beta.1` release](https://github.com/Azure/azure-sdk-for-java/blob/main/sdk/identity/azure-identity/CHANGELOG.md#1160-beta1-2025-03-13))
 
 ### [Node.js](#tab/js)
 
