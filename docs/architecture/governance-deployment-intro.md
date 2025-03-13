@@ -155,7 +155,7 @@ Learn more about the [Microsoft Entra Connect provisioning agent](../identity/hy
 
 You can [plan cloud HR application to Microsoft Entra user provisioning](../identity/app-provisioning/plan-cloud-hr-provision.md).
 
-### Define provisioning
+## Define provisioning
 
 Active Directory topology, if applicable: 
 
@@ -193,7 +193,7 @@ You can use guidance on cloud HR system integration, such as Workday, SuccessFac
 |Ripppling|[Sync identities from Rippling to Microsoft Entra ID](https://techcommunity.microsoft.com/blog/identity/sync-identities-from-rippling-to-microsoft-entra-id/4279690)|
 |Other API-driven sources|[API-driven inbound provisioning concepts](../identity/app-provisioning/inbound-provisioning-api-concepts.md)|
 
-**API-driven provisioning**
+### API-driven provisioning
 
 When planning for API-driven inbound provisioning, consider the use case and one of the following approaches. To learn more, see the following video:
 
