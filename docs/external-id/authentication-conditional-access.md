@@ -160,25 +160,20 @@ The following PowerShell cmdlets are available to *proof up* or request MFA regi
 1. Connect to Microsoft Entra ID:
 
    ```powershell
-   Connect-Entra -Scopes 'User.ReadWrite.All'
+   Connect-Entra -Scopes 'User.Read.All'
    ```
 
 2. Get all users with proof up methods:
 
    ```powershell
-   Get-EntraUser | where { $_.StrongAuthenticationMethods} | select UserPrincipalName, @{n="Methods";e={($_.StrongAuthenticationMethods).MethodType}}
-   ```
-
-   For example:
-
-   ```powershell
-   Get-EntraUser | where { $_.StrongAuthenticationMethods} | select UserPrincipalName, @{n="Methods";e={($_.StrongAuthenticationMethods).MethodType}}
+   Get-EntraUser | where { $_.StrongAuthenticationMethods} | select userPrincipalName, @{n="Methods";e={($_.StrongAuthenticationMethods).MethodType}}
    ```
 
 3. Reset the Microsoft Entra multifactor authentication method for a specific user to require the user to set proof up methods again, for example:
 
    ```powershell
-   Reset-EntraStrongAuthenticationMethodByUpn -UserPrincipalName gsamoogle_gmail.com#EXT#@ WoodGroveAzureAD.onmicrosoft.com
+   Connect-Entra -Scopes 'UserAuthenticationMethod.ReadWrite.All'
+   Reset-EntraStrongAuthenticationMethodByUpn -UserPrincipalName gsamoogle_gmail.com#EXT#@WoodGroveAzureAD.onmicrosoft.com
    ```
 
 ### Authentication strength policies for external users
