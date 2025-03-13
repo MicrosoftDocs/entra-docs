@@ -107,8 +107,8 @@ Configure and test Microsoft Entra SSO with AWS Single-Account Access using a te
 To configure and test Microsoft Entra SSO with AWS Single-Account Access, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure AWS Single-Account Access SSO](#configure-aws-single-account-access-sso)** - to configure the single sign-on settings on application side.
     1. **[Create AWS Single-Account Access test user](#create-aws-single-account-access-test-user)** - to have a counterpart of B.Simon in AWS Single-Account Access that is linked to the Microsoft Entra representation of user.
     1. **[How to configure role provisioning in AWS Single-Account Access](#how-to-configure-role-provisioning-in-aws-single-account-access)**

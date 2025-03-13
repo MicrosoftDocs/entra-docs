@@ -55,8 +55,8 @@ Configure and test Microsoft Entra SSO with Flock using a test user called **B.S
 To configure and test Microsoft Entra SSO with Flock, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-	1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with Britta Simon.
-	1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable Britta Simon to use Microsoft Entra single sign-on.
+	1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
+	1. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
 2. **[Configure Flock SSO](#configure-flock-sso)** - to configure the Single Sign-On settings on application side.
 	1. **[Create Flock test user](#create-flock-test-user)** - to have a counterpart of Britta Simon in Flock that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.

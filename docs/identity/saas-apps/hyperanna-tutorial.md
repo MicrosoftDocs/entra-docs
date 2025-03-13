@@ -58,8 +58,8 @@ To configure and test Microsoft Entra SSO with HyperAnna, complete the following
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
 2. **[Configure HyperAnna SSO](#configure-hyperanna-sso)** - to configure the Single Sign-On settings on application side.
-3. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with Britta Simon.
-4. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable Britta Simon to use Microsoft Entra single sign-on.
+3. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
+4. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
 5. **[Create HyperAnna test user](#create-hyperanna-test-user)** - to have a counterpart of Britta Simon in HyperAnna that is linked to the Microsoft Entra representation of user.
 6. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 

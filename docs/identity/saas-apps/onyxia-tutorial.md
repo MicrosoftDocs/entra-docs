@@ -57,7 +57,7 @@ Configure and test Microsoft Entra SSO with Onyxia using a test user called **B.
 To configure and test Microsoft Entra SSO with Onyxia, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Assign the Microsoft Entra test user](#assign-the-microsoft-entra-id-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Onyxia SSO](#configure-onyxia-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Onyxia test user](#create-onyxia-test-user)** - to have a counterpart of B.Simon in Onyxia that is linked to the Microsoft Entra representation of user.

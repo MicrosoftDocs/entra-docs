@@ -58,8 +58,8 @@ Configure and test Microsoft Entra SSO with Atlassian Cloud using a test user ca
 To configure and test Microsoft Entra SSO with Atlassian Cloud, perform the following steps:
 
 1. **[Configure Microsoft Entra ID with Atlassian Cloud SSO](#configure-azure-ad-with-atlassian-cloud-sso)** - to enable your users to use Microsoft Entra ID based SAML SSO with Atlassian Cloud.
-   1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-   1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+   1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+   1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Create Atlassian Cloud test user](#create-atlassian-cloud-test-user)** - to have a counterpart of B.Simon in Atlassian Cloud that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 

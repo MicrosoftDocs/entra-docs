@@ -57,7 +57,7 @@ Configure and test Microsoft Entra SSO with GitHub Enterprise Cloud - Enterprise
 To configure and test Microsoft Entra SSO with GitHub Enterprise Cloud - Enterprise Account, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Assign your Microsoft Entra user and the test user account to the GitHub app](#assign-your-azure-ad-user-and-the-test-user-account-to-the-github-app)** - to enable your user account and test user `B.Simon` to use Microsoft Entra single sign-on.
 1. **[Enable and Test SAML for the Enterprise Account and its organizations](#enable-and-test-saml-for-the-enterprise-account-and-its-organizations)** - to configure the single sign-on settings on application side.
     1. **[Test SSO with another enterprise account owner or organization member account](#test-sso-with-another-enterprise-account-owner-or-organization-member-account)** - to verify whether the configuration works.
