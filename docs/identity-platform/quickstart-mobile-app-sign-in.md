@@ -45,7 +45,7 @@ The quickstart applies to both iOS and macOS apps. Some steps are needed only fo
 #### [Android](#tab/android-workforce)
 
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
-  * **Name**: *identity-android-mobile-app*
+  * **Name**: *identity-client-web-app*
   * **Supported account types**: *Accounts in any organizational directory (Any Microsoft Entra directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)*
 * Android Studio
 * Android 16+
@@ -268,20 +268,17 @@ The quickstart guides you in configuring sample Android, .NET MAUI Android, and 
 * An external tenant. To create one, choose from the following methods:
   * Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code. *(Recommended)*
   * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
-
-#### [Android](#tab/android-external)
-
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
     * **Name**: *identity-client-mobile-app*
     * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
+
+#### [Android](#tab/android-external)
+
 - <a href="https://developer.android.com/studio" target="_blank">Android Studio</a>.
 
 #### [Android(.NET MAUI)](#tab/android-netmaui-external)
 
 * A user flow. For more information, refer to [create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md). This user flow can be used for multiple applications.
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
-    * **Name**: *identity-client-mobile-app*
-    * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
 * [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
 - [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0)
 - [Visual Studio 2022](https://aka.ms/vsdownloads) with the MAUI workload installed:
@@ -290,9 +287,6 @@ The quickstart guides you in configuring sample Android, .NET MAUI Android, and 
 
 #### [iOS/macOS](#tab/ios-macos-external)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
-    * **Name**: *identity-client-mobile-app*
-    * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
 - <a href="https://developer.apple.com/xcode/resources/" target="_blank">Xcode</a>.
 
 ---

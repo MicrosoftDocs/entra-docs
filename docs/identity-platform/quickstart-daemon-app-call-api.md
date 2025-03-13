@@ -335,18 +335,8 @@ You can test the sample app by running the main method of *ClientCredentialGrant
   * **Name**: *ciam-daemon-app*
   * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-
-
-#### [Node](#tab/node-external)
-
-* [Node.js](https://nodejs.org).
 * [.NET 7.0](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install) or later. 
-
-#### [.NET](#tab/asp-dot-net-core-external)
-
-* [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) or later. 
-
---- 
+* [Node.js](https://nodejs.org) (for Node implementation only)
 
 ## Create a client secret
 

@@ -28,25 +28,18 @@ In this quickstart, you’ll use a sample application to learn how to add authen
   * Application Developer
   * Cloud Application Administrator
 * A workforce tenant. You can use your Default Directory or [set up a new tenant](./quickstart-create-new-tenant.md).
-
-
-#### [Node.js Electron](#tab/node-js-workforce)
-
 * Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
   * **Name**: *msal-node-desktop*
   * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
-  * **Platform configuration**: Mobile and desktop applications
-  * **Redirect URI**: `http://localhost`
+
+#### [Node.js Electron](#tab/node-js-workforce)
+
 * [Node.js](https://nodejs.org/en/download/package-manager)
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
 
 
 #### [Windows Presentation Foundation (WPF)](#tab/wpf-workforce)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
-  * **Name**: *msal-wpf-desktop*
-  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
-  * **Platform configuration**: Mobile and desktop applications
 * [Visual Studio](https://visualstudio.microsoft.com/vs/) with the [Universal Windows Platform development](/windows/apps/windows-app-sdk/set-up-your-development-environment) workload installed
 
 ---
@@ -239,22 +232,19 @@ Try out the Windows desktop tutorial for a complete step-by-step guide on buildi
   - (Recommended) Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code
   - [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center
 * A user flow. For more information, refer to [create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md). This user flow can be used for multiple applications.
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
+  * **Name**: *ciam-desktop-app*
+  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
+* [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
 
 
 #### [Node.js Electron](#tab/node-js-external)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
-  * **Name**: *ciam-node-desktop*
-  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
 - [Node.js](https://nodejs.org)
 - [Visual Studio Code](https://code.visualstudio.com/download) or another code editor* 
-- [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
 
 #### [.NET (MAUI)](#tab/wpfdotnet-maui-external)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
-  * **Name**: *msal-dotnet-maui-desktop*
-  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
 - [.NET 7.0 SDK](https://dotnet.microsoft.com/download/dotnet/7.0) or later
 - [Visual Studio 2022](https://aka.ms/vsdownloads) with the MAUI workload installed:
   - [Instructions for Windows](/dotnet/maui/get-started/installation?tabs=vswin)
@@ -263,9 +253,6 @@ Try out the Windows desktop tutorial for a complete step-by-step guide on buildi
 
 #### [.NET (MAUI) WPF](#tab/wpfdotnet-wpf-external)
 
-* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
-  * **Name**: *msal-node-desktop*
-  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor
 * [.NET 7.0](https://dotnet.microsoft.com/download/dotnet/7.0) or later
 * [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
