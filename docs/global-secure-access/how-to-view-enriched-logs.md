@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: femila
 ms.topic: how-to
-ms.date: 03/07/2025
+ms.date: 03/13/2025
 ms.service: global-secure-access
 ---
 
@@ -21,7 +21,7 @@ To use the enriched logs, you need the following roles, configurations, and subs
 
 ### Roles and Permissions
 
-- A **Global Administrator** or **SEcurity Administrator** role is required to enable the enriched Microsoft 365 logs.
+- A **Global Administrator** or **Security Administrator** role is required to enable the enriched Microsoft 365 logs.
 
 ### Configurations
 
