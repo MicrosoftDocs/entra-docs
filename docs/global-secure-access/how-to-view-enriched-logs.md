@@ -21,7 +21,7 @@ To use the enriched logs, you need the following roles, configurations, and subs
 
 ### Roles and Permissions
 
-- A **Global Administrator** or **Security Administrator** role is required to enable the enriched Microsoft 365 logs.
+- A **Global Administrator** or **Security Administrator** role is required to enable the export of Global Secure Access Network Traffic Logs in Diagnostic Settings.
 
 ### Configurations
 
@@ -50,7 +50,7 @@ Following the steps in this article, the logs are enriched with more information
 
 ## How to view the logs
 
-Viewing enriched Microsoft 365 audit logs is a one-step process. First, you need to collect Global Secure Access Network Traffic logs and Microsoft 365 Unified Audit logs to the same endpoint (Microsoft Sentinel is the recommended workspace). Second, you need to create your own join query to correlate the data between the two table or use Global Secure Access OOTB Enriched Microsoft 365 Logs workbook that already applies the needed queries.
+Viewing enriched Microsoft 365 audit logs is a one-time, two-step process. First, you need to collect Global Secure Access Network Traffic logs and Microsoft 365 Unified Audit logs to the same endpoint (Microsoft Sentinel is the recommended workspace). Second, you need to create your own join query to correlate the data between the two table or use Global Secure Access OOTB Enriched Microsoft 365 Logs workbook that already applies the needed queries.
 
 > [!NOTE]
 > At this time, only SharePoint Online logs are available for log enrichment.
@@ -64,7 +64,7 @@ To enable the Enriched Microsoft 365 logs:
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as a [Global Administrator](/azure/active-directory/roles/permissions-reference#global-administrator).
 1. Browse to **Global Secure Access** > **Settings** > **Logging**.
-1. Select the NetworkAccessTraffic table.
+1. Select the **NetworkAccessTraffic** table.
 1. Use the same endpoint to collect Microsoft 365 Activity Logs (Table: OfficeActivity) as explained [here](/azure/sentinel/data-connectors/microsoft-365).
 1. Create a join of these two tables using the Unique Token Id.
 
