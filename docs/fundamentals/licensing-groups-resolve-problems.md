@@ -1,11 +1,9 @@
 ---
-
-title: Resolve group license assignment problems
-description: How to identify and resolve license assignment problems when you're using Microsoft Entra group-based licensing
-
+title: Resolve group license assignment problems.
+description: How to identify and resolve license assignment problems when you're using Microsoft Entra group-based licensing.
 keywords: Microft Entra ID licensing
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
@@ -144,7 +142,7 @@ After you resolve any proxy address problems for the affected users, make sure t
 
 **Other** errors are generally indicative of error for another license assigned by the same group.   
 
-:::image type="content" source="./media/licensing-groups-resolve-problems/other.png" alt-text="Screenshot of **other** type errors.":::
+:::image type="content" source="./media/licensing-groups-resolve-problems/other.png" alt-text="Screenshot of other type errors.":::
  
 To identify the other licensing assigned to the affected user from the same group you can review the user licenses from the Microsoft Entra Admin Portal. 
  
