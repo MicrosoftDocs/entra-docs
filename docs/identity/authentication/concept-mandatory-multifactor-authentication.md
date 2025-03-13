@@ -4,7 +4,7 @@ description: Plan for mandatory multifactor authentication for users who sign in
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 03/12/2025
+ms.date: 03/13/2025
 ms.author: justinha
 author: najshahid
 manager: femila
@@ -124,7 +124,7 @@ Changes are required if you use the [azure-identity](https://central.sonatype.co
 - Use [DefaultAzureCredential](/java/api/com.azure.identity.defaultazurecredential) or [EnvironmentCredential](/java/api/com.azure.identity.environmentcredential) with the following two environment variables set:
     - `AZURE_USERNAME`
     - `AZURE_PASSWORD`
-- Using [UsernamePasswordCredential](/java/api/com.azure.identity.usernamepasswordcredential) ([**deprecated** as of the `1.16.0-beta.1` release](https://github.com/Azure/azure-sdk-for-java/blob/main/sdk/identity/azure-identity/CHANGELOG.md#1160-beta1-unreleased))
+- Using [UsernamePasswordCredential](/java/api/com.azure.identity.usernamepasswordcredential) ([**deprecated** as of the `1.16.0-beta.1` release](https://github.com/Azure/azure-sdk-for-java/blob/main/sdk/identity/azure-identity/CHANGELOG.md#1160-beta1-2025-03-13))
 
 ### [Node.js](#tab/js)
 
@@ -244,7 +244,7 @@ By postponing the start date of enforcement, you take extra risk because account
 
 **Question**: Will I be able to opt out? 
 
-There's no way to opt out. This security motion is critical to all safety and security of the Azure platform and is being repeated across cloud vendors. For example, see [Secure by Design: AWS to enhance MFA requirements in 2024](https://aws.amazon.com/blogs/security/security-by-design-aws-to-enhance-mfa-requirements-in-2024/). 
+**Answer**: There's no way to opt out. This security motion is critical to all safety and security of the Azure platform and is being repeated across cloud vendors. For example, see [Secure by Design: AWS to enhance MFA requirements in 2024](https://aws.amazon.com/blogs/security/security-by-design-aws-to-enhance-mfa-requirements-in-2024/). 
  
 An option to postpone the enforcement start date is available for customers. Global Administrators can go to the [Azure portal](https://aka.ms/managemfaforazure) to postpone the start date of enforcement for their tenant. Global Administrators must have [elevated access](https://aka.ms/enableelevatedaccess) before they postpone the start date of MFA enforcement on this page. They must perform this action for each tenant that needs postponement.
  
