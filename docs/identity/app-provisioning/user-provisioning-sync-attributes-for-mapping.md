@@ -92,8 +92,6 @@ GET https://graph.microsoft.com/v1.0/users/{id}?$select=displayName,extension_in
 ### Create an extension attribute for cloud only users using PowerShell
 You can create a custom extension using PowerShell.
 
-[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
-
 ```PowerShell
 #Connect to your Entra tenant
 Connect-Entra -Scopes 'Application.ReadWrite.All'
@@ -103,7 +101,6 @@ $App = New-EntraApplication -DisplayName "test app name" -IdentifierUris https:/
 
 #Create a service principal
 New-EntraServicePrincipal -AppId $App.AppId
-
 
 #Create an extension property
 New-EntraApplicationExtensionProperty -ApplicationId $App.ObjectId -Name "TestAttributeName" -DataType "String" -TargetObjects "User"
@@ -116,11 +113,12 @@ Optionally, you can test that you can set the extension property on a cloud only
 Get-EntraUser
 
 #Set a value for the extension property on the user. Replace the objectid with the ID of the user and the extension name with the value from the previous step
-Set-EntraUserExtension -objectid aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb -ExtensionName “extension_6552753978624005a48638a778921fan3_TestAttributeName”
+Set-EntraUserExtension -ObjectId aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb -ExtensionName "extension_6552753978624005a48638a778921fan3_TestAttributeName"
 
 #Verify that the attribute was added correctly.
-Get-EntraUser -ObjectId bbbbbbbb-1111-2222-3333-cccccccccccc | Select -ExpandProperty ExtensionProperty
+Get-EntraUser -ObjectId aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb | Select -ExpandProperty ExtensionProperty
 ```
+
 ## Create an extension attribute using cloud sync
 
 If you have users in Active Directory and are using Microsoft Entra Connect cloud sync, cloud sync automatically discovers your extensions in on-premises Active Directory when you go to add a new mapping. If you are using Microsoft Entra Connect sync, then continue reading at the next section [create an extension attribute using Microsoft Entra Connect](#create-an-extension-attribute-using-microsoft-entra-connect).

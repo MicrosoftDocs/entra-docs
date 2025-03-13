@@ -110,7 +110,7 @@ You get the ObjectId of the app by searching for the app by its display name or 
    Alternatively, you could just pull the list of all apps, search the list for the app with a specific display name or home page, and copy the app's ObjectId once the app is found.
 
    ```powershell
-   Get-EntraApplication | Format-List DisplayName, Homepage, ObjectId
+   Get-EntraApplication | Format-List DisplayName, IdentifierUris, ObjectId
    ```
 
 ### Update the home page URL
