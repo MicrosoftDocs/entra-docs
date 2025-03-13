@@ -55,8 +55,8 @@ Configure and test Microsoft Entra SSO with Bynder using a test user called **B.
 To configure and test Microsoft Entra SSO with Bynder, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
-   1. **[Create a Microsoft Entra test user](#create-a-microsoft-entra-test-user)** - to test Microsoft Entra single sign-on with Britta Simon.
-   1. **[Assign the Microsoft Entra test user](#assign-the-microsoft-entra-test-user)** - to enable Britta Simon to use Microsoft Entra single sign-on.
+   1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
+   1. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
 1. **[Configure Bynder SSO](#configure-bynder-sso)** - to configure the single sign-on settings on application side.
    1. **[Create Bynder test user](#create-bynder-test-user)** - to have a counterpart of Britta Simon in Bynder that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.

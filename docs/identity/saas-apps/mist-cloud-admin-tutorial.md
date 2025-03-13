@@ -61,8 +61,8 @@ To configure and test Microsoft Entra SSO with Mist Cloud Admin SSO, perform the
 1.	**[Perform initial configuration of the Mist Cloud SSO](#perform-initial-configuration-of-the-mist-cloud-sso)** - to generate ACS URL on the application side.
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
     1.	**[Create Role for the SSO Application](#create-role-for-the-sso-application)**
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 
 1.	**[Complete configuration of the Mist Cloud](#complete-configuration-of-the-mist-cloud)**
 

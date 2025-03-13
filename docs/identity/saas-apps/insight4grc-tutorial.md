@@ -58,8 +58,8 @@ Configure and test Microsoft Entra SSO with Insight4GRC using a test user called
 To configure and test Microsoft Entra SSO with Insight4GRC, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with Britta Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable Britta Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
+    1. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
 2. **[Configure Insight4GRC SSO](#configure-insight4grc-sso)** - to configure the Single Sign-On settings on application side.
     1. **[Create Insight4GRC test user](#create-insight4grc-test-user)** - to have a counterpart of Britta Simon in Insight4GRC that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.

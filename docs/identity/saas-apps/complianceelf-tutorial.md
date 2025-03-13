@@ -60,8 +60,8 @@ To configure and test Microsoft Entra single sign-on with Compliance ELF, you ne
 
 1. **[Configure Microsoft Entra Single Sign-On](#configure-azure-ad-single-sign-on)** - to enable your users to use this feature.
 2. **[Configure Compliance ELF Single Sign-On](#configure-compliance-elf-single-sign-on)** - to configure the Single Sign-On settings on application side.
-3. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with Britta Simon.
-4. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable Britta Simon to use Microsoft Entra single sign-on.
+3. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
+4. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
 5. **[Create Compliance ELF test user](#create-compliance-elf-test-user)** - to have a counterpart of Britta Simon in Compliance ELF that is linked to the Microsoft Entra representation of user.
 6. **[Test single sign-on](#test-single-sign-on)** - to verify whether the configuration works.
 

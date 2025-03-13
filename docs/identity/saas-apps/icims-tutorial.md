@@ -45,8 +45,8 @@ To configure and test Microsoft Entra SSO with ICIMS, perform the following step
 
 1. **[Configure Microsoft Entra Application Registration](#configure-azure-ad-sso)** - to enable your users to use this feature.
     1. **[Add credentials to your Entra Application](#add-credentials-to-your-entra-application)** - to establish a client secret for the SSO integration.
-    1. **[Create a Microsoft Entra test user](#create-a-microsoft-entra-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-microsoft-entra-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure ICIMS SSO](#configure-icims-sso)** - to configure the single sign-on settings on application side.
     1. **[Determine how you want to map your users between Entra and iCIMS](#determine-how-you-want-to-map-your-users-between-entra-and-icims)** - to configure how to map user accounts between iCIMS and Entra.
     1. **[Submit a support ticket for your SSO integration](#submit-a-support-ticket-for-your-sso-integration)** - to provide iCIMS staff with the details needed to configure your SSO integration.

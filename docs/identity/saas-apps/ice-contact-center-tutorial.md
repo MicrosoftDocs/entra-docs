@@ -57,8 +57,8 @@ Configure and test Microsoft Entra SSO with ice Contact Center using a test user
 To configure and test Microsoft Entra SSO with ice Contact Center, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure ice Contact Center SSO](#configure-ice-contact-center-sso)** - to configure the single sign-on settings on application side.
     1. **[Create ice Contact Center test user](#create-ice-contact-center-test-user)** - to have a counterpart of B.Simon in ice Contact Center that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
