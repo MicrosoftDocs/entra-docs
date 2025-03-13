@@ -63,6 +63,8 @@ items:
     items: 
     - name: Group-based licensing
       href: concept-group-based-licensing.md
+    - name: Resolve group license assignment problems
+      href: licensing-groups-resolve-problems.md
     - name: Microsoft Entra ID preview program
       href: licensing-preview-info.md
     - name: Microsoft Entra licensing
