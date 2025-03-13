@@ -5,7 +5,7 @@ author: HULKsmashGithub
 ms.topic: reference
 ms.author: jayrusso
 manager: femila
-ms.date: 03/11/2025
+ms.date: 03/12/2025
 ms.service: global-secure-access
 
 
@@ -259,9 +259,7 @@ Known limitations for Private Access include:
 - Avoid overlapping app segments between Quick Access and Global Secure Access apps.
 - Avoid overlapping app segments between Quick Access and per-app access.
 - Tunneling traffic to Private Access destinations by IP address is supported only for IP ranges outside of the end-user device local subnet.
-- At this time, Private Access traffic can only be acquired with the Global Secure Access client. Remote networks can't be assigned to the Private access traffic forwarding profile.
-- Multi-Geo connectors don't support the Quick Access App. Multi-Geo supports only private enterprise apps. 
-- Multi-Geo doesn't support secure DNS.   
+- At this time, Private Access traffic can only be acquired with the Global Secure Access client. Remote networks can't be assigned to the Private access traffic forwarding profile.   
 
 ## Internet Access limitations
 Known limitations for Internet Access include:   

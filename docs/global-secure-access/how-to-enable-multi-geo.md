@@ -6,7 +6,7 @@ author: HULKsmashGithub
 manager: femila
 ms.service: global-secure-access
 ms.topic: how-to   
-ms.date: 03/11/2025
+ms.date: 03/12/2025
 ms.reviewer: Sumeet Mittal   
 
 #customer intent: As an IT admin, I want to enable Multi-Geo Capability for Microsoft Entra Private Access so that I can optimize traffic flow from Microsoft Entra Clients to Microsoft Entra Apps.
@@ -18,11 +18,10 @@ Multi-Geo capability can help optimize the traffic flow from Microsoft Entra cli
 > [!IMPORTANT]
 > Multi-Geo capability for Microsoft Entra Private Access is currently in PREVIEW.
 > This information relates to a prerelease product that might be substantially modified before release. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. 
-> The preview for testing purposes; don't use the preview for production traffic. We recommend that you use a test tenant for the preview. If you must use a production tenant for testing, don't use production connector groups. Instead, create a separate test connector group. 
+> The preview is for testing purposes; don't use the preview for production traffic. We recommend that you use a test tenant for the preview. If you must use a production tenant for testing, don't use production connector groups. Instead, create a separate test connector group. 
 
 ## Prerequisites
 
-- You must have a Microsoft Entra Private Access tenant.   
 - You must have a Microsoft Entra Private Access license.    
 - You must have a Microsoft Entra Private Access connector group. For more information, see [How to configure private network connectors for Microsoft Entra Private Access and Microsoft Entra application proxy](how-to-configure-connectors.md).   
 - You must have the **Global Secure Access Administrator** role or the **Privileged Role Administrator** role. For more information, see [Microsoft Entra Built-in Roles](../identity/role-based-access-control/permissions-reference.md).   
@@ -31,7 +30,7 @@ Multi-Geo capability can help optimize the traffic flow from Microsoft Entra cli
 
 Multi-Geo capability helps optimize traffic flow from Microsoft Entra clients to Microsoft Entra apps through private access. Currently, the tenant's default geo location determines the Microsoft Entra routing for private access. For instance, if a tenant's default region is North America, all connector groups must connect to the Microsoft Entra backend in North America, even if some applications and connector groups are in different regions. Multi-Geo support lets customers optimize traffic flow by assigning connector groups according to their preferred geo locations instead of relying solely on the tenant's geo location. Each connector group connects to the SSE backend in the selected area, enhancing overall efficiency. This arrangement provides customers with the flexibility to direct connections to the SSE backend of their choice.
 <!-- Art Library Source# ConceptArt-0-000-048 -->
-:::image type="content" source="media/how-to-enable-multi-geo/multi-geo-diagram.png" alt-text="Diagram that illustrates how Multi-Geo support routes traffic with Microsoft Entra private network connectors.":::
+:::image type="content" source="media/how-to-enable-multi-geo/multi-geo-support-diagram.svg" alt-text="Diagram that illustrates how Multi-Geo support routes traffic with Microsoft Entra private network connectors.":::
 
 ## Enable multi-Geo capability
 To enable the multi-Geo capability for Microsoft Entra Private Access, complete the following steps. This procedure involves creating connector groups in different geographic regions, installing connectors, and adding application segments to the connector groups.
@@ -52,9 +51,9 @@ To enable the multi-Geo capability for Microsoft Entra Private Access, complete 
     1. Repeat steps **a** - **d** for the second connector group.
 1. After about 30 minutes, the multi-Geo configuration takes effect and traffic begins flowing. 
 
-## Known limitations
-
-[!INCLUDE [known-limitations-include](../includes/known-limitations-include.md)]
+> [!NOTE]
+> - Multi-Geo connectors aren't available through Quick Access. Multi-Geo supports only private enterprise apps.   
+> - Multi-Geo doesn't support the Domain Name System (DNS) experience.   
 
 ## Related content
 
