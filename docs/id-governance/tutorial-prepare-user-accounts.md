@@ -149,13 +149,13 @@ $PasswordProfile = @{
   Password = "$Password_manager"
   }
 
-New-MgUser -DisplayName $Displayname_manager  -PasswordProfile $PasswordProfile -UserPrincipalName $UPN_manager -AccountEnabled $true -MailNickName $Name_manager -Department $Department
+New-MgUser -DisplayName $Displayname_manager -PasswordProfile $PasswordProfile -UserPrincipalName $UPN_manager -AccountEnabled $true -MailNickName $Name_manager -Department $Department
 
 $PasswordProfile = @{
   Password = "$Password_employee"
   }
 
-New-MgUser -DisplayName $Displayname_employee  -PasswordProfile $PasswordProfile -UserPrincipalName $UPN_employee -AccountEnabled $true -MailNickName $Name_employee -Department $Department
+New-MgUser -DisplayName $Displayname_employee -PasswordProfile $PasswordProfile -UserPrincipalName $UPN_employee -AccountEnabled $true -MailNickName $Name_employee -Department $Department
 ```
 
 Once your user or users are successfully created in Microsoft Entra ID, you can proceed to follow the Lifecycle workflow tutorials for your workflow creation.  
