@@ -2,7 +2,7 @@
 title: Configure SuccessFactors inbound provisioning in AD and Microsoft Entra ID
 description: Learn how to configure inbound provisioning from SuccessFactors
 author: cmmdesai
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to

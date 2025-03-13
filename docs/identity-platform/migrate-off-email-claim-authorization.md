@@ -63,13 +63,13 @@ The following pseudocode sample helps illustrate the insecure pattern of user id
         data = WriteNewRecords(token.email)
     }
 
-    insecureAccess = data.show // this is how an unverified user can escalate their privileges via an arbirarily set email
+    insecureAccess = data.show // this is how an unverified user can escalate their privileges via an arbitrarily set email
  }
 ```
 
 Once you've determined that your application is relying on this insecure attribute, you need to update business logic to reindex users on a globally unique identifier (GUID). 
 
-Mutli-tenant applications should index on a mapping of two uniquely identifying claims, `tid` + `oid`. This will segment tenants by the `tid`, and segment users by their `oid`. 
+Multitenant applications should index on a mapping of two uniquely identifying claims, `tid` + `oid`. This will segment tenants by the `tid`, and segment users by their `oid`. 
 
 ### Using the `xms_edov` optional claim to determine email verification status and migrate users
 

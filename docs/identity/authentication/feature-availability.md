@@ -6,12 +6,12 @@ description: Learn which Microsoft Entra features are available in Azure Governm
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/06/2025
+ms.date: 03/04/2025
 
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: mattsmith
 ---
 

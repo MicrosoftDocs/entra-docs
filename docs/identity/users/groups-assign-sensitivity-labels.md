@@ -3,7 +3,7 @@ title: Assign sensitivity labels to groups
 description: Learn how to assign sensitivity labels to groups. See troubleshooting information and view more resources.
 
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to

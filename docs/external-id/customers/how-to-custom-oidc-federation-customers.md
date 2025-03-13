@@ -8,14 +8,14 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: how-to
-ms.date: 02/26/2025
+ms.date: 03/12/2025
 ms.author: cmulligan
 ms.reviewer: brozbab
 ms.custom: it-pro
 
 #Customer intent: As a developer, devops, or it administrator, I want to learn how to add an OpenID Connect identity provider for my external tenant.
 ---
-# Add OpenID Connect as an external identity provider (preview)
+# Add OpenID Connect as an external identity provider
 
 [!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
 
@@ -26,7 +26,7 @@ When you add an OIDC identity provider to your user flow's sign-in options, user
 ## Prerequisites
 
 - An [external tenant](how-to-create-external-tenant-portal.md).
-- A [registered application](how-to-register-ciam-app.md) in the tenant.
+- A [registered application](/entra/identity-platform/quickstart-register-app) in the tenant.
 - A [sign-up and sign-in user flow](how-to-user-flow-sign-up-sign-in-customers.md).
 
 ## Set up your OpenID Connect identity provider
@@ -116,5 +116,5 @@ At this point, the OIDC identity provider has been set up in your Microsoft Entr
 
 ## Related content
 
-- [Add an Azure AD B2C tenant as an OIDC identity provider (preview)](how-to-b2c-federation-customers.md)
-- [OIDC claims mapping (preview)](reference-oidc-claims-mapping-customers.md)
+- [Add an Azure AD B2C tenant as an OIDC identity provider](how-to-b2c-federation-customers.md)
+- [OIDC claims mapping](reference-oidc-claims-mapping-customers.md)

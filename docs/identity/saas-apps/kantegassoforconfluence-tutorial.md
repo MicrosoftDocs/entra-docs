@@ -23,10 +23,8 @@ In this article,  you'll learn how to integrate Kantega SSO for Confluence with 
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with Kantega SSO for Confluence, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Kantega SSO for Confluence single sign-on enabled subscription.
 
 ## Scenario description
@@ -138,7 +136,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 1. Under **ATLASSIAN MARKETPLACE** tab, click **Find new add-ons**.
 
-	![Screenshot that shows the "ATTLASSIAN MARKETPLACE" tab with "Find new add-ons" selected.](./media/kantegassoforconfluence-tutorial/admin.png)
+	![Screenshot that shows the "ATLASSIAN MARKETPLACE" tab with "Find new add-ons" selected.](./media/kantegassoforconfluence-tutorial/admin.png)
 
 1. Search **Kantega SSO for Confluence SAML Kerberos** and click **Install** button to install the new SAML plugin.
 

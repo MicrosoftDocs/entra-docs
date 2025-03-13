@@ -23,10 +23,8 @@ In this article,  you'll learn how to integrate UltiPro Perception with Microsof
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * UltiPro Perception single sign-on (SSO) enabled subscription.
 
 ## Scenario description
@@ -86,7 +84,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 	c. After getting the URI-encoded value combine it with the **Reply URL** as mentioned below-
 
-	`https://perception.kanjoya.com/sso?idp=<URI encooded entity_id>`
+	`https://perception.kanjoya.com/sso?idp=<URI encoded entity_id>`
 	
 	d. Paste the above value in the **Reply URL** textbox.
 

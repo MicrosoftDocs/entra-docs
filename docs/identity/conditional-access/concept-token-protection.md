@@ -8,7 +8,7 @@ ms.date: 06/27/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: paulgarn
 ---
 # Conditional Access: Token protection (preview)

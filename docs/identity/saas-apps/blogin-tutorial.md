@@ -24,10 +24,8 @@ In this article,  you'll learn how to integrate BlogIn with Microsoft Entra ID. 
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * BlogIn single sign-on (SSO) enabled subscription.
 
 ## Scenario description
@@ -91,7 +89,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<SUBDOMAIN>.blogin.co/`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL, and Sign-on URL. You can get the exact values for these fields on the **Settings** page on BlogIn (**User Athentication** tab > **Configure SSO and User Provisioning**). Alternatively, you can contact [BlogIn Client support team](mailto:support@blogin.co) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> These values are not real. Update these values with the actual Identifier, Reply URL, and Sign-on URL. You can get the exact values for these fields on the **Settings** page on BlogIn (**User Authentication** tab > **Configure SSO and User Provisioning**). Alternatively, you can contact [BlogIn Client support team](mailto:support@blogin.co) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. BlogIn application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 

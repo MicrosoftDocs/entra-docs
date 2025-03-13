@@ -25,10 +25,8 @@ In this article,  you'll learn how to integrate MongoDB Atlas - SSO with Microso
 * Manage your accounts in one central location: the Azure portal.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * MongoDB Atlas - SSO single sign-on (SSO) enabled subscription.
 
 ## Scenario description
@@ -153,7 +151,7 @@ In this section, you'll enable B.Simon or Group 1 to use Azure single sign-on by
 1. Browse to **Identity** > **Applications** > **Enterprise applications** > **MongoDB Atlas - SSO**.
 1. In the app's overview page, find the **Manage** section and select **Users and groups**.
 1. Select **Add user**, then select **Users and groups** in the **Add Assignment** dialog.
-1. In the **Users and groups** dialog, select **B.Simon** from the Users list or if you are using MongoDB Atla role mappings, select  **Group 1** from the Groups list; then click the **Select** button at the bottom of the screen.
+1. In the **Users and groups** dialog, select **B.Simon** from the Users list or if you are using MongoDB Atlas role mappings, select  **Group 1** from the Groups list; then click the **Select** button at the bottom of the screen.
 1. In the **Add Assignment** dialog, click the **Assign** button.
 
 ## Configure MongoDB Atlas SSO

@@ -150,7 +150,7 @@ For the phone number writeback operation to be successful, it's important to sen
 This example assumes that the phone number value in Microsoft Entra ID for *telephoneNumber* or *mobile* has the format `+<isdCode><space><phoneNumber>`. <br>
 Example: If the phone number value is set to `+1 1112223333` or `+1 (111) 222-3333`, then `1` is the ISD Code and the country code name corresponding to it is `USA`.
 
-Use these regular expression mappings to send the right country code name and country code number to Workday. You can use either *telphoneNumber* or *mobile* as the source attribute. The following examples use *telephoneNumber*. All expressions here use the [Replace](~/identity/app-provisioning/functions-for-customizing-application-data.md#replace) function. 
+Use these regular expression mappings to send the right country code name and country code number to Workday. You can use either *telephoneNumber* or *mobile* as the source attribute. The following examples use *telephoneNumber*. All expressions here use the [Replace](~/identity/app-provisioning/functions-for-customizing-application-data.md#replace) function. 
 
 **Example mapping for *WorkphoneLandlineNumber* or *WorkphoneMobileNumber***
 

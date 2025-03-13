@@ -2,7 +2,7 @@
 title: Archive for Microsoft Entra releases and announcements
 description: The What's new release notes in the Overview section of this content set contain six months of activity. After six months, the items are removed from the main article and put into this archive article.
 author: owinfreyATL
-manager: amycolannino
+manager: femila
 ms.service: entra 
 ms.subservice: fundamentals
 ms.topic: whats-new
@@ -152,7 +152,7 @@ To learn more, see [Automated employee mover tasks when they change jobs using t
 
 ---
 
-### General Availability -  Device based conditional access to M365/Azure resources on Red Hat Enterprise Linux
+### General Availability -  Device based Conditional Access to M365/Azure resources on Red Hat Enterprise Linux
 
 **Type:** New feature    
 **Service category:** Conditional Access    
@@ -883,7 +883,7 @@ We released a new premium user risk detection in Identity Protection called *Sus
 **Service category:** Conditional Access    
 **Product capability:** Access Control    
 
-Conditional access policies can now be filtered on actor, target resources, conditions, grant control, and session control. The granular filtering experience can help admins quickly discover policies containing specific configurations. For more information, see: [What is Conditional Access?](../identity/conditional-access/overview.md).
+Conditional Access policies can now be filtered on actor, target resources, conditions, grant control, and session control. The granular filtering experience can help admins quickly discover policies containing specific configurations. For more information, see: [What is Conditional Access?](../identity/conditional-access/overview.md).
 
 ---
 
@@ -1292,7 +1292,7 @@ To further protect your organization, Microsoft is now limiting this functionali
 **Service category:** Conditional Access                     
 **Product capability:** User Authentication            
 
-In an ever-evolving security landscape, the Microsoft Authenticator is updating its security baseline for Location Based Access Control (LBAC) conditional access policies. Microsoft does this to disallow authentications where the user might be using a different location than the actual GPS location of the mobile device. Today, it's possible for users to modify the location reported by the device on iOS and Android devices. The Authenticator app starts to deny LBAC authentications where we detect that the user isn't using the actual location of the mobile device where the Authenticator is installed.
+In an ever-evolving security landscape, the Microsoft Authenticator is updating its security baseline for Location Based Access Control (LBAC) Conditional Access policies. Microsoft does this to disallow authentications where the user might be using a different location than the actual GPS location of the mobile device. Today, it's possible for users to modify the location reported by the device on iOS and Android devices. The Authenticator app starts to deny LBAC authentications where we detect that the user isn't using the actual location of the mobile device where the Authenticator is installed.
 
 In the November 2023 release of the Authenticator app, users who are modifying the location of their device sees a denial message in the app when doing an LBAC authentication. Microsoft ensures that users aren’t using older app versions to continue authenticating with a modified location. Beginning January 2024, any users that are on Android Authenticator 6.2309.6329 version or prior and iOS Authenticator version 6.7.16 or prior are blocked from using LBAC. To determine which users are using older versions of the Authenticator app, you can use [our MSGraph APIs](/graph/api/resources/microsoftauthenticatorauthenticationmethod).
 

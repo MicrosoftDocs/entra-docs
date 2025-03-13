@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect: Select your installation type'
 description: This topic walks you through how to select the installation type to use for Microsoft Entra Connect
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to

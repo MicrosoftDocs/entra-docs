@@ -3,7 +3,7 @@ title: Plan a Microsoft Entra application proxy Deployment
 description: An end-to-end guide for planning the deployment of application proxy within your organization
 
 author: kenwith
-manager: rkarlin
+manager: femila
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: conceptual

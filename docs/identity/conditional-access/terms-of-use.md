@@ -9,7 +9,7 @@ ms.date: 03/11/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: siz
 ---
 # Microsoft Entra terms of use

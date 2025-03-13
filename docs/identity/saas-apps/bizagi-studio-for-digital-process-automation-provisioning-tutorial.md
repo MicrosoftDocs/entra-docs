@@ -101,7 +101,7 @@ This section guides you through the steps to configure the Microsoft Entra provi
 
 4. Set **Provisioning Mode** to **Automatic**.
 
-	![Screenshotof Provisioning Mode control, with Automatic highlighted.](common/provisioning-automatic.png)
+	![Screenshot of Provisioning Mode control, with Automatic highlighted.](common/provisioning-automatic.png)
 
 5. In the **Admin Credentials** section, enter your tenant URL and secret token for Bizagi Studio for Digital Process Automation. 
 

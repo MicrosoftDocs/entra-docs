@@ -6,12 +6,12 @@ services: active-directory
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/07/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: justinha
 ms.reviewer: lvandenende
-manager: amycolannino
+manager: femila
 
 ms.collection: M365-identity-device-management
 

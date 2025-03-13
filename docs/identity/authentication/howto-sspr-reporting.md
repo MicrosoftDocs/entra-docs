@@ -5,10 +5,10 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.topic: how-to
 
-ms.date: 01/24/2025
+ms.date: 03/04/2025
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: tilarso
 ---
 # Reporting options for Microsoft Entra password management

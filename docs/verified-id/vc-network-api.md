@@ -4,10 +4,9 @@ titleSuffix: Microsoft Entra Verified ID
 description: Learn how to use the Microsoft Entra Verified ID Network API
 documentationCenter: ''
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
 ms.topic: reference
-
 ms.date: 01/30/2025
 ms.author: barclayn
 

@@ -4,10 +4,10 @@ description: Steps to verify mandatory multifactor authentication for users who 
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/07/2025
+ms.date: 03/04/2025
 ms.author: justinha
 author: najshahid
-manager: amycolannino
+manager: femila
 ms.reviewer: nashahid, gkinasewitz
 
 # Customer intent: As an identity administrator, I want to plan for mandatory MFA for users who sign in to Azure portal.

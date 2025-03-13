@@ -2,11 +2,11 @@
 title: Least privileged roles by task
 description: Least privileged roles to delegate for tasks in Microsoft Entra ID
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: reference
-ms.date: 02/26/2025
+ms.date: 03/12/2025
 ms.author: rolyon
 ms.custom: it-pro
 
@@ -156,6 +156,8 @@ Here are the least privileged roles you should use when performing tasks for [de
 > | Enable device | [Cloud Device Administrator](permissions-reference.md#cloud-device-administrator) | [Intune Administrator](permissions-reference.md#intune-administrator) |
 > | Read basic configuration | [Default user role](../../fundamentals/users-default-permissions.md) |  |
 > | Read BitLocker keys | [Cloud Device Administrator](permissions-reference.md#cloud-device-administrator) | [Helpdesk Administrator](permissions-reference.md#helpdesk-administrator)<br/>[Intune Administrator](permissions-reference.md#intune-administrator)<br/>[Security Administrator](permissions-reference.md#security-administrator)<br/>[Security Reader](permissions-reference.md#security-reader) |
+> | Provision and manage IoT devices | [IoT Device Administrator](permissions-reference.md#iot-device-administrator) | [Cloud Device Administrator](permissions-reference.md#cloud-device-administrator) |
+> | Manage IoT device templates | [IoT Device Administrator](permissions-reference.md#iot-device-administrator) | [Cloud Device Administrator](permissions-reference.md#cloud-device-administrator) |
 
 ## Enterprise applications least privileged roles
 
@@ -187,7 +189,7 @@ Here are the least privileged roles you should use when performing tasks for [en
 > [!div class="mx-tableFixed"]
 > | Task | Least privileged role | Additional roles |
 > | ---- | --------------------- | ---------------- |
-> | Tasks in Entitlement Management | [Identity Governance Administrator](permissions-reference.md#identity-governance-administrator). For roles lesser privlege than this within the Entitlement Management system, see: [Delegation and roles in entitlement management](../../id-governance/entitlement-management-delegate.md). | |
+> | Tasks in Entitlement Management | [Identity Governance Administrator](permissions-reference.md#identity-governance-administrator). For roles lesser privilege than this within the Entitlement Management system, see: [Delegation and roles in entitlement management](../../id-governance/entitlement-management-delegate.md). | |
 
 ## Groups least privileged roles
 
@@ -510,6 +512,7 @@ Here are the least privileged roles you should use when performing tasks for [us
 > | Revoke license | [License Administrator](permissions-reference.md#license-administrator) | [User Administrator](permissions-reference.md#user-administrator) |
 > | Update all properties except User Principal Name | [User Administrator](permissions-reference.md#user-administrator) |  |
 > | Update On-premises sync enabled property | [Hybrid Identity Administrator](permissions-reference.md#hybrid-identity-administrator) |  |
+> | Update profile photos and people settings | [People Administrator](permissions-reference.md#people-administrator) |  |
 > | Update User Principal Name for limited admins | [User Administrator](permissions-reference.md#user-administrator) |  |
 > | Update User Principal Name property on privileged admins | [Privileged Authentication Administrator](permissions-reference.md#privileged-authentication-administrator) |  |
 > | Update user settings - Default user role permissions | [Privileged Role Administrator](permissions-reference.md#privileged-role-administrator) |  |

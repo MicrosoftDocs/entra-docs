@@ -23,10 +23,8 @@ In this article,  you'll learn how to integrate Sedgwick CMS with Microsoft Entr
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with Sedgwick CMS, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Sedgwick CMS single sign-on enabled subscription.
 
 ## Scenario description

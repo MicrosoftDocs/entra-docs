@@ -221,7 +221,7 @@ In December 2021, Facebook released a SCIM 2.0 connector. Completing the steps b
 
 1. Update the tenant URL in the Admin Credentials section to the following: https://scim.workplace.com/  
 
-   ![Screenshot of Admin Credentials in the Workplace from Meta app in the Azure portalt](./media/workplace-by-facebook-provisioning-tutorial/provisionings.png)
+   ![Screenshot of Admin Credentials in the Workplace from Meta app in the Azure portal](./media/workplace-by-facebook-provisioning-tutorial/provisionings.png)
 
 1. Restore any previous changes you made to the application (Authentication details, Scoping filters, Custom attribute mappings) and re-enable provisioning. 
 

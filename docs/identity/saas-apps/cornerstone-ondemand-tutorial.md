@@ -24,10 +24,8 @@ In this article,  you'll learn how to set up the single sign-on integration betw
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Enabled SSO in Cornerstone.
 
 > [!NOTE]
@@ -171,7 +169,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
     a. Go to the **Admin -> Tools -> CORE FUNCTIONS -> Core Preferences -> Authentication Preferences**.
 
-    ![screeenshot for Authentication Preferences mobile appilcation Cornerstone.](./media/cornerstone-ondemand-tutorial/division-mobile.png)
+    ![Screenshot for Authentication Preferences mobile application Cornerstone.](./media/cornerstone-ondemand-tutorial/division-mobile.png)
 
     b. Search the **Division Name** by giving the Division Name in the search box.
 
@@ -179,7 +177,7 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
     d. From the SAML/IDP server URL dropdown, select the appropriate SAML/IDP server that should be used for user Authentication.
 
-    ![screeenshot for Other credentials validated against client SAML/IDP server.](./media/cornerstone-ondemand-tutorial/other-credentials.png)
+    ![Screenshot for Other credentials validated against client SAML/IDP server.](./media/cornerstone-ondemand-tutorial/other-credentials.png)
 
     e. Click **Save**.
 
@@ -193,19 +191,19 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 2. Open **Cornerstone Learn** mobile application. On the sign in page, enter the portal name.
 
-    ![screeenshot for mobile appilcation Cornerstone.](./media/cornerstone-ondemand-tutorial/welcome-mobile.png)
+    ![Screenshot for mobile application Cornerstone.](./media/cornerstone-ondemand-tutorial/welcome-mobile.png)
 
 3. Click **Alternative Login** and then click **SSO**.
 
-    ![screeenshot for mobile appilcation Alternative Login.](./media/cornerstone-ondemand-tutorial/sso-mobile.png)
+    ![Screenshot for mobile application Alternative Login.](./media/cornerstone-ondemand-tutorial/sso-mobile.png)
 
 4. .  Enter your **Microsoft Entra credentials** to sign into the Cornerstone application and click **Next**.
 
-    ![screeenshot for mobile appilcation Microsoft Entra credentials.](./media/cornerstone-ondemand-tutorial/credentials-mobile.png)
+    ![Screenshot for mobile application Microsoft Entra credentials.](./media/cornerstone-ondemand-tutorial/credentials-mobile.png)
 
 5. Finally after successful sign in, the application homepage will be displayed as shown below.
 
-    ![screeenshot for mobile appilcation home page.](./media/cornerstone-ondemand-tutorial/home-page-mobile.png)
+    ![Screenshot of mobile application home page.](./media/cornerstone-ondemand-tutorial/home-page-mobile.png)
 
 ## Related content
 

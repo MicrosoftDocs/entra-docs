@@ -13,7 +13,7 @@ ms.author: jomondi
 ms.reviewer: ergreenl
 ms.collection: M365-identity-device-management
 ms.custom:  enterprise-apps
-zone_pivot_groups: enterprise-apps-minus-former-powershell
+zone_pivot_groups: enterprise-apps-minus-legacy-powershell
 
 #customer intent: As an administrator, I want to grant tenant-wide admin consent to an application, so that the application can access the permissions requested on behalf of the whole organization.
 ---
