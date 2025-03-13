@@ -343,7 +343,9 @@ items:
             items:
               - name: Custom OIDC federation
                 href: how-to-custom-oidc-federation-customers.md
-              - name: B2C federation
+              - name: Microsoft account federation
+                href: how-to-microsoft-accounts-federation-customers.md
+              - name: Azure AD B2C federation
                 href: how-to-b2c-federation-customers.md
           - name: SAML/WS-Fed IdP federation
             items:
