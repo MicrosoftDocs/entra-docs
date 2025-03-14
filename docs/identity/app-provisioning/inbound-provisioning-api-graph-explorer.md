@@ -7,7 +7,7 @@ manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 03/04/2025
+ms.date: 03/14/2025
 ms.author: jfields
 ms.reviewer: cmmdesai
 ---
@@ -21,7 +21,7 @@ This tutorial describes how you can quickly test [API-driven inbound provisionin
 * You configured [API-driven inbound provisioning app](inbound-provisioning-api-configure-app.md). 
 
 > [!NOTE]
-> This provisioning API is primarily meant for use within an application or service. Tenant admins can either configure a service principal or managed identity to grant permission to perform the upload. There's no separate user-assignable Microsoft Entra built-in directory role for this API. Outside of applications that acquired `SynchronizationData-User.Upload` permission with admin consent, only admin users with Global Administrator role can invoke the API. This tutorial shows how you can test the API with a Global Administrator role in your test setup. 
+> This provisioning API is primarily meant for use within an application or service. Tenant admins can either configure a service principal or managed identity to grant permission to perform the upload. There's no separate user-assignable Microsoft Entra built-in directory role for this API. Outside of applications that acquired `SynchronizationData-User.Upload` permission with admin consent, only admin users with Global Administrator or User Administrator roles can invoke the API. This tutorial shows how you can test the API with a User Administrator role in your test setup. 
 
 ## Upload user data to the inbound provisioning API 
 
@@ -30,7 +30,7 @@ This tutorial describes how you can quickly test [API-driven inbound provisionin
 1. Select the user profile icon to sign in. 
 
      [![Image showing the user profile icon.](media/inbound-provisioning-api-graph-explorer/provisioning-user-profile-icon.png)](media/inbound-provisioning-api-graph-explorer/provisioning-user-profile-icon.png#lightbox)
-1. Complete the login process with a user account that has *Global Administrator* role.
+1. Complete the login process with a user account that has [User Administrator](../role-based-access-control/permissions-reference#user-administrator) role access.
 1. Upon successful login, the Tenant information shows your tenant name.
 
      [![Screenshot of Tenant name.](media/inbound-provisioning-api-graph-explorer/provisioning-tenant-name.png)](media/inbound-provisioning-api-graph-explorer/provisioning-tenant-name.png#lightbox)
