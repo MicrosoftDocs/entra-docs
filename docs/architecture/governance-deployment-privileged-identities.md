@@ -17,7 +17,7 @@ Deployment scenarios are guidance on how to combine and test Microsoft Security 
 
 Use this scenario to help determine the need for Microsoft Entra ID Governance to create and grant access for your organization. Learn how to manage privileged identities and the access they request. 
 
-The following products and services appear in this guide:
+The following products and services appear in this guide: 
 
 * [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)
 * [Microsoft Entra ID](../fundamentals/whatis.md)
