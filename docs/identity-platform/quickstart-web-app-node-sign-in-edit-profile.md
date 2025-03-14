@@ -16,15 +16,15 @@ ms.custom: developer
 
 [!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
-In this Quickstart, you use a sample Node.js web app to learn how to add sign in and edit profile in a web app. The sample web app uses [Microsoft Authentication Library for Node (MSAL Node)](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) and Microsoft Graph API to complete the sign in and edit profile operation.
+In this Quickstart, you use a sample Node.js web app to learn how to add sign in and edit profile in a web app. The sample web app uses [Microsoft Authentication Library for Node (MSAL Node)](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) and Microsoft Graph API to complete the sign in and edit profile operation. The edit profile operation requires a user to complete an multifactor authentication (MFA).
 
 ## Prerequisites
 
 - Complete the steps and prerequisites in [Quickstart: Sign in users in a sample web app](quickstart-web-app-sign-in.md?pivots=external&tabs=node-external) article. This Quickstart shows you how to sign in users by using a sample Node.js web app. 
 
-## Register and configure EditProfileService app
+## Register API app
 
-In this step, you register the EditProfileService app (the API app) app, which provides a mechanism to protect the edit profile operation by requiring MFA. 
+In this step, you register and configure an API app (EditProfileService app), which provides a mechanism to protect the edit profile operation by requiring MFA. 
 
 ### Register EditProfileService app
 
@@ -32,7 +32,7 @@ In this step, you register the EditProfileService app (the API app) app, which p
 
 ### Configure EditProfileService app API scopes
 
-The EditProfileService app needs to expose permissions, which a client needs to acquire for calling the API:
+The EditProfileService app needs to expose permissions that a client app acquires to call the web API.
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers//includes/register-app/add-api-mfa-scopes.md)]
 
@@ -46,9 +46,9 @@ The EditProfileService app needs to expose permissions, which a client needs to 
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers//includes/register-app/grant-api-permission-edit-profile.md)]
 
-### Grant admin consent
+### Grant admin consent in the EditProfileService app
 
-You've assigned the *User.ReadWrite* permissions correctly. However, since the tenant is an external tenant, the customer users themselves can't consent to these permissions. As the administrator of the tenant, you must consent to this permission on behalf of all the users in the tenant:
+You've assigned the *User.ReadWrite* permissions correctly to your EditProfileService app. However, since the tenant is an external tenant, the customer users themselves can't consent to these permissions. As the administrator of the tenant, you must consent to this permission on behalf of all the users in the tenant:
     
 1. Select **Grant admin consent for \<your tenant name\>**, then select **Yes**.
 
@@ -56,15 +56,15 @@ You've assigned the *User.ReadWrite* permissions correctly. However, since the t
 
 ## Grant API permissions to the client web app
 
-In this section, you grant API permissions to the client web app that you registered earlier (from the prerequisites). 
+In this section, you grant API permissions to the client web app that you registered earlier (in prerequisites). 
 
 Grant your client web app the *EditProfileService.ReadWrite* permission. This permission is exposed by the EditProfileService app, and it protects the update profile operation with MFA. To grant the *EditProfileService.ReadWrite* permission to client web app, use the following steps:
 
 [!INCLUDE [active-directory-b2c-app-integration-add-user-flow](../external-id/customers//includes/register-app/grant-api-permissions-mfa-api-app.md)]
 
-### Grant admin consent
+### Grant admin consent in the client web app
 
-You've assigned the **EditProfileService.ReadWrite* permissions correctly. However, since the tenant is an external tenant, the customer users themselves can't consent to these permissions. As the administrator of the tenant, you must consent to this permission on behalf of all the users in the tenant:
+You've assigned the **EditProfileService.ReadWrite* permissions correctly to your client web app. However, since the tenant is an external tenant, the customer users themselves can't consent to these permissions. As the administrator of the tenant, you must consent to this permission on behalf of all the users in the tenant:
     
 1. Select **Grant admin consent for \<your tenant name\>**, then select **Yes**.
 
@@ -74,13 +74,13 @@ You've assigned the **EditProfileService.ReadWrite* permissions correctly. Howev
 
 Your EditProfileService app that you registered earlier is the resource that you protect with MFA. 
 
-To create an MFA CA policy, use the steps in [Add multifactor authentication to an app](../external-id/customers/how-to-multifactor-authentication-customers.md). Use the following settings when you create your policy:
+To create an MFA Conditional Access (CA) policy, use the steps in [Add multifactor authentication to an app](../external-id/customers/how-to-multifactor-authentication-customers.md). Use the following settings when you create your policy:
 - For the **Name**, use *MFA policy*.
 - For the Target resources, select the EditProfileService app that you registered earlier, such as *edit-profile-service*.
 
 ## Clone or download sample web app
 
-To obtain the sample app, you can either clone it from GitHub or download it as a `.zip` file.
+You already cloned the [sample app](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial) from the prerequisites, but if you've not already done so, you can either clone it from GitHub or download it as a `.zip` file.
 
 [Download the .zip file](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/archive/refs/heads/main.zip) or clone the sample web app from GitHub by running the following command:
 
@@ -90,12 +90,15 @@ git clone https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial.
 
 ## Configure the sample web app
 
-This code sample contains two apps, the client app and the service/API app. You need to update these apps to use your external tenant settings. To do so, use the following steps:
+This code sample contains two apps, the client web app and the API app (EditProfileService app). You need to update these apps to use your external tenant settings. To do so, use the following steps:
 
 1. In your code editor, open `1-Authentication\7-edit-profile-with-mfa-express\App\authConfig.js` file, then find the placeholder:
 
+    - `Enter_the_Application_Id_Here` and replace it with the Application (client) ID of the client web app you registered earlier.
+    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](/entra/external-id/customers/how-to-create-customer-tenant-portal#get-the-customer-tenant-details).
+    - `Enter_the_Client_Secret_Here` and replace it with the app secret value of the client web app you copied earlier.
     - `graph_end_point` and replace it with the Microsoft Graph API endpoint, that's `https://graph.microsoft.com/`.
-    - `Add_your_protected_scope_here` and replace it with the EditProfileService app scope. The value looks similar to *api://{clientId}/EditProfileService.ReadWrite*. `{clientId}` is the Application (client) ID value of the [EditProfileService you registered earlier](#register-editprofileservice-app).
+    - `Add_your_protected_scope_here` and replace it with the API app (EditProfileService app) scope. The value looks similar to *api://{clientId}/EditProfileService.ReadWrite*. `{clientId}` is the Application (client) ID value of the [EditProfileService you registered earlier](#register-editprofileservice-app).
 
 1. In your code editor, open `1-Authentication\7-edit-profile-with-mfa-express\Api\authConfig.js` file, then find the placeholder:
     
