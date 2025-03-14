@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 03/13/2025
+ms.date: 03/14/2025
 ms.author: gasinh
 
 #customer intent: I want to deploy and test Microsoft Entra ID Governance as a proof of concept in my production or test environment.
@@ -31,7 +31,8 @@ While most services are in General Availability (GA), some features or services 
 
 ## Proof-of-concept
 
-A PoC helps ensure solutions you choose provide the features and experience your organization requires. This process entails a detailed understanding of organizational requirements, success criteria, and outcomes. The capabilities that you want can affect the duration of a PoC for Microsoft Entra ID Governance. Refer to the scenario docs for PoC information and time needed to complete. 
+A PoC helps ensure solutions you choose provide the features and experience your organization requires. This process entails a detailed understanding of organizational requirements, success criteria, and outcomes. The capabilities that you want, and environmental complexity, can affect the duration of a PoC for Microsoft Entra ID Governance. Refer to the scenario docs for PoC information and the approximate time needed to complete it. 
+
 
 ### Licensing
 
@@ -207,7 +208,7 @@ Discover more about the [API-driven inbound learning path](../identity/app-provi
 
 ## Joiner, Mover, Leaver workflows
 
-For user provisioning to Microsoft Entra ID, document onboarding requirements such as credential provisioning, first-time sign-in, user moves, terminations, etc. Ensure processes comply with organizational policies and regulations.  
+For user provisioning to Microsoft Entra ID, document onboarding requirements such as credential provisioning, first-time sign-in, user moves, terminations, and more. Ensure processes comply with organizational policies and regulations.  
 
 Microsoft Entra ID lifecycle workflows, entitlement management, and access reviews address multiple requirements:  
 
