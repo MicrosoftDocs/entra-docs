@@ -65,8 +65,8 @@ To configure and test Microsoft Entra single sign-on with Uberflip, you need to 
 
 1. **[Configure Microsoft Entra single sign-on](#configure-azure-ad-single-sign-on)** to enable your users to use this feature.
 1. **[Configure Uberflip single sign-on](#configure-uberflip-single-sign-on)** to configure the single sign-on settings on the application side.
-1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** to test Microsoft Entra single sign-on with B. Simon.
-1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** to enable B. Simon to use Microsoft Entra single sign-on.
+1. **Create a Microsoft Entra test user** to test Microsoft Entra single sign-on with B. Simon.
+1. **Assign the Microsoft Entra test user** to enable B. Simon to use Microsoft Entra single sign-on.
 1. **[Create an Uberflip test user](#create-an-uberflip-test-user)** so that there's a user named B. Simon in Uberflip who's linked to the Microsoft Entra user named B. Simon.
 1. **[Test single sign-on](#test-single-sign-on)** to verify whether the configuration works.
 

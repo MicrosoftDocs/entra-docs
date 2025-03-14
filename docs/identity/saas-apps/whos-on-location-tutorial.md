@@ -58,8 +58,8 @@ Configure and test Microsoft Entra SSO with WhosOnLocation using a test user cal
 To configure and test Microsoft Entra SSO with WhosOnLocation, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure WhosOnLocation SSO](#configure-whosonlocation-sso)** - to configure the single sign-on settings on application side.
     1. **[Create WhosOnLocation test user](#create-whosonlocation-test-user)** - to have a counterpart of B.Simon in WhosOnLocation that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -143,7 +143,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 4. Perform the following steps in the following page.
 
-    ![Screenshot shows the Employess Access tab where you can enter user data.](./media/whosonlocation-tutorial/user.png "Data Management")
+    ![Screenshot shows the Employee Access tab where you can enter user data.](./media/whosonlocation-tutorial/user.png "Data Management")
 
     a. Change **Single sign-on with SAML** to **Yes**.
 

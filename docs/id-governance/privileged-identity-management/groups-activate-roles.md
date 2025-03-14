@@ -1,9 +1,9 @@
 ---
 title: Activate your group membership or ownership in Privileged Identity Management
-description: Learn how to activate your group membership or ownership in Privileged Identity Management (PIM).
-
+description: Learn how to activate your group membership or ownership in Privileged
+  Identity Management (PIM).
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-id-governance
 ms.topic: how-to
 ms.subservice: privileged-identity-management
@@ -11,7 +11,6 @@ ms.date: 12/13/2024
 ms.author: barclayn
 ms.reviewer: ilyal
 ms.custom: pim
-
 ---
 
 # Activate your group membership or ownership in Privileged Identity Management

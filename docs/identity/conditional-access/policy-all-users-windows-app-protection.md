@@ -9,7 +9,7 @@ ms.date: 06/27/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: lhuangnorth, jogro
 ---
 # Require an app protection policy on Windows devices
@@ -61,6 +61,9 @@ The following steps help create a Conditional Access policy requiring an app pro
    1. **For multiple controls** select **Require one of the selected controls**
 1. Confirm your settings and set **Enable policy** to **Report-only**.
 1. Select **Create** to create to enable your policy.
+
+>[!Note]
+>If you set to **Require all the selected controls** or just use the **Require app protection policy** control alone, you need to make sure that you only target unmanaged devices or that the devices are not MDM managed. Otherwise, the policy will block access to all applications since it cannot assess whether the application is compliant as per policy.
 
 After administrators confirm the settings using [report-only mode](howto-conditional-access-insights-reporting.md), they can move the **Enable policy** toggle from **Report-only** to **On**.
 

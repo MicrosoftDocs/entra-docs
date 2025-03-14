@@ -44,7 +44,7 @@ Next, use the Learning Center article,  [**Extend Microsoft Entra ID to a Legacy
 We'll now create a new enterprise application in Microsoft Entra ID that is used for authenticating end-users.
 
 >[!Note]
-> When leveraging Microsoft Entra ID features such as Conditional Access it's important to create an enterprise application per on-premises application. This permits per-app conditional access, per-app risk evaluation, per-app assigned permissions, etc. Generally, an enterprise application in Microsoft Entra  ID maps to an Azure connector in Maverics.
+> When leveraging Microsoft Entra ID features such as Conditional Access it's important to create an enterprise application per on-premises application. This permits per-app Conditional Access, per-app risk evaluation, per-app assigned permissions, etc. Generally, an enterprise application in Microsoft Entra  ID maps to an Azure connector in Maverics.
 
 1. In your Microsoft Entra ID tenant, go to **Enterprise applications**, click **New Application** and search for **Maverics Identity Orchestrator SAML Connector** in the Microsoft Entra ID gallery, and then select it.
 

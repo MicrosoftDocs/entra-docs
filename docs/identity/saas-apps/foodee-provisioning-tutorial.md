@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 02/27/2025
 ms.author: thomasakelo
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to Foodee so that I can streamline the user management process and ensure that users have the appropriate access to Foodee.
@@ -28,7 +28,7 @@ This article shows you how to configure Microsoft Entra ID in Foodee and Microso
 This article assumes that you've met the following prerequisites:
 
 * A Microsoft Entra tenant
-* [A Foodee tenant](https://www.food.ee/about/)
+* [A Foodee tenant](https://www.food.ee/about-us/)
 * A user account in Foodee with Admin permissions
 
 ## Assign users to Foodee 

@@ -26,10 +26,8 @@ Integrating Jobscience with Microsoft Entra ID provides you with the following b
 If you want to know more details about SaaS app integration with Microsoft Entra ID, see [what is application access and single sign-on with Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with Jobscience, you need the following items:
-
-- A Microsoft Entra subscription
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 - A Jobscience single sign-on enabled subscription
 
 > [!NOTE]
@@ -141,7 +139,7 @@ In this section, you enable Microsoft Entra single sign-on in the Azure portal a
 
     e. As **SAML Identity Type**, select **Assertion contains the Federation ID from the User object**.
 
-    f. As **SAML Identity Location**, select **Identity is in the NameIdentfier element of the Subject statement**.
+    f. As **SAML Identity Location**, select **Identity is in the NameIdentifier element of the Subject statement**.
 
     g. In **Identity Provider Login URL** textbox, paste the value of **SAML Single Sign-On Service URL**.
 

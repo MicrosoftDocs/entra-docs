@@ -2,7 +2,7 @@
 title: Troubleshoot Kerberos Constrained Delegation (KCD) with Microsoft Entra application proxy.
 description: Troubleshoot Kerberos Constrained Delegation (KCD) configurations with Microsoft Entra application proxy.
 author: kenwith
-manager: rkarlin
+manager: femila
 ms.service: entra-id
 ms.subservice: app-proxy
 ms.topic: troubleshooting
@@ -105,7 +105,7 @@ The consumer of the Kerberos ticket the connector provided. At this stage, expec
 
      *Microsoft Entra private network connector can't authenticate the user because the backend server responds to Kerberos authentication attempts with an HTTP 401 error.*
 
-      ![Shows HTTTP 401 forbidden error](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic8.png)
+      ![Shows HTTP 401 forbidden error](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic8.png)
 
    - Check the IIS application. Make sure that the configured application pool and the SPN are configured to use the same account in Microsoft Entra ID. Navigate in IIS as shown in the following illustration.
 

@@ -5,11 +5,11 @@ description: Detailed guidance for planning the prerequisites to deploy password
 ms.service: entra-id 
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 01/14/2025
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: mepples21
-manager: amycolannino
+manager: femila
 ms.reviewer: miepping
 
 ms.collection: M365-identity-device-management

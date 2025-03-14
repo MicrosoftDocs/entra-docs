@@ -25,10 +25,8 @@ In this article,  you'll learn how to integrate Hone with Microsoft Entra ID. Wh
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To integrate Microsoft Entra ID with Hone, you need:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Hone single sign-on (SSO) enabled subscription.
 
 ## Scenario description
@@ -55,8 +53,8 @@ Configure and test Microsoft Entra SSO with Hone using a test user called **B.Si
 To configure and test Microsoft Entra SSO with Hone, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra ID test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra ID test user](#assign-the-microsoft-entra-id-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Create a Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Hone SSO](#configure-hone-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Hone test user](#create-hone-test-user)** - to have a counterpart of B.Simon in Hone that is linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -81,11 +79,11 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section, find **Federation Metadata XML** and select **Download** to download the certificate and save it on your computer.
 
-	![Screesnshot shows the Certificate download link.](common/metadataxml.png "Certificate")
+	![Screenshot shows the Certificate download link.](common/metadataxml.png "Certificate")
 
 1. On the **Set up Hone** section, copy the appropriate URL(s) based on your requirement.
 
-	![Screeshot shows to copy configuration URLs.](common/copy-configuration-urls.png "Metadata")
+	![Screenshot shows to copy configuration URLs.](common/copy-configuration-urls.png "Metadata")
 
 ### Create a Microsoft Entra ID test user
 

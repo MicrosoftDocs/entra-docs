@@ -24,10 +24,8 @@ In this article,  you learn how to integrate Google Cloud / G Suite Connector by
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription.
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Google Cloud / G Suite Connector by Microsoft single sign-on (SSO) enabled subscription.
 * A Google Apps subscription or Google Cloud Platform subscription.
 
@@ -106,8 +104,8 @@ Configure and test Microsoft Entra SSO with Google Cloud / G Suite Connector by 
 To configure and test Microsoft Entra SSO with Google Cloud / G Suite Connector by Microsoft, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Google Cloud/G Suite Connector by Microsoft SSO](#configure-google-cloudg-suite-connector-by-microsoft-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Google Cloud/G Suite Connector by Microsoft test user](#create-google-cloudg-suite-connector-by-microsoft-test-user)** - to have a counterpart of B.Simon in Google Cloud / G Suite Connector by Microsoft that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.

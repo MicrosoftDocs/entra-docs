@@ -2,7 +2,7 @@
 title: Secure and govern security operations center (SOC) access in a multitenant organization with Microsoft Defender for Cloud XDR and Microsoft Entra ID Governance
 description: Learn how to provide security operations analysts access to resources across tenants.
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: multitenant-organizations
 ms.topic: overview
@@ -48,7 +48,7 @@ Microsoft Entra provides the controls needed to govern the lifecycle of a SOC us
 | Attributes of the user in the target tenant | Minimal, supplied by user themselves at request time | Synchronized from the source tenant |
 
 ### Access control
-You can use entitlement management and cross-tenant access policies to control access to resources across tenants. Entitlement management will assign the right users to the right resources, while cross-tenant access policies and conditional access together perform the necessary run-time checks to ensure the right users are accessing the right resources.
+You can use entitlement management and cross-tenant access policies to control access to resources across tenants. Entitlement management will assign the right users to the right resources, while cross-tenant access policies and Conditional Access together perform the necessary run-time checks to ensure the right users are accessing the right resources.
 
 **Entitlement management**
 
@@ -64,7 +64,7 @@ External identities cross-tenant access settings manage how you collaborate with
 
 ## Deployment topologies
 
-This section describes how you can use tools such as cross-tenant synchronization, entitlement management, cross-tenant access policies, and conditional access together. In both topologies, the target tenant admin has full control over access to resources in the target tenant. They differ in who initiates provisioning and deprovisioning.
+This section describes how you can use tools such as cross-tenant synchronization, entitlement management, cross-tenant access policies, and Conditional Access together. In both topologies, the target tenant admin has full control over access to resources in the target tenant. They differ in who initiates provisioning and deprovisioning.
 
 ### Topology 1
 
@@ -108,7 +108,7 @@ Once you have completed the setup, SOC users can navigate to myaccess.microsoft.
 
 **Topologies compared**
 
-In both topologies, the target tenant can control what resources users have access to. This can be accomplished using a mix of cross-tenant access policies, conditional access, and assignment of apps and roles to users. They differ in who configures and initiates provisioning. In topology 1, the source tenant configures provisioning and pushes users into the target tenants. In topology 2, the target tenant defines which users are eligible to access their tenant.
+In both topologies, the target tenant can control what resources users have access to. This can be accomplished using a mix of cross-tenant access policies, Conditional Access, and assignment of apps and roles to users. They differ in who configures and initiates provisioning. In topology 1, the source tenant configures provisioning and pushes users into the target tenants. In topology 2, the target tenant defines which users are eligible to access their tenant.
 
 If a user needs access to several tenants at one time, topology 1 makes it easy for them to request access to an access package in one tenant and automatically get provisioned into several tenants. If the target tenant wants to ensure full control over who is provisioned into their tenant and perform the necessary approvals in their tenant, topology 2 will best meet their needs.
 

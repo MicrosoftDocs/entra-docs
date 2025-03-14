@@ -1,7 +1,7 @@
 ---
 title: "What's new in Microsoft Entra application management"
 description: "This article shows the new and updated documentation for the Microsoft Entra application management."
-ms.date: 02/05/2025
+ms.date: 03/04/2025
 ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: whats-new
@@ -15,6 +15,21 @@ manager: CelesteDG
 # Microsoft Entra application management: What's new
 
 Welcome to what's new in Microsoft Entra application management documentation. This article lists new docs and those articles that had significant updates in the last three months. To learn what's new with the application management service, see [What's new in Microsoft Entra ID](~/fundamentals/whats-new.md).
+
+## February 2025
+
+### New articles
+
+- [Enable single sign-on for an enterprise application with a relying party STS](add-application-portal-setup-sso-rpsts.md)
+
+### Updated articles
+
+Reviewed the following articles for technical accuracy and clarity:
+
+- [Add an OpenID Connect-based single sign-on application](add-application-portal-setup-oidc-sso.md)
+- [Configure enterprise application properties](add-application-portal-configure.md)
+- [Tutorial: Manage certificates for federated single sign-on](tutorial-manage-certificates-for-federated-single-sign-on.md)
+
 
 ## January 2025
 
@@ -37,11 +52,3 @@ Reviewed the following articles for technical accuracy and clarity:
 - [Unexpected error when performing consent to an application](application-sign-in-unexpected-user-consent-error.md)
 
 
-## November 2024
-
-### Updated articles
-
-- [Configure sign-in behavior using Home Realm Discovery](configure-authentication-for-federated-users-portal.md) - Replace legacy PowerShell with Microsoft Graph PowerShell cmdlets
-- [Disable auto-acceleration sign-in](prevent-domain-hints-with-home-realm-discovery.md) - Rewrite content for clarity and accuracy
-- [Home Realm Discovery for an application](home-realm-discovery-policy.md) - Replace legacy PowerShell with Microsoft Graph PowerShell cmdlets
-- [Overview of admin consent workflow](admin-consent-workflow-overview.md) - Review and update content for accuracy and clarity

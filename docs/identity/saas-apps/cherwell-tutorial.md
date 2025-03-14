@@ -23,10 +23,8 @@ In this article,  you'll learn how to integrate Cherwell with Microsoft Entra ID
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with Cherwell, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 
 * Cherwell single sign-on enabled subscription.
 
@@ -59,8 +57,8 @@ Configure and test Microsoft Entra SSO with Cherwell using a test user called **
 To configure and test Microsoft Entra SSO with Cherwell, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    2. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    2. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 2. **[Configure Cherwell SSO](#configure-cherwell-sso)** - to configure the Single Sign-On settings on application side.
     1. **[Create Cherwell test user](#create-cherwell-test-user)** - to have a counterpart of B.Simon in Cherwell that is linked to the Microsoft Entra representation of user.
 3. **[Test SSO](#test-sso)** - to verify whether the configuration works.

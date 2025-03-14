@@ -59,8 +59,8 @@ Configure and test Microsoft Entra SSO with ERA_EHS_CORE using a test user calle
 To configure and test Microsoft Entra SSO with ERA_EHS_CORE, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure ERA_EHS_CORE SSO](#configure-era_ehs_core-sso)** - to configure the single sign-on settings on application side.
     1. **[Create ERA_EHS_CORE test user](#create-era_ehs_core-test-user)** - to have a counterpart of B.Simon in ERA_EHS_CORE that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
