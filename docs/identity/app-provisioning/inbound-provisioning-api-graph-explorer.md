@@ -21,7 +21,7 @@ This tutorial describes how you can quickly test [API-driven inbound provisionin
 * You configured [API-driven inbound provisioning app](inbound-provisioning-api-configure-app.md). 
 
 > [!NOTE]
-> This provisioning API is primarily meant for use within an application or service. Tenant admins can either configure a service principal or managed identity to grant permission to perform the upload. There's no separate user-assignable Microsoft Entra built-in directory role for this API. Outside of applications that acquired `SynchronizationData-User.Upload` permission with admin consent, only admin users with Global Administrator or User Administrator roles can invoke the API. This tutorial shows how you can test the API with a User Administrator role in your test setup. 
+> This provisioning API is primarily meant for use within an application or service. Tenant admins can either configure a service principal or managed identity to grant permission to perform the upload. There's no separate user-assignable Microsoft Entra built-in directory role for this API. Outside of applications that acquired `SynchronizationData-User.Upload` permission with admin consent, admin users with the [User Administrator](../role-based-access-control/permissions-reference.md#user-administrator) role can invoke the API. This tutorial shows how you can test the API with a User Administrator role in your test setup. 
 
 ## Upload user data to the inbound provisioning API 
 
