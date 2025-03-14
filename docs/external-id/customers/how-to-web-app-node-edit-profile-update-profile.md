@@ -7,7 +7,7 @@ ms.author: kengaderdus
 ms.service: entra-external-id 
 ms.subservice: external
 ms.topic: how-to
-ms.date: 11/28/2024
+ms.date: 03/14/2025
 ms.custom: developer
 #Customer intent: As a developer, I want to learn how to add edit profile to a Node.js web app so that customer users can update their profile after a successful sign-in to external-facing app.
 ---
@@ -298,6 +298,7 @@ In this section, you add the identity related code for the mid-tier app (EditPro
           "Enter_the_Edit_Profile_Service_Application_Id_Here", // 'Application (client) ID' of the Edit_Profile Service App registration in Microsoft Entra admin center - this value is a GUID
         authority:
           process.env.AUTHORITY || `https://${TENANT_SUBDOMAIN}.ciamlogin.com/`, // Replace the placeholder with your external tenant name
+        clientSecret: process.env.CLIENT_SECRET || "Enter_the_Client_Secret_Here ", // Client secret generated from the app registration in Microsoft Entra admin center
       },
       system: {
         loggerOptions: {
