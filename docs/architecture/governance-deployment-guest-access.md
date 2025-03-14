@@ -190,7 +190,7 @@ For PoC deployment instructions, go to [Scenario 2: Assign employee access to re
 14. For **Logic app name**, type a name.
 15. Select **Create a logic app**. 
 
-   [ ![Screenshot of the Create a custom extension dialog with highlighted options.](media/governance-deployment/create-custom.png)](media/governance-deployment/create-custom-expanded.png#lightbox)
+    [ ![Screenshot of the Create a custom extension dialog with highlighted options.](media/governance-deployment/create-custom.png)](media/governance-deployment/create-custom-expanded.png#lightbox)
 
 16. The logic app is created.
 17. Select **Review** and **Create**.
