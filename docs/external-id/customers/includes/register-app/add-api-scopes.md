@@ -37,8 +37,5 @@ An API needs to publish a minimum of one scope, also called [Delegated Permissio
     | Admin consent display name | *Read and write users ToDo list using the 'ToDoListApi'* |
     | Admin consent description | *Allow the app to read and write the user's ToDo list using the 'ToDoListApi'* |
     | State | **Enabled** |
-    
-1. Under **Manage**, select **Manifest** to open the API manifest editor.
-1. Make sure the `accessTokenAcceptedVersion` property is set to *2*, and if it's not, update it to *2* the select **Save**.
 
 Learn more about [the principle of least privilege when publishing permissions](/security/zero-trust/develop/protected-api-example) for a web API. 
