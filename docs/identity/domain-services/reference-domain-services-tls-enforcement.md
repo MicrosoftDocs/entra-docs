@@ -10,6 +10,7 @@ ms.subservice: domain-services
 ms.topic: how-to
 ms.date: 03/14/2025
 ms.author: justinha
+ms.reviewer: bochingwa
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 # TLS 1.2 enforcement for Microsoft Entra Domain Services
