@@ -57,8 +57,8 @@ Configure and test Microsoft Entra SSO with Asset Planner using a test user call
 To configure and test Microsoft Entra SSO with Asset Planner, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Asset Planner SSO](#configure-asset-planner-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Asset Planner test user](#create-asset-planner-test-user)** - to have a counterpart of B.Simon in Asset Planner that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.

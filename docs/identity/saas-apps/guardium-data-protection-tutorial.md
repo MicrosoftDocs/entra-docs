@@ -59,8 +59,8 @@ Configure and test Microsoft Entra SSO with Guardium Data Protection using a tes
 To configure and test Microsoft Entra SSO with Guardium Data Protection, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Guardium Data Protection SSO](#configure-guardium-data-protection-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Guardium Data Protection test user](#create-guardium-data-protection-test-user)** - to have a counterpart of B.Simon in Guardium Data Protection that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.

@@ -24,7 +24,7 @@ Welcome to what's new in documentation for Microsoft Entra External ID in extern
 
 ### Updated articles
 
-- [Add OpenID Connect as an external identity provider (preview)](how-to-custom-oidc-federation-customers.md) - Email claim is now mandatory
+- [Add OpenID Connect as an external identity provider](how-to-custom-oidc-federation-customers.md) - Email claim is now mandatory
 - [Microsoft Entra External ID frequently asked questions](faq-customers.md) - Updated billing for phone charges
 - [Identity providers for external tenants](concept-authentication-methods-customers.md) - Included SAML/WS-Fed details
 
@@ -46,7 +46,7 @@ Welcome to what's new in documentation for Microsoft Entra External ID in extern
 
 ### Updated articles
 
-- [Add Azure AD B2C tenant as an OpenID Connect identity provider (preview)](how-to-b2c-federation-customers.md) - Editorial updates
+- [Add Azure AD B2C tenant as an OpenID Connect identity provider](how-to-b2c-federation-customers.md) - Editorial updates
 
 ## December 2024
 

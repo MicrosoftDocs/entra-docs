@@ -59,8 +59,8 @@ For single sign-on to work, a link relationship between a Microsoft Entra user a
 To configure and test Microsoft Entra single sign-on with KnowBe4, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra SSO with Britta Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable Britta Simon to use Microsoft Entra SSO.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra SSO with Britta Simon.
+    1. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra SSO.
 2. **[Configure KnowBe4 Security Awareness Training SSO](#configure-knowbe4-security-awareness-training-sso)** - to configure the SSO settings on application side.
     1. **[Create KnowBe4 Security Awareness Training test user](#create-knowbe4-security-awareness-training-test-user)** - to have a counterpart of Britta Simon in KnowBe4 Security Awareness Training that is linked to the Microsoft Entra representation of user.
 3. **[Test SSO](#test-sso)** - to verify whether the configuration works.

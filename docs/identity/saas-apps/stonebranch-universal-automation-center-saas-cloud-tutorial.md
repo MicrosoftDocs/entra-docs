@@ -54,8 +54,8 @@ Configure and test Microsoft Entra SSO with Stonebranch Universal Automation Cen
 To configure and test Microsoft Entra SSO with Stonebranch Universal Automation Center (SaaS Cloud), perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-microsoft-entra-id-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Stonebranch Universal Automation Center (SaaS Cloud) SSO](#configure-stonebranch-universal-automation-center-saas-cloud-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Stonebranch Universal Automation Center (SaaS Cloud) test user](#create-stonebranch-universal-automation-center-saas-cloud-test-user)** - to have a counterpart of B.Simon in Stonebranch Universal Automation Center (SaaS Cloud) that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.

@@ -55,8 +55,8 @@ Configure and test Microsoft Entra SSO with RStudio Connect SAML Authentication 
 To configure and test Microsoft Entra SSO with RStudio Connect SAML Authentication, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with Britta Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable Britta Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
+    1. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
 2. **[Configure RStudio Connect SAML Authentication SSO](#configure-rstudio-connect-saml-authentication-sso)** - to configure the Single Sign-On settings on application side.
     1. **[Create RStudio Connect SAML Authentication test user](#create-rstudio-connect-saml-authentication-test-user)** - to have a counterpart of Britta Simon in RStudio Connect SAML Authentication that is linked to the Microsoft Entra representation of user.
 3. **[Test SSO](#test-sso)** - to verify whether the configuration works.
