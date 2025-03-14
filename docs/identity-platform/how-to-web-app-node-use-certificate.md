@@ -6,11 +6,9 @@ author: kengaderdus
 manager: mwongerapk
 
 ms.author: kengaderdus
-ms.service: entra-external-id
-
-ms.subservice: external
+ms.service: identity-platform
 ms.topic: how-to
-ms.date: 06/13/2024
+ms.date: 03/16/2025
 ms.custom: developer, devx-track-js
 #Customer intent: As a dev, devops, I want to learn Learn how to use a client certificate instead of a client secret for authentication in my Node.js web app
 ---

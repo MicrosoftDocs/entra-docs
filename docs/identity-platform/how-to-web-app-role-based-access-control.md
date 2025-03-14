@@ -6,11 +6,9 @@ author: kengaderdus
 manager: mwongerapk
 
 ms.author: kengaderdus
-ms.service: entra-external-id
- 
-ms.subservice: external
+ms.service: identity-platform
 ms.topic: how-to
-ms.date: 01/27/2024
+ms.date: 03/16/2025
 ms.custom: developer, devx-track-js
 #Customer intent: As a dev, devops or IT admin, I want to learn Learn how to use roles and groups present in a security token so that I can to control access to various resources in my Node.js web application.
 ---

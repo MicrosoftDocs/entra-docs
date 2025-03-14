@@ -5,10 +5,9 @@ description: Learn how to acquire an access token for calling an API in your own
 author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
-ms.service: entra-external-id 
-ms.subservice: external
+ms.service: identity-platform
 ms.topic: how-to
-ms.date: 01/27/2024
+ms.date: 03/16/2025
 ms.custom: developer, devx-track-js
 #Customer intent: As a developer, I want to learn about how to acquire an access token in my Node.js client web app, so that I can call a web API that's protected by Microsoft Entra External ID.
 ---

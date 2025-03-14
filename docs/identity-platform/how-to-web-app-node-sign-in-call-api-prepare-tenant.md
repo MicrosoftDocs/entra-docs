@@ -4,10 +4,9 @@ description: Learn how to prepare your external tenant to sign in users and call
 author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
-ms.service: entra-external-id 
-ms.subservice: external
+ms.service: identity-platform
 ms.topic: how-to
-ms.date: 06/10/2024
+ms.date: 03/16/2025
 ms.custom: developer, devx-track-js
 #Customer intent: As a developer, devops or IT admin, I want to learn about how to configure my external tenant so that I can call a web API that is protected by Microsoft Entra External ID. 
 ---

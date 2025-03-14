@@ -5,10 +5,9 @@ description: Learn how to call a protected API in your own Node.js web applicati
 author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
-ms.service: entra-external-id 
-ms.subservice: external
+ms.service: identity-platform
 ms.topic: how-to
-ms.date: 01/27/2024
+ms.date: 03/16/2025
 ms.custom: developer, devx-track-js
 #Customer intent: As a developer, I want to learn about how to call a web API that is protected by Microsoft Entra External ID by using an access token.
 ---
