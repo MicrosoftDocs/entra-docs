@@ -54,6 +54,9 @@ To update an application to require user assignment, you must be owner of the ap
 
 When an application requires assignment, user consent for that application isn't allowed. This is true even if users consent for that app would have otherwise been allowed. Be sure to [grant tenant-wide admin consent](~/identity/enterprise-apps/grant-admin-consent.md) to apps that require assignment.
 
+> [!NOTE]
+> If the user is a Global Administrator, user assignment requirement will not be applicable. Global Administrator is an highly privileged role that allows access to all administrative features in Microsoft Entra ID and can elevate their access to manage all Azure subscriptions and management groups. 
+
 ## Assign the app to users and groups to restrict access
 
 Once you've configured your app to enable user assignment, you can go ahead and assign the app to users and groups.
