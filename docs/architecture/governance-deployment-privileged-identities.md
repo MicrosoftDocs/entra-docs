@@ -11,7 +11,7 @@ ms.author: gasinh
 #customer intent: I want to understand how to deploy Microsoft Entra ID Governance in my test and production environments.
 ---
 
-# Microsoft Entra ID Governance deployment guide to govern privileged identities
+# Microsoft Entra ID Governance deployment guide to govern privileged identities 
 
 Deployment scenarios are guidance on how to combine and test Microsoft Security products and services. You can discover how capabilities work together to improve productivity, strengthen security, and more easily meet compliance and regulatory requirements. 
 
