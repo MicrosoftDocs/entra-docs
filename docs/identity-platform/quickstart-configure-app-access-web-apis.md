@@ -138,7 +138,7 @@ The **Grant admin consent** button is *disabled* if you aren't an admin or if no
 It's important not to give an application too many permissions than is necessary. To revoke admin consent for a permission in your application;
 
 1. Navigate to your application and select **API permissions**.
-2. Under **Configured permissions**, select the three dots next to the permission you wish to remove, and select **Revoke admin consent**
+2. Under **Configured permissions**, select the three dots next to the permission you wish to remove, and select **Revoke admin consent**.
 3. In the pop-up that appears, select **Yes, remove** to revoke the admin consent for the permission.
 
 ## Related content
