@@ -212,7 +212,7 @@ For PoC deployment instructions, go to [Scenario 2: Assign employee access to re
 9. Select the **All** tab.
 10. Select **Office 365**.
 
-   [ ![Screenshot of the All tab and the Office 365 option.](media/governance-deployment/all-tab-office.png)](media/governance-deployment/all-tab-office-expanded.png#lightbox)
+    [ ![Screenshot of the All tab and the Office 365 option.](media/governance-deployment/all-tab-office.png)](media/governance-deployment/all-tab-office-expanded.png#lightbox)
 
 11. On the **Actions** tab, select **Send an email (v2)**.
 12. On **Send an email Action v2**, for **To**, type a name.
@@ -222,7 +222,7 @@ For PoC deployment instructions, go to [Scenario 2: Assign employee access to re
 16. Select **DisplayName**.
 17. For **Body**, type **User added as an exception to Conditional Access policy**. 
 
-   [ ![Screenshot of the Add dynamic content diaglog and highlighted options.](media/governance-deployment/user-added.png)](media/governance-deployment/user-added-expanded.png#lightbox)
+    [ ![Screenshot of the Add dynamic content diaglog and highlighted options.](media/governance-deployment/user-added.png)](media/governance-deployment/user-added-expanded.png#lightbox)
 
 18. Select **Save**.
 
