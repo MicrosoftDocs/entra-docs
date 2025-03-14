@@ -15,7 +15,7 @@ ms.author: gasinh
 
 Deployment scenarios are guidance on how to combine and test Microsoft Security products and services. You can discover how capabilities work together to improve productivity, strengthen security, and more easily meet compliance and regulatory requirements. 
 
-The following products and services appear in this guide:
+The following products and services appear in this guide: 
 
 * [Microsoft Entra ID Governance](../id-governance/identity-governance-overview.md)
 * [Lifecycle workflows](../id-governance/what-are-lifecycle-workflows.md)
