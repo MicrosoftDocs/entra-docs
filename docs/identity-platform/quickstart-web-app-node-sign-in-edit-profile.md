@@ -20,7 +20,7 @@ In this Quickstart, you use a sample Node.js web app to learn how to add sign in
 
 ## Prerequisites
 
-- Complete the steps in [Quickstart: Sign in users in a sample web app](quickstart-web-app-sign-in.md?pivots=external&tabs=node-external) article. This Quickstart shows you how to sign in users by using a sample Node.js web app. 
+- Complete the steps and prerequisites in [Quickstart: Sign in users in a sample web app](quickstart-web-app-sign-in.md?pivots=external&tabs=node-external) article. This Quickstart shows you how to sign in users by using a sample Node.js web app. 
 
 ## Register and configure EditProfileService app
 
