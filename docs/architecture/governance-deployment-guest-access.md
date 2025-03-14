@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 03/11/2025
+ms.date: 03/14/2025
 ms.author: gasinh
 
 #customer intent: My goal is understand deployment of Microsoft Entra ID Governance in my test and production environments.
@@ -29,7 +29,7 @@ Use this scenario to help determine the need for [Microsoft Entra ID Governance]
 
 ## PoC timeline
 
-Timelines show approximate delivery stage duration and are based on scenario complexity.
+Proof-of-concept (PoC) timlines show approximate delivery stage duration and are based on scenario complexity. Times are estimations and vary depending on the environment. 
 
 * Onboarding and discovery - 2 hours
 * Auto assign resources - 1 hour
@@ -55,7 +55,7 @@ To enable the scenario, ensure the following requirements are met:
 
 ### B2B collaboration and guest users
 
-To collaborate with guest users, you can let them use their preferred identity to sign in to your app or other enterprise apps: SaaS, custom-developed, etc. Typically, B2B collaboration users are in your directory as guest users.  
+To collaborate with guest users, you can let them use their preferred identity to sign in to your app or other enterprise apps: SaaS, custom-developed, and more. Typically, B2B collaboration users are in your directory as guest users.  
 
 Learn more in the overview, [B2B collaboration with external guests for your workforce](../external-id/what-is-b2b.md). 
 
