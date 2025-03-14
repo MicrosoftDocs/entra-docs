@@ -146,12 +146,12 @@ Once the request is sent, you should receive a response indicating that the poli
 
 ## Confirm the policy has been applied
 
-Once you have updated your application management, you can confirm that it has been applied by reading the default application management policy again as shown earlier. The response should show the updated policy with the restrictions you applied.
+Once you have updated your application management, you can confirm that it has been applied by reading the default application management policy again as [shown earlier](#read-your-tenant-application-management-policy). The response should show the updated policy with the restrictions you applied.
 
 If this is the first time you are applying an application management policy you will also notice that the `id` field has changed from `00000000-0000-0000-0000-000000000000` to a new GUID. This indicates that the policy has been created.
 
 ## Related content
 
-* [Microsoft Entra application management policies API overview](/graph/api/resources/applicationauthenticationmethodpolicy)
-* [Configure Microsoft Entra for increased security](https://aka.ms/EntraSecurityRecommendations).
-* [Migrate applications away from secret-based authentication](../enterprise-apps/migrate-applications-from-secrets.md)
+* To learn more about available restrictions and policy settings, see [Microsoft Entra application management policies API overview](/graph/api/resources/applicationauthenticationmethodpolicy)
+* To learn more about security best practices for your organization, see[Configure Microsoft Entra for increased security](https://aka.ms/EntraSecurityRecommendations).
+* To learn more about alternatives to authenticating with secrets, see [Migrate applications away from secret-based authentication](../enterprise-apps/migrate-applications-from-secrets.md)
