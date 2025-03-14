@@ -497,8 +497,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 
 None
 
-```
-
 ---
 
 #### Get the custom security attribute assignments for a user
