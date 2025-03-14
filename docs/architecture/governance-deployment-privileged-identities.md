@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 03/13/2025
+ms.date: 03/14/2025
 ms.author: gasinh
 
 #customer intent: I want to understand how to deploy Microsoft Entra ID Governance in my test and production environments.
@@ -32,7 +32,7 @@ The following products and services appear in this guide:
 
 ## PoC timeline
 
-Timelines show approximate delivery stage duration and are based on scenario complexity. 
+Proof-of-concept (PoC) timelines show approximate delivery stage duration and are based on scenario complexity. Times are estimations and vary depending on the environment. 
 
 1. Discovery and insights - 1 hour
 2. Microsoft Entra ID roles - 1 hour
