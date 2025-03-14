@@ -9,7 +9,7 @@ ms.date: 08/25/2024
 ms.topic: how-to
 ms.service: entra-id
 ms.subservice: users
-ms.custom: it-pro, has-azure-ad-ps-ref
+ms.custom: it-pro, no-azure-ad-ps-ref
 ---
 
 # Assign, update, list, or remove custom security attributes for a user
@@ -22,7 +22,7 @@ To assign or remove custom security attributes for a user in your Microsoft Entr
 
 - [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator)
 - Microsoft.Graph module when using [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation)
-- [AzureADPreview](https://www.powershellgallery.com/packages/AzureADPreview) version 2.0.2.138 or later when using Azure AD PowerShell
+- [Microsoft.Entra.Beta](https://www.powershellgallery.com/packages/Microsoft.Entra.Beta) for Microsoft Entra ID PowerShell
 
 [!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
     
@@ -154,7 +154,7 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 }
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
+# [Microsoft Entra ID PowerShell](#tab/microsoft-entra-id-powershell)
 
 None
 
@@ -203,20 +203,9 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 }
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
+# [Microsoft Entra ID PowerShell](#tab/microsoft-entra-id-powershell)
 
-[Set-AzureADMSUser](/powershell/module/azuread/set-azureadmsuser)
-
-```powershell
-$attributes = @{
-    Engineering = @{
-        "@odata.type" = "#Microsoft.DirectoryServices.CustomSecurityAttributeValue"
-        "Project@odata.type" = "#Collection(String)"
-        Project = @("Baker","Cascade")
-    }
-}
-Set-AzureADMSUser -Id 00aa00aa-bb11-cc22-dd33-44ee44ee44ee -CustomSecurityAttributes $attributes
-```
+None
 
 ---
 
@@ -263,7 +252,7 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 }
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
+# [Microsoft Entra ID PowerShell](#tab/microsoft-entra-id-powershell)
 
 None
 
@@ -312,7 +301,7 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 }
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
+# [Microsoft Entra ID PowerShell](#tab/microsoft-entra-id-powershell)
 
 None
 
@@ -359,7 +348,7 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 }
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
+# [Microsoft Entra ID PowerShell](#tab/microsoft-entra-id-powershell)
 
 None
 
@@ -408,7 +397,7 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 }
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
+# [Microsoft Entra ID PowerShell](#tab/microsoft-entra-id-powershell)
 
 None
 
@@ -455,7 +444,7 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 }
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
+# [Microsoft Entra ID PowerShell](#tab/microsoft-entra-id-powershell)
 
 None
 
@@ -504,19 +493,10 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 }
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
+# [Microsoft Entra ID PowerShell](#tab/microsoft-entra-id-powershell)
 
-[Set-AzureADMSUser](/powershell/module/azuread/set-azureadmsuser)
+None
 
-```powershell
-$attributesUpdate = @{
-    Engineering = @{
-        "@odata.type" = "#Microsoft.DirectoryServices.CustomSecurityAttributeValue"
-        "Project@odata.type" = "#Collection(String)"
-        Project = @("Alpine","Baker")
-    }
-}
-Set-AzureADMSUser -Id 00aa00aa-bb11-cc22-dd33-44ee44ee44ee -CustomSecurityAttributes $attributesUpdate 
 ```
 
 ---
@@ -610,12 +590,12 @@ If there are no custom security attributes assigned to the user or if the callin
 }
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
+# [Microsoft Entra ID PowerShell](#tab/microsoft-entra-id-powershell)
 
-[Get-AzureADMSUser](/powershell/module/azuread/get-azureadmsuser)
+[Get-EntraBetaUser](/powershell/module/microsoft.entra.beta/get-entrabetauser)
 
 ```powershell
-$user1 = Get-AzureADMSUser -Id 00aa00aa-bb11-cc22-dd33-44ee44ee44ee -Select CustomSecurityAttributes
+$user1 = Get-EntraBetaUser -Id 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
 $user1.CustomSecurityAttributes
 ```
 
@@ -712,7 +692,7 @@ ConsistencyLevel: eventual
 }
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
+# [Microsoft Entra ID PowerShell](#tab/microsoft-entra-id-powershell)
 
 None
 
@@ -827,7 +807,7 @@ ConsistencyLevel: eventual
 }
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
+# [Microsoft Entra ID PowerShell](#tab/microsoft-entra-id-powershell)
 
 None
 
@@ -946,7 +926,7 @@ ConsistencyLevel: eventual
 }
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
+# [Microsoft Entra ID PowerShell](#tab/microsoft-entra-id-powershell)
 
 None
 
@@ -994,7 +974,7 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 }
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
+# [Microsoft Entra ID PowerShell](#tab/microsoft-entra-id-powershell)
 
 None
 
@@ -1040,7 +1020,7 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 }
 ```
 
-# [Azure AD PowerShell](#tab/aad-powershell)
+# [Microsoft Entra ID PowerShell](#tab/microsoft-entra-id-powershell)
 
 None
 
