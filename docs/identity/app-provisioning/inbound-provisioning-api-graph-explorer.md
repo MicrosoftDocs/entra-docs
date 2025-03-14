@@ -30,7 +30,7 @@ This tutorial describes how you can quickly test [API-driven inbound provisionin
 1. Select the user profile icon to sign in. 
 
      [![Image showing the user profile icon.](media/inbound-provisioning-api-graph-explorer/provisioning-user-profile-icon.png)](media/inbound-provisioning-api-graph-explorer/provisioning-user-profile-icon.png#lightbox)
-1. Complete the login process with a user account that has [User Administrator](../role-based-access-control/permissions-reference#user-administrator) role access.
+1. Complete the login process with a user account that has [User Administrator](/entra-docs-pr/docs/identity/role-based-access-control/permissions-reference.md#user-administrator) role access.
 1. Upon successful login, the Tenant information shows your tenant name.
 
      [![Screenshot of Tenant name.](media/inbound-provisioning-api-graph-explorer/provisioning-tenant-name.png)](media/inbound-provisioning-api-graph-explorer/provisioning-tenant-name.png#lightbox)
