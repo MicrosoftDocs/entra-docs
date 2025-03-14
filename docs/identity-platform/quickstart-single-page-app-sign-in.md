@@ -21,71 +21,49 @@ In this quickstart, you use a sample single-page app (SPA) to show you how to si
  
 ## Prerequisites
 
-#### [JavaScript](#tab/javascript-workforce)
-
 * An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   * Application Administrator
   * Application Developer
-  * Cloud Application Administrator.
-* [Node.js](https://nodejs.org/en/download/).
+  * Cloud Application Administrator
+* A workforce tenant. You can use your Default Directory or [set up a new tenant](./quickstart-create-new-tenant.md).
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-
-#### [React](#tab/react-workforce)
-
-* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-  * Application Administrator
-  * Application Developer
-  * Cloud Application Administrator.
-* [Node.js](https://nodejs.org/en/download/).
-* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-
-#### [Angular](#tab/angular-workforce)
-
-* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-  * Application Administrator
-  * Application Developer
-  * Cloud Application Administrator.
-* [Node.js](https://nodejs.org/en/download/).
-* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-
-#### [Blazor](#tab/blazor-workforce)
-
-* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-  * Application Administrator
-  * Application Developer
-  * Cloud Application Administrator.
-* [.NET SDK](https://dotnet.microsoft.com/download/dotnet).
-* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-
----
-
-## Register the application and record identifiers
-
-[!INCLUDE [Register a single-page application](./includes/register-app/spa-common/register-application-spa-common.md)]
-
----
-
-## Add a platform redirect URI
 
 #### [JavaScript](#tab/javascript-workforce)
 
-[!INCLUDE [Add a platform redirect URI](./includes/register-app/spa-common/add-platform-redirect-spa-port-3000.md)]
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
+  * **Name**: *identity-client-spa*
+  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
+  * **Platform configuration**: Single-page application (SPA)
+  * **Redirect URI**: `http://localhost:3000/`
+* [Node.js](https://nodejs.org/en/download/)
 
 #### [React](#tab/react-workforce)
 
-[!INCLUDE [Add a platform redirect URI](./includes/register-app/spa-common/add-platform-redirect-spa-port-3000.md)]
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration and record its identifiers from the app **Overview** page and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
+  * **Name**: *identity-client-spa*
+  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
+  * **Platform configuration**: Single-page application (SPA)
+  * **Redirect URI**: `http://localhost:3000/`
+* [Node.js](https://nodejs.org/en/download/)
 
 #### [Angular](#tab/angular-workforce)
 
-[!INCLUDE [Add a platform redirect URI](./includes/register-app/spa-common/add-platform-redirect-spa-port-4200.md)]
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration and record its identifiers from the app **Overview** page and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
+  * **Name**: *identity-client-spa*
+  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
+  * **Platform configuration**: Single-page application (SPA)
+  * **Redirect URI**: `http://localhost:4200/`
+* [Node.js](https://nodejs.org/en/download/)
 
 #### [Blazor](#tab/blazor-workforce)
 
-[!INCLUDE [Add a platform redirect URI](./includes/register-app/spa-common/add-platform-redirect-spa-port-5000.md)]
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration and record its identifiers from the app **Overview** page and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
+  * **Name**: *identity-client-spa*
+  * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
+  * **Platform configuration**: Single-page application (SPA)
+  * **Redirect URI**: `http://localhost:5000/authentication/login-callback.`
+* [.NET SDK](https://dotnet.microsoft.com/download/dotnet)
 
 ---
 
@@ -263,75 +241,52 @@ Run the project with a web server by using dotnet:
 
 ## Prerequisites
 
-#### [JavaScript](#tab/javascript-external)
-
-* An external tenant. To create one, choose from the following methods:
-  * Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code. *(Recommended)*
-  * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
+* An Azure account with an active subscription. If you don't already have one, [Create an account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
   * Application Administrator
   * Application Developer
-  * Cloud Application Administrator.
-* [Node.js](https://nodejs.org/en/download/).
-* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-
-#### [React](#tab/react-external)
-
+  * Cloud Application Administrator
 * An external tenant. To create one, choose from the following methods:
   * Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code. *(Recommended)*
   * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
-* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-  * Application Administrator
-  * Application Developer
-  * Cloud Application Administrator.
-* [Node.js](https://nodejs.org/en/download/).
+* A user flow. For more information, refer to [create self-service sign-up user flows for apps in external tenants](../external-id/customers/how-to-user-flow-sign-up-sign-in-customers.md). This user flow can be used for multiple applications.
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-
-#### [Angular](#tab/angular-external)
-
-* An external tenant. To create one, choose from the following methods:
-  * Use the [Microsoft Entra External ID extension](https://aka.ms/ciamvscode/samples/marketplace) to set up an external tenant directly in Visual Studio Code. *(Recommended)*
-  * [Create a new external tenant](../external-id/customers/how-to-create-external-tenant-portal.md) in the Microsoft Entra admin center.
-* This Azure account must have permissions to manage applications. Any of the following Microsoft Entra roles include the required permissions:
-  * Application Administrator
-  * Application Developer
-  * Cloud Application Administrator.
-* [Node.js](https://nodejs.org/en/download/).
-* [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
-
----
-
-## Register the application and record identifiers
-
-[!INCLUDE [Register a single-page application](../external-id/customers/includes/register-app/register-client-app-common.md)]
-
-## Add a platform redirect URI
 
 #### [JavaScript](#tab/javascript-external)
 
-[!INCLUDE [Add a platform redirect URI](./includes/register-app/spa-common/add-platform-redirect-spa-port-3000.md)]
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
+    * **Name**: *identity-client-spa*
+    * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
+    * **Platform configuration**: Single-page application (SPA)
+    * **Redirect URI**: `http://localhost:3000/`
+* [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
+* [Node.js](https://nodejs.org/en/download/)
 
 #### [React](#tab/react-external)
 
-[!INCLUDE [Add a platform redirect URI](./includes/register-app/spa-common/add-platform-redirect-spa-port-3000.md)]
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
+    * **Name**: *identity-client-spa*
+    * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
+    * **Platform configuration**: Single-page application (SPA)
+    * **Redirect URI**: `http://localhost:3000/`
+* [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
+* [Node.js](https://nodejs.org/en/download/)
 
 #### [Angular](#tab/angular-external)
 
-[!INCLUDE [Add a platform redirect URI](./includes/register-app/spa-common/add-platform-redirect-spa-port-4200.md)]
+* Register a new app in the [Microsoft Entra admin center](https://entra.microsoft.com) with the following configuration and record its identifiers from the app **Overview** page. For more information, see [Register an application](quickstart-register-app.md).
+    * **Name**: *identity-client-spa*
+    * **Supported account types**: *Accounts in this organizational directory only (Single tenant)*
+    * **Platform configuration**: Single-page application (SPA)
+    * **Redirect URI**: `http://localhost:4200/`
+* [Add your application to the user flow](/entra/external-id/customers/how-to-user-flow-add-application)
+* [Node.js](https://nodejs.org/en/download/)
 
 ---
 
 ## Grant admin consent
 
 [!INCLUDE [Grant admin consent](../external-id/customers/includes/register-app/grant-api-permission-sign-in.md)]
-
-## Create a user flow
-
-[!INCLUDE [Create a user flow](../external-id/customers/includes/configure-user-flow/add-app-user-flow.md)]
-
-## Associate the SPA with the user flow
-
-[!INCLUDE [Associate the SPA with the user flow](../external-id/customers/includes/configure-user-flow/add-app-user-flow.md)]
 
 ## Clone or download sample SPA
 
