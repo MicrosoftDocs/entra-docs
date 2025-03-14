@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 03/13/2025
+ms.date: 03/14/2025
 ms.author: gasinh
 
 #customer intent: My goal is to deploy Microsoft Entra ID Governance as a proof of concept in my test and production environments.
@@ -30,11 +30,11 @@ Use this scenario to help determine the need for Microsoft Entra ID Governance t
 
 ## Proof-of-concept timeline
 
-Proof-of-concept (PoC) timelines and delivery-stage durations are based on scenario complexity. Times are estimated and vary depending on the environment. 
+Proof-of-concept (PoC) timelines show approximate delivery stage duration and are based on scenario complexity. Times are estimations and vary depending on the environment. 
 
-1. **HR provisioning** - 3 hours
-2. **Software-as-a-Service (SaaS) app provisioning** - 1 hour
-3. **Lifecycle workflows** - 3 hours 
+1. HR provisioning** - 3 hours
+2. Software-as-a-Service (SaaS) app provisioning - 1 hour
+3. Lifecycle workflows - 3 hours 
 
 ## Employee lifecycle automation
 
