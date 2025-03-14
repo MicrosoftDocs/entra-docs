@@ -8,7 +8,7 @@ ms.topic: concept-article
 ms.date: 03/14/2025
 ms.author: gasinh
 
-#customer intent: I want to deploy and test Microsoft Entra ID Governance as a proof of concept in my production or test environment.
+#customer intent: I want to deploy and test Microsoft Entra ID Governance as a proof of concept in my production or test environment. 
 ---
 
 # Introduction to Microsoft Entra ID Governance deployment guide
