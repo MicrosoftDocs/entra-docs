@@ -26,6 +26,7 @@ Domain Services will use the following deprecation path for legacy TLS:
 ## How to check status for TLS in Domain Services
 
 Use the Azure Portal:
+
 1.	In th Azure portal, go to the Microsoft Entra DS instance. 
 2.	Go to the Security settings.
 3.	If the TLS 1.2 only mode is set to **Disable**, the instance has enabled legacy TLS.
@@ -45,7 +46,7 @@ Use PowerShell:
    Connect-AzAccount -Subscription aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e
    ```
 
-1. Check the value of TLS only mode:
+1. Check the value of TLS 1.2 only mode:
 
    ```powershell
    Get-AzADDomainService -DomainSecuritySettingTlsV1
@@ -63,8 +64,9 @@ Use PowerShell:
 
    ```powershell
    Get-AzADDomainService -ResourceGroupName
+   ```
 
-   Update the value of TLS only mode: 
+   Update the value of TLS 1.2 only mode: 
 
    ```powershell
    Update-AzADDomainService -Name "name" -ResourceGroupName "resourceGroupName" -DomainSecuritySettingTlsV1 Disabled
@@ -72,4 +74,7 @@ Use PowerShell:
 
    This command may take about 10 minutes to complete.
 
+## Related content
 
+- [Enable support for TLS 1.2 in your environment for Microsoft Entra TLS 1.1 and 1.0 deprecation](/troubleshoot/entra/entra-id/ad-dmn-services/enable-support-tls-environment)
+- [TLS 1.2 enforcement for Microsoft Entra Connect](/entra/identity/hybrid/connect/reference-connect-tls-enforcement)
