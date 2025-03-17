@@ -8,22 +8,23 @@ ms.assetid: 6b4665b5-4324-42ab-82c5-d36c01192c2a
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 03/14/2025
+ms.date: 03/17/2025
 ms.author: justinha
 ms.reviewer: bochingwa
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
 # TLS 1.2 enforcement for Microsoft Entra Domain Services
 
-Azure services are on a deprecation path for legacy TLS versions 1.0 and 1.1.
-Microsoft Entra Domain Services supports the legacy TLS versions, but they are disabled by default.
+Microsoft is enhancing security by disabling TLS versions 1.0 and 1.1, which have known vulnerabilities and are no longer considered secure. These older versions are being replaced by TLS 1.2 and TLS 1.3, which offer better security and performance. This change helps protect customer data and ensures compliance with industry standards.
+
+Microsoft Entra Domain Services supports TLS versions 1.0 and 1.1, but they are disabled by default.
 Domain Services will use the following deprecation path for legacy TLS:
 
 1. Remove the ability to disable the TLS 1.2 only mode. Customers who disable TLS 1.2 only mode can enable it. \<date\>
 1. Customers can't enable or disable the security setting by using the Azure portal, Microsoft Entra admin center, or programmatically with ARM APIs, PowerShell, or Bicep or ARM templates. \<date\>
-1. Work with customers needing legacy TLS.
+1. Work with customers who need TLS versions 1.0 and 1.1.
 
-## How to check status for TLS in Domain Services
+## How to migrate to TLS 1.2 only mode in Domain Services
 
 Use the Azure Portal:
 
