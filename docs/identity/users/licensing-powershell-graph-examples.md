@@ -77,7 +77,7 @@ Get-MgGroup -GroupId 1ad75eeb-7e5a-4367-a493-9214d90d54d0 -Property "AssignedLic
 ```
 
 
-## Get all groups with licenses
+## Get all groups with assigned licenses
 
 ```powershell
 # Define the group ID
@@ -142,45 +142,102 @@ $groupInfoArray | Format-Table -AutoSize
 
 ## Get all groups with license errors
 
-
 ```powershell
-# Import User Graph Module
-Import-Module Microsoft.Graph.Users
-# Authenticate to MS Graph
-Connect-MgGraph -Scopes "Group.Read.All"
-# Get all groups in the tenant with license assigned and with errors
-$groups = Get-MgGroup -All -Property LicenseProcessingState, DisplayName, Id, AssignedLicenses | Select-Object  displayname, Id, LicenseProcessingState, AssignedLicenses | Select-Object DisplayName, Id, AssignedLicenses -ExpandProperty LicenseProcessingState | Select-Object DisplayName, State, Id, AssignedLicenses | Where-Object {$_.State -eq "ProcessingFailed" -and $_.AssignedLicenses -ne $null }
-# Display the results and format output
-$groups | Format-Table -AutoSize
+# Get all groups that have assigned licenses
+$groups = Get-MgGroup -All -Property DisplayName, Id, AssignedLicenses | 
+    Where-Object { $_.AssignedLicenses -ne $null } | 
+    Select-Object DisplayName, Id, AssignedLicenses
 
+# Initialize an array to store group information
+$groupInfo = @()
+
+# Iterate over each group
+foreach ($group in $groups) {
+    $groupId = $group.Id
+    $groupName = $group.DisplayName
+
+    # Initialize counters for total members and members with license errors
+    $totalCount = 0
+    $licenseErrorCount = 0
+
+    # Get all members of the group that have license errors
+    $members = Get-MgGroupMemberWithLicenseError -GroupId $groupId
+
+    # Process each member
+    foreach ($member in $members) {
+        $totalCount++
+
+        # If the member has a license error (indicated by a non-empty Id), increment the error count
+        if (![string]::IsNullOrEmpty($member.Id)) {
+            $licenseErrorCount++
+        }
+    }
+
+    # Create a custom object with the group's information and counts
+    $groupInfo += [PSCustomObject]@{
+        GroupName         = $groupName
+        GroupId           = $groupId
+        TotalUserCount    = $totalCount
+        LicenseErrorCount = $licenseErrorCount
+    }
+}
+
+# Display the groups with licensing errors
+$groupInfo | Where-Object { $_.LicenseErrorCount -gt 0 } | Format-Table -Property GroupName, GroupId, TotalUserCount, LicenseErrorCount
 ```
-
 
 ## Get all users with license errors in a group
 
 Given a group that contains some license-related errors, you can now list all users affected by those errors. A user can have errors from other groups, too. However, in this example we limit results only to errors relevant to the group in question by checking the **ReferencedObjectId** property of each **IndirectLicenseError** entry on the user.
 
-
 ```powershell
-# Import User Graph Module
+# Import necessary modules
 Import-Module Microsoft.Graph.Users
-# Authenticate to MS Graph
+Import-Module Microsoft.Graph.Groups
+
+# Specify the group ID you want to check
+$groupId = "ENTER-YOUR-GROUP-ID-HERE"
+
+# Authenticate to Microsoft Graph
 Connect-MgGraph -Scopes "Group.Read.All", "User.Read.All"
-# Get all groups in the tenant with license assigned
-$groups = Get-MgGroup -All -Property LicenseProcessingState, DisplayName, Id, AssignedLicenses | Select-Object  displayname, Id, LicenseProcessingState, AssignedLicenses | Select-Object DisplayName, Id, AssignedLicenses | Where-Object {$_.AssignedLicenses -ne $null }
-#output array
+
+# Get the specified group
+$group = Get-MgGroup -GroupId $groupId -Property DisplayName, Id, AssignedLicenses
+Write-Host "Checking license errors for group: $($group.DisplayName)" -ForegroundColor Cyan
+
+# Initialize output array
 $groupInfoArray = @()
-# Get All Members from the groups and check their license status
-foreach($group in $groups) {
-    $groupMembers = Get-MgGroupMember -GroupId $group.Id -All -Property LicenseProcessingState, DisplayName, Id, AssignedLicenses | Select-Object  displayname, Id, LicenseProcessingState, AssignedLicenses | Select-Object DisplayName, Id, AssignedLicenses -ExpandProperty LicenseProcessingState | Select-Object DisplayName, Id, AssignedLicenses | Where-Object {$_.AssignedLicenses -ne $null }
-    foreach($member in $groupMembers) {
-        Write-Host "Member $($member.DisplayName)"
-        if($member.LicenseProcessingState -eq "ProcessingFailed") {
-            $group | Add-Member -MemberType NoteProperty -Name "License Error" -Value $member.DisplayName
-            $groupInfoArray += $group
+
+# Get all members from the group and check their license status
+$groupMembers = Get-MgGroupMember -GroupId $group.Id -All
+$errorCount = 0
+
+# Process each member
+foreach ($memberId in $groupMembers.Id) {
+    # Get user details
+    $user = Get-MgUser -UserId $memberId -Property DisplayName, Id, LicenseAssignmentStates
+    
+    # Check for license errors
+    $licenseErrors = $user.LicenseAssignmentStates | Where-Object { 
+        $_.AssignedByGroup -eq $groupId -and $_.Error -ne "None" 
+    }
+    
+    if ($licenseErrors) {
+        $errorCount++
+        $userInfo = [PSCustomObject]@{
+            GroupName = $group.DisplayName
+            GroupId = $group.Id
+            UserName = $user.DisplayName
+            UserId = $user.Id
+            Error = ($licenseErrors.Error -join ", ")
+            ErrorSubcode = ($licenseErrors.ErrorSubcode -join ", ")
         }
+        $groupInfoArray += $userInfo
     }
 }
+
+# Summary
+Write-Host "Found $errorCount users with license errors in group $($group.DisplayName)" -ForegroundColor Yellow
 
 # Format the output and print it to the console
 
@@ -198,76 +255,177 @@ else {
 
 The following script can be used to get all users who have license errors from one or more groups. The script prints one row per user, per license error, which allows you to clearly identify the source of each error.
 
-
 ```powershell
-# Import User Graph Module
-Import-Module Microsoft.Graph.Users
-# Authenticate to MS Graph
-Connect-MgGraph -Scopes "User.Read.All"
-# Get All Users From the Tenant with licenses assigned
-$users = Get-MgUser -All -Property AssignedLicenses, LicenseAssignmentStates, DisplayName | Select-Object DisplayName, AssignedLicenses -ExpandProperty LicenseAssignmentStates | Select-Object DisplayName, AssignedByGroup, State, Error, SkuId
-#count the number of users found with errors
-$count = 0
-# Loop through each user and check the Error property for None value
-foreach($user in $users) {
-    if($user.Error -ne "None") {
-        $count += 1
-        Write-Host "User $($user.DisplayName) has a license error"
+# Connect to Microsoft Graph
+Connect-MgGraph -Scopes "User.Read.All", "Directory.Read.All", "Organization.Read.All"
+
+# Retrieve all SKUs in the tenant
+$skus = Get-MgSubscribedSku -All | Select-Object SkuId, SkuPartNumber
+
+# Retrieve all users in the tenant with required properties
+$users = Get-MgUser -All -Property AssignedLicenses, LicenseAssignmentStates, DisplayName, Id, UserPrincipalName
+
+# Initialize an empty array to store the user license information
+$allUserLicenses = @()
+
+foreach ($user in $users) {
+    # Initialize a hash table to track all assignment methods for each license
+    $licenseAssignments = @{}
+    $licenseErrors = @()
+
+    # Loop through license assignment states
+    foreach ($assignment in $user.LicenseAssignmentStates) {
+        $skuId = $assignment.SkuId
+        $assignedByGroup = $assignment.AssignedByGroup
+        $assignmentMethod = if ($assignedByGroup -ne $null) {
+            # If the license was assigned by a group, get the group name
+            $group = Get-MgGroup -GroupId $assignedByGroup
+            if ($group) { $group.DisplayName } else { "Unknown Group" }
+        } else {
+            # If the license was assigned directly by the user
+            "User"
+        }
+
+        # Check for errors in the assignment state and capture them
+        if ($assignment.Error -ne $null -or $assignment.ErrorSubcode -ne $null) {
+            $errorDetails = @{
+                Error         = $assignment.Error
+                ErrorSubcode  = $assignment.ErrorSubcode
+                SkuId         = $skuId
+                AssignedBy    = $assignmentMethod
+            }
+            $licenseErrors += $errorDetails
+        }
+
+        # Ensure all assignment methods are captured
+        if (-not $licenseAssignments.ContainsKey($skuId)) {
+            $licenseAssignments[$skuId] = @($assignmentMethod)
+        } else {
+            $licenseAssignments[$skuId] += $assignmentMethod
+        }
+    }
+
+    # Process assigned licenses
+    foreach ($skuId in $licenseAssignments.Keys) {
+        # Get SKU details from the pre-fetched list
+        $sku = $skus | Where-Object { $_.SkuId -eq $skuId } | Select-Object -First 1
+        $skuPartNumber = if ($sku) { $sku.SkuPartNumber } else { "Unknown SKU" }
+
+        # Sort and join the assignment methods
+        $assignmentMethods = ($licenseAssignments[$skuId] | Sort-Object -Unique) -join ", "
+
+        # Clean up license errors to make them more legible
+        $errorDetails = if ($licenseErrors.Count -gt 0) {
+            $errorMessages = $licenseErrors | Where-Object { $_.SkuId -eq $skuId } | ForEach-Object {
+                # Check if error or subcode are empty, and filter them out
+                if ($_Error -ne "None" -and $_.ErrorSubcode) {
+                    "$($_.AssignedBy): Error: $($_.Error) Subcode: $($_.ErrorSubcode)"
+                } elseif ($_Error -ne "None") {
+                    "$($_.AssignedBy): Error: $($_.Error)"
+                } elseif ($_.ErrorSubcode) {
+                    "$($_.AssignedBy): Subcode: $($_.ErrorSubcode)"
+                }
+            }
+
+            # Join filtered error messages into a clean output
+            $errorMessages -join "; "
+        } else {
+            "No Errors"
+        }
+
+        # Construct a custom object to store the user's license information
+        $userLicenseInfo = [PSCustomObject]@{
+            UserId             = $user.Id
+            UserDisplayName    = $user.DisplayName
+            UserPrincipalName  = $user.UserPrincipalName
+            SkuId              = $skuId
+            SkuPartNumber      = $skuPartNumber
+            AssignedBy         = $assignmentMethods
+            LicenseErrors      = $errorDetails
+        }
+
+        # Add the user's license information to the array
+        $allUserLicenses += $userLicenseInfo
     }
 }
-if ($count -le 0) {
- write-host "No user found with license errors"
-}
-```
 
+# Export the results to a CSV file
+$path = Join-path $env:LOCALAPPDATA ("UserLicenseAssignments_" + [string](Get-Date -UFormat %Y%m%d) + ".csv")
+$allUserLicenses | Export-Csv $path -Force -NoTypeInformation
+
+# Display the location of the CSV file
+Write-Host "CSV file generated at: $((Get-Item $path).FullName)"
+```
 
 
 
 ## Check if user license is assigned directly or inherited from a group
 
 ```powershell
-# Connect to Microsoft Graph using Connect-MgGraph
-Connect-MgGraph -Scopes "User.Read.All", "Group.Read.All"
-
-# Get all users using Get-MgUser with a filter
-$users = Get-MgUser -All -Property AssignedLicenses, LicenseAssignmentStates, DisplayName | Select-Object DisplayName, AssignedLicenses -ExpandProperty LicenseAssignmentStates | Select-Object DisplayName, AssignedByGroup, State, Error, SkuId
-
-$output = @()
-
-
-# Loop through all users and get the AssignedByGroup Details which will list the groupId
+# Retrieve all SKUs in the tenant
+$skus = Get-MgSubscribedSku -All | Select-Object SkuId, SkuPartNumber
+ 
+# Retrieve all users in the tenant with required properties
+$users = Get-MgUser -All -Property AssignedLicenses, LicenseAssignmentStates, DisplayName, Id, UserPrincipalName
+ 
+# Initialize an empty array to store the user license information
+$allUserLicenses = @()
+ 
 foreach ($user in $users) {
-    # Get the group ID if AssignedByGroup is not empty
-    if ($user.AssignedByGroup -ne $null)
-    {
-        $groupId = $user.AssignedByGroup
-        $groupName = Get-MgGroup -GroupId $groupId | Select-Object -ExpandProperty DisplayName  
-        Write-Host "$($user.DisplayName) is assigned by group - $($groupName)" -ErrorAction SilentlyContinue -ForegroundColor Yellow
-        $result = [pscustomobject]@{
-            User=$user.DisplayName
-            AssignedByGroup=$true
-            GroupName=$groupName
-            GroupId=$groupId
+    # Initialize a hash table to track all assignment methods for each license
+    $licenseAssignments = @{}
+ 
+    # Loop through license assignment states
+    foreach ($assignment in $user.LicenseAssignmentStates) {
+        $skuId = $assignment.SkuId
+        $assignedByGroup = $assignment.AssignedByGroup
+        $assignmentMethod = if ($assignedByGroup -ne $null) {
+            # If the license was assigned by a group, get the group name
+            $group = Get-MgGroup -GroupId $assignedByGroup
+            if ($group) { $group.DisplayName } else { "Unknown Group" }
+        } else {
+            # If the license was assigned directly by the user
+            "User"
         }
-        $output += $result
-    }
-
-    else {
-    $result = [pscustomobject]@{
-            User=$user.DisplayName
-            AssignedByGroup=$false
-            GroupName="NA"
-            GroupId="NA"
+ 
+        # Ensure all assignment methods are captured
+        if (-not $licenseAssignments.ContainsKey($skuId)) {
+            $licenseAssignments[$skuId] = @($assignmentMethod)
+        } else {
+            $licenseAssignments[$skuId] += $assignmentMethod
         }
-        $output += $result
-        Write-Host "$($user.DisplayName) is Not assigned by group" -ErrorAction SilentlyContinue -ForegroundColor Cyan
     }
-        
-    
+ 
+    # Process assigned licenses
+    foreach ($skuId in $licenseAssignments.Keys) {
+        # Get SKU details from the pre-fetched list
+        $sku = $skus | Where-Object { $_.SkuId -eq $skuId } | Select-Object -First 1
+        $skuPartNumber = if ($sku) { $sku.SkuPartNumber } else { "Unknown SKU" }
+ 
+        # Sort and join the assignment methods
+        $assignmentMethods = ($licenseAssignments[$skuId] | Sort-Object -Unique) -join ", "
+ 
+        # Construct a custom object to store the user's license information
+        $userLicenseInfo = [PSCustomObject]@{
+            UserId = $user.Id
+            UserDisplayName = $user.DisplayName
+            UserPrincipalName = $user.UserPrincipalName
+            SkuId = $skuId
+            SkuPartNumber = $skuPartNumber
+            AssignedBy = $assignmentMethods
+        }
+ 
+        # Add the user's license information to the array
+        $allUserLicenses += $userLicenseInfo
+    }
 }
-
-# Display the result
-$output | ft
+ 
+# Export the results to a CSV file
+$path = Join-path $env:LOCALAPPDATA ("UserLicenseAssignments_" + [string](Get-Date -UFormat %Y%m%d) + ".csv")
+$allUserLicenses | Export-Csv $path -Force -NoTypeInformation
+ 
+# Display the location of the CSV file
+Write-Host "CSV file generated at: $((Get-Item $path).FullName)"
 ```
 
 
@@ -280,93 +438,75 @@ The purpose of this script is to remove unnecessary direct licenses from users w
 
 ### Variables
 
-- *$groupLicenses:* Represents the licenses assigned to the group.
-- *$groupMembers:* Contains the members of the group.
-- *$userLicenses:* Holds the licenses directly assigned to a user.
-- *$licensesToRemove:* Stores the licenses that need to be removed from the user.
-
+- *$GroupLicenses:* Represents the licenses assigned to the group.
+- *$GroupMembers:* Contains the members of the group.
+- *$UserLicenses:* Holds the licenses directly assigned to a user.
+- *$DirectLicensesToRemove:* Stores the licenses that need to be removed from the user.
 
 ```powershell
-# Import the Microsoft.Graph.Users and Microsoft.Graph.Groups modules
-Import-Module Microsoft.Graph.Users -Force
-Import-Module Microsoft.Graph.Authentication -Force
-Import-Module Microsoft.Graph.Users.Actions -Force
-Import-Module Microsoft.Graph.Groups -Force
+# Define the group ID containing the assigned license
+$GroupId = "objectID of Group"
 
-Clear-Host
+# Force all errors to be terminating errors
+$ErrorActionPreference = "Stop"
 
-# Connect to Microsoft Graph if not already connected
-if ($null -eq (Get-MgContext)) {
-Connect-MgGraph -Scopes "Directory.Read.All, User.Read.All, Group.Read.All, Organization.Read.All" -NoWelcome
+# Get the group's assigned licenses
+$Group = Get-MgGroup -GroupId $GroupId -Property AssignedLicenses
+$GroupLicenses = $Group.AssignedLicenses.SkuId
+
+if (-not $GroupLicenses) {
+    Write-Host "No licenses assigned to the specified group. Exiting script."
+    return
 }
 
-# Get all groups with licenses assigned
-$groupsWithLicenses = Get-MgGroup -All -Property AssignedLicenses, DisplayName, Id | Where-Object { $_.assignedlicenses } | Select-Object DisplayName, Id -ExpandProperty AssignedLicenses | Select-Object DisplayName, Id, SkuId
+# Get all members of the group
+$GroupMembers = Get-MgGroupMember -GroupId $GroupId -All
 
-$output = @()
+foreach ($User in $GroupMembers) {
+    $UserId = $User.Id
 
-# Check if there are any groups with licenses assigned
-if ($null -ne groupsWithLicenses) { foreach (group in $groupsWithLicenses) {
+    # Get user's assigned licenses
+    $UserData = Get-MgUser -UserId $UserId -Property DisplayName,Mail,UserPrincipalName,AssignedLicenses
+    $UserLicenses = $UserData.AssignedLicenses.SkuId
 
-# Get the group's licenses
-$groupLicenses = $group.SkuId
-
-# Get the group's members
-    $groupMembers = Get-MgGroupMember -GroupId $group.Id -All
-
-    if ($groupMembers) {
-        foreach ($member in $groupMembers) {
-            # Check if the member is a user
-            if ($member.AdditionalProperties.'@odata.type' -eq '#microsoft.graph.user') {
-                Write-Host "Fetching license details for $($member.AdditionalProperties.displayName)" -ForegroundColor Yellow
-                
-                # Get User With Directly Assigned Licenses Only
-                $user = Get-MgUser -UserId $member.Id -Property AssignedLicenses, LicenseAssignmentStates, DisplayName | Select-Object DisplayName, AssignedLicenses -ExpandProperty LicenseAssignmentStates | Select-Object DisplayName, AssignedByGroup, State, Error, SkuId | Where-Object { $_.AssignedByGroup -eq $null }
-
-                $licensesToRemove = @()
-                if ($user) {
-                    if ($user.count -ge 2) {
-                        foreach ($u in $user) {
-                            $userLicenses = $u.SkuId
-                            $licensesToRemove += $userLicenses | Where-Object { $_ -in $groupLicenses }
-                    }
-                    else {
-                        Write-Host "No conflicting licenses found for the user $($member.AdditionalProperties.displayName)" -ForegroundColor Green
-                    }
-                    
-                    # Remove the licenses from the user
-                    if ($licensesToRemove) {
-                        Write-Host "Removing the license $($licensesToRemove) from user $($member.AdditionalProperties.displayName) as inherited from group $($group.DisplayName)" -ForegroundColor Green
-                        $result = Set-MgUserLicense -UserId $member.Id -AddLicenses @() -RemoveLicenses $licensesToRemove
-                        $obj = [PSCustomObject]@{
-                            User                      = $result.DisplayName
-                            Id                        = $result.Id
-                            LicensesRemoved           = $licensesToRemove
-                            LicenseInheritedFromGroup = $group.DisplayName
-                            GroupId                   = $group.Id
-                        }
-
-                        $output += $obj
-
-                    } 
-                    else {
-                        Write-Host "No action required for $($member.AdditionalProperties.displayName)" -ForegroundColor Green
-                        }
-        
-                }
-            }
+    # Identify direct licenses that match the group's assigned licenses
+    $DirectLicensesToRemove = @()
+    foreach ($License in $UserLicenses) {
+        if ($GroupLicenses -contains $License) {
+            $DirectLicensesToRemove += $License
         }
-        else {
-            Write-Host "The licensed group $($group.DisplayName) has no members, exiting now!!" -ForegroundColor Yellow
-        }   
-        
     }
-    
-    $output | Format-Table -AutoSize
+
+    # Print user info before taking action
+    Write-Host ("{0,-40} {1,-25} {2,-40} {3}" -f $UserData.Id, $UserData.DisplayName, $UserData.Mail, $UserData.UserPrincipalName)
+
+    # Skip users who have no direct licenses matching the group
+    if ($DirectLicensesToRemove.Count -eq 0) {
+        Write-Host "No direct licenses to remove. (Only inherited licenses detected)"
+        Write-Host "------------------------------------------------------"
+        continue
+    }
+
+    # Attempt to remove direct licenses
+    try {
+        Write-Host "Removing direct license(s)..."
+        Set-MgUserLicense -UserId $UserId -RemoveLicenses $DirectLicensesToRemove -AddLicenses @() -ErrorAction Stop
+        Write-Host "✅ License(s) removed successfully."
+    }
+    catch {
+        $ErrorMessage = $_.Exception.Message
+
+        if ($ErrorMessage -match "User license is inherited from a group membership") {
+            Write-Host "⚠️ Skipping removal - License is inherited from a group."
+        } else {
+            Write-Host "❌ Unexpected error: $ErrorMessage"
+        }
+    }
+    Write-Host "------------------------------------------------------"
 }
-else {
-    Write-Host "No groups found with licenses assigned." -ForegroundColor Cyan
-}
+
+Write-Host "Script execution complete."
+
 ```
 
 ## Next steps
