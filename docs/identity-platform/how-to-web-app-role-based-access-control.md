@@ -1,6 +1,6 @@
 ---
 title: Use role-based access control in your Node.js web app
-description: Learn how to configure groups and user roles in your customer's tenant, so you can receive them as claims in a security token for your Node.js application
+description: Learn how to configure groups and user roles in your external tenant, so you can receive them as claims in a security token for your Node.js application
  
 author: kengaderdus
 manager: mwongerapk
@@ -10,7 +10,7 @@ ms.service: identity-platform
 ms.topic: how-to
 ms.date: 03/16/2025
 ms.custom: developer, devx-track-js
-#Customer intent: As a dev, devops or IT admin, I want to learn Learn how to use roles and groups present in a security token so that I can to control access to various resources in my Node.js web application.
+#Customer intent: As a dev, devops or IT admin, I want to learn learn how to use roles and groups present in a security token so that I can to control access to various resources in my Node.js web application.
 ---
 
 # Use role-based access control in your Node.js web application
@@ -21,7 +21,7 @@ Role-based access control (RBAC) is a mechanism to enforce authorization in appl
 
 You can also configure your external tenant to return the group memberships of the user. Developers can then use security groups to implement RBAC in their applications, where the memberships of the user in specific groups are interpreted as their role memberships.
 
-Once you assign users and groups to roles, the *roles* claim is emitted in your security token. However, to emit the *groups* membership claim in security tokens, you need additional configuration in your customer's tenant.
+Once you assign users and groups to roles, the *roles* claim is emitted in your security token. However, to emit the *groups* membership claim in security tokens, you need additional configuration in your external tenant.
 
 In this article, you learn how to receive user roles or group membership or both as claims in a security token for your Node.js web app.  
 
@@ -33,7 +33,7 @@ In this article, you learn how to receive user roles or group membership or both
 
 ## Receive groups and roles claims in your Node.js web app 
 
-Once you configure your customer's tenant, you can retrieve your *roles* and *groups* claims in your client app. The *roles* and *groups* claims are both present in the ID token and the access token, but your client app only needs to check for these claims in the ID token to implement authorization in the client side. The API app can also retrieve these claims when it receives the access token.
+Once you configure your external tenant, you can retrieve your *roles* and *groups* claims in your client app. The *roles* and *groups* claims are both present in the ID token and the access token, but your client app only needs to check for these claims in the ID token to implement authorization in the client side. The API app can also retrieve these claims when it receives the access token.
 
 You check your *roles* claim value as shown in the following code snippet example:
 
@@ -110,7 +110,7 @@ Use the instructions in [Configuring group claims and app roles in tokens](/secu
 
 ## How to use groups and roles values in your Node.js web app 
 
-In the client app, you can verify whether a signed-in user has the necessary role(s) to access a protected route or call an API endpoint. This can be done by checking the `roles` claim in the ID token. To implement this protection in your app, you can build guards by using a custom middleware. 
+In the client app, you can verify whether a signed-in user has the necessary role(s) to access a protected route or call an API endpoint. To do so, you check the `roles` claim in the ID token. To implement this protection in your app, you can build guards by using a custom middleware. 
 
 In your service app (API app), you can also protect the API endpoints. After you [validate the access token](~/identity-platform/access-tokens.md#validate-tokens) sent by the client app, you can check for the *roles* or *groups* claims in the payload claims of the access token. 
 
