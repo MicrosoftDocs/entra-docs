@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 03/14/2025
+ms.date: 03/17/2025
 ms.author: gasinh
 
 #customer intent: My goal is to deploy Microsoft Entra ID Governance as a proof of concept in my test and production environments.
@@ -85,8 +85,6 @@ Learn more in the video about [HR-driven user provisioning with SuccessFactors](
 
 Learn how to [configure API for on-premises Active Directory (AD)](https://youtu.be/N00CfO3s4SA). 
 
-You can watch a video to learn to [use API-driven to on-premises AD with Logic Apps](https://youtu.be/KlsbHeCAkwY).
-
 ## Deploy PoC: Workday to Active Directory
 
 1. [Select cloud HR provisioning connector apps](/azure/active-directory/app-provisioning/plan-cloud-hr-provision).
@@ -122,12 +120,10 @@ Learn more:
 ### API-driven provisioning scenarios
 
 IT teams import data extracts with automation. Independent software vendors (ISVs) integrate with Microsoft Entra ID. System integrators build connectors to systems of record. This process is commonly used for sources like flat files, CSV files, SQL staging tables. Integrate automation tools: [PowerShell](/windows-server/administration/windows-commands/powershell) scripts, [Azure Logic Apps](/azure/logic-apps/logic-apps-overview), and workflows using HTTP calls.  
- 
-In the following video, learn to [install the cloud sync agent](https://youtu.be/kGpVnEENWB0).
 
 ## Configure API-driven provisioning
 
-In a video, learn how to [configure API-driven provisioning to Microsoft Entra ID](https://www.youtube.com/watch?v=7kK3KXdC3bI).  
+In a video, learn to configure [API-driven inbound provisioning](../identity/app-provisioning/inbound-provisioning-api-concepts.md).  
 
 ## Comparison: Inbound provisioning /bulkUpload API and Microsoft Graph Users API 
 
