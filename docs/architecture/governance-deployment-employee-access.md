@@ -61,7 +61,7 @@ In the following screenshot see the **Edit policy dialog**, with the **Create au
 
 For more information, you can learn about [groups and access rights in Microsoft Entra ID](../fundamentals/how-to-manage-groups.yml)
 
-See the following video to learn more about policy assignment.</br>/br>
+See the following video to learn more about policy assignment.</br></br>
 
 > [!VIDEO 6ae11d17-51c8-4346-a9a3-098a9df0148f]
 
