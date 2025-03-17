@@ -9,10 +9,12 @@ ms.service: entra-external-id
 ms.topic: tutorial
 ms.subservice: external
 ms.custom: devx-track-dotnet
-ms.date: 07/17/2023
+ms.date: 03/12/2025
 ---
 
 # Tutorial: Use role-based access control in your .NET MAUI app
+
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
 This tutorial demonstrates how to add app roles to .NET Multi-platform App UI (.NET MAUI) and receive them in the ID token.
 
@@ -25,7 +27,7 @@ In this tutorial, you learn how to:
 ## Prerequisites
 
 - [Tutorial: Sign in users in .NET MAUI shell app](tutorial-mobile-app-maui-sign-in-sign-out.md)
-- [Using role-based access control (RBAC) for applications](how-to-use-app-roles-customers.md)
+- [Using role-based access control (RBAC) for applications](../external-id/customers/how-to-use-app-roles-customers.md)
 
 ## Receive groups and roles claims in .NET MAUI
 
