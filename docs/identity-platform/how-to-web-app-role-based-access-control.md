@@ -1,5 +1,5 @@
 ---
-title: Use role-based access control in your Node.js web application
+title: Use role-based access control in your Node.js web app
 description: Learn how to configure groups and user roles in your customer's tenant, so you can receive them as claims in a security token for your Node.js application
  
 author: kengaderdus
@@ -15,7 +15,7 @@ ms.custom: developer, devx-track-js
 
 # Use role-based access control in your Node.js web application
 
-[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
 Role-based access control (RBAC) is a mechanism to enforce authorization in applications. Microsoft Entra External ID allows you to define application roles for your application and assign those roles to users and groups. The roles you assign to a user or group define their level of access to the resources and operations in your application. When External ID issues a security token for an authenticated user, it includes the names of the roles you've assigned the user or group in the security token's roles claim.
 
@@ -27,9 +27,9 @@ In this article, you learn how to receive user roles or group membership or both
 
 ## Prerequisites
 
-- If you've not done so, complete the steps in [Using role-based access control for applications](how-to-use-app-roles-customers.md) article. This article shows you how to create roles for your application, how to assign users and groups to those roles, how to add members to a group and how to add a group claim to a to security token. Learn more about [ID tokens](~/identity-platform/id-tokens.md) and [access tokens](~/identity-platform/access-tokens.md). 
+- If you've not done so, complete the steps in [Using role-based access control for applications](../external-id/customers/how-to-use-app-roles-customers.md) article. This article shows you how to create roles for your application, how to assign users and groups to those roles, how to add members to a group and how to add a group claim to a to security token. Learn more about [ID tokens](id-tokens.md) and [access tokens](access-tokens.md). 
 
-- If you've not done so, complete the steps in [Sign in users in your own Node.js web application](tutorial-web-app-node-sign-in-prepare-tenant.md)
+- If you've not done so, complete the steps in [Sign in users in your own Node.js web application](tutorial-web-app-node-sign-in-prepare-app.md)
 
 ## Receive groups and roles claims in your Node.js web app 
 

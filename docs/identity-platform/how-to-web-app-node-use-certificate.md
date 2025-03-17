@@ -15,7 +15,7 @@ ms.custom: developer, devx-track-js
 
 # Use client certificate for authentication in your Node.js web app
 
-[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
 Microsoft Entra External ID supports two types of authentication for [confidential client applications](~/identity-platform/msal-client-applications.md); password-based authentication (such as client secret) and certificate-based authentication. For a higher level of security, we recommend using a certificate (instead of a client secret) as a credential in your confidential client applications.
 
@@ -86,9 +86,9 @@ After the command finishes execution, you should have a *.crt* and a *.key* file
 
 ## Upload certificate to your app registration
 
-[!INCLUDE [active-directory-customers-app-integration-add-user-flow](./includes/register-app/add-client-app-certificate.md)]
+[!INCLUDE [active-directory-customers-app-integration-add-user-flow](../external-id/customers/includes/register-app/add-client-app-certificate.md)]
 
-[!INCLUDE [remove-client-secret](./includes/remove-client-secret.md)]
+[!INCLUDE [remove-client-secret](../external-id/customers/includes/remove-client-secret.md)]
 
 ## Configure your Node.js app to use certificate
 
@@ -151,7 +151,7 @@ Once you associate your app registration with the certificate, you need to updat
     
     -  `Enter_the_Application_Id_Here` with the Application (client) ID of the app you registered earlier.
     
-    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+    - `Enter_the_Tenant_Subdomain_Here` and replace it with the Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
 
     We encrypted the key (we recommend that you do so), so we have to decrypt it before we pass it to MSAL configuration object.
 
@@ -169,7 +169,7 @@ Once you associate your app registration with the certificate, you need to updat
     });
     //...
     ```
-1. Use the steps in [Run and test the web app](tutorial-web-app-node-sign-in-sign-out.md#run-and-test-the-web-app) to test your app.
+1. Use the steps in [Run and test the web app](tutorial-web-app-node-sign-in-sign-out.md#run-and-test-the-nodeexpressjs-web-app) to test your app.
 
 ## Use a self-signed certificate directly from Azure Key Vault
 
@@ -261,10 +261,10 @@ You can use your existing certificate directly from Azure Key Vault:
     }
     ``` 
 
-1. Use the steps in [Run and test the web app](tutorial-web-app-node-sign-in-sign-out.md#run-and-test-the-web-app) to test your app.
+1. Use the steps in [Run and test the web app](tutorial-web-app-node-sign-in-sign-out.md#run-and-test-the-nodeexpressjs-web-app) to test your app.
 
-## Next steps
+## Related content
 
 Learn how to:
 
-- [Sign in users and call an API in your own Node.js web application](how-to-web-app-node-sign-in-call-api-overview.md).
+- [Sign in users and call an API in your own Node.js web application](how-to-web-app-node-sign-in-call-api-prepare-tenant.md).

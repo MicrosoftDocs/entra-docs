@@ -202,7 +202,7 @@ At this point, you're ready to call the web API from the client web app:
     ```
     Your client web app starts.
 
-1. Use the steps in [Run and test sample web app and API](quickstart-web-app-node-sign-in-call-api#run-and-test-sample-web-app-and-api) to demonstrate how the client app calls the web API.
+1. Use the steps in [Run and test sample web app and API](quickstart-web-app-node-sign-in-call-api.md#run-and-test-sample-web-app-and-api) to demonstrate how the client app calls the web API.
 
 ## Related content
 You may want to:
