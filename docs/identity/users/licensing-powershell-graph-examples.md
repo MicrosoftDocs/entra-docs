@@ -1,9 +1,8 @@
 ---
-
-title: Microsoft Graph PowerShell examples for group licensing
-description: Microsoft Graph PowerShell group based licensing examples
-
-keywords: Azure AD licensing
+title: PowerShell examples for group-based licensing
+description: Learn how to manage group-based licensing in Microsoft Entra ID using Microsoft PowerShell. Includes examples for assigning licenses and troubleshooting errors.
+#customer intent: As an IT admin, I want to access PowerShell examples for common group-based licensing tasks so that I can simplify license magement in my organization.
+keywords: Entra ID licensing
 author: barclayn
 manager: femila
 ms.service: entra-id
@@ -13,16 +12,14 @@ ms.date: 03/17/2025
 ms.author: barclayn
 ---
 
-# Microsoft Graph PowerShell group-based licensing examples
+# Group-based licensing PowerShell examples
 
 Group-based licensing in Microsoft Entra ID, part of Microsoft Entra, is available through the [Azure portal](https://portal.azure.com). There are useful tasks that can be performed using [Microsoft Graph PowerShell Cmdlets](/powershell/microsoftgraph/get-started). 
 
 In this article, we go over some examples using Microsoft Graph PowerShell.
 
-[!INCLUDE [Azure AD PowerShell deprecation note](~/../docs/reusable-content/msgraph-powershell/includes/aad-powershell-deprecation-note.md)]
-
 > [!WARNING]
-> These samples are provided for demonstration purposes only. We recommend testing them on a smaller scale or in a separate test environment before relying on them in your production environment. You may also need to modify the samples to meet your specific environment's requirements.
+> These samples are provided for demonstration purposes only. We recommend testing them on a smaller scale or in a separate test environment before relying on them in your production environment. You can modify the samples to meet your specific environment's requirements.
 
 Before you begin running cmdlets, make sure you connect to your organization first, by running the `Connect-MgGraph` cmdlet-.
 
@@ -33,7 +30,8 @@ Before you begin running cmdlets, make sure you connect to your organization fir
 ```powershell
 # Import the Microsoft.Graph.Groups module
 Import-Module Microsoft.Graph.Groups
-$groupId = "911f05cf-f635-440c-b888-e54c73e0ef1a"
+# Define the group ID - replace with your actual group ID
+$groupId = "11111111-1111-1111-1111-111111111111"
 
 # Create a hashtable to store the parameters for the Set-MgGroupLicense cmdlet
 $params = @{
@@ -41,8 +39,7 @@ $params = @{
         @{
             # Remove the DisabledPlans key as we don't need to disable any service plans
             # Specify the SkuId of the license you want to assign
-            SkuId = "c42b9cae-ea4f-4ab7-9717-81576235ccac"
-        }
+                        SkuId = "11111111-1111-1111-1111-111111111111"       }
     )
     # Keep the RemoveLicenses key empty as we don't need to remove any licenses
     RemoveLicenses = @(
@@ -58,56 +55,86 @@ Set-MgGroupLicense -GroupId $groupId -BodyParameter $params
 ## View product licenses assigned to a group
 
 
-
 ```powershell
-Get-MgGroup -GroupId 99c4216a-56de-42c4-a4ac-1111cd8c7c41 -Property "AssignedLicenses" | Select-Object -ExpandProperty AssignedLicenses
-
-```
-
-## View all disabled service plan licenses assigned to a group
-
-
-```powershell
-Get-MgGroup -GroupId 1ad75eeb-7e5a-4367-a493-9214d90d54d0 -Property "AssignedLicenses" | 
-    Select-Object -ExpandProperty AssignedLicenses |
-    ForEach-Object {
-        $_ | Select-Object SkuId, DisabledPlans
-    }
-
-```
-
-
-## Get all groups with assigned licenses
+The [Get-MgGroup](/powershell/module/microsoft.graph.groups/get-mggroup) cmdlet can be used to retrieve the group object and check the *AssignedLicenses* property: it lists all product licenses currently assigned to the group.
 
 ```powershell
 # Define the group ID
-$groupId = "Group object ID"
+$groupId = "99c4216a-56de-42c4-a4ac-e411cd8c7c41"
+
 # Get the group with the specified ID and its assigned licenses
 $group = Get-MgGroup -GroupId $groupId -Property "AssignedLicenses"
-# Extract the assigned licenses and include the SkuPartNumber, SkuId, and DisabledPlans with service plan names
-$licensesDetails = $group.AssignedLicenses | ForEach-Object {
-    $skuId = $_.SkuId
+
+# Extract the assigned licenses
+$assignedLicenses = $group | Select-Object -ExpandProperty AssignedLicenses
+
+# Extract the SKU IDs from the assigned licenses
+$skuIds = $assignedLicenses | Select-Object -ExpandProperty SkuId
+
+# For each SKU ID, get the corresponding SKU part number
+$skuPartNumbers = $skuIds | ForEach-Object {
+    $skuId = $_
     $subscribedSku = Get-MgSubscribedSku | Where-Object { $_.SkuId -eq $skuId }
-    $skuPartNumber = $subscribedSku.SkuPartNumber
-    # Map the DisabledPlans GUIDs to their corresponding service plan names
-    $disabledPlansNames = @()
-    foreach ($disabledPlanId in $_.DisabledPlans) {
-        $servicePlan = $subscribedSku.ServicePlans | Where-Object { $_.ServicePlanId -eq $disabledPlanId }
-        if ($servicePlan) {
-            $disabledPlansNames += $servicePlan.ServicePlanName
-        }
-    }
-    # Return the desired properties in a custom object
-    [PSCustomObject]@{
-        SkuId = $skuId
-        SkuPartNumber = $skuPartNumber
-        DisabledPlans = $disabledPlansNames -join ", "
-    }
+    $skuPartNumber = $subscribedSku | Select-Object -ExpandProperty SkuPartNumber
+    $skuPartNumber
 }
-# Output the licenses details
-$licensesDetails | Format-Table -AutoSize
+
+# Output the SKU part numbers
+$skuPartNumbers
 ```
 
+This output is what the results look like:
+
+```output
+SkuPartNumber
+-------------
+ENTERPRISEPREMIUM
+EMSPREMIUM
+```
+
+## Get all groups with assigned licenses
+
+You can find all groups with any license assigned by running the following command:
+
+```powershell
+Get-MgGroup -All -Property Id, MailNickname, DisplayName, GroupTypes, Description, AssignedLicenses | Where-Object {$_.AssignedLicenses -ne $null }
+```
+
+More details can be displayed about what products are assigned:
+
+```powershell
+# Get all groups with assigned licenses
+$groups = Get-MgGroup -All -Property Id, MailNickname, DisplayName, GroupTypes, Description, AssignedLicenses | Where-Object {$_.AssignedLicenses -ne $null }
+
+# Process each group
+$groupInfo = foreach ($group in $groups) {
+    # For each group, get the SKU part numbers of the assigned licenses
+    $skuPartNumbers = foreach ($skuId in $group.AssignedLicenses.SkuId) {
+        $subscribedSku = Get-MgSubscribedSku | Where-Object { $_.SkuId -eq $skuId }
+        $subscribedSku.SkuPartNumber
+    }
+
+    # Create a custom object with the group's object ID, display name, and license SKU part numbers
+    [PSCustomObject]@{
+        ObjectId = $group.Id
+        DisplayName = $group.DisplayName
+        Licenses = $skuPartNumbers -join ', '
+    }
+}
+
+$groupInfo
+```
+
+This output is what the results look like:
+
+```output
+Id                                   DisplayName              AssignedLicenses
+--                                   -----------              ----------------
+7023a314-6148-4d7b-b33f-6c775572879a EMS E5 – Licensed users  EMSPREMIUM
+cf41f428-3b45-490b-b69f-a349c8a4c38e PowerBi - Licensed users POWER_BI_STANDARD
+962f7189-59d9-4a29-983f-556ae56f19a5 O365 E3 - Licensed users ENTERPRISEPACK
+c2652d63-9161-439b-b74e-fcd8228a7074 EMSandOffice             {ENTERPRISEPREMIUM,EMSPREMIUM}
+```
 
 ## Get statistics for groups with licenses
 
@@ -434,7 +461,7 @@ Write-Host "CSV file generated at: $((Get-Item $path).FullName)"
 The purpose of this script is to remove unnecessary direct licenses from users who already inherit the same license from a group; for example, as part of a [transition to group-based licensing](licensing-groups-migrate-users.md).
 
 > [!NOTE]
->To ensure that users do not lose access to services and data, it is important to confirm that directly assigned licenses do not provide more service functionality than the inherited licenses. It is not currently possible to use PowerShell to determine which services are enabled through inherited licenses versus direct licenses. Therefore, the script uses a minimum level of services that are known to be inherited from groups to check and ensure that users do not experience unexpected service loss.
+>To ensure that users don't lose access to services and data, it's important to confirm that directly assigned licenses don't provide more service functionality than the inherited licenses. It isn't currently possible to use PowerShell to determine which services are enabled through inherited licenses versus direct licenses. Therefore, the script uses a minimum level of services that are known to be inherited from groups to check and ensure that users don't experience unexpected service loss.
 
 ### Variables
 
@@ -513,7 +540,6 @@ Write-Host "Script execution complete."
 
 To learn more about the feature set for license management through groups, see the following articles:
 
-* [Upgrade from Azure AD PowerShell to Microsoft Graph PowerShell](/powershell/microsoftgraph/migration-steps)
 * [What is group-based licensing in Microsoft Entra ID?](~/fundamentals/concept-group-based-licensing.md)
 * [Assigning licenses to a group in Microsoft Entra ID](./licensing-groups-assign.md)
 * [Identifying and resolving license problems for a group in Microsoft Entra ID](licensing-groups-resolve-problems.md)
