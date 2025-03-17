@@ -6,7 +6,7 @@ manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 09/10/2024
+ms.date: 03/17/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 
@@ -20,8 +20,7 @@ Unlike interactive and non-interactive user sign-ins, service principal sign-ins
 
 ## Log details
 
-**Report size:** Large </br>
-**Examples:**
+The following examples show the type of information captured in the service principal sign-in logs:
 
 - A service principal uses a certificate to authenticate and access the Microsoft Graph.
 - An application uses a client secret to authenticate in the OAuth Client Credentials flow.

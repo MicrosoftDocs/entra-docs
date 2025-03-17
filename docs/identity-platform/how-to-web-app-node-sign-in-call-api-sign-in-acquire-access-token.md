@@ -5,17 +5,16 @@ description: Learn how to acquire an access token for calling an API in your own
 author: kengaderdus
 manager: mwongerapk
 ms.author: kengaderdus
-ms.service: entra-external-id 
-ms.subservice: external
+ms.service: identity-platform
 ms.topic: how-to
-ms.date: 01/27/2024
+ms.date: 03/16/2025
 ms.custom: developer, devx-track-js
 #Customer intent: As a developer, I want to learn about how to acquire an access token in my Node.js client web app, so that I can call a web API that's protected by Microsoft Entra External ID.
 ---
 
 # Acquire an access token in your Node.js web app
 
-[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
 In this article, you update your code, to enable your web app to acquire an access token. You use [Microsoft Authentication Library (MSAL) for Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node) to simplify adding authentication and authorization to your node web application. This article is the third part of a four-part guide series.
 

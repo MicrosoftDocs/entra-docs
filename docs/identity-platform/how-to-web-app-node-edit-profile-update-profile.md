@@ -14,7 +14,7 @@ ms.custom: developer
 
 # Edit profile in a Node.js web app
 
-[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
 This article is part 2 of a series that demonstrates how to add the profile editing logic in a Node.js web app. In [part 1 of this series](how-to-web-app-node-edit-profile-prepare-app.md), you set up your app for profile editing.
 
@@ -329,10 +329,10 @@ In this section, you add the identity related code for the mid-tier app (EditPro
 
     Find the placeholder:
         
-    - `Enter_the_Tenant_Subdomain_Here` and replace it with Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details). 
-    - `Enter_the_Tenant_ID_Here` and replace it with Tenant ID. If you don't have your Tenant ID, learn how to [read your tenant details](how-to-create-customer-tenant-portal.md#get-the-customer-tenant-details).
-    - `Enter_the_Edit_Profile_Service_Application_Id_Here` and replace it with is the Application (client) ID value of the [EditProfileService you registered earlier](sample-web-app-node-sign-in-edit-profile.md#register-editprofileservice-app).
-    - `Enter_the_Client_Secret_Here` and replace it with the [EditProfileService app secret](sample-web-app-node-sign-in-edit-profile.md#add-app-client-secret) value you copied earlier.
+    - `Enter_the_Tenant_Subdomain_Here` and replace it with Directory (tenant) subdomain. For example, if your tenant primary domain is `contoso.onmicrosoft.com`, use `contoso`. If you don't have your tenant name, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details). 
+    - `Enter_the_Tenant_ID_Here` and replace it with Tenant ID. If you don't have your Tenant ID, learn how to [read your tenant details](../external-id/customers/how-to-create-external-tenant-portal.md#get-the-external-tenant-details).
+    - `Enter_the_Edit_Profile_Service_Application_Id_Here` and replace it with is the Application (client) ID value of the [EditProfileService you registered earlier](quickstart-web-app-node-sign-in-edit-profile.md#register-editprofileservice-app).
+    - `Enter_the_Client_Secret_Here` and replace it with the [EditProfileService app secret](quickstart-web-app-node-sign-in-edit-profile.md#add-app-client-secret) value you copied earlier.
     - `graph_end_point` and replace it with the Microsoft Graph API endpoint, that's `https://graph.microsoft.com/`.
     
 1. In your code editor, open *Api/fetch.js* file, then paste the code from *[Api/fetch.js](https://github.com/Azure-Samples/ms-identity-ciam-javascript-tutorial/blob/main/1-Authentication/7-edit-profile-with-mfa-express/Api/fetch.js)* file. The `fetch` function uses an access token and the resource endpoint to make the actual API call. 
@@ -366,7 +366,7 @@ The `tokenRequest` parameter is defined as shown the following code:
     };
 ```
 
-In the same file, *API/index.js*, the mid-tier app (EditProfileService app) makes a call to Microsoft Graph API to update the users's profile:
+In the same file, *API/index.js*, the mid-tier app (EditProfileService app) makes a call to Microsoft Graph API to update the user's profile:
 
 ```JavaScript
    let accessToken = await getAccessToken(tokenRequest);
@@ -424,4 +424,4 @@ To test your app, use the following steps:
  
 ## Related content
 
-- Learn more about [Microsoft identity platform and OAuth 2.0 On-Behalf-Of flow](../../identity-platform/v2-oauth2-on-behalf-of-flow.md).
+- Learn more about [Microsoft identity platform and OAuth 2.0 On-Behalf-Of flow](v2-oauth2-on-behalf-of-flow.md).
