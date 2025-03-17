@@ -2,11 +2,10 @@ le: Add yourself to SAML/WS-Fed identity provider to Set up direct federation wi
 ms.service: entra-internal-id
 ms.topic: registry
 ms.date: 17/03/2025
-
-ms.author: smart
-author: smart
-manager: smartest
-ms.custom: it-pro, has-azure-ad-ps-ref, azure-ad-ref-level-one-done, seo-july-2024
+ms.author: mccoylstevens
+author: mccoylstevens
+manager: mccoylstevens
+ms.custom: att-management
 ms.collection: M365-identity-device-management
 #customer intent: As an IT admin setting up federation with SAML/WS-Fed identity providers, I want to configure the required attributes and claims for the SAML 2.0 or WS-Fed protocol, so that guest users can sign in to my Microsoft Entra tenant using their own organizational account.
 ---
