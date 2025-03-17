@@ -26,10 +26,8 @@ Integrating Jobscience with Microsoft Entra ID provides you with the following b
 If you want to know more details about SaaS app integration with Microsoft Entra ID, see [what is application access and single sign-on with Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with Jobscience, you need the following items:
-
-- A Microsoft Entra subscription
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 - A Jobscience single sign-on enabled subscription
 
 > [!NOTE]

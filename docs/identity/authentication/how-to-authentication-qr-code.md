@@ -5,12 +5,12 @@ description: Learn about how to enable QR code authentication method in Microsof
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 03/04/2025
+ms.date: 03/11/2025
 
 ms.author: justinha
 author: aanjusingh
 ms.reviewer: anjusingh
-manager: amycolannino
+manager: femila
 
 # Customer intent: As an identity administrator, I want to understand how to enable QR code authentication in Microsoft Entra ID to improve and secure user sign-in events for frontline workers
 ---
@@ -21,11 +21,21 @@ This topic covers how to enable the QR code authentication method in the Authent
 
 ## Prerequisites to enable the QR code authentication method
 
-- Microsoft Entra ID tenant with at least an F1, F3, or P1 license. 
+
+- An active Azure subscription.
+  - If you don't have an Azure subscription, [create an account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- A Microsoft Entra tenant associated with your subscription.
+  - If needed, [create a Microsoft Entra tenant][create-azure-ad-tenant] or [associate an Azure subscription with your account][associate-azure-ad-tenant].
+- You need at least the [Authentication Policy Administrator](~/identity/role-based-access-control/permissions-reference.md#authentication-policy-administrator) role in your Microsoft Entra tenant to enable the QR code authentication method.
+- Each user that's enabled in the QR code authentication method policy must be licensed, even if they don't use it. Each enabled user must have one of the following Microsoft Entra ID, EMS, Microsoft 365 licenses:
+    - [Microsoft 365 F1 or F3][m365-firstline-workers-licensing]
+    - [Microsoft Entra ID P1 or P2][azure-ad-pricing]
+    - [Enterprise Mobility + Security (EMS) E3 or E5][ems-licensing] or [Microsoft 365 E3 or E5][m365-licensing]
+    - [Office 365 F3][o365-f3]
 - Android, iOS, or iPadOS (iOS/iPadOS version 15.0 or later) shared devices. 
 - Shared device mode enabled on the shared devices (optional but highly recommended). 
 - A printer to print 2" x 2" QR codes. 
-- Teams app installed on the shared device (Android version 1.0.0.2024143204 or later, and iOS version 1.0.0.77.2024132501 or later).
+- To access QR code authentication on Teams, Teams app installed on the shared device would require these versions: Android version 1.0.0.2024143204 or later, and iOS version 1.0.0.77.2024132501 or later.
 - [Enable and setup My Staff portal](~/identity/role-based-access-control/my-staff-configure.md#how-to-enable-my-staff) if you plan for frontline managers to use My Staff to provision, manage, and reset QR code and PINs. 
 
 ## Enable QR code authentication method
@@ -78,7 +88,7 @@ This example enables QR code authentication for a group, with a PIN length of 10
 
 ## Add QR code authentication method for a user
 
-You can add a QR code authentication method for a user by using the Microsoft Entra admin center, My Staff, or Microsoft Graph API. 
+You can add a QR code authentication method for a user by using the Microsoft Entra admin center, My Staff, or Microsoft Graph API. At a time, only one active QR code auth method is allowed. Standard QR code is generated during 'Add authentication method'. You can add Temporary QR code, which is short-lived, if user is not carrying Standard QR code. You can delete Standard/Temporary QR code to add a new Standard/Temporary QR code. A user can have only one Standard and one Temporary QR code active at any point of time. 
 
 ### Add QR code authentication method for a user in the Microsoft Entra admin center
 
@@ -554,4 +564,16 @@ Restrict the QR code authentication method to only frontline workers, compliant,
 - [Manage your users with My Staff](~/identity/role-based-access-control/my-staff-configure.md)
 - [What authentication and verification methods are available in Microsoft Entra ID?](concept-authentication-methods.md)
 
+
+<!-- INTERNAL LINKS -->
+[create-azure-ad-tenant]: ~/fundamentals/sign-up-organization.md
+[associate-azure-ad-tenant]: ~/fundamentals/how-subscriptions-associated-directory.yml
+
+<!-- EXTERNAL LINKS -->
+[m365-firstline-workers-licensing]: https://www.microsoft.com/licensing/news/m365-firstline-workers
+[azuread-licensing]: https://azure.microsoft.com/pricing/details/active-directory/
+[ems-licensing]: https://www.microsoft.com/microsoft-365/enterprise-mobility-security/compare-plans-and-pricing
+[m365-licensing]: https://www.microsoft.com/microsoft-365/compare-microsoft-365-enterprise-plans
+[o365-f1]: https://www.microsoft.com/microsoft-365/business/office-365-f1?market=af
+[o365-f3]: https://www.microsoft.com/microsoft-365/business/office-365-f3?activetab=pivot%3aoverviewtab
 

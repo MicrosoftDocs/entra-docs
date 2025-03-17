@@ -58,7 +58,7 @@ You'll configure and test Microsoft Entra SSO with Cloud Academy by using a test
 To configure and test Microsoft Entra SSO with Cloud Academy, you'll complete these high-level steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** to enable your users to use the feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** to test Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** to test Microsoft Entra single sign-on.
     1. **[Grant access to the test user](#grant-access-to-the-test-user)** to enable the user to use Microsoft Entra single sign-on.
 1. **[Configure single sign-on for Cloud Academy](#configure-single-sign-on-for-cloud-academy)** on the application side.
     1. **[Create a Cloud Academy test user](#create-a-cloud-academy-test-user)** as a counterpart to the Microsoft Entra representation of the user.

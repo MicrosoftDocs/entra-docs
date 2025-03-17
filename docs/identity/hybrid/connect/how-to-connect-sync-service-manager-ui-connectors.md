@@ -3,7 +3,7 @@ title: Connectors in the Microsoft Entra Connect Sync Service Manager UI'
 description: Understand the Connectors tab in the Service Manager for Microsoft Entra Connect Sync.
 
 author: billmath
-manager: amycolannino
+manager: femila
 
 ms.assetid: 60f1d979-8e6d-4460-aaab-747fffedfc1e
 ms.service: entra-id

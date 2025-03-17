@@ -26,10 +26,8 @@ In this article,  you'll learn how to integrate Viareport (Europe) with Microsof
 To learn more about SaaS app integration with Microsoft Entra ID, see [What is application access and single sign-on with Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Viareport (Europe) single sign-on (SSO) enabled subscription.
 
 ## Scenario description
@@ -60,8 +58,8 @@ To configure and test Microsoft Entra SSO with Viareport (Europe), complete the 
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
 2. **[Configure Viareport (Europe) SSO](#configure-viareport-europe-sso)** - to configure the Single Sign-On settings on application side.
-3. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-4. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+3. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+4. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 5. **[Create Viareport (Europe) test user](#create-viareport-europe-test-user)** - to have a counterpart of B.Simon in Viareport (Europe) that is linked to the Microsoft Entra representation of user.
 6. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 

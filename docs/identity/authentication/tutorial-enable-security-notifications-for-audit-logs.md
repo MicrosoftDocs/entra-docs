@@ -9,7 +9,7 @@ ms.date: 03/04/2025
 
 author: camilasinelli
 ms.author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: jupetter
 ---
 # Tutorial: Enable security notifications for audit log events

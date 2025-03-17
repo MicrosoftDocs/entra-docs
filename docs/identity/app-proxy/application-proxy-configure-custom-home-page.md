@@ -2,10 +2,10 @@
 title: Custom home page for published apps - Microsoft Entra application proxy
 description: Covers the basics about Microsoft Entra private network connectors
 author: kenwith
-manager: rkarlin
+manager: femila
 ms.service: entra-id
 ms.subservice: app-proxy
-ms.custom: has-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 02/21/2025
 ms.author: kenwith
@@ -15,7 +15,7 @@ ms.reviewer: harshja
 
 This article discusses how to configure an app to direct a user to a custom home page. When you publish an app with application proxy, you set an internal URL, but sometimes that's not the page a user should see first. Set a custom home page so that a user gets the right page when they access the app. A user sees the custom home page that you set, regardless of whether they access the app from the Microsoft Entra My Apps or the Microsoft 365 app launcher.
 
-When a user launches the app, they're directed by default to the root domain URL for the published app. The landing page is typically set as the home page URL. Use the Azure AD PowerShell module to define a custom home page URL when you want an app user to land on a specific page within the app.
+When a user launches the app, they're directed by default to the root domain URL for the published app. The landing page is typically set as the home page URL. Use the Microsoft Entra PowerShell module to define a custom home page URL when you want an app user to land on a specific page within the app.
 
 Here's one scenario that explains why your company would set a custom home page:
 
@@ -57,23 +57,23 @@ To change the home page URL of your app through the Microsoft Entra admin center
 
 To configure the home page of an app using PowerShell, you need to:
 
-1. Install the Azure AD PowerShell module.
+1. Install the  Microsoft Entra PowerShell module.
 1. Find the ObjectId value of the app.
 1. Update the app's home page URL using PowerShell commands.
 
-### Install the Azure AD PowerShell module
+### Install the Microsoft Entra PowerShell module
 
-Before you define a custom home page URL by using PowerShell, install the Azure AD PowerShell module. You can download the package from the [PowerShell Gallery](https://www.powershellgallery.com/packages/AzureAD/2.0.2.16), which uses the Graph API endpoint.
+Before you define a custom home page URL by using PowerShell, install the Microsoft Entra PowerShell module. You can download the package from the [PowerShell Gallery](https://www.powershellgallery.com/packages/Microsoft.Graph.Entra), which uses the Graph API endpoint.
 
 To install the package, follow these steps:
 
 1. Open a standard PowerShell window, and then run the following command:
 
    ```powershell
-   Install-Module -Name AzureAD
+   Install-Module -Name Microsoft.Graph
    ```
 
-    If you're running the command without administrative rights, use the `-scope currentuser` option.
+   If you're running the command without administrative rights, use the `-Scope CurrentUser` option.
 
 1. During the installation, select **Y** to install two packages from Nuget.org. Both packages are required.
 
@@ -84,38 +84,38 @@ You get the ObjectId of the app by searching for the app by its display name or 
 1. In the same PowerShell window, import the Microsoft Entra module.
 
    ```powershell
-   Import-Module AzureAD
+   Import-Module -Name Microsoft.Graph
    ```
 
 1. Sign in to the Microsoft Entra module as the tenant administrator.
 
    ```powershell
-   Connect-AzureAD
+   Connect-Entra -Scopes 'Application.Read.All'
    ```
 
 1. Find the app. This example uses PowerShell to find the ObjectId by searching for the app with a display name of `SharePoint`.
 
    ```powershell
-   Get-AzureADApplication | Where-Object { $_.DisplayName -eq "SharePoint" } | Format-List DisplayName, Homepage, ObjectId
+   Get-EntraApplication | Where-Object { $_.DisplayName -eq "SharePoint" } | Format-List DisplayName, IdentifierUris, ObjectId
    ```
 
    You should get a result that's similar to the one shown here. Copy the ObjectId GUID to use in the next section.
 
    ```console
-   DisplayName : SharePoint
-   Homepage    : https://sharepoint-iddemo.msappproxy.net/
-   ObjectId    : aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb
+   DisplayName       : SharePoint
+   IdentifierUris    : https://sharepoint-iddemo.msappproxy.net/
+   ObjectId          : aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb
    ```
 
    Alternatively, you could just pull the list of all apps, search the list for the app with a specific display name or home page, and copy the app's ObjectId once the app is found.
 
    ```powershell
-   Get-AzureADApplication | Format-List DisplayName, Homepage, ObjectId
+   Get-EntraApplication | Format-List DisplayName, IdentifierUris, ObjectId
    ```
 
 ### Update the home page URL
 
-Create the home page URL, and update your app with that value. Continue using the same PowerShell window, or if you're using a new PowerShell window, sign in to the Microsoft Entra module again using `Connect-AzureAD`. Then follow these steps:
+Create the home page URL, and update your app with that value. Continue using the same PowerShell window, or if you're using a new PowerShell window, sign in to the Microsoft Entra module again using `Connect-Entra`. Then follow these steps:
 
 1. Create a variable to hold the `ObjectId` value you copied.
 
@@ -126,39 +126,29 @@ Create the home page URL, and update your app with that value. Continue using th
 1. Confirm that you have the correct app by running the following command. The output should be identical to the output you saw in the previous section ([Find the ObjectId of the app](#find-the-objectid-of-the-app)).
 
    ```powershell
-   Get-AzureADApplication -ObjectId $objguid | Format-List DisplayName, Homepage, ObjectId
-   ```
-
-1. Create a blank application object to hold the changes that you want to make.
-
-   ```powershell
-   $appnew = New-Object "Microsoft.Open.AzureAD.Model.Application"
+   Get-EntraApplication -ObjectId $objguid | Format-List DisplayName, IdentifierUris, ObjectId
    ```
 
 1. Set the home page URL to the value that you want. The value must be a subdomain path of the published app. For example, if you change the home page URL from `https://sharepoint-iddemo.msappproxy.net/` to `https://sharepoint-iddemo.msappproxy.net/hybrid/`, app users go directly to the custom home page.
 
-   ```powershell
-   $homepage = "https://sharepoint-iddemo.msappproxy.net/hybrid/"
-   ```
-
-1. Make the update of the home page.
+   Use this command:
 
    ```powershell
-   Set-AzureADApplication -ObjectId $objguid -Homepage $homepage
+   Set-EntraApplication -ApplicationId $objguid -IdentifierUris 'https://sharepoint-iddemo.msappproxy.net/hybrid/'
    ```
 
 1. To confirm that the change was successful, run the following command from step 2 again.
 
    ```powershell
-   Get-AzureADApplication -ObjectId $objguid | Format-List DisplayName, Homepage, ObjectId
+   Get-EntraApplication -ObjectId $objguid | Format-List DisplayName, IdentifierUris, ObjectId
    ```
 
    For our example, the output should now appear as follows:
 
    ```console
-   DisplayName : SharePoint
-   Homepage    : https://sharepoint-iddemo.msappproxy.net/hybrid/
-   ObjectId    : bbbbbbbb-1111-2222-3333-cccccccccccc
+   DisplayName       : SharePoint
+   IdentifierUris    : https://sharepoint-iddemo.msappproxy.net/hybrid/
+   ObjectId          : bbbbbbbb-1111-2222-3333-cccccccccccc
    ```
 
 1. Restart the app to confirm that the home page appears as the first screen, as expected.

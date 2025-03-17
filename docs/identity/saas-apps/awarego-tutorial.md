@@ -25,10 +25,8 @@ In this article,  you'll learn how to integrate AwareGo with Microsoft Entra ID.
 * Manage your accounts in one central location, the Azure portal.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * An AwareGo single sign-on (SSO)-enabled subscription.
 
 ## Scenario description
@@ -56,8 +54,8 @@ To configure and test Microsoft Entra SSO with AwareGo, do the following:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** to enable your users to use this feature.  
 
-    a. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** to test Microsoft Entra single sign-on with user B.Simon.  
-    b. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** to enable user B.Simon to use Microsoft Entra single sign-on.  
+    a. **Create a Microsoft Entra test user** to test Microsoft Entra single sign-on with user B.Simon.  
+    b. **Assign the Microsoft Entra test user** to enable user B.Simon to use Microsoft Entra single sign-on.  
 
 1. **[Configure AwareGo SSO](#configure-awarego-sso)** to configure the single sign-on settings on the application side.
 

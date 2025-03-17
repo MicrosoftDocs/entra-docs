@@ -25,10 +25,8 @@ In this article,  you'll learn how to integrate SPS|Production Manager with Micr
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To integrate Microsoft Entra ID with SPS|Production Manager, you need:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * SPS|Production Manager single sign-on (SSO) enabled subscription.
 
 ## Scenario description
@@ -55,8 +53,8 @@ Configure and test Microsoft Entra SSO with SPS|Production Manager using a test 
 To configure and test Microsoft Entra SSO with SPS|Production Manager, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-microsoft-entra-id-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure SPS|Production Manager SSO](#configure-spsproduction-manager-sso)** - to configure the single sign-on settings on application side.
     1. **[Create SPS|Production Manager test user](#create-spsproduction-manager-test-user)** - to have a counterpart of B.Simon in SPS|Production Manager that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.

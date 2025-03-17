@@ -7,9 +7,9 @@ ms.service: entra-id-protection
 ms.topic: conceptual
 ms.date: 02/28/2025
 
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: amycolannino
+author: shlipsey3
+ms.author: sarahlipsey
+manager: femila
 ms.reviewer: chuqiaoshi
 ---
 # Self-remediation experience with Microsoft Entra ID Protection and Conditional Access

@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect: msExchUserHoldPolicies and cloudMsExchUserHoldP
 description: This topic describes attribute behavior of the msExchUserHoldPolicies and cloudMsExchUserHoldPolicies attributes
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: reference

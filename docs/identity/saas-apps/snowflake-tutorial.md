@@ -61,8 +61,8 @@ Configure and test Microsoft Entra SSO with Snowflake using a test user called *
 To configure and test Microsoft Entra SSO with Snowflake, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-	1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-	1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+	1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+	1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Snowflake SSO](#configure-snowflake-sso)** - to configure the single sign-on settings on application side.
 	1. **[Create Snowflake test user](#create-snowflake-test-user)** - to have a counterpart of B.Simon in Snowflake that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -82,18 +82,18 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In the **Basic SAML Configuration** section, perform the following steps, if you wish to configure the application in **IDP** initiated mode:
 
-    a. In the **Identifier** text box, type a URL using the following pattern:
+    a. Under the **Identifier (Entity ID)** section, click the **Add identifier** link, then type a URL in the textbox using the following pattern:
     `https://<SNOWFLAKE-URL>.snowflakecomputing.com`
 
-    b. In the **Reply URL** text box, type a URL using the following pattern:
+    b. Under the **Reply URL (Assertion Consumer Service URL)** section, click the **Add reply URL** link, then type a URL in the textbox using the following pattern:
     `https://<SNOWFLAKE-URL>.snowflakecomputing.com/fed/login`
 
 1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
-	a. In the **Sign-on URL** text box, type a URL using the following pattern:
+	a. In the **Sign on URL (Optional)** text box, type a URL using the following pattern:
     `https://<SNOWFLAKE-URL>.snowflakecomputing.com`
     
-	b. In the **Logout URL** text box, type a URL using the following pattern:
+	b. In the **Logout URL (Optional)** text box, type a URL using the following pattern:
     `https://<SNOWFLAKE-URL>.snowflakecomputing.com/fed/logout`
 
     > [!NOTE]
@@ -154,14 +154,14 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
 
 1. In the **SAML2_SSO_URL**, paste **Login URL** value, which you copied previously.
 
-1. In the **SAML2_PROVIDER**, give the value like `CUSTOM`.
+1. In the **SAML2_PROVIDER**, use value `CUSTOM`.
 
 1. Select the **All Queries** and select **Run**.
 
     ![Snowflake sql](./media/snowflake-tutorial/certificate.png)
 
     ```
-    CREATE [ OR REPLACE ] SECURITY INTEGRATION [ IF NOT EXISTS ]
+    CREATE [ OR REPLACE ] SECURITY INTEGRATION [ IF NOT EXISTS ] ENTRAINTEGRATION
     TYPE = SAML2
     ENABLED = TRUE | FALSE
     SAML2_ISSUER = '<EntityID/Issuer value which you have copied>'

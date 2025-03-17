@@ -46,9 +46,9 @@ Invalid example:
 
 These two subject values don't case-sensitively match, so validation fails. The same mechanism is applied to `issuer` and `audience` validation. 
 
-This change will be applied initially to applications or managed identities created after `August 14th, 2024`.  Inactive applications or managed identities, determined by there being zero Workload Identity Federation requests made by said application or managed identity between the period `August 1st, 2024` to `August 31st, 2024`, are required to use case-sensitive matching starting `September 27th, 2024`. For active applications, case-insensitive matching comes at a later date to be communicated.  
+This change will be applied initially to applications or managed identities created after `August 14th, 2024`.  Inactive applications or managed identities, determined by there being zero Workload Identity Federation requests made by said application or managed identity between the period `August 1st, 2024` to `August 31st, 2024`, are required to use case-sensitive matching starting `September 27th, 2024`. For active applications, case-sensitive matching comes at a later date to be communicated.  
 
-To better highlight failures due to case-insensitivity, we're revamping the error message for `AADSTS700213`. It will now state;
+To better highlight failures due to case-sensitivity, we're revamping the error message for `AADSTS700213`. It will now state;
 
 ```
 `AADSTS700213: No matching federated identity record found for presented assertion subject '{subject}'. Please note that matching is done using a case-sensitive comparison. Check your federated identity credential Subject, Audience, and Issuer against the presented assertion.` 

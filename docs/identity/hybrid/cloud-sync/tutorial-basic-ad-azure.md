@@ -3,7 +3,7 @@ title: Tutorial - Basic Active Directory on-premises and Microsoft Entra environ
 
 description: Learn how to create a basic AD and Microsoft Entra environment.
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: tutorial
 ms.date: 12/17/2024

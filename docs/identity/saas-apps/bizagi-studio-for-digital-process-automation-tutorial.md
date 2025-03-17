@@ -24,10 +24,8 @@ In this article,  you'll learn how to integrate Bizagi for Digital Process Autom
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Bizagi project using Automation Services or Server. 
 * Have your own certificates for SAML assertion signatures. This certificates must be generate in p12 or pfx format.
 * Have a metadata file in XML format generated from the Bizagi project. 
@@ -60,7 +58,7 @@ To configure and test Microsoft Entra SSO with Bizagi for Digital Process Automa
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
     1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Bizagi for Digital Process Automation SSO](#configure-bizagi-for-digital-process-automation-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Bizagi for Digital Process Automation test user](#create-bizagi-for-digital-process-automation-test-user)** - to have a counterpart of B.Simon in Bizagi for Digital Process Automation that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.

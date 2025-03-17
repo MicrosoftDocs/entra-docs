@@ -25,10 +25,8 @@ In this article,  you'll learn how to integrate Brocade SANnav Global View with 
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To integrate Microsoft Entra ID with Brocade SANnav Global View, you need:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * SANnav Global View application installed with a valid subscription license.
 
 ## Scenario description
@@ -55,7 +53,7 @@ Configure and test Microsoft Entra SSO with Brocade SANnav Global View using a t
 To configure and test Microsoft Entra SSO with Brocade SANnav Global View, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Create SANnav Group and assign the user to the group](#create-sannav-group-and-assign-the-user-to-the-group)** - to enable B.Simon to use Microsoft Entra single sign-on. Add importing the SANnav Global View metadata file.
 1. **[Configure Brocade SANnav Global View SSO](#configure-brocade-sannav-global-view-sso)** - to configure the single sign-on settings on application side. 
     1. **[Create Brocade SANnav Global View groups](#create-brocade-sannav-global-view-groups)** - Assume B. Simon is part of the "SANnav Administrator" group in Microsoft Entra. Add importing the Microsoft Entra metadata.
