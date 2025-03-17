@@ -22,7 +22,6 @@ To assign or remove custom security attributes for a user in your Microsoft Entr
 
 - [Attribute Assignment Administrator](~/identity/role-based-access-control/permissions-reference.md#attribute-assignment-administrator)
 - Microsoft.Graph module when using [Microsoft Graph PowerShell](/powershell/microsoftgraph/installation)
-- [Microsoft.Entra.Beta](https://www.powershellgallery.com/packages/Microsoft.Entra.Beta) for Microsoft Entra ID PowerShell
 
 [!INCLUDE [security-attributes-roles](../../includes/security-attributes-roles.md)]
     
@@ -154,10 +153,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 }
 ```
 
-# [Microsoft Entra ID PowerShell](#tab/microsoft-entra-id-powershell)
-
-None
-
 ---
 
 #### Assign a custom security attribute with a multi-string value to a user
@@ -202,10 +197,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
     }
 }
 ```
-
-# [Microsoft Entra ID PowerShell](#tab/microsoft-entra-id-powershell)
-
-None
 
 ---
 
@@ -252,10 +243,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 }
 ```
 
-# [Microsoft Entra ID PowerShell](#tab/microsoft-entra-id-powershell)
-
-None
-
 ---
 
 #### Assign a custom security attribute with a multi-integer value to a user
@@ -301,10 +288,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 }
 ```
 
-# [Microsoft Entra ID PowerShell](#tab/microsoft-entra-id-powershell)
-
-None
-
 ---
 
 #### Assign a custom security attribute with a Boolean value to a user
@@ -347,10 +330,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
     }
 }
 ```
-
-# [Microsoft Entra ID PowerShell](#tab/microsoft-entra-id-powershell)
-
-None
 
 ---
 
@@ -397,10 +376,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 }
 ```
 
-# [Microsoft Entra ID PowerShell](#tab/microsoft-entra-id-powershell)
-
-None
-
 ---
 
 #### Update a custom security attribute assignment with a Boolean value for a user
@@ -443,10 +418,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
     }
 }
 ```
-
-# [Microsoft Entra ID PowerShell](#tab/microsoft-entra-id-powershell)
-
-None
 
 ---
 
@@ -492,10 +463,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
     }
 }
 ```
-
-# [Microsoft Entra ID PowerShell](#tab/microsoft-entra-id-powershell)
-
-None
 
 ---
 
@@ -586,15 +553,6 @@ If there are no custom security attributes assigned to the user or if the callin
 {
     "customSecurityAttributes": null
 }
-```
-
-# [Microsoft Entra ID PowerShell](#tab/microsoft-entra-id-powershell)
-
-[Get-EntraBetaUser](/powershell/module/microsoft.entra.beta/get-entrabetauser)
-
-```powershell
-$user1 = Get-EntraBetaUser -Id 00aa00aa-bb11-cc22-dd33-44ee44ee44ee
-$user1.CustomSecurityAttributes
 ```
 
 ---
@@ -689,10 +647,6 @@ ConsistencyLevel: eventual
     ]
 }
 ```
-
-# [Microsoft Entra ID PowerShell](#tab/microsoft-entra-id-powershell)
-
-None
 
 ---
 
@@ -804,10 +758,6 @@ ConsistencyLevel: eventual
     ]
 }
 ```
-
-# [Microsoft Entra ID PowerShell](#tab/microsoft-entra-id-powershell)
-
-None
 
 ---
 
@@ -924,10 +874,6 @@ ConsistencyLevel: eventual
 }
 ```
 
-# [Microsoft Entra ID PowerShell](#tab/microsoft-entra-id-powershell)
-
-None
-
 ---
 
 #### Remove a single-valued custom security attribute assignment from a user
@@ -972,10 +918,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
 }
 ```
 
-# [Microsoft Entra ID PowerShell](#tab/microsoft-entra-id-powershell)
-
-None
-
 ---
 
 #### Remove a multi-valued custom security attribute assignment from a user
@@ -1017,10 +959,6 @@ PATCH https://graph.microsoft.com/v1.0/users/{id}
     }
 }
 ```
-
-# [Microsoft Entra ID PowerShell](#tab/microsoft-entra-id-powershell)
-
-None
 
 ---
 
