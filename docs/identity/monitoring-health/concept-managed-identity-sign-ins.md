@@ -2,11 +2,11 @@
 title: Managed identity sign-in logs
 description: Learn about the type of information captured in the managed identity sign-in logs in Microsoft Entra monitoring and health.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.subservice: monitoring-health
-ms.date: 09/10/2024
+ms.date: 03/17/2025
 ms.author: sarahlipsey
 ms.reviewer: egreenberg14
 
@@ -18,8 +18,7 @@ Managed identities for Azure resources sign-ins are sign-ins that were performed
 
 ![Screenshot of the managed identity sign-in log.](media/concept-managed-identity-sign-ins/sign-in-logs-managed-identity.png)
 
-**Report size:** Small </br>
-**Examples:**
+The following examples show the type of information captured in the managed identity sign-in logs:
 
 You can't customize the fields shown in this report.
 
