@@ -8,7 +8,6 @@ ms.author: jayrusso
 author: HULKsmashGithub
 manager: femila
 ms.reviewer: lirazbarak
-ms.reviewer: jricketts
 
 # Customer intent: Windows users, I want to download and install the Global Secure Access client.
 ---
