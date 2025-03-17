@@ -2120,6 +2120,46 @@
       "source_path_from_root": "/docs/identity-platform/tutorial-web-api-dotnet-register-app.md",
       "redirect_url": "/entra/identity-platform/quickstart-web-api-aspnet-core-protect-api",
       "redirect_document_id": false
-    }
+    },
+    {
+      "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-edit-profile-prepare-app.md",
+      "redirect_url": "/entra/identity-platform/how-to-web-app-node-edit-profile-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
+      "redirect_document_id": false
+  },
+  {
+    "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-edit-profile-update-profile.md",
+    "redirect_url": "/entra/identity-platform/how-to-web-app-node-edit-profile-update-profile?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
+    "redirect_document_id": false
+  },
+  {
+    "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-sign-in-call-api-call-api.md",
+    "redirect_url": "/entra/identity-platform/how-to-web-app-node-sign-in-call-api-call-api?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
+    "redirect_document_id": false
+  },
+  {
+    "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-sign-in-call-api-prepare-app.md",
+    "redirect_url": "/entra/identity-platform/how-to-web-app-node-sign-in-call-api-prepare-app?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
+    "redirect_document_id": false
+  },
+  {
+    "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-sign-in-call-api-prepare-tenant.md",
+    "redirect_url": "/entra/identity-platform/how-to-web-app-node-sign-in-call-api-prepare-tenant?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
+    "redirect_document_id": false
+  },
+  {
+    "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md",
+    "redirect_url": "/entra/identity-platform/how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
+    "redirect_document_id": false
+  },
+  {
+    "source_path_from_root": "/docs/external-id/customers/how-to-web-app-node-use-certificate.md",
+    "redirect_url": "/entra/identity-platform/how-to-web-app-node-use-certificate?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
+    "redirect_document_id": false
+  },
+  {
+    "source_path_from_root": "/docs/external-id/customers/how-to-web-app-role-based-access-control.md",
+    "redirect_url": "/entra/identity-platform/how-to-web-app-role-based-access-control?toc=/entra/external-id/toc.json&bc=/entra/external-id/breadcrumb/toc.json",
+    "redirect_document_id": false
+  }
   ]
 }
