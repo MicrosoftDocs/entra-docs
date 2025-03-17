@@ -1,5 +1,5 @@
 ---
-title: TLS 1.2 enforcement for Microsoft Entra Domain Services | Microsoft Learn
+title: Transport Layer Security (TLS) 1.2 enforcement for Microsoft Entra Domain Services | Microsoft Learn
 description: Learn how to enforce TLS 1.2 for a Microsoft Entra Domain Services managed domain.
 author: justinha
 manager: femila
@@ -13,12 +13,12 @@ ms.author: justinha
 ms.reviewer: bochingwa
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
-# TLS 1.2 enforcement for Microsoft Entra Domain Services
+# Transport Layer Security (TLS) 1.2 enforcement for Microsoft Entra Domain Services
 
 Microsoft is enhancing security by disabling TLS versions 1.0 and 1.1, which have known vulnerabilities and are no longer considered secure. These older versions are being replaced by TLS 1.2 and TLS 1.3, which offer better security and performance. This change helps protect customer data and ensures compliance with industry standards.
 
-Microsoft Entra Domain Services supports TLS versions 1.0 and 1.1, but they are disabled by default.
-Domain Services will use the following deprecation path for legacy TLS:
+Microsoft Entra Domain Services supports TLS versions 1.0 and 1.1, but they're disabled by default.
+Domain Services will use the following deprecation path for TLS versions 1.0 and 1.1:
 
 1. Remove the ability to disable the TLS 1.2 only mode. Customers who disable TLS 1.2 only mode can enable it. \<date\>
 1. Customers can't enable or disable the security setting by using the Azure portal, Microsoft Entra admin center, or programmatically with ARM APIs, PowerShell, or Bicep or ARM templates. \<date\>
@@ -26,12 +26,12 @@ Domain Services will use the following deprecation path for legacy TLS:
 
 ## How to migrate to TLS 1.2 only mode in Domain Services
 
-Use the Azure Portal:
+Use the Azure portal:
 
-1.	In th Azure portal, go to the Microsoft Entra DS instance. 
+1.	In th Azure portal, go to the Domain Services instance. 
 2.	Go to the Security settings.
-3.	If the TLS 1.2 only mode is set to **Disable**, the instance has enabled legacy TLS.
-4.	If TLS 1.2 only mode is disabled, enable it and then save.
+3.	If the TLS 1.2 only mode is set to **Disable**, the instance enables TLS versions 1.0 and 1.1.
+4.	Set TLS 1.2 only mode to **Enable**, and then click **Save**.
 
 Use PowerShell:
 
