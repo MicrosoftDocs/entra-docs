@@ -7,7 +7,7 @@ metadata:
   ms.author: sarahlipsey
   manager: femila
   ms.reviewer: jeffsta
-  ms.date: 02/21/2025
+  ms.date: 03/17/2025
   ms.service: entra
   ms.subservice: fundamentals
   ms.topic: how-to
@@ -56,11 +56,12 @@ procedureSection:
       - |
         Select an **Assignment type**.
         
-          You can assign roles as either *eligible* or *active*. 
+          If your organization has a Microsoft Entra ID P2, Microsoft Entra ID Governance, or Microsoft Entra Suite license, you can assign roles as either *eligible* or *active*.
+          If your organization has a Free or Microsoft Entra ID P1 license, you can only assign roles as *active*.
 
           :::image type="content" source="media/entra-users-assign-role-azure-portal/role-assignment-settings.png" alt-text="Screenshot of the role assignment settings.":::
       - |
-        Leave the **Permanently eligible** option selected if the role should always be available to elevate for the user.
+        Leave the **Permanently eligible** option selected if the role should always be *available* to elevate for the user.
 
           If you uncheck this option, you can specify a date range for the role eligibility.
       - |
