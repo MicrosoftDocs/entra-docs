@@ -68,7 +68,7 @@ Online support requests can be created from several places in the admin center:
 
 - From the **Diagnose and solve problems** page:
 
-   ![Screenshot Diagnose and solve problems page with the navigation menu highlighted.](media/how-to-get-support/diagnose-solve-problems-new-support-request.png)
+   ![Screenshot of the Diagnose and solve problems page with the navigation menu highlighted.](media/how-to-get-support/diagnose-solve-problems-new-support-request.png)
 
 - From the left-hand navigation menu:
 
