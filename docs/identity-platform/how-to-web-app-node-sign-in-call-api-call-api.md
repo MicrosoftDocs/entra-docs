@@ -1,6 +1,6 @@
 ---
 title: Call an API in a Node.js web application
-description: Learn how to call a protected API in your own Node.js web application.
+description: Learn how to call a protected API in your Node.js web application using access tokens from Microsoft Entra External ID.
  
 author: kengaderdus
 manager: mwongerapk
@@ -14,7 +14,7 @@ ms.custom: developer, devx-track-js
 
 # Call a web API in a Node.js web application
 
-[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
 In this article, you learn how to call a web API from your Node.js client web app using the access token you acquire in [Acquire access token](how-to-web-app-node-sign-in-call-api-sign-in-acquire-access-token.md#acquire-access-token). The web API is protected by Microsoft Entra External ID. This article is the fourth and last part of a four-part guide series.
 
@@ -193,7 +193,7 @@ In this article, you learn how to call a web API from your Node.js client web ap
 
 At this point, you're ready to call the web API from the client web app:  
 
-1. Use the steps in [Secure an ASP.NET web API](./tutorial-protect-web-api-dotnet-core-build-app.md) article to start your web API app. Your web API is now ready to serve client requests.
+1. Use the steps in [Secure an ASP.NET web API](/entra/external-id/customers/tutorial-protect-web-api-dotnet-core-build-app) article to start your web API app. Your web API is now ready to serve client requests.
 
 1. In your terminal, make sure you're in the project folder that contains your client web app such as `ciam-sign-in-call-api-node-express-web-app`, then run the following command:
 
@@ -202,12 +202,11 @@ At this point, you're ready to call the web API from the client web app:
     ```
     Your client web app starts.
 
-1. Use the steps in [Run and test sample web app and API](./sample-web-app-node-sign-in-call-api.md#run-and-test-sample-web-app-and-api) to demonstrate how the client app calls the web API.
+1. Use the steps in [Run and test sample web app and API](quickstart-web-app-node-sign-in-call-api#run-and-test-sample-web-app-and-api) to demonstrate how the client app calls the web API.
 
-## Next steps
-
+## Related content
 You may want to:
 
-- [Customize the default branding](how-to-customize-branding-customers.md)
+- [Customize the default branding](../external-id/customers/how-to-customize-branding-customers.md)
 
-- [Configure sign-in with Google](how-to-google-federation-customers.md)
+- [Configure sign-in with Google](../external-id/customers/how-to-google-federation-customers.md)
