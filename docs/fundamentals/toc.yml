@@ -107,15 +107,6 @@ items:
     href: how-to-get-support.md
   - name: Inaccessible tenant due to inactivity
     href: inaccessible-tenant.md
-  - name: Support access requests
-    expanded: false
-    items:
-      - name: What are support access requests (preview)?
-        href: concept-support-access-requests.md
-      - name: Approve and manage support access requests (preview)
-        href: how-to-manage-support-access-requests.md
-      - name: View support access request activity logs
-        href: how-to-view-support-access-request-logs.md
 - name: Reference
   expanded: false
   items:

@@ -121,6 +121,21 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/fundamentals/how-to-manage-support-access-requests.md",
+      "redirect_url": "/entra/fundamentals/how-to-get-support",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/how-to-view-support-access-request-logs.md",
+      "redirect_url": "/entra/fundamentals/how-to-get-support",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/concept-support-access-requests.md",
+      "redirect_url": "/entra/fundamentals/how-to-get-support",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/fundamentals/users-assign-role-azure-portal.yml",
       "redirect_url": "/entra/fundamentals/how-to-assign-roles-to-users",
       "redirect_document_id": false
