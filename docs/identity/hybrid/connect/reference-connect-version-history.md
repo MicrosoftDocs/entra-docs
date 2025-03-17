@@ -21,7 +21,7 @@ This article helps you keep track of the versions that have released and the cha
 
 ### Breaking Change on Entra Connect Sync
 > [!IMPORTANT]
-> The MSOnline [deprecation](https://aka.ms/msonlineretirement) on April 7, 2025 will impact Entra Connect Sync service. We recommend that you upgrade your connect sync version to 2.4.18.0 or higher to avoid being impacted by the deprecation. No action is required if you have upgraded your connect sync version. [Learn More](harden-update-ad-fs-pingfederate.md) 
+> The MSOnline [retirement](https://aka.ms/msonlineretirement) on April 7, 2025 will impact Entra Connect Sync wizard. We recommend that you upgrade your connect sync version to 2.4.18.0 or higher to maintain connect sync wizard capabilities such as schema refresh, configuration of staging mode and user-sign in changes. No action is required if you have upgraded your connect sync version. [Learn More](harden-update-ad-fs-pingfederate.md) 
 
 ## Looking for the latest versions?
 
