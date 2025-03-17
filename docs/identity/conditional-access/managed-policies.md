@@ -156,13 +156,13 @@ Analyze the **Microsoft Entra sign-in logs** to see specific details about how t
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](~/identity/role-based-access-control/permissions-reference.md#reports-reader).
 1. Browse to **Identity** > **Monitoring & health** > **Sign-in logs**.
-1. Use some of all of the following filters:
+1. Use some or all of the following filters:
    - **Correlation ID** when you have a specific event to investigate.
    - **Conditional Access** to see policy failure and success.
    - **Username** to see information related to specific users.
    - **Date** scoped to the time frame in question.
 1. Select a specific sign-in event, then select **Conditional Access**.
-   1. To investigate further, select the **Policy Name** to drill down into the configuration of the policies.
+   - To investigate further, select the **Policy Name** to drill down into the configuration of the policies.
 1. Explore the other tabs to see the **client user** and **device details** that were used for the Conditional Access policy assessment.
 
 ## Common questions
