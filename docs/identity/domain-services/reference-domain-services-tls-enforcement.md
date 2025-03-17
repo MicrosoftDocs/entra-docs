@@ -61,19 +61,21 @@ Use PowerShell:
    Get-AzADDomainService -Name
    ```
 
-   Get the Resource Group Name where the domain instance is located:
+1. Get the Resource Group Name where the domain instance is located:
 
    ```powershell
    Get-AzADDomainService -ResourceGroupName
    ```
 
-   Update the value of TLS 1.2 only mode: 
+1. Update the value of TLS 1.2 only mode: 
 
    ```powershell
    Update-AzADDomainService -Name "name" -ResourceGroupName "resourceGroupName" -DomainSecuritySettingTlsV1 Disabled
    ```
 
    This command may take about 10 minutes to complete.
+
+   <!--- add why it takes 10 minutes and how to recover if command fails--->
 
 ## Related content
 
