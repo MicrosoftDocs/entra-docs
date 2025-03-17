@@ -32,7 +32,7 @@ Use this scenario to help determine the need for Microsoft Entra ID Governance t
 
 Proof-of-concept (PoC) timelines show approximate delivery stage duration and are based on scenario complexity. Times are estimations and vary depending on the environment. 
 
-1. HR provisioning** - 3 hours
+1. HR provisioning - 3 hours
 2. Software-as-a-Service (SaaS) app provisioning - 1 hour
 3. Lifecycle workflows - 3 hours 
 
