@@ -89,7 +89,6 @@ Online support requests can be created from several places in the admin center:
 - **Diagnostic information might be collected as a part of the support request.**
     - Selecting **Yes** allows support to gather [advanced diagnostic information](https://azure.microsoft.com/support/legal/support-diagnostic-information-collection/) from the subscriptions associated with your request.
     - If you prefer not to share this information, select **No**. For more information about the types of files we might collect, see [Advanced diagnostic information logs](/azure/azure-portal/supportability/how-to-create-azure-support-request#advanced-diagnostic-information-logs).
-    - In some scenarios, an administrator in your tenant might need to approve Microsoft Support access to your Microsoft Entra identity data. For more information, see [Support access requests](concept-support-access-requests.md).
 - **Support is available online and by phone for Microsoft paid and trial subscriptions**
     - Support is provided for global technical, presales, billing, and subscription issues.
     - Phone support and online billing support are available in additional languages.
