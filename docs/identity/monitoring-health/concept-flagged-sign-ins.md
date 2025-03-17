@@ -44,7 +44,7 @@ When users see a sign-in error, they can choose to enable flagging. For the next
     - Flagged sign-ins are sign-in error events users are asking assistance on. 
     - A risky sign-in is a functionality of Microsoft Entra ID Protection. For more information, see [What is Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md).
 
-### [How to flag an error](tab/how-to-flag-an-error)
+### [How to flag an error](#tab/how-to-flag-an-error)
 
 The user must complete this first step to enable flagging for sign-in errors.
 
