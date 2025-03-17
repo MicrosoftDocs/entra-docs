@@ -7,12 +7,11 @@ keywords:
 author: rwike77
 ms.author: ryanwi
 manager: celestedg
-ms.date: 11/7/2024
+ms.date: 12/10/2024
 ms.topic: conceptual
 ms.service: entra
-ms.custom: microsoft-copilot
+ms.custom: microsoft-copilot, ignite-2024
 ms.collection: ce-skilling-ai-copilot
-
 #Customer intent: As a SOC analyst or IT admin using Copilot in Microsoft Entra, I want to get an understanding of the Microsoft Entra integration, so that I can use it to respond to and remediate identity risks.
 ---
 
@@ -56,6 +55,7 @@ Specific scenarios supported by Security Copilot embedded in Microsoft Entra ski
 - Troubleshoot a user’s sign-in events.
 - Find details about users and groups.
 - Find and summarize changes made to users, roles, groups, and apps from Microsoft Entra audit log details.
+- Improve your security posture and reduce application/workload identity risk.
 - Learn more about Microsoft Entra and receive guidance on identity & access administration from relevant [Microsoft Entra documentation](/entra/). 
 
 ### Summarize a user's risk level
@@ -105,6 +105,7 @@ To understand how Security Copilot handles your prompts and the data that’s re
 
 - Learn more about [risky user summarization](copilot-entra-risky-user-summarization.md).
 - [Investigate security incidents](copilot-security-entra-investigate-incident.md) using the Microsoft Entra skills in Microsoft Security Copilot.
+- [Investigate risky apps](copilot-security-entra-investigate-risky-apps.md) using the Microsoft Entra skills in Microsoft Security Copilot.
 
 ## See also
 
@@ -112,4 +113,3 @@ To understand how Security Copilot handles your prompts and the data that’s re
 - [What is Security Copilot?](/security-copilot/microsoft-security-copilot)
 - [Privacy and data security in Security Copilot](/security-copilot/privacy-data-security)
 - [Responsible AI FAQs](/security-copilot/responsible-ai-overview-security-copilot)
-

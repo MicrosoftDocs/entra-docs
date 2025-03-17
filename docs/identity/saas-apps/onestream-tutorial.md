@@ -2,7 +2,7 @@
 title: Microsoft Entra SSO integration with OneStream
 description: Learn how to configure single sign-on between Microsoft Entra ID and OneStream.
 services: active-directory
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
@@ -10,7 +10,7 @@ ms.subservice: saas-apps
 ms.workload: identity
 ms.topic: how-to
 ms.date: 04/19/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and OneStream so that I can control who has access to OneStream, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -18,22 +18,20 @@ ms.author: jeedes
 
 # Microsoft Entra SSO integration with OneStream
 
-In this tutorial, you'll learn how to integrate OneStream with Microsoft Entra ID. When you integrate OneStream with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate OneStream with Microsoft Entra ID. When you integrate OneStream with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to OneStream.
 * Enable your users to be automatically signed-in to OneStream with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To integrate Microsoft Entra ID with OneStream, you need:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * OneStream single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * OneStream supports only **SP** initiated SSO.
 
@@ -55,8 +53,8 @@ Configure and test Microsoft Entra SSO with OneStream using a test user called *
 To configure and test Microsoft Entra SSO with OneStream, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra ID test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra ID test user](#assign-the-microsoft-entra-id-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Create a Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure OneStream SSO](#configure-onestream-sso)** - to configure the single sign-on settings on application side.
     1. **[Create OneStream test user](#create-onestream-test-user)** - to have a counterpart of B.Simon in OneStream that is linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -182,6 +180,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 * Go to OneStream Sign-on URL directly and initiate the login flow from there.
 
-## Next steps
+## Related content
 
 Once you configure OneStream you can enforce session control, which protects exfiltration and infiltration of your organization's sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

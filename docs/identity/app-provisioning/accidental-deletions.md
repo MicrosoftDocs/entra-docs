@@ -2,11 +2,11 @@
 title: Enable accidental deletions prevention in the Microsoft Entra provisioning service
 description: Enable accidental deletions prevention in the Microsoft Entra provisioning service for applications and cross-tenant synchronization.
 author: kenwith
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 03/04/2025
 ms.author: kenwith
 ms.reviewer: arvinh
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
@@ -49,13 +49,13 @@ To enable accidental deletion prevention:
 When the deletion threshold is met, the job goes into quarantine, and a notification email is sent. The quarantined job can then be allowed or rejected. To learn more about quarantine behavior, see [Application provisioning in quarantine status](application-provisioning-quarantine-status.md).
 
 ## Recovering from an accidental deletion
-When you encounter an accidental deletion, you see it on the provisioning status page.  It says `Provisioning has been quarantined. See quarantine details for more information`.
+When you encounter an accidental deletion, you see it on the provisioning status page. It says `Provisioning has been quarantined. See quarantine details for more information`.
 
-You can click either **Allow deletes** or **View provisioning logs**.
+You can select either **Allow deletes** or **View provisioning logs**.
 
 ### Allowing deletions
 
-The **Allow deletes** action deletes the objects that triggered the accidental delete threshold.  Use the procedure to accept the deletions.  
+The **Allow deletes** action deletes the objects that triggered the accidental delete threshold. Use the procedure to accept the deletions.  
 
 1. Select **Allow deletes**.
 2. Click **Yes** on the confirmation to allow the deletions.
@@ -92,7 +92,7 @@ It's evaluated each cycle. If the number of deletions doesn't exceed the thresho
 
 ### How are these deletion events logged?
 You can find users that should be disabled / deleted but haven’t due to the deletion threshold. 
-Navigation to **Provisioning logs** and then filter **Action** with *StagedAction* or *StagedDelete*.
+Navigation to **Provisioning logs** and then filter **Action** with *StagedAction* or *StagedDelete*. The **Audit logs** will also contain a log indicating that the provisioning job is in quarantine due to the accidental deletions threshold.
 
 
 ## Next steps 

@@ -2,7 +2,7 @@
 title: Microsoft Entra SSO integration with Insightly SAML
 description: Learn how to configure single sign-on between Microsoft Entra ID and Insightly SAML.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
@@ -10,28 +10,26 @@ ms.subservice: saas-apps
 
 ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 ---
 
 # Microsoft Entra SSO integration with Insightly SAML
 
-In this tutorial, you learn how to integrate Insightly SAML with Microsoft Entra ID. When you integrate Insightly SAML with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Insightly SAML with Microsoft Entra ID. When you integrate Insightly SAML with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Insightly SAML.
 * Enable your users to be automatically signed-in to Insightly SAML with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To integrate Microsoft Entra ID with Insightly SAML, you need:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Insightly SAML single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Insightly SAML supports **IDP** initiated SSO.
 
@@ -53,8 +51,8 @@ Configure and test Microsoft Entra SSO with Insightly SAML using a test user cal
 To configure and test Microsoft Entra SSO with Insightly SAML, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra ID test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra ID test user](#assign-the-microsoft-entra-id-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Create a Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Insightly SAML SSO](#configure-insightly-saml-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Insightly SAML test user](#create-insightly-saml-test-user)** - to have a counterpart of B.Simon in Insightly SAML that is linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -139,6 +137,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 * You can use Microsoft My Apps. When you click the Insightly SAML tile in the My Apps, you should be automatically signed in to the Insightly SAML for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Insightly SAML you can enforce session control, which protects exfiltration and infiltration of your organization's sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

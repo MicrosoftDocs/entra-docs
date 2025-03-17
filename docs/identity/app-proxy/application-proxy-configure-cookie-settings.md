@@ -3,12 +3,12 @@ title: Application proxy cookie settings
 description:  Microsoft Entra ID has access and session cookies for accessing on-premises applications through application proxy. In this article, you find out how to use and configure the cookie settings. 
 
 author: kenwith
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-proxy
-ms.custom: has-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref
 ms.topic: how-to
-ms.date: 02/07/2024
+ms.date: 02/21/2025
 ms.author: kenwith
 ms.reviewer: ashishj
 ---
@@ -50,30 +50,30 @@ To set the cookie settings using the Microsoft Entra admin center:
 To see the current cookie settings for the application, use this PowerShell command:  
 
 ```powershell
-Get-AzureADApplicationProxyApplication -ObjectId <ObjectId> | fl * 
+Get-MgBetaApplication -ApplicationId <Id> | FL *
 ```
 
 ## Set cookie settings - PowerShell
 
-In the following PowerShell commands, ```<ObjectId>``` is the ObjectId of the application. 
+In the following PowerShell commands, `<Id>` is the **Id** of the application. 
 
 **Http-Only Cookie** 
 
 ```powershell
-Set-AzureADApplicationProxyApplication -ObjectId <ObjectId> -IsHttpOnlyCookieEnabled $true 
-Set-AzureADApplicationProxyApplication -ObjectId <ObjectId> -IsHttpOnlyCookieEnabled $false 
+Set-EntraBetaApplicationProxyApplication -ApplicationId <Id> -IsHttpOnlyCookieEnabled $true 
+Set-EntraBetaApplicationProxyApplication -ApplicationId <Id> -IsHttpOnlyCookieEnabled $false
 ```
 
 **Secure Cookie**
 
 ```powershell
-Set-AzureADApplicationProxyApplication -ObjectId <ObjectId> -IsSecureCookieEnabled $true 
-Set-AzureADApplicationProxyApplication -ObjectId <ObjectId> -IsSecureCookieEnabled $false 
+Set-EntraBetaApplicationProxyApplication -ApplicationId <Id> -IsSecureCookieEnabled $true 
+Set-EntraBetaApplicationProxyApplication -ApplicationId <Id> -IsSecureCookieEnabled $false
 ```
 
 **Persistent Cookies**
 
 ```powershell
-Set-AzureADApplicationProxyApplication -ObjectId <ObjectId> -IsPersistentCookieEnabled $true 
-Set-AzureADApplicationProxyApplication -ObjectId <ObjectId> -IsPersistentCookieEnabled $false 
+Set-EntraBetaApplicationProxyApplication -ApplicationId <Id> -IsPersistentCookieEnabled $true 
+Set-EntraBetaApplicationProxyApplication -ApplicationId <Id> -IsPersistentCookieEnabled $false
 ```

@@ -2,17 +2,17 @@
 title: Create folders to organize your Authorization Systems
 description: How to create folders to organize Authorization Systems - accounts, subscriptions, and projects - in Microsoft Entra Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 08/09/2023
+ms.date: 12/10/2024
 ms.author: jfields
 ---
 
 # Create folders to organize your authorization systems
 
-After onboarding your cloud environment to Permissions Management, you might have multiple authorization systems (AWS accounts, Azure subscriptions, or GCP projets) that you need to manage. You can create folders to organize and group together your list of accounts, subscriptions, or projects to manage your workflow more efficiently. 
+After onboarding your cloud environment to Permissions Management, you might have multiple authorization systems (AWS accounts, Azure subscriptions, or GCP projects) that you need to manage. You can create folders to organize and group together your list of accounts, subscriptions, or projects to manage your workflow more efficiently. 
 
 ## Create a folder
 

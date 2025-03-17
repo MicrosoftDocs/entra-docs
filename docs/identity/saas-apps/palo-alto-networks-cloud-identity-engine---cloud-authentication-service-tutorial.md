@@ -1,39 +1,37 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service'
+title: Microsoft Entra single sign-on (SSO) integration with Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service
 description: Learn how to configure single sign-on between Microsoft Entra ID and Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service so that I can control who has access to Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service
+# Microsoft Entra single sign-on (SSO) integration with Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service
 
-In this tutorial, you'll learn how to integrate Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service with Microsoft Entra ID. When you integrate Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service with Microsoft Entra ID. When you integrate Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service.
 * Enable your users to be automatically signed-in to Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service supports **SP** initiated SSO.
 
@@ -59,8 +57,8 @@ Configure and test Microsoft Entra SSO with Palo Alto Networks Cloud Identity En
 To configure and test Microsoft Entra SSO with Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service SSO](#configure-palo-alto-networks-cloud-identity-engine---cloud-authentication-service-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service test user](#create-palo-alto-networks-cloud-identity-engine---cloud-authentication-service-test-user)** - to have a counterpart of B.Simon in Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -176,6 +174,6 @@ In this section, a user called Britta Simon is created in **Palo Alto Networks C
 
 To Test the **Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service** SSO, open the **Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service** console and click **Test Connection** button and authenticate using the test account which you have created in the **Create a Microsoft Entra test user** section.
 
-## Next Steps
+## Related content
 
 Once you configure **Palo Alto Networks Cloud Identity Engine - Cloud Authentication Service** you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

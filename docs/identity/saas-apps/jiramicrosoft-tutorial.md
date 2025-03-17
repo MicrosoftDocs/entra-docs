@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with JIRA SAML SSO by Microsoft'
+title: Microsoft Entra SSO integration with JIRA SAML SSO by Microsoft
 description: Learn how to configure single sign-on between Microsoft Entra ID and JIRA SAML SSO by Microsoft.
 
 author: dhivyagana
@@ -8,16 +8,16 @@ ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
 ms.author: dhivyag
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and JIRA SAML SSO by Microsoft so that I can control who has access to JIRA SAML SSO by Microsoft, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with JIRA SAML SSO by Microsoft
+# Microsoft Entra SSO integration with JIRA SAML SSO by Microsoft
 
-In this tutorial, you'll learn how to integrate JIRA SAML SSO by Microsoft with Microsoft Entra ID. When you integrate JIRA SAML SSO by Microsoft with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate JIRA SAML SSO by Microsoft with Microsoft Entra ID. When you integrate JIRA SAML SSO by Microsoft with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to JIRA SAML SSO by Microsoft.
 * Enable your users to be automatically signed-in to JIRA SAML SSO by Microsoft with their Microsoft Entra accounts.
@@ -28,10 +28,8 @@ In this tutorial, you'll learn how to integrate JIRA SAML SSO by Microsoft with 
 Use your Microsoft Entra account with Atlassian JIRA server to enable single sign-on. This way all your organization users can use the Microsoft Entra credentials to sign in into the JIRA application. This plugin uses SAML 2.0 for federation.
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with JIRA SAML SSO by Microsoft, you need the following items:
-
-- A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 - JIRA Core and Software 7.0 to 9.17.4 or JIRA Service Desk 3.0 to 4.22.1 should be installed and configured on Windows 64-bit version.
 - JIRA server is HTTPS enabled.
 - Note the supported versions for JIRA Plugin are mentioned in below section.
@@ -41,7 +39,7 @@ To configure Microsoft Entra integration with JIRA SAML SSO by Microsoft, you ne
 - Test user created in the JIRA server application.
 
 > [!NOTE]
-> To test the steps in this tutorial, we do not recommend using a production environment of JIRA. Test the integration first in development or staging environment of the application and then use the production environment.
+> To test the steps in this article,  we do not recommend using a production environment of JIRA. Test the integration first in development or staging environment of the application and then use the production environment.
 
 To get started, you need the following items:
 
@@ -69,7 +67,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * JIRA SAML SSO by Microsoft supports **SP** initiated SSO.
 
@@ -93,8 +91,8 @@ Configure and test Microsoft Entra SSO with JIRA SAML SSO by Microsoft using a t
 To configure and test Microsoft Entra SSO with JIRA SAML SSO by Microsoft, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure JIRA SAML SSO by Microsoft SSO](#configure-jira-saml-sso-by-microsoft-sso)** - to configure the single sign-on settings on application side.
     1. **[Create JIRA SAML SSO by Microsoft test user](#create-jira-saml-sso-by-microsoft-test-user)** - to have a counterpart of B.Simon in JIRA SAML SSO by Microsoft that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -124,7 +122,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<domain:port>/plugins/servlet/saml/auth`
 
 	> [!NOTE]
-	> These values are not real. Update these values with the actual Identifier, Reply URL, and Sign-on URL. Port is optional in case it’s a named URL. These values are received during the configuration of Jira plugin, which is explained later in the tutorial.
+	> These values are not real. Update these values with the actual Identifier, Reply URL, and Sign-on URL. Port is optional in case it’s a named URL. These values are received during the configuration of Jira plugin, which is explained later in the article.
 
 1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 
@@ -323,6 +321,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the JIRA SAML SSO by Microsoft tile in the My Apps, this will redirect to JIRA SAML SSO by Microsoft Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure JIRA SAML SSO by Microsoft you can enforce Session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

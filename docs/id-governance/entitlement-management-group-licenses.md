@@ -11,7 +11,6 @@ ms.author: owinfrey
 ---
 # Tutorial: Manage the lifecycle of your group-based licenses in Microsoft Entra ID
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
  
 With Microsoft Entra ID, you can use groups to manage the [licenses for your applications](~/identity/users/licensing-groups-assign.md). You can make the management of these groups even easier by using entitlement management: 
 

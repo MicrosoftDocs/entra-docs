@@ -3,11 +3,11 @@ title: 'Microsoft Entra Connect cloud provisioning agent: Automatic upgrade'
 description: This article describes the built-in automatic upgrade feature in the Microsoft Entra Connect cloud provisioning agent.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.tgt_pltfrm: na
-ms.date: 11/06/2023
+ms.date: 12/16/2024
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 

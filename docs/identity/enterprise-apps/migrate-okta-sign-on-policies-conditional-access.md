@@ -124,7 +124,6 @@ If you deployed Microsoft Entra hybrid join, you can deploy another group policy
 
 ## Configure Microsoft Entra multifactor authentication tenant settings
 
-[!INCLUDE [portal updates](~/includes/portal-update.md)]
 
 Before you convert to Conditional Access, confirm the base MFA tenant settings for your organization.
 

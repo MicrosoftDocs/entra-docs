@@ -1,39 +1,37 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with VECOS Releezme Locker management system'
+title: Microsoft Entra SSO integration with VECOS Releezme Locker management system
 description: Learn how to configure single sign-on between Microsoft Entra ID and VECOS Releezme Locker management system.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and VECOS Releezme Locker management system so that I can control who has access to VECOS Releezme Locker management system, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with VECOS Releezme Locker management system
+# Microsoft Entra SSO integration with VECOS Releezme Locker management system
 
-In this tutorial, you'll learn how to integrate VECOS Releezme Locker management system with Microsoft Entra ID. When you integrate VECOS Releezme Locker management system with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate VECOS Releezme Locker management system with Microsoft Entra ID. When you integrate VECOS Releezme Locker management system with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to VECOS Releezme Locker management system. Access to the VECOS Releezme Locker Management System is only needed for users who need to manage the lockers, that is, facility managers, service desk employees, and so on.
 * Enable your users to be automatically signed-in to VECOS Releezme Locker management system with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * VECOS Releezme Locker management system single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * VECOS Releezme Locker management system supports **SP** initiated SSO.
 
@@ -60,8 +58,8 @@ Configure and test Microsoft Entra SSO with VECOS Releezme Locker management sys
 To configure and test Microsoft Entra SSO with VECOS Releezme Locker management system, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure VECOS Releezme Locker management system SSO](#configure-vecos-releezme-locker-management-system-sso)** - to configure the single sign-on settings on application side.
     1. **[Create VECOS Releezme Locker management system test user](#create-vecos-releezme-locker-management-system-test-user)** - to have a counterpart of B.Simon in VECOS Releezme Locker management system that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -171,6 +169,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the VECOS Releezme Locker management system tile in the My Apps, this will redirect to VECOS Releezme Locker management system Sign-on URL. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure VECOS Releezme Locker management system you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

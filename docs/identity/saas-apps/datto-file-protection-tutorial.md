@@ -1,24 +1,24 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Datto File Protection Single Sign On'
+title: Microsoft Entra SSO integration with Datto File Protection Single Sign On
 description: Learn how to configure single sign-on between Microsoft Entra ID and Datto File Protection Single Sign On.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Datto File Protection Single Sign On so that I can control who has access to Datto File Protection Single Sign On, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Datto File Protection Single Sign On
+# Microsoft Entra SSO integration with Datto File Protection Single Sign On
 
-In this tutorial, you'll learn how to integrate Datto File Protection Single Sign On with Microsoft Entra ID. When you integrate Datto File Protection Single Sign On with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Datto File Protection Single Sign On with Microsoft Entra ID. When you integrate Datto File Protection Single Sign On with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Datto File Protection Single Sign On.
 * Enable your users to be automatically signed-in to Datto File Protection Single Sign On with their Microsoft Entra accounts.
@@ -35,7 +35,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Datto File Protection Single Sign On supports **SP** and **IDP** initiated SSO.
 
@@ -59,8 +59,8 @@ Configure and test Microsoft Entra SSO with Datto File Protection Single Sign On
 To configure and test Microsoft Entra SSO with Datto File Protection Single Sign On, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Datto File Protection Single Sign On SSO](#configure-datto-file-protection-single-sign-on-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Datto File Protection Single Sign On test user](#create-datto-file-protection-single-sign-on-test-user)** - to have a counterpart of B.Simon in Datto File Protection Single Sign On that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -152,6 +152,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the Datto File Protection Single Sign On tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Datto File Protection Single Sign On for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Datto File Protection Single Sign On you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

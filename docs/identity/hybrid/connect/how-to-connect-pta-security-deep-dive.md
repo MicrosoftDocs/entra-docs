@@ -4,11 +4,11 @@ description: Learn how Microsoft Entra pass-through authentication protects your
 
 keywords: Azure AD Connect pass-through authentication, install Active Directory, required components for Azure AD, SSO, Single Sign-on
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: how-to
-ms.date: 08/15/2024
+ms.date: 12/20/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 

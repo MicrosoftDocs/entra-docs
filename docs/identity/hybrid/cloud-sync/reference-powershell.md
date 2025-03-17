@@ -3,11 +3,11 @@ title: 'AADCloudSyncTools PowerShell module for Microsoft Entra Cloud Sync'
 description: This article describes how to install the Microsoft Entra Connect cloud provisioning agent.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ms.topic: how-to
-ms.date: 11/06/2023
+ms.date: 12/17/2024
 ms.subservice: hybrid-cloud-sync
 ms.author: billmath
 

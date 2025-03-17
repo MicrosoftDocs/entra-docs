@@ -7,7 +7,7 @@ ms.topic: tutorial
 ms.date: 10/24/2024
 ms.author: sarahlipsey
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.reviewer: sandeo
 
 #Customer intent: As an IT admin, I want to set up a log analytics workspace and create custom workbooks so I can analyze the health of my environment.
@@ -56,8 +56,6 @@ Familiarize yourself with these articles:
 - [Azure Monitor Workbooks](/azure/azure-monitor/visualize/workbooks-overview)
 
 ## Configure Log Analytics
-
-[!INCLUDE [portal updates](../../includes/portal-update.md)]
 
 This procedure outlines how to configure a Log Analytics workspace for your audit and sign-in logs.
 To configure a Log Analytics workspace, you need to **create the workspace** and then **configure diagnostic settings**.
@@ -220,7 +218,7 @@ This procedure shows how to create a new workbook using the quickstart template.
 
 ## Add a query to a workbook template
 
-This procedure shows how to add a query to an existing workbook template. The example is based on a query that shows the distribution of conditional access success to failures.
+This procedure shows how to add a query to an existing workbook template. The example is based on a query that shows the distribution of Conditional Access success to failures.
 
 1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Reports Reader](../../identity/role-based-access-control/permissions-reference.md#reports-reader).
 

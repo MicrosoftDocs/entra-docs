@@ -199,6 +199,9 @@ Follow these steps to register the **jwt.ms** web application:
 
 The **jwt.ms** test application uses the implicit flow. Enable implicit flow in your *My Test application* registration:
 
+> [!IMPORTANT]
+> Microsoft recommends using the most secure authentication flow available. The authentication flow used for testing in this procedure requires a very high degree of trust in the application, and carries risks that are not present in other flows. This approach shouldn't be used for authenticating users to your production apps ([learn more](v2-oauth2-implicit-grant-flow.md)).
+
 1. Under **Manage**, select **Authentication**.
 1. Under **Implicit grant and hybrid flows**, select the **ID tokens (used for implicit and hybrid flows)** checkbox.
 1. Select **Save**.
@@ -209,7 +212,7 @@ A claims mapping policy is used to select which attributes returned from the cus
 
 1. In your *My Test application* registration, under **Manage**, select **Manifest**.
 1. In the manifest, locate the `acceptMappedClaims` attribute, and set the value to `true`.
-1. Set the `accessTokenAcceptedVersion` to `2`.
+1. Set the `requestedAccessTokenVersion` to `2`.
 1. Select **Save** to save the changes.
 
 The following JSON snippet demonstrates how to configure these properties.
@@ -218,13 +221,13 @@ The following JSON snippet demonstrates how to configure these properties.
 {
 	"id": "22222222-0000-0000-0000-000000000000",
 	"acceptMappedClaims": true,
-	"accessTokenAcceptedVersion": 2,  
+	"requestedAccessTokenVersion": 2,  
     ...
 }
 ```
 
 > [!WARNING]
-> Do not set `acceptMappedClaims` property to `true` for multi-tenant apps, which can allow malicious actors to create claims-mapping policies for your app. Instead [configure a custom signing key](/graph/application-saml-sso-configure-api#option-2-create-a-custom-signing-certificate).
+> Do not set `acceptMappedClaims` property to `true` for multitenant apps, which can allow malicious actors to create claims-mapping policies for your app. Instead [configure a custom signing key](/graph/application-saml-sso-configure-api#option-2-create-a-custom-signing-certificate).
 
 # [Workforce tenant](#tab/workforce-tenant)
 

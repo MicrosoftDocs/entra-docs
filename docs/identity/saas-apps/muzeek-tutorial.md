@@ -1,31 +1,29 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Muzeek'
+title: Microsoft Entra single sign-on (SSO) integration with Muzeek
 description: Learn how to configure single sign-on between Microsoft Entra and Muzeek.
 services: active-directory
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.workload: identity
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 06/19/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Muzeek
+# Microsoft Entra single sign-on (SSO) integration with Muzeek
 
-In this tutorial, you'll learn how to integrate Muzeek with Microsoft Entra ID. When you integrate Muzeek with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Muzeek with Microsoft Entra ID. When you integrate Muzeek with Microsoft Entra ID, you can:
 
 Use Microsoft Entra ID to control who can access Muzeek.
 Enable your users to be automatically signed in to Muzeek with their Microsoft Entra accounts.
 Manage your accounts in one central location: the Azure portal.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Muzeek single sign-on (SSO) enabled subscription.
 
 ## Add Muzeek from the gallery
@@ -60,7 +58,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 
 1. Navigate to **Authentication** tab on the left menu and perform the following steps:
 
-    a. Enable the **Access tokens (used for implicit flows)** and **ID tokens (used for implicit and hybrid flows)**
+    a. Enable the **Access tokens** and **ID tokens**
 
     [![Screenshot showing the Access tokens.](./media/muzeek-tutorial/access-token.png)](./media/muzeek-tutorial/access-token.png#lightbox)
 

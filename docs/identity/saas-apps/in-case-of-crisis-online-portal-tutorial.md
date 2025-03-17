@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with In Case of Crisis - Online Portal'
+title: Microsoft Entra single sign-on (SSO) integration with In Case of Crisis - Online Portal
 description: Learn how to configure single sign-on between Microsoft Entra ID and In Case of Crisis - Online Portal.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and In Case of Crisis - Online Portal so that I can control who has access to In Case of Crisis - Online Portal, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with In Case of Crisis - Online Portal
+# Microsoft Entra single sign-on (SSO) integration with In Case of Crisis - Online Portal
 
-In this tutorial, you'll learn how to integrate In Case of Crisis - Online Portal with Microsoft Entra ID. When you integrate In Case of Crisis - Online Portal with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate In Case of Crisis - Online Portal with Microsoft Entra ID. When you integrate In Case of Crisis - Online Portal with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to In Case of Crisis - Online Portal.
 * Enable your users to be automatically signed-in to In Case of Crisis - Online Portal with their Microsoft Entra accounts.
@@ -26,15 +26,13 @@ In this tutorial, you'll learn how to integrate In Case of Crisis - Online Porta
 To learn more about SaaS app integration with Microsoft Entra ID, see [What is application access and single sign-on with Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * In Case of Crisis - Online Portal single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * In Case of Crisis - Online Portal supports **IDP** initiated SSO
 * Once you configure the In Case of Crisis - Online Portal you can enforce session controls, which protect exfiltration and infiltration of your organization’s sensitive data in real-time. Session controls extend from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
@@ -59,8 +57,8 @@ Configure and test Microsoft Entra SSO with In Case of Crisis - Online Portal us
 To configure and test Microsoft Entra SSO with In Case of Crisis - Online Portal, complete the following building blocks:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    * **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    * **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    * **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    * **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure In Case of Crisis Online Portal SSO](#configure-in-case-of-crisis-online-portal-sso)** - to configure the single sign-on settings on application side.
     * **[Create In Case of Crisis Online Portal test user](#create-in-case-of-crisis-online-portal-test-user)** - to have a counterpart of B.Simon in In Case of Crisis - Online Portal that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -142,7 +140,7 @@ When you click the In Case of Crisis - Online Portal tile in the Access Panel, y
 
 ## Additional resources
 
-- [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 

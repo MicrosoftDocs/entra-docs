@@ -2,11 +2,11 @@
 title: View analytic information about serverless functions in Permissions Management
 description: How to view analytic information about serverless functions in Permissions Management.
 author: jenniferf-skc
-manager: amycolannino
+manager: femila
 ms.service: entra-permissions-management
 
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 12/10/2024
 ms.author: jfields
 ---
 

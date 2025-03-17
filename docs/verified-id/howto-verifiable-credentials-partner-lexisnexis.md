@@ -1,13 +1,11 @@
 ---
 title: Configure LexisNexis Risk Solutions as an identity verification partner using Verified ID
-description: This article shows you the steps you need to follow to configure LexisNexis as your identity verification partner
-
+description: This article shows you the steps you need to follow to configure LexisNexis as your identity verification partner.
 author: barclayn
-manager: amycolannino
+manager: femila
 ms.service: entra-verified-id
-
 ms.topic: how-to
-ms.date: 11/11/2024
+ms.date: 01/17/2025
 ms.author: barclayn
 # Customer intent: As a developer, I'm looking for information about the open standards that are supported by Microsoft Entra Verified ID.
 ---
@@ -20,11 +18,11 @@ You can use Microsoft Entra Verified ID with LexisNexis Risk Solutions to enable
 
 - A tenant [configured](verifiable-credentials-configure-tenant.md) for Microsoft Entra Verified ID service.
     - If you don't have an existing tenant, you can [create an Azure account for free](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- Your tenant should also have completed the LexisNexis onboarding process.
+- Your tenant should first complete the LexisNexis onboarding process.
     - Create a LexisNexis account, you can request a [demo](https://solutions.risk.lexisnexis.com/did-microsoft). Expect response from your LexisNexis Risk Solutions within 48 hours.
 
 >[!IMPORTANT]
-> Before you proceed, you must have received the URL from LexisNexis risk solutions for users to be issued Verified IDs. If you have not yet received it, follow up with LexisNexis before you attempt following the steps documented below.
+> Before you proceed, you must first have the URL from LexisNexis risk solutions for users to be issued Verified IDs. If you don't receive it, follow up with LexisNexis before you attempt to follow these steps.
 
 ## Scenario description
 
@@ -39,7 +37,7 @@ To incorporate identity verification into your Apps using LexisNexis Verified ID
 
 ### Part 1
 
-As a developer you need to share the steps below with your tenant administrator. The instructions help them get the verification request URL, and application body or website to request verifiable credentials from your users.
+As a developer you need to share the steps in this section with your tenant administrator. These instructions help them get the verification request URL, and application body or website to request verifiable credentials from your users.
 
 1. Go to [Microsoft Entra admin center -> Verified ID](https://entra.microsoft.com/#view/Microsoft_AAD_DecentralizedIdentity/ResourceOverviewBlade).
     >[!Note]
@@ -50,7 +48,7 @@ As a developer you need to share the steps below with your tenant administrator.
    
    [ :::image type="content" source="./media/verified-id-partner-lexisnexis/select-issuer.png" alt-text="Screenshot of the select issuer section of the portal showing LexisNexis as the choice.":::](./media/verified-id-partner-lexisnexis/select-issuer.png#lightbox)
    
-1. Check the credential type you've discussed with LexisNexis Customer success manager for your specific needs.
+1. Check the credential type you discussed with LexisNexis Customer success manager for your specific needs.
 1. Choose **Add** and then choose **Review**.
 1. Download the request body and Copy/paste POST API request URL.
 
@@ -58,10 +56,10 @@ As a developer you need to share the steps below with your tenant administrator.
 
 As a developer you now have the request URL and body from your tenant admin, follow these steps to update your application or website:
 
-1. Add the request URL and body to your application or website to request Verified IDs from your users.
+1. To request Verified IDs from your users, include the request URL and body in your application or website. 
    >[!Note]
    >If you are using [one of the sample apps](https://aka.ms/vcsample), you'll need to replace the contents of the `presentation_request_config.json` with the request body obtained in [Part 1](#part-1). The sample code overwrites the `trustedIssuers` values with `IssuerAuthority` value from `appsettings.json`. Copy the `trustedIssuers` value from the payload to `IssuerAuthority` in `appsettings.json` file.
-1. Replace the values for the "url", "state", and "api-key" with your respective values.
+1. Replace the values for the **URL**, **state**, and **api-key** with your respective values.
 1. Grant your app [permissions](verifiable-credentials-configure-tenant.md#grant-permissions-to-get-access-tokens) to obtain an access token for the Verified ID service request service principal.
 
 ## Test the user flow

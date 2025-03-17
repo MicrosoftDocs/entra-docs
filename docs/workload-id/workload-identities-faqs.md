@@ -38,12 +38,12 @@ The free features come with a subscription for a commercial online service such 
 | Workload identities sign-in activity and audit trail |  Monitor and track workload identity behavior  |  Yes |  Yes |
 | **Managed identities**| Use Microsoft Entra identities in Azure without handling credentials |  Yes| Yes |
 | Workload identity federation | To access Microsoft Entra protected resources, use workloads tested by external identity providers (IdPs) | Yes | Yes |
+|**Lifecycle management**|    |    |   |
+| Application management policies | IT admins can enforce best practices for how apps are configured | Yes | Yes |
+|Access reviews for service provider-assigned privileged roles  | Closely monitor workload identities with impactful permissions |    |  Yes |
+| App Health Recommendations | Identify unused or inactive workload identities and their risk levels. Get remediation guidelines. |  | Yes |
 |  **Microsoft Entra Conditional Access**     |   |   |    
 | Conditional Access policies for workload identities |Define the condition for a workload to access a resource, such as an IP range | |  Yes | 
-|**Lifecycle management**|    |    |   |
-|Access reviews for service provider-assigned privileged roles  | Closely monitor workload identities with impactful permissions |    |  Yes |
-| Application authentication methods API | IT admins can enforce best practices for how apps use application authentication methods |  | Yes |
-| App Health Recommendations | Identify unused or inactive workload identities and their risk levels. Get remediation guidelines. |  | Yes |
 |**Microsoft Entra ID Protection**  |  | |
 |ID Protection for workload identities  | Detect and remediate compromised workload identities | | Yes |
 

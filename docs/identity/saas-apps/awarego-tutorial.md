@@ -1,39 +1,37 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with AwareGo'
+title: Microsoft Entra single sign-on (SSO) integration with AwareGo
 description: Learn how to configure single sign-on between Microsoft Entra ID and AwareGo.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and AwareGo so that I can control who has access to AwareGo, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on integration with AwareGo
+# Microsoft Entra single sign-on integration with AwareGo
 
-In this tutorial, you'll learn how to integrate AwareGo with Microsoft Entra ID. When you integrate AwareGo with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate AwareGo with Microsoft Entra ID. When you integrate AwareGo with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to AwareGo.
 * Enable your users to be automatically signed in to AwareGo with their Microsoft Entra accounts.
 * Manage your accounts in one central location, the Azure portal.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * An AwareGo single sign-on (SSO)-enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment. AwareGo supports a service provider (SP)-initiated SSO.
+In this article,  you configure and test Microsoft Entra SSO in a test environment. AwareGo supports a service provider (SP)-initiated SSO.
 
 
 ## Adding AwareGo from the gallery
@@ -56,8 +54,8 @@ To configure and test Microsoft Entra SSO with AwareGo, do the following:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** to enable your users to use this feature.  
 
-    a. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** to test Microsoft Entra single sign-on with user B.Simon.  
-    b. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** to enable user B.Simon to use Microsoft Entra single sign-on.  
+    a. **Create a Microsoft Entra test user** to test Microsoft Entra single sign-on with user B.Simon.  
+    b. **Assign the Microsoft Entra test user** to enable user B.Simon to use Microsoft Entra single sign-on.  
 
 1. **[Configure AwareGo SSO](#configure-awarego-sso)** to configure the single sign-on settings on the application side.
 
@@ -148,6 +146,6 @@ In this section, you can test your Microsoft Entra single sign-on configuration 
 * Go to Microsoft My Apps. When you select the **AwareGo** tile in My Apps, you're redirected to the AwareGo sign-in page. For more information, see [Sign in and start apps from the My Apps portal](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
 
-## Next steps
+## Related content
 
 After you've configured AwareGo, you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access App Control. For more information, see [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

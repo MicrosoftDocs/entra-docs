@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Wizergos Productivity Software'
+title: Microsoft Entra integration with Wizergos Productivity Software
 description: Learn how to configure single sign-on between Microsoft Entra ID and Wizergos Productivity Software.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Wizergos Productivity Software so that I can control who has access to Wizergos Productivity Software, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with Wizergos Productivity Software
+# Microsoft Entra integration with Wizergos Productivity Software
 
-In this tutorial, you learn how to integrate Wizergos Productivity Software with Microsoft Entra ID.
+In this article,  you learn how to integrate Wizergos Productivity Software with Microsoft Entra ID.
 Integrating Wizergos Productivity Software with Microsoft Entra ID provides you with the following benefits:
 
 * You can control in Microsoft Entra ID who has access to Wizergos Productivity Software.
@@ -27,15 +27,13 @@ If you want to know more details about SaaS app integration with Microsoft Entra
 If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/free/) before you begin.
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with Wizergos Productivity Software, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get a [free account](https://azure.microsoft.com/free/)
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Wizergos Productivity Software single sign-on enabled subscription
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Wizergos Productivity Software supports **IDP** initiated SSO
 
@@ -62,8 +60,8 @@ To configure and test Microsoft Entra single sign-on with Wizergos Productivity 
 
 1. **[Configure Microsoft Entra Single Sign-On](#configure-azure-ad-single-sign-on)** - to enable your users to use this feature.
 2. **[Configure Wizergos Productivity Software Single Sign-On](#configure-wizergos-productivity-software-single-sign-on)** - to configure the Single Sign-On settings on application side.
-3. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with Britta Simon.
-4. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable Britta Simon to use Microsoft Entra single sign-on.
+3. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
+4. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
 5. **[Create Wizergos Productivity Software test user](#create-wizergos-productivity-software-test-user)** - to have a counterpart of Britta Simon in Wizergos Productivity Software that is linked to the Microsoft Entra representation of user.
 6. **[Test single sign-on](#test-single-sign-on)** - to verify whether the configuration works.
 
@@ -184,7 +182,7 @@ When you click the Wizergos Productivity Software tile in the Access Panel, you 
 
 ## Additional Resources
 
-- [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 

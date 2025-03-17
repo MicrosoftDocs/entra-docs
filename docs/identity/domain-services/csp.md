@@ -7,7 +7,7 @@ ms.assetid: 56ccb219-11b2-4e43-9f07-5a76e3cd8da8
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: conceptual
-ms.date: 10/07/2024
+ms.date: 01/21/2025
 ms.author: justinha
 ---
 # Microsoft Entra Domain Services deployment and management for Azure Cloud Solution Providers
@@ -50,7 +50,7 @@ There are two ways in which you can use Domain Services with an Azure CSP subscr
 
 In this deployment model, Domain Services is enabled within a virtual network that belongs to the Azure CSP subscription. The CSP partner's admin agents have the following privileges:
 
-[!INCLUDE [Privileged role feature](~/includes/privileged-role-feature-include.md)]
+A [Global Administrator](~/identity/role-based-access-control/permissions-reference.md#global-administrator) is needed to manage this feature.
 
 Subscription owner privileges on the Azure CSP subscription are required for this feature.
 

@@ -1,38 +1,36 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Saviynt'
+title: Microsoft Entra single sign-on (SSO) integration with Saviynt
 description: Learn how to configure single sign-on between Microsoft Entra ID and Saviynt.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Saviynt so that I can control who has access to Saviynt, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Saviynt
+# Microsoft Entra single sign-on (SSO) integration with Saviynt
 
-In this tutorial, you'll learn how to integrate Saviynt with Microsoft Entra ID. When you integrate Saviynt with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Saviynt with Microsoft Entra ID. When you integrate Saviynt with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Saviynt.
 * Enable your users to be automatically signed-in to Saviynt with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Saviynt single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Saviynt supports **SP and IDP** initiated SSO.
 * Saviynt supports **Just In Time** user provisioning.
@@ -57,8 +55,8 @@ Configure and test Microsoft Entra SSO with Saviynt using a test user called **B
 To configure and test Microsoft Entra SSO with Saviynt, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Saviynt SSO](#configure-saviynt-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Saviynt test user](#create-saviynt-test-user)** - to have a counterpart of B.Simon in Saviynt that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -154,6 +152,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft MyApps to test the application in any mode. When you click the Saviynt tile in the MyApps, you should be automatically signed in to the Saviynt for which you set up the SSO. For more information about the MyApps, see [Introduction to the MyApps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Saviynt you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

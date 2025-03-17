@@ -1,33 +1,31 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Oracle Cloud Infrastructure Console'
+title: Microsoft Entra SSO integration with Oracle Cloud Infrastructure Console
 description: Learn how to configure single sign-on between Microsoft Entra ID and Oracle Cloud Infrastructure Console.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Oracle Cloud Infrastructure Console so that I can control who has access to Oracle Cloud Infrastructure Console, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Oracle Cloud Infrastructure Console
+# Microsoft Entra SSO integration with Oracle Cloud Infrastructure Console
 
-In this tutorial, you'll learn how to integrate Oracle Cloud Infrastructure Console with Microsoft Entra ID. When you integrate Oracle Cloud Infrastructure Console with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Oracle Cloud Infrastructure Console with Microsoft Entra ID. When you integrate Oracle Cloud Infrastructure Console with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Oracle Cloud Infrastructure Console.
 * Enable your users to be automatically signed-in to Oracle Cloud Infrastructure Console with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Oracle Cloud Infrastructure Console single sign-on (SSO) enabled subscription.
 
 > [!NOTE]
@@ -35,7 +33,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Oracle Cloud Infrastructure Console supports **SP** initiated SSO.
 * Oracle Cloud Infrastructure Console supports [**Automated** user provisioning and deprovisioning](oracle-cloud-infrastructure-console-provisioning-tutorial.md) (recommended).
@@ -60,8 +58,8 @@ Configure and test Microsoft Entra SSO with Oracle Cloud Infrastructure Console 
 To configure and test Microsoft Entra SSO with Oracle Cloud Infrastructure Console, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** to enable your users to use this feature.
-   1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** to test Microsoft Entra single sign-on with B. Simon.
-   1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** to enable B. Simon to use Microsoft Entra single sign-on.
+   1. **Create a Microsoft Entra test user** to test Microsoft Entra single sign-on with B. Simon.
+   1. **Assign the Microsoft Entra test user** to enable B. Simon to use Microsoft Entra single sign-on.
 1. **[Configure Oracle Cloud Infrastructure Console SSO](#configure-oracle-cloud-infrastructure-console-sso)** to configure the SSO settings on application side.
    1. **[Create Oracle Cloud Infrastructure Console test user](#create-oracle-cloud-infrastructure-console-test-user)** to have a counterpart of B. Simon in Oracle Cloud Infrastructure Console that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** to verify whether the configuration works.
@@ -82,7 +80,7 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Basic SAML Configuration** section, perform the following steps:
 
    > [!NOTE]
-   > You will get the Service Provider metadata file from the **Configure Oracle Cloud Infrastructure Console Single Sign-On** section of the tutorial.
+   > You will get the Service Provider metadata file from the **Configure Oracle Cloud Infrastructure Console Single Sign-On** section of the article.
 	
    1. Click **Upload metadata file**.
 
@@ -213,6 +211,6 @@ When you select the Oracle Cloud Infrastructure Console tile in the My Apps, you
 
 ![Screenshot showing Configuration](./media/oracle-cloud-tutorial/tenant.png)
 
-## Next steps
+## Related content
 
 Once you configure the Oracle Cloud Infrastructure Console you can enforce session controls, which protect exfiltration and infiltration of your organization’s sensitive data in real time. Session controls extend from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

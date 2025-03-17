@@ -13,7 +13,7 @@ ms.custom: it-pro
 
 # Create custom roles for managing cross-tenant access settings
 
-Your organization can [define custom roles](~/identity/role-based-access-control/custom-create.yml) to manage cross-tenant access settings. These roles allow for precise control without relying on built-in management roles. This article provides guidance on creating recommended custom roles for managing cross-tenant access settings.
+Your organization can [define custom roles](../identity/role-based-access-control/custom-create.md) to manage cross-tenant access settings. These roles allow for precise control without relying on built-in management roles. This article provides guidance on creating recommended custom roles for managing cross-tenant access settings.
 
 ## Cross-tenant access administrator
 
@@ -23,7 +23,7 @@ The following actions are recommended for this role.
 
 | Actions |
 | ------- |
-| microsoft.directory.tenantRelationships/standard/read |
+| microsoft.directory/tenantRelationships/standard/read |
 | microsoft.directory/crossTenantAccessPolicy/standard/read |
 | microsoft.directory/crossTenantAccessPolicy/allowedCloudEndpoints/update |
 | microsoft.directory/crossTenantAccessPolicy/basic/update |

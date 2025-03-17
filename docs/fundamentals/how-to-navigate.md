@@ -9,7 +9,7 @@ ms.date: 04/15/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer:
 ---
 # How to get the most from Microsoft Entra documentation
@@ -28,7 +28,7 @@ You see this concept surfaced in the first step of content called out like the f
 
 - Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) **as at least a [Security Administrator](../identity/role-based-access-control/permissions-reference.md#security-administrator)**.
 
-:::image type="content" source="media/how-to-navigate/least-privilge-steps.png" alt-text="Sreenshot of a document showing how to complete a step using the principle of least privilege.":::
+:::image type="content" source="media/how-to-navigate/least-privilge-steps.png" alt-text="Screenshot of a document showing how to complete a step using the principle of least privilege.":::
 
 There's still a need for the highly privileged [Global Administrator](../identity/role-based-access-control/permissions-reference.md#global-administrator) role in certain edge cases and we call them out as such.
 

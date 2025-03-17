@@ -1,24 +1,24 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with RocketReach SSO'
+title: Microsoft Entra SSO integration with RocketReach SSO
 description: Learn how to configure single sign-on between Microsoft Entra ID and RocketReach SSO.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and RocketReach SSO so that I can control who has access to RocketReach SSO, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with RocketReach SSO
+# Microsoft Entra SSO integration with RocketReach SSO
 
-In this tutorial, you'll learn how to integrate RocketReach SSO with Microsoft Entra ID. When you integrate RocketReach SSO with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate RocketReach SSO with Microsoft Entra ID. When you integrate RocketReach SSO with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to RocketReach SSO.
 * Enable your users to be automatically signed-in to RocketReach SSO with their Microsoft Entra accounts.
@@ -35,7 +35,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * RocketReach SSO supports **SP** and **IDP** initiated SSO.
 * RocketReach SSO supports **Just In Time** user provisioning.
@@ -60,8 +60,8 @@ Configure and test Microsoft Entra SSO with RocketReach SSO using a test user ca
 To configure and test Microsoft Entra SSO with RocketReach SSO, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure RocketReach SSO](#configure-rocketreach-sso)** - to configure the single sign-on settings on application side.
     1. **[Create RocketReach SSO test user](#create-rocketreach-sso-test-user)** - to have a counterpart of B.Simon in RocketReach SSO that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -126,11 +126,18 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure RocketReach SSO
 
-To configure single sign-on on **RocketReach SSO** side, you need to send the downloaded **Certificate (Base64)** and appropriate copied URLs from the application configuration to [RocketReach SSO support team](mailto:support@rocketreach.co). They set this setting to have the SAML SSO connection set properly on both sides.
+To configure single sign-on on **RocketReach SSO** side, you must follow the below steps:
+
+1. Login to RocketReach.co as a Team Owner or Team Administrator.
+2. Proceed to the **Account Settings** > **Security** section and click on the **Setup SSO** button.
+3. Choose **Azure** in the sidebar menu.
+4. Copy the URLs from the Microsoft Entra platform into the **Login URL** and **Azure AD Identifier** fields.
+5. Past the contents of the **Certificate (Base64)** file from Microsoft Entra into the **Key x509 Certificate field.
+6. Test the SAML connection and save your changes.
 
 ### Create RocketReach SSO test user
 
-In this section, a user called B.Simon is created in RocketReach SSO. RocketReach SSO supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user doesn't already exist in RocketReach SSO, a new one is created after authentication.
+In this section, a user called B.Simon is created in RocketReach SSO. RocketReach SSO supports just-in-time user provisioning, which is enabled by default. There is no action item for you in this section. If a user already exists with this email address, they must be assigned to the correct team in RocketReach. If a user doesn't already exist in RocketReach, a new one is created after authentication.
 
 ## Test SSO 
 
@@ -148,6 +155,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the RocketReach SSO tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the RocketReach SSO for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure RocketReach SSO you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad).

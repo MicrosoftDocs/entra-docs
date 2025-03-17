@@ -1,22 +1,22 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with eDigitalResearch'
+title: Microsoft Entra integration with eDigitalResearch
 description: Learn how to configure single sign-on between Microsoft Entra ID and eDigitalResearch.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and eDigitalResearch so that I can control who has access to eDigitalResearch, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integration with eDigitalResearch
+# Microsoft Entra integration with eDigitalResearch
 
-In this tutorial, you learn how to integrate eDigitalResearch with Microsoft Entra ID.
+In this article,  you learn how to integrate eDigitalResearch with Microsoft Entra ID.
 Integrating eDigitalResearch with Microsoft Entra ID provides you with the following benefits:
 
 * You can control in Microsoft Entra ID who has access to eDigitalResearch.
@@ -27,15 +27,13 @@ If you want to know more details about SaaS app integration with Microsoft Entra
 If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/free/) before you begin.
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with eDigitalResearch, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get a [free account](https://azure.microsoft.com/free/)
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * eDigitalResearch single sign-on enabled subscription
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * eDigitalResearch supports **IDP** initiated SSO
 
@@ -62,8 +60,8 @@ To configure and test Microsoft Entra single sign-on with eDigitalResearch, you 
 
 1. **[Configure Microsoft Entra Single Sign-On](#configure-azure-ad-single-sign-on)** - to enable your users to use this feature.
 2. **[Configure eDigitalResearch Single Sign-On](#configure-edigitalresearch-single-sign-on)** - to configure the Single Sign-On settings on application side.
-3. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with Britta Simon.
-4. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable Britta Simon to use Microsoft Entra single sign-on.
+3. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
+4. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
 5. **[Create eDigitalResearch test user](#create-edigitalresearch-test-user)** - to have a counterpart of Britta Simon in eDigitalResearch that is linked to the Microsoft Entra representation of user.
 6. **[Test single sign-on](#test-single-sign-on)** - to verify whether the configuration works.
 
@@ -171,7 +169,7 @@ When you click the eDigitalResearch tile in the Access Panel, you should be auto
 
 ## Additional Resources
 
-- [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 

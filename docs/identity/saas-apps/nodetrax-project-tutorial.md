@@ -1,34 +1,32 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with Nodetrax Project'
+title: Microsoft Entra SSO integration with Nodetrax Project
 description: Learn how to configure single sign-on between Microsoft Entra ID and Nodetrax Project.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Nodetrax Project so that I can control who has access to Nodetrax Project, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with Nodetrax Project
+# Microsoft Entra SSO integration with Nodetrax Project
 
-In this tutorial, you'll learn how to integrate Nodetrax Project with Microsoft Entra ID. When you integrate Nodetrax Project with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Nodetrax Project with Microsoft Entra ID. When you integrate Nodetrax Project with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Nodetrax Project.
 * Enable your users to be automatically signed-in to Nodetrax Project with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Nodetrax Project single sign-on (SSO) enabled subscription.
 
 > [!NOTE]
@@ -36,7 +34,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Nodetrax Project supports **SP and IDP** initiated SSO.
 
@@ -60,8 +58,8 @@ Configure and test Microsoft Entra SSO with Nodetrax Project using a test user c
 To configure and test Microsoft Entra SSO with Nodetrax Project, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Nodetrax Project SSO](#configure-nodetrax-project-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Nodetrax Project test user](#create-nodetrax-project-test-user)** - to have a counterpart of B.Simon in Nodetrax Project that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -158,6 +156,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the Nodetrax Project tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Nodetrax Project for which you set up the SSO. For more information, see [Microsoft Entra My Apps](/azure/active-directory/manage-apps/end-user-experiences#azure-ad-my-apps).
 
-## Next steps
+## Related content
 
 Once you configure Nodetrax Project you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

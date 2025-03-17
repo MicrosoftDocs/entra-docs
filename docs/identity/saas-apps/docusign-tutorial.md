@@ -1,33 +1,31 @@
 ---
-title: 'Tutorial: Microsoft Entra SSO integration with DocuSign'
+title: Microsoft Entra SSO integration with DocuSign
 description: Learn how to configure single sign-on (SSO) between Microsoft Entra ID and DocuSign.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
-ms.date: 03/25/2024
-ms.author: jeedes
+ms.topic: how-to
+ms.date: 03/01/2025
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and DocuSign so that I can control who has access to DocuSign, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra SSO integration with DocuSign
+# Microsoft Entra SSO integration with DocuSign
 
-In this tutorial, you'll learn how to integrate DocuSign with Microsoft Entra ID. When you integrate DocuSign with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate DocuSign with Microsoft Entra ID. When you integrate DocuSign with Microsoft Entra ID, you can:
 
 * Use Microsoft Entra ID to control who has access to DocuSign.
 * Enable automatic sign-in to DocuSign for your users through their Microsoft Entra accounts.
 * Manage your accounts in one central location: the Azure portal.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A DocuSign subscription that's single sign-on (SSO) enabled.
 * Control over your domain DNS. This is needed to claim domain on DocuSign. 
 
@@ -36,7 +34,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you'll configure and test Microsoft Entra SSO in a test environment to verify that:
+In this article,  you'll configure and test Microsoft Entra SSO in a test environment to verify that:
 
 * DocuSign supports service provider **SP** initiated SSO.
 
@@ -104,7 +102,7 @@ To enable Microsoft Entra SSO in the Azure portal, follow these steps:
     `https://<subdomain>.docusign.com/organizations/<OrganizationID>/saml2/login/sp/<IDPID>`
 
 	> [!NOTE]
-	> These bracketed values are placeholders. Replace them with the values in the actual Identifier, Reply URL and Sign on URL. These details are explained in the "View SAML 2.0 Endpoints" section later in this tutorial.
+	> These bracketed values are placeholders. Replace them with the values in the actual Identifier, Reply URL and Sign on URL. Reach out the Docusign support team to these values.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)**. Select **Download** to download the certificate and save it on your computer.
 
@@ -263,6 +261,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you click the DocuSign tile in the My Apps, you should be automatically signed in to the DocuSign for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure DocuSign you can enforce Session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

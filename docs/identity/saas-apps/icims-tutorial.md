@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with ICIMS'
+title: Microsoft Entra integration with ICIMS
 description: Learn how to configure single sign-on between Microsoft Entra ID and ICIMS.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 08/29/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and the ICIMS Talent Cloud so that I can control who has access to ICIMS, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with ICIMS
+# Microsoft Entra single sign-on (SSO) integration with ICIMS
 
-In this tutorial, you'll learn how to integrate ICIMS with Microsoft Entra ID. When you integrate ICIMS with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate ICIMS with Microsoft Entra ID. When you integrate ICIMS with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to ICIMS.
 * Enable your users to be automatically signed-in to ICIMS with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * ICIMS supports **SP** initiated SSO.
 
@@ -45,8 +45,8 @@ To configure and test Microsoft Entra SSO with ICIMS, perform the following step
 
 1. **[Configure Microsoft Entra Application Registration](#configure-azure-ad-sso)** - to enable your users to use this feature.
     1. **[Add credentials to your Entra Application](#add-credentials-to-your-entra-application)** - to establish a client secret for the SSO integration.
-    1. **[Create a Microsoft Entra test user](#create-a-microsoft-entra-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-microsoft-entra-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure ICIMS SSO](#configure-icims-sso)** - to configure the single sign-on settings on application side.
     1. **[Determine how you want to map your users between Entra and iCIMS](#determine-how-you-want-to-map-your-users-between-entra-and-icims)** - to configure how to map user accounts between iCIMS and Entra.
     1. **[Submit a support ticket for your SSO integration](#submit-a-support-ticket-for-your-sso-integration)** - to provide iCIMS staff with the details needed to configure your SSO integration.
@@ -93,9 +93,6 @@ In this section, you'll add a client secret for your application.
     > You must contact iCIMS Technical Support at least 30 days in advance of expiration to provide a new secret and avoid a service interruption.
  
 5. Record the Client secret and expiration date to provide to the iCIMS support team.
-
-    > [!NOTE]  
-    > If your organization does not want to configure a client secret, you can leverage an OpenID Connect integration and utilize front-channel authentication with the implicit grant flow.
 
 ### Add permissions to your Entra Application
 
@@ -192,6 +189,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 * Once iCIMS support has setup the SSO integration they will provide a test url.
 * The url will be in the format, https://iam-federated-testing-bff.production.env.icims.tools/login/hs-#####-azure. The digits in the url are your unique icims ATS customer ID.
 
-## Next steps
+## Related content
 
 Once you configure ICIMS, you can enforce that specific user groups must use SSO. Feel free to ask for help at https://community.icims.com.

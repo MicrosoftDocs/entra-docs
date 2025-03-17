@@ -1,14 +1,14 @@
 ---
 title: External Tenant Features
-description: Compare the features and capabilities of a workforce vs. an external tenant configuration. Determine which tenant type applies to your external identities scenario.
- 
+description: Compare features and capabilities of a workforce vs. an external tenant configuration. Determine which tenant type applies to your external identities scenario.
+
 author: msmimart
 manager: celestedg
 ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 10/07/2024
+ms.date: 03/12/2025
 ms.author: mimart
 ms.custom: it-pro, seo-july-2024
 
@@ -35,12 +35,15 @@ The following table compares the general features and capabilities available in 
 |---------|---------|---------|
 | **External identities scenario** | Allow business partners and other external users to collaborate with your workforce. Guests can securely access your business applications through invitations or self-service sign-up.  | Use External ID to secure your applications. Consumers and business customers can securely access your consumer apps through self-service sign-up. Invitations are also supported.  |
 | **Local accounts** | Local accounts are supported for *internal* members of your organization only.    | Local accounts are supported for:</br>- External users (consumers, business customers) who use self-service sign-up.</br>- Accounts created by admins. |
-| **Groups** | [Groups](~/fundamentals/how-to-manage-groups.yml) can be used to manage administrative and user accounts.| Groups can be used to manage administrative accounts. Support for Microsoft Entra groups and [application roles](how-to-use-app-roles-customers.md) is being phased into customer tenants. For the latest updates, see [Groups and application roles support](reference-group-app-roles-support.md). |
+| **Groups** | [Groups](/entra/fundamentals/how-to-manage-groups) can be used to manage administrative and user accounts.| Groups can be used to manage administrative accounts. Support for Microsoft Entra groups and [application roles](how-to-use-app-roles-customers.md) is being phased into customer tenants. For the latest updates, see [Groups and application roles support](reference-group-app-roles-support.md). |
 | **Roles and administrators**| [Roles and administrators](~/fundamentals/how-subscriptions-associated-directory.yml) are fully supported for administrative and user accounts. | Roles aren't supported with customer accounts. Customer accounts don't have access to tenant resources.|
 | **ID Protection**    |   Provides ongoing risk detection for your Microsoft Entra tenant. It allows organizations to discover, investigate, and remediate identity-based risks.    |   A subset of the Microsoft Entra ID Protection risk detections is available. [Learn more](how-to-identity-protection-customers.md).    |
+| **ID Governance**    |   Enables organizations to govern identity and access lifecycles, and secure privileged access. [Learn more](~/id-governance/identity-governance-overview.md).    |   Not available    |
 | **Self-service password reset**    |   Allow users to reset their password using up to two authentication methods (see the next row for available methods).    |   Allow users to reset their password using email with one time passcode. [Learn more](how-to-enable-password-reset-customers.md).     |  
 | **Language customization**    | Customize the sign-in experience based on browser language when users authenticate into your corporate intranet or web-based applications.     |   Use languages to modify the strings displayed to your customers as part of the sign-in and sign-up process. [Learn more](concept-branding-customers.md).   |
 | **Custom attributes**    |    Use directory extension attributes to store more data in the Microsoft Entra directory for user objects, groups, tenant details, and service principals.    |   Use directory extension attributes to store more data in the customer directory for user objects. Create custom user attributes and add them to your sign-up user flow. [Learn more](how-to-define-custom-attributes.md).    |
+| **Pricing**    | [Monthly active users (MAU) pricing](../external-identities-pricing.md) for B2B collaboration external guests (UserType=Guest).      | [Monthly active users (MAU) pricing](../external-identities-pricing.md) for all users in the external tenant regardless of role or UserType.    |
+
 
 ## Look and feel customization
 
@@ -50,7 +53,7 @@ The following table compares the features available for look and feel customizat
 |---------|---------|---------|
 | **Company branding** | You can add [company branding](~/fundamentals/how-to-customize-branding.md) that applies to all these experiences to create a consistent sign-in experience for your users. | Same as workforce. [Learn more](how-to-customize-branding-customers.md) |
 | **Language customization** | [Customize the sign-in experience by browser language](~/fundamentals/how-to-customize-branding.md). | Same as workforce. [Learn more](how-to-customize-languages-customers.md) |
-| **Custom domain names** |  You can use [custom domains](~/fundamentals/add-custom-domain.yml) for administrative accounts only. | The [custom URL domain (preview)](concept-custom-url-domain.md) feature for external tenants lets you brand app sign-in endpoints with your own domain name.|
+| **Custom domain names** |  You can use [custom domains](~/fundamentals/add-custom-domain.yml) for administrative accounts only. | The [custom URL domain](concept-custom-url-domain.md) feature for external tenants lets you brand app sign-in endpoints with your own domain name.|
 | **Native authentication** for mobile apps| Not available |Microsoft Entra’s [native authentication](concept-native-authentication.md) allows you to have full control over the design of your mobile application sign-in experiences.|
 
 
@@ -63,6 +66,7 @@ Custom authentication extensions allow you to customize the Microsoft Entra auth
 | **TokenIssuanceStart**    |  [Add claims from external systems](~/identity-platform/custom-extension-overview.md).    |   [Add claims from external systems](./concept-custom-extensions.md).    |  
 | **OnAttributeCollectionStart**|Not available| Occurs at the beginning of the sign-up's attribute collection step, before the attribute collection page renders. You can add actions such as prefilling values and displaying a blocking error. [Learn more](~/identity-platform/custom-extension-attribute-collection.md?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json&tabs=start-continue%2Csubmit-continue) |
 | **OnAttributeCollectionSubmit**|Not available| Occurs during the sign-up flow, after the user enters and submits attributes. You can add actions such as validating or modifying the user's entries. [Learn more](~/identity-platform/custom-extension-attribute-collection.md?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json&tabs=start-continue%2Csubmit-continue)|
+| **OnOtpSend**|Not available| Configure a custom email provider for one time passcode send events. [Learn more](~/identity-platform/custom-extension-email-otp-get-started.md?toc=%2Fentra%2Fexternal-id%2Ftoc.json&bc=%2Fentra%2Fexternal-id%2Fbreadcrumb%2Ftoc.json&tabs=azure-communication-services%2Cazure-portal)|
 
 ## Identity providers and authentication methods
 
@@ -70,18 +74,18 @@ The following table compares the [identity providers](../identity-providers.md) 
 
 |Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
-| **Identity providers for external users (primary authentication)** | **For self-service sign-up guests**</br>- Microsoft Entra accounts</br>- Microsoft accounts</br>- Email one-time passcode</br>- Google federation</br>- Facebook federation<br></br>**For invited guests**</br>- Microsoft Entra accounts</br>- Microsoft accounts</br>- Email one-time passcode</br>- Google federation</br>- SAML/WS-Fed federation | **For self-service sign-up users (consumers, business customers)**</br>- [Email with password](concept-authentication-methods-customers.md#email-and-password-sign-in)</br>- [Email one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in)</br>- [Google federation (preview)](./how-to-google-federation-customers.md)</br>- [Facebook federation (preview)](./how-to-facebook-federation-customers.md)<br></br>**For invited guests (preview)**</br>Guests invited with a directory role (for example, admins):</br>- Microsoft Entra accounts </br>- Microsoft accounts </br>- [Email one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in) |
+| **Identity providers for external users (primary authentication)** | **For self-service sign-up guests**</br>- Microsoft Entra accounts</br>- Microsoft accounts</br>- Email one-time passcode</br>- Google federation</br>- Facebook federation<br></br>**For invited guests**</br>- Microsoft Entra accounts</br>- Microsoft accounts</br>- Email one-time passcode</br>- Google federation</br>- SAML/WS-Fed federation | **For self-service sign-up users (consumers, business customers)**</br>- [Email with password](concept-authentication-methods-customers.md#email-and-password-sign-in)</br>- [Email one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in)</br>- [Google federation (preview)](./how-to-google-federation-customers.md)</br>- [Facebook federation (preview)](./how-to-facebook-federation-customers.md)</br>- [Apple federation (preview)](./how-to-apple-federation-customers.md)</br>- [OIDC federation](./how-to-custom-oidc-federation-customers.md)<br></br>**For invited guests (preview)**</br>Guests invited with a directory role (for example, admins):</br>- Microsoft Entra accounts </br>- Microsoft accounts </br>- [Email one-time passcode](./concept-authentication-methods-customers.md#email-with-one-time-passcode-sign-in)<br>- [SAML/WS-Fed federation](../direct-federation.md) |
 |   **Authentication methods for MFA**  | **For internal users (employees and admins)** </br>- [Authentication and verification methods](~/identity/authentication/concept-authentication-methods.md) </br>**For guests (invited or self-service sign-up)** </br>- [Authentication methods for guest MFA](../authentication-conditional-access.md#table-1-authentication-strength-mfa-methods-for-external-users)  |  **For self-service sign-up users (consumers, business customers) or invited users (preview)**</br>- [Email one-time passcode](concept-multifactor-authentication-customers.md#email-one-time-passcode)</br>- [SMS-based authentication](concept-multifactor-authentication-customers.md#sms-based-authentication)    |
 
 ## Application registration
 
-The following table compares the features available for [Application registration](./how-to-register-ciam-app.md) in each type of tenant.
+The following table compares the features available for [Application registration](../../identity-platform/quickstart-register-app.md) in each type of tenant.
 
 |Feature  |Workforce tenant  | External tenant |
 |---------|---------|---------|
-|   **Protocol**     |   SAML relying parties, OpenID Connect, and OAuth2    |   OpenID Connect and OAuth2    |
+|   **Protocol** |  SAML relying parties, OpenID Connect, and OAuth2  |  [SAML relying parties](how-to-register-saml-app.md), [OpenID Connect](how-to-register-ciam-app.md), and OAuth2 |
 | **Supported account types**| The following [account types](~/identity-platform/quickstart-register-app.md#register-an-application): <ul><li>Accounts in this organizational directory only (Single tenant)</li><li>Accounts in any organizational directory (Any Microsoft Entra tenant - Multitenant)</li><li>Accounts in any organizational directory (Any Microsoft Entra tenant - Multitenant) and personal Microsoft accounts (such as Skype, Xbox)</li><li>Personal Microsoft accounts only</li></ul> | Always use *Accounts in this organizational directory only (Single tenant)*. |
-| **Platform** | The following [platforms](~/identity-platform/quickstart-register-app.md#configure-platform-settings): <ul><li>Public client/native (mobile & desktop)</li><li>Web</li><li>Single page application (SPA)</li><ul>| The following [platforms](~/identity-platform/quickstart-register-app.md#configure-platform-settings): <ul><li>Public client (mobile & desktop)</li><li>[Native authentication mobile](concept-native-authentication.md) </li><li>Web</li><li>Single page application (SPA)</li><ul>|
+| **Platform** | The following [platforms](~/identity-platform/quickstart-register-app.md#add-a-redirect-uri): <ul><li>Public client/native (mobile & desktop)</li><li>Web</li><li>Single page application (SPA)</li><ul>| The following [platforms](~/identity-platform/quickstart-register-app.md#add-a-redirect-uri): <ul><li>Public client (mobile & desktop)</li><li>[Native authentication mobile](concept-native-authentication.md) </li><li>Web</li><li>Single page application (SPA)</li><ul>|
 | **Authentication** > **Redirect URIs**| The URIs Microsoft Entra ID accepts as destinations when returning authentication responses (tokens) after successfully authenticating or signing out users. | Same as workforce.|
 | **Authentication** > **Front-channel logout URL**| This URL is where Microsoft Entra ID sends a request to have the application clear the user's session data. The Front-channel logout URL is required for single sign-out to work correctly.| Same as workforce.|
 | **Authentication** > **Implicit grant and hybrid flows**| Request a token directly from the authorization endpoint. | Same as workforce.|

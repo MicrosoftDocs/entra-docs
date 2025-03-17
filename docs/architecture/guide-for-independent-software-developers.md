@@ -94,7 +94,7 @@ You can build applications that delegate identity and access management to Micro
 |[MSAL Go](https://github.com/AzureAD/microsoft-authentication-library-for-go)|Windows, macOS, Linux|
 |[MSAL Java](https://github.com/AzureAD/microsoft-authentication-library-for-java)|Windows, macOS, Linux|
 |[MSAL.js](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-browser)|JavaScript/TypeScript frameworks such as Vue.js, Ember.js, or Durandal.js|
-|[MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet)|.NET, .NET Framework, Xamarin Android, Xamarin iOS|
+|[MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet)|.NET, .NET Framework, .NET for Android, .NET for tvOS|
 |[MSAL Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-node)|Web apps with Express, desktop apps with Electron, Cross-platform console apps|
 |[MSAL Python](https://github.com/AzureAD/microsoft-authentication-library-for-python)|Windows, macOS, Linux|
 |[MSAL React](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-react)|Single-page apps with React and React-based libraries (Next.js, Gatsby.js)|

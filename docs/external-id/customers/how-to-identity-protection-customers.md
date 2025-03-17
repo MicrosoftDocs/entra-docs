@@ -33,7 +33,7 @@ Consider the following points when using ID Protection:
 
 - ID Protection is not available in trial tenants.
 - ID Protection is on by default.
-- ID Protection is available for both local and social identities, such as Google or Facebook. Detection is limited because the external identity provider manages the social account credentials.
+- ID Protection is available for both local and social identities, such as Google, Facebook or Apple. Detection is limited because the external identity provider manages the social account credentials.
 - Currently in Microsoft Entra external tenants, a subset of the [Microsoft Entra ID Protection risk detections](~/id-protection/overview-identity-protection.md) is available. Microsoft Entra External ID supports the following risk detections:  
 
 |Risk detection type  |Description  |

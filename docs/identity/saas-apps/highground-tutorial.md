@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with HighGround'
+title: Microsoft Entra single sign-on (SSO) integration with HighGround
 description: Learn how to configure single sign-on between Microsoft Entra ID and HighGround.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and HighGround so that I can control who has access to HighGround, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with HighGround
+# Microsoft Entra single sign-on (SSO) integration with HighGround
 
-In this tutorial, you'll learn how to integrate HighGround with Microsoft Entra ID. When you integrate HighGround with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate HighGround with Microsoft Entra ID. When you integrate HighGround with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to HighGround.
 * Enable your users to be automatically signed-in to HighGround with their Microsoft Entra accounts.
@@ -26,15 +26,13 @@ In this tutorial, you'll learn how to integrate HighGround with Microsoft Entra 
 To learn more about SaaS app integration with Microsoft Entra ID, see [What is application access and single sign-on with Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * HighGround single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * HighGround supports **SP and IDP** initiated SSO
 * Once you configure HighGround you can enforce session control, which protect exfiltration and infiltration of your organization’s sensitive data in real-time. Session control extend from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
@@ -60,8 +58,8 @@ Configure and test Microsoft Entra SSO with HighGround using a test user called 
 To configure and test Microsoft Entra SSO with HighGround, complete the following building blocks:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure HighGround SSO](#configure-highground-sso)** - to configure the single sign-on settings on application side.
     1. **[Create HighGround test user](#create-highground-test-user)** - to have a counterpart of B.Simon in HighGround that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -155,7 +153,7 @@ When you click the HighGround tile in the Access Panel, you should be automatica
 
 ## Additional resources
 
-- [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 

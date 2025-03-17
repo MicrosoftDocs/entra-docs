@@ -2,36 +2,34 @@
 title: Microsoft Entra SSO integration with HPE Aruba Networking EdgeConnect Orchestrator
 description: Learn how to configure single sign-on between Microsoft Entra ID and HPE Aruba Networking EdgeConnect Orchestrator.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 ms.topic: how-to
 ms.date: 04/12/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and HPE Aruba Networking EdgeConnect Orchestrator so that I can control who has access to HPE Aruba Networking EdgeConnect Orchestrator, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
 # Microsoft Entra SSO integration with HPE Aruba Networking EdgeConnect Orchestrator
 
-In this tutorial, you'll learn how to integrate HPE Aruba Networking EdgeConnect Orchestrator with Microsoft Entra ID. When you integrate HPE Aruba Networking EdgeConnect Orchestrator with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate HPE Aruba Networking EdgeConnect Orchestrator with Microsoft Entra ID. When you integrate HPE Aruba Networking EdgeConnect Orchestrator with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to HPE Aruba Networking EdgeConnect Orchestrator.
 * Enable your users to be automatically signed-in to HPE Aruba Networking EdgeConnect Orchestrator with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To integrate Microsoft Entra ID with HPE Aruba Networking EdgeConnect Orchestrator, you need:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * HPE Aruba Networking EdgeConnect Orchestrator version 9.4.1 or newer.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * HPE Aruba Networking EdgeConnect Orchestrator supports both **SP and IDP** initiated SSO.
 
@@ -55,7 +53,7 @@ Configure and test Microsoft Entra SSO with HPE Aruba Networking EdgeConnect Orc
 To configure and test Microsoft Entra SSO with HPE Aruba Networking EdgeConnect Orchestrator, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - This step will enable your users to use this feature.
-1. **[Create a Microsoft Entra ID test user](#create-a-microsoft-entra-id-test-user)** - This step allows you to test Microsoft Entra single sign-on with B.Simon.
+1. **Create a Microsoft Entra test user** - This step allows you to test Microsoft Entra single sign-on with B.Simon.
 1. **[Assign the Test user to the HPE Aruba Networking EdgeConnect Orchestrator application](#assign-the-test-user-to-the-hpe-aruba-networking-edgeconnect-orchestrator-application)** - This step allows you to enable B.Simon to use Microsoft Entra single sign-on on EdgeConnect Orchestrator
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
@@ -176,6 +174,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
  
 You can also use Microsoft My Apps to test the application in any mode. When you click the HPE Aruba Networking EdgeConnect Orchestrator tile in the My Apps, if configured in SP mode you would be redirected to the application sign-on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the HPE Aruba Networking EdgeConnect Orchestrator for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure HPE Aruba Networking EdgeConnect Orchestrator you can enforce session control, which protects exfiltration and infiltration of your organization's sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

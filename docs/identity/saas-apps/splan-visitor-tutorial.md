@@ -1,34 +1,32 @@
 ---
-title: 'Tutorial: Integrate Microsoft Entra single sign-on (SSO) with Splan Visitor'
+title: Integrate Microsoft Entra single sign-on (SSO) with Splan Visitor
 description: Learn how to configure single sign-on between Microsoft Entra ID and Splan Visitor.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Splan Visitor so that I can control who has access to Splan Visitor, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Integrate Microsoft Entra single sign-on (SSO) with Splan Visitor
+# Integrate Microsoft Entra single sign-on (SSO) with Splan Visitor
 
-In this tutorial, you'll learn how to integrate Splan Visitor with Microsoft Entra ID. When you integrate Splan Visitor with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Splan Visitor with Microsoft Entra ID. When you integrate Splan Visitor with Microsoft Entra ID, you can:
 
 * Use Microsoft Entra ID to control who has access to Splan Visitor.
 * Enable users to be automatically signed in to Splan Visitor with their Microsoft Entra accounts.
 * Manage your accounts in one central location, the Azure portal.
 
 ## Prerequisites
-
-To get started, you need:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Splan Visitor single sign-on (SSO) enabled subscription.
 
 > [!NOTE]
@@ -36,7 +34,7 @@ To get started, you need:
 
 ## Scenario description
 
-In this tutorial, you'll configure and test Microsoft Entra SSO in a test environment.
+In this article,  you'll configure and test Microsoft Entra SSO in a test environment.
 
 * Splan Visitor supports IdP-initiated SSO.
 
@@ -60,8 +58,8 @@ Configure and test Microsoft Entra SSO with Splan Visitor by using a test user n
 To configure and test Microsoft Entra SSO with Splan Visitor, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** to test Microsoft Entra single sign-on with test user B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** to test Microsoft Entra single sign-on with test user B.Simon.
+    1. **Assign the Microsoft Entra test user** to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Splan Visitor SSO](#configure-splan-visitor-sso)** to configure the single sign-on settings with Splan Visitor.
     1. **[Create a Splan Visitor test user](#create-a-splan-visitor-test-user)** to have a counterpart of B.Simon in Splan Visitor that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** to verify whether the configuration works.
@@ -132,6 +130,6 @@ Test your Microsoft Entra single sign-on configuration with one of the following
 * **Azure portal**: Select **Test this application** to automatically sign in to the Splan Visitor for which you set up SSO.
 * **Microsoft My Apps portal**: Select the **Splan Visitor** tile to automatically sign in to the Splan Visitor for which you set up SSO. For more information about the My Apps portal, see [Sign in and start apps from the My Apps portal](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 After you configure Splan Visitor, you can [learn how to enforce session controls in Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app). Session controls help protect exfiltration and infiltration of your organization's sensitive data in real time. Session controls extend from Conditional Access.

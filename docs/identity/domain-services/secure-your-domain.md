@@ -2,13 +2,13 @@
 title: Secure Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to disable weak ciphers, old protocols, and NTLM password hash synchronization for a Microsoft Entra Domain Services managed domain.
 author: justinha
-manager: amycolannino
+manager: femila
 
 ms.assetid: 6b4665b5-4324-42ab-82c5-d36c01192c2a
 ms.service: entra-id
 ms.subservice: domain-services
 ms.topic: how-to
-ms.date: 09/23/2023
+ms.date: 02/19/2025
 ms.author: justinha
 ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
 ---
@@ -101,7 +101,7 @@ $securitySettings = @{"DomainSecuritySettings"=@{"NtlmV1"="Disabled";"SyncNtlmPa
 Finally, apply the defined security settings to the managed domain using the [Set-AzResource][Set-AzResource] cmdlet. Specify the Domain Services resource from the first step, and the security settings from the previous step.
 
 ```powershell
-Set-AzResource -Id $DomainServicesResource.ResourceId -Properties $securitySettings -ApiVersion “2021-03-01” -Verbose -Force
+Set-AzResource -Id $DomainServicesResource.ResourceId -Properties $securitySettings -ApiVersion "2021-03-01" -Verbose -Force
 ```
 
 It takes a few moments for the security settings to be applied to the managed domain.

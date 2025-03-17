@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: 
-ms.date: 10/27/2023
+ms.date: 12/17/2024
 ms.reviewer: JasSuri
 ms.service: identity-platform
 
@@ -43,7 +43,7 @@ Your REST API must handle:
 - Business logic
 - Incoming and outgoing validation of HTTP request and response schemas.
 - Auditing and logging.
-- Availability, performance and security controls.
+- Availability, performance, and security controls.
 
 For developers running the REST API on Azure Functions, consider using the [Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/entra/Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents) NuGet library, which helps with token validation implementation using Microsoft Azure's built-in authentication capabilities. It provides a data model for different event types, initiates incoming and outgoing request and response processing, so more focus can be put on the business logic.  
 
@@ -60,19 +60,41 @@ To ensure the communications between the custom authentication extension and you
     - Workforce: `https://login.microsoftonline.com/{tenantId}/v2.0`.
     - Customer: `https://{domainName}.ciamlogin.com/{tenantId}/v2.0`.
 
-## Custom claims provider
+## Custom authentication event types
 
-A custom claims provider is a type of custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider maps claims from external systems into tokens and can be assigned to one or many applications in your directory.
+Within a sign-up and sign-in user flow, there are built-in authentication events. You can also add custom authentication extensions at specific points within the authentication flow. A custom authentication extension is essentially an event listener that, when activated, makes an HTTP call to a REST API endpoint where you define a workflow action. This section lists the custom authentication events available in Microsoft Entra ID.
 
-Learn more about [custom claims providers](custom-claims-provider-overview.md).
+### Token issuance start event
 
-## Attribute collection start and submit events
+The token issuance start event, **OnTokenIssuanceStart** is triggered when a token is about to be issued to an application. It is an event type set up within a custom claims provider. The custom claims provider is a custom authentication extension that calls a REST API to fetch claims from external systems. A custom claims provider maps claims from external systems into tokens and can be assigned to one or many applications in your directory.
 
-Attribute collection start and submit events can be used with custom authentication extensions to add logic before and after attributes are collected from a user. For example, you can add a workflow to validate the attributes a user enters during sign-up.  The **OnAttributeCollectionStart** event occurs at the beginning of the attribute collection step, before the attribute collection page renders. It lets you add actions such as prefilling values and displaying a blocking error. The **OnAttributeCollectionSubmit** event triggers after the user enters and submits attributes, allowing you to add actions like validating entries or modifying attributes.
+For details, see [custom claims providers](custom-claims-provider-overview.md).
+
+### Attribute collection start 
+
+Attribute collection start events can be used with custom authentication extensions to add logic before attributes are collected from a user. The **OnAttributeCollectionStart** event occurs at the beginning of the attribute collection step, before the attribute collection page renders. It lets you add actions such as prefilling values and displaying a blocking error. 
 
 > [!NOTE]
-> Attribute collection start and submit events are currently available only for user flows in Microsoft Entra External ID in external tenants. For details, see [Add your own business logic](~/external-id/customers/concept-custom-extensions.md).
+> The attribute collection start event is available only for user flows in Microsoft Entra External ID in external tenants. For details, see [Add your own business logic](~/external-id/customers/concept-custom-extensions.md).
 
-## See also
+### Attribute collection submit
 
-- Learn how to [create custom authentication extensions for attribute collection start and submit events](custom-extension-attribute-collection.md) with a sample OpenID Connect application.
+Attribute collection submit events can be used with custom authentication extensions to add logic after attributes are collected from a user. The **OnAttributeCollectionSubmit** event triggers after the user enters and submits attributes, allowing you to add actions like validating entries or modifying attributes.
+
+> [!NOTE]
+> The attribute collection submit event is available only for user flows in Microsoft Entra External ID in external tenants. For details, see [Add your own business logic](~/external-id/customers/concept-custom-extensions.md).
+
+### One time passcode send event
+ 
+The **OnOtpSend** event is triggered when a one time passcode email is activated. It allows you to call a REST API to use your own email provider. This event can be used to send customized emails to users who sign up, reset their password, sign-in with email and one-time passcode, or email multifactor authentication (MFA).
+ 
+When the **OnOtpSend** event is activated, Microsoft Entra sends a one-time passcode to the specified REST API you own. The REST API then uses your chosen email provider, such as Azure Communication Service or SendGrid, to send the one-time passcode with your custom email template, from address, and email subject, while also supporting localization.
+ 
+> [!NOTE]
+> The one-time passcode send event is currently available only for user flows in Microsoft Entra External ID in external tenants. For details, see [Configure a custom email provider for one time passcode send events](./custom-extension-email-otp-get-started.md)
+
+## Related content
+
+- Learn more about [custom claims providers](custom-claims-provider-overview.md)
+- [Create custom authentication extensions for attribute collection start and submit events](custom-extension-attribute-collection.md) with a sample OpenID Connect application
+- [Configure a custom email provider for one time passcode send events](custom-extension-email-otp-get-started.md)

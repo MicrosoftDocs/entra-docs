@@ -1,39 +1,37 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with EasySSO for Jira'
+title: Microsoft Entra single sign-on (SSO) integration with EasySSO for Jira
 description: Learn how to configure single sign-on between Microsoft Entra ID and EasySSO for Jira.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and EasySSO for Jira so that I can control who has access to EasySSO for Jira, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with EasySSO for Jira
+# Microsoft Entra single sign-on (SSO) integration with EasySSO for Jira
 
-In this tutorial, you'll learn how to integrate EasySSO for Jira with Microsoft Entra ID. When you integrate EasySSO for Jira with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate EasySSO for Jira with Microsoft Entra ID. When you integrate EasySSO for Jira with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Jira.
 * Enable your users to be automatically signed-in to Jira with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * EasySSO for Jira single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * EasySSO for Jira supports **SP and IDP** initiated SSO.
 * EasySSO for Jira supports **Just In Time** user provisioning.
@@ -58,8 +56,8 @@ Configure and test Microsoft Entra SSO with EasySSO for Jira using a test user c
 To configure and test Microsoft Entra SSO with EasySSO for Jira, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure EasySSO for Jira SSO](#configure-easysso-for-jira-sso)** - to configure the single sign-on settings on application side.
     1. **[Create EasySSO for Jira test user](#create-easysso-for-jira-test-user)** - to have a counterpart of B.Simon in EasySSO for Jira that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -218,6 +216,6 @@ In this case you have to follow the [instructions on this page](https://techtime
 
 Should you have any issues digesting the log messages, please contact [EasySSO support team](mailto:support@techtime.co.nz).
 
-## Next steps
+## Related content
 
 Once you configure EasySSO for Jira you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).

@@ -3,12 +3,12 @@ title: 'Microsoft Entra Connect: Troubleshoot Microsoft Entra connectivity issue
 description: Learn how to troubleshoot connectivity issues with Microsoft Entra Connect.
 
 author: billmath
-manager: amycolannino
+manager: femila
 
 ms.service: entra-id
 ms.tgt_pltfrm: na
 ms.topic: troubleshooting
-ms.date: 11/06/2023
+ms.date: 12/27/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 

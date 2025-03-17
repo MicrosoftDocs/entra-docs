@@ -3,7 +3,7 @@ title: Custom role permissions for app registration
 description: Delegate custom administrator role permissions for managing app registrations.
 
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to
@@ -167,5 +167,5 @@ Grants the same permissions as microsoft.directory/applications/permissions/upda
 
 ## Next steps
 
-- [Create and assign a custom role in Microsoft Entra ID](custom-create.yml)
+- [Create a custom role in Microsoft Entra ID](custom-create.md)
 - [List role assignments](view-assignments.md)

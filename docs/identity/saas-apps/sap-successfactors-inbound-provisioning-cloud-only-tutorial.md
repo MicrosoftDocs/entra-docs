@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Configure SuccessFactors inbound provisioning in Microsoft Entra ID'
+title: Configure SuccessFactors inbound provisioning in Microsoft Entra ID
 description: Learn how to configure inbound provisioning from SuccessFactors to Microsoft Entra ID
 
 author: cmmdesai
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: saas-apps
-ms.topic: tutorial
+ms.topic: how-to
 
 ms.date: 05/06/2024
 ms.author: chmutali
 
 # Customer intent: As an IT administrator, I want to learn how to automatically provision and deprovision user accounts from Microsoft Entra ID to SAP SuccessFactors to Microsoft Entra ID so that I can streamline the user management process and ensure that users have the appropriate access to SAP SuccessFactors to Microsoft Entra ID.
 ---
-# Tutorial: Configure SAP SuccessFactors to Microsoft Entra user provisioning
-The objective of this tutorial is to show the steps you need to perform to provision worker data from SuccessFactors Employee Central into Microsoft Entra ID, with optional write-back of email address to SuccessFactors. 
+# Configure SAP SuccessFactors to Microsoft Entra user provisioning
+The objective of this article is to show the steps you need to perform to provision worker data from SuccessFactors Employee Central into Microsoft Entra ID, with optional write-back of email address to SuccessFactors. 
 
 >[!NOTE]
->Use this tutorial if the users you want to provision from SuccessFactors are cloud-only users who don't need an on-premises AD account. If the users require only on-premises AD account or both AD and Microsoft Entra account, then please refer to the tutorial on [configure SAP SuccessFactors to Active Directory](sap-successfactors-inbound-provisioning-tutorial.md#overview) user provisioning. 
+>Use this article if the users you want to provision from SuccessFactors are cloud-only users who don't need an on-premises AD account. If the users require only on-premises AD account or both AD and Microsoft Entra account, then please refer to the article on [configure SAP SuccessFactors to Active Directory](sap-successfactors-inbound-provisioning-tutorial.md#overview) user provisioning. 
 
 The following video provides a quick overview of the steps involved when planning your provisioning integration with SAP SuccessFactors. 
 
@@ -268,7 +268,7 @@ Once the SuccessFactors provisioning app configurations have been completed, you
    > [!div class="mx-imgBorder"]
    > ![Provisioning progress bar](./media/sap-successfactors-inbound-provisioning/prov-progress-bar-stats.png)
 
-## Next steps
+## Related content
 
 * [Learn more about supported SuccessFactors Attributes for inbound provisioning](~/identity/app-provisioning/sap-successfactors-attribute-reference.md)
 * [Learn how to configure email writeback to SuccessFactors](sap-successfactors-writeback-tutorial.md)

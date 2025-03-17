@@ -8,7 +8,7 @@ ms.topic: quickstart
 ms.date: 11/13/2024
 ms.author: sarahlipsey
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.reviewer: besiler
 
 #Customer intent: As an IT admin, I want to be able to find a failed sign-in attempt with the Microsoft Graph API.
@@ -27,7 +27,6 @@ To complete the scenario in this quickstart, you need:
 
 ## Perform a failed sign-in
 
-[!INCLUDE [portal update](../../includes/portal-update.md)]
 
 The goal of this step is to create a record of a failed sign-in in the Microsoft Entra sign-in log.
 

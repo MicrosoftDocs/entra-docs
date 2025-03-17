@@ -1,39 +1,37 @@
 ---
-title: 'Tutorial: Microsoft Entra single sign-on (SSO) integration with Roadmunk'
+title: Microsoft Entra single sign-on (SSO) integration with Roadmunk
 description: Learn how to configure single sign-on between Microsoft Entra ID and Roadmunk.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: CelesteDG
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Roadmunk so that I can control who has access to Roadmunk, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Roadmunk
+# Microsoft Entra single sign-on (SSO) integration with Roadmunk
 
-In this tutorial, you'll learn how to integrate Roadmunk with Microsoft Entra ID. When you integrate Roadmunk with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Roadmunk with Microsoft Entra ID. When you integrate Roadmunk with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Roadmunk.
 * Enable your users to be automatically signed in to Roadmunk by using their Microsoft Entra accounts.
 * Manage your accounts in one central location, the Azure portal.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Roadmunk subscription that's enabled for single sign-on (SSO).
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 Roadmunk supports SSO that's started by the *service provider* (SP) and by the *identity provider (IDP)*.
 
@@ -182,7 +180,7 @@ In this section, you test your Microsoft Entra SSO configuration by using the ac
 
 In the My Apps portal, when you select the **Roadmunk** tile, you should be automatically signed in to the Roadmunk account for which you set up SSO. For more information, see [Sign in and start apps from the My Apps portal](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 After you configure Roadmunk, you can enforce session control. Session control protects the exfiltration and infiltration of your organization's sensitive data in real time. Session control extends from Conditional Access. 
 

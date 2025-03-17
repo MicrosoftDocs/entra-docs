@@ -1,38 +1,36 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Qualtrics'
+title: Microsoft Entra integration with Qualtrics
 description: Learn how to configure single sign-on between Microsoft Entra ID and Qualtrics.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Qualtrics so that I can control who has access to Qualtrics, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
 
-# Tutorial: Microsoft Entra single sign-on (SSO) integration with Qualtrics
+# Microsoft Entra single sign-on (SSO) integration with Qualtrics
 
-In this tutorial, you'll learn how to integrate Qualtrics with Microsoft Entra ID. When you integrate Qualtrics with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Qualtrics with Microsoft Entra ID. When you integrate Qualtrics with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Qualtrics.
 * Enable your users to be automatically signed in to Qualtrics with their Microsoft Entra accounts.
 * Manage your accounts in one central location: the Azure portal.
 
 ## Prerequisites
-
-To get started, you need:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Qualtrics subscription enabled for single sign-on (SSO).
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Qualtrics supports **SP** and **IDP** initiated SSO.
 * Qualtrics supports **Just In Time** user provisioning.
@@ -157,6 +155,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 You can also use Microsoft My Apps to test the application in any mode. When you click the Qualtrics tile in the My Apps, if configured in SP mode you would be redirected to the application sign on page for initiating the login flow and if configured in IDP mode, you should be automatically signed in to the Qualtrics for which you set up the SSO. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 After you configure Qualtrics, you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. For more information, see [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).

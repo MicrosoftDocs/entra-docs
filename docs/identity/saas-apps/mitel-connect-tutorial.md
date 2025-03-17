@@ -1,36 +1,34 @@
 ---
-title: 'Tutorial: Microsoft Entra integration with Mitel Connect'
+title: Microsoft Entra integration with Mitel Connect
 description: Learn how to configure single sign-on between Microsoft Entra ID and Mitel Connect.
 
-author: jeevansd
+author: nguhiu
 manager: CelesteDG
 ms.reviewer: celested
 ms.service: entra-id
 ms.subservice: saas-apps
 
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/25/2024
-ms.author: jeedes
+ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Mitel Connect so that I can control who has access to Mitel Connect, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
 ---
-# Tutorial: Microsoft Entra integrations with Mitel MiCloud Connect or CloudLink Platform
+# Microsoft Entra integrations with Mitel MiCloud Connect or CloudLink Platform
 
-In this tutorial, you'll learn how to use the Mitel Connect app to integrate Microsoft Entra ID with Mitel MiCloud Connect or CloudLink Platform. The Mitel Connect app is available in the Azure Gallery. Integrating Microsoft Entra ID with MiCloud Connect or CloudLink Platform provides you with the following benefits:
+In this article,  you'll learn how to use the Mitel Connect app to integrate Microsoft Entra ID with Mitel MiCloud Connect or CloudLink Platform. The Mitel Connect app is available in the Azure Gallery. Integrating Microsoft Entra ID with MiCloud Connect or CloudLink Platform provides you with the following benefits:
 
 * You can control users' access to MiCloud Connect apps and to CloudLink apps in Microsoft Entra ID by using their enterprise credentials.
 * You can enable users on your account to be automatically signed in to MiCloud Connect or CloudLink (single sign-on) by using their Microsoft Entra accounts.
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with MiCloud Connect, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Mitel MiCloud Connect account or Mitel CloudLink account, depending on the application you want to configure.
 
 ## Scenario description
 
-In this tutorial, you'll configure and test Microsoft Entra single sign-on (SSO).
+In this article,  you'll configure and test Microsoft Entra single sign-on (SSO).
 
 * Mitel Connect supports **SP** initiated SSO.
 
@@ -60,8 +58,8 @@ In this section, you'll configure and test Microsoft Entra SSO with MiCloud Conn
 To configure and test Microsoft Entra single sign-on with MiCloud Connect:
 
 1. **[Configure MiCloud Connect for SSO with Microsoft Entra ID](#configure-micloud-connect-for-sso-with-azure-ad)** - to enable your users to use this feature and to configure the SSO settings on the application side.
-2. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with Britta Simon.
-3. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable Britta Simon to use Microsoft Entra single sign-on.
+2. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
+3. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
 4. **[Create a Mitel MiCloud Connect test user](#create-a-mitel-micloud-connect-test-user)** - to have a counterpart of Britta Simon on your MiCloud Connect account that is linked to the Microsoft Entra representation of the user.
 5. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
@@ -313,6 +311,6 @@ In this section, you test your Microsoft Entra single sign-on configuration with
 
 * You can use Microsoft My Apps. When you select the Mitel Connect tile in the My Apps, this will redirect to CloudLink Sign-on URL. For more information about the My Apps, see [Introduction to the My Apps](https://support.microsoft.com/account-billing/sign-in-and-start-apps-from-the-my-apps-portal-2f3b1bae-0e5a-4a86-a33e-876fbd2a4510).
 
-## Next steps
+## Related content
 
 Once you configure Mitel Connect you can enforce session control, which protects exfiltration and infiltration of your organization’s sensitive data in real time. Session control extends from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-aad).
