@@ -18,8 +18,6 @@ Managed identities for Azure resources sign-ins are sign-ins that were performed
 
 ![Screenshot of the managed identity sign-in log.](media/concept-managed-identity-sign-ins/sign-in-logs-managed-identity.png)
 
-The following examples show the type of information captured in the managed identity sign-in logs:
-
 You can't customize the fields shown in this report.
 
 To make it easier to digest the data, these sign-in events are grouped together. Sign-ins from the same entity are aggregated into a single row. You can expand the row to see all the different sign-ins and their different time stamps. Sign-ins are aggregated in the managed identities report when all of the following data matches:
