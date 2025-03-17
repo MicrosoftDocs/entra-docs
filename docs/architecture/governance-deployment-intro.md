@@ -198,7 +198,7 @@ You can use guidance on cloud HR system integration, such as Workday, SuccessFac
 
 When planning for API-driven inbound provisioning, consider your use cases and approach. To learn more, see the following video:</br></br>
 
-> [!VIDEO https://learn-video.azurefd.net/vod/player?id=aadc0d22-9bd4-4808-b6c4-ce51069a8d8f]
+> [!VIDEO aadc0d22-9bd4-4808-b6c4-ce51069a8d8f]
 
 **API endpoint**
 
