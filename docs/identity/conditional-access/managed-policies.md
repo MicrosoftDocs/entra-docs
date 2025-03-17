@@ -5,11 +5,11 @@ description: Secure your resources with Microsoft-managed policies and take acti
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 03/04/2025
+ms.date: 03/17/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: swethar
 ---
 # Microsoft-managed policies
@@ -91,14 +91,14 @@ To apply this policy to more users, duplicate it and change the assignments.
 
 This policy covers all users and requires multifactor authentication and reauthentication when we detect high-risk sign-ins. High-risk in this case means something about the way the user signed in is out of the ordinary. These high-risk sign-ins might include travel that is highly abnormal, password spray attacks, or token replay attacks. For more information, see [What are risk detections](/entra/id-protection/concept-identity-protection-risks#sign-in-risk-detections).
 
-This policy targets Microsoft Entra ID P2 tenants where security defaults aren't enabled. The policy covers users in two different ways, depending on if you have more P2 licenses than users or if you have more users than P2 licenses.
+This policy targets Microsoft Entra ID P2 tenants where security defaults aren't enabled. The policy covers users in two different ways, depending on if you have more P2 licenses than users or if you have more users than P2 licenses. Guest users are not included in the policy.
 
 - If your P2 licenses equal or exceed the total MFA-registered active users, the policy covers *All Users*.
     - *All Users* could include service accounts or break-glass accounts, so you might want to exclude them.
 - If the MFA-registered active users exceed your P2 licenses, we create and assign the policy to a security group that is capped to your available P2 licenses.
-    - The policy is applied when the security group is created, so you modify the group membership accordingly. 
-    - Users with a directly assigned P2 license are added to this group.
-    - If there are still licenses available at this point, enabled, member accounts that had activity in the last 60 days, and have at least one MFA method registered are added to this group.
+    - The policy applies only to that security group, so you can scope the policy by modifying the group itself.
+    - To populate the group, we select users who can satisfy MFA, prioritizing users with a directly assigned P2 license.
+    - If there are remaining P2 licenses, we add additional users who have a strong authentication (MFA) sign-in within the past 60 days. This rule ensures that the policy won’t block legitimate users and that you’re getting maximum value on your P2 licenses.
 
 To prevent attackers from taking over accounts, Microsoft doesn't allow risky users to register for multifactor authentication.
 
