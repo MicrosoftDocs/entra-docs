@@ -17,22 +17,20 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on integration with Catchpoint
 
-In this tutorial, you learn how to integrate Catchpoint with Microsoft Entra ID. When you integrate Catchpoint with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Catchpoint with Microsoft Entra ID. When you integrate Catchpoint with Microsoft Entra ID, you can:
 
 - Control user access to Catchpoint from Microsoft Entra ID.
 - Enable automatic Catchpoint sign-in for users with Microsoft Entra accounts.
 - Manage your accounts in one central location: the Azure portal.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-- A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 - A Catchpoint subscription with single sign-on (SSO) enabled.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 - Catchpoint supports SP-initiated and IDP-initiated SSO.
 - Catchpoint supports just-in-time (JIT) user provisioning.
@@ -52,7 +50,7 @@ To configure the integration of Catchpoint into Microsoft Entra ID, add Catchpoi
 
 ## Configure and test Microsoft Entra SSO for Catchpoint
 
-For SSO to work, you need to link a Microsoft Entra user with a user in Catchpoint. For this tutorial, we'll configure a test user called **B.Simon**.
+For SSO to work, you need to link a Microsoft Entra user with a user in Catchpoint. For this article,  we'll configure a test user called **B.Simon**.
 
 Complete the following sections:
 

@@ -17,22 +17,20 @@ ms.author: gideonkiratu
 
 # Integrate Displayr with Microsoft Entra ID
 
-In this tutorial, you learn how to integrate Displayr with Microsoft Entra ID. When you integrate Displayr with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate Displayr with Microsoft Entra ID. When you integrate Displayr with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Displayr.
 * Enable your users to be automatically signed-in to Displayr with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Displayr single sign-on (SSO) enabled company.
 
 ## Scenario description
 
-In this tutorial, you'll learn to configure Microsoft Entra SSO in your Displayr company.
+In this article,  you'll learn to configure Microsoft Entra SSO in your Displayr company.
 
 * Displayr supports **SP** initiated SSO.
 

@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with OneTrust Privacy Management Software
 
-In this tutorial, you'll learn how to integrate OneTrust Privacy Management Software with Microsoft Entra ID. When you integrate OneTrust Privacy Management Software with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate OneTrust Privacy Management Software with Microsoft Entra ID. When you integrate OneTrust Privacy Management Software with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to OneTrust Privacy Management Software.
 * Enable your users to be automatically signed in to OneTrust Privacy Management Software with their Microsoft Entra accounts.
@@ -31,7 +31,7 @@ To configure Microsoft Entra integration with OneTrust Privacy Management Softwa
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * OneTrust Privacy Management Software supports **SP** and **IDP** initiated SSO.
 
@@ -60,8 +60,8 @@ Configure and test Microsoft Entra SSO with OneTrust Privacy Management Software
 To configure and test Microsoft Entra SSO with OneTrust Privacy Management Software, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure OneTrust Privacy Management Software SSO](#configure-onetrust-privacy-management-software-sso)** - to configure the single sign-on settings on application side.
     1. **[Create OneTrust Privacy Management Software test user](#create-onetrust-privacy-management-software-test-user)** - to have a counterpart of B.Simon inOneTrust Privacy Management Software that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.

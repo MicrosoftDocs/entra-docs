@@ -9,7 +9,7 @@ ms.date: 06/27/2024
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: amycolannino
+manager: femila
 ms.reviewer: kvenkit
 ---
 # Conditional Access insights and reporting

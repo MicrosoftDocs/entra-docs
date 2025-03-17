@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect Synchronization Service Manager Operations'
 description: Understand the Operations tab in the Synchronization Service Manager for Microsoft Entra Connect.
 
 author: billmath
-manager: amycolannino
+manager: femila
 
 ms.assetid: 97a26565-618f-4313-8711-5925eeb47cdc
 ms.service: entra-id

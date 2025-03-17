@@ -16,23 +16,21 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Palo Alto Networks - Admin UI
 
-In this tutorial, you'll learn how to integrate Palo Alto Networks - Admin UI with Microsoft Entra ID. When you integrate Palo Alto Networks - Admin UI with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Palo Alto Networks - Admin UI with Microsoft Entra ID. When you integrate Palo Alto Networks - Admin UI with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Palo Alto Networks - Admin UI.
 * Enable your users to be automatically signed-in to Palo Alto Networks - Admin UI with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Palo Alto Networks - Admin UI single sign-on (SSO) enabled subscription.
 * It is a requirement that the service should be public available. Please refer [this](~/identity-platform/single-sign-on-saml-protocol.md) page for more information.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Palo Alto Networks - Admin UI supports **SP** initiated SSO.
 * Palo Alto Networks - Admin UI supports **Just In Time** user provisioning.
@@ -58,8 +56,8 @@ For single sign-on to work, a link relationship between a Microsoft Entra user a
 To configure and test Microsoft Entra single sign-on with Palo Alto Networks - Admin UI, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Palo Alto Networks - Admin UI SSO](#configure-palo-alto-networks---admin-ui-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Palo Alto Networks - Admin UI test user](#create-palo-alto-networks---admin-ui-test-user)** - to have a counterpart of B.Simon in Palo Alto Networks - Admin UI that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.

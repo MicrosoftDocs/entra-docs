@@ -55,7 +55,7 @@ Use the following table to diagnose an error code.
 |Error code |Error name |Description |
 |----|----|----|
 |1003000 | EventHandlerUnexpectedError | There was an unexpected error when processing an event handler.|
-|1003001 | CustomExtenstionUnexpectedError | There was an unexpected error while calling a custom extension API.|
+|1003001 | CustomExtensionUnexpectedError | There was an unexpected error while calling a custom extension API.|
 |1003002 | CustomExtensionInvalidHTTPStatus | The custom extension API returned an invalid HTTP status code. Check that the API returns an accepted status code defined for that custom extension type.|
 |1003003 | CustomExtensionInvalidResponseBody | There was a problem parsing the custom extension's response body. Check that the API response body is in an acceptable schema for that custom extension type.|
 |1003004 | CustomExtensionThrottlingError | There are too many custom extension requests. This exception is thrown for custom extension API calls when throttling limits are reached.|

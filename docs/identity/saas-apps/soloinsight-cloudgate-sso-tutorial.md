@@ -17,22 +17,20 @@ ms.author: gideonkiratu
 
 # Integrate Soloinsight-CloudGate SSO with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate Soloinsight-CloudGate SSO with Microsoft Entra ID. When you integrate Soloinsight-CloudGate SSO with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Soloinsight-CloudGate SSO with Microsoft Entra ID. When you integrate Soloinsight-CloudGate SSO with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Soloinsight-CloudGate SSO.
 * Enable your users to be automatically signed-in to Soloinsight-CloudGate SSO with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Soloinsight-CloudGate SSO single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Soloinsight-CloudGate SSO supports **SP** initiated SSO.
 * Soloinsight-CloudGate SSO supports [Automated user provisioning](soloinsight-cloudgate-sso-provisioning-tutorial.md).
@@ -57,8 +55,8 @@ Configure and test Microsoft Entra SSO with Soloinsight-CloudGate SSO using a te
 To configure and test Microsoft Entra SSO with Soloinsight-CloudGate SSO, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Soloinsight-CloudGate SSO](#configure-soloinsight-cloudgate-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Soloinsight-CloudGate SSO test user](#create-soloinsight-cloudgate-sso-test-user)** - to have a counterpart of B.Simon in Soloinsight-CloudGate SSO that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -85,7 +83,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<SUBDOMAIN>.sigateway.com/process/sso`
 
    > [!NOTE]
-   > These values are not real. Update these values with the actual Sign on URL and Identifier which is explained later in the **Configure Soloinsight-CloudGate SSO Single Sign-On** section of the tutorial.
+   > These values are not real. Update these values with the actual Sign on URL and Identifier which is explained later in the **Configure Soloinsight-CloudGate SSO Single Sign-On** section of the article.
 
 1. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 

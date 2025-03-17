@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Palo Alto Networks Captive Portal
 
-In this tutorial, you learn how to integrate Palo Alto Networks Captive Portal with Microsoft Entra ID.
+In this article,  you learn how to integrate Palo Alto Networks Captive Portal with Microsoft Entra ID.
 Integrating Palo Alto Networks Captive Portal with Microsoft Entra ID provides you with the following benefits:
 
 * You can control in Microsoft Entra ID who has access to Palo Alto Networks Captive Portal.
@@ -24,15 +24,13 @@ Integrating Palo Alto Networks Captive Portal with Microsoft Entra ID provides y
 * You can manage your accounts in one central location.
 
 ## Prerequisites
-
-To integrate Microsoft Entra ID with Palo Alto Networks Captive Portal, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have Microsoft Entra ID, you can get a [one-month trial](https://azure.microsoft.com/pricing/free-trial/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Palo Alto Networks Captive Portal single sign-on (SSO)-enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Palo Alto Networks Captive Portal supports **IDP** initiated SSO
 * Palo Alto Networks Captive Portal supports **Just In Time** user provisioning
@@ -58,8 +56,8 @@ For single sign-on to work, a link relationship between a Microsoft Entra user a
 To configure and test Microsoft Entra single sign-on with Palo Alto Networks Captive Portal, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - Enable the user to use this feature.
-    * **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - Test Microsoft Entra single sign-on with the user B.Simon.
-    * **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - Set up B.Simon to use Microsoft Entra single sign-on.
+    * **Create a Microsoft Entra test user** - Test Microsoft Entra single sign-on with the user B.Simon.
+    * **Assign the Microsoft Entra test user** - Set up B.Simon to use Microsoft Entra single sign-on.
 2. **[Configure Palo Alto Networks Captive Portal SSO](#configure-palo-alto-networks-captive-portal-sso)** - Configure the single sign-on settings in the application.
     * **[Create a Palo Alto Networks Captive Portal test user](#create-a-palo-alto-networks-captive-portal-test-user)** - to have a counterpart of B.Simon in Palo Alto Networks Captive Portal that is linked to the Microsoft Entra representation of user.
 3. **[Test SSO](#test-sso)** - Verify that the configuration works.

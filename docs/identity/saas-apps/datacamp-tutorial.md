@@ -17,22 +17,20 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with DataCamp
 
-In this tutorial, you'll learn how to integrate DataCamp with Microsoft Entra ID. When you integrate DataCamp with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate DataCamp with Microsoft Entra ID. When you integrate DataCamp with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to DataCamp.
 * Enable your users to be automatically signed-in to DataCamp with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * DataCamp single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * DataCamp supports **SP and IDP** initiated SSO.
 * DataCamp supports **Just In Time** user provisioning.
@@ -57,8 +55,8 @@ Configure and test Microsoft Entra SSO with DataCamp using a test user called **
 To configure and test Microsoft Entra SSO with DataCamp, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure DataCamp SSO](#configure-datacamp-sso)** - to configure the single sign-on settings on application side.
     1. **[Create DataCamp test user](#create-datacamp-test-user)** - to have a counterpart of B.Simon in DataCamp that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -79,15 +77,15 @@ Follow these steps to enable Microsoft Entra SSO.
 1. On the **Basic SAML Configuration** section, if you wish to configure the application in **IDP** initiated mode, perform the following steps:
 
     a. In the **Identifier** text box, type a URL using the following pattern:
-    `https://www.datacamp.com/groups/<group-identifier>/sso/saml`
+    `https://www.datacamp.com/groups/<group-slug>/sso/saml`
 
     b. In the **Reply URL** text box, type a URL using the following pattern:
-    `https://www.datacamp.com/groups/<group-identifier>/sso/saml/consume`
+    `https://auth.datacamp.com/realms/datacamp-users/broker/b2b-sso-group-<group-identifier>/endpoint/clients/datacamp-saml-login`
 
-1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
+1. Click **Set additional URLs** and perform the following step:
 
     In the **Sign-on URL** text box, type the URL:
-    `https://www.datacamp.com/users/sign_in`
+    `https://auth.datacamp.com/realms/datacamp-users/broker/b2b-sso-group-<group-identifier>/endpoint`
 
 	> [!NOTE]
 	> These values are not real. Update these values with the actual Identifier and Reply URL. Contact [DataCamp Client support team](https://support.datacamp.com/hc/en-us) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
@@ -95,13 +93,6 @@ Follow these steps to enable Microsoft Entra SSO.
 1. DataCamp application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 
 	![image](common/default-attributes.png)
-
-1. In addition to above, DataCamp application expects few more attributes to be passed back in SAML response which are shown below. These attributes are also pre populated but you can review them as per your requirements.
-
-	| Name | Source Attribute|
-	| ------------| --------- |
-	| first_name | user.givenname |
-	| last_name | user.surname |
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Raw)** and select **Download** to download the certificate and save it on your computer.
 

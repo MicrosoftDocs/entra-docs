@@ -16,32 +16,30 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra single sign-on (SSO) integration with SAP HANA
 
-In this tutorial, you'll learn how to integrate SAP HANA with Microsoft Entra ID. When you integrate SAP HANA with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate SAP HANA with Microsoft Entra ID. When you integrate SAP HANA with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to SAP HANA.
 * Enable your users to be automatically signed-in to SAP HANA with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with SAP HANA, you need the following items:
-
-- A Microsoft Entra subscription
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 - A SAP HANA subscription that's single sign-on (SSO) enabled
 - A HANA instance that's running on any public IaaS, on-premises, Azure VM, or SAP large instances in Azure
 - The XSA Administration web interface, as well as HANA Studio installed on the HANA instance
 
 > [!NOTE]
-> We do not recommend using a production environment of SAP HANA to test the steps in this tutorial. Test the integration first in the development or staging environment of the application, and then use the production environment.
+> We do not recommend using a production environment of SAP HANA to test the steps in this article. Test the integration first in the development or staging environment of the application, and then use the production environment.
 
-To test the steps in this tutorial, follow these recommendations:
+To test the steps in this article,  follow these recommendations:
 
 * A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get one-month trial [here](https://azure.microsoft.com/pricing/free-trial/)
 * SAP HANA single sign-on enabled subscription
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * SAP HANA supports **IDP** initiated SSO.
 * SAP HANA supports **just-in-time** user provisioning.
@@ -70,8 +68,8 @@ Configure and test Microsoft Entra SSO with SAP HANA using a test user called **
 To configure and test Microsoft Entra SSO with SAP HANA, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-	1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with Britta Simon.
-	1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable Britta Simon to use Microsoft Entra single sign-on.
+	1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
+	1. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
 2. **[Configure SAP HANA SSO](#configure-sap-hana-sso)** - to configure the single sign-on settings on application side.
 	1. **[Create SAP HANA test user](#create-sap-hana-test-user)** - to have a counterpart of Britta Simon in SAP HANA that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.

@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Mist Cloud Admin SSO
 
-In this tutorial, you'll learn how to integrate Mist Cloud Admin SSO with Microsoft Entra ID. When you integrate Mist Cloud Admin SSO with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Mist Cloud Admin SSO with Microsoft Entra ID. When you integrate Mist Cloud Admin SSO with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to the Mist dashboard.
 * Enable your users to be automatically signed-in to the Mist dashboard with their Microsoft Entra accounts.
@@ -35,7 +35,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Mist Cloud Admin SSO supports **SP** and **IDP** initiated SSO.
 
@@ -61,8 +61,8 @@ To configure and test Microsoft Entra SSO with Mist Cloud Admin SSO, perform the
 1.	**[Perform initial configuration of the Mist Cloud SSO](#perform-initial-configuration-of-the-mist-cloud-sso)** - to generate ACS URL on the application side.
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
     1.	**[Create Role for the SSO Application](#create-role-for-the-sso-application)**
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 
 1.	**[Complete configuration of the Mist Cloud](#complete-configuration-of-the-mist-cloud)**
 

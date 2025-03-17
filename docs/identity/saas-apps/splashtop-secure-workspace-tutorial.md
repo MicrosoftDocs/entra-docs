@@ -18,22 +18,20 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Splashtop Secure Workspace
 
-In this tutorial, you'll learn how to integrate Splashtop Secure Workspace with Microsoft Entra ID. When you integrate Splashtop Secure Workspace with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Splashtop Secure Workspace with Microsoft Entra ID. When you integrate Splashtop Secure Workspace with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Splashtop Secure Workspace.
 * Enable your users to be automatically signed-in to Splashtop Secure Workspace with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To integrate Microsoft Entra ID with Splashtop Secure Workspace, you need:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Splashtop Secure Workspace single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Splashtop Secure Workspace supports **SP** initiated SSO.
 * Splashtop Secure Workspace supports **Just In Time** user provisioning.
@@ -56,8 +54,8 @@ Configure and test Microsoft Entra SSO with Splashtop Secure Workspace using a t
 To configure and test Microsoft Entra SSO with Splashtop Secure Workspace, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-microsoft-entra-id-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Splashtop Secure Workspace SSO](#configure-splashtop-secure-workspace-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Splashtop Secure Workspace test user](#create-splashtop-secure-workspace-test-user)** - to have a counterpart of B.Simon in Splashtop Secure Workspace that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.

@@ -18,23 +18,21 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with GovWin IQ
 
-In this tutorial, you'll learn how to integrate GovWin IQ with Microsoft Entra ID. GovWin IQ by Deltek is the industry-leading platform providing the most comprehensive market intelligence for U.S. federal, state and local, and Canadian governments. When you integrate GovWin IQ with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate GovWin IQ with Microsoft Entra ID. GovWin IQ by Deltek is the industry-leading platform providing the most comprehensive market intelligence for U.S. federal, state and local, and Canadian governments. When you integrate GovWin IQ with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to GovWin IQ.
 * Enable your users to be automatically signed-in to GovWin IQ with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To integrate Microsoft Entra ID with GovWin IQ, you need:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * An active GovWin IQ Subscription. Single sign-on can be enabled at no cost. Make sure your Customer Success Manager has enabled a user at your organization as a SAML SSO Admin to perform the following steps.
 * All users must have same email address in Azure as provisioned in GovWin IQ.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * GovWin IQ supports only **SP** initiated SSO.
 
@@ -59,7 +57,7 @@ Configure and test Microsoft Entra SSO with GovWin IQ using a test user called *
 To configure and test Microsoft Entra SSO with GovWin IQ, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
-    1. **[Assign the Microsoft Entra ID test user](#assign-the-microsoft-entra-id-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure GovWin IQ SSO](#configure-govwin-iq-sso)** - to configure the single sign-on settings on application side.
     1. **[Assign GovWin IQ test user to SSO](#assign-govwin-iq-test-user-to-sso)** - to have a counterpart of B.Simon in GovWin IQ that is linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.

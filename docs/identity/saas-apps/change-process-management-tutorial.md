@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Change Process Management
 
-In this tutorial, you'll learn how to integrate Change Process Management with Microsoft Entra ID. When you integrate Change Process Management with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Change Process Management with Microsoft Entra ID. When you integrate Change Process Management with Microsoft Entra ID, you can:
 
 * Use Microsoft Entra ID to control who can access Change Process Management.
 * Enable your users to be automatically signed in to Change Process Management with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you'll configure and test Microsoft Entra SSO in a test environment.
+In this article,  you'll configure and test Microsoft Entra SSO in a test environment.
 
 Change Process Management supports IDP-initiated SSO.
 
@@ -58,7 +58,7 @@ You'll configure and test Microsoft Entra SSO with Change Process Management by 
 To configure and test Microsoft Entra SSO with Change Process Management, you'll take these high-level steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** to enable your users to use the feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** to test Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** to test Microsoft Entra single sign-on.
     1. **[Grant access to the test user](#grant-access-to-the-test-user)** to enable the user to use Microsoft Entra single sign-on.
 1. **[Configure Change Process Management SSO](#configure-change-process-management-sso)** on the application side.
     1. **[Create a Change Process Management test user](#create-a-change-process-management-test-user)** as a counterpart to the Microsoft Entra representation of the user.

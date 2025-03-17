@@ -16,22 +16,20 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Powerschool Performance Matters
 
-In this tutorial, you'll learn how to integrate Powerschool Performance Matters with Microsoft Entra ID. When you integrate Powerschool Performance Matters with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Powerschool Performance Matters with Microsoft Entra ID. When you integrate Powerschool Performance Matters with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Powerschool Performance Matters.
 * Enable your users to be automatically signed-in to Powerschool Performance Matters with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Powerschool Performance Matters single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Powerschool Performance Matters supports **SP** initiated SSO.
 
@@ -58,8 +56,8 @@ Configure and test Microsoft Entra SSO with Form.com using a test user called **
 To configure and test Microsoft Entra SSO with Form.com, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Powerschool Performance Matters SSO](#configure-powerschool-performance-matters-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Powerschool Performance Matters test user](#create-powerschool-performance-matters-test-user)** - to have a counterpart of B.Simon in Powerschool Performance Matters that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.

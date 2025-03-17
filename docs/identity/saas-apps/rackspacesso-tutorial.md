@@ -16,22 +16,20 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Rackspace SSO
 
-In this tutorial, you'll learn how to integrate Rackspace SSO with Microsoft Entra ID. When you integrate Rackspace SSO with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Rackspace SSO with Microsoft Entra ID. When you integrate Rackspace SSO with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Rackspace SSO.
 * Enable your users to be automatically signed-in to Rackspace SSO with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with Rackspace SSO, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Rackspace SSO single sign-on enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Rackspace SSO supports **IDP** initiated SSO.
 
@@ -59,8 +57,8 @@ When using single sign-on with Rackspace, the Rackspace users will be automatica
 To configure and test Microsoft Entra single sign-on with Rackspace SSO, you need to perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with Britta Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable Britta Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
+    1. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
 2. **[Configure Rackspace SSO](#configure-rackspace-sso)** - to configure the Single Sign-On settings on application side.
     1. **[Set up Attribute Mapping in the Rackspace Control Panel](#set-up-attribute-mapping-in-the-rackspace-control-panel)** - to assign Rackspace roles to Microsoft Entra users.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.

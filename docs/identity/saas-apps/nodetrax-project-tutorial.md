@@ -18,17 +18,15 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Nodetrax Project
 
-In this tutorial, you'll learn how to integrate Nodetrax Project with Microsoft Entra ID. When you integrate Nodetrax Project with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Nodetrax Project with Microsoft Entra ID. When you integrate Nodetrax Project with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Nodetrax Project.
 * Enable your users to be automatically signed-in to Nodetrax Project with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Nodetrax Project single sign-on (SSO) enabled subscription.
 
 > [!NOTE]
@@ -36,7 +34,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Nodetrax Project supports **SP and IDP** initiated SSO.
 
@@ -60,8 +58,8 @@ Configure and test Microsoft Entra SSO with Nodetrax Project using a test user c
 To configure and test Microsoft Entra SSO with Nodetrax Project, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Nodetrax Project SSO](#configure-nodetrax-project-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Nodetrax Project test user](#create-nodetrax-project-test-user)** - to have a counterpart of B.Simon in Nodetrax Project that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.

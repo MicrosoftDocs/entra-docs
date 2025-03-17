@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Vault Platform
 
-In this tutorial, you'll learn how to integrate Vault Platform with Microsoft Entra ID. When you integrate Vault Platform with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Vault Platform with Microsoft Entra ID. When you integrate Vault Platform with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Vault Platform.
 * Enable your users to be automatically signed-in to Vault Platform with their Microsoft Entra accounts.
@@ -35,7 +35,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Vault Platform supports **IDP** initiated SSO.
 
@@ -62,8 +62,8 @@ Configure and test Microsoft Entra SSO with Vault Platform using a test user cal
 To configure and test Microsoft Entra SSO with Vault Platform, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Vault Platform SSO](#configure-vault-platform-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Vault Platform test user](#create-vault-platform-test-user)** - to have a counterpart of B.Simon in Vault Platform that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.

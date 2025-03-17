@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Integrate Ascentis with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate Ascentis with Microsoft Entra ID. When you integrate Ascentis with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Ascentis with Microsoft Entra ID. When you integrate Ascentis with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Ascentis.
 * Enable your users to be automatically signed-in to Ascentis with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Ascentis supports **SP and IDP** initiated SSO
 
@@ -59,8 +59,8 @@ To configure and test Microsoft Entra SSO with Ascentis, complete the following 
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
 2. **[Configure Ascentis SSO](#configure-ascentis-sso)** - to configure the Single Sign-On settings on application side.
-3. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with Britta Simon.
-4. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable Britta Simon to use Microsoft Entra single sign-on.
+3. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
+4. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
 5. **[Create Ascentis test user](#create-ascentis-test-user)** - to have a counterpart of Britta Simon in Ascentis that is linked to the Microsoft Entra representation of user.
 6. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
@@ -153,7 +153,7 @@ When you click the Ascentis tile in the Access Panel, you should be automaticall
 
 ## Additional resources
 
-- [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 

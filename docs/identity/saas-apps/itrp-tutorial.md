@@ -1,6 +1,6 @@
 ---
 title: Microsoft Entra SSO integration with ITRP
-description: In this tutorial, you'll learn how to configure single sign-on between Microsoft Entra ID and ITRP.
+description: In this article,  you'll learn how to configure single sign-on between Microsoft Entra ID and ITRP.
 
 author: nguhiu
 manager: CelesteDG
@@ -16,22 +16,20 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with ITRP
 
-In this tutorial, you'll learn how to integrate ITRP with Microsoft Entra ID. When you integrate ITRP with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate ITRP with Microsoft Entra ID. When you integrate ITRP with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to ITRP.
 * Enable your users to be automatically signed-in to ITRP with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with ITRP, you need to have:
-
-* A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * An ITRP subscription that has single sign-on enabled.
 
 ## Scenario description
 
-In this tutorial, you'll configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you'll configure and test Microsoft Entra single sign-on in a test environment.
 
 * ITRP supports SP-initiated SSO.
 
@@ -55,8 +53,8 @@ Configure and test Microsoft Entra SSO with ITRP using a test user called **B.Si
 To configure and test Microsoft Entra SSO with ITRP, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure ITRP SSO](#configure-itrp-sso)** - to configure the single sign-on settings on application side.
     1. **[Create an ITRP test user](#create-an-itrp-test-user)** - to have a counterpart of B.Simon in ITRP that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.

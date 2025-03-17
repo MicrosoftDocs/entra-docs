@@ -3,11 +3,11 @@ title: Known issues for provisioning in Microsoft Entra ID
 description: Learn about known issues when you work with automated application provisioning or cross-tenant synchronization in Microsoft Entra ID.
 author: jenniferf-skc
 ms.author: jfields
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: app-provisioning
 ms.topic: troubleshooting
-ms.date: 12/06/2024
+ms.date: 03/04/2025
 ms.reviewer: arvinh
 zone_pivot_groups: app-provisioning-cross-tenant-synchronization
 ---
@@ -49,7 +49,7 @@ For existing B2B collaboration users, the showInAddressList attribute is updated
 
 Where [GuestUserUPN] is the calculated UserPrincipalName. Example:  
 
-`Set-MailUser guestuser1_contoso.com#EXT#@fabricam.onmicrosoft.com -HiddenFromAddressListsEnabled:$false`
+`Set-MailUser guestuser1_contoso.com#EXT#@fabrikam.onmicrosoft.com -HiddenFromAddressListsEnabled:$false`
 
 For more information, see [About the Exchange Online PowerShell module](/powershell/exchange/exchange-online-powershell-v2).
 

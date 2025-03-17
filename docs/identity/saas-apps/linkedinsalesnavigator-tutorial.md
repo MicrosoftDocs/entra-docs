@@ -17,22 +17,20 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with LinkedIn Sales Navigator
 
-In this tutorial, you'll learn how to integrate LinkedIn Sales Navigator with Microsoft Entra ID. When you integrate LinkedIn Sales Navigator with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate LinkedIn Sales Navigator with Microsoft Entra ID. When you integrate LinkedIn Sales Navigator with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to LinkedIn Sales Navigator.
 * Enable your users to be automatically signed-in to LinkedIn Sales Navigator with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * LinkedIn Sales Navigator single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * LinkedIn Sales Navigator supports **SP and IDP** initiated SSO.
 * LinkedIn Sales Navigator supports **Just In Time** user provisioning.
@@ -61,8 +59,8 @@ Configure and test Microsoft Entra SSO with LinkedIn Sales Navigator using a tes
 To configure and test Microsoft Entra SSO with LinkedIn Sales Navigator, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure LinkedIn Sales Navigator SSO](#configure-linkedin-sales-navigator-sso)** - to configure the single sign-on settings on application side.
     1. **[Create LinkedIn Sales Navigator test user](#create-linkedin-sales-navigator-test-user)** - to have a counterpart of B.Simon in LinkedIn Sales Navigator that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -82,9 +80,9 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. On the **Basic SAML Configuration** section, if you wish to configure the application in **IDP** initiated mode, perform the following steps:
 
-    a. In the **Identifier** text box, enter the **Entity ID** value, you will copy Entity ID value from the Linkedin Portal explained later in this tutorial.
+    a. In the **Identifier** text box, enter the **Entity ID** value, you will copy Entity ID value from the Linkedin Portal explained later in this article.
 
-    b. In the **Reply URL** text box, enter the **Assertion Consumer Access (ACS) Url** value, you will copy Assertion Consumer Access (ACS) URL value from the Linkedin Portal explained later in this tutorial.
+    b. In the **Reply URL** text box, enter the **Assertion Consumer Access (ACS) Url** value, you will copy Assertion Consumer Access (ACS) URL value from the Linkedin Portal explained later in this article.
 
 1. Click **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 

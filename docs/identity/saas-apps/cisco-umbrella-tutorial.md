@@ -16,17 +16,15 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Cisco Umbrella Admin SSO
 
-In this tutorial, you'll learn how to integrate Cisco Umbrella Admin SSO with Microsoft Entra ID. When you integrate Cisco Umbrella Admin SSO with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Cisco Umbrella Admin SSO with Microsoft Entra ID. When you integrate Cisco Umbrella Admin SSO with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Cisco Umbrella Admin SSO.
 * Enable your users to be automatically signed-in to Cisco Umbrella Admin SSO with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Cisco Umbrella Admin SSO single sign-on (SSO) enabled subscription.
 
 > [!NOTE]
@@ -34,7 +32,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Cisco Umbrella Admin SSO supports **SP and IDP** initiated SSO.
 
@@ -58,8 +56,8 @@ Configure and test Microsoft Entra SSO with Cisco Umbrella Admin SSO using a tes
 To configure and test Microsoft Entra SSO with Cisco Umbrella Admin SSO, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Cisco Umbrella Admin SSO SSO](#configure-cisco-umbrella-admin-sso-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Cisco Umbrella Admin SSO test user](#create-cisco-umbrella-admin-sso-test-user)** - to have a counterpart of B.Simon in Cisco Umbrella Admin SSO that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.

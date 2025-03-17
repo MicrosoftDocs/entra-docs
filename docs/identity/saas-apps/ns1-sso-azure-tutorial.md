@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with NS1 SSO for Azure
 
-In this tutorial, you'll learn how to integrate NS1 SSO for Azure with Microsoft Entra ID. When you integrate NS1 SSO for Azure with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate NS1 SSO for Azure with Microsoft Entra ID. When you integrate NS1 SSO for Azure with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to NS1 SSO for Azure.
 * Enable your users to be automatically signed in to NS1 SSO for Azure with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * NS1 SSO for Azure supports SP and IDP initiated SSO.
 
@@ -62,9 +62,9 @@ Here are the general steps to configure and test Microsoft Entra SSO with NS1 SS
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** to enable your users to use this feature.
 
-    a. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** to test Microsoft Entra single sign-on with B.Simon.
+    a. **Create a Microsoft Entra test user** to test Microsoft Entra single sign-on with B.Simon.
 
-    b. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** to enable B.Simon to use Microsoft Entra single sign-on.
+    b. **Assign the Microsoft Entra test user** to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure NS1 SSO for Azure SSO](#configure-ns1-sso-for-azure-sso)** to configure the single sign-on settings on the application side.
 
     a. **[Create an NS1 SSO for Azure test user](#create-an-ns1-sso-for-azure-test-user)** to have a counterpart of B.Simon in NS1 SSO for Azure. This counterpart is linked to the Microsoft Entra representation of the user.

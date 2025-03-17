@@ -17,22 +17,20 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Segment
 
-In this tutorial, you'll learn how to integrate Segment with Microsoft Entra ID. When you integrate Segment with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Segment with Microsoft Entra ID. When you integrate Segment with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Segment.
 * Enable your users to be automatically signed-in to Segment with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Segment single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Segment supports **SP and IDP** initiated SSO.
 * Segment supports **Just In Time** user provisioning.
@@ -58,8 +56,8 @@ Configure and test Microsoft Entra SSO with Segment using a test user called **B
 To configure and test Microsoft Entra SSO with Segment, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Segment SSO](#configure-segment-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Segment test user](#create-segment-test-user)** - to have a counterpart of B.Simon in Segment that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -91,7 +89,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://app.segment.com`
 
 	> [!NOTE]
-	> These values are placeholders. You need to use the actual Identifier and Reply URL. Steps for getting these values are described later in this tutorial.
+	> These values are placeholders. You need to use the actual Identifier and Reply URL. Steps for getting these values are described later in this article.
 
 1. On the **Set up single sign-on with SAML** page, in the **SAML Signing Certificate** section,  find **Certificate (Base64)** and select **Download** to download the certificate and save it on your computer.
 

@@ -17,22 +17,20 @@ ms.author: gideonkiratu
 
 # Integrate Ungerboeck Software with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate Ungerboeck Software with Microsoft Entra ID. When you integrate Ungerboeck Software with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Ungerboeck Software with Microsoft Entra ID. When you integrate Ungerboeck Software with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Ungerboeck Software.
 * Enable your users to be automatically signed-in to Ungerboeck Software with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Ungerboeck Software single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Ungerboeck Software supports **SP** initiated SSO.
 
@@ -56,8 +54,8 @@ Configure and test Microsoft Entra SSO with Ungerboeck Software using a test use
 To configure and test Microsoft Entra SSO with Ungerboeck Software, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Ungerboeck Software SSO](#configure-ungerboeck-software-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Ungerboeck Software test user](#create-ungerboeck-software-test-user)** - to have a counterpart of B.Simon in Ungerboeck Software that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -95,7 +93,7 @@ Follow these steps to enable Microsoft Entra SSO.
      - `https://<SUBDOMAIN>.ungerboeck.io/test`
 
    > [!NOTE]
-   > These values are not real. Update these values with the actual Sign on URL and Identifier which is explained later in the **Configure Ungerboeck Software Single Sign-On** section of the tutorial.
+   > These values are not real. Update these values with the actual Sign on URL and Identifier which is explained later in the **Configure Ungerboeck Software Single Sign-On** section of the article.
 
 1. In the **SAML Signing Certificate** section, click **Edit** button to open **SAML Signing Certificate** dialog.
 

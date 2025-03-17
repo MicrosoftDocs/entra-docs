@@ -2,7 +2,7 @@
 title: How to manage inactive user accounts
 description: Learn how to detect and resolve Microsoft Entra user accounts that are inactive or obsolete using the Microsoft Entra admin center and Microsoft Graph.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
@@ -23,7 +23,7 @@ This article explains a method to handle obsolete user accounts in Microsoft Ent
 
 ## Prerequisites
 
-- To access the `lastSignInDateTime` property using Microsoft Graph, you need a Microsoft Entra ID P1 or P2 license.
+- To access the `lastSuccessfulSignInDateTime` property using Microsoft Graph, you need a Microsoft Entra ID P1 or P2 license.
 - You need to grant the app the following Microsoft Graph permissions:
   - AuditLog.Read.All
   - User.Read.All

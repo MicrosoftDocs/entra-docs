@@ -17,22 +17,20 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with SmartDraw
 
-In this tutorial, you'll learn how to integrate SmartDraw with Microsoft Entra ID. When you integrate SmartDraw with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate SmartDraw with Microsoft Entra ID. When you integrate SmartDraw with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to SmartDraw.
 * Enable your users to be automatically signed-in to SmartDraw with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * SmartDraw single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * SmartDraw supports **SP and IDP** initiated SSO.
 * SmartDraw supports **Just In Time** user provisioning.
@@ -57,8 +55,8 @@ Configure and test Microsoft Entra SSO with SmartDraw using a test user called *
 To configure and test Microsoft Entra SSO with SmartDraw, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure SmartDraw SSO](#configure-smartdraw-sso)** - to configure the single sign-on settings on application side.
     1. **[Create SmartDraw test user](#create-smartdraw-test-user)** - to have a counterpart of B.Simon in SmartDraw that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -84,7 +82,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://cloud.smartdraw.com/sso/saml/login/<DOMAIN>`
 
     > [!NOTE]
-	> The Sign-on URL value is not real. You will update the Sign-on URL value with the actual Sign-on URL, which is explained later in the tutorial. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The Sign-on URL value is not real. You will update the Sign-on URL value with the actual Sign-on URL, which is explained later in the article. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. Click **Save**.
 

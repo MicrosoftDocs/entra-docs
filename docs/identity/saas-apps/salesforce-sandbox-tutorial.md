@@ -17,22 +17,20 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Salesforce Sandbox
 
-In this tutorial, you'll learn how to integrate Salesforce Sandbox with Microsoft Entra ID. When you integrate Salesforce Sandbox with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Salesforce Sandbox with Microsoft Entra ID. When you integrate Salesforce Sandbox with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Salesforce Sandbox.
 * Enable your users to be automatically signed-in to Salesforce Sandbox with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Salesforce Sandbox single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Salesforce Sandbox supports **SP and IDP** initiated SSO
 * Salesforce Sandbox supports **Just In Time** user provisioning
@@ -59,8 +57,8 @@ Configure and test Microsoft Entra SSO with Salesforce Sandbox using a test user
 To configure and test Microsoft Entra SSO with Salesforce Sandbox, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Salesforce Sandbox SSO](#configure-salesforce-sandbox-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Salesforce Sandbox test user](#create-salesforce-sandbox-test-user)** - to have a counterpart of B.Simon in Salesforce Sandbox that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -89,7 +87,7 @@ Follow these steps to enable Microsoft Entra SSO.
 	![choose metadata file](common/browse-upload-metadata.png)
 
 	> [!NOTE]
-    > You will get the service provider metadata file from the Salesforce Sandbox admin portal which is explained later in the tutorial.
+    > You will get the service provider metadata file from the Salesforce Sandbox admin portal which is explained later in the article.
 
 	c. After the metadata file is successfully uploaded, the **Reply URL** value will get auto populated in **Reply URL** textbox.
 
@@ -176,7 +174,7 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
     a. You should have a verified domain.
 
-    b. You need to configure and enable your domain on Salesforce Sandbox, steps for this are explained later in this tutorial.
+    b. You need to configure and enable your domain on Salesforce Sandbox, steps for this are explained later in this article.
 
     c. In the Azure portal, on the **Basic SAML Configuration** section, click **Set additional URLs** and perform the following step:
   

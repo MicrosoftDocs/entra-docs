@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with CrossKnowledge Learning Suite
 
-In this tutorial, you'll learn how to integrate CrossKnowledge Learning Suite with Microsoft Entra ID. When you integrate CrossKnowledge Learning Suite with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate CrossKnowledge Learning Suite with Microsoft Entra ID. When you integrate CrossKnowledge Learning Suite with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to CrossKnowledge Learning Suite.
 * Enable your users to be automatically signed-in to CrossKnowledge Learning Suite with their Microsoft Entra accounts.
@@ -26,15 +26,13 @@ In this tutorial, you'll learn how to integrate CrossKnowledge Learning Suite wi
 To learn more about SaaS app integration with Microsoft Entra ID, see [What is application access and single sign-on with Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * CrossKnowledge Learning Suite single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * CrossKnowledge Learning Suite supports **SP and IDP** initiated SSO
 * Once you configure CrossKnowledge Learning Suite you can enforce session control, which protect exfiltration and infiltration of your organization’s sensitive data in real-time. Session control extend from Conditional Access. [Learn how to enforce session control with Microsoft Defender for Cloud Apps](/cloud-app-security/proxy-deployment-any-app).
@@ -59,8 +57,8 @@ Configure and test Microsoft Entra SSO with CrossKnowledge Learning Suite using 
 To configure and test Microsoft Entra SSO with CrossKnowledge Learning Suite, complete the following building blocks:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    * **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    * **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    * **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    * **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure CrossKnowledge Learning Suite SSO](#configure-crossknowledge-learning-suite-sso)** - to configure the single sign-on settings on application side.
     * **[Create CrossKnowledge Learning Suite test user](#create-crossknowledge-learning-suite-test-user)** - to have a counterpart of B.Simon in CrossKnowledge Learning Suite that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -154,7 +152,7 @@ When you click the CrossKnowledge Learning Suite tile in the Access Panel, you s
 
 ## Additional resources
 
-- [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 

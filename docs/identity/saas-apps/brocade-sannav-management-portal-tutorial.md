@@ -18,22 +18,20 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Brocade SANnav Management Portal
 
-In this tutorial, you'll learn how to integrate Brocade SANnav Management Portal with Microsoft Entra ID. When you integrate Brocade SANnav Management Portal with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Brocade SANnav Management Portal with Microsoft Entra ID. When you integrate Brocade SANnav Management Portal with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Brocade SANnav Management Portal.
 * Enable your users to be automatically signed-in to Brocade SANnav Management Portal with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To integrate Microsoft Entra ID with Brocade SANnav Management Portal, you need:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * SANnav Management Portal application installed with a valid subscription license.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Brocade SANnav Management Portal supports both **SP and IDP** initiated SSO.
 
@@ -55,7 +53,7 @@ Configure and test Microsoft Entra SSO with Brocade SANnav Management Portal usi
 To configure and test Microsoft Entra SSO with Brocade SANnav Management Portal, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Create SANnav Group and assign the user to the group](#create-sannav-group-and-assign-the-user-to-the-group)** - to enable B.Simon to use Microsoft Entra single sign-on. Add importing the SANnav Management Portal metadata file.
 1. **[Configure Brocade SANnav Management Portal SSO](#configure-brocade-sannav-management-portal-sso)** - to configure the single sign-on settings on application side. 
     1. **[Create Brocade SANnav Management Portal groups](#create-brocade-sannav-management-portal-groups)** - Assume B. Simon is part of the "SANnav Administrator" group in Microsoft Entra. Add importing the Microsoft Entra metadata.
@@ -83,7 +81,7 @@ Follow these steps to enable Microsoft Entra SSO in the Microsoft Entra admin ce
 	c. After the metadata file is successfully uploaded, the **Identifier** and **Reply URL** values get auto populated in **Basic SAML Configuration** section.
 
 	> [!Note]
-	> You will get the **Service Provider metadata file** from the **Configure Brocade SANnav Management Portal SSO** section, which is explained later in the tutorial. If the **Identifier** and **Reply URL** values do not get auto populated, then fill in the values manually according to your requirement.
+	> You will get the **Service Provider metadata file** from the **Configure Brocade SANnav Management Portal SSO** section, which is explained later in the article. If the **Identifier** and **Reply URL** values do not get auto populated, then fill in the values manually according to your requirement.
 
 1. Brocade SANnav Management Portal application expects the SAML assertions in a specific format, which requires you to add custom attribute mappings to your SAML token attributes configuration. The following screenshot shows the list of default attributes.
 

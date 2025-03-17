@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Cyara CX Assurance Platform
 
-In this tutorial, you'll learn how to integrate Cyara CX Assurance Platform with Microsoft Entra ID. When you integrate Cyara CX Assurance Platform with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Cyara CX Assurance Platform with Microsoft Entra ID. When you integrate Cyara CX Assurance Platform with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Cyara CX Assurance Platform.
 * Enable your users to be automatically signed-in to Cyara CX Assurance Platform with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Cyara CX Assurance Platform supports **IDP** initiated SSO.
 
@@ -58,8 +58,8 @@ Configure and test Microsoft Entra SSO with Cyara CX Assurance Platform using a 
 To configure and test Microsoft Entra SSO with Cyara CX Assurance Platform, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Cyara CX Assurance Platform SSO](#configure-cyara-cx-assurance-platform-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Cyara CX Assurance Platform test user](#create-cyara-cx-assurance-platform-test-user)** - to have a counterpart of B.Simon in Cyara CX Assurance Platform that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.

@@ -1,6 +1,6 @@
 ---
 title: Microsoft Entra integration with Proxyclick
-description: In this tutorial, you'll learn how to configure single sign-on between Microsoft Entra ID and Proxyclick.
+description: In this article,  you'll learn how to configure single sign-on between Microsoft Entra ID and Proxyclick.
 
 author: nguhiu
 manager: CelesteDG
@@ -16,22 +16,20 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Proxyclick
 
-In this tutorial, you'll learn how to integrate Proxyclick with Microsoft Entra ID. When you integrate Proxyclick with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Proxyclick with Microsoft Entra ID. When you integrate Proxyclick with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Proxyclick.
 * Enable your users to be automatically signed-in to Proxyclick with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Proxyclick single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you'll configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you'll configure and test Microsoft Entra single sign-on in a test environment.
 
 * Proxyclick supports SP-initiated and IdP-initiated SSO.
 
@@ -57,8 +55,8 @@ Configure and test Microsoft Entra SSO with Proxyclick using a test user called 
 To configure and test Microsoft Entra SSO with Proxyclick, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Proxyclick SSO](#configure-proxyclick-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Proxyclick test user](#create-proxyclick-test-user)** - to have a counterpart of B.Simon in Proxyclick that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -89,7 +87,7 @@ Follow these steps to enable Microsoft Entra SSO.
    `https://saml.proxyclick.com/init/<COMPANY_ID>`
 
 	> [!NOTE]
-	> These values are placeholders. You need to use the actual Identifier,Reply URL and Sign on URL. Steps for getting these values are described later in this tutorial.
+	> These values are placeholders. You need to use the actual Identifier,Reply URL and Sign on URL. Steps for getting these values are described later in this article.
 
 6. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, select the **Download** link next to **Certificate (Base64)**, per your requirements, and save the certificate on your computer:
 

@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Sigstr
 
-In this tutorial, you'll learn how to integrate Sigstr with Microsoft Entra ID. When you integrate Sigstr with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Sigstr with Microsoft Entra ID. When you integrate Sigstr with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Sigstr.
 * Enable your users to be automatically signed-in to Sigstr with their Microsoft Entra accounts.
@@ -26,15 +26,13 @@ In this tutorial, you'll learn how to integrate Sigstr with Microsoft Entra ID. 
 To learn more about SaaS app integration with Microsoft Entra ID, see [What is application access and single sign-on with Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Sigstr single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Sigstr supports **IDP** initiated SSO
 * Sigstr supports **Just In Time** user provisioning
@@ -59,8 +57,8 @@ Configure and test Microsoft Entra SSO with Sigstr using a test user called **B.
 To configure and test Microsoft Entra SSO with Sigstr, complete the following building blocks:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Sigstr SSO](#configure-sigstr-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Sigstr test user](#create-sigstr-test-user)** - to have a counterpart of B.Simon in Sigstr that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -164,7 +162,7 @@ When you click the Sigstr tile in the Access Panel, you should be automatically 
 
 ## Additional resources
 
-- [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 

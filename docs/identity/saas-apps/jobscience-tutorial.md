@@ -15,7 +15,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with Jobscience
 
-In this tutorial, you learn how to integrate Jobscience with Microsoft Entra ID.
+In this article,  you learn how to integrate Jobscience with Microsoft Entra ID.
 
 Integrating Jobscience with Microsoft Entra ID provides you with the following benefits:
 
@@ -26,23 +26,21 @@ Integrating Jobscience with Microsoft Entra ID provides you with the following b
 If you want to know more details about SaaS app integration with Microsoft Entra ID, see [what is application access and single sign-on with Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with Jobscience, you need the following items:
-
-- A Microsoft Entra subscription
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 - A Jobscience single sign-on enabled subscription
 
 > [!NOTE]
-> To test the steps in this tutorial, we do not recommend using a production environment.
+> To test the steps in this article,  we do not recommend using a production environment.
 
-To test the steps in this tutorial, you should follow these recommendations:
+To test the steps in this article,  you should follow these recommendations:
 
 - Do not use your production environment, unless it is necessary.
 - If you don't have a Microsoft Entra trial environment, you can get a one-month trial here: [Trial offer](https://azure.microsoft.com/pricing/free-trial/).
 
 ## Scenario description
-In this tutorial, you test Microsoft Entra single sign-on in a test environment. 
-The scenario outlined in this tutorial consists of two main building blocks:
+In this article,  you test Microsoft Entra single sign-on in a test environment. 
+The scenario outlined in this article consists of two main building blocks:
 
 1. Adding Jobscience from the gallery
 1. Configuring and testing Microsoft Entra single sign-on
@@ -93,7 +91,7 @@ In this section, you enable Microsoft Entra single sign-on in the Azure portal a
     `http://<company name>.my.salesforce.com`
     
     > [!NOTE] 
-    > This value is not real. Update this value with the actual Sign-On URL. Get this value by [Jobscience Client support team](https://www.bullhorn.com/technical-support/) or from the SSO profile you will create which is explained later in the tutorial. 
+    > This value is not real. Update this value with the actual Sign-On URL. Get this value by [Jobscience Client support team](https://www.bullhorn.com/technical-support/) or from the SSO profile you will create which is explained later in the article. 
  
 1. On the **SAML Signing Certificate** section, click **Certificate (Base64)** and then save the certificate file on your computer.
 
@@ -141,7 +139,7 @@ In this section, you enable Microsoft Entra single sign-on in the Azure portal a
 
     e. As **SAML Identity Type**, select **Assertion contains the Federation ID from the User object**.
 
-    f. As **SAML Identity Location**, select **Identity is in the NameIdentfier element of the Subject statement**.
+    f. As **SAML Identity Location**, select **Identity is in the NameIdentifier element of the Subject statement**.
 
     g. In **Identity Provider Login URL** textbox, paste the value of **SAML Single Sign-On Service URL**.
 
@@ -281,7 +279,7 @@ For more information about the Access Panel, see [Introduction to the Access Pan
 
 ## Additional resources
 
-* [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](tutorial-list.md)
+* [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](tutorial-list.md)
 * [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 
 <!--Image references-->

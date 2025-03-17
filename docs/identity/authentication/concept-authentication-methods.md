@@ -6,12 +6,12 @@ ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
 
-ms.date: 01/30/2025
+ms.date: 03/04/2025
 
 
 ms.author: justinha
 author: justinha
-manager: amycolannino
+manager: femila
 # Customer intent: As an identity administrator, I want to understand what authentication options are available in Microsoft Entra ID and how or why I can use them to improve and secure user sign-in events.
 ---
 # What authentication and verification methods are available in Microsoft Entra ID?

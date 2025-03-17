@@ -17,7 +17,7 @@ ms.author: dhivyag
 
 # Microsoft Entra SSO integration with Confluence SAML SSO by Microsoft
 
-In this tutorial, you'll learn how to integrate Confluence SAML SSO by Microsoft with Microsoft Entra ID. When you integrate Confluence SAML SSO by Microsoft with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Confluence SAML SSO by Microsoft with Microsoft Entra ID. When you integrate Confluence SAML SSO by Microsoft with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Confluence SAML SSO by Microsoft.
 * Enable your users to be automatically signed-in to Confluence SAML SSO by Microsoft with their Microsoft Entra accounts.
@@ -29,10 +29,8 @@ In this tutorial, you'll learn how to integrate Confluence SAML SSO by Microsoft
 Use your Microsoft Entra account with Atlassian Confluence server to enable single sign-on. This way all your organization users can use the Microsoft Entra credentials to sign in into the Confluence application. This plugin uses SAML 2.0 for federation.
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with Confluence SAML SSO by Microsoft, you need the following items:
-
-- A Microsoft Entra subscription.
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 - Confluence server application installed on a Windows 64-bit server (on-premises or on the cloud IaaS infrastructure).
 - Confluence server is HTTPS enabled.
 - Note the supported versions for Confluence Plugin are mentioned in below section.
@@ -42,7 +40,7 @@ To configure Microsoft Entra integration with Confluence SAML SSO by Microsoft, 
 - Test user created in the Confluence server application.
 
 > [!NOTE]
-> To test the steps in this tutorial, we do not recommend using a production environment of Confluence. Test the integration first in development or staging environment of the application and then use the production environment.
+> To test the steps in this article,  we do not recommend using a production environment of Confluence. Test the integration first in development or staging environment of the application and then use the production environment.
 
 > [!NOTE]
 > This integration is also available to use from Microsoft Entra US Government Cloud environment. You can find this application in the Microsoft Entra US Government Cloud Application Gallery and configure it in the same way as you do from public cloud.
@@ -54,7 +52,7 @@ To get started, you need the following items:
 * Confluence SAML SSO by Microsoft single sign-on (SSO) enabled subscription.
 
 > [!NOTE]
-> For the information on application proxy configuration for Confluence, please refer [this](confluence-app-proxy-tutorial.md) tutorial.
+> For the information on application proxy configuration for Confluence, please refer [this](confluence-app-proxy-tutorial.md) article.
 
 ## Supported versions of Confluence
 
@@ -62,14 +60,16 @@ As of now, following versions of Confluence are supported:
 
 - Confluence: 5.0 to 5.10
 - Confluence: 6.0.1 to 6.15.9
-- Confluence: 7.0.1 to 9.0.3
+- Confluence: 7.0.1 to 7.20.3
+- Confluence: 8.0.0 to 8.9.8
+- Confluence: 9.0.1 to 9.3.1
 
 > [!NOTE]
 > Please note that our Confluence Plugin also works on Ubuntu Version 16.04
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Confluence SAML SSO by Microsoft supports **SP** initiated SSO.
 
@@ -93,8 +93,8 @@ Configure and test Microsoft Entra SSO with Confluence SAML SSO by Microsoft usi
 To configure and test Microsoft Entra SSO with Confluence SAML SSO by Microsoft, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Confluence SAML SSO by Microsoft SSO](#configure-confluence-saml-sso-by-microsoft-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Confluence SAML SSO by Microsoft test user](#create-confluence-saml-sso-by-microsoft-test-user)** - to have a counterpart of B.Simon in Confluence SAML SSO by Microsoft that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -124,7 +124,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://<DOMAIN:PORT>/plugins/servlet/saml/auth`
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Identifier, Reply URL, and Sign-on URL. Port is optional in case it’s a named URL. These values are received during the configuration of Confluence plugin, which is explained later in the tutorial.
+    > These values are not real. Update these values with the actual Identifier, Reply URL, and Sign-on URL. Port is optional in case it’s a named URL. These values are received during the configuration of Confluence plugin, which is explained later in the article.
 
 1. On the **Set up single sign-on with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 

@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Marketo
 
-In this tutorial, you learn how to integrate Marketo with Microsoft Entra ID.
+In this article,  you learn how to integrate Marketo with Microsoft Entra ID.
 Integrating Marketo with Microsoft Entra ID provides you with the following benefits:
 
 * You can control in Microsoft Entra ID who has access to Marketo.
@@ -24,15 +24,13 @@ Integrating Marketo with Microsoft Entra ID provides you with the following bene
 * You can manage your accounts in one central location.
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with Marketo, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Marketo single sign-on enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Marketo supports **IDP** initiated SSO.
 
@@ -60,8 +58,8 @@ For single sign-on to work, a link relationship between a Microsoft Entra user a
 To configure and test Microsoft Entra single sign-on with Marketo, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra SSO with Britta Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable Britta Simon to use Microsoft Entra SSO.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra SSO with Britta Simon.
+    1. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra SSO.
 2. **[Configure Marketo SSO](#configure-marketo-sso)** - to configure the SSO settings on application side.
     1. **[Create Marketo test user](#create-marketo-test-user)** - to have a counterpart of Britta Simon in Marketo that is linked to the Microsoft Entra representation of user.
 3. **[Test SSO](#test-sso)** - to verify whether the configuration works.

@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with LINE WORKS
 
-In this tutorial, you learn how to integrate LINE WORKS with Microsoft Entra ID.
+In this article,  you learn how to integrate LINE WORKS with Microsoft Entra ID.
 Integrating LINE WORKS with Microsoft Entra ID provides you with the following benefits:
 
 * You can control in Microsoft Entra ID who has access to LINE WORKS.
@@ -24,15 +24,13 @@ Integrating LINE WORKS with Microsoft Entra ID provides you with the following b
 * You can manage your accounts in one central location.
 
 ## Prerequisites
-
-To configure Microsoft Entra integration with LINE WORKS, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a Microsoft Entra environment, you can get a [free account](https://azure.microsoft.com/free/)
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * LINE WORKS single sign-on enabled subscription
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * LINE WORKS supports **SP** initiated SSO
 
@@ -59,8 +57,8 @@ Configure and test Microsoft Entra SSO with LINE WORKS using a test user called 
 To configure and test Microsoft Entra SSO with LINE WORKS, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    * **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with Britta Simon.
-    * **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable Britta Simon to use Microsoft Entra single sign-on.
+    * **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
+    * **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
 2. **[Configure LINE WORKS SSO](#configure-line-works-sso)** - to configure the Single Sign-On settings on application side.
     * **[Create LINE WORKS test user](#create-line-works-test-user)** - to have a counterpart of Britta Simon in LINE WORKS that is linked to the Microsoft Entra representation of user.
 3. **[Test SSO](#test-sso)** - to verify whether the configuration works.

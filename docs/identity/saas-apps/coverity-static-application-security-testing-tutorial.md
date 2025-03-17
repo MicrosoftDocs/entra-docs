@@ -18,22 +18,20 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Coverity Static Application Security Testing
 
-In this tutorial, you'll learn how to integrate Coverity Static Application Security Testing with Microsoft Entra ID. When you integrate Coverity Static Application Security Testing with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Coverity Static Application Security Testing with Microsoft Entra ID. When you integrate Coverity Static Application Security Testing with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Coverity Static Application Security Testing.
 * Enable your users to be automatically signed-in to Coverity Static Application Security Testing with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Coverity Static Application Security Testing single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Coverity Static Application Security Testing supports **SP and IDP** initiated SSO.
 
@@ -57,8 +55,8 @@ Configure and test Microsoft Entra SSO with Coverity Static Application Security
 To configure and test Microsoft Entra SSO with Coverity Static Application Security Testing, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Coverity Static Application Security Testing SSO](#configure-coverity-static-application-security-testing-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Coverity Static Application Security Testing test user](#create-coverity-static-application-security-testing-test-user)** - to have a counterpart of B.Simon in Coverity Static Application Security Testing that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.

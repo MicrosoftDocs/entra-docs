@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with LaunchDarkly
 
-In this tutorial, you'll learn how to integrate LaunchDarkly with Microsoft Entra ID. When you integrate LaunchDarkly with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate LaunchDarkly with Microsoft Entra ID. When you integrate LaunchDarkly with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to LaunchDarkly.
 * Enable your users to be automatically signed-in to LaunchDarkly with their Microsoft Entra accounts.
@@ -26,15 +26,13 @@ In this tutorial, you'll learn how to integrate LaunchDarkly with Microsoft Entr
 	> The LaunchDarkly Microsoft Entra integration is one-way. After you configure the integration, you can use Microsoft Entra ID to manage users, SSO, and accounts in LaunchDarkly, but you **cannot** use LaunchDarkly to manage users, SSO, and accounts in Azure.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * LaunchDarkly single sign-on enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * LaunchDarkly supports **IDP** initiated SSO.
 * LaunchDarkly supports **Just In Time** user provisioning.
@@ -62,8 +60,8 @@ Configure and test Microsoft Entra SSO with LaunchDarkly using a test user calle
 To configure and test Microsoft Entra SSO with LaunchDarkly, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure LaunchDarkly SSO](#configure-launchdarkly-sso)** - to configure the single sign-on settings on application side.
     1. **[Create LaunchDarkly test user](#create-launchdarkly-test-user)** - to have a counterpart of B.Simon in LaunchDarkly that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -90,7 +88,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://app.launchdarkly.com/trust/saml2/acs/<customers-unique-id>`
 
 	> [!NOTE]
-	> The Reply URL value is not real. You will update the value with the actual Reply URL, which is explained later in the tutorial. LaunchDarkly currently supports **IDP** initiated SSO. To use this application in **IDP** mode, you need to leave the **Sign on URL** field blank, otherwise you will not be able to initiate the login from the **IDP**. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The Reply URL value is not real. You will update the value with the actual Reply URL, which is explained later in the article. LaunchDarkly currently supports **IDP** initiated SSO. To use this application in **IDP** mode, you need to leave the **Sign on URL** field blank, otherwise you will not be able to initiate the login from the **IDP**. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 6. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click **Download** to download the **Certificate (Base64)** from the given options as per your requirement and save it on your computer.
 

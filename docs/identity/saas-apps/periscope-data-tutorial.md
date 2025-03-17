@@ -16,22 +16,20 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra SSO integration with Periscope Data
 
-In this tutorial, you'll learn how to integrate Periscope Data with Microsoft Entra ID. When you integrate Periscope Data with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Periscope Data with Microsoft Entra ID. When you integrate Periscope Data with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Periscope Data.
 * Enable your users to be automatically signed-in to Periscope Data with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Periscope Data single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * Periscope Data supports **SP** initiated SSO.
 
@@ -55,8 +53,8 @@ Configure and test Microsoft Entra SSO with Periscope Data using a test user cal
 To configure and test Microsoft Entra SSO with Periscope Data, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Periscope Data SSO](#configure-periscope-data-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Periscope Data test user](#create-periscope-data-test-user)** - to have a counterpart of B.Simon in Periscope Data that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -87,7 +85,7 @@ Follow these steps to enable Microsoft Entra SSO.
     | `https://app.periscopedata.com/app/<SITENAME>` |
 
 	> [!NOTE]
-	> The Sign on URL value is not real. Update the values with the actual Sign on URL. Contact [Periscope Data Client support team](mailto:support@periscopedata.com) to get this value and the Identifier value you will get from the **Configure Periscope Data Single Sign-On** section which is explained later in the tutorial. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+	> The Sign on URL value is not real. Update the values with the actual Sign on URL. Contact [Periscope Data Client support team](mailto:support@periscopedata.com) to get this value and the Identifier value you will get from the **Configure Periscope Data Single Sign-On** section which is explained later in the article. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 1. On the **Set up Single Sign-On with SAML** page, In the **SAML Signing Certificate** section, click copy button to copy **App Federation Metadata Url** and save it on your computer.
 

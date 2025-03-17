@@ -16,22 +16,20 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with HCL BigFix Platform
 
-In this tutorial, you'll learn how to integrate HCL BigFix Platform with Microsoft Entra ID. When you integrate HCL BigFix Platform with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate HCL BigFix Platform with Microsoft Entra ID. When you integrate HCL BigFix Platform with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to HCL BigFix Platform.
 * Enable your users to be automatically signed-in to HCL BigFix Platform with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To integrate Microsoft Entra ID with HCL BigFix Platform, you need:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * HCL BigFix Platform single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * HCL BigFix Platform supports only **SP** initiated SSO.
 
@@ -53,8 +51,8 @@ Configure and test Microsoft Entra SSO with HCL BigFix Platform using a test use
 To configure and test Microsoft Entra SSO with HCL BigFix Platform, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra ID test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra ID test user](#assign-the-microsoft-entra-id-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Create a Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure HCL BigFix Platform SSO](#configure-hcl-bigfix-platform-sso)** - to configure the single sign-on settings on application side.
     1. **[Create HCL BigFix Platform test user](#create-hcl-bigfix-platform-test-user)** - to have a counterpart of B.Simon in HCL BigFix Platform that is linked to the Microsoft Entra ID representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.

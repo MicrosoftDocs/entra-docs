@@ -17,22 +17,20 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Qualtrics
 
-In this tutorial, you'll learn how to integrate Qualtrics with Microsoft Entra ID. When you integrate Qualtrics with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Qualtrics with Microsoft Entra ID. When you integrate Qualtrics with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Qualtrics.
 * Enable your users to be automatically signed in to Qualtrics with their Microsoft Entra accounts.
 * Manage your accounts in one central location: the Azure portal.
 
 ## Prerequisites
-
-To get started, you need:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A Qualtrics subscription enabled for single sign-on (SSO).
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Qualtrics supports **SP** and **IDP** initiated SSO.
 * Qualtrics supports **Just In Time** user provisioning.

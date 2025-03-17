@@ -6,11 +6,11 @@ description: Learn how admins can use a Conditional Access Policy to require spe
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/03/2024
+ms.date: 03/04/2025
 
 ms.author: justinha
 author: inbarckms
-manager: amycolannino
+manager: femila
 ms.reviewer: inbarc
 ---
 #  How Conditional Access authentication strength works 

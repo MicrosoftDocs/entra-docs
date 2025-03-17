@@ -2,11 +2,11 @@
 title: How to analyze the Microsoft Entra provisioning logs
 description: Learn how to download, view, and analyze the details in the provisioning logs from Microsoft Entra ID.
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 11/08/2024
+ms.date: 03/14/2025
 ms.author: sarahlipsey
 ms.reviewer: arvinh
 
@@ -142,13 +142,14 @@ Use the following table to better understand how to resolve errors that you find
 
 | Error code | Cause | Solution |
 | --- | --- | --- |
+| AzureActiveDirectoryForbidden|The dirSync enabled property is set to true. As a result, the provisioning service cannot update user properties such as immutableId and extensionProperty1-15.|Remove the attribute from your attribute mappings to prevent failures.|
+| AzureActiveDirectory<br/>Forbidden | External collaboration settings blocked invitations.|Navigate to user settings and ensure that [external collaboration settings](~/external-id/external-collaboration-settings-configure.md) are permitted.|
 | AzureActiveDirectoryCannot<br/>UpdateObjectsOriginated<br/>InExternalService |The source of authority for the user is Exchange Online. The provisioning service can't update one or more exchange attributes on the user (ex: extensionAttribute 1 - 15). This impacts users that existed in the target tenant when the dirSyncEnabled property changed from "True" to "False." | Update the attribute directly in the target tenant's [exchange online](/powershell/module/exchange/set-mailuser?view=exchange-ps&preserve-view=true). For example: ```Set-MailUser -Identity CloudMailUser5 -CustomAttribute2 "Updated with EXO PowerShell"``` |
 | Microsoft Entra ID<br/>CannotUpdateObjectsOriginated<br/>InExternalService | The synchronization engine couldn't update one or more user properties in the target tenant.<br/><br/>The operation failed in Microsoft Graph API because of Source of Authority (SOA) enforcement. Currently, the following properties show up in the list:<br/>`Mail`<br/>`showInAddressList` | In some cases (for example when `showInAddressList` property is part of the user update), the synchronization engine might automatically retry the (user) update without the offending property. Otherwise, you need to update the property directly in the target tenant. |
 | AzureDirectory<br/>B2BManagementPolicy<br/>CheckFailure | The cross-tenant synchronization policy allowing automatic redemption failed.<br/><br/>The synchronization engine checks to ensure that the administrator of the target tenant created an inbound cross-tenant synchronization policy allowing automatic redemption. The synchronization engine also checks if the administrator of the source tenant enabled an outbound policy for automatic redemption. | Ensure that the automatic redemption setting was enabled for both the source and target tenants. For more information, see [Automatic redemption setting](../multi-tenant-organizations/cross-tenant-synchronization-overview.md#automatic-redemption-setting). |
 | Microsoft Entra ID<br/>QuotaLimitExceeded | The number of objects in the tenant exceeds the directory limit.<br/><br/>Microsoft Entra ID has limits for the number of objects that can be created in a tenant. | Check whether the quota can be increased. For information about the directory limits and steps to increase the quota, see [Microsoft Entra service limits and restrictions](../users/directory-service-limits-restrictions.md). |
 | InvitationCreationFailure | The Microsoft Entra provisioning service attempted to invite the user in the target tenant. That invitation failed.| Further investigation likely requires contacting support.|
 | InvitationCreationFailureUserAccountDisabled | The Microsoft Entra provisioning service attempted to invite the user in the target tenant. That invitation failed.| The user exists in the target tenant, but the account is disabled and invitation is pending. Enable the user account in the target tenant and attempt to provision the user again.|
-| Microsoft Entra ID<br/>Forbidden | External collaboration settings blocked invitations.|Navigate to user settings and ensure that [external collaboration settings](~/external-id/external-collaboration-settings-configure.md) are permitted.|
 | InvitationCreation<br/>FailureInvalidPropertyValue | Potential causes:<br/>* The Primary SMTP Address is an invalid value.<br/>* UserType isn't guest or member<br/>* Group email Address isn't supported | Potential solutions:<br/>* The Primary SMTP Address has an invalid value. Resolving this issue likely requires updating the mail property of the source user. For more information, see [Prepare for directory synchronization to Microsoft 365](https://aka.ms/DirectoryAttributeValidations)<br/>* Ensure that the userType property is provisioned as type guest or member. Check your attribute mappings to understand how the userType attribute is mapped.<br/>* The email address of the user matches with the email address of a group in the tenant. Update the email address for one of the two objects.|
 | InvitationCreation<br/>FailureAmbiguousUser| The invited user has a proxy address that matches an internal user in the target tenant. The proxy address must be unique. | To resolve this error, delete the existing internal user in the target tenant or remove this user from sync scope.|
 | Microsoft Entra ID<br/>CannotUpdateObjects<br/>MasteredOnPremises| If the user in the target tenant was originally synchronized from AD to Microsoft Entra ID and converted to an external user, the source of authority is still on-premises and the user can't be updated.| The user can't be updated with cross-tenant synchronization. |

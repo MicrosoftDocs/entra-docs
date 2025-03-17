@@ -3,7 +3,7 @@ title: 'Microsoft Entra Connect Sync: Changing the default configuration'
 description: Provides best practices for changing the default configuration of Microsoft Entra Connect Sync.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.assetid: 7638a031-1635-4942-94c3-fce8f09eed5e
 ms.service: entra-id
 ms.tgt_pltfrm: na

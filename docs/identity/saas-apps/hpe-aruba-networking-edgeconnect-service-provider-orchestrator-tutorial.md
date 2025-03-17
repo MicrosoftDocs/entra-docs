@@ -17,22 +17,20 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with HPE Aruba Networking EdgeConnect Service Provider Orchestrator
 
-In this tutorial, you'll learn how to integrate HPE Aruba Networking EdgeConnect Service Provider Orchestrator with Microsoft Entra ID. When you integrate HPE Aruba Networking EdgeConnect Service Provider Orchestrator with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate HPE Aruba Networking EdgeConnect Service Provider Orchestrator with Microsoft Entra ID. When you integrate HPE Aruba Networking EdgeConnect Service Provider Orchestrator with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to HPE Aruba Networking EdgeConnect Service Provider Orchestrator.
 * Enable your users to be automatically signed-in to HPE Aruba Networking EdgeConnect Service Provider Orchestrator with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To integrate Microsoft Entra ID with HPE Aruba Networking EdgeConnect Service Provider Orchestrator, you need:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * HPE Aruba Networking EdgeConnect Service Provider Orchestrator single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * HPE Aruba Networking EdgeConnect Service Provider Orchestrator supports **SP and IDP** initiated SSO.
 
@@ -54,7 +52,7 @@ Configure and test Microsoft Entra SSO with HPE Aruba Networking EdgeConnect Ser
 To configure and test Microsoft Entra SSO with HPE Aruba Networking EdgeConnect Service Provider Orchestrator, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - This step will enable your users to use this feature.
-1. **[Create a Microsoft Entra ID test user](#create-a-microsoft-entra-id-test-user)** - This step allows you to test Microsoft Entra single sign-on with B.Simon.
+1. **Create a Microsoft Entra test user** - This step allows you to test Microsoft Entra single sign-on with B.Simon.
 1. **[Assign the Test user to the HPE Aruba Networking EdgeConnect Service Provider Orchestrator application](#assign-the-test-user-to-the-hpe-aruba-networking-edgeconnect-service-provider-orchestrator-application)** - This step allows you to enable B.Simon to use Microsoft Entra single sign-on on EdgeConnect Orchestrator.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 

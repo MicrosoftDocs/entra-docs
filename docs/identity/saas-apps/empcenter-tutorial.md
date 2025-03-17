@@ -16,7 +16,7 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra integration with EmpCenter
 
-In this tutorial, you learn how to integrate EmpCenter with Microsoft Entra ID.
+In this article,  you learn how to integrate EmpCenter with Microsoft Entra ID.
 Integrating EmpCenter with Microsoft Entra ID provides you with the following benefits:
 
 * You can control in Microsoft Entra ID who has access to EmpCenter.
@@ -35,7 +35,7 @@ To configure Microsoft Entra integration with EmpCenter, you need the following 
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra single sign-on in a test environment.
+In this article,  you configure and test Microsoft Entra single sign-on in a test environment.
 
 * EmpCenter supports **SP** initiated SSO
 
@@ -62,8 +62,8 @@ To configure and test Microsoft Entra single sign-on with EmpCenter, you need to
 
 1. **[Configure Microsoft Entra Single Sign-On](#configure-azure-ad-single-sign-on)** - to enable your users to use this feature.
 2. **[Configure EmpCenter Single Sign-On](#configure-empcenter-single-sign-on)** - to configure the Single Sign-On settings on application side.
-3. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with Britta Simon.
-4. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable Britta Simon to use Microsoft Entra single sign-on.
+3. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
+4. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
 5. **[Create EmpCenter test user](#create-empcenter-test-user)** - to have a counterpart of Britta Simon in EmpCenter that is linked to the Microsoft Entra representation of user.
 6. **[Test single sign-on](#test-single-sign-on)** - to verify whether the configuration works.
 
@@ -173,7 +173,7 @@ When you click the EmpCenter tile in the Access Panel, you should be automatical
 
 ## Additional Resources
 
-- [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 

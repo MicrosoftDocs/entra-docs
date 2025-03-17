@@ -3,7 +3,7 @@ title: List Microsoft Entra role definitions
 description: Learn how to list Microsoft Entra built-in and custom role definitions and their permissions using the Microsoft Entra admin center, Microsoft Graph PowerShell, or Microsoft Graph API.
 
 author: rolyon
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: how-to

@@ -16,22 +16,20 @@ ms.author: gideonkiratu
 ---
 # Microsoft Entra single sign-on (SSO) integration with Springer Link
 
-In this tutorial, you'll learn how to integrate Springer Link with Microsoft Entra ID. When you integrate Springer Link with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Springer Link with Microsoft Entra ID. When you integrate Springer Link with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Springer Link.
 * Enable your users to be automatically signed-in to Springer Link with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Springer Link single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Springer Link supports **SP and IDP** initiated SSO
 
@@ -55,8 +53,8 @@ Configure and test Microsoft Entra SSO with Springer Link using a test user call
 To configure and test Microsoft Entra SSO with Springer Link, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    * **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with Britta Simon.
-    * **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable Britta Simon to use Microsoft Entra single sign-on.
+    * **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
+    * **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
 2. **[Configure Springer Link SSO](#configure-springer-link-sso)** - to configure the Single Sign-On settings on application side.
 3. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
@@ -92,7 +90,7 @@ Follow these steps to enable Microsoft Entra SSO.
     `https://fsso.springer.com/saml/login?idp=<entityID>&targetUrl=https://link.springer.com`
 
     > [!NOTE]
-    > The Sign-on URL value is not real. Update the value with the actual Sign-On URL. `<entityID>` is the Microsoft Entra Identifier copied from the **Set up Springer Link** section, described later in tutorial. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
+    > The Sign-on URL value is not real. Update the value with the actual Sign-On URL. `<entityID>` is the Microsoft Entra Identifier copied from the **Set up Springer Link** section, described later in article. You can also refer to the patterns shown in the **Basic SAML Configuration** section.
 
 6. On the **Set up Single Sign-On with SAML** page, in the **SAML Signing Certificate** section, click the copy icon to copy **App Federation Metadata Url** and save it on your computer.
 

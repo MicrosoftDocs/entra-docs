@@ -18,7 +18,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Cheetah For Benelux
 
-In this tutorial, you'll learn how to integrate Cheetah For Benelux with Microsoft Entra ID. When you integrate Cheetah For Benelux with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Cheetah For Benelux with Microsoft Entra ID. When you integrate Cheetah For Benelux with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Cheetah For Benelux.
 * Enable your users to be automatically signed-in to Cheetah For Benelux with their Microsoft Entra accounts.
@@ -35,7 +35,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Cheetah For Benelux supports **SP** initiated SSO.
 * Cheetah For Benelux supports **Just In Time** user provisioning.
@@ -63,8 +63,8 @@ Configure and test Microsoft Entra SSO with Cheetah For Benelux using a test use
 To configure and test Microsoft Entra SSO with Cheetah For Benelux, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Cheetah For Benelux SSO](#configure-cheetah-for-benelux-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Cheetah For Benelux test user](#create-cheetah-for-benelux-test-user)** - to have a counterpart of B.Simon in Cheetah For Benelux that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.

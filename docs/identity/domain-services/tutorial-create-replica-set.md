@@ -2,7 +2,7 @@
 title: Tutorial - Create a replica set in Microsoft Entra Domain Services | Microsoft Docs
 description: Learn how to create and use replica sets in the Microsoft Entra admin center for service resiliency with Microsoft Entra Domain Services
 author: justinha
-manager: amycolannino
+manager: femila
 
 ms.service: entra-id
 ms.subservice: domain-services

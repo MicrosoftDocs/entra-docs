@@ -5,11 +5,11 @@ description: Web browser and native app support for FIDO2 passwordless authentic
 ms.service: entra-id
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/06/2025
+ms.date: 03/12/2025
 
 author: justinha
 ms.author: justinha
-manager: amycolannino
+manager: femila
 ms.reviewer: calui
 ---
 # Passkey (FIDO2) authentication matrix with Microsoft Entra ID
@@ -19,7 +19,7 @@ Microsoft Entra ID allows passkeys (FIDO2) to be used for multifactor passwordle
 For enabling FIDO2 security keys to unlock a Windows device, see [Enable FIDO2 security key sign-in to Windows 10 and 11 devices with Microsoft Entra ID](howto-authentication-passwordless-security-key-windows.md).
 
 > [!NOTE]
-> Microsoft Entra ID currently supports device-bound passkeys stored on FIDO2 security keys and in Microsoft Authenticator. Microsoft is committed to securing customers and users with passkeys. We are investing in both synced and device-bound passkeys for work accounts.
+> Microsoft Entra ID currently supports only device-bound passkeys stored on FIDO2 security keys or in Microsoft Authenticator. Microsoft is committed to securing customers and users with passkeys, and plans to support synced passkeys for Microsoft Entra ID.
 
 ## [**Web browsers**](#tab/web)
 
@@ -104,8 +104,8 @@ The following table lists Microsoft application support for passkey (FIDO2) with
 
 | Application    | macOS    | iOS      | Android  |
 |----------------|----------|----------|----------|
-| [Remote Desktop](/azure/virtual-desktop/compare-remote-desktop-clients) | &#x2705; | &#x2705; | &#10060; |
-| [Windows App](/windows-app/compare-platforms-features)  | &#x2705; | &#x2705; | &#10060; |
+| [Remote Desktop](/azure/virtual-desktop/compare-remote-desktop-clients) | &#x2705; | &#x2705; | &#x2705; |
+| [Windows App](/windows-app/compare-platforms-features)  | &#x2705; | &#x2705; | &#x2705; |
 | Microsoft 365 Copilot (Office) | N/A | &#x2705; | &#10060; |
 | Word | &#x2705; | &#x2705; | &#10060; |
 | PowerPoint | &#x2705; | &#x2705; | &#10060; |

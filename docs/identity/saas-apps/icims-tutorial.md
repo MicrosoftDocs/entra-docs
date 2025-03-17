@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with ICIMS
 
-In this tutorial, you'll learn how to integrate ICIMS with Microsoft Entra ID. When you integrate ICIMS with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate ICIMS with Microsoft Entra ID. When you integrate ICIMS with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to ICIMS.
 * Enable your users to be automatically signed-in to ICIMS with their Microsoft Entra accounts.
@@ -33,7 +33,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * ICIMS supports **SP** initiated SSO.
 
@@ -45,8 +45,8 @@ To configure and test Microsoft Entra SSO with ICIMS, perform the following step
 
 1. **[Configure Microsoft Entra Application Registration](#configure-azure-ad-sso)** - to enable your users to use this feature.
     1. **[Add credentials to your Entra Application](#add-credentials-to-your-entra-application)** - to establish a client secret for the SSO integration.
-    1. **[Create a Microsoft Entra test user](#create-a-microsoft-entra-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-microsoft-entra-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure ICIMS SSO](#configure-icims-sso)** - to configure the single sign-on settings on application side.
     1. **[Determine how you want to map your users between Entra and iCIMS](#determine-how-you-want-to-map-your-users-between-entra-and-icims)** - to configure how to map user accounts between iCIMS and Entra.
     1. **[Submit a support ticket for your SSO integration](#submit-a-support-ticket-for-your-sso-integration)** - to provide iCIMS staff with the details needed to configure your SSO integration.

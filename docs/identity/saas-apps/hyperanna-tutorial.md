@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Integrate HyperAnna with Microsoft Entra ID
 
-In this tutorial, you'll learn how to integrate HyperAnna with Microsoft Entra ID. When you integrate HyperAnna with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate HyperAnna with Microsoft Entra ID. When you integrate HyperAnna with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to HyperAnna.
 * Enable your users to be automatically signed-in to HyperAnna with their Microsoft Entra accounts.
@@ -26,15 +26,13 @@ In this tutorial, you'll learn how to integrate HyperAnna with Microsoft Entra I
 To learn more about SaaS app integration with Microsoft Entra ID, see [What is application access and single sign-on with Microsoft Entra ID](~/identity/enterprise-apps/what-is-single-sign-on.md).
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * HyperAnna single sign-on (SSO) enabled subscription.
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * HyperAnna supports **SP and IDP** initiated SSO
 
@@ -60,8 +58,8 @@ To configure and test Microsoft Entra SSO with HyperAnna, complete the following
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
 2. **[Configure HyperAnna SSO](#configure-hyperanna-sso)** - to configure the Single Sign-On settings on application side.
-3. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with Britta Simon.
-4. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable Britta Simon to use Microsoft Entra single sign-on.
+3. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
+4. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
 5. **[Create HyperAnna test user](#create-hyperanna-test-user)** - to have a counterpart of Britta Simon in HyperAnna that is linked to the Microsoft Entra representation of user.
 6. **[Test SSO](#test-sso)** - to verify whether the configuration works.
 
@@ -155,7 +153,7 @@ When you click the HyperAnna tile in the Access Panel, you should be automatical
 
 ## Additional resources
 
-- [List of Tutorials on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
+- [List of articles on How to Integrate SaaS Apps with Microsoft Entra ID](./tutorial-list.md)
 
 - [What is application access and single sign-on with Microsoft Entra ID?](~/identity/enterprise-apps/what-is-single-sign-on.md)
 

@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with Folloze
 
-In this tutorial, you'll learn how to integrate Folloze with Microsoft Entra ID. When you integrate Folloze with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Folloze with Microsoft Entra ID. When you integrate Folloze with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Folloze.
 * Enable your users to be automatically signed-in to Folloze with their Microsoft Entra accounts.
@@ -34,7 +34,7 @@ For more information, see [Azure built-in roles](~/identity/role-based-access-co
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Folloze supports **IDP** initiated SSO.
 
@@ -63,8 +63,8 @@ Configure and test Microsoft Entra SSO with Folloze using a test user called **B
 To configure and test Microsoft Entra SSO with Folloze, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-   1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-   1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+   1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+   1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Folloze SSO](#configure-folloze-sso)** - to configure the single sign-on settings on application side.
    1. **[Create Folloze test user](#create-folloze-test-user)** - to have a counterpart of B.Simon in Folloze that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.

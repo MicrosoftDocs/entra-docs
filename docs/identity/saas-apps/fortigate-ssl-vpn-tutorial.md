@@ -17,7 +17,7 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with FortiGate SSL VPN
 
-In this tutorial, you learn how to integrate FortiGate SSL VPN with Microsoft Entra ID. When you integrate FortiGate SSL VPN with Microsoft Entra ID, you can:
+In this article,  you learn how to integrate FortiGate SSL VPN with Microsoft Entra ID. When you integrate FortiGate SSL VPN with Microsoft Entra ID, you can:
 
 * Use Microsoft Entra ID to control who can access FortiGate SSL VPN.
 * Enable your users to be automatically signed in to FortiGate SSL VPN with their Microsoft Entra accounts.
@@ -30,9 +30,9 @@ To get started, you need the following items:
 * A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
 * A FortiGate SSL VPN with single sign-on (SSO) enabled.
 
-## Tutorial description
+## Article description
 
-In this tutorial, you'll configure and test Microsoft Entra SSO in a test environment.
+In this article,  you'll configure and test Microsoft Entra SSO in a test environment.
 
 FortiGate SSL VPN supports SP-initiated SSO.
 
@@ -57,7 +57,7 @@ You'll configure and test Microsoft Entra SSO with FortiGate SSL VPN by using a 
 To configure and test Microsoft Entra SSO with FortiGate SSL VPN, you complete these high-level steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** to enable the feature for your users.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** to test Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** to test Microsoft Entra single sign-on.
     1. **[Grant access to the test user](#grant-access-to-the-test-user)** to enable Microsoft Entra single sign-on for that user.
 1. **[Configure FortiGate SSL VPN SSO](#configure-fortigate-ssl-vpn-sso)** on the application side.
     1. **Create a FortiGate SAML SSO user group** as a counterpart to the Microsoft Entra representation of the user.
@@ -97,7 +97,7 @@ Follow these steps to enable Microsoft Entra SSO in the Azure portal:
 
    ![Screenshot of showing Attributes and Claims section.](./media/fortigate-ssl-vpn-tutorial/claims.png)
 
-1. The claims required by FortiGate SSL VPN are shown in the following table. The names of these claims must match the names used in the **Perform FortiGate command-line configuration** section of this tutorial. Names are case-sensitive.
+1. The claims required by FortiGate SSL VPN are shown in the following table. The names of these claims must match the names used in the **Perform FortiGate command-line configuration** section of this article. Names are case-sensitive.
 
    | Name |  Source attribute |
    | ------------ | --------- |
@@ -240,7 +240,7 @@ To complete these steps, you need the values you recorded earlier:
 
 In this section, you configure FortiGate to recognize the Object ID of the security group that includes the test user. This configuration allows FortiGate to make access decisions based on the group membership.
 
-To complete these steps, you need the Object ID of the FortiGateAccess security group that you created earlier in this tutorial.
+To complete these steps, you need the Object ID of the FortiGateAccess security group that you created earlier in this article.
 
 1. Establish an SSH session to your FortiGate appliance, and sign in with a FortiGate Administrator account.
 
@@ -262,7 +262,7 @@ To complete these steps, you need the Object ID of the FortiGateAccess security 
 
 #### Create a FortiGate VPN Portals and Firewall Policy
 
-In this section, you configure a FortiGate VPN Portals and Firewall Policy that grants access to the FortiGateAccess security group you created earlier in this tutorial.
+In this section, you configure a FortiGate VPN Portals and Firewall Policy that grants access to the FortiGateAccess security group you created earlier in this article.
 
 Refer to [Configuring SAML SSO sign in for SSL VPN with Microsoft Entra ID acting as SAML IdP for instructions](https://docs.fortinet.com/document/fortigate-public-cloud/7.0.0/azure-administration-guide/584456/configuring-saml-sso-login-for-ssl-vpn-web-mode-with-azure-ad-acting-as-saml-idp).
 

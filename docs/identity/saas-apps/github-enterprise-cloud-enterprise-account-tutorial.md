@@ -17,21 +17,19 @@ ms.author: gideonkiratu
 
 # Microsoft Entra SSO integration with GitHub Enterprise Cloud - Enterprise Account
 
-In this tutorial, you learn how to setup a Microsoft Entra SAML integration with a GitHub Enterprise Cloud - Enterprise Account. When you integrate GitHub Enterprise Cloud - Enterprise Account with Microsoft Entra ID, you can:
+In this article,  you learn how to setup a Microsoft Entra SAML integration with a GitHub Enterprise Cloud - Enterprise Account. When you integrate GitHub Enterprise Cloud - Enterprise Account with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to a GitHub Enterprise Account and any organizations within the Enterprise Account.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * A [GitHub Enterprise Account](https://docs.github.com/en/enterprise-cloud@latest/admin/overview/about-enterprise-accounts).
 * A GitHub user account that is an Enterprise Account owner. 
 
 ## Scenario description
 
-In this tutorial, you will configure a SAML integration for a GitHub Enterprise Account, and test enterprise account owner and enterprise/organization member authentication and access. 
+In this article,  you will configure a SAML integration for a GitHub Enterprise Account, and test enterprise account owner and enterprise/organization member authentication and access. 
 
 > [!NOTE]
 > The GitHub `Enterprise Cloud - Enterprise Account` application does not support enabling [automatic SCIM provisioning](~/architecture/sync-scim.md). If you need to setup provisioning for your GitHub Enterprise Cloud environment, SAML must be configured at the organization level and the `GitHub Enterprise Cloud - Organization` Microsoft Entra application must be used instead. If you are setting up a SAML and SCIM provisioning integration for an enterprise that is enabled for [Enterprise Managed Users (EMUs)](https://docs.github.com/enterprise-cloud@latest/admin/identity-and-access-management/using-enterprise-managed-users-for-iam/about-enterprise-managed-users), then you must use the `GitHub Enterprise Managed User` Microsoft Entra application for SAML/Provisioning integrations or the `GitHub Enterprise Managed User (OIDC)` Microsoft Entra application for OIDC/Provisioning integrations.
@@ -59,7 +57,7 @@ Configure and test Microsoft Entra SSO with GitHub Enterprise Cloud - Enterprise
 To configure and test Microsoft Entra SSO with GitHub Enterprise Cloud - Enterprise Account, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Assign your Microsoft Entra user and the test user account to the GitHub app](#assign-your-azure-ad-user-and-the-test-user-account-to-the-github-app)** - to enable your user account and test user `B.Simon` to use Microsoft Entra single sign-on.
 1. **[Enable and Test SAML for the Enterprise Account and its organizations](#enable-and-test-saml-for-the-enterprise-account-and-its-organizations)** - to configure the single sign-on settings on application side.
     1. **[Test SSO with another enterprise account owner or organization member account](#test-sso-with-another-enterprise-account-owner-or-organization-member-account)** - to verify whether the configuration works.

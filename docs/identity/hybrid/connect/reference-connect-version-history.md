@@ -4,9 +4,9 @@ description: This article lists all releases of Microsoft Entra Connect and Azur
 author: billmath
 ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.service: entra-id
-manager: amycolannino
+manager: femila
 ms.topic: reference
-ms.date: 10/07/2024
+ms.date: 03/07/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
 ms.custom: has-adal-ref, has-azure-ad-ps-ref
@@ -19,6 +19,9 @@ The Microsoft Entra team regularly updates Microsoft Entra Connect with new feat
 
 This article helps you keep track of the versions that have released and the changes in those versions.
 
+### Breaking Change on Entra Connect Sync
+> [!IMPORTANT]
+> The MSOnline [retirement](https://aka.ms/msonlineretirement) on April 7, 2025 will impact Entra Connect Sync wizard. We recommend that you upgrade your connect sync version to 2.4.18.0 or higher to maintain connect sync wizard capabilities such as schema refresh, configuration of staging mode and user-sign in changes. No action is required if you have upgraded your connect sync version. [Learn More](harden-update-ad-fs-pingfederate.md) 
 
 ## Looking for the latest versions?
 
@@ -62,10 +65,10 @@ Required permissions | For permissions required to apply an update, see [Microso
 
 |Version|End of support date|
 |-----|-----|
-|[2.3.2.0](#2320)|31 Mar 2025 (To align with the security change released in version 2.4.18.0)|
-|[2.3.6.0](#2360)|31 Mar 2025 (To align with the security change released in version 2.4.18.0)|
-|[2.3.8.0](#2380)|31 Mar 2025 (To align with the security change released in version 2.4.18.0)|
-|[2.3.20.0](#23200)|31 Mar 2025 (To align with the security change released in version 2.4.18.0)|
+|[2.3.2.0](#2320)|7 Apr 2025 (To align with the security change released in version 2.4.18.0)|
+|[2.3.6.0](#2360)|7 Apr 2025 (To align with the security change released in version 2.4.18.0)|
+|[2.3.8.0](#2380)|7 Apr 2025 (To align with the security change released in version 2.4.18.0)|
+|[2.3.20.0](#23200)|7 Apr 2025 (To align with the security change released in version 2.4.18.0)|
 |[2.4.18.0](#24180)|9 Oct 2025 (12 months after release of 2.4.21.0)|
 |[2.4.21.0](#24210)|15 Nov 2025 (12 months after release of 2.4.27.0)|
 |[2.4.27.0](#24270)|15 Jan 2026 (12 months after release of 2.4.129.0)|

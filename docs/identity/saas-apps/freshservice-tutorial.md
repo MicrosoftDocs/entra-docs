@@ -9,7 +9,7 @@ ms.service: entra-id
 ms.subservice: saas-apps
 
 ms.topic: how-to
-ms.date: 03/25/2024
+ms.date: 03/03/2025
 ms.author: gideonkiratu
 
 # Customer intent: As an IT administrator, I want to learn how to configure single sign-on between Microsoft Entra ID and Freshservice so that I can control who has access to Freshservice, enable automatic sign-in with Microsoft Entra accounts, and manage my accounts in one central location.
@@ -17,17 +17,15 @@ ms.author: gideonkiratu
 
 # Microsoft Entra single sign-on (SSO) integration with Freshservice
 
-In this tutorial, you'll learn how to integrate Freshservice with Microsoft Entra ID. When you integrate Freshservice with Microsoft Entra ID, you can:
+In this article,  you'll learn how to integrate Freshservice with Microsoft Entra ID. When you integrate Freshservice with Microsoft Entra ID, you can:
 
 * Control in Microsoft Entra ID who has access to Freshservice.
 * Enable your users to be automatically signed-in to Freshservice with their Microsoft Entra accounts.
 * Manage your accounts in one central location.
 
 ## Prerequisites
-
-To get started, you need the following items:
-
-* A Microsoft Entra subscription. If you don't have a subscription, you can get a [free account](https://azure.microsoft.com/free/).
+The scenario outlined in this article assumes that you already have the following prerequisites:
+[!INCLUDE [common-prerequisites.md](~/identity/saas-apps/includes/common-prerequisites.md)]
 * Freshservice single sign-on (SSO) enabled subscription.
 
 > [!NOTE]
@@ -35,7 +33,7 @@ To get started, you need the following items:
 
 ## Scenario description
 
-In this tutorial, you configure and test Microsoft Entra SSO in a test environment.
+In this article,  you configure and test Microsoft Entra SSO in a test environment.
 
 * Freshservice supports **SP** initiated SSO.
 * Freshservice supports [Automated user provisioning](freshservice-provisioning-tutorial.md).
@@ -60,8 +58,8 @@ Configure and test Microsoft Entra SSO with Freshservice using a test user calle
 To configure and test Microsoft Entra SSO with Freshservice, complete the following building blocks:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Freshservice SSO](#configure-freshservice-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Freshservice test user](#create-freshservice-test-user)** - to have a counterpart of B.Simon in Freshservice that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -133,18 +131,11 @@ In this section, you'll enable B.Simon to use single sign-on by granting access 
 
 ## Configure Freshservice SSO
 
-
-
-
 1. In a different web browser window, sign in to your Freshservice company site as an administrator
 
 1. In the menu on the left, click **Admin** and select **Helpdesk Security** in the **General Settings**.
 
-    ![Admin](./media/freshservice-tutorial/configure-1.png "Admin")
-
 1. In the **Security**, click on **Go to  Freshservice 360 Security**.
-
-    ![Security](./media/freshservice-tutorial/configure-2.png "Security")
 
 1. In the **Security** section, perform the following steps:
 

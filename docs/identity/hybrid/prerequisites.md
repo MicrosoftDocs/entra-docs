@@ -3,7 +3,7 @@ title: 'Prerequisites for integrating with Active Directory'
 description: This article describes the prerequisites required to integrate with Active Directory.
 
 author: billmath
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: conceptual
 ms.tgt_pltfrm: na
