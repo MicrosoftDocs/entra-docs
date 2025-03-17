@@ -20,8 +20,8 @@ The Microsoft Entra team regularly updates Microsoft Entra Connect with new feat
 This article helps you keep track of the versions that have released and the changes in those versions.
 
 ### Breaking Change on Entra Connect Sync
-> [!IMPORTANT]
-> The MSOnline [retirement](https://aka.ms/msonlineretirement) on April 7, 2025 will impact Entra Connect Sync wizard. We recommend that you upgrade your connect sync version to 2.4.18.0 or higher to maintain connect sync wizard capabilities such as schema refresh, configuration of staging mode and user-sign in changes. No action is required if you have upgraded your connect sync version. [Learn More](harden-update-ad-fs-pingfederate.md) 
+> [!WARNING]
+> The MSOnline PowerShell [retirement](https://aka.ms/msonlineretirement) on April 7, 2025 will impact Entra Connect Sync service. You must upgrade your connect sync version to [2.4.18.0](reference-connect-version-history.md#24180) for commercial cloud and [2.4.21.0](reference-connect-version-history.md#24210) for non-commercial clouds, or higher to avoid being impacted by this retirement. No action is required if you have upgraded your Entra Connect sync server. [Learn More](harden-update-ad-fs-pingfederate.md)
 
 ## Looking for the latest versions?
 
@@ -120,7 +120,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 11/14/2024: Released for download
 
 ### Updated Features
-- SQL related drivers shipped with Microsoft Entra Connect have been updated to OLE DB [version 18.7.4](/sql/connect/oledb/release-notes-for-oledb-driver-for-sql-server?view=sql-server-ver16#1874)
+- SQL related drivers shipped with Microsoft Entra Connect have been updated to OLE DB [version 18.7.4](/sql/connect/oledb/release-notes-for-oledb-driver-for-sql-server#1874)
 
 ### Bug fixes
 - Fixed an issue with Privileged Identity Management (PIM), Microsoft Entra roles, and PIM for Groups to verify that PIM is enabled and that the user has the Hybrid Identity Administrator role enabled.
@@ -137,7 +137,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 ### Bug fixes
 
-- Fixed an issue with non-commercial clouds.
+- Fixed an authentication issue with non-commercial clouds.
 
 
 
@@ -150,16 +150,17 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 
 ### Updated Features
 - The step **Connect to Microsoft Entra ID** in the Connect Sync Wizard won't require password before redirecting you to the login page.
-- Updated Default Rule: "onPremisesObjectIdentifier" attribute added to the **In from AD - User Account Enabled** sync rule.
- - In the scenario:
-  - where the user information around the same user is spread across different forests
-  - and if the user is disabled in one of the forests adding this rule allows the sync to pick the **onPremisesObjectIdentifier** attribute from the user who is enabled. 
-- This registry key change allows you to set the precedence number for custom rules to be more than 100 if needed. The precedence of the first standard rule can be set using the key **HLKM:\SOFTWARE\Microsoft\Azure AD Connect\FirstStandardRulePrecedence** to allow for more custom rules. If no value is set, 100 is the default.
-- Cmdlets in the ADSync PowerShell module that communicate with Microsoft Entra ID now require Microsoft Entra ID login.
+- Updated Default Rule: "onPremisesObjectIdentifier" attribute added to the **In from AD - User Account Enabled** sync rule. Adding this rule allows the sync engine to pick the **onPremisesObjectIdentifier** attribute from the user who is enabled, in a scenario where:
+  - the same user is represented across different forests, and 
+  - the user is disabled in one of the forests
+- Introduced a registry key that allows you to set the precedence number for custom rules to be more than 100, if needed. The precedence of the first standard rule can be set using the key **HLKM:\SOFTWARE\Microsoft\Azure AD Connect\FirstStandardRulePrecedence,** allowing for more custom rules. If no value is set, 100 is the default.
+- Cmdlets in ADSync PowerShell module that communicate with Microsoft Entra ID now require Microsoft Entra ID login, for example, `Add-ADSyncAADServiceAccount` or `Get-ADSyncExportDeletionThreshold`
 
-### Deprecated features
+
+### Decommissioned features
 - The feature that used to validate object against schema has been deprecated and is no longer available in the Synchronization Service Manager.
-- The "enableldap" Command Line (Preview) feature has been deprecated and is no longer available when you run the Wizard.
+- The `/enableldap` command-line switch (Preview feature) has been deprecated and is no longer available when you run the Wizard.
+- All references to legacy MSOnline PowerShell module have been removed and replaced by equivalent Microsoft Graph API calls.
 
 
 ### Miscellaneous 
