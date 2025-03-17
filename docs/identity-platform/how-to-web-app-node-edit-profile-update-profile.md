@@ -366,7 +366,7 @@ The `tokenRequest` parameter is defined as shown the following code:
     };
 ```
 
-In the same file, *API/index.js*, the mid-tier app (EditProfileService app) makes a call to Microsoft Graph API to update the users's profile:
+In the same file, *API/index.js*, the mid-tier app (EditProfileService app) makes a call to Microsoft Graph API to update the user's profile:
 
 ```JavaScript
    let accessToken = await getAccessToken(tokenRequest);
