@@ -7,14 +7,14 @@ ms.author: kengaderdus
 ms.service: entra-external-id 
 ms.subservice: external
 ms.topic: how-to
-ms.date: 11/28/2024
+ms.date: 03/16/2025
 ms.custom: developer
 #Customer intent: As a developer, I want to set up my Node.js web app for profile editing so that customer users can update their profile after a successful sign-in.
 ---
 
 # Set up a Node.js web application for profile editing
 
-[!INCLUDE [applies-to-external-only](../includes/applies-to-external-only.md)]
+[!INCLUDE [applies-to-external-only](../external-id/includes/applies-to-external-only.md)]
 
 After customer users successfully sign in into your external-facing app, you can enable them to edit their profiles. You enable the customer users to manage their profiles by using [Microsoft Graph API's](/graph/api/user-get) `/me` endpoint. Calling the `/me` endpoint requires a signed-in user and therefore a delegated permission.
 
@@ -29,12 +29,12 @@ In this guide, you learn how to set up your web app to support profile editing w
 
 **Updatable properties**
 
-To customize the fields your customer users can edit in their profile, choose from the properties listed in the *Update profile* row of the table in [Microsoft Graph APIs and permissions](reference-user-permissions.md#microsoft-graph-apis-and-permissions). 
+To customize the fields your customer users can edit in their profile, choose from the properties listed in the *Update profile* row of the table in [Microsoft Graph APIs and permissions](../external-id/customers/reference-user-permissions.md#microsoft-graph-apis-and-permissions). 
 
 ## Prerequisites
 
-- Complete the steps in [Tutorial: Set up your external tenant to sign in users in a Node.js web app](tutorial-web-app-node-sign-in-prepare-tenant.md) tutorial series. The tutorial shows you how to register an app in your external tenant, and build a web app that signs in users. We refer to this web application as the client web app
-- Complete the steps in [Sign in users and edit profile in a sample Node.js web app](sample-web-app-node-sign-in-edit-profile.md). This article shows you how to set up your external tenant for profile editing.
+- Complete the steps in [Tutorial: Set up your external tenant to sign in users in a Node.js web app](tutorial-web-app-node-sign-in-prepare-app.md) tutorial series. The tutorial shows you how to register an app in your external tenant, and build a web app that signs in users. We refer to this web application as the client web app
+- Complete the steps in [Sign in users and edit profile in a sample Node.js web app](quickstart-web-app-node-sign-in-edit-profile.md). This article shows you how to set up your external tenant for profile editing.
 
 ## Update the client web app
 
@@ -103,7 +103,7 @@ Add the following files to your Node.js client we app (*App* directory):
     <a href="/">Go back</a>
     ```
 
-    - This file contains an HTML form that represents the [editable user details](reference-user-permissions.md#microsoft-graph-apis-and-permissions). 
+    - This file contains an HTML form that represents the [editable user details](../external-id/customers/reference-user-permissions.md#microsoft-graph-apis-and-permissions). 
     - The user needs to select the **Edit Profile** button to update their display name, but the user must complete an MFA challenge if they've not already done so. 
 
 1. In your code editor, open *App/views/updateProfile.hbs* file, then add the following code:
@@ -152,7 +152,7 @@ Add the following files to your Node.js client we app (*App* directory):
     <a href="/">Go back</a>
     ```
 
-This file contains an HTML form that represents the [editable user details](reference-user-permissions.md#microsoft-graph-apis-and-permissions), but only visible after the customer user completes MFA challenge.
+This file contains an HTML form that represents the [editable user details](../external-id/customers/reference-user-permissions.md#microsoft-graph-apis-and-permissions), but only visible after the customer user completes MFA challenge.
 
 ### Install app dependencies
 
