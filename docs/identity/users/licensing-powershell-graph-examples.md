@@ -9,7 +9,7 @@ manager: femila
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 12/19/2024
+ms.date: 03/17/2025
 ms.author: barclayn
 ---
 
@@ -79,27 +79,35 @@ Get-MgGroup -GroupId 1ad75eeb-7e5a-4367-a493-9214d90d54d0 -Property "AssignedLic
 
 ## Get all groups with licenses
 
-
 ```powershell
-# Import the Microsoft.Graph.Groups module
-Import-Module Microsoft.Graph.Groups
-# Get all groups and licenses
-$groups = Get-MgGroup -All
-$groupsWithLicenses = @()
-# Loop through each group and check if it has any licenses assigned
-foreach ($group in $groups) {
-    $licenses = Get-MgGroup -GroupId $group.Id -Property "AssignedLicenses, Id, DisplayName" | Select-Object AssignedLicenses, DisplayName, Id
-    if ($licenses.AssignedLicenses) {
-        $groupData = [PSCustomObject]@{
-            ObjectId = $group.Id
-            DisplayName = $group.DisplayName
-            Licenses = $licenses.AssignedLicenses
+# Define the group ID
+$groupId = "Group object ID"
+# Get the group with the specified ID and its assigned licenses
+$group = Get-MgGroup -GroupId $groupId -Property "AssignedLicenses"
+# Extract the assigned licenses and include the SkuPartNumber, SkuId, and DisabledPlans with service plan names
+$licensesDetails = $group.AssignedLicenses | ForEach-Object {
+    $skuId = $_.SkuId
+    $subscribedSku = Get-MgSubscribedSku | Where-Object { $_.SkuId -eq $skuId }
+    $skuPartNumber = $subscribedSku.SkuPartNumber
+    # Map the DisabledPlans GUIDs to their corresponding service plan names
+    $disabledPlansNames = @()
+    foreach ($disabledPlanId in $_.DisabledPlans) {
+        $servicePlan = $subscribedSku.ServicePlans | Where-Object { $_.ServicePlanId -eq $disabledPlanId }
+        if ($servicePlan) {
+            $disabledPlansNames += $servicePlan.ServicePlanName
         }
-        $groupsWithLicenses += $groupData
+    }
+    # Return the desired properties in a custom object
+    [PSCustomObject]@{
+        SkuId = $skuId
+        SkuPartNumber = $skuPartNumber
+        DisabledPlans = $disabledPlansNames -join ", "
     }
 }
-
+# Output the licenses details
+$licensesDetails | Format-Table -AutoSize
 ```
+
 
 ## Get statistics for groups with licenses
 
