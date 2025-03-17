@@ -5,7 +5,7 @@ author: gargi-sinha
 manager: martinco
 ms.service: entra-id-governance
 ms.topic: concept-article
-ms.date: 03/14/2025
+ms.date: 03/17/2025
 ms.author: gasinh
 
 #customer intent: My goal is to deliver a proof of concept for deployment of Microsoft Entra ID Governance in my test and production environments.
@@ -53,13 +53,17 @@ In the following screenshot, see the **On-premises resources | Separation of Dut
 
 ### Create an autoassignment policy
 
-In this area of access policy, **birthright assignment** refers to automatically granting resource access based on user properties. Creating assignments works similarly. User properties match, or don’t match, a policy's membership rules. Use rules to determine access package assignment based on user properties, similar to [dynamic groups](../identity/users/groups-create-rule.md). Add or remove assignments, based on rule criteria.  
+In this area of access policy, **birthright assignment** refers to automatically granting resource access based on user properties. Creating assignments works similarly. User properties match, or don’t match, a policy's membership rules. Use rules to determine access package assignment based on user properties, similar to [dynamic groups](../identity/users/groups-create-rule.md). Add or remove assignments, based on rule criteria. 
 
 In the following screenshot see the **Edit policy dialog**, with the **Create auto assignment policy** tab.  
 
    [ ![Screenshot of the Create auto assignment policy tab on the Edit policy dialog.](media/governance-deployment/edit-policy.png)](media/governance-deployment/edit-policy-expanded.png#lightbox)
 
 For more information, you can learn about [groups and access rights in Microsoft Entra ID](../fundamentals/how-to-manage-groups.yml)
+
+See the following video to learn more about policy assignment.
+
+> [!VIDEO 6ae11d17-51c8-4346-a9a3-098a9df0148f]</br>
 
 ## Deploy PoC: Access package assignment
 
