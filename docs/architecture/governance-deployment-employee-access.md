@@ -63,7 +63,7 @@ For more information, you can learn about [groups and access rights in Microsoft
 
 See the following video to learn more about policy assignment.
 
-> [!VIDEO 6ae11d17-51c8-4346-a9a3-098a9df0148f]</br>
+> [!VIDEO 6ae11d17-51c8-4346-a9a3-098a9df0148f]
 
 ## Deploy PoC: Access package assignment
 
