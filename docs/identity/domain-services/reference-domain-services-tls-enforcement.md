@@ -61,7 +61,7 @@ Use PowerShell:
    Get-AzADDomainService -Name
    ```
 
-1. Get the Resource Group Name where the domain instance is located:
+1. Get the resource group name where the domain instance is located:
 
    ```powershell
    Get-AzADDomainService -ResourceGroupName
