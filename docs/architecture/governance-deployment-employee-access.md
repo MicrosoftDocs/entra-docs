@@ -73,15 +73,17 @@ See the following video to learn more about policy assignment.</br></br>
 
 ### Custom workflows with Azure Logic Apps
 
-Create and run automated workflows with [Azure Logic Apps](/azure/logic-apps/), using the visual designer and prebuilt operations. To extend governance workflows, integrate Logic Apps with entitlement management: 
+Create and run automated workflows with [Azure Logic Apps](/azure/logic-apps/), using the visual designer and prebuilt operations. 
+
+To extend governance workflows, integrate Logic Apps with entitlement management: 
 
 * An access package request is created or approved
 * An access package assignment is granted or removed
 * Fourteen days before an access package assignment autoexpires
-* One day before an access package assignment autoexpires 
+* One day before an access package assignment autoexpires
 
-   >[!NOTE]
-   >Have [Azure subscription resources](/cli/azure/manage-azure-subscriptions-azure-cli?tabs=bash&preserve-view=true) available for planning.
+ >[!NOTE]
+ >Have [Azure subscription resources](/cli/azure/manage-azure-subscriptions-azure-cli?tabs=bash&preserve-view=true) available for planning.
 
 ### Custom use case examples
 
@@ -155,7 +157,7 @@ The **New access review** dialog, and **Settings** tab, with decision helper opt
 
 If users haven't signed in to the tenant within a designated duration, they're considered intactive. This behavior is adjusted for application assignment reviews, or a user's last activity in an app. To get started, define what inactive means for your organization. 
 
-See a video about [access reviews for inactive users](https://youtu.be/rQxaoMoZRQ0) and an article on how to [detect and investigate inactive user accounts](../identity/monitoring-health/howto-manage-inactive-user-accounts.md). 
+Learn how to [detect and investigate inactive user accounts](../identity/monitoring-health/howto-manage-inactive-user-accounts.md). 
 
 The **New access review** dialog, and **Review type** tab, with inactivity options highlighted. 
 
