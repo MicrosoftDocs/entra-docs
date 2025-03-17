@@ -270,6 +270,7 @@
     - name: How-to
       items:
         - name: Web app that signs in users
+          expanded: false
           items:
             - name: App registration
               href: scenario-web-app-sign-user-app-registration.md
@@ -278,6 +279,7 @@
             - name: Sign-in and sign-out
               href: scenario-web-app-sign-user-sign-in.md
         - name: Web app that calls an API
+          expanded: false
           items:
             - name: App registration
               href: scenario-web-app-call-api-app-registration.md
@@ -290,6 +292,7 @@
             - name: Call a web API
               href: scenario-web-app-call-api-call-api.md
             - name: Node app that calls an API
+              expanded: false
               items:
               - name: Prepare tenant 
                 href: how-to-web-app-node-sign-in-call-api-prepare-tenant.md
@@ -300,6 +303,7 @@
               - name: Call API 
                 href: how-to-web-app-node-sign-in-call-api-call-api.md
         - name: Edit profile with MFA
+          expanded: false
           items:
             - name: Set up app 
               href: how-to-web-app-node-edit-profile-prepare-app.md
