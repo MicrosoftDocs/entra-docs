@@ -185,7 +185,7 @@ The preceding code creates a model called *ToDo*. This model represents data tha
 
 ### Add a database context
 
-Next, we define a database context class, which coordinates the [Entity Framework](/ef/core/) functionality for a data model. This class inherits from the <xref:Microsoft.EntityFrameworkCore.DbContext?displayProperty=fullName> class that manages interactions between the application and the database. To add the database context, follow these steps: 
+Next, we define a database context class, which coordinates the [Entity Framework](/ef/core/) functionality for a data model. This class inherits from the [Microsoft.EntityFrameworkCore.DbContext](/dotnet/api/microsoft.entityframeworkcore.dbcontext?) class that manages interactions between the application and the database. To add the database context, follow these steps: 
 
 1. Create a folder called *DbContext* in the root folder of your project. 
 1. Navigate into the *DbContext* folder and create a file named `ToDoContext.cs` then add the following code:
@@ -358,9 +358,19 @@ This section explains how to add code to the controller scaffolded in the previo
 
 ### Configure the API middleware to use the controller
 
-Next, we configure the application to recognize and use controllers for handling HTTP requests. Open the `program.cs` file and add the following highlighted code to register the controller services in the dependency injection container.
+Next, we configure the application to recognize and use controllers for handling HTTP requests. Open the `program.cs` file and add the following code to register the controller services in the dependency injection container.
 
-:::code language="csharp" source="~/aspnetcore/tutorials/first-web-api/samples/9.0/TodoApi/Program.cs" highlight="1-2,8-9":::
+```csharp
+
+builder.Services.AddControllers();
+
+var app = builder.Build();
+app.MapControllers();
+
+app.Run();
+```
+
+In the preceding code snippet, the `AddControllers()` method prepares the application to use controllers by registering the necessary services while `MapControllers()` maps the controller routes to handle incoming HTTP requests.
 
 ## Run your API
 
