@@ -24,6 +24,10 @@ With PIM for Groups you can use policies similar to ones you use in PIM for Micr
 
 [!INCLUDE [PIM for Groups note](~/includes/pim-for-groups-include.md)]
 
+## PIM for Groups and deactivation
+
+[!INCLUDE [groups-deactivation-include](../includes/groups-deactivation-include.md)]
+
 <a name='what-are-entra-id-role-assignable-groups'></a>
 
 ## What are Microsoft Entra role-assignable groups?
