@@ -1,33 +1,44 @@
 ---
-title: Remediate risks and unblock users in Microsoft Entra ID Protection
-description: Learn about the options you have close active risk detections.
+title: Remediate risks and unblock users
+description: Learn how to configure user self-remediation and manually remediate risky users in Microsoft Entra ID Protection.
 
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 02/28/2025
+ms.date: 03/18/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
 manager: femila
 ms.reviewer: chuqiaoshi
+
+# Customer intent: As an IT admin, I want to learn how to remediate risks and unblock users in Microsoft Entra ID Protection.
 ---
 # Remediate risks and unblock users
 
-After completing your [investigation](howto-identity-protection-investigate-risk.md), take action to remediate the risky users or unblock them. Organizations can enable automated remediation by setting up [risk-based policies](howto-identity-protection-configure-risk-policies.md). Organizations should investigate and remediate all risky users within a comfortable time period. Microsoft recommends acting quickly because time matters when working with risks.
+After completing your [risk investigation](howto-identity-protection-investigate-risk.md), you need to take action to remediate risky users or unblock them. You can enable automated remediation by setting up [risk-based policies](howto-identity-protection-configure-risk-policies.md) or manually update the user's risk status. Microsoft recommends acting quickly because time matters when working with risks.
 
 ## Risk remediation
 
-All active risk detections contribute to the calculation of the user's risk level. The user risk level is an indicator (low, medium, high) of the probability that the user's account is compromised. After investigating risky users and the corresponding risky sign-ins and detections, you should [remediate the risky users](howto-identity-protection-remediate-unblock.md) so that they're no longer at risk and blocked from access.
+All active risk detections contribute to the calculation of the user's risk level. The user risk level is an indicator (low, medium, high) of the probability that the user's account is compromised. After investigating risky users and the corresponding risky sign-ins and detections, you should remediate the risky users so they're no longer at risk and blocked from access.
 
 Microsoft Entra ID Protection marks some risk detections and the corresponding risky sign-ins as dismissed with risk state **Dismissed** and risk detail **Microsoft Entra ID Protection assessed sign-in safe**. It takes this action, because those events were no longer determined to be risky.
 
-Administrators can remediate using the following options:
+As an IT administrators, you can configure the ability for users to self-remediate or manually remediate on behalf of the user.
+
+Self-remediation options include:
 
 - Set up risk-based policies to allow users to self-remediate their risks.
-- Manually reset their password.
-- Dismiss their user risk.
-- [Remediate in Microsoft Defender for Identity](/defender-for-identity/remediation-actions).
+- Allow users to self-remediate their user risks using self-service password reset (SSPR).
+- Require users to reset their password to remediate their user risk.
+
+Manual remediation options include:
+
+- Dismiss the user's risk.
+- Confirm the user is compromised and take action to secure the account.
+- Unblock the user based on user risk or sign-in risk.
+
+You can also [remediate in Microsoft Defender for Identity](/defender-for-identity/remediation-actions).
 
 ### Self-remediation with risk-based policy
 
@@ -63,7 +74,7 @@ By generating a temporary password, you can immediately bring an identity back i
 - They can generate passwords for hybrid users from an on-premises directory when password hash synchronization and the [Allow on-premises password change to reset user risk](#allow-on-premises-password-reset-to-remediate-user-risks) setting is enabled.
 
    > [!WARNING]
-   > Don't select the option **User must change password at next logon**. This is unsupported.
+   > Don't select the option **User must change password at next logon** unless you previously enabled password hash synchronization to allow on-premises password changes to remediate user risk.
 
 #### Require the user to reset password
 
