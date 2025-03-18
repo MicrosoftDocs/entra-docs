@@ -99,33 +99,7 @@ To enable Microsoft Entra SSO in the Azure portal, do the following:
 
 <a name='create-an-azure-ad-test-user'></a>
 
-### Create a Microsoft Entra test user
-
-In this section, you create a test user called B.Simon.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
-   1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you enable user B.Simon to use Azure SSO by granting access to AwareGo.
-
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
-1. In the **Applications** list, select **AwareGo**.
-1. On the app overview page, in the **Manage** section, select **Users and groups**.
-1. Select **Add user** and then, on the **Add Assignment** pane, select **Users and groups**.
-1. On the **Users and groups** pane, in the **Users** list, select **B.Simon**, and then select the **Select** button.
-1. If you're expecting to assign a role to the users, you can select it in the **Select a role** drop-down list. If no role has been set up for this app, the *Default Access* role is selected.
-1. On the **Add Assignment** pane, select the **Assign** button.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 ## Configure AwareGo SSO
 
