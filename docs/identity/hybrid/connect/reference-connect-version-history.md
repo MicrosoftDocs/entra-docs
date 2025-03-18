@@ -20,8 +20,9 @@ The Microsoft Entra team regularly updates Microsoft Entra Connect with new feat
 This article helps you keep track of the versions that have released and the changes in those versions.
 
 ### Breaking Change on Entra Connect Sync
+
 > [!WARNING]
-> The MSOnline PowerShell [retirement](https://aka.ms/msonlineretirement) on April 7, 2025 will impact Entra Connect Sync service. You must upgrade your connect sync version to [2.4.18.0](reference-connect-version-history.md#24180) for commercial cloud and [2.4.21.0](reference-connect-version-history.md#24210) for non-commercial clouds, or higher to avoid being impacted by this retirement. No action is required if you have upgraded your Entra Connect sync server. [Learn More](harden-update-ad-fs-pingfederate.md)
+The MSOnline PowerShell [retirement](https://aka.ms/msonlineretirement) on April 7, 2025 will impact Entra Connect Sync wizard. You must upgrade your connect sync version to [2.4.18.0](reference-connect-version-history.md#24180) for commercial cloud and [2.4.21.0](reference-connect-version-history.md#24210) for non-commercial clouds, or higher to maintain connect sync wizard capabilities such as schema refresh, configuration of staging mode and user-sign in changes. No action is required if you have upgraded your Entra Connect sync server. [Learn More](harden-update-ad-fs-pingfederate.md)
 
 ## Looking for the latest versions?
 
