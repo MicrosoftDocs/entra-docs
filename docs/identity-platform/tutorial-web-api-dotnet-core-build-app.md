@@ -118,9 +118,10 @@ Custom URL domains aren't supported in workforce tenants.
 
 All APIs must publish a minimum of one scope, also called delegated permission, for the client apps to obtain an access token for a user successfully. APIs should also publish a minimum of one app role, also called application permissions, for the client apps to obtain an access token as themselves, that is, when they aren't signing-in a user.
 
-We specify these permissions in the *appsettings.json* file. In this tutorial, you registered the following delegated and application permissions. 
- - Delegated permissions: *ToDoList.ReadWrite* and *ToDoList.Read*
- - Applications permissions: *ToDoList.ReadWrite.All* and *ToDoList.Read.All*
+We specify these permissions in the *appsettings.json* file. In this tutorial, you registered the following delegated and application permissions:
+ 
+ - **Delegated permissions:** *ToDoList.ReadWrite* and *ToDoList.Read*
+ - **Applications permissions:** *ToDoList.ReadWrite.All* and *ToDoList.Read.All*
 
 When a user or client application calls the web API, only clients with these scopes or permissions get authorized to access the protected endpoint.
 
@@ -273,8 +274,8 @@ This section explains how to add code to the controller scaffolded in the previo
 
 1. Since we granted permissions for this API to be called either using delegated permissions on behalf of the user or application permissions where the client calls as itself and not on the user's behalf, it's important to know whether the call is being made by the app on its own behalf. The easiest way to do this is the claims to find whether the access token contains the `idtyp` optional claim. This `idtyp` claim is the easiest way for the API to determine whether a token is an app token or an app + user token. We recommend enabling the `idtyp` optional claim.
 
-If the `idtyp` claim isn't enabled, you can use the `roles` and `scp` claims to determine whether the access token is an app token or an app + user token. An access token issued by Microsoft Entra External ID has at least one of the two claims. Access tokens issued to a user have the `scp` claim. Access tokens issued to an application have the `roles` claim. Access tokens that contain both claims are issued only to users, where the `scp` claim designates the delegated permissions, while the `roles` claim designates the user's role. Access tokens that have neither aren't to be honored.
-
+    If the `idtyp` claim isn't enabled, you can use the `roles` and `scp` claims to determine whether the access token is an app token or an app + user token. An access token issued by Microsoft Entra External ID has at least one of the two claims. Access tokens issued to a user have the `scp` claim. Access tokens issued to an application have the `roles` claim. Access tokens that contain both claims are issued only to users, where the `scp` claim designates the delegated permissions, while the `roles` claim designates the user's role. Access tokens that have neither aren't to be honored.
+    
     ```csharp
     private bool IsAppMakingRequest()
     {
@@ -288,7 +289,6 @@ If the `idtyp` claim isn't enabled, you can use the `roles` and `scp` claims to 
         }
     }
     ```
-
 1. Add a helper function that determines whether the request being made contains enough permissions to carry out the intended action. Check whether it's the app making the request on its own behalf or whether the app is making the call on behalf of a user who owns the given resource by validating the user ID.
 
     ```csharp
@@ -307,7 +307,6 @@ If the `idtyp` claim isn't enabled, you can use the `roles` and `scp` claims to 
             return userId;
         }
     ```
-
 1. Plug in your permission definitions to protect routes. Protect your API by adding the `[Authorize]` attribute to the controller class. This ensures the controller actions can be called only if the API is called with an authorized identity. The permission definitions define what kinds of permissions are needed to perform these actions.
 
     ```csharp
@@ -361,7 +360,7 @@ If the `idtyp` claim isn't enabled, you can use the `roles` and `scp` claims to 
 
 Next, we configure the application to recognize and use controllers for handling HTTP requests. Open the `program.cs` file and add the following highlighted code to register the controller services in the dependency injection container.
 
-:::code language="csharp" source="~/tutorials/first-web-api/samples/9.0/TodoApi/Program.cs" highlight="1-2,8-9":::
+:::code language="csharp" source="~/aspnetcore/tutorials/first-web-api/samples/9.0/TodoApi/Program.cs" highlight="1-2,8-9":::
 
 ## Run your API
 
