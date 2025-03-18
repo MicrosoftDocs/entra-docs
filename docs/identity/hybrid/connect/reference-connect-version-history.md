@@ -9,7 +9,7 @@ ms.topic: reference
 ms.date: 03/07/2024
 ms.subservice: hybrid-connect
 ms.author: billmath
-ms.custom: has-adal-ref, has-azure-ad-ps-ref
+ms.custom: no-azure-ad-ps-ref
 
 ---
 
@@ -120,7 +120,7 @@ To read more about autoupgrade, see [Microsoft Entra Connect: Automatic upgrade]
 11/14/2024: Released for download
 
 ### Updated Features
-- SQL related drivers shipped with Microsoft Entra Connect have been updated to OLE DB [version 18.7.4](/sql/connect/oledb/release-notes-for-oledb-driver-for-sql-server?view=sql-server-ver16#1874)
+- SQL related drivers shipped with Microsoft Entra Connect have been updated to OLE DB [version 18.7.4](/sql/connect/oledb/release-notes-for-oledb-driver-for-sql-server?view=sql-server-ver16&preserve-view=true#1874)
 
 ### Bug fixes
 - Fixed an issue with Privileged Identity Management (PIM), Microsoft Entra roles, and PIM for Groups to verify that PIM is enabled and that the user has the Hybrid Identity Administrator role enabled.
@@ -663,7 +663,7 @@ You can use these cmdlets to retrieve the TLS 1.2 enablement status or set it as
 - We addressed an issue where you were allowed to deselect objects and attributes used in sync rules by using the UI and PowerShell. We now show friendly error messages if you try to deselect any attribute or object that's used in any sync rules.
 - We made some updates to the "migrate settings code" to check and fix backward compatibility issues when the script runs on an older version of Microsoft Entra Connect.
 - We fixed a bug that occurred when PHS tried to look up an incomplete object. It didn't use the same algorithm to resolve the DC as it used originally to fetch the passwords. In particular, it ignored affinitized DC information. The Incomplete object lookup should use the same logic to locate the DC in both instances.
-- We fixed a bug where Microsoft Entra Connect can't read Application Proxy items by using Microsoft Graph because of a permissions issue with calling Microsoft Graph directly based on the Microsoft Entra Connect client identifier. To fix this issue, we removed the dependency on Microsoft Graph and instead use Azure AD PowerShell to work with the application proxy Application objects.
+- We fixed a bug where Microsoft Entra Connect can't read Application Proxy items by using Microsoft Graph because of a permissions issue with calling Microsoft Graph directly based on the Microsoft Entra Connect client identifier. To fix this issue, we removed the dependency on Microsoft Graph and instead use Microsoft Entra PowerShell to work with the application proxy Application objects.
 - We removed the writeback member limit from the Out to AD - Group SOAInAAD Exchange sync rule.
 - We fixed a bug that occurred when you changed connector account permissions. If an object came in scope that hadn't changed since the last delta import, a delta import wouldn't import it. We now display a warning to alert you of the issue.
 - We fixed an accessibility issue where the screen reader wasn't reading the radio button position. We added positional text to the radio button accessibility text field.

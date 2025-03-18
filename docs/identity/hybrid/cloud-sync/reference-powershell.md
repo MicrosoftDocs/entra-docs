@@ -5,7 +5,7 @@ description: This article describes how to install the Microsoft Entra Connect c
 author: billmath
 manager: femila
 ms.service: entra-id
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: no-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 12/17/2024
 ms.subservice: hybrid-cloud-sync
