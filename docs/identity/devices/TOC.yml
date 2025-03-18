@@ -32,6 +32,9 @@
     href: concept-primary-refresh-token.md
   - name: macOS Platform Single Sign-on overview 
     href: macos-psso.md
+- name: Microsoft Single Sign-on to Linux
+  href: sso-linux.md
+  displayName: Linux, sso, Single sign-on
 - name: How-to guides
   expanded: false
   items:
