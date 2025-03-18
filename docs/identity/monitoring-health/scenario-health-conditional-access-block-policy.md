@@ -2,11 +2,11 @@
 title: Conditional Access block policy health scenario
 description: Learn about the Microsoft Entra Health signals and alerts for Conditional Access block policy health scenarios
 author: shlipsey3
-manager: amycolannino
+manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 02/19/2025
+ms.date: 03/18/2025
 ms.author: sarahlipsey
 ms.reviewer: sarbar
 
@@ -15,7 +15,7 @@ ms.reviewer: sarbar
 
 # How to investigate the Conditional Access block policy alert
 
-Microsoft Entra Health monitoring provides a set of tenant-level health metrics you can monitor and alerts when a potential issue or failure condition is detected. There are multiple health scenarios that can be monitored, including Conditional Access block policies. To learn more about how Microsoft Entra Health works, see:
+Microsoft Entra Health monitoring provides a set of tenant-level health metrics you can monitor and alerts for when a potential issue or failure condition is detected. There are multiple health scenarios that can be monitored, including Conditional Access block policies. To learn more about how Microsoft Entra Health works, see:
 
 - [What is Microsoft Entra Health?](concept-microsoft-entra-health.md)
 - [How to use Microsoft Entra health monitoring signals and alerts](howto-use-health-scenario-alerts.md)
@@ -82,7 +82,7 @@ The following common issues could cause the Conditional Access block policy aler
 
 ### Many users are receiving the "You can’t get there from here" message
 
-This alert can trigger if there’s an increase in the "You can’t get there from here" error message during sign-in. This message appears if the application the user is trying to access can only be accessed from devices or client applications that meet the organization’s mobile device management policy.
+The Conditional Access block alert can trigger if there’s an increase in the "You can’t get there from here" error message during sign-in. This message appears if the application the user is trying to access can only be accessed from devices or client applications that meet the organization’s mobile device management policy.
 
 - A spike in a large number of users receiving this alert could indicate a change to the organization’s mobile device management policy.
 - A spike for a small number of users could indicate an issue with their specific device.
