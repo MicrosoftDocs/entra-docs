@@ -361,12 +361,7 @@ If the `idtyp` claim isn't enabled, you can use the `roles` and `scp` claims to 
 
 Next, we configure the application to recognize and use controllers for handling HTTP requests. Open the `program.cs` file and add the following highlighted code to register the controller services in the dependency injection container.
 
-:::code language="csharp" highlight="1,4":::
-builder.Services.AddControllers();
-
-var app = builder.Build();
-app.MapControllers();
-:::code:::
+:::code language="csharp" source="~/tutorials/first-web-api/samples/9.0/TodoApi/Program.cs" highlight="1-2,8-9":::
 
 ## Run your API
 
