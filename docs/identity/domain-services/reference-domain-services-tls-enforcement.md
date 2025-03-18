@@ -21,7 +21,7 @@ Microsoft Entra Domain Services supports TLS versions 1.0 and 1.1, but they're d
 Domain Services will use the following retirement path for TLS versions 1.0 and 1.1:
 
 1. Domain Services will remove the ability to disable the TLS 1.2 only mode. Customers who disable TLS 1.2 only mode can enable it. 
-1. After Domain Services removes the ability to disable the TLS 1.2 only mode, customers can't enable or disable TLS 1.2 only mode by using the Azure portal, Microsoft Entra admin center, or programmatically with ARM APIs, PowerShell, or Bicep or ARM templates. 
+1. After Domain Services removes the ability to disable the TLS 1.2 only mode, customers can't enable or disable TLS 1.2 only mode. 
 1. The Domain Services team will work with customers who need TLS versions 1.0 and 1.1.
 
 ## How to migrate to TLS 1.2 only mode in Domain Services
