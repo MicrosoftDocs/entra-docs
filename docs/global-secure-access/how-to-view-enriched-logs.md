@@ -50,13 +50,13 @@ Following the steps in this article, the logs are enriched with more information
 
 ## How to view the logs
 
-Viewing enriched Microsoft 365 audit logs is a one-time, two-step process. First, you need to collect Global Secure Access Network Traffic logs and Microsoft 365 Unified Audit logs to the same endpoint (Microsoft Sentinel is the recommended workspace). Second, you need to create your own join query to correlate the data between the two table or use Global Secure Access OOTB Enriched Microsoft 365 Logs workbook that already applies the needed queries.
+Viewing enriched Microsoft 365 audit logs is a one-time, two-step process. First, you need to collect Global Secure Access Network Traffic logs and Microsoft 365 Unified Audit logs to the same endpoint (Microsoft Sentinel is the recommended workspace). Second, you need to create your own join query to correlate the data between the two tables or use Global Secure Access OOTB Enriched Microsoft 365 Logs workbook that already applies the needed queries.
 
 > [!NOTE]
 > At this time, only SharePoint Online logs are available for log enrichment.
 
 > [!NOTE]
-> MS365 audit logs has undergone a feature change. Instead of creating a separate new stream of logs, you can now leverage the two existing log tables &mdash; Microsoft  365 OfficeActivity and Global Secure Access NetworkAccessTraffic tables &mdash; then combine the data using a Unique Token Id. 
+> MS365 audit logs have undergone a feature change. Instead of creating a separate new stream of logs, you can now leverage the two existing log tables &mdash; Microsoft  365 OfficeActivity and Global Secure Access NetworkAccessTraffic tables &mdash; then combine the data using a Unique Token Id. 
 
 ### Enable log data
 
