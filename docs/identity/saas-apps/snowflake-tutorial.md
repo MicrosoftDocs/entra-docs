@@ -82,18 +82,18 @@ Follow these steps to enable Microsoft Entra SSO.
 
 1. In the **Basic SAML Configuration** section, perform the following steps, if you wish to configure the application in **IDP** initiated mode:
 
-    a. Under the **Identifier (Entity ID)** section, click the **Add identifier** link, then type a URL in the textbox using the following pattern:
+    a. In the **Identifier** text box, type a URL using the following pattern:
     `https://<SNOWFLAKE-URL>.snowflakecomputing.com`
 
-    b. Under the **Reply URL (Assertion Consumer Service URL)** section, click the **Add reply URL** link, then type a URL in the textbox using the following pattern:
+    b. In the **Reply URL** text box, type a URL using the following pattern:
     `https://<SNOWFLAKE-URL>.snowflakecomputing.com/fed/login`
 
 1. Select **Set additional URLs** and perform the following step if you wish to configure the application in **SP** initiated mode:
 
-	a. In the **Sign on URL (Optional)** text box, type a URL using the following pattern:
+	a. In the **Sign-on URL** text box, type a URL using the following pattern:
     `https://<SNOWFLAKE-URL>.snowflakecomputing.com`
     
-	b. In the **Logout URL (Optional)** text box, type a URL using the following pattern:
+	b. In the **Logout URL** text box, type a URL using the following pattern:
     `https://<SNOWFLAKE-URL>.snowflakecomputing.com/fed/logout`
 
     > [!NOTE]
@@ -109,33 +109,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 <a name='create-an-azure-ad-test-user'></a>
 
-### Create a Microsoft Entra test user
-
-In this section, you create a test user called B.Simon.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
-   1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you enable B.Simon to use single sign-on by granting access to Snowflake.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Snowflake**.
-1. In the app's overview page, select **Users and groups**.
-1. Select **Add user/group**, then select **Users and groups** in the **Added Assignment** dialog.
-   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then select the **Select** button at the bottom of the screen.
-   1. If you're expecting a role to be assigned to the users, you can select it from the **Select a role** dropdown. If no role has been set up for this app, you see "Default Access" role selected.
-   1. In the **Added Assignment** dialog, select the **Assign** button.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 ## Configure Snowflake SSO
 
@@ -154,14 +128,14 @@ In this section, you enable B.Simon to use single sign-on by granting access to 
 
 1. In the **SAML2_SSO_URL**, paste **Login URL** value, which you copied previously.
 
-1. In the **SAML2_PROVIDER**, use value `CUSTOM`.
+1. In the **SAML2_PROVIDER**, give the value like `CUSTOM`.
 
 1. Select the **All Queries** and select **Run**.
 
     ![Snowflake sql](./media/snowflake-tutorial/certificate.png)
 
     ```
-    CREATE [ OR REPLACE ] SECURITY INTEGRATION [ IF NOT EXISTS ] ENTRAINTEGRATION
+    CREATE [ OR REPLACE ] SECURITY INTEGRATION [ IF NOT EXISTS ]
     TYPE = SAML2
     ENABLED = TRUE | FALSE
     SAML2_ISSUER = '<EntityID/Issuer value which you have copied>'
