@@ -96,55 +96,7 @@ Follow these steps to enable Microsoft Entra SSO in the Azure portal:
 
 <a name='create-an-azure-ad-test-user-and-group'></a>
 
-### Create a Microsoft Entra test user and group
-
-In the Azure portal, you'll create a test user called B.Simon. Then you'll create a test group that controls the access B.Simon has in Lenses.
-
-You can find out how Lenses uses group membership mapping for authorization in the [Lenses SSO documentation](https://docs.lenses.io/install_setup/configuration/security.html#id3).
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
-   1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
-
-**To create the group:**
-
-1. Go to **Microsoft Entra ID**, and then select **Groups**.
-1. At the top of the screen, select **New group**.
-1. In the **Group properties**, follow these steps:
-   1. In the **Group type** box, select **Security**.
-   1. In the **Group Name** box, enter **LensesUsers**.
-   1. Select **Create**.
-1. Select the group **LensesUsers** and copy the **Object ID** (for example, aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb). You'll use this ID in Lenses to map users of the group to the [correct permissions](https://docs.lenses.io/install_setup/configuration/security.html#id3).  
-
-**To assign the group to the test user:**
-
-1. Go to **Microsoft Entra ID**, and then select **Users**.
-1. Select the test user **B.Simon**.
-1. Select **Groups**.
-1. At the top of the screen, select **Add memberships**.
-1. Search for and select **LensesUsers**.
-1. Click **Select**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you'll enable B.Simon to use single sign-on by granting access to Lenses.io.
-
-1. Browse to **Identity** > **Applications** > **Enterprise applications**.
-1. On the applications list, select **Lenses.io**.
-1. On the app overview page, in the **Manage** section, select **Users and groups**.
-1. Select **Add user**.
-1. In the **Add Assignment** dialog box, select **Users and groups**.
-1. In the **Users and groups** dialog box, select **B.Simon** from the Users list. Then click the **Select** button at the bottom of the screen.
-1. If you're expecting any role value in the SAML assertion, in the **Select Role** dialog box, choose the appropriate role for the user from the list. Then click the **Select** button at the bottom of the screen.
-1. In the **Add Assignment** dialog box, select the **Assign** button.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 ## Configure Lenses.io SSO
 
