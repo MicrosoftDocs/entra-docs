@@ -7,9 +7,7 @@ manager: femila
 ms.assetid: 91b88fda-bca6-49a8-898f-8d906a661f07
 ms.service: entra-id
 ms.tgt_pltfrm: na
-ms.custom:
-  - has-azure-ad-ps-ref
-  - azure-ad-ref-level-one-done
+ms.custom: no-azure-ad-ps-ref
 ms.topic: how-to
 ms.date: 12/19/2024
 ms.subservice: hybrid-connect
@@ -109,7 +107,7 @@ We recommend that you harden your Microsoft Entra Connect server to decrease the
     
 > [!NOTE]
 > If you're installing SQL on the same server as Microsoft Entra Connect, we recommend configuring SQL to limit the maximum memory that it can use from the system.
-> Follow [SQL best practices](/sql/database-engine/configure-windows/server-memory-server-configuration-options?view=sql-server-ver16#recommendations) for memory configuration.
+> Follow [SQL best practices](/sql/database-engine/configure-windows/server-memory-server-configuration-options?view=sql-server-ver16&preserve-view=true#recommendations) for memory configuration.
 
 ### Accounts
 * You must have a Microsoft Entra Global Administrator account or Hybrid Identity Administrator account for the Microsoft Entra tenant you want to integrate with. This account must be a *school or organization account* and can't be a *Microsoft account*.

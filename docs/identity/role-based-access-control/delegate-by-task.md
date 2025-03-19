@@ -156,6 +156,8 @@ Here are the least privileged roles you should use when performing tasks for [de
 > | Enable device | [Cloud Device Administrator](permissions-reference.md#cloud-device-administrator) | [Intune Administrator](permissions-reference.md#intune-administrator) |
 > | Read basic configuration | [Default user role](../../fundamentals/users-default-permissions.md) |  |
 > | Read BitLocker keys | [Cloud Device Administrator](permissions-reference.md#cloud-device-administrator) | [Helpdesk Administrator](permissions-reference.md#helpdesk-administrator)<br/>[Intune Administrator](permissions-reference.md#intune-administrator)<br/>[Security Administrator](permissions-reference.md#security-administrator)<br/>[Security Reader](permissions-reference.md#security-reader) |
+> | Provision and manage IoT devices | [IoT Device Administrator](permissions-reference.md#iot-device-administrator) | [Cloud Device Administrator](permissions-reference.md#cloud-device-administrator) |
+> | Manage IoT device templates | [IoT Device Administrator](permissions-reference.md#iot-device-administrator) | [Cloud Device Administrator](permissions-reference.md#cloud-device-administrator) |
 
 ## Enterprise applications least privileged roles
 

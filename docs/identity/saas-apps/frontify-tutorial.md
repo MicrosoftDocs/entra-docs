@@ -54,8 +54,8 @@ Configure and test Microsoft Entra SSO with Frontify using a test user called **
 To configure and test Microsoft Entra SSO with Frontify, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Frontify SSO](#configure-frontify-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Frontify test user](#create-frontify-test-user)** - to have a counterpart of B.Simon in Frontify that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -90,33 +90,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 <a name='create-an-azure-ad-test-user'></a>
 
-### Create a Microsoft Entra test user
-
-In this section, you'll create a test user called B.Simon.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
-   1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you'll enable B.Simon to use single sign-on by granting access to Frontify.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Frontify**.
-1. In the app's overview page, find the **Manage** section and select **Users and groups**.
-1. Select **Add user**, then select **Users and groups** in the **Add Assignment** dialog.
-1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-1. If you're expecting any role value in the SAML assertion, in the **Select Role** dialog, select the appropriate role for the user from the list and then click the **Select** button at the bottom of the screen.
-1. In the **Add Assignment** dialog, click the **Assign** button.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 ## Configure Frontify SSO
 

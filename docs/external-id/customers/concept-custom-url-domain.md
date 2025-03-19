@@ -8,7 +8,7 @@ ms.service: entra-external-id
  
 ms.subservice: external
 ms.topic: concept-article
-ms.date: 12/03/2024
+ms.date: 03/12/2025
 ms.author: mimart
 ms.custom: it-pro
 
@@ -63,7 +63,7 @@ When using custom URL domains:
 > [!IMPORTANT]
 >
 >- Azure Front Door: The connection from the browser to Azure Front Door should always use IPv4 instead of IPv6.
->- Social identity providers: Custom URL domains support Apple. However, Google and Facebook are not currently supported. Users who want to sign up or sign in using Google or Facebook must use the default endpoint, *&lt;tenant-name&gt;.ciamlogin.com*, instead of the custom URL domain endpoint.
+>- Social identity providers: Custom URL domains now support Google and Facebook in addition to Apple.
 
 ## Blocking the default domain
 

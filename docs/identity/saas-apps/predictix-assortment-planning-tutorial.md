@@ -68,8 +68,8 @@ To configure and test Microsoft Entra single sign-on with Predictix Assortment P
 
 1. **[Configure Microsoft Entra single sign-on](#configure-azure-ad-single-sign-on)** to enable the feature for your users.
 2. **[Configure Predictix Assortment Planning single sign-on](#configure-predictix-assortment-planning-single-sign-on)** on the application side.
-3. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** to test Microsoft Entra single sign-on.
-4. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** to enable Microsoft Entra single sign-on for the user.
+3. **Create a Microsoft Entra test user** to test Microsoft Entra single sign-on.
+4. **Assign the Microsoft Entra test user** to enable Microsoft Entra single sign-on for the user.
 5. **[Create a Predictix Assortment Planning test user](#create-a-predictix-assortment-planning-test-user)** that's linked to the Microsoft Entra representation of the user.
 6. **[Test single sign-on](#test-single-sign-on)** to verify that the configuration works.
 

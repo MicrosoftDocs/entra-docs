@@ -53,7 +53,7 @@ Configure and test Microsoft Entra SSO with Brocade SANnav Management Portal usi
 To configure and test Microsoft Entra SSO with Brocade SANnav Management Portal, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-microsoft-entra-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-a-microsoft-entra-id-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
     1. **[Create SANnav Group and assign the user to the group](#create-sannav-group-and-assign-the-user-to-the-group)** - to enable B.Simon to use Microsoft Entra single sign-on. Add importing the SANnav Management Portal metadata file.
 1. **[Configure Brocade SANnav Management Portal SSO](#configure-brocade-sannav-management-portal-sso)** - to configure the single sign-on settings on application side. 
     1. **[Create Brocade SANnav Management Portal groups](#create-brocade-sannav-management-portal-groups)** - Assume B. Simon is part of the "SANnav Administrator" group in Microsoft Entra. Add importing the Microsoft Entra metadata.

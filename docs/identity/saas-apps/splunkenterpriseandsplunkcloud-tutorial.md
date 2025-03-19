@@ -55,8 +55,8 @@ Configure and test Microsoft Entra SSO with Microsoft Entra SSO for Splunk Enter
 To configure and test Microsoft Entra SSO with Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud, perform the following steps:
 
 1. **[Configure Microsoft Entra SSO](#configure-azure-ad-sso)** - to enable your users to use this feature.
-    1. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with B.Simon.
-    1. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable B.Simon to use Microsoft Entra single sign-on.
+    1. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with B.Simon.
+    1. **Assign the Microsoft Entra test user** - to enable B.Simon to use Microsoft Entra single sign-on.
 1. **[Configure Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud SSO](#configure-azure-ad-sso-for-splunk-enterprise-and-splunk-cloud-sso)** - to configure the single sign-on settings on application side.
     1. **[Create Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud test user](#create-azure-ad-sso-for-splunk-enterprise-and-splunk-cloud-test-user)** - to have a counterpart of B.Simon in Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud that is linked to the Microsoft Entra representation of user.
 1. **[Test SSO](#test-sso)** - to verify whether the configuration works.
@@ -94,39 +94,7 @@ Follow these steps to enable Microsoft Entra SSO.
 
 <a name='create-an-azure-ad-test-user'></a>
 
-### Create a Microsoft Entra test user
-
-In this section, you'll create a test user called B.Simon.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
-   1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you'll enable B.Simon to use single sign-on by granting access to Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud**.
-1. In the app's overview page, select **Users and groups**.
-1. Select **Add user/group**, then select **Users and groups** in the **Add Assignment** dialog.
-   1. In the **Users and groups** dialog, select **B.Simon** from the Users list, then click the **Select** button at the bottom of the screen.
-   1. In the Microsoft Entra admin center, navigate to **Identity** > **Groups** > **New group**.
-   1. Enter the group name, such as SplunkUsers.
-   1. Under Group type, select Security.
-   1. Add the test user (e.g., B.Simon) to this group.
-   1. Save the group.
-1. Next, assign the group to the Microsoft Entra SSO for Splunk Enterprise and Splunk Cloud application:
-    1. Navigate to the application's Users and Groups page.
-    1. Click Add user/group, select the group created (e.g., SplunkUsers), and assign it to the application.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 <a name='configure-azure-ad-sso-for-splunk-enterprise-and-splunk-cloud-sso'></a>
 

@@ -7,7 +7,7 @@ ms.date: 12/18/2024
 ms.author: billmath
 ms.topic: how-to
 ms.service: entra-id
-ms.custom: has-azure-ad-ps-ref, azure-ad-ref-level-one-done
+ms.custom: no-azure-ad-ps-ref
 ms.subservice: hybrid-connect
 ---
 

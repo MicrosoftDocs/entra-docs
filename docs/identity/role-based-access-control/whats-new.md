@@ -7,7 +7,7 @@ manager: femila
 ms.service: entra-id
 ms.subservice: role-based-access-control
 ms.topic: whats-new
-ms.date: 03/10/2025
+ms.date: 03/12/2025
 ms.author: rolyon
 
 ---
@@ -20,6 +20,7 @@ This article provides information about new features and documentation improveme
 
 | Date | Area | Description |
 | --- | --- | --- |
+| March 2025 | Roles | Added [IoT Device Administrator](permissions-reference.md#iot-device-administrator) role. |
 | March 2025 | Roles | Added [People Administrator](permissions-reference.md#people-administrator) role. |
 | February 2025 | Roles | Added [Global Secure Access Log Reader](permissions-reference.md#global-secure-access-log-reader) role. |
 | February 2025 | Security | Updated guidance for emergency access accounts. See [Manage emergency access accounts in Microsoft Entra ID](security-emergency-access.md). |

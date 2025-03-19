@@ -26,7 +26,7 @@ In this tutorial:
 ## Prerequisites
 
 * [Angular CLI](https://v17.angular.io/cli#installing-angular-cli)
-* [Node.js](https://nodejs.org/en/download/).
+* [Node.js 18.19 or newer](https://nodejs.org/en/download/).
 * [Visual Studio Code](https://code.visualstudio.com/download) or another code editor.
 * A new app registration in the Microsoft Entra admin center with the following configuration. For more information, see [Register an application](quickstart-register-app.md).
     * **Name**: identity-client-spa

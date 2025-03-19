@@ -60,8 +60,8 @@ To configure and test Microsoft Entra single sign-on with Accredible, you need t
 
 1. **[Configure Microsoft Entra Single Sign-On](#configure-azure-ad-single-sign-on)** - to enable your users to use this feature.
 2. **[Configure Accredible Single Sign-On](#configure-accredible-single-sign-on)** - to configure the Single Sign-On settings on application side.
-3. **[Create a Microsoft Entra test user](#create-an-azure-ad-test-user)** - to test Microsoft Entra single sign-on with Britta Simon.
-4. **[Assign the Microsoft Entra test user](#assign-the-azure-ad-test-user)** - to enable Britta Simon to use Microsoft Entra single sign-on.
+3. **Create a Microsoft Entra test user** - to test Microsoft Entra single sign-on with Britta Simon.
+4. **Assign the Microsoft Entra test user** - to enable Britta Simon to use Microsoft Entra single sign-on.
 5. **[Create Accredible test user](#create-accredible-test-user)** - to have a counterpart of Britta Simon in Accredible that is linked to the Microsoft Entra representation of user.
 6. **[Test single sign-on](#test-single-sign-on)** - to verify whether the configuration works.
 
@@ -123,48 +123,7 @@ To configure single sign-on on **Accredible** side, you need to send the downloa
 
 <a name='create-an-azure-ad-test-user'></a>
 
-### Create a Microsoft Entra test user
-
-The objective of this section is to create a test user called Britta Simon.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [User Administrator](~/identity/role-based-access-control/permissions-reference.md#user-administrator).
-1. Browse to **Identity** > **Users** > **All users**.
-1. Select **New user** > **Create new user**, at the top of the screen.
-1. In the **User** properties, follow these steps:
-   1. In the **Display name** field, enter `B.Simon`.  
-   1. In the **User principal name** field, enter the username@companydomain.extension. For example, `B.Simon@contoso.com`.
-   1. Select the **Show password** check box, and then write down the value that's displayed in the **Password** box.
-   1. Select **Review + create**.
-1. Select **Create**.
-
-<a name='assign-the-azure-ad-test-user'></a>
-
-### Assign the Microsoft Entra test user
-
-In this section, you enable Britta Simon to use Azure single sign-on by granting access to Accredible.
-
-1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com) as at least a [Cloud Application Administrator](~/identity/role-based-access-control/permissions-reference.md#cloud-application-administrator).
-1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Accredible**.
-
-    ![Enterprise applications blade](common/enterprise-applications.png)
-
-1. In the applications list, select **Accredible**.
-
-    ![The Accredible link in the Applications list](common/all-applications.png)
-
-3. In the menu on the left, select **Users and groups**.
-
-    ![The "Users and groups" link](common/users-groups-blade.png)
-
-4. Click the **Add user** button, then select **Users and groups** in the **Add Assignment** dialog.
-
-    ![The Add Assignment pane](common/add-assign-user.png)
-
-5. In the **Users and groups** dialog, select **Britta Simon** in the Users list, then click the **Select** button at the bottom of the screen.
-
-6. If you are expecting any role value in the SAML assertion then in the **Select Role** dialog select the appropriate role for the user from the list, then click the **Select** button at the bottom of the screen.
-
-7. In the **Add Assignment** dialog, click the **Assign** button.
+[!INCLUDE [create-assign-users-sso.md](~/identity/saas-apps/includes/create-assign-users-sso.md)]
 
 ### Create Accredible test user
 

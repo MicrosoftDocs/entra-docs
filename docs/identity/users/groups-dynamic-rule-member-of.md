@@ -29,6 +29,7 @@ You must be at least a [User Administrator](/entra/identity/role-based-access-co
 
 ## Preview limitations
 
+- MemberOf is only available in Azure Public cloud.
 - Each Microsoft Entra tenant is limited to 500 dynamic membership groups using the `memberOf` attribute. The `memberOf` groups count toward the total dynamic group member quota of 15,000.
 - Each dynamic group can have up to 50 member groups.
 - When you add members of security groups to `memberOf` dynamic membership groups, only direct members of the security group become members of the dynamic group.
