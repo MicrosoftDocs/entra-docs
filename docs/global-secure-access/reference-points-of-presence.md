@@ -103,6 +103,7 @@ The Global Secure Access service receives traffic on these FQDNs and IP addresse
 - `150.171.15.0/24`
 - `150.171.18.0/24`
 - `151.206.0.0/16`
+- `6.6.0.0/16`
  
 ### Global Secure Access egress IP ranges
 Outbound Internet traffic that is acquired by Global Secure Access, including traffic to Microsoft services, will egress from Global Secure Access instances. If the target service uses IP restrictions and access controls, you may need to configure the target service to allow IP connections from Global Secure Access subnets:
