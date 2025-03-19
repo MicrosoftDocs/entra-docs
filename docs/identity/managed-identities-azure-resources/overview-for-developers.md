@@ -808,7 +808,7 @@ func RunManagedIdentity() {
         fmt.Println(err)
     }
 
-    // Use this for user-assigned managed identities with clientID.
+    // Use this for user-assigned managed identities with a client ID.
     miClientIdUserAssigned, err := mi.New(mi.ClientID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"))
     
     if err != nil {
