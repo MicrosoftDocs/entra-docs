@@ -36,7 +36,7 @@ Policies can be applied to all applications in your organization or to specific 
 
 ## Recommended practices for secrets and certificates
 
-Attacks on applications often target secrets such as passwords, keys, and certificates, to gain unauthorized access to sensitive data. By enforcing restrictions you can help mitigate these risks and ensure that your applications remain secure. The following are our recommended restrictions for secrets and certificates:
+Attacks on applications often target secrets such as passwords, keys, and certificates, to gain unauthorized access to sensitive data. By enforcing restrictions, you can mitigate these risks and ensure that your applications remain secure. The following are our recommended restrictions for secrets and certificates:
 
 * **Disable application passwords / client secrets**: Applications that use client secrets might store them in configuration files, hardcode them in scripts, or risk their exposure in other ways. The complexities of secret management make client secrets susceptible to leaks and attractive to attackers.
 
@@ -52,7 +52,7 @@ Before you create a new application management policy, you can read your existin
 
 ### Example
 
-The following example reads the default application management policy for your tenant. The response will show the current policy settings.
+The following example reads the default application management policy for your tenant. The response shows the current policy settings.
 
 :::zone pivot="entra-powershell"
 
@@ -66,7 +66,7 @@ Get-MgPolicyDefaultAppManagementPolicy | format-list
 
 ### Output
 
-The following is an example of the response that shows the default tenant app management policy. Your policy may differ from the example. If no policy has been applied in your organization, the `id` field will be set to `00000000-0000-0000-0000-000000000000` and the `isEnabled` field will be set to `false`.
+The following example shows the output of the default tenant app management policy. Your policy might differ from the example. If no policy is applied in your organization, the `id` field is set to `00000000-0000-0000-0000-000000000000` and the `isEnabled` field is set to `false`.
 
 ```output
 ApplicationRestrictions      : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAppManagementApplicationConfiguration
@@ -83,7 +83,7 @@ AdditionalProperties         : {[@odata.context, https://graph.microsoft.com/v1.
 
 :::zone pivot="ms-graph"
 
-Sign into Microsoft Graph explorer with at least a [Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator) role. Then, run the following request to read the default application management policy for your tenant. Ensure you consent to the `Policy.Read.All` permision.
+Sign into Microsoft Graph explorer with at least a [Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator) role. Then, run the following request to read the default application management policy for your tenant. Ensure you consent to the `Policy.Read.All` permission.
 
 
 ```http
@@ -91,7 +91,7 @@ GET https://graph.microsoft.com/v1.0/policies/defaultAppManagementPolicy
 ```
 ### Response
 
-The following is an example of the response that shows the default tenant app management policy. Your policy may differ from the example. If no policy has been applied in your organization, the `id` field will be set to `00000000-0000-0000-0000-000000000000` and the `isEnabled` field will be set to `false`. 
+The following example shows the response of the default tenant app management policy. Your policy might differ from the example. If no policy is already applied in your organization, the `id` field is set to `00000000-0000-0000-0000-000000000000` and the `isEnabled` field is set to `false`. 
 
 ```http
 HTTP/1.1 200 OK
@@ -122,16 +122,16 @@ Content-type: application/json
 Updating the default application management policy to use our recommendations requires setting the following parameters:
 
 * `passwordCredentials`: Allows you to set parameters for client secrets and symmetric keys.
-    * The `restrictionType` parameter allows you to set the type of restriction we want to apply. In this case, we are restricting `passwordAddition`, `customPasswordAddition`, and `symmetricKeyAddition`.
-    * The `state` parameter allows you to enable or disable the restriction. If set to `enabled`, the restriction will be applied. If set to `disabled`, the restriction will not be applied.
-    * The `maxLifetime` parameter allows you to set the maximum lifetime of the secret. For `passwordCredentials` we have set the value to `null`.
-    * The `restrictForAppsCreatedAfterDateTime` parameter allows you to set a date from which the policy will take effect. Any applications created before this date will be unaffected by the policy. Please ensure you update this date to suit your needs.
+    * The `restrictionType` parameter allows you to set the type of restriction we want to apply. In this case, we're restricting `passwordAddition`, `customPasswordAddition`, and `symmetricKeyAddition`.
+    * The `state` parameter allows you to enable or disable the restriction. If set to `enabled`, the restriction is applied. If set to `disabled`, the restriction isn't applied.
+    * The `maxLifetime` parameter allows you to set the maximum lifetime of the secret. For `passwordCredentials`, we set the value to `null`.
+    * The `restrictForAppsCreatedAfterDateTime` parameter allows you to set a date from which the policy takes effect. Any applications created before this date are unaffected by the policy. Ensure you update this date to suit your needs.
 
-* `keyCredentials`: Allows you to set parameters for certificates. In this case, we are restricting the lifetime of application certificates to 180 days.
-    * The `restrictionType` parameter allows you to set the type of restriction we want to apply. In this case, we are restricting `asymmetricKeyLifetime`.
-    * The `state` parameter allows you to enable or disable the restriction. If set to `enabled`, the restriction will be applied. If set to `disabled`, the restriction will not be applied.
-    * The `maxLifetime` parameter allows you to set the maximum lifetime of the certificate. In this case, we are restricting the lifetime to 180 days. This is done using the ISO 8601 duration format. The `P` indicates that this is a period of time, and `180D` indicates that the period is 180 days. For more information on duration formatting please see [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Durations).
-    * The `restrictForAppsCreatedAfterDateTime` parameter allows you to restrict the secret for applications created after a certain date. Any applications created before this date will be unaffected by the policy. Please ensure you update this date to suit your needs.
+* `keyCredentials`: Allows you to set parameters for certificates. In this case, we're restricting the lifetime of application certificates to 180 days.
+    * The `restrictionType` parameter allows you to set the type of restriction we want to apply. In this case, we're restricting `asymmetricKeyLifetime`.
+    * The `state` parameter allows you to enable or disable the restriction. If set to `enabled`, the restriction is applied. If set to `disabled`, the restriction isn't applied.
+    * The `maxLifetime` parameter allows you to set the maximum lifetime of the certificate. In this case, we're restricting the lifetime to 180 days. This setting is applied using the ISO 8601 duration format. The `P` indicates that it's a period of time, and `180D` indicates that the period is 180 days. For more information on duration formatting, see [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Durations).
+    * The `restrictForAppsCreatedAfterDateTime` parameter allows you to restrict the secret for applications created after a certain date. Any applications created before this date are unaffected by the policy. Ensure you update this date to suit your needs.
 
 ### Example
 
@@ -225,7 +225,7 @@ Content-Type: application/json
 ```
 ### Response
 
-Once the request is sent, you should receive a response indicating that the policy has been updated successfully. The response should be a `204 No Content` status code, indicating that the request was successful and there is no content to return.
+Once the request is sent, you should receive a response indicating that the policy is updated successfully. The response should be a `204 No Content` status code, indicating that the request was successful and there's no content to return.
 
 ```http
     HTTP/1.1 204 No Content
@@ -233,11 +233,11 @@ Once the request is sent, you should receive a response indicating that the poli
 
 :::zone-end
 
-## Confirm the policy has been applied
+## Confirm the policy is applied
 
-Once you have updated your application management policy, you can confirm that it has been applied by reading the default application management policy again as [shown earlier](#read-your-tenant-application-management-policy). The response should show the updated policy with the restrictions you applied.
+Once you update your application management policy, you can confirm that it's applied by reading the default application management policy again as [shown earlier](#read-your-tenant-application-management-policy). The response should show the updated policy with the restrictions you applied.
 
-If this is the first time you are applying an application management policy you will also notice that the `id` field has changed from `00000000-0000-0000-0000-000000000000` to a new GUID. This indicates that the policy has been created.
+If it's the first time, you're applying an application management policy you notice that the `id` field is changed from `00000000-0000-0000-0000-000000000000` to a new GUID. This change indicates that the policy is created.
 
 ## Related content
 
