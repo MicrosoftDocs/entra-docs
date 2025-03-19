@@ -5,7 +5,7 @@ author: cilwerner
 manager: CelesteDG
 ms.author: cwerner
 ms.custom: has-adal-ref 
-ms.date: 02/28/2024
+ms.date: 03/19/2025
 ms.reviewer: saeeda, ddelimarsky
 ms.service: identity-platform
 ms.topic: concept-article

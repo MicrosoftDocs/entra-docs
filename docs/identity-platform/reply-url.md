@@ -4,8 +4,8 @@ description: A description of the best practices and limitations of redirect URI
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.date: 06/25/2024
-ms.reviewer:
+ms.date: 03/19/2025
+ms.reviewer: jmprieur
 ms.service: identity-platform
 
 ms.topic: concept-article

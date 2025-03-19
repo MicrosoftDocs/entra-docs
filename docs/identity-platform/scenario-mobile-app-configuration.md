@@ -4,8 +4,7 @@ description: Learn how to configure your mobile app's code to call a web API
 author: henrymbuguakiarie
 manager: CelesteDG
 ms.author: henrymbugua
-ms.custom: 
-ms.date: 06/16/2020
+ms.date: 03/19/2025
 ms.reviewer: jmprieur
 ms.service: identity-platform
 
