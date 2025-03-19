@@ -785,7 +785,44 @@ if "access_token" in result:
 
 #### [Go](#tab/Go)
 
-MSAL Go doesn't support managed identities yet. You can use the Azure Identity library to acquire tokens for managed identities.
+```go
+import (
+    "context"
+    "fmt"
+    "net/http"
+
+    mi "github.com/AzureAD/microsoft-authentication-library-for-go/apps/managedidentity"
+)
+
+func RunManagedIdentity() {
+    
+    // Use this for system-assigned managed identities
+    miSystemAssigned, error := mi.New(mi.SystemAssigned())
+    
+    if error != nil {
+        fmt.Println(error)
+    }
+
+    result, err := miSystemAssigned.AcquireToken(context.TODO(), "https://management.azure.com")
+	
+    if err != nil {
+		log.Fatal(err)
+	}
+
+    // Use this for user-assigned managed identities with clientID.
+    miClientIdUserAssigned, error := mi.New(mi.ClientID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"))
+    
+    if error != nil {
+        fmt.Println(error)
+    }
+
+    result, err := miClientIdUserAssigned.AcquireToken(context.TODO(), "https://management.azure.com")
+
+    // Print out token expiry time
+	fmt.Println("token expire at : ", result.ExpiresOn)
+}
+
+```
 
 ---
 
