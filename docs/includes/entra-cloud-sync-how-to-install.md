@@ -20,10 +20,10 @@ ms.custom: include file
 
     :::image type="content" source="media/entra-cloud-sync-how-to-install/new-ux-2.png" alt-text="Screenshot that shows downloading the agent." lightbox="media/entra-cloud-sync-how-to-install/new-ux-2.png":::
 
- 1. After the Microsoft Entra Connect Provisioning Agent Package downloads, run the *AADConnectProvisioningAgentSetup.exe* installation file from your downloads folder.
+ 1. After you download the Microsoft Entra Connect Provisioning Agent Package, run the *AADConnectProvisioningAgentSetup.exe* installation file from your downloads folder.
 
     > [!NOTE]
-    > When you perform an installation for the US Government Cloud, use *AADConnectProvisioningAgentSetup.exe ENVIRONMENTNAME=AzureUSGovernment*. For more information, see [Install an agent in the US government cloud](~/identity/hybrid/cloud-sync/how-to-install.md#install-an-agent-in-the-us-government-cloud).
+    > When you perform an installation for the US Government Cloud, use *AADConnectProvisioningAgentSetup.exe ENVIRONMENTNAME=AzureUSGovernment*. For more information, see [Install an agent in the US Government Cloud](~/identity/hybrid/cloud-sync/how-to-install.md#install-an-agent-in-the-us-government-cloud).
 
  1. On the screen that opens, select the **I agree to the license terms and conditions** checkbox, and then select **Install**.
 
@@ -44,7 +44,7 @@ ms.custom: include file
 
     :::image type="content" source="media/entra-cloud-sync-how-to-install/azure-ad-cloud-sync-sign-in-to-azure.png" alt-text="Screenshot that shows the Connect Microsoft Entra ID screen." lightbox="media/entra-cloud-sync-how-to-install/azure-ad-cloud-sync-sign-in-to-azure.png":::
 
- 1. On the **Configure Service Account** screen, select a group Managed Service Account (gMSA). This account is used to run the agent service. If a managed service account is already configured in your domain by another agent and you're installing a second agent, select **Create gMSA**. The system detects the existing account and adds the required permissions for the new agent to use the gMSA account. When prompted, choose one of two options:
+ 1. On the **Configure Service Account** screen, select a group Managed Service Account (gMSA). This account is used to run the agent service. If a managed service account is already configured in your domain by another agent and you're installing a second agent, select **Create gMSA**. The system detects the existing account and adds the required permissions for the new agent to use the gMSA account. When you're prompted, choose one of two options:
 
     - **Create gMSA**: Let the agent create the **provAgentgMSA$** managed service account for you. The group managed service account (for example, `CONTOSO\provAgentgMSA$`) is created in the same Active Directory domain where the host server joined. To use this option, enter the Active Directory domain administrator credentials (recommended).
     - **Use custom gMSA**: Provide the name of the managed service account that you manually created for this task.
