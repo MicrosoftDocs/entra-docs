@@ -8,7 +8,7 @@ manager: femila
 ms.service: entra-id
 ms.subservice: users
 ms.topic: how-to
-ms.date: 03/17/2025
+ms.date: 03/19/2025
 ms.author: barclayn
 ---
 
@@ -136,8 +136,56 @@ cf41f428-3b45-490b-b69f-a349c8a4c38e PowerBi - Licensed users POWER_BI_STANDARD
 c2652d63-9161-439b-b74e-fcd8228a7074 EMSandOffice             {ENTERPRISEPREMIUM,EMSPREMIUM}
 ```
 
-## Get statistics for groups with licenses
+## View all disabled service plan licenses assigned to groups
 
+```powershell
+$groups = Get-MgGroup -All
+$groupsWithLicenses = @()
+
+foreach ($group in $groups) {
+$licenses = Get-MgGroup -GroupId $group.Id -Property "AssignedLicenses, Id, DisplayName" |
+Select-Object AssignedLicenses, DisplayName, Id
+
+if ($licenses.AssignedLicenses) {
+    foreach ($license in $licenses.AssignedLicenses) {
+        $skuId = $license.SkuId
+        $disabledPlans = $license.DisabledPlans
+
+        $skuDetails = Get-MgSubscribedSku | Where-Object { $_.SkuId -eq $skuId }
+        $skuPartNumber = $skuDetails.SkuPartNumber
+
+        $disabledPlanDetails = @()
+        if ($disabledPlans.Count -gt 0) {
+            foreach ($planId in $disabledPlans) {
+                $planDetails = $skuDetails.ServicePlans | Where-Object { $_.ServicePlanId -eq $planId }
+                
+                if ($planDetails) {
+                    $disabledPlanDetails += "$($planDetails.ServicePlanName) ($planId)"
+                }
+            }
+        } else {
+            $disabledPlanDetails = "None"
+        }
+
+        $groupsWithLicenses += [PSCustomObject]@{
+            GroupObjectId  = $group.Id
+            GroupName      = $group.DisplayName
+            SkuId          = $skuId
+            SkuPartNumber  = $skuPartNumber
+            DisabledPlans  = ($disabledPlanDetails -join ", ")
+        }
+    }
+}
+}
+
+Export to CSV
+$csvPath = "$env:USERPROFILE\Documents\GroupLicenses.csv"
+$groupsWithLicenses | Export-Csv -Path $csvPath -NoTypeInformation -Encoding UTF8
+
+Write-Host "Export completed: $csvPath"
+```
+
+## Get statistics for groups with licenses
 
 ```powershell
 # Import User Graph Module
@@ -384,7 +432,8 @@ $allUserLicenses | Export-Csv $path -Force -NoTypeInformation
 Write-Host "CSV file generated at: $((Get-Item $path).FullName)"
 ```
 
-
+>[!NOTE]
+>This script retrieves a list of all licensed users in your environment, showing which licenses are assigned and the method of assignment. In the results, where "AssignedBy" shows "User", it indicates a direct license assignment. Where "SkuPartNumber" shows "Unknown SKU", it indicates the specific license SKU is disabled in your tenant. The script exports the complete results to a CSV file in your local AppData folder for further analysis.
 
 ## Check if user license is assigned directly or inherited from a group
 
