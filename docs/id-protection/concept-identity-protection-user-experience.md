@@ -1,11 +1,11 @@
 ---
 title: User self-remediation with Microsoft Entra ID Protection
-description: How can users self-remediate when administrators allow it? What is the experience when they don't?
+description: How can users self-remediate risk when administrators allow it? What is the experience when they don't?
 
 ms.service: entra-id-protection
 
 ms.topic: conceptual
-ms.date: 02/28/2025
+ms.date: 03/19/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
@@ -61,7 +61,7 @@ If the home tenant didn't enable self-remediation policies, an administrator in 
 1. An organization has a managed service provider (MSP) or cloud solution provider (CSP) who takes care of configuring their cloud environment. 
 1. One of the MSPs technicians credentials are leaked and triggers high risk. That technician is blocked from signing in to other tenants. 
 1. The technician can self-remediate and sign in if the home tenant enabled the appropriate policies [requiring password change for high risk users](~/identity/conditional-access/policy-risk-based-user.md) or [MFA for risky users](~/identity/conditional-access/policy-risk-based-sign-in.md). 
-   1. If the home tenant didn't enable self-remediation policies, an administrator in the technician's home tenant has to [remediate the risk](howto-identity-protection-remediate-unblock.md#risk-remediation).
+   1. If the home tenant didn't enable self-remediation policies, an administrator in the technician's home tenant has to [remediate the risk](howto-identity-protection-remediate-unblock.md).
 
 ## See also
 

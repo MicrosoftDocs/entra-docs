@@ -52,7 +52,7 @@ Organizations who enable [password hash synchronization](~/identity/hybrid/conne
 
 This configuration provides organizations two new capabilities:
 
-- Risky hybrid users can self-remediate without administrators intervention. When a password is changed on-premises, user risk is automatically remediated within Microsoft Entra ID Protection, resetting the current user risk state.
+- Risky hybrid users can self-remediate without administrator intervention. When a password is changed on-premises, user risk is automatically remediated within Microsoft Entra ID Protection, resetting the current user risk state.
 - Organizations can proactively deploy [user risk policies that require password changes](howto-identity-protection-configure-risk-policies.md#user-risk-policy-in-conditional-access) to confidently protect their hybrid users. This option strengthens your organization's security posture and simplifies security management by ensuring that user risks are promptly addressed, even in complex hybrid environments.
 
 :::image type="content" source="media/howto-identity-protection-remediate-unblock/allow-on-premises-password-reset-user-risk.png" alt-text="Screenshot showing the location of the Allow on-premises password change to reset user risk checkbox." lightbox="media/howto-identity-protection-remediate-unblock/allow-on-premises-password-reset-user-risk.png":::
@@ -138,14 +138,14 @@ Because this method doesn't affect the user's existing password, it doesn't brin
 If after investigation, an account is confirmed compromised:
 
 1. Select the event or user in the **Risky sign-ins** or **Risky users** reports and choose **Confirm compromised**.
-1. If a risk-based policy wasn't triggered, and the risk wasn't [self-remediated](#self-remediation-with-risk-based-policy), then take one or more of the following actions:
+1. If a risk-based policy wasn't triggered, and the risk wasn't self-remediated using one of the methods described in this article, then take one or more of the following actions:
    1. [Request a password reset](#manual-password-reset).
    1. Block the user if you suspect the attacker can reset the password or do multifactor authentication for the user.
    1. [Revoke refresh tokens](/entra/identity/users/users-revoke-access).
    1. [Disable any devices](~/identity/devices/manage-device-identities.md) that are considered compromised.
    1. If using [continuous access evaluation](~/identity/conditional-access/concept-continuous-access-evaluation.md), revoke all access tokens.
 
-For more information about what happens when confirming compromise, see the section [How to give risk feedback on risks](howto-identity-protection-risk-feedback.md#how-to-give-risk-feedback-in-microsoft-entra-id-protection).
+For more information about what happens when confirming compromise, see [How to give risk feedback on risks](howto-identity-protection-risk-feedback.md#how-to-give-risk-feedback-in-microsoft-entra-id-protection).
 
 ### Deleted users
 
@@ -153,24 +153,24 @@ If a user was deleted from the directory that had a risk present, that user stil
 
 ## Unblocking users
 
-An administrator can block a sign-in based on their risk policy or investigations. A block can occur based on either sign-in or user risk.
+As an administrator, you can block a sign-in based on the your risk policy or investigations. A block can occur based on either sign-in or user risk.
 
 ### Unblocking based on user risk
 
-To unblock an account blocked because of user risk, administrators have the following options:
+To unblock an account blocked because of user risk, you have the following options:
 
-1. **Reset password** - You can reset the user's password. If a user is compromised or is at risk of being compromised, the user's password should be reset to protect their account and your organization.
+1. **Reset password** - If a user is compromised or is at risk of being compromised, the user's password should be reset to protect their account and your organization.
 1. **Dismiss user risk** - The user risk policy blocks a user when the configured user risk level for blocking access is reached. If after investigation you're confident that the user isn't at risk of being compromised, and it's safe to allow their access, then you can reduce a user's risk level by dismissing their user risk.
-1. **Exclude the user from policy** - If you think that the current configuration of your sign-in policy is causing issues for specific users, and it's safe to grant access to these users without applying this policy to them, then you can exclude them from this policy. For more information, see the section Exclusions in the article [How To: Configure and enable risk policies](howto-identity-protection-configure-risk-policies.md#policy-exclusions).
-1. **Disable policy** - If you think that your policy configuration is causing issues for all your users, you can disable the policy. For more information, see the article [How To: Configure and enable risk policies](howto-identity-protection-configure-risk-policies.md).
+1. **Exclude the user from policy** - If you think that the current configuration of your sign-in policy is causing issues for specific users, and it's safe to grant access to these users without applying this policy to them, then you can exclude them from this policy. For more information, see [How To: Configure and enable risk policies](howto-identity-protection-configure-risk-policies.md#policy-exclusions).
+1. **Disable policy** - If you think that your policy configuration is causing issues for all your users, you can disable the policy. For more information, see [How To: Configure and enable risk policies](howto-identity-protection-configure-risk-policies.md).
 
 ### Unblocking based on sign-in risk
 
-To unblock an account based on sign-in risk, administrators have the following options:
+To unblock an account based on sign-in risk, you have the following options:
 
 1. **Sign in from a familiar location or device** - A common reason for blocked suspicious sign-ins are sign-in attempts from unfamiliar locations or devices. Your users can quickly determine whether this reason is the blocking reason by trying to sign-in from a familiar location or device.
 1. **Exclude the user from policy** - If you think that the current configuration of your sign-in policy is causing issues for specific users, you can exclude the users from it. For more information, see the section Exclusions in the article [How To: Configure and enable risk policies](howto-identity-protection-configure-risk-policies.md#policy-exclusions).
-1. **Disable policy** - If you think that your policy configuration is causing issues for all your users, you can disable the policy. For more information, see the article [How To: Configure and enable risk policies](howto-identity-protection-configure-risk-policies.md).
+1. **Disable policy** - If you think that your policy configuration is causing issues for all your users, you can disable the policy. For more information, see [How To: Configure and enable risk policies](howto-identity-protection-configure-risk-policies.md).
 
 ### Automatic blocking due to high confidence risk
 

@@ -1,11 +1,11 @@
 ---
 title: Impact analysis of risk-based access policies workbook
-description: Take a proactive look at the impact of risk-based policies in your environment.
+description: Take a proactive look at the impact of risk-based Conditional Access policies in your environment.
 
 ms.service: entra-id-protection
 
 ms.topic: how-to
-ms.date: 07/18/2024
+ms.date: 03/19/2025
 
 author: shlipsey3
 ms.author: sarahlipsey
@@ -111,7 +111,7 @@ This section provides a detailed list of those IP addresses that aren't consider
 
 :::image type="content" source="media/workbook-risk-based-policy-impact/workbook-risk-based-impact-trusted-network.png" alt-text="Screenshot showing the trusted network section of the workbook." lightbox="media/workbook-risk-based-policy-impact/workbook-risk-based-impact-trusted-network.png":::
 
-## FAQ: 
+## FAQs
 
 ### What if I don’t use Microsoft Entra for multifactor authentication? 
 
@@ -119,7 +119,7 @@ If you don’t use Microsoft Entra multifactor authentication, you might still s
 
 ### What if I am in a hybrid environment? 
 
-User risk can be self-remediated using a [secure password change](howto-identity-protection-remediate-unblock.md#self-remediation-with-risk-based-policy) if self-service password reset is enabled with password writeback. If only password hash sync is enabled, consider enabling [allow on-premises password reset to remediate user risk](howto-identity-protection-remediate-unblock.md#allow-on-premises-password-reset-to-remediate-user-risks). 
+User risk can be self-remediated using a [secure password change](howto-identity-protection-remediate-unblock.md#user-self-remediation) if self-service password reset is enabled with password writeback. If only password hash sync is enabled, consider enabling [allow on-premises password reset to remediate user risk](howto-identity-protection-remediate-unblock.md#allow-on-premises-password-reset-to-remediate-user-risks). 
 
 ### I just received a high-risk alert but they aren't showing up in this report? 
 
