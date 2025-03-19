@@ -17,11 +17,11 @@ From March 2026, Microsoft Entra ID will no longer support Service-Principal-les
 
 Microsoft Entra ID will block authentication for multi-tenant applications that do not have an enterprise application registration in the resource tenant. This scenario is also known as Service-Principal-Less or “SP-Less Authentication.” This behavior has already been blocked for most resources. This change will address a few remaining exceptions. SP-less authentication issues tokens without permissions and without an object identifier (object ID). This is a preventive security measure. 
 
-This change to SP-less authentication will make “requireClientServicePrincipal” a requirement for all applications in order to improve our “Security by default” ([See authentication behaviors](/graph/api/resources/authenticationbehaviors?view=graph-rest-beta&preserve-view=true)). SP-less authentication can be abused if the resource applications (i.e. APIs) perform incomplete validations.  Microsoft has verified validations for its resource applications. However, with this action, the risk of this gap re-appearing in future versions or being exploited in third-party resources outside Microsoft’s control is minimized. 
+This change to SP-less authentication will make client service principal a requirement for all applications in order to improve our “Security by default” ([See authentication behaviors](/graph/api/resources/authenticationbehaviors?view=graph-rest-beta&preserve-view=true)). SP-less authentication can be abused if the resource applications (i.e. APIs) perform incomplete validations. Microsoft has verified that validations are not vulnerable to SP-less authentication. However, with this action, the risk of this gap re-appearing in future versions or being exploited in third-party resources outside Microsoft’s control is minimized. 
 
 Additionally, by enforcing the requirement that applications must be registered in every tenant where they authenticate, we reinforce tenant administrator’s governance of all access, including the ability to write conditional access policies for these applications. 
 
-You must act **before March 31, 2026**, to avoid partial authentication failure of applications. 
+You must act **before March 31, 2026**, to avoid authentication failure of applications. 
 
 ## Use sign-in logs to find SP-less applications
 
@@ -38,7 +38,7 @@ First, you'll need to verify that access by the named applications to the resour
 
 ## Create enterprise application
 
-Next you'll need to [create an enterprise application](/entra/identity/enterprise-apps/create-service-principal-cross-tenant?pivots=msgraph-powershell) in the resource tenant for each of the named applications. The resource tenant administrator must register the application using the Client App ID noted in the received email or through the sign-in logs method from above.
+Next, you'll need to [create an enterprise application](/entra/identity/enterprise-apps/create-service-principal-cross-tenant?pivots=msgraph-powershell) in the resource tenant for each of the named applications. The resource tenant administrator must register the application using the Client App ID noted in the received email or through the sign-in logs method from above.
 
 ## Verify tokens
 
