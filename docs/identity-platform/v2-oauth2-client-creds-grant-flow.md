@@ -200,7 +200,8 @@ Host: login.microsoftonline.com:443
 Content-Type: application/x-www-form-urlencoded
 
 scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
-&client_id=11112222-bbbb-3333-cccc-4444dddd5555&client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer
+&client_id=11112222-bbbb-3333-cccc-4444dddd5555
+&client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer
 &client_assertion=eyJhbGciOiJSUzI1NiIsIng1dCI6Imd4OHRHeXN5amNScUtqRlBuZDdSRnd2d1pJMCJ9.eyJ{a lot of characters here}M8U3bSUKKJDEg
 &grant_type=client_credentials
 ```
