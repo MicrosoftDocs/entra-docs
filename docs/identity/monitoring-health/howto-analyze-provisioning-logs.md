@@ -6,7 +6,7 @@ manager: femila
 ms.service: entra-id
 ms.topic: how-to
 ms.subservice: monitoring-health
-ms.date: 03/14/2025
+ms.date: 03/19/2025
 ms.author: sarahlipsey
 ms.reviewer: arvinh
 
@@ -139,12 +139,12 @@ Use the following table to better understand how to resolve errors that you find
 
 ## Error codes for cross-tenant synchronization
 
-Use the following table to better understand how to resolve errors that you find in the provisioning logs for [cross-tenant synchronization](../multi-tenant-organizations/cross-tenant-synchronization-configure.md).
+Use the following table to better understand how to resolve errors that you find in the provisioning logs for [cross-tenant synchronization](../multi-tenant-organizations/cross-tenant-synchronization-configure.md). Some error codes map to different reasons, so there are multiple rows for the same error code.
 
 | Error code | Cause | Solution |
 | --- | --- | --- |
-| AzureActiveDirectoryForbidden|The dirSync enabled property is set to true. As a result, the provisioning service cannot update user properties such as immutableId and extensionProperty1-15.|Remove the attribute from your attribute mappings to prevent failures.|
-| AzureActiveDirectory<br/>Forbidden | External collaboration settings blocked invitations.|Navigate to user settings and ensure that [external collaboration settings](~/external-id/external-collaboration-settings-configure.md) are permitted.|
+| AzureActiveDirectoryForbidden | The dirSync enabled property is set to true. As a result, the provisioning service cannot update user properties such as immutableId and extensionProperty1-15.|Remove the attribute from your attribute mappings to prevent failures.|
+| AzureActiveDirectoryForbidden | External collaboration settings blocked invitations.|Navigate to user settings and ensure that [external collaboration settings](~/external-id/external-collaboration-settings-configure.md) are permitted.|
 | AzureActiveDirectoryCannot<br/>UpdateObjectsOriginated<br/>InExternalService |The source of authority for the user is Exchange Online. The provisioning service can't update one or more exchange attributes on the user (ex: extensionAttribute 1 - 15). This impacts users that existed in the target tenant when the dirSyncEnabled property changed from "True" to "False." | Update the attribute directly in the target tenant's [exchange online](/powershell/module/exchange/set-mailuser?view=exchange-ps&preserve-view=true). For example: ```Set-MailUser -Identity CloudMailUser5 -CustomAttribute2 "Updated with EXO PowerShell"``` |
 | AzureActiveDirectory<br/>CannotUpdateObjectsOriginated<br/>InExternalService | The synchronization engine couldn't update one or more user properties in the target tenant.<br/><br/>The operation failed in Microsoft Graph API because of Source of Authority (SOA) enforcement. Currently, the following properties show up in the list:<br/>`Mail`<br/>`showInAddressList` | In some cases (for example when `showInAddressList` property is part of the user update), the synchronization engine might automatically retry the (user) update without the offending property. Otherwise, you need to update the property directly in the target tenant. |
 | AzureDirectory<br/>B2BManagementPolicy<br/>CheckFailure | The cross-tenant synchronization policy allowing automatic redemption failed.<br/><br/>The synchronization engine checks to ensure that the administrator of the target tenant created an inbound cross-tenant synchronization policy allowing automatic redemption. The synchronization engine also checks if the administrator of the source tenant enabled an outbound policy for automatic redemption. | Ensure that the automatic redemption setting was enabled for both the source and target tenants. For more information, see [Automatic redemption setting](../multi-tenant-organizations/cross-tenant-synchronization-overview.md#automatic-redemption-setting). |
