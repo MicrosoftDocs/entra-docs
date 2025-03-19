@@ -3,14 +3,14 @@
 # For more information, see https://review.learn.microsoft.com/en-us/help/platform/learn-editor-add-metadata?branch=main
 # For valid values of ms.service, ms.prod, and ms.topic, see https://review.learn.microsoft.com/en-us/help/platform/metadata-taxonomies?branch=main
 
-title:       # Add a title for the browser tab
-description: # Add a meaningful description for search results
+title: Microsoft Single Sign-on for Linux
+description: Overview of Single Sign-on for Linux for Microsoft Entra ID registered devices.
 author:      ploegert # GitHub alias
 ms.author:   jploegert # Microsoft alias
-ms.service:  # Add the ms.service or ms.prod value
-# ms.prod:   # To use ms.prod, uncomment it and delete ms.service
-ms.topic:    # Add the ms.topic value
+ms.service: entra-id
+ms.topic: overview
 ms.date:     03/18/2025
+ms.subservice: devices
 ---
 
 # Microsoft Single Sign-on to Linux
