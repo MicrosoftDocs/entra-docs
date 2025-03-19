@@ -795,33 +795,31 @@ import (
 )
 
 func RunManagedIdentity() {
-    
     // Use this for system-assigned managed identities
-    miSystemAssigned, error := mi.New(mi.SystemAssigned())
+    miSystemAssigned, err := mi.New(mi.SystemAssigned())
     
-    if error != nil {
-        fmt.Println(error)
+    if err != nil {
+        fmt.Println(err)
     }
 
     result, err := miSystemAssigned.AcquireToken(context.TODO(), "https://management.azure.com")
 	
     if err != nil {
-		log.Fatal(err)
-	}
+        fmt.Println(err)
+    }
 
     // Use this for user-assigned managed identities with clientID.
-    miClientIdUserAssigned, error := mi.New(mi.ClientID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"))
+    miClientIdUserAssigned, err := mi.New(mi.ClientID("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"))
     
-    if error != nil {
-        fmt.Println(error)
+    if err != nil {
+        fmt.Println(err)
     }
 
     result, err := miClientIdUserAssigned.AcquireToken(context.TODO(), "https://management.azure.com")
 
     // Print out token expiry time
-	fmt.Println("token expire at : ", result.ExpiresOn)
+    fmt.Println("token expire at : ", result.ExpiresOn)
 }
-
 ```
 
 ---
