@@ -1,17 +1,17 @@
 ---
-title: Token protection in Microsoft Entra Conditional Access
-description: Learn how to use token protection in Conditional Access policies.
+title: Microsoft Entra Conditional Access token protection explained
+description: Learn how to secure your environment with token protection in Microsoft Entra Conditional Access policies.
 ms.service: entra-id
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 03/18/2025
+ms.date: 03/19/2025
 
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: femila
-ms.reviewer: paulgarn
+ms.reviewer: sgrandhi
 ---
-# Conditional Access: Token protection (preview)
+# Microsoft Entra Conditional Access: Token protection (Preview)
 
 Token protection (sometimes referred to as token binding in the industry) attempts to reduce attacks using token theft by ensuring a token is usable only from the intended device. When an attacker is able to steal a token, by hijacking or replay, they can impersonate their victim until the token expires or is revoked. Token theft is thought to be a relatively rare event, but the damage from it can be significant. 
 
@@ -23,22 +23,27 @@ Token protection creates a cryptographically secure tie between the token and th
 > [!IMPORTANT]
 > The following changes have been made to Token Protection since the initial public preview release:
 >
-> * **Sign In logs output:** The value of the string used in "enforcedSessionControls" and "sessionControlsNotSatisfied" changed from "Binding" to "SignInTokenProtection" in late June 2023. Queries on Sign In Log data should be updated to reflect this change.
+> * **Sign In logs output:** The value of the string used in **enforcedSessionControls** and **sessionControlsNotSatisfied** changed from **Binding** to **SignInTokenProtection** in late June 2023. Queries on Sign In Log data should be updated to reflect this change.
 >
-> * Additional limitations for certain device deployments: Devices that are joined to Entra using certain methods are no longer supported. Please see Known Limitations section for a complete list.  
+> * Devices that are joined to Microsoft Entra using certain methods are no longer supported. See the [known limitations section](#known-limitations) for a complete list.  
 > 
 > * Error code change: The Token protection Conditional Access policy error code is changing from 53003 to 530084 to better identify errors related to token protection.
 
-:::image type="content" source="media/concept-token-protection/complete-policy-components-session.png" alt-text="Screenshot showing a Conditional Access policy requiring token protection as the session control":::
+:::image type="content" source="media/concept-token-protection/complete-policy-components-session.png" alt-text="Screenshot of a Conditional Access policy requiring token protection as the session control.":::
 
 ## Requirements
 
-The following devices and applications support accessing resources on which a token protection Conditional Access policy is applied:
+[!INCLUDE [Active Directory P2 license](~/includes/entra-p2-license.md)]
+
+> [!NOTE]
+> Token protection enforcement is part of Microsoft Entra ID Protection and require Microsoft Entra ID P2 licenses at general availability. 
 
 ### Supported devices: 
 
-- Windows 10 or newer devices that are Microsoft Entra joined, Microsoft Entra hybrid joined, or Microsoft Entra registered. See the “Known limitations” section for unsupported device types.  
-- Windows Server 2019 or above that are Microsoft hybrid Entra Joined 
+The following devices and applications support accessing resources on which a token protection Conditional Access policy is applied:
+
+- Windows 10 or newer devices that are Microsoft Entra joined, Microsoft Entra hybrid joined, or Microsoft Entra registered. See the [known limitations section](#known-limitations) for unsupported device types.  
+- Windows Server 2019 or newer that are hybrid Microsoft Entra Joined 
 
 ### Supported applications: 
 
@@ -51,41 +56,34 @@ The following devices and applications support accessing resources on which a to
 
 ### Known limitations
 
-- [External users](/entra/external-id/what-is-b2b) who meet the token protection device registration requirements in their home tenant are supported. However, users who do not meet these requirements will encounter an unclear error message with no indication of the root cause.   
+- [External users](/entra/external-id/what-is-b2b) who meet the token protection device registration requirements in their home tenant are supported. However, users who don't meet these requirements encounter an unclear error message with no indication of the root cause.   
 - Devices registered with Microsoft Entra ID using the following methods are unsupported:
    - Microsoft Entra joined [Azure Virtual Desktop session hosts](/azure/virtual-desktop/azure-ad-joined-session-hosts).
    - Windows devices deployed using [bulk enrollment](/mem/intune-service/enrollment/windows-bulk-enroll). 
    - [Cloud PCs deployed by Windows 365](/windows-365/enterprise/identity-authentication#device-join-types) that are Microsoft Entra joined. 
    - Power Automate hosted machine groups that are [Microsoft Entra joined](/power-automate/desktop-flows/hosted-machine-groups#general-network-requirements). 
    - Windows Autopilot devices deployed using [self-deploying mode](/autopilot/self-deploying). 
-   - Windows virtual machines deployed in Azure using VM extension that are enabled for [Microsoft Entra ID authentication](/entra/identity/devices/howto-vm-sign-in-azure-ad-windows).
-   - Devices registered with Microsoft Entra ID on Windows versions before 24H2 may be blocked if users didn't perform a fresh sign-in during registration. The Windows 24H2 release fixes this by ensuring a required fresh sign-in.  
+   - Windows virtual machines deployed in Azure using the virtual machine (VM) extension that are enabled for [Microsoft Entra ID authentication](/entra/identity/devices/howto-vm-sign-in-azure-ad-windows).
+   - Devices registered with Microsoft Entra ID on Windows versions before 24H2 might be blocked if users didn't perform a fresh sign-in during registration. The Windows 24H2 release fixes this issue by ensuring a required fresh sign-in.  
 
-To identify the impacted devices due to unsupported registration types listed above, inspect `tokenProtectionStatusDetails` attribute in the Sign-in logs. Token requests that are blocked due to an unsupported device registration type, can be identified with a `signInSessionStatusCode` value of 1003. 
+To identify the impacted devices due to unsupported registration types listed previously, inspect `tokenProtectionStatusDetails` attribute in the Sign-in logs. Token requests that are blocked due to an unsupported device registration type, can be identified with a `signInSessionStatusCode` value of 1003. 
 
-To prevent any disruption for new onboarding, you can modify the Token Protection Conditional Access policy by adding a device filter condition that excludes any devices that fall in the above deployment category. For example, to exclude:
+To prevent any disruption for new onboarding, you can modify the token protection Conditional Access policy by adding a device filter condition that excludes any devices that fall in the previously described deployment category. For example, to exclude:
 
 - Cloud PCs that are Microsoft Entra joined, you can use `systemLabels -eq "CloudPC" and trustType -eq "AzureAD"`. 
 - Azure Virtual Desktops that are Microsoft Entra joined, you can use `systemLabels -eq "AzureVirtualDesktop" and trustType -eq "AzureAD"`. 
 - Power Automate hosted machine groups that are Microsoft Entra joined, you can use `systemLabels -eq "MicrosoftPowerAutomate" and trustType -eq "AzureAD"`. 
 - Windows virtual machines in Azure that are Microsoft Entra joined, you can use `systemLabels -eq "AzureResource" and trustType -eq "AzureAD"`. 
 
-- Office Perpetual clients aren't supported 
+- Office Perpetual clients aren't supported.
 - The following applications don't support signing in using protected token flows and users are blocked when accessing Exchange and SharePoint: 
-   - PowerShell modules accessing Exchange, SharePoint, or Microsoft Graph scopes that are served by Exchange or SharePoint 
-   - PowerQuery extension for Excel 
+   - PowerShell modules accessing Exchange, SharePoint, or Microsoft Graph scopes served by Exchange or SharePoint
+   - PowerQuery extension for Excel
    - Extensions to Visual Studio Code which access Exchange or SharePoint 
 
 - The following Windows client devices aren't supported: 
    - Surface Hub 
    - Windows-based Microsoft Teams Rooms (MTR) systems 
-
-## Licensing requirements
-
-[!INCLUDE [Active Directory P2 license](~/includes/entra-p2-license.md)]
-
-> [!NOTE]
-> Token Protection enforcement is part of Microsoft Entra ID Protection and will be part of the P2 license at general availability. 
 
 ## Deployment
 
@@ -120,7 +118,7 @@ The steps that follow help create a Conditional Access policy to require token p
        1. Office 365 SharePoint Online
        
        > [!WARNING]
-       > Your Conditional Access policy should only be configured for these applications. Selecting the **Office 365** application group may result in unintended failures. This is an exception to the general rule that the **Office 365** application group should be selected in a Conditional Access policy. 
+       > Your Conditional Access policy should only be configured for these applications. Selecting the **Office 365** application group might result in unintended failures. This change is an exception to the general rule that the **Office 365** application group should be selected in a Conditional Access policy. 
 
     1. Choose **Select**.
 1. Under **Conditions**:
@@ -132,7 +130,7 @@ The steps that follow help create a Conditional Access policy to require token p
        1. Set **Configure** to **Yes**.
 
           > [!WARNING] 
-          > Not configuring the Client Apps condition, or leaving **Browser** selected may cause applications that use MSAL.js, such as Teams Web to be blocked.
+          > Not configuring the Client Apps condition, or leaving **Browser** selected might cause applications that use MSAL.js, such as Teams Web to be blocked.
 
        1. Under Modern authentication clients, only select **Mobile apps and desktop clients**. Leave other items unchecked.
        1. Select **Done**.
@@ -155,18 +153,18 @@ Use Microsoft Entra sign-in log to verify the outcome of a token protection enfo
 1. Select a specific request to determine if the policy is applied or not.
 1. Go to the **Conditional Access** or **Report-Only** pane depending on its state and select the name of your policy requiring token protection.
 1. Under **Session Controls** check to see if the policy requirements were satisfied or not.
-1. To find additional details about the binding state of the request, select the pane “Basic Info” and see the field “Token Protection - Sign In Session”. Possible values are: 
-   1. Bound: the request was using bound protocols. Please be aware that some sign-ins may include multiple requests, and all requests must be bound to satisfy the token protection policy. Even if an individual request appears to be bound, it does not ensure compliance with the policy if other requests are unbound. To see all requests for a sign-in you can filter all requests for a specific user or look by corelationid.
-   1. Unbound: the request was not using bound protocols. Possible statusCodes when request is unbound are:
+1. To find more details about the binding state of the request, select the pane **Basic Info** and see the field **Token Protection - Sign In Session**. Possible values are: 
+   1. Bound: the request was using bound protocols. Some sign-ins might include multiple requests, and all requests must be bound to satisfy the token protection policy. Even if an individual request appears to be bound, it doesn't ensure compliance with the policy if other requests are unbound. To see all requests for a sign-in, you can filter all requests for a specific user or look by corelationid.
+   1. Unbound: the request wasn't using bound protocols. Possible `statusCodes` when request is unbound are:
       1. 1002: The request is unbound due to the lack of Microsoft Entra ID device state. 
-      1. 1003: The request is unbound because the Microsoft Entra ID device state does not satisfy Token protection CA policy requirements. This could be due to an unsupported device registration type, or the device was not registered using fresh sign-in credentials. 
+      1. 1003: The request is unbound because the Microsoft Entra ID device state doesn't satisfy Conditional Access policy requirements for token protection. This error could be due to an unsupported device registration type, or the device wasn't registered using fresh sign-in credentials. 
       1. 1005: The request is unbound for other unspecified reasons. 
       1. 1006: The request is unbound because the OS version is unsupported. 
-      1. 1008: The request is unbound because the client is not integrated with the platform broker, such as WAM. 
+      1. 1008: The request is unbound because the client isn't integrated with the platform broker, such as Windows Account Manager (WAM). 
 
 :::image type="content" source="media/concept-token-protection/sign-in-log-sample.png" alt-text="Screenshot showing an example of a policy not being satisfied." lightbox="media/concept-token-protection/sign-in-log-sample.png":::
 
-#### Log Analytics  
+#### Log Analytics
 
 You can also use [Log Analytics](~/identity/monitoring-health/tutorial-configure-log-analytics-workspace.md) to query the sign-in logs (interactive and non-interactive) for blocked requests due to token protection enforcement failure.
 
@@ -227,7 +225,7 @@ AADNonInteractiveUserSignInLogs
 | sort by UserPrincipalName asc   
 ```
 
-The following query example looks at the non-interactive sign-in log for the last seven days, highlighting users that are using devices, where Microsoft Entra ID device state does not satisfy Token protection CA policy requirements. 
+The following query example looks at the non-interactive sign-in log for the last seven days, highlighting users that are using devices, where Microsoft Entra ID device state doesn't satisfy Token protection CA policy requirements. 
 
 ```kusto
 AADNonInteractiveUserSignInLogs 
@@ -241,15 +239,11 @@ AADNonInteractiveUserSignInLogs
 | summarize count() by UserPrincipalName 
 ```
 
-## Best practices 
+## Related content 
 
-Since Token Protection CA policy is currently only available for Windows devices, it is necessary to secure your environment against potential policy bypass when an attacker may appear to come from a different platform. 
+Since Conditional Access policies requiring token protection are currently only available for Windows devices, it's necessary to secure your environment against potential policy bypass when an attacker might appear to come from a different platform. 
 
-In addition to enabling the Token protection CA policy for Windows, it is recommended to configure the following policies: 
+In addition, you should configure the following policies: 
 
 - [Block access from unknown platforms](policy-all-users-device-unknown-unsupported.md)
 - [Require device compliance for all known platforms](policy-all-users-device-compliance.md)
-
-## Next steps
-
-- [What is a Primary Refresh Token?](~/identity/devices/concept-primary-refresh-token.md)
