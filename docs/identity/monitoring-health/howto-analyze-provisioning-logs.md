@@ -139,7 +139,7 @@ Use the following table to better understand how to resolve errors that you find
 
 ## Error codes for cross-tenant synchronization
 
-Use the following table to better understand how to resolve errors that you find in the provisioning logs for [cross-tenant synchronization](../multi-tenant-organizations/cross-tenant-synchronization-configure.md). Some error codes map to different reasons, so there are multiple rows for the same error code.
+Use the following table to better understand how to resolve errors that you find in the provisioning logs for [cross-tenant synchronization](../multi-tenant-organizations/cross-tenant-synchronization-configure.md). Some error codes map to more than one cause, so there are multiple rows for the same error code.
 
 | Error code | Cause | Solution |
 | --- | --- | --- |
