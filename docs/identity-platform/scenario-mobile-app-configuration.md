@@ -55,7 +55,7 @@ if let application = try? MSALPublicClientApplication(configuration: config){ /*
 
 [Additional MSALPublicClientApplicationConfig properties](https://azuread.github.io/microsoft-authentication-library-for-objc/Classes/MSALPublicClientApplicationConfig.html#/Configuration%20options) can override the default authority, specify a redirect URI, or change the behavior of MSAL token caching.
 
-###UWP
+### UWP
 
 This section explains how to instantiate the application for UWP apps.
 
