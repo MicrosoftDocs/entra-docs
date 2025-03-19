@@ -5,7 +5,7 @@ author: kenwith
 ms.author: kenwith
 manager: femila
 ms.topic: how-to
-ms.date: 03/13/2025
+ms.date: 03/19/2025
 ms.service: global-secure-access
 ---
 
@@ -120,10 +120,6 @@ With your endpoint created, you can configure Diagnostic settings.
    - **Archive to a storage account:** Provide the number of days you'd like to retain the data in the **Retention days** boxes that appear next to the log categories. Select the appropriate details from the menus that appear.
    - **Stream to an event hub:** Select the appropriate details from the menus that appear.
    - **Send to partner solution:** Select the appropriate details from the menus that appear.
-
-The following example is sending the enriched logs to a Log Analytics workspace, which requires selecting the Subscription and Log Analytics workspace from the menus that appear.
-
-:::image type="content" source="media/how-to-view-enriched-logs/diagnostic-settings-enriched-logs.png" alt-text="Screenshot of the Microsoft Entra diagnostic settings, with the enriched logs and Log Analytics options highlighted." lightbox="media/how-to-view-enriched-logs/diagnostic-settings-enriched-logs.png":::
 
 ## Next steps
 
