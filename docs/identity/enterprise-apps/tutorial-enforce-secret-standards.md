@@ -8,7 +8,7 @@ ms.service: entra-id
 ms.subservice: enterprise-apps
 ms.topic: tutorial
 ms.date: 03/12/2024
-zone_pivot_groups: enterprise-apps-entra-ps-ms-graph
+zone_pivot_groups: enterprise-app-graph-ps-ms-graph
 
 # Customer intent: As an IT administrator, I want to enable secret restrictions using application management policies in Microsoft Entra ID to reduce the risk of unauthorized access to sensitive data.
 ---
@@ -54,7 +54,7 @@ Before you create a new application management policy, you can read your existin
 
 The following example reads the default application management policy for your tenant. The response shows the current policy settings.
 
-:::zone pivot="entra-powershell"
+:::zone pivot="ms-powershell"
 
 Connect to Microsoft Graph using the `Connect-MgGraph` cmdlet and the `Policy.Read.All` permission. Sign in with at least the [Cloud Application Administrator](../role-based-access-control/permissions-reference.md#cloud-application-administrator) role. Then, run the following commands to read the default application management policy for your tenant.
 
@@ -137,7 +137,7 @@ Updating the default application management policy to use our recommendations re
 
 The following example updates the default application management policy with the settings discussed in the previous section. 
 
-:::zone-pivot="entra-powershell"
+:::zone pivot="ms-powershell"
 
 ```powershell
 Connect-MgGraph -Scopes 'Policy.ReadWrite.All'
@@ -181,7 +181,7 @@ Update-MgPolicyDefaultAppManagementPolicy -BodyParameter $params
 
 :::zone-end
 
-:::zone-pivot="ms-graph"
+:::zone pivot="ms-graph"
 
 Ensure you consent to the `Policy.ReadWrite.All` permission. Then, run the following request to update the default application management policy for your tenant.
 

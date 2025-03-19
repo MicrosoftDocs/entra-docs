@@ -93,13 +93,13 @@ groups:
     title: Microsoft Graph PowerShell
   - id: ms-graph
     title: Microsoft Graph
-## template with only entra-powershell, ms-graph
-- id: enterprise-apps-entra-ps-ms-graph
+## template with only graph-powershell, ms-graph
+- id: enterprise-app-graph-ps-ms-graph
   title: Manage Enterprise apps policy
   prompt: Choose an option
   pivots:
-  - id: entra-powershell
-    title: Microsoft Entra PowerShell
+  - id: ms-powershell
+    title: Microsoft Graph PowerShell
   - id: ms-graph
     title: Microsoft Graph
 ## Template without portal
